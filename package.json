@@ -1,10 +1,10 @@
 {
   "name": "npm-base",
   "version": "1.0.0",
-  "description": "The description",
+  "description": "A base NPM package for writing a NPM package in ES2015",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/node-base.git"
+    "url": "https://github.com/kadirahq/npm-base.git"
   },
   "license": "MIT",
   "options": {
@@ -33,6 +33,5 @@
   },
   "dependencies": {
     "babel-runtime": "6.x.x"
-  },
-  "private": true
+  }
 }
