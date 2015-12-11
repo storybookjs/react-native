@@ -6,7 +6,7 @@ A base package for creating NPM packages with ES2015.
 
 Writing in ES2015 is an amazing experience. Setting up babel and the developmemt envrionment in a kind of a pain.
 
-If you want to write a NPM module in ES2015 and publish to NPM with backward compatibilty, this is the best way.
+If you want to write a **NPM module** in ES2015 and publish to NPM with backward compatibilty, this is the **easiest** way.
 
 ## Basic Usage
 
