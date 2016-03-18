@@ -1,26 +1,17 @@
 'use strict';
 
-import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
-import _Object$keys from 'babel-runtime/core-js/object/keys';
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.renderError = exports.renderMain = undefined;
+exports.paper = paper;
+exports.getPapers = getPapers;
 
 var _load = require('./load');
 
-_Object$keys(_load).forEach(function (key) {
-  if (key === "default") return;
+var load = _interopRequireWildcard(_load);
 
-  _Object$defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _load[key];
-    }
-  });
-});
-
-exports.paper = paper;
-exports.getPapers = getPapers;
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var papers = {};
 var currentBlocks = [];
@@ -41,3 +32,6 @@ function paper(paperName, m) {
 function getPapers() {
   return papers;
 }
+
+var renderMain = exports.renderMain = load.renderMain;
+var renderError = exports.renderError = load.renderError;

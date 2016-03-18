@@ -1,4 +1,4 @@
-export * from './load';
+import * as load from './load';
 let papers = {};
 const currentBlocks = [];
 
@@ -18,3 +18,6 @@ export function paper(paperName, m) {
 export function getPapers() {
   return papers;
 }
+
+export const renderMain = load.renderMain;
+export const renderError = load.renderError;
