@@ -6,7 +6,11 @@ export function resetPapers() {
   papers = {};
 }
 
-export function paper(paperName) {
+export function paper(paperName, m) {
+  console.log('XXX', arguments);
+  m.hot.dispose(() => {
+    delete papers[paperName];
+  });
   papers[paperName] = {};
   function block(name, fn) {
     papers[paperName][name] = fn;
