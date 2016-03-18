@@ -1,11 +1,6 @@
 let papers = {};
 const currentBlocks = [];
 
-export function resetPapers() {
-  console.log('RESET');
-  papers = {};
-}
-
 export function paper(paperName, m) {
   m.hot.dispose(() => {
     delete papers[paperName];
@@ -20,6 +15,5 @@ export function paper(paperName, m) {
 }
 
 export function getPapers() {
-  console.log('GET');
   return papers;
 }

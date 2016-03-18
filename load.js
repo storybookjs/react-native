@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
-import {Flex, Box} from 'reflexbox';
 import {PaperControls} from './paper_controls';
 import * as ud from 'ud';
 

@@ -3,11 +3,10 @@ module.exports = function() {
     <!DOCTYPE html>
     <html>
     <head>
-    <title>Redux async example</title>
+    <title>Paper UI Console</title>
     </head>
     <body>
     <div id="root" />
-    <div id="error" />
     <script src="/static/bundle.js"></script>
     </body>
     </html>
