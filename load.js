@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
 import {Flex, Box} from 'reflexbox';
 import {PaperControls} from './paper_controls';
+import * as ud from 'ud';
 
 const rootEl = document.getElementById('root');
-const data = {};
+const data = ud.defonce(module, () => ({}));
 
 const Area = ({main, error}) => (
   <Flex align="center" justify="space-between" c={12}>
@@ -44,8 +45,8 @@ function loadBlock(block) {
 }
 
 export function renderMain(papers) {
-  const firstPaper = Object.keys(papers)[0];
-  const firstBlock = Object.keys(papers[firstPaper])[0];
+  const firstPaper = data.selectedPaper || Object.keys(papers)[0];
+  const firstBlock = data.selectedBlock || Object.keys(papers[firstPaper])[0];
   data.papers = papers;
   data.selectedPaper = firstPaper;
   data.selectedBlock = firstBlock;
