@@ -1,10 +1,10 @@
-const papers = {};
+let papers = {};
 const currentBlocks = [];
 
 export function paper(paperName) {
-  papers[paperName] = [];
+  papers[paperName] = {};
   function block(name, fn) {
-    papers[paperName].push({name, fn});
+    papers[paperName][name] = fn;
     return {block};
   }
 
