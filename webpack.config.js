@@ -20,7 +20,8 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel?presets[]=es2015&presets[]=react'],
+        loader: 'babel',
+        query: {presets: ['react', 'es2015']},
         exclude: [path.resolve('./node_modules'), path.resolve(__dirname, 'node_modules')],
         include: [path.resolve('./'), __dirname]
       }
