@@ -1,6 +1,6 @@
 {
   "name": "paper-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Paper UI",
   "dependencies": {
     "ud": "^3.0.1",
