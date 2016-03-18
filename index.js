@@ -1,3 +1,4 @@
+export * from './load';
 let papers = {};
 const currentBlocks = [];
 
