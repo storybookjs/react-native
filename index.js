@@ -1,5 +1,4 @@
 const papers = {};
-window.__papers = papers;
 const currentBlocks = [];
 
 export function paper(paperName) {
