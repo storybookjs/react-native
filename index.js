@@ -7,7 +7,6 @@ export function resetPapers() {
 }
 
 export function paper(paperName, m) {
-  console.log('XXX', arguments);
   m.hot.dispose(() => {
     delete papers[paperName];
   });

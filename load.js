@@ -9,23 +9,31 @@ const rootEl = document.getElementById('root');
 const data = ud.defonce(module, () => ({}));
 
 const Area = ({main, error}) => (
-  <Flex align="center" justify="space-between" c={12}>
-    <Box p={4}>
+  <div style={{}}>
+    <div style={{width: '250px', float: 'left'}}>
       <PaperControls
         papers={data.papers}
         selectedPaper={data.selectedPaper}
         selectedBlock={data.selectedBlock}
         onPaper={loadPaper}
         onBlock={loadBlock}/>
-    </Box>
-    <Box auto={true} p={3}>
+    </div>
+    <div style={{float: 'left'}}>
       {error? <ReadBox error={error}/> : main}
-    </Box>
-  </Flex>
+    </div>
+  </div>
 );
 
 function renderArea() {
-  const main = data.papers[data.selectedPaper][data.selectedBlock]();
+  let main = (<p>There is no blocks yet!</p>);
+  const paper = data.papers[data.selectedPaper];
+  if (paper) {
+    const block = data.papers[data.selectedPaper][data.selectedBlock];
+    if (block) {
+      main = block();
+    }
+  }
+
   const area = <Area main={main} error={data.error}/>;
   ReactDOM.render(
     area,
@@ -45,13 +53,18 @@ function loadBlock(block) {
 }
 
 export function renderMain(papers) {
-  const firstPaper = data.selectedPaper || Object.keys(papers)[0];
-  const firstBlock = data.selectedBlock || Object.keys(papers[firstPaper])[0];
-  data.papers = papers;
-  data.selectedPaper = firstPaper;
-  data.selectedBlock = firstBlock;
-
   data.error = null;
+  data.papers = papers;
+
+  data.selectedPaper =
+    (papers[data.selectedPaper])? data.selectedPaper : Object.keys(papers)[0];
+
+  if (data.selectedPaper) {
+    const paper = papers[data.selectedPaper];
+    data.selectedBlock =
+      (paper[data.selectedBlock])? data.selectedBlock : Object.keys(paper)[0];
+  }
+
   renderArea();
 };
 

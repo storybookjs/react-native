@@ -5,8 +5,11 @@ export class PaperControls extends React.Component {
     const paperNames = this.getPaperNames();
     const mainStyle = {
       fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-      paddingRight: '10px',
-      color: "#444"
+      padding: '10px',
+      marginRight: '10px',
+      color: '#444',
+      borderRight: '3px solid #DDD',
+      minHeight: '1500px'
     };
 
     const h1Style = {
@@ -74,12 +77,14 @@ export class PaperControls extends React.Component {
   }
 
   getPaperNames() {
-    const {papers} = this.props;
+    const {papers, selectedPaper} = this.props;
     if (!papers) {
       return [];
     }
 
-    return Object.keys(papers);
+    return Object
+      .keys(papers)
+      .sort(name => name === selectedPaper? -1 : 1);
   }
 
   getBlocks(paperName) {
