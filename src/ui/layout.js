@@ -5,7 +5,7 @@ const Layout = ({controls, content}) => (
     <div style={{width: '250px', float: 'left'}}>
       {controls}
     </div>
-    <div style={{float: 'left'}}>
+    <div style={{marginLeft: '250px'}}>
       {content}
     </div>
   </div>

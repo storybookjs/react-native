@@ -46,20 +46,29 @@ var data = ud.defonce(module, function () {
   return {};
 });
 
-function Area(_ref) {
+var Area = function Area(_ref) {
   var main = _ref.main;
   var error = _ref.error;
-
-  var controls = _react2.default.createElement(_controls2.default, {
-    papers: data.papers,
-    selectedPaper: data.selectedPaper,
-    selectedBlock: data.selectedBlock,
-    onPaper: loadPaper,
-    onBlock: loadBlock });
-
-  var content = error ? _react2.default.createElement(_redboxReact2.default, { error: error }) : main;
-  return _react2.default.createElement(_layout2.default, { controls: controls, content: content });
-}
+  return _react2.default.createElement(
+    'div',
+    { style: {} },
+    _react2.default.createElement(
+      'div',
+      { style: { width: '250px', float: 'left' } },
+      _react2.default.createElement(_controls2.default, {
+        papers: data.papers,
+        selectedPaper: data.selectedPaper,
+        selectedBlock: data.selectedBlock,
+        onPaper: loadPaper,
+        onBlock: loadBlock })
+    ),
+    _react2.default.createElement(
+      'div',
+      { style: { marginLeft: '250px' } },
+      error ? _react2.default.createElement(_redboxReact2.default, { error: error }) : main
+    )
+  );
+};
 
 function renderArea() {
   if (data.error) {

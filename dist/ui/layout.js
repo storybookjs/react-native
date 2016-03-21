@@ -23,7 +23,7 @@ var Layout = function Layout(_ref) {
     ),
     _react2.default.createElement(
       'div',
-      { style: { float: 'left' } },
+      { style: { marginLeft: '250px' } },
       content
     )
   );
