@@ -5,25 +5,25 @@ import {
   watchData
 } from './data';
 
-import papers from './papers';
+import stories from './papers';
 
-export function paper(paperName, m) {
+export function storiesOf(component, m) {
   // XXX: Add a better way to create paper and mutate them.
   m.hot.dispose(() => {
-    delete papers[paperName];
+    delete stories[component];
   });
 
-  papers[paperName] = {};
-  function block(name, fn) {
-    papers[paperName][name] = fn;
-    return {block};
+  stories[component] = {};
+  function add(storyName, fn) {
+    stories[component][storyName] = fn;
+    return {add};
   }
 
-  return {block};
+  return {add};
 }
 
-export function getPapers() {
-  return papers;
+export function getStories() {
+  return stories;
 }
 
 export function renderMain(papers) {
@@ -31,12 +31,12 @@ export function renderMain(papers) {
   data.error = null;
 
   data.selectedPaper =
-    (papers[data.selectedPaper])? data.selectedPaper : Object.keys(papers)[0];
+    (stories[data.selectedPaper])? data.selectedPaper : Object.keys(stories)[0];
 
   if (data.selectedPaper) {
-    const paper = papers[data.selectedPaper];
+    const story = stories[data.selectedPaper];
     data.selectedBlock =
-      (paper[data.selectedBlock])? data.selectedBlock : Object.keys(paper)[0];
+      (story[data.selectedBlock])? data.selectedBlock : Object.keys(story)[0];
   }
 
   setData(data);
