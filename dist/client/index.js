@@ -19,21 +19,21 @@ var _ui2 = _interopRequireDefault(_ui);
 
 var _data = require('./data');
 
-var _papers = require('./papers');
+var _storybook = require('./storybook');
 
-var _papers2 = _interopRequireDefault(_papers);
+var _storybook2 = _interopRequireDefault(_storybook);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function storiesOf(component, m) {
-  // XXX: Add a better way to create paper and mutate them.
+function storiesOf(kind, m) {
+  // XXX: Add a better way to create stories and mutate them.
   m.hot.dispose(function () {
-    delete _papers2.default[component];
+    delete _storybook2.default[kind];
   });
 
-  _papers2.default[component] = {};
+  _storybook2.default[kind] = {};
   function add(storyName, fn) {
-    _papers2.default[component][storyName] = fn;
+    _storybook2.default[kind][storyName] = fn;
     return { add: add };
   }
 
@@ -41,18 +41,18 @@ function storiesOf(component, m) {
 }
 
 function getStories() {
-  return _papers2.default;
+  return _storybook2.default;
 }
 
-function renderMain(papers) {
+function renderMain(stories) {
   var data = (0, _data.getData)();
   data.error = null;
 
-  data.selectedPaper = _papers2.default[data.selectedPaper] ? data.selectedPaper : (0, _keys2.default)(_papers2.default)[0];
+  data.selectedKind = _storybook2.default[data.selectedKind] ? data.selectedKind : (0, _keys2.default)(_storybook2.default)[0];
 
-  if (data.selectedPaper) {
-    var story = _papers2.default[data.selectedPaper];
-    data.selectedBlock = story[data.selectedBlock] ? data.selectedBlock : (0, _keys2.default)(story)[0];
+  if (data.selectedKind) {
+    var _stories = _storybook2.default[data.selectedKind];
+    data.selectedStory = _stories[data.selectedStory] ? data.selectedStory : (0, _keys2.default)(_stories)[0];
   }
 
   (0, _data.setData)(data);
