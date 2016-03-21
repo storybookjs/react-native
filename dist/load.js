@@ -58,7 +58,7 @@ var Area = function Area(_ref) {
     ),
     _react2.default.createElement(
       'div',
-      { style: { float: 'left' } },
+      { style: { marginLeft: '250px' } },
       error ? _react2.default.createElement(_redboxReact2.default, { error: error }) : main
     )
   );
