@@ -45,7 +45,8 @@ export function getControls(data) {
 export function getIframe(data) {
   const iframeStyle = {
     width: '100%',
-    height: '100%'
+    height: '100%',
+    border: '0'
   };
 
   // We need to send iframe=true and dataId via queryString
