@@ -29,7 +29,12 @@ export function setData(fields) {
   // We only need to handle setData if we are in the main page. Otherwise,
   // we don't need to handle data come from the live changes.
   if (!iframeMode) {
-    bus.emit(getDataKey(), JSON.stringify(data));
+    // In page-bus, we must send non-identical data.
+    // Otherwise, it'll cache and won't trigger.
+    // That's why we are setting the __lastUpdated value here.
+    const __lastUpdated = Date.now();
+    const newData = {...data, __lastUpdated};
+    bus.emit(getDataKey(), JSON.stringify(newData));
     handlers.forEach(handler => handler(getData()));
   }
 };

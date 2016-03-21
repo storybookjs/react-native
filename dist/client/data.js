@@ -4,13 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _keys = require('babel-runtime/core-js/object/keys');
 
@@ -61,7 +61,12 @@ function setData(fields) {
   // We only need to handle setData if we are in the main page. Otherwise,
   // we don't need to handle data come from the live changes.
   if (!iframeMode) {
-    bus.emit(getDataKey(), (0, _stringify2.default)(data));
+    // In page-bus, we must send non-identical data.
+    // Otherwise, it'll cache and won't trigger.
+    // That's why we are setting the __lastUpdated value here.
+    var __lastUpdated = Date.now();
+    var newData = (0, _extends3.default)({}, data, { __lastUpdated: __lastUpdated });
+    bus.emit(getDataKey(), (0, _stringify2.default)(newData));
     handlers.forEach(function (handler) {
       return handler(getData());
     });
