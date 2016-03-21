@@ -48,7 +48,9 @@ var Layout = function (_React$Component) {
 
 
       var rootStyles = {
-        height: height
+        height: height,
+        padding: '8px',
+        backgroundColor: '#F7F7F7'
       };
       var controlsStyle = {
         width: '240px',
@@ -56,13 +58,14 @@ var Layout = function (_React$Component) {
         height: '100%',
         overflowY: 'auto'
       };
-      // borderRight: '3px solid #DDD',
       var contentStyle = {
-        height: height,
+        height: height - 15,
         marginLeft: '250px',
         border: '1px solid #DDD',
         borderRadius: '4px',
-        boxShadow: '0px 2px 6px -1px #b8b8b8'
+        boxShadow: '0px 2px 6px -1px #b8b8b8',
+        padding: '5px',
+        backgroundColor: '#FFF'
       };
 
       return _react2.default.createElement(
@@ -98,7 +101,7 @@ var Layout = function (_React$Component) {
       var body = _document.body;
 
       var height = documentElement.clientHeight || body.clientHeight;
-      height -= 20;
+      height -= 15;
       this.setState({ height: height });
     }
   }]);

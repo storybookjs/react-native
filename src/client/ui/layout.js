@@ -6,21 +6,24 @@ class Layout extends React.Component {
     const {height} = this.state;
 
     const rootStyles = {
-      height
+      height,
+      padding: '8px',
+      backgroundColor: '#F7F7F7'
     };
     const controlsStyle = {
       width: '240px',
       float: 'left',
       height: '100%',
-      overflowY: 'auto',
-      // borderRight: '3px solid #DDD',
+      overflowY: 'auto'
     };
     const contentStyle = {
-      height,
+      height: height - 15,
       marginLeft: '250px',
       border: '1px solid #DDD',
       borderRadius: '4px',
-      boxShadow: '0px 2px 6px -1px #b8b8b8'
+      boxShadow: '0px 2px 6px -1px #b8b8b8',
+      padding: '5px',
+      backgroundColor: '#FFF'
     };
 
     return (
@@ -46,7 +49,7 @@ class Layout extends React.Component {
   updateHeight() {
     const {documentElement, body} = document;
     let height = documentElement.clientHeight|| body.clientHeight;
-    height -= 20;
+    height -= 15;
     this.setState({height});
   }
 }

@@ -5,9 +5,9 @@ module.exports = function() {
     <head>
     <title>React Storybook</title>
     </head>
-    <body>
-    <div id="root" />
-    <script src="/static/bundle.js"></script>
+    <body style="margin: 0;">
+      <div id="root" />
+      <script src="/static/bundle.js"></script>
     </body>
     </html>
   `;
