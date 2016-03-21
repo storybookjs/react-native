@@ -21,6 +21,6 @@ app.listen(port, function(error) {
   if (error) {
     console.error(error)
   } else {
-    console.info("Paper UI Console started on => http://localhost:%s/ \n", port)
+    console.info("React Storybook started on => http://localhost:%s/ \n", port)
   }
 })

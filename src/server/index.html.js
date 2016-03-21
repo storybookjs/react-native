@@ -3,7 +3,7 @@ module.exports = function() {
     <!DOCTYPE html>
     <html>
     <head>
-    <title>Paper UI Console</title>
+    <title>React Storybook</title>
     </head>
     <body>
     <div id="root" />
