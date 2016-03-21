@@ -34,27 +34,37 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PaperControls = function (_React$Component) {
-  (0, _inherits3.default)(PaperControls, _React$Component);
+var StorybookControls = function (_React$Component) {
+  (0, _inherits3.default)(StorybookControls, _React$Component);
 
-  function PaperControls() {
-    (0, _classCallCheck3.default)(this, PaperControls);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(PaperControls).apply(this, arguments));
+  function StorybookControls() {
+    (0, _classCallCheck3.default)(this, StorybookControls);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(StorybookControls).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(PaperControls, [{
+  (0, _createClass3.default)(StorybookControls, [{
     key: 'render',
     value: function render() {
-      var paperNames = this.getPaperNames();
+      var kindNames = this.getKindNames();
       var mainStyle = {
         fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-        padding: '10px',
-        marginRight: '10px',
+        padding: '20px 10px 10px 10px',
         color: '#444'
       };
 
       var h1Style = {
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        letterSpacing: '1px',
+        fontSize: '17px',
+        fontWeight: 'bolder',
+        color: '#7FA768',
+        border: '1px solid #88BB7F',
+        textAlign: 'center',
+        borderRadius: '2px',
+        padding: '5px',
+        backgroundColor: '#F0FFEA',
+        margin: '0 0 20px 0',
+        cursor: 'default'
       };
 
       return _react2.default.createElement(
@@ -63,45 +73,45 @@ var PaperControls = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { style: h1Style },
-          'Available Papers'
+          'React Storybook'
         ),
         _react2.default.createElement(
           'div',
           null,
-          paperNames.map(this.renderPaper.bind(this))
+          kindNames.map(this.renderKind.bind(this))
         )
       );
     }
   }, {
-    key: 'renderPaper',
-    value: function renderPaper(paper) {
-      var paperStyle = {
+    key: 'renderKind',
+    value: function renderKind(kind) {
+      var kindStyle = {
         fontSize: 16,
         padding: '10px 0px',
         cursor: 'pointer',
         borderBottom: '1px solid #EEE'
       };
 
-      var selectedPaper = this.props.selectedPaper;
+      var selectedKind = this.props.selectedKind;
 
-      if (paper === selectedPaper) {
-        var blockNames = this.getBlocks(selectedPaper);
-        paperStyle.fontWeight = 'bold';
+      if (kind === selectedKind) {
+        var stories = this.getStories(selectedKind);
+        kindStyle.fontWeight = 'bold';
         return _react2.default.createElement(
           'div',
-          { key: paper },
+          { key: kind },
           _react2.default.createElement(
             'div',
             {
-              style: paperStyle,
-              onClick: this.fireOnPaper.bind(this, paper)
+              style: kindStyle,
+              onClick: this.fireOnKind.bind(this, kind)
             },
-            paper
+            kind
           ),
           _react2.default.createElement(
             'div',
             null,
-            blockNames.map(this.renderBlock.bind(this))
+            stories.map(this.renderStory.bind(this))
           )
         );
       }
@@ -109,78 +119,78 @@ var PaperControls = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         {
-          key: paper,
-          style: paperStyle,
-          onClick: this.fireOnPaper.bind(this, paper)
+          key: kind,
+          style: kindStyle,
+          onClick: this.fireOnKind.bind(this, kind)
         },
-        paper
+        kind
       );
     }
   }, {
-    key: 'renderBlock',
-    value: function renderBlock(block) {
-      var selectedBlock = this.props.selectedBlock;
+    key: 'renderStory',
+    value: function renderStory(story) {
+      var selectedStory = this.props.selectedStory;
 
-      var blockStyle = {
+      var storyStyle = {
         fontSize: 14,
         padding: '8px 0px 8px 3px',
         cursor: 'pointer'
       };
 
-      if (block === selectedBlock) {
-        blockStyle.fontWeight = 'bold';
+      if (story === selectedStory) {
+        storyStyle.fontWeight = 'bold';
       }
       return _react2.default.createElement(
         'div',
         {
-          key: block,
-          style: blockStyle,
-          onClick: this.fireOnBlock.bind(this, block)
+          key: story,
+          style: storyStyle,
+          onClick: this.fireOnStory.bind(this, story)
         },
-        block
+        story
       );
     }
   }, {
-    key: 'getPaperNames',
-    value: function getPaperNames() {
+    key: 'getKindNames',
+    value: function getKindNames() {
       var _props = this.props;
-      var papers = _props.papers;
-      var selectedPaper = _props.selectedPaper;
+      var storybook = _props.storybook;
+      var selectedKind = _props.selectedKind;
 
-      if (!papers) {
+      if (!storybook) {
         return [];
       }
 
-      return (0, _keys2.default)(papers).sort(function (name) {
-        return name === selectedPaper ? -1 : 1;
+      return (0, _keys2.default)(storybook).sort(function (name) {
+        return name === selectedKind ? -1 : 1;
       });
     }
   }, {
-    key: 'getBlocks',
-    value: function getBlocks(paperName) {
-      var papers = this.props.papers;
+    key: 'getStories',
+    value: function getStories(kind) {
+      var storybook = this.props.storybook;
 
-      var blocks = papers[paperName];
-      return (0, _keys2.default)(blocks);
+      var stories = storybook[kind];
+      return (0, _keys2.default)(stories);
     }
   }, {
-    key: 'fireOnPaper',
-    value: function fireOnPaper(paper) {
-      var _props$onPaper = this.props.onPaper;
-      var onPaper = _props$onPaper === undefined ? function () {} : _props$onPaper;
+    key: 'fireOnKind',
+    value: function fireOnKind(kind) {
+      var _props$onKind = this.props.onKind;
+      var onKind = _props$onKind === undefined ? function () {} : _props$onKind;
 
-      onPaper(paper);
+      onKind(kind);
     }
   }, {
-    key: 'fireOnBlock',
-    value: function fireOnBlock(block) {
-      var _props$onBlock = this.props.onBlock;
-      var onBlock = _props$onBlock === undefined ? function () {} : _props$onBlock;
+    key: 'fireOnStory',
+    value: function fireOnStory(story) {
+      var _props$onStory = this.props.onStory;
+      var onStory = _props$onStory === undefined ? function () {} : _props$onStory;
 
-      onBlock(block);
+      onStory(story);
     }
   }]);
-  return PaperControls;
+  return StorybookControls;
 }(_react2.default.Component);
 
-exports.default = PaperControls;
+exports.default = StorybookControls;

@@ -7,7 +7,7 @@ module.exports = {
     'stack-source-map/register',
     'webpack-hot-middleware/client',
     path.resolve(__dirname, '../client/init_ui'),
-    './.paper.js'
+    './.storybook.js'
   ],
   output: {
     path: path.join(__dirname, 'dist'),

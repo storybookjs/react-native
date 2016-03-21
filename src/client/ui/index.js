@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
-import PaperControls from './controls';
+import StorybookControls from './controls';
 import Layout from './layout';
 import {setData, getData} from '../data';
-import papers from '../papers';
+import storybook from '../storybook';
 
 const rootEl = document.getElementById('root');
 
@@ -16,12 +16,12 @@ export default function renderUI(data) {
   // default main
   let main = (<p>There is no blocks yet!</p>);
 
-  const paper = papers[data.selectedPaper];
-  if (paper) {
-    const block = papers[data.selectedPaper][data.selectedBlock];
-    if (block) {
+  const stories = storybook[data.selectedKind];
+  if (stories) {
+    const story = storybook[data.selectedKind][data.selectedStory];
+    if (story) {
       try {
-        main = block();
+        main = story();
       } catch(error) {
         return setData({error});
       }
@@ -33,12 +33,12 @@ export default function renderUI(data) {
 
 export function getControls(data) {
   return (
-    <PaperControls
-      papers={papers}
-      selectedPaper={data.selectedPaper}
-      selectedBlock={data.selectedBlock}
-      onPaper={setSelectedPaper}
-      onBlock={setSelectedBlock}/>
+    <StorybookControls
+      storybook={storybook}
+      selectedKind={data.selectedKind}
+      selectedStory={data.selectedStory}
+      onKind={setSelectedKind}
+      onStory={setSelectedStory}/>
   );
 }
 
@@ -82,15 +82,15 @@ export function renderMain(data, main) {
 }
 
 // Event handlers
-function setSelectedPaper(paper) {
+function setSelectedKind(kind) {
   const data = getData();
-  data.selectedPaper = paper;
-  data.selectedBlock = Object.keys(papers[paper])[0];
+  data.selectedKind = kind;
+  data.selectedStory = Object.keys(storybook[kind])[0];
   setData(data);
 }
 
-function setSelectedBlock(block) {
+function setSelectedStory(block) {
   const data = getData();
-  data.selectedBlock = block;
+  data.selectedStory = block;
   setData(data);
 }

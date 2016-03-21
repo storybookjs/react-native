@@ -36,9 +36,9 @@ var _layout2 = _interopRequireDefault(_layout);
 
 var _data = require('../data');
 
-var _papers = require('../papers');
+var _storybook = require('../storybook');
 
-var _papers2 = _interopRequireDefault(_papers);
+var _storybook2 = _interopRequireDefault(_storybook);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -56,12 +56,12 @@ function renderUI(data) {
     'There is no blocks yet!'
   );
 
-  var paper = _papers2.default[data.selectedPaper];
-  if (paper) {
-    var block = _papers2.default[data.selectedPaper][data.selectedBlock];
-    if (block) {
+  var stories = _storybook2.default[data.selectedKind];
+  if (stories) {
+    var story = _storybook2.default[data.selectedKind][data.selectedStory];
+    if (story) {
       try {
-        main = block();
+        main = story();
       } catch (error) {
         return (0, _data.setData)({ error: error });
       }
@@ -73,11 +73,11 @@ function renderUI(data) {
 
 function getControls(data) {
   return _react2.default.createElement(_controls2.default, {
-    papers: _papers2.default,
-    selectedPaper: data.selectedPaper,
-    selectedBlock: data.selectedBlock,
-    onPaper: setSelectedPaper,
-    onBlock: setSelectedBlock });
+    storybook: _storybook2.default,
+    selectedKind: data.selectedKind,
+    selectedStory: data.selectedStory,
+    onKind: setSelectedKind,
+    onStory: setSelectedStory });
 }
 
 function getIframe(data) {
@@ -118,15 +118,15 @@ function renderMain(data, main) {
 }
 
 // Event handlers
-function setSelectedPaper(paper) {
+function setSelectedKind(kind) {
   var data = (0, _data.getData)();
-  data.selectedPaper = paper;
-  data.selectedBlock = (0, _keys2.default)(_papers2.default[paper])[0];
+  data.selectedKind = kind;
+  data.selectedStory = (0, _keys2.default)(_storybook2.default[kind])[0];
   (0, _data.setData)(data);
 }
 
-function setSelectedBlock(block) {
+function setSelectedStory(block) {
   var data = (0, _data.getData)();
-  data.selectedBlock = block;
+  data.selectedStory = block;
   (0, _data.setData)(data);
 }

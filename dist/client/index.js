@@ -9,8 +9,8 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
-exports.paper = paper;
-exports.getPapers = getPapers;
+exports.storiesOf = storiesOf;
+exports.getStories = getStories;
 exports.renderMain = renderMain;
 
 var _ui = require('./ui');
@@ -19,40 +19,40 @@ var _ui2 = _interopRequireDefault(_ui);
 
 var _data = require('./data');
 
-var _papers = require('./papers');
+var _storybook = require('./storybook');
 
-var _papers2 = _interopRequireDefault(_papers);
+var _storybook2 = _interopRequireDefault(_storybook);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function paper(paperName, m) {
-  // XXX: Add a better way to create paper and mutate them.
+function storiesOf(kind, m) {
+  // XXX: Add a better way to create stories and mutate them.
   m.hot.dispose(function () {
-    delete _papers2.default[paperName];
+    delete _storybook2.default[kind];
   });
 
-  _papers2.default[paperName] = {};
-  function block(name, fn) {
-    _papers2.default[paperName][name] = fn;
-    return { block: block };
+  _storybook2.default[kind] = {};
+  function add(storyName, fn) {
+    _storybook2.default[kind][storyName] = fn;
+    return { add: add };
   }
 
-  return { block: block };
+  return { add: add };
 }
 
-function getPapers() {
-  return _papers2.default;
+function getStories() {
+  return _storybook2.default;
 }
 
-function renderMain(papers) {
+function renderMain(stories) {
   var data = (0, _data.getData)();
   data.error = null;
 
-  data.selectedPaper = papers[data.selectedPaper] ? data.selectedPaper : (0, _keys2.default)(papers)[0];
+  data.selectedKind = _storybook2.default[data.selectedKind] ? data.selectedKind : (0, _keys2.default)(_storybook2.default)[0];
 
-  if (data.selectedPaper) {
-    var _paper = papers[data.selectedPaper];
-    data.selectedBlock = _paper[data.selectedBlock] ? data.selectedBlock : (0, _keys2.default)(_paper)[0];
+  if (data.selectedKind) {
+    var _stories = _storybook2.default[data.selectedKind];
+    data.selectedStory = _stories[data.selectedStory] ? data.selectedStory : (0, _keys2.default)(_stories)[0];
   }
 
   (0, _data.setData)(data);
