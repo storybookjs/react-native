@@ -17,7 +17,7 @@ const Area = ({main, error}) => (
         onPaper={loadPaper}
         onBlock={loadBlock}/>
     </div>
-    <div style={{float: 'left'}}>
+    <div style={{marginLeft: '250px'}}>
       {error? <ReadBox error={error}/> : main}
     </div>
   </div>
