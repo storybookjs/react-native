@@ -5,18 +5,28 @@ export default class PaperControls extends React.Component {
     const paperNames = this.getPaperNames();
     const mainStyle = {
       fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-      padding: '10px',
-      marginRight: '10px',
+      padding: '20px 10px 10px 10px',
       color: '#444'
     };
 
     const h1Style = {
       textTransform: 'uppercase',
+      letterSpacing: '1px',
+      fontSize: '17px',
+      fontWeight: 'bolder',
+      color: '#7FA768',
+      border: '1px solid #88BB7F',
+      textAlign: 'center',
+      borderRadius: '2px',
+      padding: '5px',
+      backgroundColor: '#F0FFEA',
+      margin: '0 0 20px 0',
+      cursor: 'default'
     };
 
     return (
       <div style={mainStyle}>
-        <h3 style={h1Style}>Available Papers</h3>
+        <h3 style={h1Style}>React Storybook</h3>
         <div>
           {paperNames.map(this.renderPaper.bind(this))}
         </div>

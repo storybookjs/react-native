@@ -48,13 +48,23 @@ var PaperControls = function (_React$Component) {
       var paperNames = this.getPaperNames();
       var mainStyle = {
         fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-        padding: '10px',
-        marginRight: '10px',
+        padding: '20px 10px 10px 10px',
         color: '#444'
       };
 
       var h1Style = {
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        letterSpacing: '1px',
+        fontSize: '17px',
+        fontWeight: 'bolder',
+        color: '#7FA768',
+        border: '1px solid #88BB7F',
+        textAlign: 'center',
+        borderRadius: '2px',
+        padding: '5px',
+        backgroundColor: '#F0FFEA',
+        margin: '0 0 20px 0',
+        cursor: 'default'
       };
 
       return _react2.default.createElement(
@@ -63,7 +73,7 @@ var PaperControls = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { style: h1Style },
-          'Available Papers'
+          'React Storybook'
         ),
         _react2.default.createElement(
           'div',
