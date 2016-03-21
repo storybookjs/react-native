@@ -11,15 +11,14 @@ export default class StorybookControls extends React.Component {
 
     const h1Style = {
       textTransform: 'uppercase',
-      letterSpacing: '2.5px',
-      fontSize: '14px',
+      letterSpacing: '3.5px',
+      fontSize: '12px',
       fontWeight: 'bolder',
-      color: '#7FA768',
-      border: '1px solid #88BB7F',
+      color: '#828282',
+      border: '1px solid #DDD',
       textAlign: 'center',
       borderRadius: '2px',
       padding: '5px',
-      backgroundColor: '#F0FFEA',
       margin: '0 0 20px 0',
       cursor: 'default'
     };
