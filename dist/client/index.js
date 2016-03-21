@@ -11,6 +11,7 @@ var _keys2 = _interopRequireDefault(_keys);
 
 exports.storiesOf = storiesOf;
 exports.getStories = getStories;
+exports.configure = configure;
 exports.renderMain = renderMain;
 
 var _ui = require('./ui');
@@ -42,6 +43,29 @@ function storiesOf(kind, m) {
 
 function getStories() {
   return _storybook2.default;
+}
+
+function configure(loaders, module) {
+  var render = function render() {
+    function renderApp() {
+      loaders();
+      renderMain(getStories());
+    }
+
+    try {
+      renderApp();
+    } catch (error) {
+      renderError(error);
+    }
+  };
+
+  if (module.hot) {
+    module.hot.accept(function () {
+      setTimeout(render);
+    });
+  }
+
+  render();
 }
 
 function renderMain(stories) {

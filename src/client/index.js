@@ -26,6 +26,29 @@ export function getStories() {
   return storybook;
 }
 
+export function configure(loaders, module) {
+  let render = () => {
+    function renderApp() {
+      loaders();
+      renderMain(getStories());
+    }
+
+    try {
+      renderApp()
+    } catch (error) {
+      renderError(error)
+    }
+  }
+
+  if (module.hot) {
+    module.hot.accept(() => {
+      setTimeout(render)
+    })
+  }
+
+  render()
+}
+
 export function renderMain(stories) {
   const data = getData();
   data.error = null;
