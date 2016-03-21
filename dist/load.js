@@ -65,6 +65,12 @@ var Area = function Area(_ref) {
 };
 
 function renderArea() {
+  if (data.error) {
+    var _area = _react2.default.createElement(Area, { error: data.error });
+    _reactDom2.default.render(_area, rootEl);
+    return;
+  }
+
   var main = _react2.default.createElement(
     'p',
     null,
@@ -74,11 +80,17 @@ function renderArea() {
   if (paper) {
     var block = data.papers[data.selectedPaper][data.selectedBlock];
     if (block) {
-      main = block();
+      try {
+        main = block();
+      } catch (ex) {
+        data.error = ex;
+        renderArea();
+        return;
+      }
     }
   }
 
-  var area = _react2.default.createElement(Area, { main: main, error: data.error });
+  var area = _react2.default.createElement(Area, { main: main });
   _reactDom2.default.render(area, rootEl);
 }
 

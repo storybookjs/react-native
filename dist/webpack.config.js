@@ -5,7 +5,7 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: ['webpack-hot-middleware/client', './paper.js'],
+  entry: ['stack-source-map/register', 'webpack-hot-middleware/client', './.paper.js'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',

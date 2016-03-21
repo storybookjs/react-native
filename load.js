@@ -24,16 +24,28 @@ const Area = ({main, error}) => (
 );
 
 function renderArea() {
+  if (data.error) {
+    const area = <Area error={data.error} />;
+    ReactDOM.render(area, rootEl);
+    return;
+  }
+
   let main = (<p>There is no blocks yet!</p>);
   const paper = data.papers[data.selectedPaper];
   if (paper) {
     const block = data.papers[data.selectedPaper][data.selectedBlock];
     if (block) {
-      main = block();
+      try {
+        main = block();
+      } catch(ex) {
+        data.error = ex;
+        renderArea();
+        return;
+      }
     }
   }
 
-  const area = <Area main={main} error={data.error}/>;
+  const area = <Area main={main} />;
   ReactDOM.render(
     area,
     rootEl
