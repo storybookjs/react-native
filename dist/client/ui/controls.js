@@ -50,9 +50,7 @@ var PaperControls = function (_React$Component) {
         fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
         padding: '10px',
         marginRight: '10px',
-        color: '#444',
-        borderRight: '3px solid #DDD',
-        minHeight: '1500px'
+        color: '#444'
       };
 
       var h1Style = {

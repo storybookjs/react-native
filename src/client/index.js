@@ -5,12 +5,14 @@ import {
   watchData
 } from './data';
 
-const papers = {};
+import papers from './papers';
 
 export function paper(paperName, m) {
+  // XXX: Add a better way to create paper and mutate them.
   m.hot.dispose(() => {
     delete papers[paperName];
   });
+
   papers[paperName] = {};
   function block(name, fn) {
     papers[paperName][name] = fn;
@@ -27,7 +29,6 @@ export function getPapers() {
 export function renderMain(papers) {
   const data = getData();
   data.error = null;
-  data.papers = papers;
 
   data.selectedPaper =
     (papers[data.selectedPaper])? data.selectedPaper : Object.keys(papers)[0];

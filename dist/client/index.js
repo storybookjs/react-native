@@ -19,17 +19,21 @@ var _ui2 = _interopRequireDefault(_ui);
 
 var _data = require('./data');
 
+var _papers = require('./papers');
+
+var _papers2 = _interopRequireDefault(_papers);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var papers = {};
-
 function paper(paperName, m) {
+  // XXX: Add a better way to create paper and mutate them.
   m.hot.dispose(function () {
-    delete papers[paperName];
+    delete _papers2.default[paperName];
   });
-  papers[paperName] = {};
+
+  _papers2.default[paperName] = {};
   function block(name, fn) {
-    papers[paperName][name] = fn;
+    _papers2.default[paperName][name] = fn;
     return { block: block };
   }
 
@@ -37,13 +41,12 @@ function paper(paperName, m) {
 }
 
 function getPapers() {
-  return papers;
+  return _papers2.default;
 }
 
 function renderMain(papers) {
   var data = (0, _data.getData)();
   data.error = null;
-  data.papers = papers;
 
   data.selectedPaper = papers[data.selectedPaper] ? data.selectedPaper : (0, _keys2.default)(papers)[0];
 
