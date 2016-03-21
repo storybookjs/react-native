@@ -1,27 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
-import {PaperControls} from './paper_controls';
+import PaperControls from './ui/controls';
+import Layout from './ui/layout';
 import * as ud from 'ud';
 
 const rootEl = document.getElementById('root');
 const data = ud.defonce(module, () => ({}));
 
-const Area = ({main, error}) => (
-  <div style={{}}>
-    <div style={{width: '250px', float: 'left'}}>
-      <PaperControls
-        papers={data.papers}
-        selectedPaper={data.selectedPaper}
-        selectedBlock={data.selectedBlock}
-        onPaper={loadPaper}
-        onBlock={loadBlock}/>
-    </div>
-    <div style={{float: 'left'}}>
-      {error? <ReadBox error={error}/> : main}
-    </div>
-  </div>
-);
+function Area({main, error}) {
+  const controls = (
+    <PaperControls
+      papers={data.papers}
+      selectedPaper={data.selectedPaper}
+      selectedBlock={data.selectedBlock}
+      onPaper={loadPaper}
+      onBlock={loadBlock}/>
+  );
+
+  const content = error? <ReadBox error={error}/> : main;
+  return (<Layout controls={controls} content={content}/>);
+}
 
 function renderArea() {
   if (data.error) {

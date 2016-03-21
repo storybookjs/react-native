@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.PaperControls = undefined;
 
 var _keys = require('babel-runtime/core-js/object/keys');
 
@@ -35,7 +34,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PaperControls = exports.PaperControls = function (_React$Component) {
+var PaperControls = function (_React$Component) {
   (0, _inherits3.default)(PaperControls, _React$Component);
 
   function PaperControls() {
@@ -185,3 +184,5 @@ var PaperControls = exports.PaperControls = function (_React$Component) {
   }]);
   return PaperControls;
 }(_react2.default.Component);
+
+exports.default = PaperControls;

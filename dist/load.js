@@ -25,7 +25,13 @@ var _redboxReact = require('redbox-react');
 
 var _redboxReact2 = _interopRequireDefault(_redboxReact);
 
-var _paper_controls = require('./paper_controls');
+var _controls = require('./ui/controls');
+
+var _controls2 = _interopRequireDefault(_controls);
+
+var _layout = require('./ui/layout');
+
+var _layout2 = _interopRequireDefault(_layout);
 
 var _ud = require('ud');
 
@@ -40,29 +46,20 @@ var data = ud.defonce(module, function () {
   return {};
 });
 
-var Area = function Area(_ref) {
+function Area(_ref) {
   var main = _ref.main;
   var error = _ref.error;
-  return _react2.default.createElement(
-    'div',
-    { style: {} },
-    _react2.default.createElement(
-      'div',
-      { style: { width: '250px', float: 'left' } },
-      _react2.default.createElement(_paper_controls.PaperControls, {
-        papers: data.papers,
-        selectedPaper: data.selectedPaper,
-        selectedBlock: data.selectedBlock,
-        onPaper: loadPaper,
-        onBlock: loadBlock })
-    ),
-    _react2.default.createElement(
-      'div',
-      { style: { float: 'left' } },
-      error ? _react2.default.createElement(_redboxReact2.default, { error: error }) : main
-    )
-  );
-};
+
+  var controls = _react2.default.createElement(_controls2.default, {
+    papers: data.papers,
+    selectedPaper: data.selectedPaper,
+    selectedBlock: data.selectedBlock,
+    onPaper: loadPaper,
+    onBlock: loadBlock });
+
+  var content = error ? _react2.default.createElement(_redboxReact2.default, { error: error }) : main;
+  return _react2.default.createElement(_layout2.default, { controls: controls, content: content });
+}
 
 function renderArea() {
   if (data.error) {

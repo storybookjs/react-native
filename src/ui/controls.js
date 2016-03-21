@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class PaperControls extends React.Component {
+export default class PaperControls extends React.Component {
   render() {
     const paperNames = this.getPaperNames();
     const mainStyle = {
