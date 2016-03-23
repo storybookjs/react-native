@@ -16,21 +16,29 @@ exports.renderMain = renderMain;
 
 var _data = require('./data');
 
-var _storybook = require('./storybook');
+var _storybook2 = require('./storybook');
 
-var _storybook2 = _interopRequireDefault(_storybook);
+var _storybook3 = _interopRequireDefault(_storybook2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function storiesOf(kind, m) {
   // XXX: Add a better way to create stories and mutate them.
   m.hot.dispose(function () {
-    delete _storybook2.default[kind];
+    delete _storybook3.default[kind];
   });
 
-  _storybook2.default[kind] = {};
+  _storybook3.default[kind] = {};
   function add(storyName, fn) {
-    _storybook2.default[kind][storyName] = fn;
+    _storybook3.default[kind][storyName] = fn;
+
+    var _storybook = {};
+    (0, _keys2.default)(_storybook3.default).forEach(function (kind) {
+      var stories = _storybook3.default[kind];
+      _storybook[kind] = (0, _keys2.default)(stories);
+    });
+
+    (0, _data.setData)({ storybook: _storybook });
     return { add: add };
   }
 
@@ -38,7 +46,7 @@ function storiesOf(kind, m) {
 }
 
 function getStories() {
-  return _storybook2.default;
+  return _storybook3.default;
 }
 
 function configure(loaders, module) {
@@ -68,10 +76,10 @@ function renderMain(stories) {
   var data = (0, _data.getData)();
   data.error = null;
 
-  data.selectedKind = _storybook2.default[data.selectedKind] ? data.selectedKind : (0, _keys2.default)(_storybook2.default)[0];
+  data.selectedKind = _storybook3.default[data.selectedKind] ? data.selectedKind : (0, _keys2.default)(_storybook3.default)[0];
 
   if (data.selectedKind) {
-    var _stories = _storybook2.default[data.selectedKind];
+    var _stories = _storybook3.default[data.selectedKind];
     data.selectedStory = _stories[data.selectedStory] ? data.selectedStory : (0, _keys2.default)(_stories)[0];
   }
 

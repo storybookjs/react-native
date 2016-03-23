@@ -14,6 +14,7 @@ export default function renderPreview(data) {
 }
 
 export function renderError(data, error) {
+  debugger;
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
   const redBox = (<ReadBox error={error}/>);
@@ -21,9 +22,9 @@ export function renderError(data, error) {
 }
 
 export function renderMain(data) {
-  const firstKey = Object.keys(storybook)[0];
-  const firstStory = Object.keys(storybook[firstKey])[0];
-
-  const main = storybook[firstKey][firstStory];
-  ReactDOM.render(main(), rootEl);
+  const {selectedKind, selectedStory} = data;
+  if (selectedKind && selectedStory) {
+    const main = storybook[selectedKind][selectedStory];
+    ReactDOM.render(main(), rootEl);
+  }
 }

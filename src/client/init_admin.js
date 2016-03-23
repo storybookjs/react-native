@@ -1,5 +1,7 @@
 import renderUI from './ui/admin';
-import {watchData} from './data';
+import {watchData, getData} from './data';
 
-renderUI({});
-// watchData(renderUI);
+watchData(data => {
+  renderUI(data);
+});
+renderUI(getData());

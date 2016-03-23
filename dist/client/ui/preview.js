@@ -3,11 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 exports.default = renderPreview;
 exports.renderError = renderError;
 exports.renderMain = renderMain;
@@ -41,6 +36,7 @@ function renderPreview(data) {
 }
 
 function renderError(data, error) {
+  debugger;
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
   var redBox = _react2.default.createElement(_redboxReact2.default, { error: error });
@@ -48,9 +44,11 @@ function renderError(data, error) {
 }
 
 function renderMain(data) {
-  var firstKey = (0, _keys2.default)(_storybook2.default)[0];
-  var firstStory = (0, _keys2.default)(_storybook2.default[firstKey])[0];
+  var selectedKind = data.selectedKind;
+  var selectedStory = data.selectedStory;
 
-  var main = _storybook2.default[firstKey][firstStory];
-  _reactDom2.default.render(main(), rootEl);
+  if (selectedKind && selectedStory) {
+    var main = _storybook2.default[selectedKind][selectedStory];
+    _reactDom2.default.render(main(), rootEl);
+  }
 }

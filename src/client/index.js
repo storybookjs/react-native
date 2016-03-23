@@ -15,6 +15,14 @@ export function storiesOf(kind, m) {
   storybook[kind] = {};
   function add(storyName, fn) {
     storybook[kind][storyName] = fn;
+
+    const _storybook = {};
+    Object.keys(storybook).forEach(kind => {
+      const stories = storybook[kind]
+      _storybook[kind] = Object.keys(stories);
+    });
+
+    setData({storybook: _storybook});
     return {add};
   }
 

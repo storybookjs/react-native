@@ -8,7 +8,4 @@ var _data = require('./data');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-setTimeout(function () {
-  (0, _preview2.default)({});
-}, 2000);
-// watchData(renderUI);
+(0, _data.watchData)(_preview2.default);
