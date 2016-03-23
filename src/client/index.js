@@ -1,4 +1,3 @@
-import renderUI from './ui';
 import {
   setData,
   getData,

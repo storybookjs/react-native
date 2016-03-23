@@ -8,7 +8,7 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
-exports.default = renderUI;
+exports.default = renderAdmin;
 exports.getControls = getControls;
 exports.getIframe = getIframe;
 exports.renderError = renderError;
@@ -36,48 +36,25 @@ var _layout2 = _interopRequireDefault(_layout);
 
 var _data = require('../data');
 
-var _storybook = require('../storybook');
-
-var _storybook2 = _interopRequireDefault(_storybook);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootEl = document.getElementById('root');
 
-function renderUI(data) {
+function renderAdmin(data) {
   if (data.error) {
     return renderError(data, data.error);
   }
 
-  // default main
-  var main = _react2.default.createElement(
-    'p',
-    null,
-    'There is no blocks yet!'
-  );
-
-  var stories = _storybook2.default[data.selectedKind];
-  if (stories) {
-    var story = _storybook2.default[data.selectedKind][data.selectedStory];
-    if (story) {
-      try {
-        main = story();
-      } catch (error) {
-        return (0, _data.setData)({ error: error });
-      }
-    }
-  }
-
-  return renderMain(data, main);
+  return renderMain(data);
 }
 
 function getControls(data) {
   return _react2.default.createElement(_controls2.default, {
-    storybook: _storybook2.default,
+    storybook: data.storybook,
     selectedKind: data.selectedKind,
     selectedStory: data.selectedStory,
-    onKind: setSelectedKind,
-    onStory: setSelectedStory });
+    onKind: setSelectedKind.bind(null, data),
+    onStory: setSelectedStory.bind(null, data) });
 }
 
 function getIframe(data) {
@@ -87,13 +64,12 @@ function getIframe(data) {
     border: '0'
   };
 
-  // We need to send iframe=true and dataId via queryString
+  // We need to send dataId via queryString
   // That's how our data layer can start communicate via the iframe.
-  var queryString = 'iframe=true&dataId=' + data.dataId;
+  var queryString = 'dataId=' + data.dataId;
 
   return _react2.default.createElement('iframe', {
-    style: iframeStyle,
-    src: '/?' + queryString });
+    style: iframeStyle });
 }
 
 function renderError(data, error) {
@@ -105,12 +81,7 @@ function renderError(data, error) {
   _reactDom2.default.render(root, rootEl);
 }
 
-function renderMain(data, main) {
-  // Inside iframe, we simply render the main component.
-  if (data.iframeMode) {
-    return _reactDom2.default.render(main, rootEl);
-  }
-
+function renderMain(data) {
   // Inside the main page, we simply render iframe.
   var controls = getControls(data);
   var root = _react2.default.createElement(_layout2.default, { controls: controls, content: getIframe(data) });
@@ -118,15 +89,13 @@ function renderMain(data, main) {
 }
 
 // Event handlers
-function setSelectedKind(kind) {
-  var data = (0, _data.getData)();
+function setSelectedKind(data, kind) {
   data.selectedKind = kind;
-  data.selectedStory = (0, _keys2.default)(_storybook2.default[kind])[0];
+  data.selectedStory = (0, _keys2.default)(data.storybook[kind])[0];
   (0, _data.setData)(data);
 }
 
-function setSelectedStory(block) {
-  var data = (0, _data.getData)();
+function setSelectedStory(data, block) {
   data.selectedStory = block;
   (0, _data.setData)(data);
 }

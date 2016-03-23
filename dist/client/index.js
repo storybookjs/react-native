@@ -14,10 +14,6 @@ exports.getStories = getStories;
 exports.configure = configure;
 exports.renderMain = renderMain;
 
-var _ui = require('./ui');
-
-var _ui2 = _interopRequireDefault(_ui);
-
 var _data = require('./data');
 
 var _storybook = require('./storybook');
