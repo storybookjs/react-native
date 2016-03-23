@@ -8,10 +8,10 @@ import {setData} from '../data';
 const rootEl = document.getElementById('root');
 
 export default function renderAdmin(data) {
-  if (data.error) {
-    return renderError(data, data.error);
-  }
-
+  // if (data.error) {
+  //   return renderError(data, data.error);
+  // }
+  //
   return renderMain(data);
 }
 
@@ -39,7 +39,8 @@ export function getIframe(data) {
 
   return (
     <iframe
-      style={iframeStyle}/>
+      style={iframeStyle}
+      src={`/iframe?${queryString}`}/>
   );
 }
 

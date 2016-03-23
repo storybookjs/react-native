@@ -9,10 +9,10 @@ var config = {
       'stack-source-map/register',
       path.resolve(__dirname, '../client/init_admin')
     ],
-    live: [
+    preview: [
       'stack-source-map/register',
       'webpack-hot-middleware/client',
-      // path.resolve(__dirname, '../client/init_preview')
+      path.resolve(__dirname, '../client/init_preview')
     ],
   },
   output: {
@@ -44,7 +44,7 @@ if (!fs.existsSync(storybookConfigPath)) {
   console.error('=> Create a storybook config file in ".storybook/config.js".\n');
   process.exit(0);
 }
-config.entry.live.push(storybookConfigPath);
+config.entry.preview.push(storybookConfigPath);
 
 // load custom webpack configurations
 var customConfigPath = path.resolve(configDir, 'webpack.config.js');

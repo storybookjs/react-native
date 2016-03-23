@@ -41,10 +41,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var rootEl = document.getElementById('root');
 
 function renderAdmin(data) {
-  if (data.error) {
-    return renderError(data, data.error);
-  }
-
+  // if (data.error) {
+  //   return renderError(data, data.error);
+  // }
+  //
   return renderMain(data);
 }
 
@@ -69,7 +69,8 @@ function getIframe(data) {
   var queryString = 'dataId=' + data.dataId;
 
   return _react2.default.createElement('iframe', {
-    style: iframeStyle });
+    style: iframeStyle,
+    src: '/iframe?' + queryString });
 }
 
 function renderError(data, error) {
