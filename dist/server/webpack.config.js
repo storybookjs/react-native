@@ -2,10 +2,11 @@
 
 var path = require('path');
 var webpack = require('webpack');
+var fs = require('fs');
 
-module.exports = {
+var config = {
   devtool: 'cheap-module-eval-source-map',
-  entry: ['stack-source-map/register', 'webpack-hot-middleware/client', path.resolve(__dirname, '../client/init_ui'), './.storybook.js'],
+  entry: ['stack-source-map/register', 'webpack-hot-middleware/client', path.resolve(__dirname, '../client/init_ui')],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -22,3 +23,29 @@ module.exports = {
     }]
   }
 };
+
+// add config path to the entry
+var configDir = path.resolve('./.storybook');
+var storybookConfigPath = path.resolve(configDir, 'config.js');
+if (!fs.existsSync(storybookConfigPath)) {
+  console.error('=> Create a storybook config file in ".storybook/config.js".\n');
+  process.exit(0);
+}
+config.entry.push(storybookConfigPath);
+
+// load custom webpack configurations
+var customConfigPath = path.resolve(configDir, 'webpack.config.js');
+if (fs.existsSync(customConfigPath)) {
+  var customConfig = require(customConfigPath);
+  if (customConfig.module.loaders) {
+    console.log("=> Loading custom webpack loaders.");
+    config.module.loaders = config.module.loaders.concat(customConfig.module.loaders);
+  }
+
+  if (customConfig.plugins) {
+    console.log(" => Loading custom webpack plugins.");
+    config.plugins = config.plugins.concat(customConfig.plugins);
+  }
+}
+
+module.exports = config;
