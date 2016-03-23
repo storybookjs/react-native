@@ -11,7 +11,6 @@ var _keys2 = _interopRequireDefault(_keys);
 exports.default = renderAdmin;
 exports.getControls = getControls;
 exports.getIframe = getIframe;
-exports.renderError = renderError;
 exports.renderMain = renderMain;
 
 var _react = require('react');
@@ -41,10 +40,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var rootEl = document.getElementById('root');
 
 function renderAdmin(data) {
-  // if (data.error) {
-  //   return renderError(data, data.error);
-  // }
-  //
   return renderMain(data);
 }
 
@@ -71,15 +66,6 @@ function getIframe(data) {
   return _react2.default.createElement('iframe', {
     style: iframeStyle,
     src: '/iframe?' + queryString });
-}
-
-function renderError(data, error) {
-  // We always need to render redbox in the mainPage if we get an error.
-  // Since this is an error, this affects to the main page as well.
-  var redBox = _react2.default.createElement(_redboxReact2.default, { error: error });
-  var controls = getControls(data);
-  var root = _react2.default.createElement(_layout2.default, { controls: controls, content: redBox });
-  _reactDom2.default.render(root, rootEl);
 }
 
 function renderMain(data) {

@@ -74,7 +74,8 @@ export function renderMain(stories) {
 
 export const renderError = (e) => {
   const data = getData();
-  data.error = e;
+  const {stack, message} = e;
+  data.error = {stack, message};
 
   setData(data);
 };

@@ -88,7 +88,10 @@ function renderMain(stories) {
 
 var renderError = exports.renderError = function renderError(e) {
   var data = (0, _data.getData)();
-  data.error = e;
+  var stack = e.stack;
+  var message = e.message;
+
+  data.error = { stack: stack, message: message };
 
   (0, _data.setData)(data);
 };

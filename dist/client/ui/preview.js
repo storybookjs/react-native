@@ -36,10 +36,11 @@ function renderPreview(data) {
 }
 
 function renderError(data, error) {
-  debugger;
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
-  var redBox = _react2.default.createElement(_redboxReact2.default, { error: error });
+  var realError = new Error(error.message);
+  realError.stack = error.stack;
+  var redBox = _react2.default.createElement(_redboxReact2.default, { error: realError });
   _reactDom2.default.render(redBox, rootEl);
 }
 

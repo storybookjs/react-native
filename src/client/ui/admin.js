@@ -8,10 +8,6 @@ import {setData} from '../data';
 const rootEl = document.getElementById('root');
 
 export default function renderAdmin(data) {
-  // if (data.error) {
-  //   return renderError(data, data.error);
-  // }
-  //
   return renderMain(data);
 }
 
@@ -42,15 +38,6 @@ export function getIframe(data) {
       style={iframeStyle}
       src={`/iframe?${queryString}`}/>
   );
-}
-
-export function renderError(data, error) {
-  // We always need to render redbox in the mainPage if we get an error.
-  // Since this is an error, this affects to the main page as well.
-  const redBox = (<ReadBox error={error}/>);
-  const controls = getControls(data);
-  const root = (<Layout controls={controls} content={redBox} />);
-  ReactDOM.render(root, rootEl);
 }
 
 export function renderMain(data) {
