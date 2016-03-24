@@ -169,8 +169,7 @@ var StorybookControls = function (_React$Component) {
     value: function getStories(kind) {
       var storybook = this.props.storybook;
 
-      var stories = storybook[kind];
-      return (0, _keys2.default)(stories);
+      return storybook[kind];
     }
   }, {
     key: 'fireOnKind',

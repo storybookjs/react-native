@@ -96,8 +96,7 @@ export default class StorybookControls extends React.Component {
 
   getStories(kind) {
     const {storybook} = this.props;
-    const stories = storybook[kind];
-    return Object.keys(stories);
+    return storybook[kind];
   }
 
   fireOnKind(kind) {

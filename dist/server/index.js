@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 
+process.env.NODE_ENV = 'production';
+
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var getIndexHtml = require('./index.html');
+var getIframeHtml = require('./iframe.html');
 var config = require('./webpack.config');
 
 var app = new (require('express'))();
@@ -16,6 +19,10 @@ app.use(webpackHotMiddleware(compiler));
 
 app.get("/", function (req, res) {
   res.send(getIndexHtml());
+});
+
+app.get("/iframe", function (req, res) {
+  res.send(getIframeHtml());
 });
 
 app.listen(port, function (error) {

@@ -1,4 +1,3 @@
-import renderUI from './ui';
 import {
   setData,
   getData,
@@ -16,6 +15,14 @@ export function storiesOf(kind, m) {
   storybook[kind] = {};
   function add(storyName, fn) {
     storybook[kind][storyName] = fn;
+
+    const _storybook = {};
+    Object.keys(storybook).forEach(kind => {
+      const stories = storybook[kind]
+      _storybook[kind] = Object.keys(stories);
+    });
+
+    setData({storybook: _storybook});
     return {add};
   }
 
@@ -67,7 +74,8 @@ export function renderMain(stories) {
 
 export const renderError = (e) => {
   const data = getData();
-  data.error = e;
+  const {stack, message} = e;
+  data.error = {stack, message};
 
   setData(data);
 };
