@@ -90,10 +90,11 @@ function getRequestKey() {
 }
 
 bus.on(getDataKey(), function (dataString) {
-  var data = JSON.parse(dataString);
+  var d = JSON.parse(dataString);
+  data = (0, _extends3.default)({}, d, { iframeMode: iframeMode });
+
   handlers.forEach(function (handler) {
-    var newData = (0, _extends3.default)({}, data, { iframeMode: iframeMode });
-    handler(newData);
+    handler(getData());
   });
 });
 

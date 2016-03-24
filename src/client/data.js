@@ -14,7 +14,7 @@ const iframeMode = Boolean(parsedQs.dataId);
 //  create queryString param when creating the iframe.
 //  If we are in the iframe, we'll get it from the queryString.
 const dataId = iframeMode? parsedQs.dataId : window.dataId;
-const data = {iframeMode, dataId};
+let data = {iframeMode, dataId};
 
 const handlers = [];
 const bus = createPageBus();
@@ -56,10 +56,11 @@ export function getRequestKey() {
 }
 
 bus.on(getDataKey(), function(dataString) {
-  const data = JSON.parse(dataString);
+  const d = JSON.parse(dataString);
+  data = {...d, iframeMode};
+
   handlers.forEach(handler => {
-    const newData = {...data, iframeMode};
-    handler(newData);
+    handler(getData());
   });
 });
 
