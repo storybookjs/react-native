@@ -8,9 +8,14 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 exports.default = renderAdmin;
 exports.getControls = getControls;
 exports.getIframe = getIframe;
+exports.getActionLogger = getActionLogger;
 exports.renderMain = renderMain;
 
 var _react = require('react');
@@ -28,6 +33,10 @@ var _redboxReact2 = _interopRequireDefault(_redboxReact);
 var _controls = require('./controls');
 
 var _controls2 = _interopRequireDefault(_controls);
+
+var _action_logger = require('./action_logger');
+
+var _action_logger2 = _interopRequireDefault(_action_logger);
 
 var _layout = require('./layout');
 
@@ -68,10 +77,28 @@ function getIframe(data) {
     src: '/iframe?' + queryString });
 }
 
+function getActionLogger(data) {
+  var _data$actions = data.actions;
+  var actions = _data$actions === undefined ? [] : _data$actions;
+
+  var log = actions.map(function (action) {
+    return (0, _stringify2.default)(action, null, 2);
+  }).join('\n\n');
+
+  return _react2.default.createElement(_action_logger2.default, { actionLog: log });
+}
+
 function renderMain(data) {
   // Inside the main page, we simply render iframe.
   var controls = getControls(data);
-  var root = _react2.default.createElement(_layout2.default, { controls: controls, content: getIframe(data) });
+  var iframe = getIframe(data);
+  var actionLogger = getActionLogger(data);
+
+  var root = _react2.default.createElement(_layout2.default, {
+    controls: controls,
+    preview: iframe,
+    actionLogger: actionLogger });
+
   _reactDom2.default.render(root, rootEl);
 }
 

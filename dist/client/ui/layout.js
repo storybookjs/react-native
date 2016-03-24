@@ -43,28 +43,35 @@ var Layout = function (_React$Component) {
     value: function render() {
       var _props = this.props;
       var controls = _props.controls;
-      var content = _props.content;
+      var preview = _props.preview;
+      var actionLogger = _props.actionLogger;
       var height = this.state.height;
 
 
       var rootStyles = {
         height: height,
-        padding: '8px',
+        padding: 8,
         backgroundColor: '#F7F7F7'
       };
       var controlsStyle = {
-        width: '240px',
+        width: 240,
         float: 'left',
         height: '100%',
         overflowY: 'auto'
       };
-      var contentStyle = {
-        height: height - 15,
-        marginLeft: '250px',
+
+      var actionStyle = {
+        height: 150,
+        marginLeft: 250
+      };
+
+      var previewStyle = {
+        height: height - actionStyle.height - 25,
+        marginLeft: 250,
         border: '1px solid #DDD',
-        borderRadius: '4px',
+        borderRadius: 4,
         boxShadow: '0px 2px 6px -1px #b8b8b8',
-        padding: '5px',
+        padding: 5,
         backgroundColor: '#FFF'
       };
 
@@ -78,8 +85,13 @@ var Layout = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { style: contentStyle },
-          content
+          { style: previewStyle },
+          preview
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: actionStyle },
+          actionLogger
         )
       );
     }

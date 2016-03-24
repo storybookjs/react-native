@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
 import StorybookControls from './controls';
+import ActionLogger from './action_logger';
 import Layout from './layout';
 import {setData} from '../data';
 
@@ -40,10 +41,28 @@ export function getIframe(data) {
   );
 }
 
+export function getActionLogger(data) {
+  const {actions = []} = data;
+  const log = actions
+    .map(action => JSON.stringify(action, null, 2))
+    .join('\n\n');
+
+  return (<ActionLogger actionLog={log} />);
+}
+
 export function renderMain(data) {
   // Inside the main page, we simply render iframe.
   const controls = getControls(data);
-  const root = (<Layout controls={controls} content={getIframe(data)}/>);
+  const iframe = getIframe(data);
+  const actionLogger = getActionLogger(data);
+
+  const root = (
+    <Layout
+      controls={controls}
+      preview={iframe}
+      actionLogger={actionLogger}/>
+  );
+
   ReactDOM.render(root, rootEl);
 }
 
