@@ -113,7 +113,7 @@ var Layout = function (_React$Component) {
       var body = _document.body;
 
       var height = documentElement.clientHeight || body.clientHeight;
-      height -= 15;
+      height -= 20;
       this.setState({ height: height });
     }
   }]);

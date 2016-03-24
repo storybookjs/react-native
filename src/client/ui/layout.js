@@ -58,7 +58,7 @@ class Layout extends React.Component {
   updateHeight() {
     const {documentElement, body} = document;
     let height = documentElement.clientHeight|| body.clientHeight;
-    height -= 15;
+    height -= 20;
     this.setState({height});
   }
 }
