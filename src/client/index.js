@@ -32,7 +32,7 @@ export function storiesOf(kind, m) {
 export function action(name) {
   return function(...args) {
     let {actions = []} = getData();
-    actions = [{name, args}].concat(actions);
+    actions = [{name, args}].concat(actions.slice(0, 5));
     setData({actions});
   }
 }

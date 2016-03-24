@@ -1,5 +1,6 @@
 import createPageBus from 'page-bus';
 import UUID from 'uuid';
+import stringify from 'json-stringify-safe';
 import QS from 'query-string';
 
 const parsedQs = QS.parse(window.location.search);
@@ -31,7 +32,7 @@ export function setData(fields) {
   // That's why we are setting the __lastUpdated value here.
   const __lastUpdated = Date.now();
   const newData = {...data, __lastUpdated};
-  bus.emit(getDataKey(), JSON.stringify(newData));
+  bus.emit(getDataKey(), stringify(newData));
   handlers.forEach(handler => handler(getData()));
 };
 

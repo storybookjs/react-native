@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -29,6 +25,10 @@ var _pageBus2 = _interopRequireDefault(_pageBus);
 var _uuid = require('uuid');
 
 var _uuid2 = _interopRequireDefault(_uuid);
+
+var _jsonStringifySafe = require('json-stringify-safe');
+
+var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
 
 var _queryString = require('query-string');
 
@@ -63,7 +63,7 @@ function setData(fields) {
   // That's why we are setting the __lastUpdated value here.
   var __lastUpdated = Date.now();
   var newData = (0, _extends3.default)({}, data, { __lastUpdated: __lastUpdated });
-  bus.emit(getDataKey(), (0, _stringify2.default)(newData));
+  bus.emit(getDataKey(), (0, _jsonStringifySafe2.default)(newData));
   handlers.forEach(function (handler) {
     return handler(getData());
   });

@@ -3,11 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
 exports.default = renderAdmin;
 exports.getControls = getControls;
 exports.getIframe = getIframe;
@@ -25,6 +20,10 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 var _redboxReact = require('redbox-react');
 
 var _redboxReact2 = _interopRequireDefault(_redboxReact);
+
+var _jsonStringifySafe = require('json-stringify-safe');
+
+var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
 
 var _controls = require('./controls');
 
@@ -78,7 +77,7 @@ function getActionLogger(data) {
   var actions = _data$actions === undefined ? [] : _data$actions;
 
   var log = actions.map(function (action) {
-    return (0, _stringify2.default)(action, null, 2);
+    return (0, _jsonStringifySafe2.default)(action, null, 2);
   }).join('\n\n');
 
   return _react2.default.createElement(_action_logger2.default, { actionLog: log });

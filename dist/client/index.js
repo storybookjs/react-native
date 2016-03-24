@@ -57,7 +57,7 @@ function action(name) {
     var _getData$actions = _getData.actions;
     var actions = _getData$actions === undefined ? [] : _getData$actions;
 
-    actions = [{ name: name, args: args }].concat(actions);
+    actions = [{ name: name, args: args }].concat(actions.slice(0, 5));
     (0, _data.setData)({ actions: actions });
   };
 }

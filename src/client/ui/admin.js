@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
+import stringify from 'json-stringify-safe';
 import StorybookControls from './controls';
 import ActionLogger from './action_logger';
 import Layout from './layout';
@@ -44,7 +45,7 @@ export function getIframe(data) {
 export function getActionLogger(data) {
   const {actions = []} = data;
   const log = actions
-    .map(action => JSON.stringify(action, null, 2))
+    .map(action => stringify(action, null, 2))
     .join('\n\n');
 
   return (<ActionLogger actionLog={log} />);
