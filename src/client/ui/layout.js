@@ -2,27 +2,33 @@ import React from 'react';
 
 class Layout extends React.Component {
   render() {
-    const {controls, content} = this.props;
+    const {controls, preview, actionLogger} = this.props;
     const {height} = this.state;
 
     const rootStyles = {
       height,
-      padding: '8px',
+      padding: 8,
       backgroundColor: '#F7F7F7'
     };
     const controlsStyle = {
-      width: '240px',
+      width: 240,
       float: 'left',
       height: '100%',
       overflowY: 'auto'
     };
-    const contentStyle = {
-      height: height - 15,
-      marginLeft: '250px',
+
+    const actionStyle = {
+      height: 150,
+      marginLeft: 250
+    };
+
+    const previewStyle = {
+      height: height - actionStyle.height - 25,
+      marginLeft: 250,
       border: '1px solid #DDD',
-      borderRadius: '4px',
+      borderRadius: 4,
       boxShadow: '0px 2px 6px -1px #b8b8b8',
-      padding: '5px',
+      padding: 5,
       backgroundColor: '#FFF'
     };
 
@@ -31,8 +37,11 @@ class Layout extends React.Component {
         <div style={controlsStyle}>
           {controls}
         </div>
-        <div style={contentStyle}>
-          {content}
+        <div style={previewStyle}>
+          {preview}
+        </div>
+        <div style={actionStyle}>
+          {actionLogger}
         </div>
       </div>
     );

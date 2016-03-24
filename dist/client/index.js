@@ -10,6 +10,7 @@ var _keys = require('babel-runtime/core-js/object/keys');
 var _keys2 = _interopRequireDefault(_keys);
 
 exports.storiesOf = storiesOf;
+exports.action = action;
 exports.getStories = getStories;
 exports.configure = configure;
 exports.renderMain = renderMain;
@@ -43,6 +44,22 @@ function storiesOf(kind, m) {
   }
 
   return { add: add };
+}
+
+function action(name) {
+  return function () {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var _getData = (0, _data.getData)();
+
+    var _getData$actions = _getData.actions;
+    var actions = _getData$actions === undefined ? [] : _getData$actions;
+
+    actions = [{ name: name, args: args }].concat(actions);
+    (0, _data.setData)({ actions: actions });
+  };
 }
 
 function getStories() {

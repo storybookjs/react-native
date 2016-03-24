@@ -29,6 +29,14 @@ export function storiesOf(kind, m) {
   return {add};
 }
 
+export function action(name) {
+  return function(...args) {
+    let {actions = []} = getData();
+    actions = [{name, args}].concat(actions);
+    setData({actions});
+  }
+}
+
 export function getStories() {
   return storybook;
 }

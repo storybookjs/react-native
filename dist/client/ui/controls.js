@@ -58,7 +58,7 @@ var StorybookControls = function (_React$Component) {
         fontSize: '12px',
         fontWeight: 'bolder',
         color: '#828282',
-        border: '1px solid #DDD',
+        border: '1px solid #C1C1C1',
         textAlign: 'center',
         borderRadius: '2px',
         padding: '5px',
