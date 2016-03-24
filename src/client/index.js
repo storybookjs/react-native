@@ -15,14 +15,6 @@ export function storiesOf(kind, m) {
   storybook[kind] = {};
   function add(storyName, fn) {
     storybook[kind][storyName] = fn;
-
-    const _storybook = {};
-    Object.keys(storybook).forEach(kind => {
-      const stories = storybook[kind]
-      _storybook[kind] = Object.keys(stories);
-    });
-
-    setData({storybook: _storybook});
     return {add};
   }
 
@@ -37,15 +29,11 @@ export function action(name) {
   }
 }
 
-export function getStories() {
-  return storybook;
-}
-
 export function configure(loaders, module) {
   let render = () => {
     function renderApp() {
       loaders();
-      renderMain(getStories());
+      renderMain();
     }
 
     try {
@@ -64,17 +52,21 @@ export function configure(loaders, module) {
   render()
 }
 
-export function renderMain(stories) {
+export function renderMain() {
   const data = getData();
   data.error = null;
+  data.__updatedAt = Date.now();
+  data.storybook = getStorybookData();
 
-  data.selectedKind =
-    (storybook[data.selectedKind])? data.selectedKind : Object.keys(storybook)[0];
+  if (!data.selectedKind || !storybook[data.selectedKind]) {
+    data.selectedKind = Object.keys(storybook)[0];
+  }
 
-  if (data.selectedKind) {
-    const stories = storybook[data.selectedKind];
-    data.selectedStory =
-      (stories[data.selectedStory])? data.selectedStory : Object.keys(stories)[0];
+  const stories = storybook[data.selectedKind];
+  if (stories) {
+    if (!data.selectedStory || !stories[data.selectedStory]) {
+      data.selectedStory  = Object.keys(stories)[0];
+    }
   }
 
   setData(data);
@@ -87,3 +79,13 @@ export const renderError = (e) => {
 
   setData(data);
 };
+
+export function getStorybookData() {
+  const _storybook = {};
+  Object.keys(storybook).forEach(kind => {
+    const stories = storybook[kind]
+    _storybook[kind] = Object.keys(stories);
+  });
+
+  return _storybook;
+}

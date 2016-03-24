@@ -11,9 +11,9 @@ var _keys2 = _interopRequireDefault(_keys);
 
 exports.storiesOf = storiesOf;
 exports.action = action;
-exports.getStories = getStories;
 exports.configure = configure;
 exports.renderMain = renderMain;
+exports.getStorybookData = getStorybookData;
 
 var _data = require('./data');
 
@@ -32,14 +32,6 @@ function storiesOf(kind, m) {
   _storybook3.default[kind] = {};
   function add(storyName, fn) {
     _storybook3.default[kind][storyName] = fn;
-
-    var _storybook = {};
-    (0, _keys2.default)(_storybook3.default).forEach(function (kind) {
-      var stories = _storybook3.default[kind];
-      _storybook[kind] = (0, _keys2.default)(stories);
-    });
-
-    (0, _data.setData)({ storybook: _storybook });
     return { add: add };
   }
 
@@ -62,15 +54,11 @@ function action(name) {
   };
 }
 
-function getStories() {
-  return _storybook3.default;
-}
-
 function configure(loaders, module) {
   var render = function render() {
     function renderApp() {
       loaders();
-      renderMain(getStories());
+      renderMain();
     }
 
     try {
@@ -89,15 +77,21 @@ function configure(loaders, module) {
   render();
 }
 
-function renderMain(stories) {
+function renderMain() {
   var data = (0, _data.getData)();
   data.error = null;
+  data.__updatedAt = Date.now();
+  data.storybook = getStorybookData();
 
-  data.selectedKind = _storybook3.default[data.selectedKind] ? data.selectedKind : (0, _keys2.default)(_storybook3.default)[0];
+  if (!data.selectedKind || !_storybook3.default[data.selectedKind]) {
+    data.selectedKind = (0, _keys2.default)(_storybook3.default)[0];
+  }
 
-  if (data.selectedKind) {
-    var _stories = _storybook3.default[data.selectedKind];
-    data.selectedStory = _stories[data.selectedStory] ? data.selectedStory : (0, _keys2.default)(_stories)[0];
+  var stories = _storybook3.default[data.selectedKind];
+  if (stories) {
+    if (!data.selectedStory || !stories[data.selectedStory]) {
+      data.selectedStory = (0, _keys2.default)(stories)[0];
+    }
   }
 
   (0, _data.setData)(data);
@@ -112,3 +106,13 @@ var renderError = exports.renderError = function renderError(e) {
 
   (0, _data.setData)(data);
 };
+
+function getStorybookData() {
+  var _storybook = {};
+  (0, _keys2.default)(_storybook3.default).forEach(function (kind) {
+    var stories = _storybook3.default[kind];
+    _storybook[kind] = (0, _keys2.default)(stories);
+  });
+
+  return _storybook;
+}

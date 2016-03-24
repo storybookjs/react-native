@@ -23,9 +23,19 @@ export function renderError(data, error) {
 }
 
 export function renderMain(data) {
+  const NoPreview = () => (<p>No Preview Available!</p>);
+  const noPreview = (<NoPreview />);
   const {selectedKind, selectedStory} = data;
-  if (selectedKind && selectedStory) {
-    const main = storybook[selectedKind][selectedStory];
-    ReactDOM.render(main(), rootEl);
+
+  const stories = storybook[selectedKind];
+  if (!stories) {
+    return ReactDOM.render(noPreview, rootEl);
   }
+
+  const story = stories[selectedStory]
+  if (!story) {
+    return ReactDOM.render(noPreview, rootEl);
+  }
+
+  ReactDOM.render(story(), rootEl);
 }

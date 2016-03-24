@@ -45,11 +45,27 @@ function renderError(data, error) {
 }
 
 function renderMain(data) {
+  var NoPreview = function NoPreview() {
+    return _react2.default.createElement(
+      'p',
+      null,
+      'No Preview Available!'
+    );
+  };
+  var noPreview = _react2.default.createElement(NoPreview, null);
   var selectedKind = data.selectedKind;
   var selectedStory = data.selectedStory;
 
-  if (selectedKind && selectedStory) {
-    var main = _storybook2.default[selectedKind][selectedStory];
-    _reactDom2.default.render(main(), rootEl);
+
+  var stories = _storybook2.default[selectedKind];
+  if (!stories) {
+    return _reactDom2.default.render(noPreview, rootEl);
   }
+
+  var story = stories[selectedStory];
+  if (!story) {
+    return _reactDom2.default.render(noPreview, rootEl);
+  }
+
+  _reactDom2.default.render(story(), rootEl);
 }
