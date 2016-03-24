@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
+process.env.NODE_ENV = 'production';
+
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
