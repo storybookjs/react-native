@@ -1,6 +1,6 @@
 {
   "name": "react-storybook",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
   "repository": {
     "type": "git",
