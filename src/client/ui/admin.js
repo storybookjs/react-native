@@ -69,7 +69,7 @@ export function renderMain(data) {
 // Event handlers
 function setSelectedKind(data, kind) {
   data.selectedKind = kind;
-  data.selectedStory = Object.keys(data.storybook[kind])[0];
+  data.selectedStory = data.storybook[kind][0];
   setData(data);
 }
 

@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
@@ -105,7 +101,7 @@ function renderMain(data) {
 // Event handlers
 function setSelectedKind(data, kind) {
   data.selectedKind = kind;
-  data.selectedStory = (0, _keys2.default)(data.storybook[kind])[0];
+  data.selectedStory = data.storybook[kind][0];
   (0, _data.setData)(data);
 }
 
