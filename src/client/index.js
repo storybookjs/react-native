@@ -24,6 +24,16 @@ export function storiesOf(kind, m) {
 export function action(name) {
   return function(...args) {
     let {actions = []} = getData();
+
+    // Remove events from the args. Otherwise, it creates a huge JSON string.
+    if (
+      args[0] &&
+      args[0].constructor &&
+      /Synthetic/.test(args[0].constructor.name)
+    ) {
+      args[0] = `[${args[0].constructor.name}]`;
+    }
+
     actions = [{name, args}].concat(actions.slice(0, 5));
     setData({actions});
   }

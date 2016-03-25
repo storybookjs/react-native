@@ -49,6 +49,12 @@ function action(name) {
     var _getData$actions = _getData.actions;
     var actions = _getData$actions === undefined ? [] : _getData$actions;
 
+    // Remove events from the args. Otherwise, it creates a huge JSON string.
+
+    if (args[0] && args[0].constructor && /Synthetic/.test(args[0].constructor.name)) {
+      args[0] = '[' + args[0].constructor.name + ']';
+    }
+
     actions = [{ name: name, args: args }].concat(actions.slice(0, 5));
     (0, _data.setData)({ actions: actions });
   };
