@@ -21,7 +21,7 @@ export function addStory(kind, name, fn) {
 export function getStoryKinds() {
   return Object.keys(storybook)
     .map(key => storybook[key])
-    .sort((info1, info2) => (info2.index - info1.index))
+    .sort((info1, info2) => (info1.index - info2.index))
     .map(info => info.kind);
 }
 
@@ -32,17 +32,17 @@ export function getStories(kind) {
 
   return Object.keys(storybook[kind].stories)
     .map(name => storybook[kind].stories[name])
-    .sort((info1, info2) => (info2.index - info1.index))
+    .sort((info1, info2) => (info1.index - info2.index))
     .map(info => info.name);
 }
 
-export function getStorty(kind, name) {
+export function getStory(kind, name) {
   const storiesKind = storybook[kind];
   if (!storiesKind) {
     return null;
   }
 
-  const storyInfo = storiesKind[name];
+  const storyInfo = storiesKind.stories[name];
   if (!storyInfo) {
     return null;
   }

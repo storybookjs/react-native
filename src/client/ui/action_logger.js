@@ -18,7 +18,7 @@ const preStyle = {
   border: '1px solid #EAEAEA',
 };
 
-const ActionLogger = ({actionLog}) => (
+const ActionLogger = ({ actionLog }) => (
   <div>
     <h3 style={h3Style}>ACTION LOGGER</h3>
     <pre style={preStyle}>{actionLog}</pre>
