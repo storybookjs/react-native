@@ -1,7 +1,6 @@
 import {
   setData,
   getData,
-  watchData
 } from './data';
 
 import storybook from './storybook';
@@ -15,51 +14,39 @@ export function storiesOf(kind, m) {
   storybook[kind] = {};
   function add(storyName, fn) {
     storybook[kind][storyName] = fn;
-    return {add};
+    return { add };
   }
 
-  return {add};
+  return { add };
 }
 
 export function action(name) {
-  return function(...args) {
-    let {actions = []} = getData();
+  return function (...args) {
+    const newArgs = { ...args };
+    let { actions = [] } = getData();
 
     // Remove events from the args. Otherwise, it creates a huge JSON string.
     if (
-      args[0] &&
-      args[0].constructor &&
-      /Synthetic/.test(args[0].constructor.name)
+      newArgs[0] &&
+      newArgs[0].constructor &&
+      /Synthetic/.test(newArgs[0].constructor.name)
     ) {
-      args[0] = `[${args[0].constructor.name}]`;
+      newArgs[0] = `[${newArgs[0].constructor.name}]`;
     }
 
-    actions = [{name, args}].concat(actions.slice(0, 5));
-    setData({actions});
-  }
+    actions = [{ name, newArgs }].concat(actions.slice(0, 5));
+    setData({ actions });
+  };
 }
 
-export function configure(loaders, module) {
-  let render = () => {
-    function renderApp() {
-      loaders();
-      renderMain();
-    }
+export function getStorybookData() {
+  const _storybook = {};
+  Object.keys(storybook).forEach(kind => {
+    const stories = storybook[kind];
+    _storybook[kind] = Object.keys(stories);
+  });
 
-    try {
-      renderApp()
-    } catch (error) {
-      renderError(error)
-    }
-  }
-
-  if (module.hot) {
-    module.hot.accept(() => {
-      setTimeout(render)
-    })
-  }
-
-  render()
+  return _storybook;
 }
 
 export function renderMain() {
@@ -75,27 +62,40 @@ export function renderMain() {
   const stories = storybook[data.selectedKind];
   if (stories) {
     if (!data.selectedStory || !stories[data.selectedStory]) {
-      data.selectedStory  = Object.keys(stories)[0];
+      data.selectedStory = Object.keys(stories)[0];
     }
   }
 
   setData(data);
-};
+}
 
 export const renderError = (e) => {
   const data = getData();
-  const {stack, message} = e;
-  data.error = {stack, message};
+  const { stack, message } = e;
+  data.error = { stack, message };
 
   setData(data);
 };
 
-export function getStorybookData() {
-  const _storybook = {};
-  Object.keys(storybook).forEach(kind => {
-    const stories = storybook[kind]
-    _storybook[kind] = Object.keys(stories);
-  });
+export function configure(loaders, module) {
+  const render = () => {
+    function renderApp() {
+      loaders();
+      renderMain();
+    }
 
-  return _storybook;
+    try {
+      renderApp();
+    } catch (error) {
+      renderError(error);
+    }
+  };
+
+  if (module.hot) {
+    module.hot.accept(() => {
+      setTimeout(render);
+    });
+  }
+
+  render();
 }

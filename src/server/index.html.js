@@ -1,6 +1,6 @@
 import UUID from 'uuid';
 
-module.exports = function() {
+module.exports = function () {
   return `
     <!DOCTYPE html>
     <html>

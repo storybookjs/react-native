@@ -8,7 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "prepublish": ". ./scripts/prepublish.sh"
+    "prepublish": ". ./scripts/prepublish.sh",
+    "lint": "eslint src/client"
   },
   "dependencies": {
     "babel-core": "^6.3.15",
@@ -36,7 +37,12 @@
   },
   "devDependencies": {
     "babel-cli": "^6.3.14",
-    "babel-plugin-transform-runtime": "^6.3.14"
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-transform-runtime": "^6.3.14",
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-react": "^4.2.3"
   },
   "main": "dist/client/index.js",
   "bin": {
