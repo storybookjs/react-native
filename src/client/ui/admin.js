@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReadBox from 'redbox-react';
 import stringify from 'json-stringify-safe';
 import StorybookControls from './controls';
 import ActionLogger from './action_logger';
 import Layout from './layout';
-import {setData} from '../data';
+import { setData } from '../data';
 
 const rootEl = document.getElementById('root');
 
-export default function renderAdmin(data) {
-  return renderMain(data);
+// Event handlers
+function setSelectedKind(data, kind) {
+  const newData = { ...data };
+  const stories = newData.storybook
+    .find(item => item.kind === kind).stories;
+
+  newData.selectedKind = kind;
+  newData.selectedStory = stories[0];
+  setData(newData);
+}
+
+function setSelectedStory(data, block) {
+  const newData = { ...data };
+  newData.selectedStory = block;
+  setData(newData);
 }
 
 export function getControls(data) {
@@ -20,7 +32,8 @@ export function getControls(data) {
       selectedKind={data.selectedKind}
       selectedStory={data.selectedStory}
       onKind={setSelectedKind.bind(null, data)}
-      onStory={setSelectedStory.bind(null, data)}/>
+      onStory={setSelectedStory.bind(null, data)}
+    />
   );
 }
 
@@ -28,7 +41,7 @@ export function getIframe(data) {
   const iframeStyle = {
     width: '100%',
     height: '100%',
-    border: '0'
+    border: '0',
   };
 
   // We need to send dataId via queryString
@@ -38,12 +51,13 @@ export function getIframe(data) {
   return (
     <iframe
       style={iframeStyle}
-      src={`/iframe?${queryString}`}/>
+      src={`/iframe?${queryString}`}
+    />
   );
 }
 
 export function getActionLogger(data) {
-  const {actions = []} = data;
+  const { actions = [] } = data;
   const log = actions
     .map(action => stringify(action, null, 2))
     .join('\n\n');
@@ -61,20 +75,13 @@ export function renderMain(data) {
     <Layout
       controls={controls}
       preview={iframe}
-      actionLogger={actionLogger}/>
+      actionLogger={actionLogger}
+    />
   );
 
   ReactDOM.render(root, rootEl);
 }
 
-// Event handlers
-function setSelectedKind(data, kind) {
-  data.selectedKind = kind;
-  data.selectedStory = data.storybook[kind][0];
-  setData(data);
-}
-
-function setSelectedStory(data, block) {
-  data.selectedStory = block;
-  setData(data);
+export default function renderAdmin(data) {
+  return renderMain(data);
 }

@@ -1,5 +1,4 @@
 import createPageBus from 'page-bus';
-import UUID from 'uuid';
 import stringify from 'json-stringify-safe';
 import QS from 'query-string';
 
@@ -14,39 +13,11 @@ const iframeMode = Boolean(parsedQs.dataId);
 //  We create a new UUID if this is main page. Then, this is used by UI to
 //  create queryString param when creating the iframe.
 //  If we are in the iframe, we'll get it from the queryString.
-const dataId = iframeMode? parsedQs.dataId : window.dataId;
-let data = {iframeMode, dataId};
+const dataId = iframeMode ? parsedQs.dataId : window.dataId;
+let data = { iframeMode, dataId };
 
 const handlers = [];
 const bus = createPageBus();
-
-export function setData(fields) {
-  Object
-    .keys(fields)
-    .forEach(key => {
-      data[key] = fields[key]
-    });
-
-  // In page-bus, we must send non-identical data.
-  // Otherwise, it'll cache and won't trigger.
-  // That's why we are setting the __lastUpdated value here.
-  const __lastUpdated = Date.now();
-  const newData = {...data, __lastUpdated};
-  bus.emit(getDataKey(), stringify(newData));
-  handlers.forEach(handler => handler(getData()));
-};
-
-export function watchData(fn) {
-  handlers.push(fn);
-  return () => {
-    const index = handlers.indexOf(fn);
-    handlers.splice(index, 1);
-  }
-}
-
-export function getData() {
-  return {...data};
-}
 
 export function getDataKey() {
   return `data-${data.dataId}`;
@@ -56,9 +27,37 @@ export function getRequestKey() {
   return `data-request-${data.dataId}`;
 }
 
-bus.on(getDataKey(), function(dataString) {
+export function getData() {
+  return { ...data };
+}
+
+export function setData(fields) {
+  Object
+    .keys(fields)
+    .forEach(key => {
+      data[key] = fields[key];
+    });
+
+  // In page-bus, we must send non-identical data.
+  // Otherwise, it'll cache and won't trigger.
+  // That's why we are setting the __lastUpdated value here.
+  const __lastUpdated = Date.now();
+  const newData = { ...data, __lastUpdated };
+  bus.emit(getDataKey(), stringify(newData));
+  handlers.forEach(handler => handler(getData()));
+}
+
+export function watchData(fn) {
+  handlers.push(fn);
+  return () => {
+    const index = handlers.indexOf(fn);
+    handlers.splice(index, 1);
+  };
+}
+
+bus.on(getDataKey(), function (dataString) {
   const d = JSON.parse(dataString);
-  data = {...d, iframeMode};
+  data = { ...d, iframeMode };
 
   handlers.forEach(handler => {
     handler(getData());

@@ -1,4 +1,4 @@
 import renderUI from './ui/preview';
-import {watchData} from './data';
+import { watchData } from './data';
 
 watchData(renderUI);
