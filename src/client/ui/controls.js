@@ -121,9 +121,9 @@ export default class StorybookControls extends React.Component {
 }
 
 StorybookControls.propTypes = {
-  storybook: React.PropTypes.object.isRequired,
-  selectedKind: React.PropTypes.string.isRequired,
-  selectedStory: React.PropTypes.string.isRequired,
-  onKind: React.PropTypes.func.isRequired,
-  onStory: React.PropTypes.func.isRequired,
+  storybook: React.PropTypes.object,
+  selectedKind: React.PropTypes.string,
+  selectedStory: React.PropTypes.string,
+  onKind: React.PropTypes.func,
+  onStory: React.PropTypes.func,
 };

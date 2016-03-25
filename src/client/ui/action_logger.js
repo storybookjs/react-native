@@ -26,7 +26,7 @@ const ActionLogger = ({actionLog}) => (
 );
 
 ActionLogger.propTypes = {
-  actionLog: React.PropTypes.element.isRequired,
+  actionLog: React.PropTypes.string.isRequired,
 };
 
 export default ActionLogger;
