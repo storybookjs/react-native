@@ -11,8 +11,11 @@ const rootEl = document.getElementById('root');
 // Event handlers
 function setSelectedKind(data, kind) {
   const newData = { ...data };
+  const stories = newData.storybook
+    .find(item => item.kind === kind).stories;
+
   newData.selectedKind = kind;
-  newData.selectedStory = newData.storybook[kind][0];
+  newData.selectedStory = stories[0];
   setData(newData);
 }
 

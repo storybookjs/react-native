@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';
-import storybook from '../storybook';
+import {
+  getStory,
+} from '../storybook';
 
 const rootEl = document.getElementById('root');
 
@@ -19,12 +21,7 @@ export function renderMain(data) {
   const noPreview = (<NoPreview />);
   const { selectedKind, selectedStory } = data;
 
-  const stories = storybook[selectedKind];
-  if (!stories) {
-    return ReactDOM.render(noPreview, rootEl);
-  }
-
-  const story = stories[selectedStory];
+  const story = getStory(selectedKind, selectedStory);
   if (!story) {
     return ReactDOM.render(noPreview, rootEl);
   }

@@ -3,17 +3,23 @@ import {
   getData,
 } from './data';
 
-import storybook from './storybook';
+import {
+  removeStoryKind,
+  addStory,
+  dumpStoryBook,
+  hasStoryKind,
+  hasStory,
+  getStoryKinds,
+  getStories,
+} from './storybook';
 
 export function storiesOf(kind, m) {
-  // XXX: Add a better way to create stories and mutate them.
   m.hot.dispose(() => {
-    delete storybook[kind];
+    removeStoryKind(kind);
   });
 
-  storybook[kind] = {};
   function add(storyName, fn) {
-    storybook[kind][storyName] = fn;
+    addStory(kind, storyName, fn);
     return { add };
   }
 
@@ -39,30 +45,22 @@ export function action(name) {
   };
 }
 
-export function getStorybookData() {
-  const _storybook = {};
-  Object.keys(storybook).forEach(kind => {
-    const stories = storybook[kind];
-    _storybook[kind] = Object.keys(stories);
-  });
-
-  return _storybook;
-}
-
 export function renderMain() {
   const data = getData();
   data.error = null;
   data.__updatedAt = Date.now();
-  data.storybook = getStorybookData();
+  data.storybook = dumpStoryBook();
 
-  if (!data.selectedKind || !storybook[data.selectedKind]) {
-    data.selectedKind = Object.keys(storybook)[0];
+  if (!data.selectedKind || !hasStoryKind(data.selectedKind)) {
+    data.selectedKind = getStoryKinds()[0];
   }
 
-  const stories = storybook[data.selectedKind];
-  if (stories) {
-    if (!data.selectedStory || !stories[data.selectedStory]) {
-      data.selectedStory = Object.keys(stories)[0];
+  if (hasStoryKind(data.selectedKind)) {
+    if (
+        !data.selectedStory ||
+        !hasStory(data.selectedKind, data.selectedStory)
+    ) {
+      data.selectedStory = getStories(data.selectedKind, data.selectedStory)[0];
     }
   }
 

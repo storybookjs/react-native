@@ -7,14 +7,24 @@ export default class StorybookControls extends React.Component {
       return [];
     }
 
-    return Object
-      .keys(storybook)
-      .sort(name => { return name === selectedKind ? -1 : 1; });
+    const kinds = storybook.map(({ kind }) => kind);
+    const selectedKindIndex = kinds.indexOf(selectedKind);
+
+    // add the selected kind to the top of the list
+    kinds.splice(selectedKindIndex, 1);
+    kinds.unshift(selectedKind);
+
+    return kinds;
   }
 
   getStories(kind) {
     const { storybook } = this.props;
-    return storybook[kind];
+    const storiesInfo = storybook.find(item => item.kind === kind);
+
+    if (!storiesInfo) {
+      return [];
+    }
+    return storiesInfo.stories;
   }
 
   fireOnKind(kind) {
@@ -121,7 +131,7 @@ export default class StorybookControls extends React.Component {
 }
 
 StorybookControls.propTypes = {
-  storybook: React.PropTypes.object,
+  storybook: React.PropTypes.array,
   selectedKind: React.PropTypes.string,
   selectedStory: React.PropTypes.string,
   onKind: React.PropTypes.func,

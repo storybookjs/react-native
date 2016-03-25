@@ -50,7 +50,19 @@ export function getStory(kind, name) {
   return storyInfo.fn;
 }
 
-export function dump() {
+export function removeStoryKind(kind) {
+  delete storybook[kind];
+}
+
+export function hasStoryKind(kind) {
+  return Boolean(storybook[kind]);
+}
+
+export function hasStory(kind, name) {
+  return Boolean(getStory(kind, name));
+}
+
+export function dumpStoryBook() {
   const data = getStoryKinds()
     .map(kind => ({ kind, stories: getStories(kind) }));
 

@@ -7,7 +7,10 @@ import {
   clean,
   getStoryKinds,
   getStories,
-  dump,
+  removeStoryKind,
+  dumpStoryBook,
+  hasStoryKind,
+  hasStory,
 } from '../storybook';
 
 describe('client.storybook', () => {
@@ -100,7 +103,58 @@ describe('client.storybook', () => {
     });
   });
 
-  describe('dump', () => {
+  describe('removeStoryKind', () => {
+    it('should remove the given kind', () => {
+      const kind = UUID.v4();
+      function story() {}
+      addStory(kind, 'name', story);
+      expect(getStory(kind, 'name')).to.be.equal(story);
+
+      removeStoryKind(kind);
+
+      expect(getStory(kind, 'name')).to.be.equal(null);
+    });
+  });
+
+  describe('hasStoryKind', () => {
+    it('should return true if there is a kind', () => {
+      const kind = UUID.v4();
+      function story() {}
+      addStory(kind, 'name', story);
+
+      expect(hasStoryKind(kind)).to.be.equal(true);
+    });
+
+    it('should return false if there is no kind', () => {
+      const kind = UUID.v4();
+      expect(hasStoryKind(kind)).to.be.equal(false);
+    });
+  });
+
+  describe('hasStory', () => {
+    it('should return true if there is a story', () => {
+      const kind = UUID.v4();
+      function story() {}
+      addStory(kind, 'name', story);
+
+      expect(hasStory(kind, 'name')).to.be.equal(true);
+    });
+
+    it('should return false if there is no kind', () => {
+      const kind = UUID.v4();
+      expect(hasStoryKind(kind, 'name')).to.be.equal(false);
+    });
+
+    it('should return false if there is no story', () => {
+      const kind = UUID.v4();
+      function story() {}
+      addStory(kind, 'name', story);
+
+      expect(hasStory(kind, 'name2')).to.be.equal(false);
+    });
+  });
+
+  describe('dumpStoryBook', () => {
     it('should dump all story kinds and stories properly', () => {
       const kind1 = UUID.v4();
       const kind2 = UUID.v4();
@@ -111,7 +165,7 @@ describe('client.storybook', () => {
       addStory(kind2, 'name10', story);
       addStory(kind2, 'name20', story);
 
-      expect(dump()).to.be.deep.equal([
+      expect(dumpStoryBook()).to.be.deep.equal([
         { kind: kind1, stories: ['name1', 'name2'] },
         { kind: kind2, stories: ['name10', 'name20'] },
       ]);
