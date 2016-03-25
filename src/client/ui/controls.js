@@ -41,7 +41,7 @@ export default class StorybookControls extends React.Component {
     const { selectedStory } = this.props;
     const storyStyle = {
       fontSize: 14,
-      padding: '8px 0px 8px 3px',
+      padding: '8px 0px 8px 10px',
       cursor: 'pointer',
     };
 
