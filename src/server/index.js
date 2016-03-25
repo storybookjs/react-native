@@ -2,18 +2,25 @@
 
 process.env.NODE_ENV = 'production';
 
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var getIndexHtml = require('./index.html');
-var getIframeHtml = require('./iframe.html');
-var config = require('./webpack.config');
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import getIndexHtml from './index.html';
+import getIframeHtml from './iframe.html';
+import config from './webpack.config';
+import express from 'express';
 
-var app = new (require('express'))();
-var port = process.argv[2] ? parseInt(process.argv[2]) : 4000;
+const logger = console;
 
-var compiler = webpack(config);
-app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+const app = express();
+const port = process.argv[2] ? parseInt(process.argv[2], 10) : 4000;
+
+const compiler = webpack(config);
+const devMiddlewareOptions = {
+  noInfo: true,
+  publicPath: config.output.publicPath,
+};
+app.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
 app.use(webpackHotMiddleware(compiler));
 
 app.get('/', function (req, res) {
@@ -26,8 +33,8 @@ app.get('/iframe', function (req, res) {
 
 app.listen(port, function (error) {
   if (error) {
-    console.error(error);
+    throw error;
   } else {
-    console.info('React Storybook started on => http://localhost:%s/ \n', port);
+    logger.info(`React Storybook started on => http://localhost:${port}/ \n`);
   }
 });

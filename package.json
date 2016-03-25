@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "prepublish": ". ./scripts/prepublish.sh",
-    "lint": "eslint src/client"
+    "lint": "eslint src"
   },
   "dependencies": {
     "babel-core": "^6.3.15",

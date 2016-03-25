@@ -18,15 +18,15 @@ const preStyle = {
   border: '1px solid #EAEAEA',
 };
 
-const ActionLogger = () => (
+const ActionLogger = ({actionLog}) => (
   <div>
     <h3 style={h3Style}>ACTION LOGGER</h3>
-    <pre style={preStyle}>{this.props.actionLog}</pre>
+    <pre style={preStyle}>{actionLog}</pre>
   </div>
 );
 
 ActionLogger.propTypes = {
-  actionLog: React.PropTypes.required.element,
+  actionLog: React.PropTypes.element.isRequired,
 };
 
 export default ActionLogger;

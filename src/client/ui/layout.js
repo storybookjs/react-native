@@ -64,9 +64,9 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  controls: React.PropTypes.required.element,
-  preview: React.PropTypes.required.element,
-  actionLogger: React.PropTypes.required.element,
+  controls: React.PropTypes.element.isRequired,
+  preview: React.PropTypes.element.isRequired,
+  actionLogger: React.PropTypes.element.isRequired,
 };
 
 export default Layout;
