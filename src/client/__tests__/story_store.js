@@ -5,7 +5,7 @@ import UUID from 'uuid';
 import StoryStore from '../story_store';
 const storyStore = new StoryStore();
 
-describe('client.storyStore', () => {
+describe('client.StoryStore', () => {
   beforeEach(() => storyStore.clean());
 
   describe('addStory', () => {
