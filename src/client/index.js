@@ -1,8 +1,8 @@
-import Data from './data';
+import SyncedStore from './synced_store';
 import Storybook from './storybook';
 
 const storybook = new Storybook();
-const syncedStore = new Data(window);
+const syncedStore = new SyncedStore(window);
 
 export function getStorybook() {
   return storybook;

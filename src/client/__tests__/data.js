@@ -2,7 +2,7 @@ const { describe, it } = global;
 import UUID from 'uuid';
 import sinon from 'sinon';
 import { expect } from 'chai';
-import SyncedStore from '../data';
+import SyncedStore from '../synced_store';
 
 const currentDataId = UUID.v4();
 const window = {
