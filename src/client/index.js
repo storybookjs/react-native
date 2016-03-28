@@ -1,8 +1,11 @@
 import SyncedStore from './synced_store';
 import StoryStore from './story_store';
+import ClientApi from './client_api';
 
 const storyStore = new StoryStore();
 const syncedStore = new SyncedStore(window);
+const clientApi = new ClientApi({ storyStore, syncedStore });
+syncedStore.init();
 
 export function getStoryStore() {
   return storyStore;
@@ -12,37 +15,8 @@ export function getSyncedStore() {
   return syncedStore;
 }
 
-export function storiesOf(kind, m) {
-  m.hot.dispose(() => {
-    storyStore.removeStoryKind(kind);
-  });
-
-  function add(storyName, fn) {
-    storyStore.addStory(kind, storyName, fn);
-    return { add };
-  }
-
-  return { add };
-}
-
-export function action(name) {
-  return function (...args) {
-    const newArgs = { ...args };
-    let { actions = [] } = syncedStore.getData();
-
-    // Remove events from the args. Otherwise, it creates a huge JSON string.
-    if (
-      newArgs[0] &&
-      newArgs[0].constructor &&
-      /Synthetic/.test(newArgs[0].constructor.name)
-    ) {
-      newArgs[0] = `[${newArgs[0].constructor.name}]`;
-    }
-
-    actions = [{ name, newArgs }].concat(actions.slice(0, 5));
-    syncedStore.setData({ actions });
-  };
-}
+export const storiesOf = clientApi.storiesOf.bind(clientApi);
+export const action = clientApi.action.bind(clientApi);
 
 export function renderMain() {
   const data = syncedStore.getData();
@@ -93,5 +67,3 @@ export function configure(loaders, module) {
 
   render();
 }
-
-syncedStore.init();
