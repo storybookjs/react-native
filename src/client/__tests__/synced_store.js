@@ -20,7 +20,7 @@ function getSyncedData(dataId) {
   return syncedData;
 }
 
-describe('data', () => {
+describe('client.SyncedStore', () => {
   describe('normal mode', () => {
     it('should set the `iframeMode` as false', () => {
       const syncedData = getSyncedData();
