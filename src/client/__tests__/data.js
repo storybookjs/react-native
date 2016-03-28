@@ -2,11 +2,17 @@ const { describe, it } = global;
 import UUID from 'uuid';
 import sinon from 'sinon';
 import { expect } from 'chai';
-import { setWindow } from './_utils';
+import SyncedStore from '../data';
 
 const currentDataId = UUID.v4();
-setWindow(`?dataId=${currentDataId}`);
-const dataModule = require('../data');
+const window = {
+  location: {
+    search: `?dataId=${currentDataId}`,
+  },
+  addEventListener() {},
+};
+const dataModule = new SyncedStore(window);
+dataModule._bus = {};
 
 describe('data', () => {
   // TODO: We can't find a way to reset the module cache.
@@ -39,15 +45,15 @@ describe('data', () => {
     it('should add the handler to handlers', () => {
       const fn = () => {};
       dataModule.watchData(fn);
-      const fnStored = dataModule.handlers.pop();
+      const fnStored = dataModule._handlers.pop();
       expect(fnStored).to.be.equal(fn);
     });
 
     it('should remove the handler when the return function called', () => {
       const stop = dataModule.watchData(() => {});
-      const countStart = dataModule.handlers.length;
+      const countStart = dataModule._handlers.length;
       stop();
-      const countEnd = dataModule.handlers.length;
+      const countEnd = dataModule._handlers.length;
       expect(countStart - countEnd).to.be.equal(1);
     });
   });
@@ -55,28 +61,28 @@ describe('data', () => {
   describe('setData', () => {
     it('should emit data to the pageBus', () => {
       const kkr = UUID.v4();
-      const originalEmit = dataModule.bus.emit;
-      dataModule.bus.emit = sinon.stub();
+      const originalEmit = dataModule._bus.emit;
+      dataModule._bus.emit = sinon.stub();
       dataModule.setData({ kkr });
       const data = dataModule.getData();
 
-      const sentString = dataModule.bus.emit.args[0][1];
+      const sentString = dataModule._bus.emit.args[0][1];
       const sentJSON = JSON.parse(sentString);
       expect(sentJSON).to.deep.equal(data);
-      dataModule.bus.emit = originalEmit;
+      dataModule._bus.emit = originalEmit;
     });
 
     it('should update existing data', () => {
       const kkr = UUID.v4();
-      const originalEmit = dataModule.bus.emit;
-      dataModule.bus.emit = sinon.stub();
+      const originalEmit = dataModule._bus.emit;
+      dataModule._bus.emit = sinon.stub();
 
       const previousKKR = dataModule.getData().kkr;
       dataModule.setData({ kkr });
       const data = dataModule.getData();
 
       expect(data.kkr).not.to.be.equal(previousKKR);
-      dataModule.bus.emit = originalEmit;
+      dataModule._bus.emit = originalEmit;
     });
 
     it('should run all handlers with the data', (done) => {
@@ -87,16 +93,16 @@ describe('data', () => {
         done();
       });
 
-      const originalEmit = dataModule.bus.emit;
-      dataModule.bus.emit = sinon.stub();
+      const originalEmit = dataModule._bus.emit;
+      dataModule._bus.emit = sinon.stub();
       dataModule.setData({ kkr });
-      dataModule.bus.emit = originalEmit;
+      dataModule._bus.emit = originalEmit;
     });
 
     it('should add a property with __lastUpdated with Date.now()', () => {
       const now = UUID.v4();
-      const originalEmit = dataModule.bus.emit;
-      dataModule.bus.emit = sinon.stub();
+      const originalEmit = dataModule._bus.emit;
+      dataModule._bus.emit = sinon.stub();
       const originalNow = Date.now;
       Date.now = () => (now);
 
@@ -105,7 +111,7 @@ describe('data', () => {
 
       expect(data.__lastUpdated).to.be.equal(now);
       Date.now = originalNow;
-      dataModule.bus.emit = originalEmit;
+      dataModule._bus.emit = originalEmit;
     });
   });
 
@@ -113,7 +119,7 @@ describe('data', () => {
     it('should set received data as the new data', () => {
       const previousData = dataModule.getData();
       const newData = { kkr: UUID.v4() };
-      dataModule.onData(JSON.stringify(newData));
+      dataModule._onData(JSON.stringify(newData));
 
       const updatedData = dataModule.getData();
       delete updatedData.iframeMode;
@@ -131,7 +137,7 @@ describe('data', () => {
         done();
       });
 
-      dataModule.onData(JSON.stringify(newData));
+      dataModule._onData(JSON.stringify(newData));
     });
 
     it('should set the local iframeMode to data', () => {
@@ -141,7 +147,7 @@ describe('data', () => {
       };
 
       const oldIframeMode = dataModule.getData().iframeMode;
-      dataModule.onData(JSON.stringify(newData));
+      dataModule._onData(JSON.stringify(newData));
 
       const newIframeMode = dataModule.getData().iframeMode;
 

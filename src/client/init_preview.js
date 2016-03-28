@@ -1,4 +1,4 @@
 import renderUI from './ui/preview';
-import { watchData } from './data';
+import { getSyncedStore } from './';
 
-watchData(renderUI);
+getSyncedStore().watchData(renderUI);

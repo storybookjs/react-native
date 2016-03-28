@@ -4,9 +4,10 @@ import stringify from 'json-stringify-safe';
 import StorybookControls from './controls';
 import ActionLogger from './action_logger';
 import Layout from './layout';
-import { setData } from '../data';
+import { getSyncedStore } from '../';
 
 const rootEl = document.getElementById('root');
+const syncedStore = getSyncedStore();
 
 // Event handlers
 function setSelectedKind(data, kind) {
@@ -16,13 +17,13 @@ function setSelectedKind(data, kind) {
 
   newData.selectedKind = kind;
   newData.selectedStory = stories[0];
-  setData(newData);
+  syncedStore.setData(newData);
 }
 
 function setSelectedStory(data, block) {
   const newData = { ...data };
   newData.selectedStory = block;
-  setData(newData);
+  syncedStore.setData(newData);
 }
 
 export function getControls(data) {

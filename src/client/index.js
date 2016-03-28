@@ -1,13 +1,15 @@
-import {
-  setData,
-  getData,
-} from './data';
+import Data from './data';
 import Storybook from './storybook';
 
 const storybook = new Storybook();
+const syncedStore = new Data(window);
 
 export function getStorybook() {
   return storybook;
+}
+
+export function getSyncedStore() {
+  return syncedStore;
 }
 
 export function storiesOf(kind, m) {
@@ -26,7 +28,7 @@ export function storiesOf(kind, m) {
 export function action(name) {
   return function (...args) {
     const newArgs = { ...args };
-    let { actions = [] } = getData();
+    let { actions = [] } = syncedStore.getData();
 
     // Remove events from the args. Otherwise, it creates a huge JSON string.
     if (
@@ -38,12 +40,12 @@ export function action(name) {
     }
 
     actions = [{ name, newArgs }].concat(actions.slice(0, 5));
-    setData({ actions });
+    syncedStore.setData({ actions });
   };
 }
 
 export function renderMain() {
-  const data = getData();
+  const data = syncedStore.getData();
   data.error = null;
   data.__updatedAt = Date.now();
   data.storybook = storybook.dumpStoryBook();
@@ -58,15 +60,15 @@ export function renderMain() {
     }
   }
 
-  setData(data);
+  syncedStore.setData(data);
 }
 
 export const renderError = (e) => {
-  const data = getData();
+  const data = syncedStore.getData();
   const { stack, message } = e;
   data.error = { stack, message };
 
-  setData(data);
+  syncedStore.setData(data);
 };
 
 export function configure(loaders, module) {
@@ -91,3 +93,5 @@ export function configure(loaders, module) {
 
   render();
 }
+
+syncedStore.init();

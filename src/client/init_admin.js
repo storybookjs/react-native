@@ -1,7 +1,9 @@
 import renderUI from './ui/admin';
-import { watchData, getData } from './data';
+import { getSyncedStore } from './';
 
-watchData(data => {
+const syncedStore = getSyncedStore();
+
+syncedStore.watchData(data => {
   renderUI(data);
 });
-renderUI(getData());
+renderUI(syncedStore.getData());
