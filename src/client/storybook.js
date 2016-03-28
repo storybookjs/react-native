@@ -1,74 +1,77 @@
-const storybook = {};
 let cnt = 0;
+export default class Storybook {
+  constructor() {
+    this._data = {};
+  }
 
-export default storybook;
-export function addStory(kind, name, fn) {
-  if (!storybook[kind]) {
-    storybook[kind] = {
-      kind,
+  addStory(kind, name, fn) {
+    if (!this._data[kind]) {
+      this._data[kind] = {
+        kind,
+        index: cnt++,
+        stories: {},
+      };
+    }
+
+    this._data[kind].stories[name] = {
+      name,
       index: cnt++,
-      stories: {},
+      fn,
     };
   }
 
-  storybook[kind].stories[name] = {
-    name,
-    index: cnt++,
-    fn,
-  };
-}
-
-export function getStoryKinds() {
-  return Object.keys(storybook)
-    .map(key => storybook[key])
-    .sort((info1, info2) => (info1.index - info2.index))
-    .map(info => info.kind);
-}
-
-export function getStories(kind) {
-  if (!storybook[kind]) {
-    return [];
+  getStoryKinds() {
+    return Object.keys(this._data)
+      .map(key => this._data[key])
+      .sort((info1, info2) => (info1.index - info2.index))
+      .map(info => info.kind);
   }
 
-  return Object.keys(storybook[kind].stories)
-    .map(name => storybook[kind].stories[name])
-    .sort((info1, info2) => (info1.index - info2.index))
-    .map(info => info.name);
-}
+  getStories(kind) {
+    if (!this._data[kind]) {
+      return [];
+    }
 
-export function getStory(kind, name) {
-  const storiesKind = storybook[kind];
-  if (!storiesKind) {
-    return null;
+    return Object.keys(this._data[kind].stories)
+      .map(name => this._data[kind].stories[name])
+      .sort((info1, info2) => (info1.index - info2.index))
+      .map(info => info.name);
   }
 
-  const storyInfo = storiesKind.stories[name];
-  if (!storyInfo) {
-    return null;
+  getStory(kind, name) {
+    const storiesKind = this._data[kind];
+    if (!storiesKind) {
+      return null;
+    }
+
+    const storyInfo = storiesKind.stories[name];
+    if (!storyInfo) {
+      return null;
+    }
+
+    return storyInfo.fn;
   }
 
-  return storyInfo.fn;
-}
+  removeStoryKind(kind) {
+    delete this._data[kind];
+  }
 
-export function removeStoryKind(kind) {
-  delete storybook[kind];
-}
+  hasStoryKind(kind) {
+    return Boolean(this._data[kind]);
+  }
 
-export function hasStoryKind(kind) {
-  return Boolean(storybook[kind]);
-}
+  hasStory(kind, name) {
+    return Boolean(this.getStory(kind, name));
+  }
 
-export function hasStory(kind, name) {
-  return Boolean(getStory(kind, name));
-}
+  dumpStoryBook() {
+    const data = this.getStoryKinds()
+      .map(kind => ({ kind, stories: this.getStories(kind) }));
 
-export function dumpStoryBook() {
-  const data = getStoryKinds()
-    .map(kind => ({ kind, stories: getStories(kind) }));
+    return data;
+  }
 
-  return data;
-}
-
-export function clean() {
-  getStoryKinds().forEach(kind => delete storybook[kind]);
+  clean() {
+    this.getStoryKinds().forEach(kind => delete this._data[kind]);
+  }
 }

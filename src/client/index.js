@@ -2,24 +2,21 @@ import {
   setData,
   getData,
 } from './data';
+import Storybook from './storybook';
 
-import {
-  removeStoryKind,
-  addStory,
-  dumpStoryBook,
-  hasStoryKind,
-  hasStory,
-  getStoryKinds,
-  getStories,
-} from './storybook';
+const storybook = new Storybook();
+
+export function getStorybook() {
+  return storybook;
+}
 
 export function storiesOf(kind, m) {
   m.hot.dispose(() => {
-    removeStoryKind(kind);
+    storybook.removeStoryKind(kind);
   });
 
   function add(storyName, fn) {
-    addStory(kind, storyName, fn);
+    storybook.addStory(kind, storyName, fn);
     return { add };
   }
 
@@ -49,18 +46,15 @@ export function renderMain() {
   const data = getData();
   data.error = null;
   data.__updatedAt = Date.now();
-  data.storybook = dumpStoryBook();
+  data.storybook = storybook.dumpStoryBook();
 
-  if (!data.selectedKind || !hasStoryKind(data.selectedKind)) {
-    data.selectedKind = getStoryKinds()[0];
+  if (!storybook.hasStoryKind(data.selectedKind)) {
+    data.selectedKind = storybook.getStoryKinds()[0];
   }
 
-  if (hasStoryKind(data.selectedKind)) {
-    if (
-        !data.selectedStory ||
-        !hasStory(data.selectedKind, data.selectedStory)
-    ) {
-      data.selectedStory = getStories(data.selectedKind, data.selectedStory)[0];
+  if (storybook.hasStoryKind(data.selectedKind)) {
+    if (!storybook.hasStory(data.selectedKind, data.selectedStory)) {
+      data.selectedStory = storybook.getStories(data.selectedKind, data.selectedStory)[0];
     }
   }
 
