@@ -12,7 +12,7 @@ const syncedStore = getSyncedStore();
 // Event handlers
 function setSelectedKind(data, kind) {
   const newData = { ...data };
-  const stories = newData.storybook
+  const stories = newData.storyStore
     .find(item => item.kind === kind).stories;
 
   newData.selectedKind = kind;
