@@ -8,7 +8,7 @@ export default class ConfigApi {
     const data = this._syncedStore.getData();
     data.error = null;
     data.__updatedAt = Date.now();
-    data.storybook = this._storyStore.dumpStoryBook();
+    data.storyStore = this._storyStore.dumpStoryBook();
 
     if (!this._storyStore.hasStoryKind(data.selectedKind)) {
       data.selectedKind = this._storyStore.getStoryKinds()[0];

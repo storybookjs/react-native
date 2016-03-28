@@ -29,7 +29,7 @@ function setSelectedStory(data, block) {
 export function getControls(data) {
   return (
     <StorybookControls
-      storybook={data.storybook}
+      storyStore={data.storyStore}
       selectedKind={data.selectedKind}
       selectedStory={data.selectedStory}
       onKind={setSelectedKind.bind(null, data)}

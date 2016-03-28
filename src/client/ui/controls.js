@@ -2,12 +2,12 @@ import React from 'react';
 
 export default class StorybookControls extends React.Component {
   getKindNames() {
-    const { storybook, selectedKind } = this.props;
-    if (!storybook) {
+    const { storyStore, selectedKind } = this.props;
+    if (!storyStore) {
       return [];
     }
 
-    const kinds = storybook.map(({ kind }) => kind);
+    const kinds = storyStore.map(({ kind }) => kind);
     const selectedKindIndex = kinds.indexOf(selectedKind);
 
     // add the selected kind to the top of the list
@@ -18,8 +18,8 @@ export default class StorybookControls extends React.Component {
   }
 
   getStories(kind) {
-    const { storybook } = this.props;
-    const storiesInfo = storybook.find(item => item.kind === kind);
+    const { storyStore } = this.props;
+    const storiesInfo = storyStore.find(item => item.kind === kind);
 
     if (!storiesInfo) {
       return [];
@@ -131,7 +131,7 @@ export default class StorybookControls extends React.Component {
 }
 
 StorybookControls.propTypes = {
-  storybook: React.PropTypes.array,
+  storyStore: React.PropTypes.array,
   selectedKind: React.PropTypes.string,
   selectedStory: React.PropTypes.string,
   onKind: React.PropTypes.func,
