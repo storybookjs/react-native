@@ -1,11 +1,11 @@
 import SyncedStore from './synced_store';
-import Storybook from './storybook';
+import StoryStore from './story_store';
 
-const storybook = new Storybook();
+const storyStore = new StoryStore();
 const syncedStore = new SyncedStore(window);
 
-export function getStorybook() {
-  return storybook;
+export function getStoryStore() {
+  return storyStore;
 }
 
 export function getSyncedStore() {
@@ -14,11 +14,11 @@ export function getSyncedStore() {
 
 export function storiesOf(kind, m) {
   m.hot.dispose(() => {
-    storybook.removeStoryKind(kind);
+    storyStore.removeStoryKind(kind);
   });
 
   function add(storyName, fn) {
-    storybook.addStory(kind, storyName, fn);
+    storyStore.addStory(kind, storyName, fn);
     return { add };
   }
 
@@ -48,15 +48,15 @@ export function renderMain() {
   const data = syncedStore.getData();
   data.error = null;
   data.__updatedAt = Date.now();
-  data.storybook = storybook.dumpStoryBook();
+  data.storybook = storyStore.dumpStoryBook();
 
-  if (!storybook.hasStoryKind(data.selectedKind)) {
-    data.selectedKind = storybook.getStoryKinds()[0];
+  if (!storyStore.hasStoryKind(data.selectedKind)) {
+    data.selectedKind = storyStore.getStoryKinds()[0];
   }
 
-  if (storybook.hasStoryKind(data.selectedKind)) {
-    if (!storybook.hasStory(data.selectedKind, data.selectedStory)) {
-      data.selectedStory = storybook.getStories(data.selectedKind, data.selectedStory)[0];
+  if (storyStore.hasStoryKind(data.selectedKind)) {
+    if (!storyStore.hasStory(data.selectedKind, data.selectedStory)) {
+      data.selectedStory = storyStore.getStories(data.selectedKind, data.selectedStory)[0];
     }
   }
 

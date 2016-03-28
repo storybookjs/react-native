@@ -1,5 +1,6 @@
 let cnt = 0;
-export default class Storybook {
+
+export default class StoreStore {
   constructor() {
     this._data = {};
   }
