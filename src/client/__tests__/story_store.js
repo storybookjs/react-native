@@ -1,49 +1,41 @@
 const { describe, it, beforeEach } = global;
 import { expect } from 'chai';
 import UUID from 'uuid';
-import {
-  addStory,
-  getStory,
-  clean,
-  getStoryKinds,
-  getStories,
-  removeStoryKind,
-  dumpStoryBook,
-  hasStoryKind,
-  hasStory,
-} from '../storybook';
 
-describe('client.storybook', () => {
-  beforeEach(() => clean());
+import StoryStore from '../story_store';
+const storyStore = new StoryStore();
+
+describe('client.storyStore', () => {
+  beforeEach(() => storyStore.clean());
 
   describe('addStory', () => {
     it('should add the first story properly', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
+      storyStore.addStory(kind, 'name', story);
 
-      expect(getStory(kind, 'name')).to.be.equal(story);
+      expect(storyStore.getStory(kind, 'name')).to.be.equal(story);
     });
 
     it('should add another story of the previous kind', () => {
       const kind = UUID.v4();
       function story1() {}
       function story2() {}
-      addStory(kind, 'name1', story1);
-      addStory(kind, 'name2', story2);
+      storyStore.addStory(kind, 'name1', story1);
+      storyStore.addStory(kind, 'name2', story2);
 
-      expect(getStory(kind, 'name1')).to.be.equal(story1);
-      expect(getStory(kind, 'name2')).to.be.equal(story2);
+      expect(storyStore.getStory(kind, 'name1')).to.be.equal(story1);
+      expect(storyStore.getStory(kind, 'name2')).to.be.equal(story2);
     });
 
     it('should replace the same story if came again', () => {
       const kind = UUID.v4();
       function story1() {}
       function story2() {}
-      addStory(kind, 'name', story1);
-      addStory(kind, 'name', story2);
+      storyStore.addStory(kind, 'name', story1);
+      storyStore.addStory(kind, 'name', story2);
 
-      expect(getStory(kind, 'name')).to.be.equal(story2);
+      expect(storyStore.getStory(kind, 'name')).to.be.equal(story2);
     });
   });
 
@@ -54,52 +46,52 @@ describe('client.storybook', () => {
       const kind3 = UUID.v4();
       function story() {}
 
-      addStory(kind1, 'name', story);
-      addStory(kind2, 'name', story);
-      addStory(kind3, 'name', story);
+      storyStore.addStory(kind1, 'name', story);
+      storyStore.addStory(kind2, 'name', story);
+      storyStore.addStory(kind3, 'name', story);
 
-      expect(getStoryKinds()).to.deep.equal([kind1, kind2, kind3]);
+      expect(storyStore.getStoryKinds()).to.deep.equal([kind1, kind2, kind3]);
     });
   });
 
   describe('getStories', () => {
     it('should return an empty array, if there is no kind', () => {
       const kind = UUID.v4();
-      expect(getStories(kind)).to.deep.equal([]);
+      expect(storyStore.getStories(kind)).to.deep.equal([]);
     });
 
     it('should return all story names with FIFO order', () => {
       const kind = UUID.v4();
       function story() {}
 
-      addStory(kind, 'name1', story);
-      addStory(kind, 'name2', story);
-      addStory(kind, 'name3', story);
+      storyStore.addStory(kind, 'name1', story);
+      storyStore.addStory(kind, 'name2', story);
+      storyStore.addStory(kind, 'name3', story);
 
-      expect(getStories(kind)).to.deep.equal(['name1', 'name2', 'name3']);
+      expect(storyStore.getStories(kind)).to.deep.equal(['name1', 'name2', 'name3']);
     });
   });
 
   describe('getStory', () => {
     it('should return null if there is no kind', () => {
       const kind = UUID.v4();
-      expect(getStory(kind, 'name')).to.be.equal(null);
+      expect(storyStore.getStory(kind, 'name')).to.be.equal(null);
     });
 
     it('should return null if there is no story', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
+      storyStore.addStory(kind, 'name', story);
 
-      expect(getStory(kind, 'other-name')).to.be.equal(null);
+      expect(storyStore.getStory(kind, 'other-name')).to.be.equal(null);
     });
 
     it('shodld return the story if exists', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
+      storyStore.addStory(kind, 'name', story);
 
-      expect(getStory(kind, 'name')).to.be.equal(story);
+      expect(storyStore.getStory(kind, 'name')).to.be.equal(story);
     });
   });
 
@@ -107,12 +99,12 @@ describe('client.storybook', () => {
     it('should remove the given kind', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
-      expect(getStory(kind, 'name')).to.be.equal(story);
+      storyStore.addStory(kind, 'name', story);
+      expect(storyStore.getStory(kind, 'name')).to.be.equal(story);
 
-      removeStoryKind(kind);
+      storyStore.removeStoryKind(kind);
 
-      expect(getStory(kind, 'name')).to.be.equal(null);
+      expect(storyStore.getStory(kind, 'name')).to.be.equal(null);
     });
   });
 
@@ -120,14 +112,14 @@ describe('client.storybook', () => {
     it('should return true if there is a kind', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
+      storyStore.addStory(kind, 'name', story);
 
-      expect(hasStoryKind(kind)).to.be.equal(true);
+      expect(storyStore.hasStoryKind(kind)).to.be.equal(true);
     });
 
     it('should return false if there is no kind', () => {
       const kind = UUID.v4();
-      expect(hasStoryKind(kind)).to.be.equal(false);
+      expect(storyStore.hasStoryKind(kind)).to.be.equal(false);
     });
   });
 
@@ -135,22 +127,22 @@ describe('client.storybook', () => {
     it('should return true if there is a story', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
+      storyStore.addStory(kind, 'name', story);
 
-      expect(hasStory(kind, 'name')).to.be.equal(true);
+      expect(storyStore.hasStory(kind, 'name')).to.be.equal(true);
     });
 
     it('should return false if there is no kind', () => {
       const kind = UUID.v4();
-      expect(hasStoryKind(kind, 'name')).to.be.equal(false);
+      expect(storyStore.hasStoryKind(kind, 'name')).to.be.equal(false);
     });
 
     it('should return false if there is no story', () => {
       const kind = UUID.v4();
       function story() {}
-      addStory(kind, 'name', story);
+      storyStore.addStory(kind, 'name', story);
 
-      expect(hasStory(kind, 'name2')).to.be.equal(false);
+      expect(storyStore.hasStory(kind, 'name2')).to.be.equal(false);
     });
   });
 
@@ -160,12 +152,12 @@ describe('client.storybook', () => {
       const kind2 = UUID.v4();
       function story() {}
 
-      addStory(kind1, 'name1', story);
-      addStory(kind1, 'name2', story);
-      addStory(kind2, 'name10', story);
-      addStory(kind2, 'name20', story);
+      storyStore.addStory(kind1, 'name1', story);
+      storyStore.addStory(kind1, 'name2', story);
+      storyStore.addStory(kind2, 'name10', story);
+      storyStore.addStory(kind2, 'name20', story);
 
-      expect(dumpStoryBook()).to.be.deep.equal([
+      expect(storyStore.dumpStoryBook()).to.be.deep.equal([
         { kind: kind1, stories: ['name1', 'name2'] },
         { kind: kind2, stories: ['name10', 'name20'] },
       ]);
