@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook",
-  "version": "0.11.12",
+  "version": "0.11.13",
   "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
   "repository": {
     "type": "git",
