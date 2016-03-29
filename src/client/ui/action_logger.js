@@ -1,7 +1,7 @@
 import React from 'react';
 
 const h3Style = {
-  fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+  fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
   color: '#444',
   letterSpacing: '2px',
   fontSize: 12,

@@ -40,9 +40,8 @@ class Layout extends React.Component {
     const previewStyle = {
       height: height - actionStyle.height - 25,
       marginLeft: 250,
-      border: '1px solid #DDD',
+      border: '1px solid #ECECEC',
       borderRadius: 4,
-      boxShadow: '0px 2px 6px -1px #b8b8b8',
       padding: 5,
       backgroundColor: '#FFF',
     };

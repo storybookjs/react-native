@@ -100,7 +100,7 @@ export default class StorybookControls extends React.Component {
   render() {
     const kindNames = this.getKindNames();
     const mainStyle = {
-      fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+      fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;',
       padding: '20px 10px 10px 10px',
       color: '#444',
     };
