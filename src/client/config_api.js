@@ -4,7 +4,9 @@ export default class ConfigApi {
     this._storyStore = storyStore;
   }
 
-  _renderMain() {
+  _renderMain(loaders) {
+    if (loaders) loaders();
+
     const data = this._syncedStore.getData();
     data.error = null;
     data.__updatedAt = Date.now();
@@ -34,8 +36,7 @@ export default class ConfigApi {
   configure(loaders, module) {
     const render = () => {
       try {
-        loaders();
-        this._renderMain();
+        this._renderMain(loaders);
       } catch (error) {
         this._renderError(error);
       }
