@@ -2,13 +2,10 @@ const { describe, it } = global;
 import { expect } from 'chai';
 import sinon from 'sinon';
 import ConfigApi from '../config_api';
-import StoryStore from '../story_store';
-import SyncedStore from '../synced_store';
 
 function buildMock(fields) {
   const obj = {};
-  fields.forEach(function(field) {
-    function fn() {};
+  fields.forEach(function (field) {
     obj[field] = sinon.stub();
   });
 
@@ -19,19 +16,19 @@ function getConfigApi() {
   const storyStore = buildMock([
     'addStory', 'removeStoryKind', 'clean',
     'hasStoryKind', 'dumpStoryBook', 'getStoryKinds',
-    'hasStory', 'getStories'
+    'hasStory', 'getStories',
   ]);
   storyStore.hasStoryKind = () => true;
   storyStore.hasStory = () => true;
 
   const syncedStore = buildMock([
-    'setData'
+    'setData',
   ]);
   syncedStore.getData = () => ({});
 
   const c = new ConfigApi({
     syncedStore,
-    storyStore
+    storyStore,
   });
 
   return c;
@@ -51,7 +48,7 @@ describe('client.ConfigApi', () => {
       api._renderError(error);
 
       const capturedError = api._syncedStore.setData.args[0][0].error;
-      expect(capturedError).to.deep.equal({message, stack});
+      expect(capturedError).to.deep.equal({ message, stack });
     });
   });
 
@@ -64,7 +61,7 @@ describe('client.ConfigApi', () => {
 
     it('should set error in syncedStore to null', () => {
       const api = getConfigApi();
-      api._syncedStore.getData = () => ({error: 'something-else'});
+      api._syncedStore.getData = () => ({ error: 'something-else' });
       api._renderMain();
 
       const data = api._syncedStore.setData.args[0][0];
@@ -73,7 +70,7 @@ describe('client.ConfigApi', () => {
 
     it('should get a dump of storyStore and send it to syncedStore', () => {
       const api = getConfigApi();
-      const dump = {aa: 10};
+      const dump = { aa: 10 };
       api._storyStore.dumpStoryBook = () => (dump);
       api._renderMain();
 
@@ -87,7 +84,7 @@ describe('client.ConfigApi', () => {
         api._renderMain();
 
         const data = api._syncedStore.setData.args[0][0];
-        expect(data.__updatedAt >= Date.now()).to.deep.equal(dump);
+        expect(data.__updatedAt <= Date.now()).to.deep.equal(true);
       });
     });
 
@@ -155,7 +152,7 @@ describe('client.ConfigApi', () => {
         const m = {
           hot: {
             accept: (fn) => {
-              doAccept = fn
+              doAccept = fn;
             },
           },
         };
@@ -181,7 +178,7 @@ describe('client.ConfigApi', () => {
           const m = {
             hot: {
               accept: (fn) => {
-                doAccept = fn
+                doAccept = fn;
               },
             },
           };
