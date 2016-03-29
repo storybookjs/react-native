@@ -40,7 +40,7 @@ export default class StorybookControls extends React.Component {
   renderStory(story) {
     const { selectedStory } = this.props;
     const storyStyle = {
-      fontSize: 14,
+      fontSize: 13,
       padding: '8px 0px 8px 10px',
       cursor: 'pointer',
     };
@@ -61,7 +61,7 @@ export default class StorybookControls extends React.Component {
 
   renderKind(kind) {
     const kindStyle = {
-      fontSize: 16,
+      fontSize: 15,
       padding: '10px 0px',
       cursor: 'pointer',
       borderBottom: '1px solid #EEE',
