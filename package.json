@@ -58,6 +58,7 @@
   },
   "main": "dist/client/index.js",
   "bin": {
+    "start-storybook": "./dist/server/index.js",
     "storybook-server": "./dist/server/index.js"
   }
 }
