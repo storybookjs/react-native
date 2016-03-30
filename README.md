@@ -44,8 +44,6 @@ This will start your Storybook in <http://localhost:9001>. Open that URL in your
 
 Edit some of the components in the `components` directory and see how they reflect in the Storybook UI. We define stories inside the `components/stories` directory. Have a play with that as well.
 
-[Watch this video for more information]()
-
 ## Getting Started
 
 Now let's add support for React Storybook to your app. First of all, add the `@kadira/storybook` NPM package to your app:
