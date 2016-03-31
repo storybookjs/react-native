@@ -8,7 +8,7 @@ You just load your UI components into the React Storybook and start developing t
 
 This functionality allows you to develop UI components rapidly without worrying about the app. It will improve your team’s collaboration and feedback loop.
 
-> Have a look at this article on [Introducing React Storybook]().
+> Have a look at this article on [Introducing React Storybook](https://medium.com/@arunoda/ec27f28de1e2).
 
 ## Features
 
