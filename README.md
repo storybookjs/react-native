@@ -122,6 +122,7 @@ There are many things you can do with React Storybook. You can explore them with
 * [Setting up for CSS](docs/setting-up-for-css.md)
 * [API and configurations](docs/api.md)
 * [Guideline for writing stories](docs/guidelines.md)
+* [Known Issues](docs/known_issues.md)
 * How React Storybook works (coming soon)
 
 ## Sample Apps
@@ -133,23 +134,3 @@ React Storybook is very powerful and you can use it with any kind of app. Here's
 * [Meteor app (Mantra)](https://github.com/mantrajs/mantra-sample-blog-app)
 * Simple Meteor app (coming soon)
 * Material UI component browser (coming soon)
-
-## Known Issues
-
-### NPM 404
-
-This package is published as a NPM's [scoped package](https://docs.npmjs.com/misc/scope). So, if you get a 404 error while doing `npm install`, that seems like you are using a different NPM registry(or a proxy). 
-
-**Try to use the default registy.**
-
-See more: https://github.com/kadirahq/react-storybook/issues/15
-
-### Potential issues with NPM 2
-
-If you are using NPM 2, you may got some weird issues. Try to use NPM 3. Use this:
-
-```
-npm i -g npm@3.8.5
-rm -rf node_modules
-npm i
-```
