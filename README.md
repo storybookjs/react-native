@@ -123,6 +123,7 @@ There are many things you can do with React Storybook. You can explore them with
 * [API and configurations](docs/api.md)
 * [Guideline for writing stories](docs/guidelines.md)
 * [Known Issues](docs/known_issues.md)
+* [Contributing Guide](.github/CONTRIBUTING.md)
 * How React Storybook works (coming soon)
 
 ## Sample Apps
