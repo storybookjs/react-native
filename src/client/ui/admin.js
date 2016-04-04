@@ -26,6 +26,12 @@ function setSelectedStory(data, block) {
   syncedStore.setData(newData);
 }
 
+function clearLogs() {
+  const data = syncedStore.getData();
+  data.actions = [];
+  syncedStore.setData(data);
+}
+
 export function getControls(data) {
   return (
     <StorybookControls
@@ -63,7 +69,7 @@ export function getActionLogger(data) {
     .map(action => stringify(action, null, 2))
     .join('\n\n');
 
-  return (<ActionLogger actionLog={log} />);
+  return (<ActionLogger actionLog={log} onClear={clearLogs} />);
 }
 
 export function renderMain(data) {

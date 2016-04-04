@@ -21,15 +21,23 @@ const preStyle = {
   border: '1px solid #EAEAEA',
 };
 
-const ActionLogger = ({ actionLog }) => (
+const clearButtonStyle = {
+  marginLeft: 5,
+};
+
+const ActionLogger = ({ actionLog, onClear }) => (
   <div>
-    <h3 style={h3Style}>ACTION LOGGER</h3>
+    <h3 style={h3Style}>
+      ACTION LOGGER
+      <button style={clearButtonStyle} onClick={onClear}>CLEAR</button>
+    </h3>
     <pre style={preStyle}>{actionLog}</pre>
   </div>
 );
 
 ActionLogger.propTypes = {
   actionLog: React.PropTypes.string.isRequired,
+  onClear: React.PropTypes.func,
 };
 
 export default ActionLogger;
