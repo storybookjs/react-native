@@ -2,19 +2,12 @@ import React from 'react';
 
 export default class StorybookControls extends React.Component {
   getKindNames() {
-    const { storyStore, selectedKind } = this.props;
+    const { storyStore } = this.props;
     if (!storyStore) {
       return [];
     }
 
-    const kinds = storyStore.map(({ kind }) => kind);
-    const selectedKindIndex = kinds.indexOf(selectedKind);
-
-    // add the selected kind to the top of the list
-    kinds.splice(selectedKindIndex, 1);
-    kinds.unshift(selectedKind);
-
-    return kinds;
+    return storyStore.map(({ kind }) => kind);
   }
 
   getStories(kind) {
