@@ -2,6 +2,7 @@
 
 ### v.Next
 
+* Fix a typo in .gitignore. See [PR31](https://github.com/kadirahq/react-storybook/pull/31)
 * Add support for JSX. See [PR18](https://github.com/kadirahq/react-storybook/pull/18)
 
 ### v1.1.0
