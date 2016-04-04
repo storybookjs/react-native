@@ -1,5 +1,9 @@
 ## Changelog
 
+### v.Next
+
+* Add support for JSX. See [PR18](https://github.com/kadirahq/react-storybook/pull/18)
+
 ### v1.1.0
 
 * v1.0.0 was a mistake and it contains very old code. That's why we had to do a 1.1.0 release.
