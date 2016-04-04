@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Add a better contributing guide. See [CONTRIBUTING.md)](https://github.com/kadirahq/react-storybook/blob/master/.github/CONTRIBUTING.md)
 * Add a development utility `npm run dev` which watches "src" directory and run `npm run prepublish`.
 
 ### v1.2.0
