@@ -16,7 +16,8 @@
     "lintfix": "eslint src --fix",
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js"
+    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "dev": "nodemon --watch src --exec 'npm run prepublish'"
   },
   "dependencies": {
     "babel-core": "^6.3.15",
@@ -54,7 +55,8 @@
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^4.2.3",
     "mocha": "^2.4.5",
-    "sinon": "^1.17.3"
+    "sinon": "^1.17.3",
+    "nodemon": "^1.9.1"
   },
   "main": "dist/client/index.js",
   "bin": {
