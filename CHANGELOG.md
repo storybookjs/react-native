@@ -1,5 +1,9 @@
 ## Changelog
 
+### v.NEXT
+
+* Add a development utility `npm run dev` which watches "src" directory and run `npm run prepublish`.
+
 ### v1.2.0
 
 * Add a button to clear logs in the ActionLogger. This is requested in [PR21](https://github.com/kadirahq/react-storybook/issues/21).
