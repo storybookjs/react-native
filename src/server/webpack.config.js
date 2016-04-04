@@ -29,7 +29,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel',
         query: { presets: ['react', 'es2015', 'stage-2'] },
         exclude: [path.resolve('./node_modules'), path.resolve(__dirname, 'node_modules')],
