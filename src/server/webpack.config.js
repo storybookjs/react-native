@@ -39,8 +39,23 @@ const config = {
   },
 };
 
-// add config path to the entry
 const configDir = path.resolve('./.storybook');
+
+// load babelrc file.
+const babelrcPath = path.resolve('./.babelrc');
+if (fs.existsSync(babelrcPath)) {
+  logger.info('=> Using custom .babelrc configurations.');
+  const babelrcContent = fs.readFileSync(babelrcPath);
+  try {
+    const babelrc = JSON.parse(babelrcContent);
+    config.module.loaders[0].query = babelrc;
+  } catch (ex) {
+    logger.error(`=> Error parsing .babelrc file: ${ex.message}`);
+    throw ex;
+  }
+}
+
+// add config path to the entry
 const storybookConfigPath = path.resolve(configDir, 'config.js');
 if (!fs.existsSync(storybookConfigPath)) {
   logger.error('=> Create a storybook config file in ".storybook/config.js".\n');
@@ -53,13 +68,13 @@ const customConfigPath = path.resolve(configDir, 'webpack.config.js');
 if (fs.existsSync(customConfigPath)) {
   const customConfig = require(customConfigPath);
   if (customConfig.module.loaders) {
-    logger.log('=> Loading custom webpack loaders.');
+    logger.info('=> Loading custom webpack loaders.');
     config.module.loaders =
       config.module.loaders.concat(customConfig.module.loaders);
   }
 
   if (customConfig.plugins) {
-    logger.log(' => Loading custom webpack plugins.');
+    logger.info(' => Loading custom webpack plugins.');
     config.plugins = config.plugins.concat(customConfig.plugins);
   }
 }

@@ -37,9 +37,9 @@
     "redbox-react": "^1.2.2",
     "stack-source-map": "^1.0.4",
     "uuid": "^2.0.1",
-    "webpack": "^1.9.11",
-    "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack": "^1.12.11",
+    "webpack-dev-middleware": "^1.6.0",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "peerDependencies": {
     "react": "^0.14.7",
