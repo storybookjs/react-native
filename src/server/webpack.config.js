@@ -1,8 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import fs from 'fs';
-
-const logger = console;
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
