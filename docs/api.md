@@ -128,6 +128,20 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
+Or, if you prefer to keep your stories close to your components, and use a convention to name them (i.e. `buttonStory.js`), you can require them like this:
+
+```js
+import { configure } from '@kadira/storybook';
+
+const req = require.context('./', true, /Story\.js$/)
+
+function loadStories() {
+  req.keys().forEach(req)
+}
+
+configure(loadStories, module);
+```
+
 ### Load Common CSS Files
 
 Sometimes your app has some common CSS files, so this is the best place to load them. In our Redux to-do example, we load todomvc CSS like this:
