@@ -7,6 +7,7 @@ You can configure React Storybook in different ways. We'll discuss them here.
 * [Command Line API](#command-line-api)
   * [Port](#port)
   * [Static Directory](#static-directory)
+  * [Configuration Directory](#configuration-directory)
 * [Story Creation API](#story-creation-api)
   * [Creating Stories](#creating-stories)
   * [Creating Actions](#creating-actions)
@@ -36,6 +37,16 @@ Here's how to tell React Storybook to use that directory to load static files:
 
 ```
 start-storybook -p 6977 -s ./public
+```
+
+### Configuration Directory
+
+React Storybook uses `.storybook` directory as a default location for its [basic](#basic-configurations) and [custom webpack](#custom-webpack-configurations) configuration.
+
+Here's how to tell React Storybook to use a custom directory to load your configuration files:
+
+```
+start-storybook -p 6977 -s ./public -c ./storybook-config
 ```
 
 ## Story Creation API
