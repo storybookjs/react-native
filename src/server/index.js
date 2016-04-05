@@ -20,6 +20,7 @@ program
   .version(packageJson.version)
   .option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt)
   .option('-s, --static-dir [dir-name]', 'Directory where to load static files from')
+  .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .parse(process.argv);
 
 if (!program.port) {
@@ -38,6 +39,47 @@ if (program.staticDir) {
   } else {
     logger.error(`Error: no such directory to load static files: ${staticPath}`);
     process.exit(-1);
+  }
+}
+
+// add config path to the entry
+const configDir = program.configDir || './.storybook';
+const configDirPath = path.resolve(configDir);
+
+// load babelrc file.
+const babelrcPath = path.resolve('./.babelrc');
+if (fs.existsSync(babelrcPath)) {
+  logger.info('=> Using custom .babelrc configurations.');
+  const babelrcContent = fs.readFileSync(babelrcPath);
+  try {
+    const babelrc = JSON.parse(babelrcContent);
+    config.module.loaders[0].query = babelrc;
+  } catch (ex) {
+    logger.error(`=> Error parsing .babelrc file: ${ex.message}`);
+    throw ex;
+  }
+}
+
+const storybookConfigPath = path.resolve(configDirPath, 'config.js');
+if (!fs.existsSync(storybookConfigPath)) {
+  logger.error(`=> Create a storybook config file in "${configDir}/config.js".\n`);
+  process.exit(0);
+}
+config.entry.preview.push(storybookConfigPath);
+
+// load custom webpack configurations
+const customConfigPath = path.resolve(configDirPath, 'webpack.config.js');
+if (fs.existsSync(customConfigPath)) {
+  const customConfig = require(customConfigPath);
+  if (customConfig.module.loaders) {
+    logger.info('=> Loading custom webpack loaders.');
+    config.module.loaders =
+      config.module.loaders.concat(customConfig.module.loaders);
+  }
+
+  if (customConfig.plugins) {
+    logger.info(' => Loading custom webpack plugins.');
+    config.plugins = config.plugins.concat(customConfig.plugins);
   }
 }
 
