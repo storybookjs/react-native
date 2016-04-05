@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.4.0
+
+* Add CLI option to specify the config dir. See [PR52](https://github.com/kadirahq/react-storybook/pull/52).
+
 ### v1.3.0
 
 * Load the `.babelrc` manually. Fixed: [#41](https://github.com/kadirahq/react-storybook/issues/41)
