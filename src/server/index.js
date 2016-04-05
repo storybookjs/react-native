@@ -43,7 +43,8 @@ if (program.staticDir) {
 }
 
 // add config path to the entry
-const configDir = path.resolve(program.configDir || './.storybook');
+const configDir = program.configDir || './.storybook';
+const configDirPath = path.resolve(configDir);
 
 // load babelrc file.
 const babelrcPath = path.resolve('./.babelrc');
@@ -59,15 +60,15 @@ if (fs.existsSync(babelrcPath)) {
   }
 }
 
-const storybookConfigPath = path.resolve(configDir, 'config.js');
+const storybookConfigPath = path.resolve(configDirPath, 'config.js');
 if (!fs.existsSync(storybookConfigPath)) {
-  logger.error('=> Create a storybook config file in ".storybook/config.js".\n');
+  logger.error(`=> Create a storybook config file in "${configDir}/config.js".\n`);
   process.exit(0);
 }
 config.entry.preview.push(storybookConfigPath);
 
 // load custom webpack configurations
-const customConfigPath = path.resolve(configDir, 'webpack.config.js');
+const customConfigPath = path.resolve(configDirPath, 'webpack.config.js');
 if (fs.existsSync(customConfigPath)) {
   const customConfig = require(customConfigPath);
   if (customConfig.module.loaders) {
