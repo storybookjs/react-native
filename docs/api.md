@@ -207,4 +207,8 @@ module.exports = {
 }
 ```
 
-> Usually, there are a lot of things we can do with webpack, but React Storybook allows you to add only custom loaders and plugins.
+> You can pass options to this config file as you wish. But, there are some stuff like devServer we'll always add by default. <br/>
+> So, usually you need to use this config for doing following things:
+>  *  For loading CSS.
+>  *  For adding custom resolve extensions.
+>  *  For adding resolve aliases.
