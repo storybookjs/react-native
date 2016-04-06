@@ -1,5 +1,13 @@
 ## Changelog
 
+### v.NEXT
+
+* Add `react` and `react-dom` to devDependencies.
+
+### v1.5.0
+
+* Add support for most of the custom webpack configuration. See [PR64](https://github.com/kadirahq/react-storybook/pull/64)
+
 ### v1.4.0
 
 * Add CLI option to specify the config dir. See [PR52](https://github.com/kadirahq/react-storybook/pull/52).
