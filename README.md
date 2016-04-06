@@ -25,7 +25,7 @@ This functionality allows you to develop UI components rapidly without worrying 
 
 Let's look at what React Storybook does. First clone the following repo:
 
-```
+```sh
 git clone https://github.com/kadira-samples/react-storybook-demo
 ```
 
@@ -33,7 +33,7 @@ git clone https://github.com/kadira-samples/react-storybook-demo
 
 Then apply the following commands:
 
-```
+```sh
 npm install
 npm run storybook
 ```
@@ -48,7 +48,7 @@ Edit some of the components in the `components` directory and see how they refle
 
 Now let's add support for React Storybook to your app. First of all, add the `@kadira/storybook` NPM package to your app:
 
-```
+```sh
 npm i --save-dev @kadira/storybook
 ```
 
@@ -97,20 +97,20 @@ Here, we simply have two stories for the built-in `button` component. But, you c
 
 ### Configurations
 
-Now you need to tell Storybook where it should load the stories from. For that, you need to write a simple configuration file. Add the following file to `.storybook/config.js`:
+Now you need to tell Storybook where it should load the stories from. For that, you need to write a simple configuration file. Add the following content to `.storybook/config.js`:
 
 ```js
 import { configure } from '@kadira/storybook';
 
 function loadStories() {
   require('../components/stories/button');
-  // require as many as stories you need.
+  // require as many stories as you need.
 }
 
 configure(loadStories, module);
 ```
 
-That's it. Now simply run “npm run storybook” and start developing your components.
+That's it. Now simply run `npm run storybook` and start developing your components.
 
 
 > Check this app to see it in action: https://github.com/kadira-samples/react-storybook-simple-demo
@@ -123,7 +123,7 @@ There are many things you can do with React Storybook. You can explore them with
 * [API and configurations](docs/api.md)
 * [Guideline for writing stories](docs/guidelines.md)
 * [Known Issues](docs/known_issues.md)
-* [How to Contribute](.github/CONTRIBUTING.md)
+* [How to Contribute](CONTRIBUTING.md)
 * How React Storybook works (coming soon)
 
 ## Sample Apps
