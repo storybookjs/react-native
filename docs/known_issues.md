@@ -10,7 +10,7 @@ See more: https://github.com/kadirahq/react-storybook/issues/15
 
 ## Potential issues with NPM 2
 
-If you are using NPM 2, you may got some weird issues. Try to use NPM 3. Here's how to do it:
+If you are using NPM 2, you may got some weird [issues](https://github.com/kadirahq/react-storybook/issues/65). Try to use NPM 3. Here's how to do it:
 
 ```
 npm i -g npm@3.8.5
