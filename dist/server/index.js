@@ -112,12 +112,13 @@ if (_fs2.default.existsSync(customConfigPath)) {
   var customConfig = require(customConfigPath);
   logger.info('=> Loading custom webpack config.');
   finalConfig = (0, _extends3.default)({}, customConfig, _webpack4.default, {
-    plugins: [].concat((0, _toConsumableArray3.default)(_webpack4.default.plugins), (0, _toConsumableArray3.default)(customConfig.plugins)),
+    // We need to use our and custom plugins.
+    plugins: [].concat((0, _toConsumableArray3.default)(_webpack4.default.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
     module: (0, _extends3.default)({}, _webpack4.default.module, {
-      loaders: [].concat((0, _toConsumableArray3.default)(_webpack4.default.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders))
+      // We need to use our and custom loaders.
+      loaders: [].concat((0, _toConsumableArray3.default)(_webpack4.default.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
     })
   });
-  finalConfig.resolve.modulesDirectories.push('node_modules');
 }
 
 var compiler = (0, _webpack2.default)(finalConfig);

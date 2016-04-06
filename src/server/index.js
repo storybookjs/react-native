@@ -75,18 +75,22 @@ if (fs.existsSync(customConfigPath)) {
   logger.info('=> Loading custom webpack config.');
   finalConfig = {
     ...customConfig,
+    // We'll always load our configurations after the custom config.
+    // So, we'll always load the stuff we need.
     ...config,
+    // We need to use our and custom plugins.
     plugins: [
       ...config.plugins,
-      ...customConfig.plugins
+      ...customConfig.plugins || [],
     ],
     module: {
       ...config.module,
+      // We need to use our and custom loaders.
       loaders: [
         ...config.module.loaders,
-        ...customConfig.module.loaders
-      ]
-    }
+        ...customConfig.module.loaders || [],
+      ],
+    },
   };
 }
 
