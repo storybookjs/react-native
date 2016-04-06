@@ -69,24 +69,35 @@ config.entry.preview.push(storybookConfigPath);
 
 // load custom webpack configurations
 const customConfigPath = path.resolve(configDirPath, 'webpack.config.js');
+let finalConfig = config;
 if (fs.existsSync(customConfigPath)) {
   const customConfig = require(customConfigPath);
-  if (customConfig.module.loaders) {
-    logger.info('=> Loading custom webpack loaders.');
-    config.module.loaders =
-      config.module.loaders.concat(customConfig.module.loaders);
-  }
-
-  if (customConfig.plugins) {
-    logger.info(' => Loading custom webpack plugins.');
-    config.plugins = config.plugins.concat(customConfig.plugins);
-  }
+  logger.info('=> Loading custom webpack config.');
+  finalConfig = {
+    ...customConfig,
+    // We'll always load our configurations after the custom config.
+    // So, we'll always load the stuff we need.
+    ...config,
+    // We need to use our and custom plugins.
+    plugins: [
+      ...config.plugins,
+      ...customConfig.plugins || [],
+    ],
+    module: {
+      ...config.module,
+      // We need to use our and custom loaders.
+      loaders: [
+        ...config.module.loaders,
+        ...customConfig.module.loaders || [],
+      ],
+    },
+  };
 }
 
-const compiler = webpack(config);
+const compiler = webpack(finalConfig);
 const devMiddlewareOptions = {
   noInfo: true,
-  publicPath: config.output.publicPath,
+  publicPath: finalConfig.output.publicPath,
 };
 app.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
 app.use(webpackHotMiddleware(compiler));

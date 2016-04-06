@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
@@ -99,23 +107,24 @@ _webpack4.default.entry.preview.push(storybookConfigPath);
 
 // load custom webpack configurations
 var customConfigPath = _path2.default.resolve(configDirPath, 'webpack.config.js');
+var finalConfig = _webpack4.default;
 if (_fs2.default.existsSync(customConfigPath)) {
   var customConfig = require(customConfigPath);
-  if (customConfig.module.loaders) {
-    logger.info('=> Loading custom webpack loaders.');
-    _webpack4.default.module.loaders = _webpack4.default.module.loaders.concat(customConfig.module.loaders);
-  }
-
-  if (customConfig.plugins) {
-    logger.info(' => Loading custom webpack plugins.');
-    _webpack4.default.plugins = _webpack4.default.plugins.concat(customConfig.plugins);
-  }
+  logger.info('=> Loading custom webpack config.');
+  finalConfig = (0, _extends3.default)({}, customConfig, _webpack4.default, {
+    // We need to use our and custom plugins.
+    plugins: [].concat((0, _toConsumableArray3.default)(_webpack4.default.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
+    module: (0, _extends3.default)({}, _webpack4.default.module, {
+      // We need to use our and custom loaders.
+      loaders: [].concat((0, _toConsumableArray3.default)(_webpack4.default.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
+    })
+  });
 }
 
-var compiler = (0, _webpack2.default)(_webpack4.default);
+var compiler = (0, _webpack2.default)(finalConfig);
 var devMiddlewareOptions = {
   noInfo: true,
-  publicPath: _webpack4.default.output.publicPath
+  publicPath: finalConfig.output.publicPath
 };
 app.use((0, _webpackDevMiddleware2.default)(compiler, devMiddlewareOptions));
 app.use((0, _webpackHotMiddleware2.default)(compiler));
