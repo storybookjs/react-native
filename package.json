@@ -61,6 +61,9 @@
     "sinon": "^1.17.3"
   },
   "main": "dist/client/index.js",
+  "engines" : {
+    "npm" : "^3.0.0"
+  },
   "bin": {
     "start-storybook": "./dist/server/index.js",
     "storybook-server": "./dist/server/index.js"
