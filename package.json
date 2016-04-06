@@ -55,8 +55,10 @@
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^4.2.3",
     "mocha": "^2.4.5",
-    "sinon": "^1.17.3",
-    "nodemon": "^1.9.1"
+    "nodemon": "^1.9.1",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "sinon": "^1.17.3"
   },
   "main": "dist/client/index.js",
   "bin": {
