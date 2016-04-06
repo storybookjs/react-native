@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Add npm3 requirement to the `package.json`.
 * Add `react` and `react-dom` to devDependencies.
 
 ### v1.5.0
