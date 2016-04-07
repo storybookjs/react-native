@@ -16,7 +16,7 @@
 ### v1.3.0
 
 * Load the `.babelrc` manually. Fixed: [#41](https://github.com/kadirahq/react-storybook/issues/41)
-* Add a better contributing guide. See [CONTRIBUTING.md)](https://github.com/kadirahq/react-storybook/blob/master/.github/CONTRIBUTING.md)
+* Add a better contributing guide. See [CONTRIBUTING.md](https://github.com/kadirahq/react-storybook/blob/master/CONTRIBUTING.md)
 * Add a development utility `npm run dev` which watches "src" directory and run `npm run prepublish`.
 
 ### v1.2.0

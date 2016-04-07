@@ -2,9 +2,9 @@
 
 ## NPM 404 Error
 
-This package is published as a NPM [scoped package](https://docs.npmjs.com/misc/scope). So, if you get a 404 error while doing `npm install`, that seems like you are using a different NPM registry(or a NPM proxy).
+This package is published as a NPM [scoped package](https://docs.npmjs.com/misc/scope). So, if you get a 404 error while doing `npm install`, that seems like you are using a different NPM registry (or a NPM proxy).
 
-**Try to use the default registy.**
+**Try to use the default registry.**
 
 See more: https://github.com/kadirahq/react-storybook/issues/15
 
@@ -20,7 +20,7 @@ npm i
 
 ## Issues with Babel 5
 
-If you are using babel 5 inside your project, you will get some errors on parsing modules.
-Try to migrate your project to babel 6.
+If you are using Babel 5 inside your project, you will get some errors on parsing modules.
+Try to [migrate your project](https://babeljs.io/blog/2015/10/31/setting-up-babel-6) to Babel 6.
 
 See more: https://github.com/kadirahq/react-storybook/issues/16
