@@ -207,6 +207,25 @@ module.exports = {
 }
 ```
 
+### Customizing The UI
+
+You can customize the UI by duplicating the original components such as  [layout.js](https://raw.githubusercontent.com/kadirahq/react-storybook/master/src/client/ui/layout.js) file, put it in `.storybook/layout.js` and setting webpack config like this :
+
+```js
+const path = require('path');
+
+module.exports = {
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(/^\.\/layout$/, 'custom-layout')
+  ],
+  resolve: {
+    alias: {
+      'custom-layout': path.resolve('.storybook/layout.js')
+    }
+  }
+}
+```
+
 > You can pass options to this config file as you wish. But, there are some stuff like devServer we'll always add by default. <br/>
 > So, usually you need to use this config for doing following things:
 >  *  for loading CSS,
