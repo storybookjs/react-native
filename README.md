@@ -1,4 +1,4 @@
-# React Storybook
+# React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook)
 
 Now you can develop and design React UI components without running your app.
 
