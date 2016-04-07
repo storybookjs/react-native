@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
 import stringify from 'json-stringify-safe';
 
-const h3Style = {
+const preStyle = {
+  color: '#666',
+  overflowY: 'auto',
+  padding: '8px',
+  boxSizing: 'border-box',
+  border: '1px solid #ECECEC',
+  borderRadius: 4,
+  backgroundColor: '#FFF',
+  margin: '0',
+  position: 'absolute',
+  top: '30px',
+  right: 0,
+  bottom: 0,
+  left: 0,
+};
+
+const wrapStyle = {
+  position: 'relative',
+  height: '100%',
+};
+
+const headStyle = {
   fontFamily: `
     -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
     "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
@@ -9,25 +30,15 @@ const h3Style = {
   color: '#444',
   letterSpacing: '2px',
   fontSize: 12,
-  margin: '12px 0 5px 0',
+  margin: '0 0 0 5px',
 };
 
-const preStyle = {
-  height: 105,
-  overflowY: 'auto',
-  backgroundColor: '#FFF',
-  borderRadius: 3,
-  padding: 8,
-  color: '#666',
-  border: '1px solid #EAEAEA',
-};
-
-const clearButtonStyle = {
+const btnStyle = {
   marginLeft: 5,
 };
 
 const latestActionLogStyle = {
-  backgroundColor: 'lightgreen',
+  backgroundColor: 'oldlace',
   transition: 'all .5s ease-in',
 };
 
@@ -61,10 +72,10 @@ class ActionLogger extends Component {
   render() {
     const { onClear } = this.props;
     return (
-      <div>
-        <h3 style={h3Style}>
+      <div style={wrapStyle}>
+        <h3 style={headStyle}>
           ACTION LOGGER
-          <button style={clearButtonStyle} onClick={onClear}>CLEAR</button>
+          <button style={btnStyle} onClick={onClear}>CLEAR</button>
         </h3>
         <pre style={preStyle}>{this.getActionData()}</pre>
       </div>
@@ -74,7 +85,10 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: React.PropTypes.func,
-  data: React.PropTypes.array.isRequired,
+  data: React.PropTypes.oneOfType([
+    React.PropTypes.array.isRequired,
+    React.PropTypes.object.isRequired,
+  ]),
 };
 
 export default ActionLogger;

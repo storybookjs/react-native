@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "dev": "nodemon --watch src --exec 'npm run prepublish'"
   },
   "dependencies": {
+    "@mnmtanish/react-split-pane": "^0.1.30",
     "babel-core": "^6.3.15",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.3.15",
@@ -61,8 +62,8 @@
     "sinon": "^1.17.3"
   },
   "main": "dist/client/index.js",
-  "engines" : {
-    "npm" : "^3.0.0"
+  "engines": {
+    "npm": "^3.0.0"
   },
   "bin": {
     "start-storybook": "./dist/server/index.js",

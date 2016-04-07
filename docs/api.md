@@ -15,7 +15,7 @@ You can configure React Storybook in different ways. We'll discuss them here.
   * [Loading Modules](#loading-modules)
   * [Load Common CSS Files](#load-common-css-files)
   * [Configure Modules for Testing](#configure-modules-for-testing)
-* [Custom webpack Configurations](#custom-webpack-configurations)
+* [Custom Webpack Configurations](#custom-webpack-configurations)
 
 ## Command Line API
 
@@ -23,9 +23,9 @@ React Storybook comes with a command line API, which you usually use inside a NP
 
 ### Port
 
-You must set a port where the React Storybook starts it's web server. Here's how to specify it:
+You must set a port on which React Storybook starts its web server. Here's how to specify it:
 
-```
+```sh
 start-storybook -p 6977
 ```
 
@@ -35,7 +35,7 @@ Sometimes, you ship your static files directly inside your project. In Meteor ap
 
 Here's how to tell React Storybook to use that directory to load static files:
 
-```
+```sh
 start-storybook -p 6977 -s ./public
 ```
 
@@ -45,7 +45,7 @@ React Storybook uses `.storybook` directory as a default location for its [basic
 
 Here's how to tell React Storybook to use a custom directory to load your configuration files:
 
-```
+```sh
 start-storybook -p 6977 -s ./public -c ./storybook-config
 ```
 
@@ -70,11 +70,11 @@ storiesOf('Button', module)
   ));
 ```
 
-Here you can chain the `add` method and create as many as stories as you need.
+Here you can chain the `add` method and create as many stories as you need.
 
 ### Creating Actions
 
-Usually, our components accept event handlers. Actions help us to debug those event handlers. These actions are logged in the `Action Logger` in React Storybook.
+Usually, our components accept event handlers. Actions help us to debug those event handlers. These actions are logged in the `Action Logger` info window in React Storybook.
 
 This is how we can create an action:
 
@@ -88,7 +88,7 @@ storiesOf('Button', module)
   ));
 ```
 
-Here we create an action named `clicked`. It gives a function to the onClick prop in our button.
+Here we create an action named `click the button`. It gives a function to the `onClick` prop in our button.
 
 Then, when you click on the button, it will log something like this into the Action Logger:
 
@@ -105,13 +105,13 @@ Then, when you click on the button, it will log something like this into the Act
 }
 ```
 
-Here we can see the name we've mentioned when creating the action. After that, we can see the arguments passed to the event handler onClick. In this case, we've three arguments. `[SyntheticMouseEvent]` is the actual event object passed by React and you can use that to get more details.
+Here we can see the name we've mentioned when creating the action. After that, we can see the arguments passed to the `onClick` event handler. In this case, we've three arguments. `[SyntheticMouseEvent]` is the actual event object passed by React and you can use that to get more details.
 
 > For simplicity, React Storybook does not show the actual object. Instead it will show `[SyntheticMouseEvent]`.
 
 ## Basic Configurations
 
-React Storybook uses a JavaScript file at `.storybook/config.js` as the entry point. This is the file loaded by webpack when it's initializing. You can configure a few things inside it.
+React Storybook uses a JavaScript file located at `.storybook/config.js` as the entry point. This is the file loaded by webpack when it's initializing. You can configure a few things inside it.
 
 ### Loading Modules
 
@@ -122,7 +122,7 @@ import { configure } from '@kadira/storybook';
 
 function loadStories() {
   require('../components/stories/button');
-  // require as many as stories you need.
+  // require as many stories as you need.
 }
 
 configure(loadStories, module);
@@ -144,7 +144,7 @@ configure(loadStories, module);
 
 ### Load Common CSS Files
 
-Sometimes your app has some common CSS files, so this is the best place to load them. In our Redux to-do example, we load todomvc CSS like this:
+Sometimes your app has some common CSS files, so this is the best place to load them. In our [Redux to-do example](https://github.com/kadira-samples/react-storybook-demo), we load todomvc CSS like this:
 
 ```js
 import { configure } from '@kadira/storybook';
@@ -163,7 +163,7 @@ React Storybook is not your app. So, sometimes you won’t be able to use some o
 
 Let's have a look at an example.
 
-In some of our apps, we use [`react-komposer`](https://github.com/kadirahq/react-komposer) (especially in Mantra apps). So, if you use any container created by `react-komposer`, it usually throws an error since React Storybook does not initialize them properly.
+In some of our apps we use [`react-komposer`](https://github.com/kadirahq/react-komposer) (especially in Mantra apps). So, if you use any container created by `react-komposer`, it usually throws an error since React Storybook does not initialize them properly.
 
 In such a scenario, you can disable `react-komposer` like this:
 
@@ -180,7 +180,7 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-## Custom webpack Configurations
+## Custom Webpack Configurations
 
 React Storybook is built on top of webpack. If you need, you can customize the webpack configurations used by React Storybook.
 
@@ -207,8 +207,27 @@ module.exports = {
 }
 ```
 
+### Customizing The UI
+
+You can customize the UI by duplicating the original components such as  [layout.js](https://raw.githubusercontent.com/kadirahq/react-storybook/master/src/client/ui/layout.js) file, put it in `.storybook/layout.js` and setting webpack config like this :
+
+```js
+const path = require('path');
+
+module.exports = {
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(/^\.\/layout$/, 'custom-layout')
+  ],
+  resolve: {
+    alias: {
+      'custom-layout': path.resolve('.storybook/layout.js')
+    }
+  }
+}
+```
+
 > You can pass options to this config file as you wish. But, there are some stuff like devServer we'll always add by default. <br/>
 > So, usually you need to use this config for doing following things:
->  *  For loading CSS.
->  *  For adding custom resolve extensions.
->  *  For adding resolve aliases.
+>  *  for loading CSS,
+>  *  for adding custom resolve extensions,
+>  *  for adding resolve aliases.
