@@ -23,7 +23,7 @@ We welcome your contributions. There are many ways you can help us. This is few 
 * Work on [enhancements](https://github.com/kadirahq/react-storybook/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) and new [features](https://github.com/kadirahq/react-storybook/issues?q=is%3Aissue+is%3Aopen+label%3Afeature).
 * Add more tests (specially for the UI).
 
-Before you sending a new PR, make you to run `npm test`. Do not send a PR if tests are failing. If you need any help, create an issue and ask.
+Before you submit a new PR, make you to run `npm test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
 ## Development Guide
 
