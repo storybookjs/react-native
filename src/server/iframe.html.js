@@ -1,9 +1,10 @@
-export default function () {
+export default function (extraHtml) {
   return `
     <!DOCTYPE html>
     <html>
       <head>
         <title>React Storybook</title>
+        ${extraHtml}
       </head>
       <body>
         <div id="root" />

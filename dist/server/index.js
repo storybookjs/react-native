@@ -121,6 +121,12 @@ if (_fs2.default.existsSync(customConfigPath)) {
   });
 }
 
+var headHtmlPath = _path2.default.resolve(configDirPath, 'head.html');
+var headHtml = '';
+if (_fs2.default.existsSync(headHtmlPath)) {
+  headHtml = _fs2.default.readFileSync(headHtmlPath);
+}
+
 var compiler = (0, _webpack2.default)(finalConfig);
 var devMiddlewareOptions = {
   noInfo: true,
@@ -134,7 +140,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/iframe', function (req, res) {
-  res.send((0, _iframe2.default)());
+  res.send((0, _iframe2.default)(headHtml));
 });
 
 app.listen(_commander2.default.port, function (error) {

@@ -94,6 +94,12 @@ if (fs.existsSync(customConfigPath)) {
   };
 }
 
+const headHtmlPath = path.resolve(configDirPath, 'head.html');
+let headHtml = '';
+if (fs.existsSync(headHtmlPath)) {
+  headHtml = fs.readFileSync(headHtmlPath);
+}
+
 const compiler = webpack(finalConfig);
 const devMiddlewareOptions = {
   noInfo: true,
@@ -107,7 +113,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/iframe', function (req, res) {
-  res.send(getIframeHtml());
+  res.send(getIframeHtml(headHtml));
 });
 
 app.listen(program.port, function (error) {
