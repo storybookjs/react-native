@@ -1,6 +1,6 @@
 ## Changelog
 
-### v.NEXT
+### v1.6.0
 
 * Make scrollable layout. See: [PR](https://github.com/kadirahq/react-storybook/pull/70)
 * Add npm3 requirement to the `package.json`.
