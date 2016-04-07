@@ -48,18 +48,25 @@ class Layout extends React.Component {
 
     return (
       <div style={rootStyles}>
-        <SplitPane split="vertical" minSize={250} resizerChildren={vsplit} onDragStarted={onDragStart} onDragFinished={onDragEnd}>
-            <div style={controlsStyle}>
-              {controls}
+        <SplitPane
+          split="vertical" minSize={250} resizerChildren={vsplit}
+          onDragStarted={onDragStart} onDragFinished={onDragEnd}
+        >
+          <div style={controlsStyle}>
+            {controls}
+          </div>
+          <SplitPane
+            split="horizontal" primary="second" minSize={100}
+            defaultSize={200} resizerChildren={hsplit}
+            onDragStarted={onDragStart} onDragFinished={onDragEnd}
+          >
+            <div style={previewStyle}>
+              {preview}
             </div>
-            <SplitPane split="horizontal" primary="second" minSize={100} defaultSize={200} resizerChildren={hsplit} onDragStarted={onDragStart} onDragFinished={onDragEnd}>
-              <div style={previewStyle}>
-                {preview}
-              </div>
-              <div style={actionStyle}>
-                {actionLogger}
-              </div>
-            </SplitPane>
+            <div style={actionStyle}>
+              {actionLogger}
+            </div>
+          </SplitPane>
         </SplitPane>
       </div>
     );

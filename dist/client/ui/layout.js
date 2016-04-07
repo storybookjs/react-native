@@ -102,7 +102,10 @@ var Layout = function (_React$Component) {
         { style: rootStyles },
         _react2.default.createElement(
           _reactSplitPane2.default,
-          { split: 'vertical', minSize: 250, resizerChildren: vsplit, onDragStarted: onDragStart, onDragFinished: onDragEnd },
+          {
+            split: 'vertical', minSize: 250, resizerChildren: vsplit,
+            onDragStarted: onDragStart, onDragFinished: onDragEnd
+          },
           _react2.default.createElement(
             'div',
             { style: controlsStyle },
@@ -110,7 +113,11 @@ var Layout = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactSplitPane2.default,
-            { split: 'horizontal', primary: 'second', minSize: 100, defaultSize: 200, resizerChildren: hsplit, onDragStarted: onDragStart, onDragFinished: onDragEnd },
+            {
+              split: 'horizontal', primary: 'second', minSize: 100,
+              defaultSize: 200, resizerChildren: hsplit,
+              onDragStarted: onDragStart, onDragFinished: onDragEnd
+            },
             _react2.default.createElement(
               'div',
               { style: previewStyle },
