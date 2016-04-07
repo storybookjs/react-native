@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import stringify from 'json-stringify-safe';
 
 const h3Style = {
   fontFamily: `
@@ -25,19 +26,55 @@ const clearButtonStyle = {
   marginLeft: 5,
 };
 
-const ActionLogger = ({ actionLog, onClear }) => (
-  <div>
-    <h3 style={h3Style}>
-      ACTION LOGGER
-      <button style={clearButtonStyle} onClick={onClear}>CLEAR</button>
-    </h3>
-    <pre style={preStyle}>{actionLog}</pre>
-  </div>
-);
+const latestActionLogStyle = {
+  backgroundColor: 'lightgreen',
+  transition: 'all .5s ease-in',
+};
+
+class ActionLogger extends Component {
+  componentDidUpdate() {
+    if (this.refs.actionLogger && window.setTimeout) {
+      this.refs.actionLogger.style.backgroundColor = latestActionLogStyle.backgroundColor;
+      setTimeout(() => {
+        this.refs.actionLogger.style.backgroundColor = 'white';
+      }, 800);
+    }
+  }
+
+  getActionData() {
+    const { actions = [] } = this.props.data;
+    return actions
+    .map((action, i) => {
+      // assuming that the first object in the array is the latest addition.
+      return i === 0 ? (
+        <div style={latestActionLogStyle} ref="actionLogger" key={i}>
+          {stringify(action, null, 2)}
+        </div>
+        ) : (
+        <div key={i}>
+          {stringify(action, null, 2)}
+        </div>
+        );
+    });
+  }
+
+  render() {
+    const { onClear } = this.props;
+    return (
+      <div>
+        <h3 style={h3Style}>
+          ACTION LOGGER
+          <button style={clearButtonStyle} onClick={onClear}>CLEAR</button>
+        </h3>
+        <pre style={preStyle}>{this.getActionData()}</pre>
+      </div>
+      );
+  }
+}
 
 ActionLogger.propTypes = {
-  actionLog: React.PropTypes.string.isRequired,
   onClear: React.PropTypes.func,
+  data: React.PropTypes.array.isRequired,
 };
 
 export default ActionLogger;

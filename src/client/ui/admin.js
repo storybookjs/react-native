@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import stringify from 'json-stringify-safe';
 import StorybookControls from './controls';
 import ActionLogger from './action_logger';
 import Layout from './layout';
@@ -64,12 +63,7 @@ export function getIframe(data) {
 }
 
 export function getActionLogger(data) {
-  const { actions = [] } = data;
-  const log = actions
-    .map(action => stringify(action, null, 2))
-    .join('\n\n');
-
-  return (<ActionLogger actionLog={log} onClear={clearLogs} />);
+  return (<ActionLogger data={data} onClear={clearLogs} />);
 }
 
 export function renderMain(data) {
