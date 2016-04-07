@@ -1,62 +1,73 @@
 import React from 'react';
 
+import VSplit from './layout_vsplit';
+import HSplit from './layout_hsplit';
+import SplitPane from '@mnmtanish/react-split-pane';
+
 class Layout extends React.Component {
-  componentWillMount() {
-    this.updateHeight();
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.updateHeight.bind(this));
-  }
-
-  updateHeight() {
-    const { documentElement, body } = document;
-    let height = documentElement.clientHeight || body.clientHeight;
-    height -= 20;
-    this.setState({ height });
-  }
-
   render() {
     const { controls, preview, actionLogger } = this.props;
-    const { height } = this.state;
 
     const rootStyles = {
-      height,
-      padding: 8,
+      height: '100vh',
       backgroundColor: '#F7F7F7',
     };
+
     const controlsStyle = {
-      width: 240,
-      float: 'left',
+      position: 'absolute',
+      width: '100%',
       height: '100%',
-      overflowY: 'auto',
     };
 
     const actionStyle = {
-      height: 150,
-      marginLeft: 250,
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      padding: '5px 10px 10px 0',
+      boxSizing: 'border-box',
     };
 
     const previewStyle = {
-      height: height - actionStyle.height - 25,
-      marginLeft: 250,
-      border: '1px solid #ECECEC',
-      borderRadius: 4,
-      padding: 5,
-      backgroundColor: '#FFF',
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      padding: '10px 10px 10px 0',
+      boxSizing: 'border-box',
+    };
+
+    const vsplit = <VSplit />;
+    const hsplit = <HSplit />;
+
+    const onDragStart = function () {
+      document.body.classList.add('dragging');
+    };
+
+    const onDragEnd = function () {
+      document.body.classList.remove('dragging');
     };
 
     return (
       <div style={rootStyles}>
-        <div style={controlsStyle}>
-          {controls}
-        </div>
-        <div style={previewStyle}>
-          {preview}
-        </div>
-        <div style={actionStyle}>
-          {actionLogger}
-        </div>
+        <SplitPane
+          split="vertical" minSize={250} resizerChildren={vsplit}
+          onDragStarted={onDragStart} onDragFinished={onDragEnd}
+        >
+          <div style={controlsStyle}>
+            {controls}
+          </div>
+          <SplitPane
+            split="horizontal" primary="second" minSize={100}
+            defaultSize={200} resizerChildren={hsplit}
+            onDragStarted={onDragStart} onDragFinished={onDragEnd}
+          >
+            <div style={previewStyle}>
+              {preview}
+            </div>
+            <div style={actionStyle}>
+              {actionLogger}
+            </div>
+          </SplitPane>
+        </SplitPane>
       </div>
     );
   }

@@ -20,6 +20,7 @@
     "dev": "nodemon --watch src --exec 'npm run prepublish'"
   },
   "dependencies": {
+    "@mnmtanish/react-split-pane": "^0.1.30",
     "babel-core": "^6.3.15",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.3.15",
