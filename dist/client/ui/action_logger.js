@@ -10,25 +10,36 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var h3Style = {
+var preStyle = {
+  color: '#666',
+  overflowY: 'auto',
+  padding: '8px',
+  boxSizing: 'border-box',
+  border: '1px solid #ECECEC',
+  borderRadius: 4,
+  backgroundColor: '#FFF',
+  margin: '0',
+  position: 'absolute',
+  top: '30px',
+  right: 0,
+  bottom: 0,
+  left: 0
+};
+
+var wrapStyle = {
+  position: 'relative',
+  height: '100%'
+};
+
+var headStyle = {
   fontFamily: '\n    -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",\n    "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif\n  ',
   color: '#444',
   letterSpacing: '2px',
   fontSize: 12,
-  margin: '12px 0 5px 0'
+  margin: '0 0 0 5px'
 };
 
-var preStyle = {
-  height: 105,
-  overflowY: 'auto',
-  backgroundColor: '#FFF',
-  borderRadius: 3,
-  padding: 8,
-  color: '#666',
-  border: '1px solid #EAEAEA'
-};
-
-var clearButtonStyle = {
+var btnStyle = {
   marginLeft: 5
 };
 
@@ -37,14 +48,14 @@ var ActionLogger = function ActionLogger(_ref) {
   var onClear = _ref.onClear;
   return _react2.default.createElement(
     'div',
-    null,
+    { style: wrapStyle },
     _react2.default.createElement(
       'h3',
-      { style: h3Style },
+      { style: headStyle },
       'ACTION LOGGER',
       _react2.default.createElement(
         'button',
-        { style: clearButtonStyle, onClick: onClear },
+        { style: btnStyle, onClick: onClear },
         'CLEAR'
       )
     ),

@@ -48,7 +48,9 @@ export function getIframe(data) {
   const iframeStyle = {
     width: '100%',
     height: '100%',
-    border: '0',
+    border: '1px solid #ECECEC',
+    borderRadius: 4,
+    backgroundColor: '#FFF',
   };
 
   // We need to send dataId via queryString

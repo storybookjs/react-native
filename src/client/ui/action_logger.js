@@ -1,6 +1,27 @@
 import React from 'react';
 
-const h3Style = {
+const preStyle = {
+  color: '#666',
+  overflowY: 'auto',
+  padding: '8px',
+  boxSizing: 'border-box',
+  border: '1px solid #ECECEC',
+  borderRadius: 4,
+  backgroundColor: '#FFF',
+  margin: '0',
+  position: 'absolute',
+  top: '30px',
+  right: 0,
+  bottom: 0,
+  left: 0,
+};
+
+const wrapStyle = {
+  position: 'relative',
+  height: '100%',
+};
+
+const headStyle = {
   fontFamily: `
     -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
     "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
@@ -8,28 +29,18 @@ const h3Style = {
   color: '#444',
   letterSpacing: '2px',
   fontSize: 12,
-  margin: '12px 0 5px 0',
+  margin: '0 0 0 5px',
 };
 
-const preStyle = {
-  height: 105,
-  overflowY: 'auto',
-  backgroundColor: '#FFF',
-  borderRadius: 3,
-  padding: 8,
-  color: '#666',
-  border: '1px solid #EAEAEA',
-};
-
-const clearButtonStyle = {
+const btnStyle = {
   marginLeft: 5,
 };
 
 const ActionLogger = ({ actionLog, onClear }) => (
-  <div>
-    <h3 style={h3Style}>
+  <div style={wrapStyle}>
+    <h3 style={headStyle}>
       ACTION LOGGER
-      <button style={clearButtonStyle} onClick={onClear}>CLEAR</button>
+      <button style={btnStyle} onClick={onClear}>CLEAR</button>
     </h3>
     <pre style={preStyle}>{actionLog}</pre>
   </div>
