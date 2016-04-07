@@ -65,10 +65,9 @@ var Layout = function (_React$Component) {
       };
 
       var controlsStyle = {
-        height: '100%',
-        overflowY: 'auto',
-        padding: '5px 0 5px 10px',
-        boxSizing: 'border-box'
+        position: 'absolute',
+        width: '100%',
+        height: '100%'
       };
 
       var actionStyle = {

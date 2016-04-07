@@ -14,10 +14,9 @@ class Layout extends React.Component {
     };
 
     const controlsStyle = {
+      position: 'absolute',
+      width: '100%',
       height: '100%',
-      overflowY: 'auto',
-      padding: '5px 0 5px 10px',
-      boxSizing: 'border-box',
     };
 
     const actionStyle = {

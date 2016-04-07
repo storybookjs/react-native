@@ -154,8 +154,17 @@ var StorybookControls = function (_React$Component) {
       var kindNames = this.getKindNames();
       var mainStyle = {
         fontFamily: '\n        -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",\n        "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif\n      ',
-        padding: '20px 10px 10px 10px',
         color: '#444'
+      };
+
+      var h1WrapStyle = {
+        background: '#F7F7F7',
+        borderBottom: '1px solid #EEE',
+        paddingBottom: '20px',
+        position: 'absolute',
+        top: '20px',
+        right: '10px',
+        left: '20px'
       };
 
       var h1Style = {
@@ -168,21 +177,34 @@ var StorybookControls = function (_React$Component) {
         textAlign: 'center',
         borderRadius: '2px',
         padding: '5px',
-        margin: '0 0 20px 0',
-        cursor: 'default'
+        cursor: 'default',
+        margin: 0
+      };
+
+      var listStyle = {
+        overflowY: 'auto',
+        position: 'absolute',
+        top: '68px',
+        right: '10px',
+        bottom: 0,
+        left: '20px'
       };
 
       return _react2.default.createElement(
         'div',
         { style: mainStyle },
         _react2.default.createElement(
-          'h3',
-          { style: h1Style },
-          'React Storybook'
+          'div',
+          { style: h1WrapStyle },
+          _react2.default.createElement(
+            'h3',
+            { style: h1Style },
+            'React Storybook'
+          )
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { style: listStyle },
           kindNames.map(this.renderKind.bind(this))
         )
       );

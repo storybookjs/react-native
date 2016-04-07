@@ -97,8 +97,17 @@ export default class StorybookControls extends React.Component {
         -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
         "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
       `,
-      padding: '20px 10px 10px 10px',
       color: '#444',
+    };
+
+    const h1WrapStyle = {
+      background: '#F7F7F7',
+      borderBottom: '1px solid #EEE',
+      paddingBottom: '20px',
+      position: 'absolute',
+      top: '20px',
+      right: '10px',
+      left: '20px',
     };
 
     const h1Style = {
@@ -111,14 +120,25 @@ export default class StorybookControls extends React.Component {
       textAlign: 'center',
       borderRadius: '2px',
       padding: '5px',
-      margin: '0 0 20px 0',
       cursor: 'default',
+      margin: 0,
+    };
+
+    const listStyle = {
+      overflowY: 'auto',
+      position: 'absolute',
+      top: '68px',
+      right: '10px',
+      bottom: 0,
+      left: '20px',
     };
 
     return (
       <div style={mainStyle}>
-        <h3 style={h1Style}>React Storybook</h3>
-        <div>
+        <div style={h1WrapStyle}>
+          <h3 style={h1Style}>React Storybook</h3>
+        </div>
+        <div style={listStyle}>
           {kindNames.map(this.renderKind.bind(this))}
         </div>
       </div>
