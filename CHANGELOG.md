@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Make scrollable layout. See: [PR](https://github.com/kadirahq/react-storybook/pull/70)
 * Add npm3 requirement to the `package.json`.
 * Add `react` and `react-dom` to devDependencies.
 
