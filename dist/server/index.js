@@ -53,6 +53,10 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _get_head_html = require('./get_head_html');
+
+var _get_head_html2 = _interopRequireDefault(_get_head_html);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 process.env.NODE_ENV = 'production';
@@ -121,12 +125,6 @@ if (_fs2.default.existsSync(customConfigPath)) {
   });
 }
 
-var headHtmlPath = _path2.default.resolve(configDirPath, 'head.html');
-var headHtml = '';
-if (_fs2.default.existsSync(headHtmlPath)) {
-  headHtml = _fs2.default.readFileSync(headHtmlPath);
-}
-
 var compiler = (0, _webpack2.default)(finalConfig);
 var devMiddlewareOptions = {
   noInfo: true,
@@ -139,6 +137,7 @@ app.get('/', function (req, res) {
   res.send((0, _index2.default)());
 });
 
+var headHtml = (0, _get_head_html2.default)(configDirPath);
 app.get('/iframe', function (req, res) {
   res.send((0, _iframe2.default)(headHtml));
 });

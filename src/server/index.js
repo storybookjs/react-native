@@ -13,6 +13,7 @@ import packageJson from '../../package.json';
 import config from './webpack.config';
 import path from 'path';
 import fs from 'fs';
+import getHeadHtml from './get_head_html';
 
 const logger = console;
 
@@ -94,12 +95,6 @@ if (fs.existsSync(customConfigPath)) {
   };
 }
 
-const headHtmlPath = path.resolve(configDirPath, 'head.html');
-let headHtml = '';
-if (fs.existsSync(headHtmlPath)) {
-  headHtml = fs.readFileSync(headHtmlPath);
-}
-
 const compiler = webpack(finalConfig);
 const devMiddlewareOptions = {
   noInfo: true,
@@ -112,6 +107,7 @@ app.get('/', function (req, res) {
   res.send(getIndexHtml());
 });
 
+const headHtml = getHeadHtml(configDirPath);
 app.get('/iframe', function (req, res) {
   res.send(getIframeHtml(headHtml));
 });
