@@ -28,10 +28,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _jsonStringifySafe = require('json-stringify-safe');
-
-var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var preStyle = {
@@ -95,19 +91,16 @@ var ActionLogger = function (_Component) {
   }, {
     key: 'getActionData',
     value: function getActionData() {
-      var _props$data$actions = this.props.data.actions;
-      var actions = _props$data$actions === undefined ? [] : _props$data$actions;
-
-      return actions.map(function (action, i) {
+      return this.props.actionLogs.map(function (action, i) {
         // assuming that the first object in the array is the latest addition.
         return i === 0 ? _react2.default.createElement(
           'div',
           { style: latestActionLogStyle, ref: 'actionLogger', key: i },
-          (0, _jsonStringifySafe2.default)(action, null, 2)
+          action
         ) : _react2.default.createElement(
           'div',
           { key: i },
-          (0, _jsonStringifySafe2.default)(action, null, 2)
+          action
         );
       });
     }
@@ -142,7 +135,7 @@ var ActionLogger = function (_Component) {
 
 ActionLogger.propTypes = {
   onClear: _react2.default.PropTypes.func,
-  data: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.array.isRequired, _react2.default.PropTypes.object.isRequired])
+  actionLogs: _react2.default.PropTypes.array
 };
 
 exports.default = ActionLogger;

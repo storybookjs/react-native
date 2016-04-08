@@ -22,6 +22,10 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _jsonStringifySafe = require('json-stringify-safe');
+
+var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
+
 var _controls = require('./controls');
 
 var _controls2 = _interopRequireDefault(_controls);
@@ -95,7 +99,13 @@ function getIframe(data) {
 }
 
 function getActionLogger(data) {
-  return _react2.default.createElement(_action_logger2.default, { data: data, onClear: clearLogs });
+  var _data$actions = data.actions;
+  var actions = _data$actions === undefined ? [] : _data$actions;
+
+  var logs = actions.map(function (action) {
+    return (0, _jsonStringifySafe2.default)(action, null, 2);
+  });
+  return _react2.default.createElement(_action_logger2.default, { actionLogs: logs, onClear: clearLogs });
 }
 
 function renderMain(data) {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import stringify from 'json-stringify-safe';
 
 const preStyle = {
   color: '#666',
@@ -53,18 +52,13 @@ class ActionLogger extends Component {
   }
 
   getActionData() {
-    const { actions = [] } = this.props.data;
-    return actions
+    return this.props.actionLogs
     .map((action, i) => {
       // assuming that the first object in the array is the latest addition.
       return i === 0 ? (
-        <div style={latestActionLogStyle} ref="actionLogger" key={i}>
-          {stringify(action, null, 2)}
-        </div>
+        <div style={latestActionLogStyle} ref="actionLogger" key={i}>{action}</div>
         ) : (
-        <div key={i}>
-          {stringify(action, null, 2)}
-        </div>
+        <div key={i}>{action}</div>
         );
     });
   }
@@ -85,10 +79,7 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: React.PropTypes.func,
-  data: React.PropTypes.oneOfType([
-    React.PropTypes.array.isRequired,
-    React.PropTypes.object.isRequired,
-  ]),
+  actionLogs: React.PropTypes.array,
 };
 
 export default ActionLogger;
