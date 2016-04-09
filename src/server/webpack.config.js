@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 const config = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '#cheap-module-eval-source-map',
   entry: {
     admin: [
       'stack-source-map/register',
