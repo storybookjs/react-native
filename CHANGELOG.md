@@ -1,5 +1,12 @@
 ## Changelog
 
+### v1.8.0
+
+* Add story linking functionality.
+  * [Documentation](https://github.com/kadirahq/react-storybook/blob/master/docs/api.md#linking-stories).
+  * Original feature request: [#50](https://github.com/kadirahq/react-storybook/issues/50)
+  * Implementation: [PR86](https://github.com/kadirahq/react-storybook/pull/86)
+
 ### v1.7.0
 
 * Add support to React v15.0.0.

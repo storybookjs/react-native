@@ -1,18 +1,18 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _from = require("babel-runtime/core-js/array/from");
+var _from = require('babel-runtime/core-js/array/from');
 
 var _from2 = _interopRequireDefault(_from);
 
-var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = require("babel-runtime/helpers/createClass");
+var _createClass2 = require('babel-runtime/helpers/createClass');
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -29,7 +29,7 @@ var ClientApi = function () {
   }
 
   (0, _createClass3.default)(ClientApi, [{
-    key: "storiesOf",
+    key: 'storiesOf',
     value: function storiesOf(kind, m) {
       var _this = this;
 
@@ -47,7 +47,7 @@ var ClientApi = function () {
       return { add: add };
     }
   }, {
-    key: "action",
+    key: 'action',
     value: function action(name) {
       var syncedStore = this._syncedStore;
 
@@ -66,7 +66,7 @@ var ClientApi = function () {
         // Remove events from the args. Otherwise, it creates a huge JSON string.
 
         if (args[0] && args[0].constructor && /Synthetic/.test(args[0].constructor.name)) {
-          args[0] = "[" + args[0].constructor.name + "]";
+          args[0] = '[' + args[0].constructor.name + ']';
         }
 
         actions = [{ name: name, args: args }].concat(actions.slice(0, 4));
@@ -74,16 +74,16 @@ var ClientApi = function () {
       };
     }
   }, {
-    key: "linkTo",
+    key: 'linkTo',
     value: function linkTo(kind, story) {
       var syncedStore = this._syncedStore;
 
       return function () {
-        var resolvedKind = typeof kind === "function" ? kind.apply(undefined, arguments) : kind;
+        var resolvedKind = typeof kind === 'function' ? kind.apply(undefined, arguments) : kind;
 
         var resolvedStory = void 0;
         if (story) {
-          resolvedStory = typeof story === "function" ? story.apply(undefined, arguments) : story;
+          resolvedStory = typeof story === 'function' ? story.apply(undefined, arguments) : story;
         } else {
           var _syncedStore$getData2 = syncedStore.getData();
 
