@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.7.0
+
+* Add support to React v15.0.0.
+
 ### v1.6.0
 
 * Make scrollable layout. See: [PR](https://github.com/kadirahq/react-storybook/pull/70)
