@@ -8,7 +8,7 @@ const preStyle = {
   border: '1px solid #ECECEC',
   borderRadius: 4,
   backgroundColor: '#FFF',
-  margin: '0',
+  margin: 0,
   position: 'absolute',
   top: '30px',
   right: 0,
