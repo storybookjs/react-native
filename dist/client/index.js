@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.configure = exports.action = exports.storiesOf = undefined;
+exports.configure = exports.linkTo = exports.action = exports.storiesOf = undefined;
 exports.getStoryStore = getStoryStore;
 exports.getSyncedStore = getSyncedStore;
 
@@ -41,4 +41,5 @@ function getSyncedStore() {
 
 var storiesOf = exports.storiesOf = clientApi.storiesOf.bind(clientApi);
 var action = exports.action = clientApi.action.bind(clientApi);
+var linkTo = exports.linkTo = clientApi.linkTo.bind(clientApi);
 var configure = exports.configure = configApi.configure.bind(configApi);

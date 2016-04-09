@@ -39,4 +39,28 @@ export default class ClientApi {
       syncedStore.setData({ actions });
     };
   }
+
+  linkTo(kind, story) {
+    const syncedStore = this._syncedStore;
+
+    return function (...args) {
+      const resolvedKind = typeof kind === 'function' ? kind(...args) : kind;
+
+      let resolvedStory;
+      if (story) {
+        resolvedStory = typeof story === 'function' ? story(...args) : story;
+      } else {
+        const { storyStore } = syncedStore.getData();
+
+        resolvedStory = storyStore
+          .find(item => item.kind === kind)
+          .stories[0];
+      }
+
+      syncedStore.setData({
+        selectedKind: resolvedKind,
+        selectedStory: resolvedStory,
+      });
+    };
+  }
 }

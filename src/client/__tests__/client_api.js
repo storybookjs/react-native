@@ -136,4 +136,57 @@ describe('client.ClientApi', () => {
       ]);
     });
   });
+
+  describe('linkTo', () => {
+    it('should send kind to the syncedStore', () => {
+      const api = getClientApi();
+      api._syncedStore.getData = () => ({
+        storyStore: [{ kind: 'Another Kind', stories: [] }],
+        selectedKind: 'Some Kind',
+      });
+      api._syncedStore.setData = sinon.stub();
+
+      const cb = api.linkTo('Another Kind');
+      cb();
+
+      const args = api._syncedStore.setData.args[0];
+      expect(args[0].selectedKind).to.equal('Another Kind');
+    });
+
+    it('should send story to the syncedStore', () => {
+      const api = getClientApi();
+      api._syncedStore.getData = () => ({
+        storyStore: [{ kind: 'Another Kind', stories: [] }],
+        selectedKind: 'Some Kind',
+        selectedStory: 'Some Story',
+      });
+      api._syncedStore.setData = sinon.stub();
+
+      const cb = api.linkTo('Another Kind', 'Another Story');
+      cb();
+
+      const args = api._syncedStore.setData.args[0];
+      expect(args[0].selectedKind).to.equal('Another Kind');
+      expect(args[0].selectedStory).to.equal('Another Story');
+    });
+
+    it('should allow functions for story and kind', () => {
+      const api = getClientApi();
+      api._syncedStore.getData = () => ({
+        storyStore: [{ kind: 'Another Kind', stories: [] }],
+        selectedKind: 'Some Kind',
+        selectedStory: 'Some Story',
+      });
+      api._syncedStore.setData = sinon.stub();
+
+      const cb = api.linkTo(
+        () => 'Another Kind',
+        () => 'Another Story');
+      cb();
+
+      const args = api._syncedStore.setData.args[0];
+      expect(args[0].selectedKind).to.equal('Another Kind');
+      expect(args[0].selectedStory).to.equal('Another Story');
+    });
+  });
 });

@@ -73,6 +73,34 @@ var ClientApi = function () {
         syncedStore.setData({ actions: actions });
       };
     }
+  }, {
+    key: "linkTo",
+    value: function linkTo(kind, story) {
+      var syncedStore = this._syncedStore;
+
+      return function () {
+        var resolvedKind = typeof kind === "function" ? kind.apply(undefined, arguments) : kind;
+
+        var resolvedStory = void 0;
+        if (story) {
+          resolvedStory = typeof story === "function" ? story.apply(undefined, arguments) : story;
+        } else {
+          var _syncedStore$getData2 = syncedStore.getData();
+
+          var storyStore = _syncedStore$getData2.storyStore;
+
+
+          resolvedStory = storyStore.find(function (item) {
+            return item.kind === kind;
+          }).stories[0];
+        }
+
+        syncedStore.setData({
+          selectedKind: resolvedKind,
+          selectedStory: resolvedStory
+        });
+      };
+    }
   }]);
   return ClientApi;
 }();
