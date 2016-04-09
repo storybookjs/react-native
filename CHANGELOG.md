@@ -1,5 +1,13 @@
 ## Changelog
 
+### v1.9.0
+
+Add some minor improvements.
+
+* Avoid deprecated warning in Chrome Canary. See: [PR85](https://github.com/kadirahq/react-storybook/pull/85)
+* Fix the React Warning about CSS property. See: [PR84](https://github.com/kadirahq/react-storybook/pull/84)
+* Transition on latest logged action. See: [PR80](https://github.com/kadirahq/react-storybook/pull/80)
+
 ### v1.8.0
 
 * Add story linking functionality.
