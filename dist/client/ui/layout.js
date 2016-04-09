@@ -36,7 +36,7 @@ var _layout_hsplit = require('./layout_hsplit');
 
 var _layout_hsplit2 = _interopRequireDefault(_layout_hsplit);
 
-var _reactSplitPane = require('@mnmtanish/react-split-pane');
+var _reactSplitPane = require('@kadira/react-split-pane');
 
 var _reactSplitPane2 = _interopRequireDefault(_reactSplitPane);
 

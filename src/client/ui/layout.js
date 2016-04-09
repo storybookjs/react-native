@@ -2,7 +2,7 @@ import React from 'react';
 
 import VSplit from './layout_vsplit';
 import HSplit from './layout_hsplit';
-import SplitPane from '@mnmtanish/react-split-pane';
+import SplitPane from '@kadira/react-split-pane';
 
 class Layout extends React.Component {
   render() {
