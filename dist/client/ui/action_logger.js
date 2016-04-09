@@ -38,7 +38,7 @@ var preStyle = {
   border: '1px solid #ECECEC',
   borderRadius: 4,
   backgroundColor: '#FFF',
-  margin: '0',
+  margin: 0,
   position: 'absolute',
   top: '30px',
   right: 0,
@@ -64,8 +64,8 @@ var btnStyle = {
 };
 
 var latestActionLogStyle = {
-  backgroundColor: 'oldlace',
-  transition: 'all .5s ease-in'
+  backgroundColor: '#FFFCE0',
+  transition: 'all .2s ease-in'
 };
 
 var ActionLogger = function (_Component) {
@@ -85,7 +85,7 @@ var ActionLogger = function (_Component) {
         this.refs.actionLogger.style.backgroundColor = latestActionLogStyle.backgroundColor;
         setTimeout(function () {
           _this2.refs.actionLogger.style.backgroundColor = 'white';
-        }, 800);
+        }, 500);
       }
     }
   }, {

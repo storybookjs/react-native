@@ -37,8 +37,8 @@ const btnStyle = {
 };
 
 const latestActionLogStyle = {
-  backgroundColor: 'oldlace',
-  transition: 'all .5s ease-in',
+  backgroundColor: '#FFFCE0',
+  transition: 'all .2s ease-in',
 };
 
 class ActionLogger extends Component {
@@ -47,7 +47,7 @@ class ActionLogger extends Component {
       this.refs.actionLogger.style.backgroundColor = latestActionLogStyle.backgroundColor;
       setTimeout(() => {
         this.refs.actionLogger.style.backgroundColor = 'white';
-      }, 800);
+      }, 500);
     }
   }
 
