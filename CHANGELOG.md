@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Unmount components before rendering into DOM node. Fix: [#81](https://github.com/kadirahq/react-storybook/issues/81)
 * Add a static file builder. See [PR88](https://github.com/kadirahq/react-storybook/pull/88)
 * Fix search box's lineHeight to work with all the browsers. See: [PR94](https://github.com/kadirahq/react-storybook/pull/94)
 * Add the search box. See: [PR91](https://github.com/kadirahq/react-storybook/pull/91).
