@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Add custom head support inside the iframe. See [PR77](https://github.com/kadirahq/react-storybook/pull/77)
 * Unmount components before rendering into DOM node. Fix: [#81](https://github.com/kadirahq/react-storybook/issues/81)
 * Add a static file builder. See [PR88](https://github.com/kadirahq/react-storybook/pull/88)
 * Fix search box's lineHeight to work with all the browsers. See: [PR94](https://github.com/kadirahq/react-storybook/pull/94)
