@@ -1,6 +1,6 @@
 ## Changelog
 
-### v.NEXT
+### v1.10.0
 
 * Add custom head support inside the iframe. See [PR77](https://github.com/kadirahq/react-storybook/pull/77)
 * Unmount components before rendering into DOM node. Fix: [#81](https://github.com/kadirahq/react-storybook/issues/81)
