@@ -14,7 +14,7 @@ import baseConfig from './webpack.config';
 import loadConfig from './config';
 import path from 'path';
 import fs from 'fs';
-import getHeadHtml from './get_head_html';
+import { getHeadHtml } from './utils';
 
 const logger = console;
 

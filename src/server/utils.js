@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-export default function (configDirPath) {
+export function getHeadHtml(configDirPath) {
   const headHtmlPath = path.resolve(configDirPath, 'head.html');
   let headHtml = '';
   if (fs.existsSync(headHtmlPath)) {
