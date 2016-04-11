@@ -2,7 +2,8 @@
 
 ### v.NEXT
 
-* Add search box. See: [PR91](https://github.com/kadirahq/react-storybook/pull/91).
+* Fix search box's lineHeight to work with all the browsers. See: [PR94](https://github.com/kadirahq/react-storybook/pull/94)
+* Add the search box. See: [PR91](https://github.com/kadirahq/react-storybook/pull/91).
 
 ### v1.9.0
 
