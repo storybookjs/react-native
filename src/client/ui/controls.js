@@ -1,13 +1,34 @@
 import React from 'react';
+import TextFilter from './text_filter';
 
 export default class StorybookControls extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterText: '',
+    };
+  }
+
   getKindNames() {
     const { storyStore } = this.props;
     if (!storyStore) {
       return [];
     }
+    const kindNames = storyStore.map(({ kind }) => kind);
 
-    return storyStore.map(({ kind }) => kind);
+    const filterdKindNames = kindNames.filter(kind => {
+      const { selectedKind } = this.props;
+      const { filterText } = this.state;
+
+      if (kind === selectedKind) {
+        // Always keep the selected kind name
+        return true;
+      }
+
+      return kind.toLowerCase().indexOf(filterText.toLowerCase()) > -1;
+    });
+
+    return filterdKindNames;
   }
 
   getStories(kind) {
@@ -28,6 +49,14 @@ export default class StorybookControls extends React.Component {
   fireOnStory(story) {
     const { onStory } = this.props;
     if (onStory) onStory(story);
+  }
+
+  filterStoryList(filterText) {
+    this.setState({ filterText });
+  }
+
+  clearFilterText() {
+    this.setState({ filterText: '' });
   }
 
   renderStory(story) {
@@ -102,7 +131,6 @@ export default class StorybookControls extends React.Component {
 
     const h1WrapStyle = {
       background: '#F7F7F7',
-      borderBottom: '1px solid #EEE',
       paddingBottom: '20px',
       position: 'absolute',
       top: '20px',
@@ -124,10 +152,17 @@ export default class StorybookControls extends React.Component {
       margin: 0,
     };
 
+    const filterTextWrapStyle = {
+      position: 'absolute',
+      top: '68px',
+      right: '10px',
+      left: '20px',
+    };
+
     const listStyle = {
       overflowY: 'auto',
       position: 'absolute',
-      top: '68px',
+      top: '108px',
       right: '10px',
       bottom: 0,
       left: '20px',
@@ -137,6 +172,13 @@ export default class StorybookControls extends React.Component {
       <div style={mainStyle}>
         <div style={h1WrapStyle}>
           <h3 style={h1Style}>React Storybook</h3>
+        </div>
+        <div style={filterTextWrapStyle}>
+          <TextFilter
+            filterText={this.state.filterText}
+            onChange={this.filterStoryList.bind(this)}
+            onClear={this.clearFilterText.bind(this)}
+          />
         </div>
         <div style={listStyle}>
           {kindNames.map(this.renderKind.bind(this))}

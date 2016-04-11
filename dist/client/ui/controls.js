@@ -28,29 +28,55 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _text_filter = require('./text_filter');
+
+var _text_filter2 = _interopRequireDefault(_text_filter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StorybookControls = function (_React$Component) {
   (0, _inherits3.default)(StorybookControls, _React$Component);
 
-  function StorybookControls() {
+  function StorybookControls(props) {
     (0, _classCallCheck3.default)(this, StorybookControls);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(StorybookControls).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(StorybookControls).call(this, props));
+
+    _this.state = {
+      filterText: ''
+    };
+    return _this;
   }
 
   (0, _createClass3.default)(StorybookControls, [{
     key: 'getKindNames',
     value: function getKindNames() {
+      var _this2 = this;
+
       var storyStore = this.props.storyStore;
 
       if (!storyStore) {
         return [];
       }
-
-      return storyStore.map(function (_ref) {
+      var kindNames = storyStore.map(function (_ref) {
         var kind = _ref.kind;
         return kind;
       });
+
+      var filterdKindNames = kindNames.filter(function (kind) {
+        var selectedKind = _this2.props.selectedKind;
+        var filterText = _this2.state.filterText;
+
+
+        if (kind === selectedKind) {
+          // Always keep the selected kind name
+          return true;
+        }
+
+        return kind.toLowerCase().indexOf(filterText.toLowerCase()) > -1;
+      });
+
+      return filterdKindNames;
     }
   }, {
     key: 'getStories',
@@ -79,6 +105,16 @@ var StorybookControls = function (_React$Component) {
       var onStory = this.props.onStory;
 
       if (onStory) onStory(story);
+    }
+  }, {
+    key: 'filterStoryList',
+    value: function filterStoryList(filterText) {
+      this.setState({ filterText: filterText });
+    }
+  }, {
+    key: 'clearFilterText',
+    value: function clearFilterText() {
+      this.setState({ filterText: '' });
     }
   }, {
     key: 'renderStory',
@@ -159,7 +195,6 @@ var StorybookControls = function (_React$Component) {
 
       var h1WrapStyle = {
         background: '#F7F7F7',
-        borderBottom: '1px solid #EEE',
         paddingBottom: '20px',
         position: 'absolute',
         top: '20px',
@@ -181,10 +216,17 @@ var StorybookControls = function (_React$Component) {
         margin: 0
       };
 
+      var filterTextWrapStyle = {
+        position: 'absolute',
+        top: '68px',
+        right: '10px',
+        left: '20px'
+      };
+
       var listStyle = {
         overflowY: 'auto',
         position: 'absolute',
-        top: '68px',
+        top: '108px',
         right: '10px',
         bottom: 0,
         left: '20px'
@@ -201,6 +243,15 @@ var StorybookControls = function (_React$Component) {
             { style: h1Style },
             'React Storybook'
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: filterTextWrapStyle },
+          _react2.default.createElement(_text_filter2.default, {
+            filterText: this.state.filterText,
+            onChange: this.filterStoryList.bind(this),
+            onClear: this.clearFilterText.bind(this)
+          })
         ),
         _react2.default.createElement(
           'div',
