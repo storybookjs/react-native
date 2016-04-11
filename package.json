@@ -36,6 +36,7 @@
     "page-bus": "^3.0.1",
     "query-string": "^3.0.3",
     "redbox-react": "^1.2.2",
+    "shelljs": "^0.6.0",
     "stack-source-map": "^1.0.4",
     "uuid": "^2.0.1",
     "webpack": "^1.12.11",
@@ -67,6 +68,7 @@
   },
   "bin": {
     "start-storybook": "./dist/server/index.js",
+    "build-storybook": "./dist/server/build.js",
     "storybook-server": "./dist/server/index.js"
   }
 }

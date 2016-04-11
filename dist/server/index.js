@@ -1,14 +1,6 @@
 #!/usr/bin/env node
 'use strict';
 
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
@@ -45,6 +37,10 @@ var _webpack3 = require('./webpack.config');
 
 var _webpack4 = _interopRequireDefault(_webpack3);
 
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
 var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
@@ -80,51 +76,15 @@ if (_commander2.default.staticDir) {
   }
 }
 
-// add config path to the entry
+// Build the webpack configuration using the `baseConfig`
+// custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-var configDirPath = _path2.default.resolve(configDir);
+var config = (0, _config2.default)(_webpack4.default, configDir);
 
-// load babelrc file.
-var babelrcPath = _path2.default.resolve('./.babelrc');
-if (_fs2.default.existsSync(babelrcPath)) {
-  logger.info('=> Using custom .babelrc configurations.');
-  var babelrcContent = _fs2.default.readFileSync(babelrcPath);
-  try {
-    var babelrc = JSON.parse(babelrcContent);
-    _webpack4.default.module.loaders[0].query = babelrc;
-  } catch (ex) {
-    logger.error('=> Error parsing .babelrc file: ' + ex.message);
-    throw ex;
-  }
-}
-
-var storybookConfigPath = _path2.default.resolve(configDirPath, 'config.js');
-if (!_fs2.default.existsSync(storybookConfigPath)) {
-  logger.error('=> Create a storybook config file in "' + configDir + '/config.js".\n');
-  process.exit(0);
-}
-_webpack4.default.entry.preview.push(storybookConfigPath);
-
-// load custom webpack configurations
-var customConfigPath = _path2.default.resolve(configDirPath, 'webpack.config.js');
-var finalConfig = _webpack4.default;
-if (_fs2.default.existsSync(customConfigPath)) {
-  var customConfig = require(customConfigPath);
-  logger.info('=> Loading custom webpack config.');
-  finalConfig = (0, _extends3.default)({}, customConfig, _webpack4.default, {
-    // We need to use our and custom plugins.
-    plugins: [].concat((0, _toConsumableArray3.default)(_webpack4.default.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
-    module: (0, _extends3.default)({}, _webpack4.default.module, {
-      // We need to use our and custom loaders.
-      loaders: [].concat((0, _toConsumableArray3.default)(_webpack4.default.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
-    })
-  });
-}
-
-var compiler = (0, _webpack2.default)(finalConfig);
+var compiler = (0, _webpack2.default)(config);
 var devMiddlewareOptions = {
   noInfo: true,
-  publicPath: finalConfig.output.publicPath
+  publicPath: config.output.publicPath
 };
 app.use((0, _webpackDevMiddleware2.default)(compiler, devMiddlewareOptions));
 app.use((0, _webpackHotMiddleware2.default)(compiler));
@@ -133,7 +93,7 @@ app.get('/', function (req, res) {
   res.send((0, _index2.default)());
 });
 
-app.get('/iframe', function (req, res) {
+app.get('/iframe.html', function (req, res) {
   res.send((0, _iframe2.default)());
 });
 
