@@ -52,6 +52,12 @@ function renderMain(data) {
     return _reactDom2.default.render(noPreview, rootEl);
   }
 
+  // We need to unmount the existing set of components in the DOM node.
+  // Otherwise, React may not recrease instances for every story run.
+  // This could leads to issues like below:
+  //    https://github.com/kadirahq/react-storybook/issues/81
+  _reactDom2.default.unmountComponentAtNode(rootEl);
+
   return _reactDom2.default.render(story(), rootEl);
 }
 
