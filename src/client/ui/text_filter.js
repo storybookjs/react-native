@@ -26,6 +26,7 @@ export default class TextFilter extends React.Component {
       width: '100%',
       boxSizing: 'border-box',
       outline: 'none',
+      height: 26,
     };
 
     const clearButtonStyle = {
@@ -39,6 +40,8 @@ export default class TextFilter extends React.Component {
       textAlign: 'center',
       boxSizing: 'border-box',
       cursor: 'pointer',
+      height: 26,
+      lineHeight: '20px',
     };
 
     return (

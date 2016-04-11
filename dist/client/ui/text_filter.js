@@ -65,7 +65,8 @@ var TextFilter = function (_React$Component) {
         display: 'block',
         width: '100%',
         boxSizing: 'border-box',
-        outline: 'none'
+        outline: 'none',
+        height: 26
       };
 
       var clearButtonStyle = {
@@ -78,7 +79,9 @@ var TextFilter = function (_React$Component) {
         top: 0,
         textAlign: 'center',
         boxSizing: 'border-box',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        height: 26,
+        lineHeight: '20px'
       };
 
       return _react2.default.createElement(
