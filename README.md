@@ -19,6 +19,7 @@ This functionality allows you to develop UI components rapidly without worrying 
 * Clean and fast user interface.
 * Runs inside your project (so, it uses your app's NPM modules and babel configurations out of the box).
 * Serves static files (if you host static files inside your app).
+* Deploy the whole storybook as a static app.
 * Extendable as necessary (support for custom webpack loaders and plugins).
 
 ## Demo

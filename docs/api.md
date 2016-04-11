@@ -8,6 +8,7 @@ You can configure React Storybook in different ways. We'll discuss them here.
   * [Port](#port)
   * [Static Directory](#static-directory)
   * [Configuration Directory](#configuration-directory)
+  * [Static Builder](#static-builder)
 * [Story Creation API](#story-creation-api)
   * [Creating Stories](#creating-stories)
   * [Creating Actions](#creating-actions)
@@ -49,6 +50,24 @@ Here's how to tell React Storybook to use a custom directory to load your config
 ```sh
 start-storybook -p 6977 -s ./public -c ./storybook-config
 ```
+
+### Static Builder
+
+With Static Builder, you could convert your whole Storybook into a static site. Then, you can deploy that into any static site hosting service including "GitHub Pages".
+
+Add following script as an NPM script:
+
+```sh
+build-storybook -o storybook-build-dir
+```
+
+Then it'll build and save a set of static files into the `storybook-build-dir` directory. You can access them by running a following python static server:
+
+```python
+python -m SimpleHTTPServer
+```
+
+For more information, run `build-storybook -h`.
 
 ## Story Creation API
 
