@@ -14,6 +14,7 @@ import baseConfig from './webpack.config';
 import loadConfig from './config';
 import path from 'path';
 import fs from 'fs';
+import { getHeadHtml } from './utils';
 
 const logger = console;
 
@@ -60,8 +61,9 @@ app.get('/', function (req, res) {
   res.send(getIndexHtml());
 });
 
+const headHtml = getHeadHtml(configDir);
 app.get('/iframe.html', function (req, res) {
-  res.send(getIframeHtml());
+  res.send(getIframeHtml(headHtml));
 });
 
 app.listen(program.port, function (error) {
