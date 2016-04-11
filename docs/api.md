@@ -18,6 +18,7 @@ You can configure React Storybook in different ways. We'll discuss them here.
   * [Load Common CSS Files](#load-common-css-files)
   * [Configure Modules for Testing](#configure-modules-for-testing)
 * [Custom Webpack Configurations](#custom-webpack-configurations)
+* [Load Custom HTML Head](#load-custom-html-head)
 
 ## Command Line API
 
@@ -284,3 +285,18 @@ module.exports = {
 >  *  for loading CSS,
 >  *  for adding custom resolve extensions,
 >  *  for adding resolve aliases.
+
+## Load Custom HTML Head
+
+Sometimes, we need to load custom DOM nodes inside the HTML `<head>` tag. For an example, this is how we can load TypeKit fonts with React Storybook.
+
+First create a file called `head.html` inside the storybook config directory. Then add following content:
+
+```js
+<script src="https://use.typekit.net/xxxyyy.js"></script>
+<script>try{ Typekit.load(); }catch(e){}</script>
+```
+
+Then run the `npm run storybook` command again. That's it.
+
+> Likewise, you can add anything into the HTML head.
