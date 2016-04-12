@@ -37,7 +37,7 @@ if (program.staticDir) {
   const staticPath = path.resolve(program.staticDir);
   if (fs.existsSync(staticPath)) {
     logger.log(`=> Loading static files from: ${staticPath} .`);
-    app.use(express.static(staticPath));
+    app.use(express.static(staticPath, { index: false }));
   } else {
     logger.error(`Error: no such directory to load static files: ${staticPath}`);
     process.exit(-1);

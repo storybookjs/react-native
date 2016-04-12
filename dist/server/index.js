@@ -73,7 +73,7 @@ if (_commander2.default.staticDir) {
   var staticPath = _path2.default.resolve(_commander2.default.staticDir);
   if (_fs2.default.existsSync(staticPath)) {
     logger.log('=> Loading static files from: ' + staticPath + ' .');
-    app.use(_express2.default.static(staticPath));
+    app.use(_express2.default.static(staticPath, { index: false }));
   } else {
     logger.error('Error: no such directory to load static files: ' + staticPath);
     process.exit(-1);
