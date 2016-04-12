@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import cjson from 'cjson';
 
 // avoid ESLint errors
 const logger = console;
@@ -13,9 +14,9 @@ export default function (baseConfig, configDir) {
   // if user has a .babelrc file in current directory
   // use that to extend webpack configurations
   if (fs.existsSync('./.babelrc')) {
-    const content = fs.readFileSync('./.babelrc');
+    const content = fs.readFileSync('./.babelrc', 'utf-8');
     try {
-      const babelrc = JSON.parse(content);
+      const babelrc = cjson.parse(content);
       config.module.loaders[0].query = babelrc;
     } catch (e) {
       logger.error(`=> Error parsing .babelrc file: ${e.message}`);
