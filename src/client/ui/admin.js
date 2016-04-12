@@ -60,7 +60,7 @@ export function getIframe(data) {
   return (
     <iframe
       style={iframeStyle}
-      src={`/iframe.html?${queryString}`}
+      src={`iframe.html?${queryString}`}
     />
   );
 }

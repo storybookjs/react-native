@@ -8,7 +8,7 @@ export default function (headHtml) {
       </head>
       <body>
         <div id="root" />
-        <script src="/static/preview.bundle.js"></script>
+        <script src="static/preview.bundle.js"></script>
       </body>
     </html>
   `;

@@ -22,7 +22,7 @@ export default function () {
       </head>
       <body style="margin: 0;">
         <div id="root" />
-        <script src="/static/admin.bundle.js"></script>
+        <script src="static/admin.bundle.js"></script>
       </body>
     </html>
   `;
