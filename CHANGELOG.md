@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.10.11
+
+* Don't serve index.html in static directory as a site index. See [PR100](https://github.com/kadirahq/react-storybook/pull/100)
+* Use cjson for parsing .babelrc files (support comments). See [PR98](https://github.com/kadirahq/react-storybook/pull/98)
+* Remove the dist directory before running babel to avoid older code. See [PR101](https://github.com/kadirahq/react-storybook/pull/101)
+
 ### v1.10.0
 
 * Add custom head support inside the iframe. See [PR77](https://github.com/kadirahq/react-storybook/pull/77)
