@@ -120,18 +120,18 @@ describe('client.ClientApi', () => {
       api._syncedStore.getData = () => ({ actions: [] });
       api._syncedStore.setData = sinon.stub();
 
-      class SyntheticAction {
-
-      }
+      const event = {
+        preventDefault() {},
+      };
 
       const cb = api.action('hello');
-      cb(new SyntheticAction());
+      cb(event);
 
       const args = api._syncedStore.setData.args[0];
       expect(args[0].actions).to.be.deep.equal([
         {
           name: 'hello',
-          args: ['[SyntheticAction]'],
+          args: ['[SyntheticEvent]'],
         },
       ]);
     });
