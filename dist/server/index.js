@@ -49,9 +49,7 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _get_head_html = require('./get_head_html');
-
-var _get_head_html2 = _interopRequireDefault(_get_head_html);
+var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -97,7 +95,7 @@ app.get('/', function (req, res) {
   res.send((0, _index2.default)());
 });
 
-var headHtml = (0, _get_head_html2.default)(configDir);
+var headHtml = (0, _utils.getHeadHtml)(configDir);
 app.get('/iframe.html', function (req, res) {
   res.send((0, _iframe2.default)(headHtml));
 });
