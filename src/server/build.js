@@ -12,6 +12,7 @@ import baseConfig from './webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
+import { getHeadHtml } from './utils';
 
 // avoid ESLint errors
 const logger = console;
@@ -27,9 +28,15 @@ program
 const outputDir = program.outputDir || './storybook-static';
 shelljs.mkdir('-p', path.resolve(outputDir, 'static'));
 
+// Build the webpack configuration using the `baseConfig`
+// custom `.babelrc` file and `webpack.config.js` files
+const configDir = program.configDir || './.storybook';
+const config = loadConfig(baseConfig, configDir);
+
 // Write both the storybook UI and IFRAME HTML files to destination path.
+const headHtml = getHeadHtml(configDir);
 fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml());
-fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml());
+fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml));
 
 // copy all static files
 if (program.staticDir) {
@@ -40,11 +47,6 @@ if (program.staticDir) {
   logger.log(`=> Copying static files from: ${program.staticDir}`);
   shelljs.cp('-r', `${program.staticDir}/`, outputDir);
 }
-
-// Build the webpack configuration using the `baseConfig`
-// custom `.babelrc` file and `webpack.config.js` files
-const configDir = program.configDir || './.storybook';
-const config = loadConfig(baseConfig, configDir);
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
