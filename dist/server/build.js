@@ -41,6 +41,8 @@ var _iframe = require('./iframe.html');
 
 var _iframe2 = _interopRequireDefault(_iframe);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 process.env.NODE_ENV = 'production';
@@ -54,9 +56,15 @@ _commander2.default.version(_package2.default.version).option('-s, --static-dir 
 var outputDir = _commander2.default.outputDir || './storybook-static';
 _shelljs2.default.mkdir('-p', _path2.default.resolve(outputDir, 'static'));
 
+// Build the webpack configuration using the `baseConfig`
+// custom `.babelrc` file and `webpack.config.js` files
+var configDir = _commander2.default.configDir || './.storybook';
+var config = (0, _config2.default)(_webpackConfig2.default, configDir);
+
 // Write both the storybook UI and IFRAME HTML files to destination path.
+var headHtml = (0, _utils.getHeadHtml)(configDir);
 _fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)());
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)());
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml));
 
 // copy all static files
 if (_commander2.default.staticDir) {
@@ -67,11 +75,6 @@ if (_commander2.default.staticDir) {
   logger.log('=> Copying static files from: ' + _commander2.default.staticDir);
   _shelljs2.default.cp('-r', _commander2.default.staticDir + '/', outputDir);
 }
-
-// Build the webpack configuration using the `baseConfig`
-// custom `.babelrc` file and `webpack.config.js` files
-var configDir = _commander2.default.configDir || './.storybook';
-var config = (0, _config2.default)(_webpackConfig2.default, configDir);
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');

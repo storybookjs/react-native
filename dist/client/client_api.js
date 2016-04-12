@@ -65,8 +65,8 @@ var ClientApi = function () {
 
         // Remove events from the args. Otherwise, it creates a huge JSON string.
 
-        if (args[0] && args[0].constructor && /Synthetic/.test(args[0].constructor.name)) {
-          args[0] = '[' + args[0].constructor.name + ']';
+        if (args[0] && typeof args[0].preventDefault === 'function') {
+          args[0] = '[SyntheticEvent]';
         }
 
         actions = [{ name: name, args: args }].concat(actions.slice(0, 4));

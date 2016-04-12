@@ -94,7 +94,7 @@ function getIframe(data) {
 
   return _react2.default.createElement('iframe', {
     style: iframeStyle,
-    src: '/iframe.html?' + queryString
+    src: 'iframe.html?' + queryString
   });
 }
 
