@@ -1,6 +1,15 @@
 ## Changelog
 
-### v1.10.11
+### v1.10.2
+12-April-2016
+
+Fix various issues related to static bundling.
+
+* Add custom head generation to static build as well.
+* Use relative urls so, static sites can be host with paths (GH Pages)
+* Identify SyntheticEvent using feature detection. UglifyJS mangal class names, so we can't use classnames to detect a SyntheticEvent in the static build.
+
+### v1.10.1
 
 * Don't serve index.html in static directory as a site index. See [PR100](https://github.com/kadirahq/react-storybook/pull/100)
 * Use cjson for parsing .babelrc files (support comments). See [PR98](https://github.com/kadirahq/react-storybook/pull/98)
