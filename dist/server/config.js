@@ -50,8 +50,7 @@ exports.default = function (baseConfig, configDir) {
   return (0, _extends3.default)({}, customConfig, config, {
     // We need to use our and custom plugins.
     plugins: [].concat((0, _toConsumableArray3.default)(config.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
-    module: (0, _extends3.default)({}, config.module, {
-      // We need to use our and custom loaders.
+    module: (0, _extends3.default)({}, config.module, customConfig.module || {}, {
       loaders: [].concat((0, _toConsumableArray3.default)(config.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
     })
   });
