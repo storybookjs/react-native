@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.11.0
+13-April-2016
+
+* Add support for React DevTools. See: [PR104](https://github.com/kadirahq/react-storybook/pull/104)
+
 ### v1.10.2
 12-April-2016
 
