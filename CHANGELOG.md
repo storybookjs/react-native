@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.12.0
+14-April-2016
+
+* Add support for webpack module preLoaders. See: [PR107](https://github.com/kadirahq/react-storybook/pull/107)
+
 ### v1.11.0
 13-April-2016
 
