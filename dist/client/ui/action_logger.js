@@ -28,6 +28,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _foldable = require('./foldable');
+
+var _foldable2 = _interopRequireDefault(_foldable);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var preStyle = {
@@ -63,11 +67,6 @@ var btnStyle = {
   marginLeft: 5
 };
 
-var latestActionLogStyle = {
-  backgroundColor: '#FFFCE0',
-  transition: 'all .2s ease-in'
-};
-
 var ActionLogger = function (_Component) {
   (0, _inherits3.default)(ActionLogger, _Component);
 
@@ -77,28 +76,11 @@ var ActionLogger = function (_Component) {
   }
 
   (0, _createClass3.default)(ActionLogger, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      var _this2 = this;
-
-      if (this.refs.actionLogger && window.setTimeout) {
-        this.refs.actionLogger.style.backgroundColor = latestActionLogStyle.backgroundColor;
-        setTimeout(function () {
-          _this2.refs.actionLogger.style.backgroundColor = 'white';
-        }, 500);
-      }
-    }
-  }, {
     key: 'getActionData',
     value: function getActionData() {
       return this.props.actionLogs.map(function (action, i) {
-        // assuming that the first object in the array is the latest addition.
-        return i === 0 ? _react2.default.createElement(
-          'div',
-          { style: latestActionLogStyle, ref: 'actionLogger', key: i },
-          action
-        ) : _react2.default.createElement(
-          'div',
+        return _react2.default.createElement(
+          _foldable2.default,
           { key: i },
           action
         );
