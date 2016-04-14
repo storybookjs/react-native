@@ -25,7 +25,7 @@ const folderContentStyle = {
   display: 'inline-block',
   clear: 'right',
   marginLeft: '5px',
-  padding: '0',
+  padding: '0px',
   paddingLeft: '5px',
   width: 'auto',
 };
