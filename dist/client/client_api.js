@@ -18,6 +18,8 @@ var _createClass3 = _interopRequireDefault(_createClass2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var actionIds = 0;
+
 var ClientApi = function () {
   function ClientApi(_ref) {
     var syncedStore = _ref.syncedStore;
@@ -87,7 +89,8 @@ var ClientApi = function () {
           args[0] = '[SyntheticEvent]';
         }
 
-        actions = [{ name: name, args: args }].concat(actions.slice(0, 4));
+        var id = actionIds++;
+        actions = [{ id: id, name: name, args: args }].concat(actions.slice(0, 4));
         syncedStore.setData({ actions: actions });
       };
     }

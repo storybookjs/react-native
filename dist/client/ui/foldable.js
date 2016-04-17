@@ -4,9 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = require('babel-runtime/core-js/json/stringify');
+var _extends2 = require('babel-runtime/helpers/extends');
 
-var _stringify2 = _interopRequireDefault(_stringify);
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -31,6 +31,10 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _jsonStringifySafe = require('json-stringify-safe');
+
+var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -72,8 +76,9 @@ var Foldable = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Foldable).call(this, props));
 
-    _this.state = { collapsed: true };
-
+    _this.state = {
+      collapsed: true
+    };
     _this.onToggleCallback = _this.onToggle.bind(_this);
     return _this;
   }
@@ -96,11 +101,15 @@ var Foldable = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var content = this.props.children;
+      var action = (0, _extends3.default)({}, this.props.action);
+      delete action.id;
+      var content = void 0;
 
       if (this.state.collapsed) {
         // return the shortest string representation possible
-        content = (0, _stringify2.default)(JSON.parse(content));
+        content = (0, _jsonStringifySafe2.default)(action);
+      } else {
+        content = (0, _jsonStringifySafe2.default)(action, null, 2);
       }
 
       return _react2.default.createElement(
@@ -108,12 +117,16 @@ var Foldable = function (_React$Component) {
         { ref: 'folder', style: folderStyle },
         _react2.default.createElement(
           'div',
-          { style: folderSidebarStyle, onClick: this.onToggleCallback },
-          this.state.collapsed ? '►' : '▼'
+          { style: folderSidebarStyle },
+          _react2.default.createElement(
+            'span',
+            { className: 'foldable-toggle', onClick: this.onToggleCallback },
+            this.state.collapsed ? '►' : '▼'
+          )
         ),
         _react2.default.createElement(
           'div',
-          { style: folderContentStyle },
+          { className: 'foldable-content', style: folderContentStyle },
           content
         )
       );
@@ -123,7 +136,7 @@ var Foldable = function (_React$Component) {
 }(_react2.default.Component);
 
 Foldable.propTypes = {
-  children: _react2.default.PropTypes.string
+  action: _react2.default.PropTypes.object
 };
 
 exports.default = Foldable;

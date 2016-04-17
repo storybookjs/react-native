@@ -78,12 +78,8 @@ var ActionLogger = function (_Component) {
   (0, _createClass3.default)(ActionLogger, [{
     key: 'getActionData',
     value: function getActionData() {
-      return this.props.actionLogs.map(function (action, i) {
-        return _react2.default.createElement(
-          _foldable2.default,
-          { key: i },
-          action
-        );
+      return this.props.actions.map(function (action) {
+        return _react2.default.createElement(_foldable2.default, { key: action.id, action: action });
       });
     }
   }, {
@@ -117,7 +113,7 @@ var ActionLogger = function (_Component) {
 
 ActionLogger.propTypes = {
   onClear: _react2.default.PropTypes.func,
-  actionLogs: _react2.default.PropTypes.array
+  actions: _react2.default.PropTypes.array
 };
 
 exports.default = ActionLogger;

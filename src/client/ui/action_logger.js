@@ -40,10 +40,10 @@ const btnStyle = {
 class ActionLogger extends Component {
 
   getActionData() {
-    return this.props.actionLogs
-    .map((action, i) => {
-      return <Foldable key={i}>{ action }</Foldable>;
-    });
+    return this.props.actions
+      .map((action) => {
+        return (<Foldable key={action.id} action={action} />);
+      });
   }
 
   render() {
@@ -62,7 +62,7 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: React.PropTypes.func,
-  actionLogs: React.PropTypes.array,
+  actions: React.PropTypes.array,
 };
 
 export default ActionLogger;

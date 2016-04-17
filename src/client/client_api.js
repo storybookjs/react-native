@@ -1,3 +1,5 @@
+let actionIds = 0;
+
 export default class ClientApi {
   constructor({ syncedStore, storyStore }) {
     this._syncedStore = syncedStore;
@@ -50,7 +52,8 @@ export default class ClientApi {
         args[0] = '[SyntheticEvent]';
       }
 
-      actions = [{ name, args }].concat(actions.slice(0, 4));
+      const id = actionIds++;
+      actions = [{ id, name, args }].concat(actions.slice(0, 4));
       syncedStore.setData({ actions });
     };
   }

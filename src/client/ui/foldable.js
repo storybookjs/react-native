@@ -1,4 +1,5 @@
 import React from 'react';
+import stringify from 'json-stringify-safe';
 
 const folderStyle = {
   display: 'block',
@@ -33,9 +34,9 @@ const folderContentStyle = {
 class Foldable extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { collapsed: true };
-
+    this.state = {
+      collapsed: true,
+    };
     this.onToggleCallback = this.onToggle.bind(this);
   }
 
@@ -51,20 +52,26 @@ class Foldable extends React.Component {
   }
 
   render() {
-    let content = this.props.children;
+    const action = { ...this.props.action };
+    delete action.id;
+    let content;
 
     if (this.state.collapsed) {
       // return the shortest string representation possible
-      content = JSON.stringify(JSON.parse(content));
+      content = stringify(action);
+    } else {
+      content = stringify(action, null, 2);
     }
 
     return (
       <div ref="folder" style={ folderStyle }>
-        <div style={ folderSidebarStyle } onClick={ this.onToggleCallback }>
-        { this.state.collapsed ? '►' : '▼' }
+        <div style={ folderSidebarStyle }>
+          <span className="foldable-toggle" onClick={ this.onToggleCallback }>
+            { this.state.collapsed ? '►' : '▼' }
+          </span>
         </div>
 
-        <div style={ folderContentStyle }>
+        <div className="foldable-content" style={ folderContentStyle }>
           { content }
         </div>
       </div>
@@ -73,7 +80,7 @@ class Foldable extends React.Component {
 }
 
 Foldable.propTypes = {
-  children: React.PropTypes.string,
+  action: React.PropTypes.object,
 };
 
 export default Foldable;
