@@ -39,12 +39,30 @@ var ClientApi = function () {
         });
       }
 
-      var add = function add(storyName, fn) {
+      var decorators = [];
+      var api = {};
+
+      api.add = function (storyName, getStory) {
+        // Wrap the getStory function with each decorator. The first
+        // decorator will wrap the story function. The second will
+        // wrap the first decorator and so on.
+        var fn = decorators.reduce(function (decorated, decorator) {
+          return function () {
+            return decorator(decorated);
+          };
+        }, getStory);
+
+        // Add the fully decorated getStory function.
         _this._storyStore.addStory(kind, storyName, fn);
-        return { add: add };
+        return api;
       };
 
-      return { add: add };
+      api.addDecorator = function (decorator) {
+        decorators.push(decorator);
+        return api;
+      };
+
+      return api;
     }
   }, {
     key: 'action',

@@ -74,6 +74,29 @@ describe('client.ClientApi', () => {
     });
   });
 
+  describe('storiesOf.addDecorator', () => {
+    it('should wrap a given story', () => {
+      const api = getClientApi();
+      const handle = () => ['h'];
+      const decorate1 = fn => fn().concat('d1');
+      const decorate2 = fn => fn().concat('d2');
+
+      api._storyStore.addStory = sinon.stub();
+      api.storiesOf('kind')
+        .addDecorator(decorate1)
+        .addDecorator(decorate2)
+        .add('name', handle);
+
+      const args = api._storyStore.addStory.args[0];
+      expect(args[0]).to.be.equal('kind');
+      expect(args[1]).to.be.equal('name');
+      expect(args[2]).to.be.a('function');
+
+      const decoratedFn = args[2];
+      expect(decoratedFn()).to.deep.equal(['h', 'd1', 'd2']);
+    });
+  });
+
   describe('action', () => {
     it('should send action info to the syncedStore', () => {
       const api = getClientApi();
