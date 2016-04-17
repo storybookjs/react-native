@@ -3,6 +3,7 @@
 ### v.NEXT
 
 * Add some UI test cases. See [PR103](https://github.com/kadirahq/react-storybook/pull/103)
+* Implement `.addDecorator()` API. See [PR115](https://github.com/kadirahq/react-storybook/pull/115)
 
 ### v1.12.0
 14-April-2016
