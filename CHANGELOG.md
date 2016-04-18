@@ -1,9 +1,10 @@
 ## Changelog
 
-### v.NEXT
+### v1.13.0
 
 * Add some UI test cases. See [PR103](https://github.com/kadirahq/react-storybook/pull/103)
 * Implement `.addDecorator()` API. See [PR115](https://github.com/kadirahq/react-storybook/pull/115)
+* Add code folding support. See [PR111](https://github.com/kadirahq/react-storybook/pull/111)
 
 ### v1.12.0
 14-April-2016
