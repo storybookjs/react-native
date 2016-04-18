@@ -33,6 +33,7 @@
     "enzyme": "^2.2.0",
     "expect": "^1.6.0",
     "express": "^4.13.3",
+    "jsdom": "^8.4.0",
     "json-stringify-safe": "^5.0.1",
     "node-libs-browser": "^0.5.2",
     "page-bus": "^3.0.1",

@@ -120,13 +120,13 @@ var Foldable = function (_React$Component) {
           { style: folderSidebarStyle },
           _react2.default.createElement(
             'span',
-            { className: 'foldable-toggle', onClick: this.onToggleCallback },
+            { ref: 'foldable-toggle', onClick: this.onToggleCallback },
             this.state.collapsed ? '►' : '▼'
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'foldable-content', style: folderContentStyle },
+          { ref: 'foldable-content', style: folderContentStyle },
           content
         )
       );

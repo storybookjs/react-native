@@ -1,6 +1,6 @@
 const { describe, it } = global;
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import Foldable from '../foldable';
 
@@ -14,9 +14,8 @@ describe('<Foldable />', function () {
 
       const compactString = '{"name":"test action","args":"things"}';
 
-      const wrap = shallow(<Foldable action={data} />);
-      const content = wrap.find('.foldable-content').first();
-
+      const wrap = mount(<Foldable action={data} />);
+      const content = wrap.ref('foldable-content');
       expect(content.text()).to.equal(compactString);
     });
 
@@ -26,17 +25,16 @@ describe('<Foldable />', function () {
         args: 'things',
       };
 
-      const fullString = '{ "name": "test action",\n  "args": "things"\n}';
+      const fullString = '{\n  "name": "test action",\n  "args": "things"\n}';
 
-      const wrap = shallow(<Foldable action={data} />);
-      const toggle = wrap.find('.foldable-toggle').first();
+      const wrap = mount(<Foldable action={data} />);
+      const toggle = wrap.ref('foldable-toggle');
 
       toggle.simulate('click');
 
       expect(wrap.state()).to.deep.equal({ collapsed: false });
 
-      const content = wrap.find('.foldable-content').first();
-
+      const content = wrap.ref('foldable-content');
       expect(content.text()).to.equal(fullString);
     });
   });

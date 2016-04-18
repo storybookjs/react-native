@@ -66,12 +66,12 @@ class Foldable extends React.Component {
     return (
       <div ref="folder" style={ folderStyle }>
         <div style={ folderSidebarStyle }>
-          <span className="foldable-toggle" onClick={ this.onToggleCallback }>
+          <span ref="foldable-toggle" onClick={ this.onToggleCallback }>
             { this.state.collapsed ? '►' : '▼' }
           </span>
         </div>
 
-        <div className="foldable-content" style={ folderContentStyle }>
+        <div ref="foldable-content" style={ folderContentStyle }>
           { content }
         </div>
       </div>
