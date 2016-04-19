@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.14.0
+
+* Add syntax highlights to the logger. See: [PR118](https://github.com/kadirahq/react-storybook/pull/118)
+
 ### v1.13.0
 
 * Add some UI test cases. See [PR103](https://github.com/kadirahq/react-storybook/pull/103)
