@@ -1,6 +1,6 @@
 const { describe, it } = global;
 import { expect } from 'chai';
-import highlight from '../highlight';
+import highlight from '../utils/highlight';
 
 describe('highlight', function () {
   it('should remove quotes from keys and add correct colour', function () {

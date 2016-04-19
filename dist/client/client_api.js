@@ -89,8 +89,8 @@ var ClientApi = function () {
           args[0] = '[SyntheticEvent]';
         }
 
-        var id = actionIds++;
-        actions = [{ id: id, name: name, args: args }].concat(actions.slice(0, 4));
+        // const id = actionIds++;
+        actions = [{ name: name, args: args }].concat(actions.slice(0, 10));
         syncedStore.setData({ actions: actions });
       };
     }

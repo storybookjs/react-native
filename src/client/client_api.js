@@ -52,8 +52,8 @@ export default class ClientApi {
         args[0] = '[SyntheticEvent]';
       }
 
-      const id = actionIds++;
-      actions = [{ id, name, args }].concat(actions.slice(0, 4));
+      // const id = actionIds++;
+      actions = [{ name, args }].concat(actions.slice(0, 10));
       syncedStore.setData({ actions });
     };
   }

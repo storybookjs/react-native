@@ -32,6 +32,10 @@ var _foldable = require('./foldable');
 
 var _foldable2 = _interopRequireDefault(_foldable);
 
+var _formatActionData = require('./utils/formatActionData');
+
+var _formatActionData2 = _interopRequireDefault(_formatActionData);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var preStyle = {
@@ -78,7 +82,8 @@ var ActionLogger = function (_Component) {
   (0, _createClass3.default)(ActionLogger, [{
     key: 'getActionData',
     value: function getActionData() {
-      return this.props.actions.map(function (action) {
+      var actions = (0, _formatActionData2.default)(this.props.actions);
+      return actions.map(function (action) {
         return _react2.default.createElement(_foldable2.default, { key: action.id, action: action });
       });
     }

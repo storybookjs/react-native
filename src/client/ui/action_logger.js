@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Foldable from './foldable';
+import formatActionData from './utils/formatActionData';
 
 const preStyle = {
   color: '#666',
@@ -40,7 +41,8 @@ const btnStyle = {
 class ActionLogger extends Component {
 
   getActionData() {
-    return this.props.actions
+    const actions = formatActionData(this.props.actions);
+    return actions
       .map((action) => {
         return (<Foldable key={action.id} action={action} />);
       });

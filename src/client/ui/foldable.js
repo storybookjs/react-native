@@ -1,6 +1,6 @@
 import React from 'react';
 import stringify from 'json-stringify-safe';
-import highlight from './highlight';
+import highlight from './utils/highlight';
 
 const folderStyle = {
   display: 'block',
@@ -32,6 +32,17 @@ const folderContentStyle = {
   width: 'auto',
 };
 
+const countStyle = {
+  display: 'inline-block',
+  float: 'left',
+  marginTop: '-1px',
+  marginRight: '5px',
+  backgroundColor: '#777777',
+  color: '#ffffff',
+  padding: '1px 5px',
+  borderRadius: '50%',
+};
+
 class Foldable extends React.Component {
   constructor(props) {
     super(props);
@@ -59,13 +70,14 @@ class Foldable extends React.Component {
 
     if (this.state.collapsed) {
       // return the shortest string representation possible
-      content = stringify(action);
+      content = stringify(action.data);
     } else {
-      content = stringify(action, null, 2);
+      content = stringify(action.data, null, 2);
     }
 
     return (
       <div ref="folder" style={ folderStyle }>
+        { action.count > 1 && <span style={ countStyle }>{ action.count }</span> }
         <div style={ folderSidebarStyle }>
           <span ref="foldable-toggle" onClick={ this.onToggleCallback }>
             { this.state.collapsed ? '►' : '▼' }
