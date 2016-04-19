@@ -1,6 +1,7 @@
 ## Changelog
 
 ### v1.14.0
+19-April-2016
 
 * Add syntax highlights to the logger. See: [PR118](https://github.com/kadirahq/react-storybook/pull/118)
 
