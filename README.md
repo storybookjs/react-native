@@ -10,7 +10,7 @@ This functionality allows you to develop UI components rapidly without worrying 
 
 > Have a look at this article on [Introducing React Storybook](https://medium.com/@arunoda/ec27f28de1e2).
 
-#### Sponsored By
+#### New: React Storybooks meets GitHub
 
 [![Storybooks.io - UI Code Reviewing Done Right](docs/storybooks_io_logo.png)](https://storybooks.io/?utm_source=github&utm_medium=logo&utm_campaign=react-storybook)
 
