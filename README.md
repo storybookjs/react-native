@@ -10,10 +10,6 @@ This functionality allows you to develop UI components rapidly without worrying 
 
 > Have a look at this article on [Introducing React Storybook](https://medium.com/@arunoda/ec27f28de1e2).
 
-#### New: React Storybooks meets GitHub
-
-[![Storybooks.io - UI Code Reviewing Done Right](docs/storybooks_io_logo.png)](https://storybooks.io/?utm_source=github&utm_medium=logo&utm_campaign=react-storybook)
-
 ## Features
 
 * Isolated environment for your components (with the use of various iframe tactics).
@@ -131,6 +127,10 @@ There are many things you can do with React Storybook. You can explore them with
 * [How to Contribute](CONTRIBUTING.md)
 * [Storybooks.io](https://storybooks.io/?utm_source=github&utm_medium=link&utm_campaign=react-storybook)
 * How React Storybook works (coming soon)
+
+#### New: React Storybook meets GitHub
+
+[![Storybooks.io - UI Code Reviewing Done Right](docs/storybooks_io_logo.png)](https://storybooks.io/?utm_source=github&utm_medium=logo&utm_campaign=react-storybook)
 
 ## Sample Apps
 
