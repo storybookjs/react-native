@@ -60,7 +60,7 @@
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^4.2.3",
-    "lodash-es": "^4.11.1",
+    "lodash": "^4.11.1",
     "mocha": "^2.4.5",
     "mock-fs": "^3.8.0",
     "nodemon": "^1.9.1",
