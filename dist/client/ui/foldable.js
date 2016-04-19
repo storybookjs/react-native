@@ -36,6 +36,10 @@ var _jsonStringifySafe = require('json-stringify-safe');
 
 var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
 
+var _highlight = require('./highlight');
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var folderStyle = {
@@ -124,11 +128,9 @@ var Foldable = function (_React$Component) {
             this.state.collapsed ? '►' : '▼'
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { ref: 'foldable-content', style: folderContentStyle },
-          content
-        )
+        _react2.default.createElement('div', { ref: 'foldable-content', style: folderContentStyle,
+          dangerouslySetInnerHTML: { __html: (0, _highlight2.default)(content) }
+        })
       );
     }
   }]);

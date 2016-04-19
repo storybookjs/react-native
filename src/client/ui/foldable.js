@@ -1,5 +1,6 @@
 import React from 'react';
 import stringify from 'json-stringify-safe';
+import highlight from './highlight';
 
 const folderStyle = {
   display: 'block',
@@ -70,9 +71,9 @@ class Foldable extends React.Component {
             { this.state.collapsed ? '►' : '▼' }
           </span>
         </div>
-
-        <div ref="foldable-content" style={ folderContentStyle }>
-          { content }
+        <div ref="foldable-content" style={ folderContentStyle }
+          dangerouslySetInnerHTML={ { __html: highlight(content) } }
+        >
         </div>
       </div>
       );
