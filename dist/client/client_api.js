@@ -91,9 +91,11 @@ var ClientApi = function () {
           args[0] = '[SyntheticEvent]';
         }
 
-        // const id = actionIds++;
         var data = { name: name, args: args };
         actions = [{ data: data }].concat(actions);
+
+        // replace consecutive identical actions with single action having
+        // count equal to no. of those identical actions.
         var formattedData = (0, _formatActionData2.default)(actions).slice(0, 5);
         syncedStore.setData({ actions: formattedData });
       };

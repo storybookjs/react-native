@@ -52,9 +52,11 @@ export default class ClientApi {
         args[0] = '[SyntheticEvent]';
       }
 
-      // const id = actionIds++;
       const data = { name, args };
       actions = [{ data }].concat(actions);
+
+      // replace consecutive identical actions with single action having
+      // count equal to no. of those identical actions.
       const formattedData = formatActionData(actions).slice(0, 5);
       syncedStore.setData({ actions: formattedData });
     };

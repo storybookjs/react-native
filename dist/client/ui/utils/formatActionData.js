@@ -15,6 +15,15 @@ function getLastElem(arr) {
   return arr[arr.length - 1];
 }
 
+/**
+ * Takes an array and checks consecutive arrays. If they are same then replaces
+ * consecutive identical objects (refers to .data of each object) with single
+ * object and sets the count in the object to the number of identical consecutive
+ * objects.
+ *
+ * @param actions  An array of all the actions
+ * @returns {Array}
+ */
 function formatActionData(actions) {
   var formatted = [];
   actions.forEach(function (action, i) {
