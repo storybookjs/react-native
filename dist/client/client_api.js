@@ -16,9 +16,11 @@ var _createClass2 = require('babel-runtime/helpers/createClass');
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _formatActionData = require('./ui/utils/formatActionData');
 
-var actionIds = 0;
+var _formatActionData2 = _interopRequireDefault(_formatActionData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ClientApi = function () {
   function ClientApi(_ref) {
@@ -90,8 +92,10 @@ var ClientApi = function () {
         }
 
         // const id = actionIds++;
-        actions = [{ name: name, args: args }].concat(actions.slice(0, 10));
-        syncedStore.setData({ actions: actions });
+        var data = { name: name, args: args };
+        actions = [{ data: data }].concat(actions);
+        var formattedData = (0, _formatActionData2.default)(actions).slice(0, 5);
+        syncedStore.setData({ actions: formattedData });
       };
     }
   }, {

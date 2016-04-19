@@ -1,21 +1,21 @@
 import isEqual from 'lodash/isEqual';
 
-function getLastElem (arr) {
-  return arr[arr.length-1];
+function getLastElem(arr) {
+  return arr[arr.length - 1];
 }
 
 export default function formatActionData(actions) {
-  let formatted = [];
-  actions.map((action, i) => {
-    if(i === 0 || !isEqual(action, getLastElem(formatted).data)){
+  const formatted = [];
+  actions.forEach((action, i) => {
+    if (i === 0 || !isEqual(action.data, getLastElem(formatted).data) || !action.data) {
       formatted.push({
-        data : action,
-        count : 1,
-        id    : formatted.length + 1
-      })
+        data: action.data,
+        count: action.count || 1,
+        id: formatted.length + 1,
+      });
     } else {
       const lastElem = getLastElem(formatted);
-      lastElem.count += 1;
+      lastElem.count += (action.count || 1);
     }
   });
   return formatted;

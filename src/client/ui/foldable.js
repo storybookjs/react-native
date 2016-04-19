@@ -40,7 +40,7 @@ const countStyle = {
   backgroundColor: '#777777',
   color: '#ffffff',
   padding: '1px 5px',
-  borderRadius: '50%',
+  borderRadius: '8px',
 };
 
 class Foldable extends React.Component {

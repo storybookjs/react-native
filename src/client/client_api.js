@@ -1,4 +1,4 @@
-let actionIds = 0;
+import formatActionData from './ui/utils/formatActionData';
 
 export default class ClientApi {
   constructor({ syncedStore, storyStore }) {
@@ -53,8 +53,10 @@ export default class ClientApi {
       }
 
       // const id = actionIds++;
-      actions = [{ name, args }].concat(actions.slice(0, 10));
-      syncedStore.setData({ actions });
+      const data = { name, args };
+      actions = [{ data }].concat(actions);
+      const formattedData = formatActionData(actions).slice(0, 5);
+      syncedStore.setData({ actions: formattedData });
     };
   }
 

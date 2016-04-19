@@ -8,8 +8,11 @@ describe('<Foldable />', function () {
   describe('render', function () {
     it('should render action compact by default', function () {
       const data = {
-        name: 'test action',
-        args: 'things',
+        data: {
+          name: 'test action',
+          args: 'things',
+        },
+        count: 1,
       };
 
       const compactString = '{name:"test action",args:"things"}';
@@ -21,8 +24,11 @@ describe('<Foldable />', function () {
 
     it('should render action in full when unfolded', function () {
       const data = {
-        name: 'test action',
-        args: 'things',
+        data: {
+          name: 'test action',
+          args: 'things',
+        },
+        count: 1,
       };
 
       const fullString = '{\n  name: "test action",\n  args: "things"\n}';

@@ -17,16 +17,16 @@ function getLastElem(arr) {
 
 function formatActionData(actions) {
   var formatted = [];
-  actions.map(function (action, i) {
-    if (i === 0 || !(0, _isEqual2.default)(action, getLastElem(formatted).data)) {
+  actions.forEach(function (action, i) {
+    if (i === 0 || !(0, _isEqual2.default)(action.data, getLastElem(formatted).data) || !action.data) {
       formatted.push({
-        data: action,
-        count: 1,
+        data: action.data,
+        count: action.count || 1,
         id: formatted.length + 1
       });
     } else {
       var lastElem = getLastElem(formatted);
-      lastElem.count += 1;
+      lastElem.count += action.count || 1;
     }
   });
   return formatted;
