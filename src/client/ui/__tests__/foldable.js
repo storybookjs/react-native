@@ -12,7 +12,7 @@ describe('<Foldable />', function () {
         args: 'things',
       };
 
-      const compactString = '{"name":"test action","args":"things"}';
+      const compactString = '{name:"test action",args:"things"}';
 
       const wrap = mount(<Foldable action={data} />);
       const content = wrap.ref('foldable-content');
@@ -25,7 +25,7 @@ describe('<Foldable />', function () {
         args: 'things',
       };
 
-      const fullString = '{\n  "name": "test action",\n  "args": "things"\n}';
+      const fullString = '{\n  name: "test action",\n  args: "things"\n}';
 
       const wrap = mount(<Foldable action={data} />);
       const toggle = wrap.ref('foldable-toggle');
