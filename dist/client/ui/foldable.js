@@ -36,7 +36,7 @@ var _jsonStringifySafe = require('json-stringify-safe');
 
 var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
 
-var _highlight = require('./highlight');
+var _highlight = require('./utils/highlight');
 
 var _highlight2 = _interopRequireDefault(_highlight);
 
@@ -70,6 +70,17 @@ var folderContentStyle = {
   padding: '0px',
   paddingLeft: '5px',
   width: 'auto'
+};
+
+var countStyle = {
+  display: 'inline-block',
+  float: 'left',
+  marginTop: '-1px',
+  marginRight: '5px',
+  backgroundColor: '#777777',
+  color: '#ffffff',
+  padding: '1px 5px',
+  borderRadius: '8px'
 };
 
 var Foldable = function (_React$Component) {
@@ -111,14 +122,19 @@ var Foldable = function (_React$Component) {
 
       if (this.state.collapsed) {
         // return the shortest string representation possible
-        content = (0, _jsonStringifySafe2.default)(action);
+        content = (0, _jsonStringifySafe2.default)(action.data);
       } else {
-        content = (0, _jsonStringifySafe2.default)(action, null, 2);
+        content = (0, _jsonStringifySafe2.default)(action.data, null, 2);
       }
 
       return _react2.default.createElement(
         'div',
         { ref: 'folder', style: folderStyle },
+        action.count > 1 && _react2.default.createElement(
+          'span',
+          { style: countStyle },
+          action.count
+        ),
         _react2.default.createElement(
           'div',
           { style: folderSidebarStyle },

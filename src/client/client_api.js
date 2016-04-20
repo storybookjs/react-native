@@ -1,4 +1,4 @@
-let actionIds = 0;
+import formatActionData from './ui/utils/formatActionData';
 
 export default class ClientApi {
   constructor({ syncedStore, storyStore }) {
@@ -52,9 +52,13 @@ export default class ClientApi {
         args[0] = '[SyntheticEvent]';
       }
 
-      const id = actionIds++;
-      actions = [{ id, name, args }].concat(actions.slice(0, 4));
-      syncedStore.setData({ actions });
+      const data = { name, args };
+      actions = [{ data }].concat(actions);
+
+      // replace consecutive identical actions with single action having
+      // count equal to no. of those identical actions.
+      const formattedData = formatActionData(actions).slice(0, 10);
+      syncedStore.setData({ actions: formattedData });
     };
   }
 

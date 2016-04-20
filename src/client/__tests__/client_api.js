@@ -107,13 +107,14 @@ describe('client.ClientApi', () => {
       cb(10, 20);
 
       const args = api._syncedStore.setData.args[0];
-      expect(args[0].actions).to.be.deep.equal([
-        {
+      expect(args[0].actions).to.be.deep.equal([{
+        data: {
           name: 'hello',
           args: [10, 20],
-          id: 0,
         },
-      ]);
+        id: 1,
+        count: 1,
+      }]);
     });
 
     it('should only keep the latest 5 actions in the syncedStore', () => {
@@ -127,17 +128,7 @@ describe('client.ClientApi', () => {
       cb(10, 20);
 
       const args = api._syncedStore.setData.args[0];
-      expect(args[0].actions).to.be.deep.equal([
-        {
-          name: 'hello',
-          args: [10, 20],
-          id: 1,
-        },
-        50,
-        40,
-        30,
-        20,
-      ]);
+      expect(args[0].actions.length).to.equal(5);
     });
 
     it('should replace any Synthetic Event with it\'s name', () => {
@@ -153,13 +144,14 @@ describe('client.ClientApi', () => {
       cb(event);
 
       const args = api._syncedStore.setData.args[0];
-      expect(args[0].actions).to.be.deep.equal([
-        {
+      expect(args[0].actions).to.be.deep.equal([{
+        data: {
           name: 'hello',
           args: ['[SyntheticEvent]'],
-          id: 2,
         },
-      ]);
+        id: 1,
+        count: 1,
+      }]);
     });
   });
 
