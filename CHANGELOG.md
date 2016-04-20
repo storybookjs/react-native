@@ -1,5 +1,12 @@
 ## Changelog
 
+### v1.16.0
+20-April-2016
+
+* Prevent re-rendering the preview iframe when there is an action.
+  * Related issue: [#116](https://github.com/kadirahq/react-storybook/issues/116)
+  * Related PR: [PR126](https://github.com/kadirahq/react-storybook/pull/126)
+
 ### v1.15.0
 20-April-2016
 
