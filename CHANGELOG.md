@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.16.1
+21-April-2016
+
+* Fix action logs highlighting issue, which comes as a regression of [PR126](https://github.com/kadirahq/react-storybook/pull/126).
+
 ### v1.16.0
 20-April-2016
 
