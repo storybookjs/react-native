@@ -96,7 +96,7 @@ var ClientApi = function () {
 
         // replace consecutive identical actions with single action having
         // count equal to no. of those identical actions.
-        var formattedData = (0, _formatActionData2.default)(actions).slice(0, 5);
+        var formattedData = (0, _formatActionData2.default)(actions).slice(0, 10);
         syncedStore.setData({ actions: formattedData });
       };
     }

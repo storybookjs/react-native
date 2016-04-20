@@ -57,7 +57,7 @@ export default class ClientApi {
 
       // replace consecutive identical actions with single action having
       // count equal to no. of those identical actions.
-      const formattedData = formatActionData(actions).slice(0, 5);
+      const formattedData = formatActionData(actions).slice(0, 10);
       syncedStore.setData({ actions: formattedData });
     };
   }
