@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.15.0
+20-April-2016
+
+* Improve action logger UI and increase max log count to 10. See [PR123](https://github.com/kadirahq/react-storybook/pull/123)
+
 ### v1.14.0
 19-April-2016
 
