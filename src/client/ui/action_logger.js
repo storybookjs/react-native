@@ -40,7 +40,6 @@ const btnStyle = {
 class ActionLogger extends Component {
 
   getActionData() {
-    // const actions = formatActionData(this.props.actions);
     return this.props.actions
       .map((action) => {
         return (<Foldable key={action.id} action={action} />);

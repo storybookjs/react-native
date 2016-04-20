@@ -78,7 +78,6 @@ var ActionLogger = function (_Component) {
   (0, _createClass3.default)(ActionLogger, [{
     key: 'getActionData',
     value: function getActionData() {
-      // const actions = formatActionData(this.props.actions);
       return this.props.actions.map(function (action) {
         return _react2.default.createElement(_foldable2.default, { key: action.id, action: action });
       });
