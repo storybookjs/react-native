@@ -117,10 +117,10 @@ describe('client.ClientApi', () => {
       }]);
     });
 
-    it('should only keep the latest 5 actions in the syncedStore', () => {
+    it('should only keep the latest 10 actions in the syncedStore', () => {
       const api = getClientApi();
       api._syncedStore.getData = () => ({
-        actions: [50, 40, 30, 20, 10],
+        actions: [50, 40, 30, 20, 10, 50, 40, 30, 20, 10],
       });
       api._syncedStore.setData = sinon.stub();
 
@@ -128,7 +128,7 @@ describe('client.ClientApi', () => {
       cb(10, 20);
 
       const args = api._syncedStore.setData.args[0];
-      expect(args[0].actions.length).to.equal(5);
+      expect(args[0].actions.length).to.equal(10);
     });
 
     it('should replace any Synthetic Event with it\'s name', () => {
