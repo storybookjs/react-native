@@ -11,6 +11,14 @@ function getClientApi() {
   return api;
 }
 
+function clearActionId(actions) {
+  return actions.map(action => {
+    const newAction = { ...action };
+    delete newAction.id;
+    return newAction;
+  });
+}
+
 describe('client.ClientApi', () => {
   describe('constructor', () => {
     it('should set _syncedStore & _storyStore properly', () => {
@@ -107,12 +115,12 @@ describe('client.ClientApi', () => {
       cb(10, 20);
 
       const args = api._syncedStore.setData.args[0];
-      expect(args[0].actions).to.be.deep.equal([{
+      const actions = clearActionId(args[0].actions);
+      expect(actions).to.be.deep.equal([{
         data: {
           name: 'hello',
           args: [10, 20],
         },
-        id: 1,
         count: 1,
       }]);
     });
@@ -144,12 +152,13 @@ describe('client.ClientApi', () => {
       cb(event);
 
       const args = api._syncedStore.setData.args[0];
-      expect(args[0].actions).to.be.deep.equal([{
+      const actions = clearActionId(args[0].actions);
+
+      expect(actions).to.be.deep.equal([{
         data: {
           name: 'hello',
           args: ['[SyntheticEvent]'],
         },
-        id: 1,
         count: 1,
       }]);
     });

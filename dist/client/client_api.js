@@ -22,6 +22,8 @@ var _formatActionData2 = _interopRequireDefault(_formatActionData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var idGenerator = 0;
+
 var ClientApi = function () {
   function ClientApi(_ref) {
     var syncedStore = _ref.syncedStore;
@@ -91,8 +93,9 @@ var ClientApi = function () {
           args[0] = '[SyntheticEvent]';
         }
 
+        var id = ++idGenerator;
         var data = { name: name, args: args };
-        actions = [{ data: data }].concat(actions);
+        actions = [{ data: data, id: id }].concat(actions);
 
         // replace consecutive identical actions with single action having
         // count equal to no. of those identical actions.
