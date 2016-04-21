@@ -23,10 +23,14 @@ var _config_api = require('./config_api');
 
 var _config_api2 = _interopRequireDefault(_config_api);
 
+var _handleShortCuts = require('./handleShortCuts');
+
+var _handleShortCuts2 = _interopRequireDefault(_handleShortCuts);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var storyStore = new _story_store2.default();
-var syncedStore = new _synced_store2.default(window);
+var syncedStore = new _synced_store2.default(window, _handleShortCuts2.default);
 var clientApi = new _client_api2.default({ storyStore: storyStore, syncedStore: syncedStore });
 var configApi = new _config_api2.default({ storyStore: storyStore, syncedStore: syncedStore });
 syncedStore.init();

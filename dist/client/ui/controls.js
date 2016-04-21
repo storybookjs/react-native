@@ -32,7 +32,29 @@ var _text_filter = require('./text_filter');
 
 var _text_filter2 = _interopRequireDefault(_text_filter);
 
+var _FuzzySearch = require('./FuzzySearch');
+
+var _FuzzySearch2 = _interopRequireDefault(_FuzzySearch);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var list = [{
+  id: 1,
+  title: 'The Great Gatsby',
+  author: 'F. Scott Fitzgerald'
+}, {
+  id: 2,
+  title: 'The DaVinci Code',
+  author: 'Dan Brown'
+}, {
+  id: 3,
+  title: 'Angels & Demons',
+  author: 'Dan Brown'
+}];
+
+var options = {
+  keys: ['author', 'title']
+};
 
 var StorybookControls = function (_React$Component) {
   (0, _inherits3.default)(StorybookControls, _React$Component);
@@ -251,6 +273,11 @@ var StorybookControls = function (_React$Component) {
             filterText: this.state.filterText,
             onChange: this.filterStoryList.bind(this),
             onClear: this.clearFilterText.bind(this)
+          }),
+          _react2.default.createElement(_FuzzySearch2.default, {
+            list: list,
+            options: options,
+            width: 430
           })
         ),
         _react2.default.createElement(

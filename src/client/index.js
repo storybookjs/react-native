@@ -2,9 +2,10 @@ import SyncedStore from './synced_store';
 import StoryStore from './story_store';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
+import handleShortCuts from './handleShortCuts';
 
 const storyStore = new StoryStore();
-const syncedStore = new SyncedStore(window);
+const syncedStore = new SyncedStore(window, handleShortCuts);
 const clientApi = new ClientApi({ storyStore, syncedStore });
 const configApi = new ConfigApi({ storyStore, syncedStore });
 syncedStore.init();

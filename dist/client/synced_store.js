@@ -39,10 +39,11 @@ var _uuid2 = _interopRequireDefault(_uuid);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Data = function () {
-  function Data(window) {
+  function Data(window, handleShortCuts) {
     (0, _classCallCheck3.default)(this, Data);
 
     this._window = window;
+    this._handleShortCuts = handleShortCuts;
     this._parsedQs = _queryString2.default.parse(window.location.search);
 
     // We need to check whether we are inside a iframe or not.
@@ -90,6 +91,10 @@ var Data = function () {
       this._handlers.forEach(function (handler) {
         return handler(_this2.getData());
       });
+
+      this._window.onkeydown = function (e) {
+        return _this2._handleShortCuts(e, _this2.getData());
+      };
     }
   }, {
     key: 'getDataKey',

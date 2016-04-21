@@ -1,5 +1,24 @@
 import React from 'react';
 import TextFilter from './text_filter';
+import FuzzySearch from './FuzzySearch';
+
+const list = [{
+  id: 1,
+  title: 'The Great Gatsby',
+  author: 'F. Scott Fitzgerald'
+},{
+  id: 2,
+  title: 'The DaVinci Code',
+  author: 'Dan Brown'
+},{
+  id: 3,
+  title: 'Angels & Demons',
+  author: 'Dan Brown'
+}];
+
+const options = {
+  keys: ['author', 'title']
+};
 
 export default class StorybookControls extends React.Component {
   constructor(props) {
@@ -178,6 +197,11 @@ export default class StorybookControls extends React.Component {
             filterText={this.state.filterText}
             onChange={this.filterStoryList.bind(this)}
             onClear={this.clearFilterText.bind(this)}
+          />
+          <FuzzySearch
+            list={list}
+            options={options}
+            width={430}
           />
         </div>
         <div style={listStyle}>

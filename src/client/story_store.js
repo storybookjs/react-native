@@ -1,6 +1,6 @@
 let cnt = 0;
 
-export default class StoreStore {
+export default class StoryStore {
   constructor() {
     this._data = {};
   }
