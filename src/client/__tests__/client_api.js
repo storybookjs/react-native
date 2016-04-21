@@ -162,6 +162,38 @@ describe('client.ClientApi', () => {
         count: 1,
       }]);
     });
+
+    it('should replace any Synthetic Event with it\'s name when not the first argument', () => {
+      const api = getClientApi();
+      api._syncedStore.getData = () => ({ actions: [] });
+      api._syncedStore.setData = sinon.stub();
+
+      const event = {
+        preventDefault() {},
+      };
+      const data = {
+        type: 'delete',
+      };
+
+      const cb = api.action('hello');
+      cb(data, event);
+
+      const args = api._syncedStore.setData.args[0];
+      const actions = clearActionId(args[0].actions);
+
+      expect(actions).to.be.deep.equal([{
+        data: {
+          name: 'hello',
+          args: [
+            {
+              type: 'delete',
+            },
+            '[SyntheticEvent]',
+          ],
+        },
+        count: 1,
+      }]);
+    });
   });
 
   describe('linkTo', () => {

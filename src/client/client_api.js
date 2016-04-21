@@ -42,16 +42,16 @@ export default class ClientApi {
     const syncedStore = this._syncedStore;
 
     return function (..._args) {
-      const args = Array.from(_args);
+      let args = Array.from(_args);
       let { actions = [] } = syncedStore.getData();
 
       // Remove events from the args. Otherwise, it creates a huge JSON string.
-      if (
-        args[0] &&
-        typeof args[0].preventDefault === 'function'
-      ) {
-        args[0] = '[SyntheticEvent]';
-      }
+      args = args.map(arg => {
+        if (typeof arg.preventDefault === 'function') {
+          return '[SyntheticEvent]';
+        }
+        return arg;
+      });
 
       const id = ++idGenerator;
       const data = { name, args };

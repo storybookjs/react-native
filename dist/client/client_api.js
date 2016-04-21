@@ -89,9 +89,12 @@ var ClientApi = function () {
 
         // Remove events from the args. Otherwise, it creates a huge JSON string.
 
-        if (args[0] && typeof args[0].preventDefault === 'function') {
-          args[0] = '[SyntheticEvent]';
-        }
+        args = args.map(function (arg) {
+          if (typeof arg.preventDefault === 'function') {
+            return '[SyntheticEvent]';
+          }
+          return arg;
+        });
 
         var id = ++idGenerator;
         var data = { name: name, args: args };
