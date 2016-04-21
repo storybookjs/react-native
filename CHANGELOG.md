@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.17.0
+21-April-2016
+
+* Check all the arguments passed to action for events. See: [PR132](https://github.com/kadirahq/react-storybook/pull/132)
+
 ### v1.16.1
 21-April-2016
 
