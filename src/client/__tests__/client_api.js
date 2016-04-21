@@ -125,6 +125,25 @@ describe('client.ClientApi', () => {
       }]);
     });
 
+    it('should accept null and undefined values', () => {
+      const api = getClientApi();
+      api._syncedStore.getData = () => ({ actions: [] });
+      api._syncedStore.setData = sinon.stub();
+
+      const cb = api.action('hello');
+      cb(null, void 0);
+
+      const args = api._syncedStore.setData.args[0];
+      const actions = clearActionId(args[0].actions);
+      expect(actions).to.be.deep.equal([{
+        data: {
+          name: 'hello',
+          args: [null, void 0],
+        },
+        count: 1,
+      }]);
+    });
+
     it('should only keep the latest 10 actions in the syncedStore', () => {
       const api = getClientApi();
       api._syncedStore.getData = () => ({
