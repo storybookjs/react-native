@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.17.1
+21-April-2016
+
+* Fix a regression introduce by `v1.17.0`. See: [PR133](https://github.com/kadirahq/react-storybook/pull/133)
+
 ### v1.17.0
 21-April-2016
 
