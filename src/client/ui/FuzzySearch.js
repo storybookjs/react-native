@@ -10,7 +10,7 @@ const searchBoxStyle = {
   width: '100%',
   outline: 'none',
   fontSize: 20,
-  fontFamily: 'Lato',
+  fontFamily: 'inherit',
   color: '#666',
   boxSizing: 'border-box',
 };
@@ -28,7 +28,6 @@ const resultsStyle = {
   padding: '12px',
   borderTop: '1px solid #eee',
   color: '#666',
-  fontFamily: 'Lato',
   fontSize: 14,
 };
 
@@ -38,7 +37,6 @@ const selectedResultStyle = {
   padding: '12px',
   borderTop: '1px solid #eee',
   color: '#666',
-  fontFamily: 'Lato',
   fontSize: 14,
 };
 
@@ -48,6 +46,12 @@ const resultsWrapperStyle = {
   border: '1px solid #eee',
   borderTop: 0,
   boxSizing: 'border-box',
+};
+
+const kindStyle = {
+  float: 'right',
+  color: '#bbb',
+  fontStyle: 'italic',
 };
 
 function mainDivStyle(width) {
@@ -72,10 +76,18 @@ export default class FuzzySearch extends Component {
     this.fuse = new Fuse(props.list, props.options);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.fuse.set(newProps.list);
+  }
+
   getResultsTemplate() {
     return this.state.results.map((val, i) => {
       const style = this.state.selectedIndex === i ? selectedResultStyle : resultsStyle;
-      return <div key={i} style={style}>{val.title}</div>;
+      return (
+        <div key={i} style={style}>{val.story}
+          <span style={kindStyle}>in {val.kind}</span>
+        </div>
+      );
     });
   }
 
@@ -89,10 +101,13 @@ export default class FuzzySearch extends Component {
         selectedIndex: this.state.selectedIndex - 1,
       });
     } else if (e.keyCode === 13) {
-      this.props.onSelect(this.state.results[this.state.selectedIndex]);
+      const selected = this.state.results[this.state.selectedIndex];
+      this.props.onSelect(selected.kind, selected.story);
       this.setState({
         results: [],
         selectedIndex: 0,
+      }, () => {
+        this.refs.searchBox.value = '';
       });
     }
   }

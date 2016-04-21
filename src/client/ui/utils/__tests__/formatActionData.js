@@ -9,11 +9,13 @@ describe('formatActionData', function () {
         name: 'hello',
         args: 'world',
       },
+      id: 1,
     }, {
       data: {
         name: 'hello',
         args: 'world',
       },
+      id: 2,
     }];
     const expected = [{
       data: {
@@ -33,11 +35,13 @@ describe('formatActionData', function () {
         name: 'hello',
         args: 'world1',
       },
+      id: 1,
     }, {
       data: {
         name: 'hello',
         args: 'world2',
       },
+      id: 2,
     }];
     const expected = [{
       data: {

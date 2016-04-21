@@ -9,13 +9,13 @@ const rootEl = document.getElementById('root');
 const syncedStore = getSyncedStore();
 
 // Event handlers
-function setSelectedKind(data, kind) {
+function setSelectedKind(data, kind, story) {
   const newData = { ...data };
   const stories = newData.storyStore
     .find(item => item.kind === kind).stories;
 
   newData.selectedKind = kind;
-  newData.selectedStory = stories[0];
+  newData.selectedStory = story || stories[0];
   syncedStore.setData(newData);
 }
 

@@ -1,4 +1,5 @@
 import formatActionData from './ui/utils/formatActionData';
+let idGenerator = 0;
 
 export default class ClientApi {
   constructor({ syncedStore, storyStore }) {
@@ -41,19 +42,20 @@ export default class ClientApi {
     const syncedStore = this._syncedStore;
 
     return function (..._args) {
-      const args = Array.from(_args);
+      let args = Array.from(_args);
       let { actions = [] } = syncedStore.getData();
 
       // Remove events from the args. Otherwise, it creates a huge JSON string.
-      if (
-        args[0] &&
-        typeof args[0].preventDefault === 'function'
-      ) {
-        args[0] = '[SyntheticEvent]';
-      }
+      args = args.map(arg => {
+        if (arg && typeof arg.preventDefault === 'function') {
+          return '[SyntheticEvent]';
+        }
+        return arg;
+      });
 
+      const id = ++idGenerator;
       const data = { name, args };
-      actions = [{ data }].concat(actions);
+      actions = [{ data, id }].concat(actions);
 
       // replace consecutive identical actions with single action having
       // count equal to no. of those identical actions.

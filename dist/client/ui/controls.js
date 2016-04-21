@@ -38,22 +38,8 @@ var _FuzzySearch2 = _interopRequireDefault(_FuzzySearch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var list = [{
-  id: 1,
-  title: 'The Great Gatsby',
-  author: 'F. Scott Fitzgerald'
-}, {
-  id: 2,
-  title: 'The DaVinci Code',
-  author: 'Dan Brown'
-}, {
-  id: 3,
-  title: 'Angels & Demons',
-  author: 'Dan Brown'
-}];
-
 var options = {
-  keys: ['author', 'title']
+  keys: ['story', 'kind']
 };
 
 var StorybookControls = function (_React$Component) {
@@ -67,6 +53,9 @@ var StorybookControls = function (_React$Component) {
     _this.state = {
       filterText: ''
     };
+    _this.formatStoryForSearch = _this.formatStoryForSearch.bind(_this);
+    _this.fireOnStory = _this.fireOnStory.bind(_this);
+    _this.fireOnKind = _this.fireOnKind.bind(_this);
     return _this;
   }
 
@@ -116,10 +105,10 @@ var StorybookControls = function (_React$Component) {
     }
   }, {
     key: 'fireOnKind',
-    value: function fireOnKind(kind) {
+    value: function fireOnKind(kind, story) {
       var onKind = this.props.onKind;
 
-      if (onKind) onKind(kind);
+      if (onKind) onKind(kind, story);
     }
   }, {
     key: 'fireOnStory',
@@ -137,6 +126,27 @@ var StorybookControls = function (_React$Component) {
     key: 'clearFilterText',
     value: function clearFilterText() {
       this.setState({ filterText: '' });
+    }
+  }, {
+    key: 'formatStoryForSearch',
+    value: function formatStoryForSearch() {
+      var storyStore = this.props.storyStore;
+
+      if (!storyStore) {
+        return [];
+      }
+      var formattedStories = [];
+
+      storyStore.forEach(function (kindData) {
+        var stories = kindData.stories.map(function (story) {
+          return {
+            story: story,
+            kind: kindData.kind
+          };
+        });
+        formattedStories = formattedStories.concat(stories);
+      });
+      return formattedStories;
     }
   }, {
     key: 'renderStory',
@@ -275,9 +285,10 @@ var StorybookControls = function (_React$Component) {
             onClear: this.clearFilterText.bind(this)
           }),
           _react2.default.createElement(_FuzzySearch2.default, {
-            list: list,
+            list: this.formatStoryForSearch(),
             options: options,
-            width: 430
+            width: 430,
+            onSelect: this.fireOnKind
           })
         ),
         _react2.default.createElement(

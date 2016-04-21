@@ -2,22 +2,8 @@ import React from 'react';
 import TextFilter from './text_filter';
 import FuzzySearch from './FuzzySearch';
 
-const list = [{
-  id: 1,
-  title: 'The Great Gatsby',
-  author: 'F. Scott Fitzgerald'
-},{
-  id: 2,
-  title: 'The DaVinci Code',
-  author: 'Dan Brown'
-},{
-  id: 3,
-  title: 'Angels & Demons',
-  author: 'Dan Brown'
-}];
-
 const options = {
-  keys: ['author', 'title']
+  keys: ['story', 'kind'],
 };
 
 export default class StorybookControls extends React.Component {
@@ -26,6 +12,9 @@ export default class StorybookControls extends React.Component {
     this.state = {
       filterText: '',
     };
+    this.formatStoryForSearch = this.formatStoryForSearch.bind(this);
+    this.fireOnStory = this.fireOnStory.bind(this);
+    this.fireOnKind = this.fireOnKind.bind(this);
   }
 
   getKindNames() {
@@ -60,9 +49,9 @@ export default class StorybookControls extends React.Component {
     return storiesInfo.stories;
   }
 
-  fireOnKind(kind) {
+  fireOnKind(kind, story) {
     const { onKind } = this.props;
-    if (onKind) onKind(kind);
+    if (onKind) onKind(kind, story);
   }
 
   fireOnStory(story) {
@@ -76,6 +65,25 @@ export default class StorybookControls extends React.Component {
 
   clearFilterText() {
     this.setState({ filterText: '' });
+  }
+
+  formatStoryForSearch() {
+    const { storyStore } = this.props;
+    if (!storyStore) {
+      return [];
+    }
+    let formattedStories = [];
+
+    storyStore.forEach((kindData) => {
+      const stories = kindData.stories.map((story) => {
+        return {
+          story,
+          kind: kindData.kind,
+        };
+      });
+      formattedStories = formattedStories.concat(stories);
+    });
+    return formattedStories;
   }
 
   renderStory(story) {
@@ -199,9 +207,10 @@ export default class StorybookControls extends React.Component {
             onClear={this.clearFilterText.bind(this)}
           />
           <FuzzySearch
-            list={list}
+            list={this.formatStoryForSearch()}
             options={options}
             width={430}
+            onSelect={this.fireOnKind}
           />
         </div>
         <div style={listStyle}>

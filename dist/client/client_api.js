@@ -22,6 +22,8 @@ var _formatActionData2 = _interopRequireDefault(_formatActionData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var idGenerator = 0;
+
 var ClientApi = function () {
   function ClientApi(_ref) {
     var syncedStore = _ref.syncedStore;
@@ -87,12 +89,16 @@ var ClientApi = function () {
 
         // Remove events from the args. Otherwise, it creates a huge JSON string.
 
-        if (args[0] && typeof args[0].preventDefault === 'function') {
-          args[0] = '[SyntheticEvent]';
-        }
+        args = args.map(function (arg) {
+          if (arg && typeof arg.preventDefault === 'function') {
+            return '[SyntheticEvent]';
+          }
+          return arg;
+        });
 
+        var id = ++idGenerator;
         var data = { name: name, args: args };
-        actions = [{ data: data }].concat(actions);
+        actions = [{ data: data, id: id }].concat(actions);
 
         // replace consecutive identical actions with single action having
         // count equal to no. of those identical actions.

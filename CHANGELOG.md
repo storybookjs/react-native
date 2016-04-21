@@ -1,5 +1,20 @@
 ## Changelog
 
+### v1.17.1
+21-April-2016
+
+* Fix a regression introduce by `v1.17.0`. See: [PR133](https://github.com/kadirahq/react-storybook/pull/133)
+
+### v1.17.0
+21-April-2016
+
+* Check all the arguments passed to action for events. See: [PR132](https://github.com/kadirahq/react-storybook/pull/132)
+
+### v1.16.1
+21-April-2016
+
+* Fix action logs highlighting issue, which comes as a regression of [PR126](https://github.com/kadirahq/react-storybook/pull/126).
+
 ### v1.16.0
 20-April-2016
 

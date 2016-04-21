@@ -4,7 +4,6 @@ function getLastElem(arr) {
   return arr[arr.length - 1];
 }
 
-
 /**
  * Takes an array and checks consecutive arrays. If they are same then replaces
  * consecutive identical objects (refers to .data of each object) with single
@@ -21,7 +20,7 @@ export default function formatActionData(actions) {
       formatted.push({
         data: action.data,
         count: action.count || 1,
-        id: formatted.length + 1,
+        id: action.id,
       });
     } else {
       const lastElem = getLastElem(formatted);

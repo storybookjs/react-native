@@ -46,7 +46,7 @@ var searchBoxStyle = {
   width: '100%',
   outline: 'none',
   fontSize: 20,
-  fontFamily: 'Lato',
+  fontFamily: 'inherit',
   color: '#666',
   boxSizing: 'border-box'
 };
@@ -64,7 +64,6 @@ var resultsStyle = {
   padding: '12px',
   borderTop: '1px solid #eee',
   color: '#666',
-  fontFamily: 'Lato',
   fontSize: 14
 };
 
@@ -74,7 +73,6 @@ var selectedResultStyle = {
   padding: '12px',
   borderTop: '1px solid #eee',
   color: '#666',
-  fontFamily: 'Lato',
   fontSize: 14
 };
 
@@ -84,6 +82,12 @@ var resultsWrapperStyle = {
   border: '1px solid #eee',
   borderTop: 0,
   boxSizing: 'border-box'
+};
+
+var kindStyle = {
+  float: 'right',
+  color: '#bbb',
+  fontStyle: 'italic'
 };
 
 function mainDivStyle(width) {
@@ -115,6 +119,11 @@ var FuzzySearch = function (_Component) {
   }
 
   (0, _createClass3.default)(FuzzySearch, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      this.fuse.set(newProps.list);
+    }
+  }, {
     key: 'getResultsTemplate',
     value: function getResultsTemplate() {
       var _this2 = this;
@@ -124,13 +133,21 @@ var FuzzySearch = function (_Component) {
         return _react2.default.createElement(
           'div',
           { key: i, style: style },
-          val.title
+          val.story,
+          _react2.default.createElement(
+            'span',
+            { style: kindStyle },
+            'in ',
+            val.kind
+          )
         );
       });
     }
   }, {
     key: 'handleKeyPress',
     value: function handleKeyPress(e) {
+      var _this3 = this;
+
       if (e.keyCode === 40 && this.state.selectedIndex < this.state.results.length - 1) {
         this.setState({
           selectedIndex: this.state.selectedIndex + 1
@@ -140,10 +157,13 @@ var FuzzySearch = function (_Component) {
           selectedIndex: this.state.selectedIndex - 1
         });
       } else if (e.keyCode === 13) {
-        this.props.onSelect(this.state.results[this.state.selectedIndex]);
+        var selected = this.state.results[this.state.selectedIndex];
+        this.props.onSelect(selected.kind, selected.story);
         this.setState({
           results: [],
           selectedIndex: 0
+        }, function () {
+          _this3.refs.searchBox.value = '';
         });
       }
     }

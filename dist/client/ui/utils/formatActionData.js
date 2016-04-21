@@ -31,7 +31,7 @@ function formatActionData(actions) {
       formatted.push({
         data: action.data,
         count: action.count || 1,
-        id: formatted.length + 1
+        id: action.id
       });
     } else {
       var lastElem = getLastElem(formatted);

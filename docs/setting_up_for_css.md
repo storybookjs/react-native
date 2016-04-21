@@ -119,3 +119,8 @@ module.exports = {
 ```
 
 > Click [here](https://github.com/mantrajs/mantra-sample-blog-app) to see a complete example.
+
+Refer following links to learn more about Meteor specific CSS configurations:
+
+* [#96](https://github.com/kadirahq/react-storybook/issues/96#issuecomment-211928389)
+* [#20](https://github.com/kadirahq/react-storybook/issues/20)
