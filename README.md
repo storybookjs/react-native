@@ -2,7 +2,7 @@
 
 Now you can develop and design React UI components without running your app.
 
-![React Storybook Screenshot](docs/react-storybook-screenshot.png)
+![React Storybook Screenshot](docs/react_storybook_screenshot.png)
 
 You just load your UI components into the React Storybook and start developing them.
 
@@ -41,7 +41,7 @@ npm run storybook
 
 This will start your Storybook in <http://localhost:9001>. Open that URL in your browser. You will see the React Storybook UI:
 
-![React Storybook in action](docs/react-storybook-demo.gif)
+![React Storybook in action](docs/react_storybook_demo.gif)
 
 Edit some of the components in the `components` directory and see how they reflect in the Storybook UI. We define stories inside the `components/stories` directory. Have a play with that as well.
 
@@ -120,13 +120,11 @@ That's it. Now simply run `npm run storybook` and start developing your componen
 
 There are many things you can do with React Storybook. You can explore them with the following links:
 
-* [Setting up for CSS](docs/setting-up-for-css.md)
-* [API and configurations](docs/api.md)
-* [Guideline for writing stories](docs/guidelines.md)
+* [Writing Stories](docs/writing_stories.md)
+* [Setting up for CSS](docs/setting_up_for_css.md)
+* [Configuration APIs](docs/configure_storybook.md)
 * [Known Issues](docs/known_issues.md)
-* [How to Contribute](CONTRIBUTING.md)
-* [Storybooks.io](https://storybooks.io/?utm_source=github&utm_medium=link&utm_campaign=react-storybook)
-* How React Storybook works (coming soon)
+*  [Storybooks.io](https://storybooks.io/?utm_source=github&utm_medium=link&utm_campaign=react-storybook)
 
 #### New: React Storybook meets GitHub
 
@@ -139,5 +137,3 @@ React Storybook is very powerful and you can use it with any kind of app. Here's
 * [Very simple demo](https://github.com/kadira-samples/react-storybook-simple-demo)
 * [Redux to-do app](https://github.com/kadira-samples/react-storybook-demo)
 * [Meteor app (Mantra)](https://github.com/mantrajs/mantra-sample-blog-app)
-* Simple Meteor app (coming soon)
-* Material UI component browser (coming soon)
