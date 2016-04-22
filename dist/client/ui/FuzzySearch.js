@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -48,14 +52,16 @@ var searchBoxStyle = {
   fontSize: 20,
   fontFamily: 'inherit',
   color: '#666',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  transition: 'border .2s ease'
 };
 
 var searchBoxWrapper = {
   padding: '4px',
   boxShadow: '0 4px 15px 4px rgba(0,0,0,0.2)',
   borderRadius: 2,
-  backgroundColor: '#ffffff'
+  backgroundColor: '#ffffff',
+  marginTop: '50px'
 };
 
 var resultsStyle = {
@@ -164,6 +170,9 @@ var FuzzySearch = function (_Component) {
           selectedIndex: 0
         }, function () {
           _this3.refs.searchBox.value = '';
+          var newData = (0, _extends3.default)({}, _this3.props.syncedStore.getData());
+          newData.showSearchBox = false;
+          _this3.props.syncedStore.setData(newData);
         });
       }
     }
@@ -180,22 +189,37 @@ var FuzzySearch = function (_Component) {
       var _props = this.props;
       var className = _props.className;
       var width = _props.width;
+      var placeholder = _props.placeholder;
 
 
       var mainClass = (0, _classnames2.default)('react-fuzzy-search', className);
 
+      var showSearchBox = this.props.syncedStore.getData().showSearchBox;
+
       return _react2.default.createElement(
-        'div',
-        { className: mainClass, style: mainDivStyle(width), onKeyDown: this.handleKeyPress },
-        _react2.default.createElement(
+        'span',
+        null,
+        showSearchBox && _react2.default.createElement(
           'div',
-          { style: searchBoxWrapper },
-          _react2.default.createElement('input', { type: 'text', style: searchBoxStyle, onChange: this.handleChange, ref: 'searchBox' })
-        ),
-        this.state.results && this.state.results.length > 0 && _react2.default.createElement(
-          'div',
-          { style: resultsWrapperStyle },
-          this.getResultsTemplate()
+          { className: mainClass, style: mainDivStyle(width), onKeyDown: this.handleKeyPress },
+          _react2.default.createElement(
+            'div',
+            { style: searchBoxWrapper },
+            _react2.default.createElement('input', {
+              type: 'text',
+              className: 'searchBox',
+              style: searchBoxStyle,
+              onChange: this.handleChange,
+              ref: 'searchBox',
+              placeholder: placeholder,
+              autoFocus: true
+            })
+          ),
+          this.state.results && this.state.results.length > 0 && _react2.default.createElement(
+            'div',
+            { style: resultsWrapperStyle },
+            this.getResultsTemplate()
+          )
         )
       );
     }
@@ -211,7 +235,9 @@ FuzzySearch.propTypes = {
   onSelect: _react.PropTypes.func.isRequired,
   width: _react.PropTypes.number,
   list: _react.PropTypes.array.isRequired,
-  options: _react.PropTypes.object.isRequired
+  options: _react.PropTypes.object.isRequired,
+  placeholder: _react.PropTypes.string,
+  syncedStore: _react.PropTypes.func
 };
 
 FuzzySearch.defaultProps = {

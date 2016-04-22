@@ -23,6 +23,8 @@ export default class Data {
     this._data = {
       iframeMode: this._iframeMode,
       dataId: this._dataId,
+      showControls: true,
+      showLogger: true,
     };
 
     this._handlers = [];
@@ -46,8 +48,6 @@ export default class Data {
     this._bus.on(this.getDataKey(), this._onData.bind(this));
     // do initial render
     this._handlers.forEach(handler => handler(this.getData()));
-
-    this._window.onkeydown = (e) => this._handleShortCuts(e, this.getData());
   }
 
   getDataKey() {

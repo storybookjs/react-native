@@ -1,5 +1,4 @@
 import React from 'react';
-import TextFilter from './text_filter';
 import FuzzySearch from './FuzzySearch';
 
 const options = {
@@ -124,7 +123,7 @@ export default class StorybookControls extends React.Component {
         <div key={kind}>
           <div
             style={kindStyle}
-            onClick={this.fireOnKind.bind(this, kind)}
+            onClick={this.fireOnKind.bind(this, kind, null)}
           >
             {kind}
           </div>
@@ -139,7 +138,7 @@ export default class StorybookControls extends React.Component {
       <div
         key={kind}
         style={kindStyle}
-        onClick={this.fireOnKind.bind(this, kind)}
+        onClick={this.fireOnKind.bind(this, kind, null)}
       >
         {kind}
       </div>
@@ -147,6 +146,7 @@ export default class StorybookControls extends React.Component {
   }
 
   render() {
+    const { syncedStore } = this.props;
     const kindNames = this.getKindNames();
     const mainStyle = {
       fontFamily: `
@@ -179,17 +179,10 @@ export default class StorybookControls extends React.Component {
       margin: 0,
     };
 
-    const filterTextWrapStyle = {
-      position: 'absolute',
-      top: '68px',
-      right: '10px',
-      left: '20px',
-    };
-
     const listStyle = {
       overflowY: 'auto',
       position: 'absolute',
-      top: '108px',
+      top: '60px',
       right: '10px',
       bottom: 0,
       left: '20px',
@@ -200,19 +193,16 @@ export default class StorybookControls extends React.Component {
         <div style={h1WrapStyle}>
           <h3 style={h1Style}>React Storybook</h3>
         </div>
-        <div style={filterTextWrapStyle}>
-          <TextFilter
-            filterText={this.state.filterText}
-            onChange={this.filterStoryList.bind(this)}
-            onClear={this.clearFilterText.bind(this)}
-          />
-          <FuzzySearch
-            list={this.formatStoryForSearch()}
-            options={options}
-            width={430}
-            onSelect={this.fireOnKind}
-          />
-        </div>
+
+        <FuzzySearch
+          list={this.formatStoryForSearch()}
+          options={options}
+          width={430}
+          onSelect={this.fireOnKind}
+          placeholder="Search by Story or Kind"
+          syncedStore={syncedStore}
+        />
+
         <div style={listStyle}>
           {kindNames.map(this.renderKind.bind(this))}
         </div>
@@ -227,4 +217,5 @@ StorybookControls.propTypes = {
   selectedStory: React.PropTypes.string,
   onKind: React.PropTypes.func,
   onStory: React.PropTypes.func,
+  syncedStore: React.PropTypes.object,
 };

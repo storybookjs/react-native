@@ -5,7 +5,7 @@ import ConfigApi from './config_api';
 import handleShortCuts from './handleShortCuts';
 
 const storyStore = new StoryStore();
-const syncedStore = new SyncedStore(window, handleShortCuts);
+const syncedStore = new SyncedStore(window);
 const clientApi = new ClientApi({ storyStore, syncedStore });
 const configApi = new ConfigApi({ storyStore, syncedStore });
 syncedStore.init();
@@ -22,3 +22,5 @@ export const storiesOf = clientApi.storiesOf.bind(clientApi);
 export const action = clientApi.action.bind(clientApi);
 export const linkTo = clientApi.linkTo.bind(clientApi);
 export const configure = configApi.configure.bind(configApi);
+
+window.onkeydown = (e) => handleShortCuts(e, syncedStore);

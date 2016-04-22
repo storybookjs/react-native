@@ -59,7 +59,9 @@ var Data = function () {
     this._dataId = this._iframeMode ? this._parsedQs.dataId : _uuid2.default.v4();
     this._data = {
       iframeMode: this._iframeMode,
-      dataId: this._dataId
+      dataId: this._dataId,
+      showControls: true,
+      showLogger: true
     };
 
     this._handlers = [];
@@ -91,10 +93,6 @@ var Data = function () {
       this._handlers.forEach(function (handler) {
         return handler(_this2.getData());
       });
-
-      this._window.onkeydown = function (e) {
-        return _this2._handleShortCuts(e, _this2.getData());
-      };
     }
   }, {
     key: 'getDataKey',

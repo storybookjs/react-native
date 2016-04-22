@@ -13,6 +13,7 @@ const searchBoxStyle = {
   fontFamily: 'inherit',
   color: '#666',
   boxSizing: 'border-box',
+  transition: 'border .2s ease',
 };
 
 const searchBoxWrapper = {
@@ -20,6 +21,7 @@ const searchBoxWrapper = {
   boxShadow: '0 4px 15px 4px rgba(0,0,0,0.2)',
   borderRadius: 2,
   backgroundColor: '#ffffff',
+  marginTop: '50px',
 };
 
 const resultsStyle = {
@@ -108,6 +110,9 @@ export default class FuzzySearch extends Component {
         selectedIndex: 0,
       }, () => {
         this.refs.searchBox.value = '';
+        const newData = { ...this.props.syncedStore.getData() };
+        newData.showSearchBox = false;
+        this.props.syncedStore.setData(newData);
       });
     }
   }
@@ -122,22 +127,36 @@ export default class FuzzySearch extends Component {
     const {
       className,
       width,
+      placeholder,
     } = this.props;
 
     const mainClass = classNames('react-fuzzy-search', className);
 
+    const showSearchBox = this.props.syncedStore.getData().showSearchBox;
+
     return (
-      <div className={mainClass} style={ mainDivStyle(width) } onKeyDown={this.handleKeyPress}>
-        <div style={searchBoxWrapper}>
-          <input type="text" style={searchBoxStyle} onChange={this.handleChange} ref="searchBox" />
-        </div>
-        {
-          this.state.results && this.state.results.length > 0 &&
-          <div style={resultsWrapperStyle}>
-            {this.getResultsTemplate()}
+      <span>
+        {showSearchBox &&
+        <div className={mainClass} style={ mainDivStyle(width) } onKeyDown={this.handleKeyPress}>
+          <div style={searchBoxWrapper}>
+            <input
+              type="text"
+              className="searchBox"
+              style={searchBoxStyle}
+              onChange={this.handleChange}
+              ref="searchBox"
+              placeholder={placeholder}
+              autoFocus
+            />
           </div>
-        }
-      </div>
+          {
+            this.state.results && this.state.results.length > 0 &&
+            <div style={resultsWrapperStyle}>
+              {this.getResultsTemplate()}
+            </div>
+          }
+        </div>}
+      </span>
     );
   }
 }
@@ -148,6 +167,8 @@ FuzzySearch.propTypes = {
   width: PropTypes.number,
   list: PropTypes.array.isRequired,
   options: PropTypes.object.isRequired,
+  placeholder: PropTypes.string,
+  syncedStore: PropTypes.func,
 };
 
 FuzzySearch.defaultProps = {

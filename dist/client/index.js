@@ -30,7 +30,7 @@ var _handleShortCuts2 = _interopRequireDefault(_handleShortCuts);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var storyStore = new _story_store2.default();
-var syncedStore = new _synced_store2.default(window, _handleShortCuts2.default);
+var syncedStore = new _synced_store2.default(window);
 var clientApi = new _client_api2.default({ storyStore: storyStore, syncedStore: syncedStore });
 var configApi = new _config_api2.default({ storyStore: storyStore, syncedStore: syncedStore });
 syncedStore.init();
@@ -47,3 +47,7 @@ var storiesOf = exports.storiesOf = clientApi.storiesOf.bind(clientApi);
 var action = exports.action = clientApi.action.bind(clientApi);
 var linkTo = exports.linkTo = clientApi.linkTo.bind(clientApi);
 var configure = exports.configure = configApi.configure.bind(configApi);
+
+window.onkeydown = function (e) {
+  return (0, _handleShortCuts2.default)(e, syncedStore);
+};

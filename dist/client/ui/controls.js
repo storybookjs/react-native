@@ -28,10 +28,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _text_filter = require('./text_filter');
-
-var _text_filter2 = _interopRequireDefault(_text_filter);
-
 var _FuzzySearch = require('./FuzzySearch');
 
 var _FuzzySearch2 = _interopRequireDefault(_FuzzySearch);
@@ -194,7 +190,7 @@ var StorybookControls = function (_React$Component) {
             'div',
             {
               style: kindStyle,
-              onClick: this.fireOnKind.bind(this, kind)
+              onClick: this.fireOnKind.bind(this, kind, null)
             },
             kind
           ),
@@ -211,7 +207,7 @@ var StorybookControls = function (_React$Component) {
         {
           key: kind,
           style: kindStyle,
-          onClick: this.fireOnKind.bind(this, kind)
+          onClick: this.fireOnKind.bind(this, kind, null)
         },
         kind
       );
@@ -219,6 +215,8 @@ var StorybookControls = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var syncedStore = this.props.syncedStore;
+
       var kindNames = this.getKindNames();
       var mainStyle = {
         fontFamily: '\n        -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",\n        "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif\n      ',
@@ -248,17 +246,10 @@ var StorybookControls = function (_React$Component) {
         margin: 0
       };
 
-      var filterTextWrapStyle = {
-        position: 'absolute',
-        top: '68px',
-        right: '10px',
-        left: '20px'
-      };
-
       var listStyle = {
         overflowY: 'auto',
         position: 'absolute',
-        top: '108px',
+        top: '60px',
         right: '10px',
         bottom: 0,
         left: '20px'
@@ -276,21 +267,14 @@ var StorybookControls = function (_React$Component) {
             'React Storybook'
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { style: filterTextWrapStyle },
-          _react2.default.createElement(_text_filter2.default, {
-            filterText: this.state.filterText,
-            onChange: this.filterStoryList.bind(this),
-            onClear: this.clearFilterText.bind(this)
-          }),
-          _react2.default.createElement(_FuzzySearch2.default, {
-            list: this.formatStoryForSearch(),
-            options: options,
-            width: 430,
-            onSelect: this.fireOnKind
-          })
-        ),
+        _react2.default.createElement(_FuzzySearch2.default, {
+          list: this.formatStoryForSearch(),
+          options: options,
+          width: 430,
+          onSelect: this.fireOnKind,
+          placeholder: 'Search by Story or Kind',
+          syncedStore: syncedStore
+        }),
         _react2.default.createElement(
           'div',
           { style: listStyle },
@@ -310,5 +294,6 @@ StorybookControls.propTypes = {
   selectedKind: _react2.default.PropTypes.string,
   selectedStory: _react2.default.PropTypes.string,
   onKind: _react2.default.PropTypes.func,
-  onStory: _react2.default.PropTypes.func
+  onStory: _react2.default.PropTypes.func,
+  syncedStore: _react2.default.PropTypes.object
 };

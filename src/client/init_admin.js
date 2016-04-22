@@ -6,4 +6,6 @@ const syncedStore = getSyncedStore();
 syncedStore.watchData(data => {
   renderUI(data);
 });
+
 renderUI(syncedStore.getData());
+

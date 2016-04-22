@@ -6,7 +6,7 @@ import SplitPane from '@kadira/react-split-pane';
 
 class Layout extends React.Component {
   render() {
-    const { controls, preview, actionLogger } = this.props;
+    const { controls, preview, actionLogger, showControls, showLogger } = this.props;
 
     const rootStyles = {
       height: '100vh',
@@ -49,25 +49,34 @@ class Layout extends React.Component {
     return (
       <div style={rootStyles}>
         <SplitPane
-          split="vertical" minSize={250} resizerChildren={vsplit}
-          onDragStarted={onDragStart} onDragFinished={onDragEnd}
+          split="vertical"
+          minSize={250}
+          size={!showControls ? '0px' : null}
+          resizerChildren={vsplit}
+          onDragStarted={onDragStart}
+          onDragFinished={onDragEnd}
         >
           <div style={controlsStyle}>
             {controls}
           </div>
           <SplitPane
-            split="horizontal" primary="second" minSize={100}
-            defaultSize={200} resizerChildren={hsplit}
-            onDragStarted={onDragStart} onDragFinished={onDragEnd}
+            split="horizontal"
+            primary="second"
+            minSize={100}
+            defaultSize={200}
+            size={!showLogger ? '0px' : null}
+            resizerChildren={hsplit}
+            onDragStarted={onDragStart}
+            onDragFinished={onDragEnd}
           >
-            <div style={previewStyle}>
-              {preview}
-            </div>
-            <div style={actionStyle}>
-              {actionLogger}
-            </div>
-          </SplitPane>
+          <div style={previewStyle}>
+            {preview}
+          </div>
+          <div style={actionStyle}>
+            {actionLogger}
+          </div>
         </SplitPane>
+      </SplitPane>
       </div>
     );
   }
@@ -77,6 +86,8 @@ Layout.propTypes = {
   controls: React.PropTypes.element.isRequired,
   preview: React.PropTypes.element.isRequired,
   actionLogger: React.PropTypes.element.isRequired,
+  showControls: React.PropTypes.bool,
+  showLogger: React.PropTypes.bool,
 };
 
 export default Layout;

@@ -71,7 +71,8 @@ function getControls(data) {
     selectedKind: data.selectedKind,
     selectedStory: data.selectedStory,
     onKind: setSelectedKind.bind(null, data),
-    onStory: setSelectedStory.bind(null, data)
+    onStory: setSelectedStory.bind(null, data),
+    syncedStore: syncedStore
   });
 }
 
@@ -110,7 +111,9 @@ function renderMain(data) {
   var root = _react2.default.createElement(_layout2.default, {
     controls: controls,
     preview: iframe,
-    actionLogger: actionLogger
+    actionLogger: actionLogger,
+    showControls: data.showControls,
+    showLogger: data.showLogger
   });
 
   _reactDom2.default.render(root, rootEl);
