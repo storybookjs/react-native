@@ -33,6 +33,10 @@ export default function () {
           .searchBox:focus{
             border-color: #EEE !important;
           }
+          
+          button{
+            cursor: pointer
+          }
         </style>
       </head>
       <body style="margin: 0;">

@@ -36,6 +36,14 @@ var _text_filter = require('./text_filter');
 
 var _text_filter2 = _interopRequireDefault(_text_filter);
 
+var _reactModal = require('react-modal');
+
+var _reactModal2 = _interopRequireDefault(_reactModal);
+
+var _modalContent = require('./modalContent');
+
+var _modalContent2 = _interopRequireDefault(_modalContent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var options = {
@@ -51,11 +59,14 @@ var StorybookControls = function (_React$Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(StorybookControls).call(this, props));
 
     _this.state = {
-      filterText: ''
+      filterText: '',
+      isModalOpen: false
     };
     _this.formatStoryForSearch = _this.formatStoryForSearch.bind(_this);
     _this.fireOnStory = _this.fireOnStory.bind(_this);
     _this.fireOnKind = _this.fireOnKind.bind(_this);
+    _this.openModal = _this.openModal.bind(_this);
+    _this.closeModal = _this.closeModal.bind(_this);
     return _this;
   }
 
@@ -149,6 +160,20 @@ var StorybookControls = function (_React$Component) {
       return formattedStories;
     }
   }, {
+    key: 'openModal',
+    value: function openModal() {
+      this.setState({
+        isModalOpen: true
+      });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.setState({
+        isModalOpen: false
+      });
+    }
+  }, {
     key: 'renderStory',
     value: function renderStory(story) {
       var selectedStory = this.props.selectedStory;
@@ -236,7 +261,7 @@ var StorybookControls = function (_React$Component) {
 
       var h1Style = {
         textTransform: 'uppercase',
-        letterSpacing: '3.5px',
+        letterSpacing: '1.5px',
         fontSize: '12px',
         fontWeight: 'bolder',
         color: '#828282',
@@ -245,7 +270,9 @@ var StorybookControls = function (_React$Component) {
         borderRadius: '2px',
         padding: '5px',
         cursor: 'default',
-        margin: 0
+        margin: 0,
+        float: 'none',
+        overflow: 'hidden'
       };
 
       var filterTextWrapStyle = {
@@ -264,6 +291,53 @@ var StorybookControls = function (_React$Component) {
         left: '20px'
       };
 
+      var shortcutIcon = {
+        textTransform: 'uppercase',
+        letterSpacing: '3.5px',
+        fontSize: 12,
+        fontWeight: 'bolder',
+        color: 'rgb(130, 130, 130)',
+        border: '1px solid rgb(193, 193, 193)',
+        textAlign: 'center',
+        borderRadius: 2,
+        padding: 5,
+        cursor: 'default',
+        margin: 0,
+        display: 'inlineBlock',
+        paddingLeft: 8,
+        float: 'right',
+        marginLeft: 5
+      };
+
+      var modalStyles = {
+        content: {
+          left: '50%',
+          bottom: 'initial',
+          right: 'initial',
+          width: 350,
+          marginLeft: -175,
+          border: 'none',
+          overflow: 'visible',
+          fontFamily: 'sans-serif',
+          fontSize: 14
+        },
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.74902)'
+        }
+      };
+
+      var closeButtonStyle = {
+        backgroundColor: 'transparent',
+        border: 'none',
+        position: 'absolute',
+        right: -30,
+        top: -6,
+        color: '#fff',
+        fontSize: 22,
+        cursor: 'pointer',
+        outline: 'none'
+      };
+
       return _react2.default.createElement(
         'div',
         { style: mainStyle },
@@ -271,9 +345,28 @@ var StorybookControls = function (_React$Component) {
           'div',
           { style: h1WrapStyle },
           _react2.default.createElement(
+            'div',
+            { style: shortcutIcon, onClick: this.openModal },
+            '⌘'
+          ),
+          _react2.default.createElement(
             'h3',
             { style: h1Style },
             'React Storybook'
+          )
+        ),
+        _react2.default.createElement(
+          _reactModal2.default,
+          {
+            isOpen: this.state.isModalOpen,
+            onRequestClose: this.closeModal,
+            style: modalStyles
+          },
+          (0, _modalContent2.default)(),
+          _react2.default.createElement(
+            'button',
+            { onClick: this.closeModal, style: closeButtonStyle },
+            '✕'
           )
         ),
         _react2.default.createElement(_FuzzySearch2.default, {
