@@ -1,5 +1,6 @@
 import React from 'react';
 import FuzzySearch from './FuzzySearch';
+import TextFilter from './text_filter';
 
 const options = {
   keys: ['story', 'kind'],
@@ -202,6 +203,11 @@ export default class StorybookControls extends React.Component {
         />
 
         <div style={listStyle}>
+          <TextFilter
+            filterText={this.state.filterText}
+            onChange={this.filterStoryList.bind(this)}
+            onClear={this.clearFilterText.bind(this)}
+          />
           {kindNames.map(this.renderKind.bind(this))}
         </div>
       </div>

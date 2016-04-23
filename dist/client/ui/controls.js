@@ -32,6 +32,10 @@ var _FuzzySearch = require('./FuzzySearch');
 
 var _FuzzySearch2 = _interopRequireDefault(_FuzzySearch);
 
+var _text_filter = require('./text_filter');
+
+var _text_filter2 = _interopRequireDefault(_text_filter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var options = {
@@ -275,6 +279,11 @@ var StorybookControls = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { style: listStyle },
+          _react2.default.createElement(_text_filter2.default, {
+            filterText: this.state.filterText,
+            onChange: this.filterStoryList.bind(this),
+            onClear: this.clearFilterText.bind(this)
+          }),
           kindNames.map(this.renderKind.bind(this))
         )
       );
