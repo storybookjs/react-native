@@ -301,7 +301,7 @@ var StorybookControls = function (_React$Component) {
         textAlign: 'center',
         borderRadius: 2,
         padding: 5,
-        cursor: 'default',
+        cursor: 'pointer',
         margin: 0,
         display: 'inlineBlock',
         paddingLeft: 8,
@@ -346,7 +346,7 @@ var StorybookControls = function (_React$Component) {
           { style: h1WrapStyle },
           _react2.default.createElement(
             'div',
-            { style: shortcutIcon, onClick: this.openModal },
+            { style: shortcutIcon, onClick: this.openModal, className: 'btn' },
             '⌘'
           ),
           _react2.default.createElement(

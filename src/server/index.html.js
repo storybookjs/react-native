@@ -34,8 +34,8 @@ export default function () {
             border-color: #EEE !important;
           }
           
-          button{
-            cursor: pointer
+          .btn:hover{
+            background-color: #eee
           }
         </style>
       </head>

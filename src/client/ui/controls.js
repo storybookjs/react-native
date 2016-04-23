@@ -225,7 +225,7 @@ export default class StorybookControls extends React.Component {
       textAlign: 'center',
       borderRadius: 2,
       padding: 5,
-      cursor: 'default',
+      cursor: 'pointer',
       margin: 0,
       display: 'inlineBlock',
       paddingLeft: 8,
@@ -265,7 +265,7 @@ export default class StorybookControls extends React.Component {
     return (
       <div style={mainStyle}>
         <div style={h1WrapStyle}>
-          <div style={shortcutIcon} onClick={this.openModal}>&#8984;</div>
+          <div style={shortcutIcon} onClick={this.openModal} className="btn">&#8984;</div>
           <h3 style={h1Style}>React Storybook</h3>
         </div>
 
