@@ -1,9 +1,15 @@
+function isModifierPressed(e) {
+  return (e.ctrlKey || e.keyCode === 91 || e.metaKey) && e.shiftKey;
+}
+
 export default function handleShortCuts(e, syncedStore) {
-  if (e.keyCode === 79 && e.ctrlKey && e.shiftKey) {
+  if (isModifierPressed(e) && e.keyCode === 80) {
+    e.preventDefault();
     const newData = { ...syncedStore.getData() };
     newData.showSearchBox = !newData.showSearchBox;
     syncedStore.setData(newData);
-  } else if (e.ctrlKey && e.keyCode === 76 && e.shiftKey) {
+  } else if (isModifierPressed(e) && e.keyCode === 76) {
+    e.preventDefault();
     const newData = { ...syncedStore.getData() };
     newData.showControls = !newData.showControls;
     syncedStore.setData(newData);
@@ -11,7 +17,8 @@ export default function handleShortCuts(e, syncedStore) {
     const newData = { ...syncedStore.data };
     newData.showSearchBox = false;
     syncedStore.setData(newData);
-  } else if (e.keyCode === 66 && e.ctrlKey && e.shiftKey) {
+  } else if (isModifierPressed(e) && e.keyCode === 66) {
+    e.preventDefault();
     const newData = { ...syncedStore.getData() };
     newData.showLogger = !newData.showLogger;
     syncedStore.setData(newData);
