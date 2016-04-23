@@ -115,7 +115,7 @@ var Layout = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { style: controlsStyle },
-            controls
+            showControls && controls
           ),
           _react2.default.createElement(
             _reactSplitPane2.default,

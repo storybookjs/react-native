@@ -57,7 +57,7 @@ class Layout extends React.Component {
           onDragFinished={onDragEnd}
         >
           <div style={controlsStyle}>
-            {controls}
+            {showControls && controls}
           </div>
           <SplitPane
             split="horizontal"

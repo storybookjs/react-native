@@ -248,10 +248,17 @@ var StorybookControls = function (_React$Component) {
         margin: 0
       };
 
+      var filterTextWrapStyle = {
+        position: 'absolute',
+        top: '68px',
+        right: '10px',
+        left: '20px'
+      };
+
       var listStyle = {
         overflowY: 'auto',
         position: 'absolute',
-        top: '60px',
+        top: '108px',
         right: '10px',
         bottom: 0,
         left: '20px'
@@ -278,12 +285,16 @@ var StorybookControls = function (_React$Component) {
         }),
         _react2.default.createElement(
           'div',
-          { style: listStyle },
+          { style: filterTextWrapStyle },
           _react2.default.createElement(_text_filter2.default, {
             filterText: this.state.filterText,
             onChange: this.filterStoryList.bind(this),
             onClear: this.clearFilterText.bind(this)
-          }),
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: listStyle },
           kindNames.map(this.renderKind.bind(this))
         )
       );

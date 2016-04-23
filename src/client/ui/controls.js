@@ -179,10 +179,17 @@ export default class StorybookControls extends React.Component {
       margin: 0,
     };
 
+    const filterTextWrapStyle = {
+      position: 'absolute',
+      top: '68px',
+      right: '10px',
+      left: '20px',
+    };
+
     const listStyle = {
       overflowY: 'auto',
       position: 'absolute',
-      top: '60px',
+      top: '108px',
       right: '10px',
       bottom: 0,
       left: '20px',
@@ -202,12 +209,15 @@ export default class StorybookControls extends React.Component {
           placeholder="Search by Story or Kind"
         />
 
-        <div style={listStyle}>
+        <div style={filterTextWrapStyle}>
           <TextFilter
             filterText={this.state.filterText}
             onChange={this.filterStoryList.bind(this)}
             onClear={this.clearFilterText.bind(this)}
           />
+        </div>
+
+        <div style={listStyle}>
           {kindNames.map(this.renderKind.bind(this))}
         </div>
       </div>
