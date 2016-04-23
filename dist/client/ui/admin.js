@@ -71,8 +71,7 @@ function getControls(data) {
     selectedKind: data.selectedKind,
     selectedStory: data.selectedStory,
     onKind: setSelectedKind.bind(null, data),
-    onStory: setSelectedStory.bind(null, data),
-    syncedStore: syncedStore
+    onStory: setSelectedStory.bind(null, data)
   });
 }
 

@@ -15,15 +15,5 @@ export default function handleShortCuts(e, syncedStore) {
     const newData = { ...syncedStore.getData() };
     newData.showLogger = !newData.showLogger;
     syncedStore.setData(newData);
-  } else if (e.keyCode === 70 && e.shiftKey && e.ctrlKey) {
-    const newData = { ...syncedStore.getData() };
-    if (newData.showControls || newData.showLogger) {
-      newData.showControls = false;
-      newData.showLogger = false;
-    } else {
-      newData.showControls = true;
-      newData.showLogger = true;
-    }
-    syncedStore.setData(newData);
   }
 }

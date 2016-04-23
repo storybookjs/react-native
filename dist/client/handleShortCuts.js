@@ -29,15 +29,5 @@ function handleShortCuts(e, syncedStore) {
     var _newData3 = (0, _extends3.default)({}, syncedStore.getData());
     _newData3.showLogger = !_newData3.showLogger;
     syncedStore.setData(_newData3);
-  } else if (e.keyCode === 70 && e.shiftKey && e.ctrlKey) {
-    var _newData4 = (0, _extends3.default)({}, syncedStore.getData());
-    if (_newData4.showControls || _newData4.showLogger) {
-      _newData4.showControls = false;
-      _newData4.showLogger = false;
-    } else {
-      _newData4.showControls = true;
-      _newData4.showLogger = true;
-    }
-    syncedStore.setData(_newData4);
   }
 }

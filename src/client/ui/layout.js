@@ -88,6 +88,7 @@ Layout.propTypes = {
   actionLogger: React.PropTypes.element.isRequired,
   showControls: React.PropTypes.bool,
   showLogger: React.PropTypes.bool,
+  fullScreen: React.PropTypes.bool,
 };
 
 export default Layout;

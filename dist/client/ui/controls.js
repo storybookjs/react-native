@@ -215,8 +215,6 @@ var StorybookControls = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var syncedStore = this.props.syncedStore;
-
       var kindNames = this.getKindNames();
       var mainStyle = {
         fontFamily: '\n        -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",\n        "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif\n      ',
@@ -272,8 +270,7 @@ var StorybookControls = function (_React$Component) {
           options: options,
           width: 430,
           onSelect: this.fireOnKind,
-          placeholder: 'Search by Story or Kind',
-          syncedStore: syncedStore
+          placeholder: 'Search by Story or Kind'
         }),
         _react2.default.createElement(
           'div',
@@ -294,6 +291,5 @@ StorybookControls.propTypes = {
   selectedKind: _react2.default.PropTypes.string,
   selectedStory: _react2.default.PropTypes.string,
   onKind: _react2.default.PropTypes.func,
-  onStory: _react2.default.PropTypes.func,
-  syncedStore: _react2.default.PropTypes.object
+  onStory: _react2.default.PropTypes.func
 };

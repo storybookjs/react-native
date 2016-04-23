@@ -152,7 +152,8 @@ Layout.propTypes = {
   preview: _react2.default.PropTypes.element.isRequired,
   actionLogger: _react2.default.PropTypes.element.isRequired,
   showControls: _react2.default.PropTypes.bool,
-  showLogger: _react2.default.PropTypes.bool
+  showLogger: _react2.default.PropTypes.bool,
+  fullScreen: _react2.default.PropTypes.bool
 };
 
 exports.default = Layout;

@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import Fuse from 'fuse.js';
+import { getSyncedStore } from '../';
+
+const syncedStore = getSyncedStore();
 
 const searchBoxStyle = {
   border: '1px solid #eee',
@@ -110,9 +113,9 @@ export default class FuzzySearch extends Component {
         selectedIndex: 0,
       }, () => {
         this.refs.searchBox.value = '';
-        const newData = { ...this.props.syncedStore.getData() };
+        const newData = { ...syncedStore.getData() };
         newData.showSearchBox = false;
-        this.props.syncedStore.setData(newData);
+        syncedStore.setData(newData);
       });
     }
   }
@@ -132,7 +135,7 @@ export default class FuzzySearch extends Component {
 
     const mainClass = classNames('react-fuzzy-search', className);
 
-    const showSearchBox = this.props.syncedStore.getData().showSearchBox;
+    const showSearchBox = syncedStore.getData().showSearchBox;
 
     return (
       <span>
@@ -168,7 +171,6 @@ FuzzySearch.propTypes = {
   list: PropTypes.array.isRequired,
   options: PropTypes.object.isRequired,
   placeholder: PropTypes.string,
-  syncedStore: PropTypes.func,
 };
 
 FuzzySearch.defaultProps = {

@@ -40,7 +40,11 @@ var _fuse = require('fuse.js');
 
 var _fuse2 = _interopRequireDefault(_fuse);
 
+var _ = require('../');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var syncedStore = (0, _.getSyncedStore)();
 
 var searchBoxStyle = {
   border: '1px solid #eee',
@@ -170,9 +174,9 @@ var FuzzySearch = function (_Component) {
           selectedIndex: 0
         }, function () {
           _this3.refs.searchBox.value = '';
-          var newData = (0, _extends3.default)({}, _this3.props.syncedStore.getData());
+          var newData = (0, _extends3.default)({}, syncedStore.getData());
           newData.showSearchBox = false;
-          _this3.props.syncedStore.setData(newData);
+          syncedStore.setData(newData);
         });
       }
     }
@@ -194,7 +198,7 @@ var FuzzySearch = function (_Component) {
 
       var mainClass = (0, _classnames2.default)('react-fuzzy-search', className);
 
-      var showSearchBox = this.props.syncedStore.getData().showSearchBox;
+      var showSearchBox = syncedStore.getData().showSearchBox;
 
       return _react2.default.createElement(
         'span',
@@ -236,8 +240,7 @@ FuzzySearch.propTypes = {
   width: _react.PropTypes.number,
   list: _react.PropTypes.array.isRequired,
   options: _react.PropTypes.object.isRequired,
-  placeholder: _react.PropTypes.string,
-  syncedStore: _react.PropTypes.func
+  placeholder: _react.PropTypes.string
 };
 
 FuzzySearch.defaultProps = {

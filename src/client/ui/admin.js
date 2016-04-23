@@ -39,7 +39,6 @@ export function getControls(data) {
       selectedStory={data.selectedStory}
       onKind={setSelectedKind.bind(null, data)}
       onStory={setSelectedStory.bind(null, data)}
-      syncedStore={syncedStore}
     />
   );
 }

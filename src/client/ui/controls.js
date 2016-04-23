@@ -146,7 +146,6 @@ export default class StorybookControls extends React.Component {
   }
 
   render() {
-    const { syncedStore } = this.props;
     const kindNames = this.getKindNames();
     const mainStyle = {
       fontFamily: `
@@ -200,7 +199,6 @@ export default class StorybookControls extends React.Component {
           width={430}
           onSelect={this.fireOnKind}
           placeholder="Search by Story or Kind"
-          syncedStore={syncedStore}
         />
 
         <div style={listStyle}>
@@ -217,5 +215,4 @@ StorybookControls.propTypes = {
   selectedStory: React.PropTypes.string,
   onKind: React.PropTypes.func,
   onStory: React.PropTypes.func,
-  syncedStore: React.PropTypes.object,
 };
