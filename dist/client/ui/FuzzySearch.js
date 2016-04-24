@@ -182,9 +182,9 @@ var FuzzySearch = function (_Component) {
     }
   }, {
     key: 'handleChange',
-    value: function handleChange() {
+    value: function handleChange(e) {
       this.setState({
-        results: this.fuse.search(this.refs.searchBox.value)
+        results: this.fuse.search(e.target.value)
       });
     }
   }, {
@@ -194,11 +194,12 @@ var FuzzySearch = function (_Component) {
       var className = _props.className;
       var width = _props.width;
       var placeholder = _props.placeholder;
+      var show = _props.show;
 
 
       var mainClass = (0, _classnames2.default)('react-fuzzy-search', className);
 
-      var showSearchBox = syncedStore.getData().showSearchBox;
+      var showSearchBox = show || syncedStore.getData().showSearchBox;
 
       return _react2.default.createElement(
         'span',
@@ -240,11 +241,13 @@ FuzzySearch.propTypes = {
   width: _react.PropTypes.number,
   list: _react.PropTypes.array.isRequired,
   options: _react.PropTypes.object.isRequired,
-  placeholder: _react.PropTypes.string
+  placeholder: _react.PropTypes.string,
+  show: _react.PropTypes.bool
 };
 
 FuzzySearch.defaultProps = {
-  width: 430
+  width: 430,
+  show: false
 };
 
 exports.default = FuzzySearch;

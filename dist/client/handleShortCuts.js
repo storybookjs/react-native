@@ -17,6 +17,7 @@ function isModifierPressed(e) {
 }
 
 function handleShortCuts(e, syncedStore) {
+  console.log(e);
   if (isModifierPressed(e) && e.keyCode === 80) {
     e.preventDefault();
     var newData = (0, _extends3.default)({}, syncedStore.getData());

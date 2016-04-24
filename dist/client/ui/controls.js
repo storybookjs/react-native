@@ -28,9 +28,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _FuzzySearch = require('./FuzzySearch');
+var _fuzzySearch = require('./fuzzySearch');
 
-var _FuzzySearch2 = _interopRequireDefault(_FuzzySearch);
+var _fuzzySearch2 = _interopRequireDefault(_fuzzySearch);
 
 var _text_filter = require('./text_filter');
 
@@ -369,7 +369,7 @@ var StorybookControls = function (_React$Component) {
             '✕'
           )
         ),
-        _react2.default.createElement(_FuzzySearch2.default, {
+        _react2.default.createElement(_fuzzySearch2.default, {
           list: this.formatStoryForSearch(),
           options: options,
           width: 430,
