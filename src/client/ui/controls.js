@@ -1,5 +1,5 @@
 import React from 'react';
-import FuzzySearch from './FuzzySearch';
+import FuzzySearch from './fuzzySearch';
 import TextFilter from './text_filter';
 import ReactModal from 'react-modal';
 

@@ -120,9 +120,9 @@ export default class FuzzySearch extends Component {
     }
   }
 
-  handleChange() {
+  handleChange(e) {
     this.setState({
-      results: this.fuse.search(this.refs.searchBox.value),
+      results: this.fuse.search(e.target.value),
     });
   }
 
@@ -131,11 +131,12 @@ export default class FuzzySearch extends Component {
       className,
       width,
       placeholder,
+      show,
     } = this.props;
 
     const mainClass = classNames('react-fuzzy-search', className);
 
-    const showSearchBox = syncedStore.getData().showSearchBox;
+    const showSearchBox = show || syncedStore.getData().showSearchBox;
 
     return (
       <span>
@@ -171,10 +172,12 @@ FuzzySearch.propTypes = {
   list: PropTypes.array.isRequired,
   options: PropTypes.object.isRequired,
   placeholder: PropTypes.string,
+  show: PropTypes.bool,
 };
 
 FuzzySearch.defaultProps = {
   width: 430,
+  show: false,
 };
 
 export default FuzzySearch;
