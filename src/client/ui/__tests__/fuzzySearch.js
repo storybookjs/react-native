@@ -2,7 +2,7 @@ const { describe, it } = global;
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import React from 'react';
-import FuzzySearch from '../fuzzySearch';
+import FuzzySearch from '../FuzzySearch';
 
 function noop() {
 }
