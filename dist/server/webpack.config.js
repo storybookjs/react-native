@@ -17,8 +17,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    admin: ['stack-source-map/register', _path2.default.resolve(__dirname, '../client/init_admin')],
-    preview: ['stack-source-map/register', 'webpack-hot-middleware/client', _path2.default.resolve(__dirname, '../client/init_preview')]
+    admin: [_path2.default.resolve(__dirname, '../client/init_admin')],
+    preview: ['webpack-hot-middleware/client', _path2.default.resolve(__dirname, '../client/init_preview')]
   },
   output: {
     path: _path2.default.join(__dirname, 'dist'),
