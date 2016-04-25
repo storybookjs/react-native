@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.18.0
+26-April-2016
+
+* Link React Storybook menu to the repo. See: [PR137](https://github.com/kadirahq/react-storybook/pull/137)
+* Implement keyboard shortcuts and fuzzy search. See: [PR141](https://github.com/kadirahq/react-storybook/pull/141)
+
 ### v1.17.2
 25-April-2016
 
