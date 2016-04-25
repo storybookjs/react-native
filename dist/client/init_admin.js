@@ -13,4 +13,5 @@ var syncedStore = (0, _.getSyncedStore)();
 syncedStore.watchData(function (data) {
   (0, _admin2.default)(data);
 });
+
 (0, _admin2.default)(syncedStore.getData());

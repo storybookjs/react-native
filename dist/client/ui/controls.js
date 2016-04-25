@@ -28,11 +28,27 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _FuzzySearch = require('./FuzzySearch');
+
+var _FuzzySearch2 = _interopRequireDefault(_FuzzySearch);
+
 var _text_filter = require('./text_filter');
 
 var _text_filter2 = _interopRequireDefault(_text_filter);
 
+var _reactModal = require('react-modal');
+
+var _reactModal2 = _interopRequireDefault(_reactModal);
+
+var _modalContent = require('./modalContent');
+
+var _modalContent2 = _interopRequireDefault(_modalContent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var options = {
+  keys: ['story', 'kind']
+};
 
 var StorybookControls = function (_React$Component) {
   (0, _inherits3.default)(StorybookControls, _React$Component);
@@ -43,8 +59,14 @@ var StorybookControls = function (_React$Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(StorybookControls).call(this, props));
 
     _this.state = {
-      filterText: ''
+      filterText: '',
+      isModalOpen: false
     };
+    _this.formatStoryForSearch = _this.formatStoryForSearch.bind(_this);
+    _this.fireOnStory = _this.fireOnStory.bind(_this);
+    _this.fireOnKind = _this.fireOnKind.bind(_this);
+    _this.openModal = _this.openModal.bind(_this);
+    _this.closeModal = _this.closeModal.bind(_this);
     return _this;
   }
 
@@ -94,10 +116,10 @@ var StorybookControls = function (_React$Component) {
     }
   }, {
     key: 'fireOnKind',
-    value: function fireOnKind(kind) {
+    value: function fireOnKind(kind, story) {
       var onKind = this.props.onKind;
 
-      if (onKind) onKind(kind);
+      if (onKind) onKind(kind, story);
     }
   }, {
     key: 'fireOnStory',
@@ -115,6 +137,41 @@ var StorybookControls = function (_React$Component) {
     key: 'clearFilterText',
     value: function clearFilterText() {
       this.setState({ filterText: '' });
+    }
+  }, {
+    key: 'formatStoryForSearch',
+    value: function formatStoryForSearch() {
+      var storyStore = this.props.storyStore;
+
+      if (!storyStore) {
+        return [];
+      }
+      var formattedStories = [];
+
+      storyStore.forEach(function (kindData) {
+        var stories = kindData.stories.map(function (story) {
+          return {
+            story: story,
+            kind: kindData.kind
+          };
+        });
+        formattedStories = formattedStories.concat(stories);
+      });
+      return formattedStories;
+    }
+  }, {
+    key: 'openModal',
+    value: function openModal() {
+      this.setState({
+        isModalOpen: true
+      });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.setState({
+        isModalOpen: false
+      });
     }
   }, {
     key: 'renderStory',
@@ -162,7 +219,7 @@ var StorybookControls = function (_React$Component) {
             'div',
             {
               style: kindStyle,
-              onClick: this.fireOnKind.bind(this, kind)
+              onClick: this.fireOnKind.bind(this, kind, null)
             },
             kind
           ),
@@ -179,7 +236,7 @@ var StorybookControls = function (_React$Component) {
         {
           key: kind,
           style: kindStyle,
-          onClick: this.fireOnKind.bind(this, kind)
+          onClick: this.fireOnKind.bind(this, kind, null)
         },
         kind
       );
@@ -204,7 +261,7 @@ var StorybookControls = function (_React$Component) {
 
       var h1Style = {
         textTransform: 'uppercase',
-        letterSpacing: '3.5px',
+        letterSpacing: '1.5px',
         fontSize: '12px',
         fontWeight: 'bolder',
         color: '#828282',
@@ -212,8 +269,10 @@ var StorybookControls = function (_React$Component) {
         textAlign: 'center',
         borderRadius: '2px',
         padding: '5px',
-        cursor: 'default',
-        margin: 0
+        cursor: 'pointer',
+        margin: 0,
+        float: 'none',
+        overflow: 'hidden'
       };
 
       var filterTextWrapStyle = {
@@ -232,6 +291,59 @@ var StorybookControls = function (_React$Component) {
         left: '20px'
       };
 
+      var shortcutIcon = {
+        textTransform: 'uppercase',
+        letterSpacing: '3.5px',
+        fontSize: 12,
+        fontWeight: 'bolder',
+        color: 'rgb(130, 130, 130)',
+        border: '1px solid rgb(193, 193, 193)',
+        textAlign: 'center',
+        borderRadius: 2,
+        padding: 5,
+        cursor: 'pointer',
+        margin: 0,
+        display: 'inlineBlock',
+        paddingLeft: 8,
+        float: 'right',
+        marginLeft: 5
+      };
+
+      var modalStyles = {
+        content: {
+          left: '50%',
+          bottom: 'initial',
+          right: 'initial',
+          width: 350,
+          marginLeft: -175,
+          border: 'none',
+          overflow: 'visible',
+          fontFamily: 'sans-serif',
+          fontSize: 14
+        },
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.74902)'
+        }
+      };
+
+      var closeButtonStyle = {
+        backgroundColor: 'transparent',
+        border: 'none',
+        position: 'absolute',
+        right: -30,
+        top: -6,
+        color: '#fff',
+        fontSize: 22,
+        cursor: 'pointer',
+        outline: 'none'
+      };
+
+      var linkStyle = {
+        textDecoration: 'none'
+      };
+
+      var linkTarget = 'https://github.com/kadirahq/react-storybook';
+
       return _react2.default.createElement(
         'div',
         { style: mainStyle },
@@ -239,11 +351,41 @@ var StorybookControls = function (_React$Component) {
           'div',
           { style: h1WrapStyle },
           _react2.default.createElement(
-            'h3',
-            { style: h1Style },
-            'React Storybook'
+            'div',
+            { style: shortcutIcon, onClick: this.openModal, className: 'btn' },
+            '⌘'
+          ),
+          _react2.default.createElement(
+            'a',
+            { style: linkStyle, href: linkTarget, target: '_blank' },
+            _react2.default.createElement(
+              'h3',
+              { style: h1Style },
+              'React Storybook'
+            )
           )
         ),
+        _react2.default.createElement(
+          _reactModal2.default,
+          {
+            isOpen: this.state.isModalOpen,
+            onRequestClose: this.closeModal,
+            style: modalStyles
+          },
+          (0, _modalContent2.default)(),
+          _react2.default.createElement(
+            'button',
+            { onClick: this.closeModal, style: closeButtonStyle },
+            '✕'
+          )
+        ),
+        _react2.default.createElement(_FuzzySearch2.default, {
+          list: this.formatStoryForSearch(),
+          options: options,
+          width: 430,
+          onSelect: this.fireOnKind,
+          placeholder: 'Search by Story or Kind'
+        }),
         _react2.default.createElement(
           'div',
           { style: filterTextWrapStyle },

@@ -48,7 +48,7 @@ describe('<StorybookControls />', function () {
         .last();
       kind.simulate('click');
       expect(onKind.calledOnce).to.equal(true);
-      expect(onKind.firstCall.args).to.deep.equal(['a']);
+      expect(onKind.firstCall.args).to.deep.equal(['a', null]);
     });
 
     it('should call the onStory prop when a story is clicked', function () {

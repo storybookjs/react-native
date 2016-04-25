@@ -39,10 +39,11 @@ var _uuid2 = _interopRequireDefault(_uuid);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Data = function () {
-  function Data(window) {
+  function Data(window, handleShortCuts) {
     (0, _classCallCheck3.default)(this, Data);
 
     this._window = window;
+    this._handleShortCuts = handleShortCuts;
     this._parsedQs = _queryString2.default.parse(window.location.search);
 
     // We need to check whether we are inside a iframe or not.
@@ -58,7 +59,9 @@ var Data = function () {
     this._dataId = this._iframeMode ? this._parsedQs.dataId : _uuid2.default.v4();
     this._data = {
       iframeMode: this._iframeMode,
-      dataId: this._dataId
+      dataId: this._dataId,
+      showControls: true,
+      showLogger: true
     };
 
     this._handlers = [];

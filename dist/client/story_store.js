@@ -20,14 +20,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var cnt = 0;
 
-var StoreStore = function () {
-  function StoreStore() {
-    (0, _classCallCheck3.default)(this, StoreStore);
+var StoryStore = function () {
+  function StoryStore() {
+    (0, _classCallCheck3.default)(this, StoryStore);
 
     this._data = {};
   }
 
-  (0, _createClass3.default)(StoreStore, [{
+  (0, _createClass3.default)(StoryStore, [{
     key: "addStory",
     value: function addStory(kind, name, fn) {
       if (!this._data[kind]) {
@@ -125,7 +125,7 @@ var StoreStore = function () {
       });
     }
   }]);
-  return StoreStore;
+  return StoryStore;
 }();
 
-exports.default = StoreStore;
+exports.default = StoryStore;

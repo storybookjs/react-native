@@ -1,12 +1,26 @@
 import React from 'react';
+import FuzzySearch from './FuzzySearch';
 import TextFilter from './text_filter';
+import ReactModal from 'react-modal';
+
+import modalContent from './modalContent';
+
+const options = {
+  keys: ['story', 'kind'],
+};
 
 export default class StorybookControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       filterText: '',
+      isModalOpen: false,
     };
+    this.formatStoryForSearch = this.formatStoryForSearch.bind(this);
+    this.fireOnStory = this.fireOnStory.bind(this);
+    this.fireOnKind = this.fireOnKind.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   getKindNames() {
@@ -41,9 +55,9 @@ export default class StorybookControls extends React.Component {
     return storiesInfo.stories;
   }
 
-  fireOnKind(kind) {
+  fireOnKind(kind, story) {
     const { onKind } = this.props;
-    if (onKind) onKind(kind);
+    if (onKind) onKind(kind, story);
   }
 
   fireOnStory(story) {
@@ -57,6 +71,37 @@ export default class StorybookControls extends React.Component {
 
   clearFilterText() {
     this.setState({ filterText: '' });
+  }
+
+  formatStoryForSearch() {
+    const { storyStore } = this.props;
+    if (!storyStore) {
+      return [];
+    }
+    let formattedStories = [];
+
+    storyStore.forEach((kindData) => {
+      const stories = kindData.stories.map((story) => {
+        return {
+          story,
+          kind: kindData.kind,
+        };
+      });
+      formattedStories = formattedStories.concat(stories);
+    });
+    return formattedStories;
+  }
+
+  openModal() {
+    this.setState({
+      isModalOpen: true,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      isModalOpen: false,
+    });
   }
 
   renderStory(story) {
@@ -97,7 +142,7 @@ export default class StorybookControls extends React.Component {
         <div key={kind}>
           <div
             style={kindStyle}
-            onClick={this.fireOnKind.bind(this, kind)}
+            onClick={this.fireOnKind.bind(this, kind, null)}
           >
             {kind}
           </div>
@@ -112,7 +157,7 @@ export default class StorybookControls extends React.Component {
       <div
         key={kind}
         style={kindStyle}
-        onClick={this.fireOnKind.bind(this, kind)}
+        onClick={this.fireOnKind.bind(this, kind, null)}
       >
         {kind}
       </div>
@@ -140,7 +185,7 @@ export default class StorybookControls extends React.Component {
 
     const h1Style = {
       textTransform: 'uppercase',
-      letterSpacing: '3.5px',
+      letterSpacing: '1.5px',
       fontSize: '12px',
       fontWeight: 'bolder',
       color: '#828282',
@@ -150,6 +195,8 @@ export default class StorybookControls extends React.Component {
       padding: '5px',
       cursor: 'pointer',
       margin: 0,
+      float: 'none',
+      overflow: 'hidden',
     };
 
     const filterTextWrapStyle = {
@@ -168,6 +215,53 @@ export default class StorybookControls extends React.Component {
       left: '20px',
     };
 
+    const shortcutIcon = {
+      textTransform: 'uppercase',
+      letterSpacing: '3.5px',
+      fontSize: 12,
+      fontWeight: 'bolder',
+      color: 'rgb(130, 130, 130)',
+      border: '1px solid rgb(193, 193, 193)',
+      textAlign: 'center',
+      borderRadius: 2,
+      padding: 5,
+      cursor: 'pointer',
+      margin: 0,
+      display: 'inlineBlock',
+      paddingLeft: 8,
+      float: 'right',
+      marginLeft: 5,
+    };
+
+    const modalStyles = {
+      content: {
+        left: '50%',
+        bottom: 'initial',
+        right: 'initial',
+        width: 350,
+        marginLeft: -175,
+        border: 'none',
+        overflow: 'visible',
+        fontFamily: 'sans-serif',
+        fontSize: 14,
+      },
+      overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0.74902)',
+      },
+    };
+
+    const closeButtonStyle = {
+      backgroundColor: 'transparent',
+      border: 'none',
+      position: 'absolute',
+      right: -30,
+      top: -6,
+      color: '#fff',
+      fontSize: 22,
+      cursor: 'pointer',
+      outline: 'none',
+    };
+
     const linkStyle = {
       textDecoration: 'none',
     };
@@ -177,10 +271,29 @@ export default class StorybookControls extends React.Component {
     return (
       <div style={mainStyle}>
         <div style={h1WrapStyle}>
+          <div style={shortcutIcon} onClick={this.openModal} className="btn">&#8984;</div>
           <a style={linkStyle} href={linkTarget} target="_blank">
             <h3 style={h1Style}>React Storybook</h3>
           </a>
         </div>
+
+        <ReactModal
+          isOpen={this.state.isModalOpen}
+          onRequestClose={this.closeModal}
+          style={modalStyles}
+        >
+          {modalContent()}
+          <button onClick={this.closeModal} style={closeButtonStyle}>&#10005;</button>
+        </ReactModal>
+
+        <FuzzySearch
+          list={this.formatStoryForSearch()}
+          options={options}
+          width={430}
+          onSelect={this.fireOnKind}
+          placeholder="Search by Story or Kind"
+        />
+
         <div style={filterTextWrapStyle}>
           <TextFilter
             filterText={this.state.filterText}
@@ -188,6 +301,7 @@ export default class StorybookControls extends React.Component {
             onClear={this.clearFilterText.bind(this)}
           />
         </div>
+
         <div style={listStyle}>
           {kindNames.map(this.renderKind.bind(this))}
         </div>

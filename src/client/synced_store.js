@@ -4,8 +4,9 @@ import QS from 'query-string';
 import UUID from 'uuid';
 
 export default class Data {
-  constructor(window) {
+  constructor(window, handleShortCuts) {
     this._window = window;
+    this._handleShortCuts = handleShortCuts;
     this._parsedQs = QS.parse(window.location.search);
 
     // We need to check whether we are inside a iframe or not.
@@ -22,6 +23,8 @@ export default class Data {
     this._data = {
       iframeMode: this._iframeMode,
       dataId: this._dataId,
+      showControls: true,
+      showLogger: true,
     };
 
     this._handlers = [];

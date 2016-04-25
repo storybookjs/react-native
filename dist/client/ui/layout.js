@@ -57,6 +57,8 @@ var Layout = function (_React$Component) {
       var controls = _props.controls;
       var preview = _props.preview;
       var actionLogger = _props.actionLogger;
+      var showControls = _props.showControls;
+      var showLogger = _props.showLogger;
 
 
       var rootStyles = {
@@ -103,20 +105,29 @@ var Layout = function (_React$Component) {
         _react2.default.createElement(
           _reactSplitPane2.default,
           {
-            split: 'vertical', minSize: 250, resizerChildren: vsplit,
-            onDragStarted: onDragStart, onDragFinished: onDragEnd
+            split: 'vertical',
+            minSize: 250,
+            size: !showControls ? '0px' : null,
+            resizerChildren: vsplit,
+            onDragStarted: onDragStart,
+            onDragFinished: onDragEnd
           },
           _react2.default.createElement(
             'div',
             { style: controlsStyle },
-            controls
+            showControls && controls
           ),
           _react2.default.createElement(
             _reactSplitPane2.default,
             {
-              split: 'horizontal', primary: 'second', minSize: 100,
-              defaultSize: 200, resizerChildren: hsplit,
-              onDragStarted: onDragStart, onDragFinished: onDragEnd
+              split: 'horizontal',
+              primary: 'second',
+              minSize: 100,
+              defaultSize: 200,
+              size: !showLogger ? '0px' : null,
+              resizerChildren: hsplit,
+              onDragStarted: onDragStart,
+              onDragFinished: onDragEnd
             },
             _react2.default.createElement(
               'div',
@@ -139,7 +150,10 @@ var Layout = function (_React$Component) {
 Layout.propTypes = {
   controls: _react2.default.PropTypes.element.isRequired,
   preview: _react2.default.PropTypes.element.isRequired,
-  actionLogger: _react2.default.PropTypes.element.isRequired
+  actionLogger: _react2.default.PropTypes.element.isRequired,
+  showControls: _react2.default.PropTypes.bool,
+  showLogger: _react2.default.PropTypes.bool,
+  fullScreen: _react2.default.PropTypes.bool
 };
 
 exports.default = Layout;

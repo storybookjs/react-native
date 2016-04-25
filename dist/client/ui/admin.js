@@ -42,14 +42,14 @@ var rootEl = document.getElementById('root');
 var syncedStore = (0, _.getSyncedStore)();
 
 // Event handlers
-function setSelectedKind(data, kind) {
+function setSelectedKind(data, kind, story) {
   var newData = (0, _extends3.default)({}, data);
   var stories = newData.storyStore.find(function (item) {
     return item.kind === kind;
   }).stories;
 
   newData.selectedKind = kind;
-  newData.selectedStory = stories[0];
+  newData.selectedStory = story || stories[0];
   syncedStore.setData(newData);
 }
 
@@ -110,7 +110,9 @@ function renderMain(data) {
   var root = _react2.default.createElement(_layout2.default, {
     controls: controls,
     preview: iframe,
-    actionLogger: actionLogger
+    actionLogger: actionLogger,
+    showControls: data.showControls,
+    showLogger: data.showLogger
   });
 
   _reactDom2.default.render(root, rootEl);
