@@ -193,7 +193,7 @@ export default class StorybookControls extends React.Component {
       textAlign: 'center',
       borderRadius: '2px',
       padding: '5px',
-      cursor: 'default',
+      cursor: 'pointer',
       margin: 0,
       float: 'none',
       overflow: 'hidden',
@@ -262,11 +262,19 @@ export default class StorybookControls extends React.Component {
       outline: 'none',
     };
 
+    const linkStyle = {
+      textDecoration: 'none',
+    };
+
+    const linkTarget = 'https://github.com/kadirahq/react-storybook';
+
     return (
       <div style={mainStyle}>
         <div style={h1WrapStyle}>
           <div style={shortcutIcon} onClick={this.openModal} className="btn">&#8984;</div>
-          <h3 style={h1Style}>React Storybook</h3>
+          <a style={linkStyle} href={linkTarget} target="_blank">
+            <h3 style={h1Style}>React Storybook</h3>
+          </a>
         </div>
 
         <ReactModal

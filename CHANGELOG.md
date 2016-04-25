@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.17.2
+25-April-2016
+
+* Fix an error which only occurs on Firefox. See: [PR144](https://github.com/kadirahq/react-storybook/pull/144)
+
 ### v1.17.1
 21-April-2016
 

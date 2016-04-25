@@ -269,7 +269,7 @@ var StorybookControls = function (_React$Component) {
         textAlign: 'center',
         borderRadius: '2px',
         padding: '5px',
-        cursor: 'default',
+        cursor: 'pointer',
         margin: 0,
         float: 'none',
         overflow: 'hidden'
@@ -338,6 +338,12 @@ var StorybookControls = function (_React$Component) {
         outline: 'none'
       };
 
+      var linkStyle = {
+        textDecoration: 'none'
+      };
+
+      var linkTarget = 'https://github.com/kadirahq/react-storybook';
+
       return _react2.default.createElement(
         'div',
         { style: mainStyle },
@@ -350,9 +356,13 @@ var StorybookControls = function (_React$Component) {
             '⌘'
           ),
           _react2.default.createElement(
-            'h3',
-            { style: h1Style },
-            'React Storybook'
+            'a',
+            { style: linkStyle, href: linkTarget, target: '_blank' },
+            _react2.default.createElement(
+              'h3',
+              { style: h1Style },
+              'React Storybook'
+            )
           )
         ),
         _react2.default.createElement(

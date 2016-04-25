@@ -5,11 +5,9 @@ const config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
     admin: [
-      'stack-source-map/register',
       path.resolve(__dirname, '../client/init_admin'),
     ],
     preview: [
-      'stack-source-map/register',
       'webpack-hot-middleware/client',
       path.resolve(__dirname, '../client/init_preview'),
     ],
