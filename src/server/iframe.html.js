@@ -12,7 +12,7 @@ export default function (headHtml) {
         ${headHtml}
       </head>
       <body>
-        <div id="root" />
+        <div id="root"></div>
         <script src="static/preview.bundle.js"></script>
       </body>
     </html>

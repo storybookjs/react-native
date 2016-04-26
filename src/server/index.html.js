@@ -40,7 +40,7 @@ export default function () {
         </style>
       </head>
       <body style="margin: 0;">
-        <div id="root" />
+        <div id="root"></div>
         <script src="static/admin.bundle.js"></script>
       </body>
     </html>
