@@ -1,5 +1,12 @@
 ## Changelog
 
+### v1.19.0
+27-April-2016
+
+* Add airbnb-js-shims to client-side JS. See: [PR147](https://github.com/kadirahq/react-storybook/pull/147)
+* Remove self-closing div tag, which is invalid HTML. See: [PR148](https://github.com/kadirahq/react-storybook/pull/148)
+* Search for a .babelrc in the storybook config directory first, then the project root. See: [PR149](https://github.com/kadirahq/react-storybook/pull/149)
+
 ### v1.18.0
 26-April-2016
 
