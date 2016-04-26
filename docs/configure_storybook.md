@@ -193,6 +193,10 @@ module.exports = {
 
 We allow you to use almost all [Webpack configurations](https://webpack.github.io/docs/configuration.html). So, you can customize as you wish.
 
+## Custom Babel Config
+
+Storybook will first search for a `.babelrc` inside the storybook config directory, and then at your project's root. If it doesn't find either of these files, it will use its default configuration instead.
+
 ## Load Custom HTML Head Content
 
 Sometimes, we need to load custom DOM nodes inside the HTML `<head>` tag. For an example, this is how we can load TypeKit fonts with React Storybook.

@@ -5,23 +5,36 @@ import cjson from 'cjson';
 // avoid ESLint errors
 const logger = console;
 
+// Tries to load a .babelrc and returns the parsed object if successful
+function loadBabelConfig(babelConfigPath) {
+  let config;
+  if (fs.existsSync(babelConfigPath)) {
+    const content = fs.readFileSync(babelConfigPath, 'utf-8');
+    try {
+      config = cjson.parse(content);
+      config.babelrc = false;
+      logger.info('=> Loading custom .babelrc');
+    } catch (e) {
+      logger.error(`=> Error parsing .babelrc file: ${e.message}`);
+      throw e;
+    }
+  }
+  return config;
+}
+
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
 export default function (baseConfig, configDir) {
   const config = baseConfig;
 
-  // if user has a .babelrc file in current directory
-  // use that to extend webpack configurations
-  if (fs.existsSync('./.babelrc')) {
-    const content = fs.readFileSync('./.babelrc', 'utf-8');
-    try {
-      const babelrc = cjson.parse(content);
-      config.module.loaders[0].query = babelrc;
-    } catch (e) {
-      logger.error(`=> Error parsing .babelrc file: ${e.message}`);
-      throw e;
-    }
+  // search for a .babelrc in the config directory, then the module root directory
+  // if found, use that to extend webpack configurations
+  const babelConfig =
+    loadBabelConfig(path.resolve(configDir, '.babelrc')) ||
+    loadBabelConfig('.babelrc');
+  if (babelConfig) {
+    config.module.loaders[0].query = babelConfig;
   }
 
   // Check whether a config.js file exists inside the storybook
