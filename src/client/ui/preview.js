@@ -1,3 +1,4 @@
+import 'airbnb-js-shims';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReadBox from 'redbox-react';

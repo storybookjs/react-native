@@ -7,6 +7,8 @@ exports.renderError = renderError;
 exports.renderMain = renderMain;
 exports.default = renderPreview;
 
+require('airbnb-js-shims');
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);

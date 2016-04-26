@@ -14,6 +14,8 @@ exports.getActionLogger = getActionLogger;
 exports.renderMain = renderMain;
 exports.default = renderAdmin;
 
+require('airbnb-js-shims');
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
