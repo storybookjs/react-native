@@ -50,7 +50,7 @@ module.exports = {
 }
 ```
 
-Now, let's customize React Stoybook to use these CSS modules.
+Now, let's customize React Storybook to use these CSS modules.
 
 > By default, React Storybook uses the babel loader for JavaScript. So, you don't need to add it.
 
