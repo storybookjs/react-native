@@ -1,5 +1,10 @@
 ## Changelog
 
+### v.NEXT
+
+* Remove some typo in docs. See: [PR154](https://github.com/kadirahq/react-storybook/pull/154)
+* Move UI testing libraries to devDependencies. See: [PR153](https://github.com/kadirahq/react-storybook/pull/153)
+
 ### v1.19.0
 27-April-2016
 
