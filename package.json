@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/kadirahq/react-storybook.git"
   },
+  "typings": "./config/storybook.d.ts",
   "license": "MIT",
   "options": {
     "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
