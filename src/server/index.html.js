@@ -1,14 +1,10 @@
-import UUID from 'uuid';
-
 export default function () {
   return `
     <!DOCTYPE html>
     <html>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>React Storybook</title>
-        <script type="text/javascript">
-          window.dataId = '${UUID.v4()}';
-        </script>
         <style>
           /*
             When resizing panels, the drag event breaks if the cursor
@@ -18,22 +14,22 @@ export default function () {
           .dragging iframe {
             pointer-events: none;
           }
-          
+
           /* Styling the fuzzy search box placeholders */
           .searchBox::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: #ddd;
             font-size: 16px;
           }
-          
+
           .searchBox::-moz-placeholder { /* Firefox 19+ */
             color: #ddd;
             font-size: 16px;
           }
-          
+
           .searchBox:focus{
             border-color: #EEE !important;
           }
-          
+
           .btn:hover{
             background-color: #eee
           }
@@ -41,7 +37,7 @@ export default function () {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
-        <script src="static/admin.bundle.js"></script>
+        <script src="static/manager.bundle.js"></script>
       </body>
     </html>
   `;

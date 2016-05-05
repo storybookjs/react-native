@@ -1,15 +1,19 @@
 import path from 'path';
 import webpack from 'webpack';
 
+const managerEntry =
+  process.env.DEV_BUILD ?
+  path.resolve(__dirname, '../../src/client/manager') :
+  path.resolve(__dirname, '../manager');
+
 const config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    admin: [
-      path.resolve(__dirname, '../client/init_admin'),
+    manager: [
+      managerEntry,
     ],
     preview: [
       'webpack-hot-middleware/client',
-      path.resolve(__dirname, '../client/init_preview'),
     ],
   },
   output: {
@@ -28,7 +32,7 @@ const config = {
         loader: 'babel',
         query: { presets: ['react', 'es2015', 'stage-2'] },
         exclude: [path.resolve('./node_modules'), path.resolve(__dirname, 'node_modules')],
-        include: [path.resolve('./'), __dirname],
+        include: [path.resolve('./'), __dirname, path.resolve(__dirname, '../../src')],
       },
     ],
   },

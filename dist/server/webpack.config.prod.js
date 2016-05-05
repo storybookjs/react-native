@@ -14,11 +14,13 @@ var _webpack2 = _interopRequireDefault(_webpack);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var managerEntry = process.env.DEV_BUILD ? _path2.default.resolve(__dirname, '../../src/client/manager') : _path2.default.resolve(__dirname, '../manager');
+
 var config = {
   devtool: '#cheap-module-source-map',
   entry: {
-    admin: [_path2.default.resolve(__dirname, '../client/init_admin')],
-    preview: [_path2.default.resolve(__dirname, '../client/init_preview')]
+    manager: [managerEntry],
+    preview: []
   },
   output: {
     filename: '[name].bundle.js',
@@ -31,7 +33,7 @@ var config = {
       loader: 'babel',
       query: { presets: ['react', 'es2015', 'stage-2'] },
       exclude: [_path2.default.resolve('./node_modules'), _path2.default.resolve(__dirname, 'node_modules')],
-      include: [_path2.default.resolve('./'), __dirname]
+      include: [_path2.default.resolve('./'), __dirname, _path2.default.resolve(__dirname, '../../src')]
     }]
   }
 };
