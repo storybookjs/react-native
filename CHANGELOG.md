@@ -1,6 +1,7 @@
 ## Changelog
 
-### v.NEXT
+### v1.20.0
+05-May-2016
 
 * Allow to configure webpack as the user wants. See [PR160](https://github.com/kadirahq/react-storybook/pull/160)
 * Add typescript typings support for the core API. See [PR157](https://github.com/kadirahq/react-storybook/pull/157)
