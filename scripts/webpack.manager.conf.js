@@ -8,13 +8,14 @@ var plugins = [];
 if (!process.env.DEV_BUILD) {
   plugins = plugins.concat([
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: false }),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: false }),
   ]);
 }
 
 module.exports = {
-  devtool: 'eval',
+  devtool: '#cheap-module-source-map',
   entry: path.resolve(__dirname, '../src/client/manager/index.js'),
   output: { path: path.resolve(__dirname, '../dist'), filename: 'manager.js' },
   plugins: plugins,
