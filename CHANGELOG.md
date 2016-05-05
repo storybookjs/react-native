@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Implement Mantra architecture and some new features including permalinks, full screen support. See: [PR165](https://github.com/kadirahq/react-storybook/pull/165)
 * Remove some typo in docs. See: [PR154](https://github.com/kadirahq/react-storybook/pull/154)
 * Move UI testing libraries to devDependencies. See: [PR153](https://github.com/kadirahq/react-storybook/pull/153)
 
