@@ -53,6 +53,12 @@ exports.default = function (baseConfig, configDir) {
   }
 
   var customConfig = require(customConfigPath);
+
+  if (typeof customConfig === 'function') {
+    logger.info('=> Loading custom webpack config (full-control mode).');
+    return customConfig(config);
+  }
+
   logger.info('=> Loading custom webpack config.');
 
   return (0, _extends3.default)({}, customConfig, config, {

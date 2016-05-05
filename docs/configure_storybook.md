@@ -17,6 +17,7 @@ You can configure React Storybook in different ways. We'll discuss them here.
   * [Add Custom CSS Loaders](#add-custom-css-loaders)
   * [Customizing The UI](#customizing-the-ui)
   * [Other Configurations](#other-configurations)
+  * [Full Control](#full-control)
 * [Load Custom HTML Head Content](#load-custom-html-head-content)
 
 
@@ -192,6 +193,10 @@ module.exports = {
 ### Other Configurations
 
 We allow you to use almost all [Webpack configurations](https://webpack.github.io/docs/configuration.html). So, you can customize as you wish.
+
+### Full Control
+
+For very custom configuration needs, or if you'd like to take full control over the webpack config, [see this guide](/docs/webpack_full_control_mode.md).
 
 ## Custom Babel Config
 
