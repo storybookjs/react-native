@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.22.0
+06-May-2016
+
+* Improve the static builder time.
+
 ### v1.21.0
 06-May-2016
 
