@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.21.0
+06-May-2016
+
+* Add configType argument to custom config function. See: [PR169](https://github.com/kadirahq/react-storybook/pull/169)
+* Add the unicode version of the Keyboard Shortcut Icon. See: [PR170](https://github.com/kadirahq/react-storybook/pull/170)
+
 ### v1.20.0
 05-May-2016
 
