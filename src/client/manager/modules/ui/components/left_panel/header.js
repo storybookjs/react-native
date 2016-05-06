@@ -49,7 +49,7 @@ const linkStyle = {
 
 const Header = ({ openShortcutsHelp }) => (
   <div style={wrapperStyle}>
-    <button style={shortcutIconStyle} onClick={openShortcutsHelp}>&#8984;</button>
+    <button style={shortcutIconStyle} onClick={openShortcutsHelp}>⌘</button>
     <a style={linkStyle} href="https://github.com/kadirahq/react-storybook" target="_blank">
       <h3 style={headingStyle}>React Storybook</h3>
     </a>
