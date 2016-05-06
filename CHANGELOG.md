@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.22.1
+06-May-2016
+
+* Add a potential fix for [#167](https://github.com/kadirahq/react-storybook/issues/167)
+  * basically, this moved back babel-packages required by webpack.
+
 ### v1.22.0
 06-May-2016
 
