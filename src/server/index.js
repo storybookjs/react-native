@@ -47,7 +47,7 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-const config = loadConfig(baseConfig, configDir);
+const config = loadConfig('DEVELOPMENT', baseConfig, configDir);
 
 const compiler = webpack(config);
 const devMiddlewareOptions = {

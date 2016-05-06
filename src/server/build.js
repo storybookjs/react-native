@@ -31,7 +31,7 @@ shelljs.mkdir('-p', path.resolve(outputDir, 'static'));
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-const config = loadConfig(baseConfig, configDir);
+const config = loadConfig('PRODUCTION', baseConfig, configDir);
 
 // Write both the storybook UI and IFRAME HTML files to destination path.
 const headHtml = getHeadHtml(configDir);

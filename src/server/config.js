@@ -25,7 +25,7 @@ function loadBabelConfig(babelConfigPath) {
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
-export default function (baseConfig, configDir) {
+export default function (configType, baseConfig, configDir) {
   const config = baseConfig;
 
   // search for a .babelrc in the config directory, then the module root directory
@@ -69,7 +69,7 @@ export default function (baseConfig, configDir) {
 
   if (typeof customConfig === 'function') {
     logger.info('=> Loading custom webpack config (full-control mode).');
-    return customConfig(config);
+    return customConfig(config, configType);
   }
 
   logger.info('=> Loading custom webpack config.');

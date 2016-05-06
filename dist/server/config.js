@@ -12,7 +12,7 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-exports.default = function (baseConfig, configDir) {
+exports.default = function (configType, baseConfig, configDir) {
   var config = baseConfig;
 
   // search for a .babelrc in the config directory, then the module root directory
@@ -56,7 +56,7 @@ exports.default = function (baseConfig, configDir) {
 
   if (typeof customConfig === 'function') {
     logger.info('=> Loading custom webpack config (full-control mode).');
-    return customConfig(config);
+    return customConfig(config, configType);
   }
 
   logger.info('=> Loading custom webpack config.');

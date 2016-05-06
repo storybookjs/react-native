@@ -81,7 +81,7 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-var config = (0, _config2.default)(_webpack4.default, configDir);
+var config = (0, _config2.default)('DEVELOPMENT', _webpack4.default, configDir);
 
 var compiler = (0, _webpack2.default)(config);
 var devMiddlewareOptions = {
