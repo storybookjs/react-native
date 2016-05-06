@@ -67,5 +67,10 @@ webpack(config).compile(function (err, stats) {
     const source = asset._value;
     const dstPath = path.resolve(outputDir, `static/${filename}`);
     fs.writeFileSync(dstPath, source);
+
+    // We need to copy the manager bundle distributed via the React Storybook
+    // directly into the production build overring webpack.
+    const managerContent = fs.readFileSync(path.resolve(__dirname, '../manager.js'));
+    fs.writeFileSync(path.resolve(outputDir, 'static/manager.bundle.js'), managerContent);
   }
 });

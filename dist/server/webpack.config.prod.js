@@ -14,19 +14,27 @@ var _webpack2 = _interopRequireDefault(_webpack);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var managerEntry = process.env.DEV_BUILD ? _path2.default.resolve(__dirname, '../../src/client/manager') : _path2.default.resolve(__dirname, '../manager');
+var entries = {
+  preview: []
+};
+
+// We will copy the manager bundle distributed via the React Storybook
+// directly into the production build overring webpack.
+// But, in the DEV_BUILD we need to play with that. That's why we copy that.
+if (process.env.DEV_BUILD) {
+  entries.manager = [__dirname, '../../src/client/manager'];
+}
 
 var config = {
   devtool: '#cheap-module-source-map',
-  entry: {
-    manager: [managerEntry],
-    preview: []
-  },
+  entry: entries,
   output: {
     filename: '[name].bundle.js',
     publicPath: '/static/'
   },
-  plugins: [new _webpack2.default.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }), new _webpack2.default.optimize.UglifyJsPlugin(), new _webpack2.default.optimize.OccurenceOrderPlugin()],
+  plugins: [new _webpack2.default.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }), new _webpack2.default.optimize.UglifyJsPlugin({
+    compress: { warnings: false }
+  }), new _webpack2.default.optimize.OccurenceOrderPlugin()],
   module: {
     loaders: [{
       test: /\.jsx?$/,

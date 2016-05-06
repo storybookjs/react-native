@@ -1,26 +1,29 @@
 import path from 'path';
 import webpack from 'webpack';
 
-const managerEntry =
-  process.env.DEV_BUILD ?
-  path.resolve(__dirname, '../../src/client/manager') :
-  path.resolve(__dirname, '../manager');
+const entries = {
+  preview: [],
+};
+
+// We will copy the manager bundle distributed via the React Storybook
+// directly into the production build overring webpack.
+// But, in the DEV_BUILD we need to play with that. That's why we copy that.
+if (process.env.DEV_BUILD) {
+  entries.manager = [__dirname, '../../src/client/manager'];
+}
 
 const config = {
   devtool: '#cheap-module-source-map',
-  entry: {
-    manager: [
-      managerEntry,
-    ],
-    preview: [],
-  },
+  entry: entries,
   output: {
     filename: '[name].bundle.js',
     publicPath: '/static/',
   },
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
   ],
   module: {

@@ -95,5 +95,10 @@ logger.log('Building storybook ...');
     var source = asset._value;
     var dstPath = _path2.default.resolve(outputDir, 'static/' + filename);
     _fs2.default.writeFileSync(dstPath, source);
+
+    // We need to copy the manager bundle distributed via the React Storybook
+    // directly into the production build overring webpack.
+    var managerContent = _fs2.default.readFileSync(_path2.default.resolve(__dirname, '../manager.js'));
+    _fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'static/manager.bundle.js'), managerContent);
   }
 });
