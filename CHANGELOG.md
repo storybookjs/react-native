@@ -1,7 +1,9 @@
 ## Changelog
 
-### v.NEXT
+### v1.23.0
+09-May-2016
 
+* Add shortcuts to jump to previous and next stories. See [PR176](https://github.com/kadirahq/react-storybook/pull/176)
 * Fix loader concatentation bug specially when custom config doesn't have a loaders section. [PR173](https://github.com/kadirahq/react-storybook/pull/173)
 
 ### v1.22.1
