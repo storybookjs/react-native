@@ -74,6 +74,8 @@ export default function (configType, baseConfig, configDir) {
 
   logger.info('=> Loading custom webpack config.');
 
+  customConfig.module = customConfig.module || {};
+
   return {
     ...customConfig,
     // We'll always load our configurations after the custom config.
@@ -87,7 +89,7 @@ export default function (configType, baseConfig, configDir) {
     module: {
       ...config.module,
       // We need to use our and custom loaders.
-      ...customConfig.module || {},
+      ...customConfig.module,
       loaders: [
         ...config.module.loaders,
         ...customConfig.module.loaders || [],
