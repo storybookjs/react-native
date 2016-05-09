@@ -18,7 +18,9 @@ var features = exports.features = {
   DOWN_PANEL: 2,
   LEFT_PANEL: 3,
   SHORTCUTS_HELP: 4,
-  ESCAPE: 5
+  ESCAPE: 5,
+  NEXT_STORY: 6,
+  PREV_STORY: 7
 };
 
 function isModifierPressed(e) {
@@ -44,6 +46,12 @@ function handle(e) {
     case (0, _keycode2.default)('L'):
       e.preventDefault();
       return features.LEFT_PANEL;
+    case (0, _keycode2.default)('right'):
+      e.preventDefault();
+      return features.NEXT_STORY;
+    case (0, _keycode2.default)('left'):
+      e.preventDefault();
+      return features.PREV_STORY;
     default:
       return false;
   }

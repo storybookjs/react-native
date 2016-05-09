@@ -235,4 +235,69 @@ describe('manager.preview.config.reducers.preview', () => {
       ]);
     });
   });
+
+  describe('JUMP_TO_STORY', () => {
+    it('should jump to the next story', () => {
+      const selectedKind = 'kk';
+      const selectedStory = 'ss';
+      const stories = [
+        { kind: 'kk', stories: ['ss'] },
+        { kind: 'bb', stories: ['aa', 'cc'] },
+      ];
+
+      const action = {
+        type: types.JUMP_TO_STORY,
+        direction: 1,
+      };
+
+      const newState = reducer({
+        stories, selectedKind, selectedStory,
+      }, action);
+
+      expect(newState.selectedKind).to.be.equal('bb');
+      expect(newState.selectedStory).to.be.equal('aa');
+    });
+
+    it('should jump to the prev story', () => {
+      const selectedKind = 'bb';
+      const selectedStory = 'cc';
+      const stories = [
+        { kind: 'kk', stories: ['ss'] },
+        { kind: 'bb', stories: ['aa', 'cc'] },
+      ];
+
+      const action = {
+        type: types.JUMP_TO_STORY,
+        direction: -1,
+      };
+
+      const newState = reducer({
+        stories, selectedKind, selectedStory,
+      }, action);
+
+      expect(newState.selectedKind).to.be.equal('bb');
+      expect(newState.selectedStory).to.be.equal('aa');
+    });
+
+    it('should jump nowhere it there is no story', () => {
+      const selectedKind = 'kk';
+      const selectedStory = 'ss';
+      const stories = [
+        { kind: 'kk', stories: ['ss'] },
+        { kind: 'bb', stories: ['aa', 'cc'] },
+      ];
+
+      const action = {
+        type: types.JUMP_TO_STORY,
+        direction: -10,
+      };
+
+      const newState = reducer({
+        stories, selectedKind, selectedStory,
+      }, action);
+
+      expect(newState.selectedKind).to.be.equal('kk');
+      expect(newState.selectedStory).to.be.equal('ss');
+    });
+  });
 });
