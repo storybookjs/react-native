@@ -1,5 +1,9 @@
 ## Changelog
 
+### v.NEXT
+
+* Fix loader concatentation bug specially when custom config doesn't have a loaders section. [PR173](https://github.com/kadirahq/react-storybook/pull/173)
+
 ### v1.22.1
 06-May-2016
 
