@@ -91,7 +91,9 @@ var logger = console;
 
 function removeReactHmre(presets) {
   var index = presets.indexOf('react-hmre');
-  presets.splice(index, 1);
+  if (index > -1) {
+    presets.splice(index, 1);
+  }
 }
 
 // Tries to load a .babelrc and returns the parsed object if successful
