@@ -1,6 +1,6 @@
 ## Changelog
 
-### v.NEXT
+### 1.25.0
 11-May-2016
 
 * Fix several publishing related issues. See: [#188](https://github.com/kadirahq/react-storybook/pull/188).
