@@ -5,6 +5,11 @@ import cjson from 'cjson';
 // avoid ESLint errors
 const logger = console;
 
+function removeReactHmre(presets) {
+  const index = presets.indexOf('react-hmre');
+  presets.splice(index, 1);
+}
+
 // Tries to load a .babelrc and returns the parsed object if successful
 function loadBabelConfig(babelConfigPath) {
   let config;
@@ -19,6 +24,22 @@ function loadBabelConfig(babelConfigPath) {
       throw e;
     }
   }
+
+  if (!config) return null;
+
+  // Remove react-hmre preset.
+  // It causes issues with react-storybook.
+  // We don't really need it.
+  // Earlier, we fix this by runnign storybook in the production mode.
+  // But, that hide some useful debug messages.
+  if (config.presets) {
+    removeReactHmre(config.presets);
+  }
+
+  if (config.env && config.env.development && config.env.development.presets) {
+    removeReactHmre(config.env.development.presets);
+  }
+
   return config;
 }
 

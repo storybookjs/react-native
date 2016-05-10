@@ -89,6 +89,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // avoid ESLint errors
 var logger = console;
 
+function removeReactHmre(presets) {
+  var index = presets.indexOf('react-hmre');
+  presets.splice(index, 1);
+}
+
 // Tries to load a .babelrc and returns the parsed object if successful
 function loadBabelConfig(babelConfigPath) {
   var config = void 0;
@@ -103,6 +108,22 @@ function loadBabelConfig(babelConfigPath) {
       throw e;
     }
   }
+
+  if (!config) return null;
+
+  // Remove react-hmre preset.
+  // It causes issues with react-storybook.
+  // We don't really need it.
+  // Earlier, we fix this by runnign storybook in the production mode.
+  // But, that hide some useful debug messages.
+  if (config.presets) {
+    removeReactHmre(config.presets);
+  }
+
+  if (config.env && config.env.development && config.env.development.presets) {
+    removeReactHmre(config.env.development.presets);
+  }
+
   return config;
 }
 
