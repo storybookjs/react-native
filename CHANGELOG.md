@@ -3,6 +3,9 @@
 ### v.NEXT
 11-May-2016
 
+* Fix issue with removing a preset from users babelrc.
+  * Fixes: [#183](https://github.com/kadirahq/react-storybook/issues/183).
+  * [PR184](https://github.com/kadirahq/react-storybook/pull/184)
 * Make left panel scrollable with keeping the filterbox always. See: [PR182](https://github.com/kadirahq/react-storybook/pull/182).
 * Add `qs` as a direct dependency as it's used in preview.
 
