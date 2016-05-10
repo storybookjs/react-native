@@ -3,6 +3,7 @@
 ### v.NEXT
 11-May-2016
 
+* Make left panel scrollable with keeping the filterbox always. See: [PR182](https://github.com/kadirahq/react-storybook/pull/182).
 * Add `qs` as a direct dependency as it's used in preview.
 
 ### 1.24.0
