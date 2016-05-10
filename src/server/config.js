@@ -51,12 +51,24 @@ function loadBabelConfig(babelConfigPath) {
 export default function (configType, baseConfig, configDir) {
   const config = baseConfig;
 
-  // search for a .babelrc in the config directory, then the module root directory
-  // if found, use that to extend webpack configurations
-  const babelConfig =
-    loadBabelConfig(path.resolve(configDir, '.babelrc')) ||
-    loadBabelConfig('.babelrc');
+  // Search for a .babelrc in the config directory, then the module root
+  // directory. If found, use that to extend webpack configurations.
+  let babelConfig = loadBabelConfig(path.resolve(configDir, '.babelrc'));
+  let inConfigDir = true;
+
+  if (!babelConfig) {
+    babelConfig = loadBabelConfig('.babelrc');
+    inConfigDir = false;
+  }
+
   if (babelConfig) {
+    // If the custom config uses babel's `extends` clause, then replace it with
+    // an absolute path. `extends` will not work unless we do this.
+    if (babelConfig.extends) {
+      babelConfig.extends = inConfigDir ?
+        path.resolve(configDir, babelConfig.extends) :
+        path.resolve(babelConfig.extends);
+    }
     config.module.loaders[0].query = babelConfig;
   }
 
