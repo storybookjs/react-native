@@ -1,6 +1,7 @@
 ## Changelog
 
-### v.NEXT
+### 1.24.0
+10-May-2016
 
 * Add a potential fix for the double scrollbar issue. See: [179](https://github.com/kadirahq/react-storybook/issues/179).
 * Add scrolling support to the left panel. Fixes [#177](https://github.com/kadirahq/react-storybook/issues/177).
