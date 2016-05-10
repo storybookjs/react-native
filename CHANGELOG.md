@@ -2,6 +2,7 @@
 
 ### v.NEXT
 
+* Add a potential fix for the double scrollbar issue. See: [179](https://github.com/kadirahq/react-storybook/issues/179).
 * Add scrolling support to the left panel. Fixes [#177](https://github.com/kadirahq/react-storybook/issues/177).
 * Remove NODE_ENV=production flag. Fixes [#158](https://github.com/kadirahq/react-storybook/issues/158)
 
