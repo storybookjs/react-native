@@ -1,5 +1,9 @@
 ## Changelog
 
+### v.NEXT
+
+* Remove NODE_ENV=production flag. Fix issue [#158](https://github.com/kadirahq/react-storybook/issues/158)
+
 ### v1.23.0
 09-May-2016
 
