@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "> Start transpiling ES2015"
 echo ""
 rm -rf ./dist
