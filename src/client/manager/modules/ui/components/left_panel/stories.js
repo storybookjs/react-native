@@ -2,7 +2,6 @@ import React from 'react';
 import { baseFonts } from '../theme';
 
 const listStyle = {
-  overflowY: 'auto',
   marginTop: 10,
   ...baseFonts,
 };
