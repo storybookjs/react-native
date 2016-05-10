@@ -3,6 +3,7 @@
 ### v.NEXT
 11-May-2016
 
+* Fix babel extends issue. See: [PR185](https://github.com/kadirahq/react-storybook/pull/185).
 * Fix issue with removing a preset from users babelrc.
   * Fixes: [#183](https://github.com/kadirahq/react-storybook/issues/183).
   * [PR184](https://github.com/kadirahq/react-storybook/pull/184)
