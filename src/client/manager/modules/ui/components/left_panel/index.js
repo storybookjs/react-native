@@ -5,7 +5,8 @@ import TextFilter from './text_filter';
 import pick from 'lodash.pick';
 
 const scrollStyle = {
-  height: '100vh',
+  height: 'calc(100vh - 105px)',
+  marginTop: 10,
   overflowY: 'auto',
 };
 
@@ -16,14 +17,14 @@ const mainStyle = {
 const storyProps = ['stories', 'selectedKind', 'selectedStory', 'onSelectStory'];
 
 const LeftPanel = (props) => (
-  <div style={scrollStyle}>
-    <div style={mainStyle}>
-      <Header openShortcutsHelp={props.openShortcutsHelp} />
-      <TextFilter
-        text={props.storyFilter}
-        onClear={() => props.onStoryFilter('')}
-        onChange={(text) => props.onStoryFilter(text)}
-      />
+  <div style={mainStyle}>
+    <Header openShortcutsHelp={props.openShortcutsHelp} />
+    <TextFilter
+      text={props.storyFilter}
+      onClear={() => props.onStoryFilter('')}
+      onChange={(text) => props.onStoryFilter(text)}
+    />
+    <div style={scrollStyle}>
       {props.stories ? (<Stories {...pick(props, storyProps)} />) : null}
     </div>
   </div>
