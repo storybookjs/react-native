@@ -1,5 +1,10 @@
 ## Changelog
 
+### v.NEXT
+11-May-2016
+
+* Add `qs` as a direct dependency as it's used in preview.
+
 ### 1.24.0
 10-May-2016
 
