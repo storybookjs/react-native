@@ -1,5 +1,10 @@
 ## Changelog
 
+### 1.26.0
+12-May-2016
+
+* Ensure asset directory exists in the static-builder.
+
 ### 1.25.0
 11-May-2016
 
