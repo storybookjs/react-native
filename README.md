@@ -1,4 +1,4 @@
-# React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook)
+# React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook) [![npm version](https://badge.fury.io/js/%40kadira%2Fstorybook.svg)](https://badge.fury.io/js/%40kadira%2Fstorybook)
 
 Now you can develop and design React UI components without running your app.
 
