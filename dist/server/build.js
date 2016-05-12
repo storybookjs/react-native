@@ -94,6 +94,9 @@ logger.log('Building storybook ...');
 
     var source = asset._value;
     var dstPath = _path2.default.resolve(outputDir, 'static/' + filename);
+
+    // Ensure the asset directory exists
+    _shelljs2.default.mkdir('-p', _path2.default.parse(dstPath).dir);
     _fs2.default.writeFileSync(dstPath, source);
 
     // We need to copy the manager bundle distributed via the React Storybook
