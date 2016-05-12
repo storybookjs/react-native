@@ -66,6 +66,9 @@ webpack(config).compile(function (err, stats) {
 
     const source = asset._value;
     const dstPath = path.resolve(outputDir, `static/${filename}`);
+
+    // Ensure the asset directory exists
+    shelljs.mkdir('-p', path.parse(dstPath).dir);
     fs.writeFileSync(dstPath, source);
 
     // We need to copy the manager bundle distributed via the React Storybook
