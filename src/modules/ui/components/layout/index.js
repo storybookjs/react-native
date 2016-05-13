@@ -14,6 +14,7 @@ const fullScreenStyle = {
   border: 0,
   margin: 0,
   padding: 0,
+  overflow: 'hidden',
 };
 
 const leftPanelStyle = {

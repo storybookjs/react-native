@@ -23,6 +23,30 @@ export function ensureStory(storyKinds, selectedKind, selectedStory) {
   return kindInfo.stories[0];
 }
 
+export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) {
+  const flatteredStories = [];
+  let currentIndex = -1;
+
+  storyKinds.forEach(({ kind, stories }) => {
+    stories.forEach((story) => {
+      flatteredStories.push({ kind, story });
+      if (kind === selectedKind && story === selectedStory) {
+        currentIndex = flatteredStories.length - 1;
+      }
+    });
+  });
+
+  const jumpedStory = flatteredStories[currentIndex + direction];
+  if (!jumpedStory) {
+    return { selectedKind, selectedStory };
+  }
+
+  return {
+    selectedKind: jumpedStory.kind,
+    selectedStory: jumpedStory.story,
+  };
+}
+
 const defaultState = {
   actions: [],
 };
@@ -30,10 +54,18 @@ const defaultState = {
 export default function (state = defaultState, action) {
   switch (action.type) {
     case types.SELECT_STORY: {
-      // TODO: if action.story is null, we need to select the first story of the
-      // given kind.
       const selectedKind = ensureKind(state.stories, action.kind);
       const selectedStory = ensureStory(state.stories, selectedKind, action.story);
+      return {
+        ...state,
+        selectedKind,
+        selectedStory,
+      };
+    }
+
+    case types.JUMP_TO_STORY: {
+      const { selectedKind, selectedStory } =
+        jumpToStory(state.stories, state.selectedKind, state.selectedStory, action.direction);
       return {
         ...state,
         selectedKind,

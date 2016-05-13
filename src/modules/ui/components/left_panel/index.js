@@ -4,6 +4,12 @@ import Stories from './stories';
 import TextFilter from './text_filter';
 import pick from 'lodash.pick';
 
+const scrollStyle = {
+  height: 'calc(100vh - 105px)',
+  marginTop: 10,
+  overflowY: 'auto',
+};
+
 const mainStyle = {
   padding: 20,
 };
@@ -18,7 +24,9 @@ const LeftPanel = (props) => (
       onClear={() => props.onStoryFilter('')}
       onChange={(text) => props.onStoryFilter(text)}
     />
-    {props.stories ? (<Stories {...pick(props, storyProps)} />) : null}
+    <div style={scrollStyle}>
+      {props.stories ? (<Stories {...pick(props, storyProps)} />) : null}
+    </div>
   </div>
 );
 

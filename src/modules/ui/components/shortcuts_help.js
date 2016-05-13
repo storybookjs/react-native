@@ -49,6 +49,16 @@ export const Content = () => (
         <b style={commandStyle}>&#8963; &#8679; D</b>
         Toggle Down Panel
       </div>
+      <div>
+        <b style={commandStyle}>&#8984; &#8679; → </b> / &nbsp;
+        <b style={commandStyle}>&#8963; &#8679; → </b>
+        Next Story
+      </div>
+      <div>
+        <b style={commandStyle}>&#8984; &#8679; ← </b> / &nbsp;
+        <b style={commandStyle}>&#8963; &#8679; ← </b>
+        Previous Story
+      </div>
   </div>
 );
 

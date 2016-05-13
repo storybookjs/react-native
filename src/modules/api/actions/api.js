@@ -16,6 +16,13 @@ export default {
     });
   },
 
+  jumpToStory({ reduxStore }, direction) {
+    reduxStore.dispatch({
+      type: types.JUMP_TO_STORY,
+      direction,
+    });
+  },
+
   clearActions({ reduxStore }) {
     reduxStore.dispatch({
       type: types.CLEAR_ACTIONS,
