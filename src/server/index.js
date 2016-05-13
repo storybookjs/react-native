@@ -31,7 +31,7 @@ if (!program.port) {
 }
 
 if (!program.host) {
-  program.host = 'localhost'
+  program.host = 'localhost';
 }
 
 const app = express();
