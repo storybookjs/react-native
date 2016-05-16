@@ -30,8 +30,11 @@ if (!program.port) {
   process.exit(-1);
 }
 
-if (!program.host) {
-  program.host = 'localhost';
+// Used with `app.listen` below
+const listenAddr = [program.port];
+
+if (program.host) {
+  listenAddr.push(program.host);
 }
 
 const app = express();
@@ -69,10 +72,11 @@ app.get('/iframe.html', function (req, res) {
   res.send(getIframeHtml(headHtml));
 });
 
-app.listen(program.port, program.host, function (error) {
+app.listen(...listenAddr, function (error) {
   if (error) {
     throw error;
   } else {
-    logger.info(`\nReact Storybook started on => http://${program.host}:${program.port}/ \n`);
+    const address = `http://${program.host || 'localhost'}:${program.port}/`;
+    logger.info(`\nReact Storybook started on => ${address}\n`);
   }
 });
