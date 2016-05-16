@@ -55,12 +55,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-s, --static-dir [dir-name]', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir [dir-name]', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
 
 if (!_commander2.default.port) {
   logger.error('Error: port to run Storybook is required!\n');
   _commander2.default.help();
   process.exit(-1);
+}
+
+// Used with `app.listen` below
+var listenAddr = [_commander2.default.port];
+
+if (_commander2.default.host) {
+  listenAddr.push(_commander2.default.host);
 }
 
 var app = (0, _express2.default)();
@@ -98,10 +105,11 @@ app.get('/iframe.html', function (req, res) {
   res.send((0, _iframe2.default)(headHtml));
 });
 
-app.listen(_commander2.default.port, function (error) {
+app.listen.apply(app, listenAddr.concat([function (error) {
   if (error) {
     throw error;
   } else {
-    logger.info('\nReact Storybook started on => http://localhost:' + _commander2.default.port + '/ \n');
+    var address = 'http://' + (_commander2.default.host || 'localhost') + ':' + _commander2.default.port + '/';
+    logger.info('\nReact Storybook started on => ' + address + '\n');
   }
-});
+}]));
