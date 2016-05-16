@@ -19,6 +19,7 @@ const logger = console;
 program
   .version(packageJson.version)
   .option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt)
+  .option('-h, --host [string]', 'Host to run Storybook')
   .option('-s, --static-dir [dir-name]', 'Directory where to load static files from')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .parse(process.argv);
@@ -27,6 +28,10 @@ if (!program.port) {
   logger.error('Error: port to run Storybook is required!\n');
   program.help();
   process.exit(-1);
+}
+
+if (!program.host) {
+  program.host = 'localhost';
 }
 
 const app = express();
@@ -64,10 +69,10 @@ app.get('/iframe.html', function (req, res) {
   res.send(getIframeHtml(headHtml));
 });
 
-app.listen(program.port, function (error) {
+app.listen(program.port, program.host, function (error) {
   if (error) {
     throw error;
   } else {
-    logger.info(`\nReact Storybook started on => http://localhost:${program.port}/ \n`);
+    logger.info(`\nReact Storybook started on => http://${program.host}:${program.port}/ \n`);
   }
 });
