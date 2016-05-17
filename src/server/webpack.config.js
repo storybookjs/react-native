@@ -13,6 +13,7 @@ const config = {
       managerEntry,
     ],
     preview: [
+      path.resolve(__dirname, './error_enhancements'),
       'webpack-hot-middleware/client',
     ],
   },
