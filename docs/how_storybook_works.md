@@ -34,6 +34,8 @@ It has following [mantra modules](https://kadirahq.github.io/mantra/#sec-Mantra-
 * preview - handles rendering the preview and communicate with it.
 * ui - renders the UI, routing and initializing keyboard shortcuts and so on.
 
+> api, shortcuts and ui modules live inside a seperate repo called at [storybooks-core](https://github.com/kadirahq/storybook-core). With that, we could reuse the same UI in a lot of different storybooks projects.
+
 We publish this manager UI as a single JavaScript file to the NPM and it doesn't depend on enduser's locally installed NPM modules. When we run `npm run prepublish` it'll build the manager UI and saved it into `dist/manager.js`.
 
 ### 2. Storybook Preview
