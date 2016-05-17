@@ -9,6 +9,7 @@ In this guide, we'll discuss how Storybook works internally. This document is us
 * [Manager - Preview Communication](#manager-preview-communication)
 * [Keyboard Shortcuts](#keyboard-shortcuts)
 * [Routing](#routing)
+* [Development Setup](#development-setup)
 
 ## Major Components
 
