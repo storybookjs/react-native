@@ -1,16 +1,17 @@
 ## Changelog
 
-### v.NEXT
+### v1.27.0
 
+* Move modules to storybook-core repo. [PR196](https://github.com/kadirahq/react-storybook/pull/196)
 * Add stack-source-map again only for Chrome to get better error stacks.
 * Add ability to control the hostname. See [PR195](https://github.com/kadirahq/react-storybook/pull/195) and [PR198](https://github.com/kadirahq/react-storybook/pull/198)
 
-### 1.26.0
+### v1.26.0
 12-May-2016
 
 * Ensure asset directory exists in the static-builder.
 
-### 1.25.0
+### v1.25.0
 11-May-2016
 
 * Fix several publishing related issues. See: [#188](https://github.com/kadirahq/react-storybook/pull/188).
@@ -21,7 +22,7 @@
 * Make left panel scrollable with keeping the filterbox always. See: [PR182](https://github.com/kadirahq/react-storybook/pull/182).
 * Add `qs` as a direct dependency as it's used in preview.
 
-### 1.24.0
+### v1.24.0
 10-May-2016
 
 * Add a potential fix for the double scrollbar issue. See: [179](https://github.com/kadirahq/react-storybook/issues/179).
