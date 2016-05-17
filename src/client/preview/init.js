@@ -1,5 +1,5 @@
 import { selectStory } from './actions';
-import keyEvents from '../libs/key_events';
+import keyEvents from '@kadira/storybook-core/dist/libs/key_events';
 
 export default function (context) {
   const { queryParams, reduxStore, window, pageBus } = context;

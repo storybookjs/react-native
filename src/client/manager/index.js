@@ -3,10 +3,11 @@ import { createApp } from 'mantra-core';
 import buildContext from './configs/context.js';
 import UUID from 'uuid';
 
-import apiModule from './modules/api';
-import shortcutsModule from './modules/shortcuts';
+import apiModule from '@kadira/storybook-core/dist/modules/api';
+import shortcutsModule from '@kadira/storybook-core/dist/modules/shortcuts';
+import uiModule from '@kadira/storybook-core/dist/modules/ui';
 import previewModule from './modules/preview';
-import uiModule from './modules/ui';
+import Preview from './modules/preview/containers/preview';
 
 const dataId = UUID.v4();
 
@@ -19,7 +20,7 @@ const reducer = combineReducers({
 });
 
 const reduxStore = createStore(reducer);
-const context = buildContext(reduxStore);
+const context = buildContext(reduxStore, Preview);
 const app = createApp(context);
 
 app.loadModule(apiModule);

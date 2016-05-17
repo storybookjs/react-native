@@ -1,5 +1,6 @@
-export default function (reduxStore) {
+export default function (reduxStore, Preview) {
   return {
     reduxStore,
+    Preview,
   };
 }

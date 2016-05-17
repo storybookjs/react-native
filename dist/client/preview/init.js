@@ -26,7 +26,7 @@ exports.default = function (context) {
 
 var _actions = require('./actions');
 
-var _key_events = require('../libs/key_events');
+var _key_events = require('@kadira/storybook-core/dist/libs/key_events');
 
 var _key_events2 = _interopRequireDefault(_key_events);
 
