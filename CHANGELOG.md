@@ -1,5 +1,10 @@
 ## Changelog
 
+### v.NEXT
+
+* Add stack-source-map again only for Chrome to get better error stacks.
+* Add ability to control the hostname. See [PR195](https://github.com/kadirahq/react-storybook/pull/195) and [PR198](https://github.com/kadirahq/react-storybook/pull/198)
+
 ### 1.26.0
 12-May-2016
 
