@@ -20,7 +20,7 @@ var config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
     manager: [managerEntry],
-    preview: ['webpack-hot-middleware/client']
+    preview: [_path2.default.resolve(__dirname, './error_enhancements'), 'webpack-hot-middleware/client']
   },
   output: {
     path: _path2.default.join(__dirname, 'dist'),
