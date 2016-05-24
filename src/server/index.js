@@ -1,18 +1,11 @@
 #!/usr/bin/env node
 
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import getIndexHtml from './index.html';
-import getIframeHtml from './iframe.html';
 import express from 'express';
 import program from 'commander';
-import packageJson from '../../package.json';
-import baseConfig from './webpack.config';
-import loadConfig from './config';
 import path from 'path';
 import fs from 'fs';
-import { getHeadHtml } from './utils';
+import storybook from './middleware';
+import packageJson from '../../package.json';
 
 const logger = console;
 
@@ -53,24 +46,7 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-const config = loadConfig('DEVELOPMENT', baseConfig, configDir);
-
-const compiler = webpack(config);
-const devMiddlewareOptions = {
-  noInfo: true,
-  publicPath: config.output.publicPath,
-};
-app.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
-app.use(webpackHotMiddleware(compiler));
-
-app.get('/', function (req, res) {
-  res.send(getIndexHtml());
-});
-
-const headHtml = getHeadHtml(configDir);
-app.get('/iframe.html', function (req, res) {
-  res.send(getIframeHtml(headHtml));
-});
+app.use(storybook(configDir));
 
 app.listen(...listenAddr, function (error) {
   if (error) {
