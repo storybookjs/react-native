@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.28.1
+
+* Add charset meta tags to HTML heads [PR216](https://github.com/kadirahq/react-storybook/pull/216)
+
 ### v1.28.0
 
 * Moved storybook serving code into a middleware to support more advanced use cases.
