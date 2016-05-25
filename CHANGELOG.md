@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.28.0
+
+* Moved storybook serving code into a middleware to support more advanced use cases.
+* Refactored dev server to use storybook middleware [PR211](https://github.com/kadirahq/react-storybook/pull/211)
+
 ### v1.27.0
 
 * Move modules to storybook-core repo. [PR196](https://github.com/kadirahq/react-storybook/pull/196)
