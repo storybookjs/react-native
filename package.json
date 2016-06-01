@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Storybook decorator to center components",
   "main": "build/index.js",
+  "scripts": {
+    "prepublish": "make build"
+  },
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
   "license": "MIT",
   "browserify": {
