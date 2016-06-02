@@ -1,4 +1,4 @@
-export default function () {
+export default function (publicPath) {
   return `
     <!DOCTYPE html>
     <html>
@@ -38,7 +38,7 @@ export default function () {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
-        <script src="static/manager.bundle.js"></script>
+        <script src="${publicPath}manager.bundle.js"></script>
       </body>
     </html>
   `;

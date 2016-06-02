@@ -23,12 +23,12 @@ export default function (configDir) {
   router.use(webpackHotMiddleware(compiler));
 
   router.get('/', function (req, res) {
-    res.send(getIndexHtml());
+    res.send(getIndexHtml(config.output.publicPath));
   });
 
   const headHtml = getHeadHtml(configDir);
   router.get('/iframe.html', function (req, res) {
-    res.send(getIframeHtml(headHtml));
+    res.send(getIframeHtml(headHtml, config.output.publicPath));
   });
 
   return router;

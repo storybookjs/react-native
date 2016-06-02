@@ -1,4 +1,4 @@
-export default function (headHtml) {
+export default function (headHtml, publicPath) {
   return `
     <!DOCTYPE html>
     <html>
@@ -15,7 +15,7 @@ export default function (headHtml) {
       </head>
       <body>
         <div id="root"></div>
-        <script src="static/preview.bundle.js"></script>
+        <script src="${publicPath}preview.bundle.js"></script>
       </body>
     </html>
   `;
