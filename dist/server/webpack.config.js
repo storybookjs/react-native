@@ -32,7 +32,7 @@ var config = {
     loaders: [{
       test: /\.jsx?$/,
       loader: 'babel',
-      query: { presets: ['react', 'es2015', 'stage-2'] },
+      query: { presets: ['react', 'es2015', 'stage-0'] },
       exclude: [_path2.default.resolve('./node_modules'), _path2.default.resolve(__dirname, 'node_modules')],
       include: [_path2.default.resolve('./'), __dirname, _path2.default.resolve(__dirname, '../../src')]
     }]

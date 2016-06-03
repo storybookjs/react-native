@@ -38,7 +38,7 @@ exports.default = function (configType, baseConfig, configDir) {
   // So, we need to add them here, if not specified.
   if (process.env.DEV_BUILD) {
     (function () {
-      var requiredPresets = ['react', 'es2015', 'stage-2'];
+      var requiredPresets = ['react', 'es2015', 'stage-0'];
       var loadedPresets = config.module.loaders[0].query.presets;
       requiredPresets.forEach(function (preset) {
         if (loadedPresets.indexOf(preset) < 0) {

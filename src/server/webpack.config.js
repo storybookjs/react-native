@@ -31,7 +31,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        query: { presets: ['react', 'es2015', 'stage-2'] },
+        query: { presets: ['react', 'es2015', 'stage-0'] },
         exclude: [path.resolve('./node_modules'), path.resolve(__dirname, 'node_modules')],
         include: [path.resolve('./'), __dirname, path.resolve(__dirname, '../../src')],
       },
