@@ -70,10 +70,12 @@ webpack(config).compile(function (err, stats) {
     // Ensure the asset directory exists
     shelljs.mkdir('-p', path.parse(dstPath).dir);
     fs.writeFileSync(dstPath, source);
-
-    // We need to copy the manager bundle distributed via the React Storybook
-    // directly into the production build overring webpack.
-    const managerContent = fs.readFileSync(path.resolve(__dirname, '../manager.js'));
-    fs.writeFileSync(path.resolve(outputDir, 'static/manager.bundle.js'), managerContent);
   }
+
+  // We need to copy the manager bundle distributed via the React Storybook
+  // directly into the production build overring webpack.
+  shelljs.cp(
+    path.resolve(__dirname, '../manager.js'),
+    path.resolve(outputDir, 'static/manager.bundle.js')
+  );
 });

@@ -98,10 +98,9 @@ logger.log('Building storybook ...');
     // Ensure the asset directory exists
     _shelljs2.default.mkdir('-p', _path2.default.parse(dstPath).dir);
     _fs2.default.writeFileSync(dstPath, source);
-
-    // We need to copy the manager bundle distributed via the React Storybook
-    // directly into the production build overring webpack.
-    var managerContent = _fs2.default.readFileSync(_path2.default.resolve(__dirname, '../manager.js'));
-    _fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'static/manager.bundle.js'), managerContent);
   }
+
+  // We need to copy the manager bundle distributed via the React Storybook
+  // directly into the production build overring webpack.
+  _shelljs2.default.cp(_path2.default.resolve(__dirname, '../manager.js'), _path2.default.resolve(outputDir, 'static/manager.bundle.js'));
 });
