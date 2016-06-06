@@ -24,19 +24,25 @@ program
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .parse(process.argv);
 
-// create output directory (and the static dir) if not exists
-const outputDir = program.outputDir || './storybook-static';
-shelljs.mkdir('-p', path.resolve(outputDir, 'static'));
-
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
 const config = loadConfig('PRODUCTION', baseConfig, configDir);
 
+// remove the leading '/'
+let publicPath = config.output.publicPath;
+if (publicPath[0] == '/') {
+  publicPath = publicPath.slice(1);
+}
+
+// create output directory (and the static dir) if not exists
+const outputDir = program.outputDir || './storybook-static';
+shelljs.mkdir('-p', path.resolve(outputDir, publicPath));
+
 // Write both the storybook UI and IFRAME HTML files to destination path.
 const headHtml = getHeadHtml(configDir);
-fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml());
-fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml));
+fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath));
+fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath));
 
 // copy all static files
 if (program.staticDir) {
@@ -59,13 +65,13 @@ webpack(config).compile(function (err, stats) {
     const asset = stats.assets[filename];
     if (asset.children && asset.children.length) {
       const source = asset.children[0]._value;
-      const dstPath = path.resolve(outputDir, `static/${filename}`);
+      const dstPath = path.resolve(outputDir, publicPath, filename);
       fs.writeFileSync(dstPath, source);
       continue;
     }
 
     const source = asset._value;
-    const dstPath = path.resolve(outputDir, `static/${filename}`);
+    const dstPath = path.resolve(outputDir, publicPath, filename);
 
     // Ensure the asset directory exists
     shelljs.mkdir('-p', path.parse(dstPath).dir);
@@ -76,6 +82,6 @@ webpack(config).compile(function (err, stats) {
   // directly into the production build overring webpack.
   shelljs.cp(
     path.resolve(__dirname, '../manager.js'),
-    path.resolve(outputDir, 'static/manager.bundle.js')
+    path.resolve(outputDir, publicPath, 'manager.bundle.js')
   );
 });
