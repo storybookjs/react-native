@@ -50,7 +50,7 @@ process.env.NODE_ENV = 'production';
 // avoid ESLint errors
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-s, --static-dir [dir-name]', 'Directory where to load static files from').option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
 
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
@@ -74,12 +74,14 @@ _fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0,
 
 // copy all static files
 if (_commander2.default.staticDir) {
-  if (!_fs2.default.existsSync(_commander2.default.staticDir)) {
-    logger.error('Error: no such directory to load static files: ' + _commander2.default.staticDir);
-    process.exit(-1);
-  }
-  logger.log('=> Copying static files from: ' + _commander2.default.staticDir);
-  _shelljs2.default.cp('-r', _commander2.default.staticDir + '/', outputDir);
+  _commander2.default.staticDir.forEach(function (dir) {
+    if (!_fs2.default.existsSync(dir)) {
+      logger.error('Error: no such directory to load static files: ' + dir);
+      process.exit(-1);
+    }
+    logger.log('=> Copying static files from: ' + dir);
+    _shelljs2.default.cp('-r', dir + '/', outputDir);
+  });
 }
 
 // compile all resources with webpack and write them to the disk.
