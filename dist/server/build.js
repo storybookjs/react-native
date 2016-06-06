@@ -63,8 +63,8 @@ var config = (0, _config2.default)('PRODUCTION', _webpackConfig2.default, config
 
 // Write both the storybook UI and IFRAME HTML files to destination path.
 var headHtml = (0, _utils.getHeadHtml)(configDir);
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)());
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml));
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)(config.output.publicPath));
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml, config.output.publicPath));
 
 // copy all static files
 if (_commander2.default.staticDir) {
