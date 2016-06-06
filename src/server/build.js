@@ -35,9 +35,8 @@ const config = loadConfig('PRODUCTION', baseConfig, configDir);
 
 // Write both the storybook UI and IFRAME HTML files to destination path.
 const headHtml = getHeadHtml(configDir);
-fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(config.output.publicPath));
-fs.writeFileSync(path.resolve(outputDir, 'iframe.html'),
-    getIframeHtml(headHtml, config.output.publicPath));
+fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml());
+fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml));
 
 // copy all static files
 if (program.staticDir) {
