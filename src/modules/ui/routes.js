@@ -5,7 +5,7 @@ import LeftPanel from './containers/left_panel';
 import ActionLogger from './containers/action_logger';
 import ShortcutsHelp from './containers/shortcuts_help';
 
-export default function (injectDeps, {Preview}) {
+export default function (injectDeps, { Preview }) {
   const InjectedLayout = injectDeps(Layout);
   const InjectedShortcutsHelp = injectDeps(ShortcutsHelp);
   const rootEl = document.getElementById('root');
