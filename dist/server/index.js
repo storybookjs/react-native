@@ -25,11 +25,13 @@ var _package = require('../../package.json');
 
 var _package2 = _interopRequireDefault(_package);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir [dir-name]', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
 
 if (!_commander2.default.port) {
   logger.error('Error: port to run Storybook is required!\n');
@@ -47,14 +49,15 @@ if (_commander2.default.host) {
 var app = (0, _express2.default)();
 
 if (_commander2.default.staticDir) {
-  var staticPath = _path2.default.resolve(_commander2.default.staticDir);
-  if (_fs2.default.existsSync(staticPath)) {
+  _commander2.default.staticDir.forEach(function (dir) {
+    var staticPath = _path2.default.resolve(dir);
+    if (!_fs2.default.existsSync(staticPath)) {
+      logger.error('Error: no such directory to load static files: ' + staticPath);
+      process.exit(-1);
+    }
     logger.log('=> Loading static files from: ' + staticPath + ' .');
     app.use(_express2.default.static(staticPath, { index: false }));
-  } else {
-    logger.error('Error: no such directory to load static files: ' + staticPath);
-    process.exit(-1);
-  }
+  });
 }
 
 // Build the webpack configuration using the `baseConfig`

@@ -12,14 +12,14 @@ import baseConfig from './webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml } from './utils';
+import { getHeadHtml, parseList } from './utils';
 
 // avoid ESLint errors
 const logger = console;
 
 program
   .version(packageJson.version)
-  .option('-s, --static-dir [dir-name]', 'Directory where to load static files from')
+  .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-o, --output-dir [dir-name]', 'Directory where to store built files')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .parse(process.argv);
@@ -46,12 +46,14 @@ fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml,
 
 // copy all static files
 if (program.staticDir) {
-  if (!fs.existsSync(program.staticDir)) {
-    logger.error(`Error: no such directory to load static files: ${program.staticDir}`);
-    process.exit(-1);
-  }
-  logger.log(`=> Copying static files from: ${program.staticDir}`);
-  shelljs.cp('-r', `${program.staticDir}/`, outputDir);
+  program.staticDir.forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      logger.error(`Error: no such directory to load static files: ${dir}`);
+      process.exit(-1);
+    }
+    logger.log(`=> Copying static files from: ${dir}`);
+    shelljs.cp('-r', `${dir}/`, outputDir);
+  });
 }
 
 // compile all resources with webpack and write them to the disk.
