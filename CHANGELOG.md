@@ -1,10 +1,10 @@
 ## Changelog
 
-### v1.28.4
+### v1.28.5
 
 * Support ECMAScript stage-0 [PR228](https://github.com/kadirahq/react-storybook/pull/228) to fix [Issue #227](https://github.com/kadirahq/react-storybook/issues/227)
 
-### v1.28.3
+### v1.28.4
 
 * Support custom webpack public path for dev-server and static build started by [PR226](https://github.com/kadirahq/react-storybook/pull/226)
 
