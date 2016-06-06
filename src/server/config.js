@@ -75,7 +75,7 @@ export default function (configType, baseConfig, configDir) {
   // Dev build needs some specific babel presets.
   // So, we need to add them here, if not specified.
   if (process.env.DEV_BUILD) {
-    const requiredPresets = ['react', 'es2015', 'stage-2'];
+    const requiredPresets = ['react', 'es2015', 'stage-0'];
     const loadedPresets = config.module.loaders[0].query.presets;
     requiredPresets.forEach((preset) => {
       if (loadedPresets.indexOf(preset) < 0) {
