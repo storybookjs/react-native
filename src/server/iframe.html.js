@@ -1,4 +1,6 @@
-export default function (headHtml) {
+import path from 'path';
+
+export default function (headHtml, publicPath) {
   return `
     <!DOCTYPE html>
     <html>
@@ -15,7 +17,7 @@ export default function (headHtml) {
       </head>
       <body>
         <div id="root"></div>
-        <script src="static/preview.bundle.js"></script>
+        <script src="${path.join(publicPath, 'preview.bundle.js')}"></script>
       </body>
     </html>
   `;
