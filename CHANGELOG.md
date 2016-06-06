@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.29.0
+
+* Multiple static dirs (comma separated) [PR229](https://github.com/kadirahq/react-storybook/pull/229)
+
 ### v1.28.5
 
 * Support ECMAScript stage-0 [PR228](https://github.com/kadirahq/react-storybook/pull/228) to fix [Issue #227](https://github.com/kadirahq/react-storybook/issues/227)
