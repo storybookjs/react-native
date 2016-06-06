@@ -1,5 +1,13 @@
 ## Changelog
 
+### v1.28.3
+
+* Revert [PR226](https://github.com/kadirahq/react-storybook/pull/226)
+
+### v1.28.2
+
+* Support custom webpack publicPath [PR226](https://github.com/kadirahq/react-storybook/pull/226)
+
 ### v1.28.1
 
 * Add charset meta tags to HTML heads [PR216](https://github.com/kadirahq/react-storybook/pull/216)
