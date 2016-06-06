@@ -59,7 +59,7 @@ var config = (0, _config2.default)('PRODUCTION', _webpackConfig2.default, config
 
 // remove the leading '/'
 var publicPath = config.output.publicPath;
-if (publicPath[0] == '/') {
+if (publicPath[0] === '/') {
   publicPath = publicPath.slice(1);
 }
 

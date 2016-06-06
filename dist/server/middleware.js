@@ -11,7 +11,7 @@ exports.default = function (configDir) {
 
   // remove the leading '/'
   var publicPath = config.output.publicPath;
-  if (publicPath[0] == '/') {
+  if (publicPath[0] === '/') {
     publicPath = publicPath.slice(1);
   }
 

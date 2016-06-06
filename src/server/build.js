@@ -31,7 +31,7 @@ const config = loadConfig('PRODUCTION', baseConfig, configDir);
 
 // remove the leading '/'
 let publicPath = config.output.publicPath;
-if (publicPath[0] == '/') {
+if (publicPath[0] === '/') {
   publicPath = publicPath.slice(1);
 }
 
