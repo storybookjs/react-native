@@ -2,6 +2,10 @@
 
 ### v1.28.3
 
+* Support custom webpack public path for dev-server and static build started by [PR226](https://github.com/kadirahq/react-storybook/pull/226)
+
+### v1.28.3
+
 * Revert [PR226](https://github.com/kadirahq/react-storybook/pull/226)
 
 ### v1.28.2
