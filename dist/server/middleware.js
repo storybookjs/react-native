@@ -8,6 +8,13 @@ exports.default = function (configDir) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   var config = (0, _config2.default)('DEVELOPMENT', _webpack4.default, configDir);
+
+  // remove the leading '/'
+  var publicPath = config.output.publicPath;
+  if (publicPath[0] == '/') {
+    publicPath = publicPath.slice(1);
+  }
+
   var compiler = (0, _webpack2.default)(config);
   var devMiddlewareOptions = {
     noInfo: true,
@@ -19,12 +26,12 @@ exports.default = function (configDir) {
   router.use((0, _webpackHotMiddleware2.default)(compiler));
 
   router.get('/', function (req, res) {
-    res.send((0, _index2.default)());
+    res.send((0, _index2.default)(publicPath));
   });
 
   var headHtml = (0, _utils.getHeadHtml)(configDir);
   router.get('/iframe.html', function (req, res) {
-    res.send((0, _iframe2.default)(headHtml));
+    res.send((0, _iframe2.default)(headHtml, publicPath));
   });
 
   return router;
