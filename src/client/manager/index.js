@@ -1,3 +1,4 @@
+import 'es6-shim';
 import { createStore, combineReducers } from 'redux';
 import { createApp } from 'mantra-core';
 import buildContext from './configs/context.js';
