@@ -86,4 +86,8 @@ webpack(config).compile(function (err, stats) {
     path.resolve(__dirname, '../manager.js'),
     path.resolve(outputDir, publicPath, 'manager.bundle.js')
   );
+  shelljs.cp(
+    path.resolve(__dirname, '../manager.js.map'),
+    path.resolve(outputDir, publicPath, 'manager.js.map')
+  );
 });

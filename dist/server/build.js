@@ -111,4 +111,5 @@ logger.log('Building storybook ...');
   // We need to copy the manager bundle distributed via the React Storybook
   // directly into the production build overring webpack.
   _shelljs2.default.cp(_path2.default.resolve(__dirname, '../manager.js'), _path2.default.resolve(outputDir, publicPath, 'manager.bundle.js'));
+  _shelljs2.default.cp(_path2.default.resolve(__dirname, '../manager.js.map'), _path2.default.resolve(outputDir, publicPath, 'manager.js.map'));
 });
