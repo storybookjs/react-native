@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.29.2
+
+* Use url.resolve instead of path.join [PR240](https://github.com/kadirahq/react-storybook/pull/240)
+
 ### v1.29.1
 
 * Copy missed manager.js.map file on static build [PR236](https://github.com/kadirahq/react-storybook/pull/236)
