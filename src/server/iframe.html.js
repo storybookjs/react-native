@@ -1,4 +1,4 @@
-import path from 'path';
+import url from 'url';
 
 export default function (headHtml, publicPath) {
   return `
@@ -17,7 +17,7 @@ export default function (headHtml, publicPath) {
       </head>
       <body>
         <div id="root"></div>
-        <script src="${path.join(publicPath, 'preview.bundle.js')}"></script>
+        <script src="${url.resolve(publicPath, 'preview.bundle.js')}"></script>
       </body>
     </html>
   `;
