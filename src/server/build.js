@@ -39,11 +39,6 @@ if (publicPath[0] === '/') {
 const outputDir = program.outputDir || './storybook-static';
 shelljs.mkdir('-p', path.resolve(outputDir, publicPath));
 
-// Write both the storybook UI and IFRAME HTML files to destination path.
-const headHtml = getHeadHtml(configDir);
-fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath));
-fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath));
-
 // copy all static files
 if (program.staticDir) {
   program.staticDir.forEach(dir => {
@@ -55,6 +50,11 @@ if (program.staticDir) {
     shelljs.cp('-r', `${dir}/`, outputDir);
   });
 }
+
+// Write both the storybook UI and IFRAME HTML files to destination path.
+const headHtml = getHeadHtml(configDir);
+fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath));
+fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath));
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
