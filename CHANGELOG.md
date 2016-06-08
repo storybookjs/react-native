@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.29.4
+
+* Protect index.html/iframe.html from being overwritten [PR243](https://github.com/kadirahq/react-storybook/pull/243)
+
 ### v1.29.3
 
 * Update @kadira/storybook-core version [PR241](https://github.com/kadirahq/react-storybook/pull/241)
