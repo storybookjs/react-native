@@ -67,11 +67,6 @@ if (publicPath[0] === '/') {
 var outputDir = _commander2.default.outputDir || './storybook-static';
 _shelljs2.default.mkdir('-p', _path2.default.resolve(outputDir, publicPath));
 
-// Write both the storybook UI and IFRAME HTML files to destination path.
-var headHtml = (0, _utils.getHeadHtml)(configDir);
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)(publicPath));
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml, publicPath));
-
 // copy all static files
 if (_commander2.default.staticDir) {
   _commander2.default.staticDir.forEach(function (dir) {
@@ -83,6 +78,11 @@ if (_commander2.default.staticDir) {
     _shelljs2.default.cp('-r', dir + '/', outputDir);
   });
 }
+
+// Write both the storybook UI and IFRAME HTML files to destination path.
+var headHtml = (0, _utils.getHeadHtml)(configDir);
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)(publicPath));
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml, publicPath));
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
