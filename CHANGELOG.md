@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.29.3
+
+* Update @kadira/storybook-core version [PR241](https://github.com/kadirahq/react-storybook/pull/241)
+* Add es6-shim by default [PR238](https://github.com/kadirahq/react-storybook/pull/238)
+
 ### v1.29.2
 
 * Use url.resolve instead of path.join [PR240](https://github.com/kadirahq/react-storybook/pull/240)
