@@ -4,8 +4,6 @@ export function storyFilter(stories, filter, selectedKind) {
 
   return stories.filter((kindInfo) => {
     if (kindInfo.kind === selectedKind) return true;
-
-    const regExp = new RegExp(filter, 'ig');
-    return kindInfo.kind.match(regExp);
+    return kindInfo.kind.toLocaleLowerCase().indexOf(filter) >= 0;
   });
 }

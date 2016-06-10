@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10,8 +10,6 @@ function storyFilter(stories, filter, selectedKind) {
 
   return stories.filter(function (kindInfo) {
     if (kindInfo.kind === selectedKind) return true;
-
-    var regExp = new RegExp(filter, 'ig');
-    return kindInfo.kind.match(regExp);
+    return kindInfo.kind.toLocaleLowerCase().indexOf(filter) >= 0;
   });
 }
