@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-core",
-  "version": "1.26.4",
+  "version": "1.27.0",
   "description": "Storybook Core Components",
   "repository": {
     "type": "git",
