@@ -1,6 +1,6 @@
 {
   "name": "react-storybook-centered",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Storybook decorator to center components",
   "main": "build/index.js",
   "scripts": {
