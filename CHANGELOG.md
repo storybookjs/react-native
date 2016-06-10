@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.30.0
+
+* Fuzzy search kinds [PR247](https://github.com/kadirahq/react-storybook/pull/247)
+
 ### v1.29.5
 
 * Update dependency version to fix filter crash [PR246](https://github.com/kadirahq/react-storybook/pull/246)
