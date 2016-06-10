@@ -14,6 +14,6 @@
     ]
   },
   "devDependencies": {
-    "react-fatigue-dev": "tj/react-fatigue-dev"
+    "react-fatigue-dev": "kadirahq/react-fatigue-dev"
   }
 }
