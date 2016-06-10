@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.29.5
+
+* Update dependency version to fix filter crash [PR246](https://github.com/kadirahq/react-storybook/pull/246)
+
 ### v1.29.4
 
 * Protect index.html/iframe.html from being overwritten [PR243](https://github.com/kadirahq/react-storybook/pull/243)
