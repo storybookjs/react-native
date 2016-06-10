@@ -21,7 +21,7 @@
     "dev": "DEV_BUILD=1 nodemon --watch src --exec 'npm run prepublish'"
   },
   "dependencies": {
-    "@kadira/storybook-core": "^1.26.4",
+    "@kadira/storybook-core": "^1.27.0",
     "airbnb-js-shims": "^1.0.0",
     "babel-core": "^6.3.15",
     "babel-loader": "^6.2.0",
