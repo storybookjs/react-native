@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
+    "markdown-modest": "github:markdowncss/modest",
     "react-remarkable": "^1.1.1"
   },
   "main": "dist/index.js",

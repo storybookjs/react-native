@@ -1,5 +1,6 @@
 import React from 'react';
 import Remarkable from 'react-remarkable';
+import '../vendor/modest.css';
 
 export default class Story extends React.Component {
   static propTypes = {
@@ -9,6 +10,8 @@ export default class Story extends React.Component {
   stylesheet = {
     link: {
       base: {
+        fontFamily: 'sans-serif',
+        fontSize: 12,
         display: 'block',
         position: 'absolute',
         textDecoration: 'none',
@@ -60,10 +63,14 @@ export default class Story extends React.Component {
     return (
       <div>
         {this.props.children}
-        <a style={linkStyle} href='#' onClick={() => this.openInfo()}>info</a>
+        <a style={linkStyle} href='#' onClick={() => this.openInfo()}>more info</a>
         <div style={infoStyle}>
-          <a style={linkStyle} href='#' onClick={() => this.closeInfo()}>close</a>
-          <Remarkable source={this._deindent(this.props.info)}></Remarkable>
+          <a style={linkStyle} href='#' onClick={() => this.closeInfo()}>×</a>
+          <div className='storybook-story-info-page'>
+            <div className='storybook-story-info-body'>
+              <Remarkable source={this._deindent(this.props.info)}></Remarkable>
+            </div>
+          </div>
         </div>
       </div>
     );
