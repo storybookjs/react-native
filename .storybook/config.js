@@ -5,8 +5,7 @@
 
 import { configure } from '@kadira/storybook';
 
-function loadStories() {
+configure(function () {
+  require('../src/styles.css');
   require('../src/stories');
-}
-
-configure(loadStories, module);
+}, module);

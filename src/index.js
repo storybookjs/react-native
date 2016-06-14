@@ -1,6 +1,5 @@
 import React from 'react';
 import Remarkable from 'react-remarkable';
-import '../vendor/modest.css';
 
 export default class Story extends React.Component {
   static propTypes = {
@@ -18,6 +17,7 @@ export default class Story extends React.Component {
         background: '#eee',
         color: '#333',
         padding: '5px 15px',
+        cursor: 'pointer',
       },
       topRight: {
         top: 0,
@@ -44,10 +44,12 @@ export default class Story extends React.Component {
 
   openInfo() {
     this.setState({open: true});
+    return false;
   }
 
   closeInfo() {
     this.setState({open: false});
+    return false;
   }
 
   render() {
@@ -63,9 +65,9 @@ export default class Story extends React.Component {
     return (
       <div>
         {this.props.children}
-        <a style={linkStyle} href='#' onClick={() => this.openInfo()}>more info</a>
+        <a style={linkStyle} onClick={() => this.openInfo()}>?</a>
         <div style={infoStyle}>
-          <a style={linkStyle} href='#' onClick={() => this.closeInfo()}>×</a>
+          <a style={linkStyle} onClick={() => this.closeInfo()}>×</a>
           <div className='storybook-story-info-page'>
             <div className='storybook-story-info-body'>
               <Remarkable source={this._deindent(this.props.info)}></Remarkable>
