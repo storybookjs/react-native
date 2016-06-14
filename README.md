@@ -14,6 +14,7 @@ When writing stories, wrap your component with the `<Story />` component and giv
 
 ```
 import Story from 'react-storybook-story';
+import 'react-storybook-story/src/styles.css';
 
 const stories = storiesOf('<MyComponent />', module);
 
