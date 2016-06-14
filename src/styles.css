@@ -62,12 +62,13 @@
 
 .storybook-story-info-body pre,
 .storybook-story-info-body code {
+  font-size: .88em;
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
 .storybook-story-info-body pre {
   padding: .5rem;
-  line-height: 1.25;
+  line-height: 1.5;
   overflow-x: scroll;
 }
 
@@ -206,6 +207,9 @@
   border-bottom: 2px solid #fafafa;
   margin-bottom: 1.15rem;
   padding-bottom: .5rem;
+}
+
+.storybook-story-info-body h1 {
   text-align: center;
 }
 
