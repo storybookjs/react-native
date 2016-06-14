@@ -3,6 +3,8 @@ import Remarkable from 'react-remarkable';
 
 export default class Story extends React.Component {
   static propTypes = {
+    components: React.PropTypes.arrayOf(React.PropTypes.func),
+    context: React.PropTypes.object,
     info: React.PropTypes.string,
   }
 
@@ -70,7 +72,7 @@ export default class Story extends React.Component {
           <a style={linkStyle} onClick={() => this.closeInfo()}>×</a>
           <div className='storybook-story-info-page'>
             <div className='storybook-story-info-body'>
-              <Remarkable source={this._deindent(this.props.info)}></Remarkable>
+              <Remarkable source={this._getInfoContent()}></Remarkable>
             </div>
           </div>
         </div>
@@ -78,11 +80,11 @@ export default class Story extends React.Component {
     );
   }
 
-  _deindent(input) {
-    if (!input) {
+  _getInfoContent() {
+    if (!this.props.info) {
       return '';
     }
-    const lines = input.split('\n');
+    const lines = this.props.info.split('\n');
     while (lines[0].trim() === '') {
       lines.shift();
     }
@@ -91,7 +93,47 @@ export default class Story extends React.Component {
     if (matches) {
       padding = matches[0].length;
     }
-    const trimmed = lines.map(s => s.slice(padding));
-    return trimmed.join('\n');
+    const header = `# ${this.props.context.kind}\n## ${this.props.context.story}\n`;
+    const content = lines.map(s => s.slice(padding)).join('\n');
+    const extras = this._getPropTables();
+    return header + content + extras;
+  }
+
+  _getPropTables() {
+    if (!this.props.components) {
+      return '';
+    }
+    const tables = this.props.components.map(this._getPropTable.bind(this));
+    return tables.join('\n\n');
+  }
+
+  _getPropTable(Comp) {
+    if (!Comp) {
+      return '';
+    }
+    const table = [
+      `### <${Comp.name} /> PropTypes`,
+      '| property | propType | required | defaults |',
+      '|----------|----------|----------|----------|',
+    ];
+    for (let property in Comp.propTypes) {
+      if (!Comp.propTypes.hasOwnProperty(property)) {
+        continue
+      }
+      const type = Comp.propTypes[property];
+      const propType = this._getPropType(type);
+      const required = type.isRequired === undefined ? 'yes' : 'no';
+      const defaults = this._getDefaultProp(property);
+      table.push(`| ${property} | ${propType} | ${required} | ${defaults} |`);
+    }
+    return table.join('\n');
+  }
+
+  _getDefaultProp(property) {
+    return '-';
+  }
+
+  _getPropType(type) {
+    return '-';
   }
 }

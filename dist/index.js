@@ -141,19 +141,19 @@ var Story = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'storybook-story-info-body' },
-              _react2.default.createElement(_reactRemarkable2.default, { source: this._deindent(this.props.info) })
+              _react2.default.createElement(_reactRemarkable2.default, { source: this._getInfoContent() })
             )
           )
         )
       );
     }
   }, {
-    key: '_deindent',
-    value: function _deindent(input) {
-      if (!input) {
+    key: '_getInfoContent',
+    value: function _getInfoContent() {
+      if (!this.props.info) {
         return '';
       }
-      var lines = input.split('\n');
+      var lines = this.props.info.split('\n');
       while (lines[0].trim() === '') {
         lines.shift();
       }
@@ -162,16 +162,58 @@ var Story = function (_React$Component) {
       if (matches) {
         padding = matches[0].length;
       }
-      var trimmed = lines.map(function (s) {
+      var header = '# ' + this.props.context.kind + '\n## ' + this.props.context.story + '\n';
+      var content = lines.map(function (s) {
         return s.slice(padding);
-      });
-      return trimmed.join('\n');
+      }).join('\n');
+      var extras = this._getPropTables();
+      return header + content + extras;
+    }
+  }, {
+    key: '_getPropTables',
+    value: function _getPropTables() {
+      if (!this.props.components) {
+        return '';
+      }
+      var tables = this.props.components.map(this._getPropTable.bind(this));
+      return tables.join('\n\n');
+    }
+  }, {
+    key: '_getPropTable',
+    value: function _getPropTable(Comp) {
+      if (!Comp) {
+        return '';
+      }
+      var table = ['### <' + Comp.name + ' /> PropTypes', '| property | propType | required | defaults |', '|----------|----------|----------|----------|'];
+      for (var property in Comp.propTypes) {
+        if (!Comp.propTypes.hasOwnProperty(property)) {
+          continue;
+        }
+        var type = Comp.propTypes[property];
+        var propType = this._getPropType(type);
+        var required = type.isRequired === undefined ? 'yes' : 'no';
+        var defaults = this._getDefaultProp(property);
+        table.push('| ' + property + ' | ' + propType + ' | ' + required + ' | ' + defaults + ' |');
+      }
+      return table.join('\n');
+    }
+  }, {
+    key: '_getDefaultProp',
+    value: function _getDefaultProp(property) {
+      return '-';
+    }
+  }, {
+    key: '_getPropType',
+    value: function _getPropType(type) {
+      return '-';
     }
   }]);
   return Story;
 }(_react2.default.Component);
 
 Story.propTypes = {
+  components: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
+  context: _react2.default.PropTypes.object,
   info: _react2.default.PropTypes.string
 };
 exports.default = Story;

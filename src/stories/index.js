@@ -4,44 +4,26 @@ import Story from '../index';
 
 const stories = storiesOf('<Story />', module);
 
-stories.add('Basic Usage', function () {
+stories.add('Basic Usage', function (context) {
   const info = `
-    # <Story />
-
-    ## Basic Usage
-
-    This is a simple example story to demonstrate how this component can be used. The \`<Story>\` component can be used to attach additional information with your stories.
-
-    Information such as example source code
-
-    ~~~jsx
-    stories.add('Basic Usage', function () {
-      const info = \`
-        # Story
-
-        This is a simple example story to...
-      \`;
-
-      return (
-        <Story info={info}>
-          <em>Click the "?" button on top-right corner</em>
-        </Story>
-      );
-    });
-    ~~~
-
-    component properties
-
-    | property | type   | required | default |
-    |----------|--------|----------|---------|
-    | info     | string | no       | ""      |
-
-    or something else...
+    This is a simple example story to demonstrate how this component can be used. The \`<Story>\` component can be used to show additional information with your stories. This text is
   `;
 
   return (
-    <Story info={info}>
-      <em>Click the "?" button on top-right corner</em>
+    <Story context={{}} info={info}>
+      <em>Click the "?" button on top-right corner for more info</em>
     </Story>
   );
 });
+
+stories.add('Props Table', function (context) {
+  const info = `
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  `;
+
+  return (
+    <Story context={{}} components={[Story]} info={info}>
+      <em>Click the "?" button on top-right corner for more info</em>
+    </Story>
+  );
+})
