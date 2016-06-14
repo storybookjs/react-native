@@ -32,3 +32,6 @@ stories.add('my-example-story', function () {
 });
 ```
 
+## Credits
+
+- [markdowncss/modest](https://github.com/markdowncss/modest)
