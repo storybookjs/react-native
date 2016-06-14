@@ -200,7 +200,7 @@ var Story = function (_React$Component) {
       if (!Comp) {
         return '';
       }
-      var table = ['### <' + Comp.name + ' /> PropTypes', '| property | propType | required | defaults |', '|----------|----------|----------|----------|'];
+      var table = ['### <' + (Comp.displayName || Comp.name) + ' /> PropTypes', '| property | propType | required | defaults |', '|----------|----------|----------|----------|'];
       for (var property in Comp.propTypes) {
         if (!Comp.propTypes.hasOwnProperty(property)) {
           continue;
@@ -222,6 +222,7 @@ var Story = function (_React$Component) {
   return Story;
 }(_react2.default.Component);
 
+Story.displayName = 'Story';
 Story.propTypes = {
   components: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
   context: _react2.default.PropTypes.object,

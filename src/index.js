@@ -11,6 +11,7 @@ for (let typeName in React.PropTypes) {
 }
 
 export default class Story extends React.Component {
+  static displayName = 'Story';
   static propTypes = {
     components: React.PropTypes.arrayOf(React.PropTypes.func),
     context: React.PropTypes.object,
@@ -127,7 +128,7 @@ export default class Story extends React.Component {
       return '';
     }
     const table = [
-      `### <${Comp.name} /> PropTypes`,
+      `### <${Comp.displayName || Comp.name} /> PropTypes`,
       '| property | propType | required | defaults |',
       '|----------|----------|----------|----------|',
     ];
