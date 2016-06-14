@@ -114,6 +114,11 @@ Here's how to tell React Storybook to use that directory to load static files:
 start-storybook -p 6977 -s ./public
 ```
 
+> You can also specify multiple static directories like this:
+> ```sh 
+> start-storybook -p 6977 -s ./public
+> ```
+
 ### Configuration Directory
 
 React Storybook uses `.storybook` directory as a default location for its [basic](#basic-configurations) and [custom webpack](#custom-webpack-configurations) configuration.
