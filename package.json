@@ -40,7 +40,7 @@
     "react-addons-test-utils": "^15.0.0",
     "jsdom": "^8.3.1",
     "eslint-plugin-jsx-a11y": "^0.6.2",
-    "@kadira/storybook": "^1.19.0",
+    "@kadira/storybook": "^1.31.0",
     "style-loader": "^0.13.1",
     "raw-loader": "^0.5.1",
     "git-url-parse": "^6.0.1"
