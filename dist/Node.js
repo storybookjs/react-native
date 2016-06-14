@@ -1,0 +1,166 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Node = function (_React$Component) {
+  (0, _inherits3.default)(Node, _React$Component);
+
+  function Node(props) {
+    (0, _classCallCheck3.default)(this, Node);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Node).call(this, props));
+
+    _this.stylesheet = {
+      containerStyle: {},
+      tagStyle: {
+        color: '#777'
+      }
+    };
+    return _this;
+  }
+
+  (0, _createClass3.default)(Node, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var node = _props.node;
+      var depth = _props.depth;
+      var _stylesheet = this.stylesheet;
+      var tagStyle = _stylesheet.tagStyle;
+      var containerStyle = _stylesheet.containerStyle;
+
+
+      var leftPad = {
+        paddingLeft: 3 + (depth + 1) * 15,
+        paddingRight: 3
+      };
+
+      (0, _assign2.default)(containerStyle, leftPad);
+
+      var _getData = getData(node);
+
+      var name = _getData.name;
+      var text = _getData.text;
+      var children = _getData.children;
+
+
+      if (!name) {
+        return _react2.default.createElement(
+          'div',
+          { style: containerStyle },
+          _react2.default.createElement(
+            'span',
+            { style: tagStyle },
+            text
+          )
+        );
+      }
+
+      // Single-line tag
+      if (!children) {
+        return _react2.default.createElement(
+          'div',
+          { style: containerStyle },
+          _react2.default.createElement(
+            'span',
+            { style: tagStyle },
+            '<',
+            name,
+            ' />'
+          )
+        );
+      }
+
+      // tag with children
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { style: containerStyle },
+          _react2.default.createElement(
+            'span',
+            { style: tagStyle },
+            '<',
+            name,
+            '>'
+          )
+        ),
+        _react2.default.Children.map(children, function (childElement) {
+          return _react2.default.createElement(Node, { node: childElement, depth: depth + 1 });
+        }),
+        _react2.default.createElement(
+          'div',
+          { style: containerStyle },
+          _react2.default.createElement(
+            'span',
+            { style: tagStyle },
+            '<',
+            name,
+            ' />'
+          )
+        )
+      );
+    }
+  }]);
+  return Node;
+}(_react2.default.Component);
+
+exports.default = Node;
+
+
+function getData(element) {
+  var data = {
+    name: null,
+    text: null,
+    children: null
+  };
+
+  if (typeof element == 'string') {
+    data.text = element;
+    return data;
+  }
+
+  data.children = element.props.children;
+  var type = element.type;
+
+  if (typeof type === 'string') {
+    data.name = type;
+  } else {
+    data.name = type.displayName || type.name || 'Unknown';
+  }
+
+  return data;
+}

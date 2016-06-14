@@ -1,5 +1,6 @@
 import React from 'react';
 import Remarkable from 'react-remarkable';
+import Node from './Node.js'
 
 const PropTypesMap = new Map();
 for (let typeName in React.PropTypes) {
@@ -83,6 +84,11 @@ export default class Story extends React.Component {
           <div className='storybook-story-info-page'>
             <div className='storybook-story-info-body'>
               <Remarkable source={this._getInfoContent()}></Remarkable>
+              <pre>
+              {React.Children.map(this.props.children, root => (
+                <Node depth={0} node={root}></Node>
+              ))}
+              </pre>
             </div>
           </div>
         </div>
