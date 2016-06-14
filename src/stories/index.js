@@ -22,12 +22,12 @@ stories.add('Basic Usage', function (context) {
 stories.add('Prop Tables', function (context) {
   const info = `
     You can also automatically generate propType tables for components.
-    Just provide an array of react components as \`components\` property
+    Just provide an array of react components as \`propTables\` property
     to the story component.
   `;
 
   return (
-    <Story context={context} components={[Story]} info={info}>
+    <Story context={context} propTables={[Story]} info={info}>
       <em>Click the "?" button on top-right corner for more info</em>
     </Story>
   );

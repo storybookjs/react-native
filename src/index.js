@@ -13,7 +13,7 @@ for (let typeName in React.PropTypes) {
 export default class Story extends React.Component {
   static displayName = 'Story';
   static propTypes = {
-    components: React.PropTypes.arrayOf(React.PropTypes.func),
+    propTables: React.PropTypes.arrayOf(React.PropTypes.func),
     context: React.PropTypes.object,
     info: React.PropTypes.string,
   }
@@ -116,10 +116,10 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
-    if (!this.props.components) {
+    if (!this.props.propTables) {
       return '';
     }
-    const tables = this.props.components.map(this._getPropTable.bind(this));
+    const tables = this.props.propTables.map(this._getPropTable.bind(this));
     return tables.join('\n\n');
   }
 

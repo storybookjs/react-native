@@ -188,10 +188,10 @@ var Story = function (_React$Component) {
   }, {
     key: '_getPropTables',
     value: function _getPropTables() {
-      if (!this.props.components) {
+      if (!this.props.propTables) {
         return '';
       }
-      var tables = this.props.components.map(this._getPropTable.bind(this));
+      var tables = this.props.propTables.map(this._getPropTable.bind(this));
       return tables.join('\n\n');
     }
   }, {
@@ -224,7 +224,7 @@ var Story = function (_React$Component) {
 
 Story.displayName = 'Story';
 Story.propTypes = {
-  components: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
+  propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
   context: _react2.default.PropTypes.object,
   info: _react2.default.PropTypes.string
 };
