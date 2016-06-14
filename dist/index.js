@@ -77,8 +77,8 @@ var Story = function (_React$Component) {
           display: 'block',
           position: 'absolute',
           textDecoration: 'none',
-          background: '#eee',
-          color: '#333',
+          background: '#28c',
+          color: '#fff',
           padding: '5px 15px',
           cursor: 'pointer'
         },
