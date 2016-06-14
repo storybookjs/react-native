@@ -70,7 +70,12 @@ function renderMain(data, storyStore) {
     _reactDom2.default.unmountComponentAtNode(rootEl);
   }
 
-  return _reactDom2.default.render(story(), rootEl);
+  var context = {
+    kind: selectedKind,
+    story: selectedStory
+  };
+
+  return _reactDom2.default.render(story(context), rootEl);
 }
 
 function renderPreview(_ref) {

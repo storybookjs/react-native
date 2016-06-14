@@ -42,7 +42,12 @@ export function renderMain(data, storyStore) {
     ReactDOM.unmountComponentAtNode(rootEl);
   }
 
-  return ReactDOM.render(story(), rootEl);
+  const context = {
+    kind: selectedKind,
+    story: selectedStory,
+  };
+
+  return ReactDOM.render(story(context), rootEl);
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {
