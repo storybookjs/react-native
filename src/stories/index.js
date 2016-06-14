@@ -6,7 +6,10 @@ const stories = storiesOf('<Story />', module);
 
 stories.add('Basic Usage', function (context) {
   const info = `
-    This is a simple example story to demonstrate how this component can be used. The \`<Story>\` component can be used to show additional information with your stories. This text is
+    The \`<Story>\` component can be used to show additional information with
+    your stories. To render text here, provide your markdown formatted text
+    as \`info\` property. Make sure to provide the story context variable as the
+    \`context\` property to automatically add titles.
   `;
 
   return (
@@ -16,9 +19,11 @@ stories.add('Basic Usage', function (context) {
   );
 });
 
-stories.add('Props Table', function (context) {
+stories.add('Prop Tables', function (context) {
   const info = `
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    You can also automatically generate propType tables for components.
+    Just provide an array of react components as \`components\` property
+    to the story component.
   `;
 
   return (

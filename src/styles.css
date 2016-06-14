@@ -222,3 +222,11 @@
 .storybook-story-info-body code {
   background-color: #fafafa;
 }
+
+.storybook-story-info-body table {
+  width: 100%;
+}
+
+.storybook-story-info-body th {
+  text-align: left;
+}
