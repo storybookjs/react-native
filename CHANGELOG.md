@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.31.0
+
+* Pass a `context` argument to stories [PR250](https://github.com/kadirahq/react-storybook/pull/250)
+
 ### v1.30.0
 
 * Fuzzy search kinds [PR247](https://github.com/kadirahq/react-storybook/pull/247)
