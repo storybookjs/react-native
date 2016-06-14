@@ -4,7 +4,7 @@ import Story from '../index';
 
 const stories = storiesOf('<Story />', module);
 
-stories.add('basic-usage', function () {
+stories.add('Basic Usage', function () {
   const info = `
     # <Story />
 
@@ -15,9 +15,10 @@ stories.add('basic-usage', function () {
     Information such as example source code
 
     ~~~jsx
-    stories.add('basic-usage', function () {
+    stories.add('Basic Usage', function () {
       const info = \`
         # Story
+
         This is a simple example story to...
       \`;
 
