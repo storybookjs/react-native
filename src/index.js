@@ -1,6 +1,15 @@
 import React from 'react';
 import Remarkable from 'react-remarkable';
 
+const PropTypesMap = new Map();
+for (let typeName in React.PropTypes) {
+  if (!React.PropTypes.hasOwnProperty(typeName)) {
+    continue
+  }
+  const type = React.PropTypes[typeName];
+  PropTypesMap.set(type, typeName);
+}
+
 export default class Story extends React.Component {
   static propTypes = {
     components: React.PropTypes.arrayOf(React.PropTypes.func),
@@ -93,10 +102,16 @@ export default class Story extends React.Component {
     if (matches) {
       padding = matches[0].length;
     }
-    const header = `# ${this.props.context.kind}\n## ${this.props.context.story}\n`;
+    let header = '';
+    if (this.props.context) {
+      header = [
+        `# ${this.props.context.kind}`,
+        `## ${this.props.context.story}`
+      ].join('\n');
+    }
     const content = lines.map(s => s.slice(padding)).join('\n');
     const extras = this._getPropTables();
-    return header + content + extras;
+    return [ header, content, extras ].join('\n');
   }
 
   _getPropTables() {
@@ -121,7 +136,7 @@ export default class Story extends React.Component {
         continue
       }
       const type = Comp.propTypes[property];
-      const propType = this._getPropType(type);
+      const propType = PropTypesMap.get(type) || '-';
       const required = type.isRequired === undefined ? 'yes' : 'no';
       const defaults = this._getDefaultProp(property);
       table.push(`| ${property} | ${propType} | ${required} | ${defaults} |`);
@@ -130,10 +145,6 @@ export default class Story extends React.Component {
   }
 
   _getDefaultProp(property) {
-    return '-';
-  }
-
-  _getPropType(type) {
     return '-';
   }
 }

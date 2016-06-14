@@ -32,6 +32,10 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
+var _map = require('babel-runtime/core-js/map');
+
+var _map2 = _interopRequireDefault(_map);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -41,6 +45,15 @@ var _reactRemarkable = require('react-remarkable');
 var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PropTypesMap = new _map2.default();
+for (var typeName in _react2.default.PropTypes) {
+  if (!_react2.default.PropTypes.hasOwnProperty(typeName)) {
+    continue;
+  }
+  var type = _react2.default.PropTypes[typeName];
+  PropTypesMap.set(type, typeName);
+}
 
 var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
@@ -162,12 +175,15 @@ var Story = function (_React$Component) {
       if (matches) {
         padding = matches[0].length;
       }
-      var header = '# ' + this.props.context.kind + '\n## ' + this.props.context.story + '\n';
+      var header = '';
+      if (this.props.context) {
+        header = ['# ' + this.props.context.kind, '## ' + this.props.context.story].join('\n');
+      }
       var content = lines.map(function (s) {
         return s.slice(padding);
       }).join('\n');
       var extras = this._getPropTables();
-      return header + content + extras;
+      return [header, content, extras].join('\n');
     }
   }, {
     key: '_getPropTables',
@@ -189,9 +205,9 @@ var Story = function (_React$Component) {
         if (!Comp.propTypes.hasOwnProperty(property)) {
           continue;
         }
-        var type = Comp.propTypes[property];
-        var propType = this._getPropType(type);
-        var required = type.isRequired === undefined ? 'yes' : 'no';
+        var _type = Comp.propTypes[property];
+        var propType = PropTypesMap.get(_type) || '-';
+        var required = _type.isRequired === undefined ? 'yes' : 'no';
         var defaults = this._getDefaultProp(property);
         table.push('| ' + property + ' | ' + propType + ' | ' + required + ' | ' + defaults + ' |');
       }
@@ -200,11 +216,6 @@ var Story = function (_React$Component) {
   }, {
     key: '_getDefaultProp',
     value: function _getDefaultProp(property) {
-      return '-';
-    }
-  }, {
-    key: '_getPropType',
-    value: function _getPropType(type) {
       return '-';
     }
   }]);

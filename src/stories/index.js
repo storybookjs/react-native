@@ -10,7 +10,7 @@ stories.add('Basic Usage', function (context) {
   `;
 
   return (
-    <Story context={{}} info={info}>
+    <Story context={context} info={info}>
       <em>Click the "?" button on top-right corner for more info</em>
     </Story>
   );
@@ -22,7 +22,7 @@ stories.add('Props Table', function (context) {
   `;
 
   return (
-    <Story context={{}} components={[Story]} info={info}>
+    <Story context={context} components={[Story]} info={info}>
       <em>Click the "?" button on top-right corner for more info</em>
     </Story>
   );
