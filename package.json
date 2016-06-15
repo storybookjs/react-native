@@ -46,6 +46,8 @@
   },
   "dependencies": {
     "@kadira/react-split-pane": "^1.4.0",
+    "redux": "^3.5.2",
+    "mantra-core": "^1.6.1",
     "babel-runtime": "^6.5.0",
     "deep-equal": "^1.0.1",
     "fuzzysearch": "^1.0.3",
