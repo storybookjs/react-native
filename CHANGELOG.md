@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.32.0
+
+* Use @kadira/storybook-ui as the manager UI with the implemented provider for React. See `client/manager` for more info.
+
 ### v1.31.0
 
 * Pass a `context` argument to stories [PR250](https://github.com/kadirahq/react-storybook/pull/250)
