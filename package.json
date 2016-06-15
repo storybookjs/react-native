@@ -51,6 +51,7 @@
   "dependencies": {
     "babel-runtime": "^6.5.0",
     "markdown-modest": "github:markdowncss/modest",
+    "react-addons-create-fragment": "^15.1.0",
     "react-remarkable": "^1.1.1"
   },
   "main": "dist/index.js",
