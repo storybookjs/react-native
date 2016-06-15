@@ -44,6 +44,10 @@ var _reactRemarkable = require('react-remarkable');
 
 var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
 
+var _Node = require('./Node.js');
+
+var _Node2 = _interopRequireDefault(_Node);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PropTypesMap = new _map2.default();
@@ -154,7 +158,14 @@ var Story = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'storybook-story-info-body' },
-              _react2.default.createElement(_reactRemarkable2.default, { source: this._getInfoContent() })
+              _react2.default.createElement(_reactRemarkable2.default, { source: this._getInfoContent() }),
+              _react2.default.createElement(
+                'pre',
+                null,
+                _react2.default.Children.map(this.props.children, function (root) {
+                  return _react2.default.createElement(_Node2.default, { depth: 0, node: root });
+                })
+              )
             )
           )
         )

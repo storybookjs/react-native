@@ -31,4 +31,35 @@ stories.add('Prop Tables', function (context) {
       <em>Click the "?" button on top-right corner for more info</em>
     </Story>
   );
-})
+});
+
+stories.add('JSX Source Code', function () {
+  const info = `
+    You can see the JSX source code of your component as well.
+  `;
+
+  class Container extends React.Component {
+    render() {
+      return (<div style={{ backgroundColor: this.props.color }}>
+        {this.props.children}
+      </div>);
+    }
+  }
+
+  return (
+    <Story info={info}>
+      This component contains several child components
+      <br />
+      <br />
+      <Container>
+        <strong>This is one</strong>
+      </Container>
+      <div style={{ padding: 20 }}>
+        <Container color="rgb(247, 247, 247)">
+          <div>This is another</div>
+        </Container>
+      </div>
+      <em>Click the "?" button on top-right corner for more info</em>
+    </Story>
+  );
+});
