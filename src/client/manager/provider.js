@@ -5,7 +5,7 @@ import React from 'react';
 import createPageBus from 'page-bus';
 
 export default class ReactProvider {
-  constructor(api) {
+  constructor() {
     this.dataId = UUID.v4();
   }
 
@@ -13,13 +13,13 @@ export default class ReactProvider {
     const queryParams = {
       dataId: this.dataId,
       selectedKind,
-      selectedStory
+      selectedStory,
     };
 
     const queryString = qs.stringify(queryParams);
     const url = `iframe.html?${queryString}`;
     return (
-      <Preview url={url}/>
+      <Preview url={url} />
     );
   }
 
