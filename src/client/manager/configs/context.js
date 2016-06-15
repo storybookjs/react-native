@@ -1,6 +1,7 @@
-export default function (reduxStore, Preview) {
+export default function (reduxStore, domNode, provider) {
   return {
     reduxStore,
-    Preview,
+    domNode,
+    provider,
   };
 }
