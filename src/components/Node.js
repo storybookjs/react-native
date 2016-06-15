@@ -25,6 +25,7 @@ export default class Node extends React.Component {
 
     const {name, text, children} = getData(node);
 
+    // Just text
     if (!name) {
       return <div style={containerStyle}>
         <span style={tagStyle}>{text}</span>
@@ -45,7 +46,7 @@ export default class Node extends React.Component {
       </div>
       {React.Children.map(children, childElement => <Node node={childElement} depth={depth + 1}/>)}
       <div style={containerStyle}>
-        <span style={tagStyle}>&lt;{name} /&gt;</span>
+        <span style={tagStyle}>&lt;/{name}&gt;</span>
       </div>
     </div>
   }
