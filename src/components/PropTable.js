@@ -22,16 +22,35 @@ export default class PropTable extends React.Component {
       return null;
     }
 
-    const props = [];
-    for (let property in comp.propTypes) {
-      if (!comp.propTypes.hasOwnProperty(property)) {
-        continue
+    const props = {};
+
+    if (comp.propTypes) {
+      for (let property in comp.propTypes) {
+        if (!comp.propTypes.hasOwnProperty(property)) {
+          continue
+        }
+        const type = comp.propTypes[property];
+        const propType = PropTypesMap.get(type) || 'other';
+        const required = type.isRequired === undefined ? 'yes' : 'no';
+        const defaultValue = '-';
+        props[property] = {property, propType, required, defaultValue};
       }
-      const type = comp.propTypes[property];
-      const propType = PropTypesMap.get(type) || 'other';
-      const required = type.isRequired === undefined ? 'yes' : 'no';
-      const defaults = '-';
-      props.push({property, propType, required, defaults});
+    }
+
+    if (comp.defaultProps) {
+      for (let property in comp.defaultProps) {
+        if (!comp.defaultProps.hasOwnProperty(property)) {
+          continue
+        }
+        const value = comp.defaultProps[property];
+        if (value === undefined) {
+          continue;
+        }
+        if (!props[property]) {
+          props[property] = {property};
+        }
+        props[property].defaultValue = value;
+      }
     }
 
     return (
@@ -41,16 +60,16 @@ export default class PropTable extends React.Component {
             <th>property</th>
             <th>propType</th>
             <th>required</th>
-            <th>defaults</th>
+            <th>default</th>
           </tr>
         </thead>
         <tbody>
-          {props.map(row => (
+          {Object.values(props).map(row => (
             <tr>
               <td>{row.property}</td>
               <td>{row.propType}</td>
               <td>{row.required}</td>
-              <td>{row.defaults}</td>
+              <td>{row.defaultValue.toString()}</td>
             </tr>
           ))}
         </tbody>

@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _values = require('babel-runtime/core-js/object/values');
+
+var _values2 = _interopRequireDefault(_values);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -60,16 +64,35 @@ var PropTable = function (_React$Component) {
         return null;
       }
 
-      var props = [];
-      for (var property in comp.propTypes) {
-        if (!comp.propTypes.hasOwnProperty(property)) {
-          continue;
+      var props = {};
+
+      if (comp.propTypes) {
+        for (var property in comp.propTypes) {
+          if (!comp.propTypes.hasOwnProperty(property)) {
+            continue;
+          }
+          var _type = comp.propTypes[property];
+          var propType = PropTypesMap.get(_type) || 'other';
+          var required = _type.isRequired === undefined ? 'yes' : 'no';
+          var defaultValue = '-';
+          props[property] = { property: property, propType: propType, required: required, defaultValue: defaultValue };
         }
-        var _type = comp.propTypes[property];
-        var propType = PropTypesMap.get(_type) || 'other';
-        var required = _type.isRequired === undefined ? 'yes' : 'no';
-        var defaults = '-';
-        props.push({ property: property, propType: propType, required: required, defaults: defaults });
+      }
+
+      if (comp.defaultProps) {
+        for (var _property in comp.defaultProps) {
+          if (!comp.defaultProps.hasOwnProperty(_property)) {
+            continue;
+          }
+          var value = comp.defaultProps[_property];
+          if (value === undefined) {
+            continue;
+          }
+          if (!props[_property]) {
+            props[_property] = { property: _property };
+          }
+          props[_property].defaultValue = value;
+        }
       }
 
       return _react2.default.createElement(
@@ -99,14 +122,14 @@ var PropTable = function (_React$Component) {
             _react2.default.createElement(
               'th',
               null,
-              'defaults'
+              'default'
             )
           )
         ),
         _react2.default.createElement(
           'tbody',
           null,
-          props.map(function (row) {
+          (0, _values2.default)(props).map(function (row) {
             return _react2.default.createElement(
               'tr',
               null,
@@ -128,7 +151,7 @@ var PropTable = function (_React$Component) {
               _react2.default.createElement(
                 'td',
                 null,
-                row.defaults
+                row.defaultValue.toString()
               )
             );
           })
