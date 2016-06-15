@@ -5,11 +5,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (injectDeps, _ref) {
-  var Preview = _ref.Preview;
+  var reduxStore = _ref.reduxStore;
+  var provider = _ref.provider;
+  var domNode = _ref.domNode;
 
   var InjectedLayout = injectDeps(_layout2.default);
   var InjectedShortcutsHelp = injectDeps(_shortcuts_help2.default);
-  var rootEl = document.getElementById('root');
+
+  // generate preview
+  var Preview = function Preview() {
+    var _reduxStore$getState = reduxStore.getState();
+
+    var api = _reduxStore$getState.api;
+
+    var preview = provider.renderPreview(api.selectedKind, api.selectedStory);
+    return preview;
+  };
 
   var root = _react2.default.createElement(
     'div',
@@ -27,7 +38,7 @@ exports.default = function (injectDeps, _ref) {
     }),
     _react2.default.createElement(InjectedShortcutsHelp, null)
   );
-  _reactDom2.default.render(root, rootEl);
+  _reactDom2.default.render(root, domNode);
 };
 
 var _react = require('react');
