@@ -19,6 +19,21 @@ stories.add('Basic Usage', function (context) {
   );
 });
 
+stories.add('Inline Info', function (context) {
+  const info = `
+    To show your story information immmediately after yout story elements
+    set the \`inline\` boolean property to true. This will render this text,
+    source code and prop-tables (if provider). Info styles will be adjusted
+    to suit and the headers will be omitted.
+  `;
+
+  return (
+    <Story context={context} info={info} inline={true}>
+      <em>You can also show story info after your example</em>
+    </Story>
+  );
+});
+
 stories.add('Prop Tables', function (context) {
   const info = `
     You can also automatically generate propType tables for components.

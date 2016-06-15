@@ -17,6 +17,7 @@ export default class Story extends React.Component {
     propTables: React.PropTypes.arrayOf(React.PropTypes.func),
     context: React.PropTypes.object,
     info: React.PropTypes.string,
+    inline: React.PropTypes.bool,
   }
 
   stylesheet = {
@@ -66,6 +67,28 @@ export default class Story extends React.Component {
   }
 
   render() {
+    if (this.props.inline) {
+      return this.renderInline();
+    }
+    return this.renderOverlay();
+  }
+
+  renderInline() {
+    return (
+      <div>
+        { this.props.children }
+        <div className='storybook-story-info-page'>
+          <div className='storybook-story-info-body storybook-story-info-body-inline'>
+            { this._getInfoContent() }
+            { this._getSourceCode() }
+            { this._getPropTables() }
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderOverlay() {
     const linkStyle = {
       ...this.stylesheet.link.base,
       ...this.stylesheet.link.topRight,
@@ -77,7 +100,7 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        {this.props.children}
+        { this.props.children }
         <a style={linkStyle} onClick={() => this.openInfo()}>?</a>
         <div style={infoStyle}>
           <a style={linkStyle} onClick={() => this.closeInfo()}>×</a>

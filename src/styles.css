@@ -192,6 +192,12 @@
   padding: .25rem;
 }
 
+.storybook-story-info-body-inline {
+  max-width: inherit;
+  border-top: solid 1px #fafafa;
+  margin-top: 1.5em;
+}
+
 .storybook-story-info-body h1,
 .storybook-story-info-body h2,
 .storybook-story-info-body h3,

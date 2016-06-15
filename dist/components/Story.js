@@ -123,6 +123,34 @@ var Story = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      if (this.props.inline) {
+        return this.renderInline();
+      }
+      return this.renderOverlay();
+    }
+  }, {
+    key: 'renderInline',
+    value: function renderInline() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        this.props.children,
+        _react2.default.createElement(
+          'div',
+          { className: 'storybook-story-info-page' },
+          _react2.default.createElement(
+            'div',
+            { className: 'storybook-story-info-body storybook-story-info-body-inline' },
+            this._getInfoContent(),
+            this._getSourceCode(),
+            this._getPropTables()
+          )
+        )
+      );
+    }
+  }, {
+    key: 'renderOverlay',
+    value: function renderOverlay() {
       var _this2 = this;
 
       var linkStyle = (0, _extends3.default)({}, this.stylesheet.link.base, this.stylesheet.link.topRight);
@@ -348,6 +376,7 @@ Story.displayName = 'Story';
 Story.propTypes = {
   propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
   context: _react2.default.PropTypes.object,
-  info: _react2.default.PropTypes.string
+  info: _react2.default.PropTypes.string,
+  inline: _react2.default.PropTypes.bool
 };
 exports.default = Story;
