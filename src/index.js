@@ -7,7 +7,7 @@ import shortcutsModule from './modules/shortcuts';
 import uiModule from './modules/ui';
 import providerModule from './modules/provider';
 
-export default function(domNode, provider) {
+export default function (domNode, provider) {
   const reducer = combineReducers({
     ...apiModule.reducers,
     ...shortcutsModule.reducers,
