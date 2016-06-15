@@ -1,15 +1,7 @@
 import React from 'react';
 import Remarkable from 'react-remarkable';
-import Node from './Node.js'
-
-const PropTypesMap = new Map();
-for (let typeName in React.PropTypes) {
-  if (!React.PropTypes.hasOwnProperty(typeName)) {
-    continue
-  }
-  const type = React.PropTypes[typeName];
-  PropTypesMap.set(type, typeName);
-}
+import PropTable from './PropTable';
+import Node from './Node.js';
 
 export default class Story extends React.Component {
   static displayName = 'Story';
@@ -63,24 +55,14 @@ export default class Story extends React.Component {
     this.state = {open: false};
   }
 
-  openInfo() {
-    this.setState({open: true});
-    return false;
-  }
-
-  closeInfo() {
-    this.setState({open: false});
-    return false;
-  }
-
   render() {
     if (this.props.showInline) {
-      return this.renderInline();
+      return this._renderInline();
     }
-    return this.renderOverlay();
+    return this._renderOverlay();
   }
 
-  renderInline() {
+  _renderInline() {
     return (
       <div>
         { this.props.children }
@@ -95,7 +77,7 @@ export default class Story extends React.Component {
     );
   }
 
-  renderOverlay() {
+  _renderOverlay() {
     const linkStyle = {
       ...this.stylesheet.link.base,
       ...this.stylesheet.link.topRight,
@@ -105,12 +87,22 @@ export default class Story extends React.Component {
       infoStyle.display = 'none';
     }
 
+    const openOverlay = () => {
+      this.setState({open: true});
+      return false;
+    }
+
+    const closeOverlay = () => {
+      this.setState({open: false});
+      return false;
+    }
+
     return (
       <div>
         { this.props.children }
-        <a style={linkStyle} onClick={() => this.openInfo()}>?</a>
+        <a style={linkStyle} onClick={openOverlay}>?</a>
         <div style={infoStyle}>
-          <a style={linkStyle} onClick={() => this.closeInfo()}>×</a>
+          <a style={linkStyle} onClick={closeOverlay}>×</a>
           <div className='storybook-story-info-page'>
             <div className='storybook-story-info-body'>
               { this._getInfoHeader() }
@@ -173,57 +165,14 @@ export default class Story extends React.Component {
 
   _getPropTables() {
     if (!this.props.propTables) {
-      return '';
-    }
-    const tables = this.props.propTables.map(this._getPropTable.bind(this));
-    return <div>{tables}</div>;
-  }
-
-  _getPropTable(Comp) {
-    if (!Comp) {
-      return '';
+      return null;
     }
 
-    const rows = [];
-    for (let property in Comp.propTypes) {
-      if (!Comp.propTypes.hasOwnProperty(property)) {
-        continue
-      }
-      const type = Comp.propTypes[property];
-      const propType = PropTypesMap.get(type) || '-';
-      const required = type.isRequired === undefined ? 'yes' : 'no';
-      const defaults = this._getDefaultProp(property);
-      rows.push({property, propType, required, defaults});
-    }
-
-    return (
-      <main>
-        <h3>{Comp.displayName || Comp.name} PropTypes</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>property</th>
-              <th>propType</th>
-              <th>required</th>
-              <th>defaults</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map(row => (
-              <tr>
-                <td>{row.property}</td>
-                <td>{row.propType}</td>
-                <td>{row.required}</td>
-                <td>{row.defaults}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </main>
-    );
-  }
-
-  _getDefaultProp(property) {
-    return '-';
+    return this.props.propTables.map(comp => (
+      <div>
+        <h3>{comp.displayName || comp.name} PropTypes</h3>
+        <PropTable comp={comp} />
+      </div>
+    ));
   }
 }

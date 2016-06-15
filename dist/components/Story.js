@@ -32,10 +32,6 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _map = require('babel-runtime/core-js/map');
-
-var _map2 = _interopRequireDefault(_map);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -44,20 +40,15 @@ var _reactRemarkable = require('react-remarkable');
 
 var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
 
+var _PropTable = require('./PropTable');
+
+var _PropTable2 = _interopRequireDefault(_PropTable);
+
 var _Node = require('./Node.js');
 
 var _Node2 = _interopRequireDefault(_Node);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var PropTypesMap = new _map2.default();
-for (var typeName in _react2.default.PropTypes) {
-  if (!_react2.default.PropTypes.hasOwnProperty(typeName)) {
-    continue;
-  }
-  var type = _react2.default.PropTypes[typeName];
-  PropTypesMap.set(type, typeName);
-}
 
 var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
@@ -109,28 +100,16 @@ var Story = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Story, [{
-    key: 'openInfo',
-    value: function openInfo() {
-      this.setState({ open: true });
-      return false;
-    }
-  }, {
-    key: 'closeInfo',
-    value: function closeInfo() {
-      this.setState({ open: false });
-      return false;
-    }
-  }, {
     key: 'render',
     value: function render() {
       if (this.props.showInline) {
-        return this.renderInline();
+        return this._renderInline();
       }
-      return this.renderOverlay();
+      return this._renderOverlay();
     }
   }, {
-    key: 'renderInline',
-    value: function renderInline() {
+    key: '_renderInline',
+    value: function _renderInline() {
       return _react2.default.createElement(
         'div',
         null,
@@ -149,8 +128,8 @@ var Story = function (_React$Component) {
       );
     }
   }, {
-    key: 'renderOverlay',
-    value: function renderOverlay() {
+    key: '_renderOverlay',
+    value: function _renderOverlay() {
       var _this2 = this;
 
       var linkStyle = (0, _extends3.default)({}, this.stylesheet.link.base, this.stylesheet.link.topRight);
@@ -159,15 +138,23 @@ var Story = function (_React$Component) {
         infoStyle.display = 'none';
       }
 
+      var openOverlay = function openOverlay() {
+        _this2.setState({ open: true });
+        return false;
+      };
+
+      var closeOverlay = function closeOverlay() {
+        _this2.setState({ open: false });
+        return false;
+      };
+
       return _react2.default.createElement(
         'div',
         null,
         this.props.children,
         _react2.default.createElement(
           'a',
-          { style: linkStyle, onClick: function onClick() {
-              return _this2.openInfo();
-            } },
+          { style: linkStyle, onClick: openOverlay },
           '?'
         ),
         _react2.default.createElement(
@@ -175,9 +162,7 @@ var Story = function (_React$Component) {
           { style: infoStyle },
           _react2.default.createElement(
             'a',
-            { style: linkStyle, onClick: function onClick() {
-                return _this2.closeInfo();
-              } },
+            { style: linkStyle, onClick: closeOverlay },
             '×'
           ),
           _react2.default.createElement(
@@ -265,111 +250,22 @@ var Story = function (_React$Component) {
     key: '_getPropTables',
     value: function _getPropTables() {
       if (!this.props.propTables) {
-        return '';
-      }
-      var tables = this.props.propTables.map(this._getPropTable.bind(this));
-      return _react2.default.createElement(
-        'div',
-        null,
-        tables
-      );
-    }
-  }, {
-    key: '_getPropTable',
-    value: function _getPropTable(Comp) {
-      if (!Comp) {
-        return '';
+        return null;
       }
 
-      var rows = [];
-      for (var property in Comp.propTypes) {
-        if (!Comp.propTypes.hasOwnProperty(property)) {
-          continue;
-        }
-        var _type = Comp.propTypes[property];
-        var propType = PropTypesMap.get(_type) || '-';
-        var required = _type.isRequired === undefined ? 'yes' : 'no';
-        var defaults = this._getDefaultProp(property);
-        rows.push({ property: property, propType: propType, required: required, defaults: defaults });
-      }
-
-      return _react2.default.createElement(
-        'main',
-        null,
-        _react2.default.createElement(
-          'h3',
-          null,
-          Comp.displayName || Comp.name,
-          ' PropTypes'
-        ),
-        _react2.default.createElement(
-          'table',
+      return this.props.propTables.map(function (comp) {
+        return _react2.default.createElement(
+          'div',
           null,
           _react2.default.createElement(
-            'thead',
+            'h3',
             null,
-            _react2.default.createElement(
-              'tr',
-              null,
-              _react2.default.createElement(
-                'th',
-                null,
-                'property'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'propType'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'required'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'defaults'
-              )
-            )
+            comp.displayName || comp.name,
+            ' PropTypes'
           ),
-          _react2.default.createElement(
-            'tbody',
-            null,
-            rows.map(function (row) {
-              return _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  row.property
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  row.propType
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  row.required
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  row.defaults
-                )
-              );
-            })
-          )
-        )
-      );
-    }
-  }, {
-    key: '_getDefaultProp',
-    value: function _getDefaultProp(property) {
-      return '-';
+          _react2.default.createElement(_PropTable2.default, { comp: comp })
+        );
+      });
     }
   }]);
   return Story;
