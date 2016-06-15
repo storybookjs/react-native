@@ -14,10 +14,17 @@ for (let typeName in React.PropTypes) {
 export default class Story extends React.Component {
   static displayName = 'Story';
   static propTypes = {
-    propTables: React.PropTypes.arrayOf(React.PropTypes.func),
     context: React.PropTypes.object,
     info: React.PropTypes.string,
-    inline: React.PropTypes.bool,
+    propTables: React.PropTypes.arrayOf(React.PropTypes.func),
+    showInline: React.PropTypes.bool,
+    showHeader: React.PropTypes.bool,
+    showSource: React.PropTypes.bool,
+  }
+  static defaultProps = {
+    showInline: false,
+    showHeader: true,
+    showSource: true,
   }
 
   stylesheet = {
@@ -67,7 +74,7 @@ export default class Story extends React.Component {
   }
 
   render() {
-    if (this.props.inline) {
+    if (this.props.showInline) {
       return this.renderInline();
     }
     return this.renderOverlay();
@@ -118,7 +125,7 @@ export default class Story extends React.Component {
   }
 
   _getInfoHeader() {
-    if (!this.props.context) {
+    if (!this.props.context || !this.props.showHeader) {
       return null;
     }
 
@@ -148,6 +155,10 @@ export default class Story extends React.Component {
   }
 
   _getSourceCode() {
+    if (!this.props.showSource) {
+      return null;
+    }
+
     return (
       <div>
         <h3>Example Source</h3>
@@ -187,7 +198,7 @@ export default class Story extends React.Component {
 
     return (
       <main>
-        <h3>&lt;{Comp.displayName || Comp.name} /&gt; PropTypes</h3>
+        <h3>{Comp.displayName || Comp.name} PropTypes</h3>
         <table>
           <thead>
             <tr>

@@ -123,7 +123,7 @@ var Story = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.inline) {
+      if (this.props.showInline) {
         return this.renderInline();
       }
       return this.renderOverlay();
@@ -198,7 +198,7 @@ var Story = function (_React$Component) {
   }, {
     key: '_getInfoHeader',
     value: function _getInfoHeader() {
-      if (!this.props.context) {
+      if (!this.props.context || !this.props.showHeader) {
         return null;
       }
 
@@ -240,6 +240,10 @@ var Story = function (_React$Component) {
   }, {
     key: '_getSourceCode',
     value: function _getSourceCode() {
+      if (!this.props.showSource) {
+        return null;
+      }
+
       return _react2.default.createElement(
         'div',
         null,
@@ -295,9 +299,8 @@ var Story = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           null,
-          '<',
           Comp.displayName || Comp.name,
-          ' /> PropTypes'
+          ' PropTypes'
         ),
         _react2.default.createElement(
           'table',
@@ -374,9 +377,16 @@ var Story = function (_React$Component) {
 
 Story.displayName = 'Story';
 Story.propTypes = {
-  propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
   context: _react2.default.PropTypes.object,
   info: _react2.default.PropTypes.string,
-  inline: _react2.default.PropTypes.bool
+  propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
+  showInline: _react2.default.PropTypes.bool,
+  showHeader: _react2.default.PropTypes.bool,
+  showSource: _react2.default.PropTypes.bool
+};
+Story.defaultProps = {
+  showInline: false,
+  showHeader: true,
+  showSource: true
 };
 exports.default = Story;

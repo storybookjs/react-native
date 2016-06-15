@@ -14,22 +14,22 @@ stories.add('Basic Usage', function (context) {
 
   return (
     <Story context={context} info={info}>
-      <em>Click the "?" button on top-right corner for more info</em>
+      <em>Click the "?" button on top-right corner for <span style={{textDecoration: 'underline'}}>more information</span> about this story</em>
     </Story>
   );
 });
 
-stories.add('Inline Info', function (context) {
+stories.add('Show Inline', function (context) {
   const info = `
     To show your story information immmediately after yout story elements
-    set the \`inline\` boolean property to true. This will render this text,
+    set the \`showInline\` boolean property to true. This will render this text,
     source code and prop-tables (if provider). Info styles will be adjusted
     to suit and the headers will be omitted.
   `;
 
   return (
-    <Story context={context} info={info} inline={true}>
-      <em>You can also show story info after your example</em>
+    <Story info={info} showInline={true}>
+      <em>You can also show story info immediately after your example</em>
     </Story>
   );
 });
@@ -42,38 +42,7 @@ stories.add('Prop Tables', function (context) {
   `;
 
   return (
-    <Story context={context} propTables={[Story]} info={info}>
-      <em>Click the "?" button on top-right corner for more info</em>
-    </Story>
-  );
-});
-
-stories.add('Source Code', function (context) {
-  const info = `
-    You can see the JSX source code of your component as well.
-  `;
-
-  class Container extends React.Component {
-    render() {
-      return (<div style={{ backgroundColor: this.props.color }}>
-        {this.props.children}
-      </div>);
-    }
-  }
-
-  return (
-    <Story context={context} info={info}>
-      This component contains several child components
-      <br />
-      <br />
-      <Container>
-        <strong>This is one</strong>
-      </Container>
-      <div style={{ padding: 20 }}>
-        <Container color="rgb(247, 247, 247)">
-          <div>This is another</div>
-        </Container>
-      </div>
+    <Story info={info} propTables={[Story]} showInline={true}>
       <em>Click the "?" button on top-right corner for more info</em>
     </Story>
   );
