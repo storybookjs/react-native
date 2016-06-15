@@ -53,9 +53,13 @@ export default class PropTable extends React.Component {
       }
     }
 
-    if (!Object.keys(props).length) {
+    const array = Object.values(props);
+    if (!array.length) {
       return <small>No propTypes defined!</small>;
     }
+    array.sort(function (a, b) {
+      return a.property > b.property;
+    });
 
     return (
       <table>
@@ -68,7 +72,7 @@ export default class PropTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {Object.values(props).map(row => (
+          {array.map(row => (
             <tr key={row.property}>
               <td>{row.property}</td>
               <td>{row.propType}</td>
