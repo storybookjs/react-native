@@ -65,7 +65,7 @@ export default class PropTable extends React.Component {
         </thead>
         <tbody>
           {Object.values(props).map(row => (
-            <tr>
+            <tr key={row.property}>
               <td>{row.property}</td>
               <td>{row.propType}</td>
               <td>{row.required}</td>
