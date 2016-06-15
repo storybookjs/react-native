@@ -25,7 +25,7 @@ export default class Story extends React.Component {
         fontFamily: 'sans-serif',
         fontSize: 12,
         display: 'block',
-        position: 'absolute',
+        position: 'fixed',
         textDecoration: 'none',
         background: '#28c',
         color: '#fff',
@@ -164,15 +164,52 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
-    if (!this.props.propTables) {
+    if (!this.props.children && !this.props.propTables) {
       return null;
     }
 
-    return this.props.propTables.map((comp, idx) => (
-      <div key={idx}>
-        <h3>{comp.displayName || comp.name} PropTypes</h3>
-        <PropTable comp={comp} />
-      </div>
-    ));
+    const types = new Map();
+
+    if (this.props.propTables) {
+      this.props.propTables.forEach(function (type) {
+        types.set(type, true);
+      });
+    }
+
+    function extract(children) {
+      if (Array.isArray(children)) {
+        children.forEach(extract);
+        return;
+      }
+      if (typeof children === 'string' || typeof children.type === 'string') {
+        return;
+      }
+
+      const type = children.type;
+      const name = type.displayName || type.name;
+      if (!types.has(type)) {
+        types.set(type, true);
+      }
+      if (children.props.children) {
+        extract(children.props.children);
+      }
+    }
+
+    // extract components from children
+    extract(this.props.children);
+
+    const array = Array.from(types.keys());
+    array.sort(function (a, b) {
+      return (a.displayName || a.name) > (b.displayName || b.name);
+    });
+
+    return array.map(function (type, idx) {
+      return (
+        <div key={idx}>
+          <h3>&lt;{type.displayName || type.name} /&gt; PropTypes</h3>
+          <PropTable type={type} />
+        </div>
+      );
+    });
   }
 }

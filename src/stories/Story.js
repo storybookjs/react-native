@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Story from '../index';
 
-const stories = storiesOf('<Story />', module);
+const stories = storiesOf('Basic Usage', module);
 
-stories.add('Basic Usage', function (context) {
+stories.add('Basic Modal', function (context) {
   const info = `
     The \`<Story>\` component can be used to show additional information with
     your stories. To render text here, provide your markdown formatted text
@@ -37,13 +37,33 @@ stories.add('Show Inline', function (context) {
 stories.add('Prop Tables', function (context) {
   const info = `
     You can also automatically generate propType tables for components.
-    Just provide an array of react components as \`propTables\` property
-    to the story component.
+    If you have any custom react components in your story, prop-type
+    tables will be automatically generated for them. If you need to provide
+    additional components, just give an array of react components as \`propTables\`
+    property to the story component.
   `;
 
+  const Hello = React.createClass({
+    propTypes: {
+      name: React.PropTypes.string,
+    },
+    render() {
+      return <em>hello {this.props.name}</em>;
+    }
+  });
+
+  const World = React.createClass({
+    render() {
+      return <em>hello world</em>;
+    }
+  });
+
   return (
-    <Story info={info} propTables={[Story]} showInline={true}>
-      <em>Click the "?" button on top-right corner for more info</em>
+    <Story context={context} info={info}>
+      <Hello name={'world'}>
+        <Hello name={'ninja'} />
+        <World />
+      </Hello>
     </Story>
   );
 });

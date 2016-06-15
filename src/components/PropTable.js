@@ -12,37 +12,37 @@ for (let typeName in React.PropTypes) {
 export default class PropTable extends React.Component {
   static displayName = 'PropTable';
   static propTypes = {
-    comp: React.PropTypes.func
+    type: React.PropTypes.func
   };
 
   render () {
-    const comp = this.props.comp;
+    const type = this.props.type;
 
-    if (!comp) {
+    if (!type) {
       return null;
     }
 
     const props = {};
 
-    if (comp.propTypes) {
-      for (let property in comp.propTypes) {
-        if (!comp.propTypes.hasOwnProperty(property)) {
+    if (type.propTypes) {
+      for (let property in type.propTypes) {
+        if (!type.propTypes.hasOwnProperty(property)) {
           continue
         }
-        const type = comp.propTypes[property];
-        const propType = PropTypesMap.get(type) || 'other';
-        const required = type.isRequired === undefined ? 'yes' : 'no';
+        const typeInfo = type.propTypes[property];
+        const propType = PropTypesMap.get(typeInfo) || 'other';
+        const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
         const defaultValue = '-';
         props[property] = {property, propType, required, defaultValue};
       }
     }
 
-    if (comp.defaultProps) {
-      for (let property in comp.defaultProps) {
-        if (!comp.defaultProps.hasOwnProperty(property)) {
+    if (type.defaultProps) {
+      for (let property in type.defaultProps) {
+        if (!type.defaultProps.hasOwnProperty(property)) {
           continue
         }
-        const value = comp.defaultProps[property];
+        const value = type.defaultProps[property];
         if (value === undefined) {
           continue;
         }
@@ -51,6 +51,10 @@ export default class PropTable extends React.Component {
         }
         props[property].defaultValue = value;
       }
+    }
+
+    if (!Object.keys(props).length) {
+      return <small>No propTypes defined!</small>;
     }
 
     return (
