@@ -240,8 +240,8 @@ var Story = function (_React$Component) {
         _react2.default.createElement(
           'pre',
           null,
-          _react2.default.Children.map(this.props.children, function (root) {
-            return _react2.default.createElement(_Node2.default, { depth: 0, node: root });
+          _react2.default.Children.map(this.props.children, function (root, idx) {
+            return _react2.default.createElement(_Node2.default, { key: idx, depth: 0, node: root });
           })
         )
       );
@@ -253,10 +253,10 @@ var Story = function (_React$Component) {
         return null;
       }
 
-      return this.props.propTables.map(function (comp) {
+      return this.props.propTables.map(function (comp, idx) {
         return _react2.default.createElement(
           'div',
-          null,
+          { key: idx },
           _react2.default.createElement(
             'h3',
             null,

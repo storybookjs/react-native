@@ -132,7 +132,7 @@ var PropTable = function (_React$Component) {
           (0, _values2.default)(props).map(function (row) {
             return _react2.default.createElement(
               'tr',
-              null,
+              { key: row.property },
               _react2.default.createElement(
                 'td',
                 null,

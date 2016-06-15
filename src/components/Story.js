@@ -155,8 +155,8 @@ export default class Story extends React.Component {
       <div>
         <h3>Example Source</h3>
         <pre>
-        {React.Children.map(this.props.children, root => (
-          <Node depth={0} node={root}></Node>
+        {React.Children.map(this.props.children, (root, idx) => (
+          <Node key={idx} depth={0} node={root}></Node>
         ))}
         </pre>
       </div>
@@ -168,8 +168,8 @@ export default class Story extends React.Component {
       return null;
     }
 
-    return this.props.propTables.map(comp => (
-      <div>
+    return this.props.propTables.map((comp, idx) => (
+      <div key={idx}>
         <h3>{comp.displayName || comp.name} PropTypes</h3>
         <PropTable comp={comp} />
       </div>
