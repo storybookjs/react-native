@@ -1,4 +1,5 @@
 import React from 'react';
+import Props from './Props'
 
 export default class Node extends React.Component {
   constructor(props){
@@ -25,6 +26,7 @@ export default class Node extends React.Component {
 
     const {name, text, children} = getData(node);
 
+    // Just text
     if (!name) {
       return <div style={containerStyle}>
         <span style={tagStyle}>{text}</span>
@@ -34,18 +36,22 @@ export default class Node extends React.Component {
     // Single-line tag
     if (!children) {
       return <div style={containerStyle}>
-        <span style={tagStyle}>&lt;{name} /&gt;</span>
+        <span style={tagStyle}>&lt;{name}</span>
+          <Props node={node} />
+        <span style={tagStyle}> /&gt;</span>
       </div>;
     }
 
     // tag with children
     return <div>
       <div style={containerStyle}>
-        <span style={tagStyle}>&lt;{name}&gt;</span>
+        <span style={tagStyle}>&lt;{name}</span>
+          <Props node={node} />
+        <span style={tagStyle}>&gt;</span>
       </div>
       {React.Children.map(children, childElement => <Node node={childElement} depth={depth + 1}/>)}
       <div style={containerStyle}>
-        <span style={tagStyle}>&lt;{name} /&gt;</span>
+        <span style={tagStyle}>&lt;/{name}&gt;</span>
       </div>
     </div>
   }

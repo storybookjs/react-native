@@ -32,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Props = require('./Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Node = function (_React$Component) {
@@ -75,6 +79,7 @@ var Node = function (_React$Component) {
       var text = _getData.text;
       var children = _getData.children;
 
+      // Just text
 
       if (!name) {
         return _react2.default.createElement(
@@ -97,7 +102,12 @@ var Node = function (_React$Component) {
             'span',
             { style: tagStyle },
             '<',
-            name,
+            name
+          ),
+          _react2.default.createElement(_Props2.default, { node: node }),
+          _react2.default.createElement(
+            'span',
+            { style: tagStyle },
             ' />'
           )
         );
@@ -114,7 +124,12 @@ var Node = function (_React$Component) {
             'span',
             { style: tagStyle },
             '<',
-            name,
+            name
+          ),
+          _react2.default.createElement(_Props2.default, { node: node }),
+          _react2.default.createElement(
+            'span',
+            { style: tagStyle },
             '>'
           )
         ),
@@ -127,9 +142,9 @@ var Node = function (_React$Component) {
           _react2.default.createElement(
             'span',
             { style: tagStyle },
-            '<',
+            '</',
             name,
-            ' />'
+            '>'
           )
         )
       );
