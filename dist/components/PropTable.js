@@ -8,10 +8,6 @@ var _values = require('babel-runtime/core-js/object/values');
 
 var _values2 = _interopRequireDefault(_values);
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -99,13 +95,17 @@ var PropTable = function (_React$Component) {
         }
       }
 
-      if (!(0, _keys2.default)(props).length) {
+      var array = (0, _values2.default)(props);
+      if (!array.length) {
         return _react2.default.createElement(
           'small',
           null,
           'No propTypes defined!'
         );
       }
+      array.sort(function (a, b) {
+        return a.property > b.property;
+      });
 
       return _react2.default.createElement(
         'table',
@@ -141,7 +141,7 @@ var PropTable = function (_React$Component) {
         _react2.default.createElement(
           'tbody',
           null,
-          (0, _values2.default)(props).map(function (row) {
+          array.map(function (row) {
             return _react2.default.createElement(
               'tr',
               { key: row.property },
