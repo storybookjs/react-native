@@ -1,6 +1,6 @@
 import 'es6-shim';
-var renderManagerUI = require('@kadira/storybook-core');
-var Provider = require('./provider');
+import renderManagerUI from '@kadira/storybook-core';
+import Provider from './provider';
 
 var rootEl = document.getElementById('root');
-renderManagerUI.default(rootEl, new (Provider.default)());
+renderManagerUI(rootEl, new Provider());
