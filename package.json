@@ -1,10 +1,10 @@
 {
-  "name": "@kadira/storybook-core",
-  "version": "1.27.0",
-  "description": "Storybook Core Components",
+  "name": "@kadira/storybook-ui",
+  "version": "2.0.0",
+  "description": "Core Storybook UI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/storybook-core.git"
+    "url": "https://github.com/kadirahq/storybook-ui.git"
   },
   "license": "MIT",
   "scripts": {
