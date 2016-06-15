@@ -8,6 +8,10 @@ var _values = require('babel-runtime/core-js/object/values');
 
 var _values2 = _interopRequireDefault(_values);
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -58,33 +62,33 @@ var PropTable = function (_React$Component) {
   (0, _createClass3.default)(PropTable, [{
     key: 'render',
     value: function render() {
-      var comp = this.props.comp;
+      var type = this.props.type;
 
-      if (!comp) {
+      if (!type) {
         return null;
       }
 
       var props = {};
 
-      if (comp.propTypes) {
-        for (var property in comp.propTypes) {
-          if (!comp.propTypes.hasOwnProperty(property)) {
+      if (type.propTypes) {
+        for (var property in type.propTypes) {
+          if (!type.propTypes.hasOwnProperty(property)) {
             continue;
           }
-          var _type = comp.propTypes[property];
-          var propType = PropTypesMap.get(_type) || 'other';
-          var required = _type.isRequired === undefined ? 'yes' : 'no';
+          var typeInfo = type.propTypes[property];
+          var propType = PropTypesMap.get(typeInfo) || 'other';
+          var required = typeInfo.isRequired === undefined ? 'yes' : 'no';
           var defaultValue = '-';
           props[property] = { property: property, propType: propType, required: required, defaultValue: defaultValue };
         }
       }
 
-      if (comp.defaultProps) {
-        for (var _property in comp.defaultProps) {
-          if (!comp.defaultProps.hasOwnProperty(_property)) {
+      if (type.defaultProps) {
+        for (var _property in type.defaultProps) {
+          if (!type.defaultProps.hasOwnProperty(_property)) {
             continue;
           }
-          var value = comp.defaultProps[_property];
+          var value = type.defaultProps[_property];
           if (value === undefined) {
             continue;
           }
@@ -93,6 +97,14 @@ var PropTable = function (_React$Component) {
           }
           props[_property].defaultValue = value;
         }
+      }
+
+      if (!(0, _keys2.default)(props).length) {
+        return _react2.default.createElement(
+          'small',
+          null,
+          'No propTypes defined!'
+        );
       }
 
       return _react2.default.createElement(
@@ -164,6 +176,6 @@ var PropTable = function (_React$Component) {
 
 PropTable.displayName = 'PropTable';
 PropTable.propTypes = {
-  comp: _react2.default.PropTypes.func
+  type: _react2.default.PropTypes.func
 };
 exports.default = PropTable;

@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _from = require('babel-runtime/core-js/array/from');
+
+var _from2 = _interopRequireDefault(_from);
+
+var _map = require('babel-runtime/core-js/map');
+
+var _map2 = _interopRequireDefault(_map);
+
 var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
@@ -70,7 +78,7 @@ var Story = function (_React$Component) {
           fontFamily: 'sans-serif',
           fontSize: 12,
           display: 'block',
-          position: 'absolute',
+          position: 'fixed',
           textDecoration: 'none',
           background: '#28c',
           color: '#fff',
@@ -249,21 +257,57 @@ var Story = function (_React$Component) {
   }, {
     key: '_getPropTables',
     value: function _getPropTables() {
-      if (!this.props.propTables) {
+      if (!this.props.children && !this.props.propTables) {
         return null;
       }
 
-      return this.props.propTables.map(function (comp, idx) {
+      var types = new _map2.default();
+
+      if (this.props.propTables) {
+        this.props.propTables.forEach(function (type) {
+          types.set(type, true);
+        });
+      }
+
+      function extract(children) {
+        if (Array.isArray(children)) {
+          children.forEach(extract);
+          return;
+        }
+        if (typeof children === 'string' || typeof children.type === 'string') {
+          return;
+        }
+
+        var type = children.type;
+        var name = type.displayName || type.name;
+        if (!types.has(type)) {
+          types.set(type, true);
+        }
+        if (children.props.children) {
+          extract(children.props.children);
+        }
+      }
+
+      // extract components from children
+      extract(this.props.children);
+
+      var array = (0, _from2.default)(types.keys());
+      array.sort(function (a, b) {
+        return (a.displayName || a.name) > (b.displayName || b.name);
+      });
+
+      return array.map(function (type, idx) {
         return _react2.default.createElement(
           'div',
           { key: idx },
           _react2.default.createElement(
             'h3',
             null,
-            comp.displayName || comp.name,
-            ' PropTypes'
+            '<',
+            type.displayName || type.name,
+            ' /> PropTypes'
           ),
-          _react2.default.createElement(_PropTable2.default, { comp: comp })
+          _react2.default.createElement(_PropTable2.default, { type: type })
         );
       });
     }
