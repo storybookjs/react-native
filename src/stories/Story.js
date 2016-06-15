@@ -33,7 +33,7 @@ stories.add('Prop Tables', function (context) {
   );
 });
 
-stories.add('JSX Source Code', function () {
+stories.add('Source Code', function (context) {
   const info = `
     You can see the JSX source code of your component as well.
   `;
@@ -47,7 +47,7 @@ stories.add('JSX Source Code', function () {
   }
 
   return (
-    <Story info={info}>
+    <Story context={context} info={info}>
       This component contains several child components
       <br />
       <br />

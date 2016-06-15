@@ -83,16 +83,27 @@ export default class Story extends React.Component {
           <a style={linkStyle} onClick={() => this.closeInfo()}>×</a>
           <div className='storybook-story-info-page'>
             <div className='storybook-story-info-body'>
-              <Remarkable source={this._getInfoContent()}></Remarkable>
-              <pre>
-              {React.Children.map(this.props.children, root => (
-                <Node depth={0} node={root}></Node>
-              ))}
-              </pre>
+              { this._getInfoHeader() }
+              { this._getInfoContent() }
+              { this._getSourceCode() }
+              { this._getPropTables() }
             </div>
           </div>
         </div>
       </div>
+    );
+  }
+
+  _getInfoHeader() {
+    if (!this.props.context) {
+      return null;
+    }
+
+    return (
+      <header>
+        <h1>{this.props.context.kind}</h1>
+        <h2>{this.props.context.story}</h2>
+      </header>
     );
   }
 
@@ -109,16 +120,21 @@ export default class Story extends React.Component {
     if (matches) {
       padding = matches[0].length;
     }
-    let header = '';
-    if (this.props.context) {
-      header = [
-        `# ${this.props.context.kind}`,
-        `## ${this.props.context.story}`
-      ].join('\n');
-    }
-    const content = lines.map(s => s.slice(padding)).join('\n');
-    const extras = this._getPropTables();
-    return [ header, content, extras ].join('\n');
+    const source = lines.map(s => s.slice(padding)).join('\n');
+    return <Remarkable source={source}></Remarkable>;
+  }
+
+  _getSourceCode() {
+    return (
+      <div>
+        <h3>Example Source</h3>
+        <pre>
+        {React.Children.map(this.props.children, root => (
+          <Node depth={0} node={root}></Node>
+        ))}
+        </pre>
+      </div>
+    );
   }
 
   _getPropTables() {
@@ -126,18 +142,15 @@ export default class Story extends React.Component {
       return '';
     }
     const tables = this.props.propTables.map(this._getPropTable.bind(this));
-    return tables.join('\n\n');
+    return <div>{tables}</div>;
   }
 
   _getPropTable(Comp) {
     if (!Comp) {
       return '';
     }
-    const table = [
-      `### <${Comp.displayName || Comp.name} /> PropTypes`,
-      '| property | propType | required | defaults |',
-      '|----------|----------|----------|----------|',
-    ];
+
+    const rows = [];
     for (let property in Comp.propTypes) {
       if (!Comp.propTypes.hasOwnProperty(property)) {
         continue
@@ -146,9 +159,34 @@ export default class Story extends React.Component {
       const propType = PropTypesMap.get(type) || '-';
       const required = type.isRequired === undefined ? 'yes' : 'no';
       const defaults = this._getDefaultProp(property);
-      table.push(`| ${property} | ${propType} | ${required} | ${defaults} |`);
+      rows.push({property, propType, required, defaults});
     }
-    return table.join('\n');
+
+    return (
+      <main>
+        <h3>&lt;{Comp.displayName || Comp.name} /&gt; PropTypes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>property</th>
+              <th>propType</th>
+              <th>required</th>
+              <th>defaults</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(row => (
+              <tr>
+                <td>{row.property}</td>
+                <td>{row.propType}</td>
+                <td>{row.required}</td>
+                <td>{row.defaults}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </main>
+    );
   }
 
   _getDefaultProp(property) {
