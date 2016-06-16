@@ -3,7 +3,7 @@ import { expect } from 'chai';
 const { describe, it } = global;
 import sinon from 'sinon';
 
-describe('manager.provider.config.initApi', () => {
+describe('manager.api.config.initApi', () => {
   it('should expose correct API methods', (done) => {
     const actions = {
       api: {

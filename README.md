@@ -12,7 +12,6 @@ First you need to install `@kadira/storybook-ui` into your app.
 npm i --save @kadira/storybook-ui
 ```
 
-
 Then you need to create a Provider class like this:
 
 ```js

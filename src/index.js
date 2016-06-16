@@ -2,17 +2,16 @@ import { createStore, combineReducers } from 'redux';
 import { createApp } from 'mantra-core';
 import buildContext from './context.js';
 
-import apiModule from './modules/api';
 import shortcutsModule from './modules/shortcuts';
+import apiModule from './modules/api';
 import uiModule from './modules/ui';
-import providerModule from './modules/provider';
 
 export class Provider {
-  renderPreview(selectedKind, selectedStory) {
+  renderPreview() {
     throw new Error('Provider.enderPreview() is not implemented!');
   }
 
-  handleAPI(api) {
+  handleAPI() {
     throw new Error('Provider.handleAPI() is not implemented!');
   }
 }
@@ -23,9 +22,8 @@ export default function (domNode, provider) {
   }
 
   const reducer = combineReducers({
-    ...apiModule.reducers,
     ...shortcutsModule.reducers,
-    ...providerModule.reducers,
+    ...apiModule.reducers,
     ...uiModule.reducers,
   });
 
@@ -34,9 +32,8 @@ export default function (domNode, provider) {
   const context = buildContext(reduxStore, domNode, provider);
   const app = createApp(context);
 
-  app.loadModule(apiModule);
   app.loadModule(shortcutsModule);
-  app.loadModule(providerModule);
+  app.loadModule(apiModule);
   app.loadModule(uiModule);
 
   app.init();
