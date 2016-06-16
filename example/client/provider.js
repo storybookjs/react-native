@@ -11,39 +11,23 @@ export default class ReactProvider {
     this.globalState = new EventEmitter();
   }
 
+  // You must implement this public API.
   renderPreview(selectedKind, selectedStory) {
-    this.globalState.removeAllListeners();
-    this.globalState.on('action', (message) => {
-      this.api.addAction({
-        data: { message },
-        id: ++id,
-      });
-    });
+    // We need to do this here to avoid memory leaks in the globalState.
+    // That's because renderPreview can be called multiple times.
+    this._handlePreviewEvents();
 
-    this.globalState.on('jump', (kind, story) => {
-      this.api.selectStory(kind, story);
-    });
-
-    this.globalState.on('toggleFullscreen', () => {
-      const event = {
-        ctrlKey: true,
-        shiftKey: true,
-        keyCode: keycode('F'),
-        preventDefault() {},
-      };
-      const parsedEvent = parseKeyEvent(event);
-      console.log(parsedEvent);
-      this.api.handleShortcut(parsedEvent);
-    });
-
+    // create preview React component.
     const preview = new Preview(this.globalState);
     this.globalState.emit('change', selectedKind, selectedStory);
-
     return preview;
   }
 
+  // You must implement this public API.
   handleAPI(api) {
     this.api = api;
+
+    // set stories
     this.api.setStories([
       {
         kind: 'Component 1',
@@ -56,8 +40,39 @@ export default class ReactProvider {
       }
     ]);
 
+    // listen to the story change and update the preview.
     this.api.onStory((kind, story) => {
       this.globalState.emit('change', kind, story);
+    });
+  }
+
+  _handlePreviewEvents() {
+    this.globalState.removeAllListeners();
+
+    // firing an action.
+    this.globalState.on('action', (message) => {
+      this.api.addAction({
+        data: { message },
+        id: ++id,
+      });
+    });
+
+    // jumping to an story.
+    this.globalState.on('jump', (kind, story) => {
+      this.api.selectStory(kind, story);
+    });
+
+    // calling a shortcut functionality.
+    this.globalState.on('toggleFullscreen', () => {
+      const event = {
+        ctrlKey: true,
+        shiftKey: true,
+        keyCode: keycode('F'),
+        preventDefault() {},
+      };
+      const parsedEvent = parseKeyEvent(event);
+      console.log(parsedEvent);
+      this.api.handleShortcut(parsedEvent);
     });
   }
 }
