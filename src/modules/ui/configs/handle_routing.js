@@ -41,12 +41,12 @@ export function handleInitialUrl(actions, location) {
 }
 
 export default function ({ reduxStore }, actions) {
+  // handle initial URL
+  handleInitialUrl(actions, window.location);
+
   // subscribe to reduxStore and change the URL
   reduxStore.subscribe(() => changeUrl(reduxStore));
   changeUrl(reduxStore);
-
-  // handle initial URL
-  handleInitialUrl(actions, window.location);
 
   // handle back button
   window.onpopstate = () => {
