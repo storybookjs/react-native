@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-ui",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Core Storybook UI",
   "repository": {
     "type": "git",
@@ -54,7 +54,6 @@
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.1",
     "lodash.pick": "^4.2.1",
-    "mantra-core": "^1.6.1",
     "qs": "^6.2.0",
     "react-modal": "^1.2.1"
   },
