@@ -7,7 +7,21 @@ import shortcutsModule from './modules/shortcuts';
 import uiModule from './modules/ui';
 import providerModule from './modules/provider';
 
+export class Provider {
+  renderPreview(selectedKind, selectedStory) {
+    throw new Error('Provider.enderPreview() is not implemented!');
+  }
+
+  handleAPI(api) {
+    throw new Error('Provider.handleAPI() is not implemented!');
+  }
+}
+
 export default function (domNode, provider) {
+  if (!(provider instanceof Provider)) {
+    throw new Error('provider is not extended from the base Provider');
+  }
+
   const reducer = combineReducers({
     ...apiModule.reducers,
     ...shortcutsModule.reducers,
