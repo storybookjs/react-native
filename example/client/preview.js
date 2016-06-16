@@ -1,5 +1,10 @@
 import React from 'react';
 
+const mainStyle = {
+  padding: 10,
+  fontFamily: 'arial'
+};
+
 export default class Preview extends React.Component {
   constructor(globalState) {
     super();
@@ -48,15 +53,20 @@ export default class Preview extends React.Component {
   render() {
     const { kind, story } = this.state;
     return (
-      <div style={{padding: 10}}>
+      <div style={mainStyle}>
         <h3>Rendering the Preview</h3>
         {kind} => {story}
-        <br/>
-        <button onClick={this.fireAction.bind(this)}>Fire an Action</button>
-        <br/>
-        <button onClick={this.jump.bind(this)}>Jump to Component2:State b</button>
-        <br/>
-        <button onClick={this.toggleFullscreen.bind(this)}>Go FullScreen</button>
+        <ul>
+          <li>
+            <button onClick={this.fireAction.bind(this)}>Fire an Action</button>
+          </li>
+          <li>
+            <button onClick={this.jump.bind(this)}>Jump to Component2:State b</button>
+          </li>
+          <li>
+            <button onClick={this.toggleFullscreen.bind(this)}>Go FullScreen</button>
+          </li>
+        </ul>
       </div>
     );
   }
