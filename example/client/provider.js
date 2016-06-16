@@ -3,11 +3,13 @@ import Preview from './preview';
 import keycode from 'keycode';
 import { EventEmitter } from 'events';
 import parseKeyEvent from '../../src/libs/key_events';
+import { Provider } from '../../src';
 
 let id = 0;
 
-export default class ReactProvider {
+export default class ReactProvider extends Provider {
   constructor() {
+    super();
     this.globalState = new EventEmitter();
   }
 
