@@ -8,6 +8,14 @@ var _from = require('babel-runtime/core-js/array/from');
 
 var _from2 = _interopRequireDefault(_from);
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -30,9 +38,21 @@ var ClientApi = function () {
 
     this._pageBus = pageBus;
     this._storyStore = storyStore;
+    this._addons = {};
+    this._globalDecorators = [];
   }
 
   (0, _createClass3.default)(ClientApi, [{
+    key: 'setAddon',
+    value: function setAddon(addon) {
+      this._addons = (0, _extends3.default)({}, this._addons, addon);
+    }
+  }, {
+    key: 'addDecorator',
+    value: function addDecorator(decorator) {
+      this._globalDecorators.push(decorator);
+    }
+  }, {
     key: 'storiesOf',
     value: function storiesOf(kind, m) {
       var _this = this;
@@ -43,13 +63,23 @@ var ClientApi = function () {
         });
       }
 
-      var decorators = [];
+      var localDecorators = [];
       var api = {};
+
+      // apply addons
+      for (var name in this._addons) {
+        if (this._addons.hasOwnProperty(name)) {
+          var addon = this._addons[name];
+          api[name] = addon.bind(api);
+        }
+      }
 
       api.add = function (storyName, getStory) {
         // Wrap the getStory function with each decorator. The first
         // decorator will wrap the story function. The second will
         // wrap the first decorator and so on.
+        var decorators = [].concat((0, _toConsumableArray3.default)(_this._globalDecorators), localDecorators);
+
         var fn = decorators.reduce(function (decorated, decorator) {
           return function () {
             return decorator(decorated);
@@ -62,7 +92,7 @@ var ClientApi = function () {
       };
 
       api.addDecorator = function (decorator) {
-        decorators.push(decorator);
+        localDecorators.push(decorator);
         return api;
       };
 

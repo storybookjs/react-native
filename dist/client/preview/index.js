@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.configure = exports.linkTo = exports.action = exports.storiesOf = undefined;
+exports.configure = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
 
 require('es6-shim');
 
@@ -60,6 +60,7 @@ var configApi = new _config_api2.default(context);
 var storiesOf = exports.storiesOf = clientApi.storiesOf.bind(clientApi);
 var action = exports.action = clientApi.action.bind(clientApi);
 var linkTo = exports.linkTo = clientApi.linkTo.bind(clientApi);
+var setAddon = exports.setAddon = clientApi.setAddon.bind(clientApi);
 var configure = exports.configure = configApi.configure.bind(configApi);
 
 // initialize the UI

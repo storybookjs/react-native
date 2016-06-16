@@ -4,6 +4,19 @@ export default class ClientApi {
   constructor({ pageBus, storyStore }) {
     this._pageBus = pageBus;
     this._storyStore = storyStore;
+    this._addons = {};
+    this._globalDecorators = [];
+  }
+
+  setAddon(addon) {
+    this._addons = {
+      ...this._addons,
+      ...addon,
+    };
+  }
+
+  addDecorator(decorator) {
+    this._globalDecorators.push(decorator);
   }
 
   storiesOf(kind, m) {
@@ -13,13 +26,26 @@ export default class ClientApi {
       });
     }
 
-    const decorators = [];
+    const localDecorators = [];
     const api = {};
+
+    // apply addons
+    for (const name in this._addons) {
+      if (this._addons.hasOwnProperty(name)) {
+        const addon = this._addons[name];
+        api[name] = addon.bind(api);
+      }
+    }
 
     api.add = (storyName, getStory) => {
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
+      const decorators = [
+        ...this._globalDecorators,
+        ...localDecorators,
+      ];
+
       const fn = decorators.reduce((decorated, decorator) => {
         return () => decorator(decorated);
       }, getStory);
@@ -30,7 +56,7 @@ export default class ClientApi {
     };
 
     api.addDecorator = decorator => {
-      decorators.push(decorator);
+      localDecorators.push(decorator);
       return api;
     };
 
