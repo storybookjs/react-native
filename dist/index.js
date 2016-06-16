@@ -3,12 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Provider = undefined;
 
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
 exports.default = function (domNode, provider) {
+  if (!(provider instanceof Provider)) {
+    throw new Error('provider is not extended from the base Provider');
+  }
+
   var reducer = (0, _redux.combineReducers)((0, _extends3.default)({}, _api2.default.reducers, _shortcuts2.default.reducers, _provider2.default.reducers, _ui2.default.reducers));
 
   var reduxStore = (0, _redux.createStore)(reducer);
@@ -49,3 +62,22 @@ var _provider = require('./modules/provider');
 var _provider2 = _interopRequireDefault(_provider);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Provider = exports.Provider = function () {
+  function Provider() {
+    (0, _classCallCheck3.default)(this, Provider);
+  }
+
+  (0, _createClass3.default)(Provider, [{
+    key: 'renderPreview',
+    value: function renderPreview(selectedKind, selectedStory) {
+      throw new Error('Provider.enderPreview() is not implemented!');
+    }
+  }, {
+    key: 'handleAPI',
+    value: function handleAPI(api) {
+      throw new Error('Provider.handleAPI() is not implemented!');
+    }
+  }]);
+  return Provider;
+}();

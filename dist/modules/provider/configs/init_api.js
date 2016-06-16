@@ -26,6 +26,7 @@ exports.default = function (provider, reduxStore, actions) {
     var api = _reduxStore$getState.api;
 
     if (!api) return;
+    if (!providerApi._onStoryCallback) return;
 
     providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });

@@ -11,14 +11,14 @@ exports.handleInitialUrl = handleInitialUrl;
 exports.default = function (_ref, actions) {
   var reduxStore = _ref.reduxStore;
 
+  // handle initial URL
+  handleInitialUrl(actions, window.location);
+
   // subscribe to reduxStore and change the URL
   reduxStore.subscribe(function () {
     return changeUrl(reduxStore);
   });
   changeUrl(reduxStore);
-
-  // handle initial URL
-  handleInitialUrl(actions, window.location);
 
   // handle back button
   window.onpopstate = function () {
