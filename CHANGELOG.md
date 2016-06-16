@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.32.1
+
+* Extend @kadira/storybook-ui provider from it's base Provider.
+
 ### v1.32.0
 
 * Use @kadira/storybook-ui as the manager UI with the implemented provider for React. See `client/manager` for more info.
