@@ -69,8 +69,17 @@ var ClientApi = function () {
       // apply addons
       for (var name in this._addons) {
         if (this._addons.hasOwnProperty(name)) {
-          var addon = this._addons[name];
-          api[name] = addon.bind(api);
+          (function () {
+            var addon = _this._addons[name];
+            api[name] = function () {
+              for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                args[_key] = arguments[_key];
+              }
+
+              addon.apply(api, args);
+              return api;
+            };
+          })();
         }
       }
 
@@ -78,7 +87,7 @@ var ClientApi = function () {
         // Wrap the getStory function with each decorator. The first
         // decorator will wrap the story function. The second will
         // wrap the first decorator and so on.
-        var decorators = [].concat((0, _toConsumableArray3.default)(_this._globalDecorators), localDecorators);
+        var decorators = [].concat(localDecorators, (0, _toConsumableArray3.default)(_this._globalDecorators));
 
         var fn = decorators.reduce(function (decorated, decorator) {
           return function () {
@@ -104,8 +113,8 @@ var ClientApi = function () {
       var pageBus = this._pageBus;
 
       return function () {
-        for (var _len = arguments.length, _args = Array(_len), _key = 0; _key < _len; _key++) {
-          _args[_key] = arguments[_key];
+        for (var _len2 = arguments.length, _args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          _args[_key2] = arguments[_key2];
         }
 
         var args = (0, _from2.default)(_args);

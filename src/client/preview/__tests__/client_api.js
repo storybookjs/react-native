@@ -16,63 +16,70 @@ describe('preview.client_api', () => {
   describe('setAddon', () => {
     it('should register addons', () => {
       const api = new ClientAPI({});
+      let data;
 
       api.setAddon({
         aa() {
-          return 'foo';
+          data = 'foo';
         },
       });
 
-      expect(api.storiesOf('none').aa()).to.be.equal('foo');
+      api.storiesOf('none').aa();
+      expect(data).to.be.equal('foo');
     });
 
     it('should not remove previous addons', () => {
       const api = new ClientAPI({});
+      const data = [];
 
       api.setAddon({
         aa() {
-          return 'foo';
+          data.push('foo');
         },
       });
 
       api.setAddon({
         bb() {
-          return 'bar';
+          data.push('bar');
         },
       });
 
-      expect(api.storiesOf('none').aa()).to.be.equal('foo');
-      expect(api.storiesOf('none').bb()).to.be.equal('bar');
+      api.storiesOf('none').aa().bb();
+      expect(data).to.deep.equal(['foo', 'bar']);
     });
 
     it('should call with the api context', () => {
       const api = new ClientAPI({});
+      let data;
 
       api.setAddon({
         aa() {
-          return typeof this.add;
+          data = typeof this.add;
         },
       });
 
-      expect(api.storiesOf('none').aa()).to.be.equal('function');
+      api.storiesOf('none').aa();
+      expect(data).to.be.equal('function');
     });
 
     it('should be able to access addons added previously', () => {
       const api = new ClientAPI({});
+      let data;
 
       api.setAddon({
         aa() {
-          return 'foo';
+          data = 'foo';
         },
       });
 
       api.setAddon({
         bb() {
-          return this.aa();
+          this.aa();
         },
       });
 
-      expect(api.storiesOf('none').bb()).to.be.equal('foo');
+      api.storiesOf('none').bb();
+      expect(data).to.be.equal('foo');
     });
   });
 
@@ -114,7 +121,7 @@ describe('preview.client_api', () => {
       });
 
       localApi.add('storyName', () => ('Hello'));
-      expect(storyStore.stories[0].fn()).to.be.equal('bb-aa-Hello');
+      expect(storyStore.stories[0].fn()).to.be.equal('aa-bb-Hello');
     });
   });
 });

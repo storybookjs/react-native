@@ -33,7 +33,10 @@ export default class ClientApi {
     for (const name in this._addons) {
       if (this._addons.hasOwnProperty(name)) {
         const addon = this._addons[name];
-        api[name] = addon.bind(api);
+        api[name] = (...args) => {
+          addon.apply(api, args);
+          return api;
+        };
       }
     }
 
@@ -42,8 +45,8 @@ export default class ClientApi {
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
       const decorators = [
-        ...this._globalDecorators,
         ...localDecorators,
+        ...this._globalDecorators,
       ];
 
       const fn = decorators.reduce((decorated, decorator) => {
