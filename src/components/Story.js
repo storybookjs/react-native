@@ -1,7 +1,21 @@
 import React from 'react';
-import Remarkable from 'react-remarkable';
+import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
-import Node from './Node.js';
+import Node from './Node';
+import {H1, H2, H3, H4, H5, H6, Code, Pre, P, Small, A} from './markdown'
+
+MTRC.configure({
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
+  code: Code,
+  pre: Pre,
+  p: P,
+  a: A,
+});
 
 export default class Story extends React.Component {
   static displayName = 'Story';
@@ -48,6 +62,18 @@ export default class Story extends React.Component {
       padding: '0 40px',
       overflow: 'auto',
     },
+    infoBody: {
+      fontSize: "16px",
+    },
+    infoBody: {
+      color: '#444',
+      fontFamily: "'Open Sans Condensed', sans-serif",
+      fontWeight: 300,
+      margin: '0 auto',
+      maxWidth: '48rem',
+      lineHeight: 1.45,
+      padding: '.25rem',
+    }
   }
 
   constructor(...args) {
@@ -63,11 +89,17 @@ export default class Story extends React.Component {
   }
 
   _renderInline() {
+    const infoBodyInlineStyle = {
+      borderTop: 'solid 1px #fafafa',
+      marginTop: '1.5em',
+    }
+    const infoBodyStyle = Object.assign(this.stylesheet.infoBody, infoBodyInlineStyle);
+
     return (
       <div>
         { this.props.children }
-        <div className='storybook-story-info-page'>
-          <div className='storybook-story-info-body storybook-story-info-body-inline'>
+        <div style={this.stylesheet.infoPage}>
+          <div style={infoBodyStyle} >
             { this._getInfoContent() }
             { this._getSourceCode() }
             { this._getPropTables() }
@@ -103,8 +135,8 @@ export default class Story extends React.Component {
         <a style={linkStyle} onClick={openOverlay}>?</a>
         <div style={infoStyle}>
           <a style={linkStyle} onClick={closeOverlay}>×</a>
-          <div className='storybook-story-info-page'>
-            <div className='storybook-story-info-body'>
+          <div style={this.stylesheet.infoPage}>
+            <div style={this.stylesheet.infoBody}>
               { this._getInfoHeader() }
               { this._getInfoContent() }
               { this._getSourceCode() }
@@ -143,7 +175,7 @@ export default class Story extends React.Component {
       padding = matches[0].length;
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
-    return <Remarkable source={source}></Remarkable>;
+    return MTRC(source).tree;
   }
 
   _getSourceCode() {
@@ -153,12 +185,12 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <h3>Example Source</h3>
-        <pre>
+        <H3>Example Source</H3>
+        <Pre>
         {React.Children.map(this.props.children, (root, idx) => (
           <Node key={idx} depth={0} node={root}></Node>
         ))}
-        </pre>
+        </Pre>
       </div>
     );
   }
