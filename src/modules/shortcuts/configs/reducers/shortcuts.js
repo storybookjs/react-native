@@ -29,6 +29,13 @@ export default function (state = defaultState, action) {
       };
     }
 
+    case types.SET_LAYOUT: {
+      return {
+        ...state,
+        ...action.layout,
+      };
+    }
+
     default:
       return state;
   }

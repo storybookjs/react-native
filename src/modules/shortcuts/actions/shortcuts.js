@@ -19,4 +19,12 @@ export default {
         });
     }
   },
+
+  setLayout(context, layout) {
+    const { reduxStore } = context;
+    reduxStore.dispatch({
+      type: types.SET_LAYOUT,
+      layout,
+    });
+  },
 };

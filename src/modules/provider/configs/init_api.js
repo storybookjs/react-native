@@ -17,7 +17,7 @@ export default function (provider, reduxStore, actions) {
     const { api } = reduxStore.getState();
     if (!api) return;
     if (!providerApi._onStoryCallback) return;
-    
+
     providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });
 }

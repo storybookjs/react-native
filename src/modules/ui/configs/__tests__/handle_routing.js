@@ -11,11 +11,17 @@ describe('manager.ui.config.handle_routing', () => {
       changeUrl(null);
       config.insidePopState = false;
     });
+
     it('should put the correct URL and state to pushState', (done) => {
       const reduxState = {
         api: {
           selectedKind: 'kk',
           selectedStory: 'ss',
+        },
+        shortcuts: {
+          goFullScreen: false,
+          showDownPanel: true,
+          showLeftPanel: true,
         },
       };
 
@@ -24,9 +30,12 @@ describe('manager.ui.config.handle_routing', () => {
       };
 
       const pushState = {
-        url: '?selectedKind=kk&selectedStory=ss',
+        url: '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1',
         selectedKind: 'kk',
         selectedStory: 'ss',
+        full: false,
+        down: true,
+        left: true,
       };
 
       const originalPushState = window.history.pushState;
@@ -46,15 +55,28 @@ describe('manager.ui.config.handle_routing', () => {
         api: {
           selectStory: sinon.mock(),
         },
+        shortcuts: {
+          setLayout: sinon.mock(),
+        },
       };
 
+      const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0';
+
       const location = {
-        search: '?selectedKind=kk&selectedStory=ss',
+        search: url,
       };
-      window.location.search = '?selectedKind=kk&selectedStory=ss';
+      window.location.search = url;
       handleInitialUrl(actions, location);
 
       expect(actions.api.selectStory.callCount).to.be.equal(1);
+      expect(actions.shortcuts.setLayout.callCount).to.be.equal(1);
+      /* eslint-disable no-unused-expressions */
+      expect(actions.shortcuts.setLayout.calledWith({
+        goFullScreen: true,
+        showDownPanel: false,
+        showLeftPanel: false,
+      })).to.be.true;
+      /* eslint-enable no-unused-expressions */
     });
   });
 });

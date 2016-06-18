@@ -8,11 +8,11 @@ import uiModule from './modules/ui';
 import providerModule from './modules/provider';
 
 export class Provider {
-  renderPreview(selectedKind, selectedStory) {
+  renderPreview(selectedKind, selectedStory) { // eslint-disable-line no-unused-vars
     throw new Error('Provider.enderPreview() is not implemented!');
   }
 
-  handleAPI(api) {
+  handleAPI(api) { // eslint-disable-line no-unused-vars
     throw new Error('Provider.handleAPI() is not implemented!');
   }
 }
