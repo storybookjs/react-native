@@ -12,13 +12,17 @@ var _map = require('babel-runtime/core-js/map');
 
 var _map2 = _interopRequireDefault(_map);
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -44,19 +48,34 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRemarkable = require('react-remarkable');
+var _markdownToReactComponents = require('markdown-to-react-components');
 
-var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+var _markdownToReactComponents2 = _interopRequireDefault(_markdownToReactComponents);
 
 var _PropTable = require('./PropTable');
 
 var _PropTable2 = _interopRequireDefault(_PropTable);
 
-var _Node = require('./Node.js');
+var _Node = require('./Node');
 
 var _Node2 = _interopRequireDefault(_Node);
 
+var _markdown = require('./markdown');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_markdownToReactComponents2.default.configure({
+  h1: _markdown.H1,
+  h2: _markdown.H2,
+  h3: _markdown.H3,
+  h4: _markdown.H4,
+  h5: _markdown.H5,
+  h6: _markdown.H6,
+  code: _markdown.Code,
+  pre: _markdown.Pre,
+  p: _markdown.P,
+  a: _markdown.A
+});
 
 var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
@@ -72,7 +91,7 @@ var Story = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Story)).call.apply(_Object$getPrototypeO, [this].concat(args)));
 
-    _this.stylesheet = {
+    _this.stylesheet = (0, _defineProperty3.default)({
       link: {
         base: {
           fontFamily: 'sans-serif',
@@ -100,8 +119,19 @@ var Story = function (_React$Component) {
         right: 0,
         padding: '0 40px',
         overflow: 'auto'
+      },
+      infoBody: {
+        fontSize: "16px"
       }
-    };
+    }, 'infoBody', {
+      color: '#444',
+      fontFamily: "'Open Sans Condensed', sans-serif",
+      fontWeight: 300,
+      margin: '0 auto',
+      maxWidth: '48rem',
+      lineHeight: 1.45,
+      padding: '.25rem'
+    });
 
     _this.state = { open: false };
     return _this;
@@ -118,16 +148,22 @@ var Story = function (_React$Component) {
   }, {
     key: '_renderInline',
     value: function _renderInline() {
+      var infoBodyInlineStyle = {
+        borderTop: 'solid 1px #fafafa',
+        marginTop: '1.5em'
+      };
+      var infoBodyStyle = (0, _assign2.default)(this.stylesheet.infoBody, infoBodyInlineStyle);
+
       return _react2.default.createElement(
         'div',
         null,
         this.props.children,
         _react2.default.createElement(
           'div',
-          { className: 'storybook-story-info-page' },
+          { style: this.stylesheet.infoPage },
           _react2.default.createElement(
             'div',
-            { className: 'storybook-story-info-body storybook-story-info-body-inline' },
+            { style: infoBodyStyle },
             this._getInfoContent(),
             this._getSourceCode(),
             this._getPropTables()
@@ -175,10 +211,10 @@ var Story = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'storybook-story-info-page' },
+            { style: this.stylesheet.infoPage },
             _react2.default.createElement(
               'div',
-              { className: 'storybook-story-info-body' },
+              { style: this.stylesheet.infoBody },
               this._getInfoHeader(),
               this._getInfoContent(),
               this._getSourceCode(),
@@ -228,7 +264,7 @@ var Story = function (_React$Component) {
       var source = lines.map(function (s) {
         return s.slice(padding);
       }).join('\n');
-      return _react2.default.createElement(_reactRemarkable2.default, { source: source });
+      return (0, _markdownToReactComponents2.default)(source).tree;
     }
   }, {
     key: '_getSourceCode',
@@ -241,12 +277,12 @@ var Story = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h3',
+          _markdown.H3,
           null,
           'Example Source'
         ),
         _react2.default.createElement(
-          'pre',
+          _markdown.Pre,
           null,
           _react2.default.Children.map(this.props.children, function (root, idx) {
             return _react2.default.createElement(_Node2.default, { key: idx, depth: 0, node: root });
