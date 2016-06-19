@@ -64,7 +64,9 @@ var ClientApi = function () {
       }
 
       var localDecorators = [];
-      var api = {};
+      var api = {
+        kind: kind
+      };
 
       // apply addons
       for (var name in this._addons) {

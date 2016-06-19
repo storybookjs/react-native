@@ -81,6 +81,21 @@ describe('preview.client_api', () => {
       api.storiesOf('none').bb();
       expect(data).to.be.equal('foo');
     });
+
+    it('should be able to access the current kind', () => {
+      const api = new ClientAPI({});
+      const kind = 'dfdwf3e3';
+      let data;
+
+      api.setAddon({
+        aa() {
+          data = this.kind;
+        },
+      });
+
+      api.storiesOf(kind).aa();
+      expect(data).to.be.equal(kind);
+    });
   });
 
   describe('addDecorator', () => {
