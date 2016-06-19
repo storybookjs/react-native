@@ -123,5 +123,39 @@ describe('preview.client_api', () => {
       localApi.add('storyName', () => ('Hello'));
       expect(storyStore.stories[0].fn()).to.be.equal('aa-bb-Hello');
     });
+
+    it('should pass the context', () => {
+      const storyStore = new StoryStore();
+      const api = new ClientAPI({ storyStore });
+      const localApi = api.storiesOf('none');
+      localApi.addDecorator(function (fn) {
+        return `aa-${fn()}`;
+      });
+
+      localApi.add('storyName', ({ kind, story }) => (`${kind}-${story}`));
+
+      const kind = 'dfdfd';
+      const story = 'ef349ff';
+
+      const result = storyStore.stories[0].fn({ kind, story });
+      expect(result).to.be.equal(`aa-${kind}-${story}`);
+    });
+
+    it('should have access to the context', () => {
+      const storyStore = new StoryStore();
+      const api = new ClientAPI({ storyStore });
+      const localApi = api.storiesOf('none');
+      localApi.addDecorator(function (fn, { kind, story }) {
+        return `${kind}-${story}-${fn()}`;
+      });
+
+      localApi.add('storyName', () => ('Hello'));
+
+      const kind = 'dfdfd';
+      const story = 'ef349ff';
+
+      const result = storyStore.stories[0].fn({ kind, story });
+      expect(result).to.be.equal(`${kind}-${story}-Hello`);
+    });
   });
 });

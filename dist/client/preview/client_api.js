@@ -90,8 +90,10 @@ var ClientApi = function () {
         var decorators = [].concat(localDecorators, (0, _toConsumableArray3.default)(_this._globalDecorators));
 
         var fn = decorators.reduce(function (decorated, decorator) {
-          return function () {
-            return decorator(decorated);
+          return function (context) {
+            return decorator(function () {
+              return decorated(context);
+            }, context);
           };
         }, getStory);
 
