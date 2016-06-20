@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.configure = exports.linkTo = exports.action = exports.storiesOf = undefined;
+exports.configure = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
 
 var _preview = require('./preview');
 
@@ -14,4 +14,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var storiesOf = exports.storiesOf = previewApi.storiesOf;
 var action = exports.action = previewApi.action;
 var linkTo = exports.linkTo = previewApi.linkTo;
+var setAddon = exports.setAddon = previewApi.setAddon;
+var addDecorator = exports.addDecorator = previewApi.addDecorator;
 var configure = exports.configure = previewApi.configure;
