@@ -1,7 +1,7 @@
 {
-  "name": "react-storybook-centered",
-  "version": "1.0.2",
-  "description": "Storybook decorator to center components",
+  "name": "@kadira/react-storybook-decorator-centered",
+  "version": "1.0.0",
+  "description": "React Storybook decorator to center components",
   "main": "build/index.js",
   "scripts": {
     "prepublish": "make build"
