@@ -14,7 +14,7 @@ export default {
       ...defaultOptions,
       ..._options
     };
-    
+
     this.add(storyName, (context) => {
       const props = {
         info,
@@ -22,7 +22,7 @@ export default {
         showInline: Boolean(options.inline),
         showHeader: Boolean(options.header),
         showSource: Boolean(options.source),
-        propTypes: options.propTypes,
+        propTables: options.propTables,
       };
 
       return (

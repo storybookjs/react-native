@@ -1,8 +1,9 @@
-import { configure, setAddon } from '@kadira/storybook';
+import { configure, setAddon, addDecorator } from '@kadira/storybook';
 import InfoAddon from '../src/';
+import centered from '@kadira/react-storybook-decorator-centered';
 
 setAddon(InfoAddon);
 
 configure(function () {
-  require('../src/stories/Story');
+  require('../example/story');
 }, module);

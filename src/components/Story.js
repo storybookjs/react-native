@@ -196,6 +196,7 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
+    debugger;
     if (!this.props.children && !this.props.propTables) {
       return null;
     }
