@@ -16,7 +16,7 @@ storiesOf('Button')
           Click the "?" mark at top-right to view the info.
         </p>
       </div>
-    )
+    ),
   );
 
 storiesOf('Button')
@@ -37,4 +37,14 @@ storiesOf('Button')
     `,
     () => (<Button label="The Button" />),
     { source: false, inline: true },
+  );
+
+storiesOf('Button')
+  .addWithInfo(
+    'simple usage (no header)',
+    `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+    () => (<Button label="The Button" />),
+    { header: false, inline: true },
   );
