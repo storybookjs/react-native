@@ -123,6 +123,7 @@ There are many things you can do with React Storybook. You can explore them with
 * [Writing Stories](docs/writing_stories.md)
 * [Setting up for CSS](docs/setting_up_for_css.md)
 * [Configuration APIs](docs/configure_storybook.md)
+* [Extensions](docs/extensions.md)
 * [Power Tools](https://voice.kadira.io/power-tools-for-react-storybook-d404d7b29b82#.4yodlbqi8)
 * [How Storybook Works](docs/how_storybook_works.md)
 * [Known Issues](docs/known_issues.md)

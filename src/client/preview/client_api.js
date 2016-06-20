@@ -4,6 +4,19 @@ export default class ClientApi {
   constructor({ pageBus, storyStore }) {
     this._pageBus = pageBus;
     this._storyStore = storyStore;
+    this._addons = {};
+    this._globalDecorators = [];
+  }
+
+  setAddon(addon) {
+    this._addons = {
+      ...this._addons,
+      ...addon,
+    };
+  }
+
+  addDecorator(decorator) {
+    this._globalDecorators.push(decorator);
   }
 
   storiesOf(kind, m) {
@@ -13,15 +26,37 @@ export default class ClientApi {
       });
     }
 
-    const decorators = [];
-    const api = {};
+    const localDecorators = [];
+    const api = {
+      kind,
+    };
+
+    // apply addons
+    for (const name in this._addons) {
+      if (this._addons.hasOwnProperty(name)) {
+        const addon = this._addons[name];
+        api[name] = (...args) => {
+          addon.apply(api, args);
+          return api;
+        };
+      }
+    }
 
     api.add = (storyName, getStory) => {
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
+      const decorators = [
+        ...localDecorators,
+        ...this._globalDecorators,
+      ];
+
       const fn = decorators.reduce((decorated, decorator) => {
-        return () => decorator(decorated);
+        return (context) => {
+          return decorator(() => {
+            return decorated(context);
+          }, context);
+        };
       }, getStory);
 
       // Add the fully decorated getStory function.
@@ -30,7 +65,7 @@ export default class ClientApi {
     };
 
     api.addDecorator = decorator => {
-      decorators.push(decorator);
+      localDecorators.push(decorator);
       return api;
     };
 
