@@ -2,13 +2,26 @@ import React from 'react';
 
 export class Code extends React.Component {
   render() {
-    const style = {
-      fontSize: '1.88em',
+    const codeStyle = {
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
       backgroundColor: '#fafafa',
     };
 
-    return <code style={style}>{this.props.children}</code>;
+    const preStyle = {
+      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+      backgroundColor: '#fafafa',
+      padding: '.5rem',
+      lineHeight: 1.5,
+      overflowX: 'scroll',
+    };
+
+    return (
+      <pre style={preStyle}>
+        <code style={codeStyle}>
+          { this.props.code }
+        </code>
+      </pre>
+    );
   }
 }
 

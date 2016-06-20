@@ -13,7 +13,7 @@ MTRC.configure({
   h5: H5,
   h6: H6,
   code: Code,
-  pre: Pre,
+  // pre: Pre,
   p: P,
   a: A,
   li: LI,

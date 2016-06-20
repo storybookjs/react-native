@@ -58,3 +58,31 @@ storiesOf('Button')
     () => (<Button label="The Button" onClick={action('onClick')}/>),
     { propTables: false, inline: true },
   );
+
+storiesOf('Button')
+  .addWithInfo(
+    'simple usage (custom propTables)',
+    `
+      This is the basic usage with the button with providing a label to show the text.
+
+      Since, the story source code is wrapped inside a div, info addon can't figure out propTypes on it's own.
+      So, we need to give relevant React component classes manually using \`propTypes\` option as shown below:
+
+      ~~~js
+      storiesOf('Button')
+        .addWithInfo(
+          'simple usage (custom propTables)',
+          <info>,
+          <storyFn>,
+          { inline: true, propTables: [Button]}
+        );
+      ~~~
+    `,
+    () => (
+      <div>
+        <Button label="The Button" onClick={action('onClick')}/>
+        <br />
+      </div>
+    ),
+    { inline: true, propTables: [Button]}
+  );

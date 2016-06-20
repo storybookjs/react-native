@@ -1,58 +1,53 @@
-# React Storybook Story
+# React Storybook Info Addon
 
-A component to add additional information with your [react-storybook](#) stories.
+A React Storybook addon to show additional information for your stories.
 
 ![React Storybook Screenshot](docs/screenshot.png)
 
-To get started, install the module as a `devDependency`
+### Usage
 
-```shell
-npm install -D react-storybook-story
+Install the following npm module:
+
+```sh
+npm i --save @kadira/react-storybook-addon-info
 ```
 
-When writing stories, wrap your component with the `<Story />` component and use the `info` parameter to give additional info.
+Then set the addon in the place you configure storybook like this:
 
 ```js
-import {storiesOf} from '@kadira/storybook';
-import Story from 'react-storybook-story';
-import 'react-storybook-story/styles.css';
+import React from 'react';
+import { configure, setAddon } from '@kadira/storybook';
 
-storiesOf('<MyComponent />', module)
-  .add('my-example-story', function () {
-    const info = `
-      This story will render **MyComponent** with the
-      _foo_ parameter set to "bar"
-    `;
-    return (
-      <Story info={info}>
-        <MyComponent foo={'bar'} />
-      </Story>
-    );
-  });
+setAddon(InfoAddon);
+
+configure(function () {
+  ...
+}, module);
 ```
 
-## The FAQ
-
-### Error loading styles.css file
-
-To load the stylesheet make sure your webpack config has `style-loader` and `raw-loader` setup properly. Modify your `.storybook/webpack.config.js` file to include the `style-loader`.
+Then create your stories with the `.addWithInfo` API.
 
 ```js
-const path = require('path');
+import React from 'react';
+import Button from './Button';
+import { storiesOf, action } from '@kadira/storybook';
 
-module.exports = {
-  module: {
-    loaders: [
-      {
-        test: /\.css?$/,
-        loaders: ['style', 'raw'],
-        include: path.resolve(__dirname, '../'),
-      },
-    ],
-  },
-};
+storiesOf('Button')
+  .addWithInfo(
+    'simple usage',
+    `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+    () => (
+      <div>
+        <Button label="The Button" onClick={action('onClick')}/>
+        <br />
+        <p>
+          Click the "?" mark at top-right to view the info.
+        </p>
+      </div>
+    ),
+  );
 ```
 
-## Credits
-
-- markdown styles are based on [markdowncss/modest](https://github.com/markdowncss/modest)
+> Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
