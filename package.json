@@ -18,7 +18,6 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@kadira/storybook": "^1.31.0",
     "babel-cli": "^6.5.0",
     "babel-core": "^6.5.0",
     "babel-eslint": "^6.0.2",
@@ -51,10 +50,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
-    "markdown-modest": "github:markdowncss/modest",
     "markdown-to-react-components": "^0.2.0",
     "react-addons-create-fragment": "^15.1.0",
-    "react-remarkable": "^1.1.1"
   },
   "main": "dist/index.js",
   "engines": {
