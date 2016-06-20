@@ -38,7 +38,7 @@ exports.default = {
         showInline: Boolean(options.inline),
         showHeader: Boolean(options.header),
         showSource: Boolean(options.source),
-        propTypes: options.propTypes
+        propTables: options.propTables
       };
 
       return _react2.default.createElement(

@@ -42,16 +42,27 @@ var Code = exports.Code = function (_React$Component) {
   (0, _createClass3.default)(Code, [{
     key: 'render',
     value: function render() {
-      var style = {
-        fontSize: '1.88em',
+      var codeStyle = {
         fontFamily: 'Menlo, Monaco, "Courier New", monospace',
         backgroundColor: '#fafafa'
       };
 
+      var preStyle = {
+        fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+        backgroundColor: '#fafafa',
+        padding: '.5rem',
+        lineHeight: 1.5,
+        overflowX: 'scroll'
+      };
+
       return _react2.default.createElement(
-        'code',
-        { style: style },
-        this.props.children
+        'pre',
+        { style: preStyle },
+        _react2.default.createElement(
+          'code',
+          { style: codeStyle },
+          this.props.code
+        )
       );
     }
   }]);

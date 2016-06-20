@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.H6 = exports.H5 = exports.H4 = exports.H3 = exports.H2 = exports.H1 = undefined;
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -29,6 +33,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _theme = require('../theme');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var H1 = exports.H1 = function (_React$Component) {
@@ -42,19 +48,13 @@ var H1 = exports.H1 = function (_React$Component) {
   (0, _createClass3.default)(H1, [{
     key: 'render',
     value: function render() {
-      var styles = {
-        fontFamily: 'Arimo, Helvetica, sans-serif',
-        color: '#777',
-        borderBottom: '2px solid #fafafa',
-        marginBottom: '1.15rem',
-        paddingBottom: '.5rem',
-        margin: '1.414rem 0 .5rem',
-        fontWeight: 'inherit',
-        lineHeight: 1.42,
-        textAlign: 'center',
-        marginTop: 0,
-        fontSize: '3.998rem'
-      };
+      var styles = (0, _extends3.default)({}, _theme.baseFonts, {
+        borderBottom: '1px solid #eee',
+        fontWeight: 600,
+        margin: 0,
+        padding: 0,
+        fontSize: '40'
+      });
 
       return _react2.default.createElement(
         'h1',
@@ -77,16 +77,12 @@ var H2 = exports.H2 = function (_React$Component2) {
   (0, _createClass3.default)(H2, [{
     key: 'render',
     value: function render() {
-      var styles = {
-        fontFamily: 'Arimo, Helvetica, sans-serif',
-        borderBottom: '2px solid #fafafa',
-        marginBottom: '1.15rem',
-        paddingBottom: '.5rem',
-        margin: '1.414rem 0 .5rem',
-        fontWeight: 'inherit',
-        lineHeight: 1.42,
-        fontSize: '2.827rem'
-      };
+      var styles = (0, _extends3.default)({}, _theme.baseFonts, {
+        fontWeight: 600,
+        margin: 0,
+        padding: 0,
+        fontSize: '30'
+      });
 
       return _react2.default.createElement(
         'h2',
@@ -109,16 +105,13 @@ var H3 = exports.H3 = function (_React$Component3) {
   (0, _createClass3.default)(H3, [{
     key: 'render',
     value: function render() {
-      var styles = {
-        fontFamily: 'Arimo, Helvetica, sans-serif',
-        borderBottom: '2px solid #fafafa',
-        marginBottom: '1.15rem',
-        paddingBottom: '.5rem',
-        margin: '1.414rem 0 .5rem',
-        fontWeight: 'inherit',
-        lineHeight: 1.42,
-        fontSize: '1.999rem'
-      };
+      var styles = (0, _extends3.default)({}, _theme.baseFonts, {
+        fontWeight: 600,
+        margin: 0,
+        padding: 0,
+        fontSize: '22',
+        textTransform: 'uppercase'
+      });
 
       return _react2.default.createElement(
         'h3',
@@ -141,14 +134,12 @@ var H4 = exports.H4 = function (_React$Component4) {
   (0, _createClass3.default)(H4, [{
     key: 'render',
     value: function render() {
-      var styles = {
-        fontFamily: 'Arimo, Helvetica, sans-serif',
-        color: '#444',
-        margin: '1.414rem 0 .5rem',
-        fontWeight: 'inherit',
-        lineHeight: 1.42,
-        fontSize: '1.414rem'
-      };
+      var styles = (0, _extends3.default)({}, _theme.baseFonts, {
+        fontWeight: 600,
+        margin: 0,
+        padding: 0,
+        fontSize: '20'
+      });
 
       return _react2.default.createElement(
         'h4',
@@ -171,10 +162,12 @@ var H5 = exports.H5 = function (_React$Component5) {
   (0, _createClass3.default)(H5, [{
     key: 'render',
     value: function render() {
-      var styles = {
-        fontFamily: 'Arimo, Helvetica, sans-serif',
-        fontSize: '1.121rem'
-      };
+      var styles = (0, _extends3.default)({}, _theme.baseFonts, {
+        fontWeight: 600,
+        margin: 0,
+        padding: 0,
+        fontSize: '18'
+      });
 
       return _react2.default.createElement(
         'h5',
@@ -197,10 +190,12 @@ var H6 = exports.H6 = function (_React$Component6) {
   (0, _createClass3.default)(H6, [{
     key: 'render',
     value: function render() {
-      var styles = {
-        fontFamily: 'Arimo, Helvetica, sans-serif',
-        fontSize: '.88rem'
-      };
+      var styles = (0, _extends3.default)({}, _theme.baseFonts, {
+        fontWeight: 400,
+        margin: 0,
+        padding: 0,
+        fontSize: '18'
+      });
 
       return _react2.default.createElement(
         'h6',

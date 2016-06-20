@@ -2,7 +2,7 @@
 
 A React Storybook addon to show additional information for your stories.
 
-![React Storybook Screenshot](docs/screenshot.png)
+![React Storybook Screenshot](docs/home-screenshot.png)
 
 ### Usage
 

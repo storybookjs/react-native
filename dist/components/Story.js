@@ -12,10 +12,6 @@ var _map = require('babel-runtime/core-js/map');
 
 var _map2 = _interopRequireDefault(_map);
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
@@ -23,6 +19,10 @@ var _assign2 = _interopRequireDefault(_assign);
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -62,6 +62,8 @@ var _Node2 = _interopRequireDefault(_Node);
 
 var _markdown = require('./markdown');
 
+var _theme = require('./theme');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _markdownToReactComponents2.default.configure({
@@ -72,16 +74,18 @@ _markdownToReactComponents2.default.configure({
   h5: _markdown.H5,
   h6: _markdown.H6,
   code: _markdown.Code,
-  pre: _markdown.Pre,
+  // pre: Pre,
   p: _markdown.P,
-  a: _markdown.A
+  a: _markdown.A,
+  li: _markdown.LI,
+  ul: _markdown.UL
 });
 
 var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
 
   function Story() {
-    var _Object$getPrototypeO;
+    var _Object$getPrototypeO, _this$stylesheet;
 
     (0, _classCallCheck3.default)(this, Story);
 
@@ -91,7 +95,7 @@ var Story = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Story)).call.apply(_Object$getPrototypeO, [this].concat(args)));
 
-    _this.stylesheet = (0, _defineProperty3.default)({
+    _this.stylesheet = (_this$stylesheet = {
       link: {
         base: {
           fontFamily: 'sans-serif',
@@ -123,15 +127,37 @@ var Story = function (_React$Component) {
       infoBody: {
         fontSize: "16px"
       }
-    }, 'infoBody', {
-      color: '#444',
-      fontFamily: "'Open Sans Condensed', sans-serif",
+    }, (0, _defineProperty3.default)(_this$stylesheet, 'infoBody', (0, _extends3.default)({}, _theme.baseFonts, {
       fontWeight: 300,
-      margin: '0 auto',
       maxWidth: '48rem',
       lineHeight: 1.45,
-      padding: '.25rem'
-    });
+      fontSize: 15
+    })), (0, _defineProperty3.default)(_this$stylesheet, 'infoContent', {
+      marginBottom: 0
+    }), (0, _defineProperty3.default)(_this$stylesheet, 'header', {
+      h1: {
+        margin: '20px 0 0 0',
+        padding: 0,
+        fontSize: 35
+      },
+      h2: {
+        margin: '0 0 10px 0',
+        padding: 0,
+        fontWeight: 400,
+        fontSize: 22
+      },
+      body: {
+        borderBottom: '1px solid #eee',
+        marginBottom: 10
+      }
+    }), (0, _defineProperty3.default)(_this$stylesheet, 'source', {
+      h1: {
+        margin: '20px 0 0 0',
+        padding: '0 0 5px 0',
+        fontSize: 25,
+        borderBottom: '1px solid #EEE'
+      }
+    }), _this$stylesheet);
 
     _this.state = { open: false };
     return _this;
@@ -146,24 +172,28 @@ var Story = function (_React$Component) {
       return this._renderOverlay();
     }
   }, {
-    key: '_renderInline',
-    value: function _renderInline() {
-      var infoBodyInlineStyle = {
-        borderTop: 'solid 1px #fafafa',
-        marginTop: '1.5em'
-      };
-      var infoBodyStyle = (0, _assign2.default)(this.stylesheet.infoBody, infoBodyInlineStyle);
-
+    key: '_renderStory',
+    value: function _renderStory() {
       return _react2.default.createElement(
         'div',
         null,
-        this.props.children,
+        this.props.children
+      );
+    }
+  }, {
+    key: '_renderInline',
+    value: function _renderInline() {
+      return _react2.default.createElement(
+        'div',
+        null,
         _react2.default.createElement(
           'div',
           { style: this.stylesheet.infoPage },
           _react2.default.createElement(
             'div',
-            { style: infoBodyStyle },
+            { style: this.stylesheet.infoBody },
+            this._getInfoHeader(),
+            this._renderStory(),
             this._getInfoContent(),
             this._getSourceCode(),
             this._getPropTables()
@@ -232,16 +262,16 @@ var Story = function (_React$Component) {
       }
 
       return _react2.default.createElement(
-        'header',
-        null,
+        'div',
+        { style: this.stylesheet.header.body },
         _react2.default.createElement(
           'h1',
-          null,
+          { style: this.stylesheet.header.h1 },
           this.props.context.kind
         ),
         _react2.default.createElement(
           'h2',
-          null,
+          { style: this.stylesheet.header.h2 },
           this.props.context.story
         )
       );
@@ -264,7 +294,11 @@ var Story = function (_React$Component) {
       var source = lines.map(function (s) {
         return s.slice(padding);
       }).join('\n');
-      return (0, _markdownToReactComponents2.default)(source).tree;
+      return _react2.default.createElement(
+        'div',
+        { style: this.stylesheet.infoContent },
+        (0, _markdownToReactComponents2.default)(source).tree
+      );
     }
   }, {
     key: '_getSourceCode',
@@ -277,9 +311,9 @@ var Story = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          _markdown.H3,
-          null,
-          'Example Source'
+          'h1',
+          { style: this.stylesheet.source.h1 },
+          'Story Source'
         ),
         _react2.default.createElement(
           _markdown.Pre,
@@ -293,7 +327,11 @@ var Story = function (_React$Component) {
   }, {
     key: '_getPropTables',
     value: function _getPropTables() {
-      if (!this.props.children && !this.props.propTables) {
+      if (this.props.propTables === false) {
+        return null;
+      }
+
+      if (!this.props.children) {
         return null;
       }
 
@@ -332,20 +370,36 @@ var Story = function (_React$Component) {
         return (a.displayName || a.name) > (b.displayName || b.name);
       });
 
-      return array.map(function (type, idx) {
+      var propTables = array.map(function (type, idx) {
         return _react2.default.createElement(
           'div',
           { key: idx },
           _react2.default.createElement(
-            'h3',
+            'h2',
             null,
-            '<',
+            '"',
             type.displayName || type.name,
-            ' /> PropTypes'
+            '" Component'
           ),
           _react2.default.createElement(_PropTable2.default, { type: type })
         );
       });
+
+      if (!propTables || propTables.length === 0) {
+        return null;
+      }
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          { style: this.stylesheet.source.h1 },
+          'Prop Types'
+        ),
+        propTables
+      );
+      return;
     }
   }]);
   return Story;
