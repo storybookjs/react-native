@@ -1,6 +1,6 @@
 import React from 'react';
 import MTRC from 'markdown-to-react-components';
-// import PropTable from './PropTable';
+import PropTable from './PropTable';
 import Node from './Node';
 import {H1, H2, H3, H4, H5, H6, Code, Pre, P, UL, A, LI} from './markdown';
 import { baseFonts } from './theme';
@@ -232,6 +232,68 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
-    return null;
+    if (this.props.propTables === false) {
+      return null;
+    }
+
+    if (!this.props.children) {
+      return null;
+    }
+
+    const types = new Map();
+
+    if (this.props.propTables) {
+      this.props.propTables.forEach(function (type) {
+        types.set(type, true);
+      });
+    }
+
+    function extract(children) {
+      if (Array.isArray(children)) {
+        children.forEach(extract);
+        return;
+      }
+      if (typeof children === 'string' || typeof children.type === 'string') {
+        return;
+      }
+
+      const type = children.type;
+      const name = type.displayName || type.name;
+      if (!types.has(type)) {
+        types.set(type, true);
+      }
+      if (children.props.children) {
+        extract(children.props.children);
+      }
+    }
+
+    // extract components from children
+    extract(this.props.children);
+
+    const array = Array.from(types.keys());
+    array.sort(function (a, b) {
+      return (a.displayName || a.name) > (b.displayName || b.name);
+    });
+
+    const propTables = array.map(function (type, idx) {
+      return (
+        <div key={idx}>
+          <h2>"{type.displayName || type.name}" Component</h2>
+          <PropTable type={type} />
+        </div>
+      );
+    });
+
+    if (!propTables || propTables.length === 0) {
+      return null;
+    }
+
+    return (
+      <div>
+        <h1 style={this.stylesheet.source.h1}>Prop Types</h1>
+        {propTables}
+      </div>
+    );
+    return ;
   }
 }
