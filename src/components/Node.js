@@ -1,21 +1,22 @@
 import React from 'react';
 import Props from './Props'
 
+
+const stylesheet = {
+  containerStyle: {},
+  tagStyle: {
+    color: '#777',
+  }
+}
+
 export default class Node extends React.Component {
   constructor(props){
     super(props);
   }
 
-  stylesheet = {
-    containerStyle: {},
-    tagStyle: {
-      color: '#777',
-    }
-  }
-
   render(){
     const {node, depth} = this.props;
-    let {tagStyle, containerStyle} = this.stylesheet;
+    let {tagStyle, containerStyle} = stylesheet;
 
     var leftPad = {
       paddingLeft: 3 + (depth + 1) * 15,

@@ -38,21 +38,19 @@ var _Props2 = _interopRequireDefault(_Props);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var stylesheet = {
+  containerStyle: {},
+  tagStyle: {
+    color: '#777'
+  }
+};
+
 var Node = function (_React$Component) {
   (0, _inherits3.default)(Node, _React$Component);
 
   function Node(props) {
     (0, _classCallCheck3.default)(this, Node);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Node).call(this, props));
-
-    _this.stylesheet = {
-      containerStyle: {},
-      tagStyle: {
-        color: '#777'
-      }
-    };
-    return _this;
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Node).call(this, props));
   }
 
   (0, _createClass3.default)(Node, [{
@@ -61,9 +59,8 @@ var Node = function (_React$Component) {
       var _props = this.props;
       var node = _props.node;
       var depth = _props.depth;
-      var _stylesheet = this.stylesheet;
-      var tagStyle = _stylesheet.tagStyle;
-      var containerStyle = _stylesheet.containerStyle;
+      var tagStyle = stylesheet.tagStyle;
+      var containerStyle = stylesheet.containerStyle;
 
 
       var leftPad = {

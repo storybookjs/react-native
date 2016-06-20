@@ -20,91 +20,76 @@ MTRC.configure({
   ul: UL
 });
 
-export default class Story extends React.Component {
-  static displayName = 'Story';
-  static propTypes = {
-    context: React.PropTypes.object,
-    info: React.PropTypes.string,
-    propTables: React.PropTypes.arrayOf(React.PropTypes.func),
-    showInline: React.PropTypes.bool,
-    showHeader: React.PropTypes.bool,
-    showSource: React.PropTypes.bool,
-  }
-  static defaultProps = {
-    showInline: false,
-    showHeader: true,
-    showSource: true,
-  }
-
-  stylesheet = {
-    link: {
-      base: {
-        fontFamily: 'sans-serif',
-        fontSize: 12,
-        display: 'block',
-        position: 'fixed',
-        textDecoration: 'none',
-        background: '#28c',
-        color: '#fff',
-        padding: '5px 15px',
-        cursor: 'pointer',
-      },
-      topRight: {
-        top: 0,
-        right: 0,
-        borderRadius: '0 0 0 5px',
-      },
+const stylesheet = {
+  link: {
+    base: {
+      fontFamily: 'sans-serif',
+      fontSize: 12,
+      display: 'block',
+      position: 'fixed',
+      textDecoration: 'none',
+      background: '#28c',
+      color: '#fff',
+      padding: '5px 15px',
+      cursor: 'pointer',
     },
-    info: {
-      position: 'absolute',
-      background: 'white',
+    topRight: {
       top: 0,
-      bottom: 0,
-      left: 0,
       right: 0,
-      padding: '0 40px',
-      overflow: 'auto',
+      borderRadius: '0 0 0 5px',
     },
-    infoBody: {
-      fontSize: "16px",
+  },
+  info: {
+    position: 'absolute',
+    background: 'white',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: '0 40px',
+    overflow: 'auto',
+  },
+  infoBody: {
+    fontSize: "16px",
+  },
+  infoBody: {
+    ...baseFonts,
+    fontWeight: 300,
+    maxWidth: '48rem',
+    lineHeight: 1.45,
+    fontSize: 15,
+  },
+  infoContent: {
+    marginBottom: 0,
+  },
+  header: {
+    h1: {
+      margin: '20px 0 0 0',
+      padding: 0,
+      fontSize: 35,
     },
-    infoBody: {
-      ...baseFonts,
-      fontWeight: 300,
-      maxWidth: '48rem',
-      lineHeight: 1.45,
-      fontSize: 15,
+    h2: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: 22,
     },
-    infoContent: {
-      marginBottom: 0,
-    },
-    header: {
-      h1: {
-        margin: '20px 0 0 0',
-        padding: 0,
-        fontSize: 35,
-      },
-      h2: {
-        margin: '0 0 10px 0',
-        padding: 0,
-        fontWeight: 400,
-        fontSize: 22,
-      },
-      body: {
-        borderBottom: '1px solid #eee',
-        marginBottom: 10,
-      }
-    },
-    source: {
-      h1: {
-        margin: '20px 0 0 0',
-        padding: '0 0 5px 0',
-        fontSize: 25,
-        borderBottom: '1px solid #EEE',
-      }
+    body: {
+      borderBottom: '1px solid #eee',
+      marginBottom: 10,
+    }
+  },
+  source: {
+    h1: {
+      margin: '20px 0 0 0',
+      padding: '0 0 5px 0',
+      fontSize: 25,
+      borderBottom: '1px solid #EEE',
     }
   }
+}
 
+export default class Story extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {open: false};
@@ -128,8 +113,8 @@ export default class Story extends React.Component {
   _renderInline() {
     return (
       <div>
-        <div style={this.stylesheet.infoPage}>
-          <div style={this.stylesheet.infoBody} >
+        <div style={stylesheet.infoPage}>
+          <div style={stylesheet.infoBody} >
             { this._getInfoHeader() }
             { this._renderStory() }
             { this._getInfoContent() }
@@ -143,10 +128,10 @@ export default class Story extends React.Component {
 
   _renderOverlay() {
     const linkStyle = {
-      ...this.stylesheet.link.base,
-      ...this.stylesheet.link.topRight,
+      ...stylesheet.link.base,
+      ...stylesheet.link.topRight,
     }
-    const infoStyle = Object.assign({}, this.stylesheet.info);
+    const infoStyle = Object.assign({}, stylesheet.info);
     if (!this.state.open) {
       infoStyle.display = 'none';
     }
@@ -167,8 +152,8 @@ export default class Story extends React.Component {
         <a style={linkStyle} onClick={openOverlay}>?</a>
         <div style={infoStyle}>
           <a style={linkStyle} onClick={closeOverlay}>×</a>
-          <div style={this.stylesheet.infoPage}>
-            <div style={this.stylesheet.infoBody}>
+          <div style={stylesheet.infoPage}>
+            <div style={stylesheet.infoBody}>
               { this._getInfoHeader() }
               { this._getInfoContent() }
               { this._getSourceCode() }
@@ -186,9 +171,9 @@ export default class Story extends React.Component {
     }
 
     return (
-      <div style={this.stylesheet.header.body}>
-        <h1 style={this.stylesheet.header.h1}>{this.props.context.kind}</h1>
-        <h2 style={this.stylesheet.header.h2}>{this.props.context.story}</h2>
+      <div style={stylesheet.header.body}>
+        <h1 style={stylesheet.header.h1}>{this.props.context.kind}</h1>
+        <h2 style={stylesheet.header.h2}>{this.props.context.story}</h2>
       </div>
     );
   }
@@ -208,7 +193,7 @@ export default class Story extends React.Component {
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
     return (
-      <div style={this.stylesheet.infoContent}>
+      <div style={stylesheet.infoContent}>
         {MTRC(source).tree}
       </div>
     );
@@ -221,7 +206,7 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <h1 style={this.stylesheet.source.h1}>Story Source</h1>
+        <h1 style={stylesheet.source.h1}>Story Source</h1>
         <Pre>
         {React.Children.map(this.props.children, (root, idx) => (
           <Node key={idx} depth={0} node={root}></Node>
@@ -290,10 +275,25 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <h1 style={this.stylesheet.source.h1}>Prop Types</h1>
+        <h1 style={stylesheet.source.h1}>Prop Types</h1>
         {propTables}
       </div>
     );
     return ;
   }
+}
+
+Story.displayName = 'Story';
+Story.propTypes = {
+  context: React.PropTypes.object,
+  info: React.PropTypes.string,
+  propTables: React.PropTypes.arrayOf(React.PropTypes.func),
+  showInline: React.PropTypes.bool,
+  showHeader: React.PropTypes.bool,
+  showSource: React.PropTypes.bool,
+}
+Story.defaultProps = {
+  showInline: false,
+  showHeader: true,
+  showSource: true,
 }

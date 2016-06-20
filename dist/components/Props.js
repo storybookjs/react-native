@@ -42,27 +42,20 @@ var _PropVal2 = _interopRequireDefault(_PropVal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var stylesheet = {
+  propStyle: {
+    paddingLeft: 8
+  },
+  propNameStyle: {},
+  propValueStyle: {}
+};
+
 var Props = function (_React$Component) {
   (0, _inherits3.default)(Props, _React$Component);
 
   function Props() {
-    var _Object$getPrototypeO;
-
-    var _temp, _this, _ret;
-
     (0, _classCallCheck3.default)(this, Props);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Props)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.stylesheet = {
-      propStyle: {
-        paddingLeft: 8
-      },
-      propNameStyle: {},
-      propValueStyle: {}
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Props).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Props, [{
@@ -74,10 +67,9 @@ var Props = function (_React$Component) {
         return _react2.default.createElement('span', null);
       }
 
-      var _stylesheet = this.stylesheet;
-      var propStyle = _stylesheet.propStyle;
-      var propValueStyle = _stylesheet.propValueStyle;
-      var propNameStyle = _stylesheet.propNameStyle;
+      var propStyle = stylesheet.propStyle;
+      var propValueStyle = stylesheet.propValueStyle;
+      var propNameStyle = stylesheet.propNameStyle;
 
 
       var names = (0, _keys2.default)(props).filter(function (name) {

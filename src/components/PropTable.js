@@ -10,11 +10,6 @@ for (let typeName in React.PropTypes) {
 }
 
 export default class PropTable extends React.Component {
-  static displayName = 'PropTable';
-  static propTypes = {
-    type: React.PropTypes.func
-  };
-
   render () {
     const type = this.props.type;
 
@@ -85,3 +80,8 @@ export default class PropTable extends React.Component {
     );
   }
 }
+
+PropTable.displayName = 'PropTable';
+PropTable.propTypes = {
+  type: React.PropTypes.func
+};

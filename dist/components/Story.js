@@ -16,14 +16,6 @@ var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -43,6 +35,16 @@ var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorRet
 var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _stylesheet;
 
 var _react = require('react');
 
@@ -81,11 +83,75 @@ _markdownToReactComponents2.default.configure({
   ul: _markdown.UL
 });
 
+var stylesheet = (_stylesheet = {
+  link: {
+    base: {
+      fontFamily: 'sans-serif',
+      fontSize: 12,
+      display: 'block',
+      position: 'fixed',
+      textDecoration: 'none',
+      background: '#28c',
+      color: '#fff',
+      padding: '5px 15px',
+      cursor: 'pointer'
+    },
+    topRight: {
+      top: 0,
+      right: 0,
+      borderRadius: '0 0 0 5px'
+    }
+  },
+  info: {
+    position: 'absolute',
+    background: 'white',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: '0 40px',
+    overflow: 'auto'
+  },
+  infoBody: {
+    fontSize: "16px"
+  }
+}, (0, _defineProperty3.default)(_stylesheet, 'infoBody', (0, _extends3.default)({}, _theme.baseFonts, {
+  fontWeight: 300,
+  maxWidth: '48rem',
+  lineHeight: 1.45,
+  fontSize: 15
+})), (0, _defineProperty3.default)(_stylesheet, 'infoContent', {
+  marginBottom: 0
+}), (0, _defineProperty3.default)(_stylesheet, 'header', {
+  h1: {
+    margin: '20px 0 0 0',
+    padding: 0,
+    fontSize: 35
+  },
+  h2: {
+    margin: '0 0 10px 0',
+    padding: 0,
+    fontWeight: 400,
+    fontSize: 22
+  },
+  body: {
+    borderBottom: '1px solid #eee',
+    marginBottom: 10
+  }
+}), (0, _defineProperty3.default)(_stylesheet, 'source', {
+  h1: {
+    margin: '20px 0 0 0',
+    padding: '0 0 5px 0',
+    fontSize: 25,
+    borderBottom: '1px solid #EEE'
+  }
+}), _stylesheet);
+
 var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
 
   function Story() {
-    var _Object$getPrototypeO, _this$stylesheet;
+    var _Object$getPrototypeO;
 
     (0, _classCallCheck3.default)(this, Story);
 
@@ -94,70 +160,6 @@ var Story = function (_React$Component) {
     }
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Story)).call.apply(_Object$getPrototypeO, [this].concat(args)));
-
-    _this.stylesheet = (_this$stylesheet = {
-      link: {
-        base: {
-          fontFamily: 'sans-serif',
-          fontSize: 12,
-          display: 'block',
-          position: 'fixed',
-          textDecoration: 'none',
-          background: '#28c',
-          color: '#fff',
-          padding: '5px 15px',
-          cursor: 'pointer'
-        },
-        topRight: {
-          top: 0,
-          right: 0,
-          borderRadius: '0 0 0 5px'
-        }
-      },
-      info: {
-        position: 'absolute',
-        background: 'white',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        padding: '0 40px',
-        overflow: 'auto'
-      },
-      infoBody: {
-        fontSize: "16px"
-      }
-    }, (0, _defineProperty3.default)(_this$stylesheet, 'infoBody', (0, _extends3.default)({}, _theme.baseFonts, {
-      fontWeight: 300,
-      maxWidth: '48rem',
-      lineHeight: 1.45,
-      fontSize: 15
-    })), (0, _defineProperty3.default)(_this$stylesheet, 'infoContent', {
-      marginBottom: 0
-    }), (0, _defineProperty3.default)(_this$stylesheet, 'header', {
-      h1: {
-        margin: '20px 0 0 0',
-        padding: 0,
-        fontSize: 35
-      },
-      h2: {
-        margin: '0 0 10px 0',
-        padding: 0,
-        fontWeight: 400,
-        fontSize: 22
-      },
-      body: {
-        borderBottom: '1px solid #eee',
-        marginBottom: 10
-      }
-    }), (0, _defineProperty3.default)(_this$stylesheet, 'source', {
-      h1: {
-        margin: '20px 0 0 0',
-        padding: '0 0 5px 0',
-        fontSize: 25,
-        borderBottom: '1px solid #EEE'
-      }
-    }), _this$stylesheet);
 
     _this.state = { open: false };
     return _this;
@@ -188,10 +190,10 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          { style: this.stylesheet.infoPage },
+          { style: stylesheet.infoPage },
           _react2.default.createElement(
             'div',
-            { style: this.stylesheet.infoBody },
+            { style: stylesheet.infoBody },
             this._getInfoHeader(),
             this._renderStory(),
             this._getInfoContent(),
@@ -206,8 +208,8 @@ var Story = function (_React$Component) {
     value: function _renderOverlay() {
       var _this2 = this;
 
-      var linkStyle = (0, _extends3.default)({}, this.stylesheet.link.base, this.stylesheet.link.topRight);
-      var infoStyle = (0, _assign2.default)({}, this.stylesheet.info);
+      var linkStyle = (0, _extends3.default)({}, stylesheet.link.base, stylesheet.link.topRight);
+      var infoStyle = (0, _assign2.default)({}, stylesheet.info);
       if (!this.state.open) {
         infoStyle.display = 'none';
       }
@@ -241,10 +243,10 @@ var Story = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { style: this.stylesheet.infoPage },
+            { style: stylesheet.infoPage },
             _react2.default.createElement(
               'div',
-              { style: this.stylesheet.infoBody },
+              { style: stylesheet.infoBody },
               this._getInfoHeader(),
               this._getInfoContent(),
               this._getSourceCode(),
@@ -263,15 +265,15 @@ var Story = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: this.stylesheet.header.body },
+        { style: stylesheet.header.body },
         _react2.default.createElement(
           'h1',
-          { style: this.stylesheet.header.h1 },
+          { style: stylesheet.header.h1 },
           this.props.context.kind
         ),
         _react2.default.createElement(
           'h2',
-          { style: this.stylesheet.header.h2 },
+          { style: stylesheet.header.h2 },
           this.props.context.story
         )
       );
@@ -296,7 +298,7 @@ var Story = function (_React$Component) {
       }).join('\n');
       return _react2.default.createElement(
         'div',
-        { style: this.stylesheet.infoContent },
+        { style: stylesheet.infoContent },
         (0, _markdownToReactComponents2.default)(source).tree
       );
     }
@@ -312,7 +314,7 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h1',
-          { style: this.stylesheet.source.h1 },
+          { style: stylesheet.source.h1 },
           'Story Source'
         ),
         _react2.default.createElement(
@@ -394,7 +396,7 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h1',
-          { style: this.stylesheet.source.h1 },
+          { style: stylesheet.source.h1 },
           'Prop Types'
         ),
         propTables
@@ -404,6 +406,9 @@ var Story = function (_React$Component) {
   }]);
   return Story;
 }(_react2.default.Component);
+
+exports.default = Story;
+
 
 Story.displayName = 'Story';
 Story.propTypes = {
@@ -419,4 +424,3 @@ Story.defaultProps = {
   showHeader: true,
   showSource: true
 };
-exports.default = Story;

@@ -1,19 +1,19 @@
 import React from 'react';
 import PropVal from './PropVal';
 
-export default class Props extends React.Component {
-  stylesheet = {
-    propStyle: {
-      paddingLeft: 8,
-    },
-    propNameStyle: {
+const stylesheet = {
+  propStyle: {
+    paddingLeft: 8,
+  },
+  propNameStyle: {
 
-    },
-    propValueStyle: {
+  },
+  propValueStyle: {
 
-    }
   }
+}
 
+export default class Props extends React.Component {
   render() {
     const props = this.props.node.props;
     const defaultProps = this.props.node.type.defaultProps;
@@ -21,7 +21,7 @@ export default class Props extends React.Component {
       return <span/>;
     }
 
-    const {propStyle, propValueStyle, propNameStyle} = this.stylesheet;
+    const {propStyle, propValueStyle, propNameStyle} = stylesheet;
 
     const names = Object.keys(props).filter(name => {
       return name[0] !== '_' && name !== 'children' && (!defaultProps || props[name] != defaultProps[name]);

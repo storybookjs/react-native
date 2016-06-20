@@ -174,8 +174,10 @@ var PropTable = function (_React$Component) {
   return PropTable;
 }(_react2.default.Component);
 
+exports.default = PropTable;
+
+
 PropTable.displayName = 'PropTable';
 PropTable.propTypes = {
   type: _react2.default.PropTypes.func
 };
-exports.default = PropTable;
