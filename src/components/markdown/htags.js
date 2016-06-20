@@ -1,19 +1,15 @@
 import React from 'react';
+import { baseFonts } from '../theme';
 
 export class H1 extends React.Component {
   render() {
     const styles = {
-      fontFamily: 'Arimo, Helvetica, sans-serif',
-      color: '#777',
-      borderBottom: '2px solid #fafafa',
-      marginBottom: '1.15rem',
-      paddingBottom: '.5rem',
-      margin: '1.414rem 0 .5rem',
-      fontWeight: 'inherit',
-      lineHeight: 1.42,
-      textAlign: 'center',
-      marginTop: 0,
-      fontSize: '3.998rem',
+      ...baseFonts,
+      borderBottom: '1px solid #eee',
+      fontWeight: 600,
+      margin: 0,
+      padding: 0,
+      fontSize: '40',
     };
 
     return <h1 id={this.props.id} style={styles}>{this.props.children}</h1>;
@@ -23,14 +19,11 @@ export class H1 extends React.Component {
 export class H2 extends React.Component {
   render() {
     const styles = {
-      fontFamily: 'Arimo, Helvetica, sans-serif',
-      borderBottom: '2px solid #fafafa',
-      marginBottom: '1.15rem',
-      paddingBottom: '.5rem',
-      margin: '1.414rem 0 .5rem',
-      fontWeight: 'inherit',
-      lineHeight: 1.42,
-      fontSize: '2.827rem',
+      ...baseFonts,
+      fontWeight: 600,
+      margin: 0,
+      padding: 0,
+      fontSize: '30',
     };
 
     return <h2 id={this.props.id} style={styles}>{this.props.children}</h2>;
@@ -40,14 +33,12 @@ export class H2 extends React.Component {
 export class H3 extends React.Component {
   render() {
     const styles = {
-      fontFamily: 'Arimo, Helvetica, sans-serif',
-      borderBottom: '2px solid #fafafa',
-      marginBottom: '1.15rem',
-      paddingBottom: '.5rem',
-      margin: '1.414rem 0 .5rem',
-      fontWeight: 'inherit',
-      lineHeight: 1.42,
-      fontSize: '1.999rem',
+      ...baseFonts,
+      fontWeight: 600,
+      margin: 0,
+      padding: 0,
+      fontSize: '22',
+      textTransform: 'uppercase',
     };
 
     return <h3 id={this.props.id} style={styles}>{this.props.children}</h3>;
@@ -57,12 +48,11 @@ export class H3 extends React.Component {
 export class H4 extends React.Component {
   render() {
     const styles = {
-      fontFamily: 'Arimo, Helvetica, sans-serif',
-      color: '#444',
-      margin: '1.414rem 0 .5rem',
-      fontWeight: 'inherit',
-      lineHeight: 1.42,
-      fontSize: '1.414rem',
+      ...baseFonts,
+      fontWeight: 600,
+      margin: 0,
+      padding: 0,
+      fontSize: '20',
     };
 
     return <h4 id={this.props.id} style={styles}>{this.props.children}</h4>;
@@ -72,8 +62,11 @@ export class H4 extends React.Component {
 export class H5 extends React.Component {
   render() {
     const styles = {
-      fontFamily: 'Arimo, Helvetica, sans-serif',
-      fontSize: '1.121rem',
+      ...baseFonts,
+      fontWeight: 600,
+      margin: 0,
+      padding: 0,
+      fontSize: '18',
     };
 
     return <h5 id={this.props.id} style={styles}>{this.props.children}</h5>;
@@ -83,8 +76,11 @@ export class H5 extends React.Component {
 export class H6 extends React.Component {
   render() {
     const styles = {
-      fontFamily: 'Arimo, Helvetica, sans-serif',
-      fontSize: '.88rem',
+      ...baseFonts,
+      fontWeight: 400,
+      margin: 0,
+      padding: 0,
+      fontSize: '18',
     };
 
     return <h6 id={this.props.id} style={styles}>{this.props.children}</h6>;

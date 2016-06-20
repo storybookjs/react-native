@@ -2,7 +2,8 @@ import React from 'react';
 import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
 import Node from './Node';
-import {H1, H2, H3, H4, H5, H6, Code, Pre, P, Small, A} from './markdown'
+import {H1, H2, H3, H4, H5, H6, Code, Pre, P, UL, A, LI} from './markdown';
+import { baseFonts } from './theme';
 
 MTRC.configure({
   h1: H1,
@@ -12,9 +13,11 @@ MTRC.configure({
   h5: H5,
   h6: H6,
   code: Code,
-  pre: Pre,
+  // pre: Pre,
   p: P,
   a: A,
+  li: LI,
+  ul: UL
 });
 
 export default class Story extends React.Component {
@@ -66,13 +69,39 @@ export default class Story extends React.Component {
       fontSize: "16px",
     },
     infoBody: {
-      color: '#444',
-      fontFamily: "'Open Sans Condensed', sans-serif",
+      ...baseFonts,
       fontWeight: 300,
-      margin: '0 auto',
       maxWidth: '48rem',
       lineHeight: 1.45,
-      padding: '.25rem',
+      fontSize: 15,
+    },
+    infoContent: {
+      marginBottom: 0,
+    },
+    header: {
+      h1: {
+        margin: '20px 0 0 0',
+        padding: 0,
+        fontSize: 35,
+      },
+      h2: {
+        margin: '0 0 10px 0',
+        padding: 0,
+        fontWeight: 400,
+        fontSize: 22,
+      },
+      body: {
+        borderBottom: '1px solid #eee',
+        marginBottom: 10,
+      }
+    },
+    source: {
+      h1: {
+        margin: '20px 0 0 0',
+        padding: '0 0 5px 0',
+        fontSize: 25,
+        borderBottom: '1px solid #EEE',
+      }
     }
   }
 
@@ -88,18 +117,21 @@ export default class Story extends React.Component {
     return this._renderOverlay();
   }
 
-  _renderInline() {
-    const infoBodyInlineStyle = {
-      borderTop: 'solid 1px #fafafa',
-      marginTop: '1.5em',
-    }
-    const infoBodyStyle = Object.assign(this.stylesheet.infoBody, infoBodyInlineStyle);
-
+  _renderStory() {
     return (
       <div>
         { this.props.children }
+      </div>
+    );
+  }
+
+  _renderInline() {
+    return (
+      <div>
         <div style={this.stylesheet.infoPage}>
-          <div style={infoBodyStyle} >
+          <div style={this.stylesheet.infoBody} >
+            { this._getInfoHeader() }
+            { this._renderStory() }
             { this._getInfoContent() }
             { this._getSourceCode() }
             { this._getPropTables() }
@@ -154,10 +186,10 @@ export default class Story extends React.Component {
     }
 
     return (
-      <header>
-        <h1>{this.props.context.kind}</h1>
-        <h2>{this.props.context.story}</h2>
-      </header>
+      <div style={this.stylesheet.header.body}>
+        <h1 style={this.stylesheet.header.h1}>{this.props.context.kind}</h1>
+        <h2 style={this.stylesheet.header.h2}>{this.props.context.story}</h2>
+      </div>
     );
   }
 
@@ -175,7 +207,11 @@ export default class Story extends React.Component {
       padding = matches[0].length;
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
-    return MTRC(source).tree;
+    return (
+      <div style={this.stylesheet.infoContent}>
+        {MTRC(source).tree}
+      </div>
+    );
   }
 
   _getSourceCode() {
@@ -185,7 +221,7 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <H3>Example Source</H3>
+        <h1 style={this.stylesheet.source.h1}>Story Source</h1>
         <Pre>
         {React.Children.map(this.props.children, (root, idx) => (
           <Node key={idx} depth={0} node={root}></Node>
@@ -196,7 +232,11 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
-    if (!this.props.children && !this.props.propTables) {
+    if (this.props.propTables === false) {
+      return null;
+    }
+
+    if (!this.props.children) {
       return null;
     }
 
@@ -235,13 +275,25 @@ export default class Story extends React.Component {
       return (a.displayName || a.name) > (b.displayName || b.name);
     });
 
-    return array.map(function (type, idx) {
+    const propTables = array.map(function (type, idx) {
       return (
         <div key={idx}>
-          <h3>&lt;{type.displayName || type.name} /&gt; PropTypes</h3>
+          <h2>"{type.displayName || type.name}" Component</h2>
           <PropTable type={type} />
         </div>
       );
     });
+
+    if (!propTables || propTables.length === 0) {
+      return null;
+    }
+
+    return (
+      <div>
+        <h1 style={this.stylesheet.source.h1}>Prop Types</h1>
+        {propTables}
+      </div>
+    );
+    return ;
   }
 }
