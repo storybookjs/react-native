@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.33.0
+
+* Introduce an [extension API](https://github.com/kadirahq/react-storybook/blob/master/docs/extensions.md) for React Storybook. See: [PR258](https://github.com/kadirahq/react-storybook/pull/258)
+
 ### v1.32.1
 
 * Extend @kadira/storybook-ui provider from it's base Provider.
