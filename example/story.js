@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 
 storiesOf('Button')
   .addWithInfo(
@@ -10,7 +10,7 @@ storiesOf('Button')
     `,
     () => (
       <div>
-        <Button label="The Button" />
+        <Button label="The Button" onClick={action('onClick')}/>
         <br />
         <p>
           Click the "?" mark at top-right to view the info.
@@ -25,7 +25,7 @@ storiesOf('Button')
     `
       This is the basic usage with the button with providing a label to show the text.
     `,
-    () => (<Button label="The Button" />),
+    () => (<Button label="The Button" onClick={action('onClick')}/>),
     { inline: true },
   );
 
@@ -35,7 +35,7 @@ storiesOf('Button')
     `
       This is the basic usage with the button with providing a label to show the text.
     `,
-    () => (<Button label="The Button" />),
+    () => (<Button label="The Button" onClick={action('onClick')}/>),
     { source: false, inline: true },
   );
 
@@ -45,6 +45,16 @@ storiesOf('Button')
     `
       This is the basic usage with the button with providing a label to show the text.
     `,
-    () => (<Button label="The Button" />),
+    () => (<Button label="The Button" onClick={action('onClick')}/>),
     { header: false, inline: true },
+  );
+
+storiesOf('Button')
+  .addWithInfo(
+    'simple usage (no prop tables)',
+    `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+    () => (<Button label="The Button" onClick={action('onClick')}/>),
+    { propTables: false, inline: true },
   );

@@ -92,13 +92,14 @@ export default class Story extends React.Component {
       },
       body: {
         borderBottom: '1px solid #eee',
+        marginBottom: 10,
       }
     },
     source: {
       h1: {
         margin: '20px 0 0 0',
         padding: '0 0 5px 0',
-        fontSize: 30,
+        fontSize: 25,
         borderBottom: '1px solid #EEE',
       }
     }
@@ -116,13 +117,21 @@ export default class Story extends React.Component {
     return this._renderOverlay();
   }
 
-  _renderInline() {
+  _renderStory() {
     return (
       <div>
         { this.props.children }
+      </div>
+    );
+  }
+
+  _renderInline() {
+    return (
+      <div>
         <div style={this.stylesheet.infoPage}>
           <div style={this.stylesheet.infoBody} >
             { this._getInfoHeader() }
+            { this._renderStory() }
             { this._getInfoContent() }
             { this._getSourceCode() }
             { this._getPropTables() }
@@ -223,7 +232,11 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
-    if (!this.props.children && !this.props.propTables) {
+    if (this.props.propTables === false) {
+      return null;
+    }
+
+    if (!this.props.children) {
       return null;
     }
 
@@ -265,7 +278,7 @@ export default class Story extends React.Component {
     const propTables = array.map(function (type, idx) {
       return (
         <div key={idx}>
-          <h2>{type.displayName || type.name}</h2>
+          <h2>"{type.displayName || type.name}" Component</h2>
           <PropTable type={type} />
         </div>
       );
