@@ -12,7 +12,8 @@ var _shortcuts2 = _interopRequireDefault(_shortcuts);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var types = exports.types = {
-  HANDLE_EVENT: 'SHORTCUTS_HANDLE_EVENT'
+  HANDLE_EVENT: 'SHORTCUTS_HANDLE_EVENT',
+  SET_LAYOUT: 'SHORTCUTS_SET_LAYOUT'
 };
 
 exports.default = {

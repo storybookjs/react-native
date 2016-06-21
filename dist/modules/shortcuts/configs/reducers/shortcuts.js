@@ -20,6 +20,11 @@ exports.default = function () {
         return (0, _extends3.default)({}, state, keyEventToState(state, action.event));
       }
 
+    case _actions.types.SET_LAYOUT:
+      {
+        return (0, _extends3.default)({}, state, action.layout);
+      }
+
     default:
       return state;
   }

@@ -65,12 +65,14 @@ var Provider = exports.Provider = function () {
 
   (0, _createClass3.default)(Provider, [{
     key: 'renderPreview',
-    value: function renderPreview() {
-      throw new Error('Provider.enderPreview() is not implemented!');
+    value: function renderPreview(selectedKind, selectedStory) {
+      // eslint-disable-line no-unused-vars
+      throw new Error('Provider.renderPreview() is not implemented!');
     }
   }, {
     key: 'handleAPI',
-    value: function handleAPI() {
+    value: function handleAPI(api) {
+      // eslint-disable-line no-unused-vars
       throw new Error('Provider.handleAPI() is not implemented!');
     }
   }]);

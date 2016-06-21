@@ -31,5 +31,13 @@ exports.default = {
           event: event
         });
     }
+  },
+  setLayout: function setLayout(context, layout) {
+    var reduxStore = context.reduxStore;
+
+    reduxStore.dispatch({
+      type: _.types.SET_LAYOUT,
+      layout: layout
+    });
   }
 };

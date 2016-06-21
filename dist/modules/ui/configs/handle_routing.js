@@ -45,6 +45,7 @@ function changeUrl(reduxStore) {
   var _reduxStore$getState = reduxStore.getState();
 
   var api = _reduxStore$getState.api;
+  var shortcuts = _reduxStore$getState.shortcuts;
 
   if (!api) return;
 
@@ -55,11 +56,20 @@ function changeUrl(reduxStore) {
 
   if (queryString === '') return;
 
-  var url = '?' + queryString;
+  var full = shortcuts.goFullScreen;
+  var down = shortcuts.showDownPanel;
+  var left = shortcuts.showLeftPanel;
+
+  var layoutQuery = _qs2.default.stringify({ full: Number(full), down: Number(down), left: Number(left) });
+
+  var url = '?' + queryString + '&' + layoutQuery;
   var state = {
     url: url,
     selectedKind: selectedKind,
-    selectedStory: selectedStory
+    selectedStory: selectedStory,
+    full: full,
+    down: down,
+    left: left
   };
 
   window.history.pushState(state, '', url);
@@ -68,10 +78,20 @@ function changeUrl(reduxStore) {
 function updateStore(queryParams, actions) {
   var selectedKind = queryParams.selectedKind;
   var selectedStory = queryParams.selectedStory;
+  var full = queryParams.full;
+  var down = queryParams.down;
+  var left = queryParams.left;
+
 
   if (selectedKind && selectedStory) {
     actions.api.selectStory(selectedKind, selectedStory);
   }
+
+  actions.shortcuts.setLayout({
+    goFullScreen: Boolean(Number(full)),
+    showDownPanel: Boolean(Number(down)),
+    showLeftPanel: Boolean(Number(left))
+  });
 }
 
 function handleInitialUrl(actions, location) {
