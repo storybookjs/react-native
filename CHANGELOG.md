@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.34.0
+
+* Use storybook-ui v2.2.0 which puts shortcut state into the URL. 
+
 ### v1.33.0
 
 * Introduce an [extension API](https://github.com/kadirahq/react-storybook/blob/master/docs/extensions.md) for React Storybook. See: [PR258](https://github.com/kadirahq/react-storybook/pull/258)
