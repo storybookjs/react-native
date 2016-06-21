@@ -1,5 +1,9 @@
 ## Change Log
 
+### v2.2.0
+
+* Add fullscreen and other shortcut state to the URL. See [PR5](https://github.com/kadirahq/storybook-ui/pull/5)
+
 ### v2.1.1
 
 * Add a hacking guide.
