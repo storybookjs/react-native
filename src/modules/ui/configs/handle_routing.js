@@ -7,7 +7,7 @@ export function changeUrl(reduxStore) {
   // Do not change the URL if we are inside a popState event.
   if (config.insidePopState) return;
 
-  const { api } = reduxStore.getState();
+  const { api, shortcuts } = reduxStore.getState();
   if (!api) return;
 
   const { selectedKind, selectedStory } = api;
@@ -15,21 +15,40 @@ export function changeUrl(reduxStore) {
 
   if (queryString === '') return;
 
-  const url = `?${queryString}`;
+  const { goFullScreen: full, showDownPanel: down, showLeftPanel: left } = shortcuts;
+  const layoutQuery = qs.stringify({ full: Number(full), down: Number(down), left: Number(left) });
+
+  const url = `?${queryString}&${layoutQuery}`;
   const state = {
     url,
     selectedKind,
     selectedStory,
+    full,
+    down,
+    left,
   };
 
   window.history.pushState(state, '', url);
 }
 
 export function updateStore(queryParams, actions) {
-  const { selectedKind, selectedStory } = queryParams;
+  const {
+    selectedKind,
+    selectedStory,
+    full,
+    down,
+    left,
+  } = queryParams;
+
   if (selectedKind && selectedStory) {
     actions.api.selectStory(selectedKind, selectedStory);
   }
+
+  actions.shortcuts.setLayout({
+    goFullScreen: Boolean(Number(full)),
+    showDownPanel: Boolean(Number(down)),
+    showLeftPanel: Boolean(Number(left)),
+  });
 }
 
 export function handleInitialUrl(actions, location) {
