@@ -39,7 +39,7 @@ const valueStyles = {
 function previewArray(val) {
   const items = {};
   val.slice(0, 3).forEach((item, i) => {
-    items[`n${i}`] = <PropVal val={item} nested />;
+    items[`n${i}`] = <PropVal val={item} />;
     items[`c${i}`] = ', ';
   });
   if (val.length > 3) {
@@ -60,7 +60,7 @@ function previewObject(val) {
   names.slice(0, 3).forEach((name, i) => {
     items[`k${i}`] = <span style={valueStyles.attr}>{name}</span>;
     items[`c${i}`] = ': ';
-    items[`v${i}`] = <PropVal val={val[name]} nested />;
+    items[`v${i}`] = <PropVal val={val[name]} />;
     items[`m${i}`] = ', ';
   });
   if (names.length > 3) {
@@ -91,11 +91,17 @@ function previewProp(val) {
   if (Array.isArray(val)) {
     return previewArray(val);
   }
+  if (typeof val === 'function') {
+    return <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
+  }
   if (!val) {
     return <span style={valueStyles.empty}>{`${val}`}</span>;
   }
   if (typeof val !== 'object') {
     return <span>…</span>;
+  }
+  if (React.isValidElement(val)) {
+    return <span style={valueStyles.object}>{`<${val.type.displayName || val.type.name || val.type } />`}</span>
   }
 
   return previewObject(val);
