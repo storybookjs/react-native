@@ -110,13 +110,16 @@ var Node = function (_React$Component) {
         );
       }
 
+      // Keep a copy so that further mutations to containerStyle don't impact us:
+      var containerStyleCopy = (0, _assign2.default)({}, containerStyle);
+
       // tag with children
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'div',
-          { style: containerStyle },
+          { style: containerStyleCopy },
           _react2.default.createElement(
             'span',
             { style: tagStyle },
@@ -135,7 +138,7 @@ var Node = function (_React$Component) {
         }),
         _react2.default.createElement(
           'div',
-          { style: containerStyle },
+          { style: containerStyleCopy },
           _react2.default.createElement(
             'span',
             { style: tagStyle },
