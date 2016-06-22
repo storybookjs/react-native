@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.0.5
+
+* Over-indentation of ending tag in source code is fixed. See [#13](https://github.com/kadirahq/react-storybook-addon-info/pull/13)
+
 ### v3.0.4
 
 * Remove the need to use json-loader with webpack when using this package.
