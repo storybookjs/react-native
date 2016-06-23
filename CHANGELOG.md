@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.0.6
+
+* Improve function type and react element type props display. See [#14](https://github.com/kadirahq/react-storybook-addon-info/pull/14)
+
 ### v3.0.5
 
 * Over-indentation of ending tag in source code is fixed. See [#13](https://github.com/kadirahq/react-storybook-addon-info/pull/13)
