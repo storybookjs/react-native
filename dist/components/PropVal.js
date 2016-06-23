@@ -80,7 +80,7 @@ var valueStyles = {
 function previewArray(val) {
   var items = {};
   val.slice(0, 3).forEach(function (item, i) {
-    items['n' + i] = _react2.default.createElement(PropVal, { val: item, nested: true });
+    items['n' + i] = _react2.default.createElement(PropVal, { val: item });
     items['c' + i] = ', ';
   });
   if (val.length > 3) {
@@ -107,7 +107,7 @@ function previewObject(val) {
       name
     );
     items['c' + i] = ': ';
-    items['v' + i] = _react2.default.createElement(PropVal, { val: val[name], nested: true });
+    items['v' + i] = _react2.default.createElement(PropVal, { val: val[name] });
     items['m' + i] = ', ';
   });
   if (names.length > 3) {
@@ -154,6 +154,13 @@ function previewProp(val) {
   if (Array.isArray(val)) {
     return previewArray(val);
   }
+  if (typeof val === 'function') {
+    return _react2.default.createElement(
+      'span',
+      { style: valueStyles.func },
+      val.name ? val.name + '()' : 'anonymous()'
+    );
+  }
   if (!val) {
     return _react2.default.createElement(
       'span',
@@ -166,6 +173,13 @@ function previewProp(val) {
       'span',
       null,
       '…'
+    );
+  }
+  if (_react2.default.isValidElement(val)) {
+    return _react2.default.createElement(
+      'span',
+      { style: valueStyles.object },
+      '<' + (val.type.displayName || val.type.name || val.type) + ' />'
     );
   }
 
