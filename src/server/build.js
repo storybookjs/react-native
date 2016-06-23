@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 import webpack from 'webpack';
 import program from 'commander';
