@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.34.1
+
+* Don't always override NODE_ENV in build-storybook. [PR272](https://github.com/kadirahq/react-storybook/pull/272)
+
 ### v1.34.0
 
 * Use storybook-ui v2.2.0 which puts shortcut state into the URL. 
