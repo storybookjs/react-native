@@ -45,7 +45,7 @@ var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 // avoid ESLint errors
 var logger = console;
