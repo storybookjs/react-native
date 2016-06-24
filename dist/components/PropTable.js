@@ -36,6 +36,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _PropVal = require('./PropVal');
+
+var _PropVal2 = _interopRequireDefault(_PropVal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PropTypesMap = new _map2.default();
@@ -74,8 +78,7 @@ var PropTable = function (_React$Component) {
           var typeInfo = type.propTypes[property];
           var propType = PropTypesMap.get(typeInfo) || 'other';
           var required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-          var defaultValue = '-';
-          props[property] = { property: property, propType: propType, required: required, defaultValue: defaultValue };
+          props[property] = { property: property, propType: propType, required: required };
         }
       }
 
@@ -163,7 +166,7 @@ var PropTable = function (_React$Component) {
               _react2.default.createElement(
                 'td',
                 null,
-                row.defaultValue.toString()
+                row.defaultValue === undefined ? '-' : _react2.default.createElement(_PropVal2.default, { val: row.defaultValue })
               )
             );
           })
