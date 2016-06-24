@@ -5,6 +5,7 @@ const defaultState = {
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: true,
+  showSearchBox: false
 };
 
 export function keyEventToState(state, event) {
@@ -15,6 +16,8 @@ export function keyEventToState(state, event) {
       return { showDownPanel: !state.showDownPanel };
     case features.LEFT_PANEL:
       return { showLeftPanel: !state.showLeftPanel };
+    case features.SEARCH:
+      return { showSearchBox: !state.showSearchBox };
     default:
       return {};
   }

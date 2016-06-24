@@ -3,6 +3,9 @@ import React from 'react';
 import VSplit from './vsplit';
 import HSplit from './hsplit';
 import SplitPane from '@kadira/react-split-pane';
+import FuzzySearch from 'react-fuzzy';
+
+import { features } from '../../../../libs/key_events';
 
 const rootStyle = {
   height: '100vh',
@@ -47,6 +50,14 @@ const previewStyle = {
   borderRadius: 4,
 };
 
+const searchBoxStyle = {
+  position: 'absolute',
+  backgroundColor: '#FFF',
+  top: '100px',
+  left: '50%',
+  marginLeft: '-215px'
+};
+
 const vsplit = <VSplit />;
 const hsplit = <HSplit />;
 
@@ -58,7 +69,69 @@ const onDragEnd = function () {
   document.body.classList.remove('dragging');
 };
 
+const formatStories = function (stories) {
+  const formattedStories=[];
+  let i = 0;
+  stories.forEach((val) => {
+    formattedStories.push({
+      type: 'kind',
+      value: val.kind,
+      id: i++
+    });
+
+    val.stories.forEach((story) => {
+      formattedStories.push({
+        type: 'story',
+        value: story,
+        id: i++,
+        kind: val.kind
+      })
+    })
+  });
+
+  return formattedStories;
+};
+
+const suggestionTemplate = function(props, state, styles) {
+  return state.results.map((val, i) => {
+    const style = state.selectedIndex === i ? styles.selectedResultStyle : styles.resultsStyle;
+    return (
+      <div key={i} style={style}>
+        {val.value}
+          <span style={{ float: 'right', opacity: 0.5 }}>
+            {val.type === 'story' ? `in ${val.kind}` : 'Kind'}
+            </span>
+      </div>
+    );
+  });
+};
+
 class Layout extends React.Component {
+  constructor (props){
+    super(props);
+
+    this.onSelect = this.onSelect.bind(this);
+    this.fireOnStory = this.fireOnStory.bind(this);
+    this.fireOnKind = this.fireOnKind.bind(this);
+  }
+
+  fireOnKind(kind) {
+    const onSelectStory = this.props.actions.api.selectStory;
+    if (onSelectStory) onSelectStory(kind, null);
+  }
+
+  fireOnStory(story, kind) {
+    const onSelectStory = this.props.actions.api.selectStory;
+    if (onSelectStory) onSelectStory(kind, story);
+  }
+
+  onSelect(selected){
+    const { actions } = this.props;
+    if(selected.type === 'story') this.fireOnStory(selected.value, selected.kind);
+    else this.fireOnKind(selected.value);
+    actions.shortcuts.handleEvent(features.SEARCH)
+  }
+
   renderWithFullscreen() {
     return (
       <div style={fullScreenStyle}>
@@ -104,6 +177,16 @@ class Layout extends React.Component {
             </div>
           </SplitPane>
         </SplitPane>
+
+        <div style={searchBoxStyle}>
+          {props.showSearchBox && <FuzzySearch
+            list={formatStories(props.stories)}
+            onSelect={this.onSelect}
+            keys={['value', 'type']}
+            resultsTemplate={suggestionTemplate}
+            autoFocus={true}
+          />}
+        </div>
       </div>
     );
   }
@@ -125,6 +208,9 @@ Layout.propTypes = {
   leftPanel: React.PropTypes.func.isRequired,
   preview: React.PropTypes.func.isRequired,
   downPanel: React.PropTypes.func.isRequired,
+  stories: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  showSearchBox: React.PropTypes.bool.isRequired,
+  actions: React.PropTypes.object.isRequired
 };
 
 export default Layout;

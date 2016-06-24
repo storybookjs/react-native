@@ -46,16 +46,19 @@
   },
   "dependencies": {
     "@kadira/react-split-pane": "^1.4.0",
-    "redux": "^3.5.2",
-    "mantra-core": "^1.6.1",
     "babel-runtime": "^6.5.0",
+    "classnames": "^2.2.5",
     "deep-equal": "^1.0.1",
+    "fuse.js": "^2.2.0",
     "fuzzysearch": "^1.0.3",
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.1",
     "lodash.pick": "^4.2.1",
+    "mantra-core": "^1.6.1",
     "qs": "^6.2.0",
-    "react-modal": "^1.2.1"
+    "react-fuzzy": "^0.2.1",
+    "react-modal": "^1.2.1",
+    "redux": "^3.5.2"
   },
   "main": "dist/index.js",
   "engines": {

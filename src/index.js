@@ -27,8 +27,6 @@ export default function (domNode, provider) {
     ...uiModule.reducers,
   });
 
-  console.log(domNode, provider);
-
   const reduxStore = createStore(reducer, (
     typeof window === 'object' &&
     typeof window.devToolsExtension !== 'undefined' &&
