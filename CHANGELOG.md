@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.0.7
+
+* Improve default display in prop table. See [#16](https://github.com/kadirahq/react-storybook-addon-info/pull/16)
+
 ### v3.0.6
 
 * Improve function type and react element type props display. See [#14](https://github.com/kadirahq/react-storybook-addon-info/pull/14)
