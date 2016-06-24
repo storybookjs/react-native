@@ -4,6 +4,8 @@
 
 First Install npm modules in the root module:
 
+> Make sure, you are using NPM3.
+
 ```bash
 cd ../
 npm install
