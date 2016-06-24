@@ -1,4 +1,5 @@
 import React from 'react';
+import PropVal from './PropVal'
 
 const PropTypesMap = new Map();
 for (let typeName in React.PropTypes) {
@@ -27,8 +28,7 @@ export default class PropTable extends React.Component {
         const typeInfo = type.propTypes[property];
         const propType = PropTypesMap.get(typeInfo) || 'other';
         const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-        const defaultValue = '-';
-        props[property] = {property, propType, required, defaultValue};
+        props[property] = {property, propType, required};
       }
     }
 
@@ -72,7 +72,7 @@ export default class PropTable extends React.Component {
               <td>{row.property}</td>
               <td>{row.propType}</td>
               <td>{row.required}</td>
-              <td>{row.defaultValue.toString()}</td>
+              <td>{row.defaultValue === undefined  ? '-' : <PropVal val={row.defaultValue} />}</td>
             </tr>
           ))}
         </tbody>
