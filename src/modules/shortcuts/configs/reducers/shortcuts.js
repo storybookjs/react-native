@@ -5,7 +5,7 @@ const defaultState = {
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: true,
-  showSearchBox: false
+  showSearchBox: false,
 };
 
 export function keyEventToState(state, event) {

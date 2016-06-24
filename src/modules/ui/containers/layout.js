@@ -5,11 +5,17 @@ import reduxComposer from '../libs/redux_composer';
 
 export const composer = ({ shortcuts, api }, { actions }) => {
   const actionMap = actions();
-  const propShortCuts = pick(shortcuts, 'showLeftPanel', 'showDownPanel', 'goFullScreen', 'showSearchBox');
+  const propShortCuts = pick(
+    shortcuts,
+    'showLeftPanel',
+    'showDownPanel',
+    'goFullScreen',
+    'showSearchBox'
+  );
   return {
     ...propShortCuts,
     stories: api.stories,
-    actions: actionMap
+    actions: actionMap,
   };
 };
 

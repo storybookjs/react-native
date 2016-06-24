@@ -8,7 +8,7 @@ export const features = {
   ESCAPE: 5,
   NEXT_STORY: 6,
   PREV_STORY: 7,
-  SEARCH: 8
+  SEARCH: 8,
 };
 
 export function isModifierPressed(e) {
