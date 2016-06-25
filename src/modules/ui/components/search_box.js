@@ -2,6 +2,7 @@ import React from 'react';
 import FuzzySearch from 'react-fuzzy';
 
 import { features } from '../../../libs/key_events';
+import { baseFonts } from './theme';
 
 const searchBoxStyle = {
   position: 'absolute',
@@ -9,6 +10,7 @@ const searchBoxStyle = {
   top: '100px',
   left: '50%',
   marginLeft: '-215px',
+  ...baseFonts
 };
 
 const formatStories = function (stories) {
