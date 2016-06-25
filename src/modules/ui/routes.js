@@ -4,10 +4,12 @@ import Layout from './containers/layout';
 import LeftPanel from './containers/left_panel';
 import ActionLogger from './containers/action_logger';
 import ShortcutsHelp from './containers/shortcuts_help';
+import SearchBox from './containers/search_box';
 
 export default function (injectDeps, { reduxStore, provider, domNode }) {
   const InjectedLayout = injectDeps(Layout);
   const InjectedShortcutsHelp = injectDeps(ShortcutsHelp);
+  const InjectedSearchBox = injectDeps(SearchBox);
 
   // generate preview
   const Preview = () => {
@@ -25,6 +27,7 @@ export default function (injectDeps, { reduxStore, provider, domNode }) {
         downPanel={() => (<ActionLogger />)}
       />
       <InjectedShortcutsHelp />
+      <InjectedSearchBox />
     </div>
   );
   ReactDOM.render(root, domNode);
