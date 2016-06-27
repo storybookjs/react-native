@@ -1,5 +1,10 @@
 ## Change Log
 
+### v2.3.0
+
+* Add support for Redux DevTools extension. See [PR8](https://github.com/kadirahq/storybook-ui/pull/8).
+* Add fuzzy search support with a brand new search overlay. See [PR7](https://github.com/kadirahq/storybook-ui/pull/7).
+
 ### v2.2.0
 
 * Add fullscreen and other shortcut state to the URL. See [PR5](https://github.com/kadirahq/storybook-ui/pull/5)
