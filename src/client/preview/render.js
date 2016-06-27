@@ -1,7 +1,7 @@
 import 'airbnb-js-shims';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReadBox from 'redbox-react';
+import ErrorDisplay from './error_display';
 
 const rootEl = document.getElementById('root');
 let previousKind = '';
@@ -12,7 +12,7 @@ export function renderError(error) {
   // Since this is an error, this affects to the main page as well.
   const realError = new Error(error.message);
   realError.stack = error.stack;
-  const redBox = (<ReadBox error={realError} />);
+  const redBox = (<ErrorDisplay error={realError} />);
   ReactDOM.render(redBox, rootEl);
 }
 
@@ -47,7 +47,11 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
 
-  return ReactDOM.render(story(context), rootEl);
+  try {
+    return ReactDOM.render(story(context), rootEl);
+  } catch (ex) {
+    return renderError(ex);
+  }
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {

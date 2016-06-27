@@ -17,9 +17,9 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _redboxReact = require('redbox-react');
+var _error_display = require('./error_display');
 
-var _redboxReact2 = _interopRequireDefault(_redboxReact);
+var _error_display2 = _interopRequireDefault(_error_display);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32,7 +32,7 @@ function renderError(error) {
   // Since this is an error, this affects to the main page as well.
   var realError = new Error(error.message);
   realError.stack = error.stack;
-  var redBox = _react2.default.createElement(_redboxReact2.default, { error: realError, __self: this
+  var redBox = _react2.default.createElement(_error_display2.default, { error: realError, __self: this
   });
   _reactDom2.default.render(redBox, rootEl);
 }
@@ -82,7 +82,11 @@ function renderMain(data, storyStore) {
     story: selectedStory
   };
 
-  return _reactDom2.default.render(story(context), rootEl);
+  try {
+    return _reactDom2.default.render(story(context), rootEl);
+  } catch (ex) {
+    return renderError(ex);
+  }
 }
 
 function renderPreview(_ref) {
