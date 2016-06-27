@@ -60,6 +60,22 @@ var Content = exports.Content = function Content() {
       _react2.default.createElement(
         'b',
         { style: commandStyle },
+        '⌘ ⇧ P'
+      ),
+      ' /  ',
+      _react2.default.createElement(
+        'b',
+        { style: commandStyle },
+        '⌃ ⇧ P'
+      ),
+      'Toggle SearchBox'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'b',
+        { style: commandStyle },
         '⌘ ⇧ F'
       ),
       ' /  ',

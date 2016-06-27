@@ -24,8 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var composer = exports.composer = function composer(_ref) {
   var shortcuts = _ref.shortcuts;
 
-  var data = (0, _lodash2.default)(shortcuts, 'showLeftPanel', 'showDownPanel', 'goFullScreen');
-  return data;
+  return (0, _lodash2.default)(shortcuts, 'showLeftPanel', 'showDownPanel', 'goFullScreen');
 };
 
 exports.default = (0, _mantraCore.composeAll)((0, _redux_composer2.default)(composer), (0, _mantraCore.useDeps)())(_layout2.default);

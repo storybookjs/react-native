@@ -39,7 +39,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var defaultState = {
   goFullScreen: false,
   showLeftPanel: true,
-  showDownPanel: true
+  showDownPanel: true,
+  showSearchBox: false
 };
 
 function keyEventToState(state, event) {
@@ -50,6 +51,8 @@ function keyEventToState(state, event) {
       return { showDownPanel: !state.showDownPanel };
     case _key_events.features.LEFT_PANEL:
       return { showLeftPanel: !state.showLeftPanel };
+    case _key_events.features.SEARCH:
+      return { showSearchBox: !state.showSearchBox };
     default:
       return {};
   }

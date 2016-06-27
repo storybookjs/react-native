@@ -20,7 +20,8 @@ var features = exports.features = {
   SHORTCUTS_HELP: 4,
   ESCAPE: 5,
   NEXT_STORY: 6,
-  PREV_STORY: 7
+  PREV_STORY: 7,
+  SEARCH: 8
 };
 
 function isModifierPressed(e) {
@@ -52,6 +53,9 @@ function handle(e) {
     case (0, _keycode2.default)('left'):
       e.preventDefault();
       return features.PREV_STORY;
+    case (0, _keycode2.default)('P'):
+      e.preventDefault();
+      return features.SEARCH;
     default:
       return false;
   }

@@ -24,7 +24,8 @@ exports.default = function (domNode, provider) {
 
   var reducer = (0, _redux.combineReducers)((0, _extends3.default)({}, _shortcuts2.default.reducers, _api2.default.reducers, _ui2.default.reducers));
 
-  var reduxStore = (0, _redux.createStore)(reducer);
+  var devTools = window.devToolsExtension && window.devToolsExtension();
+  var reduxStore = (0, _redux.createStore)(reducer, devTools);
 
   var context = (0, _context2.default)(reduxStore, domNode, provider);
   var app = (0, _mantraCore.createApp)(context);
