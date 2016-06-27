@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.35.1
+
+* Fix issue related to bad error handling. See issue [#275](https://github.com/kadirahq/react-storybook/issues/275):
+
 ### v1.35.0
 
 * Add fuzzy search powered search box and Redux DevTools support via [@kadira/storybook-ui@2.3.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v230).
