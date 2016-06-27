@@ -32,21 +32,28 @@ function renderError(error) {
   // Since this is an error, this affects to the main page as well.
   var realError = new Error(error.message);
   realError.stack = error.stack;
-  var redBox = _react2.default.createElement(_redboxReact2.default, { error: realError });
+  var redBox = _react2.default.createElement(_redboxReact2.default, { error: realError, __self: this
+  });
   _reactDom2.default.render(redBox, rootEl);
 }
 
 function renderMain(data, storyStore) {
+  var _this = this;
+
   if (storyStore.size() === 0) return null;
 
   var NoPreview = function NoPreview() {
     return _react2.default.createElement(
       'p',
-      null,
+      {
+        __self: _this
+      },
       'No Preview Available!'
     );
   };
-  var noPreview = _react2.default.createElement(NoPreview, null);
+  var noPreview = _react2.default.createElement(NoPreview, {
+    __self: this
+  });
   var selectedKind = data.selectedKind;
   var selectedStory = data.selectedStory;
 
