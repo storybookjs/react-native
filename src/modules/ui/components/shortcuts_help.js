@@ -35,6 +35,11 @@ export const Content = () => (
   <div>
     <h4 style={h4Style}>Keyboard Shortcuts</h4>
       <div>
+        <b style={commandStyle}>&#8984; &#8679; P</b> / &nbsp;
+        <b style={commandStyle}>&#8963; &#8679; P</b>
+        Toggle SearchBox
+      </div>
+      <div>
         <b style={commandStyle}>&#8984; &#8679; F</b> / &nbsp;
         <b style={commandStyle}>&#8963; &#8679; F</b>
         Toggle Fullscreen Mode

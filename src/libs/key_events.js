@@ -8,6 +8,7 @@ export const features = {
   ESCAPE: 5,
   NEXT_STORY: 6,
   PREV_STORY: 7,
+  SEARCH: 8,
 };
 
 export function isModifierPressed(e) {
@@ -39,6 +40,9 @@ export default function handle(e) {
     case keycode('left'):
       e.preventDefault();
       return features.PREV_STORY;
+    case keycode('P'):
+      e.preventDefault();
+      return features.SEARCH;
     default:
       return false;
   }

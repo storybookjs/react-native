@@ -4,8 +4,12 @@ import pick from 'lodash.pick';
 import reduxComposer from '../libs/redux_composer';
 
 export const composer = ({ shortcuts }) => {
-  const data = pick(shortcuts, 'showLeftPanel', 'showDownPanel', 'goFullScreen');
-  return data;
+  return pick(
+    shortcuts,
+    'showLeftPanel',
+    'showDownPanel',
+    'goFullScreen'
+  );
 };
 
 export default composeAll(
