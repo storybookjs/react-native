@@ -10,7 +10,7 @@ const searchBoxStyle = {
   top: '100px',
   left: '50%',
   marginLeft: '-215px',
-  ...baseFonts
+  ...baseFonts,
 };
 
 const formatStories = function (stories) {
