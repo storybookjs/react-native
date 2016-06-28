@@ -57,7 +57,7 @@ export default class PropTable extends React.Component {
     });
 
     return (
-      <table>
+      <table className="storybook-addon-proptable">
         <thead>
           <tr>
             <th>property</th>
