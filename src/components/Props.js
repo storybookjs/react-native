@@ -30,7 +30,7 @@ export default class Props extends React.Component {
     const items = [];
     names.slice(0, 3).forEach(name => {
       items.push(
-        <span style={propStyle}>
+        <span key={name} style={propStyle}>
           <span style={propNameStyle}>{name}</span>
           =
           <span style={propValueStyle}><PropVal val={props[name]} /></span>
