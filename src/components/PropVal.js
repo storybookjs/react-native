@@ -76,35 +76,38 @@ function previewObject(val) {
 }
 
 function previewProp(val) {
+  let braceWrap = true;
+  let content = null;
   if (typeof val === 'number') {
-    return <span style={valueStyles.number}>{val}</span>;
-  }
-  if (typeof val === 'string') {
+    content = <span style={valueStyles.number}>{val}</span>;
+  } else if (typeof val === 'string') {
     if (val.length > 50) {
       val = val.slice(0, 50) + '…';
     }
-    return <span style={valueStyles.string}>"{val}"</span>;
-  }
-  if (typeof val === 'boolean') {
-    return <span style={valueStyles.bool}>{`${val}`}</span>;
-  }
-  if (Array.isArray(val)) {
-    return previewArray(val);
-  }
-  if (typeof val === 'function') {
-    return <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
-  }
-  if (!val) {
-    return <span style={valueStyles.empty}>{`${val}`}</span>;
-  }
-  if (typeof val !== 'object') {
-    return <span>…</span>;
-  }
-  if (React.isValidElement(val)) {
-    return <span style={valueStyles.object}>{`<${val.type.displayName || val.type.name || val.type } />`}</span>
+    content = <span style={valueStyles.string}>"{val}"</span>;
+    braceWrap = false;
+  } else if (typeof val === 'boolean') {
+    content = <span style={valueStyles.bool}>{`${val}`}</span>;
+  } else if (Array.isArray(val)) {
+    content = previewArray(val);
+  } else if (typeof val === 'function') {
+    content = <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
+  } else if (!val) {
+    content = <span style={valueStyles.empty}>{`${val}`}</span>;
+  } else if (typeof val !== 'object') {
+    content = <span>…</span>;
+  } else if (React.isValidElement(val)) {
+    content = (
+      <span style={valueStyles.object}>
+        {`<${val.type.displayName || val.type.name || val.type} />`}
+      </span>
+    );
+  } else {
+    content = previewObject(val);
   }
 
-  return previewObject(val);
+  if (!braceWrap) return content;
+  return <span>&#123;{content}&#125;</span>;
 }
 
 export default class PropVal extends React.Component {
