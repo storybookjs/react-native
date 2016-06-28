@@ -25,7 +25,7 @@ storiesOf('MyComponent', module)
     <div style={{textAlign: 'center'}}>
       {story()}
     </div>
-  ));
+  ))
   .add('without props', () => (<MyComponent />))
   .add('with some props', () => (<MyComponent text="The Comp"/>));
 ```
