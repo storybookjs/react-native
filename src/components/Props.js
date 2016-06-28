@@ -38,7 +38,7 @@ export default class Props extends React.Component {
           ) : ' '}
           <span style={propNameStyle}>{name}</span>
           {/* Use implicit true: */}
-          {!props[name] || typeof props[name] !== 'boolean' && (
+          {(!props[name] || typeof props[name] !== 'boolean') && (
             <span>
               =
               <span style={propValueStyle}><PropVal val={props[name]} /></span>
