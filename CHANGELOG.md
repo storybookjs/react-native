@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.0.8
+
+* Fixed unkeyed array iteration warning in React with: [PR23](https://github.com/kadirahq/react-storybook-addon-info/pull/23)
+
 ### v3.0.7
 
 * Improve default display in prop table. See [#16](https://github.com/kadirahq/react-storybook-addon-info/pull/16)
