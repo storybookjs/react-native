@@ -10,6 +10,14 @@ for (let typeName in React.PropTypes) {
   PropTypesMap.set(type, typeName);
 }
 
+const stylesheet = {
+  propTable: {
+    marginLeft: -10,
+    borderSpacing: '10px 5px',
+    borderCollapse: 'separate',
+  }
+};
+
 export default class PropTable extends React.Component {
   render () {
     const type = this.props.type;
@@ -57,7 +65,7 @@ export default class PropTable extends React.Component {
     });
 
     return (
-      <table>
+      <table style={stylesheet.propTable}>
         <thead>
           <tr>
             <th>property</th>
