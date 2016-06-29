@@ -38,26 +38,30 @@ export default class Node extends React.Component {
     if (!children) {
       return <div style={containerStyle}>
         <span style={tagStyle}>&lt;{name}</span>
-          <Props node={node} />
-        <span style={tagStyle}> /&gt;</span>
+          <Props node={node} singleLine />
+        <span style={tagStyle}>/&gt;</span>
       </div>;
     }
-    
+
     // Keep a copy so that further mutations to containerStyle don't impact us:
     const containerStyleCopy = Object.assign({}, containerStyle);
 
     // tag with children
-    return <div>
-      <div style={containerStyleCopy}>
-        <span style={tagStyle}>&lt;{name}</span>
-          <Props node={node} />
-        <span style={tagStyle}>&gt;</span>
+    return (
+      <div>
+        <div style={containerStyleCopy}>
+          <span style={tagStyle}>&lt;{name}</span>
+            <Props node={node} />
+          <span style={tagStyle}>&gt;</span>
+        </div>
+        {React.Children.map(children, childElement => (
+          <Node node={childElement} depth={depth + 1} />
+        ))}
+        <div style={containerStyleCopy}>
+          <span style={tagStyle}>&lt;/{name}&gt;</span>
+        </div>
       </div>
-      {React.Children.map(children, childElement => <Node node={childElement} depth={depth + 1}/>)}
-      <div style={containerStyleCopy}>
-        <span style={tagStyle}>&lt;/{name}&gt;</span>
-      </div>
-    </div>
+    );
   }
 }
 

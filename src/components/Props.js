@@ -3,13 +3,10 @@ import PropVal from './PropVal';
 
 const stylesheet = {
   propStyle: {
-    paddingLeft: 8,
   },
   propNameStyle: {
-
   },
   propValueStyle: {
-
   }
 }
 
@@ -18,7 +15,7 @@ export default class Props extends React.Component {
     const props = this.props.node.props;
     const defaultProps = this.props.node.type.defaultProps;
     if (!props || typeof props !== 'object') {
-      return <span/>;
+      return <span />;
     }
 
     const {propStyle, propValueStyle, propNameStyle} = stylesheet;
@@ -27,17 +24,34 @@ export default class Props extends React.Component {
       return name[0] !== '_' && name !== 'children' && (!defaultProps || props[name] != defaultProps[name]);
     });
 
+    const breakIntoNewLines = names.length > 3;
+    const endingSpace = this.props.singleLine ? ' ' : '';
+
     const items = [];
-    names.slice(0, 3).forEach(name => {
+    names.forEach((name, i) => {
       items.push(
-        <span key={name} style={propStyle}>
+        <span key={name}>
+          {breakIntoNewLines ? (
+            <span>
+              <br />&nbsp;&nbsp;
+            </span>
+          ) : ' '}
           <span style={propNameStyle}>{name}</span>
-          =
-          <span style={propValueStyle}><PropVal val={props[name]} /></span>
+          {/* Use implicit true: */}
+          {(!props[name] || typeof props[name] !== 'boolean') && (
+            <span>
+              =
+              <span style={propValueStyle}><PropVal val={props[name]} /></span>
+            </span>
+          )}
+
+          {i === (names.length - 1) && (
+            breakIntoNewLines ? <br /> : endingSpace
+          )}
         </span>
       );
     });
 
-    return <span>{items}</span>
+    return <span>{items}</span>;
   }
 }
