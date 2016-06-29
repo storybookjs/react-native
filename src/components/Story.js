@@ -86,7 +86,10 @@ const stylesheet = {
       fontSize: 25,
       borderBottom: '1px solid #EEE',
     }
-  }
+  },
+  propTableHead: {
+    margin: '20px 0 0 0'
+  },
 }
 
 export default class Story extends React.Component {
@@ -263,7 +266,7 @@ export default class Story extends React.Component {
     const propTables = array.map(function (type, idx) {
       return (
         <div key={idx}>
-          <h2>"{type.displayName || type.name}" Component</h2>
+          <h2 style={stylesheet.propTableHead}>"{type.displayName || type.name}" Component</h2>
           <PropTable type={type} />
         </div>
       );
