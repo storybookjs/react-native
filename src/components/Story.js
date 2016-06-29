@@ -55,7 +55,7 @@ const stylesheet = {
   infoBody: {
     ...baseFonts,
     fontWeight: 300,
-    maxWidth: '48rem',
+    maxWidth: 100%,
     lineHeight: 1.45,
     fontSize: 15,
   },
