@@ -55,7 +55,7 @@ const stylesheet = {
   infoBody: {
     ...baseFonts,
     fontWeight: 300,
-    maxWidth: 100%,
+    maxWidth: '100%',
     lineHeight: 1.45,
     fontSize: 15,
   },
@@ -119,7 +119,13 @@ export default class Story extends React.Component {
         <div style={stylesheet.infoPage}>
           <div style={stylesheet.infoBody} >
             { this._getInfoHeader() }
+          </div>
+        </div>
+        <div>
             { this._renderStory() }
+        </div>
+        <div style={stylesheet.infoPage}>
+          <div style={stylesheet.infoBody} >
             { this._getInfoContent() }
             { this._getSourceCode() }
             { this._getPropTables() }
