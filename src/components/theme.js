@@ -4,5 +4,5 @@ export const baseFonts = {
     "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
   `,
   color: '#444',
-  webkitFontSmoothing: 'antialiased',
+  WebkitFontSmoothing: 'antialiased',
 };
