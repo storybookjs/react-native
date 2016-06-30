@@ -10,7 +10,6 @@ const mainStyle = {
 };
 
 const headingStyle = {
-  fontFamily: 'inherit',
   fontSize: 20,
   fontWeight: 600,
   letterSpacing: 0.2,
