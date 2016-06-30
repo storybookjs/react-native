@@ -51,6 +51,14 @@ for (var typeName in _react2.default.PropTypes) {
   PropTypesMap.set(type, typeName);
 }
 
+var stylesheet = {
+  propTable: {
+    marginLeft: -10,
+    borderSpacing: '10px 5px',
+    borderCollapse: 'separate'
+  }
+};
+
 var PropTable = function (_React$Component) {
   (0, _inherits3.default)(PropTable, _React$Component);
 
@@ -112,7 +120,7 @@ var PropTable = function (_React$Component) {
 
       return _react2.default.createElement(
         'table',
-        null,
+        { style: stylesheet.propTable },
         _react2.default.createElement(
           'thead',
           null,

@@ -101,11 +101,11 @@ var Node = function (_React$Component) {
             '<',
             name
           ),
-          _react2.default.createElement(_Props2.default, { node: node }),
+          _react2.default.createElement(_Props2.default, { node: node, singleLine: true }),
           _react2.default.createElement(
             'span',
             { style: tagStyle },
-            ' />'
+            '/>'
           )
         );
       }
