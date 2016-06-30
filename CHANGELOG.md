@@ -1,5 +1,13 @@
 # Change Log
 
+### v3.0.9
+
+* Add missing `@kadira/storybook` devDependencies [PR25](https://github.com/kadirahq/react-storybook-addon-info/pull/25)
+* Improve prop rendering in jsx source view [PR24](https://github.com/kadirahq/react-storybook-addon-info/pull/24)
+* Avoid warning message with "webkitFontSmoothing" [PR30](https://github.com/kadirahq/react-storybook-addon-info/pull/30)
+* Remove max-width style rule for wrapper [PR31](https://github.com/kadirahq/react-storybook-addon-info/pull/31) and [PR36](https://github.com/kadirahq/react-storybook-addon-info/pull/36)
+* Improve prop table rendering (handle css resets) [PR32](https://github.com/kadirahq/react-storybook-addon-info/pull/32)
+
 ### v3.0.8
 
 * Fixed unkeyed array iteration warning in React with: [PR23](https://github.com/kadirahq/react-storybook-addon-info/pull/23)
