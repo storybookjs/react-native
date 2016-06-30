@@ -15,7 +15,6 @@ You can configure React Storybook in different ways. We'll discuss them here.
   * [Static Builder](#static-builder)
 * [Custom Webpack Configurations](#custom-webpack-configurations)
   * [Add Custom CSS Loaders](#add-custom-css-loaders)
-  * [Customizing The UI](#customizing-the-ui)
   * [Other Configurations](#other-configurations)
   * [Full Control](#full-control)
 * [Load Custom HTML Head Content](#load-custom-html-head-content)
@@ -175,25 +174,6 @@ module.exports = {
 ### Add Custom CSS Loaders
 
 You can use this custom Webpack configurations to add css loaders. We've a [separate guide](/docs/setting_up_for_css.md) for that.
-
-### Customizing The UI
-
-You can also customize the UI by duplicating the original components such as  [layout.js](https://raw.githubusercontent.com/kadirahq/react-storybook/master/src/client/ui/layout.js) file, put it in `.storybook/layout.js` and setting webpack config like this :
-
-```js
-const path = require('path');
-
-module.exports = {
-  plugins: [
-    new webpack.NormalModuleReplacementPlugin(/^\.\/layout$/, 'custom-layout')
-  ],
-  resolve: {
-    alias: {
-      'custom-layout': path.resolve('.storybook/layout.js')
-    }
-  }
-}
-```
 
 ### Other Configurations
 
