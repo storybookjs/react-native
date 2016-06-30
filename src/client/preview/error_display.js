@@ -6,18 +6,19 @@ const mainStyle = {
   padding: 20,
   backgroundColor: 'rgb(187, 49, 49)',
   color: '#FFF',
-  fontFamily: `
-    -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI",
-    "Helvetica Neue", "Lucida Grande", sans-serif'
-    `,
+  WebkitFontSmoothing: 'antialiased',
 };
 
 const headingStyle = {
   fontFamily: 'inherit',
   fontSize: 20,
   fontWeight: 600,
-  letterSpacing: 'normal',
+  letterSpacing: 0.2,
   margin: '10px 0',
+  fontFamily: `
+    -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI",
+    "Helvetica Neue", "Lucida Grande", sans-serif
+    `,
 };
 
 const codeStyle = {

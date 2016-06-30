@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -16,16 +20,16 @@ var mainStyle = {
   padding: 20,
   backgroundColor: 'rgb(187, 49, 49)',
   color: '#FFF',
-  fontFamily: '\n    -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI",\n    "Helvetica Neue", "Lucida Grande", sans-serif\'\n    '
+  WebkitFontSmoothing: 'antialiased'
 };
 
-var headingStyle = {
+var headingStyle = (0, _defineProperty3.default)({
   fontFamily: 'inherit',
   fontSize: 20,
   fontWeight: 600,
-  letterSpacing: 'normal',
+  letterSpacing: 0.2,
   margin: '10px 0'
-};
+}, 'fontFamily', '\n    -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI",\n    "Helvetica Neue", "Lucida Grande", sans-serif\n    ');
 
 var codeStyle = {
   fontSize: 14,
