@@ -6,5 +6,5 @@ Object.defineProperty(exports, "__esModule", {
 var baseFonts = exports.baseFonts = {
   fontFamily: '\n    -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",\n    "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif\n  ',
   color: '#444',
-  webkitFontSmoothing: 'antialiased'
+  WebkitFontSmoothing: 'antialiased'
 };

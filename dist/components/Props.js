@@ -43,9 +43,7 @@ var _PropVal2 = _interopRequireDefault(_PropVal);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var stylesheet = {
-  propStyle: {
-    paddingLeft: 8
-  },
+  propStyle: {},
   propNameStyle: {},
   propValueStyle: {}
 };
@@ -76,22 +74,36 @@ var Props = function (_React$Component) {
         return name[0] !== '_' && name !== 'children' && (!defaultProps || props[name] != defaultProps[name]);
       });
 
+      var breakIntoNewLines = names.length > 3;
+      var endingSpace = this.props.singleLine ? ' ' : '';
+
       var items = [];
-      names.slice(0, 3).forEach(function (name) {
+      names.forEach(function (name, i) {
         items.push(_react2.default.createElement(
           'span',
-          { style: propStyle },
+          { key: name },
+          breakIntoNewLines ? _react2.default.createElement(
+            'span',
+            null,
+            _react2.default.createElement('br', null),
+            '  '
+          ) : ' ',
           _react2.default.createElement(
             'span',
             { style: propNameStyle },
             name
           ),
-          '=',
-          _react2.default.createElement(
+          (!props[name] || typeof props[name] !== 'boolean') && _react2.default.createElement(
             'span',
-            { style: propValueStyle },
-            _react2.default.createElement(_PropVal2.default, { val: props[name] })
-          )
+            null,
+            '=',
+            _react2.default.createElement(
+              'span',
+              { style: propValueStyle },
+              _react2.default.createElement(_PropVal2.default, { val: props[name] })
+            )
+          ),
+          i === names.length - 1 && (breakIntoNewLines ? _react2.default.createElement('br', null) : endingSpace)
         ));
       });
 

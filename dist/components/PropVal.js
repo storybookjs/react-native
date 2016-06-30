@@ -125,65 +125,70 @@ function previewObject(val) {
 }
 
 function previewProp(val) {
+  var braceWrap = true;
+  var content = null;
   if (typeof val === 'number') {
-    return _react2.default.createElement(
+    content = _react2.default.createElement(
       'span',
       { style: valueStyles.number },
       val
     );
-  }
-  if (typeof val === 'string') {
+  } else if (typeof val === 'string') {
     if (val.length > 50) {
       val = val.slice(0, 50) + '…';
     }
-    return _react2.default.createElement(
+    content = _react2.default.createElement(
       'span',
       { style: valueStyles.string },
       '"',
       val,
       '"'
     );
-  }
-  if (typeof val === 'boolean') {
-    return _react2.default.createElement(
+    braceWrap = false;
+  } else if (typeof val === 'boolean') {
+    content = _react2.default.createElement(
       'span',
       { style: valueStyles.bool },
       '' + val
     );
-  }
-  if (Array.isArray(val)) {
-    return previewArray(val);
-  }
-  if (typeof val === 'function') {
-    return _react2.default.createElement(
+  } else if (Array.isArray(val)) {
+    content = previewArray(val);
+  } else if (typeof val === 'function') {
+    content = _react2.default.createElement(
       'span',
       { style: valueStyles.func },
       val.name ? val.name + '()' : 'anonymous()'
     );
-  }
-  if (!val) {
-    return _react2.default.createElement(
+  } else if (!val) {
+    content = _react2.default.createElement(
       'span',
       { style: valueStyles.empty },
       '' + val
     );
-  }
-  if ((typeof val === 'undefined' ? 'undefined' : (0, _typeof3.default)(val)) !== 'object') {
-    return _react2.default.createElement(
+  } else if ((typeof val === 'undefined' ? 'undefined' : (0, _typeof3.default)(val)) !== 'object') {
+    content = _react2.default.createElement(
       'span',
       null,
       '…'
     );
-  }
-  if (_react2.default.isValidElement(val)) {
-    return _react2.default.createElement(
+  } else if (_react2.default.isValidElement(val)) {
+    content = _react2.default.createElement(
       'span',
       { style: valueStyles.object },
       '<' + (val.type.displayName || val.type.name || val.type) + ' />'
     );
+  } else {
+    content = previewObject(val);
   }
 
-  return previewObject(val);
+  if (!braceWrap) return content;
+  return _react2.default.createElement(
+    'span',
+    null,
+    '{',
+    content,
+    '}'
+  );
 }
 
 var PropVal = function (_React$Component) {

@@ -117,7 +117,6 @@ var stylesheet = (_stylesheet = {
   }
 }, (0, _defineProperty3.default)(_stylesheet, 'infoBody', (0, _extends3.default)({}, _theme.baseFonts, {
   fontWeight: 300,
-  maxWidth: '48rem',
   lineHeight: 1.45,
   fontSize: 15
 })), (0, _defineProperty3.default)(_stylesheet, 'infoContent', {
@@ -145,6 +144,8 @@ var stylesheet = (_stylesheet = {
     fontSize: 25,
     borderBottom: '1px solid #EEE'
   }
+}), (0, _defineProperty3.default)(_stylesheet, 'propTableHead', {
+  margin: '20px 0 0 0'
 }), _stylesheet);
 
 var Story = function (_React$Component) {
@@ -378,7 +379,7 @@ var Story = function (_React$Component) {
           { key: idx },
           _react2.default.createElement(
             'h2',
-            null,
+            { style: stylesheet.propTableHead },
             '"',
             type.displayName || type.name,
             '" Component'
