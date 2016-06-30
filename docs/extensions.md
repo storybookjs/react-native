@@ -90,7 +90,8 @@ Rather than creating extensions yourself, you can use extensions available below
 
 * [Centered Decorator](https://github.com/kadirahq/react-storybook-decorator-centered)
 * [Info addon for displaying propTypes, source and more info](https://github.com/kadirahq/react-storybook-addon-info)
-* [Create Groups of stories, display all of them togheter](https://github.com/jurgob/react-storybook-addon-add-stories-group)
+* [Create Groups of stories, display all of them together](https://github.com/jurgob/react-storybook-addon-add-stories-group)
+* [Display internationalized components in different locales](https://github.com/Tarabyte/react-storybook-addon-intl)
 
 > Feel free to include your extension to the above list and share it with other. <br/>
 > Just make it available on NPM (and GitHub) and send a PR to this page.
