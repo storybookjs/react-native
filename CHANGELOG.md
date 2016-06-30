@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.36.0
+
+* Support watchOptions configuration. See: [PR287](https://github.com/kadirahq/react-storybook/pull/287)
+
 ### v1.35.2
 
 * Add missing font-face to the ErrorDisplay's heading.
