@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.35.2
+
+* Add missing font-face to the ErrorDisplay's heading.
+
 ### v1.35.1
 
 * Fix issue related to bad error handling. See issue [#275](https://github.com/kadirahq/react-storybook/issues/275):
