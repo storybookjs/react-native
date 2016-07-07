@@ -118,7 +118,13 @@ export default class Story extends React.Component {
         <div style={stylesheet.infoPage}>
           <div style={stylesheet.infoBody} >
             { this._getInfoHeader() }
+          </div>
+        </div>
+        <div>
             { this._renderStory() }
+        </div>
+        <div style={stylesheet.infoPage}>
+          <div style={stylesheet.infoBody} >
             { this._getInfoContent() }
             { this._getSourceCode() }
             { this._getPropTables() }
