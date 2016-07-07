@@ -44,23 +44,30 @@ const countStyle = {
 
 const logDivStyle = {
   margin: 5,
-  paddingBottom: 8,
-  marginBottom:7,
-  overflow:'auto',
+  paddingBottom: 3,
+  marginBottom: 4,
+  overflow: 'auto',
   borderBottom: '1px solid #fafafa',
 };
 
 const inspectorStyle = {
   marginLeft: 5,
-  float: 'left'
+  float: 'none',
+  display: 'inline-block',
 };
 
 const countWrapper = {
   minWidth: 20,
   display: 'inline-block',
-  float:'left',
+  float: 'left',
   height: 19,
   marginRight: 5,
+};
+
+const actionNameStyle = {
+  float: 'right',
+  padding: '0 5px',
+  fontWeight: 'bold',
 };
 
 class ActionLogger extends Component {
@@ -73,8 +80,13 @@ class ActionLogger extends Component {
           { action.count > 1 && <span style={ countStyle }>{ action.count }</span> }
         </div>
         <div style={inspectorStyle}>
-          <Inspector data={action.data} />
+          <Inspector
+            showNonenumerable
+            name={action.data.name}
+            data={action.data.args || action.data}
+          />
         </div>
+        <span style={actionNameStyle}>{action.data.name}</span>
       </div>
       ));
   }
