@@ -195,8 +195,20 @@ var Story = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { style: stylesheet.infoBody },
-            this._getInfoHeader(),
-            this._renderStory(),
+            this._getInfoHeader()
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          this._renderStory()
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: stylesheet.infoPage },
+          _react2.default.createElement(
+            'div',
+            { style: stylesheet.infoBody },
             this._getInfoContent(),
             this._getSourceCode(),
             this._getPropTables()
