@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.0.10
+
+* Render the component inside a div element when on inline mode [PR34](https://github.com/kadirahq/react-storybook-addon-info/pull/34)
+
 ### v3.0.9
 
 * Add missing `@kadira/storybook` devDependencies [PR25](https://github.com/kadirahq/react-storybook-addon-info/pull/25)
