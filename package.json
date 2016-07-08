@@ -54,7 +54,7 @@
     "lodash.pick": "^4.2.1",
     "mantra-core": "^1.6.1",
     "qs": "^6.2.0",
-    "react-fuzzy": "^0.2.2",
+    "react-fuzzy": "^0.2.3",
     "react-modal": "^1.2.1",
     "redux": "^3.5.2"
   },
