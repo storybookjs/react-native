@@ -35,11 +35,9 @@ describe('manager.ui.components.left_panel.test_filter', function () {
       const onClear = sinon.spy();
       const wrap = shallow(<TextFilter onClear={onClear} />);
 
-      // use the latest div to avoid parents
-      // example: <div><div>x</div></div>
-      const clear = wrap.find('div')
-        .filterWhere(el => el.text() === 'x')
-        .last();
+      wrap.setState({ query: 'hello' });
+
+      const clear = wrap.find('.clear');
 
       clear.simulate('click');
       expect(onClear.calledOnce).to.equal(true);
