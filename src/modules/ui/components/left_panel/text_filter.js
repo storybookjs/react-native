@@ -9,13 +9,27 @@ const mainStyle = {
 };
 
 export default class TextFilter extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      query: '',
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.fireOnClear = this.fireOnClear.bind(this);
+  }
+
   onChange(event) {
     const text = event.target.value;
+    this.setState({ query: text });
     const { onChange } = this.props;
     if (onChange) onChange(text);
   }
 
   fireOnClear() {
+    this.setState({ query: '' });
+
     const { onClear } = this.props;
     if (onClear) onClear();
   }
@@ -23,7 +37,6 @@ export default class TextFilter extends React.Component {
   render() {
     const textWrapStyle = {
       background: '#F7F7F7',
-      paddingRight: 25,
     };
 
     const textStyle = {
@@ -40,33 +53,39 @@ export default class TextFilter extends React.Component {
 
     const clearButtonStyle = {
       position: 'absolute',
-      color: '#B1B1B1',
+      color: '#868686',
       border: 'none',
       width: 25,
       height: 26,
-      right: 0,
-      top: 2,
+      right: 1,
+      top: 0,
       textAlign: 'center',
       cursor: 'pointer',
+      lineHeight: '23px',
+      fontSize: 20,
     };
 
     return (
-      <div style={mainStyle}>
-        <div style={textWrapStyle}>
+      <div style={mainStyle} >
+        <div style={textWrapStyle} >
           <input
             style={textStyle}
             type="text"
             placeholder="Filter"
             name="filter-text"
             value={this.props.text || ''}
-            onChange={this.onChange.bind(this)}
+            onChange={this.onChange}
           />
         </div>
-        <div
-          style={clearButtonStyle}
-          onClick={this.fireOnClear.bind(this)}
-        >x
-        </div>
+        {
+          this.state.query && this.state.query.length && <div
+            style={clearButtonStyle}
+            onClick={this.fireOnClear}
+            className="clear"
+          >
+            ×
+          </div>
+        }
       </div>
     );
   }
