@@ -13,11 +13,8 @@ describe('manager.ui.components.action_logger.index', () => {
     ];
 
     const wrap = shallow(<ActionLogger actions={actions} />);
-    const foldableNodes = wrap.find('pre').children().nodes;
+    const foldableNodes = wrap.find('Inspector');
     expect(foldableNodes.length).to.be.equal(2);
-
-    expect(foldableNodes[0].props).to.deep.equal({ action: actions[0] });
-    expect(foldableNodes[1].props).to.deep.equal({ action: actions[1] });
   });
 
   it('should fire onClear action', () => {
