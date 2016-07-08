@@ -1,5 +1,11 @@
 ## Change Log
 
+### v2.4.0
+
+* Show cross only if text present in the filter box. [PR13](https://github.com/kadirahq/storybook-ui/pull/13)
+* Update react-fuzzy. [PR12](https://github.com/kadirahq/storybook-ui/pull/12)
+* Improved logging with react-inspector. [PR11](https://github.com/kadirahq/storybook-ui/pull/11)
+
 ### v2.3.0
 
 * Add support for Redux DevTools extension. See [PR8](https://github.com/kadirahq/storybook-ui/pull/8).
