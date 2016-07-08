@@ -45,15 +45,25 @@ var mainStyle = (0, _extends3.default)({}, _theme.baseFonts, {
 var TextFilter = function (_React$Component) {
   (0, _inherits3.default)(TextFilter, _React$Component);
 
-  function TextFilter() {
+  function TextFilter(props) {
     (0, _classCallCheck3.default)(this, TextFilter);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(TextFilter).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(TextFilter).call(this, props));
+
+    _this.state = {
+      query: ''
+    };
+
+    _this.onChange = _this.onChange.bind(_this);
+    _this.fireOnClear = _this.fireOnClear.bind(_this);
+    return _this;
   }
 
   (0, _createClass3.default)(TextFilter, [{
     key: 'onChange',
     value: function onChange(event) {
       var text = event.target.value;
+      this.setState({ query: text });
       var onChange = this.props.onChange;
 
       if (onChange) onChange(text);
@@ -61,6 +71,8 @@ var TextFilter = function (_React$Component) {
   }, {
     key: 'fireOnClear',
     value: function fireOnClear() {
+      this.setState({ query: '' });
+
       var onClear = this.props.onClear;
 
       if (onClear) onClear();
@@ -69,8 +81,7 @@ var TextFilter = function (_React$Component) {
     key: 'render',
     value: function render() {
       var textWrapStyle = {
-        background: '#F7F7F7',
-        paddingRight: 25
+        background: '#F7F7F7'
       };
 
       var textStyle = {
@@ -87,14 +98,16 @@ var TextFilter = function (_React$Component) {
 
       var clearButtonStyle = {
         position: 'absolute',
-        color: '#B1B1B1',
+        color: '#868686',
         border: 'none',
         width: 25,
         height: 26,
-        right: 0,
-        top: 2,
+        right: 1,
+        top: 0,
         textAlign: 'center',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        lineHeight: '23px',
+        fontSize: 20
       };
 
       return _react2.default.createElement(
@@ -109,16 +122,17 @@ var TextFilter = function (_React$Component) {
             placeholder: 'Filter',
             name: 'filter-text',
             value: this.props.text || '',
-            onChange: this.onChange.bind(this)
+            onChange: this.onChange
           })
         ),
-        _react2.default.createElement(
+        this.state.query && this.state.query.length && _react2.default.createElement(
           'div',
           {
             style: clearButtonStyle,
-            onClick: this.fireOnClear.bind(this)
+            onClick: this.fireOnClear,
+            className: 'clear'
           },
-          'x'
+          '×'
         )
       );
     }

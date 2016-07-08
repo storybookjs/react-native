@@ -32,9 +32,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _foldable = require('./foldable');
+var _reactInspector = require('react-inspector');
 
-var _foldable2 = _interopRequireDefault(_foldable);
+var _reactInspector2 = _interopRequireDefault(_reactInspector);
 
 var _theme = require('../theme');
 
@@ -43,7 +43,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var preStyle = {
   color: '#666',
   overflowY: 'auto',
-  padding: '8px',
+  padding: '8px 2px',
   boxSizing: 'border-box',
   border: '1px solid #ECECEC',
   borderRadius: 4,
@@ -71,6 +71,42 @@ var btnStyle = {
   marginLeft: 5
 };
 
+var countStyle = {
+  display: 'inline-block',
+  backgroundColor: '#777777',
+  color: '#ffffff',
+  padding: '1px 5px',
+  borderRadius: '8px'
+};
+
+var logDivStyle = {
+  margin: 5,
+  paddingBottom: 3,
+  marginBottom: 4,
+  overflow: 'auto',
+  borderBottom: '1px solid #fafafa'
+};
+
+var inspectorStyle = {
+  marginLeft: 5,
+  float: 'none',
+  display: 'inline-block'
+};
+
+var countWrapper = {
+  minWidth: 20,
+  display: 'inline-block',
+  float: 'left',
+  height: 19,
+  marginRight: 5
+};
+
+var actionNameStyle = {
+  float: 'right',
+  padding: '0 5px',
+  fontWeight: 'bold'
+};
+
 var ActionLogger = function (_Component) {
   (0, _inherits3.default)(ActionLogger, _Component);
 
@@ -83,7 +119,33 @@ var ActionLogger = function (_Component) {
     key: 'getActionData',
     value: function getActionData() {
       return this.props.actions.map(function (action) {
-        return _react2.default.createElement(_foldable2.default, { key: action.id, action: action });
+        return _react2.default.createElement(
+          'div',
+          { style: logDivStyle, key: action.id },
+          _react2.default.createElement(
+            'div',
+            { style: countWrapper },
+            action.count > 1 && _react2.default.createElement(
+              'span',
+              { style: countStyle },
+              action.count
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { style: inspectorStyle },
+            _react2.default.createElement(_reactInspector2.default, {
+              showNonenumerable: true,
+              name: action.data.name,
+              data: action.data.args || action.data
+            })
+          ),
+          _react2.default.createElement(
+            'span',
+            { style: actionNameStyle },
+            action.data.name
+          )
+        );
       });
     }
   }, {

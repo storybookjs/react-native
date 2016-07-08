@@ -54,7 +54,7 @@ export default class ReactProvider extends Provider {
     // firing an action.
     this.globalState.on('action', (message) => {
       this.api.addAction({
-        data: { message },
+        data: { message, name: 'the-action' },
         id: ++id,
       });
     });
