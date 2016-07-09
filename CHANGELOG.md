@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.37.0
+
+* Update @kadira/storybook-ui to 2.4.0
+
 ### v1.36.0
 
 * Support watchOptions configuration. See: [PR287](https://github.com/kadirahq/react-storybook/pull/287)
