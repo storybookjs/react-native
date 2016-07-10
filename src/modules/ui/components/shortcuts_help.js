@@ -42,7 +42,7 @@ export const Content = () => (
       <div>
         <b style={commandStyle}>&#8984; &#8679; J</b> / &nbsp;
         <b style={commandStyle}>&#8963; &#8679; J</b>
-        Toggle Action Logger dock position
+        Toggle Action Logger position
       </div>
       <div>
         <b style={commandStyle}>&#8984; &#8679; F</b> / &nbsp;
