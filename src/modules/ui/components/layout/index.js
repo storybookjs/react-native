@@ -91,7 +91,7 @@ class Layout extends React.Component {
           <SplitPane
             split={props.downPanelInRight ? 'vertical' : 'horizontal'}
             primary="second"
-            minSize={100}
+            minSize={props.downPanelInRight ? 200 : 100}
             defaultSize={downPanelDefaultSize}
             resizerChildren={props.downPanelInRight ? vsplit : hsplit}
             onDragStarted={onDragStart}
