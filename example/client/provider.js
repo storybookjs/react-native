@@ -28,6 +28,9 @@ export default class ReactProvider extends Provider {
   // You must implement this public API.
   handleAPI(api) {
     this.api = api;
+    this.api.setOptions({
+      name : 'REACT-STORYBOOK',
+    });
 
     // set stories
     this.api.setStories([

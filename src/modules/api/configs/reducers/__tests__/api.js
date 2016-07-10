@@ -301,3 +301,27 @@ describe('manager.preview.config.reducers.preview', () => {
     });
   });
 });
+
+describe('SET OPTIONS', () => {
+  it('should set options merging with the default ones', () => {
+    const options = {
+      name: 'foo',
+      url: 'bar',
+    };
+
+    const action = {
+      type: types.SET_OPTIONS,
+      options: {
+        name: 'hello world',
+      },
+    };
+
+    const expected = {
+      name: 'hello world',
+      url: 'bar',
+    };
+
+    const newState = reducer({ options }, action);
+    expect(newState.options).to.eql(expected);
+  });
+});

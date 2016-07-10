@@ -5,6 +5,7 @@ export const types = {
   JUMP_TO_STORY: 'API_JUMP_TO_STORY',
   CLEAR_ACTIONS: 'API_CLEAR_ACTIONS',
   ADD_ACTION: 'API_ADD_ACTION',
+  SET_OPTIONS: 'API_SET_OPTIONS',
 };
 
 import api from './api';
