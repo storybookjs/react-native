@@ -85,7 +85,7 @@ describe('manager.api.actions.api', () => {
     });
   });
 
-  describe('setStories', () => {
+  describe('setOptions', () => {
     it('should dispatch related redux action', () => {
       const reduxStore = {
         dispatch: sinon.stub(),
