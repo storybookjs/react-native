@@ -70,7 +70,10 @@ class Layout extends React.Component {
   renderNormally() {
     const props = this.props;
     const leftPanelDefaultSize = props.showLeftPanel ? 250 : 1;
-    const downPanelDefaultSize = props.showDownPanel ? 200 : 1;
+    let downPanelDefaultSize = 1;
+    if (props.showDownPanel) {
+      downPanelDefaultSize = props.downPanelInRight ? 400 : 200;
+    }
     return (
       <div style={rootStyle}>
         <SplitPane
@@ -86,11 +89,11 @@ class Layout extends React.Component {
           </div>
 
           <SplitPane
-            split="horizontal"
+            split={props.downPanelInRight ? 'vertical' : 'horizontal'}
             primary="second"
             minSize={100}
             defaultSize={downPanelDefaultSize}
-            resizerChildren={hsplit}
+            resizerChildren={props.downPanelInRight ? vsplit : hsplit}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
           >
@@ -125,6 +128,7 @@ Layout.propTypes = {
   leftPanel: React.PropTypes.func.isRequired,
   preview: React.PropTypes.func.isRequired,
   downPanel: React.PropTypes.func.isRequired,
+  downPanelInRight: React.PropTypes.bool.isRequired,
 };
 
 export default Layout;

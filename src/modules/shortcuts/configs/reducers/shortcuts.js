@@ -6,6 +6,7 @@ const defaultState = {
   showLeftPanel: true,
   showDownPanel: true,
   showSearchBox: false,
+  downPanelInRight: false,
 };
 
 export function keyEventToState(state, event) {
@@ -18,6 +19,8 @@ export function keyEventToState(state, event) {
       return { showLeftPanel: !state.showLeftPanel };
     case features.SEARCH:
       return { showSearchBox: !state.showSearchBox };
+    case features.DOWN_PANEL_IN_RIGHT:
+      return { downPanelInRight: !state.downPanelInRight };
     default:
       return {};
   }
