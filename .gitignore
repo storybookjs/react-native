@@ -1,3 +1,4 @@
 node_modules
 *.log
 .idea
+npm-shrinkwrap.json
