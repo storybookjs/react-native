@@ -106,6 +106,10 @@ var stylesheet = {
     padding: '0 40px',
     overflow: 'auto'
   },
+  children: {
+    position: 'relative',
+    zIndex: 0
+  },
   infoBody: (0, _extends3.default)({}, _theme.baseFonts, {
     fontWeight: 300,
     lineHeight: 1.45,
@@ -229,18 +233,19 @@ var Story = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        this.props.children,
+        _react2.default.createElement(
+          'div',
+          { style: stylesheet.children },
+          this.props.children
+        ),
         _react2.default.createElement(
           'a',
-          {
-            className: 'react-storybook-addon-info__toggle',
-            style: linkStyle, onClick: openOverlay
-          },
+          { style: linkStyle, onClick: openOverlay },
           '?'
         ),
         _react2.default.createElement(
           'div',
-          { className: 'react-storybook-addon-info__overlay', style: infoStyle },
+          { style: infoStyle },
           _react2.default.createElement(
             'a',
             { style: linkStyle, onClick: closeOverlay },

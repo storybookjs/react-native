@@ -49,6 +49,10 @@ const stylesheet = {
     padding: '0 40px',
     overflow: 'auto',
   },
+  children: {
+    position: 'relative',
+    zIndex: 0,
+  },
   infoBody: {
     ...baseFonts,
     fontWeight: 300,
@@ -147,14 +151,11 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        { this.props.children }
-        <a
-          className="react-storybook-addon-info__toggle"
-          style={linkStyle} onClick={openOverlay}
-        >
-          ?
-        </a>
-        <div className="react-storybook-addon-info__overlay" style={infoStyle}>
+        <div style={stylesheet.children}>
+          { this.props.children }
+        </div>
+        <a style={linkStyle} onClick={openOverlay}>?</a>
+        <div style={infoStyle}>
           <a style={linkStyle} onClick={closeOverlay}>×</a>
           <div style={stylesheet.infoPage}>
             <div style={stylesheet.infoBody}>
