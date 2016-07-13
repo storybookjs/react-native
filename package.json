@@ -12,7 +12,7 @@
     "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
   },
   "scripts": {
-    "prepublish": "./scripts/prepublish.sh",
+    "prepublish": "node scripts/prepublish.js",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "testonly": "mocha $npm_package_options_mocha",
