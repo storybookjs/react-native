@@ -2,7 +2,7 @@ import React from 'react';
 import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
 import Node from './Node';
-import {H1, H2, H3, H4, H5, H6, Code, Pre, P, UL, A, LI} from './markdown';
+import { H1, H2, H3, H4, H5, H6, Code, Pre, P, UL, A, LI } from './markdown';
 import { baseFonts } from './theme';
 
 MTRC.configure({
@@ -17,7 +17,7 @@ MTRC.configure({
   p: P,
   a: A,
   li: LI,
-  ul: UL
+  ul: UL,
 });
 
 const stylesheet = {
@@ -50,9 +50,6 @@ const stylesheet = {
     overflow: 'auto',
   },
   infoBody: {
-    fontSize: "16px",
-  },
-  infoBody: {
     ...baseFonts,
     fontWeight: 300,
     lineHeight: 1.45,
@@ -76,7 +73,7 @@ const stylesheet = {
     body: {
       borderBottom: '1px solid #eee',
       marginBottom: 10,
-    }
+    },
   },
   source: {
     h1: {
@@ -84,24 +81,17 @@ const stylesheet = {
       padding: '0 0 5px 0',
       fontSize: 25,
       borderBottom: '1px solid #EEE',
-    }
+    },
   },
   propTableHead: {
-    margin: '20px 0 0 0'
+    margin: '20px 0 0 0',
   },
-}
+};
 
 export default class Story extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = {open: false};
-  }
-
-  render() {
-    if (this.props.showInline) {
-      return this._renderInline();
-    }
-    return this._renderOverlay();
+    this.state = { open: false };
   }
 
   _renderStory() {
@@ -138,21 +128,22 @@ export default class Story extends React.Component {
     const linkStyle = {
       ...stylesheet.link.base,
       ...stylesheet.link.topRight,
-    }
+    };
+
     const infoStyle = Object.assign({}, stylesheet.info);
     if (!this.state.open) {
       infoStyle.display = 'none';
     }
 
     const openOverlay = () => {
-      this.setState({open: true});
+      this.setState({ open: true });
       return false;
-    }
+    };
 
     const closeOverlay = () => {
-      this.setState({open: false});
+      this.setState({ open: false });
       return false;
-    }
+    };
 
     return (
       <div>
@@ -222,7 +213,7 @@ export default class Story extends React.Component {
         <h1 style={stylesheet.source.h1}>Story Source</h1>
         <Pre>
         {React.Children.map(this.props.children, (root, idx) => (
-          <Node key={idx} depth={0} node={root}></Node>
+          <Node key={idx} depth={0} node={root} />
         ))}
         </Pre>
       </div>
@@ -230,6 +221,8 @@ export default class Story extends React.Component {
   }
 
   _getPropTables() {
+    const types = new Map();
+
     if (this.props.propTables === false) {
       return null;
     }
@@ -238,8 +231,6 @@ export default class Story extends React.Component {
       return null;
     }
 
-    const types = new Map();
-
     if (this.props.propTables) {
       this.props.propTables.forEach(function (type) {
         types.set(type, true);
@@ -247,6 +238,8 @@ export default class Story extends React.Component {
     }
 
     function extract(children) {
+      const type = children.type;
+
       if (Array.isArray(children)) {
         children.forEach(extract);
         return;
@@ -255,8 +248,6 @@ export default class Story extends React.Component {
         return;
       }
 
-      const type = children.type;
-      const name = type.displayName || type.name;
       if (!types.has(type)) {
         types.set(type, true);
       }
@@ -292,7 +283,16 @@ export default class Story extends React.Component {
         {propTables}
       </div>
     );
-    return ;
+
+    return;
+  }
+
+  render() {
+    if (this.props.showInline) {
+      return this._renderInline();
+    }
+
+    return this._renderOverlay();
   }
 }
 
@@ -304,9 +304,11 @@ Story.propTypes = {
   showInline: React.PropTypes.bool,
   showHeader: React.PropTypes.bool,
   showSource: React.PropTypes.bool,
-}
+  children: React.PropTypes.array,
+};
+
 Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
-}
+};
