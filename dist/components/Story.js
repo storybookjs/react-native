@@ -438,7 +438,7 @@ Story.propTypes = {
   showInline: _react2.default.PropTypes.bool,
   showHeader: _react2.default.PropTypes.bool,
   showSource: _react2.default.PropTypes.bool,
-  children: _react2.default.PropTypes.array
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array])
 };
 
 Story.defaultProps = {
