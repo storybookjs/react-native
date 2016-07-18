@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.38.2
+
+* Fix error in prepublish script [#319](https://github.com/kadirahq/react-storybook/pull/319).
+
 ### v1.38.1
 
 * Improve Windows support by writing prepublish script using shelljs [#308](https://github.com/kadirahq/react-storybook/pull/308).
