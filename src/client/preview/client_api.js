@@ -75,7 +75,7 @@ export default class ClientApi {
   action(name) {
     const pageBus = this._pageBus;
 
-    return function (..._args) {
+    return function action(..._args) {
       let args = Array.from(_args);
 
       // Remove events from the args. Otherwise, it creates a huge JSON string.
@@ -88,16 +88,15 @@ export default class ClientApi {
 
       const id = UUID.v4();
       const data = { name, args };
-      const action = { data, id };
 
-      pageBus.emit('addAction', { action });
+      pageBus.emit('addAction', { action: { data, id } });
     };
   }
 
   linkTo(kind, story) {
     const pageBus = this._pageBus;
 
-    return function (...args) {
+    return function linkTo(...args) {
       const resolvedKind = typeof kind === 'function' ? kind(...args) : kind;
       const resolvedStory = typeof story === 'function' ? story(...args) : story;
 
