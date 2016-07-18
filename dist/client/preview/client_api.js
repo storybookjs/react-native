@@ -116,7 +116,7 @@ var ClientApi = function () {
     value: function action(name) {
       var pageBus = this._pageBus;
 
-      return function () {
+      return function action() {
         for (var _len2 = arguments.length, _args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
           _args[_key2] = arguments[_key2];
         }
@@ -133,9 +133,8 @@ var ClientApi = function () {
 
         var id = _uuid2.default.v4();
         var data = { name: name, args: args };
-        var action = { data: data, id: id };
 
-        pageBus.emit('addAction', { action: action });
+        pageBus.emit('addAction', { action: { data: data, id: id } });
       };
     }
   }, {
@@ -143,7 +142,7 @@ var ClientApi = function () {
     value: function linkTo(kind, story) {
       var pageBus = this._pageBus;
 
-      return function () {
+      return function linkTo() {
         var resolvedKind = typeof kind === 'function' ? kind.apply(undefined, arguments) : kind;
         var resolvedStory = typeof story === 'function' ? story.apply(undefined, arguments) : story;
 
