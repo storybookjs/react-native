@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.1.0
+
+* Make the `info` argument optional [PR37](https://github.com/kadirahq/react-storybook-addon-info/pull/37)
+
 ### v3.0.10
 
 * Render the component inside a div element when on inline mode [PR34](https://github.com/kadirahq/react-storybook-addon-info/pull/34)
