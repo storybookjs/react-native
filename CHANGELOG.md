@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.1.1
+
+* Add a z-index for rendered items to make the overlay always display on top [PR38](https://github.com/kadirahq/react-storybook-addon-info/pull/38)
+
 ### v3.1.0
 
 * Make the `info` argument optional [PR37](https://github.com/kadirahq/react-storybook-addon-info/pull/37)
