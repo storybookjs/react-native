@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.38.3
+
+* Add names for action and linkTo functions [#321](https://github.com/kadirahq/react-storybook/pull/321).
+
 ### v1.38.2
 
 * Fix error in prepublish script [#319](https://github.com/kadirahq/react-storybook/pull/319).
