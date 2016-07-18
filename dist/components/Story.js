@@ -36,15 +36,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
-
-var _stylesheet;
 
 var _react = require('react');
 
@@ -83,7 +77,7 @@ _markdownToReactComponents2.default.configure({
   ul: _markdown.UL
 });
 
-var stylesheet = (_stylesheet = {
+var stylesheet = {
   link: {
     base: {
       fontFamily: 'sans-serif',
@@ -112,41 +106,47 @@ var stylesheet = (_stylesheet = {
     padding: '0 40px',
     overflow: 'auto'
   },
-  infoBody: {
-    fontSize: "16px"
-  }
-}, (0, _defineProperty3.default)(_stylesheet, 'infoBody', (0, _extends3.default)({}, _theme.baseFonts, {
-  fontWeight: 300,
-  lineHeight: 1.45,
-  fontSize: 15
-})), (0, _defineProperty3.default)(_stylesheet, 'infoContent', {
-  marginBottom: 0
-}), (0, _defineProperty3.default)(_stylesheet, 'header', {
-  h1: {
-    margin: '20px 0 0 0',
-    padding: 0,
-    fontSize: 35
+  children: {
+    position: 'relative',
+    zIndex: 0
   },
-  h2: {
-    margin: '0 0 10px 0',
-    padding: 0,
-    fontWeight: 400,
-    fontSize: 22
+  infoBody: (0, _extends3.default)({}, _theme.baseFonts, {
+    fontWeight: 300,
+    lineHeight: 1.45,
+    fontSize: 15
+  }),
+  infoContent: {
+    marginBottom: 0
   },
-  body: {
-    borderBottom: '1px solid #eee',
-    marginBottom: 10
+  header: {
+    h1: {
+      margin: '20px 0 0 0',
+      padding: 0,
+      fontSize: 35
+    },
+    h2: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: 22
+    },
+    body: {
+      borderBottom: '1px solid #eee',
+      marginBottom: 10
+    }
+  },
+  source: {
+    h1: {
+      margin: '20px 0 0 0',
+      padding: '0 0 5px 0',
+      fontSize: 25,
+      borderBottom: '1px solid #EEE'
+    }
+  },
+  propTableHead: {
+    margin: '20px 0 0 0'
   }
-}), (0, _defineProperty3.default)(_stylesheet, 'source', {
-  h1: {
-    margin: '20px 0 0 0',
-    padding: '0 0 5px 0',
-    fontSize: 25,
-    borderBottom: '1px solid #EEE'
-  }
-}), (0, _defineProperty3.default)(_stylesheet, 'propTableHead', {
-  margin: '20px 0 0 0'
-}), _stylesheet);
+};
 
 var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
@@ -167,14 +167,6 @@ var Story = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Story, [{
-    key: 'render',
-    value: function render() {
-      if (this.props.showInline) {
-        return this._renderInline();
-      }
-      return this._renderOverlay();
-    }
-  }, {
     key: '_renderStory',
     value: function _renderStory() {
       return _react2.default.createElement(
@@ -222,6 +214,7 @@ var Story = function (_React$Component) {
       var _this2 = this;
 
       var linkStyle = (0, _extends3.default)({}, stylesheet.link.base, stylesheet.link.topRight);
+
       var infoStyle = (0, _assign2.default)({}, stylesheet.info);
       if (!this.state.open) {
         infoStyle.display = 'none';
@@ -240,7 +233,11 @@ var Story = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        this.props.children,
+        _react2.default.createElement(
+          'div',
+          { style: stylesheet.children },
+          this.props.children
+        ),
         _react2.default.createElement(
           'a',
           { style: linkStyle, onClick: openOverlay },
@@ -342,6 +339,8 @@ var Story = function (_React$Component) {
   }, {
     key: '_getPropTables',
     value: function _getPropTables() {
+      var types = new _map2.default();
+
       if (this.props.propTables === false) {
         return null;
       }
@@ -350,8 +349,6 @@ var Story = function (_React$Component) {
         return null;
       }
 
-      var types = new _map2.default();
-
       if (this.props.propTables) {
         this.props.propTables.forEach(function (type) {
           types.set(type, true);
@@ -359,6 +356,8 @@ var Story = function (_React$Component) {
       }
 
       function extract(children) {
+        var type = children.type;
+
         if (Array.isArray(children)) {
           children.forEach(extract);
           return;
@@ -367,8 +366,6 @@ var Story = function (_React$Component) {
           return;
         }
 
-        var type = children.type;
-        var name = type.displayName || type.name;
         if (!types.has(type)) {
           types.set(type, true);
         }
@@ -414,7 +411,17 @@ var Story = function (_React$Component) {
         ),
         propTables
       );
+
       return;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (this.props.showInline) {
+        return this._renderInline();
+      }
+
+      return this._renderOverlay();
     }
   }]);
   return Story;
@@ -430,8 +437,10 @@ Story.propTypes = {
   propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
   showInline: _react2.default.PropTypes.bool,
   showHeader: _react2.default.PropTypes.bool,
-  showSource: _react2.default.PropTypes.bool
+  showSource: _react2.default.PropTypes.bool,
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array])
 };
+
 Story.defaultProps = {
   showInline: false,
   showHeader: true,
