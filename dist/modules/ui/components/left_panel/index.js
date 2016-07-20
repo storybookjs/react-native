@@ -42,7 +42,11 @@ var LeftPanel = function LeftPanel(props) {
   return _react2.default.createElement(
     'div',
     { style: mainStyle },
-    _react2.default.createElement(_header2.default, { openShortcutsHelp: props.openShortcutsHelp }),
+    _react2.default.createElement(_header2.default, {
+      name: props.name,
+      url: props.url,
+      openShortcutsHelp: props.openShortcutsHelp
+    }),
     _react2.default.createElement(_text_filter2.default, {
       text: props.storyFilter,
       onClear: function onClear() {
@@ -69,7 +73,9 @@ LeftPanel.propTypes = {
   storyFilter: _react2.default.PropTypes.string,
   onStoryFilter: _react2.default.PropTypes.func,
 
-  openShortcutsHelp: _react2.default.PropTypes.func
+  openShortcutsHelp: _react2.default.PropTypes.func,
+  name: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string
 };
 
 exports.default = LeftPanel;

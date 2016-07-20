@@ -81,6 +81,15 @@ exports.default = function () {
         });
       }
 
+    case _actions.types.SET_OPTIONS:
+      {
+        var newOptions = (0, _extends3.default)({}, state.options, action.options);
+
+        return (0, _extends3.default)({}, state, {
+          options: newOptions
+        });
+      }
+
     default:
       return state;
   }
@@ -152,5 +161,9 @@ function jumpToStory(storyKinds, selectedKind, selectedStory, direction) {
 }
 
 var defaultState = {
-  actions: []
+  actions: [],
+  options: {
+    name: 'REACT STORYBOOK',
+    url: 'https://github.com/kadirahq/react-storybook'
+  }
 };

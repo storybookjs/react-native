@@ -64,7 +64,7 @@ var wrapStyle = {
 var headStyle = (0, _extends3.default)({}, _theme.baseFonts, {
   letterSpacing: '2px',
   fontSize: 12,
-  margin: '0 0 0 5px'
+  margin: '10px 0 0 5px'
 });
 
 var btnStyle = {
@@ -80,17 +80,20 @@ var countStyle = {
 };
 
 var logDivStyle = {
-  margin: 5,
-  paddingBottom: 3,
-  marginBottom: 4,
+  marginLeft: 5,
+  padding: 3,
+  paddingLeft: 0,
   overflow: 'auto',
-  borderBottom: '1px solid #fafafa'
+  borderBottom: '1px solid #fafafa',
+  backgroundColor: 'white'
 };
 
 var inspectorStyle = {
   marginLeft: 5,
   float: 'none',
-  display: 'inline-block'
+  display: 'inline-block',
+  width: 'calc(100% - 140px)',
+  whiteSpace: 'initial'
 };
 
 var countWrapper = {
@@ -116,12 +119,25 @@ var ActionLogger = function (_Component) {
   }
 
   (0, _createClass3.default)(ActionLogger, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      if (this.refs.latest) {
+        this.refs.latest.style.backgroundColor = '#FFFCE0';
+        setTimeout(function () {
+          _this2.refs.latest.style.backgroundColor = logDivStyle.backgroundColor;
+        }, 500);
+      }
+    }
+  }, {
     key: 'getActionData',
     value: function getActionData() {
-      return this.props.actions.map(function (action) {
+      return this.props.actions.map(function (action, i) {
+        var ref = i ? '' : 'latest';
         return _react2.default.createElement(
           'div',
-          { style: logDivStyle, key: action.id },
+          { style: logDivStyle, key: action.id, ref: ref },
           _react2.default.createElement(
             'div',
             { style: countWrapper },

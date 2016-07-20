@@ -32,6 +32,7 @@ var composer = exports.composer = function composer(_ref, _ref2) {
   var stories = api.stories;
   var selectedKind = api.selectedKind;
   var selectedStory = api.selectedStory;
+  var options = api.options;
   var storyFilter = ui.storyFilter;
 
 
@@ -44,7 +45,9 @@ var composer = exports.composer = function composer(_ref, _ref2) {
     storyFilter: storyFilter,
     onStoryFilter: actionMap.ui.setStoryFilter,
 
-    openShortcutsHelp: actionMap.ui.toggleShortcutsHelp
+    openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
+    name: options.name,
+    url: options.url
   };
 
   return data;

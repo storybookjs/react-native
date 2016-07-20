@@ -76,6 +76,22 @@ var Content = exports.Content = function Content() {
       _react2.default.createElement(
         'b',
         { style: commandStyle },
+        '⌘ ⇧ J'
+      ),
+      ' /  ',
+      _react2.default.createElement(
+        'b',
+        { style: commandStyle },
+        '⌃ ⇧ J'
+      ),
+      'Toggle Action Logger position'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'b',
+        { style: commandStyle },
         '⌘ ⇧ F'
       ),
       ' /  ',

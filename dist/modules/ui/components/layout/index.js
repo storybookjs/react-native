@@ -118,7 +118,10 @@ var Layout = function (_React$Component) {
     value: function renderNormally() {
       var props = this.props;
       var leftPanelDefaultSize = props.showLeftPanel ? 250 : 1;
-      var downPanelDefaultSize = props.showDownPanel ? 200 : 1;
+      var downPanelDefaultSize = 1;
+      if (props.showDownPanel) {
+        downPanelDefaultSize = props.downPanelInRight ? 400 : 200;
+      }
       return _react2.default.createElement(
         'div',
         { style: rootStyle },
@@ -140,11 +143,11 @@ var Layout = function (_React$Component) {
           _react2.default.createElement(
             _reactSplitPane2.default,
             {
-              split: 'horizontal',
+              split: props.downPanelInRight ? 'vertical' : 'horizontal',
               primary: 'second',
-              minSize: 100,
+              minSize: props.downPanelInRight ? 200 : 100,
               defaultSize: downPanelDefaultSize,
-              resizerChildren: hsplit,
+              resizerChildren: props.downPanelInRight ? vsplit : hsplit,
               onDragStarted: onDragStart,
               onDragFinished: onDragEnd
             },
@@ -187,7 +190,8 @@ Layout.propTypes = {
   goFullScreen: _react2.default.PropTypes.bool.isRequired,
   leftPanel: _react2.default.PropTypes.func.isRequired,
   preview: _react2.default.PropTypes.func.isRequired,
-  downPanel: _react2.default.PropTypes.func.isRequired
+  downPanel: _react2.default.PropTypes.func.isRequired,
+  downPanelInRight: _react2.default.PropTypes.bool.isRequired
 };
 
 exports.default = Layout;

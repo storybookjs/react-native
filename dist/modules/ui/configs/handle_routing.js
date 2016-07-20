@@ -59,8 +59,15 @@ function changeUrl(reduxStore) {
   var full = shortcuts.goFullScreen;
   var down = shortcuts.showDownPanel;
   var left = shortcuts.showLeftPanel;
+  var panelRight = shortcuts.downPanelInRight;
 
-  var layoutQuery = _qs2.default.stringify({ full: Number(full), down: Number(down), left: Number(left) });
+
+  var layoutQuery = _qs2.default.stringify({
+    full: Number(full),
+    down: Number(down),
+    left: Number(left),
+    panelRight: Number(panelRight)
+  });
 
   var url = '?' + queryString + '&' + layoutQuery;
   var state = {
@@ -69,7 +76,8 @@ function changeUrl(reduxStore) {
     selectedStory: selectedStory,
     full: full,
     down: down,
-    left: left
+    left: left,
+    panelRight: panelRight
   };
 
   window.history.pushState(state, '', url);
@@ -81,6 +89,7 @@ function updateStore(queryParams, actions) {
   var full = queryParams.full;
   var down = queryParams.down;
   var left = queryParams.left;
+  var panelRight = queryParams.panelRight;
 
 
   if (selectedKind && selectedStory) {
@@ -90,7 +99,8 @@ function updateStore(queryParams, actions) {
   actions.shortcuts.setLayout({
     goFullScreen: Boolean(Number(full)),
     showDownPanel: Boolean(Number(down)),
-    showLeftPanel: Boolean(Number(left))
+    showLeftPanel: Boolean(Number(left)),
+    downPanelInRight: Boolean(Number(panelRight))
   });
 }
 

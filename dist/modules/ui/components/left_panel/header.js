@@ -63,6 +63,8 @@ var linkStyle = {
 
 var Header = function Header(_ref) {
   var openShortcutsHelp = _ref.openShortcutsHelp;
+  var name = _ref.name;
+  var url = _ref.url;
   return _react2.default.createElement(
     'div',
     { style: wrapperStyle },
@@ -73,18 +75,20 @@ var Header = function Header(_ref) {
     ),
     _react2.default.createElement(
       'a',
-      { style: linkStyle, href: 'https://github.com/kadirahq/react-storybook', target: '_blank' },
+      { style: linkStyle, href: url, target: '_blank' },
       _react2.default.createElement(
         'h3',
         { style: headingStyle },
-        'React Storybook'
+        name
       )
     )
   );
 };
 
 Header.propTypes = {
-  openShortcutsHelp: _react2.default.PropTypes.func
+  openShortcutsHelp: _react2.default.PropTypes.func,
+  name: _react2.default.PropTypes.string,
+  url: _react2.default.PropTypes.string
 };
 
 exports.default = Header;

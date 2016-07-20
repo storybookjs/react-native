@@ -21,7 +21,8 @@ var features = exports.features = {
   ESCAPE: 5,
   NEXT_STORY: 6,
   PREV_STORY: 7,
-  SEARCH: 8
+  SEARCH: 8,
+  DOWN_PANEL_IN_RIGHT: 9
 };
 
 function isModifierPressed(e) {
@@ -56,6 +57,9 @@ function handle(e) {
     case (0, _keycode2.default)('P'):
       e.preventDefault();
       return features.SEARCH;
+    case (0, _keycode2.default)('J'):
+      e.preventDefault();
+      return features.DOWN_PANEL_IN_RIGHT;
     default:
       return false;
   }

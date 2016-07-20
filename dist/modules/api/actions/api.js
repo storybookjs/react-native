@@ -46,5 +46,13 @@ exports.default = {
       type: _.types.ADD_ACTION,
       action: action
     });
+  },
+  setOptions: function setOptions(_ref6, options) {
+    var reduxStore = _ref6.reduxStore;
+
+    reduxStore.dispatch({
+      type: _.types.SET_OPTIONS,
+      options: options
+    });
   }
 };

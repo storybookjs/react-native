@@ -40,7 +40,8 @@ var defaultState = {
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: true,
-  showSearchBox: false
+  showSearchBox: false,
+  downPanelInRight: false
 };
 
 function keyEventToState(state, event) {
@@ -53,6 +54,8 @@ function keyEventToState(state, event) {
       return { showLeftPanel: !state.showLeftPanel };
     case _key_events.features.SEARCH:
       return { showSearchBox: !state.showSearchBox };
+    case _key_events.features.DOWN_PANEL_IN_RIGHT:
+      return { downPanelInRight: !state.downPanelInRight };
     default:
       return {};
   }
