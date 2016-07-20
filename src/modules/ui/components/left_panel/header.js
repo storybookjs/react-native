@@ -47,17 +47,19 @@ const linkStyle = {
   textDecoration: 'none',
 };
 
-const Header = ({ openShortcutsHelp }) => (
+const Header = ({ openShortcutsHelp, name, url }) => (
   <div style={wrapperStyle}>
     <button style={shortcutIconStyle} onClick={openShortcutsHelp}>⌘</button>
-    <a style={linkStyle} href="https://github.com/kadirahq/react-storybook" target="_blank">
-      <h3 style={headingStyle}>React Storybook</h3>
+    <a style={linkStyle} href={url} target="_blank">
+      <h3 style={headingStyle}>{name}</h3>
     </a>
   </div>
 );
 
 Header.propTypes = {
   openShortcutsHelp: React.PropTypes.func,
+  name: React.PropTypes.string,
+  url: React.PropTypes.string,
 };
 
 export default Header;

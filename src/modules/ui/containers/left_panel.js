@@ -5,7 +5,7 @@ import reduxComposer from '../libs/redux_composer';
 
 export const composer = ({ api, ui }, { actions }) => {
   const actionMap = actions();
-  const { stories, selectedKind, selectedStory } = api;
+  const { stories, selectedKind, selectedStory, options } = api;
   const { storyFilter } = ui;
 
   const data = {
@@ -18,6 +18,8 @@ export const composer = ({ api, ui }, { actions }) => {
     onStoryFilter: actionMap.ui.setStoryFilter,
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
+    name: options.name,
+    url: options.url,
   };
 
   return data;

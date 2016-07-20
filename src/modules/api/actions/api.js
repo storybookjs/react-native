@@ -35,4 +35,11 @@ export default {
       action,
     });
   },
+
+  setOptions({ reduxStore }, options) {
+    reduxStore.dispatch({
+      type: types.SET_OPTIONS,
+      options,
+    });
+  },
 };

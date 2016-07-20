@@ -8,6 +8,10 @@ describe('manager.ui.containers.left_panel', () => {
       const stories = [{ kind: 'sk', stories: ['dd'] }];
       const selectedKind = 'sk';
       const selectedStory = 'dd';
+      const options = {
+        name: 'foo',
+        url: 'bar',
+      };
 
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
@@ -33,6 +37,7 @@ describe('manager.ui.containers.left_panel', () => {
           stories,
           selectedKind,
           selectedStory,
+          options,
         },
       };
 
@@ -55,6 +60,10 @@ describe('manager.ui.containers.left_panel', () => {
       ];
       const selectedKind = 'pk';
       const selectedStory = 'dd';
+      const options = {
+        name: 'foo',
+        url: 'bar',
+      };
 
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
@@ -80,6 +89,7 @@ describe('manager.ui.containers.left_panel', () => {
           stories,
           selectedKind,
           selectedStory,
+          options,
         },
       };
 

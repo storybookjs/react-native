@@ -49,6 +49,10 @@ export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) 
 
 const defaultState = {
   actions: [],
+  options: {
+    name: 'REACT STORYBOOK',
+    url: 'https://github.com/kadirahq/react-storybook',
+  },
 };
 
 export default function (state = defaultState, action) {
@@ -114,6 +118,18 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         actions,
+      };
+    }
+
+    case types.SET_OPTIONS: {
+      const newOptions = {
+        ...state.options,
+        ...action.options,
+      };
+
+      return {
+        ...state,
+        options: newOptions,
       };
     }
 

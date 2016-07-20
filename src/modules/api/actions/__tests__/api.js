@@ -84,4 +84,20 @@ describe('manager.api.actions.api', () => {
       });
     });
   });
+
+  describe('setOptions', () => {
+    it('should dispatch related redux action', () => {
+      const reduxStore = {
+        dispatch: sinon.stub(),
+      };
+      const options = {};
+
+      actions.setOptions({ reduxStore }, options);
+      const a = reduxStore.dispatch.args[0][0];
+      expect(a).to.deep.equal({
+        type: types.SET_OPTIONS,
+        options,
+      });
+    });
+  });
 });
