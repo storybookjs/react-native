@@ -67,12 +67,6 @@ const countWrapper = {
   marginRight: 5,
 };
 
-const actionNameStyle = {
-  float: 'right',
-  padding: '0 5px',
-  fontWeight: 'bold',
-};
-
 class ActionLogger extends Component {
   componentDidUpdate() {
     if (this.refs.latest) {
@@ -99,7 +93,6 @@ class ActionLogger extends Component {
                 data={action.data.args || action.data}
               />
             </div>
-            <span style={actionNameStyle}>{action.data.name}</span>
           </div>
       );});
   }

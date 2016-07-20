@@ -55,7 +55,7 @@
     "mantra-core": "^1.6.1",
     "qs": "^6.2.0",
     "react-fuzzy": "^0.2.3",
-    "react-inspector": "^1.0.1",
+    "react-inspector": "^1.1.0",
     "react-modal": "^1.2.1",
     "redux": "^3.5.2"
   },
