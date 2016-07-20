@@ -37,18 +37,23 @@ var ErrorDisplay = function ErrorDisplay(_ref) {
   var error = _ref.error;
   return _react2.default.createElement(
     'div',
-    { style: mainStyle },
+    { style: mainStyle, __self: undefined
+    },
     _react2.default.createElement(
       'div',
-      { style: headingStyle },
+      { style: headingStyle, __self: undefined
+      },
       error.message
     ),
     _react2.default.createElement(
       'pre',
-      { style: codeStyle },
+      { style: codeStyle, __self: undefined
+      },
       _react2.default.createElement(
         'code',
-        null,
+        {
+          __self: undefined
+        },
         error.stack
       )
     )
