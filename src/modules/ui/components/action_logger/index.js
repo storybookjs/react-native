@@ -56,7 +56,7 @@ const inspectorStyle = {
   float: 'none',
   display: 'inline-block',
   width: 'calc(100% - 140px)',
-  whiteSpace: 'initial'
+  whiteSpace: 'initial',
 };
 
 const countWrapper = {
