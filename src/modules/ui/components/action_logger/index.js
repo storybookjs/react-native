@@ -43,17 +43,20 @@ const countStyle = {
 };
 
 const logDivStyle = {
-  margin: 5,
-  paddingBottom: 3,
-  marginBottom: 4,
+  marginLeft: 5,
+  padding: 3,
+  paddingLeft: 0,
   overflow: 'auto',
   borderBottom: '1px solid #fafafa',
+  backgroundColor: 'white',
 };
 
 const inspectorStyle = {
   marginLeft: 5,
   float: 'none',
   display: 'inline-block',
+  width: 'calc(100% - 140px)',
+  whiteSpace: 'initial'
 };
 
 const countWrapper = {
@@ -71,24 +74,34 @@ const actionNameStyle = {
 };
 
 class ActionLogger extends Component {
+  componentDidUpdate() {
+    if (this.refs.latest) {
+      this.refs.latest.style.backgroundColor = '#FFFCE0';
+      setTimeout(() => {
+        this.refs.latest.style.backgroundColor = logDivStyle.backgroundColor;
+      }, 500);
+    }
+  }
 
   getActionData() {
     return this.props.actions
-      .map((action) => (
-      <div style={logDivStyle} key={action.id}>
-        <div style={countWrapper}>
-          { action.count > 1 && <span style={ countStyle }>{ action.count }</span> }
-        </div>
-        <div style={inspectorStyle}>
-          <Inspector
-            showNonenumerable
-            name={action.data.name}
-            data={action.data.args || action.data}
-          />
-        </div>
-        <span style={actionNameStyle}>{action.data.name}</span>
-      </div>
-      ));
+      .map((action, i) => {
+        const ref = i ? '' : 'latest';
+        return (
+          <div style={logDivStyle} key={action.id} ref={ref}>
+            <div style={countWrapper}>
+              { action.count > 1 && <span style={ countStyle }>{ action.count }</span> }
+            </div>
+            <div style={inspectorStyle}>
+              <Inspector
+                showNonenumerable
+                name={action.data.name}
+                data={action.data.args || action.data}
+              />
+            </div>
+            <span style={actionNameStyle}>{action.data.name}</span>
+          </div>
+      );});
   }
 
   render() {
