@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.39.0
+
+* Update @kadira/storybook-ui to get featues from [v2.5.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v250) and [v2.6.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v260).
+
 ### v1.38.3
 
 * Add names for action and linkTo functions [#321](https://github.com/kadirahq/react-storybook/pull/321).
