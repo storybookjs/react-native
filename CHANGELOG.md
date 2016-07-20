@@ -1,5 +1,11 @@
 ## Change Log
 
+### v2.5.0
+
+* API to set options added. [PR20](https://github.com/kadirahq/storybook-ui/pull/20)
+* Ability to dock action logger in right. [PR18](https://github.com/kadirahq/storybook-ui/pull/18)
+* Add transition to latest added log. [PR16](https://github.com/kadirahq/storybook-ui/pull/16)
+
 ### v2.4.0
 
 * Show cross only if text present in the filter box. [PR13](https://github.com/kadirahq/storybook-ui/pull/13)
