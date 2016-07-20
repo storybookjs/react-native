@@ -40,6 +40,11 @@ export const Content = () => (
         Toggle SearchBox
       </div>
       <div>
+        <b style={commandStyle}>&#8984; &#8679; J</b> / &nbsp;
+        <b style={commandStyle}>&#8963; &#8679; J</b>
+        Toggle Action Logger position
+      </div>
+      <div>
         <b style={commandStyle}>&#8984; &#8679; F</b> / &nbsp;
         <b style={commandStyle}>&#8963; &#8679; F</b>
         Toggle Fullscreen Mode

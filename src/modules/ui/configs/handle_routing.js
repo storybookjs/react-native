@@ -15,8 +15,19 @@ export function changeUrl(reduxStore) {
 
   if (queryString === '') return;
 
-  const { goFullScreen: full, showDownPanel: down, showLeftPanel: left } = shortcuts;
-  const layoutQuery = qs.stringify({ full: Number(full), down: Number(down), left: Number(left) });
+  const {
+    goFullScreen: full,
+    showDownPanel: down,
+    showLeftPanel: left,
+    downPanelInRight: panelRight,
+  } = shortcuts;
+
+  const layoutQuery = qs.stringify({
+    full: Number(full),
+    down: Number(down),
+    left: Number(left),
+    panelRight: Number(panelRight),
+  });
 
   const url = `?${queryString}&${layoutQuery}`;
   const state = {
@@ -26,6 +37,7 @@ export function changeUrl(reduxStore) {
     full,
     down,
     left,
+    panelRight,
   };
 
   window.history.pushState(state, '', url);
@@ -38,6 +50,7 @@ export function updateStore(queryParams, actions) {
     full,
     down,
     left,
+    panelRight,
   } = queryParams;
 
   if (selectedKind && selectedStory) {
@@ -48,6 +61,7 @@ export function updateStore(queryParams, actions) {
     goFullScreen: Boolean(Number(full)),
     showDownPanel: Boolean(Number(down)),
     showLeftPanel: Boolean(Number(left)),
+    downPanelInRight: Boolean(Number(panelRight)),
   });
 }
 

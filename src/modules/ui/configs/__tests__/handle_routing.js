@@ -22,6 +22,7 @@ describe('manager.ui.config.handle_routing', () => {
           goFullScreen: false,
           showDownPanel: true,
           showLeftPanel: true,
+          downPanelInRight: true,
         },
       };
 
@@ -30,12 +31,13 @@ describe('manager.ui.config.handle_routing', () => {
       };
 
       const pushState = {
-        url: '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1',
+        url: '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1',
         selectedKind: 'kk',
         selectedStory: 'ss',
         full: false,
         down: true,
         left: true,
+        panelRight: true,
       };
 
       const originalPushState = window.history.pushState;
@@ -60,7 +62,7 @@ describe('manager.ui.config.handle_routing', () => {
         },
       };
 
-      const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0';
+      const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0';
 
       const location = {
         search: url,
@@ -75,6 +77,7 @@ describe('manager.ui.config.handle_routing', () => {
         goFullScreen: true,
         showDownPanel: false,
         showLeftPanel: false,
+        downPanelInRight: false,
       })).to.be.true;
       /* eslint-enable no-unused-expressions */
     });

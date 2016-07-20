@@ -8,7 +8,8 @@ export const composer = ({ shortcuts }) => {
     shortcuts,
     'showLeftPanel',
     'showDownPanel',
-    'goFullScreen'
+    'goFullScreen',
+    'downPanelInRight'
   );
 };
 

@@ -27,7 +27,7 @@ const headStyle = {
   ...baseFonts,
   letterSpacing: '2px',
   fontSize: 12,
-  margin: '0 0 0 5px',
+  margin: '10px 0 0 5px',
 };
 
 const btnStyle = {
