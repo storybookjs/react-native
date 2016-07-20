@@ -1,5 +1,9 @@
 ## Change Log
 
+### v2.6.0
+
+* Remove logger name with the updated react-inspector. [PR21](https://github.com/kadirahq/storybook-ui/pull/21)
+
 ### v2.5.0
 
 * API to set options added. [PR20](https://github.com/kadirahq/storybook-ui/pull/20)
