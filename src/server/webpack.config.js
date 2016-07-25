@@ -14,7 +14,7 @@ const config = {
     ],
     preview: [
       path.resolve(__dirname, './error_enhancements'),
-      'webpack-hot-middleware/client',
+      'webpack-hot-middleware/client?noInfo=true',
     ],
   },
   output: {
