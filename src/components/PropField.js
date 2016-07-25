@@ -85,6 +85,5 @@ PropField.propTypes = {
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
   type: React.PropTypes.string,
-  valid: React.PropTypes.boolean,
   onChange: React.PropTypes.func.isRequired,
 };

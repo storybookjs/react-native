@@ -17,11 +17,31 @@ const stylesheet = {
     borderRadius: '4px',
     padding: '10px',
   },
+  propEditorClosed: {
+    width: 'auto',
+  },
   title: {
     color: 'rgb(68, 68, 68)',
     letterSpacing: '2px',
     fontSize: '12px',
     margin: '0px 10px 15px 0px',
+  },
+  titleClosed: {
+    margin: '0px 0px 0px 0px',
+    float: 'left',
+    marginRight: '15px',
+  },
+  connerButton: {
+    position: 'absolute',
+    color: 'rgb(135, 135, 135)',
+    right: '10px',
+    top: '10px',
+    padding: '0',
+    height: '10px',
+    width: '10px',
+    lineHeight: '10px',
+    textAlign: 'center',
+    cursor: 'pointer',
   },
 };
 
@@ -98,6 +118,35 @@ export default class PropEditor extends React.Component {
   }
 
   render() {
+    let editorContent;
+
+    if (this.state.closed) {
+      editorContent = (
+        <div style={{ ...stylesheet.propEditor, ...stylesheet.propEditorClosed }}>
+          <h3 style={{ ...stylesheet.title, ...stylesheet.titleClosed }}>KNOBS</h3>
+          <div
+            style={stylesheet.connerButton}
+            onClick={() => {this.setState({ closed: false });}}
+          >
+          &#x2228;
+          </div>
+        </div>
+      );
+    } else {
+      editorContent = (
+        <div style={stylesheet.propEditor}>
+          <h3 style={stylesheet.title}>KNOBS</h3>
+          <div
+            style={stylesheet.connerButton}
+            onClick={() => {this.setState({ closed: true });}}
+          >
+            &#x2715;
+          </div>
+          <PropForm fields={this.state.fields} onFieldChange={this._handleChange} />
+        </div>
+      );
+    }
+
     return (
       <div>
         <Story
@@ -106,10 +155,7 @@ export default class PropEditor extends React.Component {
           createKnob={this._createKnob}
           shouldUpdate={this._shouldStoryUpdate}
         />
-        <div style={stylesheet.propEditor}>
-          <h3 style={stylesheet.title}>KNOBS</h3>
-          <PropForm fields={this.state.fields} onFieldChange={this._handleChange} />
-        </div>
+        { editorContent }
       </div>
     );
   }
