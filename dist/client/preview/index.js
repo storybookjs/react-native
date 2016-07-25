@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.configure = exports.clearDecorators = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
+exports.configure = exports.getStoryBook = exports.clearDecorators = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
 
 var _assign = require('babel-runtime/core-js/object/assign');
 
@@ -72,6 +72,7 @@ var linkTo = exports.linkTo = clientApi.linkTo.bind(clientApi);
 var setAddon = exports.setAddon = clientApi.setAddon.bind(clientApi);
 var addDecorator = exports.addDecorator = clientApi.addDecorator.bind(clientApi);
 var clearDecorators = exports.clearDecorators = clientApi.clearDecorators.bind(clientApi);
+var getStoryBook = exports.getStoryBook = clientApi.getStoryBook.bind(clientApi);
 var configure = exports.configure = configApi.configure.bind(configApi);
 
 // initialize the UI

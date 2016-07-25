@@ -114,4 +114,14 @@ export default class ClientApi {
       }
     };
   }
+
+  getStoryBook() {
+    return this._storyStore.getStoryKinds().map(kind => {
+      const stories = this._storyStore.getStories(kind).map(name => {
+        const render = this._storyStore.getStory(kind, name);
+        return { name, render };
+      });
+      return { kind, stories };
+    });
+  }
 }
