@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.41.0
+
+* Fix nodejs require errors [#337](https://github.com/kadirahq/react-storybook/pull/337).
+* Add getStorybook method to client API [#332](https://github.com/kadirahq/react-storybook/pull/332).
+
 ### v1.40.0
 
 * Fix duplicate decorator bug [#335](https://github.com/kadirahq/react-storybook/pull/335).
