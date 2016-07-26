@@ -10,6 +10,43 @@ class StoryStore {
   addStory(kind, story, fn) {
     this.stories.push({ kind, story, fn });
   }
+
+  getStoryKinds() {
+    return this.stories.reduce((kinds, info) => {
+      if (kinds.indexOf(info.kind) === -1) {
+        kinds.push(info.kind);
+      }
+      return kinds;
+    }, []);
+  }
+
+  getStories(kind) {
+    return this.stories.reduce((stories, info) => {
+      if (info.kind === kind) {
+        stories.push(info.story);
+      }
+      return stories;
+    }, []);
+  }
+
+  getStory(kind, name) {
+    return this.stories.reduce((fn, info) => {
+      if (!fn && info.kind === kind && info.story === name) {
+        return info.fn;
+      }
+      return fn;
+    }, null);
+  }
+}
+
+class PageBus {
+  constructor() {
+    this.emits = [];
+  }
+
+  emit(type, ...args) {
+    this.emits.push({ type, args });
+  }
 }
 
 describe('preview.client_api', () => {
@@ -171,6 +208,100 @@ describe('preview.client_api', () => {
 
       const result = storyStore.stories[0].fn({ kind, story });
       expect(result).to.be.equal(`${kind}-${story}-Hello`);
+    });
+  });
+
+  describe('clearDecorators', () => {
+    it('should remove all global decorators', () => {
+      const api = new ClientAPI({});
+      api._globalDecorators = 1234;
+      api.clearDecorators();
+      expect(api._globalDecorators).to.deep.equal([]);
+    });
+  });
+
+  describe('action', () => {
+    it('should emit "addAction"', () => {
+      const api = new ClientAPI({});
+      api._pageBus = new PageBus();
+      const action = api.action('test-action');
+      action(1, 'a', [1], { a: 1 }, { preventDefault() {} });
+      expect(api._pageBus.emits.length).to.equal(1);
+      expect(api._pageBus.emits[0].type).to.equal('addAction');
+      expect(typeof api._pageBus.emits[0].args[0].action.id).to.equal('string');
+      expect(api._pageBus.emits[0].args[0].action.data).to.deep.equal({
+        name: 'test-action',
+        args: [1, 'a', [1], { a: 1 }, '[SyntheticEvent]'],
+      });
+    });
+  });
+
+  describe('linkTo', () => {
+    it('should emit "selectStory"', () => {
+      const api = new ClientAPI({});
+      api._pageBus = new PageBus();
+      api.linkTo('test-kind', 'test-story')();
+      expect(api._pageBus.emits.length).to.equal(1);
+      expect(api._pageBus.emits[0].type).to.equal('selectStory');
+      expect(api._pageBus.emits[0].args[0]).to.deep.equal({
+        kind: 'test-kind',
+        story: 'test-story',
+      });
+    });
+
+    it('should support function args', () => {
+      const api = new ClientAPI({});
+      api._pageBus = new PageBus();
+      api.linkTo(a => `${a}-kind`, a => `${a}-story`)('test');
+      expect(api._pageBus.emits.length).to.equal(1);
+      expect(api._pageBus.emits[0].type).to.equal('selectStory');
+      expect(api._pageBus.emits[0].args[0]).to.deep.equal({
+        kind: 'test-kind',
+        story: 'test-story',
+      });
+    });
+  });
+
+  describe('getStorybook', () => {
+    it('should return storybook when empty', () => {
+      const storyStore = new StoryStore();
+      const api = new ClientAPI({ storyStore });
+      const book = api.getStorybook();
+      expect(book).to.deep.equal([]);
+    });
+
+    it('should return storybook with stories', () => {
+      const storyStore = new StoryStore();
+      const api = new ClientAPI({ storyStore });
+      const functions = {
+        'story-1.1': () => 'story-1.1',
+        'story-1.2': () => 'story-1.2',
+        'story-2.1': () => 'story-2.1',
+        'story-2.2': () => 'story-2.2',
+      };
+      const kind1 = api.storiesOf('kind-1');
+      kind1.add('story-1.1', functions['story-1.1']);
+      kind1.add('story-1.2', functions['story-1.2']);
+      const kind2 = api.storiesOf('kind-2');
+      kind2.add('story-2.1', functions['story-2.1']);
+      kind2.add('story-2.2', functions['story-2.2']);
+      const book = api.getStorybook();
+      expect(book).to.deep.equal([
+        {
+          kind: 'kind-1',
+          stories: [
+            { name: 'story-1.1', render: functions['story-1.1'] },
+            { name: 'story-1.2', render: functions['story-1.2'] },
+          ],
+        },
+        {
+          kind: 'kind-2',
+          stories: [
+            { name: 'story-2.1', render: functions['story-2.1'] },
+            { name: 'story-2.2', render: functions['story-2.2'] },
+          ],
+        },
+      ]);
     });
   });
 });
