@@ -6,6 +6,7 @@ const stylesheet = {
     display: 'inline-block',
     height: '26px',
     outline: 'none',
+    border: '0px',
     fontSize: '12px',
     padding: '5px',
     width: '70%',
@@ -24,8 +25,8 @@ const stylesheet = {
     color: 'rgb(130, 130, 130)',
   },
   field: {
-    marginBottom: '3px',
-    verticalAlign: 'middle',
+    padding: '5px',
+    color: 'rgb(130, 130, 130)',
   },
   label: {
     display: 'inline-block',

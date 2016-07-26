@@ -7,7 +7,7 @@ storiesOf('Button', module)
     <Button
       onClick={ action('button clicked') }
       color={createKnob('color', '#fff')}
-      style={createKnob('style', { width: '50px' }, 'object')}
+      style={createKnob('style', { width: '70px' }, 'object')}
     >
       {createKnob('children', 'Hello')}
     </Button>
