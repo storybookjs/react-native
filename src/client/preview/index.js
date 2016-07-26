@@ -29,6 +29,7 @@ export const action = clientApi.action.bind(clientApi);
 export const linkTo = clientApi.linkTo.bind(clientApi);
 export const setAddon = clientApi.setAddon.bind(clientApi);
 export const addDecorator = clientApi.addDecorator.bind(clientApi);
+export const clearDecorators = clientApi.clearDecorators.bind(clientApi);
 export const configure = configApi.configure.bind(configApi);
 
 // initialize the UI

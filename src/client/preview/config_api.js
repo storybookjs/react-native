@@ -4,6 +4,8 @@ import {
   clearError,
 } from './actions';
 
+import { clearDecorators } from './';
+
 export default class ConfigApi {
   constructor({ pageBus, storyStore, reduxStore }) {
     this._pageBus = pageBus;
@@ -41,6 +43,9 @@ export default class ConfigApi {
     if (module.hot) {
       module.hot.accept(() => {
         setTimeout(render);
+      });
+      module.hot.dispose(() => {
+        clearDecorators();
       });
     }
 

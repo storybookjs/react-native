@@ -14,6 +14,8 @@ var _createClass3 = _interopRequireDefault(_createClass2);
 
 var _actions = require('./actions');
 
+var _ = require('./');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ConfigApi = function () {
@@ -66,6 +68,9 @@ var ConfigApi = function () {
       if (module.hot) {
         module.hot.accept(function () {
           setTimeout(render);
+        });
+        module.hot.dispose(function () {
+          (0, _.clearDecorators)();
         });
       }
 

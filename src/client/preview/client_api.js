@@ -19,6 +19,10 @@ export default class ClientApi {
     this._globalDecorators.push(decorator);
   }
 
+  clearDecorators() {
+    this._globalDecorators = [];
+  }
+
   storiesOf(kind, m) {
     if (m && m.hot) {
       m.hot.dispose(() => {
