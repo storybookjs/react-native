@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.40.0
+
+* Fix duplicate decorator bug [#335](https://github.com/kadirahq/react-storybook/pull/335).
+
 ### v1.39.1
 
 * Update babel packages [#325](https://github.com/kadirahq/react-storybook/pull/325).
