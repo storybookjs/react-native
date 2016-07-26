@@ -3,9 +3,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ErrorDisplay from './error_display';
 
-const rootEl = document.getElementById('root');
+// check whether we're running on node/browser
+const isBrowser = typeof window !== 'undefined';
+
+let rootEl = null;
 let previousKind = '';
 let previousStory = '';
+
+if (isBrowser) {
+  rootEl = document.getElementById('root');
+}
 
 export function renderError(error) {
   // We always need to render redbox in the mainPage if we get an error.
