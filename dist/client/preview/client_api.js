@@ -36,7 +36,8 @@ var ClientApi = function () {
     var storyStore = _ref.storyStore;
     (0, _classCallCheck3.default)(this, ClientApi);
 
-    // pageBus can be null
+    // pageBus can be null when running in node
+    // always check whether pageBus is available
     this._pageBus = pageBus;
     this._storyStore = storyStore;
     this._addons = {};
