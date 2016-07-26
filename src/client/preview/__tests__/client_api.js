@@ -262,11 +262,11 @@ describe('preview.client_api', () => {
     });
   });
 
-  describe('getStoryBook', () => {
+  describe('getStorybook', () => {
     it('should return storybook when empty', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const book = api.getStoryBook();
+      const book = api.getStorybook();
       expect(book).to.deep.equal([]);
     });
 
@@ -285,7 +285,7 @@ describe('preview.client_api', () => {
       const kind2 = api.storiesOf('kind-2');
       kind2.add('story-2.1', functions['story-2.1']);
       kind2.add('story-2.2', functions['story-2.2']);
-      const book = api.getStoryBook();
+      const book = api.getStorybook();
       expect(book).to.deep.equal([
         {
           kind: 'kind-1',

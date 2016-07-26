@@ -162,8 +162,8 @@ var ClientApi = function () {
       };
     }
   }, {
-    key: 'getStoryBook',
-    value: function getStoryBook() {
+    key: 'getStorybook',
+    value: function getStorybook() {
       var _this2 = this;
 
       return this._storyStore.getStoryKinds().map(function (kind) {

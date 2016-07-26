@@ -115,7 +115,7 @@ export default class ClientApi {
     };
   }
 
-  getStoryBook() {
+  getStorybook() {
     return this._storyStore.getStoryKinds().map(kind => {
       const stories = this._storyStore.getStories(kind).map(name => {
         const render = this._storyStore.getStory(kind, name);

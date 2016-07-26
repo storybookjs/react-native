@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getStoryBook = exports.configure = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
+exports.getStorybook = exports.configure = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
 
 var _preview = require('./preview');
 
@@ -17,4 +17,4 @@ var linkTo = exports.linkTo = previewApi.linkTo;
 var setAddon = exports.setAddon = previewApi.setAddon;
 var addDecorator = exports.addDecorator = previewApi.addDecorator;
 var configure = exports.configure = previewApi.configure;
-var getStoryBook = exports.getStoryBook = previewApi.getStoryBook;
+var getStorybook = exports.getStorybook = previewApi.getStorybook;

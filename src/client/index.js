@@ -6,4 +6,4 @@ export const linkTo = previewApi.linkTo;
 export const setAddon = previewApi.setAddon;
 export const addDecorator = previewApi.addDecorator;
 export const configure = previewApi.configure;
-export const getStoryBook = previewApi.getStoryBook;
+export const getStorybook = previewApi.getStorybook;
