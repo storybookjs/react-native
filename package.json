@@ -1,10 +1,10 @@
 {
-  "name": "react-storybook-addon-prop-editor",
-  "version": "0.0.0",
+  "name": "@kadira/react-storybook-addon-knobs",
+  "version": "0.0.1",
   "description": "React Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/you/repo.git"
+    "url": "https://github.com/kadirahq/react-storybook-addon-knobs.git"
   },
   "license": "MIT",
   "scripts": {
