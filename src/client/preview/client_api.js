@@ -2,6 +2,8 @@ import UUID from 'uuid';
 
 export default class ClientApi {
   constructor({ pageBus, storyStore }) {
+    // pageBus can be null when running in node
+    // always check whether pageBus is available
     this._pageBus = pageBus;
     this._storyStore = storyStore;
     this._addons = {};
@@ -93,7 +95,9 @@ export default class ClientApi {
       const id = UUID.v4();
       const data = { name, args };
 
-      pageBus.emit('addAction', { action: { data, id } });
+      if (pageBus) {
+        pageBus.emit('addAction', { action: { data, id } });
+      }
     };
   }
 
@@ -103,8 +107,11 @@ export default class ClientApi {
     return function linkTo(...args) {
       const resolvedKind = typeof kind === 'function' ? kind(...args) : kind;
       const resolvedStory = typeof story === 'function' ? story(...args) : story;
+      const selection = { kind: resolvedKind, story: resolvedStory };
 
-      pageBus.emit('selectStory', { kind: resolvedKind, story: resolvedStory });
+      if (pageBus) {
+        pageBus.emit('selectStory', selection);
+      }
     };
   }
 }

@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.configure = exports.clearDecorators = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
 
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
 require('es6-shim');
 
 var _story_store = require('./story_store');
@@ -43,18 +47,23 @@ var _reducer2 = _interopRequireDefault(_reducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var queryParams = _qs2.default.parse(window.location.search.substring(1));
+// check whether we're running on node/browser
+var isBrowser = typeof window !== 'undefined';
 
 var storyStore = new _story_store2.default();
 var reduxStore = (0, _redux.createStore)(_reducer2.default);
-var pageBus = new _page_bus2.default(queryParams.dataId, reduxStore);
-pageBus.init();
+var context = { storyStore: storyStore, reduxStore: reduxStore };
 
-var context = { storyStore: storyStore, reduxStore: reduxStore, pageBus: pageBus, window: window, queryParams: queryParams };
+if (isBrowser) {
+  var queryParams = _qs2.default.parse(window.location.search.substring(1));
+  var pageBus = new _page_bus2.default(queryParams.dataId, reduxStore);
+  (0, _assign2.default)(context, { pageBus: pageBus, window: window, queryParams: queryParams });
+  pageBus.init();
+  (0, _init2.default)(context);
+}
+
 var clientApi = new _client_api2.default(context);
 var configApi = new _config_api2.default(context);
-
-(0, _init2.default)(context);
 
 // do exports
 var storiesOf = exports.storiesOf = clientApi.storiesOf.bind(clientApi);
@@ -67,7 +76,9 @@ var configure = exports.configure = configApi.configure.bind(configApi);
 
 // initialize the UI
 var renderUI = function renderUI() {
-  (0, _render2.default)(context);
+  if (isBrowser) {
+    (0, _render2.default)(context);
+  }
 };
 
 reduxStore.subscribe(renderUI);

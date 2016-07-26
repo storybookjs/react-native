@@ -23,9 +23,16 @@ var _error_display2 = _interopRequireDefault(_error_display);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var rootEl = document.getElementById('root');
+// check whether we're running on node/browser
+var isBrowser = typeof window !== 'undefined';
+
+var rootEl = null;
 var previousKind = '';
 var previousStory = '';
+
+if (isBrowser) {
+  rootEl = document.getElementById('root');
+}
 
 function renderError(error) {
   // We always need to render redbox in the mainPage if we get an error.

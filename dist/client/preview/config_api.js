@@ -25,6 +25,8 @@ var ConfigApi = function () {
     var reduxStore = _ref.reduxStore;
     (0, _classCallCheck3.default)(this, ConfigApi);
 
+    // pageBus can be null when running in node
+    // always check whether pageBus is available
     this._pageBus = pageBus;
     this._storyStore = storyStore;
     this._reduxStore = reduxStore;
@@ -74,7 +76,11 @@ var ConfigApi = function () {
         });
       }
 
-      render();
+      if (this._pageBus) {
+        render();
+      } else {
+        loaders();
+      }
     }
   }]);
   return ConfigApi;

@@ -36,6 +36,8 @@ var ClientApi = function () {
     var storyStore = _ref.storyStore;
     (0, _classCallCheck3.default)(this, ClientApi);
 
+    // pageBus can be null when running in node
+    // always check whether pageBus is available
     this._pageBus = pageBus;
     this._storyStore = storyStore;
     this._addons = {};
@@ -139,7 +141,9 @@ var ClientApi = function () {
         var id = _uuid2.default.v4();
         var data = { name: name, args: args };
 
-        pageBus.emit('addAction', { action: { data: data, id: id } });
+        if (pageBus) {
+          pageBus.emit('addAction', { action: { data: data, id: id } });
+        }
       };
     }
   }, {
@@ -150,8 +154,11 @@ var ClientApi = function () {
       return function linkTo() {
         var resolvedKind = typeof kind === 'function' ? kind.apply(undefined, arguments) : kind;
         var resolvedStory = typeof story === 'function' ? story.apply(undefined, arguments) : story;
+        var selection = { kind: resolvedKind, story: resolvedStory };
 
-        pageBus.emit('selectStory', { kind: resolvedKind, story: resolvedStory });
+        if (pageBus) {
+          pageBus.emit('selectStory', selection);
+        }
       };
     }
   }]);
