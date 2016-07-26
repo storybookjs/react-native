@@ -46,12 +46,12 @@ const stylesheet = {
 };
 
 export default class PropEditor extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this._handleChange = this.handleChange.bind(this);
     this._createKnob = this.createKnob.bind(this);
     this._shouldStoryUpdate = this.shouldStoryUpdate.bind(this);
-    this.state = { fields: {} };
+    this.state = { fields: this.props.initialValues };
   }
 
   handleChange(change) {
@@ -71,35 +71,19 @@ export default class PropEditor extends React.Component {
     this.setState({ fields });
   }
 
-  createKnob(name, initial, type) {
+  createKnob(name) {
     const field = this.state.fields[name];
+    let { value } = field;
 
-    if (field) {
-      let { value } = field;
-      if (field.type === 'object') {
-        try {
-          value = eval(`(${value})`); // eslint-disable-line no-eval
-        } catch (e) {
-          return {};
-        }
+    if (field.type === 'object') {
+      try {
+        value = eval(`(${value})`); // eslint-disable-line no-eval
+      } catch (e) {
+        return {};
       }
-
-      return value;
     }
 
-    let value = initial;
-    if (type === 'object') {
-      value = JSON.stringify(value, null, 4);
-    }
-
-    this.state.fields[name] = {
-      name,
-      value,
-      type,
-      valid: true,
-    };
-
-    return initial;
+    return value;
   }
 
   shouldStoryUpdate() {
@@ -162,6 +146,7 @@ export default class PropEditor extends React.Component {
 }
 
 PropEditor.propTypes = {
+  initialValues: React.PropTypes.object.isRequired,
   storyFn: React.PropTypes.func.isRequired,
   context: React.PropTypes.object.isRequired,
 };
