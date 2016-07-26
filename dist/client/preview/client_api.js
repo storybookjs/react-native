@@ -53,6 +53,11 @@ var ClientApi = function () {
       this._globalDecorators.push(decorator);
     }
   }, {
+    key: 'clearDecorators',
+    value: function clearDecorators() {
+      this._globalDecorators = [];
+    }
+  }, {
     key: 'storiesOf',
     value: function storiesOf(kind, m) {
       var _this = this;
