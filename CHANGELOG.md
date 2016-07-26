@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.39.1
+
+* Update babel packages [#325](https://github.com/kadirahq/react-storybook/pull/325).
+* Hide HMR info logs [#331](https://github.com/kadirahq/react-storybook/pull/331).
+
 ### v1.39.0
 
 * Update @kadira/storybook-ui to get featues from [v2.5.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v250) and [v2.6.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v260).
