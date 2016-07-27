@@ -58,17 +58,20 @@ export default class PropEditor extends React.Component {
     const { name, value } = change;
     const fields = this.state.fields;
     const { type } = fields[name];
-    fields[name].valid = true;
+    let valid = true;
     if (type === 'object') {
       try {
         eval(`(${value})`); // eslint-disable-line no-eval
       } catch (e) {
-        fields[name].valid = false;
+        valid = false;
       }
     }
 
-    fields[name].value = value;
-    this.setState({ fields });
+    const changedField = {};
+    changedField[name] = { ...fields[name], ...{ value, valid } };
+    const newFields = { ...fields, ...changedField };
+
+    this.setState({ fields: newFields });
   }
 
   createKnob(name) {
