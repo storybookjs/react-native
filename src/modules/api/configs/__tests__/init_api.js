@@ -7,7 +7,6 @@ describe('manager.api.config.initApi', () => {
   it('should expose correct API methods', (done) => {
     const actions = {
       api: {
-        addAction: sinon.stub(),
         setStories: sinon.stub(),
         selectStory: sinon.stub(),
       },
@@ -22,7 +21,6 @@ describe('manager.api.config.initApi', () => {
 
     const provider = {
       handleAPI(api) {
-        expect(api.addAction).to.be.equal(actions.api.addAction);
         expect(api.setStories).to.be.equal(actions.api.setStories);
         expect(api.selectStory).to.be.equal(actions.api.selectStory);
         expect(api.handleShortcut).to.be.equal(actions.shortcuts.handleEvent);

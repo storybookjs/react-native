@@ -35,12 +35,6 @@ export default class Preview extends React.Component {
     this.mounted = false;
   }
 
-  fireAction() {
-    const { kind, story } = this.state;
-    const message = `This is an action from ${kind}:${story}`;
-    this.globalState.emit('action', message);
-  }
-
   jump() {
     const { kind, story } = this.state;
     this.globalState.emit('jump', 'Component 2', 'State b');
@@ -57,9 +51,6 @@ export default class Preview extends React.Component {
         <h3>Rendering the Preview</h3>
         {kind} => {story}
         <ul>
-          <li>
-            <button onClick={this.fireAction.bind(this)}>Fire an Action</button>
-          </li>
           <li>
             <button onClick={this.jump.bind(this)}>Jump to Component2:State b</button>
           </li>

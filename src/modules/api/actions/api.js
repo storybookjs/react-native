@@ -23,19 +23,6 @@ export default {
     });
   },
 
-  clearActions({ reduxStore }) {
-    reduxStore.dispatch({
-      type: types.CLEAR_ACTIONS,
-    });
-  },
-
-  addAction({ reduxStore }, action) {
-    reduxStore.dispatch({
-      type: types.ADD_ACTION,
-      action,
-    });
-  },
-
   setOptions({ reduxStore }, options) {
     reduxStore.dispatch({
       type: types.SET_OPTIONS,

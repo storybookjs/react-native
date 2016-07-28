@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './containers/layout';
 import LeftPanel from './containers/left_panel';
-import ActionLogger from './containers/action_logger';
+import DownPanel from './containers/down_panel';
 import ShortcutsHelp from './containers/shortcuts_help';
 import SearchBox from './containers/search_box';
 
@@ -24,7 +24,7 @@ export default function (injectDeps, { reduxStore, provider, domNode }) {
       <InjectedLayout
         leftPanel={() => (<LeftPanel />)}
         preview={() => (<Preview />)}
-        downPanel={() => (<ActionLogger />)}
+        downPanel={() => (<DownPanel />)}
       />
       <InjectedShortcutsHelp />
       <InjectedSearchBox />

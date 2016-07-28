@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -44,13 +40,6 @@ exports.default = function () {
         });
       }
 
-    case _actions.types.CLEAR_ACTIONS:
-      {
-        return (0, _extends3.default)({}, state, {
-          actions: []
-        });
-      }
-
     case _actions.types.SET_STORIES:
       {
         var newState = (0, _extends3.default)({}, state, {
@@ -61,24 +50,6 @@ exports.default = function () {
         newState.selectedStory = ensureStory(newState.stories, newState.selectedKind, state.selectedStory);
 
         return newState;
-      }
-
-    case _actions.types.ADD_ACTION:
-      {
-        var previewAction = (0, _extends3.default)({}, action.action);
-        var actions = [].concat((0, _toConsumableArray3.default)(state.actions || []));
-
-        var lastAction = actions.length > 0 && actions[0];
-        if (lastAction && (0, _deepEqual2.default)(lastAction.data, previewAction.data)) {
-          lastAction.count++;
-        } else {
-          previewAction.count = 1;
-          actions.unshift(previewAction);
-        }
-
-        return (0, _extends3.default)({}, state, {
-          actions: actions
-        });
       }
 
     case _actions.types.SET_OPTIONS:

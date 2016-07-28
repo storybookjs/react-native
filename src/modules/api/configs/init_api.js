@@ -4,7 +4,6 @@ export default function (provider, reduxStore, actions) {
       providerApi._onStoryCallback = cb;
     },
 
-    addAction: actions.api.addAction,
     setStories: actions.api.setStories,
     selectStory: actions.api.selectStory,
     setOptions: actions.api.setOptions,

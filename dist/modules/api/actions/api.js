@@ -32,23 +32,8 @@ exports.default = {
       direction: direction
     });
   },
-  clearActions: function clearActions(_ref4) {
+  setOptions: function setOptions(_ref4, options) {
     var reduxStore = _ref4.reduxStore;
-
-    reduxStore.dispatch({
-      type: _.types.CLEAR_ACTIONS
-    });
-  },
-  addAction: function addAction(_ref5, action) {
-    var reduxStore = _ref5.reduxStore;
-
-    reduxStore.dispatch({
-      type: _.types.ADD_ACTION,
-      action: action
-    });
-  },
-  setOptions: function setOptions(_ref6, options) {
-    var reduxStore = _ref6.reduxStore;
 
     reduxStore.dispatch({
       type: _.types.SET_OPTIONS,

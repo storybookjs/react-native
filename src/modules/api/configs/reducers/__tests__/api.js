@@ -72,18 +72,6 @@ describe('manager.preview.config.reducers.preview', () => {
     });
   });
 
-  describe('CLEAR_ACTIONS', () => {
-    it('should clear actions', () => {
-      const actions = [10, 20];
-      const action = {
-        type: types.CLEAR_ACTIONS,
-      };
-
-      const newState = reducer({ actions }, action);
-      expect(newState.actions).to.deep.equal([]);
-    });
-  });
-
   describe('SET_STORIES', () => {
     it('should replace stories', () => {
       const stories = { aa: 10 };
@@ -195,44 +183,6 @@ describe('manager.preview.config.reducers.preview', () => {
       expect(newState.stories).to.deep.equal(newStories);
       expect(newState.selectedKind).to.be.equal(selectedKind);
       expect(newState.selectedStory).to.be.equal(selectedStory);
-    });
-  });
-
-  describe('ADD_ACTION', () => {
-    it('should add an action to the beginning', () => {
-      const actions = [{ id: 2, data: '1' }, { id: 1, data: '2' }];
-      const action = {
-        type: types.ADD_ACTION,
-        action: { id: 3, data: '3' },
-      };
-
-      const newState = reducer({ actions }, action);
-      expect(newState.actions).to.deep.equal([{ id: 3, count: 1, data: '3' }, ...actions]);
-    });
-
-    it('should create actions array for the first time', () => {
-      const action = {
-        type: types.ADD_ACTION,
-        action: { id: '1', data: '20' },
-      };
-      const newState = reducer({}, action);
-      expect(newState.actions).to.deep.equal([{ id: '1', data: '20', count: 1 }]);
-    });
-
-    it('should increment the count if the lastAction and the newAction are the same', () => {
-      const actions = [
-        { id: 2, data: '1', count: 1 },
-        { id: 1, data: '2', count: 1 },
-      ];
-      const action = {
-        type: types.ADD_ACTION,
-        action: { id: 3, data: '1' },
-      };
-      const newState = reducer({ actions }, action);
-      expect(newState.actions).to.deep.equal([
-        { id: 2, data: '1', count: 2 },
-        { id: 1, data: '2', count: 1 },
-      ]);
     });
   });
 

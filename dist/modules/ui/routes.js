@@ -34,7 +34,7 @@ exports.default = function (injectDeps, _ref) {
         return _react2.default.createElement(Preview, null);
       },
       downPanel: function downPanel() {
-        return _react2.default.createElement(_action_logger2.default, null);
+        return _react2.default.createElement(_down_panel2.default, null);
       }
     }),
     _react2.default.createElement(InjectedShortcutsHelp, null),
@@ -59,9 +59,9 @@ var _left_panel = require('./containers/left_panel');
 
 var _left_panel2 = _interopRequireDefault(_left_panel);
 
-var _action_logger = require('./containers/action_logger');
+var _down_panel = require('./containers/down_panel');
 
-var _action_logger2 = _interopRequireDefault(_action_logger);
+var _down_panel2 = _interopRequireDefault(_down_panel);
 
 var _shortcuts_help = require('./containers/shortcuts_help');
 

@@ -4,13 +4,18 @@ import keycode from 'keycode';
 import { EventEmitter } from 'events';
 import parseKeyEvent from '../../src/libs/key_events';
 import { Provider } from '../../src';
+import addons from './addons';
 
 let id = 0;
 
 export default class ReactProvider extends Provider {
-  constructor() {
+  constructor(addons) {
     super();
     this.globalState = new EventEmitter();
+  }
+
+  getAddons() {
+    return addons;
   }
 
   // You must implement this public API.
