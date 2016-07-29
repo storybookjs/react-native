@@ -74,6 +74,12 @@ var DownPanel = function (_Component) {
       if (this.state.current === name) {
         tabStyle = (0, _assign2.default)({}, _style2.default.tablink, _style2.default.tablink.active);
       }
+      var onClick = function onClick(name) {
+        return function (e) {
+          e.preventDefault();
+          _this2.showAddon(name);
+        };
+      };
 
       return _react2.default.createElement(
         'a',
@@ -81,9 +87,7 @@ var DownPanel = function (_Component) {
           href: '#',
           key: name,
           style: tabStyle,
-          onClick: function onClick() {
-            return _this2.showAddon(name);
-          } },
+          onClick: onClick(name) },
         addon.title
       );
     }

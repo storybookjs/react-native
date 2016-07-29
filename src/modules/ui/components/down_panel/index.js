@@ -16,13 +16,19 @@ class DownPanel extends Component {
     if (this.state.current === name) {
       tabStyle = Object.assign({}, style.tablink, style.tablink.active);
     }
+    const onClick = name => {
+      return e => {
+        e.preventDefault();
+        this.showAddon(name);
+      };
+    }
 
     return (
       <a
         href="#"
         key={name}
         style={tabStyle}
-        onClick={() => this.showAddon(name)}>
+        onClick={onClick(name)}>
         {addon.title}
       </a>
     )
