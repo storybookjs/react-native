@@ -1,6 +1,6 @@
 import React from 'react';
 
-const addonStyle = {
+const style = {
   flex: 1,
   display: 'flex',
   alignItems: 'center',
@@ -10,18 +10,18 @@ const addonStyle = {
 export default {
   test1: {
     title: 'Test 1',
-    render() { return <div style={addonStyle}>I</div> },
+    getPanel: () => <div style={style}>I</div>,
   },
   test2: {
     title: 'Test 2',
-    render() { return <div style={addonStyle}>II</div> },
+    getPanel: () => <div style={style}>II</div>,
   },
   test3: {
     title: 'Test 3',
-    render() { return <div style={addonStyle}>III</div> },
+    getPanel: () => <div style={style}>III</div>,
   },
   test4: {
     title: 'Test 4',
-    render() { return <div style={addonStyle}>IV</div> },
+    getPanel: () => <div style={style}>IV</div>,
   },
 }

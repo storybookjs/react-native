@@ -53,10 +53,10 @@ exports.default = {
     textDecoration: 'none',
     textTransform: 'uppercase',
     transition: 'opacity 0.3s',
-    opacity: 0.5,
+    opacity: 0.5
+  }),
 
-    active: {
-      opacity: 1
-    }
-  })
+  activetab: {
+    opacity: 1
+  }
 };

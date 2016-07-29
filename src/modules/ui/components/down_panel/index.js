@@ -14,7 +14,7 @@ class DownPanel extends Component {
   renderTab(name, addon) {
     let tabStyle = style.tablink;
     if (this.state.current === name) {
-      tabStyle = Object.assign({}, style.tablink, style.tablink.active);
+      tabStyle = Object.assign({}, style.tablink, style.activetab);
     }
     const onClick = name => {
       return e => {
@@ -41,12 +41,15 @@ class DownPanel extends Component {
     });
   }
 
-  renderAddon() {
-    if (!this.state.current) {
-      return null;
-    }
-    const addon = this.props.addons[this.state.current];
-    return addon.render();
+  renderAddons() {
+    return Object.keys(this.props.addons).sort().map(name => {
+      const panelStyle = {display: 'none'};
+      const addon = this.props.addons[name];
+      if (name === this.state.current) {
+        Object.assign(panelStyle, {flex: 1, display: 'flex'});
+      }
+      return <div key={name} style={panelStyle}>{addon.getPanel()}</div>;
+    });
   }
 
   renderEmpty() {
@@ -64,7 +67,7 @@ class DownPanel extends Component {
     return (
       <div style={style.wrapper}>
         <div style={style.tabbar}>{this.renderTabs()}</div>
-        <div style={style.content}>{this.renderAddon()}</div>
+        <div style={style.content}>{this.renderAddons()}</div>
       </div>
     );
   }

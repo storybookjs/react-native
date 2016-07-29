@@ -72,7 +72,7 @@ var DownPanel = function (_Component) {
 
       var tabStyle = _style2.default.tablink;
       if (this.state.current === name) {
-        tabStyle = (0, _assign2.default)({}, _style2.default.tablink, _style2.default.tablink.active);
+        tabStyle = (0, _assign2.default)({}, _style2.default.tablink, _style2.default.activetab);
       }
       var onClick = function onClick(name) {
         return function (e) {
@@ -102,13 +102,22 @@ var DownPanel = function (_Component) {
       });
     }
   }, {
-    key: 'renderAddon',
-    value: function renderAddon() {
-      if (!this.state.current) {
-        return null;
-      }
-      var addon = this.props.addons[this.state.current];
-      return addon.render();
+    key: 'renderAddons',
+    value: function renderAddons() {
+      var _this4 = this;
+
+      return (0, _keys2.default)(this.props.addons).sort().map(function (name) {
+        var panelStyle = { display: 'none' };
+        var addon = _this4.props.addons[name];
+        if (name === _this4.state.current) {
+          (0, _assign2.default)(panelStyle, { flex: 1, display: 'flex' });
+        }
+        return _react2.default.createElement(
+          'div',
+          { key: name, style: panelStyle },
+          addon.getPanel()
+        );
+      });
     }
   }, {
     key: 'renderEmpty',
@@ -136,7 +145,7 @@ var DownPanel = function (_Component) {
         _react2.default.createElement(
           'div',
           { style: _style2.default.content },
-          this.renderAddon()
+          this.renderAddons()
         )
       );
     }
