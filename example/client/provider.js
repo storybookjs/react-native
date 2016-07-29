@@ -59,14 +59,6 @@ export default class ReactProvider extends Provider {
   _handlePreviewEvents() {
     this.globalState.removeAllListeners();
 
-    // firing an action.
-    this.globalState.on('action', (message) => {
-      this.api.addAction({
-        data: { message, name: 'the-action' },
-        id: ++id,
-      });
-    });
-
     // jumping to an story.
     this.globalState.on('jump', (kind, story) => {
       this.api.selectStory(kind, story);
@@ -81,7 +73,6 @@ export default class ReactProvider extends Provider {
         preventDefault() {},
       };
       const parsedEvent = parseKeyEvent(event);
-      console.log(parsedEvent);
       this.api.handleShortcut(parsedEvent);
     });
   }
