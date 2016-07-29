@@ -4,14 +4,14 @@ import style from './style';
 class DownPanel extends Component {
   constructor(props, ...args) {
     super(props, ...args);
-    this.state = {current: Object.keys(props.addons)[0]};
+    this.state = {current: Object.keys(props.panels)[0]};
   }
 
-  showAddon(name) {
+  showPanel(name) {
     this.setState({current: name})
   }
 
-  renderTab(name, addon) {
+  renderTab(name, panel) {
     let tabStyle = style.tablink;
     if (this.state.current === name) {
       tabStyle = Object.assign({}, style.tablink, style.activetab);
@@ -19,7 +19,7 @@ class DownPanel extends Component {
     const onClick = name => {
       return e => {
         e.preventDefault();
-        this.showAddon(name);
+        this.showPanel(name);
       };
     }
 
@@ -29,45 +29,45 @@ class DownPanel extends Component {
         key={name}
         style={tabStyle}
         onClick={onClick(name)}>
-        {addon.title}
+        {panel.title}
       </a>
     )
   }
 
   renderTabs() {
-    return Object.keys(this.props.addons).map(name => {
-      const addon = this.props.addons[name];
-      return this.renderTab(name, addon);
+    return Object.keys(this.props.panels).map(name => {
+      const panel = this.props.panels[name];
+      return this.renderTab(name, panel);
     });
   }
 
-  renderAddons() {
-    return Object.keys(this.props.addons).sort().map(name => {
+  renderPanels() {
+    return Object.keys(this.props.panels).sort().map(name => {
       const panelStyle = {display: 'none'};
-      const addon = this.props.addons[name];
+      const panel = this.props.panels[name];
       if (name === this.state.current) {
         Object.assign(panelStyle, {flex: 1, display: 'flex'});
       }
-      return <div key={name} style={panelStyle}>{addon.getPanel()}</div>;
+      return <div key={name} style={panelStyle}>{panel.render()}</div>;
     });
   }
 
   renderEmpty() {
     return (
       <div style={style.empty}>
-        no addons available
+        no panels available
       </div>
     );
   }
 
   render() {
-    if (!this.props.addons || !Object.keys(this.props.addons).length) {
+    if (!this.props.panels || !Object.keys(this.props.panels).length) {
       return this.renderEmpty();
     }
     return (
       <div style={style.wrapper}>
         <div style={style.tabbar}>{this.renderTabs()}</div>
-        <div style={style.content}>{this.renderAddons()}</div>
+        <div style={style.content}>{this.renderPanels()}</div>
       </div>
     );
   }

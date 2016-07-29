@@ -4,18 +4,43 @@ import keycode from 'keycode';
 import { EventEmitter } from 'events';
 import parseKeyEvent from '../../src/libs/key_events';
 import { Provider } from '../../src';
-import addons from './addons';
 
 let id = 0;
 
+const style = {
+  flex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const panels = {
+  test1: {
+    title: 'Test 1',
+    render: () => <div style={style}>I</div>,
+  },
+  test2: {
+    title: 'Test 2',
+    render: () => <div style={style}>II</div>,
+  },
+  test3: {
+    title: 'Test 3',
+    render: () => <div style={style}>III</div>,
+  },
+  test4: {
+    title: 'Test 4',
+    render: () => <div style={style}>IV</div>,
+  },
+}
+
 export default class ReactProvider extends Provider {
-  constructor(addons) {
+  constructor() {
     super();
     this.globalState = new EventEmitter();
   }
 
-  getAddons() {
-    return addons;
+  getPanels() {
+    return panels;
   }
 
   // You must implement this public API.

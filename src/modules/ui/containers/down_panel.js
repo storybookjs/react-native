@@ -4,7 +4,7 @@ import reduxComposer from '../libs/redux_composer';
 
 export function composer({}, { context }) {
   return {
-    addons: context().provider.getAddons(),
+    panels: context().provider.getPanels(),
   };
 }
 

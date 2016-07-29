@@ -27,7 +27,7 @@ function composer(_ref, _ref2) {
   (0, _objectDestructuringEmpty3.default)(_ref);
 
   return {
-    addons: context().provider.getAddons()
+    panels: context().provider.getPanels()
   };
 }
 

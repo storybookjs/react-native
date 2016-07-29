@@ -56,18 +56,18 @@ var DownPanel = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(DownPanel)).call.apply(_Object$getPrototypeO, [this, props].concat(args)));
 
-    _this.state = { current: (0, _keys2.default)(props.addons)[0] };
+    _this.state = { current: (0, _keys2.default)(props.panels)[0] };
     return _this;
   }
 
   (0, _createClass3.default)(DownPanel, [{
-    key: 'showAddon',
-    value: function showAddon(name) {
+    key: 'showPanel',
+    value: function showPanel(name) {
       this.setState({ current: name });
     }
   }, {
     key: 'renderTab',
-    value: function renderTab(name, addon) {
+    value: function renderTab(name, panel) {
       var _this2 = this;
 
       var tabStyle = _style2.default.tablink;
@@ -77,7 +77,7 @@ var DownPanel = function (_Component) {
       var onClick = function onClick(name) {
         return function (e) {
           e.preventDefault();
-          _this2.showAddon(name);
+          _this2.showPanel(name);
         };
       };
 
@@ -88,7 +88,7 @@ var DownPanel = function (_Component) {
           key: name,
           style: tabStyle,
           onClick: onClick(name) },
-        addon.title
+        panel.title
       );
     }
   }, {
@@ -96,26 +96,26 @@ var DownPanel = function (_Component) {
     value: function renderTabs() {
       var _this3 = this;
 
-      return (0, _keys2.default)(this.props.addons).map(function (name) {
-        var addon = _this3.props.addons[name];
-        return _this3.renderTab(name, addon);
+      return (0, _keys2.default)(this.props.panels).map(function (name) {
+        var panel = _this3.props.panels[name];
+        return _this3.renderTab(name, panel);
       });
     }
   }, {
-    key: 'renderAddons',
-    value: function renderAddons() {
+    key: 'renderPanels',
+    value: function renderPanels() {
       var _this4 = this;
 
-      return (0, _keys2.default)(this.props.addons).sort().map(function (name) {
+      return (0, _keys2.default)(this.props.panels).sort().map(function (name) {
         var panelStyle = { display: 'none' };
-        var addon = _this4.props.addons[name];
+        var panel = _this4.props.panels[name];
         if (name === _this4.state.current) {
           (0, _assign2.default)(panelStyle, { flex: 1, display: 'flex' });
         }
         return _react2.default.createElement(
           'div',
           { key: name, style: panelStyle },
-          addon.getPanel()
+          panel.render()
         );
       });
     }
@@ -125,13 +125,13 @@ var DownPanel = function (_Component) {
       return _react2.default.createElement(
         'div',
         { style: _style2.default.empty },
-        'no addons available'
+        'no panels available'
       );
     }
   }, {
     key: 'render',
     value: function render() {
-      if (!this.props.addons || !(0, _keys2.default)(this.props.addons).length) {
+      if (!this.props.panels || !(0, _keys2.default)(this.props.panels).length) {
         return this.renderEmpty();
       }
       return _react2.default.createElement(
@@ -145,7 +145,7 @@ var DownPanel = function (_Component) {
         _react2.default.createElement(
           'div',
           { style: _style2.default.content },
-          this.renderAddons()
+          this.renderPanels()
         )
       );
     }
