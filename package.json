@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node module to help register addons",
   "main": "lib/index.js",
   "scripts": {
