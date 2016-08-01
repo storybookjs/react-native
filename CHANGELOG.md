@@ -8,6 +8,7 @@
   * Add url-loader for shorter media files.
   * Do not pre-build manager(storybook UI) bundle.
   * Continue support for babel's stage-0 preset and add es2016 preset.
+* Update @kadira/storybook-ui to v2.6.1 to remove some React warnings.
 
 ### v1.41.0
 
