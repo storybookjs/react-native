@@ -1,5 +1,14 @@
 ## Changelog
 
+### v.NEXT
+
+* Update defaults to match create-react-app. [PR342](https://github.com/kadirahq/react-storybook/pull/342). Here are the notable changes:
+  * Add postcss based CSS loader.
+  * Add file-loader for images and common types.
+  * Add url-loader for shorter media files.
+  * Do not pre-build manager(storybook UI) bundle.
+  * Continue support for babel's stage-0 preset and add es2016 preset.
+
 ### v1.41.0
 
 * Fix nodejs require errors [#337](https://github.com/kadirahq/react-storybook/pull/337).
