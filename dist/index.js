@@ -8,12 +8,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var AddonApi = exports.AddonApi = function AddonApi(params) {
+var AddonApi = exports.AddonApi = function AddonApi(store) {
   _classCallCheck(this, AddonApi);
 
-  this._store = params.store;
-  this.getContext = this._store.getContext.bind(this._store);
-  this.addPanel = this._store.addPanel.bind(this._store);
+  this.getContext = store.getContext.bind(store);
+  this.addPanel = store.addPanel.bind(store);
 };
 
 var AddonStore = exports.AddonStore = function () {

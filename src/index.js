@@ -1,8 +1,7 @@
 export class AddonApi {
-  constructor(params) {
-    this._store = params.store;
-    this.getContext = this._store.getContext.bind(this._store);
-    this.addPanel = this._store.addPanel.bind(this._store);
+  constructor(store) {
+    this.getContext = store.getContext.bind(store);
+    this.addPanel = store.addPanel.bind(store);
   }
 }
 
