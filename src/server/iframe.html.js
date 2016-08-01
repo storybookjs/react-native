@@ -18,7 +18,7 @@ export default function (headHtml, publicPath) {
       <body>
         <div id="root"></div>
         <div id="error-display"></div>
-        <script src="${url.resolve(publicPath, 'preview.bundle.js')}"></script>
+        <script src="${url.resolve(publicPath, 'static/preview.bundle.js')}"></script>
       </body>
     </html>
   `;

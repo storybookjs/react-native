@@ -34,20 +34,6 @@ exports.default = function (configType, baseConfig, configDir) {
     config.module.loaders[0].query = babelConfig;
   }
 
-  // Dev build needs some specific babel presets.
-  // So, we need to add them here, if not specified.
-  if (process.env.DEV_BUILD) {
-    (function () {
-      var requiredPresets = ['react', 'es2015', 'stage-0'];
-      var loadedPresets = config.module.loaders[0].query.presets;
-      requiredPresets.forEach(function (preset) {
-        if (loadedPresets.indexOf(preset) < 0) {
-          loadedPresets.push(preset);
-        }
-      });
-    })();
-  }
-
   // Check whether a config.js file exists inside the storybook
   // config directory and throw an error if it's not.
   var storybookConfigPath = _path2.default.resolve(configDir, 'config.js');

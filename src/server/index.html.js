@@ -40,7 +40,7 @@ export default function (publicPath) {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
-        <script src="${url.resolve(publicPath, 'manager.bundle.js')}"></script>
+        <script src="${url.resolve(publicPath, 'static/manager.bundle.js')}"></script>
       </body>
     </html>
   `;
