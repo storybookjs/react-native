@@ -2,7 +2,7 @@
   "name": "@kadira/storybook-addons",
   "version": "1.0.0",
   "description": "Node module to help register addons",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "prepublish": "bash .scripts/npm-prepublish.sh",
     "test": "mocha"
