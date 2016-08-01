@@ -4,7 +4,7 @@ CSS is a dark area of React. There are tons of ways to write CSS with React.
 
 > Arunoda wrote an [article](https://voice.kadira.io/state-of-react-and-css-501d179443d3) about that recently as well. Have a [look at it](https://voice.kadira.io/state-of-react-and-css-501d179443d3).
 
-So, React Storybook allows you to write CSS as you like. It's configurable.
+By default we have a postcss based CSS loading system which is very similar to how [create-react-app](https://github.com/facebookincubator/create-react-app) handles CSS. However you can customize the CSS setup as you wish.
 
 ## TOC
 

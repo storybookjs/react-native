@@ -114,7 +114,7 @@ start-storybook -p 6977 -s ./public
 ```
 
 > You can also specify multiple static directories like this:
-> ```sh 
+> ```sh
 > start-storybook -p 6977 -s ./public
 > ```
 
