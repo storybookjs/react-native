@@ -15,7 +15,7 @@ This functionality allows you to develop UI components rapidly without worrying 
 * Isolated environment for your components (with the use of various iframe tactics).
 * Hot module reloading (even for functional stateless components).
 * Works with any app (whether it's Redux, Relay or Meteor).
-* Default webpack configuration similar to [Create React App](https://github.com/facebookincubator/create-react-app)
+* Default webpack configuration similar to [Create React App](https://github.com/facebookincubator/create-react-app).
 * Support for CSS (whether it's plain old CSS, CSS modules or something fancy).
 * Clean and fast user interface.
 * Runs inside your project (so, it uses your app's NPM modules and babel configurations out of the box).
