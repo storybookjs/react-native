@@ -1,6 +1,9 @@
 ## Changelog
 
-### v.NEXT
+### v2.0.0
+01-August-2016
+
+This is the starting of the next major version of React Storybook. This version is almost compatible with `v1.x.x` but defaults have been changes as discussed below. That's why we are starting out a new version.
 
 * Update defaults to match create-react-app. [PR342](https://github.com/kadirahq/react-storybook/pull/342). Here are the notable changes:
   * Add postcss based CSS loader.
