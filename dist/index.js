@@ -14,9 +14,20 @@ var AddonStore = exports.AddonStore = function () {
 
     this._loaders = {};
     this._panels = {};
+    this._channel = null;
   }
 
   _createClass(AddonStore, [{
+    key: "getChannel",
+    value: function getChannel() {
+      return this._channel;
+    }
+  }, {
+    key: "setChannel",
+    value: function setChannel(channel) {
+      this._channel = channel;
+    }
+  }, {
     key: "getPanels",
     value: function getPanels() {
       return this._panels;
@@ -33,17 +44,13 @@ var AddonStore = exports.AddonStore = function () {
     }
   }, {
     key: "loadAddons",
-    value: function loadAddons() {
+    value: function loadAddons(api) {
       var _this = this;
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
 
       Object.keys(this._loaders).map(function (name) {
         return _this._loaders[name];
       }).forEach(function (loader) {
-        return loader.apply(undefined, args);
+        return loader(api);
       });
     }
   }]);
