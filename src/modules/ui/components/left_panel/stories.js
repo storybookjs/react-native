@@ -46,7 +46,6 @@ class Stories extends React.Component {
 
     if (story === selectedStory) {
       style.fontWeight = 'bold';
-      props.selectedStory = true;
     }
 
     return (
@@ -67,7 +66,6 @@ class Stories extends React.Component {
           <div
             style={style}
             onClick={this.fireOnKind.bind(this, kind)}
-            selectedKind
           >
             {kind}
           </div>

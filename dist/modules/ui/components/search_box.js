@@ -132,7 +132,7 @@ var SearchBox = function (_React$Component) {
         'div',
         { style: searchBoxStyle },
         this.props.showSearchBox && _react2.default.createElement(_reactFuzzy2.default, {
-          list: formatStories(this.props.stories),
+          list: formatStories(this.props.stories || []),
           onSelect: this.onSelect,
           keys: ['value', 'type'],
           resultsTemplate: suggestionTemplate,
@@ -149,7 +149,7 @@ exports.default = SearchBox;
 
 SearchBox.propTypes = {
   showSearchBox: _react2.default.PropTypes.bool.isRequired,
-  stories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object).isRequired,
+  stories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
   onSelectStory: _react2.default.PropTypes.func.isRequired,
   handleEvent: _react2.default.PropTypes.func.isRequired
 };

@@ -100,7 +100,6 @@ var Stories = function (_React$Component) {
 
       if (story === selectedStory) {
         style.fontWeight = 'bold';
-        props.selectedStory = true;
       }
 
       return _react2.default.createElement(
@@ -127,8 +126,7 @@ var Stories = function (_React$Component) {
             'div',
             {
               style: style,
-              onClick: this.fireOnKind.bind(this, kind),
-              selectedKind: true
+              onClick: this.fireOnKind.bind(this, kind)
             },
             kind
           ),

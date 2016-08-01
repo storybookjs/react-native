@@ -80,7 +80,7 @@ export default class SearchBox extends React.Component {
     return (
       <div style={searchBoxStyle}>
            {this.props.showSearchBox && <FuzzySearch
-             list={formatStories(this.props.stories)}
+             list={formatStories(this.props.stories || [])}
              onSelect={this.onSelect}
              keys={['value', 'type']}
              resultsTemplate={suggestionTemplate}
@@ -93,7 +93,7 @@ export default class SearchBox extends React.Component {
 
 SearchBox.propTypes = {
   showSearchBox: React.PropTypes.bool.isRequired,
-  stories: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  stories: React.PropTypes.arrayOf(React.PropTypes.object),
   onSelectStory: React.PropTypes.func.isRequired,
   handleEvent: React.PropTypes.func.isRequired,
 };

@@ -104,12 +104,6 @@ var countWrapper = {
   marginRight: 5
 };
 
-var actionNameStyle = {
-  float: 'right',
-  padding: '0 5px',
-  fontWeight: 'bold'
-};
-
 var ActionLogger = function (_Component) {
   (0, _inherits3.default)(ActionLogger, _Component);
 
@@ -155,11 +149,6 @@ var ActionLogger = function (_Component) {
               name: action.data.name,
               data: action.data.args || action.data
             })
-          ),
-          _react2.default.createElement(
-            'span',
-            { style: actionNameStyle },
-            action.data.name
           )
         );
       });
