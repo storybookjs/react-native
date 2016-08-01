@@ -10,6 +10,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _events = require('events');
+
 var _storybookUi = require('@kadira/storybook-ui');
 
 var _storybookAddons = require('@kadira/storybook-addons');
@@ -34,12 +36,13 @@ var stories = [{ kind: 'Component 1', stories: ['Example State 1', 'Example Stat
 var ExampleProvider = function (_Provider) {
   _inherits(ExampleProvider, _Provider);
 
-  function ExampleProvider(channel) {
+  function ExampleProvider() {
     _classCallCheck(this, ExampleProvider);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ExampleProvider).call(this, channel));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ExampleProvider).call(this));
 
-    _storybookAddons2.default.setChannel(channel);
+    _this.channel = new _events.EventEmitter();
+    _storybookAddons2.default.setChannel(_this.channel);
     return _this;
   }
 

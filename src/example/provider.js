@@ -1,4 +1,5 @@
 import React from 'react';
+import { EventEmitter } from 'events';
 import { Provider } from '@kadira/storybook-ui';
 import addons from '@kadira/storybook-addons';
 import Preview from './preview';
@@ -10,9 +11,10 @@ const stories = [
 ];
 
 export default class ExampleProvider extends Provider {
-  constructor(channel) {
-    super(channel);
-    addons.setChannel(channel);
+  constructor() {
+    super();
+    this.channel = new EventEmitter();
+    addons.setChannel(this.channel);
   }
 
   getPanels() {
