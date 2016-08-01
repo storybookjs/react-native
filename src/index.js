@@ -2,15 +2,6 @@ export class AddonStore {
   constructor() {
     this._loaders = {};
     this._panels = {};
-    this._channel = null;
-  }
-
-  getChannel() {
-    return this._channel;
-  }
-
-  setChannel(channel) {
-    this._channel = channel;
   }
 
   getPanels() {
@@ -25,10 +16,10 @@ export class AddonStore {
     this._loaders[name] = loader;
   }
 
-  loadAddons() {
+  loadAddons(...args) {
     Object.keys(this._loaders)
       .map(name => this._loaders[name])
-      .forEach(loader => loader());
+      .forEach(loader => loader(...args));
   }
 }
 
