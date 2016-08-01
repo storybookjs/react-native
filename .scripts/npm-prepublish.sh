@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./node_modules/.bin/babel src -d lib
+./node_modules/.bin/babel src -d dist
