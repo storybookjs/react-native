@@ -1,25 +1,16 @@
-export class AddonApi {
-  constructor(store) {
-    this.getContext = store.getContext.bind(store);
-    this.addPanel = store.addPanel.bind(store);
-  }
-}
-
 export class AddonStore {
   constructor() {
     this._loaders = {};
     this._panels = {};
-    this._context = {
-      channel: null,
-    };
+    this._channel = null;
   }
 
-  getContext() {
-    return this._context;
+  getChannel() {
+    return this._channel;
   }
 
-  setContext(context) {
-    Object.assign(this._context, context);
+  setChannel(channel) {
+    this._channel = channel;
   }
 
   getPanels() {
@@ -35,10 +26,9 @@ export class AddonStore {
   }
 
   loadAddons() {
-    const api = new AddonApi(this);
     Object.keys(this._loaders)
       .map(name => this._loaders[name])
-      .forEach(loader => loader(api));
+      .forEach(loader => loader());
   }
 }
 
