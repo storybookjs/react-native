@@ -1,3 +1,11 @@
+export class AddonApi {
+  constructor(params) {
+    this._store = params.store;
+    this.getContext = this._store.getContext.bind(this._store);
+    this.addPanel = this._store.addPanel.bind(this._store);
+  }
+}
+
 export class AddonStore {
   constructor() {
     this._loaders = {};
@@ -12,7 +20,15 @@ export class AddonStore {
   }
 
   setContext(context) {
-    this._context = context;
+    Object.assign(this._context, context);
+  }
+
+  getPanels() {
+    return this._panels;
+  }
+
+  addPanel(name, panel) {
+    this._panels[name] = panel;
   }
 
   register(name, loader) {
@@ -20,9 +36,10 @@ export class AddonStore {
   }
 
   loadAddons() {
+    const api = new AddonApi(this);
     Object.keys(this._loaders)
       .map(name => this._loaders[name])
-      .forEach(loader => loader(this._context));
+      .forEach(loader => loader(api));
   }
 }
 
