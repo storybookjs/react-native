@@ -14,13 +14,12 @@
   "keywords": [
     "storybook"
   ],
-  "author": "KadiraHQ (https://storybook.io/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kadirahq/storybook-addons/issues"
   },
   "homepage": "https://github.com/kadirahq/storybook-addons#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0"
