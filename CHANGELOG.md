@@ -1,5 +1,9 @@
 ## Change Log
 
+### v2.6.1
+
+* Remove some React warnings due to bad code.
+
 ### v2.6.0
 
 * Remove logger name with the updated react-inspector. [PR21](https://github.com/kadirahq/storybook-ui/pull/21)
