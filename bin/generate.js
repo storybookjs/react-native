@@ -63,7 +63,7 @@ switch (projectType) {
     codeLog([
       'npm run storybook'
     ]);
-    logger.log('\nFor more information visit:', chalk.cyan('https://getstorybook.io'));
+    logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
   case types.REACT:
@@ -77,7 +77,7 @@ switch (projectType) {
     codeLog([
       'npm run storybook'
     ]);
-    logger.log('\nFor more information visit:', chalk.cyan('https://getstorybook.io'));
+    logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
   case types.REACT_PROJECT:
@@ -91,12 +91,12 @@ switch (projectType) {
     codeLog([
       'npm run storybook'
     ]);
-    logger.log('\nFor more information visit:', chalk.cyan('https://getstorybook.io'));
+    logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
   default:
     paddedLog('Unsupported Project type. (code: ' + projectType + ')');
-    paddedLog('Visit https://getstorybook.io for more information.');
+    paddedLog('Visit http://getstorybook.io for more information.');
 }
 
 // Add a new line for the clear visibility.
