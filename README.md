@@ -1,3 +1,7 @@
-# storybook-adddons
+# Storybook Addons
 
-Node module to register addons
+Storybook Addons is a node module which is used to load custom addons to storybook. It stores addon loaders, communication channel which can be used by storybook implementations when required.
+
+## Writing New Addons
+
+> TODO
