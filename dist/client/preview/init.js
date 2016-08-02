@@ -8,7 +8,7 @@ exports.default = function (context) {
   var queryParams = context.queryParams;
   var reduxStore = context.reduxStore;
   var window = context.window;
-  var pageBus = context.pageBus;
+  var channel = context.channel;
   // set the story if correct params are loaded via the URL.
 
   if (queryParams.selectedKind) {
@@ -19,7 +19,7 @@ exports.default = function (context) {
   window.onkeydown = function (e) {
     var parsedEvent = (0, _key_events2.default)(e);
     if (parsedEvent) {
-      pageBus.emit('applyShortcut', { event: parsedEvent });
+      channel.emit('applyShortcut', { event: parsedEvent });
     }
   };
 };

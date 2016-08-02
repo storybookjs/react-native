@@ -1,10 +1,8 @@
-import UUID from 'uuid';
-
 export default class ClientApi {
-  constructor({ pageBus, storyStore }) {
-    // pageBus can be null when running in node
-    // always check whether pageBus is available
-    this._pageBus = pageBus;
+  constructor({ channel, storyStore }) {
+    // channel can be null when running in node
+    // always check whether channel is available
+    this._channel = channel;
     this._storyStore = storyStore;
     this._addons = {};
     this._globalDecorators = [];
@@ -76,43 +74,6 @@ export default class ClientApi {
     };
 
     return api;
-  }
-
-  action(name) {
-    const pageBus = this._pageBus;
-
-    return function action(..._args) {
-      let args = Array.from(_args);
-
-      // Remove events from the args. Otherwise, it creates a huge JSON string.
-      args = args.map(arg => {
-        if (arg && typeof arg.preventDefault === 'function') {
-          return '[SyntheticEvent]';
-        }
-        return arg;
-      });
-
-      const id = UUID.v4();
-      const data = { name, args };
-
-      if (pageBus) {
-        pageBus.emit('addAction', { action: { data, id } });
-      }
-    };
-  }
-
-  linkTo(kind, story) {
-    const pageBus = this._pageBus;
-
-    return function linkTo(...args) {
-      const resolvedKind = typeof kind === 'function' ? kind(...args) : kind;
-      const resolvedStory = typeof story === 'function' ? story(...args) : story;
-      const selection = { kind: resolvedKind, story: resolvedStory };
-
-      if (pageBus) {
-        pageBus.emit('selectStory', selection);
-      }
-    };
   }
 
   getStorybook() {

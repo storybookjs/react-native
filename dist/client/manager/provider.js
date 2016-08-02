@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -36,19 +32,19 @@ var _qs = require('qs');
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _uuid = require('uuid');
-
-var _uuid2 = _interopRequireDefault(_uuid);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _pageBus = require('page-bus');
-
-var _pageBus2 = _interopRequireDefault(_pageBus);
-
 var _storybookUi = require('@kadira/storybook-ui');
+
+var _storybookAddons = require('@kadira/storybook-addons');
+
+var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
+
+var _channel = require('../channel');
+
+var _channel2 = _interopRequireDefault(_channel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60,15 +56,21 @@ var ReactProvider = function (_Provider) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ReactProvider).call(this));
 
-    _this.dataId = _uuid2.default.v4();
+    _this.channel = new _channel2.default();
+    _storybookAddons2.default.setChannel(_this.channel);
     return _this;
   }
 
   (0, _createClass3.default)(ReactProvider, [{
+    key: 'getPanels',
+    value: function getPanels() {
+      return _storybookAddons2.default.getPanels();
+    }
+  }, {
     key: 'renderPreview',
     value: function renderPreview(selectedKind, selectedStory) {
       var queryParams = {
-        dataId: this.dataId,
+        dataId: this.channel.getDataId(),
         selectedKind: selectedKind,
         selectedStory: selectedStory
       };
@@ -80,38 +82,21 @@ var ReactProvider = function (_Provider) {
   }, {
     key: 'handleAPI',
     value: function handleAPI(api) {
-      var dataId = this.dataId;
-      var bus = (0, _pageBus2.default)();
+      var _this2 = this;
 
       api.onStory(function (kind, story) {
-        var payload = {
-          kind: kind,
-          story: story
-        };
-
-        bus.emit(dataId + '.setCurrentStory', (0, _stringify2.default)(payload));
+        _this2.channel.emit('setCurrentStory', { kind: kind, story: story });
       });
-
-      // watch pageBus and put both actions and stories.
-      bus.on(dataId + '.addAction', function (payload) {
-        var data = JSON.parse(payload);
-        api.addAction(data.action);
-      });
-
-      bus.on(dataId + '.setStories', function (payload) {
-        var data = JSON.parse(payload);
+      this.channel.on('setStories', function (data) {
         api.setStories(data.stories);
       });
-
-      bus.on(dataId + '.selectStory', function (payload) {
-        var data = JSON.parse(payload);
+      this.channel.on('selectStory', function (data) {
         api.selectStory(data.kind, data.story);
       });
-
-      bus.on(dataId + '.applyShortcut', function (payload) {
-        var data = JSON.parse(payload);
+      this.channel.on('applyShortcut', function (data) {
         api.handleShortcut(data.event);
       });
+      _storybookAddons2.default.loadAddons(api);
     }
   }]);
   return ReactProvider;

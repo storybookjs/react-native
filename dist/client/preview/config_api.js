@@ -20,14 +20,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ConfigApi = function () {
   function ConfigApi(_ref) {
-    var pageBus = _ref.pageBus;
+    var channel = _ref.channel;
     var storyStore = _ref.storyStore;
     var reduxStore = _ref.reduxStore;
     (0, _classCallCheck3.default)(this, ConfigApi);
 
-    // pageBus can be null when running in node
-    // always check whether pageBus is available
-    this._pageBus = pageBus;
+    // channel can be null when running in node
+    // always check whether channel is available
+    this._channel = channel;
     this._storyStore = storyStore;
     this._reduxStore = reduxStore;
   }
@@ -39,7 +39,7 @@ var ConfigApi = function () {
 
       var stories = this._storyStore.dumpStoryBook();
       // send to the parent frame.
-      this._pageBus.emit('setStories', { stories: stories });
+      this._channel.emit('setStories', { stories: stories });
 
       // clear the error if exists.
       this._reduxStore.dispatch((0, _actions.clearError)());
@@ -76,7 +76,7 @@ var ConfigApi = function () {
         });
       }
 
-      if (this._pageBus) {
+      if (this._channel) {
         render();
       } else {
         loaders();

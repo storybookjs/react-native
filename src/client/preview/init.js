@@ -2,7 +2,7 @@ import { selectStory } from './actions';
 import keyEvents from '@kadira/storybook-ui/dist/libs/key_events';
 
 export default function (context) {
-  const { queryParams, reduxStore, window, pageBus } = context;
+  const { queryParams, reduxStore, window, channel } = context;
   // set the story if correct params are loaded via the URL.
   if (queryParams.selectedKind) {
     reduxStore.dispatch(selectStory(queryParams.selectedKind, queryParams.selectedStory));
@@ -12,7 +12,7 @@ export default function (context) {
   window.onkeydown = (e) => {
     const parsedEvent = keyEvents(e);
     if (parsedEvent) {
-      pageBus.emit('applyShortcut', { event: parsedEvent });
+      channel.emit('applyShortcut', { event: parsedEvent });
     }
   };
 }

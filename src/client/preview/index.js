@@ -1,11 +1,13 @@
 import 'es6-shim';
 import StoryStore from './story_store';
-import PageBus from './page_bus';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import render from './render';
 import qs from 'qs';
 import init from './init';
+import Channel from '../channel';
+import { selectStory } from './actions';
+import addons from '@kadira/storybook-addons';
 
 import { createStore } from 'redux';
 import reducer from './reducer';
@@ -19,9 +21,15 @@ const context = { storyStore, reduxStore };
 
 if (isBrowser) {
   const queryParams = qs.parse(window.location.search.substring(1));
-  const pageBus = new PageBus(queryParams.dataId, reduxStore);
-  Object.assign(context, { pageBus, window, queryParams });
-  pageBus.init();
+  if (!queryParams.dataId) {
+    throw new Error('dataId is not supplied via queryString');
+  }
+  const channel = new Channel(queryParams.dataId);
+  channel.on('setCurrentStory', data => {
+    reduxStore.dispatch(selectStory(data.kind, data.story));
+  });
+  Object.assign(context, { channel, window, queryParams });
+  addons.setChannel(channel);
   init(context);
 }
 
@@ -30,8 +38,6 @@ const configApi = new ConfigApi(context);
 
 // do exports
 export const storiesOf = clientApi.storiesOf.bind(clientApi);
-export const action = clientApi.action.bind(clientApi);
-export const linkTo = clientApi.linkTo.bind(clientApi);
 export const setAddon = clientApi.setAddon.bind(clientApi);
 export const addDecorator = clientApi.addDecorator.bind(clientApi);
 export const clearDecorators = clientApi.clearDecorators.bind(clientApi);

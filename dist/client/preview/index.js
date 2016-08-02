@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.configure = exports.getStorybook = exports.clearDecorators = exports.addDecorator = exports.setAddon = exports.linkTo = exports.action = exports.storiesOf = undefined;
+exports.configure = exports.getStorybook = exports.clearDecorators = exports.addDecorator = exports.setAddon = exports.storiesOf = undefined;
 
 var _assign = require('babel-runtime/core-js/object/assign');
 
@@ -14,10 +14,6 @@ require('es6-shim');
 var _story_store = require('./story_store');
 
 var _story_store2 = _interopRequireDefault(_story_store);
-
-var _page_bus = require('./page_bus');
-
-var _page_bus2 = _interopRequireDefault(_page_bus);
 
 var _client_api = require('./client_api');
 
@@ -39,6 +35,16 @@ var _init = require('./init');
 
 var _init2 = _interopRequireDefault(_init);
 
+var _channel = require('../channel');
+
+var _channel2 = _interopRequireDefault(_channel);
+
+var _actions = require('./actions');
+
+var _storybookAddons = require('@kadira/storybook-addons');
+
+var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
+
 var _redux = require('redux');
 
 var _reducer = require('./reducer');
@@ -56,9 +62,15 @@ var context = { storyStore: storyStore, reduxStore: reduxStore };
 
 if (isBrowser) {
   var queryParams = _qs2.default.parse(window.location.search.substring(1));
-  var pageBus = new _page_bus2.default(queryParams.dataId, reduxStore);
-  (0, _assign2.default)(context, { pageBus: pageBus, window: window, queryParams: queryParams });
-  pageBus.init();
+  if (!queryParams.dataId) {
+    throw new Error('dataId is not supplied via queryString');
+  }
+  var channel = new _channel2.default(queryParams.dataId);
+  channel.on('setCurrentStory', function (data) {
+    reduxStore.dispatch((0, _actions.selectStory)(data.kind, data.story));
+  });
+  (0, _assign2.default)(context, { channel: channel, window: window, queryParams: queryParams });
+  _storybookAddons2.default.setChannel(channel);
   (0, _init2.default)(context);
 }
 
@@ -67,8 +79,6 @@ var configApi = new _config_api2.default(context);
 
 // do exports
 var storiesOf = exports.storiesOf = clientApi.storiesOf.bind(clientApi);
-var action = exports.action = clientApi.action.bind(clientApi);
-var linkTo = exports.linkTo = clientApi.linkTo.bind(clientApi);
 var setAddon = exports.setAddon = clientApi.setAddon.bind(clientApi);
 var addDecorator = exports.addDecorator = clientApi.addDecorator.bind(clientApi);
 var clearDecorators = exports.clearDecorators = clientApi.clearDecorators.bind(clientApi);

@@ -1,19 +1,24 @@
 import Preview from './preview';
 import qs from 'qs';
-import UUID from 'uuid';
 import React from 'react';
-import createPageBus from 'page-bus';
 import { Provider } from '@kadira/storybook-ui';
+import addons from '@kadira/storybook-addons';
+import Channel from '../channel';
 
 export default class ReactProvider extends Provider {
   constructor() {
     super();
-    this.dataId = UUID.v4();
+    this.channel = new Channel();
+    addons.setChannel(this.channel);
+  }
+
+  getPanels() {
+    return addons.getPanels();
   }
 
   renderPreview(selectedKind, selectedStory) {
     const queryParams = {
-      dataId: this.dataId,
+      dataId: this.channel.getDataId(),
       selectedKind,
       selectedStory,
     };
@@ -26,37 +31,18 @@ export default class ReactProvider extends Provider {
   }
 
   handleAPI(api) {
-    const dataId = this.dataId;
-    const bus = createPageBus();
-
-    api.onStory(function (kind, story) {
-      const payload = {
-        kind,
-        story,
-      };
-
-      bus.emit(`${dataId}.setCurrentStory`, JSON.stringify(payload));
+    api.onStory((kind, story) => {
+      this.channel.emit('setCurrentStory', { kind, story });
     });
-
-    // watch pageBus and put both actions and stories.
-    bus.on(`${dataId}.addAction`, function (payload) {
-      const data = JSON.parse(payload);
-      api.addAction(data.action);
-    });
-
-    bus.on(`${dataId}.setStories`, function (payload) {
-      const data = JSON.parse(payload);
+    this.channel.on('setStories', data => {
       api.setStories(data.stories);
     });
-
-    bus.on(`${dataId}.selectStory`, function (payload) {
-      const data = JSON.parse(payload);
+    this.channel.on('selectStory', data => {
       api.selectStory(data.kind, data.story);
     });
-
-    bus.on(`${dataId}.applyShortcut`, function (payload) {
-      const data = JSON.parse(payload);
+    this.channel.on('applyShortcut', data => {
       api.handleShortcut(data.event);
     });
+    addons.loadAddons(api);
   }
 }

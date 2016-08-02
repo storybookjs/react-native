@@ -39,16 +39,6 @@ class StoryStore {
   }
 }
 
-class PageBus {
-  constructor() {
-    this.emits = [];
-  }
-
-  emit(type, ...args) {
-    this.emits.push({ type, args });
-  }
-}
-
 describe('preview.client_api', () => {
   describe('setAddon', () => {
     it('should register addons', () => {
@@ -217,48 +207,6 @@ describe('preview.client_api', () => {
       api._globalDecorators = 1234;
       api.clearDecorators();
       expect(api._globalDecorators).to.deep.equal([]);
-    });
-  });
-
-  describe('action', () => {
-    it('should emit "addAction"', () => {
-      const api = new ClientAPI({});
-      api._pageBus = new PageBus();
-      const action = api.action('test-action');
-      action(1, 'a', [1], { a: 1 }, { preventDefault() {} });
-      expect(api._pageBus.emits.length).to.equal(1);
-      expect(api._pageBus.emits[0].type).to.equal('addAction');
-      expect(typeof api._pageBus.emits[0].args[0].action.id).to.equal('string');
-      expect(api._pageBus.emits[0].args[0].action.data).to.deep.equal({
-        name: 'test-action',
-        args: [1, 'a', [1], { a: 1 }, '[SyntheticEvent]'],
-      });
-    });
-  });
-
-  describe('linkTo', () => {
-    it('should emit "selectStory"', () => {
-      const api = new ClientAPI({});
-      api._pageBus = new PageBus();
-      api.linkTo('test-kind', 'test-story')();
-      expect(api._pageBus.emits.length).to.equal(1);
-      expect(api._pageBus.emits[0].type).to.equal('selectStory');
-      expect(api._pageBus.emits[0].args[0]).to.deep.equal({
-        kind: 'test-kind',
-        story: 'test-story',
-      });
-    });
-
-    it('should support function args', () => {
-      const api = new ClientAPI({});
-      api._pageBus = new PageBus();
-      api.linkTo(a => `${a}-kind`, a => `${a}-story`)('test');
-      expect(api._pageBus.emits.length).to.equal(1);
-      expect(api._pageBus.emits[0].type).to.equal('selectStory');
-      expect(api._pageBus.emits[0].args[0]).to.deep.equal({
-        kind: 'test-kind',
-        story: 'test-story',
-      });
     });
   });
 

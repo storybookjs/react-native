@@ -81,6 +81,19 @@ export default function (configType, baseConfig, configDir) {
   }
   config.entry.preview.push(storybookConfigPath);
 
+  // Check whether addons.js file exists inside the storybook.
+  // Load the default addons.js file if it's missing.
+  const storybookDefaultAddonsPath = path.resolve(__dirname, 'addons.js');
+  const storybookCustomAddonsPath = path.resolve(configDir, 'addons.js');
+  if (fs.existsSync(storybookCustomAddonsPath)) {
+    logger.info('=> Loading custom addons config.');
+    config.entry.preview.unshift(storybookCustomAddonsPath);
+    config.entry.manager.unshift(storybookCustomAddonsPath);
+  } else {
+    config.entry.preview.unshift(storybookDefaultAddonsPath);
+    config.entry.manager.unshift(storybookDefaultAddonsPath);
+  }
+
   // Check whether user has a custom webpack config file and
   // return the (extended) base configuration if it's not available.
   const customConfigPath = path.resolve(configDir, 'webpack.config.js');

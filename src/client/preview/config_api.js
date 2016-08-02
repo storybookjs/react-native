@@ -7,10 +7,10 @@ import {
 import { clearDecorators } from './';
 
 export default class ConfigApi {
-  constructor({ pageBus, storyStore, reduxStore }) {
-    // pageBus can be null when running in node
-    // always check whether pageBus is available
-    this._pageBus = pageBus;
+  constructor({ channel, storyStore, reduxStore }) {
+    // channel can be null when running in node
+    // always check whether channel is available
+    this._channel = channel;
     this._storyStore = storyStore;
     this._reduxStore = reduxStore;
   }
@@ -20,7 +20,7 @@ export default class ConfigApi {
 
     const stories = this._storyStore.dumpStoryBook();
     // send to the parent frame.
-    this._pageBus.emit('setStories', { stories });
+    this._channel.emit('setStories', { stories });
 
     // clear the error if exists.
     this._reduxStore.dispatch(clearError());
@@ -51,7 +51,7 @@ export default class ConfigApi {
       });
     }
 
-    if (this._pageBus) {
+    if (this._channel) {
       render();
     } else {
       loaders();
