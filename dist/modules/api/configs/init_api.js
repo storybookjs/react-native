@@ -11,7 +11,6 @@ exports.default = function (provider, reduxStore, actions) {
     },
 
 
-    addAction: actions.api.addAction,
     setStories: actions.api.setStories,
     selectStory: actions.api.selectStory,
     setOptions: actions.api.setOptions,

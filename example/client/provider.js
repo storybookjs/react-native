@@ -7,10 +7,40 @@ import { Provider } from '../../src';
 
 let id = 0;
 
+const style = {
+  flex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const panels = {
+  test1: {
+    title: 'Test 1',
+    render: () => <div style={style}>I</div>,
+  },
+  test2: {
+    title: 'Test 2',
+    render: () => <div style={style}>II</div>,
+  },
+  test3: {
+    title: 'Test 3',
+    render: () => <div style={style}>III</div>,
+  },
+  test4: {
+    title: 'Test 4',
+    render: () => <div style={style}>IV</div>,
+  },
+}
+
 export default class ReactProvider extends Provider {
   constructor() {
     super();
     this.globalState = new EventEmitter();
+  }
+
+  getPanels() {
+    return panels;
   }
 
   // You must implement this public API.
@@ -54,14 +84,6 @@ export default class ReactProvider extends Provider {
   _handlePreviewEvents() {
     this.globalState.removeAllListeners();
 
-    // firing an action.
-    this.globalState.on('action', (message) => {
-      this.api.addAction({
-        data: { message, name: 'the-action' },
-        id: ++id,
-      });
-    });
-
     // jumping to an story.
     this.globalState.on('jump', (kind, story) => {
       this.api.selectStory(kind, story);
@@ -76,7 +98,6 @@ export default class ReactProvider extends Provider {
         preventDefault() {},
       };
       const parsedEvent = parseKeyEvent(event);
-      console.log(parsedEvent);
       this.api.handleShortcut(parsedEvent);
     });
   }

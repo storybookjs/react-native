@@ -77,13 +77,6 @@ export default function (state = defaultState, action) {
       };
     }
 
-    case types.CLEAR_ACTIONS: {
-      return {
-        ...state,
-        actions: [],
-      };
-    }
-
     case types.SET_STORIES: {
       const newState = {
         ...state,
@@ -96,29 +89,6 @@ export default function (state = defaultState, action) {
       );
 
       return newState;
-    }
-
-    case types.ADD_ACTION: {
-      const previewAction = { ...action.action };
-      const actions = [
-        ...state.actions || [],
-      ];
-
-      const lastAction = actions.length > 0 && actions[0];
-      if (
-        lastAction &&
-        deepEqual(lastAction.data, previewAction.data)
-      ) {
-        lastAction.count++;
-      } else {
-        previewAction.count = 1;
-        actions.unshift(previewAction);
-      }
-
-      return {
-        ...state,
-        actions,
-      };
     }
 
     case types.SET_OPTIONS: {

@@ -55,36 +55,6 @@ describe('manager.api.actions.api', () => {
     });
   });
 
-  describe('clearActions', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-
-      actions.clearActions({ reduxStore });
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.CLEAR_ACTIONS,
-      });
-    });
-  });
-
-  describe('addAction', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const action = {};
-
-      actions.addAction({ reduxStore }, action);
-      const a = reduxStore.dispatch.args[0][0];
-      expect(a).to.deep.equal({
-        type: types.ADD_ACTION,
-        action,
-      });
-    });
-  });
-
   describe('setOptions', () => {
     it('should dispatch related redux action', () => {
       const reduxStore = {

@@ -20,6 +20,10 @@ import { Provider } from '@kadira/storybook-ui';
 import React from 'react';
 
 export default class MyProvider extends Provider {
+  getPanels() {
+    return {};
+  }
+
   renderPreview() {
     return (
       <p>This is the Preview</p>
