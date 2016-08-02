@@ -10,7 +10,7 @@ export default class ActionLogger extends React.Component {
   }
 
   addAction(action) {
-    const actions = [ ...this.state.actions ];
+    const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
     if (previous && deepEqual(previous.data, action.data)) {
       previous.count++;

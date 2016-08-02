@@ -11,19 +11,18 @@ class ActionLogger extends Component {
       setTimeout(() => {
         latest.style.borderLeft = borderLeft;
       }, 300);
-
     }
   }
 
   renderAction(action, i) {
     const ref = i ? '' : 'latest';
     const counter = (
-      <div style={ style.counter }>{ action.count }</div>
+      <div style={style.counter}>{action.count}</div>
     );
     return (
       <div ref={ref} key={action.id} style={style.action}>
         <div>
-          { action.count > 1 && counter }
+          {action.count > 1 && counter}
         </div>
         <div style={style.inspector}>
           <Inspector
