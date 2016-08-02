@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addons",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Storybook addons store",
   "main": "dist/index.js",
   "scripts": {
