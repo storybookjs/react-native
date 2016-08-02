@@ -1,22 +1,39 @@
+#!/usr/bin/env node
+
 var detect = require('../lib/detect');
 var types = require('../lib/project_types');
 var sh = require('shelljs');
+var commandLog = require('../lib/helpers').commandLog;
+var codeLog = require('../lib/helpers').codeLog;
+var installNpmDeps = require('../lib/helpers').installNpmDeps;
+var chalk = require('chalk');
 
-// Add a new line for the clear visibility.
-console.log();
+console.log(chalk.inverse('\n getstorybook - the simplest way to add a storybook to your project. \n'));
 
-const projectType = detect();
+var projectType;
+
+var done = commandLog('Detecting project type');
+try {
+  projectType = detect();
+} catch(ex) {
+  done(ex.message);
+  process.exit(1);
+}
+done();
+
 switch (projectType) {
   case types.REACT_SCRIPTS:
-    // TODO: Add colors.
-    // TODO: Add done symbol to the end.
-    console.log('Adding storybook support to your "Create React App" based project.');
+    done = commandLog('Adding storybook support to your "Create React App" based project');
     require('../generators/REACT_SCRIPTS');
-    console.log('Installing NPM dependencies.');
-    sh.exec('npm install', { silent: true });
+    done();
+
+    installNpmDeps();
+
     console.log('\nTo run your storybook, type:\n')
-    console.log('   npm run storybook');
-    console.log('\nFor more information visit: https://getstorybook.io')
+    codeLog([
+      'npm run storybook',
+    ]);
+    console.log('\nFor more information visit:',  chalk.cyan('https://getstorybook.io'))
     break;
   default:
     console.log('Unsupported Project type. (code: %s)', projectType);

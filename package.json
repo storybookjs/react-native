@@ -2,7 +2,9 @@
   "name": "getstorybook",
   "version": "0.0.0",
   "description": "Easiest way to add Storybook support to your project.",
-  "main": "index.js",
+  "bin": {
+    "getstorybook": "./bin/generate.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/kadirahq/getstorybook#readme",
   "dependencies": {
+    "chalk": "^1.1.3",
     "merge-dirs": "^0.2.1",
     "shelljs": "^0.7.3"
   }
