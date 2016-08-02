@@ -1,5 +1,9 @@
 ## Change Log
 
+### v3.0.0
+
+* Remove Action Logger and add support for custom panels [PR22](https://github.com/kadirahq/storybook-ui/pull/22)
+
 ### v2.6.1
 
 * Remove some React warnings due to bad code.
