@@ -17,3 +17,7 @@ getstorybook
 ```
 
 That's all you've to do.
+
+---
+
+For more information, refer [React Storybook](https://github.com/kadirahq/react-storybook) documentation.
