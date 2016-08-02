@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.0.3
+
+* Log all arguments (only the first argument was logged previously)
+
 ### v1.0.2
 
 * Style tweak: center counter and inspector elements
