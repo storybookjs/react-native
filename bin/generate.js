@@ -5,6 +5,7 @@ var types = require('../lib/project_types');
 var sh = require('shelljs');
 var commandLog = require('../lib/helpers').commandLog;
 var codeLog = require('../lib/helpers').codeLog;
+var paddedLog = require('../lib/helpers').paddedLog;
 var installNpmDeps = require('../lib/helpers').installNpmDeps;
 var chalk = require('chalk');
 
@@ -35,9 +36,38 @@ switch (projectType) {
     ]);
     console.log('\nFor more information visit:',  chalk.cyan('https://getstorybook.io'))
     break;
+
+  case types.REACT:
+    done = commandLog('Adding storybook support to your "React" app');
+    require('../generators/REACT');
+    done();
+
+    installNpmDeps();
+
+    console.log('\nTo run your storybook, type:\n')
+    codeLog([
+      'npm run storybook',
+    ]);
+    console.log('\nFor more information visit:',  chalk.cyan('https://getstorybook.io'))
+    break;
+
+  case types.REACT_PROJECT:
+    done = commandLog('Adding storybook support to your "React" library.');
+    require('../generators/REACT');
+    done();
+
+    installNpmDeps();
+
+    console.log('\nTo run your storybook, type:\n')
+    codeLog([
+      'npm run storybook',
+    ]);
+    console.log('\nFor more information visit:',  chalk.cyan('https://getstorybook.io'))
+    break;
+
   default:
-    console.log('Unsupported Project type. (code: %s)', projectType);
-    console.log('Visit https://getstorybook.io for more information.');
+    paddedLog('Unsupported Project type. (code: ' +  projectType + ')');
+    paddedLog('Visit https://getstorybook.io for more information.');
 }
 
 // Add a new line for the clear visibility.
