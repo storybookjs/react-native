@@ -1,5 +1,20 @@
 ## Changelog
 
+### v2.1.0
+02-August-2016
+
+Add support for the addon API. See [PR346](https://github.com/kadirahq/react-storybook/pull/346).
+
+Here after we are using most of the features including actions,links as plugins.
+So, this introduced a huge area to add customizations to React Storybook.
+
+Unfortunately, as of this version, there are no docs for this feature. But, you can have a look at these addons:
+
+* actions addon (powers the action logger): https://github.com/kadirahq/storybook-addon-actions
+* links addon (powers the linkTo feature): https://github.com/kadirahq/storybook-addon-links
+
+Have a look at [here](https://github.com/kadirahq/react-storybook/blob/master/src/server/config.js#L88) to how to configure addons.
+
 ### v2.0.0
 01-August-2016
 
