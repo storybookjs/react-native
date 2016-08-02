@@ -63,7 +63,7 @@ var ActionLogger = function (_Component) {
         { ref: ref, key: action.id, style: _style2.default.action },
         _react2.default.createElement(
           'div',
-          null,
+          { style: _style2.default.countwrap },
           action.count > 1 && counter
         ),
         _react2.default.createElement(

@@ -21,7 +21,11 @@ exports.default = {
     padding: '3px 3px 3px 0',
     borderLeft: '5px solid white',
     borderBottom: '1px solid #fafafa',
-    transition: 'all 0.1s'
+    transition: 'all 0.1s',
+    alignItems: 'center'
+  },
+  countwrap: {
+    paddingBottom: 2
   },
   counter: {
     margin: '0 5px 0 5px',

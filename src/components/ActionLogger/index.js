@@ -21,7 +21,7 @@ class ActionLogger extends Component {
     );
     return (
       <div ref={ref} key={action.id} style={style.action}>
-        <div>
+        <div style={style.countwrap}>
           {action.count > 1 && counter}
         </div>
         <div style={style.inspector}>
