@@ -1,0 +1,38 @@
+{
+  "name": "@kadira/storybook-addon-links",
+  "version": "1.0.0",
+  "description": "Story Links addon for storybook",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "node .scripts/npm-prepublish.js",
+    "start": "reactpack -d --no-lint src/example/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadirahq/storybook-addon-links.git"
+  },
+  "keywords": [
+    "storybook"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadirahq/storybook-addon-links/issues"
+  },
+  "homepage": "https://github.com/kadirahq/storybook-addon-links#readme",
+  "devDependencies": {
+    "@kadira/storybook-addons": "^1.3.0",
+    "@kadira/storybook-ui": "^3.0.0",
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "reactpack": "^0.7.3",
+    "shelljs": "^0.7.3"
+  },
+  "peerDependencies": {
+    "@kadira/storybook-addons": "^1.3.0"
+  }
+}
