@@ -72,7 +72,7 @@ var ActionLogger = function (_Component) {
           _react2.default.createElement(_reactInspector2.default, {
             showNonenumerable: true,
             name: action.data.name,
-            data: action.data.message
+            data: action.data.args || action.data
           })
         )
       );

@@ -28,7 +28,7 @@ class ActionLogger extends Component {
           <Inspector
             showNonenumerable
             name={action.data.name}
-            data={action.data.message}
+            data={action.data.args || action.data}
           />
         </div>
       </div>
