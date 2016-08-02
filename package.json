@@ -22,7 +22,7 @@
   "homepage": "https://github.com/kadirahq/storybook-addon-actions#readme",
   "devDependencies": {
     "@kadira/storybook-addons": "^1.3.0",
-    "@kadira/storybook-ui": "kadirahq/storybook-ui#custom-panels",
+    "@kadira/storybook-ui": "^3.0.0",
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
