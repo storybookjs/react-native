@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var updateNotifier = require('update-notifier');
+var program = require('commander');
 var detect = require('../lib/detect');
 var types = require('../lib/project_types');
 var sh = require('shelljs');
@@ -10,10 +11,16 @@ var paddedLog = require('../lib/helpers').paddedLog;
 var installNpmDeps = require('../lib/helpers').installNpmDeps;
 var chalk = require('chalk');
 
+var pkg = require('../package.json');
+
+program
+  .version(pkg.version)
+  .option('-f --force', 'Forcely add storybook')
+  .parse(process.argv);
+
 console.log(chalk.inverse('\n getstorybook - the simplest way to add a storybook to your project. \n'));
 
 // Update notify code.
-var pkg = require('../package.json');
 updateNotifier({
   pkg: pkg,
   updateCheckInterval: 1000 * 60 * 60, // every hour (we could increase this later on.)
@@ -31,6 +38,14 @@ try {
 done();
 
 switch (projectType) {
+  case types.ALREADY_HAS_STORYBOOK:
+    if (!program.force) {
+      console.log();
+      paddedLog('There seems to be a storybook already available in this project.');
+      paddedLog('Apply following command to force:\n');
+      codeLog(['getstorybook -f']);
+      break;
+    }
   case types.REACT_SCRIPTS:
     done = commandLog('Adding storybook support to your "Create React App" based project');
     require('../generators/REACT_SCRIPTS');
