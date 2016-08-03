@@ -52,7 +52,7 @@ var _webpackHotMiddleware = require('webpack-hot-middleware');
 
 var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
 
-var _webpack3 = require('./webpack.config');
+var _webpack3 = require('./config/webpack.config');
 
 var _webpack4 = _interopRequireDefault(_webpack3);
 

@@ -2,7 +2,7 @@ import { Router } from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import baseConfig from './webpack.config';
+import baseConfig from './config/webpack.config';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';

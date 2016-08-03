@@ -96,9 +96,10 @@ export default function (configType, baseConfig, configDir) {
 
   // Check whether user has a custom webpack config file and
   // return the (extended) base configuration if it's not available.
-  const customConfigPath = path.resolve(configDir, 'webpack.config.js');
+  let customConfigPath = path.resolve(configDir, 'webpack.config.js');
   if (!fs.existsSync(customConfigPath)) {
-    return config;
+    logger.info('=> Using default webpack setup based on "Create React App".');
+    customConfigPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
   }
 
   const customConfig = require(customConfigPath);

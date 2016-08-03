@@ -25,7 +25,7 @@ var _package = require('../../package.json');
 
 var _package2 = _interopRequireDefault(_package);
 
-var _webpackConfig = require('./webpack.config.prod');
+var _webpackConfig = require('./config/webpack.config.prod');
 
 var _webpackConfig2 = _interopRequireDefault(_webpackConfig);
 

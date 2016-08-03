@@ -8,7 +8,7 @@ import path from 'path';
 import fs from 'fs';
 import shelljs from 'shelljs';
 import packageJson from '../../package.json';
-import baseConfig from './webpack.config.prod';
+import baseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
