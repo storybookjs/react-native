@@ -2,7 +2,7 @@ import autoprefixer from 'autoprefixer';
 import { includePaths } from '../paths';
 
 // Add a default custom config which is similar to what React Create App does.
-module.exports = (storybookBaseConfig, configType) => {
+module.exports = (storybookBaseConfig) => {
   const newConfig = storybookBaseConfig;
   newConfig.module.loaders = [
     ...newConfig.module.loaders,
