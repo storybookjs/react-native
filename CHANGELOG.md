@@ -1,5 +1,13 @@
 ## Changelog
 
+### v2.1.1
+03-August-2016
+
+Remove default webpack config for all config types. [PR348](https://github.com/kadirahq/react-storybook/pull/348)
+
+Now we only use the Create React App based config if there's no custom webpack config.
+This will fix issues like [#347](https://github.com/kadirahq/react-storybook/issues/347).
+
 ### v2.1.0
 02-August-2016
 
