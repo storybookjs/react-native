@@ -29,6 +29,7 @@
     "commander": "^2.9.0",
     "merge-dirs": "^0.2.1",
     "shelljs": "^0.7.3",
+    "spawn-sync": "^1.0.15",
     "update-notifier": "^1.0.2"
   },
   "devDependencies": {
