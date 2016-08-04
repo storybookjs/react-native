@@ -5,10 +5,6 @@ export default class Channel {
     this._listeners = {};
   }
 
-  connect() {
-    return this._transport.connect();
-  }
-
   addListener(type, listener) {
     this.on(type, listener);
   }

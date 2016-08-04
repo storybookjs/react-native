@@ -22,11 +22,6 @@ var Channel = function () {
   }
 
   _createClass(Channel, [{
-    key: "connect",
-    value: function connect() {
-      return this._transport.connect();
-    }
-  }, {
     key: "addListener",
     value: function addListener(type, listener) {
       this.on(type, listener);

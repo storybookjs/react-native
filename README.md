@@ -4,7 +4,6 @@ Storybook Channel is similar to an EventEmitter. Channels are used with Storyboo
 
 ```
 Channel {
-  connect() Promise
   addListener(type, listener)
   emit(type, ...args)
   eventNames()
@@ -23,8 +22,7 @@ The channel takes a Transport object as a parameter which will be used to send/r
 
 ```
 Transport {
-  connect() Promise
-  send(event) Promise
+  send(event)
   setHandler(handler)
 }
 ```

@@ -7,25 +7,13 @@ describe('Channel', function () {
   let channel = null;
 
   beforeEach(function () {
-    transport = {
-      setHandler: sinon.spy(),
-      connect: sinon.spy(),
-      send: sinon.spy(),
-    };
+    transport = { setHandler: sinon.spy(), send: sinon.spy() };
     channel = new Channel({ transport });
   });
 
   describe('constructor', function () {
     it('should set the handler', function () {
       expect(transport.setHandler.calledOnce).to.equal(true);
-    });
-  });
-
-  describe('method:connect', function () {
-    it('should call transport.connect', function () {
-      transport.connect = sinon.spy();
-      channel.connect();
-      expect(transport.connect.calledOnce).to.equal(true);
     });
   });
 
