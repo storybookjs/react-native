@@ -55,7 +55,7 @@ export default class Channel {
     if (!type) {
       this._listeners = {};
     } else if (this._listeners[type]) {
-      this._listeners[type] = [];
+      delete this._listeners[type];
     }
   }
 
