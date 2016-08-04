@@ -1,31 +1,61 @@
 import React from 'react';
-import PropEditor from './components/PropEditor';
+import Panel from './components/Panel';
+import addons from '@kadira/storybook-addons';
+import Wrap from './components/Wrap';
 
-export function addWithKnobs(storyName, storyFn) {
-  const initialValues = {};
+const initialFields = {};
+const fields = {};
 
-  const recordInitialValues = (name, initial, type) => {
-    let value = initial;
-    if (type === 'object') {
-      value = JSON.stringify(value, null, 4);
-    }
+export function register() {
+  addons.register('kadirahq/storybook-addon-knobs', () => {
+    const channel = addons.getChannel();
 
-    initialValues[name] = {
-      name,
-      value,
-      type,
-      valid: true,
+    const onChange = ({ name, value }) => {
+      let _value = value;
+      if (fields[name].type === 'object') {
+        try {
+          _value = eval(`(${value})`); // eslint-disable-line no-eval
+        } catch (e) {
+          return;
+        }
+      }
+      fields[name].value = _value;
     };
 
-    return initial;
-  };
+    addons.addPanel('kadirahq/storybook-addon-knobs', {
+      title: 'Knobs',
+      render: () => (
+        <Panel
+          channel={channel}
+          initialFields={initialFields}
+          onChange={onChange}
+        />
+      ),
+    });
+  });
+}
 
-  // Call storyFn once to get the initial values. Just ignore the result of
-  // this call.
-  const dummyContext = {}; // TODO: Find if this object needs some fields inside
-  storyFn(dummyContext, recordInitialValues);
+export function createKnob(name, value, type) {
+  if (fields[name]) {
+    return fields[name].value;
+  }
 
-  this.add(storyName, (context) => (
-    <PropEditor storyFn={storyFn} context={context} initialValues={initialValues} />
-  ));
+  fields[name] = { name, value, type };
+
+  let formatedValue = value;
+  if (type === 'object') {
+    formatedValue = JSON.stringify(value);
+  }
+
+  initialFields[name] = { name, value: formatedValue, type };
+
+  return value;
+}
+
+export function wrap(storyFn) {
+  const channel = addons.getChannel();
+
+  return (context) => (
+    <Wrap context={context} storyFn={storyFn} channel={channel} />
+  );
 }
