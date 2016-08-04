@@ -25,6 +25,7 @@ The channel takes a Transport object as a parameter which will be used to send/r
 Transport {
   connect() Promise
   send(event) Promise
+  setHandler(handler)
 }
 ```
 
