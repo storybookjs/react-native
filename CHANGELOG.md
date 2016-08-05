@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.1.1
+05-Aug-2016
+
+Update react-fuzzy to version 0.3.3.
+
 ### v3.1.0
 05-Aug-2016
 
