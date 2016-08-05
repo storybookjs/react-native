@@ -4,8 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:9999',
-    'webpack/hot/only-dev-server',
+    require.resolve('webpack-dev-server/client') + '?http://localhost:9999',
     './client/index'
   ],
   output: {
@@ -19,7 +18,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: 'babel',
+      loader: require.resolve('babel-loader'),
       query: { presets: ['react', 'es2015', 'stage-0'] },
       include: [
         path.join(__dirname, 'client'),

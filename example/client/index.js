@@ -5,9 +5,3 @@ import Provider from './provider';
 
 const rootEl = document.getElementById('root');
 renderStorybookUI(rootEl, new Provider());
-
-if (module.hot) {
-  module.hot.accept(() => {
-    window.location.reload();
-  });
-}
