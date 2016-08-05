@@ -1,6 +1,6 @@
 ## Changelog
 
-### v.NEXT
+### v2.2.0
 05-August-2016
 
 This release bring some webpack config related optimizations and the NPM2 support. Here are the notable changes:
@@ -8,6 +8,7 @@ This release bring some webpack config related optimizations and the NPM2 suppor
 * Use es6-shim directly into webpack config. [PR355](https://github.com/kadirahq/react-storybook/pull/355)
 * Use the default babel-config based on CRA's config. [PR354](https://github.com/kadirahq/react-storybook/pull/354)
 * Add NPM2 support. [PR356](https://github.com/kadirahq/react-storybook/pull/356)
+* Add autofixer defaults. [PR357](https://github.com/kadirahq/react-storybook/pull/357)
 
 ### v2.1.1
 03-August-2016
