@@ -41,7 +41,9 @@ module.exports = function (storybookBaseConfig) {
   }]);
 
   newConfig.postcss = function () {
-    return [_autoprefixer2.default];
+    return [(0, _autoprefixer2.default)({
+      browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+    })];
   };
 
   newConfig.resolve = {
