@@ -1,4 +1,3 @@
-import 'es6-shim';
 import StoryStore from './story_store';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';

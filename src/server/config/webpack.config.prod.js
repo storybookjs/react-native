@@ -3,8 +3,11 @@ import webpack from 'webpack';
 import { includePaths, excludePaths } from './paths';
 
 const entries = {
-  preview: [],
+  preview: [
+    path.resolve(__dirname, './polyfills'),
+  ],
   manager: [
+    path.resolve(__dirname, './polyfills'),
     path.resolve(__dirname, '../../client/manager'),
   ],
 };

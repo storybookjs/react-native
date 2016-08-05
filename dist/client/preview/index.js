@@ -9,8 +9,6 @@ var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
 
-require('es6-shim');
-
 var _story_store = require('./story_store');
 
 var _story_store2 = _interopRequireDefault(_story_store);

@@ -1,7 +1,5 @@
 'use strict';
 
-require('es6-shim');
-
 var _storybookUi = require('@kadira/storybook-ui');
 
 var _storybookUi2 = _interopRequireDefault(_storybookUi);
