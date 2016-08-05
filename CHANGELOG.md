@@ -1,5 +1,12 @@
 ## Change Log
 
+### v3.1.0
+05-Aug-2016
+
+Add support for NPM2.
+
+Basically, we remove the NPM3 from the package.json's engine. We also changed the example app to work with NPM2.
+
 ### v3.0.0
 
 * Remove Action Logger and add support for custom panels [PR22](https://github.com/kadirahq/storybook-ui/pull/22)
