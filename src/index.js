@@ -14,13 +14,14 @@ export default {
       ...defaultOptions,
       ..._options
     };
-    
+
     this.add(storyName, (context) => {
       let info = _info;
       let storyFn = _storyFn;
-      
+
       if (typeof storyFn !== 'function') {
         if (typeof info === 'function') {
+          options = storyFn;
           storyFn = info;
           info = '';
         } else {
