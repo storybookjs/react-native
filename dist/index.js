@@ -29,23 +29,21 @@ var defaultOptions = {
 
 exports.default = {
   addWithInfo: function addWithInfo(storyName, info, storyFn, _options) {
+    if (typeof storyFn !== 'function') {
+      if (typeof info === 'function') {
+        _options = storyFn;
+        storyFn = info;
+        info = '';
+      } else {
+        throw new Error('No story defining function has been specified');
+      }
+    }
+
     var options = (0, _extends3.default)({}, defaultOptions, _options);
 
     this.add(storyName, function (context) {
-      var _info = info;
-      var _storyFn = storyFn;
-
-      if (typeof storyFn !== 'function') {
-        if (typeof info === 'function') {
-          _storyFn = info;
-          _info = '';
-        } else {
-          throw new Error('No story defining function has been specified');
-        }
-      }
-
       var props = {
-        _info: _info,
+        info: info,
         context: context,
         showInline: Boolean(options.inline),
         showHeader: Boolean(options.header),
@@ -56,7 +54,7 @@ exports.default = {
       return _react2.default.createElement(
         Story,
         props,
-        _storyFn(context)
+        storyFn(context)
       );
     });
   }
