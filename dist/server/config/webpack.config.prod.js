@@ -45,7 +45,7 @@ var config = {
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loader: 'babel',
+      loader: require.resolve('babel-loader'),
       query: require('./babel.prod.js'),
       include: _paths.includePaths,
       exclude: _paths.excludePaths

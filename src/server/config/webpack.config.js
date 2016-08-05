@@ -7,13 +7,13 @@ const config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
     manager: [
-      path.resolve(__dirname, './polyfills'),
-      path.resolve(__dirname, '../../client/manager'),
+      require.resolve('./polyfills'),
+      require.resolve('../../client/manager'),
     ],
     preview: [
-      path.resolve(__dirname, './polyfills'),
-      path.resolve(__dirname, './error_enhancements'),
-      'webpack-hot-middleware/client?noInfo=true',
+      require.resolve('./polyfills'),
+      require.resolve('./error_enhancements'),
+      `${require.resolve('webpack-hot-middleware/client')}?noInfo=true`,
     ],
   },
   output: {
@@ -30,7 +30,7 @@ const config = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: require.resolve('babel-loader'),
         query: require('./babel.js'),
         include: includePaths,
         exclude: excludePaths,

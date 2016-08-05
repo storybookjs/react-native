@@ -41,7 +41,7 @@ exports.default = function (configType, baseConfig, configDir) {
     var err = new Error('=> Create a storybook config file in "' + configDir + '/config.js".');
     throw err;
   }
-  config.entry.preview.push(storybookConfigPath);
+  config.entry.preview.push(require.resolve(storybookConfigPath));
 
   // Check whether addons.js file exists inside the storybook.
   // Load the default addons.js file if it's missing.

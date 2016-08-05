@@ -25,7 +25,8 @@
     "@kadira/storybook-addon-actions": "^1.0.2",
     "@kadira/storybook-addon-links": "^1.0.0",
     "@kadira/storybook-addons": "^1.3.1",
-    "@kadira/storybook-ui": "^3.0.0",
+    "@kadira/storybook-ui": "^3.1.0",
+    "redux": "^3.5.2",
     "airbnb-js-shims": "^1.0.0",
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.11.4",
@@ -74,7 +75,6 @@
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-eslint": "^6.1.2",
-    "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
     "deep-equal": "^1.0.1",
@@ -94,9 +94,6 @@
     "sinon": "^1.17.3"
   },
   "main": "dist/client/index.js",
-  "engines": {
-    "npm": "^3.0.0"
-  },
   "bin": {
     "start-storybook": "./dist/server/index.js",
     "build-storybook": "./dist/server/build.js",

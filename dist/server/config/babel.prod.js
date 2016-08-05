@@ -14,28 +14,28 @@ module.exports = {
   babelrc: false,
   presets: [
   // let, const, destructuring, classes, modules
-  'babel-preset-es2015',
+  require.resolve('babel-preset-es2015'),
   // exponentiation
-  'babel-preset-es2016',
+  require.resolve('babel-preset-es2016'),
   // JSX, Flow
-  'babel-preset-react'],
+  require.resolve('babel-preset-react')],
   plugins: [
   // function x(a, b, c,) { }
-  'babel-plugin-syntax-trailing-function-commas',
+  require.resolve('babel-plugin-syntax-trailing-function-commas'),
   // await fetch()
-  'babel-plugin-syntax-async-functions',
+  require.resolve('babel-plugin-syntax-async-functions'),
   // class { handleClick = () => { } }
-  'babel-plugin-transform-class-properties',
+  require.resolve('babel-plugin-transform-class-properties'),
   // { ...todo, completed: true }
-  'babel-plugin-transform-object-rest-spread',
+  require.resolve('babel-plugin-transform-object-rest-spread'),
   // function* () { yield 42; yield 43; }
-  'babel-plugin-transform-regenerator',
+  require.resolve('babel-plugin-transform-regenerator'),
   // Polyfills the runtime needed for async/await and generators
-  ['babel-plugin-transform-runtime', {
+  [require.resolve('babel-plugin-transform-runtime'), {
     helpers: false,
     polyfill: false,
     regenerator: true
   }],
   // Optimization: hoist JSX that never changes out of render()
-  'babel-plugin-transform-react-constant-elements']
+  require.resolve('babel-plugin-transform-react-constant-elements')]
 };

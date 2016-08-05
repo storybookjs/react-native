@@ -23,8 +23,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    manager: [_path2.default.resolve(__dirname, './polyfills'), _path2.default.resolve(__dirname, '../../client/manager')],
-    preview: [_path2.default.resolve(__dirname, './polyfills'), _path2.default.resolve(__dirname, './error_enhancements'), 'webpack-hot-middleware/client?noInfo=true']
+    manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
+    preview: [require.resolve('./polyfills'), require.resolve('./error_enhancements'), require.resolve('webpack-hot-middleware/client') + '?noInfo=true']
   },
   output: {
     path: _path2.default.join(__dirname, 'dist'),
@@ -35,7 +35,7 @@ var config = {
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loader: 'babel',
+      loader: require.resolve('babel-loader'),
       query: require('./babel.js'),
       include: _paths.includePaths,
       exclude: _paths.excludePaths

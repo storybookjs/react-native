@@ -42,7 +42,7 @@ const config = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: require.resolve('babel-loader'),
         query: require('./babel.prod.js'),
         include: includePaths,
         exclude: excludePaths,

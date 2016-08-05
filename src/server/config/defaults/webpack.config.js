@@ -9,17 +9,21 @@ module.exports = (storybookBaseConfig) => {
     {
       test: /\.css?$/,
       include: includePaths,
-      loader: 'style!css!postcss',
+      loaders: [
+        require.resolve('style-loader'),
+        require.resolve('css-loader'),
+        require.resolve('postcss-loader'),
+      ],
     },
     {
       test: /\.json$/,
       include: includePaths,
-      loader: 'json',
+      loader: require.resolve('json-loader'),
     },
     {
       test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
       include: includePaths,
-      loader: 'file',
+      loader: require.resolve('file-loader'),
       query: {
         name: 'static/media/[name].[ext]',
       },
@@ -27,7 +31,7 @@ module.exports = (storybookBaseConfig) => {
     {
       test: /\.(mp4|webm)(\?.*)?$/,
       include: includePaths,
-      loader: 'url',
+      loader: require.resolve('url-loader'),
       query: {
         limit: 10000,
         name: 'static/media/[name].[ext]',
@@ -37,6 +41,15 @@ module.exports = (storybookBaseConfig) => {
 
   newConfig.postcss = () => {
     return [autoprefixer];
+  };
+
+  newConfig.resolve = {
+    // These are the reasonable defaults supported by the Node ecosystem.
+    extensions: ['.js', '.json', ''],
+    alias: {
+      // This is to support NPM2
+      'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
+    },
   };
 
   // Return the altered config

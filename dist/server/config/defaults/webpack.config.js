@@ -18,22 +18,22 @@ module.exports = function (storybookBaseConfig) {
   newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(newConfig.module.loaders), [{
     test: /\.css?$/,
     include: _paths.includePaths,
-    loader: 'style!css!postcss'
+    loaders: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('postcss-loader')]
   }, {
     test: /\.json$/,
     include: _paths.includePaths,
-    loader: 'json'
+    loader: require.resolve('json-loader')
   }, {
     test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
     include: _paths.includePaths,
-    loader: 'file',
+    loader: require.resolve('file-loader'),
     query: {
       name: 'static/media/[name].[ext]'
     }
   }, {
     test: /\.(mp4|webm)(\?.*)?$/,
     include: _paths.includePaths,
-    loader: 'url',
+    loader: require.resolve('url-loader'),
     query: {
       limit: 10000,
       name: 'static/media/[name].[ext]'
@@ -42,6 +42,15 @@ module.exports = function (storybookBaseConfig) {
 
   newConfig.postcss = function () {
     return [_autoprefixer2.default];
+  };
+
+  newConfig.resolve = {
+    // These are the reasonable defaults supported by the Node ecosystem.
+    extensions: ['.js', '.json', ''],
+    alias: {
+      // This is to support NPM2
+      'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator')
+    }
   };
 
   // Return the altered config
