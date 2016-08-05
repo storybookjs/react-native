@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import { includePaths } from './paths';
+import { includePaths, excludePaths } from './paths';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 
 const config = {
@@ -31,6 +31,7 @@ const config = {
         loader: 'babel',
         query: require('./babel.js'),
         include: includePaths,
+        exclude: excludePaths,
       },
     ],
   },

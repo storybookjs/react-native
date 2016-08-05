@@ -47,7 +47,8 @@ var config = {
       test: /\.jsx?$/,
       loader: 'babel',
       query: require('./babel.prod.js'),
-      include: _paths.includePaths
+      include: _paths.includePaths,
+      exclude: _paths.excludePaths
     }]
   }
 };

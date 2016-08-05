@@ -13,7 +13,7 @@ var _paths = require('../paths');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Add a default custom config which is similar to what React Create App does.
-module.exports = function (storybookBaseConfig, configType) {
+module.exports = function (storybookBaseConfig) {
   var newConfig = storybookBaseConfig;
   newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(newConfig.module.loaders), [{
     test: /\.css?$/,

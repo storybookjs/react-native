@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import { includePaths } from './paths';
+import { includePaths, excludePaths } from './paths';
 
 const entries = {
   preview: [],
@@ -42,6 +42,7 @@ const config = {
         loader: 'babel',
         query: require('./babel.prod.js'),
         include: includePaths,
+        exclude: excludePaths,
       },
     ],
   },
