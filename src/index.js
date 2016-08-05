@@ -9,27 +9,27 @@ const defaultOptions = {
 };
 
 export default {
-  addWithInfo(storyName, info, storyFn, _options) {
+  addWithInfo(storyName, _info, _storyFn, _options) {
     const options = {
       ...defaultOptions,
       ..._options
     };
     
     this.add(storyName, (context) => {
-      let _info = info;
-      let _storyFn = storyFn;
+      let info = _info;
+      let storyFn = _storyFn;
       
       if (typeof storyFn !== 'function') {
         if (typeof info === 'function') {
-          _storyFn = info;
-          _info = '';
+          storyFn = info;
+          info = '';
         } else {
           throw new Error('No story defining function has been specified');
         }
       }
 
       const props = {
-        _info,
+        info,
         context,
         showInline: Boolean(options.inline),
         showHeader: Boolean(options.header),
@@ -39,7 +39,7 @@ export default {
 
       return (
         <Story {...props}>
-          {_storyFn(context)}
+          {storyFn(context)}
         </Story>
       );
     });
