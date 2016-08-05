@@ -1,5 +1,8 @@
 # Change Log
 
+### v3.1.2
+* Fixed a bug which made the `info` to not display and the `options` parameter to be ignored when `info` is not given.[PR45](https://github.com/kadirahq/react-storybook-addon-info/pull/45)
+
 ### v3.1.1
 
 * Add a z-index for rendered items to make the overlay always display on top [PR38](https://github.com/kadirahq/react-storybook-addon-info/pull/38)
