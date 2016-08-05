@@ -16,6 +16,7 @@ var Channel = function () {
 
     _classCallCheck(this, Channel);
 
+    this._sender = this._randomId();
     this._transport = transport;
     this._transport.setHandler(this._handleEvent.bind(this));
     this._listeners = {};
@@ -33,7 +34,7 @@ var Channel = function () {
         args[_key - 1] = arguments[_key];
       }
 
-      var event = { type: type, args: args };
+      var event = { type: type, args: args, from: this._sender };
       this._transport.send(event);
     }
   }, {
@@ -96,10 +97,16 @@ var Channel = function () {
       }
     }
   }, {
+    key: "_randomId",
+    value: function _randomId() {
+      // generates a random 13 character string
+      return Math.random().toString(16).slice(2);
+    }
+  }, {
     key: "_handleEvent",
     value: function _handleEvent(event) {
       var listeners = this._listeners[event.type];
-      if (listeners) {
+      if (event.from !== this._sender && listeners) {
         listeners.forEach(function (fn) {
           return fn.apply(undefined, _toConsumableArray(event.args));
         });

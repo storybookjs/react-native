@@ -1,5 +1,6 @@
 export default class Channel {
   constructor({ transport }) {
+    this._sender = this._randomId();
     this._transport = transport;
     this._transport.setHandler(this._handleEvent.bind(this));
     this._listeners = {};
@@ -10,7 +11,7 @@ export default class Channel {
   }
 
   emit(type, ...args) {
-    const event = {type, args};
+    const event = {type, args, from: this._sender};
     this._transport.send(event);
   }
 
@@ -62,9 +63,14 @@ export default class Channel {
     }
   }
 
+  _randomId() {
+    // generates a random 13 character string
+    return Math.random().toString(16).slice(2);
+  }
+
   _handleEvent(event) {
     const listeners = this._listeners[event.type];
-    if (listeners) {
+    if (event.from !== this._sender && listeners) {
       listeners.forEach(fn => fn(...event.args));
     }
   }

@@ -32,7 +32,10 @@ describe('Channel', function () {
       channel.emit('test-type', 1, 2, 3);
       const expected = {type: 'test-type', args: [ 1, 2, 3 ]};
       expect(transport.send.calledOnce).to.equal(true);
-      expect(transport.send.args[0]).to.deep.equal([ expected ]);
+      const event = transport.send.args[0][0];
+      expect(event.from).to.be.a('string');
+      delete event.from;
+      expect(event).to.deep.equal(expected);
     });
   });
 
@@ -165,6 +168,16 @@ describe('Channel', function () {
       };
       channel.removeListener('type-2', 22);
       expect(channel._listeners).to.deep.equal(expected);
+    });
+  });
+
+  describe('_miscellaneous', function () {
+    it('should ignore if event came from itself', function () {
+      let received = [];
+      channel.on('type-1', n => received.push(n));
+      channel._handleEvent({type: 'type-1', args: [ 11 ]});
+      channel._handleEvent({type: 'type-1', args: [ 12 ], from: channel._sender});
+      expect(received).to.deep.equal([ 11 ]);
     });
   });
 });
