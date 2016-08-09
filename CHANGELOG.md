@@ -1,6 +1,12 @@
 ## Changelog
 
 ### v2.2.0
+09-August-2016
+
+* Use @kadira/storybook-channel modules. [#PR359](https://github.com/kadirahq/react-storybook/pull/359).
+* Update @kadira/storybook-ui to the latest.
+
+### v2.2.0
 05-August-2016
 
 This release bring some webpack config related optimizations and the NPM2 support. Here are the notable changes:
