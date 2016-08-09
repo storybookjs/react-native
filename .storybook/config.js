@@ -3,10 +3,7 @@
 // This is an auto generated file with React CDK.
 // Do not modify this file.
 
-import { configure, setAddon } from '@kadira/storybook';
-import { addWithKnobs } from '../src';
-
-setAddon({addWithKnobs});
+import { configure } from '@kadira/storybook';
 
 function loadStories() {
   require('../src/stories');

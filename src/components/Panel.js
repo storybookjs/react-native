@@ -13,31 +13,28 @@ export default class Panel extends React.Component {
     this.props.channel.on('addon:knobs:setFields', this._setFields);
   }
 
-  setFields(fields) {
+  setFields(_fields) {
+    const fields = _fields;
+    for (const f in fields) {
+      if (fields.hasOwnProperty(f)) {
+        if (fields[f].type === 'object') {
+          fields[f].value = JSON.stringify(fields[f].value);
+        }
+      }
+    }
     this.setState({ fields });
   }
 
   handleChange(change) {
     const { name, value } = change;
+
     const fields = this.state.fields;
-    const { type } = fields[name];
-    let valid = true;
-    if (type === 'object') {
-      try {
-        eval(`(${value})`); // eslint-disable-line no-eval
-      } catch (e) {
-        valid = false;
-      }
-    }
-
     const changedField = {};
-    changedField[name] = { ...fields[name], ...{ value, valid } };
+    changedField[name] = { ...fields[name], ...{ value } };
     const newFields = { ...fields, ...changedField };
-
     this.setState({ fields: newFields });
 
-    this.props.channel.emit('addon:knobs:propChange');
-    this.props.onChange(change);
+    this.props.channel.emit('addon:knobs:propChange', change);
   }
 
   render() {

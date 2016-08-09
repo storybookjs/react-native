@@ -19,7 +19,7 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@kadira/storybook": "^1.19.0",
+    "@kadira/storybook": "^2.1.0",
     "babel-cli": "^6.5.0",
     "babel-core": "^6.5.0",
     "babel-eslint": "^6.0.2",

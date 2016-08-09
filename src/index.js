@@ -1,61 +1,64 @@
 import React from 'react';
-import Panel from './components/Panel';
 import addons from '@kadira/storybook-addons';
+import Panel from './components/Panel';
 import Wrap from './components/Wrap';
 
-const initialFields = {};
-const fields = {};
-
-export function register() {
+function register() {
   addons.register('kadirahq/storybook-addon-knobs', () => {
     const channel = addons.getChannel();
 
-    const onChange = ({ name, value }) => {
-      let _value = value;
-      if (fields[name].type === 'object') {
-        try {
-          _value = eval(`(${value})`); // eslint-disable-line no-eval
-        } catch (e) {
-          return;
-        }
-      }
-      fields[name].value = _value;
-    };
-
     addons.addPanel('kadirahq/storybook-addon-knobs', {
       title: 'Knobs',
-      render: () => (
-        <Panel
-          channel={channel}
-          initialFields={initialFields}
-          onChange={onChange}
-        />
-      ),
+      render: () => {
+        return <Panel channel={channel} />;
+      },
     });
   });
 }
 
-export function createKnob(name, value, type) {
-  if (fields[name]) {
-    return fields[name].value;
+let knobStore = {};
+
+function createKnob(name, value, type) {
+  if (knobStore[name]) {
+    return knobStore[name].value;
   }
 
-  fields[name] = { name, value, type };
-
-  let formatedValue = value;
-  if (type === 'object') {
-    formatedValue = JSON.stringify(value);
-  }
-
-  initialFields[name] = { name, value: formatedValue, type };
-
+  knobStore[name] = { name, value, type };
   return value;
 }
 
-export function wrap(storyFn) {
+function wrap(storyFn) {
   const channel = addons.getChannel();
+  const localKnobStore = {};
 
-  return (context) => (
-    <Wrap context={context} storyFn={storyFn} channel={channel} />
-  );
+  const knobChanged = change => {
+    const { name, value } = change;
+    const { type } = localKnobStore[name];
+
+    let formatedValue = value;
+    if (type === 'object') {
+      try {
+        formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
+      } catch (e) {
+        return;
+      }
+    }
+
+    localKnobStore[name].value = formatedValue;
+  };
+
+  const storyRendered = () => {
+    channel.emit('addon:knobs:setFields', localKnobStore);
+  };
+
+
+  return context => {
+    // Change the global knobStore to the one local to this story
+    knobStore = localKnobStore;
+
+    channel.emit('addon:knobs:setFields', localKnobStore);
+    return <Wrap {...{ context, storyFn, channel, knobChanged, storyRendered }} />;
+  };
 }
+
+export { register, createKnob, wrap };
