@@ -1,13 +1,18 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 exports.default = function (provider, reduxStore, actions) {
+  var callbacks = new _events.EventEmitter();
+
   var providerApi = {
     onStory: function onStory(cb) {
-      providerApi._onStoryCallback = cb;
+      callbacks.on('story', cb);
+      return function stopListening() {
+        callbacks.removeListener('story', cb);
+      };
     },
 
 
@@ -26,8 +31,10 @@ exports.default = function (provider, reduxStore, actions) {
     var api = _reduxStore$getState.api;
 
     if (!api) return;
-    if (!providerApi._onStoryCallback) return;
 
-    providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
+    callbacks.emit('story', api.selectedKind, api.selectedStory);
+    // providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });
 };
+
+var _events = require('events');

@@ -74,7 +74,8 @@ var DownPanel = function (_Component) {
       if (this.state.current === name) {
         tabStyle = (0, _assign2.default)({}, _style2.default.tablink, _style2.default.activetab);
       }
-      var onClick = function onClick(name) {
+
+      var onClick = function onClick() {
         return function (e) {
           e.preventDefault();
           _this2.showPanel(name);
@@ -87,7 +88,8 @@ var DownPanel = function (_Component) {
           href: '#',
           key: name,
           style: tabStyle,
-          onClick: onClick(name) },
+          onClick: onClick()
+        },
         panel.title
       );
     }
@@ -152,5 +154,9 @@ var DownPanel = function (_Component) {
   }]);
   return DownPanel;
 }(_react.Component);
+
+DownPanel.propTypes = {
+  panels: _react2.default.PropTypes.object
+};
 
 exports.default = DownPanel;

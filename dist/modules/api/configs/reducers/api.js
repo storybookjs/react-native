@@ -68,10 +68,6 @@ exports.default = function () {
 
 var _actions = require('../../actions');
 
-var _deepEqual = require('deep-equal');
-
-var _deepEqual2 = _interopRequireDefault(_deepEqual);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ensureKind(storyKinds, selectedKind) {
