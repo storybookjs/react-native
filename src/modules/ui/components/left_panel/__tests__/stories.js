@@ -17,19 +17,19 @@ describe('manager.ui.components.left_panel.stories', function () {
     it('should render stories', function () {
       const data = [
         { kind: 'a', stories: ['a1', 'a2'] },
-        { kind: 'b', stories: ['b1', 'b2'] },
+        { kind: '20', stories: ['b1', 'b2'] },
       ];
       const wrap = shallow(
         <Stories
           stories={data}
-          selectedKind="b"
+          selectedKind="20"
           selectedStory="b2"
         />
       );
-      const selectedKind = wrap.find('[selectedKind]');
-      const selectedStory = wrap.find('[selectedStory]');
-      expect(selectedKind.text()).to.be.equal('b');
-      expect(selectedStory.text()).to.be.equal('b2');
+
+      const output = wrap.html();
+      expect(output).to.match(/20/);
+      expect(output).to.match(/b2/);
     });
   });
 
