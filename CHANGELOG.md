@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.0.4
+
+* Refactor source code (use separate files)
+
 ### v1.0.3
 
 * Log all arguments (only the first argument was logged previously)
