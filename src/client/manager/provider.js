@@ -1,14 +1,16 @@
-import Preview from './preview';
+import UUID from 'uuid';
 import qs from 'qs';
 import React from 'react';
 import { Provider } from '@kadira/storybook-ui';
 import addons from '@kadira/storybook-addons';
-import Channel from '../channel';
+import createChannel from '@kadira/storybook-channel-pagebus';
+import Preview from './preview';
 
 export default class ReactProvider extends Provider {
   constructor() {
     super();
-    this.channel = new Channel();
+    this.dataId = UUID.v4();
+    this.channel = createChannel({ key: this.dataId });
     addons.setChannel(this.channel);
   }
 
@@ -18,7 +20,7 @@ export default class ReactProvider extends Provider {
 
   renderPreview(selectedKind, selectedStory) {
     const queryParams = {
-      dataId: this.channel.getDataId(),
+      dataId: this.dataId,
       selectedKind,
       selectedStory,
     };

@@ -4,7 +4,7 @@ import ConfigApi from './config_api';
 import render from './render';
 import qs from 'qs';
 import init from './init';
-import Channel from '../channel';
+import createChannel from '@kadira/storybook-channel-pagebus';
 import { selectStory } from './actions';
 import addons from '@kadira/storybook-addons';
 
@@ -23,7 +23,7 @@ if (isBrowser) {
   if (!queryParams.dataId) {
     throw new Error('dataId is not supplied via queryString');
   }
-  const channel = new Channel(queryParams.dataId);
+  const channel = createChannel({ key: queryParams.dataId });
   channel.on('setCurrentStory', data => {
     reduxStore.dispatch(selectStory(data.kind, data.story));
   });

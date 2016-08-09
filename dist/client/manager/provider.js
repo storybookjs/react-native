@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _preview = require('./preview');
+var _uuid = require('uuid');
 
-var _preview2 = _interopRequireDefault(_preview);
+var _uuid2 = _interopRequireDefault(_uuid);
 
 var _qs = require('qs');
 
@@ -42,9 +42,13 @@ var _storybookAddons = require('@kadira/storybook-addons');
 
 var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
 
-var _channel = require('../channel');
+var _storybookChannelPagebus = require('@kadira/storybook-channel-pagebus');
 
-var _channel2 = _interopRequireDefault(_channel);
+var _storybookChannelPagebus2 = _interopRequireDefault(_storybookChannelPagebus);
+
+var _preview = require('./preview');
+
+var _preview2 = _interopRequireDefault(_preview);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -56,7 +60,8 @@ var ReactProvider = function (_Provider) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ReactProvider).call(this));
 
-    _this.channel = new _channel2.default();
+    _this.dataId = _uuid2.default.v4();
+    _this.channel = (0, _storybookChannelPagebus2.default)({ key: _this.dataId });
     _storybookAddons2.default.setChannel(_this.channel);
     return _this;
   }
@@ -70,7 +75,7 @@ var ReactProvider = function (_Provider) {
     key: 'renderPreview',
     value: function renderPreview(selectedKind, selectedStory) {
       var queryParams = {
-        dataId: this.channel.getDataId(),
+        dataId: this.dataId,
         selectedKind: selectedKind,
         selectedStory: selectedStory
       };
