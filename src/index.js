@@ -3,6 +3,7 @@ export class AddonStore {
     this._loaders = {};
     this._panels = {};
     this._channel = null;
+    this._preview = null;
   }
 
   getChannel() {
@@ -11,6 +12,14 @@ export class AddonStore {
 
   setChannel(channel) {
     this._channel = channel;
+  }
+
+  getPreview() {
+    return this._preview;
+  }
+
+  setPreview(preview) {
+    this._preview = preview;
   }
 
   getPanels() {
