@@ -1,18 +1,5 @@
-import React from 'react';
-import addons from '@kadira/storybook-addons';
+export const ADDON_ID = 'kadirahq/storybook-addon-links';
+export const EVENT_ID = `${ADDON_ID}/link-to-message`;
 
-export function linkTo(kind, story) {
-  return function () {
-    const channel = addons.getChannel();
-    channel.emit('addon:links', {kind, story});
-  };
-}
-
-export function register() {
-  addons.register('kadirahq/storybook-addon-links', api => {
-    const channel = addons.getChannel();
-    channel.on('addon:links', selection => {
-      api.selectStory(selection.kind, selection.story);
-    });
-  });
-}
+export { register } from './manager';
+export { linkTo } from './preview';
