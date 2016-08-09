@@ -64,17 +64,17 @@ describe('manager.api.config.initApi', () => {
 
     const reduxStore = {
       subscribe: sinon.stub(),
-      getState: () => ({api: {}}),
+      getState: () => ({ api: {} }),
     };
 
     const provider = {
       handleAPI(api) {
         let cnt = 0;
-        api.onStory((kind, story) => {
+        api.onStory(() => {
           cnt++;
         });
 
-        api.onStory((kind, story) => {
+        api.onStory(() => {
           cnt++;
           expect(cnt).to.be.equal(2);
           done();
@@ -92,18 +92,18 @@ describe('manager.api.config.initApi', () => {
 
     const reduxStore = {
       subscribe: sinon.stub(),
-      getState: () => ({api: {}}),
+      getState: () => ({ api: {} }),
     };
 
     const provider = {
       handleAPI(api) {
         let cnt = 0;
-        const stop = api.onStory((kind, story) => {
+        const stop = api.onStory(() => {
           cnt++;
         });
         stop();
 
-        api.onStory((kind, story) => {
+        api.onStory(() => {
           cnt++;
           expect(cnt).to.be.equal(1);
           done();
