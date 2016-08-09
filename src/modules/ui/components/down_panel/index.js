@@ -76,7 +76,7 @@ class DownPanel extends Component {
 }
 
 DownPanel.propTypes = {
-  panels: React.PropTypes.array,
+  panels: React.PropTypes.object,
 };
 
 export default DownPanel;
