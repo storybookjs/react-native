@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.2.0
+09-Aug-2016
+
+Support multiple callbacks for the provider's onStory callback.
+
 ### v3.1.1
 05-Aug-2016
 
