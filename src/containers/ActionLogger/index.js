@@ -1,6 +1,7 @@
 import React from 'react';
 import deepEqual from 'deep-equal';
 import ActionLoggerComponent from '../../components/ActionLogger/';
+import { EVENT_ID } from '../../';
 
 export default class ActionLogger extends React.Component {
   constructor(props, ...args) {
@@ -26,11 +27,11 @@ export default class ActionLogger extends React.Component {
   }
 
   componentDidMount() {
-    this.props.channel.on('addon:actions', this._actionListener);
+    this.props.channel.on(EVENT_ID, this._actionListener);
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener('addon:actions', this._actionListener);
+    this.props.channel.removeListener(EVENT_ID, this._actionListener);
   }
 
   render() {

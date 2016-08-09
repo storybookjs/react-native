@@ -4,7 +4,21 @@ The Action Logger addon can be used to display data received by event handlers. 
 
 ![](docs/screenshot.png)
 
-To use the action logger, import the `action` function and use it to create actions handlers. When creating action handlers, provide a name to make it easier to identify.
+## Getting Started
+
+First, install the addon
+
+```shell
+npm install -D @kadira/storybook-addon-actions
+```
+
+Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
+
+```js
+import '@kadira/storybook-addon-actions/register';
+```
+
+Import the `action` function and use it to create actions handlers. When creating action handlers, provide a name to make it easier to identify.
 
 ```js
 import { storiesOf } from '@kadira/storybook'
@@ -12,7 +26,7 @@ import { action } from '@kadira/storybook-addon-actions'
 
 storiesOf('Button', module)
   .add('default view', () => (
-    <Button onClick={ action('hello') }>
+    <Button onClick={ action('button-click') }>
       Hello World!
     </Button>
   ))

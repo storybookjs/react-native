@@ -18,6 +18,8 @@ var _ActionLogger = require('../../components/ActionLogger/');
 
 var _ActionLogger2 = _interopRequireDefault(_ActionLogger);
 
+var _ = require('../../');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -70,12 +72,12 @@ var ActionLogger = function (_React$Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.channel.on('addon:actions', this._actionListener);
+      this.props.channel.on(_.EVENT_ID, this._actionListener);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.props.channel.removeListener('addon:actions', this._actionListener);
+      this.props.channel.removeListener(_.EVENT_ID, this._actionListener);
     }
   }, {
     key: 'render',
