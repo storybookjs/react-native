@@ -22,4 +22,4 @@ Object.defineProperty(exports, 'linkTo', {
   }
 });
 var ADDON_ID = exports.ADDON_ID = 'kadirahq/storybook-addon-links';
-var EVENT_ID = exports.EVENT_ID = ADDON_ID + '/link-to-message';
+var EVENT_ID = exports.EVENT_ID = ADDON_ID + '/link-event';
