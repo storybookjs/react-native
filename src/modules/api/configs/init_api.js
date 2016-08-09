@@ -1,7 +1,14 @@
+import { EventEmitter } from 'events';
+
 export default function (provider, reduxStore, actions) {
+  const callbacks = new EventEmitter();
+
   const providerApi = {
     onStory(cb) {
-      providerApi._onStoryCallback = cb;
+      callbacks.on('story', cb);
+      return function stopListening() {
+        callbacks.removeListener('story', cb);
+      };
     },
 
     setStories: actions.api.setStories,
@@ -16,8 +23,8 @@ export default function (provider, reduxStore, actions) {
   reduxStore.subscribe(function () {
     const { api } = reduxStore.getState();
     if (!api) return;
-    if (!providerApi._onStoryCallback) return;
 
-    providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
+    callbacks.emit('story', api.selectedKind, api.selectedStory);
+    // providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });
 }

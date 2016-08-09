@@ -58,4 +58,61 @@ describe('manager.api.config.initApi', () => {
     // calling the subscription
     reduxStore.subscribe.args[0][0]();
   });
+
+  it('should support to add multiple onStory callback', (done) => {
+    const actions = { api: {}, shortcuts: {} };
+
+    const reduxStore = {
+      subscribe: sinon.stub(),
+      getState: () => ({api: {}}),
+    };
+
+    const provider = {
+      handleAPI(api) {
+        let cnt = 0;
+        api.onStory((kind, story) => {
+          cnt++;
+        });
+
+        api.onStory((kind, story) => {
+          cnt++;
+          expect(cnt).to.be.equal(2);
+          done();
+        });
+      },
+    };
+
+    initApi(provider, reduxStore, actions);
+    // calling the subscription
+    reduxStore.subscribe.args[0][0]();
+  });
+
+  it('should support a way to remove onStory callback', (done) => {
+    const actions = { api: {}, shortcuts: {} };
+
+    const reduxStore = {
+      subscribe: sinon.stub(),
+      getState: () => ({api: {}}),
+    };
+
+    const provider = {
+      handleAPI(api) {
+        let cnt = 0;
+        const stop = api.onStory((kind, story) => {
+          cnt++;
+        });
+        stop();
+
+        api.onStory((kind, story) => {
+          cnt++;
+          expect(cnt).to.be.equal(1);
+          done();
+        });
+      },
+    };
+
+    initApi(provider, reduxStore, actions);
+    // calling the subscription
+    reduxStore.subscribe.args[0][0]();
+  });
 });
