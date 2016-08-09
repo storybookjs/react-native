@@ -48,6 +48,7 @@
     "@kadira/react-split-pane": "^1.4.0",
     "babel-runtime": "^6.5.0",
     "deep-equal": "^1.0.1",
+    "events": "^1.1.1",
     "fuzzysearch": "^1.0.3",
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.1",

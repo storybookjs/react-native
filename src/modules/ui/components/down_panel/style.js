@@ -48,4 +48,4 @@ export default {
   activetab: {
     opacity: 1,
   },
-}
+};

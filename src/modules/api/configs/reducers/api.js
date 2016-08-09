@@ -1,5 +1,4 @@
 import { types } from '../../actions';
-import deepEqual from 'deep-equal';
 
 export function ensureKind(storyKinds, selectedKind) {
   if (!storyKinds) return selectedKind;

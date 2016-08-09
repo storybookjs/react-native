@@ -4,11 +4,11 @@ import style from './style';
 class DownPanel extends Component {
   constructor(props, ...args) {
     super(props, ...args);
-    this.state = {current: Object.keys(props.panels)[0]};
+    this.state = { current: Object.keys(props.panels)[0] };
   }
 
   showPanel(name) {
-    this.setState({current: name})
+    this.setState({ current: name });
   }
 
   renderTab(name, panel) {
@@ -16,22 +16,24 @@ class DownPanel extends Component {
     if (this.state.current === name) {
       tabStyle = Object.assign({}, style.tablink, style.activetab);
     }
-    const onClick = name => {
+
+    const onClick = () => {
       return e => {
         e.preventDefault();
         this.showPanel(name);
       };
-    }
+    };
 
     return (
       <a
         href="#"
         key={name}
         style={tabStyle}
-        onClick={onClick(name)}>
+        onClick={onClick()}
+      >
         {panel.title}
       </a>
-    )
+    );
   }
 
   renderTabs() {
@@ -43,10 +45,10 @@ class DownPanel extends Component {
 
   renderPanels() {
     return Object.keys(this.props.panels).sort().map(name => {
-      const panelStyle = {display: 'none'};
+      const panelStyle = { display: 'none' };
       const panel = this.props.panels[name];
       if (name === this.state.current) {
-        Object.assign(panelStyle, {flex: 1, display: 'flex'});
+        Object.assign(panelStyle, { flex: 1, display: 'flex' });
       }
       return <div key={name} style={panelStyle}>{panel.render()}</div>;
     });
@@ -72,5 +74,9 @@ class DownPanel extends Component {
     );
   }
 }
+
+DownPanel.propTypes = {
+  panels: React.PropTypes.array,
+};
 
 export default DownPanel;
