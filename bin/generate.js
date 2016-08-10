@@ -35,7 +35,7 @@ var projectType;
 var done = commandLog('Detecting project type');
 try {
   projectType = detect({
-    force: program.force,
+    force: program.force
   });
 } catch (ex) {
   done(ex.message);
