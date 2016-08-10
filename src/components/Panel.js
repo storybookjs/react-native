@@ -1,5 +1,14 @@
 import React from 'react';
 import PropForm from './PropForm';
+import tosource from 'tosource';
+
+const styles = {
+  panel: {
+    padding: '5px',
+    backgroundColor: 'rgb(247, 247, 247)',
+    width: '100%'
+  },
+};
 
 export default class Panel extends React.Component {
   constructor(props) {
@@ -18,7 +27,7 @@ export default class Panel extends React.Component {
     for (const f in fields) {
       if (fields.hasOwnProperty(f)) {
         if (fields[f].type === 'object') {
-          fields[f].value = JSON.stringify(fields[f].value);
+          fields[f].value = tosource(fields[f].value);
         }
       }
     }
@@ -39,7 +48,7 @@ export default class Panel extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={styles.panel}>
         <PropForm fields={this.state.fields} onFieldChange={this._handleChange} />
       </div>
     );

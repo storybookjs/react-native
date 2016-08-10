@@ -29,6 +29,9 @@ const stylesheet = {
     color: 'rgb(130, 130, 130)',
   },
   label: {
+    boxSizing: 'border-box',
+    paddingRight: '5px',
+    textAlign: 'right',
     display: 'inline-block',
     width: '30%',
   },

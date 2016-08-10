@@ -51,7 +51,8 @@
     "react-dom": "^0.14.7 || ^15.0.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.5.0"
+    "babel-runtime": "^6.5.0",
+    "tosource": "^1.0.0"
   },
   "main": "dist/index.js",
   "engines": {

@@ -5,7 +5,6 @@ import PropField from './PropField';
 const stylesheet = {
   propForm: {
     padding: '2px',
-    backgroundColor: 'rgb(240, 240, 240)',
   },
 };
 
