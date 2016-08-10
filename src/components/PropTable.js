@@ -8,6 +8,7 @@ for (let typeName in React.PropTypes) {
   }
   const type = React.PropTypes[typeName];
   PropTypesMap.set(type, typeName);
+  PropTypesMap.set(type.isRequired, typeName);
 }
 
 const stylesheet = {
