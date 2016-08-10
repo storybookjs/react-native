@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.3.0
+10-August-2016
+
+* Remove unused extract-text-webpack-plugin. This will add webpack2 support. [PR369](https://github.com/kadirahq/react-storybook/pull/369).
+
 ### v2.2.0
 09-August-2016
 
