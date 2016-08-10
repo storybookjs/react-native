@@ -34,7 +34,9 @@ var projectType;
 
 var done = commandLog('Detecting project type');
 try {
-  projectType = detect();
+  projectType = detect({
+    force: program.force,
+  });
 } catch (ex) {
   done(ex.message);
   process.exit(1);
@@ -42,16 +44,12 @@ try {
 done();
 
 switch (projectType) {
-  /* eslint-disable no-fallthrough */
   case types.ALREADY_HAS_STORYBOOK:
-    if (!program.force) {
-      logger.log();
-      paddedLog('There seems to be a storybook already available in this project.');
-      paddedLog('Apply following command to force:\n');
-      codeLog(['getstorybook -f']);
-      break;
-    }
-  /* eslint-enable no-fallthrough */
+    logger.log();
+    paddedLog('There seems to be a storybook already available in this project.');
+    paddedLog('Apply following command to force:\n');
+    codeLog(['getstorybook -f']);
+    break;
   case types.REACT_SCRIPTS:
     done = commandLog('Adding storybook support to your "Create React App" based project');
     require('../generators/REACT_SCRIPTS');
