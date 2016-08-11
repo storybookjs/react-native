@@ -4,7 +4,15 @@ import PropField from './PropField';
 
 const stylesheet = {
   propForm: {
-    padding: '2px',
+    fontFamily: `
+      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+    `,
+    display: 'table',
+    boxSizing: 'border-box',
+    width: '100%',
+    borderCollapse: 'separate',
+    borderSpacing: '5px',
   },
 };
 
@@ -23,10 +31,6 @@ export default class propForm extends React.Component {
     const fields = this.props.fields;
     const propArray = Object.keys(fields).map(key => (fields[key]));
 
-    if (!propArray.length) {
-      return <small>No knobs created!</small>;
-    }
-
     propArray.sort(function (a, b) {
       return a.name > b.name;
     });
@@ -34,14 +38,13 @@ export default class propForm extends React.Component {
     return (
       <form style={stylesheet.propForm}>
         {propArray.map(field => (
-          <div key={field.name}>
-            <PropField
-              name={field.name}
-              type={field.type}
-              value={field.value}
-              onChange={this._onFieldChange}
-            />
-          </div>
+          <PropField
+            key={field.name}
+            name={field.name}
+            type={field.type}
+            value={field.value}
+            onChange={this._onFieldChange}
+          />
         ))}
       </form>
     );

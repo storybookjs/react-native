@@ -8,6 +8,12 @@ const styles = {
     backgroundColor: 'rgb(247, 247, 247)',
     width: '100%'
   },
+  resetButton: {
+    color: 'rgb(130, 130, 130)',
+    float: 'right',
+    marginRight: '5px',
+    marginTop: '5px',
+  }
 };
 
 export default class Panel extends React.Component {
@@ -15,6 +21,7 @@ export default class Panel extends React.Component {
     super(props);
     this._handleChange = this.handleChange.bind(this);
     this._setFields = this.setFields.bind(this);
+    this._reset = this.reset.bind(this);
     this.state = { fields: this.props.initialFields || {} };
   }
 
@@ -34,6 +41,10 @@ export default class Panel extends React.Component {
     this.setState({ fields });
   }
 
+  reset() {
+    this.props.channel.emit('addon:knobs:reset');
+  }
+
   handleChange(change) {
     const { name, value } = change;
 
@@ -50,13 +61,13 @@ export default class Panel extends React.Component {
     return (
       <div style={styles.panel}>
         <PropForm fields={this.state.fields} onFieldChange={this._handleChange} />
+        <button style={styles.resetButton} onClick={this._reset}>RESET</button>
       </div>
     );
   }
 }
 
 Panel.propTypes = {
-  initialFields: React.PropTypes.object,
-  onChange: React.PropTypes.func,
   channel: React.PropTypes.object,
+  onReset: React.PropTypes.object,
 };

@@ -2,38 +2,40 @@ import React from 'react';
 
 const stylesheet = {
   input: {
+    display: 'table-cell',
     boxSizing: 'border-box',
-    display: 'inline-block',
     height: '26px',
+    width: '100%',
     outline: 'none',
     border: '0px',
     fontSize: '12px',
     padding: '5px',
-    width: '70%',
     color: 'rgb(130, 130, 130)',
   },
   textarea: {
+    display: 'table-cell',
     boxSizing: 'border-box',
     verticalAlign: 'middle',
-    display: 'inline-block',
-    height: '100px',
+    minHeight: '100px',
+    width: '100%',
     outline: 'none',
     border: '0px',
     fontSize: '12px',
     padding: '5px',
-    width: '70%',
     color: 'rgb(130, 130, 130)',
   },
   field: {
+    display: 'table-row',
     padding: '5px',
     color: 'rgb(130, 130, 130)',
   },
   label: {
+    display: 'table-cell',
     boxSizing: 'border-box',
     paddingRight: '5px',
     textAlign: 'right',
-    display: 'inline-block',
-    width: '30%',
+    width: '20px',
+    fontSize: '13px',
   },
 };
 
@@ -77,7 +79,7 @@ export default class PropField extends React.Component {
     return (
       <div style={stylesheet.field}>
         <label htmlFor={this.props.name} style={stylesheet.label}>
-          {`${this.props.name}: `}
+          {`${this.props.name}`}
         </label>
         { inputElem }
       </div>

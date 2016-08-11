@@ -1,7 +1,8 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import Button from './Button';
+import { storiesOf } from '@kadira/storybook';
+import { action } from '@kadira/storybook-addon-actions'
 import { createKnob, wrap } from '../index';
+import Button from './Button';
 
 storiesOf('Button', module)
   .add('default view', wrap(() => (
@@ -13,24 +14,14 @@ storiesOf('Button', module)
       {createKnob('children', 'Hello')}
     </Button>
   )))
-  .add('default view 2', wrap(() => (
+  .add('default view with different knobs', wrap(() => (
     <Button
       onClick={ action('button clicked') }
-      color={createKnob('color', '#fff')}
-      style={createKnob('style', { width: '70px' }, 'object')}
+      color={createKnob('color', '#abc')}
     >
-      {createKnob('children', 'Hello')}
+      {createKnob('text', 'Hello')}
     </Button>
   )))
-  .add('default view 3', wrap(() => (
-    <Button
-      onClick={ action('button clicked') }
-      color={createKnob('paata', '#fff')}
-      style={createKnob('style', { width: '70px' }, 'object')}
-    >
-      This is not a knob
-    </Button>
-  )))
-  .add('some emojies as the text', () => (
-    <Button>😀 😎 👍 💯</Button>
+  .add('Story without any knobs', () => (
+    <Button>Hello</Button>
   ));
