@@ -49,6 +49,7 @@ for (var typeName in _react2.default.PropTypes) {
   }
   var type = _react2.default.PropTypes[typeName];
   PropTypesMap.set(type, typeName);
+  PropTypesMap.set(type.isRequired, typeName);
 }
 
 var stylesheet = {
