@@ -52,6 +52,54 @@ Then you'll get a UI like this:
 
 > **See the [example](/example) app for a complete example.**
 
+## API
+
+### .setOptions([option])
+
+```js
+//-------------
+handleAPI(api) {
+  api.setOptions{
+    name: 'My Component', // change the name displayed in the left top portion
+    url: 'https://github.com/user/my-component' // change its URL
+  }
+}
+```
+
+## .setStories([stories])
+
+This API is used to pass the`kind` and `stories` list to storybook-ui.
+
+```js
+handleAPI(api) {
+  api.setStories([
+    {
+      kind: 'Component 1',
+      stories: ['State 1', 'State 2']
+    },
+
+    {
+      kind: 'Component 2',
+      stories: ['State a', 'State b']
+    }
+  ]
+}
+```
+
+## .onStory()
+
+You can use to listen to the story change and update the preview.
+
+```js
+handleAPI(api) {
+  api.onStory((kind, story) => {
+      this.globalState.emit('change', kind, story);
+  });
+}
+```
+
+
+
 ## Hacking Guide
 
 If you like to add features to the Storybook UI or fix bugs, this is the guide you need to follow.
