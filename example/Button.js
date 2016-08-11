@@ -6,11 +6,14 @@ const Button = ({ disabled, label, style, onClick }) => (
   </button>
 );
 
-Button.propTypes = {
-  label: React.PropTypes.string.isRequired,
-  style: React.PropTypes.object,
-  disabled: React.PropTypes.bool,
-  onClick: React.PropTypes.func,
-};
+Object.assign(Button, {
+  displayName: 'Button',
+  propTypes: {
+    label: React.PropTypes.string.isRequired,
+    style: React.PropTypes.object,
+    disabled: React.PropTypes.bool,
+    onClick: React.PropTypes.func,
+  },
+});
 
 export default Button;
