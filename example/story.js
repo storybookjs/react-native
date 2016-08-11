@@ -1,88 +1,207 @@
 import React from 'react';
-import Button from './Button';
 import { storiesOf, action } from '@kadira/storybook';
+import {Code as myCode} from './myCode';
 
-storiesOf('Button')
+storiesOf('Syntax highlighter examples')
   .addWithInfo(
-    'simple usage',
+    'HTML',
     `
-      This is the basic usage with the button with providing a label to show the text.
-    `,
-    () => (
+      example text. example text. example text. example text. 
+      example text. vLinkcolorexample text. 
+      example text. 
+
+      ~~~html
+      //js
+      var a = 5;
+      var b = 'test test test';
+      
+      //JSX + ES6
       <div>
-        <Button label="The Button" onClick={action('onClick')}/>
-        <br />
-        <p>
-          Click the "?" mark at top-right to view the info.
-        </p>
+         <Button label='The Button' onClick={action('onClick')}/>
+         <br/> 
       </div>
-    ),
-  );
-
-storiesOf('Button')
-  .addWithInfo(
-    'simple usage (inline info)',
-    `
-      This is the basic usage with the button with providing a label to show the text.
+      () => (
+         <LookupCombo rowToString={ (row) => row.name } rows={dataObjects} />
+      )
+      //HTML
+      <h1>React JSX</h1>
+      <p>To use this language, use the class "language-jsx".</p>
+      <h2>Full example</h2>
+      ~~~
+      example text. 
+      example text. 
+      example text. 
+      example text. 
     `,
-    () => (<Button label="The Button" onClick={action('onClick')}/>),
-    { inline: true },
+    () => (<div/>),
+    { inline: true, propTables: [], source: false},
+	{code: myCode}
   );
 
-storiesOf('Button')
+  storiesOf('Syntax highlighter examples')
   .addWithInfo(
-    'simple usage (disable source)',
+    'JS',
     `
-      This is the basic usage with the button with providing a label to show the text.
-    `,
-    () => (<Button label="The Button" onClick={action('onClick')}/>),
-    { source: false, inline: true },
-  );
-
-storiesOf('Button')
-  .addWithInfo(
-    'simple usage (no header)',
-    `
-      This is the basic usage with the button with providing a label to show the text.
-    `,
-    () => (<Button label="The Button" onClick={action('onClick')}/>),
-    { header: false, inline: true },
-  );
-
-storiesOf('Button')
-  .addWithInfo(
-    'simple usage (no prop tables)',
-    `
-      This is the basic usage with the button with providing a label to show the text.
-    `,
-    () => (<Button label="The Button" onClick={action('onClick')}/>),
-    { propTables: false, inline: true },
-  );
-
-storiesOf('Button')
-  .addWithInfo(
-    'simple usage (custom propTables)',
-    `
-      This is the basic usage with the button with providing a label to show the text.
-
-      Since, the story source code is wrapped inside a div, info addon can't figure out propTypes on it's own.
-      So, we need to give relevant React component classes manually using \`propTypes\` option as shown below:
+      example text. example text. example text. example text. 
+      example text. vLinkcolorexample text. 
+      example text. 
 
       ~~~js
-      storiesOf('Button')
-        .addWithInfo(
-          'simple usage (custom propTables)',
-          <info>,
-          <storyFn>,
-          { inline: true, propTables: [Button]}
-        );
-      ~~~
-    `,
-    () => (
+      //js
+      var a = 5;
+      var b = 'test test test';
+      
+      //JSX + ES6
       <div>
-        <Button label="The Button" onClick={action('onClick')}/>
-        <br />
+         <Button label='The Button' onClick={action('onClick')}/>
+         <br/> 
       </div>
-    ),
-    { inline: true, propTables: [Button]}
+      () => (
+         <LookupCombo rowToString={ (row) => row.name } rows={dataObjects} />
+      )
+      //HTML
+      <h1>React JSX</h1>
+      <p>To use this language, use the class "language-jsx".</p>
+      <h2>Full example</h2>
+      ~~~
+      example text. 
+      example text. 
+      example text. 
+      example text. 
+    `,
+    () => (<div/>),
+    { inline: true, propTables: [], source: false},
+	{code: myCode}
+  );
+  
+  storiesOf('Syntax highlighter examples')
+  .addWithInfo(
+    'JSX',
+    `
+      example text. example text. example text. example text. 
+      example text. vLinkcolorexample text. 
+      example text. 
+
+      ~~~jsx
+      //js
+      var a = 5;
+      var b = 'test test test';
+      
+      //JSX + ES6
+      <div>
+         <Button label='The Button' onClick={action('onClick')}/>
+         <br/> 
+      </div>
+      () => (
+         <LookupCombo rowToString={ (row) => row.name } rows={dataObjects} />
+      )
+      //HTML
+      <h1>React JSX</h1>
+      <p>To use this language, use the class "language-jsx".</p>
+      <h2>Full example</h2>
+      ~~~
+      example text. 
+      example text. 
+      example text. 
+      example text. 
+    `,
+    () => (<div/>),
+    { inline: true, propTables: [], source: false},
+	{code: myCode}
+  );
+  
+  storiesOf('Syntax highlighter examples')
+  .addWithInfo(
+    'CSS',
+    `
+      example text. example text. example text. example text. 
+      example text. vLinkcolorexample text. 
+      example text. 
+
+      ~~~css
+      /*CSS*/
+      #somediv {
+         -webkit-border-radius: 20px;
+         -moz-border-radius: 20px;
+         border-radius: 20px;
+      }
+      
+      .someClass {
+         -webkit-transition: all 0.5s ease-in;
+         -moz-transition: all 0.5s ease-in;
+         -o-transition: all 0.5s ease-in;
+         -ms-transition: all 0.5s ease-in;
+         transition: all 0.5s ease-in;
+      }
+	  
+      #somediv:hover {
+         opacity: 0;
+      }
+
+      /*LESS*/
+      .border-radius (@radius: 5px) {
+         -webkit-border-radius: @radius;
+         -moz-border-radius: @radius;
+         border-radius: @radius;
+      }
+      #somediv {
+         .border-radius(20px);
+      }
+      ~~~
+      example text. 
+      example text. 
+      example text. 
+      example text.
+    `,
+    () => (<div/>),
+    { inline: true, propTables: [], source: false},
+	{code: myCode}
+  );
+  
+storiesOf('Syntax highlighter examples')
+  .addWithInfo(
+    'LESS',
+    `
+      example text. example text. example text. example text. 
+      example text. vLinkcolorexample text. 
+      example text. 
+
+      ~~~less
+      /*CSS*/
+      #somediv {
+         -webkit-border-radius: 20px;
+         -moz-border-radius: 20px;
+         border-radius: 20px;
+      }
+      
+      .someClass {
+         -webkit-transition: all 0.5s ease-in;
+         -moz-transition: all 0.5s ease-in;
+         -o-transition: all 0.5s ease-in;
+         -ms-transition: all 0.5s ease-in;
+         transition: all 0.5s ease-in;
+      }
+	  
+      #somediv:hover {
+         opacity: 0;
+      }
+
+      /*LESS*/
+      .border-radius (@radius: 5px) {
+         -webkit-border-radius: @radius;
+         -moz-border-radius: @radius;
+         border-radius: @radius;
+      }
+      #somediv {
+         .border-radius(20px);
+      }
+      ~~~
+      example text. 
+      example text. 
+      example text. 
+      example text.
+    `,
+    () => (<div/>),
+    { inline: true, propTables: [], source: false},
+	{code: myCode}
   );
