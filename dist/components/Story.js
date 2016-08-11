@@ -341,7 +341,7 @@ var Story = function (_React$Component) {
     value: function _getPropTables() {
       var types = new _map2.default();
 
-      if (this.props.propTables === false) {
+      if (this.props.propTables === null) {
         return null;
       }
 
