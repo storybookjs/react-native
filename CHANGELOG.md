@@ -1,10 +1,17 @@
 # Change Log
 
+### v3.1.4
+
+* Remove propTables prop validation warning [PR53](https://github.com/kadirahq/react-storybook-addon-info/pull/53)
+* Update example storybook [PR52](https://github.com/kadirahq/react-storybook-addon-info/pull/52)
+
 ### v3.1.3
+
 * Fix wrong detection of propType when isRequired is set [PR49](https://github.com/kadirahq/react-storybook-addon-info/pull/49)
 * Add displayName for Button [PR51](https://github.com/kadirahq/react-storybook-addon-info/pull/51)
 
 ### v3.1.2
+
 * Fixed a bug which made the `info` to not display and the `options` parameter to be ignored when `info` is not given.[PR45](https://github.com/kadirahq/react-storybook-addon-info/pull/45)
 
 ### v3.1.1
