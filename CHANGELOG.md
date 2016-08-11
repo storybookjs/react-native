@@ -5,7 +5,7 @@
 
 * Remove unused extract-text-webpack-plugin. This will add webpack2 support. [PR369](https://github.com/kadirahq/react-storybook/pull/369).
 
-### v2.2.0
+### v2.2.1
 09-August-2016
 
 * Use @kadira/storybook-channel modules. [#PR359](https://github.com/kadirahq/react-storybook/pull/359).
