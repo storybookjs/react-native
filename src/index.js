@@ -24,7 +24,7 @@ const defaultMtrcConf = {
 };
 
 export default {
-  addWithInfo(storyName, info, storyFn, _options, _mtrcConf) {
+  addWithInfo(storyName, info, storyFn, _options) {
     
     if (typeof storyFn !== 'function') {
       if (typeof info === 'function') {
@@ -48,6 +48,11 @@ export default {
       options.propTables = null;
     }
   
+    const mtrcConf = { ...defaultMtrcConf };
+    if (_options && _options.mtrcConf) {
+      Object.assign(mtrcConf, _options.mtrcConf);
+    }
+	
     this.add(storyName, (context) => {
       const props = {
         info,
@@ -56,10 +61,7 @@ export default {
         showHeader: Boolean(options.header),
         showSource: Boolean(options.source),
         propTables: options.propTables,
-        mtrcConf: {
-          ...defaultMtrcConf,
-          ..._mtrcConf
-        }
+        mtrcConf
       };
 
       return (
