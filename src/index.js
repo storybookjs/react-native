@@ -6,13 +6,13 @@ import Wrap from './components/Wrap';
 let knobStore = {};
 
 function register() {
-  addons.register('kadirahq/storybook-addon-knobs', () => {
+  addons.register('kadirahq/storybook-addon-knobs', api => {
     const channel = addons.getChannel();
 
     addons.addPanel('kadirahq/storybook-addon-knobs', {
       title: 'Knobs',
       render: () => {
-        return <Panel channel={channel} />;
+        return <Panel channel={channel} api={api}/>;
       },
     });
   });

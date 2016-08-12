@@ -8,12 +8,24 @@ const styles = {
     backgroundColor: 'rgb(247, 247, 247)',
     width: '100%'
   },
+  noKnobs: {
+    fontFamily: `
+      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+    `,
+    display: 'inline',
+    backgroundColor: 'rgb(247, 247, 247)',
+    width: '100%',
+    textAlign: 'center',
+    color: 'rgb(190, 190, 190)',
+    padding: '10px',
+  },
   resetButton: {
     color: 'rgb(130, 130, 130)',
     float: 'right',
     marginRight: '5px',
     marginTop: '5px',
-  }
+  },
 };
 
 export default class Panel extends React.Component {
@@ -27,6 +39,9 @@ export default class Panel extends React.Component {
 
   componentDidMount() {
     this.props.channel.on('addon:knobs:setFields', this._setFields);
+    this.props.api.onStory(() => {
+      this.setState({ fields: false });
+    })
   }
 
   setFields(_fields) {
@@ -58,6 +73,12 @@ export default class Panel extends React.Component {
   }
 
   render() {
+    if(!this.state.fields){
+      return (
+        <div style={styles.noKnobs}>NO KNOBS</div>
+      );
+    }
+
     return (
       <div style={styles.panel}>
         <PropForm fields={this.state.fields} onFieldChange={this._handleChange} />
