@@ -3,6 +3,7 @@ import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
 import Node from './Node';
 import { baseFonts } from './theme';
+import { Pre } from './markdown';
 
 const stylesheet = {
   link: {
@@ -80,11 +81,7 @@ export default class Story extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = { open: false };
-	MTRC.configure(this.props.mtrcConf);
-  }
-  
-  componentWillReciveProps(newProps){
-	  
+    MTRC.configure(this.props.mtrcConf);
   }
 
   _renderStory() {
