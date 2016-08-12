@@ -1,6 +1,6 @@
 import React from 'react';
 import _Story from './components/Story';
-import { H1, H2, H3, H4, H5, H6, Code, Pre, P, UL, A, LI } from './components/markdown';
+import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
 export const Story = _Story;
 
 const defaultOptions = {
