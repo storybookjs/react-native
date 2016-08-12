@@ -210,7 +210,7 @@ export default class Story extends React.Component {
   _getPropTables() {
     const types = new Map();
 
-    if (this.props.propTables === false) {
+    if (this.props.propTables === null) {
       return null;
     }
 

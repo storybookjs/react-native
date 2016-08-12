@@ -21,30 +21,36 @@ const defaultMtrcConf = {
   a: A,
   li: LI,
   ul: UL,
- };
+};
 
 export default {
   addWithInfo(storyName, info, storyFn, _options, _mtrcConf) {
+    
+    if (typeof storyFn !== 'function') {
+      if (typeof info === 'function') {
+        _options = storyFn;
+        storyFn = info;
+        info = '';
+      } else {
+        throw new Error('No story defining function has been specified');
+      }
+    }
+
     const options = {
       ...defaultOptions,
       ..._options
     };
-    
+  
+    // props.propTables can only be either an array of components or null
+    // propTables option is allowed to be set to 'false' (a boolean)
+    // if the option is false, replace it with null to avoid react warnings
+    if (!options.propTables) {
+      options.propTables = null;
+    }
+  
     this.add(storyName, (context) => {
-      let _info = info;
-      let _storyFn = storyFn;
-      
-      if (typeof storyFn !== 'function') {
-        if (typeof info === 'function') {
-          _storyFn = info;
-          _info = '';
-        } else {
-          throw new Error('No story defining function has been specified');
-        }
-      }
-
       const props = {
-        info: _info,
+        info,
         context,
         showInline: Boolean(options.inline),
         showHeader: Boolean(options.header),
@@ -55,9 +61,10 @@ export default {
           ..._mtrcConf
         }
       };
+
       return (
         <Story {...props}>
-          {_storyFn(context)}
+          {storyFn(context)}
         </Story>
       );
     });
