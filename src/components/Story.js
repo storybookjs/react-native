@@ -224,22 +224,23 @@ export default class Story extends React.Component {
       });
     }
 
+    // depth-first traverse and collect types
     function extract(children) {
-      const type = children.type;
-
+      if (!children) {
+        return;
+      }
       if (Array.isArray(children)) {
         children.forEach(extract);
         return;
       }
+      if (children.props && children.props.children) {
+        extract(children.props.children);
+      }
       if (typeof children === 'string' || typeof children.type === 'string') {
         return;
       }
-
-      if (!types.has(type)) {
-        types.set(type, true);
-      }
-      if (children.props.children) {
-        extract(children.props.children);
+      if (children.type && !types.has(children.type)) {
+        types.set(children.type, true);
       }
     }
 
