@@ -56,26 +56,11 @@ var _Node = require('./Node');
 
 var _Node2 = _interopRequireDefault(_Node);
 
-var _markdown = require('./markdown');
-
 var _theme = require('./theme');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _markdown = require('./markdown');
 
-_markdownToReactComponents2.default.configure({
-  h1: _markdown.H1,
-  h2: _markdown.H2,
-  h3: _markdown.H3,
-  h4: _markdown.H4,
-  h5: _markdown.H5,
-  h6: _markdown.H6,
-  code: _markdown.Code,
-  // pre: Pre,
-  p: _markdown.P,
-  a: _markdown.A,
-  li: _markdown.LI,
-  ul: _markdown.UL
-});
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var stylesheet = {
   link: {
@@ -163,6 +148,7 @@ var Story = function (_React$Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Story)).call.apply(_Object$getPrototypeO, [this].concat(args)));
 
     _this.state = { open: false };
+    _markdownToReactComponents2.default.configure(_this.props.mtrcConf);
     return _this;
   }
 
@@ -438,11 +424,13 @@ Story.propTypes = {
   showInline: _react2.default.PropTypes.bool,
   showHeader: _react2.default.PropTypes.bool,
   showSource: _react2.default.PropTypes.bool,
-  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array])
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array]),
+  mtrcConf: _react2.default.PropTypes.object
 };
 
 Story.defaultProps = {
   showInline: false,
   showHeader: true,
-  showSource: true
+  showSource: true,
+  mtrcConf: {}
 };
