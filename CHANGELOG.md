@@ -1,5 +1,10 @@
 # Change Log
 
+### v3.2.0
+
+* Support custom MTRC config [PR54](https://github.com/kadirahq/react-storybook-addon-info/pull/54)
+* Fix propTables prop validation with a default value [PR55](https://github.com/kadirahq/react-storybook-addon-info/pull/55)
+
 ### v3.1.4
 
 * Remove propTables prop validation warning [PR53](https://github.com/kadirahq/react-storybook-addon-info/pull/53)
