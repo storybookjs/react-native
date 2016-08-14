@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.2.1
+
+* Handle false values for types [PR54](https://github.com/kadirahq/react-storybook-addon-info/pull/54)
+
 ### v3.2.0
 
 * Support custom MTRC config [PR54](https://github.com/kadirahq/react-storybook-addon-info/pull/54)
