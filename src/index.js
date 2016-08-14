@@ -7,6 +7,7 @@ const defaultOptions = {
   inline: false,
   header: true,
   source: true,
+  propTables: [],
 };
 
 const defaultMtrcConf = {
@@ -44,7 +45,7 @@ export default {
     // props.propTables can only be either an array of components or null
     // propTables option is allowed to be set to 'false' (a boolean)
     // if the option is false, replace it with null to avoid react warnings
-    if (options.propTables === false) {
+    if (!options.propTables) {
       options.propTables = null;
     }
 
