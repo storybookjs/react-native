@@ -25,7 +25,7 @@ const defaultMtrcConf = {
 
 export default {
   addWithInfo(storyName, info, storyFn, _options) {
-    
+
     if (typeof storyFn !== 'function') {
       if (typeof info === 'function') {
         _options = storyFn;
@@ -40,19 +40,19 @@ export default {
       ...defaultOptions,
       ..._options
     };
-  
+
     // props.propTables can only be either an array of components or null
     // propTables option is allowed to be set to 'false' (a boolean)
     // if the option is false, replace it with null to avoid react warnings
-    if (!options.propTables) {
+    if (options.propTables === false) {
       options.propTables = null;
     }
-  
+
     const mtrcConf = { ...defaultMtrcConf };
     if (_options && _options.mtrcConf) {
       Object.assign(mtrcConf, _options.mtrcConf);
     }
-	
+
     this.add(storyName, (context) => {
       const props = {
         info,
