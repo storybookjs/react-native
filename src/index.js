@@ -4,4 +4,4 @@ export const PANEL_ID = `${ADDON_ID}/actions-panel`;
 export const EVENT_ID = `${ADDON_ID}/action-event`;
 
 export { register } from './manager';
-export { action } from './preview';
+export { action, decorateAction } from './preview';
