@@ -2,23 +2,8 @@ import React from 'react';
 import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
 import Node from './Node';
-import { H1, H2, H3, H4, H5, H6, Code, Pre, P, UL, A, LI } from './markdown';
 import { baseFonts } from './theme';
-
-MTRC.configure({
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  h4: H4,
-  h5: H5,
-  h6: H6,
-  code: Code,
-  // pre: Pre,
-  p: P,
-  a: A,
-  li: LI,
-  ul: UL,
-});
+import { Pre } from './markdown';
 
 const stylesheet = {
   link: {
@@ -96,6 +81,7 @@ export default class Story extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = { open: false };
+    MTRC.configure(this.props.mtrcConf);
   }
 
   _renderStory() {
@@ -309,10 +295,12 @@ Story.propTypes = {
     React.PropTypes.object,
     React.PropTypes.array,
   ]),
+  mtrcConf: React.PropTypes.object
 };
 
 Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
+  mtrcConf: {}
 };
