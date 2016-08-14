@@ -30,7 +30,8 @@ var Story = exports.Story = _Story3.default;
 var defaultOptions = {
   inline: false,
   header: true,
-  source: true
+  source: true,
+  propTables: []
 };
 
 var defaultMtrcConf = {
