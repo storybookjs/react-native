@@ -12,7 +12,7 @@ function register() {
     addons.addPanel('kadirahq/storybook-addon-knobs', {
       title: 'Knobs',
       render: () => {
-        return <Panel channel={channel} api={api}/>;
+        return <Panel channel={channel} api={api} />;
       },
     });
   });

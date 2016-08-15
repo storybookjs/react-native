@@ -15,7 +15,7 @@ export default class Wrap extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this._knobsAreReset) {
+    if (this._knobsAreReset) {
       this.props.knobsReset();
       this._knobsAreReset = false;
     }
@@ -28,13 +28,13 @@ export default class Wrap extends React.Component {
 
   knobChanged(change) {
     const success = this.props.knobChanged(change);
-    if(success) {
+    if (success) {
       // Only update if the knob change is valid
       this.forceUpdate();
     }
   }
 
-  resetKnobs(change) {
+  resetKnobs() {
     this._knobsAreReset = true;
     this.props.resetKnobs();
     this.forceUpdate();

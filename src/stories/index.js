@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { action } from '@kadira/storybook-addon-actions'
+import { action } from '@kadira/storybook-addon-actions';
 import { createKnob, wrap } from '../index';
 import Button from './Button';
 

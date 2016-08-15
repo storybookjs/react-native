@@ -126,5 +126,5 @@ PropField.propTypes = {
     React.PropTypes.string,
     React.PropTypes.number,
     React.PropTypes.bool,
-  ]).isRequired
+  ]).isRequired,
 };

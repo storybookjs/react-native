@@ -6,7 +6,7 @@ const styles = {
   panel: {
     padding: '5px',
     backgroundColor: 'rgb(247, 247, 247)',
-    width: '100%'
+    width: '100%',
   },
   noKnobs: {
     fontFamily: `
@@ -34,14 +34,14 @@ export default class Panel extends React.Component {
     this._handleChange = this.handleChange.bind(this);
     this._setFields = this.setFields.bind(this);
     this._reset = this.reset.bind(this);
-    this.state = { fields: this.props.initialFields || {} };
+    this.state = { fields: {} };
   }
 
   componentDidMount() {
     this.props.channel.on('addon:knobs:setFields', this._setFields);
     this.props.api.onStory(() => {
       this.setState({ fields: false });
-    })
+    });
   }
 
   setFields(_fields) {
@@ -73,7 +73,7 @@ export default class Panel extends React.Component {
   }
 
   render() {
-    if(!this.state.fields){
+    if (!this.state.fields) {
       return (
         <div style={styles.noKnobs}>NO KNOBS</div>
       );
@@ -91,4 +91,5 @@ export default class Panel extends React.Component {
 Panel.propTypes = {
   channel: React.PropTypes.object,
   onReset: React.PropTypes.object,
+  api: React.PropTypes.object,
 };
