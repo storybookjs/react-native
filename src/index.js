@@ -1,31 +1,68 @@
 import React from 'react';
-import PropEditor from './components/PropEditor';
+import addons from '@kadira/storybook-addons';
+import Panel from './components/Panel';
+import Wrap from './components/Wrap';
 
-export function addWithKnobs(storyName, storyFn) {
-  const initialValues = {};
+let knobStore = {};
 
-  const recordInitialValues = (name, initial, type) => {
-    let value = initial;
+function register() {
+  addons.register('kadirahq/storybook-addon-knobs', api => {
+    const channel = addons.getChannel();
+
+    addons.addPanel('kadirahq/storybook-addon-knobs', {
+      title: 'Knobs',
+      render: () => {
+        return <Panel channel={channel} api={api} />;
+      },
+    });
+  });
+}
+
+function createKnob(name, value, type) {
+  if (knobStore[name]) {
+    return knobStore[name].value;
+  }
+
+  knobStore[name] = { name, value, type };
+  return value;
+}
+
+function wrap(storyFn) {
+  const channel = addons.getChannel();
+  let localKnobStore = {};
+
+  const knobChanged = change => {
+    const { name, value } = change;
+    const { type } = localKnobStore[name];
+
+    let formatedValue = value;
     if (type === 'object') {
-      value = JSON.stringify(value, null, 4);
+      try {
+        formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
+      } catch (e) {
+        return false;
+      }
     }
 
-    initialValues[name] = {
-      name,
-      value,
-      type,
-      valid: true,
-    };
-
-    return initial;
+    localKnobStore[name].value = formatedValue;
+    return true;
   };
 
-  // Call storyFn once to get the initial values. Just ignore the result of
-  // this call.
-  const dummyContext = {}; // TODO: Find if this object needs some fields inside
-  storyFn(dummyContext, recordInitialValues);
+  const knobsReset = () => {
+    channel.emit('addon:knobs:setFields', localKnobStore);
+  };
 
-  this.add(storyName, (context) => (
-    <PropEditor storyFn={storyFn} context={context} initialValues={initialValues} />
-  ));
+  const resetKnobs = () => {
+    knobStore = localKnobStore = {};
+  };
+
+  return context => {
+    // Change the global knobStore to the one local to this story
+    knobStore = localKnobStore;
+
+    channel.emit('addon:knobs:setFields', localKnobStore);
+    return <Wrap {...{ context, storyFn, channel, knobChanged, knobsReset, resetKnobs }} />;
+  };
 }
+
+export { register, createKnob, wrap };

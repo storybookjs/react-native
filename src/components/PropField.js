@@ -2,46 +2,55 @@ import React from 'react';
 
 const stylesheet = {
   input: {
-    boxSizing: 'border-box',
-    display: 'inline-block',
-    height: '26px',
-    outline: 'none',
-    border: '0px',
-    fontSize: '12px',
-    padding: '5px',
-    width: '70%',
-    color: 'rgb(130, 130, 130)',
-  },
-  textarea: {
+    display: 'table-cell',
     boxSizing: 'border-box',
     verticalAlign: 'middle',
-    display: 'inline-block',
-    height: '100px',
+    height: '26px',
+    width: '100%',
     outline: 'none',
     border: '0px',
     fontSize: '12px',
     padding: '5px',
-    width: '70%',
     color: 'rgb(130, 130, 130)',
   },
   field: {
+    display: 'table-row',
     padding: '5px',
     color: 'rgb(130, 130, 130)',
   },
   label: {
-    display: 'inline-block',
-    width: '30%',
+    display: 'table-cell',
+    boxSizing: 'border-box',
+    paddingRight: '5px',
+    textAlign: 'right',
+    width: '20px',
+    fontSize: '13px',
   },
 };
+
+stylesheet.textarea = {
+  ...stylesheet.input,
+  height: '100px',
+}
+
+stylesheet.checkbox = {
+  ...stylesheet.input,
+  width: 'auto',
+}
 
 export default class PropField extends React.Component {
   constructor(props) {
     super(props);
     this._onChange = this.onChange.bind(this);
+    this._onChangeBool = this.onChangeBool.bind(this);
   }
 
   onChange(e) {
     this.props.onChange(this.props.name, e.target.value);
+  }
+
+  onChangeBool(e) {
+    this.props.onChange(this.props.name, e.target.checked);
   }
 
   render() {
@@ -71,10 +80,35 @@ export default class PropField extends React.Component {
       );
     }
 
+    if (type === 'number') {
+      inputElem = (
+        <input
+          id={this.props.name}
+          style={stylesheet.input}
+          value={this.props.value}
+          type="number"
+          onChange={this._onChange}
+        />
+      );
+    }
+
+    if (type === 'boolean') {
+      inputElem = (
+        <input
+          id={this.props.name}
+          style={stylesheet.checkbox}
+          checked={this.props.value}
+          value={this.props.value}
+          type="checkbox"
+          onChange={this._onChangeBool}
+        />
+      );
+    }
+
     return (
       <div style={stylesheet.field}>
         <label htmlFor={this.props.name} style={stylesheet.label}>
-          {`${this.props.name}: `}
+          {`${this.props.name}`}
         </label>
         { inputElem }
       </div>
@@ -84,7 +118,11 @@ export default class PropField extends React.Component {
 
 PropField.propTypes = {
   name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string,
   onChange: React.PropTypes.func.isRequired,
+  type: React.PropTypes.oneOf(['text', 'object', 'number', 'boolean']),
+  value: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number,
+    React.PropTypes.bool,
+  ]).isRequired,
 };
