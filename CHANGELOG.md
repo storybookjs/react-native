@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.2.3
+15-August-2016
+
+* Add a hash to media file's filename. Otherwise, it'll cause issues when there are multiple images with the same filename but in different directories. [PR380](https://github.com/kadirahq/react-storybook/pull/380)
+
 ### v2.2.2
 10-August-2016
 
