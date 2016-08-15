@@ -13,18 +13,6 @@ const stylesheet = {
     padding: '5px',
     color: 'rgb(130, 130, 130)',
   },
-  textarea: {
-    display: 'table-cell',
-    boxSizing: 'border-box',
-    verticalAlign: 'middle',
-    minHeight: '100px',
-    width: '100%',
-    outline: 'none',
-    border: '0px',
-    fontSize: '12px',
-    padding: '5px',
-    color: 'rgb(130, 130, 130)',
-  },
   field: {
     display: 'table-row',
     padding: '5px',
@@ -39,6 +27,16 @@ const stylesheet = {
     fontSize: '13px',
   },
 };
+
+stylesheet.textarea = {
+  ...stylesheet.input,
+  height: '100px',
+}
+
+stylesheet.checkbox = {
+  ...stylesheet.input,
+  width: 'auto',
+}
 
 export default class PropField extends React.Component {
   constructor(props) {
@@ -98,7 +96,7 @@ export default class PropField extends React.Component {
       inputElem = (
         <input
           id={this.props.name}
-          style={stylesheet.input}
+          style={stylesheet.checkbox}
           checked={this.props.value}
           value={this.props.value}
           type="checkbox"
