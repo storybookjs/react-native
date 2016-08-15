@@ -9,10 +9,11 @@ const buttonStyles = {
   padding: '3px 10px',
 };
 
-const Button = ({ onClick, style, color = '#FFFFFF', children = 'Button' }) => (
+const Button = ({ onClick, style, color = '#FFFFFF', width = 70, children = 'Button', disabled = false }) => (
   <button
-    style={{ ...buttonStyles, ...style, ...{ backgroundColor: color } }}
+    style={{ ...buttonStyles, ...style, ...{ backgroundColor: color, width: `${width}px` } }}
     onClick={onClick}
+    disabled={disabled}
   >
     {children}
   </button>
@@ -22,6 +23,8 @@ Button.propTypes = {
   children: React.PropTypes.string.isRequired,
   onClick: React.PropTypes.func,
   color: React.PropTypes.string,
+  number: React.PropTypes.number,
+  disabled: React.PropTypes.bool,
   style: React.PropTypes.object,
 };
 

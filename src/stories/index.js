@@ -8,7 +8,6 @@ storiesOf('Button', module)
   .add('default view', wrap(() => (
     <Button
       onClick={ action('button clicked') }
-      color={createKnob('color', '#fff')}
       style={createKnob('style', { width: '70px' }, 'object')}
     >
       {createKnob('children', 'Hello')}
@@ -18,6 +17,8 @@ storiesOf('Button', module)
     <Button
       onClick={ action('button clicked') }
       color={createKnob('color', '#abc')}
+      width={createKnob('width(px)', 70, 'number')}
+      disabled={createKnob('disabled', false, 'boolean')}
     >
       {createKnob('text', 'Hello')}
     </Button>

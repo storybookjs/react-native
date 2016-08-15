@@ -4,6 +4,7 @@ const stylesheet = {
   input: {
     display: 'table-cell',
     boxSizing: 'border-box',
+    verticalAlign: 'middle',
     height: '26px',
     width: '100%',
     outline: 'none',
@@ -43,10 +44,15 @@ export default class PropField extends React.Component {
   constructor(props) {
     super(props);
     this._onChange = this.onChange.bind(this);
+    this._onChangeBool = this.onChangeBool.bind(this);
   }
 
   onChange(e) {
     this.props.onChange(this.props.name, e.target.value);
+  }
+
+  onChangeBool(e) {
+    this.props.onChange(this.props.name, e.target.checked);
   }
 
   render() {
@@ -76,6 +82,31 @@ export default class PropField extends React.Component {
       );
     }
 
+    if (type === 'number') {
+      inputElem = (
+        <input
+          id={this.props.name}
+          style={stylesheet.input}
+          value={this.props.value}
+          type="number"
+          onChange={this._onChange}
+        />
+      );
+    }
+
+    if (type === 'boolean') {
+      inputElem = (
+        <input
+          id={this.props.name}
+          style={stylesheet.input}
+          checked={this.props.value}
+          value={this.props.value}
+          type="checkbox"
+          onChange={this._onChangeBool}
+        />
+      );
+    }
+
     return (
       <div style={stylesheet.field}>
         <label htmlFor={this.props.name} style={stylesheet.label}>
@@ -89,7 +120,11 @@ export default class PropField extends React.Component {
 
 PropField.propTypes = {
   name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string,
   onChange: React.PropTypes.func.isRequired,
+  type: React.PropTypes.oneOf(['text', 'object', 'number', 'boolean']),
+  value: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number,
+    React.PropTypes.bool,
+  ]).isRequired
 };
