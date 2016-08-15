@@ -28,7 +28,7 @@ module.exports = function (storybookBaseConfig) {
     include: _paths.includePaths,
     loader: require.resolve('file-loader'),
     query: {
-      name: 'static/media/[name].[ext]'
+      name: 'static/media/[name].[hash:8].[ext]'
     }
   }, {
     test: /\.(mp4|webm)(\?.*)?$/,
@@ -36,7 +36,7 @@ module.exports = function (storybookBaseConfig) {
     loader: require.resolve('url-loader'),
     query: {
       limit: 10000,
-      name: 'static/media/[name].[ext]'
+      name: 'static/media/[name].[hash:8].[ext]'
     }
   }]);
 
