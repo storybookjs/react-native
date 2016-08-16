@@ -27,11 +27,25 @@ var _package2 = _interopRequireDefault(_package);
 
 var _utils = require('./utils');
 
+var _track_usage = require('./track_usage');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('--dont-track', 'Do not send anonymous usage stats').option('--do-track', 'Send anonymous usage stats').parse(process.argv);
+
+if (_commander2.default.dontTrack) {
+  (0, _track_usage.dontTrack)();
+  logger.info('Storybook would not send anonymous usage stats anymore.');
+  process.exit(0);
+}
+
+if (_commander2.default.doTrack) {
+  (0, _track_usage.dontTrack)(false);
+  logger.info('Storybook would send anonymous usage to getstorybooks.io.');
+  process.exit(0);
+}
 
 if (!_commander2.default.port) {
   logger.error('Error: port to run Storybook is required!\n');
@@ -71,5 +85,6 @@ app.listen.apply(app, listenAddr.concat([function (error) {
   } else {
     var address = 'http://' + (_commander2.default.host || 'localhost') + ':' + _commander2.default.port + '/';
     logger.info('\nReact Storybook started on => ' + address + '\n');
+    (0, _track_usage.track)();
   }
 }]));
