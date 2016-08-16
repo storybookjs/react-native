@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.3.0
+16-August-2016
+
+* Implement anonymous usage tracking. [PR384](https://github.com/kadirahq/react-storybook/pull/384)
+
 ### v2.2.3
 15-August-2016
 
