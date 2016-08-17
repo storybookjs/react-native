@@ -2,9 +2,15 @@ import DownPanel from '../components/down_panel';
 import { useDeps, composeAll } from 'mantra-core';
 import reduxComposer from '../libs/redux_composer';
 
-export function composer({}, { context }) {
+export function composer({ ui }, { context, actions }) {
+  const panels = context().provider.getPanels();
+  const actionMap = actions();
+  const selectedPanel = ui.selectedDownPanel || Object.keys(panels)[0];
+
   return {
-    panels: context().provider.getPanels(),
+    panels,
+    selectedPanel,
+    onPanelSelect: actionMap.ui.selectDownPanel,
   };
 }
 

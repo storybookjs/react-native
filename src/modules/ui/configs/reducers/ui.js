@@ -13,6 +13,13 @@ export default function (state = defaultState, action) {
       };
     }
 
+    case types.SELECT_BOTTOM_PANEL: {
+      return {
+        ...state,
+        selectedDownPanel: action.panelName,
+      };
+    }
+
     case types.TOGGLE_SHORTCUTS_HELP: {
       return {
         ...state,

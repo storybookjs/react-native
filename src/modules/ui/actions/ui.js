@@ -13,4 +13,11 @@ export default {
       type: types.TOGGLE_SHORTCUTS_HELP,
     });
   },
+
+  selectDownPanel({ reduxStore }, panelName) {
+    reduxStore.dispatch({
+      type: types.SELECT_BOTTOM_PANEL,
+      panelName,
+    });
+  },
 };
