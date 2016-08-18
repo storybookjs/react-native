@@ -5,7 +5,7 @@ import reduxComposer from '../libs/redux_composer';
 export function composer({ ui }, { context, actions }) {
   const panels = context().provider.getPanels();
   const actionMap = actions();
-  const selectedPanel = ui.selectedDownPanel || Object.keys(panels)[0];
+  const selectedPanel = ui.selectedDownPanel;
 
   return {
     panels,
