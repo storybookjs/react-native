@@ -24,6 +24,9 @@ describe('manager.ui.config.handle_routing', () => {
           showLeftPanel: true,
           downPanelInRight: true,
         },
+        ui: {
+          selectedDownPanel: 'pp',
+        },
       };
 
       const reduxStore = {
@@ -31,7 +34,7 @@ describe('manager.ui.config.handle_routing', () => {
       };
 
       const pushState = {
-        url: '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1',
+        url: '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp',
         selectedKind: 'kk',
         selectedStory: 'ss',
         full: false,
@@ -60,9 +63,13 @@ describe('manager.ui.config.handle_routing', () => {
         shortcuts: {
           setLayout: sinon.mock(),
         },
+        ui: {
+          selectDownPanel: sinon.mock(),
+        },
       };
 
-      const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0';
+      const url =
+        '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test';
 
       const location = {
         search: url,
@@ -72,6 +79,7 @@ describe('manager.ui.config.handle_routing', () => {
 
       expect(actions.api.selectStory.callCount).to.be.equal(1);
       expect(actions.shortcuts.setLayout.callCount).to.be.equal(1);
+      expect(actions.ui.selectDownPanel.callCount).to.be.equal(1);
       /* eslint-disable no-unused-expressions */
       expect(actions.shortcuts.setLayout.calledWith({
         goFullScreen: true,
@@ -79,6 +87,7 @@ describe('manager.ui.config.handle_routing', () => {
         showLeftPanel: false,
         downPanelInRight: false,
       })).to.be.true;
+      expect(actions.ui.selectDownPanel.calledWith('test')).to.be.true;
       /* eslint-enable no-unused-expressions */
     });
   });
