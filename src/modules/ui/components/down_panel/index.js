@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import style from './style';
 
 class DownPanel extends Component {
-  constructor(props, ...args) {
-    super(props, ...args);
-    this.state = { current: Object.keys(props.panels)[0] };
-  }
-
   renderTab(name, panel) {
     let tabStyle = style.tablink;
     if (this.props.selectedPanel === name) {
