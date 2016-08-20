@@ -94,6 +94,7 @@ Rather than creating extensions yourself, you can use extensions available below
 * [Display internationalized components in different locales](https://github.com/Tarabyte/react-storybook-addon-intl)
 * [Handling stubbed relay data](https://github.com/orta/react-storybooks-relay-container)
 * [Write tests directly inside stories](https://github.com/mthuret/storybook-addon-specifications)
+* [Preview your components on different background colors](https://github.com/jakelazaroff/react-storybook-decorator-background)
 
 > Feel free to include your extension to the above list and share it with other. <br/>
 > Just make it available on NPM (and GitHub) and send a PR to this page.
