@@ -83,7 +83,7 @@ This is the starting of the next major version of React Storybook. This version 
 
 ### v1.39.0
 
-* Update @kadira/storybook-ui to get featues from [v2.5.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v250) and [v2.6.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v260).
+* Update @kadira/storybook-ui to get features from [v2.5.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v250) and [v2.6.0](https://github.com/kadirahq/storybook-ui/blob/master/CHANGELOG.md#v260).
 
 ### v1.38.3
 
@@ -232,7 +232,7 @@ This is the starting of the next major version of React Storybook. This version 
 09-May-2016
 
 * Add shortcuts to jump to previous and next stories. See [PR176](https://github.com/kadirahq/react-storybook/pull/176)
-* Fix loader concatentation bug specially when custom config doesn't have a loaders section. [PR173](https://github.com/kadirahq/react-storybook/pull/173)
+* Fix loader concatenation bug specially when custom config doesn't have a loaders section. [PR173](https://github.com/kadirahq/react-storybook/pull/173)
 
 ### v1.22.1
 06-May-2016
