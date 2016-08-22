@@ -8,7 +8,8 @@ React Storybook decorator to center components.
 npm i @kadira/react-storybook-decorator-centered
 ```
 
-Then add the decorator like this:
+#### As a decorator
+You can set the decorator locally:
 
 ```js
 import React from 'react';
@@ -22,7 +23,7 @@ storiesOf('MyComponent', module)
   .add('with some props', () => (<MyComponent text="The Comp"/>));
 ```
 
-You can also add this decorator globally like this:
+Or you can also add this decorator globally:
 
 ```js
 import { configure, addDecorator } from '@kadira/storybook';
@@ -33,4 +34,36 @@ addDecorator(centered);
 configure(function () {
   ...
 }, module);
+```
+
+#### As an extension
+1 - Configure the extension
+
+```js
+import React from 'react';
+import { configure, setAddon } from '@kadira/storybook';
+import centered from '@kadira/react-storybook-decorator-centered';
+
+setAddon({
+  addCentered(storyName, storyFn) {
+    this.add(storyName, (context) => (
+      centered.call(context, storyFn)
+    ));
+  }
+});
+
+configure(function () {
+  ...
+}, module);
+```
+
+2 - Use it in your story
+
+```js
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
+import MyComponent from '../my_component';
+
+storiesOf('MyComponent', module)
+  .addCentered('without props', () => (<MyComponent />))
 ```
