@@ -14,25 +14,6 @@ const style = {
   justifyContent: 'center',
 };
 
-const panels = {
-  test1: {
-    title: 'Test 1',
-    render: () => <div style={style}>I</div>,
-  },
-  test2: {
-    title: 'Test 2',
-    render: () => <div style={style}>II</div>,
-  },
-  test3: {
-    title: 'Test 3',
-    render: () => <div style={style}>III</div>,
-  },
-  test4: {
-    title: 'Test 4',
-    render: () => <div style={style}>IV</div>,
-  },
-}
-
 export default class ReactProvider extends Provider {
   constructor() {
     super();
@@ -40,6 +21,35 @@ export default class ReactProvider extends Provider {
   }
 
   getPanels() {
+    const panels = {
+      test1: {
+        title: 'Test 1',
+        render: () => {
+          let inp;
+          return (
+            <div style={style}>
+              <input
+                ref={i => {inp=i}}
+                value={this.api.getQueryParam("text")===undefined ? 'ONE' : this.api.getQueryParam("text")}
+                onChange={() => {this.api.setQueryParams({text: inp.value})}}>
+              </input>
+            </div>
+          );
+        },
+      },
+      test2: {
+        title: 'Test 2',
+        render: () => <div style={style}>II</div>,
+      },
+      test3: {
+        title: 'Test 3',
+        render: () => <div style={style}>III</div>,
+      },
+      test4: {
+        title: 'Test 4',
+        render: () => <div style={style}>IV</div>,
+      },
+    }
     return panels;
   }
 
