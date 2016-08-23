@@ -12,7 +12,7 @@ var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
 
-var _paths = require('./paths');
+var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,7 +29,7 @@ var config = {
     filename: 'static/[name].bundle.js',
     publicPath: '/'
   },
-  plugins: [new _webpack2.default.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }), new _webpack2.default.optimize.OccurrenceOrderPlugin(), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
+  plugins: [new _webpack2.default.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
     compress: {
       screw_ie8: true,
       warnings: false
@@ -47,10 +47,16 @@ var config = {
       test: /\.jsx?$/,
       loader: require.resolve('babel-loader'),
       query: require('./babel.prod.js'),
-      include: _paths.includePaths,
-      exclude: _paths.excludePaths
+      include: _utils.includePaths,
+      exclude: _utils.excludePaths
     }]
   }
 };
+
+// Webpack 2 doesn't have a OccurenceOrderPlugin plugin in the production mode.
+// But webpack 1 has it. That's why we do this.
+if (_utils.OccurenceOrderPlugin) {
+  config.plugins.unshift(new _utils.OccurenceOrderPlugin());
+}
 
 exports.default = config;

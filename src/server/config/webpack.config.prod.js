@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import { includePaths, excludePaths } from './paths';
+import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
 const entries = {
   preview: [
@@ -22,7 +22,6 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -50,5 +49,11 @@ const config = {
     ],
   },
 };
+
+// Webpack 2 doesn't have a OccurenceOrderPlugin plugin in the production mode.
+// But webpack 1 has it. That's why we do this.
+if (OccurenceOrderPlugin) {
+  config.plugins.unshift(new OccurenceOrderPlugin());
+}
 
 export default config;

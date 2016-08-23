@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import { includePaths, excludePaths } from './paths';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
 const config = {
   devtool: '#cheap-module-eval-source-map',
@@ -22,7 +22,7 @@ const config = {
     publicPath: '/',
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
   ],

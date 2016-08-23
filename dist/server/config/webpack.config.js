@@ -12,11 +12,11 @@ var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
 
-var _paths = require('./paths');
-
 var _caseSensitivePathsWebpackPlugin = require('case-sensitive-paths-webpack-plugin');
 
 var _caseSensitivePathsWebpackPlugin2 = _interopRequireDefault(_caseSensitivePathsWebpackPlugin);
+
+var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31,14 +31,14 @@ var config = {
     filename: 'static/[name].bundle.js',
     publicPath: '/'
   },
-  plugins: [new _webpack2.default.optimize.OccurenceOrderPlugin(), new _webpack2.default.HotModuleReplacementPlugin(), new _caseSensitivePathsWebpackPlugin2.default()],
+  plugins: [new _utils.OccurenceOrderPlugin(), new _webpack2.default.HotModuleReplacementPlugin(), new _caseSensitivePathsWebpackPlugin2.default()],
   module: {
     loaders: [{
       test: /\.jsx?$/,
       loader: require.resolve('babel-loader'),
       query: require('./babel.js'),
-      include: _paths.includePaths,
-      exclude: _paths.excludePaths
+      include: _utils.includePaths,
+      exclude: _utils.excludePaths
     }]
   }
 };

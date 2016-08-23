@@ -8,7 +8,7 @@ var _autoprefixer = require('autoprefixer');
 
 var _autoprefixer2 = _interopRequireDefault(_autoprefixer);
 
-var _paths = require('../paths');
+var _utils = require('../utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17,22 +17,22 @@ module.exports = function (storybookBaseConfig) {
   var newConfig = storybookBaseConfig;
   newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(newConfig.module.loaders), [{
     test: /\.css?$/,
-    include: _paths.includePaths,
+    include: _utils.includePaths,
     loaders: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('postcss-loader')]
   }, {
     test: /\.json$/,
-    include: _paths.includePaths,
+    include: _utils.includePaths,
     loader: require.resolve('json-loader')
   }, {
     test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
-    include: _paths.includePaths,
+    include: _utils.includePaths,
     loader: require.resolve('file-loader'),
     query: {
       name: 'static/media/[name].[hash:8].[ext]'
     }
   }, {
     test: /\.(mp4|webm)(\?.*)?$/,
-    include: _paths.includePaths,
+    include: _utils.includePaths,
     loader: require.resolve('url-loader'),
     query: {
       limit: 10000,
