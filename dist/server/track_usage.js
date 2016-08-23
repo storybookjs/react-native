@@ -42,8 +42,9 @@ var logger = console; // ### WHAT?
 // ### CAN I STOP THIS?
 //
 // You(or your company) may have certain policies.
-// If so, you can stop sending these metrics. Simply run:
-//    start-storybook --dont-track
+// If so, you can stop sending these metrics.
+// To do that, use --dont-track flag when running React Storybook.
+//    start-storybook --dont-track -p 9001
 
 // ### HELP US?
 //
@@ -54,6 +55,8 @@ var logger = console; // ### WHAT?
 // service around it. With that, we could continue to maintain and
 // improve Storybook.
 
+var DONT_TRACK = false;
+
 function getStore() {
   var key = 'react-storybook-usage';
   var store = new _configstore2.default(key);
@@ -61,6 +64,8 @@ function getStore() {
 }
 
 function track() {
+  if (DONT_TRACK) return;
+
   var store = getStore();
 
   // Just a hash to aggregate metrics. Don't use any personal info.
@@ -69,22 +74,6 @@ function track() {
     userId = _uuid2.default.v4();
     store.set('userId', userId);
   }
-
-  if (store.get('dontTrack')) {
-    // Here we'll try to send a one last ping saying you are asked to don't track.
-    // We used this to identify the ratio of dontTrack.
-    if (!store.get('notifiedDontTrack')) {
-      // We don't wanna worry about the success or failure of this.
-      _request2.default.post('https://ping.getstorybook.io/react-storybook-dont-track', {
-        json: { userId: userId }
-      }, function () {});
-      store.set('notifiedDontTrack', true);
-    }
-    return;
-  }
-
-  // We need to clear this in case user decided to track again.
-  store.set('notifiedDontTrack', null);
 
   var pkg = require('../../package.json');
 
@@ -111,8 +100,5 @@ function track() {
 }
 
 function dontTrack() {
-  var state = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
-
-  var store = getStore();
-  store.set('dontTrack', Boolean(state));
+  DONT_TRACK = true;
 }

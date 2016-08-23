@@ -17,21 +17,12 @@ program
   .option('-h, --host [string]', 'Host to run Storybook')
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
-  .option('--dont-track', 'Do not send anonymous usage stats')
-  .option('--do-track', 'Send anonymous usage stats')
+  .option('--dont-track', 'Do not send anonymous usage stats.')
   .parse(process.argv);
 
 
 if (program.dontTrack) {
   dontTrack();
-  logger.info('Storybook would not send anonymous usage stats anymore.');
-  process.exit(0);
-}
-
-if (program.doTrack) {
-  dontTrack(false);
-  logger.info('Storybook would send anonymous usage to getstorybooks.io.');
-  process.exit(0);
 }
 
 if (!program.port) {
