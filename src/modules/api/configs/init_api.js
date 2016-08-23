@@ -29,10 +29,19 @@ export default function (provider, reduxStore, actions) {
   provider.handleAPI(providerApi);
 
   // subscribe to redux store and trigger onStory's callback
+  let currentKind;
+  let currentStory;
   reduxStore.subscribe(function () {
     const { api } = reduxStore.getState();
     if (!api) return;
 
+    if (api.selectedKind === currentKind && api.selectedStory === currentStory) {
+      // No change in the selected story so avoid emitting 'story'
+      return;
+    }
+
+    currentKind = api.selectedKind;
+    currentStory = api.selectedStory;
     callbacks.emit('story', api.selectedKind, api.selectedStory);
     // providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });

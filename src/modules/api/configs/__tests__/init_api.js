@@ -63,10 +63,14 @@ describe('manager.api.config.initApi', () => {
 
   it('should support to add multiple onStory callback', (done) => {
     const actions = { api: {}, shortcuts: {} };
+    const selectedKind = 'XXdd';
+    const selectedStory = 'u8sd';
 
     const reduxStore = {
       subscribe: sinon.stub(),
-      getState: () => ({ api: {} }),
+      getState: () => ({
+        api: { selectedKind, selectedStory },
+      }),
     };
 
     const provider = {
@@ -91,10 +95,14 @@ describe('manager.api.config.initApi', () => {
 
   it('should support a way to remove onStory callback', (done) => {
     const actions = { api: {}, shortcuts: {} };
+    const selectedKind = 'XXdd';
+    const selectedStory = 'u8sd';
 
     const reduxStore = {
       subscribe: sinon.stub(),
-      getState: () => ({ api: {} }),
+      getState: () => ({
+        api: { selectedKind, selectedStory },
+      }),
     };
 
     const provider = {
