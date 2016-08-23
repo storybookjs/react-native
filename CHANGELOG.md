@@ -2,8 +2,9 @@
 
 ### v.NEXT
 
-* Use @kadira/storybook-ui 2.3.0, which has new APIs to set URL for addons.
+* Use JSON5 instead of CJSON to parse .babelrc. [PR398](https://github.com/kadirahq/react-storybook/pull/398)
 * Add webpack2 support by changing the use of OccurenceOrderPlugin. [PR397](https://github.com/kadirahq/react-storybook/pull/397)
+* Use @kadira/storybook-ui 2.3.0, which has new APIs to set URL for addons.
 
 ### v2.3.0
 16-August-2016
