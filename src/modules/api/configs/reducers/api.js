@@ -108,6 +108,12 @@ export default function (state = defaultState, action) {
         ...action.customQueryParams,
       };
 
+      Object.keys(action.customQueryParams).forEach(key => {
+        if (newQueryParams[key] === null) {
+          delete newQueryParams[key];
+        }
+      });
+
       return {
         ...state,
         customQueryParams: newQueryParams,

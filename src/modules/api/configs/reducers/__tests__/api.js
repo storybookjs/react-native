@@ -298,4 +298,25 @@ describe('SET_QUERY_PARAMS', () => {
     const newState = reducer({ customQueryParams }, action);
     expect(newState.customQueryParams).to.eql(expected);
   });
+
+  it('should unset custom query params when the value is null', () => {
+    const customQueryParams = {
+      fooParams: 'foo',
+      barParams: 'bar',
+    };
+
+    const action = {
+      type: types.SET_QUERY_PARAMS,
+      customQueryParams: {
+        fooParams: null,
+      },
+    };
+
+    const expected = {
+      barParams: 'bar',
+    };
+
+    const newState = reducer({ customQueryParams }, action);
+    expect(newState.customQueryParams).to.eql(expected);
+  });
 });
