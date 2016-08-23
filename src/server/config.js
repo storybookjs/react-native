@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import cjson from 'cjson';
+import JSON5 from 'json5';
 
 // avoid ESLint errors
 const logger = console;
@@ -18,7 +18,7 @@ function loadBabelConfig(babelConfigPath) {
   if (fs.existsSync(babelConfigPath)) {
     const content = fs.readFileSync(babelConfigPath, 'utf-8');
     try {
-      config = cjson.parse(content);
+      config = JSON5.parse(content);
       config.babelrc = false;
       logger.info('=> Loading custom .babelrc');
     } catch (e) {

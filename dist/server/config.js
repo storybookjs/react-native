@@ -92,9 +92,9 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _cjson = require('cjson');
+var _json = require('json5');
 
-var _cjson2 = _interopRequireDefault(_cjson);
+var _json2 = _interopRequireDefault(_json);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -114,7 +114,7 @@ function loadBabelConfig(babelConfigPath) {
   if (_fs2.default.existsSync(babelConfigPath)) {
     var content = _fs2.default.readFileSync(babelConfigPath, 'utf-8');
     try {
-      config = _cjson2.default.parse(content);
+      config = _json2.default.parse(content);
       config.babelrc = false;
       logger.info('=> Loading custom .babelrc');
     } catch (e) {
