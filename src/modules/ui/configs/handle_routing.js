@@ -7,7 +7,7 @@ export function changeUrl(reduxStore) {
   // Do not change the URL if we are inside a popState event.
   if (config.insidePopState) return;
 
-  const { api, shortcuts } = reduxStore.getState();
+  const { api, shortcuts, ui } = reduxStore.getState();
   if (!api) return;
 
   const { selectedKind, selectedStory } = api;
@@ -29,7 +29,13 @@ export function changeUrl(reduxStore) {
     panelRight: Number(panelRight),
   });
 
-  const url = `?${queryString}&${layoutQuery}`;
+  const {
+    selectedDownPanel: downPanel,
+  } = ui;
+
+  const uiQuery = qs.stringify({ downPanel });
+
+  const url = `?${queryString}&${layoutQuery}&${uiQuery}`;
   const state = {
     url,
     selectedKind,
@@ -51,6 +57,7 @@ export function updateStore(queryParams, actions) {
     down,
     left,
     panelRight,
+    downPanel,
   } = queryParams;
 
   if (selectedKind && selectedStory) {
@@ -63,6 +70,8 @@ export function updateStore(queryParams, actions) {
     showLeftPanel: Boolean(Number(left)),
     downPanelInRight: Boolean(Number(panelRight)),
   });
+
+  actions.ui.selectDownPanel(downPanel);
 }
 
 export function handleInitialUrl(actions, location) {
