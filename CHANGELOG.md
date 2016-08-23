@@ -1,5 +1,11 @@
 ## Change Log
 
+### v3.3.0
+23-Aug-2016
+
+* Add 'setQueryParams' and 'getQueryParams' to api. [PR30](https://github.com/kadirahq/storybook-ui/pull/30)
+* Selected down panel in url. [PR29](https://github.com/kadirahq/storybook-ui/pull/29)
+
 ### v3.2.0
 09-Aug-2016
 
