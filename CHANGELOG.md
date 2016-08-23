@@ -1,5 +1,10 @@
 ## Changelog
 
+### v.NEXT
+
+* Use @kadira/storybook-ui 2.3.0, which has new APIs to set URL for addons.
+* Add webpack2 support by changing the use of OccurenceOrderPlugin. [PR397](https://github.com/kadirahq/react-storybook/pull/397)
+
 ### v2.3.0
 16-August-2016
 
