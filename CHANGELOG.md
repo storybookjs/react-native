@@ -1,6 +1,7 @@
 ## Changelog
 
-### v.NEXT
+### v2.4.0
+23-August-2016
 
 * Simplify the option to stop tracking. [PR399](https://github.com/kadirahq/react-storybook/pull/399)
 * Use JSON5 instead of CJSON to parse .babelrc. [PR398](https://github.com/kadirahq/react-storybook/pull/398)
