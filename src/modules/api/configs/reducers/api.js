@@ -102,6 +102,24 @@ export default function (state = defaultState, action) {
       };
     }
 
+    case types.SET_QUERY_PARAMS: {
+      const newQueryParams = {
+        ...state.customQueryParams,
+        ...action.customQueryParams,
+      };
+
+      Object.keys(action.customQueryParams).forEach(key => {
+        if (newQueryParams[key] === null) {
+          delete newQueryParams[key];
+        }
+      });
+
+      return {
+        ...state,
+        customQueryParams: newQueryParams,
+      };
+    }
+
     default:
       return state;
   }

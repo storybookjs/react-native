@@ -15,6 +15,15 @@ export default function (provider, reduxStore, actions) {
     selectStory: actions.api.selectStory,
     setOptions: actions.api.setOptions,
     handleShortcut: actions.shortcuts.handleEvent,
+    setQueryParams: actions.api.setQueryParams,
+
+    getQueryParam(key) {
+      const { api } = reduxStore.getState();
+      if (api.customQueryParams) {
+        return api.customQueryParams[key];
+      }
+      return undefined;
+    },
   };
 
   provider.handleAPI(providerApi);

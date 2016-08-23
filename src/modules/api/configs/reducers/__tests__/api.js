@@ -275,3 +275,48 @@ describe('SET OPTIONS', () => {
     expect(newState.options).to.eql(expected);
   });
 });
+
+describe('SET_QUERY_PARAMS', () => {
+  it('should set custom query params merging with the existing ones', () => {
+    const customQueryParams = {
+      fooParams: 'foo',
+      barParams: 'bar',
+    };
+
+    const action = {
+      type: types.SET_QUERY_PARAMS,
+      customQueryParams: {
+        fooParams: 'baz',
+      },
+    };
+
+    const expected = {
+      fooParams: 'baz',
+      barParams: 'bar',
+    };
+
+    const newState = reducer({ customQueryParams }, action);
+    expect(newState.customQueryParams).to.eql(expected);
+  });
+
+  it('should unset custom query params when the value is null', () => {
+    const customQueryParams = {
+      fooParams: 'foo',
+      barParams: 'bar',
+    };
+
+    const action = {
+      type: types.SET_QUERY_PARAMS,
+      customQueryParams: {
+        fooParams: null,
+      },
+    };
+
+    const expected = {
+      barParams: 'bar',
+    };
+
+    const newState = reducer({ customQueryParams }, action);
+    expect(newState.customQueryParams).to.eql(expected);
+  });
+});

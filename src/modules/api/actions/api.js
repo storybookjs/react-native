@@ -29,4 +29,11 @@ export default {
       options,
     });
   },
+
+  setQueryParams({ reduxStore }, customQueryParams) {
+    reduxStore.dispatch({
+      type: types.SET_QUERY_PARAMS,
+      customQueryParams,
+    });
+  },
 };

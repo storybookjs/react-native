@@ -70,4 +70,22 @@ describe('manager.api.actions.api', () => {
       });
     });
   });
+
+  describe('setQueryParams', () => {
+    it('should dispatch related redux action', () => {
+      const reduxStore = {
+        dispatch: sinon.stub(),
+      };
+      const customQueryParams = {
+        foo: 'bar',
+      };
+
+      actions.setQueryParams({ reduxStore }, customQueryParams);
+      const a = reduxStore.dispatch.args[0][0];
+      expect(a).to.deep.equal({
+        type: types.SET_QUERY_PARAMS,
+        customQueryParams,
+      });
+    });
+  });
 });

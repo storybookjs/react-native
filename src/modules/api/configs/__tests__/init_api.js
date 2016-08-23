@@ -9,6 +9,7 @@ describe('manager.api.config.initApi', () => {
       api: {
         setStories: sinon.stub(),
         selectStory: sinon.stub(),
+        setQueryParams: sinon.stub(),
       },
       shortcuts: {
         handleEvent: sinon.stub(),
@@ -25,6 +26,7 @@ describe('manager.api.config.initApi', () => {
         expect(api.selectStory).to.be.equal(actions.api.selectStory);
         expect(api.handleShortcut).to.be.equal(actions.shortcuts.handleEvent);
         expect(typeof api.onStory).to.be.equal('function');
+        expect(typeof api.setQueryParams).to.be.equal('function');
         done();
       },
     };
@@ -114,5 +116,33 @@ describe('manager.api.config.initApi', () => {
     initApi(provider, reduxStore, actions);
     // calling the subscription
     reduxStore.subscribe.args[0][0]();
+  });
+
+  describe('getQueryParam', () => {
+    it('should return the correct query param value', (done) => {
+      const actions = { api: {}, shortcuts: {} };
+
+      const reduxStore = {
+        subscribe: sinon.stub(),
+        getState: () => ({
+          api: {
+            customQueryParams: {
+              foo: 'foo value',
+              bar: 'bar value',
+            },
+          },
+        }),
+      };
+
+      const provider = {
+        handleAPI(api) {
+          const value = api.getQueryParam('foo');
+          expect(value).to.be.equal('foo value');
+          done();
+        },
+      };
+
+      initApi(provider, reduxStore, actions);
+    });
   });
 });

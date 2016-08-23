@@ -35,7 +35,12 @@ export function changeUrl(reduxStore) {
 
   const uiQuery = qs.stringify({ downPanel });
 
-  const url = `?${queryString}&${layoutQuery}&${uiQuery}`;
+  const {
+    customQueryParams: custom,
+  } = api;
+  const customParamsString = qs.stringify({ custom });
+
+  const url = `?${queryString}&${layoutQuery}&${uiQuery}&${customParamsString}`;
   const state = {
     url,
     selectedKind,
@@ -44,6 +49,8 @@ export function changeUrl(reduxStore) {
     down,
     left,
     panelRight,
+    downPanel,
+    custom,
   };
 
   window.history.pushState(state, '', url);
@@ -58,6 +65,7 @@ export function updateStore(queryParams, actions) {
     left,
     panelRight,
     downPanel,
+    custom,
   } = queryParams;
 
   if (selectedKind && selectedStory) {
@@ -72,6 +80,7 @@ export function updateStore(queryParams, actions) {
   });
 
   actions.ui.selectDownPanel(downPanel);
+  actions.api.setQueryParams(custom);
 }
 
 export function handleInitialUrl(actions, location) {
