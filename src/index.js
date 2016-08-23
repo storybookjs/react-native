@@ -3,7 +3,6 @@ import addons from '@kadira/storybook-addons';
 import Panel from './components/Panel';
 import Wrap from './components/Wrap';
 
-let knobStore = {};
 
 function register() {
   addons.register('kadirahq/storybook-addon-knobs', api => {
@@ -17,6 +16,8 @@ function register() {
     });
   });
 }
+
+let knobStore = {};
 
 function createKnob(name, value, type) {
   if (knobStore[name]) {
@@ -59,9 +60,8 @@ function wrap(storyFn) {
   return context => {
     // Change the global knobStore to the one local to this story
     knobStore = localKnobStore;
-
-    channel.emit('addon:knobs:setFields', localKnobStore);
-    return <Wrap {...{ context, storyFn, channel, knobChanged, knobsReset, resetKnobs }} />;
+    console.log(localKnobStore);
+    return <Wrap {...{ context, storyFn, channel, knobChanged, knobsReset, resetKnobs, createKnob }} />;
   };
 }
 

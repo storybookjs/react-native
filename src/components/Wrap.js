@@ -3,15 +3,18 @@ import React from 'react';
 export default class Wrap extends React.Component {
   constructor(props) {
     super(props);
+    this._initialPropsReceived = this.initialPropsReceived.bind(this);
     this._knobChanged = this.knobChanged.bind(this);
     this._resetKnobs = this.resetKnobs.bind(this);
     this._knobsAreReset = false;
   }
 
   componentDidMount() {
-    this.props.knobsReset();
+    this.props.knobsReset(); // Update knobs in the panel
+    this.props.channel.on('addon:knobs:initialProps', this._initialPropsReceived);
     this.props.channel.on('addon:knobs:propChange', this._knobChanged);
     this.props.channel.on('addon:knobs:reset', this._resetKnobs);
+    this.props.channel.emit('addon:knobs:storyMounted');
   }
 
   componentDidUpdate() {
@@ -22,8 +25,17 @@ export default class Wrap extends React.Component {
   }
 
   componentWillUnmount() {
+    this.props.channel.removeListener('addon:knobs:initialProps', this._initialPropsReceived);
     this.props.channel.removeListener('addon:knobs:propChange', this._knobChanged);
     this.props.channel.removeListener('addon:knobs:reset', this._resetKnobs);
+  }
+
+  initialPropsReceived(initialProps) {
+    Object.keys(initialProps).forEach(change => {
+      const { name, value, type } = initialProps[change];
+      this.knobChanged({name, value});
+    })
+    this.props.knobsReset()
   }
 
   knobChanged(change) {
