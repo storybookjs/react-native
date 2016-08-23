@@ -40,7 +40,11 @@ export function changeUrl(reduxStore) {
   } = api;
   const customParamsString = qs.stringify({ custom });
 
-  const url = `?${queryString}&${layoutQuery}&${uiQuery}&${customParamsString}`;
+  let url = `?${queryString}&${layoutQuery}&${uiQuery}`;
+  if (customParamsString) {
+    url = `${url}&${customParamsString}`;
+  }
+
   const state = {
     url,
     selectedKind,
@@ -80,7 +84,9 @@ export function updateStore(queryParams, actions) {
   });
 
   actions.ui.selectDownPanel(downPanel);
-  actions.api.setQueryParams(custom);
+  if (custom) {
+    actions.api.setQueryParams(custom);
+  }
 }
 
 export function handleInitialUrl(actions, location) {
