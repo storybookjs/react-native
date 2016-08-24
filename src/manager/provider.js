@@ -17,7 +17,8 @@ export default class ReactProvider extends Provider {
     return addons.getPanels();
   }
 
-  renderPreview(selectedKind, selectedStory) {
+  renderPreview(kind, story) {
+    this.channel.emit('setCurrentStory', { kind, story });
     return null;
   }
 
@@ -28,12 +29,7 @@ export default class ReactProvider extends Provider {
     this.channel.on('setStories', data => {
       api.setStories(data.stories);
     });
-    this.channel.on('selectStory', data => {
-      api.selectStory(data.kind, data.story);
-    });
-    this.channel.on('applyShortcut', data => {
-      api.handleShortcut(data.event);
-    });
+    this.channel.emit('getStories');
     addons.loadAddons(api);
   }
 }
