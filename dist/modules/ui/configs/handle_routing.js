@@ -84,6 +84,19 @@ function changeUrl(reduxStore) {
     url = url + '&' + customParamsString;
   }
 
+  var currentQs = location.search.substring(1);
+  if (currentQs && currentQs.length > 0) {
+    (function () {
+      var parsedQs = _qs2.default.parse(currentQs);
+      var knownKeys = ['selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight', 'downPanel', 'custom'];
+      knownKeys.forEach(function (key) {
+        delete parsedQs[key];
+      });
+      var otherParams = _qs2.default.stringify(parsedQs);
+      url = url + '&' + otherParams;
+    })();
+  }
+
   var state = {
     url: url,
     selectedKind: selectedKind,
@@ -102,10 +115,14 @@ function changeUrl(reduxStore) {
 function updateStore(queryParams, actions) {
   var selectedKind = queryParams.selectedKind;
   var selectedStory = queryParams.selectedStory;
-  var full = queryParams.full;
-  var down = queryParams.down;
-  var left = queryParams.left;
-  var panelRight = queryParams.panelRight;
+  var _queryParams$full = queryParams.full;
+  var full = _queryParams$full === undefined ? 0 : _queryParams$full;
+  var _queryParams$down = queryParams.down;
+  var down = _queryParams$down === undefined ? 1 : _queryParams$down;
+  var _queryParams$left = queryParams.left;
+  var left = _queryParams$left === undefined ? 1 : _queryParams$left;
+  var _queryParams$panelRig = queryParams.panelRight;
+  var panelRight = _queryParams$panelRig === undefined ? 0 : _queryParams$panelRig;
   var downPanel = queryParams.downPanel;
   var custom = queryParams.custom;
 
@@ -121,7 +138,9 @@ function updateStore(queryParams, actions) {
     downPanelInRight: Boolean(Number(panelRight))
   });
 
-  actions.ui.selectDownPanel(downPanel);
+  if (downPanel) {
+    actions.ui.selectDownPanel(downPanel);
+  }
   if (custom) {
     actions.api.setQueryParams(custom);
   }
