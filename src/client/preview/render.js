@@ -1,4 +1,3 @@
-import 'airbnb-js-shims';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ErrorDisplay from './error_display';

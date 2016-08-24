@@ -3,11 +3,8 @@ import webpack from 'webpack';
 import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
 const entries = {
-  preview: [
-    path.resolve(__dirname, './polyfills'),
-  ],
+  preview: [],
   manager: [
-    path.resolve(__dirname, './polyfills'),
     path.resolve(__dirname, '../../client/manager'),
   ],
 };

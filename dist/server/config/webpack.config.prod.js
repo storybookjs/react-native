@@ -17,8 +17,8 @@ var _utils = require('./utils');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var entries = {
-  preview: [_path2.default.resolve(__dirname, './polyfills')],
-  manager: [_path2.default.resolve(__dirname, './polyfills'), _path2.default.resolve(__dirname, '../../client/manager')]
+  preview: [],
+  manager: [_path2.default.resolve(__dirname, '../../client/manager')]
 };
 
 var config = {
