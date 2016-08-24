@@ -3,6 +3,7 @@
 import path from 'path';
 import program from 'commander';
 import shelljs from 'shelljs';
+import Server from '../server';
 
 program
   .option('-h, --host <host>', 'host to listen on')
@@ -12,6 +13,19 @@ program
 
 const projectDir = path.resolve();
 const configDir = path.resolve(program.configDir || './storybook');
+const listenAddr = [program.port];
+if (program.host) {
+  listenAddr.push(program.host);
+}
+
+const server = new Server({configDir});
+server.listen(...listenAddr, function (err) {
+  if (err) {
+    throw err;
+  }
+  const address = `http://${program.host || 'localhost'}:${program.port}/`;
+  console.info(`\nReact Native Storybook started on => ${address}\n`);
+});
 
 // RN packager
 shelljs.exec([
