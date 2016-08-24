@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.4.2
+24-August-2016
+
+* Allow file-loader URLs to work on subpaths. [PR401](https://github.com/kadirahq/react-storybook/pull/401)
+
 ### v2.4.1
 24-August-2016
 
