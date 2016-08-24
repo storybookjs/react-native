@@ -45,6 +45,21 @@ export function changeUrl(reduxStore) {
     url = `${url}&${customParamsString}`;
   }
 
+  const currentQs = location.search.substring(1);
+  if (currentQs && currentQs.length > 0) {
+    const parsedQs = qs.parse(currentQs);
+    const knownKeys = [
+      'selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight',
+      'downPanel', 'custom',
+    ];
+    knownKeys.forEach(key => {
+      delete(parsedQs[key]);
+    });
+    const otherParams = qs.stringify(parsedQs);
+    url = `${url}&${otherParams}`;
+  }
+
+
   const state = {
     url,
     selectedKind,
@@ -64,10 +79,10 @@ export function updateStore(queryParams, actions) {
   const {
     selectedKind,
     selectedStory,
-    full,
-    down,
-    left,
-    panelRight,
+    full = 0,
+    down = 1,
+    left = 1,
+    panelRight = 0,
     downPanel,
     custom,
   } = queryParams;
@@ -83,7 +98,9 @@ export function updateStore(queryParams, actions) {
     downPanelInRight: Boolean(Number(panelRight)),
   });
 
-  actions.ui.selectDownPanel(downPanel);
+  if (downPanel) {
+    actions.ui.selectDownPanel(downPanel);
+  }
   if (custom) {
     actions.api.setQueryParams(custom);
   }
