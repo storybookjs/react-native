@@ -55,6 +55,7 @@
     "lodash.pick": "^4.2.1",
     "mantra-core": "^1.6.1",
     "qs": "^6.2.0",
+    "react-dom": "^15.0.0",
     "react-fuzzy": "^0.3.3",
     "react-inspector": "^1.1.0",
     "react-modal": "^1.2.1",
