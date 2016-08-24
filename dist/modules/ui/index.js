@@ -16,6 +16,10 @@ var _reducers = require('./configs/reducers');
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
+var _init_panels = require('./configs/init_panels');
+
+var _init_panels2 = _interopRequireDefault(_init_panels);
+
 var _handle_routing = require('./configs/handle_routing');
 
 var _handle_routing2 = _interopRequireDefault(_handle_routing);
@@ -31,6 +35,7 @@ exports.default = {
   actions: _actions2.default,
   reducers: _reducers2.default,
   load: function load(c, a) {
+    (0, _init_panels2.default)(c, a);
     (0, _handle_routing2.default)(c, a);
     (0, _handle_keyevents2.default)(a);
   }

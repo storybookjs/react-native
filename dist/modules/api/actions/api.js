@@ -39,5 +39,13 @@ exports.default = {
       type: _.types.SET_OPTIONS,
       options: options
     });
+  },
+  setQueryParams: function setQueryParams(_ref5, customQueryParams) {
+    var reduxStore = _ref5.reduxStore;
+
+    reduxStore.dispatch({
+      type: _.types.SET_QUERY_PARAMS,
+      customQueryParams: customQueryParams
+    });
   }
 };

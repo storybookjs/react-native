@@ -20,6 +20,13 @@ exports.default = function () {
         });
       }
 
+    case _actions.types.SELECT_BOTTOM_PANEL:
+      {
+        return (0, _extends3.default)({}, state, {
+          selectedDownPanel: action.panelName
+        });
+      }
+
     case _actions.types.TOGGLE_SHORTCUTS_HELP:
       {
         return (0, _extends3.default)({}, state, {

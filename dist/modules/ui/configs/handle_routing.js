@@ -46,6 +46,7 @@ function changeUrl(reduxStore) {
 
   var api = _reduxStore$getState.api;
   var shortcuts = _reduxStore$getState.shortcuts;
+  var ui = _reduxStore$getState.ui;
 
   if (!api) return;
 
@@ -69,7 +70,20 @@ function changeUrl(reduxStore) {
     panelRight: Number(panelRight)
   });
 
-  var url = '?' + queryString + '&' + layoutQuery;
+  var downPanel = ui.selectedDownPanel;
+
+
+  var uiQuery = _qs2.default.stringify({ downPanel: downPanel });
+
+  var custom = api.customQueryParams;
+
+  var customParamsString = _qs2.default.stringify({ custom: custom });
+
+  var url = '?' + queryString + '&' + layoutQuery + '&' + uiQuery;
+  if (customParamsString) {
+    url = url + '&' + customParamsString;
+  }
+
   var state = {
     url: url,
     selectedKind: selectedKind,
@@ -77,7 +91,9 @@ function changeUrl(reduxStore) {
     full: full,
     down: down,
     left: left,
-    panelRight: panelRight
+    panelRight: panelRight,
+    downPanel: downPanel,
+    custom: custom
   };
 
   window.history.pushState(state, '', url);
@@ -90,6 +106,8 @@ function updateStore(queryParams, actions) {
   var down = queryParams.down;
   var left = queryParams.left;
   var panelRight = queryParams.panelRight;
+  var downPanel = queryParams.downPanel;
+  var custom = queryParams.custom;
 
 
   if (selectedKind && selectedStory) {
@@ -102,6 +120,11 @@ function updateStore(queryParams, actions) {
     showLeftPanel: Boolean(Number(left)),
     downPanelInRight: Boolean(Number(panelRight))
   });
+
+  actions.ui.selectDownPanel(downPanel);
+  if (custom) {
+    actions.api.setQueryParams(custom);
+  }
 }
 
 function handleInitialUrl(actions, location) {

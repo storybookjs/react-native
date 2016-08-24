@@ -3,11 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _objectDestructuringEmpty2 = require('babel-runtime/helpers/objectDestructuringEmpty');
-
-var _objectDestructuringEmpty3 = _interopRequireDefault(_objectDestructuringEmpty2);
-
 exports.composer = composer;
 
 var _down_panel = require('../components/down_panel');
@@ -23,11 +18,18 @@ var _redux_composer2 = _interopRequireDefault(_redux_composer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function composer(_ref, _ref2) {
+  var ui = _ref.ui;
   var context = _ref2.context;
-  (0, _objectDestructuringEmpty3.default)(_ref);
+  var actions = _ref2.actions;
+
+  var panels = context().provider.getPanels();
+  var actionMap = actions();
+  var selectedPanel = ui.selectedDownPanel;
 
   return {
-    panels: context().provider.getPanels()
+    panels: panels,
+    selectedPanel: selectedPanel,
+    onPanelSelect: actionMap.ui.selectDownPanel
   };
 }
 

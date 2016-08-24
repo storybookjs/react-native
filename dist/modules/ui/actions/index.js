@@ -13,7 +13,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var types = exports.types = {
   SET_STORY_FILTER: 'UI_SET_STORY_FILTER',
-  TOGGLE_SHORTCUTS_HELP: 'UI_TOGGLE_SHORTCUTS_HELP'
+  TOGGLE_SHORTCUTS_HELP: 'UI_TOGGLE_SHORTCUTS_HELP',
+  SELECT_BOTTOM_PANEL: 'UI_SELECT_BOTTOM_PANEL'
 };
 
 exports.default = {

@@ -21,5 +21,13 @@ exports.default = {
     reduxStore.dispatch({
       type: _.types.TOGGLE_SHORTCUTS_HELP
     });
+  },
+  selectDownPanel: function selectDownPanel(_ref3, panelName) {
+    var reduxStore = _ref3.reduxStore;
+
+    reduxStore.dispatch({
+      type: _.types.SELECT_BOTTOM_PANEL,
+      panelName: panelName
+    });
   }
 };

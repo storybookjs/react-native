@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -59,6 +67,27 @@ exports.default = function () {
         return (0, _extends3.default)({}, state, {
           options: newOptions
         });
+      }
+
+    case _actions.types.SET_QUERY_PARAMS:
+      {
+        var _ret = function () {
+          var newQueryParams = (0, _extends3.default)({}, state.customQueryParams, action.customQueryParams);
+
+          (0, _keys2.default)(action.customQueryParams).forEach(function (key) {
+            if (newQueryParams[key] === null) {
+              delete newQueryParams[key];
+            }
+          });
+
+          return {
+            v: (0, _extends3.default)({}, state, {
+              customQueryParams: newQueryParams
+            })
+          };
+        }();
+
+        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
       }
 
     default:
