@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.5.0
+24-August-2016
+
+* We are no longer shipping extra polyfills anymore. [PR402](https://github.com/kadirahq/react-storybook/pull/402)
+
 ### v2.4.2
 24-August-2016
 
