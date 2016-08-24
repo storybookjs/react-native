@@ -1,5 +1,11 @@
 ## Change Log
 
+### v3.3.1
+24-Aug-2016
+
+* Avoid adding custom query params to the state if its undefined. [PR32](https://github.com/kadirahq/storybook-ui/pull/32)
+* Prevent emit story event for every redux store change. [PR31](https://github.com/kadirahq/storybook-ui/pull/31)
+
 ### v3.3.0
 23-Aug-2016
 
