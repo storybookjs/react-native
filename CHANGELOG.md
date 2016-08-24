@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.4.1
+24-August-2016
+
+* Bump @kadira/storybook ui to v3.3.1 to fix some UI related issues.
+
 ### v2.4.0
 23-August-2016
 
