@@ -29,18 +29,14 @@ program
 const configDir = program.configDir || './.storybook';
 const config = loadConfig('PRODUCTION', baseConfig, configDir);
 
-// remove the leading '/'
-let publicPath = config.output.publicPath;
-if (publicPath[0] === '/') {
-  publicPath = publicPath.slice(1);
-}
+const publicPath = config.output.publicPath;
 
 const outputDir = program.outputDir || './storybook-static';
 config.output.path = outputDir;
 
 // create output directory (and the static dir) if not exists
 shelljs.rm('-rf', outputDir);
-shelljs.mkdir('-p', path.resolve(outputDir, publicPath));
+shelljs.mkdir('-p', path.resolve(outputDir));
 
 // copy all static files
 if (program.staticDir) {

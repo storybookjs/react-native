@@ -57,18 +57,14 @@ _commander2.default.version(_package2.default.version).option('-s, --static-dir 
 var configDir = _commander2.default.configDir || './.storybook';
 var config = (0, _config2.default)('PRODUCTION', _webpackConfig2.default, configDir);
 
-// remove the leading '/'
 var publicPath = config.output.publicPath;
-if (publicPath[0] === '/') {
-  publicPath = publicPath.slice(1);
-}
 
 var outputDir = _commander2.default.outputDir || './storybook-static';
 config.output.path = outputDir;
 
 // create output directory (and the static dir) if not exists
 _shelljs2.default.rm('-rf', outputDir);
-_shelljs2.default.mkdir('-p', _path2.default.resolve(outputDir, publicPath));
+_shelljs2.default.mkdir('-p', _path2.default.resolve(outputDir));
 
 // copy all static files
 if (_commander2.default.staticDir) {

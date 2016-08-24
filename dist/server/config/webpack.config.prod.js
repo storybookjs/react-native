@@ -27,7 +27,12 @@ var config = {
   entry: entries,
   output: {
     filename: 'static/[name].bundle.js',
-    publicPath: '/'
+    // Here we set the publicPath to ''.
+    // This allows us to deploy storybook into subpaths like GitHub pages.
+    // This works with css and image loaders too.
+    // This is working for storybook since, we don't use pushState urls and
+    // relative URLs works always.
+    publicPath: ''
   },
   plugins: [new _webpack2.default.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
     compress: {
