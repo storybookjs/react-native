@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.3.2
+24-Aug-2016
+
+* When some url params are already present ui is displayed in the default way. [PR33](https://github.com/kadirahq/storybook-ui/pull/33)
+
 ### v3.3.1
 24-Aug-2016
 
