@@ -64,7 +64,8 @@ var ReactProvider = function (_Provider) {
     }
   }, {
     key: 'renderPreview',
-    value: function renderPreview(selectedKind, selectedStory) {
+    value: function renderPreview(kind, story) {
+      this.channel.emit('setCurrentStory', { kind: kind, story: story });
       return null;
     }
   }, {
@@ -78,12 +79,7 @@ var ReactProvider = function (_Provider) {
       this.channel.on('setStories', function (data) {
         api.setStories(data.stories);
       });
-      this.channel.on('selectStory', function (data) {
-        api.selectStory(data.kind, data.story);
-      });
-      this.channel.on('applyShortcut', function (data) {
-        api.handleShortcut(data.event);
-      });
+      this.channel.emit('getStories');
       _storybookAddons2.default.loadAddons(api);
     }
   }]);
