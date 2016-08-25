@@ -31,12 +31,12 @@ const stylesheet = {
 stylesheet.textarea = {
   ...stylesheet.input,
   height: '100px',
-}
+};
 
 stylesheet.checkbox = {
   ...stylesheet.input,
   width: 'auto',
-}
+};
 
 export default class PropField extends React.Component {
   constructor(props) {

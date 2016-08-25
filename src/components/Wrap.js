@@ -3,53 +3,66 @@ import React from 'react';
 export default class Wrap extends React.Component {
   constructor(props) {
     super(props);
+    this.store = this.props.store;
     this._initialPropsReceived = this.initialPropsReceived.bind(this);
     this._knobChanged = this.knobChanged.bind(this);
     this._resetKnobs = this.resetKnobs.bind(this);
     this._knobsAreReset = false;
+    this.gotHello = () => {
+      this.props.channel.emit('addon:knobs:helloFromStory');
+    };
+    this.setPanelFields = () => {
+      this.props.channel.emit('addon:knobs:setFields', this.store);
+    };
   }
 
   componentDidMount() {
-    this.props.knobsReset(); // Update knobs in the panel
-    this.props.channel.on('addon:knobs:initialProps', this._initialPropsReceived);
-    this.props.channel.on('addon:knobs:propChange', this._knobChanged);
+    this.props.channel.on('addon:knobs:initialFields', this._initialPropsReceived);
+    this.props.channel.on('addon:knobs:knobChange', this._knobChanged);
     this.props.channel.on('addon:knobs:reset', this._resetKnobs);
-    this.props.channel.emit('addon:knobs:storyMounted');
-  }
-
-  componentDidUpdate() {
-    if (this._knobsAreReset) {
-      this.props.knobsReset();
-      this._knobsAreReset = false;
-    }
+    this.props.channel.on('addon:knobs:helloFromPanel', this.gotHello);
+    this.props.channel.on('addon:knobs:panelReady', this.setPanelFields);
+    this.props.channel.emit('addon:knobs:helloFromStory');
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener('addon:knobs:initialProps', this._initialPropsReceived);
-    this.props.channel.removeListener('addon:knobs:propChange', this._knobChanged);
+    this.props.channel.removeListener('addon:knobs:initialFields', this._initialPropsReceived);
+    this.props.channel.removeListener('addon:knobs:knobChange', this._knobChanged);
     this.props.channel.removeListener('addon:knobs:reset', this._resetKnobs);
+    this.props.channel.removeListener('addon:knobs:helloFromPanel', this.gotHello);
+    this.props.channel.removeListener('addon:knobs:panelReady', this.setPanelFields);
   }
 
   initialPropsReceived(initialProps) {
     Object.keys(initialProps).forEach(change => {
-      const { name, value, type } = initialProps[change];
-      this.knobChanged({name, value});
-    })
-    this.props.knobsReset()
+      const { name, value } = initialProps[change];
+      this.knobChanged({ name, value });
+    });
   }
 
   knobChanged(change) {
-    const success = this.props.knobChanged(change);
-    if (success) {
-      // Only update if the knob change is valid
-      this.forceUpdate();
+    const { name, value } = change;
+    const { type } = this.store[name];
+
+    let formatedValue = value;
+    if (type === 'object') {
+      try {
+        formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
+      } catch (e) {
+        return;
+      }
     }
+
+    this.store[name].value = formatedValue;
+    this.forceUpdate();
   }
 
   resetKnobs() {
-    this._knobsAreReset = true;
-    this.props.resetKnobs();
+    Object.keys(this.store).forEach(field => {
+      delete(this.store[field]);
+    });
     this.forceUpdate();
+    this.setPanelFields();
   }
 
   render() {
@@ -60,8 +73,6 @@ export default class Wrap extends React.Component {
 Wrap.propTypes = {
   context: React.PropTypes.object,
   storyFn: React.PropTypes.func,
-  knobChanged: React.PropTypes.func,
-  knobsReset: React.PropTypes.func,
-  resetKnobs: React.PropTypes.func,
   channel: React.PropTypes.object,
+  store: React.PropTypes.object,
 };
