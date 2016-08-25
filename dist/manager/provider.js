@@ -47,7 +47,7 @@ var ReactProvider = function (_Provider) {
     var url = _ref.url;
     (0, _classCallCheck3.default)(this, ReactProvider);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ReactProvider).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
 
     _this.channel = _storybookAddons2.default.getChannel();
     if (!_this.channel) {

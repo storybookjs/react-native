@@ -34,7 +34,7 @@ var StoryView = function (_Component) {
   (0, _inherits3.default)(StoryView, _Component);
 
   function StoryView(props) {
-    var _Object$getPrototypeO;
+    var _ref;
 
     (0, _classCallCheck3.default)(this, StoryView);
 
@@ -42,7 +42,7 @@ var StoryView = function (_Component) {
       args[_key - 1] = arguments[_key];
     }
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(StoryView)).call.apply(_Object$getPrototypeO, [this, props].concat(args)));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (_ref = StoryView.__proto__ || (0, _getPrototypeOf2.default)(StoryView)).call.apply(_ref, [this, props].concat(args)));
 
     _this.state = { storyFn: function storyFn() {
         return null;

@@ -100,14 +100,17 @@ var Preview = function () {
     }
   }, {
     key: 'getStorybookUI',
-    value: function getStorybookUI(_ref) {
+    value: function getStorybookUI() {
       var _this3 = this;
 
-      var url = _ref.url;
+      var params = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
       return function () {
         var channel = _storybookAddons2.default.getChannel();
         if (!channel) {
+          var host = params.host || 'localhost';
+          var port = params.port || 9001;
+          var url = 'ws://' + host + ':' + port;
           channel = (0, _storybookChannelWebsocket2.default)({ url: url });
           _storybookAddons2.default.setChannel(channel);
         }
