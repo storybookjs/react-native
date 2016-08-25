@@ -121,6 +121,7 @@ var Preview = function () {
           return _this3._selectStory(d);
         });
         _this3._sendSetStories();
+        _this3._sendGetCurrentStory();
         // finally return the preview component
         return _react2.default.createElement(_StoryView2.default, { events: _this3._events });
       };
@@ -129,10 +130,14 @@ var Preview = function () {
     key: '_sendSetStories',
     value: function _sendSetStories() {
       var channel = _storybookAddons2.default.getChannel();
-      if (channel) {
-        var stories = this._stories.dumpStoryBook();
-        channel.emit('setStories', { stories: stories });
-      }
+      var stories = this._stories.dumpStoryBook();
+      channel.emit('setStories', { stories: stories });
+    }
+  }, {
+    key: '_sendGetCurrentStory',
+    value: function _sendGetCurrentStory() {
+      var channel = _storybookAddons2.default.getChannel();
+      channel.emit('getCurrentStory');
     }
   }, {
     key: '_selectStory',

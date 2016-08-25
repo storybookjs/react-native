@@ -65,6 +65,7 @@ export default class Preview {
       channel.on('getStories', d => this._sendSetStories());
       channel.on('setCurrentStory', d => this._selectStory(d));
       this._sendSetStories();
+      this._sendGetCurrentStory();
       // finally return the preview component
       return <StoryView events={this._events} />;
     }
@@ -72,10 +73,13 @@ export default class Preview {
 
   _sendSetStories() {
     const channel = addons.getChannel();
-    if (channel) {
-      const stories = this._stories.dumpStoryBook();
-      channel.emit('setStories', {stories});
-    }
+    const stories = this._stories.dumpStoryBook();
+    channel.emit('setStories', {stories});
+  }
+
+  _sendGetCurrentStory() {
+    const channel = addons.getChannel();
+    channel.emit('getCurrentStory');
   }
 
   _selectStory(selection) {

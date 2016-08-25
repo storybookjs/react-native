@@ -49,6 +49,7 @@ var ReactProvider = function (_Provider) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
 
+    _this.selection = null;
     _this.channel = _storybookAddons2.default.getChannel();
     if (!_this.channel) {
       _this.channel = (0, _storybookChannelWebsocket2.default)({ url: url });
@@ -65,6 +66,7 @@ var ReactProvider = function (_Provider) {
   }, {
     key: 'renderPreview',
     value: function renderPreview(kind, story) {
+      this.selection = { kind: kind, story: story };
       this.channel.emit('setCurrentStory', { kind: kind, story: story });
       return null;
     }
@@ -74,10 +76,14 @@ var ReactProvider = function (_Provider) {
       var _this2 = this;
 
       api.onStory(function (kind, story) {
-        _this2.channel.emit('setCurrentStory', { kind: kind, story: story });
+        _this2.selection = { kind: kind, story: story };
+        _this2.channel.emit('setCurrentStory', _this2.selection);
       });
       this.channel.on('setStories', function (data) {
         api.setStories(data.stories);
+      });
+      this.channel.on('getCurrentStory', function () {
+        _this2.channel.emit('setCurrentStory', _this2.selection);
       });
       this.channel.emit('getStories');
       _storybookAddons2.default.loadAddons(api);
