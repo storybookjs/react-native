@@ -52,10 +52,13 @@ export default class Preview {
     });
   }
 
-  getStorybookUI({ url }) {
+  getStorybookUI(params = {}) {
     return () => {
       let channel = addons.getChannel();
       if (!channel) {
+        const host = params.host || 'localhost';
+        const port = params.port || 9001;
+        const url = `ws://${host}:${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
       }
