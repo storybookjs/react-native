@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.4.0
+25-Aug-2016
+
+* Add support for React Native apps. [PR11](https://github.com/kadirahq/getstorybook/pull/11)
+
 ### v1.3.0
 11-Aug-2016
 
