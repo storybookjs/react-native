@@ -78,6 +78,20 @@ switch (projectType) {
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
+  case types.REACT_NATIVE:
+    done = commandLog('Adding storybook support to your "React Native" app');
+    require('../generators/REACT_NATIVE');
+    done();
+
+    installNpmDeps();
+
+    logger.log('\nTo run your storybook, type:\n');
+    codeLog([
+      'npm run storybook'
+    ]);
+    logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
+    break;
+
   case types.METEOR:
     done = commandLog('Adding storybook support to your "Meteor" app');
     require('../generators/METEOR');
