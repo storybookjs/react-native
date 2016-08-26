@@ -14,6 +14,7 @@ var projectName = dirname && dirname.slice(
 );
 if (projectName) {
   shell.sed('-i', '%APP_NAME%', projectName, 'storybook/index.ios.js');
+  shell.sed('-i', '%APP_NAME%', projectName, 'storybook/index.android.js');
 }
 
 var packageJson = helpers.getPackageJson();
