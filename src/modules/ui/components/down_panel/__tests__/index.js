@@ -6,16 +6,16 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 describe('manager.ui.components.down_panel.index', () => {
-  it('should render only the selected panel', () => {
+  it('should render only the selected panel with display set other than "none"', () => {
     const panels = {
       test1: {
         render() {
-          return <div>TEST 1</div>;
+          return <div id="test1">TEST 1</div>;
         },
       },
       test2: {
         render() {
-          return <div>TEST 2</div>;
+          return <div id="test2">TEST 2</div>;
         },
       },
     };
@@ -30,8 +30,8 @@ describe('manager.ui.components.down_panel.index', () => {
       />
     );
 
-    expect(wrapper.contains('TEST 2')).to.equal(true);
-    expect(wrapper.contains('TEST 1')).to.equal(false);
+    expect(wrapper.find('#test1').parent().props().style.display).to.equal('none');
+    expect(wrapper.find('#test2').parent().props().style.display).to.not.equal('none');
   });
 
   it('should set onPanelSelected as onClick handlers of tabs', () => {
