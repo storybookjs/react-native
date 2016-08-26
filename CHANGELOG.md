@@ -1,5 +1,11 @@
 # Changelog
 
+### v1.4.1
+26-Aug-2016
+
+* [RN] Automate setting app name on entry files [PR12](https://github.com/kadirahq/getstorybook/pull/12)
+* [RN] Add entry javascript file for Android [PR13](https://github.com/kadirahq/getstorybook/pull/13)
+
 ### v1.4.0
 25-Aug-2016
 
