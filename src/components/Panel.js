@@ -37,7 +37,7 @@ export default class Panel extends React.Component {
     this._setInitialFields = this.setInitialFields.bind(this);
     this._indicateReady = this.indicateReady.bind(this);
 
-    this.state = { fields: {} };
+    this.state = { fields: null };
     this.api = this.props.api;
   }
 
@@ -58,7 +58,8 @@ export default class Panel extends React.Component {
 
   componentDidMount() {
     this.stopOnStory = this.api.onStory(() => {
-      this.setState({ fields: {} });
+      this.setState({ fields: null });
+      this.api.setQueryParams({ knobs: null });
     });
 
     this.props.channel.on('addon:knobs:setFields', this._setFields);
@@ -69,7 +70,6 @@ export default class Panel extends React.Component {
     this.props.channel.removeListener('addon:knobs:setFields', this._setFields);
     this.props.channel.removeListener('addon:knobs:helloFromStory', this._indicateReady);
     this.props.channel.removeListener('addon:knobs:helloFromStory', this._setInitialFields);
-    this.api.setQueryParams({ knobs: null });
     this.stopOnStory();
   }
 
