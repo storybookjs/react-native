@@ -1,6 +1,5 @@
 import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@kadira/react-native-storybook';
-import './addons';
 
 // import stories
 configure(() => {
