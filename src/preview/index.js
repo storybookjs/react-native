@@ -57,7 +57,7 @@ export default class Preview {
       let channel = addons.getChannel();
       if (!channel) {
         const host = params.host || 'localhost';
-        const port = params.port || 9001;
+        const port = params.port || 7007;
         const url = `ws://${host}:${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
