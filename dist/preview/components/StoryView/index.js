@@ -44,9 +44,7 @@ var StoryView = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_ref = StoryView.__proto__ || (0, _getPrototypeOf2.default)(StoryView)).call.apply(_ref, [this, props].concat(args)));
 
-    _this.state = { storyFn: function storyFn() {
-        return null;
-      } };
+    _this.state = { storyFn: null };
     _this.props.events.on('story', function (storyFn) {
       return _this.setState({ storyFn: storyFn });
     });
@@ -56,6 +54,9 @@ var StoryView = function (_Component) {
   (0, _createClass3.default)(StoryView, [{
     key: 'render',
     value: function render() {
+      if (!this.state.storyFn) {
+        return null;
+      }
       return this.state.storyFn();
     }
   }]);
