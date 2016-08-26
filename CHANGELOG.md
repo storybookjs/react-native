@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.0.1
+
+* Fix storyFn prop validation [PR #59](https://github.com/kadirahq/react-native-storybook/pull/59).
+* Support older versions of react-native module [PR #60](https://github.com/kadirahq/react-native-storybook/pull/60).
+
 ## v2.0.0
 
 **Rewrite the backend to support new UI and addons**
