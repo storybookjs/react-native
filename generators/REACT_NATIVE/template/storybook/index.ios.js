@@ -8,4 +8,4 @@ configure(() => {
 }, module);
 
 const StorybookUI = getStorybookUI({port: 7007, host: 'localhost'});
-AppRegistry.registerComponent('HelloWorld', () => StorybookUI);
+AppRegistry.registerComponent('%APP_NAME%', () => StorybookUI);
