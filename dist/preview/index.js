@@ -109,7 +109,7 @@ var Preview = function () {
         var channel = _storybookAddons2.default.getChannel();
         if (!channel) {
           var host = params.host || 'localhost';
-          var port = params.port || 9001;
+          var port = params.port || 7007;
           var url = 'ws://' + host + ':' + port;
           channel = (0, _storybookChannelWebsocket2.default)({ url: url });
           _storybookAddons2.default.setChannel(channel);
