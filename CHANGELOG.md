@@ -1,5 +1,11 @@
 # Changelog
 
+### v1.4.2
+28-Aug-2016
+
+* React Native: Do not import addons.js on entryfiles.[PR14](https://github.com/kadirahq/getstorybook/pull/14)
+* Fix "emojies" typo. [PR15](https://github.com/kadirahq/getstorybook/pull/15)
+
 ### v1.4.1
 26-Aug-2016
 
