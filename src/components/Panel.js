@@ -5,7 +5,6 @@ import tosource from 'tosource';
 const styles = {
   panel: {
     padding: '5px',
-    backgroundColor: 'rgb(247, 247, 247)',
     width: '100%',
   },
   noKnobs: {
@@ -14,7 +13,6 @@ const styles = {
       "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
     `,
     display: 'inline',
-    backgroundColor: 'rgb(247, 247, 247)',
     width: '100%',
     textAlign: 'center',
     color: 'rgb(190, 190, 190)',
