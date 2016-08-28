@@ -5,15 +5,16 @@ import { createKnob, wrap } from '../index';
 import Button from './Button';
 
 storiesOf('Button', module)
-  .add('default view', wrap(() => (
+  .addDecorator((story, context) => (wrap(story)(context)))
+  .add('default view', () => (
     <Button
       onClick={ action('button clicked') }
       style={createKnob('style', { width: '70px' }, 'object')}
     >
       {createKnob('children', 'Hello')}
     </Button>
-  )))
-  .add('default view with different knobs', wrap(() => (
+  ))
+  .add('default view with different knobs', () => (
     <Button
       onClick={ action('button clicked') }
       color={createKnob('color', '#abc')}
@@ -22,7 +23,7 @@ storiesOf('Button', module)
     >
       {createKnob('text', 'Hello')}
     </Button>
-  )))
+  ))
   .add('Story without any knobs', () => (
     <Button>Hello</Button>
   ));
