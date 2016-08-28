@@ -20,7 +20,7 @@ storiesOf('Button', module)
       <Text>Hello Button</Text>
     </Button>
   ))
-  .add('with some emojies', () => (
+  .add('with some emoji', () => (
     <Button onPress={action('clicked-emoji')}>
       <Text>😀 😎 👍 💯</Text>
     </Button>
