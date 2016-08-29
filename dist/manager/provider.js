@@ -68,6 +68,10 @@ var ReactProvider = function (_Provider) {
     value: function renderPreview(kind, story) {
       this.selection = { kind: kind, story: story };
       this.channel.emit('setCurrentStory', { kind: kind, story: story });
+      var renderPreview = _storybookAddons2.default.getPreview();
+      if (renderPreview) {
+        return renderPreview(kind, story);
+      }
       return null;
     }
   }, {
