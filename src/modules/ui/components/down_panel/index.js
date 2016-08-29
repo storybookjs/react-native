@@ -34,10 +34,15 @@ class DownPanel extends Component {
     });
   }
 
-  renderPanel() {
-    const panelStyle = { flex: 1, display: 'flex' };
-    const panel = this.props.panels[this.props.selectedPanel];
-    return <div key={name} style={panelStyle}>{panel.render()}</div>;
+  renderPanels() {
+    return Object.keys(this.props.panels).sort().map(name => {
+      const panelStyle = { display: 'none' };
+      const panel = this.props.panels[name];
+      if (name === this.props.selectedPanel) {
+        Object.assign(panelStyle, { flex: 1, display: 'flex' });
+      }
+      return <div key={name} style={panelStyle}>{panel.render()}</div>;
+    });
   }
 
   renderEmpty() {
@@ -55,7 +60,7 @@ class DownPanel extends Component {
     return (
       <div style={style.wrapper}>
         <div style={style.tabbar}>{this.renderTabs()}</div>
-        <div style={style.content}>{this.renderPanel()}</div>
+        <div style={style.content}>{this.renderPanels()}</div>
       </div>
     );
   }
