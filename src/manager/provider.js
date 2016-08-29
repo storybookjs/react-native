@@ -21,6 +21,10 @@ export default class ReactProvider extends Provider {
   renderPreview(kind, story) {
     this.selection = { kind, story };
     this.channel.emit('setCurrentStory', { kind, story });
+    const renderPreview = addons.getPreview();
+    if (renderPreview) {
+      return renderPreview(kind, story);
+    }
     return null;
   }
 
