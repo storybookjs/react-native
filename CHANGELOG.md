@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.5.2
+29-August-2016
+
+* Remove the use of babel-runtime/core-js modules. [PR410](https://github.com/kadirahq/react-storybook/pull/410)
+
 ### v2.5.1
 24-August-2016
 
