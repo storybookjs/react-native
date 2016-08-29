@@ -7,9 +7,11 @@ const config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
     manager: [
+      require.resolve('./polyfills'),
       require.resolve('../../client/manager'),
     ],
     preview: [
+      require.resolve('./polyfills'),
       require.resolve('./error_enhancements'),
       `${require.resolve('webpack-hot-middleware/client')}?noInfo=true`,
     ],

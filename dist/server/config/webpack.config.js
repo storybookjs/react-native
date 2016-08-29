@@ -23,8 +23,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var config = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    manager: [require.resolve('../../client/manager')],
-    preview: [require.resolve('./error_enhancements'), require.resolve('webpack-hot-middleware/client') + '?noInfo=true']
+    manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
+    preview: [require.resolve('./polyfills'), require.resolve('./error_enhancements'), require.resolve('webpack-hot-middleware/client') + '?noInfo=true']
   },
   output: {
     path: _path2.default.join(__dirname, 'dist'),

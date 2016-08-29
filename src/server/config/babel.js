@@ -34,8 +34,8 @@ module.exports = {
     require.resolve('babel-plugin-transform-regenerator'),
     // Polyfills the runtime needed for async/await and generators
     [require.resolve('babel-plugin-transform-runtime'), {
-      helpers: true,
-      polyfill: true,
+      helpers: false,
+      polyfill: false,
       regenerator: true,
     }],
   ],
