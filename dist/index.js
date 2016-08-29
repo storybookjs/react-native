@@ -15,6 +15,7 @@ var AddonStore = exports.AddonStore = function () {
     this._loaders = {};
     this._panels = {};
     this._channel = null;
+    this._preview = null;
   }
 
   _createClass(AddonStore, [{
@@ -26,6 +27,16 @@ var AddonStore = exports.AddonStore = function () {
     key: "setChannel",
     value: function setChannel(channel) {
       this._channel = channel;
+    }
+  }, {
+    key: "getPreview",
+    value: function getPreview() {
+      return this._preview;
+    }
+  }, {
+    key: "setPreview",
+    value: function setPreview(preview) {
+      this._preview = preview;
     }
   }, {
     key: "getPanels",
