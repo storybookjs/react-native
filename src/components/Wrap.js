@@ -44,12 +44,23 @@ export default class Wrap extends React.Component {
     const { type } = this.props.store[name];
 
     let formatedValue = value;
-    if (type === 'object') {
-      try {
-        formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
-      } catch (e) {
-        return;
-      }
+    switch (type) {
+      case 'object':
+        try {
+          formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
+        } catch (e) {
+          return;
+        }
+        break;
+      case 'number':
+        try {
+          formatedValue = Number(value);
+        } catch (e) {
+          return;
+        }
+        break;
+      default:
+        formatedValue = value;
     }
 
     this.props.store[name].value = formatedValue;
