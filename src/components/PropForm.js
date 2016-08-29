@@ -31,15 +31,14 @@ export default class propForm extends React.Component {
 
   render() {
     const fields = this.props.fields;
-    const propArray = Object.keys(fields).map(key => (fields[key]));
 
-    propArray.sort(function (a, b) {
+    fields.sort(function (a, b) {
       return a.name > b.name;
     });
 
     return (
       <form style={stylesheet.propForm}>
-        {propArray.map(field => (
+        {fields.map(field => (
           <PropField
             key={field.name}
             name={field.name}
@@ -56,6 +55,6 @@ export default class propForm extends React.Component {
 propForm.displayName = 'propForm';
 
 propForm.propTypes = {
-  fields: React.PropTypes.object.isRequired,
+  fields: React.PropTypes.array.isRequired,
   onFieldChange: React.PropTypes.func.isRequired,
 };
