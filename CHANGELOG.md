@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.0.2
+
+* Use 7007 as the default port (use in getstorybook tool) [PR #64](https://github.com/kadirahq/react-native-storybook/pull/64).
+* Support React Native v0.32 [PR #65](https://github.com/kadirahq/react-native-storybook/pull/65).
+
 ## v2.0.1
 
 * Fix storyFn prop validation [PR #59](https://github.com/kadirahq/react-native-storybook/pull/59).
