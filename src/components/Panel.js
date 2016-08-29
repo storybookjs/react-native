@@ -34,14 +34,49 @@ export default class Panel extends React.Component {
     this._handleChange = this.handleChange.bind(this);
     this._setFields = this.setFields.bind(this);
     this._reset = this.reset.bind(this);
+    this._setInitialFields = this.setInitialFields.bind(this);
+    this._indicateReady = this.indicateReady.bind(this);
+
     this.state = { fields: {} };
+    this.api = this.props.api;
+  }
+
+  componentWillMount() {
+    const urlState = this.api.getQueryParam('knobs');
+
+    if (urlState && urlState.length > 0) {
+      this.initialFields = JSON.parse(urlState);
+    }
+
+    if (this.initialFields) {
+      this.props.channel.on('addon:knobs:helloFromStory', this._setInitialFields);
+      this.setState({ fields: this.initialFields });
+    } else {
+      this.props.channel.on('addon:knobs:helloFromStory', this._indicateReady);
+    }
   }
 
   componentDidMount() {
-    this.props.channel.on('addon:knobs:setFields', this._setFields);
-    this.props.api.onStory(() => {
-      this.setState({ fields: false });
+    this.stopOnStory = this.api.onStory(() => {
+      this.setState({ fields: {} });
     });
+
+    this.props.channel.on('addon:knobs:setFields', this._setFields);
+    this.props.channel.emit('addon:knobs:helloFromPanel');
+  }
+
+  componentWillUnmount() {
+    this.props.channel.removeListener('addon:knobs:setFields', this._setFields);
+    this.props.channel.removeListener('addon:knobs:helloFromStory', this._indicateReady);
+    this.props.channel.removeListener('addon:knobs:helloFromStory', this._setInitialFields);
+    this.api.setQueryParams({ knobs: null });
+    this.stopOnStory();
+  }
+
+  setInitialFields() {
+    this.props.channel.emit('addon:knobs:initialFields', this.initialFields);
+    this.props.channel.removeListener('addon:knobs:helloFromStory', this._setInitialFields);
+    this.props.channel.on('addon:knobs:helloFromStory', this._indicateReady);
   }
 
   setFields(_fields) {
@@ -54,6 +89,11 @@ export default class Panel extends React.Component {
       }
     }
     this.setState({ fields });
+    this.api.setQueryParams({ knobs: JSON.stringify(fields) });
+  }
+
+  indicateReady() {
+    this.props.channel.emit('addon:knobs:panelReady');
   }
 
   reset() {
@@ -68,8 +108,9 @@ export default class Panel extends React.Component {
     changedField[name] = { ...fields[name], ...{ value } };
     const newFields = { ...fields, ...changedField };
     this.setState({ fields: newFields });
+    this.api.setQueryParams({ knobs: JSON.stringify(newFields) });
 
-    this.props.channel.emit('addon:knobs:propChange', change);
+    this.props.channel.emit('addon:knobs:knobChange', change);
   }
 
   render() {

@@ -3,7 +3,6 @@ import addons from '@kadira/storybook-addons';
 import Panel from './components/Panel';
 import Wrap from './components/Wrap';
 
-let knobStore = {};
 
 function register() {
   addons.register('kadirahq/storybook-addon-knobs', api => {
@@ -12,11 +11,13 @@ function register() {
     addons.addPanel('kadirahq/storybook-addon-knobs', {
       title: 'Knobs',
       render: () => {
-        return <Panel channel={channel} api={api} />;
+        return <Panel channel={channel} api={api} key="knobs-panel" />;
       },
     });
   });
 }
+
+let knobStore = {};
 
 function createKnob(name, value, type) {
   if (knobStore[name]) {
@@ -29,39 +30,12 @@ function createKnob(name, value, type) {
 
 function wrap(storyFn) {
   const channel = addons.getChannel();
-  let localKnobStore = {};
-
-  const knobChanged = change => {
-    const { name, value } = change;
-    const { type } = localKnobStore[name];
-
-    let formatedValue = value;
-    if (type === 'object') {
-      try {
-        formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
-      } catch (e) {
-        return false;
-      }
-    }
-
-    localKnobStore[name].value = formatedValue;
-    return true;
-  };
-
-  const knobsReset = () => {
-    channel.emit('addon:knobs:setFields', localKnobStore);
-  };
-
-  const resetKnobs = () => {
-    knobStore = localKnobStore = {};
-  };
+  const localKnobStore = {};
 
   return context => {
     // Change the global knobStore to the one local to this story
     knobStore = localKnobStore;
-
-    channel.emit('addon:knobs:setFields', localKnobStore);
-    return <Wrap {...{ context, storyFn, channel, knobChanged, knobsReset, resetKnobs }} />;
+    return <Wrap {...{ context, storyFn, channel, store: localKnobStore }} />;
   };
 }
 
