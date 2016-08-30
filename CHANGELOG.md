@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.6.0
+30-August-2016
+
+* Allow start/build params from env variables. [PR413](https://github.com/kadirahq/react-storybook/pull/413)
+
 ### v2.5.2
 29-August-2016
 
