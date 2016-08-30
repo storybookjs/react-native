@@ -5,7 +5,7 @@ const styles = {
     margin: 15,
     maxWidth: 600,
     lineHeight: 1.4,
-    fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+    fontFamily: 'Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
   },
 
   logo: {
@@ -43,8 +43,7 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div style={styles.main}>
-        <h1>Welcome to Storybook</h1>
-        <img style={styles.logo} src="https://cdn.rawgit.com/kadirahq/react-storybook/master/docs/logo.png" />
+        <h1>Welcome to STORYBOOK</h1>
         <p>
           This is a UI component dev environment for your app.
         </p>
