@@ -131,7 +131,7 @@ export default class PropField extends React.Component {
     }
 
     const labelStyles =
-      type === 'object' ? stylesheet.objectInputLabel: stylesheet.label
+      type === 'object' ? stylesheet.objectInputLabel : stylesheet.label;
 
     return (
       <div style={stylesheet.field}>

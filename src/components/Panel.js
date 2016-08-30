@@ -7,6 +7,7 @@ const styles = {
   panel: {
     padding: '5px',
     width: '100%',
+    position: 'relative',
   },
   noKnobs: {
     fontFamily: `
@@ -20,10 +21,16 @@ const styles = {
     padding: '10px',
   },
   resetButton: {
-    color: 'rgb(130, 130, 130)',
-    float: 'right',
-    marginRight: '5px',
-    marginTop: '5px',
+    position: 'absolute',
+    bottom: 0, right: 0,
+    border: 'none',
+    borderTop: 'solid 1px rgba(0, 0, 0, 0.2)',
+    borderLeft: 'solid 1px rgba(0, 0, 0, 0.2)',
+    background: 'rgba(255, 255, 255, 0.5)',
+    padding: '5px 10px',
+    borderRadius: '4px 0 0 0',
+    color: 'rgba(0, 0, 0, 0.5)',
+    outline: 'none',
   },
 };
 
