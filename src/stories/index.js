@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { action } from '@kadira/storybook-addon-actions';
-import { createKnob, wrap } from '../index';
+import { createKnob, withKnobs } from '../index';
 import Button from './Button';
 
 storiesOf('Button', module)
-  .addDecorator((story, context) => (wrap(story)(context)))
+  .addDecorator((story, context) => (withKnobs(story)(context)))
   .add('default view', () => (
     <Button
       onClick={ action('button clicked') }
