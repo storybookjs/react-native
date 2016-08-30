@@ -20,7 +20,7 @@ export function getEnvConfig(program, configEnv) {
     const envVarName = configEnv[fieldName];
     const envVarValue = process.env[envVarName];
     if (envVarValue) {
-      program[fieldName] = envVarValue;
+      program[fieldName] = envVarValue; // eslint-disable-line no-param-reassign
     }
   });
 }
