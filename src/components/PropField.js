@@ -43,6 +43,11 @@ stylesheet.checkbox = {
   width: 'auto',
 };
 
+stylesheet.objectInputLabel = {
+  ...stylesheet.label,
+  verticalAlign: 'top',
+};
+
 export default class PropField extends React.Component {
   constructor(props) {
     super(props);
@@ -125,9 +130,12 @@ export default class PropField extends React.Component {
       );
     }
 
+    const labelStyles =
+      type === 'object' ? stylesheet.objectInputLabel: stylesheet.label
+
     return (
       <div style={stylesheet.field}>
-        <label htmlFor={this.props.name} style={stylesheet.label}>
+        <label htmlFor={this.props.name} style={labelStyles}>
           {`${this.props.name}`}
         </label>
         { inputElem }
