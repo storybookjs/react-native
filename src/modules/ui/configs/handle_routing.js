@@ -10,7 +10,7 @@ export function changeUrl(reduxStore) {
   const { api, shortcuts, ui } = reduxStore.getState();
   if (!api) return;
 
-  const { selectedKind, selectedStory } = api;
+  const { selectedKind, selectedStory, customQueryParams } = api;
   const queryString = qs.stringify({ selectedKind, selectedStory });
 
   if (queryString === '') return;
@@ -35,30 +35,12 @@ export function changeUrl(reduxStore) {
 
   const uiQuery = qs.stringify({ downPanel });
 
-  const {
-    customQueryParams: custom,
-  } = api;
-  const customParamsString = qs.stringify({ custom });
-
   let url = `?${queryString}&${layoutQuery}&${uiQuery}`;
-  if (customParamsString) {
+
+  const customParamsString = qs.stringify(customQueryParams);
+  if (customParamsString.length > 0) {
     url = `${url}&${customParamsString}`;
   }
-
-  const currentQs = location.search.substring(1);
-  if (currentQs && currentQs.length > 0) {
-    const parsedQs = qs.parse(currentQs);
-    const knownKeys = [
-      'selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight',
-      'downPanel', 'custom',
-    ];
-    knownKeys.forEach(key => {
-      delete(parsedQs[key]);
-    });
-    const otherParams = qs.stringify(parsedQs);
-    url = `${url}&${otherParams}`;
-  }
-
 
   const state = {
     url,
@@ -69,7 +51,7 @@ export function changeUrl(reduxStore) {
     left,
     panelRight,
     downPanel,
-    custom,
+    ...customQueryParams,
   };
 
   window.history.pushState(state, '', url);
@@ -84,7 +66,7 @@ export function updateStore(queryParams, actions) {
     left = 1,
     panelRight = 0,
     downPanel,
-    custom,
+    ...customQueryParams,
   } = queryParams;
 
   if (selectedKind && selectedStory) {
@@ -101,9 +83,7 @@ export function updateStore(queryParams, actions) {
   if (downPanel) {
     actions.ui.selectDownPanel(downPanel);
   }
-  if (custom) {
-    actions.api.setQueryParams(custom);
-  }
+  actions.api.setQueryParams(customQueryParams);
 }
 
 export function handleInitialUrl(actions, location) {

@@ -2,7 +2,6 @@ import { changeUrl, handleInitialUrl, config } from '../handle_routing';
 import { expect } from 'chai';
 const { describe, it } = global;
 import sinon from 'sinon';
-import qs from 'qs';
 
 describe('manager.ui.config.handle_routing', () => {
   describe('changeUrl', () => {
@@ -19,7 +18,7 @@ describe('manager.ui.config.handle_routing', () => {
           selectedKind: 'kk',
           selectedStory: 'ss',
           customQueryParams: {
-            test: 'teststring',
+            customText: 'test',
           },
         },
         shortcuts: {
@@ -37,9 +36,8 @@ describe('manager.ui.config.handle_routing', () => {
         getState: () => reduxState,
       };
 
-      let url = '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp';
-      const queryString = qs.stringify({ custom: reduxState.api.customQueryParams });
-      url = `${url}&${queryString}`;
+      // eslint-disable-next-line max-len
+      const url = '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp&customText=test';
 
       const pushState = {
         url,
@@ -50,9 +48,7 @@ describe('manager.ui.config.handle_routing', () => {
         left: true,
         panelRight: true,
         downPanel: 'pp',
-        custom: {
-          test: 'teststring',
-        },
+        customText: 'test',
       };
 
       const originalPushState = window.history.pushState;
@@ -81,11 +77,8 @@ describe('manager.ui.config.handle_routing', () => {
         },
       };
 
-      let url =
-        '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test';
-
-      const queryString = qs.stringify({ custom: { test: 'teststring' } });
-      url = `${url}&${queryString}`;
+      // eslint-disable-next-line max-len
+      const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test&customText=teststring';
 
       const location = {
         search: url,
@@ -104,7 +97,7 @@ describe('manager.ui.config.handle_routing', () => {
         downPanelInRight: false,
       })).to.be.true;
       expect(actions.ui.selectDownPanel.calledWith('test')).to.be.true;
-      expect(actions.api.setQueryParams.calledWith({ test: 'teststring' })).to.be.true;
+      expect(actions.api.setQueryParams.calledWith({ customText: 'teststring' })).to.be.true;
       /* eslint-enable no-unused-expressions */
     });
   });
