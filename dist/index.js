@@ -16,6 +16,7 @@ var AddonStore = exports.AddonStore = function () {
     this._panels = {};
     this._channel = null;
     this._preview = null;
+    this._database = null;
   }
 
   _createClass(AddonStore, [{
@@ -37,6 +38,16 @@ var AddonStore = exports.AddonStore = function () {
     key: "setPreview",
     value: function setPreview(preview) {
       this._preview = preview;
+    }
+  }, {
+    key: "getDatabase",
+    value: function getDatabase() {
+      return this._database;
+    }
+  }, {
+    key: "setDatabase",
+    value: function setDatabase(database) {
+      this._database = database;
     }
   }, {
     key: "getPanels",

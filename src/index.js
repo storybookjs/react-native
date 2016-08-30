@@ -4,6 +4,7 @@ export class AddonStore {
     this._panels = {};
     this._channel = null;
     this._preview = null;
+    this._database = null;
   }
 
   getChannel() {
@@ -20,6 +21,14 @@ export class AddonStore {
 
   setPreview(preview) {
     this._preview = preview;
+  }
+
+  getDatabase() {
+    return this._database;
+  }
+
+  setDatabase(database) {
+    this._database = database;
   }
 
   getPanels() {
