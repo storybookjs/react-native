@@ -1,6 +1,7 @@
 import React from 'react';
 import PropForm from './PropForm';
 import tosource from 'tosource';
+import { js_beautify as beautify } from 'js-beautify';
 
 const styles = {
   panel: {
@@ -81,7 +82,7 @@ export default class Panel extends React.Component {
     for (const f in fields) {
       if (fields.hasOwnProperty(f)) {
         if (fields[f].type === 'object') {
-          fields[f].value = tosource(fields[f].value);
+          fields[f].value = beautify(tosource(fields[f].value));
         }
       }
     }

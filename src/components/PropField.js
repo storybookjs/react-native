@@ -1,4 +1,9 @@
 import React from 'react';
+import AceEditor from 'react-ace';
+import brace from 'brace';
+
+import 'brace/mode/javascript';
+import 'brace/theme/github';
 
 const stylesheet = {
   input: {
@@ -20,6 +25,7 @@ const stylesheet = {
   label: {
     display: 'table-cell',
     boxSizing: 'border-box',
+    verticalAlign: 'middle',
     paddingRight: '5px',
     textAlign: 'right',
     width: '20px',
@@ -43,6 +49,7 @@ export default class PropField extends React.Component {
     super(props);
     this._onChange = this.onChange.bind(this);
     this._onChangeBool = this.onChangeBool.bind(this);
+    this._onChangeObj = this.onChangeObj.bind(this);
   }
 
   onChange(e) {
@@ -51,6 +58,10 @@ export default class PropField extends React.Component {
 
   onChangeBool(e) {
     this.props.onChange(this.props.name, e.target.checked);
+  }
+
+  onChangeObj(value) {
+    this.props.onChange(this.props.name, value);
   }
 
   render() {
@@ -71,12 +82,22 @@ export default class PropField extends React.Component {
 
     if (type === 'object') {
       inputElem = (
-        <textarea
-          id={this.props.name}
-          style={stylesheet.textarea}
-          value={this.props.value}
-          onChange={this._onChange}
-        />
+        <div style={{border: '1px solid rgb(236, 236, 236)', padding: '5px'}}>
+          <AceEditor
+            mode="javascript"
+            theme="github"
+            value={this.props.value}
+            onChange={this._onChangeObj}
+            name={this.props.name}
+            width="100%"
+            height="120px"
+            editorProps={{$blockScrolling: true}}
+            setOptions={{showLineNumbers: false}}
+            showPrintMargin={false}
+            showGutter={false}
+            highlightActiveLine={false}
+          />
+        </div>
       );
     }
 
