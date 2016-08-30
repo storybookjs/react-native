@@ -3,8 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 exports.parseList = parseList;
 exports.getHeadHtml = getHeadHtml;
+exports.getEnvConfig = getEnvConfig;
 
 var _path = require('path');
 
@@ -28,4 +34,14 @@ function getHeadHtml(configDirPath) {
   }
 
   return headHtml;
+}
+
+function getEnvConfig(program, configEnv) {
+  (0, _keys2.default)(configEnv).forEach(function (fieldName) {
+    var envVarName = configEnv[fieldName];
+    var envVarValue = process.env[envVarName];
+    if (envVarValue) {
+      program[fieldName] = envVarValue; // eslint-disable-line no-param-reassign
+    }
+  });
 }

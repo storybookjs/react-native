@@ -52,6 +52,14 @@ var logger = console;
 
 _commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
 
+// The key is the field created in `program` variable for
+// each command line argument. Value is the env variable.
+(0, _utils.getEnvConfig)(_commander2.default, {
+  staticDir: 'STORYBOOK_STATIC_DIR',
+  outputDir: 'STORYBOOK_OUTPUT_DIR',
+  configDir: 'STORYBOOK_CONFIG_DIR'
+});
+
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';

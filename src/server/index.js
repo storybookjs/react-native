@@ -6,7 +6,7 @@ import path from 'path';
 import fs from 'fs';
 import storybook from './middleware';
 import packageJson from '../../package.json';
-import { parseList } from './utils';
+import { parseList, getEnvConfig } from './utils';
 import { track, dontTrack } from './track_usage';
 
 const logger = console;
@@ -20,6 +20,15 @@ program
   .option('--dont-track', 'Do not send anonymous usage stats.')
   .parse(process.argv);
 
+// The key is the field created in `program` variable for
+// each command line argument. Value is the env variable.
+getEnvConfig(program, {
+  port: 'STORYBOOK_PORT',
+  host: 'STORYBOOK_HOST',
+  staticDir: 'STORYBOOK_STATIC_DIR',
+  configDir: 'STORYBOOK_CONFIG_DIR',
+  dontTrack: 'STORYBOOK_DO_NOT_TRACK',
+});
 
 if (program.dontTrack) {
   dontTrack();
