@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.3.4
+30-Aug-2016
+
+* Add missing react-dom peerDependency [PR35](https://github.com/kadirahq/storybook-ui/pull/35)
+
 ### v3.3.3
 30-Aug-2016
 
