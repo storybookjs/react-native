@@ -1,5 +1,16 @@
 # Changelog
 
+### v1.4.4
+30-Aug-2016
+
+* Update @kadira/storybook to version 2.5.2. [PR17](https://github.com/kadirahq/getstorybook/pull/17)
+* Add Arial font and remove image from Welcome message. [PR16](https://github.com/kadirahq/getstorybook/pull/16)
+
+### v1.4.3
+30-Aug-2016
+
+This is a mistakenly published version.
+
 ### v1.4.2
 28-Aug-2016
 
