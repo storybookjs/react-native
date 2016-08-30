@@ -4,23 +4,10 @@ The Story Links addon can be used to create links between stories. This addon wo
 
 ## Getting Started
 
-First, install the addon
-
-```shell
-npm install -D @kadira/storybook-addon-links
-```
-
-Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
+You can use this addon without installing it.
 
 ```js
-import '@kadira/storybook-addon-links/register';
-```
-
-Import the `linkTo` function and use it to create links. When creating links, provide the target story info.
-
-```js
-import { storiesOf } from '@kadira/storybook'
-import { linkTo } from '@kadira/storybook-addon-links'
+import { storiesOf, linkTo } from '@kadira/storybook'
 
 storiesOf('Button', module)
   .add('First', () => (
@@ -29,5 +16,18 @@ storiesOf('Button', module)
   .add('Second', () => (
     <button onClick={linkTo('Button', 'First')}>Go to "First"</button>
   ));
-
 ```
+
+Have a look at the linkTo function:
+
+```js
+linkTo('Toggle', 'off')
+```
+
+With that, you can link an event in a component to any story in the Storybook.
+
+* First parameter is the the story kind name (what you named with `storiesOf`).
+* Second parameter is the story name (what you named with `.add`).
+
+> You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string. <br/>
+> Have a look at [PR86](https://github.com/kadirahq/react-storybook/pull/86) for more information.
