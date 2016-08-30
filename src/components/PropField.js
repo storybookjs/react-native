@@ -1,6 +1,5 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-import brace from 'brace';
 
 import 'brace/mode/javascript';
 import 'brace/theme/github';
@@ -44,6 +43,11 @@ stylesheet.checkbox = {
   width: 'auto',
 };
 
+stylesheet.objectInputLabel = {
+  ...stylesheet.label,
+  verticalAlign: 'top',
+};
+
 export default class PropField extends React.Component {
   constructor(props) {
     super(props);
@@ -82,7 +86,7 @@ export default class PropField extends React.Component {
 
     if (type === 'object') {
       inputElem = (
-        <div style={{border: '1px solid rgb(236, 236, 236)', padding: '5px'}}>
+        <div style={{ border: '1px solid rgb(236, 236, 236)', padding: '5px' }}>
           <AceEditor
             mode="javascript"
             theme="github"
@@ -91,8 +95,8 @@ export default class PropField extends React.Component {
             name={this.props.name}
             width="100%"
             height="120px"
-            editorProps={{$blockScrolling: true}}
-            setOptions={{showLineNumbers: false}}
+            editorProps={{ $blockScrolling: true }}
+            setOptions={{ showLineNumbers: false }}
             showPrintMargin={false}
             showGutter={false}
             highlightActiveLine={false}
@@ -126,9 +130,12 @@ export default class PropField extends React.Component {
       );
     }
 
+    const labelStyles =
+      type === 'object' ? stylesheet.objectInputLabel : stylesheet.label;
+
     return (
       <div style={stylesheet.field}>
-        <label htmlFor={this.props.name} style={stylesheet.label}>
+        <label htmlFor={this.props.name} style={labelStyles}>
           {`${this.props.name}`}
         </label>
         { inputElem }

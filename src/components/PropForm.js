@@ -12,7 +12,6 @@ const stylesheet = {
     boxSizing: 'border-box',
     width: '100%',
     maxWidth: '500px',
-    margin: '0 auto',
     borderCollapse: 'separate',
     borderSpacing: '5px',
   },
