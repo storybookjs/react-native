@@ -6,17 +6,7 @@ The Action Logger addon can be used to display data received by event handlers. 
 
 ## Getting Started
 
-First, install the addon
-
-```shell
-npm install -D @kadira/storybook-addon-actions
-```
-
-Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
-
-```js
-import '@kadira/storybook-addon-actions/register';
-```
+You can use this addon without installing it manually.
 
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a name to make it easier to identify.
 
