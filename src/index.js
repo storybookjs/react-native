@@ -29,7 +29,7 @@ function createKnob(name, value, type) {
   return value;
 }
 
-function wrap(storyFn) {
+function withKnobs(storyFn) {
   const channel = addons.getChannel();
 
   return context => {
@@ -48,4 +48,4 @@ function wrap(storyFn) {
   };
 }
 
-export { register, createKnob, wrap };
+export { register, createKnob, withKnobs };
