@@ -18,7 +18,7 @@ if(fs.existsSync('.babelrc')) {
   var babelrcContent = fs.readFileSync('.babelrc', 'utf8');
   babelrc = JSON5.parse(babelrcContent);
   babelrc.plugins = babelrc.plugins || [];
-  
+
   if (babelrc.plugins.indexOf('babel-root-slash-import') < 0) {
     babelrc.plugins.push('babel-root-slash-import');
     packageJson.devDependencies['babel-root-slash-import'] = '^1.1.0';
@@ -39,7 +39,7 @@ if(fs.existsSync('.babelrc')) {
 fs.writeFileSync('.babelrc', JSON.stringify(babelrc, null, 2), 'utf8');
 
 // write the new package.json.
-packageJson.devDependencies['@kadira/storybook'] = '^2.0.0';
+packageJson.devDependencies['@kadira/storybook'] = '^2.5.2';
 packageJson.scripts['storybook'] = 'start-storybook -p 6006';
 packageJson.scripts['build-storybook'] = 'build-storybook';
 
