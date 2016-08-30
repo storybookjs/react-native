@@ -57,15 +57,15 @@ export default class PropField extends React.Component {
   }
 
   onChange(e) {
-    this.props.onChange(this.props.name, e.target.value);
+    this.props.onChange(e.target.value);
   }
 
   onChangeBool(e) {
-    this.props.onChange(this.props.name, e.target.checked);
+    this.props.onChange(e.target.checked);
   }
 
   onChangeObj(value) {
-    this.props.onChange(this.props.name, value);
+    this.props.onChange(value);
   }
 
   render() {
