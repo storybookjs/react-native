@@ -8,7 +8,7 @@ const stylesheet = {
     height: '26px',
     width: '100%',
     outline: 'none',
-    border: '0px',
+    border: '1px solid rgb(236, 236, 236)',
     fontSize: '12px',
     padding: '5px',
     color: 'rgb(130, 130, 130)',
@@ -16,7 +16,6 @@ const stylesheet = {
   field: {
     display: 'table-row',
     padding: '5px',
-    color: 'rgb(130, 130, 130)',
   },
   label: {
     display: 'table-cell',
@@ -25,6 +24,7 @@ const stylesheet = {
     textAlign: 'right',
     width: '20px',
     fontSize: '13px',
+    color: 'rgb(68, 68, 68)',
   },
 };
 
