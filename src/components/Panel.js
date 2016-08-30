@@ -1,7 +1,7 @@
 import React from 'react';
 import PropForm from './PropForm';
 import tosource from 'tosource';
-import { js_beautify as beautify } from 'js-beautify';
+import { js_beautify as beautify } from 'js-beautify'; // eslint-disable-line camelcase
 
 const styles = {
   panel: {
