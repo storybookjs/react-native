@@ -35,7 +35,7 @@ export default class Panel extends React.Component {
     this._setInitialFields = this.setInitialFields.bind(this);
     this._indicateReady = this.indicateReady.bind(this);
 
-    this.state = { fields: null };
+    this.state = { fields: {} };
     this.api = this.props.api;
   }
 
@@ -56,7 +56,6 @@ export default class Panel extends React.Component {
 
   componentDidMount() {
     this.stopOnStory = this.api.onStory(() => {
-      this.setState({ fields: null });
       this.api.setQueryParams({ knobs: null });
     });
 
@@ -112,7 +111,10 @@ export default class Panel extends React.Component {
   }
 
   render() {
-    if (!this.state.fields) {
+    const fields = this.state.fields;
+    const fieldsArray = Object.keys(fields).map(key => (fields[key]));
+
+    if (fieldsArray.length === 0) {
       return (
         <div style={styles.noKnobs}>NO KNOBS</div>
       );
@@ -120,7 +122,7 @@ export default class Panel extends React.Component {
 
     return (
       <div style={styles.panel}>
-        <PropForm fields={this.state.fields} onFieldChange={this._handleChange} />
+        <PropForm fields={fieldsArray} onFieldChange={this._handleChange} />
         <button style={styles.resetButton} onClick={this._reset}>RESET</button>
       </div>
     );
