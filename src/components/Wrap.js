@@ -3,7 +3,6 @@ import React from 'react';
 export default class Wrap extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store;
     this._initialPropsReceived = this.initialPropsReceived.bind(this);
     this._knobChanged = this.knobChanged.bind(this);
     this._resetKnobs = this.resetKnobs.bind(this);
@@ -12,7 +11,7 @@ export default class Wrap extends React.Component {
       this.props.channel.emit('addon:knobs:helloFromStory');
     };
     this.setPanelFields = () => {
-      this.props.channel.emit('addon:knobs:setFields', this.store);
+      this.props.channel.emit('addon:knobs:setFields', this.props.store);
     };
   }
 
@@ -42,7 +41,7 @@ export default class Wrap extends React.Component {
 
   knobChanged(change) {
     const { name, value } = change;
-    const { type } = this.store[name];
+    const { type } = this.props.store[name];
 
     let formatedValue = value;
     if (type === 'object') {
@@ -53,13 +52,13 @@ export default class Wrap extends React.Component {
       }
     }
 
-    this.store[name].value = formatedValue;
+    this.props.store[name].value = formatedValue;
     this.forceUpdate();
   }
 
   resetKnobs() {
-    Object.keys(this.store).forEach(field => {
-      delete(this.store[field]);
+    Object.keys(this.props.store).forEach(field => {
+      delete(this.props.store[field]);
     });
     this.forceUpdate();
     this.setPanelFields();

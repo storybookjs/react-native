@@ -18,6 +18,7 @@ function register() {
 }
 
 let knobStore = {};
+const stories = {};
 
 function createKnob(name, value, type) {
   if (knobStore[name]) {
@@ -30,12 +31,20 @@ function createKnob(name, value, type) {
 
 function wrap(storyFn) {
   const channel = addons.getChannel();
-  const localKnobStore = {};
 
   return context => {
+    if (!stories[context.kind]) {
+      stories[context.kind] = {};
+    }
+
+    if (!stories[context.kind][context.story]) {
+      stories[context.kind][context.story] = {};
+    }
+
     // Change the global knobStore to the one local to this story
-    knobStore = localKnobStore;
-    return <Wrap {...{ context, storyFn, channel, store: localKnobStore }} />;
+    knobStore = stories[context.kind][context.story];
+
+    return <Wrap {...{ context, storyFn, channel, store: knobStore }} />;
   };
 }
 
