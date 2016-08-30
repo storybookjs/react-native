@@ -42,7 +42,8 @@
     "sinon": "^1.17.3"
   },
   "peerDependencies": {
-    "react": "^0.14.7 || ^15.0.0"
+    "react": "^0.14.7 || ^15.0.0",
+    "react-dom": "^0.14.7 || ^15.0.0"
   },
   "dependencies": {
     "@kadira/react-split-pane": "^1.4.0",
