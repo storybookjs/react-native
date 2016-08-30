@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.3.3
+30-Aug-2016
+
+* Avoid re-rendering panel content [PR36](https://github.com/kadirahq/storybook-ui/pull/36)
+
 ### v3.3.2
 24-Aug-2016
 
