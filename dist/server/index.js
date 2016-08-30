@@ -35,6 +35,16 @@ var logger = console;
 
 _commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('--dont-track', 'Do not send anonymous usage stats.').parse(process.argv);
 
+// The key is the field created in `program` variable for
+// each command line argument. Value is the env variable.
+(0, _utils.getEnvConfig)(_commander2.default, {
+  port: 'STORYBOOK_PORT',
+  host: 'STORYBOOK_HOST',
+  staticDir: 'STORYBOOK_STATIC_DIR',
+  configDir: 'STORYBOOK_CONFIG_DIR',
+  dontTrack: 'STORYBOOK_DO_NOT_TRACK'
+});
+
 if (_commander2.default.dontTrack) {
   (0, _track_usage.dontTrack)();
 }

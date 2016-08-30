@@ -12,7 +12,7 @@ import baseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml, parseList } from './utils';
+import { getHeadHtml, parseList, getEnvConfig } from './utils';
 
 // avoid ESLint errors
 const logger = console;
@@ -23,6 +23,14 @@ program
   .option('-o, --output-dir [dir-name]', 'Directory where to store built files')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .parse(process.argv);
+
+// The key is the field created in `program` variable for
+// each command line argument. Value is the env variable.
+getEnvConfig(program, {
+  staticDir: 'STORYBOOK_STATIC_DIR',
+  outputDir: 'STORYBOOK_OUTPUT_DIR',
+  configDir: 'STORYBOOK_CONFIG_DIR',
+});
 
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
