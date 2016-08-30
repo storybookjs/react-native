@@ -23,8 +23,8 @@ export default class propForm extends React.Component {
     this._onFieldChange = this.onFieldChange.bind(this);
   }
 
-  onFieldChange(name, value) {
-    const change = { name, value };
+  onFieldChange(name, type, value) {
+    const change = { name, type, value };
     this.props.onFieldChange(change);
   }
 
@@ -43,7 +43,7 @@ export default class propForm extends React.Component {
             name={field.name}
             type={field.type}
             value={field.value}
-            onChange={this._onFieldChange}
+            onChange={this._onFieldChange.bind(null, field.name, field.type)}
           />
         ))}
       </form>
