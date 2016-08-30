@@ -47,7 +47,7 @@ var DownPanel = function (_Component) {
 
   function DownPanel() {
     (0, _classCallCheck3.default)(this, DownPanel);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DownPanel).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (DownPanel.__proto__ || (0, _getPrototypeOf2.default)(DownPanel)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(DownPanel, [{
@@ -89,15 +89,22 @@ var DownPanel = function (_Component) {
       });
     }
   }, {
-    key: 'renderPanel',
-    value: function renderPanel() {
-      var panelStyle = { flex: 1, display: 'flex' };
-      var panel = this.props.panels[this.props.selectedPanel];
-      return _react2.default.createElement(
-        'div',
-        { key: name, style: panelStyle },
-        panel.render()
-      );
+    key: 'renderPanels',
+    value: function renderPanels() {
+      var _this4 = this;
+
+      return (0, _keys2.default)(this.props.panels).sort().map(function (name) {
+        var panelStyle = { display: 'none' };
+        var panel = _this4.props.panels[name];
+        if (name === _this4.props.selectedPanel) {
+          (0, _assign2.default)(panelStyle, { flex: 1, display: 'flex' });
+        }
+        return _react2.default.createElement(
+          'div',
+          { key: name, style: panelStyle },
+          panel.render()
+        );
+      });
     }
   }, {
     key: 'renderEmpty',
@@ -125,7 +132,7 @@ var DownPanel = function (_Component) {
         _react2.default.createElement(
           'div',
           { style: _style2.default.content },
-          this.renderPanel()
+          this.renderPanels()
         )
       );
     }

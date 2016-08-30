@@ -95,7 +95,7 @@ var SearchBox = function (_React$Component) {
   function SearchBox(props) {
     (0, _classCallCheck3.default)(this, SearchBox);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SearchBox).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (SearchBox.__proto__ || (0, _getPrototypeOf2.default)(SearchBox)).call(this, props));
 
     _this.onSelect = _this.onSelect.bind(_this);
     _this.fireOnStory = _this.fireOnStory.bind(_this);
