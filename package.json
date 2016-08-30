@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write notes for your Storybook stories.",
   "repository": {
     "type": "git",
