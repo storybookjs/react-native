@@ -1,5 +1,5 @@
 import React from 'react';
-import Highlight from 'react-highlight';
+import Highlight from '../../../lib/highlight.js';
 import marked from 'marked';
 import 'highlight.js/styles/github-gist.css';
 import './style.css';
@@ -20,8 +20,8 @@ const DocsContent = ({ title, content }) => (
     <div className="content">
       <h2 className="title">{ title }</h2>
       <div className="markdown">
-        <Highlight innerHTML={true}>
-        { marked(content) }
+        <Highlight>
+          { marked(content) }
         </Highlight>
       </div>
     </div>
