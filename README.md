@@ -1,6 +1,6 @@
 # Website for [getstorybook.io](https://getstorybook.io)
 
-This is the source for [getstorybook.io](https://getstorybook.io). This is [Create React App](https://github.com/facebookincubator/create-react-app) based site.
+This is the source for [getstorybook.io](https://getstorybook.io). This is a [Create React App](https://github.com/facebookincubator/create-react-app) based site.
 
 This site has also has the documentation for Storybook.
 
