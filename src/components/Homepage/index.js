@@ -38,21 +38,10 @@ const featuredStorybooks = [
   },
 ];
 
-const META = [
-  {
-    name: "description",
-    content: `
-      React Storybook is a UI development environment for your React components.
-      With it, you can visualize different states of your UI components and develop them interactively.
-    `
-  }
-];
-
 const Homepage = () => (
   <div className="container">
     <Helmet
       title="Storybook - UI dev environment you'll love to use"
-      meta={META}
     />
     <Header currentSection="home"/>
     <Heading />
