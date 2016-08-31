@@ -26,6 +26,10 @@ const style = {
   soft: { paddingLeft: "10px", paddingRight: "10px" },
   hard: { padding: "0" },
   flush: { margin: "0" },
+  font: {
+    fontFamily: "-apple-system, '.SFNSText-Regular', 'San Francisco', Roboto, 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
+    fontSize: "14px",
+  },
 };
 
 export interface BackgroundItemProps {
@@ -62,10 +66,10 @@ export default class Swatch extends React.Component<BackgroundItemProps, any> {
         >
         </div>
         <div style={assign({}, style.listStyle, style.soft)}>
-          <h4 style={{ float: "left" }}>
+          <h4 style={assign({ float: "left", fontWeight: "bold" }, style.font)}>
             {this.props.name}:
           </h4>
-          <h4 style={{ float: "right" }}>
+          <h4 style={assign({ float: "right", fontWeight: "normal" }, style.font)}>
             <em>{this.props.value}</em>
           </h4>
         </div>
