@@ -60,12 +60,12 @@ export default {
     You also pass the channel and the Storybook API into that. See:
 
     ~~~js
-    addonAPI.register('kadira/notes', (api) => {
+    addonAPI.register('kadira/notes', (storybookAPI) => {
       // Also need to set a unique name to the panel.
       addonAPI.addPanel('kadira/notes/panel', {
         title: 'Notes',
         render: () => (
-          <Notes channel={addons.getChannel()} api={api}/>
+          <Notes channel={addons.getChannel()} api={storybookAPI}/>
         ),
       })
     })

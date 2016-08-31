@@ -34,7 +34,7 @@ export default {
     * Select a story.
     * Register keyboard shortcuts (coming soon).
 
-    With this, you can write some pretty cool addons. Look at our [Addon Galary](/docs/addons/addon-galary) to have a look at some sample addons.
+    With this, you can write some pretty cool addons. Look at our [Addon gallery](/docs/addons/addon-gallery) to have a look at some sample addons.
 
     ## Getting Started
 
