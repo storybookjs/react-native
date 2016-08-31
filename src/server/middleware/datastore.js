@@ -3,7 +3,6 @@ import { Router } from 'express';
 import lowdb from 'lowdb';
 import fileAsyncStorage from 'lowdb/lib/file-async';
 import bodyParser from 'body-parser';
-import uuid from 'uuid';
 
 export class Database {
   constructor(dbPath) {
@@ -24,9 +23,10 @@ export class Database {
     // and sort it by each key (and its order) and then apply the limit
     const allDocs = this.db.get(collection).filter(query).value();
     const sorted = Object.keys(sort).reduce((unsorted, key) => {
-      const order = sort[key];
-      const sorter = (x, y) => (x[key] > y[key]) ? order * 1 : order * -1;
-      return unsorted.sort(sorter);
+      return unsorted.sort(function (x, y) {
+        const order = sort[key];
+        return (x[key] > y[key]) ? order * 1 : order * -1;
+      });
     }, allDocs);
     // apply the limit after sorting
     return sorted.slice(0, limit);
@@ -36,7 +36,7 @@ export class Database {
     // if the database doesn't exist, add the item
     // and return the inserted item as the result.
     if (!this.db.has(collection).value()) {
-      this.db.set(collection, [ item ]).value();
+      this.db.set(collection, [item]).value();
       return item;
     }
     // if the item already exists in the database, update it
@@ -46,7 +46,7 @@ export class Database {
     }
     // If the item is not available in the database, insert it
     const coll = this.db.get(collection).value();
-    this.db.set(collection, [ ...coll, item ]).value();
+    this.db.set(collection, [...coll, item]).value();
     return item;
   }
 }
@@ -61,14 +61,14 @@ export default function (configDir) {
   router.post('/get', function (req, res) {
     const { collection, query, sort, limit } = req.body;
     const out = db.get(collection, query, sort, limit);
-    res.send({data: out});
+    res.send({ data: out });
     res.end();
   });
 
   router.post('/set', function (req, res) {
     const { collection, item } = req.body;
     const out = db.set(collection, item);
-    res.send({data: out});
+    res.send({ data: out });
     res.end();
   });
 

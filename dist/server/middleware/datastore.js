@@ -71,10 +71,6 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
-var _uuid = require('uuid');
-
-var _uuid2 = _interopRequireDefault(_uuid);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Database = exports.Database = function () {
@@ -100,11 +96,10 @@ var Database = exports.Database = function () {
       // and sort it by each key (and its order) and then apply the limit
       var allDocs = this.db.get(collection).filter(query).value();
       var sorted = (0, _keys2.default)(sort).reduce(function (unsorted, key) {
-        var order = sort[key];
-        var sorter = function sorter(x, y) {
+        return unsorted.sort(function (x, y) {
+          var order = sort[key];
           return x[key] > y[key] ? order * 1 : order * -1;
-        };
-        return unsorted.sort(sorter);
+        });
       }, allDocs);
       // apply the limit after sorting
       return sorted.slice(0, limit);
