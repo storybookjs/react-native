@@ -17,9 +17,13 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _middleware = require('./middleware');
+var _storybook = require('./middleware/storybook');
 
-var _middleware2 = _interopRequireDefault(_middleware);
+var _storybook2 = _interopRequireDefault(_storybook);
+
+var _datastore = require('./middleware/datastore');
+
+var _datastore2 = _interopRequireDefault(_datastore);
 
 var _package = require('../../package.json');
 
@@ -79,7 +83,8 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-app.use((0, _middleware2.default)(configDir));
+app.use((0, _storybook2.default)(configDir));
+app.use('/db', (0, _datastore2.default)(configDir));
 
 app.listen.apply(app, listenAddr.concat([function (error) {
   if (error) {

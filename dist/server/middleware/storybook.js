@@ -52,22 +52,22 @@ var _webpackHotMiddleware = require('webpack-hot-middleware');
 
 var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
 
-var _webpack3 = require('./config/webpack.config');
+var _webpack3 = require('../config/webpack.config');
 
 var _webpack4 = _interopRequireDefault(_webpack3);
 
-var _config = require('./config');
+var _config = require('../config');
 
 var _config2 = _interopRequireDefault(_config);
 
-var _index = require('./index.html');
+var _index = require('../index.html');
 
 var _index2 = _interopRequireDefault(_index);
 
-var _iframe = require('./iframe.html');
+var _iframe = require('../iframe.html');
 
 var _iframe2 = _interopRequireDefault(_iframe);
 
-var _utils = require('./utils');
+var _utils = require('../utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

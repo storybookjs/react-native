@@ -4,7 +4,8 @@ import express from 'express';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
-import storybook from './middleware';
+import storybook from './middleware/storybook';
+import datastore from './middleware/datastore';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 import { track, dontTrack } from './track_usage';
@@ -65,6 +66,7 @@ if (program.staticDir) {
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
 app.use(storybook(configDir));
+app.use('/db', datastore(configDir));
 
 app.listen(...listenAddr, function (error) {
   if (error) {
