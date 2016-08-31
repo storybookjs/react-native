@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.6.1
+31-August-2016
+
+* Bring back HMR dev logs. [PR412](https://github.com/kadirahq/react-storybook/pull/412).
+
 ### v2.6.0
 30-August-2016
 
