@@ -1,5 +1,5 @@
 import * as React from "react";
-import addon from "@kadira/storybook-addons";
+import addons from "@kadira/storybook-addons";
 
 const style = {
   wrapper: {
@@ -25,10 +25,14 @@ export class BackgroundDecorator extends React.Component<any, any> {
   constructor(props) {
     super(props);
 
-    this.channel = addon.getChannel();
+    this.channel = addons.getChannel();
     this.story = this.props.story();
 
     this.channel.on("background", background => this.setState({ background }));
+  }
+
+  componentWillUnmount() {
+    this.channel.emit("background-unset");
   }
 
   componentWillMount() {
