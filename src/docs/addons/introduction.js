@@ -6,7 +6,7 @@ const images = {
 
 export default {
   id: "introduction",
-  title: "Introduction",
+  title: "Intro to Addons",
   content: stripIndent`
     By default, Storybook comes with a way to list stories and visualize them. Addons implement extra features for Storybooks to make them more useful.
 
