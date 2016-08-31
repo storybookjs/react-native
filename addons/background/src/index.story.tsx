@@ -13,9 +13,9 @@ storiesOf("First Component", module)
 
 
 storiesOf("Second Component", module)
-  .addDecorator(backgrounds([
-    { name: "light-primary", value: "#f1f1f1" },
-    { name: "light-secondary", value: "#ddd" },
-  ]))
+  // .addDecorator(backgrounds([
+  //   { name: "light-primary", value: "#f1f1f1" },
+  //   { name: "light-secondary", value: "#ddd" },
+  // ]))
   .add("Second Button", () => <button>Click me</button>)
   ;

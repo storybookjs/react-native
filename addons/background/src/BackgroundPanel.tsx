@@ -24,6 +24,13 @@ const defaultBackground: BackgroundDetail = {
   value: "transparent",
 };
 
+const __html = `
+.addDecorator(backgrounds([
+  { name: "light-primary", value: "#f1f1f1" },
+  { name: "light-secondary", value: "#ddd" },
+]));
+`.trim();
+
 export default class BackgroundPanel extends React.Component<BackgroundPanelProps, any> {
 
   state = { backgrounds: [] };
@@ -38,28 +45,23 @@ export default class BackgroundPanel extends React.Component<BackgroundPanelProp
 
     const { channel } = this.props;
     const backgrounds: BackgroundDetail[] = [...this.state.backgrounds];
-
+  
     if (!backgrounds.length) {
       return (
         <div style={assign({ padding: "20px" }, style.font)}>
           <h5 style={{ fontSize: "16px" }}>Setup Instructions</h5>
           <p>Please add the background decorator definition to your story.
           The background decorate accepts an array of items, which should include a
-          name for your color (preferably the class name) and the corresponding color / image value.</p>
+          name for your color (preferably the css class name) and the corresponding color / image value.</p>
           <p>Below is an example of how to add the background decorator to your story definition.</p>
-          <pre style={assign({
+          <pre style={{
             padding: "30px",
             display: "block",
             background: "rgba(19,19,19,0.9)",
             color: "rgba(255,255,255,0.95)",
             marginTop: "15px",
             lineHeight: "1.75em",
-          })}>
-            .addDecorator(backgrounds([<br />
-              { name: "light-primary", value: "#f1f1f1" },<br />
-              { name: "light-secondary", value: "#ddd" },<br />
-            ]));
-          </pre>
+          }}><code dangerouslySetInnerHTML={{ __html }} /></pre>
         </div>
       );
     }
