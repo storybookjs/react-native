@@ -8,7 +8,7 @@ export default {
   id: "introduction",
   title: "Introduction",
   content: stripIndent`
-    By default, Storybook comes with a way to list stories and visualize them. Addons implements extra features for Storybook to make Storybook more useful.
+    By default, Storybook comes with a way to list stories and visualize them. Addons implement extra features for Storybooks to make them more useful.
 
     Basically, there are two types of addons. (Decorators and Native Addons)
 
@@ -105,7 +105,7 @@ export default {
     See the following links to learn more about native addons:
 
     * [Using addons](/docs/addons/using-addons)
-    * [Addon Galary](/docs/addons/addon-galary)
+    * [Addon gallery](/docs/addons/addon-gallery)
     * [Write your own addon](/docs/addons/writing-addons)
   `
 };
