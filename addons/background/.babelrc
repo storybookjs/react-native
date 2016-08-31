@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "es2015-loose",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "transform-inline-environment-variables",
+    "transform-react-constant-elements",
+    "react-require",
+    "react-remove-prop-types",
+    "transform-dead-code-elimination"
+  ]
+}

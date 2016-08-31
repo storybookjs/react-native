@@ -1,0 +1,11 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/asvetliakov/typings-enzyme/da15db2a4042e3b1f454aebdec9484e51de46c0a/typings.json",
+    "raw": "registry:npm/enzyme#2.2.0+20160322031343",
+    "main": "index.d.ts",
+    "global": false,
+    "name": "enzyme",
+    "type": "typings"
+  }
+}
