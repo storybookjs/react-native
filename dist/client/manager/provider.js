@@ -46,6 +46,10 @@ var _storybookChannelPagebus = require('@kadira/storybook-channel-pagebus');
 
 var _storybookChannelPagebus2 = _interopRequireDefault(_storybookChannelPagebus);
 
+var _storybookDatabaseLocal = require('@kadira/storybook-database-local');
+
+var _storybookDatabaseLocal2 = _interopRequireDefault(_storybookDatabaseLocal);
+
 var _preview = require('./preview');
 
 var _preview2 = _interopRequireDefault(_preview);
@@ -58,11 +62,16 @@ var ReactProvider = function (_Provider) {
   function ReactProvider() {
     (0, _classCallCheck3.default)(this, ReactProvider);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ReactProvider).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
 
     _this.dataId = _uuid2.default.v4();
     _this.channel = (0, _storybookChannelPagebus2.default)({ key: _this.dataId });
     _storybookAddons2.default.setChannel(_this.channel);
+    _this.database = _storybookAddons2.default.getDatabase();
+    if (!_this.database) {
+      _this.database = (0, _storybookDatabaseLocal2.default)({ url: location.origin + '/db' });
+      _storybookAddons2.default.setDatabase(_this.database);
+    }
     return _this;
   }
 
