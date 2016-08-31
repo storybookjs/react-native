@@ -1,9 +1,7 @@
-
 import * as React from "react"; // tslint:disable-line
 const EventEmitter = require("events"); // tslint:disable-line
 import { shallow } from "enzyme";
 import Swatch from "../Swatch";
-// import ReactTestUtils from "react-addons-test-utils";
 const TestUtils = require("react-addons-test-utils");
 
 describe("Swatch", function() {
