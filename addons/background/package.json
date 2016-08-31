@@ -12,11 +12,6 @@
     "watch": "tsc -w",
     "lint": "tslint 'src/*.ts*' && tslint 'test/*.ts*'"
   },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NewSpring/react-storybook-addon-backgrounds.git"
