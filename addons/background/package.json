@@ -6,6 +6,7 @@
   "scripts": {
     "storybook": "start-storybook -p 3000",
     "pretest": "npm run compile",
+    "build": "build-storybook -s src -o docs",
     "test": "jest",
     "posttest": "npm run lint",
     "compile": "tsc",
