@@ -36,5 +36,9 @@ export default {
     ### [Info](https://github.com/kadirahq/react-storybook-addon-info)
 
     If you are using Storybook as a style guide, then this addon will help you to build a nice-looking style guide with docs, automatic sample source code with a PropType explorer.
+    
+    ### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
+
+    With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
   `
 };
