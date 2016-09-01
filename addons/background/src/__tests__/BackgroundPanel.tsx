@@ -58,7 +58,7 @@ describe("Background Panel", () => {
 
   it("should accept colors through channel and render the correct swatches with a default swatch", () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel}/>);
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     SpiedChannel.emit("background-set", backgrounds);
 
     expect(backgroundPanel.state.backgrounds[0].name).toBe(backgrounds[0].name);
@@ -71,7 +71,7 @@ describe("Background Panel", () => {
 
   it("should unset all swatches on receiving the backgroun-unset message", () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel}/>);
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     SpiedChannel.emit("background-set", backgrounds);
 
     expect(backgroundPanel.state.backgrounds[0].name).toBe(backgrounds[0].name);
