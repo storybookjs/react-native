@@ -17,13 +17,13 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _storybook = require('./middleware/storybook');
+var _middleware = require('./middleware');
 
-var _storybook2 = _interopRequireDefault(_storybook);
+var _middleware2 = _interopRequireDefault(_middleware);
 
-var _datastore = require('./middleware/datastore');
+var _middleware3 = require('@kadira/storybook-database-local/dist/server/middleware');
 
-var _datastore2 = _interopRequireDefault(_datastore);
+var _middleware4 = _interopRequireDefault(_middleware3);
 
 var _package = require('../../package.json');
 
@@ -83,8 +83,9 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-app.use((0, _storybook2.default)(configDir));
-app.use('/db', (0, _datastore2.default)(configDir));
+var dbPath = _path2.default.resolve(configDir, 'datastore.json');
+app.use((0, _middleware2.default)(configDir));
+app.use('/db', (0, _middleware4.default)(dbPath));
 
 app.listen.apply(app, listenAddr.concat([function (error) {
   if (error) {

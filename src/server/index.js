@@ -4,8 +4,8 @@ import express from 'express';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
-import storybook from './middleware/storybook';
-import datastore from './middleware/datastore';
+import storybook from './middleware';
+import datastore from '@kadira/storybook-database-local/dist/server/middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 import { track, dontTrack } from './track_usage';
@@ -65,8 +65,9 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
+const dbPath = path.resolve(configDir, 'datastore.json');
 app.use(storybook(configDir));
-app.use('/db', datastore(configDir));
+app.use('/db', datastore(dbPath));
 
 app.listen(...listenAddr, function (error) {
   if (error) {
