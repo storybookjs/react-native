@@ -4,6 +4,7 @@ import React from 'react';
 import { Provider } from '@kadira/storybook-ui';
 import addons from '@kadira/storybook-addons';
 import createChannel from '@kadira/storybook-channel-pagebus';
+import createDatabase from '@kadira/storybook-database-local';
 import Preview from './preview';
 
 export default class ReactProvider extends Provider {
@@ -12,6 +13,11 @@ export default class ReactProvider extends Provider {
     this.dataId = UUID.v4();
     this.channel = createChannel({ key: this.dataId });
     addons.setChannel(this.channel);
+    this.database = addons.getDatabase();
+    if (!this.database) {
+      this.database = createDatabase({ url: `${location.origin}/db` });
+      addons.setDatabase(this.database);
+    }
   }
 
   getPanels() {
