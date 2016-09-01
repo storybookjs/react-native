@@ -6,7 +6,7 @@
 
 react-storybook-addon-backgrounds
 =======================
-<!-- [![Build Status](https://travis-ci.org/NewSpring/Apollos.svg)](https://travis-ci.org/NewSpring/Apollos) -->
+[![Build Status](https://travis-ci.org/NewSpring/react-storybook-addon-backgrounds.svg?branch=travis)](https://travis-ci.org/NewSpring/react-storybook-addon-backgrounds) [![Coverage Status](https://coveralls.io/repos/github/NewSpring/react-storybook-addon-backgrounds/badge.svg?branch=master)](https://coveralls.io/github/NewSpring/react-storybook-addon-backgrounds?branch=master)
 
 <!-- ![screenshot]() -->
 
@@ -33,9 +33,7 @@ $ npm test
 
 ### TODO
 
-- [ ] setup ci
 - [ ] setup deployment to github pages
-- [ ] setup coverage
 - [ ] 95% coverage for project
 - [ ] document project
 - [ ] write article
