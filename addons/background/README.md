@@ -10,6 +10,37 @@ react-storybook-addon-backgrounds
 
 ![React Storybook Screenshot](./.storybook/backgrounds.gif)
 
+### Getting Started
+
+```sh
+npm i --save react-storybook-addon-backgrounds
+```
+
+Then create a file called `addons.js` in your storybook config.
+
+Add following content to it:
+
+```js
+import '@kadira/storybook/addons';
+import 'react-storybook-addon-backgrounds';
+```
+
+Then write your stories like this:
+
+```js
+import React from 'react';
+import { storiesOf } from "@kadira/storybook";
+import backgrounds from "react-storybook-addon-backgrounds";
+
+storiesOf("Button", module)
+  .addDecorator(backgrounds([
+    { name: "twitter", value: "#00aced" },
+    { name: "facebook", value: "#3b5998" },
+  ]))
+  .add("with text", () => <button>Click me</button>)
+  ;
+```
+
 ### Development
 
 This project is built using typescript and is tested with jest. To get started, clone this repo and run the following command:
