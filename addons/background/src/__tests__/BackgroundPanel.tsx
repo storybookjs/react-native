@@ -12,8 +12,8 @@ const backgrounds = [
 ];
 
 const mockedApi = {
-  getQueryParam(value: string) { return; },
-  setQueryParams(obj) { return; },
+  getQueryParam: jest.fn(),
+  setQueryParams: jest.fn(),
 }
 
 describe("Background Panel", () => {
@@ -37,6 +37,24 @@ describe("Background Panel", () => {
 
     expect(backgroundPanel.html().match(/Setup Instructions/gmi).length).toBeGreaterThan(0);
   });
+
+  it("should set the query string", () => {
+    const SpiedChannel = new EventEmitter();
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    SpiedChannel.emit("background-set", backgrounds);
+
+    expect(mockedApi.getQueryParam).toBeCalledWith("background");
+
+  });
+
+  it("should unset the query string", () => {
+    const SpiedChannel = new EventEmitter();
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    SpiedChannel.emit("background-unset", backgrounds);
+
+    expect(mockedApi.setQueryParams).toBeCalledWith({ background: null });
+
+  })
 
   // it("should accept colors through channel and render the correct swatches with a default swatch", () => {
   //   const SpiedChannel = new EventEmitter();
