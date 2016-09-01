@@ -18,6 +18,8 @@ program
   .option('-h, --host [string]', 'Host to run Storybook')
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
+  .option('-d, --db-path [db-file]', 'File where to store addon database JSON file')
+  .option('--enable-db', 'Enable the (experimental) addon database service on dev-server')
   .option('--dont-track', 'Do not send anonymous usage stats.')
   .parse(process.argv);
 
@@ -65,9 +67,14 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-const dbPath = path.resolve(configDir, 'datastore.json');
 app.use(storybook(configDir));
-app.use('/db', datastore(dbPath));
+
+// The addon database service is disabled by default for now
+// It should be enabled with the --enable-db for dev server
+if (program.enableDb) {
+  const dbPath = program.dbPath || './.storybook/addon-db.json';
+  app.use('/db', datastore(dbPath));
+}
 
 app.listen(...listenAddr, function (error) {
   if (error) {

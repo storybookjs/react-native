@@ -37,7 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('--dont-track', 'Do not send anonymous usage stats.').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'File where to store addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').option('--dont-track', 'Do not send anonymous usage stats.').parse(process.argv);
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
@@ -83,9 +83,14 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-var dbPath = _path2.default.resolve(configDir, 'datastore.json');
 app.use((0, _middleware2.default)(configDir));
-app.use('/db', (0, _middleware4.default)(dbPath));
+
+// The addon database service is disabled by default for now
+// It should be enabled with the --enable-db for dev server
+if (_commander2.default.enableDb) {
+  var dbPath = _commander2.default.dbPath || './.storybook/addon-db.json';
+  app.use('/db', (0, _middleware4.default)(dbPath));
+}
 
 app.listen.apply(app, listenAddr.concat([function (error) {
   if (error) {
