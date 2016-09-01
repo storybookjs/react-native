@@ -8,7 +8,7 @@ react-storybook-addon-backgrounds
 =======================
 [![Build Status](https://travis-ci.org/NewSpring/react-storybook-addon-backgrounds.svg?branch=travis)](https://travis-ci.org/NewSpring/react-storybook-addon-backgrounds) [![Coverage Status](https://coveralls.io/repos/github/NewSpring/react-storybook-addon-backgrounds/badge.svg?branch=master)](https://coveralls.io/github/NewSpring/react-storybook-addon-backgrounds?branch=master)
 
-<!-- ![screenshot]() -->
+![React Storybook Screenshot](./.storybook/backgrounds.gif)
 
 ### Development
 
@@ -30,10 +30,3 @@ To test the project run:
 ```bash
 $ npm test
 ```
-
-### TODO
-
-- [ ] setup deployment to github pages
-- [ ] 95% coverage for project
-- [ ] document project
-- [ ] write article
