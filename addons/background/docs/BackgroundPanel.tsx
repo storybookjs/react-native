@@ -15,8 +15,15 @@ export interface BackgroundDetail {
   value: string;
 };
 
+export interface StoryBookAPI {
+  getQueryParam(param: string): string;
+  setQueryParams(params: { [key: string]: string } ): void;
+  selectStory(story: string, storyOf: string): void;
+}
+
 export interface BackgroundPanelProps {
   channel: NodeJS.EventEmitter;
+  api: StoryBookAPI;
 }
 
 const defaultBackground: BackgroundDetail = {
@@ -37,48 +44,62 @@ storiesOf("First Component", module)
   ;
 `.trim();
 
+const Instructions = () => (
+  <div style={assign({ padding: "20px" }, style.font)}>
+    <h5 style={{ fontSize: "16px" }}>Setup Instructions</h5>
+    <p>Please add the background decorator definition to your story.
+    The background decorate accepts an array of items, which should include a
+    name for your color (preferably the css class name) and the corresponding color / image value.</p>
+    <p>Below is an example of how to add the background decorator to your story definition.</p>
+    <pre style={{
+      padding: "30px",
+      display: "block",
+      background: "rgba(19,19,19,0.9)",
+      color: "rgba(255,255,255,0.95)",
+      marginTop: "15px",
+      lineHeight: "1.75em",
+    }}><code dangerouslySetInnerHTML={{ __html }} /></pre>
+  </div>
+);
+
 export default class BackgroundPanel extends React.Component<BackgroundPanelProps, any> {
 
   state = { backgrounds: [] };
 
   constructor(props) {
     super(props);
-    this.props.channel.on("background-set", backgrounds => this.setState({ backgrounds }));
-    this.props.channel.on("background-unset", backgrounds => this.setState({ backgrounds: [] }));
+
+    this.props.channel.on("background-set", backgrounds => {
+      this.setState({ backgrounds });
+      this.setBackgroundInPreview(this.props.api.getQueryParam("background"));
+    });
+
+    this.props.channel.on("background-unset", backgrounds => {
+      this.setState({ backgrounds: [] });
+      this.props.api.setQueryParams({ background: null });
+    });
+  }
+
+  private setBackgroundInPreview = (background) => this.props.channel.emit("background", background);
+
+  private setBackgroundFromSwatch = (background) => {
+    this.setBackgroundInPreview(background);
+    this.props.api.setQueryParams({ background });
   }
 
   render () {
-
-    const { channel } = this.props;
     const backgrounds: BackgroundDetail[] = [...this.state.backgrounds];
 
-    if (!backgrounds.length) {
-      return (
-        <div style={assign({ padding: "20px" }, style.font)}>
-          <h5 style={{ fontSize: "16px" }}>Setup Instructions</h5>
-          <p>Please add the background decorator definition to your story.
-          The background decorate accepts an array of items, which should include a
-          name for your color (preferably the css class name) and the corresponding color / image value.</p>
-          <p>Below is an example of how to add the background decorator to your story definition.</p>
-          <pre style={{
-            padding: "30px",
-            display: "block",
-            background: "rgba(19,19,19,0.9)",
-            color: "rgba(255,255,255,0.95)",
-            marginTop: "15px",
-            lineHeight: "1.75em",
-          }}><code dangerouslySetInnerHTML={{ __html }} /></pre>
-        </div>
-      );
-    }
+    if (!backgrounds.length) return <Instructions />;
 
     // add reset as last option
     backgrounds.push(defaultBackground);
+
     return (
       <div style={{display: "inline-block", padding: "15px"}}>
-        {backgrounds.map((background, key) => (
+        {backgrounds.map(({ value, name }, key) => (
           <div key={key} style={{display: "inline-block", padding: "5px"}}>
-            <Swatch value={background.value} name={background.name} channel={channel} />
+            <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
           </div>
         ))}
       </div>

@@ -1,32 +1,31 @@
 import * as React from "react"; // tslint:disable-line
 const EventEmitter = require("events"); // tslint:disable-line
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import Swatch from "../Swatch";
-const TestUtils = require("react-addons-test-utils");
+const TestUtils = require("react-addons-test-utils"); // tslint:disable-line
+const mockedSetBackround = (val: string) => {} // tslint:disable-line
 
 describe("Swatch", function() {
   it("should exist", () => {
     const SpiedChannel = new EventEmitter();
-    const swatch = shallow(<Swatch value="bar" name="foo" channel={SpiedChannel} />);
+    const swatch = shallow(<Swatch value="bar" name="foo" setBackground={mockedSetBackround} />);
 
     expect(swatch).toBeDefined();
   });
 
   it("should render the name of the swatch", () => {
-    const SpiedChannel = new EventEmitter();
 
     const markup = shallow(
-      <Swatch value="bar" name="foo" channel={SpiedChannel} />
+      <Swatch value="bar" name="foo" setBackground={mockedSetBackround}/>
     ).html();
 
     expect(markup.match(/foo/gmi).length).toBe(1);
   });
 
   it("should render the value of the swatch and set it to be the background", () => {
-    const SpiedChannel = new EventEmitter();
 
     const markup = shallow(
-      <Swatch value="bar" name="foo" channel={SpiedChannel} />
+      <Swatch value="bar" name="foo" setBackground={mockedSetBackround} />
     ).html();
 
     expect(markup.match(/background:bar/gmi).length).toBe(1);
@@ -34,15 +33,9 @@ describe("Swatch", function() {
   });
 
   it("should emit message on click", () => {
-    const SpiedChannel = new EventEmitter();
-    const swatch = TestUtils.renderIntoDocument(<Swatch value="#e6e6e6" name="Gray" channel={SpiedChannel} />);
-
     const spy = jest.fn();
-    SpiedChannel.on('background', spy);
-
-    TestUtils.Simulate.click(
-      TestUtils.scryRenderedDOMComponentsWithTag(swatch, "div")[0]
-    );
+    const swatch = mount(<Swatch value="#e6e6e6" name="Gray" setBackground={spy} />);
+    swatch.simulate("click");
 
     expect(spy).toBeCalledWith("#e6e6e6");
   });

@@ -11,7 +11,7 @@ addons.register(ADDON_ID, api => {
   addons.addPanel(PANEL_ID, {
     title: "Backgrounds",
     render: () => (
-      <BackgroundPanel channel={channel} />
+      <BackgroundPanel channel={channel} api={api} />
     ),
   });
 });

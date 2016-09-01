@@ -1,5 +1,5 @@
 
-import * as React from "react";
+import * as React from "react"; // tslint:disable-line
 import assign = require("object-assign");
 
 const style = {
@@ -35,45 +35,29 @@ const style = {
 export interface BackgroundItemProps {
   value: string;
   name?: string;
-  channel: NodeJS.EventEmitter;
+  setBackground(value: string): void;
 }
 
-export default class Swatch extends React.Component<BackgroundItemProps, any> {
-
-  state = { selected: null };
-
-  componentWillMount() {
-    this.setState({ selected: this.props.value });
-  }
-
-  public onBackgroundChange = () => {
-    const { value, channel } = this.props;
-    channel.emit("background", value);
-  }
-
-  render () {
-    return (
-      <div
-        style={assign({}, style.swatches, style.listStyle, style.hard)}
-        onClick={this.onBackgroundChange}
-      >
-        <div
-          style={assign({}, style.swatch, {
-            background: this.props.value,
-            "backgroundSize": "cover",
-            "backgroundPosition": "center",
-          })}
-        >
-        </div>
-        <div style={assign({}, style.listStyle, style.soft)}>
-          <h4 style={assign({ float: "left", fontWeight: "bold" }, style.font)}>
-            {this.props.name}:
-          </h4>
-          <h4 style={assign({ float: "right", fontWeight: "normal" }, style.font)}>
-            <em>{this.props.value}</em>
-          </h4>
-        </div>
-      </div>
-    );
-  }
-}
+export default ({ name, value, setBackground }: BackgroundItemProps) => (
+  <div
+    style={assign({}, style.swatches, style.listStyle, style.hard)}
+    onClick={() => setBackground(value)}
+  >
+    <div
+      style={assign({}, style.swatch, {
+        background: value,
+        "backgroundSize": "cover",
+        "backgroundPosition": "center",
+      })}
+    >
+    </div>
+    <div style={assign({}, style.listStyle, style.soft)}>
+      <h4 style={assign({ float: "left", fontWeight: "bold" }, style.font)}>
+        {name}:
+      </h4>
+      <h4 style={assign({ float: "right", fontWeight: "normal" }, style.font)}>
+        <em>{value}</em>
+      </h4>
+    </div>
+  </div>
+);
