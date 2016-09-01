@@ -22,7 +22,7 @@ Add following content to it:
 
 ```js
 import '@kadira/storybook/addons';
-import 'react-storybook-addon-backgrounds';
+import 'react-storybook-addon-backgrounds/register';
 ```
 
 Then write your stories like this:
