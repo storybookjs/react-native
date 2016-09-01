@@ -11,9 +11,6 @@ export function changeUrl(reduxStore) {
   if (!api) return;
 
   const { selectedKind, selectedStory, customQueryParams } = api;
-  const queryString = qs.stringify({ selectedKind, selectedStory });
-
-  if (queryString === '') return;
 
   const {
     goFullScreen: full,
@@ -22,36 +19,30 @@ export function changeUrl(reduxStore) {
     downPanelInRight: panelRight,
   } = shortcuts;
 
-  const layoutQuery = qs.stringify({
-    full: Number(full),
-    down: Number(down),
-    left: Number(left),
-    panelRight: Number(panelRight),
-  });
-
   const {
     selectedDownPanel: downPanel,
   } = ui;
 
-  const uiQuery = qs.stringify({ downPanel });
-
-  let url = `?${queryString}&${layoutQuery}&${uiQuery}`;
-
-  const customParamsString = qs.stringify(customQueryParams);
-  if (customParamsString.length > 0) {
-    url = `${url}&${customParamsString}`;
-  }
-
-  const state = {
-    url,
+  const urlObj = {
+    ...customQueryParams,
     selectedKind,
     selectedStory,
+    full: Number(full),
+    down: Number(down),
+    left: Number(left),
+    panelRight: Number(panelRight),
+    downPanel,
+  };
+
+  const url = `?${qs.stringify(urlObj)}`;
+
+  const state = {
+    ...urlObj,
     full,
     down,
     left,
     panelRight,
-    downPanel,
-    ...customQueryParams,
+    url,
   };
 
   window.history.pushState(state, '', url);

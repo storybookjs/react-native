@@ -37,7 +37,7 @@ describe('manager.ui.config.handle_routing', () => {
       };
 
       // eslint-disable-next-line max-len
-      const url = '?selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp&customText=test';
+      const url = '?customText=test&selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp';
 
       const pushState = {
         url,
