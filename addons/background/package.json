@@ -9,6 +9,7 @@
     "test": "jest",
     "posttest": "npm run lint",
     "compile": "tsc",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "watch": "tsc -w",
     "lint": "tslint 'src/*.ts*' && tslint 'test/*.ts*'"
   },
@@ -46,6 +47,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-traverse": "^6.14.0",
+    "coveralls": "^2.11.12",
     "enzyme": "^2.4.1",
     "expect": "^1.20.2",
     "jest-cli": "^14.1.0",
@@ -67,6 +69,7 @@
   },
   "jest": {
     "automock": false,
+    "collectCoverage": true,
     "unmockedModulePathPatterns": [
       "node_modules/react/",
       "node_modules/enzyme/"

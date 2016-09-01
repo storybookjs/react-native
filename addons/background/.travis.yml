@@ -2,10 +2,10 @@ language: node_js
 node_js:
 - '6'
 install:
-- npm install -g coveralls
 - npm install
 script:
 - npm test
+- npm run coverage
 sudo: false
 deploy:
   provider: npm
