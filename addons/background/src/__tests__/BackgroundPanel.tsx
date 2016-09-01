@@ -69,6 +69,18 @@ describe("Background Panel", () => {
     expect(headings.length).toBe(10);
   });
 
+  it("should unset all swatches on receiving the backgroun-unset message", () => {
+    const SpiedChannel = new EventEmitter();
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel}/>);
+    SpiedChannel.emit("background-set", backgrounds);
+
+    expect(backgroundPanel.state.backgrounds[0].name).toBe(backgrounds[0].name);
+    expect(backgroundPanel.state.backgrounds[2].value).toBe(backgrounds[2].value);
+
+    SpiedChannel.emit("background-unset");
+    expect(backgroundPanel.state.backgrounds.length).toBe(0);
+  });
+
   it("should pass the event from swatch clicks through the provided channel", () => {
     const SpiedChannel = new EventEmitter();
     const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
