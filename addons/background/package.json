@@ -70,6 +70,10 @@
   },
   "jest": {
     "automock": false,
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "docs"
+    ],
     "collectCoverage": true,
     "unmockedModulePathPatterns": [
       "node_modules/react/",
