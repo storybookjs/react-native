@@ -25,10 +25,16 @@ const defaultBackground: BackgroundDetail = {
 };
 
 const __html = `
-.addDecorator(backgrounds([
-  { name: "light-primary", value: "#f1f1f1" },
-  { name: "light-secondary", value: "#ddd" },
-]));
+import { storiesOf } from "@kadira/storybook";
+import backgrounds from "react-storybook-addon-backgrounds";
+
+storiesOf("First Component", module)
+  .addDecorator(backgrounds([
+    { name: "twitter", value: "#00aced" },
+    { name: "facebook", value: "#3b5998" },
+  ]))
+  .add("First Button", () => &lt;button&gt;Click me&lt;/button&gt;)
+  ;
 `.trim();
 
 export default class BackgroundPanel extends React.Component<BackgroundPanelProps, any> {
@@ -45,7 +51,7 @@ export default class BackgroundPanel extends React.Component<BackgroundPanelProp
 
     const { channel } = this.props;
     const backgrounds: BackgroundDetail[] = [...this.state.backgrounds];
-  
+
     if (!backgrounds.length) {
       return (
         <div style={assign({ padding: "20px" }, style.font)}>

@@ -26,3 +26,7 @@ declare module "@kadira/storybook" {
   export function action(name: string, ...params: any[]): Function;
 
 }
+
+declare module "@kadira/react-storybook-decorator-centered" {
+  export default function(): any;
+}

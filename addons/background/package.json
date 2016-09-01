@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/NewSpring/react-storybook-addon-backgrounds#readme",
   "devDependencies": {
+    "@kadira/react-storybook-decorator-centered": "^1.0.0",
     "@kadira/storybook": "^2.5.1",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",

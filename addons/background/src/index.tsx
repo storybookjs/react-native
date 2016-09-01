@@ -1,5 +1,6 @@
 import * as React from "react";
 import addons from "@kadira/storybook-addons";
+import assign = require("object-assign"); // tslint:disable-line
 
 const style = {
   wrapper: {
@@ -42,7 +43,7 @@ export class BackgroundDecorator extends React.Component<any, any> {
   public render() {
     const styles = style.wrapper;
     styles.backgroundColor = this.state.background;
-    return <div style={styles}>{this.story}</div>;
+    return <div style={assign({}, styles)}>{this.story}</div>;
   }
 }
 
