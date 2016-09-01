@@ -28,19 +28,21 @@ export class BackgroundDecorator extends React.Component<any, any> {
 
     this.channel = addons.getChannel();
     this.story = this.props.story();
-
-    this.channel.on("background", background => this.setState({ background }));
-  }
-
-  componentWillUnmount() {
-    this.channel.emit("background-unset");
   }
 
   componentWillMount() {
+    this.channel.on("background", this.setBackground);
     this.channel.emit("background-set", this.props.backgrounds);
   }
 
-  public render() {
+  componentWillUnmount() {
+    this.channel.removeListener("background", this.setBackground);
+    this.channel.emit("background-unset");
+  }
+
+  private setBackground = background => this.setState({ background })
+
+  render() {
     const styles = style.wrapper;
     styles.backgroundColor = this.state.background;
     return <div style={assign({}, styles)}>{this.story}</div>;

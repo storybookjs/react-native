@@ -11,31 +11,36 @@ const backgrounds = [
   { name: "An image", value: "url(http://placehold.it/350x150)" },
 ];
 
+const mockedApi = {
+  getQueryParam(value: string) { return; },
+  setQueryParams(obj) { return; },
+}
+
 describe("Background Panel", () => {
   it("should exist", () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = shallow(<BackgroundPanel channel={SpiedChannel}/>);
+    const backgroundPanel = shallow(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
 
     expect(backgroundPanel).toBeDefined;
   });
 
   it("should have a default background value of transparent", () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = shallow(<BackgroundPanel channel={SpiedChannel}/>);
+    const backgroundPanel = shallow(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
 
     expect(backgroundPanel.state().backgrounds.length).toBe(0);
   });
 
   it("should show setup instructions if no colors provided", () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = shallow(<BackgroundPanel channel={SpiedChannel}/>);
+    const backgroundPanel = shallow(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
 
     expect(backgroundPanel.html().match(/Setup Instructions/gmi).length).toBeGreaterThan(0);
   });
 
   // it("should accept colors through channel and render the correct swatches with a default swatch", () => {
   //   const SpiedChannel = new EventEmitter();
-  //   const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel}/>);
+  //   const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
   //   SpiedChannel.emit("background-set", backgrounds);
 
   //   expect(backgroundPanel.state.backgrounds[0].name).toBe(backgrounds[0].name);
@@ -47,7 +52,7 @@ describe("Background Panel", () => {
 
   it("should pass the event from swatch clicks through the provided channel", () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel}/>);
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     SpiedChannel.emit("background-set", backgrounds);
 
     const spy = jest.fn();
