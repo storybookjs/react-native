@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.7.0
+1-September-2016
+
+* Add addon database feature [PR415](https://github.com/kadirahq/react-storybook/pull/415).
+
 ### v2.6.1
 31-August-2016
 
