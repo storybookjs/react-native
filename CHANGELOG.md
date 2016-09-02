@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.4.0
+2-Sep-2016
+
+* Custom query params are not stored in a separate object. [PR37](https://github.com/kadirahq/storybook-ui/pull/37)
+
 ### v3.3.4
 30-Aug-2016
 
