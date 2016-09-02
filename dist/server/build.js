@@ -50,7 +50,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // avoid ESLint errors
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'File where to store addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'Path to the addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').parse(process.argv);
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
