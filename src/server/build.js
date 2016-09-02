@@ -22,6 +22,8 @@ program
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-o, --output-dir [dir-name]', 'Directory where to store built files')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
+  .option('-d, --db-path [db-file]', 'File where to store addon database JSON file')
+  .option('--enable-db', 'Enable the (experimental) addon database service on dev-server')
   .parse(process.argv);
 
 // The key is the field created in `program` variable for
@@ -56,6 +58,13 @@ if (program.staticDir) {
     logger.log(`=> Copying static files from: ${dir}`);
     shelljs.cp('-r', `${dir}/`, outputDir);
   });
+}
+
+// The addon database service is disabled by default for now
+// It should be enabled with the --enable-db for dev server
+if (program.enableDb) {
+  const dbPath = program.dbPath || './.storybook/addon-db.json';
+  shelljs.cp(dbPath, outputDir);
 }
 
 // Write both the storybook UI and IFRAME HTML files to destination path.

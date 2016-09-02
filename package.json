@@ -26,7 +26,7 @@
     "@kadira/storybook-addon-links": "^1.0.0",
     "@kadira/storybook-addons": "^1.5.0",
     "@kadira/storybook-channel-pagebus": "^2.0.2",
-    "@kadira/storybook-database-local": "^1.1.0",
+    "@kadira/storybook-database-local": "^1.2.0",
     "@kadira/storybook-ui": "^3.4.0",
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.11.4",
