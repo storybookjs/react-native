@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.8.0
+2-September-2016.
+
+* Update @kadira/storybook to get the clean query params feature. See [storybook-ui-PR37](https://github.com/kadirahq/storybook-ui/pull/37)
+
 ### v2.7.0
 1-September-2016
 
