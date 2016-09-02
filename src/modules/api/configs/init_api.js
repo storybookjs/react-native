@@ -2,10 +2,18 @@ import { EventEmitter } from 'events';
 
 export default function (provider, reduxStore, actions) {
   const callbacks = new EventEmitter();
+  let currentKind;
+  let currentStory;
 
   const providerApi = {
     onStory(cb) {
       callbacks.on('story', cb);
+      if (currentKind && currentStory) {
+        // Using a setTimeout to call the callback to make sure it's
+        // not called on current event-loop. When users add callbacks
+        // they usually expect it to be called in a future event loop.
+        setTimeout(() => cb(currentKind, currentStory), 0);
+      }
       return function stopListening() {
         callbacks.removeListener('story', cb);
       };
@@ -29,8 +37,6 @@ export default function (provider, reduxStore, actions) {
   provider.handleAPI(providerApi);
 
   // subscribe to redux store and trigger onStory's callback
-  let currentKind;
-  let currentStory;
   reduxStore.subscribe(function () {
     const { api } = reduxStore.getState();
     if (!api) return;

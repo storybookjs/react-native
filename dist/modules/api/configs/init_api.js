@@ -6,10 +6,20 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (provider, reduxStore, actions) {
   var callbacks = new _events.EventEmitter();
+  var currentKind = void 0;
+  var currentStory = void 0;
 
   var providerApi = {
     onStory: function onStory(cb) {
       callbacks.on('story', cb);
+      if (currentKind && currentStory) {
+        // Using a setTimeout to call the callback to make sure it's
+        // not called on current event-loop. When users add callbacks
+        // they usually expect it to be called in a future event loop.
+        setTimeout(function () {
+          return cb(currentKind, currentStory);
+        }, 0);
+      }
       return function stopListening() {
         callbacks.removeListener('story', cb);
       };
@@ -37,8 +47,6 @@ exports.default = function (provider, reduxStore, actions) {
   provider.handleAPI(providerApi);
 
   // subscribe to redux store and trigger onStory's callback
-  var currentKind = void 0;
-  var currentStory = void 0;
   reduxStore.subscribe(function () {
     var _reduxStore$getState2 = reduxStore.getState();
 
