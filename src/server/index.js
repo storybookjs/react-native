@@ -72,7 +72,7 @@ app.use(storybook(configDir));
 // The addon database service is disabled by default for now
 // It should be enabled with the --enable-db for dev server
 if (program.enableDb) {
-  const dbPath = program.dbPath || './.storybook/addon-db.json';
+  const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
   app.use('/db', datastore(dbPath));
 }
 

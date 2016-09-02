@@ -89,7 +89,7 @@ if (_commander2.default.staticDir) {
 // The addon database service is disabled by default for now
 // It should be enabled with the --enable-db for dev server
 if (_commander2.default.enableDb) {
-  var dbPath = _commander2.default.dbPath || './.storybook/addon-db.json';
+  var dbPath = _commander2.default.dbPath || _path2.default.resolve(configDir, 'addon-db.json');
   _shelljs2.default.cp(dbPath, outputDir);
 }
 
