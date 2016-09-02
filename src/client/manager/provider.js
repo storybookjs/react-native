@@ -15,7 +15,12 @@ export default class ReactProvider extends Provider {
     addons.setChannel(this.channel);
     this.database = addons.getDatabase();
     if (!this.database) {
-      this.database = createDatabase({ url: `${location.origin}/db` });
+      const bundled = process.env.NODE_ENV === 'production';
+      if (bundled) {
+        this.database = createDatabase({ url: 'addon-db.json', bundled });
+      } else {
+        this.database = createDatabase({ url: `${location.origin}/db` });
+      }
       addons.setDatabase(this.database);
     }
   }

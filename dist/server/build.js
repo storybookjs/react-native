@@ -50,7 +50,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // avoid ESLint errors
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'Path to the addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').parse(process.argv);
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
@@ -84,6 +84,13 @@ if (_commander2.default.staticDir) {
     logger.log('=> Copying static files from: ' + dir);
     _shelljs2.default.cp('-r', dir + '/', outputDir);
   });
+}
+
+// The addon database service is disabled by default for now
+// It should be enabled with the --enable-db for dev server
+if (_commander2.default.enableDb) {
+  var dbPath = _commander2.default.dbPath || './.storybook/addon-db.json';
+  _shelljs2.default.cp(dbPath, outputDir);
 }
 
 // Write both the storybook UI and IFRAME HTML files to destination path.

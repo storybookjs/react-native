@@ -69,7 +69,12 @@ var ReactProvider = function (_Provider) {
     _storybookAddons2.default.setChannel(_this.channel);
     _this.database = _storybookAddons2.default.getDatabase();
     if (!_this.database) {
-      _this.database = (0, _storybookDatabaseLocal2.default)({ url: location.origin + '/db' });
+      var bundled = process.env.NODE_ENV === 'production';
+      if (bundled) {
+        _this.database = (0, _storybookDatabaseLocal2.default)({ url: 'addon-db.json', bundled: bundled });
+      } else {
+        _this.database = (0, _storybookDatabaseLocal2.default)({ url: location.origin + '/db' });
+      }
       _storybookAddons2.default.setDatabase(_this.database);
     }
     return _this;
