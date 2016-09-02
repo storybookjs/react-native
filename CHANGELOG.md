@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.9.0
+2-September-2016.
+
+* Copy the addon-db.json file when building static storybooks [PR417](https://github.com/kadirahq/react-storybook/pull/417).
+
 ### v2.8.0
 2-September-2016.
 
