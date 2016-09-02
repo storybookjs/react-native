@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.4.1
+2-Sep-2016
+
+* Call the onStory callback as soon as it listens. [PR38](https://github.com/kadirahq/storybook-ui/pull/38)
+
 ### v3.4.0
 2-Sep-2016
 
