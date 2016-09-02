@@ -4,6 +4,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.config = undefined;
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 exports.changeUrl = changeUrl;
 exports.updateStore = updateStore;
 exports.handleInitialUrl = handleInitialUrl;
@@ -52,62 +61,33 @@ function changeUrl(reduxStore) {
 
   var selectedKind = api.selectedKind;
   var selectedStory = api.selectedStory;
-
-  var queryString = _qs2.default.stringify({ selectedKind: selectedKind, selectedStory: selectedStory });
-
-  if (queryString === '') return;
-
+  var customQueryParams = api.customQueryParams;
   var full = shortcuts.goFullScreen;
   var down = shortcuts.showDownPanel;
   var left = shortcuts.showLeftPanel;
   var panelRight = shortcuts.downPanelInRight;
-
-
-  var layoutQuery = _qs2.default.stringify({
-    full: Number(full),
-    down: Number(down),
-    left: Number(left),
-    panelRight: Number(panelRight)
-  });
-
   var downPanel = ui.selectedDownPanel;
 
 
-  var uiQuery = _qs2.default.stringify({ downPanel: downPanel });
-
-  var custom = api.customQueryParams;
-
-  var customParamsString = _qs2.default.stringify({ custom: custom });
-
-  var url = '?' + queryString + '&' + layoutQuery + '&' + uiQuery;
-  if (customParamsString) {
-    url = url + '&' + customParamsString;
-  }
-
-  var currentQs = location.search.substring(1);
-  if (currentQs && currentQs.length > 0) {
-    (function () {
-      var parsedQs = _qs2.default.parse(currentQs);
-      var knownKeys = ['selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight', 'downPanel', 'custom'];
-      knownKeys.forEach(function (key) {
-        delete parsedQs[key];
-      });
-      var otherParams = _qs2.default.stringify(parsedQs);
-      url = url + '&' + otherParams;
-    })();
-  }
-
-  var state = {
-    url: url,
+  var urlObj = (0, _extends3.default)({}, customQueryParams, {
     selectedKind: selectedKind,
     selectedStory: selectedStory,
+    full: Number(full),
+    down: Number(down),
+    left: Number(left),
+    panelRight: Number(panelRight),
+    downPanel: downPanel
+  });
+
+  var url = '?' + _qs2.default.stringify(urlObj);
+
+  var state = (0, _extends3.default)({}, urlObj, {
     full: full,
     down: down,
     left: left,
     panelRight: panelRight,
-    downPanel: downPanel,
-    custom: custom
-  };
+    url: url
+  });
 
   window.history.pushState(state, '', url);
 }
@@ -124,7 +104,7 @@ function updateStore(queryParams, actions) {
   var _queryParams$panelRig = queryParams.panelRight;
   var panelRight = _queryParams$panelRig === undefined ? 0 : _queryParams$panelRig;
   var downPanel = queryParams.downPanel;
-  var custom = queryParams.custom;
+  var customQueryParams = (0, _objectWithoutProperties3.default)(queryParams, ['selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight', 'downPanel']);
 
 
   if (selectedKind && selectedStory) {
@@ -141,9 +121,7 @@ function updateStore(queryParams, actions) {
   if (downPanel) {
     actions.ui.selectDownPanel(downPanel);
   }
-  if (custom) {
-    actions.api.setQueryParams(custom);
-  }
+  actions.api.setQueryParams(customQueryParams);
 }
 
 function handleInitialUrl(actions, location) {
