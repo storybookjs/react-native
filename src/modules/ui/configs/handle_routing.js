@@ -10,10 +10,7 @@ export function changeUrl(reduxStore) {
   const { api, shortcuts, ui } = reduxStore.getState();
   if (!api) return;
 
-  const { selectedKind, selectedStory } = api;
-  const queryString = qs.stringify({ selectedKind, selectedStory });
-
-  if (queryString === '') return;
+  const { selectedKind, selectedStory, customQueryParams } = api;
 
   const {
     goFullScreen: full,
@@ -22,54 +19,30 @@ export function changeUrl(reduxStore) {
     downPanelInRight: panelRight,
   } = shortcuts;
 
-  const layoutQuery = qs.stringify({
-    full: Number(full),
-    down: Number(down),
-    left: Number(left),
-    panelRight: Number(panelRight),
-  });
-
   const {
     selectedDownPanel: downPanel,
   } = ui;
 
-  const uiQuery = qs.stringify({ downPanel });
-
-  const {
-    customQueryParams: custom,
-  } = api;
-  const customParamsString = qs.stringify({ custom });
-
-  let url = `?${queryString}&${layoutQuery}&${uiQuery}`;
-  if (customParamsString) {
-    url = `${url}&${customParamsString}`;
-  }
-
-  const currentQs = location.search.substring(1);
-  if (currentQs && currentQs.length > 0) {
-    const parsedQs = qs.parse(currentQs);
-    const knownKeys = [
-      'selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight',
-      'downPanel', 'custom',
-    ];
-    knownKeys.forEach(key => {
-      delete(parsedQs[key]);
-    });
-    const otherParams = qs.stringify(parsedQs);
-    url = `${url}&${otherParams}`;
-  }
-
-
-  const state = {
-    url,
+  const urlObj = {
+    ...customQueryParams,
     selectedKind,
     selectedStory,
+    full: Number(full),
+    down: Number(down),
+    left: Number(left),
+    panelRight: Number(panelRight),
+    downPanel,
+  };
+
+  const url = `?${qs.stringify(urlObj)}`;
+
+  const state = {
+    ...urlObj,
     full,
     down,
     left,
     panelRight,
-    downPanel,
-    custom,
+    url,
   };
 
   window.history.pushState(state, '', url);
@@ -84,7 +57,7 @@ export function updateStore(queryParams, actions) {
     left = 1,
     panelRight = 0,
     downPanel,
-    custom,
+    ...customQueryParams,
   } = queryParams;
 
   if (selectedKind && selectedStory) {
@@ -101,9 +74,7 @@ export function updateStore(queryParams, actions) {
   if (downPanel) {
     actions.ui.selectDownPanel(downPanel);
   }
-  if (custom) {
-    actions.api.setQueryParams(custom);
-  }
+  actions.api.setQueryParams(customQueryParams);
 }
 
 export function handleInitialUrl(actions, location) {
