@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.9.1
+2-September-2016.
+
+* Use the config directory to store the addon database file [PR418](https://github.com/kadirahq/react-storybook/pull/418).
+
 ### v2.9.0
 2-September-2016.
 
