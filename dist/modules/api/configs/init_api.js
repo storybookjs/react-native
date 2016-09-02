@@ -13,6 +13,9 @@ exports.default = function (provider, reduxStore, actions) {
     onStory: function onStory(cb) {
       callbacks.on('story', cb);
       if (currentKind && currentStory) {
+        // Using a setTimeout to call the callback to make sure it's
+        // not called on current event-loop. When users add callbacks
+        // they usually expect it to be called in a future event loop.
         setTimeout(function () {
           return cb(currentKind, currentStory);
         }, 0);
