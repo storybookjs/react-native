@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.10.0
+3-September-2016
+
+* Adding airbnb-js-shims again. [PR419](https://github.com/kadirahq/react-storybook/pull/419)
+
 ### v2.9.1
 2-September-2016.
 
