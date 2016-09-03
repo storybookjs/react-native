@@ -1,1 +1,1 @@
-require('core-js');
+require('airbnb-js-shims');

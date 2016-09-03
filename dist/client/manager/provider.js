@@ -62,7 +62,7 @@ var ReactProvider = function (_Provider) {
   function ReactProvider() {
     (0, _classCallCheck3.default)(this, ReactProvider);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ReactProvider).call(this));
 
     _this.dataId = _uuid2.default.v4();
     _this.channel = (0, _storybookChannelPagebus2.default)({ key: _this.dataId });
