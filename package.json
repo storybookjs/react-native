@@ -18,7 +18,8 @@
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
-    "dev": "DEV_BUILD=1 nodemon --watch src --exec 'npm run prepublish'"
+    "dev": "DEV_BUILD=1 nodemon --watch src --exec 'npm run prepublish'",
+    "postpublish": "greenkeeper-postpublish"
   },
   "dependencies": {
     "@kadira/react-split-pane": "^1.4.0",
@@ -84,6 +85,7 @@
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^4.2.3",
     "expect": "^1.6.0",
+    "greenkeeper-postpublish": "^1.0.1",
     "jsdom": "^8.4.0",
     "mocha": "^2.4.5",
     "mock-fs": "^3.8.0",
