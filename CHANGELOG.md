@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.11.0
+4-September-2016
+
+* Remove babel-polyfill since we don't use it.
+* Update versions with the help from greenkeeper. [PR421](https://github.com/kadirahq/react-storybook/pull/421)
+
 ### v2.10.0
 3-September-2016
 
