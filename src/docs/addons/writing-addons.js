@@ -158,7 +158,7 @@ export default {
 
     ## Packaging
 
-    You can package this addon into a NPM module very easily. Have a look at this [repo](https://github.com/kadirahq/storybook-addon-notes).
+    You can package this addon into a NPM module very easily. Have a look at this [repo](https://github.com/kadirahq/storybook-addon-notes/tree/version1).
 
     In addition to moving the above code to an NPM module, we've set \`react\` and \`@kadira/storybook-addons\` as peer dependencies.
 
