@@ -1,14 +1,15 @@
+/* global window */
+
+import { createStore } from 'redux';
+import addons from '@kadira/storybook-addons';
+import createChannel from '@kadira/storybook-channel-pagebus';
+import qs from 'qs';
 import StoryStore from './story_store';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import render from './render';
-import qs from 'qs';
 import init from './init';
-import createChannel from '@kadira/storybook-channel-pagebus';
 import { selectStory } from './actions';
-import addons from '@kadira/storybook-addons';
-
-import { createStore } from 'redux';
 import reducer from './reducer';
 
 // check whether we're running on node/browser

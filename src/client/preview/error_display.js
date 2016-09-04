@@ -2,7 +2,10 @@ import React from 'react';
 
 const mainStyle = {
   position: 'fixed',
-  top: 0, bottom: 0, left: 0, right: 0,
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
   padding: 20,
   backgroundColor: 'rgb(187, 49, 49)',
   color: '#FFF',

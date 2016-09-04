@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
+import babalLoaderConfig from './babel.prod.js';
 
 const entries = {
   preview: [
@@ -47,7 +48,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: require.resolve('babel-loader'),
-        query: require('./babel.prod.js'),
+        query: babalLoaderConfig,
         include: includePaths,
         exclude: excludePaths,
       },

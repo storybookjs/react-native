@@ -1,3 +1,5 @@
+/* global location */
+
 import UUID from 'uuid';
 import qs from 'qs';
 import React from 'react';

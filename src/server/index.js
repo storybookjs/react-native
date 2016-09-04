@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
+import datastore from '@kadira/storybook-database-local/dist/server/middleware';
 import express from 'express';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
 import storybook from './middleware';
-import datastore from '@kadira/storybook-database-local/dist/server/middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 import { track, dontTrack } from './track_usage';

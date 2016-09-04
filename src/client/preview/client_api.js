@@ -36,15 +36,13 @@ export default class ClientApi {
     };
 
     // apply addons
-    for (const name in this._addons) {
-      if (this._addons.hasOwnProperty(name)) {
-        const addon = this._addons[name];
-        api[name] = (...args) => {
-          addon.apply(api, args);
-          return api;
-        };
-      }
-    }
+    Object.keys(this._addons).forEach((name) => {
+      const addon = this._addons[name];
+      api[name] = (...args) => {
+        addon.apply(api, args);
+        return api;
+      };
+    });
 
     api.add = (storyName, getStory) => {
       // Wrap the getStory function with each decorator. The first

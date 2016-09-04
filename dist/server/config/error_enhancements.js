@@ -1,5 +1,8 @@
 'use strict';
 
+/* eslint global-require: 0 */
+/* global navigator */
+
 var isChrome = function isChrome() {
   return navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 };

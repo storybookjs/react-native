@@ -56,6 +56,8 @@ var _preview2 = _interopRequireDefault(_preview);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* global location */
+
 var ReactProvider = function (_Provider) {
   (0, _inherits3.default)(ReactProvider, _Provider);
 

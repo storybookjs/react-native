@@ -18,6 +18,10 @@ var _caseSensitivePathsWebpackPlugin2 = _interopRequireDefault(_caseSensitivePat
 
 var _utils = require('./utils');
 
+var _babel = require('./babel.js');
+
+var _babel2 = _interopRequireDefault(_babel);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var config = {
@@ -36,7 +40,7 @@ var config = {
     loaders: [{
       test: /\.jsx?$/,
       loader: require.resolve('babel-loader'),
-      query: require('./babel.js'),
+      query: _babel2.default,
       include: _utils.includePaths,
       exclude: _utils.excludePaths
     }]

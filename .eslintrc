@@ -1,10 +1,19 @@
 {
   "extends": "airbnb",
   "rules": {
-    "react/jsx-no-bind": 0,
-    "react/prefer-stateless-function": 0,
+    # We use _ to define private variables and methods in clases
+    "no-underscore-dangle": 0,
+    # This seems to be buggy we don't want eslint to check this
+    "import/no-extraneous-dependencies": 0,
+    # This is a depricated rule. So we turned off it.
+    "react/require-extension": 0,
+    # We can write JSX in anyfile we want.
+    "react/jsx-filename-extension": 0,
+    # We don't like this rule.
     "arrow-body-style": 0,
+    # We don't like this rule. We write arrow functions only when we needed.
     "prefer-arrow-callback": 0,
+    # We don't need to write function names always.
     "func-names": 0
   },
   "parserOptions": {
@@ -12,5 +21,5 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true
     }
-  }
+  },
 }

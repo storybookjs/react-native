@@ -8,6 +8,10 @@ var _toConsumableArray2 = require("babel-runtime/helpers/toConsumableArray");
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
+var _keys = require("babel-runtime/core-js/object/keys");
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _extends2 = require("babel-runtime/helpers/extends");
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -68,21 +72,17 @@ var ClientApi = function () {
       };
 
       // apply addons
-      for (var name in this._addons) {
-        if (this._addons.hasOwnProperty(name)) {
-          (function () {
-            var addon = _this._addons[name];
-            api[name] = function () {
-              for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
-              }
+      (0, _keys2.default)(this._addons).forEach(function (name) {
+        var addon = _this._addons[name];
+        api[name] = function () {
+          for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
 
-              addon.apply(api, args);
-              return api;
-            };
-          })();
-        }
-      }
+          addon.apply(api, args);
+          return api;
+        };
+      });
 
       api.add = function (storyName, getStory) {
         // Wrap the getStory function with each decorator. The first

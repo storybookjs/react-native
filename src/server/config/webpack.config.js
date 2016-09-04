@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
+import babalLoaderConfig from './babel.js';
 
 const config = {
   devtool: '#cheap-module-eval-source-map',
@@ -31,7 +32,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: require.resolve('babel-loader'),
-        query: require('./babel.js'),
+        query: babalLoaderConfig,
         include: includePaths,
         exclude: excludePaths,
       },

@@ -99,7 +99,7 @@ var _json2 = _interopRequireDefault(_json);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // avoid ESLint errors
-var logger = console;
+var logger = console; /* eslint global-require: 0 */
 
 function removeReactHmre(presets) {
   var index = presets.indexOf('react-hmre');

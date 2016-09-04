@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
+var _middleware = require('@kadira/storybook-database-local/dist/server/middleware');
+
+var _middleware2 = _interopRequireDefault(_middleware);
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -17,11 +21,7 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _middleware = require('./middleware');
-
-var _middleware2 = _interopRequireDefault(_middleware);
-
-var _middleware3 = require('@kadira/storybook-database-local/dist/server/middleware');
+var _middleware3 = require('./middleware');
 
 var _middleware4 = _interopRequireDefault(_middleware3);
 
@@ -83,13 +83,13 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-app.use((0, _middleware2.default)(configDir));
+app.use((0, _middleware4.default)(configDir));
 
 // The addon database service is disabled by default for now
 // It should be enabled with the --enable-db for dev server
 if (_commander2.default.enableDb) {
   var dbPath = _commander2.default.dbPath || _path2.default.resolve(configDir, 'addon-db.json');
-  app.use('/db', (0, _middleware4.default)(dbPath));
+  app.use('/db', (0, _middleware2.default)(dbPath));
 }
 
 app.listen.apply(app, listenAddr.concat([function (error) {

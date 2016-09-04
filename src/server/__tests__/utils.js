@@ -1,7 +1,8 @@
-const { describe, it, beforeEach, afterEach } = global;
 import { expect } from 'chai';
-import { getHeadHtml } from '../utils';
 import mock from 'mock-fs';
+import { getHeadHtml } from '../utils';
+
+const { describe, it, beforeEach, afterEach } = global;
 
 const HEAD_HTML_CONTENTS = '<script>console.log("custom script!");</script>';
 

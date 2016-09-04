@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-
 import webpack from 'webpack';
 import program from 'commander';
 import path from 'path';
@@ -13,6 +11,8 @@ import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
 import { getHeadHtml, parseList, getEnvConfig } from './utils';
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 // avoid ESLint errors
 const logger = console;

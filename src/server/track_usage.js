@@ -1,3 +1,5 @@
+/* eslint global-require: 0 */
+
 // ### WHAT?
 //
 // We will track anonymous usage of how you use storybook.

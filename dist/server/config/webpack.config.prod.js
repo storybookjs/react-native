@@ -14,6 +14,10 @@ var _webpack2 = _interopRequireDefault(_webpack);
 
 var _utils = require('./utils');
 
+var _babelProd = require('./babel.prod.js');
+
+var _babelProd2 = _interopRequireDefault(_babelProd);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var entries = {
@@ -51,7 +55,7 @@ var config = {
     loaders: [{
       test: /\.jsx?$/,
       loader: require.resolve('babel-loader'),
-      query: require('./babel.prod.js'),
+      query: _babelProd2.default,
       include: _utils.includePaths,
       exclude: _utils.excludePaths
     }]

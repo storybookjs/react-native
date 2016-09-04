@@ -21,7 +21,9 @@ var _request2 = _interopRequireDefault(_request);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var logger = console; // ### WHAT?
+var logger = console; /* eslint global-require: 0 */
+
+// ### WHAT?
 //
 // We will track anonymous usage of how you use storybook.
 // We don't want any personal information.

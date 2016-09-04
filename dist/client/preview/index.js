@@ -9,6 +9,20 @@ var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
 
+var _redux = require('redux');
+
+var _storybookAddons = require('@kadira/storybook-addons');
+
+var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
+
+var _storybookChannelPagebus = require('@kadira/storybook-channel-pagebus');
+
+var _storybookChannelPagebus2 = _interopRequireDefault(_storybookChannelPagebus);
+
+var _qs = require('qs');
+
+var _qs2 = _interopRequireDefault(_qs);
+
 var _story_store = require('./story_store');
 
 var _story_store2 = _interopRequireDefault(_story_store);
@@ -25,25 +39,11 @@ var _render = require('./render');
 
 var _render2 = _interopRequireDefault(_render);
 
-var _qs = require('qs');
-
-var _qs2 = _interopRequireDefault(_qs);
-
 var _init = require('./init');
 
 var _init2 = _interopRequireDefault(_init);
 
-var _storybookChannelPagebus = require('@kadira/storybook-channel-pagebus');
-
-var _storybookChannelPagebus2 = _interopRequireDefault(_storybookChannelPagebus);
-
 var _actions = require('./actions');
-
-var _storybookAddons = require('@kadira/storybook-addons');
-
-var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
-
-var _redux = require('redux');
 
 var _reducer = require('./reducer');
 
@@ -52,7 +52,7 @@ var _reducer2 = _interopRequireDefault(_reducer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // check whether we're running on node/browser
-var isBrowser = typeof window !== 'undefined';
+var isBrowser = typeof window !== 'undefined'; /* global window */
 
 var storyStore = new _story_store2.default();
 var reduxStore = (0, _redux.createStore)(_reducer2.default);

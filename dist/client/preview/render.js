@@ -22,7 +22,7 @@ var _error_display2 = _interopRequireDefault(_error_display);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // check whether we're running on node/browser
-var isBrowser = typeof window !== 'undefined';
+var isBrowser = typeof window !== 'undefined'; /* global document */
 
 var rootEl = null;
 var previousKind = '';
@@ -58,7 +58,8 @@ function renderMain(data, storyStore) {
 
   var story = storyStore.getStory(selectedKind, selectedStory);
   if (!story) {
-    return _reactDom2.default.render(noPreview, rootEl);
+    _reactDom2.default.render(noPreview, rootEl);
+    return null;
   }
 
   // Unmount the previous story only if selectedKind or selectedStory has changed.
@@ -81,7 +82,8 @@ function renderMain(data, storyStore) {
   };
 
   try {
-    return _reactDom2.default.render(story(context), rootEl);
+    _reactDom2.default.render(story(context), rootEl);
+    return null;
   } catch (ex) {
     return renderError(ex);
   }

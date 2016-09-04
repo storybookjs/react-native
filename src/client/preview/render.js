@@ -1,3 +1,5 @@
+/* global document */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ErrorDisplay from './error_display';
@@ -31,7 +33,8 @@ export function renderMain(data, storyStore) {
 
   const story = storyStore.getStory(selectedKind, selectedStory);
   if (!story) {
-    return ReactDOM.render(noPreview, rootEl);
+    ReactDOM.render(noPreview, rootEl);
+    return null;
   }
 
   // Unmount the previous story only if selectedKind or selectedStory has changed.
@@ -54,7 +57,8 @@ export function renderMain(data, storyStore) {
   };
 
   try {
-    return ReactDOM.render(story(context), rootEl);
+    ReactDOM.render(story(context), rootEl);
+    return null;
   } catch (ex) {
     return renderError(ex);
   }
