@@ -33,8 +33,8 @@ const stylesheet = {
   },
   object: {
     border: '1px solid #ececec',
-    padding: '5px'
-  }
+    padding: '5px',
+  },
 };
 
 stylesheet.textarea = {
