@@ -17,7 +17,7 @@ var _FullScreen = require('./components/FullScreen');
 
 var _FullScreen2 = _interopRequireDefault(_FullScreen);
 
-require('../node_modules/graphiql/graphiql.css');
+require('graphiql/graphiql.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

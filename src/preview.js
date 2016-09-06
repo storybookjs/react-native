@@ -1,7 +1,7 @@
 import React from 'react';
 import GraphiQL from 'graphiql';
 import FullScreen from './components/FullScreen';
-import '../node_modules/graphiql/graphiql.css';
+import 'graphiql/graphiql.css';
 
 const FETCH_OPTIONS = {
   method: 'post',
