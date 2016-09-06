@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { action } from '@kadira/storybook-addon-actions';
-import { createKnob, withKnobs } from '../index';
+import { knob, withKnobs } from '../index';
 import Button from './Button';
 
 storiesOf('Button', module)
@@ -9,27 +9,19 @@ storiesOf('Button', module)
   .add('default view', () => (
     <Button
       onClick={ action('button clicked') }
-      style={createKnob('style', { width: '70px' }, 'object')}
+      style={knob('style', 'object', { width: '70px' })}
     >
-      {createKnob('children', 'Hello')}
-    </Button>
-  ))
-  .add('another view', () => (
-    <Button
-      onClick={ action('button clicked') }
-      style={createKnob('style', { width: '70px' }, 'object')}
-    >
-      {createKnob('children', 'Hello')}
+      {knob('children', 'string', 'Hello')}
     </Button>
   ))
   .add('default view with different knobs', () => (
     <Button
       onClick={ action('button clicked') }
-      color={createKnob('color', '#abc')}
-      width={createKnob('width(px)', 70, 'number')}
-      disabled={createKnob('disabled', false, 'boolean')}
+      color={knob('color', 'string', '#abc')}
+      width={knob('width(px)', 'number', 70)}
+      disabled={knob('disabled', 'boolean', false)}
     >
-      {createKnob('text', 'Hello')}
+      {knob('text', 'Hello')}
     </Button>
   ))
   .add('Story without any knobs', () => (

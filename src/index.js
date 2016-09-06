@@ -20,7 +20,7 @@ function register() {
 let knobStore = {};
 const stories = {};
 
-function createKnob(name, value, type) {
+function knob(name, type, value) {
   if (knobStore[name]) {
     return knobStore[name].value;
   }
@@ -48,4 +48,4 @@ function withKnobs(storyFn) {
   };
 }
 
-export { register, createKnob, withKnobs };
+export { register, knob, withKnobs };
