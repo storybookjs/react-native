@@ -1,2 +1,2 @@
 require('../src').register();
-// import '@kadira/storybook/addons'
+import '@kadira/storybook/addons'
