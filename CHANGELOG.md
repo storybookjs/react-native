@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.4.5
+06-Aug-2016
+
+Fix an issue related to Meteor.
+
+  * Related issue: [kadirahq/react-storybook#423](https://github.com/kadirahq/react-storybook/issues/423)
+  * The fix: [088eecf](https://github.com/kadirahq/getstorybook/commit/088eecf740bebf522b6608892a3a7e3e34bcfc31)
+
 ### v1.4.4
 30-Aug-2016
 
