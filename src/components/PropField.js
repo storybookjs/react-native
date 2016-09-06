@@ -12,7 +12,7 @@ const stylesheet = {
     height: '26px',
     width: '100%',
     outline: 'none',
-    border: '1px solid rgb(236, 236, 236)',
+    border: '1px solid #ececec',
     fontSize: '12px',
     padding: '5px',
     color: 'rgb(130, 130, 130)',
@@ -31,6 +31,10 @@ const stylesheet = {
     fontSize: '13px',
     color: 'rgb(68, 68, 68)',
   },
+  object: {
+    border: '1px solid #ececec',
+    padding: '5px'
+  }
 };
 
 stylesheet.textarea = {
@@ -86,7 +90,7 @@ export default class PropField extends React.Component {
 
     if (type === 'object') {
       inputElem = (
-        <div style={{ border: '1px solid rgb(236, 236, 236)', padding: '5px' }}>
+        <div style={stylesheet.object}>
           <AceEditor
             mode="javascript"
             theme="github"

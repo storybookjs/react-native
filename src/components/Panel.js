@@ -6,7 +6,7 @@ import { js_beautify as beautify } from 'js-beautify'; // eslint-disable-line ca
 const styles = {
   panel: {
     padding: '5px',
-    width: '100%',
+    width: 380,
     position: 'relative',
   },
   noKnobs: {
@@ -22,7 +22,8 @@ const styles = {
   },
   resetButton: {
     position: 'absolute',
-    bottom: 0, right: 0,
+    bottom: 11,
+    right: 10,
     border: 'none',
     borderTop: 'solid 1px rgba(0, 0, 0, 0.2)',
     borderLeft: 'solid 1px rgba(0, 0, 0, 0.2)',
@@ -155,8 +156,10 @@ export default class Panel extends React.Component {
     }
 
     return (
-      <div style={styles.panel}>
-        <PropForm fields={fieldsArray} onFieldChange={this._handleChange} />
+      <div>
+        <div style={styles.panel}>
+          <PropForm fields={fieldsArray} onFieldChange={this._handleChange} />
+        </div>
         <button style={styles.resetButton} onClick={this._reset}>RESET</button>
       </div>
     );

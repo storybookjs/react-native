@@ -14,6 +14,14 @@ storiesOf('Button', module)
       {createKnob('children', 'Hello')}
     </Button>
   ))
+  .add('another view', () => (
+    <Button
+      onClick={ action('button clicked') }
+      style={createKnob('style', { width: '70px' }, 'object')}
+    >
+      {createKnob('children', 'Hello')}
+    </Button>
+  ))
   .add('default view with different knobs', () => (
     <Button
       onClick={ action('button clicked') }
