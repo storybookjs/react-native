@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-graphql",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storybook addon to display the GraphiQL IDE",
   "main": "dist/index.js",
   "scripts": {
