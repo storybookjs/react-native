@@ -1,6 +1,7 @@
 export default class KnobStore {
   constructor() {
     this.store = {};
+    this.callbacks = [];
   }
 
   has(key) {
@@ -9,6 +10,7 @@ export default class KnobStore {
 
   set(key, value) {
     this.store[key] = value;
+    this.callbacks.forEach(cb => cb());
   }
 
   get(key) {
@@ -21,5 +23,14 @@ export default class KnobStore {
 
   reset() {
     this.store = {};
+  }
+
+  subscribe(cb) {
+    this.callbacks.push(cb);
+  }
+
+  unsubscribe(cb) {
+    const index = this.callbacks.indexOf(cb);
+    this.callbacks.splice(index, 1);
   }
 }

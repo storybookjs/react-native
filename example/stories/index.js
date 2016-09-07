@@ -18,9 +18,9 @@ storiesOf('Button', module)
       onClick={ action('button clicked') }
       disabled={ boolean('Disabled', false) }
       width={ number('Width', 100) }
-      style={ object('Style', { backgroundColor: '#EAEAEA' }) }
+      style={ object('Style', { backgroundColor: '#FFF' }) }
     >
-      { text('Label', 'Hello') } World
+      { text('Label', 'Hello Man') } World
     </Button>
   ))
   .add('Story without any knobs', () => (
