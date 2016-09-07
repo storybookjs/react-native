@@ -34,8 +34,8 @@ export default function (configDir) {
     res.send(getIndexHtml(publicPath));
   });
 
-  const headHtml = getHeadHtml(configDir);
   router.get('/iframe.html', function (req, res) {
+    const headHtml = getHeadHtml(configDir);
     res.send(getIframeHtml(headHtml, publicPath));
   });
 
