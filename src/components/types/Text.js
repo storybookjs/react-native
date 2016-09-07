@@ -15,14 +15,14 @@ const styles = {
 
 class TextType extends React.Component {
   render() {
-    const { value, name, onChange } = this.props;
+    const { knob, onChange } = this.props;
 
     return (
       <input
-        id={name}
+        id={knob.name}
         ref="input"
         style={styles}
-        value={value}
+        value={knob.value}
         onChange={() => onChange(this.refs.input.value)}
       />
     );
@@ -30,8 +30,7 @@ class TextType extends React.Component {
 }
 
 TextType.propTypes = {
-  value: React.PropTypes.string,
-  name: React.PropTypes.string,
+  knob: React.PropTypes.object,
   onChange: React.PropTypes.func,
 };
 

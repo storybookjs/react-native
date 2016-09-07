@@ -1,5 +1,7 @@
 import React from 'react';
 import AceEditor from 'react-ace';
+import { js_beautify as beautify } from 'js-beautify';
+import tosource from 'tosource';
 import 'brace/mode/javascript';
 import 'brace/theme/github';
 
@@ -9,8 +11,17 @@ const styles = {
 };
 
 class ObjectType extends React.Component {
+  handleChange(sourceText) {
+    const { onChange } = this.props;
+    try {
+      const value = JSON.parse(sourceText.trim());
+      onChange(value);
+    } catch(e) {}
+  }
+
   render() {
-    const { value, name, onChange } = this.props;
+    const { knob } = this.props;
+    const value = JSON.stringify(knob.value, null, 2);
 
     return (
       <div style={styles}>
@@ -18,8 +29,8 @@ class ObjectType extends React.Component {
           mode="javascript"
           theme="github"
           value={value}
-          onChange={onChange}
-          name={name}
+          onChange={e => this.handleChange(e)}
+          name={knob.name}
           width="100%"
           height="120px"
           editorProps={{ $blockScrolling: true }}
@@ -34,8 +45,7 @@ class ObjectType extends React.Component {
 }
 
 ObjectType.propTypes = {
-  value: React.PropTypes.string,
-  name: React.PropTypes.string,
+  knob: React.PropTypes.object,
   onChange: React.PropTypes.func,
 };
 
@@ -44,6 +54,7 @@ ObjectType.serialize = function(object) {
 };
 
 ObjectType.deserialize = function(value) {
+  if (!value) return {};
   return JSON.parse(value);
 };
 
