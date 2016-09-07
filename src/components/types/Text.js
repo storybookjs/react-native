@@ -1,4 +1,5 @@
 import React from 'react';
+import Textarea from 'react-textarea-autosize';
 
 const styles = {
   display: 'table-cell',
@@ -18,12 +19,12 @@ class TextType extends React.Component {
     const { knob, onChange } = this.props;
 
     return (
-      <input
+      <Textarea
         id={knob.name}
         ref="input"
         style={styles}
         value={knob.value}
-        onChange={() => onChange(this.refs.input.value)}
+        onChange={(e) => onChange(e.target.value)}
       />
     );
   }
