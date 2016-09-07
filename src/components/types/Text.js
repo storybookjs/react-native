@@ -13,7 +13,7 @@ const styles = {
   color: 'rgb(130, 130, 130)',
 };
 
-class StringType extends React.Component {
+class TextType extends React.Component {
   render() {
     const { value, name, onChange } = this.props;
 
@@ -29,10 +29,10 @@ class StringType extends React.Component {
   }
 }
 
-StringType.propTypes = {
+TextType.propTypes = {
   value: React.PropTypes.string,
   name: React.PropTypes.string,
   onChange: React.PropTypes.func,
 };
 
-export default StringType;
+export default TextType;

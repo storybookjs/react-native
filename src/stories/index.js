@@ -1,7 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { action } from '@kadira/storybook-addon-actions';
-import { knob, withKnobs } from '../index';
+import {
+  withKnobs,
+  number,
+  object,
+  boolean,
+  text,
+} from '../index';
+
 import Button from './Button';
 
 storiesOf('Button', module)
@@ -9,11 +16,11 @@ storiesOf('Button', module)
   .add('default view', () => (
     <Button
       onClick={ action('button clicked') }
-      width={knob('width(px)', 'number', 70)}
-      disabled={knob('disabled', 'boolean', false)}
-      style={knob('style', 'object', { width: '70px' })}
+      width={number('width(px)', 70)}
+      disabled={boolean('disabled', false)}
+      style={object('style', { width: '70px' })}
     >
-      {knob('Label', 'string', 'Number')}
+      {text('Label', 'Hello')}
     </Button>
   ))
   // .add('default view with different knobs', () => (

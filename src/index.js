@@ -5,16 +5,37 @@ import Wrap from './components/Wrap';
 let knobStore = {};
 const stories = {};
 
-function knob(name, type, value) {
+export function text(name, value) {
+  return knob(name, { type: 'text', value });
+}
+
+export function boolean(name, value) {
+  return knob(name, { type: 'boolean', value });
+}
+
+export function number(name, value) {
+  return knob(name, { type: 'number', value });
+}
+
+export function object(name, value) {
+  return knob(name, { type: 'object', value });
+}
+
+export function knob(name, options) {
   if (knobStore[name]) {
     return knobStore[name].value;
   }
 
-  knobStore[name] = { name, value, type };
-  return value;
+  const knobInfo = {
+    ...options,
+    name
+  };
+
+  knobStore[name] = knobInfo;
+  return knobInfo.value;
 }
 
-function withKnobs(storyFn) {
+export function withKnobs(storyFn) {
   const channel = addons.getChannel();
 
   return context => {
@@ -32,5 +53,3 @@ function withKnobs(storyFn) {
     return <Wrap {...{ context, storyFn, channel, store: knobStore }} />;
   };
 }
-
-export { knob, withKnobs };

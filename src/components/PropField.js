@@ -1,6 +1,6 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-import StringType from './types/String';
+import TextType from './types/Text';
 import NumberType from './types/Number';
 import BooleanType from './types/Boolean';
 import ObjectType from './types/Object';
@@ -9,7 +9,7 @@ import 'brace/mode/javascript';
 import 'brace/theme/github';
 
 const TypeMap = {
-  'string': StringType,
+  'text': TextType,
   'number': NumberType,
   'boolean': BooleanType,
   'object': ObjectType,
@@ -94,7 +94,7 @@ export default class PropField extends React.Component {
 PropField.propTypes = {
   name: React.PropTypes.string.isRequired,
   onChange: React.PropTypes.func.isRequired,
-  type: React.PropTypes.oneOf(['string', 'object', 'number', 'boolean']),
+  type: React.PropTypes.oneOf(['text', 'object', 'number', 'boolean']),
   value: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number,
