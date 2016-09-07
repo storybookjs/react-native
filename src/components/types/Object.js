@@ -1,45 +1,51 @@
 import React from 'react';
-import AceEditor from 'react-ace';
-import { js_beautify as beautify } from 'js-beautify';
-import tosource from 'tosource';
-import 'brace/mode/javascript';
-import 'brace/theme/github';
+import Textarea from 'react-textarea-autosize';
 
 const styles = {
+  display: 'table-cell',
+  boxSizing: 'border-box',
+  verticalAlign: 'middle',
+  width: '100%',
+  outline: 'none',
   border: '1px solid #ececec',
+  fontSize: '12px',
   padding: '5px',
+  color: 'rgb(130, 130, 130)',
+  fontFamily: 'monospace'
 };
 
 class ObjectType extends React.Component {
-  handleChange(sourceText) {
+  handleChange(e) {
     const { onChange } = this.props;
     try {
-      const value = JSON.parse(sourceText.trim());
+      const value = JSON.parse(e.target.value.trim());
       onChange(value);
-    } catch(e) {}
+      this.failed = false;
+    } catch(err) {
+      this.failed = true;
+      this.setState({ value: e.target.value });
+    }
   }
 
   render() {
     const { knob } = this.props;
-    const value = JSON.stringify(knob.value, null, 2);
+    let value = JSON.stringify(knob.value, null, 2);
+    const extraStyle = {};
+
+    if (this.failed) {
+      value = this.state.value;
+      extraStyle.border = '1px solid #fadddd'
+      extraStyle.backgroundColor = '#fff5f5';
+    }
 
     return (
-      <div style={styles}>
-        <AceEditor
-          mode="javascript"
-          theme="github"
-          value={value}
-          onChange={e => this.handleChange(e)}
-          name={knob.name}
-          width="100%"
-          height="120px"
-          editorProps={{ $blockScrolling: true }}
-          setOptions={{ showLineNumbers: false }}
-          showPrintMargin={false}
-          showGutter={false}
-          highlightActiveLine={false}
-        />
-      </div>
+      <Textarea
+        id={knob.name}
+        ref="input"
+        style={{ ...styles, ...extraStyle }}
+        value={value}
+        onChange={e => this.handleChange(e)}
+      />
     );
   }
 }
