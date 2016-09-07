@@ -1,9 +1,10 @@
 import React from 'react';
 import addons from '@kadira/storybook-addons';
-import Wrap from './components/Wrap';
+import WrapStory from './components/WrapStory';
+import KnobStore from './KnobStore';
 
-let knobStore = {};
-const stories = {};
+let knobStore = null;
+const knobStoreMap = {};
 
 export function text(name, value) {
   return knob(name, { type: 'text', value });
@@ -22,8 +23,8 @@ export function object(name, value) {
 }
 
 export function knob(name, options) {
-  if (knobStore[name]) {
-    return knobStore[name].value;
+  if (knobStore.has(name)) {
+    return knobStore.get(name).value;
   }
 
   const knobInfo = {
@@ -31,25 +32,21 @@ export function knob(name, options) {
     name
   };
 
-  knobStore[name] = knobInfo;
-  return knobInfo.value;
+  knobStore.set(name, knobInfo);
+  return knobStore.get(name).value;
 }
 
 export function withKnobs(storyFn) {
   const channel = addons.getChannel();
 
-  return context => {
-    if (!stories[context.kind]) {
-      stories[context.kind] = {};
+  return (context) => {
+    const key = `${context.kind}:::${context.story}`;
+    knobStore = knobStoreMap[key];
+    if (!knobStore) {
+      knobStore = knobStoreMap[key] = new KnobStore();
     }
 
-    if (!stories[context.kind][context.story]) {
-      stories[context.kind][context.story] = {};
-    }
-
-    // Change the global knobStore to the one local to this story
-    knobStore = stories[context.kind][context.story];
-
-    return <Wrap {...{ context, storyFn, channel, store: knobStore }} />;
+    const props = { context, storyFn, channel, knobStore };
+    return (<WrapStory {...props} />);
   };
 }
