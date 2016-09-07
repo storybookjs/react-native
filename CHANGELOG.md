@@ -1,5 +1,12 @@
 ## Changelog
 
+### v2.12.0
+8-September-2016
+
+* Do not include addon register file on preview. [PR426](https://github.com/kadirahq/react-storybook/pull/426)
+* Update css-loader to version 0.25.0. [PR427](https://github.com/kadirahq/react-storybook/pull/427)
+* Get the head.html values for every page request. [PR432](https://github.com/kadirahq/react-storybook/pull/432)
+
 ### v2.11.0
 4-September-2016
 
