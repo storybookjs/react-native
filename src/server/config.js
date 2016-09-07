@@ -89,10 +89,8 @@ export default function (configType, baseConfig, configDir) {
   const storybookCustomAddonsPath = path.resolve(configDir, 'addons.js');
   if (fs.existsSync(storybookCustomAddonsPath)) {
     logger.info('=> Loading custom addons config.');
-    config.entry.preview.unshift(storybookCustomAddonsPath);
     config.entry.manager.unshift(storybookCustomAddonsPath);
   } else {
-    config.entry.preview.unshift(storybookDefaultAddonsPath);
     config.entry.manager.unshift(storybookDefaultAddonsPath);
   }
 
