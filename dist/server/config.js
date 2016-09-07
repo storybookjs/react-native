@@ -49,10 +49,8 @@ exports.default = function (configType, baseConfig, configDir) {
   var storybookCustomAddonsPath = _path2.default.resolve(configDir, 'addons.js');
   if (_fs2.default.existsSync(storybookCustomAddonsPath)) {
     logger.info('=> Loading custom addons config.');
-    config.entry.preview.unshift(storybookCustomAddonsPath);
     config.entry.manager.unshift(storybookCustomAddonsPath);
   } else {
-    config.entry.preview.unshift(storybookDefaultAddonsPath);
     config.entry.manager.unshift(storybookDefaultAddonsPath);
   }
 

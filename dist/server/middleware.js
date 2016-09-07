@@ -30,8 +30,8 @@ exports.default = function (configDir) {
     res.send((0, _index2.default)(publicPath));
   });
 
-  var headHtml = (0, _utils.getHeadHtml)(configDir);
   router.get('/iframe.html', function (req, res) {
+    var headHtml = (0, _utils.getHeadHtml)(configDir);
     res.send((0, _iframe2.default)(headHtml, publicPath));
   });
 
