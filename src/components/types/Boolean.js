@@ -16,15 +16,15 @@ const styles = {
 class BooleanType extends React.Component {
   render() {
     const { value, name, onChange } = this.props;
-
+    
     return (
       <input
         id={name}
         ref="input"
         style={styles}
-        value={value}
         type="checkbox"
         onChange={() => onChange(this.refs.input.checked)}
+        checked={value}
       />
     );
   }
@@ -34,6 +34,14 @@ BooleanType.propTypes = {
   value: React.PropTypes.bool,
   name: React.PropTypes.string,
   onChange: React.PropTypes.func,
+};
+
+BooleanType.serialize = function(value) {
+  return String(value);
+};
+
+BooleanType.deserialize = function(value) {
+  return value.trim() === 'true';
 };
 
 export default BooleanType;

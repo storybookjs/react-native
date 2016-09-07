@@ -8,7 +8,7 @@ const styles = {
   padding: '5px',
 };
 
-class StringType extends React.Component {
+class ObjectType extends React.Component {
   render() {
     const { value, name, onChange } = this.props;
 
@@ -33,10 +33,18 @@ class StringType extends React.Component {
   }
 }
 
-StringType.propTypes = {
+ObjectType.propTypes = {
   value: React.PropTypes.string,
   name: React.PropTypes.string,
   onChange: React.PropTypes.func,
 };
 
-export default StringType;
+ObjectType.serialize = function(object) {
+  return JSON.stringify(object);
+};
+
+ObjectType.deserialize = function(value) {
+  return JSON.parse(value);
+};
+
+export default ObjectType;

@@ -10,7 +10,7 @@ export default class WrapStory extends React.Component {
 
   setPanelFields() {
     const { channel, knobStore } = this.props;
-    channel.emit('addon:knobs:setFields', knobStore.getAll());
+    channel.emit('addon:knobs:setKnobs', knobStore.getAll());
   }
 
   componentDidMount() {

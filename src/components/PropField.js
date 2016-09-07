@@ -1,19 +1,9 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-import TextType from './types/Text';
-import NumberType from './types/Number';
-import BooleanType from './types/Boolean';
-import ObjectType from './types/Object';
+import TypeMap from './types';
 
 import 'brace/mode/javascript';
 import 'brace/theme/github';
-
-const TypeMap = {
-  'text': TextType,
-  'number': NumberType,
-  'boolean': BooleanType,
-  'object': ObjectType,
-};
 
 const InvalidType = () => (<span>Invalid Type</span>);
 

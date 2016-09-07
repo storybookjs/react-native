@@ -36,4 +36,12 @@ NumberType.propTypes = {
   onChange: React.PropTypes.func,
 };
 
+NumberType.serialize = function(value) {
+  return String(value);
+};
+
+NumberType.deserialize = function(value) {
+  return parseFloat(value);
+};
+
 export default NumberType;

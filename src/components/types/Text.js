@@ -35,4 +35,12 @@ TextType.propTypes = {
   onChange: React.PropTypes.func,
 };
 
+TextType.serialize = function(value) {
+  return value;
+};
+
+TextType.deserialize = function(value) {
+  return value;
+};
+
 export default TextType;
