@@ -69,6 +69,7 @@ export default class Panel extends React.Component {
 
     Object.keys(knobs).forEach((name) => {
       const knob = knobs[name];
+      // For the first time, get values from the URL and set them.
       if (!this.loadedFromUrl) {
         const urlValue = api.getQueryParam(`knob-${name}`);
         knob.value = Types[knob.type].deserialize(urlValue);
@@ -82,36 +83,6 @@ export default class Panel extends React.Component {
     this.loadedFromUrl = true;
     this.api.setQueryParams(queryParams);
     this.setState({ fields: knobs });
-  }
-
-  checkUrlAndsetKnobs(_fields) {
-    const fields = _fields;
-    for (const name in fields) {
-      if (fields.hasOwnProperty(name)) {
-        let urlValue = this.api.getQueryParam(`knob-${name}`);
-        if (urlValue !== undefined) {
-          // When saved in url the information of whether number or string or bool is lost
-          // so have to convert numbers and booleans back.
-          switch (fields[name].type) {
-            case 'boolean':
-              urlValue = (urlValue === 'true');
-              break;
-            case 'number':
-              urlValue = Number(urlValue);
-              break;
-            default:
-          }
-
-          fields[name].value = urlValue;
-          this.props.channel.emit('addon:knobs:knobChange', { name, value: urlValue });
-        }
-      }
-    }
-
-    this.setKnobs(fields);
-
-    // Listen to the selFields event in the future.
-    this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
   }
 
   reset() {
