@@ -1,4 +1,5 @@
 import React from 'react';
+import Textarea from 'react-textarea-autosize';
 
 const styles = {
   display: 'table-cell',
@@ -15,24 +16,31 @@ const styles = {
 
 class TextType extends React.Component {
   render() {
-    const { value, name, onChange } = this.props;
+    const { knob, onChange } = this.props;
 
     return (
-      <input
-        id={name}
+      <Textarea
+        id={knob.name}
         ref="input"
         style={styles}
-        value={value}
-        onChange={() => onChange(this.refs.input.value)}
+        value={knob.value}
+        onChange={(e) => onChange(e.target.value)}
       />
     );
   }
 }
 
 TextType.propTypes = {
-  value: React.PropTypes.string,
-  name: React.PropTypes.string,
+  knob: React.PropTypes.object,
   onChange: React.PropTypes.func,
+};
+
+TextType.serialize = function(value) {
+  return value;
+};
+
+TextType.deserialize = function(value) {
+  return value;
 };
 
 export default TextType;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropForm from './PropForm';
 import tosource from 'tosource';
-import { js_beautify as beautify } from 'js-beautify'; // eslint-disable-line camelcase
+import Types from './types';
 
 const styles = {
   panel: {
@@ -38,118 +38,68 @@ const styles = {
 export default class Panel extends React.Component {
   constructor(props) {
     super(props);
-    this._handleChange = this.handleChange.bind(this);
-    this._setFields = this.setFields.bind(this);
-    this._checkUrlAndsetFields = this.checkUrlAndsetFields.bind(this);
-    this._reset = this.reset.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.setKnobs = this.setKnobs.bind(this);
+    this.reset = this.reset.bind(this);
 
-    this.state = { fields: {} };
-    this.api = this.props.api;
-  }
-
-  componentWillMount() {
-    this.props.channel.on('addon:knobs:setFields', this._checkUrlAndsetFields);
-  }
-
-  componentDidMount() {
-    this.stopOnStory = this.api.onStory(() => {
-      this.api.setQueryParams({ knobs: null });
-    });
+    this.state = { knobs: {} };
+    this.loadedFromUrl = false;
+    this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener('addon:knobs:setFields', this._setFields);
-    this.stopOnStory();
+    this.props.channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
   }
 
-  setFields(_fields) {
-    const fields = _fields;
+  setKnobs(knobs) {
     const queryParams = {};
-    for (const f in fields) {
-      if (fields.hasOwnProperty(f)) {
-        queryParams[`knob-${f}`] = fields[f].value;
-        if (fields[f].type === 'object') {
-          fields[f].value = beautify(tosource(fields[f].value));
-        }
-      }
-    }
-    this.api.setQueryParams(queryParams);
-    this.setState({ fields });
-  }
+    const { api, channel } = this.props;
 
-  checkUrlAndsetFields(_fields) {
-    const fields = _fields;
-    for (const name in fields) {
-      if (fields.hasOwnProperty(name)) {
-        let urlValue = this.api.getQueryParam(`knob-${name}`);
-        if (urlValue !== undefined) {
-          // When saved in url the information of whether number or string or bool is lost
-          // so have to convert numbers and booleans back.
-          switch (fields[name].type) {
-            case 'boolean':
-              urlValue = (urlValue === 'true');
-              break;
-            case 'number':
-              urlValue = Number(urlValue);
-              break;
-            default:
-          }
-
-          fields[name].value = urlValue;
-          this.props.channel.emit('addon:knobs:knobChange', { name, value: urlValue });
-        }
+    Object.keys(knobs).forEach((name) => {
+      const knob = knobs[name];
+      // For the first time, get values from the URL and set them.
+      if (!this.loadedFromUrl) {
+        const urlValue = api.getQueryParam(`knob-${name}`);
+        knob.value = Types[knob.type].deserialize(urlValue);
+        channel.emit('addon:knobs:knobChange', knob);
       }
-    }
-    this.props.channel.removeListener('addon:knobs:setFields', this._checkUrlAndsetFields);
-    this.props.channel.on('addon:knobs:setFields', this._setFields);
-    this.setFields(fields);
+
+      queryParams[`knob-${name}`] = Types[knob.type].serialize(knob.value);
+    });
+
+    this.loadedFromUrl = true;
+    api.setQueryParams(queryParams);
+    this.setState({ knobs });
   }
 
   reset() {
     this.props.channel.emit('addon:knobs:reset');
   }
 
-  handleChange(change) {
-    const { name, value, type } = change;
+  handleChange(changedKnob) {
+    const { api, channel } = this.props;
+    const { knobs } = this.state;
+    const { name, type, value } = changedKnob;
+    const newKnobs = { ...knobs };
+    newKnobs[name] = {
+      ...newKnobs[name],
+      ...changedKnob
+    };
 
-    const fields = this.state.fields;
-    const changedField = {};
-    changedField[name] = { ...fields[name], ...{ value } };
-    const newFields = { ...fields, ...changedField };
-    this.setState({ fields: newFields });
-
-    let formatedValue = value;
-    switch (type) {
-      case 'object':
-        try {
-          formatedValue = eval(`(${value})`); // eslint-disable-line no-eval
-        } catch (e) {
-          return;
-        }
-        break;
-      case 'number':
-        try {
-          formatedValue = Number(value);
-        } catch (e) {
-          return;
-        }
-        break;
-      default:
-        formatedValue = value;
-    }
+    this.setState({ knobs: newKnobs });
 
     const queryParams = {};
-    queryParams[`knob-${name}`] = formatedValue;
-    this.api.setQueryParams(queryParams);
+    queryParams[`knob-${name}`] = Types[type].serialize(value);
 
-    this.props.channel.emit('addon:knobs:knobChange', { name, value: formatedValue });
+    api.setQueryParams(queryParams);
+    channel.emit('addon:knobs:knobChange', changedKnob);
   }
 
   render() {
-    const fields = this.state.fields;
-    const fieldsArray = Object.keys(fields).map(key => (fields[key]));
+    const { knobs } = this.state;
+    const knobsArray = Object.keys(knobs).map(key => (knobs[key]));
 
-    if (fieldsArray.length === 0) {
+    if (knobsArray.length === 0) {
       return (
         <div style={styles.noKnobs}>NO KNOBS</div>
       );
@@ -158,9 +108,9 @@ export default class Panel extends React.Component {
     return (
       <div>
         <div style={styles.panel}>
-          <PropForm fields={fieldsArray} onFieldChange={this._handleChange} />
+          <PropForm knobs={knobsArray} onFieldChange={this.handleChange} />
         </div>
-        <button style={styles.resetButton} onClick={this._reset}>RESET</button>
+        <button style={styles.resetButton} onClick={this.reset}>RESET</button>
       </div>
     );
   }

@@ -52,10 +52,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
-    "brace": "^0.8.0",
-    "js-beautify": "^1.6.3",
-    "react-ace": "^3.5.0",
-    "tosource": "^1.0.0"
+    "deep-equal": "^1.0.1",
+    "react-textarea-autosize": "^4.0.5",
   },
   "main": "dist/index.js",
   "engines": {

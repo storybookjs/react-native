@@ -15,25 +15,32 @@ const styles = {
 
 class NumberType extends React.Component {
   render() {
-    const { value, name, onChange } = this.props;
+    const { knob, onChange } = this.props;
 
     return (
       <input
-        id={name}
+        id={knob.name}
         ref="input"
         style={styles}
-        value={value}
+        value={knob.value}
         type="number"
-        onChange={() => onChange(parseInt(this.refs.input.value))}
+        onChange={() => onChange(parseFloat(this.refs.input.value))}
       />
     );
   }
 }
 
 NumberType.propTypes = {
-  value: React.PropTypes.number,
-  name: React.PropTypes.string,
+  knob: React.PropTypes.object,
   onChange: React.PropTypes.func,
+};
+
+NumberType.serialize = function(value) {
+  return String(value);
+};
+
+NumberType.deserialize = function(value) {
+  return parseFloat(value);
 };
 
 export default NumberType;

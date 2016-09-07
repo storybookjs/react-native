@@ -5,23 +5,32 @@ export default class WrapStory extends React.Component {
     super(props);
     this.knobChanged = this.knobChanged.bind(this);
     this.resetKnobs = this.resetKnobs.bind(this);
+    this.setPaneKnobs = this.setPaneKnobs.bind(this);
     this._knobsAreReset = false;
+    this.state = {}
   }
 
-  setPanelFields() {
+  setPaneKnobs() {
     const { channel, knobStore } = this.props;
-    channel.emit('addon:knobs:setFields', knobStore.getAll());
+    channel.emit('addon:knobs:setKnobs', knobStore.getAll());
   }
 
   componentDidMount() {
+    // Watch for changes in knob editor.
     this.props.channel.on('addon:knobs:knobChange', this.knobChanged);
+    // Watch for the reset event and reset knobs.
     this.props.channel.on('addon:knobs:reset', this.resetKnobs);
-    this.setPanelFields();
+    // Watch for any change in the knobStore and set the panel again for those
+    // changes.
+    this.props.knobStore.subscribe(this.setPaneKnobs);
+    // Set knobs in the panel for the first time.
+    this.setPaneKnobs();
   }
 
   componentWillUnmount() {
     this.props.channel.removeListener('addon:knobs:knobChange', this.knobChanged);
     this.props.channel.removeListener('addon:knobs:reset', this.resetKnobs);
+    this.props.knobStore.unsubscribe(this.setPaneKnobs);
   }
 
   knobChanged(change) {
@@ -37,7 +46,7 @@ export default class WrapStory extends React.Component {
     const { knobStore } = this.props;
     knobStore.reset();
     this.forceUpdate();
-    this.setPanelFields();
+    this.setPaneKnobs();
   }
 
   render() {

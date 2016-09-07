@@ -16,11 +16,11 @@ storiesOf('Button', module)
   .add('default view', () => (
     <Button
       onClick={ action('button clicked') }
-      width={number('width(px)', 70)}
-      disabled={boolean('disabled', false)}
-      style={object('style', { width: '70px' })}
+      disabled={ boolean('Disabled', false) }
+      width={ number('Width', 100) }
+      style={ object('Style', { backgroundColor: '#FFF' }) }
     >
-      {text('Label', 'Hello')}
+      { text('Label', 'Hello Man') } World
     </Button>
   ))
   .add('Story without any knobs', () => (

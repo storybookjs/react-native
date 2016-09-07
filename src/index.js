@@ -2,6 +2,7 @@ import React from 'react';
 import addons from '@kadira/storybook-addons';
 import WrapStory from './components/WrapStory';
 import KnobStore from './KnobStore';
+import deepEqual from 'deep-equal';
 
 let knobStore = null;
 const knobStoreMap = {};
@@ -23,13 +24,19 @@ export function object(name, value) {
 }
 
 export function knob(name, options) {
-  if (knobStore.has(name)) {
-    return knobStore.get(name).value;
+  const existingKnob = knobStore.get(name);
+  // We need to return the value set by the knob editor via this.
+  // But, if the user changes the code for the defaultValue we should set
+  // that value instead.
+  if (existingKnob && deepEqual(options.value, existingKnob.defaultValue)) {
+    return existingKnob.value;
   }
 
+  const defaultValue = options.value;
   const knobInfo = {
     ...options,
-    name
+    name,
+    defaultValue,
   };
 
   knobStore.set(name, knobInfo);
