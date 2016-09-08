@@ -6,12 +6,13 @@ import baseConfig from './config/webpack.config';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml } from './utils';
+import { getHeadHtml, getMiddleware } from './utils';
 
 export default function (configDir) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   const config = loadConfig('DEVELOPMENT', baseConfig, configDir);
+  const middlewareFn = getMiddleware(configDir);
 
   // remove the leading '/'
   let publicPath = config.output.publicPath;
@@ -29,6 +30,8 @@ export default function (configDir) {
   const router = new Router();
   router.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
   router.use(webpackHotMiddleware(compiler));
+
+  middlewareFn(router);
 
   router.get('/', function (req, res) {
     res.send(getIndexHtml(publicPath));
