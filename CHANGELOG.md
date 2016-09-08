@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.12.1
+8-September-2016
+
+* Parse static directory provided by env as a list. [PR436](https://github.com/kadirahq/react-storybook/pull/436)
+
 ### v2.12.0
 8-September-2016
 
