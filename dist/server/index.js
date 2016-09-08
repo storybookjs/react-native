@@ -37,7 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'File where to store addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').option('--dont-track', 'Do not send anonymous usage stats.').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'File where to store addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').option('--dont-track', 'Do not send anonymous usage stats.').parse(process.argv);
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
@@ -69,6 +69,7 @@ if (_commander2.default.host) {
 var app = (0, _express2.default)();
 
 if (_commander2.default.staticDir) {
+  _commander2.default.staticDir = (0, _utils.parseList)(_commander2.default.staticDir);
   _commander2.default.staticDir.forEach(function (dir) {
     var staticPath = _path2.default.resolve(dir);
     if (!_fs2.default.existsSync(staticPath)) {
