@@ -1,6 +1,5 @@
 import React from 'react';
 import PropForm from './PropForm';
-import tosource from 'tosource';
 import Types from './types';
 
 const styles = {
@@ -83,7 +82,7 @@ export default class Panel extends React.Component {
     const newKnobs = { ...knobs };
     newKnobs[name] = {
       ...newKnobs[name],
-      ...changedKnob
+      ...changedKnob,
     };
 
     this.setState({ knobs: newKnobs });

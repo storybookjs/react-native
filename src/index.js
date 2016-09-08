@@ -7,22 +7,6 @@ import deepEqual from 'deep-equal';
 let knobStore = null;
 const knobStoreMap = {};
 
-export function text(name, value) {
-  return knob(name, { type: 'text', value });
-}
-
-export function boolean(name, value) {
-  return knob(name, { type: 'boolean', value });
-}
-
-export function number(name, value) {
-  return knob(name, { type: 'number', value });
-}
-
-export function object(name, value) {
-  return knob(name, { type: 'object', value });
-}
-
 export function knob(name, options) {
   const existingKnob = knobStore.get(name);
   // We need to return the value set by the knob editor via this.
@@ -41,6 +25,22 @@ export function knob(name, options) {
 
   knobStore.set(name, knobInfo);
   return knobStore.get(name).value;
+}
+
+export function text(name, value) {
+  return knob(name, { type: 'text', value });
+}
+
+export function boolean(name, value) {
+  return knob(name, { type: 'boolean', value });
+}
+
+export function number(name, value) {
+  return knob(name, { type: 'number', value });
+}
+
+export function object(name, value) {
+  return knob(name, { type: 'object', value });
 }
 
 export function withKnobs(storyFn) {

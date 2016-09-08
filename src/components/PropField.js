@@ -1,5 +1,4 @@
 import React from 'react';
-import AceEditor from 'react-ace';
 import TypeMap from './types';
 
 import 'brace/mode/javascript';
