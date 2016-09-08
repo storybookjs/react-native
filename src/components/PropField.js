@@ -1,9 +1,6 @@
 import React from 'react';
 import TypeMap from './types';
 
-import 'brace/mode/javascript';
-import 'brace/theme/github';
-
 const InvalidType = () => (<span>Invalid Type</span>);
 
 const stylesheet = {
