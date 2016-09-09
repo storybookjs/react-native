@@ -30,18 +30,16 @@ export default class KnobManager {
     return knobStore.get(name).value;
   }
 
-  wrapStory(storyFn, channel) {
-    return context => {
-      const key = `${context.kind}:::${context.story}`;
-      let knobStore = this.knobStoreMap[key];
+  wrapStory(channel, storyFn, context) {
+    const key = `${context.kind}:::${context.story}`;
+    let knobStore = this.knobStoreMap[key];
 
-      if (!knobStore) {
-        knobStore = this.knobStoreMap[key] = new KnobStore();
-      }
-      this.knobStore = knobStore;
+    if (!knobStore) {
+      knobStore = this.knobStoreMap[key] = new KnobStore();
+    }
+    this.knobStore = knobStore;
 
-      const props = { context, storyFn, channel, knobStore };
-      return (<WrapStory {...props} />);
-    };
+    const props = { context, storyFn, channel, knobStore };
+    return (<WrapStory {...props} />);
   }
 }

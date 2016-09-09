@@ -12,7 +12,7 @@ import {
 import Button from './Button';
 
 storiesOf('Button', module)
-  .addDecorator((story, context) => (withKnobs(story)(context)))
+  .addDecorator(withKnobs)
   .add('default view', () => (
     <Button
       onClick={ action('button clicked') }

@@ -23,7 +23,7 @@ export function object(name, value) {
   return manager.knob(name, { type: 'object', value });
 }
 
-export function withKnobs(storyFn) {
+export function withKnobs(storyFn, context) {
   const channel = addons.getChannel();
-  return manager.wrapStory(storyFn, channel);
+  return manager.wrapStory(channel, storyFn, context);
 }
