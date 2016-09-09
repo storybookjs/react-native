@@ -15,7 +15,7 @@ First of all, you need to install knobs into your project as a dev dependency.
 npm i -D @kadira/storybook-addon-knobs
 ```
 
-Then, configure it as an addon by adding it to your `addons.js` file (located atin the Storybook config directory).
+Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
 
 ```js
 // .storybook/addons.js
