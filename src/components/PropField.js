@@ -13,11 +13,13 @@ const stylesheet = {
     boxSizing: 'border-box',
     verticalAlign: 'top',
     paddingRight: 5,
-    paddingTop: 5,
+    paddingTop: 7,
     textAlign: 'right',
     width: 20,
-    fontSize: '13px',
+    fontSize: 10,
     color: 'rgb(68, 68, 68)',
+    textTransform: 'uppercase',
+    fontWeight: 600,
   },
 };
 

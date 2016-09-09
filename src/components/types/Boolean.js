@@ -3,13 +3,13 @@ import React from 'react';
 const styles = {
   display: 'table-cell',
   boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  height: '22px',
+  verticalAlign: 'top',
+  height: 21,
   width: '100%',
   outline: 'none',
   border: '1px solid #ececec',
   fontSize: '12px',
-  color: 'rgb(130, 130, 130)',
+  color: '#555',
 };
 
 class BooleanType extends React.Component {

@@ -31,10 +31,6 @@ export default class propForm extends React.Component {
   render() {
     const knobs = this.props.knobs;
 
-    knobs.sort(function (a, b) {
-      return a.name > b.name;
-    });
-
     return (
       <form style={stylesheet.propForm}>
         {knobs.map(knob => (

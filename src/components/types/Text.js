@@ -10,9 +10,9 @@ const styles = {
   outline: 'none',
   border: '1px solid #f7f4f4',
   borderRadius: 2,
-  fontSize: '12px',
+  fontSize: 11,
   padding: '5px',
-  color: 'rgb(130, 130, 130)',
+  color: '#555',
 };
 
 class TextType extends React.Component {
