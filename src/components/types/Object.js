@@ -12,7 +12,7 @@ const styles = {
   fontSize: '12px',
   padding: '5px',
   color: 'rgb(130, 130, 130)',
-  fontFamily: 'monospace'
+  fontFamily: 'monospace',
 };
 
 class ObjectType extends React.Component {
@@ -22,7 +22,7 @@ class ObjectType extends React.Component {
       const value = JSON.parse(e.target.value.trim());
       onChange(value);
       this.failed = false;
-    } catch(err) {
+    } catch (err) {
       this.failed = true;
       this.setState({ value: e.target.value });
     }
@@ -35,7 +35,7 @@ class ObjectType extends React.Component {
 
     if (this.failed) {
       value = this.state.value;
-      extraStyle.border = '1px solid #fadddd'
+      extraStyle.border = '1px solid #fadddd';
       extraStyle.backgroundColor = '#fff5f5';
     }
 
@@ -56,11 +56,11 @@ ObjectType.propTypes = {
   onChange: React.PropTypes.func,
 };
 
-ObjectType.serialize = function(object) {
+ObjectType.serialize = function (object) {
   return JSON.stringify(object);
 };
 
-ObjectType.deserialize = function(value) {
+ObjectType.deserialize = function (value) {
   if (!value) return {};
   return JSON.parse(value);
 };

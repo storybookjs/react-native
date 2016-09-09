@@ -4,8 +4,8 @@ import BooleanType from './Boolean';
 import ObjectType from './Object';
 
 export default {
-  'text': TextType,
-  'number': NumberType,
-  'boolean': BooleanType,
-  'object': ObjectType,
+  text: TextType,
+  number: NumberType,
+  boolean: BooleanType,
+  object: ObjectType,
 };

@@ -36,11 +36,11 @@ TextType.propTypes = {
   onChange: React.PropTypes.func,
 };
 
-TextType.serialize = function(value) {
+TextType.serialize = function (value) {
   return value;
 };
 
-TextType.deserialize = function(value) {
+TextType.deserialize = function (value) {
   return value;
 };
 

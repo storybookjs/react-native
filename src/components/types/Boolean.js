@@ -34,11 +34,11 @@ BooleanType.propTypes = {
   onChange: React.PropTypes.func,
 };
 
-BooleanType.serialize = function(value) {
+BooleanType.serialize = function (value) {
   return String(value);
 };
 
-BooleanType.deserialize = function(value) {
+BooleanType.deserialize = function (value) {
   if (!value) return false;
   return value.trim() === 'true';
 };
