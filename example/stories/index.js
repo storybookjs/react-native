@@ -20,7 +20,7 @@ storiesOf('Button', module)
       width={ number('Width', 100) }
       style={ object('Style', { backgroundColor: '#FFF' }) }
     >
-      { text('Label', 'Hello Man') } World
+      { text('Label', 'Hello Man23') } World
     </Button>
   ))
   .add('Story without any knobs', () => (
