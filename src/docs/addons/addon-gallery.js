@@ -29,6 +29,11 @@ export default {
     This is a very special addon where it'll allow you to write test specs directly inside your stories.
     You can even run these tests inside a CI box.
 
+    ### [Knobs](https://github.com/kadirahq/storybook-addon-knobs)
+
+    Knobs allow you to edit React props dynamically using the Storybook UI.
+    You can also use Knobs as dynamic variables inside your stories.
+
     ### [Notes](https://github.com/kadirahq/storybook-addon-notes)
 
     With this addon, you can write notes for each story in your component. This is pretty useful when you are working with a team.
@@ -36,7 +41,7 @@ export default {
     ### [Info](https://github.com/kadirahq/react-storybook-addon-info)
 
     If you are using Storybook as a style guide, then this addon will help you to build a nice-looking style guide with docs, automatic sample source code with a PropType explorer.
-    
+
     ### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
 
     With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
