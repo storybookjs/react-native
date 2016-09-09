@@ -7,12 +7,7 @@ export default class WrapStory extends React.Component {
     this.resetKnobs = this.resetKnobs.bind(this);
     this.setPaneKnobs = this.setPaneKnobs.bind(this);
     this._knobsAreReset = false;
-    this.state = {}
-  }
-
-  setPaneKnobs() {
-    const { channel, knobStore } = this.props;
-    channel.emit('addon:knobs:setKnobs', knobStore.getAll());
+    this.state = {};
   }
 
   componentDidMount() {
@@ -31,6 +26,11 @@ export default class WrapStory extends React.Component {
     this.props.channel.removeListener('addon:knobs:knobChange', this.knobChanged);
     this.props.channel.removeListener('addon:knobs:reset', this.resetKnobs);
     this.props.knobStore.unsubscribe(this.setPaneKnobs);
+  }
+
+  setPaneKnobs() {
+    const { channel, knobStore } = this.props;
+    channel.emit('addon:knobs:setKnobs', knobStore.getAll());
   }
 
   knobChanged(change) {
