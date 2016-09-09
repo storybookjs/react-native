@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.13.0
+9-September-2016
+
+* Fix [#443](https://github.com/kadirahq/react-storybook/issues/443) where the static version of Storybook doesn't like Safari.
+* Update postcss-loader to 0.13.0.
+
 ### v2.12.1
 8-September-2016
 
