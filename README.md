@@ -27,7 +27,7 @@ Now, write your stories with knobs.
 ```js
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import { withKnobs, text, boolean } from '@kadira/storybook-addon-knobs';
+import { withKnobs, text, boolean, number } from '@kadira/storybook-addon-knobs';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -61,8 +61,9 @@ You can see your Knobs in a Storybook panel as shown below.
 ### Additional Links
 
 * Introduction blog post.
-* Watch this video to see how to use knobs
-* Have a look at this sample Storybook.
+* Watch this video on how to use knobs
+* [Live Storybook with Knobs](https://goo.gl/uX9WLf)
+* Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
 
 ## Available Knobs
 
