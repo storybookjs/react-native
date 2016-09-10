@@ -12,10 +12,30 @@ Import the `action` function and use it to create actions handlers. When creatin
 
 ```js
 import { storiesOf, action } from '@kadira/storybook'
+// or import { action } from '@kadira/storybook-addon-actions'
 
 storiesOf('Button', module)
   .add('default view', () => (
     <Button onClick={ action('button-click') }>
+      Hello World!
+    </Button>
+  ))
+```
+
+## Action Decorators
+
+If you wish to process action data before sending them over to the logger, you can do it with action decorators.
+
+```js
+import { action, decorateAction } from '@kadira/storybook-addon-actions'
+
+const firstArgAction = decorateAction([
+  args => args.slice(0, 1)
+]);
+
+storiesOf('Button', module)
+  .add('default view', () => (
+    <Button onClick={ firstArgAction('button-click') }>
       Hello World!
     </Button>
   ))
