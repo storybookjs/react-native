@@ -8,8 +8,16 @@ const pickFirst = decorateAction([
 
 storiesOf('Button', module)
   .add('Hello World', () => (
-    <button onClick={action('Hello World')}>Hello World</button>
+    <button onClick={action('hello-world')}>Hello World</button>
   ))
   .add('Decorated Action', () => (
-    <button onClick={pickFirst('First Argument')}>First Argument</button>
-  ));
+    <button onClick={pickFirst('decorated')}>First Argument</button>
+  ))
+  .add('Circular Payload', () => {
+    const circular = {foo: {}};
+    circular.foo.circular = circular;
+    return <button
+      onClick={() => action('circular')(circular)}>
+      Circular Payload
+    </button>;
+  });

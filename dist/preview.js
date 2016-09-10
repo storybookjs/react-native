@@ -10,6 +10,10 @@ var _storybookAddons = require('@kadira/storybook-addons');
 
 var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
 
+var _jsonStringifySafe = require('json-stringify-safe');
+
+var _jsonStringifySafe2 = _interopRequireDefault(_jsonStringifySafe);
+
 var _ = require('./');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -18,9 +22,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _format(arg) {
   if (arg && typeof arg.preventDefault !== 'undefined') {
-    return '[SyntheticEvent]';
+    return (0, _jsonStringifySafe2.default)('[SyntheticEvent]');
   }
-  return arg;
+  return (0, _jsonStringifySafe2.default)(arg);
 }
 
 function action(name) {

@@ -1,11 +1,12 @@
 import addons from '@kadira/storybook-addons';
+import stringify from 'json-stringify-safe';
 import { EVENT_ID } from './';
 
 function _format(arg) {
   if (arg && typeof arg.preventDefault !== 'undefined') {
-    return '[SyntheticEvent]';
+    return stringify('[SyntheticEvent]');
   }
-  return arg;
+  return stringify(arg);
 }
 
 export function action(name) {
