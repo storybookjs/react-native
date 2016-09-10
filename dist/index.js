@@ -21,6 +21,12 @@ Object.defineProperty(exports, 'action', {
     return _preview.action;
   }
 });
+Object.defineProperty(exports, 'decorateAction', {
+  enumerable: true,
+  get: function get() {
+    return _preview.decorateAction;
+  }
+});
 // addons, panels and events get unique names using a prefix
 var ADDON_ID = exports.ADDON_ID = 'kadirahq/storybook-addon-actions';
 var PANEL_ID = exports.PANEL_ID = ADDON_ID + '/actions-panel';
