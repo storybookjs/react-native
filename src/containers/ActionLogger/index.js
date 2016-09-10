@@ -11,6 +11,7 @@ export default class ActionLogger extends React.Component {
   }
 
   addAction(action) {
+    action.data.args = action.data.args.map(arg => JSON.parse(arg));
     const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
     if (previous && deepEqual(previous.data, action.data)) {

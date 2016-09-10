@@ -54,6 +54,9 @@ var ActionLogger = function (_React$Component) {
   _createClass(ActionLogger, [{
     key: 'addAction',
     value: function addAction(action) {
+      action.data.args = action.data.args.map(function (arg) {
+        return JSON.parse(arg);
+      });
       var actions = [].concat(_toConsumableArray(this.state.actions));
       var previous = actions.length && actions[0];
       if (previous && (0, _deepEqual2.default)(previous.data, action.data)) {
