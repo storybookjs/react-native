@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.1.0
+11 Sep 2016
+
+* Support action decorators [PR3](https://github.com/kadirahq/storybook-addon-actions/pull/3)
+
 ### v1.0.4
 
 * Refactor source code (use separate files)
