@@ -7,6 +7,7 @@ import {
   object,
   boolean,
   text,
+  select,
 } from '../../src';
 
 import Button from './Button';
@@ -17,6 +18,7 @@ storiesOf('Button', module)
     <Button
       onClick={ action('button clicked') }
       disabled={ boolean('Disabled', false) }
+      color={ select('Height', { red: 'Red', blue: 'Blue', yellow: 'Yellow' }, 'red') }
       width={ number('Width', 100) }
       style={ object('Style', { backgroundColor: '#FFF' }) }
     >
