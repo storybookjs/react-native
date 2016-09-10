@@ -19,3 +19,13 @@ export function action(name) {
     });
   };
 }
+
+export function decorateAction(decorators) {
+  return function (name) {
+    const callAction = action(name);
+    return function (..._args) {
+      const decorated = decorators.reduce((args, fn) => fn(args), _args);
+      callAction(...decorated);
+    };
+  };
+}
