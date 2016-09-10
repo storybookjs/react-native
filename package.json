@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-actions",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Action Logger addon for storybook",
   "main": "dist/index.js",
   "scripts": {
