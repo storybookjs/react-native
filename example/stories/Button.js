@@ -11,7 +11,7 @@ const buttonStyles = {
 
 const Button = ({ onClick, style, color, width, children, disabled }) => (
   <button
-    style={{ ...buttonStyles, ...{ backgroundColor: color, width: `${width}px` }, ...style }}
+    style={{ ...buttonStyles, ...{ color, width: `${width}px` }, ...style }}
     onClick={onClick}
     disabled={disabled}
   >

@@ -20,11 +20,16 @@ var _Object = require('./Object');
 
 var _Object2 = _interopRequireDefault(_Object);
 
+var _Select = require('./Select');
+
+var _Select2 = _interopRequireDefault(_Select);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   text: _Text2.default,
   number: _Number2.default,
   boolean: _Boolean2.default,
-  object: _Object2.default
+  object: _Object2.default,
+  select: _Select2.default
 };
