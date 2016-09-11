@@ -7,7 +7,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "node .scripts/npm-prepublish.js",
     "storybook": "start-storybook -p 9001",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
