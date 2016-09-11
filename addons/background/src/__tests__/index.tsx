@@ -56,4 +56,22 @@ describe("Background Decorator", () => {
 
     expect(spy).toBeCalled();
   });
+
+  it("should update story on change", () => {
+    const SpiedChannel = new EventEmitter();
+    const nextStory = jest.fn(() => <p>I am next story!</p>);
+    const backgroundDecorator = shallow(<BackgroundDecorator story={testStory} channel={SpiedChannel} />);
+
+    backgroundDecorator.setProps({ story: nextStory });
+    expect(nextStory).toBeCalled();
+  });
+
+  it("should not update story on other props change", () => {
+    const SpiedChannel = new EventEmitter();
+    const story = jest.fn(() => <p>I am the only one!</p>);
+    const backgroundDecorator = shallow(<BackgroundDecorator story={story} channel={SpiedChannel} />);
+
+    backgroundDecorator.setProps({ randomProp: true });
+    expect(story.mock.calls.length).toBe(1);
+  });
 });
