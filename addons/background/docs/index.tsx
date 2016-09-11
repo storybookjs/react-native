@@ -26,13 +26,25 @@ export class BackgroundDecorator extends React.Component<any, any> {
   constructor(props) {
     super(props);
 
-    this.channel = addons.getChannel();
+    // A channel is explicitly passed in for testing
+    if (this.props.channel) {
+      this.channel = this.props.channel;
+    } else {
+      this.channel = addons.getChannel();
+    }
+
     this.story = this.props.story();
   }
 
   componentWillMount() {
     this.channel.on("background", this.setBackground);
     this.channel.emit("background-set", this.props.backgrounds);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.story !== this.props.story) {
+      this.story = nextProps.story();
+    }
   }
 
   componentWillUnmount() {
