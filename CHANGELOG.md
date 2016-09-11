@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.1.0
+11-September-2016
+
+Implement the select knob. [PR21](https://github.com/kadirahq/storybook-addon-knobs/pull/21)
+
 ### v1.0.1
 09-September-2016
 
