@@ -42,7 +42,9 @@ export class BackgroundDecorator extends React.Component<any, any> {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.story = nextProps.story();
+    if (nextProps.story !== this.props.story) {
+      this.story = nextProps.story();
+    }
   }
 
   componentWillUnmount() {
