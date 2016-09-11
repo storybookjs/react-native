@@ -132,14 +132,14 @@ Allows you to get a value from a select box from the user.
 
 ```js
 const label = 'Colors';
-const colors = {
+const options = {
   red: 'Red',
   blue: 'Blue',
   yellow: 'Yellow',
 };
 const defaultValue = 'red';
 
-const value = select(label, colors, defaultValue);
+const value = select(label, options, defaultValue);
 ```
 
-> Also supports array syntax: ['red', 'blue', 'yellow']
+> You can also provide options as an array like this: ['red', 'blue', 'yellow']
