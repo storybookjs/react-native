@@ -28,11 +28,4 @@ Button.propTypes = {
   style: React.PropTypes.object,
 };
 
-Button.defaultProps = {
-  color: '#fff',
-  children: 'Hello',
-  width: 70,
-  disabled: false,
-};
-
 export default Button;
