@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.1.1
+11 Sep 2016
+
+* Support arguments with circular references [PR6](https://github.com/kadirahq/storybook-addon-actions/pull/6)
+
 ### v1.1.0
 11 Sep 2016
 
