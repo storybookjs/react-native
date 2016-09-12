@@ -1,14 +1,17 @@
 {
-  "name": "npm-base",
+  "name": "@kadira/storybook-snapshot-test",
   "version": "1.0.0",
-  "description": "A base NPM package for writing a NPM package in ES2015",
+  "description": "Compare stories to saved snapshots",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/npm-base.git"
+    "url": "https://github.com/kadirahq/storybook-snapshot-test.git"
   },
   "license": "MIT",
   "options": {
     "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
+  },
+  "bin": {
+    "testsnapshots": "./bin/testsnapshots.js"
   },
   "scripts": {
     "prepublish": ". ./scripts/prepublish.sh",
@@ -16,7 +19,12 @@
     "lintfix": "eslint ./src --fix",
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js"
+    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "testsnapshots": "jasmine"
+  },
+  "peerDependencies": {
+    "@kadira/storybook": "*",
+    "react": "*"
   },
   "devDependencies": {
     "nodemon": "1.7.x",
@@ -33,6 +41,13 @@
     "babel-plugin-transform-runtime": "6.x.x"
   },
   "dependencies": {
-    "babel-runtime": "6.x.x"
+    "babel-polyfill": "^6.13.0",
+    "babel-runtime": "6.x.x",
+    "chalk": "^1.1.3",
+    "jasmine": "^2.5.0",
+    "jasmine-spec-reporter": "^2.7.0",
+    "jest-snapshot": "^15.1.1",
+    "react-test-renderer": "^15.3.1",
+    "require-hijack": "^1.2.1"
   }
 }
