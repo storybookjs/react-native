@@ -12,7 +12,6 @@ ReactDOM.render(
   (
     <Router
       history={browserHistory}
-      render={applyRouterMiddleware(useScroll())}
     >
       <Route path="/" component={Homepage} />
       <Route path="/docs(/:sectionId/(:itemId))" component={Docs} />
