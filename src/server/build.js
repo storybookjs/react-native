@@ -64,6 +64,10 @@ if (program.staticDir) {
 // It should be enabled with the --enable-db for dev server
 if (program.enableDb) {
   const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
+  // create addon-db.json file if it's missing to avoid the 404 error
+  if (!fs.existsSync(dbPath)) {
+    fs.writeFileSync(dbPath, '{}');
+  }
   shelljs.cp(dbPath, outputDir);
 }
 
