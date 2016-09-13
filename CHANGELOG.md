@@ -1,8 +1,13 @@
 # CHANGELOG
 
+## v2.1.1
+
+* Support React Native v0.33 [PR #71](https://github.com/kadirahq/react-native-storybook/pull/71).
+
 ## v2.1.0
 
-* Remove `/dist` directory from the repo [PR #68](https://github.com/kadirahq/react-native-storybook/pull/68).
+* Remove `/dist` directory from the repo
+* Support custom preview addons [PR #68](https://github.com/kadirahq/react-native-storybook/pull/68).
 
 ## v2.0.2
 
