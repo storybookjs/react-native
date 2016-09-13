@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.1.0
+
+* Remove `/dist` directory from the repo [PR #68](https://github.com/kadirahq/react-native-storybook/pull/68).
+
 ## v2.0.2
 
 * Use 7007 as the default port (use in getstorybook tool) [PR #64](https://github.com/kadirahq/react-native-storybook/pull/64).
