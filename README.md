@@ -4,7 +4,7 @@ A React Storybook addon to show additional information for your stories.
 
 ![React Storybook Screenshot](docs/home-screenshot.png)
 
-### Usage
+## Usage
 
 Install the following npm module:
 
@@ -52,3 +52,9 @@ storiesOf('Button')
 ```
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
+
+## The FAQ
+
+**Components lose their names on static build**
+
+Component names also get minified with other javascript code when building for production. When creating components, set the `displayName` static property to show the correct component name on static builds.
