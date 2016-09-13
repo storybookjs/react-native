@@ -21,6 +21,9 @@ Then, configure it as an addon by adding it to your `addons.js` file (located in
 
 ```js
 // .storybook/addons.js
+//  To get our default addons (actions and links)
+import '@kadira/storybook/addons';
+//  To add the knobs addon
 import '@kadira/storybook-addon-knobs/register'
 ```
 
