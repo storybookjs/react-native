@@ -6,6 +6,14 @@ import promptly from 'promptly';
 import path from 'path';
 
 export default async function runTests(storybook, {configDir, update, updateI}) {
+  const allTestState = {
+    added: 0,
+    matched: 0,
+    unmatched: 0,
+    updated: 0,
+    obsolete: 0,
+  }
+
   for (const group of storybook) {
 
     const filePath = path.resolve(`${configDir}`, `${group.kind}`);
@@ -30,7 +38,7 @@ export default async function runTests(storybook, {configDir, update, updateI}) 
         // add it.
         logState('added', story.name);
         snapshot.add(key, actual);
-        state.added++;
+        allTestState.added++;
         continue;
       }
 
@@ -39,7 +47,7 @@ export default async function runTests(storybook, {configDir, update, updateI}) 
       if (pass) {
         // Snapshot matches with the story
         logState('matched', story.name);
-        state.matched++;
+        allTestState.matched++;
         continue;
       }
 
@@ -47,7 +55,7 @@ export default async function runTests(storybook, {configDir, update, updateI}) 
       if(update) {
         snapshot.add(key, actual);
         logState('updated', story.name);
-        state.updated++;
+        allTestState.updated++;
         continue;
       }
 
@@ -67,17 +75,22 @@ export default async function runTests(storybook, {configDir, update, updateI}) 
         if(shouldUpdate) {
           snapshot.add(key, actual);
           logState('updated', story.name);
-          state.updated++;
+          allTestState.updated++;
           continue;
         }
       }
 
-      state.unmatched++;
+      allTestState.unmatched++;
     }
 
+    if(update) {
+      snapshot.removeUncheckedKeys();
+    }
     snapshot.save(update);
+    allTestState.obsolete += snapshot.getUncheckedCount();
     process.stdout.write('\n');
   }
+  logAllState(allTestState);
 }
 
 function logState(state, storyName, other) {
@@ -101,6 +114,28 @@ function logState(state, storyName, other) {
       process.stdout.write(`Error occured when testing ${storyName}`);
   }
   process.stdout.write('\n');
+}
+
+function logAllState(state) {
+  const { added, matched, unmatched, updated, obsolete } = state;
+  const total = added + matched + unmatched + updated;
+  process.stdout.write(chalk.bold('Test summary\n'));
+  process.stdout.write(`> ${total} stories tested.\n`);
+  if(matched > 0) {
+    process.stdout.write(chalk.green(`> ${matched}/${total} stories match with snapshots.\n`));
+  }
+  if(unmatched > 0) {
+    process.stdout.write(chalk.red(`> ${unmatched}/${total} differ from snapshots.\n`));
+  }
+  if(updated > 0) {
+    process.stdout.write(chalk.cyan(`> ${updated} snapshots updated to match current stories.\n`));
+  }
+  if(added > 0) {
+    process.stdout.write(chalk.cyan(`> ${added} snapshots newly added.\n`));
+  }
+  if(obsolete > 0) {
+    process.stdout.write(chalk.cyan(`> ${obsolete} unused snapshots remaining. Run with -u to remove them.\n`));
+  }
 }
 
 async function confirmUpate(callback) {
