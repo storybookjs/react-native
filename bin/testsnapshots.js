@@ -11,4 +11,4 @@ requireHijack.replace('react-dom').with(fakeReactDom);
 
 require('babel-register');
 require('babel-polyfill');
-require('../dist/cli').run();
+require('../dist/cli')
