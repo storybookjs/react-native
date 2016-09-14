@@ -90,6 +90,10 @@ if (_commander2.default.staticDir) {
 // It should be enabled with the --enable-db for dev server
 if (_commander2.default.enableDb) {
   var dbPath = _commander2.default.dbPath || _path2.default.resolve(configDir, 'addon-db.json');
+  // create addon-db.json file if it's missing to avoid the 404 error
+  if (!_fs2.default.existsSync(dbPath)) {
+    _fs2.default.writeFileSync(dbPath, '{}');
+  }
   _shelljs2.default.cp(dbPath, outputDir);
 }
 
