@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.13.1
+14-September-2016
+
+* Fix 404 error when db file does not exist [PR449](https://github.com/kadirahq/react-storybook/pull/449)
+
 ### v2.13.0
 9-September-2016
 
