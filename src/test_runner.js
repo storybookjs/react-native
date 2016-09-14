@@ -4,8 +4,16 @@ import diff from 'jest-diff';
 import chalk from 'chalk';
 import promptly from 'promptly';
 import path from 'path';
+import { filterStorybook } from './util';
 
-export default async function runTests(storybook, {configDir, update, updateI}) {
+export default async function runTests(storybook, options) {
+  const {
+    configDir = './.storybook',
+    update,
+    updateInteractive: updateI,
+    grep
+  } = options;
+
   const allTestState = {
     added: 0,
     matched: 0,
@@ -14,7 +22,7 @@ export default async function runTests(storybook, {configDir, update, updateI}) 
     obsolete: 0,
   }
 
-  for (const group of storybook) {
+  for (const group of filterStorybook(storybook, grep)) {
 
     const filePath = path.resolve(`${configDir}`, `${group.kind}`);
     console.log(chalk.underline(`${group.kind}`));
@@ -138,7 +146,7 @@ function logAllState(state) {
   }
 }
 
-async function confirmUpate(callback) {
+async function confirmUpate() {
   process.stdout.write('\nReceived story is different from stored snapshot.\n');
 
   let ans = await promptly.prompt('Should this snapshot be updated?(y/n)');
