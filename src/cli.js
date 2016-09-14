@@ -2,6 +2,7 @@ import runTests from './test_runner';
 import { getStorybook } from '@kadira/storybook';
 import path from 'path';
 import program from 'commander';
+import chokidar from 'chokidar';
 
 const { jasmine } = global;
 
@@ -12,44 +13,33 @@ program
   .option('-i, --update-interactive [boolean]',
           'Update saved story snapshots interactively')
   .option('-g, --grep [string]', 'only test stories matching regexp')
+  .option('-w, --watch [boolean]', 'watch file changes and rerun tests')
   .parse(process.argv);
 
 const configDir = program.configDir || './.storybook';
 
 const configPath = path.resolve(`${configDir}`, 'config');
-require(configPath);
 
-let storybook = getStorybook();
+if(program.watch) {
+  var watcher = chokidar.watch('.', {
+    ignored: 'node_modules', // TODO: Should node_modules also be watched?
+    persistent: true
+  });
 
-const { update, updateInteractive:updateI, grep } = program;
-
-if(grep) {
-  const filteredStorybook = [];
-  for (const group of storybook) {
-    const re = new RegExp(grep);
-    if(re.test(group.kind)){
-      filteredStorybook.push(group);
-      continue;
-    }
-
-    const filteredGroup = {
-      kind: group.kind,
-      stories: []
-    };
-
-    for (const story of group.stories) {
-      if(re.test(story.name)){
-        filteredGroup.stories.push(story);
-        continue;
-      }
-    }
-
-    if(filteredGroup.stories.length > 0){
-      filteredStorybook.push(filteredGroup);
-    }
-  }
-
-  storybook = filteredStorybook;
+  watcher.on('ready', () => {
+    console.log('storybook-snapshot-test is in watch mode.');
+    watcher.on('all', () => {
+      // Need to remove the require cache. Because it containes modules before
+      // changes were made.
+      Object.keys(require.cache).forEach(key => {
+        delete require.cache[key];
+      })
+      require(configPath);
+      const changedStorybook = require('@kadira/storybook').getStorybook()
+      runTests(changedStorybook, program);
+    });
+  })
 }
 
-runTests(storybook, {configDir, update, updateI});
+require(configPath);
+runTests(getStorybook(), program);
