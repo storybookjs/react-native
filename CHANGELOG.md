@@ -1,5 +1,13 @@
 ## Changelog
 
+### v2.14.0
+14-September-2016
+
+* Watch missing NPM modules and force webpack rebuild. [PR446](https://github.com/kadirahq/react-storybook/pull/446)
+* Fix issue on error message hanging after even it solved. [PR447](https://github.com/kadirahq/react-storybook/pull/447)
+* Allow to reload if HMR goes crazy. [PR448](https://github.com/kadirahq/react-storybook/pull/448)
+* Add support to get custom env variables. [PR450](https://github.com/kadirahq/react-storybook/pull/450)
+
 ### v2.13.1
 14-September-2016
 
