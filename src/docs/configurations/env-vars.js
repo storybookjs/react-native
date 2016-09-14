@@ -4,9 +4,9 @@ export default {
   id: "env-vars",
   title: "Using Environment Variables",
   content: stripIndent`
-    Sometimes, we may use configuration items inside Storybook. It's might be a theme color, some client secret or a JSON string. So, we usually tend to hard code them.
+    Sometimes, we may use configuration items inside Storybook. It might be a theme color, some client secret, or a JSON string. So, we usually tend to hard code them.
 
-    But you can expose those configurations via "environment variables". For that, you need to prefix your environment variables with \`STORYBOOK_\` prefix.
+    But you can expose those configurations via "environment variables." For that, you need to prefix your environment variables with \`STORYBOOK_\` prefix.
 
     For an example, let's expose two environment variables like this:
 
@@ -14,7 +14,7 @@ export default {
     STORYBOOK_THEME=red STORYBOOK_DATA_KEY=12345 npm run storybook
     ~~~
 
-    Then we can access these environment variables in anywhere inside our JS code like below:
+    Then we can access these environment variables anywhere inside our JS code like below:
 
     ~~~js
     console.log(process.env.STORYBOOK_THEME)
@@ -31,7 +31,7 @@ export default {
 
     ## NODE_ENV env variable
 
-    In addition to above prefixed environment variables, you can also pass the NODE_ENV variable to Storybook. But, you normally don't need to do it since we set a reasonable default value for it.
+    In addition to the above prefixed environment variables, you can also pass the NODE_ENV variable to Storybook. But, you normally don't need to do that since we set a reasonable default value for it.
 
     * When running \`npm run storybook\`, we set NODE_ENV to 'development'
     * When building storybook, we set NODE_ENV to 'production'
