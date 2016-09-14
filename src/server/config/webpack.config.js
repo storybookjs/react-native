@@ -20,7 +20,7 @@ const config = {
     preview: [
       require.resolve('./polyfills'),
       require.resolve('./error_enhancements'),
-      require.resolve('webpack-hot-middleware/client'),
+      `${require.resolve('webpack-hot-middleware/client')}?reload=true`,
     ],
   },
   output: {
