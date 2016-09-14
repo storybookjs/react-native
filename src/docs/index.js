@@ -20,6 +20,7 @@ const data = {
         require('./configurations/custom-babel-config').default,
         require('./configurations/add-custom-head-tags').default,
         require('./configurations/serving-static-files').default,
+        require('./configurations/env-vars').default,
         require('./configurations/cli-options').default,
       ]
     },
