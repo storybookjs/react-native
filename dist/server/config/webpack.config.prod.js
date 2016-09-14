@@ -38,7 +38,7 @@ var config = {
     // relative URLs works always.
     publicPath: ''
   },
-  plugins: [new _webpack2.default.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
+  plugins: [new _webpack2.default.DefinePlugin((0, _utils.loadEnv)({ production: true })), new _webpack2.default.optimize.DedupePlugin(), new _webpack2.default.optimize.UglifyJsPlugin({
     compress: {
       screw_ie8: true,
       warnings: false

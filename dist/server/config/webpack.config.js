@@ -39,7 +39,7 @@ var config = {
     filename: 'static/[name].bundle.js',
     publicPath: '/'
   },
-  plugins: [new _utils.OccurenceOrderPlugin(), new _webpack2.default.HotModuleReplacementPlugin(), new _caseSensitivePathsWebpackPlugin2.default(), new _WatchMissingNodeModulesPlugin2.default(_utils.nodeModulesPaths)],
+  plugins: [new _webpack2.default.DefinePlugin((0, _utils.loadEnv)()), new _utils.OccurenceOrderPlugin(), new _webpack2.default.HotModuleReplacementPlugin(), new _caseSensitivePathsWebpackPlugin2.default(), new _WatchMissingNodeModulesPlugin2.default(_utils.nodeModulesPaths)],
   module: {
     loaders: [{
       test: /\.jsx?$/,

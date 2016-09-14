@@ -5,6 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.nodeModulesPaths = exports.excludePaths = exports.includePaths = exports.OccurenceOrderPlugin = undefined;
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+exports.loadEnv = loadEnv;
+
 var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
@@ -24,5 +34,24 @@ _webpack2.default.optimize.OccurenceOrderPlugin;
 var includePaths = exports.includePaths = [_path2.default.resolve('./')];
 
 var excludePaths = exports.excludePaths = [_path2.default.resolve('./node_modules')];
+
+// Load environment variables starts with STORYBOOK_ to the client side.
+function loadEnv() {
+  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  var defaultNodeEnv = options.production ? 'production' : 'development';
+  var env = {
+    'process.env.NODE_ENV': (0, _stringify2.default)(process.env.NODE_ENV || defaultNodeEnv)
+  };
+
+  (0, _keys2.default)(process.env).filter(function (name) {
+    return (/^STORYBOOK_/.test(name)
+    );
+  }).forEach(function (name) {
+    env['process.env.' + name] = (0, _stringify2.default)(process.env[name]);
+  });
+
+  return env;
+}
 
 var nodeModulesPaths = exports.nodeModulesPaths = _path2.default.resolve('./node_modules');

@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
+import { OccurenceOrderPlugin, includePaths, excludePaths, loadEnv } from './utils';
 import babalLoaderConfig from './babel.prod.js';
 
 const entries = {
@@ -27,7 +27,7 @@ const config = {
     publicPath: '',
   },
   plugins: [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+    new webpack.DefinePlugin(loadEnv({ production: true })),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

@@ -7,6 +7,7 @@ import {
   includePaths,
   excludePaths,
   nodeModulesPaths,
+  loadEnv,
 } from './utils';
 import babalLoaderConfig from './babel.js';
 
@@ -29,6 +30,7 @@ const config = {
     publicPath: '/',
   },
   plugins: [
+    new webpack.DefinePlugin(loadEnv()),
     new OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
