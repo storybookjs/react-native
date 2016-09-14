@@ -1,3 +1,5 @@
+/* globals location */
+
 import {
   setInitialStory,
   setError,
@@ -38,7 +40,16 @@ export default class ConfigApi {
       try {
         this._renderMain(loaders);
       } catch (error) {
-        this._renderError(error);
+        if (module.hot.status() === 'apply') {
+          // We got this issue, after webpack fixed it and applying it.
+          // Therefore error message is displayed forever even it's being fixed.
+          // So, we'll detect it reload the page.
+          location.reload();
+        } else {
+          // If we are accessing the site, but the error is not fixed yet.
+          // There we can render the error.
+          this._renderError(error);
+        }
       }
     };
 

@@ -18,6 +18,8 @@ var _ = require('./');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* globals location */
+
 var ConfigApi = function () {
   function ConfigApi(_ref) {
     var channel = _ref.channel;
@@ -63,7 +65,16 @@ var ConfigApi = function () {
         try {
           _this._renderMain(loaders);
         } catch (error) {
-          _this._renderError(error);
+          if (module.hot.status() === 'apply') {
+            // We got this issue, after webpack fixed it and applying it.
+            // Therefore error message is displayed forever even it's being fixed.
+            // So, we'll detect it reload the page.
+            location.reload();
+          } else {
+            // If we are accessing the site, but the error is not fixed yet.
+            // There we can render the error.
+            _this._renderError(error);
+          }
         }
       };
 
