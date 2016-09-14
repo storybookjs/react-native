@@ -16,6 +16,10 @@ var _caseSensitivePathsWebpackPlugin = require('case-sensitive-paths-webpack-plu
 
 var _caseSensitivePathsWebpackPlugin2 = _interopRequireDefault(_caseSensitivePathsWebpackPlugin);
 
+var _WatchMissingNodeModulesPlugin = require('./WatchMissingNodeModulesPlugin');
+
+var _WatchMissingNodeModulesPlugin2 = _interopRequireDefault(_WatchMissingNodeModulesPlugin);
+
 var _utils = require('./utils');
 
 var _babel = require('./babel.js');
@@ -35,7 +39,7 @@ var config = {
     filename: 'static/[name].bundle.js',
     publicPath: '/'
   },
-  plugins: [new _utils.OccurenceOrderPlugin(), new _webpack2.default.HotModuleReplacementPlugin(), new _caseSensitivePathsWebpackPlugin2.default()],
+  plugins: [new _utils.OccurenceOrderPlugin(), new _webpack2.default.HotModuleReplacementPlugin(), new _caseSensitivePathsWebpackPlugin2.default(), new _WatchMissingNodeModulesPlugin2.default(_utils.nodeModulesPaths)],
   module: {
     loaders: [{
       test: /\.jsx?$/,

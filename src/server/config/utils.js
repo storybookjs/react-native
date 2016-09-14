@@ -14,3 +14,5 @@ export const includePaths = [
 export const excludePaths = [
   path.resolve('./node_modules'),
 ];
+
+export const nodeModulesPaths = path.resolve('./node_modules');

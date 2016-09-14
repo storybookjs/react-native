@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.excludePaths = exports.includePaths = exports.OccurenceOrderPlugin = undefined;
+exports.nodeModulesPaths = exports.excludePaths = exports.includePaths = exports.OccurenceOrderPlugin = undefined;
 
 var _webpack = require('webpack');
 
@@ -24,3 +24,5 @@ _webpack2.default.optimize.OccurenceOrderPlugin;
 var includePaths = exports.includePaths = [_path2.default.resolve('./')];
 
 var excludePaths = exports.excludePaths = [_path2.default.resolve('./node_modules')];
+
+var nodeModulesPaths = exports.nodeModulesPaths = _path2.default.resolve('./node_modules');
