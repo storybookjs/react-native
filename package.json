@@ -33,7 +33,7 @@
     "babel-cli": "^6.11.4",
     "greenkeeper-postpublish": "^1.0.1",
     "react": "^15.2.0",
-    "react-native": "^0.32.0"
+    "react-native": "^0.33.0"
   },
   "dependencies": {
     "@kadira/storybook-addon-actions": "^1.0.4",
@@ -59,13 +59,13 @@
     "babel-runtime": "^6.11.6",
     "case-sensitive-paths-webpack-plugin": "^1.1.3",
     "commander": "^2.9.0",
-    "css-loader": "^0.24.0",
+    "css-loader": "^0.25.0",
     "events": "^1.1.1",
     "express": "^4.14.0",
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
     "json5": "^0.5.0",
-    "postcss-loader": "^0.10.1",
+    "postcss-loader": "^0.13.0",
     "react-dom": "^15.3.1",
     "shelljs": "^0.7.3",
     "style-loader": "^0.13.1",
