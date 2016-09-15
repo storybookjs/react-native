@@ -11,8 +11,6 @@ require('babel-polyfill');
 var jsdom = require('jsdom').jsdom;
 
 var exposedProperties = ['window', 'navigator', 'document'];
-var fileExts = ['jpg', 'png', 'gif', 'eot', 'svg', 'ttf', 'woff', 'woff2'];
-var moduleExts = ['css', 'scss', 'sass'];
 
 global.document = jsdom('');
 global.window = document.defaultView;
@@ -32,16 +30,8 @@ process.on('unhandledRejection', function (error) {
   console.error(error && error.stack || error);
 });
 
-fileExts.forEach(ext => {
- require.extensions[`.${ext}`] = function () {
-   return '';
- };
-});
-
-moduleExts.forEach(ext => {
- require.extensions[`.${ext}`] = function () {
-   return {};
- };
-});
+require.extensions[`.css`] = function () {
+  return {};
+};
 
 require('./user/pretest.js');
