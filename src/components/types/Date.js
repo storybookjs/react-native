@@ -22,11 +22,11 @@ DateType.propTypes = {
 };
 
 DateType.serialize = function (value) {
-  return value;
+  return String(value);
 };
 
 DateType.deserialize = function (value) {
-  return value;
+  return parseFloat(value);
 };
 
 export default DateType;
