@@ -1,4 +1,5 @@
 import runTests from './test_runner';
+import loadConfig from './config';
 import { getStorybook } from '@kadira/storybook';
 import path from 'path';
 import program from 'commander';
@@ -19,6 +20,27 @@ program
 const configDir = program.configDir || './.storybook';
 
 const configPath = path.resolve(`${configDir}`, 'config');
+
+const babelConfig = loadConfig(configDir);
+babelConfig.babelrc = false;
+
+require('babel-register')(babelConfig);
+require('babel-polyfill');
+
+const fileExts = ['jpg', 'png', 'gif', 'eot', 'svg', 'ttf', 'woff', 'woff2']
+const moduleExts = ['css', 'scss', 'sass']
+
+fileExts.forEach(ext => {
+  require.extensions[`.${ext}`] = function () {
+    return '';
+  };
+})
+
+moduleExts.forEach(ext => {
+  require.extensions[`.${ext}`] = function () {
+    return {};
+  };
+})
 
 if(program.watch) {
   var watcher = chokidar.watch('.', {

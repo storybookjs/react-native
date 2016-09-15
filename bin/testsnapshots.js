@@ -9,6 +9,4 @@ const fakeReactDom = {
 // https://github.com/facebook/react/issues/7386
 requireHijack.replace('react-dom').with(fakeReactDom);
 
-require('babel-register');
-require('babel-polyfill');
 require('../dist/cli')
