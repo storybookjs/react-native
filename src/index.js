@@ -28,7 +28,7 @@ export function select(name, options, value) {
 }
 
 export function date(name, value) {
-  const r =  manager.knob(name, { type: "date", value: value.toISOString() });
+  const r = manager.knob(name, { type: 'date', value: value.valueOf() });
   return new Date(r);
 }
 

@@ -11,5 +11,5 @@ export default {
   boolean: BooleanType,
   object: ObjectType,
   select: SelectType,
-  date: DateType
+  date: DateType,
 };
