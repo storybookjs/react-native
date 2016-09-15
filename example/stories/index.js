@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { storiesOf } from '@kadira/storybook';
 import { action } from '@kadira/storybook-addon-actions';
 import {
@@ -8,9 +9,12 @@ import {
   boolean,
   text,
   select,
+  date
 } from '../../src';
 
 import Button from './Button';
+
+const today = new Date();
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
@@ -23,6 +27,8 @@ storiesOf('Button', module)
       style={ object('Style', { backgroundColor: '#FFF' }) }
     >
       { text('Label', 'Hello Man23') } World
+      <br/>
+      { date('Date', today).toString() }
     </Button>
   ))
   .add('Story without any knobs', () => (
