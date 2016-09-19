@@ -153,5 +153,5 @@ Allow you to get date (and time) from the user.
 ```js
 const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
-const eventDate = date(label, defaultValue);
+const value = date(label, defaultValue);
 ```
