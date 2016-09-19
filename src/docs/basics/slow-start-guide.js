@@ -23,7 +23,7 @@ export default {
     First of all, you need to add \`@kadira/storybook\` to your project. To do that, simply run:
 
     ~~~sh
-    npm i --save @kadira/storybook
+    npm i --save-dev @kadira/storybook
     ~~~
 
     Then add the following NPM script to your package json in order to start the storybook later in this guide:
