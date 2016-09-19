@@ -18,7 +18,7 @@ storiesOf('Example of Knobs', module)
   ))
   .add('with all knobs', () => {
     const name = text('Name', 'Tom Cary');
-    const dob = date('DOB');
+    const dob = date('DOB', new Date('January 20 1887'));
     const bold = boolean('Bold', false);
     const color = select('Color', {
       red: 'Red',
