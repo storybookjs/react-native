@@ -80,7 +80,7 @@ exports.default = function (configType, baseConfig, configDir) {
       loaders: [].concat((0, _toConsumableArray3.default)(config.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
     }),
     resolve: (0, _extends3.default)({}, customConfig.resolve, {
-      alias: (0, _extends3.default)({}, config.alias, customConfig.alias)
+      alias: (0, _extends3.default)({}, config.alias, customConfig.resolve && customConfig.resolve.alias)
     })
   });
 };
