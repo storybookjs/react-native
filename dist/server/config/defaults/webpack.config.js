@@ -4,6 +4,10 @@ var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _autoprefixer = require('autoprefixer');
 
 var _autoprefixer2 = _interopRequireDefault(_autoprefixer);
@@ -14,8 +18,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Add a default custom config which is similar to what React Create App does.
 module.exports = function (storybookBaseConfig) {
-  var newConfig = storybookBaseConfig;
-  newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(newConfig.module.loaders), [{
+  var newConfig = (0, _extends3.default)({}, storybookBaseConfig);
+  newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.loaders), [{
     test: /\.css?$/,
     include: _utils.includePaths,
     loaders: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('postcss-loader')]
@@ -46,14 +50,11 @@ module.exports = function (storybookBaseConfig) {
     })];
   };
 
-  newConfig.resolve = {
-    // These are the reasonable defaults supported by the Node ecosystem.
-    extensions: ['.js', '.json', ''],
-    alias: {
-      // This is to support NPM2
-      'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator')
-    }
-  };
+  newConfig.resolve.extensions = ['.js', '.json', ''];
+  newConfig.resolve.alias = (0, _extends3.default)({}, storybookBaseConfig.resolve.alias, {
+    // This is to support NPM2
+    'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator')
+  });
 
   // Return the altered config
   return newConfig;

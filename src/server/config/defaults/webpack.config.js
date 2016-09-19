@@ -3,9 +3,9 @@ import { includePaths } from '../utils';
 
 // Add a default custom config which is similar to what React Create App does.
 module.exports = (storybookBaseConfig) => {
-  const newConfig = storybookBaseConfig;
+  const newConfig = { ...storybookBaseConfig };
   newConfig.module.loaders = [
-    ...newConfig.module.loaders,
+    ...storybookBaseConfig.module.loaders,
     {
       test: /\.css?$/,
       include: includePaths,
@@ -52,13 +52,11 @@ module.exports = (storybookBaseConfig) => {
     ];
   };
 
-  newConfig.resolve = {
-    // These are the reasonable defaults supported by the Node ecosystem.
-    extensions: ['.js', '.json', ''],
-    alias: {
-      // This is to support NPM2
-      'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
-    },
+  newConfig.resolve.extensions = ['.js', '.json', ''];
+  newConfig.resolve.alias = {
+    ...storybookBaseConfig.resolve.alias,
+    // This is to support NPM2
+    'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
   };
 
   // Return the altered config

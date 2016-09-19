@@ -132,5 +132,12 @@ export default function (configType, baseConfig, configDir) {
         ...customConfig.module.loaders || [],
       ],
     },
+    resolve: {
+      ...customConfig.resolve,
+      alias: {
+        ...config.alias,
+        ...customConfig.alias,
+      }
+    }
   };
 }

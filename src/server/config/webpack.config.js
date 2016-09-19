@@ -47,6 +47,12 @@ const config = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      // This is to add addon support for NPM2
+      '@kadira/storybook-addons': require.resolve('@kadira/storybook-addons'),
+    }
+  }
 };
 
 export default config;

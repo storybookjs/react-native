@@ -48,6 +48,12 @@ var config = {
       include: _utils.includePaths,
       exclude: _utils.excludePaths
     }]
+  },
+  resolve: {
+    alias: {
+      // This is to add addon support for NPM2
+      '@kadira/storybook-addons': require.resolve('@kadira/storybook-addons')
+    }
   }
 };
 

@@ -54,6 +54,12 @@ const config = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      // This is to add addon support for NPM2
+      '@kadira/storybook-addons': require.resolve('@kadira/storybook-addons'),
+    }
+  }
 };
 
 // Webpack 2 doesn't have a OccurenceOrderPlugin plugin in the production mode.
