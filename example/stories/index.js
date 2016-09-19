@@ -18,7 +18,7 @@ storiesOf('Example of Knobs', module)
   ))
   .add('with all knobs', () => {
     const name = text('Name', 'Tom Cary');
-    const dob = date('DOB', new Date('January 20 1887'));
+    const dob = date('DOB');
     const bold = boolean('Bold', false);
     const color = select('Color', {
       red: 'Red',
@@ -39,7 +39,7 @@ storiesOf('Example of Knobs', module)
 
     return (
       <div style={style}>
-        I'm {name} and I born on "{moment(dob).format("DD MMM YYYY")}"
+        I'm {name} and I was born on "{moment(dob).format("DD MMM YYYY")}"
       </div>
     );
   })
