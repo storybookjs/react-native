@@ -36,13 +36,16 @@ var _insertCss = require('insert-css');
 
 var _insertCss2 = _interopRequireDefault(_insertCss);
 
-var _DateStyle = require('./Date-style');
+var _styles = require('./styles');
 
-var _DateStyle2 = _interopRequireDefault(_DateStyle);
+var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _insertCss2.default)(_DateStyle2.default);
+var customStyle = '\n  .rdt input {\n    outline: 0;\n    width: 300px;\n    border: 1px solid #f7f4f4;\n    borderRadius: 2px;\n    fontSize: 11px;\n    padding: 5px;\n    color: #555;\n  }\n';
+
+(0, _insertCss2.default)(_styles2.default);
+(0, _insertCss2.default)(customStyle);
 
 var DateType = function (_React$Component) {
   (0, _inherits3.default)(DateType, _React$Component);
