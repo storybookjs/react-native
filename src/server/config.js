@@ -137,7 +137,7 @@ export default function (configType, baseConfig, configDir) {
       alias: {
         ...config.alias,
         ...(customConfig.resolve && customConfig.resolve.alias),
-      }
-    }
+      },
+    },
   };
 }
