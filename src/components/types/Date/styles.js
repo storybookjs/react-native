@@ -1,4 +1,4 @@
-const style = `
+export default `
   .rdt {
     position: relative;
   }
@@ -20,12 +20,12 @@ const style = `
     box-shadow: none;
     position: static;
   }
-  
+
   .rdtPicker .rdtTimeToggle {
     text-align: center;
     font-size:11px;
   }
-  
+
   .rdtPicker table {
     width: 100%;
     margin: 0;
@@ -78,7 +78,7 @@ const style = `
     color: #999999;
     cursor: not-allowed;
   }
-  
+
   .rdtPicker td span.rdtOld {
     color: #999999;
   }
@@ -105,7 +105,7 @@ const style = `
     font-size: 11px;
     vertical-align: top;
   }
-  
+
   .rdtPrev span,
   .rdtNext span {
     display: block;
@@ -116,7 +116,7 @@ const style = `
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;
   }
-  
+
   .rdtPicker th.rdtDisabled,
   .rdtPicker th.rdtDisabled:hover {
     background: none;
@@ -129,11 +129,11 @@ const style = `
   .rdtPicker thead tr:first-child th:hover {
     background: #eeeeee;
   }
-  
+
   .rdtPicker tfoot {
     border-top: 1px solid #f9f9f9;
   }
-  
+
   .rdtPicker button {
     border: none;
     background: none;
@@ -142,12 +142,12 @@ const style = `
   .rdtPicker button:hover {
     background-color: #eee;
   }
-  
+
   .rdtPicker thead button {
     width: 100%;
     height: 100%;
   }
-  
+
   td.rdtMonth,
   td.rdtYear {
     height: 50px;
@@ -158,38 +158,38 @@ const style = `
   td.rdtYear:hover {
     background: #eee;
   }
-  
+
   td.rdtDay {
     font-size: 11px
   }
-  
+
   .rdtCounters {
     display: inline-block;
   }
-  
+
   .rdtCounters > div {
     float: left;
   }
-  
+
   .rdtCounter {
     height: 100px;
   }
-  
+
   .rdtCounter {
     width: 40px;
   }
-  
+
   .rdtCounterSeparator {
     line-height: 100px;
   }
-  
+
   .rdtCounter .rdtBtn {
     height: 40%;
     line-height: 40px;
     cursor: pointer;
     display: block;
     font-size: 11px;
-  
+
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
     -khtml-user-select: none;    /* Konqueror */
@@ -204,18 +204,16 @@ const style = `
     height: 20%;
     font-size: 11px;
   }
-  
+
   .rdtMilli {
     vertical-align: middle;
     padding-left: 8px;
     width: 48px;
   }
-  
+
   .rdtMilli input {
     width: 100%;
     font-size: 11px;
     margin-top: 37px;
   }
 `;
-
-export default style;

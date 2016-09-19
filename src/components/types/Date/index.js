@@ -1,9 +1,22 @@
 import React from 'react';
 import Datetime from 'react-datetime';
 import insertCss from 'insert-css';
-import style from './Date-style';
+import style from './styles';
+
+const customStyle = `
+  .rdt input {
+    outline: 0;
+    width: 300px;
+    border: 1px solid #f7f4f4;
+    borderRadius: 2px;
+    fontSize: 11px;
+    padding: 5px;
+    color: #555;
+  }
+`;
 
 insertCss(style);
+insertCss(customStyle);
 
 class DateType extends React.Component {
   render() {

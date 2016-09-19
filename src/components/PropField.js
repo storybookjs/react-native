@@ -15,7 +15,7 @@ const stylesheet = {
     paddingRight: 5,
     paddingTop: 7,
     textAlign: 'right',
-    width: 20,
+    width: 60,
     fontSize: 10,
     color: 'rgb(68, 68, 68)',
     textTransform: 'uppercase',
