@@ -30,8 +30,4 @@ process.on('unhandledRejection', function (error) {
   console.error(error && error.stack || error);
 });
 
-require.extensions[`.css`] = function () {
-  return {};
-};
-
 require('./user/pretest.js');

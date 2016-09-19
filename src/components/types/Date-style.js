@@ -1,4 +1,4 @@
-.rdt {
+const style = `.rdt {
   position: relative;
 }
 .rdtPicker {
@@ -214,4 +214,6 @@ td.rdtDay {
   width: 100%;
   font-size: 11px;
   margin-top: 37px;
-}
+}`;
+
+export default style;

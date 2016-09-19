@@ -1,6 +1,9 @@
 import React from 'react';
 import Datetime from 'react-datetime';
-import './Date.css';
+import insertCss from 'insert-css';
+import style from './Date-style';
+
+insertCss(style);
 
 class DateType extends React.Component {
   render() {
