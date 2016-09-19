@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.2.0
+19-September-2016
+
+Add a knob to get date from the user. [PR26](https://github.com/kadirahq/storybook-addon-knobs/pull/26)
+
 ### v1.1.0
 11-September-2016
 
