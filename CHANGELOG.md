@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.15.1
+19-September-2016
+
+Add a fix to webpack custom resolve.alias not working. [PR465](https://github.com/kadirahq/react-storybook/pull/465)
+
 ### v2.15.0
 19-September-2016
 
