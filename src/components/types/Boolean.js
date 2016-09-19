@@ -5,7 +5,6 @@ const styles = {
   boxSizing: 'border-box',
   verticalAlign: 'top',
   height: 21,
-  width: '100%',
   outline: 'none',
   border: '1px solid #ececec',
   fontSize: '12px',

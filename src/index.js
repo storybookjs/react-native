@@ -27,6 +27,11 @@ export function select(name, options, value) {
   return manager.knob(name, { type: 'select', options, value });
 }
 
+export function date(name, value) {
+  const timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
+  return new Date(timestamp);
+}
+
 export function withKnobs(storyFn, context) {
   const channel = addons.getChannel();
   return manager.wrapStory(channel, storyFn, context);
