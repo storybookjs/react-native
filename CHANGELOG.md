@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.15.0
+19-September-2016
+
+* Use @kadira/storybook-addons as a resolve.alias. So, we can support addons for NPM2 too. [PR462](https://github.com/kadirahq/react-storybook/pull/462)
+
 ### v2.14.0
 14-September-2016
 
