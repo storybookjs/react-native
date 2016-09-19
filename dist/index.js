@@ -9,6 +9,7 @@ exports.boolean = boolean;
 exports.number = number;
 exports.object = object;
 exports.select = select;
+exports.date = date;
 exports.withKnobs = withKnobs;
 
 var _storybookAddons = require('@kadira/storybook-addons');
@@ -45,6 +46,11 @@ function object(name, value) {
 
 function select(name, options, value) {
   return manager.knob(name, { type: 'select', options: options, value: value });
+}
+
+function date(name, value) {
+  var timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
+  return new Date(timestamp);
 }
 
 function withKnobs(storyFn, context) {

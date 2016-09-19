@@ -24,6 +24,10 @@ var _Select = require('./Select');
 
 var _Select2 = _interopRequireDefault(_Select);
 
+var _Date = require('./Date');
+
+var _Date2 = _interopRequireDefault(_Date);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -31,5 +35,6 @@ exports.default = {
   number: _Number2.default,
   boolean: _Boolean2.default,
   object: _Object2.default,
-  select: _Select2.default
+  select: _Select2.default,
+  date: _Date2.default
 };
