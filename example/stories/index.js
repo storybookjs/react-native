@@ -39,7 +39,7 @@ storiesOf('Example of Knobs', module)
 
     return (
       <div style={style}>
-        I'm {name} and I born on "{moment(dob).format("DD MMM YYYY")}"
+        I'm {name} and I was born on "{moment(dob).format("DD MMM YYYY")}"
       </div>
     );
   })

@@ -27,7 +27,7 @@ export function select(name, options, value) {
   return manager.knob(name, { type: 'select', options, value });
 }
 
-export function date(name, value) {
+export function date(name, value = new Date(0)) {
   const timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
   return new Date(timestamp);
 }
