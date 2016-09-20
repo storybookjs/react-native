@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "7A855593-1F1F-4DAB-9DAF-0C9C0B82C983",
+      "name": "Thanish",
+      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/136691?v=3&s=460"
+    },
+    {
+      "id": "5A9D309F-8EC5-4ED7-BD46-A6EED012B797",
+      "name": "Arunoda"
+    },
+    {
+      "id": "C052D0AB-E4DE-45B6-8C23-67CC9F0A7593",
+      "name": "Madushan"
+    }
+  ],
+  "comments": [
+    {
+      "user": "7A855593-1F1F-4DAB-9DAF-0C9C0B82C983",
+      "time": 1473852414357,
+      "text": "Hello World"
+    },
+    {
+      "user": "5A9D309F-8EC5-4ED7-BD46-A6EED012B797",
+      "time": 1473852480594,
+      "text": "Hello Earth"
+    },
+    {
+      "user": "C052D0AB-E4DE-45B6-8C23-67CC9F0A7593",
+      "time": 1473852480594,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ]
+}
