@@ -4,6 +4,7 @@ import { getStorybook } from '@kadira/storybook';
 import path from 'path';
 import program from 'commander';
 import chokidar from 'chokidar';
+import EventEmitter from 'events';
 
 const { jasmine } = global;
 
@@ -42,9 +43,18 @@ moduleExts.forEach(ext => {
   };
 })
 
-async function main (storybook, config) {
+async function main () {
+  require(configPath);
+  const storybook = require('@kadira/storybook').getStorybook();
+  const addons = require('@kadira/storybook-addons').default;
+
+  // Channel for addons is created by storybook manager from the client side.
+  // We need to polyfill it for the server side.
+  const channel = new EventEmitter()
+  addons.setChannel(channel);
+
   try {
-    await runTests(storybook, config);
+    await runTests(storybook, program);
   } catch(e) {
     console.log(e.stack);
   }
@@ -64,12 +74,10 @@ if(program.watch) {
       Object.keys(require.cache).forEach(key => {
         delete require.cache[key];
       })
-      require(configPath);
-      const changedStorybook = require('@kadira/storybook').getStorybook()
-      main(changedStorybook, program);
+
+      main();
     });
   })
 }
 
-require(configPath);
-main(getStorybook(), program);
+main();

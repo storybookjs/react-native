@@ -37,7 +37,8 @@ export default async function runTests(storybook, options) {
       state.setCounter(0);
       const key = `${story.name}`
       const hasSnapshot = snapshot.has(key);
-      const tree = story.render();
+      const context = { kind: group.kind, story: story.name };
+      const tree = story.render(context);
       const renderer = ReactTestRenderer.create(tree);
       const actual = renderer.toJSON()
 
