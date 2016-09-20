@@ -8,7 +8,7 @@ export function init() {
     // add 'Comments' panel
     addons.addPanel(PANEL_ID, {
       title: 'Comments',
-      render: () => <CommentsPanel />
+      render: () => <CommentsPanel api={api} />
     });
   });
 }

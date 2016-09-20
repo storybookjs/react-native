@@ -24,7 +24,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.13.1",
     "@kadira/storybook-addons": "^1.5.0",
-    "@kadira/storybook-database-cloud": "^2.1.0",
+    "@kadira/storybook-database-cloud": "^2.1.2",
     "@kadira/storybook-deployer": "^1.2.0",
     "@kadira/storybook-ui": "^3.4.1",
     "babel-cli": "^6.14.0",

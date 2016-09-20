@@ -16,6 +16,23 @@ export default class Container extends Component {
     this.syncDatabase = this.syncDatabase.bind(this);
   }
 
+  componentDidMount() {
+    // Clear the current notes on every story change.
+    this.stopListeningOnStory = this.props.api.onStory((kind, story) => {
+      this.selection = { sbKind: kind, sbStory: story };
+      Promise.resolve(null)
+        .then(() => this.syncDatabase())
+        .then(() => this.getCurrentUser())
+        .then(() => this.setState({ loading: false }));
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.stopListeningOnStory) {
+      this.stopListeningOnStory();
+    }
+  }
+
   getCurrentUser() {
     // NOTE getUser method is not a standard method
     // as a matter of fact, the persister itself is
@@ -32,15 +49,17 @@ export default class Container extends Component {
 
   loadUsersCollection() {
     const db = addons.getDatabase();
+    const query = {};
     const options = {limit: 1e6};
-    return db.getCollection('users').get({}, options)
+    return db.getCollection('users').get(query, options)
       .then(users => this.setState({ users }));
   }
 
   loadCommentsCollection() {
     const db = addons.getDatabase();
+    const query = { ...this.selection };
     const options = {limit: 1e6};
-    return db.getCollection('comments').get({}, options)
+    return db.getCollection('comments').get(query, options)
       .then(comments => this.setState({ comments }));
   }
 
@@ -61,7 +80,8 @@ export default class Container extends Component {
 
   addCommentToDatabase(comment) {
     const db = addons.getDatabase();
-    return db.getCollection('comments').set(comment);
+    const doc = { ...comment, ...this.selection };
+    return db.getCollection('comments').set(doc);
   }
 
   syncDatabase() {
@@ -69,13 +89,6 @@ export default class Container extends Component {
       .then(() => this.loadUsersCollection())
       .then(() => this.loadCommentsCollection())
       .catch(err => console.error('failed to sync data:', err));
-  }
-
-  componentDidMount() {
-    Promise.resolve(null)
-      .then(() => this.syncDatabase())
-      .then(() => this.getCurrentUser())
-      .then(() => this.setState({ loading: false }));
   }
 
   addComment(comment) {
