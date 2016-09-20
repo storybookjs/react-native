@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.2.1
+20-September-2016
+
+Support to use date type without a default value. [PR32](https://github.com/kadirahq/storybook-addon-knobs/pull/32)
+
 ### v1.2.0
 19-September-2016
 
