@@ -42,6 +42,14 @@ moduleExts.forEach(ext => {
   };
 })
 
+async function main (storybook, config) {
+  try {
+    await runTests(storybook, config);
+  } catch(e) {
+    console.log(e.stack);
+  }
+}
+
 if(program.watch) {
   var watcher = chokidar.watch('.', {
     ignored: 'node_modules', // TODO: Should node_modules also be watched?
@@ -58,10 +66,10 @@ if(program.watch) {
       })
       require(configPath);
       const changedStorybook = require('@kadira/storybook').getStorybook()
-      runTests(changedStorybook, program);
+      main(changedStorybook, program);
     });
   })
 }
 
 require(configPath);
-runTests(getStorybook(), program);
+main(getStorybook(), program);
