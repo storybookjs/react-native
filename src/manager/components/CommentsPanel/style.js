@@ -5,7 +5,7 @@ export default {
     flexDirection: 'column',
     position: 'relative',
   },
-  loading: {
+  message: {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
@@ -16,5 +16,12 @@ export default {
     letterSpacing: 1,
     textDecoration: 'none',
     textTransform: 'uppercase',
+  },
+  button: {
+    textDecoration: 'none',
+    color: 'rgb(120, 120, 120)',
+    padding: '10px 18px',
+    background: 'rgb(240, 240, 240)',
+    borderRadius: 5,
   },
 }

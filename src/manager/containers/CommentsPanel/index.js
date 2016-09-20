@@ -23,9 +23,8 @@ export default class Container extends Component {
     const db = addons.getDatabase();
     if (typeof db.persister.getUser === 'function') {
       return db.persister.getUser()
-        .then(user => this.setState({ user }))
+        .then(user => this.setState({ user }));
     }
-    // TODO support other databases?
     return new Promise((resolve, reject) => {
       reject(new Error('unable to get user info'));
     });
@@ -34,17 +33,15 @@ export default class Container extends Component {
   loadUsersCollection() {
     const db = addons.getDatabase();
     const options = {limit: 1e6};
-    return db.getCollection('users').get({}, options).then(users => {
-      this.setState({ users });
-    });
+    return db.getCollection('users').get({}, options)
+      .then(users => this.setState({ users }));
   }
 
   loadCommentsCollection() {
     const db = addons.getDatabase();
     const options = {limit: 1e6};
-    return db.getCollection('comments').get({}, options).then(comments => {
-      this.setState({ comments });
-    });
+    return db.getCollection('comments').get({}, options)
+      .then(comments => this.setState({ comments }));
   }
 
   addPendingComment(_comment) {
@@ -70,7 +67,8 @@ export default class Container extends Component {
   syncDatabase() {
     return Promise.resolve(null)
       .then(() => this.loadUsersCollection())
-      .then(() => this.loadCommentsCollection());
+      .then(() => this.loadCommentsCollection())
+      .catch(err => console.error('failed to sync data:', err));
   }
 
   componentDidMount() {
@@ -94,6 +92,7 @@ export default class Container extends Component {
       users: this.state.users,
       comments: this.state.comments,
       loading: this.state.loading,
+      loggedIn: this.state.loggedIn,
       addComment: this.addComment,
     };
     return <CommentsPanel {...props} />;
