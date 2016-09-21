@@ -25,7 +25,7 @@ if (isBrowser) {
     throw new Error('dataId is not supplied via queryString');
   }
   const channel = createChannel({ key: queryParams.dataId });
-  channel.on('setCurrentStory', data => {
+  channel.on('setCurrentStory', (data) => {
     reduxStore.dispatch(selectStory(data.kind, data.story));
   });
   Object.assign(context, { channel, window, queryParams });

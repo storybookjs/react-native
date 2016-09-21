@@ -50,7 +50,7 @@ shelljs.mkdir('-p', path.resolve(outputDir));
 
 // copy all static files
 if (program.staticDir) {
-  program.staticDir.forEach(dir => {
+  program.staticDir.forEach((dir) => {
     if (!fs.existsSync(dir)) {
       logger.error(`Error: no such directory to load static files: ${dir}`);
       process.exit(-1);

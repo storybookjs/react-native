@@ -1,5 +1,10 @@
 let cnt = 0;
 
+function getId() {
+  cnt += 1;
+  return cnt;
+}
+
 export default class StoryStore {
   constructor() {
     this._data = {};
@@ -9,14 +14,14 @@ export default class StoryStore {
     if (!this._data[kind]) {
       this._data[kind] = {
         kind,
-        index: cnt++,
+        index: getId(),
         stories: {},
       };
     }
 
     this._data[kind].stories[name] = {
       name,
-      index: cnt++,
+      index: getId(),
       fn,
     };
   }

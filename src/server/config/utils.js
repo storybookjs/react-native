@@ -23,7 +23,7 @@ export function loadEnv(options = {}) {
   };
 
   Object.keys(process.env)
-    .filter((name) => /^STORYBOOK_/.test(name))
+    .filter(name => /^STORYBOOK_/.test(name))
     .forEach((name) => {
       env[`process.env.${name}`] = JSON.stringify(process.env[name]);
     });

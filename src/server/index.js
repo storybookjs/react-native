@@ -54,7 +54,7 @@ const app = express();
 
 if (program.staticDir) {
   program.staticDir = parseList(program.staticDir);
-  program.staticDir.forEach(dir => {
+  program.staticDir.forEach((dir) => {
     const staticPath = path.resolve(dir);
     if (!fs.existsSync(staticPath)) {
       logger.error(`Error: no such directory to load static files: ${staticPath}`);

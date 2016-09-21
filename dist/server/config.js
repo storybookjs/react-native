@@ -15,24 +15,8 @@ var _extends3 = _interopRequireDefault(_extends2);
 exports.default = function (configType, baseConfig, configDir) {
   var config = baseConfig;
 
-  // Search for a .babelrc in the config directory, then the module root
-  // directory. If found, use that to extend webpack configurations.
-  var babelConfig = loadBabelConfig(_path2.default.resolve(configDir, '.babelrc'));
-  var inConfigDir = true;
-
-  if (!babelConfig) {
-    babelConfig = loadBabelConfig('.babelrc');
-    inConfigDir = false;
-  }
-
-  if (babelConfig) {
-    // If the custom config uses babel's `extends` clause, then replace it with
-    // an absolute path. `extends` will not work unless we do this.
-    if (babelConfig.extends) {
-      babelConfig.extends = inConfigDir ? _path2.default.resolve(configDir, babelConfig.extends) : _path2.default.resolve(babelConfig.extends);
-    }
-    config.module.loaders[0].query = babelConfig;
-  }
+  var babelConfig = (0, _babel_config2.default)(configDir);
+  config.module.loaders[0].query = babelConfig;
 
   // Check whether a config.js file exists inside the storybook
   // config directory and throw an error if it's not.
@@ -93,55 +77,16 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _json = require('json5');
+var _babel_config = require('./babel_config');
 
-var _json2 = _interopRequireDefault(_json);
+var _babel_config2 = _interopRequireDefault(_babel_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // avoid ESLint errors
-var logger = console; /* eslint global-require: 0 */
-
-function removeReactHmre(presets) {
-  var index = presets.indexOf('react-hmre');
-  if (index > -1) {
-    presets.splice(index, 1);
-  }
-}
-
-// Tries to load a .babelrc and returns the parsed object if successful
-function loadBabelConfig(babelConfigPath) {
-  var config = void 0;
-  if (_fs2.default.existsSync(babelConfigPath)) {
-    var content = _fs2.default.readFileSync(babelConfigPath, 'utf-8');
-    try {
-      config = _json2.default.parse(content);
-      config.babelrc = false;
-      logger.info('=> Loading custom .babelrc');
-    } catch (e) {
-      logger.error('=> Error parsing .babelrc file: ' + e.message);
-      throw e;
-    }
-  }
-
-  if (!config) return null;
-
-  // Remove react-hmre preset.
-  // It causes issues with react-storybook.
-  // We don't really need it.
-  // Earlier, we fix this by runnign storybook in the production mode.
-  // But, that hide some useful debug messages.
-  if (config.presets) {
-    removeReactHmre(config.presets);
-  }
-
-  if (config.env && config.env.development && config.env.development.presets) {
-    removeReactHmre(config.env.development.presets);
-  }
-
-  return config;
-}
+var logger = console;
 
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
+/* eslint global-require: 0 */

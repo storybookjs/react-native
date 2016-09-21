@@ -66,7 +66,7 @@ export default class ClientApi {
       return api;
     };
 
-    api.addDecorator = decorator => {
+    api.addDecorator = (decorator) => {
       localDecorators.push(decorator);
       return api;
     };
@@ -75,8 +75,8 @@ export default class ClientApi {
   }
 
   getStorybook() {
-    return this._storyStore.getStoryKinds().map(kind => {
-      const stories = this._storyStore.getStories(kind).map(name => {
+    return this._storyStore.getStoryKinds().map((kind) => {
+      const stories = this._storyStore.getStories(kind).map((name) => {
         const render = this._storyStore.getStory(kind, name);
         return { name, render };
       });

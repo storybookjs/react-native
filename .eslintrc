@@ -14,7 +14,9 @@
     # We don't like this rule. We write arrow functions only when we needed.
     "prefer-arrow-callback": 0,
     # We don't need to write function names always.
-    "func-names": 0
+    "func-names": 0,
+    # propTypes can be object
+    "react/forbid-prop-types": 0,
   },
   "parserOptions": {
     "ecmaVersion": 6,

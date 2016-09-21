@@ -1,4 +1,5 @@
 /* global location */
+/* eslint class-methods-use-this: 0 */
 
 import UUID from 'uuid';
 import qs from 'qs';
@@ -49,13 +50,13 @@ export default class ReactProvider extends Provider {
     api.onStory((kind, story) => {
       this.channel.emit('setCurrentStory', { kind, story });
     });
-    this.channel.on('setStories', data => {
+    this.channel.on('setStories', (data) => {
       api.setStories(data.stories);
     });
-    this.channel.on('selectStory', data => {
+    this.channel.on('selectStory', (data) => {
       api.selectStory(data.kind, data.story);
     });
-    this.channel.on('applyShortcut', data => {
+    this.channel.on('applyShortcut', (data) => {
       api.handleShortcut(data.event);
     });
     addons.loadAddons(api);

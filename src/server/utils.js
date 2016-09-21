@@ -16,7 +16,7 @@ export function getHeadHtml(configDirPath) {
 }
 
 export function getEnvConfig(program, configEnv) {
-  Object.keys(configEnv).forEach(fieldName => {
+  Object.keys(configEnv).forEach((fieldName) => {
     const envVarName = configEnv[fieldName];
     const envVarValue = process.env[envVarName];
     if (envVarValue) {
