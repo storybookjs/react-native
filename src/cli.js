@@ -44,16 +44,15 @@ moduleExts.forEach(ext => {
 })
 
 async function main () {
-  require(configPath);
-  const storybook = require('@kadira/storybook').getStorybook();
-  const addons = require('@kadira/storybook-addons').default;
-
-  // Channel for addons is created by storybook manager from the client side.
-  // We need to polyfill it for the server side.
-  const channel = new EventEmitter()
-  addons.setChannel(channel);
-
   try {
+    require(configPath);
+    const storybook = require('@kadira/storybook').getStorybook();
+    const addons = require('@kadira/storybook-addons').default;
+
+    // Channel for addons is created by storybook manager from the client side.
+    // We need to polyfill it for the server side.
+    const channel = new EventEmitter()
+    addons.setChannel(channel);
     await runTests(storybook, program);
   } catch(e) {
     console.log(e.stack);
