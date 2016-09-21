@@ -17,7 +17,7 @@ export default class ReactProvider extends Provider {
     this.channel = createChannel({ key: this.dataId });
     addons.setChannel(this.channel);
     this.database = addons.getDatabase();
-    if (!this.database) {
+    if (!this.database && process.env.STORYBOOK_ENABLE_DB) {
       const bundled = process.env.NODE_ENV === 'production';
       if (bundled) {
         this.database = createDatabase({ url: 'addon-db.json', bundled });

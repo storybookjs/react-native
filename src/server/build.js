@@ -6,7 +6,7 @@ import path from 'path';
 import fs from 'fs';
 import shelljs from 'shelljs';
 import packageJson from '../../package.json';
-import baseConfig from './config/webpack.config.prod';
+import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
@@ -34,19 +34,31 @@ getEnvConfig(program, {
   configDir: 'STORYBOOK_CONFIG_DIR',
 });
 
-// Build the webpack configuration using the `baseConfig`
-// custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-const config = loadConfig('PRODUCTION', baseConfig, configDir);
-
-const publicPath = config.output.publicPath;
-
 const outputDir = program.outputDir || './storybook-static';
-config.output.path = outputDir;
 
 // create output directory (and the static dir) if not exists
 shelljs.rm('-rf', outputDir);
 shelljs.mkdir('-p', path.resolve(outputDir));
+
+// The addon database service is disabled by default for now
+// It should be enabled with the --enable-db for dev server
+if (program.enableDb) {
+  // NOTE enables database on client
+  process.env.STORYBOOK_ENABLE_DB = 1;
+  const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
+  // create addon-db.json file if it's missing to avoid the 404 error
+  if (!fs.existsSync(dbPath)) {
+    fs.writeFileSync(dbPath, '{}');
+  }
+  shelljs.cp(dbPath, outputDir);
+}
+
+// Build the webpack configuration using the `baseConfig`
+// custom `.babelrc` file and `webpack.config.js` files
+// NOTE changes to env should be done before calling `getBaseConfig`
+const config = loadConfig('PRODUCTION', getBaseConfig(), configDir);
+config.output.path = outputDir;
 
 // copy all static files
 if (program.staticDir) {
@@ -60,19 +72,9 @@ if (program.staticDir) {
   });
 }
 
-// The addon database service is disabled by default for now
-// It should be enabled with the --enable-db for dev server
-if (program.enableDb) {
-  const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
-  // create addon-db.json file if it's missing to avoid the 404 error
-  if (!fs.existsSync(dbPath)) {
-    fs.writeFileSync(dbPath, '{}');
-  }
-  shelljs.cp(dbPath, outputDir);
-}
-
 // Write both the storybook UI and IFRAME HTML files to destination path.
 const headHtml = getHeadHtml(configDir);
+const publicPath = config.output.publicPath;
 fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath));
 fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath));
 
