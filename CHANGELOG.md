@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.16.0
+21-September-2016
+
+* Move the babel config loading logic into a seperate file. [PR469](https://github.com/kadirahq/react-storybook/pull/469)
+* Update airbnd eslint rules to the latest.
+
 ### v2.15.1
 19-September-2016
 
