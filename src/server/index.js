@@ -68,14 +68,19 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-app.use(storybook(configDir));
 
 // The addon database service is disabled by default for now
 // It should be enabled with the --enable-db for dev server
 if (program.enableDb) {
+  // NOTE enables database on client
+  process.env.STORYBOOK_ENABLE_DB = 1;
   const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
   app.use('/db', datastore(dbPath));
 }
+
+// NOTE changes to env should be done before calling `getBaseConfig`
+// `getBaseConfig` function which is called inside the middleware
+app.use(storybook(configDir));
 
 app.listen(...listenAddr, function (error) {
   if (error) {

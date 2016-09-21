@@ -2,16 +2,16 @@ import { Router } from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import baseConfig from './config/webpack.config';
+import getBaseConfig from './config/webpack.config';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
 import { getHeadHtml } from './utils';
 
 export default function (configDir) {
-  // Build the webpack configuration using the `baseConfig`
+  // Build the webpack configuration using the `getBaseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
-  const config = loadConfig('DEVELOPMENT', baseConfig, configDir);
+  const config = loadConfig('DEVELOPMENT', getBaseConfig(), configDir);
 
   // remove the leading '/'
   let publicPath = config.output.publicPath;
