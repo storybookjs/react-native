@@ -1,10 +1,10 @@
 import runTests from './test_runner';
-import loadConfig from './config';
 import { getStorybook } from '@kadira/storybook';
 import path from 'path';
 import program from 'commander';
 import chokidar from 'chokidar';
 import EventEmitter from 'events';
+import loadBabelConfig from '@kadira/storybook/dist/server/babel_config';
 
 const { jasmine } = global;
 
@@ -22,8 +22,10 @@ const configDir = program.configDir || './.storybook';
 
 const configPath = path.resolve(`${configDir}`, 'config');
 
-const babelConfig = loadConfig(configDir);
-babelConfig.babelrc = false;
+const babelConfig = loadBabelConfig(configDir);
+
+// cacheDir is webpack babel loader specific. We don't run webpack.
+delete babelConfig.cacheDirectory;
 
 require('babel-register')(babelConfig);
 require('babel-polyfill');

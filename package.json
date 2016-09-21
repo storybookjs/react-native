@@ -19,11 +19,11 @@
     "lintfix": "eslint ./src --fix",
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "test-watch": "npm run testonly -- --watch --watch-extensions js"
   },
   "peerDependencies": {
-    "@kadira/storybook": "*",
-    "react": "*"
+    "@kadira/storybook": "^2.16.0",
+    "react": "^15.2.1"
   },
   "devDependencies": {
     "nodemon": "1.7.x",
