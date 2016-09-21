@@ -52,7 +52,7 @@ if (program.host) {
 }
 
 const app = express();
-app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
 
 if (program.staticDir) {
   program.staticDir = parseList(program.staticDir);
