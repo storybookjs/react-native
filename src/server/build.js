@@ -47,6 +47,7 @@ config.output.path = outputDir;
 // create output directory (and the static dir) if not exists
 shelljs.rm('-rf', outputDir);
 shelljs.mkdir('-p', path.resolve(outputDir));
+shelljs.cp(path.resolve(__dirname, 'public/favicon.ico'), outputDir);
 
 // copy all static files
 if (program.staticDir) {
