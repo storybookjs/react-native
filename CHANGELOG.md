@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.16.1
+21-September-2016
+
+* Fix the 404 error for `addon-db.json` file [PR472](https://github.com/kadirahq/react-storybook/pull/472)
+* Serve/Bundle the storybook favicon [PR473](https://github.com/kadirahq/react-storybook/pull/473)
+
 ### v2.16.0
 21-September-2016
 
