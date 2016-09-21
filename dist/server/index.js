@@ -9,6 +9,10 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
+var _serveFavicon = require('serve-favicon');
+
+var _serveFavicon2 = _interopRequireDefault(_serveFavicon);
+
 var _commander = require('commander');
 
 var _commander2 = _interopRequireDefault(_commander);
@@ -67,6 +71,7 @@ if (_commander2.default.host) {
 }
 
 var app = (0, _express2.default)();
+app.use((0, _serveFavicon2.default)(_path2.default.resolve(__dirname, 'public/favicon.ico')));
 
 if (_commander2.default.staticDir) {
   _commander2.default.staticDir = (0, _utils.parseList)(_commander2.default.staticDir);
@@ -84,14 +89,19 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
-app.use((0, _middleware4.default)(configDir));
 
 // The addon database service is disabled by default for now
 // It should be enabled with the --enable-db for dev server
 if (_commander2.default.enableDb) {
+  // NOTE enables database on client
+  process.env.STORYBOOK_ENABLE_DB = 1;
   var dbPath = _commander2.default.dbPath || _path2.default.resolve(configDir, 'addon-db.json');
   app.use('/db', (0, _middleware2.default)(dbPath));
 }
+
+// NOTE changes to env should be done before calling `getBaseConfig`
+// `getBaseConfig` function which is called inside the middleware
+app.use((0, _middleware4.default)(configDir));
 
 app.listen.apply(app, listenAddr.concat([function (error) {
   if (error) {

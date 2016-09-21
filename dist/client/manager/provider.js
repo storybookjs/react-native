@@ -57,6 +57,7 @@ var _preview2 = _interopRequireDefault(_preview);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* global location */
+/* eslint class-methods-use-this: 0 */
 
 var ReactProvider = function (_Provider) {
   (0, _inherits3.default)(ReactProvider, _Provider);
@@ -70,7 +71,7 @@ var ReactProvider = function (_Provider) {
     _this.channel = (0, _storybookChannelPagebus2.default)({ key: _this.dataId });
     _storybookAddons2.default.setChannel(_this.channel);
     _this.database = _storybookAddons2.default.getDatabase();
-    if (!_this.database) {
+    if (!_this.database && process.env.STORYBOOK_ENABLE_DB) {
       var bundled = process.env.NODE_ENV === 'production';
       if (bundled) {
         _this.database = (0, _storybookDatabaseLocal2.default)({ url: 'addon-db.json', bundled: bundled });

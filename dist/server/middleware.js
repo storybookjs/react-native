@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (configDir) {
-  // Build the webpack configuration using the `baseConfig`
+  // Build the webpack configuration using the `getBaseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
-  var config = (0, _config2.default)('DEVELOPMENT', _webpack4.default, configDir);
+  var config = (0, _config2.default)('DEVELOPMENT', (0, _webpack4.default)(), configDir);
 
   // remove the leading '/'
   var publicPath = config.output.publicPath;

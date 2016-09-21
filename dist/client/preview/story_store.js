@@ -20,6 +20,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var cnt = 0;
 
+function getId() {
+  cnt += 1;
+  return cnt;
+}
+
 var StoryStore = function () {
   function StoryStore() {
     (0, _classCallCheck3.default)(this, StoryStore);
@@ -33,14 +38,14 @@ var StoryStore = function () {
       if (!this._data[kind]) {
         this._data[kind] = {
           kind: kind,
-          index: cnt++,
+          index: getId(),
           stories: {}
         };
       }
 
       this._data[kind].stories[name] = {
         name: name,
-        index: cnt++,
+        index: getId(),
         fn: fn
       };
     }
