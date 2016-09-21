@@ -110,7 +110,7 @@ Allows you to get a number from the user.
 const label = 'Age';
 const defaultValue = 78;
 
-const value = boolean(label, defaultValue);
+const value = number(label, defaultValue);
 ```
 
 ### object
