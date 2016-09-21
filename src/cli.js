@@ -1,8 +1,10 @@
 import runTests from './test_runner';
+import loadConfig from './config';
 import { getStorybook } from '@kadira/storybook';
 import path from 'path';
 import program from 'commander';
 import chokidar from 'chokidar';
+import EventEmitter from 'events';
 
 const { jasmine } = global;
 
@@ -20,6 +22,43 @@ const configDir = program.configDir || './.storybook';
 
 const configPath = path.resolve(`${configDir}`, 'config');
 
+const babelConfig = loadConfig(configDir);
+babelConfig.babelrc = false;
+
+require('babel-register')(babelConfig);
+require('babel-polyfill');
+
+const fileExts = ['jpg', 'png', 'gif', 'eot', 'svg', 'ttf', 'woff', 'woff2']
+const moduleExts = ['css', 'scss', 'sass']
+
+fileExts.forEach(ext => {
+  require.extensions[`.${ext}`] = function () {
+    return '';
+  };
+})
+
+moduleExts.forEach(ext => {
+  require.extensions[`.${ext}`] = function () {
+    return {};
+  };
+})
+
+async function main () {
+  try {
+    require(configPath);
+    const storybook = require('@kadira/storybook').getStorybook();
+    const addons = require('@kadira/storybook-addons').default;
+
+    // Channel for addons is created by storybook manager from the client side.
+    // We need to polyfill it for the server side.
+    const channel = new EventEmitter()
+    addons.setChannel(channel);
+    await runTests(storybook, program);
+  } catch(e) {
+    console.log(e.stack);
+  }
+}
+
 if(program.watch) {
   var watcher = chokidar.watch('.', {
     ignored: 'node_modules', // TODO: Should node_modules also be watched?
@@ -34,12 +73,10 @@ if(program.watch) {
       Object.keys(require.cache).forEach(key => {
         delete require.cache[key];
       })
-      require(configPath);
-      const changedStorybook = require('@kadira/storybook').getStorybook()
-      runTests(changedStorybook, program);
+
+      main();
     });
   })
 }
 
-require(configPath);
-runTests(getStorybook(), program);
+main();
