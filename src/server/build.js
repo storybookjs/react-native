@@ -40,6 +40,7 @@ const outputDir = program.outputDir || './storybook-static';
 // create output directory (and the static dir) if not exists
 shelljs.rm('-rf', outputDir);
 shelljs.mkdir('-p', path.resolve(outputDir));
+shelljs.cp(path.resolve(__dirname, 'public/favicon.ico'), outputDir);
 
 // The addon database service is disabled by default for now
 // It should be enabled with the --enable-db for dev server

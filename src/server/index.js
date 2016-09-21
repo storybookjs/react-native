@@ -2,6 +2,7 @@
 
 import datastore from '@kadira/storybook-database-local/dist/server/middleware';
 import express from 'express';
+import favicon from 'serve-favicon';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
@@ -51,6 +52,7 @@ if (program.host) {
 }
 
 const app = express();
+app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
 
 if (program.staticDir) {
   program.staticDir = parseList(program.staticDir);
