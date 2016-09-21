@@ -1,6 +1,6 @@
 {
-  "name": "@kadira/storybook-snapshot-test",
-  "version": "1.0.0",
+  "name": "@kadira/storyshots",
+  "version": "0.0.0",
   "description": "Compare stories to saved snapshots",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
   },
   "bin": {
-    "testsnapshots": "./bin/testsnapshots.js"
+    "storyshots": "./bin/run_storyshots.js"
   },
   "scripts": {
     "prepublish": ". ./scripts/prepublish.sh",
@@ -20,7 +20,6 @@
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
-    "testsnapshots": "jasmine"
   },
   "peerDependencies": {
     "@kadira/storybook": "*",
