@@ -9,7 +9,7 @@ import {
   nodeModulesPaths,
   loadEnv,
 } from './utils';
-import babalLoaderConfig from './babel.js';
+import babelLoaderConfig from './babel.js';
 
 export default function () {
   const config = {
@@ -42,7 +42,7 @@ export default function () {
         {
           test: /\.jsx?$/,
           loader: require.resolve('babel-loader'),
-          query: babalLoaderConfig,
+          query: babelLoaderConfig,
           include: includePaths,
           exclude: excludePaths,
         },
