@@ -2,14 +2,13 @@
 
 import runTests from './test_runner';
 import { getStorybook } from '@kadira/storybook';
+import Runner from './test_runner';
 import path from 'path';
-import fs from 'fs';
 import program from 'commander';
 import chokidar from 'chokidar';
 import EventEmitter from 'events';
 import loadBabelConfig from '@kadira/storybook/dist/server/babel_config';
-
-const { jasmine } = global;
+import { filterStorybook } from './util';
 
 program
   .option('-c, --config-dir [dir-name]',
@@ -27,6 +26,7 @@ const {
   configDir = './.storybook',
   polyfills: polyfillsPath = require.resolve('./default_config/polyfills.js'),
   loaders: loadersPath = require.resolve('./default_config/loaders.js'),
+  grep
 } = program
 
 const configPath = path.resolve(`${configDir}`, 'config');
@@ -41,6 +41,7 @@ require('babel-polyfill');
 
 // load loaders
 const loaders = require(path.resolve(loadersPath));
+
 Object.keys(loaders).forEach(ext => {
   const loader = loaders[ext];
   require.extensions[`.${ext}`] = (m, filepath) => loader(filepath);
@@ -49,7 +50,9 @@ Object.keys(loaders).forEach(ext => {
 // load polyfills
 require(path.resolve(polyfillsPath));
 
-async function main () {
+const runner = new Runner(program);
+
+async function main() {
   try {
     require(configPath);
     const storybook = require('@kadira/storybook').getStorybook();
@@ -57,15 +60,15 @@ async function main () {
 
     // Channel for addons is created by storybook manager from the client side.
     // We need to polyfill it for the server side.
-    const channel = new EventEmitter()
+    const channel = new EventEmitter();
     addons.setChannel(channel);
-    await runTests(storybook, program);
-  } catch(e) {
+    await runner.run(filterStorybook(storybook, grep));
+  } catch (e) {
     console.log(e.stack);
   }
 }
 
-if(program.watch) {
+if (program.watch) {
   var watcher = chokidar.watch('.', {
     ignored: 'node_modules', // TODO: Should node_modules also be watched?
     persistent: true
@@ -78,11 +81,11 @@ if(program.watch) {
       // changes were made.
       Object.keys(require.cache).forEach(key => {
         delete require.cache[key];
-      })
+      });
 
       main();
     });
-  })
+  });
 }
 
 main();
