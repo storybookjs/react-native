@@ -13,7 +13,8 @@ import { selectStory } from './actions';
 import reducer from './reducer';
 
 // check whether we're running on node/browser
-const isBrowser = typeof window !== 'undefined';
+const { navigator } = global;
+const isBrowser = navigator && navigator. userAgent !== 'storyshots';
 
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
