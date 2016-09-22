@@ -6,7 +6,7 @@ Snapshot Testing for [React Storybook](https://github.com/kadirahq/react-storybo
 
 With StoryShots, you could use your existing Storybook stories, as the input for snapshot testing. We do it by integrating Jest's snapshot testing support, directly into Storybook.
 
-Read This: [Snapshot Testing in React Storybook](#)
+Read This: [Snapshot Testing in React Storybook](https://voice.kadira.io/snapshot-testing-in-react-storybook-43b3b71cec4f#.ndyuhcxhd)
 
 ## Getting Started
 
