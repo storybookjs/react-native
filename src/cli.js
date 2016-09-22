@@ -43,7 +43,7 @@ require('babel-polyfill');
 const loaders = require(path.resolve(loadersPath));
 Object.keys(loaders).forEach(ext => {
   const loader = loaders[ext];
-  require.extensions[`.${ext}`] = loader;
+  require.extensions[`.${ext}`] = (m, filepath) => loader(filepath);
 })
 
 // load polyfills

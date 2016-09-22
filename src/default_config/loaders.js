@@ -4,7 +4,7 @@ const moduleExts = ['css', 'scss', 'sass'];
 const loaders = {};
 
 fileExts.forEach(ext => {
-  loaders[ext] = (module, filename) => filename;
+  loaders[ext] = (filename) => filename;
 });
 
 moduleExts.forEach(ext => {
