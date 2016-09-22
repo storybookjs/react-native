@@ -44,7 +44,9 @@ const loaders = require(path.resolve(loadersPath));
 
 Object.keys(loaders).forEach(ext => {
   const loader = loaders[ext];
-  require.extensions[`.${ext}`] = (m, filepath) => loader(filepath);
+  require.extensions[`.${ext}`] = (m, filepath) => {
+    m.exports = loader(filepath);
+  };
 })
 
 // load polyfills
