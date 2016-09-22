@@ -83,10 +83,10 @@ export default class SnapshotRunner {
   async confirmUpate(diffMessage) {
     process.stdout.write('\nReceived story is different from stored snapshot.\n');
     process.stdout.write('  ' + diffMessage.split('\n').join('\n  '));
-    let ans = await promptly.prompt('Should this snapshot be updated?(y/n)');
+    let ans = await promptly.prompt('Update snapshot? (y/n)');
     while (ans !== 'y' && ans !== 'n') {
       process.stdout.write('Enter only y (yes) or n (no)\n');
-      ans = await promptly.prompt('Should this snapshot be updated?(y/n)');
+      ans = await promptly.prompt('Update snapshot? (y/n)');
     }
     process.stdout.write('\n');
 
