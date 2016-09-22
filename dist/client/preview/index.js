@@ -52,7 +52,11 @@ var _reducer2 = _interopRequireDefault(_reducer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // check whether we're running on node/browser
-var isBrowser = typeof window !== 'undefined'; /* global window */
+var _global = global; /* global window */
+
+var navigator = _global.navigator;
+
+var isBrowser = navigator && navigator.userAgent !== 'storyshots';
 
 var storyStore = new _story_store2.default();
 var reduxStore = (0, _redux.createStore)(_reducer2.default);
