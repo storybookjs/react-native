@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.17.0
+22-September-2016
+
+* Add support for StoryShots. [PR479](https://github.com/kadirahq/react-storybook/pull/479)
+* Fix some typos: [PR477](https://github.com/kadirahq/react-storybook/pull/477) & [PR478](https://github.com/kadirahq/react-storybook/pull/478)
+
 ### v2.16.1
 21-September-2016
 
