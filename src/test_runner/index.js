@@ -102,7 +102,7 @@ function logState({state, name, message}) {
 function logSummary(state) {
   const { added, matched, unmatched, updated, errored, obsolete } = state;
   const total = added + matched + unmatched + updated + errored;
-  process.stdout.write(chalk.bold('Test summary\n'));
+  process.stdout.write(chalk.bold('\nTest Summary\n'));
   process.stdout.write(`> ${total} stories tested.\n`);
   if (matched > 0) {
     process.stdout.write(chalk.green(`> ${matched}/${total} stories matched with snapshots.\n`));
@@ -123,4 +123,3 @@ function logSummary(state) {
     process.stdout.write(chalk.cyan(`> ${obsolete} unused snapshots remaining. Run with -u to remove them.\n`));
   }
 }
-
