@@ -27,7 +27,7 @@ const {
   polyfills: polyfillsPath = require.resolve('./default_config/polyfills.js'),
   loaders: loadersPath = require.resolve('./default_config/loaders.js'),
   grep
-} = program
+} = program;
 
 const configPath = path.resolve(`${configDir}`, 'config');
 
@@ -49,6 +49,12 @@ Object.keys(loaders).forEach(ext => {
 
 // load polyfills
 require(path.resolve(polyfillsPath));
+
+// set userAgent so storybook knows we're storyshots
+if(!global.navigator) {
+  global.navigator = {}
+};
+global.navigator.userAgent = 'storyshots';
 
 const runner = new Runner(program);
 
