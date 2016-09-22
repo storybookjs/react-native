@@ -130,7 +130,7 @@ npm run test-storybook -- --loaders=loaders.js
 > "test-storybook": "storyshots --loaders=loaders.js"
 > ~~~
 
-## Add Window and Global Polyfills
+### Add Window and Global Polyfills
 
 StoryShot doesn't use an actual browser, to run your code. Since your UI components may use browser features, we try to create a minimal browser environment with JSDom and with some common polyfills.
 
