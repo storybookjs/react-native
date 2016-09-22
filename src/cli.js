@@ -22,9 +22,9 @@ program
   .parse(process.argv);
 
 const {
-  configDir='./.storybook',
-  polyfills: polyfillsPath,
-  loaders: loadersPath,
+  configDir = './.storybook',
+  polyfills: polyfillsPath = require.resolve('./default_config/polyfills.js'),
+  loaders: loadersPath = require.resolve('./default_config/loaders.js'),
 } = program
 
 const configPath = path.resolve(`${configDir}`, 'config');
@@ -37,21 +37,15 @@ delete babelConfig.cacheDirectory;
 require('babel-register')(babelConfig);
 require('babel-polyfill');
 
-const loaders = require('./loaders');
-if (loadersPath) {
-  const userLoaders = require(path.resolve(userLoadersPath));
-  Object.assign(loaders, userLoaders);
-}
-
+// load loaders
+const loaders = require(path.resolve(loadersPath));
 Object.keys(loaders).forEach(ext => {
   const loader = loaders[ext];
   require.extensions[`.${ext}`] = loader;
 })
 
-require('./polyfills');
-if (polyfillsPath) {
-  require(path.resolve(polyfillsPath));
-}
+// load polyfills
+require(path.resolve(polyfillsPath));
 
 async function main () {
   try {

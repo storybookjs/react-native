@@ -131,7 +131,7 @@ function logAllState(state) {
   process.stdout.write(chalk.bold('Test summary\n'));
   process.stdout.write(`> ${total} stories tested.\n`);
   if(matched > 0) {
-    process.stdout.write(chalk.green(`> ${matched}/${total} stories match with snapshots.\n`));
+    process.stdout.write(chalk.green(`> ${matched}/${total} stories matched with snapshots.\n`));
   }
   if(unmatched > 0) {
     process.stdout.write(chalk.red(`> ${unmatched}/${total} differ from snapshots.\n`));
