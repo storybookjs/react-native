@@ -108,7 +108,7 @@ function logSummary(state) {
     process.stdout.write(chalk.green(`> ${matched}/${total} stories matched with snapshots.\n`));
   }
   if (unmatched > 0) {
-    process.stdout.write(chalk.red(`> ${unmatched}/${total} differ from snapshots.\n`));
+    process.stdout.write(chalk.red(`> ${unmatched}/${total} differed from snapshots.\n`));
   }
   if (updated > 0) {
     process.stdout.write(chalk.cyan(`> ${updated} snapshots updated to match current stories.\n`));
