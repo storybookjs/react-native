@@ -20,7 +20,7 @@ npm update @kadira/storybook
 Then add the following NPM module into your app.
 
 ```sh
-npm i -D @kadirahq/storyshots
+npm i -D @kadira/storyshots
 ```
 
 Then, add a NPM script as follows:
