@@ -46,6 +46,7 @@
     "chokidar": "^1.6.0",
     "jest-diff": "^15.1.0",
     "jest-snapshot": "^15.1.1",
+    "jsdom": "^9.5.0",
     "promptly": "^2.1.0",
     "react-test-renderer": "^15.3.1",
     "require-hijack": "^1.2.1"

@@ -1,6 +1,7 @@
 import runTests from './test_runner';
 import { getStorybook } from '@kadira/storybook';
 import path from 'path';
+import fs from 'fs';
 import program from 'commander';
 import chokidar from 'chokidar';
 import EventEmitter from 'events';
@@ -16,9 +17,15 @@ program
           'Update saved story snapshots interactively')
   .option('-g, --grep [string]', 'only test stories matching regexp')
   .option('-w, --watch [boolean]', 'watch file changes and rerun tests')
+  .option('--polyfills [string]', 'add global polyfills')
+  .option('--loaders [string]', 'add loaders')
   .parse(process.argv);
 
-const configDir = program.configDir || './.storybook';
+const {
+  configDir='./.storybook',
+  polyfills: polyfillsPath,
+  loaders: loadersPath,
+} = program
 
 const configPath = path.resolve(`${configDir}`, 'config');
 
@@ -30,20 +37,21 @@ delete babelConfig.cacheDirectory;
 require('babel-register')(babelConfig);
 require('babel-polyfill');
 
-const fileExts = ['jpg', 'png', 'gif', 'eot', 'svg', 'ttf', 'woff', 'woff2']
-const moduleExts = ['css', 'scss', 'sass']
+const loaders = require('./loaders');
+if (loadersPath) {
+  const userLoaders = require(path.resolve(userLoadersPath));
+  Object.assign(loaders, userLoaders);
+}
 
-fileExts.forEach(ext => {
-  require.extensions[`.${ext}`] = function () {
-    return '';
-  };
+Object.keys(loaders).forEach(ext => {
+  const loader = loaders[ext];
+  require.extensions[`.${ext}`] = loader;
 })
 
-moduleExts.forEach(ext => {
-  require.extensions[`.${ext}`] = function () {
-    return {};
-  };
-})
+require('./polyfills');
+if (polyfillsPath) {
+  require(path.resolve(polyfillsPath));
+}
 
 async function main () {
   try {
