@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.0.3
+23-September-2016
+
+Fix a typo in the console Summary message.
+
 ### v1.0.1
 22-September-2016
 
