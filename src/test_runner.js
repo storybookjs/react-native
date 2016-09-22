@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import jestSnapshot from 'jest-snapshot';
 import ReactTestRenderer from 'react-test-renderer';
 import diff from 'jest-diff';

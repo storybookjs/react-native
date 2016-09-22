@@ -1,10 +1,2 @@
-*.swp
-*~
-*.iml
-.*.haste_cache.*
-.DS_Store
-.idea
+src
 .babelrc
-.eslintrc
-npm-debug.log
-lib

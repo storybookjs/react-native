@@ -9,15 +9,15 @@ Object.keys(document.defaultView).forEach((property) => {
 });
 
 global.navigator = {
-  userAgent: 'node.js'
+  userAgent: 'node.js',
 };
 
 global.localStorage = global.window.localStorage = {
-  _data       : {},
-  setItem     : function(id, val) { return this._data[id] = String(val); },
-  getItem     : function(id) { return this._data.hasOwnProperty(id) ? this._data[id] : undefined; },
-  removeItem  : function(id) { return delete this._data[id]; },
-  clear       : function() { return this._data = {}; }
+  _data: {},
+  setItem(id, val) { return this._data[id] = String(val); },
+  getItem(id) { return this._data.hasOwnProperty(id) ? this._data[id] : undefined; },
+  removeItem(id) { return delete this._data[id]; },
+  clear() { return this._data = {}; },
 };
 
 window.matchMedia = () => ({ matches: true });

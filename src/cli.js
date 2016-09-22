@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import runTests from './test_runner';
 import { getStorybook } from '@kadira/storybook';
 import path from 'path';
