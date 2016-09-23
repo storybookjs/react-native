@@ -27,11 +27,11 @@ program
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
 getEnvConfig(program, {
-  port: 'STORYBOOK_PORT',
-  host: 'STORYBOOK_HOST',
-  staticDir: 'STORYBOOK_STATIC_DIR',
-  configDir: 'STORYBOOK_CONFIG_DIR',
-  dontTrack: 'STORYBOOK_DO_NOT_TRACK',
+  port: 'PORT',
+  host: 'HOSTNAME',
+  staticDir: 'STATIC_DIR',
+  configDir: 'CONFIG_DIR',
+  dontTrack: 'DO_NOT_TRACK',
 });
 
 if (program.dontTrack) {

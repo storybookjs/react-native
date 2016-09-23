@@ -29,9 +29,9 @@ program
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
 getEnvConfig(program, {
-  staticDir: 'STORYBOOK_STATIC_DIR',
-  outputDir: 'STORYBOOK_OUTPUT_DIR',
-  configDir: 'STORYBOOK_CONFIG_DIR',
+  staticDir: 'STATIC_DIR',
+  outputDir: 'OUTPUT_DIR',
+  configDir: 'CONFIG_DIR',
 });
 
 const configDir = program.configDir || './.storybook';
