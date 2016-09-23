@@ -55,9 +55,9 @@ _commander2.default.version(_package2.default.version).option('-s, --static-dir 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
 (0, _utils.getEnvConfig)(_commander2.default, {
-  staticDir: 'STORYBOOK_STATIC_DIR',
-  outputDir: 'STORYBOOK_OUTPUT_DIR',
-  configDir: 'STORYBOOK_CONFIG_DIR'
+  staticDir: 'STATIC_DIR',
+  outputDir: 'OUTPUT_DIR',
+  configDir: 'CONFIG_DIR'
 });
 
 var configDir = _commander2.default.configDir || './.storybook';

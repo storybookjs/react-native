@@ -46,11 +46,11 @@ _commander2.default.version(_package2.default.version).option('-p, --port [numbe
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
 (0, _utils.getEnvConfig)(_commander2.default, {
-  port: 'STORYBOOK_PORT',
-  host: 'STORYBOOK_HOST',
-  staticDir: 'STORYBOOK_STATIC_DIR',
-  configDir: 'STORYBOOK_CONFIG_DIR',
-  dontTrack: 'STORYBOOK_DO_NOT_TRACK'
+  port: 'PORT',
+  host: 'HOSTNAME',
+  staticDir: 'STATIC_DIR',
+  configDir: 'CONFIG_DIR',
+  dontTrack: 'DO_NOT_TRACK'
 });
 
 if (_commander2.default.dontTrack) {
