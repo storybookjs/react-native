@@ -28,9 +28,7 @@ exports.default = function () {
         screw_ie8: true,
         warnings: false
       },
-      mangle: {
-        screw_ie8: true
-      },
+      mangle: false,
       output: {
         comments: false,
         screw_ie8: true
