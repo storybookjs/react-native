@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.18.1
+23-September-2016
+
+* Stop uglifyjs from mangling names [PR483](https://github.com/kadirahq/react-storybook/pull/483)
+
 ### v2.18.0
 23-September-2016
 
