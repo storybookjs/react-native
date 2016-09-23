@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.18.0
+23-September-2016
+
+* Remove `STORYBOOK_` prefix from config env [PR481](https://github.com/kadirahq/react-storybook/pull/481)
+
 ### v2.17.0
 22-September-2016
 
