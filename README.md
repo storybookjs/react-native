@@ -21,9 +21,13 @@ import '@kadira/storybook-addon-options/register';
 Import and use the `setOptions` function in your config.json file.
 
 ```js
-import { setOptions } from '@kadira/storybook-addon-options'
+import * as storybook from '@kadira/storybook';
+import { setOptions } from '../preview';
 
 setOptions({
-  // ...
+  name : 'CUSTOM-OPTIONS',
+  url: 'https://github.com/kadirahq/storybook-addon-options',
 });
+
+storybook.configure(() => require('./stories'), module);
 ```
