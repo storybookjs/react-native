@@ -27,7 +27,7 @@ export default class SnapshotRunner {
 
     const key = story.name;
     const hasSnapshot = snapshot.has(key);
-    const context = { kind: this.kind, story };
+    const context = { kind: this.kind, story: story.name };
     const tree = story.render(context);
     const renderer = ReactTestRenderer.create(tree);
     const actual = renderer.toJSON();
