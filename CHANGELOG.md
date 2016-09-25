@@ -1,5 +1,11 @@
 # Changelog
 
+### v1.2.2
+25-September-2016
+
+Fix copy-paste error [PR37](https://github.com/kadirahq/storybook-addon-knobs/pull/37)
+Remove <div> wrapper from WrapStory [PR42](https://github.com/kadirahq/storybook-addon-knobs/pull/42)
+
 ### v1.2.1
 20-September-2016
 
