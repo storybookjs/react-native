@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storyshots",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "StoryShots - Snapshot Testing for React Storybook.",
   "repository": {
     "type": "git",
