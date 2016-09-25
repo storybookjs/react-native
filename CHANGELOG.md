@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v1.0.4
+25-September-2016
+
+* Fix missing dependencies. [PR21](https://github.com/kadirahq/storyshots/pull/21)
+* Context should contain only the story name. [PR20](https://github.com/kadirahq/storyshots/pull/20)
+
 ### v1.0.3
 23-September-2016
 
