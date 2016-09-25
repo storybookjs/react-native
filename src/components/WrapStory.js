@@ -51,7 +51,7 @@ export default class WrapStory extends React.Component {
 
   render() {
     const { storyFn, context } = this.props;
-    return <div>{storyFn(context)}</div>;
+    return storyFn(context);
   }
 }
 
