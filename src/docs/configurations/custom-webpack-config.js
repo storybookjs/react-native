@@ -78,7 +78,25 @@ export default {
 
     Other than that, you should try to keep the default set of plugins.
 
-    ## Using your existing config
+    ## Extending The Default Config
+
+    You may want to keep Storybook's [default config](/docs/configurations/default-config), but just need to extend it. If so, this is how you do it using the Full Control Mode.
+    Add following content to the \`webpack.config.js\` in your Storybook config directory.
+
+    ~~~js
+    // load the default config generator.
+    var genDefaultConfig = require('@kadira/storybook/dist/server/config/defaults/webpack.config.js');
+
+    module.exports = function(config, env) {
+      var config = genDefaultConfig(config, env);
+
+      // Extend it as you need.
+
+      return config;
+    };
+    ~~~
+
+    ## Using Your Existing Config
 
     You may have an existing Webpack config for your project. So, you may need to copy and paste some config items into Storybook's custom Webpack config file.
 
