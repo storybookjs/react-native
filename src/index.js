@@ -7,6 +7,7 @@ import { useScroll } from 'react-router-scroll';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import './lib/autolinker';
+import 'airbnb-js-shims';
 
 ReactDOM.render(
   (
