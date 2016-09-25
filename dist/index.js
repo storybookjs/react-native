@@ -48,7 +48,9 @@ function select(name, options, value) {
   return manager.knob(name, { type: 'select', options: options, value: value });
 }
 
-function date(name, value) {
+function date(name) {
+  var value = arguments.length <= 1 || arguments[1] === undefined ? new Date(0) : arguments[1];
+
   var timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
   return new Date(timestamp);
 }

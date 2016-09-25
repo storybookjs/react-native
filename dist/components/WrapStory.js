@@ -103,11 +103,7 @@ var WrapStory = function (_React$Component) {
       var storyFn = _props2.storyFn;
       var context = _props2.context;
 
-      return _react2.default.createElement(
-        'div',
-        null,
-        storyFn(context)
-      );
+      return storyFn(context);
     }
   }]);
   return WrapStory;
