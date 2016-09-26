@@ -46,7 +46,7 @@ export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) 
   };
 }
 
-const defaultState = {
+export const defaultState = {
   actions: [],
   options: {
     name: 'REACT STORYBOOK',

@@ -1,6 +1,8 @@
+import pick from 'lodash.pick';
 import { types } from './';
 import { features } from '../../../libs/key_events';
 import apiActions from '../../api/actions';
+import { defaultState } from '../configs/reducers/shortcuts';
 
 export default {
   handleEvent(context, event) {
@@ -27,4 +29,12 @@ export default {
       layout,
     });
   },
+
+  setOptions(context, options) {
+    const { reduxStore } = context;
+    reduxStore.dispatch({
+      type: types.SET_LAYOUT,
+      layout: pick(options, Object.keys(defaultState)),
+    });
+  }
 };
