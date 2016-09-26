@@ -85,6 +85,6 @@ export default class Preview {
   _selectStory(selection) {
     const {kind, story} = selection;
     const storyFn = this._stories.getStory(kind, story);
-    this._events.emit('story', storyFn);
+    this._events.emit('story', storyFn, selection);
   }
 }
