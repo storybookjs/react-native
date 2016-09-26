@@ -42,6 +42,10 @@ export default {
 
     If you are using Storybook as a style guide, then this addon will help you to build a nice-looking style guide with docs, automatic sample source code with a PropType explorer.
 
+    ### [Options](https://github.com/kadirahq/storybook-addon-options)
+
+    The Storybook webapp UI can be customised with this addon. It can be used to change the header, show/hide various UI elements and to enable full-screen mode by default.
+
     ### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
 
     With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
