@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.5.0
+26-Sep-2016
+
+* Set layout state with provider api [PR41](https://github.com/kadirahq/storybook-ui/pull/41)
+
 ### v3.4.1
 2-Sep-2016
 
