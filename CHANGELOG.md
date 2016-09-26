@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.19.0
+26-September-2016
+
+* Support layout options [PR494](https://github.com/kadirahq/react-storybook/pull/494)
+* Update Typescript definitions [PR491](https://github.com/kadirahq/react-storybook/pull/491) and [PR493](https://github.com/kadirahq/react-storybook/pull/493)
+
 ### v2.18.1
 23-September-2016
 
