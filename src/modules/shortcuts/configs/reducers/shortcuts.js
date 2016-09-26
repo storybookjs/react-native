@@ -1,7 +1,7 @@
 import { types } from '../../actions';
 import { features } from '../../../../libs/key_events';
 
-const defaultState = {
+export const defaultState = {
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: true,
