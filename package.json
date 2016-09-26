@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/kadirahq/storybook-addon-options#readme",
   "devDependencies": {
-    "@kadira/storybook": "^2.13.1",
+    "@kadira/storybook": "^2.19.0",
     "@kadira/storybook-addons": "^1.5.0",
     "@kadira/storybook-deployer": "^1.2.0",
-    "@kadira/storybook-ui": "^3.4.1",
+    "@kadira/storybook-ui": "^3.5.0",
     "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
