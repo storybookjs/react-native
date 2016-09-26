@@ -1,70 +1,7 @@
 import chalk from 'chalk';
 import SnapshotRunner from './snapshot_runner';
 
-export default class Runner {
-  constructor(options) {
-    const {
-      configDir = './.storybook',
-      update,
-      updateInteractive: interactive,
-    } = options;
-
-    this.configDir = configDir;
-    this.update = update;
-    this.interactive = interactive;
-
-    this.testState = {
-      added: 0,
-      matched: 0,
-      unmatched: 0,
-      updated: 0,
-      obsolete: 0,
-      errored: 0,
-    };
-
-    this.runner = new SnapshotRunner(configDir);
-  }
-
-  updateState(result) {
-    this.testState[result.state]++;
-    logState(result);
-  }
-
-  completed() {
-    logSummary(this.testState);
-  }
-
-  async run(storybook) {
-    const options = {
-      update: this.update,
-      interactive: this.interactive,
-    };
-
-    for (const group of storybook) {
-      try {
-        this.runner.startKind(group.kind);
-        this.updateState({state: 'started-kind', name: group.kind});
-        for (const story of group.stories) {
-          try {
-            const result = await this.runner.runStory(story, options);
-            this.updateState({...result, name: story.name});
-          } catch (err) {
-            // Error on story
-            this.updateState({state: 'errored', message: err, name: story.name});
-          }
-        }
-        this.runner.endKind(options);
-      } catch (err) {
-        // Error on kind
-        this.updateState({state: 'errored-kind', message: err});
-      }
-    }
-
-    this.completed();
-  }
-}
-
-function logState({state, name, message}) {
+function logState({ state, name, message }) {
   switch (state) {
     case 'added':
       process.stdout.write(chalk.cyan(`+ ${name}: Added`));
@@ -78,15 +15,15 @@ function logState({state, name, message}) {
     case 'unmatched':
       process.stdout.write('\n');
       process.stdout.write(chalk.red(`✗ ${name}\n`));
-      process.stdout.write('  ' + message.split('\n').join('\n  '));
+      process.stdout.write(`  ${message.split('\n').join('\n  ')}`);
       process.stdout.write('\n');
       break;
     case 'errored':
-    case 'errored-kind':
+    case 'errored-kind': // eslint-disable-line
       process.stdout.write('\n');
       process.stdout.write(chalk.red(`✗ ${name}: ERROR\n`));
       const output = message.stack || message;
-      process.stdout.write(chalk.dim('  ' + output.split('\n').join('\n  ')));
+      process.stdout.write(chalk.dim(`  ${output.split('\n').join('\n  ')}`));
       process.stdout.write('\n');
       break;
     case 'started-kind':
@@ -121,5 +58,68 @@ function logSummary(state) {
   }
   if (obsolete > 0) {
     process.stdout.write(chalk.cyan(`> ${obsolete} unused snapshots remaining. Run with -u to remove them.\n`));
+  }
+}
+
+export default class Runner {
+  constructor(options) {
+    const {
+      configDir = './.storybook',
+      update,
+      updateInteractive: interactive,
+    } = options;
+
+    this.configDir = configDir;
+    this.update = update;
+    this.interactive = interactive;
+
+    this.testState = {
+      added: 0,
+      matched: 0,
+      unmatched: 0,
+      updated: 0,
+      obsolete: 0,
+      errored: 0,
+    };
+
+    this.runner = new SnapshotRunner(configDir);
+  }
+
+  updateState(result) {
+    this.testState[result.state] += 1;
+    logState(result);
+  }
+
+  completed() {
+    logSummary(this.testState);
+  }
+
+  async run(storybook) {
+    const options = {
+      update: this.update,
+      interactive: this.interactive,
+    };
+
+    for (const group of storybook) {
+      try {
+        this.runner.startKind(group.kind);
+        this.updateState({ state: 'started-kind', name: group.kind });
+        for (const story of group.stories) {
+          try {
+            const result = await this.runner.runStory(story, options);
+            this.updateState({ ...result, name: story.name });
+          } catch (err) {
+            // Error on story
+            this.updateState({ state: 'errored', message: err, name: story.name });
+          }
+        }
+        this.runner.endKind(options);
+      } catch (err) {
+        // Error on kind
+        this.updateState({ state: 'errored-kind', message: err });
+      }
+    }
+
+    this.completed();
   }
 }

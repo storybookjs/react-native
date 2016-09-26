@@ -1,3 +1,4 @@
+/* globals window, document */
 const jsdom = require('jsdom').jsdom;
 
 global.document = jsdom('');
@@ -14,10 +15,10 @@ global.navigator = {
 
 global.localStorage = global.window.localStorage = {
   _data: {},
-  setItem(id, val) { return this._data[id] = String(val); },
-  getItem(id) { return this._data.hasOwnProperty(id) ? this._data[id] : undefined; },
-  removeItem(id) { return delete this._data[id]; },
-  clear() { return this._data = {}; },
+  setItem(id, val) { this._data[id] = String(val); },
+  getItem(id) { return this._data[id] ? this._data[id] : undefined; },
+  removeItem(id) { delete this._data[id]; },
+  clear() { this._data = {}; },
 };
 
 window.matchMedia = () => ({ matches: true });

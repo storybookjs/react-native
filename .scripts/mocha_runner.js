@@ -4,6 +4,7 @@
 // Do not modify this file.
 // Use `.scripts/user/pretest.js instead`.
 
+process.env.NODE_ENV = 'development';
 require('babel-core/register');
 require('babel-polyfill');
 
