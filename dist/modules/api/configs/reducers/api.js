@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.defaultState = undefined;
 
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
@@ -156,7 +157,7 @@ function jumpToStory(storyKinds, selectedKind, selectedStory, direction) {
   };
 }
 
-var defaultState = {
+var defaultState = exports.defaultState = {
   actions: [],
   options: {
     name: 'REACT STORYBOOK',

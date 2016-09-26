@@ -4,7 +4,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _lodash = require('lodash.pick');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
 var _ = require('./');
+
+var _api = require('../configs/reducers/api');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   setStories: function setStories(_ref, stories) {
@@ -37,7 +49,7 @@ exports.default = {
 
     reduxStore.dispatch({
       type: _.types.SET_OPTIONS,
-      options: options
+      options: (0, _lodash2.default)(options, (0, _keys2.default)(_api.defaultState.options))
     });
   },
   setQueryParams: function setQueryParams(_ref5, customQueryParams) {

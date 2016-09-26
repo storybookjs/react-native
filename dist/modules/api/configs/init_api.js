@@ -28,10 +28,15 @@ exports.default = function (provider, reduxStore, actions) {
 
     setStories: actions.api.setStories,
     selectStory: actions.api.selectStory,
-    setOptions: actions.api.setOptions,
     handleShortcut: actions.shortcuts.handleEvent,
     setQueryParams: actions.api.setQueryParams,
 
+    setOptions: function setOptions() {
+      var _actions$api, _actions$shortcuts;
+
+      (_actions$api = actions.api).setOptions.apply(_actions$api, arguments);
+      (_actions$shortcuts = actions.shortcuts).setOptions.apply(_actions$shortcuts, arguments);
+    },
     getQueryParam: function getQueryParam(key) {
       var _reduxStore$getState = reduxStore.getState();
 

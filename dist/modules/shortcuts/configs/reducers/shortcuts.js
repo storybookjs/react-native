@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.defaultState = undefined;
 
 var _extends2 = require('babel-runtime/helpers/extends');
 
@@ -36,7 +37,7 @@ var _key_events = require('../../../../libs/key_events');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var defaultState = {
+var defaultState = exports.defaultState = {
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: true,
