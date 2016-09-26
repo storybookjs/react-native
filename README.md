@@ -1,4 +1,4 @@
-# StoryShots
+# StoryShots [![CircleCI](https://circleci.com/gh/kadirahq/storyshots.svg?style=shield)](https://circleci.com/gh/kadirahq/storyshots)
 
 Snapshot Testing for [React Storybook](https://github.com/kadirahq/react-storybook)
 
