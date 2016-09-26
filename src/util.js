@@ -1,3 +1,5 @@
+/* eslint import/prefer-default-export: 0 */
+
 export function filterStorybook(storybook, grep) {
   if (!grep || grep.length === 0) {
     return storybook;

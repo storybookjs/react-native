@@ -3,11 +3,11 @@ const moduleExts = ['css', 'scss', 'sass'];
 
 const loaders = {};
 
-fileExts.forEach(ext => {
-  loaders[ext] = (filename) => filename;
+fileExts.forEach((ext) => {
+  loaders[ext] = filename => filename;
 });
 
-moduleExts.forEach(ext => {
+moduleExts.forEach((ext) => {
   loaders[ext] = () => null;
 });
 
