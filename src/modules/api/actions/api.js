@@ -1,4 +1,6 @@
+import pick from 'lodash.pick';
 import { types } from './';
+import { defaultState } from '../configs/reducers/api';
 
 export default {
   setStories({ reduxStore }, stories) {
@@ -26,7 +28,7 @@ export default {
   setOptions({ reduxStore }, options) {
     reduxStore.dispatch({
       type: types.SET_OPTIONS,
-      options,
+      options: pick(options, Object.keys(defaultState.options)),
     });
   },
 
