@@ -25,8 +25,13 @@ import * as storybook from '@kadira/storybook';
 import { setOptions } from '@kadira/storybook-addon-options/preview';
 
 setOptions({
-  name : 'CUSTOM-OPTIONS',
+  name: 'CUSTOM-OPTIONS',
   url: 'https://github.com/kadirahq/storybook-addon-options',
+  goFullScreen: false,
+  showLeftPanel: false,
+  showDownPanel: false,
+  showSearchBox: false,
+  downPanelInRight: false,
 });
 
 storybook.configure(() => require('./stories'), module);
