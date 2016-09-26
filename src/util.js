@@ -1,34 +1,47 @@
 /* eslint import/prefer-default-export: 0 */
 
-export function filterStorybook(storybook, grep) {
-  if (!grep || grep.length === 0) {
+export function filterStorybook(storybook, grep, ignore) {
+  if (!grep && !ignore) {
+    // speed up for simple common case
     return storybook;
   }
 
+  const grepRe = new RegExp(grep);
+  const ignoreRe = new RegExp(ignore);
+
+  const filter = (name) => {
+    if (ignore && ignoreRe.test(name)) {
+      return false;
+    }
+
+    return grepRe.test(name);
+  };
+
   const filteredStorybook = [];
-  for (const group of storybook) {
-    const re = new RegExp(grep);
-    if (re.test(group.kind)) {
+
+  storybook.forEach((group) => {
+    if (ignore && ignoreRe.test(group.kind)) {
+      return;
+    }
+
+    if (grep && grepRe.test(group.kind)) {
       filteredStorybook.push(group);
-      continue;
+      return;
+    }
+
+    const filteredStories = group.stories.filter(story => (filter(story.name)));
+
+    if (filteredStories.length === 0) {
+      return;
     }
 
     const filteredGroup = {
       kind: group.kind,
-      stories: [],
+      stories: filteredStories,
     };
 
-    for (const story of group.stories) {
-      if (re.test(story.name)) {
-        filteredGroup.stories.push(story);
-        continue;
-      }
-    }
-
-    if (filteredGroup.stories.length > 0) {
-      filteredStorybook.push(filteredGroup);
-    }
-  }
+    filteredStorybook.push(filteredGroup);
+  });
 
   return filteredStorybook;
 }
