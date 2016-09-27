@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.1.0
+27-September-2016
+
+Add `--exclude` flag to avoid running stories matching a given regexp. [PR24](https://github.com/kadirahq/storyshots/pull/24) [PR25](https://github.com/kadirahq/storyshots/pull/25)
+
 ### v1.0.5
 25-September-2016
 
