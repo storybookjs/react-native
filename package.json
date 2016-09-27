@@ -14,7 +14,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
-    "mocha": "^3.0.1",
+    "mocha": "^3.1.0",
     "shelljs": "^0.7.3",
     "sinon": "^1.17.5"
   }
