@@ -28,7 +28,7 @@
     "@kadira/storybook-addons": "^1.5.0",
     "@kadira/storybook-channel-pagebus": "^2.0.2",
     "@kadira/storybook-database-local": "^1.2.1",
-    "@kadira/storybook-ui": "^3.5.0",
+    "@kadira/storybook-ui": "^3.6.0",
     "airbnb-js-shims": "^1.0.1",
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.11.4",
