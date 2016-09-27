@@ -10,6 +10,7 @@ const iframeStyle = {
 
 const Preview = ({ url }) => (
   <iframe
+    id="storybook-preview-iframe"
     style={iframeStyle}
     src={url}
   />
