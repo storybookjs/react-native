@@ -85,7 +85,7 @@ if (program.watch) {
   });
 
   watcher.on('ready', () => {
-    console.log('storybook-snapshot-test is in watch mode.');
+    console.log('\nStoryshots is in watch mode.\n');
     watcher.on('all', () => {
       // Need to remove the require cache. Because it containes modules before
       // changes were made.

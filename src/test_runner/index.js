@@ -73,15 +73,6 @@ export default class Runner {
     this.update = update;
     this.interactive = interactive;
 
-    this.testState = {
-      added: 0,
-      matched: 0,
-      unmatched: 0,
-      updated: 0,
-      obsolete: 0,
-      errored: 0,
-    };
-
     this.runner = new SnapshotRunner(configDir);
   }
 
@@ -90,7 +81,18 @@ export default class Runner {
     logState(result);
   }
 
-  completed() {
+  start() {
+    this.testState = {
+      added: 0,
+      matched: 0,
+      unmatched: 0,
+      updated: 0,
+      obsolete: 0,
+      errored: 0,
+    };
+  }
+
+  end() {
     logSummary(this.testState);
   }
 
@@ -99,6 +101,8 @@ export default class Runner {
       update: this.update,
       interactive: this.interactive,
     };
+
+    this.start();
 
     for (const group of storybook) {
       try {
@@ -120,6 +124,6 @@ export default class Runner {
       }
     }
 
-    this.completed();
+    this.end();
   }
 }
