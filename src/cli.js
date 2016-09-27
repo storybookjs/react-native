@@ -17,7 +17,7 @@ program
   .option('-i, --update-interactive [boolean]',
           'Update saved story snapshots interactively')
   .option('-g, --grep [string]', 'only test stories matching regexp')
-  .option('-i, --ignore [string]', 'ignore stories matching regexp')
+  .option('-x, --exclude [string]', 'exclude stories matching regexp')
   .option('-w, --watch [boolean]', 'watch file changes and rerun tests')
   .option('--polyfills [string]', 'add global polyfills')
   .option('--loaders [string]', 'add loaders')
@@ -28,7 +28,7 @@ const {
   polyfills: polyfillsPath = require.resolve('./default_config/polyfills.js'),
   loaders: loadersPath = require.resolve('./default_config/loaders.js'),
   grep,
-  ignore,
+  exclude,
 } = program;
 
 const configPath = path.resolve(`${configDir}`, 'config');
@@ -72,7 +72,7 @@ async function main() {
     // We need to polyfill it for the server side.
     const channel = new EventEmitter();
     addons.setChannel(channel);
-    await runner.run(filterStorybook(storybook, grep, ignore));
+    await runner.run(filterStorybook(storybook, grep, exclude));
   } catch (e) {
     console.log(e.stack);
   }
