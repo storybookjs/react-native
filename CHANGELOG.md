@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.6.0
+27-Sep-2016
+
+* Dynamic Panel titles [PR42](https://github.com/kadirahq/storybook-ui/pull/42)
+
 ### v3.5.0
 26-Sep-2016
 
