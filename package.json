@@ -1,0 +1,19 @@
+{
+  "name": "@kadira/storybook-channel-postmsg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "node .scripts/npm-prepublish.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-react-app": "^0.2.1",
+    "shelljs": "^0.7.3"
+  },
+  "dependencies": {
+    "@kadira/storybook-channel": "^1.1.0"
+  }
+}
