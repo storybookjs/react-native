@@ -44,11 +44,11 @@ export class PostmsgTransport {
     if (window.top === window.self) {
       // FIXME this is a really bad idea! use a better way to do this.
       // This finds the storybook preview iframe to send messages to.
-      const iframes = document.getElementsByTagName('iframe');
-      if (!iframes.length) {
+      const iframe = document.getElementById('storybook-preview-iframe');
+      if (!iframe) {
         return null;
       }
-      return iframes[0].contentWindow;
+      return iframe.contentWindow;
     }
     return window.top;
   }
