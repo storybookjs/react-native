@@ -92,6 +92,8 @@ You may don't want to storyshot each and every of your stories. If so, you could
 npm run test-storybook -- -g "theme"
 ```
 
+You can also use the `-x` option similarly to exclude some stories.
+
 ### Provide Custom Loaders
 
 When we are running your stories, we don't use Webpack. So, we can't import files other than `.js` and `.json`.
