@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.20.0
+26-September-2016
+
+* Use postMessage channel [PR498](https://github.com/kadirahq/react-storybook/pull/498)
+* Support dynamic panel titles [PR497](https://github.com/kadirahq/react-storybook/pull/497)
+
 ### v2.19.0
 26-September-2016
 
