@@ -21,6 +21,7 @@ var iframeStyle = {
 var Preview = function Preview(_ref) {
   var url = _ref.url;
   return _react2.default.createElement('iframe', {
+    id: 'storybook-preview-iframe',
     style: iframeStyle,
     src: url
   });

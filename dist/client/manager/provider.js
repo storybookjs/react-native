@@ -42,9 +42,9 @@ var _storybookAddons = require('@kadira/storybook-addons');
 
 var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
 
-var _storybookChannelPagebus = require('@kadira/storybook-channel-pagebus');
+var _storybookChannelPostmsg = require('@kadira/storybook-channel-postmsg');
 
-var _storybookChannelPagebus2 = _interopRequireDefault(_storybookChannelPagebus);
+var _storybookChannelPostmsg2 = _interopRequireDefault(_storybookChannelPostmsg);
 
 var _storybookDatabaseLocal = require('@kadira/storybook-database-local');
 
@@ -68,7 +68,7 @@ var ReactProvider = function (_Provider) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
 
     _this.dataId = _uuid2.default.v4();
-    _this.channel = (0, _storybookChannelPagebus2.default)({ key: _this.dataId });
+    _this.channel = (0, _storybookChannelPostmsg2.default)({ key: _this.dataId });
     _storybookAddons2.default.setChannel(_this.channel);
     _this.database = _storybookAddons2.default.getDatabase();
     if (!_this.database && process.env.STORYBOOK_ENABLE_DB) {
