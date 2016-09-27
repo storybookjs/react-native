@@ -20,7 +20,8 @@
     "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
-    "storybook": "start-storybook -p 9010",
+    "storybook": "NODE_ENV=development start-storybook -p 9010",
+    "storyshots": "node .scripts/run_local_storyshots.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "peerDependencies": {
