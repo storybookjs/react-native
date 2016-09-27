@@ -2,7 +2,7 @@
 
 import { createStore } from 'redux';
 import addons from '@kadira/storybook-addons';
-import createChannel from '@kadira/storybook-channel-pagebus';
+import createChannel from '@kadira/storybook-channel-postmsg';
 import qs from 'qs';
 import StoryStore from './story_store';
 import ClientApi from './client_api';

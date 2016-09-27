@@ -6,7 +6,7 @@ import qs from 'qs';
 import React from 'react';
 import { Provider } from '@kadira/storybook-ui';
 import addons from '@kadira/storybook-addons';
-import createChannel from '@kadira/storybook-channel-pagebus';
+import createChannel from '@kadira/storybook-channel-postmsg';
 import createDatabase from '@kadira/storybook-database-local';
 import Preview from './preview';
 
