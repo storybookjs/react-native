@@ -15,6 +15,11 @@ class DownPanel extends Component {
       };
     };
 
+    let title = panel.title;
+    if (typeof title === 'function') {
+      title = title();
+    }
+
     return (
       <a
         href="#"
@@ -22,7 +27,7 @@ class DownPanel extends Component {
         style={tabStyle}
         onClick={onClick()}
       >
-        {panel.title}
+        {title}
       </a>
     );
   }
