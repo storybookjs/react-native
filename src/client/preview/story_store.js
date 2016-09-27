@@ -29,6 +29,7 @@ export default class StoryStore {
   getStoryKinds() {
     return Object.keys(this._data)
       .map(key => this._data[key])
+      .filter(kind => Object.keys(kind.stories).length > 0)
       .sort((info1, info2) => (info1.index - info2.index))
       .map(info => info.kind);
   }
@@ -59,7 +60,7 @@ export default class StoryStore {
   }
 
   removeStoryKind(kind) {
-    delete this._data[kind];
+    this._data[kind].stories = {};
   }
 
   hasStoryKind(kind) {
