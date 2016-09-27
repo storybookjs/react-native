@@ -67,6 +67,11 @@ var DownPanel = function (_Component) {
         };
       };
 
+      var title = panel.title;
+      if (typeof title === 'function') {
+        title = title();
+      }
+
       return _react2.default.createElement(
         'a',
         {
@@ -75,7 +80,7 @@ var DownPanel = function (_Component) {
           style: tabStyle,
           onClick: onClick()
         },
-        panel.title
+        title
       );
     }
   }, {
