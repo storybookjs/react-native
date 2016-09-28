@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.2.3
+28-September-2016
+
+Remove setting selected prop in options in Select knobs [PR47](https://github.com/kadirahq/storybook-addon-knobs/pull/47)
+
 ### v1.2.2
 25-September-2016
 
