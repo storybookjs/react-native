@@ -27,11 +27,11 @@ program
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
 getEnvConfig(program, {
-  port: 'PORT',
-  host: 'HOSTNAME',
-  staticDir: 'STATIC_DIR',
-  configDir: 'CONFIG_DIR',
-  dontTrack: 'DO_NOT_TRACK',
+  port: 'SBCONFIG_PORT',
+  host: 'SBCONFIG_HOSTNAME',
+  staticDir: 'SBCONFIG_STATIC_DIR',
+  configDir: 'SBCONFIG_CONFIG_DIR',
+  dontTrack: 'SBCONFIG_DO_NOT_TRACK',
 });
 
 if (program.dontTrack) {
