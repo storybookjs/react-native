@@ -25,7 +25,7 @@ export class PostmsgTransport {
         this._buffer.push({ event, resolve, reject });
       });
     }
-    const data = JSON.stringify({ key: this._key, event });
+    const data = { key: this._key, event };
     iframeWindow.postMessage(data, '*');
     return Promise.resolve(null);
   }
@@ -54,7 +54,10 @@ export class PostmsgTransport {
   }
 
   _handleEvent(e) {
-    const { key, event } = JSON.parse(e.data);
+    if(!e.data || typeof(e.data) !== 'object') {
+      return;
+    }
+    const { key, event } = e.data;
     if (key !== this._key) {
       return null;
     }
