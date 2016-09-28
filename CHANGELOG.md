@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.20.1
+28-September-2016
+
+* Fix story kind order bug [PR499](https://github.com/kadirahq/react-storybook/pull/499)
+* Prefix config environment variables [PR503](https://github.com/kadirahq/react-storybook/pull/503)
+
 ### v2.20.0
 26-September-2016
 
