@@ -33,7 +33,7 @@
     "babel-cli": "^6.11.4",
     "greenkeeper-postpublish": "^1.0.1",
     "react": "^15.2.0",
-    "react-native": "^0.33.0"
+    "react-native": "^0.34.1"
   },
   "dependencies": {
     "@kadira/storybook-addon-actions": "^1.0.4",
