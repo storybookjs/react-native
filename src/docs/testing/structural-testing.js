@@ -23,9 +23,9 @@ export default {
 
     > We can also commit these snapshots directly into the source code.
 
-    ## Using [StoryShots](https://github.com/kadirahq/storyshots)
+    ## Using StoryShots
 
-    StoryShots is our integration between Storybook and Jest Snapshot Testing. It's pretty simple to use.
+    [StoryShots](https://github.com/kadirahq/storyshots) is our integration between Storybook and Jest Snapshot Testing. It's pretty simple to use.
 
     First, make sure you are inside a Storybook-enabled repo (make sure it has few stories).
     Then, install StoryShots into your app with:
