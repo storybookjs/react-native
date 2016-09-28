@@ -40,7 +40,7 @@
     "react": "^0.14.7 || ^15.0.0",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^0.14.7 || ^15.0.0",
-    "sinon": "^1.17.3"
+    "sinon": "^1.17.6"
   },
   "peerDependencies": {
     "react": "^0.14.7 || ^15.0.0"
