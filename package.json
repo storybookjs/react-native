@@ -33,7 +33,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^6.2.2",
-    "mocha": "^2.4.5",
+    "mocha": "^3.1.0",
     "chai": "^3.5.0",
     "sinon": "^1.17.3",
     "enzyme": "^2.2.0",
