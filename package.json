@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/kadirahq/storybook-addon-links#readme",
   "devDependencies": {
-    "@kadira/storybook": "^2.20.0",
+    "@kadira/storybook": "^2.20.1",
     "@kadira/storybook-addons": "^1.3.0",
     "@kadira/storybook-ui": "^3.0.0",
     "babel-cli": "^6.11.4",
