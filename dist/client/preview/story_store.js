@@ -56,6 +56,8 @@ var StoryStore = function () {
 
       return (0, _keys2.default)(this._data).map(function (key) {
         return _this._data[key];
+      }).filter(function (kind) {
+        return (0, _keys2.default)(kind.stories).length > 0;
       }).sort(function (info1, info2) {
         return info1.index - info2.index;
       }).map(function (info) {
@@ -97,7 +99,7 @@ var StoryStore = function () {
   }, {
     key: "removeStoryKind",
     value: function removeStoryKind(kind) {
-      delete this._data[kind];
+      this._data[kind].stories = {};
     }
   }, {
     key: "hasStoryKind",
