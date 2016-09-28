@@ -17,7 +17,7 @@ import MyComponent from '../my_component';
 import centered from '@kadira/react-storybook-decorator-centered';
 
 storiesOf('MyComponent', module)
-  .addDecorator(centered);
+  .addDecorator(centered)
   .add('without props', () => (<MyComponent />))
   .add('with some props', () => (<MyComponent text="The Comp"/>));
 ```
