@@ -29,7 +29,7 @@
     "babel-plugin-transform-runtime": "^6.5.0",
     "babel-cli": "^6.5.0",
     "eslint": "^2.7.0",
-    "babel-eslint": "^6.0.2",
+    "babel-eslint": "^7.0.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^6.2.2",
