@@ -6,7 +6,6 @@ We welcome you help to make React Storybook better. This document will help to s
 
 No software is bug free. So, if you got an issue, follow these steps:
 
-* Check the [Known Issues](https://github.com/kadirahq/react-storybook/blob/master/docs/known_issues.md) list.
 * Search the [issue list](https://github.com/kadirahq/react-storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
 * If non of that is helping, create an issue with with following information:
   * Clear title (make is shorter if possible).
