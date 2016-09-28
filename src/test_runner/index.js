@@ -125,5 +125,6 @@ export default class Runner {
     }
 
     this.end();
+    return this.testState;
   }
 }

@@ -72,9 +72,18 @@ async function main() {
     // We need to polyfill it for the server side.
     const channel = new EventEmitter();
     addons.setChannel(channel);
-    await runner.run(filterStorybook(storybook, grep, exclude));
+    const result = await runner.run(filterStorybook(storybook, grep, exclude));
+    const fails = result.errored + result.unmatched;
+    const exitCode = fails > 0 ? 1: 0;
+    if(!program.watch){
+      process.exit(exitCode);
+    }
   } catch (e) {
-    console.log(e.stack);
+    console.log(e.stack || e);
+
+    if(!program.watch){
+      process.exit(1);
+    }
   }
 }
 
