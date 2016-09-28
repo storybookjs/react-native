@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v1.1.1
+28-September-2016
+
+* Watch mode Summary shows the stats for the last run only. [PR27](https://github.com/kadirahq/storyshots/pull/27)
+* If some tests fail exit with status code 1. [PR28](https://github.com/kadirahq/storyshots/pull/28)
+
 ### v1.1.0
 27-September-2016
 
