@@ -18,7 +18,7 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "react": "^15.0.0",
+    "react": "^15.3.2",
     "react-dom": "^15.0.0",
     "babel-core": "^6.5.0",
     "babel-loader": "^6.2.4",
