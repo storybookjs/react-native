@@ -31,11 +31,13 @@
 
 #docs-content .markdown h2 {
   font-size: 20px;
+  margin: 30px 0 10px 0;
 }
 
 #docs-content .markdown h3 {
-  font-size: 16px;
-  color: #444;
+  font-size: 18px;
+  margin: 30px 0 10px 0;
+  font-weight: 800;
 }
 
 #docs-content .markdown a,

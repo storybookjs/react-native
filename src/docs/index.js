@@ -25,6 +25,17 @@ const data = {
       ]
     },
     {
+      id: 'testing',
+      heading: 'Testing',
+      items: [
+        require('./testing/react-ui-testing').default,
+        require('./testing/structural-testing').default,
+        require('./testing/interaction-testing').default,
+        require('./testing/css-style-testing').default,
+        require('./testing/manual-testing').default,
+      ]
+    },
+    {
       id: 'addons',
       heading: 'Addons',
       items: [
