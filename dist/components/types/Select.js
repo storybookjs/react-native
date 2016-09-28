@@ -58,15 +58,11 @@ var SelectType = function (_React$Component) {
 
   (0, _createClass3.default)(SelectType, [{
     key: '_makeOpt',
-    value: function _makeOpt(key, val, selected) {
+    value: function _makeOpt(key, val) {
       var opts = {
         key: key,
-        selected: 'selected',
         value: key
       };
-      if (selected !== key) {
-        delete opts.selected;
-      }
 
       return _react2.default.createElement(
         'option',
@@ -79,16 +75,14 @@ var SelectType = function (_React$Component) {
     value: function _options(values) {
       var _this2 = this;
 
-      var selected = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
-
       var data = [];
       if (Array.isArray(values)) {
         data = values.map(function (val) {
-          return _this2._makeOpt(val, val, selected);
+          return _this2._makeOpt(val, val);
         });
       } else {
         data = (0, _keys2.default)(values).map(function (key) {
-          return _this2._makeOpt(key, values[key], selected);
+          return _this2._makeOpt(key, values[key]);
         });
       }
 

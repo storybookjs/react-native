@@ -15,24 +15,20 @@ const styles = {
 };
 
 class SelectType extends React.Component {
-  _makeOpt(key, val, selected) {
+  _makeOpt(key, val) {
     const opts = {
       key,
-      selected: 'selected',
       value: key,
     };
-    if (selected !== key) {
-      delete(opts.selected);
-    }
 
     return <option {...opts}>{val}</option>;
   }
-  _options(values, selected = '') {
+  _options(values) {
     let data = [];
     if (Array.isArray(values)) {
-      data = values.map(val => this._makeOpt(val, val, selected));
+      data = values.map(val => this._makeOpt(val, val));
     } else {
-      data = Object.keys(values).map(key => this._makeOpt(key, values[key], selected));
+      data = Object.keys(values).map(key => this._makeOpt(key, values[key]));
     }
 
     return data;
