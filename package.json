@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.0.0",
+    "react-dom": "^15.3.2",
     "babel-core": "^6.5.0",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.5.0",
