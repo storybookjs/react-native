@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.6.1
+29-Sep-2016
+
+* Use links in story list for accessibility [PR43](https://github.com/kadirahq/storybook-ui/pull/43)
+
 ### v3.6.0
 27-Sep-2016
 
