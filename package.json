@@ -14,6 +14,7 @@
     "shelljs": "^0.7.3"
   },
   "dependencies": {
-    "@kadira/storybook-channel": "^1.1.0"
+    "@kadira/storybook-channel": "^1.1.0",
+    "json-stringify-safe": "^5.0.1"
   }
 }
