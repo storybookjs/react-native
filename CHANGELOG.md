@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.0.3
+28-Sep-2016
+
+* Serialize data because some objects throw error when sent over postMessage [PR3](https://github.com/kadirahq/storybook-channel-postmsg/pull/3)
+
 ### v1.0.2
 28-Sep-2016
 
