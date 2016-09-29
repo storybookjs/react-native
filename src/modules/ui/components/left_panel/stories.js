@@ -5,6 +5,11 @@ const listStyle = {
   ...baseFonts,
 };
 
+const listStyleType = {
+  listStyleType: 'none',
+  'padding-left': 0,
+};
+
 const kindStyle = {
   fontSize: 15,
   padding: '10px 0px',
@@ -37,10 +42,8 @@ class Stories extends React.Component {
 
   renderStory(story) {
     const { selectedStory } = this.props;
-    const style = { ...storyStyle };
+    const style = { display: 'block', ...storyStyle };
     const props = {
-      key: story,
-      style,
       onClick: this.fireOnStory.bind(this, story),
     };
 
@@ -49,41 +52,39 @@ class Stories extends React.Component {
     }
 
     return (
-      <div {...props}>
-        {story}
-      </div>
+      <li key={story}>
+        <a style={style} onClick={props.onClick}>{story}</a>
+      </li>
     );
   }
 
   renderKind({ kind, stories }) {
     const { selectedKind } = this.props;
-    const style = { ...kindStyle };
+    const style = { display: 'block', ...kindStyle };
+    const onClick = this.fireOnKind.bind(this, kind);
 
     if (kind === selectedKind) {
       style.fontWeight = 'bold';
       return (
-        <div key={kind}>
-          <div
-            style={style}
-            onClick={this.fireOnKind.bind(this, kind)}
-          >
+        <li key={kind}>
+          <a style={style} onClick={onClick}>
             {kind}
-          </div>
+          </a>
           <div>
-            {stories.map(this.renderStory)}
+            <ul style={listStyleType}>
+              {stories.map(this.renderStory)}
+            </ul>
           </div>
-        </div>
+        </li>
       );
     }
 
     return (
-      <div
-        key={kind}
-        style={style}
-        onClick={this.fireOnKind.bind(this, kind, null)}
-      >
-        {kind}
-      </div>
+      <li key={kind}>
+        <a style={style} onClick={onClick}>
+          {kind}
+        </a>
+      </li>
     );
   }
 
@@ -91,7 +92,9 @@ class Stories extends React.Component {
     const { stories } = this.props;
     return (
       <div style={listStyle}>
-        {stories.map(this.renderKind)}
+        <ul style={listStyleType}>
+          {stories.map(this.renderKind)}
+        </ul>
       </div>
     );
   }
