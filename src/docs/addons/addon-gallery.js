@@ -49,5 +49,10 @@ export default {
     ### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
 
     With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
+
+    ### [Material-UI](https://github.com/sm-react/storybook-addon-material-ui)
+    
+    Wraps your story into MuiThemeProvider. It allows you to add your custom themes, switch between them, make changes in the visual editor and download as JSON file
+    
   `
 };
