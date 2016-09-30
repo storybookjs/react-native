@@ -56,7 +56,7 @@ export default {
 
     * [BackstopJS](https://github.com/garris/BackstopJS)
     * [PhantomCSS](https://github.com/Huddle/PhantomCSS)
-    * [Gemini](http://gemini-testing.github.io/gemini/index.html)
+    * [Gemini](https://github.com/gemini-testing/gemini)
     * [Happo](https://github.com/Galooshi/happo)
 
     ### 4. Manual Testing
