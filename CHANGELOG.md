@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.1.2
+30-September-2016
+
+Add support for `require.context` inside storybook config module. [PR30](https://github.com/kadirahq/storyshots/pull/30)
+
 ### v1.1.1
 28-September-2016
 
