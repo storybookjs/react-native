@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.4.6
+30-Sep-2016
+
+* Remove index.css import from config.js in CRA.
+
 ### v1.4.5
 06-Aug-2016
 
