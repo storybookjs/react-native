@@ -156,6 +156,11 @@ export default {
       ));
     ~~~
 
+    ## Addon API
+
+    Here we've only used a few functionalities of our [Addon API](/docs/addons/api).
+    You can learn more about the complete API [here](/docs/addons/api).
+
     ## Packaging
 
     You can package this addon into a NPM module very easily. Have a look at this [repo](https://github.com/kadirahq/storybook-addon-notes/tree/version1).
