@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.1.3
+30-September-2016
+
+v1.1.2 introduce a [regression](https://github.com/kadirahq/storyshots/pull/30#issuecomment-250805615). So this revert that version.
+
 ### v1.1.2
 30-September-2016
 
