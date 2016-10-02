@@ -2,7 +2,7 @@
   "name": "storybook-addon-a11y",
   "version": "0.0.3",
   "description": "a11y addon for storybook",
-  "main": "preview.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepublish": "node .scripts/npm-prepublish.js",
     "storybook": "start-storybook -p 9001",
