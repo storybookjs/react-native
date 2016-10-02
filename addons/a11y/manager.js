@@ -1,2 +1,2 @@
-const manager = require('./src/register');
+const manager = require('./dist/register');
 manager.init();
