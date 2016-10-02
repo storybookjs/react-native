@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-a11y",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a11y addon for storybook",
   "main": "preview.js",
   "scripts": {
