@@ -1,0 +1,44 @@
+{
+  "name": "storybook-addon-a11y",
+  "version": "0.0.1",
+  "description": "a11y addon for storybook",
+  "main": "preview.js",
+  "scripts": {
+    "prepublish": "node .scripts/npm-prepublish.js",
+    "storybook": "start-storybook -p 9001",
+    "test": "jest --coverage --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbovenschen/storybook-addon-a11y.git"
+  },
+  "keywords": [
+    "storybook"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbovenschen/storybook-addon-a11y/issues"
+  },
+  "homepage": "https://github.com/jbovenschen/storybook-addon-a11y#readme",
+  "devDependencies": {
+    "@kadira/storybook": "^2.20.1",
+    "babel-cli": "^6.14.0",
+    "babel-jest": "^15.0.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-react-app": "^0.2.1",
+    "jest": "^15.1.1",
+    "lodash": "^4.16.2",
+    "react": "^15.3.1",
+    "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "shelljs": "^0.7.4"
+  },
+  "peerDependencies": {
+    "@kadira/storybook-addons": "^1.5.0",
+    "react": "^0.14.7 || ^15.0.0",
+    "react-dom": "^0.14.7 || ^15.0.0"
+  },
+  "dependencies": {
+    "axe-core": "^2.0.7"
+  }
+}
