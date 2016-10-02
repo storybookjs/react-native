@@ -27,7 +27,7 @@
   "homepage": "https://github.com/kadirahq/react-native-storybook#readme",
   "peerDependencies": {
     "react": "^15.3.2",
-    "react-native": "0.27.0 - 0.33.x"
+    "react-native": "0.27.0 - 0.34.x"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
