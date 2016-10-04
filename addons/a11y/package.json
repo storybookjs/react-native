@@ -26,6 +26,7 @@
     "babel-jest": "^15.0.0",
     "babel-polyfill": "^6.13.0",
     "babel-preset-react-app": "^0.2.1",
+    "faker": "^3.1.0",
     "jest": "^15.1.1",
     "lodash": "^4.16.2",
     "react": "^15.3.1",

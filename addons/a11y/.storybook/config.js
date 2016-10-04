@@ -1,2 +1,9 @@
 import * as storybook from '@kadira/storybook';
-storybook.configure(() => require('./stories'), module);
+
+const req = require.context('./components/', true, /stories\.js$/)
+
+const loadStories = () =>
+  req.keys().forEach(req);
+
+
+storybook.configure(loadStories, module)
