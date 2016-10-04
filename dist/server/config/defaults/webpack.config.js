@@ -28,14 +28,14 @@ module.exports = function (storybookBaseConfig) {
     include: _utils.includePaths,
     loader: require.resolve('json-loader')
   }, {
-    test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
+    test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
     include: _utils.includePaths,
     loader: require.resolve('file-loader'),
     query: {
       name: 'static/media/[name].[hash:8].[ext]'
     }
   }, {
-    test: /\.(mp4|webm)(\?.*)?$/,
+    test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
     include: _utils.includePaths,
     loader: require.resolve('url-loader'),
     query: {
