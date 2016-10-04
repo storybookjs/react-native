@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.6.2
+04-Oct-2016
+
+* Fix a style regression introduced by the previous PR. See: [PR47](https://github.com/kadirahq/storybook-ui/pull/47)
+
 ### v3.6.1
 29-Sep-2016
 
