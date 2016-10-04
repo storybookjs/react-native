@@ -57,12 +57,11 @@ Then you'll get a UI like this:
 ### .setOptions([option])
 
 ```js
-//-------------
 handleAPI(api) {
-  api.setOptions{
+  api.setOptions({
     name: 'My Component', // change the name displayed in the left top portion
     url: 'https://github.com/user/my-component' // change its URL
-  }
+  });
 }
 ```
 
@@ -82,7 +81,7 @@ handleAPI(api) {
       kind: 'Component 2',
       stories: ['State a', 'State b']
     }
-  ]
+  ]);
 }
 ```
 
