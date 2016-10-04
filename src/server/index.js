@@ -11,6 +11,8 @@ import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 import { track, dontTrack } from './track_usage';
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 const logger = console;
 
 program

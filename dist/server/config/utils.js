@@ -37,7 +37,7 @@ var excludePaths = exports.excludePaths = [_path2.default.resolve('./node_module
 
 // Load environment variables starts with STORYBOOK_ to the client side.
 function loadEnv() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   var defaultNodeEnv = options.production ? 'production' : 'development';
   var env = {
