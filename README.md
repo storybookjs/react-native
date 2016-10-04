@@ -144,7 +144,7 @@ Create a file like [this](https://github.com/kadirahq/storyshots/blob/master/src
 Then, run StoryShots like this:
 
 ```sh
-npm run test-storybook -- --polyfills=loaders.js
+npm run test-storybook -- --polyfills=polyfills.js
 ```
 
 ## Other Features
