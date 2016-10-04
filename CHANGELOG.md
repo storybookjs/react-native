@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.1.3
+
+* Support React Native v0.34 [PR #102](https://github.com/kadirahq/react-native-storybook/pull/102).
+
 ## v2.1.2
 
 * Fix bug where context object is missing [PR #83](https://github.com/kadirahq/react-native-storybook/pull/83).
