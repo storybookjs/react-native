@@ -9,6 +9,8 @@ import chokidar from 'chokidar';
 import EventEmitter from 'events';
 import loadBabelConfig from '@kadira/storybook/dist/server/babel_config';
 import { filterStorybook } from './util';
+import runWithRequireContext from './require_context';
+const babel = require('babel-core');
 
 program
   .option('-c, --config-dir [dir-name]',
@@ -31,7 +33,7 @@ const {
   exclude,
 } = program;
 
-const configPath = path.resolve(`${configDir}`, 'config');
+const configPath = path.resolve(configDir, 'config.js');
 
 const babelConfig = loadBabelConfig(configDir);
 
@@ -64,7 +66,12 @@ const runner = new Runner(program);
 
 async function main() {
   try {
-    require(configPath);
+    const content = babel.transformFileSync(configPath, babelConfig).code;
+    const contextOpts = {
+      filename: configPath,
+      dirname: path.resolve(configDir),
+    };
+    runWithRequireContext(content, contextOpts);
     const storybook = require('@kadira/storybook').getStorybook();
     const addons = require('@kadira/storybook-addons').default;
 
