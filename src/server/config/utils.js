@@ -15,6 +15,13 @@ export const excludePaths = [
   path.resolve('./node_modules'),
 ];
 
+export const nodeModulesPaths = path.resolve('./node_modules');
+
+export const nodePaths = (process.env.NODE_PATH || '')
+  .split(process.platform === 'win32' ? ';' : ':')
+  .filter(Boolean)
+  .map(p => path.resolve('./', p));
+
 // Load environment variables starts with STORYBOOK_ to the client side.
 export function loadEnv(options = {}) {
   const defaultNodeEnv = options.production ? 'production' : 'development';
@@ -30,5 +37,3 @@ export function loadEnv(options = {}) {
 
   return env;
 }
-
-export const nodeModulesPaths = path.resolve('./node_modules');

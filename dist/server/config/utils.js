@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.nodeModulesPaths = exports.excludePaths = exports.includePaths = exports.OccurenceOrderPlugin = undefined;
+exports.nodePaths = exports.nodeModulesPaths = exports.excludePaths = exports.includePaths = exports.OccurenceOrderPlugin = undefined;
 
 var _keys = require('babel-runtime/core-js/object/keys');
 
@@ -35,6 +35,12 @@ var includePaths = exports.includePaths = [_path2.default.resolve('./')];
 
 var excludePaths = exports.excludePaths = [_path2.default.resolve('./node_modules')];
 
+var nodeModulesPaths = exports.nodeModulesPaths = _path2.default.resolve('./node_modules');
+
+var nodePaths = exports.nodePaths = (process.env.NODE_PATH || '').split(process.platform === 'win32' ? ';' : ':').filter(Boolean).map(function (p) {
+  return _path2.default.resolve('./', p);
+});
+
 // Load environment variables starts with STORYBOOK_ to the client side.
 function loadEnv() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -53,5 +59,3 @@ function loadEnv() {
 
   return env;
 }
-
-var nodeModulesPaths = exports.nodeModulesPaths = _path2.default.resolve('./node_modules');

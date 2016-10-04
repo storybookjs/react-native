@@ -1,7 +1,13 @@
 import path from 'path';
 import webpack from 'webpack';
-import { OccurenceOrderPlugin, includePaths, excludePaths, loadEnv } from './utils';
 import babelLoaderConfig from './babel.prod.js';
+import {
+  OccurenceOrderPlugin,
+  includePaths,
+  excludePaths,
+  loadEnv,
+  nodePaths,
+} from './utils';
 
 export default function () {
   const entries = {
@@ -54,6 +60,9 @@ export default function () {
       ],
     },
     resolve: {
+      // Add support to NODE_PATH. With this we could avoid relative path imports.
+      // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
+      fallback: nodePaths,
       alias: {
         // This is to add addon support for NPM2
         '@kadira/storybook-addons': require.resolve('@kadira/storybook-addons'),

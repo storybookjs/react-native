@@ -44,6 +44,9 @@ exports.default = function () {
       }]
     },
     resolve: {
+      // Add support to NODE_PATH. With this we could avoid relative path imports.
+      // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
+      fallback: _utils.nodePaths,
       alias: {
         // This is to add addon support for NPM2
         '@kadira/storybook-addons': require.resolve('@kadira/storybook-addons')
@@ -68,10 +71,10 @@ var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
 
-var _utils = require('./utils');
-
 var _babelProd = require('./babel.prod.js');
 
 var _babelProd2 = _interopRequireDefault(_babelProd);
+
+var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
