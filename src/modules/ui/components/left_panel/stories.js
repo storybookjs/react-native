@@ -7,7 +7,7 @@ const listStyle = {
 
 const listStyleType = {
   listStyleType: 'none',
-  'padding-left': 0,
+  paddingLeft: 0,
 };
 
 const kindStyle = {
