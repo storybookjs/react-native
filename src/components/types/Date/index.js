@@ -25,7 +25,7 @@ class DateType extends React.Component {
       <div>
         <Datetime
           id={knob.name}
-          value={knob.value?new Date(knob.value) : null}
+          value={knob.value ? new Date(knob.value) : null}
           type="date"
           onChange={(date) => onChange(date.valueOf())}
         />

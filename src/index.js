@@ -28,7 +28,7 @@ export function select(name, options, value) {
 }
 
 export function date(name, value = new Date()) {
-  const proxyValue = value? value.getTime() : null;
+  const proxyValue = value ? value.getTime() : null;
   return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
