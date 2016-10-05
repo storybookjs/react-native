@@ -25,6 +25,10 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
 var _middleware3 = require('./middleware');
 
 var _middleware4 = _interopRequireDefault(_middleware3);
@@ -110,7 +114,7 @@ app.listen.apply(app, listenAddr.concat([function (error) {
     throw error;
   } else {
     var address = 'http://' + (_commander2.default.host || 'localhost') + ':' + _commander2.default.port + '/';
-    logger.info('\nReact Storybook started on => ' + address + '\n');
+    logger.info('\nReact Storybook started on => ' + _chalk2.default.cyan(address) + '\n');
     (0, _track_usage.track)();
   }
 }]));

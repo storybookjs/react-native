@@ -6,6 +6,7 @@ import favicon from 'serve-favicon';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
+import chalk from 'chalk';
 import storybook from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
@@ -91,7 +92,7 @@ app.listen(...listenAddr, function (error) {
     throw error;
   } else {
     const address = `http://${program.host || 'localhost'}:${program.port}/`;
-    logger.info(`\nReact Storybook started on => ${address}\n`);
+    logger.info(`\nReact Storybook started on => ${chalk.cyan(address)}\n`);
     track();
   }
 });
