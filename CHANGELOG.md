@@ -1,6 +1,12 @@
 ## Changelog
 
 ### v2.20.1
+05-October-2016
+
+* Get the latest features from CRA including NODE_PATH support, public folder support and some other minor changes. [#468](https://github.com/kadirahq/react-storybook/issues/468)
+* Also bumped `@kadira/storybook-channel-postmsg` to `^1.0.3`
+
+### v2.20.1
 28-September-2016
 
 * Fix story kind order bug [PR499](https://github.com/kadirahq/react-storybook/pull/499)
