@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.3.0
+05-October-2016
+
+Accept null values for the date type. [PR56](https://github.com/kadirahq/storybook-addon-knobs/pull/56).
+
 ### v1.2.3
 28-September-2016
 
