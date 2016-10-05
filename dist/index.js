@@ -49,7 +49,7 @@ function select(name, options, value) {
 }
 
 function date(name) {
-  var value = arguments.length <= 1 || arguments[1] === undefined ? new Date(0) : arguments[1];
+  var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date(0);
 
   var timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
   return new Date(timestamp);
