@@ -95,7 +95,7 @@ if (_commander2.default.staticDir) {
       process.exit(-1);
     }
     logger.log('=> Copying static files from: ' + dir);
-    _shelljs2.default.cp('-r', dir + '/', outputDir);
+    _shelljs2.default.cp('-r', dir + '/*', outputDir);
   });
 }
 

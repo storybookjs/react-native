@@ -69,7 +69,7 @@ if (program.staticDir) {
       process.exit(-1);
     }
     logger.log(`=> Copying static files from: ${dir}`);
-    shelljs.cp('-r', `${dir}/`, outputDir);
+    shelljs.cp('-r', `${dir}/*`, outputDir);
   });
 }
 
