@@ -49,10 +49,10 @@ function select(name, options, value) {
 }
 
 function date(name) {
-  var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date(0);
+  var value = arguments.length <= 1 || arguments[1] === undefined ? new Date() : arguments[1];
 
-  var timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
-  return new Date(timestamp);
+  var proxyValue = value ? value.getTime() : null;
+  return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
 function withKnobs(storyFn, context) {

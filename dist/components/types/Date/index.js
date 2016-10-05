@@ -62,14 +62,18 @@ var DateType = function (_React$Component) {
       var knob = _props.knob;
       var _onChange = _props.onChange;
 
-      return _react2.default.createElement(_reactDatetime2.default, {
-        id: knob.name,
-        value: new Date(knob.value),
-        type: 'date',
-        onChange: function onChange(date) {
-          return _onChange(date.valueOf());
-        }
-      });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_reactDatetime2.default, {
+          id: knob.name,
+          value: knob.value ? new Date(knob.value) : null,
+          type: 'date',
+          onChange: function onChange(date) {
+            return _onChange(date.valueOf());
+          }
+        })
+      );
     }
   }]);
   return DateType;
