@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.1.4
+6-October-2016
+
+Add support for `require.context` inside storybook config module. The regression introduced in v1.1.2 is addressed. [PR33](https://github.com/kadirahq/storyshots/pull/30)
+
 ### v1.1.3
 30-September-2016
 
