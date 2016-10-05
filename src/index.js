@@ -27,9 +27,9 @@ export function select(name, options, value) {
   return manager.knob(name, { type: 'select', options, value });
 }
 
-export function date(name, value = new Date(0)) {
-  const timestamp = manager.knob(name, { type: 'date', value: value.getTime() });
-  return new Date(timestamp);
+export function date(name, value = new Date()) {
+  const proxyValue = value ? value.getTime() : null;
+  return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
 export function withKnobs(storyFn, context) {

@@ -22,12 +22,14 @@ class DateType extends React.Component {
   render() {
     const { knob, onChange } = this.props;
     return (
-      <Datetime
-        id={knob.name}
-        value={new Date(knob.value)}
-        type="date"
-        onChange={(date) => onChange(date.valueOf())}
-      />
+      <div>
+        <Datetime
+          id={knob.name}
+          value={knob.value ? new Date(knob.value) : null}
+          type="date"
+          onChange={(date) => onChange(date.valueOf())}
+        />
+      </div>
     );
   }
 }
