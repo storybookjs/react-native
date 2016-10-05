@@ -3,7 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
+
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n        Did you forget to return the React element from the story?\n        Maybe check you are using "() => {<MyComp>}" instead of "() => (<MyComp>)" when defining the story.\n      '], ['\n        Did you forget to return the React element from the story?\n        Maybe check you are using "() => {<MyComp>}" instead of "() => (<MyComp>)" when defining the story.\n      ']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n        Seems like you are not returning a correct React element form the story.\n        Could you double check that?\n      '], ['\n        Seems like you are not returning a correct React element form the story.\n        Could you double check that?\n      ']); /* global document */
+
 exports.renderError = renderError;
+exports.renderException = renderException;
 exports.renderMain = renderMain;
 exports.default = renderPreview;
 
@@ -15,6 +24,8 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _commonTags = require('common-tags');
+
 var _error_display = require('./error_display');
 
 var _error_display2 = _interopRequireDefault(_error_display);
@@ -22,7 +33,7 @@ var _error_display2 = _interopRequireDefault(_error_display);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // check whether we're running on node/browser
-var isBrowser = typeof window !== 'undefined'; /* global document */
+var isBrowser = typeof window !== 'undefined';
 
 var rootEl = null;
 var previousKind = '';
@@ -33,6 +44,14 @@ if (isBrowser) {
 }
 
 function renderError(error) {
+  var properError = new Error(error.title);
+  properError.stack = error.description;
+
+  var redBox = _react2.default.createElement(_error_display2.default, { error: properError });
+  _reactDom2.default.render(redBox, rootEl);
+}
+
+function renderException(error) {
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
   var realError = new Error(error.message);
@@ -81,12 +100,33 @@ function renderMain(data, storyStore) {
     story: selectedStory
   };
 
+  var element = void 0;
+
   try {
-    _reactDom2.default.render(story(context), rootEl);
-    return null;
+    element = story(context);
   } catch (ex) {
-    return renderError(ex);
+    return renderException(ex);
   }
+
+  if (!element) {
+    var error = {
+      title: 'Expecting a React element from the story: "' + selectedStory + '" of "' + selectedKind + '".',
+      /* eslint-disable */
+      description: (0, _commonTags.stripIndents)(_templateObject)
+    };
+    return renderError(error);
+  }
+
+  if (element.type === undefined) {
+    var _error = {
+      title: 'Expecting a valid React element from the story: "' + selectedStory + '" of "' + selectedKind + '".',
+      description: (0, _commonTags.stripIndents)(_templateObject2)
+    };
+    return renderError(_error);
+  }
+
+  _reactDom2.default.render(element, rootEl);
+  return null;
 }
 
 function renderPreview(_ref) {
@@ -95,7 +135,7 @@ function renderPreview(_ref) {
 
   var state = reduxStore.getState();
   if (state.error) {
-    return renderError(state.error);
+    return renderException(state.error);
   }
 
   return renderMain(state, storyStore);

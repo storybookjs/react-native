@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { stripIndents } from 'common-tags';
 import ErrorDisplay from './error_display';
 
 // check whether we're running on node/browser
@@ -16,6 +17,14 @@ if (isBrowser) {
 }
 
 export function renderError(error) {
+  const properError = new Error(error.title);
+  properError.stack = error.description;
+
+  const redBox = (<ErrorDisplay error={properError} />);
+  ReactDOM.render(redBox, rootEl);
+}
+
+export function renderException(error) {
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
   const realError = new Error(error.message);
@@ -56,18 +65,46 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
 
+  let element;
+
   try {
-    ReactDOM.render(story(context), rootEl);
-    return null;
+    element = story(context);
   } catch (ex) {
-    return renderError(ex);
+    return renderException(ex);
   }
+
+  if (!element) {
+    const error = {
+      title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
+      /* eslint-disable */
+      description: stripIndents`
+        Did you forget to return the React element from the story?
+        Maybe check you are using "() => {<MyComp>}" instead of "() => (<MyComp>)" when defining the story.
+      `,
+      /* eslint-enable */
+    };
+    return renderError(error);
+  }
+
+  if (element.type === undefined) {
+    const error = {
+      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
+      description: stripIndents`
+        Seems like you are not returning a correct React element form the story.
+        Could you double check that?
+      `,
+    };
+    return renderError(error);
+  }
+
+  ReactDOM.render(element, rootEl);
+  return null;
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {
   const state = reduxStore.getState();
   if (state.error) {
-    return renderError(state.error);
+    return renderException(state.error);
   }
 
   return renderMain(state, storyStore);
