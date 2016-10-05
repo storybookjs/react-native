@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.5.0
+05-Oct-2016
+
+* Update to use the latest storybook. Also update REACT_SCRIPTS generator to support public folder.
+
 ### v1.4.6
 30-Sep-2016
 
