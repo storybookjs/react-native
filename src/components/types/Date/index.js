@@ -21,7 +21,6 @@ insertCss(customStyle);
 class DateType extends React.Component {
   render() {
     const { knob, onChange } = this.props;
-    console.log('knob.value', knob.value)
     return (
       <div>
         <Datetime

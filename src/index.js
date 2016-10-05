@@ -28,13 +28,8 @@ export function select(name, options, value) {
 }
 
 export function date(name, value = new Date()) {
-  // console.log('value::', value)
   const proxyValue = value? value.getTime() : null;
-  console.log('proxyValue',proxyValue)
-  // const proxyValue = value.getTime();
-  const timestamp = manager.knob(name, { type: 'date', value: proxyValue });
-  console.log('timestamp', timestamp)
-  return timestamp;
+  return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
 export function withKnobs(storyFn, context) {
