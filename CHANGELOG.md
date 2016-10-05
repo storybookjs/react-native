@@ -1,6 +1,14 @@
 ## Changelog
 
-### v2.20.1
+### v2.22.0
+05-October-2016
+
+Add some nice development experiment based on suggestion from Dan Abramov.
+
+* Set a color to the Storybook URL in the console. [PR533](https://github.com/kadirahq/react-storybook/pull/533)
+* Add better error message when there's no React element in the story. [PR534](https://github.com/kadirahq/react-storybook/pull/534)
+
+### v2.21.0
 05-October-2016
 
 * Get the latest features from CRA including NODE_PATH support, public folder support and some other minor changes. [#468](https://github.com/kadirahq/react-storybook/issues/468)
