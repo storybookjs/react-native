@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import datastore from '@kadira/storybook-database-local/dist/server/middleware';
 import express from 'express';
 import favicon from 'serve-favicon';
 import program from 'commander';
@@ -21,8 +20,6 @@ program
   .option('-h, --host [string]', 'Host to run Storybook')
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
-  .option('-d, --db-path [db-file]', 'File where to store addon database JSON file')
-  .option('--enable-db', 'Enable the (experimental) addon database service on dev-server')
   .option('--dont-track', 'Do not send anonymous usage stats.')
   .parse(process.argv);
 
@@ -72,15 +69,6 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
-
-// The addon database service is disabled by default for now
-// It should be enabled with the --enable-db for dev server
-if (program.enableDb) {
-  // NOTE enables database on client
-  process.env.STORYBOOK_ENABLE_DB = 1;
-  const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
-  app.use('/db', datastore(dbPath));
-}
 
 // NOTE changes to env should be done before calling `getBaseConfig`
 // `getBaseConfig` function which is called inside the middleware

@@ -22,8 +22,6 @@ program
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-o, --output-dir [dir-name]', 'Directory where to store built files')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
-  .option('-d, --db-path [db-file]', 'Path to the addon database JSON file')
-  .option('--enable-db', 'Enable the (experimental) addon database service on dev-server')
   .parse(process.argv);
 
 // The key is the field created in `program` variable for
@@ -41,19 +39,6 @@ const outputDir = program.outputDir || './storybook-static';
 shelljs.rm('-rf', outputDir);
 shelljs.mkdir('-p', path.resolve(outputDir));
 shelljs.cp(path.resolve(__dirname, 'public/favicon.ico'), outputDir);
-
-// The addon database service is disabled by default for now
-// It should be enabled with the --enable-db for dev server
-if (program.enableDb) {
-  // NOTE enables database on client
-  process.env.STORYBOOK_ENABLE_DB = 1;
-  const dbPath = program.dbPath || path.resolve(configDir, 'addon-db.json');
-  // create addon-db.json file if it's missing to avoid the 404 error
-  if (!fs.existsSync(dbPath)) {
-    fs.writeFileSync(dbPath, '{}');
-  }
-  shelljs.cp(dbPath, outputDir);
-}
 
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
