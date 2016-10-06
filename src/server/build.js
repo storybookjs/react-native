@@ -22,7 +22,18 @@ program
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-o, --output-dir [dir-name]', 'Directory where to store built files')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
+  .option('-d, --db-path [db-file]', 'DEPRECATED!')
+  .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
+
+if (program.enableDb || program.dbPath) {
+  logger.error([
+    'Error: the experimental local database addon is no longer bundled with',
+    'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
+    'from the command or npm script and try again.',
+  ].join(' '));
+  process.exit(1);
+}
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
