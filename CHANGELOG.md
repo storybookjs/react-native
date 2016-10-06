@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.23.0
+06-October-2016
+
+* Remove the experimental database addon from react-storybook [PR535](https://github.com/kadirahq/react-storybook/pull/535)
+
 ### v2.22.0
 05-October-2016
 
