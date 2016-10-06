@@ -9,7 +9,7 @@ export default class CommentsPanel extends Component {
       return (
         <div style={style.wrapper}>
           <div style={style.message}>
-            <a style={style.button} href="https://storybooks.io">login @ storybooks.io</a>
+            <a style={style.button} href="https://hub.getstorybook.io/sign-in">SignIn with Storybook Hub</a>
           </div>
         </div>
       );

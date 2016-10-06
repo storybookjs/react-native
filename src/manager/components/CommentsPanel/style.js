@@ -23,5 +23,7 @@ export default {
     padding: '10px 18px',
     background: 'rgb(240, 240, 240)',
     borderRadius: 5,
+    textTransform: 'none',
+    fontSize: 12,
   },
 }
