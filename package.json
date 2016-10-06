@@ -6,7 +6,7 @@
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "node .scripts/npm-prepublish.js",
-    "storybook": "STORYBOOK_CLOUD_URL='http://localhost:3003/graphql' STORYBOOK_CLOUD_APPID='02971a86-2477-4d9b-9226-66a3ee6a032b' STORYBOOK_CLOUD_DATABASE='test-database' start-storybook -p 3006",
+    "storybook": "STORYBOOK_CLOUD_URL='http://localhost:3003/graphql' STORYBOOK_CLOUD_APPID='test-appid' STORYBOOK_CLOUD_DATABASE='test-database' start-storybook -p 3006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
