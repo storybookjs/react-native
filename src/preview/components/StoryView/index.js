@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
+import style from './style';
 
 export default class StoryView extends Component {
   constructor(props, ...args) {
@@ -17,6 +19,10 @@ export default class StoryView extends Component {
     }
     const { kind, story } = this.state.selection;
     const context = { kind, story };
-    return this.state.storyFn(context);
+    return (
+      <View key={`${kind}:::${story}`} style={style.main}>
+        {this.state.storyFn(context)}
+      </View>
+    );
   }
 }
