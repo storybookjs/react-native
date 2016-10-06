@@ -50,7 +50,12 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // avoid ESLint errors
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'Path to the addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'DEPRECATED!').option('--enable-db', 'DEPRECATED!').parse(process.argv);
+
+if (_commander2.default.enableDb || _commander2.default.dbPath) {
+  logger.error(['Error: the experimental local database addon is no longer bundled with', 'react-storybook. Please remove these flags (-d,--db-path,--enable-db)', 'from the command or npm script and try again.'].join(' '));
+  process.exit(1);
+}
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
@@ -67,19 +72,6 @@ var outputDir = _commander2.default.outputDir || './storybook-static';
 _shelljs2.default.rm('-rf', outputDir);
 _shelljs2.default.mkdir('-p', _path2.default.resolve(outputDir));
 _shelljs2.default.cp(_path2.default.resolve(__dirname, 'public/favicon.ico'), outputDir);
-
-// The addon database service is disabled by default for now
-// It should be enabled with the --enable-db for dev server
-if (_commander2.default.enableDb) {
-  // NOTE enables database on client
-  process.env.STORYBOOK_ENABLE_DB = 1;
-  var dbPath = _commander2.default.dbPath || _path2.default.resolve(configDir, 'addon-db.json');
-  // create addon-db.json file if it's missing to avoid the 404 error
-  if (!_fs2.default.existsSync(dbPath)) {
-    _fs2.default.writeFileSync(dbPath, '{}');
-  }
-  _shelljs2.default.cp(dbPath, outputDir);
-}
 
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files

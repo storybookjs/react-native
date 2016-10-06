@@ -1,10 +1,6 @@
 #!/usr/bin/env node
 'use strict';
 
-var _middleware = require('@kadira/storybook-database-local/dist/server/middleware');
-
-var _middleware2 = _interopRequireDefault(_middleware);
-
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -29,9 +25,9 @@ var _chalk = require('chalk');
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _middleware3 = require('./middleware');
+var _middleware = require('./middleware');
 
-var _middleware4 = _interopRequireDefault(_middleware3);
+var _middleware2 = _interopRequireDefault(_middleware);
 
 var _package = require('../../package.json');
 
@@ -47,7 +43,12 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var logger = console;
 
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'File where to store addon database JSON file').option('--enable-db', 'Enable the (experimental) addon database service on dev-server').option('--dont-track', 'Do not send anonymous usage stats.').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('--dont-track', 'Do not send anonymous usage stats.').option('-d, --db-path [db-file]', 'DEPRECATED!').option('--enable-db', 'DEPRECATED!').parse(process.argv);
+
+if (_commander2.default.enableDb || _commander2.default.dbPath) {
+  logger.error(['Error: the experimental local database addon is no longer bundled with', 'react-storybook. Please remove these flags (-d,--db-path,--enable-db)', 'from the command or npm script and try again.'].join(' '));
+  process.exit(1);
+}
 
 // The key is the field created in `program` variable for
 // each command line argument. Value is the env variable.
@@ -96,18 +97,9 @@ if (_commander2.default.staticDir) {
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
 
-// The addon database service is disabled by default for now
-// It should be enabled with the --enable-db for dev server
-if (_commander2.default.enableDb) {
-  // NOTE enables database on client
-  process.env.STORYBOOK_ENABLE_DB = 1;
-  var dbPath = _commander2.default.dbPath || _path2.default.resolve(configDir, 'addon-db.json');
-  app.use('/db', (0, _middleware2.default)(dbPath));
-}
-
 // NOTE changes to env should be done before calling `getBaseConfig`
 // `getBaseConfig` function which is called inside the middleware
-app.use((0, _middleware4.default)(configDir));
+app.use((0, _middleware2.default)(configDir));
 
 app.listen.apply(app, listenAddr.concat([function (error) {
   if (error) {
