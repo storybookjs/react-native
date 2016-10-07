@@ -82,7 +82,7 @@ export default class Welcome extends React.Component {
         </p>
         <p>
           Usually we create stories with smaller UI components in your app.<br />
-          Have a look at the <a href="https://getstorybook.io/docs/basics/writing-stories" target="_blank">Writing Stories</a> section in our documentation.
+          Have a look at the <a style={styles.link} href="https://getstorybook.io/docs/basics/writing-stories" target="_blank">Writing Stories</a> section in our documentation.
         </p>
       </div>
     );
