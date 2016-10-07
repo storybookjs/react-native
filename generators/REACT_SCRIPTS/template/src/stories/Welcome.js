@@ -28,7 +28,25 @@ const styles = {
     backgroundColor: '#f3f2f2',
     color: '#3a3a3a',
   },
+
+  codeBlock: {
+    backgroundColor: '#f3f2f2',
+    padding: '1px 10px',
+    margin: '10px 0',
+  }
 };
+
+const codeBlock = `
+// Add this code to "src/stories/index.js"
+
+import '../index.css';
+import App from '../App';
+
+storiesOf('App', module)
+  .add('default view', () => (
+    &lt;App /&gt;
+  ))
+`;
 
 export default class Welcome extends React.Component {
   showApp(e) {
@@ -56,15 +74,15 @@ export default class Welcome extends React.Component {
         <p>
           Just like that, you can add your own components as stories.
           <br />
-          You can also edit those components and see changes right away.
-          <br />
-          (Try editing the <code style={styles.code}>Button</code> component
-          located at <code style={styles.code}>src/stories/Button.js</code>.)
+          Here's how to add your <code style={styles.code}>App</code> component as a story.
+          <div
+            style={styles.codeBlock}
+            dangerouslySetInnerHTML={{__html: `<pre>${codeBlock}</pre>`}}
+          />
         </p>
         <p>
-          This is just one thing you can do with Storybook.
-          <br/>
-          Have a look at the <a style={styles.link} href="https://github.com/kadirahq/react-storybook" target="_blank">React Storybook</a> repo for more information.
+          Usually we create stories with smaller UI components in your app.<br />
+          Have a look at the <a href="https://getstorybook.io/docs/basics/writing-stories" target="_blank">Writing Stories</a> section in our documentation.
         </p>
       </div>
     );
