@@ -25,6 +25,10 @@ var _chalk = require('chalk');
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
+var _shelljs = require('shelljs');
+
+var _shelljs2 = _interopRequireDefault(_shelljs);
+
 var _middleware = require('./middleware');
 
 var _middleware2 = _interopRequireDefault(_middleware);
@@ -96,6 +100,14 @@ if (_commander2.default.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 var configDir = _commander2.default.configDir || './.storybook';
+
+// The repository info is sent to the storybook while running on
+// development mode so it'll be easier for tools to integrate.
+var exec = function exec(cmd) {
+  return _shelljs2.default.exec(cmd).stdout.trim();
+};
+process.env.STORYBOOK_GIT_ORIGIN = exec('git remote get-url origin');
+process.env.STORYBOOK_GIT_BRANCH = exec('git symbolic-ref HEAD --short');
 
 // NOTE changes to env should be done before calling `getBaseConfig`
 // `getBaseConfig` function which is called inside the middleware
