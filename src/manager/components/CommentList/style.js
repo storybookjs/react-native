@@ -3,6 +3,7 @@ const commentItem = {
   paddingBottom: '5px',
   WebkitFontSmoothing: 'antialiased',
   transition: 'opacity 0.5s',
+  maxWidth: 700,
 }
 
 export default {
@@ -49,5 +50,6 @@ export default {
     fontFamily: 'sans-serif',
     fontSize: 13,
     lineHeight: 1.7,
+    maxWidth: 650,
   },
 }
