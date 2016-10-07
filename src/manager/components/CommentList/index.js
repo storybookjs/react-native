@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import style from './style';
 
 export default class CommentList extends Component {
@@ -29,7 +30,7 @@ export default class CommentList extends Component {
   }
 
   formatTime(ts) {
-    return new Date(ts).toLocaleString();
+    return moment(new Date(ts), "YYYYMMDD").fromNow();
   }
 
   renderComment(comment, key) {
