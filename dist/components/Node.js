@@ -50,7 +50,7 @@ var Node = function (_React$Component) {
 
   function Node(props) {
     (0, _classCallCheck3.default)(this, Node);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Node).call(this, props));
+    return (0, _possibleConstructorReturn3.default)(this, (Node.__proto__ || (0, _getPrototypeOf2.default)(Node)).call(this, props));
   }
 
   (0, _createClass3.default)(Node, [{

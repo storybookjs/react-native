@@ -36,7 +36,7 @@ var Code = exports.Code = function (_React$Component) {
 
   function Code() {
     (0, _classCallCheck3.default)(this, Code);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Code).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Code.__proto__ || (0, _getPrototypeOf2.default)(Code)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Code, [{
@@ -74,7 +74,7 @@ var Pre = exports.Pre = function (_React$Component2) {
 
   function Pre() {
     (0, _classCallCheck3.default)(this, Pre);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Pre).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Pre.__proto__ || (0, _getPrototypeOf2.default)(Pre)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Pre, [{
@@ -104,7 +104,7 @@ var Blockquote = exports.Blockquote = function (_React$Component3) {
 
   function Blockquote() {
     (0, _classCallCheck3.default)(this, Blockquote);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Blockquote).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Blockquote.__proto__ || (0, _getPrototypeOf2.default)(Blockquote)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Blockquote, [{

@@ -137,7 +137,7 @@ var Story = function (_React$Component) {
   (0, _inherits3.default)(Story, _React$Component);
 
   function Story() {
-    var _Object$getPrototypeO;
+    var _ref;
 
     (0, _classCallCheck3.default)(this, Story);
 
@@ -145,7 +145,7 @@ var Story = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Story)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (_ref = Story.__proto__ || (0, _getPrototypeOf2.default)(Story)).call.apply(_ref, [this].concat(args)));
 
     _this.state = { open: false };
     _markdownToReactComponents2.default.configure(_this.props.mtrcConf);
@@ -235,7 +235,7 @@ var Story = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { style: linkStyle, onClick: closeOverlay },
-            '×'
+            '\xD7'
           ),
           _react2.default.createElement(
             'div',

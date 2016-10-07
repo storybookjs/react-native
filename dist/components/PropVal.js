@@ -169,7 +169,7 @@ function previewProp(val) {
     content = _react2.default.createElement(
       'span',
       null,
-      '…'
+      '\u2026'
     );
   } else if (_react2.default.isValidElement(val)) {
     content = _react2.default.createElement(
@@ -196,7 +196,7 @@ var PropVal = function (_React$Component) {
 
   function PropVal() {
     (0, _classCallCheck3.default)(this, PropVal);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(PropVal).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (PropVal.__proto__ || (0, _getPrototypeOf2.default)(PropVal)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(PropVal, [{

@@ -42,7 +42,7 @@ var P = exports.P = function (_React$Component) {
 
   function P() {
     (0, _classCallCheck3.default)(this, P);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(P).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (P.__proto__ || (0, _getPrototypeOf2.default)(P)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(P, [{
@@ -66,7 +66,7 @@ var LI = exports.LI = function (_React$Component2) {
 
   function LI() {
     (0, _classCallCheck3.default)(this, LI);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LI).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (LI.__proto__ || (0, _getPrototypeOf2.default)(LI)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(LI, [{
@@ -90,7 +90,7 @@ var UL = exports.UL = function (_React$Component3) {
 
   function UL() {
     (0, _classCallCheck3.default)(this, UL);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(UL).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (UL.__proto__ || (0, _getPrototypeOf2.default)(UL)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(UL, [{
@@ -115,7 +115,7 @@ var A = exports.A = function (_React$Component4) {
 
   function A() {
     (0, _classCallCheck3.default)(this, A);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(A).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (A.__proto__ || (0, _getPrototypeOf2.default)(A)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(A, [{
