@@ -32,8 +32,9 @@ export default {
     border: 'none',
     outline: 'none',
     padding: '7px 15px',
-    fontSize: 12,
-    lineHeight: 1,
+    fontSize: 13,
+    lineHeight: 1.7,
     color: 'rgba(0, 0, 0, 0.8)',
+    fontFamily: 'sans-serif',
   },
 }

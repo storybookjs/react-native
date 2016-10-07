@@ -11,14 +11,6 @@ export default class CommentForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  getUsername() {
-    const { user, users } = this.props;
-    if (user) {
-      return user.name;
-    }
-    return '...';
-  }
-
   onChange(e) {
     const text = e.target.value;
     this.setState({ text });
@@ -45,11 +37,6 @@ export default class CommentForm extends Component {
     const { text } = this.state;
     return (
       <div style={style.wrapper}>
-        <button
-          style={style.loginButton}
-          onClick={this.onLogin}
-          >{this.getUsername()}
-        </button>
         <input
           style={style.input}
           onChange={this.onChange}
