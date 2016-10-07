@@ -3,6 +3,7 @@ const commentItem = {
   paddingBottom: '5px',
   WebkitFontSmoothing: 'antialiased',
   transition: 'opacity 0.5s',
+  maxWidth: 700,
 }
 
 export default {
@@ -34,7 +35,7 @@ export default {
   },
   commentUser: {
     fontFamily: 'sans-serif',
-    fontSize: 12,
+    fontSize: 13,
     lineHeight: 1,
     fontWeight: 'bold',
     marginRight: 5,
@@ -47,7 +48,8 @@ export default {
   },
   commentText: {
     fontFamily: 'sans-serif',
-    fontSize: 11,
-    lineHeight: 1,
+    fontSize: 13,
+    lineHeight: 1.7,
+    maxWidth: 650,
   },
 }
