@@ -1,6 +1,6 @@
 # Changelog
 
-### v1.5.1
+### v1.5.2
 07-Oct-2016
 
 * Update more user friendly welcome screen to REACT_SCRIPTS generator.
