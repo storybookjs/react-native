@@ -6,6 +6,7 @@ import program from 'commander';
 import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
+import shelljs from 'shelljs';
 import storybook from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
@@ -81,6 +82,12 @@ if (program.staticDir) {
 // Build the webpack configuration using the `baseConfig`
 // custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
+
+// The repository info is sent to the storybook while running on
+// development mode so it'll be easier for tools to integrate.
+const exec = cmd => shelljs.exec(cmd).stdout.trim();
+process.env.STORYBOOK_GIT_ORIGIN = exec('git remote get-url origin');
+process.env.STORYBOOK_GIT_BRANCH = exec('git symbolic-ref HEAD --short');
 
 // NOTE changes to env should be done before calling `getBaseConfig`
 // `getBaseConfig` function which is called inside the middleware
