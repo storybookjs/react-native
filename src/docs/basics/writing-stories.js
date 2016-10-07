@@ -18,17 +18,21 @@ export default {
 
     There's no hard and fast rule for this. But, keeping stories close to your components is a good idea.
 
-    For example, let's say your UI components live in a directory called: \`src/components.\` Then you can write stories inside the \`src/components/stories\` directory.
+    For example, let's say your UI components live in a directory called: \`src/components.\` Then you can write stories inside the \`src/stories\` directory.
 
     This is just one way to do that. You can always edit your storybook config file and ask it to load stories from anywhere you want.
 
     ## Writing stories
 
     This is how you write stories:
+    (Let's assume there's a component called "Button" in \`src/components/Button.js\`.)
 
     ~~~js
+    // file: src/stories/index.js
+
     import React from 'react';
     import { storiesOf, action } from '@kadira/storybook';
+    import Button from '../components/Button';
 
     storiesOf('Button', module)
       .add('with text', () => (
