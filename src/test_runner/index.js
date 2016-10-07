@@ -65,15 +65,11 @@ export default class Runner {
   constructor(options) {
     const {
       configDir = './.storybook',
-      update,
+      update = false,
       updateInteractive: interactive,
     } = options;
 
-    this.configDir = configDir;
-    this.update = update;
-    this.interactive = interactive;
-
-    this.runner = new SnapshotRunner(configDir);
+    this.runner = new SnapshotRunner(configDir, { update, interactive });
   }
 
   updateState(result) {
@@ -97,11 +93,6 @@ export default class Runner {
   }
 
   async run(storybook) {
-    const options = {
-      update: this.update,
-      interactive: this.interactive,
-    };
-
     this.start();
 
     for (const group of storybook) {
@@ -110,17 +101,17 @@ export default class Runner {
         this.updateState({ state: 'started-kind', name: group.kind });
         for (const story of group.stories) {
           try {
-            const result = await this.runner.runStory(story, options);
+            const result = await this.runner.runStory(story);
             this.updateState({ ...result, name: story.name });
           } catch (err) {
             // Error on story
             this.updateState({ state: 'errored', message: err, name: story.name });
           }
         }
-        this.runner.endKind(options);
+        this.runner.endKind();
       } catch (err) {
         // Error on kind
-        this.updateState({ state: 'errored-kind', message: err });
+        this.updateState({ state: 'errored-kind', message: err, name: group.kind });
       }
     }
 
