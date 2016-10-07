@@ -4,4 +4,5 @@
 // Use the line below to register this addon
 // import '@kadira/storybook-addon-comments/register';
 import '@kadira/storybook-database-cloud/register';
-import '../register';
+import { init } from '../src/manager';
+init();
