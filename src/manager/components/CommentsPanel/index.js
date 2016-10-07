@@ -6,10 +6,11 @@ import style from './style';
 export default class CommentsPanel extends Component {
   render() {
     if (!this.props.user) {
+      const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(location.href)}`;
       return (
         <div style={style.wrapper}>
           <div style={style.message}>
-            <a style={style.button} href="https://hub.getstorybook.io/sign-in">SignIn with Storybook Hub</a>
+            <a style={style.button} href={signInUrl}>SignIn with Storybook Hub</a>
           </div>
         </div>
       );
