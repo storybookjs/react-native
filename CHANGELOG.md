@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.24.0
+07-October-2016
+
+* Export git repository info to support custom tool integrations [PR536](https://github.com/kadirahq/react-storybook/pull/536)
+
 ### v2.23.0
 06-October-2016
 
