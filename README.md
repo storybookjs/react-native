@@ -18,7 +18,7 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import '@kadira/storybook-addon-options/register';
 ```
 
-Import and use the `setOptions` function in your config.json file.
+Import and use the `setOptions` function in your config.js file.
 
 ```js
 import * as storybook from '@kadira/storybook';
