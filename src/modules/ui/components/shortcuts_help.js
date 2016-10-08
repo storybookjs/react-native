@@ -44,7 +44,7 @@ export const Keys = ({ shortcutKeys }) => {
     return (
         <span key={index}>
           <b style={commandStyle}>{key}</b>
-          {/*add / & space if it is not a last key combination*/}
+          {/* add / & space if it is not a last key combination */}
           {((arr.length - 1) !== index) ? <span>/ &nbsp;</span> : ''}
         </span>
       );
@@ -53,9 +53,13 @@ export const Keys = ({ shortcutKeys }) => {
   return (
     <span>{keys}</span>
   );
-}
+};
 
-export const Content = ({ appShortcuts }) => {
+Keys.propTypes = {
+  shortcutKeys: React.PropTypes.array.isRequired,
+};
+
+export const Shortcuts = ({ appShortcuts }) => {
   let shortcuts = appShortcuts.map((shortcut, index) => {
     return (
       <div key = {index}>
@@ -71,7 +75,11 @@ export const Content = ({ appShortcuts }) => {
       {shortcuts}
     </div>
   );
-}
+};
+
+Shortcuts.propTypes = {
+  appShortcuts: React.PropTypes.array.isRequired,
+};
 
 export const ShortcutsHelp = ({ isOpen, onClose, shortcuts }) => (
   <ReactModal
@@ -79,7 +87,7 @@ export const ShortcutsHelp = ({ isOpen, onClose, shortcuts }) => (
     onRequestClose = {onClose}
     style = {modalStyles}
   >
-    <Content appShortcuts = {shortcuts} />
+    <Shortcuts appShortcuts = {shortcuts} />
   </ReactModal>
 );
 
