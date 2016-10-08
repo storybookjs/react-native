@@ -38,6 +38,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var listStyle = (0, _extends3.default)({}, _theme.baseFonts);
 
+var listStyleType = {
+  listStyleType: 'none',
+  paddingLeft: 0
+};
+
 var kindStyle = {
   fontSize: 15,
   padding: '10px 0px',
@@ -55,7 +60,7 @@ var Stories = function (_React$Component) {
   (0, _inherits3.default)(Stories, _React$Component);
 
   function Stories() {
-    var _ref;
+    var _Object$getPrototypeO;
 
     (0, _classCallCheck3.default)(this, Stories);
 
@@ -63,7 +68,7 @@ var Stories = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (_ref = Stories.__proto__ || (0, _getPrototypeOf2.default)(Stories)).call.apply(_ref, [this].concat(args)));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Stories)).call.apply(_Object$getPrototypeO, [this].concat(args)));
 
     _this.renderKind = _this.renderKind.bind(_this);
     _this.renderStory = _this.renderStory.bind(_this);
@@ -91,10 +96,8 @@ var Stories = function (_React$Component) {
     value: function renderStory(story) {
       var selectedStory = this.props.selectedStory;
 
-      var style = (0, _extends3.default)({}, storyStyle);
+      var style = (0, _extends3.default)({ display: 'block' }, storyStyle);
       var props = {
-        key: story,
-        style: style,
         onClick: this.fireOnStory.bind(this, story)
       };
 
@@ -103,49 +106,55 @@ var Stories = function (_React$Component) {
       }
 
       return _react2.default.createElement(
-        'div',
-        props,
-        story
+        'li',
+        { key: story },
+        _react2.default.createElement(
+          'a',
+          { style: style, onClick: props.onClick },
+          story
+        )
       );
     }
   }, {
     key: 'renderKind',
-    value: function renderKind(_ref2) {
-      var kind = _ref2.kind;
-      var stories = _ref2.stories;
+    value: function renderKind(_ref) {
+      var kind = _ref.kind;
+      var stories = _ref.stories;
       var selectedKind = this.props.selectedKind;
 
-      var style = (0, _extends3.default)({}, kindStyle);
+      var style = (0, _extends3.default)({ display: 'block' }, kindStyle);
+      var onClick = this.fireOnKind.bind(this, kind);
 
       if (kind === selectedKind) {
         style.fontWeight = 'bold';
         return _react2.default.createElement(
-          'div',
+          'li',
           { key: kind },
           _react2.default.createElement(
-            'div',
-            {
-              style: style,
-              onClick: this.fireOnKind.bind(this, kind)
-            },
+            'a',
+            { style: style, onClick: onClick },
             kind
           ),
           _react2.default.createElement(
             'div',
             null,
-            stories.map(this.renderStory)
+            _react2.default.createElement(
+              'ul',
+              { style: listStyleType },
+              stories.map(this.renderStory)
+            )
           )
         );
       }
 
       return _react2.default.createElement(
-        'div',
-        {
-          key: kind,
-          style: style,
-          onClick: this.fireOnKind.bind(this, kind, null)
-        },
-        kind
+        'li',
+        { key: kind },
+        _react2.default.createElement(
+          'a',
+          { style: style, onClick: onClick },
+          kind
+        )
       );
     }
   }, {
@@ -156,7 +165,11 @@ var Stories = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { style: listStyle },
-        stories.map(this.renderKind)
+        _react2.default.createElement(
+          'ul',
+          { style: listStyleType },
+          stories.map(this.renderKind)
+        )
       );
     }
   }]);
