@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import addons from '@kadira/storybook-addons';
 import CommentsPanel from '../../components/CommentsPanel/';
+import deepEquals from 'deep-equal';
 
 export default class Container extends Component {
   constructor(props, ...args) {
@@ -12,14 +13,32 @@ export default class Container extends Component {
       loading: true,
     };
     // bind functions so it can be passed later
-    this.addComment = this.addComment.bind(this);
-    this.syncDatabase = this.syncDatabase.bind(this);
+    this.addComment = this.addComment.bind(this)
+
+    // keep loaded comments here. So, we could use them when switching
+    // stories.
+    this.cache = {};
+  }
+
+  addToCache(selection, comments) {
+    const key = JSON.stringify(selection);
+    this.cache[key] = comments;
+  }
+
+  getFromCache(selection) {
+    const key = JSON.stringify(selection);
+    return this.cache[key] || [];
   }
 
   componentDidMount() {
     // Clear the current notes on every story change.
     this.stopListeningOnStory = this.props.api.onStory((kind, story) => {
+      // set the current selection
       this.selection = { sbKind: kind, sbStory: story };
+
+      // set comments fetch from the cache.
+      this.setState({ comments: this.getFromCache(this.selection) });
+
       Promise.resolve(null)
         .then(() => this.syncDatabase())
         .then(() => this.getCurrentUser())
@@ -57,10 +76,20 @@ export default class Container extends Component {
 
   loadCommentsCollection() {
     const db = addons.getDatabase();
-    const query = { ...this.selection };
+
+    const selection = { ...this.selection };
+    const query = selection;
     const options = {limit: 1e6};
-    return db.getCollection('comments').get(query, options)
-      .then(comments => this.setState({ comments }));
+    return db.getCollection('comments')
+      .get(query, options)
+      .then(comments => {
+        // add to cache
+        this.addToCache(selection, comments);
+        // set comments only if we are on the relavant story
+        if (deepEquals(selection, this.selection)) {
+          this.setState({ comments });
+        }
+      });
   }
 
   addPendingComment(_comment) {
@@ -106,7 +135,7 @@ export default class Container extends Component {
       comments: this.state.comments,
       loading: this.state.loading,
       loggedIn: this.state.loggedIn,
-      addComment: this.addComment,
+      addComment: c => this.addComment(c),
     };
     return <CommentsPanel {...props} />;
   }

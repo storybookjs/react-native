@@ -41,6 +41,7 @@
     "react-dom": "^0.14.7 || ^15.0.0"
   },
   "dependencies": {
+    "deep-equal": "^1.0.1",
     "moment": "^2.15.1"
   }
 }
