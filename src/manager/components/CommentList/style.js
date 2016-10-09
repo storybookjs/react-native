@@ -52,4 +52,9 @@ export default {
     lineHeight: 1.7,
     maxWidth: 650,
   },
+  noComments: {
+    fontFamily: 'sans-serif',
+    fontSize: 13,
+    padding: '10px 0',
+  }
 }

@@ -3,18 +3,6 @@ import moment from 'moment';
 import style from './style';
 
 export default class CommentList extends Component {
-  constructor(props, ...args) {
-    super(props, ...args);
-    this.usersMap = {};
-    this.updateUsersMap();
-  }
-
-  updateUsersMap() {
-    this.usersMap = this.props.users.reduce((map, user) => {
-       map[user.id] = user;
-       return map;
-    }, {});
-  }
 
   componentDidMount() {
     const wrapper = this.refs.wrapper;
@@ -22,7 +10,6 @@ export default class CommentList extends Component {
   }
 
   componentDidUpdate(prev) {
-    this.updateUsersMap();
     if (this.props.comments.length !== prev.comments.length) {
       const wrapper = this.refs.wrapper;
       wrapper.scrollTop = wrapper.scrollHeight;
@@ -34,22 +21,21 @@ export default class CommentList extends Component {
   }
 
   renderComment(comment, key) {
-    let user = this.usersMap[comment.userId];
-    if (!user) {
-      return null;
-    }
+    if (!comment.user) return null;
+
     let commentStyle = style.commentItem;
     if (comment.loading) {
       commentStyle = style.commentItemloading;
     }
+
     return (
       <div style={commentStyle} key={key}>
         <div style={style.commentAside}>
-          <img style={style.commentAvatar} src={user.avatar} />
+          <img style={style.commentAvatar} src={comment.user.avatar} />
         </div>
         <div style={style.commentContent}>
           <div style={style.commentHead}>
-            <span style={style.commentUser}>{user.name}</span>
+            <span style={style.commentUser}>{comment.user.name}</span>
             <span style={style.commentTime}>{this.formatTime(comment.time)}</span>
           </div>
           <span style={style.commentText}>{comment.text}</span>
@@ -59,9 +45,19 @@ export default class CommentList extends Component {
   }
 
   render() {
+    const { comments } = this.props;
+
+    if (comments.length === 0) {
+      return (
+        <div ref="wrapper" style={style.wrapper}>
+          <div style={style.noComments}>No Comments Yet!</div>
+        </div>
+      );
+    }
+
     return (
       <div ref="wrapper" style={style.wrapper}>
-        {this.props.comments.map((c, idx) => this.renderComment(c, idx))}
+        {comments.map((c, idx) => this.renderComment(c, idx))}
       </div>
     );
   }

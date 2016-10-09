@@ -23,13 +23,13 @@ export default class CommentForm extends Component {
   }
 
   onSubmit() {
-    const { user, addComment } = this.props;
+    const { addComment } = this.props;
     const text = this.state.text.trim();
-    if (!user.id || !text || text === '') {
+    if (!text || text === '') {
       return;
     }
-    const time = Date.now();
-    addComment({ text, time, userId: user.id });
+
+    addComment(text);
     this.setState({ text: '' });
   }
 
@@ -41,7 +41,7 @@ export default class CommentForm extends Component {
           style={style.input}
           onChange={this.onChange}
           onKeyUp={this.onKeyUp}
-          placeholder="Your comment..."
+          placeholder="Add your comment..."
           value={text}
         />
         <button
