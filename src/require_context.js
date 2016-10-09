@@ -7,7 +7,7 @@ function requireModules(keys, root, directory, regExp, recursive) {
   const files = fs.readdirSync(path.join(root, directory));
 
   files.forEach((filename) => {
-    if (regExp.test(filename)) {
+    if (regExp.test(path.join(directory, filename))) {
       // webpack adds a './' to the begining of the key
       // TODO: Check this in windows
       const entryKey = `./${path.join(directory, filename)}`;
