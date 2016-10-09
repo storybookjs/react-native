@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v1.1.5
+9-October-2016
+
+Fix issue where `require.context` did not work with regexps for full path. [PR37](https://github.com/kadirahq/storyshots/pull/37)
+
 ### v1.1.4
 6-October-2016
 
