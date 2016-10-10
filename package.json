@@ -6,7 +6,7 @@
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "node .scripts/npm-prepublish.js",
-    "storybook": "STORYBOOK_CLOUD_URL='http://localhost:3003/graphql' STORYBOOK_CLOUD_APPID='test-appid' STORYBOOK_CLOUD_DATABASE='test-database' start-storybook -p 3006",
+    "storybook": "STORYBOOK_CLOUD_URL='http://localhost:3003/graphql' start-storybook -p 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/kadirahq/storybook-addon-comments#readme",
   "devDependencies": {
-    "@kadira/storybook": "^2.13.1",
+    "@kadira/storybook": "^2.24.0",
     "@kadira/storybook-addons": "^1.5.0",
     "@kadira/storybook-database-cloud": "^2.1.2",
     "@kadira/storybook-deployer": "^1.2.0",
