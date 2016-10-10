@@ -11,14 +11,6 @@ export default class CommentForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  getUsername() {
-    const { user, users } = this.props;
-    if (user) {
-      return user.name;
-    }
-    return '...';
-  }
-
   onChange(e) {
     const text = e.target.value;
     this.setState({ text });
@@ -31,14 +23,14 @@ export default class CommentForm extends Component {
   }
 
   onSubmit() {
-    const { user, addComment } = this.props;
+    const { addComment } = this.props;
     const text = this.state.text.trim();
-    if (!user.id || !text || text === '') {
+    if (!text || text === '') {
       return;
     }
-    const time = Date.now();
+
     const processedText = text.replace(/\r?\n/g, '<br />');
-    addComment({ text: processedText, time, userId: user.id });
+    addComment(processedText);
     this.setState({ text: '' });
   }
 
@@ -55,7 +47,7 @@ export default class CommentForm extends Component {
           style={style.input}
           onChange={this.onChange}
           onKeyUp={this.onKeyUp}
-          placeholder="Your comment..."
+          placeholder="Add your comment..."
           value={text}
         >
         </textarea>

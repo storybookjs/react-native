@@ -19,9 +19,11 @@ export default {
   },
   button: {
     textDecoration: 'none',
-    color: 'rgb(120, 120, 120)',
+    color: '#444',
     padding: '10px 18px',
     background: 'rgb(240, 240, 240)',
     borderRadius: 5,
+    textTransform: 'none',
+    fontSize: 12,
   },
 }
