@@ -30,7 +30,6 @@ export default class DataStore {
     return this.db.getCollection('users')
       .get(query, options)
       .then((users) => {
-        console.log('XXX', users);
         this.users = users.reduce((newUsers, user) => {
           newUsers[user.id] = user;
           return newUsers;
