@@ -1,5 +1,13 @@
 ## Changelog
 
+### v1.1.1
+
+Fix user info bug and remove unused files
+
+* Remove unused local addon-db files [PR19](https://github.com/kadirahq/storybook-addon-comments/pull/19)
+* Update storybook dev dependency to auto export repo info [PR20](https://github.com/kadirahq/storybook-addon-comments/pull/20)
+* Fix getUserInfo error by correcting method name [PR21](https://github.com/kadirahq/storybook-addon-comments/pull/21)
+
 ### v1.1.0
 
 Add some usability improvements.
