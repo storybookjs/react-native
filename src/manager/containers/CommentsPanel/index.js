@@ -39,12 +39,12 @@ export default class Container extends Component {
   getCurrentUser() {
     const db = addons.getDatabase();
 
-    if (typeof db.persister.getUser !== 'function') {
+    if (typeof db.persister._getUser !== 'function') {
       throw new Error('unable to get user info');
     }
 
     this.setState({ loading: true });
-    db.persister.getUser()
+    db.persister._getUser()
       .then(user => {
         this.store.setCurrentUser(user);
         this.setState({ user, loading: false });
