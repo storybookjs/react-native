@@ -1,10 +1,13 @@
 /* eslint class-methods-use-this:0 */
 
 import path from 'path';
-import { initializeSnapshotState } from 'jest-snapshot';
+import { SnapshotState } from 'jest-snapshot';
 import ReactTestRenderer from 'react-test-renderer';
 import diff from 'jest-diff';
 import promptly from 'promptly';
+
+const STORYSHOTS_DIR = '__storyshots__';
+const STORYSHOTS_EXTENSION = 'shot';
 
 export default class SnapshotRunner {
   constructor(configDir, { update, interactive }) {
@@ -14,9 +17,14 @@ export default class SnapshotRunner {
     this.interactive = interactive;
   }
 
+  getStoryshotPath(kind) {
+    return path.resolve(
+      this.configDir, STORYSHOTS_DIR, `${kind}.${STORYSHOTS_EXTENSION}`);
+  }
+
   startKind(kind) {
-    const filePath = path.resolve(this.configDir, kind);
-    this.state = initializeSnapshotState(filePath, this.update);
+    const filePath = this.getStoryshotPath(kind);
+    this.state = new SnapshotState('', this.update, filePath);
     this.kind = kind;
     const { updated, added, matched, unmatched } = this.state;
     this.testOutcomes = { updated, added, matched, unmatched };
