@@ -25,7 +25,7 @@ export default class CommentForm extends Component {
   }
 
   onKeyUp(e) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
       this.onSubmit();
     }
   }
@@ -37,7 +37,8 @@ export default class CommentForm extends Component {
       return;
     }
     const time = Date.now();
-    addComment({ text, time, userId: user.id });
+    const processedText = text.replace(/\r?\n/g, '<br />');
+    addComment({ text: processedText, time, userId: user.id });
     this.setState({ text: '' });
   }
 
@@ -50,13 +51,14 @@ export default class CommentForm extends Component {
           onClick={this.onLogin}
           >{this.getUsername()}
         </button>
-        <input
+        <textarea
           style={style.input}
           onChange={this.onChange}
           onKeyUp={this.onKeyUp}
           placeholder="Your comment..."
           value={text}
-        />
+        >
+        </textarea>
         <button
           style={style.submitButton}
           onClick={this.onSubmit}

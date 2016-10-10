@@ -31,7 +31,7 @@ export default {
     height: 30,
     border: 'none',
     outline: 'none',
-    padding: '7px 15px',
+    padding: '9px 11px',
     fontSize: 12,
     lineHeight: 1,
     color: 'rgba(0, 0, 0, 0.8)',
