@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import renderHTML from 'react-render-html';
 import style from './style';
 
 export default class CommentList extends Component {
@@ -51,7 +52,7 @@ export default class CommentList extends Component {
             <span style={style.commentUser}>{user.name}</span>
             <span style={style.commentTime}>{this.formatTime(comment.time)}</span>
           </div>
-          <span style={style.commentText}>{comment.text}</span>
+          <span style={style.commentText}>{ renderHTML(`<span>${comment.text}</span>`) }</span>
         </div>
       </div>
     );
