@@ -5,10 +5,6 @@ export default class CommentForm extends Component {
   constructor(props, ...args) {
     super(props, ...args);
     this.state = { text: '' };
-    // bind functions so it can be passed later
-    this.onChange = this.onChange.bind(this);
-    this.onKeyUp = this.onKeyUp.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
@@ -16,8 +12,9 @@ export default class CommentForm extends Component {
     this.setState({ text });
   }
 
-  onKeyUp(e) {
+  handleKeyDown(e) {
     if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
       this.onSubmit();
     }
   }
@@ -38,22 +35,17 @@ export default class CommentForm extends Component {
     const { text } = this.state;
     return (
       <div style={style.wrapper}>
-        <button
-          style={style.loginButton}
-          onClick={this.onLogin}
-          >{this.getUsername()}
-        </button>
         <textarea
           style={style.input}
-          onChange={this.onChange}
-          onKeyUp={this.onKeyUp}
+          onChange={e => this.onChange(e)}
+          onKeyDown={e => this.handleKeyDown(e)}
           placeholder="Add your comment..."
           value={text}
         >
         </textarea>
         <button
           style={style.submitButton}
-          onClick={this.onSubmit}
+          onClick={() => this.onSubmit()}
         >Submit
         </button>
       </div>
