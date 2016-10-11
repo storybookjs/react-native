@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import Textarea from 'react-textarea-autosize';
 import style from './style';
 
 export default class CommentForm extends Component {
   constructor(props, ...args) {
     super(props, ...args);
     this.state = { text: '' };
-    // bind functions so it can be passed later
-    this.onChange = this.onChange.bind(this);
-    this.onKeyUp = this.onKeyUp.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
@@ -16,8 +13,9 @@ export default class CommentForm extends Component {
     this.setState({ text });
   }
 
-  onKeyUp(e) {
-    if (e.key === 'Enter') {
+  handleKeyDown(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
       this.onSubmit();
     }
   }
@@ -29,24 +27,29 @@ export default class CommentForm extends Component {
       return;
     }
 
-    addComment(text);
+    const processedText = text.replace(/\r?\n/g, '<br />');
+    addComment(processedText);
     this.setState({ text: '' });
+    this.forceUpdate();
   }
 
   render() {
     const { text } = this.state;
     return (
       <div style={style.wrapper}>
-        <input
+        <Textarea
+          ref="commentBox"
           style={style.input}
-          onChange={this.onChange}
-          onKeyUp={this.onKeyUp}
+          onChange={e => this.onChange(e)}
+          onKeyDown={e => this.handleKeyDown(e)}
           placeholder="Add your comment..."
           value={text}
-        />
+        >
+        </Textarea>
         <button
+          ref="submitBtn"
           style={style.submitButton}
-          onClick={this.onSubmit}
+          onClick={() => this.onSubmit()}
         >Submit
         </button>
       </div>
