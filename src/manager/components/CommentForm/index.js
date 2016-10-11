@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Textarea from 'react-textarea-autosize';
 import style from './style';
 
 export default class CommentForm extends Component {
@@ -35,14 +36,14 @@ export default class CommentForm extends Component {
     const { text } = this.state;
     return (
       <div style={style.wrapper}>
-        <textarea
+        <Textarea
           style={style.input}
           onChange={e => this.onChange(e)}
           onKeyDown={e => this.handleKeyDown(e)}
           placeholder="Add your comment..."
           value={text}
         >
-        </textarea>
+        </Textarea>
         <button
           style={style.submitButton}
           onClick={() => this.onSubmit()}
