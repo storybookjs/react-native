@@ -24,6 +24,7 @@ export default {
   },
   submitButton: {
     ...button,
+    cursor: 'pointer',
   },
   input: {
     flex: 1,
