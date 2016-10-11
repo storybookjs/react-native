@@ -9,7 +9,7 @@ describe('SnapshotRunner', () => {
 
   beforeEach(() => {
     runner = new SnapshotRunner(
-      '/path/to/config-dir', { update: false, interactive: false });
+      { configDir: '/path/to/config-dir', update: false, interactive: false });
     runner.startKind('TestKind');
   });
 

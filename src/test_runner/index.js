@@ -66,10 +66,13 @@ export default class Runner {
     const {
       configDir = './.storybook',
       update = false,
-      updateInteractive: interactive,
+      updateInteractive = false,
+      storyshotDir,
+      extension = 'shot',
     } = options;
 
-    this.runner = new SnapshotRunner(configDir, { update, interactive });
+    this.runner = new SnapshotRunner(
+      { configDir, update, updateInteractive, storyshotDir, extension });
   }
 
   updateState(result) {

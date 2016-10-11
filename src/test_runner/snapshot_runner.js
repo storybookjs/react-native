@@ -6,20 +6,18 @@ import ReactTestRenderer from 'react-test-renderer';
 import diff from 'jest-diff';
 import promptly from 'promptly';
 
-const STORYSHOTS_DIR = '__storyshots__';
-const STORYSHOTS_EXTENSION = 'shot';
-
 export default class SnapshotRunner {
-  constructor(configDir, { update, interactive }) {
+  constructor({ configDir, update, updateInteractive, storyshotDir, extension }) {
     this.configDir = configDir;
     this.kind = '';
     this.update = update;
-    this.interactive = interactive;
+    this.interactive = updateInteractive;
+    this.storyshotDir = storyshotDir ? path.resolve(storyshotDir) : path.resolve(configDir, '__storyshots__');
+    this.extension = extension || 'shot';
   }
 
   getStoryshotPath(kind) {
-    return path.resolve(
-      this.configDir, STORYSHOTS_DIR, `${kind}.${STORYSHOTS_EXTENSION}`);
+    return path.join(this.storyshotDir, `${kind}.${this.extension}`);
   }
 
   startKind(kind) {
