@@ -10,7 +10,7 @@ exports[`custom styles`] = `
       "cursor": "pointer",
       "fontSize": 20,
       "padding": "3px 10px",
-      "textTransform": "uppercase"
+      "textTransform": "uppercase",
     }
   }>
   Hello
@@ -19,7 +19,7 @@ exports[`custom styles`] = `
 
 exports[`default view`] = `
 <button
-  onClick={[Function anonymous]}
+  onClick={[Function]}
   style={
     Object {
       "backgroundColor": "#FFFFFF",
@@ -27,7 +27,7 @@ exports[`default view`] = `
       "borderRadius": 3,
       "cursor": "pointer",
       "fontSize": 15,
-      "padding": "3px 10px"
+      "padding": "3px 10px",
     }
   }>
   Hello
@@ -36,7 +36,7 @@ exports[`default view`] = `
 
 exports[`link button`] = `
 <button
-  onClick={[Function anonymous]}
+  onClick={[Function]}
   style={
     Object {
       "backgroundColor": "#FFFFFF",
@@ -44,7 +44,7 @@ exports[`link button`] = `
       "borderRadius": 3,
       "cursor": "pointer",
       "fontSize": 15,
-      "padding": "3px 10px"
+      "padding": "3px 10px",
     }
   }>
   Go to Next Story
@@ -61,7 +61,7 @@ exports[`some emojies as the text`] = `
       "borderRadius": 3,
       "cursor": "pointer",
       "fontSize": 15,
-      "padding": "3px 10px"
+      "padding": "3px 10px",
     }
   }>
   😀 😎 👍 💯 
