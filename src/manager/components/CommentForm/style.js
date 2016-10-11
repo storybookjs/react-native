@@ -29,6 +29,7 @@ export default {
     flex: 1,
     boxSizing: 'border-box',
     height: 30,
+    maxHeight: 70,
     border: 'none',
     outline: 'none',
     padding: '5px 10px',
