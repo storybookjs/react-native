@@ -12,9 +12,9 @@ From version 2.0.0 by default storyshot files will be stored in a directory name
 
 These changes are important because they allow storyshots to be used with jest in the same project. See [issue#34](https://github.com/kadirahq/storyshots/issues/34) for more info.
 
-This mean that once storyshot is updated to 2.0.0 it wont check your existing snapshots. It will create new snapshots in the new location and you can delete old ones.
+This mean that once storyshots is updated to 2.0.0 it wont check your existing snapshots. It will create new snapshots in the new location and you can delete old ones.
 
-To update safely follow these steps.
+To update safely, follow these steps.
 
 1. Run your 1.x.x version of storyshots and make sure all stories pass.
 2. Update storyshots. `npm install @kadira/storyshots@^2.0.0 --save-dev`
