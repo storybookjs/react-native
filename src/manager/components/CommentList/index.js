@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import renderHTML from 'react-render-html';
 import style from './style';
+import './style.css';
 
 export default class CommentList extends Component {
 
@@ -34,7 +35,7 @@ export default class CommentList extends Component {
         <div style={style.commentAside}>
           <img style={style.commentAvatar} src={comment.user.avatar} />
         </div>
-        <div style={style.commentContent}>
+        <div className="comment-content" style={style.commentContent}>
           <div style={style.commentHead}>
             <span style={style.commentUser}>{comment.user.name}</span>
             <span style={style.commentTime}>{this.formatTime(comment.time)}</span>
