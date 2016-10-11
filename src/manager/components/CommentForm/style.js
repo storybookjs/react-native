@@ -37,5 +37,6 @@ export default {
     lineHeight: 1.6,
     color: 'rgba(0, 0, 0, 0.8)',
     fontFamily: 'sans-serif',
+    resize: 'none',
   },
 }
