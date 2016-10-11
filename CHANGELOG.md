@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.2.0
+11-October-2016
+
+Add multiline comment support.
+
 ### v1.1.1
 
 Fix user info bug and remove unused files
