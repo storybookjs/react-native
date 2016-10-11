@@ -18,11 +18,14 @@ program
   .option('-u, --update [boolean]', 'Update saved story snapshots')
   .option('-i, --update-interactive [boolean]',
           'Update saved story snapshots interactively')
-  .option('-g, --grep [string]', 'only test stories matching regexp')
-  .option('-x, --exclude [string]', 'exclude stories matching regexp')
-  .option('-w, --watch [boolean]', 'watch file changes and rerun tests')
-  .option('--polyfills [string]', 'add global polyfills')
-  .option('--loaders [string]', 'add loaders')
+  .option('-g, --grep [string]', 'Only test stories matching regexp')
+  .option('-x, --exclude [string]', 'Exclude stories matching regexp')
+  .option('-w, --watch [boolean]', 'Watch file changes and rerun tests')
+  .option('--storyshot-dir [string]',
+          'Path to the directory to store storyshots. Default is [config-dir]/__storyshots__')
+  .option('--extension [string]', 'File extension to use for storyshot files. Default is `.shot`')
+  .option('--polyfills [string]', 'Add global polyfills')
+  .option('--loaders [string]', 'Add loaders')
   .parse(process.argv);
 
 const {
