@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 import Textarea from 'react-textarea-autosize';
+import marked from 'marked';
 import style from './style';
+
+const renderer = new marked.Renderer();
+renderer.heading = function (text, level) {
+  return text;
+}
+
+marked.setOptions({
+  renderer: renderer,
+  gfm: true,
+  tables: false,
+  breaks: true,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
 
 export default class CommentForm extends Component {
   constructor(props, ...args) {
@@ -27,10 +44,8 @@ export default class CommentForm extends Component {
       return;
     }
 
-    const processedText = text.replace(/\r?\n/g, '<br />');
-    addComment(processedText);
+    addComment(marked(text));
     this.setState({ text: '' });
-    this.forceUpdate();
   }
 
   render() {
