@@ -59,7 +59,6 @@ const customStyle = `
 insertCss(customStyle);
 
 export default class CommentList extends Component {
-
   componentDidMount() {
     const wrapper = this.refs.wrapper;
     wrapper.scrollTop = wrapper.scrollHeight;
