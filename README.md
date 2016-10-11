@@ -8,6 +8,8 @@ With StoryShots, you could use your existing Storybook stories, as the input for
 
 Read This: [Snapshot Testing in React Storybook](https://voice.kadira.io/snapshot-testing-in-react-storybook-43b3b71cec4f#.ndyuhcxhd)
 
+**Migrating to version 2**: If you are already using version 1.x.x, follow [these steps](https://github.com/kadirahq/storyshots/blob/master/CHANGELOG.md#migrating-from-1xx) to migrate safely to 2.x.x.
+
 ## Getting Started
 
 First of all, you need to use the latest version of React Storybook.
