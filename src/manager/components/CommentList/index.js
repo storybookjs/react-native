@@ -13,13 +13,13 @@ const customStyle = `
   .comment-content pre {
     white-space: pre-wrap;
     word-wrap: break-word;
-    padding: 5px;
+    padding: 5px 8px;
     color: #000;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 0.94em;
     border-radius: 3px;
     background-color: #F8F8F8;
-    border: 1px solid #CCC;
+    border: 1px solid #f1f1f1;
   }
 
   .comment-content pre code {
@@ -35,7 +35,7 @@ const customStyle = `
     font-size: 0.94em;
     border-radius: 3px;
     background-color: #F8F8F8;
-    border: 1px solid #CCC;
+    border: 1px solid #f1f1f1;
   }
 
   .comment-content blockquote {
