@@ -44,6 +44,8 @@ export default class CommentForm extends Component {
       return;
     }
 
+    console.log(marked(text))
+
     addComment(marked(text));
     this.setState({ text: '' });
   }
