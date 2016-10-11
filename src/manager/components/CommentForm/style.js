@@ -13,7 +13,7 @@ const button = {
 export default {
   wrapper: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     borderTop: '1px solid rgb(234, 234, 234)',
   },
   loginButton: {
