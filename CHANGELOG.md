@@ -1,5 +1,28 @@
 # ChangeLog
 
+### v2.0.0
+11-October-2016
+
+* Update `jest-snapshot` to version 16.0.0. [PR39](https://github.com/kadirahq/storyshots/pull/39)
+* Use a directory and extension different from regular jest snapshots for storyshots. [PR40](https://github.com/kadirahq/storyshots/pull/40)
+
+#### Migrating from 1.x.x
+
+From version 2.0.0 by default storyshots will be stored in directory named `__storyshots__` (instead of `__snapshots__`) inside storybook config directory. Further storyshot files will use extension `.shot` instead of `.snap`.
+
+These changes are important because they allow storyshots to be used with jest in the same project. See #34 for more info.
+
+This mean that once storyshot is updated to 2.0.0 it wont check your existing storyshots. It will create new storyshots in the new location and you can delete old ones.
+
+To update safely follow these steps.
+
+1. Run your 1.x.x version of storyshots and make sure all stories pass.
+2. Update storyshots. `npm install @kadira/storyshots@^2.0.0 --save-dev`
+3. Delete `__snapshots__` directory and contents from your storybook config directory. Also remove it from your version control system.
+4. Add the newly added `__storyshots__` directory to your version control system.
+
+Done!
+
 ### v1.1.5
 9-October-2016
 
