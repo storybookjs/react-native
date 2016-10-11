@@ -20,11 +20,6 @@ export default class CommentForm extends Component {
     }
   }
 
-  handleTextareaResize() {
-    const commentBoxHeight = this.refs.commentBox.state.height;
-    this.refs.submitBtn.style.height = `${(commentBoxHeight < 71) ? commentBoxHeight : 70}px`; 
-  }
-
   onSubmit() {
     const { addComment } = this.props;
     const text = this.state.text.trim();
@@ -35,6 +30,7 @@ export default class CommentForm extends Component {
     const processedText = text.replace(/\r?\n/g, '<br />');
     addComment(processedText);
     this.setState({ text: '' });
+    this.forceUpdate();
   }
 
   render() {
@@ -46,7 +42,6 @@ export default class CommentForm extends Component {
           style={style.input}
           onChange={e => this.onChange(e)}
           onKeyDown={e => this.handleKeyDown(e)}
-          onKeyUp={e => this.handleTextareaResize(e)}
           placeholder="Add your comment..."
           value={text}
         >

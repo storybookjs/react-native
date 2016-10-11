@@ -13,8 +13,9 @@ const button = {
 export default {
   wrapper: {
     display: 'flex',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     borderTop: '1px solid rgb(234, 234, 234)',
+    backgroundColor: '#fafafa',
   },
   loginButton: {
     ...button,
@@ -23,7 +24,6 @@ export default {
   },
   submitButton: {
     ...button,
-    borderLeft: '1px solid rgb(234, 234, 234)',
   },
   input: {
     flex: 1,
