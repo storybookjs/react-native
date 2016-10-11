@@ -19,7 +19,7 @@ To update safely follow these steps.
 1. Run your 1.x.x version of storyshots and make sure all stories pass.
 2. Update storyshots. `npm install @kadira/storyshots@^2.0.0 --save-dev`
 3. Delete `__snapshots__` directory and contents from your storybook config directory. Also remove it from your version control system.
-4. Add the newly added `__storyshots__` directory to your version control system.
+4. Run updated storyshots and add the newly added `__storyshots__` directory to your version control system.
 
 Done!
 
