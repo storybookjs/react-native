@@ -1,9 +1,14 @@
 ## Changelog
 
+### v1.3.0
+11-October-2016
+
+Add markdown support. [PR24](https://github.com/kadirahq/storybook-addon-comments/pull/24)
+
 ### v1.2.0
 11-October-2016
 
-Add multiline comment support.
+Add multiline comment support. [PR22](https://github.com/kadirahq/storybook-addon-comments/pull/22)
 
 ### v1.1.1
 
