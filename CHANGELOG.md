@@ -8,9 +8,9 @@
 
 #### Migrating from 1.x.x
 
-From version 2.0.0 by default storyshots will be stored in directory named `__storyshots__` (instead of `__snapshots__`) inside storybook config directory. Further storyshot files will use extension `.shot` instead of `.snap`.
+From version 2.0.0 by default storyshots will be stored in a directory named `__storyshots__` (instead of `__snapshots__`) inside storybook config directory. Further storyshot files will use extension `.shot` instead of `.snap`.
 
-These changes are important because they allow storyshots to be used with jest in the same project. See #34 for more info.
+These changes are important because they allow storyshots to be used with jest in the same project. See [issue#34](https://github.com/kadirahq/storyshots/issues/34) for more info.
 
 This mean that once storyshot is updated to 2.0.0 it wont check your existing storyshots. It will create new storyshots in the new location and you can delete old ones.
 
