@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import CommentForm from '../src/manager/components/CommentForm';
-import CommentList from '../src/manager/components/CommentList';
-import CommentsPanel from '../src/manager/components/CommentsPanel';
+import Button from '../index';
+import CommentForm from '../manager/components/CommentForm';
+import CommentList from '../manager/components/CommentList';
+import CommentsPanel from '../manager/components/CommentsPanel';
 
 const commentsList = [
   {
@@ -35,12 +36,22 @@ const commentsList = [
 ];
 
 storiesOf('Button', module)
-  .add('Hello World', () => (
-    <button>"Hello World"</button>
+  .add('default view', () => (
+    <Button onClick={ action('button clicked') }>Hello</Button>
   ))
-  .add('Hello Earth', () => (
-    <button>"Hello Earth"</button>
-  ));
+  .add('some emojies as the text', () => (
+    <Button>😀 😎 👍 💯</Button>
+  ))
+  .add('custom styles', () => {
+    const style = {
+      fontSize: 20,
+      textTransform: 'uppercase',
+      color: '#FF8833',
+    };
+    return (
+      <Button style={ style }>Hello</Button>
+    );
+  });
 
 storiesOf('Components', module)
   .add('CommentForm', () => (
@@ -55,7 +66,9 @@ storiesOf('Components', module)
   ))
   .add('CommentList - with comments', () => (
     <CommentList
+      user={true}
       comments={commentsList}
+      deleteComment={ action('deleteComment') }
     />
   ))
   .add('CommentPanel - not loggedIn', () => (
@@ -67,6 +80,7 @@ storiesOf('Components', module)
       loading={false}
       comments={[]}
       addComment={ action('addComment') }
+      deleteComment={ action('deleteComment') }
     />
   ))
   .add('CommentPanel - loggedIn with has comments', () => (
@@ -75,5 +89,6 @@ storiesOf('Components', module)
       loading={false}
       comments={commentsList}
       addComment={ action('addComment') }
+      deleteComment={ action('deleteComment') }
     />
   ));
