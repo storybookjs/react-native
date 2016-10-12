@@ -141,6 +141,17 @@ export default class DataStore {
     return Promise.resolve(null);
   }
 
+  _setDeletedComment(commentId) {
+    const storyKey = this._getStoryKey(this.currentStory);
+    const comments = this.cache[storyKey];
+    const deleted = comments.find(c => c.id === commentId);
+    if (deleted) {
+      deleted.loading = true;
+    }
+    this._fireComments(comments);
+    return Promise.resolve(null);
+  }
+
   _addAuthorToTheDatabase() {
     if (this.users[this.user.id]) {
       // user exists in the DB.
@@ -150,6 +161,8 @@ export default class DataStore {
     return this.db.getCollection('users').set(this.user);
   }
 
+  // NOTE the "sbProtected" makes sure only the author can modify
+  // or delete a comment after its saved on the cloud database.
   _addCommentToDatabase(comment) {
     const doc = {
       ...comment,
@@ -159,11 +172,22 @@ export default class DataStore {
     return this.db.getCollection('comments').set(doc);
   }
 
+  _deleteCommentOnDatabase(commentId) {
+    const query = { id: commentId };
+    return this.db.getCollection('comments').del(query);
+  }
+
   addComment(comment) {
     this._addPendingComment(comment)
       .then(() => this._addAuthorToTheDatabase())
       .then(() => this._addCommentToDatabase(comment))
       .then(() => this._loadUsers())
+      .then(() => this._loadComments())
+  }
+
+  deleteComment(commentId) {
+    this._setDeletedComment(commentId)
+      .then(() => this._deleteCommentOnDatabase(commentId))
       .then(() => this._loadComments())
   }
 }

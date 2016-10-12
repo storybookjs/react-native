@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import moment from 'moment';
-import renderHTML from 'react-render-html';
-import insertCss from 'insert-css';
 import style from './style';
-import commentContentCSS from './comment_content_styles.css';
-
-insertCss(commentContentCSS);
+import CommentItem from '../CommentItem';
 
 export default class CommentList extends Component {
   componentDidMount() {
@@ -18,34 +13,6 @@ export default class CommentList extends Component {
       const wrapper = this.refs.wrapper;
       wrapper.scrollTop = wrapper.scrollHeight;
     }
-  }
-
-  formatTime(ts) {
-    return moment(new Date(ts), "YYYYMMDD").fromNow();
-  }
-
-  renderComment(comment, key) {
-    if (!comment.user) return null;
-
-    let commentStyle = style.commentItem;
-    if (comment.loading) {
-      commentStyle = style.commentItemloading;
-    }
-
-    return (
-      <div style={commentStyle} key={key}>
-        <div style={style.commentAside}>
-          <img style={style.commentAvatar} src={comment.user.avatar} />
-        </div>
-        <div className="comment-content" style={style.commentContent}>
-          <div style={style.commentHead}>
-            <span style={style.commentUser}>{comment.user.name}</span>
-            <span style={style.commentTime}>{this.formatTime(comment.time)}</span>
-          </div>
-          <span style={style.commentText}>{ renderHTML(`<span>${comment.text}</span>`) }</span>
-        </div>
-      </div>
-    );
   }
 
   render() {
@@ -61,7 +28,14 @@ export default class CommentList extends Component {
 
     return (
       <div ref="wrapper" style={style.wrapper}>
-        {comments.map((c, idx) => this.renderComment(c, idx))}
+        {comments.map((comment, idx) => (
+          <CommentItem
+            key={`comment_${idx}`}
+            comment={comment}
+            ownComment={comment.userId === this.props.user.id}
+            deleteComment={() => this.props.deleteComment(comment.id)}
+          />
+        ))}
       </div>
     );
   }
