@@ -142,8 +142,7 @@ export default class DataStore {
   }
 
   _setDeletedComment(commentId) {
-    const storyKey = this._getStoryKey(this.currentStory);
-    const comments = this.cache[storyKey];
+    const { comments } = this._getFromCache(this.currentStory);
     const deleted = comments.find(c => c.id === commentId);
     if (deleted) {
       deleted.loading = true;
