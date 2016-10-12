@@ -102,7 +102,9 @@ var WrapStory = function (_React$Component) {
       var _props2 = this.props;
       var storyFn = _props2.storyFn;
       var context = _props2.context;
+      var knobStore = _props2.knobStore;
 
+      knobStore.markAllUnused();
       return storyFn(context);
     }
   }]);

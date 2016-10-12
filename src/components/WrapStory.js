@@ -50,7 +50,8 @@ export default class WrapStory extends React.Component {
   }
 
   render() {
-    const { storyFn, context } = this.props;
+    const { storyFn, context, knobStore } = this.props;
+    knobStore.markAllUnused();
     return storyFn(context);
   }
 }

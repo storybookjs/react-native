@@ -34,6 +34,9 @@ var _deepEqual2 = _interopRequireDefault(_deepEqual);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
+var PANEL_UPDATE_INTERVAL = 400;
+
 var KnobManager = function () {
   function KnobManager() {
     (0, _classCallCheck3.default)(this, KnobManager);
@@ -45,6 +48,8 @@ var KnobManager = function () {
   (0, _createClass3.default)(KnobManager, [{
     key: 'knob',
     value: function knob(name, options) {
+      this._mayCallChannel();
+
       var knobStore = this.knobStore;
       var existingKnob = knobStore.get(name);
       // We need to return the value set by the knob editor via this.
@@ -66,6 +71,7 @@ var KnobManager = function () {
   }, {
     key: 'wrapStory',
     value: function wrapStory(channel, storyFn, context) {
+      this.channel = channel;
       var key = context.kind + ':::' + context.story;
       var knobStore = this.knobStoreMap[key];
 
@@ -76,6 +82,31 @@ var KnobManager = function () {
 
       var props = { context: context, storyFn: storyFn, channel: channel, knobStore: knobStore };
       return _react2.default.createElement(_WrapStory2.default, props);
+    }
+  }, {
+    key: '_mayCallChannel',
+    value: function _mayCallChannel() {
+      var _this = this;
+
+      // Re rendering of the story may cause changes to the knobStore. Some new knobs maybe added and
+      // Some knobs may go unused. So we need to update the panel accordingly. For example remove the
+      // unused knobs from the panel. This function sends the `setKnobs` message to the channel
+      // triggering a panel re-render.
+
+      if (this.calling) {
+        // If a call to channel has already registered ignore this call.
+        // Once the previous call is completed all the changes to knobStore including the one that
+        // triggered this, will be added to the panel.
+        // This avoids emitting to the channel within very short periods of time.
+        return;
+      }
+      this.calling = true;
+
+      setTimeout(function () {
+        _this.calling = false;
+        // emit to the channel and trigger a panel re-render
+        _this.channel.emit('addon:knobs:setKnobs', _this.knobStore.getAll());
+      }, PANEL_UPDATE_INTERVAL);
     }
   }]);
   return KnobManager;

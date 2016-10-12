@@ -81,7 +81,7 @@ describe('KnobManager', () => {
     it('should contain the story and add correct props', () => {
       const testManager = new KnobManager();
 
-      const testChannel = {};
+      const testChannel = { emit: () => {} };
       const testStory = () => (<div id="test-story">Test Content</div>);
       const testContext = {
         kind: 'Foo',
