@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.5.1
+12-October-2016
+
+Fix a regression in the latest master. [PR33](https://github.com/kadirahq/storybook-addon-comments/pull/33)
+
 ### v1.5.0
 12-October-2016
 
