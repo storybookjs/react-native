@@ -9,7 +9,7 @@ var types = require('../lib/project_types');
 var commandLog = require('../lib/helpers').commandLog;
 var codeLog = require('../lib/helpers').codeLog;
 var paddedLog = require('../lib/helpers').paddedLog;
-var installNpmDeps = require('../lib/helpers').installNpmDeps;
+var installDeps = require('../lib/helpers').installDeps;
 var chalk = require('chalk');
 var logger = console;
 
@@ -18,11 +18,20 @@ var pkg = require('../package.json');
 program
   .version(pkg.version)
   .option('-f --force', 'Forcely add storybook')
+  .option('-Y --use-yarn', 'Use yarn to install deps')
   .parse(process.argv);
 
 var welcomeMessage =
   'getstorybook - the simplest way to add a storybook to your project.';
 logger.log(chalk.inverse('\n ' + welcomeMessage + ' \n'));
+
+var useYarn = Boolean(program.useYarn) || /\.yarn-cache/.test(__dirname);
+
+var npmOptions = {
+  useYarn: useYarn
+};
+
+var runStorybookCommand = useYarn? 'yarn run storybook' : 'npm run storybook';
 
 // Update notify code.
 updateNotifier({
@@ -55,11 +64,11 @@ switch (projectType) {
     require('../generators/REACT_SCRIPTS');
     done();
 
-    installNpmDeps();
+    installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
     codeLog([
-      'npm run storybook'
+      runStorybookCommand
     ]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
@@ -69,11 +78,11 @@ switch (projectType) {
     require('../generators/REACT');
     done();
 
-    installNpmDeps();
+    installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
     codeLog([
-      'npm run storybook'
+      runStorybookCommand
     ]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
@@ -83,11 +92,11 @@ switch (projectType) {
     require('../generators/REACT_NATIVE');
     done();
 
-    installNpmDeps();
+    installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
     codeLog([
-      'npm run storybook'
+      runStorybookCommand
     ]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
@@ -97,11 +106,11 @@ switch (projectType) {
     require('../generators/METEOR');
     done();
 
-    installNpmDeps();
+    installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
     codeLog([
-      'npm run storybook'
+      runStorybookCommand
     ]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
@@ -111,11 +120,11 @@ switch (projectType) {
     require('../generators/WEBPACK_REACT');
     done();
 
-    installNpmDeps();
+    installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
     codeLog([
-      'npm run storybook'
+      runStorybookCommand
     ]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
@@ -125,11 +134,11 @@ switch (projectType) {
     require('../generators/REACT');
     done();
 
-    installNpmDeps();
+    installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
     codeLog([
-      'npm run storybook'
+      runStorybookCommand
     ]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
