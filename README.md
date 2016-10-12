@@ -20,4 +20,13 @@ That's all you've to do.
 
 ---
 
+## Yarn support
+
+getstorybook also supports yarn. If you are using yarn, this is how to use it:
+
+```
+yarn global add getstorybook
+getstorybook --use-yarn
+```
+
 For more information, refer [React Storybook](https://github.com/kadirahq/react-storybook) documentation.
