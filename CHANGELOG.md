@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.5.0
+12-October-2016
+
+Add comment delete feature [PR23](https://github.com/kadirahq/storybook-addon-comments/pull/23)
+
 ### v1.4.0
 12-October-2016
 
