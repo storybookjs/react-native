@@ -90,10 +90,10 @@ export default class DataStore {
     return Promise.resolve(null);
   }
 
-  _setDeletedComment(comment) {
+  _setDeletedComment(commentId) {
     const storyKey = this._getStoryKey(this.currentStory);
     const comments = this.cache[storyKey];
-    const deleted = comments.find(c => c.id === comment.id);
+    const deleted = comments.find(c => c.id === commentId);
     if (deleted) {
       deleted.loading = true;
     }
@@ -121,8 +121,8 @@ export default class DataStore {
     return this.db.getCollection('comments').set(doc);
   }
 
-  _deleteCommentOnDatabase(comment) {
-    const query = { id: comment.id };
+  _deleteCommentOnDatabase(commentId) {
+    const query = { id: commentId };
     return this.db.getCollection('comments').del(query);
   }
 
@@ -134,9 +134,9 @@ export default class DataStore {
       .then(() => this._loadComments())
   }
 
-  deleteComment(comment) {
-    this._setDeletedComment(comment)
-      .then(() => this._deleteCommentOnDatabase(comment))
+  deleteComment(commentId) {
+    this._setDeletedComment(commentId)
+      .then(() => this._deleteCommentOnDatabase(commentId))
       .then(() => this._loadComments())
   }
 }

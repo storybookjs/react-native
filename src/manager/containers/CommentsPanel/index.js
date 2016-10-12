@@ -64,11 +64,16 @@ export default class Container extends Component {
     this.store.addComment(comment);
   }
 
+  deleteComment(commentId) {
+    this.store.deleteComment(commentId);
+  }
+
   render() {
     const props = {
       user: this.state.user,
       comments: this.state.comments,
       loading: this.state.loading,
+      deleteComment: commentId => this.deleteComment(commentId),
       addComment: text => this.addComment(text),
     };
 
