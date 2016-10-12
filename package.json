@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-comments",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Comments addon for Storybook",
   "main": "preview.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "storybook": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' STORYBOOK_CLOUD_APPID='test-app' STORYBOOK_CLOUD_DATABASE='test-db' start-storybook -p 3006",
+    "storybook-local": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 3006",
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "repository": {

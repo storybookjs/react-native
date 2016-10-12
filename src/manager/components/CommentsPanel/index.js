@@ -5,6 +5,14 @@ import style from './style';
 
 export default class CommentsPanel extends Component {
   render() {
+    if (this.props.loading) {
+      return (
+        <div style={style.wrapper}>
+          <div style={style.message}>loading...</div>
+        </div>
+      );
+    }
+    
     if (!this.props.user) {
       const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(location.href)}`;
       return (
@@ -16,10 +24,13 @@ export default class CommentsPanel extends Component {
       );
     }
 
-    if (this.props.loading) {
+    if (this.props.appNotAvailable) {
+      const appsUrl = 'https://hub.getstorybook.io/apps';
       return (
         <div style={style.wrapper}>
-          <div style={style.message}>loading...</div>
+          <div style={style.message}>
+            <a style={style.button} href={appsUrl}>Create an app for this repo on Storybook Hub</a>
+          </div>
         </div>
       );
     }
