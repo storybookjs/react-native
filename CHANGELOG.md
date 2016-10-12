@@ -1,5 +1,17 @@
 # Changelog
 
+### v1.6.0
+12-Oct-2016
+
+Add yarn support. Now users could install storybook with yarn and use yarn to install deps:
+
+```
+yarn global add getstorybook
+getstorybook
+```
+
+For more info check [docs](https://github.com/kadirahq/getstorybook#yarn-support).
+
 ### v1.5.2
 07-Oct-2016
 
