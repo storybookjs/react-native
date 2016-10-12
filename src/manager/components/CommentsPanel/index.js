@@ -1,3 +1,5 @@
+/* eslint no-undef: 0 */
+
 import React, { Component } from 'react';
 import CommentList from '../CommentList';
 import CommentForm from '../CommentForm';
@@ -12,7 +14,7 @@ export default class CommentsPanel extends Component {
         </div>
       );
     }
-    
+
     if (!this.props.user) {
       const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(location.href)}`;
       return (
@@ -43,3 +45,9 @@ export default class CommentsPanel extends Component {
     );
   }
 }
+
+CommentsPanel.propTypes = {
+  loading: React.PropTypes.bool,
+  user: React.PropTypes.object,
+  appNotAvailable: React.PropTypes.object,
+};

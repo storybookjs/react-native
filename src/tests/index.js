@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Button from '../index';
 import { expect } from 'chai';
 import sinon from 'sinon';
+import Button from '../index';
+
 const { describe, it } = global;
 
 describe('Button', () => {
@@ -18,7 +19,7 @@ describe('Button', () => {
     // wrap this with a div.
     const wrapper = mount(
       <div>
-        <Button onClick={ clickMe }>ClickMe</Button>
+        <Button onClick={clickMe}>ClickMe</Button>
       </div>
     );
 

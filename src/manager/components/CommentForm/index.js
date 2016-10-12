@@ -4,19 +4,19 @@ import marked from 'marked';
 import style from './style';
 
 const renderer = new marked.Renderer();
-renderer.heading = function (text, level) {
+renderer.heading = function (text) {
   return text;
-}
+};
 
 marked.setOptions({
-  renderer: renderer,
+  renderer,
   gfm: true,
   tables: false,
   breaks: true,
   pedantic: false,
   sanitize: true,
   smartLists: true,
-  smartypants: false
+  smartypants: false,
 });
 
 export default class CommentForm extends Component {
@@ -30,13 +30,6 @@ export default class CommentForm extends Component {
     this.setState({ text });
   }
 
-  handleKeyDown(e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      this.onSubmit();
-    }
-  }
-
   onSubmit() {
     const { addComment } = this.props;
     const text = this.state.text.trim();
@@ -48,21 +41,25 @@ export default class CommentForm extends Component {
     this.setState({ text: '' });
   }
 
+  handleKeyDown(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      this.onSubmit();
+    }
+  }
+
   render() {
     const { text } = this.state;
     return (
       <div style={style.wrapper}>
         <Textarea
-          ref="commentBox"
           style={style.input}
           onChange={e => this.onChange(e)}
           onKeyDown={e => this.handleKeyDown(e)}
           placeholder="Add your comment..."
           value={text}
-        >
-        </Textarea>
+        />
         <button
-          ref="submitBtn"
           style={style.submitButton}
           onClick={() => this.onSubmit()}
         >Submit
@@ -71,3 +68,7 @@ export default class CommentForm extends Component {
     );
   }
 }
+
+CommentForm.propTypes = {
+  addComment: React.PropTypes.func,
+};

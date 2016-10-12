@@ -1,3 +1,5 @@
+/* eslint jsx-a11y/href-no-hash:0 */
+
 import React, { Component } from 'react';
 import moment from 'moment';
 import renderHTML from 'react-render-html';
@@ -33,7 +35,8 @@ export default class CommentItem extends Component {
       <a
         href="#"
         style={style.commentDelete}
-        onClick={this.props.deleteComment}>
+        onClick={this.props.deleteComment}
+      >
         delete
       </a>
     );
@@ -46,14 +49,14 @@ export default class CommentItem extends Component {
       commentStyle = style.commentItemloading;
     }
 
-    const time = moment(new Date(comment.time), "YYYYMMDD").fromNow();
+    const time = moment(new Date(comment.time), 'YYYYMMDD').fromNow();
     const body = renderHTML(`<span>${comment.text}</span>`);
     const showDelete = this.state.hovered && this.props.ownComment;
 
     return (
       <div style={commentStyle} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
         <div style={style.commentAside}>
-          <img style={style.commentAvatar} src={comment.user.avatar} />
+          <img alt={comment.user.name} style={style.commentAvatar} src={comment.user.avatar} />
         </div>
         <div className="comment-content" style={style.commentContent}>
           <div style={style.commentHead}>
@@ -67,3 +70,9 @@ export default class CommentItem extends Component {
     );
   }
 }
+
+CommentItem.propTypes = {
+  deleteComment: React.PropTypes.func,
+  comment: React.PropTypes.object,
+  ownComment: React.PropTypes.bool,
+};

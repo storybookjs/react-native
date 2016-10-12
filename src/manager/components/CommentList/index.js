@@ -40,3 +40,9 @@ export default class CommentList extends Component {
     );
   }
 }
+
+CommentList.propTypes = {
+  comments: React.PropTypes.array,
+  user: React.PropTypes.object,
+  deleteComment: React.PropTypes.func,
+};

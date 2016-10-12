@@ -8,5 +8,5 @@ export default {
     fontFamily: 'sans-serif',
     fontSize: 13,
     padding: '10px 0',
-  }
-}
+  },
+};
