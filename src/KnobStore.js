@@ -10,11 +10,16 @@ export default class KnobStore {
 
   set(key, value) {
     this.store[key] = value;
+    this.store[key].used = true;
     this.callbacks.forEach(cb => cb());
   }
 
   get(key) {
-    return this.store[key];
+    const knob = this.store[key];
+    if (knob) {
+      knob.used = true;
+    }
+    return knob;
   }
 
   getAll() {
@@ -23,6 +28,12 @@ export default class KnobStore {
 
   reset() {
     this.store = {};
+  }
+
+  markAllUnused() {
+    Object.keys(this.store).forEach(knobName => {
+      this.store[knobName].used = false;
+    });
   }
 
   subscribe(cb) {

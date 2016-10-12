@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _keys = require("babel-runtime/core-js/object/keys");
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -31,6 +35,7 @@ var KnobStore = function () {
     key: "set",
     value: function set(key, value) {
       this.store[key] = value;
+      this.store[key].used = true;
       this.callbacks.forEach(function (cb) {
         return cb();
       });
@@ -38,7 +43,11 @@ var KnobStore = function () {
   }, {
     key: "get",
     value: function get(key) {
-      return this.store[key];
+      var knob = this.store[key];
+      if (knob) {
+        knob.used = true;
+      }
+      return knob;
     }
   }, {
     key: "getAll",
@@ -49,6 +58,15 @@ var KnobStore = function () {
     key: "reset",
     value: function reset() {
       this.store = {};
+    }
+  }, {
+    key: "markAllUnused",
+    value: function markAllUnused() {
+      var _this = this;
+
+      (0, _keys2.default)(this.store).forEach(function (knobName) {
+        _this.store[knobName].used = false;
+      });
     }
   }, {
     key: "subscribe",

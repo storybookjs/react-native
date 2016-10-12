@@ -22,7 +22,7 @@ stories.add('simple example', () => (
 stories.add('with all knobs', () => {
   const name = text('Name', 'Tom Cary');
   const dob = date('DOB', new Date('January 20 1887'));
-  
+
   const bold = boolean('Bold', false);
   const color = select('Color', {
     red: 'Red',
@@ -77,6 +77,18 @@ stories.add('dates Knob', () => {
         </blockquote>
       </li>
     </ul>
+  )
+})
+
+stories.add('dynamic knobs', () => {
+  const showOptional = select('Show optional', ['yes', 'no'], 'yes')
+  return (
+    <div>
+      <div>
+        {text('compulsary', 'I must be here')}
+      </div>
+      { showOptional==='yes' ? <div>{text('optional', 'I can disapear')}</div> : null }
+    </div>
   )
 })
 

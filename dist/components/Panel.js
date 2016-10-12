@@ -161,7 +161,9 @@ var Panel = function (_React$Component) {
     value: function render() {
       var knobs = this.state.knobs;
 
-      var knobsArray = (0, _keys2.default)(knobs).map(function (key) {
+      var knobsArray = (0, _keys2.default)(knobs).filter(function (key) {
+        return knobs[key].used;
+      }).map(function (key) {
         return knobs[key];
       });
 
