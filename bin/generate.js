@@ -25,11 +25,13 @@ var welcomeMessage =
   'getstorybook - the simplest way to add a storybook to your project.';
 logger.log(chalk.inverse('\n ' + welcomeMessage + ' \n'));
 
+var useYarn = Boolean(program.useYarn) || /\.yarn-cache/.test(__dirname);
+
 var npmOptions = {
-  useYarn: Boolean(program.useYarn)
+  useYarn: useYarn
 };
 
-var runStorybookCommand = program.useYarn? 'yarn run storybook' : 'npm run storybook';
+var runStorybookCommand = useYarn? 'yarn run storybook' : 'npm run storybook';
 
 // Update notify code.
 updateNotifier({
