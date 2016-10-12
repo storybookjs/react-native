@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.3.1
+13-October-2016
+
+Show or hide knob from panel depending on whether it was called in the story or not [PR59](https://github.com/kadirahq/storybook-addon-knobs/pull/59).
+
 ### v1.3.0
 05-October-2016
 
