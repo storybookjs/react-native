@@ -61,6 +61,12 @@ storiesOf('Components', module)
   .add('CommentPanel - not loggedIn', () => (
     <CommentsPanel />
   ))
+  .add('CommentPanel - app not available', () => (
+    <CommentsPanel
+      user={true}
+      appNotAvailable={{}}
+    />
+  ))
   .add('CommentPanel - loggedIn with no comments', () => (
     <CommentsPanel
       user={true}

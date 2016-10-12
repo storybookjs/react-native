@@ -28,7 +28,7 @@ export default class Container extends Component {
       this.store.setCurrentStory(kind, story);
     });
 
-    this.getCurrentUser();
+    this.init();
   }
 
   componentWillUnmount() {
@@ -36,7 +36,16 @@ export default class Container extends Component {
     this.stopListeningOnStory();
   }
 
-  getCurrentUser() {
+  _getAppInfo(persister) {
+    return persister
+      ._getAppInfo()
+      .then(
+        (appInfo) => Promise.resolve(appInfo),
+        (err) => Promise.resolve(null),
+      );
+  }
+
+  init() {
     const db = addons.getDatabase();
 
     if (typeof db.persister._getUser !== 'function') {
@@ -47,8 +56,16 @@ export default class Container extends Component {
     db.persister._getUser()
       .then(user => {
         this.store.setCurrentUser(user);
-        this.setState({ user, loading: false });
-      });
+        this.setState({ user });
+        return this._getAppInfo(db.persister);
+      })
+      .then(appInfo => {
+        const updatedState = { loading: false }
+        if (!appInfo) {
+          updatedState.appNotAvailable = true;
+        }
+        this.setState(updatedState);
+      })
   }
 
   addComment(text) {
@@ -69,6 +86,7 @@ export default class Container extends Component {
       user: this.state.user,
       comments: this.state.comments,
       loading: this.state.loading,
+      appNotAvailable: this.state.appNotAvailable,
       addComment: text => this.addComment(text),
     };
 
