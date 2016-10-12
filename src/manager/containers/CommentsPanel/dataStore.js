@@ -166,6 +166,7 @@ export default class DataStore {
     const doc = {
       ...comment,
       ...this.currentStory,
+      sbProtected: true,
     };
 
     return this.db.getCollection('comments').set(doc);
