@@ -4,14 +4,12 @@ import CommentItem from '../CommentItem';
 
 export default class CommentList extends Component {
   componentDidMount() {
-    const wrapper = this.refs.wrapper;
-    wrapper.scrollTop = wrapper.scrollHeight;
+    this.wrapper.scrollTop = this.wrapper.scrollHeight;
   }
 
   componentDidUpdate(prev) {
     if (this.props.comments.length !== prev.comments.length) {
-      const wrapper = this.refs.wrapper;
-      wrapper.scrollTop = wrapper.scrollHeight;
+      this.wrapper.scrollTop = this.wrapper.scrollHeight;
     }
   }
 
@@ -20,14 +18,14 @@ export default class CommentList extends Component {
 
     if (comments.length === 0) {
       return (
-        <div ref="wrapper" style={style.wrapper}>
+        <div ref={(el) => { this.wrapper = el; }} style={style.wrapper}>
           <div style={style.noComments}>No Comments Yet!</div>
         </div>
       );
     }
 
     return (
-      <div ref="wrapper" style={style.wrapper}>
+      <div ref={(el) => { this.wrapper = el; }} style={style.wrapper}>
         {comments.map((comment, idx) => (
           <CommentItem
             key={`comment_${idx}`}

@@ -1,3 +1,5 @@
+/* eslint no-param-reassign:0 */
+
 import deepEquals from 'deep-equal';
 
 export default class DataStore {
@@ -83,8 +85,11 @@ export default class DataStore {
       .get(query, options)
       .then((users) => {
         this.users = users.reduce((newUsers, user) => {
-          newUsers[user.id] = user;
-          return newUsers;
+          const usersObj = {
+            ...newUsers,
+          };
+          usersObj[user.id] = user;
+          return usersObj;
         }, {});
       });
   }
@@ -99,6 +104,7 @@ export default class DataStore {
         // add to cache
         this._addToCache(currentStory, comments);
 
+     /* eslint no-param-reassign:0 */
         // set comments only if we are on the relavant story
         if (deepEquals(currentStory, this.currentStory)) {
           this._fireComments(comments);
