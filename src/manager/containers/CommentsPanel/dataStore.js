@@ -10,12 +10,64 @@ export default class DataStore {
     this.user = null;
   }
 
-  setCurrentStory(sbKind, sbStory) {
-    this.currentStory = { sbKind, sbStory };
-    const key = this._getStoryKey(this.currentStory);
-    this._fireComments(this.cache[key] || []);
+  _addToCache(currentStory, comments) {
+    const key = this._getStoryKey(currentStory);
+    this.cache[key] = {
+      comments,
+      addedAt: Date.now(),
+    };
+  }
 
-    // Load comments.
+  _getFromCache(currentStory) {
+    const key = this._getStoryKey(currentStory);
+    const item = this.cache[key];
+
+    if (!item) return null;
+
+    const comments = item.comments;
+    let invalidated = false;
+
+    // invalid caches created 60 minutes ago.
+    if ((Date.now() - item.addedAt) > 1000 * 60) {
+      delete this.cache[key];
+      invalidated = true;
+    }
+
+    return { comments, invalidated }
+  }
+
+  _reloadCurrentComments() {
+    if (this._stopReloading) {
+      clearInterval(this._stopReloading);
+    }
+
+    this._stopReloading = setInterval(
+      () => {
+        this._loadUsers()
+          .then(() => this._loadComments())
+      },
+      1000 * 60 // Reload for every minute
+    );
+  }
+
+  setCurrentStory(sbKind, sbStory) {
+    this._reloadCurrentComments();
+    this.currentStory = { sbKind, sbStory };
+    const item = this._getFromCache(this.currentStory);
+
+    if (item) {
+      this._fireComments(item.comments);
+      // if the cache invalidated we need to load comments again.
+      if (item.invalidated) {
+        this._loadUsers()
+          .then(() => this._loadComments())
+      }
+      return;
+    }
+
+    // load comments for the first time.
+    // TODO: send a null and handle the loading part in the UI side.
+    this._fireComments([]);
     this._loadUsers()
       .then(() => this._loadComments())
   }
@@ -45,7 +97,7 @@ export default class DataStore {
       .get(query, options)
       .then(comments => {
         // add to cache
-        this.cache[this._getStoryKey(currentStory)] = comments;
+        this._addToCache(currentStory, comments);
 
         // set comments only if we are on the relavant story
         if (deepEquals(currentStory, this.currentStory)) {
@@ -82,8 +134,7 @@ export default class DataStore {
   _addPendingComment(comment) {
     // Add the pending comment.
     const pendingComment = { ...comment, loading: true };
-    const storyKey = this._getStoryKey(this.currentStory);
-    const existingComments = this.cache[storyKey];
+    const { comments: existingComments } = this._getFromCache(this.currentStory);
     const updatedComments = existingComments.concat(pendingComment);
 
     this._fireComments(updatedComments);
