@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.6.1
+12-October-2016
+
+Move a few packages from dev-deps to deps.
+
 ### v1.6.0
 12-October-2016
 
