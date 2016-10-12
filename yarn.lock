@@ -31,7 +31,7 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-channel/-/storybook-channel-1.1.0.tgz#806d1cdf2498d11cce09871a6fd27bbb41ed3564"
 
-"@kadira/storybook-database-cloud@^2.1.2":
+"@kadira/storybook-database-cloud@^2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-database-cloud/-/storybook-database-cloud-2.3.0.tgz#e539f16e40ecf341894980137501a4b0557c19df"
   dependencies:
