@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.6.0
+12-October-2016
+
+* Implement a better workflow for local users [PR31](https://github.com/kadirahq/storybook-addon-comments/pull/31)
+* Set the protected field to true. [PR30](https://github.com/kadirahq/storybook-addon-comments/pull/30)
+
 ### v1.5.1
 12-October-2016
 
