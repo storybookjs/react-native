@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.4.0
+12-October-2016
+
+Add a cache invalidation system. [PR28](https://github.com/kadirahq/storybook-addon-comments/pull/28)
+
 ### v1.3.0
 11-October-2016
 
