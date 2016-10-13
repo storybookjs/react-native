@@ -27,7 +27,7 @@ export default class CommentItem extends Component {
   }
 
   deleteComment() {
-    const confirmDelete = confirm('Are you sure you want to delete this comment?\r\nPress OK to continue.');
+    const confirmDelete = confirm('Are you sure you want to delete this comment?');
     if (confirmDelete === true) {
       this.props.deleteComment();
     }
