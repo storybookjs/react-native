@@ -1,3 +1,5 @@
+/* eslint import/prefer-default-export:0 */
+
 import React from 'react';
 import addons from '@kadira/storybook-addons';
 import CommentsPanel from './containers/CommentsPanel';
