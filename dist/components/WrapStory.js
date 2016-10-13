@@ -60,6 +60,11 @@ var WrapStory = function (_React$Component) {
       this.setPaneKnobs();
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      this.setState({ storyContent: props.initialContent });
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this.props.channel.removeListener('addon:knobs:knobChange', this.knobChanged);

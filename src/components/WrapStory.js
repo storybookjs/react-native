@@ -22,6 +22,10 @@ export default class WrapStory extends React.Component {
     this.setPaneKnobs();
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({ storyContent: props.initialContent });
+  }
+
   componentWillUnmount() {
     this.props.channel.removeListener('addon:knobs:knobChange', this.knobChanged);
     this.props.channel.removeListener('addon:knobs:reset', this.resetKnobs);

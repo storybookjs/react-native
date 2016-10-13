@@ -49,7 +49,7 @@ function select(name, options, value) {
 }
 
 function date(name) {
-  var value = arguments.length <= 1 || arguments[1] === undefined ? new Date() : arguments[1];
+  var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
 
   var proxyValue = value ? value.getTime() : null;
   return manager.knob(name, { type: 'date', value: proxyValue });
