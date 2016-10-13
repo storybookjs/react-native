@@ -3,6 +3,11 @@
 ### v1.3.2
 13-October-2016
 
+Fix issue where hot reloaded updates were not rendered [PR62](https://github.com/kadirahq/storybook-addon-knobs/pull/62).
+
+### v1.3.2
+13-October-2016
+
 Make the render function of WrapStory pure [PR61](https://github.com/kadirahq/storybook-addon-knobs/pull/61).
 
 ### v1.3.1
