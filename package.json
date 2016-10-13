@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-knobs",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "React Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
