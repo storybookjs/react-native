@@ -7,7 +7,7 @@ export default class WrapStory extends React.Component {
     this.resetKnobs = this.resetKnobs.bind(this);
     this.setPaneKnobs = this.setPaneKnobs.bind(this);
     this._knobsAreReset = false;
-    this.state = {};
+    this.state = { storyContent: this.props.initialContent };
   }
 
   componentDidMount() {
@@ -35,24 +35,23 @@ export default class WrapStory extends React.Component {
 
   knobChanged(change) {
     const { name, value } = change;
-    const { knobStore } = this.props;
+    const { knobStore, storyFn, context } = this.props;
     // Update the related knob and it's value.
     const knobOptions = knobStore.get(name);
     knobOptions.value = value;
-    this.forceUpdate();
+    knobStore.markAllUnused();
+    this.setState({ storyContent: storyFn(context) });
   }
 
   resetKnobs() {
-    const { knobStore } = this.props;
+    const { knobStore, storyFn, context } = this.props;
     knobStore.reset();
-    this.forceUpdate();
+    this.setState({ storyContent: storyFn(context) });
     this.setPaneKnobs();
   }
 
   render() {
-    const { storyFn, context, knobStore } = this.props;
-    knobStore.markAllUnused();
-    return storyFn(context);
+    return this.state.storyContent;
   }
 }
 
@@ -61,4 +60,5 @@ WrapStory.propTypes = {
   storyFn: React.PropTypes.func,
   channel: React.PropTypes.object,
   knobStore: React.PropTypes.object,
+  initialContent: React.PropTypes.object,
 };

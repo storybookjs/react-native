@@ -43,9 +43,11 @@ export default class KnobManager {
     if (!knobStore) {
       knobStore = this.knobStoreMap[key] = new KnobStore();
     }
-    this.knobStore = knobStore;
 
-    const props = { context, storyFn, channel, knobStore };
+    this.knobStore = knobStore;
+    knobStore.markAllUnused();
+    const initialContent = storyFn(context);
+    const props = { context, storyFn, channel, knobStore, initialContent };
     return (<WrapStory {...props} />);
   }
 
