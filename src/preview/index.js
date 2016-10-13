@@ -1,3 +1,3 @@
-export default function init() {
+export function init() {
   // nothing to do here
 }

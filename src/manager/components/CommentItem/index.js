@@ -27,7 +27,10 @@ export default class CommentItem extends Component {
   }
 
   deleteComment() {
-    this.props.deleteComment();
+    const confirmDelete = confirm("Are you sure you want to delete this comment?\r\nPress OK to continue.");
+    if (confirmDelete == true) {
+      this.props.deleteComment();
+    }
   }
 
   renderDelete() {
@@ -35,7 +38,7 @@ export default class CommentItem extends Component {
       <a
         href="#"
         style={style.commentDelete}
-        onClick={this.props.deleteComment}
+        onClick={this.deleteComment}
       >
         delete
       </a>
