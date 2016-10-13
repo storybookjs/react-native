@@ -1,3 +1,5 @@
+/* eslint no-param-reassign:0 */
+
 import deepEquals from 'deep-equal';
 
 export default class DataStore {
@@ -33,7 +35,7 @@ export default class DataStore {
       invalidated = true;
     }
 
-    return { comments, invalidated }
+    return { comments, invalidated };
   }
 
   _reloadCurrentComments() {
@@ -44,7 +46,7 @@ export default class DataStore {
     this._stopReloading = setInterval(
       () => {
         this._loadUsers()
-          .then(() => this._loadComments())
+          .then(() => this._loadComments());
       },
       1000 * 60 // Reload for every minute
     );
@@ -60,7 +62,7 @@ export default class DataStore {
       // if the cache invalidated we need to load comments again.
       if (item.invalidated) {
         this._loadUsers()
-          .then(() => this._loadComments())
+          .then(() => this._loadComments());
       }
       return;
     }
@@ -69,7 +71,7 @@ export default class DataStore {
     // TODO: send a null and handle the loading part in the UI side.
     this._fireComments([]);
     this._loadUsers()
-      .then(() => this._loadComments())
+      .then(() => this._loadComments());
   }
 
   setCurrentUser(user) {
@@ -78,27 +80,31 @@ export default class DataStore {
 
   _loadUsers() {
     const query = {};
-    const options = {limit: 1e6};
+    const options = { limit: 1e6 };
     return this.db.getCollection('users')
       .get(query, options)
       .then((users) => {
         this.users = users.reduce((newUsers, user) => {
-          newUsers[user.id] = user;
-          return newUsers;
+          const usersObj = {
+            ...newUsers,
+          };
+          usersObj[user.id] = user;
+          return usersObj;
         }, {});
-      })
+      });
   }
 
   _loadComments() {
     const currentStory = { ...this.currentStory };
     const query = currentStory;
-    const options = {limit: 1e6};
+    const options = { limit: 1e6 };
     return this.db.getCollection('comments')
       .get(query, options)
-      .then(comments => {
+      .then((comments) => {
         // add to cache
         this._addToCache(currentStory, comments);
 
+     /* eslint no-param-reassign:0 */
         // set comments only if we are on the relavant story
         if (deepEquals(currentStory, this.currentStory)) {
           this._fireComments(comments);
@@ -182,12 +188,12 @@ export default class DataStore {
       .then(() => this._addAuthorToTheDatabase())
       .then(() => this._addCommentToDatabase(comment))
       .then(() => this._loadUsers())
-      .then(() => this._loadComments())
+      .then(() => this._loadComments());
   }
 
   deleteComment(commentId) {
     this._setDeletedComment(commentId)
       .then(() => this._deleteCommentOnDatabase(commentId))
-      .then(() => this._loadComments())
+      .then(() => this._loadComments());
   }
 }

@@ -40,4 +40,4 @@ export default {
     fontFamily: 'sans-serif',
     resize: 'none',
   },
-}
+};

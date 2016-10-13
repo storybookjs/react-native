@@ -26,4 +26,4 @@ export default {
     textTransform: 'none',
     fontSize: 12,
   },
-}
+};

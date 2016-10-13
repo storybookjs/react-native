@@ -3,7 +3,7 @@ const commentItem = {
   paddingBottom: '5px',
   WebkitFontSmoothing: 'antialiased',
   transition: 'opacity 0.5s',
-}
+};
 
 export default {
   commentItem: {
@@ -55,4 +55,4 @@ export default {
     fontSize: 11,
     color: 'rgb(200, 200, 200)',
   },
-}
+};

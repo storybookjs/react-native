@@ -1,7 +1,9 @@
+/* eslint no-unused-vars:0 */
+
 import React, { Component } from 'react';
 import addons from '@kadira/storybook-addons';
+// import deepEquals from 'deep-equal';
 import CommentsPanel from '../../components/CommentsPanel/';
-import deepEquals from 'deep-equal';
 import DataStore from './dataStore';
 
 export default class Container extends Component {
@@ -40,8 +42,8 @@ export default class Container extends Component {
     return persister
       ._getAppInfo()
       .then(
-        (appInfo) => Promise.resolve(appInfo),
-        (err) => Promise.resolve(null),
+        appInfo => Promise.resolve(appInfo),
+        err => Promise.resolve(null),
       );
   }
 
@@ -54,18 +56,18 @@ export default class Container extends Component {
 
     this.setState({ loading: true });
     db.persister._getUser()
-      .then(user => {
+      .then((user) => {
         this.store.setCurrentUser(user);
         this.setState({ user });
         return this._getAppInfo(db.persister);
       })
-      .then(appInfo => {
-        const updatedState = { loading: false }
+      .then((appInfo) => {
+        const updatedState = { loading: false };
         if (!appInfo) {
           updatedState.appNotAvailable = true;
         }
         this.setState(updatedState);
-      })
+      });
   }
 
   addComment(text) {
@@ -75,7 +77,7 @@ export default class Container extends Component {
     const comment = {
       text,
       time,
-      userId: user.id
+      userId: user.id,
     };
 
     this.store.addComment(comment);
@@ -98,3 +100,7 @@ export default class Container extends Component {
     return <CommentsPanel {...props} />;
   }
 }
+
+Container.propTypes = {
+  api: React.PropTypes.object,
+};
