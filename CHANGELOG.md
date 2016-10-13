@@ -1,6 +1,6 @@
 # Changelog
 
-### v1.3.2
+### v1.3.3
 13-October-2016
 
 Fix issue where hot reloaded updates were not rendered [PR62](https://github.com/kadirahq/storybook-addon-knobs/pull/62).
