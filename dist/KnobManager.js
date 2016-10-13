@@ -78,9 +78,11 @@ var KnobManager = function () {
       if (!knobStore) {
         knobStore = this.knobStoreMap[key] = new _KnobStore2.default();
       }
-      this.knobStore = knobStore;
 
-      var props = { context: context, storyFn: storyFn, channel: channel, knobStore: knobStore };
+      this.knobStore = knobStore;
+      knobStore.markAllUnused();
+      var initialContent = storyFn(context);
+      var props = { context: context, storyFn: storyFn, channel: channel, knobStore: knobStore, initialContent: initialContent };
       return _react2.default.createElement(_WrapStory2.default, props);
     }
   }, {

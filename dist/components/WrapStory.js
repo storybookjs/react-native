@@ -42,7 +42,7 @@ var WrapStory = function (_React$Component) {
     _this.resetKnobs = _this.resetKnobs.bind(_this);
     _this.setPaneKnobs = _this.setPaneKnobs.bind(_this);
     _this._knobsAreReset = false;
-    _this.state = {};
+    _this.state = { storyContent: _this.props.initialContent };
     return _this;
   }
 
@@ -80,32 +80,33 @@ var WrapStory = function (_React$Component) {
     value: function knobChanged(change) {
       var name = change.name;
       var value = change.value;
-      var knobStore = this.props.knobStore;
+      var _props2 = this.props;
+      var knobStore = _props2.knobStore;
+      var storyFn = _props2.storyFn;
+      var context = _props2.context;
       // Update the related knob and it's value.
 
       var knobOptions = knobStore.get(name);
       knobOptions.value = value;
-      this.forceUpdate();
+      knobStore.markAllUnused();
+      this.setState({ storyContent: storyFn(context) });
     }
   }, {
     key: 'resetKnobs',
     value: function resetKnobs() {
-      var knobStore = this.props.knobStore;
+      var _props3 = this.props;
+      var knobStore = _props3.knobStore;
+      var storyFn = _props3.storyFn;
+      var context = _props3.context;
 
       knobStore.reset();
-      this.forceUpdate();
+      this.setState({ storyContent: storyFn(context) });
       this.setPaneKnobs();
     }
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var storyFn = _props2.storyFn;
-      var context = _props2.context;
-      var knobStore = _props2.knobStore;
-
-      knobStore.markAllUnused();
-      return storyFn(context);
+      return this.state.storyContent;
     }
   }]);
   return WrapStory;
@@ -118,5 +119,6 @@ WrapStory.propTypes = {
   context: _react2.default.PropTypes.object,
   storyFn: _react2.default.PropTypes.func,
   channel: _react2.default.PropTypes.object,
-  knobStore: _react2.default.PropTypes.object
+  knobStore: _react2.default.PropTypes.object,
+  initialContent: _react2.default.PropTypes.object
 };
