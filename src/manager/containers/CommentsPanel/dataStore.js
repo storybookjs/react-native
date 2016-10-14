@@ -163,6 +163,10 @@ export default class DataStore {
       return Promise.resolve(null);
     }
 
+    // add user to the local cache
+    this.users[this.user.id] = this.user;
+
+    // add user to the actual collection
     return this.db.getCollection('users').set(this.user);
   }
 
@@ -184,8 +188,8 @@ export default class DataStore {
   }
 
   addComment(comment) {
-    this._addPendingComment(comment)
-      .then(() => this._addAuthorToTheDatabase())
+    this._addAuthorToTheDatabase()
+      .then(() => this._addPendingComment(comment))
       .then(() => this._addCommentToDatabase(comment))
       .then(() => this._loadUsers())
       .then(() => this._loadComments());
