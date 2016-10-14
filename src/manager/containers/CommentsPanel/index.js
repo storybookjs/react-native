@@ -56,7 +56,13 @@ export default class Container extends Component {
 
     this.setState({ loading: true });
     db.persister._getUser()
+      .then(u => Promise.resolve(u), err => Promise.resolve(null))
       .then((user) => {
+        if (!user) {
+          this.setState({ user: null });
+          return Promise.resolve(null);
+        }
+
         this.store.setCurrentUser(user);
         this.setState({ user });
         return this._getAppInfo(db.persister);
