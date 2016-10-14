@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.7.0
+14-October-2016
+
+* Add a confirm box when deleting components. [#38](https://github.com/kadirahq/storybook-addon-comments/pull/38)
+* Add the user to the local cache when adding a comment. [#40](https://github.com/kadirahq/storybook-addon-comments/pull/40)
+
 ### v1.6.1
 12-October-2016
 
