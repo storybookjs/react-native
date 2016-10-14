@@ -3,6 +3,11 @@
 ### v1.7.0
 14-October-2016
 
+Improve console errors and signIn process when the user is loggedOut.
+
+### v1.7.0
+14-October-2016
+
 * Add a confirm box when deleting components. [#38](https://github.com/kadirahq/storybook-addon-comments/pull/38)
 * Add the user to the local cache when adding a comment. [#40](https://github.com/kadirahq/storybook-addon-comments/pull/40)
 
