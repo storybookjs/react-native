@@ -49,5 +49,5 @@ export default class CommentsPanel extends Component {
 CommentsPanel.propTypes = {
   loading: React.PropTypes.bool,
   user: React.PropTypes.object,
-  appNotAvailable: React.PropTypes.object,
+  appNotAvailable: React.PropTypes.bool,
 };
