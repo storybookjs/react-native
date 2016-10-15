@@ -31,6 +31,33 @@ const modalStyles = {
   },
 };
 
+// manage two separate shortcut keys for
+// 'mac' & other (windows, linux) platforms
+export function getShortcuts(platform) {
+  // if it is mac platform
+  if (platform && platform.indexOf('mac') !== -1) {
+    return [
+      { name: 'Toggle Search Box', keys: ['⌘ ⇧ P', '⌃ ⇧ P'] },
+      { name: 'Toggle Action Logger position', keys: ['⌘ ⇧ J', '⌃ ⇧ J'] },
+      { name: 'Toggle Fullscreen Mode', keys: ['⌘ ⇧ F', '⌃ ⇧ F'] },
+      { name: 'Toggle Left Panel', keys: ['⌘ ⇧ L', '⌃ ⇧ L'] },
+      { name: 'Toggle Down Panel', keys: ['⌘ ⇧ D', '⌃ ⇧ D'] },
+      { name: 'Next Story', keys: ['⌘ ⇧ →', '⌃ ⇧ →'] },
+      { name: 'Previous Story', keys: ['⌘ ⇧ ←', '⌃ ⇧ ←'] },
+    ];
+  }
+
+  return [
+    { name: 'Toggle Search Box', keys: ['Ctrl + Shift + P'] },
+    { name: 'Toggle Action Logger position', keys: ['Ctrl + Shift + J'] },
+    { name: 'Toggle Fullscreen Mode', keys: ['Ctrl + Shift + F'] },
+    { name: 'Toggle Left Panel', keys: ['Ctrl + Shift + L'] },
+    { name: 'Toggle Down Panel', keys: ['Ctrl + Shift + D'] },
+    { name: 'Next Story', keys: ['Ctrl + Shift + →'] },
+    { name: 'Previous Story', keys: ['Ctrl + Shift + ←'] },
+  ];
+}
+
 export const Keys = ({ shortcutKeys }) => {
   // if we have only one key combination for a shortcut
   if (shortcutKeys.length === 1) {
@@ -81,20 +108,20 @@ Shortcuts.propTypes = {
   appShortcuts: React.PropTypes.array.isRequired,
 };
 
-export const ShortcutsHelp = ({ isOpen, onClose, shortcuts }) => (
+export const ShortcutsHelp = ({ isOpen, onClose, platform }) => (
   <ReactModal
     isOpen = {isOpen}
     onRequestClose = {onClose}
     style = {modalStyles}
   >
-    <Shortcuts appShortcuts = {shortcuts} />
+    <Shortcuts appShortcuts = {getShortcuts(platform)} />
   </ReactModal>
 );
 
 ShortcutsHelp.propTypes = {
   isOpen: React.PropTypes.bool,
   onClose: React.PropTypes.func,
-  shortcuts: React.PropTypes.array.isRequired,
+  platform: React.PropTypes.string.isRequired,
 };
 
 export default ShortcutsHelp;
