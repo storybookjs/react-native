@@ -53,6 +53,10 @@ export default {
     ### [Material-UI](https://github.com/sm-react/storybook-addon-material-ui)
     
     Wraps your story into MuiThemeProvider. It allows you to add your custom themes, switch between them, make changes in the visual editor and download as JSON file
+
+    ### [README](https://github.com/tuchk4/storybook-readme)
+
+    With this addon, you can add docs in markdown format for each story. It very useful because most projects and components already have README.md files. Now it is easy to add them into your Storybook.
     
   `
 };
