@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "A react storybook addon to show different backgrounds for your preview",
   "main": "dist/index.js",
-  "typings": "dist/index.d.tx",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "storybook": "start-storybook -p 3000",
     "pretest": "npm run compile",
