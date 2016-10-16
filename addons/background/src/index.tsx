@@ -13,7 +13,7 @@ const style = {
     transition: "background 0.25s ease-in-out",
     backgroundPosition: "center",
     backgroundSize: "cover",
-    backgroundColor: "transparent",
+    background: "transparent",
   },
 };
 
@@ -57,7 +57,7 @@ export class BackgroundDecorator extends React.Component<any, any> {
 
   render() {
     const styles = style.wrapper;
-    styles.backgroundColor = this.state.background;
+    styles.background = this.state.background;
     return <div style={assign({}, styles)}>{this.story}</div>;
   }
 }

@@ -24,7 +24,7 @@ describe("Background Decorator", () => {
     const SpiedChannel = new EventEmitter();
     const backgroundDecorator = shallow(<BackgroundDecorator story={testStory} channel={SpiedChannel} />);
 
-    expect(backgroundDecorator.html().match(/background-color:transparent/gmi).length).toBe(1);
+    expect(backgroundDecorator.html().match(/background:transparent/gmi).length).toBe(1);
   });
 
   it("should set internal state when background event called", () => {
