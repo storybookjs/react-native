@@ -47,7 +47,7 @@ var DownPanel = function (_Component) {
 
   function DownPanel() {
     (0, _classCallCheck3.default)(this, DownPanel);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DownPanel).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (DownPanel.__proto__ || (0, _getPrototypeOf2.default)(DownPanel)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(DownPanel, [{

@@ -60,7 +60,7 @@ var Stories = function (_React$Component) {
   (0, _inherits3.default)(Stories, _React$Component);
 
   function Stories() {
-    var _Object$getPrototypeO;
+    var _ref;
 
     (0, _classCallCheck3.default)(this, Stories);
 
@@ -68,7 +68,7 @@ var Stories = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(Stories)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (_ref = Stories.__proto__ || (0, _getPrototypeOf2.default)(Stories)).call.apply(_ref, [this].concat(args)));
 
     _this.renderKind = _this.renderKind.bind(_this);
     _this.renderStory = _this.renderStory.bind(_this);
@@ -117,9 +117,9 @@ var Stories = function (_React$Component) {
     }
   }, {
     key: 'renderKind',
-    value: function renderKind(_ref) {
-      var kind = _ref.kind;
-      var stories = _ref.stories;
+    value: function renderKind(_ref2) {
+      var kind = _ref2.kind;
+      var stories = _ref2.stories;
       var selectedKind = this.props.selectedKind;
 
       var style = (0, _extends3.default)({ display: 'block' }, kindStyle);

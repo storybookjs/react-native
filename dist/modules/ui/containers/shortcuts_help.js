@@ -24,7 +24,8 @@ var composer = exports.composer = function composer(_ref, _ref2) {
   var actionMap = actions();
   var data = {
     isOpen: ui.showShortcutsHelp,
-    onClose: actionMap.ui.toggleShortcutsHelp
+    onClose: actionMap.ui.toggleShortcutsHelp,
+    platform: window.navigator.platform.toLowerCase()
   };
 
   return data;
