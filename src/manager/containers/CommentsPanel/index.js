@@ -30,12 +30,17 @@ export default class Container extends Component {
       this.store.setCurrentStory(kind, story);
     });
 
+    this.stopListingStoreLoading = this.store.onLoading((loading) => {
+      this.setState({ loading });
+    });
+
     this.init();
   }
 
   componentWillUnmount() {
     this.stopListeningToComments();
     this.stopListeningOnStory();
+    this.stopListingStoreLoading();
   }
 
   _getAppInfo(persister) {
