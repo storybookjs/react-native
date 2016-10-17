@@ -36,5 +36,5 @@ export default {
       type: types.SET_LAYOUT,
       layout: pick(options, Object.keys(defaultState)),
     });
-  }
+  },
 };

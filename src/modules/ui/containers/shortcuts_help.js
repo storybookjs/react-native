@@ -7,6 +7,7 @@ export const composer = ({ ui }, { actions }) => {
   const data = {
     isOpen: ui.showShortcutsHelp,
     onClose: actionMap.ui.toggleShortcutsHelp,
+    platform: window.navigator.platform.toLowerCase(),
   };
 
   return data;
