@@ -1,6 +1,7 @@
 /* eslint no-param-reassign:0 */
 
 import deepEquals from 'deep-equal';
+import { EventEmitter } from 'events';
 
 export default class DataStore {
   constructor(db) {
@@ -10,6 +11,8 @@ export default class DataStore {
     this.cache = {};
     this.users = {};
     this.user = null;
+
+    this.eventStore = new EventEmitter();
   }
 
   _addToCache(currentStory, comments) {
@@ -73,13 +76,25 @@ export default class DataStore {
 
     // load comments for the first time.
     // TODO: send a null and handle the loading part in the UI side.
+    this.eventStore.emit('loading', true);
     this._fireComments([]);
     this._loadUsers()
-      .then(() => this._loadComments());
+      .then(() => this._loadComments())
+      .then(() => {
+        this.eventStore.emit('loading', false);
+        return Promise.resolve(null);
+      });
   }
 
   setCurrentUser(user) {
     this.user = user;
+    // We don't load comments in the `setCurrentStory` if there's no loggedIn
+    // user.
+    // That's why we need to do this here.
+    if (user) {
+      const { sbKind, sbStory } = this.currentStory;
+      this.setCurrentStory(sbKind, sbStory);
+    }
   }
 
   _loadUsers() {
@@ -203,5 +218,12 @@ export default class DataStore {
     this._setDeletedComment(commentId)
       .then(() => this._deleteCommentOnDatabase(commentId))
       .then(() => this._loadComments());
+  }
+
+  onLoading(cb) {
+    this.eventStore.on('loading', cb);
+    return () => {
+      this.eventStore.removeListener('loading', cb);
+    };
   }
 }

@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.7.1
+18-October-2016
+
+Load comments just after we found the current user.
+This fixes the issue of not loading comments for the current story just after reloaded.
+
 ### v1.7.0
 14-October-2016
 
