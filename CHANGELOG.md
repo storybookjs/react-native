@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.6.3
+17-Oct-2016
+
+* Improve shortcut help view for Windows users [PR54](https://github.com/kadirahq/storybook-ui/pull/54)
+
 ### v3.6.2
 04-Oct-2016
 
