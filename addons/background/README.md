@@ -34,7 +34,7 @@ import backgrounds from "react-storybook-addon-backgrounds";
 
 storiesOf("Button", module)
   .addDecorator(backgrounds([
-    { name: "twitter", value: "#00aced" },
+    { name: "twitter", value: "#00aced", default: true },
     { name: "facebook", value: "#3b5998" },
   ]))
   .add("with text", () => <button>Click me</button>)

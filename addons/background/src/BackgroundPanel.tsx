@@ -13,6 +13,7 @@ const style = {
 export interface BackgroundDetail {
   name?: string;
   value: string;
+  default?: boolean;
 };
 
 export interface StoryBookAPI {
@@ -92,8 +93,8 @@ export default class BackgroundPanel extends React.Component<BackgroundPanelProp
 
     if (!backgrounds.length) return <Instructions />;
 
-    // add reset as last option
-    backgrounds.push(defaultBackground);
+    const hasDefault = backgrounds.filter(x => x.default).length;
+    if (!hasDefault) backgrounds.push(defaultBackground);
 
     return (
       <div style={{display: "inline-block", padding: "15px"}}>

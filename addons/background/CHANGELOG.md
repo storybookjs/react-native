@@ -2,6 +2,10 @@
 
 ### vNext
 
+### v0.0.6
+
+- Feature: Allow setting a background as a default [#21](https://github.com/NewSpring/react-storybook-addon-backgrounds/pull/21)
+
 ### v0.0.5
 
 - Feature: Allow background images instead of just color [#15](https://github.com/NewSpring/react-storybook-addon-backgrounds/pull/15)

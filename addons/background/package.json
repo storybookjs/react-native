@@ -1,6 +1,6 @@
 {
   "name": "react-storybook-addon-backgrounds",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A react storybook addon to show different backgrounds for your preview",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

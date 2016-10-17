@@ -54,7 +54,7 @@ describe("Background Panel", () => {
 
     expect(mockedApi.setQueryParams).toBeCalledWith({ background: null });
 
-  })
+  });
 
   it("should accept colors through channel and render the correct swatches with a default swatch", () => {
     const SpiedChannel = new EventEmitter();
@@ -67,6 +67,20 @@ describe("Background Panel", () => {
     //check to make sure the default bg was added
     const headings = TestUtils.scryRenderedDOMComponentsWithTag(backgroundPanel, "h4");
     expect(headings.length).toBe(10);
+  });
+
+  it("should allow setting a default swatch", () => {
+    const SpiedChannel = new EventEmitter();
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    (backgrounds[0] as any).default = true;
+    SpiedChannel.emit("background-set", backgrounds);
+
+    expect(backgroundPanel.state.backgrounds[0].name).toBe(backgrounds[0].name);
+    expect(backgroundPanel.state.backgrounds[2].value).toBe(backgrounds[2].value);
+
+    //check to make sure the default bg was added
+    const headings = TestUtils.scryRenderedDOMComponentsWithTag(backgroundPanel, "h4");
+    expect(headings.length).toBe(8);
   });
 
   it("should unset all swatches on receiving the backgroun-unset message", () => {
