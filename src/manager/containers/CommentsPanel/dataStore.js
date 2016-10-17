@@ -91,7 +91,7 @@ export default class DataStore {
     // We don't load comments in the `setCurrentStory` if there's no loggedIn
     // user.
     // That's why we need to do this here.
-    if (user) {
+    if (user && this.currentStory) {
       const { sbKind, sbStory } = this.currentStory;
       this.setCurrentStory(sbKind, sbStory);
     }
