@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.8.0
+17-October-2016
+
+* Add border-radius for comment form [PR44](https://github.com/kadirahq/storybook-addon-comments/pull/44)
+
 ### v1.7.2
 18-October-2016
 
