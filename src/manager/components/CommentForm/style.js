@@ -15,7 +15,6 @@ export default {
     display: 'flex',
     alignItems: 'center',
     borderTop: '1px solid rgb(234, 234, 234)',
-    backgroundColor: '#fafafa',
   },
   loginButton: {
     ...button,
@@ -25,6 +24,7 @@ export default {
   submitButton: {
     ...button,
     cursor: 'pointer',
+    borderRadius: '0 0 4px 0',
   },
   input: {
     flex: 1,
@@ -32,6 +32,7 @@ export default {
     height: 30,
     maxHeight: 70,
     border: 'none',
+    borderRadius: '0 0 0 4px',
     outline: 'none',
     padding: '5px 10px',
     fontSize: 13,
