@@ -27,6 +27,14 @@ const db = addons.getDatabase();
 const theStore = new DataStore(db);
 
 describe('DataStore', () => {
+
+  it('set current story - when user not logged in', () => {
+    theStore.setCurrentStory('Components', 'CommentList - No Comments');
+
+    expect(dbGetPromiseReturn.called).to.equal(false);
+    expect(theStore.currentStory).to.deep.equal({ sbKind: 'Components', sbStory: 'CommentList - No Comments' });
+  });
+
   it('set current user', () => {
     theStore.setCurrentUser({
       id: 'user-id',
@@ -36,10 +44,10 @@ describe('DataStore', () => {
     expect(theStore.user).to.deep.equal({ id: 'user-id', name: 'user-name' });
   });
 
-  it('set current story', () => {
+  it('set current story - when user already logged in', () => {
     theStore.setCurrentStory('Components', 'CommentList - No Comments');
 
-    expect(dbGetPromiseReturn.callCount).to.equal(1);
+    expect(dbGetPromiseReturn.called).to.equal(true);
     expect(theStore.currentStory).to.deep.equal({ sbKind: 'Components', sbStory: 'CommentList - No Comments' });
   });
 
@@ -52,14 +60,14 @@ describe('DataStore', () => {
 
     theStore.addComment(comment);
 
-    expect(dbGetPromiseReturn.callCount).to.equal(1);
-    expect(dbSetPromiseReturn.callCount).to.equal(1);
+    expect(dbGetPromiseReturn.called).to.equal(true);
+    expect(dbSetPromiseReturn.called).to.equal(true);
   });
 
   it('onComments', () => {
     theStore.onComments((comments) => {
       return comments;
     });
-    expect(dbGetPromiseReturn.callCount).to.equal(1);
+    expect(dbGetPromiseReturn.called).to.equal(true);
   });
 });
