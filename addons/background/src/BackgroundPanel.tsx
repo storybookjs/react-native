@@ -72,7 +72,14 @@ export default class BackgroundPanel extends React.Component<BackgroundPanelProp
 
     this.props.channel.on("background-set", backgrounds => {
       this.setState({ backgrounds });
-      this.setBackgroundInPreview(this.props.api.getQueryParam("background"));
+      const currentBackground = this.props.api.getQueryParam("background");
+
+      if (currentBackground) {
+        this.setBackgroundInPreview(currentBackground);
+      } else if (backgrounds.filter(x => x.default).length) {
+        const defaultBgs = backgrounds.filter(x => x.default);
+        this.setBackgroundInPreview(defaultBgs[0].value);
+      }
     });
 
     this.props.channel.on("background-unset", backgrounds => {

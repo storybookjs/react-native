@@ -2,6 +2,10 @@
 
 ### vNext
 
+### v0.0.7
+
+- Bug: Default background will now auto set if nothing is set in the url [#23](https://github.com/NewSpring/react-storybook-addon-backgrounds/pull/23)
+
 ### v0.0.6
 
 - Feature: Allow setting a background as a default [#21](https://github.com/NewSpring/react-storybook-addon-backgrounds/pull/21)

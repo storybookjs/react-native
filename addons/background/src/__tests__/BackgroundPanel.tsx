@@ -72,15 +72,36 @@ describe("Background Panel", () => {
   it("should allow setting a default swatch", () => {
     const SpiedChannel = new EventEmitter();
     const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
-    (backgrounds[0] as any).default = true;
-    SpiedChannel.emit("background-set", backgrounds);
+    const localBgs = [...backgrounds];
+    (localBgs[0] as any).default = true;
+    SpiedChannel.emit("background-set", localBgs);
 
-    expect(backgroundPanel.state.backgrounds[0].name).toBe(backgrounds[0].name);
-    expect(backgroundPanel.state.backgrounds[2].value).toBe(backgrounds[2].value);
+    expect(backgroundPanel.state.backgrounds[0].name).toBe(localBgs[0].name);
+    expect(backgroundPanel.state.backgrounds[2].value).toBe(localBgs[2].value);
 
     //check to make sure the default bg was added
     const headings = TestUtils.scryRenderedDOMComponentsWithTag(backgroundPanel, "h4");
     expect(headings.length).toBe(8);
+    delete (backgrounds[0] as any).default;
+  });
+
+  it("should allow the default swatch become the background color", () => {
+    const SpiedChannel = new EventEmitter();
+    const backgroundPanel = TestUtils.renderIntoDocument(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    const localBgs = [...backgrounds];
+    (localBgs[1] as any).default = true;
+    SpiedChannel.on("background", bg => {
+      expect(bg).toBe(localBgs[1].value);
+    })
+    SpiedChannel.emit("background-set", localBgs);
+
+    expect(backgroundPanel.state.backgrounds[0].name).toBe(localBgs[0].name);
+    expect(backgroundPanel.state.backgrounds[2].value).toBe(localBgs[2].value);
+
+    //check to make sure the default bg was added
+    const headings = TestUtils.scryRenderedDOMComponentsWithTag(backgroundPanel, "h4");
+    expect(headings.length).toBe(8);
+    delete (backgrounds[1] as any).default;
   });
 
   it("should unset all swatches on receiving the backgroun-unset message", () => {

@@ -40,7 +40,7 @@ describe("Background Decorator", () => {
     const backgroundDecorator = shallow(<BackgroundDecorator story={testStory} channel={SpiedChannel} />);
 
     const spy = jest.fn();
-    SpiedChannel.on('background-unset', spy);
+    SpiedChannel.on("background-unset", spy);
 
     backgroundDecorator.unmount();
 
@@ -50,7 +50,7 @@ describe("Background Decorator", () => {
   it("should send background-set event when the component mounts", () => {
     const SpiedChannel = new EventEmitter();
     const spy = jest.fn();
-    SpiedChannel.on('background-set', spy);
+    SpiedChannel.on("background-set", spy);
 
     const backgroundDecorator = shallow(<BackgroundDecorator story={testStory} channel={SpiedChannel} />);
 

@@ -14,7 +14,7 @@ storiesOf("Second Component", module)
   .addDecorator(centered)
   .addDecorator(backgrounds([
     { name: "twitter", value: "#00aced" },
-    { name: "facebook", value: "#3b5998" },
+    { name: "facebook", value: "#3b5998", default: true },
   ]))
   .add("Second Button", () => <button>Click me</button>)
   ;
