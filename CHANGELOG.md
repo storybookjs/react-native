@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.7.2
+18-October-2016
+
+* Add a loading icon for loading comments for the first time. [PR43](https://github.com/kadirahq/storybook-addon-comments/pull/43)
+* Fix some minor bugs.
+
 ### v1.7.1
 18-October-2016
 
