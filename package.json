@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-comments",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Comments addon for Storybook",
   "main": "preview.js",
   "scripts": {
