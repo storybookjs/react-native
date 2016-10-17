@@ -59,7 +59,7 @@ export default class DataStore {
     this.currentStory = { sbKind, sbStory };
 
     // We don't need to do anything if the there's no loggedIn user.
-    if(!this.user) return;
+    if (!this.user) return;
 
     this._reloadCurrentComments();
     const item = this._getFromCache(this.currentStory);
