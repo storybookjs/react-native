@@ -1,6 +1,6 @@
 {
   "name": "getstorybook",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Easiest way to add Storybook support to your project.",
   "bin": {
     "getstorybook": "./bin/generate.js"
