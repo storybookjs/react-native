@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.6.1
+18-Oct-2016
+
+Fix some typos. [PR21](https://github.com/kadirahq/getstorybook/pull/21)
+
 ### v1.6.0
 12-Oct-2016
 
