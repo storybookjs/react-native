@@ -77,6 +77,11 @@ function getData(element) {
     return data;
   }
 
+  if (typeof element === 'number') {
+    data.text = String.toString(element);
+    return data;
+  }
+
   data.children = element.props.children;
   const type = element.type;
 
