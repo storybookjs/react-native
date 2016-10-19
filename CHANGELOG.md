@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.2.3
+
+* Handle number type nodes [PR110](https://github.com/kadirahq/react-storybook-addon-info/pull/110)
+
 ### v3.2.2
 
 * Use markdown-to-react-components npm package instead of our fork. Our PR to them is merged and published. [PR109](https://github.com/kadirahq/react-storybook-addon-info/pull/109)
