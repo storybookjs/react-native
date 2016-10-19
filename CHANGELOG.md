@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.24.1
+19-October-2016
+
+Do not show git command output. [PR554](https://github.com/kadirahq/react-storybook/pull/554)
+
 ### v2.24.0
 07-October-2016
 
