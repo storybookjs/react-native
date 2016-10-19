@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.2.4
+
+* Add missing dist files [PR113](https://github.com/kadirahq/react-storybook-addon-info/pull/113)
+
 ### v3.2.3
 
 * Handle number type nodes [PR110](https://github.com/kadirahq/react-storybook-addon-info/pull/110)
