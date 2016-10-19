@@ -21,13 +21,6 @@ export default {
     cursor: 'pointer',
     borderRadius: '0 0 4px 0',
   },
-  loginButton: {
-    ...button,
-    flex: 1,
-    cursor: 'pointer',
-    fontWeight: 'bold',
-    borderRadius: '0 0 4px 0',
-  },
   input: {
     flex: 1,
     boxSizing: 'border-box',

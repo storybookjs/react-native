@@ -57,10 +57,14 @@ export default class CommentForm extends Component {
     if (!this.props.user) {
       return (
         <div style={style.wrapper}>
+          <Textarea
+            style={style.input}
+            disabled={true}
+          />
           <button
+            style={style.submitButton}
             onClick={() => this.openLogin()}
-            style={style.loginButton}
-          >Sign in with Storybook Hub to comment
+          >Sign in with Storybook Hub
           </button>
         </div>
       );
