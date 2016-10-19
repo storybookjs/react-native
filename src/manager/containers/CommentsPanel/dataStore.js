@@ -59,7 +59,7 @@ export default class DataStore {
     this.currentStory = { sbKind, sbStory };
 
     // We don't need to do anything if the there's no loggedIn user.
-    if (!this.user) return;
+    // if (!this.user) return;
 
     this._reloadCurrentComments();
     const item = this._getFromCache(this.currentStory);
@@ -88,13 +88,6 @@ export default class DataStore {
 
   setCurrentUser(user) {
     this.user = user;
-    // We don't load comments in the `setCurrentStory` if there's no loggedIn
-    // user.
-    // That's why we need to do this here.
-    if (user && this.currentStory) {
-      const { sbKind, sbStory } = this.currentStory;
-      this.setCurrentStory(sbKind, sbStory);
-    }
   }
 
   _loadUsers() {
@@ -123,7 +116,7 @@ export default class DataStore {
         // add to cache
         this._addToCache(currentStory, comments);
 
-     /* eslint no-param-reassign:0 */
+        /* eslint no-param-reassign:0 */
         // set comments only if we are on the relavant story
         if (deepEquals(currentStory, this.currentStory)) {
           this._fireComments(comments);

@@ -16,14 +16,16 @@ export default {
     alignItems: 'center',
     borderTop: '1px solid rgb(234, 234, 234)',
   },
-  loginButton: {
-    ...button,
-    fontWeight: 'bold',
-    borderRight: '1px solid rgb(234, 234, 234)',
-  },
   submitButton: {
     ...button,
     cursor: 'pointer',
+    borderRadius: '0 0 4px 0',
+  },
+  loginButton: {
+    ...button,
+    flex: 1,
+    cursor: 'pointer',
+    fontWeight: 'bold',
     borderRadius: '0 0 4px 0',
   },
   input: {
