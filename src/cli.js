@@ -69,6 +69,12 @@ const runner = new Runner(program);
 
 async function main() {
   try {
+    // Channel for addons is created by storybook manager from the client side.
+    // We need to polyfill it for the server side.
+    const addons = require('@kadira/storybook-addons').default;
+    const channel = new EventEmitter();
+    addons.setChannel(channel);
+
     const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
@@ -76,12 +82,6 @@ async function main() {
     };
     runWithRequireContext(content, contextOpts);
     const storybook = require('@kadira/storybook').getStorybook();
-    const addons = require('@kadira/storybook-addons').default;
-
-    // Channel for addons is created by storybook manager from the client side.
-    // We need to polyfill it for the server side.
-    const channel = new EventEmitter();
-    addons.setChannel(channel);
     const result = await runner.run(filterStorybook(storybook, grep, exclude));
     const fails = result.errored + result.unmatched;
     const exitCode = fails > 0 ? 1: 0;
