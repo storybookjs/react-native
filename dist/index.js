@@ -13,6 +13,8 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+exports.setDefaults = setDefaults;
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -93,4 +95,7 @@ exports.default = {
       );
     });
   }
+};
+function setDefaults(newDefaults) {
+  return (0, _assign2.default)(defaultOptions, newDefaults);
 };
