@@ -58,13 +58,18 @@ export class PostmsgTransport {
     if(!e.data || typeof(e.data) !== 'string') {
       return;
     }
+    let data;
     try {
-      const { key, event } = JSON.parse(e.data);
-      if (key === this._key) {
-        this._handler(event);
-      }
+      data = JSON.parse(e.data);
     } catch (e) {
       return null;
+    }
+    if(!data || typeof(data) !== 'object') {
+      return null;
+    }
+    const { key, event } = data;
+    if (key === this._key) {
+      this._handler(event);
     }
   }
 }
