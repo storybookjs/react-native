@@ -73,3 +73,7 @@ export default {
     });
   }
 };
+
+export function setDefaults(newDefaults) {
+  return Object.assign(defaultOptions, newDefaults);
+};
