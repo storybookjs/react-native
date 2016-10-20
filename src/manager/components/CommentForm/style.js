@@ -16,11 +16,6 @@ export default {
     alignItems: 'center',
     borderTop: '1px solid rgb(234, 234, 234)',
   },
-  loginButton: {
-    ...button,
-    fontWeight: 'bold',
-    borderRight: '1px solid rgb(234, 234, 234)',
-  },
   submitButton: {
     ...button,
     cursor: 'pointer',

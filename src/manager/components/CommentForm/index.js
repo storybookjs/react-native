@@ -41,6 +41,11 @@ export default class CommentForm extends Component {
     this.setState({ text: '' });
   }
 
+  openLogin() {
+    const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(location.href)}`;
+    location.href = signInUrl;
+  }
+
   handleKeyDown(e) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -49,6 +54,22 @@ export default class CommentForm extends Component {
   }
 
   render() {
+    if (!this.props.user) {
+      return (
+        <div style={style.wrapper}>
+          <Textarea
+            style={style.input}
+            disabled={true}
+          />
+          <button
+            style={style.submitButton}
+            onClick={() => this.openLogin()}
+          >Sign in with Storybook Hub
+          </button>
+        </div>
+      );
+    }
+
     const { text } = this.state;
     return (
       <div style={style.wrapper}>

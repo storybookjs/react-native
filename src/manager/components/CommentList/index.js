@@ -30,7 +30,7 @@ export default class CommentList extends Component {
           <CommentItem
             key={`comment_${idx}`}
             comment={comment}
-            ownComment={comment.userId === this.props.user.id}
+            ownComment={comment.userId === this.props.user && this.props.user.id}
             deleteComment={() => this.props.deleteComment(comment.id)}
           />
         ))}

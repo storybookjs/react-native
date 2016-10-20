@@ -15,17 +15,6 @@ export default class CommentsPanel extends Component {
       );
     }
 
-    if (!this.props.user) {
-      const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(location.href)}`;
-      return (
-        <div style={style.wrapper}>
-          <div style={style.message}>
-            <a style={style.button} href={signInUrl}>SignIn with Storybook Hub</a>
-          </div>
-        </div>
-      );
-    }
-
     if (this.props.appNotAvailable) {
       const appsUrl = 'https://hub.getstorybook.io/apps';
       return (
