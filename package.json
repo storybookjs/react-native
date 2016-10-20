@@ -10,7 +10,7 @@
     "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
-    "storybook": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' STORYBOOK_CLOUD_APPID='15a1beac-52b5-4ade-abeb-c2313f190c1f' STORYBOOK_CLOUD_DATABASE='7d9e7739-008b-43a2-9851-2dc8f41e391b' start-storybook -p 3006",
+    "storybook": "start-storybook -p 3006",
     "storybook-local": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 9010",
     "storybook-remote": "start-storybook -p 3006",
     "publish-storybook": "bash .scripts/publish_storybook.sh"
