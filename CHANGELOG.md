@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.9.0
+20-October-2016
+
+* Show comments for public apps without logging in [PR46](https://github.com/kadirahq/storybook-addon-comments/pull/46)
+
 ### v1.8.0
 17-October-2016
 
