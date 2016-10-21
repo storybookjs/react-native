@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
   var entries = {
-    preview: [require.resolve('./polyfills')],
+    preview: [require.resolve('./polyfills'), require.resolve('./globals')],
     manager: [require.resolve('./polyfills'), _path2.default.resolve(__dirname, '../../client/manager')]
   };
 

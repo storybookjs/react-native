@@ -66,5 +66,12 @@ export default function (configDir) {
     }
   }
 
-  return babelConfig || defaultConfig;
+  const finalConfig = babelConfig || defaultConfig;
+  finalConfig.plugins = finalConfig.plugins || [];
+  finalConfig.plugins.push([
+    require.resolve('babel-plugin-react-docgen'),
+    { DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES' },
+  ]);
+
+  return finalConfig;
 }
