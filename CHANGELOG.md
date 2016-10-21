@@ -1,5 +1,16 @@
 ## Changelog
 
+### v2.25.0
+21-October-2016
+
+Add react docgen info into React classes with the react-docgen babel plugin. [PR557](https://github.com/kadirahq/react-storybook/pull/557).
+With this:
+
+  * We could get docgen info with any React component class using `ClassName.__docgenInfo`.
+  * From the global collection: `STORYBOOK_REACT_CLASSES`
+
+Additionally, added `yarn.lock`.
+
 ### v2.24.1
 19-October-2016
 
