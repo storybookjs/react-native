@@ -11,19 +11,20 @@ class Nav extends React.Component {
     return (<option value={nav.id} key={nav.id}>{nav.title}</option>);
   }
 
-  changeRoute(selectedSectionId, selectedItemId) {
-    const url = `/docs/${selectedSectionId}/${selectedItemId}`;
+  changeRoute(selectedCatId, selectedSectionId, selectedItemId) {
+    const url = `/docs/${selectedCatId}/${selectedSectionId}/${selectedItemId}`;
     browserHistory.push(url);
   }
 
   handleHeadingChange(evt) {
-    this.changeRoute(evt.target.value, "");
+    const { selectedCatId } = this.props;
+    this.changeRoute(selectedCatId, evt.target.value, "");
   }
 
   handleNavChange(evt) {
-    const { sections, selectedSection } = this.props;
+    const { selectedCatId, sections, selectedSection } = this.props;
     const selectedSectionId = selectedSection || sections[0].id;
-    this.changeRoute(selectedSectionId, evt.target.value);
+    this.changeRoute(selectedCatId, selectedSectionId, evt.target.value);
   }
 
   render() {
@@ -61,6 +62,7 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
+  selectedCatId: React.PropTypes.string,
   sections: React.PropTypes.array,
   selectedSection: React.PropTypes.string,
   selectedItem: React.PropTypes.string,

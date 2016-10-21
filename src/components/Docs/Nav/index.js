@@ -3,13 +3,13 @@ import './style.css';
 
 class Nav extends React.Component {
   renderNavItem(section, item) {
-    const { selectedSectionId, selectedItemId } = this.props;
+    const { selectedCatId, selectedSectionId, selectedItemId } = this.props;
     const cssClass = (
       section.id === selectedSectionId &&
       item.id === selectedItemId
     ) ? "selected" : '';
 
-    const url = `/docs/${section.id}/${item.id}`;
+    const url = `/docs/${selectedCatId}/${section.id}/${item.id}`;
 
     return (
       <li key={ item.id }>
@@ -41,6 +41,7 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
+  selectedCatId: React.PropTypes.string,
   sections: React.PropTypes.array,
   selectedItem: React.PropTypes.string,
   prefix: React.PropTypes.string,

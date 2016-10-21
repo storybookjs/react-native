@@ -1,75 +1,65 @@
 const data = {
-  sections: [
-    {
-      id: 'basics',
-      heading: 'Basics',
-      items: [
-        require('./basics/introduction').default,
-        require('./basics/quick-start-guide').default,
-        require('./basics/slow-start-guide').default,
-        require('./basics/writing-stories').default,
-        require('./basics/exporting-storybook').default,
-      ]
-    },
-    {
-      id: 'configurations',
-      heading: 'Configurations',
-      items: [
-        require('./configurations/default-config').default,
-        require('./configurations/custom-webpack-config').default,
-        require('./configurations/custom-babel-config').default,
-        require('./configurations/add-custom-head-tags').default,
-        require('./configurations/serving-static-files').default,
-        require('./configurations/env-vars').default,
-        require('./configurations/cli-options').default,
-      ]
-    },
-    {
-      id: 'testing',
-      heading: 'Testing',
-      items: [
-        require('./testing/react-ui-testing').default,
-        require('./testing/structural-testing').default,
-        require('./testing/interaction-testing').default,
-        require('./testing/css-style-testing').default,
-        require('./testing/manual-testing').default,
-      ]
-    },
-    {
-      id: 'addons',
-      heading: 'Addons',
-      items: [
-        require('./addons/introduction').default,
-        require('./addons/using-addons').default,
-        require('./addons/addon-gallery').default,
-        require('./addons/writing-addons').default,
-        require('./addons/api').default,
-      ]
-    },
-  ],
+  'react-storybook': {
+    title: 'React Storybook',
+    sections: require('./react-storybook').default,
+  },
+  'storybook-hub': {
+    title: 'Storybook Hub',
+    sections: require('./storybook-hub').default,
+  },
 };
 
-export function getNavigationData() {
-  return data.sections;
+export function getCategories() {
+  const catIds = Object.keys(data);
+  const categories = [];
+
+  catIds.forEach(catId => {
+    categories.push({
+      id: catId,
+      title: data[catId].title,
+    });
+  });
+
+  return categories;
 }
 
-export function getItem(sectionId, itemId) {
-  const section = data.sections.find(section => section.id === sectionId);
+export function getNavigationData(catId) {
+  if (!catId) {
+    catId = getCategories[0].id;
+  }
+
+  return data[catId].sections;
+}
+
+export function getItem(catId, sectionId, itemId) {
+  if (!catId) {
+    catId = getCategories[0].id;
+  }
+
+  const section = data[catId].sections.find(section => section.id === sectionId);
   if (!section) return null;
 
   const item = section.items.find(item => item.id === itemId);
   return item;
 }
 
-export function getFirstItemOfSection(sectionId) {
-  const section = data.sections.find(section => section.id === sectionId);
+export function getFirstItemOfSection(catId, sectionId) {
+  if (!catId) {
+    catId = getCategories[0].id;
+  }
+
+  const section = data[catId].sections.find(section => section.id === sectionId);
   if (!section) return null;
 
   return section.items[0];
 }
 
-export function getFirstItem() {
-  const sections = data.sections || [];
+export function getFirstItem(catId) {
+  if (!catId) {
+    catId = getCategories[0].id;
+  }
+
+  const sections = data[catId].sections || [];
   if (sections.length === 0) return null;
 
   return sections[0].items[0];

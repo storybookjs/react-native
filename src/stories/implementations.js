@@ -60,13 +60,17 @@ export default {
   'Docs.page': (
     <Docs
       sections={docsData.sections}
-      selectedItem={docsData.selectedItem}    
+      selectedItem={docsData.selectedItem}
+      categories={docsData.categories}
+      selectedCatId={'cat-2'}
     />
   ),
   'Docs.docs-container': (
     <DocsContainer
       sections={docsData.sections}
-      selectedItem={docsData.selectedItem}  
+      selectedItem={docsData.selectedItem}
+      categories={docsData.categories}
+      selectedCatId={'cat-2'}
     />
   ),
   'Docs.docs-content': (

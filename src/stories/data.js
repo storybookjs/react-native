@@ -1,4 +1,14 @@
 export const docsData = {
+  categories: [
+    {
+      id: 'cat-1',
+      title: 'CAT 1',
+    },
+    {
+      id: 'cat-2',
+      title: 'CAT 2',
+    },
+  ],
   sections: [
     {
       id: 'basics',

@@ -13,10 +13,11 @@
 
 #nav h3 {
   font-family: "Open Sans";
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
   padding: 0;
+  color: #000;
 }
 
 #nav ul {
@@ -26,12 +27,12 @@
 }
 
 #nav ul li {
-  margin: 15px 0;
+  margin: 8px 0;
 }
 
 #nav ul li a {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 16px;
   padding: 0;
   color: #444;
 }

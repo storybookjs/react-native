@@ -5,13 +5,40 @@ import Content from '../Content';
 import './style.css';
 
 class Container extends React.Component {
+  renderTopNav(cat) {
+    const { selectedCatId } = this.props;
+    const path = `/docs/${cat.id}`;
+
+    if (selectedCatId === cat.id) {
+      return (<li className="selected" key={ cat.id }>{ cat.title }</li>);
+    }
+
+    return (<a key={ cat.id } href={ path }><li>{ cat.title }</li></a>);
+  }
+
   render() {
-    const { sections, selectedItem, selectedSectionId, selectedItemId } = this.props;
+    const {
+      categories,
+      selectedCatId,
+      sections,
+      selectedItem,
+      selectedSectionId,
+      selectedItemId
+    } = this.props;
 
     return (
       <div id="docs-container" className="row">
+        <div className="row">
+          <div className="col-xs-12">
+            <ul className="top-nav">
+              { categories.map(this.renderTopNav.bind(this)) }
+            </ul>
+          </div>
+        </div>
+
         <div className="nav col-sm-3 col-md-3 hidden-xs">
           <Nav
+            selectedCatId={ selectedCatId }
             sections={ sections }
             selectedSection={ selectedItem.section }
             selectedItem={ selectedItem.id }
@@ -22,6 +49,7 @@ class Container extends React.Component {
         <div className="content col-xs-12 col-sm-9 col-md-9 col-lg-9">
           <div className="nav-dropdown">
             <NavDropdown
+              selectedCatId={ selectedCatId }
               sections={ sections }
               selectedSection={ selectedItem.section }
               selectedItem={ selectedItem.id }
@@ -35,6 +63,7 @@ class Container extends React.Component {
 
           <div className="nav-dropdown">
             <NavDropdown
+              selectedCatId={ selectedCatId }
               sections={ sections }
               selectedSection={ selectedItem.section }
               selectedItem={ selectedItem.id }
@@ -47,6 +76,8 @@ class Container extends React.Component {
 }
 
 Container.propTypes = {
+  categories: React.PropTypes.array,
+  selectedCatId: React.PropTypes.string,
   sections: React.PropTypes.array,
   selectedItem: React.PropTypes.object,
   selectedSectionId: React.PropTypes.string,

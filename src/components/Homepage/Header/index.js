@@ -43,7 +43,7 @@ class Header extends React.Component {
           </div>
           <div id="header-links" className="pull-right">
             { this.renderSections() }
-            <a href="https://storybooks.io">Storybooks.io</a>
+            <a href="https://hub.getstorybook.io">Storybook Hub</a>
           </div>
         </div>
       </div>
