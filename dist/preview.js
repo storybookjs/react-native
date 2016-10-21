@@ -28,7 +28,8 @@ function _format(arg) {
 }
 
 function action(name) {
-  return function () {
+
+  var handler = function handler() {
     for (var _len = arguments.length, _args = Array(_len), _key = 0; _key < _len; _key++) {
       _args[_key] = arguments[_key];
     }
@@ -41,6 +42,16 @@ function action(name) {
       data: { name: name, args: args }
     });
   };
+
+  // some day when {[name]: function() {}} syntax is not transpiled by babel
+  // we can get rid of this eval as by ES2015 spec the above function gets the
+  // name `name`, but babel transpiles to Object.defineProperty which doesn't do
+  // the same.
+  //
+  // Ref: https://bocoup.com/weblog/whats-in-a-function-name
+  var fnName = name.replace(/\W+/g, '_');
+  var named = eval('(function ' + fnName + '() { return handler.apply(this, arguments) })');
+  return named;
 }
 
 function decorateAction(decorators) {

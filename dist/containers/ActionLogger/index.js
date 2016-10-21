@@ -34,7 +34,7 @@ var ActionLogger = function (_React$Component) {
   _inherits(ActionLogger, _React$Component);
 
   function ActionLogger(props) {
-    var _Object$getPrototypeO;
+    var _ref;
 
     _classCallCheck(this, ActionLogger);
 
@@ -42,7 +42,7 @@ var ActionLogger = function (_React$Component) {
       args[_key - 1] = arguments[_key];
     }
 
-    var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ActionLogger)).call.apply(_Object$getPrototypeO, [this, props].concat(args)));
+    var _this = _possibleConstructorReturn(this, (_ref = ActionLogger.__proto__ || Object.getPrototypeOf(ActionLogger)).call.apply(_ref, [this, props].concat(args)));
 
     _this.state = { actions: [] };
     _this._actionListener = function (action) {

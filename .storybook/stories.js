@@ -20,4 +20,8 @@ storiesOf('Button', module)
       onClick={() => action('circular')(circular)}>
       Circular Payload
     </button>;
+  })
+  .add('Function Name', () => {
+    const fn = action('fnName');
+    return <button onClick={fn}>Action.name: {fn.name}</button>
   });
