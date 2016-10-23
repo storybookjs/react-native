@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.25.1
+23-October-2016
+
+Add a potential fix to [558](https://github.com/kadirahq/react-storybook/issues/558) by updating babel-plugin-react-docgen to the latest(v1.3.2).
+
 ### v2.25.0
 21-October-2016
 
