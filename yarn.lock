@@ -544,14 +544,14 @@ babel-plugin-check-es2015-constants@^6.3.13:
   dependencies:
     babel-runtime "^6.0.0"
 
-babel-plugin-react-docgen@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-1.3.0.tgz#b003225b3816af784f1cad2d1cefdb66c6c9dc42"
+babel-plugin-react-docgen@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-1.3.2.tgz#13fcf7baa5da06fd2a7ff67d4e2af497b811875e"
   dependencies:
     babel-preset-react "6.x.x"
     babel-types "^6.16.0"
     lodash "4.x.x"
-    react-docgen "2.11.0"
+    react-docgen "^2.12.1"
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -4400,9 +4400,9 @@ react-addons-test-utils@^15.0.1:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.3.2.tgz#c09a44f583425a4a9c1b38444d7a6c3e6f0f41f6"
 
-react-docgen@2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-2.11.0.tgz#4767a90a5a14f1340beeace782d1e2dc222e8a6f"
+react-docgen@^2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-2.12.1.tgz#64fe750832967acbc9755f37c25d563d407c9149"
   dependencies:
     async "^1.4.2"
     babel-runtime "^6.9.2"
