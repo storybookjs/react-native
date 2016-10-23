@@ -24,6 +24,13 @@ export default {
 
     You need to install these addons directly from NPM in order to use them.
 
+
+    ### [Host](https://github.com/philcockfield/storybook-host)
+
+    A [decorator](https://getstorybook.io/docs/react-storybook/addons/introduction) with 
+    powerful display options for hosting, sizing and framing your components.
+
+
     ### [Specs](https://github.com/mthuret/storybook-addon-specifications)
 
     This is a very special addon where it'll allow you to write test specs directly inside your stories.
