@@ -22,7 +22,7 @@ module.exports = function (storybookBaseConfig) {
   newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.loaders), [{
     test: /\.css?$/,
     include: _utils.includePaths,
-    loaders: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('postcss-loader')]
+    loaders: [require.resolve('style-loader'), require.resolve('css-loader') + '?importLoaders=1', require.resolve('postcss-loader')]
   }, {
     test: /\.json$/,
     include: _utils.includePaths,
