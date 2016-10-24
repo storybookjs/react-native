@@ -26,6 +26,10 @@ class Container extends React.Component {
       selectedItemId
     } = this.props;
 
+    const gitHubRepoUrl = 'https://github.com/kadirahq/getstorybook.io';
+    const docPath = `${selectedCatId}/${selectedSectionId}/${selectedItemId}`;
+    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/master/src/docs/${docPath}.js`;
+
     return (
       <div id="docs-container" className="row">
         <div className="row">
@@ -59,6 +63,7 @@ class Container extends React.Component {
           <Content
             title={selectedItem.title}
             content={selectedItem.content}
+            editUrl={gitHubRepoDocUrl}
           />
 
           <div className="nav-dropdown">

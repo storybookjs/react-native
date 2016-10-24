@@ -15,10 +15,12 @@ marked.setOptions({
   smartypants: false
 });
 
-const DocsContent = ({ title, content }) => (
+const DocsContent = ({ title, content, editUrl }) => (
   <div id="docs-content">
     <div className="content">
       <h2 className="title">{ title }</h2>
+      <p><a className="edit-link" href={editUrl} target="_blank">Edit this page</a></p>
+
       <div className="markdown">
         <Highlight>
           { marked(content) }
@@ -31,6 +33,7 @@ const DocsContent = ({ title, content }) => (
 DocsContent.propTypes = {
   title: React.PropTypes.string,
   content: React.PropTypes.string.isRequired,
+  editUrl: React.PropTypes.string,
 };
 
 export default DocsContent;

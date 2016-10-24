@@ -10,9 +10,16 @@
 #docs-content .title {
   font-size: 25px;
   color: rgb(0, 0, 0);
-  margin-bottom: 30px;
+  margin-bottom: 0;
   line-height: 28px;
   font-weight: 800;
+}
+
+#docs-content a.edit-link {
+  color: #E25E5E !important;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #docs-content .markdown div,
