@@ -1,5 +1,9 @@
 # Change Log
 
+### v3.3.0
+
+* Add setDefaults function [PR114](https://github.com/kadirahq/react-storybook-addon-info/pull/114)
+
 ### v3.2.4
 
 * Add missing dist files [PR113](https://github.com/kadirahq/react-storybook-addon-info/pull/113)
