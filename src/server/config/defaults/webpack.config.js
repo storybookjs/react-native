@@ -52,7 +52,7 @@ module.exports = (storybookBaseConfig) => {
     ];
   };
 
-  newConfig.resolve.extensions = ['.js', '.json', ''];
+  newConfig.resolve.extensions = ['.js', '.json', '.jsx', ''];
   newConfig.resolve.alias = {
     ...storybookBaseConfig.resolve.alias,
     // This is to support NPM2
