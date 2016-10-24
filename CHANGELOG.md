@@ -1,5 +1,14 @@
 ## Changelog
 
+### v2.26.0
+24-October-2016
+
+Get some new features from CRA.
+
+* Add jsx as a resolve extension [PR563](https://github.com/kadirahq/react-storybook/pull/563)
+* Allow to use postcss for CSS @imports [PR564](https://github.com/kadirahq/react-storybook/pull/564)
+* Use process.env as a proper object [PR565](https://github.com/kadirahq/react-storybook/pull/565)
+
 ### v2.25.1
 23-October-2016
 
