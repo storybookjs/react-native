@@ -64,6 +64,10 @@ export default {
     ### [README](https://github.com/tuchk4/storybook-readme)
 
     With this addon, you can add docs in markdown format for each story. It very useful because most projects and components already have README.md files. Now it is easy to add them into your Storybook.
+
+    ### [i18n tools](https://github.com/joscha/storybook-addon-i18n-tools)
+
+    With this addon, you can test your storybooks with a different text-direction. It is very useful if you are working on components that have to work both in LTR as well as in RTL languages.
     
   `
 };
