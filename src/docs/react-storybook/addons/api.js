@@ -125,5 +125,13 @@ export default {
     ~~~js
     storybookAPI.getQueryParam('bbc');
     ~~~
+
+    ### storybookAPI.onStory(fn)
+
+    This method allows you to register a handler function which will be called whenever the user navigates between stories.
+
+    ~~~js
+    storybookAPI.onStory((kind, story) => console.log(kind, story));
+    ~~~
   `
 };
