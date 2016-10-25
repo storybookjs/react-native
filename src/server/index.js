@@ -27,7 +27,7 @@ program
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
 
-logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}`));
+logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
 
 if (program.enableDb || program.dbPath) {
   logger.error([
