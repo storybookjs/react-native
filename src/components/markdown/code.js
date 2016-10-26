@@ -1,6 +1,21 @@
 import React from 'react';
 
 export class Code extends React.Component {
+
+  componentDidMount() {
+    this.highlight()
+  }
+
+  componentDidUpdate() {
+    this.highlight()
+  }
+
+  highlight() {
+    if (typeof Prism !== 'undefined') {
+      Prism.highlightAll()
+    }
+  }
+
   render() {
     const codeStyle = {
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
