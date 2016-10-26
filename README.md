@@ -155,3 +155,12 @@ const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
 const value = date(label, defaultValue);
 ```
+
+## Typescript
+
+If you are using typescript, make sure you have the type definitions installed for the following libs:
+
+- node
+- react
+
+You can install them using `npm i -S @types/node @types/react`, assuming you are using Typescript >2.0.
