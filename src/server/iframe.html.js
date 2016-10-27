@@ -1,6 +1,7 @@
 import url from 'url';
 
-export default function (headHtml, publicPath) {
+export default function (headHtml, publicPath, cacheKey) {
+  const previewUrl = cacheKey ? `static/preview.bundle.js?${cacheKey}` : 'static/preview.bundle.js';
   return `
     <!DOCTYPE html>
     <html>
@@ -18,7 +19,7 @@ export default function (headHtml, publicPath) {
       <body>
         <div id="root"></div>
         <div id="error-display"></div>
-        <script src="${url.resolve(publicPath, 'static/preview.bundle.js')}"></script>
+        <script src="${url.resolve(publicPath, previewUrl)}"></script>
       </body>
     </html>
   `;

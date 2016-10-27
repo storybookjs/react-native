@@ -1,6 +1,7 @@
 import url from 'url';
 
-export default function (publicPath) {
+export default function (publicPath, cacheKey) {
+  const managerUrl = cacheKey ? `static/manager.bundle.js?${cacheKey}` : 'static/manager.bundle.js';
   return `
     <!DOCTYPE html>
     <html>
@@ -40,7 +41,7 @@ export default function (publicPath) {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
-        <script src="${url.resolve(publicPath, 'static/manager.bundle.js')}"></script>
+        <script src="${url.resolve(publicPath, managerUrl)}"></script>
       </body>
     </html>
   `;

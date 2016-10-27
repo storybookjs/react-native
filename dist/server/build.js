@@ -43,6 +43,10 @@ var _iframe2 = _interopRequireDefault(_iframe);
 
 var _utils = require('./utils');
 
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
@@ -91,11 +95,12 @@ if (_commander2.default.staticDir) {
   });
 }
 
+var cacheKey = _uuid2.default.v4();
 // Write both the storybook UI and IFRAME HTML files to destination path.
 var headHtml = (0, _utils.getHeadHtml)(configDir);
 var publicPath = config.output.publicPath;
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)(publicPath));
-_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml, publicPath));
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'index.html'), (0, _index2.default)(publicPath, cacheKey));
+_fs2.default.writeFileSync(_path2.default.resolve(outputDir, 'iframe.html'), (0, _iframe2.default)(headHtml, publicPath, cacheKey));
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');

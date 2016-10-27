@@ -5,6 +5,7 @@ import program from 'commander';
 import path from 'path';
 import fs from 'fs';
 import shelljs from 'shelljs';
+import uuid from 'uuid';
 import packageJson from '../../package.json';
 import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
@@ -69,11 +70,12 @@ if (program.staticDir) {
   });
 }
 
+const cacheKey = uuid.v4();
 // Write both the storybook UI and IFRAME HTML files to destination path.
 const headHtml = getHeadHtml(configDir);
 const publicPath = config.output.publicPath;
-fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath));
-fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath));
+fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath, cacheKey));
+fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath, cacheKey));
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
