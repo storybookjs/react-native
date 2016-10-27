@@ -1,5 +1,11 @@
 ## Changelog
 
+### v1.9.1
+27-October-2016
+
+* Fix comment delete button [PR48](https://github.com/kadirahq/storybook-addon-comments/pull/48)
+* Remove app not found console error [PR49](https://github.com/kadirahq/storybook-addon-comments/pull/49)
+
 ### v1.9.0
 20-October-2016
 
