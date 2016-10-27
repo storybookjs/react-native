@@ -1,5 +1,16 @@
 ## Changelog
 
+### v2.27.0
+27-October-2016
+
+Add a few usability improvements to Storybook.
+
+* Display storybook version. [PR559](https://github.com/kadirahq/react-storybook/pull/559)
+* Make the storybooks cacheable. [PR578](https://github.com/kadirahq/react-storybook/pull/578)
+* Change the devtool to eval and remove the use of source maps. [PR577](https://github.com/kadirahq/react-storybook/pull/577)
+* Update `babel-preset-react-app` to the latest. [PR576](https://github.com/kadirahq/react-storybook/pull/576)
+* Ship `json-loader` by default. [PR575](https://github.com/kadirahq/react-storybook/pull/575)
+
 ### v2.26.0
 24-October-2016
 
