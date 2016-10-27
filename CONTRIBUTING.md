@@ -26,4 +26,44 @@ Before you submit a new PR, make you to run `npm test`. Do not submit a PR if te
 
 ## Development Guide
 
-Read this: [How Storybook Works](docs/how_storybook_works.md).
+> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/kadirahq/storybook-ui) project.
+
+This project written in ES2016+ syntax so, we need to transpile it before use.
+So run the following command:
+
+```
+npm run dev
+```
+
+This will watch files and transpile.
+
+### Linking
+
+First of all link this repo with:
+
+```sh
+npm link
+```
+
+In order to test features you add, you may need to link the local copy of this repo.
+For that we need a sample project. Let's create it.
+
+```sh
+npm i -g create-react-app getstorybook
+create-react-app my-demo-app
+cd my-demo-app
+getstorybook
+```
+
+> It's pretty important to create a very simple sample project like above.
+> Otherwise some of the functionality won't work because of likning.
+
+Then link storybook inside the sample project with:
+
+```sh
+npm link @kadira/storybook
+```
+
+### Getting Changes
+
+After you've done any change, you need to run the `npm run storybook` command everytime to see those changes.
