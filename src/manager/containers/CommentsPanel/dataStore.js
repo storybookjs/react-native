@@ -93,35 +93,45 @@ export default class DataStore {
   _loadUsers() {
     const query = {};
     const options = { limit: 1e6 };
-    return this.db.getCollection('users')
-      .get(query, options)
-      .then((users) => {
-        this.users = users.reduce((newUsers, user) => {
-          const usersObj = {
-            ...newUsers,
-          };
-          usersObj[user.id] = user;
-          return usersObj;
-        }, {});
-      });
+    return this.db.persister._getAppInfo().then(info => {
+      if (!info) {
+        return null;
+      }
+      return this.db.getCollection('users')
+        .get(query, options)
+        .then((users) => {
+          this.users = users.reduce((newUsers, user) => {
+            const usersObj = {
+              ...newUsers,
+            };
+            usersObj[user.id] = user;
+            return usersObj;
+          }, {});
+        });
+    });
   }
 
   _loadComments() {
     const currentStory = { ...this.currentStory };
     const query = currentStory;
     const options = { limit: 1e6 };
-    return this.db.getCollection('comments')
-      .get(query, options)
-      .then((comments) => {
-        // add to cache
-        this._addToCache(currentStory, comments);
+    return this.db.persister._getAppInfo().then(info => {
+      if (!info) {
+        return null;
+      }
+      return this.db.getCollection('comments')
+        .get(query, options)
+        .then((comments) => {
+          // add to cache
+          this._addToCache(currentStory, comments);
 
-        /* eslint no-param-reassign:0 */
-        // set comments only if we are on the relavant story
-        if (deepEquals(currentStory, this.currentStory)) {
-          this._fireComments(comments);
-        }
-      });
+          /* eslint no-param-reassign:0 */
+          // set comments only if we are on the relavant story
+          if (deepEquals(currentStory, this.currentStory)) {
+            this._fireComments(comments);
+          }
+        });
+    });
   }
 
   _getStoryKey(currentStory) {
