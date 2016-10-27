@@ -58,9 +58,9 @@ var DateType = function (_React$Component) {
   (0, _createClass3.default)(DateType, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var knob = _props.knob;
-      var _onChange = _props.onChange;
+      var _props = this.props,
+          knob = _props.knob,
+          _onChange = _props.onChange;
 
       return _react2.default.createElement(
         'div',

@@ -74,21 +74,21 @@ var WrapStory = function (_React$Component) {
   }, {
     key: 'setPaneKnobs',
     value: function setPaneKnobs() {
-      var _props = this.props;
-      var channel = _props.channel;
-      var knobStore = _props.knobStore;
+      var _props = this.props,
+          channel = _props.channel,
+          knobStore = _props.knobStore;
 
       channel.emit('addon:knobs:setKnobs', knobStore.getAll());
     }
   }, {
     key: 'knobChanged',
     value: function knobChanged(change) {
-      var name = change.name;
-      var value = change.value;
-      var _props2 = this.props;
-      var knobStore = _props2.knobStore;
-      var storyFn = _props2.storyFn;
-      var context = _props2.context;
+      var name = change.name,
+          value = change.value;
+      var _props2 = this.props,
+          knobStore = _props2.knobStore,
+          storyFn = _props2.storyFn,
+          context = _props2.context;
       // Update the related knob and it's value.
 
       var knobOptions = knobStore.get(name);
@@ -99,10 +99,10 @@ var WrapStory = function (_React$Component) {
   }, {
     key: 'resetKnobs',
     value: function resetKnobs() {
-      var _props3 = this.props;
-      var knobStore = _props3.knobStore;
-      var storyFn = _props3.storyFn;
-      var context = _props3.context;
+      var _props3 = this.props,
+          knobStore = _props3.knobStore,
+          storyFn = _props3.storyFn,
+          context = _props3.context;
 
       knobStore.reset();
       this.setState({ storyContent: storyFn(context) });

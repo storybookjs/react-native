@@ -81,9 +81,9 @@ var ObjectType = function (_React$Component) {
   (0, _createClass3.default)(ObjectType, [{
     key: 'getJSONString',
     value: function getJSONString() {
-      var _state = this.state;
-      var json = _state.json;
-      var jsonString = _state.jsonString;
+      var _state = this.state,
+          json = _state.json,
+          jsonString = _state.jsonString;
       var knob = this.props.knob;
 
       // If there is an error in the JSON, we need to give that errored JSON.

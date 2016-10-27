@@ -94,9 +94,9 @@ var PropField = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var onChange = _props.onChange;
-      var knob = _props.knob;
+      var _props = this.props,
+          onChange = _props.onChange,
+          knob = _props.knob;
 
 
       var InputType = _types2.default[knob.type] || InvalidType;

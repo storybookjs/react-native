@@ -104,9 +104,9 @@ var Panel = function (_React$Component) {
       var _this2 = this;
 
       var queryParams = {};
-      var _props = this.props;
-      var api = _props.api;
-      var channel = _props.channel;
+      var _props = this.props,
+          api = _props.api,
+          channel = _props.channel;
 
 
       (0, _keys2.default)(knobs).forEach(function (name) {
@@ -137,13 +137,13 @@ var Panel = function (_React$Component) {
   }, {
     key: 'handleChange',
     value: function handleChange(changedKnob) {
-      var _props2 = this.props;
-      var api = _props2.api;
-      var channel = _props2.channel;
+      var _props2 = this.props,
+          api = _props2.api,
+          channel = _props2.channel;
       var knobs = this.state.knobs;
-      var name = changedKnob.name;
-      var type = changedKnob.type;
-      var value = changedKnob.value;
+      var name = changedKnob.name,
+          type = changedKnob.type,
+          value = changedKnob.value;
 
       var newKnobs = (0, _extends3.default)({}, knobs);
       newKnobs[name] = (0, _extends3.default)({}, newKnobs[name], changedKnob);
