@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
+import chalk from 'chalk';
 import shelljs from 'shelljs';
 import uuid from 'uuid';
 import packageJson from '../../package.json';
@@ -26,6 +27,8 @@ program
   .option('-d, --db-path [db-file]', 'DEPRECATED!')
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
+
+logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
 
 if (program.enableDb || program.dbPath) {
   logger.error([

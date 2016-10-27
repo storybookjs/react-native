@@ -17,9 +17,17 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
 var _shelljs = require('shelljs');
 
 var _shelljs2 = _interopRequireDefault(_shelljs);
+
+var _uuid = require('uuid');
+
+var _uuid2 = _interopRequireDefault(_uuid);
 
 var _package = require('../../package.json');
 
@@ -43,10 +51,6 @@ var _iframe2 = _interopRequireDefault(_iframe);
 
 var _utils = require('./utils');
 
-var _uuid = require('uuid');
-
-var _uuid2 = _interopRequireDefault(_uuid);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
@@ -55,6 +59,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 var logger = console;
 
 _commander2.default.version(_package2.default.version).option('-s, --static-dir <dir-names>', 'Directory where to load static files from', _utils.parseList).option('-o, --output-dir [dir-name]', 'Directory where to store built files').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('-d, --db-path [db-file]', 'DEPRECATED!').option('--enable-db', 'DEPRECATED!').parse(process.argv);
+
+logger.info(_chalk2.default.bold(_package2.default.name + ' v' + _package2.default.version + '\n'));
 
 if (_commander2.default.enableDb || _commander2.default.dbPath) {
   logger.error(['Error: the experimental local database addon is no longer bundled with', 'react-storybook. Please remove these flags (-d,--db-path,--enable-db)', 'from the command or npm script and try again.'].join(' '));
