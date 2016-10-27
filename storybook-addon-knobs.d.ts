@@ -18,19 +18,19 @@ export function boolean(name: string, value: boolean): boolean;
 
 export function number(name: string, value: number): number;
 
-export function object(name: string, value: Object): Object;
+export function object<T>(name: string, value: T): T;
 
 export function select<T>(name: string, options: { [s: string]: T }, value: string): T;
 export function select(name: string, options: string[], value: string): string;
 
-export function date(name: string, value?: Date);
+export function date(name: string, value?: Date): Date;
 
 interface IWrapStoryProps {
-  context: Object;
-  storyFn: Function;
-  channel: Object;
-  knobStore: Object;
-  initialContent: Object;
+  context?: Object;
+  storyFn?: Function;
+  channel?: Object;
+  knobStore?: Object;
+  initialContent?: Object;
 }
 
-export function withKnobs(storyFn: Function, context: StoryContext): React.ReactElement<any>;
+export function withKnobs(storyFn: Function, context: StoryContext): React.ReactElement<IWrapStoryProps>;
