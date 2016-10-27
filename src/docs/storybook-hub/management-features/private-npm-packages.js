@@ -8,7 +8,7 @@ export default {
     
     ## NPM Token
     
-    You could provide a NPM token so, you could use private NPM packages inside storybook. For that, simply create the following environmet variable.
+    You can provide a NPM token while we are building storybooks. With that, we could could use your private NPM packages inside Storybook Hub. For that, simply create the following environmet variable.
     
     ~~~sh
     SB_NPM_TOKEN
