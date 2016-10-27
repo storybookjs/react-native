@@ -50,7 +50,6 @@ module.exports = function (storybookBaseConfig) {
     })];
   };
 
-  newConfig.resolve.extensions = ['.js', '.json', '.jsx', ''];
   newConfig.resolve.alias = (0, _extends3.default)({}, storybookBaseConfig.resolve.alias, {
     // This is to support NPM2
     'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator')

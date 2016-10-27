@@ -12,6 +12,8 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+exports.addJsonLoaderIfNotAvailable = addJsonLoaderIfNotAvailable;
+
 exports.default = function (configType, baseConfig, configDir) {
   var config = baseConfig;
 
@@ -57,16 +59,20 @@ exports.default = function (configType, baseConfig, configDir) {
 
   customConfig.module = customConfig.module || {};
 
-  return (0, _extends3.default)({}, customConfig, config, {
+  var newConfig = (0, _extends3.default)({}, customConfig, config, {
     // We need to use our and custom plugins.
     plugins: [].concat((0, _toConsumableArray3.default)(config.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
     module: (0, _extends3.default)({}, config.module, customConfig.module, {
       loaders: [].concat((0, _toConsumableArray3.default)(config.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
     }),
-    resolve: (0, _extends3.default)({}, customConfig.resolve, {
+    resolve: (0, _extends3.default)({}, config.resolve, customConfig.resolve, {
       alias: (0, _extends3.default)({}, config.alias, customConfig.resolve && customConfig.resolve.alias)
     })
   });
+
+  addJsonLoaderIfNotAvailable(newConfig);
+
+  return newConfig;
 };
 
 var _fs = require('fs');
@@ -81,12 +87,29 @@ var _babel_config = require('./babel_config');
 
 var _babel_config2 = _interopRequireDefault(_babel_config);
 
+var _utils = require('./config/utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // avoid ESLint errors
+/* eslint global-require: 0 */
+
 var logger = console;
+
+function addJsonLoaderIfNotAvailable(config) {
+  var jsonLoaderExists = config.module.loaders.reduce(function (value, loader) {
+    return value || loader.test.test('my_package.json');
+  }, false);
+
+  if (!jsonLoaderExists) {
+    config.module.loaders.push({
+      test: /\.json$/,
+      include: _utils.includePaths,
+      loader: require.resolve('json-loader')
+    });
+  }
+}
 
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
-/* eslint global-require: 0 */

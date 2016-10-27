@@ -47,12 +47,12 @@ function loadEnv() {
 
   var defaultNodeEnv = options.production ? 'production' : 'development';
   var env = {
-    'NODE_ENV': process.env.NODE_ENV || defaultNodeEnv,
+    NODE_ENV: process.env.NODE_ENV || defaultNodeEnv,
     // This is to support CRA's public folder feature.
     // In production we set this to dot(.) to allow the browser to access these assests
     // even when deployed inside a subpath. (like in GitHub pages)
     // In development this is just empty as we always serves from the root.
-    'PUBLIC_URL': options.production ? '.' : ''
+    PUBLIC_URL: options.production ? '.' : ''
   };
 
   (0, _keys2.default)(process.env).filter(function (name) {
