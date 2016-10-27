@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.4.0
+27-October-2016
+
+Add TypeScript support [PR65](https://github.com/kadirahq/storybook-addon-knobs/pull/65).
+
 ### v1.3.3
 13-October-2016
 
