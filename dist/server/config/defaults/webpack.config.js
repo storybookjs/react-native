@@ -22,7 +22,7 @@ module.exports = function (storybookBaseConfig) {
   newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.loaders), [{
     test: /\.css?$/,
     include: _utils.includePaths,
-    loaders: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('postcss-loader')]
+    loaders: [require.resolve('style-loader'), require.resolve('css-loader') + '?importLoaders=1', require.resolve('postcss-loader')]
   }, {
     test: /\.json$/,
     include: _utils.includePaths,
@@ -50,7 +50,6 @@ module.exports = function (storybookBaseConfig) {
     })];
   };
 
-  newConfig.resolve.extensions = ['.js', '.json', ''];
   newConfig.resolve.alias = (0, _extends3.default)({}, storybookBaseConfig.resolve.alias, {
     // This is to support NPM2
     'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator')

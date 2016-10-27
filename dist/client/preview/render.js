@@ -35,6 +35,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // check whether we're running on node/browser
 var isBrowser = typeof window !== 'undefined';
 
+var logger = console;
+
 var rootEl = null;
 var previousKind = '';
 var previousStory = '';
@@ -58,6 +60,9 @@ function renderException(error) {
   realError.stack = error.stack;
   var redBox = _react2.default.createElement(_error_display2.default, { error: realError });
   _reactDom2.default.render(redBox, rootEl);
+
+  // Log the stack to the console. So, user could check the source code.
+  logger.error(error.stack);
 }
 
 function renderMain(data, storyStore) {
@@ -71,8 +76,8 @@ function renderMain(data, storyStore) {
     );
   };
   var noPreview = _react2.default.createElement(NoPreview, null);
-  var selectedKind = data.selectedKind;
-  var selectedStory = data.selectedStory;
+  var selectedKind = data.selectedKind,
+      selectedStory = data.selectedStory;
 
 
   var story = storyStore.getStory(selectedKind, selectedStory);
@@ -100,13 +105,7 @@ function renderMain(data, storyStore) {
     story: selectedStory
   };
 
-  var element = void 0;
-
-  try {
-    element = story(context);
-  } catch (ex) {
-    return renderException(ex);
-  }
+  var element = story(context);
 
   if (!element) {
     var error = {
@@ -130,13 +129,17 @@ function renderMain(data, storyStore) {
 }
 
 function renderPreview(_ref) {
-  var reduxStore = _ref.reduxStore;
-  var storyStore = _ref.storyStore;
+  var reduxStore = _ref.reduxStore,
+      storyStore = _ref.storyStore;
 
   var state = reduxStore.getState();
   if (state.error) {
     return renderException(state.error);
   }
 
-  return renderMain(state, storyStore);
+  try {
+    return renderMain(state, storyStore);
+  } catch (ex) {
+    return renderException(ex);
+  }
 }

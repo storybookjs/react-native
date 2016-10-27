@@ -11,7 +11,7 @@ module.exports = (storybookBaseConfig) => {
       include: includePaths,
       loaders: [
         require.resolve('style-loader'),
-        require.resolve('css-loader'),
+        `${require.resolve('css-loader')}?importLoaders=1`,
         require.resolve('postcss-loader'),
       ],
     },
@@ -52,7 +52,6 @@ module.exports = (storybookBaseConfig) => {
     ];
   };
 
-  newConfig.resolve.extensions = ['.js', '.json', ''];
   newConfig.resolve.alias = {
     ...storybookBaseConfig.resolve.alias,
     // This is to support NPM2

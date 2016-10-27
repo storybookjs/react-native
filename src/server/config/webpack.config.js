@@ -14,7 +14,7 @@ import babelLoaderConfig from './babel.js';
 
 export default function () {
   const config = {
-    devtool: '#cheap-module-eval-source-map',
+    devtool: 'eval',
     entry: {
       manager: [
         require.resolve('./polyfills'),
@@ -22,7 +22,6 @@ export default function () {
       ],
       preview: [
         require.resolve('./polyfills'),
-        require.resolve('./error_enhancements'),
         require.resolve('./globals'),
         `${require.resolve('webpack-hot-middleware/client')}?reload=true`,
       ],
@@ -51,6 +50,9 @@ export default function () {
       ],
     },
     resolve: {
+      // Since we ship with json-loader always, it's better to move extensions to here
+      // from the default config.
+      extensions: ['.js', '.json', '.jsx', ''],
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       fallback: nodePaths,

@@ -5,13 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.nodePaths = exports.nodeModulesPaths = exports.excludePaths = exports.includePaths = exports.OccurenceOrderPlugin = undefined;
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
 
 exports.loadEnv = loadEnv;
 
@@ -47,20 +47,22 @@ function loadEnv() {
 
   var defaultNodeEnv = options.production ? 'production' : 'development';
   var env = {
-    'process.env.NODE_ENV': (0, _stringify2.default)(process.env.NODE_ENV || defaultNodeEnv),
+    NODE_ENV: process.env.NODE_ENV || defaultNodeEnv,
     // This is to support CRA's public folder feature.
     // In production we set this to dot(.) to allow the browser to access these assests
     // even when deployed inside a subpath. (like in GitHub pages)
     // In development this is just empty as we always serves from the root.
-    'process.env.PUBLIC_URL': (0, _stringify2.default)(options.production ? '.' : '')
+    PUBLIC_URL: options.production ? '.' : ''
   };
 
   (0, _keys2.default)(process.env).filter(function (name) {
     return (/^STORYBOOK_/.test(name)
     );
   }).forEach(function (name) {
-    env['process.env.' + name] = (0, _stringify2.default)(process.env[name]);
+    env[name] = process.env[name];
   });
 
-  return env;
+  return {
+    'process.env': (0, _stringify2.default)(env)
+  };
 }

@@ -8,6 +8,8 @@ import ErrorDisplay from './error_display';
 // check whether we're running on node/browser
 const isBrowser = typeof window !== 'undefined';
 
+const logger = console;
+
 let rootEl = null;
 let previousKind = '';
 let previousStory = '';
@@ -31,6 +33,9 @@ export function renderException(error) {
   realError.stack = error.stack;
   const redBox = (<ErrorDisplay error={realError} />);
   ReactDOM.render(redBox, rootEl);
+
+  // Log the stack to the console. So, user could check the source code.
+  logger.error(error.stack);
 }
 
 export function renderMain(data, storyStore) {
@@ -65,13 +70,7 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
 
-  let element;
-
-  try {
-    element = story(context);
-  } catch (ex) {
-    return renderException(ex);
-  }
+  const element = story(context);
 
   if (!element) {
     const error = {
@@ -107,5 +106,9 @@ export default function renderPreview({ reduxStore, storyStore }) {
     return renderException(state.error);
   }
 
-  return renderMain(state, storyStore);
+  try {
+    return renderMain(state, storyStore);
+  } catch (ex) {
+    return renderException(ex);
+  }
 }

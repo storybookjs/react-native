@@ -5,10 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (context) {
-  var queryParams = context.queryParams;
-  var reduxStore = context.reduxStore;
-  var window = context.window;
-  var channel = context.channel;
+  var queryParams = context.queryParams,
+      reduxStore = context.reduxStore,
+      window = context.window,
+      channel = context.channel;
   // set the story if correct params are loaded via the URL.
 
   if (queryParams.selectedKind) {
