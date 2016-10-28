@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.0.4
+28-Oct-2016
+
+* Allow message handlers to throw errors [PR4](https://github.com/kadirahq/storybook-channel-postmsg/pull/4)
+
 ### v1.0.3
 28-Sep-2016
 
