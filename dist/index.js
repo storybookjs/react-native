@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -14,58 +14,66 @@ var AddonStore = exports.AddonStore = function () {
 
     this._loaders = {};
     this._panels = {};
-    this._channel = null;
-    this._preview = null;
-    this._database = null;
+    this._store = {};
   }
 
   _createClass(AddonStore, [{
-    key: "getChannel",
-    value: function getChannel() {
-      return this._channel;
-    }
-  }, {
-    key: "setChannel",
-    value: function setChannel(channel) {
-      this._channel = channel;
-    }
-  }, {
-    key: "getPreview",
-    value: function getPreview() {
-      return this._preview;
-    }
-  }, {
-    key: "setPreview",
-    value: function setPreview(preview) {
-      this._preview = preview;
-    }
-  }, {
-    key: "getDatabase",
-    value: function getDatabase() {
-      return this._database;
-    }
-  }, {
-    key: "setDatabase",
-    value: function setDatabase(database) {
-      this._database = database;
-    }
-  }, {
-    key: "getPanels",
+    key: 'getPanels',
     value: function getPanels() {
       return this._panels;
     }
   }, {
-    key: "addPanel",
+    key: 'setChannel',
+    value: function setChannel(channel, name) {
+      this._set('channel', channel, name);
+    }
+  }, {
+    key: 'getChannel',
+    value: function getChannel() {
+      return this._get('channel');
+    }
+  }, {
+    key: 'setDatabase',
+    value: function setDatabase(database, name) {
+      this._set('database', database, name);
+    }
+  }, {
+    key: 'getDatabase',
+    value: function getDatabase() {
+      return this._get('database');
+    }
+  }, {
+    key: 'setPreview',
+    value: function setPreview(preview, name) {
+      this._set('preview', preview, name);
+    }
+  }, {
+    key: 'getPreview',
+    value: function getPreview() {
+      return this._get('preview');
+    }
+  }, {
+    key: 'setPreviewDecorator',
+    value: function setPreviewDecorator(decorator, name) {
+      this._set('preview decorator', decorator, name);
+    }
+  }, {
+    key: 'getPreviewDecorator',
+    value: function getPreviewDecorator() {
+      return this._get('preview decorator');
+    }
+  }, {
+    key: 'addPanel',
     value: function addPanel(name, panel) {
       this._panels[name] = panel;
     }
   }, {
-    key: "register",
+    key: 'register',
     value: function register(name, loader) {
       this._loaders[name] = loader;
     }
   }, {
-    key: "loadAddons",
+    key: 'loadAddons',
     value: function loadAddons(api) {
       var _this = this;
 
@@ -74,6 +82,25 @@ var AddonStore = exports.AddonStore = function () {
       }).forEach(function (loader) {
         return loader(api);
       });
+    }
+  }, {
+    key: '_set',
+    value: function _set(key, value, name) {
+      if (this._store[key]) {
+        throw new Error('There\'s ' + key + ' called "' + this._store[key].name + '". You can only have a single ' + key + '.');
+      }
+
+      this._store[key] = { value: value, name: name };
+    }
+  }, {
+    key: '_get',
+    value: function _get(key) {
+      var item = this._store[key];
+      if (!item) {
+        return null;
+      }
+
+      return item.value;
     }
   }]);
 
