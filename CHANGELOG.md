@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.1.0
+28-Oct-2016
+
+* Use a constant key to identify relavent messages [PR6](https://github.com/kadirahq/storybook-channel-postmsg/pull/6)
+
 ### v1.0.4
 28-Oct-2016
 
