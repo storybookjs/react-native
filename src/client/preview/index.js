@@ -22,10 +22,7 @@ const context = { storyStore, reduxStore };
 
 if (isBrowser) {
   const queryParams = qs.parse(window.location.search.substring(1));
-  if (!queryParams.dataId) {
-    throw new Error('dataId is not supplied via queryString');
-  }
-  const channel = createChannel({ key: queryParams.dataId });
+  const channel = createChannel();
   channel.on('setCurrentStory', (data) => {
     reduxStore.dispatch(selectStory(data.kind, data.story));
   });
