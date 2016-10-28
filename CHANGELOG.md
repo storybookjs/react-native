@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.28.1
+28-October-2016
+
+Remove preview decorator support. [PR583](https://github.com/kadirahq/react-storybook/pull/583).
+
 ### v2.28.0
 28-October-2016
 
