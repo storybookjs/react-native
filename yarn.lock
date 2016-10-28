@@ -32,9 +32,9 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@kadira/storybook-addon-links/-/storybook-addon-links-1.0.1.tgz#566136a8020b60f82f146ef37d93b0c86de969d8"
 
-"@kadira/storybook-addons@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@kadira/storybook-addons/-/storybook-addons-1.6.0.tgz#b47a4076b3e0f4dcba0de4c322ce967e36233059"
+"@kadira/storybook-addons@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@kadira/storybook-addons/-/storybook-addons-1.5.0.tgz#f92cd2059282a9b4b8bdac4bef28269f85e40be4"
 
 "@kadira/storybook-channel-postmsg@^1.0.3":
   version "1.0.3"
