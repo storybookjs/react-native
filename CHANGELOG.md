@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.28.0
+28-October-2016
+
+Add preview decorator support. [PR582](https://github.com/kadirahq/react-storybook/pull/582).
+This will help us bring storybook designer with some great power.
+
 ### v2.27.0
 27-October-2016
 
