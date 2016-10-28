@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.4.1
+27-October-2016
+
+Fix some issues related to typescript declaration. [PR69](Typescript declaration updates)
+
 ### v1.4.0
 27-October-2016
 
