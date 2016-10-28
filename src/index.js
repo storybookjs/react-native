@@ -1,14 +1,15 @@
 import Channel from '@kadira/storybook-channel';
 import stringify from 'json-stringify-safe';
 
-export default function createChannel({ key }) {
-  const transport = new PostmsgTransport({ key });
+export const KEY = 'storybook-channel';
+
+export default function createChannel() {
+  const transport = new PostmsgTransport();
   return new Channel({ transport });
 }
 
 export class PostmsgTransport {
-  constructor({ key }) {
-    this._key = key;
+  constructor() {
     this._buffer = [];
     this._handler = null;
     window.addEventListener('message', this._handleEvent.bind(this), false);
@@ -26,7 +27,7 @@ export class PostmsgTransport {
         this._buffer.push({ event, resolve, reject });
       });
     }
-    const data = stringify({ key: this._key, event });
+    const data = stringify({ key: KEY, event });
     iframeWindow.postMessage(data, '*');
     return Promise.resolve(null);
   }
@@ -68,7 +69,7 @@ export class PostmsgTransport {
       return null;
     }
     const { key, event } = data;
-    if (key === this._key) {
+    if (key === KEY) {
       this._handler(event);
     }
   }
