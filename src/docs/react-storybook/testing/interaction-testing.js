@@ -12,7 +12,7 @@ export default {
 
     ## Specs Addon
 
-    If you like to write your stories directly inside your stories, we also have an addon called [specs](https://github.com/mthuret/storybook-addon-specifications).
+    If you like to write your tests directly inside your stories, we also have an addon called [specs](https://github.com/mthuret/storybook-addon-specifications).
 
     ![Storybook Specs Addon](${specsAddon})
 
