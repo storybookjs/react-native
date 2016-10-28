@@ -80,9 +80,19 @@ var ReactProvider = function (_Provider) {
         selectedStory: selectedStory
       };
 
+      var DefaultPreviewDecorator = function DefaultPreviewDecorator(_ref) {
+        var children = _ref.children;
+        return children;
+      };
+      var PreviewDecorator = _storybookAddons2.default.getPreviewDecorator() || DefaultPreviewDecorator;
+
       var queryString = _qs2.default.stringify(queryParams);
       var url = 'iframe.html?' + queryString;
-      return _react2.default.createElement(_preview2.default, { url: url });
+      return _react2.default.createElement(
+        PreviewDecorator,
+        null,
+        _react2.default.createElement(_preview2.default, { url: url })
+      );
     }
   }, {
     key: 'handleAPI',

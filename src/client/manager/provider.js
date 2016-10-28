@@ -28,10 +28,15 @@ export default class ReactProvider extends Provider {
       selectedStory,
     };
 
+    const DefaultPreviewDecorator = ({ children }) => children;
+    const PreviewDecorator = addons.getPreviewDecorator() || DefaultPreviewDecorator;
+
     const queryString = qs.stringify(queryParams);
     const url = `iframe.html?${queryString}`;
     return (
-      <Preview url={url} />
+      <PreviewDecorator>
+        <Preview url={url} />
+      </PreviewDecorator>
     );
   }
 
