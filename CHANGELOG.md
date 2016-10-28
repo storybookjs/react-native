@@ -1,5 +1,15 @@
 ## Changelog
 
+### v1.6.0
+28 Oct 2016
+
+* Add `setPreviewDecorator` and `getPreviewDecorator` methods.
+* Now following methods can only be set once and they accept an option name as the second argument.
+  * setChannel(channel, name)
+  * setDatabase(database, name)
+  * setPreview(preview, name)
+  * setPreviewDecorator(decorator, name)
+
 ### v1.5.0
 13 Aug 2016
 
