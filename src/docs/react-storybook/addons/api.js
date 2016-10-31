@@ -32,7 +32,7 @@ export default {
     });
     ~~~
 
-    Now you'll get an instance to our StorybookAPI. See the [api docs](/docs/addons/api#storybook-api) for Storybook API regarding using that.
+    Now you'll get an instance to our StorybookAPI. See the [api docs](/docs/react-storybook/addons/api#storybook-api) for Storybook API regarding using that.
 
     ### addonAPI.addPanel()
 

@@ -62,7 +62,7 @@ export default {
 
     ![Stories with notes](${images.storiesWithNotes})
 
-    Just like this, you can install any other addon and use it. Have a look at our [addon gallery](/docs/addons/addon-gallery) to discover more addons.
+    Just like this, you can install any other addon and use it. Have a look at our [addon gallery](/docs/react-storybook/addons/addon-gallery) to discover more addons.
 
     > This particular addon has created a panel in Storybook. Some addons may not create a panel and may use some other Storybook platform features.
     >

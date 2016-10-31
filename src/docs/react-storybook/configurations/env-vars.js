@@ -25,7 +25,7 @@ export default {
 
     ## Build time environment variables
 
-    You can also pass these environment variables when you are [building your storybook](http://localhost:3000/docs/basics/exporting-storybook) with \`build-storybook\`.
+    You can also pass these environment variables when you are [building your storybook](http://localhost:3000/docs/react-storybook/basics/exporting-storybook) with \`build-storybook\`.
 
     Then they'll be hard coded to the static version of your Storybook.
 

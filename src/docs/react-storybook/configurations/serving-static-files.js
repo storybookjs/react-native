@@ -26,7 +26,7 @@ export default {
     ~~~
 
 
-    This is enabled with our [default config](/docs/configurations/default-config). But, if you are using a [custom Webpack config](/docs/configurations/custom-webpack-config), you need to add the [file-loader](https://github.com/webpack/file-loader) into your custom Webpack config.
+    This is enabled with our [default config](/docs/react-storybook/configurations/default-config). But, if you are using a [custom Webpack config](/docs/react-storybook/configurations/custom-webpack-config), you need to add the [file-loader](https://github.com/webpack/file-loader) into your custom Webpack config.
 
     ## 2. Via a Directory
 

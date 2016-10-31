@@ -73,9 +73,9 @@ export default {
 
     Let's look at how Storybook can help you do the above mentioned different aspects of testing.
 
-    * [Structural Testing with StoryShots](/docs/testing/structural-testing)
-    * [Interaction Testing with Specs Addon](/docs/testing/interaction-testing)
-    * [Storybook as the Base for CSS/Style Testing](/docs/testing/css-style-testing)
-    * [Storybook for Manual UI Testing](/docs/testing/manual-testing)
+    * [Structural Testing with StoryShots](/docs/react-storybook/testing/structural-testing)
+    * [Interaction Testing with Specs Addon](/docs/react-storybook/testing/interaction-testing)
+    * [Storybook as the Base for CSS/Style Testing](/docs/react-storybook/testing/css-style-testing)
+    * [Storybook for Manual UI Testing](/docs/react-storybook/testing/manual-testing)
   `
 };

@@ -7,7 +7,7 @@ export default {
   id: "env-variables",
   title: "Environment Varibles",
   content: stripIndent`
-    You can pass dynamic information to Storybook via environmental variables. This can be used to pass configurations and secrets. Here's [how to](https://getstorybook.io/docs/configurations/env-vars) use them with storybook.
+    You can pass dynamic information to Storybook via environmental variables. This can be used to pass configurations and secrets. Here's [how to](https://getstorybook.io/docs/react-storybook/configurations/env-vars) use them with storybook.
 
     As you expected, you can set env variables directly from Storybook Hub. Therefore, you don't need to commit those configuration into GitHub or any other store.
 

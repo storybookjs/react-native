@@ -47,7 +47,7 @@ export default {
 
     ![](${images.basicsStories})
 
-    This is just our core API for writing stories. In addition to this, you can use the official and third part Storybook [addons](/docs/addons/introduction) to get more functionality.
+    This is just our core API for writing stories. In addition to this, you can use the official and third part Storybook [addons](/docs/react-storybook/addons/introduction) to get more functionality.
 
 
     ## Loading stories dynamically

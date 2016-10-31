@@ -104,8 +104,8 @@ export default {
 
     See the following links to learn more about native addons:
 
-    * [Using addons](/docs/addons/using-addons)
-    * [Addon gallery](/docs/addons/addon-gallery)
-    * [Write your own addon](/docs/addons/writing-addons)
+    * [Using addons](/docs/react-storybook/addons/using-addons)
+    * [Addon gallery](/docs/react-storybook/addons/addon-gallery)
+    * [Write your own addon](/docs/react-storybook/addons/writing-addons)
   `
 };

@@ -34,7 +34,7 @@ export default {
     * Select a story.
     * Register keyboard shortcuts (coming soon).
 
-    With this, you can write some pretty cool addons. Look at our [Addon gallery](/docs/addons/addon-gallery) to have a look at some sample addons.
+    With this, you can write some pretty cool addons. Look at our [Addon gallery](/docs/react-storybook/addons/addon-gallery) to have a look at some sample addons.
 
     ## Getting Started
 
@@ -158,8 +158,8 @@ export default {
 
     ## Addon API
 
-    Here we've only used a few functionalities of our [Addon API](/docs/addons/api).
-    You can learn more about the complete API [here](/docs/addons/api).
+    Here we've only used a few functionalities of our [Addon API](/docs/react-storybook/addons/api).
+    You can learn more about the complete API [here](/docs/react-storybook/addons/api).
 
     ## Packaging
 

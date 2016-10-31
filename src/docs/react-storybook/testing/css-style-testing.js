@@ -29,7 +29,7 @@ export default {
 
     ## Supported CSS/Style Testing Frameworks
 
-    It will be hard to use all the frameworks we've [mentioned](/docs/testing/react-ui-testing#3-css-style-testing), but we'll be able to use frameworks which are based on URL as the input source. (Such as [BackstopJS](https://github.com/garris/BackstopJS) and [Gemini](https://github.com/gemini-testing/gemini))
+    It will be hard to use all the frameworks we've [mentioned](/docs/react-storybook/testing/react-ui-testing#3-css-style-testing), but we'll be able to use frameworks which are based on URL as the input source. (Such as [BackstopJS](https://github.com/garris/BackstopJS) and [Gemini](https://github.com/gemini-testing/gemini))
 
     > In the future we are also planning to smooth this process with the help of [StoryShots](https://github.com/kadirahq/storyshots).
   `

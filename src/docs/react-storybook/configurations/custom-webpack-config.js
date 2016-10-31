@@ -34,7 +34,7 @@ export default {
     You also need to install the loaders (style, css, and sass) used in above config manually.
 
 
-    > Once you create this \`webpack.config.js\` file, Storybook won't load the [default Webpack config](/docs/configurations/default-config) other than loading JS files with the Babel loader.
+    > Once you create this \`webpack.config.js\` file, Storybook won't load the [default Webpack config](/docs/react-storybook/configurations/default-config) other than loading JS files with the Babel loader.
 
     ### Supported Webpack Options
 
@@ -80,7 +80,7 @@ export default {
 
     ## Extending The Default Config
 
-    You may want to keep Storybook's [default config](/docs/configurations/default-config), but just need to extend it. If so, this is how you do it using the Full Control Mode.
+    You may want to keep Storybook's [default config](/docs/react-storybook/configurations/default-config), but just need to extend it. If so, this is how you do it using the Full Control Mode.
     Add following content to the \`webpack.config.js\` in your Storybook config directory.
 
     ~~~js
