@@ -1,5 +1,11 @@
 ## Changelog
 
+### v2.29.0
+01-November-2016
+
+Update babel-plugin-react-docgen to 1.4.0.
+This will fix some of the compilation issues such as #580.
+
 ### v2.28.1
 28-October-2016
 
