@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.1.5
+
+* Support React Native v0.36 [PR #106](https://github.com/kadirahq/react-native-storybook/pull/106).
+
 ## v2.1.4
 
 * Make sure that when a story is selected the previous story is completely unmounted and new story is mounted [PR #104](https://github.com/kadirahq/react-native-storybook/pull/104).
