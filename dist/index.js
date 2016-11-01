@@ -9,6 +9,7 @@ exports.boolean = boolean;
 exports.number = number;
 exports.object = object;
 exports.select = select;
+exports.array = array;
 exports.date = date;
 exports.withKnobs = withKnobs;
 
@@ -46,6 +47,12 @@ function object(name, value) {
 
 function select(name, options, value) {
   return manager.knob(name, { type: 'select', options: options, value: value });
+}
+
+function array(name, value) {
+  var separator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ',';
+
+  return manager.knob(name, { type: 'array', value: value, separator: separator });
 }
 
 function date(name) {
