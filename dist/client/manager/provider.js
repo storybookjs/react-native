@@ -24,10 +24,6 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _uuid = require('uuid');
-
-var _uuid2 = _interopRequireDefault(_uuid);
-
 var _qs = require('qs');
 
 var _qs2 = _interopRequireDefault(_qs);
@@ -52,6 +48,9 @@ var _preview2 = _interopRequireDefault(_preview);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* global location */
+/* eslint class-methods-use-this: 0 */
+
 var ReactProvider = function (_Provider) {
   (0, _inherits3.default)(ReactProvider, _Provider);
 
@@ -60,8 +59,7 @@ var ReactProvider = function (_Provider) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
 
-    _this.dataId = _uuid2.default.v4();
-    _this.channel = (0, _storybookChannelPostmsg2.default)({ key: _this.dataId });
+    _this.channel = (0, _storybookChannelPostmsg2.default)();
     _storybookAddons2.default.setChannel(_this.channel);
     return _this;
   }
@@ -75,7 +73,6 @@ var ReactProvider = function (_Provider) {
     key: 'renderPreview',
     value: function renderPreview(selectedKind, selectedStory) {
       var queryParams = {
-        dataId: this.dataId,
         selectedKind: selectedKind,
         selectedStory: selectedStory
       };
@@ -105,7 +102,6 @@ var ReactProvider = function (_Provider) {
     }
   }]);
   return ReactProvider;
-}(_storybookUi.Provider); /* global location */
-/* eslint class-methods-use-this: 0 */
+}(_storybookUi.Provider);
 
 exports.default = ReactProvider;

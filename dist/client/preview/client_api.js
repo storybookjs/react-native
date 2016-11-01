@@ -28,8 +28,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ClientApi = function () {
   function ClientApi(_ref) {
-    var channel = _ref.channel;
-    var storyStore = _ref.storyStore;
+    var channel = _ref.channel,
+        storyStore = _ref.storyStore;
     (0, _classCallCheck3.default)(this, ClientApi);
 
     // channel can be null when running in node

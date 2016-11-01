@@ -76,8 +76,8 @@ function renderMain(data, storyStore) {
     );
   };
   var noPreview = _react2.default.createElement(NoPreview, null);
-  var selectedKind = data.selectedKind;
-  var selectedStory = data.selectedStory;
+  var selectedKind = data.selectedKind,
+      selectedStory = data.selectedStory;
 
 
   var story = storyStore.getStory(selectedKind, selectedStory);
@@ -129,8 +129,8 @@ function renderMain(data, storyStore) {
 }
 
 function renderPreview(_ref) {
-  var reduxStore = _ref.reduxStore;
-  var storyStore = _ref.storyStore;
+  var reduxStore = _ref.reduxStore,
+      storyStore = _ref.storyStore;
 
   var state = reduxStore.getState();
   if (state.error) {
