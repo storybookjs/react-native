@@ -1,7 +1,36 @@
 import url from 'url';
 
-export default function (publicPath, cacheKey) {
-  const managerUrl = cacheKey ? `static/manager.bundle.js?${cacheKey}` : 'static/manager.bundle.js';
+// assets.manager will be:
+// - undefined
+// - string e.g. 'static/manager.9adbb5ef965106be1cc3.bundle.js'
+// - array of strings e.g.
+// assets.manager will be something like:
+// [ 'static/manager.c6e6350b6eb01fff8bad.bundle.js',
+//   'static/manager.c6e6350b6eb01fff8bad.bundle.js.map' ]
+const managerUrlsFromAssets = (assets) => {
+  if (!assets) {
+    return {
+      js: 'static/manager.bundle.js',
+    };
+  }
+
+  if (typeof assets.manager === 'string') {
+    return {
+      js: assets.manager,
+    };
+  }
+
+  return {
+    js: assets.manager.find(filename => filename.match(/\.js$/)),
+    css: assets.manager.find(filename => filename.match(/\.css$/)),
+  };
+};
+
+export default function (data) {
+  const { assets, publicPath } = data;
+
+  const managerUrls = managerUrlsFromAssets(assets);
+
   return `
     <!DOCTYPE html>
     <html>
@@ -41,7 +70,7 @@ export default function (publicPath, cacheKey) {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
-        <script src="${url.resolve(publicPath, managerUrl)}"></script>
+        <script src="${url.resolve(publicPath, managerUrls.js)}"></script>
       </body>
     </html>
   `;
