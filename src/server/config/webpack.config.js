@@ -28,7 +28,7 @@ export default function () {
     },
     output: {
       path: path.join(__dirname, 'dist'),
-      filename: 'static/[name].bundle.js',
+      filename: 'static/[name].bundle.[chunkhash].js',
       publicPath: '/',
     },
     plugins: [
