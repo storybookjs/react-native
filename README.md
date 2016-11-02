@@ -7,7 +7,7 @@ This is how Knobs look like:
 
 [![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://goo.gl/uX9WLf)
 
-> Checkout the above [Live Storybook](https://goo.gl/uX9WLf) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
+> Checkout the above [Live Storybook](https://goo.gl/2s9b1L) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
 
 ## Getting Started
 
