@@ -11,7 +11,7 @@ const logger = console;
 export function addJsonLoaderIfNotAvailable(config) {
   const jsonLoaderExists = config.module.loaders.reduce(
     (value, loader) => {
-      return value || loader.test.test('my_package.json');
+      return value || [].concat(loader.test).some(regex => regex.test('my_package.json'))
     },
     false
   );
