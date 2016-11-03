@@ -3,6 +3,17 @@
 ### v2.29.1
 03-November-2016
 
+Add various fixes.
+
+* Use webpack chunkhash to enable long-term caching. [PR597](https://github.com/kadirahq/react-storybook/pull/597)
+* Fixed json loader testing for when test is multiple. [PR598](https://github.com/kadirahq/react-storybook/pull/598)
+* Fix usage of custom favicon [PR592](https://github.com/kadirahq/react-storybook/pull/592)
+* Update postcss-loader to v1.1.0 [PR599](https://github.com/kadirahq/react-storybook/pull/599)
+* fix for `module.hot` is not available in a static build [PR600](https://github.com/kadirahq/react-storybook/pull/600)
+
+### v2.29.1
+03-November-2016
+
 Update babel-plugin-react-docgen to v1.4.1 to fix HOC [issue](https://github.com/kadirahq/babel-plugin-react-docgen/issues/19)
 
 ### v2.29.0
