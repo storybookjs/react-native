@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v2.0.1
+20-October-2016
+
+Prepare channel before reading storybook as some addons use it before running stories. [PR41](https://github.com/kadirahq/storyshots/pull/41)
+
 ### v2.0.0
 11-October-2016
 
