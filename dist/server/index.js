@@ -84,7 +84,8 @@ if (_commander2.default.host) {
 }
 
 var app = (0, _express2.default)();
-app.use((0, _serveFavicon2.default)(_path2.default.resolve(__dirname, 'public/favicon.ico')));
+
+var hasCustomFavicon = false;
 
 if (_commander2.default.staticDir) {
   _commander2.default.staticDir = (0, _utils.parseList)(_commander2.default.staticDir);
@@ -96,7 +97,17 @@ if (_commander2.default.staticDir) {
     }
     logger.log('=> Loading static files from: ' + staticPath + ' .');
     app.use(_express2.default.static(staticPath, { index: false }));
+
+    var faviconPath = _path2.default.resolve(staticPath, 'favicon.ico');
+    if (_fs2.default.existsSync(faviconPath)) {
+      hasCustomFavicon = true;
+      app.use((0, _serveFavicon2.default)(faviconPath));
+    }
   });
+}
+
+if (!hasCustomFavicon) {
+  app.use((0, _serveFavicon2.default)(_path2.default.resolve(__dirname, 'public/favicon.ico')));
 }
 
 // Build the webpack configuration using the `baseConfig`
