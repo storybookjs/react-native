@@ -10,6 +10,9 @@ import EventEmitter from 'events';
 import loadBabelConfig from '@kadira/storybook/dist/server/babel_config';
 import { filterStorybook } from './util';
 import runWithRequireContext from './require_context';
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 const babel = require('babel-core');
 
 program
