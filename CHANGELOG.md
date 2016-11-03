@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.29.1
+03-November-2016
+
+Update babel-plugin-react-docgen to v1.4.1 to fix HOC [issue](https://github.com/kadirahq/babel-plugin-react-docgen/issues/19)
+
 ### v2.29.0
 01-November-2016
 
