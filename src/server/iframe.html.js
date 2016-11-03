@@ -32,7 +32,7 @@ export default function (data) {
 
   const previewUrls = previewUrlsFromAssets(assets);
 
-  let previewCssTag;
+  let previewCssTag = '';
   if (previewUrls.css) {
     previewCssTag = `<link rel='stylesheet' type='text/css' href='${url.resolve(publicPath, previewUrls.css)}'>`;
   }

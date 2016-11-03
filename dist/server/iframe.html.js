@@ -12,7 +12,7 @@ exports.default = function (data) {
 
   var previewUrls = previewUrlsFromAssets(assets);
 
-  var previewCssTag = void 0;
+  var previewCssTag = '';
   if (previewUrls.css) {
     previewCssTag = '<link rel=\'stylesheet\' type=\'text/css\' href=\'' + _url2.default.resolve(publicPath, previewUrls.css) + '\'>';
   }
