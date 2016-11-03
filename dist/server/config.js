@@ -98,7 +98,9 @@ var logger = console;
 
 function addJsonLoaderIfNotAvailable(config) {
   var jsonLoaderExists = config.module.loaders.reduce(function (value, loader) {
-    return value || loader.test.test('my_package.json');
+    return value || [].concat(loader.test).some(function (regex) {
+      return regex.test('my_package.json');
+    });
   }, false);
 
   if (!jsonLoaderExists) {
