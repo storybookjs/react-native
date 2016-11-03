@@ -40,7 +40,7 @@ export default class ConfigApi {
       try {
         this._renderMain(loaders);
       } catch (error) {
-        if (module.hot.status() === 'apply') {
+        if (module.hot && module.hot.status() === 'apply') {
           // We got this issue, after webpack fixed it and applying it.
           // Therefore error message is displayed forever even it's being fixed.
           // So, we'll detect it reload the page.
