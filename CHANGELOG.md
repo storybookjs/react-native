@@ -1,6 +1,12 @@
 ## Changelog
 
-### v2.29.1
+### v2.29.3
+03-November-2016
+
+Fix a regression caused by v2.29.2.
+There was a text called undefined listed always on the top of the preview.
+
+### v2.29.2
 03-November-2016
 
 Add various fixes.
