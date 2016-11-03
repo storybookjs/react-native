@@ -66,7 +66,8 @@ if (program.host) {
 }
 
 const app = express();
-app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
+
+let hasCustomFavicon = false;
 
 if (program.staticDir) {
   program.staticDir = parseList(program.staticDir);
@@ -78,7 +79,17 @@ if (program.staticDir) {
     }
     logger.log(`=> Loading static files from: ${staticPath} .`);
     app.use(express.static(staticPath, { index: false }));
+
+    const faviconPath = path.resolve(staticPath, 'favicon.ico');
+    if (fs.existsSync(faviconPath)) {
+      hasCustomFavicon = true;
+      app.use(favicon(faviconPath));
+    }
   });
+}
+
+if (!hasCustomFavicon) {
+  app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
 }
 
 // Build the webpack configuration using the `baseConfig`
