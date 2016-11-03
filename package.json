@@ -48,7 +48,7 @@
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.0",
     "lodash.pick": "^4.2.0",
-    "postcss-loader": "0.13.0",
+    "postcss-loader": "1.1.0",
     "qs": "^6.1.0",
     "react-modal": "^1.2.0",
     "redux": "^3.5.2",
