@@ -6,7 +6,6 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
-import uuid from 'uuid';
 import packageJson from '../../package.json';
 import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
@@ -73,19 +72,22 @@ if (program.staticDir) {
   });
 }
 
-const cacheKey = uuid.v4();
-// Write both the storybook UI and IFRAME HTML files to destination path.
-const headHtml = getHeadHtml(configDir);
-const publicPath = config.output.publicPath;
-fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(publicPath, cacheKey));
-fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml(headHtml, publicPath, cacheKey));
-
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
-webpack(config).run(function (err) {
+webpack(config).run(function (err, stats) {
   if (err) {
     logger.error('Failed to build the storybook');
     logger.error(err.message);
     process.exit(1);
   }
+
+  const data = {
+    publicPath: config.output.publicPath,
+    assets: stats.toJson().assetsByChunkName,
+  };
+  const headHtml = getHeadHtml(configDir);
+
+  // Write both the storybook UI and IFRAME HTML files to destination path.
+  fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(data));
+  fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml({ ...data, headHtml }));
 });

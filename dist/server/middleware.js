@@ -27,12 +27,12 @@ exports.default = function (configDir) {
   router.use((0, _webpackHotMiddleware2.default)(compiler));
 
   router.get('/', function (req, res) {
-    res.send((0, _index2.default)(publicPath));
+    res.send((0, _index2.default)({ publicPath: publicPath }));
   });
 
   router.get('/iframe.html', function (req, res) {
     var headHtml = (0, _utils.getHeadHtml)(configDir);
-    res.send((0, _iframe2.default)(headHtml, publicPath));
+    res.send((0, _iframe2.default)({ headHtml: headHtml, publicPath: publicPath }));
   });
 
   return router;

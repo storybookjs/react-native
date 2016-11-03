@@ -15,7 +15,7 @@ exports.default = function () {
     devtool: '#cheap-module-source-map',
     entry: entries,
     output: {
-      filename: 'static/[name].bundle.js',
+      filename: 'static/[name].[chunkhash].bundle.js',
       // Here we set the publicPath to ''.
       // This allows us to deploy storybook into subpaths like GitHub pages.
       // This works with css and image loaders too.
