@@ -113,12 +113,12 @@ For that, first create a file called `loaders.js` in your project root. Then add
 var loaders = module.exports = {};
 
 // to support css modules
-loaders['.css'] = function(path) {
+loaders['css'] = function(path) {
   return {};
 };
 
 // to support jpeg files
-loaders['.jpeg'] = function(path) {
+loaders['jpeg'] = function(path) {
   return path;
 }
 ```
