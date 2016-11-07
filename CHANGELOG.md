@@ -1,5 +1,11 @@
 # ChangeLog
 
+### v2.0.2
+7-November-2016
+
+* `NODE_ENV` is set to `"development"` by default [PR50](https://github.com/kadirahq/storyshots/pull/50)
+* `require.context` regexp test includes the begining `./` of filenames [PR55](https://github.com/kadirahq/storyshots/pull/55)
+
 ### v2.0.1
 20-October-2016
 
