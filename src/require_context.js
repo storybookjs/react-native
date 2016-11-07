@@ -7,10 +7,10 @@ function requireModules(keys, root, directory, regExp, recursive) {
   const files = fs.readdirSync(path.join(root, directory));
 
   files.forEach((filename) => {
-    if (regExp.test(path.join(directory, filename))) {
-      // webpack adds a './' to the begining of the key
-      // TODO: Check this in windows
-      const entryKey = `./${path.join(directory, filename)}`;
+    // webpack adds a './' to the begining of the key
+    // TODO: Check this in windows
+    const entryKey = `./${path.join(directory, filename)}`;
+    if (regExp.test(entryKey)) {
       // eslint-disable-next-line no-param-reassign, global-require, import/no-dynamic-require
       keys[entryKey] = require(path.join(root, directory, filename));
       return;
