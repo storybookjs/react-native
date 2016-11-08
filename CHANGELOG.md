@@ -1,6 +1,11 @@
 ## Changelog
 
 ### v2.29.3
+08-November-2016
+
+Update webpack-hot-middleware to version 2.13.2 to fix the issue [#543](https://github.com/storybooks/react-storybook/issues/543).
+
+### v2.29.3
 03-November-2016
 
 Fix a regression caused by v2.29.2.
