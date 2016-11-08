@@ -60,7 +60,7 @@
     "uuid": "^2.0.3",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.0",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.13.2"
   },
   "peerDependencies": {
     "react": "^0.14.7 || ^15.0.0",
