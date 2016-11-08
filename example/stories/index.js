@@ -8,7 +8,8 @@ import {
   boolean,
   text,
   select,
-  date
+  date,
+  array
 } from '../../src';
 
 const stories = storiesOf('Example of Knobs', module);
@@ -30,6 +31,8 @@ stories.add('with all knobs', () => {
     black: 'Black'
   }, 'black');
 
+  const passions = array('Passions', ['Fishing', 'Skiing']);
+
   const customStyle = object('Style', {
     fontFamily: 'Arial',
     padding: 20,
@@ -44,6 +47,7 @@ stories.add('with all knobs', () => {
   return (
     <div style={style}>
       I'm {name} and I was born on "{moment(dob).format("DD MMM YYYY")}"
+      I like: <ul>{passions.map((p, i) => <li key={i}>{p}</li>)}</ul>
     </div>
   );
 })

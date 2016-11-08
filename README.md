@@ -128,6 +128,24 @@ const value = object(label, defaultValue);
 
 > Make sure to enter valid JSON syntax while editing values inside the knob.
 
+### array
+
+Allows you to get an array from the user.
+
+```js
+const label = 'Styles';
+const defaultValue = ['Red']
+
+const value = array(label, defaultValue);
+```
+
+> While editing values inside the knob, you will need to use a separator. By default it's a comma, but this can be
+ override by passing a separator variable.
+> ```js
+> const separator = ':';
+> const value = array(label, defaultValue, separator);
+> ```
+
 ### select
 
 Allows you to get a value from a select box from the user.

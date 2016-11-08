@@ -24,6 +24,10 @@ var _Select = require('./Select');
 
 var _Select2 = _interopRequireDefault(_Select);
 
+var _Array = require('./Array');
+
+var _Array2 = _interopRequireDefault(_Array);
+
 var _Date = require('./Date');
 
 var _Date2 = _interopRequireDefault(_Date);
@@ -36,5 +40,6 @@ exports.default = {
   boolean: _Boolean2.default,
   object: _Object2.default,
   select: _Select2.default,
+  array: _Array2.default,
   date: _Date2.default
 };
