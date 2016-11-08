@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import style from './style';
 
 export default class StoryView extends Component {
@@ -13,9 +13,19 @@ export default class StoryView extends Component {
     this.setState({storyFn, selection});
   }
 
+  renderHelp() {
+    return (
+      <View style={style.help}>
+        {this.props.url
+          ? <Text>Please open the Storybook UI ({this.props.url}) with a web browser and select a story for preview.</Text>
+          : <Text>Please open the Storybook UI with a web browser and select a story for preview.</Text>}
+      </View>
+    );
+  }
+
   render() {
     if (!this.state.storyFn) {
-      return null;
+      return this.renderHelp();
     }
     const { kind, story } = this.state.selection;
     const context = { kind, story };

@@ -54,11 +54,13 @@ export default class Preview {
 
   getStorybookUI(params = {}) {
     return () => {
+      let webUrl = null;
       let channel = addons.getChannel();
       if (!channel) {
         const host = params.host || 'localhost';
         const port = params.port || 7007;
         const url = `ws://${host}:${port}`;
+        webUrl = `http://${host}:${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
       }
@@ -67,7 +69,7 @@ export default class Preview {
       this._sendSetStories();
       this._sendGetCurrentStory();
       // finally return the preview component
-      return <StoryView events={this._events} />;
+      return <StoryView url={webUrl} events={this._events} />;
     }
   }
 
