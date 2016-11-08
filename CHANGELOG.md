@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.5.0
+8-November-2016
+
+Add Array as a type. [PR70](https://github.com/storybooks/storybook-addon-knobs/pull/70).
+
 ### v1.4.1
 27-October-2016
 
