@@ -67,6 +67,6 @@ export default {
 
 
     > Unfortunately, we don't support Meteor packages. If your UI component includes one or more Meteor packages, try to avoid using them in UI components.
-    > If you are containers, you can use [React Stubber](https://github.com/kadirahq/react-stubber) to use them in Storybook.
+    > If they are containers, you can use [React Stubber](https://github.com/kadirahq/react-stubber) to use them in Storybook.
   `
 };
