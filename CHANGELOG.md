@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.29.5
+09-November-2016
+
+Check if regex and regex.test is available before calling it. [PR608](https://github.com/storybooks/react-storybook/pull/608)
+
 ### v2.29.3
 08-November-2016
 
