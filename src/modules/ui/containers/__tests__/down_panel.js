@@ -1,9 +1,9 @@
 const { describe, it } = global;
 import { expect } from 'chai';
-import { composer } from '../down_panel';
+import { mapper } from '../down_panel';
 
 describe('manager.ui.containers.down_panel', () => {
-  describe('composer', () => {
+  describe('mapper', () => {
     it('should give correct data', () => {
       const state = {
         ui: {
@@ -19,7 +19,8 @@ describe('manager.ui.containers.down_panel', () => {
       };
       const getPanels = () => panels;
 
-      const props = {
+      const props = {};
+      const env = {
         actions: () => ({
           ui: {
             selectDownPanel,
@@ -32,7 +33,7 @@ describe('manager.ui.containers.down_panel', () => {
         }),
       };
 
-      const data = composer(state, props);
+      const data = mapper(state, props, env);
       expect(data.panels).to.deep.equal(panels);
       expect(data.selectedPanel).to.deep.equal('sdp');
       expect(data.onPanelSelect).to.equal(selectDownPanel);

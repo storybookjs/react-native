@@ -85,9 +85,9 @@ var Stories = function (_React$Component) {
   }, {
     key: 'fireOnStory',
     value: function fireOnStory(story) {
-      var _props = this.props;
-      var onSelectStory = _props.onSelectStory;
-      var selectedKind = _props.selectedKind;
+      var _props = this.props,
+          onSelectStory = _props.onSelectStory,
+          selectedKind = _props.selectedKind;
 
       if (onSelectStory) onSelectStory(selectedKind, story);
     }
@@ -118,8 +118,8 @@ var Stories = function (_React$Component) {
   }, {
     key: 'renderKind',
     value: function renderKind(_ref2) {
-      var kind = _ref2.kind;
-      var stories = _ref2.stories;
+      var kind = _ref2.kind,
+          stories = _ref2.stories;
       var selectedKind = this.props.selectedKind;
 
       var style = (0, _extends3.default)({ display: 'block' }, kindStyle);

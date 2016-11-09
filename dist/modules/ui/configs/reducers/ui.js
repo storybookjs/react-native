@@ -9,7 +9,7 @@ var _extends2 = require('babel-runtime/helpers/extends');
 var _extends3 = _interopRequireDefault(_extends2);
 
 exports.default = function () {
-  var state = arguments.length <= 0 || arguments[0] === undefined ? defaultState : arguments[0];
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
   var action = arguments[1];
 
   switch (action.type) {

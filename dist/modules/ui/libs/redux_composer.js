@@ -9,10 +9,8 @@ exports.default = reduxComposer;
 var _mantraCore = require('mantra-core');
 
 function baseComposer(fn, props, onData) {
-  var _props$context = props.context();
-
-  var reduxStore = _props$context.reduxStore;
-
+  var _props$context = props.context(),
+      reduxStore = _props$context.reduxStore;
 
   var processState = function processState() {
     try {

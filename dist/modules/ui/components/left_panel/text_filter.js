@@ -132,7 +132,7 @@ var TextFilter = function (_React$Component) {
             onClick: this.fireOnClear,
             className: 'clear'
           },
-          '×'
+          '\xD7'
         )
       );
     }

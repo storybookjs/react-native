@@ -62,16 +62,16 @@ var linkStyle = {
 };
 
 var Header = function Header(_ref) {
-  var openShortcutsHelp = _ref.openShortcutsHelp;
-  var name = _ref.name;
-  var url = _ref.url;
+  var openShortcutsHelp = _ref.openShortcutsHelp,
+      name = _ref.name,
+      url = _ref.url;
   return _react2.default.createElement(
     'div',
     { style: wrapperStyle },
     _react2.default.createElement(
       'button',
       { style: shortcutIconStyle, onClick: openShortcutsHelp },
-      '⌘'
+      '\u2318'
     ),
     _react2.default.createElement(
       'a',

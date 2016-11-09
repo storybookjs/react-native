@@ -22,7 +22,7 @@ exports.ensureStory = ensureStory;
 exports.jumpToStory = jumpToStory;
 
 exports.default = function () {
-  var state = arguments.length <= 0 || arguments[0] === undefined ? defaultState : arguments[0];
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
   var action = arguments[1];
 
   switch (action.type) {
@@ -38,10 +38,9 @@ exports.default = function () {
 
     case _actions.types.JUMP_TO_STORY:
       {
-        var _jumpToStory = jumpToStory(state.stories, state.selectedKind, state.selectedStory, action.direction);
-
-        var _selectedKind = _jumpToStory.selectedKind;
-        var _selectedStory = _jumpToStory.selectedStory;
+        var _jumpToStory = jumpToStory(state.stories, state.selectedKind, state.selectedStory, action.direction),
+            _selectedKind = _jumpToStory.selectedKind,
+            _selectedStory = _jumpToStory.selectedStory;
 
         return (0, _extends3.default)({}, state, {
           selectedKind: _selectedKind,
@@ -135,8 +134,8 @@ function jumpToStory(storyKinds, selectedKind, selectedStory, direction) {
   var currentIndex = -1;
 
   storyKinds.forEach(function (_ref) {
-    var kind = _ref.kind;
-    var stories = _ref.stories;
+    var kind = _ref.kind,
+        stories = _ref.stories;
 
     stories.forEach(function (story) {
       flatteredStories.push({ kind: kind, story: story });

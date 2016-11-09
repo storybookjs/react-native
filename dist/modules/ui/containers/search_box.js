@@ -18,8 +18,8 @@ var _redux_composer2 = _interopRequireDefault(_redux_composer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var composer = exports.composer = function composer(_ref, _ref2) {
-  var api = _ref.api;
-  var shortcuts = _ref.shortcuts;
+  var api = _ref.api,
+      shortcuts = _ref.shortcuts;
   var actions = _ref2.actions;
 
   var actionMap = actions();

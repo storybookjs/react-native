@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (injectDeps, _ref) {
-  var reduxStore = _ref.reduxStore;
-  var provider = _ref.provider;
-  var domNode = _ref.domNode;
+  var reduxStore = _ref.reduxStore,
+      provider = _ref.provider,
+      domNode = _ref.domNode;
 
   var InjectedLayout = injectDeps(_layout2.default);
   var InjectedShortcutsHelp = injectDeps(_shortcuts_help2.default);
@@ -15,9 +15,8 @@ exports.default = function (injectDeps, _ref) {
 
   // generate preview
   var Preview = function Preview() {
-    var _reduxStore$getState = reduxStore.getState();
-
-    var api = _reduxStore$getState.api;
+    var _reduxStore$getState = reduxStore.getState(),
+        api = _reduxStore$getState.api;
 
     var preview = provider.renderPreview(api.selectedKind, api.selectedStory);
     return preview;

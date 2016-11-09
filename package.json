@@ -54,10 +54,11 @@
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.1",
     "lodash.pick": "^4.2.1",
-    "mantra-core": "^1.6.1",
+    "mantra-core": "^1.7.0",
     "qs": "^6.2.0",
     "react-fuzzy": "^0.3.3",
     "react-inspector": "^1.1.0",
+    "react-komposer": "^2.0.0",
     "react-modal": "^1.2.1",
     "redux": "^3.5.2"
   },

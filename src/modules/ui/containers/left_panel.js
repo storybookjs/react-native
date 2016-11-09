@@ -1,9 +1,9 @@
 import LeftPanel from '../components/left_panel';
-import { useDeps, composeAll } from 'mantra-core';
 import * as filters from '../libs/filters';
-import reduxComposer from '../libs/redux_composer';
+import genReduxLoader from '../libs/gen_redux_loader';
+import compose from '../../../compose';
 
-export const composer = ({ api, ui }, { actions }) => {
+export const mapper = ({ api, ui }, props, { actions }) => {
   const actionMap = actions();
   const { stories, selectedKind, selectedStory, options } = api;
   const { storyFilter } = ui;
@@ -25,7 +25,4 @@ export const composer = ({ api, ui }, { actions }) => {
   return data;
 };
 
-export default composeAll(
-  reduxComposer(composer),
-  useDeps()
-)(LeftPanel);
+export default compose(genReduxLoader(mapper))(LeftPanel);

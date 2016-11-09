@@ -34,6 +34,9 @@ exports.default = function (domNode, provider) {
   app.loadModule(_api2.default);
   app.loadModule(_ui2.default);
 
+  (0, _compose.setContext)(context);
+  (0, _compose.setActions)(app.actions);
+
   app.init();
 };
 
@@ -56,6 +59,8 @@ var _api2 = _interopRequireDefault(_api);
 var _ui = require('./modules/ui');
 
 var _ui2 = _interopRequireDefault(_ui);
+
+var _compose = require('./compose');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

@@ -1,8 +1,8 @@
 import SearchBox from '../components/search_box';
-import { useDeps, composeAll } from 'mantra-core';
-import reduxComposer from '../libs/redux_composer';
+import genReduxLoader from '../libs/gen_redux_loader';
+import compose from '../../../compose';
 
-export const composer = ({ api, shortcuts }, { actions }) => {
+export const mapper = ({ api, shortcuts }, props, { actions }) => {
   const actionMap = actions();
   return {
     showSearchBox: shortcuts.showSearchBox,
@@ -12,7 +12,4 @@ export const composer = ({ api, shortcuts }, { actions }) => {
   };
 };
 
-export default composeAll(
-  reduxComposer(composer),
-  useDeps()
-)(SearchBox);
+export default compose(genReduxLoader(mapper))(SearchBox);

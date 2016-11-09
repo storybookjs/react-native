@@ -51,21 +51,20 @@ function changeUrl(reduxStore) {
   // Do not change the URL if we are inside a popState event.
   if (config.insidePopState) return;
 
-  var _reduxStore$getState = reduxStore.getState();
-
-  var api = _reduxStore$getState.api;
-  var shortcuts = _reduxStore$getState.shortcuts;
-  var ui = _reduxStore$getState.ui;
+  var _reduxStore$getState = reduxStore.getState(),
+      api = _reduxStore$getState.api,
+      shortcuts = _reduxStore$getState.shortcuts,
+      ui = _reduxStore$getState.ui;
 
   if (!api) return;
 
-  var selectedKind = api.selectedKind;
-  var selectedStory = api.selectedStory;
-  var customQueryParams = api.customQueryParams;
-  var full = shortcuts.goFullScreen;
-  var down = shortcuts.showDownPanel;
-  var left = shortcuts.showLeftPanel;
-  var panelRight = shortcuts.downPanelInRight;
+  var selectedKind = api.selectedKind,
+      selectedStory = api.selectedStory,
+      customQueryParams = api.customQueryParams;
+  var full = shortcuts.goFullScreen,
+      down = shortcuts.showDownPanel,
+      left = shortcuts.showLeftPanel,
+      panelRight = shortcuts.downPanelInRight;
   var downPanel = ui.selectedDownPanel;
 
 
@@ -93,18 +92,18 @@ function changeUrl(reduxStore) {
 }
 
 function updateStore(queryParams, actions) {
-  var selectedKind = queryParams.selectedKind;
-  var selectedStory = queryParams.selectedStory;
-  var _queryParams$full = queryParams.full;
-  var full = _queryParams$full === undefined ? 0 : _queryParams$full;
-  var _queryParams$down = queryParams.down;
-  var down = _queryParams$down === undefined ? 1 : _queryParams$down;
-  var _queryParams$left = queryParams.left;
-  var left = _queryParams$left === undefined ? 1 : _queryParams$left;
-  var _queryParams$panelRig = queryParams.panelRight;
-  var panelRight = _queryParams$panelRig === undefined ? 0 : _queryParams$panelRig;
-  var downPanel = queryParams.downPanel;
-  var customQueryParams = (0, _objectWithoutProperties3.default)(queryParams, ['selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight', 'downPanel']);
+  var selectedKind = queryParams.selectedKind,
+      selectedStory = queryParams.selectedStory,
+      _queryParams$full = queryParams.full,
+      full = _queryParams$full === undefined ? 0 : _queryParams$full,
+      _queryParams$down = queryParams.down,
+      down = _queryParams$down === undefined ? 1 : _queryParams$down,
+      _queryParams$left = queryParams.left,
+      left = _queryParams$left === undefined ? 1 : _queryParams$left,
+      _queryParams$panelRig = queryParams.panelRight,
+      panelRight = _queryParams$panelRig === undefined ? 0 : _queryParams$panelRig,
+      downPanel = queryParams.downPanel,
+      customQueryParams = (0, _objectWithoutProperties3.default)(queryParams, ['selectedKind', 'selectedStory', 'full', 'down', 'left', 'panelRight', 'downPanel']);
 
 
   if (selectedKind && selectedStory) {
