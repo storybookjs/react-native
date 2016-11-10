@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.1.7
+
+* Support React Native v0.37 [PR #112](https://github.com/kadirahq/react-native-storybook/pull/112).
+
 ## v2.1.6
 
 * Show help message on device if no story is selected [PR #111](https://github.com/kadirahq/react-native-storybook/pull/111).
