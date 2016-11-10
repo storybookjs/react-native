@@ -53,7 +53,9 @@ class Stories extends React.Component {
 
     return (
       <li key={story}>
-        <a style={style} onClick={props.onClick}>{story}</a>
+        <a title={`Open ${story}`} style={style} onClick={props.onClick}>
+          {story}
+        </a>
       </li>
     );
   }
@@ -67,7 +69,7 @@ class Stories extends React.Component {
       style.fontWeight = 'bold';
       return (
         <li key={kind}>
-          <a style={style} onClick={onClick}>
+          <a title={`Open ${kind}`} style={style} onClick={onClick}>
             {kind}
           </a>
           <div>
@@ -81,7 +83,7 @@ class Stories extends React.Component {
 
     return (
       <li key={kind}>
-        <a style={style} onClick={onClick}>
+        <a title={`Open ${kind}`} style={style} onClick={onClick}>
           {kind}
         </a>
       </li>
