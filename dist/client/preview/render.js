@@ -8,7 +8,7 @@ var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiter
 
 var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n        Did you forget to return the React element from the story?\n        Maybe check you are using "() => {<MyComp>}" instead of "() => (<MyComp>)" when defining the story.\n      '], ['\n        Did you forget to return the React element from the story?\n        Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.\n      ']),
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n        Did you forget to return the React element from the story?\n        Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.\n      '], ['\n        Did you forget to return the React element from the story?\n        Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.\n      ']),
     _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n        Seems like you are not returning a correct React element form the story.\n        Could you double check that?\n      '], ['\n        Seems like you are not returning a correct React element form the story.\n        Could you double check that?\n      ']); /* global document */
 
 exports.renderError = renderError;
