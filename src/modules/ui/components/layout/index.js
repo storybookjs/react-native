@@ -9,14 +9,6 @@ const rootStyle = {
   backgroundColor: '#F7F7F7',
 };
 
-const fullScreenStyle = {
-  height: '100vh',
-  border: 0,
-  margin: 0,
-  padding: 0,
-  overflow: 'hidden',
-};
-
 const leftPanelStyle = {
   position: 'absolute',
   width: '100%',
@@ -40,13 +32,29 @@ const contentPanelStyle = {
   padding: '10px 10px 10px 0',
 };
 
-const previewStyle = {
+const normalPreviewStyle = {
   width: '100%',
   height: '100%',
   backgroundColor: '#FFF',
   border: '1px solid #ECECEC',
   borderRadius: 4,
 };
+
+const fullScreenPreviewStyle = {
+  position: 'fixed',
+  left: '0px',
+  right: '0px',
+  top: '0px',
+  zIndex: 1,
+  backgroundColor: '#FFF',
+  height: '100%',
+  width: '100%',
+  border: 0,
+  margin: 0,
+  padding: 0,
+  overflow: 'hidden',
+};
+
 
 const vsplit = <VSplit />;
 const hsplit = <HSplit />;
@@ -60,21 +68,24 @@ const onDragEnd = function () {
 };
 
 class Layout extends React.Component {
-  renderWithFullscreen() {
-    return (
-      <div style={fullScreenStyle}>
-        {this.props.preview()}
-      </div>
-    );
-  }
+  render() {
+    const {
+      goFullScreen, showLeftPanel, showDownPanel, downPanelInRight,
+      downPanel, leftPanel, preview,
+    } = this.props;
 
-  renderNormally() {
-    const props = this.props;
-    const leftPanelDefaultSize = props.showLeftPanel ? 250 : 1;
-    let downPanelDefaultSize = 1;
-    if (props.showDownPanel) {
-      downPanelDefaultSize = props.downPanelInRight ? 400 : 200;
+    let previewStyle = normalPreviewStyle;
+
+    if (goFullScreen) {
+      previewStyle = fullScreenPreviewStyle;
     }
+
+    const leftPanelDefaultSize = showLeftPanel ? 250 : 1;
+    let downPanelDefaultSize = 1;
+    if (showDownPanel) {
+      downPanelDefaultSize = downPanelInRight ? 400 : 200;
+    }
+
     return (
       <div style={rootStyle}>
         <SplitPane
@@ -86,39 +97,30 @@ class Layout extends React.Component {
           onDragFinished={onDragEnd}
         >
           <div style={leftPanelStyle}>
-            {props.showLeftPanel ? props.leftPanel() : null}
+            {showLeftPanel ? leftPanel() : null}
           </div>
 
           <SplitPane
-            split={props.downPanelInRight ? 'vertical' : 'horizontal'}
+            split={downPanelInRight ? 'vertical' : 'horizontal'}
             primary="second"
-            minSize={props.downPanelInRight ? 200 : 100}
+            minSize={downPanelInRight ? 200 : 100}
             defaultSize={downPanelDefaultSize}
-            resizerChildren={props.downPanelInRight ? vsplit : hsplit}
+            resizerChildren={downPanelInRight ? vsplit : hsplit}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
           >
             <div style={contentPanelStyle}>
               <div style={previewStyle}>
-                {props.preview()}
+                {preview()}
               </div>
             </div>
             <div style={downPanelStyle}>
-              {props.showDownPanel ? props.downPanel() : null}
+              {showDownPanel ? downPanel() : null}
             </div>
           </SplitPane>
         </SplitPane>
       </div>
     );
-  }
-
-  render() {
-    const { goFullScreen } = this.props;
-    if (goFullScreen) {
-      return this.renderWithFullscreen();
-    }
-
-    return this.renderNormally();
   }
 }
 
