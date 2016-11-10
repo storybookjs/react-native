@@ -1,6 +1,11 @@
 ## Changelog
 
 ### v2.29.5
+10-November-2016
+
+Fix a typo in the story syntax error messages. [PR610](https://github.com/storybooks/react-storybook/pull/610)
+
+### v2.29.5
 09-November-2016
 
 Check if regex and regex.test is available before calling it. [PR608](https://github.com/storybooks/react-storybook/pull/608)
