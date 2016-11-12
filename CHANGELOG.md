@@ -1,6 +1,11 @@
 ## Changelog
 
-### v2.29.5
+### v2.29.7
+11-November-2016
+
+Update @kadira/storybook-ui to the latest.
+
+### v2.29.6
 10-November-2016
 
 Fix a typo in the story syntax error messages. [PR610](https://github.com/storybooks/react-storybook/pull/610)
