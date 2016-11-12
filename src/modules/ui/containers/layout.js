@@ -1,9 +1,9 @@
-import Layout from '../components/layout';
-import { useDeps, composeAll } from 'mantra-core';
 import pick from 'lodash.pick';
-import reduxComposer from '../libs/redux_composer';
+import Layout from '../components/layout';
+import genReduxLoader from '../libs/gen_redux_loader';
+import compose from '../../../compose';
 
-export const composer = ({ shortcuts }) => {
+export const mapper = ({ shortcuts }) => {
   return pick(
     shortcuts,
     'showLeftPanel',
@@ -13,7 +13,4 @@ export const composer = ({ shortcuts }) => {
   );
 };
 
-export default composeAll(
-  reduxComposer(composer),
-  useDeps()
-)(Layout);
+export default compose(genReduxLoader(mapper))(Layout);

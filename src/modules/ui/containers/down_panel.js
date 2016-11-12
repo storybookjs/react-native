@@ -1,8 +1,8 @@
 import DownPanel from '../components/down_panel';
-import { useDeps, composeAll } from 'mantra-core';
-import reduxComposer from '../libs/redux_composer';
+import genReduxLoader from '../libs/gen_redux_loader';
+import compose from '../../../compose';
 
-export function composer({ ui }, { context, actions }) {
+export function mapper({ ui }, props, { context, actions }) {
   const panels = context().provider.getPanels();
   const actionMap = actions();
   const selectedPanel = ui.selectedDownPanel;
@@ -14,7 +14,4 @@ export function composer({ ui }, { context, actions }) {
   };
 }
 
-export default composeAll(
-  reduxComposer(composer),
-  useDeps()
-)(DownPanel);
+export default compose(genReduxLoader(mapper))(DownPanel);

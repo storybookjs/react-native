@@ -1,8 +1,8 @@
 import ShortcutsHelp from '../components/shortcuts_help';
-import { useDeps, composeAll } from 'mantra-core';
-import reduxComposer from '../libs/redux_composer';
+import genReduxLoader from '../libs/gen_redux_loader';
+import compose from '../../../compose';
 
-export const composer = ({ ui }, { actions }) => {
+export const mapper = ({ ui }, props, { actions }) => {
   const actionMap = actions();
   const data = {
     isOpen: ui.showShortcutsHelp,
@@ -13,7 +13,4 @@ export const composer = ({ ui }, { actions }) => {
   return data;
 };
 
-export default composeAll(
-  reduxComposer(composer),
-  useDeps()
-)(ShortcutsHelp);
+export default compose(genReduxLoader(mapper))(ShortcutsHelp);

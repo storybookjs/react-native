@@ -22,8 +22,8 @@ exports.default = {
   reducers: _reducers2.default,
   actions: _actions3.default,
   load: function load(_ref, _actions) {
-    var reduxStore = _ref.reduxStore;
-    var provider = _ref.provider;
+    var reduxStore = _ref.reduxStore,
+        provider = _ref.provider;
 
     (0, _init_api2.default)(provider, reduxStore, _actions);
   }

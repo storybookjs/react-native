@@ -86,7 +86,7 @@ var Keys = exports.Keys = function Keys(_ref) {
       arr.length - 1 !== index ? _react2.default.createElement(
         'span',
         null,
-        '/  '
+        '/ \xA0'
       ) : ''
     );
   });
@@ -131,9 +131,9 @@ Shortcuts.propTypes = {
 };
 
 var ShortcutsHelp = exports.ShortcutsHelp = function ShortcutsHelp(_ref3) {
-  var isOpen = _ref3.isOpen;
-  var onClose = _ref3.onClose;
-  var platform = _ref3.platform;
+  var isOpen = _ref3.isOpen,
+      onClose = _ref3.onClose,
+      platform = _ref3.platform;
   return _react2.default.createElement(
     _reactModal2.default,
     {

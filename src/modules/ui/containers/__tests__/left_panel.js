@@ -1,9 +1,9 @@
 const { describe, it } = global;
 import { expect } from 'chai';
-import { composer } from '../left_panel';
+import { mapper } from '../left_panel';
 
 describe('manager.ui.containers.left_panel', () => {
-  describe('composer', () => {
+  describe('mapper', () => {
     it('should give correct data', () => {
       const stories = [{ kind: 'sk', stories: ['dd'] }];
       const selectedKind = 'sk';
@@ -17,7 +17,8 @@ describe('manager.ui.containers.left_panel', () => {
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
       const setStoryFilter = () => 'setStoryFilter';
 
-      const props = {
+      const props = {};
+      const env = {
         actions: () => ({
           api: {
             selectStory,
@@ -41,7 +42,7 @@ describe('manager.ui.containers.left_panel', () => {
         },
       };
 
-      const data = composer(state, props);
+      const data = mapper(state, props, env);
       expect(data.stories).to.deep.equal(stories);
       expect(data.selectedKind).to.be.equal(selectedKind);
       expect(data.selectedStory).to.be.equal(selectedStory);
@@ -69,7 +70,8 @@ describe('manager.ui.containers.left_panel', () => {
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
       const setStoryFilter = () => 'setStoryFilter';
 
-      const props = {
+      const props = {};
+      const env = {
         actions: () => ({
           api: {
             selectStory,
@@ -93,7 +95,7 @@ describe('manager.ui.containers.left_panel', () => {
         },
       };
 
-      const data = composer(state, props);
+      const data = mapper(state, props, env);
       expect(data.stories).to.deep.equal([
         stories[0], // selected kind is always there. That's why this is here.
         stories[1],

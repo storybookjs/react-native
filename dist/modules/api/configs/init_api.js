@@ -38,9 +38,8 @@ exports.default = function (provider, reduxStore, actions) {
       (_actions$shortcuts = actions.shortcuts).setOptions.apply(_actions$shortcuts, arguments);
     },
     getQueryParam: function getQueryParam(key) {
-      var _reduxStore$getState = reduxStore.getState();
-
-      var api = _reduxStore$getState.api;
+      var _reduxStore$getState = reduxStore.getState(),
+          api = _reduxStore$getState.api;
 
       if (api.customQueryParams) {
         return api.customQueryParams[key];
@@ -53,9 +52,8 @@ exports.default = function (provider, reduxStore, actions) {
 
   // subscribe to redux store and trigger onStory's callback
   reduxStore.subscribe(function () {
-    var _reduxStore$getState2 = reduxStore.getState();
-
-    var api = _reduxStore$getState2.api;
+    var _reduxStore$getState2 = reduxStore.getState(),
+        api = _reduxStore$getState2.api;
 
     if (!api) return;
 

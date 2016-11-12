@@ -1,10 +1,11 @@
 import { createStore, combineReducers } from 'redux';
 import { createApp } from 'mantra-core';
-import buildContext from './context.js';
 
+import buildContext from './context.js';
 import shortcutsModule from './modules/shortcuts';
 import apiModule from './modules/api';
 import uiModule from './modules/ui';
+import { setContext, setActions } from './compose';
 
 export class Provider {
   renderPreview(selectedKind, selectedStory) { // eslint-disable-line no-unused-vars
@@ -36,6 +37,9 @@ export default function (domNode, provider) {
   app.loadModule(shortcutsModule);
   app.loadModule(apiModule);
   app.loadModule(uiModule);
+
+  setContext(context);
+  setActions(app._bindContext(app.actions));
 
   app.init();
 }

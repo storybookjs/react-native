@@ -7,10 +7,6 @@ import ShortcutsHelp from './containers/shortcuts_help';
 import SearchBox from './containers/search_box';
 
 export default function (injectDeps, { reduxStore, provider, domNode }) {
-  const InjectedLayout = injectDeps(Layout);
-  const InjectedShortcutsHelp = injectDeps(ShortcutsHelp);
-  const InjectedSearchBox = injectDeps(SearchBox);
-
   // generate preview
   const Preview = () => {
     const { api } = reduxStore.getState();
@@ -21,13 +17,13 @@ export default function (injectDeps, { reduxStore, provider, domNode }) {
 
   const root = (
     <div>
-      <InjectedLayout
+      <Layout
         leftPanel={() => (<LeftPanel />)}
         preview={() => (<Preview />)}
         downPanel={() => (<DownPanel />)}
       />
-      <InjectedShortcutsHelp />
-      <InjectedSearchBox />
+      <ShortcutsHelp />
+      <SearchBox />
     </div>
   );
   ReactDOM.render(root, domNode);

@@ -1,9 +1,9 @@
 const { describe, it } = global;
 import { expect } from 'chai';
-import { composer } from '../layout';
+import { mapper } from '../layout';
 
 describe('manager.ui.containers.layout', () => {
-  describe('composer', () => {
+  describe('mapper', () => {
     it('should give correct data', () => {
       const state = {
         shortcuts: {
@@ -13,7 +13,7 @@ describe('manager.ui.containers.layout', () => {
         },
       };
 
-      const data = composer(state);
+      const data = mapper(state);
       expect(data).to.deep.equal(state.shortcuts);
     });
   });

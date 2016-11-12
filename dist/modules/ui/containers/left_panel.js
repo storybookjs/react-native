@@ -3,36 +3,38 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.composer = undefined;
+exports.mapper = undefined;
 
 var _left_panel = require('../components/left_panel');
 
 var _left_panel2 = _interopRequireDefault(_left_panel);
 
-var _mantraCore = require('mantra-core');
-
 var _filters = require('../libs/filters');
 
 var filters = _interopRequireWildcard(_filters);
 
-var _redux_composer = require('../libs/redux_composer');
+var _gen_redux_loader = require('../libs/gen_redux_loader');
 
-var _redux_composer2 = _interopRequireDefault(_redux_composer);
+var _gen_redux_loader2 = _interopRequireDefault(_gen_redux_loader);
+
+var _compose = require('../../../compose');
+
+var _compose2 = _interopRequireDefault(_compose);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var composer = exports.composer = function composer(_ref, _ref2) {
-  var api = _ref.api;
-  var ui = _ref.ui;
+var mapper = exports.mapper = function mapper(_ref, props, _ref2) {
+  var api = _ref.api,
+      ui = _ref.ui;
   var actions = _ref2.actions;
 
   var actionMap = actions();
-  var stories = api.stories;
-  var selectedKind = api.selectedKind;
-  var selectedStory = api.selectedStory;
-  var options = api.options;
+  var stories = api.stories,
+      selectedKind = api.selectedKind,
+      selectedStory = api.selectedStory,
+      options = api.options;
   var storyFilter = ui.storyFilter;
 
 
@@ -53,4 +55,4 @@ var composer = exports.composer = function composer(_ref, _ref2) {
   return data;
 };
 
-exports.default = (0, _mantraCore.composeAll)((0, _redux_composer2.default)(composer), (0, _mantraCore.useDeps)())(_left_panel2.default);
+exports.default = (0, _compose2.default)((0, _gen_redux_loader2.default)(mapper))(_left_panel2.default);
