@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.7.0
+13-Nov-2016
+
+Use the new React Komposer. It's a bit more lightweight and high performant. [PR58](https://github.com/storybooks/storybook-ui/pull/58)
+
 ### v3.6.4
 12-Nov-2016
 
