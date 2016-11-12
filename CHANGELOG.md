@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.6.4
+12-Nov-2016
+
+Avoid preview re-mounting when switching to the full screen mode. [PR59](https://github.com/storybooks/storybook-ui/pull/59)
+
 ### v3.6.3
 17-Oct-2016
 
