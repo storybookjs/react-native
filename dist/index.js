@@ -35,7 +35,7 @@ exports.default = function (domNode, provider) {
   app.loadModule(_ui2.default);
 
   (0, _compose.setContext)(context);
-  (0, _compose.setActions)(app.actions);
+  (0, _compose.setActions)(app._bindContext(app.actions));
 
   app.init();
 };

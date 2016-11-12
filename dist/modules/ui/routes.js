@@ -9,10 +9,6 @@ exports.default = function (injectDeps, _ref) {
       provider = _ref.provider,
       domNode = _ref.domNode;
 
-  var InjectedLayout = injectDeps(_layout2.default);
-  var InjectedShortcutsHelp = injectDeps(_shortcuts_help2.default);
-  var InjectedSearchBox = injectDeps(_search_box2.default);
-
   // generate preview
   var Preview = function Preview() {
     var _reduxStore$getState = reduxStore.getState(),
@@ -25,7 +21,7 @@ exports.default = function (injectDeps, _ref) {
   var root = _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(InjectedLayout, {
+    _react2.default.createElement(_layout2.default, {
       leftPanel: function leftPanel() {
         return _react2.default.createElement(_left_panel2.default, null);
       },
@@ -36,8 +32,8 @@ exports.default = function (injectDeps, _ref) {
         return _react2.default.createElement(_down_panel2.default, null);
       }
     }),
-    _react2.default.createElement(InjectedShortcutsHelp, null),
-    _react2.default.createElement(InjectedSearchBox, null)
+    _react2.default.createElement(_shortcuts_help2.default, null),
+    _react2.default.createElement(_search_box2.default, null)
   );
   _reactDom2.default.render(root, domNode);
 };

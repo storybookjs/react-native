@@ -3,21 +3,23 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.composer = undefined;
+exports.mapper = undefined;
 
 var _search_box = require('../components/search_box');
 
 var _search_box2 = _interopRequireDefault(_search_box);
 
-var _mantraCore = require('mantra-core');
+var _gen_redux_loader = require('../libs/gen_redux_loader');
 
-var _redux_composer = require('../libs/redux_composer');
+var _gen_redux_loader2 = _interopRequireDefault(_gen_redux_loader);
 
-var _redux_composer2 = _interopRequireDefault(_redux_composer);
+var _compose = require('../../../compose');
+
+var _compose2 = _interopRequireDefault(_compose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var composer = exports.composer = function composer(_ref, _ref2) {
+var mapper = exports.mapper = function mapper(_ref, props, _ref2) {
   var api = _ref.api,
       shortcuts = _ref.shortcuts;
   var actions = _ref2.actions;
@@ -31,4 +33,4 @@ var composer = exports.composer = function composer(_ref, _ref2) {
   };
 };
 
-exports.default = (0, _mantraCore.composeAll)((0, _redux_composer2.default)(composer), (0, _mantraCore.useDeps)())(_search_box2.default);
+exports.default = (0, _compose2.default)((0, _gen_redux_loader2.default)(mapper))(_search_box2.default);

@@ -7,8 +7,8 @@ exports.setActions = exports.setContext = undefined;
 
 var _reactKomposer = require('react-komposer');
 
-var _context = void 0,
-    _actions = void 0;
+var _context = void 0;
+var _actions = void 0;
 
 var setContext = exports.setContext = function setContext(c) {
   _context = c;

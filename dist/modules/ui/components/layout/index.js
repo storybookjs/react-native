@@ -47,14 +47,6 @@ var rootStyle = {
   backgroundColor: '#F7F7F7'
 };
 
-var fullScreenStyle = {
-  height: '100vh',
-  border: 0,
-  margin: 0,
-  padding: 0,
-  overflow: 'hidden'
-};
-
 var leftPanelStyle = {
   position: 'absolute',
   width: '100%',
@@ -78,12 +70,27 @@ var contentPanelStyle = {
   padding: '10px 10px 10px 0'
 };
 
-var previewStyle = {
+var normalPreviewStyle = {
   width: '100%',
   height: '100%',
   backgroundColor: '#FFF',
   border: '1px solid #ECECEC',
   borderRadius: 4
+};
+
+var fullScreenPreviewStyle = {
+  position: 'fixed',
+  left: '0px',
+  right: '0px',
+  top: '0px',
+  zIndex: 1,
+  backgroundColor: '#FFF',
+  height: '100%',
+  width: '100%',
+  border: 0,
+  margin: 0,
+  padding: 0,
+  overflow: 'hidden'
 };
 
 var vsplit = _react2.default.createElement(_vsplit2.default, null);
@@ -106,23 +113,30 @@ var Layout = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Layout, [{
-    key: 'renderWithFullscreen',
-    value: function renderWithFullscreen() {
-      return _react2.default.createElement(
-        'div',
-        { style: fullScreenStyle },
-        this.props.preview()
-      );
-    }
-  }, {
-    key: 'renderNormally',
-    value: function renderNormally() {
-      var props = this.props;
-      var leftPanelDefaultSize = props.showLeftPanel ? 250 : 1;
-      var downPanelDefaultSize = 1;
-      if (props.showDownPanel) {
-        downPanelDefaultSize = props.downPanelInRight ? 400 : 200;
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          goFullScreen = _props.goFullScreen,
+          showLeftPanel = _props.showLeftPanel,
+          showDownPanel = _props.showDownPanel,
+          downPanelInRight = _props.downPanelInRight,
+          downPanel = _props.downPanel,
+          leftPanel = _props.leftPanel,
+          preview = _props.preview;
+
+
+      var previewStyle = normalPreviewStyle;
+
+      if (goFullScreen) {
+        previewStyle = fullScreenPreviewStyle;
       }
+
+      var leftPanelDefaultSize = showLeftPanel ? 250 : 1;
+      var downPanelDefaultSize = 1;
+      if (showDownPanel) {
+        downPanelDefaultSize = downPanelInRight ? 400 : 200;
+      }
+
       return _react2.default.createElement(
         'div',
         { style: rootStyle },
@@ -139,16 +153,16 @@ var Layout = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { style: leftPanelStyle },
-            props.showLeftPanel ? props.leftPanel() : null
+            showLeftPanel ? leftPanel() : null
           ),
           _react2.default.createElement(
             _reactSplitPane2.default,
             {
-              split: props.downPanelInRight ? 'vertical' : 'horizontal',
+              split: downPanelInRight ? 'vertical' : 'horizontal',
               primary: 'second',
-              minSize: props.downPanelInRight ? 200 : 100,
+              minSize: downPanelInRight ? 200 : 100,
               defaultSize: downPanelDefaultSize,
-              resizerChildren: props.downPanelInRight ? vsplit : hsplit,
+              resizerChildren: downPanelInRight ? vsplit : hsplit,
               onDragStarted: onDragStart,
               onDragFinished: onDragEnd
             },
@@ -158,28 +172,17 @@ var Layout = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { style: previewStyle },
-                props.preview()
+                preview()
               )
             ),
             _react2.default.createElement(
               'div',
               { style: downPanelStyle },
-              props.showDownPanel ? props.downPanel() : null
+              showDownPanel ? downPanel() : null
             )
           )
         )
       );
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var goFullScreen = this.props.goFullScreen;
-
-      if (goFullScreen) {
-        return this.renderWithFullscreen();
-      }
-
-      return this.renderNormally();
     }
   }]);
   return Layout;

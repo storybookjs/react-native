@@ -110,7 +110,7 @@ var Stories = function (_React$Component) {
         { key: story },
         _react2.default.createElement(
           'a',
-          { style: style, onClick: props.onClick },
+          { title: 'Open ' + story, style: style, onClick: props.onClick },
           story
         )
       );
@@ -132,7 +132,7 @@ var Stories = function (_React$Component) {
           { key: kind },
           _react2.default.createElement(
             'a',
-            { style: style, onClick: onClick },
+            { title: 'Open ' + kind, style: style, onClick: onClick },
             kind
           ),
           _react2.default.createElement(
@@ -152,7 +152,7 @@ var Stories = function (_React$Component) {
         { key: kind },
         _react2.default.createElement(
           'a',
-          { style: style, onClick: onClick },
+          { title: 'Open ' + kind, style: style, onClick: onClick },
           kind
         )
       );
