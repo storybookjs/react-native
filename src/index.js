@@ -1,5 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 import { createApp } from 'mantra-core';
+import Podda from 'podda';
 
 import buildContext from './context.js';
 import shortcutsModule from './modules/shortcuts';
@@ -31,7 +32,17 @@ export default function (domNode, provider) {
   const devTools = window.devToolsExtension && window.devToolsExtension();
   const reduxStore = createStore(reducer, devTools);
 
-  const context = buildContext(reduxStore, domNode, provider);
+  const defaultState = {
+    ...shortcutsModule.defaultState,
+    ...apiModule.defaultState,
+    ...uiModule.defaultState,
+  };
+  const clientStore = new Podda(defaultState);
+  clientStore.registerAPI('toggle', (store, key) => {
+    return store.set(key, !store.get(key));
+  });
+
+  const context = buildContext(reduxStore, clientStore, domNode, provider);
   const app = createApp(context);
 
   app.loadModule(shortcutsModule);

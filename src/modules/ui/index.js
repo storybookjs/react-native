@@ -9,6 +9,9 @@ export default {
   routes,
   actions,
   reducers,
+  defaultState: {
+    showShortcutsHelp: false,
+  },
   load(c, a) {
     initPanels(c, a);
     handleRouting(c, a);

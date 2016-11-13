@@ -2147,7 +2147,7 @@ ignore@^3.1.2:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.0.tgz#8d88f03c3002a0ac52114db25d2c673b0bf1e435"
 
-immutable@^3.7.6:
+immutable@^3.7.6, immutable@^3.8.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
@@ -3054,6 +3054,13 @@ pkg-dir@^1.0.0:
 pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
+
+podda:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/podda/-/podda-1.2.1.tgz#ea8d9d30a95eae9bdb736a52b2dc56fad5d21bd8"
+  dependencies:
+    babel-runtime "^6.11.6"
+    immutable "^3.8.1"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
