@@ -1,17 +1,10 @@
 import pick from 'lodash.pick';
-import { types } from './';
-import { defaultState } from '../configs/reducers/api';
 
 export default {
   setStories({ reduxStore, clientStore }, stories) {
-    reduxStore.dispatch({
-      type: types.SET_STORIES,
-      stories,
-    });
-
     clientStore.update((state) => {
       const selectedKind = ensureKind(stories, state.selectedKind);
-      const selectedStory = ensureStory(stories, state.selectedKind, state.selectedStory);
+      const selectedStory = ensureStory(stories, selectedKind, state.selectedStory);
 
       return {
         stories,
@@ -22,12 +15,6 @@ export default {
   },
 
   selectStory({ reduxStore, clientStore }, kind, story) {
-    reduxStore.dispatch({
-      type: types.SELECT_STORY,
-      kind,
-      story,
-    });
-
     clientStore.update((state) => {
       const selectedKind = ensureKind(state.stories, kind);
       const selectedStory = ensureStory(state.stories, selectedKind, story);
@@ -37,22 +24,12 @@ export default {
   },
 
   jumpToStory({ reduxStore, clientStore }, direction) {
-    reduxStore.dispatch({
-      type: types.JUMP_TO_STORY,
-      direction,
-    });
-
     clientStore.update((state) => {
       return jumpToStory(state.stories, state.selectedKind, state.selectedStory, direction);
     });
   },
 
   setOptions({ reduxStore, clientStore }, options) {
-    reduxStore.dispatch({
-      type: types.SET_OPTIONS,
-      options: pick(options, Object.keys(defaultState.options)),
-    });
-
     clientStore.update((state) => {
       const newOptions = pick(options, Object.keys(state.options));
       const updatedOptions = {
@@ -65,11 +42,6 @@ export default {
   },
 
   setQueryParams({ reduxStore, clientStore }, customQueryParams) {
-    reduxStore.dispatch({
-      type: types.SET_QUERY_PARAMS,
-      customQueryParams,
-    });
-
     clientStore.update((state) => {
       const updatedQueryParams = {
         ...state.customQueryParams,

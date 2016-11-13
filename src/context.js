@@ -1,6 +1,5 @@
-export default function (reduxStore, clientStore, domNode, provider) {
+export default function (clientStore, domNode, provider) {
   return {
-    reduxStore,
     clientStore,
     domNode,
     provider,

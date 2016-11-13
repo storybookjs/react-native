@@ -23,15 +23,6 @@ export default function (domNode, provider) {
     throw new Error('provider is not extended from the base Provider');
   }
 
-  const reducer = combineReducers({
-    ...shortcutsModule.reducers,
-    ...apiModule.reducers,
-    ...uiModule.reducers,
-  });
-
-  const devTools = window.devToolsExtension && window.devToolsExtension();
-  const reduxStore = createStore(reducer, devTools);
-
   const defaultState = {
     ...shortcutsModule.defaultState,
     ...apiModule.defaultState,
@@ -42,7 +33,7 @@ export default function (domNode, provider) {
     return store.set(key, !store.get(key));
   });
 
-  const context = buildContext(reduxStore, clientStore, domNode, provider);
+  const context = buildContext(clientStore, domNode, provider);
   const app = createApp(context);
 
   app.loadModule(shortcutsModule);

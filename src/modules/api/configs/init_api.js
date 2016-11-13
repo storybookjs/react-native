@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 
-export default function (provider, reduxStore, actions) {
+export default function (provider, clientStore, actions) {
   const callbacks = new EventEmitter();
   let currentKind;
   let currentStory;
@@ -30,9 +30,9 @@ export default function (provider, reduxStore, actions) {
     },
 
     getQueryParam(key) {
-      const { api } = reduxStore.getState();
-      if (api.customQueryParams) {
-        return api.customQueryParams[key];
+      const state = clientStore.getAll();
+      if (state.customQueryParams) {
+        return state.customQueryParams[key];
       }
       return undefined;
     },
@@ -41,18 +41,18 @@ export default function (provider, reduxStore, actions) {
   provider.handleAPI(providerApi);
 
   // subscribe to redux store and trigger onStory's callback
-  reduxStore.subscribe(function () {
-    const { api } = reduxStore.getState();
-    if (!api) return;
+  clientStore.subscribe(function () {
+    const state = clientStore.getAll();
+    if (!state.selectedKind) return;
 
-    if (api.selectedKind === currentKind && api.selectedStory === currentStory) {
+    if (state.selectedKind === currentKind && state.selectedStory === currentStory) {
       // No change in the selected story so avoid emitting 'story'
       return;
     }
 
-    currentKind = api.selectedKind;
-    currentStory = api.selectedStory;
-    callbacks.emit('story', api.selectedKind, api.selectedStory);
+    currentKind = state.selectedKind;
+    currentStory = state.selectedStory;
+    callbacks.emit('story', state.selectedKind, state.selectedStory);
     // providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });
 }

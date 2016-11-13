@@ -1,26 +1,15 @@
 import { types } from './';
 
 export default {
-  setStoryFilter({ reduxStore, clientStore }, filter) {
-    reduxStore.dispatch({
-      type: types.SET_STORY_FILTER,
-      filter,
-    });
+  setStoryFilter({ clientStore }, filter) {
     clientStore.set('storyFilter', filter);
   },
 
-  toggleShortcutsHelp({ reduxStore, clientStore }) {
-    reduxStore.dispatch({
-      type: types.TOGGLE_SHORTCUTS_HELP,
-    });
+  toggleShortcutsHelp({ clientStore }) {
     clientStore.toggle('showShortcutsHelp');
   },
 
-  selectDownPanel({ reduxStore, clientStore }, panelName) {
-    reduxStore.dispatch({
-      type: types.SELECT_BOTTOM_PANEL,
-      panelName,
-    });
+  selectDownPanel({ clientStore }, panelName) {
     clientStore.set('selectedDownPanel', panelName);
   },
 };

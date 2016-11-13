@@ -1,12 +1,10 @@
 import pick from 'lodash.pick';
-import { types } from './';
 import { features } from '../../../libs/key_events';
 import apiActions from '../../api/actions';
-import { defaultState } from '../configs/reducers/shortcuts';
 
 export default {
   handleEvent(context, event) {
-    const { reduxStore, clientStore } = context;
+    const { clientStore } = context;
     switch (event) {
       case features.NEXT_STORY:
         apiActions.api.jumpToStory(context, 1);
@@ -15,11 +13,6 @@ export default {
         apiActions.api.jumpToStory(context, -1);
         break;
       default:
-        reduxStore.dispatch({
-          type: types.HANDLE_EVENT,
-          event,
-        });
-
         clientStore.update((state) => {
           const newOptions = keyEventToOptions(state.shortcutOptions, event);
           const updatedOptions = {
@@ -34,12 +27,7 @@ export default {
     }
   },
 
-  setOptions({ reduxStore, clientStore }, options) {
-    reduxStore.dispatch({
-      type: types.SET_LAYOUT,
-      layout: pick(options, Object.keys(defaultState)),
-    });
-
+  setOptions({ clientStore }, options) {
     clientStore.update((state) => {
       const updatedOptions = {
         ...state.shortcutOptions,
