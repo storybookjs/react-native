@@ -1,11 +1,11 @@
 import pick from 'lodash.pick';
 import Layout from '../components/layout';
-import genReduxLoader from '../libs/gen_redux_loader';
+import genPoddaLoader from '../libs/gen_podda_loader';
 import compose from '../../../compose';
 
-export const mapper = ({ shortcuts }) => {
+export const mapper = ({ shortcutOptions }) => {
   return pick(
-    shortcuts,
+    shortcutOptions,
     'showLeftPanel',
     'showDownPanel',
     'goFullScreen',
@@ -13,4 +13,4 @@ export const mapper = ({ shortcuts }) => {
   );
 };
 
-export default compose(genReduxLoader(mapper))(Layout);
+export default compose(genPoddaLoader(mapper))(Layout);

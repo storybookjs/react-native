@@ -1,11 +1,11 @@
 import DownPanel from '../components/down_panel';
-import genReduxLoader from '../libs/gen_redux_loader';
+import genPoddaLoader from '../libs/gen_podda_loader';
 import compose from '../../../compose';
 
-export function mapper({ ui }, props, { context, actions }) {
+export function mapper(state, props, { context, actions }) {
   const panels = context().provider.getPanels();
   const actionMap = actions();
-  const selectedPanel = ui.selectedDownPanel;
+  const selectedPanel = state.selectedDownPanel;
 
   return {
     panels,
@@ -14,4 +14,4 @@ export function mapper({ ui }, props, { context, actions }) {
   };
 }
 
-export default compose(genReduxLoader(mapper))(DownPanel);
+export default compose(genPoddaLoader(mapper))(DownPanel);

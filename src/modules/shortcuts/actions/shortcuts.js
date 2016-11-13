@@ -21,7 +21,7 @@ export default {
         });
 
         clientStore.update((state) => {
-          const newOptions = keyEventToOptions(state.shortcutOptions);
+          const newOptions = keyEventToOptions(state.shortcutOptions, event);
           const updatedOptions = {
             ...state.shortcutOptions,
             ...newOptions,

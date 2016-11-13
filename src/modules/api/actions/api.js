@@ -9,7 +9,16 @@ export default {
       stories,
     });
 
-    clientStore.set('stories', stories);
+    clientStore.update((state) => {
+      const selectedKind = ensureKind(stories, state.selectedKind);
+      const selectedStory = ensureStory(stories, state.selectedKind, state.selectedStory);
+
+      return {
+        stories,
+        selectedStory,
+        selectedKind,
+      };
+    });
   },
 
   selectStory({ reduxStore, clientStore }, kind, story) {
@@ -19,8 +28,12 @@ export default {
       story,
     });
 
-    clientStore.set('selectedKind', kind);
-    clientStore.set('selectedStory', story);
+    clientStore.update((state) => {
+      const selectedKind = ensureKind(state.stories, kind);
+      const selectedStory = ensureStory(state.stories, selectedKind, story);
+
+      return { selectedKind, selectedStory };
+    });
   },
 
   jumpToStory({ reduxStore, clientStore }, direction) {
@@ -98,4 +111,26 @@ export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) 
     selectedKind: jumpedStory.kind,
     selectedStory: jumpedStory.story,
   };
+}
+
+export function ensureKind(storyKinds, selectedKind) {
+  if (!storyKinds) return selectedKind;
+
+  const found = storyKinds.find(item => item.kind === selectedKind);
+  if (found) return found.kind;
+  // if the selected kind is non-existant, select the first kind
+  const kinds = storyKinds.map(item => item.kind);
+  return kinds[0];
+}
+
+export function ensureStory(storyKinds, selectedKind, selectedStory) {
+  if (!storyKinds) return selectedStory;
+
+  const kindInfo = storyKinds.find(item => item.kind === selectedKind);
+  if (!kindInfo) return null;
+
+  const found = kindInfo.stories.find(item => item === selectedStory);
+  if (found) return found;
+
+  return kindInfo.stories[0];
 }

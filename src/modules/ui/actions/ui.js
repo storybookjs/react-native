@@ -21,6 +21,6 @@ export default {
       type: types.SELECT_BOTTOM_PANEL,
       panelName,
     });
-    clientStore.set('selectedBottomPanel', panelName);
+    clientStore.set('selectedDownPanel', panelName);
   },
 };

@@ -1,15 +1,15 @@
 import SearchBox from '../components/search_box';
-import genReduxLoader from '../libs/gen_redux_loader';
+import genPoddaLoader from '../libs/gen_podda_loader';
 import compose from '../../../compose';
 
-export const mapper = ({ api, shortcuts }, props, { actions }) => {
+export const mapper = (state, props, { actions }) => {
   const actionMap = actions();
   return {
-    showSearchBox: shortcuts.showSearchBox,
-    stories: api.stories,
+    showSearchBox: state.shortcutOptions.showSearchBox,
+    stories: state.stories,
     onSelectStory: actionMap.api.selectStory,
     handleEvent: actionMap.shortcuts.handleEvent,
   };
 };
 
-export default compose(genReduxLoader(mapper))(SearchBox);
+export default compose(genPoddaLoader(mapper))(SearchBox);
