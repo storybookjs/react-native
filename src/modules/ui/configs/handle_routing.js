@@ -64,7 +64,7 @@ export function updateStore(queryParams, actions) {
     actions.api.selectStory(selectedKind, selectedStory);
   }
 
-  actions.shortcuts.setLayout({
+  actions.shortcuts.setOptions({
     goFullScreen: Boolean(Number(full)),
     showDownPanel: Boolean(Number(down)),
     showLeftPanel: Boolean(Number(left)),

@@ -34,14 +34,6 @@ export default {
     }
   },
 
-  setLayout(context, layout) {
-    const { reduxStore } = context;
-    reduxStore.dispatch({
-      type: types.SET_LAYOUT,
-      layout,
-    });
-  },
-
   setOptions({ reduxStore, clientStore }, options) {
     reduxStore.dispatch({
       type: types.SET_LAYOUT,
