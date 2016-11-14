@@ -5,7 +5,7 @@ import compose from '../../../compose';
 
 export const mapper = (state, props, { actions }) => {
   const actionMap = actions();
-  const { stories, selectedKind, selectedStory, options, storyFilter } = state;
+  const { stories, selectedKind, selectedStory, uiOptions, storyFilter } = state;
 
   const data = {
     stories: filters.storyFilter(stories, storyFilter, selectedKind, selectedStory),
@@ -17,8 +17,8 @@ export const mapper = (state, props, { actions }) => {
     onStoryFilter: actionMap.ui.setStoryFilter,
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
-    name: options.name,
-    url: options.url,
+    name: uiOptions.name,
+    url: uiOptions.url,
   };
 
   return data;

@@ -4,7 +4,7 @@ import initApi from './configs/init_api';
 export default {
   actions,
   defaultState: {
-    options: {
+    uiOptions: {
       name: 'REACT STORYBOOK',
       url: 'https://github.com/kadirahq/react-storybook',
     },

@@ -31,9 +31,9 @@ export default {
 
   setOptions({ reduxStore, clientStore }, options) {
     clientStore.update((state) => {
-      const newOptions = pick(options, Object.keys(state.options));
+      const newOptions = pick(options, Object.keys(state.uiOptions));
       const updatedOptions = {
-        ...state.options,
+        ...state.uiOptions,
         newOptions,
       };
 
