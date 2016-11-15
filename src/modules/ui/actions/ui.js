@@ -1,5 +1,3 @@
-import { types } from './';
-
 export default {
   setStoryFilter({ clientStore }, filter) {
     clientStore.set('storyFilter', filter);

@@ -1,5 +1,51 @@
 import pick from 'lodash.pick';
 
+export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) {
+  const flatteredStories = [];
+  let currentIndex = -1;
+
+  storyKinds.forEach(({ kind, stories }) => {
+    stories.forEach((story) => {
+      flatteredStories.push({ kind, story });
+      if (kind === selectedKind && story === selectedStory) {
+        currentIndex = flatteredStories.length - 1;
+      }
+    });
+  });
+
+  const jumpedStory = flatteredStories[currentIndex + direction];
+  if (!jumpedStory) {
+    return { selectedKind, selectedStory };
+  }
+
+  return {
+    selectedKind: jumpedStory.kind,
+    selectedStory: jumpedStory.story,
+  };
+}
+
+export function ensureKind(storyKinds, selectedKind) {
+  if (!storyKinds) return selectedKind;
+
+  const found = storyKinds.find(item => item.kind === selectedKind);
+  if (found) return found.kind;
+  // if the selected kind is non-existant, select the first kind
+  const kinds = storyKinds.map(item => item.kind);
+  return kinds[0];
+}
+
+export function ensureStory(storyKinds, selectedKind, selectedStory) {
+  if (!storyKinds) return selectedStory;
+
+  const kindInfo = storyKinds.find(item => item.kind === selectedKind);
+  if (!kindInfo) return null;
+
+  const found = kindInfo.stories.find(item => item === selectedStory);
+  if (found) return found;
+
+  return kindInfo.stories[0];
+}
+
 export default {
   setStories({ reduxStore, clientStore }, stories) {
     clientStore.update((state) => {
@@ -57,52 +103,6 @@ export default {
       return {
         customQueryParams: updatedQueryParams,
       };
-    })
+    });
   },
 };
-
-export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) {
-  const flatteredStories = [];
-  let currentIndex = -1;
-
-  storyKinds.forEach(({ kind, stories }) => {
-    stories.forEach((story) => {
-      flatteredStories.push({ kind, story });
-      if (kind === selectedKind && story === selectedStory) {
-        currentIndex = flatteredStories.length - 1;
-      }
-    });
-  });
-
-  const jumpedStory = flatteredStories[currentIndex + direction];
-  if (!jumpedStory) {
-    return { selectedKind, selectedStory };
-  }
-
-  return {
-    selectedKind: jumpedStory.kind,
-    selectedStory: jumpedStory.story,
-  };
-}
-
-export function ensureKind(storyKinds, selectedKind) {
-  if (!storyKinds) return selectedKind;
-
-  const found = storyKinds.find(item => item.kind === selectedKind);
-  if (found) return found.kind;
-  // if the selected kind is non-existant, select the first kind
-  const kinds = storyKinds.map(item => item.kind);
-  return kinds[0];
-}
-
-export function ensureStory(storyKinds, selectedKind, selectedStory) {
-  if (!storyKinds) return selectedStory;
-
-  const kindInfo = storyKinds.find(item => item.kind === selectedKind);
-  if (!kindInfo) return null;
-
-  const found = kindInfo.stories.find(item => item === selectedStory);
-  if (found) return found;
-
-  return kindInfo.stories[0];
-}

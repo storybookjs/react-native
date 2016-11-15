@@ -1,4 +1,3 @@
-import { createStore, combineReducers } from 'redux';
 import { createApp } from 'mantra-core';
 import Podda from 'podda';
 

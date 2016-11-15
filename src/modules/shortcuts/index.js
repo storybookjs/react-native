@@ -9,6 +9,6 @@ export default {
       showDownPanel: true,
       showSearchBox: false,
       downPanelInRight: false,
-    }
-  }
+    },
+  },
 };

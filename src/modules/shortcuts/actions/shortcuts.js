@@ -2,6 +2,23 @@ import pick from 'lodash.pick';
 import { features } from '../../../libs/key_events';
 import apiActions from '../../api/actions';
 
+export function keyEventToOptions(currentOptions, event) {
+  switch (event) {
+    case features.FULLSCREEN:
+      return { goFullScreen: !currentOptions.goFullScreen };
+    case features.DOWN_PANEL:
+      return { showDownPanel: !currentOptions.showDownPanel };
+    case features.LEFT_PANEL:
+      return { showLeftPanel: !currentOptions.showLeftPanel };
+    case features.SEARCH:
+      return { showSearchBox: !currentOptions.showSearchBox };
+    case features.DOWN_PANEL_IN_RIGHT:
+      return { downPanelInRight: !currentOptions.downPanelInRight };
+    default:
+      return {};
+  }
+}
+
 export default {
   handleEvent(context, event) {
     const { clientStore } = context;
@@ -21,7 +38,7 @@ export default {
           };
 
           return {
-            shortcutOptions: updatedOptions
+            shortcutOptions: updatedOptions,
           };
         });
     }
@@ -31,7 +48,7 @@ export default {
     clientStore.update((state) => {
       const updatedOptions = {
         ...state.shortcutOptions,
-        ...pick(options, Object.keys(state.shortcutOptions))
+        ...pick(options, Object.keys(state.shortcutOptions)),
       };
 
       return {
@@ -40,20 +57,3 @@ export default {
     });
   },
 };
-
-export function keyEventToOptions(currentOptions, event) {
-  switch (event) {
-    case features.FULLSCREEN:
-      return { goFullScreen: !currentOptions.goFullScreen };
-    case features.DOWN_PANEL:
-      return { showDownPanel: !currentOptions.showDownPanel };
-    case features.LEFT_PANEL:
-      return { showLeftPanel: !currentOptions.showLeftPanel };
-    case features.SEARCH:
-      return { showSearchBox: !currentOptions.showSearchBox };
-    case features.DOWN_PANEL_IN_RIGHT:
-      return { downPanelInRight: !currentOptions.downPanelInRight };
-    default:
-      return {};
-  }
-}
