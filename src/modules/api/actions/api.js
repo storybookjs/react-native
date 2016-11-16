@@ -47,10 +47,12 @@ export function ensureStory(storyKinds, selectedKind, selectedStory) {
 }
 
 export default {
-  setStories({ reduxStore, clientStore }, stories) {
+  setStories({ clientStore }, stories) {
     clientStore.update((state) => {
       const selectedKind = ensureKind(stories, state.selectedKind);
-      const selectedStory = ensureStory(stories, selectedKind, state.selectedStory);
+      const currentSelectedStory =
+        (selectedKind === state.selectedKind) ? state.selectedStory : null;
+      const selectedStory = ensureStory(stories, selectedKind, currentSelectedStory);
 
       return {
         stories,
@@ -60,7 +62,7 @@ export default {
     });
   },
 
-  selectStory({ reduxStore, clientStore }, kind, story) {
+  selectStory({ clientStore }, kind, story) {
     clientStore.update((state) => {
       const selectedKind = ensureKind(state.stories, kind);
       const selectedStory = ensureStory(state.stories, selectedKind, story);
@@ -69,29 +71,29 @@ export default {
     });
   },
 
-  jumpToStory({ reduxStore, clientStore }, direction) {
+  jumpToStory({ clientStore }, direction) {
     clientStore.update((state) => {
       return jumpToStory(state.stories, state.selectedKind, state.selectedStory, direction);
     });
   },
 
-  setOptions({ reduxStore, clientStore }, options) {
+  setOptions({ clientStore }, options) {
     clientStore.update((state) => {
       const newOptions = pick(options, Object.keys(state.uiOptions));
       const updatedOptions = {
         ...state.uiOptions,
-        newOptions,
+        ...newOptions,
       };
 
-      return { options: updatedOptions };
+      return { uiOptions: updatedOptions };
     });
   },
 
-  setQueryParams({ reduxStore, clientStore }, customQueryParams) {
+  setQueryParams({ clientStore }, customQueryParams) {
     clientStore.update((state) => {
       const updatedQueryParams = {
         ...state.customQueryParams,
-        customQueryParams,
+        ...customQueryParams,
       };
 
       Object.keys(customQueryParams).forEach(key => {
