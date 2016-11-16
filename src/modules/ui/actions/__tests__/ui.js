@@ -1,7 +1,6 @@
 import actions from '../ui';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { types } from '../';
 const { describe, it } = global;
 
 describe('manager.ui.actions.ui', () => {

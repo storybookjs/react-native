@@ -6,86 +6,51 @@ const { describe, it } = global;
 
 describe('manager.api.actions.api', () => {
   describe('setStories', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const stories = [{ kind: 'aa', stories: [] }];
+    describe('no selected story', () => {
+      it('should set stories and select the first story');
+    });
 
-      actions.setStories({ reduxStore }, stories);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.SET_STORIES,
-        stories,
-      });
+    describe('has a selected story', () => {
+      it('should set stories and select the existing story');
+    });
+
+    describe('has a selected story, but it\'s story isn\'t in new stories', () => {
+      it('should set stories and select the first story of the selected kind');
+    });
+
+    describe('has a selected story, but it\'s kind isn\'t in new stories', () => {
+      it('should set stories and select the first story');
     });
   });
 
   describe('selectStory', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const kind = 'kkkind';
-      const story = 'ssstory';
+    describe('with both kind and story', () => {
+      it('should select the correct story');
+    });
 
-      actions.selectStory({ reduxStore }, kind, story);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.SELECT_STORY,
-        kind,
-        story,
-      });
+    describe('with just the kind', () => {
+      it('should select the first of the kind');
     });
   });
 
   describe('jumpToStory', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const direction = -1;
+    describe('has enough stories', () => {
+      it('should select the next story');
+      it('should select the prev story');
+    });
 
-      actions.jumpToStory({ reduxStore }, direction);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.JUMP_TO_STORY,
-        direction,
-      });
+    describe('has not enough stories', () => {
+      it('should select the current story');
     });
   });
 
   describe('setOptions', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const options = {};
-
-      actions.setOptions({ reduxStore }, options);
-      const a = reduxStore.dispatch.args[0][0];
-      expect(a).to.deep.equal({
-        type: types.SET_OPTIONS,
-        options,
-      });
-    });
+    it('should update options');
+    it('should only update options for the key already defined');
   });
 
   describe('setQueryParams', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const customQueryParams = {
-        foo: 'bar',
-      };
-
-      actions.setQueryParams({ reduxStore }, customQueryParams);
-      const a = reduxStore.dispatch.args[0][0];
-      expect(a).to.deep.equal({
-        type: types.SET_QUERY_PARAMS,
-        customQueryParams,
-      });
-    });
+    it('shodul update query params');
+    it('should delete the param if it\'s null');
   });
 });
