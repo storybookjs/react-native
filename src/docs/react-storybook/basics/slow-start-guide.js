@@ -26,6 +26,13 @@ export default {
     npm i --save-dev @kadira/storybook
     ~~~
 
+    ## Add react and react-dom
+    Make sure that you have \`react\` and \`react-dom\` in your dependencies as well:
+
+    ~~~sh
+    npm i --save react react-dom
+    ~~~
+
     Then add the following NPM script to your package json in order to start the storybook later in this guide:
 
     ~~~js
