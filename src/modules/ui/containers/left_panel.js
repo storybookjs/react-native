@@ -1,12 +1,11 @@
 import LeftPanel from '../components/left_panel';
 import * as filters from '../libs/filters';
-import genReduxLoader from '../libs/gen_redux_loader';
+import genPoddaLoader from '../libs/gen_podda_loader';
 import compose from '../../../compose';
 
-export const mapper = ({ api, ui }, props, { actions }) => {
+export const mapper = (state, props, { actions }) => {
   const actionMap = actions();
-  const { stories, selectedKind, selectedStory, options } = api;
-  const { storyFilter } = ui;
+  const { stories, selectedKind, selectedStory, uiOptions, storyFilter } = state;
 
   const data = {
     stories: filters.storyFilter(stories, storyFilter, selectedKind, selectedStory),
@@ -18,11 +17,11 @@ export const mapper = ({ api, ui }, props, { actions }) => {
     onStoryFilter: actionMap.ui.setStoryFilter,
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
-    name: options.name,
-    url: options.url,
+    name: uiOptions.name,
+    url: uiOptions.url,
   };
 
   return data;
 };
 
-export default compose(genReduxLoader(mapper))(LeftPanel);
+export default compose(genPoddaLoader(mapper))(LeftPanel);

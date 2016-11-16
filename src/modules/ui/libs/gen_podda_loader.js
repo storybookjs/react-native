@@ -1,10 +1,10 @@
-export default function getReduxLoader(fn) {
+export default function genPoddaLoader(fn) {
   return (props, onData, env) => {
-    const { reduxStore } = env.context();
+    const { clientStore } = env.context();
 
     const processState = () => {
       try {
-        const state = reduxStore.getState();
+        const state = clientStore.getAll();
         const data = fn(state, props, env);
         onData(null, data);
       } catch (ex) {
@@ -13,6 +13,6 @@ export default function getReduxLoader(fn) {
     };
 
     processState();
-    reduxStore.subscribe(processState);
+    return clientStore.subscribe(processState);
   };
 }

@@ -3,25 +3,25 @@ export const config = {
   insidePopState: false,
 };
 
-export function changeUrl(reduxStore) {
+export function changeUrl(clientStore) {
   // Do not change the URL if we are inside a popState event.
   if (config.insidePopState) return;
 
-  const { api, shortcuts, ui } = reduxStore.getState();
-  if (!api) return;
+  const data = clientStore.getAll();
+  if (!data.selectedKind) return;
 
-  const { selectedKind, selectedStory, customQueryParams } = api;
+  const { selectedKind, selectedStory, customQueryParams } = data;
 
   const {
     goFullScreen: full,
     showDownPanel: down,
     showLeftPanel: left,
     downPanelInRight: panelRight,
-  } = shortcuts;
+  } = data.shortcutOptions;
 
   const {
     selectedDownPanel: downPanel,
-  } = ui;
+  } = data;
 
   const urlObj = {
     ...customQueryParams,
@@ -64,7 +64,7 @@ export function updateStore(queryParams, actions) {
     actions.api.selectStory(selectedKind, selectedStory);
   }
 
-  actions.shortcuts.setLayout({
+  actions.shortcuts.setOptions({
     goFullScreen: Boolean(Number(full)),
     showDownPanel: Boolean(Number(down)),
     showLeftPanel: Boolean(Number(left)),
@@ -85,13 +85,13 @@ export function handleInitialUrl(actions, location) {
   updateStore(parsedQs, actions);
 }
 
-export default function ({ reduxStore }, actions) {
+export default function ({ clientStore }, actions) {
   // handle initial URL
   handleInitialUrl(actions, window.location);
 
-  // subscribe to reduxStore and change the URL
-  reduxStore.subscribe(() => changeUrl(reduxStore));
-  changeUrl(reduxStore);
+  // subscribe to clientStore and change the URL
+  clientStore.subscribe(() => changeUrl(clientStore));
+  changeUrl(clientStore);
 
   // handle back button
   window.onpopstate = () => {

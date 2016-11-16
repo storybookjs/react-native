@@ -1,90 +1,237 @@
 import actions from '../api';
 import { expect } from 'chai';
-import sinon from 'sinon';
-import { types } from '../';
 const { describe, it } = global;
+
+class MockClientStore {
+  update(cb) {
+    this.updateCallback = cb;
+  }
+}
+
+const stories = [
+  { kind: 'abc', stories: ['a', 'b', 'c'] },
+  { kind: 'bbc', stories: ['x', 'y', 'z'] },
+];
 
 describe('manager.api.actions.api', () => {
   describe('setStories', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const stories = [{ kind: 'aa', stories: [] }];
+    describe('no selected story', () => {
+      it('should set stories and select the first story', () => {
+        const clientStore = new MockClientStore();
+        actions.setStories({ clientStore }, stories);
 
-      actions.setStories({ reduxStore }, stories);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.SET_STORIES,
-        stories,
+        const newState = clientStore.updateCallback({});
+        expect(newState).to.deep.equal({
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'a',
+        });
+      });
+    });
+
+    describe('has a selected story', () => {
+      it('should set stories and select the existing story', () => {
+        const clientStore = new MockClientStore();
+        actions.setStories({ clientStore }, stories);
+
+        const state = {
+          selectedKind: 'abc',
+          selectedStory: 'c',
+        };
+        const newState = clientStore.updateCallback(state);
+        expect(newState).to.deep.equal({
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'c',
+        });
+      });
+    });
+
+    describe('has a selected story, but it\'s story isn\'t in new stories', () => {
+      it('should set stories and select the first story of the selected kind', () => {
+        const clientStore = new MockClientStore();
+        actions.setStories({ clientStore }, stories);
+
+        const state = {
+          selectedKind: 'bbc',
+          selectedStory: 'k',
+        };
+        const newState = clientStore.updateCallback(state);
+        expect(newState).to.deep.equal({
+          stories,
+          selectedKind: 'bbc',
+          selectedStory: 'x',
+        });
+      });
+    });
+
+    describe('has a selected story, but it\'s kind isn\'t in new stories', () => {
+      it('should set stories and select the first story', () => {
+        const clientStore = new MockClientStore();
+        actions.setStories({ clientStore }, stories);
+
+        const state = {
+          selectedKind: 'kky',
+          selectedStory: 'c',
+        };
+        const newState = clientStore.updateCallback(state);
+        expect(newState).to.deep.equal({
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'a',
+        });
       });
     });
   });
 
   describe('selectStory', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const kind = 'kkkind';
-      const story = 'ssstory';
+    describe('with both kind and story', () => {
+      it('should select the correct story', () => {
+        const clientStore = new MockClientStore();
+        actions.selectStory({ clientStore }, 'bbc', 'y');
 
-      actions.selectStory({ reduxStore }, kind, story);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.SELECT_STORY,
-        kind,
-        story,
+        const state = {
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'c',
+        };
+        const stateUpdates = clientStore.updateCallback(state);
+        expect(stateUpdates).to.deep.equal({
+          selectedKind: 'bbc',
+          selectedStory: 'y',
+        });
+      });
+    });
+
+    describe('with just the kind', () => {
+      it('should select the first of the kind', () => {
+        const clientStore = new MockClientStore();
+        actions.selectStory({ clientStore }, 'bbc');
+
+        const state = {
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'c',
+        };
+        const stateUpdates = clientStore.updateCallback(state);
+        expect(stateUpdates).to.deep.equal({
+          selectedKind: 'bbc',
+          selectedStory: 'x',
+        });
       });
     });
   });
 
   describe('jumpToStory', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const direction = -1;
+    describe('has enough stories', () => {
+      it('should select the next story', () => {
+        const clientStore = new MockClientStore();
+        actions.jumpToStory({ clientStore }, 1);
 
-      actions.jumpToStory({ reduxStore }, direction);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.JUMP_TO_STORY,
-        direction,
+        const state = {
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'c',
+        };
+        const stateUpdates = clientStore.updateCallback(state);
+        expect(stateUpdates).to.deep.equal({
+          selectedKind: 'bbc',
+          selectedStory: 'x',
+        });
+      });
+
+      it('should select the prev story', () => {
+        const clientStore = new MockClientStore();
+        actions.jumpToStory({ clientStore }, -1);
+
+        const state = {
+          stories,
+          selectedKind: 'abc',
+          selectedStory: 'c',
+        };
+        const stateUpdates = clientStore.updateCallback(state);
+        expect(stateUpdates).to.deep.equal({
+          selectedKind: 'abc',
+          selectedStory: 'b',
+        });
+      });
+    });
+
+    describe('has not enough stories', () => {
+      it('should select the current story', () => {
+        const clientStore = new MockClientStore();
+        actions.jumpToStory({ clientStore }, 1);
+
+        const state = {
+          stories,
+          selectedKind: 'bbc',
+          selectedStory: 'z',
+        };
+        const stateUpdates = clientStore.updateCallback(state);
+        expect(stateUpdates).to.deep.equal({
+          selectedKind: 'bbc',
+          selectedStory: 'z',
+        });
       });
     });
   });
 
   describe('setOptions', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const options = {};
+    it('should update options', () => {
+      const clientStore = new MockClientStore();
+      actions.setOptions({ clientStore }, { abc: 10 });
 
-      actions.setOptions({ reduxStore }, options);
-      const a = reduxStore.dispatch.args[0][0];
-      expect(a).to.deep.equal({
-        type: types.SET_OPTIONS,
-        options,
+      const state = {
+        uiOptions: { bbc: 50, abc: 40 },
+      };
+
+      const stateUpdates = clientStore.updateCallback(state);
+      expect(stateUpdates).to.deep.equal({
+        uiOptions: { bbc: 50, abc: 10 },
+      });
+    });
+
+    it('should only update options for the key already defined', () => {
+      const clientStore = new MockClientStore();
+      actions.setOptions({ clientStore }, { abc: 10, notGoingToState: 20 });
+
+      const state = {
+        uiOptions: { bbc: 50, abc: 40 },
+      };
+
+      const stateUpdates = clientStore.updateCallback(state);
+      expect(stateUpdates).to.deep.equal({
+        uiOptions: { bbc: 50, abc: 10 },
       });
     });
   });
 
   describe('setQueryParams', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
-      };
-      const customQueryParams = {
-        foo: 'bar',
+    it('shodul update query params', () => {
+      const clientStore = new MockClientStore();
+      actions.setQueryParams({ clientStore }, { abc: 'aaa', cnn: 'ccc' });
+
+      const state = {
+        customQueryParams: { bbc: 'bbb', abc: 'sshd' },
       };
 
-      actions.setQueryParams({ reduxStore }, customQueryParams);
-      const a = reduxStore.dispatch.args[0][0];
-      expect(a).to.deep.equal({
-        type: types.SET_QUERY_PARAMS,
-        customQueryParams,
+      const stateUpdates = clientStore.updateCallback(state);
+      expect(stateUpdates).to.deep.equal({
+        customQueryParams: { bbc: 'bbb', abc: 'aaa', cnn: 'ccc' },
+      });
+    });
+
+    it('should delete the param if it\'s null', () => {
+      const clientStore = new MockClientStore();
+      actions.setQueryParams({ clientStore }, { abc: null, bbc: 'ccc' });
+
+      const state = {
+        customQueryParams: { bbc: 'bbb', abc: 'sshd' },
+      };
+
+      const stateUpdates = clientStore.updateCallback(state);
+      expect(stateUpdates).to.deep.equal({
+        customQueryParams: { bbc: 'ccc' },
       });
     });
   });

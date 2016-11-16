@@ -16,7 +16,7 @@ describe('manager.api.config.initApi', () => {
       },
     };
 
-    const reduxStore = {
+    const clientStore = {
       subscribe: sinon.stub(),
     };
 
@@ -31,7 +31,7 @@ describe('manager.api.config.initApi', () => {
       },
     };
 
-    initApi(provider, reduxStore, actions);
+    initApi(provider, clientStore, actions);
   });
 
   it('should trigger the onStory callback', (done) => {
@@ -39,10 +39,10 @@ describe('manager.api.config.initApi', () => {
     const selectedKind = 'XXdd';
     const selectedStory = 'u8sd';
 
-    const reduxStore = {
+    const clientStore = {
       subscribe: sinon.stub(),
-      getState: () => ({
-        api: { selectedKind, selectedStory },
+      getAll: () => ({
+        selectedKind, selectedStory,
       }),
     };
 
@@ -56,9 +56,9 @@ describe('manager.api.config.initApi', () => {
       },
     };
 
-    initApi(provider, reduxStore, actions);
+    initApi(provider, clientStore, actions);
     // calling the subscription
-    reduxStore.subscribe.args[0][0]();
+    clientStore.subscribe.args[0][0]();
   });
 
   it('should support to add multiple onStory callback', (done) => {
@@ -66,10 +66,10 @@ describe('manager.api.config.initApi', () => {
     const selectedKind = 'XXdd';
     const selectedStory = 'u8sd';
 
-    const reduxStore = {
+    const clientStore = {
       subscribe: sinon.stub(),
-      getState: () => ({
-        api: { selectedKind, selectedStory },
+      getAll: () => ({
+        selectedKind, selectedStory,
       }),
     };
 
@@ -88,9 +88,9 @@ describe('manager.api.config.initApi', () => {
       },
     };
 
-    initApi(provider, reduxStore, actions);
+    initApi(provider, clientStore, actions);
     // calling the subscription
-    reduxStore.subscribe.args[0][0]();
+    clientStore.subscribe.args[0][0]();
   });
 
   it('should support a way to remove onStory callback', (done) => {
@@ -98,10 +98,10 @@ describe('manager.api.config.initApi', () => {
     const selectedKind = 'XXdd';
     const selectedStory = 'u8sd';
 
-    const reduxStore = {
+    const clientStore = {
       subscribe: sinon.stub(),
-      getState: () => ({
-        api: { selectedKind, selectedStory },
+      getAll: () => ({
+        selectedKind, selectedStory,
       }),
     };
 
@@ -121,23 +121,21 @@ describe('manager.api.config.initApi', () => {
       },
     };
 
-    initApi(provider, reduxStore, actions);
+    initApi(provider, clientStore, actions);
     // calling the subscription
-    reduxStore.subscribe.args[0][0]();
+    clientStore.subscribe.args[0][0]();
   });
 
   describe('getQueryParam', () => {
     it('should return the correct query param value', (done) => {
       const actions = { api: {}, shortcuts: {} };
 
-      const reduxStore = {
+      const clientStore = {
         subscribe: sinon.stub(),
-        getState: () => ({
-          api: {
-            customQueryParams: {
-              foo: 'foo value',
-              bar: 'bar value',
-            },
+        getAll: () => ({
+          customQueryParams: {
+            foo: 'foo value',
+            bar: 'bar value',
           },
         }),
       };
@@ -150,7 +148,7 @@ describe('manager.api.config.initApi', () => {
         },
       };
 
-      initApi(provider, reduxStore, actions);
+      initApi(provider, clientStore, actions);
     });
   });
 });

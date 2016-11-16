@@ -6,12 +6,12 @@ import DownPanel from './containers/down_panel';
 import ShortcutsHelp from './containers/shortcuts_help';
 import SearchBox from './containers/search_box';
 
-export default function (injectDeps, { reduxStore, provider, domNode }) {
+export default function (injectDeps, { clientStore, provider, domNode }) {
   // generate preview
   const Preview = () => {
-    const { api } = reduxStore.getState();
+    const state = clientStore.getAll();
     const preview =
-      provider.renderPreview(api.selectedKind, api.selectedStory);
+      provider.renderPreview(state.selectedKind, state.selectedStory);
     return preview;
   };
 
