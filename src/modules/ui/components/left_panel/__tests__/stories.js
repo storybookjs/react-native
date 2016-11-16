@@ -50,7 +50,7 @@ describe('manager.ui.components.left_panel.stories', function () {
         />
       );
 
-      const kind = wrap.find('div')
+      const kind = wrap.find('a')
         .filterWhere(el => el.text() === 'a')
         .last();
       kind.simulate('click');
@@ -74,7 +74,7 @@ describe('manager.ui.components.left_panel.stories', function () {
         />
       );
 
-      const kind = wrap.find('div')
+      const kind = wrap.find('a')
         .filterWhere(el => el.text() === 'b1')
         .last();
       kind.simulate('click');

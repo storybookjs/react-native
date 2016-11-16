@@ -28,8 +28,6 @@ describe('manager.ui.components.layout.index', () => {
     it('should only render preview', () => {
       const wrap = shallow(
         <Layout
-          showLeftPanel
-          showDownPanel
           goFullScreen
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
