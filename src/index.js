@@ -19,6 +19,10 @@ export function number(name, value) {
   return manager.knob(name, { type: 'number', value });
 }
 
+export function color(name, value) {
+  return manager.knob(name, { type: 'color', value });
+}
+
 export function object(name, value) {
   return manager.knob(name, { type: 'object', value });
 }

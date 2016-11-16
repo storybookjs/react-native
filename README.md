@@ -113,6 +113,17 @@ const defaultValue = 78;
 const value = number(label, defaultValue);
 ```
 
+### color
+
+Allows you to get a color from the user.
+
+```js
+const label = 'Color';
+const defaultValue = '#ff00ff';
+
+const value = color(label, defaultValue);
+```
+
 ### object
 
 Allows you to get a JSON object from the user.
