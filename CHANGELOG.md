@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.30.0
+16-November-2016
+
+Update to the new Storybook UI which doesn't use Redux.
+
 ### v2.29.7
 11-November-2016
 
