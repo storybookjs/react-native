@@ -13,27 +13,23 @@ describe('manager.ui.config.handle_routing', () => {
     });
 
     it('should put the correct URL and state to pushState', (done) => {
-      const reduxState = {
-        api: {
-          selectedKind: 'kk',
-          selectedStory: 'ss',
-          customQueryParams: {
-            customText: 'test',
-          },
+      const state = {
+        selectedKind: 'kk',
+        selectedStory: 'ss',
+        customQueryParams: {
+          customText: 'test',
         },
-        shortcuts: {
+        shortcutOptions: {
           goFullScreen: false,
           showDownPanel: true,
           showLeftPanel: true,
           downPanelInRight: true,
         },
-        ui: {
-          selectedDownPanel: 'pp',
-        },
+        selectedDownPanel: 'pp',
       };
 
-      const reduxStore = {
-        getState: () => reduxState,
+      const clientStore = {
+        getAll: () => state,
       };
 
       // eslint-disable-next-line max-len
@@ -57,7 +53,7 @@ describe('manager.ui.config.handle_routing', () => {
         expect(u).to.be.equal(pushState.url);
         done();
       };
-      changeUrl(reduxStore);
+      changeUrl(clientStore);
       window.history.pushState = originalPushState;
     });
   });
@@ -70,7 +66,7 @@ describe('manager.ui.config.handle_routing', () => {
           setQueryParams: sinon.mock(),
         },
         shortcuts: {
-          setLayout: sinon.mock(),
+          setOptions: sinon.mock(),
         },
         ui: {
           selectDownPanel: sinon.mock(),
@@ -87,10 +83,10 @@ describe('manager.ui.config.handle_routing', () => {
       handleInitialUrl(actions, location);
 
       expect(actions.api.selectStory.callCount).to.be.equal(1);
-      expect(actions.shortcuts.setLayout.callCount).to.be.equal(1);
+      expect(actions.shortcuts.setOptions.callCount).to.be.equal(1);
       expect(actions.ui.selectDownPanel.callCount).to.be.equal(1);
       /* eslint-disable no-unused-expressions */
-      expect(actions.shortcuts.setLayout.calledWith({
+      expect(actions.shortcuts.setOptions.calledWith({
         goFullScreen: true,
         showDownPanel: false,
         showLeftPanel: false,

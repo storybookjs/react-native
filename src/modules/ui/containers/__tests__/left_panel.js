@@ -8,7 +8,7 @@ describe('manager.ui.containers.left_panel', () => {
       const stories = [{ kind: 'sk', stories: ['dd'] }];
       const selectedKind = 'sk';
       const selectedStory = 'dd';
-      const options = {
+      const uiOptions = {
         name: 'foo',
         url: 'bar',
       };
@@ -31,15 +31,11 @@ describe('manager.ui.containers.left_panel', () => {
       };
 
       const state = {
-        ui: {
-          storyFilter: null,
-        },
-        api: {
-          stories,
-          selectedKind,
-          selectedStory,
-          options,
-        },
+        storyFilter: null,
+        stories,
+        selectedKind,
+        selectedStory,
+        uiOptions,
       };
 
       const data = mapper(state, props, env);
@@ -61,7 +57,7 @@ describe('manager.ui.containers.left_panel', () => {
       ];
       const selectedKind = 'pk';
       const selectedStory = 'dd';
-      const options = {
+      const uiOptions = {
         name: 'foo',
         url: 'bar',
       };
@@ -84,15 +80,11 @@ describe('manager.ui.containers.left_panel', () => {
       };
 
       const state = {
-        ui: {
-          storyFilter: 'ss',
-        },
-        api: {
-          stories,
-          selectedKind,
-          selectedStory,
-          options,
-        },
+        storyFilter: 'ss',
+        stories,
+        selectedKind,
+        selectedStory,
+        uiOptions,
       };
 
       const data = mapper(state, props, env);

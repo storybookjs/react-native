@@ -6,32 +6,40 @@ const { describe, it } = global;
 
 describe('manager.ui.actions.ui', () => {
   describe('setStoryFilter', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
+    it('should set the given filter', () => {
+      const clientStore = {
+        set: sinon.stub(),
       };
       const filter = 'kkkind';
 
-      actions.setStoryFilter({ reduxStore }, filter);
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.SET_STORY_FILTER,
-        filter,
-      });
+      actions.setStoryFilter({ clientStore }, filter);
+      const args = clientStore.set.args[0];
+      expect(args).to.deep.equal(['storyFilter', filter]);
     });
   });
 
   describe('toggleShortcutsHelp', () => {
-    it('should dispatch related redux action', () => {
-      const reduxStore = {
-        dispatch: sinon.stub(),
+    it('should toggle the client sotre accordingly', () => {
+      const clientStore = {
+        toggle: sinon.stub(),
       };
 
-      actions.toggleShortcutsHelp({ reduxStore });
-      const action = reduxStore.dispatch.args[0][0];
-      expect(action).to.deep.equal({
-        type: types.TOGGLE_SHORTCUTS_HELP,
-      });
+      actions.toggleShortcutsHelp({ clientStore });
+      const args = clientStore.toggle.args[0];
+      expect(args).to.deep.equal(['showShortcutsHelp']);
+    });
+  });
+
+  describe('selectDownPanel', () => {
+    it('should set the given panel name', () => {
+      const clientStore = {
+        set: sinon.stub(),
+      };
+      const panelName = 'kkkind';
+
+      actions.selectDownPanel({ clientStore }, panelName);
+      const args = clientStore.set.args[0];
+      expect(args).to.deep.equal(['selectedDownPanel', panelName]);
     });
   });
 });

@@ -6,9 +6,7 @@ describe('manager.ui.containers.down_panel', () => {
   describe('mapper', () => {
     it('should give correct data', () => {
       const state = {
-        ui: {
-          selectedDownPanel: 'sdp',
-        },
+        selectedDownPanel: 'sdp',
       };
 
       const selectDownPanel = () => 'selectDownPanel';

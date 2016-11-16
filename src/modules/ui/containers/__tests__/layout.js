@@ -6,7 +6,7 @@ describe('manager.ui.containers.layout', () => {
   describe('mapper', () => {
     it('should give correct data', () => {
       const state = {
-        shortcuts: {
+        shortcutOptions: {
           showLeftPanel: 'aa',
           showDownPanel: 'bb',
           goFullScreen: 'cc',
@@ -14,7 +14,7 @@ describe('manager.ui.containers.layout', () => {
       };
 
       const data = mapper(state);
-      expect(data).to.deep.equal(state.shortcuts);
+      expect(data).to.deep.equal(state.shortcutOptions);
     });
   });
 });
