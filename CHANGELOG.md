@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.8.0
+16-Nov-2016
+
+Replace the use of Redux with [Podda](https://github.com/arunoda/podda). Now it's pretty easy to work with the system. [PR61](https://github.com/storybooks/storybook-ui/pull/61)
+
 ### v3.7.0
 13-Nov-2016
 
