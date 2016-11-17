@@ -11,7 +11,7 @@ import Preview from './preview';
 export default class ReactProvider extends Provider {
   constructor() {
     super();
-    this.channel = createChannel();
+    this.channel = createChannel({ page: 'manager' });
     addons.setChannel(this.channel);
   }
 

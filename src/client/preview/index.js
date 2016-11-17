@@ -22,7 +22,7 @@ const context = { storyStore, reduxStore };
 
 if (isBrowser) {
   const queryParams = qs.parse(window.location.search.substring(1));
-  const channel = createChannel();
+  const channel = createChannel({ page: 'preview' });
   channel.on('setCurrentStory', (data) => {
     reduxStore.dispatch(selectStory(data.kind, data.story));
   });
