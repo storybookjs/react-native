@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.30.1
+17-November-2016
+
+Update the postmsg channel module to fix issue [#555](https://github.com/storybooks/react-storybook/issues/555) with [PR611](https://github.com/storybooks/react-storybook/pull/611)
+
 ### v2.30.0
 16-November-2016
 
