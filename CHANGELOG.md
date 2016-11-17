@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.0.0
+17-Nov-2016
+
+* Identify the page with a parameter [PR7](https://github.com/kadirahq/storybook-channel-postmsg/pull/7)
+
 ### v1.1.0
 28-Oct-2016
 
