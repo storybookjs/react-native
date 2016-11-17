@@ -3,17 +3,22 @@ import stringify from 'json-stringify-safe';
 
 export const KEY = 'storybook-channel';
 
-export default function createChannel() {
-  const transport = new PostmsgTransport();
+export default function createChannel({ page }) {
+  const transport = new PostmsgTransport({ page });
   return new Channel({ transport });
 }
 
 export class PostmsgTransport {
-  constructor() {
+  constructor(config) {
+    this._config = config;
     this._buffer = [];
     this._handler = null;
     window.addEventListener('message', this._handleEvent.bind(this), false);
     document.addEventListener('DOMContentLoaded', () => this._flush());
+    // Check whether the config.page parameter has a valid value
+    if (config.page !== 'manager' && config.page !== 'preview') {
+      throw new Error(`postmsg-channel: "config.page" cannot be "${config.page}"`);
+    }
   }
 
   setHandler(handler) {
@@ -43,7 +48,7 @@ export class PostmsgTransport {
   }
 
   _getWindow() {
-    if (window.top === window.self) {
+    if (this._config.page === 'manager') {
       // FIXME this is a really bad idea! use a better way to do this.
       // This finds the storybook preview iframe to send messages to.
       const iframe = document.getElementById('storybook-preview-iframe');
