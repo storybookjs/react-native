@@ -26,7 +26,7 @@ stories.add('with all knobs', () => {
   const dob = date('DOB', new Date('January 20 1887'));
 
   const bold = boolean('Bold', false);
-  const color = color('Color', 'black');
+  const textColor = color('Color', 'black');
   const textDecoration = select('Decoration', {
     none: 'None',
     underline: 'Underline',
@@ -43,7 +43,7 @@ stories.add('with all knobs', () => {
   const style = {
     ...customStyle,
     fontWeight: bold ? 800: 400,
-    color,
+    color: textColor,
     textDecoration
   };
 
