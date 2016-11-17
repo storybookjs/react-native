@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (data) {
-  var assets = data.assets,
-      publicPath = data.publicPath;
+  var assets = data.assets;
+  var publicPath = data.publicPath;
 
 
   var managerUrls = managerUrlsFromAssets(assets);

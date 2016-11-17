@@ -59,7 +59,7 @@ var ReactProvider = function (_Provider) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (ReactProvider.__proto__ || (0, _getPrototypeOf2.default)(ReactProvider)).call(this));
 
-    _this.channel = (0, _storybookChannelPostmsg2.default)();
+    _this.channel = (0, _storybookChannelPostmsg2.default)({ page: 'manager' });
     _storybookAddons2.default.setChannel(_this.channel);
     return _this;
   }
