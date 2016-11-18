@@ -39,13 +39,13 @@ class ColorType extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.displayColorPicker != prevState.displayColorPicker) {
+    if (this.state.displayColorPicker !== prevState.displayColorPicker) {
       document[this.state.displayColorPicker
-        ? "addEventListener"
-        : "removeEventListener"]('mousedown', this.onWindowMouseDown);
+        ? 'addEventListener'
+        : 'removeEventListener']('mousedown', this.onWindowMouseDown);
       document[this.state.displayColorPicker
-        ? "addEventListener"
-        : "removeEventListener"]('touchstart', this.onWindowMouseDown);
+        ? 'addEventListener'
+        : 'removeEventListener']('touchstart', this.onWindowMouseDown);
     }
   }
   componentWillUnmount() {
@@ -58,7 +58,7 @@ class ColorType extends React.Component {
       return;
     }
     this.setState({
-      displayColorPicker: false
+      displayColorPicker: false,
     });
   }
 
@@ -73,7 +73,7 @@ class ColorType extends React.Component {
   handleClick() {
     this.mouseDownInColorPicker = true;
     this.setState({
-      displayColorPicker: !this.state.displayColorPicker
+      displayColorPicker: !this.state.displayColorPicker,
     });
   }
 
