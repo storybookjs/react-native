@@ -4,7 +4,6 @@ import moment from 'moment';
 import {
   withKnobs,
   number,
-  color,
   object,
   boolean,
   text,
@@ -26,12 +25,11 @@ stories.add('with all knobs', () => {
   const dob = date('DOB', new Date('January 20 1887'));
 
   const bold = boolean('Bold', false);
-  const textColor = color('Color', 'black');
-  const textDecoration = select('Decoration', {
-    none: 'None',
-    underline: 'Underline',
-    "line-through": 'Line-Through'
-  }, 'none');
+  const color = select('Color', {
+    red: 'Red',
+    green: 'Green',
+    black: 'Black'
+  }, 'black');
 
   const passions = array('Passions', ['Fishing', 'Skiing']);
 
@@ -43,8 +41,7 @@ stories.add('with all knobs', () => {
   const style = {
     ...customStyle,
     fontWeight: bold ? 800: 400,
-    color: textColor,
-    textDecoration
+    color
   };
 
   return (
@@ -53,7 +50,7 @@ stories.add('with all knobs', () => {
       I like: <ul>{passions.map((p, i) => <li key={i}>{p}</li>)}</ul>
     </div>
   );
-});
+})
 
 stories.add('dates Knob', () => {
   const today = date('today');
@@ -85,10 +82,10 @@ stories.add('dates Knob', () => {
       </li>
     </ul>
   )
-});
+})
 
 stories.add('dynamic knobs', () => {
-  const showOptional = select('Show optional', ['yes', 'no'], 'yes');
+  const showOptional = select('Show optional', ['yes', 'no'], 'yes')
   return (
     <div>
       <div>
@@ -97,7 +94,7 @@ stories.add('dynamic knobs', () => {
       { showOptional==='yes' ? <div>{text('optional', 'I can disapear')}</div> : null }
     </div>
   )
-});
+})
 
 stories.add('without any knob', () => (
   <button>This is a button</button>

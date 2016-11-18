@@ -6,20 +6,14 @@ const styles = {
     padding: '5px',
     background: '#fff',
     borderRadius: '1px',
-    boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+    border: '1px solid rgb(247, 244, 244)',
     display: 'inline-block',
     cursor: 'pointer',
   },
   popover: {
     position: 'absolute',
-    right: 0,
-  },
-  modal: {
-    position: 'absolute',
     top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
+    right: 0,
     zIndex: '2',
   },
   cover: {
@@ -31,45 +25,74 @@ const styles = {
   },
 };
 
-const triggerClassName = 'color-picker-switch';
-
 class ColorType extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseUp = this.onMouseUp.bind(this);
+    this.onWindowMouseDown = this.onWindowMouseDown.bind(this);
+    this.mouseDownInColorPicker = false;
     this.state = {
       displayColorPicker: false,
     };
   }
 
-  handleClick() {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.displayColorPicker != prevState.displayColorPicker) {
+      document[this.state.displayColorPicker
+        ? "addEventListener"
+        : "removeEventListener"]('mousedown', this.onWindowMouseDown);
+      document[this.state.displayColorPicker
+        ? "addEventListener"
+        : "removeEventListener"]('touchstart', this.onWindowMouseDown);
+    }
+  }
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.onWindowMouseDown);
+    document.removeEventListener('touchstart', this.onWindowMouseDown);
   }
 
-  handleClose(e) {
-    if (e.target.className !== triggerClassName) return;
-    this.setState({ displayColorPicker: false });
+  onWindowMouseDown() {
+    if (this.mouseIsDownOnCalendar) {
+      return;
+    }
+    this.setState({
+      displayColorPicker: false
+    });
+  }
+
+  onMouseDown() {
+    this.mouseDownInColorPicker = true;
+  }
+
+  onMouseUp() {
+    this.mouseDownInColorPicker = false;
+  }
+
+  handleClick() {
+    this.mouseDownInColorPicker = true;
+    this.setState({
+      displayColorPicker: !this.state.displayColorPicker
+    });
   }
 
   render() {
     const { knob, onChange } = this.props;
     const colorStyle = {
-      width: '36px',
+      width: '300px',
       height: '14px',
       borderRadius: '2px',
       background: knob.value,
     };
     return (
       <div id={knob.name}>
-        <div style={ styles.swatch } onClick={ this.handleClick } className={triggerClassName}>
+        <div style={ styles.swatch } onClick={ this.handleClick }>
           <div style={ colorStyle } />
         </div>
         { this.state.displayColorPicker ? (
-          <div style={ styles.modal } onClick={ this.handleClose } className={triggerClassName}>
-            <div style={ styles.popover }>
-              <SketchPicker color={ knob.value } onChange={ color => onChange(color.hex) } />
-            </div>
+          <div style={ styles.popover } onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
+            <SketchPicker color={ knob.value } onChange={ color => onChange(color.hex) } />
           </div>
         ) : null }
       </div>
