@@ -5,9 +5,9 @@ You can also use Knobs as a dynamic variable inside stories.
 
 This is how Knobs look like:
 
-[![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://goo.gl/uX9WLf)
+[![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://git.io/vXdhZ)
 
-> Checkout the above [Live Storybook](https://goo.gl/2s9b1L) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
+> Checkout the above [Live Storybook](https://git.io/vXdhZ) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
 
 ## Getting Started
 
