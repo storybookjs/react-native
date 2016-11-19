@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.6.0
+19-November-2016
+
+Add Color as a type. [PR75](https://github.com/storybooks/storybook-addon-knobs/pull/75)
+
 ### v1.5.0
 8-November-2016
 
