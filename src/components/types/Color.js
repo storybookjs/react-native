@@ -29,49 +29,29 @@ class ColorType extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.onMouseDown = this.onMouseDown.bind(this);
-    this.onMouseUp = this.onMouseUp.bind(this);
     this.onWindowMouseDown = this.onWindowMouseDown.bind(this);
-    this.mouseDownInColorPicker = false;
     this.state = {
       displayColorPicker: false,
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.displayColorPicker !== prevState.displayColorPicker) {
-      document[this.state.displayColorPicker
-        ? 'addEventListener'
-        : 'removeEventListener']('mousedown', this.onWindowMouseDown);
-      document[this.state.displayColorPicker
-        ? 'addEventListener'
-        : 'removeEventListener']('touchstart', this.onWindowMouseDown);
-    }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.onWindowMouseDown);
   }
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.onWindowMouseDown);
-    document.removeEventListener('touchstart', this.onWindowMouseDown);
   }
 
-  onWindowMouseDown() {
-    if (this.mouseIsDownOnCalendar) {
-      return;
-    }
+  onWindowMouseDown(e) {
+    if (!this.state.displayColorPicker) return;
+    if (this.popover.contains(e.target)) return;
+
     this.setState({
       displayColorPicker: false,
     });
   }
 
-  onMouseDown() {
-    this.mouseDownInColorPicker = true;
-  }
-
-  onMouseUp() {
-    this.mouseDownInColorPicker = false;
-  }
-
   handleClick() {
-    this.mouseDownInColorPicker = true;
     this.setState({
       displayColorPicker: !this.state.displayColorPicker,
     });
@@ -91,7 +71,7 @@ class ColorType extends React.Component {
           <div style={ colorStyle } />
         </div>
         { this.state.displayColorPicker ? (
-          <div style={ styles.popover } onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
+          <div style={ styles.popover } ref={(e) => this.popover = e}>
             <SketchPicker color={ knob.value } onChange={ color => onChange(color.hex) } />
           </div>
         ) : null }
