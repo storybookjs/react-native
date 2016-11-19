@@ -1,4 +1,4 @@
-# Storybook Addon Knobs [![CircleCI](https://circleci.com/gh/kadirahq/storybook-addon-knobs.svg?style=shield)](https://circleci.com/gh/kadirahq/storybook-addon-knobs)
+# Storybook Addon Knobs [![CircleCI](https://circleci.com/gh/storybooks/storybook-addon-knobs.svg?style=shield)](https://circleci.com/gh/storybooks/storybook-addon-knobs)
 
 Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories.
