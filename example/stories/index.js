@@ -9,7 +9,8 @@ import {
   text,
   select,
   date,
-  array
+  array,
+  color,
 } from '../../src';
 
 const stories = storiesOf('Example of Knobs', module);
@@ -25,11 +26,7 @@ stories.add('with all knobs', () => {
   const dob = date('DOB', new Date('January 20 1887'));
 
   const bold = boolean('Bold', false);
-  const color = select('Color', {
-    red: 'Red',
-    green: 'Green',
-    black: 'Black'
-  }, 'black');
+  const selectedColor = color('Color', 'black');
 
   const passions = array('Passions', ['Fishing', 'Skiing']);
 
@@ -41,7 +38,7 @@ stories.add('with all knobs', () => {
   const style = {
     ...customStyle,
     fontWeight: bold ? 800: 400,
-    color
+    color: selectedColor,
   };
 
   return (

@@ -12,6 +12,10 @@ var _Number = require('./Number');
 
 var _Number2 = _interopRequireDefault(_Number);
 
+var _Color = require('./Color');
+
+var _Color2 = _interopRequireDefault(_Color);
+
 var _Boolean = require('./Boolean');
 
 var _Boolean2 = _interopRequireDefault(_Boolean);
@@ -37,6 +41,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   text: _Text2.default,
   number: _Number2.default,
+  color: _Color2.default,
   boolean: _Boolean2.default,
   object: _Object2.default,
   select: _Select2.default,

@@ -7,6 +7,7 @@ exports.knob = knob;
 exports.text = text;
 exports.boolean = boolean;
 exports.number = number;
+exports.color = color;
 exports.object = object;
 exports.select = select;
 exports.array = array;
@@ -39,6 +40,10 @@ function boolean(name, value) {
 
 function number(name, value) {
   return manager.knob(name, { type: 'number', value: value });
+}
+
+function color(name, value) {
+  return manager.knob(name, { type: 'color', value: value });
 }
 
 function object(name, value) {
