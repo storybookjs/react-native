@@ -71,7 +71,7 @@ class ColorType extends React.Component {
           <div style={ colorStyle } />
         </div>
         { this.state.displayColorPicker ? (
-          <div style={ styles.popover } ref={(e) => this.popover = e}>
+          <div style={ styles.popover } ref={(e) => {this.popover = e;}}>
             <SketchPicker color={ knob.value } onChange={ color => onChange(color.hex) } />
           </div>
         ) : null }
