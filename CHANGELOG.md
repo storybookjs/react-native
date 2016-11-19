@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.31.0
+20-November-2016
+
+Add the react-storybook version to the build output. [PR621](https://github.com/storybooks/react-storybook/pull/621)
+
 ### v2.30.1
 17-November-2016
 
