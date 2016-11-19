@@ -18,7 +18,7 @@ export function boolean(name: string, value: boolean): boolean;
 
 export function number(name: string, value: number): number;
 
-export function color(name: string, value: number): number;
+export function color(name: string, value: string): string;
 
 export function object<T>(name: string, value: T): T;
 
