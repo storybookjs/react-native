@@ -1,4 +1,5 @@
 import url from 'url';
+import { version } from '../../package.json';
 
 // assets.manager will be:
 // - undefined
@@ -37,6 +38,7 @@ export default function (data) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="storybook-version" content="${version}">
         <title>React Storybook</title>
         <style>
           /*
