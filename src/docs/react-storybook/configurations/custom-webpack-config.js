@@ -61,7 +61,7 @@ export default {
       // Make whatever fine-grained changes you need
       storybookBaseConfig.module.loaders.push({
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style", "css", "sass"],
         include: path.resolve(__dirname, '../')
       });
 
