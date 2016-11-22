@@ -1,9 +1,13 @@
 ## Changelog
 
-### v2.31.0
+### v2.32.1
 22-November-2016
 
 Add support for react_perf comes with React 15.4.0. [PR623](https://github.com/storybooks/react-storybook/pull/623)
+
+### v2.32.0
+
+Incorrect publish (error when running `npm publish`)
 
 ### v2.31.0
 20-November-2016

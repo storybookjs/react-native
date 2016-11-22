@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (data) {
-  var assets = data.assets;
-  var headHtml = data.headHtml;
-  var publicPath = data.publicPath;
+  var assets = data.assets,
+      headHtml = data.headHtml,
+      publicPath = data.publicPath;
 
 
   var previewUrls = previewUrlsFromAssets(assets);

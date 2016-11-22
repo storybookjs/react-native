@@ -52,9 +52,8 @@ var _reducer2 = _interopRequireDefault(_reducer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // check whether we're running on node/browser
-var _global = global; /* global window */
-
-var navigator = _global.navigator;
+var _global = global,
+    navigator = _global.navigator; /* global window */
 
 var isBrowser = navigator && navigator.userAgent !== 'storyshots';
 
