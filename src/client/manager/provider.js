@@ -27,7 +27,7 @@ export default class ReactProvider extends Provider {
 
     // Add the react-perf query string to the iframe if that present.
     if (/react_perf/.test(location.search)) {
-      queryParams['react_perf'] = '1';
+      queryParams.react_perf = '1';
     }
 
     const queryString = qs.stringify(queryParams);
