@@ -77,6 +77,11 @@ var ReactProvider = function (_Provider) {
         selectedStory: selectedStory
       };
 
+      // Add the react-perf query string to the iframe if that present.
+      if (/react_perf/.test(location.search)) {
+        queryParams['react_perf'] = '1';
+      }
+
       var queryString = _qs2.default.stringify(queryParams);
       var url = 'iframe.html?' + queryString;
       return _react2.default.createElement(_preview2.default, { url: url });
