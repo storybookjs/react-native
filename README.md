@@ -1,4 +1,4 @@
-# React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook) [![npm version](https://badge.fury.io/js/%40kadira%2Fstorybook.svg)](https://badge.fury.io/js/%40kadira%2Fstorybook) [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
+# React Storybook [![Build Status](https://travis-ci.org/storybooks/react-storybook.svg?branch=master)](https://travis-ci.org/storybooks/react-storybook) [![npm version](https://badge.fury.io/js/%40kadira%2Fstorybook.svg)](https://badge.fury.io/js/%40kadira%2Fstorybook) [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
 React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively.
 
