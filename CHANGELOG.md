@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.0.1
+24-Nov-2016
+
+* Fix empty story list when loading in an iframe [PR8](https://github.com/kadirahq/storybook-channel-postmsg/pull/8)
+
 ### v2.0.0
 17-Nov-2016
 
