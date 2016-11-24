@@ -57,7 +57,7 @@ export class PostmsgTransport {
       }
       return iframe.contentWindow;
     }
-    return window.top;
+    return window.parent;
   }
 
   _handleEvent(e) {
