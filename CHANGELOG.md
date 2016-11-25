@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.7.0
+25-November-2016
+
+Modify number() to support a range slider as an input type for a knob.[PR77](https://github.com/storybooks/storybook-addon-knobs/pull/77)
+
 ### v1.6.0
 19-November-2016
 
