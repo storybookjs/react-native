@@ -27,6 +27,8 @@ stories.add('with all knobs', () => {
 
   const bold = boolean('Bold', false);
   const selectedColor = color('Color', 'black');
+  const favoriteNumber = number('Favorite Number', 42);
+  const comfortTemp = number('Comfort Temp', 72, {range:true, min: 60, max: 90, step: 1});
 
   const passions = array('Passions', ['Fishing', 'Skiing']);
 
@@ -38,6 +40,7 @@ stories.add('with all knobs', () => {
   const style = {
     ...customStyle,
     fontWeight: bold ? 800: 400,
+    favoriteNumber: favoriteNumber,
     color: selectedColor,
   };
 
@@ -45,6 +48,8 @@ stories.add('with all knobs', () => {
     <div style={style}>
       I'm {name} and I was born on "{moment(dob).format("DD MMM YYYY")}"
       I like: <ul>{passions.map((p, i) => <li key={i}>{p}</li>)}</ul>
+      <p>My favorite number is {favoriteNumber}.</p>
+      <p>My most comfortable room temperature is {comfortTemp} degrees Fahrenheit.</p>
     </div>
   );
 })

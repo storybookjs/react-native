@@ -14,20 +14,48 @@ const styles = {
   color: '#444',
 };
 
+
 class NumberType extends React.Component {
-  render() {
+
+  constructor(props) {
+    super(props);
+    this.renderNormal = this.renderNormal.bind(this);
+    this.renderRange = this.renderRange.bind(this);
+  }
+
+  renderNormal() {
     const { knob, onChange } = this.props;
 
-    return (
-      <input
-        id={knob.name}
-        ref="input"
-        style={styles}
-        value={knob.value}
-        type="number"
-        onChange={() => onChange(parseFloat(this.refs.input.value))}
-      />
-    );
+    return (<input
+      id={knob.name}
+      ref="input"
+      style={styles}
+      value={knob.value}
+      type="number"
+      onChange={() => onChange(parseFloat(this.refs.input.value))}
+    />);
+  }
+
+  renderRange() {
+    const { knob, onChange } = this.props;
+
+    return (<input
+      id={knob.name}
+      ref="input"
+      style={styles}
+      value={knob.value}
+      type="range"
+      min={knob.min}
+      max={knob.max}
+      step={knob.step}
+      onChange={() => onChange(parseFloat(this.refs.input.value))}
+    />);
+  }
+
+  render() {
+    const { knob } = this.props;
+
+    return knob.range ? this.renderRange() : this.renderNormal();
   }
 }
 

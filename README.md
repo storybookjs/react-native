@@ -113,6 +113,23 @@ const defaultValue = 78;
 const value = number(label, defaultValue);
 ```
 
+### number bound by range
+
+Allows you to get a number from the user using a range slider.
+
+```js
+const label = 'Temperature';
+const defaultValue = 73;
+const options = {
+   range: true,
+   min: 60,
+   max: 90,
+   step: 1,
+};
+
+const value = number(label, defaultValue, options);
+```
+
 ### color
 
 Allows you to get a color from the user.
