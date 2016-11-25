@@ -31,7 +31,7 @@ export function number(name, value, options = {}) {
     value,
   };
 
-  return manager.knob(name, ...finalOptions);
+  return manager.knob(name, finalOptions);
 }
 
 export function color(name, value) {
