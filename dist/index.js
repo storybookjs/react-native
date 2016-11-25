@@ -3,6 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 exports.knob = knob;
 exports.text = text;
 exports.boolean = boolean;
@@ -39,7 +44,23 @@ function boolean(name, value) {
 }
 
 function number(name, value) {
-  return manager.knob(name, { type: 'number', value: value });
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  var defaults = {
+    range: false,
+    min: 0,
+    max: 10,
+    step: 1
+  };
+
+  var mergedOptions = (0, _extends3.default)({}, defaults, options);
+
+  var finalOptions = (0, _extends3.default)({}, mergedOptions, {
+    type: 'number',
+    value: value
+  });
+
+  return manager.knob(name, finalOptions);
 }
 
 function color(name, value) {

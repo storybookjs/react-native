@@ -28,31 +28,78 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactColor = require('react-color');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = {
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  height: '26px',
-  width: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  color: '#444',
-  backgroundColor: 'white'
+  swatch: {
+    padding: '5px',
+    background: '#fff',
+    borderRadius: '1px',
+    border: '1px solid rgb(247, 244, 244)',
+    display: 'inline-block',
+    cursor: 'pointer'
+  },
+  popover: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    zIndex: '2'
+  },
+  cover: {
+    position: 'fixed',
+    top: '0px',
+    right: '0px',
+    bottom: '0px',
+    left: '0px'
+  }
 };
 
 var ColorType = function (_React$Component) {
   (0, _inherits3.default)(ColorType, _React$Component);
 
-  function ColorType() {
+  function ColorType(props) {
     (0, _classCallCheck3.default)(this, ColorType);
-    return (0, _possibleConstructorReturn3.default)(this, (ColorType.__proto__ || (0, _getPrototypeOf2.default)(ColorType)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (ColorType.__proto__ || (0, _getPrototypeOf2.default)(ColorType)).call(this, props));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.onWindowMouseDown = _this.onWindowMouseDown.bind(_this);
+    _this.state = {
+      displayColorPicker: false
+    };
+    return _this;
   }
 
   (0, _createClass3.default)(ColorType, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      document.addEventListener('mousedown', this.onWindowMouseDown);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.onWindowMouseDown);
+    }
+  }, {
+    key: 'onWindowMouseDown',
+    value: function onWindowMouseDown(e) {
+      if (!this.state.displayColorPicker) return;
+      if (this.popover.contains(e.target)) return;
+
+      this.setState({
+        displayColorPicker: false
+      });
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick() {
+      this.setState({
+        displayColorPicker: !this.state.displayColorPicker
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -61,16 +108,30 @@ var ColorType = function (_React$Component) {
           knob = _props.knob,
           _onChange = _props.onChange;
 
-
-      return _react2.default.createElement('input', {
-        id: knob.name,
-        style: styles,
-        value: knob.value,
-        type: 'color',
-        onChange: function onChange(e) {
-          return _onChange(e.target.value);
-        }
-      });
+      var colorStyle = {
+        width: '300px',
+        height: '14px',
+        borderRadius: '2px',
+        background: knob.value
+      };
+      return _react2.default.createElement(
+        'div',
+        { id: knob.name },
+        _react2.default.createElement(
+          'div',
+          { style: styles.swatch, onClick: this.handleClick },
+          _react2.default.createElement('div', { style: colorStyle })
+        ),
+        this.state.displayColorPicker ? _react2.default.createElement(
+          'div',
+          { style: styles.popover, ref: function ref(e) {
+              _this2.popover = e;
+            } },
+          _react2.default.createElement(_reactColor.SketchPicker, { color: knob.value, onChange: function onChange(color) {
+              return _onChange(color.hex);
+            } })
+        ) : null
+      );
     }
   }]);
   return ColorType;

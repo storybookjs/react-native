@@ -47,14 +47,19 @@ var styles = {
 var NumberType = function (_React$Component) {
   (0, _inherits3.default)(NumberType, _React$Component);
 
-  function NumberType() {
+  function NumberType(props) {
     (0, _classCallCheck3.default)(this, NumberType);
-    return (0, _possibleConstructorReturn3.default)(this, (NumberType.__proto__ || (0, _getPrototypeOf2.default)(NumberType)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (NumberType.__proto__ || (0, _getPrototypeOf2.default)(NumberType)).call(this, props));
+
+    _this.renderNormal = _this.renderNormal.bind(_this);
+    _this.renderRange = _this.renderRange.bind(_this);
+    return _this;
   }
 
   (0, _createClass3.default)(NumberType, [{
-    key: 'render',
-    value: function render() {
+    key: 'renderNormal',
+    value: function renderNormal() {
       var _this2 = this;
 
       var _props = this.props,
@@ -72,6 +77,38 @@ var NumberType = function (_React$Component) {
           return _onChange(parseFloat(_this2.refs.input.value));
         }
       });
+    }
+  }, {
+    key: 'renderRange',
+    value: function renderRange() {
+      var _this3 = this;
+
+      var _props2 = this.props,
+          knob = _props2.knob,
+          _onChange2 = _props2.onChange;
+
+
+      return _react2.default.createElement('input', {
+        id: knob.name,
+        ref: 'input',
+        style: styles,
+        value: knob.value,
+        type: 'range',
+        min: knob.min,
+        max: knob.max,
+        step: knob.step,
+        onChange: function onChange() {
+          return _onChange2(parseFloat(_this3.refs.input.value));
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var knob = this.props.knob;
+
+
+      return knob.range ? this.renderRange() : this.renderNormal();
     }
   }]);
   return NumberType;
