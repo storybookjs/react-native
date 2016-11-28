@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.33.0
+28-November-2016
+
+Completely avoid re-rendering the preview iframe. [PR631](https://github.com/storybooks/react-storybook/pull/631)
+
 ### v2.32.2
 28-November-2016
 
