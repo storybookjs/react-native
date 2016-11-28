@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.32.2
+28-November-2016
+
+Update postmsg channel module version [PR627](https://github.com/storybooks/react-storybook/pull/627)
+
 ### v2.32.1
 22-November-2016
 
