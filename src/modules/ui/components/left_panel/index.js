@@ -11,7 +11,7 @@ const scrollStyle = {
 };
 
 const mainStyle = {
-  padding: 20,
+  padding: '10px 0 10px 10px',
 };
 
 const storyProps = ['stories', 'selectedKind', 'selectedStory', 'onSelectStory'];
