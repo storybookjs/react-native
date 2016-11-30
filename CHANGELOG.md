@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.9.0
+30-Nov-2016
+
+Some design tweaks to the UI. [PR64](https://github.com/storybooks/storybook-ui/pull/64)
+
 ### v3.8.0
 16-Nov-2016
 
