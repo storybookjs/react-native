@@ -22,12 +22,13 @@ exports.default = function (domNode, provider) {
     throw new Error('provider is not extended from the base Provider');
   }
 
-  var reducer = (0, _redux.combineReducers)((0, _extends3.default)({}, _shortcuts2.default.reducers, _api2.default.reducers, _ui2.default.reducers));
+  var defaultState = (0, _extends3.default)({}, _shortcuts2.default.defaultState, _api2.default.defaultState, _ui2.default.defaultState);
+  var clientStore = new _podda2.default(defaultState);
+  clientStore.registerAPI('toggle', function (store, key) {
+    return store.set(key, !store.get(key));
+  });
 
-  var devTools = window.devToolsExtension && window.devToolsExtension();
-  var reduxStore = (0, _redux.createStore)(reducer, devTools);
-
-  var context = (0, _context2.default)(reduxStore, domNode, provider);
+  var context = (0, _context2.default)(clientStore, domNode, provider);
   var app = (0, _mantraCore.createApp)(context);
 
   app.loadModule(_shortcuts2.default);
@@ -40,9 +41,11 @@ exports.default = function (domNode, provider) {
   app.init();
 };
 
-var _redux = require('redux');
-
 var _mantraCore = require('mantra-core');
+
+var _podda = require('podda');
+
+var _podda2 = _interopRequireDefault(_podda);
 
 var _context = require('./context.js');
 

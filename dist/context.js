@@ -4,9 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (reduxStore, domNode, provider) {
+exports.default = function (clientStore, domNode, provider) {
   return {
-    reduxStore: reduxStore,
+    clientStore: clientStore,
     domNode: domNode,
     provider: provider
   };

@@ -8,11 +8,15 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+exports.keyEventToOptions = keyEventToOptions;
+
 var _lodash = require('lodash.pick');
 
 var _lodash2 = _interopRequireDefault(_lodash);
-
-var _ = require('./');
 
 var _key_events = require('../../../libs/key_events');
 
@@ -20,13 +24,28 @@ var _actions = require('../../api/actions');
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _shortcuts = require('../configs/reducers/shortcuts');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function keyEventToOptions(currentOptions, event) {
+  switch (event) {
+    case _key_events.features.FULLSCREEN:
+      return { goFullScreen: !currentOptions.goFullScreen };
+    case _key_events.features.DOWN_PANEL:
+      return { showDownPanel: !currentOptions.showDownPanel };
+    case _key_events.features.LEFT_PANEL:
+      return { showLeftPanel: !currentOptions.showLeftPanel };
+    case _key_events.features.SEARCH:
+      return { showSearchBox: !currentOptions.showSearchBox };
+    case _key_events.features.DOWN_PANEL_IN_RIGHT:
+      return { downPanelInRight: !currentOptions.downPanelInRight };
+    default:
+      return {};
+  }
+}
 
 exports.default = {
   handleEvent: function handleEvent(context, event) {
-    var reduxStore = context.reduxStore;
+    var clientStore = context.clientStore;
 
     switch (event) {
       case _key_events.features.NEXT_STORY:
@@ -36,26 +55,25 @@ exports.default = {
         _actions2.default.api.jumpToStory(context, -1);
         break;
       default:
-        reduxStore.dispatch({
-          type: _.types.HANDLE_EVENT,
-          event: event
+        clientStore.update(function (state) {
+          var newOptions = keyEventToOptions(state.shortcutOptions, event);
+          var updatedOptions = (0, _extends3.default)({}, state.shortcutOptions, newOptions);
+
+          return {
+            shortcutOptions: updatedOptions
+          };
         });
     }
   },
-  setLayout: function setLayout(context, layout) {
-    var reduxStore = context.reduxStore;
+  setOptions: function setOptions(_ref, options) {
+    var clientStore = _ref.clientStore;
 
-    reduxStore.dispatch({
-      type: _.types.SET_LAYOUT,
-      layout: layout
-    });
-  },
-  setOptions: function setOptions(context, options) {
-    var reduxStore = context.reduxStore;
+    clientStore.update(function (state) {
+      var updatedOptions = (0, _extends3.default)({}, state.shortcutOptions, (0, _lodash2.default)(options, (0, _keys2.default)(state.shortcutOptions)));
 
-    reduxStore.dispatch({
-      type: _.types.SET_LAYOUT,
-      layout: (0, _lodash2.default)(options, (0, _keys2.default)(_shortcuts.defaultState))
+      return {
+        shortcutOptions: updatedOptions
+      };
     });
   }
 };

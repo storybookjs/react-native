@@ -5,16 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (injectDeps, _ref) {
-  var reduxStore = _ref.reduxStore,
+  var clientStore = _ref.clientStore,
       provider = _ref.provider,
       domNode = _ref.domNode;
 
   // generate preview
   var Preview = function Preview() {
-    var _reduxStore$getState = reduxStore.getState(),
-        api = _reduxStore$getState.api;
-
-    var preview = provider.renderPreview(api.selectedKind, api.selectedStory);
+    var state = clientStore.getAll();
+    var preview = provider.renderPreview(state.selectedKind, state.selectedStory);
     return preview;
   };
 

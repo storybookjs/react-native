@@ -3,15 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = getReduxLoader;
-function getReduxLoader(fn) {
+exports.default = genPoddaLoader;
+function genPoddaLoader(fn) {
   return function (props, onData, env) {
     var _env$context = env.context(),
-        reduxStore = _env$context.reduxStore;
+        clientStore = _env$context.clientStore;
 
     var processState = function processState() {
       try {
-        var state = reduxStore.getState();
+        var state = clientStore.getAll();
         var data = fn(state, props, env);
         onData(null, data);
       } catch (ex) {
@@ -20,6 +20,6 @@ function getReduxLoader(fn) {
     };
 
     processState();
-    reduxStore.subscribe(processState);
+    return clientStore.subscribe(processState);
   };
 }

@@ -3,31 +3,20 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _ = require('./');
-
 exports.default = {
   setStoryFilter: function setStoryFilter(_ref, filter) {
-    var reduxStore = _ref.reduxStore;
+    var clientStore = _ref.clientStore;
 
-    reduxStore.dispatch({
-      type: _.types.SET_STORY_FILTER,
-      filter: filter
-    });
+    clientStore.set('storyFilter', filter);
   },
   toggleShortcutsHelp: function toggleShortcutsHelp(_ref2) {
-    var reduxStore = _ref2.reduxStore;
+    var clientStore = _ref2.clientStore;
 
-    reduxStore.dispatch({
-      type: _.types.TOGGLE_SHORTCUTS_HELP
-    });
+    clientStore.toggle('showShortcutsHelp');
   },
   selectDownPanel: function selectDownPanel(_ref3, panelName) {
-    var reduxStore = _ref3.reduxStore;
+    var clientStore = _ref3.clientStore;
 
-    reduxStore.dispatch({
-      type: _.types.SELECT_BOTTOM_PANEL,
-      panelName: panelName
-    });
+    clientStore.set('selectedDownPanel', panelName);
   }
 };

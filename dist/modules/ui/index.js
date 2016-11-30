@@ -12,10 +12,6 @@ var _actions = require('./actions');
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _reducers = require('./configs/reducers');
-
-var _reducers2 = _interopRequireDefault(_reducers);
-
 var _init_panels = require('./configs/init_panels');
 
 var _init_panels2 = _interopRequireDefault(_init_panels);
@@ -33,7 +29,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   routes: _routes2.default,
   actions: _actions2.default,
-  reducers: _reducers2.default,
+  defaultState: {
+    showShortcutsHelp: false
+  },
   load: function load(c, a) {
     (0, _init_panels2.default)(c, a);
     (0, _handle_routing2.default)(c, a);

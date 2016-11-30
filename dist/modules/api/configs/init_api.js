@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (provider, reduxStore, actions) {
+exports.default = function (provider, clientStore, actions) {
   var callbacks = new _events.EventEmitter();
   var currentKind = void 0;
   var currentStory = void 0;
@@ -38,11 +38,9 @@ exports.default = function (provider, reduxStore, actions) {
       (_actions$shortcuts = actions.shortcuts).setOptions.apply(_actions$shortcuts, arguments);
     },
     getQueryParam: function getQueryParam(key) {
-      var _reduxStore$getState = reduxStore.getState(),
-          api = _reduxStore$getState.api;
-
-      if (api.customQueryParams) {
-        return api.customQueryParams[key];
+      var state = clientStore.getAll();
+      if (state.customQueryParams) {
+        return state.customQueryParams[key];
       }
       return undefined;
     }
@@ -51,20 +49,18 @@ exports.default = function (provider, reduxStore, actions) {
   provider.handleAPI(providerApi);
 
   // subscribe to redux store and trigger onStory's callback
-  reduxStore.subscribe(function () {
-    var _reduxStore$getState2 = reduxStore.getState(),
-        api = _reduxStore$getState2.api;
+  clientStore.subscribe(function () {
+    var state = clientStore.getAll();
+    if (!state.selectedKind) return;
 
-    if (!api) return;
-
-    if (api.selectedKind === currentKind && api.selectedStory === currentStory) {
+    if (state.selectedKind === currentKind && state.selectedStory === currentStory) {
       // No change in the selected story so avoid emitting 'story'
       return;
     }
 
-    currentKind = api.selectedKind;
-    currentStory = api.selectedStory;
-    callbacks.emit('story', api.selectedKind, api.selectedStory);
+    currentKind = state.selectedKind;
+    currentStory = state.selectedStory;
+    callbacks.emit('story', state.selectedKind, state.selectedStory);
     // providerApi._onStoryCallback(api.selectedKind, api.selectedStory);
   });
 };

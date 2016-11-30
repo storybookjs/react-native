@@ -13,9 +13,9 @@ var _filters = require('../libs/filters');
 
 var filters = _interopRequireWildcard(_filters);
 
-var _gen_redux_loader = require('../libs/gen_redux_loader');
+var _gen_podda_loader = require('../libs/gen_podda_loader');
 
-var _gen_redux_loader2 = _interopRequireDefault(_gen_redux_loader);
+var _gen_podda_loader2 = _interopRequireDefault(_gen_podda_loader);
 
 var _compose = require('../../../compose');
 
@@ -25,17 +25,15 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapper = exports.mapper = function mapper(_ref, props, _ref2) {
-  var api = _ref.api,
-      ui = _ref.ui;
-  var actions = _ref2.actions;
+var mapper = exports.mapper = function mapper(state, props, _ref) {
+  var actions = _ref.actions;
 
   var actionMap = actions();
-  var stories = api.stories,
-      selectedKind = api.selectedKind,
-      selectedStory = api.selectedStory,
-      options = api.options;
-  var storyFilter = ui.storyFilter;
+  var stories = state.stories,
+      selectedKind = state.selectedKind,
+      selectedStory = state.selectedStory,
+      uiOptions = state.uiOptions,
+      storyFilter = state.storyFilter;
 
 
   var data = {
@@ -48,11 +46,11 @@ var mapper = exports.mapper = function mapper(_ref, props, _ref2) {
     onStoryFilter: actionMap.ui.setStoryFilter,
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
-    name: options.name,
-    url: options.url
+    name: uiOptions.name,
+    url: uiOptions.url
   };
 
   return data;
 };
 
-exports.default = (0, _compose2.default)((0, _gen_redux_loader2.default)(mapper))(_left_panel2.default);
+exports.default = (0, _compose2.default)((0, _gen_podda_loader2.default)(mapper))(_left_panel2.default);
