@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.7.1
+01-December-2016
+
+Update style changes in the panel. [PR79](https://github.com/storybooks/storybook-addon-knobs/pull/79)
+
 ### v1.7.0
 25-November-2016
 
