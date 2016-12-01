@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.33.1
+01-December-2016
+
+Update Typescript definition file for global addDecorator. [PR634](https://github.com/storybooks/react-storybook/pull/634)
+
 ### v2.33.0
 28-November-2016
 
