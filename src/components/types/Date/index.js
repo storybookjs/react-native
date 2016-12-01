@@ -6,12 +6,14 @@ import style from './styles';
 const customStyle = `
   .rdt input {
     outline: 0;
-    width: 300px;
+    width: 100%;
     border: 1px solid #f7f4f4;
-    borderRadius: 2px;
-    fontSize: 11px;
+    border-radius: 2px;
+    font-size: 11px;
     padding: 5px;
     color: #555;
+    display: table-cell;
+    box-sizing: border-box;
   }
 `;
 

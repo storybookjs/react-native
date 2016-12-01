@@ -3,17 +3,15 @@ import { SketchPicker } from 'react-color';
 
 const styles = {
   swatch: {
-    padding: '5px',
     background: '#fff',
     borderRadius: '1px',
     border: '1px solid rgb(247, 244, 244)',
     display: 'inline-block',
     cursor: 'pointer',
+    width: '100%',
   },
   popover: {
     position: 'absolute',
-    top: 0,
-    right: 0,
     zIndex: '2',
   },
   cover: {
@@ -60,9 +58,10 @@ class ColorType extends React.Component {
   render() {
     const { knob, onChange } = this.props;
     const colorStyle = {
-      width: '300px',
-      height: '14px',
+      width: 'auto',
+      height: '20px',
       borderRadius: '2px',
+      margin: 5,
       background: knob.value,
     };
     return (

@@ -49,7 +49,7 @@
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
     "typescript": "^2.0.6",
-    "typescript-definition-tester": "frederickfogerty/typescript-definition-tester#528375132cfbfd58affd401f66c02ef54813f3ce"
+    "typescript-definition-tester": "^0.0.5"
   },
   "peerDependencies": {
     "@kadira/storybook-addons": "^1.3.0",

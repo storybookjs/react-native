@@ -47,9 +47,12 @@ var _types2 = _interopRequireDefault(_types);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = {
+  panelWrapper: {
+    width: '100%'
+  },
   panel: {
     padding: '5px',
-    width: 380,
+    width: 'auto',
     position: 'relative'
   },
   noKnobs: {
@@ -177,7 +180,7 @@ var Panel = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { style: styles.panelWrapper },
         _react2.default.createElement(
           'div',
           { style: styles.panel },

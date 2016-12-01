@@ -58,7 +58,7 @@ var stylesheet = {
     paddingRight: 5,
     paddingTop: 7,
     textAlign: 'right',
-    width: 60,
+    width: 80,
     fontSize: 10,
     color: 'rgb(68, 68, 68)',
     textTransform: 'uppercase',

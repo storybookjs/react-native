@@ -3,9 +3,12 @@ import PropForm from './PropForm';
 import Types from './types';
 
 const styles = {
+  panelWrapper: {
+    width: '100%',
+  },
   panel: {
     padding: '5px',
-    width: 380,
+    width: 'auto',
     position: 'relative',
   },
   noKnobs: {
@@ -110,7 +113,7 @@ export default class Panel extends React.Component {
     }
 
     return (
-      <div>
+      <div style={styles.panelWrapper}>
         <div style={styles.panel}>
           <PropForm knobs={knobsArray} onFieldChange={this.handleChange} />
         </div>

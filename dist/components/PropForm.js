@@ -40,7 +40,6 @@ var stylesheet = {
     display: 'table',
     boxSizing: 'border-box',
     width: '100%',
-    maxWidth: '500px',
     borderCollapse: 'separate',
     borderSpacing: '5px'
   }

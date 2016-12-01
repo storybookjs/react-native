@@ -42,7 +42,7 @@ var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var customStyle = '\n  .rdt input {\n    outline: 0;\n    width: 300px;\n    border: 1px solid #f7f4f4;\n    borderRadius: 2px;\n    fontSize: 11px;\n    padding: 5px;\n    color: #555;\n  }\n';
+var customStyle = '\n  .rdt input {\n    outline: 0;\n    width: 100%;\n    border: 1px solid #f7f4f4;\n    border-radius: 2px;\n    font-size: 11px;\n    padding: 5px;\n    color: #555;\n    display: table-cell;\n    box-sizing: border-box;\n  }\n';
 
 (0, _insertCss2.default)(_styles2.default);
 (0, _insertCss2.default)(customStyle);
