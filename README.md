@@ -8,7 +8,7 @@ This [Storybook](https://getstorybook.io) addon allows you to write notes for yo
 **note: addons require @kadira/storybook 2.x or greater*
 
 ```sh
-npm i --save @kadira/storybook-addon-notes
+npm i --save-dev @kadira/storybook-addon-notes
 ```
 
 Then create a file called `addons.js` in your storybook config.
