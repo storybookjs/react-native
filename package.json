@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
-    "markdown-to-react-components": "^0.2.2",
+    "markdown-to-react-components": "^0.2.1",
     "react-addons-create-fragment": "^15.3.2"
   },
   "main": "dist/index.js",
