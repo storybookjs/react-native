@@ -50,8 +50,8 @@ export default {
     }
 
     const mtrcConf = { ...defaultMtrcConf };
-    if (_options && _options.mtrcConf) {
-      Object.assign(mtrcConf, _options.mtrcConf);
+    if (options && options.mtrcConf) {
+      Object.assign(mtrcConf, options.mtrcConf);
     }
 
     this.add(storyName, (context) => {
