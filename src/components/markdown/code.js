@@ -1,6 +1,21 @@
 import React from 'react';
 
 export class Code extends React.Component {
+
+  componentDidMount() {
+    this.highlight()
+  }
+
+  componentDidUpdate() {
+    this.highlight()
+  }
+
+  highlight() {
+    if (typeof Prism !== 'undefined') {
+      Prism.highlightAll()
+    }
+  }
+
   render() {
     const codeStyle = {
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
@@ -15,9 +30,11 @@ export class Code extends React.Component {
       overflowX: 'scroll',
     };
 
+    const className = this.props.language ? `language-${this.props.language}` : '';
+
     return (
-      <pre style={preStyle}>
-        <code style={codeStyle}>
+      <pre style={preStyle} className={className}>
+        <code style={codeStyle} className={className}>
           { this.props.code }
         </code>
       </pre>
