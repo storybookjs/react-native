@@ -73,8 +73,8 @@ exports.default = {
     }
 
     var mtrcConf = (0, _extends3.default)({}, defaultMtrcConf);
-    if (_options && _options.mtrcConf) {
-      (0, _assign2.default)(mtrcConf, _options.mtrcConf);
+    if (options && options.mtrcConf) {
+      (0, _assign2.default)(mtrcConf, options.mtrcConf);
     }
 
     this.add(storyName, function (context) {
