@@ -24,3 +24,15 @@ export function getEnvConfig(program, configEnv) {
     }
   });
 }
+
+export function getMiddleware(configDir) {
+  const middlewarePath = path.resolve(configDir, 'middleware.js');
+  if (fs.existsSync(middlewarePath)) {
+    let middlewareModule = require(middlewarePath); // eslint-disable-line global-require
+    if (middlewareModule.__esModule) {
+      middlewareModule = middlewareModule.default;
+    }
+    return middlewareModule;
+  }
+  return function () {};
+}
