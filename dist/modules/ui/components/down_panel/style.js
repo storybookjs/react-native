@@ -31,7 +31,8 @@ exports.default = {
     background: 'white',
     borderRadius: 4,
     border: 'solid 1px rgb(236, 236, 236)',
-    marginTop: 5
+    marginTop: 5,
+    width: '100%'
   },
 
   tabbar: {
