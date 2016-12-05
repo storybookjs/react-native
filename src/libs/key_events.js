@@ -16,11 +16,21 @@ export function isModifierPressed(e) {
   return (e.ctrlKey || e.keyCode === 91 || e.metaKey) && e.shiftKey;
 }
 
+function focusInInput(e) {
+  return /input|textarea/i.test(e.target.tagName) ||
+    e.target.getAttribute('contenteditable') !== null;
+}
+
 export default function handle(e) {
   if (e.keyCode === keycode('escape')) {
     // We don't need to preventDefault escape.
     // Just getting the event is enough for us.
     return features.ESCAPE;
+  }
+  if (focusInInput(e)) {
+    // if we're focused in an element that accepts input,
+    // then we shouldn't perform a shortcut action
+    return false;
   }
 
   if (!isModifierPressed(e)) return false;
