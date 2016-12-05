@@ -9,7 +9,7 @@ import { version } from '../../package.json';
 // [ 'static/manager.c6e6350b6eb01fff8bad.bundle.js',
 //   'static/manager.c6e6350b6eb01fff8bad.bundle.js.map' ]
 const managerUrlsFromAssets = (assets) => {
-  if (!assets) {
+  if (!assets || !assets.manager) {
     return {
       js: 'static/manager.bundle.js',
     };
