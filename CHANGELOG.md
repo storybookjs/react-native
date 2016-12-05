@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.10.0
+05-Dec-2016
+
+Storybook keyboard shortcuts are disabled when the user is focused into a textarea, input or similar elements. [PR65](https://github.com/storybooks/storybook-ui/pull/65)
+
 ### v3.9.0
 30-Nov-2016
 
