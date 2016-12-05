@@ -30,7 +30,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // [ 'static/manager.c6e6350b6eb01fff8bad.bundle.js',
 //   'static/manager.c6e6350b6eb01fff8bad.bundle.js.map' ]
 var managerUrlsFromAssets = function managerUrlsFromAssets(assets) {
-  if (!assets) {
+  if (!assets || !assets.manager) {
     return {
       js: 'static/manager.bundle.js'
     };

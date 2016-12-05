@@ -11,6 +11,7 @@ var _keys2 = _interopRequireDefault(_keys);
 exports.parseList = parseList;
 exports.getHeadHtml = getHeadHtml;
 exports.getEnvConfig = getEnvConfig;
+exports.getMiddleware = getMiddleware;
 
 var _path = require('path');
 
@@ -44,4 +45,16 @@ function getEnvConfig(program, configEnv) {
       program[fieldName] = envVarValue; // eslint-disable-line no-param-reassign
     }
   });
+}
+
+function getMiddleware(configDir) {
+  var middlewarePath = _path2.default.resolve(configDir, 'middleware.js');
+  if (_fs2.default.existsSync(middlewarePath)) {
+    var middlewareModule = require(middlewarePath); // eslint-disable-line global-require
+    if (middlewareModule.__esModule) {
+      middlewareModule = middlewareModule.default;
+    }
+    return middlewareModule;
+  }
+  return function () {};
 }
