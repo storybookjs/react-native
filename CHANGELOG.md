@@ -1,5 +1,10 @@
 ## Changelog
 
+### v2.34.0
+05-December-2016
+
+Open the express router for developers (middleware.js file). [PR435](https://github.com/storybooks/react-storybook/pull/435)
+
 ### v2.33.1
 01-December-2016
 
