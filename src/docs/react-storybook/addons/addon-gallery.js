@@ -69,5 +69,9 @@ export default {
 
     With this addon, you can test your storybooks with a different text-direction. It is very useful if you are working on components that have to work both in LTR as well as in RTL languages.
     
+    ### [Props Combinations](https://github.com/evgenykochetkov/react-storybook-addon-props-combinations)
+
+    Given possible values for each prop, renders your component with all combinations of prop values. Useful for finding edge cases or just seeing all component states at once.
+
   `
 };
