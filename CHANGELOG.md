@@ -1,5 +1,10 @@
 ## Change Log
 
+### v3.10.1
+07-Dec-2016
+
+Fix a react warning about missing `contentLabel` property [PR66](https://github.com/storybooks/storybook-ui/pull/66)
+
 ### v3.10.0
 05-Dec-2016
 
