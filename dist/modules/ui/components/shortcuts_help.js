@@ -139,7 +139,8 @@ var ShortcutsHelp = exports.ShortcutsHelp = function ShortcutsHelp(_ref3) {
     {
       isOpen: isOpen,
       onRequestClose: onClose,
-      style: modalStyles
+      style: modalStyles,
+      contentLabel: 'Shortcuts'
     },
     _react2.default.createElement(Shortcuts, { appShortcuts: getShortcuts(platform) })
   );
