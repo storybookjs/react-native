@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.2.0
+
+* Support React Native v0.39 [PR #114](https://github.com/kadirahq/react-native-storybook/pull/114).
+* Support custom express middleware [PR #115](https://github.com/kadirahq/react-native-storybook/pull/115).
+
 ## v2.1.7
 
 * Support React Native v0.37 [PR #112](https://github.com/kadirahq/react-native-storybook/pull/112).
