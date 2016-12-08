@@ -13,6 +13,7 @@
   "bin": {
     "storyshots": "./bin/run_storyshots.js"
   },
+  "main": "dist/index.js",
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
     "lint": "eslint src",
@@ -69,6 +70,7 @@
     "jsdom": "^9.5.0",
     "promptly": "^2.1.0",
     "react-test-renderer": "^15.3.1",
+    "read-pkg-up": "^2.0.0",
     "require-hijack": "^1.2.1"
   }
 }

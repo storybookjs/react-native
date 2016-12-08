@@ -64,7 +64,7 @@ require(path.resolve(polyfillsPath));
 
 // set userAgent so storybook knows we're storyshots
 if(!global.navigator) {
-  global.navigator = {}
+  global.navigator = {};
 };
 global.navigator.userAgent = 'storyshots';
 
