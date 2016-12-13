@@ -5,7 +5,7 @@ export class P extends React.Component {
   render() {
     const style = {
       ...baseFonts,
-      fontSize: 15,
+      fontSize: '15px',
     };
     return <p style={style}>{this.props.children}</p>;
   }
@@ -15,7 +15,7 @@ export class LI extends React.Component {
   render() {
     const style = {
       ...baseFonts,
-      fontSize: 15,
+      fontSize: '15px',
     };
     return <li style={style}>{this.props.children}</li>;
   }
@@ -25,7 +25,7 @@ export class UL extends React.Component {
   render() {
     const style = {
       ...baseFonts,
-      fontSize: 15,
+      fontSize: '15px',
     };
 
     return <ul style={style}>{this.props.children}</ul>;
