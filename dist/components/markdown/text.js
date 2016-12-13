@@ -49,7 +49,7 @@ var P = exports.P = function (_React$Component) {
     key: 'render',
     value: function render() {
       var style = (0, _extends3.default)({}, _theme.baseFonts, {
-        fontSize: 15
+        fontSize: '15px'
       });
       return _react2.default.createElement(
         'p',
@@ -73,7 +73,7 @@ var LI = exports.LI = function (_React$Component2) {
     key: 'render',
     value: function render() {
       var style = (0, _extends3.default)({}, _theme.baseFonts, {
-        fontSize: 15
+        fontSize: '15px'
       });
       return _react2.default.createElement(
         'li',
@@ -97,7 +97,7 @@ var UL = exports.UL = function (_React$Component3) {
     key: 'render',
     value: function render() {
       var style = (0, _extends3.default)({}, _theme.baseFonts, {
-        fontSize: 15
+        fontSize: '15px'
       });
 
       return _react2.default.createElement(

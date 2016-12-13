@@ -54,7 +54,7 @@ export default {
       Object.assign(mtrcConf, options.mtrcConf);
     }
 
-    this.add(storyName, (context) => {
+    return this.add(storyName, (context) => {
       const props = {
         info,
         context,

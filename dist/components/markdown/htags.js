@@ -53,7 +53,7 @@ var H1 = exports.H1 = function (_React$Component) {
         fontWeight: 600,
         margin: 0,
         padding: 0,
-        fontSize: '40'
+        fontSize: '40px'
       });
 
       return _react2.default.createElement(
@@ -81,7 +81,7 @@ var H2 = exports.H2 = function (_React$Component2) {
         fontWeight: 600,
         margin: 0,
         padding: 0,
-        fontSize: '30'
+        fontSize: '30px'
       });
 
       return _react2.default.createElement(
@@ -109,7 +109,7 @@ var H3 = exports.H3 = function (_React$Component3) {
         fontWeight: 600,
         margin: 0,
         padding: 0,
-        fontSize: '22',
+        fontSize: '22px',
         textTransform: 'uppercase'
       });
 
@@ -138,7 +138,7 @@ var H4 = exports.H4 = function (_React$Component4) {
         fontWeight: 600,
         margin: 0,
         padding: 0,
-        fontSize: '20'
+        fontSize: '20px'
       });
 
       return _react2.default.createElement(
@@ -166,7 +166,7 @@ var H5 = exports.H5 = function (_React$Component5) {
         fontWeight: 600,
         margin: 0,
         padding: 0,
-        fontSize: '18'
+        fontSize: '18px'
       });
 
       return _react2.default.createElement(
@@ -194,7 +194,7 @@ var H6 = exports.H6 = function (_React$Component6) {
         fontWeight: 400,
         margin: 0,
         padding: 0,
-        fontSize: '18'
+        fontSize: '18px'
       });
 
       return _react2.default.createElement(

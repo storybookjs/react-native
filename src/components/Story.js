@@ -9,7 +9,7 @@ const stylesheet = {
   link: {
     base: {
       fontFamily: 'sans-serif',
-      fontSize: 12,
+      fontSize: '12px',
       display: 'block',
       position: 'fixed',
       textDecoration: 'none',
@@ -42,7 +42,7 @@ const stylesheet = {
     ...baseFonts,
     fontWeight: 300,
     lineHeight: 1.45,
-    fontSize: 15,
+    fontSize: '15px',
   },
   infoContent: {
     marginBottom: 0,
@@ -51,13 +51,13 @@ const stylesheet = {
     h1: {
       margin: '20px 0 0 0',
       padding: 0,
-      fontSize: 35,
+      fontSize: '35px',
     },
     h2: {
       margin: '0 0 10px 0',
       padding: 0,
       fontWeight: 400,
-      fontSize: 22,
+      fontSize: '22px',
     },
     body: {
       borderBottom: '1px solid #eee',
@@ -68,7 +68,7 @@ const stylesheet = {
     h1: {
       margin: '20px 0 0 0',
       padding: '0 0 5px 0',
-      fontSize: 25,
+      fontSize: '25px',
       borderBottom: '1px solid #EEE',
     },
   },
