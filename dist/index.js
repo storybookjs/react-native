@@ -77,7 +77,7 @@ exports.default = {
       (0, _assign2.default)(mtrcConf, options.mtrcConf);
     }
 
-    this.add(storyName, function (context) {
+    return this.add(storyName, function (context) {
       var props = {
         info: info,
         context: context,
