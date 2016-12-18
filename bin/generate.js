@@ -4,13 +4,14 @@
 
 var updateNotifier = require('update-notifier');
 var program = require('commander');
+var chalk = require('chalk');
 var detect = require('../lib/detect');
+var hasYarn = require('../lib/has_yarn')
 var types = require('../lib/project_types');
 var commandLog = require('../lib/helpers').commandLog;
 var codeLog = require('../lib/helpers').codeLog;
 var paddedLog = require('../lib/helpers').paddedLog;
 var installDeps = require('../lib/helpers').installDeps;
-var chalk = require('chalk');
 var logger = console;
 
 var pkg = require('../package.json');
@@ -18,14 +19,14 @@ var pkg = require('../package.json');
 program
   .version(pkg.version)
   .option('-f --force', 'Forcely add storybook')
-  .option('-Y --use-yarn', 'Use yarn to install deps')
+  .option('-N --use-npm', 'Use npm to install deps')
   .parse(process.argv);
 
 var welcomeMessage =
   'getstorybook - the simplest way to add a storybook to your project.';
 logger.log(chalk.inverse('\n ' + welcomeMessage + ' \n'));
 
-var useYarn = Boolean(program.useYarn) || /\.yarn-cache/.test(__dirname);
+var useYarn = Boolean(program.useNpm !== true) && hasYarn()
 
 var npmOptions = {
   useYarn: useYarn

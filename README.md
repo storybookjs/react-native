@@ -20,25 +20,17 @@ That's all you've to do.
 
 ---
 
-## Yarn support
+## [Yarn](https://github.com/yarnpkg/yarn) support
 
-getstorybook also supports yarn. If you are using yarn, this is how to use it:
+`getstorybook` also supports yarn.
+If you have installed yarn in your system, it'll detect it and use `yarn` instead of `npm`.
 
-```
-yarn global add getstorybook
-getstorybook --use-yarn
-```
-
-`getstorybook` will identify it's installed with yarn and it'll use yarn to install deps.
-
-> This is the way, if you wanna use yarn for all of your storybook projects.
-
-If that's not the case, you can do this:
+If you don't want to use `npm` always you can use the `--use-npm` option like this:
 
 ```
-npm i -g getstorybook
-getstorybook --use-yarn
-
+getstorybook --use-npm
 ```
+
+
 
 For more information, refer [React Storybook](https://github.com/kadirahq/react-storybook) documentation.
