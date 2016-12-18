@@ -55,7 +55,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _global = global,
     navigator = _global.navigator; /* global window */
 
-var isBrowser = navigator && navigator.userAgent !== 'storyshots';
+var isBrowser = navigator && navigator.userAgent !== 'storyshots' && !navigator.userAgent.includes('Node.js');
 
 var storyStore = new _story_store2.default();
 var reduxStore = (0, _redux.createStore)(_reducer2.default);

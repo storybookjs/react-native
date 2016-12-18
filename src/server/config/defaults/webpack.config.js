@@ -6,6 +6,21 @@ module.exports = (storybookBaseConfig) => {
   const newConfig = { ...storybookBaseConfig };
   newConfig.module.loaders = [
     ...storybookBaseConfig.module.loaders,
+    // This loads all other assets using the file-loader except for
+    // the excluded extentions. Because they have their own loaders.
+    {
+      include: includePaths,
+      exclude: [
+        /\.html$/,
+        /\.(js|jsx)$/,
+        /\.css$/,
+        /\.json$/,
+      ],
+      loader: require.resolve('file-loader'),
+      query: {
+        name: 'static/media/[name].[hash:8].[ext]',
+      },
+    },
     {
       test: /\.css?$/,
       include: includePaths,
@@ -19,23 +34,6 @@ module.exports = (storybookBaseConfig) => {
       test: /\.json$/,
       include: includePaths,
       loader: require.resolve('json-loader'),
-    },
-    {
-      test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      include: includePaths,
-      loader: require.resolve('file-loader'),
-      query: {
-        name: 'static/media/[name].[hash:8].[ext]',
-      },
-    },
-    {
-      test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-      include: includePaths,
-      loader: require.resolve('url-loader'),
-      query: {
-        limit: 10000,
-        name: 'static/media/[name].[hash:8].[ext]',
-      },
     },
   ];
 

@@ -19,7 +19,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Add a default custom config which is similar to what React Create App does.
 module.exports = function (storybookBaseConfig) {
   var newConfig = (0, _extends3.default)({}, storybookBaseConfig);
-  newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.loaders), [{
+  newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.loaders), [
+  // This loads all other assets using the file-loader except for
+  // the excluded extentions. Because they have their own loaders.
+  {
+    include: _utils.includePaths,
+    exclude: [/\.html$/, /\.(js|jsx)$/, /\.css$/, /\.json$/],
+    loader: require.resolve('file-loader'),
+    query: {
+      name: 'static/media/[name].[hash:8].[ext]'
+    }
+  }, {
     test: /\.css?$/,
     include: _utils.includePaths,
     loaders: [require.resolve('style-loader'), require.resolve('css-loader') + '?importLoaders=1', require.resolve('postcss-loader')]
@@ -27,21 +37,6 @@ module.exports = function (storybookBaseConfig) {
     test: /\.json$/,
     include: _utils.includePaths,
     loader: require.resolve('json-loader')
-  }, {
-    test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-    include: _utils.includePaths,
-    loader: require.resolve('file-loader'),
-    query: {
-      name: 'static/media/[name].[hash:8].[ext]'
-    }
-  }, {
-    test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-    include: _utils.includePaths,
-    loader: require.resolve('url-loader'),
-    query: {
-      limit: 10000,
-      name: 'static/media/[name].[hash:8].[ext]'
-    }
   }]);
 
   newConfig.postcss = function () {
