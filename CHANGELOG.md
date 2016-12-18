@@ -1,5 +1,10 @@
 # Changelog
 
+### v1.7.0
+18-Dec-2016
+
+Use a non-hacky way to detect yarn. [PR24](https://github.com/storybooks/getstorybook/pull/24)
+
 ### v1.6.1
 18-Oct-2016
 
