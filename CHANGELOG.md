@@ -1,5 +1,12 @@
 ## Changelog
 
+### v2.35.0
+18-December-2016
+
+* Using file-loader to load all the extensions [PR653](https://github.com/storybooks/react-storybook/pull/653)
+* Update css-loader dependency [PR648](https://github.com/storybooks/react-storybook/pull/648)
+* Check if stories are loaded from Jest [PR644](https://github.com/storybooks/react-storybook/pull/644)
+
 ### v2.34.0
 05-December-2016
 
