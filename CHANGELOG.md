@@ -1,5 +1,9 @@
 ## Changelog
 
+### v2.35.1
+
+* Revert [PR653](https://github.com/storybooks/react-storybook/pull/653) where it's causing HMR to not working properly.
+
 ### v2.35.0
 18-December-2016
 
