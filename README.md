@@ -25,7 +25,39 @@ Then add the following NPM module into your app.
 npm i -D @kadira/storyshots
 ```
 
-Then, add a NPM script as follows:
+## Running inside jest
+
+If you are using jest you can use storyshots within jest.
+
+Create a file named `stories.test.js` inside your __tests__ directory. Or use a test file you already have of any name. Add,
+
+```js
+import testStoryshots from '@kadira/storyshots';
+testStoryshots();
+```
+
+`testStoryshots()` comes with sensible defaults but could be configured passing a object with config.
+
+### Custom storybook configuration location
+
+`testStoryshots` by default looks for the storybook config file in `./.storybook/config.js`. If your config file is in a different location pass it as an option named `storiesPath`
+
+```js
+const options = {
+  storiesPath: `/custom/storybook/config.js`
+}
+testStoryshots(options);
+```
+
+`testStoryshots` requires the module at `storiesPath`. So it could be any module that `require`s all the stories.
+
+### Using with React Native Storybook
+
+`testStoryshots` works with React Native as well. `storiesPath` option you pass should be the location of a module that `require`s all stories. The default for react native is `./storybook/stories`.
+
+## Running independently
+
+Add a NPM script as follows:
 
 ```js
 "scripts": {
