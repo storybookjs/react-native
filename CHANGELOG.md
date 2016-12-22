@@ -3,7 +3,7 @@
 ### v2.1.0
 8-November-2016
 
-Default loaders support markdown file [PR41](https://github.com/kadirahq/storyshots/pull/41)
+Default loaders support markdown file [PR56](https://github.com/kadirahq/storyshots/pull/56)
 
 ### v2.0.2
 7-November-2016
