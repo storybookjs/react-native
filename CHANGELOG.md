@@ -1,5 +1,15 @@
 # ChangeLog
 
+### v3.0.0
+22-December-2016
+
+This is a brand new version of StoryShots where allows you to use it inside Jest. Earlier we have also bundled a CLI tool which uses some of the internal modules used by Jest.
+
+But it seems like we are building an our own Jest with that. That's why we decided to go with this approach.
+
+If you still like to use our CLI version, use this [version](https://github.com/storybooks/storyshots/tree/v2.1.0).
+(It's working but we no longer maintain it.)
+
 ### v2.1.0
 8-November-2016
 

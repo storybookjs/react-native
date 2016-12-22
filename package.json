@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storyshots",
+  "name": "storyshots",
   "version": "3.0.0",
   "description": "StoryShots - Jest Snapshot Testing for React Storybook.",
   "repository": {
