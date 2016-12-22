@@ -5,7 +5,7 @@ import readPkgUp from 'read-pkg-up'
 const { describe, it, expect } = global
 
 let storybook
-let defaultStoriesPath
+let configPath
 
 const pkg = readPkgUp.sync().pkg
 const isStorybook =
@@ -18,18 +18,19 @@ const isRNStorybook =
 export default function testStorySnapshots (options = {}) {
   if (isStorybook) {
     storybook = require.requireActual('@kadira/storybook')
-    defaultStoriesPath = path.resolve('.storybook/config.js')
+    const configDirPath = options.configPath || path.resolve('.storybook')
+    configPath = path.join(configDirPath, 'config.js')
   } else if (isRNStorybook) {
     storybook = require.requireActual('@kadira/react-native-storybook')
-    defaultStoriesPath = path.resolve('storybook/stories')
+    configPath = options.configPath || path.resolve('storybook')
   } else {
     throw new Error('\'storyshots\' is intended only to be used with react storybook or react native storybook')
   }
 
   try {
-    require.requireActual(options.storiesPath || defaultStoriesPath)
+    require.requireActual(configPath)
   } catch (e) {
-    throw new Error("Could not load stories. Check 'storiesPath' option")
+    throw new Error(`Could not load stories from ${configPath}. Check 'configPath' option`)
   }
 
   if (typeof describe !== 'function') {
