@@ -11,9 +11,7 @@
   "scripts": {
     "prepublish": "babel ./src --out-dir ./dist",
     "lint": "standard",
-    "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
-    "test": "npm run lint",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js"
+    "test": "npm run lint"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
