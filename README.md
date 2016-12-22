@@ -29,7 +29,7 @@ npm i -D storyshots
 Usually, you might already have completed this step. If not, here are some resources for you.
 
 * If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
-* Otherwise check this EggHead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
+* Otherwise check this Egghead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
 
 ## Configure Storyshots
 
