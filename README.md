@@ -2,7 +2,7 @@
 
 Jest Snapshot Testing for [React Storybook](https://github.com/kadirahq/react-storybook)
 
-![StoryShots In Action](docs/screenshot.png)
+![StoryShots In Action](docs/storyshots-fail.png)
 
 With StoryShots, you could use your existing Storybook stories as the input for Jest Snapshot Testing.
 
