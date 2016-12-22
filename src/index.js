@@ -18,11 +18,11 @@ const isRNStorybook =
 export default function testStorySnapshots (options = {}) {
   if (isStorybook) {
     storybook = require.requireActual('@kadira/storybook')
-    const configDirPath = options.configPath || path.resolve('.storybook')
+    const configDirPath = path.resolve(options.configPath || '.storybook')
     configPath = path.join(configDirPath, 'config.js')
   } else if (isRNStorybook) {
     storybook = require.requireActual('@kadira/react-native-storybook')
-    configPath = options.configPath || path.resolve('storybook')
+    configPath = path.resolve(options.configPath || 'storybook')
   } else {
     throw new Error('\'storyshots\' is intended only to be used with react storybook or react native storybook')
   }
