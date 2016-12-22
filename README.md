@@ -1,6 +1,7 @@
 # StoryShots [![CircleCI](https://circleci.com/gh/storybooks/storyshots.svg?style=shield)](https://circleci.com/gh/storybooks/storyshots)
 
-Jest Snapshot Testing for [React Storybook](https://github.com/kadirahq/react-storybook)
+Jest Snapshot Testing for [Storybook](https://getstorybook.io/).
+(Supports both [React](https://github.com/storybooks/react-storybook) and [React Native](https://github.com/storybooks/react-native-storybook) Storybook)
 
 ![StoryShots In Action](docs/storyshots-fail.png)
 
