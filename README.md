@@ -6,7 +6,7 @@ Jest Snapshot Testing for [React Storybook](https://github.com/kadirahq/react-st
 
 With StoryShots, you could use your existing Storybook stories as the input for Jest Snapshot Testing.
 
-> Now, we don't ship a CLI tool for storyshots. Check version [2.x](#) for that.
+> Now, we don't ship a CLI tool for storyshots. Check version [2.x](https://github.com/storybooks/storyshots/tree/v2.1.0) for that.
 
 ## Getting Started
 
