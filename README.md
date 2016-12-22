@@ -2,7 +2,7 @@
 
 Jest Snapshot Testing for [React Storybook](https://github.com/kadirahq/react-storybook)
 
-![StoryShots in use](#)
+![StoryShots In Action](docs/screenshot.png)
 
 With StoryShots, you could use your existing Storybook stories as the input for Jest Snapshot Testing.
 
@@ -44,7 +44,7 @@ That's all.
 
 Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
 
-![Storyshots in Action](#)
+![](docs/storyshots.png)
 
 ## Options
 
