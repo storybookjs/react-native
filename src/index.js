@@ -17,22 +17,17 @@ const isRNStorybook =
 
 export default function testStorySnapshots(options = {}) {
   if (isStorybook) {
-    // eslint-disable-next-line  global-require, import/no-unresolved
-    storybook = require('@kadira/storybook');
-
+    storybook = require.requireActual('@kadira/storybook');
     defaultStoriesPath = path.resolve('.storybook/config.js');
   } else if (isRNStorybook) {
-    // eslint-disable-next-line  global-require, import/no-unresolved
-    storybook = require('@kadira/react-native-storybook');
-
+    storybook = require.requireActual('@kadira/react-native-storybook');
     defaultStoriesPath = path.resolve('storybook/stories');
   } else {
     throw new Error('\'storyshots\' is intended only to be used with react storybook or react native storybook');
   }
 
   try {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    require(options.storiesPath || defaultStoriesPath);
+    require.requireActual(options.storiesPath || defaultStoriesPath);
   } catch (e) {
     throw new Error("Could not load stories. Check 'storiesPath' option");
   }
@@ -41,7 +36,7 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('\'testStorySnapshots\' is intended only to be used inside jest');
   }
 
-  const suit = options.suit || 'Storybook Snapshots';
+  const suit = options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
   for (const group of stories) {
