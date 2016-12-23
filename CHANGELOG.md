@@ -1,5 +1,10 @@
 # ChangeLog
 
+### v3.1.0
+24-December-2016
+
+Add support for require.context. [PR67](https://github.com/storybooks/storyshots/pull/67)
+
 ### v3.0.0
 22-December-2016
 
