@@ -9,7 +9,7 @@ export default {
     This is the core addon API. This is how to get the addon API:
 
     ~~~js
-    import addonAPI from '@kadira/kadira/storybook-addons';
+    import addonAPI from '@kadira/storybook-addons';
     ~~~
 
     Have a look at the API methods for more details:
