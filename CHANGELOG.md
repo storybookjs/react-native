@@ -1,6 +1,11 @@
 # ChangeLog
 
 ### v3.1.0
+27-December-2016
+
+Pass storybook context to render function of stories. [PR69](https://github.com/storybooks/storyshots/pull/69)
+
+### v3.1.0
 24-December-2016
 
 Add support for require.context. [PR67](https://github.com/storybooks/storyshots/pull/67)
