@@ -1,6 +1,11 @@
 # ChangeLog
 
-### v3.1.0
+### v3.1.1
+30-December-2016
+
+Add support to filter stories by story name using a regexp. [PR70](https://github.com/storybooks/storyshots/pull/70)
+
+### v3.1.1
 27-December-2016
 
 Pass storybook context to render function of stories. [PR69](https://github.com/storybooks/storyshots/pull/69)
