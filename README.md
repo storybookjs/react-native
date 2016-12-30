@@ -49,7 +49,7 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 
 ## Options
 
-### configPath
+### `configPath`
 
 By default Storyshots assume the default config directory path for your project as below:
 
@@ -64,7 +64,7 @@ initStoryshots({
 });
 ```
 
-### suit
+### `suit`
 
 By default, we group stories inside Jest test suit called "StoryShots". You could change it like this:
 
@@ -73,3 +73,15 @@ initStoryshots({
   suit: 'MyStoryShots'
 });
 ```
+
+### `storyRegex`
+
+If you'd like to only run a subset of the stories for your snapshot tests: 
+
+```js
+initStoryshots({
+  storyRegex: /buttons/
+});
+```
+
+Here is an example of [a regex](https://regex101.com/r/vkBaAt/2) which does not pass if `"Relay"` is in the name: `/^((?!(r|R)elay).)*$/`.
