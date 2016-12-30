@@ -51,6 +51,10 @@ export default function testStorySnapshots (options = {}) {
     describe(suit, () => {
       describe(group.kind, () => {
         for (const story of group.stories) {
+          if (options.storyRegex && !story.name.match(options.storyRegex)) {
+            continue
+          }
+
           it(story.name, () => {
             const context = { kind: group.kind, story: story.name }
             const renderedStory = story.render(context)
