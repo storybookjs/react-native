@@ -1,6 +1,6 @@
 # ChangeLog
 
-### v3.1.1
+### v3.2.0
 30-December-2016
 
 Add support to filter stories by story name using a regexp. [PR70](https://github.com/storybooks/storyshots/pull/70)
