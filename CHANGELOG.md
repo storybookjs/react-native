@@ -1,6 +1,13 @@
 ## Changelog
 
 ### v2.35.1
+03-January-2017
+
+Fixes issue [#601](https://github.com/storybooks/react-storybook/issues/601) where it throws error when introduce a propType with a hypen. Add a [fix](https://github.com/kadirahq/babel-plugin-react-docgen/pull/23) to [`babel-plugin-react-docgen`](https://github.com/kadirahq/babel-plugin-react-docgen) to fix this issue.
+
+This release comes with the updated `babel-plugin-react-docgen`.
+
+### v2.35.1
 
 * Revert [PR653](https://github.com/storybooks/react-storybook/pull/653) where it's causing HMR to not working properly.
 
