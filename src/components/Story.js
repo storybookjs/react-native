@@ -173,6 +173,20 @@ export default class Story extends React.Component {
     if (!this.props.info) {
       return '';
     }
+
+    if (React.isValidElement(this.props.info)) {
+      const infoStyle = {
+        ...stylesheet.infoContent,
+        ...stylesheet.header,
+      };
+
+      return (
+        <div style={infoStyle}>
+          {this.props.info}
+        </div>
+      );
+    }
+
     const lines = this.props.info.split('\n');
     while (lines[0].trim() === '') {
       lines.shift();

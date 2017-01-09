@@ -86,3 +86,32 @@ storiesOf('Button')
     ),
     { inline: true, propTables: [Button]}
   );
+
+storiesOf('Button')
+    .addWithInfo(
+      'simple usage (JSX description)',
+      (<div>
+          <h2>This is a JSX info section</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Sed ornare massa rutrum metus commodo, a mattis velit dignissim.
+              Fusce vestibulum turpis sed massa egestas pharetra. Sed at libero
+              nulla.</p>
+          <p>
+              <a
+                  href='https://github.com/storybooks/react-storybook-addon-info'>
+              This is a link</a>
+          </p>
+          <p>
+              <img src="http://placehold.it/350x150" />
+          </p>
+      </div>),
+      () => (
+        <div>
+          <Button label="The Button" onClick={action('onClick')}/>
+          <br />
+          <p>
+            Click the "?" mark at top-right to view the info.
+          </p>
+        </div>
+      ),
+    );

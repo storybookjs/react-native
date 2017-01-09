@@ -280,6 +280,16 @@ var Story = function (_React$Component) {
       if (!this.props.info) {
         return '';
       }
+
+      // Figure out if this is text or an HTML object
+      if (_react2.default.isValidElement(this.props.info)) {
+        return _react2.default.createElement(
+          'div',
+          { style: stylesheet.infoContent },
+          this.props.info
+        );
+      }
+
       var lines = this.props.info.split('\n');
       while (lines[0].trim() === '') {
         lines.shift();
