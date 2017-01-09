@@ -175,13 +175,8 @@ export default class Story extends React.Component {
     }
 
     if (React.isValidElement(this.props.info)) {
-      const infoStyle = {
-        ...stylesheet.infoContent,
-        ...stylesheet.header,
-      };
-
       return (
-        <div style={infoStyle}>
+        <div style={stylesheet.infoContent}>
           {this.props.info}
         </div>
       );
