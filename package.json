@@ -54,6 +54,7 @@
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.1",
     "lodash.pick": "^4.2.1",
+    "lodash.sortby": "^4.7.0",
     "mantra-core": "^1.7.0",
     "podda": "^1.2.1",
     "qs": "^6.2.0",
