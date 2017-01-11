@@ -1,10 +1,15 @@
 import fuzzysearch from 'fuzzysearch';
 import sortBy from 'lodash.sortby';
 
-export function storyFilter(stories, filter, selectedKind) {
-  if (!stories) return null;
+function sort(stories, sortStoriesByKind) {
+  if (!sortStoriesByKind) return stories;
 
-  const sorted = sortBy(stories, ['kind']);
+  return sortBy(stories, ['kind']);
+}
+
+export function storyFilter(stories, filter, selectedKind, sortStoriesByKind) {
+  if (!stories) return null;
+  const sorted = sort(stories, sortStoriesByKind);
   if (!filter) return sorted;
 
   return sorted.filter((kindInfo) => {

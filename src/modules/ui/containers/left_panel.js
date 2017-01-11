@@ -6,9 +6,15 @@ import compose from '../../../compose';
 export const mapper = (state, props, { actions }) => {
   const actionMap = actions();
   const { stories, selectedKind, selectedStory, uiOptions, storyFilter } = state;
+  const { name, url, sortStoriesByKind } = uiOptions;
 
   const data = {
-    stories: filters.storyFilter(stories, storyFilter, selectedKind, selectedStory),
+    stories: filters.storyFilter(
+      stories,
+      storyFilter,
+      selectedKind,
+      sortStoriesByKind
+    ),
     selectedKind,
     selectedStory,
     onSelectStory: actionMap.api.selectStory,
@@ -17,8 +23,8 @@ export const mapper = (state, props, { actions }) => {
     onStoryFilter: actionMap.ui.setStoryFilter,
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
-    name: uiOptions.name,
-    url: uiOptions.url,
+    name,
+    url,
   };
 
   return data;
