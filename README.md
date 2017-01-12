@@ -32,6 +32,7 @@ setOptions({
   showDownPanel: false,
   showSearchBox: false,
   downPanelInRight: false,
+  sortStoriesByKind: false,
 });
 
 storybook.configure(() => require('./stories'), module);
