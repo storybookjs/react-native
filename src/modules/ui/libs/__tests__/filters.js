@@ -40,5 +40,31 @@ describe('manager.ui.libs.filters', () => {
         stories[1],
       ]);
     });
+
+    it('should not sort stories by kind', () => {
+      const stories = [
+        { kind: 'ss', stories: ['bb'] },
+        { kind: 'aa', stories: ['bb'] },
+        { kind: 'bb', stories: ['bb'] },
+      ];
+      const res = storyFilter(stories);
+
+      expect(res).to.equal(stories);
+    });
+
+    it('should sort stories by kind', () => {
+      const stories = [
+        { kind: 'ss', stories: ['bb'] },
+        { kind: 'aa', stories: ['bb'] },
+        { kind: 'bb', stories: ['bb'] },
+      ];
+      const res = storyFilter(stories, null, null, true);
+
+      expect(res).to.deep.equal([
+        stories[1],
+        stories[2],
+        stories[0],
+      ]);
+    });
   });
 });

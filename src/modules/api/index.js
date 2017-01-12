@@ -7,6 +7,7 @@ export default {
     uiOptions: {
       name: 'REACT STORYBOOK',
       url: 'https://github.com/kadirahq/react-storybook',
+      sortStoriesByKind: false,
     },
   },
   load({ clientStore, provider }, _actions) {
