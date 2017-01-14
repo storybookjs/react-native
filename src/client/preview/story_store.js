@@ -11,6 +11,10 @@ export default class StoryStore {
   }
 
   addStory(kind, name, fn) {
+    if (this.hasStory(kind, name)) {
+      throw new Error(`Story of ${kind} named "${name}" alredy exists!`);
+    }
+
     if (!this._data[kind]) {
       this._data[kind] = {
         kind,
