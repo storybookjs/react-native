@@ -88,6 +88,8 @@ export default function (configType, baseConfig, configDir) {
     // We'll always load our configurations after the custom config.
     // So, we'll always load the stuff we need.
     ...config,
+    // Override with custom devtool if provided
+    devtool: customConfig.devtool || config.devtool,
     // We need to use our and custom plugins.
     plugins: [
       ...config.plugins,
