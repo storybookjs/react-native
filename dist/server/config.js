@@ -60,6 +60,8 @@ exports.default = function (configType, baseConfig, configDir) {
   customConfig.module = customConfig.module || {};
 
   var newConfig = (0, _extends3.default)({}, customConfig, config, {
+    // Override with custom devtool if provided
+    devtool: customConfig.devtool || config.devtool,
     // We need to use our and custom plugins.
     plugins: [].concat((0, _toConsumableArray3.default)(config.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
     module: (0, _extends3.default)({}, config.module, customConfig.module, {
