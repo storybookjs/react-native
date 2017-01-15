@@ -1,5 +1,9 @@
 ## Changelog
 
+### v2.35.3
+
+Allow customConfig to override devtool. [PR668](https://github.com/storybooks/react-storybook/pull/668)
+
 ### v2.35.2
 03-January-2017
 
