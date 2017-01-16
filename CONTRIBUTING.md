@@ -56,7 +56,7 @@ getstorybook
 ```
 
 > It's pretty important to create a very simple sample project like above.
-> Otherwise some of the functionality won't work because of likning.
+> Otherwise some of the functionality won't work because of linking.
 
 Then link storybook inside the sample project with:
 
