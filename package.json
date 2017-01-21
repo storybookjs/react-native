@@ -1,6 +1,6 @@
 {
   "name": "storyshots",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "StoryShots - Jest Snapshot Testing for React Storybook.",
   "repository": {
     "type": "git",
