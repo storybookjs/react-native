@@ -46,7 +46,7 @@ export default class ClientApi {
 
     api.add = (storyName, getStory) => {
       if (this._storyStore.hasStory(kind, storyName)) {
-        throw new Error(`Story of "${kind}" named "${storyName}" alredy exists`);
+        throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
       }
 
       // Wrap the getStory function with each decorator. The first
