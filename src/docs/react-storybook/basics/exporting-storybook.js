@@ -26,7 +26,7 @@ export default {
     Then run \`npm run storybook\`.
 
     This will build the storybook configured in the Storybook directory into a static webpack and place it inside the \`.out\` directory.
-    Now you can deploy the content of the inside \`.out\` directory wherever you want.
+    Now you can deploy the content in the \`.out\` directory wherever you want.
 
     To test it locally, simply run the following commands:
 
