@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.2.1
+
+* Support React Native v0.41 [PR #114](https://github.com/kadirahq/react-native-storybook/pull/121).
+
 ## v2.2.0
 
 * Support React Native v0.39 [PR #114](https://github.com/kadirahq/react-native-storybook/pull/114).
