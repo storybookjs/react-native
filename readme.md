@@ -28,7 +28,7 @@ react-native run-ios
 react-native run-android
 ```
 
-Now, you can open <http://localhost:9001> to view your storybook.
+Now, you can open <http://localhost:7007> to view your storybook.
 
 ## Learn More
 
