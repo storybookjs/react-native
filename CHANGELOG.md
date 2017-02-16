@@ -1,5 +1,15 @@
 # ChangeLog
 
+### v3.2.2
+16-February-2016
+
+Move set channel to happen before anything runs because addons might init expecting the channel to exist. [PR75](https://github.com/storybooks/storyshots/pull/75)
+
+### v3.2.1
+21-January-2016
+
+Provide mock Storybook Channel to Storybook addons. [PR72](https://github.com/storybooks/storyshots/pull/72)
+
 ### v3.2.0
 30-December-2016
 
