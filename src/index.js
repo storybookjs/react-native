@@ -20,6 +20,8 @@ const isRNStorybook =
   (pkg.dependencies && pkg.dependencies['@kadira/react-native-storybook'])
 
 export default function testStorySnapshots (options = {}) {
+  addons.setChannel(createChannel())
+
   if (isStorybook) {
     storybook = require.requireActual('@kadira/storybook')
     const loadBabelConfig = require('@kadira/storybook/dist/server/babel_config').default
@@ -48,8 +50,6 @@ export default function testStorySnapshots (options = {}) {
 
   const suit = options.suit || 'Storyshots'
   const stories = storybook.getStorybook()
-
-  addons.setChannel(createChannel())
 
   for (const group of stories) {
     describe(suit, () => {
