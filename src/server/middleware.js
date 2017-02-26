@@ -20,10 +20,10 @@ function getMiddleware(configDir) {
   return function () {};
 }
 
-export default function (configDir) {
+export default function (projectDir, configDir) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
-  const config = loadConfig('DEVELOPMENT', baseConfig, configDir);
+  const config = loadConfig('DEVELOPMENT', baseConfig, projectDir, configDir);
 
   // remove the leading '/'
   let publicPath = config.output.publicPath;

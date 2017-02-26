@@ -20,7 +20,6 @@ function loadBabelConfig(babelConfigPath) {
     try {
       config = JSON5.parse(content);
       config.babelrc = false;
-      logger.info('=> Loading custom .babelrc');
     } catch (e) {
       logger.error(`=> Error parsing .babelrc file: ${e.message}`);
       throw e;
@@ -48,25 +47,36 @@ function loadBabelConfig(babelConfigPath) {
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
-export default function (configType, baseConfig, configDir) {
+export default function (configType, baseConfig, projectDir, configDir) {
   const config = baseConfig;
 
-  // Search for a .babelrc in the config directory, then the module root
-  // directory. If found, use that to extend webpack configurations.
-  let babelConfig = loadBabelConfig(path.resolve(configDir, '.babelrc'));
-  let inConfigDir = true;
+  // Search for a .babelrc in project directory, config directory, and storybook
+  // module directory. If found, use that to extend webpack configurations.
+  let babelConfigInConfig = loadBabelConfig(path.resolve(configDir, '.babelrc'));
+  let babelConfigInProject = loadBabelConfig(path.resolve(projectDir, '.babelrc'));
+  let babelConfigInModule = loadBabelConfig('.babelrc');
 
-  if (!babelConfig) {
-    babelConfig = loadBabelConfig('.babelrc');
-    inConfigDir = false;
+  let babelConfig = null;
+  let babelConfigDir = '';
+
+  if (babelConfigInConfig) {
+    logger.info('=> Loading custom .babelrc from config directory.');
+    babelConfig = babelConfigInConfig;
+    babelConfigDir = configDir;
+  } else if (babelConfigInProject) {
+    logger.info('=> Loading custom .babelrc from project directory.');
+    babelConfig = babelConfigInProject;
+    babelConfigDir = projectDir;
+  } else {
+    babelConfig = babelConfigInModule;
   }
 
   if (babelConfig) {
     // If the custom config uses babel's `extends` clause, then replace it with
     // an absolute path. `extends` will not work unless we do this.
     if (babelConfig.extends) {
-      babelConfig.extends = inConfigDir ?
-        path.resolve(configDir, babelConfig.extends) :
+      babelConfig.extends = babelConfigDir ?
+        path.resolve(babelConfigDir, babelConfig.extends) :
         path.resolve(babelConfig.extends);
     }
     config.module.loaders[0].query = babelConfig;
