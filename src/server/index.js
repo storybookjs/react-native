@@ -8,7 +8,7 @@ export default class Server {
     this.options = options;
     this.httpServer = http.createServer();
     this.expressApp = express();
-    this.expressApp.use(storybook(options.configDir));
+    this.expressApp.use(storybook(options.projectDir, options.configDir));
     this.httpServer.on('request', this.expressApp);
     this.wsServer = ws.Server({server: this.httpServer});
     this.wsServer.on('connection', s => this.handleWS(s));

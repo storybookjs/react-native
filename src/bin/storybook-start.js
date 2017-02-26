@@ -18,7 +18,7 @@ if (program.host) {
   listenAddr.push(program.host);
 }
 
-const server = new Server({configDir});
+const server = new Server({projectDir, configDir});
 server.listen(...listenAddr, function (err) {
   if (err) {
     throw err;
