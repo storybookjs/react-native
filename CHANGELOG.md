@@ -2,7 +2,11 @@
 
 ## v2.2.1
 
-* Support React Native v0.41 [PR #114](https://github.com/kadirahq/react-native-storybook/pull/121).
+* Load .babelrc from project root directory [PR #125](https://github.com/kadirahq/react-native-storybook/pull/123).
+
+## v2.2.1
+
+* Support React Native v0.41 [PR #121](https://github.com/kadirahq/react-native-storybook/pull/121).
 
 ## v2.2.0
 
