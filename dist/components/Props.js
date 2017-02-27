@@ -65,9 +65,9 @@ var Props = function (_React$Component) {
         return _react2.default.createElement('span', null);
       }
 
-      var propStyle = stylesheet.propStyle;
-      var propValueStyle = stylesheet.propValueStyle;
-      var propNameStyle = stylesheet.propNameStyle;
+      var propStyle = stylesheet.propStyle,
+          propValueStyle = stylesheet.propValueStyle,
+          propNameStyle = stylesheet.propNameStyle;
 
 
       var names = (0, _keys2.default)(props).filter(function (name) {

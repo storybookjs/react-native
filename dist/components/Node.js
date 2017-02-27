@@ -56,11 +56,11 @@ var Node = function (_React$Component) {
   (0, _createClass3.default)(Node, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var node = _props.node;
-      var depth = _props.depth;
-      var tagStyle = stylesheet.tagStyle;
-      var containerStyle = stylesheet.containerStyle;
+      var _props = this.props,
+          node = _props.node,
+          depth = _props.depth;
+      var tagStyle = stylesheet.tagStyle,
+          containerStyle = stylesheet.containerStyle;
 
 
       var leftPad = {
@@ -70,13 +70,13 @@ var Node = function (_React$Component) {
 
       (0, _assign2.default)(containerStyle, leftPad);
 
-      var _getData = getData(node);
-
-      var name = _getData.name;
-      var text = _getData.text;
-      var children = _getData.children;
+      var _getData = getData(node),
+          name = _getData.name,
+          text = _getData.text,
+          children = _getData.children;
 
       // Just text
+
 
       if (!name) {
         return _react2.default.createElement(
