@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## v2.2.1
+## v2.2.3
+
+* Support React Native v0.42 [PR #126](https://github.com/kadirahq/react-native-storybook/pull/126).
+
+## v2.2.2
 
 * Load .babelrc from project root directory [PR #125](https://github.com/kadirahq/react-native-storybook/pull/123).
 
