@@ -1,6 +1,6 @@
 {
   "name": "@kadira/react-native-storybook",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "A better way to develop React Native Components for your app",
   "main": "dist/index.js",
   "bin": {
