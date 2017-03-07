@@ -53,6 +53,10 @@ export default {
 
     The Storybook webapp UI can be customised with this addon. It can be used to change the header, show/hide various UI elements and to enable full-screen mode by default.
 
+    ### [Chapters](https://github.com/yangshun/react-storybook-addon-chapters)
+
+    With this addon, you can break down a story into smaller categories (chapters) and subcategories (sections) for more organizational goodness.
+
     ### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
 
     With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
