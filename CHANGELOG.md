@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.2.4
+
+* Fix build issue with RN v0.42 [#PR128](https://github.com/storybooks/react-native-storybook/pull/128) and [#PR129](https://github.com/storybooks/react-native-storybook/pull/129)
+
 ## v2.2.3
 
 * Support React Native v0.42 [PR #126](https://github.com/kadirahq/react-native-storybook/pull/126).
