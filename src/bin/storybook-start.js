@@ -27,8 +27,11 @@ server.listen(...listenAddr, function (err) {
   console.info(`\nReact Native Storybook started on => ${address}\n`);
 });
 
+const projectRoots = configDir === projectDir ? [configDir] : [configDir, projectDir];
+
 // RN packager
 shelljs.exec([
   'node node_modules/react-native/local-cli/cli.js start',
-  `--projectRoots ${configDir},${projectDir}`,
+  `--projectRoots ${projectRoots.join(',')}`,
+  `--root ${projectDir}`,
 ].join(' '), {async: true});
