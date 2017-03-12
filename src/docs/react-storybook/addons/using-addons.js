@@ -9,11 +9,11 @@ export default {
   id: "using-addons",
   title: "Using Addons",
   content: stripIndent`
-    By default, Storybook comes with two addons, which are [actions](https://github.com/kadirahq/storybook-addon-actions) and [links](https://github.com/kadirahq/storybook-addon-links). But you can use any third party addons distributed via NPM.
+    By default, Storybook comes with two addons, which are [actions](https://github.com/storybooks/storybook-addon-actions) and [links](https://github.com/storybooks/storybook-addon-links). But you can use any third party addons distributed via NPM.
 
     Here's how to do it.
 
-    Now we are going to use an addon called [Notes](https://github.com/kadirahq/storybook-addon-notes). Basically, it allows you to write notes for your stories.
+    Now we are going to use an addon called [Notes](https://github.com/storybooks/storybook-addon-notes). Basically, it allows you to write notes for your stories.
 
     First, you need to create a file called \`addons.js\` inside the storybook config directory and add the following content:
 
