@@ -1,6 +1,6 @@
 # Storybook UI
 
-This is the core UI of [react-storybook](https://github.com/kadirahq/react-storybook) and other similar projects. It's a React based UI where you can initialize with a simple function. You can configure it by providing a simple provider API.
+This is the core UI of [react-storybook](https://github.com/storybooks/react-storybook) and other similar projects. It's a React based UI where you can initialize with a simple function. You can configure it by providing a simple provider API.
 
 ![Storybook UI Demo](./docs/storybook-ui-demo.png)
 
