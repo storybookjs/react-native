@@ -1,6 +1,6 @@
 {
   "name": "@kadira/storybook-addon-options",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Options addon for storybook",
   "main": "preview.js",
   "scripts": {
