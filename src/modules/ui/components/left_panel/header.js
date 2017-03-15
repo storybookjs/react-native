@@ -50,7 +50,7 @@ const linkStyle = {
 const Header = ({ openShortcutsHelp, name, url }) => (
   <div style={wrapperStyle}>
     <button style={shortcutIconStyle} onClick={openShortcutsHelp}>⌘</button>
-    <a style={linkStyle} href={url} target="_blank">
+    <a style={linkStyle} href={url} target="_blank" rel="noopener noreferrer">
       <h3 style={headingStyle}>{name}</h3>
     </a>
   </div>
