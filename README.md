@@ -26,6 +26,8 @@ storiesOf('Button', module)
 
 If you wish to process action data before sending them over to the logger, you can do it with action decorators.
 
+`decorateAction` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorateAction` returns a function that can be used like `action` but will log the modified arguments instead of the original arguments.
+
 ```js
 import { action, decorateAction } from '@kadira/storybook-addon-actions'
 
