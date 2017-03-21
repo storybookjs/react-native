@@ -1,5 +1,12 @@
 ## Changelog
 
+### v1.1.2
+21 Mar 2017
+
+* Document `decorateAction` function (action decorator). [PR28](https://github.com/storybooks/storybook-addon-actions/pull/28)
+
+* Set correct Function.name for action handlers [PR24](https://github.com/storybooks/storybook-addon-actions/pull/24)
+
 ### v1.1.1
 11 Sep 2016
 
