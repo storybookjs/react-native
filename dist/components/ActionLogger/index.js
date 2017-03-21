@@ -32,7 +32,7 @@ var ActionLogger = function (_Component) {
   function ActionLogger() {
     _classCallCheck(this, ActionLogger);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ActionLogger).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ActionLogger.__proto__ || Object.getPrototypeOf(ActionLogger)).apply(this, arguments));
   }
 
   _createClass(ActionLogger, [{
