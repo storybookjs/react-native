@@ -40,13 +40,11 @@ var ActionLogger = function (_Component) {
     value: function componentDidUpdate() {
       var latest = this.refs.latest;
       if (latest) {
-        (function () {
-          var borderLeft = _style2.default.action.borderLeft;
-          latest.style.borderLeft = 'solid 5px #aaa';
-          setTimeout(function () {
-            latest.style.borderLeft = borderLeft;
-          }, 300);
-        })();
+        var borderLeft = _style2.default.action.borderLeft;
+        latest.style.borderLeft = 'solid 5px #aaa';
+        setTimeout(function () {
+          latest.style.borderLeft = borderLeft;
+        }, 300);
       }
     }
   }, {
