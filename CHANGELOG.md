@@ -1,5 +1,10 @@
 ## Changelog
 
+### v1.1.3
+22 Mar 2017
+
+* Fix issue caused by `v1.1.2` where storybook crashes when actions are used without names [PR30](https://github.com/storybooks/storybook-addon-actions/pull/30).
+
 ### v1.1.2
 21 Mar 2017
 
