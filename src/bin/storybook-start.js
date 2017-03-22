@@ -9,6 +9,9 @@ program
   .option('-h, --host <host>', 'host to listen on')
   .option('-p, --port <port>', 'port to listen on')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
+  .option('-r, --reset-cache', 'reset react native packager')
+  .option('-s, --skip-packager', 'run only storybook server')
+  .option('-i, --manual-id', 'allow multiple users to work with same storybook')
   .parse(process.argv);
 
 const projectDir = path.resolve();
@@ -18,7 +21,7 @@ if (program.host) {
   listenAddr.push(program.host);
 }
 
-const server = new Server({projectDir, configDir});
+const server = new Server({projectDir, configDir, manualId: program.manualId});
 server.listen(...listenAddr, function (err) {
   if (err) {
     throw err;
@@ -27,11 +30,15 @@ server.listen(...listenAddr, function (err) {
   console.info(`\nReact Native Storybook started on => ${address}\n`);
 });
 
-const projectRoots = configDir === projectDir ? [configDir] : [configDir, projectDir];
+if (!program.skipPackager) {
+  const projectRoots = configDir === projectDir ? [configDir] : [configDir, projectDir];
 
 // RN packager
-shelljs.exec([
-  'node node_modules/react-native/local-cli/cli.js start',
-  `--projectRoots ${projectRoots.join(',')}`,
-  `--root ${projectDir}`,
-].join(' '), {async: true});
+  shelljs.exec([
+    'node node_modules/react-native/local-cli/cli.js start',
+    `--projectRoots ${projectRoots.join(',')}`,
+    `--root ${projectDir}`,
+    program.resetCache && '--reset-cache'
+  ].filter(x => x).join(' '), {async: true});
+
+}

@@ -56,10 +56,10 @@ export default class Preview {
     return () => {
       let webUrl = null;
       let channel = addons.getChannel();
-      if (!channel) {
+      if (params.resetStorybook || !channel) {
         const host = params.host || 'localhost';
         const port = params.port || 7007;
-        const url = `ws://${host}:${port}`;
+        const url = `ws://${host}:${port}/${params.query}`;
         webUrl = `http://${host}:${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);

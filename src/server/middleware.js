@@ -20,7 +20,7 @@ function getMiddleware(configDir) {
   return function () {};
 }
 
-export default function (projectDir, configDir) {
+export default function ({projectDir, configDir, ...options}) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   const config = loadConfig('DEVELOPMENT', baseConfig, projectDir, configDir);
@@ -46,7 +46,9 @@ export default function (projectDir, configDir) {
   router.use(webpackHotMiddleware(compiler));
 
   router.get('/', function (req, res) {
-    res.send(getIndexHtml(publicPath));
+    res.send(getIndexHtml(publicPath, {
+      manualId: options.manualId,
+    }));
   });
 
   return router;
