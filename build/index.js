@@ -19,8 +19,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var style = {
-  height: '100vh',
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   left: 0,
   bottom: 0,
