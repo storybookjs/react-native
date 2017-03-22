@@ -14,7 +14,6 @@
     ]
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
     "react-fatigue-dev": "kadirahq/react-fatigue-dev"
   }
 }
