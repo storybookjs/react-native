@@ -27,7 +27,7 @@ export function action(name) {
   // the same.
   //
   // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  const fnName = name.replace(/\W+/g,'_');
+  const fnName = name ? name.replace(/\W+/g,'_') : 'action';
   const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`)
   return named
 }
