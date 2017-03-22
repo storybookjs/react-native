@@ -49,7 +49,7 @@ function action(name) {
   // the same.
   //
   // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  var fnName = name.replace(/\W+/g, '_');
+  var fnName = name ? name.replace(/\W+/g, '_') : 'action';
   var named = eval('(function ' + fnName + '() { return handler.apply(this, arguments) })');
   return named;
 }
