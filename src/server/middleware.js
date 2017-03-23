@@ -25,7 +25,8 @@ export default function ({projectDir, configDir, ...options}) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   const environment = options.environment || 'DEVELOPMENT';
-  const currentWebpackConfig = environment === 'PRODUCTION' ? baseProductionConfig : baseConfig;
+  const isProd = environment === 'PRODUCTION';
+  const currentWebpackConfig = isProd ? baseProductionConfig : baseConfig;
   const config = loadConfig(environment, currentWebpackConfig, projectDir, configDir);
 
   // remove the leading '/'
@@ -46,7 +47,10 @@ export default function ({projectDir, configDir, ...options}) {
   middlewareFn(router);
 
   router.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
-  router.use(webpackHotMiddleware(compiler));
+
+  if (!isProd) {
+    router.use(webpackHotMiddleware(compiler));
+  }
 
   router.get('/', function (req, res) {
     res.send(getIndexHtml(publicPath, {
