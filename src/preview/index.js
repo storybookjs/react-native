@@ -58,13 +58,18 @@ export default class Preview {
       let channel = addons.getChannel();
       if (params.resetStorybook || !channel) {
         const host = params.host || 'localhost';
-        const port = params.port || 7007;
+
+        const port = params.port !== false
+          ? ':' + (params.port || 7007)
+          : '';
+
         const query = params.query || '';
         const secured = params.secured;
-        const websocketType = secured ?  'wss' : 'ws';
+        const websocketType = secured ? 'wss' : 'ws';
         const httpType = secured ? 'https' : 'http';
-        const url = `${websocketType}://${host}:${port}/${query}`;
-        webUrl = `${httpType}://${host}:${port}`;
+
+        const url = `${websocketType}://${host}${port}/${query}`;
+        webUrl = `${httpType}://${host}${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
       }
