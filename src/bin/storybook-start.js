@@ -22,7 +22,7 @@ if (program.host) {
   listenAddr.push(program.host);
 }
 
-const server = new Server({projectDir, configDir, manualId: program.manualId, secured: props.secured});
+const server = new Server({projectDir, configDir, manualId: program.manualId, secured: program.secured});
 server.listen(...listenAddr, function (err) {
   if (err) {
     throw err;
