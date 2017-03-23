@@ -11,12 +11,14 @@ export default class ReactProvider extends Provider {
     this.selection = null;
     this.channel = addons.getChannel();
 
-    let url = domain;
+    const secured = options.secured;
+    const websocketType = secured ? 'wss' : 'ws';
+    let url = websocketType + '://' + domain;
     if (options.manualId) {
       const pairedId = uuid().substr(-6);
 
       this.pairedId = pairedId;
-      url = domain + '/pairedId=' + this.pairedId;
+      url += '/pairedId=' + this.pairedId;
     }
 
     if (!this.channel) {

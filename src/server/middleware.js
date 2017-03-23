@@ -48,6 +48,7 @@ export default function ({projectDir, configDir, ...options}) {
   router.get('/', function (req, res) {
     res.send(getIndexHtml(publicPath, {
       manualId: options.manualId,
+      secured: options.secured,
     }));
   });
 

@@ -60,8 +60,11 @@ export default class Preview {
         const host = params.host || 'localhost';
         const port = params.port || 7007;
         const query = params.query || '';
-        const url = `ws://${host}:${port}/${query}`;
-        webUrl = `http://${host}:${port}`;
+        const secured = params.secured;
+        const websocketType = secured ?  'wss' : 'ws';
+        const httpType = secured ? 'https' : 'http';
+        const url = `${websocketType}://${host}:${port}/${query}`;
+        webUrl = `${httpType}://${host}:${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
       }
