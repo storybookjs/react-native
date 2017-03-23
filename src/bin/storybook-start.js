@@ -10,6 +10,7 @@ program
   .option('-p, --port <port>', 'port to listen on')
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
+  .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
   .option('-r, --reset-cache', 'reset react native packager')
   .option('--skip-packager', 'run only storybook server')
   .option('-i, --manual-id', 'allow multiple users to work with same storybook')
@@ -22,7 +23,14 @@ if (program.host) {
   listenAddr.push(program.host);
 }
 
-const server = new Server({projectDir, configDir, manualId: program.manualId, secured: program.secured});
+const server = new Server({
+  projectDir,
+  configDir,
+  environment: program.environment,
+  manualId: program.manualId,
+  secured: program.secured
+});
+
 server.listen(...listenAddr, function (err) {
   if (err) {
     throw err;

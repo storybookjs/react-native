@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import baseConfig from './config/webpack.config';
+import baseProductionConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 
@@ -23,7 +24,9 @@ function getMiddleware(configDir) {
 export default function ({projectDir, configDir, ...options}) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
-  const config = loadConfig('DEVELOPMENT', baseConfig, projectDir, configDir);
+  const environment = options.environment || 'DEVELOPMENT';
+  const currentWebpackConfig = environment === 'PRODUCTION' ? baseProductionConfig : baseConfig;
+  const config = loadConfig(environment, currentWebpackConfig, projectDir, configDir);
 
   // remove the leading '/'
   let publicPath = config.output.publicPath;
