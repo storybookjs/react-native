@@ -62,6 +62,9 @@ export default {
         showHeader: Boolean(options.header),
         showSource: Boolean(options.source),
         propTables: options.propTables,
+        styles: typeof options.styles === 'function'
+          ? options.styles
+          : (s) => s,
         mtrcConf
       };
 

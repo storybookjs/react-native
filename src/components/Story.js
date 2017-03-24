@@ -49,7 +49,7 @@ const stylesheet = {
   },
   header: {
     h1: {
-      margin: '20px 0 0 0',
+      margin: 0,
       padding: 0,
       fontSize: '35px',
     },
@@ -61,6 +61,7 @@ const stylesheet = {
     },
     body: {
       borderBottom: '1px solid #eee',
+      paddingTop: 10,
       marginBottom: 10,
     },
   },
@@ -80,8 +81,17 @@ const stylesheet = {
 export default class Story extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = { open: false };
+    this.state = {
+      open: false,
+      stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet)))
+    };
     MTRC.configure(this.props.mtrcConf);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet)))
+    });
   }
 
   _renderStory() {
@@ -95,16 +105,16 @@ export default class Story extends React.Component {
   _renderInline() {
     return (
       <div>
-        <div style={stylesheet.infoPage}>
-          <div style={stylesheet.infoBody} >
+        <div style={this.state.stylesheet.infoPage}>
+          <div style={this.state.stylesheet.infoBody} >
             { this._getInfoHeader() }
           </div>
         </div>
         <div>
             { this._renderStory() }
         </div>
-        <div style={stylesheet.infoPage}>
-          <div style={stylesheet.infoBody} >
+        <div style={this.state.stylesheet.infoPage}>
+          <div style={this.state.stylesheet.infoBody} >
             { this._getInfoContent() }
             { this._getSourceCode() }
             { this._getPropTables() }
@@ -137,14 +147,14 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <div style={stylesheet.children}>
+        <div style={this.state.stylesheet.children}>
           { this.props.children }
         </div>
         <a style={linkStyle} onClick={openOverlay}>?</a>
         <div style={infoStyle}>
           <a style={linkStyle} onClick={closeOverlay}>×</a>
-          <div style={stylesheet.infoPage}>
-            <div style={stylesheet.infoBody}>
+          <div style={this.state.stylesheet.infoPage}>
+            <div style={this.state.stylesheet.infoBody}>
               { this._getInfoHeader() }
               { this._getInfoContent() }
               { this._getSourceCode() }
@@ -162,9 +172,9 @@ export default class Story extends React.Component {
     }
 
     return (
-      <div style={stylesheet.header.body}>
-        <h1 style={stylesheet.header.h1}>{this.props.context.kind}</h1>
-        <h2 style={stylesheet.header.h2}>{this.props.context.story}</h2>
+      <div style={this.state.stylesheet.header.body}>
+        <h1 style={this.state.stylesheet.header.h1}>{this.props.context.kind}</h1>
+        <h2 style={this.state.stylesheet.header.h2}>{this.props.context.story}</h2>
       </div>
     );
   }
@@ -184,7 +194,7 @@ export default class Story extends React.Component {
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
     return (
-      <div style={stylesheet.infoContent}>
+      <div style={this.state.stylesheet.infoContent}>
         {MTRC(source).tree}
       </div>
     );
@@ -197,7 +207,7 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <h1 style={stylesheet.source.h1}>Story Source</h1>
+        <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
         <Pre>
         {React.Children.map(this.props.children, (root, idx) => (
           <Node key={idx} depth={0} node={root} />
@@ -252,10 +262,10 @@ export default class Story extends React.Component {
       return (a.displayName || a.name) > (b.displayName || b.name);
     });
 
-    const propTables = array.map(function (type, idx) {
+    const propTables = array.map((type, idx) => {
       return (
         <div key={idx}>
-          <h2 style={stylesheet.propTableHead}>"{type.displayName || type.name}" Component</h2>
+          <h2 style={this.state.stylesheet.propTableHead}>"{type.displayName || type.name}" Component</h2>
           <PropTable type={type} />
         </div>
       );
@@ -267,7 +277,7 @@ export default class Story extends React.Component {
 
     return (
       <div>
-        <h1 style={stylesheet.source.h1}>Prop Types</h1>
+        <h1 style={this.state.stylesheet.source.h1}>Prop Types</h1>
         {propTables}
       </div>
     );
@@ -292,6 +302,7 @@ Story.propTypes = {
   showInline: React.PropTypes.bool,
   showHeader: React.PropTypes.bool,
   showSource: React.PropTypes.bool,
+  styles: React.PropTypes.func.isRequired,
   children: React.PropTypes.oneOfType([
     React.PropTypes.object,
     React.PropTypes.array,

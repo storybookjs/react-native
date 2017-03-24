@@ -40,6 +40,23 @@ var Code = exports.Code = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Code, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.highlight();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this.highlight();
+    }
+  }, {
+    key: 'highlight',
+    value: function highlight() {
+      if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var codeStyle = {
@@ -55,12 +72,14 @@ var Code = exports.Code = function (_React$Component) {
         overflowX: 'scroll'
       };
 
+      var className = this.props.language ? 'language-' + this.props.language : '';
+
       return _react2.default.createElement(
         'pre',
-        { style: preStyle },
+        { style: preStyle, className: className },
         _react2.default.createElement(
           'code',
-          { style: codeStyle },
+          { style: codeStyle, className: className },
           this.props.code
         )
       );

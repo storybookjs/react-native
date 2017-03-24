@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import { storiesOf, action } from '@kadira/storybook';
+import backgrounds from 'react-storybook-addon-backgrounds';
 
 storiesOf('Button')
   .addWithInfo(
@@ -86,3 +87,26 @@ storiesOf('Button')
     ),
     { inline: true, propTables: [Button]}
   );
+
+storiesOf('Button')
+  .addDecorator(backgrounds([
+    { name: 'dark', value: '#333', default: true },
+  ]))
+  .addWithInfo(
+    'with custom styles',
+    `
+      This is an example of how to customize the styles of the info components.
+
+      For the full styles available, see \`./src/components/Story.js\`
+    `,
+    () => (<Button label="The Button" onClick={action('onClick')}/>),
+    {
+      inline: true,
+      styles: (stylesheet) => {
+        stylesheet.infoPage = {
+          backgroundColor: '#ccc'
+        };
+        return stylesheet;
+      }
+    }
+  )
