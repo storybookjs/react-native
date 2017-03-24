@@ -15,7 +15,6 @@ npm i -D @kadira/react-storybook-addon-info
 Then set the addon in the place you configure storybook like this:
 
 ```js
-import React from 'react';
 import { configure, setAddon } from '@kadira/storybook';
 import infoAddon from '@kadira/react-storybook-addon-info';
 

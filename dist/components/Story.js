@@ -16,6 +16,10 @@ var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
 
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -105,7 +109,7 @@ var stylesheet = {
   },
   header: {
     h1: {
-      margin: '20px 0 0 0',
+      margin: 0,
       padding: 0,
       fontSize: '35px'
     },
@@ -117,6 +121,7 @@ var stylesheet = {
     },
     body: {
       borderBottom: '1px solid #eee',
+      paddingTop: 10,
       marginBottom: 10
     }
   },
@@ -147,12 +152,22 @@ var Story = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_ref = Story.__proto__ || (0, _getPrototypeOf2.default)(Story)).call.apply(_ref, [this].concat(args)));
 
-    _this.state = { open: false };
+    _this.state = {
+      open: false,
+      stylesheet: _this.props.styles(JSON.parse((0, _stringify2.default)(stylesheet)))
+    };
     _markdownToReactComponents2.default.configure(_this.props.mtrcConf);
     return _this;
   }
 
   (0, _createClass3.default)(Story, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({
+        stylesheet: nextProps.styles(JSON.parse((0, _stringify2.default)(stylesheet)))
+      });
+    }
+  }, {
     key: '_renderStory',
     value: function _renderStory() {
       return _react2.default.createElement(
@@ -169,10 +184,10 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          { style: stylesheet.infoPage },
+          { style: this.state.stylesheet.infoPage },
           _react2.default.createElement(
             'div',
-            { style: stylesheet.infoBody },
+            { style: this.state.stylesheet.infoBody },
             this._getInfoHeader()
           )
         ),
@@ -183,10 +198,10 @@ var Story = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { style: stylesheet.infoPage },
+          { style: this.state.stylesheet.infoPage },
           _react2.default.createElement(
             'div',
-            { style: stylesheet.infoBody },
+            { style: this.state.stylesheet.infoBody },
             this._getInfoContent(),
             this._getSourceCode(),
             this._getPropTables()
@@ -221,7 +236,7 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          { style: stylesheet.children },
+          { style: this.state.stylesheet.children },
           this.props.children
         ),
         _react2.default.createElement(
@@ -239,10 +254,10 @@ var Story = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { style: stylesheet.infoPage },
+            { style: this.state.stylesheet.infoPage },
             _react2.default.createElement(
               'div',
-              { style: stylesheet.infoBody },
+              { style: this.state.stylesheet.infoBody },
               this._getInfoHeader(),
               this._getInfoContent(),
               this._getSourceCode(),
@@ -261,15 +276,15 @@ var Story = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: stylesheet.header.body },
+        { style: this.state.stylesheet.header.body },
         _react2.default.createElement(
           'h1',
-          { style: stylesheet.header.h1 },
+          { style: this.state.stylesheet.header.h1 },
           this.props.context.kind
         ),
         _react2.default.createElement(
           'h2',
-          { style: stylesheet.header.h2 },
+          { style: this.state.stylesheet.header.h2 },
           this.props.context.story
         )
       );
@@ -304,7 +319,7 @@ var Story = function (_React$Component) {
       }).join('\n');
       return _react2.default.createElement(
         'div',
-        { style: stylesheet.infoContent },
+        { style: this.state.stylesheet.infoContent },
         (0, _markdownToReactComponents2.default)(source).tree
       );
     }
@@ -320,7 +335,7 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h1',
-          { style: stylesheet.source.h1 },
+          { style: this.state.stylesheet.source.h1 },
           'Story Source'
         ),
         _react2.default.createElement(
@@ -335,6 +350,8 @@ var Story = function (_React$Component) {
   }, {
     key: '_getPropTables',
     value: function _getPropTables() {
+      var _this3 = this;
+
       var types = new _map2.default();
 
       if (this.props.propTables === null) {
@@ -385,7 +402,7 @@ var Story = function (_React$Component) {
           { key: idx },
           _react2.default.createElement(
             'h2',
-            { style: stylesheet.propTableHead },
+            { style: _this3.state.stylesheet.propTableHead },
             '"',
             type.displayName || type.name,
             '" Component'
@@ -403,7 +420,7 @@ var Story = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h1',
-          { style: stylesheet.source.h1 },
+          { style: this.state.stylesheet.source.h1 },
           'Prop Types'
         ),
         propTables
@@ -435,6 +452,7 @@ Story.propTypes = {
   showInline: _react2.default.PropTypes.bool,
   showHeader: _react2.default.PropTypes.bool,
   showSource: _react2.default.PropTypes.bool,
+  styles: _react2.default.PropTypes.func.isRequired,
   children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array]),
   mtrcConf: _react2.default.PropTypes.object
 };
