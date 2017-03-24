@@ -107,6 +107,10 @@ var stylesheet = {
   infoContent: {
     marginBottom: 0
   },
+  jsxInfoContent: {
+    borderTop: '1px solid #eee',
+    margin: '20px 0 0 0'
+  },
   header: {
     h1: {
       margin: 0,
@@ -296,11 +300,12 @@ var Story = function (_React$Component) {
         return '';
       }
 
-      // Figure out if this is text or an HTML object
       if (_react2.default.isValidElement(this.props.info)) {
         return _react2.default.createElement(
           'div',
-          { style: stylesheet.infoContent },
+          {
+            style: this.props.showInline ? stylesheet.jsxInfoContent : stylesheet.infoContent
+          },
           this.props.info
         );
       }
@@ -447,7 +452,7 @@ exports.default = Story;
 Story.displayName = 'Story';
 Story.propTypes = {
   context: _react2.default.PropTypes.object,
-  info: _react2.default.PropTypes.string,
+  info: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.node]),
   propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
   showInline: _react2.default.PropTypes.bool,
   showHeader: _react2.default.PropTypes.bool,
