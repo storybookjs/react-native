@@ -47,6 +47,10 @@ const stylesheet = {
   infoContent: {
     marginBottom: 0,
   },
+  jsxInfoContent: {
+    borderTop: '1px solid #eee',
+    margin: '20px 0 0 0',
+  },
   header: {
     h1: {
       margin: 0,
@@ -183,6 +187,18 @@ export default class Story extends React.Component {
     if (!this.props.info) {
       return '';
     }
+
+    if (React.isValidElement(this.props.info)) {
+      return (
+        <div
+          style={this.props.showInline ?
+            stylesheet.jsxInfoContent : stylesheet.infoContent}
+        >
+          {this.props.info}
+        </div>
+      );
+    }
+
     const lines = this.props.info.split('\n');
     while (lines[0].trim() === '') {
       lines.shift();
@@ -297,7 +313,10 @@ export default class Story extends React.Component {
 Story.displayName = 'Story';
 Story.propTypes = {
   context: React.PropTypes.object,
-  info: React.PropTypes.string,
+  info: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.node,
+  ]),
   propTables: React.PropTypes.arrayOf(React.PropTypes.func),
   showInline: React.PropTypes.bool,
   showHeader: React.PropTypes.bool,
