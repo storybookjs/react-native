@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.3.0
+
+* Add support for multiple users [#PR132](https://github.com/storybooks/react-native-storybook/pull/132)
+
 ## v2.2.4
 
 * Fix build issue with RN v0.42 [#PR128](https://github.com/storybooks/react-native-storybook/pull/128) and [#PR129](https://github.com/storybooks/react-native-storybook/pull/129)
