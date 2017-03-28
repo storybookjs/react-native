@@ -6,7 +6,14 @@ export default class StoryView extends Component {
   constructor(props, ...args) {
     super(props, ...args);
     this.state = {storyFn: null, selection: {}};
-    this.props.events.on('story', this.selectStory.bind(this));
+
+    this.storyHandler = this.selectStory.bind(this);
+
+    this.props.events.on('story', this.storyHandler);
+  }
+
+  componentWillUnmount() {
+    this.props.events.removeListener('story', this.storyHandler);
   }
 
   selectStory(storyFn, selection) {

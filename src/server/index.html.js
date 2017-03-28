@@ -1,6 +1,6 @@
 import url from 'url';
 
-export default function (publicPath, settings) {
+export default function (publicPath, options) {
   return `
     <!DOCTYPE html>
     <html>
@@ -40,6 +40,9 @@ export default function (publicPath, settings) {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
+        <script>
+          window.storybookOptions = ${JSON.stringify(options)};
+        </script>
         <script src="${url.resolve(publicPath, 'static/manager.bundle.js')}"></script>
       </body>
     </html>

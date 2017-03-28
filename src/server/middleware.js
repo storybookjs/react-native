@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import baseConfig from './config/webpack.config';
+import baseProductionConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 
@@ -20,10 +21,13 @@ function getMiddleware(configDir) {
   return function () {};
 }
 
-export default function (projectDir, configDir) {
+export default function ({projectDir, configDir, ...options}) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
-  const config = loadConfig('DEVELOPMENT', baseConfig, projectDir, configDir);
+  const environment = options.environment || 'DEVELOPMENT';
+  const isProd = environment === 'PRODUCTION';
+  const currentWebpackConfig = isProd ? baseProductionConfig : baseConfig;
+  const config = loadConfig(environment, currentWebpackConfig, projectDir, configDir);
 
   // remove the leading '/'
   let publicPath = config.output.publicPath;
@@ -43,10 +47,16 @@ export default function (projectDir, configDir) {
   middlewareFn(router);
 
   router.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
-  router.use(webpackHotMiddleware(compiler));
+
+  if (!isProd) {
+    router.use(webpackHotMiddleware(compiler));
+  }
 
   router.get('/', function (req, res) {
-    res.send(getIndexHtml(publicPath));
+    res.send(getIndexHtml(publicPath, {
+      manualId: options.manualId,
+      secured: options.secured,
+    }));
   });
 
   return router;
