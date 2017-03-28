@@ -24,6 +24,10 @@ export default class ClientApi {
   }
 
   storiesOf(kind, m) {
+    if (!kind && typeof kind !== 'string') {
+      throw new Error('Invalid kind provided for stories, should be a string');
+    }
+
     if (m && m.hot) {
       m.hot.dispose(() => {
         this._storyStore.removeStoryKind(kind);
