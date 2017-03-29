@@ -1,7 +1,7 @@
 declare var module: any; // dangerous
 
 interface StoryDecorator {
-  (story: Function, context: { kind: string, story: string }): Object;
+  (story: Function, context: { kind: string, story: string }): Object | null;
 }
 
 interface Story {
