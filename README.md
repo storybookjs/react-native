@@ -22,7 +22,6 @@ React Storybook also comes with a lot of [addons](https://getstorybook.io/docs/a
 
 Here are some featured storybooks that you can reference to see how Storybook works:
 
-  * [React Button](http://kadira-samples.github.io/react-button) - [source](https://github.com/kadira-samples/react-button)
   * [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
   * [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
 
