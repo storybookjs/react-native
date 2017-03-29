@@ -24,6 +24,10 @@ export default class ClientApi {
   }
 
   storiesOf(kind, m) {
+    if (!kind && typeof kind !== 'string') {
+      throw new Error('Invalid kind provided for stories, should be a string');
+    }
+
     if (m && m.hot) {
       m.hot.dispose(() => {
         this._storyStore.removeStoryKind(kind);
@@ -45,6 +49,10 @@ export default class ClientApi {
     });
 
     api.add = (storyName, getStory) => {
+      if (this._storyStore.hasStory(kind, storyName)) {
+        throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
+      }
+
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
