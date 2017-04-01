@@ -4,12 +4,12 @@ import Types from './types';
 
 const styles = {
   panelWrapper: {
-    width: '100%',
+    width: '100%'
   },
   panel: {
     padding: '5px',
     width: 'auto',
-    position: 'relative',
+    position: 'relative'
   },
   noKnobs: {
     fontFamily: `
@@ -20,7 +20,7 @@ const styles = {
     width: '100%',
     textAlign: 'center',
     color: 'rgb(190, 190, 190)',
-    padding: '10px',
+    padding: '10px'
   },
   resetButton: {
     position: 'absolute',
@@ -33,8 +33,8 @@ const styles = {
     padding: '5px 10px',
     borderRadius: '4px 0 0 0',
     color: 'rgba(0, 0, 0, 0.5)',
-    outline: 'none',
-  },
+    outline: 'none'
+  }
 };
 
 export default class Panel extends React.Component {
@@ -57,13 +57,14 @@ export default class Panel extends React.Component {
     const queryParams = {};
     const { api, channel } = this.props;
 
-    Object.keys(knobs).forEach((name) => {
+    Object.keys(knobs).forEach(name => {
       const knob = knobs[name];
       // For the first time, get values from the URL and set them.
       if (!this.loadedFromUrl) {
         const urlValue = api.getQueryParam(`knob-${name}`);
 
-        if (urlValue !== undefined) { // If the knob value present in url
+        if (urlValue !== undefined) {
+          // If the knob value present in url
           knob.value = Types[knob.type].deserialize(urlValue);
           channel.emit('addon:knobs:knobChange', knob);
         }
@@ -88,7 +89,7 @@ export default class Panel extends React.Component {
     const newKnobs = { ...knobs };
     newKnobs[name] = {
       ...newKnobs[name],
-      ...changedKnob,
+      ...changedKnob
     };
 
     this.setState({ knobs: newKnobs });
@@ -102,14 +103,10 @@ export default class Panel extends React.Component {
 
   render() {
     const { knobs } = this.state;
-    const knobsArray = Object.keys(knobs)
-      .filter(key => (knobs[key].used))
-      .map(key => (knobs[key]));
+    const knobsArray = Object.keys(knobs).filter(key => knobs[key].used).map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return (
-        <div style={styles.noKnobs}>NO KNOBS</div>
-      );
+      return <div style={styles.noKnobs}>NO KNOBS</div>;
     }
 
     return (
@@ -126,5 +123,5 @@ export default class Panel extends React.Component {
 Panel.propTypes = {
   channel: React.PropTypes.object,
   onReset: React.PropTypes.object,
-  api: React.PropTypes.object,
+  api: React.PropTypes.object
 };

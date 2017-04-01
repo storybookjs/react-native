@@ -1,23 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
 import babelLoaderConfig from './babel.prod';
-import {
-  includePaths,
-  excludePaths,
-  loadEnv,
-  nodePaths,
-} from './utils';
+import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 
-export default function () {
+export default function() {
   const entries = {
-    preview: [
-      require.resolve('./polyfills'),
-      require.resolve('./globals'),
-    ],
-    manager: [
-      require.resolve('./polyfills'),
-      path.resolve(__dirname, '../../client/manager'),
-    ],
+    preview: [require.resolve('./polyfills'), require.resolve('./globals')],
+    manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')]
   };
 
   const config = {
@@ -31,21 +20,21 @@ export default function () {
       // This works with css and image loaders too.
       // This is working for storybook since, we don't use pushState urls and
       // relative URLs works always.
-      publicPath: '',
+      publicPath: ''
     },
     plugins: [
       new webpack.DefinePlugin(loadEnv({ production: true })),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           screw_ie8: true,
-          warnings: false,
+          warnings: false
         },
         mangle: false,
         output: {
           comments: false,
-          screw_ie8: true,
-        },
-      }),
+          screw_ie8: true
+        }
+      })
     ],
     module: {
       rules: [
@@ -54,9 +43,9 @@ export default function () {
           loader: require.resolve('babel-loader'),
           query: babelLoaderConfig,
           include: includePaths,
-          exclude: excludePaths,
-        },
-      ],
+          exclude: excludePaths
+        }
+      ]
     },
     resolve: {
       // Since we ship with json-loader always, it's better to move extensions to here
@@ -64,8 +53,8 @@ export default function () {
       extensions: ['.js', '.json', '.jsx'],
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
-      modules: ['node_modules'].concat(nodePaths),
-    },
+      modules: ['node_modules'].concat(nodePaths)
+    }
   };
 
   return config;

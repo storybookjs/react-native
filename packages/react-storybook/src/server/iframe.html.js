@@ -8,26 +8,26 @@ import url from 'url';
 //   'preview.0d2d3d845f78399fd6d5e859daa152a9.css',
 //   'static/preview.9adbb5ef965106be1cc3.bundle.js.map',
 //   'preview.0d2d3d845f78399fd6d5e859daa152a9.css.map' ]
-const previewUrlsFromAssets = (assets) => {
+const previewUrlsFromAssets = assets => {
   if (!assets) {
     return {
-      js: 'static/preview.bundle.js',
+      js: 'static/preview.bundle.js'
     };
   }
 
   if (typeof assets.preview === 'string') {
     return {
-      js: assets.preview,
+      js: assets.preview
     };
   }
 
   return {
     js: assets.preview.find(filename => filename.match(/\.js$/)),
-    css: assets.preview.find(filename => filename.match(/\.css$/)),
+    css: assets.preview.find(filename => filename.match(/\.css$/))
   };
 };
 
-export default function (data) {
+export default function(data) {
   const { assets, headHtml, publicPath } = data;
 
   const previewUrls = previewUrlsFromAssets(assets);

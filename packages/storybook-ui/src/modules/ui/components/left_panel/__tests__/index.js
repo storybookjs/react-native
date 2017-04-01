@@ -14,10 +14,7 @@ describe('manager.ui.components.left_panel.index', () => {
     const storyFilter = 'xxxxx';
 
     const wrap = shallow(
-      <LeftPanel
-        openShortcutsHelp={openShortcutsHelp}
-        storyFilter={storyFilter}
-      />
+      <LeftPanel openShortcutsHelp={openShortcutsHelp} storyFilter={storyFilter} />
     );
     const header = wrap.find(Header).first();
     expect(header.props().openShortcutsHelp).to.be.equal(openShortcutsHelp);
@@ -31,22 +28,16 @@ describe('manager.ui.components.left_panel.index', () => {
   it('should render stories only if stories prop exists', () => {
     const selectedKind = 'kk';
     const selectedStory = 'bb';
-    const stories = [
-      { kind: 'kk', stories: ['bb'] },
-    ];
+    const stories = [{ kind: 'kk', stories: ['bb'] }];
 
     const wrap = shallow(
-      <LeftPanel
-        stories={stories}
-        selectedKind={selectedKind}
-        selectedStory={selectedStory}
-      />
+      <LeftPanel stories={stories} selectedKind={selectedKind} selectedStory={selectedStory} />
     );
     const header = wrap.find(Stories).first();
     expect(header.props()).to.deep.equal({
       stories,
       selectedKind,
-      selectedStory,
+      selectedStory
     });
   });
 
@@ -54,11 +45,7 @@ describe('manager.ui.components.left_panel.index', () => {
     it('should set filter as an empty text on TextFilter.onClear', () => {
       const onStoryFilter = sinon.stub();
 
-      const wrap = shallow(
-        <LeftPanel
-          onStoryFilter={onStoryFilter}
-        />
-      );
+      const wrap = shallow(<LeftPanel onStoryFilter={onStoryFilter} />);
 
       const textFilter = wrap.find(TextFilter).first();
       textFilter.props().onClear();
@@ -70,11 +57,7 @@ describe('manager.ui.components.left_panel.index', () => {
       const onStoryFilter = sinon.stub();
       const filterText = 'XXX';
 
-      const wrap = shallow(
-        <LeftPanel
-          onStoryFilter={onStoryFilter}
-        />
-      );
+      const wrap = shallow(<LeftPanel onStoryFilter={onStoryFilter} />);
 
       const textFilter = wrap.find(TextFilter).first();
       textFilter.props().onChange(filterText);

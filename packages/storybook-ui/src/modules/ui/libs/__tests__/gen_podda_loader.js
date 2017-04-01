@@ -10,66 +10,51 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const aa = 10;
       const bb = 20;
       const cc = 40;
-      const mapper = (state) => {
-        return {
-          aa: state.aa,
-          bb: state.bb,
-        };
-      };
+      const mapper = state => ({
+        aa: state.aa,
+        bb: state.bb
+      });
 
       const clientStore = new Podda({ aa, bb, cc });
       const loader = genPoddaLoader(mapper);
 
       const onData = sinon.stub();
       loader({}, onData, { context: () => ({ clientStore }) });
-      expect(onData.args[0]).to.deep.equal([
-        null,
-        { aa, bb },
-      ]);
+      expect(onData.args[0]).to.deep.equal([null, { aa, bb }]);
     });
 
     it('should get props', () => {
       const aa = 10;
       const bb = 20;
       const cc = 40;
-      const mapper = (state, props) => {
-        return {
-          aa: props.aa,
-          bb: props.bb,
-        };
-      };
+      const mapper = (state, props) => ({
+        aa: props.aa,
+        bb: props.bb
+      });
 
       const clientStore = new Podda();
       const loader = genPoddaLoader(mapper);
 
       const onData = sinon.stub();
       loader({ aa, bb, cc }, onData, { context: () => ({ clientStore }) });
-      expect(onData.args[0]).to.deep.equal([
-        null,
-        { aa, bb },
-      ]);
+      expect(onData.args[0]).to.deep.equal([null, { aa, bb }]);
     });
 
     it('should get env', () => {
       const aa = 10;
       const bb = 20;
       const cc = 40;
-      const mapper = (state, props, env) => {
-        return {
-          aa: env.aa,
-          bb: env.bb,
-        };
-      };
+      const mapper = (state, props, env) => ({
+        aa: env.aa,
+        bb: env.bb
+      });
 
       const clientStore = new Podda();
       const loader = genPoddaLoader(mapper);
 
       const onData = sinon.stub();
       loader({}, onData, { context: () => ({ clientStore }), aa, bb, cc });
-      expect(onData.args[0]).to.deep.equal([
-        null,
-        { aa, bb },
-      ]);
+      expect(onData.args[0]).to.deep.equal([null, { aa, bb }]);
     });
   });
 
@@ -91,12 +76,10 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const aa = 10;
       const bb = 20;
       const cc = 40;
-      const mapper = (state) => {
-        return {
-          aa: state.aa,
-          bb: state.bb,
-        };
-      };
+      const mapper = state => ({
+        aa: state.aa,
+        bb: state.bb
+      });
 
       const clientStore = new Podda({ aa, bb, cc });
       const loader = genPoddaLoader(mapper);
@@ -104,22 +87,17 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const onData = sinon.stub();
       loader({ aa, bb, cc }, onData, { context: () => ({ clientStore }) });
       clientStore.set('aa', 1000);
-      expect(onData.args[1]).to.deep.equal([
-        null,
-        { aa: 1000, bb },
-      ]);
+      expect(onData.args[1]).to.deep.equal([null, { aa: 1000, bb }]);
     });
 
     it('should not run when podda subscription stopped', () => {
       const aa = 10;
       const bb = 20;
       const cc = 40;
-      const mapper = (state) => {
-        return {
-          aa: state.aa,
-          bb: state.bb,
-        };
-      };
+      const mapper = state => ({
+        aa: state.aa,
+        bb: state.bb
+      });
 
       const clientStore = new Podda({ aa, bb, cc });
       const loader = genPoddaLoader(mapper);

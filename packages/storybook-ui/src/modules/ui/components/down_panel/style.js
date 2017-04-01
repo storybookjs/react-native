@@ -9,7 +9,7 @@ export default {
     letterSpacing: '1px',
     textTransform: 'uppercase',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 
   wrapper: {
@@ -20,19 +20,19 @@ export default {
     borderRadius: 4,
     border: 'solid 1px rgb(236, 236, 236)',
     marginTop: 5,
-    width: '100%',
+    width: '100%'
   },
 
   tabbar: {
     display: 'flex',
     flexWrap: 'wrap',
-    borderBottom: 'solid 1px #eaeaea',
+    borderBottom: 'solid 1px #eaeaea'
   },
 
   content: {
     flex: 1,
     display: 'flex',
-    overflow: 'auto',
+    overflow: 'auto'
   },
 
   tablink: {
@@ -43,10 +43,10 @@ export default {
     textDecoration: 'none',
     textTransform: 'uppercase',
     transition: 'opacity 0.3s',
-    opacity: 0.5,
+    opacity: 0.5
   },
 
   activetab: {
-    opacity: 1,
-  },
+    opacity: 1
+  }
 };

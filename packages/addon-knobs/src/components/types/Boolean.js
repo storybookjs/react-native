@@ -8,7 +8,7 @@ const styles = {
   outline: 'none',
   border: '1px solid #ececec',
   fontSize: '12px',
-  color: '#555',
+  color: '#555'
 };
 
 class BooleanType extends React.Component {
@@ -30,14 +30,14 @@ class BooleanType extends React.Component {
 
 BooleanType.propTypes = {
   knob: React.PropTypes.object,
-  onChange: React.PropTypes.func,
+  onChange: React.PropTypes.func
 };
 
-BooleanType.serialize = function (value) {
+BooleanType.serialize = function(value) {
   return String(value);
 };
 
-BooleanType.deserialize = function (value) {
+BooleanType.deserialize = function(value) {
   if (!value) return false;
   return value.trim() === 'true';
 };

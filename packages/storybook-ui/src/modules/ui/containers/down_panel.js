@@ -10,7 +10,7 @@ export function mapper(state, props, { context, actions }) {
   return {
     panels,
     selectedPanel,
-    onPanelSelect: actionMap.ui.selectDownPanel,
+    onPanelSelect: actionMap.ui.selectDownPanel
   };
 }
 

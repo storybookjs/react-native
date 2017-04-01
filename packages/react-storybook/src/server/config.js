@@ -10,7 +10,7 @@ const logger = console;
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
-export default function (configType, baseConfig, configDir) {
+export default function(configType, baseConfig, configDir) {
   const config = baseConfig;
 
   const babelConfig = loadBabelConfig(configDir);
@@ -44,6 +44,7 @@ export default function (configType, baseConfig, configDir) {
     customConfigPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
   }
 
+  // eslint-disable-next-line
   const customConfig = require(customConfigPath);
 
   if (typeof customConfig === 'function') {
@@ -63,27 +64,21 @@ export default function (configType, baseConfig, configDir) {
     // Override with custom devtool if provided
     devtool: customConfig.devtool || config.devtool,
     // We need to use our and custom plugins.
-    plugins: [
-      ...config.plugins,
-      ...customConfig.plugins || [],
-    ],
+    plugins: [...config.plugins, ...(customConfig.plugins || [])],
     module: {
       ...config.module,
       // We need to use our and custom rules.
       ...customConfig.module,
-      rules: [
-        ...config.module.rules,
-        ...customConfig.module.rules || [],
-      ],
+      rules: [...config.module.rules, ...(customConfig.module.rules || [])]
     },
     resolve: {
       ...config.resolve,
       ...customConfig.resolve,
       alias: {
         ...config.alias,
-        ...(customConfig.resolve && customConfig.resolve.alias),
-      },
-    },
+        ...(customConfig.resolve && customConfig.resolve.alias)
+      }
+    }
   };
 
   return newConfig;

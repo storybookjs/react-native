@@ -10,7 +10,7 @@ class MockClientStore {
 
 const stories = [
   { kind: 'abc', stories: ['a', 'b', 'c'] },
-  { kind: 'bbc', stories: ['x', 'y', 'z'] },
+  { kind: 'bbc', stories: ['x', 'y', 'z'] }
 ];
 
 describe('manager.api.actions.api', () => {
@@ -24,7 +24,7 @@ describe('manager.api.actions.api', () => {
         expect(newState).to.deep.equal({
           stories,
           selectedKind: 'abc',
-          selectedStory: 'a',
+          selectedStory: 'a'
         });
       });
     });
@@ -36,49 +36,49 @@ describe('manager.api.actions.api', () => {
 
         const state = {
           selectedKind: 'abc',
-          selectedStory: 'c',
+          selectedStory: 'c'
         };
         const newState = clientStore.updateCallback(state);
         expect(newState).to.deep.equal({
           stories,
           selectedKind: 'abc',
-          selectedStory: 'c',
+          selectedStory: 'c'
         });
       });
     });
 
-    describe('has a selected story, but it\'s story isn\'t in new stories', () => {
+    describe('has a selected story, but it is story is not in new stories', () => {
       it('should set stories and select the first story of the selected kind', () => {
         const clientStore = new MockClientStore();
         actions.setStories({ clientStore }, stories);
 
         const state = {
           selectedKind: 'bbc',
-          selectedStory: 'k',
+          selectedStory: 'k'
         };
         const newState = clientStore.updateCallback(state);
         expect(newState).to.deep.equal({
           stories,
           selectedKind: 'bbc',
-          selectedStory: 'x',
+          selectedStory: 'x'
         });
       });
     });
 
-    describe('has a selected story, but it\'s kind isn\'t in new stories', () => {
+    describe('has a selected story, but it is kind is not in new stories', () => {
       it('should set stories and select the first story', () => {
         const clientStore = new MockClientStore();
         actions.setStories({ clientStore }, stories);
 
         const state = {
           selectedKind: 'kky',
-          selectedStory: 'c',
+          selectedStory: 'c'
         };
         const newState = clientStore.updateCallback(state);
         expect(newState).to.deep.equal({
           stories,
           selectedKind: 'abc',
-          selectedStory: 'a',
+          selectedStory: 'a'
         });
       });
     });
@@ -93,12 +93,12 @@ describe('manager.api.actions.api', () => {
         const state = {
           stories,
           selectedKind: 'abc',
-          selectedStory: 'c',
+          selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
         expect(stateUpdates).to.deep.equal({
           selectedKind: 'bbc',
-          selectedStory: 'y',
+          selectedStory: 'y'
         });
       });
     });
@@ -111,12 +111,12 @@ describe('manager.api.actions.api', () => {
         const state = {
           stories,
           selectedKind: 'abc',
-          selectedStory: 'c',
+          selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
         expect(stateUpdates).to.deep.equal({
           selectedKind: 'bbc',
-          selectedStory: 'x',
+          selectedStory: 'x'
         });
       });
     });
@@ -131,12 +131,12 @@ describe('manager.api.actions.api', () => {
         const state = {
           stories,
           selectedKind: 'abc',
-          selectedStory: 'c',
+          selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
         expect(stateUpdates).to.deep.equal({
           selectedKind: 'bbc',
-          selectedStory: 'x',
+          selectedStory: 'x'
         });
       });
 
@@ -147,12 +147,12 @@ describe('manager.api.actions.api', () => {
         const state = {
           stories,
           selectedKind: 'abc',
-          selectedStory: 'c',
+          selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
         expect(stateUpdates).to.deep.equal({
           selectedKind: 'abc',
-          selectedStory: 'b',
+          selectedStory: 'b'
         });
       });
     });
@@ -165,12 +165,12 @@ describe('manager.api.actions.api', () => {
         const state = {
           stories,
           selectedKind: 'bbc',
-          selectedStory: 'z',
+          selectedStory: 'z'
         };
         const stateUpdates = clientStore.updateCallback(state);
         expect(stateUpdates).to.deep.equal({
           selectedKind: 'bbc',
-          selectedStory: 'z',
+          selectedStory: 'z'
         });
       });
     });
@@ -182,12 +182,12 @@ describe('manager.api.actions.api', () => {
       actions.setOptions({ clientStore }, { abc: 10 });
 
       const state = {
-        uiOptions: { bbc: 50, abc: 40 },
+        uiOptions: { bbc: 50, abc: 40 }
       };
 
       const stateUpdates = clientStore.updateCallback(state);
       expect(stateUpdates).to.deep.equal({
-        uiOptions: { bbc: 50, abc: 10 },
+        uiOptions: { bbc: 50, abc: 10 }
       });
     });
 
@@ -196,12 +196,12 @@ describe('manager.api.actions.api', () => {
       actions.setOptions({ clientStore }, { abc: 10, notGoingToState: 20 });
 
       const state = {
-        uiOptions: { bbc: 50, abc: 40 },
+        uiOptions: { bbc: 50, abc: 40 }
       };
 
       const stateUpdates = clientStore.updateCallback(state);
       expect(stateUpdates).to.deep.equal({
-        uiOptions: { bbc: 50, abc: 10 },
+        uiOptions: { bbc: 50, abc: 10 }
       });
     });
   });
@@ -212,26 +212,26 @@ describe('manager.api.actions.api', () => {
       actions.setQueryParams({ clientStore }, { abc: 'aaa', cnn: 'ccc' });
 
       const state = {
-        customQueryParams: { bbc: 'bbb', abc: 'sshd' },
+        customQueryParams: { bbc: 'bbb', abc: 'sshd' }
       };
 
       const stateUpdates = clientStore.updateCallback(state);
       expect(stateUpdates).to.deep.equal({
-        customQueryParams: { bbc: 'bbb', abc: 'aaa', cnn: 'ccc' },
+        customQueryParams: { bbc: 'bbb', abc: 'aaa', cnn: 'ccc' }
       });
     });
 
-    it('should delete the param if it\'s null', () => {
+    it('should delete the param if it is null', () => {
       const clientStore = new MockClientStore();
       actions.setQueryParams({ clientStore }, { abc: null, bbc: 'ccc' });
 
       const state = {
-        customQueryParams: { bbc: 'bbb', abc: 'sshd' },
+        customQueryParams: { bbc: 'bbb', abc: 'sshd' }
       };
 
       const stateUpdates = clientStore.updateCallback(state);
       expect(stateUpdates).to.deep.equal({
-        customQueryParams: { bbc: 'ccc' },
+        customQueryParams: { bbc: 'ccc' }
       });
     });
   });

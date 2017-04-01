@@ -5,7 +5,7 @@ const wrapStyle = {
   height: '100%',
   width: '20px',
   marginLeft: '-10px',
-  position: 'relative',
+  position: 'relative'
 };
 
 const spanStyle = {
@@ -16,12 +16,12 @@ const spanStyle = {
   marginTop: '-10px',
   position: 'absolute',
   borderLeft: 'solid 1px rgba(0,0,0,0.1)',
-  borderRight: 'solid 1px rgba(0,0,0,0.1)',
+  borderRight: 'solid 1px rgba(0,0,0,0.1)'
 };
 
 const VSplit = () => (
   <div style={wrapStyle}>
-    <span style={spanStyle}></span>
+    <span style={spanStyle} />
   </div>
 );
 

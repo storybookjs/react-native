@@ -1,10 +1,6 @@
 /* globals location */
 
-import {
-  setInitialStory,
-  setError,
-  clearError,
-} from './actions';
+import { setInitialStory, setError, clearError } from './actions';
 
 import { clearDecorators } from './';
 

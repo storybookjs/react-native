@@ -9,12 +9,7 @@ export const mapper = (state, props, { actions }) => {
   const { name, url, sortStoriesByKind } = uiOptions;
 
   const data = {
-    stories: filters.storyFilter(
-      stories,
-      storyFilter,
-      selectedKind,
-      sortStoriesByKind
-    ),
+    stories: filters.storyFilter(stories, storyFilter, selectedKind, sortStoriesByKind),
     selectedKind,
     selectedStory,
     onSelectStory: actionMap.api.selectStory,
@@ -24,7 +19,7 @@ export const mapper = (state, props, { actions }) => {
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
     name,
-    url,
+    url
   };
 
   return data;

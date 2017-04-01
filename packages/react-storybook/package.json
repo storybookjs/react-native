@@ -13,10 +13,7 @@
   },
   "scripts": {
     "prepublish": "sh scripts/prepublish.sh",
-    "lint": "eslint ./src",
-    "lintfix": "eslint ./src --fix",
-    "testonly": "mocha $npm_package_options_mocha",
-    "test": "npm run lint && npm run testonly",
+    "test": "mocha $npm_package_options_mocha",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
     "postpublish": "greenkeeper-postpublish"
@@ -76,11 +73,6 @@
     "chai": "^3.5.0",
     "deep-equal": "^1.0.1",
     "enzyme": "^2.8.0",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
     "expect": "^1.20.2",
     "greenkeeper-postpublish": "^1.0.1",
     "jsdom": "^9.12.0",

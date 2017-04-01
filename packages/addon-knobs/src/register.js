@@ -7,8 +7,6 @@ addons.register('kadirahq/storybook-addon-knobs', api => {
 
   addons.addPanel('kadirahq/storybook-addon-knobs', {
     title: 'Knobs',
-    render: () => {
-      return <Panel channel={channel} api={api} key="knobs-panel" />;
-    },
+    render: () => <Panel channel={channel} api={api} key="knobs-panel" />
   });
 });

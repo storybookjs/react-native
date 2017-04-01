@@ -30,11 +30,13 @@ program
 logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
 
 if (program.enableDb || program.dbPath) {
-  logger.error([
-    'Error: the experimental local database addon is no longer bundled with',
-    'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
-    'from the command or npm script and try again.',
-  ].join(' '));
+  logger.error(
+    [
+      'Error: the experimental local database addon is no longer bundled with',
+      'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
+      'from the command or npm script and try again.'
+    ].join(' ')
+  );
   process.exit(1);
 }
 
@@ -43,7 +45,7 @@ if (program.enableDb || program.dbPath) {
 getEnvConfig(program, {
   staticDir: 'SBCONFIG_STATIC_DIR',
   outputDir: 'SBCONFIG_OUTPUT_DIR',
-  configDir: 'SBCONFIG_CONFIG_DIR',
+  configDir: 'SBCONFIG_CONFIG_DIR'
 });
 
 const configDir = program.configDir || './.storybook';
@@ -62,7 +64,7 @@ config.output.path = outputDir;
 
 // copy all static files
 if (program.staticDir) {
-  program.staticDir.forEach((dir) => {
+  program.staticDir.forEach(dir => {
     if (!fs.existsSync(dir)) {
       logger.error(`Error: no such directory to load static files: ${dir}`);
       process.exit(-1);
@@ -74,7 +76,7 @@ if (program.staticDir) {
 
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
-webpack(config).run(function (err, stats) {
+webpack(config).run((err, stats) => {
   if (err) {
     logger.error('Failed to build the storybook');
     logger.error(err.message);
@@ -83,7 +85,7 @@ webpack(config).run(function (err, stats) {
 
   const data = {
     publicPath: config.output.publicPath,
-    assets: stats.toJson().assetsByChunkName,
+    assets: stats.toJson().assetsByChunkName
   };
   const headHtml = getHeadHtml(configDir);
 

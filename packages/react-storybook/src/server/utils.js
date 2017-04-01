@@ -16,7 +16,7 @@ export function getHeadHtml(configDirPath) {
 }
 
 export function getEnvConfig(program, configEnv) {
-  Object.keys(configEnv).forEach((fieldName) => {
+  Object.keys(configEnv).forEach(fieldName => {
     const envVarName = configEnv[fieldName];
     const envVarValue = process.env[envVarName];
     if (envVarValue) {
@@ -28,11 +28,13 @@ export function getEnvConfig(program, configEnv) {
 export function getMiddleware(configDir) {
   const middlewarePath = path.resolve(configDir, 'middleware.js');
   if (fs.existsSync(middlewarePath)) {
-    let middlewareModule = require(middlewarePath); // eslint-disable-line global-require
+    // eslint-disable-next-line
+    let middlewareModule = require(middlewarePath);
     if (middlewareModule.__esModule) {
       middlewareModule = middlewareModule.default;
     }
     return middlewareModule;
   }
-  return function () {};
+  return function() {};
+  /* eslint-enable */
 }

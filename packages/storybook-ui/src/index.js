@@ -8,16 +8,18 @@ import uiModule from './modules/ui';
 import { setContext, setActions } from './compose';
 
 export class Provider {
-  renderPreview(selectedKind, selectedStory) { // eslint-disable-line no-unused-vars
+  renderPreview(selectedKind, selectedStory) {
+    // eslint-disable-line no-unused-vars
     throw new Error('Provider.renderPreview() is not implemented!');
   }
 
-  handleAPI(api) { // eslint-disable-line no-unused-vars
+  handleAPI(api) {
+    // eslint-disable-line no-unused-vars
     throw new Error('Provider.handleAPI() is not implemented!');
   }
 }
 
-export default function (domNode, provider) {
+export default function(domNode, provider) {
   if (!(provider instanceof Provider)) {
     throw new Error('provider is not extended from the base Provider');
   }
@@ -25,12 +27,10 @@ export default function (domNode, provider) {
   const defaultState = {
     ...shortcutsModule.defaultState,
     ...apiModule.defaultState,
-    ...uiModule.defaultState,
+    ...uiModule.defaultState
   };
   const clientStore = new Podda(defaultState);
-  clientStore.registerAPI('toggle', (store, key) => {
-    return store.set(key, !store.get(key));
-  });
+  clientStore.registerAPI('toggle', (store, key) => store.set(key, !store.get(key)));
 
   const context = buildContext(clientStore, domNode, provider);
   const app = createApp(context);

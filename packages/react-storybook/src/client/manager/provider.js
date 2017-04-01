@@ -22,7 +22,7 @@ export default class ReactProvider extends Provider {
   renderPreview(selectedKind, selectedStory) {
     const queryParams = {
       selectedKind,
-      selectedStory,
+      selectedStory
     };
 
     // Add the react-perf query string to the iframe if that present.
@@ -32,22 +32,20 @@ export default class ReactProvider extends Provider {
 
     const queryString = qs.stringify(queryParams);
     const url = `iframe.html?${queryString}`;
-    return (
-      <Preview url={url} />
-    );
+    return <Preview url={url} />;
   }
 
   handleAPI(api) {
     api.onStory((kind, story) => {
       this.channel.emit('setCurrentStory', { kind, story });
     });
-    this.channel.on('setStories', (data) => {
+    this.channel.on('setStories', data => {
       api.setStories(data.stories);
     });
-    this.channel.on('selectStory', (data) => {
+    this.channel.on('selectStory', data => {
       api.selectStory(data.kind, data.story);
     });
-    this.channel.on('applyShortcut', (data) => {
+    this.channel.on('applyShortcut', data => {
       api.handleShortcut(data.event);
     });
     addons.loadAddons(api);

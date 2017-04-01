@@ -12,13 +12,13 @@ describe('manager.ui.containers.shortcuts_help', () => {
       const env = {
         actions: () => ({
           ui: {
-            toggleShortcutsHelp,
-          },
-        }),
+            toggleShortcutsHelp
+          }
+        })
       };
 
       const state = {
-        showShortcutsHelp,
+        showShortcutsHelp
       };
 
       const data = mapper(state, props, env);

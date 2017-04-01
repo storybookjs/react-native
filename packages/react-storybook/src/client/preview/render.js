@@ -22,7 +22,7 @@ export function renderError(error) {
   const properError = new Error(error.title);
   properError.stack = error.description;
 
-  const redBox = (<ErrorDisplay error={properError} />);
+  const redBox = <ErrorDisplay error={properError} />;
   ReactDOM.render(redBox, rootEl);
 }
 
@@ -31,7 +31,7 @@ export function renderException(error) {
   // Since this is an error, this affects to the main page as well.
   const realError = new Error(error.message);
   realError.stack = error.stack;
-  const redBox = (<ErrorDisplay error={realError} />);
+  const redBox = <ErrorDisplay error={realError} />;
   ReactDOM.render(redBox, rootEl);
 
   // Log the stack to the console. So, user could check the source code.
@@ -41,8 +41,8 @@ export function renderException(error) {
 export function renderMain(data, storyStore) {
   if (storyStore.size() === 0) return null;
 
-  const NoPreview = () => (<p>No Preview Available!</p>);
-  const noPreview = (<NoPreview />);
+  const NoPreview = () => <p>No Preview Available!</p>;
+  const noPreview = <NoPreview />;
   const { selectedKind, selectedStory } = data;
 
   const story = storyStore.getStory(selectedKind, selectedStory);
@@ -67,7 +67,7 @@ export function renderMain(data, storyStore) {
 
   const context = {
     kind: selectedKind,
-    story: selectedStory,
+    story: selectedStory
   };
 
   const element = story(context);
@@ -79,7 +79,7 @@ export function renderMain(data, storyStore) {
       description: stripIndents`
         Did you forget to return the React element from the story?
         Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
-      `,
+      `
       /* eslint-enable */
     };
     return renderError(error);
@@ -91,7 +91,7 @@ export function renderMain(data, storyStore) {
       description: stripIndents`
         Seems like you are not returning a correct React element from the story.
         Could you double check that?
-      `,
+      `
     };
     return renderError(error);
   }

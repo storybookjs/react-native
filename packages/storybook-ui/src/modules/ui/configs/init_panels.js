@@ -1,4 +1,4 @@
-export default function ({ provider }, actionMap) {
+export default function({ provider }, actionMap) {
   const panels = Object.keys(provider.getPanels());
 
   if (panels.length > 0) {
