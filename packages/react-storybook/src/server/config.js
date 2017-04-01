@@ -3,46 +3,18 @@
 import fs from 'fs';
 import path from 'path';
 import loadBabelConfig from './babel_config';
-import { includePaths } from './config/utils';
 
 // avoid ESLint errors
 const logger = console;
 
-export function addJsonLoaderIfNotAvailable(config) {
-  const jsonLoaderExists = config.module.loaders.reduce(
-    (value, loader) => {
-      return value || [].concat(loader.test).some((matcher) => {
-        const isRegex = matcher instanceof RegExp;
-        const testString = 'my_package.json';
-        if (isRegex) {
-          return matcher.test(testString);
-        }
-        if (typeof matcher === 'function') {
-          return matcher(testString);
-        }
-        return false;
-      });
-    },
-    false
-  );
-
-  if (!jsonLoaderExists) {
-    config.module.loaders.push({
-      test: /\.json$/,
-      include: includePaths,
-      loader: require.resolve('json-loader'),
-    });
-  }
-}
-
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
-export default function (configType, baseConfig, configDir) {
+export default function(configType, baseConfig, configDir) {
   const config = baseConfig;
 
   const babelConfig = loadBabelConfig(configDir);
-  config.module.loaders[0].query = babelConfig;
+  config.module.rules[0].query = babelConfig;
 
   // Check whether a config.js file exists inside the storybook
   // config directory and throw an error if it's not.
@@ -72,6 +44,7 @@ export default function (configType, baseConfig, configDir) {
     customConfigPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
   }
 
+  // eslint-disable-next-line
   const customConfig = require(customConfigPath);
 
   if (typeof customConfig === 'function') {
@@ -91,30 +64,22 @@ export default function (configType, baseConfig, configDir) {
     // Override with custom devtool if provided
     devtool: customConfig.devtool || config.devtool,
     // We need to use our and custom plugins.
-    plugins: [
-      ...config.plugins,
-      ...customConfig.plugins || [],
-    ],
+    plugins: [...config.plugins, ...(customConfig.plugins || [])],
     module: {
       ...config.module,
-      // We need to use our and custom loaders.
+      // We need to use our and custom rules.
       ...customConfig.module,
-      loaders: [
-        ...config.module.loaders,
-        ...customConfig.module.loaders || [],
-      ],
+      rules: [...config.module.rules, ...(customConfig.module.rules || [])]
     },
     resolve: {
       ...config.resolve,
       ...customConfig.resolve,
       alias: {
         ...config.alias,
-        ...(customConfig.resolve && customConfig.resolve.alias),
-      },
-    },
+        ...(customConfig.resolve && customConfig.resolve.alias)
+      }
+    }
   };
-
-  addJsonLoaderIfNotAvailable(newConfig);
 
   return newConfig;
 }

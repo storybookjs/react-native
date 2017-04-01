@@ -8,26 +8,26 @@ import { version } from '../../package.json';
 // assets.manager will be something like:
 // [ 'static/manager.c6e6350b6eb01fff8bad.bundle.js',
 //   'static/manager.c6e6350b6eb01fff8bad.bundle.js.map' ]
-const managerUrlsFromAssets = (assets) => {
+const managerUrlsFromAssets = assets => {
   if (!assets || !assets.manager) {
     return {
-      js: 'static/manager.bundle.js',
+      js: 'static/manager.bundle.js'
     };
   }
 
   if (typeof assets.manager === 'string') {
     return {
-      js: assets.manager,
+      js: assets.manager
     };
   }
 
   return {
     js: assets.manager.find(filename => filename.match(/\.js$/)),
-    css: assets.manager.find(filename => filename.match(/\.css$/)),
+    css: assets.manager.find(filename => filename.match(/\.css$/))
   };
 };
 
-export default function (data) {
+export default function(data) {
   const { assets, publicPath } = data;
 
   const managerUrls = managerUrlsFromAssets(assets);

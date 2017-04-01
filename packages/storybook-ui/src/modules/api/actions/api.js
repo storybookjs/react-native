@@ -5,7 +5,7 @@ export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) 
   let currentIndex = -1;
 
   storyKinds.forEach(({ kind, stories }) => {
-    stories.forEach((story) => {
+    stories.forEach(story => {
       flatteredStories.push({ kind, story });
       if (kind === selectedKind && story === selectedStory) {
         currentIndex = flatteredStories.length - 1;
@@ -20,7 +20,7 @@ export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) 
 
   return {
     selectedKind: jumpedStory.kind,
-    selectedStory: jumpedStory.story,
+    selectedStory: jumpedStory.story
   };
 }
 
@@ -48,22 +48,21 @@ export function ensureStory(storyKinds, selectedKind, selectedStory) {
 
 export default {
   setStories({ clientStore }, stories) {
-    clientStore.update((state) => {
+    clientStore.update(state => {
       const selectedKind = ensureKind(stories, state.selectedKind);
-      const currentSelectedStory =
-        (selectedKind === state.selectedKind) ? state.selectedStory : null;
+      const currentSelectedStory = selectedKind === state.selectedKind ? state.selectedStory : null;
       const selectedStory = ensureStory(stories, selectedKind, currentSelectedStory);
 
       return {
         stories,
         selectedStory,
-        selectedKind,
+        selectedKind
       };
     });
   },
 
   selectStory({ clientStore }, kind, story) {
-    clientStore.update((state) => {
+    clientStore.update(state => {
       const selectedKind = ensureKind(state.stories, kind);
       const selectedStory = ensureStory(state.stories, selectedKind, story);
 
@@ -72,17 +71,16 @@ export default {
   },
 
   jumpToStory({ clientStore }, direction) {
-    clientStore.update((state) => {
-      return jumpToStory(state.stories, state.selectedKind, state.selectedStory, direction);
-    });
+    clientStore.update(state =>
+      jumpToStory(state.stories, state.selectedKind, state.selectedStory, direction));
   },
 
   setOptions({ clientStore }, options) {
-    clientStore.update((state) => {
+    clientStore.update(state => {
       const newOptions = pick(options, Object.keys(state.uiOptions));
       const updatedOptions = {
         ...state.uiOptions,
-        ...newOptions,
+        ...newOptions
       };
 
       return { uiOptions: updatedOptions };
@@ -90,10 +88,10 @@ export default {
   },
 
   setQueryParams({ clientStore }, customQueryParams) {
-    clientStore.update((state) => {
+    clientStore.update(state => {
       const updatedQueryParams = {
         ...state.customQueryParams,
-        ...customQueryParams,
+        ...customQueryParams
       };
 
       Object.keys(customQueryParams).forEach(key => {
@@ -103,8 +101,8 @@ export default {
       });
 
       return {
-        customQueryParams: updatedQueryParams,
+        customQueryParams: updatedQueryParams
       };
     });
-  },
+  }
 };

@@ -30,30 +30,30 @@ export default {
         apiActions.api.jumpToStory(context, -1);
         break;
       default:
-        clientStore.update((state) => {
+        clientStore.update(state => {
           const newOptions = keyEventToOptions(state.shortcutOptions, event);
           const updatedOptions = {
             ...state.shortcutOptions,
-            ...newOptions,
+            ...newOptions
           };
 
           return {
-            shortcutOptions: updatedOptions,
+            shortcutOptions: updatedOptions
           };
         });
     }
   },
 
   setOptions({ clientStore }, options) {
-    clientStore.update((state) => {
+    clientStore.update(state => {
       const updatedOptions = {
         ...state.shortcutOptions,
-        ...pick(options, Object.keys(state.shortcutOptions)),
+        ...pick(options, Object.keys(state.shortcutOptions))
       };
 
       return {
-        shortcutOptions: updatedOptions,
+        shortcutOptions: updatedOptions
       };
     });
-  },
+  }
 };

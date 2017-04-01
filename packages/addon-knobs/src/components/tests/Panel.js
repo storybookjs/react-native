@@ -20,19 +20,17 @@ describe('Panel', () => {
         on: (e, handler) => {
           handlers[e] = handler;
         },
-        emit: sinon.spy(),
+        emit: sinon.spy()
       };
 
       const testQueryParams = {
         'knob-foo': 'test string',
-        bar: 'some other string',
+        bar: 'some other string'
       };
 
       const testApi = {
-        getQueryParam: key => {
-          return testQueryParams[key];
-        },
-        setQueryParams: sinon.spy(),
+        getQueryParam: key => testQueryParams[key],
+        setQueryParams: sinon.spy()
       };
 
       shallow(<Panel channel={testChannel} api={testApi} />);
@@ -42,20 +40,20 @@ describe('Panel', () => {
         foo: {
           name: 'foo',
           value: 'default string',
-          type: 'text',
+          type: 'text'
         },
         baz: {
           name: 'baz',
           value: 'another knob value',
-          type: 'text',
-        },
+          type: 'text'
+        }
       };
 
       setKnobsHandler(knobs);
       const knobFromUrl = {
         name: 'foo',
         value: testQueryParams['knob-foo'],
-        type: 'text',
+        type: 'text'
       };
       const e = 'addon:knobs:knobChange';
       expect(testChannel.emit.calledWith(e, knobFromUrl)).to.equal(true);
@@ -68,19 +66,17 @@ describe('Panel', () => {
         on: (e, handler) => {
           handlers[e] = handler;
         },
-        emit: sinon.spy(),
+        emit: sinon.spy()
       };
 
       const testQueryParams = {
         'knob-foo': 'test string',
-        bar: 'some other string',
+        bar: 'some other string'
       };
 
       const testApi = {
-        getQueryParam: key => {
-          return testQueryParams[key];
-        },
-        setQueryParams: sinon.spy(),
+        getQueryParam: key => testQueryParams[key],
+        setQueryParams: sinon.spy()
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
@@ -90,13 +86,13 @@ describe('Panel', () => {
         foo: {
           name: 'foo',
           value: 'default string',
-          type: 'text',
+          type: 'text'
         },
         baz: {
           name: 'baz',
           value: 'another knob value',
-          type: 'text',
-        },
+          type: 'text'
+        }
       };
 
       // Make it act like that url params are already checked
@@ -105,7 +101,7 @@ describe('Panel', () => {
       setKnobsHandler(knobs);
       const knobFromStory = {
         'knob-foo': knobs.foo.value,
-        'knob-baz': knobs.baz.value,
+        'knob-baz': knobs.baz.value
       };
 
       expect(testApi.setQueryParams.calledWith(knobFromStory)).to.equal(true);
@@ -116,12 +112,12 @@ describe('Panel', () => {
     it('should set queryParams and emit knobChange event', () => {
       const testChannel = {
         on: sinon.spy(),
-        emit: sinon.spy(),
+        emit: sinon.spy()
       };
 
       const testApi = {
         getQueryParam: sinon.spy(),
-        setQueryParams: sinon.spy(),
+        setQueryParams: sinon.spy()
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
@@ -129,11 +125,10 @@ describe('Panel', () => {
       const testChangedKnob = {
         name: 'foo',
         value: 'changed text',
-        type: 'text',
+        type: 'text'
       };
       wrapper.instance().handleChange(testChangedKnob);
-      expect(testChannel.emit.calledWith(
-        'addon:knobs:knobChange', testChangedKnob)).to.equal(true);
+      expect(testChannel.emit.calledWith('addon:knobs:knobChange', testChangedKnob)).to.equal(true);
 
       const paramsChange = { 'knob-foo': 'changed text' };
       expect(testApi.setQueryParams.calledWith(paramsChange)).to.equal(true);

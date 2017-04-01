@@ -12,7 +12,7 @@ export function storyFilter(stories, filter, selectedKind, sortStoriesByKind) {
   const sorted = sort(stories, sortStoriesByKind);
   if (!filter) return sorted;
 
-  return sorted.filter((kindInfo) => {
+  return sorted.filter(kindInfo => {
     if (kindInfo.kind === selectedKind) return true;
     const needle = filter.toLocaleLowerCase();
     const hstack = kindInfo.kind.toLocaleLowerCase();

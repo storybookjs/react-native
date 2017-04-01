@@ -5,7 +5,7 @@ const iframeStyle = {
   height: '100%',
   border: 0,
   margin: 0,
-  padding: 0,
+  padding: 0
 };
 
 class Preview extends Component {
@@ -21,18 +21,12 @@ class Preview extends Component {
   /* eslint-enable class-methods-use-this */
 
   render() {
-    return (
-      <iframe
-        id="storybook-preview-iframe"
-        style={iframeStyle}
-        src={this.props.url}
-      />
-    );
+    return <iframe id="storybook-preview-iframe" style={iframeStyle} src={this.props.url} />;
   }
 }
 
 Preview.propTypes = {
-  url: React.PropTypes.string,
+  url: React.PropTypes.string.isRequired
 };
 
 export default Preview;

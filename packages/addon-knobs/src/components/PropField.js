@@ -1,12 +1,12 @@
 import React from 'react';
 import TypeMap from './types';
 
-const InvalidType = () => (<span>Invalid Type</span>);
+const InvalidType = () => <span>Invalid Type</span>;
 
 const stylesheet = {
   field: {
     display: 'table-row',
-    padding: '5px',
+    padding: '5px'
   },
   label: {
     display: 'table-cell',
@@ -19,18 +19,18 @@ const stylesheet = {
     fontSize: 10,
     color: 'rgb(68, 68, 68)',
     textTransform: 'uppercase',
-    fontWeight: 600,
-  },
+    fontWeight: 600
+  }
 };
 
 stylesheet.textarea = {
   ...stylesheet.input,
-  height: '100px',
+  height: '100px'
 };
 
 stylesheet.checkbox = {
   ...stylesheet.input,
-  width: 'auto',
+  width: 'auto'
 };
 
 export default class PropField extends React.Component {
@@ -46,17 +46,14 @@ export default class PropField extends React.Component {
   render() {
     const { onChange, knob } = this.props;
 
-    let InputType = TypeMap[knob.type] || InvalidType;
+    const InputType = TypeMap[knob.type] || InvalidType;
 
     return (
       <div style={stylesheet.field}>
         <label htmlFor={knob.name} style={stylesheet.label}>
           {`${knob.name}`}
         </label>
-        <InputType
-          knob={knob}
-          onChange={onChange}
-        />
+        <InputType knob={knob} onChange={onChange} />
       </div>
     );
   }
@@ -64,5 +61,5 @@ export default class PropField extends React.Component {
 
 PropField.propTypes = {
   onChange: React.PropTypes.func.isRequired,
-  knob: React.PropTypes.object,
+  knob: React.PropTypes.object
 };

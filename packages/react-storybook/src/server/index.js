@@ -30,11 +30,13 @@ program
 logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
 
 if (program.enableDb || program.dbPath) {
-  logger.error([
-    'Error: the experimental local database addon is no longer bundled with',
-    'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
-    'from the command or npm script and try again.',
-  ].join(' '));
+  logger.error(
+    [
+      'Error: the experimental local database addon is no longer bundled with',
+      'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
+      'from the command or npm script and try again.'
+    ].join(' ')
+  );
   process.exit(1);
 }
 
@@ -45,7 +47,7 @@ getEnvConfig(program, {
   host: 'SBCONFIG_HOSTNAME',
   staticDir: 'SBCONFIG_STATIC_DIR',
   configDir: 'SBCONFIG_CONFIG_DIR',
-  dontTrack: 'SBCONFIG_DO_NOT_TRACK',
+  dontTrack: 'SBCONFIG_DO_NOT_TRACK'
 });
 
 if (program.dontTrack) {
@@ -71,7 +73,7 @@ let hasCustomFavicon = false;
 
 if (program.staticDir) {
   program.staticDir = parseList(program.staticDir);
-  program.staticDir.forEach((dir) => {
+  program.staticDir.forEach(dir => {
     const staticPath = path.resolve(dir);
     if (!fs.existsSync(staticPath)) {
       logger.error(`Error: no such directory to load static files: ${staticPath}`);
@@ -99,14 +101,16 @@ const configDir = program.configDir || './.storybook';
 // The repository info is sent to the storybook while running on
 // development mode so it'll be easier for tools to integrate.
 const exec = cmd => shelljs.exec(cmd, { silent: true }).stdout.trim();
-process.env.STORYBOOK_GIT_ORIGIN = process.env.STORYBOOK_GIT_ORIGIN || exec('git remote get-url origin');
-process.env.STORYBOOK_GIT_BRANCH = process.env.STORYBOOK_GIT_BRANCH || exec('git symbolic-ref HEAD --short');
+process.env.STORYBOOK_GIT_ORIGIN = process.env.STORYBOOK_GIT_ORIGIN ||
+  exec('git remote get-url origin');
+process.env.STORYBOOK_GIT_BRANCH = process.env.STORYBOOK_GIT_BRANCH ||
+  exec('git symbolic-ref HEAD --short');
 
 // NOTE changes to env should be done before calling `getBaseConfig`
 // `getBaseConfig` function which is called inside the middleware
 app.use(storybook(configDir));
 
-app.listen(...listenAddr, function (error) {
+app.listen(...listenAddr, error => {
   if (error) {
     throw error;
   } else {

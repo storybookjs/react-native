@@ -15,5 +15,5 @@ export default {
   object: ObjectType,
   select: SelectType,
   array: ArrayType,
-  date: DateType,
+  date: DateType
 };

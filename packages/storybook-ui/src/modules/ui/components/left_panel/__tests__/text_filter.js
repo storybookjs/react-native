@@ -5,23 +5,23 @@ import React from 'react';
 import sinon from 'sinon';
 import TextFilter from '../text_filter';
 
-describe('manager.ui.components.left_panel.test_filter', function () {
-  describe('render', function () {
-    it('should render input without filterText', function () {
+describe('manager.ui.components.left_panel.test_filter', () => {
+  describe('render', () => {
+    it('should render input without filterText', () => {
       const wrap = shallow(<TextFilter />);
       const input = wrap.find('input').first();
       expect(input.props().placeholder).to.equal('Filter');
     });
 
-    it('should render input with filterText', function () {
+    it('should render input with filterText', () => {
       const wrap = shallow(<TextFilter text="Filter Text" />);
       const input = wrap.find('input').first();
       expect(input.props().value).to.equal('Filter Text');
     });
   });
 
-  describe('functions', function () {
-    it('should call the onChange prop when input changes', function () {
+  describe('functions', () => {
+    it('should call the onChange prop when input changes', () => {
       const onChange = sinon.spy();
       const wrap = shallow(<TextFilter onChange={onChange} />);
       const input = wrap.find('input').first();
@@ -31,7 +31,7 @@ describe('manager.ui.components.left_panel.test_filter', function () {
       expect(onChange.firstCall.calledWith('new value'));
     });
 
-    it('should call the onClear prop when the button is clicked', function () {
+    it('should call the onClear prop when the button is clicked', () => {
       const onClear = sinon.spy();
       const wrap = shallow(<TextFilter onClear={onClear} />);
 

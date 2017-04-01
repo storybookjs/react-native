@@ -12,7 +12,7 @@ const styles = {
   borderRadius: 2,
   fontSize: 11,
   padding: '5px',
-  color: '#555',
+  color: '#555'
 };
 
 class ArrayType extends React.Component {
@@ -24,7 +24,7 @@ class ArrayType extends React.Component {
         ref="input"
         style={styles}
         value={knob.value.join(knob.separator)}
-        onChange={(e) => onChange(e.target.value.split(knob.separator))}
+        onChange={e => onChange(e.target.value.split(knob.separator))}
       />
     );
   }
@@ -32,14 +32,14 @@ class ArrayType extends React.Component {
 
 ArrayType.propTypes = {
   knob: React.PropTypes.object,
-  onChange: React.PropTypes.func,
+  onChange: React.PropTypes.func
 };
 
-ArrayType.serialize = function (value) {
+ArrayType.serialize = function(value) {
   return value;
 };
 
-ArrayType.deserialize = function (value) {
+ArrayType.deserialize = function(value) {
   return value;
 };
 

@@ -29,7 +29,7 @@ class DateType extends React.Component {
           id={knob.name}
           value={knob.value ? new Date(knob.value) : null}
           type="date"
-          onChange={(date) => onChange(date.valueOf())}
+          onChange={date => onChange(date.valueOf())}
         />
       </div>
     );
@@ -38,14 +38,14 @@ class DateType extends React.Component {
 
 DateType.propTypes = {
   knob: React.PropTypes.object,
-  onChange: React.PropTypes.func,
+  onChange: React.PropTypes.func
 };
 
-DateType.serialize = function (value) {
+DateType.serialize = function(value) {
   return String(value);
 };
 
-DateType.deserialize = function (value) {
+DateType.deserialize = function(value) {
   return parseFloat(value);
 };
 

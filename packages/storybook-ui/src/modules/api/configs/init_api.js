@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 
-export default function (provider, clientStore, actions) {
+export default function(provider, clientStore, actions) {
   const callbacks = new EventEmitter();
   let currentKind;
   let currentStory;
@@ -35,13 +35,13 @@ export default function (provider, clientStore, actions) {
         return state.customQueryParams[key];
       }
       return undefined;
-    },
+    }
   };
 
   provider.handleAPI(providerApi);
 
   // subscribe to redux store and trigger onStory's callback
-  clientStore.subscribe(function () {
+  clientStore.subscribe(() => {
     const state = clientStore.getAll();
     if (!state.selectedKind) return;
 

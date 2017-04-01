@@ -7,29 +7,25 @@ import pick from 'lodash.pick';
 const scrollStyle = {
   height: 'calc(100vh - 105px)',
   marginTop: 10,
-  overflowY: 'auto',
+  overflowY: 'auto'
 };
 
 const mainStyle = {
-  padding: '10px 0 10px 10px',
+  padding: '10px 0 10px 10px'
 };
 
 const storyProps = ['stories', 'selectedKind', 'selectedStory', 'onSelectStory'];
 
-const LeftPanel = (props) => (
+const LeftPanel = props => (
   <div style={mainStyle}>
-    <Header
-      name={props.name}
-      url={props.url}
-      openShortcutsHelp={props.openShortcutsHelp}
-    />
+    <Header name={props.name} url={props.url} openShortcutsHelp={props.openShortcutsHelp} />
     <TextFilter
       text={props.storyFilter}
       onClear={() => props.onStoryFilter('')}
-      onChange={(text) => props.onStoryFilter(text)}
+      onChange={text => props.onStoryFilter(text)}
     />
     <div style={scrollStyle}>
-      {props.stories ? (<Stories {...pick(props, storyProps)} />) : null}
+      {props.stories ? <Stories {...pick(props, storyProps)} /> : null}
     </div>
   </div>
 );
@@ -45,7 +41,7 @@ LeftPanel.propTypes = {
 
   openShortcutsHelp: React.PropTypes.func,
   name: React.PropTypes.string,
-  url: React.PropTypes.string,
+  url: React.PropTypes.string
 };
 
 export default LeftPanel;

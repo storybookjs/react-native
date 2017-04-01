@@ -20,7 +20,7 @@ export function number(name, value, options = {}) {
     range: false,
     min: 0,
     max: 10,
-    step: 1,
+    step: 1
   };
 
   const mergedOptions = { ...defaults, ...options };
@@ -28,7 +28,7 @@ export function number(name, value, options = {}) {
   const finalOptions = {
     ...mergedOptions,
     type: 'number',
-    value,
+    value
   };
 
   return manager.knob(name, finalOptions);

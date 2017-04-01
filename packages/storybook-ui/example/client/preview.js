@@ -15,13 +15,13 @@ export default class Preview extends React.Component {
       if (this.mounted) {
         this.setState({
           kind,
-          story,
-        })
+          story
+        });
       } else {
         this.state = {
           ...this.state,
           kind,
-          story,
+          story
         };
       }
     });
@@ -49,7 +49,7 @@ export default class Preview extends React.Component {
     return (
       <div style={mainStyle}>
         <h3>Rendering the Preview</h3>
-        {kind} => {story}
+        {kind} =&gt; {story}
         <ul>
           <li>
             <button onClick={this.jump.bind(this)}>Jump to Component2:State b</button>
