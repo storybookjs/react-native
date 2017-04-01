@@ -21,7 +21,14 @@ class Preview extends Component {
   /* eslint-enable class-methods-use-this */
 
   render() {
-    return <iframe id="storybook-preview-iframe" style={iframeStyle} src={this.props.url} />;
+    return (
+      <iframe
+        id="storybook-preview-iframe"
+        style={iframeStyle}
+        src={this.props.url}
+        allowFullScreen
+      />
+    );
   }
 }
 
