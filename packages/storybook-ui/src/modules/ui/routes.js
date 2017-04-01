@@ -6,21 +6,20 @@ import DownPanel from './containers/down_panel';
 import ShortcutsHelp from './containers/shortcuts_help';
 import SearchBox from './containers/search_box';
 
-export default function (injectDeps, { clientStore, provider, domNode }) {
+export default function(injectDeps, { clientStore, provider, domNode }) {
   // generate preview
   const Preview = () => {
     const state = clientStore.getAll();
-    const preview =
-      provider.renderPreview(state.selectedKind, state.selectedStory);
+    const preview = provider.renderPreview(state.selectedKind, state.selectedStory);
     return preview;
   };
 
   const root = (
     <div>
       <Layout
-        leftPanel={() => (<LeftPanel />)}
-        preview={() => (<Preview />)}
-        downPanel={() => (<DownPanel />)}
+        leftPanel={() => <LeftPanel />}
+        preview={() => <Preview />}
+        downPanel={() => <DownPanel />}
       />
       <ShortcutsHelp />
       <SearchBox />

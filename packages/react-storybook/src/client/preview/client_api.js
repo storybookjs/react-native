@@ -11,7 +11,7 @@ export default class ClientApi {
   setAddon(addon) {
     this._addons = {
       ...this._addons,
-      ...addon,
+      ...addon
     };
   }
 
@@ -36,11 +36,11 @@ export default class ClientApi {
 
     const localDecorators = [];
     const api = {
-      kind,
+      kind
     };
 
     // apply addons
-    Object.keys(this._addons).forEach((name) => {
+    Object.keys(this._addons).forEach(name => {
       const addon = this._addons[name];
       api[name] = (...args) => {
         addon.apply(api, args);
@@ -56,25 +56,19 @@ export default class ClientApi {
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
-      const decorators = [
-        ...localDecorators,
-        ...this._globalDecorators,
-      ];
+      const decorators = [...localDecorators, ...this._globalDecorators];
 
-      const fn = decorators.reduce((decorated, decorator) => {
-        return (context) => {
-          return decorator(() => {
-            return decorated(context);
-          }, context);
-        };
-      }, getStory);
+      const fn = decorators.reduce(
+        (decorated, decorator) => context => decorator(() => decorated(context), context),
+        getStory
+      );
 
       // Add the fully decorated getStory function.
       this._storyStore.addStory(kind, storyName, fn);
       return api;
     };
 
-    api.addDecorator = (decorator) => {
+    api.addDecorator = decorator => {
       localDecorators.push(decorator);
       return api;
     };
@@ -83,8 +77,8 @@ export default class ClientApi {
   }
 
   getStorybook() {
-    return this._storyStore.getStoryKinds().map((kind) => {
-      const stories = this._storyStore.getStories(kind).map((name) => {
+    return this._storyStore.getStoryKinds().map(kind => {
+      const stories = this._storyStore.getStories(kind).map(name => {
         const render = this._storyStore.getStory(kind, name);
         return { name, render };
       });

@@ -13,7 +13,7 @@ const styles = {
   fontSize: 11,
   padding: '5px',
   color: '#555',
-  fontFamily: 'monospace',
+  fontFamily: 'monospace'
 };
 
 class ObjectType extends React.Component {
@@ -41,7 +41,7 @@ class ObjectType extends React.Component {
   handleChange(e) {
     const { onChange } = this.props;
     const newState = {
-      jsonString: e.target.value,
+      jsonString: e.target.value
     };
 
     try {
@@ -79,14 +79,14 @@ class ObjectType extends React.Component {
 
 ObjectType.propTypes = {
   knob: React.PropTypes.object,
-  onChange: React.PropTypes.func,
+  onChange: React.PropTypes.func
 };
 
-ObjectType.serialize = function (object) {
+ObjectType.serialize = function(object) {
   return JSON.stringify(object);
 };
 
-ObjectType.deserialize = function (value) {
+ObjectType.deserialize = function(value) {
   if (!value) return {};
   return JSON.parse(value);
 };

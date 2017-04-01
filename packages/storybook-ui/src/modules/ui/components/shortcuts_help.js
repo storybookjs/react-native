@@ -6,12 +6,12 @@ const commandStyle = {
   padding: '2px 7px',
   borderRadius: 2,
   lineHeight: '36px',
-  marginRight: '9px',
+  marginRight: '9px'
 };
 
 const h4Style = {
   marginTop: 0,
-  textAlign: 'center',
+  textAlign: 'center'
 };
 
 const modalStyles = {
@@ -24,11 +24,11 @@ const modalStyles = {
     border: 'none',
     overflow: 'visible',
     fontFamily: 'sans-serif',
-    fontSize: 14,
+    fontSize: 14
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.74902)',
-  },
+    backgroundColor: 'rgba(0, 0, 0, 0.74902)'
+  }
 };
 
 // manage two separate shortcut keys for
@@ -43,7 +43,7 @@ export function getShortcuts(platform) {
       { name: 'Toggle Left Panel', keys: ['⌘ ⇧ L', '⌃ ⇧ L'] },
       { name: 'Toggle Down Panel', keys: ['⌘ ⇧ D', '⌃ ⇧ D'] },
       { name: 'Next Story', keys: ['⌘ ⇧ →', '⌃ ⇧ →'] },
-      { name: 'Previous Story', keys: ['⌘ ⇧ ←', '⌃ ⇧ ←'] },
+      { name: 'Previous Story', keys: ['⌘ ⇧ ←', '⌃ ⇧ ←'] }
     ];
   }
 
@@ -54,47 +54,39 @@ export function getShortcuts(platform) {
     { name: 'Toggle Left Panel', keys: ['Ctrl + Shift + L'] },
     { name: 'Toggle Down Panel', keys: ['Ctrl + Shift + D'] },
     { name: 'Next Story', keys: ['Ctrl + Shift + →'] },
-    { name: 'Previous Story', keys: ['Ctrl + Shift + ←'] },
+    { name: 'Previous Story', keys: ['Ctrl + Shift + ←'] }
   ];
 }
 
 export const Keys = ({ shortcutKeys }) => {
   // if we have only one key combination for a shortcut
   if (shortcutKeys.length === 1) {
-    return (
-      <span><b style={commandStyle}>{shortcutKeys[0]}</b></span>
-    );
+    return <span><b style={commandStyle}>{shortcutKeys[0]}</b></span>;
   }
 
   // if we have multiple key combinations for a shortcut
-  let keys = shortcutKeys.map((key, index, arr) => {
-    return (
-        <span key={index}>
-          <b style={commandStyle}>{key}</b>
-          {/* add / & space if it is not a last key combination */}
-          {((arr.length - 1) !== index) ? <span>/ &nbsp;</span> : ''}
-        </span>
-      );
-  });
+  const keys = shortcutKeys.map((key, index, arr) => (
+    <span key={index}>
+      <b style={commandStyle}>{key}</b>
+      {/* add / & space if it is not a last key combination */}
+      {arr.length - 1 !== index ? <span>/ &nbsp;</span> : ''}
+    </span>
+  ));
 
-  return (
-    <span>{keys}</span>
-  );
+  return <span>{keys}</span>;
 };
 
 Keys.propTypes = {
-  shortcutKeys: React.PropTypes.array.isRequired,
+  shortcutKeys: React.PropTypes.array.isRequired
 };
 
 export const Shortcuts = ({ appShortcuts }) => {
-  let shortcuts = appShortcuts.map((shortcut, index) => {
-    return (
-      <div key = {index}>
-        <Keys shortcutKeys = {shortcut.keys} />
-        {shortcut.name}
-      </div>
-    );
-  });
+  const shortcuts = appShortcuts.map((shortcut, index) => (
+    <div key={index}>
+      <Keys shortcutKeys={shortcut.keys} />
+      {shortcut.name}
+    </div>
+  ));
 
   return (
     <div>
@@ -105,24 +97,19 @@ export const Shortcuts = ({ appShortcuts }) => {
 };
 
 Shortcuts.propTypes = {
-  appShortcuts: React.PropTypes.array.isRequired,
+  appShortcuts: React.PropTypes.array.isRequired
 };
 
 export const ShortcutsHelp = ({ isOpen, onClose, platform }) => (
-  <ReactModal
-    isOpen = {isOpen}
-    onRequestClose = {onClose}
-    style = {modalStyles}
-    contentLabel = "Shortcuts"
-  >
-    <Shortcuts appShortcuts = {getShortcuts(platform)} />
+  <ReactModal isOpen={isOpen} onRequestClose={onClose} style={modalStyles} contentLabel="Shortcuts">
+    <Shortcuts appShortcuts={getShortcuts(platform)} />
   </ReactModal>
 );
 
 ShortcutsHelp.propTypes = {
   isOpen: React.PropTypes.bool,
   onClose: React.PropTypes.func,
-  platform: React.PropTypes.string.isRequired,
+  platform: React.PropTypes.string.isRequired
 };
 
 export default ShortcutsHelp;

@@ -12,24 +12,24 @@ describe('manager.ui.config.handle_routing', () => {
       config.insidePopState = false;
     });
 
-    it('should put the correct URL and state to pushState', (done) => {
+    it('should put the correct URL and state to pushState', done => {
       const state = {
         selectedKind: 'kk',
         selectedStory: 'ss',
         customQueryParams: {
-          customText: 'test',
+          customText: 'test'
         },
         shortcutOptions: {
           goFullScreen: false,
           showDownPanel: true,
           showLeftPanel: true,
-          downPanelInRight: true,
+          downPanelInRight: true
         },
-        selectedDownPanel: 'pp',
+        selectedDownPanel: 'pp'
       };
 
       const clientStore = {
-        getAll: () => state,
+        getAll: () => state
       };
 
       // eslint-disable-next-line max-len
@@ -44,11 +44,11 @@ describe('manager.ui.config.handle_routing', () => {
         left: true,
         panelRight: true,
         downPanel: 'pp',
-        customText: 'test',
+        customText: 'test'
       };
 
       const originalPushState = window.history.pushState;
-      window.history.pushState = function (s, t, u) {
+      window.history.pushState = function(s, t, u) {
         expect(s).to.deep.equal(pushState);
         expect(u).to.be.equal(pushState.url);
         done();
@@ -63,21 +63,21 @@ describe('manager.ui.config.handle_routing', () => {
       const actions = {
         api: {
           selectStory: sinon.mock(),
-          setQueryParams: sinon.mock(),
+          setQueryParams: sinon.mock()
         },
         shortcuts: {
-          setOptions: sinon.mock(),
+          setOptions: sinon.mock()
         },
         ui: {
-          selectDownPanel: sinon.mock(),
-        },
+          selectDownPanel: sinon.mock()
+        }
       };
 
       // eslint-disable-next-line max-len
       const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test&customText=teststring';
 
       const location = {
-        search: url,
+        search: url
       };
       window.location.search = url;
       handleInitialUrl(actions, location);
@@ -86,12 +86,14 @@ describe('manager.ui.config.handle_routing', () => {
       expect(actions.shortcuts.setOptions.callCount).to.be.equal(1);
       expect(actions.ui.selectDownPanel.callCount).to.be.equal(1);
       /* eslint-disable no-unused-expressions */
-      expect(actions.shortcuts.setOptions.calledWith({
-        goFullScreen: true,
-        showDownPanel: false,
-        showLeftPanel: false,
-        downPanelInRight: false,
-      })).to.be.true;
+      expect(
+        actions.shortcuts.setOptions.calledWith({
+          goFullScreen: true,
+          showDownPanel: false,
+          showLeftPanel: false,
+          downPanelInRight: false
+        })
+      ).to.be.true;
       expect(actions.ui.selectDownPanel.calledWith('test')).to.be.true;
       expect(actions.api.setQueryParams.calledWith({ customText: 'teststring' })).to.be.true;
       /* eslint-enable no-unused-expressions */

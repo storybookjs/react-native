@@ -64,5 +64,5 @@ WrapStory.propTypes = {
   storyFn: React.PropTypes.func,
   channel: React.PropTypes.object,
   knobStore: React.PropTypes.object,
-  initialContent: React.PropTypes.object,
+  initialContent: React.PropTypes.object
 };

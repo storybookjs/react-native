@@ -8,12 +8,11 @@ class DownPanel extends Component {
       tabStyle = Object.assign({}, style.tablink, style.activetab);
     }
 
-    const onClick = () => {
-      return e => {
+    const onClick = () =>
+      e => {
         e.preventDefault();
         this.props.onPanelSelect(name);
       };
-    };
 
     let title = panel.title;
     if (typeof title === 'function') {
@@ -21,12 +20,7 @@ class DownPanel extends Component {
     }
 
     return (
-      <a
-        href="#"
-        key={name}
-        style={tabStyle}
-        onClick={onClick()}
-      >
+      <a href="#" key={name} style={tabStyle} onClick={onClick()}>
         {title}
       </a>
     );
@@ -74,7 +68,7 @@ class DownPanel extends Component {
 DownPanel.propTypes = {
   panels: React.PropTypes.object,
   onPanelSelect: React.PropTypes.func,
-  selectedPanel: React.PropTypes.string,
+  selectedPanel: React.PropTypes.string
 };
 
 export default DownPanel;

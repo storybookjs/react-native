@@ -5,34 +5,34 @@ const styles = {
     margin: 15,
     maxWidth: 600,
     lineHeight: 1.4,
-    fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+    fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif'
   },
 
   logo: {
-    width: 200,
+    width: 200
   },
 
   link: {
     color: '#1474f3',
     textDecoration: 'none',
     borderBottom: '1px solid #1474f3',
-    paddingBottom: 2,
+    paddingBottom: 2
   },
 
   code: {
     fontSize: 15,
     fontWeight: 600,
-    padding: "2px 5px",
-    border: "1px solid #eae9e9",
+    padding: '2px 5px',
+    border: '1px solid #eae9e9',
     borderRadius: 4,
     backgroundColor: '#f3f2f2',
-    color: '#3a3a3a',
+    color: '#3a3a3a'
   },
 
   codeBlock: {
     backgroundColor: '#f3f2f2',
     padding: '1px 10px',
-    margin: '10px 0',
+    margin: '10px 0'
   }
 };
 
@@ -51,7 +51,7 @@ storiesOf('App', module)
 export default class Welcome extends React.Component {
   showApp(e) {
     e.preventDefault();
-    if(this.props.showApp) this.props.showApp();
+    if (this.props.showApp) this.props.showApp();
   }
 
   render() {
@@ -62,14 +62,25 @@ export default class Welcome extends React.Component {
           This is a UI component dev environment for your app.
         </p>
         <p>
-          We've added some basic stories inside the <code style={styles.code}>src/stories</code> directory.
-          <br/>
+          We've added some basic stories inside the
+          {' '}
+          <code style={styles.code}>src/stories</code>
+          {' '}
+          directory.
+          <br />
           A story is a single state of one or more UI components. You can have as many stories as you want.
-          <br/>
+          <br />
           (Basically a story is like a visual test case.)
         </p>
         <p>
-          See these sample <a style={styles.link} href='#' onClick={this.showApp.bind(this)}>stories</a> for a component called <code style={styles.code}>Button</code>.
+          See these sample
+          {' '}
+          <a style={styles.link} href="#" onClick={this.showApp.bind(this)}>stories</a>
+          {' '}
+          for a component called
+          {' '}
+          <code style={styles.code}>Button</code>
+          .
         </p>
         <p>
           Just like that, you can add your own components as stories.
@@ -77,12 +88,22 @@ export default class Welcome extends React.Component {
           Here's how to add your <code style={styles.code}>App</code> component as a story.
           <div
             style={styles.codeBlock}
-            dangerouslySetInnerHTML={{__html: `<pre>${codeBlock}</pre>`}}
+            dangerouslySetInnerHTML={{ __html: `<pre>${codeBlock}</pre>` }}
           />
         </p>
         <p>
           Usually we create stories with smaller UI components in the app.<br />
-          Have a look at the <a style={styles.link} href="https://getstorybook.io/docs/basics/writing-stories" target="_blank">Writing Stories</a> section in our documentation.
+          Have a look at the
+          {' '}
+          <a
+            style={styles.link}
+            href="https://getstorybook.io/docs/basics/writing-stories"
+            target="_blank"
+          >
+            Writing Stories
+          </a>
+          {' '}
+          section in our documentation.
         </p>
       </div>
     );

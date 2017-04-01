@@ -7,7 +7,7 @@ export const mapper = (state, props, { actions }) => {
   const data = {
     isOpen: state.showShortcutsHelp,
     onClose: actionMap.ui.toggleShortcutsHelp,
-    platform: window.navigator.platform.toLowerCase(),
+    platform: window.navigator.platform.toLowerCase()
   };
 
   return data;

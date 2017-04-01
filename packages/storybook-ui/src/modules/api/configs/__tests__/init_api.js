@@ -4,20 +4,20 @@ const { describe, it } = global;
 import sinon from 'sinon';
 
 describe('manager.api.config.initApi', () => {
-  it('should expose correct API methods', (done) => {
+  it('should expose correct API methods', done => {
     const actions = {
       api: {
         setStories: sinon.stub(),
         selectStory: sinon.stub(),
-        setQueryParams: sinon.stub(),
+        setQueryParams: sinon.stub()
       },
       shortcuts: {
-        handleEvent: sinon.stub(),
-      },
+        handleEvent: sinon.stub()
+      }
     };
 
     const clientStore = {
-      subscribe: sinon.stub(),
+      subscribe: sinon.stub()
     };
 
     const provider = {
@@ -28,13 +28,13 @@ describe('manager.api.config.initApi', () => {
         expect(typeof api.onStory).to.be.equal('function');
         expect(typeof api.setQueryParams).to.be.equal('function');
         done();
-      },
+      }
     };
 
     initApi(provider, clientStore, actions);
   });
 
-  it('should trigger the onStory callback', (done) => {
+  it('should trigger the onStory callback', done => {
     const actions = { api: {}, shortcuts: {} };
     const selectedKind = 'XXdd';
     const selectedStory = 'u8sd';
@@ -42,8 +42,9 @@ describe('manager.api.config.initApi', () => {
     const clientStore = {
       subscribe: sinon.stub(),
       getAll: () => ({
-        selectedKind, selectedStory,
-      }),
+        selectedKind,
+        selectedStory
+      })
     };
 
     const provider = {
@@ -53,7 +54,7 @@ describe('manager.api.config.initApi', () => {
           expect(story).to.be.equal(selectedStory);
           done();
         });
-      },
+      }
     };
 
     initApi(provider, clientStore, actions);
@@ -61,7 +62,7 @@ describe('manager.api.config.initApi', () => {
     clientStore.subscribe.args[0][0]();
   });
 
-  it('should support to add multiple onStory callback', (done) => {
+  it('should support to add multiple onStory callback', done => {
     const actions = { api: {}, shortcuts: {} };
     const selectedKind = 'XXdd';
     const selectedStory = 'u8sd';
@@ -69,8 +70,9 @@ describe('manager.api.config.initApi', () => {
     const clientStore = {
       subscribe: sinon.stub(),
       getAll: () => ({
-        selectedKind, selectedStory,
-      }),
+        selectedKind,
+        selectedStory
+      })
     };
 
     const provider = {
@@ -85,7 +87,7 @@ describe('manager.api.config.initApi', () => {
           expect(cnt).to.be.equal(2);
           done();
         });
-      },
+      }
     };
 
     initApi(provider, clientStore, actions);
@@ -93,7 +95,7 @@ describe('manager.api.config.initApi', () => {
     clientStore.subscribe.args[0][0]();
   });
 
-  it('should support a way to remove onStory callback', (done) => {
+  it('should support a way to remove onStory callback', done => {
     const actions = { api: {}, shortcuts: {} };
     const selectedKind = 'XXdd';
     const selectedStory = 'u8sd';
@@ -101,8 +103,9 @@ describe('manager.api.config.initApi', () => {
     const clientStore = {
       subscribe: sinon.stub(),
       getAll: () => ({
-        selectedKind, selectedStory,
-      }),
+        selectedKind,
+        selectedStory
+      })
     };
 
     const provider = {
@@ -118,7 +121,7 @@ describe('manager.api.config.initApi', () => {
           expect(cnt).to.be.equal(1);
           done();
         });
-      },
+      }
     };
 
     initApi(provider, clientStore, actions);
@@ -127,7 +130,7 @@ describe('manager.api.config.initApi', () => {
   });
 
   describe('getQueryParam', () => {
-    it('should return the correct query param value', (done) => {
+    it('should return the correct query param value', done => {
       const actions = { api: {}, shortcuts: {} };
 
       const clientStore = {
@@ -135,9 +138,9 @@ describe('manager.api.config.initApi', () => {
         getAll: () => ({
           customQueryParams: {
             foo: 'foo value',
-            bar: 'bar value',
-          },
-        }),
+            bar: 'bar value'
+          }
+        })
       };
 
       const provider = {
@@ -145,7 +148,7 @@ describe('manager.api.config.initApi', () => {
           const value = api.getQueryParam('foo');
           expect(value).to.be.equal('foo value');
           done();
-        },
+        }
       };
 
       initApi(provider, clientStore, actions);

@@ -10,25 +10,25 @@ const searchBoxStyle = {
   top: '100px',
   left: '50%',
   marginLeft: '-215px',
-  ...baseFonts,
+  ...baseFonts
 };
 
-const formatStories = function (stories) {
+const formatStories = function(stories) {
   const formattedStories = [];
   let i = 0;
-  stories.forEach((val) => {
+  stories.forEach(val => {
     formattedStories.push({
       type: 'kind',
       value: val.kind,
-      id: i++,
+      id: i++
     });
 
-    val.stories.forEach((story) => {
+    val.stories.forEach(story => {
       formattedStories.push({
         type: 'story',
         value: story,
         id: i++,
-        kind: val.kind,
+        kind: val.kind
       });
     });
   });
@@ -36,15 +36,15 @@ const formatStories = function (stories) {
   return formattedStories;
 };
 
-const suggestionTemplate = function (props, state, styles) {
+const suggestionTemplate = function(props, state, styles) {
   return state.results.map((val, i) => {
     const style = state.selectedIndex === i ? styles.selectedResultStyle : styles.resultsStyle;
     return (
       <div key={i} style={style}>
-           {val.value}
-          <span style={{ float: 'right', opacity: 0.5 }}>
-            {val.type === 'story' ? `in ${val.kind}` : 'Kind'}
-            </span>
+        {val.value}
+        <span style={{ float: 'right', opacity: 0.5 }}>
+          {val.type === 'story' ? `in ${val.kind}` : 'Kind'}
+        </span>
       </div>
     );
   });
@@ -79,13 +79,14 @@ export default class SearchBox extends React.Component {
   render() {
     return (
       <div style={searchBoxStyle}>
-           {this.props.showSearchBox && <FuzzySearch
-             list={formatStories(this.props.stories || [])}
-             onSelect={this.onSelect}
-             keys={['value', 'type']}
-             resultsTemplate={suggestionTemplate}
-             autoFocus
-           />}
+        {this.props.showSearchBox &&
+          <FuzzySearch
+            list={formatStories(this.props.stories || [])}
+            onSelect={this.onSelect}
+            keys={['value', 'type']}
+            resultsTemplate={suggestionTemplate}
+            autoFocus
+          />}
       </div>
     );
   }
@@ -95,5 +96,5 @@ SearchBox.propTypes = {
   showSearchBox: React.PropTypes.bool.isRequired,
   stories: React.PropTypes.arrayOf(React.PropTypes.object),
   onSelectStory: React.PropTypes.func.isRequired,
-  handleEvent: React.PropTypes.func.isRequired,
+  handleEvent: React.PropTypes.func.isRequired
 };

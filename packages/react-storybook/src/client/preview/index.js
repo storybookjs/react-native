@@ -14,7 +14,9 @@ import reducer from './reducer';
 
 // check whether we're running on node/browser
 const { navigator } = global;
-const isBrowser = navigator && navigator.userAgent !== 'storyshots' && !navigator.userAgent.includes('Node.js');
+const isBrowser = navigator &&
+  navigator.userAgent !== 'storyshots' &&
+  !navigator.userAgent.includes('Node.js');
 
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
@@ -23,7 +25,7 @@ const context = { storyStore, reduxStore };
 if (isBrowser) {
   const queryParams = qs.parse(window.location.search.substring(1));
   const channel = createChannel({ page: 'preview' });
-  channel.on('setCurrentStory', (data) => {
+  channel.on('setCurrentStory', data => {
     reduxStore.dispatch(selectStory(data.kind, data.story));
   });
   Object.assign(context, { channel, window, queryParams });

@@ -12,7 +12,7 @@ const styles = {
   borderRadius: 2,
   fontSize: 11,
   padding: '5px',
-  color: '#555',
+  color: '#555'
 };
 
 class TextType extends React.Component {
@@ -25,7 +25,7 @@ class TextType extends React.Component {
         ref="input"
         style={styles}
         value={knob.value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={e => onChange(e.target.value)}
       />
     );
   }
@@ -33,14 +33,14 @@ class TextType extends React.Component {
 
 TextType.propTypes = {
   knob: React.PropTypes.object,
-  onChange: React.PropTypes.func,
+  onChange: React.PropTypes.func
 };
 
-TextType.serialize = function (value) {
+TextType.serialize = function(value) {
   return value;
 };
 
-TextType.deserialize = function (value) {
+TextType.deserialize = function(value) {
   return value;
 };
 

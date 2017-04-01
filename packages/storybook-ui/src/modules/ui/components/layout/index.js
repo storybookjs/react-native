@@ -6,13 +6,13 @@ import SplitPane from '@kadira/react-split-pane';
 
 const rootStyle = {
   height: '100vh',
-  backgroundColor: '#F7F7F7',
+  backgroundColor: '#F7F7F7'
 };
 
 const leftPanelStyle = {
   position: 'absolute',
   width: '100%',
-  height: '100%',
+  height: '100%'
 };
 
 const downPanelStyle = {
@@ -21,7 +21,7 @@ const downPanelStyle = {
   width: '100%',
   height: '100%',
   padding: '5px 10px 10px 0',
-  boxSizing: 'border-box',
+  boxSizing: 'border-box'
 };
 
 const contentPanelStyle = {
@@ -29,7 +29,7 @@ const contentPanelStyle = {
   boxSizing: 'border-box',
   width: '100%',
   height: '100%',
-  padding: '10px 10px 10px 0',
+  padding: '10px 10px 10px 0'
 };
 
 const normalPreviewStyle = {
@@ -37,7 +37,7 @@ const normalPreviewStyle = {
   height: '100%',
   backgroundColor: '#FFF',
   border: '1px solid #ECECEC',
-  borderRadius: 4,
+  borderRadius: 4
 };
 
 const fullScreenPreviewStyle = {
@@ -52,26 +52,30 @@ const fullScreenPreviewStyle = {
   border: 0,
   margin: 0,
   padding: 0,
-  overflow: 'hidden',
+  overflow: 'hidden'
 };
-
 
 const vsplit = <VSplit />;
 const hsplit = <HSplit />;
 
-const onDragStart = function () {
+const onDragStart = function() {
   document.body.classList.add('dragging');
 };
 
-const onDragEnd = function () {
+const onDragEnd = function() {
   document.body.classList.remove('dragging');
 };
 
 class Layout extends React.Component {
   render() {
     const {
-      goFullScreen, showLeftPanel, showDownPanel, downPanelInRight,
-      downPanel, leftPanel, preview,
+      goFullScreen,
+      showLeftPanel,
+      showDownPanel,
+      downPanelInRight,
+      downPanel,
+      leftPanel,
+      preview
     } = this.props;
 
     let previewStyle = normalPreviewStyle;
@@ -131,7 +135,7 @@ Layout.propTypes = {
   leftPanel: React.PropTypes.func.isRequired,
   preview: React.PropTypes.func.isRequired,
   downPanel: React.PropTypes.func.isRequired,
-  downPanelInRight: React.PropTypes.bool.isRequired,
+  downPanelInRight: React.PropTypes.bool.isRequired
 };
 
 export default Layout;

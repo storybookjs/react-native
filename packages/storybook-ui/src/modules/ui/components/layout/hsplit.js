@@ -6,7 +6,7 @@ const wrapStyle = {
   height: '10px',
   marginTop: '-8px',
   marginBottom: '-10px',
-  position: 'relative',
+  position: 'relative'
 };
 
 const spanStyle = {
@@ -17,12 +17,12 @@ const spanStyle = {
   marginLeft: '-10px',
   position: 'absolute',
   borderTop: 'solid 1px rgba(0,0,0,0.1)',
-  borderBottom: 'solid 1px rgba(0,0,0,0.1)',
+  borderBottom: 'solid 1px rgba(0,0,0,0.1)'
 };
 
 const HSplit = () => (
   <div style={wrapStyle}>
-    <span style={spanStyle}></span>
+    <span style={spanStyle} />
   </div>
 );
 
