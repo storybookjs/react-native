@@ -15,7 +15,6 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
     "babel-cli": "^6.14.0",
     "babel-jest": "^18.0.0",
     "babel-plugin-transform-runtime": "^6.15.0",
@@ -25,6 +24,9 @@
     "react-dom": "^15.4.1"
   },
   "dependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addons": "^1.6.1",
+    "@kadira/storybook-channel": "^1.1.0",
     "babel-runtime": "^6.20.0",
     "react": "^15.4.1",
     "react-test-renderer": "^15.3.1",
