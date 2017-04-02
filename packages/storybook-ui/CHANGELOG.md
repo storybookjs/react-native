@@ -153,4 +153,4 @@ Basically, we remove the NPM3 from the package.json's engine. We also changed th
 
 ### v2.0.0
 
-* Expose the whole Manager UI from this module. See the usage in [react-storybook](https://github.com/kadirahq/react-storybook/blob/master/src/client/manager/index.js).
+* Expose the whole Manager UI from this module. See the usage in [react-storybook](https://github.com/storybooks/react-storybook/blob/master/src/client/manager/index.js).
