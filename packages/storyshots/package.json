@@ -1,0 +1,33 @@
+{
+  "name": "storyshots",
+  "version": "3.2.2",
+  "description": "StoryShots - Jest Snapshot Testing for React Storybook.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storyshots.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "babel ./src --out-dir ./dist",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "babel-cli": "^6.14.0",
+    "babel-jest": "^18.0.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "jest": "^18.0.0",
+    "react-dom": "^15.4.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "react": "^15.4.1",
+    "react-test-renderer": "^15.3.1",
+    "read-pkg-up": "^2.0.0"
+  }
+}
