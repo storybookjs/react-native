@@ -25,7 +25,7 @@ program
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .option('--dont-track', 'Do not send anonymous usage stats.')
   .option('--https', 'Serve Storybook over HTTPS. Note: You must provide your own certificate information.')
-    .option('--ssl-ca <ca>', 'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)', val => val.split())
+    .option('--ssl-ca <ca>', 'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)', parseList)
     .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
     .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
   .option('-d, --db-path [db-file]', 'DEPRECATED!')
@@ -84,7 +84,7 @@ if (program.https) {
   }
 
   const sslOptions = {
-    ca: program.sslCa.map(ca => fs.readFileSync(ca, 'utf-8')),
+    ca: (program.sslCa || []).map(ca => fs.readFileSync(ca, 'utf-8')),
     cert: fs.readFileSync(program.sslCert, 'utf-8'),
     key: fs.readFileSync(program.sslKey, 'utf-8'),
   };
