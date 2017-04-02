@@ -55,7 +55,7 @@ export default {
 
     ### [Chapters](https://github.com/yangshun/react-storybook-addon-chapters)
 
-    With this addon, you can break down a story into smaller categories (chapters) and subcategories (sections) for more organizational goodness.
+    With this addon, you can showcase multiple components (or varying component states) within a story by breaking it down into smaller categories (chapters) and subcategories (sections) for more organizational goodness.
 
     ### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
 
