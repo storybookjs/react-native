@@ -1,2 +1,2 @@
-import initStoryshots from '../../src'
-initStoryshots()
+import initStoryshots from '../../src';
+initStoryshots();

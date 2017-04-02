@@ -1,10 +1,10 @@
-import Channel from '@kadira/storybook-channel'
+import Channel from '@kadira/storybook-channel';
 
-export default function createChannel () {
+export default function createChannel() {
   const transport = {
     setHandler: () => {},
     send: () => {}
-  }
+  };
 
-  return new Channel({ transport })
+  return new Channel({ transport });
 }
