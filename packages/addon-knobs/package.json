@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.1.0",
-    "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.46",
     "@types/react": "^0.14.42",
     "babel-cli": "^6.5.0",
