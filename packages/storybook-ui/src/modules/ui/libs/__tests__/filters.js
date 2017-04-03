@@ -1,6 +1,5 @@
 import { storyFilter } from '../filters';
 import { expect } from 'chai';
-const { describe, it } = global;
 
 describe('manager.ui.libs.filters', () => {
   describe('storyFilter', () => {

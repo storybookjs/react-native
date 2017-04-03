@@ -1,6 +1,5 @@
 import handleKeyEvents from '../handle_keyevents';
 import { expect } from 'chai';
-const { describe, it } = global;
 import sinon from 'sinon';
 import keycode from 'keycode';
 

@@ -1,6 +1,5 @@
 import initApi from '../init_api';
 import { expect } from 'chai';
-const { describe, it } = global;
 import sinon from 'sinon';
 
 describe('manager.api.config.initApi', () => {

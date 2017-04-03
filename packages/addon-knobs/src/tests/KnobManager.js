@@ -3,7 +3,6 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import KnobManager from '../KnobManager';
-const { describe, it, beforeEach } = global;
 
 describe('KnobManager', () => {
   describe('knob()', () => {

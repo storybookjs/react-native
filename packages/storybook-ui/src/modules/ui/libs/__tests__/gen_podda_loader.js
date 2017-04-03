@@ -2,7 +2,6 @@ import genPoddaLoader from '../gen_podda_loader';
 import Podda from 'podda';
 import { expect } from 'chai';
 import sinon from 'sinon';
-const { describe, it } = global;
 
 describe('manager.ui.libs.gen_podda_loader', () => {
   describe('mapper', () => {

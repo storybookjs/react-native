@@ -1,8 +1,10 @@
 {
   "extends": [
-    "./node_modules/eslint-config-airbnb-base/rules/es6.js"
+    "./node_modules/eslint-config-airbnb-base/rules/es6.js",
+    "plugin:jest/recommended"
   ],
   "plugins": [
+    "jest",
     "prettier"
   ],
   "parser": "babel-eslint",

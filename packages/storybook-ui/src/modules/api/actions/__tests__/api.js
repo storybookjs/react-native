@@ -1,6 +1,5 @@
 import actions from '../api';
 import { expect } from 'chai';
-const { describe, it } = global;
 
 class MockClientStore {
   update(cb) {

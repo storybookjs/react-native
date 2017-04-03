@@ -2,16 +2,44 @@
   "name": "storybook",
   "devDependencies": {
     "babel-eslint": "^7.2.1",
+    "chai": "^3.5.0",
+    "deep-equal": "^1.0.1",
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.5.0",
+    "expect": "^1.20.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
     "eslint-plugin-prettier": "^2.0.1",
     "lerna": "2.0.0-rc.1",
-    "prettier": "^0.22.0"
+    "prettier": "^0.22.0",
+    "jest": "^19.0.2",
+    "jest-enzyme": "^2.1.2",
+    "jest-junit": "^1.4.0",
+    "lerna": "2.0.0-beta.38",
+    "prettier": "^0.22.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "sinon": "^1.17.3"
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "test": "lerna run test",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jest --verbose",
+    "test:watch": "npm test -- --watch"
+  },
+  "jest": {
+    "cacheDirectory": ".jest",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ],
+    "testResultsProcessor": "./node_modules/jest-junit"
   }
 }

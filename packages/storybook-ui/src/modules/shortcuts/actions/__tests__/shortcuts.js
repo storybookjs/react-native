@@ -1,6 +1,5 @@
 import actions from '../shortcuts';
 import { expect } from 'chai';
-const { describe, it } = global;
 
 class MockClientStore {
   update(cb) {

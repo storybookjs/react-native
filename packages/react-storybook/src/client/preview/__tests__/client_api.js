@@ -1,8 +1,6 @@
 import { expect } from 'chai';
 import ClientAPI from '../client_api';
 
-const { describe, it } = global;
-
 class StoryStore {
   constructor() {
     this.stories = [];

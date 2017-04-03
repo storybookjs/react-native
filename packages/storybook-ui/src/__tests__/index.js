@@ -1,6 +1,5 @@
 import renderStorybookUI from '../';
 import { expect } from 'chai';
-const { describe, it } = global;
 
 describe('Main API', () => {
   describe('default export', () => {

@@ -8,13 +8,8 @@
   },
   "typings": "./config/storybook.d.ts",
   "license": "MIT",
-  "options": {
-    "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
-  },
   "scripts": {
     "prepublish": "sh scripts/prepublish.sh",
-    "test": "mocha $npm_package_options_mocha",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
     "postpublish": "greenkeeper-postpublish"
   },
@@ -70,19 +65,11 @@
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",
     "babel-preset-stage-0": "^6.22.0",
-    "chai": "^3.5.0",
-    "deep-equal": "^1.0.1",
-    "enzyme": "^2.8.0",
-    "expect": "^1.20.2",
     "greenkeeper-postpublish": "^1.0.1",
-    "jsdom": "^9.12.0",
-    "mocha": "^3.2.0",
     "mock-fs": "^4.2.0",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "sinon": "^2.1.0"
+    "react-dom": "^15.4.2"
   },
   "main": "dist/client/index.js",
   "bin": {
