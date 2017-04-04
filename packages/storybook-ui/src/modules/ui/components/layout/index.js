@@ -2,6 +2,7 @@ import React from 'react';
 
 import VSplit from './vsplit';
 import HSplit from './hsplit';
+import Dimensions from './dimensions';
 import SplitPane from '@kadira/react-split-pane';
 
 const rootStyle = {
@@ -67,6 +68,41 @@ const onDragEnd = function() {
 };
 
 class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      previewPanelDimensions: {
+        height: 0,
+        width: 0,
+      },
+    };
+
+    this.onResize = this.onResize.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  onResize() {
+    const {
+      clientWidth,
+      clientHeight,
+    } = this.previewPanelRef;
+
+    this.setState({
+      previewPanelDimensions: {
+        width: clientWidth,
+        height: clientHeight,
+      },
+    });
+  }
+
   render() {
     const {
       goFullScreen,
@@ -77,6 +113,9 @@ class Layout extends React.Component {
       leftPanel,
       preview
     } = this.props;
+    const {
+      previewPanelDimensions,
+    } = this.state;
 
     let previewStyle = normalPreviewStyle;
 
@@ -99,6 +138,7 @@ class Layout extends React.Component {
           resizerChildren={vsplit}
           onDragStarted={onDragStart}
           onDragFinished={onDragEnd}
+          onChange={this.onResize}
         >
           <div style={leftPanelStyle}>
             {showLeftPanel ? leftPanel() : null}
@@ -112,11 +152,16 @@ class Layout extends React.Component {
             resizerChildren={downPanelInRight ? vsplit : hsplit}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
+            onChange={this.onResize}
           >
             <div style={contentPanelStyle}>
-              <div style={previewStyle}>
+              <div
+                style={previewStyle}
+                ref={(ref) => { this.previewPanelRef = ref; }}
+              >
                 {preview()}
               </div>
+              <Dimensions {...previewPanelDimensions} />
             </div>
             <div style={downPanelStyle}>
               {showDownPanel ? downPanel() : null}
