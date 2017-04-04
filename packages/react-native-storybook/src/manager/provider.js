@@ -13,12 +13,12 @@ export default class ReactProvider extends Provider {
 
     const secured = options.secured;
     const websocketType = secured ? 'wss' : 'ws';
-    let url = websocketType + '://' + domain;
+    let url = `${websocketType}://${domain}`;
     if (options.manualId) {
       const pairedId = uuid().substr(-6);
 
       this.pairedId = pairedId;
-      url += '/pairedId=' + this.pairedId;
+      url += `/pairedId=${this.pairedId}`;
     }
 
     if (!this.channel) {
@@ -36,13 +36,13 @@ export default class ReactProvider extends Provider {
     this.channel.emit('setCurrentStory', { kind, story });
     const renderPreview = addons.getPreview();
 
-    const innerPreview = renderPreview ? renderPreview(kind, story) :  null;
+    const innerPreview = renderPreview ? renderPreview(kind, story) : null;
 
     if (this.options.manualId) {
       return (
         <div>
-          Your ID: { this.pairedId }
-          { innerPreview }
+          Your ID: {this.pairedId}
+          {innerPreview}
         </div>
       );
     }

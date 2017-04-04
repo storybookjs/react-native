@@ -7,10 +7,6 @@ export const OccurenceOrderPlugin =
   // for webpack 1
   webpack.optimize.OccurenceOrderPlugin;
 
-export const includePaths = [
-  path.resolve('./'),
-];
+export const includePaths = [path.resolve('./')];
 
-export const excludePaths = [
-  path.resolve('./node_modules'),
-];
+export const excludePaths = [path.resolve('./node_modules')];

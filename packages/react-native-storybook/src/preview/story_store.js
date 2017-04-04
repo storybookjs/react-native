@@ -10,21 +10,21 @@ export default class StoryStore {
       this._data[kind] = {
         kind,
         index: cnt++,
-        stories: {},
+        stories: {}
       };
     }
 
     this._data[kind].stories[name] = {
       name,
       index: cnt++,
-      fn,
+      fn
     };
   }
 
   getStoryKinds() {
     return Object.keys(this._data)
       .map(key => this._data[key])
-      .sort((info1, info2) => (info1.index - info2.index))
+      .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.kind);
   }
 
@@ -35,7 +35,7 @@ export default class StoryStore {
 
     return Object.keys(this._data[kind].stories)
       .map(name => this._data[kind].stories[name])
-      .sort((info1, info2) => (info1.index - info2.index))
+      .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
   }
 
@@ -66,8 +66,7 @@ export default class StoryStore {
   }
 
   dumpStoryBook() {
-    const data = this.getStoryKinds()
-      .map(kind => ({ kind, stories: this.getStories(kind) }));
+    const data = this.getStoryKinds().map(kind => ({ kind, stories: this.getStories(kind) }));
 
     return data;
   }

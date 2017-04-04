@@ -19,7 +19,7 @@ module.exports = {
     // exponentiation
     require.resolve('babel-preset-es2016'),
     // JSX, Flow
-    require.resolve('babel-preset-react'),
+    require.resolve('babel-preset-react')
   ],
   plugins: [
     // function x(a, b, c,) { }
@@ -33,10 +33,13 @@ module.exports = {
     // function* () { yield 42; yield 43; }
     require.resolve('babel-plugin-transform-regenerator'),
     // Polyfills the runtime needed for async/await and generators
-    [require.resolve('babel-plugin-transform-runtime'), {
-      helpers: true,
-      polyfill: true,
-      regenerator: true,
-    }],
-  ],
+    [
+      require.resolve('babel-plugin-transform-runtime'),
+      {
+        helpers: true,
+        polyfill: true,
+        regenerator: true
+      }
+    ]
+  ]
 };

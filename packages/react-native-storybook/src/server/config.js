@@ -47,14 +47,14 @@ function loadBabelConfig(babelConfigPath) {
 // `baseConfig` is a webpack configuration bundled with storybook.
 // React Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
-export default function (configType, baseConfig, projectDir, configDir) {
+export default function(configType, baseConfig, projectDir, configDir) {
   const config = baseConfig;
 
   // Search for a .babelrc in project directory, config directory, and storybook
   // module directory. If found, use that to extend webpack configurations.
-  let babelConfigInConfig = loadBabelConfig(path.resolve(configDir, '.babelrc'));
-  let babelConfigInProject = loadBabelConfig(path.resolve(projectDir, '.babelrc'));
-  let babelConfigInModule = loadBabelConfig('.babelrc');
+  const babelConfigInConfig = loadBabelConfig(path.resolve(configDir, '.babelrc'));
+  const babelConfigInProject = loadBabelConfig(path.resolve(projectDir, '.babelrc'));
+  const babelConfigInModule = loadBabelConfig('.babelrc');
 
   let babelConfig = null;
   let babelConfigDir = '';
@@ -75,9 +75,9 @@ export default function (configType, baseConfig, projectDir, configDir) {
     // If the custom config uses babel's `extends` clause, then replace it with
     // an absolute path. `extends` will not work unless we do this.
     if (babelConfig.extends) {
-      babelConfig.extends = babelConfigDir ?
-        path.resolve(babelConfigDir, babelConfig.extends) :
-        path.resolve(babelConfig.extends);
+      babelConfig.extends = babelConfigDir
+        ? path.resolve(babelConfigDir, babelConfig.extends)
+        : path.resolve(babelConfig.extends);
     }
     config.module.loaders[0].query = babelConfig;
   }
@@ -118,18 +118,12 @@ export default function (configType, baseConfig, projectDir, configDir) {
     // So, we'll always load the stuff we need.
     ...config,
     // We need to use our and custom plugins.
-    plugins: [
-      ...config.plugins,
-      ...customConfig.plugins || [],
-    ],
+    plugins: [...config.plugins, ...(customConfig.plugins || [])],
     module: {
       ...config.module,
       // We need to use our and custom loaders.
       ...customConfig.module,
-      loaders: [
-        ...config.module.loaders,
-        ...customConfig.module.loaders || [],
-      ],
-    },
+      loaders: [...config.module.loaders, ...(customConfig.module.loaders || [])]
+    }
   };
 }

@@ -74,8 +74,8 @@ class Layout extends React.Component {
     this.state = {
       previewPanelDimensions: {
         height: 0,
-        width: 0,
-      },
+        width: 0
+      }
     };
 
     this.onResize = this.onResize.bind(this);
@@ -92,14 +92,14 @@ class Layout extends React.Component {
   onResize() {
     const {
       clientWidth,
-      clientHeight,
+      clientHeight
     } = this.previewPanelRef;
 
     this.setState({
       previewPanelDimensions: {
         width: clientWidth,
-        height: clientHeight,
-      },
+        height: clientHeight
+      }
     });
   }
 
@@ -114,7 +114,7 @@ class Layout extends React.Component {
       preview
     } = this.props;
     const {
-      previewPanelDimensions,
+      previewPanelDimensions
     } = this.state;
 
     let previewStyle = normalPreviewStyle;
@@ -157,7 +157,9 @@ class Layout extends React.Component {
             <div style={contentPanelStyle}>
               <div
                 style={previewStyle}
-                ref={(ref) => { this.previewPanelRef = ref; }}
+                ref={ref => {
+                  this.previewPanelRef = ref;
+                }}
               >
                 {preview()}
               </div>

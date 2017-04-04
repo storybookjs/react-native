@@ -1,6 +1,6 @@
 import React from 'react';
 import addons from '@kadira/storybook-addons';
-import createChannel from '@kadira/storybook-channel-websocket'
+import createChannel from '@kadira/storybook-channel-websocket';
 import { EventEmitter } from 'events';
 import StoryStore from './story_store';
 import StoryKindApi from './story_kind';
@@ -18,12 +18,7 @@ export default class Preview {
     if (module && module.hot) {
       // TODO remove the kind on dispose
     }
-    return new StoryKindApi(
-      this._stories,
-      this._addons,
-      this._decorators,
-      kind
-    );
+    return new StoryKindApi(this._stories, this._addons, this._decorators, kind);
   }
 
   setAddon(addon) {
@@ -59,9 +54,7 @@ export default class Preview {
       if (params.resetStorybook || !channel) {
         const host = params.host || 'localhost';
 
-        const port = params.port !== false
-          ? ':' + (params.port || 7007)
-          : '';
+        const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
         const secured = params.secured;
@@ -79,13 +72,13 @@ export default class Preview {
       this._sendGetCurrentStory();
       // finally return the preview component
       return <StoryView url={webUrl} events={this._events} />;
-    }
+    };
   }
 
   _sendSetStories() {
     const channel = addons.getChannel();
     const stories = this._stories.dumpStoryBook();
-    channel.emit('setStories', {stories});
+    channel.emit('setStories', { stories });
   }
 
   _sendGetCurrentStory() {
@@ -94,7 +87,7 @@ export default class Preview {
   }
 
   _selectStory(selection) {
-    const {kind, story} = selection;
+    const { kind, story } = selection;
     const storyFn = this._stories.getStory(kind, story);
     this._events.emit('story', storyFn, selection);
   }

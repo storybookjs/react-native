@@ -11,12 +11,11 @@ export default class Server {
     this.expressApp = express();
     this.expressApp.use(storybook(options));
     this.httpServer.on('request', this.expressApp);
-    this.wsServer = ws.Server({server: this.httpServer});
+    this.wsServer = ws.Server({ server: this.httpServer });
     this.wsServer.on('connection', s => this.handleWS(s));
   }
 
   handleWS(socket) {
-
     if (this.options.manualId) {
       const params = socket.upgradeReq && socket.upgradeReq.url
         ? querystring.parse(socket.upgradeReq.url.substr(1))

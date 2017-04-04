@@ -18,10 +18,10 @@ function getMiddleware(configDir) {
     }
     return middlewareModule;
   }
-  return function () {};
+  return function() {};
 }
 
-export default function ({projectDir, configDir, ...options}) {
+export default function({ projectDir, configDir, ...options }) {
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   const environment = options.environment || 'DEVELOPMENT';
@@ -39,7 +39,7 @@ export default function ({projectDir, configDir, ...options}) {
   const devMiddlewareOptions = {
     noInfo: true,
     publicPath: config.output.publicPath,
-    watchOptions: config.watchOptions || {},
+    watchOptions: config.watchOptions || {}
   };
 
   const router = new Router();
@@ -52,11 +52,13 @@ export default function ({projectDir, configDir, ...options}) {
     router.use(webpackHotMiddleware(compiler));
   }
 
-  router.get('/', function (req, res) {
-    res.send(getIndexHtml(publicPath, {
-      manualId: options.manualId,
-      secured: options.secured,
-    }));
+  router.get('/', (req, res) => {
+    res.send(
+      getIndexHtml(publicPath, {
+        manualId: options.manualId,
+        secured: options.secured
+      })
+    );
   });
 
   return router;

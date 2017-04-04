@@ -4,9 +4,7 @@ import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
 const entries = {
   preview: [],
-  manager: [
-    path.resolve(__dirname, '../../manager'),
-  ],
+  manager: [path.resolve(__dirname, '../../manager')]
 };
 
 const config = {
@@ -21,7 +19,7 @@ const config = {
     // This works with css and image loaders too.
     // This is working for storybook since, we don't use pushState urls and
     // relative URLs works always.
-    publicPath: '/',
+    publicPath: '/'
   },
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
@@ -29,16 +27,16 @@ const config = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
-        warnings: false,
+        warnings: false
       },
       mangle: {
-        screw_ie8: true,
+        screw_ie8: true
       },
       output: {
         comments: false,
-        screw_ie8: true,
-      },
-    }),
+        screw_ie8: true
+      }
+    })
   ],
   module: {
     loaders: [
@@ -47,10 +45,10 @@ const config = {
         loader: require.resolve('babel-loader'),
         query: require('./babel.prod.js'),
         include: includePaths,
-        exclude: excludePaths,
-      },
-    ],
-  },
+        exclude: excludePaths
+      }
+    ]
+  }
 };
 
 // Webpack 2 doesn't have a OccurenceOrderPlugin plugin in the production mode.

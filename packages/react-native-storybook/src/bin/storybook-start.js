@@ -31,7 +31,7 @@ const server = new Server({
   secured: program.secured
 });
 
-server.listen(...listenAddr, function (err) {
+server.listen(...listenAddr, err => {
   if (err) {
     throw err;
   }
@@ -42,12 +42,16 @@ server.listen(...listenAddr, function (err) {
 if (!program.skipPackager) {
   const projectRoots = configDir === projectDir ? [configDir] : [configDir, projectDir];
 
-// RN packager
-  shelljs.exec([
-    'node node_modules/react-native/local-cli/cli.js start',
-    `--projectRoots ${projectRoots.join(',')}`,
-    `--root ${projectDir}`,
-    program.resetCache && '--reset-cache'
-  ].filter(x => x).join(' '), {async: true});
-
+  // RN packager
+  shelljs.exec(
+    [
+      'node node_modules/react-native/local-cli/cli.js start',
+      `--projectRoots ${projectRoots.join(',')}`,
+      `--root ${projectDir}`,
+      program.resetCache && '--reset-cache'
+    ]
+      .filter(x => x)
+      .join(' '),
+    { async: true }
+  );
 }

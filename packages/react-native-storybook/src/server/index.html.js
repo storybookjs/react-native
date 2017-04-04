@@ -1,6 +1,6 @@
 import url from 'url';
 
-export default function (publicPath, options) {
+export default function(publicPath, options) {
   return `
     <!DOCTYPE html>
     <html>

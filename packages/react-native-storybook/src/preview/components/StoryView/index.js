@@ -5,7 +5,7 @@ import style from './style';
 export default class StoryView extends Component {
   constructor(props, ...args) {
     super(props, ...args);
-    this.state = {storyFn: null, selection: {}};
+    this.state = { storyFn: null, selection: {} };
 
     this.storyHandler = this.selectStory.bind(this);
 
@@ -17,15 +17,21 @@ export default class StoryView extends Component {
   }
 
   selectStory(storyFn, selection) {
-    this.setState({storyFn, selection});
+    this.setState({ storyFn, selection });
   }
 
   renderHelp() {
     return (
       <View style={style.help}>
         {this.props.url
-          ? <Text>Please open the Storybook UI ({this.props.url}) with a web browser and select a story for preview.</Text>
-          : <Text>Please open the Storybook UI with a web browser and select a story for preview.</Text>}
+          ? <Text>
+              Please open the Storybook UI (
+              {this.props.url}
+              ) with a web browser and select a story for preview.
+            </Text>
+          : <Text>
+              Please open the Storybook UI with a web browser and select a story for preview.
+            </Text>}
       </View>
     );
   }
