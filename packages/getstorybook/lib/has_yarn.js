@@ -1,6 +1,6 @@
-var spawnSync = require('spawn-sync');
+const spawnSync = require('spawn-sync');
 
 module.exports = function hasYarn() {
-  var result = spawnSync('yarn', ['--version'], { silent: true });
+  const result = spawnSync('yarn', ['--version'], { silent: true });
   return result.status === 0;
-}
+};

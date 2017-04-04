@@ -1,11 +1,11 @@
-var mergeDirs = require('merge-dirs').default;
-var helpers = require('../../lib/helpers');
-var path = require('path');
-var fs = require('fs');
+const mergeDirs = require('merge-dirs').default;
+const helpers = require('../../lib/helpers');
+const path = require('path');
+const fs = require('fs');
 
 mergeDirs(path.resolve(__dirname, 'template/'), '.', 'overwrite');
 
-var packageJson = helpers.getPackageJson();
+const packageJson = helpers.getPackageJson();
 
 // TODO: Get the latest version of storybook here.
 packageJson.devDependencies['@kadira/storybook'] = '^2.21.0';

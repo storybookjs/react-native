@@ -1,21 +1,21 @@
-var mergeDirs = require('merge-dirs').default;
-var helpers = require('../../lib/helpers');
-var path = require('path');
-var fs = require('fs');
-var sh = require('shelljs');
-var JSON5 = require('json5');
+const mergeDirs = require('merge-dirs').default;
+const helpers = require('../../lib/helpers');
+const path = require('path');
+const fs = require('fs');
+const sh = require('shelljs');
+const JSON5 = require('json5');
 
 mergeDirs(path.resolve(__dirname, 'template/'), '.', 'overwrite');
 
-var packageJson = helpers.getPackageJson();
+const packageJson = helpers.getPackageJson();
 packageJson.devDependencies = packageJson.devDependencies || {};
 packageJson.scripts = packageJson.scripts || {};
 packageJson.dependencies = packageJson.dependencies || {};
 
 // create or update .babelrc
-var babelrc = null;
-if(fs.existsSync('.babelrc')) {
-  var babelrcContent = fs.readFileSync('.babelrc', 'utf8');
+let babelrc = null;
+if (fs.existsSync('.babelrc')) {
+  const babelrcContent = fs.readFileSync('.babelrc', 'utf8');
   babelrc = JSON5.parse(babelrcContent);
   babelrc.plugins = babelrc.plugins || [];
 
@@ -26,7 +26,7 @@ if(fs.existsSync('.babelrc')) {
 } else {
   babelrc = {
     presets: ['es2015', 'es2016', 'react', 'stage-1'],
-    plugins: ['babel-root-slash-import'],
+    plugins: ['babel-root-slash-import']
   };
 
   packageJson.devDependencies['babel-preset-es2015'] = '^6.9.0';

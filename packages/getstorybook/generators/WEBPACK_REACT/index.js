@@ -1,10 +1,10 @@
-var mergeDirs = require('merge-dirs').default;
-var helpers = require('../../lib/helpers');
-var path = require('path');
+const mergeDirs = require('merge-dirs').default;
+const helpers = require('../../lib/helpers');
+const path = require('path');
 
 mergeDirs(path.resolve(__dirname, 'template/'), '.', 'overwrite');
 
-var packageJson = helpers.getPackageJson();
+const packageJson = helpers.getPackageJson();
 
 // TODO: Get the latest version of storybook here.
 packageJson.devDependencies = packageJson.devDependencies || {};

@@ -2,19 +2,19 @@
 
 /* eslint global-require: 0 */
 
-var updateNotifier = require('update-notifier');
-var program = require('commander');
-var chalk = require('chalk');
-var detect = require('../lib/detect');
-var hasYarn = require('../lib/has_yarn')
-var types = require('../lib/project_types');
-var commandLog = require('../lib/helpers').commandLog;
-var codeLog = require('../lib/helpers').codeLog;
-var paddedLog = require('../lib/helpers').paddedLog;
-var installDeps = require('../lib/helpers').installDeps;
-var logger = console;
+const updateNotifier = require('update-notifier');
+const program = require('commander');
+const chalk = require('chalk');
+const detect = require('../lib/detect');
+const hasYarn = require('../lib/has_yarn');
+const types = require('../lib/project_types');
+const commandLog = require('../lib/helpers').commandLog;
+const codeLog = require('../lib/helpers').codeLog;
+const paddedLog = require('../lib/helpers').paddedLog;
+const installDeps = require('../lib/helpers').installDeps;
+const logger = console;
 
-var pkg = require('../package.json');
+const pkg = require('../package.json');
 
 program
   .version(pkg.version)
@@ -22,27 +22,26 @@ program
   .option('-N --use-npm', 'Use npm to install deps')
   .parse(process.argv);
 
-var welcomeMessage =
-  'getstorybook - the simplest way to add a storybook to your project.';
-logger.log(chalk.inverse('\n ' + welcomeMessage + ' \n'));
+const welcomeMessage = 'getstorybook - the simplest way to add a storybook to your project.';
+logger.log(chalk.inverse(`\n ${welcomeMessage} \n`));
 
-var useYarn = Boolean(program.useNpm !== true) && hasYarn()
+const useYarn = Boolean(program.useNpm !== true) && hasYarn();
 
-var npmOptions = {
-  useYarn: useYarn
+const npmOptions = {
+  useYarn
 };
 
-var runStorybookCommand = useYarn? 'yarn run storybook' : 'npm run storybook';
+const runStorybookCommand = useYarn ? 'yarn run storybook' : 'npm run storybook';
 
 // Update notify code.
 updateNotifier({
-  pkg: pkg,
+  pkg,
   updateCheckInterval: 1000 * 60 * 60 // every hour (we could increase this later on.)
 }).notify();
 
-var projectType;
+let projectType;
 
-var done = commandLog('Detecting project type');
+let done = commandLog('Detecting project type');
 try {
   projectType = detect({
     force: program.force
@@ -68,9 +67,7 @@ switch (projectType) {
     installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
-    codeLog([
-      runStorybookCommand
-    ]);
+    codeLog([runStorybookCommand]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
@@ -82,9 +79,7 @@ switch (projectType) {
     installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
-    codeLog([
-      runStorybookCommand
-    ]);
+    codeLog([runStorybookCommand]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
@@ -96,9 +91,7 @@ switch (projectType) {
     installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
-    codeLog([
-      runStorybookCommand
-    ]);
+    codeLog([runStorybookCommand]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
@@ -110,9 +103,7 @@ switch (projectType) {
     installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
-    codeLog([
-      runStorybookCommand
-    ]);
+    codeLog([runStorybookCommand]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
@@ -124,9 +115,7 @@ switch (projectType) {
     installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
-    codeLog([
-      runStorybookCommand
-    ]);
+    codeLog([runStorybookCommand]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
@@ -138,14 +127,12 @@ switch (projectType) {
     installDeps(npmOptions);
 
     logger.log('\nTo run your storybook, type:\n');
-    codeLog([
-      runStorybookCommand
-    ]);
+    codeLog([runStorybookCommand]);
     logger.log('\nFor more information visit:', chalk.cyan('http://getstorybook.io'));
     break;
 
   default:
-    paddedLog('Unsupported Project type. (code: ' + projectType + ')');
+    paddedLog(`Unsupported Project type. (code: ${projectType})`);
     paddedLog('Visit http://getstorybook.io for more information.');
 }
 

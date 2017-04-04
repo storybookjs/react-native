@@ -1,10 +1,10 @@
-var types = require('./project_types.js');
-var helpers = require('./helpers');
-var path = require('path');
-var fs = require('fs');
+const types = require('./project_types.js');
+const helpers = require('./helpers');
+const path = require('path');
+const fs = require('fs');
 
 module.exports = function detect(options) {
-  var packageJson = helpers.getPackageJson();
+  const packageJson = helpers.getPackageJson();
   if (!packageJson) {
     return types.UNDETECTED;
   }
@@ -12,52 +12,33 @@ module.exports = function detect(options) {
   if (
     !options.force &&
     packageJson.devDependencies &&
-    (
-      packageJson.devDependencies['@kadira/storybook'] ||
-      packageJson.devDependencies['@kadira/react-native-storybook']
-    )
+    (packageJson.devDependencies['@kadira/storybook'] ||
+      packageJson.devDependencies['@kadira/react-native-storybook'])
   ) {
     return types.ALREADY_HAS_STORYBOOK;
   }
 
-  if(
-    fs.existsSync(path.resolve('.meteor'))
-  ) {
+  if (fs.existsSync(path.resolve('.meteor'))) {
     return types.METEOR;
   }
 
-  if (
-    packageJson.devDependencies &&
-    packageJson.devDependencies['react-scripts']
-  ) {
+  if (packageJson.devDependencies && packageJson.devDependencies['react-scripts']) {
     return types.REACT_SCRIPTS;
   }
 
-  if (
-    packageJson.devDependencies &&
-    packageJson.devDependencies.webpack
-  ) {
+  if (packageJson.devDependencies && packageJson.devDependencies.webpack) {
     return types.WEBPACK_REACT;
   }
 
-  if (
-    packageJson.peerDependencies &&
-    packageJson.peerDependencies.react
-  ) {
+  if (packageJson.peerDependencies && packageJson.peerDependencies.react) {
     return types.REACT_PROJECT;
   }
 
-  if (
-    packageJson.dependencies &&
-    packageJson.dependencies['react-native']
-  ) {
+  if (packageJson.dependencies && packageJson.dependencies['react-native']) {
     return types.REACT_NATIVE;
   }
 
-  if (
-    packageJson.dependencies &&
-    packageJson.dependencies.react
-  ) {
+  if (packageJson.dependencies && packageJson.dependencies.react) {
     return types.REACT;
   }
 
