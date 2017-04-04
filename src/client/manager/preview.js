@@ -26,6 +26,7 @@ class Preview extends Component {
         id="storybook-preview-iframe"
         style={iframeStyle}
         src={this.props.url}
+        allowFullScreen
       />
     );
   }
