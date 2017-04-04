@@ -75,11 +75,11 @@ export default class Welcome extends React.Component {
           Just like that, you can add your own components as stories.
           <br />
           Here's how to add your <code style={styles.code}>App</code> component as a story.
-          <div
-            style={styles.codeBlock}
-            dangerouslySetInnerHTML={{__html: `<pre>${codeBlock}</pre>`}}
-          />
         </p>
+        <div
+          style={styles.codeBlock}
+          dangerouslySetInnerHTML={{__html: `<pre>${codeBlock}</pre>`}}
+        />
         <p>
           Usually we create stories with smaller UI components in the app.<br />
           Have a look at the <a style={styles.link} href="https://getstorybook.io/docs/basics/writing-stories" target="_blank">Writing Stories</a> section in our documentation.
