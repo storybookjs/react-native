@@ -19,7 +19,8 @@ exports.default = {
   defaultState: {
     uiOptions: {
       name: 'REACT STORYBOOK',
-      url: 'https://github.com/storybooks/react-storybook'
+      url: 'https://github.com/storybooks/react-storybook',
+      sortStoriesByKind: false
     }
   },
   load: function load(_ref, _actions) {

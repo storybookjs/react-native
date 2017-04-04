@@ -137,6 +137,13 @@ var Layout = function (_React$Component) {
         downPanelDefaultSize = downPanelInRight ? 400 : 200;
       }
 
+      if (typeof localStorage !== 'undefined') {
+        var savedSize = localStorage.getItem('splitPos');
+        if (typeof savedSize !== 'undefined') {
+          downPanelDefaultSize = savedSize;
+        }
+      }
+
       return _react2.default.createElement(
         'div',
         { style: rootStyle },
@@ -164,7 +171,12 @@ var Layout = function (_React$Component) {
               defaultSize: downPanelDefaultSize,
               resizerChildren: downPanelInRight ? vsplit : hsplit,
               onDragStarted: onDragStart,
-              onDragFinished: onDragEnd
+              onDragFinished: onDragEnd,
+              onChange: function onChange(size) {
+                if (typeof localStorage !== 'undefined') {
+                  localStorage.setItem('splitPos', size);
+                }
+              }
             },
             _react2.default.createElement(
               'div',

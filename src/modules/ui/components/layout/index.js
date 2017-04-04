@@ -86,6 +86,13 @@ class Layout extends React.Component {
       downPanelDefaultSize = downPanelInRight ? 400 : 200;
     }
 
+    if(typeof localStorage !== 'undefined') {
+      const savedSize = localStorage.getItem('splitPos');
+      if(typeof savedSize !== 'undefined') {
+        downPanelDefaultSize = savedSize;
+      }
+    }
+
     return (
       <div style={rootStyle}>
         <SplitPane
@@ -108,6 +115,13 @@ class Layout extends React.Component {
             resizerChildren={downPanelInRight ? vsplit : hsplit}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
+            onChange={
+              size => {
+                if (typeof localStorage !== 'undefined') {
+                  localStorage.setItem('splitPos', size);
+                }
+              }
+            }
           >
             <div style={contentPanelStyle}>
               <div style={previewStyle}>

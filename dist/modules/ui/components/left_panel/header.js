@@ -75,7 +75,7 @@ var Header = function Header(_ref) {
     ),
     _react2.default.createElement(
       'a',
-      { style: linkStyle, href: url, target: '_blank' },
+      { style: linkStyle, href: url, target: '_blank', rel: 'noopener noreferrer' },
       _react2.default.createElement(
         'h3',
         { style: headingStyle },
