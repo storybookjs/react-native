@@ -34,10 +34,13 @@ var mapper = exports.mapper = function mapper(state, props, _ref) {
       selectedStory = state.selectedStory,
       uiOptions = state.uiOptions,
       storyFilter = state.storyFilter;
+  var name = uiOptions.name,
+      url = uiOptions.url,
+      sortStoriesByKind = uiOptions.sortStoriesByKind;
 
 
   var data = {
-    stories: filters.storyFilter(stories, storyFilter, selectedKind, selectedStory),
+    stories: filters.storyFilter(stories, storyFilter, selectedKind, sortStoriesByKind),
     selectedKind: selectedKind,
     selectedStory: selectedStory,
     onSelectStory: actionMap.api.selectStory,
@@ -46,8 +49,8 @@ var mapper = exports.mapper = function mapper(state, props, _ref) {
     onStoryFilter: actionMap.ui.setStoryFilter,
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
-    name: uiOptions.name,
-    url: uiOptions.url
+    name: name,
+    url: url
   };
 
   return data;

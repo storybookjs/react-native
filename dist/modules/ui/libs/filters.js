@@ -9,13 +9,24 @@ var _fuzzysearch = require('fuzzysearch');
 
 var _fuzzysearch2 = _interopRequireDefault(_fuzzysearch);
 
+var _lodash = require('lodash.sortby');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function storyFilter(stories, filter, selectedKind) {
-  if (!stories) return null;
-  if (!filter) return stories;
+function sort(stories, sortStoriesByKind) {
+  if (!sortStoriesByKind) return stories;
 
-  return stories.filter(function (kindInfo) {
+  return (0, _lodash2.default)(stories, ['kind']);
+}
+
+function storyFilter(stories, filter, selectedKind, sortStoriesByKind) {
+  if (!stories) return null;
+  var sorted = sort(stories, sortStoriesByKind);
+  if (!filter) return sorted;
+
+  return sorted.filter(function (kindInfo) {
     if (kindInfo.kind === selectedKind) return true;
     var needle = filter.toLocaleLowerCase();
     var hstack = kindInfo.kind.toLocaleLowerCase();
