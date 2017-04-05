@@ -3,3 +3,5 @@ node_modules
 .idea
 npm-shrinkwrap.json
 dist
+.tern-port
+*.DS_Store

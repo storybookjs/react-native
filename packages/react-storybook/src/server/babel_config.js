@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import JSON5 from 'json5';
-import defaultConfig from './config/babel.js';
+import defaultConfig from './config/babel';
 // avoid ESLint errors
 const logger = console;
 
@@ -34,7 +34,7 @@ function loadFromPath(babelConfigPath) {
   // Remove react-hmre preset.
   // It causes issues with react-storybook.
   // We don't really need it.
-  // Earlier, we fix this by runnign storybook in the production mode.
+  // Earlier, we fix this by running storybook in the production mode.
   // But, that hide some useful debug messages.
   if (config.presets) {
     removeReactHmre(config.presets);
@@ -47,7 +47,7 @@ function loadFromPath(babelConfigPath) {
   return config;
 }
 
-export default function (configDir) {
+export default function(configDir) {
   let babelConfig = loadFromPath(path.resolve(configDir, '.babelrc'));
   let inConfigDir = true;
 
@@ -60,9 +60,9 @@ export default function (configDir) {
     // If the custom config uses babel's `extends` clause, then replace it with
     // an absolute path. `extends` will not work unless we do this.
     if (babelConfig.extends) {
-      babelConfig.extends = inConfigDir ?
-        path.resolve(configDir, babelConfig.extends) :
-        path.resolve(babelConfig.extends);
+      babelConfig.extends = inConfigDir
+        ? path.resolve(configDir, babelConfig.extends)
+        : path.resolve(babelConfig.extends);
     }
   }
 
@@ -70,7 +70,7 @@ export default function (configDir) {
   finalConfig.plugins = finalConfig.plugins || [];
   finalConfig.plugins.push([
     require.resolve('babel-plugin-react-docgen'),
-    { DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES' },
+    { DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES' }
   ]);
 
   return finalConfig;

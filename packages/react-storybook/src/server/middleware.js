@@ -8,7 +8,7 @@ import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
 import { getHeadHtml, getMiddleware } from './utils';
 
-export default function (configDir) {
+export default function(configDir) {
   // Build the webpack configuration using the `getBaseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   const config = loadConfig('DEVELOPMENT', getBaseConfig(), configDir);
@@ -24,7 +24,7 @@ export default function (configDir) {
   const devMiddlewareOptions = {
     noInfo: true,
     publicPath: config.output.publicPath,
-    watchOptions: config.watchOptions || {},
+    watchOptions: config.watchOptions || {}
   };
 
   const router = new Router();
@@ -34,11 +34,11 @@ export default function (configDir) {
   // custom middleware
   middlewareFn(router);
 
-  router.get('/', function (req, res) {
+  router.get('/', (req, res) => {
     res.send(getIndexHtml({ publicPath }));
   });
 
-  router.get('/iframe.html', function (req, res) {
+  router.get('/iframe.html', (req, res) => {
     const headHtml = getHeadHtml(configDir);
     res.send(getIframeHtml({ headHtml, publicPath }));
   });

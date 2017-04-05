@@ -63,12 +63,16 @@ export function track() {
   const pkg = require('../../package.json');
 
   // We don't wanna worry about the success or failure of this.
-  request.post('https://ping.getstorybook.io/react-storybook-usage', {
-    json: {
-      userId,
-      version: pkg.version,
+  request.post(
+    'https://ping.getstorybook.io/react-storybook-usage',
+    {
+      json: {
+        userId,
+        version: pkg.version
+      }
     },
-  }, () => {});
+    () => {}
+  );
 
   if (!store.get('startTrackingOn')) {
     store.set('startTrackingOn', Date.now());

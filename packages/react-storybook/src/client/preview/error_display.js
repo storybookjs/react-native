@@ -9,7 +9,7 @@ const mainStyle = {
   padding: 20,
   backgroundColor: 'rgb(187, 49, 49)',
   color: '#FFF',
-  WebkitFontSmoothing: 'antialiased',
+  WebkitFontSmoothing: 'antialiased'
 };
 
 const headingStyle = {
@@ -20,13 +20,13 @@ const headingStyle = {
   fontFamily: `
     -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI",
     "Helvetica Neue", "Lucida Grande", sans-serif
-    `,
+    `
 };
 
 const codeStyle = {
   fontSize: 14,
   width: '100vw',
-  overflow: 'auto',
+  overflow: 'auto'
 };
 
 const ErrorDisplay = ({ error }) => (
@@ -41,7 +41,7 @@ const ErrorDisplay = ({ error }) => (
 );
 
 ErrorDisplay.propTypes = {
-  error: React.PropTypes.object.isRequired,
+  error: React.PropTypes.object.isRequired
 };
 
 export default ErrorDisplay;

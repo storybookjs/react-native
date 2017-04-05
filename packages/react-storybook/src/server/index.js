@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import express from 'express';
-import https from 'https';
 import favicon from 'serve-favicon';
 import program from 'commander';
 import path from 'path';
@@ -24,10 +23,6 @@ program
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .option('--dont-track', 'Do not send anonymous usage stats.')
-  .option('--https', 'Serve Storybook over HTTPS. Note: You must provide your own certificate information.')
-    .option('--ssl-ca <ca>', 'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)', parseList)
-    .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
-    .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
   .option('-d, --db-path [db-file]', 'DEPRECATED!')
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
@@ -35,11 +30,13 @@ program
 logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
 
 if (program.enableDb || program.dbPath) {
-  logger.error([
-    'Error: the experimental local database addon is no longer bundled with',
-    'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
-    'from the command or npm script and try again.',
-  ].join(' '));
+  logger.error(
+    [
+      'Error: the experimental local database addon is no longer bundled with',
+      'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
+      'from the command or npm script and try again.'
+    ].join(' ')
+  );
   process.exit(1);
 }
 
@@ -50,7 +47,7 @@ getEnvConfig(program, {
   host: 'SBCONFIG_HOSTNAME',
   staticDir: 'SBCONFIG_STATIC_DIR',
   configDir: 'SBCONFIG_CONFIG_DIR',
-  dontTrack: 'SBCONFIG_DO_NOT_TRACK',
+  dontTrack: 'SBCONFIG_DO_NOT_TRACK'
 });
 
 if (program.dontTrack) {
@@ -71,32 +68,12 @@ if (program.host) {
 }
 
 const app = express();
-let server = app;
-
-if (program.https) {
-  if (!program.sslCert) {
-    logger.error('Error: --ssl-cert is required with --https');
-    process.exit(-1);
-  }
-  if (!program.sslKey) {
-    logger.error('Error: --ssl-key is required with --https');
-    process.exit(-1);
-  }
-
-  const sslOptions = {
-    ca: (program.sslCa || []).map(ca => fs.readFileSync(ca, 'utf-8')),
-    cert: fs.readFileSync(program.sslCert, 'utf-8'),
-    key: fs.readFileSync(program.sslKey, 'utf-8'),
-  };
-
-  server = https.createServer(sslOptions, app);
-}
 
 let hasCustomFavicon = false;
 
 if (program.staticDir) {
   program.staticDir = parseList(program.staticDir);
-  program.staticDir.forEach((dir) => {
+  program.staticDir.forEach(dir => {
     const staticPath = path.resolve(dir);
     if (!fs.existsSync(staticPath)) {
       logger.error(`Error: no such directory to load static files: ${staticPath}`);
@@ -124,18 +101,20 @@ const configDir = program.configDir || './.storybook';
 // The repository info is sent to the storybook while running on
 // development mode so it'll be easier for tools to integrate.
 const exec = cmd => shelljs.exec(cmd, { silent: true }).stdout.trim();
-process.env.STORYBOOK_GIT_ORIGIN = process.env.STORYBOOK_GIT_ORIGIN || exec('git remote get-url origin');
-process.env.STORYBOOK_GIT_BRANCH = process.env.STORYBOOK_GIT_BRANCH || exec('git symbolic-ref HEAD --short');
+process.env.STORYBOOK_GIT_ORIGIN = process.env.STORYBOOK_GIT_ORIGIN ||
+  exec('git remote get-url origin');
+process.env.STORYBOOK_GIT_BRANCH = process.env.STORYBOOK_GIT_BRANCH ||
+  exec('git symbolic-ref HEAD --short');
 
 // NOTE changes to env should be done before calling `getBaseConfig`
 // `getBaseConfig` function which is called inside the middleware
 app.use(storybook(configDir));
 
-server.listen(...listenAddr, function (error) {
+app.listen(...listenAddr, error => {
   if (error) {
     throw error;
   } else {
-    const address = `http${program.https ? 's' : ''}://${program.host || 'localhost'}:${program.port}/`;
+    const address = `http://${program.host || 'localhost'}:${program.port}/`;
     logger.info(`\nReact Storybook started on => ${chalk.cyan(address)}\n`);
     track();
   }
