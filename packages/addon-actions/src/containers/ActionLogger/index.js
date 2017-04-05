@@ -6,7 +6,7 @@ import { EVENT_ID } from '../../';
 export default class ActionLogger extends React.Component {
   constructor(props, ...args) {
     super(props, ...args);
-    this.state = {actions: []};
+    this.state = { actions: [] };
     this._actionListener = action => this.addAction(action);
   }
 
@@ -20,11 +20,11 @@ export default class ActionLogger extends React.Component {
       action.count = 1;
       actions.unshift(action);
     }
-    this.setState({actions});
+    this.setState({ actions });
   }
 
   clearActions() {
-    this.setState({actions: []});
+    this.setState({ actions: [] });
   }
 
   componentDidMount() {
@@ -38,7 +38,7 @@ export default class ActionLogger extends React.Component {
   render() {
     const props = {
       actions: this.state.actions,
-      onClear: () => this.clearActions(),
+      onClear: () => this.clearActions()
     };
     return <ActionLoggerComponent {...props} />;
   }

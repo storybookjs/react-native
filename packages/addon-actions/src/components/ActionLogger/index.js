@@ -8,17 +8,18 @@ class ActionLogger extends Component {
     if (latest) {
       const borderLeft = style.action.borderLeft;
       latest.style.borderLeft = 'solid 5px #aaa';
-      setTimeout(() => {
-        latest.style.borderLeft = borderLeft;
-      }, 300);
+      setTimeout(
+        () => {
+          latest.style.borderLeft = borderLeft;
+        },
+        300
+      );
     }
   }
 
   renderAction(action, i) {
     const ref = i ? '' : 'latest';
-    const counter = (
-      <div style={style.counter}>{action.count}</div>
-    );
+    const counter = <div style={style.counter}>{action.count}</div>;
     return (
       <div ref={ref} key={action.id} style={style.action}>
         <div style={style.countwrap}>
@@ -36,9 +37,7 @@ class ActionLogger extends Component {
   }
 
   getActionData() {
-    return this.props.actions.map((action, i) => {
-      return this.renderAction(action, i);
-    });
+    return this.props.actions.map((action, i) => this.renderAction(action, i));
   }
 
   render() {
@@ -53,7 +52,7 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: React.PropTypes.func,
-  actions: React.PropTypes.array,
+  actions: React.PropTypes.array
 };
 
 export default ActionLogger;

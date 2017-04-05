@@ -10,14 +10,13 @@ function _format(arg) {
 }
 
 export function action(name) {
-
-  const handler = function (..._args) {
+  const handler = function(..._args) {
     const args = Array.from(_args).map(_format);
     const channel = addons.getChannel();
     const randomId = Math.random().toString(16).slice(2);
     channel.emit(EVENT_ID, {
       id: randomId,
-      data: { name, args },
+      data: { name, args }
     });
   };
 
@@ -27,15 +26,15 @@ export function action(name) {
   // the same.
   //
   // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  const fnName = name ? name.replace(/\W+/g,'_') : 'action';
-  const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`)
-  return named
+  const fnName = name ? name.replace(/\W+/g, '_') : 'action';
+  const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`);
+  return named;
 }
 
 export function decorateAction(decorators) {
-  return function (name) {
+  return function(name) {
     const callAction = action(name);
-    return function (..._args) {
+    return function(..._args) {
       const decorated = decorators.reduce((args, fn) => fn(args), _args);
       callAction(...decorated);
     };
