@@ -13,7 +13,7 @@ export default {
 
     ### ES2016+ Support
 
-    We have added ES2016 support with Babel for transpiling your JS code. In addition to that, we've added a few experimental features, like object spreading and async await. Check out our [source](https://github.com/kadirahq/react-storybook/blob/master/src/server/config/babel.js#L24) to learn more about these plugins.
+    We have added ES2016 support with Babel for transpiling your JS code. In addition to that, we've added a few experimental features, like object spreading and async await. Check out our [source](https://github.com/storybooks/react-storybook/blob/master/src/server/config/babel.js#L24) to learn more about these plugins.
 
     ### .babelrc support
 

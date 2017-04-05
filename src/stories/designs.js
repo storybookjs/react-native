@@ -38,8 +38,8 @@ export default {
     note: `
       In this, React and React Native are links for following repos:
 
-      * React - https://github.com/kadirahq/react-storybook
-      * React Native - https://github.com/kadirahq/react-native-storybook
+      * React - https://github.com/storybooks/react-storybook
+      * React Native - https://github.com/storybooks/react-native-storybook
 
       ---
 
