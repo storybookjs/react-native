@@ -4,3 +4,4 @@ node_modules
 npm-shrinkwrap.json
 dist
 .tern-port
+*.DS_Store
