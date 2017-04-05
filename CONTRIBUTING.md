@@ -58,13 +58,13 @@ If you are looking for a way to help the project, triaging issues is a great pla
 
 ### Responding to issues
 
-Issues that are tagged `question` or `requires-reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using the [technique above](https://github.com/storybooks/react-storybook/blob/master/CONTRIBUTING.md#reproductions).
+Issues that are tagged `question` or `requires-reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using [this technique](https://github.com/storybooks/react-storybook/blob/master/CONTRIBUTING.md#reproductions).
 
 ### Triaging issues
 
 Once you've helped out on a few issues, if you'd like triage access, you can help label issues, and respond to reporters. New issues should be labelled as one of `bug`, `enhancement`, `question` or `discussion`.
 
-If an issue is a `bug`, if it doesn't have a clear reproduction that you have personally confirmed, mark it `requires-reproduction` and ask the author to try and create a reproduction, or have a go yourself, if you can.
+If an issue is a `bug`, and it doesn't have a clear reproduction that you have personally confirmed, label it `requires-reproduction` and ask the author to try and create a reproduction, or have a go yourself.
 
 ### Closing issues
 
