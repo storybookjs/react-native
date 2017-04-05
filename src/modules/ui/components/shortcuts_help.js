@@ -113,7 +113,7 @@ export const ShortcutsHelp = ({ isOpen, onClose, platform }) => (
     isOpen = {isOpen}
     onRequestClose = {onClose}
     style = {modalStyles}
-    contentLabel = 'Shortcuts'
+    contentLabel = "Shortcuts"
   >
     <Shortcuts appShortcuts = {getShortcuts(platform)} />
   </ReactModal>
