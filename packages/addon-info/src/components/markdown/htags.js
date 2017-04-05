@@ -9,7 +9,7 @@ export class H1 extends React.Component {
       fontWeight: 600,
       margin: 0,
       padding: 0,
-      fontSize: '40px',
+      fontSize: '40px'
     };
 
     return <h1 id={this.props.id} style={styles}>{this.props.children}</h1>;
@@ -23,7 +23,7 @@ export class H2 extends React.Component {
       fontWeight: 600,
       margin: 0,
       padding: 0,
-      fontSize: '30px',
+      fontSize: '30px'
     };
 
     return <h2 id={this.props.id} style={styles}>{this.props.children}</h2>;
@@ -38,7 +38,7 @@ export class H3 extends React.Component {
       margin: 0,
       padding: 0,
       fontSize: '22px',
-      textTransform: 'uppercase',
+      textTransform: 'uppercase'
     };
 
     return <h3 id={this.props.id} style={styles}>{this.props.children}</h3>;
@@ -52,7 +52,7 @@ export class H4 extends React.Component {
       fontWeight: 600,
       margin: 0,
       padding: 0,
-      fontSize: '20px',
+      fontSize: '20px'
     };
 
     return <h4 id={this.props.id} style={styles}>{this.props.children}</h4>;
@@ -66,7 +66,7 @@ export class H5 extends React.Component {
       fontWeight: 600,
       margin: 0,
       padding: 0,
-      fontSize: '18px',
+      fontSize: '18px'
     };
 
     return <h5 id={this.props.id} style={styles}>{this.props.children}</h5>;
@@ -80,7 +80,7 @@ export class H6 extends React.Component {
       fontWeight: 400,
       margin: 0,
       padding: 0,
-      fontSize: '18px',
+      fontSize: '18px'
     };
 
     return <h6 id={this.props.id} style={styles}>{this.props.children}</h6>;

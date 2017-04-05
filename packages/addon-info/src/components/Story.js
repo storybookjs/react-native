@@ -16,13 +16,13 @@ const stylesheet = {
       background: '#28c',
       color: '#fff',
       padding: '5px 15px',
-      cursor: 'pointer',
+      cursor: 'pointer'
     },
     topRight: {
       top: 0,
       right: 0,
-      borderRadius: '0 0 0 5px',
-    },
+      borderRadius: '0 0 0 5px'
+    }
   },
   info: {
     position: 'absolute',
@@ -32,54 +32,54 @@ const stylesheet = {
     left: 0,
     right: 0,
     padding: '0 40px',
-    overflow: 'auto',
+    overflow: 'auto'
   },
   children: {
     position: 'relative',
-    zIndex: 0,
+    zIndex: 0
   },
   infoBody: {
     ...baseFonts,
     fontWeight: 300,
     lineHeight: 1.45,
-    fontSize: '15px',
+    fontSize: '15px'
   },
   infoContent: {
-    marginBottom: 0,
+    marginBottom: 0
   },
   jsxInfoContent: {
     borderTop: '1px solid #eee',
-    margin: '20px 0 0 0',
+    margin: '20px 0 0 0'
   },
   header: {
     h1: {
       margin: 0,
       padding: 0,
-      fontSize: '35px',
+      fontSize: '35px'
     },
     h2: {
       margin: '0 0 10px 0',
       padding: 0,
       fontWeight: 400,
-      fontSize: '22px',
+      fontSize: '22px'
     },
     body: {
       borderBottom: '1px solid #eee',
       paddingTop: 10,
-      marginBottom: 10,
-    },
+      marginBottom: 10
+    }
   },
   source: {
     h1: {
       margin: '20px 0 0 0',
       padding: '0 0 5px 0',
       fontSize: '25px',
-      borderBottom: '1px solid #EEE',
-    },
+      borderBottom: '1px solid #EEE'
+    }
   },
   propTableHead: {
-    margin: '20px 0 0 0',
-  },
+    margin: '20px 0 0 0'
+  }
 };
 
 export default class Story extends React.Component {
@@ -101,7 +101,7 @@ export default class Story extends React.Component {
   _renderStory() {
     return (
       <div>
-        { this.props.children }
+        {this.props.children}
       </div>
     );
   }
@@ -110,18 +110,18 @@ export default class Story extends React.Component {
     return (
       <div>
         <div style={this.state.stylesheet.infoPage}>
-          <div style={this.state.stylesheet.infoBody} >
-            { this._getInfoHeader() }
+          <div style={this.state.stylesheet.infoBody}>
+            {this._getInfoHeader()}
           </div>
         </div>
         <div>
-            { this._renderStory() }
+          {this._renderStory()}
         </div>
         <div style={this.state.stylesheet.infoPage}>
-          <div style={this.state.stylesheet.infoBody} >
-            { this._getInfoContent() }
-            { this._getSourceCode() }
-            { this._getPropTables() }
+          <div style={this.state.stylesheet.infoBody}>
+            {this._getInfoContent()}
+            {this._getSourceCode()}
+            {this._getPropTables()}
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@ export default class Story extends React.Component {
   _renderOverlay() {
     const linkStyle = {
       ...stylesheet.link.base,
-      ...stylesheet.link.topRight,
+      ...stylesheet.link.topRight
     };
 
     const infoStyle = Object.assign({}, stylesheet.info);
@@ -152,17 +152,17 @@ export default class Story extends React.Component {
     return (
       <div>
         <div style={this.state.stylesheet.children}>
-          { this.props.children }
+          {this.props.children}
         </div>
         <a style={linkStyle} onClick={openOverlay}>?</a>
         <div style={infoStyle}>
           <a style={linkStyle} onClick={closeOverlay}>×</a>
           <div style={this.state.stylesheet.infoPage}>
             <div style={this.state.stylesheet.infoBody}>
-              { this._getInfoHeader() }
-              { this._getInfoContent() }
-              { this._getSourceCode() }
-              { this._getPropTables() }
+              {this._getInfoHeader()}
+              {this._getInfoContent()}
+              {this._getSourceCode()}
+              {this._getPropTables()}
             </div>
           </div>
         </div>
@@ -190,10 +190,7 @@ export default class Story extends React.Component {
 
     if (React.isValidElement(this.props.info)) {
       return (
-        <div
-          style={this.props.showInline ?
-            stylesheet.jsxInfoContent : stylesheet.infoContent}
-        >
+        <div style={this.props.showInline ? stylesheet.jsxInfoContent : stylesheet.infoContent}>
           {this.props.info}
         </div>
       );
@@ -225,9 +222,9 @@ export default class Story extends React.Component {
       <div>
         <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
         <Pre>
-        {React.Children.map(this.props.children, (root, idx) => (
-          <Node key={idx} depth={0} node={root} />
-        ))}
+          {React.Children.map(this.props.children, (root, idx) => (
+            <Node key={idx} depth={0} node={root} />
+          ))}
         </Pre>
       </div>
     );
@@ -245,7 +242,7 @@ export default class Story extends React.Component {
     }
 
     if (this.props.propTables) {
-      this.props.propTables.forEach(function (type) {
+      this.props.propTables.forEach(type => {
         types.set(type, true);
       });
     }
@@ -274,18 +271,16 @@ export default class Story extends React.Component {
     extract(this.props.children);
 
     const array = Array.from(types.keys());
-    array.sort(function (a, b) {
-      return (a.displayName || a.name) > (b.displayName || b.name);
-    });
+    array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
-    const propTables = array.map((type, idx) => {
-      return (
-        <div key={idx}>
-          <h2 style={this.state.stylesheet.propTableHead}>"{type.displayName || type.name}" Component</h2>
-          <PropTable type={type} />
-        </div>
-      );
-    });
+    const propTables = array.map((type, idx) => (
+      <div key={idx}>
+        <h2 style={this.state.stylesheet.propTableHead}>
+          "{type.displayName || type.name}" Component
+        </h2>
+        <PropTable type={type} />
+      </div>
+    ));
 
     if (!propTables || propTables.length === 0) {
       return null;
@@ -313,19 +308,13 @@ export default class Story extends React.Component {
 Story.displayName = 'Story';
 Story.propTypes = {
   context: React.PropTypes.object,
-  info: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node,
-  ]),
+  info: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.node]),
   propTables: React.PropTypes.arrayOf(React.PropTypes.func),
   showInline: React.PropTypes.bool,
   showHeader: React.PropTypes.bool,
   showSource: React.PropTypes.bool,
   styles: React.PropTypes.func.isRequired,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.object,
-    React.PropTypes.array,
-  ]),
+  children: React.PropTypes.oneOfType([React.PropTypes.object, React.PropTypes.array]),
   mtrcConf: React.PropTypes.object
 };
 

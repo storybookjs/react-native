@@ -15,8 +15,8 @@ const stylesheet = {
   propTable: {
     marginLeft: -10,
     borderSpacing: '10px 5px',
-    borderCollapse: 'separate',
-  },
+    borderCollapse: 'separate'
+  }
 };
 
 export default class PropTable extends React.Component {
@@ -61,9 +61,7 @@ export default class PropTable extends React.Component {
     if (!array.length) {
       return <small>No propTypes defined!</small>;
     }
-    array.sort(function (a, b) {
-      return a.property > b.property;
-    });
+    array.sort((a, b) => a.property > b.property);
 
     return (
       <table style={stylesheet.propTable}>
@@ -92,5 +90,5 @@ export default class PropTable extends React.Component {
 
 PropTable.displayName = 'PropTable';
 PropTable.propTypes = {
-  type: React.PropTypes.func,
+  type: React.PropTypes.func
 };

@@ -7,7 +7,7 @@ const defaultOptions = {
   inline: false,
   header: true,
   source: true,
-  propTables: [],
+  propTables: []
 };
 
 const defaultMtrcConf = {
@@ -21,12 +21,11 @@ const defaultMtrcConf = {
   p: P,
   a: A,
   li: LI,
-  ul: UL,
+  ul: UL
 };
 
 export default {
   addWithInfo(storyName, info, storyFn, _options) {
-
     if (typeof storyFn !== 'function') {
       if (typeof info === 'function') {
         _options = storyFn;
@@ -54,7 +53,7 @@ export default {
       Object.assign(mtrcConf, options.mtrcConf);
     }
 
-    return this.add(storyName, (context) => {
+    return this.add(storyName, context => {
       const props = {
         info,
         context,
@@ -62,9 +61,7 @@ export default {
         showHeader: Boolean(options.header),
         showSource: Boolean(options.source),
         propTables: options.propTables,
-        styles: typeof options.styles === 'function'
-          ? options.styles
-          : (s) => s,
+        styles: typeof options.styles === 'function' ? options.styles : s => s,
         mtrcConf
       };
 
@@ -79,4 +76,4 @@ export default {
 
 export function setDefaults(newDefaults) {
   return Object.assign(defaultOptions, newDefaults);
-};
+}

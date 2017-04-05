@@ -3,37 +3,37 @@ import createFragment from 'react-addons-create-fragment';
 
 const valueStyles = {
   func: {
-    color: '#170',
+    color: '#170'
   },
 
   attr: {
-    color: '#666',
+    color: '#666'
   },
 
   object: {
-    color: '#666',
+    color: '#666'
   },
 
   array: {
-    color: '#666',
+    color: '#666'
   },
 
   number: {
-    color: '#a11',
+    color: '#a11'
   },
 
   string: {
     color: '#22a',
-    wordBreak: 'break-word',
+    wordBreak: 'break-word'
   },
 
   bool: {
-    color: '#a11',
+    color: '#a11'
   },
 
   empty: {
-    color: '#777',
-  },
+    color: '#777'
+  }
 };
 
 function previewArray(val) {
@@ -82,7 +82,7 @@ function previewProp(val) {
     content = <span style={valueStyles.number}>{val}</span>;
   } else if (typeof val === 'string') {
     if (val.length > 50) {
-      val = val.slice(0, 50) + '…';
+      val = `${val.slice(0, 50)}…`;
     }
     content = <span style={valueStyles.string}>"{val}"</span>;
     braceWrap = false;
@@ -107,7 +107,7 @@ function previewProp(val) {
   }
 
   if (!braceWrap) return content;
-  return <span>&#123;{content}&#125;</span>;
+  return <span>{{ content }}</span>;
 }
 
 export default class PropVal extends React.Component {

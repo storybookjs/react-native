@@ -1,46 +1,45 @@
 import React from 'react';
-import Props from './Props'
-
+import Props from './Props';
 
 const stylesheet = {
   containerStyle: {},
   tagStyle: {
-    color: '#777',
+    color: '#777'
   }
-}
+};
 
 export default class Node extends React.Component {
-  constructor(props){
-    super(props);
-  }
+  render() {
+    const { node, depth } = this.props;
+    const { tagStyle, containerStyle } = stylesheet;
 
-  render(){
-    const {node, depth} = this.props;
-    let {tagStyle, containerStyle} = stylesheet;
-
-    var leftPad = {
+    const leftPad = {
       paddingLeft: 3 + (depth + 1) * 15,
-      paddingRight: 3,
+      paddingRight: 3
     };
 
     Object.assign(containerStyle, leftPad);
 
-    const {name, text, children} = getData(node);
+    const { name, text, children } = getData(node);
 
     // Just text
     if (!name) {
-      return <div style={containerStyle}>
-        <span style={tagStyle}>{text}</span>
-      </div>;
+      return (
+        <div style={containerStyle}>
+          <span style={tagStyle}>{text}</span>
+        </div>
+      );
     }
 
     // Single-line tag
     if (!children) {
-      return <div style={containerStyle}>
-        <span style={tagStyle}>&lt;{name}</span>
+      return (
+        <div style={containerStyle}>
+          <span style={tagStyle}>&lt;{name}</span>
           <Props node={node} singleLine />
-        <span style={tagStyle}>/&gt;</span>
-      </div>;
+          <span style={tagStyle}>/&gt;</span>
+        </div>
+      );
     }
 
     // Keep a copy so that further mutations to containerStyle don't impact us:
@@ -51,7 +50,7 @@ export default class Node extends React.Component {
       <div>
         <div style={containerStyleCopy}>
           <span style={tagStyle}>&lt;{name}</span>
-            <Props node={node} />
+          <Props node={node} />
           <span style={tagStyle}>&gt;</span>
         </div>
         {React.Children.map(children, childElement => (

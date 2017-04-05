@@ -12,8 +12,8 @@ Object.assign(Button, {
     label: React.PropTypes.string.isRequired,
     style: React.PropTypes.object,
     disabled: React.PropTypes.bool,
-    onClick: React.PropTypes.func,
-  },
+    onClick: React.PropTypes.func
+  }
 });
 
 export default Button;
