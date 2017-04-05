@@ -8,6 +8,7 @@ export default [
       require('./basics/slow-start-guide').default,
       require('./basics/writing-stories').default,
       require('./basics/exporting-storybook').default,
+      require('./basics/faq').default,
     ]
   },
   {
