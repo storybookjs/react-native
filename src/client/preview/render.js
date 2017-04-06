@@ -54,12 +54,12 @@ export function renderMain(data, storyStore) {
   // Unmount the previous story only if selectedKind or selectedStory has changed.
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
-  //    https://github.com/kadirahq/react-storybook/issues/116
+  //    https://github.com/storybooks/react-storybook/issues/116
   if (selectedKind !== previousKind || previousStory !== selectedStory) {
     // We need to unmount the existing set of components in the DOM node.
     // Otherwise, React may not recrease instances for every story run.
     // This could leads to issues like below:
-    //    https://github.com/kadirahq/react-storybook/issues/81
+    //    https://github.com/storybooks/react-storybook/issues/81
     previousKind = selectedKind;
     previousStory = selectedStory;
     ReactDOM.unmountComponentAtNode(rootEl);
@@ -89,7 +89,7 @@ export function renderMain(data, storyStore) {
     const error = {
       title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
-        Seems like you are not returning a correct React element form the story.
+        Seems like you are not returning a correct React element from the story.
         Could you double check that?
       `,
     };

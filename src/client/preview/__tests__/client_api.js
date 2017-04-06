@@ -38,6 +38,10 @@ class StoryStore {
       return fn;
     }, null);
   }
+
+  hasStory(kind, name) {
+    return Boolean(this.getStory(kind, name));
+  }
 }
 
 describe('preview.client_api', () => {
