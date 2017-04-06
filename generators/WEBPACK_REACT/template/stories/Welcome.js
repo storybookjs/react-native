@@ -48,7 +48,7 @@ export default class Welcome extends React.Component {
           This is a UI component dev environment for your app.
         </p>
         <p>
-          We've added some basic stories inside the <code style={styles.code}>src/stories</code> directory.
+          We've added some basic stories inside the <code style={styles.code}>stories</code> directory.
           <br/>
           A story is a single state of one or more UI components. You can have as many stories as you want.
           <br/>
@@ -63,7 +63,7 @@ export default class Welcome extends React.Component {
           You can also edit those components and see changes right away.
           <br />
           (Try editing the <code style={styles.code}>Button</code> component
-          located at <code style={styles.code}>src/stories/Button.js</code>.)
+          located at <code style={styles.code}>stories/Button.js</code>.)
         </p>
         <p>
           This is just one thing you can do with Storybook.
