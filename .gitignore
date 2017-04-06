@@ -5,3 +5,4 @@ npm-shrinkwrap.json
 dist
 .tern-port
 *.DS_Store
+packages/examples/automated-*
