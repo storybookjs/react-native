@@ -10,7 +10,7 @@ You can use this addon without installing it manually.
 
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a **name** to make it easier to identify.
 
-> *Note: Make sure you do NOT use some reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)*
+> *Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)*
 
 ```js
 import { storiesOf, action } from '@kadira/storybook'
