@@ -1,5 +1,4 @@
 import renderStorybookUI from '../';
-import { expect } from 'chai';
 
 describe('Main API', () => {
   describe('default export', () => {
@@ -9,7 +8,7 @@ describe('Main API', () => {
         renderStorybookUI(null, fakeProvider);
       };
 
-      expect(run).to.throw(/base Provider/);
+      expect(run).toThrow(/base Provider/);
     });
   });
 });
