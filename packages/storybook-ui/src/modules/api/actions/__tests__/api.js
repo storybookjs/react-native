@@ -1,5 +1,4 @@
 import actions from '../api';
-import { expect } from 'chai';
 
 class MockClientStore {
   update(cb) {
@@ -20,7 +19,7 @@ describe('manager.api.actions.api', () => {
         actions.setStories({ clientStore }, stories);
 
         const newState = clientStore.updateCallback({});
-        expect(newState).to.deep.equal({
+        expect(newState).toEqual({
           stories,
           selectedKind: 'abc',
           selectedStory: 'a'
@@ -38,7 +37,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'c'
         };
         const newState = clientStore.updateCallback(state);
-        expect(newState).to.deep.equal({
+        expect(newState).toEqual({
           stories,
           selectedKind: 'abc',
           selectedStory: 'c'
@@ -56,7 +55,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'k'
         };
         const newState = clientStore.updateCallback(state);
-        expect(newState).to.deep.equal({
+        expect(newState).toEqual({
           stories,
           selectedKind: 'bbc',
           selectedStory: 'x'
@@ -74,7 +73,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'c'
         };
         const newState = clientStore.updateCallback(state);
-        expect(newState).to.deep.equal({
+        expect(newState).toEqual({
           stories,
           selectedKind: 'abc',
           selectedStory: 'a'
@@ -95,7 +94,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
-        expect(stateUpdates).to.deep.equal({
+        expect(stateUpdates).toEqual({
           selectedKind: 'bbc',
           selectedStory: 'y'
         });
@@ -113,7 +112,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
-        expect(stateUpdates).to.deep.equal({
+        expect(stateUpdates).toEqual({
           selectedKind: 'bbc',
           selectedStory: 'x'
         });
@@ -133,7 +132,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
-        expect(stateUpdates).to.deep.equal({
+        expect(stateUpdates).toEqual({
           selectedKind: 'bbc',
           selectedStory: 'x'
         });
@@ -149,7 +148,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'c'
         };
         const stateUpdates = clientStore.updateCallback(state);
-        expect(stateUpdates).to.deep.equal({
+        expect(stateUpdates).toEqual({
           selectedKind: 'abc',
           selectedStory: 'b'
         });
@@ -167,7 +166,7 @@ describe('manager.api.actions.api', () => {
           selectedStory: 'z'
         };
         const stateUpdates = clientStore.updateCallback(state);
-        expect(stateUpdates).to.deep.equal({
+        expect(stateUpdates).toEqual({
           selectedKind: 'bbc',
           selectedStory: 'z'
         });
@@ -185,7 +184,7 @@ describe('manager.api.actions.api', () => {
       };
 
       const stateUpdates = clientStore.updateCallback(state);
-      expect(stateUpdates).to.deep.equal({
+      expect(stateUpdates).toEqual({
         uiOptions: { bbc: 50, abc: 10 }
       });
     });
@@ -199,7 +198,7 @@ describe('manager.api.actions.api', () => {
       };
 
       const stateUpdates = clientStore.updateCallback(state);
-      expect(stateUpdates).to.deep.equal({
+      expect(stateUpdates).toEqual({
         uiOptions: { bbc: 50, abc: 10 }
       });
     });
@@ -215,7 +214,7 @@ describe('manager.api.actions.api', () => {
       };
 
       const stateUpdates = clientStore.updateCallback(state);
-      expect(stateUpdates).to.deep.equal({
+      expect(stateUpdates).toEqual({
         customQueryParams: { bbc: 'bbb', abc: 'aaa', cnn: 'ccc' }
       });
     });
@@ -229,7 +228,7 @@ describe('manager.api.actions.api', () => {
       };
 
       const stateUpdates = clientStore.updateCallback(state);
-      expect(stateUpdates).to.deep.equal({
+      expect(stateUpdates).toEqual({
         customQueryParams: { bbc: 'ccc' }
       });
     });
