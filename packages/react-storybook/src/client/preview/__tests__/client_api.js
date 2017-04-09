@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import ClientAPI from '../client_api';
 
 class StoryStore {
@@ -64,7 +63,7 @@ describe('preview.client_api', () => {
       });
 
       api.storiesOf('none').aa();
-      expect(data).to.be.equal('foo');
+      expect(data).toBe('foo');
     });
 
     it('should not remove previous addons', () => {
@@ -84,7 +83,7 @@ describe('preview.client_api', () => {
       });
 
       api.storiesOf('none').aa().bb();
-      expect(data).to.deep.equal(['foo', 'bar']);
+      expect(data).toEqual(['foo', 'bar']);
     });
 
     it('should call with the api context', () => {
@@ -98,7 +97,7 @@ describe('preview.client_api', () => {
       });
 
       api.storiesOf('none').aa();
-      expect(data).to.be.equal('function');
+      expect(data).toBe('function');
     });
 
     it('should be able to access addons added previously', () => {
@@ -118,7 +117,7 @@ describe('preview.client_api', () => {
       });
 
       api.storiesOf('none').bb();
-      expect(data).to.be.equal('foo');
+      expect(data).toBe('foo');
     });
 
     it('should be able to access the current kind', () => {
@@ -133,7 +132,7 @@ describe('preview.client_api', () => {
       });
 
       api.storiesOf(kind).aa();
-      expect(data).to.be.equal(kind);
+      expect(data).toBe(kind);
     });
   });
 
@@ -145,7 +144,7 @@ describe('preview.client_api', () => {
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
-      expect(storyStore.stories[0].fn()).to.be.equal('aa-Hello');
+      expect(storyStore.stories[0].fn()).toBe('aa-Hello');
     });
 
     it('should add global decorators', () => {
@@ -155,7 +154,7 @@ describe('preview.client_api', () => {
       const localApi = api.storiesOf('none');
 
       localApi.add('storyName', () => 'Hello');
-      expect(storyStore.stories[0].fn()).to.be.equal('bb-Hello');
+      expect(storyStore.stories[0].fn()).toBe('bb-Hello');
     });
 
     it('should utilize both decorators at once', () => {
@@ -167,7 +166,7 @@ describe('preview.client_api', () => {
       localApi.addDecorator(fn => `bb-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
-      expect(storyStore.stories[0].fn()).to.be.equal('aa-bb-Hello');
+      expect(storyStore.stories[0].fn()).toBe('aa-bb-Hello');
     });
 
     it('should pass the context', () => {
@@ -182,7 +181,7 @@ describe('preview.client_api', () => {
       const story = 'ef349ff';
 
       const result = storyStore.stories[0].fn({ kind, story });
-      expect(result).to.be.equal(`aa-${kind}-${story}`);
+      expect(result).toBe(`aa-${kind}-${story}`);
     });
 
     it('should have access to the context', () => {
@@ -197,7 +196,7 @@ describe('preview.client_api', () => {
       const story = 'ef349ff';
 
       const result = storyStore.stories[0].fn({ kind, story });
-      expect(result).to.be.equal(`${kind}-${story}-Hello`);
+      expect(result).toBe(`${kind}-${story}-Hello`);
     });
   });
 
@@ -206,7 +205,7 @@ describe('preview.client_api', () => {
       const api = new ClientAPI({});
       api._globalDecorators = 1234;
       api.clearDecorators();
-      expect(api._globalDecorators).to.deep.equal([]);
+      expect(api._globalDecorators).toEqual([]);
     });
   });
 
@@ -215,7 +214,7 @@ describe('preview.client_api', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
       const book = api.getStorybook();
-      expect(book).to.deep.equal([]);
+      expect(book).toEqual([]);
     });
 
     it('should return storybook with stories', () => {
@@ -234,7 +233,7 @@ describe('preview.client_api', () => {
       kind2.add('story-2.1', functions['story-2.1']);
       kind2.add('story-2.2', functions['story-2.2']);
       const book = api.getStorybook();
-      expect(book).to.deep.equal([
+      expect(book).toEqual([
         {
           kind: 'kind-1',
           stories: [
