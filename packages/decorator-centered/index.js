@@ -11,6 +11,6 @@ const style = {
   justifyContent: 'center'
 };
 
-export default function (storyFn) {
+export default function(storyFn) {
   return <div style={style}>{storyFn()}</div>;
 }
