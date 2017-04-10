@@ -1,10 +1,8 @@
-const { describe, it } = global;
-import { expect } from 'chai';
 import { mapper } from '../down_panel';
 
 describe('manager.ui.containers.down_panel', () => {
   describe('mapper', () => {
-    it('should give correct data', () => {
+    test('should give correct data', () => {
       const state = {
         selectedDownPanel: 'sdp'
       };
@@ -31,10 +29,11 @@ describe('manager.ui.containers.down_panel', () => {
         })
       };
 
-      const data = mapper(state, props, env);
-      expect(data.panels).to.deep.equal(panels);
-      expect(data.selectedPanel).to.deep.equal('sdp');
-      expect(data.onPanelSelect).to.equal(selectDownPanel);
+      const result = mapper(state, props, env);
+
+      expect(result.panels).toEqual(panels);
+      expect(result.selectedPanel).toEqual('sdp');
+      expect(result.onPanelSelect).toBe(selectDownPanel);
     });
   });
 });
