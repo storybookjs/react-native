@@ -11,5 +11,5 @@ export function init() {
 // ready. If called before, options will be cached until it can be sent.
 export function setOptions(options) {
   const channel = addons.getChannel();
-  channel.emit(EVENT_ID, {options});
+  channel.emit(EVENT_ID, { options });
 }
