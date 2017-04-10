@@ -1,5 +1,4 @@
 import actions from '../shortcuts';
-import { expect } from 'chai';
 
 class MockClientStore {
   update(cb) {
@@ -9,7 +8,7 @@ class MockClientStore {
 
 describe('manager.shortcuts.actions.shortcuts', () => {
   describe('setOptions', () => {
-    it('should update options', () => {
+    test('should update options', () => {
       const clientStore = new MockClientStore();
       actions.setOptions({ clientStore }, { abc: 10 });
 
@@ -18,12 +17,12 @@ describe('manager.shortcuts.actions.shortcuts', () => {
       };
 
       const stateUpdates = clientStore.updateCallback(state);
-      expect(stateUpdates).to.deep.equal({
+      expect(stateUpdates).toEqual({
         shortcutOptions: { bbc: 50, abc: 10 }
       });
     });
 
-    it('should only update options for the key already defined', () => {
+    test('should only update options for the key already defined', () => {
       const clientStore = new MockClientStore();
       actions.setOptions({ clientStore }, { abc: 10, kki: 50 });
 
@@ -32,7 +31,7 @@ describe('manager.shortcuts.actions.shortcuts', () => {
       };
 
       const stateUpdates = clientStore.updateCallback(state);
-      expect(stateUpdates).to.deep.equal({
+      expect(stateUpdates).toEqual({
         shortcutOptions: { bbc: 50, abc: 10 }
       });
     });
