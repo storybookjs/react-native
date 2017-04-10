@@ -1,0 +1,19 @@
+{
+  "name": "@kadira/react-storybook-decorator-centered",
+  "version": "1.1.2",
+  "description": "React Storybook decorator to center components",
+  "main": "build/index.js",
+  "scripts": {
+    "prepublish": "make build"
+  },
+  "author": "Muhammed Thanish <mnmtanish@gmail.com>",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "devDependencies": {
+    "react-fatigue-dev": "kadirahq/react-fatigue-dev"
+  }
+}
