@@ -1,11 +1,11 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 import storyshotsFirstRun from './static/storyshots-first-run.png';
 import storyshotsDiffView from './static/storyshots-diff-view.png';
 
 export default {
-  id: "structural-testing",
-  title: "Structural Testing",
+  id: 'structural-testing',
+  title: 'Structural Testing',
   content: stripIndent`
 
     For React, [Jest's snapshot testing](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html) is the best way to do Structural Testing. It's painless to use and maintain. We've integrated Jest's snapshot testing directly into Storybook using a new tool called [StoryShots](https://github.com/storybooks/storyshots). Now we can simply use existing stories as the input for snapshot testing.

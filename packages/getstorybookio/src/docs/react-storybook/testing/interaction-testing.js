@@ -1,10 +1,10 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 import specsAddon from './static/specs-addon.png';
 
 export default {
-  id: "interaction-testing",
-  title: "Interaction Testing",
+  id: 'interaction-testing',
+  title: 'Interaction Testing',
   content: stripIndent`
     For the interaction testing, [Enzyme](https://github.com/airbnb/enzyme) is the best tool we can use. With that, we can [simulate](http://airbnb.io/enzyme/docs/api/ReactWrapper/simulate.html) user inputs and see what they are doing.
 

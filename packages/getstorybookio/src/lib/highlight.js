@@ -23,14 +23,12 @@ class Highlight extends React.Component {
 
   render() {
     const { children } = this.props;
-    return (
-      <div dangerouslySetInnerHTML={{ __html: children }}/>
-    );
+    return <div dangerouslySetInnerHTML={{ __html: children }} />;
   }
 }
 
 Highlight.propTypes = {
-  children: React.PropTypes.string,
+  children: React.PropTypes.string
 };
 
 export default Highlight;

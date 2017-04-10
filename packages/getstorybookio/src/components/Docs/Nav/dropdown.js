@@ -4,11 +4,11 @@ import './style.css';
 
 class Nav extends React.Component {
   renderHeadingOpts(section) {
-    return (<option value={section.id} key={section.id}>{section.heading}</option>);
+    return <option value={section.id} key={section.id}>{section.heading}</option>;
   }
 
   renderNavOpts(nav) {
-    return (<option value={nav.id} key={nav.id}>{nav.title}</option>);
+    return <option value={nav.id} key={nav.id}>{nav.title}</option>;
   }
 
   changeRoute(selectedCatId, selectedSectionId, selectedItemId) {
@@ -18,7 +18,7 @@ class Nav extends React.Component {
 
   handleHeadingChange(evt) {
     const { selectedCatId } = this.props;
-    this.changeRoute(selectedCatId, evt.target.value, "");
+    this.changeRoute(selectedCatId, evt.target.value, '');
   }
 
   handleNavChange(evt) {
@@ -32,27 +32,19 @@ class Nav extends React.Component {
     const selectedSectionId = selectedSection || sections[0].id;
     const selectedItemId = selectedItem || sections[0].items[0].id;
 
-    const selectedSectionData = sections.find(section => {
-      return section.id === selectedSectionId;
-    });
+    const selectedSectionData = sections.find(section => section.id === selectedSectionId);
     const navs = selectedSectionData.items;
 
     return (
       <div>
         <div>
-          <select
-            value={selectedSectionId}
-            onChange={this.handleHeadingChange.bind(this)}
-          >
+          <select value={selectedSectionId} onChange={this.handleHeadingChange.bind(this)}>
             {sections.map(this.renderHeadingOpts.bind(this))}
           </select>
         </div>
 
         <div>
-          <select
-            value={selectedItemId}
-            onChange={this.handleNavChange.bind(this)}
-          >
+          <select value={selectedItemId} onChange={this.handleNavChange.bind(this)}>
             {navs.map(this.renderNavOpts.bind(this))}
           </select>
         </div>
@@ -65,7 +57,7 @@ Nav.propTypes = {
   selectedCatId: React.PropTypes.string,
   sections: React.PropTypes.array,
   selectedSection: React.PropTypes.string,
-  selectedItem: React.PropTypes.string,
+  selectedItem: React.PropTypes.string
 };
 
 export default Nav;

@@ -10,9 +10,9 @@ const MainLinks = () => (
             <h2>Try Now</h2>
             <pre>
               <code>
-                npm i -g getstorybook<br/>
-                cd my-react-app<br/>
-                getstorybook<br/>
+                npm i -g getstorybook<br />
+                cd my-react-app<br />
+                getstorybook<br />
               </code>
             </pre>
           </div>
@@ -21,7 +21,7 @@ const MainLinks = () => (
             <h2>Read Docs</h2>
             <center>
               <a href="/docs">
-                <div className="docs-img"></div>
+                <div className="docs-img" />
               </a>
             </center>
           </div>

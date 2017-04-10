@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "default-config",
-  title: "Default Config",
+  id: 'default-config',
+  title: 'Default Config',
   content: stripIndent`
     Storybook has a default Webpack setup which is similar to [Create React App](https://github.com/facebookincubator/create-react-app).
     Let's learn about the default config comes with Storybook.

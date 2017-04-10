@@ -1,12 +1,12 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 const images = {
-  basicsStories: require('./static/basic-stories.png'),
+  basicsStories: require('./static/basic-stories.png')
 };
 
 export default {
-  id: "writing-stories",
-  title: "Writing Stories",
+  id: 'writing-stories',
+  title: 'Writing Stories',
   content: stripIndent`
     Storybook is all about writing stories. Usually a story contains a single state of one of your components. That's like a visual test case.
 

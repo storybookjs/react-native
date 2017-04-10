@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "sharing-storybooks",
-  title: "Sharing Storybooks",
+  id: 'sharing-storybooks',
+  title: 'Sharing Storybooks',
   content: stripIndent`
     One of the coolest thing about Storybook Hub is you can share storybooks with anyone even they don't have a GitHub account.
 

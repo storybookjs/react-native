@@ -6,7 +6,7 @@ const styles = {
   toolbar: {
     marginBottom: 10,
     fontSize: 11,
-    fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+    fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif'
   },
 
   toolbarButton: {
@@ -17,23 +17,23 @@ const styles = {
     cursor: 'pointer',
     outline: 0,
     letterSpacing: 0.5,
-    WebkitFontSmoothing: 'antialiased',
+    WebkitFontSmoothing: 'antialiased'
   },
 
   wrapper: {
-    padding: 10,
+    padding: 10
   },
 
   heading: {
-    fontFamily: "monospace",
-    textTransform: "uppercase",
+    fontFamily: 'monospace',
+    textTransform: 'uppercase',
     fontSize: 20,
-    margin: "10px 0",
-    padding: "0",
+    margin: '10px 0',
+    padding: '0'
   },
 
   container: {
-    border: '1px dashed #DDD',
+    border: '1px dashed #DDD'
   }
 };
 
@@ -93,31 +93,26 @@ export default class WithDesign extends React.Component {
   renderToolbar() {
     const { type: currentType } = this.state;
 
-    const changeState = (type) => {
-      return () => {
+    const changeState = type =>
+      () => {
         localStorage.setItem('WITH_DESIGN_TYPE', type);
         this.setState({ type });
         this.tryCalculateScale();
       };
-    };
 
     const buttons = [
       ['Side by Side', 'COMPARE'],
       ['One After Other', 'SHOW_BOTH'],
       ['Implementation', 'SHOW_IMPLEMENTATION'],
-      ['Design', 'SHOW_DESIGN'],
+      ['Design', 'SHOW_DESIGN']
     ].map(([caption, typeName]) => {
       const style = {
         ...styles.toolbarButton,
-        fontWeight: currentType === typeName? 600 : 400,
+        fontWeight: currentType === typeName ? 600 : 400
       };
 
       return (
-        <button
-          style={style}
-          onClick={changeState(typeName)}
-          key={typeName}
-        >
+        <button style={style} onClick={changeState(typeName)} key={typeName}>
           {caption}
         </button>
       );
@@ -141,7 +136,7 @@ export default class WithDesign extends React.Component {
     return (
       <div>
         <div style={styles.container}>
-          <img ref='design' style={designStyle} src={design} />
+          <img ref="design" style={designStyle} src={design} />
         </div>
       </div>
     );
@@ -153,7 +148,7 @@ export default class WithDesign extends React.Component {
 
     const containerStyle = {
       ...styles.container,
-      zoom: implementationScale,
+      zoom: implementationScale
     };
 
     return (
@@ -171,15 +166,15 @@ export default class WithDesign extends React.Component {
     switch (type) {
       case 'SHOW_DESIGN':
         return (
-          <div style={styles.wrapper} >
+          <div style={styles.wrapper}>
             {this.renderToolbar()}
-            {this.renderDesign({scaleImage: false})}
+            {this.renderDesign({ scaleImage: false })}
           </div>
         );
 
       case 'SHOW_IMPLEMENTATION':
         return (
-          <div style={styles.wrapper} >
+          <div style={styles.wrapper}>
             {this.renderToolbar()}
             {this.renderImplementation()}
           </div>
@@ -187,7 +182,7 @@ export default class WithDesign extends React.Component {
 
       case 'COMPARE':
         return (
-          <div style={styles.wrapper} >
+          <div style={styles.wrapper}>
             {this.renderToolbar()}
             <Flex>
               <Box col={6}>{this.renderDesign()}</Box>
@@ -199,7 +194,7 @@ export default class WithDesign extends React.Component {
       case 'SHOW_BOTH':
       default:
         return (
-          <div style={styles.wrapper} >
+          <div style={styles.wrapper}>
             {this.renderToolbar()}
             {this.renderDesign()}
             {this.renderImplementation()}

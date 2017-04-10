@@ -29,34 +29,14 @@ const content = `
 `;
 
 export default {
-  'Homepage.page': (
-    <Homepage
-      featuredStorybooks={docsData.featuredStorybooks}
-    />
-  ),
-  'Homepage.header': (
-    <Header />
-  ),
-  'Homepage.heading': (
-    <Heading />
-  ),
-  'Homepage.demo': (
-    <Demo />
-  ),
-  'Homepage.built-for': (
-    <Platforms />
-  ),
-  'Homepage.main-links': (
-    <MainLinks />
-  ),
-  'Homepage.featured-storybooks': (
-    <Featured
-      featuredStorybooks={docsData.featuredStorybooks}
-    />
-  ),
-  'Homepage.footer': (
-    <Footer />
-  ),
+  'Homepage.page': <Homepage featuredStorybooks={docsData.featuredStorybooks} />,
+  'Homepage.header': <Header />,
+  'Homepage.heading': <Heading />,
+  'Homepage.demo': <Demo />,
+  'Homepage.built-for': <Platforms />,
+  'Homepage.main-links': <MainLinks />,
+  'Homepage.featured-storybooks': <Featured featuredStorybooks={docsData.featuredStorybooks} />,
+  'Homepage.footer': <Footer />,
   'Docs.page': (
     <Docs
       sections={docsData.sections}
@@ -74,16 +54,13 @@ export default {
     />
   ),
   'Docs.docs-content': (
-    <DocsContent
-      title={docsData.selectedItem.title}
-      content={docsData.selectedItem.content}
-    />
+    <DocsContent title={docsData.selectedItem.title} content={docsData.selectedItem.content} />
   ),
   'Docs.docs-nav': (
     <DocsNav
       sections={docsData.sections}
       selectedSection={docsData.selectedItem.sectionId}
-      selectedItem={docsData.selectedItem.id}    
+      selectedItem={docsData.selectedItem.id}
     />
-  ),
+  )
 };

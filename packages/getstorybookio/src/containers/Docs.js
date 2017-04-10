@@ -11,7 +11,7 @@ import {
 class DocsContainer extends React.Component {
   render() {
     const { catId, sectionId, itemId } = this.props.params;
-    
+
     let selectedItem;
     const selectedCatId = catId || getCategories()[0].id;
 
@@ -32,10 +32,10 @@ class DocsContainer extends React.Component {
       sections: getNavigationData(selectedCatId),
       selectedItem,
       selectedSectionId,
-      selectedItemId,
+      selectedItemId
     };
 
-    return (<Docs {...props}/>);
+    return <Docs {...props} />;
   }
 }
 

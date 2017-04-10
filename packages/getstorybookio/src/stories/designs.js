@@ -1,5 +1,5 @@
 export default {
-  "Homepage.page": {
+  'Homepage.page': {
     design: require('../design/homepage/homepage.png'),
     note: `
       For this we'll use Bootsrap for sake of simplicity. (Specially for the layouts).
@@ -10,14 +10,14 @@ export default {
     `
   },
 
-  "Homepage.header": {
+  'Homepage.header': {
     design: require('../design/homepage/header.png'),
     note: `
       Just a simple header. In the mobile view, this will show one after other.
     `
   },
 
-  "Homepage.heading": {
+  'Homepage.heading': {
     design: require('../design/homepage/heading.png'),
     note: `
       Use the "Storybook" font to make it super bold. (font-weight=800)
@@ -25,7 +25,7 @@ export default {
     `
   },
 
-  "Homepage.demo": {
+  'Homepage.demo': {
     design: require('../design/homepage/demo.png'),
     note: `
       Use the image located at src/design/homepage/screenshot.png for this.
@@ -33,7 +33,7 @@ export default {
     `
   },
 
-  "Homepage.built-for": {
+  'Homepage.built-for': {
     design: require('../design/homepage/built-for.png'),
     note: `
       In this, React and React Native are links for following repos:
@@ -49,7 +49,7 @@ export default {
     `
   },
 
-  "Homepage.main-links": {
+  'Homepage.main-links': {
     design: require('../design/homepage/main-links.png'),
     note: `
       This one has two headings. Use a common style in Homepage/styles.css and use it in here.
@@ -59,7 +59,7 @@ export default {
     `
   },
 
-  "Homepage.featured-storybooks": {
+  'Homepage.featured-storybooks': {
     design: require('../design/homepage/featured-storybooks.png'),
     note: `
       This components accepts a input as follows and render links to storybooks as shown above.
@@ -100,7 +100,7 @@ export default {
     `
   },
 
-  "Homepage.footer": {
+  'Homepage.footer': {
     design: require('../design/homepage/footer.png'),
     note: `
       Here are the links:
@@ -112,7 +112,7 @@ export default {
     `
   },
 
-  "Docs.page": {
+  'Docs.page': {
     design: require('../design/docs/docs.png'),
     note: `
       Here we use the docs layout which is similar to BulletProof Meteor.
@@ -124,7 +124,7 @@ export default {
     `
   },
 
-  "Docs.docs-container": {
+  'Docs.docs-container': {
     design: require('../design/docs/docs-container.png'),
     note: `
       This is a container and this as no content.
@@ -132,7 +132,7 @@ export default {
     `
   },
 
-  "Docs.docs-nav": {
+  'Docs.docs-nav': {
     design: require('../design/docs/docs-nav.png'),
     note: `
       This is docs navigation and accept some dataset to render this.
@@ -145,7 +145,7 @@ export default {
     `
   },
 
-  "Docs.docs-content": {
+  'Docs.docs-content': {
     design: require('../design/docs/docs-content.png'),
     note: `
       This title is with Open Sans 30px font. color #444.
@@ -157,5 +157,5 @@ export default {
 
     (You can look at the BulletProof Meteor for the actual styles.)
     `
-  },
+  }
 };

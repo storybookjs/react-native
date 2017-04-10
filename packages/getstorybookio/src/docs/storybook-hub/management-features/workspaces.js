@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "workspaces",
-  title: "Workspaces",
+  id: 'workspaces',
+  title: 'Workspaces',
   content: stripIndent`
     We group apps on storybook based on workspaces. Every account on Storybook Hub has a workspace.
     Each workspaces has:

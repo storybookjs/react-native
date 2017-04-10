@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "serving-static-files",
-  title: "Serving Static Files",
+  id: 'serving-static-files',
+  title: 'Serving Static Files',
   content: stripIndent`
     It's often useful to load static files like images and videos when creating components and stories.
 

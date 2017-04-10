@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "cli-options",
-  title: "CLI Options",
+  id: 'cli-options',
+  title: 'CLI Options',
   content: stripIndent`
     React Storybook comes with two CLI utilities. They are \`start-storybook\` and \`build-storybook\`.
 

@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "custom-webpack-config",
-  title: "Custom Webpack Config",
+  id: 'custom-webpack-config',
+  title: 'Custom Webpack Config',
   content: stripIndent`
     The default Webpack config of React Storybook is usually well balanced for a medium-size React project (specially created with [Create React App](https://github.com/facebookincubator/create-react-app)) or a library. But if you already have your own Webpack setup, that's not useable.
 

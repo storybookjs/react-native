@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "manual-testing",
-  title: "Manual Testing",
+  id: 'manual-testing',
+  title: 'Manual Testing',
   content: stripIndent`
     Now we arrive at the most interesting (but also hardest) part of UI testing. We usually do this as a team.
 

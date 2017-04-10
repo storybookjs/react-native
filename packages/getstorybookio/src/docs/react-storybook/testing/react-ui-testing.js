@@ -1,10 +1,10 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 import loginForm from './static/login_form.png';
 
 export default {
-  id: "react-ui-testing",
-  title: "Introduction: React UI Testing",
+  id: 'react-ui-testing',
+  title: 'Introduction: React UI Testing',
   content: stripIndent`
     There are different aspects we need to look at when testing UI. There are also a lot of tools and techniques we can use. 
 

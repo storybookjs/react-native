@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "api",
-  title: "API",
+  id: 'api',
+  title: 'API',
   content: stripIndent`
     ## Core Addon API
 

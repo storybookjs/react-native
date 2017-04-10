@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "exporting-storybook",
-  title: "Exporting Storybook as a Static App",
+  id: 'exporting-storybook',
+  title: 'Exporting Storybook as a Static App',
   content: stripIndent`
     Storybook gives a great developer experience with its dev time features, like instance change updates via Webpack's HMR.
 

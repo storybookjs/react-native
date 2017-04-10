@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "custom-babel-config",
-  title: "Custom Babel Config",
+  id: 'custom-babel-config',
+  title: 'Custom Babel Config',
   content: stripIndent`
     By default, Storybook loads your root \`.babelrc\` file and load those configurations. But sometimes some of those options may cause Storybook to throw errors.
 

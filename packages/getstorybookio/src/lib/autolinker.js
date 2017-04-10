@@ -7,9 +7,9 @@ if (typeof window !== 'undefined') {
 function watchClickEvents() {
   // This logic is taken from page.js
   // See: https://github.com/visionmedia/page.js
-  const clickEvent =
-    typeof document !== 'undefined' && document.ontouchstart ?
-    'touchstart' : 'click';
+  const clickEvent = typeof document !== 'undefined' && document.ontouchstart
+    ? 'touchstart'
+    : 'click';
   document.addEventListener(clickEvent, onclick, false);
 
   function onclick(e) {
@@ -28,7 +28,7 @@ function watchClickEvents() {
     // ensure link
     // use shadow dom when available
     let el = e.path ? e.path[0] : e.target;
-    while (el && el.nodeName !== 'A' ) {
+    while (el && el.nodeName !== 'A') {
       el = el.parentNode;
     }
 

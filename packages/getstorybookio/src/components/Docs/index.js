@@ -16,24 +16,20 @@ class Docs extends React.Component {
       selectedItemId
     } = this.props;
 
-    const selectedCat = categories.find(cat => {
-      return cat.id === selectedCatId;
-    });
+    const selectedCat = categories.find(cat => cat.id === selectedCatId);
     const headTitle = `${selectedItem.title} - ${selectedCat.title}`;
 
     return (
       <div className="container">
-        <Helmet
-          title={headTitle}
-        />
-        <Header currentSection="docs"/>
+        <Helmet title={headTitle} />
+        <Header currentSection="docs" />
         <Container
-          categories={ categories }
-          selectedCatId={ selectedCatId }
-          sections={ sections }
-          selectedItem={ selectedItem }
-          selectedSectionId={ selectedSectionId }
-          selectedItemId={ selectedItemId }
+          categories={categories}
+          selectedCatId={selectedCatId}
+          sections={sections}
+          selectedItem={selectedItem}
+          selectedSectionId={selectedSectionId}
+          selectedItemId={selectedItemId}
         />
         <Footer />
       </div>
@@ -47,7 +43,7 @@ Docs.propTypes = {
   sections: React.PropTypes.array,
   selectedItem: React.PropTypes.object,
   selectedSectionId: React.PropTypes.string,
-  selectedItemId: React.PropTypes.string,
+  selectedItemId: React.PropTypes.string
 };
 
 export default Docs;

@@ -1,12 +1,12 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 import authorizeGithubImage from './static/authorize-github.png';
 import storybooksViaHubImage from './static/storybooks-via-hub.png';
 import storybooksViaPRImage from './static/storybooks-via-pr.png';
 
 export default {
-  id: "getting-started",
-  title: "Getting Started",
+  id: 'getting-started',
+  title: 'Getting Started',
   content: stripIndent`
     This guide will help you to connect your React app (or project) to [Storybook Hub](https://hub.getstorybook.io/).
 

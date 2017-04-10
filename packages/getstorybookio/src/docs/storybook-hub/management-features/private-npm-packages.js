@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "private-npm-packages",
-  title: "Private NPM Packages",
+  id: 'private-npm-packages',
+  title: 'Private NPM Packages',
   content: stripIndent`
     If you are using private NPM repos or private Github urls we won't be able to access those repos by default. But there are some ways you could grant permission to us.
     

@@ -1,14 +1,14 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 const images = {
   storybookComponents: require('./static/storybook-components.png'),
   storiesWithoutNotes: require('./static/stories-without-notes.png'),
-  storiesWithNotes: require('./static/stories-with-notes.png'),
+  storiesWithNotes: require('./static/stories-with-notes.png')
 };
 
 export default {
-  id: "writing-addons",
-  title: "Writing Addons",
+  id: 'writing-addons',
+  title: 'Writing Addons',
   content: stripIndent`
     This is a complete guide on how to create addons for Storybook.
 

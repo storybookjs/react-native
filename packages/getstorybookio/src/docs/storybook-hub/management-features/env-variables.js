@@ -1,11 +1,11 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 import editAppButtonImage from './static/edit-app-button.png';
 import envVarsImage from './static/env-vars.png';
 
 export default {
-  id: "env-variables",
-  title: "Environment Variables",
+  id: 'env-variables',
+  title: 'Environment Variables',
   content: stripIndent`
     You can pass dynamic information to Storybook via environmental variables. This can be used to pass configurations and secrets. Here's [how to](/docs/react-storybook/configurations/env-vars) use them with storybook.
 

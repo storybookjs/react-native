@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "add-custom-head-tags",
-  title: "Add Custom Head Tags",
+  id: 'add-custom-head-tags',
+  title: 'Add Custom Head Tags',
   content: stripIndent`
     Sometimes, you may need to add different tags to the HTML head. This is useful for adding web fonts or some external scripts.
 

@@ -10,10 +10,10 @@ class Container extends React.Component {
     const path = `/docs/${cat.id}`;
 
     if (selectedCatId === cat.id) {
-      return (<li className="selected" key={ cat.id }>{ cat.title }</li>);
+      return <li className="selected" key={cat.id}>{cat.title}</li>;
     }
 
-    return (<a key={ cat.id } href={ path }><li>{ cat.title }</li></a>);
+    return <a key={cat.id} href={path}><li>{cat.title}</li></a>;
   }
 
   render() {
@@ -35,28 +35,28 @@ class Container extends React.Component {
         <div className="row">
           <div className="col-xs-12">
             <ul className="top-nav">
-              { categories.map(this.renderTopNav.bind(this)) }
+              {categories.map(this.renderTopNav.bind(this))}
             </ul>
           </div>
         </div>
 
         <div className="nav col-sm-3 col-md-3 hidden-xs">
           <Nav
-            selectedCatId={ selectedCatId }
-            sections={ sections }
-            selectedSection={ selectedItem.section }
-            selectedItem={ selectedItem.id }
-            selectedSectionId={ selectedSectionId }
-            selectedItemId={ selectedItemId }
+            selectedCatId={selectedCatId}
+            sections={sections}
+            selectedSection={selectedItem.section}
+            selectedItem={selectedItem.id}
+            selectedSectionId={selectedSectionId}
+            selectedItemId={selectedItemId}
           />
         </div>
         <div className="content col-xs-12 col-sm-9 col-md-9 col-lg-9">
           <div className="nav-dropdown">
             <NavDropdown
-              selectedCatId={ selectedCatId }
-              sections={ sections }
-              selectedSection={ selectedItem.section }
-              selectedItem={ selectedItem.id }
+              selectedCatId={selectedCatId}
+              sections={sections}
+              selectedSection={selectedItem.section}
+              selectedItem={selectedItem.id}
             />
           </div>
 
@@ -68,10 +68,10 @@ class Container extends React.Component {
 
           <div className="nav-dropdown">
             <NavDropdown
-              selectedCatId={ selectedCatId }
-              sections={ sections }
-              selectedSection={ selectedItem.section }
-              selectedItem={ selectedItem.id }
+              selectedCatId={selectedCatId}
+              sections={sections}
+              selectedSection={selectedItem.section}
+              selectedItem={selectedItem.id}
             />
           </div>
         </div>
@@ -86,7 +86,7 @@ Container.propTypes = {
   sections: React.PropTypes.array,
   selectedItem: React.PropTypes.object,
   selectedSectionId: React.PropTypes.string,
-  selectedItemId: React.PropTypes.string,
+  selectedItemId: React.PropTypes.string
 };
 
 export default Container;

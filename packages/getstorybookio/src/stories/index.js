@@ -7,12 +7,12 @@ import implementations from './implementations';
 
 const storyGroups = {};
 
-for(let key in designs) {
+for (const key in designs) {
   const [groupName, itemName] = key.split('.');
   const info = designs[key];
   const implementation = implementations[key];
 
-  if(!storyGroups[groupName]) {
+  if (!storyGroups[groupName]) {
     storyGroups[groupName] = storiesOf(groupName, module);
   }
 

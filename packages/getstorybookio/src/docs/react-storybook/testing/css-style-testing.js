@@ -1,11 +1,11 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 import storybookScreenshot from './static/storybook-screenshot.png';
 import storybookIframeScreenshot from './static/storybook-iframe-screenshot.png';
 
 export default {
-  id: "css-style-testing",
-  title: "CSS/Style Testing",
+  id: 'css-style-testing',
+  title: 'CSS/Style Testing',
   content: stripIndent`
     We can also use Storybook as the base for CSS/Style testing with stories as the base. First, have a look at the following Storybook.
 

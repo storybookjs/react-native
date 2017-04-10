@@ -1,11 +1,11 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 import githubPRCommentImage from './static/github-pr-comment.png';
 import githubPRDeployLinkImage from './static/github-pr-deploy-link.png';
 
 export default {
-  id: "github-pr-integration",
-  title: "GitHub PR Integration",
+  id: 'github-pr-integration',
+  title: 'GitHub PR Integration',
   content: stripIndent`
     We'll create Storybooks for every code commit in your app. You can also access them alongside your Github Pull Requests.
 

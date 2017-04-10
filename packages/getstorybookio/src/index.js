@@ -10,15 +10,10 @@ import './lib/autolinker';
 import 'airbnb-js-shims';
 
 ReactDOM.render(
-  (
-    <Router
-      history={browserHistory}
-      render={applyRouterMiddleware(useScroll())}
-    >
-      <Route path="/" component={Homepage} />
-      <Route path="/docs(/:catId(/:sectionId/(:itemId)))" component={Docs} />
+  <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
+    <Route path="/" component={Homepage} />
+    <Route path="/docs(/:catId(/:sectionId/(:itemId)))" component={Docs} />
 
-    </Router>
-  ),
+  </Router>,
   document.getElementById('root')
 );

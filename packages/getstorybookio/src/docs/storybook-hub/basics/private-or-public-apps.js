@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "private-or-public-apps",
-  title: "Private or Public Apps",
+  id: 'private-or-public-apps',
+  title: 'Private or Public Apps',
   content: stripIndent`
   In Storybook Hub, you could create either private or public apps. This guide will help you choose an app type for your project.
 

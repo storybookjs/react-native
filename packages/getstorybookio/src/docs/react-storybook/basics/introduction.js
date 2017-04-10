@@ -1,12 +1,12 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 const images = {
-  screenshot: require('./static/screenshot.png'),
+  screenshot: require('./static/screenshot.png')
 };
 
 export default {
-  id: "introduction",
-  title: "Introduction",
+  id: 'introduction',
+  title: 'Introduction',
   content: stripIndent`
     React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively.
 

@@ -1,13 +1,13 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 const images = {
   storiesWithoutNotes: require('./static/stories-without-notes.png'),
-  storiesWithNotes: require('./static/stories-with-notes.png'),
+  storiesWithNotes: require('./static/stories-with-notes.png')
 };
 
 export default {
-  id: "using-addons",
-  title: "Using Addons",
+  id: 'using-addons',
+  title: 'Using Addons',
   content: stripIndent`
     By default, Storybook comes with two addons, which are [actions](https://github.com/storybooks/storybook-addon-actions) and [links](https://github.com/storybooks/storybook-addon-links). But you can use any third party addons distributed via NPM.
 

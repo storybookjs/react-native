@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "env-vars",
-  title: "Using Environment Variables",
+  id: 'env-vars',
+  title: 'Using Environment Variables',
   content: stripIndent`
     Sometimes, we may use configuration items inside Storybook. It might be a theme color, some client secret, or a JSON string. So, we usually tend to hard code them.
 

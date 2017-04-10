@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "quick-start-guide",
-  title: "Quick Start Guide",
+  id: 'quick-start-guide',
+  title: 'Quick Start Guide',
   content: stripIndent`
     React Storybook is very easy to use. You can use it with any kind of React project.
     Follow these steps to get started with Storybook.

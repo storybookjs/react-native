@@ -2,27 +2,23 @@ import React from 'react';
 import './style.css';
 
 class Featured extends React.Component {
-
   renderFeaturedItem(ftItem) {
     return (
       <div className="ft-sbooks col-xs-6 col-md-4" key={ftItem.storybook.link}>
         <div className="col-md-4">
-          <a href={ ftItem.storybook.link } target="_blank">
+          <a href={ftItem.storybook.link} target="_blank">
             <center>
-              <img className="ft-logo" src={ ftItem.owner } role="presentation" />
+              <img className="ft-logo" src={ftItem.owner} role="presentation" />
             </center>
           </a>
         </div>
         <div className="desc col-md-8">
           <p>
-            <a
-              href={ftItem.storybook.link}
-              className="reponame"
-            >
-              { ftItem.storybook.name }
+            <a href={ftItem.storybook.link} className="reponame">
+              {ftItem.storybook.name}
             </a>
           </p>
-          <a href={ ftItem.source } target="_blank">source</a>
+          <a href={ftItem.source} target="_blank">source</a>
         </div>
       </div>
     );
@@ -37,7 +33,7 @@ class Featured extends React.Component {
           <div className="row">
             {featuredStorybooks.map(this.renderFeaturedItem.bind(this))}
           </div>
-          <hr/>
+          <hr />
         </div>
       </div>
     );
@@ -45,7 +41,7 @@ class Featured extends React.Component {
 }
 
 Featured.propTypes = {
-  featuredStorybooks: React.PropTypes.array,
+  featuredStorybooks: React.PropTypes.array
 };
 
 export default Featured;

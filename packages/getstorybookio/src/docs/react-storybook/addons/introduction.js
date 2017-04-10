@@ -1,12 +1,12 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 const images = {
-  addonActionsDemo: require('./static/addon-actions-demo.gif'),
+  addonActionsDemo: require('./static/addon-actions-demo.gif')
 };
 
 export default {
-  id: "introduction",
-  title: "Intro to Addons",
+  id: 'introduction',
+  title: 'Intro to Addons',
   content: stripIndent`
     By default, Storybook comes with a way to list stories and visualize them. Addons implement extra features for Storybooks to make them more useful.
 

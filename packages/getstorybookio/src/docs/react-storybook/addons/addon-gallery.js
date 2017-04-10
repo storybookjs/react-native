@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags'
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "addon-gallery",
-  title: "Addon Gallery",
+  id: 'addon-gallery',
+  title: 'Addon Gallery',
   content: stripIndent`
     This is a list of available addons for Storybook.
 

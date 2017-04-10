@@ -1,8 +1,8 @@
-import {stripIndent} from 'common-tags';
+import { stripIndent } from 'common-tags';
 
 export default {
-  id: "security",
-  title: "Security",
+  id: 'security',
+  title: 'Security',
   content: stripIndent`
     We have access to your GitHub repos and some other personal information about you. We understand that with great power comes great responsibility. We try to minimize the possibility of security breaches by always following essential security measures and adhering to stringent company-wide policies.
 
