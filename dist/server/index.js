@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 'use strict';
 
+var _server;
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
+
+var _https = require('https');
+
+var _https2 = _interopRequireDefault(_https);
 
 var _serveFavicon = require('serve-favicon');
 
@@ -46,8 +52,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var logger = console;
-
-_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('--dont-track', 'Do not send anonymous usage stats.').option('-d, --db-path [db-file]', 'DEPRECATED!').option('--enable-db', 'DEPRECATED!').parse(process.argv);
+_commander2.default.version(_package2.default.version).option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt).option('-h, --host [string]', 'Host to run Storybook').option('-s, --static-dir <dir-names>', 'Directory where to load static files from').option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from').option('--dont-track', 'Do not send anonymous usage stats.').option('--https', 'Serve Storybook over HTTPS. Note: You must provide your own certificate information.').option('--ssl-ca <ca>', 'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)', _utils.parseList).option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)').option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)').option('-d, --db-path [db-file]', 'DEPRECATED!').option('--enable-db', 'DEPRECATED!').parse(process.argv);
 
 logger.info(_chalk2.default.bold(_package2.default.name + ' v' + _package2.default.version + '\n'));
 
@@ -84,6 +89,28 @@ if (_commander2.default.host) {
 }
 
 var app = (0, _express2.default)();
+var server = app;
+
+if (_commander2.default.https) {
+  if (!_commander2.default.sslCert) {
+    logger.error('Error: --ssl-cert is required with --https');
+    process.exit(-1);
+  }
+  if (!_commander2.default.sslKey) {
+    logger.error('Error: --ssl-key is required with --https');
+    process.exit(-1);
+  }
+
+  var sslOptions = {
+    ca: (_commander2.default.sslCa || []).map(function (ca) {
+      return _fs2.default.readFileSync(ca, 'utf-8');
+    }),
+    cert: _fs2.default.readFileSync(_commander2.default.sslCert, 'utf-8'),
+    key: _fs2.default.readFileSync(_commander2.default.sslKey, 'utf-8')
+  };
+
+  server = _https2.default.createServer(sslOptions, app);
+}
 
 var hasCustomFavicon = false;
 
@@ -126,11 +153,11 @@ process.env.STORYBOOK_GIT_BRANCH = process.env.STORYBOOK_GIT_BRANCH || exec('git
 // `getBaseConfig` function which is called inside the middleware
 app.use((0, _middleware2.default)(configDir));
 
-app.listen.apply(app, listenAddr.concat([function (error) {
+(_server = server).listen.apply(_server, listenAddr.concat([function (error) {
   if (error) {
     throw error;
   } else {
-    var address = 'http://' + (_commander2.default.host || 'localhost') + ':' + _commander2.default.port + '/';
+    var address = 'http' + (_commander2.default.https ? 's' : '') + '://' + (_commander2.default.host || 'localhost') + ':' + _commander2.default.port + '/';
     logger.info('\nReact Storybook started on => ' + _chalk2.default.cyan(address) + '\n');
     (0, _track_usage.track)();
   }
