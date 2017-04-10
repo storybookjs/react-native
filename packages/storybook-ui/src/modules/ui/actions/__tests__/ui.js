@@ -1,43 +1,38 @@
 import actions from '../ui';
-import { expect } from 'chai';
-import sinon from 'sinon';
 
 describe('manager.ui.actions.ui', () => {
   describe('setStoryFilter', () => {
     it('should set the given filter', () => {
       const clientStore = {
-        set: sinon.stub()
+        set: jest.fn()
       };
       const filter = 'kkkind';
-
       actions.setStoryFilter({ clientStore }, filter);
-      const args = clientStore.set.args[0];
-      expect(args).to.deep.equal(['storyFilter', filter]);
+
+      expect(clientStore.set).toHaveBeenCalledWith('storyFilter', filter);
     });
   });
 
   describe('toggleShortcutsHelp', () => {
     it('should toggle the client sotre accordingly', () => {
       const clientStore = {
-        toggle: sinon.stub()
+        toggle: jest.fn()
       };
-
       actions.toggleShortcutsHelp({ clientStore });
-      const args = clientStore.toggle.args[0];
-      expect(args).to.deep.equal(['showShortcutsHelp']);
+
+      expect(clientStore.toggle).toHaveBeenCalledWith('showShortcutsHelp');
     });
   });
 
   describe('selectDownPanel', () => {
     it('should set the given panel name', () => {
       const clientStore = {
-        set: sinon.stub()
+        set: jest.fn()
       };
       const panelName = 'kkkind';
-
       actions.selectDownPanel({ clientStore }, panelName);
-      const args = clientStore.set.args[0];
-      expect(args).to.deep.equal(['selectedDownPanel', panelName]);
+
+      expect(clientStore.set).toHaveBeenCalledWith('selectedDownPanel', panelName);
     });
   });
 });
