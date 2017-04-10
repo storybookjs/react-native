@@ -1,11 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import DownPanel from '../index';
-import { expect } from 'chai';
-import sinon from 'sinon';
 
 describe('manager.ui.components.down_panel.index', () => {
-  it('should render only the selected panel with display set other than "none"', () => {
+  test('should render only the selected panel with display set other than "none"', () => {
     const panels = {
       test1: {
         render() {
@@ -25,11 +23,11 @@ describe('manager.ui.components.down_panel.index', () => {
       <DownPanel panels={panels} onPanelSelect={onPanelSelect} selectedPanel={'test2'} />
     );
 
-    expect(wrapper.find('#test1').parent().props().style.display).to.equal('none');
-    expect(wrapper.find('#test2').parent().props().style.display).to.not.equal('none');
+    expect(wrapper.find('#test1').parent()).toHaveStyle('display', 'none');
+    expect(wrapper.find('#test2').parent()).not.toHaveStyle('display', 'none');
   });
 
-  it('should set onPanelSelected as onClick handlers of tabs', () => {
+  test('should set onPanelSelected as onClick handlers of tabs', () => {
     const panels = {
       test1: {
         render() {
@@ -37,28 +35,24 @@ describe('manager.ui.components.down_panel.index', () => {
         }
       }
     };
-
-    const onPanelSelect = sinon.spy();
-    const preventDefault = sinon.spy();
-
+    const onPanelSelect = jest.fn();
+    const preventDefault = jest.fn();
     const wrapper = shallow(
       <DownPanel panels={panels} onPanelSelect={onPanelSelect} selectedPanel={'test1'} />
     );
-
     wrapper.find('a').simulate('click', { preventDefault });
-    expect(onPanelSelect.calledOnce).to.equal(true);
-    expect(preventDefault.calledOnce).to.equal(true);
+
+    expect(onPanelSelect).toHaveBeenCalled();
+    expect(preventDefault).toHaveBeenCalled();
   });
 
   describe('when no panels are given', () => {
-    it('should render "no panels available"', () => {
+    test('should render "no panels available"', () => {
       const panels = {};
-
       const onPanelSelect = () => 'onPanelSelect';
-
       const wrapper = shallow(<DownPanel panels={panels} onPanelSelect={onPanelSelect} />);
 
-      expect(wrapper.contains('no panels available')).to.equal(true);
+      expect(wrapper.contains('no panels available')).toBe(true);
     });
   });
 });
