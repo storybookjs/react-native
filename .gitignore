@@ -6,3 +6,4 @@ dist
 .tern-port
 *.DS_Store
 packages/examples/automated-*
+yarn.lock

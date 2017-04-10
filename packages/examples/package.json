@@ -8,13 +8,7 @@
     "test:automated-cra-storybook": "node scripts/automated-cra-storybook.js"
   },
   "license": "ISC",
-  "devDependencies": {
-    "react-scripts": "0.9.5",
-    "@kadira/storybook": "^2.21.0"
-  },
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
     "child-process-promise": "^2.2.1",
     "getstorybook": "^1.7.0",
     "rimraf": "^2.6.1"

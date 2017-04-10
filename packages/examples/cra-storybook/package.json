@@ -4,14 +4,13 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.5",
-    "@kadira/storybook": "^2.21.0"
+    "@kadira/storybook": "*"
   },
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "scripts": {
-    "link": "ln -s ../node_modules ./",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
