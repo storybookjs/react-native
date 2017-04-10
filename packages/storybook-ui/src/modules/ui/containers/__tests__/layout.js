@@ -1,9 +1,8 @@
-import { expect } from 'chai';
 import { mapper } from '../layout';
 
 describe('manager.ui.containers.layout', () => {
   describe('mapper', () => {
-    it('should give correct data', () => {
+    test('should give correct data', () => {
       const state = {
         shortcutOptions: {
           showLeftPanel: 'aa',
@@ -11,9 +10,9 @@ describe('manager.ui.containers.layout', () => {
           goFullScreen: 'cc'
         }
       };
-
       const data = mapper(state);
-      expect(data).to.deep.equal(state.shortcutOptions);
+
+      expect(data).toEqual(state.shortcutOptions);
     });
   });
 });
