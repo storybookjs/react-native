@@ -1,7 +1,5 @@
 import genPoddaLoader from '../gen_podda_loader';
 import Podda from 'podda';
-import { expect } from 'chai';
-import sinon from 'sinon';
 
 describe('manager.ui.libs.gen_podda_loader', () => {
   describe('mapper', () => {
@@ -13,13 +11,13 @@ describe('manager.ui.libs.gen_podda_loader', () => {
         aa: state.aa,
         bb: state.bb
       });
-
       const clientStore = new Podda({ aa, bb, cc });
       const loader = genPoddaLoader(mapper);
 
-      const onData = sinon.stub();
+      const onData = jest.fn();
       loader({}, onData, { context: () => ({ clientStore }) });
-      expect(onData.args[0]).to.deep.equal([null, { aa, bb }]);
+
+      expect(onData).toHaveBeenCalledWith(null, { aa, bb });
     });
 
     it('should get props', () => {
@@ -30,13 +28,13 @@ describe('manager.ui.libs.gen_podda_loader', () => {
         aa: props.aa,
         bb: props.bb
       });
-
       const clientStore = new Podda();
       const loader = genPoddaLoader(mapper);
 
-      const onData = sinon.stub();
+      const onData = jest.fn();
       loader({ aa, bb, cc }, onData, { context: () => ({ clientStore }) });
-      expect(onData.args[0]).to.deep.equal([null, { aa, bb }]);
+
+      expect(onData).toHaveBeenCalledWith(null, { aa, bb });
     });
 
     it('should get env', () => {
@@ -51,9 +49,10 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const clientStore = new Podda();
       const loader = genPoddaLoader(mapper);
 
-      const onData = sinon.stub();
+      const onData = jest.fn();
       loader({}, onData, { context: () => ({ clientStore }), aa, bb, cc });
-      expect(onData.args[0]).to.deep.equal([null, { aa, bb }]);
+
+      expect(onData).toHaveBeenCalledWith(null, { aa, bb });
     });
   });
 
@@ -62,13 +61,13 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const mapper = () => {
         throw new Error('this is the error');
       };
-
       const clientStore = new Podda();
       const loader = genPoddaLoader(mapper);
 
-      const onData = sinon.stub();
+      const onData = jest.fn();
       loader({}, onData, { context: () => ({ clientStore }) });
-      expect(onData.args[0][0]).to.match(/this is the error/);
+
+      expect(onData.mock.calls[0].toString()).toMatch(/this is the error/);
     });
 
     it('should run when the podda store changed', () => {
@@ -79,14 +78,14 @@ describe('manager.ui.libs.gen_podda_loader', () => {
         aa: state.aa,
         bb: state.bb
       });
-
       const clientStore = new Podda({ aa, bb, cc });
       const loader = genPoddaLoader(mapper);
 
-      const onData = sinon.stub();
+      const onData = jest.fn();
       loader({ aa, bb, cc }, onData, { context: () => ({ clientStore }) });
       clientStore.set('aa', 1000);
-      expect(onData.args[1]).to.deep.equal([null, { aa: 1000, bb }]);
+
+      expect(onData).toHaveBeenCalledWith(null, { aa: 1000, bb });
     });
 
     it('should not run when podda subscription stopped', () => {
@@ -97,15 +96,17 @@ describe('manager.ui.libs.gen_podda_loader', () => {
         aa: state.aa,
         bb: state.bb
       });
-
       const clientStore = new Podda({ aa, bb, cc });
       const loader = genPoddaLoader(mapper);
 
-      const onData = sinon.stub();
-      const stop = loader({ aa, bb, cc }, onData, { context: () => ({ clientStore }) });
+      const onData = jest.fn();
+      const stop = loader({ aa, bb, cc }, onData, {
+        context: () => ({ clientStore })
+      });
       stop();
       clientStore.set('aa', 1000);
-      expect(onData.callCount).to.be.equal(1);
+
+      expect(onData).toHaveBeenCalled();
     });
   });
 });
