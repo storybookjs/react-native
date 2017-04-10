@@ -1,5 +1,4 @@
 import initApi from '../init_api';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 describe('manager.api.config.initApi', () => {
@@ -21,11 +20,11 @@ describe('manager.api.config.initApi', () => {
 
     const provider = {
       handleAPI(api) {
-        expect(api.setStories).to.be.equal(actions.api.setStories);
-        expect(api.selectStory).to.be.equal(actions.api.selectStory);
-        expect(api.handleShortcut).to.be.equal(actions.shortcuts.handleEvent);
-        expect(typeof api.onStory).to.be.equal('function');
-        expect(typeof api.setQueryParams).to.be.equal('function');
+        expect(api.setStories).toBe(actions.api.setStories);
+        expect(api.selectStory).toBe(actions.api.selectStory);
+        expect(api.handleShortcut).toBe(actions.shortcuts.handleEvent);
+        expect(typeof api.onStory).toBe('function');
+        expect(typeof api.setQueryParams).toBe('function');
         done();
       }
     };
@@ -49,8 +48,8 @@ describe('manager.api.config.initApi', () => {
     const provider = {
       handleAPI(api) {
         api.onStory((kind, story) => {
-          expect(kind).to.be.equal(selectedKind);
-          expect(story).to.be.equal(selectedStory);
+          expect(kind).toBe(selectedKind);
+          expect(story).toBe(selectedStory);
           done();
         });
       }
@@ -83,7 +82,7 @@ describe('manager.api.config.initApi', () => {
 
         api.onStory(() => {
           cnt++;
-          expect(cnt).to.be.equal(2);
+          expect(cnt).toBe(2);
           done();
         });
       }
@@ -117,7 +116,7 @@ describe('manager.api.config.initApi', () => {
 
         api.onStory(() => {
           cnt++;
-          expect(cnt).to.be.equal(1);
+          expect(cnt).toBe(1);
           done();
         });
       }
@@ -145,7 +144,7 @@ describe('manager.api.config.initApi', () => {
       const provider = {
         handleAPI(api) {
           const value = api.getQueryParam('foo');
-          expect(value).to.be.equal('foo value');
+          expect(value).toBe('foo value');
           done();
         }
       };
