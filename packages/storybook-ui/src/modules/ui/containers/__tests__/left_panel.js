@@ -1,10 +1,8 @@
-const { describe, it } = global;
-import { expect } from 'chai';
 import { mapper } from '../left_panel';
 
 describe('manager.ui.containers.left_panel', () => {
   describe('mapper', () => {
-    it('should give correct data', () => {
+    test('should give correct data', () => {
       const stories = [{ kind: 'sk', stories: ['dd'] }];
       const selectedKind = 'sk';
       const selectedStory = 'dd';
@@ -12,11 +10,9 @@ describe('manager.ui.containers.left_panel', () => {
         name: 'foo',
         url: 'bar'
       };
-
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
       const setStoryFilter = () => 'setStoryFilter';
-
       const props = {};
       const env = {
         actions: () => ({
@@ -29,7 +25,6 @@ describe('manager.ui.containers.left_panel', () => {
           }
         })
       };
-
       const state = {
         storyFilter: null,
         stories,
@@ -37,19 +32,18 @@ describe('manager.ui.containers.left_panel', () => {
         selectedStory,
         uiOptions
       };
+      const result = mapper(state, props, env);
 
-      const data = mapper(state, props, env);
-      expect(data.stories).to.deep.equal(stories);
-      expect(data.selectedKind).to.be.equal(selectedKind);
-      expect(data.selectedStory).to.be.equal(selectedStory);
-      expect(data.storyFilter).to.be.equal(null);
-
-      expect(data.onSelectStory).to.be.equal(selectStory);
-      expect(data.onStoryFilter).to.be.equal(setStoryFilter);
-      expect(data.openShortcutsHelp).to.be.equal(toggleShortcutsHelp);
+      expect(result.stories).toEqual(stories);
+      expect(result.selectedKind).toBe(selectedKind);
+      expect(result.selectedStory).toBe(selectedStory);
+      expect(result.storyFilter).toBe(null);
+      expect(result.onSelectStory).toBe(selectStory);
+      expect(result.onStoryFilter).toBe(setStoryFilter);
+      expect(result.openShortcutsHelp).toBe(toggleShortcutsHelp);
     });
 
-    it('should filter stories according to the given filter', () => {
+    test('should filter stories according to the given filter', () => {
       const stories = [
         { kind: 'pk', stories: ['dd'] },
         { kind: 'ss', stories: ['dd'] },
@@ -61,11 +55,9 @@ describe('manager.ui.containers.left_panel', () => {
         name: 'foo',
         url: 'bar'
       };
-
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
       const setStoryFilter = () => 'setStoryFilter';
-
       const props = {};
       const env = {
         actions: () => ({
@@ -78,7 +70,6 @@ describe('manager.ui.containers.left_panel', () => {
           }
         })
       };
-
       const state = {
         storyFilter: 'ss',
         stories,
@@ -86,15 +77,15 @@ describe('manager.ui.containers.left_panel', () => {
         selectedStory,
         uiOptions
       };
+      const result = mapper(state, props, env);
 
-      const data = mapper(state, props, env);
-      expect(data.stories).to.deep.equal([
+      expect(result.stories).toEqual([
         stories[0], // selected kind is always there. That's why this is here.
         stories[1]
       ]);
     });
 
-    it('should filter and sort stories according to the given filter', () => {
+    test('should filter and sort stories according to the given filter', () => {
       const stories = [
         { kind: 'ss', stories: ['dd'] },
         { kind: 'pk', stories: ['dd'] },
@@ -107,11 +98,9 @@ describe('manager.ui.containers.left_panel', () => {
         url: 'bar',
         sortStoriesByKind: true
       };
-
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
       const setStoryFilter = () => 'setStoryFilter';
-
       const props = {};
       const env = {
         actions: () => ({
@@ -124,7 +113,6 @@ describe('manager.ui.containers.left_panel', () => {
           }
         })
       };
-
       const state = {
         storyFilter: 'ss',
         stories,
@@ -132,9 +120,9 @@ describe('manager.ui.containers.left_panel', () => {
         selectedStory,
         uiOptions
       };
+      const result = mapper(state, props, env);
 
-      const data = mapper(state, props, env);
-      expect(data.stories).to.deep.equal([
+      expect(result.stories).toEqual([
         stories[1], // selected kind is always there. That's why this is here.
         stories[0]
       ]);
