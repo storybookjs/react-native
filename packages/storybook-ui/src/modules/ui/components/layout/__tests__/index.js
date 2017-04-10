@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Layout from '../index.js';
-import { expect } from 'chai';
 
 describe('manager.ui.components.layout.index', () => {
   describe('with default options', () => {
-    it('should render provided components', () => {
+    test('should render provided components', () => {
       const wrap = shallow(
         <Layout
           showLeftPanel
@@ -17,14 +16,15 @@ describe('manager.ui.components.layout.index', () => {
         />
       );
 
-      expect(wrap.html()).to.match(/LeftPanel/);
-      expect(wrap.html()).to.match(/DownPanel/);
-      expect(wrap.html()).to.match(/Preview/);
+      const markup = wrap.html();
+      expect(markup).toMatch(/LeftPanel/);
+      expect(markup).toMatch(/DownPanel/);
+      expect(markup).toMatch(/Preview/);
     });
   });
 
   describe('with goFullScreen=true', () => {
-    it('should only render preview', () => {
+    test('should only render preview', () => {
       const wrap = shallow(
         <Layout
           goFullScreen
@@ -34,14 +34,15 @@ describe('manager.ui.components.layout.index', () => {
         />
       );
 
-      expect(wrap.html()).not.to.match(/LeftPanel/);
-      expect(wrap.html()).not.to.match(/DownPanel/);
-      expect(wrap.html()).to.match(/Preview/);
+      const markup = wrap.html();
+      expect(markup).not.toMatch(/LeftPanel/);
+      expect(markup).not.toMatch(/DownPanel/);
+      expect(markup).toMatch(/Preview/);
     });
   });
 
   describe('with showLeftPanel=false', () => {
-    it('should hide the leftPanel', () => {
+    test('should hide the leftPanel', () => {
       const wrap = shallow(
         <Layout
           showLeftPanel={false}
@@ -53,14 +54,15 @@ describe('manager.ui.components.layout.index', () => {
         />
       );
 
-      expect(wrap.html()).not.to.match(/LeftPanel/);
-      expect(wrap.html()).to.match(/DownPanel/);
-      expect(wrap.html()).to.match(/Preview/);
+      const markup = wrap.html();
+      expect(markup).not.toMatch(/LeftPanel/);
+      expect(markup).toMatch(/DownPanel/);
+      expect(markup).toMatch(/Preview/);
     });
   });
 
   describe('with showDownPanel=false', () => {
-    it('should hide the downPanel', () => {
+    test('should hide the downPanel', () => {
       const wrap = shallow(
         <Layout
           showLeftPanel
@@ -72,9 +74,10 @@ describe('manager.ui.components.layout.index', () => {
         />
       );
 
-      expect(wrap.html()).to.match(/LeftPanel/);
-      expect(wrap.html()).not.to.match(/DownPanel/);
-      expect(wrap.html()).to.match(/Preview/);
+      const markup = wrap.html();
+      expect(markup).toMatch(/LeftPanel/);
+      expect(markup).not.toMatch(/DownPanel/);
+      expect(markup).toMatch(/Preview/);
     });
   });
 });
