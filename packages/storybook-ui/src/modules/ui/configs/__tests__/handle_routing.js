@@ -1,18 +1,15 @@
 import { changeUrl, handleInitialUrl, config } from '../handle_routing';
-import { expect } from 'chai';
-const { describe, it } = global;
-import sinon from 'sinon';
 
 describe('manager.ui.config.handle_routing', () => {
   describe('changeUrl', () => {
-    it('should not do anything if insidePopState=true', () => {
+    test('should not do anything if insidePopState=true', () => {
       config.insidePopState = true;
       // This should throws an error if insidePopState = false
       changeUrl(null);
       config.insidePopState = false;
     });
 
-    it('should put the correct URL and state to pushState', done => {
+    test('should put the correct URL and state to pushState', done => {
       const state = {
         selectedKind: 'kk',
         selectedStory: 'ss',
@@ -27,14 +24,11 @@ describe('manager.ui.config.handle_routing', () => {
         },
         selectedDownPanel: 'pp'
       };
-
       const clientStore = {
         getAll: () => state
       };
-
       // eslint-disable-next-line max-len
       const url = '?customText=test&selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp';
-
       const pushState = {
         url,
         selectedKind: 'kk',
@@ -46,57 +40,54 @@ describe('manager.ui.config.handle_routing', () => {
         downPanel: 'pp',
         customText: 'test'
       };
-
       const originalPushState = window.history.pushState;
       window.history.pushState = function(s, t, u) {
-        expect(s).to.deep.equal(pushState);
-        expect(u).to.be.equal(pushState.url);
+        expect(s).toEqual(pushState);
+        expect(u).toBe(pushState.url);
         done();
       };
+
       changeUrl(clientStore);
+
       window.history.pushState = originalPushState;
     });
   });
 
   describe('handleInitialUrl', () => {
-    it('should call the correct action according to URL', () => {
+    test('should call the correct action according to URL', () => {
       const actions = {
         api: {
-          selectStory: sinon.mock(),
-          setQueryParams: sinon.mock()
+          selectStory: jest.fn(),
+          setQueryParams: jest.fn()
         },
         shortcuts: {
-          setOptions: sinon.mock()
+          setOptions: jest.fn()
         },
         ui: {
-          selectDownPanel: sinon.mock()
+          selectDownPanel: jest.fn()
         }
       };
-
       // eslint-disable-next-line max-len
       const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test&customText=teststring';
-
       const location = {
         search: url
       };
       window.location.search = url;
       handleInitialUrl(actions, location);
 
-      expect(actions.api.selectStory.callCount).to.be.equal(1);
-      expect(actions.shortcuts.setOptions.callCount).to.be.equal(1);
-      expect(actions.ui.selectDownPanel.callCount).to.be.equal(1);
-      /* eslint-disable no-unused-expressions */
-      expect(
-        actions.shortcuts.setOptions.calledWith({
-          goFullScreen: true,
-          showDownPanel: false,
-          showLeftPanel: false,
-          downPanelInRight: false
-        })
-      ).to.be.true;
-      expect(actions.ui.selectDownPanel.calledWith('test')).to.be.true;
-      expect(actions.api.setQueryParams.calledWith({ customText: 'teststring' })).to.be.true;
-      /* eslint-enable no-unused-expressions */
+      expect(actions.api.selectStory).toHaveBeenCalled();
+      expect(actions.shortcuts.setOptions).toHaveBeenCalled();
+      expect(actions.ui.selectDownPanel).toHaveBeenCalled();
+      expect(actions.shortcuts.setOptions).toHaveBeenCalledWith({
+        goFullScreen: true,
+        showDownPanel: false,
+        showLeftPanel: false,
+        downPanelInRight: false
+      });
+      expect(actions.ui.selectDownPanel).toHaveBeenCalledWith('test');
+      expect(actions.api.setQueryParams).toHaveBeenCalledWith({
+        customText: 'teststring'
+      });
     });
   });
 });
