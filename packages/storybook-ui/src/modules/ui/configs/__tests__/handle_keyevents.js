@@ -1,6 +1,4 @@
 import handleKeyEvents from '../handle_keyevents';
-// import { expect } from 'chai';
-// import sinon from 'sinon';
 import keycode from 'keycode';
 
 describe('manager.ui.config.handle_keyevents', () => {
