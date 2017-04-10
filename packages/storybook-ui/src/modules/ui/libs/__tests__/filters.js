@@ -1,28 +1,27 @@
 import { storyFilter } from '../filters';
-import { expect } from 'chai';
 
 describe('manager.ui.libs.filters', () => {
   describe('storyFilter', () => {
-    it('should return null if there are no stories', () => {
+    test('should return null if there are no stories', () => {
       const res = storyFilter();
-      expect(res).to.be.equal(null);
+      expect(res).toBe(null);
     });
 
-    it('should original stories if there is no filter', () => {
+    test('should original stories if there is no filter', () => {
       const stories = [{ kind: 'aa', stories: ['bb'] }];
       const res = storyFilter(stories);
-      expect(res).to.be.equal(stories);
+      expect(res).toBe(stories);
     });
 
-    it('should always return the selectedKind', () => {
+    test('should always return the selectedKind', () => {
       const stories = [{ kind: 'aa', stories: ['bb'] }, { kind: 'bb', stories: ['bb'] }];
       const selectedKind = 'bb';
       const res = storyFilter(stories, 'no-match', selectedKind);
 
-      expect(res).to.deep.equal([stories[1]]);
+      expect(res).toEqual([stories[1]]);
     });
 
-    it('should filter kinds correctly', () => {
+    test('should filter kinds correctly', () => {
       const stories = [
         { kind: 'aa', stories: ['bb'] },
         { kind: 'bb', stories: ['bb'] },
@@ -31,10 +30,10 @@ describe('manager.ui.libs.filters', () => {
       const selectedKind = 'bb';
       const res = storyFilter(stories, 'aa', selectedKind);
 
-      expect(res).to.deep.equal([stories[0], stories[1]]);
+      expect(res).toEqual([stories[0], stories[1]]);
     });
 
-    it('should not sort stories by kind', () => {
+    test('should not sort stories by kind', () => {
       const stories = [
         { kind: 'ss', stories: ['bb'] },
         { kind: 'aa', stories: ['bb'] },
@@ -42,10 +41,10 @@ describe('manager.ui.libs.filters', () => {
       ];
       const res = storyFilter(stories);
 
-      expect(res).to.equal(stories);
+      expect(res).toBe(stories);
     });
 
-    it('should sort stories by kind', () => {
+    test('should sort stories by kind', () => {
       const stories = [
         { kind: 'ss', stories: ['bb'] },
         { kind: 'aa', stories: ['bb'] },
@@ -53,7 +52,7 @@ describe('manager.ui.libs.filters', () => {
       ];
       const res = storyFilter(stories, null, null, true);
 
-      expect(res).to.deep.equal([stories[1], stories[2], stories[0]]);
+      expect(res).toEqual([stories[1], stories[2], stories[0]]);
     });
   });
 });
