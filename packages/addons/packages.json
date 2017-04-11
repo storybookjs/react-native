@@ -4,8 +4,8 @@
   "description": "Storybook addons store",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "node .scripts/npm-prepublish.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "node ./.scripts/npm-prepublish.js",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
