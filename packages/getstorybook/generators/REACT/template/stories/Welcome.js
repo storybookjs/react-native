@@ -70,7 +70,7 @@ export default class Welcome extends React.Component {
           You can also edit those components and see changes right away.
           <br />
           (Try editing the <code style={styles.code}>Button</code> component
-          located at <code style={styles.code}>src/stories/Button.js</code>.)
+          located at <code style={styles.code}>stories/Button.js</code>.)
         </p>
         <p>
           This is just one thing you can do with Storybook.
