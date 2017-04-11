@@ -44,9 +44,7 @@ export class AddonStore {
   }
 
   loadAddons(api) {
-    Object.keys(this._loaders)
-      .map(name => this._loaders[name])
-      .forEach(loader => loader(api));
+    Object.keys(this._loaders).map(name => this._loaders[name]).forEach(loader => loader(api));
   }
 }
 
