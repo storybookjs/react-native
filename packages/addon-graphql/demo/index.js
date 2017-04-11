@@ -1,20 +1,20 @@
 // Import the required libraries
-var graphql = require('graphql');
-var graphqlHTTP = require('express-graphql');
-var express = require('express');
-var cors = require('cors');
+const graphql = require('graphql');
+const graphqlHTTP = require('express-graphql');
+const express = require('express');
+const cors = require('cors');
 
 // Import the data you created above
-var data = require('./data.json');
+const data = require('./data.json');
 
 // Define the User type with two string fields: `id` and `name`.
 // The type of User is GraphQLObjectType, which has child fields
 // with their own types (in this case, GraphQLString).
-var userType = new graphql.GraphQLObjectType({
+const userType = new graphql.GraphQLObjectType({
   name: 'User',
   fields: {
     id: { type: graphql.GraphQLString },
-    name: { type: graphql.GraphQLString },
+    name: { type: graphql.GraphQLString }
   }
 });
 
@@ -22,7 +22,7 @@ var userType = new graphql.GraphQLObjectType({
 // takes an `id` argument and returns the User with that ID.
 // Note that the `query` is a GraphQLObjectType, just like User.
 // The `user` field, however, is a userType, which we defined above.
-var schema = new graphql.GraphQLSchema({
+const schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'Query',
     fields: {
@@ -36,7 +36,7 @@ var schema = new graphql.GraphQLSchema({
         // the incoming query.
         // In this case we use the `id` argument from above as a key
         // to get the User from `data`
-        resolve: function (_, args) {
+        resolve(_, args) {
           return data[args.id];
         }
       }
@@ -44,9 +44,6 @@ var schema = new graphql.GraphQLSchema({
   })
 });
 
-express()
-  .use(cors())
-  .use('/graphql', graphqlHTTP({ schema: schema, pretty: true }))
-  .listen(3000);
+express().use(cors()).use('/graphql', graphqlHTTP({ schema, pretty: true })).listen(3000);
 
 console.log('GraphQL server running on http://localhost:3000/graphql');
