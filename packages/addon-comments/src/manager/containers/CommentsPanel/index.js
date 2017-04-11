@@ -13,14 +13,14 @@ export default class Container extends Component {
       user: null,
       users: [],
       comments: [],
-      loading: true,
+      loading: true
     };
   }
 
   componentDidMount() {
     const db = addons.getDatabase();
     this.store = new DataStore(db);
-    this.stopListeningToComments = this.store.onComments((comments) => {
+    this.stopListeningToComments = this.store.onComments(comments => {
       this.setState({ comments });
     });
 
@@ -30,7 +30,7 @@ export default class Container extends Component {
       this.store.setCurrentStory(kind, story);
     });
 
-    this.stopListingStoreLoading = this.store.onLoading((loading) => {
+    this.stopListingStoreLoading = this.store.onLoading(loading => {
       this.setState({ loading });
     });
 
@@ -46,10 +46,7 @@ export default class Container extends Component {
   _getAppInfo(persister) {
     return persister
       ._getAppInfo()
-      .then(
-        appInfo => Promise.resolve(appInfo),
-        err => Promise.resolve(null),
-      );
+      .then(appInfo => Promise.resolve(appInfo), err => Promise.resolve(null));
   }
 
   init() {
@@ -60,9 +57,10 @@ export default class Container extends Component {
     }
 
     this.setState({ loading: true });
-    db.persister._getUser()
+    db.persister
+      ._getUser()
       .then(u => Promise.resolve(u), err => Promise.resolve(null))
-      .then((user) => {
+      .then(user => {
         if (user) {
           this.store.setCurrentUser(user);
           this.setState({ user });
@@ -71,7 +69,7 @@ export default class Container extends Component {
         }
         return this._getAppInfo(db.persister);
       })
-      .then((appInfo) => {
+      .then(appInfo => {
         const updatedState = { loading: false };
         if (!appInfo) {
           updatedState.appNotAvailable = true;
@@ -87,7 +85,7 @@ export default class Container extends Component {
     const comment = {
       text,
       time,
-      userId: user.id,
+      userId: user.id
     };
 
     this.store.addComment(comment);
@@ -104,7 +102,7 @@ export default class Container extends Component {
       loading: this.state.loading,
       appNotAvailable: this.state.appNotAvailable,
       deleteComment: commentId => this.deleteComment(commentId),
-      addComment: text => this.addComment(text),
+      addComment: text => this.addComment(text)
     };
 
     return <CommentsPanel {...props} />;
@@ -112,5 +110,5 @@ export default class Container extends Component {
 }
 
 Container.propTypes = {
-  api: React.PropTypes.object,
+  api: React.PropTypes.object
 };

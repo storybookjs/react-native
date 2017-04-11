@@ -6,14 +6,11 @@ const buttonStyles = {
   backgroundColor: '#FFFFFF',
   cursor: 'pointer',
   fontSize: 15,
-  padding: '3px 10px',
+  padding: '3px 10px'
 };
 
 const Button = ({ children, onClick, style = {} }) => (
-  <button
-    style={{ ...buttonStyles, ...style }}
-    onClick={onClick}
-  >
+  <button style={{ ...buttonStyles, ...style }} onClick={onClick}>
     {children}
   </button>
 );
@@ -21,7 +18,7 @@ const Button = ({ children, onClick, style = {} }) => (
 Button.propTypes = {
   children: React.PropTypes.string.isRequired,
   onClick: React.PropTypes.func,
-  style: React.PropTypes.object,
+  style: React.PropTypes.object
 };
 
 export default Button;

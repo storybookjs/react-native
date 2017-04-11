@@ -3,7 +3,7 @@ export default {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    position: 'relative',
+    position: 'relative'
   },
   message: {
     flex: 1,
@@ -15,7 +15,7 @@ export default {
     fontSize: 11,
     letterSpacing: 1,
     textDecoration: 'none',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase'
   },
   button: {
     textDecoration: 'none',
@@ -24,6 +24,6 @@ export default {
     background: 'rgb(240, 240, 240)',
     borderRadius: 5,
     textTransform: 'none',
-    fontSize: 12,
-  },
+    fontSize: 12
+  }
 };

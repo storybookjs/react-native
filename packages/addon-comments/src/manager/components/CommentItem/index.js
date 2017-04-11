@@ -35,11 +35,7 @@ export default class CommentItem extends Component {
 
   renderDelete() {
     return (
-      <a
-        href="#"
-        style={style.commentDelete}
-        onClick={this.deleteComment}
-      >
+      <a href="#" style={style.commentDelete} onClick={this.deleteComment}>
         delete
       </a>
     );
@@ -77,5 +73,5 @@ export default class CommentItem extends Component {
 CommentItem.propTypes = {
   deleteComment: React.PropTypes.func,
   comment: React.PropTypes.object,
-  ownComment: React.PropTypes.bool,
+  ownComment: React.PropTypes.bool
 };

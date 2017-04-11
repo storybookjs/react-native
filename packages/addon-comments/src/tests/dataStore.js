@@ -17,9 +17,9 @@ const myDb = {
       },
       set() {
         return new Promise(dbSetPromiseReturn);
-      },
+      }
     };
-  },
+  }
 };
 addons.setDatabase(myDb);
 
@@ -27,18 +27,20 @@ const db = addons.getDatabase();
 const theStore = new DataStore(db);
 
 describe('DataStore', () => {
-
   it('set current story - when user not logged in', () => {
     theStore.setCurrentStory('Components', 'CommentList - No Comments');
 
     expect(dbGetPromiseReturn.called).to.equal(false);
-    expect(theStore.currentStory).to.deep.equal({ sbKind: 'Components', sbStory: 'CommentList - No Comments' });
+    expect(theStore.currentStory).to.deep.equal({
+      sbKind: 'Components',
+      sbStory: 'CommentList - No Comments'
+    });
   });
 
   it('set current user', () => {
     theStore.setCurrentUser({
       id: 'user-id',
-      name: 'user-name',
+      name: 'user-name'
     });
 
     expect(theStore.user).to.deep.equal({ id: 'user-id', name: 'user-name' });
@@ -48,14 +50,17 @@ describe('DataStore', () => {
     theStore.setCurrentStory('Components', 'CommentList - No Comments');
 
     expect(dbGetPromiseReturn.called).to.equal(true);
-    expect(theStore.currentStory).to.deep.equal({ sbKind: 'Components', sbStory: 'CommentList - No Comments' });
+    expect(theStore.currentStory).to.deep.equal({
+      sbKind: 'Components',
+      sbStory: 'CommentList - No Comments'
+    });
   });
 
   it('add comment', () => {
     const comment = {
       text: 'sample comment',
       time: 1476435982029,
-      userId: 'user-id',
+      userId: 'user-id'
     };
 
     theStore.addComment(comment);
@@ -65,9 +70,7 @@ describe('DataStore', () => {
   });
 
   it('onComments', () => {
-    theStore.onComments((comments) => {
-      return comments;
-    });
+    theStore.onComments(comments => comments);
     expect(dbGetPromiseReturn.called).to.equal(true);
   });
 });

@@ -4,7 +4,7 @@ import marked from 'marked';
 import style from './style';
 
 const renderer = new marked.Renderer();
-renderer.heading = function (text) {
+renderer.heading = function(text) {
   return text;
 };
 
@@ -16,7 +16,7 @@ marked.setOptions({
   pedantic: false,
   sanitize: true,
   smartLists: true,
-  smartypants: false,
+  smartypants: false
 });
 
 export default class CommentForm extends Component {
@@ -57,14 +57,9 @@ export default class CommentForm extends Component {
     if (!this.props.user) {
       return (
         <div style={style.wrapper}>
-          <Textarea
-            style={style.input}
-            disabled={true}
-          />
-          <button
-            style={style.submitButton}
-            onClick={() => this.openLogin()}
-          >Sign in with Storybook Hub
+          <Textarea style={style.input} disabled={true} />
+          <button style={style.submitButton} onClick={() => this.openLogin()}>
+            Sign in with Storybook Hub
           </button>
         </div>
       );
@@ -80,10 +75,8 @@ export default class CommentForm extends Component {
           placeholder="Add your comment..."
           value={text}
         />
-        <button
-          style={style.submitButton}
-          onClick={() => this.onSubmit()}
-        >Submit
+        <button style={style.submitButton} onClick={() => this.onSubmit()}>
+          Submit
         </button>
       </div>
     );
@@ -91,5 +84,5 @@ export default class CommentForm extends Component {
 }
 
 CommentForm.propTypes = {
-  addComment: React.PropTypes.func,
+  addComment: React.PropTypes.func
 };

@@ -18,14 +18,24 @@ export default class CommentList extends Component {
 
     if (comments.length === 0) {
       return (
-        <div ref={(el) => { this.wrapper = el; }} style={style.wrapper}>
+        <div
+          ref={el => {
+            this.wrapper = el;
+          }}
+          style={style.wrapper}
+        >
           <div style={style.noComments}>No Comments Yet!</div>
         </div>
       );
     }
 
     return (
-      <div ref={(el) => { this.wrapper = el; }} style={style.wrapper}>
+      <div
+        ref={el => {
+          this.wrapper = el;
+        }}
+        style={style.wrapper}
+      >
         {comments.map((comment, idx) => (
           <CommentItem
             key={`comment_${idx}`}
@@ -42,5 +52,5 @@ export default class CommentList extends Component {
 CommentList.propTypes = {
   comments: React.PropTypes.array,
   user: React.PropTypes.object,
-  deleteComment: React.PropTypes.func,
+  deleteComment: React.PropTypes.func
 };

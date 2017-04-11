@@ -7,19 +7,19 @@ const button = {
   padding: '7px 15px',
   fontSize: 12,
   lineHeight: 1,
-  color: 'rgba(0, 0, 0, 0.5)',
+  color: 'rgba(0, 0, 0, 0.5)'
 };
 
 export default {
   wrapper: {
     display: 'flex',
     alignItems: 'center',
-    borderTop: '1px solid rgb(234, 234, 234)',
+    borderTop: '1px solid rgb(234, 234, 234)'
   },
   submitButton: {
     ...button,
     cursor: 'pointer',
-    borderRadius: '0 0 4px 0',
+    borderRadius: '0 0 4px 0'
   },
   input: {
     flex: 1,
@@ -34,6 +34,6 @@ export default {
     lineHeight: 1.6,
     color: 'rgba(0, 0, 0, 0.8)',
     fontFamily: 'sans-serif',
-    resize: 'none',
-  },
+    resize: 'none'
+  }
 };

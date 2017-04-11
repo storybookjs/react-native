@@ -19,7 +19,7 @@ export default class DataStore {
     const key = this._getStoryKey(currentStory);
     this.cache[key] = {
       comments,
-      addedAt: Date.now(),
+      addedAt: Date.now()
     };
   }
 
@@ -33,7 +33,7 @@ export default class DataStore {
     let invalidated = false;
 
     // invalid caches created 60 minutes ago.
-    if ((Date.now() - item.addedAt) > 1000 * 60) {
+    if (Date.now() - item.addedAt > 1000 * 60) {
       delete this.cache[key];
       invalidated = true;
     }
@@ -48,8 +48,7 @@ export default class DataStore {
 
     this._stopReloading = setInterval(
       () => {
-        this._loadUsers()
-          .then(() => this._loadComments());
+        this._loadUsers().then(() => this._loadComments());
       },
       1000 * 60 // Reload for every minute
     );
@@ -68,8 +67,7 @@ export default class DataStore {
       this._fireComments(item.comments);
       // if the cache invalidated we need to load comments again.
       if (item.invalidated) {
-        this._loadUsers()
-          .then(() => this._loadComments());
+        this._loadUsers().then(() => this._loadComments());
       }
       return;
     }
@@ -78,12 +76,10 @@ export default class DataStore {
     // TODO: send a null and handle the loading part in the UI side.
     this.eventStore.emit('loading', true);
     this._fireComments([]);
-    this._loadUsers()
-      .then(() => this._loadComments())
-      .then(() => {
-        this.eventStore.emit('loading', false);
-        return Promise.resolve(null);
-      });
+    this._loadUsers().then(() => this._loadComments()).then(() => {
+      this.eventStore.emit('loading', false);
+      return Promise.resolve(null);
+    });
   }
 
   setCurrentUser(user) {
@@ -97,17 +93,18 @@ export default class DataStore {
       if (!info) {
         return null;
       }
-      return this.db.getCollection('users')
-        .get(query, options)
-        .then((users) => {
-          this.users = users.reduce((newUsers, user) => {
+      return this.db.getCollection('users').get(query, options).then(users => {
+        this.users = users.reduce(
+          (newUsers, user) => {
             const usersObj = {
-              ...newUsers,
+              ...newUsers
             };
             usersObj[user.id] = user;
             return usersObj;
-          }, {});
-        });
+          },
+          {}
+        );
+      });
     });
   }
 
@@ -119,18 +116,16 @@ export default class DataStore {
       if (!info) {
         return null;
       }
-      return this.db.getCollection('comments')
-        .get(query, options)
-        .then((comments) => {
-          // add to cache
-          this._addToCache(currentStory, comments);
+      return this.db.getCollection('comments').get(query, options).then(comments => {
+        // add to cache
+        this._addToCache(currentStory, comments);
 
-          /* eslint no-param-reassign:0 */
-          // set comments only if we are on the relavant story
-          if (deepEquals(currentStory, this.currentStory)) {
-            this._fireComments(comments);
-          }
-        });
+        /* eslint no-param-reassign:0 */
+        // set comments only if we are on the relavant story
+        if (deepEquals(currentStory, this.currentStory)) {
+          this._fireComments(comments);
+        }
+      });
     });
   }
 
@@ -139,9 +134,9 @@ export default class DataStore {
   }
 
   _fireComments(comments) {
-    this.callbacks.forEach((callback) => {
+    this.callbacks.forEach(callback => {
       // link user to the comment directly
-      comments.forEach((comment) => {
+      comments.forEach(comment => {
         comment.user = this.users[comment.userId];
       });
 
@@ -198,7 +193,7 @@ export default class DataStore {
     const doc = {
       ...comment,
       ...this.currentStory,
-      sbProtected: true,
+      sbProtected: true
     };
 
     return this.db.getCollection('comments').set(doc);
