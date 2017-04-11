@@ -11,7 +11,7 @@ export default class Channel {
   }
 
   emit(type, ...args) {
-    const event = {type, args, from: this._sender};
+    const event = { type, args, from: this._sender };
     this._transport.send(event);
   }
 

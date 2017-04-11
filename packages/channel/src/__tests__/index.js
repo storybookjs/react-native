@@ -2,23 +2,23 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import Channel from '../';
 
-describe('Channel', function () {
+describe('Channel', () => {
   let transport = null;
   let channel = null;
 
-  beforeEach(function () {
+  beforeEach(() => {
     transport = { setHandler: sinon.spy(), send: sinon.spy() };
     channel = new Channel({ transport });
   });
 
-  describe('constructor', function () {
-    it('should set the handler', function () {
+  describe('constructor', () => {
+    it('should set the handler', () => {
       expect(transport.setHandler.calledOnce).to.equal(true);
     });
   });
 
-  describe('method:addListener', function () {
-    it('should call channel.on with args', function () {
+  describe('method:addListener', () => {
+    it('should call channel.on with args', () => {
       channel.on = sinon.spy();
       channel.addListener(1, 2);
       expect(channel.on.calledOnce).to.equal(true);
@@ -26,11 +26,11 @@ describe('Channel', function () {
     });
   });
 
-  describe('method:emit', function () {
-    it('should call transport.send', function () {
+  describe('method:emit', () => {
+    it('should call transport.send', () => {
       transport.send = sinon.spy();
       channel.emit('test-type', 1, 2, 3);
-      const expected = {type: 'test-type', args: [ 1, 2, 3 ]};
+      const expected = { type: 'test-type', args: [1, 2, 3] };
       expect(transport.send.calledOnce).to.equal(true);
       const event = transport.send.args[0][0];
       expect(event.from).to.be.a('string');
@@ -39,18 +39,18 @@ describe('Channel', function () {
     });
   });
 
-  describe('method:eventNames', function () {
-    it('should return an array of strings', function () {
+  describe('method:eventNames', () => {
+    it('should return an array of strings', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
-      const expected = [ 'type-1', 'type-2' ];
+      const expected = ['type-1', 'type-2'];
       expect(channel.eventNames()).to.deep.equal(expected);
     });
   });
 
-  describe('method:listenerCount', function () {
-    it('should return the correct count', function () {
+  describe('method:listenerCount', () => {
+    it('should return the correct count', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
@@ -59,39 +59,39 @@ describe('Channel', function () {
     });
   });
 
-  describe('method:listeners', function () {
-    it('should return an array of listeners', function () {
+  describe('method:listeners', () => {
+    it('should return an array of listeners', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
-      expect(channel.listeners('type-1')).to.deep.equal([ 11 ]);
-      expect(channel.listeners('type-2')).to.deep.equal([ 21, 22 ]);
+      expect(channel.listeners('type-1')).to.deep.equal([11]);
+      expect(channel.listeners('type-2')).to.deep.equal([21, 22]);
     });
   });
 
-  describe('method:on', function () {
-    it('should add event listeners', function () {
+  describe('method:on', () => {
+    it('should add event listeners', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
       const expected = {
-        'type-1': [ 11 ],
-        'type-2': [ 21, 22 ],
+        'type-1': [11],
+        'type-2': [21, 22]
       };
       expect(channel._listeners).to.deep.equal(expected);
     });
 
-    it('should call event listeners on event', function () {
-      let received = [];
+    it('should call event listeners on event', () => {
+      const received = [];
       channel.on('type-1', n => received.push(n));
-      channel._handleEvent({type: 'type-1', args: [ 11 ]});
-      channel._handleEvent({type: 'type-1', args: [ 12 ]});
-      expect(received).to.deep.equal([ 11, 12 ]);
+      channel._handleEvent({ type: 'type-1', args: [11] });
+      channel._handleEvent({ type: 'type-1', args: [12] });
+      expect(received).to.deep.equal([11, 12]);
     });
   });
 
-  describe('method:once', function () {
-    it('should add event listeners', function () {
+  describe('method:once', () => {
+    it('should add event listeners', () => {
       channel.once('type-1', 11);
       channel.once('type-2', 21);
       channel.once('type-2', 22);
@@ -99,30 +99,30 @@ describe('Channel', function () {
       expect(channel._listeners['type-2'].length).to.equal(2);
     });
 
-    it('should call event listeners only once', function () {
-      let received = [];
+    it('should call event listeners only once', () => {
+      const received = [];
       channel.once('type-1', n => received.push(n));
-      channel._handleEvent({type: 'type-1', args: [ 11 ]});
-      channel._handleEvent({type: 'type-1', args: [ 12 ]});
-      expect(received).to.deep.equal([ 11 ]);
+      channel._handleEvent({ type: 'type-1', args: [11] });
+      channel._handleEvent({ type: 'type-1', args: [12] });
+      expect(received).to.deep.equal([11]);
     });
   });
 
-  describe('method:prependListener', function () {
-    it('should add event listeners', function () {
+  describe('method:prependListener', () => {
+    it('should add event listeners', () => {
       channel.prependListener('type-1', 11);
       channel.prependListener('type-2', 21);
       channel.prependListener('type-2', 22);
       const expected = {
-        'type-1': [ 11 ],
-        'type-2': [ 22, 21 ],
+        'type-1': [11],
+        'type-2': [22, 21]
       };
       expect(channel._listeners).to.deep.equal(expected);
     });
   });
 
-  describe('method:prependOnceListener', function () {
-    it('should add event listeners', function () {
+  describe('method:prependOnceListener', () => {
+    it('should add event listeners', () => {
       channel.prependOnceListener('type-1', 11);
       channel.prependOnceListener('type-2', 21);
       channel.prependOnceListener('type-2', 22);
@@ -130,17 +130,17 @@ describe('Channel', function () {
       expect(channel._listeners['type-2'].length).to.equal(2);
     });
 
-    it('should call event listeners only once', function () {
-      let received = [];
+    it('should call event listeners only once', () => {
+      const received = [];
       channel.prependOnceListener('type-1', n => received.push(n));
-      channel._handleEvent({type: 'type-1', args: [ 11 ]});
-      channel._handleEvent({type: 'type-1', args: [ 12 ]});
-      expect(received).to.deep.equal([ 11 ]);
+      channel._handleEvent({ type: 'type-1', args: [11] });
+      channel._handleEvent({ type: 'type-1', args: [12] });
+      expect(received).to.deep.equal([11]);
     });
   });
 
-  describe('method:removeAllListeners', function () {
-    it('should remove all listeners', function () {
+  describe('method:removeAllListeners', () => {
+    it('should remove all listeners', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
@@ -148,36 +148,36 @@ describe('Channel', function () {
       expect(channel._listeners).to.deep.equal({});
     });
 
-    it('should remove all listeners for a type', function () {
+    it('should remove all listeners for a type', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
       channel.removeAllListeners('type-2');
-      expect(channel._listeners).to.deep.equal({ 'type-1': [ 11 ] });
+      expect(channel._listeners).to.deep.equal({ 'type-1': [11] });
     });
   });
 
-  describe('method:removeListener', function () {
-    it('should remove all listeners', function () {
+  describe('method:removeListener', () => {
+    it('should remove all listeners', () => {
       channel.on('type-1', 11);
       channel.on('type-2', 21);
       channel.on('type-2', 22);
       const expected = {
-        'type-1': [ 11 ],
-        'type-2': [ 21 ],
+        'type-1': [11],
+        'type-2': [21]
       };
       channel.removeListener('type-2', 22);
       expect(channel._listeners).to.deep.equal(expected);
     });
   });
 
-  describe('_miscellaneous', function () {
-    it('should ignore if event came from itself', function () {
-      let received = [];
+  describe('_miscellaneous', () => {
+    it('should ignore if event came from itself', () => {
+      const received = [];
       channel.on('type-1', n => received.push(n));
-      channel._handleEvent({type: 'type-1', args: [ 11 ]});
-      channel._handleEvent({type: 'type-1', args: [ 12 ], from: channel._sender});
-      expect(received).to.deep.equal([ 11 ]);
+      channel._handleEvent({ type: 'type-1', args: [11] });
+      channel._handleEvent({ type: 'type-1', args: [12], from: channel._sender });
+      expect(received).to.deep.equal([11]);
     });
   });
 });
