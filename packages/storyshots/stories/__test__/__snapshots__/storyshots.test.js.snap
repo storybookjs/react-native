@@ -178,7 +178,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           "padding": "2px 5px",
         }
       }>
-      src/stories/Button.js
+      stories/Button.js
     </code>
     .)
   </p>

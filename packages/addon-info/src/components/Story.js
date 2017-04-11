@@ -154,7 +154,7 @@ export default class Story extends React.Component {
         <div style={this.state.stylesheet.children}>
           {this.props.children}
         </div>
-        <a style={linkStyle} onClick={openOverlay}>?</a>
+        <a style={linkStyle} onClick={openOverlay}>Show Info</a>
         <div style={infoStyle}>
           <a style={linkStyle} onClick={closeOverlay}>×</a>
           <div style={this.state.stylesheet.infoPage}>
