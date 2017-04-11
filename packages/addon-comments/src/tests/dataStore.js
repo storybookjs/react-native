@@ -19,6 +19,11 @@ const myDb = {
         return new Promise(dbSetPromiseReturn);
       }
     };
+  },
+  persister: {
+    _getAppInfo() {
+      return Promise.resolve(true);
+    }
   }
 };
 addons.setDatabase(myDb);
