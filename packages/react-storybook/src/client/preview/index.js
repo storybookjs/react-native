@@ -16,7 +16,7 @@ import reducer from './reducer';
 const { navigator } = global;
 const isBrowser = navigator &&
   navigator.userAgent !== 'storyshots' &&
-  !navigator.userAgent.includes('Node.js');
+  !(navigator.userAgent.indexOf('Node.js') > -1);
 
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
