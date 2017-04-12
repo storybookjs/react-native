@@ -25,6 +25,7 @@ export default function (configDir) {
     noInfo: true,
     publicPath: config.output.publicPath,
     watchOptions: config.watchOptions || {},
+    ...config.devServer,
   };
 
   const router = new Router();
