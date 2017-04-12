@@ -7,3 +7,4 @@ dist
 *.DS_Store
 *.lerna_backup
 build
+yarn.lock
