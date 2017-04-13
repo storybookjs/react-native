@@ -2,7 +2,7 @@
 
 This [Storybook](https://getstorybook.io) addon allows you to add events for your stories.
 
-![Storybook Addon Events Demo](docs/demo.png)
+![Storybook Addon Events Demo](docs/Demo.png)
 
 ### Getting Started
 **note: addons require @kadira/storybook 2.x or greater*
@@ -26,7 +26,7 @@ Then write your stories like this:
 import React from 'react';
 import EventEmiter from 'event-emiter';
 import { storiesOf } from '@kadira/storybook';
-import { WithEvents } from '@z4o4z/storybook-addon-events';
+import WithEvents from '@z4o4z/storybook-addon-events';
 import MyContainerWithEmiter from './MyContainerWithEmiter';
 
 const emiter = new EventEmmiter();
