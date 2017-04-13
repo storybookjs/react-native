@@ -31,15 +31,14 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "react": "^15.5.4",
-    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "shelljs": "^0.7.4"
   },
   "peerDependencies": {
     "@kadira/storybook-addons": "^1.5.0",
-    "react": "^0.14.7 || ^15.0.0",
-    "react-dom": "^0.14.7 || ^15.0.0"
+    "react": "*",
+    "react-dom": "*"
   },
   "typings": "./storybook-addon-options.d.ts"
 }
