@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles';
 import { Link } from 'react-router';
@@ -49,10 +50,10 @@ class Navigation extends React.Component {
 }
 
 Navigation.propTypes = {
-  sections: React.PropTypes.array,
-  selectedSection: React.PropTypes.string,
-  selectedItem: React.PropTypes.string,
-  prefix: React.PropTypes.string
+  sections: PropTypes.array,
+  selectedSection: PropTypes.string,
+  selectedItem: PropTypes.string,
+  prefix: PropTypes.string
 };
 
 export default Navigation;

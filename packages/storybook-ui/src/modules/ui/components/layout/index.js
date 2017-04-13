@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import VSplit from './vsplit';
@@ -199,13 +200,13 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  showLeftPanel: React.PropTypes.bool.isRequired,
-  showDownPanel: React.PropTypes.bool.isRequired,
-  goFullScreen: React.PropTypes.bool.isRequired,
-  leftPanel: React.PropTypes.func.isRequired,
-  preview: React.PropTypes.func.isRequired,
-  downPanel: React.PropTypes.func.isRequired,
-  downPanelInRight: React.PropTypes.bool.isRequired
+  showLeftPanel: PropTypes.bool.isRequired,
+  showDownPanel: PropTypes.bool.isRequired,
+  goFullScreen: PropTypes.bool.isRequired,
+  leftPanel: PropTypes.func.isRequired,
+  preview: PropTypes.func.isRequired,
+  downPanel: PropTypes.func.isRequired,
+  downPanelInRight: PropTypes.bool.isRequired
 };
 
 export default Layout;

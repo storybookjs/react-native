@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { baseFonts } from '../theme';
 
@@ -88,7 +89,7 @@ export default class TextFilter extends React.Component {
 }
 
 TextFilter.propTypes = {
-  text: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  onClear: React.PropTypes.func
+  text: PropTypes.string,
+  onChange: PropTypes.func,
+  onClear: PropTypes.func
 };

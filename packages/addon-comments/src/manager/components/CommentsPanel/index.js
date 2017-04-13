@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 /* eslint no-undef: 0 */
 
 import React, { Component } from 'react';
@@ -36,7 +37,7 @@ export default class CommentsPanel extends Component {
 }
 
 CommentsPanel.propTypes = {
-  loading: React.PropTypes.bool,
-  user: React.PropTypes.object,
-  appNotAvailable: React.PropTypes.bool
+  loading: PropTypes.bool,
+  user: PropTypes.object,
+  appNotAvailable: PropTypes.bool
 };

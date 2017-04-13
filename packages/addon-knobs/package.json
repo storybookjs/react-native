@@ -53,6 +53,7 @@
     "deep-equal": "^1.0.1",
     "insert-css": "^1.0.0",
     "moment": "^2.15.0",
+    "prop-types": "^15.5.7",
     "react-color": "^2.4.3",
     "react-datetime": "^2.6.0",
     "react-textarea-autosize": "^4.0.5"

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import FuzzySearch from 'react-fuzzy';
 
@@ -93,8 +94,8 @@ export default class SearchBox extends React.Component {
 }
 
 SearchBox.propTypes = {
-  showSearchBox: React.PropTypes.bool.isRequired,
-  stories: React.PropTypes.arrayOf(React.PropTypes.object),
-  onSelectStory: React.PropTypes.func.isRequired,
-  handleEvent: React.PropTypes.func.isRequired
+  showSearchBox: PropTypes.bool.isRequired,
+  stories: PropTypes.arrayOf(PropTypes.object),
+  onSelectStory: PropTypes.func.isRequired,
+  handleEvent: PropTypes.func.isRequired
 };

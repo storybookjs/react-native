@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './style.css';
 
@@ -41,7 +42,7 @@ class Featured extends React.Component {
 }
 
 Featured.propTypes = {
-  featuredStorybooks: React.PropTypes.array
+  featuredStorybooks: PropTypes.array
 };
 
 export default Featured;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = {
@@ -51,8 +52,8 @@ class SelectType extends React.Component {
 }
 
 SelectType.propTypes = {
-  knob: React.PropTypes.object,
-  onChange: React.PropTypes.func
+  knob: PropTypes.object,
+  onChange: PropTypes.func
 };
 
 SelectType.serialize = function(value) {

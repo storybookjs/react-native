@@ -41,6 +41,7 @@
   "dependencies": {
     "babel-runtime": "^6.5.0",
     "markdown-to-react-components": "^0.2.1",
+    "prop-types": "^15.5.7",
     "react-addons-create-fragment": "^15.5.3"
   },
   "main": "dist/index.js"

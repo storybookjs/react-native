@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = {
@@ -62,8 +63,8 @@ class NumberType extends React.Component {
 }
 
 NumberType.propTypes = {
-  knob: React.PropTypes.object,
-  onChange: React.PropTypes.func
+  knob: PropTypes.object,
+  onChange: PropTypes.func
 };
 
 NumberType.serialize = function(value) {

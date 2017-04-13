@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Header from '../Homepage/Header';
@@ -38,12 +39,12 @@ class Docs extends React.Component {
 }
 
 Docs.propTypes = {
-  categories: React.PropTypes.array,
-  selectedCatId: React.PropTypes.string,
-  sections: React.PropTypes.array,
-  selectedItem: React.PropTypes.object,
-  selectedSectionId: React.PropTypes.string,
-  selectedItemId: React.PropTypes.string
+  categories: PropTypes.array,
+  selectedCatId: PropTypes.string,
+  sections: PropTypes.array,
+  selectedItem: PropTypes.object,
+  selectedSectionId: PropTypes.string,
+  selectedItemId: PropTypes.string
 };
 
 export default Docs;

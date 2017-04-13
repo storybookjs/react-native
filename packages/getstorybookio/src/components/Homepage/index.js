@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import './style.css';
@@ -52,7 +53,7 @@ const Homepage = () => (
 );
 
 Homepage.propTypes = {
-  featuredStorybooks: React.PropTypes.array
+  featuredStorybooks: PropTypes.array
 };
 
 export default Homepage;

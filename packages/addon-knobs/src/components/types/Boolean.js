@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = {
@@ -29,8 +30,8 @@ class BooleanType extends React.Component {
 }
 
 BooleanType.propTypes = {
-  knob: React.PropTypes.object,
-  onChange: React.PropTypes.func
+  knob: PropTypes.object,
+  onChange: PropTypes.func
 };
 
 BooleanType.serialize = function(value) {

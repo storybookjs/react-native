@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Nav from '../Nav';
 import NavDropdown from '../Nav/dropdown';
@@ -81,12 +82,12 @@ class Container extends React.Component {
 }
 
 Container.propTypes = {
-  categories: React.PropTypes.array,
-  selectedCatId: React.PropTypes.string,
-  sections: React.PropTypes.array,
-  selectedItem: React.PropTypes.object,
-  selectedSectionId: React.PropTypes.string,
-  selectedItemId: React.PropTypes.string
+  categories: PropTypes.array,
+  selectedCatId: PropTypes.string,
+  sections: PropTypes.array,
+  selectedItem: PropTypes.object,
+  selectedSectionId: PropTypes.string,
+  selectedItemId: PropTypes.string
 };
 
 export default Container;

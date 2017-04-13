@@ -62,6 +62,7 @@
     "insert-css": "^1.0.0",
     "marked": "^0.3.6",
     "moment": "^2.15.1",
+    "prop-types": "^15.5.7",
     "react-render-html": "^0.1.6",
     "react-textarea-autosize": "^4.0.5"
   }
