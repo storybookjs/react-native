@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 exports.default = function (configDir) {
   // Build the webpack configuration using the `getBaseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
@@ -17,11 +21,11 @@ exports.default = function (configDir) {
   }
 
   var compiler = (0, _webpack2.default)(config);
-  var devMiddlewareOptions = {
+  var devMiddlewareOptions = (0, _extends3.default)({
     noInfo: true,
     publicPath: config.output.publicPath,
     watchOptions: config.watchOptions || {}
-  };
+  }, config.devServer);
 
   var router = new _express.Router();
   router.use((0, _webpackDevMiddleware2.default)(compiler, devMiddlewareOptions));
