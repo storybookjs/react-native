@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Highlight from '../../../lib/highlight.js';
 import marked from 'marked';
@@ -31,9 +32,9 @@ const DocsContent = ({ title, content, editUrl }) => (
 );
 
 DocsContent.propTypes = {
-  title: React.PropTypes.string,
-  content: React.PropTypes.string.isRequired,
-  editUrl: React.PropTypes.string
+  title: PropTypes.string,
+  content: PropTypes.string.isRequired,
+  editUrl: PropTypes.string
 };
 
 export default DocsContent;

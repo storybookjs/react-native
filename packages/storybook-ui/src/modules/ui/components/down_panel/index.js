@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import style from './style';
 
@@ -66,9 +67,9 @@ class DownPanel extends Component {
 }
 
 DownPanel.propTypes = {
-  panels: React.PropTypes.object,
-  onPanelSelect: React.PropTypes.func,
-  selectedPanel: React.PropTypes.string
+  panels: PropTypes.object,
+  onPanelSelect: PropTypes.func,
+  selectedPanel: PropTypes.string
 };
 
 export default DownPanel;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 /* eslint no-unused-vars:0 */
 
 import React, { Component } from 'react';
@@ -110,5 +111,5 @@ export default class Container extends Component {
 }
 
 Container.propTypes = {
-  api: React.PropTypes.object
+  api: PropTypes.object
 };

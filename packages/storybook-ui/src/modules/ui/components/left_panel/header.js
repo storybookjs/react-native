@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { baseFonts } from '../theme';
 
@@ -57,9 +58,9 @@ const Header = ({ openShortcutsHelp, name, url }) => (
 );
 
 Header.propTypes = {
-  openShortcutsHelp: React.PropTypes.func,
-  name: React.PropTypes.string,
-  url: React.PropTypes.string
+  openShortcutsHelp: PropTypes.func,
+  name: PropTypes.string,
+  url: PropTypes.string
 };
 
 export default Header;

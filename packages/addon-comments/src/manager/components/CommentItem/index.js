@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 /* eslint jsx-a11y/href-no-hash:0, no-undef:0, no-alert:0 */
 
 import React, { Component } from 'react';
@@ -71,7 +72,7 @@ export default class CommentItem extends Component {
 }
 
 CommentItem.propTypes = {
-  deleteComment: React.PropTypes.func,
-  comment: React.PropTypes.object,
-  ownComment: React.PropTypes.bool
+  deleteComment: PropTypes.func,
+  comment: PropTypes.object,
+  ownComment: PropTypes.bool
 };
