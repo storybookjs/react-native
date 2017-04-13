@@ -9,6 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf ./dist &&  ./node_modules/.bin/babel ./src --out-dir ./dist",
+    "prepublish": "npm run build",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "storybook": "start-storybook -p 9010"
