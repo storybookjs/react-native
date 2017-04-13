@@ -3,7 +3,7 @@ declare var module: any; // dangerous
 type RenderFunction = Function;
 
 interface StoryDecorator {
-  (story: RenderFunction, context: { kind: string, story: string }): Object;
+  (story: RenderFunction, context: { kind: string, story: string }): Object | null;
 }
 
 interface Story {
