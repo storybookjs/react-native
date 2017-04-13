@@ -1,0 +1,53 @@
+{
+  "name": "@z4o4z/storybook-addon-events",
+  "version": "1.0.0",
+  "description": "Add events for your Storybook stories.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z4o4z/storybook-addon-events.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist &&  ./node_modules/.bin/babel ./src --out-dir ./dist",
+    "lint": "eslint src",
+    "lintfix": "eslint src --fix",
+    "storybook": "start-storybook -p 9010"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.20.1",
+    "babel-cli": "^6.5.0",
+    "babel-core": "^6.5.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.5.0",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.2.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "peerDependencies": {
+    "react": "^0.14.7 || ^15.0.0",
+    "@kadira/storybook-addons": "^v1.3.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.5.0"
+  },
+  "main": "dist/index.js",
+  "engines": {
+    "npm": "^3.0.0"
+  },
+  "keywords": [
+    "react",
+    "storybook",
+    "addon",
+    "events"
+  ]
+}
