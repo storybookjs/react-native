@@ -25,7 +25,6 @@
   "homepage": "https://github.com/kadirahq/storybook-addon-comments#readme",
   "devDependencies": {
     "react": "^15.5.4",
-    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "babel-loader": "^6.2.5",
@@ -53,8 +52,8 @@
   },
   "peerDependencies": {
     "@kadira/storybook-addons": "^1.5.0",
-    "react": "^0.14.7 || ^15.0.0",
-    "react-dom": "^0.14.7 || ^15.0.0"
+    "react": "*",
+    "react-dom": "*"
   },
   "dependencies": {
     "babel-runtime": "^6.11.6",
@@ -63,6 +62,7 @@
     "insert-css": "^1.0.0",
     "marked": "^0.3.6",
     "moment": "^2.15.1",
+    "prop-types": "^15.5.7",
     "react-render-html": "^0.1.6",
     "react-textarea-autosize": "^4.0.5"
   }

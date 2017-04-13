@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Textarea from 'react-textarea-autosize';
 import marked from 'marked';
@@ -84,5 +85,5 @@ export default class CommentForm extends Component {
 }
 
 CommentForm.propTypes = {
-  addComment: React.PropTypes.func
+  addComment: PropTypes.func
 };

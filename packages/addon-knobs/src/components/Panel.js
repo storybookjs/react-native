@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import PropForm from './PropForm';
 import Types from './types';
@@ -121,7 +122,7 @@ export default class Panel extends React.Component {
 }
 
 Panel.propTypes = {
-  channel: React.PropTypes.object,
-  onReset: React.PropTypes.object,
-  api: React.PropTypes.object
+  channel: PropTypes.object,
+  onReset: PropTypes.object,
+  api: PropTypes.object
 };

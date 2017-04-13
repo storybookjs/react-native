@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { browserHistory } from 'react-router';
 import './style.css';
@@ -54,10 +55,10 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-  selectedCatId: React.PropTypes.string,
-  sections: React.PropTypes.array,
-  selectedSection: React.PropTypes.string,
-  selectedItem: React.PropTypes.string
+  selectedCatId: PropTypes.string,
+  sections: PropTypes.array,
+  selectedSection: PropTypes.string,
+  selectedItem: PropTypes.string
 };
 
 export default Nav;

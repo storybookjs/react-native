@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import style from './style';
 import CommentItem from '../CommentItem';
@@ -50,7 +51,7 @@ export default class CommentList extends Component {
 }
 
 CommentList.propTypes = {
-  comments: React.PropTypes.array,
-  user: React.PropTypes.object,
-  deleteComment: React.PropTypes.func
+  comments: PropTypes.array,
+  user: PropTypes.object,
+  deleteComment: PropTypes.func
 };

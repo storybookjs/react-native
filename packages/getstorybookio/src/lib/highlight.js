@@ -1,4 +1,5 @@
 import hljs from 'highlight.js';
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -28,7 +29,7 @@ class Highlight extends React.Component {
 }
 
 Highlight.propTypes = {
-  children: React.PropTypes.string
+  children: PropTypes.string
 };
 
 export default Highlight;

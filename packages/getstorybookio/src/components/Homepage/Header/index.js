@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './style.css';
 
@@ -48,7 +49,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  currentSection: React.PropTypes.string
+  currentSection: PropTypes.string
 };
 
 export default Header;

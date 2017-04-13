@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './style.css';
 
@@ -40,10 +41,10 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-  selectedCatId: React.PropTypes.string,
-  sections: React.PropTypes.array,
-  selectedItem: React.PropTypes.string,
-  prefix: React.PropTypes.string
+  selectedCatId: PropTypes.string,
+  sections: PropTypes.array,
+  selectedItem: PropTypes.string,
+  prefix: PropTypes.string
 };
 
 export default Nav;
