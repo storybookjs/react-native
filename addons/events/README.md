@@ -29,20 +29,20 @@ import { storiesOf } from '@kadira/storybook';
 import WithEvents from '@z4o4z/storybook-addon-events';
 import MyContainerWithEmiter from './MyContainerWithEmiter';
 
-const emiter = new EventEmmiter();
+const emiter = new EventEmiter();
 
 storiesOf('Button', module)
   .add('with text', () => (
     <WithEvents
       emit={emiter.emit}
       toggleLike={{
-        title: 'Toggle like',
+        title: 'Toggle like 1',
         name: 'togle-like',
         payload: {},
       }}
-      like-fetched={{
-        title: 'Toggle like',
-        name: 'togle-like',
+      toggleLike2={{
+        title: 'Toggle like 2',
+        name: 'togle-like-2',
         payload: {},
       }}
     >
