@@ -35,5 +35,5 @@ export default {
 
     * When running \`npm run storybook\`, we set NODE_ENV to 'development'
     * When building storybook, we set NODE_ENV to 'production'
-  `
+  `,
 };

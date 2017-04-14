@@ -39,7 +39,7 @@ export default function({ projectDir, configDir, ...options }) {
   const devMiddlewareOptions = {
     noInfo: true,
     publicPath: config.output.publicPath,
-    watchOptions: config.watchOptions || {}
+    watchOptions: config.watchOptions || {},
   };
 
   const router = new Router();
@@ -56,8 +56,8 @@ export default function({ projectDir, configDir, ...options }) {
     res.send(
       getIndexHtml(publicPath, {
         manualId: options.manualId,
-        secured: options.secured
-      })
+        secured: options.secured,
+      }),
     );
   });
 

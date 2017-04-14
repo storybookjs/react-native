@@ -6,7 +6,7 @@ const styles = {
   toolbar: {
     marginBottom: 10,
     fontSize: 11,
-    fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif'
+    fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
   },
 
   toolbarButton: {
@@ -17,11 +17,11 @@ const styles = {
     cursor: 'pointer',
     outline: 0,
     letterSpacing: 0.5,
-    WebkitFontSmoothing: 'antialiased'
+    WebkitFontSmoothing: 'antialiased',
   },
 
   wrapper: {
-    padding: 10
+    padding: 10,
   },
 
   heading: {
@@ -29,12 +29,12 @@ const styles = {
     textTransform: 'uppercase',
     fontSize: 20,
     margin: '10px 0',
-    padding: '0'
+    padding: '0',
   },
 
   container: {
-    border: '1px dashed #DDD'
-  }
+    border: '1px dashed #DDD',
+  },
 };
 
 export default class WithDesign extends React.Component {
@@ -93,22 +93,21 @@ export default class WithDesign extends React.Component {
   renderToolbar() {
     const { type: currentType } = this.state;
 
-    const changeState = type =>
-      () => {
-        localStorage.setItem('WITH_DESIGN_TYPE', type);
-        this.setState({ type });
-        this.tryCalculateScale();
-      };
+    const changeState = type => () => {
+      localStorage.setItem('WITH_DESIGN_TYPE', type);
+      this.setState({ type });
+      this.tryCalculateScale();
+    };
 
     const buttons = [
       ['Side by Side', 'COMPARE'],
       ['One After Other', 'SHOW_BOTH'],
       ['Implementation', 'SHOW_IMPLEMENTATION'],
-      ['Design', 'SHOW_DESIGN']
+      ['Design', 'SHOW_DESIGN'],
     ].map(([caption, typeName]) => {
       const style = {
         ...styles.toolbarButton,
-        fontWeight: currentType === typeName ? 600 : 400
+        fontWeight: currentType === typeName ? 600 : 400,
       };
 
       return (
@@ -148,7 +147,7 @@ export default class WithDesign extends React.Component {
 
     const containerStyle = {
       ...styles.container,
-      zoom: implementationScale
+      zoom: implementationScale,
     };
 
     return (

@@ -74,5 +74,5 @@ export default class CommentItem extends Component {
 CommentItem.propTypes = {
   deleteComment: PropTypes.func,
   comment: PropTypes.object,
-  ownComment: PropTypes.bool
+  ownComment: PropTypes.bool,
 };

@@ -6,7 +6,7 @@ const mainStyle = {
   ...baseFonts,
   border: '1px solid #ECECEC',
   borderRadius: 2,
-  position: 'relative'
+  position: 'relative',
 };
 
 export default class TextFilter extends React.Component {
@@ -14,7 +14,7 @@ export default class TextFilter extends React.Component {
     super(props);
 
     this.state = {
-      query: ''
+      query: '',
     };
 
     this.onChange = this.onChange.bind(this);
@@ -37,7 +37,7 @@ export default class TextFilter extends React.Component {
 
   render() {
     const textWrapStyle = {
-      background: '#F7F7F7'
+      background: '#F7F7F7',
     };
 
     const textStyle = {
@@ -49,7 +49,7 @@ export default class TextFilter extends React.Component {
       boxSizing: 'border-box',
       outline: 'none',
       border: 0,
-      height: 26
+      height: 26,
     };
 
     const clearButtonStyle = {
@@ -63,7 +63,7 @@ export default class TextFilter extends React.Component {
       textAlign: 'center',
       cursor: 'pointer',
       lineHeight: '23px',
-      fontSize: 20
+      fontSize: 20,
     };
 
     return (
@@ -91,5 +91,5 @@ export default class TextFilter extends React.Component {
 TextFilter.propTypes = {
   text: PropTypes.string,
   onChange: PropTypes.func,
-  onClear: PropTypes.func
+  onClear: PropTypes.func,
 };

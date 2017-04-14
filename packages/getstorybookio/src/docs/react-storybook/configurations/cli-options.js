@@ -39,5 +39,5 @@ export default {
       -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
     ~~~
 
-  `
+  `,
 };

@@ -5,14 +5,14 @@ export default function reducer(state = {}, action) {
     case types.CLEAR_ERROR: {
       return {
         ...state,
-        error: null
+        error: null,
       };
     }
 
     case types.SET_ERROR: {
       return {
         ...state,
-        error: action.error
+        error: action.error,
       };
     }
 
@@ -20,7 +20,7 @@ export default function reducer(state = {}, action) {
       return {
         ...state,
         selectedKind: action.kind,
-        selectedStory: action.story
+        selectedStory: action.story,
       };
     }
 

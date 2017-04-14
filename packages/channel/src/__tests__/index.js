@@ -76,7 +76,7 @@ describe('Channel', () => {
       channel.on('type-2', 22);
       const expected = {
         'type-1': [11],
-        'type-2': [21, 22]
+        'type-2': [21, 22],
       };
       expect(channel._listeners).to.deep.equal(expected);
     });
@@ -115,7 +115,7 @@ describe('Channel', () => {
       channel.prependListener('type-2', 22);
       const expected = {
         'type-1': [11],
-        'type-2': [22, 21]
+        'type-2': [22, 21],
       };
       expect(channel._listeners).to.deep.equal(expected);
     });
@@ -164,7 +164,7 @@ describe('Channel', () => {
       channel.on('type-2', 22);
       const expected = {
         'type-1': [11],
-        'type-2': [21]
+        'type-2': [21],
       };
       channel.removeListener('type-2', 22);
       expect(channel._listeners).to.deep.equal(expected);

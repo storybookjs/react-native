@@ -11,19 +11,19 @@ import { version } from '../../package.json';
 const managerUrlsFromAssets = assets => {
   if (!assets || !assets.manager) {
     return {
-      js: 'static/manager.bundle.js'
+      js: 'static/manager.bundle.js',
     };
   }
 
   if (typeof assets.manager === 'string') {
     return {
-      js: assets.manager
+      js: assets.manager,
     };
   }
 
   return {
     js: assets.manager.find(filename => filename.match(/\.js$/)),
-    css: assets.manager.find(filename => filename.match(/\.css$/))
+    css: assets.manager.find(filename => filename.match(/\.css$/)),
   };
 };
 

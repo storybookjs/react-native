@@ -13,8 +13,8 @@ Object.assign(Button, {
     label: PropTypes.string.isRequired,
     style: PropTypes.object,
     disabled: PropTypes.bool,
-    onClick: PropTypes.func
-  }
+    onClick: PropTypes.func,
+  },
 });
 
 export default Button;

@@ -27,7 +27,7 @@ describe('manager.ui.libs.filters', () => {
       const stories = [
         { kind: 'aa', stories: ['bb'] },
         { kind: 'bb', stories: ['bb'] },
-        { kind: 'ss', stories: ['bb'] }
+        { kind: 'ss', stories: ['bb'] },
       ];
       const selectedKind = 'bb';
       const res = storyFilter(stories, 'aa', selectedKind);
@@ -39,7 +39,7 @@ describe('manager.ui.libs.filters', () => {
       const stories = [
         { kind: 'ss', stories: ['bb'] },
         { kind: 'aa', stories: ['bb'] },
-        { kind: 'bb', stories: ['bb'] }
+        { kind: 'bb', stories: ['bb'] },
       ];
       const res = storyFilter(stories);
 
@@ -50,7 +50,7 @@ describe('manager.ui.libs.filters', () => {
       const stories = [
         { kind: 'ss', stories: ['bb'] },
         { kind: 'aa', stories: ['bb'] },
-        { kind: 'bb', stories: ['bb'] }
+        { kind: 'bb', stories: ['bb'] },
       ];
       const res = storyFilter(stories, null, null, true);
 

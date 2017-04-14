@@ -10,14 +10,14 @@ export default class StoryStore {
       this._data[kind] = {
         kind,
         index: cnt++,
-        stories: {}
+        stories: {},
       };
     }
 
     this._data[kind].stories[name] = {
       name,
       index: cnt++,
-      fn
+      fn,
     };
   }
 

@@ -29,7 +29,7 @@ class Highlight extends React.Component {
 }
 
 Highlight.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.string,
 };
 
 export default Highlight;

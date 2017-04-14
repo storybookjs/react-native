@@ -53,5 +53,5 @@ export default {
     You can also access these storybooks, right next to your PR.
 
     ![Access Storybooks via GitHub PR](${storybooksViaPRImage})
-  `
+  `,
 };

@@ -12,14 +12,14 @@ const styles = {
   borderRadius: 2,
   fontSize: 11,
   padding: '5px',
-  color: '#555'
+  color: '#555',
 };
 
 class SelectType extends React.Component {
   _makeOpt(key, val) {
     const opts = {
       key,
-      value: key
+      value: key,
     };
 
     return <option {...opts}>{val}</option>;
@@ -53,7 +53,7 @@ class SelectType extends React.Component {
 
 SelectType.propTypes = {
   knob: PropTypes.object,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 SelectType.serialize = function(value) {

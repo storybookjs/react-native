@@ -39,7 +39,7 @@ class DateType extends React.Component {
 
 DateType.propTypes = {
   knob: PropTypes.object,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 DateType.serialize = function(value) {

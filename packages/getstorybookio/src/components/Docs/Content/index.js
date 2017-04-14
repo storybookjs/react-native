@@ -13,7 +13,7 @@ marked.setOptions({
   pedantic: false,
   sanitize: false,
   smartLists: true,
-  smartypants: false
+  smartypants: false,
 });
 
 const DocsContent = ({ title, content, editUrl }) => (
@@ -34,7 +34,7 @@ const DocsContent = ({ title, content, editUrl }) => (
 DocsContent.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string.isRequired,
-  editUrl: PropTypes.string
+  editUrl: PropTypes.string,
 };
 
 export default DocsContent;

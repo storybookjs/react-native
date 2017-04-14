@@ -7,7 +7,7 @@ const buttonStyles = {
   backgroundColor: '#FFFFFF',
   cursor: 'pointer',
   fontSize: 15,
-  padding: '3px 10px'
+  padding: '3px 10px',
 };
 
 const Button = ({ children, onClick, style = {} }) => (
@@ -19,7 +19,7 @@ const Button = ({ children, onClick, style = {} }) => (
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  style: PropTypes.object
+  style: PropTypes.object,
 };
 
 export default Button;

@@ -4,7 +4,7 @@ import { baseFonts } from '../theme';
 
 const wrapperStyle = {
   background: '#F7F7F7',
-  marginBottom: 10
+  marginBottom: 10,
 };
 
 const headingStyle = {
@@ -21,7 +21,7 @@ const headingStyle = {
   cursor: 'pointer',
   margin: 0,
   float: 'none',
-  overflow: 'hidden'
+  overflow: 'hidden',
 };
 
 const shortcutIconStyle = {
@@ -41,11 +41,11 @@ const shortcutIconStyle = {
   float: 'right',
   marginLeft: 5,
   backgroundColor: 'inherit',
-  outline: 0
+  outline: 0,
 };
 
 const linkStyle = {
-  textDecoration: 'none'
+  textDecoration: 'none',
 };
 
 const Header = ({ openShortcutsHelp, name, url }) => (
@@ -60,7 +60,7 @@ const Header = ({ openShortcutsHelp, name, url }) => (
 Header.propTypes = {
   openShortcutsHelp: PropTypes.func,
   name: PropTypes.string,
-  url: PropTypes.string
+  url: PropTypes.string,
 };
 
 export default Header;

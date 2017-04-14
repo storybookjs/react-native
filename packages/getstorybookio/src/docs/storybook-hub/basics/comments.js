@@ -39,5 +39,5 @@ export default {
     * Make sure you are on the correct branch.
 
     Then you'll be able to access these comments. You'll be asked to login to storybook Hub, if needed, right from your comments panel.
-  `
+  `,
 };

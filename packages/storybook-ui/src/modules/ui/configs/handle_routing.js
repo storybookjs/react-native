@@ -1,6 +1,6 @@
 import qs from 'qs';
 export const config = {
-  insidePopState: false
+  insidePopState: false,
 };
 
 export function changeUrl(clientStore) {
@@ -16,12 +16,10 @@ export function changeUrl(clientStore) {
     goFullScreen: full,
     showDownPanel: down,
     showLeftPanel: left,
-    downPanelInRight: panelRight
+    downPanelInRight: panelRight,
   } = data.shortcutOptions;
 
-  const {
-    selectedDownPanel: downPanel
-  } = data;
+  const { selectedDownPanel: downPanel } = data;
 
   const urlObj = {
     ...customQueryParams,
@@ -31,7 +29,7 @@ export function changeUrl(clientStore) {
     down: Number(down),
     left: Number(left),
     panelRight: Number(panelRight),
-    downPanel
+    downPanel,
   };
 
   const url = `?${qs.stringify(urlObj)}`;
@@ -42,7 +40,7 @@ export function changeUrl(clientStore) {
     down,
     left,
     panelRight,
-    url
+    url,
   };
 
   window.history.pushState(state, '', url);
@@ -68,7 +66,7 @@ export function updateStore(queryParams, actions) {
     goFullScreen: Boolean(Number(full)),
     showDownPanel: Boolean(Number(down)),
     showLeftPanel: Boolean(Number(left)),
-    downPanelInRight: Boolean(Number(panelRight))
+    downPanelInRight: Boolean(Number(panelRight)),
   });
 
   if (downPanel) {

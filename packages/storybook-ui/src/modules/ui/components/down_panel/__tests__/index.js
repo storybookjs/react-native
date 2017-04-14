@@ -11,19 +11,19 @@ describe('manager.ui.components.down_panel.index', () => {
       test1: {
         render() {
           return <div id="test1">TEST 1</div>;
-        }
+        },
       },
       test2: {
         render() {
           return <div id="test2">TEST 2</div>;
-        }
-      }
+        },
+      },
     };
 
     const onPanelSelect = () => 'onPanelSelect';
 
     const wrapper = shallow(
-      <DownPanel panels={panels} onPanelSelect={onPanelSelect} selectedPanel={'test2'} />
+      <DownPanel panels={panels} onPanelSelect={onPanelSelect} selectedPanel={'test2'} />,
     );
 
     expect(wrapper.find('#test1').parent().props().style.display).to.equal('none');
@@ -35,15 +35,15 @@ describe('manager.ui.components.down_panel.index', () => {
       test1: {
         render() {
           return <div>TEST 1</div>;
-        }
-      }
+        },
+      },
     };
 
     const onPanelSelect = sinon.spy();
     const preventDefault = sinon.spy();
 
     const wrapper = shallow(
-      <DownPanel panels={panels} onPanelSelect={onPanelSelect} selectedPanel={'test1'} />
+      <DownPanel panels={panels} onPanelSelect={onPanelSelect} selectedPanel={'test1'} />,
     );
 
     wrapper.find('a').simulate('click', { preventDefault });

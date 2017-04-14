@@ -9,12 +9,9 @@ class ActionLogger extends Component {
     if (latest) {
       const borderLeft = style.action.borderLeft;
       latest.style.borderLeft = 'solid 5px #aaa';
-      setTimeout(
-        () => {
-          latest.style.borderLeft = borderLeft;
-        },
-        300
-      );
+      setTimeout(() => {
+        latest.style.borderLeft = borderLeft;
+      }, 300);
     }
   }
 
@@ -53,7 +50,7 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: PropTypes.func,
-  actions: PropTypes.array
+  actions: PropTypes.array,
 };
 
 export default ActionLogger;

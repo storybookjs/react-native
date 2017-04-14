@@ -15,7 +15,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       expect(wrap.html()).to.match(/LeftPanel/);
@@ -32,7 +32,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       expect(wrap.html()).not.to.match(/LeftPanel/);
@@ -51,7 +51,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       expect(wrap.html()).not.to.match(/LeftPanel/);
@@ -70,7 +70,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       expect(wrap.html()).to.match(/LeftPanel/);

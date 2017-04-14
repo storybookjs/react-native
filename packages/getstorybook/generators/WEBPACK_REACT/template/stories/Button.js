@@ -8,7 +8,7 @@ const buttonStyles = {
   cursor: 'pointer',
   fontSize: 15,
   padding: '3px 10px',
-  margin: 10
+  margin: 10,
 };
 
 const Button = ({ children, onClick }) => (
@@ -19,7 +19,7 @@ const Button = ({ children, onClick }) => (
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default Button;

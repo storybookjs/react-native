@@ -8,7 +8,7 @@ export function register() {
     const channel = addons.getChannel();
     addons.addPanel(PANEL_ID, {
       title: 'Action Logger',
-      render: () => <ActionLogger channel={channel} />
+      render: () => <ActionLogger channel={channel} />,
     });
   });
 }

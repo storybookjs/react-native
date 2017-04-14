@@ -11,5 +11,5 @@ export default {
     Then Storybook will load the Babel configuration only from that file.
 
     > Currently we do not support loading the Babel config from the package.json.
-  `
+  `,
 };

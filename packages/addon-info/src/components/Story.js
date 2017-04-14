@@ -17,13 +17,13 @@ const stylesheet = {
       background: '#28c',
       color: '#fff',
       padding: '5px 15px',
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
     topRight: {
       top: 0,
       right: 0,
-      borderRadius: '0 0 0 5px'
-    }
+      borderRadius: '0 0 0 5px',
+    },
   },
   info: {
     position: 'absolute',
@@ -33,54 +33,54 @@ const stylesheet = {
     left: 0,
     right: 0,
     padding: '0 40px',
-    overflow: 'auto'
+    overflow: 'auto',
   },
   children: {
     position: 'relative',
-    zIndex: 0
+    zIndex: 0,
   },
   infoBody: {
     ...baseFonts,
     fontWeight: 300,
     lineHeight: 1.45,
-    fontSize: '15px'
+    fontSize: '15px',
   },
   infoContent: {
-    marginBottom: 0
+    marginBottom: 0,
   },
   jsxInfoContent: {
     borderTop: '1px solid #eee',
-    margin: '20px 0 0 0'
+    margin: '20px 0 0 0',
   },
   header: {
     h1: {
       margin: 0,
       padding: 0,
-      fontSize: '35px'
+      fontSize: '35px',
     },
     h2: {
       margin: '0 0 10px 0',
       padding: 0,
       fontWeight: 400,
-      fontSize: '22px'
+      fontSize: '22px',
     },
     body: {
       borderBottom: '1px solid #eee',
       paddingTop: 10,
-      marginBottom: 10
-    }
+      marginBottom: 10,
+    },
   },
   source: {
     h1: {
       margin: '20px 0 0 0',
       padding: '0 0 5px 0',
       fontSize: '25px',
-      borderBottom: '1px solid #EEE'
-    }
+      borderBottom: '1px solid #EEE',
+    },
   },
   propTableHead: {
-    margin: '20px 0 0 0'
-  }
+    margin: '20px 0 0 0',
+  },
 };
 
 export default class Story extends React.Component {
@@ -88,14 +88,14 @@ export default class Story extends React.Component {
     super(...args);
     this.state = {
       open: false,
-      stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet)))
+      stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
     };
     MTRC.configure(this.props.mtrcConf);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet)))
+      stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet))),
     });
   }
 
@@ -132,7 +132,7 @@ export default class Story extends React.Component {
   _renderOverlay() {
     const linkStyle = {
       ...stylesheet.link.base,
-      ...stylesheet.link.topRight
+      ...stylesheet.link.topRight,
     };
 
     const infoStyle = Object.assign({}, stylesheet.info);
@@ -316,12 +316,12 @@ Story.propTypes = {
   showSource: PropTypes.bool,
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  mtrcConf: PropTypes.object
+  mtrcConf: PropTypes.object,
 };
 
 Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
-  mtrcConf: {}
+  mtrcConf: {},
 };

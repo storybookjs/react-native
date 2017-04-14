@@ -77,5 +77,5 @@ export default {
     * [Interaction Testing with Specs Addon](/docs/react-storybook/testing/interaction-testing)
     * [Storybook as the Base for CSS/Style Testing](/docs/react-storybook/testing/css-style-testing)
     * [Storybook for Manual UI Testing](/docs/react-storybook/testing/manual-testing)
-  `
+  `,
 };

@@ -24,7 +24,7 @@ class Container extends React.Component {
       sections,
       selectedItem,
       selectedSectionId,
-      selectedItemId
+      selectedItemId,
     } = this.props;
 
     const gitHubRepoUrl = 'https://github.com/kadirahq/getstorybook.io';
@@ -87,7 +87,7 @@ Container.propTypes = {
   sections: PropTypes.array,
   selectedItem: PropTypes.object,
   selectedSectionId: PropTypes.string,
-  selectedItemId: PropTypes.string
+  selectedItemId: PropTypes.string,
 };
 
 export default Container;

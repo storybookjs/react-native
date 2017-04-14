@@ -7,7 +7,7 @@ import CommentsPanel from '../manager/components/CommentsPanel';
 
 const userObj = {
   avatar: 'http://www.gravatar.com/avatar/?d=identicon',
-  name: 'User A'
+  name: 'User A',
 };
 
 const commentsList = [
@@ -15,29 +15,29 @@ const commentsList = [
     loading: false,
     user: {
       avatar: 'http://www.gravatar.com/avatar/?d=identicon',
-      name: 'User A'
+      name: 'User A',
     },
     time: 'Wed Oct 12 2016 13:36:59 GMT+0530 (IST)',
-    text: 'Lorem ipsum dolor sit amet, <pre><code>Ut odio massa, rutrum et purus id.</code></pre>'
+    text: 'Lorem ipsum dolor sit amet, <pre><code>Ut odio massa, rutrum et purus id.</code></pre>',
   },
   {
     loading: false,
     user: {
       avatar: 'http://www.gravatar.com/avatar/?d=identicon',
-      name: 'User B'
+      name: 'User B',
     },
     time: 'Wed Oct 12 2016 13:38:46 GMT+0530 (IST)',
-    text: 'Vivamus tortor nisi, <b>efficitur</b> in rutrum <em>ac</em>, tempor <code>et mauris</code>. In et rutrum enim'
+    text: 'Vivamus tortor nisi, <b>efficitur</b> in rutrum <em>ac</em>, tempor <code>et mauris</code>. In et rutrum enim',
   },
   {
     loading: true,
     user: {
       avatar: 'http://www.gravatar.com/avatar/?d=identicon',
-      name: 'User C'
+      name: 'User C',
     },
     time: 'Wed Oct 12 2016 13:38:55 GMT+0530 (IST)',
-    text: 'sample comment 3'
-  }
+    text: 'sample comment 3',
+  },
 ];
 
 storiesOf('Button', module)
@@ -47,7 +47,7 @@ storiesOf('Button', module)
     const style = {
       fontSize: 20,
       textTransform: 'uppercase',
-      color: '#FF8833'
+      color: '#FF8833',
     };
     return <Button style={style}>Hello</Button>;
   });

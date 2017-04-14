@@ -6,7 +6,7 @@ const iframeStyle = {
   height: '100%',
   border: 0,
   margin: 0,
-  padding: 0
+  padding: 0,
 };
 
 class Preview extends Component {
@@ -34,7 +34,7 @@ class Preview extends Component {
 }
 
 Preview.propTypes = {
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 };
 
 export default Preview;

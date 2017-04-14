@@ -8,11 +8,11 @@ export default {
   routes,
   actions,
   defaultState: {
-    showShortcutsHelp: false
+    showShortcutsHelp: false,
   },
   load(c, a) {
     initPanels(c, a);
     handleRouting(c, a);
     handleKeyEvents(a);
-  }
+  },
 };

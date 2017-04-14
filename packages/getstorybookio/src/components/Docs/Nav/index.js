@@ -44,7 +44,7 @@ Nav.propTypes = {
   selectedCatId: PropTypes.string,
   sections: PropTypes.array,
   selectedItem: PropTypes.string,
-  prefix: PropTypes.string
+  prefix: PropTypes.string,
 };
 
 export default Nav;

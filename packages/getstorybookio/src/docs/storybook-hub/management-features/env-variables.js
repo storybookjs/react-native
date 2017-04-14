@@ -20,5 +20,5 @@ export default {
     Then you could set environment variables like this:
 
     ![Set Environment Varibles](${envVarsImage})
-  `
+  `,
 };

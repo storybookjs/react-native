@@ -61,5 +61,5 @@ export default {
 
     StoryShots also comes with a few important [productive features](https://github.com/storybooks/storyshots#key-features) that can be customized. Have a look at the StoryShots [repo](https://github.com/storybooks/storyshots) for more information.
 
-  `
+  `,
 };

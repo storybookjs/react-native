@@ -31,5 +31,5 @@ export default {
     ~~~sh
     SB_SSHKEY
     ~~~
-  `
+  `,
 };

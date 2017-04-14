@@ -8,7 +8,7 @@ const style = {
   right: 0,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
 };
 
 export default function(storyFn) {

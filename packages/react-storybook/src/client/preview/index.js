@@ -14,7 +14,8 @@ import reducer from './reducer';
 
 // check whether we're running on node/browser
 const { navigator } = global;
-const isBrowser = navigator &&
+const isBrowser =
+  navigator &&
   navigator.userAgent !== 'storyshots' &&
   !(navigator.userAgent.indexOf('Node.js') > -1);
 

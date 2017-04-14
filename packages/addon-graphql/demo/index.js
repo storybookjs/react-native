@@ -14,8 +14,8 @@ const userType = new graphql.GraphQLObjectType({
   name: 'User',
   fields: {
     id: { type: graphql.GraphQLString },
-    name: { type: graphql.GraphQLString }
-  }
+    name: { type: graphql.GraphQLString },
+  },
 });
 
 // Define the schema with one top-level field, `user`, that
@@ -30,7 +30,7 @@ const schema = new graphql.GraphQLSchema({
         type: userType,
         // `args` describes the arguments that the `user` query accepts
         args: {
-          id: { type: graphql.GraphQLString }
+          id: { type: graphql.GraphQLString },
         },
         // The resolve function describes how to "resolve" or fulfill
         // the incoming query.
@@ -38,10 +38,10 @@ const schema = new graphql.GraphQLSchema({
         // to get the User from `data`
         resolve(_, args) {
           return data[args.id];
-        }
-      }
-    }
-  })
+        },
+      },
+    },
+  }),
 });
 
 express().use(cors()).use('/graphql', graphqlHTTP({ schema, pretty: true })).listen(3000);

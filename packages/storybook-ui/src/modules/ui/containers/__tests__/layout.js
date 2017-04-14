@@ -9,8 +9,8 @@ describe('manager.ui.containers.layout', () => {
         shortcutOptions: {
           showLeftPanel: 'aa',
           showDownPanel: 'bb',
-          goFullScreen: 'cc'
-        }
+          goFullScreen: 'cc',
+        },
       };
 
       const data = mapper(state);

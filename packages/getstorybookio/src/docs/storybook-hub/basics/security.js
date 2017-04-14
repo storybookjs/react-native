@@ -59,5 +59,5 @@ export default {
     ## TALK TO US
 
     If you need more information or have found a vulnerability, email us at [storybooks@kadira.io](mailto:storybooks@kadira.io). We're happy to talk with you.
-  `
+  `,
 };

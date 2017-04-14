@@ -7,14 +7,14 @@ export default {
 
       Overall this will be a simple design.
       All these content should render inside a BS containers and it support mobile.
-    `
+    `,
   },
 
   'Homepage.header': {
     design: require('../design/homepage/header.png'),
     note: `
       Just a simple header. In the mobile view, this will show one after other.
-    `
+    `,
   },
 
   'Homepage.heading': {
@@ -22,7 +22,7 @@ export default {
     note: `
       Use the "Storybook" font to make it super bold. (font-weight=800)
       In the mobile view, try to make the font-size smaller.
-    `
+    `,
   },
 
   'Homepage.demo': {
@@ -30,7 +30,7 @@ export default {
     note: `
       Use the image located at src/design/homepage/screenshot.png for this.
       But in production we use an animated GIF here.
-    `
+    `,
   },
 
   'Homepage.built-for': {
@@ -46,7 +46,7 @@ export default {
       This one and few components below share some commong features.
       Those includes bottom border and margins. So create a common component inside
       the Homepage/styles.css stylesheet and use that class in this other components below.
-    `
+    `,
   },
 
   'Homepage.main-links': {
@@ -56,7 +56,7 @@ export default {
       You can also use that in the component below.
 
       In the mobile view, two sections in here show one after other.
-    `
+    `,
   },
 
   'Homepage.featured-storybooks': {
@@ -97,7 +97,7 @@ export default {
           source: "https://github.com/kadira-samples/react-button"
         },
       ]
-    `
+    `,
   },
 
   'Homepage.footer': {
@@ -109,7 +109,7 @@ export default {
       * NewsLetter: https://tinyletter.com/storybooks
       * Twiiter: https://twitter.com/kadirahq
       * Medium: https://voice.kadira.io
-    `
+    `,
   },
 
   'Docs.page': {
@@ -121,7 +121,7 @@ export default {
 
       Here we reuse the header and footer from the Homepage.
       Bootstrap Layout is also pretty similar to the Homepage.
-    `
+    `,
   },
 
   'Docs.docs-container': {
@@ -129,7 +129,7 @@ export default {
     note: `
       This is a container and this as no content.
       But this one has top and bottom borders and some margins.
-    `
+    `,
   },
 
   'Docs.docs-nav': {
@@ -142,7 +142,7 @@ export default {
       Others are with '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif"' and 17px.
       Selected item is marked with bold and in this color: #E25E5E.
 
-    `
+    `,
   },
 
   'Docs.docs-content': {
@@ -156,6 +156,6 @@ export default {
        * color: #333
 
     (You can look at the BulletProof Meteor for the actual styles.)
-    `
-  }
+    `,
+  },
 };

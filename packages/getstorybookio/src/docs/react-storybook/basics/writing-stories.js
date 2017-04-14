@@ -1,7 +1,7 @@
 import { stripIndent } from 'common-tags';
 
 const images = {
-  basicsStories: require('./static/basic-stories.png')
+  basicsStories: require('./static/basic-stories.png'),
 };
 
 export default {
@@ -146,5 +146,5 @@ export default {
     * Have one repo for the theme, and one for the app.
     * Have one repo for each UI component and use those in different apps.
     * Have a few repos for different kinds of UI components and use them in different apps.
-  `
+  `,
 };

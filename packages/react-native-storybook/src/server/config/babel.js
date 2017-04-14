@@ -19,7 +19,7 @@ module.exports = {
     // exponentiation
     require.resolve('babel-preset-es2016'),
     // JSX, Flow
-    require.resolve('babel-preset-react')
+    require.resolve('babel-preset-react'),
   ],
   plugins: [
     // function x(a, b, c,) { }
@@ -38,8 +38,8 @@ module.exports = {
       {
         helpers: true,
         polyfill: true,
-        regenerator: true
-      }
-    ]
-  ]
+        regenerator: true,
+      },
+    ],
+  ],
 };

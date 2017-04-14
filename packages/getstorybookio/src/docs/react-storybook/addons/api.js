@@ -133,5 +133,5 @@ export default {
     ~~~js
     storybookAPI.onStory((kind, story) => console.log(kind, story));
     ~~~
-  `
+  `,
 };

@@ -75,5 +75,5 @@ export default {
     If you load static content via importing, this is automatic and you do not have to do anything.
 
     If you are using a static directory, then you need to use _relative paths_ to load images.
-  `
+  `,
 };

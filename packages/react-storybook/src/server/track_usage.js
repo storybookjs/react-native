@@ -68,10 +68,10 @@ export function track() {
     {
       json: {
         userId,
-        version: pkg.version
-      }
+        version: pkg.version,
+      },
     },
-    () => {}
+    () => {},
   );
 
   if (!store.get('startTrackingOn')) {

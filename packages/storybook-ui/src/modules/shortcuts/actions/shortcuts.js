@@ -34,11 +34,11 @@ export default {
           const newOptions = keyEventToOptions(state.shortcutOptions, event);
           const updatedOptions = {
             ...state.shortcutOptions,
-            ...newOptions
+            ...newOptions,
           };
 
           return {
-            shortcutOptions: updatedOptions
+            shortcutOptions: updatedOptions,
           };
         });
     }
@@ -48,12 +48,12 @@ export default {
     clientStore.update(state => {
       const updatedOptions = {
         ...state.shortcutOptions,
-        ...pick(options, Object.keys(state.shortcutOptions))
+        ...pick(options, Object.keys(state.shortcutOptions)),
       };
 
       return {
-        shortcutOptions: updatedOptions
+        shortcutOptions: updatedOptions,
       };
     });
-  }
+  },
 };

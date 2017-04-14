@@ -4,8 +4,8 @@ import Props from './Props';
 const stylesheet = {
   containerStyle: {},
   tagStyle: {
-    color: '#777'
-  }
+    color: '#777',
+  },
 };
 
 export default class Node extends React.Component {
@@ -15,7 +15,7 @@ export default class Node extends React.Component {
 
     const leftPad = {
       paddingLeft: 3 + (depth + 1) * 15,
-      paddingRight: 3
+      paddingRight: 3,
     };
 
     Object.assign(containerStyle, leftPad);
@@ -68,7 +68,7 @@ function getData(element) {
   const data = {
     name: null,
     text: null,
-    children: null
+    children: null,
   };
 
   if (typeof element == 'string') {

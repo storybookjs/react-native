@@ -13,7 +13,7 @@ const styles = {
   borderRadius: 2,
   fontSize: 11,
   padding: '5px',
-  color: '#555'
+  color: '#555',
 };
 
 class ArrayType extends React.Component {
@@ -33,7 +33,7 @@ class ArrayType extends React.Component {
 
 ArrayType.propTypes = {
   knob: PropTypes.object,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 ArrayType.serialize = function(value) {

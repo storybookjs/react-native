@@ -16,7 +16,7 @@ export function action(name) {
     const randomId = Math.random().toString(16).slice(2);
     channel.emit(EVENT_ID, {
       id: randomId,
-      data: { name, args }
+      data: { name, args },
     });
   };
 

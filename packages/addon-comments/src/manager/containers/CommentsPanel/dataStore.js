@@ -19,7 +19,7 @@ export default class DataStore {
     const key = this._getStoryKey(currentStory);
     this.cache[key] = {
       comments,
-      addedAt: Date.now()
+      addedAt: Date.now(),
     };
   }
 
@@ -50,7 +50,7 @@ export default class DataStore {
       () => {
         this._loadUsers().then(() => this._loadComments());
       },
-      1000 * 60 // Reload for every minute
+      1000 * 60, // Reload for every minute
     );
   }
 
@@ -94,16 +94,13 @@ export default class DataStore {
         return null;
       }
       return this.db.getCollection('users').get(query, options).then(users => {
-        this.users = users.reduce(
-          (newUsers, user) => {
-            const usersObj = {
-              ...newUsers
-            };
-            usersObj[user.id] = user;
-            return usersObj;
-          },
-          {}
-        );
+        this.users = users.reduce((newUsers, user) => {
+          const usersObj = {
+            ...newUsers,
+          };
+          usersObj[user.id] = user;
+          return usersObj;
+        }, {});
       });
     });
   }
@@ -193,7 +190,7 @@ export default class DataStore {
     const doc = {
       ...comment,
       ...this.currentStory,
-      sbProtected: true
+      sbProtected: true,
     };
 
     return this.db.getCollection('comments').set(doc);

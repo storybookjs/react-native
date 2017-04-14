@@ -11,7 +11,7 @@ export default class ClientApi {
   setAddon(addon) {
     this._addons = {
       ...this._addons,
-      ...addon
+      ...addon,
     };
   }
 
@@ -36,7 +36,7 @@ export default class ClientApi {
 
     const localDecorators = [];
     const api = {
-      kind
+      kind,
     };
 
     // apply addons
@@ -60,7 +60,7 @@ export default class ClientApi {
 
       const fn = decorators.reduce(
         (decorated, decorator) => context => decorator(() => decorated(context), context),
-        getStory
+        getStory,
       );
 
       // Add the fully decorated getStory function.

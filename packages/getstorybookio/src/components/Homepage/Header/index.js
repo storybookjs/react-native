@@ -6,7 +6,7 @@ import storybookLogo from '../../../design/homepage/storybook-logo.png';
 
 const sections = [
   { id: 'home', caption: 'Home', href: '/' },
-  { id: 'docs', caption: 'Docs', href: '/docs' }
+  { id: 'docs', caption: 'Docs', href: '/docs' },
 ];
 
 class Header extends React.Component {
@@ -49,7 +49,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  currentSection: PropTypes.string
+  currentSection: PropTypes.string,
 };
 
 export default Header;

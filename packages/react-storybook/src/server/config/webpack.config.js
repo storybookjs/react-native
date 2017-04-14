@@ -13,19 +13,19 @@ export default function() {
       preview: [
         require.resolve('./polyfills'),
         require.resolve('./globals'),
-        `${require.resolve('webpack-hot-middleware/client')}?reload=true`
-      ]
+        `${require.resolve('webpack-hot-middleware/client')}?reload=true`,
+      ],
     },
     output: {
       path: path.join(__dirname, 'dist'),
       filename: 'static/[name].bundle.js',
-      publicPath: '/'
+      publicPath: '/',
     },
     plugins: [
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
-      new WatchMissingNodeModulesPlugin(nodeModulesPaths)
+      new WatchMissingNodeModulesPlugin(nodeModulesPaths),
     ],
     module: {
       rules: [
@@ -34,9 +34,9 @@ export default function() {
           loader: require.resolve('babel-loader'),
           query: babelLoaderConfig,
           include: includePaths,
-          exclude: excludePaths
-        }
-      ]
+          exclude: excludePaths,
+        },
+      ],
     },
     resolve: {
       // Since we ship with json-loader always, it's better to move extensions to here
@@ -44,8 +44,8 @@ export default function() {
       extensions: ['.js', '.json', '.jsx'],
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
-      modules: ['node_modules'].concat(nodePaths)
-    }
+      modules: ['node_modules'].concat(nodePaths),
+    },
   };
 
   return config;

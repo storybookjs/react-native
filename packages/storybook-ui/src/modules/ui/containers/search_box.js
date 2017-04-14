@@ -8,7 +8,7 @@ export const mapper = (state, props, { actions }) => {
     showSearchBox: state.shortcutOptions.showSearchBox,
     stories: state.stories,
     onSelectStory: actionMap.api.selectStory,
-    handleEvent: actionMap.shortcuts.handleEvent
+    handleEvent: actionMap.shortcuts.handleEvent,
   };
 };
 

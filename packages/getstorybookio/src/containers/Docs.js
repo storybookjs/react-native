@@ -5,7 +5,7 @@ import {
   getNavigationData,
   getItem,
   getFirstItem,
-  getFirstItemOfSection
+  getFirstItemOfSection,
 } from '../docs';
 
 class DocsContainer extends React.Component {
@@ -32,7 +32,7 @@ class DocsContainer extends React.Component {
       sections: getNavigationData(selectedCatId),
       selectedItem,
       selectedSectionId,
-      selectedItemId
+      selectedItemId,
     };
 
     return <Docs {...props} />;

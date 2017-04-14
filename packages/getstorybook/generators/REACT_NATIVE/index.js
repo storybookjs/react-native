@@ -8,8 +8,8 @@ mergeDirs(path.resolve(__dirname, 'template/'), '.', 'overwrite');
 
 // set correct project name on entry files if possible
 const dirname = shell.ls('-d', 'ios/*.xcodeproj').stdout;
-const projectName = dirname &&
-  dirname.slice('ios/'.length, dirname.length - '.xcodeproj'.length - 1);
+const projectName =
+  dirname && dirname.slice('ios/'.length, dirname.length - '.xcodeproj'.length - 1);
 if (projectName) {
   shell.sed('-i', '%APP_NAME%', projectName, 'storybook/index.ios.js');
   shell.sed('-i', '%APP_NAME%', projectName, 'storybook/index.android.js');
