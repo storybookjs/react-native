@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { SketchPicker } from 'react-color';
 
@@ -8,19 +9,19 @@ const styles = {
     border: '1px solid rgb(247, 244, 244)',
     display: 'inline-block',
     cursor: 'pointer',
-    width: '100%'
+    width: '100%',
   },
   popover: {
     position: 'absolute',
-    zIndex: '2'
+    zIndex: '2',
   },
   cover: {
     position: 'fixed',
     top: '0px',
     right: '0px',
     bottom: '0px',
-    left: '0px'
-  }
+    left: '0px',
+  },
 };
 
 class ColorType extends React.Component {
@@ -29,7 +30,7 @@ class ColorType extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.onWindowMouseDown = this.onWindowMouseDown.bind(this);
     this.state = {
-      displayColorPicker: false
+      displayColorPicker: false,
     };
   }
 
@@ -45,13 +46,13 @@ class ColorType extends React.Component {
     if (this.popover.contains(e.target)) return;
 
     this.setState({
-      displayColorPicker: false
+      displayColorPicker: false,
     });
   }
 
   handleClick() {
     this.setState({
-      displayColorPicker: !this.state.displayColorPicker
+      displayColorPicker: !this.state.displayColorPicker,
     });
   }
 
@@ -62,7 +63,7 @@ class ColorType extends React.Component {
       height: '20px',
       borderRadius: '2px',
       margin: 5,
-      background: knob.value
+      background: knob.value,
     };
     return (
       <div id={knob.name}>
@@ -85,8 +86,8 @@ class ColorType extends React.Component {
 }
 
 ColorType.propTypes = {
-  knob: React.PropTypes.object,
-  onChange: React.PropTypes.func
+  knob: PropTypes.object,
+  onChange: PropTypes.func,
 };
 
 ColorType.serialize = function(value) {

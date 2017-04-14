@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Textarea from 'react-textarea-autosize';
 import deepEqual from 'deep-equal';
@@ -13,7 +14,7 @@ const styles = {
   fontSize: 11,
   padding: '5px',
   color: '#555',
-  fontFamily: 'monospace'
+  fontFamily: 'monospace',
 };
 
 class ObjectType extends React.Component {
@@ -41,7 +42,7 @@ class ObjectType extends React.Component {
   handleChange(e) {
     const { onChange } = this.props;
     const newState = {
-      jsonString: e.target.value
+      jsonString: e.target.value,
     };
 
     try {
@@ -78,8 +79,8 @@ class ObjectType extends React.Component {
 }
 
 ObjectType.propTypes = {
-  knob: React.PropTypes.object,
-  onChange: React.PropTypes.func
+  knob: PropTypes.object,
+  onChange: PropTypes.func,
 };
 
 ObjectType.serialize = function(object) {

@@ -22,14 +22,14 @@ stories.add('with all knobs', () => {
 
   const customStyle = object('Style', {
     fontFamily: 'Arial',
-    padding: 20
+    padding: 20,
   });
 
   const style = {
     ...customStyle,
     fontWeight: bold ? 800 : 400,
     favoriteNumber,
-    color: selectedColor
+    color: selectedColor,
   };
 
   return (

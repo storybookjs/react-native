@@ -10,39 +10,30 @@ class StoryStore {
   }
 
   getStoryKinds() {
-    return this.stories.reduce(
-      (kinds, info) => {
-        if (kinds.indexOf(info.kind) === -1) {
-          kinds.push(info.kind);
-        }
-        return kinds;
-      },
-      []
-    );
+    return this.stories.reduce((kinds, info) => {
+      if (kinds.indexOf(info.kind) === -1) {
+        kinds.push(info.kind);
+      }
+      return kinds;
+    }, []);
   }
 
   getStories(kind) {
-    return this.stories.reduce(
-      (stories, info) => {
-        if (info.kind === kind) {
-          stories.push(info.story);
-        }
-        return stories;
-      },
-      []
-    );
+    return this.stories.reduce((stories, info) => {
+      if (info.kind === kind) {
+        stories.push(info.story);
+      }
+      return stories;
+    }, []);
   }
 
   getStory(kind, name) {
-    return this.stories.reduce(
-      (fn, info) => {
-        if (!fn && info.kind === kind && info.story === name) {
-          return info.fn;
-        }
-        return fn;
-      },
-      null
-    );
+    return this.stories.reduce((fn, info) => {
+      if (!fn && info.kind === kind && info.story === name) {
+        return info.fn;
+      }
+      return fn;
+    }, null);
   }
 
   hasStory(kind, name) {
@@ -59,7 +50,7 @@ describe('preview.client_api', () => {
       api.setAddon({
         aa() {
           data = 'foo';
-        }
+        },
       });
 
       api.storiesOf('none').aa();
@@ -73,13 +64,13 @@ describe('preview.client_api', () => {
       api.setAddon({
         aa() {
           data.push('foo');
-        }
+        },
       });
 
       api.setAddon({
         bb() {
           data.push('bar');
-        }
+        },
       });
 
       api.storiesOf('none').aa().bb();
@@ -93,7 +84,7 @@ describe('preview.client_api', () => {
       api.setAddon({
         aa() {
           data = typeof this.add;
-        }
+        },
       });
 
       api.storiesOf('none').aa();
@@ -107,13 +98,13 @@ describe('preview.client_api', () => {
       api.setAddon({
         aa() {
           data = 'foo';
-        }
+        },
       });
 
       api.setAddon({
         bb() {
           this.aa();
-        }
+        },
       });
 
       api.storiesOf('none').bb();
@@ -128,7 +119,7 @@ describe('preview.client_api', () => {
       api.setAddon({
         aa() {
           data = this.kind;
-        }
+        },
       });
 
       api.storiesOf(kind).aa();
@@ -224,7 +215,7 @@ describe('preview.client_api', () => {
         'story-1.1': () => 'story-1.1',
         'story-1.2': () => 'story-1.2',
         'story-2.1': () => 'story-2.1',
-        'story-2.2': () => 'story-2.2'
+        'story-2.2': () => 'story-2.2',
       };
       const kind1 = api.storiesOf('kind-1');
       kind1.add('story-1.1', functions['story-1.1']);
@@ -238,16 +229,16 @@ describe('preview.client_api', () => {
           kind: 'kind-1',
           stories: [
             { name: 'story-1.1', render: functions['story-1.1'] },
-            { name: 'story-1.2', render: functions['story-1.2'] }
-          ]
+            { name: 'story-1.2', render: functions['story-1.2'] },
+          ],
         },
         {
           kind: 'kind-2',
           stories: [
             { name: 'story-2.1', render: functions['story-2.1'] },
-            { name: 'story-2.2', render: functions['story-2.2'] }
-          ]
-        }
+            { name: 'story-2.2', render: functions['story-2.2'] },
+          ],
+        },
       ]);
     });
   });

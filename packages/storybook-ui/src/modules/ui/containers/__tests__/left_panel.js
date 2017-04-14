@@ -8,7 +8,7 @@ describe('manager.ui.containers.left_panel', () => {
       const selectedStory = 'dd';
       const uiOptions = {
         name: 'foo',
-        url: 'bar'
+        url: 'bar',
       };
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
@@ -17,20 +17,20 @@ describe('manager.ui.containers.left_panel', () => {
       const env = {
         actions: () => ({
           api: {
-            selectStory
+            selectStory,
           },
           ui: {
             toggleShortcutsHelp,
-            setStoryFilter
-          }
-        })
+            setStoryFilter,
+          },
+        }),
       };
       const state = {
         storyFilter: null,
         stories,
         selectedKind,
         selectedStory,
-        uiOptions
+        uiOptions,
       };
       const result = mapper(state, props, env);
 
@@ -47,13 +47,13 @@ describe('manager.ui.containers.left_panel', () => {
       const stories = [
         { kind: 'pk', stories: ['dd'] },
         { kind: 'ss', stories: ['dd'] },
-        { kind: 'pkr', stories: ['dd'] }
+        { kind: 'pkr', stories: ['dd'] },
       ];
       const selectedKind = 'pk';
       const selectedStory = 'dd';
       const uiOptions = {
         name: 'foo',
-        url: 'bar'
+        url: 'bar',
       };
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
@@ -62,26 +62,26 @@ describe('manager.ui.containers.left_panel', () => {
       const env = {
         actions: () => ({
           api: {
-            selectStory
+            selectStory,
           },
           ui: {
             toggleShortcutsHelp,
-            setStoryFilter
-          }
-        })
+            setStoryFilter,
+          },
+        }),
       };
       const state = {
         storyFilter: 'ss',
         stories,
         selectedKind,
         selectedStory,
-        uiOptions
+        uiOptions,
       };
       const result = mapper(state, props, env);
 
       expect(result.stories).toEqual([
         stories[0], // selected kind is always there. That's why this is here.
-        stories[1]
+        stories[1],
       ]);
     });
 
@@ -89,14 +89,14 @@ describe('manager.ui.containers.left_panel', () => {
       const stories = [
         { kind: 'ss', stories: ['dd'] },
         { kind: 'pk', stories: ['dd'] },
-        { kind: 'pkr', stories: ['dd'] }
+        { kind: 'pkr', stories: ['dd'] },
       ];
       const selectedKind = 'pk';
       const selectedStory = 'dd';
       const uiOptions = {
         name: 'foo',
         url: 'bar',
-        sortStoriesByKind: true
+        sortStoriesByKind: true,
       };
       const selectStory = () => 'selectStory';
       const toggleShortcutsHelp = () => 'toggleShortcutsHelp';
@@ -105,26 +105,26 @@ describe('manager.ui.containers.left_panel', () => {
       const env = {
         actions: () => ({
           api: {
-            selectStory
+            selectStory,
           },
           ui: {
             toggleShortcutsHelp,
-            setStoryFilter
-          }
-        })
+            setStoryFilter,
+          },
+        }),
       };
       const state = {
         storyFilter: 'ss',
         stories,
         selectedKind,
         selectedStory,
-        uiOptions
+        uiOptions,
       };
       const result = mapper(state, props, env);
 
       expect(result.stories).toEqual([
         stories[1], // selected kind is always there. That's why this is here.
-        stories[0]
+        stories[0],
       ]);
     });
   });

@@ -8,7 +8,7 @@ describe('server.getHeadHtml', () => {
   describe('when .storybook/head.html does not exist', () => {
     beforeEach(() => {
       mock({
-        config: {}
+        config: {},
       });
     });
 
@@ -26,8 +26,8 @@ describe('server.getHeadHtml', () => {
     beforeEach(() => {
       mock({
         config: {
-          'head.html': HEAD_HTML_CONTENTS
-        }
+          'head.html': HEAD_HTML_CONTENTS,
+        },
       });
     });
 

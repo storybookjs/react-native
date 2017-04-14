@@ -24,7 +24,8 @@ export default function(configDir) {
   const devMiddlewareOptions = {
     noInfo: true,
     publicPath: config.output.publicPath,
-    watchOptions: config.watchOptions || {}
+    watchOptions: config.watchOptions || {},
+    ...config.devServer,
   };
 
   const router = new Router();

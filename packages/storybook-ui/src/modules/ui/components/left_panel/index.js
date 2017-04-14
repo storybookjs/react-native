@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Header from './header';
 import Stories from './stories';
@@ -7,11 +8,11 @@ import pick from 'lodash.pick';
 const scrollStyle = {
   height: 'calc(100vh - 105px)',
   marginTop: 10,
-  overflowY: 'auto'
+  overflowY: 'auto',
 };
 
 const mainStyle = {
-  padding: '10px 0 10px 10px'
+  padding: '10px 0 10px 10px',
 };
 
 const storyProps = ['stories', 'selectedKind', 'selectedStory', 'onSelectStory'];
@@ -31,17 +32,17 @@ const LeftPanel = props => (
 );
 
 LeftPanel.propTypes = {
-  stories: React.PropTypes.array,
-  selectedKind: React.PropTypes.string,
-  selectedStory: React.PropTypes.string,
-  onSelectStory: React.PropTypes.func,
+  stories: PropTypes.array,
+  selectedKind: PropTypes.string,
+  selectedStory: PropTypes.string,
+  onSelectStory: PropTypes.func,
 
-  storyFilter: React.PropTypes.string,
-  onStoryFilter: React.PropTypes.func,
+  storyFilter: PropTypes.string,
+  onStoryFilter: PropTypes.func,
 
-  openShortcutsHelp: React.PropTypes.func,
-  name: React.PropTypes.string,
-  url: React.PropTypes.string
+  openShortcutsHelp: PropTypes.func,
+  name: PropTypes.string,
+  url: PropTypes.string,
 };
 
 export default LeftPanel;

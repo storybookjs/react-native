@@ -27,7 +27,7 @@ export default function(domNode, provider) {
   const defaultState = {
     ...shortcutsModule.defaultState,
     ...apiModule.defaultState,
-    ...uiModule.defaultState
+    ...uiModule.defaultState,
   };
   const clientStore = new Podda(defaultState);
   clientStore.registerAPI('toggle', (store, key) => store.set(key, !store.get(key)));

@@ -20,7 +20,7 @@ export function jumpToStory(storyKinds, selectedKind, selectedStory, direction) 
 
   return {
     selectedKind: jumpedStory.kind,
-    selectedStory: jumpedStory.story
+    selectedStory: jumpedStory.story,
   };
 }
 
@@ -56,7 +56,7 @@ export default {
       return {
         stories,
         selectedStory,
-        selectedKind
+        selectedKind,
       };
     });
   },
@@ -72,7 +72,8 @@ export default {
 
   jumpToStory({ clientStore }, direction) {
     clientStore.update(state =>
-      jumpToStory(state.stories, state.selectedKind, state.selectedStory, direction));
+      jumpToStory(state.stories, state.selectedKind, state.selectedStory, direction),
+    );
   },
 
   setOptions({ clientStore }, options) {
@@ -80,7 +81,7 @@ export default {
       const newOptions = pick(options, Object.keys(state.uiOptions));
       const updatedOptions = {
         ...state.uiOptions,
-        ...newOptions
+        ...newOptions,
       };
 
       return { uiOptions: updatedOptions };
@@ -91,7 +92,7 @@ export default {
     clientStore.update(state => {
       const updatedQueryParams = {
         ...state.customQueryParams,
-        ...customQueryParams
+        ...customQueryParams,
       };
 
       Object.keys(customQueryParams).forEach(key => {
@@ -101,8 +102,8 @@ export default {
       });
 
       return {
-        customQueryParams: updatedQueryParams
+        customQueryParams: updatedQueryParams,
       };
     });
-  }
+  },
 };

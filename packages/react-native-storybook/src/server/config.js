@@ -123,7 +123,7 @@ export default function(configType, baseConfig, projectDir, configDir) {
       ...config.module,
       // We need to use our and custom loaders.
       ...customConfig.module,
-      loaders: [...config.module.loaders, ...(customConfig.module.loaders || [])]
-    }
+      loaders: [...config.module.loaders, ...(customConfig.module.loaders || [])],
+    },
   };
 }

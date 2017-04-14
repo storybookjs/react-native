@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import FuzzySearch from 'react-fuzzy';
 
@@ -10,7 +11,7 @@ const searchBoxStyle = {
   top: '100px',
   left: '50%',
   marginLeft: '-215px',
-  ...baseFonts
+  ...baseFonts,
 };
 
 const formatStories = function(stories) {
@@ -20,7 +21,7 @@ const formatStories = function(stories) {
     formattedStories.push({
       type: 'kind',
       value: val.kind,
-      id: i++
+      id: i++,
     });
 
     val.stories.forEach(story => {
@@ -28,7 +29,7 @@ const formatStories = function(stories) {
         type: 'story',
         value: story,
         id: i++,
-        kind: val.kind
+        kind: val.kind,
       });
     });
   });
@@ -93,8 +94,8 @@ export default class SearchBox extends React.Component {
 }
 
 SearchBox.propTypes = {
-  showSearchBox: React.PropTypes.bool.isRequired,
-  stories: React.PropTypes.arrayOf(React.PropTypes.object),
-  onSelectStory: React.PropTypes.func.isRequired,
-  handleEvent: React.PropTypes.func.isRequired
+  showSearchBox: PropTypes.bool.isRequired,
+  stories: PropTypes.arrayOf(PropTypes.object),
+  onSelectStory: PropTypes.func.isRequired,
+  handleEvent: PropTypes.func.isRequired,
 };

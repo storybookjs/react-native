@@ -29,7 +29,12 @@ describe('manager.ui.components.left_panel.stories', () => {
       const data = [{ kind: 'a', stories: ['a1', 'a2'] }, { kind: 'b', stories: ['b1', 'b2'] }];
       const onSelectStory = jest.fn();
       const wrap = shallow(
-        <Stories stories={data} selectedKind="b" selectedStory="b2" onSelectStory={onSelectStory} />
+        <Stories
+          stories={data}
+          selectedKind="b"
+          selectedStory="b2"
+          onSelectStory={onSelectStory}
+        />,
       );
 
       const kind = wrap.find('a').filterWhere(el => el.text() === 'a').last();
@@ -42,7 +47,12 @@ describe('manager.ui.components.left_panel.stories', () => {
       const data = [{ kind: 'a', stories: ['a1', 'a2'] }, { kind: 'b', stories: ['b1', 'b2'] }];
       const onSelectStory = jest.fn();
       const wrap = shallow(
-        <Stories stories={data} selectedKind="b" selectedStory="b2" onSelectStory={onSelectStory} />
+        <Stories
+          stories={data}
+          selectedKind="b"
+          selectedStory="b2"
+          onSelectStory={onSelectStory}
+        />,
       );
 
       const kind = wrap.find('a').filterWhere(el => el.text() === 'b1').last();

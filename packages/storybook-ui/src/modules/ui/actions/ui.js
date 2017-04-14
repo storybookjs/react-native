@@ -9,5 +9,5 @@ export default {
 
   selectDownPanel({ clientStore }, panelName) {
     clientStore.set('selectedDownPanel', panelName);
-  }
+  },
 };

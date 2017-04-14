@@ -7,15 +7,15 @@ describe('manager.api.config.initApi', () => {
       api: {
         setStories: sinon.stub(),
         selectStory: sinon.stub(),
-        setQueryParams: sinon.stub()
+        setQueryParams: sinon.stub(),
       },
       shortcuts: {
-        handleEvent: sinon.stub()
-      }
+        handleEvent: sinon.stub(),
+      },
     };
 
     const clientStore = {
-      subscribe: sinon.stub()
+      subscribe: sinon.stub(),
     };
 
     const provider = {
@@ -26,7 +26,7 @@ describe('manager.api.config.initApi', () => {
         expect(typeof api.onStory).toBe('function');
         expect(typeof api.setQueryParams).toBe('function');
         done();
-      }
+      },
     };
 
     initApi(provider, clientStore, actions);
@@ -41,8 +41,8 @@ describe('manager.api.config.initApi', () => {
       subscribe: sinon.stub(),
       getAll: () => ({
         selectedKind,
-        selectedStory
-      })
+        selectedStory,
+      }),
     };
 
     const provider = {
@@ -52,7 +52,7 @@ describe('manager.api.config.initApi', () => {
           expect(story).toBe(selectedStory);
           done();
         });
-      }
+      },
     };
 
     initApi(provider, clientStore, actions);
@@ -69,8 +69,8 @@ describe('manager.api.config.initApi', () => {
       subscribe: sinon.stub(),
       getAll: () => ({
         selectedKind,
-        selectedStory
-      })
+        selectedStory,
+      }),
     };
 
     const provider = {
@@ -85,7 +85,7 @@ describe('manager.api.config.initApi', () => {
           expect(cnt).toBe(2);
           done();
         });
-      }
+      },
     };
 
     initApi(provider, clientStore, actions);
@@ -102,8 +102,8 @@ describe('manager.api.config.initApi', () => {
       subscribe: sinon.stub(),
       getAll: () => ({
         selectedKind,
-        selectedStory
-      })
+        selectedStory,
+      }),
     };
 
     const provider = {
@@ -119,7 +119,7 @@ describe('manager.api.config.initApi', () => {
           expect(cnt).toBe(1);
           done();
         });
-      }
+      },
     };
 
     initApi(provider, clientStore, actions);
@@ -136,9 +136,9 @@ describe('manager.api.config.initApi', () => {
         getAll: () => ({
           customQueryParams: {
             foo: 'foo value',
-            bar: 'bar value'
-          }
-        })
+            bar: 'bar value',
+          },
+        }),
       };
 
       const provider = {
@@ -146,7 +146,7 @@ describe('manager.api.config.initApi', () => {
           const value = api.getQueryParam('foo');
           expect(value).toBe('foo value');
           done();
-        }
+        },
       };
 
       initApi(provider, clientStore, actions);

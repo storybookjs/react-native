@@ -19,12 +19,11 @@ export default class StoryKindApi {
 
   _decorate(fn) {
     return this._decorators.reduce(
-      (decorated, decorator) =>
-        context => {
-          const _fn = () => decorated(context);
-          return decorator(_fn, context);
-        },
-      fn
+      (decorated, decorator) => context => {
+        const _fn = () => decorated(context);
+        return decorator(_fn, context);
+      },
+      fn,
     );
   }
 }

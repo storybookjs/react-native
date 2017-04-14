@@ -16,7 +16,7 @@ module.exports = {
     // exponentiation
     require.resolve('babel-preset-es2016'),
     // JSX, Flow
-    require.resolve('babel-preset-react')
+    require.resolve('babel-preset-react'),
   ],
   plugins: [
     // function x(a, b, c,) { }
@@ -35,10 +35,10 @@ module.exports = {
       {
         helpers: true,
         polyfill: true,
-        regenerator: true
-      }
+        regenerator: true,
+      },
     ],
     // Optimization: hoist JSX that never changes out of render()
-    require.resolve('babel-plugin-transform-react-constant-elements')
-  ]
+    require.resolve('babel-plugin-transform-react-constant-elements'),
+  ],
 };

@@ -35,8 +35,10 @@ function isRelativeRequest(request) {
     return true;
   }
 
-  return request.charCodeAt(1) === 47 /* / */ ||
-    (request.charCodeAt(1) === 46 /* . */ && request.charCodeAt(2) === 47) /* / */;
+  return (
+    request.charCodeAt(1) === 47 /* / */ ||
+    (request.charCodeAt(1) === 46 /* . */ && request.charCodeAt(2) === 47) /* / */
+  );
 }
 
 export default function runWithRequireContext(content, options) {

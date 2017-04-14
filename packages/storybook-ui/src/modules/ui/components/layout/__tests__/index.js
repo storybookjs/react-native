@@ -13,7 +13,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       const markup = wrap.html();
@@ -31,7 +31,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       const markup = wrap.html();
@@ -51,7 +51,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       const markup = wrap.html();
@@ -71,7 +71,7 @@ describe('manager.ui.components.layout.index', () => {
           leftPanel={() => 'LeftPanel'}
           downPanel={() => 'DownPanel'}
           preview={() => 'Preview'}
-        />
+        />,
       );
 
       const markup = wrap.html();

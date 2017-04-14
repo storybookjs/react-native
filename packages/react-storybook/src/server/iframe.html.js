@@ -11,19 +11,19 @@ import url from 'url';
 const previewUrlsFromAssets = assets => {
   if (!assets) {
     return {
-      js: 'static/preview.bundle.js'
+      js: 'static/preview.bundle.js',
     };
   }
 
   if (typeof assets.preview === 'string') {
     return {
-      js: assets.preview
+      js: assets.preview,
     };
   }
 
   return {
     js: assets.preview.find(filename => filename.match(/\.js$/)),
-    css: assets.preview.find(filename => filename.match(/\.css$/))
+    css: assets.preview.find(filename => filename.match(/\.css$/)),
   };
 };
 

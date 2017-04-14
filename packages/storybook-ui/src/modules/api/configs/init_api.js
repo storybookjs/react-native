@@ -35,7 +35,7 @@ export default function(provider, clientStore, actions) {
         return state.customQueryParams[key];
       }
       return undefined;
-    }
+    },
   };
 
   provider.handleAPI(providerApi);

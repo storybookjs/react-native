@@ -4,7 +4,7 @@ describe('manager.ui.actions.ui', () => {
   describe('setStoryFilter', () => {
     it('should set the given filter', () => {
       const clientStore = {
-        set: jest.fn()
+        set: jest.fn(),
       };
       const filter = 'kkkind';
       actions.setStoryFilter({ clientStore }, filter);
@@ -16,7 +16,7 @@ describe('manager.ui.actions.ui', () => {
   describe('toggleShortcutsHelp', () => {
     it('should toggle the client sotre accordingly', () => {
       const clientStore = {
-        toggle: jest.fn()
+        toggle: jest.fn(),
       };
       actions.toggleShortcutsHelp({ clientStore });
 
@@ -27,7 +27,7 @@ describe('manager.ui.actions.ui', () => {
   describe('selectDownPanel', () => {
     it('should set the given panel name', () => {
       const clientStore = {
-        set: jest.fn()
+        set: jest.fn(),
       };
       const panelName = 'kkkind';
       actions.selectDownPanel({ clientStore }, panelName);

@@ -14,21 +14,22 @@ describe('manager.ui.config.handle_routing', () => {
         selectedKind: 'kk',
         selectedStory: 'ss',
         customQueryParams: {
-          customText: 'test'
+          customText: 'test',
         },
         shortcutOptions: {
           goFullScreen: false,
           showDownPanel: true,
           showLeftPanel: true,
-          downPanelInRight: true
+          downPanelInRight: true,
         },
-        selectedDownPanel: 'pp'
+        selectedDownPanel: 'pp',
       };
       const clientStore = {
-        getAll: () => state
+        getAll: () => state,
       };
-      // eslint-disable-next-line max-len
-      const url = '?customText=test&selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp';
+      const url =
+        '?customText=test&selectedKind=kk&selectedStory=ss&full=0&down=1&left=1&panelRight=1&downPanel=pp';
+
       const pushState = {
         url,
         selectedKind: 'kk',
@@ -38,7 +39,7 @@ describe('manager.ui.config.handle_routing', () => {
         left: true,
         panelRight: true,
         downPanel: 'pp',
-        customText: 'test'
+        customText: 'test',
       };
       const originalPushState = window.history.pushState;
       window.history.pushState = function(s, t, u) {
@@ -58,19 +59,20 @@ describe('manager.ui.config.handle_routing', () => {
       const actions = {
         api: {
           selectStory: jest.fn(),
-          setQueryParams: jest.fn()
+          setQueryParams: jest.fn(),
         },
         shortcuts: {
-          setOptions: jest.fn()
+          setOptions: jest.fn(),
         },
         ui: {
-          selectDownPanel: jest.fn()
-        }
+          selectDownPanel: jest.fn(),
+        },
       };
-      // eslint-disable-next-line max-len
-      const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test&customText=teststring';
+      const url =
+        '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test&customText=teststring';
+
       const location = {
-        search: url
+        search: url,
       };
       window.location.search = url;
       handleInitialUrl(actions, location);
@@ -82,11 +84,11 @@ describe('manager.ui.config.handle_routing', () => {
         goFullScreen: true,
         showDownPanel: false,
         showLeftPanel: false,
-        downPanelInRight: false
+        downPanelInRight: false,
       });
       expect(actions.ui.selectDownPanel).toHaveBeenCalledWith('test');
       expect(actions.api.setQueryParams).toHaveBeenCalledWith({
-        customText: 'teststring'
+        customText: 'teststring',
       });
     });
   });

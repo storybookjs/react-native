@@ -15,14 +15,14 @@ export default class StoryStore {
       this._data[kind] = {
         kind,
         index: getId(),
-        stories: {}
+        stories: {},
       };
     }
 
     this._data[kind].stories[name] = {
       name,
       index: getId(),
-      fn
+      fn,
     };
   }
 

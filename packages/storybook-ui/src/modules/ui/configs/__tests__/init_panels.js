@@ -4,8 +4,8 @@ describe('manager.ui.config.init_panels', () => {
   test('should call the selectDownPanel with first panel name', () => {
     const actions = {
       ui: {
-        selectDownPanel: jest.fn()
-      }
+        selectDownPanel: jest.fn(),
+      },
     };
 
     const provider = {
@@ -13,9 +13,9 @@ describe('manager.ui.config.init_panels', () => {
         return {
           test1: {},
           test2: {},
-          test3: {}
+          test3: {},
         };
-      }
+      },
     };
 
     initPanels({ provider }, actions);

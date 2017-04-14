@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactModal from 'react-modal';
 
@@ -6,12 +7,12 @@ const commandStyle = {
   padding: '2px 7px',
   borderRadius: 2,
   lineHeight: '36px',
-  marginRight: '9px'
+  marginRight: '9px',
 };
 
 const h4Style = {
   marginTop: 0,
-  textAlign: 'center'
+  textAlign: 'center',
 };
 
 const modalStyles = {
@@ -24,11 +25,11 @@ const modalStyles = {
     border: 'none',
     overflow: 'visible',
     fontFamily: 'sans-serif',
-    fontSize: 14
+    fontSize: 14,
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.74902)'
-  }
+    backgroundColor: 'rgba(0, 0, 0, 0.74902)',
+  },
 };
 
 // manage two separate shortcut keys for
@@ -43,7 +44,7 @@ export function getShortcuts(platform) {
       { name: 'Toggle Left Panel', keys: ['⌘ ⇧ L', '⌃ ⇧ L'] },
       { name: 'Toggle Down Panel', keys: ['⌘ ⇧ D', '⌃ ⇧ D'] },
       { name: 'Next Story', keys: ['⌘ ⇧ →', '⌃ ⇧ →'] },
-      { name: 'Previous Story', keys: ['⌘ ⇧ ←', '⌃ ⇧ ←'] }
+      { name: 'Previous Story', keys: ['⌘ ⇧ ←', '⌃ ⇧ ←'] },
     ];
   }
 
@@ -54,7 +55,7 @@ export function getShortcuts(platform) {
     { name: 'Toggle Left Panel', keys: ['Ctrl + Shift + L'] },
     { name: 'Toggle Down Panel', keys: ['Ctrl + Shift + D'] },
     { name: 'Next Story', keys: ['Ctrl + Shift + →'] },
-    { name: 'Previous Story', keys: ['Ctrl + Shift + ←'] }
+    { name: 'Previous Story', keys: ['Ctrl + Shift + ←'] },
   ];
 }
 
@@ -77,7 +78,7 @@ export const Keys = ({ shortcutKeys }) => {
 };
 
 Keys.propTypes = {
-  shortcutKeys: React.PropTypes.array.isRequired
+  shortcutKeys: PropTypes.array.isRequired,
 };
 
 export const Shortcuts = ({ appShortcuts }) => {
@@ -97,7 +98,7 @@ export const Shortcuts = ({ appShortcuts }) => {
 };
 
 Shortcuts.propTypes = {
-  appShortcuts: React.PropTypes.array.isRequired
+  appShortcuts: PropTypes.array.isRequired,
 };
 
 export const ShortcutsHelp = ({ isOpen, onClose, platform }) => (
@@ -107,9 +108,9 @@ export const ShortcutsHelp = ({ isOpen, onClose, platform }) => (
 );
 
 ShortcutsHelp.propTypes = {
-  isOpen: React.PropTypes.bool,
-  onClose: React.PropTypes.func,
-  platform: React.PropTypes.string.isRequired
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  platform: PropTypes.string.isRequired,
 };
 
 export default ShortcutsHelp;

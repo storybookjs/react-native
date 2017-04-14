@@ -1,26 +1,27 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { baseFonts } from '../theme';
 
 const listStyle = {
-  ...baseFonts
+  ...baseFonts,
 };
 
 const listStyleType = {
   listStyleType: 'none',
-  paddingLeft: 0
+  paddingLeft: 0,
 };
 
 const kindStyle = {
   fontSize: 15,
   padding: '10px 0px',
   cursor: 'pointer',
-  borderBottom: '1px solid #EEE'
+  borderBottom: '1px solid #EEE',
 };
 
 const storyStyle = {
   fontSize: 13,
   padding: '8px 0px 8px 10px',
-  cursor: 'pointer'
+  cursor: 'pointer',
 };
 
 class Stories extends React.Component {
@@ -44,7 +45,7 @@ class Stories extends React.Component {
     const { selectedStory } = this.props;
     const style = { display: 'block', ...storyStyle };
     const props = {
-      onClick: this.fireOnStory.bind(this, story)
+      onClick: this.fireOnStory.bind(this, story),
     };
 
     if (story === selectedStory) {
@@ -103,10 +104,10 @@ class Stories extends React.Component {
 }
 
 Stories.propTypes = {
-  stories: React.PropTypes.array.isRequired,
-  selectedKind: React.PropTypes.string.isRequired,
-  selectedStory: React.PropTypes.string.isRequired,
-  onSelectStory: React.PropTypes.func
+  stories: PropTypes.array.isRequired,
+  selectedKind: PropTypes.string.isRequired,
+  selectedStory: PropTypes.string.isRequired,
+  onSelectStory: PropTypes.func,
 };
 
 export default Stories;

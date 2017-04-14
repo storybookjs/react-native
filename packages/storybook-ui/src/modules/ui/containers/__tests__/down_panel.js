@@ -4,14 +4,14 @@ describe('manager.ui.containers.down_panel', () => {
   describe('mapper', () => {
     test('should give correct data', () => {
       const state = {
-        selectedDownPanel: 'sdp'
+        selectedDownPanel: 'sdp',
       };
 
       const selectDownPanel = () => 'selectDownPanel';
       const panels = {
         test1: {},
         test2: {},
-        sdp: {}
+        sdp: {},
       };
       const getPanels = () => panels;
 
@@ -19,14 +19,14 @@ describe('manager.ui.containers.down_panel', () => {
       const env = {
         actions: () => ({
           ui: {
-            selectDownPanel
-          }
+            selectDownPanel,
+          },
         }),
         context: () => ({
           provider: {
-            getPanels
-          }
-        })
+            getPanels,
+          },
+        }),
       };
 
       const result = mapper(state, props, env);

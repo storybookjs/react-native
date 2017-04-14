@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import { baseFonts } from '../theme';
@@ -7,18 +8,18 @@ const container = {
   padding: 5,
   bottom: 10,
   right: 10,
-  backgroundColor: 'rgba(255, 255, 255, 0.5)'
+  backgroundColor: 'rgba(255, 255, 255, 0.5)',
 };
 
 const dimensionStyle = {
   fontSize: 12,
-  ...baseFonts
+  ...baseFonts,
 };
 
 const delimeterStyle = {
   margin: '0px 5px',
   fontSize: 12,
-  ...baseFonts
+  ...baseFonts,
 };
 
 // Same as Chrome's timeout in the developer tools
@@ -29,7 +30,7 @@ class Dimensions extends React.Component {
     super(props);
 
     this.state = {
-      isVisible: false
+      isVisible: false,
     };
 
     this._hideTimeout = null;
@@ -48,15 +49,12 @@ class Dimensions extends React.Component {
   onChange(width, height) {
     this.setState({ isVisible: true });
 
-    this._hideTimeout = setTimeout(
-      () => {
-        // Ensure the dimensions aren't still changing
-        if (width === this.props.width && height === this.props.height) {
-          this.setState({ isVisible: false });
-        }
-      },
-      DISPLAY_TIMEOUT
-    );
+    this._hideTimeout = setTimeout(() => {
+      // Ensure the dimensions aren't still changing
+      if (width === this.props.width && height === this.props.height) {
+        this.setState({ isVisible: false });
+      }
+    }, DISPLAY_TIMEOUT);
   }
 
   render() {
@@ -64,10 +62,7 @@ class Dimensions extends React.Component {
       return null;
     }
 
-    const {
-      width,
-      height
-    } = this.props;
+    const { width, height } = this.props;
 
     return (
       <div style={container}>
@@ -80,8 +75,8 @@ class Dimensions extends React.Component {
 }
 
 Dimensions.propTypes = {
-  width: React.PropTypes.number.isRequired,
-  height: React.PropTypes.number.isRequired
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
 };
 
 export default Dimensions;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class WrapStory extends React.Component {
@@ -60,9 +61,9 @@ export default class WrapStory extends React.Component {
 }
 
 WrapStory.propTypes = {
-  context: React.PropTypes.object,
-  storyFn: React.PropTypes.func,
-  channel: React.PropTypes.object,
-  knobStore: React.PropTypes.object,
-  initialContent: React.PropTypes.object
+  context: PropTypes.object,
+  storyFn: PropTypes.func,
+  channel: PropTypes.object,
+  knobStore: PropTypes.object,
+  initialContent: PropTypes.object,
 };

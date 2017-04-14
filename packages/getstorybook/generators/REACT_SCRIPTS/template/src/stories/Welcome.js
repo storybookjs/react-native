@@ -5,18 +5,18 @@ const styles = {
     margin: 15,
     maxWidth: 600,
     lineHeight: 1.4,
-    fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif'
+    fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
   },
 
   logo: {
-    width: 200
+    width: 200,
   },
 
   link: {
     color: '#1474f3',
     textDecoration: 'none',
     borderBottom: '1px solid #1474f3',
-    paddingBottom: 2
+    paddingBottom: 2,
   },
 
   code: {
@@ -26,14 +26,14 @@ const styles = {
     border: '1px solid #eae9e9',
     borderRadius: 4,
     backgroundColor: '#f3f2f2',
-    color: '#3a3a3a'
+    color: '#3a3a3a',
   },
 
   codeBlock: {
     backgroundColor: '#f3f2f2',
     padding: '1px 10px',
-    margin: '10px 0'
-  }
+    margin: '10px 0',
+  },
 };
 
 const codeBlock = `
@@ -86,11 +86,11 @@ export default class Welcome extends React.Component {
           Just like that, you can add your own components as stories.
           <br />
           Here's how to add your <code style={styles.code}>App</code> component as a story.
-          <div
-            style={styles.codeBlock}
-            dangerouslySetInnerHTML={{ __html: `<pre>${codeBlock}</pre>` }}
-          />
         </p>
+        <div
+          style={styles.codeBlock}
+          dangerouslySetInnerHTML={{ __html: `<pre>${codeBlock}</pre>` }}
+        />
         <p>
           Usually we create stories with smaller UI components in the app.<br />
           Have a look at the

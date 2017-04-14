@@ -28,7 +28,7 @@ export default class KnobManager {
     const knobInfo = {
       ...options,
       name,
-      defaultValue
+      defaultValue,
     };
 
     knobStore.set(name, knobInfo);
@@ -41,7 +41,7 @@ export default class KnobManager {
     let knobStore = this.knobStoreMap[key];
 
     if (!knobStore) {
-      knobStore = (this.knobStoreMap[key] = new KnobStore());
+      knobStore = this.knobStoreMap[key] = new KnobStore();
     }
 
     this.knobStore = knobStore;
@@ -66,13 +66,10 @@ export default class KnobManager {
     }
     this.calling = true;
 
-    setTimeout(
-      () => {
-        this.calling = false;
-        // emit to the channel and trigger a panel re-render
-        this.channel.emit('addon:knobs:setKnobs', this.knobStore.getAll());
-      },
-      PANEL_UPDATE_INTERVAL
-    );
+    setTimeout(() => {
+      this.calling = false;
+      // emit to the channel and trigger a panel re-render
+      this.channel.emit('addon:knobs:setKnobs', this.knobStore.getAll());
+    }, PANEL_UPDATE_INTERVAL);
   }
 }

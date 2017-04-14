@@ -12,10 +12,11 @@ let configPath;
 const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
-const isStorybook = (pkg.devDependencies && pkg.devDependencies['@kadira/storybook']) ||
+const isStorybook =
+  (pkg.devDependencies && pkg.devDependencies['@kadira/storybook']) ||
   (pkg.dependencies && pkg.dependencies['@kadira/storybook']);
-const isRNStorybook = (pkg.devDependencies &&
-  pkg.devDependencies['@kadira/react-native-storybook']) ||
+const isRNStorybook =
+  (pkg.devDependencies && pkg.devDependencies['@kadira/react-native-storybook']) ||
   (pkg.dependencies && pkg.dependencies['@kadira/react-native-storybook']);
 
 export default function testStorySnapshots(options = {}) {
@@ -30,7 +31,7 @@ export default function testStorySnapshots(options = {}) {
     const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
-      dirname: configDirPath
+      dirname: configDirPath,
     };
     const babelConfig = loadBabelConfig(configDirPath);
 
@@ -41,7 +42,7 @@ export default function testStorySnapshots(options = {}) {
     require.requireActual(configPath);
   } else {
     throw new Error(
-      'storyshots is intended only to be used with react storybook or react native storybook'
+      'storyshots is intended only to be used with react storybook or react native storybook',
     );
   }
 

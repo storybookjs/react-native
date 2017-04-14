@@ -9,7 +9,7 @@ export const features = {
   NEXT_STORY: 6,
   PREV_STORY: 7,
   SEARCH: 8,
-  DOWN_PANEL_IN_RIGHT: 9
+  DOWN_PANEL_IN_RIGHT: 9,
 };
 
 export function isModifierPressed(e) {
@@ -17,8 +17,9 @@ export function isModifierPressed(e) {
 }
 
 function focusInInput(e) {
-  return /input|textarea/i.test(e.target.tagName) ||
-    e.target.getAttribute('contenteditable') !== null;
+  return (
+    /input|textarea/i.test(e.target.tagName) || e.target.getAttribute('contenteditable') !== null
+  );
 }
 
 export default function handle(e) {

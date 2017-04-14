@@ -2,7 +2,7 @@ import React from 'react';
 
 const mainStyle = {
   padding: 10,
-  fontFamily: 'arial'
+  fontFamily: 'arial',
 };
 
 export default class Preview extends React.Component {
@@ -15,13 +15,13 @@ export default class Preview extends React.Component {
       if (this.mounted) {
         this.setState({
           kind,
-          story
+          story,
         });
       } else {
         this.state = {
           ...this.state,
           kind,
-          story
+          story,
         };
       }
     });
