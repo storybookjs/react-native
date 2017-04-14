@@ -4,6 +4,8 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook)
 
+React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively.
+
 We recently switched repo-strategy, this readme needs editing.
 
 ## Intro
