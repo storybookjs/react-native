@@ -1,8 +1,6 @@
 import React from 'react';
-import sinon from 'sinon';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import KnobManager from '../KnobManager';
+import KnobManager from './KnobManager';
 
 describe('KnobManager', () => {
   describe('knob()', () => {
@@ -11,7 +9,7 @@ describe('KnobManager', () => {
 
       beforeEach(() => {
         testManager.knobStore = {
-          set: sinon.spy(),
+          set: jest.fn(),
           get: () => ({
             defaultValue: 'default value',
             value: 'current value',
@@ -26,8 +24,8 @@ describe('KnobManager', () => {
           value: 'default value',
         };
         const knob = testManager.knob('foo', defaultKnob);
-        expect(knob).to.equal('current value');
-        expect(testManager.knobStore.set.callCount).to.equal(0);
+        expect(knob).toEqual('current value');
+        expect(testManager.knobStore.set).not.toHaveBeenCalled();
       });
 
       it('should return the new default knob value when default has changed', () => {
@@ -42,7 +40,7 @@ describe('KnobManager', () => {
           defaultValue: defaultKnob.value,
         };
 
-        expect(testManager.knobStore.set.calledWith('foo', newKnob)).to.equal(true);
+        expect(testManager.knobStore.set).toHaveBeenCalledWith('foo', newKnob);
       });
     });
 
@@ -51,12 +49,13 @@ describe('KnobManager', () => {
 
       beforeEach(() => {
         testManager.knobStore = {
-          set: sinon.spy(),
-          get: sinon.stub(),
+          set: jest.fn(),
+          get: jest.fn(),
         };
 
-        testManager.knobStore.get.onFirstCall().returns(undefined);
-        testManager.knobStore.get.onSecondCall().returns('normal value');
+        testManager.knobStore.get
+          .mockImplementationOnce(() => undefined)
+          .mockImplementationOnce(() => 'normal value');
       });
 
       it('should return the new default knob value when default has changed', () => {
@@ -71,7 +70,7 @@ describe('KnobManager', () => {
           defaultValue: defaultKnob.value,
         };
 
-        expect(testManager.knobStore.set.calledWith('foo', newKnob)).to.equal(true);
+        expect(testManager.knobStore.set).toHaveBeenCalledWith('foo', newKnob);
       });
     });
   });
@@ -88,11 +87,11 @@ describe('KnobManager', () => {
       };
       const wrappedStory = testManager.wrapStory(testChannel, testStory, testContext);
       const wrapper = shallow(wrappedStory);
-      expect(wrapper.find('#test-story')).to.have.length(1);
+      expect(wrapper.find('#test-story').length).toBe(1);
 
       const storyWrapperProps = wrappedStory.props;
-      expect(storyWrapperProps.channel).to.equal(testChannel);
-      expect(storyWrapperProps.context).to.equal(testContext);
+      expect(storyWrapperProps.channel).toEqual(testChannel);
+      expect(storyWrapperProps.context).toEqual(testContext);
     });
   });
 });
