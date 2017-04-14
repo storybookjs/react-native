@@ -12,10 +12,11 @@
     "prepublish": "npm run build",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
-    "storybook": "start-storybook -p 9010"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.20.1",
+    "@kadira/storybook": "^2.21.0",
     "babel-cli": "^6.5.0",
     "babel-core": "^6.5.0",
     "babel-eslint": "^7.0.0",
@@ -29,6 +30,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.2.2",
+    "eventemitter3": "^2.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -37,7 +39,9 @@
     "@kadira/storybook-addons": "^v1.3.1"
   },
   "dependencies": {
-    "babel-runtime": "^6.5.0"
+    "babel-runtime": "^6.5.0",
+    "format-json": "^1.0.3",
+    "react-textarea-autosize": "^4.0.5"
   },
   "main": "dist/index.js",
   "engines": {

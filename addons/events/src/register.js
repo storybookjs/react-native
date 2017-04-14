@@ -1,22 +1,16 @@
 import React, { PropTypes, Component } from 'react';
 import addons from '@kadira/storybook-addons';
 
+import Item from './components/Item';
+
 const styles = {
   wrapper: {
     margin: 10,
-    fontFamily: 'Arial',
+    fontFamily: 'Arial, sans-serif',
     fontSize: 14,
     width: '100%',
+    color: 'rgb(51, 51, 51)',
     overflow: 'auto',
-  },
-  item: {
-    margin: 5,
-  },
-  button: {
-    fontFamily: 'Arial',
-    fontSize: 14,
-    padding: 10,
-    width: '100%',
   },
 };
 
@@ -57,21 +51,14 @@ export default class Events extends Component {
     this.setState({ events });
   };
 
-  render() {
-    const { events } = this.state;
+  onEmit = (event) => {
+    this.props.channel.emit('z4o4z/events/emit', event);
+  };
 
+  render() {
     return (
       <div style={styles.wrapper}>
-        {events.map((event, index) => (
-          <div style={styles.item} key={index}>
-            <button
-              style={styles.button}
-              onClick={() => this.props.channel.emit('z4o4z/events/emit', event)}
-            >
-              {event.title}
-            </button>
-          </div>
-        ))}
+        {this.state.events.map((event, i) => <Item key={i} {...event} onEmit={this.onEmit} />)}
       </div>
     );
   }

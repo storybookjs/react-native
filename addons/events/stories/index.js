@@ -1,40 +1,16 @@
-# Storybook Addon Events
-
-This [Storybook](https://getstorybook.io) addon allows you to add events for your stories.
-
-![Storybook Addon Events Example](docs/Demo.png)
-![Storybook Addon Events Live Demo](https://z4o4z.github.io/storybook-addon-events/index.html)
-
-### Getting Started
-**note: addons require @kadira/storybook 2.x or greater*
-
-```sh
-npm i --save-dev @z4o4z/storybook-addon-events
-```
-
-Then create a file called `addons.js` in your storybook config.
-
-Add following content to it:
-
-```js
-import '@kadira/storybook/addons';
-import '@z4o4z/storybook-addon-events/register';
-```
-
-Then write your stories like this:
-
-```js
 import React from 'react';
-import EventEmiter from 'event-emiter';
+/* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@kadira/storybook';
-import WithEvents from '@z4o4z/storybook-addon-events';
+import EventEmiter from 'eventemitter3';
+/* eslint-enable import/no-extraneous-dependencies */
+
+import WithEvents from '../dist/index';
 
 import Logger from './Logger';
 import * as EVENTS from './events';
 
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
-
 
 storiesOf('WithEvents', module)
   .addDecorator(getStory => (
@@ -92,4 +68,3 @@ storiesOf('WithEvents', module)
     </WithEvents>
   ))
   .add('Logger', () => <Logger emiter={emiter} />);
-```
