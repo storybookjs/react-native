@@ -1,35 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content,
-  jsx-a11y/anchor-has-content,
-  jsx-a11y/aria-props,
-  jsx-a11y/aria-proptypes,
-  jsx-a11y/aria-proptypes,
-  jsx-a11y/aria-unsupported-elements,
-  jsx-a11y/aria-unsupported-elements,
-  jsx-a11y/href-no-hash,
-  jsx-a11y/href-no-hash,
-  jsx-a11y/img-has-alt,
-  jsx-a11y/img-has-alt,
-  jsx-a11y/img-redundant-alt,
-  jsx-a11y/img-redundant-alt,
-  jsx-a11y/label-has-for,
-  jsx-a11y/label-has-for,
-  jsx-a11y/aria-role,
-  jsx-a11y/aria-role,
-  jsx-a11y/role-supports-aria-props,
-  jsx-a11y/role-supports-aria-props,
-  jsx-a11y/tabindex-no-positive,
-  jsx-a11y/tabindex-no-positive,
-  jsx-a11y/heading-has-content,
-  jsx-a11y/heading-has-content,
-  jsx-a11y/html-has-lang,
-  jsx-a11y/html-has-lang,
-  jsx-a11y/lang,
-  jsx-a11y/lang,
-  jsx-a11y/role-has-required-aria-props,
-  jsx-a11y/scope,
-  jsx-a11y/no-static-element-interactions
- */
-
 import React, { PropTypes, Component } from 'react';
 import addons from '@kadira/storybook-addons';
 
@@ -109,9 +77,7 @@ export default class Events extends Component {
   }
 }
 
-// Register the addon with a unique name.
 addons.register('z4o4z/events', (api) => {
-  // Also need to set a unique name to the panel.
   addons.addPanel('z4o4z/events/panel', {
     title: 'Events',
     render: () => <Events channel={addons.getChannel()} api={api} />,
