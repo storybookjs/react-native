@@ -3,7 +3,7 @@
 This [Storybook](https://getstorybook.io) addon allows you to add events for your stories.
 
 ![Storybook Addon Events Example](docs/Demo.png)
-![Storybook Addon Events Live Demo](https://z4o4z.github.io/storybook-addon-events/index.html)
+[Storybook Addon Events Live Demo](https://z4o4z.github.io/storybook-addon-events/index.html)
 
 ### Getting Started
 **note: addons require @kadira/storybook 2.x or greater*
