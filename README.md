@@ -1,7 +1,7 @@
 # Storybook
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/react-storybook.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/storybooks/react-storybook.svg?branch=master)](https://travis-ci.org/storybooks/react-storybook)
-[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/react-storybook/badge)](https://www.codefactor.io/repository/github/storybooks/react-storybook)
+[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/react-storybook)
+[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/react-storybook)
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook)
 
 We recently switched repo-strategy, this readme needs editing.
