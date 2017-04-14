@@ -1,4 +1,4 @@
-import Channel from '../';
+import Channel from './';
 
 describe('Channel', () => {
   let transport = null;
