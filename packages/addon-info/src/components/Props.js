@@ -4,7 +4,7 @@ import PropVal from './PropVal';
 const stylesheet = {
   propStyle: {},
   propNameStyle: {},
-  propValueStyle: {}
+  propValueStyle: {},
 };
 
 export default class Props extends React.Component {
@@ -21,7 +21,7 @@ export default class Props extends React.Component {
       name =>
         name[0] !== '_' &&
         name !== 'children' &&
-        (!defaultProps || props[name] != defaultProps[name])
+        (!defaultProps || props[name] != defaultProps[name]),
     );
 
     const breakIntoNewLines = names.length > 3;
@@ -45,7 +45,7 @@ export default class Props extends React.Component {
             </span>}
 
           {i === names.length - 1 && (breakIntoNewLines ? <br /> : endingSpace)}
-        </span>
+        </span>,
       );
     });
 

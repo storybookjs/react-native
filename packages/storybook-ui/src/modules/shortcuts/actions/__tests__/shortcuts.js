@@ -15,12 +15,12 @@ describe('manager.shortcuts.actions.shortcuts', () => {
       actions.setOptions({ clientStore }, { abc: 10 });
 
       const state = {
-        shortcutOptions: { bbc: 50, abc: 40 }
+        shortcutOptions: { bbc: 50, abc: 40 },
       };
 
       const stateUpdates = clientStore.updateCallback(state);
       expect(stateUpdates).to.deep.equal({
-        shortcutOptions: { bbc: 50, abc: 10 }
+        shortcutOptions: { bbc: 50, abc: 10 },
       });
     });
 
@@ -29,12 +29,12 @@ describe('manager.shortcuts.actions.shortcuts', () => {
       actions.setOptions({ clientStore }, { abc: 10, kki: 50 });
 
       const state = {
-        shortcutOptions: { bbc: 50, abc: 40 }
+        shortcutOptions: { bbc: 50, abc: 40 },
       };
 
       const stateUpdates = clientStore.updateCallback(state);
       expect(stateUpdates).to.deep.equal({
-        shortcutOptions: { bbc: 50, abc: 10 }
+        shortcutOptions: { bbc: 50, abc: 10 },
       });
     });
   });

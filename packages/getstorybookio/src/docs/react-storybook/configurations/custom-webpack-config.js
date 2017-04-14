@@ -104,5 +104,5 @@ export default {
 
     * Simply import your main Webpack config into Storybook's \`webpack.config.js\` and use the loaders and plugins used in that.
     * Create a new file with common Webpack options and use it in both inside the main Webpack config and inside Storybook's \`webpack.config.js\`.
-  `
+  `,
 };

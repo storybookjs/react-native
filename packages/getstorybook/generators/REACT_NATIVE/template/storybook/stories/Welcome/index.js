@@ -6,17 +6,17 @@ export default class Welcome extends React.Component {
     wrapper: {
       flex: 1,
       padding: 24,
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     header: {
       fontSize: 18,
-      marginBottom: 18
+      marginBottom: 18,
     },
     content: {
       fontSize: 12,
       marginBottom: 10,
-      lineHeight: 18
-    }
+      lineHeight: 18,
+    },
   };
 
   showApp(e) {

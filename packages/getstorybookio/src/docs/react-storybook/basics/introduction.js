@@ -1,7 +1,7 @@
 import { stripIndent } from 'common-tags';
 
 const images = {
-  screenshot: require('./static/screenshot.png')
+  screenshot: require('./static/screenshot.png'),
 };
 
 export default {
@@ -21,5 +21,5 @@ export default {
     * [React Button](http://kadira-samples.github.io/react-button) - [source](https://github.com/kadira-samples/react-button)
     * [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
     * [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
-  `
+  `,
 };

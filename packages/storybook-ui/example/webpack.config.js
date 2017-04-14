@@ -5,12 +5,12 @@ module.exports = {
   devtool: 'eval',
   entry: [
     `${require.resolve('webpack-dev-server/client')}?http://localhost:9999`,
-    './client/index'
+    './client/index',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
@@ -19,8 +19,8 @@ module.exports = {
         test: /\.js$/,
         loader: require.resolve('babel-loader'),
         query: { presets: ['react', 'es2015', 'stage-0'] },
-        include: [path.join(__dirname, 'client'), path.resolve(__dirname, '../src')]
-      }
-    ]
-  }
+        include: [path.join(__dirname, 'client'), path.resolve(__dirname, '../src')],
+      },
+    ],
+  },
 };

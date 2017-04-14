@@ -30,7 +30,12 @@ describe('manager.ui.components.left_panel.stories', () => {
       const onSelectStory = sinon.spy();
 
       const wrap = shallow(
-        <Stories stories={data} selectedKind="b" selectedStory="b2" onSelectStory={onSelectStory} />
+        <Stories
+          stories={data}
+          selectedKind="b"
+          selectedStory="b2"
+          onSelectStory={onSelectStory}
+        />,
       );
 
       const kind = wrap.find('a').filterWhere(el => el.text() === 'a').last();
@@ -44,7 +49,12 @@ describe('manager.ui.components.left_panel.stories', () => {
       const onSelectStory = sinon.spy();
 
       const wrap = shallow(
-        <Stories stories={data} selectedKind="b" selectedStory="b2" onSelectStory={onSelectStory} />
+        <Stories
+          stories={data}
+          selectedKind="b"
+          selectedStory="b2"
+          onSelectStory={onSelectStory}
+        />,
       );
 
       const kind = wrap.find('a').filterWhere(el => el.text() === 'b1').last();

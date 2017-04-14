@@ -19,5 +19,5 @@ export default {
 
     For private apps, any collaborator in your workspace could access storybooks for that app.
     You can easily add or remove collaborators by visiting your [workspace](https://hub.getstorybook.io/workspaces).
-  `
+  `,
 };

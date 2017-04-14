@@ -13,7 +13,7 @@ class ActionLogger extends Component {
         () => {
           latest.style.borderLeft = borderLeft;
         },
-        300
+        300,
       );
     }
   }
@@ -53,7 +53,7 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: PropTypes.func,
-  actions: PropTypes.array
+  actions: PropTypes.array,
 };
 
 export default ActionLogger;

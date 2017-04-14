@@ -24,5 +24,5 @@ export default {
     ---
 
     To learn more about what \`getstorybook\` command does, have a look at our [Slow Start Guide](/docs/react-storybook/basics/slow-start-guide).
-  `
+  `,
 };

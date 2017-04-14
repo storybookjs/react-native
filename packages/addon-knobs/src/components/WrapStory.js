@@ -65,5 +65,5 @@ WrapStory.propTypes = {
   storyFn: PropTypes.func,
   channel: PropTypes.object,
   knobStore: PropTypes.object,
-  initialContent: PropTypes.object
+  initialContent: PropTypes.object,
 };

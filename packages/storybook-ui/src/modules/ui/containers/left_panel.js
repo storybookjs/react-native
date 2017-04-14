@@ -19,7 +19,7 @@ export const mapper = (state, props, { actions }) => {
 
     openShortcutsHelp: actionMap.ui.toggleShortcutsHelp,
     name,
-    url
+    url,
   };
 
   return data;

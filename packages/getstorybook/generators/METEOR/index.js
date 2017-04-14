@@ -26,7 +26,7 @@ if (fs.existsSync('.babelrc')) {
 } else {
   babelrc = {
     presets: ['es2015', 'es2016', 'react', 'stage-1'],
-    plugins: ['babel-root-slash-import']
+    plugins: ['babel-root-slash-import'],
   };
 
   packageJson.devDependencies['babel-preset-es2015'] = '^6.9.0';

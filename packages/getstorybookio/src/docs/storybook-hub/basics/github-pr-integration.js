@@ -21,5 +21,5 @@ export default {
     ![Storybooks via GitHub Deploy Link](${githubPRDeployLinkImage})
 
     You can access all these storybooks by visiting your app's page on Storybook Hub as well. We arrange them according to your branches.
-      `
+      `,
 };

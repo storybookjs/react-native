@@ -14,7 +14,7 @@ class Docs extends React.Component {
       sections,
       selectedItem,
       selectedSectionId,
-      selectedItemId
+      selectedItemId,
     } = this.props;
 
     const selectedCat = categories.find(cat => cat.id === selectedCatId);
@@ -44,7 +44,7 @@ Docs.propTypes = {
   sections: PropTypes.array,
   selectedItem: PropTypes.object,
   selectedSectionId: PropTypes.string,
-  selectedItemId: PropTypes.string
+  selectedItemId: PropTypes.string,
 };
 
 export default Docs;

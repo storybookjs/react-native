@@ -7,7 +7,7 @@ const defaultOptions = {
   inline: false,
   header: true,
   source: true,
-  propTables: []
+  propTables: [],
 };
 
 const defaultMtrcConf = {
@@ -21,7 +21,7 @@ const defaultMtrcConf = {
   p: P,
   a: A,
   li: LI,
-  ul: UL
+  ul: UL,
 };
 
 export default {
@@ -38,7 +38,7 @@ export default {
 
     const options = {
       ...defaultOptions,
-      ..._options
+      ..._options,
     };
 
     // props.propTables can only be either an array of components or null
@@ -62,7 +62,7 @@ export default {
         showSource: Boolean(options.source),
         propTables: options.propTables,
         styles: typeof options.styles === 'function' ? options.styles : s => s,
-        mtrcConf
+        mtrcConf,
       };
 
       return (
@@ -71,7 +71,7 @@ export default {
         </Story>
       );
     });
-  }
+  },
 };
 
 export function setDefaults(newDefaults) {

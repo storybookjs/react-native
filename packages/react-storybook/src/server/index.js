@@ -26,12 +26,12 @@ program
   .option('--dont-track', 'Do not send anonymous usage stats.')
   .option(
     '--https',
-    'Serve Storybook over HTTPS. Note: You must provide your own certificate information.'
+    'Serve Storybook over HTTPS. Note: You must provide your own certificate information.',
   )
   .option(
     '--ssl-ca <ca>',
     'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)',
-    parseList
+    parseList,
   )
   .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
   .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
@@ -46,8 +46,8 @@ if (program.enableDb || program.dbPath) {
     [
       'Error: the experimental local database addon is no longer bundled with',
       'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
-      'from the command or npm script and try again.'
-    ].join(' ')
+      'from the command or npm script and try again.',
+    ].join(' '),
   );
   process.exit(1);
 }
@@ -59,7 +59,7 @@ getEnvConfig(program, {
   host: 'SBCONFIG_HOSTNAME',
   staticDir: 'SBCONFIG_STATIC_DIR',
   configDir: 'SBCONFIG_CONFIG_DIR',
-  dontTrack: 'SBCONFIG_DO_NOT_TRACK'
+  dontTrack: 'SBCONFIG_DO_NOT_TRACK',
 });
 
 if (program.dontTrack) {
@@ -95,7 +95,7 @@ if (program.https) {
   const sslOptions = {
     ca: (program.sslCa || []).map(ca => fs.readFileSync(ca, 'utf-8')),
     cert: fs.readFileSync(program.sslCert, 'utf-8'),
-    key: fs.readFileSync(program.sslKey, 'utf-8')
+    key: fs.readFileSync(program.sslKey, 'utf-8'),
   };
 
   server = https.createServer(sslOptions, app);

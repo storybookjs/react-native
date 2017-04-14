@@ -42,7 +42,7 @@ class Featured extends React.Component {
 }
 
 Featured.propTypes = {
-  featuredStorybooks: PropTypes.array
+  featuredStorybooks: PropTypes.array,
 };
 
 export default Featured;

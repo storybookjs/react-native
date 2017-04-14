@@ -16,8 +16,8 @@ const stylesheet = {
   propTable: {
     marginLeft: -10,
     borderSpacing: '10px 5px',
-    borderCollapse: 'separate'
-  }
+    borderCollapse: 'separate',
+  },
 };
 
 export default class PropTable extends React.Component {
@@ -91,5 +91,5 @@ export default class PropTable extends React.Component {
 
 PropTable.displayName = 'PropTable';
 PropTable.propTypes = {
-  type: PropTypes.func
+  type: PropTypes.func,
 };

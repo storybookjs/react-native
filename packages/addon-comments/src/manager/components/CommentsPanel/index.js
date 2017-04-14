@@ -39,5 +39,5 @@ export default class CommentsPanel extends Component {
 CommentsPanel.propTypes = {
   loading: PropTypes.bool,
   user: PropTypes.object,
-  appNotAvailable: PropTypes.bool
+  appNotAvailable: PropTypes.bool,
 };

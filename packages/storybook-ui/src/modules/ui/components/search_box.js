@@ -11,7 +11,7 @@ const searchBoxStyle = {
   top: '100px',
   left: '50%',
   marginLeft: '-215px',
-  ...baseFonts
+  ...baseFonts,
 };
 
 const formatStories = function(stories) {
@@ -21,7 +21,7 @@ const formatStories = function(stories) {
     formattedStories.push({
       type: 'kind',
       value: val.kind,
-      id: i++
+      id: i++,
     });
 
     val.stories.forEach(story => {
@@ -29,7 +29,7 @@ const formatStories = function(stories) {
         type: 'story',
         value: story,
         id: i++,
-        kind: val.kind
+        kind: val.kind,
       });
     });
   });
@@ -97,5 +97,5 @@ SearchBox.propTypes = {
   showSearchBox: PropTypes.bool.isRequired,
   stories: PropTypes.arrayOf(PropTypes.object),
   onSelectStory: PropTypes.func.isRequired,
-  handleEvent: PropTypes.func.isRequired
+  handleEvent: PropTypes.func.isRequired,
 };

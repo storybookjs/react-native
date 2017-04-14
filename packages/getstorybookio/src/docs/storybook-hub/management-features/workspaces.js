@@ -14,5 +14,5 @@ export default {
     You'll have access to more workspaces as you are added as a collaborator. Then you can see apps from those workspaces as well.
 
     > Currently, we don't allow the creation of additional workspaces. But we'll be adding that feature soon.
-  `
+  `,
 };

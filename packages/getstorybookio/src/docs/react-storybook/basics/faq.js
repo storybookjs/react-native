@@ -13,5 +13,5 @@ export default {
     ~~~
     npm test -- --coverage --collectCoverageFrom='["src/**/*.{js,jsx}","!src/**/stories/*"]'
     ~~~
-  `
+  `,
 };

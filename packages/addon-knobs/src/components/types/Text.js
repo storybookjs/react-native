@@ -13,7 +13,7 @@ const styles = {
   borderRadius: 2,
   fontSize: 11,
   padding: '5px',
-  color: '#555'
+  color: '#555',
 };
 
 class TextType extends React.Component {
@@ -34,7 +34,7 @@ class TextType extends React.Component {
 
 TextType.propTypes = {
   knob: PropTypes.object,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 TextType.serialize = function(value) {

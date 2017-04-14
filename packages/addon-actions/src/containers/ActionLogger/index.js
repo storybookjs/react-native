@@ -38,7 +38,7 @@ export default class ActionLogger extends React.Component {
   render() {
     const props = {
       actions: this.state.actions,
-      onClear: () => this.clearActions()
+      onClear: () => this.clearActions(),
     };
     return <ActionLoggerComponent {...props} />;
   }

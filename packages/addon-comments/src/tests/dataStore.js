@@ -17,14 +17,14 @@ const myDb = {
       },
       set() {
         return new Promise(dbSetPromiseReturn);
-      }
+      },
     };
   },
   persister: {
     _getAppInfo() {
       return Promise.resolve(true);
-    }
-  }
+    },
+  },
 };
 addons.setDatabase(myDb);
 
@@ -38,14 +38,14 @@ describe('DataStore', () => {
     expect(dbGetPromiseReturn.called).to.equal(false);
     expect(theStore.currentStory).to.deep.equal({
       sbKind: 'Components',
-      sbStory: 'CommentList - No Comments'
+      sbStory: 'CommentList - No Comments',
     });
   });
 
   it('set current user', () => {
     theStore.setCurrentUser({
       id: 'user-id',
-      name: 'user-name'
+      name: 'user-name',
     });
 
     expect(theStore.user).to.deep.equal({ id: 'user-id', name: 'user-name' });
@@ -57,7 +57,7 @@ describe('DataStore', () => {
     expect(dbGetPromiseReturn.called).to.equal(true);
     expect(theStore.currentStory).to.deep.equal({
       sbKind: 'Components',
-      sbStory: 'CommentList - No Comments'
+      sbStory: 'CommentList - No Comments',
     });
   });
 
@@ -65,7 +65,7 @@ describe('DataStore', () => {
     const comment = {
       text: 'sample comment',
       time: 1476435982029,
-      userId: 'user-id'
+      userId: 'user-id',
     };
 
     theStore.addComment(comment);

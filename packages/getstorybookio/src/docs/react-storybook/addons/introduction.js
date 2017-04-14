@@ -1,7 +1,7 @@
 import { stripIndent } from 'common-tags';
 
 const images = {
-  addonActionsDemo: require('./static/addon-actions-demo.gif')
+  addonActionsDemo: require('./static/addon-actions-demo.gif'),
 };
 
 export default {
@@ -107,5 +107,5 @@ export default {
     * [Using addons](/docs/react-storybook/addons/using-addons)
     * [Addon gallery](/docs/react-storybook/addons/addon-gallery)
     * [Write your own addon](/docs/react-storybook/addons/writing-addons)
-  `
+  `,
 };

@@ -18,5 +18,5 @@ export default {
 
     With that, you can write test specs directly inside stories.
     Additionally, you also can use your CI server to run those tests.
-  `
+  `,
 };

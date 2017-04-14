@@ -77,5 +77,5 @@ export default {
 
     Given possible values for each prop, renders your component with all combinations of prop values. Useful for finding edge cases or just seeing all component states at once.
 
-  `
+  `,
 };

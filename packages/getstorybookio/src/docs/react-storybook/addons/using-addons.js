@@ -2,7 +2,7 @@ import { stripIndent } from 'common-tags';
 
 const images = {
   storiesWithoutNotes: require('./static/stories-without-notes.png'),
-  storiesWithNotes: require('./static/stories-with-notes.png')
+  storiesWithNotes: require('./static/stories-with-notes.png'),
 };
 
 export default {
@@ -67,5 +67,5 @@ export default {
     > This particular addon has created a panel in Storybook. Some addons may not create a panel and may use some other Storybook platform features.
     >
     > So, look at the addon’s own documentation on how to use it.
-  `
+  `,
 };

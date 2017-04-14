@@ -1,17 +1,17 @@
-{
+module.exports = {
   "extends": [
-    "./node_modules/eslint-config-airbnb-base/rules/es6.js"
+    "./node_modules/eslint-config-airbnb-base/rules/es6.js",
   ],
   "plugins": [
-    "prettier"
+    "prettier",
   ],
   "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
   },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
   },
   "rules": {
     "strict": 0,
@@ -19,11 +19,10 @@
       "printWidth": 100,
       "tabWidth": 2,
       "bracketSpacing": true,
-      # "trailingComma": "es5",
-      "singleQuote": true
+      "trailingComma": "all",
+      "singleQuote": true,
     }],
     "quotes": ["warn", "single"],
-    "arrow-parens": ["warn", "as-needed"]
-    # "comma-dangle": ["warn", "always"]
-  }
+    "arrow-parens": ["warn", "as-needed"],
+  },
 }

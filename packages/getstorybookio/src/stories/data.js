@@ -2,12 +2,12 @@ export const docsData = {
   categories: [
     {
       id: 'cat-1',
-      title: 'CAT 1'
+      title: 'CAT 1',
     },
     {
       id: 'cat-2',
-      title: 'CAT 2'
-    }
+      title: 'CAT 2',
+    },
   ],
   sections: [
     {
@@ -16,8 +16,8 @@ export const docsData = {
       items: [
         { id: 'getting-started', title: 'Getting Started' },
         { id: 'writing-stories', title: 'Writing Stories' },
-        { id: 'build-as-a-static-app', title: 'Build as a Static App' }
-      ]
+        { id: 'build-as-a-static-app', title: 'Build as a Static App' },
+      ],
     },
     {
       id: 'configurations',
@@ -25,9 +25,9 @@ export const docsData = {
       items: [
         { id: 'default-config', title: 'Default Config' },
         { id: 'webpack', title: 'Webpack' },
-        { id: 'babel', title: 'Babel' }
-      ]
-    }
+        { id: 'babel', title: 'Babel' },
+      ],
+    },
   ],
   selectedItem: {
     id: 'writing-stories',
@@ -55,34 +55,34 @@ storiesOf('Toggle', module)
     return <Toggle value={false} onChange={linkTo('Toggle', 'on')} />
   });
 ~~~
-    `
+    `,
   },
   featuredStorybooks: [
     {
       owner: 'https://avatars0.githubusercontent.com/u/698437?v=3&s=200',
       storybook: {
         name: 'React Dates',
-        link: 'http://airbnb.io/react-dates/'
+        link: 'http://airbnb.io/react-dates/',
       },
-      source: 'https://github.com/airbnb/react-dates'
+      source: 'https://github.com/airbnb/react-dates',
     },
 
     {
       owner: 'https://avatars3.githubusercontent.com/u/239676?v=3&s=460',
       storybook: {
         name: 'React Native Web',
-        link: 'https://necolas.github.io/react-native-web/storybook'
+        link: 'https://necolas.github.io/react-native-web/storybook',
       },
-      source: 'https://github.com/necolas/react-native-web'
+      source: 'https://github.com/necolas/react-native-web',
     },
 
     {
       owner: 'https://avatars1.githubusercontent.com/u/15616844?v=3&s=200',
       storybook: {
         name: 'React Button',
-        link: 'http://kadira-samples.github.io/react-button/'
+        link: 'http://kadira-samples.github.io/react-button/',
       },
-      source: 'https://github.com/kadira-samples/react-button'
-    }
-  ]
+      source: 'https://github.com/kadira-samples/react-button',
+    },
+  ],
 };

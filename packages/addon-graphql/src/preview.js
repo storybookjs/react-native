@@ -5,7 +5,7 @@ import 'graphiql/graphiql.css';
 
 const FETCH_OPTIONS = {
   method: 'post',
-  headers: { 'Content-Type': 'application/json' }
+  headers: { 'Content-Type': 'application/json' },
 };
 
 function getDefautlFetcher(url) {

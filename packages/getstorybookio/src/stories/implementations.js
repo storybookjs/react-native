@@ -62,5 +62,5 @@ export default {
       selectedSection={docsData.selectedItem.sectionId}
       selectedItem={docsData.selectedItem.id}
     />
-  )
+  ),
 };

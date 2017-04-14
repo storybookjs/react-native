@@ -14,7 +14,7 @@ export default class Container extends Component {
       user: null,
       users: [],
       comments: [],
-      loading: true
+      loading: true,
     };
   }
 
@@ -86,7 +86,7 @@ export default class Container extends Component {
     const comment = {
       text,
       time,
-      userId: user.id
+      userId: user.id,
     };
 
     this.store.addComment(comment);
@@ -103,7 +103,7 @@ export default class Container extends Component {
       loading: this.state.loading,
       appNotAvailable: this.state.appNotAvailable,
       deleteComment: commentId => this.deleteComment(commentId),
-      addComment: text => this.addComment(text)
+      addComment: text => this.addComment(text),
     };
 
     return <CommentsPanel {...props} />;
@@ -111,5 +111,5 @@ export default class Container extends Component {
 }
 
 Container.propTypes = {
-  api: PropTypes.object
+  api: PropTypes.object,
 };

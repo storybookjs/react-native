@@ -18,5 +18,5 @@ export default {
     > **Important**
 
     > Storybook will inject these tags to the iframe where your components are rendered. So, these won’t be loaded into the main Storybook UI.
-  `
+  `,
 };

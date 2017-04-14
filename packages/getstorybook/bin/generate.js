@@ -28,7 +28,7 @@ logger.log(chalk.inverse(`\n ${welcomeMessage} \n`));
 const useYarn = Boolean(program.useNpm !== true) && hasYarn();
 
 const npmOptions = {
-  useYarn
+  useYarn,
 };
 
 const runStorybookCommand = useYarn ? 'yarn run storybook' : 'npm run storybook';
@@ -36,7 +36,7 @@ const runStorybookCommand = useYarn ? 'yarn run storybook' : 'npm run storybook'
 // Update notify code.
 updateNotifier({
   pkg,
-  updateCheckInterval: 1000 * 60 * 60 // every hour (we could increase this later on.)
+  updateCheckInterval: 1000 * 60 * 60, // every hour (we could increase this later on.)
 }).notify();
 
 let projectType;
@@ -44,7 +44,7 @@ let projectType;
 let done = commandLog('Detecting project type');
 try {
   projectType = detect({
-    force: program.force
+    force: program.force,
   });
 } catch (ex) {
   done(ex.message);

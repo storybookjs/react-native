@@ -16,8 +16,8 @@ const compose = setDefaults({
   pure: true,
   env: {
     context: () => context,
-    actions: () => actions
-  }
+    actions: () => actions,
+  },
 });
 
 export default compose;

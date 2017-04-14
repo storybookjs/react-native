@@ -30,7 +30,7 @@ export default function testStorySnapshots(options = {}) {
     const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
-      dirname: configDirPath
+      dirname: configDirPath,
     };
     const babelConfig = loadBabelConfig(configDirPath);
 
@@ -41,7 +41,7 @@ export default function testStorySnapshots(options = {}) {
     require.requireActual(configPath);
   } else {
     throw new Error(
-      'storyshots is intended only to be used with react storybook or react native storybook'
+      'storyshots is intended only to be used with react storybook or react native storybook',
     );
   }
 

@@ -14,7 +14,7 @@ describe('manager.ui.components.left_panel.index', () => {
     const storyFilter = 'xxxxx';
 
     const wrap = shallow(
-      <LeftPanel openShortcutsHelp={openShortcutsHelp} storyFilter={storyFilter} />
+      <LeftPanel openShortcutsHelp={openShortcutsHelp} storyFilter={storyFilter} />,
     );
     const header = wrap.find(Header).first();
     expect(header.props().openShortcutsHelp).to.be.equal(openShortcutsHelp);
@@ -31,13 +31,13 @@ describe('manager.ui.components.left_panel.index', () => {
     const stories = [{ kind: 'kk', stories: ['bb'] }];
 
     const wrap = shallow(
-      <LeftPanel stories={stories} selectedKind={selectedKind} selectedStory={selectedStory} />
+      <LeftPanel stories={stories} selectedKind={selectedKind} selectedStory={selectedStory} />,
     );
     const header = wrap.find(Stories).first();
     expect(header.props()).to.deep.equal({
       stories,
       selectedKind,
-      selectedStory
+      selectedStory,
     });
   });
 

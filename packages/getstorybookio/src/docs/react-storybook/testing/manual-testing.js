@@ -20,5 +20,5 @@ export default {
     > We will be releasing it in the first week of October.
     > Join our [Newsletter](http://tinyletter.com/storybooks) or [Slack Team](https://storybooks-slackin.herokuapp.com/) to get updates.
 
-  `
+  `,
 };

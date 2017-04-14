@@ -53,5 +53,5 @@ export default class CommentList extends Component {
 CommentList.propTypes = {
   comments: PropTypes.array,
   user: PropTypes.object,
-  deleteComment: PropTypes.func
+  deleteComment: PropTypes.func,
 };

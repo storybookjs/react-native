@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 class Navigation extends React.Component {
   renderHeading(caption) {
     const style = {
-      ...styles.h3
+      ...styles.h3,
     };
 
     return <h3 style={style}>{caption}</h3>;
@@ -53,7 +53,7 @@ Navigation.propTypes = {
   sections: PropTypes.array,
   selectedSection: PropTypes.string,
   selectedItem: PropTypes.string,
-  prefix: PropTypes.string
+  prefix: PropTypes.string,
 };
 
 export default Navigation;

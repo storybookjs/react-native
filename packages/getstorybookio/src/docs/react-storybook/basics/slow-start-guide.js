@@ -1,7 +1,7 @@
 import { stripIndent } from 'common-tags';
 
 const images = {
-  basicsStories: require('./static/basic-stories.png')
+  basicsStories: require('./static/basic-stories.png'),
 };
 
 export default {
@@ -103,5 +103,5 @@ export default {
     ![](${images.basicsStories})
 
     Now you can change components and write stories whenever you need to. You'll get those changes into Storybook in a snap with the help of Webpack's HMR API.
-  `
+  `,
 };

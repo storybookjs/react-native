@@ -28,7 +28,7 @@ const server = new Server({
   configDir,
   environment: program.environment,
   manualId: program.manualId,
-  secured: program.secured
+  secured: program.secured,
 });
 
 server.listen(...listenAddr, err => {
@@ -48,10 +48,10 @@ if (!program.skipPackager) {
       'node node_modules/react-native/local-cli/cli.js start',
       `--projectRoots ${projectRoots.join(',')}`,
       `--root ${projectDir}`,
-      program.resetCache && '--reset-cache'
+      program.resetCache && '--reset-cache',
     ]
       .filter(x => x)
       .join(' '),
-    { async: true }
+    { async: true },
   );
 }

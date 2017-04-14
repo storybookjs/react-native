@@ -6,7 +6,7 @@ configure(
   () => {
     require('./stories');
   },
-  module
+  module,
 );
 
 const StorybookUI = getStorybookUI({ port: 7007, host: 'localhost' });

@@ -11,7 +11,7 @@ const style = {
   flex: 1,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
 };
 
 export default class ReactProvider extends Provider {
@@ -43,20 +43,20 @@ export default class ReactProvider extends Provider {
               />
             </div>
           );
-        }
+        },
       },
       test2: {
         title: 'Test 2',
-        render: () => <div style={style}>II</div>
+        render: () => <div style={style}>II</div>,
       },
       test3: {
         title: 'Test 3',
-        render: () => <div style={style}>III</div>
+        render: () => <div style={style}>III</div>,
       },
       test4: {
         title: 'Test 4',
-        render: () => <div style={style}>IV</div>
-      }
+        render: () => <div style={style}>IV</div>,
+      },
     };
     return panels;
   }
@@ -77,20 +77,20 @@ export default class ReactProvider extends Provider {
   handleAPI(api) {
     this.api = api;
     this.api.setOptions({
-      name: 'REACT-STORYBOOK'
+      name: 'REACT-STORYBOOK',
     });
 
     // set stories
     this.api.setStories([
       {
         kind: 'Component 1',
-        stories: ['State 1', 'State 2']
+        stories: ['State 1', 'State 2'],
       },
 
       {
         kind: 'Component 2',
-        stories: ['State a', 'State b']
-      }
+        stories: ['State a', 'State b'],
+      },
     ]);
 
     // listen to the story change and update the preview.
@@ -113,7 +113,7 @@ export default class ReactProvider extends Provider {
         ctrlKey: true,
         shiftKey: true,
         keyCode: keycode('F'),
-        preventDefault() {}
+        preventDefault() {},
       };
       const parsedEvent = parseKeyEvent(event);
       this.api.handleShortcut(parsedEvent);

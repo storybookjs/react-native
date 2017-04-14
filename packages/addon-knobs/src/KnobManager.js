@@ -28,7 +28,7 @@ export default class KnobManager {
     const knobInfo = {
       ...options,
       name,
-      defaultValue
+      defaultValue,
     };
 
     knobStore.set(name, knobInfo);
@@ -72,7 +72,7 @@ export default class KnobManager {
         // emit to the channel and trigger a panel re-render
         this.channel.emit('addon:knobs:setKnobs', this.knobStore.getAll());
       },
-      PANEL_UPDATE_INTERVAL
+      PANEL_UPDATE_INTERVAL,
     );
   }
 }

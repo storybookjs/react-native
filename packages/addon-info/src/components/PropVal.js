@@ -3,37 +3,37 @@ import createFragment from 'react-addons-create-fragment';
 
 const valueStyles = {
   func: {
-    color: '#170'
+    color: '#170',
   },
 
   attr: {
-    color: '#666'
+    color: '#666',
   },
 
   object: {
-    color: '#666'
+    color: '#666',
   },
 
   array: {
-    color: '#666'
+    color: '#666',
   },
 
   number: {
-    color: '#a11'
+    color: '#a11',
   },
 
   string: {
     color: '#22a',
-    wordBreak: 'break-word'
+    wordBreak: 'break-word',
   },
 
   bool: {
-    color: '#a11'
+    color: '#a11',
   },
 
   empty: {
-    color: '#777'
-  }
+    color: '#777',
+  },
 };
 
 function previewArray(val) {

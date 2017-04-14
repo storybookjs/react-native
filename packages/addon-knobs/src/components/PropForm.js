@@ -13,8 +13,8 @@ const stylesheet = {
     boxSizing: 'border-box',
     width: '100%',
     borderCollapse: 'separate',
-    borderSpacing: '5px'
-  }
+    borderSpacing: '5px',
+  },
 };
 
 export default class propForm extends React.Component {
@@ -52,5 +52,5 @@ propForm.displayName = 'propForm';
 
 propForm.propTypes = {
   knobs: PropTypes.array.isRequired,
-  onFieldChange: PropTypes.func.isRequired
+  onFieldChange: PropTypes.func.isRequired,
 };

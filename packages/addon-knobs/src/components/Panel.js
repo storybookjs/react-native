@@ -5,12 +5,12 @@ import Types from './types';
 
 const styles = {
   panelWrapper: {
-    width: '100%'
+    width: '100%',
   },
   panel: {
     padding: '5px',
     width: 'auto',
-    position: 'relative'
+    position: 'relative',
   },
   noKnobs: {
     fontFamily: `
@@ -21,7 +21,7 @@ const styles = {
     width: '100%',
     textAlign: 'center',
     color: 'rgb(190, 190, 190)',
-    padding: '10px'
+    padding: '10px',
   },
   resetButton: {
     position: 'absolute',
@@ -34,8 +34,8 @@ const styles = {
     padding: '5px 10px',
     borderRadius: '4px 0 0 0',
     color: 'rgba(0, 0, 0, 0.5)',
-    outline: 'none'
-  }
+    outline: 'none',
+  },
 };
 
 export default class Panel extends React.Component {
@@ -90,7 +90,7 @@ export default class Panel extends React.Component {
     const newKnobs = { ...knobs };
     newKnobs[name] = {
       ...newKnobs[name],
-      ...changedKnob
+      ...changedKnob,
     };
 
     this.setState({ knobs: newKnobs });
@@ -124,5 +124,5 @@ export default class Panel extends React.Component {
 Panel.propTypes = {
   channel: PropTypes.object,
   onReset: PropTypes.object,
-  api: PropTypes.object
+  api: PropTypes.object,
 };

@@ -12,11 +12,11 @@ module.exports = storybookBaseConfig => {
       options: {
         postcss: [
           autoprefixer({
-            browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
-          })
-        ]
-      }
-    })
+            browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
+          }),
+        ],
+      },
+    }),
   ];
   newConfig.module.rules = [
     ...storybookBaseConfig.module.rules,
@@ -29,11 +29,11 @@ module.exports = storybookBaseConfig => {
         {
           loader: 'css-loader',
           options: {
-            importLoaders: 1
-          }
+            importLoaders: 1,
+          },
         },
-        'postcss-loader'
-      ]
+        'postcss-loader',
+      ],
     },
     {
       test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
@@ -41,8 +41,8 @@ module.exports = storybookBaseConfig => {
       exclude: excludePaths,
       loader: 'file-loader',
       query: {
-        name: 'static/media/[name].[hash:8].[ext]'
-      }
+        name: 'static/media/[name].[hash:8].[ext]',
+      },
     },
     {
       test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
@@ -51,9 +51,9 @@ module.exports = storybookBaseConfig => {
       loader: 'url-loader',
       query: {
         limit: 10000,
-        name: 'static/media/[name].[hash:8].[ext]'
-      }
-    }
+        name: 'static/media/[name].[hash:8].[ext]',
+      },
+    },
   ];
 
   // Return the altered config

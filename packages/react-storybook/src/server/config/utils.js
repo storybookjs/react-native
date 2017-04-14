@@ -20,7 +20,7 @@ export function loadEnv(options = {}) {
     // In production we set this to dot(.) to allow the browser to access these assests
     // even when deployed inside a subpath. (like in GitHub pages)
     // In development this is just empty as we always serves from the root.
-    PUBLIC_URL: JSON.stringify(options.production ? '.' : '')
+    PUBLIC_URL: JSON.stringify(options.production ? '.' : ''),
   };
 
   Object.keys(process.env).filter(name => /^STORYBOOK_/.test(name)).forEach(name => {
@@ -28,6 +28,6 @@ export function loadEnv(options = {}) {
   });
 
   return {
-    'process.env': env
+    'process.env': env,
   };
 }

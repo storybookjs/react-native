@@ -12,7 +12,7 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const cc = 40;
       const mapper = state => ({
         aa: state.aa,
-        bb: state.bb
+        bb: state.bb,
       });
 
       const clientStore = new Podda({ aa, bb, cc });
@@ -29,7 +29,7 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const cc = 40;
       const mapper = (state, props) => ({
         aa: props.aa,
-        bb: props.bb
+        bb: props.bb,
       });
 
       const clientStore = new Podda();
@@ -46,7 +46,7 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const cc = 40;
       const mapper = (state, props, env) => ({
         aa: env.aa,
-        bb: env.bb
+        bb: env.bb,
       });
 
       const clientStore = new Podda();
@@ -78,7 +78,7 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const cc = 40;
       const mapper = state => ({
         aa: state.aa,
-        bb: state.bb
+        bb: state.bb,
       });
 
       const clientStore = new Podda({ aa, bb, cc });
@@ -96,7 +96,7 @@ describe('manager.ui.libs.gen_podda_loader', () => {
       const cc = 40;
       const mapper = state => ({
         aa: state.aa,
-        bb: state.bb
+        bb: state.bb,
       });
 
       const clientStore = new Podda({ aa, bb, cc });

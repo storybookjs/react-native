@@ -18,7 +18,7 @@ export class Code extends React.Component {
   render() {
     const codeStyle = {
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-      backgroundColor: '#fafafa'
+      backgroundColor: '#fafafa',
     };
 
     const preStyle = {
@@ -26,7 +26,7 @@ export class Code extends React.Component {
       backgroundColor: '#fafafa',
       padding: '.5rem',
       lineHeight: 1.5,
-      overflowX: 'scroll'
+      overflowX: 'scroll',
     };
 
     const className = this.props.language ? `language-${this.props.language}` : '';
@@ -49,7 +49,7 @@ export class Pre extends React.Component {
       backgroundColor: '#fafafa',
       padding: '.5rem',
       lineHeight: 1.5,
-      overflowX: 'scroll'
+      overflowX: 'scroll',
     };
 
     return <pre style={style}>{this.props.children}</pre>;
@@ -62,7 +62,7 @@ export class Blockquote extends React.Component {
       fontSize: '1.88em',
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
       borderLeft: '8px solid #fafafa',
-      padding: '1rem'
+      padding: '1rem',
     };
 
     return <blockquote style={style}>{this.props.children}</blockquote>;

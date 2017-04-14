@@ -17,7 +17,7 @@ marked.setOptions({
   pedantic: false,
   sanitize: true,
   smartLists: true,
-  smartypants: false
+  smartypants: false,
 });
 
 export default class CommentForm extends Component {
@@ -85,5 +85,5 @@ export default class CommentForm extends Component {
 }
 
 CommentForm.propTypes = {
-  addComment: PropTypes.func
+  addComment: PropTypes.func,
 };

@@ -9,7 +9,7 @@ const styles = {
   outline: 'none',
   border: '1px solid #ececec',
   fontSize: '12px',
-  color: '#555'
+  color: '#555',
 };
 
 class BooleanType extends React.Component {
@@ -31,7 +31,7 @@ class BooleanType extends React.Component {
 
 BooleanType.propTypes = {
   knob: PropTypes.object,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 BooleanType.serialize = function(value) {

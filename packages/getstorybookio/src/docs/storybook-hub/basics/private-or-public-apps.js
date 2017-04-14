@@ -20,5 +20,5 @@ export default {
 
   > Anyway, since your GitHub repo is private, no one in the public will be able to see your storybooks, unless you share them.
   Additionally, our storybook URLs are hard to guess. (They carried an UUID)
-    `
+    `,
 };

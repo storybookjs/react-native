@@ -8,11 +8,11 @@ import pick from 'lodash.pick';
 const scrollStyle = {
   height: 'calc(100vh - 105px)',
   marginTop: 10,
-  overflowY: 'auto'
+  overflowY: 'auto',
 };
 
 const mainStyle = {
-  padding: '10px 0 10px 10px'
+  padding: '10px 0 10px 10px',
 };
 
 const storyProps = ['stories', 'selectedKind', 'selectedStory', 'onSelectStory'];
@@ -42,7 +42,7 @@ LeftPanel.propTypes = {
 
   openShortcutsHelp: PropTypes.func,
   name: PropTypes.string,
-  url: PropTypes.string
+  url: PropTypes.string,
 };
 
 export default LeftPanel;

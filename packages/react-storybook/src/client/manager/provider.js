@@ -22,7 +22,7 @@ export default class ReactProvider extends Provider {
   renderPreview(selectedKind, selectedStory) {
     const queryParams = {
       selectedKind,
-      selectedStory
+      selectedStory,
     };
 
     // Add the react-perf query string to the iframe if that present.

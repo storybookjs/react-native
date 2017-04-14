@@ -8,8 +8,8 @@ describe('manager.ui.config.handle_keyevents', () => {
   it('should call the correct action', () => {
     const actions = {
       shortcuts: {
-        handleEvent: sinon.mock()
-      }
+        handleEvent: sinon.mock(),
+      },
     };
 
     const originalOnkeydown = window.onkeydown;
@@ -24,8 +24,8 @@ describe('manager.ui.config.handle_keyevents', () => {
         tagName: 'DIV',
         getAttribute() {
           return null;
-        }
-      }
+        },
+      },
     };
 
     window.onkeydown(e);
@@ -37,8 +37,8 @@ describe('manager.ui.config.handle_keyevents', () => {
   it('should not call any actions if the event target is an input', () => {
     const actions = {
       shortcuts: {
-        handleEvent: sinon.mock()
-      }
+        handleEvent: sinon.mock(),
+      },
     };
 
     const originalOnkeydown = window.onkeydown;
@@ -53,8 +53,8 @@ describe('manager.ui.config.handle_keyevents', () => {
         tagName: 'INPUT',
         getAttribute() {
           return null;
-        }
-      }
+        },
+      },
     };
 
     window.onkeydown(e);
@@ -66,8 +66,8 @@ describe('manager.ui.config.handle_keyevents', () => {
   it('should not call any actions if the event target has contenteditable enabled', () => {
     const actions = {
       shortcuts: {
-        handleEvent: sinon.mock()
-      }
+        handleEvent: sinon.mock(),
+      },
     };
 
     const originalOnkeydown = window.onkeydown;
@@ -82,8 +82,8 @@ describe('manager.ui.config.handle_keyevents', () => {
         tagName: 'DIV',
         getAttribute(attr) {
           return /contenteditable/i.test(attr) ? '' : null;
-        }
-      }
+        },
+      },
     };
 
     window.onkeydown(e);

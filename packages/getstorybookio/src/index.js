@@ -15,5 +15,5 @@ ReactDOM.render(
     <Route path="/docs(/:catId(/:sectionId/(:itemId)))" component={Docs} />
 
   </Router>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

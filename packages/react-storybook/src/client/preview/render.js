@@ -67,7 +67,7 @@ export function renderMain(data, storyStore) {
 
   const context = {
     kind: selectedKind,
-    story: selectedStory
+    story: selectedStory,
   };
 
   const element = story(context);
@@ -79,7 +79,7 @@ export function renderMain(data, storyStore) {
       description: stripIndents`
         Did you forget to return the React element from the story?
         Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
-      `
+      `,
       /* eslint-enable */
     };
     return renderError(error);
@@ -91,7 +91,7 @@ export function renderMain(data, storyStore) {
       description: stripIndents`
         Seems like you are not returning a correct React element from the story.
         Could you double check that?
-      `
+      `,
     };
     return renderError(error);
   }

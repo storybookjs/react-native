@@ -8,8 +8,8 @@ export default [
       require('./basics/slow-start-guide').default,
       require('./basics/writing-stories').default,
       require('./basics/exporting-storybook').default,
-      require('./basics/faq').default
-    ]
+      require('./basics/faq').default,
+    ],
   },
   {
     id: 'configurations',
@@ -21,8 +21,8 @@ export default [
       require('./configurations/add-custom-head-tags').default,
       require('./configurations/serving-static-files').default,
       require('./configurations/env-vars').default,
-      require('./configurations/cli-options').default
-    ]
+      require('./configurations/cli-options').default,
+    ],
   },
   {
     id: 'testing',
@@ -32,8 +32,8 @@ export default [
       require('./testing/structural-testing').default,
       require('./testing/interaction-testing').default,
       require('./testing/css-style-testing').default,
-      require('./testing/manual-testing').default
-    ]
+      require('./testing/manual-testing').default,
+    ],
   },
   {
     id: 'addons',
@@ -43,7 +43,7 @@ export default [
       require('./addons/using-addons').default,
       require('./addons/addon-gallery').default,
       require('./addons/writing-addons').default,
-      require('./addons/api').default
-    ]
-  }
+      require('./addons/api').default,
+    ],
+  },
 ];

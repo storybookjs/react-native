@@ -17,19 +17,19 @@ describe('manager.ui.config.handle_routing', () => {
         selectedKind: 'kk',
         selectedStory: 'ss',
         customQueryParams: {
-          customText: 'test'
+          customText: 'test',
         },
         shortcutOptions: {
           goFullScreen: false,
           showDownPanel: true,
           showLeftPanel: true,
-          downPanelInRight: true
+          downPanelInRight: true,
         },
-        selectedDownPanel: 'pp'
+        selectedDownPanel: 'pp',
       };
 
       const clientStore = {
-        getAll: () => state
+        getAll: () => state,
       };
 
       // eslint-disable-next-line max-len
@@ -44,7 +44,7 @@ describe('manager.ui.config.handle_routing', () => {
         left: true,
         panelRight: true,
         downPanel: 'pp',
-        customText: 'test'
+        customText: 'test',
       };
 
       const originalPushState = window.history.pushState;
@@ -63,21 +63,21 @@ describe('manager.ui.config.handle_routing', () => {
       const actions = {
         api: {
           selectStory: sinon.mock(),
-          setQueryParams: sinon.mock()
+          setQueryParams: sinon.mock(),
         },
         shortcuts: {
-          setOptions: sinon.mock()
+          setOptions: sinon.mock(),
         },
         ui: {
-          selectDownPanel: sinon.mock()
-        }
+          selectDownPanel: sinon.mock(),
+        },
       };
 
       // eslint-disable-next-line max-len
       const url = '?selectedKind=kk&selectedStory=ss&full=1&down=0&left=0&panelRight=0&downPanel=test&customText=teststring';
 
       const location = {
-        search: url
+        search: url,
       };
       window.location.search = url;
       handleInitialUrl(actions, location);
@@ -91,8 +91,8 @@ describe('manager.ui.config.handle_routing', () => {
           goFullScreen: true,
           showDownPanel: false,
           showLeftPanel: false,
-          downPanelInRight: false
-        })
+          downPanelInRight: false,
+        }),
       ).to.be.true;
       expect(actions.ui.selectDownPanel.calledWith('test')).to.be.true;
       expect(actions.api.setQueryParams.calledWith({ customText: 'teststring' })).to.be.true;

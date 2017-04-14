@@ -69,7 +69,7 @@ class DownPanel extends Component {
 DownPanel.propTypes = {
   panels: PropTypes.object,
   onPanelSelect: PropTypes.func,
-  selectedPanel: PropTypes.string
+  selectedPanel: PropTypes.string,
 };
 
 export default DownPanel;

@@ -1,12 +1,12 @@
 const data = {
   'react-storybook': {
     title: 'React Storybook',
-    sections: require('./react-storybook').default
+    sections: require('./react-storybook').default,
   },
   'storybook-hub': {
     title: 'Storybook Hub',
-    sections: require('./storybook-hub').default
-  }
+    sections: require('./storybook-hub').default,
+  },
 };
 
 export function getCategories() {
@@ -16,7 +16,7 @@ export function getCategories() {
   catIds.forEach(catId => {
     categories.push({
       id: catId,
-      title: data[catId].title
+      title: data[catId].title,
     });
   });
 

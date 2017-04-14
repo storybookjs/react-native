@@ -3,7 +3,7 @@ import { stripIndent } from 'common-tags';
 const images = {
   storybookComponents: require('./static/storybook-components.png'),
   storiesWithoutNotes: require('./static/stories-without-notes.png'),
-  storiesWithNotes: require('./static/stories-with-notes.png')
+  storiesWithNotes: require('./static/stories-with-notes.png'),
 };
 
 export default {
@@ -185,5 +185,5 @@ export default {
 
     Your packaged Storybook addon needed to be written in ES5. If you are using ES6, then you need to transpile it.
     In that case, we recommend to use [React CDK](https://github.com/kadirahq/react-cdk) for that.
-  `
+  `,
 };
