@@ -101,7 +101,7 @@ describe('manager.ui.libs.gen_podda_loader', () => {
 
       const onData = jest.fn();
       const stop = loader({ aa, bb, cc }, onData, {
-        context: () => ({ clientStore })
+        context: () => ({ clientStore }),
       });
       stop();
       clientStore.set('aa', 1000);

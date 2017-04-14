@@ -1,9 +1,8 @@
-/* eslint global-require: 0 */
-
 import fs from 'fs';
 import path from 'path';
 import JSON5 from 'json5';
 import defaultConfig from './config/babel';
+
 // avoid ESLint errors
 const logger = console;
 

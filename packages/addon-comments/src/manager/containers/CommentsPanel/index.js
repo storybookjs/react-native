@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
-/* eslint no-unused-vars:0 */
-
 import React, { Component } from 'react';
 import addons from '@kadira/storybook-addons';
-// import deepEquals from 'deep-equal';
 import CommentsPanel from '../../components/CommentsPanel/';
 import DataStore from './dataStore';
 

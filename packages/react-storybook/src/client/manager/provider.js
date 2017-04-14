@@ -1,5 +1,4 @@
 /* global location */
-/* eslint class-methods-use-this: 0 */
 
 import qs from 'qs';
 import React from 'react';

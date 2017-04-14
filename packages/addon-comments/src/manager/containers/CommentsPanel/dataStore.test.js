@@ -1,4 +1,4 @@
-import DataStore from '../manager/containers/CommentsPanel/dataStore';
+import DataStore from './dataStore';
 
 const user = {
   id: 'user-id',
