@@ -10,4 +10,5 @@ junit.xml
 coverage/
 *.lerna_backup
 build
+packages/examples/automated-*
 yarn.lock
