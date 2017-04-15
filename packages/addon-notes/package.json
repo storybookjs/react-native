@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
-    "test": "mocha --require .scripts/mocha_runner src/**/tests/**/*.j",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "storybook": "start-storybook -p 9010",
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
@@ -24,18 +24,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "babel-plugin-transform-runtime": "^6.5.0",
     "babel-cli": "^6.5.0",
-    "eslint": "^3.6.1",
-    "babel-eslint": "^7.0.0",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-react": "^6.2.2",
-    "mocha": "^3.1.0",
-    "chai": "^3.5.0",
-    "sinon": "^1.17.6",
-    "enzyme": "^2.2.0",
     "react-addons-test-utils": "^15.3.2",
-    "jsdom": "^8.3.1",
-    "eslint-plugin-jsx-a11y": "^0.6.2",
     "@kadira/storybook": "^2.20.1",
     "git-url-parse": "^6.0.1"
   },
@@ -47,9 +36,6 @@
     "babel-runtime": "^6.5.0"
   },
   "main": "dist/index.js",
-  "engines": {
-    "npm": "^3.0.0"
-  },
   "keywords": [
     "react",
     "storybook",
