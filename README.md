@@ -2,6 +2,12 @@
 
 This [Storybook](https://getstorybook.io) addon allows you to write notes for your stories.
 
+--- 
+
+**This repo has been deprecated because it's now included in https://github.com/storybooks/storybook**
+
+---
+
 ![Storybook Addon Notes Demo](docs/demo.png)
 
 ### Getting Started
