@@ -1,0 +1,1 @@
+export { setupGraphiQL } from './preview';
