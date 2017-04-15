@@ -41,9 +41,7 @@ export class PostmsgTransport {
     const buffer = this._buffer;
     this._buffer = [];
     buffer.forEach(item => {
-      this.send(item.event)
-        .then(item.resolve)
-        .catch(item.reject);
+      this.send(item.event).then(item.resolve).catch(item.reject);
     });
   }
 
@@ -61,7 +59,7 @@ export class PostmsgTransport {
   }
 
   _handleEvent(e) {
-    if(!e.data || typeof(e.data) !== 'string') {
+    if (!e.data || typeof e.data !== 'string') {
       return;
     }
     let data;
@@ -70,7 +68,7 @@ export class PostmsgTransport {
     } catch (e) {
       return null;
     }
-    if(!data || typeof(data) !== 'object') {
+    if (!data || typeof data !== 'object') {
       return null;
     }
     const { key, event } = data;

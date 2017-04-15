@@ -63,12 +63,10 @@ Notes.propTypes = {
 };
 
 // Register the addon with a unique name.
-addons.register('kadira/notes', (api) => {
+addons.register('kadira/notes', api => {
   // Also need to set a unique name to the panel.
   addons.addPanel('kadira/notes/panel', {
     title: 'Notes',
-    render: () => (
-      <Notes channel={addons.getChannel()} api={api} />
-    ),
+    render: () => <Notes channel={addons.getChannel()} api={api} />,
   });
 });
