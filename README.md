@@ -10,10 +10,19 @@ React Storybook is a UI development environment for your React components. With 
 We recently switched repo-strategy, this readme needs editing.
 
 ## Intro
-todo
+React Storybook runs outside of your app. So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
 
-## Quick getting started guide
-todo
+![React Storybook Screenshot](packages/react-storybook/docs/demo.gif)
+
+## Getting Started
+
+```js
+npm i -g getstorybook
+cd my-react-app
+getstorybook
+```
+
+For more information visit: https://getstorybook.io
 
 ## Main Projects
 todo
@@ -23,3 +32,12 @@ todo
 
 ## Contributing
 todo
+
+
+
+
+
+
+
+
+
