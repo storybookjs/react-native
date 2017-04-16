@@ -11,7 +11,6 @@
     "eslint-plugin-prettier": "^2.0.1",
     "jest": "^19.0.2",
     "jest-enzyme": "^3.0.1",
-    "jest-junit": "^1.4.0",
     "lerna": "2.0.0-rc.2",
     "prettier": "^1.1.0",
     "react": "^15.5.4",
