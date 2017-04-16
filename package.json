@@ -19,7 +19,7 @@
     "react-dom": "^15.5.4"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --hoist",
     "lint": "eslint .",
     "test": "jest --config .jestrc --verbose",
     "test:watch": "npm test -- --watch"
