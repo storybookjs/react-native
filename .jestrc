@@ -8,7 +8,8 @@
   "roots": ["packages"],
   "collectCoverage": false,
   "collectCoverageFrom": [
-    "packages/**/*.{js,jsx}"
+    "packages/**/*.{js,jsx}",
+    "!**/generators/**"
   ],
   "coverageDirectory": "coverage",
   "testEnvironment": "jsdom",
