@@ -6,6 +6,11 @@
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
   },
   "roots": ["packages"],
+  "collectCoverage": false,
+  "collectCoverageFrom": [
+    "packages/**/*.{js,jsx}"
+  ],
+  "coverageDirectory": "coverage",
   "testEnvironment": "jsdom",
   "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
   "snapshotSerializers": [

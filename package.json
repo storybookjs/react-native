@@ -2,6 +2,7 @@
   "name": "storybook",
   "devDependencies": {
     "babel-eslint": "^7.2.2",
+    "codecov": "^2.1.0",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
     "eslint": "^3.19.0",
@@ -22,6 +23,7 @@
     "lint": "eslint .",
     "test": "jest --config ./.jestrc",
     "test:watch": "npm test -- --watch",
-    "test-examples": "CI=true lerna run test"
+    "test-examples": "CI=true lerna run test",
+    "coverage": "codecov"
   }
 }
