@@ -9,7 +9,6 @@
   "license": "MIT",
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
-    "test": "echo \"Error: no test specified\" && exit 0",
     "storybook": "start-storybook -p 9010",
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
