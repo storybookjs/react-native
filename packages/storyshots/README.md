@@ -51,7 +51,7 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 
 ### `configPath`
 
-By default Storyshots assume the default config directory path for your project as below:
+By default, Storyshots assumes the config directory path for your project as below:
 
 * For React Storybook: `.storybook`
 * For React Native Storybook: `storybook`
@@ -66,21 +66,33 @@ initStoryshots({
 
 ### `suit`
 
-By default, we group stories inside Jest test suit called "StoryShots". You could change it like this:
+By default, Storyshots groups stories inside a Jest test suit called "Storyshots". You could change it like this:
 
 ```js
 initStoryshots({
-  suit: 'MyStoryShots'
+  suit: 'MyStoryshots'
 });
 ```
 
-### `storyRegex`
+### `storyKindRegex`
 
-If you'd like to only run a subset of the stories for your snapshot tests:
+If you'd like to only run a subset of the stories for your snapshot tests based on the story's kind:
 
 ```js
 initStoryshots({
-  storyRegex: /buttons/
+  storyKindRegex: /^MyComponent$/
+});
+```
+
+This can be useful if you want to separate the snapshots in directories next to each component. See an example [here](https://github.com/storybooks/storybook/issues/892).
+
+### `storyNameRegex`
+
+If you'd like to only run a subset of the stories for your snapshot tests based on the story's name:
+
+```js
+initStoryshots({
+  storyNameRegex: /buttons/
 });
 ```
 
