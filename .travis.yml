@@ -12,6 +12,6 @@ after_success: ./scripts/travis/after_success.sh
 script:
   - "npm run lint"
   - "npm run test"
-  - "lerna run test"
+  - "npm run test-examples"
 git:
   depth: 1
