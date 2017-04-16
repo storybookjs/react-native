@@ -1,21 +1,20 @@
 import initApi from '../init_api';
-import sinon from 'sinon';
 
 describe('manager.api.config.initApi', () => {
   it('should expose correct API methods', done => {
     const actions = {
       api: {
-        setStories: sinon.stub(),
-        selectStory: sinon.stub(),
-        setQueryParams: sinon.stub(),
+        setStories: jest.fn(),
+        selectStory: jest.fn(),
+        setQueryParams: jest.fn(),
       },
       shortcuts: {
-        handleEvent: sinon.stub(),
+        handleEvent: jest.fn(),
       },
     };
 
     const clientStore = {
-      subscribe: sinon.stub(),
+      subscribe: jest.fn(),
     };
 
     const provider = {
@@ -38,7 +37,7 @@ describe('manager.api.config.initApi', () => {
     const selectedStory = 'u8sd';
 
     const clientStore = {
-      subscribe: sinon.stub(),
+      subscribe: jest.fn(),
       getAll: () => ({
         selectedKind,
         selectedStory,
@@ -57,7 +56,7 @@ describe('manager.api.config.initApi', () => {
 
     initApi(provider, clientStore, actions);
     // calling the subscription
-    clientStore.subscribe.args[0][0]();
+    clientStore.subscribe.mock.calls[0][0]();
   });
 
   it('should support to add multiple onStory callback', done => {
@@ -66,7 +65,7 @@ describe('manager.api.config.initApi', () => {
     const selectedStory = 'u8sd';
 
     const clientStore = {
-      subscribe: sinon.stub(),
+      subscribe: jest.fn(),
       getAll: () => ({
         selectedKind,
         selectedStory,
@@ -90,7 +89,7 @@ describe('manager.api.config.initApi', () => {
 
     initApi(provider, clientStore, actions);
     // calling the subscription
-    clientStore.subscribe.args[0][0]();
+    clientStore.subscribe.mock.calls[0][0]();
   });
 
   it('should support a way to remove onStory callback', done => {
@@ -99,7 +98,7 @@ describe('manager.api.config.initApi', () => {
     const selectedStory = 'u8sd';
 
     const clientStore = {
-      subscribe: sinon.stub(),
+      subscribe: jest.fn(),
       getAll: () => ({
         selectedKind,
         selectedStory,
@@ -124,7 +123,7 @@ describe('manager.api.config.initApi', () => {
 
     initApi(provider, clientStore, actions);
     // calling the subscription
-    clientStore.subscribe.args[0][0]();
+    clientStore.subscribe.mock.calls[0][0]();
   });
 
   describe('getQueryParam', () => {
@@ -132,7 +131,7 @@ describe('manager.api.config.initApi', () => {
       const actions = { api: {}, shortcuts: {} };
 
       const clientStore = {
-        subscribe: sinon.stub(),
+        subscribe: jest.fn(),
         getAll: () => ({
           customQueryParams: {
             foo: 'foo value',

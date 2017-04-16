@@ -1,15 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Panel from '../Panel';
-import { expect } from 'chai';
-import sinon from 'sinon';
-const { describe, it } = global;
 
 describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
-    const testChannel = { on: sinon.spy() };
+    const testChannel = { on: jest.fn() };
     shallow(<Panel channel={testChannel} />);
-    expect(testChannel.on.calledWith('addon:knobs:setKnobs')).to.equal(true);
+    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs');
   });
 
   describe('setKnobs handler', () => {
@@ -20,7 +17,7 @@ describe('Panel', () => {
         on: (e, handler) => {
           handlers[e] = handler;
         },
-        emit: sinon.spy(),
+        emit: jest.fn(),
       };
 
       const testQueryParams = {
@@ -30,7 +27,7 @@ describe('Panel', () => {
 
       const testApi = {
         getQueryParam: key => testQueryParams[key],
-        setQueryParams: sinon.spy(),
+        setQueryParams: jest.fn(),
       };
 
       shallow(<Panel channel={testChannel} api={testApi} />);
@@ -56,7 +53,7 @@ describe('Panel', () => {
         type: 'text',
       };
       const e = 'addon:knobs:knobChange';
-      expect(testChannel.emit.calledWith(e, knobFromUrl)).to.equal(true);
+      expect(testChannel.emit).toHaveBeenCalledWith(e, knobFromUrl);
     });
 
     it('should set query params when url params are already read', () => {
@@ -66,7 +63,7 @@ describe('Panel', () => {
         on: (e, handler) => {
           handlers[e] = handler;
         },
-        emit: sinon.spy(),
+        emit: jest.fn(),
       };
 
       const testQueryParams = {
@@ -76,7 +73,7 @@ describe('Panel', () => {
 
       const testApi = {
         getQueryParam: key => testQueryParams[key],
-        setQueryParams: sinon.spy(),
+        setQueryParams: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
@@ -104,20 +101,20 @@ describe('Panel', () => {
         'knob-baz': knobs.baz.value,
       };
 
-      expect(testApi.setQueryParams.calledWith(knobFromStory)).to.equal(true);
+      expect(testApi.setQueryParams).toHaveBeenCalledWith(knobFromStory);
     });
   });
 
   describe('handleChange()', () => {
     it('should set queryParams and emit knobChange event', () => {
       const testChannel = {
-        on: sinon.spy(),
-        emit: sinon.spy(),
+        on: jest.fn(),
+        emit: jest.fn(),
       };
 
       const testApi = {
-        getQueryParam: sinon.spy(),
-        setQueryParams: sinon.spy(),
+        getQueryParam: jest.fn(),
+        setQueryParams: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
@@ -131,7 +128,7 @@ describe('Panel', () => {
       expect(testChannel.emit.calledWith('addon:knobs:knobChange', testChangedKnob)).to.equal(true);
 
       const paramsChange = { 'knob-foo': 'changed text' };
-      expect(testApi.setQueryParams.calledWith(paramsChange)).to.equal(true);
+      expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);
     });
   });
 });

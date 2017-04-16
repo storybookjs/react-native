@@ -1,13 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Array from '../types/Array';
-import { expect } from 'chai';
-import sinon from 'sinon';
-const { describe, it } = global;
 
 describe('Array', () => {
   it('should subscribe to setKnobs event of channel', () => {
-    const onChange = sinon.spy();
+    const onChange = jest.fn();
     const wrapper = shallow(
       <Array
         onChange={onChange}
@@ -16,6 +13,6 @@ describe('Array', () => {
     );
 
     wrapper.simulate('change', { target: { value: 'Fhishing,Skiing,Dancing' } });
-    expect(onChange.calledWith(['Fhishing', 'Skiing', 'Dancing'])).to.equal(true);
+    expect(onChange).toHaveBeenCalledWith(['Fhishing', 'Skiing', 'Dancing']);
   });
 });

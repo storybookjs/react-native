@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import mock from 'mock-fs';
 import { getHeadHtml } from '../utils';
 
@@ -18,7 +17,7 @@ describe('server.getHeadHtml', () => {
 
     it('return an empty string', () => {
       const result = getHeadHtml('./config');
-      expect(result).to.be.equal('');
+      expect(result).toEqual('');
     });
   });
 
@@ -37,7 +36,7 @@ describe('server.getHeadHtml', () => {
 
     it('return the contents of the file', () => {
       const result = getHeadHtml('./config');
-      expect(result).to.be.equal(HEAD_HTML_CONTENTS);
+      expect(result).toEqual(HEAD_HTML_CONTENTS);
     });
   });
 });
