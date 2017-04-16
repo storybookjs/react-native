@@ -17,10 +17,11 @@
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
-    "yerna": "^0.0.1"
+    "yarn": "^0.22.0",
+    "yernapkg": "^0.5.0"
   },
   "scripts": {
-    "postinstall": "yerna install",
+    "postinstall": "yerna install --parallel 1",
     "lint": "eslint .",
     "test": "jest --config ./.jestrc",
     "test:watch": "npm test -- --watch",
