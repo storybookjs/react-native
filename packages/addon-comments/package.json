@@ -36,15 +36,15 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "git-url-parse": "^6.0.1",
-    "@kadira/storybook": "^2.24.1",
-    "@kadira/storybook-addons": "^1.5.0",
-    "@kadira/storybook-database-cloud": "^2.3.1",
-    "@kadira/storybook-deployer": "^1.2.0",
-    "@kadira/storybook-ui": "^3.4.1",
+    "@kadira/storybook": "*",
+    "@kadira/storybook-addons": "*",
+    "@kadira/storybook-database-cloud": "*",
+    "@kadira/storybook-deployer": "*",
+    "@kadira/storybook-ui": "*",
     "shelljs": "^0.7.4"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "^1.5.0",
+    "@kadira/storybook-addons": "*",
     "react": "*",
     "react-dom": "*"
   },

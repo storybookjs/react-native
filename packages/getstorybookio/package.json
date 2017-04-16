@@ -4,10 +4,10 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.2.1",
-    "@kadira/storybook": "^2.0.0"
+    "@kadira/storybook": "*"
   },
   "dependencies": {
-    "@kadira/storybook-addons": "^1.3.1",
+    "@kadira/storybook-addons": "*",
     "airbnb-js-shims": "^1.0.1",
     "bootstrap": "^3.3.7",
     "common-tags": "^1.3.1",

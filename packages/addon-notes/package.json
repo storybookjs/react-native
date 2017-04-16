@@ -24,13 +24,13 @@
     "babel-preset-stage-2": "^6.5.0",
     "babel-plugin-transform-runtime": "^6.5.0",
     "babel-cli": "^6.5.0",
-    "@kadira/storybook": "^2.20.1",
+    "@kadira/storybook": "*",
     "react-addons-test-utils": "^15.5.1",
     "git-url-parse": "^6.0.1"
   },
   "peerDependencies": {
     "react": "*",
-    "@kadira/storybook-addons": "^v1.3.1"
+    "@kadira/storybook-addons": "*"
   },
   "dependencies": {
     "babel-runtime": "^6.5.0"
