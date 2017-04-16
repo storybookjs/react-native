@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.9.5",
-    "@kadira/storybook": "*"
+    "@kadira/storybook": "*",
+    "react-scripts": "0.9.5"
   },
   "dependencies": {
     "react": "^15.4.2",
