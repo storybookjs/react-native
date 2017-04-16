@@ -3,6 +3,7 @@ cache:
   yarn: true
   directories:
     - node_modules
+    - .jest
 notifications:
   email: false
 node_js:

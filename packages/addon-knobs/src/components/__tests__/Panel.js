@@ -6,7 +6,7 @@ describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
     const testChannel = { on: jest.fn() };
     shallow(<Panel channel={testChannel} />);
-    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs');
+    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
   });
 
   describe('setKnobs handler', () => {
@@ -125,7 +125,7 @@ describe('Panel', () => {
         type: 'text',
       };
       wrapper.instance().handleChange(testChangedKnob);
-      expect(testChannel.emit.calledWith('addon:knobs:knobChange', testChangedKnob)).to.equal(true);
+      expect(testChannel.emit).toHaveBeenCalledWith('addon:knobs:knobChange', testChangedKnob);
 
       const paramsChange = { 'knob-foo': 'changed text' };
       expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);

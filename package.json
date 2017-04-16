@@ -20,7 +20,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap --hoist",
     "lint": "eslint .",
-    "test": "jest --config .jestrc",
+    "test": "jest --config ./.jestrc",
     "test:watch": "npm test -- --watch",
     "test-examples": "CI=true lerna run test"
   }
