@@ -53,11 +53,18 @@ export default function testStorySnapshots(options = {}) {
   const suit = options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
+  // Added not to break existing storyshots configs (can be removed in a future major release)
+  options.storyNameRegex = options.storyNameRegex || options.storyRegex;
+
   for (const group of stories) {
+    if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
+      continue;
+    }
+
     describe(suit, () => {
       describe(group.kind, () => {
         for (const story of group.stories) {
-          if (options.storyRegex && !story.name.match(options.storyRegex)) {
+          if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
             continue;
           }
 
