@@ -16,11 +16,10 @@
     "prettier": "^1.1.0",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4",
-    "yerna": "^0.0.1"
+    "react-dom": "^15.5.4"
   },
   "scripts": {
-    "postinstall": "yerna install",
+    "postinstall": "lerna bootstrap --hoist",
     "lint": "eslint .",
     "test": "jest --config ./.jestrc",
     "test:watch": "npm test -- --watch",
