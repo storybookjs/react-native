@@ -1,4 +1,4 @@
-import initPanels from '../init_panels';
+import initPanels from './init_panels';
 
 describe('manager.ui.config.init_panels', () => {
   test('should call the selectDownPanel with first panel name', () => {

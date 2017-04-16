@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DownPanel from '../index';
+import DownPanel from './index';
 
 describe('manager.ui.components.down_panel.index', () => {
   test('should render only the selected panel with display set other than "none"', () => {

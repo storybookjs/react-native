@@ -1,4 +1,4 @@
-import ClientAPI from '../client_api';
+import ClientAPI from './client_api';
 
 class StoryStore {
   constructor() {

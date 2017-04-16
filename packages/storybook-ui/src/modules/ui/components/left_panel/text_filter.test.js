@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import TextFilter from '../text_filter';
+import TextFilter from './text_filter';
 
 describe('manager.ui.components.left_panel.test_filter', () => {
   describe('render', () => {

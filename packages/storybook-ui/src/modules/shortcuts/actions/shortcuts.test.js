@@ -1,4 +1,4 @@
-import actions from '../shortcuts';
+import actions from './shortcuts';
 
 class MockClientStore {
   update(cb) {

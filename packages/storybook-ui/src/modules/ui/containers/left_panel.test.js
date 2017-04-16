@@ -1,4 +1,4 @@
-import { mapper } from '../left_panel';
+import { mapper } from './left_panel';
 
 describe('manager.ui.containers.left_panel', () => {
   describe('mapper', () => {

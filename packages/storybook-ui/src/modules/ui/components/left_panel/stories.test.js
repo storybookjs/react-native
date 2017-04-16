@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Stories from '../stories';
+import Stories from './stories';
 
 describe('manager.ui.components.left_panel.stories', () => {
   describe('render', () => {

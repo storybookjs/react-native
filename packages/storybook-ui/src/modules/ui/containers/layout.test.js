@@ -1,4 +1,4 @@
-import { mapper } from '../layout';
+import { mapper } from './layout';
 
 describe('manager.ui.containers.layout', () => {
   describe('mapper', () => {

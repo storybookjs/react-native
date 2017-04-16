@@ -1,4 +1,4 @@
-import genPoddaLoader from '../gen_podda_loader';
+import genPoddaLoader from './gen_podda_loader';
 import Podda from 'podda';
 
 describe('manager.ui.libs.gen_podda_loader', () => {

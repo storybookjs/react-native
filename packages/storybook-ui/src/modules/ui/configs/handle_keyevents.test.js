@@ -1,4 +1,4 @@
-import handleKeyEvents from '../handle_keyevents';
+import handleKeyEvents from './handle_keyevents';
 import keycode from 'keycode';
 
 describe('manager.ui.config.handle_keyevents', () => {

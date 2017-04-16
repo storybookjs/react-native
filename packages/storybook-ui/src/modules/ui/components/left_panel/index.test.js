@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import LeftPanel from '../index';
-import Header from '../header';
-import TextFilter from '../text_filter';
-import Stories from '../stories';
+import LeftPanel from './index';
+import Header from './header';
+import TextFilter from './text_filter';
+import Stories from './stories';
 
 describe('manager.ui.components.left_panel.index', () => {
   test('should render Header and TextFilter by default', () => {

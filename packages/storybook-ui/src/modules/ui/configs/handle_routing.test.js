@@ -1,4 +1,4 @@
-import { changeUrl, handleInitialUrl, config } from '../handle_routing';
+import { changeUrl, handleInitialUrl, config } from './handle_routing';
 
 describe('manager.ui.config.handle_routing', () => {
   describe('changeUrl', () => {

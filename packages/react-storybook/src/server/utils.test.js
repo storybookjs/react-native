@@ -1,5 +1,5 @@
 import mock from 'mock-fs';
-import { getHeadHtml } from '../utils';
+import { getHeadHtml } from './utils';
 
 const HEAD_HTML_CONTENTS = '<script>console.log("custom script!");</script>';
 

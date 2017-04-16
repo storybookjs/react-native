@@ -1,4 +1,4 @@
-import { mapper } from '../shortcuts_help';
+import { mapper } from './shortcuts_help';
 
 describe('manager.ui.containers.shortcuts_help', () => {
   describe('mapper', () => {

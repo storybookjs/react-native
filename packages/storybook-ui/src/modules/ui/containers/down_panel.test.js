@@ -1,4 +1,4 @@
-import { mapper } from '../down_panel';
+import { mapper } from './down_panel';
 
 describe('manager.ui.containers.down_panel', () => {
   describe('mapper', () => {

@@ -1,4 +1,4 @@
-import actions from '../ui';
+import actions from './ui';
 
 describe('manager.ui.actions.ui', () => {
   describe('setStoryFilter', () => {

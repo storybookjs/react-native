@@ -1,4 +1,4 @@
-import actions from '../api';
+import actions from './api';
 
 class MockClientStore {
   update(cb) {

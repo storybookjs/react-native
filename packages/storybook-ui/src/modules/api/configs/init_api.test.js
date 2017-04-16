@@ -1,4 +1,4 @@
-import initApi from '../init_api';
+import initApi from './init_api';
 
 describe('manager.api.config.initApi', () => {
   it('should expose correct API methods', done => {

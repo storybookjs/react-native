@@ -1,4 +1,4 @@
-import { storyFilter } from '../filters';
+import { storyFilter } from './filters';
 
 describe('manager.ui.libs.filters', () => {
   describe('storyFilter', () => {
