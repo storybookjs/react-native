@@ -4,17 +4,16 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "node .scripts/npm-prepublish.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "prepublish": "node .scripts/npm-prepublish.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-preset-react-app": "^0.2.1",
-    "shelljs": "^0.7.3"
+    "babel-cli": "^6.24.1",
+    "babel-preset-react-app": "^2.2.0",
+    "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@kadira/storybook-channel": "^1.1.0",
+    "@kadira/storybook-channel": "*",
     "json-stringify-safe": "^5.0.1"
   }
 }

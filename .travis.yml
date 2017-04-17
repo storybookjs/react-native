@@ -1,14 +1,18 @@
 language: node_js
 cache:
-  yarn: true
   directories:
     - node_modules
+    - .jest
 notifications:
   email: false
 node_js:
   - "node"
 before_install: ./scripts/travis/before_install.sh
 after_success: ./scripts/travis/after_success.sh
-script: npm run lint && npm run test
+script:
+  - npm run lint
+  - npm run test
+  - npm run coverage
+  - npm run test-examples
 git:
   depth: 1

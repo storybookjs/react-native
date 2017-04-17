@@ -1,6 +1,4 @@
 import PropTypes from 'prop-types';
-/* eslint jsx-a11y/href-no-hash:0, no-undef:0, no-alert:0 */
-
 import React, { Component } from 'react';
 import moment from 'moment';
 import renderHTML from 'react-render-html';
