@@ -20,7 +20,7 @@ export function getEnvConfig(program, configEnv) {
     const envVarName = configEnv[fieldName];
     const envVarValue = process.env[envVarName];
     if (envVarValue) {
-      program[fieldName] = envVarValue; // eslint-disable-line no-param-reassign
+      program[fieldName] = envVarValue;
     }
   });
 }
@@ -28,7 +28,6 @@ export function getEnvConfig(program, configEnv) {
 export function getMiddleware(configDir) {
   const middlewarePath = path.resolve(configDir, 'middleware.js');
   if (fs.existsSync(middlewarePath)) {
-    // eslint-disable-next-line
     let middlewareModule = require(middlewarePath);
     if (middlewareModule.__esModule) {
       middlewareModule = middlewareModule.default;
@@ -36,5 +35,4 @@ export function getMiddleware(configDir) {
     return middlewareModule;
   }
   return function() {};
-  /* eslint-enable */
 }

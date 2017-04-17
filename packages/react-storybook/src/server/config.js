@@ -1,5 +1,3 @@
-/* eslint global-require: 0 */
-
 import fs from 'fs';
 import path from 'path';
 import loadBabelConfig from './babel_config';
@@ -44,7 +42,6 @@ export default function(configType, baseConfig, configDir) {
     customConfigPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
   }
 
-  // eslint-disable-next-line
   const customConfig = require(customConfigPath);
 
   if (typeof customConfig === 'function') {

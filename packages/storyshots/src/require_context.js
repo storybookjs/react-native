@@ -11,7 +11,6 @@ function requireModules(keys, root, directory, regExp, recursive) {
     // TODO: Check this in windows
     const entryKey = `./${path.join(directory, filename)}`;
     if (regExp.test(entryKey)) {
-      // eslint-disable-next-line no-param-reassign, global-require, import/no-dynamic-require
       keys[entryKey] = require(path.join(root, directory, filename));
       return;
     }
@@ -46,11 +45,9 @@ export default function runWithRequireContext(content, options) {
 
   const newRequire = request => {
     if (isRelativeRequest(request)) {
-      // eslint-disable-next-line global-require, import/no-dynamic-require
       return require(path.resolve(dirname, request));
     }
 
-    // eslint-disable-next-line global-require, import/no-dynamic-require
     return require(request);
   };
 

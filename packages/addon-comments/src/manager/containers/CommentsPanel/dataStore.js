@@ -1,5 +1,3 @@
-/* eslint no-param-reassign:0 */
-
 import deepEquals from 'deep-equal';
 import { EventEmitter } from 'events';
 
@@ -27,7 +25,12 @@ export default class DataStore {
     const key = this._getStoryKey(currentStory);
     const item = this.cache[key];
 
-    if (!item) return null;
+    if (!item) {
+      return {
+        comments: [],
+        invalidated: false,
+      };
+    }
 
     const comments = item.comments;
     let invalidated = false;
@@ -67,9 +70,9 @@ export default class DataStore {
       this._fireComments(item.comments);
       // if the cache invalidated we need to load comments again.
       if (item.invalidated) {
-        this._loadUsers().then(() => this._loadComments());
+        return this._loadUsers().then(() => this._loadComments());
       }
-      return;
+      return Promise.resolve(null);
     }
 
     // load comments for the first time.
@@ -117,7 +120,6 @@ export default class DataStore {
         // add to cache
         this._addToCache(currentStory, comments);
 
-        /* eslint no-param-reassign:0 */
         // set comments only if we are on the relavant story
         if (deepEquals(currentStory, this.currentStory)) {
           this._fireComments(comments);
@@ -202,7 +204,7 @@ export default class DataStore {
   }
 
   addComment(comment) {
-    this._addAuthorToTheDatabase()
+    return this._addAuthorToTheDatabase()
       .then(() => this._addPendingComment(comment))
       .then(() => this._addCommentToDatabase(comment))
       .then(() => this._loadUsers())
@@ -210,7 +212,7 @@ export default class DataStore {
   }
 
   deleteComment(commentId) {
-    this._setDeletedComment(commentId)
+    return this._setDeletedComment(commentId)
       .then(() => this._deleteCommentOnDatabase(commentId))
       .then(() => this._loadComments());
   }
