@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import pick from 'lodash.pick';
 import Header from './header';
 import Stories from './stories';
 import TextFilter from './text_filter';
-import pick from 'lodash.pick';
 
 const scrollStyle = {
   height: 'calc(100vh - 105px)',

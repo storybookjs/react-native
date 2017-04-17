@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -56,12 +58,7 @@ SelectType.propTypes = {
   onChange: PropTypes.func,
 };
 
-SelectType.serialize = function(value) {
-  return value;
-};
-
-SelectType.deserialize = function(value) {
-  return value;
-};
+SelectType.serialize = value => value;
+SelectType.deserialize = value => value;
 
 export default SelectType;

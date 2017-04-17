@@ -1,3 +1,4 @@
+import { Prism } from 'global';
 import React from 'react';
 
 export class Code extends React.Component {

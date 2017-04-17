@@ -1,7 +1,8 @@
+import { fetch } from 'global';
 import React from 'react';
 import GraphiQL from 'graphiql';
-import FullScreen from './components/FullScreen';
 import 'graphiql/graphiql.css';
+import FullScreen from './components/FullScreen';
 
 const FETCH_OPTIONS = {
   method: 'post',
@@ -9,7 +10,7 @@ const FETCH_OPTIONS = {
 };
 
 function getDefautlFetcher(url) {
-  return function(params) {
+  return params => {
     const body = JSON.stringify(params);
     const options = Object.assign({ body }, FETCH_OPTIONS);
     return fetch(url, options).then(res => res.json());
@@ -23,7 +24,7 @@ function reIndentQuery(query) {
 }
 
 export function setupGraphiQL(config) {
-  return function(_query, variables = '{}') {
+  return (_query, variables = '{}') => {
     const query = reIndentQuery(_query);
     const fetcher = config.fetcher || getDefautlFetcher(config.url);
     return () => (

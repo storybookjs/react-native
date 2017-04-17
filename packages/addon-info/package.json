@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
+    "global": "^4.3.1",
     "markdown-to-react-components": "^0.2.1",
     "prop-types": "^15.5.7",
     "react-addons-create-fragment": "^15.5.3"

@@ -1,3 +1,4 @@
+import { document } from 'global';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { SketchPicker } from 'react-color';
@@ -90,12 +91,7 @@ ColorType.propTypes = {
   onChange: PropTypes.func,
 };
 
-ColorType.serialize = function(value) {
-  return value;
-};
-
-ColorType.deserialize = function(value) {
-  return value;
-};
+ColorType.serialize = value => value;
+ColorType.deserialize = value => value;
 
 export default ColorType;

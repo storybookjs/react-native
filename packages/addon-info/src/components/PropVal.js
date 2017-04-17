@@ -82,7 +82,7 @@ function previewProp(val) {
     content = <span style={valueStyles.number}>{val}</span>;
   } else if (typeof val === 'string') {
     if (val.length > 50) {
-      val = `${val.slice(0, 50)}…`;
+      val = `${val.slice(0, 50)}…`; // eslint-disable-line
     }
     content = <span style={valueStyles.string}>"{val}"</span>;
     braceWrap = false;

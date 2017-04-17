@@ -15,13 +15,13 @@ export default class Props extends React.Component {
       return <span />;
     }
 
-    const { propStyle, propValueStyle, propNameStyle } = stylesheet;
+    const { propValueStyle, propNameStyle } = stylesheet;
 
     const names = Object.keys(props).filter(
       name =>
         name[0] !== '_' &&
         name !== 'children' &&
-        (!defaultProps || props[name] != defaultProps[name]),
+        (!defaultProps || props[name] !== defaultProps[name]),
     );
 
     const breakIntoNewLines = names.length > 3;

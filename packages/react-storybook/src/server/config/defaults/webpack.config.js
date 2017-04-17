@@ -1,5 +1,6 @@
+import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
-import { includePaths } from '../utils';
+import { includePaths, excludePaths } from '../utils';
 
 // Add a default custom config which is similar to what React Create App does.
 module.exports = storybookBaseConfig => {

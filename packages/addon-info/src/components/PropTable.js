@@ -3,9 +3,9 @@ import React from 'react';
 import PropVal from './PropVal';
 
 const PropTypesMap = new Map();
-for (const typeName in PropTypes) {
-  if (!PropTypes.hasOwnProperty(typeName)) {
-    continue;
+for (const typeName in PropTypes) { // eslint-disable-line
+  if (!PropTypes.hasOwnProperty(typeName)) { // eslint-disable-line
+    continue; // eslint-disable-line
   }
   const type = PropTypes[typeName];
   PropTypesMap.set(type, typeName);
@@ -31,9 +31,9 @@ export default class PropTable extends React.Component {
     const props = {};
 
     if (type.propTypes) {
-      for (const property in type.propTypes) {
-        if (!type.propTypes.hasOwnProperty(property)) {
-          continue;
+      for (const property in type.propTypes) { // eslint-disable-line
+        if (!type.propTypes.hasOwnProperty(property)) { // eslint-disable-line
+          continue; // eslint-disable-line
         }
         const typeInfo = type.propTypes[property];
         const propType = PropTypesMap.get(typeInfo) || 'other';
@@ -43,13 +43,13 @@ export default class PropTable extends React.Component {
     }
 
     if (type.defaultProps) {
-      for (const property in type.defaultProps) {
-        if (!type.defaultProps.hasOwnProperty(property)) {
-          continue;
+      for (const property in type.defaultProps) { // eslint-disable-line
+        if (!type.defaultProps.hasOwnProperty(property)) { // eslint-disable-line
+          continue; // eslint-disable-line
         }
         const value = type.defaultProps[property];
         if (value === undefined) {
-          continue;
+          continue; // eslint-disable-line
         }
         if (!props[property]) {
           props[property] = { property };

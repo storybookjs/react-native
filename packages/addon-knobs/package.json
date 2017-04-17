@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "*",
+    "@kadira/storybook-addons": "*",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "babel-cli": "^6.24.1",
@@ -26,6 +27,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "enzyme": "^2.8.2",
     "git-url-parse": "^6.2.2",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",
@@ -35,13 +37,14 @@
     "typescript-definition-tester": "^0.0.5"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "*",
     "react": "*",
     "react-dom": "*"
   },
   "dependencies": {
+    "@kadira/storybook-addons": "*",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
+    "global": "^4.3.1",
     "insert-css": "^1.0.0",
     "moment": "^2.18.1",
     "prop-types": "^15.5.8",

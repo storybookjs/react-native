@@ -1,8 +1,10 @@
-let cnt = 0;
+/* eslint no-underscore-dangle: 0 */
+
+let count = 0;
 
 function getId() {
-  cnt += 1;
-  return cnt;
+  count += 1;
+  return count;
 }
 
 export default class StoryStore {

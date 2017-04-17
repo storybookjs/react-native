@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 export default class ClientApi {
   constructor({ channel, storyStore }) {
     // channel can be null when running in node

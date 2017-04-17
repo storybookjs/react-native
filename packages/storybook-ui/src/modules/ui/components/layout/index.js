@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { window, document, localStorage } from 'global';
+import SplitPane from '@kadira/react-split-pane';
 
 import VSplit from './vsplit';
 import HSplit from './hsplit';
 import Dimensions from './dimensions';
-import SplitPane from '@kadira/react-split-pane';
 
 const rootStyle = {
   height: '100vh',
@@ -60,11 +61,11 @@ const fullScreenPreviewStyle = {
 const vsplit = <VSplit />;
 const hsplit = <HSplit />;
 
-const onDragStart = function() {
+const onDragStart = () => {
   document.body.classList.add('dragging');
 };
 
-const onDragEnd = function() {
+const onDragEnd = () => {
   document.body.classList.remove('dragging');
 };
 

@@ -1,12 +1,10 @@
+/* eslint no-underscore-dangle: 0 */
+
+import { window, document } from 'global';
 import Channel from '@kadira/storybook-channel';
 import stringify from 'json-stringify-safe';
 
 export const KEY = 'storybook-channel';
-
-export default function createChannel({ page }) {
-  const transport = new PostmsgTransport({ page });
-  return new Channel({ transport });
-}
 
 export class PostmsgTransport {
   constructor(config) {
@@ -58,22 +56,26 @@ export class PostmsgTransport {
     return window.parent;
   }
 
-  _handleEvent(e) {
-    if (!e.data || typeof e.data !== 'string') {
+  _handleEvent(event) {
+    if (!event.data || typeof event.data !== 'string') {
       return;
     }
     let data;
     try {
-      data = JSON.parse(e.data);
-    } catch (e) {
-      return null;
+      data = JSON.parse(event.data);
+    } catch (error) {
+      data = null;
     }
     if (!data || typeof data !== 'object') {
-      return null;
+      return;
     }
-    const { key, event } = data;
+    const { key, event: eventData } = data;
     if (key === KEY) {
-      this._handler(event);
+      this._handler(eventData);
     }
   }
+}
+export default function createChannel({ page }) {
+  const transport = new PostmsgTransport({ page });
+  return new Channel({ transport });
 }

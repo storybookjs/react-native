@@ -83,13 +83,7 @@ ObjectType.propTypes = {
   onChange: PropTypes.func,
 };
 
-ObjectType.serialize = function(object) {
-  return JSON.stringify(object);
-};
-
-ObjectType.deserialize = function(value) {
-  if (!value) return {};
-  return JSON.parse(value);
-};
+ObjectType.serialize = object => JSON.stringify(object);
+ObjectType.deserialize = value => (value ? JSON.parse(value) : {});
 
 export default ObjectType;

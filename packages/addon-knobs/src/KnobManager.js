@@ -1,7 +1,9 @@
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
+import deepEqual from 'deep-equal';
 import WrapStory from './components/WrapStory';
 import KnobStore from './KnobStore';
-import deepEqual from 'deep-equal';
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
@@ -41,7 +43,7 @@ export default class KnobManager {
     let knobStore = this.knobStoreMap[key];
 
     if (!knobStore) {
-      knobStore = this.knobStoreMap[key] = new KnobStore();
+      knobStore = this.knobStoreMap[key] = new KnobStore(); // eslint-disable-line
     }
 
     this.knobStore = knobStore;

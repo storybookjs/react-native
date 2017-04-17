@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import MTRC from 'markdown-to-react-components';
@@ -293,8 +295,6 @@ export default class Story extends React.Component {
         {propTables}
       </div>
     );
-
-    return;
   }
 
   render() {

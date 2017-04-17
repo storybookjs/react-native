@@ -36,12 +36,7 @@ ArrayType.propTypes = {
   onChange: PropTypes.func,
 };
 
-ArrayType.serialize = function(value) {
-  return value;
-};
-
-ArrayType.deserialize = function(value) {
-  return value;
-};
+ArrayType.serialize = value => value;
+ArrayType.deserialize = value => value;
 
 export default ArrayType;

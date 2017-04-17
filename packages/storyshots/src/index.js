@@ -4,6 +4,7 @@ import readPkgUp from 'read-pkg-up';
 import addons from '@kadira/storybook-addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
+
 const { describe, it, expect } = global;
 
 let storybook;
@@ -24,16 +25,16 @@ export default function testStorySnapshots(options = {}) {
 
   if (isStorybook) {
     storybook = require.requireActual('@kadira/storybook');
-    const loadBabelConfig = require('@kadira/storybook/dist/server/babel_config').default;
+    const loadBabelConfig = require('@kadira/storybook/dist/server/babel_config').default; // eslint-disable-line
     const configDirPath = path.resolve(options.configPath || '.storybook');
     configPath = path.join(configDirPath, 'config.js');
 
+    const babelConfig = loadBabelConfig(configDirPath);
     const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
       dirname: configDirPath,
     };
-    const babelConfig = loadBabelConfig(configDirPath);
 
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
@@ -54,18 +55,18 @@ export default function testStorySnapshots(options = {}) {
   const stories = storybook.getStorybook();
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
-  options.storyNameRegex = options.storyNameRegex || options.storyRegex;
+  options.storyNameRegex = options.storyNameRegex || options.storyRegex; // eslint-disable-line
 
-  for (const group of stories) {
+  for (const group of stories) { // eslint-disable-line
     if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
-      continue;
+      continue; // eslint-disable-line
     }
 
     describe(suit, () => {
       describe(group.kind, () => {
-        for (const story of group.stories) {
+        for (const story of group.stories) { // eslint-disable-line
           if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
-            continue;
+            continue; // eslint-disable-line
           }
 
           it(story.name, () => {

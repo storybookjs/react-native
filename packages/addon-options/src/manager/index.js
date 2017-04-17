@@ -1,4 +1,3 @@
-import React from 'react';
 import addons from '@kadira/storybook-addons';
 import { ADDON_ID, EVENT_ID } from '../shared';
 

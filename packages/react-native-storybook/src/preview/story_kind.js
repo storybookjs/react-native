@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 export default class StoryKindApi {
   constructor(stories, addons, decorators, kind) {
     this.kind = kind;

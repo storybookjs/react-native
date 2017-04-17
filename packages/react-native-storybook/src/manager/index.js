@@ -1,3 +1,4 @@
+import { document, location, window } from 'global';
 import renderStorybookUI from '@kadira/storybook-ui';
 import Provider from './provider';
 

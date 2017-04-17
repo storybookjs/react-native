@@ -42,12 +42,7 @@ DateType.propTypes = {
   onChange: PropTypes.func,
 };
 
-DateType.serialize = function(value) {
-  return String(value);
-};
-
-DateType.deserialize = function(value) {
-  return parseFloat(value);
-};
+DateType.serialize = value => String(value);
+DateType.deserialize = value => parseFloat(value);
 
 export default DateType;

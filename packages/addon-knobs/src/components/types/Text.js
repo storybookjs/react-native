@@ -37,12 +37,7 @@ TextType.propTypes = {
   onChange: PropTypes.func,
 };
 
-TextType.serialize = function(value) {
-  return value;
-};
-
-TextType.deserialize = function(value) {
-  return value;
-};
+TextType.serialize = value => value;
+TextType.deserialize = value => value;
 
 export default TextType;

@@ -67,12 +67,7 @@ NumberType.propTypes = {
   onChange: PropTypes.func,
 };
 
-NumberType.serialize = function(value) {
-  return String(value);
-};
-
-NumberType.deserialize = function(value) {
-  return parseFloat(value);
-};
+NumberType.serialize = value => String(value);
+NumberType.deserialize = value => parseFloat(value);
 
 export default NumberType;

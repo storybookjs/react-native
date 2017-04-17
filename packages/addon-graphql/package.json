@@ -35,6 +35,7 @@
     "react": "*"
   },
   "dependencies": {
+    "global": "^4.3.1",
     "graphiql": "^0.7.8",
     "graphql": "^0.7.0"
   }

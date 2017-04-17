@@ -1,6 +1,7 @@
 import React from 'react';
 import _Story from './components/Story';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
+
 export const Story = _Story;
 
 const defaultOptions = {
@@ -28,9 +29,9 @@ export default {
   addWithInfo(storyName, info, storyFn, _options) {
     if (typeof storyFn !== 'function') {
       if (typeof info === 'function') {
-        _options = storyFn;
-        storyFn = info;
-        info = '';
+        _options = storyFn; // eslint-disable-line
+        storyFn = info; // eslint-disable-line
+        info = ''; // eslint-disable-line
       } else {
         throw new Error('No story defining function has been specified');
       }

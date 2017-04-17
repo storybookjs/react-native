@@ -101,7 +101,7 @@ export default function(configType, baseConfig, projectDir, configDir) {
     customConfigPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
   }
 
-  const customConfig = require(customConfigPath);
+  const customConfig = require(customConfigPath); // eslint-disable-line
 
   if (typeof customConfig === 'function') {
     logger.info('=> Loading custom webpack config (full-control mode).');

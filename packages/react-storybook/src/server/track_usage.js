@@ -58,7 +58,7 @@ export function track() {
     store.set('userId', userId);
   }
 
-  const pkg = require('../../package.json');
+  const pkg = require('../../package.json'); // eslint-disable-line
 
   // We don't wanna worry about the success or failure of this.
   request.post(

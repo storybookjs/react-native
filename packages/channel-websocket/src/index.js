@@ -1,9 +1,7 @@
-import Channel from '@kadira/storybook-channel';
+/* eslint no-underscore-dangle: 0 */
 
-export default function createChannel({ url }) {
-  const transport = new WebsocketTransport({ url });
-  return new Channel({ transport });
-}
+import { WebSocket } from 'global';
+import Channel from '@kadira/storybook-channel';
 
 export class WebsocketTransport {
   constructor({ url }) {
@@ -58,4 +56,9 @@ export class WebsocketTransport {
       console.error('websocket: connection closed', e.code, e.reason);
     };
   }
+}
+
+export default function createChannel({ url }) {
+  const transport = new WebsocketTransport({ url });
+  return new Channel({ transport });
 }

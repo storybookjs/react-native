@@ -14,21 +14,23 @@ const searchBoxStyle = {
   ...baseFonts,
 };
 
-const formatStories = function(stories) {
+const formatStories = stories => {
   const formattedStories = [];
   let i = 0;
   stories.forEach(val => {
+    i += 1;
     formattedStories.push({
       type: 'kind',
       value: val.kind,
-      id: i++,
+      id: i,
     });
 
     val.stories.forEach(story => {
+      i += 1;
       formattedStories.push({
         type: 'story',
         value: story,
-        id: i++,
+        id: i,
         kind: val.kind,
       });
     });
@@ -37,8 +39,8 @@ const formatStories = function(stories) {
   return formattedStories;
 };
 
-const suggestionTemplate = function(props, state, styles) {
-  return state.results.map((val, i) => {
+const suggestionTemplate = (props, state, styles) =>
+  state.results.map((val, i) => {
     const style = state.selectedIndex === i ? styles.selectedResultStyle : styles.resultsStyle;
     return (
       <div key={i} style={style}>
@@ -49,7 +51,6 @@ const suggestionTemplate = function(props, state, styles) {
       </div>
     );
   });
-};
 
 export default class SearchBox extends React.Component {
   constructor(props) {

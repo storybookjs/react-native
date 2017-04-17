@@ -11,7 +11,7 @@ packageJson.devDependencies = packageJson.devDependencies || {};
 packageJson.devDependencies['@kadira/storybook'] = '^2.21.0';
 
 packageJson.scripts = packageJson.scripts || {};
-packageJson.scripts['storybook'] = 'start-storybook -p 6006';
+packageJson.scripts.storybook = 'start-storybook -p 6006';
 packageJson.scripts['build-storybook'] = 'build-storybook';
 
 helpers.writePackageJson(packageJson);

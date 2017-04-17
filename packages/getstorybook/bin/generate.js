@@ -10,9 +10,9 @@ const commandLog = require('../lib/helpers').commandLog;
 const codeLog = require('../lib/helpers').codeLog;
 const paddedLog = require('../lib/helpers').paddedLog;
 const installDeps = require('../lib/helpers').installDeps;
-const logger = console;
-
 const pkg = require('../package.json');
+
+const logger = console;
 
 program
   .version(pkg.version)
@@ -59,7 +59,7 @@ switch (projectType) {
     break;
   case types.REACT_SCRIPTS:
     done = commandLog('Adding storybook support to your "Create React App" based project');
-    require('../generators/REACT_SCRIPTS');
+    require('../generators/REACT_SCRIPTS'); // eslint-disable-line
     done();
 
     installDeps(npmOptions);
@@ -71,7 +71,7 @@ switch (projectType) {
 
   case types.REACT:
     done = commandLog('Adding storybook support to your "React" app');
-    require('../generators/REACT');
+    require('../generators/REACT'); // eslint-disable-line
     done();
 
     installDeps(npmOptions);
@@ -83,7 +83,7 @@ switch (projectType) {
 
   case types.REACT_NATIVE:
     done = commandLog('Adding storybook support to your "React Native" app');
-    require('../generators/REACT_NATIVE');
+    require('../generators/REACT_NATIVE'); // eslint-disable-line
     done();
 
     installDeps(npmOptions);
@@ -95,7 +95,7 @@ switch (projectType) {
 
   case types.METEOR:
     done = commandLog('Adding storybook support to your "Meteor" app');
-    require('../generators/METEOR');
+    require('../generators/METEOR'); // eslint-disable-line
     done();
 
     installDeps(npmOptions);
@@ -107,7 +107,7 @@ switch (projectType) {
 
   case types.WEBPACK_REACT:
     done = commandLog('Adding storybook support to your "Webpack React" app');
-    require('../generators/WEBPACK_REACT');
+    require('../generators/WEBPACK_REACT'); // eslint-disable-line
     done();
 
     installDeps(npmOptions);
@@ -119,7 +119,7 @@ switch (projectType) {
 
   case types.REACT_PROJECT:
     done = commandLog('Adding storybook support to your "React" library');
-    require('../generators/REACT');
+    require('../generators/REACT'); // eslint-disable-line
     done();
 
     installDeps(npmOptions);

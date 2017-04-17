@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const logger = console;
 const spawnSync = require('spawn-sync');
+
+const logger = console;
 
 exports.getPackageJson = function getPackageJson() {
   const packageJsonPath = path.resolve('package.json');
@@ -23,7 +24,7 @@ exports.writePackageJson = function writePackageJson(packageJson) {
 
 exports.commandLog = function commandLog(message) {
   process.stdout.write(chalk.cyan(' • ') + message);
-  const done = function(errorMessage, errorInfo) {
+  const done = (errorMessage, errorInfo) => {
     if (errorMessage) {
       process.stdout.write(`. ${chalk.red('✖')}\n`);
       logger.error(`\n     ${chalk.red(errorMessage)}`);
@@ -41,7 +42,7 @@ exports.commandLog = function commandLog(message) {
   return done;
 };
 
-exports.paddedLog = function(message) {
+exports.paddedLog = function paddedLog(message) {
   const newMessage = message.split('\n').map(line => `    ${line}`).join('\n');
 
   logger.log(newMessage);
@@ -49,7 +50,7 @@ exports.paddedLog = function(message) {
 
 exports.getChars = function getChars(char, amount) {
   let line = '';
-  for (let lc = 0; lc < amount; lc++) {
+  for (let lc = 0; lc < amount; lc++) { // eslint-disable-line
     line += char;
   }
 
@@ -75,10 +76,10 @@ exports.codeLog = function codeLog(codeLines, leftPadAmount) {
   logger.log(finalResult);
 };
 
-exports.installDeps = function(options) {
+exports.installDeps = function installDeps(options) {
   let done = exports.commandLog('Preparing to install dependencies');
   done();
-  console.log();
+  logger.log();
 
   let result;
   if (options.useYarn) {
@@ -87,7 +88,7 @@ exports.installDeps = function(options) {
     result = spawnSync('npm', ['install'], { stdio: 'inherit' });
   }
 
-  console.log();
+  logger.log();
   done = exports.commandLog('Installing dependencies');
   if (result.status !== 0) {
     done('An error occurred while installing dependencies.');
