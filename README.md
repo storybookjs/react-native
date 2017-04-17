@@ -2,42 +2,49 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook)  
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively.
-
-We recently switched repo-strategy, this readme needs editing.
+Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
 ## Intro
-React Storybook runs outside of your app. So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
 
 ![React Storybook Screenshot](packages/react-storybook/docs/demo.gif)
 
+Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
+
+Storybook comes with a lot of [addons](https://getstorybook.io/docs/addons/introduction) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
+
 ## Getting Started
 
+First install storybook:
 ```js
 npm i -g getstorybook
 cd my-react-app
 getstorybook
 ```
 
-For more information visit: https://getstorybook.io
+Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
+
+For full documentation on using Storybook visit: https://getstorybook.io
 
 ## Main Projects
-todo
+- [react-storybook](packages/react-storybook) - Storybook for React components
+- [react-native-storybook](packages/react-native-storybook) - Storybook for React components
+- [storyshots](packages/storyshots) - Easy snapshot testing for storybook
+- [getstorybook](packages/getstorybook) - Streamlined installation for a variety of app types
+- [examples](packages/examples) - Code examples to illustrate different Storybook use cases
 
 ## Addons
-todo
+- [addon-actions](packages/addon-actions/) - Log actions as users interact with components in storybook
+- [addon-comments](packages/addon-comments/) - Comment on storybook stories
+- [addon-graphql](packages/addon-graphql/) - Query a GraphQL server within Storybook stories
+- [addon-info](packages/addon-info/) - Annotate stories with extra component usage information
+- [addon-knobs](packages/addon-knobs/) - Interactively edit component prop data in the Storybook UI
+- [addon-notes](packages/addon-notes/) - Annotate storybook stories with notes
+- [addon-options](packages/addon-options/) - Customize the storybook UI in code
 
 ## Contributing
-todo
 
-
-
-
-
-
-
-
-
+We welcome contributions to Storybook! There are many ways to contribute to
+this project. [Get started here](CONTRIBUTING.md)
