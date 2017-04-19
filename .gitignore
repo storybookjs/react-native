@@ -3,3 +3,12 @@ node_modules
 .idea
 npm-shrinkwrap.json
 dist
+.tern-port
+*.DS_Store
+.jest
+junit.xml
+coverage/
+*.lerna_backup
+build
+packages/examples/automated-*
+yarn.lock
