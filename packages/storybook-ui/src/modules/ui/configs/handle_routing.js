@@ -58,7 +58,7 @@ export function updateStore(queryParams, actions) {
     ...customQueryParams
   } = queryParams;
 
-  if (selectedKind && selectedStory) {
+  if (selectedKind) {
     actions.api.selectStory(selectedKind, selectedStory);
   }
 

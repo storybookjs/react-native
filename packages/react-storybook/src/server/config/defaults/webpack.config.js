@@ -1,5 +1,6 @@
+import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
-import { includePaths } from '../utils';
+import { includePaths, excludePaths } from '../utils';
 
 // Add a default custom config which is similar to what React Create App does.
 module.exports = storybookBaseConfig => {
@@ -55,12 +56,6 @@ module.exports = storybookBaseConfig => {
         name: 'static/media/[name].[hash:8].[ext]',
       },
     },
-  ];
-
-  newConfig.postcss = () => [
-    autoprefixer({
-      browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-    }),
   ];
 
   newConfig.resolve.alias = {
