@@ -27,6 +27,6 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
-    "publish": "npm run build && cp ./CNAME ./build && cd build && git init . && git remote add origin $( cd .. && git remote get-url origin ) && git add . && git commit -m 'Update build' && git push -f origin master"
+    "publish": "npm run build && cp ./404.html ./build && cp ./CNAME ./build && cd build && git init . && git remote add origin $( cd .. && git remote get-url origin ) && git add . && git commit -m 'Update build' && git push -f origin master"
   }
 }
