@@ -9,12 +9,10 @@ import { setContext, setActions } from './compose';
 
 export class Provider {
   renderPreview(selectedKind, selectedStory) {
-    // eslint-disable-line no-unused-vars
     throw new Error('Provider.renderPreview() is not implemented!');
   }
 
   handleAPI(api) {
-    // eslint-disable-line no-unused-vars
     throw new Error('Provider.handleAPI() is not implemented!');
   }
 }

@@ -1,6 +1,4 @@
 import PropTypes from 'prop-types';
-/* eslint no-undef: 0 */
-
 import React, { Component } from 'react';
 import CommentList from '../CommentList';
 import CommentForm from '../CommentForm';

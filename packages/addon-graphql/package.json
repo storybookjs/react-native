@@ -6,8 +6,7 @@
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "node .scripts/npm-prepublish.js",
-    "storybook": "start-storybook -p 9001",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "storybook": "start-storybook -p 9001"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
   },
   "homepage": "https://github.com/kadirahq/storybook-addon-graphql#readme",
   "devDependencies": {
-    "@kadira/storybook": "^2.20.1",
+    "@kadira/storybook": "*",
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
@@ -32,7 +31,7 @@
     "shelljs": "^0.7.3"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "^1.3.0",
+    "@kadira/storybook-addons": "*",
     "react": "*"
   },
   "dependencies": {

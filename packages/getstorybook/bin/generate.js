@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-/* eslint global-require: 0 */
-
 const updateNotifier = require('update-notifier');
 const program = require('commander');
 const chalk = require('chalk');

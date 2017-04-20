@@ -75,12 +75,10 @@ export function renderMain(data, storyStore) {
   if (!element) {
     const error = {
       title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      /* eslint-disable */
       description: stripIndents`
         Did you forget to return the React element from the story?
         Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
       `,
-      /* eslint-enable */
     };
     return renderError(error);
   }
