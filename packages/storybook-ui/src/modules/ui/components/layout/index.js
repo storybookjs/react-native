@@ -3,6 +3,7 @@ import React from 'react';
 
 import VSplit from './vsplit';
 import HSplit from './hsplit';
+import USplit from './usplit';
 import Dimensions from './dimensions';
 import SplitPane from 'react-split-pane';
 
@@ -12,27 +13,39 @@ const rootStyle = {
 };
 
 const leftPanelStyle = {
-  position: 'absolute',
-  width: '100%',
   height: '100%',
-};
-
-const downPanelStyle = {
+  width: '100%',
   display: 'flex',
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  padding: '5px 10px 10px 0',
-  boxSizing: 'border-box',
+  flexDirection: 'row',
+  alignItems: 'stretch',
 };
 
-const contentPanelStyle = {
+const downPanelStyle = downPanelInRight => ({
+  display: 'flex',
+  flexDirection: downPanelInRight ? 'row' : 'column',
+  alignItems: 'stretch',
+  // position: 'absolute',
+  width: '100%',
+  height: '100%',
+  padding: downPanelInRight ? '5px 10px 10px 0' : '0px 10px 10px 0',
+  boxSizing: 'border-box',
+});
+
+const addonResizerStyle = downPanelInRight => ({
+  cursor: downPanelInRight ? 'col-resize' : 'row-resize',
+  height: downPanelInRight ? '100%' : 10,
+  width: downPanelInRight ? 10 : '100%',
+  // marginTop: downPanelInRight ? 0 : -10,
+  zIndex: 1,
+})
+
+const contentPanelStyle = downPanelInRight => ({
   position: 'absolute',
   boxSizing: 'border-box',
   width: '100%',
   height: '100%',
-  padding: '10px 10px 10px 0',
-};
+  padding: downPanelInRight ? '10px 2px 10px 0' : '10px 10px 2px 0',
+});
 
 const normalPreviewStyle = {
   width: '100%',
@@ -129,6 +142,7 @@ class Layout extends React.Component {
       preview,
     } = this.props;
     const { previewPanelDimensions } = this.state;
+    const leftPanelOnTop = false;
 
     let previewStyle = normalPreviewStyle;
 
@@ -142,6 +156,9 @@ class Layout extends React.Component {
       downPanelDefaultSize = downPanelInRight ? 400 : 200;
     }
 
+    const addonSplit = downPanelInRight ? 'vertical' : 'horizontal';
+    const storiesSplit = leftPanelOnTop ? 'horizontal' : 'vertical';
+
     // Get the value from localStorage or user downPanelDefaultSize
     downPanelDefaultSize = getSavedHeight(downPanelDefaultSize);
 
@@ -149,23 +166,33 @@ class Layout extends React.Component {
       <div style={rootStyle}>
         <SplitPane
           split="vertical"
-          minSize={leftPanelDefaultSize}
+          minSize={150}
+          maxSize={-400}
           defaultSize={leftPanelDefaultSize}
-          resizerChildren={vsplit}
+          resizerStyle={{
+            cursor: 'col-resize',
+            width: 10,
+            zIndex: 1,
+          }}
           onDragStarted={onDragStart}
           onDragFinished={onDragEnd}
           onChange={this.onResize}
         >
           <div style={leftPanelStyle}>
-            {showLeftPanel ? leftPanel() : null}
+            <div style={{ flexGrow: 1 }}>
+              {showLeftPanel ? leftPanel() : null}
+            </div>
+            <USplit shift={5}/>
           </div>
 
           <SplitPane
-            split={downPanelInRight ? 'vertical' : 'horizontal'}
+            split={addonSplit}
             primary="second"
             minSize={downPanelInRight ? 200 : 100}
+            maxSize={-200}
             defaultSize={downPanelDefaultSize}
             resizerChildren={downPanelInRight ? vsplit : hsplit}
+            resizerStyle={addonResizerStyle(downPanelInRight)}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
             onChange={size => {
@@ -173,7 +200,7 @@ class Layout extends React.Component {
               this.onResize();
             }}
           >
-            <div style={contentPanelStyle}>
+            <div style={contentPanelStyle(downPanelInRight)}>
               <div
                 style={previewStyle}
                 ref={ref => {
@@ -184,8 +211,15 @@ class Layout extends React.Component {
               </div>
               <Dimensions {...previewPanelDimensions} />
             </div>
-            <div style={downPanelStyle}>
-              {showDownPanel ? downPanel() : null}
+            <div style={downPanelStyle(downPanelInRight)}>
+              <USplit
+                shift={-5}
+                split={addonSplit}
+              />
+              {/*{downPanelInRight ? <USplit shift={-5}/> : hsplit}*/}
+              {/*<div style={{ flexGrow: 1 }}>*/}
+                {showDownPanel ? downPanel() : null}
+              {/*</div>*/}
             </div>
           </SplitPane>
         </SplitPane>
