@@ -7,7 +7,7 @@
     "storybook": "dist/bin/storybook.js"
   },
   "scripts": {
-    "prepublish": ".scripts/npm-prepublish.sh"
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "repository": {
     "type": "git",

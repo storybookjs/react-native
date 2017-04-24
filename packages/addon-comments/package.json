@@ -4,7 +4,7 @@
   "description": "Comments addon for Storybook",
   "main": "preview.js",
   "scripts": {
-    "prepublish": ". ./.scripts/prepublish.sh",
+    "prepublish": "node ../../scripts/prepublish.js",
     "storybook": "start-storybook -p 3006",
     "storybook-local": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 9010",
     "storybook-remote": "start-storybook -p 3006",
