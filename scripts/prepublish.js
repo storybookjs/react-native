@@ -7,7 +7,7 @@ require('./ver');
 
 
 const args = [
-  '--ignore tests,__tests__,stories,story.jsx,story.js',
+  '--ignore tests,__tests__,test.js,stories/,story.jsx,story.js',
   '--plugins "transform-runtime"',
   './src --out-dir ./dist',
   '--copy-files',
