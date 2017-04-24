@@ -9,8 +9,8 @@
   "typings": "./config/storybook.d.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'"
-    "prepublish": "node ../../scripts/prepublish.js",
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
     "@kadira/react-split-pane": "^1.4.7",
