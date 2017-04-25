@@ -27,10 +27,7 @@ const spanStyle = split =>
         height: 20,
         left: splitSize / 2 - (gripSize + 2) / 2,
         top: '50%',
-        // marginTop: 0,
         position: 'absolute',
-        // borderLeft: 'solid 1px rgba(0,0,0,0.1)',
-        // borderRight: 'solid 1px rgba(0,0,0,0.1)',
         borderLeft: 'solid 1px rgba(0,0,0,0.1)',
         borderRight: 'solid 1px rgba(0,0,0,0.1)',
       }

@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import VSplit from './vsplit';
-import HSplit from './hsplit';
 import USplit from './usplit';
 import Dimensions from './dimensions';
 import SplitPane from 'react-split-pane';
@@ -12,39 +10,45 @@ const rootStyle = {
   backgroundColor: '#F7F7F7',
 };
 
-const leftPanelStyle = {
-  height: '100%',
+const leftPanelStyle = leftPanelOnTop => ({
   width: '100%',
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: leftPanelOnTop ? 'column' : 'row',
   alignItems: 'stretch',
-};
+  paddingRight: leftPanelOnTop ? 10 : 0,
+});
 
 const downPanelStyle = downPanelInRight => ({
   display: 'flex',
   flexDirection: downPanelInRight ? 'row' : 'column',
   alignItems: 'stretch',
-  // position: 'absolute',
   width: '100%',
   height: '100%',
   padding: downPanelInRight ? '5px 10px 10px 0' : '0px 10px 10px 0',
   boxSizing: 'border-box',
 });
 
+const storiesResizerStyle = leftPanelOnTop => ({
+  cursor: leftPanelOnTop ? 'row-resize' : 'col-resize',
+  height: leftPanelOnTop ? 10 : 'auto', // test it
+  width: leftPanelOnTop ? '100%' : 10,
+  zIndex: 1,
+})
+
 const addonResizerStyle = downPanelInRight => ({
   cursor: downPanelInRight ? 'col-resize' : 'row-resize',
   height: downPanelInRight ? '100%' : 10,
   width: downPanelInRight ? 10 : '100%',
-  // marginTop: downPanelInRight ? 0 : -10,
   zIndex: 1,
 })
 
-const contentPanelStyle = downPanelInRight => ({
+const contentPanelStyle = (downPanelInRight, leftPanelOnTop) => ({
   position: 'absolute',
   boxSizing: 'border-box',
   width: '100%',
   height: '100%',
   padding: downPanelInRight ? '10px 2px 10px 0' : '10px 10px 2px 0',
+  paddingTop: leftPanelOnTop ? 0 : 10,
 });
 
 const normalPreviewStyle = {
@@ -70,9 +74,6 @@ const fullScreenPreviewStyle = {
   overflow: 'hidden',
 };
 
-const vsplit = <VSplit />;
-const hsplit = <HSplit />;
-
 const onDragStart = function() {
   document.body.classList.add('dragging');
 };
@@ -81,20 +82,37 @@ const onDragEnd = function() {
   document.body.classList.remove('dragging');
 };
 
-const saveHeightPanel = h => {
-  try {
-    localStorage.setItem('splitPos', h);
+const defaultSizes = {
+  addonPanel: {
+    down: 200,
+    right: 400,
+  },
+  storiesPanel: {
+    left: 250,
+    top: 400,
+  }
+}
+
+const saveSizes = sizes => {
+   try {
+    localStorage.setItem('panelSizes', JSON.stringify(sizes));
     return true;
   } catch (e) {
     return false;
   }
 };
 
-const getSavedHeight = h => {
+const getSavedSizes = sizes => {
   try {
-    return localStorage.getItem('splitPos');
+    const panelSizes = localStorage.getItem('panelSizes');
+    if (panelSizes) {
+      return JSON.parse(panelSizes);
+    }
+    saveSizes(sizes);
+    return sizes;
   } catch (e) {
-    return h;
+    saveSizes(sizes);
+    return sizes;
   }
 };
 
@@ -102,6 +120,8 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
 
+    this.layerSizes = getSavedSizes(defaultSizes);
+    
     this.state = {
       previewPanelDimensions: {
         height: 0,
@@ -120,15 +140,20 @@ class Layout extends React.Component {
     window.removeEventListener('resize', this.onResize);
   }
 
-  onResize() {
-    const { clientWidth, clientHeight } = this.previewPanelRef;
+  onResize(pane, mode) {
+    return (size) => {
+      this.layerSizes[pane][mode] = size;
+      saveSizes(this.layerSizes);
 
-    this.setState({
-      previewPanelDimensions: {
-        width: clientWidth,
-        height: clientHeight,
-      },
-    });
+      const { clientWidth, clientHeight } = this.previewPanelRef;
+
+      this.setState({
+        previewPanelDimensions: {
+          width: clientWidth,
+          height: clientHeight,
+        },
+      });
+    }
   }
 
   render() {
@@ -142,6 +167,7 @@ class Layout extends React.Component {
       preview,
     } = this.props;
     const { previewPanelDimensions } = this.state;
+
     const leftPanelOnTop = false;
 
     let previewStyle = normalPreviewStyle;
@@ -150,57 +176,50 @@ class Layout extends React.Component {
       previewStyle = fullScreenPreviewStyle;
     }
 
-    const leftPanelDefaultSize = showLeftPanel ? 250 : 1;
-    let downPanelDefaultSize = 1;
-    if (showDownPanel) {
-      downPanelDefaultSize = downPanelInRight ? 400 : 200;
-    }
+    const sizes = getSavedSizes(this.layerSizes);
+
+    const leftPanelDefaultSize = !leftPanelOnTop ? sizes.storiesPanel.left : sizes.storiesPanel.top;
+    const downPanelDefaultSize = !downPanelInRight ? sizes.addonPanel.down : sizes.addonPanel.right;
 
     const addonSplit = downPanelInRight ? 'vertical' : 'horizontal';
     const storiesSplit = leftPanelOnTop ? 'horizontal' : 'vertical';
 
-    // Get the value from localStorage or user downPanelDefaultSize
-    downPanelDefaultSize = getSavedHeight(downPanelDefaultSize);
-
     return (
       <div style={rootStyle}>
         <SplitPane
-          split="vertical"
+          split={storiesSplit}
           minSize={150}
           maxSize={-400}
+          size={showLeftPanel ? leftPanelDefaultSize : 1}
           defaultSize={leftPanelDefaultSize}
-          resizerStyle={{
-            cursor: 'col-resize',
-            width: 10,
-            zIndex: 1,
-          }}
+          resizerStyle={storiesResizerStyle(leftPanelOnTop)}
           onDragStarted={onDragStart}
           onDragFinished={onDragEnd}
-          onChange={this.onResize}
+          onChange={this.onResize('storiesPanel', leftPanelOnTop ? 'top' : 'left')}
         >
-          <div style={leftPanelStyle}>
-            <div style={{ flexGrow: 1 }}>
-              {showLeftPanel ? leftPanel() : null}
+          {showLeftPanel ?
+            <div style={leftPanelStyle(leftPanelOnTop)}>
+              <div style={{ flexGrow: 1, height: '100%' }}>
+                {leftPanel()}
+              </div>
+              <USplit shift={5} split={storiesSplit} />
             </div>
-            <USplit shift={5}/>
-          </div>
+            : <div></div>
+          }
 
           <SplitPane
             split={addonSplit}
             primary="second"
             minSize={downPanelInRight ? 200 : 100}
             maxSize={-200}
+            size={showDownPanel ? downPanelDefaultSize : 1}
             defaultSize={downPanelDefaultSize}
-            resizerChildren={downPanelInRight ? vsplit : hsplit}
             resizerStyle={addonResizerStyle(downPanelInRight)}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
-            onChange={size => {
-              saveHeightPanel(size);
-              this.onResize();
-            }}
+            onChange={this.onResize('addonPanel', downPanelInRight ? 'right' : 'down')}
           >
-            <div style={contentPanelStyle(downPanelInRight)}>
+            <div style={contentPanelStyle(downPanelInRight, leftPanelOnTop)}>
               <div
                 style={previewStyle}
                 ref={ref => {
@@ -211,16 +230,17 @@ class Layout extends React.Component {
               </div>
               <Dimensions {...previewPanelDimensions} />
             </div>
-            <div style={downPanelStyle(downPanelInRight)}>
-              <USplit
-                shift={-5}
-                split={addonSplit}
-              />
-              {/*{downPanelInRight ? <USplit shift={-5}/> : hsplit}*/}
-              {/*<div style={{ flexGrow: 1 }}>*/}
-                {showDownPanel ? downPanel() : null}
-              {/*</div>*/}
-            </div>
+            {showDownPanel ?
+              <div style={downPanelStyle(downPanelInRight)}>
+                <USplit
+                  shift={-5}
+                  split={addonSplit}
+                />
+                {downPanel()}
+              </div>
+              : <div></div>
+            }
+            
           </SplitPane>
         </SplitPane>
       </div>
