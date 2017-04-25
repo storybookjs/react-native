@@ -75,5 +75,8 @@ export default {
 
     Given possible values for each prop, renders your component with all combinations of prop values. Useful for finding edge cases or just seeing all component states at once.
 
+    ### [StoryRouter](https://github.com/gvaldambrini/storybook-router)
+
+    A [decorator](/docs/react-storybook/addons/introduction) that allows you to integrate react-router v.4 components in your stories.
   `,
 };
