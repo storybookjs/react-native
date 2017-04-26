@@ -9,7 +9,7 @@
     "url": "https://github.com/kadirahq/storybook-ui.git"
   },
   "scripts": {
-    "prepublish": ". ./.scripts/prepublish.sh",
+    "prepublish": "node ../../scripts/prepublish.js",
     "publish-storybook": "bash ./.scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 9010"
   },

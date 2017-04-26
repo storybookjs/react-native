@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublish": "node .scripts/npm-prepublish.js",
+    "prepublish": "node ../../scripts/prepublish.js",
     "storybook": "start-storybook -p 9001"
   },
   "repository": {

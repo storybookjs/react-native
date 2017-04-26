@@ -4,7 +4,7 @@
   "description": "Storybook addons store",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "node ./.scripts/npm-prepublish.js"
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "repository": {
     "type": "git",
