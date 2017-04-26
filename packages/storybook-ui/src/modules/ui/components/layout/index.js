@@ -28,19 +28,21 @@ const downPanelStyle = downPanelInRight => ({
   boxSizing: 'border-box',
 });
 
-const storiesResizerStyle = leftPanelOnTop => ({
-  cursor: leftPanelOnTop ? 'row-resize' : 'col-resize',
-  height: leftPanelOnTop ? 10 : 'auto', // test it
+const resizerCursor = isVert => (isVert ? 'col-resize' : 'row-resize');
+
+const storiesResizerStyle = (showLeftPanel, leftPanelOnTop) => ({
+  cursor: showLeftPanel ? resizerCursor(!leftPanelOnTop) : undefined,
+  height: leftPanelOnTop ? 10 : 'auto',
   width: leftPanelOnTop ? '100%' : 10,
   zIndex: 1,
-})
+});
 
-const addonResizerStyle = downPanelInRight => ({
-  cursor: downPanelInRight ? 'col-resize' : 'row-resize',
+const addonResizerStyle = (showDownPanel, downPanelInRight) => ({
+  cursor: showDownPanel ? resizerCursor(downPanelInRight) : undefined,
   height: downPanelInRight ? '100%' : 10,
   width: downPanelInRight ? 10 : '100%',
   zIndex: 1,
-})
+});
 
 const contentPanelStyle = (downPanelInRight, leftPanelOnTop) => ({
   position: 'absolute',
@@ -90,11 +92,11 @@ const defaultSizes = {
   storiesPanel: {
     left: 250,
     top: 400,
-  }
-}
+  },
+};
 
 const saveSizes = sizes => {
-   try {
+  try {
     localStorage.setItem('panelSizes', JSON.stringify(sizes));
     return true;
   } catch (e) {
@@ -121,7 +123,7 @@ class Layout extends React.Component {
     super(props);
 
     this.layerSizes = getSavedSizes(defaultSizes);
-    
+
     this.state = {
       previewPanelDimensions: {
         height: 0,
@@ -141,7 +143,7 @@ class Layout extends React.Component {
   }
 
   onResize(pane, mode) {
-    return (size) => {
+    return size => {
       this.layerSizes[pane][mode] = size;
       saveSizes(this.layerSizes);
 
@@ -153,7 +155,7 @@ class Layout extends React.Component {
           height: clientHeight,
         },
       });
-    }
+    };
   }
 
   render() {
@@ -188,33 +190,34 @@ class Layout extends React.Component {
       <div style={rootStyle}>
         <SplitPane
           split={storiesSplit}
+          allowResize={showLeftPanel}
           minSize={150}
           maxSize={-400}
           size={showLeftPanel ? leftPanelDefaultSize : 1}
           defaultSize={leftPanelDefaultSize}
-          resizerStyle={storiesResizerStyle(leftPanelOnTop)}
+          resizerStyle={storiesResizerStyle(showLeftPanel, leftPanelOnTop)}
           onDragStarted={onDragStart}
           onDragFinished={onDragEnd}
           onChange={this.onResize('storiesPanel', leftPanelOnTop ? 'top' : 'left')}
         >
-          {showLeftPanel ?
-            <div style={leftPanelStyle(leftPanelOnTop)}>
-              <div style={{ flexGrow: 1, height: '100%' }}>
-                {leftPanel()}
+          {showLeftPanel
+            ? <div style={leftPanelStyle(leftPanelOnTop)}>
+                <div style={{ flexGrow: 1, height: '100%' }}>
+                  {leftPanel()}
+                </div>
+                <USplit shift={5} split={storiesSplit} />
               </div>
-              <USplit shift={5} split={storiesSplit} />
-            </div>
-            : <div></div>
-          }
+            : <div />}
 
           <SplitPane
             split={addonSplit}
+            allowResize={showDownPanel}
             primary="second"
             minSize={downPanelInRight ? 200 : 100}
             maxSize={-200}
             size={showDownPanel ? downPanelDefaultSize : 1}
             defaultSize={downPanelDefaultSize}
-            resizerStyle={addonResizerStyle(downPanelInRight)}
+            resizerStyle={addonResizerStyle(showDownPanel, downPanelInRight)}
             onDragStarted={onDragStart}
             onDragFinished={onDragEnd}
             onChange={this.onResize('addonPanel', downPanelInRight ? 'right' : 'down')}
@@ -230,17 +233,13 @@ class Layout extends React.Component {
               </div>
               <Dimensions {...previewPanelDimensions} />
             </div>
-            {showDownPanel ?
-              <div style={downPanelStyle(downPanelInRight)}>
-                <USplit
-                  shift={-5}
-                  split={addonSplit}
-                />
-                {downPanel()}
-              </div>
-              : <div></div>
-            }
-            
+            {showDownPanel
+              ? <div style={downPanelStyle(downPanelInRight)}>
+                  <USplit shift={-5} split={addonSplit} />
+                  {downPanel()}
+                </div>
+              : <div />}
+
           </SplitPane>
         </SplitPane>
       </div>
