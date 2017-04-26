@@ -26,6 +26,11 @@ export default {
   tabbar: {
     display: 'flex',
     flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    maxHeight: 60,
+    overflow: 'hidden',
     borderBottom: 'solid 1px #eaeaea',
   },
 
