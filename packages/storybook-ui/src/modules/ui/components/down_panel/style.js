@@ -29,8 +29,6 @@ export default {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    maxHeight: 60,
-    overflow: 'hidden',
     borderBottom: 'solid 1px #eaeaea',
   },
 
