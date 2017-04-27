@@ -16,10 +16,6 @@ export default {
 
     Also, you can think of this as a way to document events in your components.
 
-    ### [Links](https://github.com/storybooks/storybook/tree/master/packages/addon-links)
-
-    With links you can link stories together. With that, you can build demos and prototypes directly from your UI components. (Like you can do with [InVision](https://www.invisionapp.com/) and [Framer.js](https://framerjs.com/))
-
     ## Third Party Addons
 
     You need to install these addons directly from NPM in order to use them.
