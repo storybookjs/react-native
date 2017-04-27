@@ -49,6 +49,8 @@ export default {
     textTransform: 'uppercase',
     transition: 'opacity 0.3s',
     opacity: 0.5,
+    maxHeight: 60,
+    overflow: 'hidden',
   },
 
   activetab: {
