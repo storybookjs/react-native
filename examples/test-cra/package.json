@@ -1,9 +1,14 @@
 {
-  "name": "cra-storybook",
+  "name": "test-cra",
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@kadira/storybook": "*",
+    "@kadira/storybook": "file:../../packages/react-storybook",
+    "@kadira/storybook-addons": "file:../../packages/addons",
+    "@kadira/storybook-channel": "file:../../packages/channel",
+    "@kadira/storybook-ui": "file:../../packages/storybook-ui",
+    "@kadira/storybook-addon-actions": "file:../../packages/addon-actions",
+    "@kadira/storybook-channel-postmsg": "file:../../packages/channel-postmessage",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
