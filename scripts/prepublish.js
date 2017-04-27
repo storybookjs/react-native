@@ -1,7 +1,7 @@
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
-const babel = path.join('node_modules', '.bin', 'babel');
+const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
 require('./ver');
 
@@ -18,5 +18,9 @@ shell.rm('-rf', 'dist');
 shell.echo(chalk.gray('\n=> Transpiling "src" into ES5 ...\n'));
 shell.echo(chalk.gray(cmd));
 shell.echo('');
-shell.exec(cmd);
-shell.echo(chalk.gray('\n=> Transpiling completed.'));
+const code = shell.exec(cmd).code;
+if (code === 0) {
+  shell.echo(chalk.gray('\n=> Transpiling completed.'));
+} else {
+  shell.exit(code);
+}
