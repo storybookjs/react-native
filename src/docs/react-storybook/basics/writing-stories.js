@@ -108,7 +108,7 @@ export default {
 
     ## Linking stories
 
-    With \`linkTo\` you can link stories together to build demos and prototypes directly from your UI components. (Simlar to [InVision](https://www.invisionapp.com/) and [Framer.js](https://framerjs.com/))
+    With \`linkTo\` you can link stories together to build demos and prototypes directly from your UI components. (Similar to [InVision](https://www.invisionapp.com/) and [Framer.js](https://framerjs.com/))
 
     ~~~js
     import { storiesOf, linkTo } from '@kadira/storybook'
@@ -124,10 +124,14 @@ export default {
 
     With that, you can link an event in a component to any story in the Storybook.
 
-    * First parameter is the the story kind (what you named with storiesOf).
+    * First parameter is the story kind (what you named with storiesOf).
     * Second parameter is the story name (what you named with .add).
 
-    You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string.
+    You can also pass a function instead for any of above parameters. That function accepts arguments emitted by the event and it should return a string. For example:
+
+    ~~~js
+    linkTo(() => 'Button', () => 'Second')
+    ~~~
 
     ## Managing stories
 
