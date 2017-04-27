@@ -16,7 +16,8 @@
     "prettier": "^1.1.0",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "shelljs": "^0.7.7"
   },
   "scripts": {
     "postinstall": "lerna bootstrap --hoist",
