@@ -1,6 +1,6 @@
 {
-  "name": "cra-storybook",
-  "version": "0.1.0",
+  "name": "test-cra",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@kadira/storybook": "file:../../packages/react-storybook",
