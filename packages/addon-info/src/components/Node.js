@@ -70,6 +70,10 @@ function getData(element) {
     text: null,
     children: null,
   };
+  
+  if (typeof element === 'null') {
+    return data
+  }
 
   if (typeof element == 'string') {
     data.text = element;
