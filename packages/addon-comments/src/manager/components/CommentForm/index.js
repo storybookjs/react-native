@@ -58,7 +58,7 @@ export default class CommentForm extends Component {
     if (!this.props.user) {
       return (
         <div style={style.wrapper}>
-          <Textarea style={style.input} disabled={true} />
+          <Textarea style={style.input} disabled />
           <button style={style.submitButton} onClick={() => this.openLogin()}>
             Sign in with Storybook Hub
           </button>

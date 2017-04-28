@@ -1,6 +1,7 @@
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
+
 const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
 require('./ver');

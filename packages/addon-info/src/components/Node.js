@@ -70,12 +70,12 @@ function getData(element) {
     text: null,
     children: null,
   };
-  
+
   if (typeof element === 'null') {
-    return data
+    return data;
   }
 
-  if (typeof element == 'string') {
+  if (typeof element === 'string') {
     data.text = element;
     return data;
   }

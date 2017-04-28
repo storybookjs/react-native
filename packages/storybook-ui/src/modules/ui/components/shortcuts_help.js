@@ -67,7 +67,7 @@ export const Keys = ({ shortcutKeys }) => {
 
   // if we have multiple key combinations for a shortcut
   const keys = shortcutKeys.map((key, index, arr) => (
-    <span key={index}>
+    <span key={key}>
       <b style={commandStyle}>{key}</b>
       {/* add / & space if it is not a last key combination */}
       {arr.length - 1 !== index ? <span>/ &nbsp;</span> : ''}
@@ -82,8 +82,8 @@ Keys.propTypes = {
 };
 
 export const Shortcuts = ({ appShortcuts }) => {
-  const shortcuts = appShortcuts.map((shortcut, index) => (
-    <div key={index}>
+  const shortcuts = appShortcuts.map(shortcut => (
+    <div key={shortcut.name}>
       <Keys shortcutKeys={shortcut.keys} />
       {shortcut.name}
     </div>
@@ -111,6 +111,10 @@ ShortcutsHelp.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   platform: PropTypes.string.isRequired,
+};
+ShortcutsHelp.defaultProps = {
+  isOpen: false,
+  onClose: () => {},
 };
 
 export default ShortcutsHelp;

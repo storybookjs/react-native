@@ -21,6 +21,7 @@
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
     "fuzzysearch": "^1.0.3",
+    "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.8",
     "lodash.pick": "^4.4.0",
@@ -36,5 +37,6 @@
     "react-split-pane": "^0.1.63",
     "redux": "^3.6.0"
   },
-  "main": "dist/index.js"
+  "main": "dist/index.js",
+  "devDependencies": {}
 }

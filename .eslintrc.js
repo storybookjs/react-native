@@ -3,11 +3,7 @@ const warn = 1;
 const ignore = 0;
 
 module.exports = {
-  extends: [
-    // './node_modules/eslint-config-airbnb-base/rules/es6.js',
-    'airbnb-base',
-    'plugin:jest/recommended',
-  ],
+  extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
   plugins: [
     'prettier',
     'jest',
@@ -23,7 +19,7 @@ module.exports = {
     'jest/globals': true,
   },
   rules: {
-    strict: [error, "never"],
+    strict: [error, 'never'],
     'prettier/prettier': ['warn', {
       printWidth: 100,
       tabWidth: 2,
@@ -35,10 +31,17 @@ module.exports = {
     'class-methods-use-this': ignore,
     'arrow-parens': ['warn', 'as-needed'],
     'space-before-function-paren': ignore,
-    'import/no-extraneous-dependencies': [error, { devDependencies: true, peerDependencies: true }],
+    'import/no-extraneous-dependencies': [error, {
+      devDependencies: true,
+      peerDependencies: true
+    }],
     'import/prefer-default-export': ignore,
     'react/jsx-uses-react': error,
     'react/jsx-uses-vars': error,
     'react/react-in-jsx-scope': error,
+    'react/jsx-filename-extension': [warn, {
+      extensions: ['.js', '.jsx']
+    }],
+    'react/no-unescaped-entities': ignore,
   },
 }
