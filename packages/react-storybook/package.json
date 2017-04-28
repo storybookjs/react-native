@@ -2,18 +2,23 @@
   "name": "@kadira/storybook",
   "version": "2.35.3",
   "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
+  "license": "MIT",
+  "main": "dist/client/index.js",
+  "typings": "./config/storybook.d.ts",
+  "bin": {
+    "build-storybook": "./dist/server/build.js",
+    "start-storybook": "./dist/server/index.js",
+    "storybook-server": "./dist/server/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/react-storybook.git"
   },
-  "typings": "./config/storybook.d.ts",
-  "license": "MIT",
   "scripts": {
-    "prepublish": "sh scripts/prepublish.sh",
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'"
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@kadira/react-split-pane": "^1.4.7",
     "@kadira/storybook-addon-actions": "*",
     "@kadira/storybook-addon-links": "*",
     "@kadira/storybook-addons": "*",
@@ -58,10 +63,6 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "mock-fs": "^4.2.0",
@@ -69,10 +70,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
-  "main": "dist/client/index.js",
-  "bin": {
-    "start-storybook": "./dist/server/index.js",
-    "build-storybook": "./dist/server/build.js",
-    "storybook-server": "./dist/server/index.js"
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   }
 }
