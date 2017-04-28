@@ -4,12 +4,10 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "node .scripts/npm-prepublish.js"
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-react-app": "^2.2.0",
     "shelljs": "^0.7.7"
   },
   "dependencies": {
