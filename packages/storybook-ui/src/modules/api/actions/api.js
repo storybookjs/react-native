@@ -43,6 +43,7 @@ export function ensureStory(storyKinds, selectedKind, selectedStory) {
   const found = kindInfo.stories.find(item => item === selectedStory);
   if (found) return found;
 
+  // if the selected story is non-existant, select the first story
   return kindInfo.stories[0];
 }
 

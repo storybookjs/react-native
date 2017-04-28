@@ -4,7 +4,7 @@
   "description": "Options addon for storybook",
   "main": "preview.js",
   "scripts": {
-    "prepublish": "node .scripts/npm-prepublish.js",
+    "prepublish": "node ../../scripts/prepublish.js",
     "storybook": "start-storybook -p 9001"
   },
   "repository": {
@@ -23,10 +23,6 @@
     "@kadira/storybook": "*",
     "@kadira/storybook-addons": "*",
     "@kadira/storybook-ui": "*",
-    "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",

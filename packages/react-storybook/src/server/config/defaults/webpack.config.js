@@ -58,12 +58,6 @@ module.exports = storybookBaseConfig => {
     },
   ];
 
-  newConfig.postcss = () => [
-    autoprefixer({
-      browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-    }),
-  ];
-
   newConfig.resolve.alias = {
     ...storybookBaseConfig.resolve.alias,
     // This is to support NPM2

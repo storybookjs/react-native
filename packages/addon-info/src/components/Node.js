@@ -8,42 +8,13 @@ const stylesheet = {
   },
 };
 
-function getData(element) {
-  const data = {
-    name: null,
-    text: null,
-    children: null,
-  };
-
-  if (typeof element === 'string') {
-    data.text = element;
-    return data;
-  }
-
-  if (typeof element === 'number') {
-    data.text = String.toString(element);
-    return data;
-  }
-
-  data.children = element.props.children;
-  const type = element.type;
-
-  if (typeof type === 'string') {
-    data.name = type;
-  } else {
-    data.name = type.displayName || type.name || 'Unknown';
-  }
-
-  return data;
-}
-
 export default class Node extends React.Component {
   render() {
     const { node, depth } = this.props;
     const { tagStyle, containerStyle } = stylesheet;
 
     const leftPad = {
-      paddingLeft: 3 + ((depth + 1) * 15), // eslint-disable-line
+      paddingLeft: 3 + (depth + 1) * 15,
       paddingRight: 3,
     };
 
@@ -91,4 +62,37 @@ export default class Node extends React.Component {
       </div>
     );
   }
+}
+
+function getData(element) {
+  const data = {
+    name: null,
+    text: null,
+    children: null,
+  };
+  
+  if (typeof element === 'null') {
+    return data
+  }
+
+  if (typeof element == 'string') {
+    data.text = element;
+    return data;
+  }
+
+  if (typeof element === 'number') {
+    data.text = String.toString(element);
+    return data;
+  }
+
+  data.children = element.props.children;
+  const type = element.type;
+
+  if (typeof type === 'string') {
+    data.name = type;
+  } else {
+    data.name = type.displayName || type.name || 'Unknown';
+  }
+
+  return data;
 }

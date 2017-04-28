@@ -1,7 +1,14 @@
 {
   "name": "storybook",
   "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
     "codecov": "^2.1.0",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
@@ -13,14 +20,15 @@
     "eslint-plugin-react": "^6.10.3",
     "jest": "^19.0.2",
     "jest-enzyme": "^3.0.1",
-    "lerna": "2.0.0-rc.2",
+    "lerna": "2.0.0-rc.4",
     "prettier": "^1.1.0",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "shelljs": "^0.7.7"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
     "test": "jest --config ./.jestrc",
     "test:watch": "npm test -- --watch",
