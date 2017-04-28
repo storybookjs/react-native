@@ -57,6 +57,12 @@ const Header = ({ openShortcutsHelp, name, url }) => (
   </div>
 );
 
+Header.defaultProps = {
+  openShortcutsHelp: null,
+  name: '',
+  url: '',
+};
+
 Header.propTypes = {
   openShortcutsHelp: PropTypes.func,
   name: PropTypes.string,

@@ -43,7 +43,7 @@ const suggestionTemplate = (props, state, styles) =>
   state.results.map((val, i) => {
     const style = state.selectedIndex === i ? styles.selectedResultStyle : styles.resultsStyle;
     return (
-      <div key={i} style={style}>
+      <div key={val.value} style={style}>
         {val.value}
         <span style={{ float: 'right', opacity: 0.5 }}>
           {val.type === 'story' ? `in ${val.kind}` : 'Kind'}
@@ -83,7 +83,7 @@ export default class SearchBox extends React.Component {
       <div style={searchBoxStyle}>
         {this.props.showSearchBox &&
           <FuzzySearch
-            list={formatStories(this.props.stories || [])}
+            list={formatStories(this.props.stories)}
             onSelect={this.onSelect}
             keys={['value', 'type']}
             resultsTemplate={suggestionTemplate}
@@ -93,6 +93,8 @@ export default class SearchBox extends React.Component {
     );
   }
 }
+
+SearchBox.defaultProps = { stories: [] };
 
 SearchBox.propTypes = {
   showSearchBox: PropTypes.bool.isRequired,

@@ -65,8 +65,14 @@ class DownPanel extends Component {
   }
 }
 
+DownPanel.defaultProps = {
+  panels: {},
+  onPanelSelect: () => {},
+  selectedPanel: null,
+};
+
 DownPanel.propTypes = {
-  panels: PropTypes.object,
+  panels: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   onPanelSelect: PropTypes.func,
   selectedPanel: PropTypes.string,
 };

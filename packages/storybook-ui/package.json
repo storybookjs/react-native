@@ -38,5 +38,12 @@
     "redux": "^3.6.0"
   },
   "main": "dist/index.js",
-  "devDependencies": {}
+  "devDependencies": {},
+  "eslintConfig": {
+    "globals": {
+      "document": true,
+      "localStorage": true,
+      "window": true
+    }
+  }
 }

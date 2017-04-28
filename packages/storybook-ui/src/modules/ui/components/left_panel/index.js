@@ -31,12 +31,17 @@ const LeftPanel = props => (
   </div>
 );
 
-LeftPanel.propTypes = {
-  stories: PropTypes.array,
-  selectedKind: PropTypes.string,
-  selectedStory: PropTypes.string,
-  onSelectStory: PropTypes.func,
+LeftPanel.defaultProps = {
+  stories: null,
+  storyFilter: null,
+  onStoryFilter: () => {},
+  openShortcutsHelp: null,
+  name: '',
+  url: '',
+};
 
+LeftPanel.propTypes = {
+  stories: PropTypes.arrayOf(PropTypes.object),
   storyFilter: PropTypes.string,
   onStoryFilter: PropTypes.func,
 

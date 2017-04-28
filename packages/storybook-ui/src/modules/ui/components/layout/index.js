@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import SplitPane from 'react-split-pane';
 
 import USplit from './usplit';
 import Dimensions from './dimensions';
-import SplitPane from 'react-split-pane';
 
 const rootStyle = {
   height: '100vh',
@@ -76,13 +76,9 @@ const fullScreenPreviewStyle = {
   overflow: 'hidden',
 };
 
-const onDragStart = function() {
-  document.body.classList.add('dragging');
-};
+const onDragStart = () => document.body.classList.add('dragging');
 
-const onDragEnd = function() {
-  document.body.classList.remove('dragging');
-};
+const onDragEnd = () => document.body.classList.remove('dragging');
 
 const defaultSizes = {
   addonPanel: {
@@ -202,12 +198,12 @@ class Layout extends React.Component {
         >
           {showLeftPanel
             ? <div style={leftPanelStyle(leftPanelOnTop)}>
-                <div style={{ flexGrow: 1, height: '100%' }}>
-                  {leftPanel()}
-                </div>
-                <USplit shift={5} split={storiesSplit} />
+              <div style={{ flexGrow: 1, height: '100%' }}>
+                {leftPanel()}
               </div>
-            : <div />}
+              <USplit shift={5} split={storiesSplit} />
+            </div>
+          : <div />}
 
           <SplitPane
             split={addonSplit}
@@ -233,13 +229,12 @@ class Layout extends React.Component {
               </div>
               <Dimensions {...previewPanelDimensions} />
             </div>
-            {showDownPanel
-              ? <div style={downPanelStyle(downPanelInRight)}>
-                  <USplit shift={-5} split={addonSplit} />
-                  {downPanel()}
-                </div>
-              : <div />}
-
+            {showDownPanel ?
+              <div style={downPanelStyle(downPanelInRight)}>
+                <USplit shift={-5} split={addonSplit} />
+                {downPanel()}
+              </div>
+            : <div />}
           </SplitPane>
         </SplitPane>
       </div>

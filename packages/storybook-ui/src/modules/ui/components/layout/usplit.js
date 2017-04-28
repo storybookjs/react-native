@@ -48,7 +48,7 @@ const USplit = ({ shift, split }) => (
   </div>
 );
 
-USplit.PropTypes = {
+USplit.propTypes = {
   shift: PropTypes.number,
   split: PropTypes.oneOf(['vertical', 'horizontal']),
 };

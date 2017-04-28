@@ -78,7 +78,7 @@ export const Keys = ({ shortcutKeys }) => {
 };
 
 Keys.propTypes = {
-  shortcutKeys: PropTypes.array.isRequired,
+  shortcutKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export const Shortcuts = ({ appShortcuts }) => {
@@ -98,7 +98,12 @@ export const Shortcuts = ({ appShortcuts }) => {
 };
 
 Shortcuts.propTypes = {
-  appShortcuts: PropTypes.array.isRequired,
+  appShortcuts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      keys: PropTypes.array,
+    }),
+  ).isRequired,
 };
 
 export const ShortcutsHelp = ({ isOpen, onClose, platform }) => (

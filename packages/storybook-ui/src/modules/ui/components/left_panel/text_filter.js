@@ -54,6 +54,7 @@ export default class TextFilter extends React.Component {
 
     const clearButtonStyle = {
       position: 'absolute',
+      backgroundColor: 'transparent',
       color: '#868686',
       border: 'none',
       width: 25,
@@ -74,19 +75,25 @@ export default class TextFilter extends React.Component {
             type="text"
             placeholder="Filter"
             name="filter-text"
-            value={this.props.text || ''}
+            value={this.props.text}
             onChange={this.onChange}
           />
         </div>
         {this.state.query &&
           this.state.query.length &&
-          <div style={clearButtonStyle} onClick={this.fireOnClear} className="clear">
+          <button style={clearButtonStyle} onClick={this.fireOnClear} className="clear">
             ×
-          </div>}
+          </button>}
       </div>
     );
   }
 }
+
+TextFilter.defaultProps = {
+  text: '',
+  onChange: null,
+  onClear: null,
+};
 
 TextFilter.propTypes = {
   text: PropTypes.string,
