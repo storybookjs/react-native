@@ -26,6 +26,9 @@ export default {
   tabbar: {
     display: 'flex',
     flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     borderBottom: 'solid 1px #eaeaea',
   },
 
@@ -44,6 +47,8 @@ export default {
     textTransform: 'uppercase',
     transition: 'opacity 0.3s',
     opacity: 0.5,
+    maxHeight: 60,
+    overflow: 'hidden',
   },
 
   activetab: {
