@@ -1,55 +1,74 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <meta name="description" content="React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively." >
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>AlphabetJS: The latest and greatest Javascript framework | Storybook</title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.5em georgia,serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.618rem;line-height:2.25rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.33471rem;line-height:2.25rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.21225rem;line-height:1.5rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.5rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.90825rem;line-height:1.5rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.86558rem;line-height:1.5rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}ul{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.5rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:1rem;line-height:1.5rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}blockquote{margin-left:1.5rem;margin-right:1.5rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.5rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}li > ul{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5rem / 2);}code{font-size:0.85rem;line-height:1.5rem;}kbd{font-size:0.85rem;line-height:1.5rem;}samp{font-size:0.85rem;line-height:1.5rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;-moz-font-feature-settings:tnum;-ms-font-feature-settings:tnum;-webkit-font-feature-settings:tnum;padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:calc(0.75rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:"";}</style><style>.demo1-ball{border-radius:99px;background-color:#fff;width:50px;height:50px;border:3px solid #fff;position:absolute;background-size:50px}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d14}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}@media only screen and (min-width:700px){.breakpoint-min-width-700{display:block}.breakpoint-max-width-700{display:none}}@media only screen and (max-width:700px){.breakpoint-min-width-700{display:none}.breakpoint-max-width-700{display:block}}</style></head><body><div id="react-mount"><div data-reactroot="" data-reactid="1" data-react-checksum="2083652223"><div style="background:rgb(194,54,98);color:rgb(255,252,253);margin-bottom:2.25rem;" data-reactid="2"><div style="max-width:960px;margin-left:auto;margin-right:auto;padding-left:1.125rem;" data-reactid="3"><div style="padding:1.125rem 0;" data-reactid="4"><div style="float:left;margin-left:0%;margin-right:1.694915254237288%;width:32.20338983050847%;clear:none;height:24px;" data-reactid="5"><a style="text-decoration:none;color:rgb(255,252,253);font-size:1.59375rem;" href="/" data-reactid="6">Storybook</a><span style="display:block;clear:both;" data-reactid="7"> </span></div><div style="float:right;margin-left:0%;margin-right:0%;width:66.10169491525423%;clear:none;" data-reactid="8"><a style="float:right;color:rgb(255,252,253);text-decoration:none;margin-left:0.75rem;" href="https://github.com/gatsbyjs/gatsby" data-reactid="9">Github</a><a style="background:rgb(194,54,98);color:rgb(255,252,253);float:right;text-decoration:none;padding-left:0.75rem;padding-right:0.75rem;padding-bottom:1.125rem;margin-bottom:-1.5rem;padding-top:1.5rem;margin-top:-1.5rem;" href="/examples/" data-reactid="10">Examples</a><a style="background:rgb(194,54,98);color:rgb(255,252,253);float:right;text-decoration:none;padding-left:0.75rem;padding-right:0.75rem;padding-bottom:1.125rem;margin-bottom:-1.5rem;padding-top:1.5rem;margin-top:-1.5rem;" href="/docs/" data-reactid="11">Documentation</a><span style="display:block;clear:both;" data-reactid="12"> </span></div><span style="display:block;clear:both;" data-reactid="13"> </span></div><span style="display:block;clear:both;" data-reactid="14"> </span></div></div><div style="max-width:960px;margin-left:auto;margin-right:auto;padding:1.5rem 1.125rem;padding-top:0;" data-reactid="15"><div class="markdown" data-reactid="16"><h1 data-reactid="17">AlphabetJS: The latest and greatest Javascript framework</h1><div data-reactid="18"><h2>Inops magnis Acrisius remisit Circes</h2>
+<p>Lorem markdownum <em>formasque</em> terram, fatum adnuit memores, stipulis
+virgine,
+ullo vires, potiere proles. Modo <a href="http://gifctrl.com/">nec Aesacon</a> et
+vultum
+praeter fata gemitus panda. Factaque sibi repressit saltem, flammaeque
+ille per
+et opus flecti tellus inter: curru sidus. O iunxit ita erat, frondes,
+hac proles
+inritaturque?</p>
+<h2>Sed videt vestem vagatur</h2>
+<p>Palato rubentis enim, ora fontes lunaria, ventis iacebant pariter. Illa
+latet
+primae concedimus factis, animo ab nec vagantem praemia sustollit.
+Secunda
+detque ecce, sua vixque fontes <em>quantam</em> aede.</p>
+<h2>Cuique in nullum futuri</h2>
+<p>Amphitryoniaden sanguine et nefas lactentis iuvencae scit? Venis et dedi
+hoc
+thalamoque palmite fata, nec tot. Procorum super <a href="http://reddit.com/r/thathappened">patre aranea
+passis</a> et regemque inque dedimus
+<a href="http://stoneship.org/">haerent
+lumina ponunt</a>, Rhodopeius lacertis! Conceperat
+tellus:
+hunc id nymphe en adest evolvere? Auro nescio extemplo triones et
+sceleratus
+queruntur inpavidus ab suos concutit, Ionio aut, de quo cinisque.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Typography <span class="hljs-keyword">from</span> <span class="hljs-string">'typography'</span>
+<span class="hljs-keyword">import</span> CodePlugin <span class="hljs-keyword">from</span> <span class="hljs-string">'typography-plugin-code'</span>
 
-    <meta name="twitter:card" content="summary_large_image" >
-    <meta name="twitter:site" content="@kadirahq" >
-    <meta name="twitter:url" content="https://storybooks.js.org" >
-    <meta name="twitter:title" content="Storybook - UI dev environment you'll love to use." >
-    <meta name="twitter:description" content="React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively." >
-    <meta name="twitter:image" content="https://cldup.com/xgMg-L_Com.png" >
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">baseFontSize</span>: <span class="hljs-string">'16px'</span>,
+  <span class="hljs-attr">baseLineHeight</span>: <span class="hljs-number">1.5</span>,
+  <span class="hljs-attr">bodyFontFamily</span>: [<span class="hljs-string">'Helvetica Neue'</span>, <span class="hljs-string">'Segoe UI'</span>, <span class="hljs-string">'Helvetica'</span>, <span class="hljs-string">'Arial'</span>, <span class="hljs-string">'sans-serif'</span>],
+  <span class="hljs-attr">headerFontFamily</span>: [<span class="hljs-string">'Helvetica Neue'</span>, <span class="hljs-string">'Segoe UI'</span>, <span class="hljs-string">'Helvetica'</span>, <span class="hljs-string">'Arial'</span>, <span class="hljs-string">'sans-serif'</span>],
+  <span class="hljs-attr">bodyWeight</span>: <span class="hljs-number">400</span>,
+  <span class="hljs-attr">headerWeight</span>: <span class="hljs-number">700</span>,
+  <span class="hljs-attr">boldWeight</span>: <span class="hljs-number">700</span>,
+  <span class="hljs-attr">scale</span>: <span class="hljs-number">1.618</span>,
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> CodePlugin(),
+  ],
+}
 
-    <meta name="og:type" content="website" >
-    <meta name="og:site_name" content="Storybook" >
-    <meta name="og:url" content="https://storybooks.js.org" >
-    <meta name="og:title" content="Storybook - UI dev environment you'll love to use." >
-    <meta name="og:description" content="React Storybook is a UI development environment for your React components. With it, you can visualize different states of your UI components and develop them interactively." >
-    <meta name="og:image" content="https://cldup.com/xgMg-L_Com.png" >
+<span class="hljs-keyword">const</span> typography = <span class="hljs-keyword">new</span> Typography(options)
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<span class="hljs-comment">// Hot reload typography in development.</span>
+<span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">'production'</span>) {
+  typography.injectStyles()
+}
 
-      ga('create', 'UA-48364339-10', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script>
-      (function(){
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect != location.href) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <a href="https://github.com/storybooks/storybook" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#E91E63; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` in this folder.
-      To create a production bundle, use `npm run build`.
-    -->
-  </body>
-</html>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> typography
+</code></pre>
+<h2>Diu fas tractaque Tethyn vidi exigere</h2>
+<p>Aenea inque est flexo armos et bovis! Naides alta vocisque videt fit
+cervum
+elusam Macareus vicisse illis unguibus. Multorumque tumulo
+<strong>praetemptatque
+occidit</strong> ingentique et summas Nili virgo vaticinata facinus positae
+vestes,
+<em>exstinguere iuvat</em> Lycaona postquam.</p>
+<ul>
+<li>Multaque in coloque</li>
+<li>Emicuit errandum</li>
+<li>Mitior ego verbis interdum occupat feruntur</li>
+<li>Parili Meleagros fluit et timorem</li>
+</ul>
+<p>Gemit petit, cingentia quis carens, duxere es sortem corpora quamvis?
+<strong>Palmis
+visa</strong>, nec deo fuit Amphissos, et sprevere Acmona illa habuissem
+<strong>asper</strong>. Et
+<a href="http://reddit.com/r/thathappened">nemus</a> Iunone: et deae!</p>
+</div></div><span style="display:block;clear:both;" data-reactid="19"> </span></div></div></div><script src="/bundle.js?t=1493340738825"></script></body></html>
