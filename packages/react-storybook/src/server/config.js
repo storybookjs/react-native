@@ -36,47 +36,46 @@ export default function(configType, baseConfig, configDir) {
 
   // Check whether user has a custom webpack config file and
   // return the (extended) base configuration if it's not available.
-  let customConfigPath = path.resolve(configDir, 'webpack.config.js');
+  const customConfigPath = path.resolve(configDir, 'webpack.config.js');
+
   if (!fs.existsSync(customConfigPath)) {
     logger.info('=> Using default webpack setup based on "Create React App".');
-    customConfigPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
+    const configPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
+    const customConfig = require(configPath);
+
+    return customConfig(config);
+  } else {
+    const customConfig = require(customConfigPath);
+
+    if (typeof customConfig === 'function') {
+      logger.info('=> Loading custom webpack config (full-control mode).');
+      return customConfig(config, configType);
+    } else {
+      logger.info('=> Loading custom webpack config (extending mode).');
+      return {
+        ...customConfig,
+        // We'll always load our configurations after the custom config.
+        // So, we'll always load the stuff we need.
+        ...config,
+        // Override with custom devtool if provided
+        devtool: customConfig.devtool || config.devtool,
+        // We need to use our and custom plugins.
+        plugins: [...config.plugins, ...(customConfig.plugins || [])],
+        module: {
+          ...config.module,
+          // We need to use our and custom rules.
+          ...customConfig.module,
+          rules: [...config.module.rules, ...(customConfig.module.rules || [])],
+        },
+        resolve: {
+          ...config.resolve,
+          ...customConfig.resolve,
+          alias: {
+            ...config.alias,
+            ...(customConfig.resolve && customConfig.resolve.alias),
+          },
+        },
+      };
+    }
   }
-
-  const customConfig = require(customConfigPath);
-
-  if (typeof customConfig === 'function') {
-    logger.info('=> Loading custom webpack config (full-control mode).');
-    return customConfig(config, configType);
-  }
-
-  logger.info('=> Loading custom webpack config.');
-
-  customConfig.module = customConfig.module || {};
-
-  const newConfig = {
-    ...customConfig,
-    // We'll always load our configurations after the custom config.
-    // So, we'll always load the stuff we need.
-    ...config,
-    // Override with custom devtool if provided
-    devtool: customConfig.devtool || config.devtool,
-    // We need to use our and custom plugins.
-    plugins: [...config.plugins, ...(customConfig.plugins || [])],
-    module: {
-      ...config.module,
-      // We need to use our and custom rules.
-      ...customConfig.module,
-      rules: [...config.module.rules, ...(customConfig.module.rules || [])],
-    },
-    resolve: {
-      ...config.resolve,
-      ...customConfig.resolve,
-      alias: {
-        ...config.alias,
-        ...(customConfig.resolve && customConfig.resolve.alias),
-      },
-    },
-  };
-
-  return newConfig;
 }
