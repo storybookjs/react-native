@@ -1,26 +1,27 @@
 {
   "name": "test-cra",
   "version": "1.0.0",
-  "private": true,
-  "devDependencies": {
-    "@kadira/storybook": "file:../../packages/react-storybook",
-    "@kadira/storybook-addons": "file:../../packages/addons",
-    "@kadira/storybook-channel": "file:../../packages/channel",
-    "@kadira/storybook-ui": "file:../../packages/storybook-ui",
-    "@kadira/storybook-addon-actions": "file:../../packages/addon-actions",
-    "@kadira/storybook-channel-postmsg": "file:../../packages/channel-postmessage",
-    "react-scripts": "0.9.5"
+  "scripts": {
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 9009 -s public",
+    "pretest": "npm install",
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
-  }
+  "devDependencies": {
+    "@kadira/storybook": "file:../../packages/react-storybook",
+    "@kadira/storybook-addon-actions": "file:../../packages/addon-actions",
+    "@kadira/storybook-addons": "file:../../packages/addons",
+    "@kadira/storybook-channel": "file:../../packages/channel",
+    "@kadira/storybook-channel-postmsg": "file:../../packages/channel-postmessage",
+    "@kadira/storybook-ui": "file:../../packages/storybook-ui",
+    "react-scripts": "0.9.5"
+  },
+  "private": true
 }
