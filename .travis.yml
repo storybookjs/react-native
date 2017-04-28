@@ -10,8 +10,9 @@ node_js:
 before_install: ./scripts/travis/before_install.sh
 after_success: ./scripts/travis/after_success.sh
 script:
+  - npm run bootstrap
   - npm run lint
-  - npm run test
+  - npm run test -- --coverage
   - npm run coverage
   - npm run test-examples
 git:
