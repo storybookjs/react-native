@@ -33,7 +33,7 @@ For full documentation on using Storybook visit: https://storybooks.js.org
 - [react-native-storybook](packages/react-native-storybook) - Storybook for React components
 - [storyshots](packages/storyshots) - Easy snapshot testing for storybook
 - [getstorybook](packages/getstorybook) - Streamlined installation for a variety of app types
-- [examples](packages/examples) - Code examples to illustrate different Storybook use cases
+- [examples](examples) - Code examples to illustrate different Storybook use cases
 
 ## Addons
 - [addon-actions](packages/addon-actions/) - Log actions as users interact with components in storybook
