@@ -103,8 +103,18 @@ class Stories extends React.Component {
   }
 }
 
+Stories.defaultProps = {
+  stories: [],
+  onSelectStory: null,
+};
+
 Stories.propTypes = {
-  stories: PropTypes.array.isRequired,
+  stories: PropTypes.arrayOf(
+    PropTypes.shape({
+      kind: PropTypes.string,
+      stories: PropTypes.array,
+    }),
+  ),
   selectedKind: PropTypes.string.isRequired,
   selectedStory: PropTypes.string.isRequired,
   onSelectStory: PropTypes.func,
