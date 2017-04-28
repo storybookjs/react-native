@@ -96,3 +96,7 @@ initStoryshots({
   storyNameRegex: /buttons/
 });
 ```
+
+### `framework`
+
+If you are running tests from outside of your app's directory, storyshot's detection of which framework you are using may fail. Pass `"react"` or `"react-native"` to short-circuit this.

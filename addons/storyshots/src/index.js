@@ -12,15 +12,20 @@ let configPath;
 const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
-const isStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@storybook/react']) ||
-  (pkg.dependencies && pkg.dependencies['@storybook/react']);
-const isRNStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@storybook/react-native']) ||
-  (pkg.dependencies && pkg.dependencies['@storybook/react-native']);
+
+const hasDependency = function(name) {
+  return (
+    (pkg.devDependencies && pkg.devDependencies[name]) ||
+    (pkg.dependencies && pkg.dependencies[name])
+  );
+};
 
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
+
+  const isStorybook = options.framework === 'react' || hasDependency('@storybook/react');
+  const isRNStorybook =
+    options.framework === 'react-native' || hasDependency('@storybook/react-native');
 
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
