@@ -27,7 +27,7 @@
     "shelljs": "^0.7.7"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
     "test": "jest --config ./.jestrc",
     "test:watch": "npm test -- --watch",
