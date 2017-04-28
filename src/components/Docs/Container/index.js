@@ -29,7 +29,7 @@ class Container extends React.Component {
 
     const gitHubRepoUrl = 'https://github.com/storybooks/storybooks.github.io';
     const docPath = `${selectedCatId}/${selectedSectionId}/${selectedItemId}`;
-    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/master/src/docs/${docPath}.js`;
+    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/source/src/docs/${docPath}.js`;
 
     return (
       <div id="docs-container" className="row">
