@@ -56,6 +56,6 @@ USplit.PropTypes = {
 USplit.defaultProps = {
   shift: 0,
   split: 'vertical',
-}
+};
 
 export default USplit;
