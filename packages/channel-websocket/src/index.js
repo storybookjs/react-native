@@ -1,5 +1,8 @@
-/* eslint no-underscore-dangle: 0 */
-
+/*
+  eslint-disable
+    no-console,
+    no-underscore-dangle
+*/
 import { WebSocket } from 'global';
 import Channel from '@kadira/storybook-channel';
 
