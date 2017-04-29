@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@kadira/storybook-channel": "*",
+    "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1"
   }
 }
