@@ -25,7 +25,7 @@ That's all you've to do.
 `getstorybook` also supports yarn.
 If you have installed yarn in your system, it'll detect it and use `yarn` instead of `npm`.
 
-If you don't want to use `npm` always you can use the `--use-npm` option like this:
+If you don't want to use `yarn` always you can use the `--use-npm` option like this:
 
 ```
 getstorybook --use-npm
