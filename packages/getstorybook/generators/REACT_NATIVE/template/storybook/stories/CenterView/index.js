@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 import style from './style';
 
@@ -9,3 +9,11 @@ export default function CenterView(props) {
     </View>
   );
 }
+
+CenterView.defaultProps = {
+  children: null,
+};
+
+CenterView.propTypes = {
+  children: PropTypes.node,
+};

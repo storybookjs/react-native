@@ -1,6 +1,6 @@
 /* eslint max-len: 0 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { View, Text } from 'react-native';
 
 export default class Welcome extends React.Component {
@@ -40,3 +40,11 @@ export default class Welcome extends React.Component {
     );
   }
 }
+
+Welcome.defaultProps = {
+  showApp: null,
+};
+
+Welcome.propTypes = {
+  showApp: PropTypes.func,
+};

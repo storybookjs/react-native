@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { TouchableHighlight } from 'react-native';
 
 export default function Button(props) {
   return (
-    <TouchableHighlight onPress={props.onPress || Function()}>
+    <TouchableHighlight onPress={props.onPress}>
       {props.children}
     </TouchableHighlight>
   );
 }
+
+Button.defaultProps = {
+  children: null,
+  onPress: () => {},
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  onPress: PropTypes.func,
+};

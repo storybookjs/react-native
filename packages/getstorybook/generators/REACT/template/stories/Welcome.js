@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const styles = {
   main: {
@@ -59,7 +59,7 @@ export default class Welcome extends React.Component {
         <p>
           See these sample
           {' '}
-          <a style={styles.link} href="#" onClick={this.showApp.bind(this)}>stories</a>
+          <a style={styles.link} href="#" onClick={() => this.showApp()}>stories</a>
           {' '}
           for a component called
           {' '}
@@ -79,7 +79,12 @@ export default class Welcome extends React.Component {
           <br />
           Have a look at the
           {' '}
-          <a style={styles.link} href="https://github.com/kadirahq/react-storybook" target="_blank">
+          <a
+            style={styles.link}
+            href="https://github.com/kadirahq/react-storybook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             React Storybook
           </a>
           {' '}
@@ -89,3 +94,11 @@ export default class Welcome extends React.Component {
     );
   }
 }
+
+Welcome.defaultProps = {
+  showApp: null,
+};
+
+Welcome.propTypes = {
+  showApp: PropTypes.func,
+};

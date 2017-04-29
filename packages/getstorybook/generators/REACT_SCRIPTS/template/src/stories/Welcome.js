@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const styles = {
   main: {
@@ -77,7 +77,7 @@ export default class Welcome extends React.Component {
         <p>
           See these sample
           {' '}
-          <a style={styles.link} href="#" onClick={this.showApp.bind(this)}>stories</a>
+          <a style={styles.link} href="#" onClick={() => this.showApp()}>stories</a>
           {' '}
           for a component called
           {' '}
@@ -89,10 +89,9 @@ export default class Welcome extends React.Component {
           <br />
           Here's how to add your <code style={styles.code}>App</code> component as a story.
         </p>
-        <div
-          style={styles.codeBlock}
-          dangerouslySetInnerHTML={{ __html: `<pre>${codeBlock}</pre>` }}
-        />
+        <div style={styles.codeBlock}>
+          <pre>{`${codeBlock}`}</pre>
+        </div>
         <p>
           Usually we create stories with smaller UI components in the app.<br />
           Have a look at the
@@ -101,6 +100,7 @@ export default class Welcome extends React.Component {
             style={styles.link}
             href="https://getstorybook.io/docs/basics/writing-stories"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Writing Stories
           </a>
@@ -111,3 +111,11 @@ export default class Welcome extends React.Component {
     );
   }
 }
+
+Welcome.defaultProps = {
+  showApp: null,
+};
+
+Welcome.propTypes = {
+  showApp: PropTypes.func,
+};
