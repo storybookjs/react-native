@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import addons from '@kadira/storybook-addons';
 
 export class WithNotes extends React.Component {
@@ -13,7 +13,12 @@ export class WithNotes extends React.Component {
   }
 }
 
+WithNotes.defaultProps = {
+  children: null,
+  notes: '',
+};
+
 WithNotes.propTypes = {
-  children: React.PropTypes.node,
-  notes: React.PropTypes.string,
+  children: PropTypes.node,
+  notes: PropTypes.string,
 };

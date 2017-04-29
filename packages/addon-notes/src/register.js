@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/no-danger */
+import React, { PropTypes } from 'react';
 import addons from '@kadira/storybook-addons';
 
 const styles = {
@@ -48,7 +49,6 @@ export class Notes extends React.Component {
   render() {
     const { text } = this.state;
     const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
-
     return (
       <div style={styles.notesPanel}>
         <div dangerouslySetInnerHTML={{ __html: textAfterFormatted }} />
@@ -57,9 +57,18 @@ export class Notes extends React.Component {
   }
 }
 
+Notes.defaultProps = {
+  api: { onStory: () => {} },
+};
+
 Notes.propTypes = {
-  channel: React.PropTypes.object,
-  api: React.PropTypes.object,
+  channel: React.PropTypes.shape({
+    on: PropTypes.func.isRequired,
+    removeListener: PropTypes.func.isRequired,
+  }).isRequired,
+  api: React.PropTypes.shape({
+    onStory: PropTypes.func,
+  }),
 };
 
 // Register the addon with a unique name.
