@@ -1,3 +1,4 @@
+/* eslint-disable global-require, import/no-dynamic-require */
 import fs from 'fs';
 import path from 'path';
 import loadBabelConfig from './babel_config';

@@ -42,7 +42,10 @@ const ErrorDisplay = ({ error }) => (
 );
 
 ErrorDisplay.propTypes = {
-  error: PropTypes.object.isRequired,
+  error: PropTypes.shape({
+    message: PropTypes.string,
+    stack: PropTypes.string,
+  }).isRequired,
 };
 
 export default ErrorDisplay;
