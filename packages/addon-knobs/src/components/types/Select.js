@@ -42,7 +42,9 @@ class SelectType extends React.Component {
     return (
       <select
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         value={knob.value}
         onChange={e => onChange(e.target.value)}
@@ -53,8 +55,16 @@ class SelectType extends React.Component {
   }
 }
 
+SelectType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 SelectType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 

@@ -73,21 +73,29 @@ class ColorType extends React.Component {
         </div>
         {this.state.displayColorPicker
           ? <div
-              style={styles.popover}
-              ref={e => {
-                this.popover = e;
+            style={styles.popover}
+            ref={e => {
+              this.popover = e;
               }}
-            >
-              <SketchPicker color={knob.value} onChange={color => onChange(color.hex)} />
-            </div>
+          >
+            <SketchPicker color={knob.value} onChange={color => onChange(color.hex)} />
+          </div>
           : null}
       </div>
     );
   }
 }
 
+ColorType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 ColorType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 

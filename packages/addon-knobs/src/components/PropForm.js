@@ -42,7 +42,7 @@ export default class propForm extends React.Component {
             type={knob.type}
             value={knob.value}
             knob={knob}
-            onChange={this._onFieldChange.bind(null, knob.name, knob.type)}
+            onChange={() => this._onFieldChange(knob.name, knob.type)}
           />
         ))}
       </form>
@@ -52,7 +52,16 @@ export default class propForm extends React.Component {
 
 propForm.displayName = 'propForm';
 
+propForm.defaultProps = {
+  knobs: [],
+};
+
 propForm.propTypes = {
-  knobs: PropTypes.array.isRequired,
+  knobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   onFieldChange: PropTypes.func.isRequired,
 };

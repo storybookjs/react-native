@@ -63,6 +63,9 @@ export default class PropField extends React.Component {
 }
 
 PropField.propTypes = {
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func.isRequired,
-  knob: PropTypes.object,
 };

@@ -19,18 +19,28 @@ class BooleanType extends React.Component {
     return (
       <input
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         type="checkbox"
-        onChange={() => onChange(this.refs.input.checked)}
+        onChange={() => onChange(this.input.checked)}
         checked={knob.value}
       />
     );
   }
 }
 
+BooleanType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 BooleanType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 

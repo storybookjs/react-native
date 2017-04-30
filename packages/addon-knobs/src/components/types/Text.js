@@ -23,7 +23,9 @@ class TextType extends React.Component {
     return (
       <Textarea
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         value={knob.value}
         onChange={e => onChange(e.target.value)}
@@ -32,8 +34,16 @@ class TextType extends React.Component {
   }
 }
 
+TextType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 TextType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
