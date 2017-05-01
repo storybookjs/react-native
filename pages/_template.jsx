@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Container } from 'react-responsive-grid'
 import { colors, activeColors } from 'utils/colors'
 

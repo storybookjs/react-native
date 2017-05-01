@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import DocumentTitle from 'react-document-title'
 import { config } from 'config'
 
@@ -11,7 +12,7 @@ const Markdown = ({ route }) => {
       <div className="markdown">
         <h1>{post.title}</h1>
         <p>
-          <a class="edit-link" href={editUrl} target="_blank">
+          <a className="edit-link" href={editUrl} target="_blank">
             Edit this page
           </a>
         </p>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 
 import Header from 'components/Header'
@@ -104,10 +105,10 @@ class DocPage extends Component {
   }
 }
 DocPage.propTypes = {
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
+  location: PropTypes.object,
+  route: PropTypes.object,
 }
 DocPage.contextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 }
 export default DocPage
