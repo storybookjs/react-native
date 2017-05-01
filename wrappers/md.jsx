@@ -4,7 +4,8 @@ import { config } from 'config'
 
 const Markdown = ({ route }) => {
   const post = route.page.data
-  const editUrl = `https://github.com/storybooks/storybooks.github.io/tree/source/pages${route.path.replace(/\/$/g, '.md')}`
+  const repoUrl = 'https://github.com/storybooks/storybooks.github.io'
+  const editUrl = `{repoUrl}/tree/source/pages${route.path.replace(/\/$/g, '.md')}`
   return (
     <DocumentTitle title={`${post.title} | ${config.siteTitle}`}>
       <div className="markdown">
