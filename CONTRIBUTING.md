@@ -15,28 +15,55 @@ No software is bug free. So, if you got an issue, follow these steps:
   * Share error logs, screenshots and etc.
   * To speed up the issue fixing process, send us a sample repo with the issue you faced:
 
+### Testing against `master`
+
+To test your project against the current latest version of storybook, you can clone the repository and link it with `npm`. Try following these steps:
+
+1. Download the latest version of this project, and build it
+
+  ```
+  git clone https://github.com/storybooks/storybook.git
+  cd storybook
+  npm install
+  ```
+
+2. Link `storybook` and any other required dependencies
+
+  ```
+  cd packages/react-storybook
+  npm link
+  
+  cd <your-project>
+  npm link @kadira/storybook
+  
+  # repeat with whichever other parts of the monorepo you are using.
+  ```
+
 ### Reproductions
 
-The best way to help figure out an issue you are having is to produce a minimal reproduction. A good way to do that is using Create React App:
+The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch. 
+
+A good way to do that is using the example `test-cra` app embedded in this repository:
 
 ```bash
-npm install --global create-react-app getstorybook
+# Download and build this repository:
+git clone https://github.com/storybooks/storybook.git
+cd storybook
+npm install
 
-create-react-app reproduction
-cd reproduction
-getstorybook
+cd examples/test-cra
 
 # make changes to try and reproduce the problem, such as adding components + stories
 npm start storybook
 
 # see if you can see the problem, if so, commit it:
-git init
+git checkout "branch-describing-issue"
 git add -A
 git commit -m "reproduction for issue #123"
 
-# create an new repository on github to host the reproduction, then:
-git remote add origin https://github.com/<your-username>/<repo-name>
-git push -u origin master
+# fork the storybook repo to your account, then add the resulting remote
+git remote add <your-username> https://github.com/<your-username>/storybook.git
+git push -u <your-username> master
 ```
 
 If you follow that process, you can then link to the github repository in the issue. See https://github.com/storybooks/storybook/issues/708#issuecomment-290589886 for an example.
