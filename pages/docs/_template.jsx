@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import Header from 'components/Header'
 import Breakpoint from 'components/Breakpoint'
 import find from 'lodash/find'
+import { flatten, values } from 'lodash'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
 
@@ -16,8 +17,9 @@ class DocPage extends Component {
   }
 
   render () {
-    const childPages = config.docSections.basics.map((p) => {
-      const page = find(this.props.route.pages, (_p) => _p.path === p)
+    const { route, location } = this.props
+    const childPages = flatten(values(config.docSections)).map((p) => {
+      const page = find(route.pages, (_p) => _p.path === p)
       return {
         title: page.data.title,
         path: page.path,
@@ -32,7 +34,7 @@ class DocPage extends Component {
       </option>
     )
     const docPages = childPages.map((child) => {
-      const isActive = prefixLink(child.path) === this.props.location.pathname
+      const isActive = prefixLink(child.path) === location.pathname
       return (
         <li
           key={child.path}
