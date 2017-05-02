@@ -1,114 +1,80 @@
-import React, { Component } from 'react'
+import React from 'react';
 import PropTypes from 'prop-types'
-import { Link } from 'react-router'
-
-import Header from 'components/Header'
-import Breakpoint from 'components/Breakpoint'
 import find from 'lodash/find'
-import { flatten, values } from 'lodash'
-import { prefixLink } from 'gatsby-helpers'
+import capitalize from 'lodash/capitalize'
+
+import Docs from 'components/Docs';
 import { config } from 'config'
 
-import typography from 'utils/typography'
-const { rhythm } = typography
+const categories = [{
+  id: 'react-storybook',
+  title: 'React Storybook',
+}]
 
-class DocPage extends Component {
-  handleTopicChange (e) {
-    return this.context.router.push(e.target.value)
-  }
+const getSections = (catId, config, pages) => {
+  // FIXME: use catId
+  const sections = Object.keys(config.docSections)
+  return sections.map(key => ({
+    id: key,
+    heading: capitalize(key),
+    items: config.docSections[key].map((path) => {
+      const page = pages.find(p => p.path === path)
+      return page.data
+    })
+  }))
+}
 
-  render () {
-    const { route, location } = this.props
-    const childPages = flatten(values(config.docSections)).map((p) => {
-      const page = find(route.pages, (_p) => _p.path === p)
-      return {
-        title: page.data.title,
-        path: page.path,
-      }
-    })
-    const docOptions = childPages.map((child) =>
-      <option
-        key={prefixLink(child.path)}
-        value={prefixLink(child.path)}
-      >
-        {child.title}
-      </option>
-    )
-    const docPages = childPages.map((child) => {
-      const isActive = prefixLink(child.path) === location.pathname
-      return (
-        <li
-          key={child.path}
-          style={{
-            marginBottom: rhythm(1/2),
-          }}
-        >
-          <Link
-            to={prefixLink(child.path)}
-            style={{
-              textDecoration: 'none',
-            }}
-          >
-            {isActive ? <strong>{child.title}</strong> : child.title}
-          </Link>
-        </li>
-      )
-    })
-    return (
-      <div>
-        <Breakpoint
-          mobile
-        >
-          <div
-            style={{
-              overflowY: 'auto',
-              paddingRight: `calc(${rhythm(1/2)} - 1px)`,
-              position: 'absolute',
-              width: `calc(${rhythm(8)} - 1px)`,
-              borderRight: '1px solid lightgrey',
-            }}
-          >
-            <ul
-              style={{
-                listStyle: 'none',
-                marginLeft: 0,
-                marginTop: rhythm(1/2),
-              }}
-            >
-              {docPages}
-            </ul>
-          </div>
-          <div
-            style={{
-              padding: `0 ${rhythm(1)}`,
-              paddingLeft: `calc(${rhythm(8)} + ${rhythm(1)})`,
-            }}
-          >
-            {this.props.children}
-          </div>
-        </Breakpoint>
-        <Breakpoint>
-          <strong>Topics:</strong>
-          {' '}
-          <select
-            defaultValue={this.props.location.pathname}
-            onChange={this.handleTopicChange}
-          >
-            {docOptions}
-          </select>
-          <br />
-          <br />
-          {this.props.children}
-        </Breakpoint>
-      </div>
-    )
+const getSelectedItem = (children, sectionId) => {
+  const { data } = children.props.route.page
+  return {
+    id: data.id,
+    section: sectionId,
+    title: data.title,
+    content: data.body
   }
 }
-DocPage.propTypes = {
+
+const getCategories = () => {
+
+  const sections = Object.keys(config.docSections)
+  return sections.map(key => ({
+    id: key,
+    title: key.toUpperCase(),
+  }))
+}
+
+const parsePath = (path) => {
+  const comps = path.split('/')
+  const [empty, itemId, sectionId, catId, ...rest] = comps.reverse()
+  return { catId, sectionId, itemId }
+}
+
+class DocsContainer extends React.Component {
+  render() {
+    const { pages, path } = this.props.route
+    const { children } = this.props
+    const { catId, sectionId, itemId } = parsePath(children.props.route.path)
+
+    const props = {
+      categories,
+      selectedCatId: catId,
+      sections: getSections(catId, config, pages),
+      selectedItem: getSelectedItem(children, sectionId),
+      selectedSectionId: sectionId,
+      selectedItemId: itemId,
+    }
+    console.log('props', props)
+
+    return <Docs {...props} />
+  }
+}
+
+DocsContainer.propTypes = {
   location: PropTypes.object,
   route: PropTypes.object,
 }
-DocPage.contextTypes = {
+DocsContainer.contextTypes = {
   router: PropTypes.object.isRequired,
 }
-export default DocPage
+
+export default DocsContainer;

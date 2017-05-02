@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-import Header from '../Homepage/Header';
+import Header from '../Header';
 import Container from './Container';
-import Footer from '../Homepage/Footer';
+import Footer from '../Footer';
 import './style.css';
 
 class Docs extends React.Component {

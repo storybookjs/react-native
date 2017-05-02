@@ -9,7 +9,7 @@ class Nav extends React.Component {
       ? 'selected'
       : '';
 
-    const url = `/docs/${selectedCatId}/${section.id}/${item.id}`;
+    const url = `/docs/${selectedCatId}/${section.id}/${item.id}/`;
 
     return (
       <li key={item.id}>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import DocumentTitle from 'react-document-title'
 
 import { prefixLink } from 'gatsby-helpers'
-import { TypographyStyle, GoogleFont } from 'react-typography'
 import typography from './utils/typography'
 import { colors } from 'utils/colors'
 
@@ -28,8 +27,6 @@ class HTML extends Component {
             content="width=device-width, initial-scale=1.0"
           />
           <title>{title}</title>
-          <TypographyStyle typography={typography} />
-          <GoogleFont typography={typography} />
           {css}
         </head>
         <body>

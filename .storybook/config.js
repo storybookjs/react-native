@@ -1,9 +1,10 @@
 import { configure } from '@kadira/storybook';
+
 import 'bootstrap/dist/css/bootstrap.css';
-import '../src/index.css';
+import '../css/main.css';
 
 function loadStories() {
-  require('../src/stories');
+  require('../stories')
 }
 
 configure(loadStories, module);

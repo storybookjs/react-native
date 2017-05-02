@@ -13,13 +13,16 @@ class Nav extends React.Component {
   }
 
   changeRoute(selectedCatId, selectedSectionId, selectedItemId) {
-    const url = `/docs/${selectedCatId}/${selectedSectionId}/${selectedItemId}`;
+    const url = `/docs/${selectedCatId}/${selectedSectionId}/${selectedItemId}/`;
     browserHistory.push(url);
   }
 
   handleHeadingChange(evt) {
-    const { selectedCatId } = this.props;
-    this.changeRoute(selectedCatId, evt.target.value, '');
+    const { selectedCatId, sections } = this.props;
+    const selectedSectionId = evt.target.value
+    const section = sections.find(section => section.id === selectedSectionId)
+    const itemId = section.items[0].id
+    this.changeRoute(selectedCatId, selectedSectionId, itemId);
   }
 
   handleNavChange(evt) {

@@ -11,7 +11,7 @@ basics = [
   "/docs/react-storybook/basics/exporting-storybook/",
   "/docs/react-storybook/basics/faq/",
 ]
-configuration = [
+configurations = [
   "/docs/react-storybook/configurations/default-config/",
   "/docs/react-storybook/configurations/custom-webpack-config/",
   "/docs/react-storybook/configurations/custom-babel-config/",

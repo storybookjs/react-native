@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Highlight from '../../../lib/highlight.js';
+// import Highlight from '../../../lib/highlight.js';
 import marked from 'marked';
 import 'highlight.js/styles/github-gist.css';
 import './style.css';
@@ -22,11 +22,7 @@ const DocsContent = ({ title, content, editUrl }) => (
       <h2 className="title">{title}</h2>
       <p><a className="edit-link" href={editUrl} target="_blank">Edit this page</a></p>
 
-      <div className="markdown">
-        <Highlight>
-          {marked(content)}
-        </Highlight>
-      </div>
+      <div className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   </div>
 );

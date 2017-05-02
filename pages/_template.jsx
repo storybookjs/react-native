@@ -5,12 +5,11 @@ import { colors, activeColors } from 'utils/colors'
 
 import { rhythm, adjustFontSizeTo } from 'utils/typography'
 import { config } from 'config'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
 
 // Import styles.
 import 'css/main.css'
 import 'css/github.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const PageTemplate = ({ children, location }) => (
   <div>
@@ -21,7 +20,6 @@ const PageTemplate = ({ children, location }) => (
       </svg>
     </a>
 
-    <Header location={location} />
     <Container
       style={{
         maxWidth: 960,
@@ -31,7 +29,6 @@ const PageTemplate = ({ children, location }) => (
     >
       {children}
     </Container>
-    <Footer />
   </div>
 )
 

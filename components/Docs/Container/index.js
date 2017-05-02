@@ -6,17 +6,6 @@ import Content from '../Content';
 import './style.css';
 
 class Container extends React.Component {
-  renderTopNav(cat) {
-    const { selectedCatId } = this.props;
-    const path = `/docs/${cat.id}`;
-
-    if (selectedCatId === cat.id) {
-      return <li className="selected" key={cat.id}>{cat.title}</li>;
-    }
-
-    return <a key={cat.id} href={path}><li>{cat.title}</li></a>;
-  }
-
   render() {
     const {
       categories,
@@ -29,18 +18,10 @@ class Container extends React.Component {
 
     const gitHubRepoUrl = 'https://github.com/storybooks/storybooks.github.io';
     const docPath = `${selectedCatId}/${selectedSectionId}/${selectedItemId}`;
-    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/source/src/docs/${docPath}.js`;
+    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/source/pages/docs/${docPath}/index.md`;
 
     return (
       <div id="docs-container" className="row">
-        <div className="row">
-          <div className="col-xs-12">
-            <ul className="top-nav">
-              {categories.map(this.renderTopNav.bind(this))}
-            </ul>
-          </div>
-        </div>
-
         <div className="nav col-sm-3 col-md-3 hidden-xs">
           <Nav
             selectedCatId={selectedCatId}
