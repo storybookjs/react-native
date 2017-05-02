@@ -5,6 +5,7 @@ import DocumentTitle from 'react-document-title'
 import { prefixLink } from 'gatsby-helpers'
 import typography from './utils/typography'
 import { colors } from 'utils/colors'
+import favicon from './design/homepage/storybook-icon.png'
 
 const BUILD_TIME = new Date().getTime()
 
@@ -27,6 +28,7 @@ class HTML extends Component {
             content="width=device-width, initial-scale=1.0"
           />
           <title>{title}</title>
+          <link rel="icon" href="favicon.ico" type="image/x-icon" />
           {css}
         </head>
         <body>
