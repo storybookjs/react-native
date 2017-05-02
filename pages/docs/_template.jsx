@@ -34,15 +34,6 @@ const getSelectedItem = (children, sectionId) => {
   }
 }
 
-const getCategories = () => {
-
-  const sections = Object.keys(config.docSections)
-  return sections.map(key => ({
-    id: key,
-    title: key.toUpperCase(),
-  }))
-}
-
 const parsePath = (path) => {
   const comps = path.split('/')
   const [empty, itemId, sectionId, catId, ...rest] = comps.reverse()
