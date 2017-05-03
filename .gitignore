@@ -9,3 +9,4 @@ dist
 build
 packages/examples/automated-*
 yarn.lock
+public
