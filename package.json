@@ -31,7 +31,7 @@
   "main": "n/a",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build": "gatsby build",
+    "build": "gatsby build && cp CNAME ./public",
     "deploy": "gh-pages -r git@github.com:storybooks/storybooks.github.io.git -d public -o origin -b master",
     "develop": "gatsby develop",
     "storybook": "start-storybook -p 9009",
