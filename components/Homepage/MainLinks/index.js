@@ -20,7 +20,7 @@ const MainLinks = () => (
           <div className="col-xs-6 read-docs">
             <h2>Read Docs</h2>
             <center>
-              <a href="/docs">
+              <a href="/docs/react-storybook/basics/introduction/">
                 <div className="docs-img" />
               </a>
             </center>
