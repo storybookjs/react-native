@@ -47,10 +47,10 @@ If you follow that process, you can then link to the github repository in the is
 
 We welcome your contributions. There are many ways you can help us. This is few of those ways:
 
-* Fix typos and add more documentation.
+* Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
 * Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
-* Work on [enhancements](https://github.com/storybooks/storybook/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) and new [features](https://github.com/storybooks/storybook/issues?q=is%3Aissue+is%3Aopen+label%3Afeature).
-* Add more tests (specially for the UI).
+* Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
+* Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
 Before you submit a new PR, make you to run `npm test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
