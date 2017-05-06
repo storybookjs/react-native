@@ -1,4 +1,4 @@
-import keyEvents from '@kadira/storybook-ui/dist/libs/key_events';
+import keyEvents from '@storybook/storybook-ui/dist/libs/key_events';
 import { selectStory } from './actions';
 
 export default function(context) {

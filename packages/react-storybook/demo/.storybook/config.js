@@ -1,4 +1,4 @@
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/storybook';
 
 function loadStories() {
   require('../src/stories');

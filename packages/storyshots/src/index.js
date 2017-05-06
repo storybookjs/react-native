@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import path from 'path';
 import readPkgUp from 'read-pkg-up';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/storybook-addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 const { describe, it, expect } = global;

@@ -1,2 +1,2 @@
-import * as storybook from '@kadira/storybook';
+import * as storybook from '@storybook/storybook';
 storybook.configure(() => require('./stories'), module);

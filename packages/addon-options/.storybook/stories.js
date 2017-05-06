@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/storybook';
 
 storiesOf('Hello', module)
   .add('Hello World', () => (

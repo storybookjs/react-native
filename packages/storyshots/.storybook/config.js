@@ -1,4 +1,4 @@
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/storybook';
 
 const req = require.context('../stories/required_with_context', true, /.stories.js$/)
 

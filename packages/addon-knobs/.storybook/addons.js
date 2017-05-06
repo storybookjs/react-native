@@ -1,2 +1,2 @@
 import '../src/register';
-import '@kadira/storybook/addons'
+import '@storybook/storybook/addons'

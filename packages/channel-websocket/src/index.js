@@ -1,4 +1,4 @@
-import Channel from '@kadira/storybook-channel';
+import Channel from '@storybook/storybook-channel';
 
 export default function createChannel({ url }) {
   const transport = new WebsocketTransport({ url });

@@ -1,4 +1,4 @@
-import * as storybook from '@kadira/storybook';
+import * as storybook from '@storybook/storybook';
 import { setOptions } from '../preview';
 
 setOptions({

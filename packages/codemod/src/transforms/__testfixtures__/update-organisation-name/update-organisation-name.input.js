@@ -1,5 +1,5 @@
 /* eslint-disable */
-import '@kadira/kadira-addon-knobs/register';
-import '@kadira/kadira-addon-options/register';
-import '@kadira/kadira/addons';
-import { storiesOf } from '@kadira/kadira';
+import '@storybook/kadira-addon-knobs/register';
+import '@storybook/kadira-addon-options/register';
+import '@storybook/kadira/addons';
+import { storiesOf } from '@storybook/kadira';

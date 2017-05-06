@@ -1,4 +1,4 @@
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/storybook-addons';
 import stringify from 'json-stringify-safe';
 import { EVENT_ID } from './';
 

@@ -1,4 +1,4 @@
-import Channel from '@kadira/storybook-channel';
+import Channel from '@storybook/storybook-channel';
 import stringify from 'json-stringify-safe';
 
 export const KEY = 'storybook-channel';

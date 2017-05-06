@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/storybook';
 import { action, decorateAction } from '../src';
 
 const pickFirst = decorateAction([

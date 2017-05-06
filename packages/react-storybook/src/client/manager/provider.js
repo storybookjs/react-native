@@ -2,9 +2,9 @@
 
 import qs from 'qs';
 import React from 'react';
-import { Provider } from '@kadira/storybook-ui';
-import addons from '@kadira/storybook-addons';
-import createChannel from '@kadira/storybook-channel-postmsg';
+import { Provider } from '@storybook/storybook-ui';
+import addons from '@storybook/storybook-addons';
+import createChannel from '@storybook/storybook-channel-postmsg';
 import Preview from './preview';
 
 export default class ReactProvider extends Provider {

@@ -1,6 +1,6 @@
 import React from 'react';
-import addons from '@kadira/storybook-addons';
-import createChannel from '@kadira/storybook-channel-websocket';
+import addons from '@storybook/storybook-addons';
+import createChannel from '@storybook/storybook-channel-websocket';
 import { EventEmitter } from 'events';
 import StoryStore from './story_store';
 import StoryKindApi from './story_kind';

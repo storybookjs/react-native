@@ -1,7 +1,7 @@
 import React from 'react';
-import { Provider } from '@kadira/storybook-ui';
-import createChannel from '@kadira/storybook-channel-websocket';
-import addons from '@kadira/storybook-addons';
+import { Provider } from '@storybook/storybook-ui';
+import createChannel from '@storybook/storybook-channel-websocket';
+import addons from '@storybook/storybook-addons';
 import uuid from 'uuid';
 
 export default class ReactProvider extends Provider {

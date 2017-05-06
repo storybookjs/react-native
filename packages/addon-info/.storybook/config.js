@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, setAddon, addDecorator } from '@kadira/storybook';
+import { configure, setAddon, addDecorator } from '@storybook/storybook';
 import InfoAddon from '../src/';
 
 addDecorator((story) => (

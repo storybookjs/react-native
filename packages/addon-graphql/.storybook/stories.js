@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook'
+import { storiesOf } from '@storybook/storybook'
 import { setupGraphiQL } from '../src'
 
 // setup the graphiql helper which can be used with the add method later

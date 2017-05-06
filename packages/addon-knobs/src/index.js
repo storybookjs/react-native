@@ -1,4 +1,4 @@
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/storybook-addons';
 import KnobManager from './KnobManager';
 
 const manager = new KnobManager();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/storybook';
 import moment from 'moment';
 import { withKnobs, number, object, boolean, text, select, date, array, color } from '../../src';
 

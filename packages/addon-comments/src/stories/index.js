@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/storybook';
 import Button from '../index';
 import CommentForm from '../manager/components/CommentForm';
 import CommentList from '../manager/components/CommentList';

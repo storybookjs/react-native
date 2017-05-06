@@ -1,6 +1,6 @@
 /* global document */
 
-import renderStorybookUI from '@kadira/storybook-ui';
+import renderStorybookUI from '@storybook/storybook-ui';
 import Provider from './provider';
 
 const rootEl = document.getElementById('root');
