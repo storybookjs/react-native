@@ -1,5 +1,5 @@
 {
-  "name": "@storybook/storybook-addon-graphql",
+  "name": "@storybook/addon-graphql",
   "version": "1.0.1",
   "description": "Storybook addon to display the GraphiQL IDE",
   "main": "dist/index.js",
@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybookhq/storybook-addon-graphql.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/storybookhq/storybook-addon-graphql/issues"
+    "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/storybookhq/storybook-addon-graphql#readme",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-graphql",
   "devDependencies": {
     "@storybook/storybook": "*",
     "react": "^15.5.4",

@@ -1,6 +1,6 @@
 # Comments Addon
 
-This Storybook addon allows you to add comments for your stories. This addon works on [React Storybook](https://github.com/storybookhq/react-storybook).
+This Storybook addon allows you to add comments for your stories. This addon works on [React Storybook](https://github.com/storybooks/storybook).
 
 ![](docs/screenshot.png)
 

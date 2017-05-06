@@ -81,7 +81,7 @@ export default class Welcome extends React.Component {
           <br />
           Have a look at the
           {' '}
-          <a style={styles.link} href="https://github.com/storybookhq/react-storybook" target="_blank">
+          <a style={styles.link} href="https://github.com/storybooks/storybook" target="_blank">
             React Storybook
           </a>
           {' '}

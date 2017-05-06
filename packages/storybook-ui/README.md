@@ -1,6 +1,6 @@
 # Storybook UI
 
-This is the core UI of [react-storybook](https://github.com/storybookhq/react-storybook) and other similar projects. It's a React based UI where you can initialize with a simple function. You can configure it by providing a simple provider API.
+This is the core UI of [react-storybook](https://github.com/storybooks/storybook) and other similar projects. It's a React based UI where you can initialize with a simple function. You can configure it by providing a simple provider API.
 
 ![Storybook UI Demo](./docs/storybook-ui-demo.png)
 
@@ -108,14 +108,14 @@ First of all, you can need to start the [example](/example) app to see your chan
 
 ### The App
 
-This is a Redux app written based on the [Mantra architecture](https://github.com/storybookhq/mantra/).
+This is a Redux app written based on the [Mantra architecture](https://github.com/kadirahq/mantra/).
 It's a set of modules. You can see those modules at `src/modules` directory.
 
 ### Changing UI
 
 If you like to change the appearance of the UI, you need to look at the `ui` module. Simply change components at the `components` directory for simple UI tweaks.
 
-You can also change containers(which are written with [react-komposer](https://github.com/storybookhq/react-komposer/)) to add more data from the redux state.
+You can also change containers(which are written with [react-komposer](https://github.com/kadirahq/react-komposer/)) to add more data from the redux state.
 
 ### Redux
 

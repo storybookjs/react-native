@@ -2,10 +2,10 @@ import React from 'react';
 import addons from '@storybook/storybook-addons';
 import Panel from './components/Panel';
 
-addons.register('storybookhq/storybook-addon-knobs', api => {
+addons.register('storybooks/storybook-addon-knobs', api => {
   const channel = addons.getChannel();
 
-  addons.addPanel('storybookhq/storybook-addon-knobs', {
+  addons.addPanel('storybooks/storybook-addon-knobs', {
     title: 'Knobs',
     render: () => <Panel channel={channel} api={api} key="knobs-panel" />,
   });

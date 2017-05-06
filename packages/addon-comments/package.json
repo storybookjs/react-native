@@ -1,19 +1,19 @@
 {
-  "name": "@storybook/storybook-addon-comments",
+  "name": "@storybook/addon-comments",
   "version": "1.9.1",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybookhq/storybook-addon-comments#readme",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-comments",
   "bugs": {
-    "url": "https://github.com/storybookhq/storybook-addon-comments/issues"
+    "url": "https://github.com/storybooks/storybook/issues"
   },
   "license": "MIT",
   "main": "preview.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybookhq/storybook-addon-comments.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js",

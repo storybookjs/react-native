@@ -4,7 +4,7 @@
   "description": "Write notes for your Storybook stories.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookhq/storybook-addon-notes.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "scripts": {

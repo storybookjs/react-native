@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybookhq/getstorybook.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "keywords": [
     "storybook",
@@ -16,9 +16,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/storybookhq/getstorybook/issues"
+    "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/storybookhq/getstorybook#readme",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/getstorybook",
   "dependencies": {
     "chalk": "^1.1.3",
     "commander": "^2.9.0",

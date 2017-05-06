@@ -1,6 +1,6 @@
 # getstorybook
 
-Easiest way to add [Storybook](https://github.com/storybookhq/react-storybook) support to your project.
+Easiest way to add [Storybook](https://github.com/storybooks/storybook) support to your project.
 
 ![](docs/getstorybook.png)
 
@@ -31,6 +31,4 @@ If you don't want to use `yarn` always you can use the `--use-npm` option like t
 getstorybook --use-npm
 ```
 
-
-
-For more information, refer [React Storybook](https://github.com/storybookhq/react-storybook) documentation.
+For more information, refer [React Storybook](https://github.com/storybooks/storybook) documentation.

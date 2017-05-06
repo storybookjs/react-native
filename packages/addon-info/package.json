@@ -1,10 +1,10 @@
 {
-  "name": "@storybook/react-storybook-addon-info",
+  "name": "@storybook/addon-info",
   "version": "3.4.0",
   "description": "A React Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookhq/react-storybook-addon-info.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "scripts": {

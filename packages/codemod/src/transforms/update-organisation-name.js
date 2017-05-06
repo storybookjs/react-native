@@ -7,7 +7,7 @@ export default function transformer(file, api) {
    * @param {ImportDeclaration.Node} the import declaration node
    * @returns {boolean} whether the node value matches a Storybook package
    */
-  const isStorybookPackage = node => node.value.source.value.includes('@storybook');
+  const isStorybookPackage = node => node.value.source.value.includes('@kadira');
 
   /**
    * Returns the name of the Storybook packages with the organisation name, 

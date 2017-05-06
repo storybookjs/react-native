@@ -1,6 +1,6 @@
 # Storybook UI Options Addon
 
-The Options addon can be used to set configure the Storybook UI. This addon works with both [React Storybook](https://github.com/storybookhq/react-storybook) and [React Native Storybook](https://github.com/storybookhq/react-native-storybook).
+The Options addon can be used to set configure the Storybook UI. This addon works with both [React Storybook](https://github.com/storybooks/react-storybook) and [React Native Storybook](https://github.com/storybooks/react-native-storybook).
 
 ![](docs/screenshot.png)
 
@@ -26,7 +26,7 @@ import { setOptions } from '@storybook/storybook-addon-options';
 
 setOptions({
   name: 'CUSTOM-OPTIONS',
-  url: 'https://github.com/storybookhq/storybook-addon-options',
+  url: 'https://github.com/storybooks/storybook-addon-options',
   goFullScreen: false,
   showLeftPanel: false,
   showDownPanel: false,
