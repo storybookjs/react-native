@@ -1,10 +1,10 @@
 {
-  "name": "@kadira/storybook-addon-knobs",
+  "name": "@storybook/storybook-addon-knobs",
   "version": "1.7.1",
   "description": "React Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/react-storybook-addon-knobs.git"
+    "url": "https://github.com/storybookhq/react-storybook-addon-knobs.git"
   },
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@kadira/storybook": "*",
+    "@storybook/storybook": "*",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "git-url-parse": "^6.2.2",
@@ -26,7 +26,7 @@
     "typescript-definition-tester": "^0.0.5"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "*",
+    "@storybook/storybook-addons": "*",
     "react": "*",
     "react-dom": "*"
   },

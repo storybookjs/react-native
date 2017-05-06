@@ -1,19 +1,19 @@
 {
-  "name": "@kadira/storybook-addon-comments",
+  "name": "@storybook/storybook-addon-comments",
   "version": "1.9.1",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/kadirahq/storybook-addon-comments#readme",
+  "homepage": "https://github.com/storybookhq/storybook-addon-comments#readme",
   "bugs": {
-    "url": "https://github.com/kadirahq/storybook-addon-comments/issues"
+    "url": "https://github.com/storybookhq/storybook-addon-comments/issues"
   },
   "license": "MIT",
   "main": "preview.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadirahq/storybook-addon-comments.git"
+    "url": "git+https://github.com/storybookhq/storybook-addon-comments.git"
   },
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js",
@@ -34,11 +34,11 @@
     "react-textarea-autosize": "^4.0.5"
   },
   "devDependencies": {
-    "@kadira/storybook": "*",
-    "@kadira/storybook-addons": "*",
-    "@kadira/storybook-database-cloud": "*",
-    "@kadira/storybook-deployer": "*",
-    "@kadira/storybook-ui": "*",
+    "@storybook/storybook": "*",
+    "@storybook/storybook-addons": "*",
+    "@storybook/storybook-database-cloud": "*",
+    "@storybook/storybook-deployer": "*",
+    "@storybook/storybook-ui": "*",
     "git-url-parse": "^6.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -46,7 +46,7 @@
     "shelljs": "^0.7.4"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "*",
+    "@storybook/storybook-addons": "*",
     "react": "*",
     "react-dom": "*"
   }

@@ -8,7 +8,7 @@ const packageJson = helpers.getPackageJson();
 
 // TODO: Get the latest version of storybook here.
 packageJson.devDependencies = packageJson.devDependencies || {};
-packageJson.devDependencies['@kadira/storybook'] = '^2.21.0';
+packageJson.devDependencies['@storybook/storybook'] = '^2.21.0';
 
 packageJson.scripts = packageJson.scripts || {};
 packageJson.scripts['storybook'] = 'start-storybook -p 6006';

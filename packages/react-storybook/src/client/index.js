@@ -7,5 +7,5 @@ export const configure = previewApi.configure;
 export const getStorybook = previewApi.getStorybook;
 
 // NOTE export these to keep backwards compatibility
-export { action } from '@kadira/storybook-addon-actions';
-export { linkTo } from '@kadira/storybook-addon-links';
+export { action } from '@storybook/storybook-addon-actions';
+export { linkTo } from '@storybook/storybook-addon-links';

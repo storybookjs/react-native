@@ -19,7 +19,7 @@ const packageJson = helpers.getPackageJson();
 
 // TODO: Get the latest version of storybook here.
 packageJson.devDependencies = packageJson.devDependencies || {};
-packageJson.devDependencies['@kadira/react-native-storybook'] = '^2.0.0';
+packageJson.devDependencies['@storybook/react-native-storybook'] = '^2.0.0';
 
 packageJson.scripts = packageJson.scripts || {};
 packageJson.scripts['storybook'] = 'storybook start -p 7007';

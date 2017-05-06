@@ -1,10 +1,10 @@
 {
-  "name": "@kadira/react-storybook-addon-info",
+  "name": "@storybook/react-storybook-addon-info",
   "version": "3.4.0",
   "description": "A React Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/react-storybook-addon-info.git"
+    "url": "https://github.com/storybookhq/react-storybook-addon-info.git"
   },
   "license": "MIT",
   "scripts": {
@@ -13,7 +13,7 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@kadira/storybook": "*",
+    "@storybook/storybook": "*",
     "git-url-parse": "^6.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

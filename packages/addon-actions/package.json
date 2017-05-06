@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storybook-addon-actions",
+  "name": "@storybook/storybook-addon-actions",
   "version": "1.1.3",
   "description": "Action Logger addon for storybook",
   "main": "dist/index.js",
@@ -10,20 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadirahq/storybook-addon-actions.git"
+    "url": "git+https://github.com/storybookhq/storybook-addon-actions.git"
   },
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kadirahq/storybook-addon-actions/issues"
+    "url": "https://github.com/storybookhq/storybook-addon-actions/issues"
   },
-  "homepage": "https://github.com/kadirahq/storybook-addon-actions#readme",
+  "homepage": "https://github.com/storybookhq/storybook-addon-actions#readme",
   "devDependencies": {
-    "@kadira/storybook": "*",
-    "@kadira/storybook-addons": "*",
-    "@kadira/storybook-ui": "*",
+    "@storybook/storybook": "*",
+    "@storybook/storybook-addons": "*",
+    "@storybook/storybook-ui": "*",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
@@ -36,7 +36,7 @@
     "react-inspector": "^1.1.0"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "*",
+    "@storybook/storybook-addons": "*",
     "react": "*",
     "react-dom": "*"
   }

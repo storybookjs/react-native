@@ -39,7 +39,7 @@ if (fs.existsSync('.babelrc')) {
 fs.writeFileSync('.babelrc', JSON.stringify(babelrc, null, 2), 'utf8');
 
 // write the new package.json.
-packageJson.devDependencies['@kadira/storybook'] = '^2.21.0';
+packageJson.devDependencies['@storybook/storybook'] = '^2.21.0';
 packageJson.scripts['storybook'] = 'start-storybook -p 6006';
 packageJson.scripts['build-storybook'] = 'build-storybook';
 

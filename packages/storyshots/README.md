@@ -15,7 +15,7 @@ First of all, you need to use the latest version of React Storybook.
 So, do this:
 
 ```sh
-npm update @kadira/storybook
+npm update @storybook/storybook
 ```
 
 Then add the following NPM module into your app.

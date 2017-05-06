@@ -1,6 +1,6 @@
 // Uncomment to register defaults
-// import '@kadira/storybook/addons';
+// import '@storybook/storybook/addons';
 
 // Use the line below to register this addon
-// import '@kadira/storybook-addon-hello/register';
+// import '@storybook/storybook-addon-hello/register';
 import '../register';

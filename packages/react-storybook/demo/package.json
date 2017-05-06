@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.5",
-    "@kadira/storybook": "file:../"
+    "@storybook/storybook": "file:../"
   },
   "dependencies": {
     "prop-types": "^15.5.7",

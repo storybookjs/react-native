@@ -1,6 +1,6 @@
 # getstorybook
 
-Easiest way to add [Storybook](https://github.com/kadirahq/react-storybook) support to your project.
+Easiest way to add [Storybook](https://github.com/storybookhq/react-storybook) support to your project.
 
 ![](docs/getstorybook.png)
 
@@ -33,4 +33,4 @@ getstorybook --use-npm
 
 
 
-For more information, refer [React Storybook](https://github.com/kadirahq/react-storybook) documentation.
+For more information, refer [React Storybook](https://github.com/storybookhq/react-storybook) documentation.

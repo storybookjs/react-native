@@ -27,9 +27,9 @@ Transport {
 }
 ```
 
-Currently, channels are baked into storybook implementations and therefore this module is not designed to be used directly by addon developers. When developing addons, use the `getChannel` method exported by `@kadira/storybook-addons` module. For this to work, Storybook implementations should use the `setChannel` method before loading addons.
+Currently, channels are baked into storybook implementations and therefore this module is not designed to be used directly by addon developers. When developing addons, use the `getChannel` method exported by `@storybook/storybook-addons` module. For this to work, Storybook implementations should use the `setChannel` method before loading addons.
 
 ```js
-import addons from '@kadira/storybook-addons'
+import addons from '@storybook/storybook-addons'
 const channel = addons.getChannel()
 ```

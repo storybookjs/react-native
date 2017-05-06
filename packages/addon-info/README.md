@@ -9,14 +9,14 @@ A React Storybook addon to show additional information for your stories.
 Install the following npm module:
 
 ```sh
-npm i -D @kadira/react-storybook-addon-info
+npm i -D @storybook/react-storybook-addon-info
 ```
 
 Then set the addon in the place you configure storybook like this:
 
 ```js
-import { configure, setAddon } from '@kadira/storybook';
-import infoAddon from '@kadira/react-storybook-addon-info';
+import { configure, setAddon } from '@storybook/storybook';
+import infoAddon from '@storybook/react-storybook-addon-info';
 
 setAddon(infoAddon);
 
@@ -30,7 +30,7 @@ Then create your stories with the `.addWithInfo` API.
 ```js
 import React from 'react';
 import Button from './Button';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/storybook';
 
 storiesOf('Button')
   .addWithInfo(

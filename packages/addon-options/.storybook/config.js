@@ -3,7 +3,7 @@ import { setOptions } from '../preview';
 
 setOptions({
   name: 'CUSTOM-OPTIONS',
-  url: 'https://github.com/kadirahq/storybook-addon-options',
+  url: 'https://github.com/storybookhq/storybook-addon-options',
   // goFullScreen: false,
   // showLeftPanel: true,
   showDownPanel: false,

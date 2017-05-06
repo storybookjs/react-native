@@ -12,8 +12,8 @@ module.exports = function detect(options) {
   if (
     !options.force &&
     packageJson.devDependencies &&
-    (packageJson.devDependencies['@kadira/storybook'] ||
-      packageJson.devDependencies['@kadira/react-native-storybook'])
+    (packageJson.devDependencies['@storybook/storybook'] ||
+      packageJson.devDependencies['@storybook/react-native-storybook'])
   ) {
     return types.ALREADY_HAS_STORYBOOK;
   }

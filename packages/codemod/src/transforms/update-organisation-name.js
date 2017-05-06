@@ -7,16 +7,16 @@ export default function transformer(file, api) {
    * @param {ImportDeclaration.Node} the import declaration node
    * @returns {boolean} whether the node value matches a Storybook package
    */
-  const isStorybookPackage = node => node.value.source.value.includes('@kadira');
+  const isStorybookPackage = node => node.value.source.value.includes('@storybook');
 
   /**
    * Returns the name of the Storybook packages with the organisation name, 
-   * replacing the old `@kadira/` prefix.
+   * replacing the old `@storybook/` prefix.
    * @param {string} oldPackageName the name of the old package
    * @return {string} the new package name
    * @example
    * // returns '@storybook/storybook'
-   * getNewPackageName('@kadira/storybook')
+   * getNewPackageName('@storybook/storybook')
    */
   const getNewPackageName = oldPackageName => {
     const packageNameWithoutPrefix = oldPackageName.slice(7);

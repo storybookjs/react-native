@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storybook-channel-websocket",
+  "name": "@storybook/storybook-channel-websocket",
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -11,6 +11,6 @@
     "shelljs": "^0.7.3"
   },
   "dependencies": {
-    "@kadira/storybook-channel": "^1.0.1"
+    "@storybook/storybook-channel": "^1.0.1"
   }
 }

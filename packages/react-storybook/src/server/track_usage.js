@@ -26,7 +26,7 @@
 // ### HELP US?
 //
 // Maintaining a open source project is hard.
-// It's even harder for a startup like us (Kadira)
+// It's even harder for a startup like us (storybook)
 // Help us to make storybook better by sending these few metrics.
 // Based on these metrics, we could improve storybook and build a profitable
 // service around it. With that, we could continue to maintain and

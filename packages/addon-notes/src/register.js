@@ -22,7 +22,7 @@ export class Notes extends React.Component {
   componentDidMount() {
     const { channel, api } = this.props;
     // Listen to the notes and render it.
-    channel.on('kadira/notes/add_notes', this.onAddNotes);
+    channel.on('storybook/notes/add_notes', this.onAddNotes);
 
     // Clear the current notes on every story change.
     this.stopListeningOnStory = api.onStory(() => {
@@ -38,7 +38,7 @@ export class Notes extends React.Component {
 
     this.unmounted = true;
     const { channel } = this.props;
-    channel.removeListener('kadira/notes/add_notes', this.onAddNotes);
+    channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
   }
 
   onAddNotes(text) {
@@ -63,9 +63,9 @@ Notes.propTypes = {
 };
 
 // Register the addon with a unique name.
-addons.register('kadira/notes', api => {
+addons.register('storybook/notes', api => {
   // Also need to set a unique name to the panel.
-  addons.addPanel('kadira/notes/panel', {
+  addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     render: () => <Notes channel={addons.getChannel()} api={api} />,
   });

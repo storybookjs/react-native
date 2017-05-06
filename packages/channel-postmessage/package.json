@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storybook-channel-postmsg",
+  "name": "@storybook/storybook-channel-postmsg",
   "version": "2.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@kadira/storybook-channel": "*",
+    "@storybook/storybook-channel": "*",
     "json-stringify-safe": "^5.0.1"
   }
 }

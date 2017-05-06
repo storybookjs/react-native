@@ -14,24 +14,24 @@ This is how Knobs look like:
 First of all, you need to install knobs into your project as a dev dependency.
 
 ```js
-npm i -D @kadira/storybook-addon-knobs
+npm i -D @storybook/storybook-addon-knobs
 ```
 
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
 
 ```js
 //  To get our default addons (actions and links)
-import '@kadira/storybook/addons';
+import '@storybook/storybook/addons';
 //  To add the knobs addon
-import '@kadira/storybook-addon-knobs/register'
+import '@storybook/storybook-addon-knobs/register'
 ```
 
 Now, write your stories with knobs.
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { withKnobs, text, boolean, number } from '@kadira/storybook-addon-knobs';
+import { storiesOf } from '@storybook/storybook';
+import { withKnobs, text, boolean, number } from '@storybook/storybook-addon-knobs';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -67,15 +67,15 @@ You can see your Knobs in a Storybook panel as shown below.
 * Introduction blog post.
 * Watch this video on how to use knobs
 * [Live Storybook with Knobs](https://goo.gl/uX9WLf)
-* Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
+* Have a look at this [sample Storybook repo](https://github.com/storybook-samples/storybook-knobs-example).
 
 ## Available Knobs
 
-These are the knobs available for you to use. You can import these Knobs from the `@kadira/storybook-addon-knobs` module.
+These are the knobs available for you to use. You can import these Knobs from the `@storybook/storybook-addon-knobs` module.
 Here's how to import the **text** Knob.
 
 ```js
-import { text } from '@kadira/storybook-addon-knobs';
+import { text } from '@storybook/storybook-addon-knobs';
 ```
 
 Just like that, you can import any other following Knobs:

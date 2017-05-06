@@ -1,6 +1,6 @@
 # GraphiQL Addon
 
-The GraphiQL addon can be used to display the GraphiQL IDE with example queries. This addon works with [React Storybook](https://github.com/kadirahq/react-storybook).
+The GraphiQL addon can be used to display the GraphiQL IDE with example queries. This addon works with [React Storybook](https://github.com/storybookhq/react-storybook).
 
 ![](docs/screenshot.png)
 
@@ -9,14 +9,14 @@ The GraphiQL addon can be used to display the GraphiQL IDE with example queries.
 First, install the addon
 
 ```shell
-npm install -D @kadira/storybook-addon-graphql
+npm install -D @storybook/storybook-addon-graphql
 ```
 
 Import the `setupGraphiQL` function and use it to create the graphiql helper with a base url.
 
 ```js
-import { storiesOf } from '@kadira/storybook'
-import { setupGraphiQL } from '@kadira/storybook-addon-graphql'
+import { storiesOf } from '@storybook/storybook'
+import { setupGraphiQL } from '@storybook/storybook-addon-graphql'
 
 // setup the graphiql helper which can be used with the add method later
 const graphiql = setupGraphiQL({ url: 'http://localhost:3000/graphql' });
@@ -36,8 +36,8 @@ storiesOf('GraphQL Demo', module)
 The `setupGraphiQL` function also accepts a fetcher parameter which can be used to change how graphiql gets data. If the fetcher parameter is not given, it'll create a fetcher which uses the `fetch` api to make requests. The above example can also be written using a custom fetcher.
 
 ```js
-import { storiesOf } from '@kadira/storybook'
-import { setupGraphiQL } from '@kadira/storybook-addon-graphql'
+import { storiesOf } from '@storybook/storybook'
+import { setupGraphiQL } from '@storybook/storybook-addon-graphql'
 
 const fetcher = function (params) {
   const options = {

@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storybook-addons",
+  "name": "@storybook/storybook-addons",
   "version": "1.6.1",
   "description": "Storybook addons store",
   "main": "dist/index.js",
@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadirahq/storybook-addons.git"
+    "url": "git+https://github.com/storybookhq/storybook-addons.git"
   },
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kadirahq/storybook-addons/issues"
+    "url": "https://github.com/storybookhq/storybook-addons/issues"
   },
-  "homepage": "https://github.com/kadirahq/storybook-addons#readme",
+  "homepage": "https://github.com/storybookhq/storybook-addons#readme",
   "devDependencies": {
     "shelljs": "^0.7.3"
   }

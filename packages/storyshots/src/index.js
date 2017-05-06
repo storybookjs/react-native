@@ -13,18 +13,18 @@ const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
 const isStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@kadira/storybook']) ||
-  (pkg.dependencies && pkg.dependencies['@kadira/storybook']);
+  (pkg.devDependencies && pkg.devDependencies['@storybook/storybook']) ||
+  (pkg.dependencies && pkg.dependencies['@storybook/storybook']);
 const isRNStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@kadira/react-native-storybook']) ||
-  (pkg.dependencies && pkg.dependencies['@kadira/react-native-storybook']);
+  (pkg.devDependencies && pkg.devDependencies['@storybook/react-native-storybook']) ||
+  (pkg.dependencies && pkg.dependencies['@storybook/react-native-storybook']);
 
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
   if (isStorybook) {
-    storybook = require.requireActual('@kadira/storybook');
-    const loadBabelConfig = require('@kadira/storybook/dist/server/babel_config').default;
+    storybook = require.requireActual('@storybook/storybook');
+    const loadBabelConfig = require('@storybook/storybook/dist/server/babel_config').default;
     const configDirPath = path.resolve(options.configPath || '.storybook');
     configPath = path.join(configDirPath, 'config.js');
 
@@ -37,7 +37,7 @@ export default function testStorySnapshots(options = {}) {
 
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
-    storybook = require.requireActual('@kadira/react-native-storybook');
+    storybook = require.requireActual('@storybook/react-native-storybook');
     configPath = path.resolve(options.configPath || 'storybook');
     require.requireActual(configPath);
   } else {

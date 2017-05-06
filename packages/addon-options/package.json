@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storybook-addon-options",
+  "name": "@storybook/storybook-addon-options",
   "version": "1.0.2",
   "description": "Options addon for storybook",
   "main": "preview.js",
@@ -9,27 +9,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadirahq/storybook-addon-options.git"
+    "url": "git+https://github.com/storybookhq/storybook-addon-options.git"
   },
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kadirahq/storybook-addon-options/issues"
+    "url": "https://github.com/storybookhq/storybook-addon-options/issues"
   },
-  "homepage": "https://github.com/kadirahq/storybook-addon-options#readme",
+  "homepage": "https://github.com/storybookhq/storybook-addon-options#readme",
   "devDependencies": {
-    "@kadira/storybook": "*",
-    "@kadira/storybook-addons": "*",
-    "@kadira/storybook-ui": "*",
+    "@storybook/storybook": "*",
+    "@storybook/storybook-addons": "*",
+    "@storybook/storybook-ui": "*",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "shelljs": "^0.7.7"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "*",
+    "@storybook/storybook-addons": "*",
     "react": "*",
     "react-dom": "*"
   },

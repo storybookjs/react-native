@@ -1,5 +1,5 @@
 {
-  "name": "@kadira/storybook",
+  "name": "@storybook/storybook",
   "version": "2.35.3",
   "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
   "license": "MIT",
@@ -19,11 +19,11 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@kadira/storybook-addon-actions": "*",
-    "@kadira/storybook-addon-links": "*",
-    "@kadira/storybook-addons": "*",
-    "@kadira/storybook-channel-postmsg": "*",
-    "@kadira/storybook-ui": "*",
+    "@storybook/storybook-addon-actions": "*",
+    "@storybook/storybook-addon-links": "*",
+    "@storybook/storybook-addons": "*",
+    "@storybook/storybook-channel-postmsg": "*",
+    "@storybook/storybook-ui": "*",
     "airbnb-js-shims": "^1.1.1",
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",

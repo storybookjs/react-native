@@ -1,16 +1,16 @@
 # Manual Setup
 
-First, install the `@kadira/react-native-storybook` module
+First, install the `@storybook/react-native-storybook` module
 
 ```shell
-npm i -D @kadira/react-native-storybook
+npm i -D @storybook/react-native-storybook
 ```
 
 Create a new directory called `storybook` in your project root and create an entry file (index.ios.js or index.android.js) as given below. (Don't forget to replace "MyApplicationName" with your app name).
 
 ```js
 import { AppRegistry } from 'react-native';
-import { getStorybookUI, configure } from '@kadira/react-native-storybook';
+import { getStorybookUI, configure } from '@storybook/react-native-storybook';
 import './addons';
 
 // import your stories
@@ -25,7 +25,7 @@ AppRegistry.registerComponent('MyApplicationName', () => StorybookUI);
 Create a file named `addons.js` file in `storybook` directory to use default set of addons.
 
 ```
-import '@kadira/react-native-storybook/addons';
+import '@storybook/react-native-storybook/addons';
 ```
 
 Then write your first story in the `stories` directory like this:
@@ -34,7 +34,7 @@ Then write your first story in the `stories` directory like this:
 // index.js
 
 import React from 'react';
-import { storiesOf } from '@kadira/react-native-storybook';
+import { storiesOf } from '@storybook/react-native-storybook';
 import { View, Text } from 'react-native';
 
 const style = {

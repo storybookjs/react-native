@@ -7,7 +7,7 @@ export class WithNotes extends React.Component {
     const channel = addons.getChannel();
 
     // send the notes to the channel.
-    channel.emit('kadira/notes/add_notes', notes);
+    channel.emit('storybook/notes/add_notes', notes);
     // return children elements.
     return children;
   }
