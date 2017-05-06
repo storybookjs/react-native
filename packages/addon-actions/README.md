@@ -1,6 +1,6 @@
 # Storybook Addon Actions
 
-The Action Logger addon can be used to display data received by event handlers. This addon works with both [React Storybook](https://github.com/storybookhq/react-storybook) and [React Native Storybook](https://github.com/storybookhq/react-native-storybook) (included by default).
+The Action Logger addon can be used to display data received by event handlers. This addon works with both [React Storybook](https://github.com/storybooks/storybook/tree/master/packages/react-storybook) and [React Native Storybook](https://github.com/storybooks/storybook/tree/master/packages/react-native-storybook) (included by default).
 
 ![](docs/screenshot.png)
 
