@@ -112,7 +112,7 @@ function previewProp(val) {
 
 export default class PropVal extends React.Component {
   render() {
-    return previewProp(this.props.val);
+    return previewProp(this.props.val); // eslint-disable-line react/prop-types
   }
 }
 

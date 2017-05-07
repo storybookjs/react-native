@@ -276,8 +276,8 @@ export default class Story extends React.Component {
     const array = Array.from(types.keys());
     array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
-    const propTables = array.map((type, idx) => (
-      <div key={idx}>
+    const propTables = array.map(type => (
+      <div key={type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
         </h2>
@@ -307,8 +307,12 @@ export default class Story extends React.Component {
 }
 
 Story.displayName = 'Story';
+
 Story.propTypes = {
-  context: PropTypes.object,
+  context: PropTypes.shape({
+    kind: PropTypes.string,
+    story: PropTypes.string,
+  }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),
   showInline: PropTypes.bool,
@@ -316,10 +320,14 @@ Story.propTypes = {
   showSource: PropTypes.bool,
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  mtrcConf: PropTypes.object,
+  mtrcConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 Story.defaultProps = {
+  context: null,
+  info: '',
+  children: null,
+  propTables: null,
   showInline: false,
   showHeader: true,
   showSource: true,
