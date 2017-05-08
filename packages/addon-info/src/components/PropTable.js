@@ -38,7 +38,8 @@ export default class PropTable extends React.Component {
         const typeInfo = type.propTypes[property];
         const propType = PropTypesMap.get(typeInfo) || 'other';
         const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-        props[property] = { property, propType, required };
+        const description = type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property] ? type.__docgenInfo.props[property].description : null;
+        props[property] = { property, propType, required, description };
       }
     }
 
@@ -72,6 +73,7 @@ export default class PropTable extends React.Component {
             <th>propType</th>
             <th>required</th>
             <th>default</th>
+            <th>description></th>
           </tr>
         </thead>
         <tbody>
@@ -81,6 +83,7 @@ export default class PropTable extends React.Component {
               <td>{row.propType}</td>
               <td>{row.required}</td>
               <td>{row.defaultValue === undefined ? '-' : <PropVal val={row.defaultValue} />}</td>
+              <td>{row.description}</td>
             </tr>
           ))}
         </tbody>
