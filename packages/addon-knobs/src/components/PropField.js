@@ -19,7 +19,6 @@ const stylesheet = {
     width: 80,
     fontSize: 10,
     color: 'rgb(68, 68, 68)',
-    textTransform: 'uppercase',
     fontWeight: 600,
   },
 };
