@@ -37,9 +37,9 @@ export default class CommentList extends Component {
         }}
         style={style.wrapper}
       >
-        {comments.map((comment, idx) => (
+        {comments.map(comment => (
           <CommentItem
-            key={`comment_${idx}`}
+            key={comment.id}
             comment={comment}
             ownComment={comment.userId === (this.props.user && this.props.user.id)}
             deleteComment={() => this.props.deleteComment(comment.id)}
@@ -50,8 +50,16 @@ export default class CommentList extends Component {
   }
 }
 
+CommentList.defaultProps = {
+  comments: [],
+  user: null,
+  deleteComment: () => {},
+};
+
 CommentList.propTypes = {
-  comments: PropTypes.array,
-  user: PropTypes.object,
+  comments: PropTypes.arrayOf(PropTypes.object),
+  user: PropTypes.shape({
+    id: PropTypes.number,
+  }),
   deleteComment: PropTypes.func,
 };

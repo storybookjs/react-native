@@ -26,6 +26,7 @@
     "babel-runtime": "^6.11.6",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
+    "global": "^4.3.2",
     "insert-css": "^1.0.0",
     "marked": "^0.3.6",
     "moment": "^2.15.1",

@@ -13,16 +13,16 @@ export default class DataStore {
     this.eventStore = new EventEmitter();
   }
 
-  _addToCache(currentStory, comments) {
-    const key = this._getStoryKey(currentStory);
+  addToCache(currentStory, comments) {
+    const key = this.getStoryKey(currentStory);
     this.cache[key] = {
       comments,
       addedAt: Date.now(),
     };
   }
 
-  _getFromCache(currentStory) {
-    const key = this._getStoryKey(currentStory);
+  getFromCache(currentStory) {
+    const key = this.getStoryKey(currentStory);
     const item = this.cache[key];
 
     if (!item) {
@@ -44,14 +44,14 @@ export default class DataStore {
     return { comments, invalidated };
   }
 
-  _reloadCurrentComments() {
-    if (this._stopReloading) {
-      clearInterval(this._stopReloading);
+  reloadCurrentComments() {
+    if (this.stopReloading) {
+      clearInterval(this.stopReloading);
     }
 
-    this._stopReloading = setInterval(
+    this.stopReloading = setInterval(
       () => {
-        this._loadUsers().then(() => this._loadComments());
+        this.loadUsers().then(() => this.loadComments());
       },
       1000 * 60, // Reload for every minute
     );
@@ -63,14 +63,14 @@ export default class DataStore {
     // We don't need to do anything if the there's no loggedIn user.
     // if (!this.user) return;
 
-    this._reloadCurrentComments();
-    const item = this._getFromCache(this.currentStory);
+    this.reloadCurrentComments();
+    const item = this.getFromCache(this.currentStory);
 
     if (item) {
-      this._fireComments(item.comments);
+      this.fireComments(item.comments);
       // if the cache invalidated we need to load comments again.
       if (item.invalidated) {
-        return this._loadUsers().then(() => this._loadComments());
+        return this.loadUsers().then(() => this.loadComments());
       }
       return Promise.resolve(null);
     }
@@ -78,21 +78,23 @@ export default class DataStore {
     // load comments for the first time.
     // TODO: send a null and handle the loading part in the UI side.
     this.eventStore.emit('loading', true);
-    this._fireComments([]);
-    this._loadUsers().then(() => this._loadComments()).then(() => {
+    this.fireComments([]);
+    this.loadUsers().then(() => this.loadComments()).then(() => {
       this.eventStore.emit('loading', false);
       return Promise.resolve(null);
     });
+
+    return this.currentStory;
   }
 
   setCurrentUser(user) {
     this.user = user;
   }
 
-  _loadUsers() {
+  loadUsers() {
     const query = {};
     const options = { limit: 1e6 };
-    return this.db.persister._getAppInfo().then(info => {
+    return this.db.persister.getAppInfo().then(info => {
       if (!info) {
         return null;
       }
@@ -108,38 +110,37 @@ export default class DataStore {
     });
   }
 
-  _loadComments() {
+  loadComments() {
     const currentStory = { ...this.currentStory };
     const query = currentStory;
     const options = { limit: 1e6 };
-    return this.db.persister._getAppInfo().then(info => {
+    return this.db.persister.getAppInfo().then(info => {
       if (!info) {
         return null;
       }
       return this.db.getCollection('comments').get(query, options).then(comments => {
         // add to cache
-        this._addToCache(currentStory, comments);
+        this.addToCache(currentStory, comments);
 
         // set comments only if we are on the relavant story
         if (deepEquals(currentStory, this.currentStory)) {
-          this._fireComments(comments);
+          this.fireComments(comments);
         }
       });
     });
   }
 
-  _getStoryKey(currentStory) {
+  getStoryKey(currentStory) {
     return `${currentStory.sbKind}:::${currentStory.sbStory}`;
   }
 
-  _fireComments(comments) {
+  fireComments(comments) {
     this.callbacks.forEach(callback => {
       // link user to the comment directly
-      comments.forEach(comment => {
-        comment.user = this.users[comment.userId];
-      });
-
-      callback(comments);
+      const commentsWithUser = comments.map(comment =>
+        Object.assign({}, comment, { user: this.users[comment.userId] }),
+      );
+      callback(commentsWithUser);
     });
   }
 
@@ -153,27 +154,27 @@ export default class DataStore {
     return stop;
   }
 
-  _addPendingComment(comment) {
+  addPendingComment(comment) {
     // Add the pending comment.
     const pendingComment = { ...comment, loading: true };
-    const { comments: existingComments } = this._getFromCache(this.currentStory);
+    const { comments: existingComments } = this.getFromCache(this.currentStory);
     const updatedComments = existingComments.concat(pendingComment);
 
-    this._fireComments(updatedComments);
+    this.fireComments(updatedComments);
     return Promise.resolve(null);
   }
 
-  _setDeletedComment(commentId) {
-    const { comments } = this._getFromCache(this.currentStory);
+  setDeletedComment(commentId) {
+    const { comments } = this.getFromCache(this.currentStory);
     const deleted = comments.find(c => c.id === commentId);
     if (deleted) {
       deleted.loading = true;
     }
-    this._fireComments(comments);
+    this.fireComments(comments);
     return Promise.resolve(null);
   }
 
-  _addAuthorToTheDatabase() {
+  addAuthorToTheDatabase() {
     if (this.users[this.user.id]) {
       // user exists in the DB.
       return Promise.resolve(null);
@@ -188,9 +189,10 @@ export default class DataStore {
 
   // NOTE the "sbProtected" makes sure only the author can modify
   // or delete a comment after its saved on the cloud database.
-  _addCommentToDatabase(comment) {
+  addCommentToDatabase(comment) {
     const doc = {
       ...comment,
+      ...this.currentStory,
       ...this.currentStory,
       sbProtected: true,
     };
@@ -198,23 +200,23 @@ export default class DataStore {
     return this.db.getCollection('comments').set(doc);
   }
 
-  _deleteCommentOnDatabase(commentId) {
+  deleteCommentOnDatabase(commentId) {
     const query = { id: commentId };
     return this.db.getCollection('comments').del(query);
   }
 
   addComment(comment) {
-    return this._addAuthorToTheDatabase()
-      .then(() => this._addPendingComment(comment))
-      .then(() => this._addCommentToDatabase(comment))
-      .then(() => this._loadUsers())
-      .then(() => this._loadComments());
+    return this.addAuthorToTheDatabase()
+      .then(() => this.addPendingComment(comment))
+      .then(() => this.addCommentToDatabase(comment))
+      .then(() => this.loadUsers())
+      .then(() => this.loadComments());
   }
 
   deleteComment(commentId) {
-    return this._setDeletedComment(commentId)
-      .then(() => this._deleteCommentOnDatabase(commentId))
-      .then(() => this._loadComments());
+    return this.setDeletedComment(commentId)
+      .then(() => this.deleteCommentOnDatabase(commentId))
+      .then(() => this.loadComments());
   }
 
   onLoading(cb) {

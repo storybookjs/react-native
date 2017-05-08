@@ -41,23 +41,23 @@ export default class Container extends Component {
     this.stopListingStoreLoading();
   }
 
-  _getAppInfo(persister) {
+  getAppInfo(persister) {
     return persister
-      ._getAppInfo()
-      .then(appInfo => Promise.resolve(appInfo), err => Promise.resolve(null));
+      .getAppInfo()
+      .then(appInfo => Promise.resolve(appInfo), () => Promise.resolve(null));
   }
 
   init() {
     const db = addons.getDatabase();
 
-    if (typeof db.persister._getUser !== 'function') {
+    if (typeof db.persister.getUser !== 'function') {
       throw new Error('unable to get user info');
     }
 
     this.setState({ loading: true });
     db.persister
-      ._getUser()
-      .then(u => Promise.resolve(u), err => Promise.resolve(null))
+      .getUser()
+      .then(u => Promise.resolve(u), () => Promise.resolve(null))
       .then(user => {
         if (user) {
           this.store.setCurrentUser(user);
@@ -65,7 +65,7 @@ export default class Container extends Component {
         } else {
           this.setState({ user: null });
         }
-        return this._getAppInfo(db.persister);
+        return this.getAppInfo(db.persister);
       })
       .then(appInfo => {
         const updatedState = { loading: false };
@@ -108,5 +108,7 @@ export default class Container extends Component {
 }
 
 Container.propTypes = {
-  api: PropTypes.object,
+  api: PropTypes.shape({
+    onStory: PropTypes.func.isRequired,
+  }).isRequired,
 };

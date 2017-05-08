@@ -16,10 +16,15 @@ const Button = ({ children, onClick, style = {} }) => (
   </button>
 );
 
+Button.defaultProps = {
+  onClick: () => {},
+  style: {},
+};
+
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  style: PropTypes.object,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default Button;
