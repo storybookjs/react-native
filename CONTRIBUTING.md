@@ -51,6 +51,7 @@ A good way to do that is using the example `test-cra` app embedded in this repos
 git clone https://github.com/storybooks/storybook.git
 cd storybook
 npm install
+npm run bootstrap
 
 cd examples/test-cra
 
