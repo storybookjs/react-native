@@ -25,6 +25,7 @@ To test your project against the current latest version of storybook, you can cl
   git clone https://github.com/storybooks/storybook.git
   cd storybook
   npm install
+  npm run bootstrap
   ```
 
 2. Link `storybook` and any other required dependencies
