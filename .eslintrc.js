@@ -3,7 +3,11 @@ const warn = 1;
 const ignore = 0;
 
 module.exports = {
-  extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
+  extends: [
+    '@ndelangen/eslint-config-airbnb',
+    'prettier',
+    'plugin:jest/recommended'
+  ],
   plugins: [
     'prettier',
     'jest',
@@ -32,7 +36,12 @@ module.exports = {
     'arrow-parens': ['warn', 'as-needed'],
     'space-before-function-paren': ignore,
     'import/no-extraneous-dependencies': [error, {
-      devDependencies: true,
+      devDependencies: [
+        '**/*.test.js',
+        '**/scripts/*.js',
+        '**/stories/*.js',
+        '**/__tests__/*.js'
+      ],
       peerDependencies: true
     }],
     'import/prefer-default-export': ignore,
@@ -42,6 +51,7 @@ module.exports = {
     'react/jsx-filename-extension': [warn, {
       extensions: ['.js', '.jsx']
     }],
+    'jsx-a11y/accessible-emoji': ignore,
     'react/no-unescaped-entities': ignore,
   },
 }
