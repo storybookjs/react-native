@@ -15,10 +15,10 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-jest": "^20.0.0",
     "eslint-plugin-prettier": "^2.0.1",
-    "jest": "^19.0.2",
-    "jest-enzyme": "^3.0.1",
+    "jest": "^20.0.0",
+    "jest-enzyme": "^3.1.0",
     "lerna": "2.0.0-rc.4",
     "prettier": "^1.1.0",
     "react": "^15.5.4",
@@ -29,9 +29,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
-    "test": "jest --config ./.jestrc",
+    "test": "jest --config ./.jestrc.json",
     "test:watch": "npm test -- --watch",
-    "test-examples": "CI=true lerna run test",
     "coverage": "codecov"
   }
 }
