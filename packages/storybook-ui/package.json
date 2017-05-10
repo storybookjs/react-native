@@ -30,7 +30,7 @@
     "prop-types": "^15.5.8",
     "qs": "^6.4.0",
     "react-fuzzy": "^0.3.3",
-    "react-inspector": "^1.1.2",
+    "@storybook/react-inspector": "^1.2.1",
     "react-komposer": "^2.0.0",
     "react-modal": "^1.7.6",
     "react-split-pane": "^0.1.63",

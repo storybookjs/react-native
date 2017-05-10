@@ -31,7 +31,7 @@
     "moment": "^2.18.1",
     "prop-types": "^15.5.8",
     "react-render-html": "^0.1.6",
-    "react-textarea-autosize": "^4.0.5"
+    "react-textarea-autosize": "^4.3.0"
   },
   "devDependencies": {
     "@kadira/storybook": "*",
