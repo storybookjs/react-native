@@ -14,24 +14,25 @@
   },
   "devDependencies": {
     "@kadira/storybook": "*",
-    "@types/react": "^15.0.23",
-    "git-url-parse": "^6.0.1",
-    "react": "^15.3.2",
+    "git-url-parse": "^6.2.2",
+    "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.5.4"
   },
   "peerDependencies": {
     "react": "*",
     "@kadira/storybook-addons": "*"
   },
   "dependencies": {
-    "babel-runtime": "^6.5.0"
+    "babel-runtime": "^6.23.0"
+  },
+  "optionalDependencies": {
+    "@types/react": "^15.0.24"
   },
   "main": "dist/index.js",
   "keywords": [
     "react",
     "storybook",
     "addon"
-  ],
-  "typings": "./storybook-addon-notes.d.ts"
+  ]
 }

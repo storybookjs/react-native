@@ -27,13 +27,13 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
-    "shelljs": "^0.7.3"
+    "shelljs": "^0.7.7"
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
     "json-stringify-safe": "^5.0.1",
-    "prop-types": "^15.5.7",
-    "react-inspector": "^1.1.0"
+    "prop-types": "^15.5.8",
+    "@storybook/react-inspector": "^1.2.1"
   },
   "peerDependencies": {
     "@kadira/storybook-addons": "*",
