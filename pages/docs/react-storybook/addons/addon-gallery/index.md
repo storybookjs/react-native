@@ -75,4 +75,4 @@ A [decorator](/docs/react-storybook/addons/introduction) that allows you to inte
 
 ### [JSX preview](https://github.com/Kilix/storybook-addon-jsx)
 
-With this addon, you can preview the JSX code of your component for each stories. You can copy the code, skip some elements like wrapper and rename component to handle HOC for example.
+This addon shows a preview of the JSX code for each story. It allows you to configure the display and copy the code with a single click.
