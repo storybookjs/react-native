@@ -72,3 +72,7 @@ Given possible values for each prop, renders your component with all combination
 ### [StoryRouter](https://github.com/gvaldambrini/storybook-router)
 
 A [decorator](/docs/react-storybook/addons/introduction) that allows you to integrate react-router v.4 components in your stories.
+
+### [JSX preview](https://github.com/Kilix/storybook-addon-jsx)
+
+This addon shows a preview of the JSX code for each story. It allows you to configure the display and copy the code with a single click.
