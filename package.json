@@ -29,6 +29,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --hoist",
     "lint": "eslint .",
     "test": "jest --config ./.jestrc.json",
     "test:watch": "npm test -- --watch",
