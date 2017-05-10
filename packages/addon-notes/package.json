@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "*",
+    "@types/react": "^15.0.23",
     "git-url-parse": "^6.0.1",
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.5.1",
@@ -31,5 +32,6 @@
     "react",
     "storybook",
     "addon"
-  ]
+  ],
+  "typings": "./storybook-addon-notes.d.ts"
 }

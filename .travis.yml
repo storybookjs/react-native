@@ -14,6 +14,5 @@ script:
   - npm run lint
   - npm run test -- --coverage
   - npm run coverage
-  - npm run test-examples
 git:
   depth: 1

@@ -70,9 +70,9 @@ function getData(element) {
     text: null,
     children: null,
   };
-  
+
   if (typeof element === 'null') {
-    return data
+    return data;
   }
 
   if (typeof element == 'string') {
