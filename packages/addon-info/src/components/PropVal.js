@@ -107,7 +107,7 @@ function previewProp(val) {
   }
 
   if (!braceWrap) return content;
-  return <span>{{ content }}</span>;
+  return <span>{content}</span>;
 }
 
 export default class PropVal extends React.Component {
