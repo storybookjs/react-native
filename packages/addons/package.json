@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/kadirahq/storybook-addons#readme",
   "devDependencies": {
-    "shelljs": "^0.7.3"
+    "shelljs": "^0.7.7"
   }
 }

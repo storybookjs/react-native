@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import FuzzySearch from 'react-fuzzy';
+import FuzzySearch from '@storybook/react-fuzzy';
 
 import { features } from '../../../libs/key_events';
 import { baseFonts } from './theme';

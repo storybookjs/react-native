@@ -251,7 +251,7 @@ export default class Story extends React.Component {
     }
 
     // depth-first traverse and collect types
-    function extract(children) {
+    const extract = children => {
       if (!children) {
         return;
       }
@@ -262,13 +262,15 @@ export default class Story extends React.Component {
       if (children.props && children.props.children) {
         extract(children.props.children);
       }
-      if (typeof children === 'string' || typeof children.type === 'string') {
+      if (typeof children === 'string' || typeof children.type === 'string' ||
+        (Array.isArray(this.props.propTablesExclude) && // also ignore excluded types
+        ~this.props.propTablesExclude.indexOf(children.type))) {
         return;
       }
       if (children.type && !types.has(children.type)) {
         types.set(children.type, true);
       }
-    }
+    };
 
     // extract components from children
     extract(this.props.children);
@@ -315,6 +317,7 @@ Story.propTypes = {
   }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),
+  propTablesExclude: PropTypes.arrayOf(PropTypes.func),
   showInline: PropTypes.bool,
   showHeader: PropTypes.bool,
   showSource: PropTypes.bool,
