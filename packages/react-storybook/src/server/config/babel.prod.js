@@ -10,5 +10,10 @@
 module.exports = {
   // Don't try to find .babelrc because we want to force this configuration.
   babelrc: false,
-  presets: ['es2015', 'es2016', 'stage-0', 'react'],
+  presets: [
+    require.resolve('babel-preset-es2015'),
+    require.resolve('babel-preset-es2016'),
+    require.resolve('babel-preset-stage-0'),
+    require.resolve('babel-preset-react'),
+  ],
 };

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Inspector from 'react-inspector';
+import Inspector from '@storybook/react-inspector';
 import style from './style';
 
 class ActionLogger extends Component {
