@@ -101,33 +101,6 @@ configure(function () {
 }, module);
 ~~~
 
-## Linking stories
-
-With `linkTo` you can link stories together to build demos and prototypes directly from your UI components. (Similar to [InVision](https://www.invisionapp.com/) and [Framer.js](https://framerjs.com/))
-
-~~~js
-import { storiesOf, linkTo } from '@kadira/storybook'
-
-storiesOf('Button', module)
-  .add('First', () => (
-    <button onClick={linkTo('Button', 'Second')}>Go to "Second"</button>
-  ))
-  .add('Second', () => (
-    <button onClick={linkTo('Button', 'First')}>Go to "First"</button>
-  ));
-~~~
-
-With that, you can link an event in a component to any story in the Storybook.
-
-* First parameter is the story kind (what you named with storiesOf).
-* Second parameter is the story name (what you named with .add).
-
-You can also pass a function instead for any of above parameters. That function accepts arguments emitted by the event and it should return a string. For example:
-
-~~~js
-linkTo(() => 'Button', () => 'Second')
-~~~
-
 ## Managing stories
 
 Storybook has a very simple API to write stories. With that, you can’t display nested stories.
