@@ -7,7 +7,8 @@ The Story Links addon can be used to create links between stories. This addon wo
 You can use this addon without installing it.
 
 ```js
-import { storiesOf, linkTo } from '@kadira/storybook'
+import { storiesOf } from '@kadira/storybook'
+import { linkTo } from '@kadira/storybook-addon-links'
 
 storiesOf('Button', module)
   .add('First', () => (

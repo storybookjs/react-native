@@ -17,6 +17,7 @@
   "devDependencies": {
     "@kadira/storybook": "file:../../packages/react-storybook",
     "@kadira/storybook-addon-actions": "file:../../packages/addon-actions",
+    "@kadira/storybook-addon-links": "file:../../packages/addon-links",
     "@kadira/storybook-addons": "file:../../packages/addons",
     "@kadira/storybook-channel": "file:../../packages/channel",
     "@kadira/storybook-channel-postmsg": "file:../../packages/channel-postmessage",

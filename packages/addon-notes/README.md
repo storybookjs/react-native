@@ -16,7 +16,6 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@kadira/storybook/addons';
 import '@kadira/storybook-addon-notes/register';
 ```
 
