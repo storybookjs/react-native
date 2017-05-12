@@ -33,7 +33,7 @@
     "deep-equal": "^1.0.1",
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.5.8",
-    "@storybook/react-inspector": "^1.2.1"
+    "react-inspector": "^2.0.0"
   },
   "peerDependencies": {
     "@kadira/storybook-addons": "*",
