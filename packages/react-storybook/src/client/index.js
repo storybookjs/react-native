@@ -1,4 +1,4 @@
-deprecatedimport deprecate from 'util-deprecate';
+import deprecate from 'util-deprecate';
 import * as previewApi from './preview';
 
 export const storiesOf = previewApi.storiesOf;
