@@ -44,8 +44,8 @@ export default class PropTable extends React.Component {
           ? type.__docgenInfo.props[property].description
           : null;
         if (propType === 'other') {
-          if (type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property]) {
-            propType = type.__docgenInfo.props[property].type;
+          if (type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property] && type.__docgenInfo.props[property].type) {
+            propType = type.__docgenInfo.props[property].type.name;
           }
         }
         props[property] = { property, propType, required, description };
@@ -82,7 +82,7 @@ export default class PropTable extends React.Component {
             <th>propType</th>
             <th>required</th>
             <th>default</th>
-            <th>description&gt;</th>
+            <th>description</th>
           </tr>
         </thead>
         <tbody>
