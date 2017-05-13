@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "@kadira/storybook": "*",
+    "@kadira/storybook-addon-actions": "*",
+    "@kadira/storybook-addon-links": "*",
     "@kadira/storybook-addons": "*",
     "@kadira/storybook-channel": "*",
     "babel-runtime": "^6.23.0",

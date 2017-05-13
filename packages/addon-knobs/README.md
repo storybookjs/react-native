@@ -20,9 +20,6 @@ npm i -D @kadira/storybook-addon-knobs
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
 
 ```js
-//  To get our default addons (actions and links)
-import '@kadira/storybook/addons';
-//  To add the knobs addon
 import '@kadira/storybook-addon-knobs/register'
 ```
 

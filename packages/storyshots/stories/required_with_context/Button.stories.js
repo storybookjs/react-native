@@ -1,5 +1,7 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
+import { action } from '@kadira/storybook-addon-actions';
+import { linkTo } from '@kadira/storybook-addon-links';
 import Button from './Button';
 import Welcome from './Welcome';
 
