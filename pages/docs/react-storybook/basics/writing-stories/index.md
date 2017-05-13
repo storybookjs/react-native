@@ -22,7 +22,7 @@ This is just one way to do that. You can always edit your storybook config file 
 This is how you write stories:
 (Let's assume there's a component called "Button" in `src/components/Button.js`.)
 
-~~~js
+```js
 // file: src/stories/index.js
 
 import React from 'react';
@@ -36,7 +36,7 @@ storiesOf('Button', module)
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
   ));
-~~~
+```
 
 This will show stories in your storybook like this:
 
@@ -44,14 +44,13 @@ This will show stories in your storybook like this:
 
 This is just our core API for writing stories. In addition to this, you can use the official and third party Storybook [addons](/docs/react-storybook/addons/introduction) to get more functionality.
 
-
 ## Loading stories dynamically
 
 Sometimes, you will want to load your stories dynamically rather than explicitly requiring them in the Storybook config file.
 
 For example, you may write stories for your app inside the `src/components` directory with the `.stories.js` extension. Then you will want to load them at once. Simply edit your config directory at `.storybook/config.js` as follows:
 
-~~~js
+```js
 import { configure } from '@kadira/storybook';
 
 const req = require.context('../src/components', true, /\.stories\.js$/)
@@ -61,7 +60,7 @@ function loadStories() {
 }
 
 configure(loadStories, module);
-~~~
+```
 
 Here we use Webpack's [require.context](https://webpack.github.io/docs/context.html#require-context) to load modules dynamically. Have a look at the relevant Webpack [docs](https://webpack.github.io/docs/context.html#require-context) to learn more about how to use require.context.
 
@@ -69,7 +68,7 @@ Here we use Webpack's [require.context](https://webpack.github.io/docs/context.h
 
 A decorator is a way to wrap a story with a common set of component(s). Let's say you want to center all your stories. Here is how we can do this with a decorator:
 
-~~~js
+```js
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import MyComponent from '../my_component';
@@ -82,14 +81,15 @@ storiesOf('MyComponent', module)
   ))
   .add('without props', () => (<MyComponent />))
   .add('with some props', () => (<MyComponent text="The Comp"/>));
-~~~
+```
 
 Here we only add the decorator for the current set of stories. (In this example, we add it just for the **MyComponent** story group.)
 
 But, you can also add a decorator **globally** and it'll be applied to all the stories you create. This is how to add a decorator like that:
 
-~~~js
+```js
 import { configure, addDecorator } from '@kadira/storybook';
+
 addDecorator((story) => (
   <div style={{textAlign: 'center'}}>
     {story()}
@@ -97,9 +97,9 @@ addDecorator((story) => (
 ));
 
 configure(function () {
-  ...
+  // ...
 }, module);
-~~~
+```
 
 ## Managing stories
 
@@ -112,31 +112,29 @@ But you might ask, how do I manage stories If I have many of them? Here's how di
 
 For example, you can prefix story names with a dot (`.`):
 
-~~~js
+```js
 storiesOf('core.Button', module)
-~~~
+```
 
- Then you can filter stories to display only the stories you want to see.
+Then you can filter stories to display only the stories you want to see.
 
 ### Run multiple storybooks
 
 You can run multiple storybooks for different kinds of stories (or components). To do that, you can create different NPM scripts to start different stories. See:
 
-~~~js
+```json
 {
-   ...
    "scripts": {
-     "start-storybook-for-theme": "start-storybook -p 9001 -c .storybook-theme"
+     "start-storybook-for-theme": "start-storybook -p 9001 -c .storybook-theme",
      "start-storybook-for-app": "start-storybook -p 8001 -c .storybook-app"
    }
-   ...
 }
-~~~
+```
 
 ### Use multiple repos
 
 This is a popular option. You can create different repos for different kinds of UI components and have a storybook for each of them. Here are some ways to separate them:
 
-* Have one repo for the theme, and one for the app.
-* Have one repo for each UI component and use those in different apps.
-* Have a few repos for different kinds of UI components and use them in different apps.
+-   Have one repo for the theme, and one for the app.
+-   Have one repo for each UI component and use those in different apps.
+-   Have a few repos for different kinds of UI components and use them in different apps.

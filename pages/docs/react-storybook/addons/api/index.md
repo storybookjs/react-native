@@ -2,13 +2,14 @@
 id: 'api'
 title: 'API'
 ---
+
 ## Core Addon API
 
 This is the core addon API. This is how to get the addon API:
 
-~~~js
+```js
 import addonAPI from '@kadira/storybook-addons';
-~~~
+```
 
 Have a look at the API methods for more details:
 
@@ -23,12 +24,12 @@ It has a NodeJS [EventEmitter](https://nodejs.org/api/events.html) compatible AP
 This method allows you to register an addon and get the storybook API. You can do this only in the Manager App.
 See how we can use this:
 
-~~~js
+```js
 // Register the addon with a unique name.
 addonAPI.register('kadira/notes', (storybookAPI) => {
 
 });
-~~~
+```
 
 Now you'll get an instance to our StorybookAPI. See the [api docs](/docs/react-storybook/addons/api#storybook-api) for Storybook API regarding using that.
 
@@ -37,7 +38,7 @@ Now you'll get an instance to our StorybookAPI. See the [api docs](/docs/react-s
 This method allows you to add a panel to Storybook. (Storybook's Action Logger is a panel). You can do this only in the Manager App.
 See how you can use this method:
 
-~~~js
+```js
 const MyPanel = () => (
   <div>
     This is a panel.
@@ -51,13 +52,13 @@ addonAPI.addPanel('kadira/notes/panel', {
     <MyPanel />
   ),
 });
-~~~
+```
 
 As you can see, you can set any React Component as the panel. Currently, it's just a text. But you can do anything you want.
 
 You also pass the channel and the Storybook API into that. See:
 
-~~~js
+```js
 addonAPI.register('kadira/notes', (storybookAPI) => {
   // Also need to set a unique name to the panel.
   addonAPI.addPanel('kadira/notes/panel', {
@@ -67,7 +68,7 @@ addonAPI.register('kadira/notes', (storybookAPI) => {
     ),
   })
 })
-~~~
+```
 
 ## Storybook API
 
@@ -79,55 +80,55 @@ Let's have a look at API methods.
 
 With this method, you can select a story via an API. This method accepts two parameters.
 
-1. story kind name
-2. story name (optional)
+1.  story kind name
+2.  story name (optional)
 
 Let's say you've got a story like this:
 
-~~~js
+```js
 storiesOf('Button', module)
   .add('with text', () => (
     <Button onClick={action('clicked')}>Hello Button</Button>
   ));
-~~~
+```
 
 This is how you can select the above story:
 
-~~~js
+```js
 storybookAPI.selectStory('Button', 'with text');
-~~~
+```
 
 ### storybookAPI.setQueryParams()
 
 This method allows you to set query string parameters. You can use that as temporary storage for addons. Here's how you set query params.
 
-~~~js
+```js
 storybookAPI.setQueryParams({
   abc: 'this is abc',
   bbc: 'this is bbc',
 });
-~~~
+```
 
 > If you need to remove a query param, use `null` for that. For an example, let's say we need to remove bbc query param. This is how we do it:
 
-~~~js
+```js
 storybookAPI.setQueryParams({
   bbc: null,
 });
-~~~
+```
 
 ### storybookAPI.getQueryParam()
 
 This method allows you to get a query param set by above API `setQueryParams`. For example, let's say we need to get the bbc query param. Then this how we do it:
 
-~~~js
+```js
 storybookAPI.getQueryParam('bbc');
-~~~
+```
 
 ### storybookAPI.onStory(fn)
 
 This method allows you to register a handler function which will be called whenever the user navigates between stories.
 
-~~~js
+```js
 storybookAPI.onStory((kind, story) => console.log(kind, story));
-~~~
+```

@@ -12,12 +12,12 @@ In that, you can see the Storybook's manager UI. It has UI elements that are no
 For an example, let's assume the above storybook runs on port 9009 and we can access it via [http://localhost:9009](http://localhost:9009/).
 Then Let's pick a single story: the "with text" story of the Button. So, in this case:
 
-* selectedKind = Button
-* selectedStory = with text
+-   selectedKind = Button
+-   selectedStory = with text
 
 Then, we can see the above story using the following URL:
 
-http://localhost:9009/iframe.html?selectedKind=Button&selectedStory=with+text&dataId=0
+<http://localhost:9009/iframe.html?selectedKind=Button&selectedStory=with+text&dataId=0>
 
 ![Storybook Iframe Screenshot](../static/storybook-iframe-screenshot.png)
 
