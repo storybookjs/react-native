@@ -21,11 +21,11 @@ As shown in the above image, there's a communication channel that the Manager Ap
 
 With an addon, you can add more functionality to Storybook. Here are a few things you could do:
 
-* Add a panel to Storybook (like Action Logger).
-* Interact with the story and the panel.
-* Set and get URL query params.
-* Select a story.
-* Register keyboard shortcuts (coming soon).
+-   Add a panel to Storybook (like Action Logger).
+-   Interact with the story and the panel.
+-   Set and get URL query params.
+-   Select a story.
+-   Register keyboard shortcuts (coming soon).
 
 With this, you can write some pretty cool addons. Look at our [Addon gallery](/docs/react-storybook/addons/addon-gallery) to have a look at some sample addons.
 
@@ -33,14 +33,13 @@ With this, you can write some pretty cool addons. Look at our [Addon gallery](/d
 
 Let's write a simple addon for Storybook. It's a Notes addon on which you can display some notes for a story.
 
-
 > Just for the simplicity, we'll write the addon right inside our app. But we can easily move it into a separate NPM module.
 
 ## How it looks
 
 We write a story for our addon like this:
 
-~~~js
+```js
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { action } from '@kadira/storybook-addon-actions';
@@ -54,11 +53,11 @@ storiesOf('Button', module)
     </WithNotes>
   ))
   .add('with some emoji', () => (
-    <WithNotes notes={'Here we use some emoji as the Button text. Isn\'t it look nice?'}>
+    <WithNotes notes={'Here we use some emoji as the Button text. Isn&apos;t it look nice?'}>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
   ));
-~~~
+```
 
 Then it will appear in the Notes panel like this:
 
@@ -68,10 +67,10 @@ Then it will appear in the Notes panel like this:
 
 First, create an `addons.js` inside the Storybook config directory and add the following content to it.
 
-~~~js
+```js
 // Register the actions addon that we used above
 import '@kadira/storybook-addon-actions/register';
-~~~
+```
 
 We'll use this file shortly to register the Notes addon we are building.
 
@@ -81,7 +80,7 @@ Now we need to create two files, `register.js` and `index.js,` inside a director
 
 Let's add the following content to the `index.js`. It will expose a class called `WithNotes`, which wraps our story.
 
-~~~js
+```js
 import React from 'react';
 import addons from '@kadira/storybook-addons';
 
@@ -96,7 +95,7 @@ export class WithNotes extends React.Component {
     return children;
   }
 }
-~~~
+```
 
 In this case, our component can access something called the channel. It lets us communicate with the panel (where we display notes). It has a NodeJS [EventEmitter](https://nodejs.org/api/events.html) compatible API.
 
@@ -104,7 +103,7 @@ In the above case, it will emit the notes text to the channel, so our panel can 
 
 Then add the following code to the register.js.
 
-See: https://gist.github.com/arunoda/fb3859840ff616cc5ea0fa3ef8e3f358
+See: <https://gist.github.com/arunoda/fb3859840ff616cc5ea0fa3ef8e3f358>
 
 It will register our addon and add a panel. In this case, the panel represents a React component called `Notes`. That component has access to the channel and storybook api.
 
@@ -118,20 +117,19 @@ It also listens to another event, called onStory, in the storybook API, which fi
 
 Now, finally, we need to register the addon by importing it to the `.storybook/addons.js` file.
 
-~~~js
+```js
 // Register the actions addon that we used above
 import '@kadira/storybook-addon-actions/register';
 
 // Our addon
 import '../src/notes-addon/register';
-~~~
+```
 
 > Above code runs in the Manager App but not in the preview area.
 
-
 That's it. Now you can create notes for any story as shown below:
 
-~~~js
+```js
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { action } from '@kadira/storybook-addon-actions';
@@ -145,11 +143,11 @@ storiesOf('Button', module)
     </WithNotes>
   ))
   .add('with some emojies', () => (
-    <WithNotes notes={'Here we use emojies as the Button text. Isn\'t it look nice?'}>
+    <WithNotes notes={'Here we use emojies as the Button text. Isn&apos;t it look nice?'}>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
   ));
-~~~
+```
 
 ## Addon API
 
@@ -166,7 +164,7 @@ In addition to moving the above code to an NPM module, we've set `react` and `@k
 
 When you are developing your addon as a package, you can't use `npm link` to add it your project. Instead add your package as a local dependency into your `package.json` as shown below:
 
-~~~json
+```json
 {
   ...
   "dependencies": {
@@ -174,7 +172,7 @@ When you are developing your addon as a package, you can't use `npm link` to add
   }
   ...
 }
-~~~
+```
 
 ### Package Maintenance
 

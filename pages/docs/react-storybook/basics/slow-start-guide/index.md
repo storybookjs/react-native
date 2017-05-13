@@ -17,28 +17,27 @@ In this guide, we are trying to set up Storybook for your React project.
 
 First of all, you need to add `@kadira/storybook` to your project. To do that, simply run:
 
-~~~sh
+```sh
 npm i --save-dev @kadira/storybook
-~~~
+```
 
 ## Add react and react-dom
+
 Make sure that you have `react` and `react-dom` in your dependencies as well:
 
-~~~sh
+```sh
 npm i --save react react-dom
-~~~
+```
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:
 
-~~~js
+```json
 {
-  ...
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook"
   }
-  ...
 }
-~~~
+```
 
 ## Create the config file
 
@@ -48,7 +47,7 @@ For the basic Storybook configuration file, you don't need to do much, but simpl
 
 To do that, simply create a file at `.storybook/config.js` with the following content:
 
-~~~js
+```js
 import { configure } from '@kadira/storybook';
 
 function loadStories() {
@@ -57,7 +56,7 @@ function loadStories() {
 }
 
 configure(loadStories, module);
-~~~
+```
 
 That'll load stories in `../stories/index.js`.
 
@@ -67,7 +66,7 @@ Just like that, you can load stories from wherever you want to.
 
 Now you can write some stories inside the `../stories/index.js` file, like this:
 
-~~~js
+```js
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 
@@ -78,20 +77,20 @@ storiesOf('Button', module)
   .add('with some emoji', () => (
     <button onClick={action('clicked')}>😀 😎 👍 💯</button>
   ));
-~~~
+```
 
 Story is a single state of your component. In the above case, there are two stories for the native button component:
 
-1. with text
-2. with some emoji
+1.  with text
+2.  with some emoji
 
 ## Run your Storybook
 
 Now everything is ready. Simply run your storybook with:
 
-~~~js
+```sh
 npm run storybook
-~~~
+```
 
 Then you can see all your stories, like this:
 
