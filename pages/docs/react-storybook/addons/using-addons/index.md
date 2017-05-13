@@ -27,7 +27,8 @@ npm i --save '@kadira/storybook-addon-notes';
 After that, add it to the addons.js like this:
 
 ~~~js
-import '@kadira/storybook/addons';
+import '@kadira/storybook-addon-actions/register';
+import '@kadira/storybook-addon-links/register';
 import '@kadira/storybook-addon-notes/register';
 ~~~
 
@@ -40,7 +41,9 @@ Now when you are writing a story it like this and add some notes:
 
 ~~~js
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
+import { action } from '@kadira/storybook-addon-actions';
+import { linkTo } from '@kadira/storybook-addon-links';
 import Button from './Button';
 import { WithNotes } from '@kadira/storybook-addon-notes';
 

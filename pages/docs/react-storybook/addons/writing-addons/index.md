@@ -42,7 +42,8 @@ We write a story for our addon like this:
 
 ~~~js
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
+import { action } from '@kadira/storybook-addon-actions';
 import Button from './Button';
 import { WithNotes } from '../notes-addon';
 
@@ -68,8 +69,8 @@ Then it will appear in the Notes panel like this:
 First, create an `addons.js` inside the Storybook config directory and add the following content to it.
 
 ~~~js
-// Storybook's default addons
-import '@kadira/storybook/addons';
+// Register the actions addon that we used above
+import '@kadira/storybook-addon-actions/register';
 ~~~
 
 We'll use this file shortly to register the Notes addon we are building.
@@ -118,8 +119,8 @@ It also listens to another event, called onStory, in the storybook API, which fi
 Now, finally, we need to register the addon by importing it to the `.storybook/addons.js` file.
 
 ~~~js
-// Storybook's default addons
-import '@kadira/storybook/addons';
+// Register the actions addon that we used above
+import '@kadira/storybook-addon-actions/register';
 
 // Our addon
 import '../src/notes-addon/register';
@@ -132,7 +133,8 @@ That's it. Now you can create notes for any story as shown below:
 
 ~~~js
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
+import { action } from '@kadira/storybook-addon-actions';
 import Button from './Button';
 import { WithNotes } from '../notes-addon';
 
