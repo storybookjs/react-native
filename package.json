@@ -54,7 +54,7 @@
   "main": "n/a",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build": "gatsby build && cp CNAME ./public",
+    "build": "gatsby build && cp CNAME .travis.yml ./public",
     "deploy": "gh-pages -r git@github.com:storybooks/storybooks.github.io.git -d public -o origin -b master",
     "deploy-travis": "gh-pages -r https://${GH_TOKEN}@github.com/storybooks/storybooks.github.io.git -d public -o origin -b master",
     "develop": "gatsby develop",
