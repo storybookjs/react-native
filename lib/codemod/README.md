@@ -24,11 +24,11 @@ Updates package names in imports to include our organisation name prefix
 Example:
 
 ```js
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/storybook';
 ```
 
  becomes
 
 ```js
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/storybook';
 ```
