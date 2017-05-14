@@ -39,7 +39,7 @@ import { WithNotes } from '@kadira/storybook-addon-notes';
 
 storiesOf('Button', module)
   .add('with some emoji', () => (
-    <WithNotes notes={'Here we use some emoji as the Button text. Isn&apos;t it look nice?'}>
+    <WithNotes notes={'Here we use some emoji as the Button text. Doesn&apos;t it look nice?'}>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
   ));

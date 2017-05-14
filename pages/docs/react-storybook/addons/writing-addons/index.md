@@ -53,7 +53,7 @@ storiesOf('Button', module)
     </WithNotes>
   ))
   .add('with some emoji', () => (
-    <WithNotes notes={'Here we use some emoji as the Button text. Isn&apos;t it look nice?'}>
+    <WithNotes notes={'Here we use some emoji as the Button text. Doesn&apos;t it look nice?'}>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
   ));
@@ -143,7 +143,7 @@ storiesOf('Button', module)
     </WithNotes>
   ))
   .add('with some emojies', () => (
-    <WithNotes notes={'Here we use emojies as the Button text. Isn&apos;t it look nice?'}>
+    <WithNotes notes={'Here we use emojies as the Button text. Doesn&apos;t it look nice?'}>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
   ));
