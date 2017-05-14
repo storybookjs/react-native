@@ -6,10 +6,8 @@ This site has also has the documentation for Storybook.
 
 ### Usage
 
-```
-npm i
-npm start
-```
+    npm i
+    npm start
 
 ### Edit Documentation
 

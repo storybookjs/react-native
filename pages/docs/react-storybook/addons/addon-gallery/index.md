@@ -2,6 +2,7 @@
 id: 'addon-gallery'
 title: 'Addon Gallery'
 ---
+
 This is a list of available addons for Storybook.
 
 ## Built-In Addons.
@@ -14,7 +15,7 @@ With actions, you can inspect events related to your components. This is pretty 
 
 Also, you can think of this as a way to document events in your components.
 
-### [Links](https://github.com/storybooks/storybook/tree/master/packages/addon-links)		
+### [Links](https://github.com/storybooks/storybook/tree/master/packages/addon-links)
 
 With links you can link stories together. With that, you can build demos and prototypes directly from your UI components. (Like you can do with [Invision](https://www.invisionapp.com/) and [Framer.js](https://framerjs.com/))
 

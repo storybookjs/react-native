@@ -28,18 +28,18 @@ You can simply import CSS files wherever you want, whether it's in the storybook
 
 Basically, you can import CSS like this:
 
-~~~js
+```js
 // locally
 import './styles.css'
 // or from NPM modules
 import 'bootstrap/dist/css/bootstrap.css';
-~~~
+```
 
 ### Image and Static File Support
 
 You can also import images and media files directly via JavaScript. This helps you to write stories with media files easily. This is how to do it:
 
-~~~js
+```js
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 
@@ -49,10 +49,9 @@ storiesOf('<img>', module)
   .add('with a image', () => (
     <img src={imageFile} />
   ));
-~~~
+```
 
 When you are building a storybook, we'll also export the imported image. So, this is a good approach to loading all of your static content.
-
 
 > Storybook also has a way to mention static directories via the -s option of the `react-storybook` and `build-storybook` commands.
 
@@ -63,7 +62,6 @@ You can import `.json` files, as you do with Node.js. This will also allow you t
 ## NPM Modules
 
 You can use any of the NPM modules installed on your project. You can simply import and use them.
-
 
 > Unfortunately, we don't support Meteor packages. If your UI component includes one or more Meteor packages, try to avoid using them in UI components.
 > If they are containers, you can use [React Stubber](https://github.com/kadirahq/react-stubber) to use them in Storybook.

@@ -11,7 +11,7 @@ Here are all those options:
 
 ## For start-storybook
 
-~~~
+```log
 Usage: start-storybook [options]
 
 Options:
@@ -22,11 +22,11 @@ Options:
   -h, --host [string]           Host to run Storybook
   -s, --static-dir <dir-names>  Directory where to load static files from
   -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
-~~~
+```
 
 ## For build-storybook
 
-~~~
+```log
 Usage: build-storybook [options]
 
 Options:
@@ -36,4 +36,4 @@ Options:
   -s, --static-dir <dir-names>  Directory where to load static files from
   -o, --output-dir [dir-name]   Directory where to store built files
   -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
-~~~
+```
