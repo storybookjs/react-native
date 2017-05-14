@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@storybook/storybook": "*",
+    "@storybook/react": "*",
     "@storybook/addons": "*",
     "@storybook/addon-actions": "*",
-    "@storybook/storybook-addon-links": "*",
+    "@storybook/addon-links": "*",
     "react-scripts": "0.9.5"
   },
   "dependencies": {

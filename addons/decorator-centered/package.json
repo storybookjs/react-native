@@ -1,0 +1,18 @@
+{
+  "name": "@storybook/decorator-centered",
+  "version": "1.1.2",
+  "description": "React Storybook decorator to center components",
+  "main": "build/index.js",
+  "scripts": {
+    "prepublish": "babel src --out-dir build"
+  },
+  "author": "Muhammed Thanish <mnmtanish@gmail.com>",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "devDependencies": {
+  }
+}
