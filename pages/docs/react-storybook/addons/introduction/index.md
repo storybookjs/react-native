@@ -9,7 +9,7 @@ Basically, there are two types of addons. (Decorators and Native Addons)
 
 ## 1. Decorators
 
-These are wrapper components or Storybook decorators that wrap a story.
+Decorators are wrapper components or Storybook decorators that wrap a story.
 
 ### Wrapper Components
 
