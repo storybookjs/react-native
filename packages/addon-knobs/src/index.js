@@ -1,4 +1,4 @@
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import KnobManager from './KnobManager';
 
 const manager = new KnobManager();

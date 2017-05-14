@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import Panel from './components/Panel';
 
 addons.register('storybooks/storybook-addon-knobs', api => {

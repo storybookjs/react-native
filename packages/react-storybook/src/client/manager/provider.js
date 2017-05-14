@@ -3,7 +3,7 @@
 import qs from 'qs';
 import React from 'react';
 import { Provider } from '@storybook/storybook-ui';
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import createChannel from '@storybook/storybook-channel-postmsg';
 import Preview from './preview';
 

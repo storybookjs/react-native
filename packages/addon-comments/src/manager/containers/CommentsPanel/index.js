@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import CommentsPanel from '../../components/CommentsPanel/';
 import DataStore from './dataStore';
 

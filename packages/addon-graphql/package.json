@@ -24,10 +24,10 @@
     "@storybook/storybook": "*",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "shelljs": "^0.7.3"
+    "shelljs": "^0.7.7"
   },
   "peerDependencies": {
-    "@storybook/storybook-addons": "*",
+    "@storybook/addons": "*",
     "react": "*"
   },
   "dependencies": {

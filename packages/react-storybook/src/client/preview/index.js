@@ -1,7 +1,7 @@
 /* global window */
 
 import { createStore } from 'redux';
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import createChannel from '@storybook/storybook-channel-postmsg';
 import qs from 'qs';
 import StoryStore from './story_store';

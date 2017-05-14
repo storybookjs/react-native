@@ -14,7 +14,7 @@ Import the `action` function and use it to create actions handlers. When creatin
 
 ```js
 import { storiesOf, action } from '@storybook/storybook'
-// or import { action } from '@storybook/storybook-addon-actions'
+// or import { action } from '@storybook/addon-actions'
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -31,7 +31,7 @@ If you wish to process action data before sending them over to the logger, you c
 `decorateAction` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorateAction` returns a function that can be used like `action` but will log the modified arguments instead of the original arguments.
 
 ```js
-import { action, decorateAction } from '@storybook/storybook-addon-actions'
+import { action, decorateAction } from '@storybook/addon-actions'
 
 const firstArgAction = decorateAction([
   args => args.slice(0, 1)

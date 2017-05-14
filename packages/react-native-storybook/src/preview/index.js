@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import createChannel from '@storybook/storybook-channel-websocket';
 import { EventEmitter } from 'events';
 import StoryStore from './story_store';

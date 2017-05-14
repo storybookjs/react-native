@@ -1,4 +1,4 @@
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import stringify from 'json-stringify-safe';
 import { EVENT_ID } from './';
 

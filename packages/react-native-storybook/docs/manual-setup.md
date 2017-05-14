@@ -24,8 +24,9 @@ AppRegistry.registerComponent('MyApplicationName', () => StorybookUI);
 
 Create a file named `addons.js` file in `storybook` directory to use default set of addons.
 
-```
-import '@storybook/react-native-storybook/addons';
+```js
+import '@storybook/addon-actions';
+import '@storybook/storybook-addon-links';
 ```
 
 Then write your first story in the `stories` directory like this:

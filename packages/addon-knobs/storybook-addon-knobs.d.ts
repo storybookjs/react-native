@@ -10,13 +10,20 @@ interface StoryContext {
 	story: string,
 }
 
+interface NumberOptions {
+	range: boolean,
+	min: number,
+	max: number,
+	step: number,
+}
+
 export function knob<T>(name: string, options: KnobOption<T>): T;
 
 export function text(name: string, value: string | null): string;
 
 export function boolean(name: string, value: boolean): boolean;
 
-export function number(name: string, value: number): number;
+export function number(name: string, value: number, options?: NumberOptions): number;
 
 export function color(name: string, value: string): string;
 

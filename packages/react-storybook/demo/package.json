@@ -4,10 +4,13 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.5",
-    "@storybook/storybook": "file:../"
+    "@storybook/storybook": "file:../",
+    "@storybook/addon-actions": "file:../../addon-actions",
+    "@storybook/storybook-addon-links": "file:../../addon-links",
+    "@storybook/addons": "file:../../addons"
   },
   "dependencies": {
-    "prop-types": "^15.5.7",
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },

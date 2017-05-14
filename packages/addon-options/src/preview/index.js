@@ -1,4 +1,4 @@
-import addons from '@storybook/storybook-addons';
+import addons from '@storybook/addons';
 import { EVENT_ID } from '../shared';
 
 // init function will be executed once when the storybook loads for the

@@ -23,30 +23,30 @@
     "storybook-remote": "start-storybook -p 3006"
   },
   "dependencies": {
-    "babel-runtime": "^6.11.6",
+    "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
     "insert-css": "^1.0.0",
     "marked": "^0.3.6",
-    "moment": "^2.15.1",
-    "prop-types": "^15.5.7",
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.8",
     "react-render-html": "^0.1.6",
-    "react-textarea-autosize": "^4.0.5"
+    "react-textarea-autosize": "^4.3.0"
   },
   "devDependencies": {
     "@storybook/storybook": "*",
-    "@storybook/storybook-addons": "*",
-    "@storybook/storybook-database-cloud": "*",
-    "@storybook/storybook-deployer": "*",
+    "@storybook/addons": "*",
+    "@kadira/storybook-database-cloud": "*",
+    "@kadira/storybook-deployer": "*",
     "@storybook/storybook-ui": "*",
-    "git-url-parse": "^6.0.1",
+    "git-url-parse": "^6.2.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
-    "shelljs": "^0.7.4"
+    "shelljs": "^0.7.7"
   },
   "peerDependencies": {
-    "@storybook/storybook-addons": "*",
+    "@storybook/addons": "*",
     "react": "*",
     "react-dom": "*"
   }

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { storiesOf, action, linkTo } from '@storybook/react-native-storybook';
+
+import { storiesOf } from '@storybook/react-native-storybook';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/storybook-addon-links';
 
 import Button from './Button';
 import CenterView from './CenterView';

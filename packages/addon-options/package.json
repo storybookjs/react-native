@@ -21,7 +21,7 @@
   "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-options",
   "devDependencies": {
     "@storybook/storybook": "*",
-    "@storybook/storybook-addons": "*",
+    "@storybook/addons": "*",
     "@storybook/storybook-ui": "*",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -29,7 +29,7 @@
     "shelljs": "^0.7.7"
   },
   "peerDependencies": {
-    "@storybook/storybook-addons": "*",
+    "@storybook/addons": "*",
     "react": "*",
     "react-dom": "*"
   },

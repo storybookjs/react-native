@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addons",
   "devDependencies": {
-    "shelljs": "^0.7.3"
+    "shelljs": "^0.7.7"
   }
 }

@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "shelljs": "^0.7.3"
+    "shelljs": "^0.7.7"
   },
   "dependencies": {
     "@storybook/storybook-channel": "^1.0.1"

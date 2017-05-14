@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@storybook/storybook": "*",
-    "git-url-parse": "^6.0.1",
+    "git-url-parse": "^6.2.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-storybook-addon-backgrounds": "0.0.7",
@@ -25,9 +25,9 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "babel-runtime": "^6.5.0",
+    "babel-runtime": "^6.23.0",
     "markdown-to-react-components": "^0.2.1",
-    "prop-types": "^15.5.7",
+    "prop-types": "^15.5.8",
     "react-addons-create-fragment": "^15.5.3"
   },
   "main": "dist/index.js"
