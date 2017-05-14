@@ -4,7 +4,10 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.5",
-    "@kadira/storybook": "file:../"
+    "@kadira/storybook": "file:../",
+    "@kadira/storybook-addon-actions": "file:../../addon-actions",
+    "@kadira/storybook-addon-links": "file:../../addon-links",
+    "@kadira/storybook-addons": "file:../../addons"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
