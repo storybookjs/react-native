@@ -56,7 +56,7 @@
     "build-storybook": "build-storybook",
     "build": "gatsby build && cp CNAME ./public",
     "deploy": "gh-pages -r git@github.com:storybooks/storybooks.github.io.git -d public -o origin -b master",
-    "deploy-travis": "gh-pages -x -r https://${GH_TOKEN}@github.com/storybooks/storybooks.github.io.git -d public -o origin -b master",
+    "deploy-travis": "gh-pages -r https://${GH_TOKEN}@github.com/storybooks/storybooks.github.io.git -d public -o origin -b master",
     "develop": "gatsby develop",
     "storybook": "start-storybook -p 9009",
     "lint": "remark . # -- -o to update"
