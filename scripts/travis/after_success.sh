@@ -8,5 +8,5 @@ fi
 
 if [[ $TRAVIS_BRANCH == 'source' ]]; then
   npm run build
-  npm run deploy
+  npm run deploy-travis
 fi
