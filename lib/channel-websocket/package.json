@@ -1,0 +1,16 @@
+{
+  "name": "@storybook/channel-websocket",
+  "version": "1.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "shelljs": "^0.7.7"
+  },
+  "dependencies": {
+    "@storybook/channels": "^1.0.1"
+  }
+}

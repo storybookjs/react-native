@@ -1,0 +1,76 @@
+{
+  "name": "@storybook/react-native",
+  "version": "2.3.0",
+  "description": "A better way to develop React Native Components for your app",
+  "main": "dist/index.js",
+  "bin": {
+    "storybook": "dist/bin/storybook.js"
+  },
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadirahq/react-native-storybook.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "storybook"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadirahq/react-native-storybook/issues"
+  },
+  "homepage": "https://github.com/kadirahq/react-native-storybook#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "0.27.0 - 0.43.x"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-native": "^0.43.3"
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "*",
+    "@storybook/addon-links": "*",
+    "@storybook/addons": "*",
+    "@storybook/channel-websocket": "*",
+    "@storybook/ui": "*",
+    "autoprefixer": "^7.0.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-regenerator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "case-sensitive-paths-webpack-plugin": "^2.0.0",
+    "commander": "^2.9.0",
+    "css-loader": "^0.28.0",
+    "events": "^1.1.1",
+    "express": "^4.15.2",
+    "file-loader": "^0.11.1",
+    "json-loader": "^0.5.4",
+    "json5": "^0.5.1",
+    "postcss-loader": "^2.0.3",
+    "shelljs": "^0.7.7",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
+    "util-deprecate": "^1.0.2",
+    "uuid": "^3.0.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0"
+  }
+}

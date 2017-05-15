@@ -33,16 +33,16 @@ To test your project against the current latest version of storybook, you can cl
   ```
   cd packages/react-storybook
   npm link
-  
+
   cd <your-project>
   npm link @kadira/storybook
-  
+
   # repeat with whichever other parts of the monorepo you are using.
   ```
 
 ### Reproductions
 
-The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch. 
+The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
 A good way to do that is using the example `test-cra` app embedded in this repository:
 
@@ -155,7 +155,7 @@ getstorybook
 Then link storybook inside the sample project with:
 
 ```sh
-npm link @storybook/storybook
+npm link @storybook/react
 ```
 
 ### Getting Changes
