@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router';
 import './style.css';
 
 import storybookLogo from '../../design/homepage/storybook-logo.png';
@@ -16,9 +17,9 @@ class Header extends React.Component {
       const className = currentSection === section.id ? 'selected' : '';
 
       return (
-        <a className={className} key={section.href} href={section.href}>
+        <Link className={className} key={section.href} to={section.href}>
           {section.caption}
-        </a>
+        </Link>
       );
     });
   }
@@ -34,9 +35,9 @@ class Header extends React.Component {
       <div id="header" className="row">
         <div className="col-xs-12">
           <div id="header-title" className={titleClassname}>
-            <a href="/">
+            <Link to="/">
               <img className="sb-title" src={storybookLogo} alt="Storybook Logo" />
-            </a>
+            </Link>
           </div>
           <div id="header-links" className="pull-right">
             {this.renderSections()}

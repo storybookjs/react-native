@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import slackIcon from './images/slack-icon.png';
 import githubIcon from './images/github-icon.png';
 import './style.css';
@@ -11,18 +12,18 @@ const Footer = () => (
           <center>
             Maintained by the
             {' '}
-            <a href="/docs/react-storybook/basics/community/">
+            <Link to="/docs/react-storybook/basics/community/">
               Storybook Community
-            </a>
+            </Link>
             .
           </center>
           <center>
-            <a href="https://storybooks-slackin.herokuapp.com/" target="_blank">
+            <Link to="https://storybooks-slackin.herokuapp.com/" target="_blank">
               <img src={slackIcon} alt="Storybook Slack" />
-            </a>
-            <a href="https://github.com/storybooks/storybook" target="_blank">
+            </Link>
+            <Link to="https://github.com/storybooks/storybook" target="_blank">
               <img src={githubIcon} alt="Storybook GitHub" style={{ padding: '7px' }} />
-            </a>
+            </Link>
           </center>
         </div>
       </div>

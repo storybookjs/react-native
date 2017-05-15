@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router';
 import './style.css';
 
 class Nav extends React.Component {
@@ -13,7 +14,7 @@ class Nav extends React.Component {
 
     return (
       <li key={item.id}>
-        <a className={cssClass} href={url}>{item.title}</a>
+        <Link className={cssClass} to={url}>{item.title}</Link>
       </li>
     );
   }
