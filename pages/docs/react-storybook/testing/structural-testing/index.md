@@ -13,8 +13,8 @@ Then, after we've completed any UI changes, we compare new snapshots with the sn
 
 If things are not the same, we can do two things:
 
-  1. We can consider new snapshots that show the current state, and then update them as new snapshots.
-  2. We can find the root cause for the change and fix our code.
+1.  We can consider new snapshots that show the current state, and then update them as new snapshots.
+2.  We can find the root cause for the change and fix our code.
 
 > We can also commit these snapshots directly into the source code.
 
@@ -25,33 +25,34 @@ If things are not the same, we can do two things:
 First, make sure you are inside a Storybook-enabled repo (make sure it has few stories).
 Then, install StoryShots into your app with:
 
-~~~sh
+```sh
 npm i -D @kadira/storyshots
-~~~
+```
 
 Then, add the following NPM script into your package.json:
 
-~~~js
+```json
 {
   "scripts": {
     "test-storybook": "storyshots"
   }
 }
-~~~
+```
 
 Now you can run the above command with:
-~~~sh
+
+```sh
 npm run test-storybook
-~~~
+```
 
 This will save the initial set of snapshots inside your Storybook config directory.
 
-![StoryShots First ](../static/storyshots-first-run.png)
+![StoryShots First](../static/storyshots-first-run.png)
 
 After you complete any changes, you can run the above NPM script again and find our structural changes.
 
 ![StoryShots Diff View](../static/storyshots-diff-view.png)
 
----
+* * *
 
 StoryShots also comes with a few important [productive features](https://github.com/storybooks/storybook/tree/master/packages/storyshots#key-features) that can be customized. Have a look at the StoryShots [repo](https://github.com/storybooks/storybook/tree/master/packages/storyshots) for more information.

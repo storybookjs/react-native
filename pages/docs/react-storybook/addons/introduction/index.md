@@ -9,36 +9,36 @@ Basically, there are two types of addons. (Decorators and Native Addons)
 
 ## 1. Decorators
 
-These are wrapper components or Storybook decorators that wrap a story.
+Decorators are wrapper components or Storybook decorators that wrap a story.
 
 ### Wrapper Components
 
 For example, let's say we want to center a story rendered on the screen. For that, we can use a wrapper component like this:
 
-~~~js
+```js
 const Center = ({ children }) => (
   <div style={{ textAlign: "center" }}>
     { children }
   </div>
 );
-~~~
+```
 
 Then we can use it when writing stories.
 
-~~~js
+```js
 storiesOf('Button', module)
   .add('with text', () => (
     <Center>
       <Button onClick={action('clicked')}>Hello Button</Button>
     </Center>
   ));
-~~~
+```
 
 ### Storybook Decorators
 
 You can also expose this functionality as a Storybook decorator and use it like this.
 
-~~~js
+```js
 const CenterDecorator = (story) => (
   <div style={{ textAlign: "center" }}>
     {story()}
@@ -53,14 +53,14 @@ storiesOf('Button', module)
   .add('with some emojies', () => (
     <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
   ));
-~~~
+```
 
 You can also add a decorator globally for all stories like this:
 
-~~~js
-import {
-    storiesOf, action, addDecorator
-} from '@kadira/storybook';
+```js
+import { storiesOf, addDecorator } from '@kadira/storybook';
+import { action } from '@kadira/storybook-addon-actions';
+import { linkTo } from '@kadira/storybook-addon-links';
 
 const CenterDecorator = (story) => (
   <div style={{ textAlign: "center" }}>
@@ -81,7 +81,7 @@ storiesOf('Button', module)
   .add('with some emojies', () => (
     <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
   ));
-~~~
+```
 
 > You can call `addDecorator()` inside the story definition file as shown above. But adding it to the Storybook config file is a much better option.
 
@@ -99,6 +99,6 @@ It will allow you to inspect the parameters of any event of your components.
 
 See the following links to learn more about native addons:
 
-* [Using addons](/docs/react-storybook/addons/using-addons)
-* [Addon gallery](/docs/react-storybook/addons/addon-gallery)
-* [Write your own addon](/docs/react-storybook/addons/writing-addons)
+-   [Using addons](/docs/react-storybook/addons/using-addons)
+-   [Addon gallery](/docs/react-storybook/addons/addon-gallery)
+-   [Write your own addon](/docs/react-storybook/addons/writing-addons)

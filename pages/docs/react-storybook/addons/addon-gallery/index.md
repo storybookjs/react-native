@@ -2,6 +2,7 @@
 id: 'addon-gallery'
 title: 'Addon Gallery'
 ---
+
 This is a list of available addons for Storybook.
 
 ## Built-In Addons.
@@ -13,6 +14,10 @@ These addons ship with Storybook by default. You can use them right away.
 With actions, you can inspect events related to your components. This is pretty neat when you are manually testing your components.
 
 Also, you can think of this as a way to document events in your components.
+
+### [Links](https://github.com/storybooks/storybook/tree/master/packages/addon-links)
+
+With links you can link stories together. With that, you can build demos and prototypes directly from your UI components. (Like you can do with [Invision](https://www.invisionapp.com/) and [Framer.js](https://framerjs.com/))
 
 ## Third Party Addons
 
@@ -71,4 +76,8 @@ Given possible values for each prop, renders your component with all combination
 
 ### [StoryRouter](https://github.com/gvaldambrini/storybook-router)
 
-A [decorator](/docs/react-storybook/addons/introduction) that allows you to integrate react-router v.4 components in your stories.
+A [decorator](/docs/react-storybook/addons/introduction) that allows you to integrate react-router components in your stories.
+
+### [JSX preview](https://github.com/Kilix/storybook-addon-jsx)
+
+This addon shows a preview of the JSX code for each story. It allows you to configure the display and copy the code with a single click.

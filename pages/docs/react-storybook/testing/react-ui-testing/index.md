@@ -9,9 +9,9 @@ There are different aspects we need to look at when testing UI. There are also a
 
 Before we talk about testing, we need to think about why we need to test. There are many reasons; here are some of our reasons:
 
-  * To find bugs.
-  * To make sure things won't break between new code commits.
-  * To keep tests as living documentations.
+-   To find bugs.
+-   To make sure things won't break between new code commits.
+-   To keep tests as living documentations.
 
 Specifically, testing is important when working with teams since it allows different people the ability to contribute with confidence.
 
@@ -27,10 +27,10 @@ Here we'll focus on the structure of the UI and how it's laid out. For an exampl
 
 For structural testing, we are testing whether or not it has following content:
 
-  * A title with "Login in to Facebook"
-  * Two inputs for the username and password.
-  * A submit button.
-  * An error screen to show errors.
+-   A title with "Login in to Facebook"
+-   Two inputs for the username and password.
+-   A submit button.
+-   An error screen to show errors.
 
 For React, we have been using [Enzyme](https://github.com/airbnb/enzyme) as a way to do structural testing, but now we can also use [Jest's snapshot testing](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html) to make things even more simple.
 
@@ -40,8 +40,8 @@ UI is all about interacting with the user. We do this with a bunch of UI element
 
 Let's again use the above login component as an example. It should do these things:
 
-* When we click the submit button, it should give us the username and password.
-* When we click the "Forgotten Account" link, it should redirect to a new page.
+-   When we click the submit button, it should give us the username and password.
+-   When we click the "Forgotten Account" link, it should redirect to a new page.
 
 We have few ways to do this type of testing with React. The simple way is to use [Enzyme](https://github.com/airbnb/enzyme).
 
@@ -51,10 +51,10 @@ UI is all about styles (whether they're simple, beautiful, or even ugly). With s
 
 If we are using inline styles all the way, we can use JEST snapshot testing. But to get even better results, we should consider using tools such as:
 
-* [BackstopJS](https://github.com/garris/BackstopJS)
-* [PhantomCSS](https://github.com/Huddle/PhantomCSS)
-* [Gemini](https://github.com/gemini-testing/gemini)
-* [Happo](https://github.com/Galooshi/happo)
+-   [BackstopJS](https://github.com/garris/BackstopJS)
+-   [PhantomCSS](https://github.com/Huddle/PhantomCSS)
+-   [Gemini](https://github.com/gemini-testing/gemini)
+-   [Happo](https://github.com/Galooshi/happo)
 
 ### 4. Manual Testing
 
@@ -70,7 +70,7 @@ A **story** is a smallest unit in Storybook. It's a fully functioning UI element
 
 Let's look at how Storybook can help you do the above mentioned different aspects of testing.
 
-* [Structural Testing with StoryShots](/docs/react-storybook/testing/structural-testing)
-* [Interaction Testing with Specs Addon](/docs/react-storybook/testing/interaction-testing)
-* [Storybook as the Base for CSS/Style Testing](/docs/react-storybook/testing/css-style-testing)
-* [Storybook for Manual UI Testing](/docs/react-storybook/testing/manual-testing)
+-   [Structural Testing with StoryShots](/docs/react-storybook/testing/structural-testing)
+-   [Interaction Testing with Specs Addon](/docs/react-storybook/testing/interaction-testing)
+-   [Storybook as the Base for CSS/Style Testing](/docs/react-storybook/testing/css-style-testing)
+-   [Storybook for Manual UI Testing](/docs/react-storybook/testing/manual-testing)

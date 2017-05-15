@@ -9,6 +9,6 @@ Here are some answers to frequently asked questions. If you have a question, you
 
 Create React App does not allow providing options to Jest in your `package.json`, however you can run `jest` with commandline arguments:
 
-~~~
+```sh
 npm test -- --coverage --collectCoverageFrom='["src/**/*.{js,jsx}","!src/**/stories/*"]'
-~~~
+```

@@ -3,6 +3,8 @@ id: 'custom-webpack-config'
 title: 'Custom Webpack Config'
 ---
 
+**NOTE: Storybook doesn't currently support webpack 2, so write your storybook webpack config to be webpack 1.x-compatable.**
+
 The default Webpack config of React Storybook is usually well balanced for a medium-size React project (specially created with [Create React App](https://github.com/facebookincubator/create-react-app)) or a library. But if you already have your own Webpack setup, that's not useable.
 
 That's why we allow you to customize our Webpack setup. There are a few ways to do it. Let's discuss:
@@ -12,7 +14,7 @@ That's why we allow you to customize our Webpack setup. There are a few ways to 
 Let's say you want to add [SASS](http://sass-lang.com/) support to Storybook. This is how to do it.
 Simply add the following content to a file called `webpack.config.js` in your Storybook config directory (`.storybook` by default ).
 
-~~~js
+```js
 const path = require('path');
 
 module.exports = {
@@ -26,12 +28,11 @@ module.exports = {
     ]
   }
 }
-~~~
+```
 
 Since this config file stays in the Storybook directory, you need to set the include path as above. If the config directory stays in a different directory, you need to set the include path relative to that.
 
 You also need to install the loaders (style, css, and sass) used in above config manually.
-
 
 > Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/docs/react-storybook/configurations/default-config) other than loading JS files with the Babel loader.
 
@@ -40,9 +41,9 @@ You also need to install the loaders (style, css, and sass) used in above config
 You can add any kind of Webpack configuration options with the above config, whether they are plugins, loaders, or aliases.
 But you won't be able to change the following config options:
 
-* entry
-* output
-* js loader with babel
+-   entry
+-   output
+-   js loader with babel
 
 ## Full Control Mode
 
@@ -50,7 +51,7 @@ Sometimes, you will want to have full control over the webpack configuration. Ma
 
 To enable that, you need to export a **function** from the above `webpack.config.js` file, just like this:
 
-~~~js
+```js
 // Export a function. Accept the base config as the only param.
 module.exports = function(storybookBaseConfig, configType) {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -67,13 +68,13 @@ module.exports = function(storybookBaseConfig, configType) {
   // Return the altered config
   return storybookBaseConfig;
 };
-~~~
+```
 
 Storybook uses the config returned from the above function. So, try to edit the `storybookBaseConfig` with care. Make sure to preserve the following config options:
 
-* entry
-* output
-* first loader in the module.loaders (Babel loader for JS)
+-   entry
+-   output
+-   first loader in the module.loaders (Babel loader for JS)
 
 Other than that, you should try to keep the default set of plugins.
 
@@ -82,18 +83,18 @@ Other than that, you should try to keep the default set of plugins.
 You may want to keep Storybook's [default config](/docs/react-storybook/configurations/default-config), but just need to extend it. If so, this is how you do it using the Full Control Mode.
 Add following content to the `webpack.config.js` in your Storybook config directory.
 
-~~~js
+```js
 // load the default config generator.
-var genDefaultConfig = require('@kadira/storybook/dist/server/config/defaults/webpack.config.js');
+const genDefaultConfig = require('@kadira/storybook/dist/server/config/defaults/webpack.config.js');
 
-module.exports = function(config, env) {
-  var config = genDefaultConfig(config, env);
+module.exports = (config, env) => {
+  const config = genDefaultConfig(config, env);
 
   // Extend it as you need.
 
   return config;
 };
-~~~
+```
 
 ## Using Your Existing Config
 
@@ -101,5 +102,5 @@ You may have an existing Webpack config for your project. So, you may need to co
 
 But you don't need to. There are a few options:
 
-* Simply import your main Webpack config into Storybook's `webpack.config.js` and use the loaders and plugins used in that.
-* Create a new file with common Webpack options and use it in both inside the main Webpack config and inside Storybook's `webpack.config.js`.
+-   Simply import your main Webpack config into Storybook's `webpack.config.js` and use the loaders and plugins used in that.
+-   Create a new file with common Webpack options and use it in both inside the main Webpack config and inside Storybook's `webpack.config.js`.

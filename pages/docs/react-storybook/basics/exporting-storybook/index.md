@@ -12,15 +12,13 @@ For that, Storybook comes with a tool to export your storybook into a static web
 
 Simply add the following NPM script:
 
-~~~sh
+```json
 {
-  ...
   "scripts": {
     "storybook": "build-storybook -c .storybook -o .out"
   }
-  ...
 }
-~~~
+```
 
 Then run `npm run storybook`.
 
@@ -29,10 +27,10 @@ Now you can deploy the content in the `.out` directory wherever you want.
 
 To test it locally, simply run the following commands:
 
-~~~sh
+```sh
 cd .out
 python -m SimpleHTTPServer
-~~~
+```
 
 ## Deploying to GitHub Pages
 
