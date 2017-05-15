@@ -2,6 +2,10 @@
   margin: 25px 0
 }
 
+#footer a {
+  color: #1E88E5;
+}
+
 #footer .logos {
   margin: auto;
   clear: both;

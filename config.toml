@@ -10,6 +10,7 @@ basics = [
   "/docs/react-storybook/basics/writing-stories/",
   "/docs/react-storybook/basics/exporting-storybook/",
   "/docs/react-storybook/basics/faq/",
+  "/docs/react-storybook/basics/community/",
 ]
 configurations = [
   "/docs/react-storybook/configurations/default-config/",
