@@ -260,9 +260,12 @@ export default class Story extends React.Component {
       if (children.props && children.props.children) {
         extract(children.props.children);
       }
-      if (typeof children === 'string' || typeof children.type === 'string' ||
+      if (
+        typeof children === 'string' ||
+        typeof children.type === 'string' ||
         (Array.isArray(this.props.propTablesExclude) && // also ignore excluded types
-        ~this.props.propTablesExclude.indexOf(children.type))) {
+          ~this.props.propTablesExclude.indexOf(children.type))
+      ) {
         return;
       }
       if (children.type && !types.has(children.type)) {
