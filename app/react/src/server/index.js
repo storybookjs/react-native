@@ -10,7 +10,6 @@ import shelljs from 'shelljs';
 import storybook from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
-import { track, dontTrack } from './track_usage';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -22,7 +21,6 @@ program
   .option('-h, --host [string]', 'Host to run Storybook')
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
-  .option('--dont-track', 'Do not send anonymous usage stats.')
   .option(
     '--https',
     'Serve Storybook over HTTPS. Note: You must provide your own certificate information.',
@@ -147,6 +145,5 @@ server.listen(...listenAddr, error => {
   } else {
     const address = `http://${program.host || 'localhost'}:${program.port}/`;
     logger.info(`\nReact Storybook started on => ${chalk.cyan(address)}\n`);
-    track();
   }
 });
