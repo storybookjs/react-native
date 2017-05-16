@@ -5,21 +5,21 @@
 Before:
 
 ```js
-//.storybook/addons.js
+// .storybook/addons.js
 import '@kadira/storybook/addons'
 
-//*.stories.js
+// *.stories.js
 import { linkTo, action } from '@kadira/storybook'
 ```
 
 After:
 
 ```js
-//.storybook/addons.js
+// .storybook/addons.js
 import '@kadira/storybook-addon-actions/register'
 import '@kadira/storybook-addon-links/register'
 
-//*.stories.js
+// *.stories.js
 import { action } from '@kadira/storybook-addon-actions'
 import { linkTo } from '@kadira/storybook-addon-links'
 ```
