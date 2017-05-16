@@ -1,7 +1,16 @@
-# Storybook Addon Knobs [![CircleCI](https://circleci.com/gh/storybooks/storybook-addon-knobs.svg?style=shield)](https://circleci.com/gh/storybooks/storybook-addon-knobs)
+# Storybook Addon Knobs
+[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
+[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
+[![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Knobs allow you to edit React props dynamically using the Storybook UI.
-You can also use Knobs as a dynamic variable inside stories.
+Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
+You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybooks.js.org).
+
+This addon works with Storybook for:
+[React](https://github.com/storybooks/storybook/tree/master/app/react).
 
 This is how Knobs look like:
 
@@ -164,8 +173,9 @@ const defaultValue = ['Red']
 const value = array(label, defaultValue);
 ```
 
-> While editing values inside the knob, you will need to use a separator. By default it's a comma, but this can be
- override by passing a separator variable.
+> While editing values inside the knob, you will need to use a separator.
+> By default it's a comma, but this can be override by passing a separator variable.
+>
 > ```js
 > const separator = ':';
 > const value = array(label, defaultValue, separator);

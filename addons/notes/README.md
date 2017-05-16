@@ -1,11 +1,19 @@
 # Storybook Addon Notes
+[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
+[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
+[![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-This [Storybook](https://getstorybook.io) addon allows you to write notes for your stories.
+Storybook Addon Notes allows you to write notes for your stories in [Storybook](https://storybooks.js.org).
+
+This addon works with Storybook for:
+[React](https://github.com/storybooks/storybook/tree/master/app/react).
 
 ![Storybook Addon Notes Demo](docs/demo.png)
 
 ### Getting Started
-**note: addons require @storybook/react 2.x or greater*
 
 ```sh
 npm i --save-dev @storybook/addon-notes
@@ -23,19 +31,16 @@ Then write your stories like this:
 
 ```js
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
-import Button from './Button';
+
+import { storiesOf } from '@storybook/react';
 import { WithNotes } from '@storybook/addon-notes';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <WithNotes notes={'This is a very simple Button and you can click on it.'}>
-      <Button onClick={action('clicked')}>Hello Button</Button>
-    </WithNotes>
-  ))
+import Component from './Component';
+
+storiesOf('Component', module)
   .add('with some emoji', () => (
-    <WithNotes notes={'Here we use some emoji as the Button text. Isn\'t it look nice?'}>
-      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <WithNotes notes={'A very simple component'}>
+      <Component></Component>
     </WithNotes>
   ));
 ```

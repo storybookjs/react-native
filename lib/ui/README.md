@@ -1,6 +1,14 @@
 # Storybook UI
+[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
+[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
+[![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-This is the core UI of [react-storybook](https://github.com/storybooks/storybook) and other similar projects. It's a React based UI where you can initialize with a simple function. You can configure it by providing a simple provider API.
+Storybook UI the core UI of [storybook](https://storybooks.js.org).
+It's a React based UI which you can initialize with a simple function.
+You can configure it by providing a provider API.
 
 ![Storybook UI Demo](./docs/storybook-ui-demo.png)
 
@@ -9,15 +17,14 @@ This is the core UI of [react-storybook](https://github.com/storybooks/storybook
 First you need to install `@storybook/ui` into your app.
 
 ```sh
-npm i --save @storybook/ui
+npm install --save @storybook/ui
 ```
 
 Then you need to create a Provider class like this:
 
 ```js
-// provider.js
-import { Provider } from '@storybook/ui';
 import React from 'react';
+import { Provider } from '@storybook/ui';
 
 export default class MyProvider extends Provider {
   getPanels() {

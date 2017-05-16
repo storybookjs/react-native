@@ -1,27 +1,27 @@
-# StoryShots [![CircleCI](https://circleci.com/gh/storybooks/storyshots.svg?style=shield)](https://circleci.com/gh/storybooks/storyshots)
+# StoryShots
+[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
+[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
+[![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Jest Snapshot Testing for [Storybook](https://getstorybook.io/).<br/>
-(Supports both [React](https://github.com/storybooks/react-storybook) and [React Native](https://github.com/storybooks/react-native-storybook) Storybook)
+StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storybooks.js.org/).
+
+This addon works with Storybook for:
+[React](https://github.com/storybooks/storybook/tree/master/app/react) and
+[React Native](https://github.com/storybooks/storybook/tree/master/app/react-native).
 
 ![StoryShots In Action](docs/storyshots-fail.png)
 
-With StoryShots, you could use your existing Storybook stories as the input for Jest Snapshot Testing.
-
-> Now, we don't ship a CLI tool for storyshots. Check version [2.x](https://github.com/storybooks/storyshots/tree/v2.1.0) for that.
+To use StoryShots, you must use your existing Storybook stories as the input for Jest Snapshot Testing.
 
 ## Getting Started
 
-First of all, you need to use the latest version of React Storybook.
-So, do this:
+Add the following module into your app.
 
 ```sh
-npm update @storybook/react
-```
-
-Then add the following NPM module into your app.
-
-```sh
-npm i -D storyshots
+npm install -save-dev storyshots
 ```
 
 ## Configure your app for Jest
@@ -38,6 +38,7 @@ Then add following content to it:
 
 ```js
 import initStoryshots from 'storyshots';
+
 initStoryshots();
 ```
 
@@ -45,7 +46,7 @@ That's all.
 
 Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
 
-![](docs/storyshots.png)
+![Screenshot](docs/storyshots.png)
 
 ## Options
 
@@ -53,8 +54,8 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 
 By default, Storyshots assumes the config directory path for your project as below:
 
-* For React Storybook: `.storybook`
-* For React Native Storybook: `storybook`
+* Storybook for React: `.storybook`
+* Storybook for React Native: `storybook`
 
 If you are using a different config directory path, you could change it like this:
 
@@ -95,5 +96,3 @@ initStoryshots({
   storyNameRegex: /buttons/
 });
 ```
-
-Here is an example of [a regex](https://regex101.com/r/vkBaAt/2) which does not pass if `"Relay"` is in the name: `/^((?!(r|R)elay).)*$/`.
