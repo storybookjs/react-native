@@ -6,10 +6,17 @@
       "ignore": [
         "test-cra"
       ]
+    },
+    "exec": {
+      "ignore": [
+        "test-cra"
+      ]
     }
   },
   "packages": [
-    "packages/*",
+    "app/*",
+    "lib/*",
+    "addons/*",
     "examples/*"
   ],
   "concurrency": 1

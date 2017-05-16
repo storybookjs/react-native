@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@kadira/storybook": "*",
-    "@kadira/storybook-addons": "*",
-    "@kadira/storybook-addon-actions": "*",
-    "@kadira/storybook-addon-links": "*",
+    "@storybook/react": "*",
+    "@storybook/addons": "*",
+    "@storybook/addon-actions": "*",
+    "@storybook/addon-links": "*",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
