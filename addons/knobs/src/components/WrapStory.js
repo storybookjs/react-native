@@ -35,7 +35,7 @@ export default class WrapStory extends React.Component {
 
   setPaneKnobs(timestamp = +new Date()) {
     const { channel, knobStore } = this.props;
-    channel.emit('addon:knobs:setKnobs', { knobs: knobStore.getAll(), timestamp});
+    channel.emit('addon:knobs:setKnobs', { knobs: knobStore.getAll(), timestamp });
   }
 
   knobChanged(change) {
