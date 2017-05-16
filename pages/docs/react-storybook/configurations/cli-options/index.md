@@ -11,7 +11,7 @@ Here are all those options:
 
 ## For start-storybook
 
-```log
+```
 Usage: start-storybook [options]
 
 Options:
@@ -26,7 +26,7 @@ Options:
 
 ## For build-storybook
 
-```log
+```
 Usage: build-storybook [options]
 
 Options:
