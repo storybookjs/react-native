@@ -17,7 +17,7 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "@storybook/react-inspector": "^1.2.1",
+    "react-inspector": "^2.0.0",
     "@storybook/react-fuzzy": "^0.4.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
