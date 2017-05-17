@@ -1,4 +1,18 @@
-## Changelog
+### v3.0.0-alpha0 (18-May-2017)
+
+Storybook 3.0 is our first fully community-driven release! Notable changes:
+- Move from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](FIXME), [docs](https://storybooks.js.org/)
+- Upgrade to Webpack2 [PR637](https://github.com/storybooks/storybook/pull/637)
+- Switch to monorepo and overhaul package structure. [PR749](https://github.com/storybooks/storybook/pull/749)
+[PR1031](https://github.com/storybooks/storybook/pull/1031)
+
+<details>
+<summary>
+All changes
+</summary>
+- fill list of PRs since 2.5.3
+- ...
+</details>
 
 ### v2.35.3
 
