@@ -3,7 +3,7 @@
 ### Short Term
 
 * Addon API and addons
-* A clear guide to hack React Storybook
+* A clear guide to hack Storybook
 * React Native Support
 
 ### Long Term

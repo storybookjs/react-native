@@ -21,7 +21,7 @@ To use StoryShots, you must use your existing Storybook stories as the input for
 Add the following module into your app.
 
 ```sh
-npm install -save-dev storyshots
+npm install -save-dev @storybook/addon-storyshots
 ```
 
 ## Configure your app for Jest

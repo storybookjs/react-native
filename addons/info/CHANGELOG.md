@@ -82,4 +82,4 @@ See: [#12](https://github.com/kadirahq/react-storybook-addon-info/issues/12)
 
 ### v3.0.0
 
-* Add the version which works as an React Storybook addon.
+* Add the version which works as an Storybook addon.

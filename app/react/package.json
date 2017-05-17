@@ -1,7 +1,7 @@
 {
   "name": "@storybook/react",
   "version": "2.35.3",
-  "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
+  "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "license": "MIT",
   "main": "dist/client/index.js",
   "typings": "./config/storybook.d.ts",

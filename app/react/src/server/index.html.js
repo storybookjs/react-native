@@ -40,7 +40,7 @@ export default function(data) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="storybook-version" content="${version}">
         <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-        <title>React Storybook</title>
+        <title>Storybook</title>
         <style>
           /*
             When resizing panels, the drag event breaks if the cursor

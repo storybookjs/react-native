@@ -42,7 +42,7 @@ export default function testStorySnapshots(options = {}) {
     require.requireActual(configPath);
   } else {
     throw new Error(
-      'storyshots is intended only to be used with react storybook or react native storybook',
+      'storyshots is intended only to be used with storybook',
     );
   }
 

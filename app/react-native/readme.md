@@ -8,7 +8,7 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-![React Storybook Screenshot](docs/assets/readme/screenshot.png)
+![Storybook Screenshot](docs/assets/readme/screenshot.png)
 
 For more information visit: [storybooks.js.org](https://storybooks.js.org)
 
