@@ -1,17 +1,7 @@
 {
   "ignore": [
-    "addons/links/.storybook/stories.js",
-    "addons/info/.storybook/config.js",
-    "lib/cli/generators/METEOR/template/.stories/Welcome.js",
-    "lib/storyshots/.storybook/config.js",
-    "addons/actions/.storybook/stories.js",
-    "addons/graphql/.storybook/stories.js",
-    "addons/info/.storybook/user/modify_webpack_config.js",
-    "addons/info/.storybook/webpack.config.js",
-    "addons/knobs/.storybook/user/modify_webpack_config.js",
-    "addons/options/.storybook/stories.js",
-    "lib/cli/generators/METEOR/template/.stories/Button.js",
-    "lib/cli/generators/METEOR/template/.stories/index.js",
+    "addons/**/.storybook/*.js",
+    "lib/cli/generators/**/.stories/**.js",
     "*.ts"
   ],
   "critics": {

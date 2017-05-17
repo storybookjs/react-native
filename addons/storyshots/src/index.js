@@ -41,9 +41,7 @@ export default function testStorySnapshots(options = {}) {
     configPath = path.resolve(options.configPath || 'storybook');
     require.requireActual(configPath);
   } else {
-    throw new Error(
-      'storyshots is intended only to be used with storybook',
-    );
+    throw new Error('storyshots is intended only to be used with storybook');
   }
 
   if (typeof describe !== 'function') {
