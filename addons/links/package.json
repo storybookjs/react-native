@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-links",
-  "version": "1.0.1",
+  "version": "3.0.0-alpha.0",
   "description": "Story Links addon for storybook",
   "main": "dist/index.js",
   "scripts": {
@@ -21,15 +21,15 @@
   },
   "homepage": "https://github.com/kadirahq/storybook-addon-links#readme",
   "devDependencies": {
-    "@storybook/react": "^*",
-    "@storybook/addons": "*",
-    "@storybook/ui": "*",
+    "@storybook/addons": "^3.0.0-alpha.0",
+    "@storybook/react": "^3.0.0-alpha.0",
+    "@storybook/ui": "^3.0.0-alpha.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "shelljs": "^0.7.7"
   },
   "peerDependencies": {
-    "@storybook/addons": "*",
+    "@storybook/addons": "^3.0.0-alpha.0",
     "react": "*",
     "react-dom": "*"
   }
