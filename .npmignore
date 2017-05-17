@@ -1,1 +1,10 @@
+/src/
+/example/
+/demo/
+/docs/
+/node_modules/
+/.storybook/
+
+*.md
+
 .babelrc

@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    "addons/**/.storybook/**/*.js",
+    "lib/cli/generators/**/.stories/**.js",
+    "*.ts"
+  ],
+  "critics": {
+    "wc": {
+      "limit": 500
+    }
+  }
+}

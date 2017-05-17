@@ -1,0 +1,24 @@
+{
+  "name": "@storybook/addons",
+  "version": "3.0.0-alpha.0",
+  "description": "Storybook addons store",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybooks/storybook.git"
+  },
+  "keywords": [
+    "storybook"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addons",
+  "devDependencies": {
+    "shelljs": "^0.7.7"
+  }
+}

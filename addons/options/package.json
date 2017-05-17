@@ -1,0 +1,37 @@
+{
+  "name": "@storybook/addon-options",
+  "version": "3.0.0-alpha.0",
+  "description": "Options addon for storybook",
+  "main": "preview.js",
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js",
+    "storybook": "start-storybook -p 9001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybooks/storybook.git"
+  },
+  "keywords": [
+    "storybook"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-options",
+  "devDependencies": {
+    "@storybook/addons": "^3.0.0-alpha.0",
+    "@storybook/react": "^3.0.0-alpha.0",
+    "@storybook/ui": "^3.0.0-alpha.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
+    "shelljs": "^0.7.7"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.0.0-alpha.0",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "typings": "./storybook-addon-options.d.ts"
+}

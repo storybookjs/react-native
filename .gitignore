@@ -12,3 +12,4 @@ coverage/
 build
 packages/examples/automated-*
 yarn.lock
+/**/LICENSE
