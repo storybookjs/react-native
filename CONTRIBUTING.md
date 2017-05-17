@@ -165,7 +165,7 @@ getstorybook
 Then link storybook inside the sample project with:
 
 ```sh
-npm link @kadira/storybook
+npm link @storybook/react
 ```
 
 ### Getting Changes
