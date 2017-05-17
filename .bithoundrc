@@ -1,6 +1,6 @@
 {
   "ignore": [
-    "addons/**/.storybook/*.js",
+    "addons/**/.storybook/**/*.js",
     "lib/cli/generators/**/.stories/**.js",
     "*.ts"
   ],
