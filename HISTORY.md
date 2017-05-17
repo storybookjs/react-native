@@ -16,10 +16,10 @@ After:
 
 ```js
 // .storybook/addons.js
-import '@kadira/storybook-addon-actions/register'
-import '@kadira/storybook-addon-links/register'
+import '@storybook/addon-actions/register'
+import '@storybook/addon-links/register'
 
 // *.stories.js
-import { action } from '@kadira/storybook-addon-actions'
-import { linkTo } from '@kadira/storybook-addon-links'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
 ```
