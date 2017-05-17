@@ -54,7 +54,7 @@ addonAPI.addPanel('kadira/notes/panel', {
 });
 ```
 
-As you can see, you can set any React Component as the panel. Currently, it's just a text. But you can do anything you want.
+As you can see, you can set any React Component as the panel. Currently, it's just a text. But you can do anything you want. You should specify the panel title. It could be a plain text or a function returning any React Component.
 
 You also pass the channel and the Storybook API into that. See:
 
