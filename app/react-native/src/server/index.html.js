@@ -7,7 +7,7 @@ export default function(publicPath, options) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>React Storybook</title>
+        <title>Storybook for React</title>
         <style>
           /*
             When resizing panels, the drag event breaks if the cursor

@@ -1,10 +1,10 @@
 {
-  "name": "storyshots",
+  "name": "@storybook/addon-storyshots",
   "version": "3.2.2",
-  "description": "StoryShots - Jest Snapshot Testing for React Storybook.",
+  "description": "StoryShots is a Jest Snapshot Testing Addon for Storybook.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storyshots.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "main": "dist/index.js",

@@ -11,7 +11,7 @@ It allows you to browse a component library, view the different states of each c
 
 ## Intro
 
-![React Storybook Screenshot](app/react/docs/demo.gif)
+![Storybook Screenshot](app/react/docs/demo.gif)
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
