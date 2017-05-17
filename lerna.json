@@ -11,6 +11,12 @@
       "ignore": [
         "test-cra"
       ]
+    },
+    "publish": {
+      "ignore": [
+        "cra-storybook",
+        "test-cra"
+      ]
     }
   },
   "packages": [
