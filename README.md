@@ -11,7 +11,7 @@ It allows you to browse a component library, view the different states of each c
 
 ## Intro
 
-![React Storybook Screenshot](packages/react-storybook/docs/demo.gif)
+![React Storybook Screenshot](app/react/docs/demo.gif)
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
@@ -31,8 +31,8 @@ Once it's installed, you can `npm run storybook` and it will run the development
 For full documentation on using Storybook visit: [storybooks.js.org](https://storybooks.js.org)
 
 ## Main Projects
-- [Storybook for react](app/react-storybook) - Storybook for React components
-- [Storybook for react-native](packages/react-native-storybook) - Storybook for React components
+- [Storybook for react](app/react) - Storybook for React components
+- [Storybook for react-native](app/react-native) - Storybook for React components
 
 ## Sub Projects
 - [Storyshots](lib/storyshots) - Easy snapshot testing for storybook
@@ -40,13 +40,13 @@ For full documentation on using Storybook visit: [storybooks.js.org](https://sto
 - [examples](examples) - Code examples to illustrate different Storybook use cases
 
 ## Addons
-- [addon-actions](addon/actions/) - Log actions as users interact with components in storybook
-- [addon-comments](addon/comments/) - Comment on storybook stories
-- [addon-graphql](addon/graphql/) - Query a GraphQL server within Storybook stories
-- [addon-info](addon/info/) - Annotate stories with extra component usage information
-- [addon-knobs](addon/knobs/) - Interactively edit component prop data in the Storybook UI
-- [addon-notes](addon/notes/) - Annotate storybook stories with notes
-- [addon-options](addon/options/) - Customize the storybook UI in code
+- [addon-actions](addons/actions/) - Log actions as users interact with components in storybook
+- [addon-comments](addons/comments/) - Comment on storybook stories
+- [addon-graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
+- [addon-info](addons/info/) - Annotate stories with extra component usage information
+- [addon-knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
+- [addon-notes](addons/notes/) - Annotate storybook stories with notes
+- [addon-options](addons/options/) - Customize the storybook UI in code
 
 ## Contributing
 
