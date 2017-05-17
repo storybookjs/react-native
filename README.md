@@ -3,10 +3,11 @@
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+Storybook is a development environment for UI components.
+It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
 ## Intro
 
@@ -20,30 +21,32 @@ Storybook comes with a lot of [addons](https://storybooks.js.org/docs/react-stor
 
 First install storybook:
 ```js
-npm i -g getstorybook
+npm i -g @storybook/cli
 cd my-react-app
 getstorybook
 ```
 
 Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
-For full documentation on using Storybook visit: https://storybooks.js.org
+For full documentation on using Storybook visit: [storybooks.js.org](https://storybooks.js.org)
 
 ## Main Projects
-- [react-storybook](packages/react-storybook) - Storybook for React components
-- [react-native-storybook](packages/react-native-storybook) - Storybook for React components
-- [storyshots](packages/storyshots) - Easy snapshot testing for storybook
-- [getstorybook](packages/getstorybook) - Streamlined installation for a variety of app types
+- [Storybook for react](app/react-storybook) - Storybook for React components
+- [Storybook for react-native](packages/react-native-storybook) - Storybook for React components
+
+## Sub Projects
+- [Storyshots](lib/storyshots) - Easy snapshot testing for storybook
+- [CLI](lib/cli) - Streamlined installation for a variety of app types
 - [examples](examples) - Code examples to illustrate different Storybook use cases
 
 ## Addons
-- [addon-actions](packages/addon-actions/) - Log actions as users interact with components in storybook
-- [addon-comments](packages/addon-comments/) - Comment on storybook stories
-- [addon-graphql](packages/addon-graphql/) - Query a GraphQL server within Storybook stories
-- [addon-info](packages/addon-info/) - Annotate stories with extra component usage information
-- [addon-knobs](packages/addon-knobs/) - Interactively edit component prop data in the Storybook UI
-- [addon-notes](packages/addon-notes/) - Annotate storybook stories with notes
-- [addon-options](packages/addon-options/) - Customize the storybook UI in code
+- [addon-actions](addon/actions/) - Log actions as users interact with components in storybook
+- [addon-comments](addon/comments/) - Comment on storybook stories
+- [addon-graphql](addon/graphql/) - Query a GraphQL server within Storybook stories
+- [addon-info](addon/info/) - Annotate stories with extra component usage information
+- [addon-knobs](addon/knobs/) - Interactively edit component prop data in the Storybook UI
+- [addon-notes](addon/notes/) - Annotate storybook stories with notes
+- [addon-options](addon/options/) - Customize the storybook UI in code
 
 ## Contributing
 
