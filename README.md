@@ -6,6 +6,7 @@ This is the source for [storybooks.js.org](https://storybooks.js.org). It docume
 
     npm i
     npm run develop
+    npm run storybook
 
 ### Edit Documentation
 
