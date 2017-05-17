@@ -15,13 +15,13 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "@kadira/storybook": "file:../../packages/react-storybook",
-    "@kadira/storybook-addon-actions": "file:../../packages/addon-actions",
-    "@kadira/storybook-addon-links": "file:../../packages/addon-links",
-    "@kadira/storybook-addons": "file:../../packages/addons",
-    "@kadira/storybook-channel": "file:../../packages/channel",
-    "@kadira/storybook-channel-postmsg": "file:../../packages/channel-postmessage",
-    "@kadira/storybook-ui": "file:../../packages/storybook-ui",
+    "@storybook/react": "file:../../app/react",
+    "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/addon-links": "file:../../addons/links",
+    "@storybook/addons": "file:../../lib/addons",
+    "@storybook/channels": "file:../../lib/channels",
+    "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
+    "@storybook/ui": "file:../../lib/ui",
     "react-scripts": "0.9.5"
   },
   "private": true
