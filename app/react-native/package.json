@@ -31,7 +31,7 @@
     "babel-cli": "^6.24.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-native": "^0.43.3"
+    "react-native": "^0.44.0"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.0.0-alpha.0",
@@ -39,7 +39,7 @@
     "@storybook/addons": "^3.0.0-alpha.0",
     "@storybook/channel-websocket": "^3.0.0-alpha.0",
     "@storybook/ui": "^3.0.0-alpha.0",
-    "autoprefixer": "^7.0.1",
+    "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -71,6 +71,7 @@
     "uuid": "^3.0.1",
     "webpack": "^2.4.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.18.0"
+    "webpack-hot-middleware": "^2.18.0",
+    "ws": "^3.0.0"
   }
 }

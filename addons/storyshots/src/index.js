@@ -4,6 +4,7 @@ import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
+
 const { describe, it, expect } = global;
 
 let storybook;
@@ -24,6 +25,7 @@ export default function testStorySnapshots(options = {}) {
 
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
+
     const loadBabelConfig = require('@storybook/react/dist/server/babel_config').default;
     const configDirPath = path.resolve(options.configPath || '.storybook');
     configPath = path.join(configDirPath, 'config.js');

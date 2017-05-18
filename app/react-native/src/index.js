@@ -1,4 +1,9 @@
 import deprecate from 'util-deprecate';
+
+// NOTE export these to keep backwards compatibility
+import { action as deprecatedAction } from '@storybook/addon-actions';
+import { linkTo as deprecatedLinkTo } from '@storybook/addon-links';
+
 import Preview from './preview';
 
 const preview = new Preview();
@@ -9,10 +14,6 @@ export const addDecorator = preview.addDecorator.bind(preview);
 export const configure = preview.configure.bind(preview);
 export const getStorybook = preview.getStorybook.bind(preview);
 export const getStorybookUI = preview.getStorybookUI.bind(preview);
-
-// NOTE export these to keep backwards compatibility
-import { action as deprecatedAction } from '@storybook/addon-actions';
-import { linkTo as deprecatedLinkTo } from '@storybook/addon-links';
 
 export const action = deprecate(
   deprecatedAction,
