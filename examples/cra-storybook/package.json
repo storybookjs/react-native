@@ -16,9 +16,10 @@
     "eslint-plugin-jest": "^20.0.0"
   },
   "dependencies": {
+    "global": "^4.3.2",
+    "prop-types": "^15.5.9",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "prop-types": "^15.5.9"
+    "react-dom": "^15.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
