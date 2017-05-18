@@ -35,7 +35,9 @@ module.exports = {
     'class-methods-use-this': ignore,
     'arrow-parens': ['warn', 'as-needed'],
     'space-before-function-paren': ignore,
-    'import/no-extraneous-dependencies': [error, {
+    'import/no-unresolved': warn,
+    'import/extentions': warn,
+    'import/no-extraneous-dependencies': [warn, {
       devDependencies: [
         '**/*.test.js',
         '**/scripts/*.js',
