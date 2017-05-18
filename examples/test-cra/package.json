@@ -11,16 +11,17 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
+    "global": "^4.3.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "@storybook/react": "file:../../app/react",
     "@storybook/addon-actions": "file:../../addons/actions",
     "@storybook/addon-links": "file:../../addons/links",
     "@storybook/addons": "file:../../lib/addons",
-    "@storybook/channels": "file:../../lib/channels",
     "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
+    "@storybook/channels": "file:../../lib/channels",
+    "@storybook/react": "file:../../app/react",
     "@storybook/ui": "file:../../lib/ui",
     "react-scripts": "0.9.5"
   },

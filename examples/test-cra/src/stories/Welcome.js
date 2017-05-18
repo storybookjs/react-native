@@ -1,4 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   main: {
@@ -29,29 +32,22 @@ const styles = {
     color: '#3a3a3a',
   },
 
-  codeBlock: {
-    backgroundColor: '#f3f2f2',
-    padding: '1px 10px',
-    margin: '10px 0',
+  note: {
+    opacity: 0.5,
   },
 };
 
-const codeBlock = `
-// Add this code to "src/stories/index.js"
-
-import '../index.css';
-import App from '../App';
-
-storiesOf('App', module)
-  .add('default view', () => (
-    &lt;App /&gt;
-  ))
-`;
+const log = () => console.log('Welcome to storybook!');
 
 export default class Welcome extends React.Component {
-  showApp(e) {
-    e.preventDefault();
-    if (this.props.showApp) this.props.showApp();
+  constructor(props) {
+    super(props);
+    this.clickHandler = event => {
+      event.preventDefault();
+
+      const { showApp } = this.props;
+      showApp();
+    };
   }
 
   render() {
@@ -75,7 +71,7 @@ export default class Welcome extends React.Component {
         <p>
           See these sample
           {' '}
-          <a style={styles.link} href="#" onClick={this.showApp.bind(this)}>stories</a>
+          <a style={styles.link} onClick={this.clickHandler} role="button" tabIndex="0">stories</a>
           {' '}
           for a component called
           {' '}
@@ -85,27 +81,45 @@ export default class Welcome extends React.Component {
         <p>
           Just like that, you can add your own components as stories.
           <br />
-          Here's how to add your <code style={styles.code}>App</code> component as a story.
-          <div
-            style={styles.codeBlock}
-            dangerouslySetInnerHTML={{ __html: `<pre>${codeBlock}</pre>` }}
-          />
+          You can also edit those components and see changes right away.
+          <br />
+          (Try editing the <code style={styles.code}>Button</code> component
+          located at <code style={styles.code}>src/stories/Button.js</code>.)
         </p>
         <p>
-          Usually we create stories with smaller UI components in the app.<br />
+          This is just one thing you can do with Storybook.
+          <br />
           Have a look at the
           {' '}
           <a
             style={styles.link}
-            href="https://storybooks.js.org/docs/react-storybook/basics/writing-stories"
+            href="https://github.com/storybooks/storybook"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Writing Stories
+            Storybook
           </a>
           {' '}
-          section in our documentation.
+          repo for more information.
+        </p>
+        <p style={styles.note}>
+          <b>NOTE:</b>
+          <br />
+          Have a look at the
+          {' '}
+          <code style={styles.code}>.storybook/webpack.config.js</code>
+          {' '}
+          to add webpack
+          loaders and plugins you are using in this project.
         </p>
       </div>
     );
   }
 }
+
+Welcome.propTypes = {
+  showApp: PropTypes.function,
+};
+Welcome.defaultProps = {
+  showApp: log,
+};
