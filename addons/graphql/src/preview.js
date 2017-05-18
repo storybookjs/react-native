@@ -2,6 +2,7 @@ import { fetch } from 'global';
 import React from 'react';
 import GraphiQL from 'graphiql';
 import 'graphiql/graphiql.css';
+
 import FullScreen from './components/FullScreen';
 
 const FETCH_OPTIONS = {

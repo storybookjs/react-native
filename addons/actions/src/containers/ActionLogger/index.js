@@ -1,5 +1,9 @@
+/* eslint-disable no-underscore-dangle */
+
 import React from 'react';
+import PropTypes from 'prop-types';
 import deepEqual from 'deep-equal';
+
 import ActionLoggerComponent from '../../components/ActionLogger/';
 import { EVENT_ID } from '../../';
 
@@ -10,14 +14,22 @@ export default class ActionLogger extends React.Component {
     this._actionListener = action => this.addAction(action);
   }
 
+  componentDidMount() {
+    this.props.channel.on(EVENT_ID, this._actionListener);
+  }
+
+  componentWillUnmount() {
+    this.props.channel.removeListener(EVENT_ID, this._actionListener);
+  }
+
   addAction(action) {
-    action.data.args = action.data.args.map(arg => JSON.parse(arg));
+    action.data.args = action.data.args.map(arg => JSON.parse(arg)); // eslint-disable-line
     const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
     if (previous && deepEqual(previous.data, action.data)) {
-      previous.count++;
+      previous.count++; // eslint-disable-line
     } else {
-      action.count = 1;
+      action.count = 1; // eslint-disable-line
       actions.unshift(action);
     }
     this.setState({ actions });
@@ -25,14 +37,6 @@ export default class ActionLogger extends React.Component {
 
   clearActions() {
     this.setState({ actions: [] });
-  }
-
-  componentDidMount() {
-    this.props.channel.on(EVENT_ID, this._actionListener);
-  }
-
-  componentWillUnmount() {
-    this.props.channel.removeListener(EVENT_ID, this._actionListener);
   }
 
   render() {
@@ -43,3 +47,10 @@ export default class ActionLogger extends React.Component {
     return <ActionLoggerComponent {...props} />;
   }
 }
+
+ActionLogger.propTypes = {
+  channel: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
+ActionLogger.defaultProps = {
+  channel: {},
+};

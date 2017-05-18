@@ -16,7 +16,7 @@ function getData(element) {
     children: null,
   };
 
-  if (typeof element === 'null') {
+  if (element === null) {
     return data;
   }
 

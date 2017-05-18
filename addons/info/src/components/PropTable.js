@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import PropVal from './PropVal';

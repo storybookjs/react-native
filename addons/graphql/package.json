@@ -31,7 +31,9 @@
     "react": "*"
   },
   "dependencies": {
+    "global": "^4.3.2",
     "graphiql": "^0.7.8",
-    "graphql": "^0.7.0"
+    "graphql": "^0.7.0",
+    "prop-types": "^15.5.10"
   }
 }

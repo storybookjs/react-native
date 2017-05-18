@@ -13,5 +13,7 @@
       "babelify"
     ]
   },
-  "devDependencies": {}
+  "peerDependencies": {
+    "react": "*"
+  }
 }

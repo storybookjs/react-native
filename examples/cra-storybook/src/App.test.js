@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { document } from 'global';
 
 import App from './App';
 
