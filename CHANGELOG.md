@@ -1,17 +1,90 @@
 ### v3.0.0-alpha0 (18-May-2017)
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
-- Move from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](FIXME), [docs](https://storybooks.js.org/)
-- Upgrade to Webpack2 [PR637](https://github.com/storybooks/storybook/pull/637)
-- Switch to monorepo and overhaul package structure. [PR749](https://github.com/storybooks/storybook/pull/749)
-[PR1031](https://github.com/storybooks/storybook/pull/1031)
+- Moved from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](FIXME), [docs](https://storybooks.js.org/)
+- Upgraded to Webpack2. https://github.com/storybooks/storybook/pull/637
+- Switched to monorepo and overhaul package structure. https://github.com/storybooks/storybook/pull/749 https://github.com/storybooks/storybook/pull/1031
 
 <details>
 <summary>
-All changes
+CLOSED issues with PRs
 </summary>
-- fill list of PRs since 2.5.3
-- ...
+
+- #404 Images gets extra height when displayed in storybook #974
+- #674 Deep Linking: put path of component>story in the URL #918
+- #733 Issue triage guidelines #1024
+- #740 Pull request template #741
+- #742 Migrate Storybook to monorepo #907,#749
+- #773 Change npm organisation from kadira to storybook #996
+- #774 Set a standard for unit-testing #771
+- #840 Merge channel-postmsg into this repo #882
+- #892 Add regex to match the story's kind #906
+- #912 Update Docs for monorepo #913
+- #920 Storybook's default webpack config is broken #922
+- #959 [BUG] Style: Title of Panels #961
+- #1016 Restore storybook-addon-links #1021
+- #1017 Deprecate addon-links and addon-actions as "built-in addons" #1038,#1025
+- #1042 Update README #1043
+- #1052 [3.0.0alpha] build-storybook no longer supports relative paths #1058
+
+</details>
+<details>
+<summary>
+OPEN issues with PRs
+</summary>
+
+- #953 Typescript compatibility #989
+
+</details>
+<details>
+<summary>
+PRs without issues
+</summary>
+
+- #1044 MOVE & RENAME and storyshots && CHANGE “React Storybook” > “Storybook”
+- #1026 Switch back to non-fork of react-inspector
+- #1008 Dependency updates
+- #1001 Fixes for types for knobs `number`
+- #998 Update jest to the latest version 🚀
+- #992 Update links in PRs section of CONTRIBUTING.md
+- #991 Remove text transform uppercase for knob labels
+- #988 Updated dead getstorybook.io links to storybooks.js.org
+- #982 First pass at update the contribution instructions
+- #980 Fix linting in addon-info
+- #977 Fix typo in README
+- #973 Do not ignore story.js in prepublish
+- #972 FIX for test-cra was breaking the build
+- #969 Update lerna to the latest version 🚀
+- #965 FIX webpack overriding && CLEANUP && ADD example
+- #956 CHANGE to use react-split-view 0.1.63 over the fork
+- #929 add description field from __docgenInfo for prop table for info plugin
+- #927 Fix Doc Links
+- #926 Handle null elements in getData
+- #924 Add propTablesExclude option
+- #923 PR review policy
+- #915 Update lerna to the latest version 🚀
+- #914 addon-info: make the info overlay be fixed
+- #904 Use jest for unittesting - standardize unit testing epic
+- #903 Switch to the only prepublish script
+- #897 Add examples
+- #768 Update dependencies to enable Greenkeeper 🌴
+- #753 Add typescript definitions for getStorybook()
+- #748 Issue Triage instructions
+- #739 Add allowFullScreen attribute to preview iframe
+- #736 A first pass at a reproduction recipe
+- #735 Allow HTTPS
+- #723 extend devMiddlewareOptions with config.devServer
+- #721 Update links to point to new organization
+- #720 Fixed spelling error.
+- #715 Added meta IE=edge
+- #712 Replace String.includes with String.indexOf: cross-browsing support
+- #702 Fix spelling mistake - "element form the story" to  "element from the story"
+- #699 Remove broken react-button example
+- #680 Make return type of StoryDecorator nullable
+- #672 Cleaner error handling for storiesOf
+- #671 Typo fix
+- #670 Warn if story with a given name already exists
+
 </details>
 
 ### v2.35.3
