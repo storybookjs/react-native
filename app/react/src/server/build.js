@@ -60,7 +60,7 @@ shelljs.cp(path.resolve(__dirname, 'public/favicon.ico'), outputDir);
 // custom `.babelrc` file and `webpack.config.js` files
 // NOTE changes to env should be done before calling `getBaseConfig`
 const config = loadConfig('PRODUCTION', getBaseConfig(), configDir);
-config.output.path = outputDir;
+config.output.path = path.resolve(outputDir);
 
 // copy all static files
 if (program.staticDir) {
