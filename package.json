@@ -33,6 +33,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "examples": "cd ./examples/test-cra && npm i",
     "lint": "eslint . --cache --cache-location ./.cache/eslint",
     "test": "jest --config ./.jestrc.json",
     "test:watch": "npm test -- --watch",
