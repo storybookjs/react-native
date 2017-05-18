@@ -48,7 +48,7 @@ export default function(data) {
             window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
           }
         </script>
-        <title>React Storybook</title>
+        <title>Storybook</title>
         ${headHtml}
         ${previewCssTag}
       </head>

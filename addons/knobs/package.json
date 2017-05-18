@@ -1,7 +1,7 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "1.7.1",
-  "description": "React Storybook Addon Prop Editor Component",
+  "version": "3.0.0-alpha.0",
+  "description": "Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/storybooks/storybook.git"
@@ -14,7 +14,7 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@storybook/react": "*",
+    "@storybook/react": "^3.0.0-alpha.0",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "git-url-parse": "^6.2.2",

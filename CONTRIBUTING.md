@@ -1,4 +1,4 @@
-# Contributing to React Storybook
+# Contributing to Storybook
 
 Thanks for your interest in improving Storybook! We are a community-driven project and welcome contributions of all kinds: from discussion to documentation to bugfixes to feature improvements.
 

@@ -144,6 +144,6 @@ server.listen(...listenAddr, error => {
     throw error;
   } else {
     const address = `http://${program.host || 'localhost'}:${program.port}/`;
-    logger.info(`\nReact Storybook started on => ${chalk.cyan(address)}\n`);
+    logger.info(`\Storybook started on => ${chalk.cyan(address)}\n`);
   }
 });
