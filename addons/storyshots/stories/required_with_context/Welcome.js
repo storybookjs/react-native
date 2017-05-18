@@ -1,4 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   main: {
@@ -28,12 +31,23 @@ const styles = {
     backgroundColor: '#f3f2f2',
     color: '#3a3a3a',
   },
+
+  note: {
+    opacity: 0.5,
+  },
 };
 
+const log = () => console.log('Welcome to storybook!');
+
 export default class Welcome extends React.Component {
-  showApp(e) {
-    e.preventDefault();
-    if (this.props.showApp) this.props.showApp();
+  constructor(props) {
+    super(props);
+    this.clickHandler = event => {
+      event.preventDefault();
+
+      const { showApp } = this.props;
+      showApp();
+    };
   }
 
   render() {
@@ -57,7 +71,7 @@ export default class Welcome extends React.Component {
         <p>
           See these sample
           {' '}
-          <a style={styles.link} href="#" onClick={this.showApp.bind(this)}>stories</a>
+          <a style={styles.link} onClick={this.clickHandler} role="button" tabIndex="0">stories</a>
           {' '}
           for a component called
           {' '}
@@ -70,20 +84,42 @@ export default class Welcome extends React.Component {
           You can also edit those components and see changes right away.
           <br />
           (Try editing the <code style={styles.code}>Button</code> component
-          located at <code style={styles.code}>stories/Button.js</code>.)
+          located at <code style={styles.code}>src/stories/Button.js</code>.)
         </p>
         <p>
           This is just one thing you can do with Storybook.
           <br />
           Have a look at the
           {' '}
-          <a style={styles.link} href="https://github.com/storybooks/storybook" target="_blank">
-            Storybook for React
+          <a
+            style={styles.link}
+            href="https://github.com/storybooks/storybook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Storybook
           </a>
           {' '}
           repo for more information.
+        </p>
+        <p style={styles.note}>
+          <b>NOTE:</b>
+          <br />
+          Have a look at the
+          {' '}
+          <code style={styles.code}>.storybook/webpack.config.js</code>
+          {' '}
+          to add webpack
+          loaders and plugins you are using in this project.
         </p>
       </div>
     );
   }
 }
+
+Welcome.propTypes = {
+  showApp: PropTypes.function,
+};
+Welcome.defaultProps = {
+  showApp: log,
+};
