@@ -1,4 +1,3 @@
-import React from 'react';
 import addons from '@storybook/addons';
 import { ADDON_ID, EVENT_ID } from '../shared';
 

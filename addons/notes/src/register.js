@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 
 const styles = {
@@ -60,8 +61,12 @@ export class Notes extends React.Component {
 }
 
 Notes.propTypes = {
-  channel: React.PropTypes.object,
-  api: React.PropTypes.object,
+  channel: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  api: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
+Notes.defaultProps = {
+  channel: {},
+  api: {},
 };
 
 // Register the addon with a unique name.

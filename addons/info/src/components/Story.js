@@ -157,9 +157,9 @@ export default class Story extends React.Component {
         <div style={this.state.stylesheet.children}>
           {this.props.children}
         </div>
-        <a style={linkStyle} onClick={openOverlay}>Show Info</a>
+        <a style={linkStyle} onClick={openOverlay} role="button" tabIndex="0">Show Info</a>
         <div style={infoStyle}>
-          <a style={linkStyle} onClick={closeOverlay}>×</a>
+          <a style={linkStyle} onClick={closeOverlay} role="button" tabIndex="0">×</a>
           <div style={this.state.stylesheet.infoPage}>
             <div style={this.state.stylesheet.infoBody}>
               {this._getInfoHeader()}
@@ -266,7 +266,7 @@ export default class Story extends React.Component {
         typeof children === 'string' ||
         typeof children.type === 'string' ||
         (Array.isArray(this.props.propTablesExclude) && // also ignore excluded types
-          ~this.props.propTablesExclude.indexOf(children.type))
+          ~this.props.propTablesExclude.indexOf(children.type)) // eslint-disable-line no-bitwise
       ) {
         return;
       }
@@ -328,12 +328,12 @@ Story.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   mtrcConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
-
 Story.defaultProps = {
   context: null,
   info: '',
   children: null,
   propTables: null,
+  propTablesExclude: [],
   showInline: false,
   showHeader: true,
   showSource: true,

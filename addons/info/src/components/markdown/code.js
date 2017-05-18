@@ -43,14 +43,13 @@ export class Code extends React.Component {
   }
 }
 
-Code.defaultProps = {
-  language: null,
-  code: null,
-};
-
 Code.propTypes = {
   language: PropTypes.string,
   code: PropTypes.node,
+};
+Code.defaultProps = {
+  language: null,
+  code: null,
 };
 
 export function Pre(props) {
@@ -65,8 +64,8 @@ export function Pre(props) {
   return <pre style={style}>{props.children}</pre>;
 }
 
-Pre.defaultProps = { children: null };
 Pre.propTypes = { children: PropTypes.node };
+Pre.defaultProps = { children: null };
 
 export function Blockquote(props) {
   const style = {
@@ -78,5 +77,5 @@ export function Blockquote(props) {
   return <blockquote style={style}>{props.children}</blockquote>;
 }
 
-Blockquote.defaultProps = { children: null };
 Blockquote.propTypes = { children: PropTypes.node };
+Blockquote.defaultProps = { children: null };
