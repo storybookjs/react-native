@@ -38,7 +38,11 @@ export default class PropTable extends React.Component {
         const typeInfo = type.propTypes[property];
         const propType = PropTypesMap.get(typeInfo) || 'other';
         const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-        const description = type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property] ? type.__docgenInfo.props[property].description : null; // eslint-disable-line no-underscore-dangle
+        const description = type.__docgenInfo &&
+          type.__docgenInfo.props &&
+          type.__docgenInfo.props[property]
+          ? type.__docgenInfo.props[property].description
+          : null; // eslint-disable-line no-underscore-dangle
 
         props[property] = { property, propType, required, description };
       }
@@ -96,7 +100,7 @@ export default class PropTable extends React.Component {
 PropTable.displayName = 'PropTable';
 PropTable.defaultProps = {
   type: null,
-}
+};
 PropTable.propTypes = {
   type: PropTypes.func,
 };
