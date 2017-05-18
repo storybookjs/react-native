@@ -14,9 +14,10 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@storybook/react": "^3.0.0-alpha.0",
+    "@storybook/addons": "*",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
+    "enzyme": "^2.8.2",
     "git-url-parse": "^6.2.2",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",

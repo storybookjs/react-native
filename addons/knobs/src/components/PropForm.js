@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PropField from './PropField';
 

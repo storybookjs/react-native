@@ -26,16 +26,18 @@ export default function testStorySnapshots(options = {}) {
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
 
-    const loadBabelConfig = require('@storybook/react/dist/server/babel_config').default;
+    // eslint-disable-next-line global-require
+    const { default: loadBabelConfig } = require('@storybook/react/dist/server/babel_config');
     const configDirPath = path.resolve(options.configPath || '.storybook');
+    const babelConfig = loadBabelConfig(configDirPath);
+
     configPath = path.join(configDirPath, 'config.js');
 
-    const content = babel.transformFileSync(configPath, babelConfig).code;
+    const { code: content } = babel.transformFileSync(configPath, babelConfig);
     const contextOpts = {
       filename: configPath,
       dirname: configDirPath,
     };
-    const babelConfig = loadBabelConfig(configDirPath);
 
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
@@ -53,9 +55,7 @@ export default function testStorySnapshots(options = {}) {
   const suit = options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
-  // Added not to break existing storyshots configs (can be removed in a future major release)
-  options.storyNameRegex = options.storyNameRegex || options.storyRegex;
-
+  /* eslint-disable no-continue, no-restricted-syntax */
   for (const group of stories) {
     if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
       continue;
