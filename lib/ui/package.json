@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.10.1",
+  "version": "3.0.0-alpha.0",
   "description": "Core Storybook UI",
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "react-inspector": "^2.0.0",
     "@storybook/react-fuzzy": "^0.4.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
@@ -31,6 +30,7 @@
     "podda": "^1.2.2",
     "prop-types": "^15.5.8",
     "qs": "^6.4.0",
+    "react-inspector": "^2.0.0",
     "react-komposer": "^2.0.0",
     "react-modal": "^1.7.6",
     "react-split-pane": "^0.1.63",
