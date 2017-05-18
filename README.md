@@ -33,16 +33,18 @@ Once it's installed, you can `npm run storybook` and it will run the development
 
 For full documentation on using Storybook visit: [storybooks.js.org](https://storybooks.js.org)
 
-## Main Projects
+## Projects
+
+### Main Projects
 - [Storybook for react](app/react) - Storybook for React components
 - [Storybook for react-native](app/react-native) - Storybook for React components
 
-## Sub Projects
+### Sub Projects
 - [Storyshots](lib/storyshots) - Easy snapshot testing for storybook
 - [CLI](lib/cli) - Streamlined installation for a variety of app types
 - [examples](examples) - Code examples to illustrate different Storybook use cases
 
-## Addons
+### Addons
 - [addon-actions](addons/actions/) - Log actions as users interact with components in storybook
 - [addon-comments](addons/comments/) - Comment on storybook stories
 - [addon-graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
@@ -57,7 +59,7 @@ We welcome contributions to Storybook! There are many ways to contribute to
 this project. [Get started here](CONTRIBUTING.md)
 
 
-## Backers
+### Backers
 
 Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/storybook#backer)]
 
@@ -93,7 +95,7 @@ Support us with a monthly donation and help us continue our activities. [[Become
 <a href="https://opencollective.com/storybook/backer/29/website" target="_blank"><img src="https://opencollective.com/storybook/backer/29/avatar.svg"></a>
 
 
-## Sponsors
+### Sponsors
 
 Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/storybook#sponsor)]
 
