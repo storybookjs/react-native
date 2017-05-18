@@ -1,17 +1,13 @@
 # Website for [storybooks.js.org](https://storybooks.js.org)
 
-This is the source for [storybooks.js.org](https://storybooks.js.org). This is a [Create React App](https://github.com/facebookincubator/create-react-app) based site.
-
-This site has also has the documentation for Storybook.
+This is the source for [storybooks.js.org](https://storybooks.js.org). It documents [Storybook](https://github.com/storybooks/storybook), an amazing UI component development environment for React and React Native. The site is built with [Gatsby](https://github.com/gatsbyjs/gatsby).
 
 ### Usage
 
     npm i
-    npm start
+    npm run develop
+    npm run storybook
 
 ### Edit Documentation
 
-This website carries the documentation for Storybook.<br/>
-Documentation is located at: [`src/docs`](/src/docs) directory.
-
-It's written in Markdown and ES6. So, it supports goodies of both worlds.
+Documentation is written in Markdown and located inside the [`pages/docs/react-storybook`](pages/docs/react-storybook) directory.
