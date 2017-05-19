@@ -121,6 +121,7 @@ export default class Story extends React.Component {
         <div style={this.state.stylesheet.infoPage}>
           <div style={this.state.stylesheet.infoBody}>
             {this._getInfoContent()}
+            {this._getComponentDescription()}
             {this._getSourceCode()}
             {this._getPropTables()}
           </div>
@@ -162,6 +163,7 @@ export default class Story extends React.Component {
             <div style={this.state.stylesheet.infoBody}>
               {this._getInfoHeader()}
               {this._getInfoContent()}
+              {this._getComponentDescription()}
               {this._getSourceCode()}
               {this._getPropTables()}
             </div>
@@ -212,6 +214,24 @@ export default class Story extends React.Component {
         {MTRC(source).tree}
       </div>
     );
+  }
+
+  _getComponentDescription() {
+    let retDiv = null;
+
+    if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
+      Object.keys(STORYBOOK_REACT_CLASSES).forEach((key, index) => {
+        if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.kind) {
+          retDiv = (
+            <div>
+              {STORYBOOK_REACT_CLASSES[key].docgenInfo.description}
+            </div>
+          );
+        }
+      });
+    }
+
+    return retDiv;
   }
 
   _getSourceCode() {
@@ -298,8 +318,6 @@ export default class Story extends React.Component {
         {propTables}
       </div>
     );
-
-    return;
   }
 
   render() {
