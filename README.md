@@ -40,11 +40,11 @@ For full documentation on using Storybook visit: [storybooks.js.org](https://sto
 - [Storybook for react-native](app/react-native) - Storybook for React components
 
 ### Sub Projects
-- [Storyshots](lib/storyshots) - Easy snapshot testing for storybook
 - [CLI](lib/cli) - Streamlined installation for a variety of app types
 - [examples](examples) - Code examples to illustrate different Storybook use cases
 
 ### Addons
+- [addon-storyshots](addons/storyshots) - Easy snapshot testing for storybook
 - [addon-actions](addons/actions/) - Log actions as users interact with components in storybook
 - [addon-comments](addons/comments/) - Comment on storybook stories
 - [addon-graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
