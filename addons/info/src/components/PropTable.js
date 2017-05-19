@@ -77,7 +77,7 @@ export default class PropTable extends React.Component {
             <th>propType</th>
             <th>required</th>
             <th>default</th>
-            <th>description&gt;</th>
+            <th>description</th>
           </tr>
         </thead>
         <tbody>

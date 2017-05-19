@@ -30,6 +30,14 @@
     "lint": "eslint .",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "coverage": "codecov"
+    "coverage": "codecov",
+    "postinstall": "opencollective postinstall"
+  },
+  "dependencies": {
+    "opencollective": "^1.0.3"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/storybook"
   }
 }

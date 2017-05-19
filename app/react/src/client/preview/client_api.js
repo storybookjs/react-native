@@ -25,7 +25,7 @@ export default class ClientApi {
 
   storiesOf(kind, m) {
     if (!kind && typeof kind !== 'string') {
-      throw new Error('Invalid kind provided for stories, should be a string');
+      throw new Error('Invalid or missing kind provided for stories, should be a string');
     }
 
     if (m && m.hot) {
@@ -49,6 +49,10 @@ export default class ClientApi {
     });
 
     api.add = (storyName, getStory) => {
+      if (typeof storyName !== 'string') {
+        throw new Error(`Invalid or missing storyName provided for a "${kind}" story.`);
+      }
+
       if (this._storyStore.hasStory(kind, storyName)) {
         throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
       }
