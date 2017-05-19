@@ -5,18 +5,7 @@ import { includePaths, excludePaths } from '../utils';
 // Add a default custom config which is similar to what React Create App does.
 module.exports = storybookBaseConfig => {
   const newConfig = { ...storybookBaseConfig };
-  newConfig.plugins = [
-    ...storybookBaseConfig.plugins,
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [
-          autoprefixer({
-            browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-          }),
-        ],
-      },
-    }),
-  ];
+
   newConfig.module.rules = [
     ...storybookBaseConfig.module.rules,
     {
@@ -31,7 +20,16 @@ module.exports = storybookBaseConfig => {
             importLoaders: 1,
           },
         },
-        'postcss-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: () => [
+              autoprefixer({
+                browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
+              }),
+            ],
+          },
+        },
       ],
     },
     {
