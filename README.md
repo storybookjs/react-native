@@ -40,7 +40,7 @@ For full documentation on using Storybook visit: [storybooks.js.org](https://sto
 - [Storybook for react-native](app/react-native) - Storybook for React components
 
 ### Sub Projects
-- [Storyshots](lib/storyshots) - Easy snapshot testing for storybook
+- [Storyshots](addons/storyshots) - Easy snapshot testing for storybook
 - [CLI](lib/cli) - Streamlined installation for a variety of app types
 - [examples](examples) - Code examples to illustrate different Storybook use cases
 
