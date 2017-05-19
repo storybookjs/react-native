@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-comments",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.1",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
@@ -37,7 +37,7 @@
     "@kadira/storybook-database-cloud": "*",
     "@kadira/storybook-deployer": "*",
     "@storybook/addons": "^3.0.0-alpha.0",
-    "@storybook/react": "^3.0.0-alpha.0",
+    "@storybook/react": "^3.0.0-alpha.1",
     "@storybook/ui": "^3.0.0-alpha.0",
     "git-url-parse": "^6.2.2",
     "react": "^15.5.4",

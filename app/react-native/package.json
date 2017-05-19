@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.1",
   "description": "A better way to develop React Native Components for your app",
   "main": "dist/index.js",
   "bin": {
@@ -34,8 +34,8 @@
     "react-native": "^0.43.3"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.0.0-alpha.0",
-    "@storybook/addon-links": "^3.0.0-alpha.0",
+    "@storybook/addon-actions": "^3.0.0-alpha.1",
+    "@storybook/addon-links": "^3.0.0-alpha.1",
     "@storybook/addons": "^3.0.0-alpha.0",
     "@storybook/channel-websocket": "^3.0.0-alpha.0",
     "@storybook/ui": "^3.0.0-alpha.0",
