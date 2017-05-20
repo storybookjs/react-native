@@ -30,6 +30,7 @@
     "url": "git://github.com/storybooks/storybook.git"
   },
   "scripts": {
+    "publish": "lerna publish",
     "bootstrap": "lerna bootstrap",
     "lint": "eslint .",
     "test": "jest",
