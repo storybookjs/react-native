@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.1",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "license": "MIT",
   "main": "dist/client/index.js",
@@ -19,8 +19,8 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.0.0-alpha.0",
-    "@storybook/addon-links": "^3.0.0-alpha.0",
+    "@storybook/addon-actions": "^3.0.0-alpha.1",
+    "@storybook/addon-links": "^3.0.0-alpha.1",
     "@storybook/addons": "^3.0.0-alpha.0",
     "@storybook/channel-postmessage": "^3.0.0-alpha.0",
     "@storybook/ui": "^3.0.0-alpha.0",

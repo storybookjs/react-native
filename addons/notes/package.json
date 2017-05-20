@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.1",
   "description": "Write notes for your Storybook stories.",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@storybook/react": "^3.0.0-alpha.0",
+    "@storybook/react": "^3.0.0-alpha.1",
     "git-url-parse": "^6.2.2",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
