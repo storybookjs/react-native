@@ -78,7 +78,7 @@ export default class Welcome extends React.Component {
           Have a look at the
           {' '}
           <a style={styles.link} href="https://github.com/storybooks/storybook" target="_blank">
-            React Storybook
+            Storybook for React
           </a>
           {' '}
           repo for more information.

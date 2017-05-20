@@ -6,7 +6,7 @@ import loadBabelConfig from './babel_config';
 const logger = console;
 
 // `baseConfig` is a webpack configuration bundled with storybook.
-// React Storybook will look in the `configDir` directory
+// Storybook will look in the `configDir` directory
 // (inside working directory) if a config path is not provided.
 export default function(configType, baseConfig, configDir) {
   const config = baseConfig;

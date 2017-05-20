@@ -396,7 +396,7 @@ This will fix issues like [#347](https://github.com/storybooks/react-storybook/i
 Add support for the addon API. See [PR346](https://github.com/storybooks/react-storybook/pull/346).
 
 Here after we are using most of the features including actions,links as plugins.
-So, this introduced a huge area to add customizations to React Storybook.
+So, this introduced a huge area to add customizations to Storybook.
 
 Unfortunately, as of this version, there are no docs for this feature. But, you can have a look at these addons:
 
@@ -408,7 +408,7 @@ Have a look at [here](https://github.com/storybooks/react-storybook/blob/master/
 ### v2.0.0
 01-August-2016
 
-This is the starting of the next major version of React Storybook. This version is almost compatible with `v1.x.x` but defaults have been changes as discussed below. That's why we are starting out a new version.
+This is the starting of the next major version of Storybook. This version is almost compatible with `v1.x.x` but defaults have been changes as discussed below. That's why we are starting out a new version.
 
 * Update defaults to match create-react-app. [PR342](https://github.com/storybooks/react-storybook/pull/342). Here are the notable changes:
   * Add postcss based CSS loader.
@@ -482,7 +482,7 @@ This is the starting of the next major version of React Storybook. This version 
 
 ### v1.33.0
 
-* Introduce an [extension API](https://github.com/storybooks/react-storybook/blob/master/docs/extensions.md) for React Storybook. See: [PR258](https://github.com/storybooks/react-storybook/pull/258)
+* Introduce an [extension API](https://github.com/storybooks/react-storybook/blob/master/docs/extensions.md) for Storybook. See: [PR258](https://github.com/storybooks/react-storybook/pull/258)
 
 ### v1.32.1
 
@@ -621,7 +621,7 @@ This is the starting of the next major version of React Storybook. This version 
 ### v1.18.0
 26-April-2016
 
-* Link React Storybook menu to the repo. See: [PR137](https://github.com/storybooks/react-storybook/pull/137)
+* Link Storybook menu to the repo. See: [PR137](https://github.com/storybooks/react-storybook/pull/137)
 * Implement keyboard shortcuts and fuzzy search. See: [PR141](https://github.com/storybooks/react-storybook/pull/141)
 
 ### v1.17.2
