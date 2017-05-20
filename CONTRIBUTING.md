@@ -171,3 +171,24 @@ npm link @storybook/react
 ### Getting Changes
 
 After you've done any change, you need to run the `npm run storybook` command every time to see those changes.
+
+## Release Guide
+
+This section is for Storybook maintainers who will be creating releases.
+
+Each release is described by:
+- A version
+- A list of merged pull requests
+- Optionally, a short hand-written description
+
+Thus current the release sequence is:
+
+1. Edit `lerna.json` to update the version.
+2. For full releases (i.e. not alpha/rc), run `npm changelog` to update `CHANGELOG.md`.
+3. Edit PR titles/labels on github until you're happy with the output in `CHANGELOG.md`.
+4. Optionally, edit a handwritten description in `CHANGELOG.md`.
+5. Run `lerna publish` to publish to `npm` and create a tag.
+6. Run `npm release` to push the tag to github and create a release using the contents of `CHANGELOG.md`
+7. Update docs as necessary in https://github.com/storybooks/storybooks.github.io
+
+NOTE: we hope to automate this in CI at some point, so this process is designed with that in mind.
