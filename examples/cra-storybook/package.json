@@ -7,12 +7,12 @@
     "@storybook/addons": "*",
     "@storybook/addon-actions": "*",
     "@storybook/addon-links": "*",
-    "react-scripts": "0.9.5"
+    "react-scripts": "1.0.1"
   },
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "prop-types": "^15.5.9"
+    "prop-types": "^15.5.10"
   },
   "scripts": {
     "start": "react-scripts start",
