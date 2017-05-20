@@ -188,7 +188,8 @@ Thus current the release sequence is:
 3. Edit PR titles/labels on github until you're happy with the output in `CHANGELOG.md`.
 4. Optionally, edit a handwritten description in `CHANGELOG.md`.
 5. Run `lerna publish` to publish to `npm` and create a tag.
-6. Run `npm release` to push the tag to github and create a release using the contents of `CHANGELOG.md`
-7. Update docs as necessary in https://github.com/storybooks/storybooks.github.io
+6. Push the tag and `CHANGELOG.md` changes to github.
+7. For full releases, run `npm release` to create a release on Github using the contents of `CHANGELOG.md`.
+8. Update docs as necessary in https://github.com/storybooks/storybooks.github.io
 
 NOTE: we hope to automate this in CI at some point, so this process is designed with that in mind.
