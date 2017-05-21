@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Highlight from '../../Highlight';
-import 'highlight.js/styles/github-gist.css';
+// import 'highlight.js/styles/github-gist.css';
 import './style.css';
 
 const DocsContent = ({ title, content, editUrl }) => (

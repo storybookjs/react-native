@@ -41,7 +41,7 @@ You can also import images and media files directly via JavaScript. This helps y
 
 ```js
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import imageFile from './static/image.png';
 

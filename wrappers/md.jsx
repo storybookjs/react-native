@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import DocumentTitle from 'react-document-title'
-import { config } from 'config'
+import React from 'react';
+import PropTypes from 'prop-types';
+import DocumentTitle from 'react-document-title';
+import { config } from 'config';
 
 const Markdown = ({ route }) => {
-  const post = route.page.data
-  const repoUrl = 'https://github.com/storybooks/storybooks.github.io'
-  const editUrl = `{repoUrl}/tree/source/pages${route.path.replace(/\/$/g, '.md')}`
+  const post = route.page.data;
+  const repoUrl = 'https://github.com/storybooks/storybooks.github.io';
+  const editUrl = `{repoUrl}/tree/source/pages${route.path.replace(/\/$/g, '.md')}`;
   return (
     <DocumentTitle title={`${post.title} | ${config.siteTitle}`}>
       <div className="markdown">
@@ -19,11 +19,11 @@ const Markdown = ({ route }) => {
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
       </div>
     </DocumentTitle>
-  )
-}
+  );
+};
 
 Markdown.propTypes = {
   route: PropTypes.object,
-}
+};
 
-export default Markdown
+export default Markdown;

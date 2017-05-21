@@ -1,4 +1,4 @@
-import marked from 'marked'
+import marked from 'marked';
 
 export const docsData = {
   categories: [
@@ -47,7 +47,7 @@ to write great stories.
 * Do not write app-specific code inside your UI components.
 
 ~~~js
-import { linkTo } from @kadira/Storybook
+import { linkTo } from @storybook/react
 
 storiesOf('Toggle', module)
   .add('on', () => {

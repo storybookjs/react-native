@@ -41,8 +41,8 @@ We write a story for our addon like this:
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { action } from '@kadira/storybook-addon-actions';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Button from './Button';
 import { WithNotes } from '../notes-addon';
 
@@ -69,7 +69,7 @@ First, create an `addons.js` inside the Storybook config directory and add the f
 
 ```js
 // Register the actions addon that we used above
-import '@kadira/storybook-addon-actions/register';
+import '@storybook/addon-actions/register';
 ```
 
 We'll use this file shortly to register the Notes addon we are building.
@@ -82,7 +82,7 @@ Let's add the following content to the `index.js`. It will expose a class called
 
 ```js
 import React from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 
 export class WithNotes extends React.Component {
   render() {
@@ -119,7 +119,7 @@ Now, finally, we need to register the addon by importing it to the `.storybook/a
 
 ```js
 // Register the actions addon that we used above
-import '@kadira/storybook-addon-actions/register';
+import '@storybook/addon-actions/register';
 
 // Our addon
 import '../src/notes-addon/register';
@@ -131,8 +131,8 @@ That's it. Now you can create notes for any story as shown below:
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { action } from '@kadira/storybook-addon-actions';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Button from './Button';
 import { WithNotes } from '../notes-addon';
 
@@ -158,7 +158,7 @@ You can learn more about the complete API [here](/docs/react-storybook/addons/ap
 
 You can package this addon into a NPM module very easily. Have a look at this [repo](https://github.com/storybooks/storybook/tree/master/packages/addon-notes/tree/version1).
 
-In addition to moving the above code to an NPM module, we've set `react` and `@kadira/storybook-addons` as peer dependencies.
+In addition to moving the above code to an NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 
 ### Local Development
 
@@ -168,7 +168,7 @@ When you are developing your addon as a package, you can't use `npm link` to add
 {
   ...
   "dependencies": {
-    "@kadira/storybook-addon-notes": "file:///home/username/myrepo"
+    "@storybook/addon-notes": "file:///home/username/myrepo"
   }
   ...
 }

@@ -19,9 +19,9 @@ class Nav extends React.Component {
 
   handleHeadingChange(evt) {
     const { selectedCatId, sections } = this.props;
-    const selectedSectionId = evt.target.value
-    const section = sections.find(section => section.id === selectedSectionId)
-    const itemId = section.items[0].id
+    const selectedSectionId = evt.target.value;
+    const section = sections.find(section => section.id === selectedSectionId);
+    const itemId = section.items[0].id;
     this.changeRoute(selectedCatId, selectedSectionId, itemId);
   }
 

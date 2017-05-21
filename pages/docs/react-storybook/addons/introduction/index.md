@@ -58,9 +58,9 @@ storiesOf('Button', module)
 You can also add a decorator globally for all stories like this:
 
 ```js
-import { storiesOf, addDecorator } from '@kadira/storybook';
-import { action } from '@kadira/storybook-addon-actions';
-import { linkTo } from '@kadira/storybook-addon-links';
+import { storiesOf, addDecorator } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
 
 const CenterDecorator = (story) => (
   <div style={{ textAlign: "center" }}>
