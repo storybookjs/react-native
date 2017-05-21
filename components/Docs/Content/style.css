@@ -94,3 +94,16 @@
   background-color: #f7f7f7;
   padding: 10px 12px;
 }
+
+#docs-content .markdown .header-anchor {
+  display: none;
+}
+
+#docs-content .markdown h1:hover .header-anchor,
+#docs-content .markdown h2:hover .header-anchor,
+#docs-content .markdown h3:hover .header-anchor,
+#docs-content .markdown h4:hover .header-anchor,
+#docs-content .markdown h5:hover .header-anchor,
+#docs-content .markdown h6:hover .header-anchor {
+  display: inline;
+}
