@@ -17,7 +17,7 @@ const stylesheet = {
     paddingTop: 7,
     textAlign: 'right',
     width: 80,
-    fontSize: 10,
+    fontSize: 12,
     color: 'rgb(68, 68, 68)',
     fontWeight: 600,
   },
