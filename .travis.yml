@@ -11,6 +11,7 @@ before_install: ./scripts/travis/before_install.sh
 after_success: ./scripts/travis/after_success.sh
 script:
   - npm run bootstrap
+  - (cd examples/test-cra && npm install)
   - npm run lint
   - npm run test -- --coverage
   - npm run coverage

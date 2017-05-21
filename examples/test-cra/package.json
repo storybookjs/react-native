@@ -22,7 +22,9 @@
     "@storybook/channels": "file:../../lib/channels",
     "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
     "@storybook/ui": "file:../../lib/ui",
-    "react-scripts": "0.9.5"
+    "@storybook/addon-storyshots": "file:../../addons/storyshots",
+    "react-scripts": "1.0.2",
+    "react-test-renderer": "^15.4.2"
   },
   "private": true
 }

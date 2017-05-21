@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button with some emoji 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Button with text 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+>
+  Hello Button
+</button>
+`;
+
+exports[`Storyshots Welcome to Storybook 1`] = `
+<div
+  style={
+    Object {
+      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+      "lineHeight": 1.4,
+      "margin": 15,
+      "maxWidth": 600,
+    }
+  }
+>
+  <h1>
+    Welcome to STORYBOOK
+  </h1>
+  <p>
+    This is a UI component dev environment for your app.
+  </p>
+  <p>
+    We've added some basic stories inside the
+     
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      src/stories
+    </code>
+     
+    directory.
+    <br />
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    <br />
+    (Basically a story is like a visual test case.)
+  </p>
+  <p>
+    See these sample
+     
+    <a
+      href="#"
+      onClick={[Function]}
+      style={
+        Object {
+          "borderBottom": "1px solid #1474f3",
+          "color": "#1474f3",
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+    >
+      stories
+    </a>
+     
+    for a component called
+     
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      Button
+    </code>
+    .
+  </p>
+  <p>
+    Just like that, you can add your own components as stories.
+    <br />
+    Here's how to add your 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      App
+    </code>
+     component as a story.
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<pre>
+        // Add this code to \\"src/stories/index.js\\"
+        
+        import '../index.css';
+        import App from '../App';
+        
+        storiesOf('App', module)
+          .add('default view', () => (
+            &lt;App /&gt;
+          ))
+        </pre>",
+        }
+      }
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "margin": "10px 0",
+          "padding": "1px 10px",
+        }
+      }
+    />
+  </p>
+  <p>
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    Have a look at the
+     
+    <a
+      href="https://storybooks.js.org/docs/react-storybook/basics/writing-stories"
+      style={
+        Object {
+          "borderBottom": "1px solid #1474f3",
+          "color": "#1474f3",
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      target="_blank"
+    >
+      Writing Stories
+    </a>
+     
+    section in our documentation.
+  </p>
+</div>
+`;
