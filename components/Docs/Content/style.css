@@ -97,6 +97,7 @@
 
 #docs-content .markdown .header-anchor {
   display: none;
+  line-height: 1px;
 }
 
 #docs-content .markdown h1:hover .header-anchor,
