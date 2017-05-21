@@ -37,7 +37,10 @@ const md = (linkPrefix, shouldPrefix) =>
     },
   })
     .use(require('markdown-it-replace-link'))
-    .use(require('markdown-it-anchor'), { permalink: true });
+    .use(require('markdown-it-anchor'), {
+      permalink: true,
+      permalinkSymbol: '🔗',
+    });
 
 module.exports = function(content) {
   this.cacheable();
