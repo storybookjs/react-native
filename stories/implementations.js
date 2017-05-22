@@ -1,4 +1,6 @@
 import React from 'react';
+import { values } from 'lodash';
+
 import Homepage from '../components/Homepage';
 import Header from '../components/Header';
 import Heading from '../components/Homepage/Heading';
@@ -11,8 +13,12 @@ import Docs from '../components/Docs';
 import DocsContainer from '../components/Docs/Container';
 import DocsContent from '../components/Docs/Content';
 import DocsNav from '../components/Docs/Nav';
+import GridItem from '../components/Grid/GridItem';
+import Grid from '../components/Grid/Grid';
+import Examples from '../components/Grid/Grid';
 
 import { docsData } from './data';
+import exampleData from './_examples.yml';
 
 export default {
   'Homepage.page': <Homepage featuredStorybooks={docsData.featuredStorybooks} />,
@@ -49,4 +55,7 @@ export default {
       selectedItem={docsData.selectedItem.id}
     />
   ),
+  'Grid.grid-item': <GridItem {...values(exampleData)[0]} />,
+  'Grid.grid': <Grid items={values(exampleData)} columnWidth={300} />,
+  'Grid.examples': <Examples items={values(exampleData)} />,
 };
