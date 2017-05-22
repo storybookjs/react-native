@@ -3,16 +3,26 @@ import { includePaths } from '../utils';
 
 // Add a default custom config which is similar to what React Create App does.
 module.exports = storybookBaseConfig => {
-  const newConfig = storybookBaseConfig;
+  const newConfig = { ...storybookBaseConfig };
+
   newConfig.module.loaders = [
     ...newConfig.module.loaders,
     {
       test: /\.css?$/,
       include: includePaths,
-      loaders: [
+      use: [
         require.resolve('style-loader'),
         require.resolve('css-loader'),
-        require.resolve('postcss-loader'),
+        {
+          loader: require.resolve('postcss-loader'),
+          options: {
+            plugins: () => [
+              autoprefixer({
+                browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
+              }),
+            ],
+          },
+        },
       ],
     },
     {
@@ -39,16 +49,10 @@ module.exports = storybookBaseConfig => {
     },
   ];
 
-  newConfig.postcss = () => [
-    autoprefixer({
-      browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-    }),
-  ];
-
   newConfig.resolve = {
-    // These are the reasonable defaults supported by the Node ecosystem.
-    extensions: ['.js', '.json', ''],
+    ...newConfig.resolve,
     alias: {
+      ...((newConfig.resolve && newConfig.resolve.alias) || {}),
       // This is to support NPM2
       'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
     },
