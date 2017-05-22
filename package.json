@@ -21,10 +21,10 @@
     "underscore.string": "^3.2.2"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.35.3",
-    "@kadira/storybook-addon-actions": "^1.1.3",
-    "@kadira/storybook-addon-links": "^1.0.1",
-    "@kadira/storybook-addons": "^1.6.1",
+    "@storybook/react": "alpha",
+    "@storybook/addon-actions": "alpha",
+    "@storybook/addon-links": "alpha",
+    "@storybook/addons": "alpha",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",

@@ -26,7 +26,7 @@ First, make sure you are inside a Storybook-enabled repo (make sure it has few s
 Then, install StoryShots into your app with:
 
 ```sh
-npm i -D @kadira/storyshots
+npm i -D @storybook/addon-storyshots
 ```
 
 Then, add the following NPM script into your package.json:

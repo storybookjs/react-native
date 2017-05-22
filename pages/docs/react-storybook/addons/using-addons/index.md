@@ -12,15 +12,15 @@ We are going to use an addon called [Notes](https://github.com/storybooks/storyb
 First, we need to install the addons:
 
 ```sh
-npm i --save-dev @kadira/storybook-addon-actions @kadira/storybook-addon-links @kadira/storybook-addon-notes
+npm i --save-dev @storybook/addon-actions @storybook/addon-links @storybook/addon-notes
 ```
 
 Then, we need to create a file called `addons.js` inside the storybook config directory and add the following content:
 
 ```js
-import '@kadira/storybook-addon-actions/register';
-import '@kadira/storybook-addon-links/register';
-import '@kadira/storybook-addon-notes/register';
+import '@storybook/addon-actions/register';
+import '@storybook/addon-links/register';
+import '@storybook/addon-notes/register';
 ```
 
 This will register all the addons and you'll be able to see the actions and notes panels (in that order) when you are viewing the story. (Links do not register a tab--check individual addon docs to see which Storybook features they use!)
@@ -31,11 +31,11 @@ Now when you are writing a story it like this and add some notes:
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import { action } from '@kadira/storybook-addon-actions';
-import { linkTo } from '@kadira/storybook-addon-links';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
 import Button from './Button';
-import { WithNotes } from '@kadira/storybook-addon-notes';
+import { WithNotes } from '@storybook/addon-notes';
 
 storiesOf('Button', module)
   .add('with some emoji', () => (

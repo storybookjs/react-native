@@ -85,7 +85,7 @@ Add following content to the `webpack.config.js` in your Storybook config direct
 
 ```js
 // load the default config generator.
-const genDefaultConfig = require('@kadira/storybook/dist/server/config/defaults/webpack.config.js');
+const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
 module.exports = (config, env) => {
   const config = genDefaultConfig(config, env);

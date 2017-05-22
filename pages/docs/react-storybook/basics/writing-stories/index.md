@@ -26,7 +26,8 @@ This is how you write stories:
 // file: src/stories/index.js
 
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Button from '../components/Button';
 
 storiesOf('Button', module)
@@ -51,7 +52,7 @@ Sometimes, you will want to load your stories dynamically rather than explicitly
 For example, you may write stories for your app inside the `src/components` directory with the `.stories.js` extension. Then you will want to load them at once. Simply edit your config directory at `.storybook/config.js` as follows:
 
 ```js
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/react';
 
 const req = require.context('../src/components', true, /\.stories\.js$/)
 
@@ -70,7 +71,7 @@ A decorator is a way to wrap a story with a common set of component(s). Let's sa
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import MyComponent from '../my_component';
 
 storiesOf('MyComponent', module)
@@ -88,7 +89,7 @@ Here we only add the decorator for the current set of stories. (In this example,
 But, you can also add a decorator **globally** and it'll be applied to all the stories you create. This is how to add a decorator like that:
 
 ```js
-import { configure, addDecorator } from '@kadira/storybook';
+import { configure, addDecorator } from '@storybook/react';
 
 addDecorator((story) => (
   <div style={{textAlign: 'center'}}>

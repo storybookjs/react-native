@@ -13,12 +13,12 @@ Storybook has its own Webpack setup and a dev server. Webpack setup is very simi
 
 In this guide, we are trying to set up Storybook for your React project.
 
-## Add @kadira/storybook
+## Add @storybook/react
 
-First of all, you need to add `@kadira/storybook` to your project. To do that, simply run:
+First of all, you need to add `@storybook/react` to your project. To do that, simply run:
 
 ```sh
-npm i --save-dev @kadira/storybook
+npm i --save-dev @storybook/react
 ```
 
 ## Add react and react-dom
@@ -48,7 +48,7 @@ For the basic Storybook configuration file, you don't need to do much, but simpl
 To do that, simply create a file at `.storybook/config.js` with the following content:
 
 ```js
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/react';
 
 function loadStories() {
   require('../stories/index.js');
@@ -68,7 +68,8 @@ Now you can write some stories inside the `../stories/index.js` file, like this:
 
 ```js
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Button', module)
   .add('with text', () => (

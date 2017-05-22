@@ -13,7 +13,7 @@ You can import any media assets by simply importing (or requiring) them as shown
 
 ```js
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import imageFile from './static/image.png';
 
@@ -43,7 +43,7 @@ Here `./public` is our static directory. Now you can use static files in the pub
 
 ```js
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 // assume image.png is located in the "public" directory.
 storiesOf('<img>', module)
