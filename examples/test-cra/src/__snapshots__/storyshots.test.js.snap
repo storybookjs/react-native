@@ -38,6 +38,8 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
+exports[`Storyshots ComponentWithRef basic 1`] = `<div />`;
+
 exports[`Storyshots Welcome to Storybook 1`] = `
 <div
   style={
