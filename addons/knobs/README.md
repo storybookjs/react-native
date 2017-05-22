@@ -73,7 +73,7 @@ You can see your Knobs in a Storybook panel as shown below.
 * Introduction blog post.
 * Watch this video on how to use knobs
 * [Live Storybook with Knobs](https://goo.gl/uX9WLf)
-* Have a look at this [sample Storybook repo](https://github.com/storybook-samples/storybook-knobs-example).
+* Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
 
 ## Available Knobs
 
