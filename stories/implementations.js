@@ -15,7 +15,7 @@ import DocsContent from '../components/Docs/Content';
 import DocsNav from '../components/Docs/Nav';
 import GridItem from '../components/Grid/GridItem';
 import Grid from '../components/Grid/Grid';
-import Examples from '../components/Grid/Grid';
+import Examples from '../components/Grid/Examples';
 
 import { docsData } from './data';
 import exampleData from './_examples.yml';

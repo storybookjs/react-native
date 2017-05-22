@@ -17,6 +17,7 @@ lonelyplanet:
   title: Lonely Planet
   description: All the tools you need to build the Lonely Planet UI experience.
   source: https://github.com/lonelyplanet/backpack-ui
+  demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
 algolia:
   thumbnail: ./thumbnails/algolia.jpg
