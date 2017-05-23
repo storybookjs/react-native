@@ -1,6 +1,6 @@
 {
   "name": "@storybook/cli",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.5",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
   "bin": {
     "getstorybook": "./bin/generate.js"
@@ -26,9 +26,9 @@
     "cross-spawn": "^5.0.1",
     "json5": "^0.5.1",
     "merge-dirs": "^0.2.1",
+    "opencollective": "^1.0.3",
     "shelljs": "^0.7.7",
-    "update-notifier": "^2.1.0",
-    "opencollective": "^1.0.3"
+    "update-notifier": "^2.1.0"
   },
   "scripts": {
     "postinstall": "opencollective postinstall"

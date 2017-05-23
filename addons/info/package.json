@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.5",
   "description": "A Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
