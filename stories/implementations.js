@@ -18,7 +18,9 @@ import { docsData } from './data';
 import users from './_users.yml';
 
 export default {
-  'Homepage.page': <Homepage featuredStorybooks={docsData.featuredStorybooks} />,
+  'Homepage.page': (
+    <Homepage featuredStorybooks={docsData.featuredStorybooks} users={values(users)} />
+  ),
   'Homepage.header': <Header />,
   'Homepage.heading': <Heading />,
   'Homepage.demo': <Demo />,
