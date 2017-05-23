@@ -6,7 +6,7 @@ import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
 const { describe, it, expect } = global;
 
-export { snapshot, renderOnly } from './test-bodies';
+export { snapshotWithOptions, snapshot, renderOnly } from './test-bodies';
 
 let storybook;
 let configPath;

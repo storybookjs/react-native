@@ -116,3 +116,8 @@ The default, render the story as normal and take a Jest snapshot.
 ### `renderOnly`
 
 Just render the story, don't check the output at all (useful if you just want to ensure it doesn't error).
+
+
+### `snapshotWithOptions(options)`
+
+Like the default, but allows you to specify a set of options for the test renderer. See for example: https://github.com/storybooks/storybook/blob/b915b5439786e0edb17d7f5ab404bba9f7919381/examples/test-cra/src/storyshots.test.js#L14-L16
