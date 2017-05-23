@@ -32,14 +32,11 @@
   "scripts": {
     "publish": "lerna publish",
     "bootstrap": "lerna bootstrap",
+    "bootstrap:test-cra": "lerna exec --scope test-cra  -- npm i",
     "lint": "eslint .",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "coverage": "codecov",
-    "postinstall": "opencollective postinstall"
-  },
-  "dependencies": {
-    "opencollective": "^1.0.3"
+    "coverage": "codecov"
   },
   "collective": {
     "type": "opencollective",
