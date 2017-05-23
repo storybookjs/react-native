@@ -1,4 +1,5 @@
 import React from 'react';
+import { values } from 'lodash';
 import Homepage from '../components/Homepage';
 import Header from '../components/Header';
 import Heading from '../components/Homepage/Heading';
@@ -6,6 +7,7 @@ import Demo from '../components/Homepage/Demo';
 import Platforms from '../components/Homepage/Platforms';
 import MainLinks from '../components/Homepage/MainLinks';
 import Featured from '../components/Homepage/Featured';
+import UsedBy from '../components/Homepage/UsedBy';
 import Footer from '../components/Footer';
 import Docs from '../components/Docs';
 import DocsContainer from '../components/Docs/Container';
@@ -13,6 +15,7 @@ import DocsContent from '../components/Docs/Content';
 import DocsNav from '../components/Docs/Nav';
 
 import { docsData } from './data';
+import users from './_users.yml';
 
 export default {
   'Homepage.page': <Homepage featuredStorybooks={docsData.featuredStorybooks} />,
@@ -22,6 +25,7 @@ export default {
   'Homepage.built-for': <Platforms />,
   'Homepage.main-links': <MainLinks />,
   'Homepage.featured-storybooks': <Featured featuredStorybooks={docsData.featuredStorybooks} />,
+  'Homepage.used-by': <UsedBy users={values(users)} />,
   'Homepage.footer': <Footer />,
   'Docs.page': (
     <Docs

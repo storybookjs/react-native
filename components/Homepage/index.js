@@ -8,6 +8,7 @@ import Demo from './Demo';
 import Platforms from './Platforms';
 import MainLinks from './MainLinks';
 import Featured from './Featured';
+import UsedBy from './UsedBy';
 import Footer from '../Footer';
 
 const featuredStorybooks = [
@@ -39,7 +40,7 @@ const featuredStorybooks = [
   },
 ];
 
-const Homepage = () => (
+const Homepage = ({ users }) => (
   <div className="container">
     <Helmet title="Storybook - UI dev environment you'll love to use" />
     <Header currentSection="home" />
@@ -47,6 +48,7 @@ const Homepage = () => (
     <Demo />
     <Platforms />
     <MainLinks />
+    <UsedBy users={users} />
     <Featured featuredStorybooks={featuredStorybooks} />
     <Footer />
   </div>
@@ -54,6 +56,7 @@ const Homepage = () => (
 
 Homepage.propTypes = {
   featuredStorybooks: PropTypes.array,
+  users: PropTypes.array,
 };
 
 export default Homepage;
