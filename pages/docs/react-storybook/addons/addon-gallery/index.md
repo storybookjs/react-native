@@ -33,7 +33,7 @@ powerful display options for hosting, sizing and framing your components.
 This is a very special addon where it'll allow you to write test specs directly inside your stories.
 You can even run these tests inside a CI box.
 
-### [Knobs](https://github.com/storybooks/storybook/tree/master/packages/addon-knobs)
+### [Knobs](https://github.com/storybooks/storybook/tree/master/addons/knobs)
 
 Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as dynamic variables inside your stories.
