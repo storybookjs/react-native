@@ -3,7 +3,6 @@ div {
 }
 
 .grid-item {
-  height: 350px;
   margin: 30px;
   background: white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -25,27 +24,35 @@ div {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
-.grid-item .demo {
-  display: block;
-  cursor: pointer;
+.grid-item .button-row {
   position: absolute;
-  right: 15px;
-  bottom: 10px;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  text-align: right;
+}
+
+.grid-item .link {
+  display: inline-block;
+  cursor: pointer;
   padding: 5px 15px;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 10px 10px 0px;
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   color: white;
   transition: all 0.3s linear;
   font-size: 12px;
 }
-.grid-item .demo:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+.grid-item .link:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .grid-item .text {
+  position: relative;
+  height: 150px;
   padding: 20px 15px 10px 20px;
 }
 

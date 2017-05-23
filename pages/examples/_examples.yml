@@ -58,32 +58,20 @@ timeline:
   description: Event timeline component.
   source: https://github.com/rcdexta/react-event-timeline
   demo: https://rcdexta.github.io/react-event-timeline/
-uikit:
-  thumbnail: FIXME
-  title: UIKit-React
-  description: React component library built on UIkit CSS.
-  source: https://github.com/stipsan/uikit-react
-  demo: https://uikit-react.io
-whiterabbit:
-  thumbnail: FIXME
+semanticui:
+  thumbnail: ./thumbnails/semanticui.png
   title: Semantic-UI
   description: Storybook for Semantic-UI React components
   source: https://github.com/white-rabbit-japan/Semantic-UI-React-Storybook
   demo: https://white-rabbit-japan.github.io/Semantic-UI-React-Storybook/
 hackoregon:
-  thumbnail: FIXME
+  thumbnail: ./thumbnails/hackoregon.png
   title: Hack Oregon
   description: Official component library and storybook for Hack Oregon.
   source: https://github.com/hackoregon/component-library
   demo: https://hackoregon.github.io/component-library/
-reactgrid:
-  thumbnail: FIXME
-  title: React-Grid
-  description: React data table component.
-  source: https://github.com/Drapegnik/react-grid
-  demo: https://drapegnik.github.io/react-grid/storybook/
 todomvc:
-  thumbnail: FIXME
+  thumbnail: ./thumbnails/todomvc.png
   title: TodoMVC with Specs
   description: Todo app Storybook with built-in unit tests.
   source: https://github.com/thorjarhun/react-storybook-todolist
