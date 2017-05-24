@@ -51,3 +51,7 @@ mozilla:
   logo: ./logos/mozilla.svg
   title: Mozilla Foundation
   site: https://mozilla.org
+remitly:
+  logo: ./logos/remitly.png
+  title: Remitly
+  site: https://remitly.com
