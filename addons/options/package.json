@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-options",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/options",
   "devDependencies": {
     "@storybook/addons": "^3.0.0-alpha.0",
     "@storybook/react": "^3.0.0-alpha.4",

@@ -5,7 +5,7 @@
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-comments",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/comments",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadirahq/react-native-storybook.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kadirahq/react-native-storybook/issues"
+    "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/kadirahq/react-native-storybook#readme",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
   "peerDependencies": {
     "react": "*",
     "react-native": "0.27.0 - 0.43.x"
