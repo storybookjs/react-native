@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadirahq/storybook-addon-links.git"
+    "url": "git+https://github.com/storybooks/storybook.git"
   },
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kadirahq/storybook-addon-links/issues"
+    "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/kadirahq/storybook-addon-links#readme",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
   "devDependencies": {
     "@storybook/addons": "^3.0.0-alpha.0",
     "@storybook/react": "^3.0.0-alpha.4",

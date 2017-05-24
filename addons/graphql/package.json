@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addon-graphql",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/graphql",
   "devDependencies": {
     "@storybook/react": "^3.0.0-alpha.4",
     "react": "^15.5.4",

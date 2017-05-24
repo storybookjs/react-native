@@ -12,8 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/react-storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
   "scripts": {
     "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
     "prepublish": "node ../../scripts/prepublish.js"
