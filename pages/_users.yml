@@ -5,6 +5,12 @@ airbnb:
   source: https://github.com/airbnb/react-dates
   demo: http://airbnb.io/react-dates/
   site: http://airbnb.com
+slack:
+  logo: ./logos/slack.svg
+  title: Slack Emoji Picker
+  description: Slack improves performance and maintainability with Storybook!
+  article: https://slack.engineering/rebuilding-slacks-emoji-picker-in-react-bfbd8ce6fbfe
+  site: http://slack.com
 buffer:
   logo: ./logos/buffer.svg
   title: Buffer Components
@@ -55,3 +61,8 @@ remitly:
   logo: ./logos/remitly.png
   title: Remitly
   site: https://remitly.com
+nulogy:
+  logo: ./logos/nulogy.png
+  title: Nulogy
+  description: SaaS for Supply Chain
+  site: https://nulogy.com
