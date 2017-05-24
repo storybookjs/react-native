@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-import storybookLogo from '../../../design/homepage/storybook-logo.png';
+import storybookLogo from '../../../design/homepage/storybook-logo-new.svg';
 
 const Heading = () => (
   <div id="heading" className="row">
