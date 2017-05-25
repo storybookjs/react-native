@@ -1,13 +1,8 @@
 {
-  "lerna": "2.0.0-rc.3",
-  "version": "3.0.0-alpha.1",
+  "lerna": "2.0.0-rc.5",
+  "version": "3.0.0-alpha.5",
   "commands": {
     "bootstrap": {
-      "ignore": [
-        "test-cra"
-      ]
-    },
-    "exec": {
       "ignore": [
         "test-cra"
       ]

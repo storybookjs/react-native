@@ -9,23 +9,29 @@ module.exports = storybookBaseConfig => {
   newConfig.module.rules = [
     ...storybookBaseConfig.module.rules,
     {
-      test: /\.css?$/,
-      include: includePaths,
-      exclude: excludePaths,
+      test: /\.css$/,
       use: [
-        'style-loader',
+        require.resolve('style-loader'),
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
           options: {
             importLoaders: 1,
           },
         },
         {
-          loader: 'postcss-loader',
+          loader: require.resolve('postcss-loader'),
           options: {
+            ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
             plugins: () => [
+              require('postcss-flexbugs-fixes'),
               autoprefixer({
-                browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
+                browsers: [
+                  '>1%',
+                  'last 4 versions',
+                  'Firefox ESR',
+                  'not ie < 9', // React doesn't support IE8 anyway
+                ],
+                flexbox: 'no-2009',
               }),
             ],
           },

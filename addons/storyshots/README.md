@@ -37,7 +37,7 @@ Create a new test file with the name `Storyshots.test.js`. (Or whatever the name
 Then add following content to it:
 
 ```js
-import initStoryshots from 'storyshots';
+import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots();
 ```
@@ -96,3 +96,28 @@ initStoryshots({
   storyNameRegex: /buttons/
 });
 ```
+
+### `framework`
+
+If you are running tests from outside of your app's directory, storyshot's detection of which framework you are using may fail. Pass `"react"` or `"react-native"` to short-circuit this.
+
+### `test`
+
+Run a custom test function for each story, rather than the default (a vanilla snapshot test). See the exports section below for more details.
+
+## Exports
+
+Apart from the default export (`initStoryshots`), Storyshots also exports some named test functions (see the `test` option above):
+
+### `snapshot`
+
+The default, render the story as normal and take a Jest snapshot.
+
+### `renderOnly`
+
+Just render the story, don't check the output at all (useful if you just want to ensure it doesn't error).
+
+
+### `snapshotWithOptions(options)`
+
+Like the default, but allows you to specify a set of options for the test renderer. See for example: https://github.com/storybooks/storybook/blob/b915b5439786e0edb17d7f5ab404bba9f7919381/examples/test-cra/src/storyshots.test.js#L14-L16

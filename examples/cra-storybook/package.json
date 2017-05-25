@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@storybook/react": "*",
-    "@storybook/addons": "*",
-    "@storybook/addon-actions": "*",
-    "@storybook/addon-links": "*",
-    "react-scripts": "0.9.5"
+    "@storybook/react": "3.0.0-alpha.1",
+    "@storybook/addons": "3.0.0-alpha.0",
+    "@storybook/addon-actions": "3.0.0-alpha.1",
+    "@storybook/addon-links": "3.0.0-alpha.1",
+    "react-scripts": "1.0.1"
   },
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "prop-types": "^15.5.9"
+    "prop-types": "^15.5.10"
   },
   "scripts": {
     "start": "react-scripts start",
