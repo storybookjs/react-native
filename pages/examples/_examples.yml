@@ -52,6 +52,12 @@ quran:
   source: https://github.com/quran/common-components
   demo: https://quran.github.io/common-components/
   site: https://quran.com/
+terraeclipse:
+  thumbnail: ./thumbnails/terraeclipse.jpg
+  title: TerraEclipse
+  description: React components for TerraEclipse, a political technology and strategy firm.
+  source: https://github.com/TerraEclipse/react-stack
+  demo: https://terraeclipse.github.io/react-stack/
 timeline:
   thumbnail: ./thumbnails/timeline.jpg
   title: React Event Timeline
