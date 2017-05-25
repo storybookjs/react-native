@@ -8,6 +8,7 @@ import Demo from '../components/Homepage/Demo';
 import Platforms from '../components/Homepage/Platforms';
 import MainLinks from '../components/Homepage/MainLinks';
 import Featured from '../components/Homepage/Featured';
+import UsedBy from '../components/Homepage/UsedBy';
 import Footer from '../components/Footer';
 import Docs from '../components/Docs';
 import DocsContainer from '../components/Docs/Container';
@@ -18,16 +19,20 @@ import Grid from '../components/Grid/Grid';
 import Examples from '../components/Grid/Examples';
 
 import { docsData } from './data';
+import users from './_users.yml';
 import exampleData from './_examples.yml';
 
 export default {
-  'Homepage.page': <Homepage featuredStorybooks={docsData.featuredStorybooks} />,
+  'Homepage.page': (
+    <Homepage featuredStorybooks={docsData.featuredStorybooks} users={values(users)} />
+  ),
   'Homepage.header': <Header />,
   'Homepage.heading': <Heading />,
   'Homepage.demo': <Demo />,
   'Homepage.built-for': <Platforms />,
   'Homepage.main-links': <MainLinks />,
   'Homepage.featured-storybooks': <Featured featuredStorybooks={docsData.featuredStorybooks} />,
+  'Homepage.used-by': <UsedBy users={values(users)} />,
   'Homepage.footer': <Footer />,
   'Docs.page': (
     <Docs
