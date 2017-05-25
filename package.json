@@ -32,6 +32,7 @@
   "scripts": {
     "publish": "lerna publish",
     "bootstrap": "lerna bootstrap",
+    "import-repo": "lerna import",
     "bootstrap:test-cra": "lerna exec --scope test-cra  -- npm i",
     "lint": "eslint .",
     "test": "jest",
