@@ -66,7 +66,9 @@ export default class Panel extends React.Component {
     this.options = options;
 
     if (options.debounce) {
-      this.emitChange = debounce(this.emitChange, options.debounce.wait, { leading: options.debounce.leading });
+      this.emitChange = debounce(this.emitChange, options.debounce.wait, {
+        leading: options.debounce.leading,
+      });
     }
   }
 
