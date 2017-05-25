@@ -119,7 +119,7 @@ export default class Item extends Component {
         </div>
 
         <Textarea
-          ref={(ref) => {
+          ref={ref => {
             this.input = ref;
           }}
           style={{ ...styles.textArea, ...extraStyle }}

@@ -36,12 +36,11 @@ export default class Logger extends Component {
     emiter.on(EVENTS.TEST_EVENT_4, this.onEventHandler(EVENTS.TEST_EVENT_4));
   }
 
-  onEventHandler = name =>
-    (payload) => {
-      this.setState(({ events }) => ({
-        events: [...events, { name, payload }],
-      }));
-    };
+  onEventHandler = name => payload => {
+    this.setState(({ events }) => ({
+      events: [...events, { name, payload }],
+    }));
+  };
 
   render() {
     return (

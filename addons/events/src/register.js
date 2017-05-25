@@ -47,11 +47,11 @@ export default class Events extends Component {
     this.props.channel.removeListener('z4o4z/events/add', this.onAdd);
   }
 
-  onAdd = (events) => {
+  onAdd = events => {
     this.setState({ events });
   };
 
-  onEmit = (event) => {
+  onEmit = event => {
     this.props.channel.emit('z4o4z/events/emit', event);
   };
 
@@ -64,7 +64,7 @@ export default class Events extends Component {
   }
 }
 
-addons.register('z4o4z/events', (api) => {
+addons.register('z4o4z/events', api => {
   addons.addPanel('z4o4z/events/panel', {
     title: 'Events',
     render: () => <Events channel={addons.getChannel()} api={api} />,

@@ -35,7 +35,7 @@ export default class WithEvents extends Component {
     this.channel.removeListener('z4o4z/events/emit', this.onEmit);
   }
 
-  onEmit = (event) => {
+  onEmit = event => {
     this.props.emit(event.name, event.payload);
   };
 
