@@ -28,7 +28,6 @@ const MainLinks = () => (
           </div>
         </div>
       </div>
-      <hr />
     </div>
   </div>
 );
