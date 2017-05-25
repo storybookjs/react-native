@@ -1,29 +1,27 @@
-<svg width="2032" height="540" viewBox="0 0 2032 540" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="2598" height="804" viewBox="0 0 2598 804" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>storybook-logo-new</title>
 <desc>Created using Figma</desc>
 <g id="Canvas" transform="matrix(2 0 0 2 856 -2058)">
  clip-path="url(#clip-0)"<g id="storybook-logo-new">
-<g id="Group">
 <g id="Vector">
-<use xlink:href="#path0_fill" transform="translate(-427 1044)" fill="#AD76B8"/>
+<use xlink:href="#path0_fill" transform="translate(-347 1104)" fill="#AD76B8"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path1_fill" transform="translate(-413 1030)" fill="#F77199"/>
+<use xlink:href="#path1_fill" transform="translate(-333 1090)" fill="#F77199"/>
 </g>
 <g id="Intersect">
-<use xlink:href="#path2_fill" transform="translate(-267 1030.71)" fill="#FFFFFF"/>
+<use xlink:href="#path2_fill" transform="translate(-187 1090.71)" fill="#FFFFFF"/>
 </g>
 <g id="torybook">
-<use xlink:href="#path3_fill" transform="translate(-200 1069)" fill="#7AB4F9"/>
-<use xlink:href="#path4_fill" transform="translate(-200 1069)" fill="#F76F6F"/>
-<use xlink:href="#path5_fill" transform="translate(-200 1069)" fill="#7AB4F8"/>
-<use xlink:href="#path6_fill" transform="translate(-200 1069)" fill="#B987E4"/>
-<use xlink:href="#path7_fill" transform="translate(-200 1069)" fill="#A9E26B"/>
-<use xlink:href="#path8_fill" transform="translate(-200 1069)" fill="#F3AD38"/>
+<use xlink:href="#path3_fill" transform="translate(-120 1129)" fill="#7AB4F9"/>
+<use xlink:href="#path4_fill" transform="translate(-120 1129)" fill="#F76F6F"/>
+<use xlink:href="#path5_fill" transform="translate(-120 1129)" fill="#7AB4F8"/>
+<use xlink:href="#path6_fill" transform="translate(-120 1129)" fill="#B987E4"/>
+<use xlink:href="#path7_fill" transform="translate(-120 1129)" fill="#A9E26B"/>
+<use xlink:href="#path8_fill" transform="translate(-120 1129)" fill="#F3AD38"/>
 </g>
 <g id="S">
-<use xlink:href="#path9_fill" transform="translate(-373 1070)" fill="#FFFFFF"/>
-</g>
+<use xlink:href="#path9_fill" transform="translate(-293 1130)" fill="#FFFFFF"/>
 </g>
 </g>
 </g>
