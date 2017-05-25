@@ -5,13 +5,13 @@ airbnb:
   source: https://github.com/airbnb/react-dates
   demo: http://airbnb.io/react-dates/
   site: http://airbnb.com
-buffer:
-  logo: ./logos/buffer.svg
-  title: Buffer Components
-  description: A collection of Buffer UI React components.
-  source: https://github.com/bufferapp/buffer-components
-  demo: https://bufferapp.github.io/buffer-components/
-  site: https://buffer.com
+# buffer:
+#   logo: ./logos/buffer.svg
+#   title: Buffer Components
+#   description: A collection of Buffer UI React components.
+#   source: https://github.com/bufferapp/buffer-components
+#   demo: https://bufferapp.github.io/buffer-components/
+#   site: https://buffer.com
 lonelyplanet:
   logo: ./logos/lonelyplanet.svg
   title: Lonely Planet
@@ -25,24 +25,25 @@ algolia:
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
-appbase:
-  logo: ./logos/appbase.svg
-  title: Appbase Maps
-  description: A storybook playground for ReactiveMaps and ReactiveSearch.
-  source: https://github.com/appbaseio/playground
-  demo: https://opensource.appbase.io/playground/
-  site: https://appbase.io
-quran:
-  logo: ./logos/quran.svg
-  title: Quran.com
-  description: Component library for Quran.com, Quranicaudio.com and Salah.com.
-  source: https://github.com/quran/common-components
-  demo: https://quran.github.io/common-components/
-  site: https://quran.com/
-postmates:
-  logo: ./logos/postmates.png
-  title: Quran.com
-  site: https://postmates.com
+  site: http://algolia.com
+# appbase:
+#   logo: ./logos/appbase.svg
+#   title: Appbase Maps
+#   description: A storybook playground for ReactiveMaps and ReactiveSearch.
+#   source: https://github.com/appbaseio/playground
+#   demo: https://opensource.appbase.io/playground/
+#   site: https://appbase.io
+# quran:
+#   logo: ./logos/quran.svg
+#   title: Quran.com
+#   description: Component library for Quran.com, Quranicaudio.com and Salah.com.
+#   source: https://github.com/quran/common-components
+#   demo: https://quran.github.io/common-components/
+#   site: https://quran.com/
+# postmates:
+#   logo: ./logos/postmates.png
+#   title: Quran.com
+#   site: https://postmates.com
 coursera:
   logo: ./logos/coursera.svg
   title: Coursera
@@ -51,7 +52,7 @@ mozilla:
   logo: ./logos/mozilla.svg
   title: Mozilla Foundation
   site: https://mozilla.org
-remitly:
-  logo: ./logos/remitly.png
-  title: Remitly
-  site: https://remitly.com
+# remitly:
+#   logo: ./logos/remitly.png
+#   title: Remitly
+#   site: https://remitly.com

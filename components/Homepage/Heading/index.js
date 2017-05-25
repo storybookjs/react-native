@@ -8,7 +8,7 @@ const Heading = () => (
     <div className="col-xs-12">
       <img className="sb-title" src={storybookLogo} alt="Storybook Logo" />
       <h3 className="sb-tagline">
-        UI Development Environment
+        The UI Development Environment
         <br />
         You'll
         {' '}
