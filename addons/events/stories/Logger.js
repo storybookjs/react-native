@@ -1,7 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies*/
 import React, { Component, PropTypes } from 'react';
 import EventEmiter from 'eventemitter3';
-/* eslint-enable import/no-extraneous-dependencies*/
 import json from 'format-json';
 
 import * as EVENTS from './events';

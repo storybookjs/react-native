@@ -1,5 +1,5 @@
 import { Component, PropTypes } from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 
 export default class WithEvents extends Component {
   static propTypes = {

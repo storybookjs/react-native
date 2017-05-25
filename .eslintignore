@@ -2,3 +2,6 @@ dist
 build
 coverage
 node_modules
+
+*.bundle.js
+*.js.map

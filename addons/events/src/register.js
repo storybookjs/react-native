@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 
 import Item from './components/Item';
 

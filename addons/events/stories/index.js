@@ -1,8 +1,6 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import EventEmiter from 'eventemitter3';
-/* eslint-enable import/no-extraneous-dependencies */
 
 import WithEvents from '../dist/index';
 
