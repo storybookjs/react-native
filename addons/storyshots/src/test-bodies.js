@@ -1,5 +1,4 @@
 import renderer from 'react-test-renderer';
-import shallow from 'react-test-renderer/shallow';
 
 export const snapshotWithOptions = options => ({ story, context }) => {
   const storyElement = story.render(context);
