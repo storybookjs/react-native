@@ -31,6 +31,6 @@
     "update-notifier": "^2.1.0"
   },
   "scripts": {
-    "postinstall": "opencollective postinstall"
+    "postinstall": "opencollective postinstall --collective=storybook"
   }
 }
