@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router';
 import './style.css';
 
 const UsedByBg = ({ color }) => (
@@ -44,7 +45,9 @@ const UsedBy = ({ users }) => (
         </div>
       </div>
     </div>
-    <a className="used-by-more-examples" href="#">See more examples…</a>
+    <Link to="/examples/" className="used-by-more-examples">
+      See more examples…
+    </Link>
   </div>
 );
 

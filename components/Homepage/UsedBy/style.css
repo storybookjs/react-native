@@ -1,14 +1,14 @@
-.used-by-wrapper{
+.used-by-wrapper  {
   margin-bottom: 60px;
 }
 
-.used-by{
+.used-by {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
 
-.used-by-bg{
+.used-by-bg {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -16,18 +16,18 @@
   bottom: 0px;
 }
 
-.used-by-bg svg{
+.used-by-bg svg {
   height: 100%;
   width: 100%;
 }
 
-.used-by-contents{
+.used-by-contents {
   padding: 40px 20px;
   position: relative;
   z-index: 1;
 }
 
-.used-by-title{
+.used-by-title {
   text-align: center;
   margin: 0 0 30px 0;
   opacity: 0.5;
@@ -35,32 +35,32 @@
 }
 
 
-.used-by-users{
+.used-by-users {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.used-by-user{
+.used-by-user {
   /*flex: 1;*/
   margin-right: 30px;
   max-width: 100px;
   filter: grayscale(100%);
   opacity: 0.8;
 }
-.used-by-user:last-child{
+.used-by-user:last-child {
   margin-right: 0;
 }
-.used-by-user:hover{
+.used-by-user:hover {
   filter: none;
   opacity: 1;
 }
-.used-by-user-image{
+.used-by-user-image {
   display: block;
   width: 100%;
 }
 
-.used-by-more-examples{
+.used-by-more-examples {
   text-align: center;
   display: block;
   margin-top: 10px;
