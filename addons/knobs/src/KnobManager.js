@@ -65,11 +65,12 @@ export default class KnobManager {
       return;
     }
     this.calling = true;
+    const timestamp = +new Date();
 
     setTimeout(() => {
       this.calling = false;
       // emit to the channel and trigger a panel re-render
-      this.channel.emit('addon:knobs:setKnobs', this.knobStore.getAll());
+      this.channel.emit('addon:knobs:setKnobs', { knobs: this.knobStore.getAll(), timestamp });
     }, PANEL_UPDATE_INTERVAL);
   }
 }
