@@ -25,12 +25,40 @@ lonelyplanet:
   source: https://github.com/lonelyplanet/backpack-ui
   demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
+coursera:
+  logo: ./logos/coursera.svg
+  title: Coursera
+  site: https://coursera.org
+wix:
+  logo: ./logos/wix.svg
+  title: Wix
+  description: React component library for all Wix verticals
+  demo: https://wix.github.io/wix-style-react/
+  source: https://github.com/wix/wix-style-react
+  source2: https://github.com/wix/react-native-storybook-example/
 algolia:
   logo: ./logos/algolia.svg
   title: Algolia Instantsearch
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
+mozilla:
+  logo: ./logos/mozilla.svg
+  title: Mozilla Foundation
+  site: https://mozilla.org
+remitly:
+  logo: ./logos/remitly.svg
+  title: Remitly
+  site: https://remitly.com
+nulogy:
+  logo: ./logos/nulogy.png
+  title: Nulogy
+  description: SaaS for Supply Chain
+  site: https://nulogy.com
+postmates:
+  logo: ./logos/postmates.png
+  title: Quran.com
+  site: https://postmates.com
 appbase:
   logo: ./logos/appbase.svg
   title: Appbase Maps
@@ -45,24 +73,3 @@ quran:
   source: https://github.com/quran/common-components
   demo: https://quran.github.io/common-components/
   site: https://quran.com/
-postmates:
-  logo: ./logos/postmates.png
-  title: Quran.com
-  site: https://postmates.com
-coursera:
-  logo: ./logos/coursera.svg
-  title: Coursera
-  site: https://coursera.org
-mozilla:
-  logo: ./logos/mozilla.svg
-  title: Mozilla Foundation
-  site: https://mozilla.org
-remitly:
-  logo: ./logos/remitly.png
-  title: Remitly
-  site: https://remitly.com
-nulogy:
-  logo: ./logos/nulogy.png
-  title: Nulogy
-  description: SaaS for Supply Chain
-  site: https://nulogy.com
