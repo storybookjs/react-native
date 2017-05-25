@@ -1,4 +1,5 @@
 import path from 'path';
+import global from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
 import runWithRequireContext from './require_context';
@@ -10,6 +11,7 @@ export { snapshotWithOptions, snapshot, renderOnly } from './test-bodies';
 
 let storybook;
 let configPath;
+global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
 const babel = require('babel-core');
 
