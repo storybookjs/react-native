@@ -1,0 +1,37 @@
+siteTitle = "Storybook"
+baseColor = "#e64074"
+linkPrefix = "/"
+
+[docSections]
+basics = [
+  "/docs/react-storybook/basics/introduction/",
+  "/docs/react-storybook/basics/quick-start-guide/",
+  "/docs/react-storybook/basics/slow-start-guide/",
+  "/docs/react-storybook/basics/writing-stories/",
+  "/docs/react-storybook/basics/exporting-storybook/",
+  "/docs/react-storybook/basics/faq/",
+  "/docs/react-storybook/basics/community/",
+]
+configurations = [
+  "/docs/react-storybook/configurations/default-config/",
+  "/docs/react-storybook/configurations/custom-webpack-config/",
+  "/docs/react-storybook/configurations/custom-babel-config/",
+  "/docs/react-storybook/configurations/add-custom-head-tags/",
+  "/docs/react-storybook/configurations/serving-static-files/",
+  "/docs/react-storybook/configurations/env-vars/",
+  "/docs/react-storybook/configurations/cli-options/",
+]
+testing = [
+  "/docs/react-storybook/testing/react-ui-testing/",
+  "/docs/react-storybook/testing/structural-testing/",
+  "/docs/react-storybook/testing/interaction-testing/",
+  "/docs/react-storybook/testing/css-style-testing/",
+  "/docs/react-storybook/testing/manual-testing/",
+]
+addons = [
+  "/docs/react-storybook/addons/introduction/",
+  "/docs/react-storybook/addons/using-addons/",
+  "/docs/react-storybook/addons/addon-gallery/",
+  "/docs/react-storybook/addons/writing-addons/",
+  "/docs/react-storybook/addons/api/",
+]

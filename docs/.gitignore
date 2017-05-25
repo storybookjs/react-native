@@ -1,0 +1,12 @@
+node_modules
+*.log
+.idea
+npm-shrinkwrap.json
+dist
+.tern-port
+*.DS_Store
+*.lerna_backup
+build
+packages/examples/automated-*
+yarn.lock
+public
