@@ -1,6 +1,6 @@
 {
   "name": "@storybook/cli",
-  "version": "3.0.0-alpha.5",
+  "version": "3.0.0-rc.0",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
   "bin": {
     "getstorybook": "./bin/generate.js"
