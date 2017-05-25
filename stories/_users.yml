@@ -27,13 +27,5 @@ algolia:
   demo: https://community.algolia.com/react-instantsearch/storybook/
 postmates:
   logo: ./logos/postmates.png
-  title: Quran.com
+  title: Postmates
   site: https://postmates.com
-coursera:
-  logo: ./logos/cousersa.svg
-  title: Coursera
-  site: https://coursera.org
-mozilla:
-  logo: ./logos/mozilla.svg
-  title: Mozilla Foundation
-  site: https://mozilla.org
