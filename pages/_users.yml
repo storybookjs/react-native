@@ -9,15 +9,8 @@ slack:
   logo: ./logos/slack.svg
   title: Slack Emoji Picker
   description: Slack improves performance and maintainability with Storybook!
-  article: https://slack.engineering/rebuilding-slacks-emoji-picker-in-react-bfbd8ce6fbfe
+  demo: https://slack.engineering/rebuilding-slacks-emoji-picker-in-react-bfbd8ce6fbfe
   site: http://slack.com
-# buffer:
-#   logo: ./logos/buffer.svg
-#   title: Buffer Components
-#   description: A collection of Buffer UI React components.
-#   source: https://github.com/bufferapp/buffer-components
-#   demo: https://bufferapp.github.io/buffer-components/
-#   site: https://buffer.com
 lonelyplanet:
   logo: ./logos/lonelyplanet.svg
   title: Lonely Planet
@@ -25,10 +18,22 @@ lonelyplanet:
   source: https://github.com/lonelyplanet/backpack-ui
   demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
+squarespace:
+  logo: ./logos/squarespace.png
+  title: Squarespace
+  description: Component design and development at Squarespace
+  site: http://squarespace.com
 coursera:
   logo: ./logos/coursera.svg
   title: Coursera
   site: https://coursera.org
+# buffer:
+#   logo: ./logos/buffer.svg
+#   title: Buffer Components
+#   description: A collection of Buffer UI React components.
+#   source: https://github.com/bufferapp/buffer-components
+#   demo: https://bufferapp.github.io/buffer-components/
+#   site: https://buffer.com
 # wix:
 #   logo: ./logos/wix.svg
 #   title: Wix
@@ -42,10 +47,10 @@ coursera:
 #   description: Lightning-fast, hyper-configurable search.
 #   source: https://github.com/algolia/react-instantsearch/
 #   demo: https://community.algolia.com/react-instantsearch/storybook/
-mozilla:
-  logo: ./logos/mozilla.svg
-  title: Mozilla Foundation
-  site: https://mozilla.org
+# mozilla:
+#   logo: ./logos/mozilla.svg
+#   title: Mozilla Foundation
+#   site: https://mozilla.org
 # remitly:
 #   logo: ./logos/remitly.svg
 #   title: Remitly
