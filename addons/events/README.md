@@ -6,10 +6,9 @@ This [storybook](https://storybooks.js.org) ([source](https://github.com/storybo
 [Storybook Addon Events Live Demo](https://z4o4z.github.io/storybook-addon-events/index.html)
 
 ### Getting Started
-**note: addons require @kadira/storybook 2.x or greater*
 
 ```sh
-npm i --save-dev @z4o4z/storybook-addon-events
+npm i --save-dev @storybook/addon-events
 ```
 
 Then create a file called `addons.js` in your storybook config.
@@ -17,8 +16,9 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@kadira/storybook/addons';
-import '@z4o4z/storybook-addon-events/register';
+import '@storybook/addons-actions';
+import '@storybook/addons-links';
+import '@storybook/addon-events/register';
 ```
 
 Then write your stories like this:
@@ -26,8 +26,8 @@ Then write your stories like this:
 ```js
 import React from 'react';
 import EventEmiter from 'event-emiter';
-import { storiesOf } from '@kadira/storybook';
-import WithEvents from '@z4o4z/storybook-addon-events';
+import { storiesOf } from '@storybook/react';
+import WithEvents from '@storybook/addon-events';
 
 import Logger from './Logger';
 import * as EVENTS from './events';
