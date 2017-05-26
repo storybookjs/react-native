@@ -1,10 +1,10 @@
 {
-  "name": "@z4o4z/storybook-addon-events",
-  "version": "1.1.0",
+  "name": "@storybook/addon-events",
+  "version": "3.1.0-alpha",
   "description": "Add events to your Storybook stories.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/z4o4z/storybook-addon-events.git"
+    "url": "git@github.com:storybooks/storybook.git"
   },
   "license": "MIT",
   "scripts": {

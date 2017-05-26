@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import Textarea from 'react-textarea-autosize';
+import React, { Component } from 'react';
 import json from 'format-json';
+import Textarea from 'react-textarea-autosize';
+import PropTypes from 'prop-types';
 
 const styles = {
   item: {
@@ -11,7 +12,10 @@ const styles = {
   },
   button: {
     display: 'inline-block',
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: `
+      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+    `,
     fontSize: 14,
     padding: 10,
     margin: 10,
@@ -39,7 +43,7 @@ export default class Item extends Component {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    payload: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    payload: PropTypes.any,
   };
 
   static defaultProps = {

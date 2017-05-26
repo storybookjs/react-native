@@ -1,13 +1,17 @@
-import React, { Component, PropTypes } from 'react';
-import EventEmiter from 'eventemitter3';
+import React, { Component } from 'react';
 import json from 'format-json';
+import PropTypes from 'prop-types';
+import EventEmiter from 'eventemitter3';
 
-import * as EVENTS from './events';
+import { EVENTS } from '../constants';
 
 const styles = {
   wrapper: {
     padding: 20,
-    fontFamily: 'Areal, sans-serif',
+    fontFamily: `
+      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+    `,
     color: 'rgb(51, 51, 51)',
   },
   item: {

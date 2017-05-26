@@ -4,8 +4,8 @@ import EventEmiter from 'eventemitter3';
 
 import WithEvents from '../dist/index';
 
-import Logger from './Logger';
-import * as EVENTS from './events';
+import Logger from './components/Logger';
+import { EVENTS } from './constants';
 
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
@@ -23,7 +23,7 @@ storiesOf('WithEvents', module)
         {
           name: EVENTS.TEST_EVENT_2,
           title: 'Test event 2',
-          payload: 'asdasdad asdasdasd',
+          payload: 'Test event 2',
         },
         {
           name: EVENTS.TEST_EVENT_3,

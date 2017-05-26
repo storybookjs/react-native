@@ -1,12 +1,18 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import addons from '@storybook/addons';
+import PropTypes from 'prop-types';
 
-import Item from './components/Item';
+import { EVENTS } from '../constants';
+
+import Event from './Event';
 
 const styles = {
   wrapper: {
     margin: 10,
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: `
+      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+    `,
     fontSize: 14,
     width: '100%',
     color: 'rgb(51, 51, 51)',
@@ -31,7 +37,7 @@ export default class Events extends Component {
   };
 
   componentDidMount() {
-    this.props.channel.on('z4o4z/events/add', this.onAdd);
+    this.props.channel.on(EVENTS.ADD, this.onAdd);
 
     this.stopListeningOnStory = this.props.api.onStory(() => {
       this.onAdd([]);
@@ -44,7 +50,7 @@ export default class Events extends Component {
     }
 
     this.unmounted = true;
-    this.props.channel.removeListener('z4o4z/events/add', this.onAdd);
+    this.props.channel.removeListener(EVENTS.ADD, this.onAdd);
   }
 
   onAdd = events => {
@@ -52,21 +58,14 @@ export default class Events extends Component {
   };
 
   onEmit = event => {
-    this.props.channel.emit('z4o4z/events/emit', event);
+    this.props.channel.emit(EVENTS.EMIT, event);
   };
 
   render() {
     return (
       <div style={styles.wrapper}>
-        {this.state.events.map((event, i) => <Item key={i} {...event} onEmit={this.onEmit} />)}
+        {this.state.events.map((event, i) => <Event key={i} {...event} onEmit={this.onEmit} />)}
       </div>
     );
   }
 }
-
-addons.register('z4o4z/events', api => {
-  addons.addPanel('z4o4z/events/panel', {
-    title: 'Events',
-    render: () => <Events channel={addons.getChannel()} api={api} />,
-  });
-});
