@@ -19,7 +19,7 @@ module.exports = {
       printWidth: 100,
       tabWidth: 2,
       bracketSpacing: true,
-      trailingComma: 'all',
+      trailingComma: 'es5',
       singleQuote: true,
     }],
     quotes: ['warn', 'single'],

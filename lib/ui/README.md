@@ -10,6 +10,8 @@ Storybook UI the core UI of [storybook](https://storybooks.js.org).
 It's a React based UI which you can initialize with a simple function.
 You can configure it by providing a provider API.
 
+## Table of Contents
+
 ![Storybook UI Demo](./docs/storybook-ui-demo.png)
 
 ## Usage

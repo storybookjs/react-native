@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import backgrounds from 'react-storybook-addon-backgrounds';
 
 storiesOf(
-  'Button',
+  'Button'
 ).addWithInfo(
   'simple usage',
   'This is the basic usage with the button with providing a label to show the text.',
@@ -18,7 +18,7 @@ storiesOf(
         Click the "?" mark at top-right to view the info.
       </p>
     </div>
-  ),
+  )
 );
 
 storiesOf('Button').addWithInfo(
@@ -27,7 +27,7 @@ storiesOf('Button').addWithInfo(
       This is the basic usage with the button with providing a label to show the text.
     `,
   () => <Button label="The Button" onClick={action('onClick')} />,
-  { inline: true },
+  { inline: true }
 );
 
 storiesOf('Button').addWithInfo(
@@ -36,7 +36,7 @@ storiesOf('Button').addWithInfo(
       This is the basic usage with the button with providing a label to show the text.
     `,
   () => <Button label="The Button" onClick={action('onClick')} />,
-  { source: false, inline: true },
+  { source: false, inline: true }
 );
 
 storiesOf('Button').addWithInfo(
@@ -45,7 +45,7 @@ storiesOf('Button').addWithInfo(
       This is the basic usage with the button with providing a label to show the text.
     `,
   () => <Button label="The Button" onClick={action('onClick')} />,
-  { header: false, inline: true },
+  { header: false, inline: true }
 );
 
 storiesOf('Button').addWithInfo(
@@ -54,7 +54,7 @@ storiesOf('Button').addWithInfo(
       This is the basic usage with the button with providing a label to show the text.
     `,
   () => <Button label="The Button" onClick={action('onClick')} />,
-  { propTables: false, inline: true },
+  { propTables: false, inline: true }
 );
 
 storiesOf('Button').addWithInfo(
@@ -81,7 +81,7 @@ storiesOf('Button').addWithInfo(
       <br />
     </div>
   ),
-  { inline: true, propTables: [Button] },
+  { inline: true, propTables: [Button] }
 );
 
 storiesOf('Button').addWithInfo(
@@ -111,7 +111,7 @@ storiesOf('Button').addWithInfo(
         Click the "?" mark at top-right to view the info.
       </p>
     </div>
-  ),
+  )
 );
 
 storiesOf('Button').addWithInfo(
@@ -134,7 +134,7 @@ storiesOf('Button').addWithInfo(
     </p>
   </div>,
   () => <Button label="The Button" onClick={action('onClick')} />,
-  { inline: true },
+  { inline: true }
 );
 
 storiesOf('Button')
@@ -155,5 +155,5 @@ storiesOf('Button')
         };
         return stylesheet;
       },
-    },
+    }
   );
