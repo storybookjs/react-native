@@ -11,7 +11,7 @@ const MainLinks = () => (
             <h2>Try Now</h2>
             <pre>
               <code>
-                npm i -g getstorybook<br />
+                npm i -g @storybook/cli<br />
                 cd my-react-app<br />
                 getstorybook<br />
               </code>
