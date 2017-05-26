@@ -22,8 +22,8 @@ npm install @storybook/codemod
 Updates package names in imports to include our organisation name prefix
 (`@storybook/`), stripping off the old `@storybook/` prefix.
 
-```js
-> jscodeshift -t add-organisation-to-package-name path/to/source.js
+```sh
+jscodeshift -t add-organisation-to-package-name path/to/source.js
 ```
 
 Example:

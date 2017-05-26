@@ -16,7 +16,7 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ## Getting Started
 
-```js
+```sh
 npm i -g @storybook/cli
 cd my-react-app
 getstorybook

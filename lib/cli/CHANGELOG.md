@@ -42,8 +42,8 @@ For more info check [docs](https://github.com/kadirahq/getstorybook#yarn-support
 
 Fix an issue related to Meteor.
 
-  * Related issue: [kadirahq/react-storybook#423](https://github.com/kadirahq/react-storybook/issues/423)
-  * The fix: [088eecf](https://github.com/kadirahq/getstorybook/commit/088eecf740bebf522b6608892a3a7e3e34bcfc31)
+* Related issue: [kadirahq/react-storybook#423](https://github.com/kadirahq/react-storybook/issues/423)
+* The fix: [088eecf](https://github.com/kadirahq/getstorybook/commit/088eecf740bebf522b6608892a3a7e3e34bcfc31)
 
 ### v1.4.4
 30-Aug-2016
@@ -65,8 +65,8 @@ This is a mistakenly published version.
 ### v1.4.1
 26-Aug-2016
 
-* [RN] Automate setting app name on entry files [PR12](https://github.com/kadirahq/getstorybook/pull/12)
-* [RN] Add entry javascript file for Android [PR13](https://github.com/kadirahq/getstorybook/pull/13)
+* `RN` Automate setting app name on entry files [PR12](https://github.com/kadirahq/getstorybook/pull/12)
+* `RN` Add entry javascript file for Android [PR13](https://github.com/kadirahq/getstorybook/pull/13)
 
 ### v1.4.0
 25-Aug-2016

@@ -156,8 +156,8 @@ Add a potential fix to [558](https://github.com/storybooks/react-storybook/issue
 Add react docgen info into React classes with the react-docgen babel plugin. [PR557](https://github.com/storybooks/react-storybook/pull/557).
 With this:
 
-  * We could get docgen info with any React component class using `ClassName.__docgenInfo`.
-  * From the global collection: `STORYBOOK_REACT_CLASSES`
+* We could get docgen info with any React component class using `ClassName.__docgenInfo`.
+* From the global collection: `STORYBOOK_REACT_CLASSES`
 
 Additionally, added `yarn.lock`.
 
@@ -400,8 +400,8 @@ So, this introduced a huge area to add customizations to Storybook.
 
 Unfortunately, as of this version, there are no docs for this feature. But, you can have a look at these addons:
 
-* actions addon (powers the action logger): https://github.com/kadirahq/storybook-addon-actions
-* links addon (powers the linkTo feature): https://github.com/kadirahq/storybook-addon-links
+* actions addon (powers the action logger): [addon-actions](https://github.com/kadirahq/storybook-addon-actions)
+* links addon (powers the linkTo feature): [addon-links](https://github.com/kadirahq/storybook-addon-links)
 
 Have a look at [here](https://github.com/storybooks/react-storybook/blob/master/src/server/config.js#L88) to how to configure addons.
 

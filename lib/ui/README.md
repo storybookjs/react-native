@@ -64,13 +64,15 @@ Then you'll get a UI like this:
 ### .setOptions([option])
 
 ```js
-handleAPI(api) {
-  api.setOptions({
-    name: 'My Component', // change the name displayed in the left top portion
-    url: 'https://github.com/user/my-component', // change its URL
-    sortStoriesByKind: true // Sort the list of stories by their "kind"
-  });
-}
+class ReactProvider extends Provider {
+  handleAPI(api) {
+    api.setOptions({
+      name: 'My Component', // change the name displayed in the left top portion
+      url: 'https://github.com/user/my-component', // change its URL
+      sortStoriesByKind: true // Sort the list of stories by their "kind"
+    });
+  }
+};
 ```
 
 ## .setStories([stories])
@@ -78,18 +80,20 @@ handleAPI(api) {
 This API is used to pass the`kind` and `stories` list to storybook-ui.
 
 ```js
-handleAPI(api) {
-  api.setStories([
-    {
-      kind: 'Component 1',
-      stories: ['State 1', 'State 2']
-    },
+class ReactProvider extends Provider {
+  handleAPI(api) {
+    api.setStories([
+      {
+        kind: 'Component 1',
+        stories: ['State 1', 'State 2']
+      },
 
-    {
-      kind: 'Component 2',
-      stories: ['State a', 'State b']
-    }
-  ]);
+      {
+        kind: 'Component 2',
+        stories: ['State a', 'State b']
+      }
+    ]);
+  }
 }
 ```
 
@@ -98,10 +102,12 @@ handleAPI(api) {
 You can use to listen to the story change and update the preview.
 
 ```js
-handleAPI(api) {
-  api.onStory((kind, story) => {
-      this.globalState.emit('change', kind, story);
-  });
+class ReactProvider extends Provider {
+  handleAPI(api) {
+    api.onStory((kind, story) => {
+        this.globalState.emit('change', kind, story);
+    });
+  }
 }
 ```
 

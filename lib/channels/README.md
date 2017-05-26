@@ -10,27 +10,27 @@ Storybook Channel is similar to an EventEmitter.
 Channels are used with Storybook implementations to send/receive events between the Storybook Manager and the Storybook Renderer.
 
 ```js
-Channel {
-  addListener(type, listener)
-  emit(type, ...args)
-  eventNames()
-  listenerCount(type)
-  listeners(type)
-  on(type, listener)
-  once(type, listener)
-  prependListener(type, listener)
-  prependOnceListener(type, listener)
-  removeAllListeners(type)
-  removeListener(type, listener)
+class Channel {
+  addListener(type, listener) {}
+  emit(type, ...args) {}
+  eventNames() {}
+  listenerCount(type) {}
+  listeners(type) {}
+  on(type, listener) {}
+  once(type, listener) {}
+  prependListener(type, listener) {}
+  prependOnceListener(type, listener) {}
+  removeAllListeners(type) {}
+  removeListener(type, listener) {}
 }
 ```
 
 The channel takes a Transport object as a parameter which will be used to send/receive messages. The transport object should implement this interface.
 
 ```js
-Transport {
-  send(event)
-  setHandler(handler)
+class Transport {
+  send(event) {}
+  setHandler(handler) {}
 }
 ```
 
