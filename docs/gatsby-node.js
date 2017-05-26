@@ -18,7 +18,7 @@ function pagesToSitemap(pages) {
 
 function generateSitemap(pages) {
   const sitemap = sm.createSitemap({
-    hostname: 'https://storybooks.js.org',
+    hostname: 'https://storybook.js.org',
     cacheTime: '60000',
     urls: pagesToSitemap(pages),
   });

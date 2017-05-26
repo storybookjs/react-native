@@ -14,7 +14,7 @@ class Navigation extends React.Component {
 
   renderItem(section, item) {
     const { prefix = '', selectedSection, selectedItem } = this.props;
-    const href = `${prefix}/docs/${section.id}/${item.id}`;
+    const href = `${prefix}/${section.id}/${item.id}`;
 
     let style = styles.item;
     if (selectedSection === section.id && selectedItem === item.id) {

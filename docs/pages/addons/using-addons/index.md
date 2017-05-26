@@ -3,11 +3,11 @@ id: 'using-addons'
 title: 'Using Addons'
 ---
 
-Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybooks/storybook/tree/master/packages/addon-actions) and [links](https://github.com/storybooks/storybook/tree/master/packages/addon-links). But it's easy to use any third party addons distributed via NPM.
+Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybooks/storybook/tree/master/addon/actions) and [links](https://github.com/storybooks/storybook/tree/master/addon/links). But it's easy to use any third party addons distributed via NPM.
 
 Here's how to do it.
 
-We are going to use an addon called [Notes](https://github.com/storybooks/storybook/tree/master/packages/addon-notes). Basically, it allows you to write notes for your stories.
+We are going to use an addon called [Notes](https://github.com/storybooks/storybook/tree/master/addon/notes). Basically, it allows you to write notes for your stories.
 
 First, we need to install the addons:
 

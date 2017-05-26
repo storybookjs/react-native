@@ -7,24 +7,16 @@ import './style.css';
 
 class Container extends React.Component {
   render() {
-    const {
-      categories,
-      selectedCatId,
-      sections,
-      selectedItem,
-      selectedSectionId,
-      selectedItemId,
-    } = this.props;
+    const { sections, selectedItem, selectedSectionId, selectedItemId } = this.props;
 
-    const gitHubRepoUrl = 'https://github.com/storybooks/storybooks.github.io';
-    const docPath = `${selectedCatId}/${selectedSectionId}/${selectedItemId}`;
-    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/source/pages/docs/${docPath}/index.md`;
+    const gitHubRepoUrl = 'https://github.com/storybooks/storybook';
+    const docPath = `${selectedSectionId}/${selectedItemId}`;
+    const gitHubRepoDocUrl = `${gitHubRepoUrl}/tree/master/docs/pages/${docPath}/index.md`;
 
     return (
       <div id="docs-container" className="row">
         <div className="nav col-sm-3 col-md-3 hidden-xs">
           <Nav
-            selectedCatId={selectedCatId}
             sections={sections}
             selectedSection={selectedItem.section}
             selectedItem={selectedItem.id}
@@ -35,7 +27,6 @@ class Container extends React.Component {
         <div className="content col-xs-12 col-sm-9 col-md-9 col-lg-9">
           <div className="nav-dropdown">
             <NavDropdown
-              selectedCatId={selectedCatId}
               sections={sections}
               selectedSection={selectedItem.section}
               selectedItem={selectedItem.id}
@@ -50,7 +41,6 @@ class Container extends React.Component {
 
           <div className="nav-dropdown">
             <NavDropdown
-              selectedCatId={selectedCatId}
               sections={sections}
               selectedSection={selectedItem.section}
               selectedItem={selectedItem.id}
@@ -63,8 +53,6 @@ class Container extends React.Component {
 }
 
 Container.propTypes = {
-  categories: PropTypes.array,
-  selectedCatId: PropTypes.string,
   sections: PropTypes.array,
   selectedItem: PropTypes.object,
   selectedSectionId: PropTypes.string,

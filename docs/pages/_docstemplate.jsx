@@ -39,6 +39,7 @@ const getSelectedItem = (children, sectionId) => {
 const parsePath = path => {
   const comps = path.split('/');
   const [empty, itemId, sectionId, catId, ...rest] = comps.reverse();
+  console.log([empty, itemId, sectionId, catId, ...rest]);
   return { catId, sectionId, itemId };
 };
 

@@ -5,12 +5,12 @@ import './style.css';
 
 class Nav extends React.Component {
   renderNavItem(section, item) {
-    const { selectedCatId, selectedSectionId, selectedItemId } = this.props;
+    const { selectedSectionId, selectedItemId } = this.props;
     const cssClass = section.id === selectedSectionId && item.id === selectedItemId
       ? 'selected'
       : '';
 
-    const url = `/docs/${selectedCatId}/${section.id}/${item.id}/`;
+    const url = `/${section.id}/${item.id}/`;
 
     return (
       <li key={item.id}>
@@ -42,7 +42,6 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-  selectedCatId: PropTypes.string,
   sections: PropTypes.array,
   selectedItem: PropTypes.string,
   prefix: PropTypes.string,

@@ -12,7 +12,7 @@ We use Babel for JavaScript(ES6) transpiling. Here are some key features of Stor
 
 ### ES2016+ Support
 
-We have added ES2016 support with Babel for transpiling your JS code. In addition to that, we've added a few experimental features, like object spreading and async await. Check out our [source](https://github.com/storybooks/storybook/blob/master/packages/react-storybook/src/server/config/babel.js#L19) to learn more about these plugins.
+We have added ES2016 support with Babel for transpiling your JS code. In addition to that, we've added a few experimental features, like object spreading and async await. Check out our [source](https://github.com/storybooks/storybook/blob/master/app/react/src/server/config/babel.js#L19) to learn more about these plugins.
 
 ### .babelrc support
 
@@ -30,7 +30,8 @@ Basically, you can import CSS like this:
 
 ```js
 // locally
-import './styles.css'
+import './styles.css';
+
 // or from NPM modules
 import 'bootstrap/dist/css/bootstrap.css';
 ```
@@ -40,7 +41,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 You can also import images and media files directly via JavaScript. This helps you to write stories with media files easily. This is how to do it:
 
 ```js
-import React from 'react';
+import React from 'react';;
 import { storiesOf } from '@storybook/react';
 
 import imageFile from './static/image.png';

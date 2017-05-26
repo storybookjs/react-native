@@ -89,11 +89,11 @@ storiesOf('Button', module)
 
 Native addons use Storybook as a platform and interact with it. Native addons can add extra features beyond wrapping stories.
 
-For example, [storybook-actions](https://github.com/storybooks/storybook/tree/master/packages/addon-actions) is such an addon.
+For example, [storybook-actions](https://github.com/storybooks/storybook/tree/master/addon/actions) is such an addon.
 
 ![Demo of Storybook Addon Actions](../static/addon-actions-demo.gif)
 
-> This addon ships with Storybook by default. [Check here](https://github.com/storybooks/storybook/tree/master/packages/addon-actions) for more info.
+> This addon ships with Storybook by default. [Check here](https://github.com/storybooks/storybook/tree/master/addon/actions) for more info.
 
 It will allow you to inspect the parameters of any event of your components.
 

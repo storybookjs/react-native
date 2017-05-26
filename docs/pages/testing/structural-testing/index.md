@@ -20,7 +20,7 @@ If things are not the same, we can do two things:
 
 ## Using StoryShots
 
-[StoryShots](https://github.com/storybooks/storybook/tree/master/packages/storyshots) is our integration between Storybook and Jest Snapshot Testing. It's pretty simple to use.
+[StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) is our integration between Storybook and Jest Snapshot Testing. It's pretty simple to use.
 
 First, make sure you are inside a Storybook-enabled repo (make sure it has few stories).
 Then, install StoryShots into your app with:
@@ -55,4 +55,4 @@ After you complete any changes, you can run the above NPM script again and fin
 
 * * *
 
-StoryShots also comes with a few important [productive features](https://github.com/storybooks/storybook/tree/master/packages/storyshots#key-features) that can be customized. Have a look at the StoryShots [repo](https://github.com/storybooks/storybook/tree/master/packages/storyshots) for more information.
+StoryShots also comes with a few important [productive features](https://github.com/storybooks/storybook/tree/master/addons/storyshots#key-features) that can be customized. Have a look at the StoryShots [repo](https://github.com/storybooks/storybook/tree/master/addons/storyshots) for more information.

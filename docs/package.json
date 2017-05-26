@@ -1,7 +1,7 @@
 {
-  "name": "storybooks.js.org",
+  "name": "storybook.js.org",
   "private": true,
-  "description": "storybooks.js.org documentation",
+  "description": "storybook.js.org documentation",
   "version": "1.0.0",
   "dependencies": {
     "bootstrap": "^3.3.7",

@@ -78,13 +78,16 @@ this project. [Get started here](CONTRIBUTING.md)
 ### Development scripts
 
 #### `npm run bootstrap`
+
 > Installs package dependencies and links packages together - using lerna
 
-#### ` npm run publish`
+#### `npm run publish`
+
 > Push a release to git and npm
 > will ask for version in interactive mode - using lerna.
 
 #### `npm run lint`
+
 > boolean check if code conforms to linting rules - uses remark & eslint
 
 -   `npm run lint:js` - will check js
@@ -94,6 +97,7 @@ this project. [Get started here](CONTRIBUTING.md)
 -   `npm run lint:markdown -- -o` - will autofix markdown
 
 #### `npm run test`
+
 > boolean check if unittests all pass - uses jest
 
 -   `npm run test:watch` - will run tests in watchmode

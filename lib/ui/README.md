@@ -13,7 +13,21 @@ You can configure it by providing a provider API.
 
 ## Table of Contents
 
-![Storybook UI Demo](./docs/storybook-ui-demo.png)
+-   [Usage](#usage)
+-   [API](#api)
+    -   [.setOptions()](#setoptions)
+-   [.setStories()](#setstories)
+-   [.onStory()](#onstory)
+-   [Hacking Guide](#hacking-guide)
+    -   [The App](#the-app)
+    -   [Changing UI](#changing-ui)
+    -   [Redux](#redux)
+    -   [Mounting](#mounting)
+    -   [App Context](#app-context)
+    -   [Actions](#actions)
+    -   [Core API](#core-api)
+    -   [Keyboard Shortcuts](#keyboard-shortcuts)
+    -   [URL Changes](#url-changes)
 
 ## Usage
 

@@ -8,25 +8,15 @@ import './style.css';
 
 class Docs extends React.Component {
   render() {
-    const {
-      categories,
-      selectedCatId,
-      sections,
-      selectedItem,
-      selectedSectionId,
-      selectedItemId,
-    } = this.props;
+    const { sections, selectedItem, selectedSectionId, selectedItemId } = this.props;
 
-    const selectedCat = categories.find(cat => cat.id === selectedCatId);
-    const headTitle = `${selectedItem.title} - ${selectedCat.title}`;
+    const headTitle = `${selectedItem.title}`;
 
     return (
       <div className="container">
         <Helmet title={headTitle} />
         <Header currentSection="docs" />
         <Container
-          categories={categories}
-          selectedCatId={selectedCatId}
           sections={sections}
           selectedItem={selectedItem}
           selectedSectionId={selectedSectionId}
@@ -39,8 +29,6 @@ class Docs extends React.Component {
 }
 
 Docs.propTypes = {
-  categories: PropTypes.array,
-  selectedCatId: PropTypes.string,
   sections: PropTypes.array,
   selectedItem: PropTypes.object,
   selectedSectionId: PropTypes.string,
