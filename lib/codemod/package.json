@@ -10,5 +10,12 @@
   "main": "src/index.js",
   "dependencies": {
     "jscodeshift": "^0.3.30"
+  },
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js && mv dist/transforms/* dist"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "shelljs": "^0.7.7"
   }
 }
