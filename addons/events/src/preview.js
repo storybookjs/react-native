@@ -12,7 +12,7 @@ export default class WithEvents extends Component {
         name: PropTypes.string,
         title: PropTypes.string,
         payload: PropTypes.any,
-      }),
+      })
     ).isRequired,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
   };
