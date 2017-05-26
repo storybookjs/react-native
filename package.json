@@ -49,10 +49,10 @@
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "coverage": "codecov",
-    "build:docs": "cd docs && gatsby build && cp static/* .travis.yml ./public",
-    "deploy": "#gh-pages -t -r git@github.com:storybooks/storybook.git -d public -o origin -b docs",
-    "deploy-travis": "#gh-pages -t -r https://${GH_TOKEN}@github.com/storybooks/storybook.git -d public -o origin -b docs",
-    "dev:docs": "gatsby develop"
+    "docs:build": "cd docs && npm run build",
+    "docs:deploy:manual": "cd docs && npm run deploy:manual",
+    "docs:deploy:ci": "cd docs && npm run deploy:ci",
+    "docs:dev": "cd docs && npm run dev"
   },
   "collective": {
     "type": "opencollective",
