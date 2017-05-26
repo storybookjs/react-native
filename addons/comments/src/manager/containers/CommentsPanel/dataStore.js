@@ -53,7 +53,7 @@ export default class DataStore {
       () => {
         this._loadUsers().then(() => this._loadComments());
       },
-      1000 * 60, // Reload for every minute
+      1000 * 60 // Reload for every minute
     );
   }
 

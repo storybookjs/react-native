@@ -57,7 +57,7 @@ export default function({ projectDir, configDir, ...options }) {
       getIndexHtml(publicPath, {
         manualId: options.manualId,
         secured: options.secured,
-      }),
+      })
     );
   });
 
