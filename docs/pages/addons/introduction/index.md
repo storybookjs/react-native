@@ -93,8 +93,6 @@ For example, [storybook-actions](https://github.com/storybooks/storybook/tree/ma
 
 ![Demo of Storybook Addon Actions](../static/addon-actions-demo.gif)
 
-> This addon ships with Storybook by default. [Check here](https://github.com/storybooks/storybook/tree/master/addon/actions) for more info.
-
 It will allow you to inspect the parameters of any event of your components.
 
 See the following links to learn more about native addons:

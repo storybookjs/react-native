@@ -27,4 +27,4 @@ Just like that, you can access all of the stories in your Storybook.
 
 It will be hard to use all the frameworks we've [mentioned](/testing/react-ui-testing#3-css-style-testing), but we'll be able to use frameworks which are based on URL as the input source. (Such as [BackstopJS](https://github.com/garris/BackstopJS) and [Gemini](https://github.com/gemini-testing/gemini))
 
-> In the future we are also planning to smooth this process with the help of [StoryShots](https://github.com/storybooks/storyshots).
+> In the future we are also planning to smooth this process with the help of [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots).

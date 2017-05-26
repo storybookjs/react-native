@@ -3,13 +3,17 @@ id: 'custom-webpack-config'
 title: 'Custom Webpack Config'
 ---
 
-**NOTE: Storybook doesn't currently support webpack 2, so write your storybook webpack config to be webpack 1.x-compatable.**
+## Default mode
 
-The default Webpack config of React Storybook is usually well balanced for a medium-size React project (specially created with [Create React App](https://github.com/facebookincubator/create-react-app)) or a library. But if you already have your own Webpack setup, that's not useable.
+The default Webpack config of Storybook is balanced for a medium-size project (specially created with [Create React App](https://github.com/facebookincubator/create-react-app)) or a library. But if you already have your own Webpack setup, that's not useable.
 
-That's why we allow you to customize our Webpack setup. There are a few ways to do it. Let's discuss:
+That's why we allow you to customize our Webpack setup by providing a `webpack.config.js` file exporting a **webpack 2** compatible config exported as a **commonjs module**.
 
-## Simple Mode
+There are a few ways to do it:
+
+## Extend Mode
+
+You'll get *extend-mode* by returning an object.
 
 Let's say you want to add [SASS](http://sass-lang.com/) support to Storybook. This is how to do it.
 Simply add the following content to a file called `webpack.config.js` in your Storybook config directory (`.storybook` by default ).
@@ -45,9 +49,13 @@ But you won't be able to change the following config options:
 -   output
 -   js loader with babel
 
+For the advanced usage we strongly recommend [full control mode](#full-control-mode).
+
 ## Full Control Mode
 
-Sometimes, you will want to have full control over the webpack configuration. Maybe you want to add different configurations for dev and production environments. That's where you can use our full control mode.
+Sometimes, you will want to have full control over the webpack configuration.
+Maybe you want to add different configurations for dev and production environments.
+That's where you can use our full control mode.
 
 To enable that, you need to export a **function** from the above `webpack.config.js` file, just like this:
 
@@ -78,10 +86,13 @@ Storybook uses the config returned from the above function. So, try to edit the 
 
 Other than that, you should try to keep the default set of plugins.
 
-## Extending The Default Config
+## Full control mode + default
 
-You may want to keep Storybook's [default config](/configurations/default-config), but just need to extend it. If so, this is how you do it using the Full Control Mode.
+You may want to keep Storybook's [default config](/configurations/default-config), but just need to extend it.
+If so, this is how you do it using the Full Control Mode.
 Add following content to the `webpack.config.js` in your Storybook config directory.
+
+> We plan to expose our default webpack-config as it's own package in the future.
 
 ```js
 // load the default config generator.

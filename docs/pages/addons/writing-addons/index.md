@@ -43,8 +43,9 @@ We write a story for our addon like this:
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Button from './Button';
 import { WithNotes } from '../notes-addon';
+
+import Button from './Button';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -133,8 +134,9 @@ That's it. Now you can create notes for any story as shown below:
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Button from './Button';
 import { WithNotes } from '../notes-addon';
+
+import Button from './Button';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -166,11 +168,9 @@ When you are developing your addon as a package, you can't use `npm link` to add
 
 ```json
 {
-  ...
   "dependencies": {
     "@storybook/addon-notes": "file:///home/username/myrepo"
   }
-  ...
 }
 ```
 

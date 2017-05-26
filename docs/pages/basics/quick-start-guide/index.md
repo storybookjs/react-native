@@ -7,7 +7,7 @@ React Storybook is very easy to use. You can use it with any kind of React proje
 Follow these steps to get started with Storybook.
 
 ```sh
-npm i -g getstorybook
+npm i -g @storybook/cli
 cd my-react-app
 getstorybook
 ```

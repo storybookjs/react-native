@@ -104,10 +104,13 @@ configure(function () {
 
 ## Managing stories
 
-Storybook has a very simple API to write stories. With that, you can’t display nested stories.
-_**This is something we've done purposely.**_
+Storybook has a very simple API to write stories.
+With that, you can’t display nested stories.
 
-But you might ask, how do I manage stories If I have many of them? Here's how different developers address this issue. Therefore, there's no need to build a built-in feature for this (at least in the short term).
+But you might ask, how do I manage stories If I have many of them?
+We're currently very much interested in changing our api to support this!
+
+Until that's implemented, here's how different developers address this issue, right now:
 
 ### Prefix with dots
 
@@ -118,6 +121,10 @@ storiesOf('core.Button', module)
 ```
 
 Then you can filter stories to display only the stories you want to see.
+
+### [Chapters](https://github.com/yangshun/react-storybook-addon-chapters)
+With this addon, you can showcase multiple components (or varying component states) within 1 story.
+Break your stories down into smaller categories (chapters) and subcategories (sections) for more organizational goodness.
 
 ### Run multiple storybooks
 
@@ -131,11 +138,3 @@ You can run multiple storybooks for different kinds of stories (or components). 
    }
 }
 ```
-
-### Use multiple repos
-
-This is a popular option. You can create different repos for different kinds of UI components and have a storybook for each of them. Here are some ways to separate them:
-
--   Have one repo for the theme, and one for the app.
--   Have one repo for each UI component and use those in different apps.
--   Have a few repos for different kinds of UI components and use them in different apps.

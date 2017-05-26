@@ -62,6 +62,23 @@ storiesOf('<img>', module)
 > }
 > ```
 
+## 3. Via a CDN
+
+Upload your files to an online CDN and just reference them.
+In this example we're using a placeholder image service.
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+// assume image.png is located in the "public" directory.
+storiesOf('<img>', module)
+  .add('with a image', () => (
+    <img src="https://placehold.it/350x150" />
+  ));
+```
+
+
 ## Absolute versus relative paths
 
 Sometimes, you may want to deploy your storybook into a subpath, like <https://kadira-samples.github.io/react-button>.
