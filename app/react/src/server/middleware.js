@@ -6,7 +6,7 @@ import getBaseConfig from './config/webpack.config';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml, getMiddleware } from './utils';
+import { getHeadHtml, getBodyScript, getMiddleware } from './utils';
 
 export default function(configDir) {
   // Build the webpack configuration using the `getBaseConfig`
@@ -36,7 +36,8 @@ export default function(configDir) {
   middlewareFn(router);
 
   router.get('/', (req, res) => {
-    res.send(getIndexHtml({ publicPath }));
+    const bodyScript = getBodyScript(configDir)
+    res.send(getIndexHtml({ publicPath, bodyScript }));
   });
 
   router.get('/iframe.html', (req, res) => {

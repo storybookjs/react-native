@@ -28,7 +28,7 @@ const managerUrlsFromAssets = assets => {
 };
 
 export default function(data) {
-  const { assets, publicPath } = data;
+  const { assets, publicPath, bodyScript } = data;
 
   const managerUrls = managerUrlsFromAssets(assets);
 
@@ -73,6 +73,7 @@ export default function(data) {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
+        ${bodyScript}
         <script src="${url.resolve(publicPath, managerUrls.js)}"></script>
       </body>
     </html>

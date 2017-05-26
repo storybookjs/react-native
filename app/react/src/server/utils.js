@@ -15,6 +15,17 @@ export function getHeadHtml(configDirPath) {
   return headHtml;
 }
 
+export function getBodyScript(configDirPath) {
+  const scriptPath = path.resolve(configDirPath, 'bodyscript.html');
+  let scriptHtml = '';
+  if (fs.existsSync(scriptPath)) {
+    scriptHtml = fs.readFileSync(scriptPath, 'utf8');
+  }
+
+  return scriptHtml;
+}
+
+
 export function getEnvConfig(program, configEnv) {
   Object.keys(configEnv).forEach(fieldName => {
     const envVarName = configEnv[fieldName];
