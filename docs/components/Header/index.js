@@ -7,7 +7,7 @@ import storybookLogo from '../../design/homepage/storybook-logo.png';
 
 const sections = [
   { id: 'home', caption: 'Home', href: '/' },
-  { id: 'docs', caption: 'Docs', href: '/docs/react-storybook/basics/introduction/' },
+  { id: 'docs', caption: 'Docs', href: '/basics/introduction/' },
   { id: 'examples', caption: 'Examples', href: '/examples/' },
 ];
 

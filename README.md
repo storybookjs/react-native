@@ -77,28 +77,26 @@ this project. [Get started here](CONTRIBUTING.md)
 
 ### Development scripts
 
-#### bootstrap
+#### `npm run bootstrap`
+> Installs package dependencies and links packages together - using lerna
 
-Get ready for development and testing - installs dependencies and links packages together using lerna
+#### ` npm run publish`
+> Push a release to git and npm
+> will ask for version in interactive mode - using lerna.
 
-#### publish
+#### `npm run lint`
+> boolean check if code conforms to linting rules - uses remark & eslint
 
-Push a release to git and npm - will ask for version in interactive mode - using lerna.
+-   `npm run lint:js` - will check js
+-   `npm run lint:markdown` - will check markdown + code samples
 
-#### lint
+-   `npm run lint:js -- --fix` - will autofix js
+-   `npm run lint:markdown -- -o` - will autofix markdown
 
-boolean check if code conforms to linting rules
+#### `npm run test`
+> boolean check if unittests all pass - uses jest
 
-`lint:js` will only check js using eslint
-`lint:markdown` will only check markdown using remark, and code samples using eslint
-
-You can run `npm run lint:js -- --fix` to autofix js and `npm run lint:markdown -- -o` to autofix markdown.
-
-#### test
-
-boolean check if unittests all pass
-
-You can run `npm run test -- --watch` to run tests in watchmode - uses jest
+-   `npm run test:watch` - will run tests in watchmode
 
 ### Backers
 

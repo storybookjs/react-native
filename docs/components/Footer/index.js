@@ -12,7 +12,7 @@ const Footer = () => (
           <center>
             Maintained by the
             {' '}
-            <Link to="/docs/react-storybook/basics/community/">
+            <Link to="/basics/community/">
               Storybook Community
             </Link>
             .
