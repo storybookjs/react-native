@@ -1,13 +1,14 @@
 # Storybook
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
----
+* * *
 
 Storybook is a development environment for UI components.
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
@@ -20,10 +21,22 @@ Storybook runs outside of your app. This allows you to develop UI components in 
 
 Storybook comes with a lot of [addons](https://storybooks.js.org/docs/react-storybook/addons/introduction) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
 
+## Table of contents
+
+-   [Getting Started](#getting-started)
+-   [Projects](#projects)
+    -   [Main Projects](#main-projects)
+    -   [Sub Projects](#sub-projects)
+    -   [Addons](#addons)
+-   [Contributing](#contributing)
+    -   [Backers](#backers)
+    -   [Sponsors](#sponsors)
+
 ## Getting Started
 
 First install storybook:
-```js
+
+```sh
 npm i -g @storybook/cli
 cd my-react-app
 getstorybook
@@ -36,32 +49,34 @@ For full documentation on using Storybook visit: [storybooks.js.org](https://sto
 ## Projects
 
 ### Main Projects
-- [Storybook for react](app/react) - Storybook for React components
-- [Storybook for react-native](app/react-native) - Storybook for React components
+
+-   [Storybook for react](app/react) - Storybook for React components
+-   [Storybook for react-native](app/react-native) - Storybook for React components
 
 ### Sub Projects
-- [CLI](lib/cli) - Streamlined installation for a variety of app types
-- [examples](examples) - Code examples to illustrate different Storybook use cases
+
+-   [CLI](lib/cli) - Streamlined installation for a variety of app types
+-   [examples](examples) - Code examples to illustrate different Storybook use cases
 
 ### Addons
-- [addon-storyshots](addons/storyshots) - Easy snapshot testing for storybook
-- [addon-actions](addons/actions/) - Log actions as users interact with components in storybook
-- [addon-comments](addons/comments/) - Comment on storybook stories
-- [addon-graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
-- [addon-info](addons/info/) - Annotate stories with extra component usage information
-- [addon-knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
-- [addon-notes](addons/notes/) - Annotate storybook stories with notes
-- [addon-options](addons/options/) - Customize the storybook UI in code
+
+-   [addon-storyshots](addons/storyshots) - Easy snapshot testing for storybook
+-   [addon-actions](addons/actions/) - Log actions as users interact with components in storybook
+-   [addon-comments](addons/comments/) - Comment on storybook stories
+-   [addon-graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
+-   [addon-info](addons/info/) - Annotate stories with extra component usage information
+-   [addon-knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
+-   [addon-notes](addons/notes/) - Annotate storybook stories with notes
+-   [addon-options](addons/options/) - Customize the storybook UI in code
 
 ## Contributing
 
 We welcome contributions to Storybook! There are many ways to contribute to
 this project. [Get started here](CONTRIBUTING.md)
 
-
 ### Backers
 
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/storybook#backer)]
+Support us with a monthly donation and help us continue our activities. \[[Become a backer](https://opencollective.com/storybook#backer)]
 
 <a href="https://opencollective.com/storybook/backer/0/website" target="_blank"><img src="https://opencollective.com/storybook/backer/0/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/backer/1/website" target="_blank"><img src="https://opencollective.com/storybook/backer/1/avatar.svg"></a>
@@ -94,10 +109,9 @@ Support us with a monthly donation and help us continue our activities. [[Become
 <a href="https://opencollective.com/storybook/backer/28/website" target="_blank"><img src="https://opencollective.com/storybook/backer/28/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/backer/29/website" target="_blank"><img src="https://opencollective.com/storybook/backer/29/avatar.svg"></a>
 
-
 ### Sponsors
 
-Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/storybook#sponsor)]
+Become a sponsor and get your logo on our README on Github with a link to your site. \[[Become a sponsor](https://opencollective.com/storybook#sponsor)]
 
 <a href="https://opencollective.com/storybook/sponsor/0/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/1/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/1/avatar.svg"></a>
@@ -129,4 +143,3 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/storybook/sponsor/27/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/27/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/28/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/28/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/29/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/29/avatar.svg"></a>
-

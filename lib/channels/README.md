@@ -1,4 +1,5 @@
 # Storybook Channel
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -42,6 +43,6 @@ import addons from '@storybook/addons';
 const channel = addons.getChannel();
 ```
 
----
+* * *
 
 For more information visit: [storybooks.js.org](https://storybooks.js.org)

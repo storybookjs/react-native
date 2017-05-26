@@ -1,4 +1,5 @@
 # Storybook Info Addon
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -47,7 +48,7 @@ storiesOf('Component')
     'simple usage',
     `This is the basic usage with the button with providing a label to show the text.`,
     () => (
-      <Component>Click the "?" mark at top-right to view the info.</Componentp>
+      <Component>Click the "?" mark at top-right to view the info.</Component>
     ),
   );
 ```

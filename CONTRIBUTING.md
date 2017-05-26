@@ -8,37 +8,33 @@ Please review this document to help to streamline the process and save everyone'
 
 No software is bug free. So, if you got an issue, follow these steps:
 
-* Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
-* If non of that is helping, create an issue with with following information:
-  * Clear title (make is shorter if possible).
-  * Describe the issue in clear language.
-  * Share error logs, screenshots and etc.
-  * To speed up the issue fixing process, send us a sample repo with the issue you faced:
+-   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
+-   If non of that is helping, create an issue with with following information:
+    -   Clear title (make is shorter if possible).
+    -   Describe the issue in clear language.
+    -   Share error logs, screenshots and etc.
+    -   To speed up the issue fixing process, send us a sample repo with the issue you faced:
 
 ### Testing against `master`
 
 To test your project against the current latest version of storybook, you can clone the repository and link it with `npm`. Try following these steps:
 
-1. Download the latest version of this project, and build it
+1.  Download the latest version of this project, and build it
 
-  ```
-  git clone https://github.com/storybooks/storybook.git
-  cd storybook
-  npm install
-  npm run bootstrap
-  ```
+        git clone https://github.com/storybooks/storybook.git
+        cd storybook
+        npm install
+        npm run bootstrap
 
-2. Link `storybook` and any other required dependencies
+2.  Link `storybook` and any other required dependencies
 
-  ```
-  cd packages/react-storybook
-  npm link
+        cd packages/react-storybook
+        npm link
 
-  cd <your-project>
-  npm link @kadira/storybook
+        cd <your-project>
+        npm link @kadira/storybook
 
-  # repeat with whichever other parts of the monorepo you are using.
-  ```
+        # repeat with whichever other parts of the monorepo you are using.
 
 ### Reproductions
 
@@ -68,18 +64,18 @@ git remote add <your-username> https://github.com/<your-username>/storybook.git
 git push -u <your-username> master
 ```
 
-If you follow that process, you can then link to the github repository in the issue. See https://github.com/storybooks/storybook/issues/708#issuecomment-290589886 for an example.
+If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the *app's* webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `npm run eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `npm run eject` in the CRA app to get a modifiable webpack config.
 
 ## Pull Requests (PRs)
 
 We welcome your contributions. There are many ways you can help us. This is few of those ways:
 
-* Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
-* Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
-* Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
-* Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
+-   Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
+-   Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
+-   Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
+-   Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
 Before you submit a new PR, make you to run `npm test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
@@ -102,9 +98,10 @@ Issues that are tagged `question / support` or `needs reproduction` are great pl
 Once you've helped out on a few issues, if you'd like triage access you can help label issues and respond to reporters.
 
 We use the following label scheme to categorize issues:
-- **type** - `bug`, `feature`, `question / support`, `discussion`, `greenkeeper`, `maintenance`.
-- **area** - `addon: x`, `addons-api`, `stories-api`, `ui`, etc.
-- **status** - `needs reproduction`, `needs PR`, `in progress`, etc.
+
+-   **type** - `bug`, `feature`, `question / support`, `discussion`, `greenkeeper`, `maintenance`.
+-   **area** - `addon: x`, `addons-api`, `stories-api`, `ui`, etc.
+-   **status** - `needs reproduction`, `needs PR`, `in progress`, etc.
 
 All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `greenkeeper` is for keeping package dependencies up to date. `maintenance` is a catch-all for any kind of cleanup or refactoring.
 
@@ -116,17 +113,17 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ### Closing issues
 
-- Duplicate issues should be closed with a link to the original.
+-   Duplicate issues should be closed with a link to the original.
 
-- Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, it is reasonable to wait 2 weeks before closing).
+-   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, it is reasonable to wait 2 weeks before closing).
 
-- `bug`s should be labeled `merged` when merged, and be closed when the issue is fixed and released.
+-   `bug`s should be labeled `merged` when merged, and be closed when the issue is fixed and released.
 
-- `feature`s, `maintenance`s, `greenkeeper`s should be labeled `merged` when merged, and closed when released or if the feature is deemed not appropriate.
+-   `feature`s, `maintenance`s, `greenkeeper`s should be labeled `merged` when merged, and closed when released or if the feature is deemed not appropriate.
 
-- `question / support`s should be closed when the question has been answered. If the questioner drops offline, a reasonable period to wait is two weeks.
+-   `question / support`s should be closed when the question has been answered. If the questioner drops offline, a reasonable period to wait is two weeks.
 
-- `discussion`s should be closed at a maintainer's discretion.
+-   `discussion`s should be closed at a maintainer's discretion.
 
 ## Development Guide
 
@@ -135,9 +132,7 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
 
-```
-npm run dev
-```
+    npm run dev
 
 This will watch files and transpile.
 

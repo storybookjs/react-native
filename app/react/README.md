@@ -1,4 +1,5 @@
 # Storybook for React
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -24,18 +25,18 @@ getstorybook
 
 For more information visit: [storybooks.js.org](https://storybooks.js.org)
 
----
+* * *
 
 Storybook also comes with a lot of [addons](https://storybooks.js.org/docs/react-storybook/addons/introduction) and a great API to customize as you wish.
 You can also build a [static version](https://storybooks.js.org/docs/react-storybook/basics/exporting-storybook) of your storybook and deploy it anywhere you want.
 
 Here are some featured storybooks that you can reference to see how Storybook works:
 
-* [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
-* [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
+-   [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
+-   [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
 
 ## Docs
 
-* [Basics](https://storybooks.js.org/docs/react-storybook/basics/introduction)
-* [Configurations](https://storybooks.js.org/docs/react-storybook/configurations/default-config)
-* [Addons](https://storybooks.js.org/docs/react-storybook/addons/introduction)
+-   [Basics](https://storybooks.js.org/docs/react-storybook/basics/introduction)
+-   [Configurations](https://storybooks.js.org/docs/react-storybook/configurations/default-config)
+-   [Addons](https://storybooks.js.org/docs/react-storybook/addons/introduction)

@@ -2,8 +2,8 @@
 
 ### v1.0.1
 
-* Public release
+-   Public release
 
 ### v1.0.0
 
-* Implement the channel transport interface
+-   Implement the channel transport interface

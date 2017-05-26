@@ -1,4 +1,5 @@
 # Storybook UI
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -9,8 +10,6 @@
 Storybook UI the core UI of [storybook](https://storybooks.js.org).
 It's a React based UI which you can initialize with a simple function.
 You can configure it by providing a provider API.
-
-## Table of Contents
 
 ![Storybook UI Demo](./docs/storybook-ui-demo.png)
 
@@ -63,7 +62,7 @@ Then you'll get a UI like this:
 
 ## API
 
-### .setOptions([option])
+### .setOptions()
 
 ```js
 class ReactProvider extends Provider {
@@ -77,7 +76,7 @@ class ReactProvider extends Provider {
 };
 ```
 
-## .setStories([stories])
+## .setStories()
 
 This API is used to pass the`kind` and `stories` list to storybook-ui.
 
@@ -112,8 +111,6 @@ class ReactProvider extends Provider {
   }
 }
 ```
-
-
 
 ## Hacking Guide
 

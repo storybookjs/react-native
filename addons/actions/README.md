@@ -1,4 +1,5 @@
 # Storybook Addon Actions
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -20,7 +21,7 @@ You can use this addon without installing it manually.
 
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a **name** to make it easier to identify.
 
-> *Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)*
+> _Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)_
 
 ```js
 import { storiesOf } from '@storybook/react'
