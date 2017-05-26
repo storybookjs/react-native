@@ -9,7 +9,8 @@
       }
     }}],
     ["remark-toc", {
-      "tight": true      
+      "tight": true,
+      "maxDepth": 3
     }]
   ]
 }

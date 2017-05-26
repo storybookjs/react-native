@@ -29,6 +29,7 @@ Storybook comes with a lot of [addons](https://storybooks.js.org/docs/react-stor
     -   [Sub Projects](#sub-projects)
     -   [Addons](#addons)
 -   [Contributing](#contributing)
+    -   [Development scripts](#development-scripts)
     -   [Backers](#backers)
     -   [Sponsors](#sponsors)
 
@@ -60,19 +61,44 @@ For full documentation on using Storybook visit: [storybooks.js.org](https://sto
 
 ### Addons
 
--   [addon-storyshots](addons/storyshots) - Easy snapshot testing for storybook
--   [addon-actions](addons/actions/) - Log actions as users interact with components in storybook
--   [addon-comments](addons/comments/) - Comment on storybook stories
--   [addon-graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
--   [addon-info](addons/info/) - Annotate stories with extra component usage information
--   [addon-knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
--   [addon-notes](addons/notes/) - Annotate storybook stories with notes
--   [addon-options](addons/options/) - Customize the storybook UI in code
+-   [storyshots](addons/storyshots) - Easy snapshot testing for storybook
+-   [actions](addons/actions/) - Log actions as users interact with components in storybook
+-   [comments](addons/comments/) - Comment on storybook stories
+-   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
+-   [info](addons/info/) - Annotate stories with extra component usage information
+-   [knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
+-   [notes](addons/notes/) - Annotate storybook stories with notes
+-   [options](addons/options/) - Customize the storybook UI in code
 
 ## Contributing
 
 We welcome contributions to Storybook! There are many ways to contribute to
 this project. [Get started here](CONTRIBUTING.md)
+
+### Development scripts
+
+#### bootstrap
+
+Get ready for development and testing - installs dependencies and links packages together using lerna
+
+#### publish
+
+Push a release to git and npm - will ask for version in interactive mode - using lerna.
+
+#### lint
+
+boolean check if code conforms to linting rules
+
+`lint:js` will only check js using eslint
+`lint:markdown` will only check markdown using remark, and code samples using eslint
+
+You can run `npm run lint:js -- --fix` to autofix js and `npm run lint:markdown -- -o` to autofix markdown.
+
+#### test
+
+boolean check if unittests all pass
+
+You can run `npm run test -- --watch` to run tests in watchmode - uses jest
 
 ### Backers
 
