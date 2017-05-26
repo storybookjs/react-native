@@ -18,6 +18,6 @@ module.exports = {
         loader: 'file',
         include: path.resolve(__dirname, '../'),
       },
-    ]
-  }
+    ],
+  },
 };
