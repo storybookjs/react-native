@@ -44,7 +44,7 @@
     "bootstrap": "lerna bootstrap",
     "bootstrap:test-cra": "lerna exec --scope test-cra  -- npm i",
     "lint": "npm run lint:js && npm run lint:markdown",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --cache --cache-location=.cache/eslint/main",
     "lint:markdown": "remark .",
     "test": "jest",
     "test:watch": "npm test -- --watch",
