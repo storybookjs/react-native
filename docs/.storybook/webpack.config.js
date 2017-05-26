@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.yml$/,
         loader: 'json!yaml',
-        include: path.resolve(__dirname, '../')
+        include: path.resolve(__dirname, '../'),
       },
       {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
