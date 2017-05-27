@@ -23,10 +23,10 @@ const path = require('path');
 
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"],
+        loaders: ["style-loader", "css-loader", "sass-loader"],
         include: path.resolve(__dirname, '../')
       }
     ]
@@ -67,9 +67,9 @@ module.exports = function(storybookBaseConfig, configType) {
   // 'PRODUCTION' is used when building the static version of storybook.
 
   // Make whatever fine-grained changes you need
-  storybookBaseConfig.module.loaders.push({
+  storybookBaseConfig.module.rules.push({
     test: /\.scss$/,
-    loaders: ["style", "css", "sass"],
+    loaders: ["style-loader", "css-loader", "sass-loader"],
     include: path.resolve(__dirname, '../')
   });
 
