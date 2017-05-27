@@ -17,8 +17,8 @@ npm install jscodeshift
 npm install @storybook/codemod
 ```
 
-- `@storybook/codemod` is out collection of codemod scripts.
-- `jscodeshift` is a tool we use to apply our codemods.
+-   `@storybook/codemod` is out collection of codemod scripts.
+-   `jscodeshift` is a tool we use to apply our codemods.
 
 After running the migration commands, you can remove them from your `package.json`, if you added them.
 
@@ -27,14 +27,14 @@ After running the migration commands, you can remove them from your `package.jso
 From the directory where you installed both `jscodeshift` and `@storybook/codemod` run:
 
 Example:
+
 ```sh
 ./node_modules/.bin/jscodeshift -t ../react-storybook/lib/codemod/dist/update-organisation-name.js . --ignore-pattern "node_modules|dist"
 ```
 
 Explanation:
-```
-<jscodeShiftCommand> -t <transformFileLocation> <pathToSource> --ignore-pattern "<globPatternToIgnore>"
-```
+
+    <jscodeShiftCommand> -t <transformFileLocation> <pathToSource> --ignore-pattern "<globPatternToIgnore>"
 
 ## Transforms
 
@@ -49,12 +49,14 @@ Updates package names in imports to migrate to the new package names of storyboo
 There's a mapping of paths we replace but this example explains the gist of it:
 
 Example:
+
 ```js
 import { storiesOf } from '@kadira/storybook';
 import { storiesOf } from '@kadira/storybook-addon-links';
 ```
 
 Becomes
+
 ```js
 import { storiesOf } from '@storybook/react';
 import { storiesOf } from '@storybook/addon-links';

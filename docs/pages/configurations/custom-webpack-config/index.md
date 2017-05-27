@@ -13,7 +13,7 @@ There are a few ways to do it:
 
 ## Extend Mode
 
-You'll get *extend-mode* by returning an object.
+You'll get _extend-mode_ by returning an object.
 
 Let's say you want to add [SASS](http://sass-lang.com/) support to Storybook. This is how to do it.
 Simply add the following content to a file called `webpack.config.js` in your Storybook config directory (`.storybook` by default ).
