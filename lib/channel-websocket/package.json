@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-websocket",
-  "version": "3.0.0-rc.0",
+  "version": "3.0.0-rc.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -11,6 +11,6 @@
     "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@storybook/channels": "^3.0.0-rc.0"
+    "@storybook/channels": "^3.0.0-rc.2"
   }
 }

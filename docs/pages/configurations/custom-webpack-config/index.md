@@ -13,7 +13,7 @@ There are a few ways to do it:
 
 ## Extend Mode
 
-You'll get *extend-mode* by returning an object.
+You'll get _extend-mode_ by returning an object.
 
 Let's say you want to add [SASS](http://sass-lang.com/) support to Storybook. This is how to do it.
 Simply add the following content to a file called `webpack.config.js` in your Storybook config directory (`.storybook` by default ).
@@ -23,10 +23,10 @@ const path = require('path');
 
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"],
+        loaders: ["style-loader", "css-loader", "sass-loader"],
         include: path.resolve(__dirname, '../')
       }
     ]
@@ -67,9 +67,9 @@ module.exports = function(storybookBaseConfig, configType) {
   // 'PRODUCTION' is used when building the static version of storybook.
 
   // Make whatever fine-grained changes you need
-  storybookBaseConfig.module.loaders.push({
+  storybookBaseConfig.module.rules.push({
     test: /\.scss$/,
-    loaders: ["style", "css", "sass"],
+    loaders: ["style-loader", "css-loader", "sass-loader"],
     include: path.resolve(__dirname, '../')
   });
 

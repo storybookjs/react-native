@@ -11,29 +11,25 @@ Here are all those options:
 
 ## For start-storybook
 
-```
-Usage: start-storybook [options]
+    Usage: start-storybook [options]
 
-Options:
+    Options:
 
-  -h, --help                    output usage information
-  -V, --version                 output the version number
-  -p, --port [number]           Port to run Storybook (Required)
-  -h, --host [string]           Host to run Storybook
-  -s, --static-dir <dir-names>  Directory where to load static files from
-  -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
-```
+      -h, --help                    output usage information
+      -V, --version                 output the version number
+      -p, --port [number]           Port to run Storybook (Required)
+      -h, --host [string]           Host to run Storybook
+      -s, --static-dir <dir-names>  Directory where to load static files from
+      -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
 
 ## For build-storybook
 
-```
-Usage: build-storybook [options]
+    Usage: build-storybook [options]
 
-Options:
+    Options:
 
-  -h, --help                    output usage information
-  -V, --version                 output the version number
-  -s, --static-dir <dir-names>  Directory where to load static files from
-  -o, --output-dir [dir-name]   Directory where to store built files
-  -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
-```
+      -h, --help                    output usage information
+      -V, --version                 output the version number
+      -s, --static-dir <dir-names>  Directory where to load static files from
+      -o, --output-dir [dir-name]   Directory where to store built files
+      -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
