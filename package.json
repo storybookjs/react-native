@@ -73,7 +73,7 @@
       "documentation": "Documentation",
       "maintenance": "Maintenance",
       "greenkeeper": "Dependency Upgrades",
-      "misc": "Other"
+      "other": "Other"
     }
   }
 }
