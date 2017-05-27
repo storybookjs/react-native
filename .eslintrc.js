@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   extends: [
     './node_modules/eslint-config-airbnb-base/rules/es6.js',
   ],

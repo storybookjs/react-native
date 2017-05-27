@@ -1,19 +1,23 @@
 language: node_js
 cache:
   directories:
-    - node_modules
-    - .cache
+  - node_modules
+  - ".cache"
 notifications:
   email: false
 node_js:
-  - "node"
-before_install: ./scripts/travis/before_install.sh
-after_success: ./scripts/travis/after_success.sh
+- node
+before_install: "./scripts/travis/before_install.sh"
+after_success: "./scripts/travis/after_success.sh"
 script:
-  - npm run bootstrap
-  - lerna exec --scope test-cra  -- npm i
-  - npm run lint
-  - npm run test -- --coverage
-  - npm run coverage
+- npm run bootstrap
+- npm run bootstrap:test-cra
+- npm run bootstrap:docs
+- npm run lint
+- npm run test -- --coverage
+- npm run coverage
 git:
   depth: 1
+env:
+  global:
+    secure: cAde4wBX75KtTWcyOOLAG3Z9ODdqvmbkL7+8fVNj/+QkZZWE8pFa3deaTIHF9NyVO2h6/jutSkzmsz/nOyBYVPHhGsxBTmsyXoko48Wg+iNm7epoH5uts/kmAPiwpzaWGXwuiAvsOGZjYYFzM335jyaOAcZW3f0C5gIJ5XCCdWBQRaFFLq+ZLKsLSME6xTfV2OMVH24hxXvbF9wvO0aj6p/GaT0cS8Rpg4sQ9eeih2IM/uLiqWzp9UUM2m8SUiFfveqYJFkBtzqAus9pbwsoQjnAT5e3CKJUpPiruCAe5FOt57Hl+mH1N1xqP1ei8j2ZNF+E6zuDdAcMpArTIMM69L+D7wzJYDoF2PuF+jeet7ytAFxSgnZHSTsBJn5cZMPh2tuX7aWwgrpMknVe3bdoINwkyVCaIW+Ur6vc37l/Kuw25eiMBtRDyMhUf4V3FAFi3PV1XKn+34cR4kvpOHt6vk8v5CobBHfQdwU+6FMZMo3GFIkDBcLydLn3WLQ3jKa4OcLqWws6o85k+bHZkLhlADjbiX/PzG23D+sT7Inzj//Tef93SIL02yN+ooZdIUtDus3+qZzhcSrDeSb2octjLXRzPiGn5cFNI86HVcu7qF0+4zCPconhM4+mfAh5S19fmnRdTQctQQxbsObuT9jcMvgJdhIX89aA7Ry3pAx2b6Q=

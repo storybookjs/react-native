@@ -14,7 +14,6 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@storybook/react": "^3.0.0-rc.0",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "git-url-parse": "^6.2.2",
@@ -26,11 +25,11 @@
     "typescript-definition-tester": "^0.0.5"
   },
   "peerDependencies": {
-    "@storybook/addons": "*",
     "react": "*",
     "react-dom": "*"
   },
   "dependencies": {
+    "@storybook/addons": "*",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "insert-css": "^1.0.0",

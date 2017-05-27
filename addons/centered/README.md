@@ -1,4 +1,5 @@
 # Storybook Centered Decorator
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -18,6 +19,7 @@ npm i @storybook/addon-centered
 ```
 
 #### As a decorator
+
 You can set the decorator locally:
 
 ```js
@@ -46,6 +48,7 @@ configure(function () {
 ```
 
 #### As an extension
+
 1 - Configure the extension
 
 ```js

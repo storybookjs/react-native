@@ -1,4 +1,5 @@
 # Storybook Addon Knobs
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -22,7 +23,7 @@ This is how Knobs look like:
 
 First of all, you need to install knobs into your project as a dev dependency.
 
-```js
+```sh
 npm i -D @storybook/addon-knobs
 ```
 
@@ -70,10 +71,10 @@ You can see your Knobs in a Storybook panel as shown below.
 
 ### Additional Links
 
-* Introduction blog post.
-* Watch this video on how to use knobs
-* [Live Storybook with Knobs](https://goo.gl/uX9WLf)
-* Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
+-   Introduction blog post.
+-   Watch this video on how to use knobs
+-   [Live Storybook with Knobs](https://goo.gl/uX9WLf)
+-   Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
 
 ## Available Knobs
 
@@ -197,7 +198,7 @@ const defaultValue = 'red';
 const value = select(label, options, defaultValue);
 ```
 
-> You can also provide options as an array like this: ['red', 'blue', 'yellow']
+> You can also provide options as an array like this: `['red', 'blue', 'yellow']`
 
 ### date
 
@@ -213,7 +214,7 @@ const value = date(label, defaultValue);
 
 If you are using typescript, make sure you have the type definitions installed for the following libs:
 
-- node
-- react
+-   node
+-   react
 
 You can install them using `npm i -S @types/node @types/react`, assuming you are using Typescript >2.0.

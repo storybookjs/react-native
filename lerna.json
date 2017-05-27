@@ -15,9 +15,9 @@
     }
   },
   "packages": [
+    "addons/*",
     "app/*",
     "lib/*",
-    "addons/*",
     "examples/*"
   ],
   "concurrency": 1
