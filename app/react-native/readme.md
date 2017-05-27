@@ -11,7 +11,7 @@ With Storybook for React Native you can design and develop individual React Nati
 
 ![Storybook Screenshot](docs/assets/readme/screenshot.png)
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)
 
 ## Getting Started
 

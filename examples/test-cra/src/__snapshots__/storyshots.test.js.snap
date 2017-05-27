@@ -170,7 +170,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <a
-      href="https://storybooks.js.org/docs/react-storybook/basics/writing-stories"
+      href="https://storybook.js.org/docs/react-storybook/basics/writing-stories"
       style={
         Object {
           "borderBottom": "1px solid #1474f3",

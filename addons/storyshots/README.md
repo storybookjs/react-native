@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storybooks.js.org/).
+StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storybook.js.org/).
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react) and
@@ -100,7 +100,7 @@ initStoryshots({
 
 ### `framework`
 
-If you are running tests from outside of your app's directory, storyshot's detection of which framework you are using may fail. Pass `"react"` or `"react-native"` to short-circuit this.
+If you are running tests from outside of your app's directory, storyshots' detection of which framework you are using may fail. Pass `"react"` or `"react-native"` to short-circuit this.
 
 ### `test`
 

@@ -117,9 +117,9 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 -   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, it is reasonable to wait 2 weeks before closing).
 
--   `bug`s should be labeled `merged` when merged, and be closed when the issue is fixed and released.
+-   `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
 
--   `feature`s, `maintenance`s, `greenkeeper`s should be labeled `merged` when merged, and closed when released or if the feature is deemed not appropriate.
+-   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged, and closed when released or if the feature is deemed not appropriate.
 
 -   `question / support`s should be closed when the question has been answered. If the questioner drops offline, a reasonable period to wait is two weeks.
 

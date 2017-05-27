@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Storybook GraphiQL Addon can be used to display the GraphiQL IDE with example queries in [Storybook](https://storybooks.js.org).
+Storybook GraphiQL Addon can be used to display the GraphiQL IDE with example queries in [Storybook](https://storybook.js.org).
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react).

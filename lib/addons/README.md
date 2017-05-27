@@ -13,4 +13,4 @@ It stores addon loaders, communication channel and other resources which can be 
 
 * * *
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

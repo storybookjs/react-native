@@ -94,7 +94,7 @@ This is a major release with breaking changes. See our [migration guide](https:/
 -   First pass at update the contribution instructions (<https://github.com/storybooks/storybook/pulls/982>)
 -   Remove text transform uppercase for knob labels (<https://github.com/storybooks/storybook/pulls/991>)
 -   Update links in PRs section of CONTRIBUTING.md (<https://github.com/storybooks/storybook/pulls/992>)
--   Updated dead getstorybook.io links to storybooks.js.org (<https://github.com/storybooks/storybook/pulls/988>)
+-   Updated dead getstorybook.io links to storybook.js.org (<https://github.com/storybooks/storybook/pulls/988>)
 -   Do not ignore story.js in prepublish (<https://github.com/storybooks/storybook/pulls/973>)
 -   addon-info: make the info overlay be fixed  (<https://github.com/storybooks/storybook/pulls/914>)
 -   Update lerna to the latest version 🚀 (<https://github.com/storybooks/storybook/pulls/969>)

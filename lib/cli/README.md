@@ -13,7 +13,7 @@ In the future it will also add other useful generators and migration tooling.
 
 ![Screenshot](docs/getstorybook.png)
 
-First install the storybook cli globally.
+First install the storybook CLI globally.
 
 ```sh
 npm i -g @storybook/cli
@@ -40,4 +40,4 @@ If you don't want to use `yarn` always you can use the `--use-npm` option like t
 getstorybook --use-npm
 ```
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

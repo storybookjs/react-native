@@ -8,7 +8,7 @@
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
 Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
-You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybooks.js.org).
+You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react).
@@ -137,9 +137,9 @@ const options = {
 const value = number(label, defaultValue, options);
 ```
 
-### color
+### colour
 
-Allows you to get a color from the user.
+Allows you to get a colour from the user.
 
 ```js
 const label = 'Color';

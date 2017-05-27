@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-The Options addon can be used to set configure the [Storybook](https://storybooks.js.org) UI.
+The Options addon can be used to set configure the [Storybook](https://storybook.js.org) UI.
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react) and

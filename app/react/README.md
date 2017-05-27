@@ -23,12 +23,12 @@ cd my-react-app
 getstorybook
 ```
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)
 
 * * *
 
-Storybook also comes with a lot of [addons](https://storybooks.js.org/docs/react-storybook/addons/introduction) and a great API to customize as you wish.
-You can also build a [static version](https://storybooks.js.org/docs/react-storybook/basics/exporting-storybook) of your storybook and deploy it anywhere you want.
+Storybook also comes with a lot of [addons](https://storybook.js.org/docs/react-storybook/addons/introduction) and a great API to customize as you wish.
+You can also build a [static version](https://storybook.js.org/docs/react-storybook/basics/exporting-storybook) of your storybook and deploy it anywhere you want.
 
 Here are some featured storybooks that you can reference to see how Storybook works:
 
@@ -37,6 +37,6 @@ Here are some featured storybooks that you can reference to see how Storybook wo
 
 ## Docs
 
--   [Basics](https://storybooks.js.org/docs/react-storybook/basics/introduction)
--   [Configurations](https://storybooks.js.org/docs/react-storybook/configurations/default-config)
--   [Addons](https://storybooks.js.org/docs/react-storybook/addons/introduction)
+-   [Basics](https://storybook.js.org/docs/react-storybook/basics/introduction)
+-   [Configurations](https://storybook.js.org/docs/react-storybook/configurations/default-config)
+-   [Addons](https://storybook.js.org/docs/react-storybook/addons/introduction)

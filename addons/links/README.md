@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-The Storybook Links addon can be used to create links between stories in [Storybook](https://storybooks.js.org).
+The Storybook Links addon can be used to create links between stories in [Storybook](https://storybook.js.org).
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react) and
