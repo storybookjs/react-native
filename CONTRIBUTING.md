@@ -216,8 +216,9 @@ npm run publish -- --concurrency 1 --skip-git
 # Update `CHANGELOG.md`
 # - Edit PR titles/labels on github until output is good
 # - Optionally, edit a handwritten description in `CHANGELOG.md`
-npm changelog
+npm run changelog
 
 # tag the release and push `CHANGELOG.md` and tags
-# FIXME!!
+# FIXME: not end-to-end tested!
+npm run github-release
 ```
