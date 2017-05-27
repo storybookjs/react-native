@@ -1,5 +1,9 @@
 {
   "name": "storybook",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:storybooks/storybook.git"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
@@ -17,6 +21,7 @@
     "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-prettier": "^2.1.1",
     "gh-pages": "^1.0.0",
+    "github-release-from-changelog": "^1.2.1",
     "jest": "^20.0.4",
     "jest-enzyme": "^3.2.0",
     "lerna": "2.0.0-rc.5",
@@ -34,11 +39,9 @@
     "remark-toc": "^4.0.0",
     "shelljs": "^0.7.7"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/storybooks/storybook.git"
-  },
   "scripts": {
+    "changelog": "pr-log --sloppy",
+    "github-release": "github-release-from-changelog",
     "publish": "lerna publish",
     "import-repo": "lerna import",
     "bootstrap": "lerna bootstrap",
@@ -58,5 +61,19 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "pr-log": {
+    "skipLabels": [
+      "cleanup"
+    ],
+    "validLabels": {
+      "breaking": "Breaking Changes",
+      "feature": "Features",
+      "bug": "Bug Fixes",
+      "documentation": "Documentation",
+      "maintenance": "Maintenance",
+      "greenkeeper": "Dependency Upgrades",
+      "other": "Other"
+    }
   }
 }

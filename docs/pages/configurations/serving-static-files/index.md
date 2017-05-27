@@ -78,7 +78,6 @@ storiesOf('<img>', module)
   ));
 ```
 
-
 ## Absolute versus relative paths
 
 Sometimes, you may want to deploy your storybook into a subpath, like <https://kadira-samples.github.io/react-button>.

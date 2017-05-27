@@ -2,6 +2,7 @@
 
 ### Short Term
 
+-   Mobile support
 -   Addon API and addons
 -   A clear guide to hack Storybook
 -   React Native Support
@@ -11,4 +12,3 @@
 -   Automatic story generation (and edge case detection) based on propTypes.
 -   Angular Support
 -   Vue Support
--   UI addons (Add different panels like Action Logger)

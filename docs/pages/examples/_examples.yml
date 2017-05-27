@@ -82,3 +82,9 @@ todomvc:
   description: Todo app Storybook with built-in unit tests.
   source: https://github.com/thorjarhun/react-storybook-todolist
   demo: https://thorjarhun.github.io/react-storybook-todolist/
+react-svg-pan-zoom:
+  thumbnail: ./thumbnails/react-svg-pan-zoom.png
+  title: React SVG Pan Zoom
+  description: A React component that adds pan and zoom features to SVG
+  source: https://github.com/chrvadala/react-svg-pan-zoom
+  demo: https://chrvadala.github.io/react-svg-pan-zoom/

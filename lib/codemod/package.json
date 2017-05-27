@@ -1,7 +1,7 @@
 {
   "name": "@storybook/codemod",
   "description": "A collection of codemod scripts written with JSCodeshift",
-  "version": "3.0.0-rc.0",
+  "version": "3.0.0-rc.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -10,5 +10,11 @@
   "main": "src/index.js",
   "dependencies": {
     "jscodeshift": "^0.3.30"
+  },
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js && mv dist/transforms/* dist"
+  },
+  "devDependencies": {
+    "shelljs": "^0.7.7"
   }
 }

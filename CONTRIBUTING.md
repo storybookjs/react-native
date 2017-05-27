@@ -166,3 +166,60 @@ npm link @storybook/react
 ### Getting Changes
 
 After you've done any change, you need to run the `npm run storybook` command every time to see those changes.
+
+## Release Guide
+
+This section is for Storybook maintainers who will be creating releases.
+
+Each release is described by:
+
+-   A version
+-   A list of merged pull requests
+-   Optionally, a short hand-written description
+
+Thus, the current release sequence is as follows:
+
+**NOTE: This is a work in progress. Don't try this unless you know what you're doing. We hope to automate this in CI, so this process is designed with that in mind.**
+
+First, build the release:
+
+```sh
+# make sure you current with origin/master.
+git checkout master
+git status
+
+# clean out extra files
+# WARNING: destructive if you have extra files lying around!
+git clean -fdx && yarn
+
+# build all the packages
+npm run bootstrap
+```
+
+From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
+
+#### For prerelease (no CHANGELOG):
+
+```sh
+# publish and tag the release
+npm run publish -- --concurrency 1 --npm-tag=alpha
+
+# push the tags
+git push --tags
+```
+
+#### For full release (with CHANGELOG):
+
+```sh
+# publish but don't commit to git
+npm run publish -- --concurrency 1 --skip-git
+
+# Update `CHANGELOG.md`
+# - Edit PR titles/labels on github until output is good
+# - Optionally, edit a handwritten description in `CHANGELOG.md`
+npm run changelog
+
+# tag the release and push `CHANGELOG.md` and tags
+# FIXME: not end-to-end tested!
+npm run github-release
+```
