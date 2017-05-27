@@ -23,12 +23,12 @@ program
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .option(
     '--https',
-    'Serve Storybook over HTTPS. Note: You must provide your own certificate information.',
+    'Serve Storybook over HTTPS. Note: You must provide your own certificate information.'
   )
   .option(
     '--ssl-ca <ca>',
     'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)',
-    parseList,
+    parseList
   )
   .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
   .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
@@ -44,7 +44,7 @@ if (program.enableDb || program.dbPath) {
       'Error: the experimental local database addon is no longer bundled with',
       'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
       'from the command or npm script and try again.',
-    ].join(' '),
+    ].join(' ')
   );
   process.exit(1);
 }

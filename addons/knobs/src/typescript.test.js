@@ -5,7 +5,7 @@ describe('TypeScript definitions', () => {
     tt.compileDirectory(
       `${__dirname}/../example/typescript`,
       fileName => fileName.match(/\.ts$/),
-      () => done(),
+      () => done()
     );
   });
 });

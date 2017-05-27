@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-rc.0",
   "description": "A Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
@@ -13,7 +13,6 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@storybook/react": "^3.0.0-alpha.1",
     "git-url-parse": "^6.2.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -21,10 +20,10 @@
     "react-test-renderer": "^15.5.4"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   },
   "dependencies": {
+    "@storybook/addons": "^3.0.0-rc.0",
     "babel-runtime": "^6.23.0",
     "markdown-to-react-components": "^0.2.1",
     "prop-types": "^15.5.8",

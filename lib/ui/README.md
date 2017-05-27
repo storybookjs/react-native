@@ -1,4 +1,5 @@
 # Storybook UI
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -10,7 +11,23 @@ Storybook UI the core UI of [storybook](https://storybooks.js.org).
 It's a React based UI which you can initialize with a simple function.
 You can configure it by providing a provider API.
 
-![Storybook UI Demo](./docs/storybook-ui-demo.png)
+## Table of Contents
+
+-   [Usage](#usage)
+-   [API](#api)
+    -   [.setOptions()](#setoptions)
+-   [.setStories()](#setstories)
+-   [.onStory()](#onstory)
+-   [Hacking Guide](#hacking-guide)
+    -   [The App](#the-app)
+    -   [Changing UI](#changing-ui)
+    -   [Redux](#redux)
+    -   [Mounting](#mounting)
+    -   [App Context](#app-context)
+    -   [Actions](#actions)
+    -   [Core API](#core-api)
+    -   [Keyboard Shortcuts](#keyboard-shortcuts)
+    -   [URL Changes](#url-changes)
 
 ## Usage
 
@@ -61,35 +78,39 @@ Then you'll get a UI like this:
 
 ## API
 
-### .setOptions([option])
+### .setOptions()
 
 ```js
-handleAPI(api) {
-  api.setOptions({
-    name: 'My Component', // change the name displayed in the left top portion
-    url: 'https://github.com/user/my-component', // change its URL
-    sortStoriesByKind: true // Sort the list of stories by their "kind"
-  });
-}
+class ReactProvider extends Provider {
+  handleAPI(api) {
+    api.setOptions({
+      name: 'My Component', // change the name displayed in the left top portion
+      url: 'https://github.com/user/my-component', // change its URL
+      sortStoriesByKind: true // Sort the list of stories by their "kind"
+    });
+  }
+};
 ```
 
-## .setStories([stories])
+## .setStories()
 
 This API is used to pass the`kind` and `stories` list to storybook-ui.
 
 ```js
-handleAPI(api) {
-  api.setStories([
-    {
-      kind: 'Component 1',
-      stories: ['State 1', 'State 2']
-    },
+class ReactProvider extends Provider {
+  handleAPI(api) {
+    api.setStories([
+      {
+        kind: 'Component 1',
+        stories: ['State 1', 'State 2']
+      },
 
-    {
-      kind: 'Component 2',
-      stories: ['State a', 'State b']
-    }
-  ]);
+      {
+        kind: 'Component 2',
+        stories: ['State a', 'State b']
+      }
+    ]);
+  }
 }
 ```
 
@@ -98,14 +119,14 @@ handleAPI(api) {
 You can use to listen to the story change and update the preview.
 
 ```js
-handleAPI(api) {
-  api.onStory((kind, story) => {
-      this.globalState.emit('change', kind, story);
-  });
+class ReactProvider extends Provider {
+  handleAPI(api) {
+    api.onStory((kind, story) => {
+        this.globalState.emit('change', kind, story);
+    });
+  }
 }
 ```
-
-
 
 ## Hacking Guide
 

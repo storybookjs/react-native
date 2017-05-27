@@ -13,3 +13,4 @@ build
 packages/examples/automated-*
 yarn.lock
 /**/LICENSE
+docs/public

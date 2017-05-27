@@ -7,7 +7,7 @@ import babelLoaderConfig from './babel';
 
 export default function() {
   const config = {
-    // devtool: 'source-map',
+    devtool: 'cheap-module-source-map',
     entry: {
       manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
       preview: [
@@ -45,6 +45,9 @@ export default function() {
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
+    },
+    performance: {
+      hints: false,
     },
   };
 
