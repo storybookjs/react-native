@@ -3,34 +3,35 @@
 2017-May-27
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
-- Moved from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](https://www.npmjs.com/package/@storybook/react), [docs](https://storybook.js.org/)
-- Upgraded to Webpack2! https://github.com/storybooks/storybook/pull/637
-- Switched to monorepo and overhauled package structure. https://github.com/storybooks/storybook/pull/749 https://github.com/storybooks/storybook/pull/1031
-- Added configuration options to storybooks snapshot testing. https://github.com/storybooks/storybook/pull/1090
-- Added `create-react-native-app` support. https://github.com/storybooks/storybook/pull/1117
-- Added HTTPS support. https://github.com/storybooks/storybook/pull/735
+
+-   Moved from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](https://www.npmjs.com/package/@storybook/react), [docs](https://storybook.js.org/)
+-   Upgraded to Webpack2! <https://github.com/storybooks/storybook/pull/637>
+-   Switched to monorepo and overhauled package structure. <https://github.com/storybooks/storybook/pull/749> <https://github.com/storybooks/storybook/pull/1031>
+-   Added configuration options to storybooks snapshot testing. <https://github.com/storybooks/storybook/pull/1090>
+-   Added `create-react-native-app` support. <https://github.com/storybooks/storybook/pull/1117>
+-   Added HTTPS support. <https://github.com/storybooks/storybook/pull/735>
 
 This is a major release with breaking changes. See our [migration guide](https://github.com/storybooks/storybook/blob/master/MIGRATION.md) for details.
 
 #### Features
 
-- Added CRNA support (#1117)
-- [Addon-Knobs] Fixing performance issues. (#1039)
-- Allow HTTPS (#735)
+-   Added CRNA support (#1117)
+-   [Addon-Knobs] Fixing performance issues. (#1039)
+-   Allow HTTPS (#735)
 
 #### Bug Fixes
 
-- FIX for test-cra was breaking the build (#972)
+-   FIX for test-cra was breaking the build (#972)
 
 #### Documentation
 
-- adds ReactSVGPanZoom to examples list (#1139)
-- docs(custom-webpack-config): rules not loaders (#1137)
+-   adds ReactSVGPanZoom to examples list (#1139)
+-   docs(custom-webpack-config): rules not loaders (#1137)
 
 #### Maintenance
 
-- refactor: change NPM organisation from kadira to storybook (#996)
-- CHANGE folder structure && CHANGE package-names (#1031)
+-   refactor: change NPM organisation from kadira to storybook (#996)
+-   CHANGE folder structure && CHANGE package-names (#1031)
 
 #### Dependency Upgrades
 
@@ -39,16 +40,16 @@ This is a major release with breaking changes. See our [migration guide](https:/
 10 PRs
 </summary>
 
-- Update lerna to the latest version 🚀 (https://github.com/storybooks/storybook/pulls/1101)
-- update dependencies in cra-storybook (https://github.com/storybooks/storybook/pulls/1080)
-- Switch back to non-fork of react-inspector (https://github.com/storybooks/storybook/pulls/1026)
-- Dependency updates (https://github.com/storybooks/storybook/pulls/1008)
-- Update jest to the latest version 🚀 (https://github.com/storybooks/storybook/pulls/998)
-- CHANGE to use react-split-view 0.1.63 over the fork (https://github.com/storybooks/storybook/pulls/956)
-- FIX webpack overriding && CLEANUP && ADD example (https://github.com/storybooks/storybook/pulls/965)
-- Update lerna to the latest version 🚀 (https://github.com/storybooks/storybook/pulls/915)
-- Use jest for unittesting - standardize unit testing epic (https://github.com/storybooks/storybook/pulls/904)
-- Update dependencies to enable Greenkeeper 🌴 (https://github.com/storybooks/storybook/pulls/768)
+-   Update lerna to the latest version 🚀 (<https://github.com/storybooks/storybook/pulls/1101>)
+-   update dependencies in cra-storybook (<https://github.com/storybooks/storybook/pulls/1080>)
+-   Switch back to non-fork of react-inspector (<https://github.com/storybooks/storybook/pulls/1026>)
+-   Dependency updates (<https://github.com/storybooks/storybook/pulls/1008>)
+-   Update jest to the latest version 🚀 (<https://github.com/storybooks/storybook/pulls/998>)
+-   CHANGE to use react-split-view 0.1.63 over the fork (<https://github.com/storybooks/storybook/pulls/956>)
+-   FIX webpack overriding && CLEANUP && ADD example (<https://github.com/storybooks/storybook/pulls/965>)
+-   Update lerna to the latest version 🚀 (<https://github.com/storybooks/storybook/pulls/915>)
+-   Use jest for unittesting - standardize unit testing epic (<https://github.com/storybooks/storybook/pulls/904>)
+-   Update dependencies to enable Greenkeeper 🌴 (<https://github.com/storybooks/storybook/pulls/768>)
 
 </details>
 
@@ -59,71 +60,71 @@ This is a major release with breaking changes. See our [migration guide](https:/
 65 PRs
 </summary>
 
-- Add travis deploy key (https://github.com/storybooks/storybook/pulls/1135)
-- ADD a global to storyshots to make it work for series with info addon (https://github.com/storybooks/storybook/pulls/1129)
-- Removed unsafe Storyshots import (https://github.com/storybooks/storybook/pulls/1124)
-- Update all package.json with monorepo metadata (https://github.com/storybooks/storybook/pulls/1111)
-- Add react-dom to the devDependency list for React Native projects (https://github.com/storybooks/storybook/pulls/1102)
-- Added `snapshotWithOptions` to allow configuring rendering options in Storyshots (https://github.com/storybooks/storybook/pulls/1090)
-- Upgrade React Native webpack config to webpack 2 (https://github.com/storybooks/storybook/pulls/1097)
-- Fix dead link to demo repository (https://github.com/storybooks/storybook/pulls/1091)
-- FIX postcss options missing && UPDATE dependencies (https://github.com/storybooks/storybook/pulls/1087)
-- fix(knobs): increase font size label (https://github.com/storybooks/storybook/pulls/1086)
-- CHANGE to prop-types package for notes & test-cra (https://github.com/storybooks/storybook/pulls/1082)
-- Configure snapshot test (https://github.com/storybooks/storybook/pulls/1035)
-- Test storyshots (https://github.com/storybooks/storybook/pulls/971)
-- IMPROVE cli (https://github.com/storybooks/storybook/pulls/1079)
-- Update package.json with repository info (https://github.com/storybooks/storybook/pulls/1078)
-- Update storyshots README.md example (https://github.com/storybooks/storybook/pulls/1076)
-- Added component description from __docgenInfo, Added the ability to get the PropType from __docgenInfo for prop table, Fixed an issue with PropVal rendering an object (https://github.com/storybooks/storybook/pulls/1030)
-- Upgraded webpack PostCSS plugin definition (https://github.com/storybooks/storybook/pulls/1062)
-- Update link to Storyshots addon (https://github.com/storybooks/storybook/pulls/1074)
-- chore(jest): update to v20's default configuration file (https://github.com/storybooks/storybook/pulls/1063)
-- Added error message for missing or invalid storyName (https://github.com/storybooks/storybook/pulls/747)
-- Activating Open Collective (https://github.com/storybooks/storybook/pulls/1065)
-- 1052-resolve-output-path (https://github.com/storybooks/storybook/pulls/1058)
-- MOVE & RENAME and storyshots && CHANGE “React Storybook” > “Storybook” (https://github.com/storybooks/storybook/pulls/1044)
-- Deprecate builtin addons (https://github.com/storybooks/storybook/pulls/1038)
-- Updated issue triage guidelines (https://github.com/storybooks/storybook/pulls/1024)
-- Deprecate built-in addons (https://github.com/storybooks/storybook/pulls/1025)
-- Add addonlinks repo (https://github.com/storybooks/storybook/pulls/1021)
-- Add propTablesExclude option (https://github.com/storybooks/storybook/pulls/924)
-- Add typescript definition to addon-notes (https://github.com/storybooks/storybook/pulls/989)
-- Fixes for types for knobs `number` (https://github.com/storybooks/storybook/pulls/1001)
-- First pass at update the contribution instructions (https://github.com/storybooks/storybook/pulls/982)
-- Remove text transform uppercase for knob labels (https://github.com/storybooks/storybook/pulls/991)
-- Update links in PRs section of CONTRIBUTING.md (https://github.com/storybooks/storybook/pulls/992)
-- Updated dead getstorybook.io links to storybooks.js.org (https://github.com/storybooks/storybook/pulls/988)
-- Do not ignore story.js in prepublish (https://github.com/storybooks/storybook/pulls/973)
-- addon-info: make the info overlay be fixed  (https://github.com/storybooks/storybook/pulls/914)
-- Update lerna to the latest version 🚀 (https://github.com/storybooks/storybook/pulls/969)
-- Handle null elements in getData (https://github.com/storybooks/storybook/pulls/926)
-- add description field from __docgenInfo for prop table for info plugin (https://github.com/storybooks/storybook/pulls/929)
-- #959 add a max-height and center element with alignItems: center (https://github.com/storybooks/storybook/pulls/961)
-- Switch to the only prepublish script (https://github.com/storybooks/storybook/pulls/903)
-- PR review policy (https://github.com/storybooks/storybook/pulls/923)
-- Add typescript definitions for getStorybook() (https://github.com/storybooks/storybook/pulls/753)
-- Restore deep link for addon docs (https://github.com/storybooks/storybook/pulls/919)
-- Fix default storybook webpack config (https://github.com/storybooks/storybook/pulls/922)
-- Render the first story for a kind if no story selected. (https://github.com/storybooks/storybook/pulls/918)
-- Update docs for monorepo (https://github.com/storybooks/storybook/pulls/913)
-- Monorepo readme and contributing (https://github.com/storybooks/storybook/pulls/907)
-- Add story kind regex (https://github.com/storybooks/storybook/pulls/906)
-- Add examples (https://github.com/storybooks/storybook/pulls/897)
-- Add missing repos (https://github.com/storybooks/storybook/pulls/882)
-- Switch to monorepo (https://github.com/storybooks/storybook/pulls/749)
-- extend devMiddlewareOptions with config.devServer (https://github.com/storybooks/storybook/pulls/723)
-- Added meta IE=edge (https://github.com/storybooks/storybook/pulls/715)
-- Replace String.includes with String.indexOf: cross-browsing support (https://github.com/storybooks/storybook/pulls/712)
-- Issue Triage instructions (https://github.com/storybooks/storybook/pulls/748)
-- Simple pull request template (https://github.com/storybooks/storybook/pulls/741)
-- Make return type of StoryDecorator nullable (https://github.com/storybooks/storybook/pulls/680)
-- Warn if story with a given name already exists (https://github.com/storybooks/storybook/pulls/670)
-- Fix spelling mistake - "element form the story" to  "element from the story" (https://github.com/storybooks/storybook/pulls/702)
-- Remove broken react-button example (https://github.com/storybooks/storybook/pulls/699)
-- Fixed spelling error. (https://github.com/storybooks/storybook/pulls/720)
-- Cleaner error handling for storiesOf (https://github.com/storybooks/storybook/pulls/672)
-- Update links to point to new organization (https://github.com/storybooks/storybook/pulls/721)
+-   Add travis deploy key (<https://github.com/storybooks/storybook/pulls/1135>)
+-   ADD a global to storyshots to make it work for series with info addon (<https://github.com/storybooks/storybook/pulls/1129>)
+-   Removed unsafe Storyshots import (<https://github.com/storybooks/storybook/pulls/1124>)
+-   Update all package.json with monorepo metadata (<https://github.com/storybooks/storybook/pulls/1111>)
+-   Add react-dom to the devDependency list for React Native projects (<https://github.com/storybooks/storybook/pulls/1102>)
+-   Added `snapshotWithOptions` to allow configuring rendering options in Storyshots (<https://github.com/storybooks/storybook/pulls/1090>)
+-   Upgrade React Native webpack config to webpack 2 (<https://github.com/storybooks/storybook/pulls/1097>)
+-   Fix dead link to demo repository (<https://github.com/storybooks/storybook/pulls/1091>)
+-   FIX postcss options missing && UPDATE dependencies (<https://github.com/storybooks/storybook/pulls/1087>)
+-   fix(knobs): increase font size label (<https://github.com/storybooks/storybook/pulls/1086>)
+-   CHANGE to prop-types package for notes & test-cra (<https://github.com/storybooks/storybook/pulls/1082>)
+-   Configure snapshot test (<https://github.com/storybooks/storybook/pulls/1035>)
+-   Test storyshots (<https://github.com/storybooks/storybook/pulls/971>)
+-   IMPROVE cli (<https://github.com/storybooks/storybook/pulls/1079>)
+-   Update package.json with repository info (<https://github.com/storybooks/storybook/pulls/1078>)
+-   Update storyshots README.md example (<https://github.com/storybooks/storybook/pulls/1076>)
+-   Added component description from **docgenInfo, Added the ability to get the PropType from **docgenInfo for prop table, Fixed an issue with PropVal rendering an object (<https://github.com/storybooks/storybook/pulls/1030>)
+-   Upgraded webpack PostCSS plugin definition (<https://github.com/storybooks/storybook/pulls/1062>)
+-   Update link to Storyshots addon (<https://github.com/storybooks/storybook/pulls/1074>)
+-   chore(jest): update to v20's default configuration file (<https://github.com/storybooks/storybook/pulls/1063>)
+-   Added error message for missing or invalid storyName (<https://github.com/storybooks/storybook/pulls/747>)
+-   Activating Open Collective (<https://github.com/storybooks/storybook/pulls/1065>)
+-   1052-resolve-output-path (<https://github.com/storybooks/storybook/pulls/1058>)
+-   MOVE & RENAME and storyshots && CHANGE “React Storybook” > “Storybook” (<https://github.com/storybooks/storybook/pulls/1044>)
+-   Deprecate builtin addons (<https://github.com/storybooks/storybook/pulls/1038>)
+-   Updated issue triage guidelines (<https://github.com/storybooks/storybook/pulls/1024>)
+-   Deprecate built-in addons (<https://github.com/storybooks/storybook/pulls/1025>)
+-   Add addonlinks repo (<https://github.com/storybooks/storybook/pulls/1021>)
+-   Add propTablesExclude option (<https://github.com/storybooks/storybook/pulls/924>)
+-   Add typescript definition to addon-notes (<https://github.com/storybooks/storybook/pulls/989>)
+-   Fixes for types for knobs `number` (<https://github.com/storybooks/storybook/pulls/1001>)
+-   First pass at update the contribution instructions (<https://github.com/storybooks/storybook/pulls/982>)
+-   Remove text transform uppercase for knob labels (<https://github.com/storybooks/storybook/pulls/991>)
+-   Update links in PRs section of CONTRIBUTING.md (<https://github.com/storybooks/storybook/pulls/992>)
+-   Updated dead getstorybook.io links to storybooks.js.org (<https://github.com/storybooks/storybook/pulls/988>)
+-   Do not ignore story.js in prepublish (<https://github.com/storybooks/storybook/pulls/973>)
+-   addon-info: make the info overlay be fixed  (<https://github.com/storybooks/storybook/pulls/914>)
+-   Update lerna to the latest version 🚀 (<https://github.com/storybooks/storybook/pulls/969>)
+-   Handle null elements in getData (<https://github.com/storybooks/storybook/pulls/926>)
+-   add description field from \_\_docgenInfo for prop table for info plugin (<https://github.com/storybooks/storybook/pulls/929>)
+-   \#959 add a max-height and center element with alignItems: center (<https://github.com/storybooks/storybook/pulls/961>)
+-   Switch to the only prepublish script (<https://github.com/storybooks/storybook/pulls/903>)
+-   PR review policy (<https://github.com/storybooks/storybook/pulls/923>)
+-   Add typescript definitions for getStorybook() (<https://github.com/storybooks/storybook/pulls/753>)
+-   Restore deep link for addon docs (<https://github.com/storybooks/storybook/pulls/919>)
+-   Fix default storybook webpack config (<https://github.com/storybooks/storybook/pulls/922>)
+-   Render the first story for a kind if no story selected. (<https://github.com/storybooks/storybook/pulls/918>)
+-   Update docs for monorepo (<https://github.com/storybooks/storybook/pulls/913>)
+-   Monorepo readme and contributing (<https://github.com/storybooks/storybook/pulls/907>)
+-   Add story kind regex (<https://github.com/storybooks/storybook/pulls/906>)
+-   Add examples (<https://github.com/storybooks/storybook/pulls/897>)
+-   Add missing repos (<https://github.com/storybooks/storybook/pulls/882>)
+-   Switch to monorepo (<https://github.com/storybooks/storybook/pulls/749>)
+-   extend devMiddlewareOptions with config.devServer (<https://github.com/storybooks/storybook/pulls/723>)
+-   Added meta IE=edge (<https://github.com/storybooks/storybook/pulls/715>)
+-   Replace String.includes with String.indexOf: cross-browsing support (<https://github.com/storybooks/storybook/pulls/712>)
+-   Issue Triage instructions (<https://github.com/storybooks/storybook/pulls/748>)
+-   Simple pull request template (<https://github.com/storybooks/storybook/pulls/741>)
+-   Make return type of StoryDecorator nullable (<https://github.com/storybooks/storybook/pulls/680>)
+-   Warn if story with a given name already exists (<https://github.com/storybooks/storybook/pulls/670>)
+-   Fix spelling mistake - "element form the story" to  "element from the story" (<https://github.com/storybooks/storybook/pulls/702>)
+-   Remove broken react-button example (<https://github.com/storybooks/storybook/pulls/699>)
+-   Fixed spelling error. (<https://github.com/storybooks/storybook/pulls/720>)
+-   Cleaner error handling for storiesOf (<https://github.com/storybooks/storybook/pulls/672>)
+-   Update links to point to new organization (<https://github.com/storybooks/storybook/pulls/721>)
 
 </details>
 

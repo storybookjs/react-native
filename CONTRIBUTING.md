@@ -172,9 +172,10 @@ After you've done any change, you need to run the `npm run storybook` command ev
 This section is for Storybook maintainers who will be creating releases.
 
 Each release is described by:
-- A version
-- A list of merged pull requests
-- Optionally, a short hand-written description
+
+-   A version
+-   A list of merged pull requests
+-   Optionally, a short hand-written description
 
 Thus, the current release sequence is as follows:
 

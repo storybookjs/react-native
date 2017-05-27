@@ -61,6 +61,8 @@ If your codebase is small, it's probably doable to just replace them by hand. (i
 
 But if you have a lot of occurances in your codebase, you can use a [codemod we created](./lib/codemod) for you.
 
+> A codemod makes automatic changed to your app's code.
+
 You have to change your `package.json`, prune old and install new dependencies by hand.
 
 `npm prune` will remove all dependecies from `node_modules` which are no longer referenced in `package.json`.
@@ -72,7 +74,7 @@ We used to ship 2 addons with every single installation of storybook: `actions` 
 If you **are** using these addons, migrating is simple:
 
 -   add the addons you use to your `package.json`.
--   change your code to this:
+-   update your code:
     change `addons.js` like so:
     ```js
     import '@storybook/addon-actions/register';
