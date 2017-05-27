@@ -43,6 +43,7 @@
     "url": "git://github.com/storybooks/storybook.git"
   },
   "scripts": {
+    "changelog": "pr-log --sloppy",
     "publish": "lerna publish",
     "import-repo": "lerna import",
     "bootstrap": "lerna bootstrap",
@@ -62,5 +63,16 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "pr-log": {
+    "validLabels": {
+      "bug": "Bug Fixes",
+      "greenkeeper": "Dependency Upgrades",
+      "documentation": "Documentation",
+      "feature": "Features",
+      "maintenance": "Maintenance",
+      "breaking": "Breaking Changes",
+      "misc": "Other"
+    }
   }
 }

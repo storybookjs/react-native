@@ -1,90 +1,131 @@
-### v3.0.0-alpha0 (18-May-2017)
+## 3.0.0 (May 27, 2017)
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
 - Moved from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](FIXME), [docs](https://storybooks.js.org/)
-- Upgraded to Webpack2. https://github.com/storybooks/storybook/pull/637
-- Switched to monorepo and overhaul package structure. https://github.com/storybooks/storybook/pull/749 https://github.com/storybooks/storybook/pull/1031
+- Upgraded to Webpack2! https://github.com/storybooks/storybook/pull/637
+- Switched to monorepo and overhauled package structure. https://github.com/storybooks/storybook/pull/749 https://github.com/storybooks/storybook/pull/1031
+- Added configuration options to storybooks snapshot testing. https://github.com/storybooks/storybook/pull/1090
+- Added `create-react-native-app` support. https://github.com/storybooks/storybook/pull/1117
+- Added HTTPS support. https://github.com/storybooks/storybook/pull/735
 
 <details>
 <summary>
-CLOSED issues with PRs
+Features
 </summary>
 
-- #404 Images gets extra height when displayed in storybook #974
-- #674 Deep Linking: put path of component>story in the URL #918
-- #733 Issue triage guidelines #1024
-- #740 Pull request template #741
-- #742 Migrate Storybook to monorepo #907,#749
-- #773 Change npm organisation from kadira to storybook #996
-- #774 Set a standard for unit-testing #771
-- #840 Merge channel-postmsg into this repo #882
-- #892 Add regex to match the story's kind #906
-- #912 Update Docs for monorepo #913
-- #920 Storybook's default webpack config is broken #922
-- #959 [BUG] Style: Title of Panels #961
-- #1016 Restore storybook-addon-links #1021
-- #1017 Deprecate addon-links and addon-actions as "built-in addons" #1038,#1025
-- #1042 Update README #1043
-- #1052 [3.0.0alpha] build-storybook no longer supports relative paths #1058
-
+* Added CRNA support (#1117)
+* [Addon-Knobs] Fixing performance issues. (#1039)
+* Allow HTTPS (#735)
 </details>
 <details>
 <summary>
-OPEN issues with PRs
+Bug Fixes
 </summary>
 
-- #953 Typescript compatibility #989
-
+* FIX for test-cra was breaking the build (#972)
 </details>
 <details>
 <summary>
-PRs without issues
+Maintenance
 </summary>
 
-- #1044 MOVE & RENAME and storyshots && CHANGE “React Storybook” > “Storybook”
-- #1026 Switch back to non-fork of react-inspector
-- #1008 Dependency updates
-- #1001 Fixes for types for knobs `number`
-- #998 Update jest to the latest version 🚀
-- #992 Update links in PRs section of CONTRIBUTING.md
-- #991 Remove text transform uppercase for knob labels
-- #988 Updated dead getstorybook.io links to storybooks.js.org
-- #982 First pass at update the contribution instructions
-- #980 Fix linting in addon-info
-- #977 Fix typo in README
-- #973 Do not ignore story.js in prepublish
-- #972 FIX for test-cra was breaking the build
-- #969 Update lerna to the latest version 🚀
-- #965 FIX webpack overriding && CLEANUP && ADD example
-- #956 CHANGE to use react-split-view 0.1.63 over the fork
-- #929 add description field from __docgenInfo for prop table for info plugin
-- #927 Fix Doc Links
-- #926 Handle null elements in getData
-- #924 Add propTablesExclude option
-- #923 PR review policy
-- #915 Update lerna to the latest version 🚀
-- #914 addon-info: make the info overlay be fixed
-- #904 Use jest for unittesting - standardize unit testing epic
-- #903 Switch to the only prepublish script
-- #897 Add examples
-- #768 Update dependencies to enable Greenkeeper 🌴
-- #753 Add typescript definitions for getStorybook()
-- #748 Issue Triage instructions
-- #739 Add allowFullScreen attribute to preview iframe
-- #736 A first pass at a reproduction recipe
-- #735 Allow HTTPS
-- #723 extend devMiddlewareOptions with config.devServer
-- #721 Update links to point to new organization
-- #720 Fixed spelling error.
-- #715 Added meta IE=edge
-- #712 Replace String.includes with String.indexOf: cross-browsing support
-- #702 Fix spelling mistake - "element form the story" to  "element from the story"
-- #699 Remove broken react-button example
-- #680 Make return type of StoryDecorator nullable
-- #672 Cleaner error handling for storiesOf
-- #671 Typo fix
-- #670 Warn if story with a given name already exists
+* FIX linting (#1132)
+* Fixed a typo in webpack.config.js (#1089)
+* refactor: change NPM organisation from kadira to storybook (#996)
+* CHANGE folder structure && CHANGE package-names (#1031)
+</details>
+<details>
+<summary>
+Dependency Upgrades
+</summary>
 
+* Update lerna to the latest version 🚀 (#1101)
+* update dependencies in cra-storybook (#1080)
+* Switch back to non-fork of react-inspector (#1026)
+* Dependency updates (#1008)
+* Update jest to the latest version 🚀 (#998)
+* CHANGE to use react-split-view 0.1.63 over the fork (#956)
+* FIX webpack overriding && CLEANUP && ADD example (#965)
+* Update lerna to the latest version 🚀 (#915)
+* Use jest for unittesting - standardize unit testing epic (#904)
+* Update dependencies to enable Greenkeeper 🌴 (#768)
+</details>
+<details>
+<summary>
+Other
+</summary>
+
+* Add travis deploy key (#1135)
+* ADD a global to storyshots to make it work for series with info addon (#1129)
+* Removed unsafe Storyshots import (#1124)
+* Update all package.json with monorepo metadata (#1111)
+* Add react-dom to the devDependency list for React Native projects (#1102)
+* Added `snapshotWithOptions` to allow configuring rendering options in Storyshots (#1090)
+* Upgrade React Native webpack config to webpack 2 (#1097)
+* Fix dead link to demo repository (#1091)
+* FIX postcss options missing && UPDATE dependencies (#1087)
+* fix(knobs): increase font size label (#1086)
+* CHANGE to prop-types package for notes & test-cra (#1082)
+* Configure snapshot test (#1035)
+* Test storyshots (#971)
+* IMPROVE cli (#1079)
+* Update package.json with repository info (#1078)
+* Update storyshots README.md example (#1076)
+* Added component description from __docgenInfo, Added the ability to get the PropType from __docgenInfo for prop table, Fixed an issue with PropVal rendering an object (#1030)
+* Upgraded webpack PostCSS plugin definition (#1062)
+* Update link to Storyshots addon (#1074)
+* chore(jest): update to v20's default configuration file (#1063)
+* Added error message for missing or invalid storyName (#747)
+* Removed `>` typo in Info prop table header (#1064)
+* Activating Open Collective (#1065)
+* 1052-resolve-output-path (#1058)
+* MOVE & RENAME and storyshots && CHANGE “React Storybook” > “Storybook” (#1044)
+* Update README (#1043)
+* Deprecate builtin addons (#1038)
+* Updated issue triage guidelines (#1024)
+* Deprecate built-in addons (#1025)
+* Add addonlinks repo (#1021)
+* Add propTablesExclude option (#924)
+* Add typescript definition to addon-notes (#989)
+* Fixes for types for knobs `number` (#1001)
+* Fix linting in addon-info (#980)
+* First pass at update the contribution instructions (#982)
+* Remove text transform uppercase for knob labels (#991)
+* Update links in PRs section of CONTRIBUTING.md (#992)
+* Updated dead getstorybook.io links to storybooks.js.org (#988)
+* Do not ignore story.js in prepublish (#973)
+* Fix typo in README (#977)
+* addon-info: make the info overlay be fixed  (#914)
+* Fixing link (#974)
+* Update lerna to the latest version 🚀 (#969)
+* Handle null elements in getData (#926)
+* add description field from __docgenInfo for prop table for info plugin (#929)
+* #959 add a max-height and center element with alignItems: center (#961)
+* Switch to the only prepublish script (#903)
+* PR review policy (#923)
+* Add typescript definitions for getStorybook() (#753)
+* Restore deep link for addon docs (#919)
+* Fix default storybook webpack config (#922)
+* Render the first story for a kind if no story selected. (#918)
+* Update docs for monorepo (#913)
+* Monorepo readme and contributing (#907)
+* Add story kind regex (#906)
+* Add examples (#897)
+* Add missing repos (#882)
+* Switch to monorepo (#749)
+* extend devMiddlewareOptions with config.devServer (#723)
+* Added meta IE=edge (#715)
+* Replace String.includes with String.indexOf: cross-browsing support (#712)
+* Issue Triage instructions (#748)
+* Simple pull request template (#741)
+* Make return type of StoryDecorator nullable (#680)
+* Warn if story with a given name already exists (#670)
+* Fix spelling mistake - "element form the story" to  "element from the story" (#702)
+* Remove broken react-button example (#699)
+* Fixed spelling error. (#720)
+* Typo fix (#671)
+* Cleaner error handling for storiesOf (#672)
+* Update links to point to new organization (#721)
 </details>
 
 ### v2.35.3

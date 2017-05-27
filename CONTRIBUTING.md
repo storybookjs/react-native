@@ -178,13 +178,14 @@ Each release is described by:
 
 Thus current the release sequence is:
 
-1. Edit `lerna.json` to update the version.
-2. For full releases (i.e. not alpha/rc), run `npm changelog` to update `CHANGELOG.md`.
-3. Edit PR titles/labels on github until you're happy with the output in `CHANGELOG.md`.
-4. Optionally, edit a handwritten description in `CHANGELOG.md`.
-5. Run `lerna publish` to publish to `npm` and create a tag.
-6. Push the tag and `CHANGELOG.md` changes to github.
-7. For full releases, run `npm release` to create a release on Github using the contents of `CHANGELOG.md`.
-8. Update docs as necessary in https://github.com/storybooks/storybooks.github.io
+1. Go to `master` and make sure you current with origin
+2. For full releases (i.e. not alpha/beta/rc), run `npm changelog` to update `CHANGELOG.md`.
+  - Edit PR titles/labels on github until you're happy with the output in `CHANGELOG.md`.
+  - Optionally, edit a handwritten description in `CHANGELOG.md`.
+3. `git clean -fdx && yarn` to clean out any extra files in your local directory (WARNING: destructive if you have extra files lying around!)
+4. `npm run bootstrap` to build all the packages
+5. `npm run publish -- --concurrency 1` to publish an alpha release
+  - For a prerelease (alpha/beta/rc), add e.g. `--npm-tag=alpha` to the publish args
+6. Push the tag and `CHANGELOG.md` changes to github `git push --tags`
 
 NOTE: we hope to automate this in CI at some point, so this process is designed with that in mind.
