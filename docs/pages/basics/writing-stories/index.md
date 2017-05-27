@@ -123,6 +123,7 @@ storiesOf('core.Button', module)
 Then you can filter stories to display only the stories you want to see.
 
 ### [Chapters](https://github.com/yangshun/react-storybook-addon-chapters)
+
 With this addon, you can showcase multiple components (or varying component states) within 1 story.
 Break your stories down into smaller categories (chapters) and subcategories (sections) for more organizational goodness.
 
