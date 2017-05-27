@@ -176,16 +176,48 @@ Each release is described by:
 - A list of merged pull requests
 - Optionally, a short hand-written description
 
-Thus current the release sequence is:
+Thus, the current release sequence is as follows:
 
-1. Go to `master` and make sure you current with origin
-2. For full releases (i.e. not alpha/beta/rc), run `npm changelog` to update `CHANGELOG.md`.
-  - Edit PR titles/labels on github until you're happy with the output in `CHANGELOG.md`.
-  - Optionally, edit a handwritten description in `CHANGELOG.md`.
-3. `git clean -fdx && yarn` to clean out any extra files in your local directory (WARNING: destructive if you have extra files lying around!)
-4. `npm run bootstrap` to build all the packages
-5. `npm run publish -- --concurrency 1` to publish an alpha release
-  - For a prerelease (alpha/beta/rc), add e.g. `--npm-tag=alpha` to the publish args
-6. Push the tag and `CHANGELOG.md` changes to github `git push --tags`
+**NOTE: This is a work in progress. Don't try this unless you know what you're doing. We hope to automate this in CI, so this process is designed with that in mind.**
 
-NOTE: we hope to automate this in CI at some point, so this process is designed with that in mind.
+First, build the release:
+
+```sh
+# make sure you current with origin/master.
+git checkout master
+git status
+
+# clean out extra files
+# WARNING: destructive if you have extra files lying around!
+git clean -fdx && yarn
+
+# build all the packages
+npm run bootstrap
+```
+
+From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
+
+#### For prerelease (no CHANGELOG):
+
+```sh
+# publish and tag the release
+npm run publish -- --concurrency 1 --npm-tag=alpha
+
+# push the tags
+git push --tags
+```
+
+#### For full release (with CHANGELOG):
+
+```sh
+# publish but don't commit to git
+npm run publish -- --concurrency 1 --skip-git
+
+# Update `CHANGELOG.md`
+# - Edit PR titles/labels on github until output is good
+# - Optionally, edit a handwritten description in `CHANGELOG.md`
+npm changelog
+
+# tag the release and push `CHANGELOG.md` and tags
+# FIXME!!
+```

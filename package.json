@@ -65,13 +65,14 @@
     "url": "https://opencollective.com/storybook"
   },
   "pr-log": {
+    "skipLabels": ["cleanup"],
     "validLabels": {
-      "bug": "Bug Fixes",
-      "greenkeeper": "Dependency Upgrades",
-      "documentation": "Documentation",
-      "feature": "Features",
-      "maintenance": "Maintenance",
       "breaking": "Breaking Changes",
+      "feature": "Features",
+      "bug": "Bug Fixes",
+      "documentation": "Documentation",
+      "maintenance": "Maintenance",
+      "greenkeeper": "Dependency Upgrades",
       "misc": "Other"
     }
   }
