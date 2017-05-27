@@ -1,6 +1,6 @@
 # 3.0.0
 
-2017-05-27
+2017-May-27
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
 - Moved from `@kadira` to `@storybooks` org across [github](https://github.com/storybooks/storybook/), [npm](https://www.npmjs.com/package/@storybook/react), [docs](https://storybook.js.org/)
