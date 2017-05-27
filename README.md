@@ -72,8 +72,9 @@ For full documentation on using Storybook visit: [storybooks.js.org](https://sto
 
 ## Contributing
 
-We welcome contributions to Storybook! There are many ways to contribute to
-this project. [Get started here](CONTRIBUTING.md)
+We welcome contributions to Storybook!
+- ⇄ Pull requests and ★ Stars are always welcome.
+- Read our [contributing guide](CONTRIBUTING.md) to get started.
 
 ### Development scripts
 
