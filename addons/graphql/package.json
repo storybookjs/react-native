@@ -21,13 +21,14 @@
   },
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/graphql",
   "devDependencies": {
-    "@storybook/react": "^3.0.0-rc.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "shelljs": "^0.7.7"
   },
+  "dependencies": {
+    "@storybook/addons": "*"
+  },
   "peerDependencies": {
-    "@storybook/addons": "*",
     "react": "*"
   },
   "dependencies": {

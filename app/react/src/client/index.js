@@ -13,10 +13,10 @@ import { linkTo as deprecatedLinkTo } from '@storybook/addon-links';
 
 export const action = deprecate(
   deprecatedAction,
-  '@storybook/react action is deprecated. See: https://github.com/storybooks/storybook/tree/master/packages/addon-actions'
+  '@storybook/react action is deprecated. See: https://github.com/storybooks/storybook/tree/master/addon/actions'
 );
 
 export const linkTo = deprecate(
   deprecatedLinkTo,
-  '@storybook/react linkTo is deprecated. See: https://github.com/storybooks/storybook/tree/master/packages/addon-links'
+  '@storybook/react linkTo is deprecated. See: https://github.com/storybooks/storybook/tree/master/addon/links'
 );

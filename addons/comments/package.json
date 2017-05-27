@@ -23,6 +23,7 @@
     "storybook-remote": "start-storybook -p 3006"
   },
   "dependencies": {
+    "@storybook/addons": "^3.0.0-rc.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
@@ -36,9 +37,6 @@
   "devDependencies": {
     "@kadira/storybook-database-cloud": "*",
     "@kadira/storybook-deployer": "*",
-    "@storybook/addons": "^3.0.0-rc.0",
-    "@storybook/react": "^3.0.0-rc.0",
-    "@storybook/ui": "^3.0.0-rc.0",
     "git-url-parse": "^6.2.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -46,8 +44,6 @@
     "shelljs": "^0.7.7"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.0.0-rc.0",
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   }
 }

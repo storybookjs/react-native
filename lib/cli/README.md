@@ -1,4 +1,5 @@
 # Storybook CLI
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -26,7 +27,7 @@ getstorybook
 
 That's all you've to do.
 
----
+* * *
 
 ## [Yarn](https://github.com/yarnpkg/yarn) support
 

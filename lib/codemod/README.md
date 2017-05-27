@@ -1,4 +1,5 @@
 # Storybook Codemods
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -22,8 +23,8 @@ npm install @storybook/codemod
 Updates package names in imports to include our organisation name prefix
 (`@storybook/`), stripping off the old `@storybook/` prefix.
 
-```js
-> jscodeshift -t add-organisation-to-package-name path/to/source.js
+```sh
+jscodeshift -t add-organisation-to-package-name path/to/source.js
 ```
 
 Example:
