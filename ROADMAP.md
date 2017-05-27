@@ -3,12 +3,12 @@
 ## Table of contents
 
 -   [New features](#new-features)
-    -   [Responsive + multi-device viewports preview.](#responsive--multidevice-viewports-preview)
+    -   [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
     -   [Automatic story detection](#automatic-story-detection)
     -   [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
     -   [Add a playground addon](#add-a-playground-addon)
     -   [See multiple (or all) stories in 1 preview.](#see-multiple-or-all-stories-in-1-preview)
-    -   [Deeper level hierarchy](#deeper-level-hierachy)
+    -   [Deeper level hierarchy](#deeper-level-hierarchy)
 -   [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
     -   [Vue](#vue)
     -   [Angular](#angular)
@@ -21,7 +21,7 @@
 -   [Documentation](#documentation)
     -   [Search & Structure](#search--structure)
     -   [Better design](#better-design)
-    -   [Record videos and write blog post on how to tweak storybook](#record-videos-and-write-blogpost-on-how-to-tweak-storybook)
+    -   [Record videos and write blog post on how to tweak storybook](#record-videos-and-write-blog-post-on-how-to-tweak-storybook)
 
 ## New features
 
