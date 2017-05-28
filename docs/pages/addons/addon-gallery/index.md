@@ -91,3 +91,7 @@ It is very useful if you are working on components that have to work both in LTR
 
 This addon shows a preview of the JSX code for each story.
 It allows you to configure the display and copy the code with a single click.
+
+### [Intl](https://github.com/truffls/storybook-addon-intl)
+
+With this addon you will have an additional panel at the bottom which provides you buttons to switch the locale and directly see the result in the preview.
