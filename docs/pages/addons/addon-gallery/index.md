@@ -7,8 +7,6 @@ This is a list of available addons for Storybook.
 
 ## Addons maintained by storybook team.
 
-These addons ship with Storybook by default. You can use them right away.
-
 ### [Actions](https://github.com/storybooks/storybook/tree/master/addons/actions)
 
 With actions, you can inspect events related to your components. This is pretty neat when you are manually testing your components.
