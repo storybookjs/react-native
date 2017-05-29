@@ -29,7 +29,7 @@ From the directory where you installed both `jscodeshift` and `@storybook/codemo
 Example:
 
 ```sh
-./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/update-organisation-name.js . --ignore-pattern "node_modules|dist"
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-organisation-name.js . --ignore-pattern "node_modules|dist"
 ```
 
 Explanation:
@@ -43,7 +43,7 @@ Explanation:
 Updates package names in imports to migrate to the new package names of storybook.
 
 ```sh
-./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/update-organisation-name.js . --ignore-pattern "node_modules|dist"
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-organisation-name.js . --ignore-pattern "node_modules|dist"
 ```
 
 There's a mapping of paths we replace but this example explains the gist of it:
