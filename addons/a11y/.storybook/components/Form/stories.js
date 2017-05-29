@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as Form from './components';
 
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import { checkA11y } from './../../../src';
 
 import Faker from 'faker';

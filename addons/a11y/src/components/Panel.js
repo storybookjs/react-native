@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import { EVENT_ID } from './../shared';
 
 import Tabs from './Tabs';

@@ -1,4 +1,4 @@
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 
 import A11yManager from './A11yManager';
 import * as shared from './shared'

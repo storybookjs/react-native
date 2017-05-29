@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 
 import Panel from './components/Panel';
 import { ADDON_ID, PANEL_ID } from './shared';

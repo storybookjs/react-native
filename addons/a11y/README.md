@@ -22,7 +22,7 @@ import the `'checkA11y'` decorator to check you're stories for violations within
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import { checkA11y } from 'storybook-addon-a11y';
 

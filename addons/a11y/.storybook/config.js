@@ -1,4 +1,4 @@
-import * as storybook from '@kadira/storybook';
+import * as storybook from '@storybook/react';
 
 const req = require.context('./components/', true, /stories\.js$/)
 
