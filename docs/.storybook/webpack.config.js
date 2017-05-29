@@ -1,23 +1,30 @@
 const path = require('path');
 
-module.exports = {
+const config = {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
-        loader: 'style!css',
-        include: path.resolve(__dirname, '../'),
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.yml$/,
-        loader: 'json!yaml',
-        include: path.resolve(__dirname, '../'),
+        use: [
+          'json-loader',
+          'yaml-loader'
+        ]
       },
       {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
-        loader: 'file',
-        include: path.resolve(__dirname, '../'),
+        use: [
+          'file-loader'
+        ]
       },
     ],
   },
 };
+
+module.exports = config;
