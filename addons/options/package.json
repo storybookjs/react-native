@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "3.0.0-rc.3",
+  "version": "3.0.0",
   "description": "Options addon for storybook",
   "main": "preview.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@storybook/addons": "^3.0.0-rc.3"
+    "@storybook/addons": "^3.0.0"
   },
   "peerDependencies": {
     "react": "*",

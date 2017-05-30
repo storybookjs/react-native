@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-links",
-  "version": "3.0.0-rc.3",
+  "version": "3.0.0",
   "description": "Story Links addon for storybook",
   "main": "dist/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@storybook/addons": "^3.0.0-rc.3"
+    "@storybook/addons": "^3.0.0"
   },
   "peerDependencies": {
     "react": "*",
