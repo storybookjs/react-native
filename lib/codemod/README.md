@@ -17,7 +17,7 @@ npm install jscodeshift
 npm install @storybook/codemod
 ```
 
--   `@storybook/codemod` is out collection of codemod scripts.
+-   `@storybook/codemod` is our collection of codemod scripts.
 -   `jscodeshift` is a tool we use to apply our codemods.
 
 After running the migration commands, you can remove them from your `package.json`, if you added them.
