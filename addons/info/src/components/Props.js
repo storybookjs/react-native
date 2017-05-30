@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PropVal from './PropVal';
 
 const stylesheet = {
@@ -24,7 +25,7 @@ export default class Props extends React.Component {
         (!defaultProps || props[name] != defaultProps[name])
     );
 
-    const breakIntoNewLines = names.length > 3;
+    const breakIntoNewLines = names.length > this.context.maxPropsIntoLine;
     const endingSpace = this.props.singleLine ? ' ' : '';
 
     const items = [];
@@ -52,3 +53,7 @@ export default class Props extends React.Component {
     return <span>{items}</span>;
   }
 }
+
+Props.contextTypes = {
+  maxPropsIntoLine: PropTypes.number,
+};

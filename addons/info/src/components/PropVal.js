@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import createFragment from 'react-addons-create-fragment';
 
 const valueStyles = {
@@ -36,13 +37,13 @@ const valueStyles = {
   },
 };
 
-function previewArray(val) {
+function previewArray(val, maxPropArrayLength) {
   const items = {};
-  val.slice(0, 3).forEach((item, i) => {
+  val.slice(0, maxPropArrayLength).forEach((item, i) => {
     items[`n${i}`] = <PropVal val={item} />;
     items[`c${i}`] = ', ';
   });
-  if (val.length > 3) {
+  if (val.length > maxPropArrayLength) {
     items.last = '…';
   } else {
     delete items[`c${val.length - 1}`];
@@ -54,16 +55,16 @@ function previewArray(val) {
   );
 }
 
-function previewObject(val) {
+function previewObject(val, maxPropObjectKeys) {
   const names = Object.keys(val);
   const items = {};
-  names.slice(0, 3).forEach((name, i) => {
+  names.slice(0, maxPropObjectKeys).forEach((name, i) => {
     items[`k${i}`] = <span style={valueStyles.attr}>{name}</span>;
     items[`c${i}`] = ': ';
     items[`v${i}`] = <PropVal val={val[name]} />;
     items[`m${i}`] = ', ';
   });
-  if (names.length > 3) {
+  if (names.length > maxPropObjectKeys) {
     items.rest = '…';
   } else {
     delete items[`m${names.length - 1}`];
@@ -75,21 +76,21 @@ function previewObject(val) {
   );
 }
 
-function previewProp(val) {
+function previewProp(val, { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength }) {
   let braceWrap = true;
   let content = null;
   if (typeof val === 'number') {
     content = <span style={valueStyles.number}>{val}</span>;
   } else if (typeof val === 'string') {
-    if (val.length > 50) {
-      val = `${val.slice(0, 50)}…`;
+    if (val.length > maxPropStringLength) {
+      val = `${val.slice(0, maxPropStringLength)}…`;
     }
     content = <span style={valueStyles.string}>"{val}"</span>;
     braceWrap = false;
   } else if (typeof val === 'boolean') {
     content = <span style={valueStyles.bool}>{`${val}`}</span>;
   } else if (Array.isArray(val)) {
-    content = previewArray(val);
+    content = previewArray(val, maxPropArrayLength);
   } else if (typeof val === 'function') {
     content = <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
   } else if (!val) {
@@ -103,7 +104,7 @@ function previewProp(val) {
       </span>
     );
   } else {
-    content = previewObject(val);
+    content = previewObject(val, maxPropObjectKeys);
   }
 
   if (!braceWrap) return content;
@@ -112,8 +113,14 @@ function previewProp(val) {
 
 export default class PropVal extends React.Component {
   render() {
-    return previewProp(this.props.val);
+    return previewProp(this.props.val, this.context);
   }
 }
+
+PropVal.contextTypes = {
+  maxPropObjectKeys: PropTypes.number,
+  maxPropArrayLength: PropTypes.number,
+  maxPropStringLength: PropTypes.number,
+};
 
 module.exports = PropVal;

@@ -93,6 +93,15 @@ export default class Story extends React.Component {
     MTRC.configure(this.props.mtrcConf);
   }
 
+  getChildContext() {
+    return {
+      maxPropsIntoLine: this.props.maxPropsIntoLine,
+      maxPropObjectKeys: this.props.maxPropObjectKeys,
+      maxPropArrayLength: this.props.maxPropArrayLength,
+      maxPropStringLength: this.props.maxPropStringLength,
+    };
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet))),
@@ -244,7 +253,7 @@ export default class Story extends React.Component {
         <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
         <Pre>
           {React.Children.map(this.props.children, (root, idx) => (
-            <Node key={idx} depth={0} node={root} />
+            <Node key={idx} node={root} depth={0} />
           ))}
         </Pre>
       </div>
@@ -330,6 +339,7 @@ export default class Story extends React.Component {
 }
 
 Story.displayName = 'Story';
+
 Story.propTypes = {
   context: PropTypes.object,
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -341,6 +351,10 @@ Story.propTypes = {
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   mtrcConf: PropTypes.object,
+  maxPropObjectKeys: PropTypes.number,
+  maxPropArrayLength: PropTypes.number,
+  maxPropsIntoLine: PropTypes.number,
+  maxPropStringLength: PropTypes.number,
 };
 
 Story.defaultProps = {
@@ -348,4 +362,11 @@ Story.defaultProps = {
   showHeader: true,
   showSource: true,
   mtrcConf: {},
+};
+
+Story.childContextTypes = {
+  maxPropsIntoLine: PropTypes.number,
+  maxPropObjectKeys: PropTypes.number,
+  maxPropArrayLength: PropTypes.number,
+  maxPropStringLength: PropTypes.number,
 };

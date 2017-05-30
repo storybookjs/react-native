@@ -8,6 +8,10 @@ const defaultOptions = {
   header: true,
   source: true,
   propTables: [],
+  maxPropObjectKeys: 3,
+  maxPropArrayLength: 3,
+  maxPropsIntoLine: 3,
+  maxPropStringLength: 50,
 };
 
 const defaultMtrcConf = {
@@ -64,6 +68,10 @@ export default {
         propTablesExclude: options.propTablesExclude,
         styles: typeof options.styles === 'function' ? options.styles : s => s,
         mtrcConf,
+        maxPropObjectKeys: options.maxPropObjectKeys,
+        maxPropArrayLength: options.maxPropArrayLength,
+        maxPropsIntoLine: options.maxPropsIntoLine,
+        maxPropStringLength: options.maxPropStringLength,
       };
 
       return (
