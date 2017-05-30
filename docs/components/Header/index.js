@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import './style.css';
 
-import storybookLogo from '../../design/homepage/storybook-logo.png';
+import storybookLogo from '../../design/homepage/storybook-logo.svg';
 
 const sections = [
   { id: 'home', caption: 'Home', href: '/' },
