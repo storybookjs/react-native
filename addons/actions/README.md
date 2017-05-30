@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybooks.js.org).
+Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybook.js.org).
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react) and
@@ -17,7 +17,10 @@ This addon works with Storybook for:
 
 ## Getting Started
 
-You can use this addon without installing it manually.
+Install:
+```sh
+npm i @storybook/addon-actions
+```
 
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a **name** to make it easier to identify.
 

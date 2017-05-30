@@ -31,5 +31,6 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
-  }
+  },
+  "typings": "./storybook-addon-links.d.ts"
 }

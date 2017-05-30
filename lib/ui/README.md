@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Storybook UI the core UI of [storybook](https://storybooks.js.org).
+Storybook UI the core UI of [storybook](https://storybook.js.org).
 It's a React based UI which you can initialize with a simple function.
 You can configure it by providing a provider API.
 

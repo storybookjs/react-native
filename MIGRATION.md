@@ -24,7 +24,7 @@ You can find the guide to upgrading your webpack config [on webpack.js.org](http
 All our packages have been renamed and published to npm as version 3.0.0.
 
 > We have adopted the same versioning strategy as have been adopted by babel, jest and apollo.
-> It's a strategy best suited for ecosystem type tools, which consist of many seperately installable features / packages.
+> It's a strategy best suited for ecosystem type tools, which consist of many separately installable features / packages.
 > We think this describes storybook pretty well.
 
 The new package names are:
@@ -59,13 +59,13 @@ The new package names are:
 
 If your codebase is small, it's probably doable to just replace them by hand. (in your codebase and in `package.json`).
 
-But if you have a lot of occurances in your codebase, you can use a [codemod we created](./lib/codemod) for you.
+But if you have a lot of occurrences in your codebase, you can use a [codemod we created](./lib/codemod) for you.
 
 > A codemod makes automatic changed to your app's code.
 
 You have to change your `package.json`, prune old and install new dependencies by hand.
 
-`npm prune` will remove all dependecies from `node_modules` which are no longer referenced in `package.json`.
+`npm prune` will remove all dependencies from `node_modules` which are no longer referenced in `package.json`.
 
 ### Deprecated embedded addons
 

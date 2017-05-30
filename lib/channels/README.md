@@ -45,4 +45,4 @@ const channel = addons.getChannel();
 
 * * *
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

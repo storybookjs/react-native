@@ -3,6 +3,7 @@ import { Provider } from '@storybook/ui';
 import createChannel from '@storybook/channel-websocket';
 import addons from '@storybook/addons';
 import uuid from 'uuid';
+import PreviewHelp from './components/PreviewHelp';
 
 export default class ReactProvider extends Provider {
   constructor({ url: domain, options }) {
@@ -47,7 +48,7 @@ export default class ReactProvider extends Provider {
       );
     }
 
-    return innerPreview;
+    return innerPreview || <PreviewHelp />;
   }
 
   handleAPI(api) {
