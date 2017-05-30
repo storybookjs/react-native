@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "3.0.0-rc.2",
+  "version": "3.0.0",
   "description": "Write notes for your Storybook stories.",
   "repository": {
     "type": "git",

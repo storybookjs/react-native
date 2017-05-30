@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "3.0.0-rc.2",
+  "version": "3.0.0",
   "description": "Action Logger addon for storybook",
   "main": "dist/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@storybook/addons": "^3.0.0-rc.2",
+    "@storybook/addons": "^3.0.0",
     "deep-equal": "^1.0.1",
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.5.8",
