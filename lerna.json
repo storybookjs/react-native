@@ -19,5 +19,6 @@
     "lib/*",
     "examples/*"
   ],
-  "concurrency": 1
+  "concurrency": 1,
+  "version": "3.0.0"
 }
