@@ -21,7 +21,20 @@ You can find the guide to upgrading your webpack config [on webpack.js.org](http
 
 ### Packages renaming
 
-All our packages have been renamed and published to npm as version 3.0.0.
+All our packages have been renamed and published to npm as version 3.0.0 under the `@storybook` namespace.
+
+To update your app to use the new package names, you can use the cli:
+
+```bash
+npm install --global @storybook/cli
+
+# if you run this inside a v2 app, it should perform the necessary codemods.
+getstorybook
+```
+
+#### Details
+
+If the above doesn't work, or you want to make the changes manually, the details are below:
 
 > We have adopted the same versioning strategy as have been adopted by babel, jest and apollo.
 > It's a strategy best suited for ecosystem type tools, which consist of many separately installable features / packages.
