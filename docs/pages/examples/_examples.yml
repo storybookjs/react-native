@@ -21,7 +21,7 @@ lonelyplanet:
   site: https://www.lonelyplanet.com/
 algolia:
   thumbnail: ./thumbnails/algolia.jpg
-  title: Algolia Instantsearch
+  title: Algolia InstantSearch
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
