@@ -19,7 +19,7 @@ This addon works with Storybook for:
 
 Install:
 ```sh
-npm i @storybook/addon-actions
+npm i -D @storybook/addon-actions
 ```
 
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a **name** to make it easier to identify.
