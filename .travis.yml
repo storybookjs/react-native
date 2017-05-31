@@ -6,7 +6,7 @@ cache:
 notifications:
   email: false
 node_js:
-- node
+- 7
 before_install: "./scripts/travis/before_install.sh"
 after_success: "./scripts/travis/after_success.sh"
 script:
