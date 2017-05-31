@@ -155,12 +155,12 @@ storiesOf('Button').addWithInfo(
 );
 
 storiesOf('Button').addWithInfo(
-  'simple usage (maxPropObjectKeys === 8)',
+  'simple usage (maxPropArrayLength === 8)',
   `
       This is the basic usage with the button with providing a label to show the text.
     `,
   () => <Button array={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />,
-  { inline: true, maxPropArrayLength: 5 }
+  { inline: true, maxPropArrayLength: 8 }
 );
 
 storiesOf('Button').addWithInfo(
