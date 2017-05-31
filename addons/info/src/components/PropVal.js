@@ -76,7 +76,7 @@ function previewObject(val, maxPropObjectKeys) {
   );
 }
 
-function previewProp(val, { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength }) {
+function previewProp({ val, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength }) {
   let braceWrap = true;
   let content = null;
   if (typeof val === 'number') {
@@ -113,14 +113,8 @@ function previewProp(val, { maxPropObjectKeys, maxPropArrayLength, maxPropString
 
 export default class PropVal extends React.Component {
   render() {
-    return previewProp(this.props.val, this.context);
+    return previewProp(this.props);
   }
 }
-
-PropVal.contextTypes = {
-  maxPropObjectKeys: PropTypes.number,
-  maxPropArrayLength: PropTypes.number,
-  maxPropStringLength: PropTypes.number,
-};
 
 module.exports = PropVal;

@@ -10,7 +10,14 @@ const stylesheet = {
 
 export default class Node extends React.Component {
   render() {
-    const { node, depth } = this.props;
+    const {
+      node,
+      depth,
+      maxPropsIntoLine,
+      maxPropObjectKeys,
+      maxPropArrayLength,
+      maxPropStringLength,
+    } = this.props;
     const { tagStyle, containerStyle } = stylesheet;
 
     const leftPad = {
@@ -36,7 +43,14 @@ export default class Node extends React.Component {
       return (
         <div style={containerStyle}>
           <span style={tagStyle}>&lt;{name}</span>
-          <Props node={node} singleLine />
+          <Props
+            node={node}
+            singleLine
+            maxPropsIntoLine={maxPropsIntoLine}
+            maxPropObjectKeys={maxPropObjectKeys}
+            maxPropArrayLength={maxPropArrayLength}
+            maxPropStringLength={maxPropStringLength}
+          />
           <span style={tagStyle}>/&gt;</span>
         </div>
       );
@@ -50,11 +64,24 @@ export default class Node extends React.Component {
       <div>
         <div style={containerStyleCopy}>
           <span style={tagStyle}>&lt;{name}</span>
-          <Props node={node} />
+          <Props
+            node={node}
+            maxPropsIntoLine={maxPropsIntoLine}
+            maxPropObjectKeys={maxPropObjectKeys}
+            maxPropArrayLength={maxPropArrayLength}
+            maxPropStringLength={maxPropStringLength}
+          />
           <span style={tagStyle}>&gt;</span>
         </div>
         {React.Children.map(children, childElement => (
-          <Node node={childElement} depth={depth + 1} />
+          <Node
+            node={childElement}
+            depth={depth + 1}
+            maxPropsIntoLine={maxPropsIntoLine}
+            maxPropObjectKeys={maxPropObjectKeys}
+            maxPropArrayLength={maxPropArrayLength}
+            maxPropStringLength={maxPropStringLength}
+          />
         ))}
         <div style={containerStyleCopy}>
           <span style={tagStyle}>&lt;/{name}&gt;</span>

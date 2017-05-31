@@ -10,6 +10,12 @@ const stylesheet = {
 
 export default class Props extends React.Component {
   render() {
+    const {
+      maxPropsIntoLine,
+      maxPropObjectKeys,
+      maxPropArrayLength,
+      maxPropStringLength,
+    } = this.props;
     const props = this.props.node.props;
     const defaultProps = this.props.node.type.defaultProps;
     if (!props || typeof props !== 'object') {
@@ -25,7 +31,7 @@ export default class Props extends React.Component {
         (!defaultProps || props[name] != defaultProps[name])
     );
 
-    const breakIntoNewLines = names.length > this.context.maxPropsIntoLine;
+    const breakIntoNewLines = names.length > maxPropsIntoLine;
     const endingSpace = this.props.singleLine ? ' ' : '';
 
     const items = [];
@@ -42,7 +48,14 @@ export default class Props extends React.Component {
           {(!props[name] || typeof props[name] !== 'boolean') &&
             <span>
               =
-              <span style={propValueStyle}><PropVal val={props[name]} /></span>
+              <span style={propValueStyle}>
+                <PropVal
+                  val={props[name]}
+                  maxPropObjectKeys={maxPropObjectKeys}
+                  maxPropArrayLength={maxPropArrayLength}
+                  maxPropStringLength={maxPropStringLength}
+                />
+              </span>
             </span>}
 
           {i === names.length - 1 && (breakIntoNewLines ? <br /> : endingSpace)}
@@ -53,7 +66,3 @@ export default class Props extends React.Component {
     return <span>{items}</span>;
   }
 }
-
-Props.contextTypes = {
-  maxPropsIntoLine: PropTypes.number,
-};

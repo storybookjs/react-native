@@ -22,7 +22,7 @@ const stylesheet = {
 
 export default class PropTable extends React.Component {
   render() {
-    const type = this.props.type;
+    const { type, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
 
     if (!type) {
       return null;
@@ -96,7 +96,16 @@ export default class PropTable extends React.Component {
               <td>{row.property}</td>
               <td>{row.propType}</td>
               <td>{row.required}</td>
-              <td>{row.defaultValue === undefined ? '-' : <PropVal val={row.defaultValue} />}</td>
+              <td>
+                {row.defaultValue === undefined
+                  ? '-'
+                  : <PropVal
+                      val={row.defaultValue}
+                      maxPropObjectKeys={maxPropObjectKeys}
+                      maxPropArrayLength={maxPropArrayLength}
+                      maxPropStringLength={maxPropStringLength}
+                    />}
+              </td>
               <td>{row.description}</td>
             </tr>
           ))}
