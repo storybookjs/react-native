@@ -1,4 +1,5 @@
 # Storybook for React Native
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -10,7 +11,7 @@ With Storybook for React Native you can design and develop individual React Nati
 
 ![Storybook Screenshot](docs/assets/readme/screenshot.png)
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)
 
 ## Getting Started
 
@@ -21,7 +22,30 @@ npm -g i @storybook/cli
 getstorybook
 ```
 
-## Start the Storybook
+After you have installed, there are additional steps for `create-react-native-app` apps. See the section for details, otherwise skip to [Start Storybook](#start-storybook)
+to see the next step.
+
+## Create React Native App (CRNA)
+
+If you run `getstorybook` inside a CRNA app, you'll be notified that there is an extra step required to use Storybook.
+
+The easiest way to use Storybook inside CRNA is to simply replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
+
+```js
+export default from './storybook';
+```
+
+This will get you up and running quickly, but then you lose your app!
+There are multiple options here. for example, you can export conditionally:
+
+```js
+import StorybookUI from './storybook';
+module.exports = __DEV__ ? StorybookUI : App;
+```
+
+Alternatively, `StorybookUI` is simply a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
+
+## Start Storybook
 
 After initial setup start the storybook server with the storybook npm script.
 
@@ -29,14 +53,21 @@ After initial setup start the storybook server with the storybook npm script.
 npm run storybook
 ```
 
-also start your mobile app with the `react-native` command.
+Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
 
-```
-react-native run-ios
-react-native run-android
-```
+## Start App
 
-Now, you can open <http://localhost:7007> to view your storybook.
+To see your Storybook stories on the device, you should start your mobile app for the `<platform>` of your choice (typically `ios` or `android`).
+
+For CRNA apps:
+
+    npm run <platform>
+
+For RN apps:
+
+    react-native run-<platform>
+
+Once your app is started, changing the selected story in web browser will update the story displayed within your mobile app.
 
 ## Learn More
 

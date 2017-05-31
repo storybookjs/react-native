@@ -2,6 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const buttonStyles = {
   border: '1px solid #eee',

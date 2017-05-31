@@ -1,43 +1,48 @@
-import renderer from 'react-test-renderer';
 import path from 'path';
+import global from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
-
+import { snapshot } from './test-bodies';
 const { describe, it, expect } = global;
+
+export { snapshotWithOptions, snapshot, renderOnly } from './test-bodies';
 
 let storybook;
 let configPath;
+global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
 const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
-const isStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@storybook/react']) ||
-  (pkg.dependencies && pkg.dependencies['@storybook/react']);
-const isRNStorybook =
-  (pkg.devDependencies && pkg.devDependencies['@storybook/react-native']) ||
-  (pkg.dependencies && pkg.dependencies['@storybook/react-native']);
+
+const hasDependency = function(name) {
+  return (
+    (pkg.devDependencies && pkg.devDependencies[name]) ||
+    (pkg.dependencies && pkg.dependencies[name])
+  );
+};
 
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
+  const isStorybook = options.framework === 'react' || hasDependency('@storybook/react');
+  const isRNStorybook =
+    options.framework === 'react-native' || hasDependency('@storybook/react-native');
+
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
-
-    // eslint-disable-next-line global-require
-    const { default: loadBabelConfig } = require('@storybook/react/dist/server/babel_config');
+    const loadBabelConfig = require('@storybook/react/dist/server/babel_config').default;
     const configDirPath = path.resolve(options.configPath || '.storybook');
-    const babelConfig = loadBabelConfig(configDirPath);
-
     configPath = path.join(configDirPath, 'config.js');
 
-    const { code: content } = babel.transformFileSync(configPath, babelConfig);
+    const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
       dirname: configDirPath,
     };
+    const babelConfig = loadBabelConfig(configDirPath);
 
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
@@ -55,7 +60,11 @@ export default function testStorySnapshots(options = {}) {
   const suit = options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
-  /* eslint-disable no-continue, no-restricted-syntax */
+  // Added not to break existing storyshots configs (can be removed in a future major release)
+  options.storyNameRegex = options.storyNameRegex || options.storyRegex;
+
+  options.test = options.test || snapshot;
+
   for (const group of stories) {
     if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
       continue;
@@ -70,9 +79,7 @@ export default function testStorySnapshots(options = {}) {
 
           it(story.name, () => {
             const context = { kind: group.kind, story: story.name };
-            const renderedStory = story.render(context);
-            const tree = renderer.create(renderedStory).toJSON();
-            expect(tree).toMatchSnapshot();
+            options.test({ story, context });
           });
         }
       });

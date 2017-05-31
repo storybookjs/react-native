@@ -1,4 +1,5 @@
 # Storybook Addons
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -10,6 +11,6 @@ Storybook Addons is a node module which is used to load custom addons to storybo
 
 It stores addon loaders, communication channel and other resources which can be used by storybook implementations where required.
 
----
+* * *
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

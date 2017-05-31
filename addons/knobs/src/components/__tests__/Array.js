@@ -9,7 +9,7 @@ describe('Array', () => {
       <Array
         onChange={onChange}
         knob={{ name: 'passions', value: ['Fishing', 'Skiing'], separator: ',' }}
-      />,
+      />
     );
 
     wrapper.simulate('change', { target: { value: 'Fhishing,Skiing,Dancing' } });

@@ -38,14 +38,23 @@ export default class PropTable extends React.Component {
           continue; // eslint-disable-line
         }
         const typeInfo = type.propTypes[property];
-        const propType = PropTypesMap.get(typeInfo) || 'other';
+        let propType = PropTypesMap.get(typeInfo) || 'other';
         const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
         const description = type.__docgenInfo &&
           type.__docgenInfo.props &&
           type.__docgenInfo.props[property]
           ? type.__docgenInfo.props[property].description
-          : null; // eslint-disable-line no-underscore-dangle
-
+          : null;
+        if (propType === 'other') {
+          if (
+            type.__docgenInfo &&
+            type.__docgenInfo.props &&
+            type.__docgenInfo.props[property] &&
+            type.__docgenInfo.props[property].type
+          ) {
+            propType = type.__docgenInfo.props[property].type.name;
+          }
+        }
         props[property] = { property, propType, required, description };
       }
     }

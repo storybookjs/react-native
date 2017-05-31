@@ -1,19 +1,11 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0",
   "description": "Storybook decorator to center components",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "prepublish": "babel src --out-dir build"
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
-  "license": "MIT",
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
-  },
-  "peerDependencies": {
-    "react": "*"
-  }
+  "license": "MIT"
 }

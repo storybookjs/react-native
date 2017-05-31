@@ -66,7 +66,7 @@ export default class ClientApi {
 
       const fn = decorators.reduce(
         (decorated, decorator) => context => decorator(() => decorated(context), context),
-        getStory,
+        getStory
       );
 
       // Add the fully decorated getStory function.

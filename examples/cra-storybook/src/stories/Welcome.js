@@ -87,20 +87,19 @@ export default class Welcome extends React.Component {
           located at <code style={styles.code}>src/stories/Button.js</code>.)
         </p>
         <p>
-          This is just one thing you can do with Storybook.
-          <br />
+          Usually we create stories with smaller UI components in the app.<br />
           Have a look at the
           {' '}
           <a
             style={styles.link}
-            href="https://github.com/storybooks/storybook"
+            href="https://storybook.js.org/docs/react-storybook/basics/writing-stories"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Storybook
+            Writing Stories
           </a>
           {' '}
-          repo for more information.
+          section in our documentation.
         </p>
         <p style={styles.note}>
           <b>NOTE:</b>

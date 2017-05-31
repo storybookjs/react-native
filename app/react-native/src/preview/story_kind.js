@@ -25,7 +25,7 @@ export default class StoryKindApi {
         const _fn = () => decorated(context);
         return decorator(_fn, context);
       },
-      fn,
+      fn
     );
   }
 }

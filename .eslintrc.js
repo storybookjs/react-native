@@ -3,6 +3,7 @@ const warn = 1;
 const ignore = 0;
 
 module.exports = {
+  root: true,
   extends: [
     '@ndelangen/eslint-config-airbnb',
     'prettier',
@@ -28,7 +29,7 @@ module.exports = {
       printWidth: 100,
       tabWidth: 2,
       bracketSpacing: true,
-      trailingComma: 'all',
+      trailingComma: 'es5',
       singleQuote: true,
     }],
     quotes: ['warn', 'single'],

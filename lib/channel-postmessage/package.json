@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -11,8 +11,7 @@
     "shelljs": "^0.7.7"
   },
   "dependencies": {
-    "@storybook/channels": "^3.0.0-alpha.0",
-    "global": "^4.3.2",
+    "@storybook/channels": "^3.0.0",
     "json-stringify-safe": "^5.0.1"
   }
 }

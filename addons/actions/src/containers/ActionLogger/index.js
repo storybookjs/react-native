@@ -26,7 +26,7 @@ export default class ActionLogger extends React.Component {
     action.data.args = action.data.args.map(arg => JSON.parse(arg)); // eslint-disable-line
     const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
-    if (previous && deepEqual(previous.data, action.data)) {
+    if (previous && deepEqual(previous.data, action.data, { strict: true })) {
       previous.count++; // eslint-disable-line
     } else {
       action.count = 1; // eslint-disable-line

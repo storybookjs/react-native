@@ -52,6 +52,6 @@ if (!program.skipPackager) {
     ]
       .filter(x => x)
       .join(' '),
-    { async: true },
+    { async: true }
   );
 }

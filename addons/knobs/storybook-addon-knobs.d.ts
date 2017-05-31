@@ -43,3 +43,4 @@ interface IWrapStoryProps {
 }
 
 export function withKnobs(storyFn: Function, context: StoryContext): React.ReactElement<IWrapStoryProps>;
+export function withKnobsOptions(options: Object): (storyFn: Function, context: StoryContext) => React.ReactElement<IWrapStoryProps>;

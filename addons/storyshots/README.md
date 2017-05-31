@@ -1,4 +1,5 @@
 # StoryShots
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -6,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storybooks.js.org/).
+StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storybook.js.org/).
 
 This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react) and
@@ -28,8 +29,8 @@ npm install --save-dev @storybook/addon-storyshots
 
 Usually, you might already have completed this step. If not, here are some resources for you.
 
-* If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
-* Otherwise check this Egghead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
+-   If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
+-   Otherwise check this Egghead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
 
 ## Configure Storyshots
 
@@ -37,7 +38,7 @@ Create a new test file with the name `Storyshots.test.js`. (Or whatever the name
 Then add following content to it:
 
 ```js
-import initStoryshots from 'storyshots';
+import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots();
 ```
@@ -54,8 +55,8 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 
 By default, Storyshots assumes the config directory path for your project as below:
 
-* Storybook for React: `.storybook`
-* Storybook for React Native: `storybook`
+-   Storybook for React: `.storybook`
+-   Storybook for React Native: `storybook`
 
 If you are using a different config directory path, you could change it like this:
 
@@ -96,3 +97,27 @@ initStoryshots({
   storyNameRegex: /buttons/
 });
 ```
+
+### `framework`
+
+If you are running tests from outside of your app's directory, storyshots' detection of which framework you are using may fail. Pass `"react"` or `"react-native"` to short-circuit this.
+
+### `test`
+
+Run a custom test function for each story, rather than the default (a vanilla snapshot test). See the exports section below for more details.
+
+## Exports
+
+Apart from the default export (`initStoryshots`), Storyshots also exports some named test functions (see the `test` option above):
+
+### `snapshot`
+
+The default, render the story as normal and take a Jest snapshot.
+
+### `renderOnly`
+
+Just render the story, don't check the output at all (useful if you just want to ensure it doesn't error).
+
+### `snapshotWithOptions(options)`
+
+Like the default, but allows you to specify a set of options for the test renderer. [See for example here](https://github.com/storybooks/storybook/blob/b915b5439786e0edb17d7f5ab404bba9f7919381/examples/test-cra/src/storyshots.test.js#L14-L16).

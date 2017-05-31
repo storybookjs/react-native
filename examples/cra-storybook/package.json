@@ -3,23 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@storybook/react": "*",
-    "@storybook/addons": "*",
-    "@storybook/addon-actions": "*",
-    "@storybook/addon-links": "*",
-    "react-scripts": "0.9.5",
-    "eslint-config-prettier": "^2.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.1",
-    "eslint-plugin-prettier": "^2.0.1",
-    "eslint-plugin-react": "^7.0.0",
-    "eslint-plugin-jest": "^20.0.0"
+    "@storybook/react": "3.0.0-alpha.1",
+    "@storybook/addons": "3.0.0-alpha.0",
+    "@storybook/addon-actions": "3.0.0-alpha.1",
+    "@storybook/addon-links": "3.0.0-alpha.1",
+    "react-scripts": "1.0.1"
   },
   "dependencies": {
-    "global": "^4.3.2",
-    "prop-types": "^15.5.9",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "prop-types": "^15.5.10"
   },
   "scripts": {
     "start": "react-scripts start",

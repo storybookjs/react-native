@@ -1,4 +1,5 @@
 # Storybook CLI
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -12,7 +13,7 @@ In the future it will also add other useful generators and migration tooling.
 
 ![Screenshot](docs/getstorybook.png)
 
-First install the storybook cli globally.
+First install the storybook CLI globally.
 
 ```sh
 npm i -g @storybook/cli
@@ -26,7 +27,7 @@ getstorybook
 
 That's all you've to do.
 
----
+* * *
 
 ## [Yarn](https://github.com/yarnpkg/yarn) support
 
@@ -39,4 +40,4 @@ If you don't want to use `yarn` always you can use the `--use-npm` option like t
 getstorybook --use-npm
 ```
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)
