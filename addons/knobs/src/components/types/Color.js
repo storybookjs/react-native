@@ -86,7 +86,7 @@ class ColorType extends React.Component {
               <SketchPicker color={knob.value} onChange={color => onChange(color.hex)} />
             </div>
           ),
-          () => null,
+          () => null
         )}
       </div>
     );

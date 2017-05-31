@@ -17,12 +17,10 @@ export default function Props(props) {
 
   const { propValueStyle, propNameStyle } = stylesheet;
 
-    const names = Object.keys(props).filter(
-      name =>
-        name[0] !== '_' &&
-        name !== 'children' &&
-        (!defaultProps || props[name] != defaultProps[name])
-    );
+  const names = Object.keys(props).filter(
+    name =>
+      name[0] !== '_' && name !== 'children' && (!defaultProps || props[name] != defaultProps[name])
+  );
 
   const breakIntoNewLines = names.length > 3;
   const endingSpace = props.singleLine ? ' ' : '';
@@ -40,10 +38,10 @@ export default function Props(props) {
             <span style={propValueStyle}><PropVal val={nodeProps[name]} /></span>
           </span>}
 
-          {i === names.length - 1 && (breakIntoNewLines ? <br /> : endingSpace)}
-        </span>
-      );
-    });
+        {i === names.length - 1 && (breakIntoNewLines ? <br /> : endingSpace)}
+      </span>
+    );
+  });
 
   return <span>{items}</span>;
 }

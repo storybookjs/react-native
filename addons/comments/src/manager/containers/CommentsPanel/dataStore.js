@@ -138,7 +138,7 @@ export default class DataStore {
     this.callbacks.forEach(callback => {
       // link user to the comment directly
       const commentsWithUser = comments.map(comment =>
-        Object.assign({}, comment, { user: this.users[comment.userId] }),
+        Object.assign({}, comment, { user: this.users[comment.userId] })
       );
       callback(commentsWithUser);
     });

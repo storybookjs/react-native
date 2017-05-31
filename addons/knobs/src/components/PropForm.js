@@ -61,7 +61,7 @@ propForm.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.string,
-    }),
+    })
   ),
   onFieldChange: PropTypes.func.isRequired,
 };
