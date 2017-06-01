@@ -4,6 +4,26 @@
     "type": "git",
     "url": "git@github.com:storybooks/storybook.git"
   },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "bootstrap:docs": "cd docs && npm i",
+    "bootstrap:test-cra": "lerna exec --scope test-cra -- npm i",
+    "changelog": "pr-log --sloppy",
+    "precommit": "lint-staged",
+    "coverage": "codecov",
+    "docs:build": "cd docs && npm run build",
+    "docs:deploy:ci": "cd docs && npm run deploy:ci",
+    "docs:deploy:manual": "cd docs && npm run deploy:manual",
+    "docs:dev": "cd docs && npm run dev",
+    "github-release": "github-release-from-changelog",
+    "import-repo": "lerna import",
+    "lint": "npm run lint:js && npm run lint:markdown",
+    "lint:js": "eslint . --cache --cache-location=.cache/eslint/main --ext .js,.jsx",
+    "lint:markdown": "remark .",
+    "publish": "lerna publish",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
@@ -26,9 +46,11 @@
     "eslint-plugin-react": "^7.0.1",
     "gh-pages": "^1.0.0",
     "github-release-from-changelog": "^1.2.1",
+    "husky": "^0.13.4",
     "jest": "^20.0.4",
     "jest-enzyme": "^3.2.0",
     "lerna": "2.0.0-rc.5",
+    "lint-staged": "^3.5.1",
     "markdown-it-anchor": "^4.0.0",
     "markdownlint-cli": "^0.3.1",
     "prettier": "^1.3.1",
@@ -43,28 +65,19 @@
     "remark-toc": "^4.0.0",
     "shelljs": "^0.7.7"
   },
-  "scripts": {
-    "changelog": "pr-log --sloppy",
-    "github-release": "github-release-from-changelog",
-    "publish": "lerna publish",
-    "import-repo": "lerna import",
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:test-cra": "lerna exec --scope test-cra -- npm i",
-    "bootstrap:docs": "cd docs && npm i",
-    "lint": "npm run lint:js && npm run lint:markdown",
-    "lint:js": "eslint . --cache --cache-location=.cache/eslint/main --ext .js,.jsx",
-    "lint:markdown": "remark .",
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "coverage": "codecov",
-    "docs:build": "cd docs && npm run build",
-    "docs:deploy:manual": "cd docs && npm run deploy:manual",
-    "docs:deploy:ci": "cd docs && npm run deploy:ci",
-    "docs:dev": "cd docs && npm run dev"
-  },
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:js -- --fix",
+      "git add"
+    ],
+    "*.md": [
+      "npm run lint:markdown -- -o",
+      "git add"
+    ]
   },
   "pr-log": {
     "skipLabels": [
