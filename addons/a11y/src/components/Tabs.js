@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   container: {
@@ -28,13 +29,6 @@ const styles = {
 }
 
 class Tabs extends Component {
-  static propTypes = {
-    tabs: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.element,
-      panel: PropTypes.element,
-    })),
-  }
-
   constructor(props) {
     super(props);
 
@@ -97,5 +91,12 @@ class Tabs extends Component {
     );
   }
 }
+
+Tabs.propTypes = {
+  tabs: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.node,
+    panel: PropTypes.node,
+  })),
+};
 
 export default Tabs;
