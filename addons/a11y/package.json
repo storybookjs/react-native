@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jbovenschen/storybook-addon-a11y.git"
+    "url": "git+https://github.com/storybooks/storybook-addon-a11y.git"
   },
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jbovenschen/storybook-addon-a11y/issues"
+    "url": "https://github.com/storybooks/storybook-addon-a11y/issues"
   },
-  "homepage": "https://github.com/jbovenschen/storybook-addon-a11y#readme",
+  "homepage": "https://github.com/storybooks/storybook-addon-a11y#readme",
   "devDependencies": {
     "@storybook/react": "^3.0.0",
     "babel-cli": "^6.14.0",
