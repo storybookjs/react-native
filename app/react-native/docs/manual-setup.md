@@ -61,12 +61,10 @@ storiesOf('CenteredView')
 
 Then add following NPM script into your `package.json` file:
 
-```js
+```json
 {
   "scripts": {
-    ...
     "storybook": "storybook start -p 7007"
-    ...
   }
 }
 ```

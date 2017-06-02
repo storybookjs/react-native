@@ -1,4 +1,5 @@
 # Storybook PostMessage Channel
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -14,6 +15,6 @@ import createChannel from '@storybook/channel-postmessage'
 const channel = createChannel({ key: 'postmsg-key' })
 ```
 
----
+* * *
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

@@ -1,14 +1,20 @@
 {
   "name": "@storybook/codemod",
   "description": "A collection of codemod scripts written with JSCodeshift",
-  "version": "3.0.0-rc.0",
+  "version": "3.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/storybooks/storybook.git"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "jscodeshift": "^0.3.30"
+  },
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js"
+  },
+  "devDependencies": {
+    "shelljs": "^0.7.7"
   }
 }

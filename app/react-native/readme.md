@@ -1,4 +1,5 @@
 # Storybook for React Native
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -10,7 +11,7 @@ With Storybook for React Native you can design and develop individual React Nati
 
 ![Storybook Screenshot](docs/assets/readme/screenshot.png)
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)
 
 ## Getting Started
 
@@ -59,13 +60,12 @@ Now, you can open <http://localhost:7007> to view your storybook menus in the br
 To see your Storybook stories on the device, you should start your mobile app for the `<platform>` of your choice (typically `ios` or `android`).
 
 For CRNA apps:
-```
-npm run <platform>
-```
+
+    npm run <platform>
+
 For RN apps:
-```
-react-native run-<platform>
-```
+
+    react-native run-<platform>
 
 Once your app is started, changing the selected story in web browser will update the story displayed within your mobile app.
 
