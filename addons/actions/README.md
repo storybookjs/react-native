@@ -18,6 +18,7 @@ This addon works with Storybook for:
 ## Getting Started
 
 Install:
+
 ```sh
 npm i -D @storybook/addon-actions
 ```
