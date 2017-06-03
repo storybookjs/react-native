@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/react'; // eslint-disable-line
+import { action } from '@storybook/addon-actions'; // eslint-disable-line
 
 import Button from './Button';
 

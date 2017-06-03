@@ -27,12 +27,33 @@ const UsedByBg = ({ color }) => (
     </svg>
   </div>
 );
+UsedByBg.propTypes = {
+  color: PropTypes.string,
+};
+UsedByBg.defaultProps = {
+  color: 'white',
+};
 
 const User = ({ logo, demo, site, title }) => (
-  <a className="used-by-user" href={demo || site} target="_blank" rel="nofollow">
+  <a
+    className="used-by-user"
+    href={demo || site}
+    target="_blank"
+    rel="noopener nofollow noreferrer"
+  >
     <img className="used-by-user-image" src={logo} alt={title} />
   </a>
 );
+User.propTypes = {
+  logo: PropTypes.string.isRequired,
+  demo: PropTypes.string,
+  site: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+User.defaultProps = {
+  demo: '',
+  title: '',
+};
 
 const UsedBy = ({ users }) => (
   <div className="used-by-wrapper">
@@ -41,7 +62,7 @@ const UsedBy = ({ users }) => (
       <div className="used-by-contents">
         <h2 className="used-by-title">Used by these fine folks:</h2>
         <div className="used-by-users">
-          {users.map((user, idx) => <User key={idx} {...user} />)}
+          {users.map(user => <User key={user.site} {...user} />)}
         </div>
       </div>
     </div>
@@ -50,9 +71,8 @@ const UsedBy = ({ users }) => (
     </Link>
   </div>
 );
-
 UsedBy.propTypes = {
-  users: PropTypes.array,
+  users: PropTypes.array, // eslint-disable-line
 };
 
 export default UsedBy;

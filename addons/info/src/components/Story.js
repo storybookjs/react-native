@@ -1,12 +1,17 @@
 /* eslint no-underscore-dangle: 0 */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import global from 'global';
+
 import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
 import Node from './Node';
 import { baseFonts } from './theme';
 import { Pre } from './markdown';
+
+global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
+const STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES;
 
 const stylesheet = {
   link: {
@@ -222,7 +227,7 @@ export default class Story extends React.Component {
     let retDiv = null;
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
-      Object.keys(STORYBOOK_REACT_CLASSES).forEach((key, index) => {
+      Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
         if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.kind) {
           retDiv = (
             <div>

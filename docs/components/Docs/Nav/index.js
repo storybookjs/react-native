@@ -1,50 +1,36 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import './style.css';
 
-class Nav extends React.Component {
-  renderNavItem(section, item) {
-    const { selectedSectionId, selectedItemId } = this.props;
-    const cssClass = section.id === selectedSectionId && item.id === selectedItemId
-      ? 'selected'
-      : '';
-
-    const url = `/${section.id}/${item.id}/`;
-
-    return (
-      <li key={item.id}>
-        <Link className={cssClass} to={url}>{item.title}</Link>
-      </li>
-    );
-  }
-
-  renderNavSections(section) {
-    return (
+const Nav = ({ sections, selectedSectionId, selectedItemId }) => (
+  <div id="nav">
+    {sections.map(section => (
       <div key={section.id}>
         <h3>{section.heading}</h3>
         <ul>
-          {section.items.map(this.renderNavItem.bind(this, section))}
+          {section.items.map(item => {
+            const cssClass = section.id === selectedSectionId && item.id === selectedItemId
+              ? 'selected'
+              : '';
+
+            const url = `/${section.id}/${item.id}/`;
+
+            return (
+              <li key={item.id}>
+                <Link className={cssClass} to={url}>{item.title}</Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
-    );
-  }
-
-  render() {
-    const { sections } = this.props;
-
-    return (
-      <div id="nav">
-        {sections.map(this.renderNavSections.bind(this))}
-      </div>
-    );
-  }
-}
-
+    ))}
+  </div>
+);
 Nav.propTypes = {
-  sections: PropTypes.array,
-  selectedItem: PropTypes.string,
-  prefix: PropTypes.string,
+  sections: PropTypes.array, // eslint-disable-line
+  selectedSectionId: PropTypes.string.isRequired,
+  selectedItemId: PropTypes.string.isRequired,
 };
 
-export default Nav;
+export { Nav as default };

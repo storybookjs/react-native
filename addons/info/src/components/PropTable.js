@@ -22,91 +22,87 @@ const stylesheet = {
   },
 };
 
-export default class PropTable extends React.Component {
-  render() {
-    const type = this.props.type;
+const PropTable = ({ type }) => {
+  if (!type) {
+    return null;
+  }
 
-    if (!type) {
-      return null;
-    }
+  const props = {};
 
-    const props = {};
-
-    if (type.propTypes) {
+  if (type.propTypes) {
       for (const property in type.propTypes) { // eslint-disable-line
         if (!type.propTypes.hasOwnProperty(property)) { // eslint-disable-line
           continue; // eslint-disable-line
-        }
-        const typeInfo = type.propTypes[property];
-        let propType = PropTypesMap.get(typeInfo) || 'other';
-        const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-        const description = type.__docgenInfo &&
-          type.__docgenInfo.props &&
-          type.__docgenInfo.props[property]
-          ? type.__docgenInfo.props[property].description
-          : null;
-        if (propType === 'other') {
-          if (
-            type.__docgenInfo &&
-            type.__docgenInfo.props &&
-            type.__docgenInfo.props[property] &&
-            type.__docgenInfo.props[property].type
-          ) {
-            propType = type.__docgenInfo.props[property].type.name;
-          }
-        }
-        props[property] = { property, propType, required, description };
       }
+      const typeInfo = type.propTypes[property];
+      let propType = PropTypesMap.get(typeInfo) || 'other';
+      const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
+      const description = type.__docgenInfo &&
+        type.__docgenInfo.props &&
+        type.__docgenInfo.props[property]
+        ? type.__docgenInfo.props[property].description
+        : null;
+      if (propType === 'other') {
+        if (
+          type.__docgenInfo &&
+          type.__docgenInfo.props &&
+          type.__docgenInfo.props[property] &&
+          type.__docgenInfo.props[property].type
+        ) {
+          propType = type.__docgenInfo.props[property].type.name;
+        }
+      }
+      props[property] = { property, propType, required, description };
     }
+  }
 
-    if (type.defaultProps) {
+  if (type.defaultProps) {
       for (const property in type.defaultProps) { // eslint-disable-line
         if (!type.defaultProps.hasOwnProperty(property)) { // eslint-disable-line
           continue; // eslint-disable-line
-        }
-        const value = type.defaultProps[property];
-        if (value === undefined) {
-          continue; // eslint-disable-line
-        }
-        if (!props[property]) {
-          props[property] = { property };
-        }
-        props[property].defaultValue = value;
       }
+      const value = type.defaultProps[property];
+      if (value === undefined) {
+          continue; // eslint-disable-line
+      }
+      if (!props[property]) {
+        props[property] = { property };
+      }
+      props[property].defaultValue = value;
     }
-
-    const array = Object.values(props);
-    if (!array.length) {
-      return <small>No propTypes defined!</small>;
-    }
-    array.sort((a, b) => a.property > b.property);
-
-    return (
-      <table style={stylesheet.propTable}>
-        <thead>
-          <tr>
-            <th>property</th>
-            <th>propType</th>
-            <th>required</th>
-            <th>default</th>
-            <th>description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {array.map(row => (
-            <tr key={row.property}>
-              <td>{row.property}</td>
-              <td>{row.propType}</td>
-              <td>{row.required}</td>
-              <td>{row.defaultValue === undefined ? '-' : <PropVal val={row.defaultValue} />}</td>
-              <td>{row.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
   }
-}
+
+  const array = Object.values(props);
+  if (!array.length) {
+    return <small>No propTypes defined!</small>;
+  }
+  array.sort((a, b) => a.property > b.property);
+
+  return (
+    <table style={stylesheet.propTable}>
+      <thead>
+        <tr>
+          <th>property</th>
+          <th>propType</th>
+          <th>required</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {array.map(row => (
+          <tr key={row.property}>
+            <td>{row.property}</td>
+            <td>{row.propType}</td>
+            <td>{row.required}</td>
+            <td>{row.defaultValue === undefined ? '-' : <PropVal val={row.defaultValue} />}</td>
+            <td>{row.description}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
 PropTable.displayName = 'PropTable';
 PropTable.defaultProps = {

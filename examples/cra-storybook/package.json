@@ -10,9 +10,10 @@
     "react-scripts": "1.0.1"
   },
   "dependencies": {
+    "global": "^4.3.2",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "prop-types": "^15.5.10"
+    "react-dom": "^15.5.4"
   },
   "scripts": {
     "start": "react-scripts start",

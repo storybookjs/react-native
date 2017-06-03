@@ -19,7 +19,9 @@ export default function Props(props) {
 
   const names = Object.keys(props).filter(
     name =>
-      name[0] !== '_' && name !== 'children' && (!defaultProps || props[name] != defaultProps[name])
+      name[0] !== '_' &&
+      name !== 'children' &&
+      (!defaultProps || props[name] !== defaultProps[name])
   );
 
   const breakIntoNewLines = names.length > 3;

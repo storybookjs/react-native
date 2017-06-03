@@ -1,6 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-
-import PropTypes from 'prop-types';
 import React from 'react';
 import PropTypes from 'prop-types';
 

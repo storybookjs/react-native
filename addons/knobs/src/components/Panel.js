@@ -153,7 +153,7 @@ Panel.propTypes = {
     on: PropTypes.func,
     removeListener: PropTypes.func,
   }).isRequired,
-  onReset: PropTypes.object,
+  onReset: PropTypes.object, // eslint-disable-line
   api: PropTypes.shape({
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,

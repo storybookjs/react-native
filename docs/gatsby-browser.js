@@ -1,3 +1,7 @@
+const global = require('global');
+
+const document = global;
+
 exports.onRouteUpdate = location => {
   if (location.hash) {
     setTimeout(() => {

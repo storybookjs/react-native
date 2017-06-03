@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '../Grid';
 import './style.css';
 
-export default ({ items }) => (
+const Examples = ({ items }) => (
   <div className="examples">
     <div className="heading">
       <h1>Storybook Examples</h1>
@@ -10,6 +10,7 @@ export default ({ items }) => (
         className="edit-link"
         href="https://github.com/storybooks/storybook/edit/master/docs/pages/examples/_examples.yml"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Edit this list
       </a>
@@ -17,3 +18,11 @@ export default ({ items }) => (
     <Grid columnWidth={350} items={items} />
   </div>
 );
+Examples.propTypes = {
+  items: PropTypes.array, // eslint-disable-line
+};
+Examples.defaultProps = {
+  items: [],
+};
+
+export { Examples as default };

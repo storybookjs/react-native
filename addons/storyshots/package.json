@@ -28,7 +28,9 @@
     "read-pkg-up": "^2.0.0"
   },
   "peerDependencies": {
+    "@storybook/addons": "^3.0.0",
     "react": "*",
-    "react-test-renderer": "*"
+    "react-test-renderer": "*",
+    "babel-core": "^6.24.1"
   }
 }

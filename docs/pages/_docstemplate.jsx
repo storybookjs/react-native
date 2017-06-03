@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import find from 'lodash/find';
 import capitalize from 'lodash/capitalize';
 
-import Docs from 'components/Docs';
-import { config } from 'config';
+import Docs from '../components/Docs';
+import { config } from '../config.toml';
 
 const categories = [
   {
@@ -13,13 +12,13 @@ const categories = [
   },
 ];
 
-const getSections = (catId, config, pages) => {
+const getSections = (catId, options, pages) => {
   // FIXME: use catId
-  const sections = Object.keys(config.docSections);
+  const sections = Object.keys(options.docSections);
   return sections.map(key => ({
     id: key,
     heading: capitalize(key),
-    items: config.docSections[key].map(path => {
+    items: options.docSections[key].map(path => {
       const page = pages.find(p => p.path === path);
       return page.data;
     }),
@@ -38,34 +37,31 @@ const getSelectedItem = (children, sectionId) => {
 
 const parsePath = path => {
   const comps = path.split('/');
-  const [empty, itemId, sectionId, catId, ...rest] = comps.reverse();
-  console.log([empty, itemId, sectionId, catId, ...rest]);
+  const [, itemId, sectionId, catId] = comps.reverse();
   return { catId, sectionId, itemId };
 };
 
-class DocsContainer extends React.Component {
-  render() {
-    const { pages, path } = this.props.route;
-    const { children } = this.props;
-    const { catId, sectionId, itemId } = parsePath(children.props.route.path);
+const DocsContainer = props => {
+  const { pages } = props.route;
+  const { children } = props;
+  const { catId, sectionId, itemId } = parsePath(children.props.route.path);
 
-    const props = {
-      categories,
-      selectedCatId: catId,
-      sections: getSections(catId, config, pages),
-      selectedItem: getSelectedItem(children, sectionId),
-      selectedSectionId: sectionId,
-      selectedItemId: itemId,
-    };
-    console.log('props', props);
+  const docProps = {
+    categories,
+    selectedCatId: catId,
+    sections: getSections(catId, config, pages),
+    selectedItem: getSelectedItem(children, sectionId),
+    selectedSectionId: sectionId,
+    selectedItemId: itemId,
+  };
 
-    return <Docs {...props} />;
-  }
-}
+  return <Docs {...docProps} />;
+};
 
 DocsContainer.propTypes = {
-  location: PropTypes.object,
-  route: PropTypes.object,
+  location: PropTypes.object, // eslint-disable-line
+  route: PropTypes.object, // eslint-disable-line
+  children: PropTypes.node.isRequired,
 };
 DocsContainer.contextTypes = {
   router: PropTypes.object.isRequired,

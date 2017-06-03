@@ -7,7 +7,11 @@ const Platform = () => (
       <h3 className="built-for">Built for</h3>
       <p className="platforms">
 
-        <a href="https://github.com/storybooks/storybook/tree/master/app/react" target="_blank">
+        <a
+          href="https://github.com/storybooks/storybook/tree/master/app/react"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           React
         </a>
         {' '}
@@ -16,6 +20,7 @@ const Platform = () => (
         <a
           href="https://github.com/storybooks/storybook/tree/master/app/react-native"
           target="_blank"
+          rel="noopener noreferrer"
         >
           React Native
         </a>
