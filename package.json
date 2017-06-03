@@ -92,5 +92,8 @@
       "greenkeeper": "Dependency Upgrades",
       "other": "Other"
     }
+  },
+  "engines": {
+    "npm": "<5.0.0"
   }
 }
