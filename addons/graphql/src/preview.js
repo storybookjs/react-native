@@ -1,6 +1,6 @@
-import { fetch } from 'global';
 import React from 'react';
 import GraphiQL from 'graphiql';
+import { fetch } from 'global';
 import 'graphiql/graphiql.css';
 
 import FullScreen from './components/FullScreen';

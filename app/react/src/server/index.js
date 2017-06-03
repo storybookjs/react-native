@@ -3,7 +3,6 @@
 import express from 'express';
 import https from 'https';
 import favicon from 'serve-favicon';
-import https from 'https';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
