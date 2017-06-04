@@ -2,6 +2,7 @@
 
 import express from 'express';
 import favicon from 'serve-favicon';
+import https from 'https';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
@@ -36,7 +37,7 @@ program
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
 
-logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
+logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}`) + chalk.reset('\n'));
 
 if (program.enableDb || program.dbPath) {
   logger.error(
@@ -56,12 +57,7 @@ getEnvConfig(program, {
   host: 'SBCONFIG_HOSTNAME',
   staticDir: 'SBCONFIG_STATIC_DIR',
   configDir: 'SBCONFIG_CONFIG_DIR',
-  dontTrack: 'SBCONFIG_DO_NOT_TRACK',
 });
-
-if (program.dontTrack) {
-  dontTrack();
-}
 
 if (!program.port) {
   logger.error('Error: port to run Storybook is required!\n');
