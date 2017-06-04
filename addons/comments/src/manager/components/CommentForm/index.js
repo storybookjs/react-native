@@ -42,7 +42,9 @@ export default class CommentForm extends Component {
   }
 
   openLogin() {
-    const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(window.location.href)}`;
+    const signInUrl = `https://hub.getstorybook.io/sign-in?redirectUrl=${encodeURIComponent(
+      window.location.href
+    )}`;
     window.location.href = signInUrl;
   }
 

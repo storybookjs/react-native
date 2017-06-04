@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import './style.css';
 
-const UsedByBg = ({ color }) => (
+const UsedByBg = ({ color }) =>
   <div className="used-by-bg">
     <svg
       width="100%"
@@ -25,8 +25,7 @@ const UsedByBg = ({ color }) => (
         <path id="path0_fill" d="M 43.5 300.5L 0 35L 1440 0L 1371.5 379.5L 43.5 300.5Z" />
       </defs>
     </svg>
-  </div>
-);
+  </div>;
 UsedByBg.propTypes = {
   color: PropTypes.string,
 };
@@ -34,7 +33,7 @@ UsedByBg.defaultProps = {
   color: 'white',
 };
 
-const User = ({ logo, demo, site, title }) => (
+const User = ({ logo, demo, site, title }) =>
   <a
     className="used-by-user"
     href={demo || site}
@@ -42,8 +41,7 @@ const User = ({ logo, demo, site, title }) => (
     rel="noopener nofollow noreferrer"
   >
     <img className="used-by-user-image" src={logo} alt={title} />
-  </a>
-);
+  </a>;
 User.propTypes = {
   logo: PropTypes.string.isRequired,
   demo: PropTypes.string,
@@ -55,7 +53,7 @@ User.defaultProps = {
   title: '',
 };
 
-const UsedBy = ({ users }) => (
+const UsedBy = ({ users }) =>
   <div className="used-by-wrapper">
     <div className="used-by">
       <UsedByBg color="#E7F6D8" />
@@ -69,8 +67,7 @@ const UsedBy = ({ users }) => (
     <Link to="/examples/" className="used-by-more-examples">
       See more examples…
     </Link>
-  </div>
-);
+  </div>;
 UsedBy.propTypes = {
   users: PropTypes.array, // eslint-disable-line
 };

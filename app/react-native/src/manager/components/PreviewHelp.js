@@ -25,7 +25,7 @@ const styles = {
   },
 };
 
-const PreviewHelp = () => (
+const PreviewHelp = () =>
   <div style={styles.main}>
     <h1>Welcome to storybook</h1>
     <p>
@@ -38,7 +38,8 @@ const PreviewHelp = () => (
       {' '}
       directory.
       {' '}
-      A story is a single state of one or more UI components. You can have as many stories as you want. Basically a story is like a visual test case.
+      A story is a single state of one or more UI components. You can have as many stories as you
+      want. Basically a story is like a visual test case.
     </p>
     <p>
       To see your Storybook stories on the device, you should start your mobile app for the
@@ -59,7 +60,6 @@ const PreviewHelp = () => (
     <div style={styles.codeBlock}>
       <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
     </div>
-  </div>
-);
+  </div>;
 
 export { PreviewHelp as default };

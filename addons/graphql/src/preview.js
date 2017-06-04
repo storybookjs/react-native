@@ -28,10 +28,9 @@ export function setupGraphiQL(config) {
   return (_query, variables = '{}') => {
     const query = reIndentQuery(_query);
     const fetcher = config.fetcher || getDefautlFetcher(config.url);
-    return () => (
+    return () =>
       <FullScreen>
         <GraphiQL query={query} variables={variables} fetcher={fetcher} />
-      </FullScreen>
-    );
+      </FullScreen>;
   };
 }

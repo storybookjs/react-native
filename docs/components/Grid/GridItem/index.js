@@ -8,7 +8,7 @@ const linkProps = {
   className: 'link',
 };
 
-const GridItem = ({ title, description, source, demo, thumbnail }) => (
+const GridItem = ({ title, description, source, demo, thumbnail }) =>
   <div className="grid-item">
     <div className="photobox" style={{ backgroundImage: `url(${thumbnail})` }}>
       <div className="overlay" />
@@ -21,8 +21,7 @@ const GridItem = ({ title, description, source, demo, thumbnail }) => (
         {source ? <a href={source} {...linkProps}>Source</a> : null}
       </div>
     </div>
-  </div>
-);
+  </div>;
 GridItem.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

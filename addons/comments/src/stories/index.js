@@ -28,7 +28,8 @@ const commentsList = [
       name: 'User B',
     },
     time: 'Wed Oct 12 2016 13:38:46 GMT+0530 (IST)',
-    text: 'Vivamus tortor nisi, <b>efficitur</b> in rutrum <em>ac</em>, tempor <code>et mauris</code>. In et rutrum enim',
+    text:
+      'Vivamus tortor nisi, <b>efficitur</b> in rutrum <em>ac</em>, tempor <code>et mauris</code>. In et rutrum enim',
   },
   {
     loading: true,
@@ -56,14 +57,14 @@ storiesOf('Button', module)
 storiesOf('Components', module)
   .add('CommentForm', () => <CommentForm addComment={action('addComment')} />)
   .add('CommentList - No Comments', () => <CommentList comments={[]} />)
-  .add('CommentList - with comments', () => (
+  .add('CommentList - with comments', () =>
     <CommentList user={userObj} comments={commentsList} deleteComment={action('deleteComment')} />
-  ))
+  )
   .add('CommentPanel - not loggedIn', () => <CommentsPanel />)
-  .add('CommentPanel - app not available', () => (
+  .add('CommentPanel - app not available', () =>
     <CommentsPanel user={userObj} appNotAvailable={{}} />
-  ))
-  .add('CommentPanel - loggedIn with no comments', () => (
+  )
+  .add('CommentPanel - loggedIn with no comments', () =>
     <CommentsPanel
       user={userObj}
       loading={false}
@@ -71,8 +72,8 @@ storiesOf('Components', module)
       addComment={action('addComment')}
       deleteComment={action('deleteComment')}
     />
-  ))
-  .add('CommentPanel - loggedIn with has comments', () => (
+  )
+  .add('CommentPanel - loggedIn with has comments', () =>
     <CommentsPanel
       user={userObj}
       loading={false}
@@ -80,4 +81,4 @@ storiesOf('Components', module)
       addComment={action('addComment')}
       deleteComment={action('deleteComment')}
     />
-  ));
+  );

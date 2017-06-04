@@ -90,7 +90,7 @@ const PropTable = ({ type }) => {
         </tr>
       </thead>
       <tbody>
-        {array.map(row => (
+        {array.map(row =>
           <tr key={row.property}>
             <td>{row.property}</td>
             <td>{row.propType}</td>
@@ -98,7 +98,7 @@ const PropTable = ({ type }) => {
             <td>{row.defaultValue === undefined ? '-' : <PropVal val={row.defaultValue} />}</td>
             <td>{row.description}</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

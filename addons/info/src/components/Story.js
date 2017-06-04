@@ -250,9 +250,9 @@ export default class Story extends React.Component {
       <div>
         <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
         <Pre>
-          {React.Children.map(this.props.children, (root, idx) => (
+          {React.Children.map(this.props.children, (root, idx) =>
             <Node key={idx} depth={0} node={root} />
-          ))}
+          )}
         </Pre>
       </div>
     );
@@ -306,14 +306,14 @@ export default class Story extends React.Component {
     const array = Array.from(types.keys());
     array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
-    const propTables = array.map(type => (
+    const propTables = array.map(type =>
       <div key={type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
         </h2>
         <PropTable type={type} />
       </div>
-    ));
+    );
 
     if (!propTables || propTables.length === 0) {
       return null;

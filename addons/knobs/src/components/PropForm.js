@@ -35,7 +35,7 @@ export default class propForm extends React.Component {
 
     return (
       <form style={stylesheet.propForm}>
-        {knobs.map(knob => (
+        {knobs.map(knob =>
           <PropField
             key={knob.name}
             name={knob.name}
@@ -44,7 +44,7 @@ export default class propForm extends React.Component {
             knob={knob}
             onChange={() => this._onFieldChange(knob.name, knob.type)}
           />
-        ))}
+        )}
       </form>
     );
   }

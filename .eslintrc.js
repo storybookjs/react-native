@@ -51,6 +51,7 @@ module.exports = {
       peerDependencies: true
     }],
     'import/prefer-default-export': ignore,
+    'react/jsx-wrap-multilines': ignore,
     'react/jsx-uses-react': error,
     'react/jsx-uses-vars': error,
     'react/react-in-jsx-scope': error,

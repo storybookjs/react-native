@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import './style.css';
 
-const Nav = ({ sections, selectedSectionId, selectedItemId }) => (
+const Nav = ({ sections, selectedSectionId, selectedItemId }) =>
   <div id="nav">
-    {sections.map(section => (
+    {sections.map(section =>
       <div key={section.id}>
         <h3>{section.heading}</h3>
         <ul>
@@ -24,9 +24,8 @@ const Nav = ({ sections, selectedSectionId, selectedItemId }) => (
           })}
         </ul>
       </div>
-    ))}
-  </div>
-);
+    )}
+  </div>;
 Nav.propTypes = {
   sections: PropTypes.array, // eslint-disable-line
   selectedSectionId: PropTypes.string.isRequired,
