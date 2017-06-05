@@ -1,3 +1,33 @@
+# 3.0.1
+
+Minor bug fixes and documentation updates post 3.0.0 release.
+
+2017-June-06
+
+#### Bug Fixes
+
+-   Added error message for `addon-options` [#1194](https://github.com/storybooks/storybook/pull/1194)
+-   Fix(react-native) add missing `ws` dependency [#1174](https://github.com/storybooks/storybook/pull/1174)
+-   Fix terminal colors by reset console colors explicitly [#1184](https://github.com/storybooks/storybook/pull/1184)
+-   Fix addon panel layout styling [#1170](https://github.com/storybooks/storybook/pull/1170)
+-   ADD https import & remove tracking code remains [#1176](https://github.com/storybooks/storybook/pull/1176)
+-   Fix incorrect babel config file reading [#1156](https://github.com/storybooks/storybook/pull/1156)
+-   Fixed withKnobs definition. [#1164](https://github.com/storybooks/storybook/pull/1164)
+
+#### Documentation
+
+-   Fixed typo in react-native browser instructions [#1189](https://github.com/storybooks/storybook/pull/1189)
+-   Add instruction for npm install with -D for development dependency [#1168](https://github.com/storybooks/storybook/pull/1168)
+-   Fix broken link for [addons] in README [#1167](https://github.com/storybooks/storybook/pull/1167)
+-   Refreshed logo in docs [#1149](https://github.com/storybooks/storybook/pull/1149)
+-   fix addon broken links in documentation [#1165](https://github.com/storybooks/storybook/pull/1165)
+-   start-storybook cli - expand commands descriptions [#1161](https://github.com/storybooks/storybook/pull/1161)
+-   Fix typo in codemod readme [#1158](https://github.com/storybooks/storybook/pull/1158)
+
+#### Dependency Upgrades
+
+-   Replaced deprecated `markdown-to-react-components` with `marksy` [#1188](https://github.com/storybooks/storybook/pull/1188)
+
 # 3.0.0
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
