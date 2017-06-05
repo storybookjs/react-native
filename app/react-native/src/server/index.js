@@ -11,7 +11,7 @@ export default class Server {
     this.expressApp = express();
     this.expressApp.use(storybook(options));
     this.httpServer.on('request', this.expressApp);
-    this.wsServer = ws.Server({ server: this.httpServer });
+    this.wsServer = new ws.Server({ server: this.httpServer });
     this.wsServer.on('connection', s => this.handleWS(s));
   }
 
