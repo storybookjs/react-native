@@ -11,5 +11,10 @@ export function init() {
 // ready. If called before, options will be cached until it can be sent.
 export function setOptions(options) {
   const channel = addons.getChannel();
+  if (!channel) {
+    throw new Error(
+      'Failed to find addon channel. This may be due to https://github.com/storybooks/storybook/issues/1192.'
+    );
+  }
   channel.emit(EVENT_ID, { options });
 }
