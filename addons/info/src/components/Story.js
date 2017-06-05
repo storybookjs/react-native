@@ -98,7 +98,7 @@ export default class Story extends React.Component {
       open: false,
       stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
     };
-    this.marksy = marksy(this.props.mtrcConf);
+    this.marksy = marksy(this.props.marksyConf);
   }
 
   componentWillReceiveProps(nextProps) {
