@@ -4,7 +4,7 @@
   "description": "A Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "scripts": {
