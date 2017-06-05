@@ -11,7 +11,7 @@ const defaultOptions = {
   propTables: [],
 };
 
-const defaultMtrcConf = {
+const defaultMarksyConf = {
   h1: H1,
   h2: H2,
   h3: H3,
@@ -49,9 +49,9 @@ export default {
       options.propTables = null;
     }
 
-    const mtrcConf = { ...defaultMtrcConf };
-    if (options && options.mtrcConf) {
-      Object.assign(mtrcConf, options.mtrcConf);
+    const marksyConf = { ...defaultMarksyConf };
+    if (options && options.marksyConf) {
+      Object.assign(marksyConf, options.marksyConf);
     }
 
     return this.add(storyName, context => {
@@ -64,7 +64,7 @@ export default {
         propTables: options.propTables,
         propTablesExclude: options.propTablesExclude,
         styles: typeof options.styles === 'function' ? options.styles : s => s,
-        mtrcConf,
+        marksyConf,
       };
 
       return (
