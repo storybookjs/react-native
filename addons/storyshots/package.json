@@ -29,6 +29,7 @@
   },
   "peerDependencies": {
     "@storybook/addons": "^3.0.0",
+    "@storybook/channels": "^3.0.0",
     "react": "*",
     "react-test-renderer": "*",
     "babel-core": "^6.24.1"

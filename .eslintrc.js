@@ -5,7 +5,7 @@ const ignore = 0;
 module.exports = {
   root: true,
   extends: ['eslint-config-airbnb', 'plugin:jest/recommended', 'prettier'],
-  plugins: ['prettier', 'jest', 'react'],
+  plugins: ['prettier', 'jest', 'react', 'json'],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
