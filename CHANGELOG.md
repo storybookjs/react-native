@@ -1,3 +1,33 @@
+# 3.0.1
+
+Minor bug fixes and documentation updates post 3.0.0 release.
+
+2017-June-06
+
+#### Bug Fixes
+
+-   Added error message for `addon-options` [#1194](https://github.com/storybooks/storybook/pull/1194)
+-   Fix(react-native) add missing `ws` dependency [#1174](https://github.com/storybooks/storybook/pull/1174)
+-   Fix terminal colors by reset console colors explicitly [#1184](https://github.com/storybooks/storybook/pull/1184)
+-   Fix addon panel layout styling [#1170](https://github.com/storybooks/storybook/pull/1170)
+-   ADD https import & remove tracking code remains [#1176](https://github.com/storybooks/storybook/pull/1176)
+-   Fix incorrect babel config file reading [#1156](https://github.com/storybooks/storybook/pull/1156)
+-   Fixed withKnobs definition. [#1164](https://github.com/storybooks/storybook/pull/1164)
+
+#### Documentation
+
+-   Fixed typo in react-native browser instructions [#1189](https://github.com/storybooks/storybook/pull/1189)
+-   Add instruction for npm install with -D for development dependency [#1168](https://github.com/storybooks/storybook/pull/1168)
+-   Fix broken link for [addons] in README [#1167](https://github.com/storybooks/storybook/pull/1167)
+-   Refreshed logo in docs [#1149](https://github.com/storybooks/storybook/pull/1149)
+-   fix addon broken links in documentation [#1165](https://github.com/storybooks/storybook/pull/1165)
+-   start-storybook cli - expand commands descriptions [#1161](https://github.com/storybooks/storybook/pull/1161)
+-   Fix typo in codemod readme [#1158](https://github.com/storybooks/storybook/pull/1158)
+
+#### Dependency Upgrades
+
+-   Replaced deprecated `markdown-to-react-components` with `marksy` [#1188](https://github.com/storybooks/storybook/pull/1188)
+
 # 3.0.0
 
 Storybook 3.0 is our first fully community-driven release! Notable changes:
@@ -27,7 +57,7 @@ Storybook 3.0 is our first fully community-driven release! Notable changes:
 -   FIX addon info and addon storyshots incompatibility [#1129](https://github.com/storybooks/storybook/pull/1129)
 -   FIX postcss options missing in default webpack config && UPDATE dependencies [#1087](https://github.com/storybooks/storybook/pull/1087)
 -   Fix CLI had a package version from storybook hardcoded - now queries npm registry [#1079](https://github.com/storybooks/storybook/pull/1079)
--   Fix semi broken __docgenInfo integration in addon info [#1030](https://github.com/storybooks/storybook/pull/1030)
+-   Fix semi broken \_\_docgenInfo integration in addon info [#1030](https://github.com/storybooks/storybook/pull/1030)
 -   Fix: build-storybook no longer supports relative paths [#1058](https://github.com/storybooks/storybook/pull/1058)
 -   Fix for types `number` for addon knobs [#1001](https://github.com/storybooks/storybook/pull/1001)
 -   Fix webpack overriding && Add an example with local file dependencies [#965](https://github.com/storybooks/storybook/pull/965)
@@ -86,12 +116,12 @@ Storybook 3.0 is our first fully community-driven release! Notable changes:
 -   Added an upgrade mode to getstorybook [#1146](https://github.com/storybooks/storybook/pull/1146)
 -   Update link to Storyshots addon [#1074](https://github.com/storybooks/storybook/pull/1074)
 -   Added error message for missing or invalid storyName [#747](https://github.com/storybooks/storybook/pull/747)
--   Opened an Open Collective Account https://opencollective.com/storybook [#1065](https://github.com/storybooks/storybook/pull/1065)
+-   Opened an Open Collective Account <https://opencollective.com/storybook> [#1065](https://github.com/storybooks/storybook/pull/1065)
 -   Add propTablesExclude option [#924](https://github.com/storybooks/storybook/pull/924)
 -   addon-info: make the info overlay be fixed  [#914](https://github.com/storybooks/storybook/pull/914)
 -   Handle null elements in getData [#926](https://github.com/storybooks/storybook/pull/926)
--   add description field from __docgenInfo for prop table for info plugin [#929](https://github.com/storybooks/storybook/pull/929)
--   #959 add a max-height and center element with alignItems: center [#961](https://github.com/storybooks/storybook/pull/961)
+-   add description field from \_\_docgenInfo for prop table for info plugin [#929](https://github.com/storybooks/storybook/pull/929)
+-   \#959 add a max-height and center element with alignItems: center [#961](https://github.com/storybooks/storybook/pull/961)
 -   Switch to the only prepublish script [#903](https://github.com/storybooks/storybook/pull/903)
 -   PR review policy [#923](https://github.com/storybooks/storybook/pull/923)
 -   Add typescript definitions for getStorybook() [#753](https://github.com/storybooks/storybook/pull/753)

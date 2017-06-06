@@ -1,16 +1,25 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A Storybook addon to show additional information for your stories.",
+  "license": "MIT",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
-  "license": "MIT",
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js",
-    "storybook": "start-storybook -p 9010",
-    "publish-storybook": "bash .scripts/publish_storybook.sh"
+    "publish-storybook": "bash .scripts/publish_storybook.sh",
+    "storybook": "start-storybook -p 9010"
+  },
+  "dependencies": {
+    "@storybook/addons": "^3.0.0",
+    "babel-runtime": "^6.23.0",
+    "global": "^4.3.2",
+    "marksy": "^2.0.0",
+    "prop-types": "^15.5.8",
+    "react-addons-create-fragment": "^15.5.3"
   },
   "devDependencies": {
     "git-url-parse": "^6.2.2",
@@ -21,13 +30,5 @@
   },
   "peerDependencies": {
     "react": "*"
-  },
-  "dependencies": {
-    "@storybook/addons": "^3.0.0",
-    "babel-runtime": "^6.23.0",
-    "markdown-to-react-components": "^0.2.1",
-    "prop-types": "^15.5.8",
-    "react-addons-create-fragment": "^15.5.3"
-  },
-  "main": "dist/index.js"
+  }
 }

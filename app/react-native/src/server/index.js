@@ -11,7 +11,7 @@ export default class Server {
     this.expressApp = express();
     this.expressApp.use(storybook(options));
     this.httpServer.on('request', this.expressApp);
-    this.wsServer = ws.Server({ server: this.httpServer });
+    this.wsServer = new ws.Server({ server: this.httpServer });
     this.wsServer.on('connection', s => this.handleWS(s));
   }
 
@@ -22,14 +22,14 @@ export default class Server {
         : {};
 
       if (params.pairedId) {
-        socket.pairedId = params.pairedId;
+        socket.pairedId = params.pairedId; // eslint-disable-line
       }
     }
 
     socket.on('message', data => {
       this.wsServer.clients.forEach(c => {
         if (!this.options.manualId || (socket.pairedId && socket.pairedId === c.pairedId)) {
-          return c.send(data);
+          c.send(data);
         }
       });
     });

@@ -18,3 +18,7 @@ WithNotes.propTypes = {
   children: PropTypes.node,
   notes: PropTypes.string,
 };
+WithNotes.defaultProps = {
+  children: null,
+  notes: '',
+};

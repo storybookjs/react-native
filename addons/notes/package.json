@@ -2,15 +2,26 @@
   "name": "@storybook/addon-notes",
   "version": "3.0.0",
   "description": "Write notes for your Storybook stories.",
+  "keywords": [
+    "addon",
+    "react",
+    "storybook"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
-  "license": "MIT",
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js",
-    "storybook": "start-storybook -p 9010",
-    "publish-storybook": "bash .scripts/publish_storybook.sh"
+    "publish-storybook": "bash .scripts/publish_storybook.sh",
+    "storybook": "start-storybook -p 9010"
+  },
+  "dependencies": {
+    "@storybook/addons": "*",
+    "babel-runtime": "^6.23.0",
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "git-url-parse": "^6.2.2",
@@ -21,18 +32,7 @@
   "peerDependencies": {
     "react": "*"
   },
-  "dependencies": {
-    "@storybook/addons": "*",
-    "babel-runtime": "^6.23.0",
-    "prop-types": "^15.5.10"
-  },
   "optionalDependencies": {
     "@types/react": "^15.0.24"
-  },
-  "main": "dist/index.js",
-  "keywords": [
-    "react",
-    "storybook",
-    "addon"
-  ]
+  }
 }

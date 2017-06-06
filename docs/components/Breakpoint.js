@@ -1,30 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+
 import './breakpoints.css';
 
-class Breakpoint extends Component {
-  render() {
-    const { mobile, children } = this.props;
-
-    if (mobile) {
-      return (
-        <div className="breakpoint-min-width-700">
-          {children}
-        </div>
-      );
-    }
-
-    return (
-      <div className="breakpoint-max-width-700">
-        {children}
-      </div>
-    );
-  }
-}
-
-Breakpoint.propTypes = {
-  children: PropTypes.array,
-  mobile: PropTypes.bool,
+const Breakpoint = ({ mobile, children }) => {
+  const className = mobile ? 'breakpoint-min-width-700' : 'breakpoint-max-width-700';
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  );
 };
 
-export default Breakpoint;
+Breakpoint.propTypes = {
+  children: PropTypes.array, // eslint-disable-line
+  mobile: PropTypes.bool,
+};
+Breakpoint.defaultProps = {
+  mobile: false,
+};
+
+export { Breakpoint as default };

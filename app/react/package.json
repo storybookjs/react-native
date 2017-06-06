@@ -1,7 +1,11 @@
 {
   "name": "@storybook/react",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "license": "MIT",
   "main": "dist/client/index.js",
   "typings": "./config/storybook.d.ts",
@@ -14,20 +18,16 @@
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
-  },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
   "scripts": {
     "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.0.0",
+    "@storybook/addon-actions": "^3.0.1",
     "@storybook/addon-links": "^3.0.0",
     "@storybook/addons": "^3.0.0",
     "@storybook/channel-postmessage": "^3.0.0",
-    "@storybook/ui": "^3.0.0",
+    "@storybook/ui": "^3.0.1",
     "airbnb-js-shims": "^1.1.1",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
@@ -48,6 +48,7 @@
     "express": "^4.15.3",
     "file-loader": "^0.11.1",
     "find-cache-dir": "^1.0.0",
+    "global": "^4.3.2",
     "json-loader": "^0.5.4",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",

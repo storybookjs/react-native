@@ -1,27 +1,30 @@
 {
   "name": "@storybook/cli",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
+  "keywords": [
+    "cli",
+    "generator",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/cli",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
+  "author": "Storybook Team",
   "bin": {
     "getstorybook": "./bin/generate.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
-  "keywords": [
-    "storybook",
-    "generator",
-    "cli"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+  "scripts": {
+    "postinstall": "opencollective postinstall --collective=storybook"
   },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/cli",
   "dependencies": {
-    "@storybook/codemod": "^3.0.0",
+    "@storybook/codemod": "^3.0.1",
     "chalk": "^1.1.3",
     "child-process-promise": "^2.2.1",
     "commander": "^2.9.0",
@@ -32,8 +35,5 @@
     "opencollective": "^1.0.3",
     "shelljs": "^0.7.7",
     "update-notifier": "^2.1.0"
-  },
-  "scripts": {
-    "postinstall": "opencollective postinstall --collective=storybook"
   }
 }

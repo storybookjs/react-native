@@ -4,7 +4,7 @@ import slackIcon from './images/slack-icon.png';
 import githubIcon from './images/github-icon.png';
 import './style.css';
 
-const Footer = () => (
+const Footer = () =>
   <div id="footer" className="row">
     <div className="col-md-12">
       <div className="row logos">
@@ -28,7 +28,6 @@ const Footer = () => (
         </div>
       </div>
     </div>
-  </div>
-);
+  </div>;
 
 export default Footer;

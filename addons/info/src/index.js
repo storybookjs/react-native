@@ -1,6 +1,7 @@
 import React from 'react';
 import _Story from './components/Story';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
+
 export const Story = _Story;
 
 const defaultOptions = {
@@ -10,7 +11,7 @@ const defaultOptions = {
   propTables: [],
 };
 
-const defaultMtrcConf = {
+const defaultMarksyConf = {
   h1: H1,
   h2: H2,
   h3: H3,
@@ -28,9 +29,9 @@ export default {
   addWithInfo(storyName, info, storyFn, _options) {
     if (typeof storyFn !== 'function') {
       if (typeof info === 'function') {
-        _options = storyFn;
-        storyFn = info;
-        info = '';
+        _options = storyFn; // eslint-disable-line
+        storyFn = info; // eslint-disable-line
+        info = ''; // eslint-disable-line
       } else {
         throw new Error('No story defining function has been specified');
       }
@@ -48,9 +49,9 @@ export default {
       options.propTables = null;
     }
 
-    const mtrcConf = { ...defaultMtrcConf };
-    if (options && options.mtrcConf) {
-      Object.assign(mtrcConf, options.mtrcConf);
+    const marksyConf = { ...defaultMarksyConf };
+    if (options && options.marksyConf) {
+      Object.assign(marksyConf, options.marksyConf);
     }
 
     return this.add(storyName, context => {
@@ -63,7 +64,7 @@ export default {
         propTables: options.propTables,
         propTablesExclude: options.propTablesExclude,
         styles: typeof options.styles === 'function' ? options.styles : s => s,
-        mtrcConf,
+        marksyConf,
       };
 
       return (

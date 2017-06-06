@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 import ClientAPI from './client_api';
 
 class StoryStore {

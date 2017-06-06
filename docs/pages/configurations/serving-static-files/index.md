@@ -17,9 +17,14 @@ import { storiesOf } from '@storybook/react';
 
 import imageFile from './static/image.png';
 
-storiesOf('<img>', module)
+const image = {
+  src: imageFile,
+  alt: 'my image',
+};
+
+storiesOf('<img />', module)
   .add('with a image', () => (
-    <img src={imageFile} />
+    <img src={image.src} alt={image.alt} />
   ));
 ```
 
@@ -45,10 +50,12 @@ Here `./public` is our static directory. Now you can use static files in the pub
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+const imageAlt = 'my image';
+
 // assume image.png is located in the "public" directory.
-storiesOf('<img>', module)
+storiesOf('<img />', module)
   .add('with a image', () => (
-    <img src="/image.png" />
+    <img src="/image.png" alt={imageAlt} />
   ));
 ```
 
@@ -71,16 +78,15 @@ In this example we're using a placeholder image service.
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-// assume image.png is located in the "public" directory.
-storiesOf('<img>', module)
+storiesOf('<img />', module)
   .add('with a image', () => (
-    <img src="https://placehold.it/350x150" />
+    <img src="https://placehold.it/350x150" alt="My CDN placeholder" />
   ));
 ```
 
 ## Absolute versus relative paths
 
-Sometimes, you may want to deploy your storybook into a subpath, like <https://kadira-samples.github.io/react-button>.
+Sometimes, you may want to deploy your storybook into a subpath, like `https://example.com/storybook`.
 
 In this case, you need to have all your images and media files with relative paths. Otherwise, Storybook cannot locate those files.
 

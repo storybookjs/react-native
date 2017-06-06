@@ -2,7 +2,14 @@ dist
 build
 coverage
 node_modules
+**/example/**
+**/demo/**
 docs/public
 
 *.bundle.js
 *.js.map
+
+!.remarkrc.js
+!.eslintrc.js
+!.eslintrc-markdown.js
+!.jest.config.js
