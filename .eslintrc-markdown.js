@@ -4,16 +4,8 @@ const ignore = 0;
 
 module.exports = {
   root: true,
-  extends: [
-    'eslint-config-airbnb',
-    'plugin:jest/recommended',
-    'prettier',
-  ],
-  plugins: [
-    'prettier',
-    'jest',
-    'react',
-  ],
+  extends: ['eslint-config-airbnb', 'plugin:jest/recommended', 'prettier'],
+  plugins: ['prettier', 'jest', 'react'],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
@@ -29,13 +21,16 @@ module.exports = {
   },
   rules: {
     strict: [error, 'never'],
-    'prettier/prettier': [warn, {
-      printWidth: 100,
-      tabWidth: 2,
-      bracketSpacing: true,
-      trailingComma: 'es5',
-      singleQuote: true,
-    }],
+    'prettier/prettier': [
+      warn,
+      {
+        printWidth: 100,
+        tabWidth: 2,
+        bracketSpacing: true,
+        trailingComma: 'es5',
+        singleQuote: true,
+      },
+    ],
     quotes: [warn, 'single'],
     'no-unused-vars': ignore,
     'class-methods-use-this': ignore,
@@ -54,4 +49,4 @@ module.exports = {
     'jsx-a11y/accessible-emoji': ignore,
     'react/no-unescaped-entities': ignore,
   },
-}
+};
