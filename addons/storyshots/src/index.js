@@ -2,6 +2,7 @@ import path from 'path';
 import global, { describe, it } from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
+
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';

@@ -35,6 +35,7 @@ const styles = {
   },
 };
 
+// eslint-disable-next-line no-console
 const log = () => console.log('Welcome to storybook!');
 
 export default class Welcome extends React.Component {

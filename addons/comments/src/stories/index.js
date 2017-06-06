@@ -1,6 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved */
+
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+
 import Button from '../index';
 import CommentForm from '../manager/components/CommentForm';
 import CommentList from '../manager/components/CommentList';

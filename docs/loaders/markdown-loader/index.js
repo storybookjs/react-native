@@ -6,18 +6,20 @@ const hljs = require('highlight.js');
 const path = require('path');
 const loaderUtils = require('loader-utils');
 
+const logger = console;
+
 const highlight = (str, lang) => {
   if (lang !== null && hljs.getLanguage(lang)) {
     try {
       return hljs.highlight(lang, str).value;
-    } catch (_error) {
-      console.error(_error);
+    } catch (error) {
+      logger.error(error);
     }
   }
   try {
     return hljs.highlightAuto(str).value;
-  } catch (_error) {
-    console.error(_error);
+  } catch (error) {
+    logger.error(error);
   }
   return '';
 };
