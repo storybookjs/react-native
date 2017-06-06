@@ -3,7 +3,14 @@ import json from 'format-json';
 import PropTypes from 'prop-types';
 import EventEmiter from 'eventemitter3';
 
-import { EVENTS } from '../constants';
+import uuid from 'uuid/v4';
+
+const EVENTS = {
+  TEST_EVENT_1: 'test-event-1',
+  TEST_EVENT_2: 'test-event-2',
+  TEST_EVENT_3: 'test-event-3',
+  TEST_EVENT_4: 'test-event-4',
+};
 
 const styles = {
   wrapper: {
@@ -40,21 +47,23 @@ export default class Logger extends Component {
 
   onEventHandler = name => payload => {
     this.setState(({ events }) => ({
-      events: [...events, { name, payload }],
+      events: [...events, { name, id: uuid(), payload }],
     }));
   };
 
   render() {
+    const { events } = this.state;
+
     return (
       <div style={styles.wrapper}>
         <h1>Logger</h1>
         <dl>
-          {this.state.events.map((event, i) => (
-            <div style={styles.item} key={i}>
-              <dt><b>Event name:</b> {event.name}</dt>
-              <dd><b>Event payload:</b> {json.plain(event.payload)}</dd>
+          {events.map(({ id, name, payload }) =>
+            <div style={styles.item} key={id}>
+              <dt><b>Event name:</b> {name}</dt>
+              <dd><b>Event payload:</b> {json.plain(payload)}</dd>
             </div>
-          ))}
+          )}
         </dl>
       </div>
     );

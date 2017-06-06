@@ -16,18 +16,17 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@storybook/addons-actions';
-import '@storybook/addons-links';
+import '@storybook/addon-actions';
+import '@storybook/addon-links';
 import '@storybook/addon-events/register';
 ```
 
 Then write your stories like this:
 
 ```js
-import React from 'react';
-import EventEmiter from 'event-emiter';
 import { storiesOf } from '@storybook/react';
 import WithEvents from '@storybook/addon-events';
+import EventEmiter from 'event-emiter';
 
 import Logger from './Logger';
 import * as EVENTS from './events';

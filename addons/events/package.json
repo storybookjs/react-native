@@ -1,46 +1,37 @@
 {
   "name": "@storybook/addon-events",
-  "version": "3.1.0-alpha",
+  "version": "3.0.1",
   "description": "Add events to your Storybook stories.",
+  "keywords": [
+    "addon",
+    "events",
+    "react",
+    "storybook"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:storybooks/storybook.git"
   },
-  "license": "MIT",
   "scripts": {
+    "build-storybook": "build-storybook",
     "prepublish": "node ../../scripts/prepublish.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
+  },
+  "dependencies": {
+    "@storybook/addons": "^3.0.0",
+    "babel-runtime": "^6.5.0",
+    "format-json": "^1.0.3",
+    "prop-types": "^15.5.10",
+    "react-textarea-autosize": "^4.0.5",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.5.0",
-    "babel-core": "^6.5.0",
-    "babel-eslint": "^7.0.0",
-    "babel-plugin-transform-runtime": "^6.5.0",
-    "babel-preset-es2015": "^6.5.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-2": "^6.5.0",
-    "eventemitter3": "^2.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
   "peerDependencies": {
     "react": "*"
-  },
-  "dependencies": {
-    "@storybook/addons": "^3.0.0-rc.0",
-    "babel-runtime": "^6.5.0",
-    "format-json": "^1.0.3",
-    "react-textarea-autosize": "^4.0.5"
-  },
-  "main": "dist/index.js",
-  "engines": {
-    "npm": "^3.0.0"
-  },
-  "keywords": [
-    "react",
-    "storybook",
-    "addon",
-    "events"
-  ]
+  }
 }

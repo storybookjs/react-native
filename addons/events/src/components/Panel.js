@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import addons from '@storybook/addons';
+// import addons from '@storybook/addons';
 import PropTypes from 'prop-types';
 
 import { EVENTS } from '../constants';
@@ -62,9 +62,10 @@ export default class Events extends Component {
   };
 
   render() {
+    const { events } = this.state;
     return (
       <div style={styles.wrapper}>
-        {this.state.events.map((event, i) => <Event key={i} {...event} onEmit={this.onEmit} />)}
+        {events.map(event => <Event key={event.id} {...event} onEmit={this.onEmit} />)}
       </div>
     );
   }

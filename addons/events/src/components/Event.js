@@ -43,7 +43,7 @@ export default class Item extends Component {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    payload: PropTypes.any,
+    payload: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
