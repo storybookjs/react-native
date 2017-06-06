@@ -1,4 +1,5 @@
 # Storybook Channel
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -10,27 +11,27 @@ Storybook Channel is similar to an EventEmitter.
 Channels are used with Storybook implementations to send/receive events between the Storybook Manager and the Storybook Renderer.
 
 ```js
-Channel {
-  addListener(type, listener)
-  emit(type, ...args)
-  eventNames()
-  listenerCount(type)
-  listeners(type)
-  on(type, listener)
-  once(type, listener)
-  prependListener(type, listener)
-  prependOnceListener(type, listener)
-  removeAllListeners(type)
-  removeListener(type, listener)
+class Channel {
+  addListener(type, listener) {}
+  emit(type, ...args) {}
+  eventNames() {}
+  listenerCount(type) {}
+  listeners(type) {}
+  on(type, listener) {}
+  once(type, listener) {}
+  prependListener(type, listener) {}
+  prependOnceListener(type, listener) {}
+  removeAllListeners(type) {}
+  removeListener(type, listener) {}
 }
 ```
 
 The channel takes a Transport object as a parameter which will be used to send/receive messages. The transport object should implement this interface.
 
 ```js
-Transport {
-  send(event)
-  setHandler(handler)
+class Transport {
+  send(event) {}
+  setHandler(handler) {}
 }
 ```
 
@@ -42,6 +43,6 @@ import addons from '@storybook/addons';
 const channel = addons.getChannel();
 ```
 
----
+* * *
 
-For more information visit: [storybooks.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

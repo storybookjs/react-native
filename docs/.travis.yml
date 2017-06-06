@@ -1,0 +1,21 @@
+language: node_js
+branches:
+  except:
+    - master
+cache:
+  directories:
+  - node_modules
+  - ".cache"
+notifications:
+  email: false
+node_js:
+- node
+before_install: "./scripts/travis/before_install.sh"
+after_success: "./scripts/travis/after_success.sh"
+script:
+- npm run lint
+git:
+  depth: 1
+env:
+  global:
+  - secure: yNNjO4HvIcBH2r+EpWr29TQZzUJoQCC7MlxDtWW5XCsiL7lwnAxRk9DJ1edjYyd2lt4UWVyiQYD7708YMq7sR9TQWN195kcVnd1k5JzNBvePK9VjrmX2e2gRsbSQmWYQXFuUvbEbBmZUPhWbgaTzDzSdzsoFpTqJg3Q328S2GleixtPLBly5SC59Zar9tGw7OyVmPRN9GdKbVQfPQcmHDY+fHKzAqBaenlL/dC6UR9N+w5oWr3KFH/smrVzbDEonoKaZqvj02LnHVctGL6XCopoNbm7ldf/A6qKS/9D/MrLiLP3O3umCPhnGH8L8bNw7I6pdIKbroISUd+v5FqoCLN1iLO5wDY73gKUdwYUAt37KEhFUJPDwr/YYxRP0fZHIF0lI44w0RgN7N27ISwu9dw6Zq6a28+UcBRyemsvfXodBO9jiAW8R0pQhqWZ9yc2vZfFVfRh5SbHBLqIc0uHcqAtnkx8XU72bDDbqmA0dCA+LwAPX3doaaP37C5BzO+khGODpG+4R0nSsuTdPB6+jbBuS84V9YUAAl95hhMlYA9hvI3GdDjPkahuaYdUrYmqSh3v2XIhEA+D6BjXaGLYwcFpZzLB8pzZbRZVR4RdmuGF1J+ozxZNiKPPqcmK7XFlGWJ2b2+fFw3ZuHU6grDdCe1zpLYzrx1Om6QBUir83oGM=

@@ -1,4 +1,5 @@
 # Storybook Codemods
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -12,28 +13,51 @@ It will help you migrate breaking changes.
 ## Installation
 
 ```sh
+npm install jscodeshift
 npm install @storybook/codemod
 ```
+
+-   `@storybook/codemod` is our collection of codemod scripts.
+-   `jscodeshift` is a tool we use to apply our codemods.
+
+After running the migration commands, you can remove them from your `package.json`, if you added them.
+
+## How to run a codemod script
+
+From the directory where you installed both `jscodeshift` and `@storybook/codemod` run:
+
+Example:
+
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-organisation-name.js . --ignore-pattern "node_modules|dist"
+```
+
+Explanation:
+
+    <jscodeShiftCommand> -t <transformFileLocation> <pathToSource> --ignore-pattern "<globPatternToIgnore>"
 
 ## Transforms
 
 ### add-organisation-to-package-name
 
-Updates package names in imports to include our organisation name prefix
-(`@storybook/`), stripping off the old `@storybook/` prefix.
+Updates package names in imports to migrate to the new package names of storybook.
 
-```js
-> jscodeshift -t add-organisation-to-package-name path/to/source.js
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-organisation-name.js . --ignore-pattern "node_modules|dist"
 ```
+
+There's a mapping of paths we replace but this example explains the gist of it:
 
 Example:
 
 ```js
 import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook-addon-links';
 ```
 
-becomes
+Becomes
 
 ```js
 import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/addon-links';
 ```

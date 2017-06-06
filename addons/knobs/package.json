@@ -1,10 +1,10 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.1",
   "description": "Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,6 @@
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
   "devDependencies": {
-    "@storybook/react": "^3.0.0-alpha.1",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "git-url-parse": "^6.2.2",
@@ -26,14 +25,15 @@
     "typescript-definition-tester": "^0.0.5"
   },
   "peerDependencies": {
-    "@storybook/addons": "*",
     "react": "*",
     "react-dom": "*"
   },
   "dependencies": {
+    "@storybook/addons": "*",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "insert-css": "^1.0.0",
+    "lodash.debounce": "^4.0.8",
     "moment": "^2.18.1",
     "prop-types": "^15.5.8",
     "react-color": "^2.11.4",

@@ -2,6 +2,7 @@
 
 import express from 'express';
 import favicon from 'serve-favicon';
+import https from 'https';
 import program from 'commander';
 import path from 'path';
 import fs from 'fs';
@@ -23,12 +24,12 @@ program
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
   .option(
     '--https',
-    'Serve Storybook over HTTPS. Note: You must provide your own certificate information.',
+    'Serve Storybook over HTTPS. Note: You must provide your own certificate information.'
   )
   .option(
     '--ssl-ca <ca>',
     'Provide an SSL certificate authority. (Optional with --https, required if using a self-signed certificate)',
-    parseList,
+    parseList
   )
   .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
   .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
@@ -36,7 +37,7 @@ program
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
 
-logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}\n`));
+logger.info(chalk.bold(`${packageJson.name} v${packageJson.version}`) + chalk.reset('\n'));
 
 if (program.enableDb || program.dbPath) {
   logger.error(
@@ -44,7 +45,7 @@ if (program.enableDb || program.dbPath) {
       'Error: the experimental local database addon is no longer bundled with',
       'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
       'from the command or npm script and try again.',
-    ].join(' '),
+    ].join(' ')
   );
   process.exit(1);
 }
@@ -56,12 +57,7 @@ getEnvConfig(program, {
   host: 'SBCONFIG_HOSTNAME',
   staticDir: 'SBCONFIG_STATIC_DIR',
   configDir: 'SBCONFIG_CONFIG_DIR',
-  dontTrack: 'SBCONFIG_DO_NOT_TRACK',
 });
-
-if (program.dontTrack) {
-  dontTrack();
-}
 
 if (!program.port) {
   logger.error('Error: port to run Storybook is required!\n');

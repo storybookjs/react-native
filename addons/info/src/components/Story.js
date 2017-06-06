@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import MTRC from 'markdown-to-react-components';
+import marksy from 'marksy';
 import PropTable from './PropTable';
 import Node from './Node';
 import { baseFonts } from './theme';
@@ -90,7 +90,7 @@ export default class Story extends React.Component {
       open: false,
       stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
     };
-    MTRC.configure(this.props.mtrcConf);
+    this.marksy = marksy(this.props.marksyConf);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -211,7 +211,7 @@ export default class Story extends React.Component {
     const source = lines.map(s => s.slice(padding)).join('\n');
     return (
       <div style={this.state.stylesheet.infoContent}>
-        {MTRC(source).tree}
+        {this.marksy(source).tree}
       </div>
     );
   }
@@ -340,12 +340,12 @@ Story.propTypes = {
   showSource: PropTypes.bool,
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  mtrcConf: PropTypes.object,
+  marksyConf: PropTypes.object,
 };
 
 Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
-  mtrcConf: {},
+  marksyConf: {},
 };

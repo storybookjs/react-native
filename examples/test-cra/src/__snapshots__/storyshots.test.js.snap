@@ -38,6 +38,8 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
+exports[`Storyshots ComponentWithRef basic 1`] = `<div />`;
+
 exports[`Storyshots Welcome to Storybook 1`] = `
 <div
   style={
@@ -168,7 +170,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <a
-      href="https://storybooks.js.org/docs/react-storybook/basics/writing-stories"
+      href="https://storybook.js.org/docs/react-storybook/basics/writing-stories"
       style={
         Object {
           "borderBottom": "1px solid #1474f3",

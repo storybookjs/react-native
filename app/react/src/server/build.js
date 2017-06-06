@@ -35,7 +35,7 @@ if (program.enableDb || program.dbPath) {
       'Error: the experimental local database addon is no longer bundled with',
       'react-storybook. Please remove these flags (-d,--db-path,--enable-db)',
       'from the command or npm script and try again.',
-    ].join(' '),
+    ].join(' ')
   );
   process.exit(1);
 }

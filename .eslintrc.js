@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   extends: [
     './node_modules/eslint-config-airbnb-base/rules/es6.js',
   ],
@@ -19,7 +20,7 @@ module.exports = {
       printWidth: 100,
       tabWidth: 2,
       bracketSpacing: true,
-      trailingComma: 'all',
+      trailingComma: 'es5',
       singleQuote: true,
     }],
     quotes: ['warn', 'single'],
