@@ -17,8 +17,10 @@ STORYBOOK_THEME=red STORYBOOK_DATA_KEY=12345 npm run storybook
 Then we can access these environment variables anywhere inside our JS code like below:
 
 ```js
-console.log(process.env.STORYBOOK_THEME)
-console.log(process.env.STORYBOOK_DATA_KEY)
+const out = console;
+
+out.log(process.env.STORYBOOK_THEME);
+out.log(process.env.STORYBOOK_DATA_KEY);
 ```
 
 > Even though we can access these env variables anywhere in the client side JS code, it's better to use them only inside stories and inside the main Storybook config file.

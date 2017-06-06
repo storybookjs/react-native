@@ -26,6 +26,13 @@ const Center = ({ children }) => (
 Then we can use it when writing stories.
 
 ```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+
+import Center from './center';
+import Button from './button';
+
 storiesOf('Button', module)
   .add('with text', () => (
     <Center>
@@ -39,7 +46,12 @@ storiesOf('Button', module)
 You can also expose this functionality as a Storybook decorator and use it like this.
 
 ```js
-const CenterDecorator = (story) => (
+import React from 'react';
+import Button from './button';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+
+const CenterDecorator = story => (
   <div style={{ textAlign: "center" }}>
     {story()}
   </div>

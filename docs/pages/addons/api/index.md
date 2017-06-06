@@ -26,7 +26,7 @@ See how we can use this:
 
 ```js
 // Register the addon with a unique name.
-addonAPI.register('kadira/notes', (storybookAPI) => {
+addonAPI.register('my-organisation/my-addon', (storybookAPI) => {
 
 });
 ```
@@ -46,8 +46,8 @@ const MyPanel = () => (
 );
 
 // give a unique name for the panel
-addonAPI.addPanel('kadira/notes/panel', {
-  title: 'Notes',
+addonAPI.addPanel('my-organisation/my-addon/panel', {
+  title: 'My Addon',
   render: () => (
     <MyPanel />
   ),
@@ -59,9 +59,9 @@ As you can see, you can set any React Component as the panel. Currently, it's ju
 You also pass the channel and the Storybook API into that. See:
 
 ```js
-addonAPI.register('kadira/notes', (storybookAPI) => {
+addonAPI.register('my-organisation/my-addon', (storybookAPI) => {
   // Also need to set a unique name to the panel.
-  addonAPI.addPanel('kadira/notes/panel', {
+  addonAPI.addPanel('my-organisation/my-addon/panel', {
     title: 'Notes',
     render: () => (
       <Notes channel={addons.getChannel()} api={storybookAPI}/>
