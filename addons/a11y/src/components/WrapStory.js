@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import axe from 'axe-core';
 
@@ -11,20 +12,19 @@ class WrapStory extends Component {
 
   componentDidMount() {
     const { channel } = this.props;
+    const wrapper = findDOMNode(this);
 
-    axe.a11yCheck(this.wrapper, {}, (results) => {
-      channel.emit('addon:a11y:check', results);
-    });
+    if (wrapper !== null) {
+      axe.a11yCheck(wrapper, {}, (results) => {
+        channel.emit('addon:a11y:check', results);
+      });
+    }
   }
 
   render() {
     const { storyFn, context } = this.props;
 
-    return (<span
-        ref={ (container) => { this.wrapper = container; } }
-      >
-        {storyFn(context)}
-      </span>)
+    return storyFn(context);
   }
 }
 
