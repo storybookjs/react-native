@@ -8,6 +8,7 @@
     "bootstrap": "lerna bootstrap",
     "bootstrap:docs": "cd docs && npm i",
     "bootstrap:test-cra": "lerna exec --scope test-cra -- npm i",
+    "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- npm i",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
