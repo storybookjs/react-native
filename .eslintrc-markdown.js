@@ -23,6 +23,10 @@ module.exports = {
     node: true,
     'jest/globals': true,
   },
+  globals: {
+    storiesOf: true,
+    addonAPI: true,
+  },
   rules: {
     strict: [error, 'never'],
     'prettier/prettier': [warn, {
@@ -41,10 +45,11 @@ module.exports = {
     'import/extensions': ignore,
     'import/no-extraneous-dependencies': ignore,
     'import/prefer-default-export': ignore,
+    'react/prop-types': ignore,
     'react/jsx-wrap-multilines': ignore,
     'react/jsx-uses-react': error,
     'react/jsx-uses-vars': error,
-    'react/react-in-jsx-scope': error,
+    'react/react-in-jsx-scope': ignore,
     'react/jsx-filename-extension': ignore,
     'jsx-a11y/accessible-emoji': ignore,
     'react/no-unescaped-entities': ignore,

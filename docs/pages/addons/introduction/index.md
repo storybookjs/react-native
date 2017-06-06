@@ -16,8 +16,11 @@ Decorators are wrapper components or Storybook decorators that wrap a story.
 For example, let's say we want to center a story rendered on the screen. For that, we can use a wrapper component like this:
 
 ```js
+const styles = {
+  textAlign: 'center',
+};
 const Center = ({ children }) => (
-  <div style={{ textAlign: "center" }}>
+  <div style={styles}>
     { children }
   </div>
 );
@@ -26,7 +29,6 @@ const Center = ({ children }) => (
 Then we can use it when writing stories.
 
 ```js
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -46,14 +48,17 @@ storiesOf('Button', module)
 You can also expose this functionality as a Storybook decorator and use it like this.
 
 ```js
-import React from 'react';
-import Button from './button';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-const CenterDecorator = story => (
-  <div style={{ textAlign: "center" }}>
-    {story()}
+import Button from './button';
+
+const styles = {
+  textAlign: 'center',
+};
+const CenterDecorator = ({ children }) => (
+  <div style={styles}>
+    { children }
   </div>
 );
 
@@ -74,9 +79,15 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-const CenterDecorator = (story) => (
-  <div style={{ textAlign: "center" }}>
-    {story()}
+import Button from './button';
+import Welcome from './welcome';
+
+const styles = {
+  textAlign: 'center',
+};
+const CenterDecorator = ({ children }) => (
+  <div style={styles}>
+    { children }
   </div>
 );
 addDecorator(CenterDecorator);

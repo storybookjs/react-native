@@ -25,8 +25,10 @@ This method allows you to register an addon and get the storybook API. You can d
 See how we can use this:
 
 ```js
+import addonAPI from '@storybook/addons';
+
 // Register the addon with a unique name.
-addonAPI.register('my-organisation/my-addon', (storybookAPI) => {
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
 
 });
 ```
@@ -39,6 +41,8 @@ This method allows you to add a panel to Storybook. (Storybook's Action Logger i
 See how you can use this method:
 
 ```js
+import addonAPI from '@storybook/addons';
+
 const MyPanel = () => (
   <div>
     This is a panel.
@@ -59,12 +63,16 @@ As you can see, you can set any React Component as the panel. Currently, it's ju
 You also pass the channel and the Storybook API into that. See:
 
 ```js
-addonAPI.register('my-organisation/my-addon', (storybookAPI) => {
+import addonAPI from '@storybook/addons';
+
+import Notes from './notes';
+
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
   // Also need to set a unique name to the panel.
   addonAPI.addPanel('my-organisation/my-addon/panel', {
     title: 'Notes',
     render: () => (
-      <Notes channel={addons.getChannel()} api={storybookAPI}/>
+      <Notes channel={addonAPI.getChannel()} api={storybookAPI}/>
     ),
   })
 })
@@ -86,16 +94,20 @@ With this method, you can select a story via an API. This method accepts two par
 Let's say you've got a story like this:
 
 ```js
-storiesOf('Button', module)
+import { storiesOf } from '@storybook/react';
+
+storiesOf('heading', module)
   .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+    <h1>Hello world</h1>
   ));
 ```
 
 This is how you can select the above story:
 
 ```js
-storybookAPI.selectStory('Button', 'with text');
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  storybookAPI.selectStory('heading', 'with text');
+})
 ```
 
 ### storybookAPI.setQueryParams()
@@ -112,8 +124,10 @@ storybookAPI.setQueryParams({
 > If you need to remove a query param, use `null` for that. For an example, let's say we need to remove bbc query param. This is how we do it:
 
 ```js
-storybookAPI.setQueryParams({
-  bbc: null,
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  storybookAPI.setQueryParams({
+    bbc: null,
+  });
 });
 ```
 
@@ -122,7 +136,9 @@ storybookAPI.setQueryParams({
 This method allows you to get a query param set by above API `setQueryParams`. For example, let's say we need to get the bbc query param. Then this how we do it:
 
 ```js
-storybookAPI.getQueryParam('bbc');
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  storybookAPI.getQueryParam('bbc');
+});
 ```
 
 ### storybookAPI.onStory(fn)
@@ -130,5 +146,7 @@ storybookAPI.getQueryParam('bbc');
 This method allows you to register a handler function which will be called whenever the user navigates between stories.
 
 ```js
-storybookAPI.onStory((kind, story) => console.log(kind, story));
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  storybookAPI.onStory((kind, story) => console.log(kind, story));
+});
 ```
