@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Grid from '../Grid';
 import './style.css';
 
@@ -18,7 +19,7 @@ const Examples = ({ items }) =>
     <Grid columnWidth={350} items={items} />
   </div>;
 Examples.propTypes = {
-  items: PropTypes.array, // eslint-disable-line
+  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 Examples.defaultProps = {
   items: [],
