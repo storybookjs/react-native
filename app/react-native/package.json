@@ -2,36 +2,26 @@
   "name": "@storybook/react-native",
   "version": "3.0.1",
   "description": "A better way to develop React Native Components for your app",
-  "main": "dist/index.js",
-  "bin": {
-    "storybook": "dist/bin/storybook.js"
-  },
-  "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
-  },
   "keywords": [
     "react",
     "react-native",
     "storybook"
   ],
-  "license": "MIT",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "0.27.0 - 0.43.x"
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "storybook": "dist/bin/storybook.js"
   },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-native": "^0.43.3"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "scripts": {
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.0.1",
@@ -74,5 +64,15 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0",
     "ws": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-native": "^0.43.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "0.27.0 - 0.43.x"
   }
 }

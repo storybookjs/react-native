@@ -19,12 +19,12 @@
   "devDependencies": {
     "@storybook/addon-actions": "file:../../addons/actions",
     "@storybook/addon-links": "file:../../addons/links",
+    "@storybook/addon-storyshots": "file:../../addons/storyshots",
     "@storybook/addons": "file:../../lib/addons",
     "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
     "@storybook/channels": "file:../../lib/channels",
     "@storybook/react": "file:../../app/react",
     "@storybook/ui": "file:../../lib/ui",
-    "@storybook/addon-storyshots": "file:../../addons/storyshots",
     "react-scripts": "1.0.2",
     "react-test-renderer": "^15.4.2"
   },

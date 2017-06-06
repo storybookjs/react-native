@@ -11,6 +11,7 @@
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
+    "dev": "lerna exec --parallel -- babel src -d dist --ignore tests,__tests__,test.js,stories/,story.jsx --plugins \"transform-runtime\" --copy-files -w",
     "docs:build": "cd docs && npm run build",
     "docs:deploy:ci": "cd docs && npm run deploy:ci",
     "docs:deploy:manual": "cd docs && npm run deploy:manual",
@@ -22,8 +23,7 @@
     "lint:md": "remark .",
     "publish": "lerna publish",
     "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "dev": "lerna exec --parallel -- babel src -d dist --ignore tests,__tests__,test.js,stories/,story.jsx --plugins \"transform-runtime\" --copy-files -w"
+    "test:watch": "npm test -- --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -68,6 +68,9 @@
     "remark-toc": "^4.0.0",
     "shelljs": "^0.7.7"
   },
+  "engines": {
+    "npm": "<5.0.0"
+  },
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
@@ -95,8 +98,5 @@
       "greenkeeper": "Dependency Upgrades",
       "other": "Other"
     }
-  },
-  "engines": {
-    "npm": "<5.0.0"
   }
 }

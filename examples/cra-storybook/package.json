@@ -1,13 +1,13 @@
 {
   "name": "cra-storybook",
   "version": "1.0.0",
-  "private": true,
-  "devDependencies": {
-    "@storybook/react": "3.0.0",
-    "@storybook/addons": "3.0.0",
-    "@storybook/addon-actions": "3.0.0",
-    "@storybook/addon-links": "3.0.0",
-    "react-scripts": "1.0.1"
+  "scripts": {
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 9009 -s public",
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
     "global": "^4.3.2",
@@ -15,12 +15,12 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
-  }
+  "devDependencies": {
+    "@storybook/addon-actions": "3.0.0",
+    "@storybook/addon-links": "3.0.0",
+    "@storybook/addons": "3.0.0",
+    "@storybook/react": "3.0.0",
+    "react-scripts": "1.0.1"
+  },
+  "private": true
 }

@@ -2,17 +2,17 @@
   "name": "@storybook/channel-postmessage",
   "version": "3.0.0",
   "description": "",
+  "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "shelljs": "^0.7.7"
   },
   "dependencies": {
     "@storybook/channels": "^3.0.0",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1"
+  },
+  "devDependencies": {
+    "shelljs": "^0.7.7"
   }
 }
