@@ -17,10 +17,10 @@
     "storybook": "start-storybook -p 9009 -s pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "alpha",
-    "@storybook/addon-links": "alpha",
-    "@storybook/addons": "alpha",
-    "@storybook/react": "alpha",
+    "@storybook/addon-actions": "latest",
+    "@storybook/addon-links": "latest",
+    "@storybook/addons": "latest",
+    "@storybook/react": "latest",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",

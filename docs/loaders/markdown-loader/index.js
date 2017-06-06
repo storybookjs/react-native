@@ -43,7 +43,7 @@ const md = (linkPrefix, shouldPrefix) =>
       permalinkSymbol: '⚓︎',
     });
 
-module.exports = content => {
+module.exports = function markdownLoader(content) {
   this.cacheable();
 
   const query = loaderUtils.parseQuery(this.query);
