@@ -115,9 +115,11 @@ addonAPI.register('my-organisation/my-addon', storybookAPI => {
 This method allows you to set query string parameters. You can use that as temporary storage for addons. Here's how you set query params.
 
 ```js
-storybookAPI.setQueryParams({
-  abc: 'this is abc',
-  bbc: 'this is bbc',
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  storybookAPI.setQueryParams({
+    abc: 'this is abc',
+    bbc: 'this is bbc',
+  });
 });
 ```
 
