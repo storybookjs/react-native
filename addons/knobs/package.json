@@ -1,10 +1,10 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "scripts": {

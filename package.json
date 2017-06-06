@@ -2,7 +2,7 @@
   "name": "storybook",
   "repository": {
     "type": "git",
-    "url": "git@github.com:storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",

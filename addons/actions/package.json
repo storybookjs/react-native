@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Action Logger addon for storybook",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "keywords": [
     "storybook"
