@@ -40,6 +40,9 @@ There are multiple options here. for example, you can export conditionally:
 
 ```js
 import StorybookUI from './storybook';
+
+import App from './app';
+
 module.exports = __DEV__ ? StorybookUI : App;
 ```
 

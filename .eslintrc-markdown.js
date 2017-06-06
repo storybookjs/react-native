@@ -18,6 +18,8 @@ module.exports = {
   globals: {
     storiesOf: true,
     addonAPI: true,
+    __DEV__: true,
+    fetch: true,
   },
   rules: {
     strict: [error, 'never'],
@@ -31,6 +33,8 @@ module.exports = {
         singleQuote: true,
       },
     ],
+    'no-console': ignore,
+    'global-require': ignore,
     quotes: [warn, 'single'],
     'no-unused-vars': ignore,
     'class-methods-use-this': ignore,

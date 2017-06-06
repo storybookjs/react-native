@@ -191,6 +191,8 @@ const value = array(label, defaultValue);
 > ```js
 > import { array } from '@storybook/addon-knobs';
 >
+> const label = 'Styles';
+> const defaultValue = ['Red'];
 > const separator = ':';
 > const value = array(label, defaultValue, separator);
 > ```

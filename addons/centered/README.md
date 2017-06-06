@@ -15,7 +15,7 @@ This addon works with Storybook for:
 ### Usage
 
 ```sh
-npm i @storybook/addon-centered
+npm install @storybook/addon-centered --save-dev
 ```
 
 #### As a decorator
@@ -23,10 +23,10 @@ npm i @storybook/addon-centered
 You can set the decorator locally:
 
 ```js
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import MyComponent from '../Component';
 import centered from '@storybook/addon-centered';
+
+import MyComponent from '../Component';
 
 storiesOf('MyComponent', module)
   .addDecorator(centered)
@@ -52,7 +52,6 @@ configure(function () {
 1 - Configure the extension
 
 ```js
-import React from 'react';
 import { configure, setAddon } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 
@@ -61,7 +60,7 @@ setAddon({
     this.add(storyName, (context) => (
       centered.call(context, storyFn)
     ));
-  }
+  },
 });
 
 configure(function () {
@@ -72,8 +71,8 @@ configure(function () {
 2 - Use it in your story
 
 ```js
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+
 import Component from '../Component';
 
 storiesOf('Component', module)

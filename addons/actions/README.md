@@ -28,8 +28,10 @@ Import the `action` function and use it to create actions handlers. When creatin
 > _Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)_
 
 ```js
-import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+
+import Button from './button';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -47,6 +49,8 @@ If you wish to process action data before sending them over to the logger, you c
 
 ```js
 import { action, decorateAction } from '@storybook/addon-actions'
+
+import Button from './button';
 
 const firstArgAction = decorateAction([
   args => args.slice(0, 1)
