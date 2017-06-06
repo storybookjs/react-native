@@ -40,8 +40,8 @@ Then create your stories with the `.addWithInfo` API.
 
 ```js
 import React from 'react';
-import Component from './Component';
 import { storiesOf } from '@storybook/react';
+import Component from './Component';
 
 storiesOf('Component')
   .addWithInfo(

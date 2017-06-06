@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -40,7 +42,9 @@ class SelectType extends React.Component {
     return (
       <select
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         value={knob.value}
         onChange={e => onChange(e.target.value)}
@@ -51,17 +55,20 @@ class SelectType extends React.Component {
   }
 }
 
+SelectType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 SelectType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
-SelectType.serialize = function(value) {
-  return value;
-};
-
-SelectType.deserialize = function(value) {
-  return value;
-};
+SelectType.serialize = value => value;
+SelectType.deserialize = value => value;
 
 export default SelectType;

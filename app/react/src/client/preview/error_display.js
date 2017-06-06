@@ -30,7 +30,7 @@ const codeStyle = {
   overflow: 'auto',
 };
 
-const ErrorDisplay = ({ error }) => (
+const ErrorDisplay = ({ error }) =>
   <div style={mainStyle}>
     <div style={headingStyle}>{error.message}</div>
     <pre style={codeStyle}>
@@ -38,11 +38,13 @@ const ErrorDisplay = ({ error }) => (
         {error.stack}
       </code>
     </pre>
-  </div>
-);
+  </div>;
 
 ErrorDisplay.propTypes = {
-  error: PropTypes.object.isRequired,
+  error: PropTypes.shape({
+    message: PropTypes.string,
+    stack: PropTypes.string,
+  }).isRequired,
 };
 
 export default ErrorDisplay;

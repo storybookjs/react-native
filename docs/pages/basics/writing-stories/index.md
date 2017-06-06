@@ -75,13 +75,13 @@ import { storiesOf } from '@storybook/react';
 import MyComponent from '../my_component';
 
 storiesOf('MyComponent', module)
-  .addDecorator((story) => (
+  .addDecorator(story => (
     <div style={{textAlign: 'center'}}>
       {story()}
     </div>
   ))
-  .add('without props', () => (<MyComponent />))
-  .add('with some props', () => (<MyComponent text="The Comp"/>));
+  .add('without props', () => <MyComponent />)
+  .add('with some props', () => <MyComponent text="The Comp"/>);
 ```
 
 Here we only add the decorator for the current set of stories. (In this example, we add it just for the **MyComponent** story group.)
@@ -89,9 +89,10 @@ Here we only add the decorator for the current set of stories. (In this example,
 But, you can also add a decorator **globally** and it'll be applied to all the stories you create. This is how to add a decorator like that:
 
 ```js
+import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 
-addDecorator((story) => (
+addDecorator(story => (
   <div style={{textAlign: 'center'}}>
     {story()}
   </div>
@@ -117,7 +118,9 @@ Until that's implemented, here's how different developers address this issue, ri
 For example, you can prefix story names with a dot (`.`):
 
 ```js
-storiesOf('core.Button', module)
+import { storiesOf } from '@storybook/react';
+
+storiesOf('core.Button', module);
 ```
 
 Then you can filter stories to display only the stories you want to see.

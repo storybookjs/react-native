@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
+
 import PropForm from './PropForm';
 import Types from './types';
 
@@ -147,7 +148,14 @@ export default class Panel extends React.Component {
 }
 
 Panel.propTypes = {
-  channel: PropTypes.object,
-  onReset: PropTypes.object,
-  api: PropTypes.object,
+  channel: PropTypes.shape({
+    emit: PropTypes.func,
+    on: PropTypes.func,
+    removeListener: PropTypes.func,
+  }).isRequired,
+  onReset: PropTypes.object, // eslint-disable-line
+  api: PropTypes.shape({
+    getQueryParam: PropTypes.func,
+    setQueryParams: PropTypes.func,
+  }).isRequired,
 };

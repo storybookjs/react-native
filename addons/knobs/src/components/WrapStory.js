@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -60,10 +62,27 @@ export default class WrapStory extends React.Component {
   }
 }
 
+WrapStory.defaultProps = {
+  context: {},
+  initialContent: {},
+  storyFn: context => context,
+};
+
 WrapStory.propTypes = {
-  context: PropTypes.object,
+  context: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   storyFn: PropTypes.func,
-  channel: PropTypes.object,
-  knobStore: PropTypes.object,
-  initialContent: PropTypes.object,
+  channel: React.PropTypes.shape({
+    on: PropTypes.func,
+    removeListener: PropTypes.func,
+  }).isRequired,
+  knobStore: PropTypes.shape({
+    channel: PropTypes.func,
+    get: PropTypes.func,
+    getAll: PropTypes.func,
+    markAllUnused: PropTypes.func,
+    reset: PropTypes.func,
+    subscribe: PropTypes.func,
+    unsubscribe: PropTypes.func,
+  }).isRequired,
+  initialContent: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };

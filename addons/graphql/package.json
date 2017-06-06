@@ -2,32 +2,34 @@
   "name": "@storybook/addon-graphql",
   "version": "3.0.0",
   "description": "Storybook addon to display the GraphiQL IDE",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/graphql",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "node ../../scripts/prepublish.js",
     "storybook": "start-storybook -p 9001"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+  "dependencies": {
+    "global": "^4.3.2",
+    "graphiql": "^0.7.8",
+    "graphql": "^0.7.0",
+    "prop-types": "^15.5.10"
   },
-  "keywords": [
-    "storybook"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
-  },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/graphql",
   "devDependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "shelljs": "^0.7.7"
-  },
-  "dependencies": {
-    "graphiql": "^0.7.8",
-    "graphql": "^0.7.0"
   },
   "peerDependencies": {
     "react": "*"

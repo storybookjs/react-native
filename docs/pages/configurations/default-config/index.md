@@ -34,11 +34,11 @@ You can simply import CSS files wherever you want, whether it's in the storybook
 Basically, you can import CSS like this:
 
 ```js
-// locally
-import './styles.css';
-
-// or from NPM modules
+// from NPM modules
 import 'bootstrap/dist/css/bootstrap.css';
+
+// from local path
+import './styles.css';
 ```
 
 ### Image and Static File Support
@@ -52,9 +52,9 @@ import { storiesOf } from '@storybook/react';
 
 import imageFile from './static/image.png';
 
-storiesOf('<img>', module)
+storiesOf('<img />', module)
   .add('with a image', () => (
-    <img src={imageFile} />
+    <img src={imageFile} alt="covfefe" />
   ));
 ```
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Props from './Props';
 
 const stylesheet = {
@@ -8,62 +9,6 @@ const stylesheet = {
   },
 };
 
-export default class Node extends React.Component {
-  render() {
-    const { node, depth } = this.props;
-    const { tagStyle, containerStyle } = stylesheet;
-
-    const leftPad = {
-      paddingLeft: 3 + (depth + 1) * 15,
-      paddingRight: 3,
-    };
-
-    Object.assign(containerStyle, leftPad);
-
-    const { name, text, children } = getData(node);
-
-    // Just text
-    if (!name) {
-      return (
-        <div style={containerStyle}>
-          <span style={tagStyle}>{text}</span>
-        </div>
-      );
-    }
-
-    // Single-line tag
-    if (!children) {
-      return (
-        <div style={containerStyle}>
-          <span style={tagStyle}>&lt;{name}</span>
-          <Props node={node} singleLine />
-          <span style={tagStyle}>/&gt;</span>
-        </div>
-      );
-    }
-
-    // Keep a copy so that further mutations to containerStyle don't impact us:
-    const containerStyleCopy = Object.assign({}, containerStyle);
-
-    // tag with children
-    return (
-      <div>
-        <div style={containerStyleCopy}>
-          <span style={tagStyle}>&lt;{name}</span>
-          <Props node={node} />
-          <span style={tagStyle}>&gt;</span>
-        </div>
-        {React.Children.map(children, childElement => (
-          <Node node={childElement} depth={depth + 1} />
-        ))}
-        <div style={containerStyleCopy}>
-          <span style={tagStyle}>&lt;/{name}&gt;</span>
-        </div>
-      </div>
-    );
-  }
-}
-
 function getData(element) {
   const data = {
     name: null,
@@ -71,11 +16,11 @@ function getData(element) {
     children: null,
   };
 
-  if (typeof element === 'null') {
+  if (element === null) {
     return data;
   }
 
-  if (typeof element == 'string') {
+  if (typeof element === 'string') {
     data.text = element;
     return data;
   }
@@ -96,3 +41,65 @@ function getData(element) {
 
   return data;
 }
+
+export default function Node(props) {
+  const { node, depth } = props;
+  const { tagStyle, containerStyle } = stylesheet;
+
+  const leftPad = {
+    paddingLeft: 3 + (depth + 1) * 15,
+    paddingRight: 3,
+  };
+
+  Object.assign(containerStyle, leftPad);
+
+  const { name, text, children } = getData(node);
+
+  // Just text
+  if (!name) {
+    return (
+      <div style={containerStyle}>
+        <span style={tagStyle}>{text}</span>
+      </div>
+    );
+  }
+
+  // Single-line tag
+  if (!children) {
+    return (
+      <div style={containerStyle}>
+        <span style={tagStyle}>&lt;{name}</span>
+        <Props node={node} singleLine />
+        <span style={tagStyle}>/&gt;</span>
+      </div>
+    );
+  }
+
+  // Keep a copy so that further mutations to containerStyle don't impact us:
+  const containerStyleCopy = Object.assign({}, containerStyle);
+
+  // tag with children
+  return (
+    <div>
+      <div style={containerStyleCopy}>
+        <span style={tagStyle}>&lt;{name}</span>
+        <Props node={node} />
+        <span style={tagStyle}>&gt;</span>
+      </div>
+      {React.Children.map(children, childElement => <Node node={childElement} depth={depth + 1} />)}
+      <div style={containerStyleCopy}>
+        <span style={tagStyle}>&lt;/{name}&gt;</span>
+      </div>
+    </div>
+  );
+}
+
+Node.defaultProps = {
+  node: null,
+  depth: 0,
+};
+
+Node.propTypes = {
+  node: PropTypes.node,
+  depth: PropTypes.number,
+};

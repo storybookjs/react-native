@@ -1,6 +1,9 @@
+import { document } from 'global';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { SketchPicker } from 'react-color';
+
+const conditionalRender = (condition, positive, negative) => (condition ? positive() : negative());
 
 const styles = {
   swatch: {
@@ -58,6 +61,7 @@ class ColorType extends React.Component {
 
   render() {
     const { knob, onChange } = this.props;
+    const { displayColorPicker } = this.state;
     const colorStyle = {
       width: 'auto',
       height: '20px',
@@ -67,35 +71,40 @@ class ColorType extends React.Component {
     };
     return (
       <div id={knob.name}>
-        <div style={styles.swatch} onClick={this.handleClick}>
+        <div style={styles.swatch} onClick={this.handleClick} role="button" tabIndex="0">
           <div style={colorStyle} />
         </div>
-        {this.state.displayColorPicker
-          ? <div
+        {conditionalRender(
+          displayColorPicker,
+          () =>
+            <div
               style={styles.popover}
               ref={e => {
                 this.popover = e;
               }}
             >
               <SketchPicker color={knob.value} onChange={color => onChange(color.hex)} />
-            </div>
-          : null}
+            </div>,
+          () => null
+        )}
       </div>
     );
   }
 }
 
 ColorType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
-
-ColorType.serialize = function(value) {
-  return value;
+ColorType.defaultProps = {
+  knob: {},
+  onChange: value => value,
 };
 
-ColorType.deserialize = function(value) {
-  return value;
-};
+ColorType.serialize = value => value;
+ColorType.deserialize = value => value;
 
 export default ColorType;

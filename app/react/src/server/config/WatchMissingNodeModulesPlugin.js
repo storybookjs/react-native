@@ -16,7 +16,7 @@ function WatchMissingNodeModulesPlugin(nodeModulesPath) {
   this.nodeModulesPath = nodeModulesPath;
 }
 
-WatchMissingNodeModulesPlugin.prototype.apply = function(compiler) {
+WatchMissingNodeModulesPlugin.prototype.apply = function apply(compiler) {
   compiler.plugin('emit', (compilation, callback) => {
     const missingDeps = compilation.missingDependencies;
     const nodeModulesPath = this.nodeModulesPath;

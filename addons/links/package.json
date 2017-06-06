@@ -2,35 +2,35 @@
   "name": "@storybook/addon-links",
   "version": "3.0.0",
   "description": "Story Links addon for storybook",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
+  "typings": "./storybook-addon-links.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "node ../../scripts/prepublish.js",
     "storybook": "start-storybook -p 9001"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
+  "dependencies": {
+    "@storybook/addons": "^3.0.0"
   },
-  "keywords": [
-    "storybook"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
-  },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
   "devDependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "shelljs": "^0.7.7"
   },
-  "dependencies": {
-    "@storybook/addons": "^3.0.0"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
-  },
-  "typings": "./storybook-addon-links.d.ts"
+  }
 }
