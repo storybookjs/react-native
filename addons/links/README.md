@@ -33,6 +33,8 @@ storiesOf('Button', module)
 Have a look at the linkTo function:
 
 ```js
+import { linkTo } from '@storybook/addon-links'
+
 linkTo('Toggle', 'off')
 ```
 

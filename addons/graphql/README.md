@@ -49,7 +49,9 @@ The `setupGraphiQL` function also accepts a fetcher parameter which can be used 
 import { storiesOf } from '@storybook/react'
 import { setupGraphiQL } from '@storybook/addon-graphql'
 
-const fetcher = function (params) {
+import { url } from './settings';
+
+const fetcher = params => {
   const options = {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },

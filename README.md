@@ -93,10 +93,10 @@ We welcome contributions to Storybook!
 > boolean check if code conforms to linting rules - uses remark & eslint
 
 -   `npm run lint:js` - will check js
--   `npm run lint:markdown` - will check markdown + code samples
+-   `npm run lint:md` - will check markdown + code samples
 
 -   `npm run lint:js -- --fix` - will automatically fix js
--   `npm run lint:markdown -- -o` - will automatically fix markdown
+-   `npm run lint:md -- -o` - will automatically fix markdown
 
 #### `npm run test`
 

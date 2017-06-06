@@ -2,29 +2,23 @@
   "name": "@storybook/addon-actions",
   "version": "3.0.1",
   "description": "Action Logger addon for storybook",
-  "main": "dist/index.js",
-  "scripts": {
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepublish": "node ../../scripts/prepublish.js",
-    "storybook": "start-storybook -p 9001"
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/actions",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
   },
+  "license": "MIT",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "keywords": [
-    "storybook"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
-  },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/actions",
-  "devDependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "shelljs": "^0.7.7"
+  "scripts": {
+    "deploy-storybook": "storybook-to-ghpages",
+    "prepublish": "node ../../scripts/prepublish.js",
+    "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
     "@storybook/addons": "^3.0.0",
@@ -32,6 +26,12 @@
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.5.8",
     "react-inspector": "^2.0.0"
+  },
+  "devDependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
+    "shelljs": "^0.7.7"
   },
   "peerDependencies": {
     "react": "*",

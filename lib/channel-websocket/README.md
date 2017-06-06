@@ -11,8 +11,9 @@ Storybook Websocket Channel is a channel for Storybook that can be used when the
 A channel can be created using the `createChannel` function.
 
 ```js
-import createChannel from '@storybook/channel-websocket'
-const channel = createChannel({ url: 'ws://localhost:9001' })
+import createChannel from '@storybook/channel-websocket';
+
+const channel = createChannel({ url: 'ws://localhost:9001' });
 ```
 
 * * *

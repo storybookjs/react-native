@@ -43,7 +43,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: require.resolve('babel-loader'),
-        query: require('./babel.prod.js'),
+        query: require('./babel.prod.js'), // eslint-disable-line
         include: includePaths,
         exclude: excludePaths,
       },

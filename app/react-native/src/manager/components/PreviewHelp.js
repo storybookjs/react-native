@@ -1,46 +1,4 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-
-class PreviewHelp extends Component {
-  render() {
-    return (
-      <div style={styles.main}>
-        <h1>Welcome to STORYBOOK</h1>
-        <p>
-          This is a UI component dev environment for your app.
-        </p>
-        <p>
-          We've added some basic stories inside the
-          {' '}
-          <span style={styles.code}>storybook/stories</span>
-          {' '}
-          directory.
-          {' '}
-          A story is a single state of one or more UI components. You can have as many stories as you want. Basically a story is like a visual test case.
-        </p>
-        <p>
-          To see your Storybook stories on the device, you should start your mobile app for the
-          {' '}
-          <span style={styles.code}>&lt;platform&gt;</span>
-          {' '}
-          of your choice (typically ios or android).
-        </p>
-        <p>
-          For <span style={styles.code}>create-react-native-app</span> apps:
-        </p>
-        <div style={styles.codeBlock}>
-          <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
-        </div>
-        <p>
-          For <span style={styles.code}>react-native init</span> apps:
-        </p>
-        <div style={styles.codeBlock}>
-          <pre style={styles.instructionsCode}>react-native run-&lt;platform&gt;</pre>
-        </div>
-      </div>
-    );
-  }
-}
+import React from 'react';
 
 const styles = {
   main: {
@@ -67,4 +25,41 @@ const styles = {
   },
 };
 
-export default PreviewHelp;
+const PreviewHelp = () =>
+  <div style={styles.main}>
+    <h1>Welcome to storybook</h1>
+    <p>
+      This is a UI component dev environment for your app.
+    </p>
+    <p>
+      We've added some basic stories inside the
+      {' '}
+      <span style={styles.code}>storybook/stories</span>
+      {' '}
+      directory.
+      {' '}
+      A story is a single state of one or more UI components. You can have as many stories as you
+      want. Basically a story is like a visual test case.
+    </p>
+    <p>
+      To see your Storybook stories on the device, you should start your mobile app for the
+      {' '}
+      <span style={styles.code}>&lt;platform&gt;</span>
+      {' '}
+      of your choice (typically ios or android).
+    </p>
+    <p>
+      For <span style={styles.code}>create-react-native-app</span> apps:
+    </p>
+    <div style={styles.codeBlock}>
+      <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
+    </div>
+    <p>
+      For <span style={styles.code}>react-native init</span> apps:
+    </p>
+    <div style={styles.codeBlock}>
+      <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
+    </div>
+  </div>;
+
+export { PreviewHelp as default };

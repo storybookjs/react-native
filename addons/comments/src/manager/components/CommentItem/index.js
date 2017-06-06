@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { window } from 'global';
 import moment from 'moment';
 import renderHTML from 'react-render-html';
 import insertCss from 'insert-css';
@@ -26,7 +27,7 @@ export default class CommentItem extends Component {
   }
 
   deleteComment() {
-    const confirmDelete = confirm('Are you sure you want to delete this comment?');
+    const confirmDelete = window.confirm('Are you sure you want to delete this comment?');
     if (confirmDelete === true) {
       this.props.deleteComment();
     }
@@ -34,7 +35,7 @@ export default class CommentItem extends Component {
 
   renderDelete() {
     return (
-      <a href="#" style={style.commentDelete} onClick={this.deleteComment}>
+      <a style={style.commentDelete} onClick={this.deleteComment} role="button" tabIndex="0">
         delete
       </a>
     );
@@ -69,8 +70,19 @@ export default class CommentItem extends Component {
   }
 }
 
+CommentItem.defaultProps = {
+  comment: {},
+  deleteComment: () => {},
+  ownComment: false,
+};
+
 CommentItem.propTypes = {
   deleteComment: PropTypes.func,
-  comment: PropTypes.object,
+  comment: PropTypes.shape({
+    user: PropTypes.object,
+    text: PropTypes.string,
+    time: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+    loading: PropTypes.bool,
+  }),
   ownComment: PropTypes.bool,
 };

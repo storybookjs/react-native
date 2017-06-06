@@ -12,13 +12,13 @@ import getIndexHtml from './index.html';
 function getMiddleware(configDir) {
   const middlewarePath = path.resolve(configDir, 'middleware.js');
   if (fs.existsSync(middlewarePath)) {
-    let middlewareModule = require(middlewarePath);
-    if (middlewareModule.__esModule) {
+    let middlewareModule = require(middlewarePath); // eslint-disable-line
+    if (middlewareModule.__esModule) { // eslint-disable-line
       middlewareModule = middlewareModule.default;
     }
     return middlewareModule;
   }
-  return function() {};
+  return () => {};
 }
 
 export default function({ projectDir, configDir, ...options }) {

@@ -21,33 +21,30 @@ const customStyle = `
 insertCss(style);
 insertCss(customStyle);
 
-class DateType extends React.Component {
-  render() {
-    const { knob, onChange } = this.props;
-    return (
-      <div>
-        <Datetime
-          id={knob.name}
-          value={knob.value ? new Date(knob.value) : null}
-          type="date"
-          onChange={date => onChange(date.valueOf())}
-        />
-      </div>
-    );
-  }
-}
+const DateType = ({ knob, onChange }) =>
+  <div>
+    <Datetime
+      id={knob.name}
+      value={knob.value ? new Date(knob.value) : null}
+      type="date"
+      onChange={date => onChange(date.valueOf())}
+    />
+  </div>;
+
+DateType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
 
 DateType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
-DateType.serialize = function(value) {
-  return String(value);
-};
-
-DateType.deserialize = function(value) {
-  return parseFloat(value);
-};
+DateType.serialize = value => String(value);
+DateType.deserialize = value => parseFloat(value);
 
 export default DateType;

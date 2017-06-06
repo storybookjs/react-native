@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text } from 'react-native';
 import style from './style';
 
@@ -49,3 +49,11 @@ export default class StoryView extends Component {
     );
   }
 }
+
+StoryView.propTypes = {
+  events: PropTypes.shape({
+    on: PropTypes.func.isRequired,
+    removeListener: PropTypes.func.isRequired,
+  }).isRequired,
+  url: PropTypes.string.isRequired,
+};

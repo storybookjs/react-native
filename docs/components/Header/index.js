@@ -50,7 +50,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  currentSection: PropTypes.string,
+  currentSection: PropTypes.string.isRequired,
 };
 
 export default Header;

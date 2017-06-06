@@ -1,43 +1,49 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { baseFonts } from '../theme';
 
-export class P extends React.Component {
-  render() {
-    const style = {
-      ...baseFonts,
-      fontSize: '15px',
-    };
-    return <p style={style}>{this.props.children}</p>;
-  }
+const defaultProps = { children: null };
+const propTypes = { children: PropTypes.node };
+
+export function P(props) {
+  const style = {
+    ...baseFonts,
+    fontSize: '15px',
+  };
+  return <p style={style}>{props.children}</p>;
 }
 
-export class LI extends React.Component {
-  render() {
-    const style = {
-      ...baseFonts,
-      fontSize: '15px',
-    };
-    return <li style={style}>{this.props.children}</li>;
-  }
+P.defaultProps = defaultProps;
+P.propTypes = propTypes;
+
+export function LI(props) {
+  const style = {
+    ...baseFonts,
+    fontSize: '15px',
+  };
+  return <li style={style}>{props.children}</li>;
 }
 
-export class UL extends React.Component {
-  render() {
-    const style = {
-      ...baseFonts,
-      fontSize: '15px',
-    };
+LI.defaultProps = defaultProps;
+LI.propTypes = propTypes;
 
-    return <ul style={style}>{this.props.children}</ul>;
-  }
+export function UL(props) {
+  const style = {
+    ...baseFonts,
+    fontSize: '15px',
+  };
+  return <ul style={style}>{props.children}</ul>;
 }
 
-export class A extends React.Component {
-  render() {
-    const style = {
-      color: '#3498db',
-    };
+UL.defaultProps = defaultProps;
+UL.propTypes = propTypes;
 
-    return <a href={this.props.href} style={style}>{this.props.children}</a>;
-  }
+export function A(props) {
+  const style = {
+    color: '#3498db',
+  };
+  return <a href={this.props.href} style={style}>{props.children}</a>;
 }
+
+A.defaultProps = defaultProps;
+A.propTypes = propTypes;
