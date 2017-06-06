@@ -9,8 +9,7 @@ module.exports = {
           module: 'node_modules/remark-lint-code-eslint',
           options: {
             fix: true,
-            configFile:
-              '/Users/dev/Projects/GitHub/storybook/react-storybook/.eslintrc-markdown.js',
+            configFile: '.eslintrc-markdown.js',
           },
         },
       },
