@@ -24,7 +24,7 @@ This is how Knobs look like:
 First of all, you need to install knobs into your project as a dev dependency.
 
 ```sh
-npm i -D @storybook/addon-knobs
+npm install @storybook/addon-knobs --save-dev
 ```
 
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
@@ -36,7 +36,6 @@ import '@storybook/addon-knobs/register'
 Now, write your stories with knobs.
 
 ```js
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
@@ -48,9 +47,7 @@ stories.addDecorator(withKnobs);
 
 // Knobs for React props
 stories.add('with a button', () => (
-  <button
-    disabled={boolean('Disabled', false)}
-  >
+  <button disabled={boolean('Disabled', false)} >
     {text('Label', 'Hello Button')}
   </button>
 ))
@@ -92,6 +89,8 @@ Just like that, you can import any other following Knobs:
 Allows you to get some text from the user.
 
 ```js
+import { text } from '@storybook/addon-knobs';
+
 const label = 'Your Name';
 const defaultValue = 'Arunoda Susiripala';
 
@@ -103,6 +102,8 @@ const value = text(label, defaultValue);
 Allows you to get a boolean value from the user.
 
 ```js
+import { boolean } from '@storybook/addon-knobs';
+
 const label = 'Agree?';
 const defaultValue = false;
 
@@ -114,6 +115,8 @@ const value = boolean(label, defaultValue);
 Allows you to get a number from the user.
 
 ```js
+import { number } from '@storybook/addon-knobs';
+
 const label = 'Age';
 const defaultValue = 78;
 
@@ -125,6 +128,8 @@ const value = number(label, defaultValue);
 Allows you to get a number from the user using a range slider.
 
 ```js
+import { number } from '@storybook/addon-knobs';
+
 const label = 'Temperature';
 const defaultValue = 73;
 const options = {
@@ -137,11 +142,13 @@ const options = {
 const value = number(label, defaultValue, options);
 ```
 
-### colour
+### color
 
 Allows you to get a colour from the user.
 
 ```js
+import { color } from '@storybook/addon-knobs';
+
 const label = 'Color';
 const defaultValue = '#ff00ff';
 
@@ -153,6 +160,8 @@ const value = color(label, defaultValue);
 Allows you to get a JSON object from the user.
 
 ```js
+import { object } from '@storybook/addon-knobs';
+
 const label = 'Styles';
 const defaultValue = {
   backgroundColor: 'red'
@@ -168,6 +177,8 @@ const value = object(label, defaultValue);
 Allows you to get an array from the user.
 
 ```js
+import { array } from '@storybook/addon-knobs';
+
 const label = 'Styles';
 const defaultValue = ['Red']
 
@@ -178,6 +189,10 @@ const value = array(label, defaultValue);
 > By default it's a comma, but this can be override by passing a separator variable.
 >
 > ```js
+> import { array } from '@storybook/addon-knobs';
+>
+> const label = 'Styles';
+> const defaultValue = ['Red'];
 > const separator = ':';
 > const value = array(label, defaultValue, separator);
 > ```
@@ -187,6 +202,8 @@ const value = array(label, defaultValue);
 Allows you to get a value from a select box from the user.
 
 ```js
+import { select } from '@storybook/addon-knobs';
+
 const label = 'Colors';
 const options = {
   red: 'Red',
@@ -205,6 +222,8 @@ const value = select(label, options, defaultValue);
 Allow you to get date (and time) from the user.
 
 ```js
+import { date } from '@storybook/addon-knobs';
+
 const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
 const value = date(label, defaultValue);
@@ -217,4 +236,4 @@ If you are using typescript, make sure you have the type definitions installed f
 -   node
 -   react
 
-You can install them using `npm i -S @types/node @types/react`, assuming you are using Typescript >2.0.
+You can install them using `npm install -save @types/node @types/react`, assuming you are using Typescript >2.0.

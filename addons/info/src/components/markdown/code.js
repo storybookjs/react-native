@@ -1,4 +1,6 @@
+import { Prism } from 'global';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Code extends React.Component {
   componentDidMount() {
@@ -41,30 +43,39 @@ export class Code extends React.Component {
   }
 }
 
-export class Pre extends React.Component {
-  render() {
-    const style = {
-      fontSize: '.88em',
-      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-      backgroundColor: '#fafafa',
-      padding: '.5rem',
-      lineHeight: 1.5,
-      overflowX: 'scroll',
-    };
+Code.propTypes = {
+  language: PropTypes.string,
+  code: PropTypes.node,
+};
+Code.defaultProps = {
+  language: null,
+  code: null,
+};
 
-    return <pre style={style}>{this.props.children}</pre>;
-  }
+export function Pre(props) {
+  const style = {
+    fontSize: '.88em',
+    fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+    backgroundColor: '#fafafa',
+    padding: '.5rem',
+    lineHeight: 1.5,
+    overflowX: 'scroll',
+  };
+  return <pre style={style}>{props.children}</pre>;
 }
 
-export class Blockquote extends React.Component {
-  render() {
-    const style = {
-      fontSize: '1.88em',
-      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-      borderLeft: '8px solid #fafafa',
-      padding: '1rem',
-    };
+Pre.propTypes = { children: PropTypes.node };
+Pre.defaultProps = { children: null };
 
-    return <blockquote style={style}>{this.props.children}</blockquote>;
-  }
+export function Blockquote(props) {
+  const style = {
+    fontSize: '1.88em',
+    fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+    borderLeft: '8px solid #fafafa',
+    padding: '1rem',
+  };
+  return <blockquote style={style}>{props.children}</blockquote>;
 }
+
+Blockquote.propTypes = { children: PropTypes.node };
+Blockquote.defaultProps = { children: null };

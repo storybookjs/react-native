@@ -2,8 +2,8 @@
 
 First, install the `@storybook/react-native` module
 
-```shell
-npm i -D @storybook/react-native
+```sh
+npm install @storybook/react-native --save-dev
 ```
 
 Create a new directory called `storybook` in your project root and create an entry file (index.ios.js or index.android.js) as given below. (Don't forget to replace "MyApplicationName" with your app name).
@@ -18,7 +18,10 @@ configure(function() {
   require('./stories');
 }, module);
 
-const StorybookUI = getStorybookUI({port: 7007, host: 'localhost'});
+const StorybookUI = getStorybookUI({
+  port: 7007,
+  host: 'localhost',
+});
 AppRegistry.registerComponent('MyApplicationName', () => StorybookUI);
 ```
 
@@ -32,9 +35,6 @@ import '@storybook/addon-links';
 Then write your first story in the `stories` directory like this:
 
 ```js
-// index.js
-
-import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
@@ -44,10 +44,9 @@ const style = {
   alignItems: 'center',
   backgroundColor: '#F5FCFF'
 };
-
-const CenteredView = (props) => (
+const CenteredView = ({ children }) => (
   <View style={style}>
-    {props.children}
+    {children}
   </View>
 );
 

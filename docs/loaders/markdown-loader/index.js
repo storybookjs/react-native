@@ -3,22 +3,23 @@
 const frontMatter = require('front-matter');
 const markdownIt = require('markdown-it');
 const hljs = require('highlight.js');
-const objectAssign = require('object-assign');
 const path = require('path');
 const loaderUtils = require('loader-utils');
+
+const logger = console;
 
 const highlight = (str, lang) => {
   if (lang !== null && hljs.getLanguage(lang)) {
     try {
       return hljs.highlight(lang, str).value;
-    } catch (_error) {
-      console.error(_error);
+    } catch (error) {
+      logger.error(error);
     }
   }
   try {
     return hljs.highlightAuto(str).value;
-  } catch (_error) {
-    console.error(_error);
+  } catch (error) {
+    logger.error(error);
   }
   return '';
 };
@@ -36,13 +37,13 @@ const md = (linkPrefix, shouldPrefix) =>
       return link;
     },
   })
-    .use(require('markdown-it-replace-link'))
-    .use(require('markdown-it-anchor'), {
+    .use(require('markdown-it-replace-link')) // eslint-disable-line
+    .use(require('markdown-it-anchor'), { // eslint-disable-line
       permalink: true,
-      permalinkSymbol: '🔗',
+      permalinkSymbol: '⚓︎',
     });
 
-module.exports = function(content) {
+module.exports = function markdownLoader(content) {
   this.cacheable();
 
   const query = loaderUtils.parseQuery(this.query);
@@ -51,7 +52,7 @@ module.exports = function(content) {
 
   const meta = frontMatter(content);
   const body = md(linkPrefix, shouldPrefix).render(meta.body);
-  const result = objectAssign({}, meta.attributes, {
+  const result = Object.assign({}, meta.attributes, {
     body,
   });
   this.value = result;

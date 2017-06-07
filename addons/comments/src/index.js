@@ -10,16 +10,20 @@ const buttonStyles = {
   padding: '3px 10px',
 };
 
-const Button = ({ children, onClick, style = {} }) => (
+const Button = ({ children, onClick, style = {} }) =>
   <button style={{ ...buttonStyles, ...style }} onClick={onClick}>
     {children}
-  </button>
-);
+  </button>;
+
+Button.defaultProps = {
+  onClick: () => {},
+  style: {},
+};
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  style: PropTypes.object,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default Button;

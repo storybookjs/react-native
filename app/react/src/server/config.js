@@ -1,3 +1,4 @@
+/* eslint-disable global-require, import/no-dynamic-require */
 import fs from 'fs';
 import path from 'path';
 import loadBabelConfig from './babel_config';
@@ -44,38 +45,36 @@ export default function(configType, baseConfig, configDir) {
     const customConfig = require(configPath);
 
     return customConfig(config);
-  } else {
-    const customConfig = require(customConfigPath);
-
-    if (typeof customConfig === 'function') {
-      logger.info('=> Loading custom webpack config (full-control mode).');
-      return customConfig(config, configType);
-    } else {
-      logger.info('=> Loading custom webpack config (extending mode).');
-      return {
-        ...customConfig,
-        // We'll always load our configurations after the custom config.
-        // So, we'll always load the stuff we need.
-        ...config,
-        // Override with custom devtool if provided
-        devtool: customConfig.devtool || config.devtool,
-        // We need to use our and custom plugins.
-        plugins: [...config.plugins, ...(customConfig.plugins || [])],
-        module: {
-          ...config.module,
-          // We need to use our and custom rules.
-          ...customConfig.module,
-          rules: [...config.module.rules, ...(customConfig.module.rules || [])],
-        },
-        resolve: {
-          ...config.resolve,
-          ...customConfig.resolve,
-          alias: {
-            ...config.alias,
-            ...(customConfig.resolve && customConfig.resolve.alias),
-          },
-        },
-      };
-    }
   }
+  const customConfig = require(customConfigPath);
+
+  if (typeof customConfig === 'function') {
+    logger.info('=> Loading custom webpack config (full-control mode).');
+    return customConfig(config, configType);
+  }
+  logger.info('=> Loading custom webpack config (extending mode).');
+  return {
+    ...customConfig,
+    // We'll always load our configurations after the custom config.
+    // So, we'll always load the stuff we need.
+    ...config,
+    // Override with custom devtool if provided
+    devtool: customConfig.devtool || config.devtool,
+    // We need to use our and custom plugins.
+    plugins: [...config.plugins, ...(customConfig.plugins || [])],
+    module: {
+      ...config.module,
+      // We need to use our and custom rules.
+      ...customConfig.module,
+      rules: [...config.module.rules, ...(customConfig.module.rules || [])],
+    },
+    resolve: {
+      ...config.resolve,
+      ...customConfig.resolve,
+      alias: {
+        ...config.alias,
+        ...(customConfig.resolve && customConfig.resolve.alias),
+      },
+    },
+  };
 }

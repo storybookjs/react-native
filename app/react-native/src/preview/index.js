@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-websocket';
@@ -66,10 +68,11 @@ export default class Preview {
         channel = createChannel({ url });
         addons.setChannel(channel);
       }
-      channel.on('getStories', d => this._sendSetStories());
+      channel.on('getStories', () => this._sendSetStories());
       channel.on('setCurrentStory', d => this._selectStory(d));
       this._sendSetStories();
       this._sendGetCurrentStory();
+
       // finally return the preview component
       return <StoryView url={webUrl} events={this._events} />;
     };

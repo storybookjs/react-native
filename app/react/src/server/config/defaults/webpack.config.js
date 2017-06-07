@@ -1,6 +1,6 @@
-import webpack from 'webpack';
+// import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
-import { includePaths, excludePaths } from '../utils';
+import { includePaths } from '../utils';
 
 // Add a default custom config which is similar to what React Create App does.
 module.exports = storybookBaseConfig => {
@@ -23,7 +23,7 @@ module.exports = storybookBaseConfig => {
           options: {
             ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
             plugins: () => [
-              require('postcss-flexbugs-fixes'),
+              require('postcss-flexbugs-fixes'), // eslint-disable-line
               autoprefixer({
                 browsers: [
                   '>1%',

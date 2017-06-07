@@ -63,8 +63,9 @@ export default class MyProvider extends Provider {
 Then you need to initialize the UI like this:
 
 ```js
-import Provider from './provider';
+import { document } from 'global';
 import renderStorybookUI from '@storybook/ui';
+import Provider from './provider';
 
 const roolEl = document.getElementById('root');
 renderStorybookUI(roolEl, new Provider());
@@ -81,6 +82,8 @@ Then you'll get a UI like this:
 ### .setOptions()
 
 ```js
+import { Provider } from '@storybook/ui';
+
 class ReactProvider extends Provider {
   handleAPI(api) {
     api.setOptions({
@@ -97,6 +100,8 @@ class ReactProvider extends Provider {
 This API is used to pass the`kind` and `stories` list to storybook-ui.
 
 ```js
+import { Provider } from '@storybook/ui';
+
 class ReactProvider extends Provider {
   handleAPI(api) {
     api.setStories([
@@ -119,6 +124,8 @@ class ReactProvider extends Provider {
 You can use to listen to the story change and update the preview.
 
 ```js
+import { Provider } from '@storybook/ui';
+
 class ReactProvider extends Provider {
   handleAPI(api) {
     api.onStory((kind, story) => {
