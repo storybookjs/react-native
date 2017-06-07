@@ -1,15 +1,24 @@
 import path from 'path';
 import fs from 'fs';
+import chalk from 'chalk';
+
+const logger = console;
 
 export function parseList(str) {
   return str.split(',');
 }
 
 export function getHeadHtml(configDirPath) {
-  const headHtmlPath = path.resolve(configDirPath, 'head.html');
+  const headHtmlPath = path.resolve(configDirPath, 'preview-head.html');
+  const fallbackHtmlPath = path.resolve(configDirPath, 'head.html')
   let headHtml = '';
   if (fs.existsSync(headHtmlPath)) {
     headHtml = fs.readFileSync(headHtmlPath, 'utf8');
+  } else if(fs.existsSync(fallbackHtmlPath)) {
+    headHtml = fs.readFileSync(fallbackHtmlPath, 'utf8');
+    const msg = "WARNING: head.html has been deprecated.\nPlease rename head.html to preview-head.html"
+    logger.warn(chalk.bold(msg + chalk.reset('\n')));
+
   }
 
   return headHtml;
