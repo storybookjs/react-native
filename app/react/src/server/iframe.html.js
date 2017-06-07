@@ -8,7 +8,7 @@ import url from 'url';
 //   'preview.0d2d3d845f78399fd6d5e859daa152a9.css',
 //   'static/preview.9adbb5ef965106be1cc3.bundle.js.map',
 //   'preview.0d2d3d845f78399fd6d5e859daa152a9.css.map' ]
-const previewUrlsFromAssets = assets => {
+const urlsFromAssets = assets => {
   if (!assets) {
     return {
       js: ['static/preview.bundle.js'],
