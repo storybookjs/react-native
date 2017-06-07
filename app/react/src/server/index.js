@@ -8,7 +8,7 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
-import storybook from './middleware';
+import storybook, { webpackValid } from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 
@@ -135,11 +135,23 @@ process.env.STORYBOOK_GIT_BRANCH =
 // `getBaseConfig` function which is called inside the middleware
 app.use(storybook(configDir));
 
+let serverResolve = () => {};
+let serverReject = () => {};
+const serverListening = new Promise((resolve, reject) => {
+  serverResolve = resolve;
+  serverReject = reject;
+});
 server.listen(...listenAddr, error => {
   if (error) {
-    throw error;
+    serverReject(error);
   } else {
-    const address = `http://${program.host || 'localhost'}:${program.port}/`;
-    logger.info(`Storybook started on => ${chalk.cyan(address)}\n`);
+    serverResolve();
   }
 });
+
+Promise.all([webpackValid, serverListening])
+  .then(() => {
+    const address = `http://${program.host || 'localhost'}:${program.port}/`;
+    logger.info(`Storybook started on => ${chalk.cyan(address)}\n`);
+  })
+  .catch(error => logger.error(error));

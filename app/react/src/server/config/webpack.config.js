@@ -26,6 +26,7 @@ export default function() {
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+      new webpack.ProgressPlugin(),
     ],
     module: {
       rules: [
