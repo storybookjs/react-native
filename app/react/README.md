@@ -35,6 +35,10 @@ Here are some featured storybooks that you can reference to see how Storybook wo
 -   [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
 -   [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
 
+## Typescript
+
+If you are using Typescript, make sure you have the type definitions installed via `yarn add @types/node @types/react @types/storybook__react --dev`.
+
 ## Docs
 
 -   [Basics](https://storybook.js.org/docs/react-storybook/basics/introduction)
