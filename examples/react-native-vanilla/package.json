@@ -16,9 +16,15 @@
     "babel-preset-react-native": "1.9.2",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.6",
-    "@storybook/addon-storyshots": "file:../../addons/storyshots",
+    "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/addon-links": "file:../../addons/links",
     "@storybook/addon-options": "file:../../addons/options",
+    "@storybook/addon-storyshots": "file:../../addons/storyshots",
+    "@storybook/addons": "file:../../lib/addons",
+    "@storybook/channels": "file:../../lib/channels",
+    "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
     "@storybook/react-native": "file:../../app/react-native",
+    "@storybook/ui": "file:../../lib/ui",
     "react-dom": "^15.5.4"
   },
   "jest": {
