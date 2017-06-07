@@ -1,39 +1,42 @@
-import React from 'react';
+# Storybook Addon Events
 
-import EventEmiter from 'eventemitter3';
+This [storybook](https://storybooks.js.org) ([source](https://github.com/storybooks/storybook)) addon allows you to add events for your stories.
 
+![Storybook Addon Events Example](docs/demo1.png)
+[Storybook Addon Events Live Demo](https://z4o4z.github.io/storybook-addon-events/index.html)
+
+### Getting Started
+
+```sh
+npm i --save-dev @storybook/addon-events
+```
+
+Then create a file called `addons.js` in your storybook config.
+
+Add following content to it:
+
+```js
+import '@storybook/addon-actions';
+import '@storybook/addon-links';
+import '@storybook/addon-events/register';
+```
+
+Then write your stories like this:
+
+```js
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
+import EventEmiter from 'event-emiter';
 
-import Button from './Button';
-import Welcome from './Welcome';
-import App from '../App';
 import Logger from './Logger';
-
-const EVENTS = {
-  TEST_EVENT_1: 'test-event-1',
-  TEST_EVENT_2: 'test-event-2',
-  TEST_EVENT_3: 'test-event-3',
-  TEST_EVENT_4: 'test-event-4',
-};
+import * as EVENTS from './events';
 
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
-
-storiesOf('App', module)
-  .add('with text', () => <App />)
-  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 
 storiesOf('WithEvents', module)
-  .addDecorator(getStory =>
+  .addDecorator(getStory => (
     <WithEvents
       emit={emit}
       events={[
@@ -45,7 +48,7 @@ storiesOf('WithEvents', module)
         {
           name: EVENTS.TEST_EVENT_2,
           title: 'Test event 2',
-          payload: 'Test event 2',
+          payload: 'asdasdad asdasdasd',
         },
         {
           name: EVENTS.TEST_EVENT_3,
@@ -86,5 +89,6 @@ storiesOf('WithEvents', module)
     >
       {getStory()}
     </WithEvents>
-  )
+  ))
   .add('Logger', () => <Logger emiter={emiter} />);
+```
