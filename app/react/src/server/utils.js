@@ -1,8 +1,11 @@
 import path from 'path';
 import fs from 'fs';
-import chalk from 'chalk';
+import deprecate from 'util-deprecate';
 
-const logger = console;
+const fallbackHeadUsage = deprecate(
+  () => {},
+  'Usage of head.html has been deprecated. Please rename head.html to preview-head.html'
+);
 
 export function parseList(str) {
   return str.split(',');
@@ -10,15 +13,13 @@ export function parseList(str) {
 
 export function getHeadHtml(configDirPath) {
   const headHtmlPath = path.resolve(configDirPath, 'preview-head.html');
-  const fallbackHtmlPath = path.resolve(configDirPath, 'head.html')
+  const fallbackHtmlPath = path.resolve(configDirPath, 'head.html');
   let headHtml = '';
   if (fs.existsSync(headHtmlPath)) {
     headHtml = fs.readFileSync(headHtmlPath, 'utf8');
-  } else if(fs.existsSync(fallbackHtmlPath)) {
+  } else if (fs.existsSync(fallbackHtmlPath)) {
     headHtml = fs.readFileSync(fallbackHtmlPath, 'utf8');
-    const msg = "WARNING: head.html has been deprecated.\nPlease rename head.html to preview-head.html"
-    logger.warn(chalk.bold(msg + chalk.reset('\n')));
-
+    fallbackHeadUsage();
   }
 
   return headHtml;
@@ -33,7 +34,6 @@ export function getManagerHeadHtml(configDirPath) {
 
   return scriptHtml;
 }
-
 
 export function getEnvConfig(program, configEnv) {
   Object.keys(configEnv).forEach(fieldName => {
