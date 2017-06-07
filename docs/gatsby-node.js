@@ -4,16 +4,11 @@ const fs = require('fs');
 const sm = require('sitemap');
 
 function pagesToSitemap(pages) {
-  const urls = pages.map(p => {
-    if (p.path !== undefined) {
-      return {
-        url: p.path,
-        changefreq: 'daily',
-        priority: 0.7,
-      };
-    }
-  });
-  return urls.filter(u => u !== undefined);
+  return pages.filter(p => !!p.path).map(p => ({
+    url: p.path,
+    changefreq: 'daily',
+    priority: 0.7,
+  }));
 }
 
 function generateSitemap(pages) {

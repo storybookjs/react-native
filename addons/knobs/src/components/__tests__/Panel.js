@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'; // eslint-disable-line
 import Panel from '../Panel';
 
 describe('Panel', () => {

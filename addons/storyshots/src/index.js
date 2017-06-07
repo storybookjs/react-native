@@ -1,11 +1,11 @@
 import path from 'path';
-import global from 'global';
+import global, { describe, it } from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
+
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
-const { describe, it, expect } = global;
 
 export { snapshotWithOptions, snapshot, renderOnly } from './test-bodies';
 
@@ -17,12 +17,9 @@ const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
 
-const hasDependency = function(name) {
-  return (
-    (pkg.devDependencies && pkg.devDependencies[name]) ||
-    (pkg.dependencies && pkg.dependencies[name])
-  );
-};
+const hasDependency = name =>
+  (pkg.devDependencies && pkg.devDependencies[name]) ||
+  (pkg.dependencies && pkg.dependencies[name]);
 
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
@@ -33,16 +30,17 @@ export default function testStorySnapshots(options = {}) {
 
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
+    // eslint-disable-next-line
     const loadBabelConfig = require('@storybook/react/dist/server/babel_config').default;
     const configDirPath = path.resolve(options.configPath || '.storybook');
     configPath = path.join(configDirPath, 'config.js');
 
+    const babelConfig = loadBabelConfig(configDirPath);
     const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
       dirname: configDirPath,
     };
-    const babelConfig = loadBabelConfig(configDirPath);
 
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
@@ -61,19 +59,24 @@ export default function testStorySnapshots(options = {}) {
   const stories = storybook.getStorybook();
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
+  // eslint-disable-next-line
   options.storyNameRegex = options.storyNameRegex || options.storyRegex;
-
+  // eslint-disable-next-line
   options.test = options.test || snapshot;
 
+  // eslint-disable-next-line
   for (const group of stories) {
     if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
+      // eslint-disable-next-line
       continue;
     }
 
     describe(suit, () => {
       describe(group.kind, () => {
+        // eslint-disable-next-line
         for (const story of group.stories) {
           if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
+            // eslint-disable-next-line
             continue;
           }
 

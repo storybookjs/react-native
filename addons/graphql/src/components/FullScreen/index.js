@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import style from './style';
 
-export default class FullScreen extends Component {
-  render() {
-    return (
-      <div style={style.wrapper}>
-        {this.props.children}
-      </div>
-    );
-  }
+export default function FullScreen(props) {
+  return (
+    <div style={style.wrapper}>
+      {props.children}
+    </div>
+  );
 }
+
+FullScreen.defaultProps = { children: null };
+FullScreen.propTypes = { children: PropTypes.node };

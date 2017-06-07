@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import TypeMap from './types';
@@ -60,6 +62,9 @@ export default class PropField extends React.Component {
 }
 
 PropField.propTypes = {
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func.isRequired,
-  knob: PropTypes.object,
 };

@@ -1,10 +1,18 @@
-import PropTypes from 'prop-types';
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
+import PropTypes from 'prop-types';
+import global from 'global';
+
 import marksy from 'marksy';
+
 import PropTable from './PropTable';
 import Node from './Node';
 import { baseFonts } from './theme';
 import { Pre } from './markdown';
+
+global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
+const STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES;
 
 const stylesheet = {
   link: {
@@ -90,7 +98,7 @@ export default class Story extends React.Component {
       open: false,
       stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
     };
-    this.marksy = marksy(this.props.mtrcConf);
+    this.marksy = marksy(this.props.marksyConf);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -156,9 +164,9 @@ export default class Story extends React.Component {
         <div style={this.state.stylesheet.children}>
           {this.props.children}
         </div>
-        <a style={linkStyle} onClick={openOverlay}>Show Info</a>
+        <a style={linkStyle} onClick={openOverlay} role="button" tabIndex="0">Show Info</a>
         <div style={infoStyle}>
-          <a style={linkStyle} onClick={closeOverlay}>×</a>
+          <a style={linkStyle} onClick={closeOverlay} role="button" tabIndex="0">×</a>
           <div style={this.state.stylesheet.infoPage}>
             <div style={this.state.stylesheet.infoBody}>
               {this._getInfoHeader()}
@@ -220,7 +228,7 @@ export default class Story extends React.Component {
     let retDiv = null;
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
-      Object.keys(STORYBOOK_REACT_CLASSES).forEach((key, index) => {
+      Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
         if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.kind) {
           retDiv = (
             <div>
@@ -299,7 +307,7 @@ export default class Story extends React.Component {
         typeof children === 'string' ||
         typeof children.type === 'string' ||
         (Array.isArray(this.props.propTablesExclude) && // also ignore excluded types
-          ~this.props.propTablesExclude.indexOf(children.type))
+          ~this.props.propTablesExclude.indexOf(children.type)) // eslint-disable-line no-bitwise
       ) {
         return;
       }
@@ -315,9 +323,8 @@ export default class Story extends React.Component {
     array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
-
-    const propTables = array.map((type, idx) => (
-      <div key={idx}>
+    const propTables = array.map(type =>
+      <div key={type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
         </h2>
@@ -328,7 +335,7 @@ export default class Story extends React.Component {
           maxPropStringLength={maxPropStringLength}
         />
       </div>
-    ));
+    );
 
     if (!propTables || propTables.length === 0) {
       return null;
@@ -354,7 +361,10 @@ export default class Story extends React.Component {
 Story.displayName = 'Story';
 
 Story.propTypes = {
-  context: PropTypes.object,
+  context: PropTypes.shape({
+    kind: PropTypes.string,
+    story: PropTypes.string,
+  }),
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),
   propTablesExclude: PropTypes.arrayOf(PropTypes.func),
@@ -363,14 +373,18 @@ Story.propTypes = {
   showSource: PropTypes.bool,
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  marksyConf: PropTypes.object,
+  marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   maxPropObjectKeys: PropTypes.number,
   maxPropArrayLength: PropTypes.number,
   maxPropsIntoLine: PropTypes.number,
   maxPropStringLength: PropTypes.number,
 };
-
 Story.defaultProps = {
+  context: null,
+  info: '',
+  children: null,
+  propTables: null,
+  propTablesExclude: [],
   showInline: false,
   showHeader: true,
   showSource: true,

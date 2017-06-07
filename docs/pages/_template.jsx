@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'react-responsive-grid';
-import { colors, activeColors } from 'utils/colors';
 
-import { rhythm, adjustFontSizeTo } from 'utils/typography';
-import { config } from 'config';
-
-// Import styles.
-import 'css/main.css';
-import 'css/github.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const PageTemplate = ({ children, location }) => (
+// import { Container } from 'react-responsive-grid';
+// import { colors, activeColors } from 'utils/colors';
+//
+// import { rhythm, adjustFontSizeTo } from 'utils/typography';
+// import { config } from 'config';
+
+// Import styles.
+import '../css/main.css';
+import '../css/github.css';
+
+const PageTemplate = ({ children }) =>
   <div>
     <a
       href="https://github.com/storybooks/storybook"
@@ -47,12 +49,11 @@ const PageTemplate = ({ children, location }) => (
       </svg>
     </a>
     {children}
-  </div>
-);
+  </div>;
 
 PageTemplate.propTypes = {
-  children: PropTypes.object,
-  location: PropTypes.object,
+  children: PropTypes.object, // eslint-disable-line
+  location: PropTypes.object, // eslint-disable-line
 };
 
 export default PageTemplate;

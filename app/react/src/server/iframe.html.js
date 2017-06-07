@@ -34,7 +34,10 @@ export default function(data) {
 
   let previewCssTag = '';
   if (previewUrls.css) {
-    previewCssTag = `<link rel='stylesheet' type='text/css' href='${url.resolve(publicPath, previewUrls.css)}'>`;
+    previewCssTag = `<link rel='stylesheet' type='text/css' href='${url.resolve(
+      publicPath,
+      previewUrls.css
+    )}'>`;
   }
 
   return `

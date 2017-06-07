@@ -23,6 +23,7 @@ class Preview extends Component {
     return (
       <iframe
         id="storybook-preview-iframe"
+        title="preview"
         style={iframeStyle}
         src={this.props.url}
         allowFullScreen

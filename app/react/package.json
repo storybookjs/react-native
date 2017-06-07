@@ -2,6 +2,10 @@
   "name": "@storybook/react",
   "version": "3.0.1",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "license": "MIT",
   "main": "dist/client/index.js",
   "typings": "./config/storybook.d.ts",
@@ -14,10 +18,6 @@
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
-  },
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
   "scripts": {
     "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
     "prepublish": "node ../../scripts/prepublish.js"
@@ -48,6 +48,7 @@
     "express": "^4.15.3",
     "file-loader": "^0.11.1",
     "find-cache-dir": "^1.0.0",
+    "global": "^4.3.2",
     "json-loader": "^0.5.4",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
