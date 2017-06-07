@@ -6,8 +6,15 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
-  roots: ['<rootDir>/addons', '<rootDir>/app', '<rootDir>/lib', '<rootDir>/examples'],
-  testPathIgnorePatterns: ['/node_modules/', 'examples/react-native-vanilla'],
+  roots: [
+    '<rootDir>/addons',
+    '<rootDir>/app',
+    '<rootDir>/lib',
+    '<rootDir>/examples/cra-storybook',
+    '<rootDir>/examples/test-cra',
+  ],
+  testPathIgnorePatterns: ['/node_modules/'],
+  projects: ['./', './examples/react-native-vanilla'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
