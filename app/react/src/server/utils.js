@@ -15,8 +15,8 @@ export function getHeadHtml(configDirPath) {
   return headHtml;
 }
 
-export function getBodyScript(configDirPath) {
-  const scriptPath = path.resolve(configDirPath, 'bodyscript.html');
+export function getManagerHeadHtml(configDirPath) {
+  const scriptPath = path.resolve(configDirPath, 'manager-head.html');
   let scriptHtml = '';
   if (fs.existsSync(scriptPath)) {
     scriptHtml = fs.readFileSync(scriptPath, 'utf8');

@@ -6,7 +6,7 @@ import getBaseConfig from './config/webpack.config';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml, getBodyScript, getMiddleware } from './utils';
+import { getHeadHtml, getManagerHeadHtml, getMiddleware } from './utils';
 
 let webpackResolve = () => {};
 let webpackReject = () => {};
@@ -50,8 +50,8 @@ export default function(configDir) {
     };
 
     router.get('/', (req, res) => {
-      const bodyScript = getBodyScript(configDir)
-      res.send(getIndexHtml({ publicPath, bodyScript }));
+      const headHtml = getManagerHeadHtml(configDir)
+      res.send(getIndexHtml({ publicPath, headHtml }));
     });
 
     router.get('/iframe.html', (req, res) => {
