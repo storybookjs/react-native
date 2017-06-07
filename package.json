@@ -23,8 +23,9 @@
     "lint:js": "eslint . --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark .",
     "publish": "lerna publish",
-    "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test": "jest && npm run test:react-native-vanilla",
+    "test:watch": "npm test -- --watch",
+    "test:react-native-vanilla": "cd examples/react-native-vanilla && jest"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
