@@ -3,13 +3,15 @@
   "commands": {
     "bootstrap": {
       "ignore": [
-        "test-cra"
+        "test-cra",
+        "react-native-vanilla"
       ]
     },
     "publish": {
       "ignore": [
         "cra-storybook",
-        "test-cra"
+        "test-cra",
+        "react-native-vanilla"
       ]
     }
   },

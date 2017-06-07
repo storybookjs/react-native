@@ -1,0 +1,33 @@
+{
+  "name": "react-native-vanilla",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "storybook": "storybook start -p 7007"
+  },
+  "dependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.1"
+  },
+  "devDependencies": {
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "1.9.2",
+    "jest": "20.0.4",
+    "react-test-renderer": "16.0.0-alpha.6",
+    "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/addon-links": "file:../../addons/links",
+    "@storybook/addon-options": "file:../../addons/options",
+    "@storybook/addon-storyshots": "file:../../addons/storyshots",
+    "@storybook/addons": "file:../../lib/addons",
+    "@storybook/channels": "file:../../lib/channels",
+    "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
+    "@storybook/react-native": "file:../../app/react-native",
+    "@storybook/ui": "file:../../lib/ui",
+    "react-dom": "^15.5.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
