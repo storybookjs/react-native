@@ -1,3 +1,6 @@
+// This is the default file as put down by RN
+/* eslint-disable */
+
 import 'react-native';
 import React from 'react';
 import Index from '../index.android.js';
@@ -6,7 +9,5 @@ import Index from '../index.android.js';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  const tree = renderer.create(
-    <Index />
-  );
+  const tree = renderer.create(<Index />);
 });

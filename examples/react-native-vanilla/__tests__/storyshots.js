@@ -1,5 +1,5 @@
 import path from 'path';
-import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots({
   framework: 'react-native',

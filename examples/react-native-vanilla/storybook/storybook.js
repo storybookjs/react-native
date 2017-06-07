@@ -4,6 +4,7 @@ import { setOptions } from '@storybook/addon-options';
 
 // import stories
 configure(() => {
+  // eslint-disable-next-line global-require
   require('./stories');
 }, module);
 
