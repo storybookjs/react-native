@@ -6,6 +6,9 @@ node_modules
 **/demo/**
 docs/public
 
+*.bundle.js
+*.js.map
+
 !.remarkrc.js
 !.eslintrc.js
 !.eslintrc-markdown.js
