@@ -12,6 +12,7 @@ after_success: "./scripts/travis/after_success.sh"
 script:
 - npm run bootstrap
 - npm run bootstrap:test-cra
+- npm run bootstrap:react-native-vanilla
 - npm run bootstrap:docs
 - npm run lint
 - npm run test -- --coverage
