@@ -8,6 +8,7 @@
     "bootstrap": "lerna bootstrap",
     "bootstrap:docs": "cd docs && npm i",
     "bootstrap:test-cra": "lerna exec --scope test-cra -- npm i",
+    "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- npm i",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
@@ -22,8 +23,11 @@
     "lint:js": "eslint . --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark .",
     "publish": "lerna publish",
-    "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test": "npm run test:libs && npm run test:apps",
+    "test:apps": "npm run test:react-native-vanilla",
+    "test:libs": "jest",
+    "test:watch": "npm run test:libs -- --watch",
+    "test:react-native-vanilla": "cd examples/react-native-vanilla && jest"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
