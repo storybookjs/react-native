@@ -8,7 +8,6 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "typings": "./config/storybook.d.ts",
   "bin": {
     "build-storybook": "./dist/server/build.js",
     "start-storybook": "./dist/server/index.js",
