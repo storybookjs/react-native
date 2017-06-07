@@ -1,7 +1,7 @@
-/* globals location */
+/* eslint no-underscore-dangle: 0 */
 
+import { location } from 'global';
 import { setInitialStory, setError, clearError } from './actions';
-
 import { clearDecorators } from './';
 
 export default class ConfigApi {

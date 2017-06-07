@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import './style.css';
 
-const UsedByBg = ({ color }) => (
+const UsedByBg = ({ color }) =>
   <div className="used-by-bg">
     <svg
       width="100%"
@@ -25,34 +25,51 @@ const UsedByBg = ({ color }) => (
         <path id="path0_fill" d="M 43.5 300.5L 0 35L 1440 0L 1371.5 379.5L 43.5 300.5Z" />
       </defs>
     </svg>
-  </div>
-);
+  </div>;
+UsedByBg.propTypes = {
+  color: PropTypes.string,
+};
+UsedByBg.defaultProps = {
+  color: 'white',
+};
 
-const User = ({ logo, demo, site, title }) => (
-  <a className="used-by-user" href={demo || site} target="_blank" rel="nofollow">
+const User = ({ logo, demo, site, title }) =>
+  <a
+    className="used-by-user"
+    href={demo || site}
+    target="_blank"
+    rel="noopener nofollow noreferrer"
+  >
     <img className="used-by-user-image" src={logo} alt={title} />
-  </a>
-);
+  </a>;
+User.propTypes = {
+  logo: PropTypes.string.isRequired,
+  demo: PropTypes.string,
+  site: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+User.defaultProps = {
+  demo: '',
+  title: '',
+};
 
-const UsedBy = ({ users }) => (
+const UsedBy = ({ users }) =>
   <div className="used-by-wrapper">
     <div className="used-by">
       <UsedByBg color="#E7F6D8" />
       <div className="used-by-contents">
         <h2 className="used-by-title">Used by these fine folks:</h2>
         <div className="used-by-users">
-          {users.map((user, idx) => <User key={idx} {...user} />)}
+          {users.map(user => <User key={user.site} {...user} />)}
         </div>
       </div>
     </div>
     <Link to="/examples/" className="used-by-more-examples">
       See more examples…
     </Link>
-  </div>
-);
-
+  </div>;
 UsedBy.propTypes = {
-  users: PropTypes.array,
+  users: PropTypes.array, // eslint-disable-line
 };
 
 export default UsedBy;

@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 
 const linkProps = {
-  rel: 'nofollow',
+  rel: 'nofollow nofollower noreferrer',
   target: '_blank',
   className: 'link',
 };
 
-export default ({ title, description, source, demo, site, thumbnail }) => (
+const GridItem = ({ title, description, source, demo, thumbnail }) =>
   <div className="grid-item">
     <div className="photobox" style={{ backgroundImage: `url(${thumbnail})` }}>
       <div className="overlay" />
@@ -20,5 +21,17 @@ export default ({ title, description, source, demo, site, thumbnail }) => (
         {source ? <a href={source} {...linkProps}>Source</a> : null}
       </div>
     </div>
-  </div>
-);
+  </div>;
+GridItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  source: PropTypes.string,
+  demo: PropTypes.string,
+};
+GridItem.defaultProps = {
+  source: '',
+  demo: '',
+};
+
+export { GridItem as default };

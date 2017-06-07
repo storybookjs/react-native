@@ -52,12 +52,12 @@ Example:
 
 ```js
 import { storiesOf } from '@kadira/storybook';
-import { storiesOf } from '@kadira/storybook-addon-links';
+import { linkTo } from '@kadira/storybook-addon-links';
 ```
 
 Becomes
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { storiesOf } from '@storybook/addon-links';
+import { linkTo } from '@storybook/addon-links';
 ```

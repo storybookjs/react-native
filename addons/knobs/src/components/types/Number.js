@@ -28,11 +28,13 @@ class NumberType extends React.Component {
     return (
       <input
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         value={knob.value}
         type="number"
-        onChange={() => onChange(parseFloat(this.refs.input.value))}
+        onChange={() => onChange(parseFloat(this.input.value))}
       />
     );
   }
@@ -43,14 +45,16 @@ class NumberType extends React.Component {
     return (
       <input
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         value={knob.value}
         type="range"
         min={knob.min}
         max={knob.max}
         step={knob.step}
-        onChange={() => onChange(parseFloat(this.refs.input.value))}
+        onChange={() => onChange(parseFloat(this.input.value))}
       />
     );
   }
@@ -62,17 +66,20 @@ class NumberType extends React.Component {
   }
 }
 
+NumberType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 NumberType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
-NumberType.serialize = function(value) {
-  return String(value);
-};
-
-NumberType.deserialize = function(value) {
-  return parseFloat(value);
-};
+NumberType.serialize = value => String(value);
+NumberType.deserialize = value => parseFloat(value);
 
 export default NumberType;

@@ -5,7 +5,7 @@ import style from './style';
 
 class ActionLogger extends Component {
   componentDidUpdate() {
-    const latest = this.refs.latest;
+    const latest = this.ref.latest;
     if (latest) {
       const borderLeft = style.action.borderLeft;
       latest.style.borderLeft = 'solid 5px #aaa';
@@ -15,8 +15,12 @@ class ActionLogger extends Component {
     }
   }
 
+  getActionData() {
+    return this.props.actions.map((action, i) => this.renderAction(action, i));
+  }
+
   renderAction(action, i) {
-    const ref = i ? '' : 'latest';
+    const ref = () => (this.ref = i ? '' : 'latest');
     const counter = <div style={style.counter}>{action.count}</div>;
     return (
       <div ref={ref} key={action.id} style={style.action}>
@@ -34,10 +38,6 @@ class ActionLogger extends Component {
     );
   }
 
-  getActionData() {
-    return this.props.actions.map((action, i) => this.renderAction(action, i));
-  }
-
   render() {
     return (
       <div style={style.wrapper}>
@@ -50,7 +50,11 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: PropTypes.func,
-  actions: PropTypes.array,
+  actions: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+};
+ActionLogger.defaultProps = {
+  onClear: () => {},
+  actions: [],
 };
 
 export default ActionLogger;

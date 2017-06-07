@@ -22,14 +22,14 @@ export default class Server {
         : {};
 
       if (params.pairedId) {
-        socket.pairedId = params.pairedId;
+        socket.pairedId = params.pairedId; // eslint-disable-line
       }
     }
 
     socket.on('message', data => {
       this.wsServer.clients.forEach(c => {
         if (!this.options.manualId || (socket.pairedId && socket.pairedId === c.pairedId)) {
-          return c.send(data);
+          c.send(data);
         }
       });
     });

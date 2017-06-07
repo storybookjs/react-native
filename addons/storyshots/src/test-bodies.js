@@ -10,5 +10,5 @@ export const snapshot = snapshotWithOptions({});
 
 export function renderOnly({ story, context }) {
   const storyElement = story.render(context);
-  const tree = renderer.create(storyElement);
+  renderer.create(storyElement);
 }
