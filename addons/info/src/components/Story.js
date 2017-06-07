@@ -323,7 +323,7 @@ export default class Story extends React.Component {
     array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
-    const propTables = array.map(type =>
+    const propTables = array.map(type => (
       <div key={type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
@@ -335,7 +335,7 @@ export default class Story extends React.Component {
           maxPropStringLength={maxPropStringLength}
         />
       </div>
-    );
+    ));
 
     if (!propTables || propTables.length === 0) {
       return null;
@@ -374,10 +374,10 @@ Story.propTypes = {
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  maxPropObjectKeys: PropTypes.number,
-  maxPropArrayLength: PropTypes.number,
-  maxPropsIntoLine: PropTypes.number,
-  maxPropStringLength: PropTypes.number,
+  maxPropsIntoLine: PropTypes.number.isRequired,
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
 };
 Story.defaultProps = {
   context: null,

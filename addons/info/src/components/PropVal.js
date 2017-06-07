@@ -76,9 +76,12 @@ function previewObject(val, maxPropObjectKeys) {
   );
 }
 
-function previewProp({ val, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength }) {
+export default function PropVal(props) {
+  const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = props;
+  let val = props.val;
   let braceWrap = true;
   let content = null;
+
   if (typeof val === 'number') {
     content = <span style={valueStyles.number}>{val}</span>;
   } else if (typeof val === 'string') {
@@ -108,13 +111,13 @@ function previewProp({ val, maxPropObjectKeys, maxPropArrayLength, maxPropString
   }
 
   if (!braceWrap) return content;
+
   return <span>{content}</span>;
 }
 
-export default class PropVal extends React.Component {
-  render() {
-    return previewProp(this.props);
-  }
-}
-
-module.exports = PropVal;
+PropVal.propTypes = {
+  val: PropTypes.any.isRequired, // eslint-disable-line
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
+};

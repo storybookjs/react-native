@@ -9,9 +9,9 @@ const defaultOptions = {
   header: true,
   source: true,
   propTables: [],
+  maxPropsIntoLine: 3,
   maxPropObjectKeys: 3,
   maxPropArrayLength: 3,
-  maxPropsIntoLine: 3,
   maxPropStringLength: 50,
 };
 

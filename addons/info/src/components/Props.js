@@ -9,12 +9,7 @@ const stylesheet = {
 };
 
 export default function Props(props) {
-    const {
-      maxPropsIntoLine,
-      maxPropArrayLength,
-      maxPropObjectKeys,
-      maxPropStringLength,
-    } = props;
+  const { maxPropsIntoLine, maxPropArrayLength, maxPropObjectKeys, maxPropStringLength } = props;
   const nodeProps = props.node.props;
   const defaultProps = props.node.type.defaultProps;
   if (!nodeProps || typeof nodeProps !== 'object') {
@@ -23,35 +18,35 @@ export default function Props(props) {
 
   const { propValueStyle, propNameStyle } = stylesheet;
 
-  const names = Object.keys(props).filter(
+  const names = Object.keys(nodeProps).filter(
     name =>
       name[0] !== '_' &&
       name !== 'children' &&
-      (!defaultProps || props[name] !== defaultProps[name])
+      (!defaultProps || nodeProps[name] !== defaultProps[name])
   );
 
-    const breakIntoNewLines = names.length > maxPropsIntoLine;
-    const endingSpace = props.singleLine ? ' ' : '';
+  const breakIntoNewLines = names.length > maxPropsIntoLine;
+  const endingSpace = props.singleLine ? ' ' : '';
 
-    const items = [];
-    names.forEach((name, i) => {
-      items.push(
-        <span key={name}>
+  const items = [];
+  names.forEach((name, i) => {
+    items.push(
+      <span key={name}>
         {breakIntoNewLines ? <span><br />&nbsp;&nbsp;</span> : ' '}
         <span style={propNameStyle}>{name}</span>
         {/* Use implicit true: */}
         {(!nodeProps[name] || typeof nodeProps[name] !== 'boolean') &&
-            <span>
-              =
-              <span style={propValueStyle}>
-                <PropVal
-                  val={props[name]}
-                  maxPropObjectKeys={maxPropObjectKeys}
-                  maxPropArrayLength={maxPropArrayLength}
-                  maxPropStringLength={maxPropStringLength}
-                />
-              </span>
-            </span>}
+          <span>
+            =
+            <span style={propValueStyle}>
+              <PropVal
+                val={nodeProps[name]}
+                maxPropObjectKeys={maxPropObjectKeys}
+                maxPropArrayLength={maxPropArrayLength}
+                maxPropStringLength={maxPropStringLength}
+              />
+            </span>
+          </span>}
 
         {i === names.length - 1 && (breakIntoNewLines ? <br /> : endingSpace)}
       </span>
@@ -71,4 +66,8 @@ Props.propTypes = {
     type: PropTypes.object.isRequired,
   }).isRequired,
   singleLine: PropTypes.bool,
+  maxPropsIntoLine: PropTypes.number.isRequired,
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
 };

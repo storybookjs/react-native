@@ -43,14 +43,14 @@ function getData(element) {
 }
 
 export default function Node(props) {
-   const {
-      node,
-      depth,
-      maxPropsIntoLine,
-      maxPropObjectKeys,
-      maxPropArrayLength,
-      maxPropStringLength,
-    } = props;
+  const {
+    node,
+    depth,
+    maxPropsIntoLine,
+    maxPropObjectKeys,
+    maxPropArrayLength,
+    maxPropStringLength,
+  } = props;
   const { tagStyle, containerStyle } = stylesheet;
 
   const leftPad = {
@@ -94,33 +94,33 @@ export default function Node(props) {
 
   // tag with children
   return (
-      <div>
-        <div style={containerStyleCopy}>
-          <span style={tagStyle}>&lt;{name}</span>
-          <Props
-            node={node}
-            maxPropsIntoLine={maxPropsIntoLine}
-            maxPropObjectKeys={maxPropObjectKeys}
-            maxPropArrayLength={maxPropArrayLength}
-            maxPropStringLength={maxPropStringLength}
-          />
-          <span style={tagStyle}>&gt;</span>
-        </div>
-        {React.Children.map(children, childElement => (
-          <Node
-            node={childElement}
-            depth={depth + 1}
-            maxPropsIntoLine={maxPropsIntoLine}
-            maxPropObjectKeys={maxPropObjectKeys}
-            maxPropArrayLength={maxPropArrayLength}
-            maxPropStringLength={maxPropStringLength}
-          />
-        ))}
-        <div style={containerStyleCopy}>
-          <span style={tagStyle}>&lt;/{name}&gt;</span>
-        </div>
+    <div>
+      <div style={containerStyleCopy}>
+        <span style={tagStyle}>&lt;{name}</span>
+        <Props
+          node={node}
+          maxPropsIntoLine={maxPropsIntoLine}
+          maxPropObjectKeys={maxPropObjectKeys}
+          maxPropArrayLength={maxPropArrayLength}
+          maxPropStringLength={maxPropStringLength}
+        />
+        <span style={tagStyle}>&gt;</span>
       </div>
-    );
+      {React.Children.map(children, childElement => (
+        <Node
+          node={childElement}
+          depth={depth + 1}
+          maxPropsIntoLine={maxPropsIntoLine}
+          maxPropObjectKeys={maxPropObjectKeys}
+          maxPropArrayLength={maxPropArrayLength}
+          maxPropStringLength={maxPropStringLength}
+        />
+      ))}
+      <div style={containerStyleCopy}>
+        <span style={tagStyle}>&lt;/{name}&gt;</span>
+      </div>
+    </div>
+  );
 }
 
 Node.defaultProps = {
@@ -131,4 +131,8 @@ Node.defaultProps = {
 Node.propTypes = {
   node: PropTypes.node,
   depth: PropTypes.number,
+  maxPropsIntoLine: PropTypes.number.isRequired,
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
 };
