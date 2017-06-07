@@ -36,7 +36,7 @@ server.listen(...listenAddr, err => {
     throw err;
   }
   const address = `http://${program.host || 'localhost'}:${program.port}/`;
-  console.info(`\nReact Native Storybook started on => ${address}\n`);
+  console.info(`\nReact Native Storybook started on => ${address}\n`); // eslint-disable-line no-console
 });
 
 if (!program.skipPackager) {

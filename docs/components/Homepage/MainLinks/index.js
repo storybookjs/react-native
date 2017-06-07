@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import './style.css';
 
-const MainLinks = () => (
+const MainLinks = () =>
   <div id="main-links" className="row">
     <div className="col-md-12">
       <div className="row">
@@ -29,7 +29,6 @@ const MainLinks = () => (
         </div>
       </div>
     </div>
-  </div>
-);
+  </div>;
 
 export default MainLinks;

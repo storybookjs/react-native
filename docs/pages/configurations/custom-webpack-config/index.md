@@ -60,8 +60,10 @@ That's where you can use our full control mode.
 To enable that, you need to export a **function** from the above `webpack.config.js` file, just like this:
 
 ```js
+const path = require('path');
+
 // Export a function. Accept the base config as the only param.
-module.exports = function(storybookBaseConfig, configType) {
+module.exports = (storybookBaseConfig, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
@@ -98,8 +100,8 @@ Add following content to the `webpack.config.js` in your Storybook config direct
 // load the default config generator.
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
-module.exports = (config, env) => {
-  const config = genDefaultConfig(config, env);
+module.exports = (baseConfig, env) => {
+  const config = genDefaultConfig(baseConfig, env);
 
   // Extend it as you need.
 

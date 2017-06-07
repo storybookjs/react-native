@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 import addons from '@storybook/addons';
 import stringify from 'json-stringify-safe';
 import { EVENT_ID } from './';
@@ -10,6 +12,7 @@ function _format(arg) {
 }
 
 export function action(name) {
+  // eslint-disable-next-line no-unused-vars, func-names
   const handler = function(..._args) {
     const args = Array.from(_args).map(_format);
     const channel = addons.getChannel();
@@ -27,13 +30,16 @@ export function action(name) {
   //
   // Ref: https://bocoup.com/weblog/whats-in-a-function-name
   const fnName = name ? name.replace(/\W+/g, '_') : 'action';
+  // eslint-disable-next-line no-eval
   const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`);
   return named;
 }
 
 export function decorateAction(decorators) {
+  // eslint-disable-next-line no-unused-vars, func-names
   return function(name) {
     const callAction = action(name);
+    // eslint-disable-next-line no-unused-vars, func-names
     return function(..._args) {
       const decorated = decorators.reduce((args, fn) => fn(args), _args);
       callAction(...decorated);

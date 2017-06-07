@@ -61,6 +61,8 @@ By default, Storyshots assumes the config directory path for your project as bel
 If you are using a different config directory path, you could change it like this:
 
 ```js
+import initStoryshots from '@storybook/addon-storyshots';
+
 initStoryshots({
   configPath: '.my-storybook-config-dir'
 });
@@ -71,6 +73,8 @@ initStoryshots({
 By default, Storyshots groups stories inside a Jest test suit called "Storyshots". You could change it like this:
 
 ```js
+import initStoryshots from '@storybook/addon-storyshots';
+
 initStoryshots({
   suit: 'MyStoryshots'
 });
@@ -81,6 +85,8 @@ initStoryshots({
 If you'd like to only run a subset of the stories for your snapshot tests based on the story's kind:
 
 ```js
+import initStoryshots from '@storybook/addon-storyshots';
+
 initStoryshots({
   storyKindRegex: /^MyComponent$/
 });
@@ -93,6 +99,8 @@ This can be useful if you want to separate the snapshots in directories next to 
 If you'd like to only run a subset of the stories for your snapshot tests based on the story's name:
 
 ```js
+import initStoryshots from '@storybook/addon-storyshots';
+
 initStoryshots({
   storyNameRegex: /buttons/
 });

@@ -1,4 +1,5 @@
-let cnt = 0;
+/* eslint no-underscore-dangle: 0 */
+let count = 0;
 
 export default class StoryStore {
   constructor() {
@@ -6,17 +7,18 @@ export default class StoryStore {
   }
 
   addStory(kind, name, fn) {
+    count += 1;
     if (!this._data[kind]) {
       this._data[kind] = {
         kind,
-        index: cnt++,
+        index: count,
         stories: {},
       };
     }
 
     this._data[kind].stories[name] = {
       name,
-      index: cnt++,
+      index: count,
       fn,
     };
   }

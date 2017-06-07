@@ -1,5 +1,7 @@
-import PropTypes from 'prop-types';
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PropField from './PropField';
 
@@ -33,16 +35,16 @@ export default class propForm extends React.Component {
 
     return (
       <form style={stylesheet.propForm}>
-        {knobs.map(knob => (
+        {knobs.map(knob =>
           <PropField
             key={knob.name}
             name={knob.name}
             type={knob.type}
             value={knob.value}
             knob={knob}
-            onChange={this._onFieldChange.bind(null, knob.name, knob.type)}
+            onChange={() => this._onFieldChange(knob.name, knob.type)}
           />
-        ))}
+        )}
       </form>
     );
   }
@@ -50,7 +52,16 @@ export default class propForm extends React.Component {
 
 propForm.displayName = 'propForm';
 
+propForm.defaultProps = {
+  knobs: [],
+};
+
 propForm.propTypes = {
-  knobs: PropTypes.array.isRequired,
+  knobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string,
+    })
+  ),
   onFieldChange: PropTypes.func.isRequired,
 };
