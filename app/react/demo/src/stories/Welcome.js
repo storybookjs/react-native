@@ -99,7 +99,7 @@ export default class Welcome extends React.Component {
           {' '}
           <a
             style={styles.link}
-            href="https://storybook.js.org/docs/react-storybook/basics/writing-stories"
+            href="https://storybook.js.org/basics/writing-stories"
             target="_blank"
           >
             Writing Stories
