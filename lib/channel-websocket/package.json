@@ -1,16 +1,17 @@
 {
   "name": "@storybook/channel-websocket",
-  "version": "3.0.0-rc.2",
+  "version": "3.0.0",
   "description": "",
+  "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js"
   },
-  "license": "MIT",
+  "dependencies": {
+    "@storybook/channels": "^3.0.0",
+    "global": "^4.3.2"
+  },
   "devDependencies": {
     "shelljs": "^0.7.7"
-  },
-  "dependencies": {
-    "@storybook/channels": "^3.0.0-rc.2"
   }
 }

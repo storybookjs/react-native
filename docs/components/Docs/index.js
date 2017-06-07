@@ -1,38 +1,29 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+
 import Header from '../Header';
 import Container from './Container';
 import Footer from '../Footer';
 import './style.css';
 
-class Docs extends React.Component {
-  render() {
-    const { sections, selectedItem, selectedSectionId, selectedItemId } = this.props;
-
-    const headTitle = `${selectedItem.title}`;
-
-    return (
-      <div className="container">
-        <Helmet title={headTitle} />
-        <Header currentSection="docs" />
-        <Container
-          sections={sections}
-          selectedItem={selectedItem}
-          selectedSectionId={selectedSectionId}
-          selectedItemId={selectedItemId}
-        />
-        <Footer />
-      </div>
-    );
-  }
-}
-
+const Docs = ({ sections, selectedItem, selectedSectionId, selectedItemId }) =>
+  <div className="container">
+    <Helmet title={`${selectedItem.title}`} />
+    <Header currentSection="docs" />
+    <Container
+      sections={sections}
+      selectedItem={selectedItem}
+      selectedSectionId={selectedSectionId}
+      selectedItemId={selectedItemId}
+    />
+    <Footer />
+  </div>;
 Docs.propTypes = {
-  sections: PropTypes.array,
-  selectedItem: PropTypes.object,
-  selectedSectionId: PropTypes.string,
-  selectedItemId: PropTypes.string,
+  sections: PropTypes.array, // eslint-disable-line
+  selectedItem: PropTypes.object, // eslint-disable-line
+  selectedSectionId: PropTypes.string.isRequired,
+  selectedItemId: PropTypes.string.isRequired,
 };
 
 export default Docs;

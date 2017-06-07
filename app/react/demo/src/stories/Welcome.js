@@ -68,7 +68,9 @@ export default class Welcome extends React.Component {
           {' '}
           directory.
           <br />
-          A story is a single state of one or more UI components. You can have as many stories as you want.
+          A story is a single state of one or more UI components.
+          {' '}
+          You can have as many stories as you want.
           <br />
           (Basically a story is like a visual test case.)
         </p>
@@ -97,7 +99,7 @@ export default class Welcome extends React.Component {
           {' '}
           <a
             style={styles.link}
-            href="https://storybook.js.org/docs/react-storybook/basics/writing-stories"
+            href="https://storybook.js.org/basics/writing-stories"
             target="_blank"
           >
             Writing Stories

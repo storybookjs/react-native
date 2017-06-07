@@ -22,7 +22,9 @@ class ArrayType extends React.Component {
     return (
       <Textarea
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={styles}
         value={knob.value.join(knob.separator)}
         onChange={e => onChange(e.target.value.split(knob.separator))}
@@ -31,17 +33,20 @@ class ArrayType extends React.Component {
   }
 }
 
+ArrayType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 ArrayType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
-ArrayType.serialize = function(value) {
-  return value;
-};
-
-ArrayType.deserialize = function(value) {
-  return value;
-};
+ArrayType.serialize = value => value;
+ArrayType.deserialize = value => value;
 
 export default ArrayType;

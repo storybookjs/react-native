@@ -69,7 +69,9 @@ class ObjectType extends React.Component {
     return (
       <Textarea
         id={knob.name}
-        ref="input"
+        ref={c => {
+          this.input = c;
+        }}
         style={{ ...styles, ...extraStyle }}
         value={jsonString}
         onChange={e => this.handleChange(e)}
@@ -78,18 +80,20 @@ class ObjectType extends React.Component {
   }
 }
 
+ObjectType.defaultProps = {
+  knob: {},
+  onChange: value => value,
+};
+
 ObjectType.propTypes = {
-  knob: PropTypes.object,
+  knob: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
-ObjectType.serialize = function(object) {
-  return JSON.stringify(object);
-};
-
-ObjectType.deserialize = function(value) {
-  if (!value) return {};
-  return JSON.parse(value);
-};
+ObjectType.serialize = object => JSON.stringify(object);
+ObjectType.deserialize = value => (value ? JSON.parse(value) : {});
 
 export default ObjectType;

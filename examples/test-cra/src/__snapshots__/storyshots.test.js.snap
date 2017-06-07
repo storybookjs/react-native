@@ -86,8 +86,8 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     See these sample
      
     <a
-      href="#"
       onClick={[Function]}
+      role="button"
       style={
         Object {
           "borderBottom": "1px solid #1474f3",
@@ -96,6 +96,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           "textDecoration": "none",
         }
       }
+      tabIndex="0"
     >
       stories
     </a>
@@ -122,7 +123,9 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     Just like that, you can add your own components as stories.
     <br />
-    Here's how to add your 
+    You can also edit those components and see changes right away.
+    <br />
+    (Try editing the 
     <code
       style={
         Object {
@@ -136,41 +139,34 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         }
       }
     >
-      App
+      Button
     </code>
-     component as a story.
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<pre>
-        // Add this code to \\"src/stories/index.js\\"
-        
-        import '../index.css';
-        import App from '../App';
-        
-        storiesOf('App', module)
-          .add('default view', () => (
-            &lt;App /&gt;
-          ))
-        </pre>",
-        }
-      }
+     component located at 
+    <code
       style={
         Object {
           "backgroundColor": "#f3f2f2",
-          "margin": "10px 0",
-          "padding": "1px 10px",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
         }
       }
-    />
+    >
+      src/stories/Button.js
+    </code>
+    .)
   </p>
   <p>
-    Usually we create stories with smaller UI components in the app.
+    This is just one thing you can do with Storybook.
     <br />
     Have a look at the
      
     <a
-      href="https://storybook.js.org/docs/react-storybook/basics/writing-stories"
+      href="https://storybook.js.org/basics/writing-stories"
+      rel="noopener noreferrer"
       style={
         Object {
           "borderBottom": "1px solid #1474f3",
@@ -181,10 +177,41 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       }
       target="_blank"
     >
-      Writing Stories
+      Storybook
     </a>
      
-    section in our documentation.
+    repo for more information.
+  </p>
+  <p
+    style={
+      Object {
+        "opacity": 0.5,
+      }
+    }
+  >
+    <b>
+      NOTE:
+    </b>
+    <br />
+    Have a look at the
+     
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      .storybook/webpack.config.js
+    </code>
+     
+    to add webpack loaders and plugins you are using in this project.
   </p>
 </div>
 `;

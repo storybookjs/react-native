@@ -1,10 +1,9 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import implementations from './implementations';
 
 const storyGroups = {};
 
-for (const key in implementations) {
+Object.keys(implementations).forEach(key => {
   const [groupName, itemName] = key.split('.');
   const implementation = implementations[key];
 
@@ -13,4 +12,4 @@ for (const key in implementations) {
   }
 
   storyGroups[groupName].add(itemName, () => implementation);
-}
+});

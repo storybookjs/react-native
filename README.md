@@ -19,7 +19,7 @@ It allows you to browse a component library, view the different states of each c
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
-Storybook comes with a lot of [addons](https://storybook.js.org/docs/react-storybook/addons/introduction) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
+Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduction/) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
 
 ## Table of contents
 
@@ -93,10 +93,10 @@ We welcome contributions to Storybook!
 > boolean check if code conforms to linting rules - uses remark & eslint
 
 -   `npm run lint:js` - will check js
--   `npm run lint:markdown` - will check markdown + code samples
+-   `npm run lint:md` - will check markdown + code samples
 
 -   `npm run lint:js -- --fix` - will automatically fix js
--   `npm run lint:markdown -- -o` - will automatically fix markdown
+-   `npm run lint:md -- -o` - will automatically fix markdown
 
 #### `npm run test`
 

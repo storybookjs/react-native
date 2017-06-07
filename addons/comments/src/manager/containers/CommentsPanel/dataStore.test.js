@@ -5,7 +5,7 @@ const user = {
   name: 'user-name',
 };
 
-const dbGetUsers = jest.fn(a => Promise.resolve([user]));
+const dbGetUsers = jest.fn(() => Promise.resolve([user]));
 const dbSetUsers = jest.fn(a => Promise.resolve(a));
 const dbGetComments = jest.fn(a => Promise.resolve(a));
 const dbSetComments = jest.fn(a => Promise.resolve(a));
@@ -16,7 +16,7 @@ const db = {
       case 'users': {
         return {
           get: dbGetUsers,
-          set: dbGetUsers,
+          set: dbSetUsers,
         };
       }
       case 'comments': {
@@ -25,10 +25,13 @@ const db = {
           set: dbSetComments,
         };
       }
+      default: {
+        return {};
+      }
     }
   },
   persister: {
-    _getAppInfo() {
+    getAppInfo() {
       return Promise.resolve(true);
     },
   },

@@ -11,7 +11,7 @@ function requireModules(keys, root, directory, regExp, recursive) {
     // TODO: Check this in windows
     const entryKey = `./${path.join(directory, filename)}`;
     if (regExp.test(entryKey)) {
-      keys[entryKey] = require(path.join(root, directory, filename));
+      keys[entryKey] = require(path.join(root, directory, filename)); // eslint-disable-line
       return;
     }
 
@@ -45,10 +45,10 @@ export default function runWithRequireContext(content, options) {
 
   const newRequire = request => {
     if (isRelativeRequest(request)) {
-      return require(path.resolve(dirname, request));
+      return require(path.resolve(dirname, request)); // eslint-disable-line
     }
 
-    return require(request);
+    return require(request); // eslint-disable-line
   };
 
   newRequire.resolve = require.resolve;

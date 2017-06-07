@@ -1,11 +1,14 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "3.0.0-rc.2",
+  "version": "3.0.0",
   "description": "Storybook decorator to center components",
+  "license": "MIT",
+  "author": "Muhammed Thanish <mnmtanish@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js"
   },
-  "author": "Muhammed Thanish <mnmtanish@gmail.com>",
-  "license": "MIT"
+  "peerDependencies": {
+    "react": "*"
+  }
 }

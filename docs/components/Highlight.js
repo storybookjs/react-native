@@ -13,13 +13,12 @@ class Highlight extends React.Component {
   }
 
   highlightCode() {
-    const domNode = ReactDOM.findDOMNode(this);
+    const domNode = ReactDOM.findDOMNode(this); // eslint-disable-line
     const nodes = domNode.querySelectorAll('pre code');
-    if (nodes.length > 0) {
-      for (let i = 0; i < nodes.length; i++) {
-        hljs.highlightBlock(nodes[i]);
-      }
-    }
+
+    nodes.forEach(node => {
+      hljs.highlightBlock(node);
+    });
   }
 
   render() {
@@ -29,7 +28,7 @@ class Highlight extends React.Component {
 }
 
 Highlight.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 export default Highlight;
