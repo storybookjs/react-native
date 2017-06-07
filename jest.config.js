@@ -7,6 +7,7 @@ module.exports = {
     '\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
   roots: ['<rootDir>/addons', '<rootDir>/app', '<rootDir>/lib', '<rootDir>/examples'],
+  testPathIgnorePatterns: ['/node_modules/', 'examples/react-native-vanilla'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
