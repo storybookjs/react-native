@@ -3,7 +3,6 @@ import Button from './Button';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import backgrounds from 'react-storybook-addon-backgrounds';
 
 storiesOf(
   'Button'
@@ -137,23 +136,57 @@ storiesOf('Button').addWithInfo(
   { inline: true }
 );
 
-storiesOf('Button')
-  .addDecorator(backgrounds([{ name: 'dark', value: '#333', default: true }]))
-  .addWithInfo(
-    'with custom styles',
-    `
+storiesOf('Button').addWithInfo(
+  'simple usage (maxPropsInLine === 1)',
+  `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+  () => <Button label="The Button" onClick={action('onClick')} />,
+  { inline: true, maxPropsIntoLine: 1 }
+);
+
+storiesOf('Button').addWithInfo(
+  'simple usage (maxPropObjectKeys === 5)',
+  `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+  () => <Button label="The Button" object={{ a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 }} />,
+  { inline: true, maxPropObjectKeys: 5 }
+);
+
+storiesOf('Button').addWithInfo(
+  'simple usage (maxPropArrayLength === 8)',
+  `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+  () => <Button label="The Button" array={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />,
+  { inline: true, maxPropArrayLength: 8 }
+);
+
+storiesOf('Button').addWithInfo(
+  'simple usage (maxPropStringLength === 10)',
+  `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+  () => <Button label="The Button" string="1 2 3 4 5 6 7 8" />,
+  { inline: true, maxPropStringLength: 5 }
+);
+
+storiesOf('Button').addWithInfo(
+  'with custom styles',
+  `
       This is an example of how to customize the styles of the info components.
 
       For the full styles available, see \`./src/components/Story.js\`
     `,
-    () => <Button label="The Button" onClick={action('onClick')} />,
-    {
-      inline: true,
-      styles: stylesheet => {
-        stylesheet.infoPage = {
-          backgroundColor: '#ccc',
-        };
-        return stylesheet;
-      },
-    }
-  );
+  () => <Button label="The Button" onClick={action('onClick')} />,
+  {
+    inline: true,
+    styles: stylesheet => {
+      stylesheet.infoPage = {
+        backgroundColor: '#ccc',
+      };
+      return stylesheet;
+    },
+  }
+);

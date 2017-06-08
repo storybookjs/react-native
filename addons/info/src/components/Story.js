@@ -247,13 +247,28 @@ export default class Story extends React.Component {
       return null;
     }
 
+    const {
+      maxPropsIntoLine,
+      maxPropObjectKeys,
+      maxPropArrayLength,
+      maxPropStringLength,
+    } = this.props;
+
     return (
       <div>
         <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
         <Pre>
-          {React.Children.map(this.props.children, (root, idx) =>
-            <Node key={idx} depth={0} node={root} />
-          )}
+          {React.Children.map(this.props.children, (root, idx) => (
+            <Node
+              key={idx}
+              node={root}
+              depth={0}
+              maxPropsIntoLine={maxPropsIntoLine}
+              maxPropObjectKeys={maxPropObjectKeys}
+              maxPropArrayLength={maxPropArrayLength}
+              maxPropStringLength={maxPropStringLength}
+            />
+          ))}
         </Pre>
       </div>
     );
@@ -307,14 +322,20 @@ export default class Story extends React.Component {
     const array = Array.from(types.keys());
     array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
-    const propTables = array.map(type =>
+    const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
+    const propTables = array.map(type => (
       <div key={type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
         </h2>
-        <PropTable type={type} />
+        <PropTable
+          type={type}
+          maxPropObjectKeys={maxPropObjectKeys}
+          maxPropArrayLength={maxPropArrayLength}
+          maxPropStringLength={maxPropStringLength}
+        />
       </div>
-    );
+    ));
 
     if (!propTables || propTables.length === 0) {
       return null;
@@ -353,6 +374,10 @@ Story.propTypes = {
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  maxPropsIntoLine: PropTypes.number.isRequired,
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
 };
 Story.defaultProps = {
   context: null,
