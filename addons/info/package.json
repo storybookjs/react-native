@@ -25,7 +25,6 @@
     "git-url-parse": "^6.2.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-storybook-addon-backgrounds": "0.0.7",
     "react-test-renderer": "^15.5.4"
   },
   "peerDependencies": {
