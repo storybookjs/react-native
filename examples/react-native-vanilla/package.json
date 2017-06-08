@@ -26,8 +26,5 @@
     "@storybook/react-native": "file:../../app/react-native",
     "@storybook/ui": "file:../../lib/ui",
     "react-dom": "^15.5.4"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
