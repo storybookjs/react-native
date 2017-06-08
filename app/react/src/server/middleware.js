@@ -6,7 +6,14 @@ import getBaseConfig from './config/webpack.config';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml, getMiddleware } from './utils';
+import { getHeadHtml, getManagerHeadHtml, getMiddleware } from './utils';
+
+let webpackResolve = () => {};
+let webpackReject = () => {};
+export const webpackValid = new Promise((resolve, reject) => {
+  webpackResolve = resolve;
+  webpackReject = reject;
+});
 
 export default function(configDir) {
   // Build the webpack configuration using the `getBaseConfig`
@@ -29,19 +36,34 @@ export default function(configDir) {
   };
 
   const router = new Router();
-  router.use(webpackDevMiddleware(compiler, devMiddlewareOptions));
+  const webpackDevMiddlewareInstance = webpackDevMiddleware(compiler, devMiddlewareOptions);
+  router.use(webpackDevMiddlewareInstance);
   router.use(webpackHotMiddleware(compiler));
 
   // custom middleware
   middlewareFn(router);
 
-  router.get('/', (req, res) => {
-    res.send(getIndexHtml({ publicPath }));
-  });
+  webpackDevMiddlewareInstance.waitUntilValid(stats => {
+    const data = {
+      publicPath: config.output.publicPath,
+      assets: stats.toJson().assetsByChunkName,
+    };
 
-  router.get('/iframe.html', (req, res) => {
-    const headHtml = getHeadHtml(configDir);
-    res.send(getIframeHtml({ headHtml, publicPath }));
+    router.get('/', (req, res) => {
+      const headHtml = getManagerHeadHtml(configDir)
+      res.send(getIndexHtml({ publicPath, headHtml }));
+    });
+
+    router.get('/iframe.html', (req, res) => {
+      const headHtml = getHeadHtml(configDir);
+      res.send(getIframeHtml({ ...data, headHtml, publicPath }));
+    }); 
+
+    if (stats.toJson().errors.length) {
+      webpackReject(stats);
+    } else {
+      webpackResolve(stats);
+    }
   });
 
   return router;

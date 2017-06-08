@@ -21,7 +21,7 @@ function getDefautlFetcher(url) {
 function reIndentQuery(query) {
   const lines = query.split('\n');
   const spaces = lines[lines.length - 1].length - 1;
-  return lines.map((l, i) => (i === 0 ? l : l.slice(spaces)).join('\n'));
+  return lines.map((l, i) => (i === 0 ? l : l.slice(spaces))).join('\n');
 }
 
 export function setupGraphiQL(config) {
