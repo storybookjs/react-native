@@ -26,7 +26,8 @@ squarespace:
 coursera:
   logo: ./logos/coursera.svg
   title: Coursera
-  site: https://coursera.org
+  description: Coursera UI component library
+  site: https://building.coursera.org/ui/
 # buffer:
 #   logo: ./logos/buffer.svg
 #   title: Buffer Components
