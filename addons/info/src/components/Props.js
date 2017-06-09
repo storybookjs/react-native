@@ -63,7 +63,7 @@ Props.defaultProps = {
 Props.propTypes = {
   node: PropTypes.shape({
     props: PropTypes.object,
-    type: PropTypes.object.isRequired,
+    type: PropTypes.node.isRequired,
   }).isRequired,
   singleLine: PropTypes.bool,
   maxPropsIntoLine: PropTypes.number.isRequired,
