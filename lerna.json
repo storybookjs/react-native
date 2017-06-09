@@ -9,7 +9,6 @@
     },
     "publish": {
       "ignore": [
-        "@storybook/addon-events",
         "cra-storybook",
         "test-cra",
         "react-native-vanilla"
