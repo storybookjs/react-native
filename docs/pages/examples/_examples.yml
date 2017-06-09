@@ -25,6 +25,11 @@ algolia:
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
+coursera:
+  thumbnail: ./thumbnails/coursera-ui.png
+  title: Coursera
+  description: Coursera UI component library
+  demo: https://building.coursera.org/ui/
 necolas:
   thumbnail: ./thumbnails/reactnativeweb.jpg
   title: React Native Web

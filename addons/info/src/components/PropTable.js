@@ -5,14 +5,13 @@ import React from 'react';
 import PropVal from './PropVal';
 
 const PropTypesMap = new Map();
-for (const typeName in PropTypes) { // eslint-disable-line
-  if (!PropTypes.hasOwnProperty(typeName)) { // eslint-disable-line
-    continue; // eslint-disable-line
-  }
+
+Object.keys(PropTypes).forEach(typeName => {
   const type = PropTypes[typeName];
+
   PropTypesMap.set(type, typeName);
   PropTypesMap.set(type.isRequired, typeName);
-}
+});
 
 const stylesheet = {
   propTable: {
@@ -22,26 +21,26 @@ const stylesheet = {
   },
 };
 
-const PropTable = ({ type }) => {
+export default function PropTable(props) {
+  const { type, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = props;
+
   if (!type) {
     return null;
   }
 
-  const props = {};
+  const accumProps = {};
 
   if (type.propTypes) {
-      for (const property in type.propTypes) { // eslint-disable-line
-        if (!type.propTypes.hasOwnProperty(property)) { // eslint-disable-line
-          continue; // eslint-disable-line
-      }
+    Object.keys(type.propTypes).forEach(property => {
       const typeInfo = type.propTypes[property];
-      let propType = PropTypesMap.get(typeInfo) || 'other';
       const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
       const description = type.__docgenInfo &&
         type.__docgenInfo.props &&
         type.__docgenInfo.props[property]
         ? type.__docgenInfo.props[property].description
         : null;
+      let propType = PropTypesMap.get(typeInfo) || 'other';
+
       if (propType === 'other') {
         if (
           type.__docgenInfo &&
@@ -52,31 +51,40 @@ const PropTable = ({ type }) => {
           propType = type.__docgenInfo.props[property].type.name;
         }
       }
-      props[property] = { property, propType, required, description };
-    }
+
+      accumProps[property] = { property, propType, required, description };
+    });
   }
 
   if (type.defaultProps) {
-      for (const property in type.defaultProps) { // eslint-disable-line
-        if (!type.defaultProps.hasOwnProperty(property)) { // eslint-disable-line
-          continue; // eslint-disable-line
-      }
+    Object.keys(type.defaultProps).forEach(property => {
       const value = type.defaultProps[property];
+
       if (value === undefined) {
-          continue; // eslint-disable-line
+        return;
       }
-      if (!props[property]) {
-        props[property] = { property };
+
+      if (!accumProps[property]) {
+        accumProps[property] = { property };
       }
-      props[property].defaultValue = value;
-    }
+
+      accumProps[property].defaultValue = value;
+    });
   }
 
-  const array = Object.values(props);
+  const array = Object.values(accumProps);
+
   if (!array.length) {
     return <small>No propTypes defined!</small>;
   }
+
   array.sort((a, b) => a.property > b.property);
+
+  const propValProps = {
+    maxPropObjectKeys,
+    maxPropArrayLength,
+    maxPropStringLength,
+  };
 
   return (
     <table style={stylesheet.propTable}>
@@ -90,19 +98,23 @@ const PropTable = ({ type }) => {
         </tr>
       </thead>
       <tbody>
-        {array.map(row =>
+        {array.map(row => (
           <tr key={row.property}>
             <td>{row.property}</td>
             <td>{row.propType}</td>
             <td>{row.required}</td>
-            <td>{row.defaultValue === undefined ? '-' : <PropVal val={row.defaultValue} />}</td>
+            <td>
+              {row.defaultValue === undefined
+                ? '-'
+                : <PropVal val={row.defaultValue} {...propValProps} />}
+            </td>
             <td>{row.description}</td>
           </tr>
-        )}
+        ))}
       </tbody>
     </table>
   );
-};
+}
 
 PropTable.displayName = 'PropTable';
 PropTable.defaultProps = {
@@ -110,4 +122,7 @@ PropTable.defaultProps = {
 };
 PropTable.propTypes = {
   type: PropTypes.func,
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
 };
