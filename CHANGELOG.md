@@ -10,6 +10,7 @@ Minor features including a new "events" addon, as well as the usual bugfixes, cl
 -   Add display configuration options to info addon [#1157](https://github.com/storybooks/storybook/pull/1157)
 -   Add support for multiple webpack chunks in iframe [#1083](https://github.com/storybooks/storybook/pull/1083)
 -   Add events addon [#1130](https://github.com/storybooks/storybook/pull/1130)
+-   Allow including files just before manager.bundle.js [#1134](https://github.com/storybooks/storybook/pull/1134)
 
 #### Bug Fixes
 

@@ -2,13 +2,19 @@
 
 ## Table of contents
 
--   [from version 3.0.x to 3.1.0](#from-version-30x-to-310)
--   [from version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
+-   [From version 3.0.x to 3.1.0](#from-version-30x-to-310)
+    -   [Typescript definitions](#typescript-definitions)
+    -   [Deprecating head.html](#deprecating-headhtml)
+-   [From version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
     -   [Webpack upgrade](#webpack-upgrade)
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
 
-## from version 3.0.x to 3.1.0
+## From version 3.0.x to 3.1.0
+
+**NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out, and didn't think this change necessitated a major release. Please bear with us!
+
+### Typescript definitions
 
 Typescript users: we are in the process of moving our typescript definitions into [DefinitelyTyped](http://definitelytyped.org/). If you're using Typescript, starting in 3.1.0 you need to make sure your type definitions are installed:
 
@@ -16,9 +22,18 @@ Typescript users: we are in the process of moving our typescript definitions int
 npm install @types/node @types/react @types/storybook__react --save-dev
 ```
 
-**NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out, and didn't think this change necessitated a major release.
+### Deprecating head.html
 
-## from version 2.x.x to 3.x.x
+We have deprecated the use of `head.html` for including scripts/styles/etc. into stories, though it will still work with a warning.
+
+Now we use:
+
+-   `preview-head.html` for including extra content into the preview pane.
+-   `manager-head.html` for including extra content into the manager window.
+
+[Read our docs](https://storybook.js.org/configurations/add-custom-head-tags/) for more details.
+
+## From version 2.x.x to 3.x.x
 
 This major release is mainly an internal restructuring.
 Upgrading requires work on behalf of users, this was unavoidable.
