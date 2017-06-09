@@ -106,7 +106,7 @@ export default function Node(props) {
         />
         <span style={tagStyle}>&gt;</span>
       </div>
-      {React.Children.map(children, childElement => (
+      {React.Children.map(children, childElement =>
         <Node
           node={childElement}
           depth={depth + 1}
@@ -115,7 +115,7 @@ export default function Node(props) {
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
         />
-      ))}
+      )}
       <div style={containerStyleCopy}>
         <span style={tagStyle}>&lt;/{name}&gt;</span>
       </div>

@@ -98,7 +98,7 @@ export default function PropTable(props) {
         </tr>
       </thead>
       <tbody>
-        {array.map(row => (
+        {array.map(row =>
           <tr key={row.property}>
             <td>{row.property}</td>
             <td>{row.propType}</td>
@@ -110,7 +110,7 @@ export default function PropTable(props) {
             </td>
             <td>{row.description}</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );
