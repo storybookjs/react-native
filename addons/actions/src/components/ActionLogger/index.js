@@ -4,26 +4,14 @@ import Inspector from 'react-inspector';
 import style from './style';
 
 class ActionLogger extends Component {
-  componentDidUpdate() {
-    const latest = this.ref.latest;
-    if (latest) {
-      const borderLeft = style.action.borderLeft;
-      latest.style.borderLeft = 'solid 5px #aaa';
-      setTimeout(() => {
-        latest.style.borderLeft = borderLeft;
-      }, 300);
-    }
-  }
-
   getActionData() {
     return this.props.actions.map((action, i) => this.renderAction(action, i));
   }
 
-  renderAction(action, i) {
-    const ref = () => (this.ref = i ? '' : 'latest');
+  renderAction(action) {
     const counter = <div style={style.counter}>{action.count}</div>;
     return (
-      <div ref={ref} key={action.id} style={style.action}>
+      <div key={action.id} style={style.action}>
         <div style={style.countwrap}>
           {action.count > 1 && counter}
         </div>

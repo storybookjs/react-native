@@ -71,7 +71,7 @@ WrapStory.defaultProps = {
 WrapStory.propTypes = {
   context: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   storyFn: PropTypes.func,
-  channel: React.PropTypes.shape({
+  channel: PropTypes.shape({
     on: PropTypes.func,
     removeListener: PropTypes.func,
   }).isRequired,

@@ -35,16 +35,20 @@ export default class propForm extends React.Component {
 
     return (
       <form style={stylesheet.propForm}>
-        {knobs.map(knob =>
-          <PropField
-            key={knob.name}
-            name={knob.name}
-            type={knob.type}
-            value={knob.value}
-            knob={knob}
-            onChange={() => this._onFieldChange(knob.name, knob.type)}
-          />
-        )}
+        {knobs.map(knob => {
+          // eslint-disable-next-line react/jsx-no-bind
+          const changeHandler = this.onFieldChange.bind(this, knob.name, knob.type);
+          return (
+            <PropField
+              key={knob.name}
+              name={knob.name}
+              type={knob.type}
+              value={knob.value}
+              knob={knob}
+              onChange={changeHandler}
+            />
+          );
+        })}
       </form>
     );
   }
@@ -60,7 +64,7 @@ propForm.propTypes = {
   knobs: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      value: PropTypes.string,
+      value: PropTypes.any,
     })
   ),
   onFieldChange: PropTypes.func.isRequired,
