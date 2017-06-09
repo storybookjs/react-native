@@ -2,7 +2,7 @@
 
 ## Table of contents
 
--   [From version 3.0.x to 3.1.0](#from-version-30x-to-310)
+-   [From version 3.0.x to 3.1.x](#from-version-30x-to-31x)
     -   [Moved TypeScript definitions](#moved-typescript-definitions)
     -   [Deprecated head.html](#deprecated-headhtml)
 -   [From version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
@@ -10,7 +10,7 @@
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
 
-## From version 3.0.x to 3.1.0
+## From version 3.0.x to 3.1.x
 
 **NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out, and didn't think this change necessitated a major release. Please bear with us!
 

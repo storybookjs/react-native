@@ -1,4 +1,4 @@
-# 3.1.0
+# 3.1.2
 
 Minor features including a new "events" addon, as well as the usual bugfixes, cleanup, etc.
 
