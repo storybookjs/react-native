@@ -9,6 +9,10 @@ const defaultOptions = {
   header: true,
   source: true,
   propTables: [],
+  maxPropsIntoLine: 3,
+  maxPropObjectKeys: 3,
+  maxPropArrayLength: 3,
+  maxPropStringLength: 50,
 };
 
 const defaultMarksyConf = {
@@ -65,6 +69,10 @@ export default {
         propTablesExclude: options.propTablesExclude,
         styles: typeof options.styles === 'function' ? options.styles : s => s,
         marksyConf,
+        maxPropObjectKeys: options.maxPropObjectKeys,
+        maxPropArrayLength: options.maxPropArrayLength,
+        maxPropsIntoLine: options.maxPropsIntoLine,
+        maxPropStringLength: options.maxPropStringLength,
       };
 
       return (
