@@ -33,7 +33,7 @@ coursera:
 artsy:
   thumbnail: ./thumbnails/artsy.png
   title: Artsy Force
-  description: Arty's "Force" component library
+  description: Artsy's "Force" component library
   demo: https://artsy.github.io/reaction-force/
   source: https://github.com/artsy/reaction-force
   site: https://artsy.net
