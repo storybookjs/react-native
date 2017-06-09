@@ -3,8 +3,8 @@
 ## Table of contents
 
 -   [From version 3.0.x to 3.1.0](#from-version-30x-to-310)
-    -   [Typescript definitions](#typescript-definitions)
-    -   [Deprecating head.html](#deprecating-headhtml)
+    -   [Moved TypeScript definitions](#moved-typescript-definitions)
+    -   [Deprecated head.html](#deprecated-headhtml)
 -   [From version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
     -   [Webpack upgrade](#webpack-upgrade)
     -   [Packages renaming](#packages-renaming)
@@ -14,15 +14,15 @@
 
 **NOTE:** technically this is a breaking change and should be a 4.0.0 release according to semver. However, we're still figuring things out, and didn't think this change necessitated a major release. Please bear with us!
 
-### Typescript definitions
+### Moved TypeScript definitions
 
-Typescript users: we are in the process of moving our typescript definitions into [DefinitelyTyped](http://definitelytyped.org/). If you're using Typescript, starting in 3.1.0 you need to make sure your type definitions are installed:
+TypeScript users: we are in the process of moving our typescript definitions into [DefinitelyTyped](http://definitelytyped.org/). If you're using TypeScript, starting in 3.1.0 you need to make sure your type definitions are installed:
 
 ```sh
 npm install @types/node @types/react @types/storybook__react --save-dev
 ```
 
-### Deprecating head.html
+### Deprecated head.html
 
 We have deprecated the use of `head.html` for including scripts/styles/etc. into stories, though it will still work with a warning.
 
