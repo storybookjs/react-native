@@ -9,6 +9,7 @@
     },
     "publish": {
       "ignore": [
+        "addons/events",
         "cra-storybook",
         "test-cra",
         "react-native-vanilla"
@@ -22,5 +23,5 @@
     "examples/*"
   ],
   "concurrency": 1,
-  "version": "3.1.0"
+  "version": "3.1.1"
 }
