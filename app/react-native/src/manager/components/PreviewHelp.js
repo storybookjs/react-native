@@ -46,7 +46,9 @@ const PreviewHelp = () =>
       {' '}
       <span style={styles.code}>&lt;platform&gt;</span>
       {' '}
-      of your choice (typically ios or android).
+      of your choice (typically ios or android). (Note that due to an implementation detail, your
+      stories will only show up in the left-pane after your device has connected to this storybook
+      server.)
     </p>
     <p>
       For <span style={styles.code}>create-react-native-app</span> apps:
