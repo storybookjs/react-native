@@ -11,7 +11,7 @@ import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import getIndexHtml from './index.html';
 import getIframeHtml from './iframe.html';
-import { getHeadHtml, parseList, getEnvConfig } from './utils';
+import { getPreviewHeadHtml, getManagerHeadHtml, parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
@@ -87,9 +87,14 @@ webpack(config).run((err, stats) => {
     publicPath: config.output.publicPath,
     assets: stats.toJson().assetsByChunkName,
   };
-  const headHtml = getHeadHtml(configDir);
 
   // Write both the storybook UI and IFRAME HTML files to destination path.
-  fs.writeFileSync(path.resolve(outputDir, 'index.html'), getIndexHtml(data));
-  fs.writeFileSync(path.resolve(outputDir, 'iframe.html'), getIframeHtml({ ...data, headHtml }));
+  fs.writeFileSync(
+    path.resolve(outputDir, 'index.html'),
+    getIndexHtml({ ...data, headHtml: getManagerHeadHtml(configDir) })
+  );
+  fs.writeFileSync(
+    path.resolve(outputDir, 'iframe.html'),
+    getIframeHtml({ ...data, headHtml: getPreviewHeadHtml(configDir) })
+  );
 });
