@@ -56,9 +56,9 @@ import Button from './button';
 const styles = {
   textAlign: 'center',
 };
-const CenterDecorator = ({ children }) => (
+const CenterDecorator = (storyFn) => (
   <div style={styles}>
-    { children }
+    { storyFn() }
   </div>
 );
 
@@ -85,9 +85,9 @@ import Welcome from './welcome';
 const styles = {
   textAlign: 'center',
 };
-const CenterDecorator = ({ children }) => (
+const CenterDecorator = (storyFn) => (
   <div style={styles}>
-    { children }
+    { storyFn() }
   </div>
 );
 addDecorator(CenterDecorator);
