@@ -9,7 +9,7 @@ Please review this document to help to streamline the process and save everyone'
 No software is bug free. So, if you got an issue, follow these steps:
 
 -   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
--   If non of that is helping, create an issue with with following information:
+-   If none of that is helping, create an issue with with following information:
     -   Clear title (make is shorter if possible).
     -   Describe the issue in clear language.
     -   Share error logs, screenshots and etc.
