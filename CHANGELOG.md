@@ -1,3 +1,40 @@
+# 3.1.2
+
+Minor features including a new "events" addon, as well as the usual bugfixes, cleanup, etc.
+
+2017-June-09
+
+#### Features
+
+-   Add small design update to addon info package [#1213](https://github.com/storybooks/storybook/pull/1213)
+-   Add display configuration options to info addon [#1157](https://github.com/storybooks/storybook/pull/1157)
+-   Add support for multiple webpack chunks in iframe [#1083](https://github.com/storybooks/storybook/pull/1083)
+-   Add events addon [#1130](https://github.com/storybooks/storybook/pull/1130)
+-   Allow including files just before manager.bundle.js [#1134](https://github.com/storybooks/storybook/pull/1134)
+
+#### Bug Fixes
+
+-   Fixed knobs addon editing bug [#1233](https://github.com/storybooks/storybook/pull/1233)
+-   Fix bug in addons/graphql in reIndentQuery [#1207](https://github.com/storybooks/storybook/pull/1207)
+-   Marksy initialized with mtrcConf intead of marksyConf [#1205](https://github.com/storybooks/storybook/pull/1205)
+
+#### Documentation
+
+-   Document stories not showing up on storybook UI until device connects [#1221](https://github.com/storybooks/storybook/pull/1221)
+-   Fixed references to storybook.js.org. [#1211](https://github.com/storybooks/storybook/pull/1211)
+-   Updated repository URL to address broken npm images [#1197](https://github.com/storybooks/storybook/pull/1197)
+
+#### Maintenance
+
+-   Added a vanilla React Native example app. [#1202](https://github.com/storybooks/storybook/pull/1202)
+-   Move typings for @storybook/react to @types package [#1199](https://github.com/storybooks/storybook/pull/1199)
+-   Set ESlint rules more strict 🚑 [#911](https://github.com/storybooks/storybook/pull/911)
+
+#### Dependency Upgrades
+
+-   Update babel docgen plugin to generate docs for React.createClass and createReactClass [#1206](https://github.com/storybooks/storybook/pull/1206)
+-   Update `marksy` dependecy due broken 1.1.0 version [#1204](https://github.com/storybooks/storybook/pull/1204)
+
 # 3.0.1
 
 Minor bug fixes and documentation updates post 3.0.0 release.

@@ -30,6 +30,13 @@ coursera:
   title: Coursera
   description: Coursera UI component library
   demo: https://building.coursera.org/ui/
+artsy:
+  thumbnail: ./thumbnails/artsy.png
+  title: Artsy Force
+  description: Artsy's "Force" component library
+  demo: https://artsy.github.io/reaction-force/
+  source: https://github.com/artsy/reaction-force
+  site: https://artsy.net
 necolas:
   thumbnail: ./thumbnails/reactnativeweb.jpg
   title: React Native Web

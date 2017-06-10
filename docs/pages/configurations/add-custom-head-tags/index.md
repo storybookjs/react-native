@@ -27,4 +27,3 @@ Create a file called `manager-head.html` inside of the Storybook config director
 > **Important**
 >
 > Your scripts will run before Storybook's React UI. Also be aware, that this is an uncommon scenario and could potentially break Storybook's UI. So use with caution.  
-

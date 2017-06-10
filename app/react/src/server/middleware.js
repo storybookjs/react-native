@@ -50,14 +50,14 @@ export default function(configDir) {
     };
 
     router.get('/', (req, res) => {
-      const headHtml = getManagerHeadHtml(configDir)
+      const headHtml = getManagerHeadHtml(configDir);
       res.send(getIndexHtml({ publicPath, headHtml }));
     });
 
     router.get('/iframe.html', (req, res) => {
       const headHtml = getHeadHtml(configDir);
       res.send(getIframeHtml({ ...data, headHtml, publicPath }));
-    }); 
+    });
 
     if (stats.toJson().errors.length) {
       webpackReject(stats);

@@ -17,7 +17,7 @@ export default {
     borderLeft: '5px solid white',
     borderBottom: '1px solid #fafafa',
     transition: 'all 0.1s',
-    alignItems: 'center',
+    alignItems: 'start',
   },
   countwrap: {
     paddingBottom: 2,
