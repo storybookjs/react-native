@@ -38,9 +38,7 @@ const urlsFromAssets = assets => {
   return urls;
 };
 
-export default function(data) {
-  const { assets, headHtml, publicPath } = data;
-
+export default function({ assets, publicPath, headHtml }) {
   const urls = urlsFromAssets(assets);
 
   const cssTags = urls.css
