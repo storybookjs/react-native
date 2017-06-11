@@ -137,7 +137,7 @@ export default class Item extends Component {
     return (
       <div style={styles.item}>
         <label htmlFor={`addon-event-${name}`} style={styles.label}>{title}</label>
-        <button style={styles.button} onClick={this.onEmitClick} disabled={failed}>📡</button>
+        <button style={styles.button} onClick={this.onEmitClick} disabled={failed}>📢</button>
         <Textarea
           id={`addon-event-${name}`}
           ref={ref => {
