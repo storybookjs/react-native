@@ -137,7 +137,14 @@ export default class Item extends Component {
     return (
       <div style={styles.item}>
         <label htmlFor={`addon-event-${name}`} style={styles.label}>{title}</label>
-        <button style={styles.button} onClick={this.onEmitClick} disabled={failed}>📢</button>
+        <button
+          style={styles.button}
+          onClick={this.onEmitClick}
+          disabled={failed}
+          title="Submit event"
+        >
+          📢
+        </button>
         <Textarea
           id={`addon-event-${name}`}
           ref={ref => {
@@ -148,10 +155,14 @@ export default class Item extends Component {
           onChange={this.onChange}
         />
         {isTextAreaShowed
-          ? <button style={styles.button} onClick={this.onToggleEditClick} title="Close">
+          ? <button style={styles.button} onClick={this.onToggleEditClick} title="Close editing">
               ❌
             </button>
-          : <button style={styles.button} onClick={this.onToggleEditClick} title="Edit">
+          : <button
+              style={styles.button}
+              onClick={this.onToggleEditClick}
+              title="Edit event payload"
+            >
               ✏️
             </button>}
       </div>
