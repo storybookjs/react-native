@@ -7,8 +7,9 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 
-import Button from './Button';
-import Welcome from './Welcome';
+import Button from '@storybook/components/dist/demo/Button';
+import Welcome from '@storybook/components/dist/demo/Welcome';
+// import Welcome from './Welcome';
 import App from '../App';
 import Logger from './Logger';
 
