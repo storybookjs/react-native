@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { baseFonts } from '../theme';
 
 const defaultProps = { children: null };
-const propTypes = { children: PropTypes.node, href: PropTypes.string };
+const propTypes = { children: PropTypes.node };
 
 export function P(props) {
   const style = {
@@ -46,4 +46,4 @@ export function A(props) {
 }
 
 A.defaultProps = defaultProps;
-A.propTypes = propTypes;
+A.propTypes = { children: PropTypes.node, href: PropTypes.string };
