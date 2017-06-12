@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import { window } from 'global';
 // import { stripIndents } from 'common-tags';
 // import ErrorDisplay from './error_display';
@@ -19,11 +20,12 @@ if (isBrowser) {
     el: '#root',
     data() {
       return {
-        story: () => {},
+        story: 'test',
       };
     },
     methods: {
       renderStory(story) {
+        logger.log('renderStory', story);
         this.story = story;
       },
     },
@@ -31,7 +33,8 @@ if (isBrowser) {
       logger.log('I got created');
     },
     render(h) {
-      return h('div', { attrs: { id: 'app' } }, [h(this.current)]);
+      logger.log('render!');
+      return h('div', { attrs: { id: 'app' } }, [h(this.story)]);
     },
   });
 }
