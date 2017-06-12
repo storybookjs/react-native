@@ -42,7 +42,11 @@ export function A(props) {
   const style = {
     color: '#3498db',
   };
-  return <a href={props.href} style={style}>{props.children}</a>;
+  return (
+    <a href={props.href} target="_blank" rel="noopener noreferrer" style={style}>
+      {props.children}
+    </a>
+  );
 }
 
 A.defaultProps = defaultProps;
