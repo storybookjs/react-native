@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { play } from '../src/play';
+import { storiesOf } from '@storybook/vue';
 import MyButton from './Button.vue';
 
 Vue.component('my-button', MyButton);
 
-play('Button')
+storiesOf('Button')
   .add('with text', {
     template: '<my-button :handle-click="log">{{ $store.state.count }}</my-button>',
     store: new Vuex.Store({

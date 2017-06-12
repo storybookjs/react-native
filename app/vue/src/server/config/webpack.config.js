@@ -39,7 +39,7 @@ export default function() {
         },
         {
           test: /\.vue$/,
-          loader: 'vue-loader',
+          loader: require.resolve('vue-loader'),
           options: {},
         },
       ],
