@@ -42,7 +42,7 @@ export function A(props) {
   const style = {
     color: '#3498db',
   };
-  return <a href={this.props.href} style={style}>{props.children}</a>;
+  return <a href={props.href} style={style}>{props.children}</a>;
 }
 
 A.defaultProps = defaultProps;
