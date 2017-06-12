@@ -46,4 +46,4 @@ export function A(props) {
 }
 
 A.defaultProps = defaultProps;
-A.propTypes = { children: PropTypes.node, href: PropTypes.string };
+A.propTypes = { children: PropTypes.node, href: PropTypes.string.isRequired };
