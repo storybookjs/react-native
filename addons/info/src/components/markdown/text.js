@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { baseFonts } from '../theme';
 
 const defaultProps = { children: null };
-const propTypes = { children: PropTypes.node };
+const propTypes = { children: PropTypes.node, href: PropTypes.string };
 
 export function P(props) {
   const style = {
