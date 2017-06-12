@@ -6,6 +6,8 @@ node_modules
 **/demo/**
 docs/public
 
+vue
+
 *.bundle.js
 *.js.map
 
