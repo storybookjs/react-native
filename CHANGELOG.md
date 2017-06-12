@@ -1,3 +1,11 @@
+# 3.1.3
+
+2017-June-10
+
+#### Bug Fixes
+
+-   Fix `storybook-build` manager-head.html bug [#1248](https://github.com/storybooks/storybook/pull/1248)
+
 # 3.1.2
 
 Minor features including a new "events" addon, as well as the usual bugfixes, cleanup, etc.

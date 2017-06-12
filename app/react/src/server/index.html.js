@@ -27,9 +27,7 @@ const managerUrlsFromAssets = assets => {
   };
 };
 
-export default function(data) {
-  const { assets, publicPath, headHtml } = data;
-
+export default function({ assets, publicPath, headHtml }) {
   const managerUrls = managerUrlsFromAssets(assets);
 
   return `
