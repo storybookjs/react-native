@@ -93,3 +93,7 @@ It allows you to configure the display and copy the code with a single click.
 ### [Intl](https://github.com/truffls/storybook-addon-intl)
 
 With this addon you will have an additional panel at the bottom which provides you buttons to switch the locale and directly see the result in the preview.
+
+### [Versions](https://github.com/buildit/storybook-addon-versions)
+
+This addon lets you navigate different versions of static Storybook builds. As such you can see how a component has changed over time.
