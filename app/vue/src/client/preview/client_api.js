@@ -59,6 +59,13 @@ export default class ClientApi {
         throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
       }
 
+      let component = getStory;
+      if (typeof getStory === 'string') {
+        component = { template: getStory };
+      } else if (typeof getStory === 'function') {
+        component = { render: getStory };
+      }
+
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
@@ -66,7 +73,7 @@ export default class ClientApi {
 
       const fn = decorators.reduce(
         (decorated, decorator) => context => decorator(() => decorated(context), context),
-        getStory
+        component
       );
 
       // Add the fully decorated getStory function.
