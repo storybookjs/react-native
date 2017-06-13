@@ -29,9 +29,7 @@ storiesOf('Button')
   // })
   .add('with text', {
     // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
-    components: { 
-      'my-button': MyButton,
-    },
+    components: { MyButton },
     template: '<my-button :handle-click="log">{{ count }}</my-button>',
     data: () => ({
       count: 10,
@@ -39,31 +37,21 @@ storiesOf('Button')
     methods: {
       log() {
         this.count++;
-      },
-    },
+      }
+    }
   })
   .add('with emoji', '<div>😑😐😶🙄</div>')
   .add('with emoji 2', '<div>🤔😳😯😮</div>')
   .add('colorful', {
     render(h) {
-      return h(
-        MyButton,
-        {
-          props: { color: 'pink' },
-        },
-        ['hello world']
-      );
-    },
+      return h(MyButton, { props: { color: 'pink' } }, ['hello world']);
+    }
   })
   .add('rounded', {
-    components: { 
-      'my-button': MyButton,
-    },
+    components: { MyButton },
     template: '<my-button :rounded="true">rounded</my-button>'
   })
   .add('not rounded', {
-    components: { 
-      'my-button': MyButton,
-    },
+    components: { MyButton },
     template: '<my-button :rounded="false">not rounded</my-button>'
   });
