@@ -3,40 +3,46 @@ import Vue from 'vue';
 import { window } from 'global';
 // import { stripIndents } from 'common-tags';
 // import ErrorDisplay from './error_display';
+import MyButton from '../../../../../examples/vue/src/stories/Button.vue';
+import Vuex from 'vuex';
 
 // check whether we're running on node/browser
 const isBrowser = typeof window !== 'undefined';
 
 const logger = console;
-
 // let rootEl = null;
 let previousKind = '';
 let previousStory = '';
 let app;
 
 if (isBrowser) {
-  // rootEl = document.getElementById('root');
-  app = new Vue({
-    el: '#root',
-    data() {
-      return {
-        story: 'test',
-      };
-    },
-    methods: {
-      renderStory(story) {
-        logger.log('renderStory', story);
-        this.story = story;
-      },
-    },
-    created() {
-      logger.log('I got created');
-    },
-    render(h) {
-      logger.log('render!');
-      return h('div', { attrs: { id: 'app' } }, [h(this.story)]);
-    },
-  });
+  app = {
+    _currentStory: null,
+    renderStory(story) {
+      let toRender = null;
+
+      if (typeof story === 'string') {
+         toRender = new Vue({
+          template: `<div id="root">${story}</div>`
+        });
+      }
+      else {
+        toRender = new Vue({
+          render(h) {
+            return h('div', { attrs: { id: 'root' }}, [h(story)]);
+          }
+        })
+      }
+
+      toRender.$mount("#root");
+
+      if (this._currentStory) {
+        this._currentStory.$destroy(true);
+      }
+
+      this._currentStory = toRender;
+    }
+  }
 }
 
 export function renderError(error) {

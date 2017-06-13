@@ -3,32 +3,67 @@ import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
 import MyButton from './Button.vue';
 
-Vue.component('my-button', MyButton);
-Vue.use(Vuex);
+// This does not work. We need to Vue.use or Vue.component is called before mount the root Vue
+// Vue.use(Vuex);
+// Vue.component('my-button', MyButton);
 
 storiesOf('Button')
   // .add('with text', {
+  //   components: {
+  //     'my-button': MyButton,
+  //   },
   //   template: '<my-button :handle-click="log">{{ $store.state.count }}</my-button>',
   //   store: new Vuex.Store({
   //     state: { count: 0 },
+  //     mutations: {
+  //       increment(state) {
+  //         state.count++;
+  //       }
+  //     }
   //   }),
   //   methods: {
   //     log() {
-  //       this.$store.state.count += 1;
+  //       this.$store.commit('increment');
   //     },
   //   },
   // })
-  // .add('with emoji', '<div>😑😐😶🙄</div>')
-  // .add('with emoji 2', '<div>🤔😳😯😮</div>')
-  // .add('colorful', {
-  //   render(h) {
-  //     return h(
-  //       MyButton,
-  //       {
-  //         props: { color: 'pink' },
-  //       },
-  //       ['hello world']
-  //     );
-  //   },
-  // })
-  .add('rounded', '<my-button :rounded="true">rounded</my-button>');
+  .add('with text', {
+    // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
+    components: { 
+      'my-button': MyButton,
+    },
+    template: '<my-button :handle-click="log">{{ count }}</my-button>',
+    data: () => ({
+      count: 10,
+    }),
+    methods: {
+      log() {
+        this.count++;
+      },
+    },
+  })
+  .add('with emoji', '<div>😑😐😶🙄</div>')
+  .add('with emoji 2', '<div>🤔😳😯😮</div>')
+  .add('colorful', {
+    render(h) {
+      return h(
+        MyButton,
+        {
+          props: { color: 'pink' },
+        },
+        ['hello world']
+      );
+    },
+  })
+  .add('rounded', {
+    components: { 
+      'my-button': MyButton,
+    },
+    template: '<my-button :rounded="true">rounded</my-button>'
+  })
+  .add('not rounded', {
+    components: { 
+      'my-button': MyButton,
+    },
+    template: '<my-button :rounded="false">not rounded</my-button>'
+  });
