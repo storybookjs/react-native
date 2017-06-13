@@ -1,4 +1,4 @@
-import { warn, danger } from 'danger';
+import { fail, danger } from 'danger';
 import { flatten, intersection, isEmpty, includes } from 'lodash';
 
 const pkg = require('./package.json'); // eslint-disable-line import/newline-after-import
@@ -11,12 +11,12 @@ const checkRequiredLabels = labels => {
   ]);
 
   if (includes(labels, 'do not merge')) {
-    warn('PR is marked with "do not merge" label.');
+    fail('PR is marked with "do not merge" label.');
   }
 
   const foundLabels = intersection(requiredLabels, labels);
   if (isEmpty(foundLabels)) {
-    warn(`PR is not labeled with one of: ${JSON.stringify(requiredLabels)}`);
+    fail(`PR is not labeled with one of: ${JSON.stringify(requiredLabels)}`);
   }
 };
 
