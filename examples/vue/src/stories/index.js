@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
+
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
 import MyButton from './Button.vue';
 
 // This does not work. We need to Vue.use or Vue.component is called before mount the root Vue
@@ -9,23 +13,24 @@ import MyButton from './Button.vue';
 
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook 
-  .add('rounded markup only', '<my-button :rounded="true">not rounded</my-button>')
-  .add('story as a function template', () => '<my-button :rounded="true">not rounded</my-button>')
-  .add('story as a function renderer', () => (h) => h('div', ['Hello renderer']))
+  .add('rounded markup only', '<my-button :rounded="true">rounded markup only</my-button>')
+  .add('story as a function template', () => '<my-button :rounded="true">story as a function template</my-button>')
+  .add('story as a function renderer', () => (h) => h('div', ['story as a function renderer']))
   .add('story as a function component with template', () => ({
-    template: '<my-button :rounded="true">not rounded</my-button>',
+    template: '<my-button :rounded="true">story as a function component with template</my-button>',
   }))
   .add('story as a function component with renderer', () => ({
-    render: (h) => h('my-button', { props : { rounded: true }}, ['Hello']),
+    render: (h) => h('my-button', { props : { rounded: true }}, ['story as a function component with renderer']),
   }))
   .add('with vuex', {
     components: { MyButton },
-    template: '<my-button :handle-click="log">{{ $store.state.count }}</my-button>',
+    template: '<my-button :handle-click="log">with vuex: {{ $store.state.count }}</my-button>',
     store: new Vuex.Store({
       state: { count: 0 },
       mutations: {
         increment(state) {
           state.count++;
+          action()
         }
       }
     }),
@@ -38,21 +43,25 @@ storiesOf('Button', module)
   .add('with text', {
     // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
     components: { MyButton },
-    template: '<my-button :handle-click="log">{{ count }}</my-button>',
+    template: '<my-button :handle-click="log">with text: {{ count }}</my-button>',
     data: () => ({
       count: 10,
     }),
     methods: {
+      action: action('I love vue'),
       log() {
         this.count++;
+        this.action(this.count);
       }
     }
   })
-  .add('with emoji', '<div>😑😐😶🙄</div>')
-  .add('with emoji 2', '<div>🤔😳😯😮</div>')
+
+storiesOf('Other', module)
+  .add('button with emoji', '<button>😑😐😶🙄</button>')
+  .add('p with emoji', '<p>🤔😳😯😮</p>')
   .add('colorful', {
     render(h) {
-      return h(MyButton, { props: { color: 'pink' } }, ['hello world']);
+      return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
     }
   })
   .add('rounded', {
@@ -61,5 +70,8 @@ storiesOf('Button', module)
   })
   .add('not rounded', {
     components: { MyButton },
-    template: '<my-button :rounded="false">not rounded</my-button>'
+    template: '<my-button :rounded="false" :handle-click="action">not rounded</my-button>',
+    methods: {
+      action: linkTo('Button')
+    }
   })
