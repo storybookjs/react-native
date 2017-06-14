@@ -5,11 +5,10 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
+import { withNotes } from '@storybook/addon-notes/dist/vue';
+
 import MyButton from './Button.vue';
 
-// This does not work. We need to Vue.use or Vue.component is called before mount the root Vue
-// Vue.use(Vuex);
-// Vue.component('my-button', MyButton);
 
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook 
@@ -75,3 +74,41 @@ storiesOf('Other', module)
       action: linkTo('Button')
     }
   })
+
+
+storiesOf('Addon Notes', module)
+  .add('with some emoji', () => withNotes({
+    notes: 'My notes', 
+    component: '<p>🤔😳😯😮</p>'
+  }))
+  .add('with some button', () => withNotes({
+    notes: 'My notes on some button', 
+    component: {
+      components: { MyButton },
+      template: '<my-button :rounded="true">rounded</my-button>'
+    }
+  }))
+  .add('with some color', withNotes({
+    notes: 'Some notes on some colored component', 
+    component: {
+      render(h) {
+        return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
+      }
+    }
+  }))
+  .add('with some text', withNotes({
+    notes: 'My notes on some text', 
+    component: () => ({
+      template: '<div>Text</div>'
+    })
+  }))
+  .add('with some long text', withNotes({
+    notes: 'My notes on some long text', 
+    component: () => '<div>A looooooooonnnnnnnggggggggggggg text</div>'
+  }))
+  .add('with some bold text', withNotes({
+    notes: 'My notes on some bold text', 
+    component: () => ({
+      render: h => h('div', [h('strong', ['A very long text to display'])])
+    })
+  }));
