@@ -28,7 +28,7 @@ To test your project against the current latest version of storybook, you can cl
 
 2.  Link `storybook` and any other required dependencies
 
-        cd packages/react-storybook
+        cd app/react
         npm link
 
         cd <your-project>
