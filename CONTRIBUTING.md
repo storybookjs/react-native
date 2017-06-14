@@ -28,11 +28,11 @@ To test your project against the current latest version of storybook, you can cl
 
 2.  Link `storybook` and any other required dependencies
 
-        cd packages/react-storybook
+        cd app/react
         npm link
 
         cd <your-project>
-        npm link @kadira/storybook
+        npm link @storybook/react
 
         # repeat with whichever other parts of the monorepo you are using.
 
@@ -127,7 +127,7 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ## Development Guide
 
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/packages/storybook-ui) project.
+> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/lib/ui) page.
 
 This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
