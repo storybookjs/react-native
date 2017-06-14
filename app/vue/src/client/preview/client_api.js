@@ -60,10 +60,14 @@ export default class ClientApi {
       }
 
       let component = getStory;
-      if (typeof getStory === 'string') {
-        component = { template: getStory };
-      } else if (typeof getStory === 'function') {
-        component = { render: getStory };
+      if (typeof getStory === 'function') {
+        component = getStory();
+      }
+
+      if (typeof component === 'string') {
+        component = { template: component };
+      } else if (typeof component === 'function') {
+        component = { render: component };
       }
 
       // Wrap the getStory function with each decorator. The first

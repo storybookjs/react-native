@@ -10,7 +10,16 @@ import MyButton from './Button.vue';
 storiesOf('Button')
   // Works if Vue.component is called in the config.js in .storybook 
   .add('rounded markup only', '<my-button :rounded="true">not rounded</my-button>')
+  .add('story as a function template', () => '<my-button :rounded="true">not rounded</my-button>')
+  .add('story as a function renderer', () => (h) => h('div', ['Hello renderer']))
+  .add('story as a function component with template', () => ({
+    template: '<my-button :rounded="true">not rounded</my-button>',
+  }))
+  .add('story as a function component with renderer', () => ({
+    render: (h) => h('my-button', { props : { rounded: true }}),
+  }))
   .add('with vuex', {
+    components: { MyButton },
     template: '<my-button :handle-click="log">{{ $store.state.count }}</my-button>',
     store: new Vuex.Store({
       state: { count: 0 },

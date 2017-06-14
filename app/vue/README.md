@@ -10,6 +10,10 @@
 Storybook for Vue is a UI development environment for your Vue components.
 With it, you can visualize different states of your UI components and develop them interactively.
 
+## Remarques
+
+-   When using custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
+
 > ## WARNING
 >
 > **This package is highly experimental**
