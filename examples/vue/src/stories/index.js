@@ -8,25 +8,24 @@ import MyButton from './Button.vue';
 // Vue.component('my-button', MyButton);
 
 storiesOf('Button')
-  // .add('with text', {
-  //   components: {
-  //     'my-button': MyButton,
-  //   },
-  //   template: '<my-button :handle-click="log">{{ $store.state.count }}</my-button>',
-  //   store: new Vuex.Store({
-  //     state: { count: 0 },
-  //     mutations: {
-  //       increment(state) {
-  //         state.count++;
-  //       }
-  //     }
-  //   }),
-  //   methods: {
-  //     log() {
-  //       this.$store.commit('increment');
-  //     },
-  //   },
-  // })
+  // Works if Vue.component is called in the config.js in .storybook 
+  .add('rounded markup only', '<my-button :rounded="true">not rounded</my-button>')
+  .add('with vuex', {
+    template: '<my-button :handle-click="log">{{ $store.state.count }}</my-button>',
+    store: new Vuex.Store({
+      state: { count: 0 },
+      mutations: {
+        increment(state) {
+          state.count++;
+        }
+      }
+    }),
+    methods: {
+      log() {
+        this.$store.commit('increment');
+      },
+    },
+  })
   .add('with text', {
     // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
     components: { MyButton },
@@ -54,4 +53,4 @@ storiesOf('Button')
   .add('not rounded', {
     components: { MyButton },
     template: '<my-button :rounded="false">not rounded</my-button>'
-  });
+  })
