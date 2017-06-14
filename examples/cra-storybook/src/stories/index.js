@@ -4,6 +4,7 @@ import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withNotes } from '@storybook/addon-notes';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 
@@ -88,3 +89,13 @@ storiesOf('WithEvents', module)
     </WithEvents>
   )
   .add('Logger', () => <Logger emiter={emiter} />);
+
+storiesOf('withNotes', module)
+  .add('with some text', withNotes({ notes: 'Hello guys' })(() => <div>Hello copain</div>))
+  .add('with some emoji', withNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
+  .add(
+    'with a button and some emoji',
+    withNotes({ notes: 'My notes on a button with emojies' })(() =>
+      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    )
+  );

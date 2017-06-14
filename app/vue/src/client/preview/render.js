@@ -82,12 +82,20 @@ export function renderMain(data, storyStore) {
     // ReactDOM.unmountComponentAtNode(rootEl);
   }
 
-  // const context = {
-  //   kind: selectedKind,
-  //   story: selectedStory,
-  // };
+  const context = {
+    kind: selectedKind,
+    story: selectedStory,
+  };
 
-  // const element = story(context);
+  const element = story(context);
+
+
+  let component = element;
+  if (typeof component === 'string') {
+    component = { template: component };
+  } else if (typeof component === 'function') {
+    component = { render: component };
+  }
 
   // if (!element) {
   //   const error = {
@@ -112,7 +120,7 @@ export function renderMain(data, storyStore) {
   // }
 
   // ReactDOM.render(element, rootEl);
-  app.renderStory(story);
+  app.renderStory(component);
   return null;
 }
 

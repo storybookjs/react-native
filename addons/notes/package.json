@@ -4,8 +4,8 @@
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
-    "react",
-    "storybook"
+    "storybook",
+    "notes"
   ],
   "license": "MIT",
   "main": "dist/index.js",
@@ -20,19 +20,6 @@
   },
   "dependencies": {
     "@storybook/addons": "^3.1.2",
-    "babel-runtime": "^6.23.0",
-    "prop-types": "^15.5.10"
-  },
-  "devDependencies": {
-    "git-url-parse": "^6.2.2",
-    "react": "^15.5.4",
-    "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4"
-  },
-  "peerDependencies": {
-    "react": "*"
-  },
-  "optionalDependencies": {
-    "@types/react": "^15.0.24"
+    "babel-runtime": "^6.23.0"
   }
 }
