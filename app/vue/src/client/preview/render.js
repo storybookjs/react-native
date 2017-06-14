@@ -11,27 +11,6 @@ const logger = console;
 // let rootEl = null;
 let previousKind = '';
 let previousStory = '';
-let app;
-
-if (isBrowser) {
-  app = new Vue({
-    el: '#root',
-    data() {
-      return {
-        // initial view
-        story: { template: '<div></div>' }
-      };
-    },
-    methods: {
-      renderStory(story) {
-        this.story = story;
-      },
-    },
-    render(h) {
-      return h('div', { attrs: { id: 'root' } }, [h(this.story)]);
-    }
-  });
-}
 
 export function renderError(error) {
   const properError = new Error(error.title);
@@ -111,7 +90,6 @@ export function renderMain(data, storyStore) {
   //   return renderError(error);
   // }
 
-  // ReactDOM.render(element, rootEl);
   element.$mount('#root');
   return null;
 }

@@ -77,19 +77,9 @@ export default class ClientApi {
           render(h) {
             return h('div', {attrs: { id: 'root' } }, [h(parseStory(context))]);
           },
-          data: {
-            ...component.data,
-            __state: null
-          },
-          methods: {
-            ...component.methods,
-            update() {
-              finalComponent.$forceUpdate();
-            }
-          }
         });
 
-        return finalComponent
+        return finalComponent;
       }
 
       // Wrap the getStory function with each decorator. The first

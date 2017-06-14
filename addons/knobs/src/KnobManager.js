@@ -58,8 +58,10 @@ export default class KnobManager {
         // Update the related knob and it's value.
         const knobOptions = knobStore.get(name);
         knobOptions.value = value;
+
         knobStore.markAllUnused();
-        initialContent.update();
+
+        initialContent.$forceUpdate();
       });
 
       return initialContent;
