@@ -7,7 +7,7 @@ import MyButton from './Button.vue';
 // Vue.use(Vuex);
 // Vue.component('my-button', MyButton);
 
-storiesOf('Button')
+storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook 
   .add('rounded markup only', '<my-button :rounded="true">not rounded</my-button>')
   .add('story as a function template', () => '<my-button :rounded="true">not rounded</my-button>')
