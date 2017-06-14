@@ -1,3 +1,4 @@
+import React from 'react';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
@@ -5,15 +6,13 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
+import { withNotes } from '@storybook/addon-notes';
+
 import MyButton from './Button.vue';
 
-// This does not work. We need to Vue.use or Vue.component is called before mount the root Vue
-// Vue.use(Vuex);
-// Vue.component('my-button', MyButton);
 
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook 
-  .add('rounded markup only', '<my-button :rounded="true">rounded markup only</my-button>')
   .add('story as a function template', () => '<my-button :rounded="true">story as a function template</my-button>')
   .add('story as a function renderer', () => (h) => h('div', ['story as a function renderer']))
   .add('story as a function component with template', () => ({
@@ -22,7 +21,7 @@ storiesOf('Button', module)
   .add('story as a function component with renderer', () => ({
     render: (h) => h('my-button', { props : { rounded: true }}, ['story as a function component with renderer']),
   }))
-  .add('with vuex', {
+  .add('with vuex',() => ({
     components: { MyButton },
     template: '<my-button :handle-click="log">with vuex: {{ $store.state.count }}</my-button>',
     store: new Vuex.Store({
@@ -39,8 +38,8 @@ storiesOf('Button', module)
         this.$store.commit('increment');
       },
     },
-  })
-  .add('with text', {
+  }))
+  .add('with text', () => ({
     // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
     components: { MyButton },
     template: '<my-button :handle-click="log">with text: {{ count }}</my-button>',
@@ -54,24 +53,47 @@ storiesOf('Button', module)
         this.action(this.count);
       }
     }
-  })
+  }));
 
 storiesOf('Other', module)
-  .add('button with emoji', '<button>😑😐😶🙄</button>')
-  .add('p with emoji', '<p>🤔😳😯😮</p>')
-  .add('colorful', {
+  .add('button with emoji', () => '<button>😑😐😶🙄</button>')
+  .add('p with emoji', () => '<p>🤔😳😯😮</p>')
+  .add('colorful', () => ({
     render(h) {
       return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
     }
-  })
-  .add('rounded', {
+  }))
+  .add('rounded', () => ({
     components: { MyButton },
     template: '<my-button :rounded="true">rounded</my-button>'
-  })
-  .add('not rounded', {
+  }))
+  .add('not rounded', () => ({
     components: { MyButton },
     template: '<my-button :rounded="false" :handle-click="action">not rounded</my-button>',
     methods: {
       action: linkTo('Button')
     }
-  })
+  }))
+
+
+storiesOf('Addon Notes', module)
+  .add('with some emoji', withNotes({notes: 'My notes on emojies'})(() => '<p>🤔😳😯😮</p>'))
+  .add('with some button', withNotes({ notes: 'My notes on some button' })(() => ({
+    components: { MyButton },
+    template: '<my-button :rounded="true">rounded</my-button>'
+  })))
+  .add('with some color', withNotes({ notes: 'Some notes on some colored component' })(() => ({
+    render(h) {
+      return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
+    }
+  })))
+  .add('with some text', withNotes({ notes: 'My notes on some text' })(() => ({
+      template: '<div>Text</div>'
+    })
+  ))
+  .add('with some long text', withNotes({ notes: 'My notes on some long text' })(
+    () => '<div>A looooooooonnnnnnnggggggggggggg text</div>'
+  ))
+  .add('with some bold text', withNotes({ notes: 'My notes on some bold text' })(() => ({
+    render: h => h('div', [h('strong', ['A very long text to display'])])
+  })));
