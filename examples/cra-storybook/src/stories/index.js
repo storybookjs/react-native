@@ -4,7 +4,7 @@ import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withNotes } from '@storybook/addon-notes';
+import { withNotes, WithNotes } from '@storybook/addon-notes';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 
@@ -98,4 +98,9 @@ storiesOf('withNotes', module)
     withNotes({ notes: 'My notes on a button with emojies' })(() =>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     )
+  )
+  .add('with old API', () =>
+    <WithNotes notes="Hello">
+      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    </WithNotes>
   );
