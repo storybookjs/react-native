@@ -4,9 +4,9 @@ import { WithNotes as ReactWithNotes } from './react';
 
 export const withNotes = ({ notes }) => {
   const channel = addons.getChannel();
-  // send the notes to the channel.
 
   return getStory => () => {
+    // send the notes to the channel before the story is rendered
     channel.emit('storybook/notes/add_notes', notes);
     return getStory();
   };
