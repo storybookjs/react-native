@@ -17,7 +17,7 @@ script:
 - npm run lint
 - npm run test -- --coverage
 - npm run coverage
-- npm run danger
+- ([ -z "$DANGER_GITHUB_API_TOKEN" ] && echo "DANGER_GITHUB_API_TOKEN not set") || npm run danger
 git:
   depth: 1
 env:
