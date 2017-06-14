@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-
+import Vue from 'vue';
 export default class ClientApi {
   constructor({ channel, storyStore }) {
     // channel can be null when running in node
@@ -57,6 +57,39 @@ export default class ClientApi {
 
       if (this._storyStore.hasStory(kind, storyName)) {
         throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
+      } 
+
+      const parseStory = (context) => {
+        const element = getStory(context);
+        let component = element;
+        if (typeof component === 'string') {
+          component = { template: component };
+        } else if (typeof component === 'function') {
+          component = { render: component };
+        }
+
+        return component;
+      }
+
+      const newGetStory = (context) => {
+        const component = parseStory(context);
+        let finalComponent = new Vue({
+          render(h) {
+            return h('div', {attrs: { id: 'root' } }, [h(parseStory(context))]);
+          },
+          data: {
+            ...component.data,
+            __state: null
+          },
+          methods: {
+            ...component.methods,
+            update() {
+              finalComponent.$forceUpdate();
+            }
+          }
+        });
+
+        return finalComponent
       }
 
       // Wrap the getStory function with each decorator. The first
@@ -66,7 +99,7 @@ export default class ClientApi {
 
       const fn = decorators.reduce(
         (decorated, decorator) => context => decorator(() => decorated(context), context),
-        getStory
+        newGetStory
       );
 
       // Add the fully decorated getStory function.

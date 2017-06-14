@@ -1,4 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
+/* global window */
 
 import React from 'react';
 import deepEqual from 'deep-equal';
@@ -50,6 +51,20 @@ export default class KnobManager {
     knobStore.markAllUnused();
     const initialContent = storyFn(context);
     const props = { context, storyFn, channel, knobStore, initialContent };
+
+    if (window.STORYBOOK_ENV === 'vue') {
+      channel.on('addon:knobs:knobChange', change => {
+        const { name, value } = change;
+        // Update the related knob and it's value.
+        const knobOptions = knobStore.get(name);
+        knobOptions.value = value;
+        knobStore.markAllUnused();
+        initialContent.update();
+      });
+
+      return initialContent;
+    }
+
     return <WrapStory {...props} />;
   }
 

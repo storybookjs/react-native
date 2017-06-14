@@ -9,6 +9,7 @@
     "@storybook/addon-links": "^3.0.0",
     "@storybook/addons": "^3.0.0",
     "@storybook/addon-notes": "^3.0.0",
+    "@storybook/addon-knobs": "^3.0.0",
     "vue-hot-reload-api": "^2.1.0",
     "vue-style-loader": "^3.0.1",
     "vue-loader": "^12.2.1"

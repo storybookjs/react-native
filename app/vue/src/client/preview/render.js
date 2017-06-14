@@ -89,14 +89,6 @@ export function renderMain(data, storyStore) {
 
   const element = story(context);
 
-
-  let component = element;
-  if (typeof component === 'string') {
-    component = { template: component };
-  } else if (typeof component === 'function') {
-    component = { render: component };
-  }
-
   // if (!element) {
   //   const error = {
   //     title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
@@ -120,7 +112,7 @@ export function renderMain(data, storyStore) {
   // }
 
   // ReactDOM.render(element, rootEl);
-  app.renderStory(component);
+  element.$mount('#root');
   return null;
 }
 
