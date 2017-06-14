@@ -16,7 +16,7 @@ storiesOf('Button')
     template: '<my-button :rounded="true">not rounded</my-button>',
   }))
   .add('story as a function component with renderer', () => ({
-    render: (h) => h('my-button', { props : { rounded: true }}),
+    render: (h) => h('my-button', { props : { rounded: true }}, ['Hello']),
   }))
   .add('with vuex', {
     components: { MyButton },
