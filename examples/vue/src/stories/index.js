@@ -101,11 +101,10 @@ storiesOf('Addon Notes', module)
 
 
   storiesOf('Addon Knobs', module)
-    .addDecorator(withKnobs)
-    .add('With some name', () => {
+    .add('With some name', withKnobs()(() => {
       const name = text('Name', 'Arunoda Susiripala');
       const age = number('Age', 89);
 
       const content = `I am ${name} and I'm ${age} years old.`;
-      return `<div>${content}</div>`;
-    });
+      return `<div>${content}</div>`
+    }));

@@ -1,6 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-/* global window */
-
+import window from 'global';
 import React from 'react';
 import deepEqual from 'deep-equal';
 import WrapStory from './components/WrapStory';
@@ -12,7 +11,23 @@ const PANEL_UPDATE_INTERVAL = 400;
 export default class KnobManager {
   constructor() {
     this.knobStore = null;
-    this.knobStoreMap = {};
+    this.knobStoreMap = {
+      length: 0,
+    };
+  }
+
+  initStore(channel) {
+    this.channel = channel;
+    const key = this.knobStoreMap.length + 1;
+    this.knobStoreMap.length = this.knobStoreMap.length + 1;
+    let knobStore = this.knobStoreMap[key];
+
+    if (!knobStore) {
+      knobStore = this.knobStoreMap[key] = new KnobStore(); // eslint-disable-line
+    }
+
+    this.knobStore = knobStore;
+    knobStore.markAllUnused();
   }
 
   knob(name, options) {

@@ -71,17 +71,6 @@ export default class ClientApi {
         return component;
       }
 
-      const newGetStory = (context) => {
-        const component = parseStory(context);
-        let finalComponent = new Vue({
-          render(h) {
-            return h('div', {attrs: { id: 'root' } }, [h(parseStory(context))]);
-          },
-        });
-
-        return finalComponent;
-      }
-
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
@@ -89,11 +78,21 @@ export default class ClientApi {
 
       const fn = decorators.reduce(
         (decorated, decorator) => context => decorator(() => decorated(context), context),
-        newGetStory
+        getStory
       );
 
+
+      const fnR = (context) => {
+        return new Vue({
+          render(h) {
+            const story = parseStory(fn(context));
+            return h('div', {attrs: { id: 'root' } }, [h(story)]);
+          },
+        });
+      }
+
       // Add the fully decorated getStory function.
-      this._storyStore.addStory(kind, storyName, fn);
+      this._storyStore.addStory(kind, storyName,fnR);
       return api;
     };
 

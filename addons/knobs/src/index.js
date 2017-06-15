@@ -1,3 +1,4 @@
+// import { window } from 'global';
 import addons from '@storybook/addons';
 import KnobManager from './KnobManager';
 
@@ -55,16 +56,36 @@ export function date(name, value = new Date()) {
   return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
-export function withKnobs(storyFn, context) {
+// export function withKnobs(storyFn, context) {
+//   const channel = addons.getChannel();
+//   return manager.wrapStory(channel, storyFn, context);
+
+// export function withKnobsOptions(options = {}) {
+//   return (...args) => {
+//     const channel = addons.getChannel();
+//     channel.emit('addon:knobs:setOptions', options);
+
+//     return withKnobs(...args);
+//   };
+// }
+
+export function withKnobs() {
   const channel = addons.getChannel();
-  return manager.wrapStory(channel, storyFn, context);
-}
+  manager.initStore(channel);
 
-export function withKnobsOptions(options = {}) {
-  return (...args) => {
-    const channel = addons.getChannel();
-    channel.emit('addon:knobs:setOptions', options);
-
-    return withKnobs(...args);
-  };
+  return storyFn => context => ({
+    render(h) {
+      const story = storyFn(context);
+      return h(typeof story === 'string' ? { template: story } : story);
+    },
+    created() {
+      channel.on('addon:knobs:knobChange', change => {
+        const { name, value } = change;
+        // Update the related knob and it's value.
+        const knobOptions = manager.knobStore.get(name);
+        knobOptions.value = value;
+        this.$forceUpdate();
+      });
+    },
+  });
 }
