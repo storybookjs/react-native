@@ -45,6 +45,6 @@ BooleanType.propTypes = {
 };
 
 BooleanType.serialize = value => String(value);
-BooleanType.deserialize = value => (typeof value === 'string' ? value === 'true' : false);
+BooleanType.deserialize = value => value === 'true';
 
 export default BooleanType;
