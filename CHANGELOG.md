@@ -1,3 +1,21 @@
+# 3.1.4
+
+2017-June-15
+
+#### Features
+
+-   IMPROVE design of addon-events [#1249](https://github.com/storybooks/storybook/pull/1249)
+-   Add a `shallowSnapshot` option for storyshots `test` functions [#1232](https://github.com/storybooks/storybook/pull/1232)
+
+#### Bug Fixes
+
+-   Fix app entry bug in RN gestorybook [#1280](https://github.com/storybooks/storybook/pull/1280)
+-   fix(addons/info): Cannot read property 'props' of undefined [#1258](https://github.com/storybooks/storybook/pull/1258)
+
+#### Documentation
+
+-   Add versions plugin to docs [#1269](https://github.com/storybooks/storybook/pull/1269)
+
 # 3.1.3
 
 2017-June-10
