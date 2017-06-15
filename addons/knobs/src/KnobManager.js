@@ -1,8 +1,8 @@
 /* eslint no-underscore-dangle: 0 */
-import window from 'global';
-import React from 'react';
+// import window from 'global';
+// import React from 'react';
 import deepEqual from 'deep-equal';
-import WrapStory from './components/WrapStory';
+// import WrapStory from './components/WrapStory';
 import KnobStore from './KnobStore';
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
@@ -53,37 +53,37 @@ export default class KnobManager {
     return knobStore.get(name).value;
   }
 
-  wrapStory(channel, storyFn, context) {
-    this.channel = channel;
-    const key = `${context.kind}:::${context.story}`;
-    let knobStore = this.knobStoreMap[key];
+  // wrapStory(channel, storyFn, context) {
+  //   this.channel = channel;
+  //   const key = `${context.kind}:::${context.story}`;
+  //   let knobStore = this.knobStoreMap[key];
 
-    if (!knobStore) {
-      knobStore = this.knobStoreMap[key] = new KnobStore(); // eslint-disable-line
-    }
+  //   if (!knobStore) {
+  //     knobStore = this.knobStoreMap[key] = new KnobStore(); // eslint-disable-line
+  //   }
 
-    this.knobStore = knobStore;
-    knobStore.markAllUnused();
-    const initialContent = storyFn(context);
-    const props = { context, storyFn, channel, knobStore, initialContent };
+  //   this.knobStore = knobStore;
+  //   knobStore.markAllUnused();
+  //   const initialContent = storyFn(context);
+  //   const props = { context, storyFn, channel, knobStore, initialContent };
 
-    if (window.STORYBOOK_ENV === 'vue') {
-      channel.on('addon:knobs:knobChange', change => {
-        const { name, value } = change;
-        // Update the related knob and it's value.
-        const knobOptions = knobStore.get(name);
-        knobOptions.value = value;
+  //   if (window.STORYBOOK_ENV === 'vue') {
+  //     channel.on('addon:knobs:knobChange', change => {
+  //       const { name, value } = change;
+  //       // Update the related knob and it's value.
+  //       const knobOptions = knobStore.get(name);
+  //       knobOptions.value = value;
 
-        knobStore.markAllUnused();
+  //       knobStore.markAllUnused();
 
-        initialContent.$forceUpdate();
-      });
+  //       initialContent.$forceUpdate();
+  //     });
 
-      return initialContent;
-    }
+  //     return initialContent;
+  //   }
 
-    return <WrapStory {...props} />;
-  }
+  //   return <WrapStory {...props} />;
+  // }
 
   _mayCallChannel() {
     // Re rendering of the story may cause changes to the knobStore. Some new knobs maybe added and
