@@ -53,38 +53,6 @@ export default class KnobManager {
     return knobStore.get(name).value;
   }
 
-  // wrapStory(channel, storyFn, context) {
-  //   this.channel = channel;
-  //   const key = `${context.kind}:::${context.story}`;
-  //   let knobStore = this.knobStoreMap[key];
-
-  //   if (!knobStore) {
-  //     knobStore = this.knobStoreMap[key] = new KnobStore(); // eslint-disable-line
-  //   }
-
-  //   this.knobStore = knobStore;
-  //   knobStore.markAllUnused();
-  //   const initialContent = storyFn(context);
-  //   const props = { context, storyFn, channel, knobStore, initialContent };
-
-  //   if (window.STORYBOOK_ENV === 'vue') {
-  //     channel.on('addon:knobs:knobChange', change => {
-  //       const { name, value } = change;
-  //       // Update the related knob and it's value.
-  //       const knobOptions = knobStore.get(name);
-  //       knobOptions.value = value;
-
-  //       knobStore.markAllUnused();
-
-  //       initialContent.$forceUpdate();
-  //     });
-
-  //     return initialContent;
-  //   }
-
-  //   return <WrapStory {...props} />;
-  // }
-
   _mayCallChannel() {
     // Re rendering of the story may cause changes to the knobStore. Some new knobs maybe added and
     // Some knobs may go unused. So we need to update the panel accordingly. For example remove the

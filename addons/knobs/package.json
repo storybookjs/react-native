@@ -26,7 +26,8 @@
     "prop-types": "^15.5.8",
     "react-color": "^2.11.4",
     "react-datetime": "^2.8.10",
-    "react-textarea-autosize": "^4.3.0"
+    "react-textarea-autosize": "^4.3.0",
+    "util-deprecate": "1.0.2"
   },
   "devDependencies": {
     "@types/node": "^7.0.12",

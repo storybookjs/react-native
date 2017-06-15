@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { withNotes } from '@storybook/addon-notes';
+import { addonNotes } from '@storybook/addon-notes';
 
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { addonKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import MyButton from './Button.vue';
 
@@ -78,30 +78,30 @@ storiesOf('Other', module)
 
 
 storiesOf('Addon Notes', module)
-  .add('with some emoji', withNotes({notes: 'My notes on emojies'})(() => '<p>🤔😳😯😮</p>'))
-  .add('with some button', withNotes({ notes: 'My notes on some button' })(() => ({
+  .add('with some emoji', addonNotes({notes: 'My notes on emojies'})(() => '<p>🤔😳😯😮</p>'))
+  .add('with some button', addonNotes({ notes: 'My notes on some button' })(() => ({
     components: { MyButton },
     template: '<my-button :rounded="true">rounded</my-button>'
   })))
-  .add('with some color', withNotes({ notes: 'Some notes on some colored component' })(() => ({
+  .add('with some color', addonNotes({ notes: 'Some notes on some colored component' })(() => ({
     render(h) {
       return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
     }
   })))
-  .add('with some text', withNotes({ notes: 'My notes on some text' })(() => ({
+  .add('with some text', addonNotes({ notes: 'My notes on some text' })(() => ({
       template: '<div>Text</div>'
     })
   ))
-  .add('with some long text', withNotes({ notes: 'My notes on some long text' })(
+  .add('with some long text', addonNotes({ notes: 'My notes on some long text' })(
     () => '<div>A looooooooonnnnnnnggggggggggggg text</div>'
   ))
-  .add('with some bold text', withNotes({ notes: 'My notes on some bold text' })(() => ({
+  .add('with some bold text', addonNotes({ notes: 'My notes on some bold text' })(() => ({
     render: h => h('div', [h('strong', ['A very long text to display'])])
   })));
 
 
   storiesOf('Addon Knobs', module)
-    .add('With some name', withKnobs()(() => {
+    .add('With some name', addonKnobs()(() => {
       const name = text('Name', 'Arunoda Susiripala');
       const age = number('Age', 89);
 

@@ -11,6 +11,7 @@ const logger = console;
 // let rootEl = null;
 let previousKind = '';
 let previousStory = '';
+let app = null;
 
 export function renderError(error) {
   const properError = new Error(error.title);
@@ -90,8 +91,15 @@ export function renderMain(data, storyStore) {
   //   return renderError(error);
   // }
 
-  element.$mount('#root');
-  return null;
+  if (app) app.$destroy();
+
+  app = new Vue({
+    el: '#root',
+    render(h) {
+      const story = typeof element === 'string' ? { template: element } : element;
+      return h('div', {attrs: { id: 'root' } }, [h(story)]);
+    },
+  });
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {

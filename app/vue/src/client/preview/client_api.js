@@ -1,5 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 import Vue from 'vue';
+
 export default class ClientApi {
   constructor({ channel, storyStore }) {
     // channel can be null when running in node
@@ -59,40 +60,18 @@ export default class ClientApi {
         throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
       } 
 
-      const parseStory = (context) => {
-        const element = getStory(context);
-        let component = element;
-        if (typeof component === 'string') {
-          component = { template: component };
-        } else if (typeof component === 'function') {
-          component = { render: component };
-        }
-
-        return component;
-      }
-
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
       // wrap the first decorator and so on.
       const decorators = [...localDecorators, ...this._globalDecorators];
 
-      const fn = decorators.reduce(
+      const getDecoratedStory = decorators.reduce(
         (decorated, decorator) => context => decorator(() => decorated(context), context),
         getStory
       );
 
-
-      const fnR = (context) => {
-        return new Vue({
-          render(h) {
-            const story = parseStory(fn(context));
-            return h('div', {attrs: { id: 'root' } }, [h(story)]);
-          },
-        });
-      }
-
       // Add the fully decorated getStory function.
-      this._storyStore.addStory(kind, storyName,fnR);
+      this._storyStore.addStory(kind, storyName, getDecoratedStory);
       return api;
     };
 

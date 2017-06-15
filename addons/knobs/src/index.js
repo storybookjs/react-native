@@ -1,6 +1,9 @@
-// import { window } from 'global';
+import { window } from 'global';
+import deprecate from 'util-deprecate';
 import addons from '@storybook/addons';
 import KnobManager from './KnobManager';
+import { vueHandler } from './vue';
+import { reactHandler } from './react';
 
 const manager = new KnobManager();
 
@@ -56,36 +59,54 @@ export function date(name, value = new Date()) {
   return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
-// export function withKnobs(storyFn, context) {
-//   const channel = addons.getChannel();
-//   return manager.wrapStory(channel, storyFn, context);
+function oldKnobs(storyFn, context) {
+  const channel = addons.getChannel();
+  manager.initStore(channel);
+  return reactHandler(channel, manager.knobStore)(storyFn)(context);
+}
 
-// export function withKnobsOptions(options = {}) {
-//   return (...args) => {
-//     const channel = addons.getChannel();
-//     channel.emit('addon:knobs:setOptions', options);
+function oldKnobsWithOptions(options = {}) {
+  return (...args) => {
+    const channel = addons.getChannel();
+    channel.emit('addon:knobs:setOptions', options);
 
-//     return withKnobs(...args);
-//   };
-// }
+    return oldKnobs(...args);
+  };
+}
 
-export function withKnobs() {
+Object.defineProperty(exports, 'withKnobs', {
+  configurable: true,
+  enumerable: true,
+  get: deprecate(
+    () => oldKnobs,
+    '@storybook/addon-knobs withKnobs decorator is deprecated, use addonKnobs() instead. See https://github.com/storybooks/storybook/tree/master/addons/knobs'
+  ),
+});
+
+Object.defineProperty(exports, 'withKnobsOptions', {
+  configurable: true,
+  enumerable: true,
+  get: deprecate(
+    () => oldKnobsWithOptions,
+    '@storybook/addon-knobs withKnobsOptions decorator is deprecated, use addonKnobs() instead. See https://github.com/storybooks/storybook/tree/master/addons/knobs'
+  ),
+});
+
+export function addonKnobs(options) {
   const channel = addons.getChannel();
   manager.initStore(channel);
 
-  return storyFn => context => ({
-    render(h) {
-      const story = storyFn(context);
-      return h(typeof story === 'string' ? { template: story } : story);
-    },
-    created() {
-      channel.on('addon:knobs:knobChange', change => {
-        const { name, value } = change;
-        // Update the related knob and it's value.
-        const knobOptions = manager.knobStore.get(name);
-        knobOptions.value = value;
-        this.$forceUpdate();
-      });
-    },
-  });
+  if (options) channel.emit('addon:knobs:setOptions', options);
+
+  switch (window.STORYBOOK_ENV) {
+    case 'vue': {
+      return vueHandler(channel, manager.knobStore);
+    }
+    case 'react': {
+      return reactHandler(channel, manager.knobStore);
+    }
+    default: {
+      return reactHandler(channel, manager.knobStore);
+    }
+  }
 }
