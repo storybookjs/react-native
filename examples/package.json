@@ -4,7 +4,7 @@
   "description": "A set of examples of how to use storybook, also used for regression testing",
   "main": "index.js",
   "scripts": {
-    "test:automated-cra-storybook": "node scripts/automated-cra-storybook.js"
+    "test:automated-cra-getstorybook": "node scripts/automated-cra-getstorybook.js"
   },
   "license": "ISC",
   "dependencies": {

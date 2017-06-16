@@ -6,7 +6,7 @@
 const { exec } = require('child-process-promise');
 const rimraf = require('rimraf');
 
-const targetFolder = 'automated-cra-storybook';
+const targetFolder = 'automated-cra-getstorybook';
 
 const cleanDir = () => new Promise(resolve => rimraf(`./${targetFolder}`, resolve));
 
