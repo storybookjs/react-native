@@ -5,7 +5,8 @@ import KnobManager from './KnobManager';
 import { vueHandler } from './vue';
 import { reactHandler } from './react';
 
-const manager = new KnobManager();
+const channel = addons.getChannel();
+const manager = new KnobManager(channel);
 
 export function knob(name, options) {
   return manager.knob(name, options);
@@ -60,14 +61,11 @@ export function date(name, value = new Date()) {
 }
 
 function oldKnobs(storyFn, context) {
-  const channel = addons.getChannel();
-  manager.initStore(channel);
   return reactHandler(channel, manager.knobStore)(storyFn)(context);
 }
 
 function oldKnobsWithOptions(options = {}) {
   return (...args) => {
-    const channel = addons.getChannel();
     channel.emit('addon:knobs:setOptions', options);
 
     return oldKnobs(...args);
@@ -93,9 +91,6 @@ Object.defineProperty(exports, 'withKnobsOptions', {
 });
 
 export function addonKnobs(options) {
-  const channel = addons.getChannel();
-  manager.initStore(channel);
-
   if (options) channel.emit('addon:knobs:setOptions', options);
 
   switch (window.STORYBOOK_ENV) {

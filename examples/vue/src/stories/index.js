@@ -119,4 +119,13 @@ storiesOf('Addon Knobs', module)
     return {
       template: `<div>${content}</div>`
     };
-  }));
+  }))
+  .add('With some different name', addonKnobs()(() => {
+    const name = text('Name', 'Story Teller');
+    const age = number('Age', 120);
+
+    const content = `I am a ${name} and I'm ${age} years old.`;
+    return {
+      template: `<div>${content}</div>`
+    };
+  }));;

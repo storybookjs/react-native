@@ -130,8 +130,8 @@ storiesOf('addonNotes', module)
 storiesOf('Addon Knobs deprecated Decorator', module)
   .addDecorator(withKnobs) // test deprecated
   .add('with dynamic variables deprecated', () => {
-    const name = text('Name', 'Arunoda Susiripala');
-    const age = number('Age', 89);
+    const name = text('Name', 'Story Teller');
+    const age = number('Age', 120);
 
     const content = `I am ${name} and I'm ${age} years old.`;
     return <div>{content}</div>;

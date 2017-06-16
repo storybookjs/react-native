@@ -60,6 +60,7 @@ export default class Panel extends React.Component {
 
     this.stopListeningOnStory = this.props.api.onStory(() => {
       this.setState({ knobs: [] });
+      this.props.channel.emit('addon:knobs:reset');
     });
   }
 
