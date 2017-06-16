@@ -38,7 +38,7 @@ Since this config file stays in the Storybook directory, you need to set the inc
 
 You also need to install the loaders (style, css, and sass) used in above config manually.
 
-> Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/configurations/default-config) other than loading JS files with the Babel loader.
+> Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/configurations/default-config/) other than loading JS files with the Babel loader.
 
 ### Supported Webpack Options
 

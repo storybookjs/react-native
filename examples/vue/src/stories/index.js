@@ -1,4 +1,3 @@
-import React from 'react';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
@@ -21,7 +20,7 @@ storiesOf('Button', module)
   .add('story as a function component with renderer', () => ({
     render: (h) => h('my-button', { props : { rounded: true }}, ['story as a function component with renderer']),
   }))
-  .add('with vuex',() => ({
+  .add('with vuex', () => ({
     components: { MyButton },
     template: '<my-button :handle-click="log">with vuex: {{ $store.state.count }}</my-button>',
     store: new Vuex.Store({

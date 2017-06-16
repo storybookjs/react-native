@@ -42,7 +42,7 @@ Storyshots is a way to automaticly jest-snapshot all your stories. [More info he
 
 You need to install these addons directly from NPM in order to use them.
 
-### [README](https://github.com/tuchk4/storybook-readme)
+### [Readme](https://github.com/tuchk4/storybook-readme)
 
 With this addon, you can add docs in markdown format for each story.
 It very useful because most projects and components already have README.md files.

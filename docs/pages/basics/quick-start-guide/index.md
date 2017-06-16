@@ -8,7 +8,6 @@ Follow these steps to get started with Storybook.
 
 ```sh
 npm i -g @storybook/cli
-cd my-react-app
 getstorybook
 ```
 
@@ -22,4 +21,4 @@ Then you can access your storybook from the browser.
 
 * * *
 
-To learn more about what `getstorybook` command does, have a look at our [Slow Start Guide](/basics/slow-start-guide).
+To learn more about what `getstorybook` command does, have a look at our [Start Guide for React](/basics/slow-start-react) or [Start Guide for Vue](/basics/slow-start-vue).
