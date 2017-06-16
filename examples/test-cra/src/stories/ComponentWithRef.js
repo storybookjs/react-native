@@ -5,7 +5,7 @@ class ComponentWithRef extends Component {
     // Read the scroll width off the DOM element
     this.scrollWidth = this.ref.scrollWidth;
   }
-  scrollWidth: 0;
+  scrollWidth = 0;
   render() {
     return <div ref={r => (this.ref = r)} />;
   }

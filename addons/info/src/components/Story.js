@@ -42,6 +42,7 @@ const stylesheet = {
     right: 0,
     padding: '0 40px',
     overflow: 'auto',
+    zIndex: 99999,
   },
   children: {
     position: 'relative',
