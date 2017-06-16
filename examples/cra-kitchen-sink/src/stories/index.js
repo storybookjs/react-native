@@ -9,8 +9,9 @@ import { WithNotes } from '@storybook/addon-notes';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 
-import Button from './Button';
-import Welcome from './Welcome';
+import Button from '@storybook/components/dist/demo/Button';
+import Welcome from '@storybook/components/dist/demo/Welcome';
+
 import App from '../App';
 import Logger from './Logger';
 
