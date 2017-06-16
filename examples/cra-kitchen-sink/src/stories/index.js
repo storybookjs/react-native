@@ -7,7 +7,6 @@ import { addonNotes, WithNotes } from '@storybook/addon-notes';
 import { withKnobs, addonKnobs, text, number } from '@storybook/addon-knobs';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 
 import Button from '@storybook/components/dist/demo/Button';

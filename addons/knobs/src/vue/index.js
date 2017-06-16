@@ -1,7 +1,6 @@
 export const vueHandler = (channel, knobStore) => getStory => context => ({
   render(h) {
-    const story = getStory(context);
-    return h(typeof story === 'string' ? { template: story } : story);
+    return h(getStory(context));
   },
 
   methods: {
@@ -31,10 +30,8 @@ export const vueHandler = (channel, knobStore) => getStory => context => ({
   },
 
   beforeDestroy(){
-    console.log('beforeDestroy');
     channel.removeListener('addon:knobs:reset', this.onKnobReset);
     channel.removeListener('addon:knobs:knobChange', this.onKnobChange);
     knobStore.unsubscribe(this.setPaneKnobs);
-    this.onKnobReset();
   }
 });

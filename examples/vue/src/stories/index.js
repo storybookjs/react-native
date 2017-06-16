@@ -14,7 +14,9 @@ import MyButton from './Button.vue';
 
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook 
-  .add('story as a function template', () => '<my-button :rounded="true">story as a function template</my-button>')
+  .add('story as a function template', () => ({
+    template: '<my-button :rounded="true">story as a function template</my-button>'
+  }))
   .add('story as a function renderer', () => (h) => h('div', ['story as a function renderer']))
   .add('story as a function component with template', () => ({
     template: '<my-button :rounded="true">story as a function component with template</my-button>',
@@ -57,8 +59,12 @@ storiesOf('Button', module)
   }));
 
 storiesOf('Other', module)
-  .add('button with emoji', () => '<button>😑😐😶🙄</button>')
-  .add('p with emoji', () => '<p>🤔😳😯😮</p>')
+  .add('button with emoji', () => ({
+    template: '<button>😑😐😶🙄</button>'
+  }))
+  .add('p with emoji', () => ({
+    template: '<p>🤔😳😯😮</p>'
+  }))
   .add('colorful', () => ({
     render(h) {
       return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
@@ -78,7 +84,9 @@ storiesOf('Other', module)
 
 
 storiesOf('Addon Notes', module)
-  .add('with some emoji', addonNotes({notes: 'My notes on emojies'})(() => '<p>🤔😳😯😮</p>'))
+  .add('with some emoji', addonNotes({notes: 'My notes on emojies'})(() => ({
+    template: '<p>🤔😳😯😮</p>'
+  })))
   .add('with some button', addonNotes({ notes: 'My notes on some button' })(() => ({
     components: { MyButton },
     template: '<my-button :rounded="true">rounded</my-button>'
@@ -93,18 +101,22 @@ storiesOf('Addon Notes', module)
     })
   ))
   .add('with some long text', addonNotes({ notes: 'My notes on some long text' })(
-    () => '<div>A looooooooonnnnnnnggggggggggggg text</div>'
+    () => ({
+      template: '<div>A looooooooonnnnnnnggggggggggggg text</div>'
+    })
   ))
   .add('with some bold text', addonNotes({ notes: 'My notes on some bold text' })(() => ({
     render: h => h('div', [h('strong', ['A very long text to display'])])
   })));
 
 
-  storiesOf('Addon Knobs', module)
-    .add('With some name', addonKnobs()(() => {
-      const name = text('Name', 'Arunoda Susiripala');
-      const age = number('Age', 89);
+storiesOf('Addon Knobs', module)
+  .add('With some name', addonKnobs()(() => {
+    const name = text('Name', 'Arunoda Susiripala');
+    const age = number('Age', 89);
 
-      const content = `I am ${name} and I'm ${age} years old.`;
-      return `<div>${content}</div>`
-    }));
+    const content = `I am ${name} and I'm ${age} years old.`;
+    return {
+      template: `<div>${content}</div>`
+    };
+  }));

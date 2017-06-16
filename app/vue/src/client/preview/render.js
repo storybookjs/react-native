@@ -96,8 +96,7 @@ export function renderMain(data, storyStore) {
   app = new Vue({
     el: '#root',
     render(h) {
-      const story = typeof element === 'string' ? { template: element } : element;
-      return h('div', {attrs: { id: 'root' } }, [h(story)]);
+      return h('div', {attrs: { id: 'root' } }, [h(element)]);
     },
   });
 }
