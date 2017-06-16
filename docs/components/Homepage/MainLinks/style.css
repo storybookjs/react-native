@@ -7,32 +7,29 @@
 }
 
 .main-links-container {
-  max-width: 600px;
   margin: auto;
 }
 
 #main-links h2 {
-  text-transform: uppercase;
   text-align: center;
-  font-size: 25px;
-  font-weight: 600;
 }
 
 #main-links pre {
   background-color: #444;
   color: #DDD;
-  padding: 15px 30px;
+  padding: 15px 20px;
   line-height: 22px;
   border: 0;
   border-radius: 0;
 }
 
-.docs-img {
-  background: url('./images/docs.png');
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 54px;
-  margin-top: 25px;
+.algolia-autocomplete {
+  display: block !important;
+}
+
+.try-now {
+  max-width: 450px;
+  margin: 40px auto;
 }
 
 @media only screen and (max-width: 700px) {
