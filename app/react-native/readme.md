@@ -72,6 +72,25 @@ For RN apps:
 
 Once your app is started, changing the selected story in web browser will update the story displayed within your mobile app.
 
+## Using Haul-cli
+
+[Haul](https://github.com/callstack-io/haul) is an alternative to the react-native packager and has several advantages in that it allows you to define your own loaders, and handles symlinks better.
+
+If you want to use haul instead of the react-native packager, modify the storybook npm script to:
+
+```sh
+storybook start -p 7007 --haul webpack.haul.storybook.js
+```
+
+Where webpack.haul.storybook.js should look something like this:
+
+```js
+module.exports = ({ platform }) => ({
+  entry: `./storybook/index.${platform}.js`,
+  // any other haul config here.
+});
+```
+
 ## Learn More
 
 Check the `docs` directory in this repo for more advanced setup guides and other info.
