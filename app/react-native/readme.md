@@ -78,7 +78,11 @@ Once your app is started, changing the selected story in web browser will update
 
 If you want to use haul instead of the react-native packager, modify the storybook npm script to:
 
-`storybook start -p 7007 --haul webpack.haul.storybook.js` where webpack.haul.storybook.js should look something like this.
+```sh
+storybook start -p 7007 --haul webpack.haul.storybook.js
+```
+
+Where webpack.haul.storybook.js should look something like this:
 
 ```js
 module.exports = ({ platform }) => ({
