@@ -8,6 +8,7 @@ import Server from '../server';
 program
   .option('-h, --host <host>', 'host to listen on')
   .option('-p, --port <port>', 'port to listen on')
+  .option('--haul <configFile>', 'use haul with config file')
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
   .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
@@ -42,10 +43,14 @@ server.listen(...listenAddr, err => {
 if (!program.skipPackager) {
   const projectRoots = configDir === projectDir ? [configDir] : [configDir, projectDir];
 
+  let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
+  if (program.haul) {
+    cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform all`;
+  }
   // RN packager
   shelljs.exec(
     [
-      'node node_modules/react-native/local-cli/cli.js start',
+      cliCommand,
       `--projectRoots ${projectRoots.join(',')}`,
       `--root ${projectDir}`,
       program.resetCache && '--reset-cache',
