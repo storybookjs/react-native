@@ -113,7 +113,7 @@ storiesOf('WithEvents', module)
   .add('Logger', () => <Logger emiter={emiter} />);
 
 storiesOf('addonNotes', module)
-  .add('with some text', addonNotes({ notes: 'Hello guys' })(() => <div>Hello copain</div>))
+  .add('with some text', addonNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
   .add('with some emoji', addonNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
   .add(
     'with a button and some emoji',

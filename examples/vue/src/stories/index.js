@@ -10,7 +10,19 @@ import { addonNotes } from '@storybook/addon-notes';
 import { addonKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import MyButton from './Button.vue';
+import Welcome from './Welcome.vue'
+import App from '../App.vue';
 
+
+storiesOf('Welcome', module)
+  .add('Welcome', () => ({
+    render: (h) => h(Welcome)
+  }))
+
+storiesOf('App', module)
+  .add('App', () => ({
+    render: (h) => h(App)
+  }))
 
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook 
