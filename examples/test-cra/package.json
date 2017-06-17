@@ -23,7 +23,6 @@
     "@storybook/addons": "file:../../lib/addons",
     "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
     "@storybook/channels": "file:../../lib/channels",
-    "@storybook/components": "file:../../lib/components",
     "@storybook/react": "file:../../app/react",
     "@storybook/ui": "file:../../lib/ui",
     "react-scripts": "1.0.2",

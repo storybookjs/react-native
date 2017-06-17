@@ -1,4 +1,4 @@
-import Welcome from '@storybook/components/dist/demo/Welcome';
-import Button from '@storybook/components/dist/demo/Button';
+import Welcome from './Welcome';
+import Button from './Button';
 
 export { Welcome, Button };
