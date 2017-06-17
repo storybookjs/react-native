@@ -63,6 +63,7 @@ const stylesheet = {
   infoContent: {
     marginBottom: 0,
   },
+  infoStory: {},
   jsxInfoContent: {
     borderTop: '1px solid #eee',
     margin: '20px 0 0 0',
@@ -116,7 +117,7 @@ export default class Story extends React.Component {
 
   _renderStory() {
     return (
-      <div>
+      <div style={this.state.stylesheet.infoStory}>
         {this.props.children}
       </div>
     );
@@ -126,7 +127,7 @@ export default class Story extends React.Component {
     return (
       <div>
         {this._renderInlineHeader()}
-        <div>
+        <div style={this.state.stylesheet.infoStory}>
           {this._renderStory()}
         </div>
         <div style={this.state.stylesheet.infoPage}>
