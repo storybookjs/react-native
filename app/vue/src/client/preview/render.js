@@ -1,8 +1,8 @@
 import Vue from 'vue';
+import ErrorDisplay from './ErrorDisplay.vue';
 
 import { window } from 'global';
 // import { stripIndents } from 'common-tags';
-// import ErrorDisplay from './error_display';
 
 // check whether we're running on node/browser
 const isBrowser = typeof window !== 'undefined';
@@ -12,22 +12,29 @@ const logger = console;
 let previousKind = '';
 let previousStory = '';
 let app = null;
+let err = null;
+
+function renderErrorDisplay(error) {
+  if (err) err.$destroy();
+
+  err = new Vue({
+    el: '#error-display',
+    render(h) {
+      return h('div', { attrs: { id: 'error-display' } }, [
+        h(ErrorDisplay, { props: { message: error.message, stack: error.stack } })
+      ]);
+    },
+  });
+}
 
 export function renderError(error) {
-  const properError = new Error(error.title);
-  properError.stack = error.description;
-
-  // const redBox = <ErrorDisplay error={properError} />;
-  // ReactDOM.render(redBox, rootEl);
+  renderErrorDisplay(error);
 }
 
 export function renderException(error) {
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
-  const realError = new Error(error.message);
-  realError.stack = error.stack;
-  // const redBox = <ErrorDisplay error={realError} />;
-  // ReactDOM.render(redBox, rootEl);
+  renderErrorDisplay(error);
 
   // Log the stack to the console. So, user could check the source code.
   logger.error(error.stack);
