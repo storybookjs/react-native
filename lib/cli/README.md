@@ -40,4 +40,14 @@ If you don't want to use `yarn` always you can use the `--use-npm` option like t
 getstorybook --use-npm
 ```
 
+* * *
+
+## [Flow](https://flow.org/) support
+
+It also supports flow files. By default, [jscodeshift](https://github.com/facebook/jscodeshift), the tool used to transform the source files, uses babel to read the files. To be able to transform any flow annotated file, you need to use the flow parser.
+
+```sh
+getstorybook --parser flow
+```
+
 For more information visit: [storybook.js.org](https://storybook.js.org)
