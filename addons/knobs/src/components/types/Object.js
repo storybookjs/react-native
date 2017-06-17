@@ -88,7 +88,7 @@ ObjectType.defaultProps = {
 ObjectType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.object,
   }),
   onChange: PropTypes.func,
 };
