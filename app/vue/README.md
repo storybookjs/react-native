@@ -12,7 +12,7 @@ With it, you can visualize different states of your UI components and develop th
 
 ## Remarques
 
--   When using custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
+-   When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
 
 > ## WARNING
 >
