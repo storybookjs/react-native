@@ -43,17 +43,28 @@ npm i --save vue
 Storybook can be configured in several different ways. 
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
-There's 2 things you need to tell Storybook to do: Add you Vue components and require your stories.
+There's 3 things you need to tell Storybook to do:
+
+1.  In stories, if use the custom components without Vue `components` option, you need to register these with `Vue.component`.
+2.  In stories, if use the Vue plugins (e.g. `vuex`), you need to install these with `Vue.use`.
+3.  Require your stories.
 
 To do that, simply create a file at `.storybook/config.js` with the following content:
 
 ```js
-import Vue from 'vue'
 import { configure } from '@storybook/vue';
 
-import MyButton from '../src/stories/Button.vue'
+import Vue from 'vue';
+import Vuex from 'vuex'; // Vue plugins
 
-Vue.component('my-button', MyButton)
+// Import your custom components.
+import Mybutton from '../src/stories/Button.vue';
+
+// Install Vue plugins.
+Vue.use(Vuex);
+
+// Register custom components.
+Vue.component('my-button', Mybutton);
 
 function loadStories() {
   // You can require as many stories as you need.
@@ -63,9 +74,9 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-That'll register all your custom components with Vue and load stories in `../stories/index.js`.
+That'll register all your custom components, install all Vue plugins and load stories in `../stories/index.js`.
 
-All custom components should be registered before calling `configure`.
+All custom components and All Vue plugins should be registered before calling `configure`.
 
 > This stories folder is just an example, you can load stories from wherever you want to.
 > We think stories are best located close to the source files.
