@@ -17,7 +17,9 @@ storiesOf('Button', module)
   .add('story as a function template', () => ({
     template: '<my-button :rounded="true">story as a function template</my-button>'
   }))
-  .add('story as a function renderer', () => (h) => h('div', ['story as a function renderer']))
+  .add('story as a function renderer', () => ({
+    render: (h) => h('div', ['story as a function renderer'])
+  }))
   .add('story as a function component with template', () => ({
     template: '<my-button :rounded="true">story as a function component with template</my-button>',
   }))
