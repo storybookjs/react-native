@@ -39,7 +39,7 @@ DateType.defaultProps = {
 DateType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.number,
   }),
   onChange: PropTypes.func,
 };

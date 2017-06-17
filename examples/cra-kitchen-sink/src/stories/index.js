@@ -56,18 +56,21 @@ storiesOf('Button', module)
     };
     const fruit = select('Fruit', fruits, 'apple');
     const dollars = number('Dollars', 12.5);
-    const buttonColor = { backgroundColor: color('background', '#ffff00') };
+
+    // NOTE: color picker is currently broken
+    const backgroundColor = color('background', '#ffff00');
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
     const otherStyles = object('Styles', {
       border: '3px solid #ff00ff',
       padding: '10px',
     });
     const nice = boolean('Nice', true);
+
     // NOTE: put this last because it currently breaks everything after it :D
     const birthday = date('Birthday', new Date('Jan 20 2017'));
 
     const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
-    const style = { ...buttonColor, ...otherStyles };
+    const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
 
     return (
