@@ -20,9 +20,10 @@ function renderErrorDisplay(error) {
   err = new Vue({
     el: '#error-display',
     render(h) {
-      return h('div', { attrs: { id: 'error-display' } }, [
-        h(ErrorDisplay, { props: { message: error.message, stack: error.stack } })
-      ]);
+      return h('div', { attrs: { id: 'error-display' } }, error
+        ? [h(ErrorDisplay, { props: { message: error.message, stack: error.stack } }) ]
+        : []
+      );
     },
   });
 }
@@ -97,6 +98,11 @@ export function renderMain(data, storyStore) {
   //   };
   //   return renderError(error);
   // }
+
+  if (err) {
+    renderErrorDisplay(null); // clear
+    err = null;
+  }
 
   if (app) app.$destroy();
 
