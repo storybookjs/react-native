@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 
 import { addonNotes } from '@storybook/addon-notes';
 
-import { addonKnobs, text, number } from '@storybook/addon-knobs';
+import { addonKnobs, text, number, boolean, array, select } from '@storybook/addon-knobs';
 
 import MyButton from './Button.vue';
 import Welcome from './Welcome.vue';
@@ -53,6 +53,41 @@ storiesOf('Button', module)
       },
     },
   }))
+  .add(
+    'with knobs',
+    addonKnobs()(() => {
+      const name = text('Name', 'Storyteller');
+      const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
+      const fruits = {
+        apple: 'Apple',
+        banana: 'Banana',
+        cherry: 'Cherry',
+      };
+      const fruit = select('Fruit', fruits, 'apple');
+      const dollars = number('Dollars', 12.5);
+
+      // NOTE: color picker is currently broken
+      const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
+      const nice = boolean('Nice', true);
+
+      const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+      const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+
+      return {
+        template: `
+        <div>
+          <p>${intro}</p>     
+          <p>My wallet contains: ${dollars.toFixed(2)}</p>
+          <p>In my backpack, I have:</p>
+          <ul>
+            ${items.map(item => `<li key=${item}>${item}</li>`)}
+          </ul>
+          <p>${salutation}</p>
+        </div>
+      `,
+      };
+    })
+  )
   .add('with text', () => ({
     // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
     components: { MyButton },
