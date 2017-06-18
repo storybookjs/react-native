@@ -41,7 +41,7 @@ ArrayType.defaultProps = {
 ArrayType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.array,
   }),
   onChange: PropTypes.func,
 };

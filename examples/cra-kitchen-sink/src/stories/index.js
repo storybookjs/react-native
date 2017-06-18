@@ -4,9 +4,20 @@ import EventEmiter from 'eventemitter3';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { addonNotes, WithNotes } from '@storybook/addon-notes';
-import { withKnobs, addonKnobs, text, number } from '@storybook/addon-knobs';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
+import {
+  withKnobs,
+  addonKnobs,
+  text,
+  number,
+  boolean,
+  color,
+  select,
+  array,
+  date,
+  object,
+} from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 
 import Button from '@storybook/components/dist/demo/Button';
@@ -37,11 +48,44 @@ storiesOf('Button', module)
     </WithNotes>
   )
   .add('with knobs', () => {
-    const label = text('Label', 'Edit me in knobs panel');
-    const num = number('Number', 1);
-    const content = `I am ${label} and I'm ${num} years old.`;
+    const name = text('Name', 'Storyteller');
+    const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
+    const fruits = {
+      apple: 'Apple',
+      banana: 'Banana',
+      cherry: 'Cherry',
+    };
+    const fruit = select('Fruit', fruits, 'apple');
+    const dollars = number('Dollars', 12.5);
 
-    return <Button>{content}</Button>;
+    // NOTE: color picker is currently broken
+    const backgroundColor = color('background', '#ffff00');
+    const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
+    const otherStyles = object('Styles', {
+      border: '3px solid #ff00ff',
+      padding: '10px',
+    });
+    const nice = boolean('Nice', true);
+
+    // NOTE: put this last because it currently breaks everything after it :D
+    const birthday = date('Birthday', new Date('Jan 20 2017'));
+
+    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+    const style = { backgroundColor, ...otherStyles };
+    const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+
+    return (
+      <div style={style}>
+        <p>{intro}</p>
+        <p>My birthday is: {new Date(birthday).toLocaleDateString()}</p>
+        <p>My wallet contains: ${dollars.toFixed(2)}</p>
+        <p>In my backpack, I have:</p>
+        <ul>
+          {items.map(item => <li key={item}>{item}</li>)}
+        </ul>
+        <p>{salutation}</p>
+      </div>
+    );
   })
   .addWithInfo(
     'with some info',
