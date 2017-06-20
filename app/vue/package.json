@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.3",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
@@ -66,6 +66,7 @@
     "url-loader": "^0.5.8",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.0.1",
+    "vue": "2.3.4",
     "vue-hot-reload-api": "2.1.0",
     "vue-loader": "^12.2.1",
     "vue-style-loader": "3.0.1",
@@ -78,11 +79,6 @@
     "babel-cli": "^6.24.1",
     "mock-fs": "^4.3.0",
     "nodemon": "^1.11.0",
-    "vue": "^2.0.0",
     "vuex": "^2.0.0"
-  },
-  "peerDependencies": {
-    "vue": "*",
-    "vuex": "*"
   }
 }
