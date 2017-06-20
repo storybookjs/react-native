@@ -56,7 +56,8 @@ export default function({ assets, publicPath, headHtml }) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
           if (window.parent !== window) {
-            window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+            window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+            window.parent.__VUE_DEVTOOLS_CONTEXT__ = window.document;
           }
         </script>
         <title>Storybook</title>
