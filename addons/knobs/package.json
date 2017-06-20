@@ -27,10 +27,10 @@
     "react-color": "^2.11.4",
     "react-datetime": "^2.8.10",
     "react-textarea-autosize": "^4.3.0",
-    "util-deprecate": "1.0.2",
-    "vue": "2.3.4"
+    "util-deprecate": "1.0.2"
   },
   "devDependencies": {
+    "vue": "2.3.4",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "git-url-parse": "^6.2.2",
