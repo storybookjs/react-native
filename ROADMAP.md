@@ -10,7 +10,7 @@
     -   [See multiple (or all) stories in 1 preview.](#see-multiple-or-all-stories-in-1-preview)
     -   [Deeper level hierarchy](#deeper-level-hierarchy)
 -   [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    -   [Vue](#vue)
+    -   [Vue](#vue) (*in development*)
     -   [Angular](#angular)
     -   [Webcomponents](#webcomponents)
     -   [Polymer](#polymer)
