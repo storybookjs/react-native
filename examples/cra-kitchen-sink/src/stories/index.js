@@ -154,3 +154,43 @@ storiesOf('WithEvents', module)
     </WithEvents>
   )
   .add('Logger', () => <Logger emiter={emiter} />);
+
+storiesOf('component.base.Link')
+  .addDecorator(withKnobs)
+  .add('first', () => <a>{text('firstLink', 'first link')}</a>)
+  .add('second', () => <a>{text('secondLink', 'second link')}</a>);
+
+storiesOf('component.base.Span')
+  .add('first', () => <span>first span</span>)
+  .add('second', () => <span>second span</span>);
+
+storiesOf('component.common.Div')
+  .add('first', () => <div>first div</div>)
+  .add('second', () => <div>second div</div>);
+
+storiesOf('component.common.Table')
+  .add('first', () => <table><tr><td>first table</td></tr></table>)
+  .add('second', () => <table><tr><td>first table</td></tr></table>);
+
+storiesOf('component.Button')
+  .add('first', () => <button>first button</button>)
+  .add('second', () => <button>first second</button>);
+
+// Atomic
+
+storiesOf('Atoms.Molecules.Cells.simple', module)
+  .addDecorator(withKnobs)
+  .add('with text', () => <Button>{text('buttonText', 'Hello Button')}</Button>)
+  .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Atoms.Molecules.Cells.more', module)
+  .add('with text2', () => <Button>Hello Button</Button>)
+  .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Atoms.Molecules', module)
+  .add('with text', () => <Button>Hello Button</Button>)
+  .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Atoms.Molecules.Cells', module)
+  .add('with text2', () => <Button>Hello Button</Button>)
+  .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
