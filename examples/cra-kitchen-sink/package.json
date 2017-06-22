@@ -27,6 +27,7 @@
     "@storybook/addon-links": "^3.0.0",
     "@storybook/addon-notes": "^3.0.0",
     "@storybook/addon-options": "^3.0.0",
+    "@storybook/addon-storyshots": "^3.0.0",
     "@storybook/addons": "^3.0.0",
     "@storybook/react": "^3.0.0",
     "react-scripts": "1.0.1"
