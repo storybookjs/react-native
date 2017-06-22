@@ -14,4 +14,4 @@ packages/examples/automated-*
 yarn.lock
 /**/LICENSE
 docs/public
-packs
+packs/*.tgz
