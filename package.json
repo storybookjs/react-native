@@ -7,8 +7,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:docs": "cd docs && npmc install",
-    "bootstrap:test-cra": "lerna exec --scope test-cra -- npmc install",
+    "bootstrap:test-cra": "npm run build-packs && lerna exec --scope test-cra -- npmc install",
     "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- npmc install",
+    "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",

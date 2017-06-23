@@ -94,6 +94,19 @@ initStoryshots({
 
 This can be useful if you want to separate the snapshots in directories next to each component. See an example [here](https://github.com/storybooks/storybook/issues/892).
 
+If you want to run all stories except stories of a specific kind, you can write an inverse regex which is true for all kinds except those with a specific word such as `DontTest`
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({
+  storyKindRegex:/^((?!.*?DontTest).)*$/
+});
+```
+
+This can be useful while testing react components which make use of the findDomNode API since they always fail with snapshot testing
+while using react-test-renderer see [here](https://github.com/facebook/react/issues/8324)
+
 ### `storyNameRegex`
 
 If you'd like to only run a subset of the stories for your snapshot tests based on the story's name:
