@@ -31,23 +31,45 @@ storiesOf('App', module).add('App', () => ({
 
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook
-  .add('story as a function template', () => ({
+  .add('rounded', () => ({
+    template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
+  }))
+  .add('square', () => ({
+    template: '<my-button :rounded="false">A Button with square edges</my-button>',
+  }));
+
+storiesOf('Method for rendering Vue', module)
+  .add('render', () => ({
+    render: h => h('div', ['renders a div with some text in it..']),
+  }))
+  .add('render + component', () => ({
+    render(h) {
+      return h(MyButton, { props: { color: 'pink' } }, ['renders component: MyButton']);
+    },
+  }))
+  .add('template', () => ({
+    template: `
+      <div>
+        <h1>A template</h1>
+        <p>rendered in vue in storybook</p> 
+      </div>`,
+  }))
+  .add('template + component', () => ({
     components: { MyButton },
-    template: '<my-button :rounded="true">story as a function template</my-button>',
+    template: '<my-button>MyButton rendered in a template</my-button>',
   }))
-  .add('story as a function renderer', () => ({
-    render: h => h('div', ['story as a function renderer']),
-  }))
-  .add('story as a function component with template', () => ({
+  .add('template + methods', () => ({
     components: { MyButton },
-    template: '<my-button :rounded="true">story as a function component with template</my-button>',
+    template: `
+      <p>
+        <em>Clicking the button will navigate to another story using the 'addon-links'</em><br/>
+        <my-button :rounded="true" :handle-click="action">MyButton rendered in a template + props & methods</my-button>
+      </p>`,
+    methods: {
+      action: linkTo('Button'),
+    },
   }))
-  .add('story as a function component with renderer', () => ({
-    components: { MyButton },
-    render: h =>
-      h('my-button', { props: { rounded: true } }, ['story as a function component with renderer']),
-  }))
-  .add('with vuex', () => ({
+  .add('vuex + actions', () => ({
     components: { MyButton },
     template: '<my-button :handle-click="log">with vuex: {{ $store.state.count }}</my-button>',
     store: new Vuex.Store({
@@ -55,7 +77,7 @@ storiesOf('Button', module)
       mutations: {
         increment(state) {
           state.count += 1; // eslint-disable-line
-          action();
+          action('vuex state')(state);
         },
       },
     }),
@@ -65,84 +87,73 @@ storiesOf('Button', module)
       },
     },
   }))
-  .add('with text', () => ({
-    // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
+  .add('whatever you want', () => ({
     components: { MyButton },
-    template: '<my-button :handle-click="log">with text: {{ count }}</my-button>',
-    data: () => ({
-      count: 10,
+    template:
+      '<my-button :handle-click="log">with awesomeness: {{ $store.state.count }}</my-button>',
+    store: new Vuex.Store({
+      state: { count: 0 },
+      mutations: {
+        increment(state) {
+          state.count += 1; // eslint-disable-line
+          action('vuex state')(state);
+        },
+      },
     }),
     methods: {
-      action: action('I love vue'),
       log() {
-        this.count += 1;
-        this.action(this.count);
+        this.$store.commit('increment');
       },
     },
+  }))
+  .add('pre-registered component', () => ({
+    /* By pre-registering component in config.js,
+     * the need to register all components with each story is removed.
+     * You'll only need the template */
+    template: `
+      <p>
+        <em>This component was pre-registered in .storybook/config.js</em><br/>
+        <my-button>MyButton rendered in a template</my-button>
+      </p>`,
   }));
 
-storiesOf('Other', module)
-  .add('button with emoji', () => ({
-    template: '<button>😑😐😶🙄</button>',
-  }))
-  .add('p with emoji', () => ({
-    template: '<p>🤔😳😯😮</p>',
-  }))
-  .add('render', () => ({
-    render(h) {
-      return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
+storiesOf('Addon Actions', module)
+  .add('Action only', () => ({
+    template: '<my-button :handle-click="log">Click me to log the action</my-button>',
+    methods: {
+      log: action('log1'),
     },
   }))
-  .add('rounded', () => ({
-    components: { MyButton },
-    template: '<my-button :rounded="true">rounded</my-button>',
-  }))
-  .add('not rounded', () => ({
-    components: { MyButton },
-    template: '<my-button :rounded="false" :handle-click="action">not rounded</my-button>',
+  .add('Action and method', () => ({
+    template: '<my-button :handle-click="log">Click me to log the action</my-button>',
     methods: {
-      action: linkTo('Button'),
+      log: e => {
+        e.preventDefault();
+        action('log2')(e.target);
+      },
     },
   }));
 
 storiesOf('Addon Notes', module)
   .add(
-    'with some emoji',
-    addonNotes({ notes: 'My notes on emojies' })(() => ({
-      template: '<p>🤔😳😯😮</p>',
-    }))
-  )
-  .add(
-    'with some button',
-    addonNotes({ notes: 'My notes on some button' })(() => ({
-      components: { MyButton },
-      template: '<my-button :rounded="true">rounded</my-button>',
-    }))
-  )
-  .add(
-    'with some color',
-    addonNotes({ notes: 'Some notes on some colored component' })(() => ({
-      render(h) {
-        return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
-      },
-    }))
-  )
-  .add(
-    'with some text',
-    addonNotes({ notes: 'My notes on some text' })(() => ({
-      template: '<div>Text</div>',
-    }))
-  )
-  .add(
-    'with some long text',
-    addonNotes({ notes: 'My notes on some long text' })(() => ({
-      template: '<div>A looooooooonnnnnnnggggggggggggg text</div>',
-    }))
-  )
-  .add(
-    'with some bold text',
+    'Simple note',
     addonNotes({ notes: 'My notes on some bold text' })(() => ({
-      render: h => h('div', [h('strong', ['A very long text to display'])]),
+      template:
+        '<p><strong>Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.</strong></p>',
+    }))
+  )
+  .add(
+    'Note with HTML',
+    addonNotes({
+      notes: `
+      <h2>My notes on emojies</h2>
+
+      <em>It's not all that important to be honest, but..</em>
+
+      Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
+    `,
+    })(() => ({
+      template: '<p>🤔😳😯😮<br/>😄😩😓😱<br/>🤓😑😶😊</p>',
     }))
   );
 
@@ -160,34 +171,37 @@ storiesOf('Addon Knobs', module)
     })
   )
   .add(
-    'with knobs',
+    'All knobs',
     addonKnobs()(() => {
       const name = text('Name', 'Jane');
-      const age = number('Age', 20, { range: true, min: 2, max: 90, step: 1 });
+      const stock = number('Stock', 20, { range: true, min: 0, max: 30, step: 5 });
       const fruits = {
-        apple: 'Apple',
-        banana: 'Banana',
-        cherry: 'Cherry',
+        apples: 'Apple',
+        bananas: 'Banana',
+        cherries: 'Cherry',
       };
       const fruit = select('Fruit', fruits, 'apple');
-      const dollars = number('Dollars', 12.5);
+      const price = number('Price', 2.25);
 
-      const backgroundColor = color('background', '#ffff00');
-      const birthday = date('Birthday', new Date('Jan 20 2017'));
+      const colour = color('Border', 'deeppink');
+      const today = date('Today', new Date('Jan 20 2017'));
       const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
       const nice = boolean('Nice', true);
 
-      const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+      const stockMessage = stock
+        ? `I have a stock of ${stock} ${fruit}, costing &dollar;${price} each.`
+        : `I'm out of ${fruit}${nice ? ', Sorry!' : '.'}`;
       const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
 
       return {
         template: `
-          <div style="background: ${backgroundColor}">
-            <p>${intro}</p>     
-            <p>My wallet contains: &euro;${dollars.toFixed(2)}</p>
-            <p>In my backpack, I have:</p>
+          <div style="border:2px dotted ${colour}; padding: 8px 22px; border-radius: 8px">
+            <h1>My name is ${name},</h1>
+            <h3>today is ${new Date(today).toLocaleDateString()}</h3>
+            <p>${stockMessage}</p>
+            <p>Also, I have:</p>
             <ul>
-              ${items.map(item => `<li key=${item}>${item}</li>`)}
+              ${items.map(item => `<li key=${item}>${item}</li>`).join('')}
             </ul>
             <p>${salutation}</p>
           </div>
