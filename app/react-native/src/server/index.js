@@ -12,14 +12,12 @@ export default class Server {
     this.expressApp.use(storybook(options));
     this.httpServer.on('request', this.expressApp);
     this.wsServer = new ws.Server({ server: this.httpServer });
-    this.wsServer.on('connection', s => this.handleWS(s));
+    this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
   }
 
-  handleWS(socket) {
+  handleWS(socket, req) {
     if (this.options.manualId) {
-      const params = socket.upgradeReq && socket.upgradeReq.url
-        ? querystring.parse(socket.upgradeReq.url.substr(1))
-        : {};
+      const params = req.url ? querystring.parse(req.url.substr(1)) : {};
 
       if (params.pairedId) {
         socket.pairedId = params.pairedId; // eslint-disable-line
