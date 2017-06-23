@@ -1,9 +1,9 @@
 # Release Process
 
 A Storybook release process based on [Semver](http://semver.org/). In short:
-1. merge bugfix PRs directly into master automatically release (~daily)
-2. merge feature and breaking PRs into a release branch (e.g. `release/3.2`) and release features in groups along with a marketing push after a preview period (~monthly)
-3. consensus on critical infrastructure/bugs that are needed before we can do a minor release, so that we pay down our tech debt as we go.
+1\. merge bugfix PRs directly into master automatically release (~daily)
+2\. merge feature and breaking PRs into a release branch (e.g. `release/3.2`) and release features in groups along with a marketing push after a preview period (~monthly)
+3\. consensus on critical infrastructure/bugs that are needed before we can do a minor release, so that we pay down our tech debt as we go.
 
 ## Motivation
 
@@ -88,7 +88,7 @@ channel [in our Slack](https://storybooks-slackin.herokuapp.com/).
 If you're experiencing a bug, the best way to make sure that it gets attention
 is to upvote it by adding a "thumbs-up" reaction in Github. This way important
 bugs quickly bubble to the top [with a
-search](https://github.com/storybooks/storybook/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc).
+search](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc%20label%3Abug).
 
 And of course, the best way to make sure a bug gets addressed quickly is to fix
 it yourself and issue a PR. If the fix is good, we'll try to release it quickly
@@ -99,7 +99,7 @@ in a patch release.
 -   For PATCH changes, all discussion can occur in issue/PR comments (and random slack chat as needed).
 -   For MINOR feature changes, there are multiple stages of discussion:
     -   The feature may be discussed in an issue before it is implemented (ex: <https://github.com/storybooks/storybook/issues/151>)
-    -   Once it's implemented, the discussion may be occur on the PR (ex: <https://github.com/storybooks/storybook/issues/151>)
+    -   Once it's implemented, the discussion may be occur on the PR (ex: <https://github.com/storybooks/storybook/pull/1329>)
     -   If people disagree on an implementation and it can't be resolved in discussion, they may issue alternative PR's with different ideas
     -   Ultimately the maintainers will reach a consensus before merging the changes. There is no set process for this, but we're all adults.
     -   Since MINOR features are released in alpha before they are fully released, new issues may be created by end users, etc.
