@@ -53,6 +53,8 @@ export default function() {
       modules: ['node_modules'].concat(nodePaths),
       alias: {
         'vue$': require.resolve('vue/dist/vue.esm.js'),
+        react: require.resolve('react'),
+        'react-dom': require.resolve('react-dom'),
       }
     },
     performance: {
