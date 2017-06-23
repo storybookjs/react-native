@@ -1,9 +1,12 @@
 # Release Process
 
 A Storybook release process based on [Semver](http://semver.org/). In short:
-1\. merge bugfix PRs directly into master automatically release (~daily)
-2\. merge feature and breaking PRs into a release branch (e.g. `release/3.2`) and release features in groups along with a marketing push after a preview period (~monthly)
-3\. consensus on critical infrastructure/bugs that are needed before we can do a minor release, so that we pay down our tech debt as we go.
+
+1.  Merge bugfix PRs directly into master automatically release (~daily)
+
+2.  Merge feature and breaking PRs into a release branch (e.g. `release/3.2`) and release features in groups along with a marketing push after a preview period (~monthly)
+
+3.  Consensus on critical infrastructure/bugs that are needed before we can do a minor release, so that we pay down our tech debt as we go.
 
 ## Motivation
 
