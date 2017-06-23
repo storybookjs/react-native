@@ -20,8 +20,7 @@ import {
 } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 
-import Button from '@storybook/components/dist/demo/Button';
-import Welcome from '@storybook/components/dist/demo/Welcome';
+import { Button, Welcome } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
