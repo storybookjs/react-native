@@ -12,3 +12,10 @@ Create React App does not allow providing options to Jest in your `package.json`
 ```sh
 npm test -- --coverage --collectCoverageFrom='["src/**/*.{js,jsx}","!src/**/stories/*"]'
 ```
+
+### I see `ReferenceError: React is not defined` when using storybooks with Next.js
+
+Next automatically defines `React` for all of your files via a babel plugin. You must define `React` for JSX to work. You can solve this either by:
+
+1. Adding `import React from 'react'` to your component files.
+1. Adding a `.babelrc` that includes [`babel-plugin-react-require`](https://www.npmjs.com/package/babel-plugin-react-require)
