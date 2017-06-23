@@ -23,15 +23,18 @@ storiesOf('App', module).add('App', () => ({
 storiesOf('Button', module)
   // Works if Vue.component is called in the config.js in .storybook
   .add('story as a function template', () => ({
+    components: { MyButton },
     template: '<my-button :rounded="true">story as a function template</my-button>',
   }))
   .add('story as a function renderer', () => ({
     render: h => h('div', ['story as a function renderer']),
   }))
   .add('story as a function component with template', () => ({
+    components: { MyButton },
     template: '<my-button :rounded="true">story as a function component with template</my-button>',
   }))
   .add('story as a function component with renderer', () => ({
+    components: { MyButton },
     render: h =>
       h('my-button', { props: { rounded: true } }, ['story as a function component with renderer']),
   }))
@@ -74,6 +77,7 @@ storiesOf('Button', module)
       const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
 
       return {
+        components: { MyButton },
         template: `
         <div>
           <p>${intro}</p>     
