@@ -6,7 +6,16 @@ import { linkTo } from '@storybook/addon-links';
 
 import { addonNotes } from '@storybook/addon-notes';
 
-import { addonKnobs, text, number, boolean, array, select } from '@storybook/addon-knobs';
+import {
+  addonKnobs,
+  text,
+  number,
+  boolean,
+  array,
+  select,
+  color,
+  date,
+} from '@storybook/addon-knobs';
 
 import MyButton from './Button.vue';
 import Welcome from './Welcome.vue';
@@ -56,42 +65,6 @@ storiesOf('Button', module)
       },
     },
   }))
-  .add(
-    'with knobs',
-    addonKnobs()(() => {
-      const name = text('Name', 'Storyteller');
-      const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
-      const fruits = {
-        apple: 'Apple',
-        banana: 'Banana',
-        cherry: 'Cherry',
-      };
-      const fruit = select('Fruit', fruits, 'apple');
-      const dollars = number('Dollars', 12.5);
-
-      // NOTE: color picker is currently broken
-      const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
-      const nice = boolean('Nice', true);
-
-      const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
-      const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
-
-      return {
-        components: { MyButton },
-        template: `
-        <div>
-          <p>${intro}</p>     
-          <p>My wallet contains: ${dollars.toFixed(2)}</p>
-          <p>In my backpack, I have:</p>
-          <ul>
-            ${items.map(item => `<li key=${item}>${item}</li>`)}
-          </ul>
-          <p>${salutation}</p>
-        </div>
-      `,
-      };
-    })
-  )
   .add('with text', () => ({
     // need to register local component until we can make sur Vue.componennt si called before mounting the root Vue
     components: { MyButton },
@@ -115,7 +88,7 @@ storiesOf('Other', module)
   .add('p with emoji', () => ({
     template: '<p>🤔😳😯😮</p>',
   }))
-  .add('colorful', () => ({
+  .add('render', () => ({
     render(h) {
       return h(MyButton, { props: { color: 'pink' } }, ['colorful']);
     },
@@ -175,26 +148,50 @@ storiesOf('Addon Notes', module)
 
 storiesOf('Addon Knobs', module)
   .add(
-    'With some name',
+    'Simple',
     addonKnobs()(() => {
-      const name = text('Name', 'Arunoda Susiripala');
-      const age = number('Age', 89);
-
+      const name = text('Name', 'John Doe');
+      const age = number('Age', 44);
       const content = `I am ${name} and I'm ${age} years old.`;
+
       return {
         template: `<div>${content}</div>`,
       };
     })
   )
   .add(
-    'With some different name',
+    'with knobs',
     addonKnobs()(() => {
-      const name = text('Name', 'Story Teller');
-      const age = number('Age', 120);
+      const name = text('Name', 'Jane');
+      const age = number('Age', 20, { range: true, min: 2, max: 90, step: 1 });
+      const fruits = {
+        apple: 'Apple',
+        banana: 'Banana',
+        cherry: 'Cherry',
+      };
+      const fruit = select('Fruit', fruits, 'apple');
+      const dollars = number('Dollars', 12.5);
 
-      const content = `I am a ${name} and I'm ${age} years old.`;
+      const backgroundColor = color('background', '#ffff00');
+      const birthday = date('Birthday', new Date('Jan 20 2017'));
+      const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
+      const nice = boolean('Nice', true);
+
+      const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+      const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+
       return {
-        template: `<div>${content}</div>`,
+        template: `
+          <div style="background: ${backgroundColor}">
+            <p>${intro}</p>     
+            <p>My wallet contains: &euro;${dollars.toFixed(2)}</p>
+            <p>In my backpack, I have:</p>
+            <ul>
+              ${items.map(item => `<li key=${item}>${item}</li>`)}
+            </ul>
+            <p>${salutation}</p>
+          </div>
+        `,
       };
     })
   );
