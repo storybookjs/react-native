@@ -40,7 +40,7 @@ export default function(configType, baseConfig, configDir) {
   const customConfigPath = path.resolve(configDir, 'webpack.config.js');
 
   if (!fs.existsSync(customConfigPath)) {
-    logger.info('=> Using default webpack setup based on "Create React App".');
+    logger.info('=> Using default webpack setup based on "Vue App".');
     const configPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
     const customConfig = require(configPath);
 

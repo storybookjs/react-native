@@ -55,7 +55,7 @@ export default function() {
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
       alias: {
-        'vue': path.resolve(path.join(__dirname, '../../../node_modules', 'vue/dist/vue.esm.js'))
+        'vue$': require.resolve('vue/dist/vue.esm.js'),
       }
     },
   };
