@@ -1,9 +1,9 @@
 # Release Process
 
 A Storybook release process based on [Semver](http://semver.org/). In short:
-1\. merge bugfix PRs directly into master automatically release (~daily)
-2\. merge feature and breaking PRs into a release branch (e.g. `release/3.2`) and release features in groups along with a marketing push after a preview period (~monthly)
-3\. consensus on critical infrastructure/bugs that are needed before we can do a minor release, so that we pay down our tech debt as we go.
+1. merge bugfix PRs directly into master automatically release (~daily)
+2. merge feature and breaking PRs into a release branch (e.g. `release/3.2`) and release features in groups along with a marketing push after a preview period (~monthly)
+3. consensus on critical infrastructure/bugs that are needed before we can do a minor release, so that we pay down our tech debt as we go.
 
 ## Motivation
 
@@ -78,10 +78,11 @@ there gathering upvotes and "me too" comments. We need a way to make sure that
 these bugs get addressed.
 
 For every non-PATCH release, we nominate a small number of bugs that must be
-addressed before a release can go out by adding them to the milestone. This
-helps focus attention for people looking for good ways to contribute, or to
-understand what is blocking the release so they can actually do something about
-it. Discussion about which bugs are critical happens in the `#maintenance`
+addressed before a release can go out by adding them to the milestone. For example, here's a list of blocking bugs [for the 3.2 milestone](https://github.com/storybooks/storybook/milestone/3).
+
+Adding bugs to the milestone helps people looking for good ways to contribute,
+or to understand what is blocking the release so they can actually do something
+about it. Discussion about which bugs are critical happens in the `#maintenance`
 channel [in our Slack](https://storybooks-slackin.herokuapp.com/).
 
 If you're experiencing a bug, the best way to make sure that it gets attention
