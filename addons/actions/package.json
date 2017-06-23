@@ -25,7 +25,8 @@
     "deep-equal": "^1.0.1",
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.5.8",
-    "react-inspector": "^2.0.0"
+    "react-inspector": "^2.0.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "react": "^15.5.4",
