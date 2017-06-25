@@ -32,6 +32,7 @@
     "react-komposer": "^2.0.0",
     "react-modal": "^1.7.6",
     "react-split-pane": "^0.1.63",
+    "react-treebeard": "^1.1.4",
     "redux": "^3.6.0"
   },
   "devDependencies": {
