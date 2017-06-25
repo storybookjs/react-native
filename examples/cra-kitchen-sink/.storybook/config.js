@@ -11,7 +11,8 @@ setOptions({
   showSearchBox: false,
   downPanelInRight: true,
   sortStoriesByKind: false,
-})
+  resolveStoryHierarchy: (storyName) => storyName.split('.'),
+});
 
 setAddon(infoAddon);
 
