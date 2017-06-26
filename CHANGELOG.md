@@ -7,14 +7,14 @@
 -   Remove the `cacheDirectory` option from babel config [#1350](https://github.com/storybooks/storybook/pull/1350)
 -   websockets (ws) removed `socket.upgradeReq`, so use `req` instead [#1337](https://github.com/storybooks/storybook/pull/1337)
 -   Ensure we add the correct version of `react-dom` [#1349](https://github.com/storybooks/storybook/pull/1349)
--   Fix invalid prop 'node.type' supplied to 'Props' [#1351](https://github.com/storybooks/storybook/pull/1351)
+-   Addon Info: Fix invalid prop `node.type` supplied to 'Props' [#1351](https://github.com/storybooks/storybook/pull/1351)
 -   Addon Info: Omit empty inline info header [#1306](https://github.com/storybooks/storybook/pull/1306)
--   Use uuid for action IDs instead of Math.random (fixes #1109) [#1347](https://github.com/storybooks/storybook/pull/1347)
+-   Addon Actions: Use uuid for action IDs instead of Math.random (fixes #1109) [#1347](https://github.com/storybooks/storybook/pull/1347)
 
 #### Documentation
 
--   Fix welcome instructions now that `getstorybook` does not add Button source [#1358](https://github.com/storybooks/storybook/pull/1358)
--   Update addons/info read me with configuration instructuctions [#1326](https://github.com/storybooks/storybook/pull/1326)
+-   Fix welcome instructions to reflect current `getstorybook` [#1358](https://github.com/storybooks/storybook/pull/1358)
+-   Addon Info: Update README with configuration instructions [#1326](https://github.com/storybooks/storybook/pull/1326)
 
 #### Dependency Upgrades
 
