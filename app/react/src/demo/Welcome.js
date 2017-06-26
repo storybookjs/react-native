@@ -64,7 +64,7 @@ const Welcome = props =>
       You can also edit those components and see changes right away.
       <br />
       (Try editing the <InlineCode>Button</InlineCode> component
-      located at <InlineCode>src/stories/Button.js</InlineCode>.)
+      located at <InlineCode>src/stories/index.js</InlineCode>.)
     </p>
     <p>
       Usually we create stories with smaller UI components in the app.<br />
