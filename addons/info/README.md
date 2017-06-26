@@ -55,7 +55,6 @@ storiesOf('Component')
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
 
-
 To customize your defaults:
 
 ```js
