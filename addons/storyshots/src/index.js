@@ -37,8 +37,6 @@ export default function testStorySnapshots(options = {}) {
     configPath = path.join(configDirPath, 'config.js');
 
     const babelConfig = loadBabelConfig(configDirPath);
-    // We set this in the default babel config, but it is webpack-only
-    delete babelConfig.cacheDirectory;
     const content = babel.transformFileSync(configPath, babelConfig).code;
     const contextOpts = {
       filename: configPath,
