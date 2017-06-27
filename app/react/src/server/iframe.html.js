@@ -8,7 +8,7 @@ import url from 'url';
 //   'preview.0d2d3d845f78399fd6d5e859daa152a9.css',
 //   'static/preview.9adbb5ef965106be1cc3.bundle.js.map',
 //   'preview.0d2d3d845f78399fd6d5e859daa152a9.css.map' ]
-const urlsFromAssets = assets => {
+export const urlsFromAssets = assets => {
   if (!assets) {
     return {
       js: ['static/preview.bundle.js'],
@@ -26,13 +26,13 @@ const urlsFromAssets = assets => {
     // Don't load the manager script in the iframe
     .filter(key => key !== 'manager')
     .forEach(key => {
-      const asset = assets[key];
-      if (typeof asset === 'string') {
-        urls[re.exec(asset)[1]].push(asset);
-      } else {
-        const assetUrl = asset.find(u => re.exec(u)[1] !== 'map');
-        urls[re.exec(assetUrl)[1]].push(assetUrl);
+      let assetList = assets[key];
+      if (!Array.isArray(assetList)) {
+        assetList = [assetList];
       }
+      assetList.filter(u => re.exec(u)[1] !== 'map').forEach(u => {
+        urls[re.exec(u)[1]].push(u);
+      });
     });
 
   return urls;
