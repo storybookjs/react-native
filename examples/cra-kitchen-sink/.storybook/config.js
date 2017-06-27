@@ -11,7 +11,7 @@ setOptions({
   showSearchBox: false,
   downPanelInRight: true,
   sortStoriesByKind: false,
-  resolveStoryHierarchy: (storyName) => storyName.split('.'),
+  hierarchySeparator: '\\/|\\.|¯\\\\_\\(ツ\\)_\\/¯'
 });
 
 setAddon(infoAddon);
