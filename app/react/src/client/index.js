@@ -14,10 +14,10 @@ export const getStorybook = previewApi.getStorybook;
 
 export const action = deprecate(
   deprecatedAction,
-  '@storybook/react action is deprecated. See: https://github.com/storybooks/storybook/tree/master/addon/actions'
+  '@storybook/react action is deprecated. See: https://github.com/storybooks/storybook/tree/master/addons/actions'
 );
 
 export const linkTo = deprecate(
   deprecatedLinkTo,
-  '@storybook/react linkTo is deprecated. See: https://github.com/storybooks/storybook/tree/master/addon/links'
+  '@storybook/react linkTo is deprecated. See: https://github.com/storybooks/storybook/tree/master/addons/links'
 );
