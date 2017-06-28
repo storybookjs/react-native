@@ -1,3 +1,16 @@
+# 3.1.7
+
+2017-June-28
+
+#### Bug Fixes
+
+-   Exit storybook build non-zero on stats errors (e.g. errors in the transpilation pipeline) [#1372](https://github.com/storybooks/storybook/pull/1372)
+-   Fixed regression: CSS entries were not picked up for storybook pages (e.g. when using exract-text-webpack-plugin) [#1363](https://github.com/storybooks/storybook/pull/1363)
+
+#### Documentation
+
+-   Document Storybook release process [#1348](https://github.com/storybooks/storybook/pull/1348)
+
 # 3.1.6
 
 2017-June-26
