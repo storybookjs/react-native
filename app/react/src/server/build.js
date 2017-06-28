@@ -80,8 +80,17 @@ webpack(config).run((err, stats) => {
   if (err) {
     logger.error('Failed to build the storybook');
     logger.error(err.message);
+  }
+  if (stats.hasErrors()) {
+    logger.error('Failed to build the storybook');
+    stats.toJson().errors.forEach(function (e) {
+      return logger.error(e);
+    });
+  }
+  if (err || stats.hasErrors()) {
     process.exit(1);
   }
+  
 
   const data = {
     publicPath: config.output.publicPath,
