@@ -77,17 +77,10 @@ if (program.staticDir) {
 // compile all resources with webpack and write them to the disk.
 logger.log('Building storybook ...');
 webpack(config).run((err, stats) => {
-  if (err) {
-    logger.error('Failed to build the storybook');
-    logger.error(err.message);
-  }
-  if (stats.hasErrors()) {
-    logger.error('Failed to build the storybook');
-    stats.toJson().errors.forEach(function (e) {
-      return logger.error(e);
-    });
-  }
   if (err || stats.hasErrors()) {
+    logger.error('Failed to build the storybook');
+    err && logger.error(err.message);
+    stats.hasErrors() && stats.toJson().errors.forEach(e => logger.error(e));
     process.exit(1);
   }
 
