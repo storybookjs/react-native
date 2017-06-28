@@ -30,8 +30,8 @@ export const urlsFromAssets = assets => {
       if (!Array.isArray(assetList)) {
         assetList = [assetList];
       }
-      assetList.filter(url => re.exec(url)[1] !== 'map').forEach(url => {
-        urls[re.exec(url)[1]].push(url);
+      assetList.filter(assetUrl => re.exec(assetUrl)[1] !== 'map').forEach(assetUrl => {
+        urls[re.exec(assetUrl)[1]].push(assetUrl);
       });
     });
 
