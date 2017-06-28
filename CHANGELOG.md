@@ -1,3 +1,25 @@
+# 3.1.6
+
+2017-June-26
+
+#### Bug Fixes
+
+-   Remove the `cacheDirectory` option from babel config [#1350](https://github.com/storybooks/storybook/pull/1350)
+-   websockets (ws) removed `socket.upgradeReq`, so use `req` instead [#1337](https://github.com/storybooks/storybook/pull/1337)
+-   Ensure we add the correct version of `react-dom` [#1349](https://github.com/storybooks/storybook/pull/1349)
+-   Addon Info: Fix invalid prop `node.type` supplied to 'Props' [#1351](https://github.com/storybooks/storybook/pull/1351)
+-   Addon Info: Omit empty inline info header [#1306](https://github.com/storybooks/storybook/pull/1306)
+-   Addon Actions: Use uuid for action IDs instead of Math.random (fixes #1109) [#1347](https://github.com/storybooks/storybook/pull/1347)
+
+#### Documentation
+
+-   Fix welcome instructions to reflect current `getstorybook` [#1358](https://github.com/storybooks/storybook/pull/1358)
+-   Addon Info: Update README with configuration instructions [#1326](https://github.com/storybooks/storybook/pull/1326)
+
+#### Dependency Upgrades
+
+-   Update lint-staged to the latest version 🚀 [#1315](https://github.com/storybooks/storybook/pull/1315)
+
 # 3.1.5
 
 2017-June-22
