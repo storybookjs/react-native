@@ -55,7 +55,7 @@ const MainLinks = () =>
           <ul>
             <li><Link to="/basics/quick-start-guide/">Quick setup</Link></li>
             <li><Link to="/basics/slow-start-guide/">Adding to existing project</Link></li>
-            <li><Link to="/basics/slow-start-guide/">Writing stories</Link></li>
+            <li><Link to="/basics/writing-stories/">Writing stories</Link></li>
           </ul>
         </div>
 
