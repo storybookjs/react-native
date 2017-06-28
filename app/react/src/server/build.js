@@ -90,7 +90,6 @@ webpack(config).run((err, stats) => {
   if (err || stats.hasErrors()) {
     process.exit(1);
   }
-  
 
   const data = {
     publicPath: config.output.publicPath,
