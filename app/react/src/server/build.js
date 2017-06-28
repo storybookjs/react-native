@@ -79,7 +79,9 @@ logger.log('Building storybook ...');
 webpack(config).run((err, stats) => {
   if (err || stats.hasErrors()) {
     logger.error('Failed to build the storybook');
+    // eslint-disable-next-line no-unused-expressions
     err && logger.error(err.message);
+    // eslint-disable-next-line no-unused-expressions
     stats.hasErrors() && stats.toJson().errors.forEach(e => logger.error(e));
     process.exit(1);
   }
