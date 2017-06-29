@@ -177,19 +177,19 @@ storiesOf('component.Button')
 
 // Atomic
 
-storiesOf('Atoms¯\\_(ツ)_/¯Molecules.Cells/simple', module)
+storiesOf('Cells¯\\_(ツ)_/¯Molecules.Atoms/simple', module)
   .addDecorator(withKnobs)
   .add('with text', () => <Button>{text('buttonText', 'Hello Button')}</Button>)
   .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
 
-storiesOf('Atoms/Molecules/Cells.more', module)
+storiesOf('Cells/Molecules/Atoms.more', module)
   .add('with text2', () => <Button>Hello Button</Button>)
   .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
 
-storiesOf('Atoms/Molecules', module)
+storiesOf('Cells/Molecules', module)
   .add('with text', () => <Button>Hello Button</Button>)
   .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
 
-storiesOf('Atoms.Molecules.Cells', module)
+storiesOf('Cells.Molecules.Atoms', module)
   .add('with text2', () => <Button>Hello Button</Button>)
   .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
