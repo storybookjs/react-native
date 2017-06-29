@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "3.1.5",
+  "version": "3.1.6",
   "description": "Options addon for storybook",
   "keywords": [
     "storybook"
@@ -11,7 +11,6 @@
   },
   "license": "MIT",
   "main": "preview.js",
-  "typings": "./storybook-addon-options.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -21,7 +20,7 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
-    "@storybook/addons": "^3.1.5"
+    "@storybook/addons": "^3.1.6"
   },
   "devDependencies": {
     "react": "^15.5.4",

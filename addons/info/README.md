@@ -55,6 +55,23 @@ storiesOf('Component')
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
 
+To customize your defaults:
+
+```js
+// config.js
+import infoAddon, { setDefaults } from '@storybook/addon-info';
+
+// addon-info
+setDefaults({
+  inline: true,
+  maxPropsIntoLine: 1,
+  maxPropObjectKeys: 10,
+  maxPropArrayLength: 10,
+  maxPropStringLength: 100,
+});
+setAddon(infoAddon);
+```
+
 ## The FAQ
 
 **Components lose their names on static build**
