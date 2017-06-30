@@ -1,6 +1,6 @@
 import * as React from "react"; // tslint:disable-line
-import { storiesOf } from "@kadira/storybook";
-import centered from "@kadira/react-storybook-decorator-centered";
+import { storiesOf } from "@storybook/react";
+import centered from "@storybook/addon-centered";
 
 import backgrounds from "./index.tsx";
 

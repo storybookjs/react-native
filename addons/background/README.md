@@ -21,7 +21,6 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@kadira/storybook/addons';
 import 'react-storybook-addon-backgrounds/register';
 ```
 
@@ -29,7 +28,7 @@ Then write your stories like this:
 
 ```js
 import React from 'react';
-import { storiesOf } from "@kadira/storybook";
+import { storiesOf } from "@storybook/react";
 import backgrounds from "react-storybook-addon-backgrounds";
 
 storiesOf("Button", module)

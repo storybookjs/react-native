@@ -1,5 +1,5 @@
 import * as React from "react"; // tslint:disable-line
-import addons from "@kadira/storybook-addons";
+import addons from "@storybook/addons";
 
 import BackgroundPanel from "./BackgroundPanel";
 

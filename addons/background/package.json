@@ -1,6 +1,6 @@
 {
   "name": "react-storybook-addon-backgrounds",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "A react storybook addon to show different backgrounds for your preview",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -21,7 +21,7 @@
   },
   "peerDependencies": {
     "react": "^0.14.7 || ^15.0.0",
-    "@kadira/storybook-addons": "^v1.3.1"
+    "@storybook/addons": "^v3.1.6"
   },
   "keywords": [
     "react-storybook",
@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/NewSpring/react-storybook-addon-backgrounds#readme",
   "devDependencies": {
-    "@kadira/react-storybook-decorator-centered": "^1.0.0",
-    "@kadira/storybook": "^2.5.1",
+    "@storybook/addon-centered": "^v3.1.2",
+    "@storybook/react": "^v3.1.7",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
     "babel-plugin-add-module-exports": "^0.2.1",

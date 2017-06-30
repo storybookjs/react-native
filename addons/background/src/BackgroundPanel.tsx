@@ -33,7 +33,7 @@ const defaultBackground: BackgroundDetail = {
 };
 
 const __html = `
-import { storiesOf } from "@kadira/storybook";
+import { storiesOf } from "@storybook/react";
 import backgrounds from "react-storybook-addon-backgrounds";
 
 storiesOf("First Component", module)

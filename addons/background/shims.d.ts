@@ -1,5 +1,5 @@
 
-declare module "@kadira/storybook-addons" {
+declare module "@storybook/addons" {
 
   interface PanelOpts {
     title: string;
@@ -16,7 +16,7 @@ declare module "@kadira/storybook-addons" {
   export default addon;
 }
 
-declare module "@kadira/storybook" {
+declare module "@storybook/react" {
   interface Story {
     add(storyName: string, callback: Function): Story;
     addDecorator(decorator: any): Story
@@ -27,6 +27,6 @@ declare module "@kadira/storybook" {
 
 }
 
-declare module "@kadira/react-storybook-decorator-centered" {
+declare module "@storybook/addon-centered" {
   export default function(): any;
 }

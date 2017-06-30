@@ -1,5 +1,5 @@
 import * as React from "react";
-import addons from "@kadira/storybook-addons";
+import addons from "@storybook/addons";
 import assign = require("object-assign"); // tslint:disable-line
 
 const style = {
