@@ -79,11 +79,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     >
       Button
     </code>
-     component located at 
+     stories located at 
     <code
       className="css-mteq83"
     >
-      src/stories/Button.js
+      src/stories/index.js
     </code>
     .)
   </p>

@@ -2,6 +2,7 @@
 
 import addons from '@storybook/addons';
 import stringify from 'json-stringify-safe';
+import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
 
 function _format(arg) {
@@ -16,9 +17,9 @@ export function action(name) {
   const handler = function(..._args) {
     const args = Array.from(_args).map(_format);
     const channel = addons.getChannel();
-    const randomId = Math.random().toString(16).slice(2);
+    const id = uuid();
     channel.emit(EVENT_ID, {
-      id: randomId,
+      id,
       data: { name, args },
     });
   };

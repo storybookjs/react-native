@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import JSON5 from 'json5';
+import findCacheDir from 'find-cache-dir';
 
 // avoid ESLint errors
 const logger = console;
@@ -81,6 +82,13 @@ export default function(configType, baseConfig, projectDir, configDir) {
     }
     config.module.loaders[0].query = babelConfig;
   }
+
+  // This is a feature of `babel-loader` for webpack (not Babel itself).
+  // It enables a cache directory for faster-rebuilds
+  // `find-cache-dir` will create the cache directory under the node_modules directory.
+  config.module.loaders[0].query.cacheDirectory = findCacheDir({
+    name: 'react-storybook',
+  });
 
   // Check whether addons.js file exists inside the storybook.
   // Load the default addons.js file if it's missing.

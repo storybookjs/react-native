@@ -54,8 +54,8 @@ const MainLinks = () =>
           <Link to="/basics/introduction/"><h3>Basics</h3></Link>
           <ul>
             <li><Link to="/basics/quick-start-guide/">Quick setup</Link></li>
-            <li><Link to="/basics/slow-start-vue/">Storybook for Vue</Link></li>
-            <li><Link to="/basics/slow-start-react/">Storybook for React</Link></li>
+            <li><Link to="/basics/slow-start-guide/">Adding to existing project</Link></li>
+            <li><Link to="/basics/writing-stories/">Writing stories</Link></li>
           </ul>
         </div>
 
