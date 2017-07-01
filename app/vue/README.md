@@ -1,4 +1,4 @@
-# Storybook for React
+# Storybook for Vue
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
@@ -13,12 +13,5 @@ With it, you can visualize different states of your UI components and develop th
 ## Notes
 
 -   When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
-
-> ## WARNING
->
-> **This package is highly experimental**
->
-> We're looking for help to get this package to work correctly.
-> If you're experienced with Vue, please come help us!
 
 ♥️
