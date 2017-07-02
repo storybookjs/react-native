@@ -28,11 +28,13 @@
     "podda": "^1.2.2",
     "prop-types": "^15.5.8",
     "qs": "^6.4.0",
+    "react-icons": "^2.2.5",
     "react-inspector": "^2.0.0",
     "react-komposer": "^2.0.0",
     "react-modal": "^1.7.6",
     "react-split-pane": "^0.1.63",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "storybook-react-treebeard": "^1.1.6"
   },
   "devDependencies": {
     "enzyme": "^2.8.2"
