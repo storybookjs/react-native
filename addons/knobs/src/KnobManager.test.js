@@ -1,4 +1,3 @@
-import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line
 import KnobManager from './KnobManager';
 
@@ -72,26 +71,6 @@ describe('KnobManager', () => {
 
         expect(testManager.knobStore.set).toHaveBeenCalledWith('foo', newKnob);
       });
-    });
-  });
-
-  describe('wrapStory()', () => {
-    it('should contain the story and add correct props', () => {
-      const testManager = new KnobManager();
-
-      const testChannel = { emit: () => {} };
-      const testStory = () => <div id="test-story">Test Content</div>;
-      const testContext = {
-        kind: 'Foo',
-        story: 'bar baz',
-      };
-      const wrappedStory = testManager.wrapStory(testChannel, testStory, testContext);
-      const wrapper = shallow(wrappedStory);
-      expect(wrapper.find('#test-story').length).toBe(1);
-
-      const storyWrapperProps = wrappedStory.props;
-      expect(storyWrapperProps.channel).toEqual(testChannel);
-      expect(storyWrapperProps.context).toEqual(testContext);
     });
   });
 });

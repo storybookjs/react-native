@@ -30,7 +30,6 @@ This will register all the addons and you'll be able to see the actions and note
 Now when you are writing a story it like this and add some notes:
 
 ```js
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithNotes } from '@storybook/addon-notes';

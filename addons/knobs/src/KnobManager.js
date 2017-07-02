@@ -1,17 +1,14 @@
 /* eslint no-underscore-dangle: 0 */
-
-import React from 'react';
 import deepEqual from 'deep-equal';
-import WrapStory from './components/WrapStory';
 import KnobStore from './KnobStore';
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
 
 export default class KnobManager {
-  constructor() {
-    this.knobStore = null;
-    this.knobStoreMap = {};
+  constructor(channel) {
+    this.channel = channel;
+    this.knobStore = new KnobStore();
   }
 
   knob(name, options) {
@@ -35,22 +32,6 @@ export default class KnobManager {
 
     knobStore.set(name, knobInfo);
     return knobStore.get(name).value;
-  }
-
-  wrapStory(channel, storyFn, context) {
-    this.channel = channel;
-    const key = `${context.kind}:::${context.story}`;
-    let knobStore = this.knobStoreMap[key];
-
-    if (!knobStore) {
-      knobStore = this.knobStoreMap[key] = new KnobStore(); // eslint-disable-line
-    }
-
-    this.knobStore = knobStore;
-    knobStore.markAllUnused();
-    const initialContent = storyFn(context);
-    const props = { context, storyFn, channel, knobStore, initialContent };
-    return <WrapStory {...props} />;
   }
 
   _mayCallChannel() {
