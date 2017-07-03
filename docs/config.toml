@@ -7,6 +7,8 @@ basics = [
   "/basics/introduction/",
   "/basics/quick-start-guide/",
   "/basics/slow-start-guide/",
+  "/basics/guide-react/",
+  "/basics/guide-vue/",
   "/basics/writing-stories/",
   "/basics/exporting-storybook/",
   "/basics/faq/",
