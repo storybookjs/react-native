@@ -3,11 +3,12 @@ import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { addonNotes, WithNotes } from '@storybook/addon-notes';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
-import { WithNotes } from '@storybook/addon-notes';
 import {
   withKnobs,
+  addonKnobs,
   text,
   number,
   boolean,
@@ -154,6 +155,42 @@ storiesOf('WithEvents', module)
   )
   .add('Logger', () => <Logger emiter={emiter} />);
 
+storiesOf('addonNotes', module)
+  .add('with some text', addonNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
+  .add('with some emoji', addonNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
+  .add(
+    'with a button and some emoji',
+    addonNotes({ notes: 'My notes on a button with emojies' })(() =>
+      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    )
+  )
+  .add('with old API', () =>
+    <WithNotes notes="Hello">
+      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    </WithNotes>
+  );
+
+storiesOf('Addon Knobs deprecated Decorator', module)
+  .addDecorator(withKnobs) // test deprecated
+  .add('with dynamic variables deprecated', () => {
+    const name = text('Name', 'Story Teller');
+    const age = number('Age', 120);
+
+    const content = `I am ${name} and I'm ${age} years old.`;
+    return <div>{content}</div>;
+  });
+
+storiesOf('Addon Knobs', module).add(
+  'with dynamic variables new method',
+  addonKnobs()(() => {
+    const name = text('Name', 'Arunoda Susiripala');
+    const age = number('Age', 89);
+
+    const content = `I am ${name} and I'm ${age} years old.`;
+    return <div>{content}</div>;
+  })
+);
+
 storiesOf('component.base.Link')
   .addDecorator(withKnobs)
   .add('first', () => <a>{text('firstLink', 'first link')}</a>)
@@ -193,3 +230,4 @@ storiesOf('Cells/Molecules', module)
 storiesOf('Cells.Molecules.Atoms', module)
   .add('with text2', () => <Button>Hello Button</Button>)
   .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+

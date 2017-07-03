@@ -40,7 +40,7 @@ const md = (linkPrefix, shouldPrefix) =>
     .use(require('markdown-it-replace-link')) // eslint-disable-line
     .use(require('markdown-it-anchor'), { // eslint-disable-line
       permalink: true,
-      permalinkSymbol: '⚓︎',
+      permalinkSymbol: '⚓️',
     });
 
 module.exports = function markdownLoader(content) {
