@@ -16,5 +16,4 @@ storiesOf("Second Component", module)
     { name: "twitter", value: "#00aced" },
     { name: "facebook", value: "#3b5998" },
   ]))
-  .add("Second Button", () => <button>Click me</button>)
-  ;
+  .add("Second Button", () => <button>Click me</button>);

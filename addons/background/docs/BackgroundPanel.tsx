@@ -40,8 +40,7 @@ storiesOf("First Component", module)
     { name: "twitter", value: "#00aced" },
     { name: "facebook", value: "#3b5998" },
   ]))
-  .add("First Button", () => &lt;button&gt;Click me&lt;/button&gt;)
-  ;
+  .add("First Button", () => &lt;button&gt;Click me&lt;/button&gt;);
 `.trim();
 
 const Instructions = () => (
