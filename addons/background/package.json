@@ -11,7 +11,7 @@
     "test": "jest",
     "posttest": "npm run lint",
     "compile": "tsc",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "coverage": "jest --coverage",
     "watch": "tsc -w",
     "lint": "tslint 'src/*.ts*' && tslint 'test/*.ts*'"
   },
