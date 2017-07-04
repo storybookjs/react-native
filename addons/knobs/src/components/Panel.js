@@ -93,11 +93,10 @@ export default class Panel extends React.Component {
 
         queryParams[`knob-${name}`] = Types[knob.type].serialize(knob.value);
       });
+      this.loadedFromUrl = true;
+      api.setQueryParams(queryParams);
+      this.setState({ knobs });
     }
-
-    this.loadedFromUrl = true;
-    api.setQueryParams(queryParams);
-    this.setState({ knobs });
   }
 
   reset() {
