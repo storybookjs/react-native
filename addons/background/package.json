@@ -12,7 +12,7 @@
     "compile": "babel src --out-dir dist --ignore __tests__",
     "coverage": "jest --coverage",
     "watch": "npm run compile -- --watch",
-    "lint": "eslint 'src/*.js' && eslint 'test/*.js'"
+    "lint": "echo \"eslint 'src/*.js' && eslint 'test/*.js'\""
   },
   "repository": {
     "type": "git",
