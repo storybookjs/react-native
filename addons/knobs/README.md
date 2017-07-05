@@ -229,6 +229,17 @@ const defaultValue = new Date('Jan 20 2017');
 const value = date(label, defaultValue);
 ```
 
+### withKnobs vs withKnobsOptions
+
+If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.
+Usage:
+```
+story.addDecorator(withKnobsOptions({
+   debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
+   timestamps: true // Doesn't emit events while user is typing.
+}));
+```
+
 ## Typescript
 
 If you are using typescript, make sure you have the type definitions installed for the following libs:
