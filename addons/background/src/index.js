@@ -1,6 +1,6 @@
 import * as React from "react";
 import addons from "@storybook/addons";
-import assign = require("object-assign"); // tslint:disable-line
+const assign = require("object-assign");
 
 const style = {
   wrapper: {
@@ -17,12 +17,8 @@ const style = {
   },
 };
 
-export class BackgroundDecorator extends React.Component<any, any> {
-
-  private channel: NodeJS.EventEmitter;
-  private story: any;
-
-  public state = { background: "transparent" };
+export class BackgroundDecorator extends React.Component {
+  state = { background: "transparent" };
 
   constructor(props) {
     super(props);
@@ -53,7 +49,7 @@ export class BackgroundDecorator extends React.Component<any, any> {
     this.channel.emit("background-unset");
   }
 
-  private setBackground = background => this.setState({ background })
+  setBackground = background => this.setState({ background })
 
   render() {
     const styles = style.wrapper;

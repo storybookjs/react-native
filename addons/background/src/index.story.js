@@ -1,14 +1,13 @@
-import * as React from "react"; // tslint:disable-line
+import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import centered from "@storybook/addon-centered";
 
-import backgrounds from "./index.tsx";
+import backgrounds from "./index.js";
 
 storiesOf("First Component", module)
   .addDecorator(centered)
   .add("First Button", () => <button>Click me</button>)
   ;
-
 
 storiesOf("Second Component", module)
   .addDecorator(centered)

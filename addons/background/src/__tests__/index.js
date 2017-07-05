@@ -1,8 +1,8 @@
-import * as React from "react"; // tslint:disable-line
-const EventEmitter = require("events"); // tslint:disable-line
+import * as React from "react"; // eslint:disable-line
+const EventEmitter = require("events"); // eslint:disable-line
 import { shallow } from "enzyme";
 import { BackgroundDecorator } from "../index";
-const TestUtils = require("react-addons-test-utils"); // tslint:disable-line
+const TestUtils = require("react-addons-test-utils"); // eslint:disable-line
 
 const testStory = () => () => <p>Hello World!</p>;
 

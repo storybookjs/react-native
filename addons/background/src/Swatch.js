@@ -1,6 +1,6 @@
 
-import * as React from "react"; // tslint:disable-line
-import assign = require("object-assign");
+import * as React from "react";
+const assign = require("object-assign");
 
 const style = {
   swatches: {
@@ -33,13 +33,7 @@ const style = {
   },
 };
 
-export interface BackgroundItemProps {
-  value: string;
-  name?: string;
-  setBackground(value: string): void;
-}
-
-export default ({ name, value, setBackground }: BackgroundItemProps) => (
+export default ({ name, value, setBackground }) => (
   <div
     style={assign({}, style.swatches, style.listStyle, style.hard)}
     onClick={() => setBackground(value)}
