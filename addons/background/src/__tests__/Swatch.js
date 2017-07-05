@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
 const EventEmitter = require("events");
 import { shallow, mount } from "enzyme";
 import Swatch from "../Swatch";
-const TestUtils = require("react-addons-test-utils");
+const TestUtils = require("react-dom/test-utils");
 const mockedSetBackround = (val) => {}
 
 describe("Swatch", function() {

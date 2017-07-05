@@ -1,6 +1,5 @@
 
-import * as React from "react";
-const assign = require("object-assign");
+import React from "react";
 
 const style = {
   swatches: {
@@ -35,22 +34,22 @@ const style = {
 
 export default ({ name, value, setBackground }) => (
   <div
-    style={assign({}, style.swatches, style.listStyle, style.hard)}
+    style={Object.assign({}, style.swatches, style.listStyle, style.hard)}
     onClick={() => setBackground(value)}
   >
     <div
-      style={assign({}, style.swatch, {
+      style={Object.assign({}, style.swatch, {
         background: value,
         "backgroundSize": "cover",
         "backgroundPosition": "center",
       })}
     >
     </div>
-    <div style={assign({}, style.listStyle, style.soft)}>
-      <h4 style={assign({ float: "left", fontWeight: "bold" }, style.font)}>
+    <div style={Object.assign({}, style.listStyle, style.soft)}>
+      <h4 style={Object.assign({ float: "left", fontWeight: "bold" }, style.font)}>
         {name}:
       </h4>
-      <h4 style={assign({ float: "right", fontWeight: "normal" }, style.font)}>
+      <h4 style={Object.assign({ float: "right", fontWeight: "normal" }, style.font)}>
         <em>{value}</em>
       </h4>
     </div>

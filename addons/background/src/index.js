@@ -1,6 +1,5 @@
-import * as React from "react";
+import React from "react";
 import addons from "@storybook/addons";
-const assign = require("object-assign");
 
 const style = {
   wrapper: {
@@ -54,7 +53,7 @@ export class BackgroundDecorator extends React.Component {
   render() {
     const styles = style.wrapper;
     styles.background = this.state.background;
-    return <div style={assign({}, styles)}>{this.story}</div>;
+    return <div style={Object.assign({}, styles)}>{this.story}</div>;
   }
 }
 

@@ -8,7 +8,7 @@
     "transform-inline-environment-variables",
     "transform-react-constant-elements",
     "react-require",
-    "react-remove-prop-types",
-    "transform-dead-code-elimination"
+    "transform-dead-code-elimination",
+    "transform-react-remove-prop-types"
   ]
 }

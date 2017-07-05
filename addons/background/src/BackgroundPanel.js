@@ -1,8 +1,7 @@
-import * as React from "react";
+import React from "react";
 import addons from "@storybook/addons";
 
 import Swatch from "./Swatch";
-const assign = require("object-assign");
 
 const style = {
   font: {
@@ -29,7 +28,7 @@ storiesOf("First Component", module)
 `.trim();
 
 const Instructions = () => (
-  <div style={assign({ padding: "20px" }, style.font)}>
+  <div style={Object.assign({ padding: "20px" }, style.font)}>
     <h5 style={{ fontSize: "16px" }}>Setup Instructions</h5>
     <p>Please add the background decorator definition to your story.
     The background decorate accepts an array of items, which should include a
@@ -50,7 +49,12 @@ export default class BackgroundPanel extends React.Component {
   constructor(props) {
     super(props);
 
-    this.channel = props.channel || addons.getChannel();
+    // A channel is explicitly passed in for testing
+    if (this.props.channel) {
+      this.channel = this.props.channel;
+    } else {
+      this.channel = addons.getChannel();
+    }
 
     this.state = { backgrounds: [] }
 
