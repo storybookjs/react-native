@@ -1,19 +1,13 @@
-<p align="center" >
-  <a href="http://newspring.cc">
-    <img src="https://s3.amazonaws.com/ns.images/newspring/icons/newspring-church-logo-black.png" alt="NewSpring Church" title="NewSpring Church" />
-  </a>
-</p>
+# addon-backgrounds
 
-react-storybook-addon-backgrounds
-=======================
-[![Build Status](https://travis-ci.org/NewSpring/react-storybook-addon-backgrounds.svg?branch=travis)](https://travis-ci.org/NewSpring/react-storybook-addon-backgrounds) [![Coverage Status](https://coveralls.io/repos/github/NewSpring/react-storybook-addon-backgrounds/badge.svg?branch=master)](https://coveralls.io/github/NewSpring/react-storybook-addon-backgrounds?branch=master)
+[![Build Status](https://travis-ci.org/storybooks/addon-backgrounds.svg?branch=travis)](https://travis-ci.org/storybooks/addon-backgrounds)
 
 ![React Storybook Screenshot](./.storybook/backgrounds.gif)
 
 ### Getting Started
 
 ```sh
-npm i --save react-storybook-addon-backgrounds
+npm i --save @storybook/addon-backgrounds
 ```
 
 Then create a file called `addons.js` in your storybook config.
@@ -21,7 +15,7 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import 'react-storybook-addon-backgrounds/register';
+import '@storybook/addon-backgrounds/register';
 ```
 
 Then write your stories like this:
@@ -29,7 +23,7 @@ Then write your stories like this:
 ```js
 import React from 'react';
 import { storiesOf } from "@storybook/react";
-import backgrounds from "react-storybook-addon-backgrounds";
+import backgrounds from "@storybook/addon-backgrounds";
 
 storiesOf("Button", module)
   .addDecorator(backgrounds([
