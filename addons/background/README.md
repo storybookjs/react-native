@@ -30,8 +30,7 @@ storiesOf("Button", module)
     { name: "twitter", value: "#00aced", default: true },
     { name: "facebook", value: "#3b5998" },
   ]))
-  .add("with text", () => <button>Click me</button>)
-  ;
+  .add("with text", () => <button>Click me</button>);
 ```
 
 ### Development
