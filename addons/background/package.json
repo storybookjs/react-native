@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NewSpring/react-storybook-addon-backgrounds.git"
+    "url": "git+https://github.com/storybooks/addon-backgrounds"
   },
   "peerDependencies": {
     "@storybook/addons": "^v3.1.6",
@@ -29,9 +29,9 @@
   "author": "jbaxleyiii",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NewSpring/react-storybook-addon-backgrounds/issues"
+    "url": "https://github.com/storybooks/addon-backgrounds/issues"
   },
-  "homepage": "https://github.com/NewSpring/react-storybook-addon-backgrounds#readme",
+  "homepage": "https://github.com/storybooks/addon-backgrounds#readme",
   "devDependencies": {
     "@storybook/addon-centered": "^v3.1.2",
     "@storybook/react": "^v3.1.7",

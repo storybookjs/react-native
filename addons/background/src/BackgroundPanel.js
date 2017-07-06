@@ -17,7 +17,7 @@ const defaultBackground = {
 
 const __html = `
 import { storiesOf } from "@storybook/react";
-import backgrounds from "react-storybook-addon-backgrounds";
+import backgrounds from "@storybook/addon-backgrounds";
 
 storiesOf("First Component", module)
   .addDecorator(backgrounds([
