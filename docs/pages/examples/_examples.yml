@@ -29,7 +29,7 @@ coursera:
   thumbnail: ./thumbnails/coursera-ui.png
   title: Coursera
   description: Coursera UI component library
-  demo: https://building.coursera.org/ui/
+  demo: https://webedx-spark.github.io/coursera-ui/
 artsy:
   thumbnail: ./thumbnails/artsy.png
   title: Artsy Force
