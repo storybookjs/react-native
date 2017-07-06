@@ -1,6 +1,41 @@
+# 3.1.7
+
+2017-June-28
+
+#### Bug Fixes
+
+-   Exit storybook build non-zero on stats errors (e.g. errors in the transpilation pipeline) [#1372](https://github.com/storybooks/storybook/pull/1372)
+-   Fixed regression: CSS entries were not picked up for storybook pages (e.g. when using exract-text-webpack-plugin) [#1363](https://github.com/storybooks/storybook/pull/1363)
+
+#### Documentation
+
+-   Document Storybook release process [#1348](https://github.com/storybooks/storybook/pull/1348)
+
+# 3.1.6
+
+2017-June-26
+
+#### Bug Fixes
+
+-   Remove the `cacheDirectory` option from babel config [#1350](https://github.com/storybooks/storybook/pull/1350)
+-   websockets (ws) removed `socket.upgradeReq`, so use `req` instead [#1337](https://github.com/storybooks/storybook/pull/1337)
+-   Ensure we add the correct version of `react-dom` [#1349](https://github.com/storybooks/storybook/pull/1349)
+-   Addon Info: Fix invalid prop `node.type` supplied to 'Props' [#1351](https://github.com/storybooks/storybook/pull/1351)
+-   Addon Info: Omit empty inline info header [#1306](https://github.com/storybooks/storybook/pull/1306)
+-   Addon Actions: Use uuid for action IDs instead of Math.random (fixes #1109) [#1347](https://github.com/storybooks/storybook/pull/1347)
+
+#### Documentation
+
+-   Fix welcome instructions to reflect current `getstorybook` [#1358](https://github.com/storybooks/storybook/pull/1358)
+-   Addon Info: Update README with configuration instructions [#1326](https://github.com/storybooks/storybook/pull/1326)
+
+#### Dependency Upgrades
+
+-   Update lint-staged to the latest version 🚀 [#1315](https://github.com/storybooks/storybook/pull/1315)
+
 # 3.1.5
 
-2017-June-17
+2017-June-22
 
 #### Features
 
@@ -14,11 +49,14 @@
 #### Documentation
 
 -   Added search to docs [#1256](https://github.com/storybooks/storybook/pull/1256)
+-   snapshot testing inverse regex example documentation [#1317](https://github.com/storybooks/storybook/pull/1317)
 
 #### Maintenance
 
 -   Refactored storybook component library [#1266](https://github.com/storybooks/storybook/pull/1266)
 -   Created CRA kitchen sink addons example [#1288](https://github.com/storybooks/storybook/pull/1288)
+-   Use a pack -> install technique to recreate local packages [#1332](https://github.com/storybooks/storybook/pull/1332)
+-   Import demo components from @storybook/react [#1303](https://github.com/storybooks/storybook/pull/1303)
 
 # 3.1.4
 

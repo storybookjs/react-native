@@ -11,7 +11,9 @@
       "ignore": [
         "cra-kitchen-sink",
         "test-cra",
-        "react-native-vanilla"
+        "react-native-vanilla",
+        "vue-example",
+        "@storybook/components"
       ]
     }
   },
@@ -22,5 +24,5 @@
     "examples/*"
   ],
   "concurrency": 1,
-  "version": "3.1.4"
+  "version": "3.2.0-alpha.5"
 }

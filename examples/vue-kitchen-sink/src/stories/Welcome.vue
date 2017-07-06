@@ -2,19 +2,16 @@ import Vue from 'vue';
 
 <template>
   <div class="main">
-    <h1>Welcome to STORYBOOK</h1>
+    <h1>Welcome to Storybook for Vue</h1>
     <p>
-      This is a UI component dev environment for your app.
+      This is a UI component dev environment for your vue app.
     </p>
     <p>
       We've added some basic stories inside the
-      {' '}
       <code class="code">src/stories</code>
-      {' '}
       directory.
       <br />
       A story is a single state of one or more UI components.
-      {' '}
       You can have as many stories as you want.
       <br />
       (Basically a story is like a visual test case.)
@@ -26,6 +23,7 @@ import Vue from 'vue';
       <code class="code">Button</code>
       .
     </p>
+    <p style="text-align:center"><img src="../logo.png" /></p>
     <p>
       Just like that, you can add your own components as stories.
       <br />
@@ -61,7 +59,7 @@ import Vue from 'vue';
   .main {
     margin: 15px;
     max-width: 600;
-    line-feight: 1.4;
+    line-height: 1.4;
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   }
 

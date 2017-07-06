@@ -20,8 +20,7 @@ import {
 } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 
-import Button from '@storybook/components/dist/demo/Button';
-import Welcome from '@storybook/components/dist/demo/Welcome';
+import { Button, Welcome } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
@@ -191,3 +190,44 @@ storiesOf('Addon Knobs', module).add(
     return <div>{content}</div>;
   })
 );
+
+storiesOf('component.base.Link')
+  .addDecorator(withKnobs)
+  .add('first', () => <a>{text('firstLink', 'first link')}</a>)
+  .add('second', () => <a>{text('secondLink', 'second link')}</a>);
+
+storiesOf('component.base.Span')
+  .add('first', () => <span>first span</span>)
+  .add('second', () => <span>second span</span>);
+
+storiesOf('component.common.Div')
+  .add('first', () => <div>first div</div>)
+  .add('second', () => <div>second div</div>);
+
+storiesOf('component.common.Table')
+  .add('first', () => <table><tr><td>first table</td></tr></table>)
+  .add('second', () => <table><tr><td>first table</td></tr></table>);
+
+storiesOf('component.Button')
+  .add('first', () => <button>first button</button>)
+  .add('second', () => <button>first second</button>);
+
+// Atomic
+
+storiesOf('Cells¯\\_(ツ)_/¯Molecules.Atoms/simple', module)
+  .addDecorator(withKnobs)
+  .add('with text', () => <Button>{text('buttonText', 'Hello Button')}</Button>)
+  .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Cells/Molecules/Atoms.more', module)
+  .add('with text2', () => <Button>Hello Button</Button>)
+  .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Cells/Molecules', module)
+  .add('with text', () => <Button>Hello Button</Button>)
+  .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Cells.Molecules.Atoms', module)
+  .add('with text2', () => <Button>Hello Button</Button>)
+  .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+

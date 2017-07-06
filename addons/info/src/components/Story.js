@@ -125,11 +125,7 @@ export default class Story extends React.Component {
   _renderInline() {
     return (
       <div>
-        <div style={this.state.stylesheet.infoPage}>
-          <div style={this.state.stylesheet.infoBody}>
-            {this._getInfoHeader()}
-          </div>
-        </div>
+        {this._renderInlineHeader()}
         <div>
           {this._renderStory()}
         </div>
@@ -140,6 +136,19 @@ export default class Story extends React.Component {
             {this._getSourceCode()}
             {this._getPropTables()}
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  _renderInlineHeader() {
+    const infoHeader = this._getInfoHeader();
+
+    return (
+      infoHeader &&
+      <div style={this.state.stylesheet.infoPage}>
+        <div style={this.state.stylesheet.infoBody}>
+          {infoHeader}
         </div>
       </div>
     );
