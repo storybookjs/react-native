@@ -2,15 +2,12 @@ import path from 'path';
 import webpack from 'webpack';
 import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
-const entries = {
-  preview: [],
-  manager: [path.resolve(__dirname, '../../manager')],
-};
-
 const config = {
   bail: true,
   devtool: '#cheap-module-source-map',
-  entry: entries,
+  entry: {
+    manager: [path.resolve(__dirname, '../../manager')],
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'static/[name].bundle.js',
