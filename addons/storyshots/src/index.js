@@ -56,6 +56,7 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
+  // NOTE: keep `suit` typo for backwards compatibility
   const suite = options.suite || options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
