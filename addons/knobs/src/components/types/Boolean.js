@@ -39,12 +39,12 @@ BooleanType.defaultProps = {
 BooleanType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.bool,
   }),
   onChange: PropTypes.func,
 };
 
 BooleanType.serialize = value => String(value);
-BooleanType.deserialize = value => (typeof value === 'string' ? value.match('true') : false);
+BooleanType.deserialize = value => value === 'true';
 
 export default BooleanType;

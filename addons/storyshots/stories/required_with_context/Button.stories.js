@@ -2,8 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react'; // eslint-disable-line
 import { action } from '@storybook/addon-actions'; // eslint-disable-line
-
-import Button from './Button';
+import { Button } from '@storybook/react/demo';
 
 storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)

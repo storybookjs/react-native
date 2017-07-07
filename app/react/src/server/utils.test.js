@@ -1,9 +1,9 @@
 import mock from 'mock-fs';
-import { getHeadHtml } from './utils';
+import { getPreviewHeadHtml } from './utils';
 
 const HEAD_HTML_CONTENTS = '<script>console.log("custom script!");</script>';
 
-describe('server.getHeadHtml', () => {
+describe('server.getPreviewHeadHtml', () => {
   describe('when .storybook/head.html does not exist', () => {
     beforeEach(() => {
       mock({
@@ -16,7 +16,7 @@ describe('server.getHeadHtml', () => {
     });
 
     it('return an empty string', () => {
-      const result = getHeadHtml('./config');
+      const result = getPreviewHeadHtml('./config');
       expect(result).toEqual('');
     });
   });
@@ -35,7 +35,7 @@ describe('server.getHeadHtml', () => {
     });
 
     it('return the contents of the file', () => {
-      const result = getHeadHtml('./config');
+      const result = getPreviewHeadHtml('./config');
       expect(result).toEqual(HEAD_HTML_CONTENTS);
     });
   });

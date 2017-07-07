@@ -1,3 +1,108 @@
+# 3.1.8
+
+2017-July-06
+
+#### Documentation
+
+-   Updated addon knob readme. [#1406](https://github.com/storybooks/storybook/pull/1406)
+-   Add a FAQ entry for shared config with next [#1390](https://github.com/storybooks/storybook/pull/1390)
+-   Documented webpack customization example for typescript [#1386](https://github.com/storybooks/storybook/pull/1386)
+
+#### Maintenance
+
+-   Removed empty array, since webpack 2 doesn't support them anymore. [#1381](https://github.com/storybooks/storybook/pull/1381)
+
+#### Dependency Upgrades
+
+-   Support webpack 3.0.0 [#1410](https://github.com/storybooks/storybook/pull/1410)
+-   Update react inspector to fix #1385 [#1408](https://github.com/storybooks/storybook/pull/1408)
+
+# 3.1.7
+
+2017-June-28
+
+#### Bug Fixes
+
+-   Exit storybook build non-zero on stats errors (e.g. errors in the transpilation pipeline) [#1372](https://github.com/storybooks/storybook/pull/1372)
+-   Fixed regression: CSS entries were not picked up for storybook pages (e.g. when using exract-text-webpack-plugin) [#1363](https://github.com/storybooks/storybook/pull/1363)
+
+#### Documentation
+
+-   Document Storybook release process [#1348](https://github.com/storybooks/storybook/pull/1348)
+
+# 3.1.6
+
+2017-June-26
+
+#### Bug Fixes
+
+-   Remove the `cacheDirectory` option from babel config [#1350](https://github.com/storybooks/storybook/pull/1350)
+-   websockets (ws) removed `socket.upgradeReq`, so use `req` instead [#1337](https://github.com/storybooks/storybook/pull/1337)
+-   Ensure we add the correct version of `react-dom` [#1349](https://github.com/storybooks/storybook/pull/1349)
+-   Addon Info: Fix invalid prop `node.type` supplied to 'Props' [#1351](https://github.com/storybooks/storybook/pull/1351)
+-   Addon Info: Omit empty inline info header [#1306](https://github.com/storybooks/storybook/pull/1306)
+-   Addon Actions: Use uuid for action IDs instead of Math.random (fixes #1109) [#1347](https://github.com/storybooks/storybook/pull/1347)
+
+#### Documentation
+
+-   Fix welcome instructions to reflect current `getstorybook` [#1358](https://github.com/storybooks/storybook/pull/1358)
+-   Addon Info: Update README with configuration instructions [#1326](https://github.com/storybooks/storybook/pull/1326)
+
+#### Dependency Upgrades
+
+-   Update lint-staged to the latest version 🚀 [#1315](https://github.com/storybooks/storybook/pull/1315)
+
+# 3.1.5
+
+2017-June-22
+
+#### Features
+
+-   Added flow support to getstorybook upgrade [#1289](https://github.com/storybooks/storybook/pull/1289)
+-   Added support for the `haul` react-native packager [#1294](https://github.com/storybooks/storybook/pull/1294)
+
+#### Bug Fixes
+
+-   Fixed addon knobs proptypes deserialization [#1290](https://github.com/storybooks/storybook/pull/1290)
+
+#### Documentation
+
+-   Added search to docs [#1256](https://github.com/storybooks/storybook/pull/1256)
+-   snapshot testing inverse regex example documentation [#1317](https://github.com/storybooks/storybook/pull/1317)
+
+#### Maintenance
+
+-   Refactored storybook component library [#1266](https://github.com/storybooks/storybook/pull/1266)
+-   Created CRA kitchen sink addons example [#1288](https://github.com/storybooks/storybook/pull/1288)
+-   Use a pack -> install technique to recreate local packages [#1332](https://github.com/storybooks/storybook/pull/1332)
+-   Import demo components from @storybook/react [#1303](https://github.com/storybooks/storybook/pull/1303)
+
+# 3.1.4
+
+2017-June-15
+
+#### Features
+
+-   IMPROVE design of addon-events [#1249](https://github.com/storybooks/storybook/pull/1249)
+-   Add a `shallowSnapshot` option for storyshots `test` functions [#1232](https://github.com/storybooks/storybook/pull/1232)
+
+#### Bug Fixes
+
+-   Fix app entry bug in RN gestorybook [#1280](https://github.com/storybooks/storybook/pull/1280)
+-   fix(addons/info): Cannot read property 'props' of undefined [#1258](https://github.com/storybooks/storybook/pull/1258)
+
+#### Documentation
+
+-   Add versions plugin to docs [#1269](https://github.com/storybooks/storybook/pull/1269)
+
+# 3.1.3
+
+2017-June-10
+
+#### Bug Fixes
+
+-   Fix `storybook-build` manager-head.html bug [#1248](https://github.com/storybooks/storybook/pull/1248)
+
 # 3.1.2
 
 Minor features including a new "events" addon, as well as the usual bugfixes, cleanup, etc.

@@ -8,13 +8,14 @@ import Event from './Event';
 
 const styles = {
   wrapper: {
-    margin: 10,
     fontFamily: `
       -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
       "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
     `,
     fontSize: 14,
     width: '100%',
+    boxSizing: 'border-box',
+    padding: '10px',
     color: 'rgb(51, 51, 51)',
     overflow: 'auto',
   },

@@ -68,15 +68,15 @@ initStoryshots({
 });
 ```
 
-### `suit`
+### `suite`
 
-By default, Storyshots groups stories inside a Jest test suit called "Storyshots". You could change it like this:
+By default, Storyshots groups stories inside a Jest test suite called "Storyshots". You could change it like this:
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots({
-  suit: 'MyStoryshots'
+  suite: 'MyStoryshots'
 });
 ```
 
@@ -93,6 +93,19 @@ initStoryshots({
 ```
 
 This can be useful if you want to separate the snapshots in directories next to each component. See an example [here](https://github.com/storybooks/storybook/issues/892).
+
+If you want to run all stories except stories of a specific kind, you can write an inverse regex which is true for all kinds except those with a specific word such as `DontTest`
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({
+  storyKindRegex:/^((?!.*?DontTest).)*$/
+});
+```
+
+This can be useful while testing react components which make use of the findDomNode API since they always fail with snapshot testing
+while using react-test-renderer see [here](https://github.com/facebook/react/issues/8324)
 
 ### `storyNameRegex`
 
@@ -129,3 +142,7 @@ Just render the story, don't check the output at all (useful if you just want to
 ### `snapshotWithOptions(options)`
 
 Like the default, but allows you to specify a set of options for the test renderer. [See for example here](https://github.com/storybooks/storybook/blob/b915b5439786e0edb17d7f5ab404bba9f7919381/examples/test-cra/src/storyshots.test.js#L14-L16).
+
+### `shallowSnapshot`
+
+Take a snapshot of a shallow-rendered version of the component.

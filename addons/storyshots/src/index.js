@@ -7,7 +7,7 @@ import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
 
-export { snapshotWithOptions, snapshot, renderOnly } from './test-bodies';
+export { snapshotWithOptions, snapshot, shallowSnapshot, renderOnly } from './test-bodies';
 
 let storybook;
 let configPath;
@@ -31,7 +31,8 @@ export default function testStorySnapshots(options = {}) {
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
     // eslint-disable-next-line
-    const loadBabelConfig = require('@storybook/react/dist/server/babel_config').default;
+    const loadBabelConfig = require('@storybook/react/dist/server/babel_config')
+      .default;
     const configDirPath = path.resolve(options.configPath || '.storybook');
     configPath = path.join(configDirPath, 'config.js');
 
@@ -55,7 +56,8 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
-  const suit = options.suit || 'Storyshots';
+  // NOTE: keep `suit` typo for backwards compatibility
+  const suite = options.suite || options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
@@ -71,7 +73,7 @@ export default function testStorySnapshots(options = {}) {
       continue;
     }
 
-    describe(suit, () => {
+    describe(suite, () => {
       describe(group.kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {

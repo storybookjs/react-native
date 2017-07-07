@@ -105,6 +105,14 @@ module.exports = (baseConfig, env) => {
 
   // Extend it as you need.
 
+  // For example, add typescript loader:
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    include: path.resolve(__dirname, '../src'),
+    loader: require.resolve('ts-loader')
+  });
+  config.resolve.extensions.push('.ts', '.tsx');
+
   return config;
 };
 ```

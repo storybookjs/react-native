@@ -23,6 +23,10 @@ Install:
 npm i -D @storybook/addon-actions
 ```
 
+Then, add following content to `.storybook/addons.js`
+
+    import '@storybook/addon-actions/register';
+
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a **name** to make it easier to identify.
 
 > _Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)_

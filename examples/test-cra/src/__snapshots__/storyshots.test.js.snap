@@ -2,18 +2,8 @@
 
 exports[`Storyshots Button with some emoji 1`] = `
 <button
+  className="css-1yjiefr"
   onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
 >
   😀 😎 👍 💯
 </button>
@@ -21,18 +11,8 @@ exports[`Storyshots Button with some emoji 1`] = `
 
 exports[`Storyshots Button with text 1`] = `
 <button
+  className="css-1yjiefr"
   onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
 >
   Hello Button
 </button>
@@ -41,18 +21,13 @@ exports[`Storyshots Button with text 1`] = `
 exports[`Storyshots ComponentWithRef basic 1`] = `<div />`;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-<div
-  style={
-    Object {
-      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
-      "lineHeight": 1.4,
-      "margin": 15,
-      "maxWidth": 600,
-    }
-  }
+<article
+  className="css-1fqbdip"
 >
-  <h1>
-    Welcome to STORYBOOK
+  <h1
+    className="css-nil"
+  >
+    Welcome to storybook
   </h1>
   <p>
     This is a UI component dev environment for your app.
@@ -61,17 +36,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     We've added some basic stories inside the
      
     <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      className="css-mteq83"
     >
       src/stories
     </code>
@@ -86,16 +51,9 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     See these sample
      
     <a
+      className="css-ca0824"
       onClick={[Function]}
       role="button"
-      style={
-        Object {
-          "borderBottom": "1px solid #1474f3",
-          "color": "#1474f3",
-          "paddingBottom": 2,
-          "textDecoration": "none",
-        }
-      }
       tabIndex="0"
     >
       stories
@@ -104,17 +62,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     for a component called
      
     <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      className="css-mteq83"
     >
       Button
     </code>
@@ -127,67 +75,36 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     (Try editing the 
     <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      className="css-mteq83"
     >
       Button
     </code>
-     component located at 
+     stories located at 
     <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      className="css-mteq83"
     >
-      src/stories/Button.js
+      src/stories/index.js
     </code>
     .)
   </p>
   <p>
-    This is just one thing you can do with Storybook.
+    Usually we create stories with smaller UI components in the app.
     <br />
     Have a look at the
      
     <a
+      className="css-ca0824"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
-      style={
-        Object {
-          "borderBottom": "1px solid #1474f3",
-          "color": "#1474f3",
-          "paddingBottom": 2,
-          "textDecoration": "none",
-        }
-      }
       target="_blank"
     >
-      Storybook
+      Writing Stories
     </a>
      
-    repo for more information.
+    section in our documentation.
   </p>
   <p
-    style={
-      Object {
-        "opacity": 0.5,
-      }
-    }
+    className="css-bwdon3"
   >
     <b>
       NOTE:
@@ -196,22 +113,12 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      className="css-mteq83"
     >
       .storybook/webpack.config.js
     </code>
      
     to add webpack loaders and plugins you are using in this project.
   </p>
-</div>
+</article>
 `;

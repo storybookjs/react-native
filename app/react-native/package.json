@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.1.2",
+  "version": "3.1.8",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -24,11 +24,11 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.1.2",
-    "@storybook/addon-links": "^3.1.2",
-    "@storybook/addons": "^3.1.2",
-    "@storybook/channel-websocket": "^3.1.2",
-    "@storybook/ui": "^3.1.2",
+    "@storybook/addon-actions": "^3.1.8",
+    "@storybook/addon-links": "^3.1.6",
+    "@storybook/addons": "^3.1.6",
+    "@storybook/channel-websocket": "^3.1.6",
+    "@storybook/ui": "^3.1.6",
     "autoprefixer": "^7.0.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -51,6 +51,7 @@
     "events": "^1.1.1",
     "express": "^4.15.2",
     "file-loader": "^0.11.1",
+    "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "json-loader": "^0.5.4",
     "json5": "^0.5.1",

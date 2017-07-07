@@ -1,11 +1,7 @@
 .demo-img {
-  width: 800px;
-  border: 5px solid #444;
-}
-
-@media only screen and (max-width: 800px) {
-  .demo-img {
-    width: 90%;
-    border: 2px solid #444;
-  }
+  max-width: 800px;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
 }
