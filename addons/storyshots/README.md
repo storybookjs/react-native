@@ -68,15 +68,15 @@ initStoryshots({
 });
 ```
 
-### `suit`
+### `suite`
 
-By default, Storyshots groups stories inside a Jest test suit called "Storyshots". You could change it like this:
+By default, Storyshots groups stories inside a Jest test suite called "Storyshots". You could change it like this:
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots({
-  suit: 'MyStoryshots'
+  suite: 'MyStoryshots'
 });
 ```
 
