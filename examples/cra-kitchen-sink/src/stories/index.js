@@ -74,14 +74,26 @@ storiesOf('Button', module)
 
     return (
       <div style={style}>
-        <p>{intro}</p>
-        <p>My birthday is: {new Date(birthday).toLocaleDateString()}</p>
-        <p>My wallet contains: ${dollars.toFixed(2)}</p>
+        <p>
+          {intro}
+        </p>
+        <p>
+          My birthday is: {new Date(birthday).toLocaleDateString()}
+        </p>
+        <p>
+          My wallet contains: ${dollars.toFixed(2)}
+        </p>
         <p>In my backpack, I have:</p>
         <ul>
-          {items.map(item => <li key={item}>{item}</li>)}
+          {items.map(item =>
+            <li key={item}>
+              {item}
+            </li>
+          )}
         </ul>
-        <p>{salutation}</p>
+        <p>
+          {salutation}
+        </p>
       </div>
     );
   })

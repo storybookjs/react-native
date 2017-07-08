@@ -14,8 +14,14 @@ const style = {
 
 const innerStyle = {
   margin: 'auto',
-}
+};
 
 export default function(storyFn) {
-  return <div style={style}><div style={innerStyle}>{storyFn()}</div></div>;
+  return (
+    <div style={style}>
+      <div style={innerStyle}>
+        {storyFn()}
+      </div>
+    </div>
+  );
 }
