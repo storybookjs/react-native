@@ -141,7 +141,9 @@ export default class Panel extends React.Component {
         <div style={styles.panel}>
           <PropForm knobs={knobsArray} onFieldChange={this.handleChange} />
         </div>
-        <button style={styles.resetButton} onClick={this.reset}>RESET</button>
+        <button style={styles.resetButton} onClick={this.reset}>
+          RESET
+        </button>
       </div>
     );
   }
