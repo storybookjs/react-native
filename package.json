@@ -54,7 +54,7 @@
     "eslint-plugin-react": "^7.0.1",
     "gh-pages": "^1.0.0",
     "github-release-from-changelog": "^1.2.1",
-    "husky": "^0.13.4",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
     "jest-enzyme": "^3.2.0",
     "lerna": "2.0.0",
