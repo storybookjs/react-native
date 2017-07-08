@@ -60,7 +60,7 @@
     "lerna": "2.0.0",
     "lint-staged": "^4.0.0",
     "nodemon": "^1.11.0",
-    "npmc": "^5.0.3-canary.12",
+    "npmc": "^5.1.0-canary.2",
     "prettier": "^1.5.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
