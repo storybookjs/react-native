@@ -83,17 +83,6 @@ export function renderMain(data, storyStore) {
     return renderError(error);
   }
 
-  if (element.type === undefined) {
-    const error = {
-      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-        Seems like you are not returning a correct React element from the story.
-        Could you double check that?
-      `,
-    };
-    return renderError(error);
-  }
-
   ReactDOM.render(element, rootEl);
   return null;
 }
