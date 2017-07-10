@@ -29,7 +29,7 @@ const defaultMarksyConf = {
   ul: UL,
 };
 
-export function withInfo(info, storyFn, _options, context) {
+export function withInfo(info, storyFn, _options) {
   if (typeof storyFn !== 'function') {
     if (typeof info === 'function') {
       _options = storyFn; // eslint-disable-line
@@ -57,34 +57,33 @@ export function withInfo(info, storyFn, _options, context) {
     Object.assign(marksyConf, options.marksyConf);
   }
 
-  const props = {
-    info,
-    context,
-    showInline: Boolean(options.inline),
-    showHeader: Boolean(options.header),
-    showSource: Boolean(options.source),
-    propTables: options.propTables,
-    propTablesExclude: options.propTablesExclude,
-    styles: typeof options.styles === 'function' ? options.styles : s => s,
-    marksyConf,
-    maxPropObjectKeys: options.maxPropObjectKeys,
-    maxPropArrayLength: options.maxPropArrayLength,
-    maxPropsIntoLine: options.maxPropsIntoLine,
-    maxPropStringLength: options.maxPropStringLength,
+  return context => {
+    const props = {
+      info,
+      context,
+      showInline: Boolean(options.inline),
+      showHeader: Boolean(options.header),
+      showSource: Boolean(options.source),
+      propTables: options.propTables,
+      propTablesExclude: options.propTablesExclude,
+      styles: typeof options.styles === 'function' ? options.styles : s => s,
+      marksyConf,
+      maxPropObjectKeys: options.maxPropObjectKeys,
+      maxPropArrayLength: options.maxPropArrayLength,
+      maxPropsIntoLine: options.maxPropsIntoLine,
+      maxPropStringLength: options.maxPropStringLength,
+    };
+    return (
+      <Story {...props}>
+        {storyFn(context)}
+      </Story>
+    );
   };
-
-  return (
-    <Story {...props}>
-      {storyFn(context)}
-    </Story>
-  );
 }
 
 export default {
   addWithInfo(storyName, info, storyFn, _options) {
-    return this.add(storyName, context => {
-      return withInfo(info, storyFn, _options, context);
-    });
+    return this.add(storyName, withInfo(info, storyFn, _options));
   },
 };
 

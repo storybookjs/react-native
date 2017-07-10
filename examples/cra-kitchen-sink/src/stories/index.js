@@ -56,6 +56,11 @@ const InfoButton = () =>
     {' '}Show Info{' '}
   </span>;
 
+const withNotes = (note, storyFn) => context =>
+  <WithNotes notes={note}>
+    {storyFn(context)}
+  </WithNotes>;
+
 storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
@@ -120,19 +125,31 @@ storiesOf('Button', module)
   .addWithInfo(
     'with some info',
     'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
-    () =>
+    context =>
       <div>
-        click the <InfoButton /> label in top right for info
+        click the <InfoButton /> label in top right for info about "{context.story}"
       </div>
   )
-  .add('with new info', (context) =>
+  .add(
+    'with new info',
     withInfo(
-      'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.', () => (
-      <div>
-        click the <InfoButton /> label in top right for info
-      </div>),
-      {},
-      context
+      'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.',
+      context =>
+        <div>
+          click the <InfoButton /> label in top right for info about "{context.story}"
+        </div>
+    )
+  )
+  .add(
+    'addons composition',
+    withInfo(
+      'Addon info',
+      withNotes('Addons composition: Info(Notes(storyFn))', context =>
+        <div>
+          click the <InfoButton /> label in top right and select "Notes" on Addons Panel to know
+          more about "{context.story}"
+        </div>
+      )
     )
   );
 

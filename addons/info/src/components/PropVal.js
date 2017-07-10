@@ -115,9 +115,16 @@ export default function PropVal(props) {
   return <span>{content}</span>;
 }
 
+PropVal.defaultProps = {
+  val: null, // eslint-disable-line
+  maxPropObjectKeys: 0,
+  maxPropArrayLength: 0,
+  maxPropStringLength: 0,
+}
+
 PropVal.propTypes = {
-  val: PropTypes.any.isRequired, // eslint-disable-line
-  maxPropObjectKeys: PropTypes.number.isRequired,
-  maxPropArrayLength: PropTypes.number.isRequired,
-  maxPropStringLength: PropTypes.number.isRequired,
+  val: PropTypes.any, // eslint-disable-line
+  maxPropObjectKeys: PropTypes.number,
+  maxPropArrayLength: PropTypes.number,
+  maxPropStringLength: PropTypes.number,
 };
