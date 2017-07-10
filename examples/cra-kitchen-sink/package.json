@@ -19,17 +19,17 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.0.0",
+    "@storybook/addon-actions": "3.2.0-alpha.7",
     "@storybook/addon-centered": "^3.0.0",
     "@storybook/addon-events": "^3.0.0",
-    "@storybook/addon-knobs": "3.2.0-alpha.5",
+    "@storybook/addon-knobs": "3.2.0-alpha.7",
     "@storybook/addon-info": "^3.0.0",
     "@storybook/addon-links": "3.2.0-alpha.5",
     "@storybook/addon-notes": "3.2.0-alpha.5",
     "@storybook/addon-options": "3.2.0-alpha.5",
-    "@storybook/addon-storyshots": "3.2.0-alpha.5",
+    "@storybook/addon-storyshots": "3.2.0-alpha.7",
     "@storybook/addons": "^3.0.0",
-    "@storybook/react": "3.2.0-alpha.5",
+    "@storybook/react": "3.2.0-alpha.7",
     "react-scripts": "1.0.1"
   },
   "private": true
