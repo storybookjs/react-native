@@ -43,12 +43,12 @@ const InfoButton = () =>
     style={{
       fontFamily: 'sans-serif',
       fontSize: 12,
-      //      display: 'block',
       textDecoration: 'none',
       background: 'rgb(34, 136, 204)',
       color: 'rgb(255, 255, 255)',
       padding: '5px 15px',
       margin: 4,
+      marginTop: 16,
       cursor: 'pointer',
       borderRadius: '0px 0px 0px 5px',
     }}
@@ -133,21 +133,19 @@ storiesOf('Button', module)
   .add(
     'with new info',
     withInfo(
-      'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.',
-      context =>
-        <div>
-          click the <InfoButton /> label in top right for info about "{context.story}"
-        </div>
+      'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
+    )(context =>
+      <div>
+        click the <InfoButton /> label in top right for info about "{context.story}"
+      </div>
     )
   )
   .add(
     'addons composition',
-    withInfo(
-      'Addon info',
-      withNotes('Addons composition: Info(Notes(storyFn))', context =>
+    withInfo('see Notes panel for composition info')(
+      addonNotes({ notes: 'Composition: Info(Notes())' })(context =>
         <div>
-          click the <InfoButton /> label in top right and select "Notes" on Addons Panel to know
-          more about "{context.story}"
+          click the <InfoButton /> label in top right for info about "{context.story}"
         </div>
       )
     )
