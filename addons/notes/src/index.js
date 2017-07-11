@@ -5,10 +5,10 @@ import { WithNotes as ReactWithNotes } from './react';
 export const addonNotes = ({ notes }) => {
   const channel = addons.getChannel();
 
-  return getStory => () => {
+  return getStory => (context) => {
     // send the notes to the channel before the story is rendered
     channel.emit('storybook/notes/add_notes', notes);
-    return getStory();
+    return getStory(context);
   };
 };
 
