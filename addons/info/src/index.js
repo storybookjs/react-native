@@ -30,7 +30,7 @@ const defaultMarksyConf = {
 };
 
 export function withInfo(info, _options) {
-  return (storyFn) => {
+  return storyFn => {
     if (typeof storyFn !== 'function') {
       if (typeof info === 'function') {
         _options = storyFn; // eslint-disable-line
@@ -79,12 +79,34 @@ export function withInfo(info, _options) {
           {storyFn(context)}
         </Story>
       );
-    };}
+    };
+  };
 }
+
+function deprecate() {
+  const logger = console;
+  let warned = false;
+  const deprecated = msg => {
+    if (!warned) {
+      logger.warn(msg);
+      warned = true;
+    }
+  };
+  return deprecated;
+}
+
+const showWaring = deprecate();
+
+const warning = storyFn => context => {
+  showWaring(
+    `Warning: Applying addWithInfo is deprecated and will be removed in the next major release. Use withInfo from the same package instead. Please check the "${context.kind}/${context.story}" story. See https://github.com/storybooks/storybook/tree/master/addons/info`
+  );
+  return storyFn(context);
+};
 
 export default {
   addWithInfo(storyName, info, storyFn, _options) {
-    return this.add(storyName, withInfo(info, _options)(storyFn));
+    return this.add(storyName, warning(withInfo(info, _options)(storyFn)));
   },
 };
 

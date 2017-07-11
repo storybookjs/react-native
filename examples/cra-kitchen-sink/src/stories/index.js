@@ -47,19 +47,12 @@ const InfoButton = () =>
       background: 'rgb(34, 136, 204)',
       color: 'rgb(255, 255, 255)',
       padding: '5px 15px',
-      margin: 4,
-      marginTop: 16,
-      cursor: 'pointer',
+      margin: 10,
       borderRadius: '0px 0px 0px 5px',
     }}
   >
     {' '}Show Info{' '}
   </span>;
-
-const withNotes = (note, storyFn) => context =>
-  <WithNotes notes={note}>
-    {storyFn(context)}
-  </WithNotes>;
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
