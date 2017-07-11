@@ -30,7 +30,7 @@
     "@storybook/addon-storyshots": "^3.0.0",
     "@storybook/addons": "^3.0.0",
     "@storybook/react": "^3.0.0",
-    "react-scripts": "1.0.1"
+    "react-scripts": "1.0.10"
   },
   "private": true
 }

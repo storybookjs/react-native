@@ -1,3 +1,35 @@
+# 3.1.8
+
+2017-July-06
+
+#### Documentation
+
+-   Updated addon knob readme. [#1406](https://github.com/storybooks/storybook/pull/1406)
+-   Add a FAQ entry for shared config with next [#1390](https://github.com/storybooks/storybook/pull/1390)
+-   Documented webpack customization example for typescript [#1386](https://github.com/storybooks/storybook/pull/1386)
+
+#### Maintenance
+
+-   Removed empty array, since webpack 2 doesn't support them anymore. [#1381](https://github.com/storybooks/storybook/pull/1381)
+
+#### Dependency Upgrades
+
+-   Support webpack 3.0.0 [#1410](https://github.com/storybooks/storybook/pull/1410)
+-   Update react inspector to fix #1385 [#1408](https://github.com/storybooks/storybook/pull/1408)
+
+# 3.1.7
+
+2017-June-28
+
+#### Bug Fixes
+
+-   Exit storybook build non-zero on stats errors (e.g. errors in the transpilation pipeline) [#1372](https://github.com/storybooks/storybook/pull/1372)
+-   Fixed regression: CSS entries were not picked up for storybook pages (e.g. when using exract-text-webpack-plugin) [#1363](https://github.com/storybooks/storybook/pull/1363)
+
+#### Documentation
+
+-   Document Storybook release process [#1348](https://github.com/storybooks/storybook/pull/1348)
+
 # 3.1.6
 
 2017-June-26
