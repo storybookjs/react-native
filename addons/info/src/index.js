@@ -18,10 +18,10 @@ function deprecate() {
   return deprecated;
 }
 
-const showWaring = deprecate();
+const showWarning = deprecate();
 
 const warning = addonCompose((storyFn, context) => {
-  showWaring(
+  showWarning(
     `Warning: Applying addWithInfo is deprecated and will be removed in the next major release. Use withInfo from the same package instead. \nPlease check the "${context.kind}/${context.story}" story. \nSee https://github.com/storybooks/storybook/tree/master/addons/info`
   );
   return storyFn(context);

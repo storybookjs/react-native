@@ -42,11 +42,13 @@ describe('addon Info', () => {
   const api = {
     add: (name, fn) => fn(testContext),
   };
-  it('should render <Info />', () => {
-    const Info = withInfo('Test Info')(story);
+  it('should render <Info /> and markdown', () => {
+    const Info = withInfo(
+      '# Test story \n## with markdown info \ncontaing **bold**, *cursive* text and `code`'
+    )(story);
     ReactDOM.render(<Info />, document.createElement('div'));
   });
-  it('should should render with missed info', () => {
+  it('should render with missed info', () => {
     setDefaults(testOptions);
     addInfo(null, testContext, { info: story, options: testOptions });
   });
