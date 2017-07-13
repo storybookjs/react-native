@@ -116,11 +116,11 @@ export default function PropVal(props) {
 }
 
 PropVal.defaultProps = {
-  val: null, // eslint-disable-line
-  maxPropObjectKeys: 0,
-  maxPropArrayLength: 0,
-  maxPropStringLength: 0,
-}
+  val: null,
+  maxPropObjectKeys: 3,
+  maxPropArrayLength: 3,
+  maxPropStringLength: 50,
+};
 
 PropVal.propTypes = {
   val: PropTypes.any, // eslint-disable-line

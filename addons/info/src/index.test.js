@@ -50,7 +50,7 @@ describe('addon Info', () => {
   });
   it('should render with missed info', () => {
     setDefaults(testOptions);
-    addInfo(null, testContext, { info: story, options: testOptions });
+    addInfo(null, testContext, story, testOptions);
   });
   it('should show deprecation warning', () => {
     const addWithInfo = AddonInfo.addWithInfo.bind(api);
