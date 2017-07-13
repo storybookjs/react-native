@@ -1,31 +1,11 @@
 import React from 'react';
+import deprecate from 'util-deprecate';
 import _Story from './components/Story';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
 
 function addonCompose(addonFn) {
   return storyFn => context => addonFn(storyFn, context);
 }
-
-function deprecate() {
-  const logger = console;
-  let warned = false;
-  const deprecated = msg => {
-    if (!warned) {
-      logger.warn(msg);
-      warned = true;
-    }
-  };
-  return deprecated;
-}
-
-const showWarning = deprecate();
-
-const warning = addonCompose((storyFn, context) => {
-  showWarning(
-    `Warning: Applying addWithInfo is deprecated and will be removed in the next major release. Use withInfo from the same package instead. \nPlease check the "${context.kind}/${context.story}" story. \nSee https://github.com/storybooks/storybook/tree/master/addons/info`
-  );
-  return storyFn(context);
-});
 
 export const Story = _Story;
 
@@ -54,7 +34,7 @@ const defaultMarksyConf = {
   ul: UL,
 };
 
-export function addInfo(storyFn, context, { info, _options }) {
+export function addInfo(storyFn, context, info, _options) {
   if (typeof storyFn !== 'function') {
     if (typeof info === 'function') {
         _options = storyFn; // eslint-disable-line
@@ -104,12 +84,12 @@ export function addInfo(storyFn, context, { info, _options }) {
 }
 
 export const withInfo = (info, _options) =>
-  addonCompose((storyFn, context) => addInfo(storyFn, context, { info, _options }));
+  addonCompose((storyFn, context) => addInfo(storyFn, context, info, _options));
 
 export default {
-  addWithInfo(storyName, info, storyFn, _options) {
-    return this.add(storyName, warning(withInfo(info, _options)(storyFn)));
-  },
+  addWithInfo: deprecate(function addWithInfo(storyName, info, storyFn, _options) {
+    return this.add(storyName, withInfo(info, _options)(storyFn));
+  }, '@storybook/addon-info .addWithInfo() addon is deprecated, use withInfo() from the same package instead. \nSee https://github.com/storybooks/storybook/tree/master/addons/info'),
 };
 
 export function setDefaults(newDefaults) {
