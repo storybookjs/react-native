@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "storybook": "/usr/local/bin/start-storybook -p 9009 -s src/assets",
-    "build-storybook": "/usr/local/bin/build-storybook -s src"
+    "storybook": "start-storybook -p 9009 -s src/assets",
+    "build-storybook": "build-storybook -s src"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +31,7 @@
     "@angular/cli": "1.2.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
+    "@storybook/angular": "3.2.0-alpha.7",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
