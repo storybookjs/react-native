@@ -1,4 +1,4 @@
-# Storybook for Vue
+# Storybook for Angular
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
@@ -7,11 +7,11 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
 
-Storybook for Vue is a UI development environment for your Vue components.
+Storybook for Angular is a UI development environment for your Angular components.
 With it, you can visualize different states of your UI components and develop them interactively.
 
 ## Notes
 
--   When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
+-  For the time being, this only supports one-page angular components
 
 ♥️
