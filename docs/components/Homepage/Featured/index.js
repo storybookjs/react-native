@@ -17,7 +17,9 @@ const Item = ({ storybook, owner, source }) =>
           {storybook.name}
         </a>
       </p>
-      <a href={source} target="_blank" rel="noopener noreferrer">source</a>
+      <a href={source} target="_blank" rel="noopener noreferrer">
+        source
+      </a>
     </div>
   </div>;
 Item.propTypes = {

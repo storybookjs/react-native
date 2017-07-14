@@ -18,7 +18,9 @@ export default function CommentsPanel(props) {
     return (
       <div style={style.wrapper}>
         <div style={style.message}>
-          <a style={style.button} href={appsUrl}>Create an app for this repo on Storybook Hub</a>
+          <a style={style.button} href={appsUrl}>
+            Create an app for this repo on Storybook Hub
+          </a>
         </div>
       </div>
     );
