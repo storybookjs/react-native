@@ -37,7 +37,7 @@ Now, write your stories with knobs.
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { addonKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -52,14 +52,15 @@ stories.add('with a button', () => (
   </button>
 ))
 
+const options = {};
 // Knobs as dynamic variables.
-stories.add('as dynamic variables', () => {
+stories.add('as dynamic variables', addonKnobs(options)(() => {
   const name = text('Name', 'Arunoda Susiripala');
   const age = number('Age', 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
-});
+}));
 ```
 
 You can see your Knobs in a Storybook panel as shown below.
@@ -234,12 +235,10 @@ const value = date(label, defaultValue);
 If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.
 Usage:
 
-```js
-story.addDecorator(withKnobsOptions({
-  debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
-  timestamps: true // Doesn't emit events while user is typing.
-}));
-```
+    story.addDecorator(withKnobsOptions({
+       debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
+       timestamps: true // Doesn't emit events while user is typing.
+    }));
 
 ## Typescript
 
