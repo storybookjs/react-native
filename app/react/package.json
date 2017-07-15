@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.1.7",
+  "version": "3.1.8",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
   "bugs": {
@@ -22,7 +22,7 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.1.6",
+    "@storybook/addon-actions": "^3.1.8",
     "@storybook/addon-links": "^3.1.6",
     "@storybook/addons": "^3.1.6",
     "@storybook/channel-postmessage": "^3.1.6",
@@ -53,6 +53,7 @@
     "json-loader": "^0.5.4",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
+    "lodash.flattendeep": "^4.4.0",
     "lodash.pick": "^4.4.0",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.5",

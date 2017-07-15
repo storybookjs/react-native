@@ -25,16 +25,23 @@ algolia:
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
+rebass:
+  thumbnail: ./thumbnails/rebass.png
+  title: Rebass
+  description: Functional React UI component library
+  demo: http://jxnblk.com/rebass/stories/
+  source: https://github.com/jxnblk/rebass
+  site: http://jxnblk.com/rebass
 coursera:
   thumbnail: ./thumbnails/coursera-ui.png
   title: Coursera
   description: Coursera UI component library
-  demo: https://building.coursera.org/ui/
+  demo: https://webedx-spark.github.io/coursera-ui/
 artsy:
   thumbnail: ./thumbnails/artsy.png
   title: Artsy Force
   description: Artsy's "Force" component library
-  demo: https://artsy.github.io/reaction-force/
+  demo: https://artsy.github.io/reaction/
   source: https://github.com/artsy/reaction-force
   site: https://artsy.net
 necolas:

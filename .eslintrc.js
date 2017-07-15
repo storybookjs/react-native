@@ -53,6 +53,7 @@ module.exports = {
     ],
     'import/prefer-default-export': ignore,
     'react/jsx-wrap-multilines': ignore,
+    'react/jsx-indent': ignore,
     'react/jsx-indent-props': ignore,
     'react/jsx-closing-bracket-location': ignore,
     'react/jsx-uses-react': error,
