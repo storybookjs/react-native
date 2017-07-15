@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
+import isReactRenderable from './element_check';
 import ErrorDisplay from './error_display';
 
 // check whether we're running on node/browser
@@ -79,6 +80,17 @@ export function renderMain(data, storyStore) {
         Did you forget to return the React element from the story?
         Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
       `,
+    };
+    return renderError(error);
+  }
+
+  if (!isReactRenderable(element)) {
+    const error = {
+      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
+      description: stripIndents`
+         Seems like you are not returning a correct React element from the story.
+         Could you double check that?
+       `,
     };
     return renderError(error);
   }
