@@ -124,5 +124,5 @@ If you **are** using these addons, migrating is simple:
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     import { action } from '@storybook/addon-actions';
-    import { link } from '@storybook/addon-links';
+    import { linkTo } from '@storybook/addon-links';
     ```
