@@ -53,6 +53,7 @@
     "json-loader": "^0.5.4",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
+    "lodash.flattendeep": "^4.4.0",
     "lodash.pick": "^4.4.0",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.5",

@@ -1,9 +1,5 @@
 import React from 'react';
-import isReactRenderable, {
-  isValidFiberElement,
-  flattenList,
-  isPriorToFiber,
-} from './element_check';
+import isReactRenderable, { isValidFiberElement, isPriorToFiber } from './element_check';
 
 describe('element_check.utils.isValidFiberElement', () => {
   it('should accept to render a string', () => {
@@ -38,14 +34,6 @@ describe('element_check.utils.isValidFiberElement', () => {
 
   it("shouldn't accept to render undefined", () => {
     expect(isValidFiberElement(undefined)).toBe(false);
-  });
-});
-
-describe('element_check.utils.flattenList', () => {
-  it('should flatten a deep nested list', () => {
-    const deepNestedList = [1, 2, [3, 4, [5, 6, [7]]]];
-
-    expect(flattenList(deepNestedList)).toMatchSnapshot();
   });
 });
 

@@ -1,17 +1,9 @@
 import React from 'react';
+import flattenDeep from 'lodash.flattendeep';
 
 // return true if the element is renderable with react fiber
 export const isValidFiberElement = element =>
   typeof element === 'string' || typeof element === 'number' || React.isValidElement(element);
-
-// input: [1, 2, [3, 4, [5, 6, [7]]]]
-// output: [ 1, 2, 3, 4, 5, 6, 7 ]
-export const flattenList = list =>
-  list.reduce((array, element) => {
-    const newElement = Array.isArray(element) ? flattenList(element) : [element];
-
-    return [...array, ...newElement];
-  }, []);
 
 export const isPriorToFiber = version => {
   const [majorVersion] = version.split('.');
@@ -37,7 +29,7 @@ const isReactRenderable = element => {
   const elementsList = element.map(isReactRenderable);
 
   // flatten the list of elements (possibly deep nested)
-  const flatList = flattenList(elementsList);
+  const flatList = flattenDeep(elementsList);
 
   // keep only invalid elements
   const invalidElements = flatList.filter(elementIsRenderable => elementIsRenderable === false);
