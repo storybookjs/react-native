@@ -19,7 +19,6 @@
   "devDependencies": {
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
     "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
-    "@storybook/addon-storyshots": "file:../../packs/storybook-addon-storyshots.tgz",
     "@storybook/addons": "file:../../packs/storybook-addons.tgz",
     "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
     "@storybook/channels": "file:../../packs/storybook-channels.tgz",

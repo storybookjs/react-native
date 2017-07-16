@@ -1,4 +1,4 @@
-import { configure, setAddon } from '@storybook/react';
+import { configure, setAddon, getStorybook } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import infoAddon from '@storybook/addon-info';
 
@@ -20,3 +20,5 @@ function loadStories() {
 }
 
 configure(loadStories, module);
+
+export { getStorybook as default };
