@@ -1,3 +1,29 @@
+# 3.1.9
+
+2017-July-16
+
+#### Features
+
+-   React fiber support [#1443](https://github.com/storybooks/storybook/pull/1443)
+
+#### Documentation
+
+-   Refine docs about loading stories dynamically for react-native [#1420](https://github.com/storybooks/storybook/pull/1420)
+
+#### Bug Fixes
+
+-   Verify that name is a string in addons/actions [#1415](https://github.com/storybooks/storybook/pull/1415)
+-   Knobs: fix label alignment [#1471](https://github.com/storybooks/storybook/pull/1471)
+-   Fix display of large components [#1237](https://github.com/storybooks/storybook/pull/1237)
+
+#### Dependency Upgrades
+
+-   Dependency updates [#1439](https://github.com/storybooks/storybook/pull/1439)
+-   chore(package): update husky to version 0.14.3 [#1437](https://github.com/storybooks/storybook/pull/1437)
+-   Update danger to the latest version 🚀 [#1393](https://github.com/storybooks/storybook/pull/1393)
+-   Update lerna to the latest version 🚀 [#1423](https://github.com/storybooks/storybook/pull/1423)
+-   Pin gatsby version and upgrade gh-pages [#1462](https://github.com/storybooks/storybook/pull/1462)
+
 # 3.1.8
 
 2017-July-06
