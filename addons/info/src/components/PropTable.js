@@ -14,15 +14,97 @@ Object.keys(PropTypes).forEach(typeName => {
 });
 
 const stylesheet = {
-  propTable: {
-    marginLeft: -10,
-    borderSpacing: '10px 5px',
-    borderCollapse: 'separate',
+  hasProperty: {
+    marginLeft: 10
   },
+  code: {
+    fontFamily: 'Monaco, Consolas, "Courier New", monospace'
+  },
+  block: {
+    display: 'block'
+  },
+  propTable: {
+    marginTop: 10,
+    borderCollapse: 'collapse'
+  },
+  propTableCell: {
+    border: '1px solid #ccc',
+    padding: '2px 6px'
+  }
+};
+
+const formatType = ({propType, type, property, required}) => {
+  let result;
+
+  if (type) {
+    const PropertyLabel =
+      property &&
+      <span style={stylesheet.hasProperty}>
+        {property}:{' '}
+      </span>;
+
+    if (propType === 'other') {
+      return (result = type.name);
+    } else if (type && propType === 'arrayOf') {
+      return (
+        <span style={property ? {...stylesheet.block, ...stylesheet.hasProperty} : {}}>
+          {PropertyLabel}
+          <span>[</span>
+          <span>
+            {formatType({
+              parentType: propType,
+              type: type.value,
+              propType: type.value.name
+            })}
+          </span>
+          <span>]</span>
+        </span>
+      );
+    } else if (propType === 'enum') {
+      return (
+        <div>
+          {type.value.map(({value}) => value).join(' | ')}
+        </div>
+      );
+    } else if (propType === 'shape') {
+      const values = Object.keys(type.value).map(property =>
+        formatType({
+          property,
+          parentType: propType,
+          type: type.value[property],
+          propType: type.value[property].name,
+          required: type.value[property].required
+        })
+      );
+
+      return (
+        <span style={property ? {...stylesheet.block, ...stylesheet.hasProperty} : {}}>
+          {PropertyLabel}
+          <span>
+            {'{'}
+          </span>
+          {values.map(value =>
+            <span>
+              {value}
+            </span>
+          )}
+          <span>
+            {'}'}
+          </span>
+        </span>
+      );
+    }
+  }
+
+  return (
+    <div style={property ? stylesheet.hasProperty : {}}>
+      {property ? `  ${property}${required ? '' : '?'}: ${propType},` : propType}
+    </div>
+  );
 };
 
 export default function PropTable(props) {
-  const { type, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = props;
+  const {type, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength} = props;
 
   if (!type) {
     return null;
@@ -34,24 +116,15 @@ export default function PropTable(props) {
     Object.keys(type.propTypes).forEach(property => {
       const typeInfo = type.propTypes[property];
       const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-      const description =
-        type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property]
-          ? type.__docgenInfo.props[property].description
-          : null;
-      let propType = PropTypesMap.get(typeInfo) || 'other';
+      const docgenInfo =
+        type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property];
+      const description = docgenInfo ? docgenInfo.description : null;
+      const propType = formatType({
+        propType: docgenInfo && docgenInfo.type && docgenInfo.type.name,
+        type: (docgenInfo && docgenInfo.type) || {}
+      });
 
-      if (propType === 'other') {
-        if (
-          type.__docgenInfo &&
-          type.__docgenInfo.props &&
-          type.__docgenInfo.props[property] &&
-          type.__docgenInfo.props[property].type
-        ) {
-          propType = type.__docgenInfo.props[property].type.name;
-        }
-      }
-
-      accumProps[property] = { property, propType, required, description };
+      accumProps[property] = {property, propType, required, description};
     });
   }
 
@@ -64,7 +137,7 @@ export default function PropTable(props) {
       }
 
       if (!accumProps[property]) {
-        accumProps[property] = { property };
+        accumProps[property] = {property};
       }
 
       accumProps[property].defaultValue = value;
@@ -82,38 +155,38 @@ export default function PropTable(props) {
   const propValProps = {
     maxPropObjectKeys,
     maxPropArrayLength,
-    maxPropStringLength,
+    maxPropStringLength
   };
 
   return (
     <table style={stylesheet.propTable}>
       <thead>
         <tr>
-          <th>property</th>
-          <th>propType</th>
-          <th>required</th>
-          <th>default</th>
-          <th>description</th>
+          <th style={stylesheet.propTableCell}>property</th>
+          <th style={stylesheet.propTableCell}>propType</th>
+          <th style={stylesheet.propTableCell}>required</th>
+          <th style={stylesheet.propTableCell}>default</th>
+          <th style={stylesheet.propTableCell}>description</th>
         </tr>
       </thead>
       <tbody>
         {array.map(row =>
           <tr key={row.property}>
-            <td>
+            <td style={stylesheet.propTableCell}>
               {row.property}
             </td>
-            <td>
+            <td style={{...stylesheet.propTableCell, ...stylesheet.code}}>
               {row.propType}
             </td>
-            <td>
+            <td style={stylesheet.propTableCell}>
               {row.required}
             </td>
-            <td>
+            <td style={stylesheet.propTableCell}>
               {row.defaultValue === undefined
                 ? '-'
                 : <PropVal val={row.defaultValue} {...propValProps} />}
             </td>
-            <td>
+            <td style={stylesheet.propTableCell}>
               {row.description}
             </td>
           </tr>
@@ -125,11 +198,11 @@ export default function PropTable(props) {
 
 PropTable.displayName = 'PropTable';
 PropTable.defaultProps = {
-  type: null,
+  type: null
 };
 PropTable.propTypes = {
   type: PropTypes.func,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
-  maxPropStringLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired
 };
