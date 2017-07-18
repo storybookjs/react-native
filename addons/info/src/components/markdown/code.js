@@ -61,7 +61,11 @@ export function Pre(props) {
     lineHeight: 1.5,
     overflowX: 'scroll',
   };
-  return <pre style={style}>{props.children}</pre>;
+  return (
+    <pre style={style}>
+      {props.children}
+    </pre>
+  );
 }
 
 Pre.propTypes = { children: PropTypes.node };
@@ -74,7 +78,11 @@ export function Blockquote(props) {
     borderLeft: '8px solid #fafafa',
     padding: '1rem',
   };
-  return <blockquote style={style}>{props.children}</blockquote>;
+  return (
+    <blockquote style={style}>
+      {props.children}
+    </blockquote>
+  );
 }
 
 Blockquote.propTypes = { children: PropTypes.node };

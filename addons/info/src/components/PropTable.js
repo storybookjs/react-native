@@ -34,11 +34,10 @@ export default function PropTable(props) {
     Object.keys(type.propTypes).forEach(property => {
       const typeInfo = type.propTypes[property];
       const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
-      const description = type.__docgenInfo &&
-        type.__docgenInfo.props &&
-        type.__docgenInfo.props[property]
-        ? type.__docgenInfo.props[property].description
-        : null;
+      const description =
+        type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property]
+          ? type.__docgenInfo.props[property].description
+          : null;
       let propType = PropTypesMap.get(typeInfo) || 'other';
 
       if (propType === 'other') {
@@ -100,15 +99,23 @@ export default function PropTable(props) {
       <tbody>
         {array.map(row =>
           <tr key={row.property}>
-            <td>{row.property}</td>
-            <td>{row.propType}</td>
-            <td>{row.required}</td>
+            <td>
+              {row.property}
+            </td>
+            <td>
+              {row.propType}
+            </td>
+            <td>
+              {row.required}
+            </td>
             <td>
               {row.defaultValue === undefined
                 ? '-'
                 : <PropVal val={row.defaultValue} {...propValProps} />}
             </td>
-            <td>{row.description}</td>
+            <td>
+              {row.description}
+            </td>
           </tr>
         )}
       </tbody>

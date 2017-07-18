@@ -24,7 +24,11 @@ class SelectType extends React.Component {
       value: key,
     };
 
-    return <option {...opts}>{val}</option>;
+    return (
+      <option {...opts}>
+        {val}
+      </option>
+    );
   }
   _options(values) {
     let data = [];

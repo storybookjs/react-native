@@ -8,7 +8,9 @@ import './style.css';
 const DocsContent = ({ title, content, editUrl }) =>
   <div id="docs-content">
     <div className="content">
-      <h2 className="title">{title}</h2>
+      <h2 className="title">
+        {title}
+      </h2>
       <p>
         <a className="edit-link" href={editUrl} target="_blank" rel="noopener noreferrer">
           Edit this page

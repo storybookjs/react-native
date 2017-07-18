@@ -56,7 +56,8 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
-  const suit = options.suit || 'Storyshots';
+  // NOTE: keep `suit` typo for backwards compatibility
+  const suite = options.suite || options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
@@ -72,7 +73,7 @@ export default function testStorySnapshots(options = {}) {
       continue;
     }
 
-    describe(suit, () => {
+    describe(suite, () => {
       describe(group.kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
