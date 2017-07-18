@@ -1,6 +1,6 @@
 # storybook-addon-a11y
 
-This storybook addon can be helpfull to make you're UI components more accessibile.
+This storybook addon can be helpfull to make your UI components more accessibile.
 
 ![](docs/screenshot.png)
 
@@ -18,7 +18,7 @@ Add this line to your `addons.js` file (create this file inside your storybook c
 import 'storybook-addon-a11y/register';
 ```
 
-import the `'checkA11y'` decorator to check you're stories for violations within your components.
+import the `'checkA11y'` decorator to check your stories for violations within your components.
 
 ```js
 import React from 'react';
