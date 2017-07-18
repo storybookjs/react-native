@@ -30,7 +30,7 @@ export function action(name) {
   // the same.
   //
   // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  const fnName = name ? name.replace(/\W+/g, '_') : 'action';
+  const fnName = name && typeof name === 'string' ? name.replace(/\W+/g, '_') : 'action';
   // eslint-disable-next-line no-eval
   const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`);
   return named;

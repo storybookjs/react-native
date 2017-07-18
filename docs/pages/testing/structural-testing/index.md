@@ -34,31 +34,28 @@ Then, install StoryShots into your app with:
 npm i -D @storybook/addon-storyshots
 ```
 
-Then, add the following NPM script into your package.json:
+Then, assuming you are using Jest for testing, you can create a test file `storyshots.test.js` that contains the following:
 
-```json
-{
-  "scripts": {
-    "test-storybook": "storyshots"
-  }
-}
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({ /* configuration options */ });
 ```
 
-Now you can run the above command with:
+Now you can snapshot test all of your stories with:
 
 ```sh
-npm run test-storybook
+npm test
 ```
 
 This will save the initial set of snapshots inside your Storybook config directory.
 
 ![StoryShots First](../static/storyshots-first-run.png)
 
-After you complete any changes, you can run the above NPM script again and find our structural changes.
+After you complete any changes, you can run the test again and find all structural changes.
 
 ![StoryShots Diff View](../static/storyshots-diff-view.png)
 
 * * *
 
-StoryShots also comes with a few important [productive features](https://github.com/storybooks/storybook/tree/master/addons/storyshots#key-features) that can be customized.
-Have a look at the StoryShots [repo](https://github.com/storybooks/storybook/tree/master/addons/storyshots) for more information.
+StoryShots also comes with a variety of customization options. Have a look at the StoryShots [repo](https://github.com/storybooks/storybook/tree/master/addons/storyshots) for more information.

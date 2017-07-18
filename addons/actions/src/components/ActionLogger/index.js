@@ -9,7 +9,11 @@ class ActionLogger extends Component {
   }
 
   renderAction(action) {
-    const counter = <div style={style.counter}>{action.count}</div>;
+    const counter = (
+      <div style={style.counter}>
+        {action.count}
+      </div>
+    );
     return (
       <div key={action.id} style={style.action}>
         <div style={style.countwrap}>
@@ -29,8 +33,12 @@ class ActionLogger extends Component {
   render() {
     return (
       <div style={style.wrapper}>
-        <pre style={style.actions}>{this.getActionData()}</pre>
-        <button style={style.button} onClick={this.props.onClear}>CLEAR</button>
+        <pre style={style.actions}>
+          {this.getActionData()}
+        </pre>
+        <button style={style.button} onClick={this.props.onClear}>
+          CLEAR
+        </button>
       </div>
     );
   }

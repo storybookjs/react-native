@@ -46,23 +46,37 @@ const MainLinks = () =>
               id="search"
               placeholder="type to search"
             />
-            <span className="form-control-feedback" aria-hidden="true">🔍</span>
+            <span className="form-control-feedback" aria-hidden="true">
+              🔍
+            </span>
           </div>
         </div>
 
         <div className="col-sm-4 read-docs">
-          <Link to="/basics/introduction/"><h3>Basics</h3></Link>
+          <Link to="/basics/introduction/">
+            <h3>Basics</h3>
+          </Link>
           <ul>
-            <li><Link to="/basics/quick-start-guide/">Quick setup</Link></li>
-            <li><Link to="/basics/slow-start-guide/">Adding to existing project</Link></li>
-            <li><Link to="/basics/writing-stories/">Writing stories</Link></li>
+            <li>
+              <Link to="/basics/quick-start-guide/">Quick setup</Link>
+            </li>
+            <li>
+              <Link to="/basics/slow-start-guide/">Adding to existing project</Link>
+            </li>
+            <li>
+              <Link to="/basics/writing-stories/">Writing stories</Link>
+            </li>
           </ul>
         </div>
 
         <div className="col-sm-4 read-docs">
-          <Link to="/configurations/default-config/"><h3>Configuration</h3></Link>
+          <Link to="/configurations/default-config/">
+            <h3>Configuration</h3>
+          </Link>
           <ul>
-            <li><Link to="/configurations/custom-babel-config/">Babel configurations</Link></li>
+            <li>
+              <Link to="/configurations/custom-babel-config/">Babel configurations</Link>
+            </li>
             <li>
               <Link to="/configurations/custom-webpack-config/">Webpack configurations</Link>
             </li>
@@ -76,9 +90,13 @@ const MainLinks = () =>
         </div>
 
         <div className="col-sm-4 read-docs">
-          <Link to="/configurations/default-config/"><h3>Addons</h3></Link>
+          <Link to="/configurations/default-config/">
+            <h3>Addons</h3>
+          </Link>
           <ul>
-            <li><Link to="/addons/introduction/">Intro to Addons</Link></li>
+            <li>
+              <Link to="/addons/introduction/">Intro to Addons</Link>
+            </li>
             <li>
               <Link to="/addons/using-addons/">Using Addons</Link>
             </li>

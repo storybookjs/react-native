@@ -14,11 +14,23 @@ const GridItem = ({ title, description, source, demo, thumbnail }) =>
       <div className="overlay" />
     </div>
     <div className="text">
-      <h2>{title}</h2>
-      <p className="desc">{description}</p>
+      <h2>
+        {title}
+      </h2>
+      <p className="desc">
+        {description}
+      </p>
       <div className="button-row">
-        {demo ? <a href={demo} {...linkProps}>Demo</a> : null}
-        {source ? <a href={source} {...linkProps}>Source</a> : null}
+        {demo
+          ? <a href={demo} {...linkProps}>
+              Demo
+            </a>
+          : null}
+        {source
+          ? <a href={source} {...linkProps}>
+              Source
+            </a>
+          : null}
       </div>
     </div>
   </div>;

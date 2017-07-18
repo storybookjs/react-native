@@ -7,18 +7,21 @@ const Nav = ({ sections, selectedSectionId, selectedItemId }) =>
   <div id="nav">
     {sections.map(section =>
       <div key={section.id}>
-        <h3>{section.heading}</h3>
+        <h3>
+          {section.heading}
+        </h3>
         <ul>
           {section.items.map(item => {
-            const cssClass = section.id === selectedSectionId && item.id === selectedItemId
-              ? 'selected'
-              : '';
+            const cssClass =
+              section.id === selectedSectionId && item.id === selectedItemId ? 'selected' : '';
 
             const url = `/${section.id}/${item.id}/`;
 
             return (
               <li key={item.id}>
-                <Link className={cssClass} to={url}>{item.title}</Link>
+                <Link className={cssClass} to={url}>
+                  {item.title}
+                </Link>
               </li>
             );
           })}
