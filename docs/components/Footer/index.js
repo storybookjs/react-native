@@ -10,11 +10,7 @@ const Footer = () =>
       <div className="row logos">
         <div className="col-xs-12">
           <center>
-            Maintained by the
-            {' '}
-            <Link to="/basics/community/">
-              Storybook Community
-            </Link>
+            Maintained by the <Link to="/basics/community/">Storybook Community</Link>
             .
           </center>
           <center>
