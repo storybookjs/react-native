@@ -18,7 +18,7 @@
     "babel-runtime": "^6.23.0",
     "global": "^4.3.2",
     "marksy": "^2.0.0",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "react-addons-create-fragment": "^15.5.3"
   },
   "devDependencies": {
