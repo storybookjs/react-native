@@ -10,7 +10,6 @@
     "bootstrap:docs": "cd docs && yarn install",
     "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- yarn install",
     "bootstrap:test-cra": "npm run build-packs && lerna exec --scope test-cra -- yarn install",
-    "build": "npm run bootstrap:docs && npm run docs:build",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
@@ -27,7 +26,6 @@
     "lint:js": "eslint . --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark .",
     "publish": "lerna publish",
-    "start": "serve ./docs/out --single",
     "test": "jest --projects ./ ./examples/react-native-vanilla"
   },
   "devDependencies": {
