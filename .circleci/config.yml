@@ -149,16 +149,22 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
+            npm run bootstrap
             npm run bootstrap:docs
             npm run bootstrap:test-cra
             npm run bootstrap:react-native-vanilla
-            npm run bootstrap
       - run:
           name: "Unit testing"
           command: |
-            npm run test -- --coverage
+            npm run test -- --coverage -i
             npm run coverage
-
+  deploy:
+    <<: *defaults
+    steps:
+      - run:
+          name: "Deploy"
+          command: |
+            echo "TODO"
 workflows:
   version: 2
   build_accept_deploy:
@@ -172,6 +178,7 @@ workflows:
       - lint
       - unit-test
       - deploy:
+          type: approval
           requires:
             - lint
             - unit-test
