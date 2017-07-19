@@ -3,15 +3,17 @@ import global, { describe, it } from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
 
+import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
 
 export { snapshotWithOptions, snapshot, shallowSnapshot, renderOnly } from './test-bodies';
 
-let getStorybook;
-let configOutput;
+let storybook;
 let configPath;
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
+
+const babel = require('babel-core');
 
 const pkg = readPkgUp.sync().pkg;
 
@@ -27,40 +29,36 @@ export default function testStorySnapshots(options = {}) {
     options.framework === 'react-native' || hasDependency('@storybook/react-native');
 
   if (isStorybook) {
-    getStorybook = require.requireActual('@storybook/react').getStorybook;
+    storybook = require.requireActual('@storybook/react');
     // eslint-disable-next-line
-    // const loadBabelConfig = require('@storybook/react/dist/server/babel_config').default;
+    const loadBabelConfig = require('@storybook/react/dist/server/babel_config')
+      .default;
     const configDirPath = path.resolve(options.configPath || '.storybook');
     configPath = path.join(configDirPath, 'config.js');
 
-    // const babelConfig = loadBabelConfig(configDirPath);
-    // const content = babel.transformFileSync(configPath, babelConfig).code;
-    // const contextOpts = {
-    //   filename: configPath,
-    //   dirname: configDirPath,
-    // };
+    const babelConfig = loadBabelConfig(configDirPath);
+    const content = babel.transformFileSync(configPath, babelConfig).code;
+    const contextOpts = {
+      filename: configPath,
+      dirname: configDirPath,
+    };
 
-    // runWithRequireContext(content, contextOpts);
-    configOutput = require.requireActual(configPath);
+    runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
-    getStorybook = require.requireActual('@storybook/react-native').getStorybook;
+    storybook = require.requireActual('@storybook/react-native');
     configPath = path.resolve(options.configPath || 'storybook');
-    configOutput = require.requireActual(configPath);
+    require.requireActual(configPath);
   } else {
     throw new Error('storyshots is intended only to be used with storybook');
   }
 
   if (typeof describe !== 'function') {
-    throw new Error('storyshots is intended only to be used inside jest');
-  }
-
-  if (typeof configOutput.getStorybook === 'function') {
-    getStorybook = configOutput.getStorybook;
+    throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
   // NOTE: keep `suit` typo for backwards compatibility
   const suite = options.suite || options.suit || 'Storyshots';
-  const stories = getStorybook();
+  const stories = storybook.getStorybook();
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
   // eslint-disable-next-line
