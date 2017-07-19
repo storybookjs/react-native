@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-comments",
-  "version": "3.1.6",
+  "version": "3.1.9",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
@@ -31,7 +31,7 @@
     "insert-css": "^1.0.0",
     "marked": "^0.3.6",
     "moment": "^2.18.1",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "react-render-html": "^0.1.6",
     "react-textarea-autosize": "^4.3.0"
   },

@@ -73,7 +73,10 @@ export default function(configType, baseConfig, configDir) {
       ...config.module,
       // We need to use our and custom rules.
       ...customConfig.module,
-      rules: [...config.module.rules, ...(customConfig.module.rules || [])],
+      rules: [
+        ...config.module.rules,
+        ...((customConfig.module && customConfig.module.rules) || []),
+      ],
     },
     resolve: {
       ...config.resolve,

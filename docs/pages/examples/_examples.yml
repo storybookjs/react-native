@@ -25,6 +25,13 @@ algolia:
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
+rebass:
+  thumbnail: ./thumbnails/rebass.png
+  title: Rebass
+  description: Functional React UI component library
+  demo: http://jxnblk.com/rebass/stories/
+  source: https://github.com/jxnblk/rebass
+  site: http://jxnblk.com/rebass
 coursera:
   thumbnail: ./thumbnails/coursera-ui.png
   title: Coursera

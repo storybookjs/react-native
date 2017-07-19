@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "3.1.6",
+  "version": "3.1.9",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",
@@ -21,15 +21,15 @@
   },
   "dependencies": {
     "@storybook/addons": "^3.1.6",
-    "babel-runtime": "^6.5.0",
+    "babel-runtime": "^6.23.0",
     "format-json": "^1.0.3",
     "prop-types": "^15.5.10",
-    "react-textarea-autosize": "^4.0.5",
-    "uuid": "^3.0.1"
+    "react-textarea-autosize": "^4.3.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "peerDependencies": {
     "react": "*"
