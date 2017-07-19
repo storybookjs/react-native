@@ -54,8 +54,8 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('storyshots is intended only to be used inside jest');
   }
 
-  if (typeof configOutput.default === 'function') {
-    getStorybook = configOutput.default;
+  if (typeof configOutput.getStorybook === 'function') {
+    getStorybook = configOutput.getStorybook;
   }
 
   // NOTE: keep `suit` typo for backwards compatibility

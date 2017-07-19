@@ -21,4 +21,4 @@ function loadStories() {
 
 configure(loadStories, module);
 
-export { getStorybook as default };
+export { getStorybook };

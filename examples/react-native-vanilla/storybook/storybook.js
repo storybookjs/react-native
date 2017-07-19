@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import { getStorybookUI, configure } from '@storybook/react-native';
+import { getStorybookUI, configure, getStorybook } from '@storybook/react-native';
 import { setOptions } from '@storybook/addon-options';
 
 // import stories
@@ -19,4 +19,5 @@ setTimeout(
 );
 
 AppRegistry.registerComponent('ReactNativeVanilla', () => StorybookUI);
-export default StorybookUI;
+
+export { StorybookUI as default, getStorybook };
