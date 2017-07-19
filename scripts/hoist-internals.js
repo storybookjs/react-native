@@ -2,27 +2,46 @@ const path = require('path');
 const fs = require('fs-extra');
 const fse = require('fs-extra');
 const shell = require('shelljs');
-const chalk = require('chalk');
 const glob = require('glob');
 const symlink = require('symlink-dir');
+const log = require('npmlog');
 
 const targetPath = path.join(__dirname, '..', 'node_modules', '@storybook');
+const prefix = 'hoist-internals';
+const cwd = path.join(__dirname, '..');
 
-const task = fse
-  .readJson(path.join(__dirname, '..', 'lerna.json'))
-  .then(json => {
-    const { packages, lerna } = json;
-    shell.echo(chalk.gray('\n=> Hoisting internal packages'));
-    shell.echo(chalk.gray(`\n=> lerna version: ${lerna}`));
-    shell.echo(chalk.gray(`\n=> source paths: ${packages.join(', ')}`));
-    shell.echo(chalk.gray(`\n=> target path: ${targetPath}`));
-    return json;
-  })
+log.heading = 'lerna+';
+log.addLevel('success', 3001, { fg: 'green', bold: true });
+log.info(prefix, 'Hoisting internal packages');
+
+const getLernaPackages = () =>
+  fse.readJson(path.join(__dirname, '..', 'lerna.json')).then(json => json.packages);
+const passingLog = fn => i => {
+  fn(i);
+  return i;
+};
+const getPackageNameOfFolder = sourcePath =>
+  fse
+    .readJson(path.join(sourcePath, 'package.json'))
+    .then(json => json.name.replace('@storybook/', ''));
+
+const task = getLernaPackages()
   .then(
-    ({ packages }) =>
+    passingLog(packages => {
+      log.verbose(prefix, 'working dir paths: %j', cwd);
+      log.verbose(prefix, 'source paths: %j', packages);
+      log.verbose(prefix, 'target paths: %j', targetPath);
+    })
+  )
+  .then(packages => `@(${packages.map(s => s.replace('/*', '')).join('|')})/*/`)
+  .then(
+    passingLog(pattern => {
+      log.silly(prefix, 'pattern to look for packages: %j', pattern);
+    })
+  )
+  .then(
+    pattern =>
       new Promise((resolve, reject) => {
-        const pattern = `@(${packages.map(s => s.replace('/*', '')).join('|')})/*`;
-        const cwd = path.join(__dirname, '..');
         glob(pattern, { cwd }, (error, results) => (error ? reject(error) : resolve(results)));
       })
   )
@@ -30,34 +49,51 @@ const task = fse
     Promise.all(
       results
         .map(sourcePath => path.resolve(fs.realpathSync(sourcePath)))
-        .map(i => console.log(i) || i)
         .reduce((acc, item) => {
           if (!acc.includes(item)) {
             acc.push(item);
           }
           return acc;
         }, [])
+        .map(
+          passingLog(item => {
+            log.silly(prefix, 'found package path', item);
+          })
+        )
         .map(sourcePath =>
-          fse
-            .readJson(path.join(sourcePath, 'package.json'))
-            .then(json => json.name.replace('@storybook/', ''))
-            .then(packageName => {
-              const localTargetPath = path.join(targetPath, packageName);
-              return symlink(sourcePath, localTargetPath)
-                .catch(error => console.log('ERROR symlink', error))
-                .then(() => sourcePath);
-            })
+          getPackageNameOfFolder(sourcePath)
+            .then(
+              passingLog(packageName => {
+                log.silly(prefix, 'found package name', packageName);
+              })
+            )
+            .then(packageName => path.join(targetPath, packageName))
+            .then(localTargetPath =>
+              symlink(sourcePath, localTargetPath)
+                .then(
+                  passingLog(() => {
+                    log.silly(prefix, 'symlinked ', [sourcePath, localTargetPath]);
+                  })
+                )
+                .then(() => localTargetPath)
+                .catch(error => {
+                  log.error(prefix, 'symlink', error);
+                  throw new Error('failed symlink');
+                })
+            )
         )
     )
   )
   .then(locations =>
     Promise.all(
       locations
-        .map(location => {
-          const removePath = path.join(location, 'node_modules', '@storybook');
-          console.log(removePath);
-          return shell.rm('-rf', removePath);
-        })
+        .map(location => path.join(location, 'node_modules', '@storybook'))
+        .map(
+          passingLog(removePath => {
+            log.verbose(prefix, 'removing ', removePath);
+          })
+        )
+        .map(removePath => shell.rm('-rf', removePath))
         .map(
           (item, index) =>
             item.code === 0 ? Promise.resolve(locations[index]) : Promise.reject(item)
@@ -66,9 +102,11 @@ const task = fse
   );
 
 task
-  .then(() => {
-    shell.echo(chalk.green('COMPLETE'), chalk.gray('=> Hoisting internal packages'));
+  .then(packages => {
+    log.info(prefix, packages.map(dir => dir.replace(cwd, '')).join(',\n'));
+    log.success(prefix, 'complete');
   })
-  .catch(() => {
-    shell.echo(chalk.red('FAIL'), chalk.gray('=> Hoisting internal packages'));
+  .catch(error => {
+    log.error(prefix, 'failed', error);
+    shell.exit(1);
   });
