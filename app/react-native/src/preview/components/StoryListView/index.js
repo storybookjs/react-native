@@ -2,30 +2,24 @@ import React, { Component, PropTypes } from 'react';
 import { SectionList, View, Text, TouchableOpacity } from 'react-native';
 import style from './style';
 
-const SectionHeader = ({ title, selected }) => (
+const SectionHeader = ({ title, selected }) =>
   <View key={title} style={style.header}>
     <Text style={[style.headerText, selected && style.headerTextSelected]}>
       {title}
     </Text>
-  </View>
-);
+  </View>;
 
 SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
   selected: PropTypes.bool.isRequired,
 };
 
-const ListItem = ({ title, selected, onPress }) => (
-  <TouchableOpacity
-    key={title}
-    style={style.item}
-    onPress={onPress}
-  >
+const ListItem = ({ title, selected, onPress }) =>
+  <TouchableOpacity key={title} style={style.item} onPress={onPress}>
     <Text style={[style.itemText, selected && style.itemTextSelected]}>
       {title}
     </Text>
-  </TouchableOpacity>
-);
+  </TouchableOpacity>;
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
@@ -53,7 +47,7 @@ export default class StoryListView extends Component {
   componentDidMount() {
     this.handleStoryAdded();
   }
-  
+
   componentWillUnmount() {
     this.props.stories.removeListener('storyAdded', this.storiesHandler);
     this.props.events.removeListener('story', this.storyChangedHandler);
@@ -63,15 +57,15 @@ export default class StoryListView extends Component {
     if (this.props.stories) {
       const data = this.props.stories.dumpStoryBook();
       this.setState({
-        sections: data.map((section) => ({
+        sections: data.map(section => ({
           key: section.kind,
           title: section.kind,
-          data: section.stories.map((story) => ({
+          data: section.stories.map(story => ({
             key: story,
             kind: section.kind,
-            name: story
-          }))
-        }))
+            name: story,
+          })),
+        })),
       });
     }
   }
@@ -80,7 +74,7 @@ export default class StoryListView extends Component {
     const { kind, story } = selection;
     this.setState({
       selectedKind: kind,
-      selectedStory: story
+      selectedStory: story,
     });
   }
 
@@ -92,19 +86,19 @@ export default class StoryListView extends Component {
     return (
       <SectionList
         style={style.list}
-        renderItem={({ item }) => (
+        renderItem={({ item }) =>
           <ListItem
             title={item.name}
-            selected={item.kind === this.state.selectedKind && item.name === this.state.selectedStory}
+            selected={
+              item.kind === this.state.selectedKind && item.name === this.state.selectedStory
+            }
             onPress={() => this.changeStory(item.kind, item.name)}
-          />
-        )}
-        renderSectionHeader={({ section }) => (
+          />}
+        renderSectionHeader={({ section }) =>
           <SectionHeader
             title={section.title}
             selected={section.title === this.state.selectedKind}
-          />
-        )}
+          />}
         sections={this.state.sections}
         stickySectionHeadersEnabled={false}
       />

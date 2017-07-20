@@ -5,11 +5,7 @@ import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 
 export default function OnDeviceUI(props) {
-  const {
-    stories,
-    events,
-    url
-  } = props;
+  const { stories, events, url } = props;
 
   return (
     <View style={style.main}>

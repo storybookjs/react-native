@@ -76,11 +76,9 @@ export default class Preview {
       this._sendGetCurrentStory();
 
       // finally return the preview component
-      return (params.onDeviceUI) ? (
-        <OnDeviceUI stories={this._stories} events={this._events} url={webUrl} />
-      ) : (
-        <StoryView url={webUrl} events={this._events} />
-      );
+      return params.onDeviceUI
+        ? <OnDeviceUI stories={this._stories} events={this._events} url={webUrl} />
+        : <StoryView url={webUrl} events={this._events} />;
     };
   }
 

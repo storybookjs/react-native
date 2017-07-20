@@ -19,4 +19,5 @@ setTimeout(
 );
 
 AppRegistry.registerComponent('ReactNativeVanilla', () => StorybookUI);
-export default StorybookUI;
+
+export { StorybookUI as default };
