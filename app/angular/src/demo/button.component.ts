@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'button-component',
   template: `
-      <button>{{ text }}</button>
+      <button (click)="onClick();">{{ text }}</button>
   `,
   styles: [
       `
@@ -21,4 +21,5 @@ import { Component, Input } from '@angular/core';
 })
 export default class ButtonComponent {
     @Input() text = '';
+    @Output() onClick = new EventEmitter<any>();
 }
