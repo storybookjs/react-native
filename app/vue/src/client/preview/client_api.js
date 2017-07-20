@@ -1,5 +1,4 @@
 /* eslint no-underscore-dangle: 0 */
-import Vue from 'vue';
 
 export default class ClientApi {
   constructor({ channel, storyStore }) {
