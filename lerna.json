@@ -13,8 +13,7 @@
         "test-cra",
         "react-native-vanilla",
         "vue-example",
-        "@storybook/components",
-        "@storybook/vue"
+        "@storybook/components"
       ]
     }
   },
