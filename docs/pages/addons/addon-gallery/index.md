@@ -97,3 +97,7 @@ With this addon you will have an additional panel at the bottom which provides y
 ### [Versions](https://github.com/buildit/storybook-addon-versions)
 
 This addon lets you navigate different versions of static Storybook builds. As such you can see how a component has changed over time.
+
+### [Apollo](https://github.com/abhiaiyer91/apollo-storybook-decorator)
+
+Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
