@@ -1,3 +1,8 @@
+// We could use NgComponentOutlet here but there's currently no easy way 
+// to provide @Inputs and subscribe to @Outputs, see
+// https://github.com/angular/angular/issues/15360
+// For the time being, the ViewContainerRef approach works pretty well.
+
 import { Component, Inject, AfterViewInit ,ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { STORY, Data } from './app.token';
 
