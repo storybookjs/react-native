@@ -25,35 +25,38 @@ const mono = `
 `;
 
 const chalkMap = {
-  P: '\\033[38;5;176m',
-  M: '\\033[38;5;211m',
-  W: '\\033[38;5;231m',
-  B: '\\033[38;5;111m',
-  G: '\\033[38;5;150m',
-  R: '\\033[38;5;210m',
-  m: '\\033[38;5;211m',
-  l: '\\033[38;5;225m',
-  O: '\\033[38;5;215m',
-  ' ': '',
+  '▓': () => '\\033[38;5;176m',
+  '▒': () => '\\033[38;5;211m',
+  '.': () => '\\033[38;5;231m',
+  B: () => '\\033[38;5;111m',
+  '₯': () => '\\033[38;5;150m',
+  R: () => '\\033[38;5;210m',
+  m: () => '\\033[38;5;211m',
+  l: () => '\\033[38;5;225m',
+  O: () => '\\033[38;5;215m',
+  Z: () => '\\033[38;5;232m',
+  ' ': () => '\\033[38;5;16m',
+  '?': () => `\\033[38;5;${Math.floor(Math.random() * 255) + 1}m`,
 };
 
 const colourmap = `
-PPMMMMMMMMMMMWWMM                                                               
-PPMMMMMMMMMMMllMM                                                               
-PPMMMMlWWWWWmMMMM   OOO                        RRR                      PPP     
-PPMMMlWWWMmWWmMMM  OOOOO  GGGG   PP        BB  RRRRR     BBB     GGG   PPP  P   
-PPMMMMWWWlmMMMMMM OOOOOOGGGGGGG  PPPPPBBB  BB  RRRRRRR BBBBBBB GGGGGGG PPPPPPPP 
-⠀PMMMMMmlWWWWMMMM   OO  GGG  GGG PPP  BBB  BB  RR  RRRBBB  BBB GGG GGG PPPPPP   
- PMMMWWWmMlWWWMMM   OO  GGGGGGG  PP   BBBBBBB  RRRRRRR BBBBBBB GGGGGGG PPPPPPPP 
- PMMMMlWWWWWlMMMM   OO    GGGG   PP    BB BBB  RR RR    BBBB    GGGG   PPP  PPP 
- PMMMMMMMMMMMMMMM                      BBBBBB                                   
- PMMMMMMMMMMMMMMM                                                               
+▓▓▒▒▒▒▒▒▒▒▒▒▒..▒▒                                                               
+▓▓▒▒▒▒▒▒▒▒▒▒▒ll▒▒                                                               
+▓▓▒▒▒▒l.....▒▒▒▒▒   OOO                        RRR                      ▓▓▓     
+▓▓▒▒▒l...▒▒..▒▒▒▒  OOOOO  ₯₯₯₯   ▓▓        BB  RRRRR     BBB     ₯₯₯   ▓▓▓  ▓   
+▓▓▒▒▒▒...l▒▒▒▒▒▒▒ OOOOOO₯₯₯₯₯₯₯  ▓▓▓▓▓BBB  BB  RRRRRRR BBBBBBB ₯₯₯₯₯₯₯ ▓▓▓▓▓▓▓▓ 
+ ▓▒▒▒▒▒▒l....▒▒▒▒   OO  ₯₯₯  ₯₯₯ ▓▓▓  BBB  BB  RR  RRRBBB  BBB ₯₯₯ ₯₯₯ ▓▓▓▓▓▓   
+ ▓▒▒▒...▒▒l...▒▒▒   OO  ₯₯₯₯₯₯₯  ▓▓   BBBBBBB  RRRRRRR BBBBBBB ₯₯₯₯₯₯₯ ▓▓▓▓▓▓▓▓ 
+ ▓▒▒▒▒l.....l▒▒▒▒   OO    ₯₯₯₯   ▓▓    BB BBB  RR RR    BBBB    ₯₯₯₯   ▓▓▓  ▓▓▓ 
+ ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                      BBBBBB                                   
+ ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒                                                               
 `.split('');
 
 const result = coloured.split('').map((char, index) => {
   const colorKey = colourmap[index];
-  const colorPrefix = chalkMap[colorKey] || '';
-  return colorPrefix + char;
+  const colorPrefix = chalkMap[colorKey] ? chalkMap[colorKey]() : '';
+  const isSpace = colorKey === ' ';
+  return colorPrefix + (isSpace ? '⠀' : char);
 });
 
 const exec = require('child_process').exec;
