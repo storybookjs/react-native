@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import PropVal from './PropVal';
 
-console.info('----', PropTypes);
-
 const PropTypesMap = new Map();
 
 Object.keys(PropTypes).forEach(typeName => {
@@ -14,8 +12,6 @@ Object.keys(PropTypes).forEach(typeName => {
   PropTypesMap.set(type, typeName);
   PropTypesMap.set(type.isRequired, typeName);
 });
-
-console.info('PropTypesMap', PropTypesMap);
 
 const stylesheet = {
   propTable: {
@@ -51,7 +47,7 @@ const hasDocgen = type => isNotEmpty(type.__docgenInfo);
 const boolToString = value => (value ? 'yes' : 'no');
 
 const propsFromDocgen = type => {
-  const props = null;
+  const props = {};
   const docgenInfoProps = type.__docgenInfo.props;
 
   Object.keys(docgenInfoProps).forEach(property => {
@@ -126,7 +122,6 @@ export default function PropTable(props) {
   }
 
   const accumProps = hasDocgen(type) ? propsFromDocgen(type) : propsFromPropTypes(type);
-  console.info('accumProps', accumProps);
   const array = Object.values(accumProps);
 
   if (!array.length) {
