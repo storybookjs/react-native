@@ -124,6 +124,74 @@ storiesOf('Component')
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
 
+To customize your defaults:
+
+```js
+// config.js
+import infoAddon, { setDefaults } from '@storybook/addon-info';
+
+// addon-info
+setDefaults({
+  inline: true,
+  maxPropsIntoLine: 1,
+  maxPropObjectKeys: 10,
+  maxPropArrayLength: 10,
+  maxPropStringLength: 100,
+});
+setAddon(infoAddon);
+```
+
+### React Docgen & Flowtype
+
+Install the babel docgen plugin
+
+```bash
+npm install -D babel-plugin-react-docgen
+```
+
+Add the plugin to your `.babelrc` config
+
+```json
+{
+  "plugins": ["react-docgen"]
+}
+```
+
+And add the flowtype definitions to your component
+
+```js
+// @flow
+import React from 'react';
+
+type PropsType = {
+    /** Boolean indicating wether the button should render as disabled */
+    disabled?: boolean,
+	/** button label. */
+	label: string,
+	/** onClick handler */
+	onClick?: Function,
+	/** component styles */
+	style?: {}
+};
+
+/** Button component description */
+const Button = ({ disabled, label, style, onClick }: PropType) => (
+  <button disabled={disabled} onClick={onClick}>
+    {label}
+  </button>
+);
+
+Button.defaultProps = {
+    disabled: false,
+	onClick: () => {},
+	style: {},
+};
+
+export default Button;
+```
+
+Storybook Info Addon should now render all the correct types for your component.
+
 ## The FAQ
 
 **Components lose their names on static build**
