@@ -6,6 +6,7 @@ import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
 import StoryStore from './story_store';
 import StoryKindApi from './story_kind';
+import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 
 export default class Preview {
@@ -70,11 +71,14 @@ export default class Preview {
       }
       channel.on('getStories', () => this._sendSetStories());
       channel.on('setCurrentStory', d => this._selectStory(d));
+      this._events.on('setCurrentStory', d => this._selectStory(d));
       this._sendSetStories();
       this._sendGetCurrentStory();
 
       // finally return the preview component
-      return <StoryView url={webUrl} events={this._events} />;
+      return params.onDeviceUI
+        ? <OnDeviceUI stories={this._stories} events={this._events} url={webUrl} />
+        : <StoryView url={webUrl} events={this._events} />;
     };
   }
 
