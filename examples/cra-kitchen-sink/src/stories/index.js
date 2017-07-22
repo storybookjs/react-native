@@ -25,6 +25,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
+import Container from './Container';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -119,18 +120,18 @@ storiesOf('Button', module)
     'with some info',
     'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
     context =>
-      <div>
+      <Container>
         click the <InfoButton /> label in top right for info about "{context.story}"
-      </div>
+      </Container>
   )
   .add(
     'with new info',
     withInfo(
       'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
     )(context =>
-      <div>
+      <Container>
         click the <InfoButton /> label in top right for info about "{context.story}"
-      </div>
+      </Container>
     )
   )
   .add(
