@@ -252,7 +252,7 @@ storiesOf('Addon Knobs', module).add(
   })
 );
 
-storiesOf('component.base.Link')
+storiesOf('component.base.Link', module)
   .addDecorator(withKnobs)
   .add('first', () =>
     <a>
@@ -265,15 +265,15 @@ storiesOf('component.base.Link')
     </a>
   );
 
-storiesOf('component.base.Span')
+storiesOf('component.base.Span', module)
   .add('first', () => <span>first span</span>)
   .add('second', () => <span>second span</span>);
 
-storiesOf('component.common.Div')
+storiesOf('component.common.Div', module)
   .add('first', () => <div>first div</div>)
   .add('second', () => <div>second div</div>);
 
-storiesOf('component.common.Table')
+storiesOf('component.common.Table', module)
   .add('first', () =>
     <table>
       <tr>
@@ -289,7 +289,7 @@ storiesOf('component.common.Table')
     </table>
   );
 
-storiesOf('component.Button')
+storiesOf('component.Button', module)
   .add('first', () => <button>first button</button>)
   .add('second', () => <button>first second</button>);
 
