@@ -52,7 +52,7 @@ const PreviewHelp = () =>
       For <span style={styles.code}>react-native init</span> apps:
     </p>
     <div style={styles.codeBlock}>
-      <pre style={styles.instructionsCode}>npm run &lt;platform&gt;</pre>
+      <pre style={styles.instructionsCode}>react-native run-&lt;platform&gt;</pre>
     </div>
   </div>;
 
