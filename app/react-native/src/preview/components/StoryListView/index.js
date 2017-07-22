@@ -46,6 +46,11 @@ export default class StoryListView extends Component {
 
   componentDidMount() {
     this.handleStoryAdded();
+    const dump = this.props.stories.dumpStoryBook();
+    const nonEmptyKind = dump.find(kind => kind.stories.length > 0);
+    if (nonEmptyKind) {
+      this.changeStory(nonEmptyKind.kind, nonEmptyKind.stories[0]);
+    }
   }
 
   componentWillUnmount() {
