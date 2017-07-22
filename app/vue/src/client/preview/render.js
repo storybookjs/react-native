@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import ErrorDisplay from './ErrorDisplay.vue';
+import NoPreview from './NoPreview.vue';
 
 import { window } from 'global';
 import { stripIndents } from 'common-tags';
@@ -40,13 +41,6 @@ export function renderException(error) {
   logger.error(error.stack);
 }
 
-const NoPreview = {
-  el: '#root',
-  render (h) {
-    return h('p', ['No Preview Available!'])
-  }
-};
-
 function renderRoot(options) {
   if (err) {
     renderErrorDisplay(null); // clear
@@ -64,11 +58,6 @@ export function renderMain(data, storyStore) {
   const { selectedKind, selectedStory } = data;
 
   const story = storyStore.getStory(selectedKind, selectedStory);
-  if (!story) {
-    renderRoot(NoPreview);
-    logger.log('no story');
-    return null;
-  }
 
   // Unmount the previous story only if selectedKind or selectedStory has changed.
   // renderMain() gets executed after each action. Actions will cause the whole
@@ -88,7 +77,7 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
 
-  const component = story(context);
+  const component = story ? story(context) : NoPreview;
 
   if (!component) {
     const error = {

@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
-    <div class="heading">{{ message }}</div>
-    <pre class="code">
+  <div class="errordisplay_main">
+    <div class="errordisplay_heading">{{ message }}</div>
+    <pre class="errordisplay_code">
       <code>
         {{ stack }}
       </code>
@@ -26,7 +26,7 @@
 </script>
 
 <style>
-  .main {
+  .errordisplay_main {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -38,7 +38,7 @@
     webkit-font-smoothing: antialiased;
   }
 
-  .heading {
+  .errordisplay_heading {
     font-size: 20;
     font-weight: 600;
     letter-spacing: 0.2;
@@ -46,7 +46,7 @@
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   }
   
-  .code {
+  .errordisplay_code {
     font-size: 14;
     width: 100vw;
     overflow: auto;
