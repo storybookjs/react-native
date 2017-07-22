@@ -23,3 +23,9 @@ Next automatically defines `React` for all of your files via a babel plugin. You
 ### How do I setup Storybook to share Webpack configuration with Next.js?
 
 You can generally reuse webpack rules fairly easily by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/webpack.config.js` files. For example, [this gist](https://gist.github.com/metasean/cadd2becd60cc3b295bf49895a56f9b4) sets both next.js and storybook up with global stylesheets.
+
+### Why is there no addons channel?
+
+A common error is that an addon tries to access the "channel", but the channel is not set. This can happen in a few different cases:
+1. In storybook/addon development, it can be an NPM version problem. If there are two versions of the addons NPM package, it will cause problems. In this case, make sure there is only a single version of `@storybook/addons` being used by your project.
+2. In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
