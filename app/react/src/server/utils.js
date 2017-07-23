@@ -11,7 +11,7 @@ export function parseList(str) {
   return str.split(',');
 }
 
-export function getHeadHtml(configDirPath) {
+export function getPreviewHeadHtml(configDirPath) {
   const headHtmlPath = path.resolve(configDirPath, 'preview-head.html');
   const fallbackHtmlPath = path.resolve(configDirPath, 'head.html');
   let headHtml = '';

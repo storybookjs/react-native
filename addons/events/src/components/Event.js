@@ -4,37 +4,64 @@ import Textarea from 'react-textarea-autosize';
 import PropTypes from 'prop-types';
 
 const styles = {
-  item: {
-    padding: '10 0',
-  },
-  buttonWrapper: {
-    textAlign: 'center',
+  label: {
+    display: 'table-cell',
+    boxSizing: 'border-box',
+    verticalAlign: 'top',
+    paddingRight: '5px',
+    paddingTop: '7px',
+    textAlign: 'right',
+    width: '100px',
+    fontSize: '12px',
+    color: 'rgb(68, 68, 68)',
+    fontWeight: '600',
   },
   button: {
-    display: 'inline-block',
-    fontFamily: `
-      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
-      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
-    `,
-    fontSize: 14,
-    padding: 10,
-    margin: 10,
-    width: '40%',
+    display: 'table-cell',
+    textTransform: 'uppercase',
+    letterSpacing: '3.5px',
+    fontSize: 12,
+    fontWeight: 'bolder',
+    color: 'rgb(130, 130, 130)',
+    border: '1px solid rgb(193, 193, 193)',
+    textAlign: 'center',
+    borderRadius: 2,
+    padding: 5,
+    cursor: 'pointer',
+    paddingLeft: 8,
+    margin: '0 0 0 5px',
+    backgroundColor: 'inherit',
+    verticalAlign: 'top',
+    outline: 0,
   },
   textArea: {
-    display: 'block',
+    flex: '1 0 0',
     boxSizing: 'border-box',
-    margin: 0,
-    width: '100%',
-    maxWidth: '100%',
-    verticalAlign: 'middle',
+    margin: '0 0 0 5px',
+    verticalAlign: 'top',
     outline: 'none',
     border: '1px solid #c7c7c7',
     borderRadius: 2,
     fontSize: 13,
-    padding: '5px',
+    padding: '8px 5px 7px 8px',
     color: 'rgb(51, 51, 51)',
     fontFamily: 'Arial, sans-serif',
+    minHeight: '32px',
+    resize: 'vertical',
+  },
+  item: {
+    display: 'flex',
+    padding: '5px',
+    alignItems: 'flex-start',
+    boxSizing: 'border-box',
+    width: '100%',
+  },
+  hidden: {
+    display: 'none',
+  },
+  failed: {
+    border: '1px solid #fadddd',
+    backgroundColor: '#fff5f5',
   },
 };
 
@@ -100,37 +127,46 @@ export default class Item extends Component {
   };
 
   render() {
+    const { title, name } = this.props;
     const { failed, isTextAreaShowed } = this.state;
-    const extraStyle = {
-      display: isTextAreaShowed ? 'block' : 'none',
-    };
 
-    if (failed) {
-      extraStyle.border = '1px solid #fadddd';
-      extraStyle.backgroundColor = '#fff5f5';
-    }
+    const extraStyle = {};
+    Object.assign(extraStyle, isTextAreaShowed ? {} : { ...styles.hidden });
+    Object.assign(extraStyle, failed ? { ...styles.failed } : {});
 
     return (
-      <div style={{ width: '100%' }}>
-        <h3>{this.props.title}</h3>
-        <div style={styles.buttonWrapper}>
-          <button style={styles.button} onClick={this.onEmitClick} disabled={failed}>
-            Emit
-          </button>
-          <button style={styles.button} onClick={this.onToggleEditClick}>
-            {isTextAreaShowed ? 'Close' : 'Edit payload'}
-          </button>
-        </div>
-
+      <div style={styles.item}>
+        <label htmlFor={`addon-event-${name}`} style={styles.label}>
+          {title}
+        </label>
+        <button
+          style={styles.button}
+          onClick={this.onEmitClick}
+          disabled={failed}
+          title="Submit event"
+        >
+          📢
+        </button>
         <Textarea
+          id={`addon-event-${name}`}
           ref={ref => {
             this.input = ref;
           }}
           style={{ ...styles.textArea, ...extraStyle }}
           value={this.state.payloadString}
-          minRows={3}
           onChange={this.onChange}
         />
+        {isTextAreaShowed
+          ? <button style={styles.button} onClick={this.onToggleEditClick} title="Close editing">
+              ❌
+            </button>
+          : <button
+              style={styles.button}
+              onClick={this.onToggleEditClick}
+              title="Edit event payload"
+            >
+              ✏️
+            </button>}
       </div>
     );
   }

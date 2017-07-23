@@ -42,6 +42,7 @@ const stylesheet = {
     right: 0,
     padding: '0 40px',
     overflow: 'auto',
+    zIndex: 99999,
   },
   children: {
     position: 'relative',
@@ -52,10 +53,17 @@ const stylesheet = {
     fontWeight: 300,
     lineHeight: 1.45,
     fontSize: '15px',
+    border: '1px solid #eee',
+    padding: '20px 40px 40px',
+    borderRadius: '2px',
+    boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.05)',
+    backgroundColor: '#fff',
+    marginTop: '50px',
   },
   infoContent: {
     marginBottom: 0,
   },
+  infoStory: {},
   jsxInfoContent: {
     borderTop: '1px solid #eee',
     margin: '20px 0 0 0',
@@ -109,7 +117,7 @@ export default class Story extends React.Component {
 
   _renderStory() {
     return (
-      <div>
+      <div style={this.state.stylesheet.infoStory}>
         {this.props.children}
       </div>
     );
@@ -118,12 +126,8 @@ export default class Story extends React.Component {
   _renderInline() {
     return (
       <div>
-        <div style={this.state.stylesheet.infoPage}>
-          <div style={this.state.stylesheet.infoBody}>
-            {this._getInfoHeader()}
-          </div>
-        </div>
-        <div>
+        {this._renderInlineHeader()}
+        <div style={this.state.stylesheet.infoStory}>
           {this._renderStory()}
         </div>
         <div style={this.state.stylesheet.infoPage}>
@@ -133,6 +137,19 @@ export default class Story extends React.Component {
             {this._getSourceCode()}
             {this._getPropTables()}
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  _renderInlineHeader() {
+    const infoHeader = this._getInfoHeader();
+
+    return (
+      infoHeader &&
+      <div style={this.state.stylesheet.infoPage}>
+        <div style={this.state.stylesheet.infoBody}>
+          {infoHeader}
         </div>
       </div>
     );
@@ -164,9 +181,13 @@ export default class Story extends React.Component {
         <div style={this.state.stylesheet.children}>
           {this.props.children}
         </div>
-        <a style={linkStyle} onClick={openOverlay} role="button" tabIndex="0">Show Info</a>
+        <a style={linkStyle} onClick={openOverlay} role="button" tabIndex="0">
+          Show Info
+        </a>
         <div style={infoStyle}>
-          <a style={linkStyle} onClick={closeOverlay} role="button" tabIndex="0">×</a>
+          <a style={linkStyle} onClick={closeOverlay} role="button" tabIndex="0">
+            ×
+          </a>
           <div style={this.state.stylesheet.infoPage}>
             <div style={this.state.stylesheet.infoBody}>
               {this._getInfoHeader()}
@@ -188,8 +209,12 @@ export default class Story extends React.Component {
 
     return (
       <div style={this.state.stylesheet.header.body}>
-        <h1 style={this.state.stylesheet.header.h1}>{this.props.context.kind}</h1>
-        <h2 style={this.state.stylesheet.header.h2}>{this.props.context.story}</h2>
+        <h1 style={this.state.stylesheet.header.h1}>
+          {this.props.context.kind}
+        </h1>
+        <h2 style={this.state.stylesheet.header.h2}>
+          {this.props.context.story}
+        </h2>
       </div>
     );
   }
@@ -258,7 +283,7 @@ export default class Story extends React.Component {
       <div>
         <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
         <Pre>
-          {React.Children.map(this.props.children, (root, idx) => (
+          {React.Children.map(this.props.children, (root, idx) =>
             <Node
               key={idx}
               node={root}
@@ -268,7 +293,7 @@ export default class Story extends React.Component {
               maxPropArrayLength={maxPropArrayLength}
               maxPropStringLength={maxPropStringLength}
             />
-          ))}
+          )}
         </Pre>
       </div>
     );
@@ -323,7 +348,7 @@ export default class Story extends React.Component {
     array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
-    const propTables = array.map(type => (
+    const propTables = array.map(type =>
       <div key={type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
@@ -335,7 +360,7 @@ export default class Story extends React.Component {
           maxPropStringLength={maxPropStringLength}
         />
       </div>
-    ));
+    );
 
     if (!propTables || propTables.length === 0) {
       return null;

@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import './style.css';
 
-const UsedByBg = ({ color }) =>
-  <div className="used-by-bg">
+export const UsedByBg = ({ color, style }) =>
+  <div className="used-by-bg" style={style}>
     <svg
       width="100%"
       height="100%"
@@ -28,9 +28,12 @@ const UsedByBg = ({ color }) =>
   </div>;
 UsedByBg.propTypes = {
   color: PropTypes.string,
+  // eslint-disable-next-line
+  style: PropTypes.object,
 };
 UsedByBg.defaultProps = {
   color: 'white',
+  style: {},
 };
 
 const User = ({ logo, demo, site, title }) =>
@@ -64,9 +67,9 @@ const UsedBy = ({ users }) =>
         </div>
       </div>
     </div>
-    <Link to="/examples/" className="used-by-more-examples">
-      See more examples…
-    </Link>
+    <div className="used-by-more-examples">
+      <Link to="/examples/">See more examples…</Link>
+    </div>
   </div>;
 UsedBy.propTypes = {
   users: PropTypes.array, // eslint-disable-line

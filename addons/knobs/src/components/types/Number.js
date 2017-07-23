@@ -5,7 +5,7 @@ const styles = {
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'middle',
-  height: '26px',
+  height: '25px',
   width: '100%',
   outline: 'none',
   border: '1px solid #f7f4f4',
@@ -74,7 +74,7 @@ NumberType.defaultProps = {
 NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.number,
   }),
   onChange: PropTypes.func,
 };

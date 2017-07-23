@@ -9,7 +9,8 @@ Please review this document to help to streamline the process and save everyone'
 No software is bug free. So, if you got an issue, follow these steps:
 
 -   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
--   If non of that is helping, create an issue with with following information:
+    -   If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
+-   If none of that is helping, create an issue with with following information:
     -   Clear title (make is shorter if possible).
     -   Describe the issue in clear language.
     -   Share error logs, screenshots and etc.
@@ -28,11 +29,11 @@ To test your project against the current latest version of storybook, you can cl
 
 2.  Link `storybook` and any other required dependencies
 
-        cd packages/react-storybook
+        cd app/react
         npm link
 
         cd <your-project>
-        npm link @kadira/storybook
+        npm link @storybook/react
 
         # repeat with whichever other parts of the monorepo you are using.
 
@@ -127,7 +128,7 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 ## Development Guide
 
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/packages/storybook-ui) project.
+> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/lib/ui) page.
 
 This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
@@ -197,6 +198,8 @@ npm run bootstrap
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
+
+> **NOTE:** the very first time you publish a scoped package (`@storybook/x`) you need to publish it by hand because the default for scoped packages is private, and we need to make our packages public. If you try to publish a package for the first time using our `lerna` publish script, `lerna` will crash halfway through and you'll be in a world of pain.
 
 #### For prerelease (no CHANGELOG):
 

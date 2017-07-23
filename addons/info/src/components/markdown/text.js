@@ -10,7 +10,11 @@ export function P(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return <p style={style}>{props.children}</p>;
+  return (
+    <p style={style}>
+      {props.children}
+    </p>
+  );
 }
 
 P.defaultProps = defaultProps;
@@ -21,7 +25,11 @@ export function LI(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return <li style={style}>{props.children}</li>;
+  return (
+    <li style={style}>
+      {props.children}
+    </li>
+  );
 }
 
 LI.defaultProps = defaultProps;
@@ -32,7 +40,11 @@ export function UL(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return <ul style={style}>{props.children}</ul>;
+  return (
+    <ul style={style}>
+      {props.children}
+    </ul>
+  );
 }
 
 UL.defaultProps = defaultProps;
@@ -42,8 +54,12 @@ export function A(props) {
   const style = {
     color: '#3498db',
   };
-  return <a href={this.props.href} style={style}>{props.children}</a>;
+  return (
+    <a href={props.href} target="_blank" rel="noopener noreferrer" style={style}>
+      {props.children}
+    </a>
+  );
 }
 
 A.defaultProps = defaultProps;
-A.propTypes = propTypes;
+A.propTypes = { children: PropTypes.node, href: PropTypes.string.isRequired };

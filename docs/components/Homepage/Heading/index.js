@@ -10,11 +10,7 @@ const Heading = () =>
       <h3 className="sb-tagline">
         The UI Development Environment
         <br />
-        You'll
-        {' '}
-        <span className="glyphicon glyphicon-heart heart" />
-        {' '}
-        to use
+        You'll ♥️ to use
       </h3>
     </div>
   </div>;

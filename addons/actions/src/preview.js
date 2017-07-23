@@ -2,6 +2,7 @@
 
 import addons from '@storybook/addons';
 import stringify from 'json-stringify-safe';
+import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
 
 function _format(arg) {
@@ -16,9 +17,9 @@ export function action(name) {
   const handler = function(..._args) {
     const args = Array.from(_args).map(_format);
     const channel = addons.getChannel();
-    const randomId = Math.random().toString(16).slice(2);
+    const id = uuid();
     channel.emit(EVENT_ID, {
-      id: randomId,
+      id,
       data: { name, args },
     });
   };
@@ -29,7 +30,7 @@ export function action(name) {
   // the same.
   //
   // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  const fnName = name ? name.replace(/\W+/g, '_') : 'action';
+  const fnName = name && typeof name === 'string' ? name.replace(/\W+/g, '_') : 'action';
   // eslint-disable-next-line no-eval
   const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`);
   return named;

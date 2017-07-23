@@ -32,7 +32,9 @@ const codeStyle = {
 
 const ErrorDisplay = ({ error }) =>
   <div style={mainStyle}>
-    <div style={headingStyle}>{error.message}</div>
+    <div style={headingStyle}>
+      {error.message}
+    </div>
     <pre style={codeStyle}>
       <code>
         {error.stack}

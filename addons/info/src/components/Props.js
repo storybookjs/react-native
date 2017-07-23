@@ -32,8 +32,14 @@ export default function Props(props) {
   names.forEach((name, i) => {
     items.push(
       <span key={name}>
-        {breakIntoNewLines ? <span><br />&nbsp;&nbsp;</span> : ' '}
-        <span style={propNameStyle}>{name}</span>
+        {breakIntoNewLines
+          ? <span>
+              <br />&nbsp;&nbsp;
+            </span>
+          : ' '}
+        <span style={propNameStyle}>
+          {name}
+        </span>
         {/* Use implicit true: */}
         {(!nodeProps[name] || typeof nodeProps[name] !== 'boolean') &&
           <span>
@@ -53,7 +59,11 @@ export default function Props(props) {
     );
   });
 
-  return <span>{items}</span>;
+  return (
+    <span>
+      {items}
+    </span>
+  );
 }
 
 Props.defaultProps = {
@@ -61,10 +71,7 @@ Props.defaultProps = {
 };
 
 Props.propTypes = {
-  node: PropTypes.shape({
-    props: PropTypes.object,
-    type: PropTypes.object.isRequired,
-  }).isRequired,
+  node: PropTypes.node.isRequired,
   singleLine: PropTypes.bool,
   maxPropsIntoLine: PropTypes.number.isRequired,
   maxPropObjectKeys: PropTypes.number.isRequired,

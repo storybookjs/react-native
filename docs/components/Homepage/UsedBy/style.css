@@ -10,10 +10,10 @@
 
 .used-by-bg {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
 }
 
 .used-by-bg svg {
@@ -63,5 +63,13 @@
 .used-by-more-examples {
   text-align: center;
   display: block;
-  margin-top: 10px;
+  margin-top: 50px;
+  font-size: 2em;
+}
+
+.used-by-more-examples a {
+  background-color: #e4004f;
+  color: #fff;
+  padding: 20px;
+  border-radius: 6px;
 }

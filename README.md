@@ -1,11 +1,11 @@
 # Storybook
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
+[![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
-[![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
 * * *
@@ -18,6 +18,8 @@ It allows you to browse a component library, view the different states of each c
 ![Storybook Screenshot](app/react/docs/demo.gif)
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
+
+Here are some featured examples that you can reference to see how Storybook works: https://storybook.js.org/examples/
 
 Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduction/) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
 
@@ -45,6 +47,14 @@ getstorybook
 
 Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
+**Storybook v2.x migration note**: If you're using Storybook v2.x and want to shift to 3.x version the easiest way is:
+```sh
+npm i -g @storybook/cli
+cd my-storybook-v2-app
+getstorybook
+```
+It runs a codemod to update all package names. Read all migration details in our [Migration Guide](MIGRATION.md)
+
 For full documentation on using Storybook visit: [storybook.js.org](https://storybook.js.org)
 
 ## Projects
@@ -63,6 +73,7 @@ For full documentation on using Storybook visit: [storybook.js.org](https://stor
 
 -   [storyshots](addons/storyshots) - Easy snapshot testing for storybook
 -   [actions](addons/actions/) - Log actions as users interact with components in storybook
+-   [links](addons/links/) - Create links between stories
 -   [comments](addons/comments/) - Comment on storybook stories
 -   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
 -   [info](addons/info/) - Annotate stories with extra component usage information
