@@ -1,80 +1,79 @@
 #!/usr/bin/env babel-node
-
 import inquirer from 'inquirer';
 import program from 'commander';
 import childProcess from 'child_process';
+import chalk from 'chalk';
+import log from 'npmlog';
+
+log.heading = 'storybook';
+const prefix = 'bootstrap';
 
 const spawn = childProcess.spawnSync;
 
 program
-  .version('1.0.0')
+  .version('3.0.0')
   .option('--all', 'Run all without asking')
+  .option('--core', 'Bootstrap core')
   .option('--docs', 'Bootstrap docs')
-  .option('--libs', 'Bootstrap libs')
-  .option('--test-cra', 'Bootstrap test-cra')
-  .option('--react-native-vanilla', 'Bootstrap react-native-vanilla')
+  .option('--test-cra', 'Bootstrap examples/test-cra')
+  .option('--react-native-vanilla', 'Bootstrap examples/react-native-vanilla')
   .parse(process.argv);
 
 const todo = {
-  docs: false,
-  libs: false,
-  'test-cra': false,
-  'react-native-vanilla': false,
+  core: {
+    value: false,
+    name: `Core & Examples ${chalk.gray('(core)')}`,
+    default: true,
+  },
+  docs: {
+    value: false,
+    name: `Documentation ${chalk.gray('(docs)')}`,
+    default: false,
+  },
+  'test-cra': {
+    value: false,
+    name: `Realistic installed example ${chalk.gray('(test-cra)')}`,
+    default: false,
+  },
+  'react-native-vanilla': {
+    value: false,
+    name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
+    default: false,
+  },
 };
 
-if (program.all) {
-  Object.assign(todo, {
-    docs: true,
-    libs: true,
-    'test-cra': true,
-    'react-native-vanilla': true,
-  });
-}
-
-if (program.docs) {
-  Object.assign(todo, {
-    docs: true,
-  });
-}
-if (program.libs) {
-  Object.assign(todo, {
-    libs: true,
-  });
-}
-if (program['test-cra']) {
-  Object.assign(todo, {
-    'test-cra': true,
-  });
-}
-if (program['react-native-vanilla']) {
-  Object.assign(todo, {
-    'react-native-vanilla': true,
-  });
-}
+Object.keys(todo).forEach(key => {
+  todo[key].value = program[key] || program.all;
+});
 
 let selection;
-if (!Object.keys(todo).map(key => todo[key]).filter(Boolean).length) {
+if (!Object.keys(todo).map(key => todo[key].value).filter(Boolean).length) {
   selection = inquirer
     .prompt([
       {
         type: 'checkbox',
         message: 'Select which packages to bootstrap',
         name: 'todo',
-        choices: Object.keys(todo).map(key => ({ name: key })),
+        choices: Object.keys(todo).map(key => ({
+          name: todo[key].name,
+          checked: todo[key].default,
+        })),
       },
     ])
-    .then(answers => answers.todo);
+    .then(answers => answers.todo.map(name => Object.keys(todo).find(i => todo[i].name === name)));
 } else {
-  selection = Promise.resolve(Object.keys(todo).filter(key => todo[key] === true));
+  selection = Promise.resolve(Object.keys(todo).filter(key => todo[key].value === true));
 }
 
 selection.then(list => {
   if (list.length === 0) {
-    console.log('Nothing to bootstrap');
+    log.warn(prefix, 'Nothing to bootstrap');
   } else {
-    console.log(`Bootstrapping: ${list.join(', ')}`);
     list.forEach(key => {
-      spawn('npm', [`run bootstrap:${key}`], {
+      if (list.length > 1) {
+        log.info(prefix, `Bootstrapping: ${todo[key].name}`);
+      }
+      spawn('yarn', [`bootstrap:${key}`, '-s'], {
         shell: true,
         stdio: 'inherit',
       });
