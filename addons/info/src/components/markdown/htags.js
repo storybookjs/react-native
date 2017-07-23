@@ -20,7 +20,11 @@ export function H1(props) {
     padding: 0,
     fontSize: '40px',
   };
-  return <h1 id={props.id} style={styles}>{props.children}</h1>;
+  return (
+    <h1 id={props.id} style={styles}>
+      {props.children}
+    </h1>
+  );
 }
 
 H1.defaultProps = defaultProps;
@@ -34,7 +38,11 @@ export function H2(props) {
     padding: 0,
     fontSize: '30px',
   };
-  return <h2 id={props.id} style={styles}>{props.children}</h2>;
+  return (
+    <h2 id={props.id} style={styles}>
+      {props.children}
+    </h2>
+  );
 }
 
 H2.defaultProps = defaultProps;
@@ -49,7 +57,11 @@ export function H3(props) {
     fontSize: '22px',
     textTransform: 'uppercase',
   };
-  return <h3 id={props.id} style={styles}>{props.children}</h3>;
+  return (
+    <h3 id={props.id} style={styles}>
+      {props.children}
+    </h3>
+  );
 }
 
 H3.defaultProps = defaultProps;
@@ -63,7 +75,11 @@ export function H4(props) {
     padding: 0,
     fontSize: '20px',
   };
-  return <h4 id={props.id} style={styles}>{props.children}</h4>;
+  return (
+    <h4 id={props.id} style={styles}>
+      {props.children}
+    </h4>
+  );
 }
 
 H4.defaultProps = defaultProps;
@@ -77,7 +93,11 @@ export function H5(props) {
     padding: 0,
     fontSize: '18px',
   };
-  return <h5 id={props.id} style={styles}>{props.children}</h5>;
+  return (
+    <h5 id={props.id} style={styles}>
+      {props.children}
+    </h5>
+  );
 }
 
 H5.defaultProps = defaultProps;
@@ -91,7 +111,11 @@ export function H6(props) {
     padding: 0,
     fontSize: '18px',
   };
-  return <h6 id={props.id} style={styles}>{props.children}</h6>;
+  return (
+    <h6 id={props.id} style={styles}>
+      {props.children}
+    </h6>
+  );
 }
 
 H6.defaultProps = defaultProps;

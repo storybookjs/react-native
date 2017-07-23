@@ -24,11 +24,19 @@ class Nav extends React.Component {
   }
 
   renderNavOpts(nav) {
-    return <option value={nav.id} key={nav.id}>{nav.title}</option>;
+    return (
+      <option value={nav.id} key={nav.id}>
+        {nav.title}
+      </option>
+    );
   }
 
   renderHeadingOpts(section) {
-    return <option value={section.id} key={section.id}>{section.heading}</option>;
+    return (
+      <option value={section.id} key={section.id}>
+        {section.heading}
+      </option>
+    );
   }
   render() {
     const { sections, selectedSection, selectedItem } = this.props;

@@ -16,7 +16,7 @@ const stylesheet = {
     boxSizing: 'border-box',
     verticalAlign: 'top',
     paddingRight: 5,
-    paddingTop: 7,
+    paddingTop: 5,
     textAlign: 'right',
     width: 80,
     fontSize: 12,

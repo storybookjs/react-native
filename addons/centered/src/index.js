@@ -9,8 +9,19 @@ const style = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  overflow: 'auto',
+};
+
+const innerStyle = {
+  margin: 'auto',
 };
 
 export default function(storyFn) {
-  return <div style={style}>{storyFn()}</div>;
+  return (
+    <div style={style}>
+      <div style={innerStyle}>
+        {storyFn()}
+      </div>
+    </div>
+  );
 }

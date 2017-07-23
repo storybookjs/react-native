@@ -28,27 +28,19 @@ const styles = {
 const PreviewHelp = () =>
   <div style={styles.main}>
     <h1>Welcome to storybook</h1>
+    <p>This is a UI component dev environment for your app.</p>
     <p>
-      This is a UI component dev environment for your app.
+      We've added some basic stories inside the <span style={styles.code}>
+        storybook/stories
+      </span>{' '}
+      directory. A story is a single state of one or more UI components. You can have as many
+      stories as you want. Basically a story is like a visual test case.
     </p>
     <p>
-      We've added some basic stories inside the
-      {' '}
-      <span style={styles.code}>storybook/stories</span>
-      {' '}
-      directory.
-      {' '}
-      A story is a single state of one or more UI components. You can have as many stories as you
-      want. Basically a story is like a visual test case.
-    </p>
-    <p>
-      To see your Storybook stories on the device, you should start your mobile app for the
-      {' '}
-      <span style={styles.code}>&lt;platform&gt;</span>
-      {' '}
-      of your choice (typically ios or android). (Note that due to an implementation detail, your
-      stories will only show up in the left-pane after your device has connected to this storybook
-      server.)
+      To see your Storybook stories on the device, you should start your mobile app for the{' '}
+      <span style={styles.code}>&lt;platform&gt;</span> of your choice (typically ios or android).
+      (Note that due to an implementation detail, your stories will only show up in the left-pane
+      after your device has connected to this storybook server.)
     </p>
     <p>
       For <span style={styles.code}>create-react-native-app</span> apps:
