@@ -36,6 +36,11 @@ export default function(publicPath, options) {
           .btn:hover{
             background-color: #eee
           }
+
+          /* Remove blue outline defined by the user argent*/
+          :focus {
+            outline: none !important;
+          }
         </style>
       </head>
       <body style="margin: 0;">
