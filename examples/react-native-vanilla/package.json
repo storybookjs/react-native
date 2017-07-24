@@ -24,7 +24,6 @@
     "@storybook/channels": "file:../../lib/channels",
     "@storybook/channel-postmessage": "file:../../lib/channel-postmessage",
     "@storybook/react-native": "file:../../app/react-native",
-    "@storybook/react": "file:../../app/react",
     "@storybook/ui": "file:../../lib/ui",
     "react-dom": "^15.5.4"
   }
