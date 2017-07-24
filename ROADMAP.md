@@ -10,8 +10,8 @@
     -   [See multiple (or all) stories in 1 preview.](#see-multiple-or-all-stories-in-1-preview)
     -   [Deeper level hierarchy](#deeper-level-hierarchy)
 -   [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    -   [Vue](#vue) (*in development*)
-    -   [Angular](#angular)
+    -   [Vue](#vue) (*in alpha*)
+    -   [Angular](#angular) (*in development*)
     -   [Webcomponents](#webcomponents)
     -   [Polymer](#polymer)
     -   [Aurelia](#aurelia)
@@ -19,7 +19,6 @@
     -   [Addon API](#addon-api)
     -   [API for adding stories](#api-for-adding-stories)
 -   [Documentation](#documentation)
-    -   [Search & Structure](#search--structure)
     -   [Better design](#better-design)
     -   [Record videos and write blog post on how to tweak storybook](#record-videos-and-write-blog-post-on-how-to-tweak-storybook)
 
@@ -74,11 +73,11 @@ We want you to be able to use storybook with the framework / library of your cho
 
 ### Vue
 
-Interested in supporting. We know about [vue-play](https://github.com/vue-play/vue-play/), we're interested in learning and working together!
+Storybook for Vue is currently in alpha release, it won't be long now!
 
 ### Angular
 
-Interested in supporting ( not AngularJS ).
+Storybook for Angular is in development.
 
 ### Webcomponents
 
@@ -105,17 +104,14 @@ We want to support this, but will likely mean we will have to change the `add` m
 
 ## Documentation
 
-### Search & Structure
-
-Finding the right part of our documentation isn't easy, since there is no search.
-We want to integrate the readme of the individual packages into the documentation site and also have the changelog, contributing, migration and roadmap findable there.
-
 ### Better design
 
 We have a new logo, so next step is a overhaul of our documentation site.
 
-### Record videos and write blog post on how to tweak storybook
+### Record videos and write blog post on how to use, tweak & develop storybook
 
-This may include writing addons, choosing the right addons etc.
-Also how to start developing on our codebase.
-Also how to use storybook itself and the CLI.
+- writing addons, 
+- choosing the right addons.
+- how to start developing on our codebase.
+- how to use storybook itself and the CLI.
+

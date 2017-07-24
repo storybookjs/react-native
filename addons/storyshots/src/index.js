@@ -24,9 +24,11 @@ const hasDependency = name =>
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
-  const isStorybook = options.framework === 'react' || hasDependency('@storybook/react');
+  const isStorybook =
+    options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
   const isRNStorybook =
-    options.framework === 'react-native' || hasDependency('@storybook/react-native');
+    options.framework === 'react-native' ||
+    (!options.framework && hasDependency('@storybook/react-native'));
 
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
@@ -56,7 +58,8 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
-  const suit = options.suit || 'Storyshots';
+  // NOTE: keep `suit` typo for backwards compatibility
+  const suite = options.suite || options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
@@ -72,7 +75,7 @@ export default function testStorySnapshots(options = {}) {
       continue;
     }
 
-    describe(suit, () => {
+    describe(suite, () => {
       describe(group.kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {

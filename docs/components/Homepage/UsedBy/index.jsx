@@ -67,9 +67,9 @@ const UsedBy = ({ users }) =>
         </div>
       </div>
     </div>
-    <Link to="/examples/" className="used-by-more-examples">
-      See more examples…
-    </Link>
+    <div className="used-by-more-examples">
+      <Link to="/examples/">See more examples…</Link>
+    </div>
   </div>;
 UsedBy.propTypes = {
   users: PropTypes.array, // eslint-disable-line
