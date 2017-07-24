@@ -175,7 +175,7 @@ type PropsType = {
 };
 
 /** Button component description */
-const Button = ({ disabled, label, style, onClick }: PropType) => (
+const Button = ({ disabled, label, style, onClick }: PropsType) => (
   <button disabled={disabled} onClick={onClick}>
     {label}
   </button>
