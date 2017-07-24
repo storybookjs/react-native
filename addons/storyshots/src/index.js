@@ -24,9 +24,11 @@ const hasDependency = name =>
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
-  const isStorybook = options.framework === 'react' || hasDependency('@storybook/react');
+  const isStorybook =
+    options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
   const isRNStorybook =
-    options.framework === 'react-native' || hasDependency('@storybook/react-native');
+    options.framework === 'react-native' ||
+    (!options.framework && hasDependency('@storybook/react-native'));
 
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
