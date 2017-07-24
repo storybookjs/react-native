@@ -70,7 +70,7 @@
     "remark-lint": "^6.0.0",
     "remark-lint-code": "^2.0.0",
     "remark-lint-code-eslint": "^2.0.0",
-    "remark-preset-lint-recommended": "^2.0.0",
+    "remark-preset-lint-recommended": "^3.0.0",
     "remark-toc": "^4.0.0",
     "shelljs": "^0.7.7",
     "symlink-dir": "^1.1.0"
