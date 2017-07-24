@@ -40,7 +40,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
+            npm run bootstrap -- --core
       - save_cache:
           key: package-dependencies-{{ checksum "package.json" }}
           paths:
@@ -70,8 +70,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
-            npm run bootstrap:test-cra
+            npm run bootstrap -- --core --test-cra
       - run:
           name: "Running test-cra"
           command: |
@@ -91,8 +90,7 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            npm run bootstrap
-            npm run bootstrap:react-native-vanilla
+            npm run bootstrap -- --core --react-native-vanilla
       - run:
           name: "Running react-native"
           command: |
@@ -113,7 +111,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap:docs
+            npm run bootstrap -- --docs
       - run:
           name: "Running docs"
           command: |
@@ -149,10 +147,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
-            npm run bootstrap:docs
-            npm run bootstrap:test-cra
-            npm run bootstrap:react-native-vanilla
+            npm run bootstrap -- --all
       - run:
           name: "Unit testing"
           command: |
