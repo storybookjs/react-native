@@ -43,7 +43,12 @@ export default function() {
         },
         {
           test: /\.ts?$/,
-          loader: require.resolve('ts-loader'),
+          loaders: [require.resolve('ts-loader'), require.resolve('angular2-template-loader')],
+        },
+        {
+          test: /\.(html|css)$/,
+          loader: 'raw-loader',
+          exclude: /\.async\.(html|css)$/,
         },
       ],
     },

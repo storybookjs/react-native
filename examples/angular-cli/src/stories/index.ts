@@ -6,6 +6,8 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Welcome, Button } from '@storybook/angular/demo';
 
+import { AppComponent } from '../app/app.component';
+
 storiesOf('Welcome')
   .add('to Storybook', () => ({
     component: Welcome,
@@ -42,3 +44,8 @@ storiesOf('Another Button')
     }
   }))
 
+storiesOf('App Component')
+  .add('the whole app', () => ({
+    component: AppComponent,
+    props: {}
+  }))
