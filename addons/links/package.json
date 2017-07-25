@@ -21,16 +21,16 @@
     "prepublish": "node ../../scripts/prepublish.js",
     "storybook": "start-storybook -p 9001"
   },
-  "dependencies": {
+	"dependencies": {
     "@storybook/addons": "^3.1.6"
   },
   "devDependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "shelljs": "^0.7.7"
+		"react": "^15.6.1",
+		"react-dom": "^15.6.1",
+    "shelljs": "^0.7.8"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  }
+		"react": "*",
+		"react-dom": "*"
+	}
 }

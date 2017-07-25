@@ -13,6 +13,6 @@
     "json-stringify-safe": "^5.0.1"
   },
   "devDependencies": {
-    "shelljs": "^0.7.7"
+    "shelljs": "^0.7.8"
   }
 }
