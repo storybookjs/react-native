@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "git-url-parse": "^6.2.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1"
   },
   "peerDependencies": {
     "react": "*"
