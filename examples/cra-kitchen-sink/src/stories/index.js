@@ -96,7 +96,7 @@ storiesOf('Button', module)
           {intro}
         </p>
         <p>
-          My birthday is: {new Date(birthday).toLocaleDateString()}
+          My birthday is: {new Date(birthday).toDateString()}
         </p>
         <p>
           My wallet contains: ${dollars.toFixed(2)}
