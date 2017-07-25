@@ -25,7 +25,10 @@
   },
   "devDependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.5.4"
+    "git-url-parse": "^6.2.2",
+    "react": "^15.6.1",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.6.1"
   },
   "peerDependencies": {
     "react": "*"

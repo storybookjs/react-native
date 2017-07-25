@@ -23,10 +23,10 @@
     "@storybook/addons": "^3.2.0-alpha.8"
   },
   "devDependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "shelljs": "^0.7.7"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "shelljs": "^0.7.8"
   },
   "peerDependencies": {
     "react": "*",
