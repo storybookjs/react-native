@@ -69,7 +69,9 @@ const task = getLernaPackages()
               return path.join(targetPath, packageName);
             })
             .then(localTargetPath =>
-              symlink(sourcePath, localTargetPath)
+              fse
+                .remove(localTargetPath)
+                .then(() => symlink(sourcePath, localTargetPath))
                 .then(
                   passingLog(() => {
                     log.silly(prefix, 'symlinked ', [sourcePath, localTargetPath]);
@@ -77,7 +79,7 @@ const task = getLernaPackages()
                 )
                 .then(() => localTargetPath)
                 .catch(error => {
-                  log.error(prefix, 'symlink', error);
+                  log.error(prefix, 'symlink', error, [sourcePath, localTargetPath]);
                   throw new Error('failed symlink');
                 })
             )
