@@ -28,8 +28,8 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "peerDependencies": {
     "react": "*"

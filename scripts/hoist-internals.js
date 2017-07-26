@@ -20,10 +20,7 @@ const passingLog = fn => i => {
   fn(i);
   return i;
 };
-const getPackageNameOfFolder = sourcePath =>
-  fse
-    .readJson(path.join(sourcePath, 'package.json'))
-    .then(json => json.name.replace('@storybook/', ''));
+const getPackageOfFolder = sourcePath => fse.readJsonSync(path.join(sourcePath, 'package.json'));
 
 const task = getLernaPackages()
   .then(
@@ -60,16 +57,21 @@ const task = getLernaPackages()
             log.silly(prefix, 'found package path', item);
           })
         )
-        .map(sourcePath =>
-          getPackageNameOfFolder(sourcePath)
-            .then(
-              passingLog(packageName => {
-                log.silly(prefix, 'found package name', packageName);
-              })
-            )
-            .then(packageName => path.join(targetPath, packageName))
+        .map(sourcePath => ({
+          sourcePath,
+          packageJson: getPackageOfFolder(sourcePath),
+        }))
+        .filter(({ packageJson }) => !packageJson.private)
+        .map(({ sourcePath, packageJson }) =>
+          Promise.resolve(packageJson.name.replace('@storybook/', ''))
+            .then(packageName => {
+              log.silly(prefix, 'found package name', packageName);
+              return path.join(targetPath, packageName);
+            })
             .then(localTargetPath =>
-              symlink(sourcePath, localTargetPath)
+              fse
+                .remove(localTargetPath)
+                .then(() => symlink(sourcePath, localTargetPath))
                 .then(
                   passingLog(() => {
                     log.silly(prefix, 'symlinked ', [sourcePath, localTargetPath]);
@@ -77,7 +79,7 @@ const task = getLernaPackages()
                 )
                 .then(() => localTargetPath)
                 .catch(error => {
-                  log.error(prefix, 'symlink', error);
+                  log.error(prefix, 'symlink', error, [sourcePath, localTargetPath]);
                   throw new Error('failed symlink');
                 })
             )

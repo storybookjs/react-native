@@ -66,6 +66,9 @@ module.exports = {
       },
     ],
     'jsx-a11y/accessible-emoji': ignore,
+    'jsx-a11y/href-no-hash': ignore,
+    'jsx-a11y/label-has-for': ignore,
+    'jsx-a11y/anchor-is-valid': ['warn', { aspects: ['invalidHref'] }],
     'react/no-unescaped-entities': ignore,
   },
 };

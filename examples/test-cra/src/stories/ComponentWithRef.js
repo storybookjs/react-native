@@ -7,7 +7,13 @@ class ComponentWithRef extends Component {
   }
   scrollWidth = 0;
   render() {
-    return <div ref={r => (this.ref = r)} />;
+    return (
+      <div
+        ref={r => {
+          this.ref = r;
+        }}
+      />
+    );
   }
 }
 
