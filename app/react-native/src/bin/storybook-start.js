@@ -41,8 +41,9 @@ server.listen(...listenAddr, err => {
 });
 
 if (!program.skipPackager) {
-  const projectRoots = configDir === projectDir ? [configDir] : [configDir, projectDir];
-
+  const symlinks = require('react-native/local-cli/util/findSymlinksPaths')(_path.join(projectDir, 'node_modules'), [projectDir])
+  const projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(symlinks);
+  
   let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
   if (program.haul) {
     cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform all`;
