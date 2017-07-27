@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon Knobs deprecated Decorator with dynamic variables deprecated 1`] = `
-<div>
-  I am Story Teller and I'm 120 years old.
-</div>
-`;
-
-exports[`Storyshots Addon Knobs with dynamic variables new method 1`] = `
-<div>
-  I am Arunoda Susiripala and I'm 89 years old.
-</div>
-`;
-
 exports[`Storyshots App full app 1`] = `
 <div
   className="App"
@@ -1805,36 +1793,6 @@ exports[`Storyshots WithEvents Logger 1`] = `
 </div>
 `;
 
-exports[`Storyshots addonNotes with a button and some emoji 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots addonNotes with old API 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots addonNotes with some emoji 1`] = `
-<p>
-  🤔😳😯😮
-</p>
-`;
-
-exports[`Storyshots addonNotes with some text 1`] = `
-<div>
-  Hello guys
-</div>
-`;
-
 exports[`Storyshots component.Button first 1`] = `
 <button>
   first button
@@ -1901,4 +1859,34 @@ exports[`Storyshots component.common.Table second 1`] = `
     </td>
   </tr>
 </table>
+`;
+
+exports[`Storyshots withNotes with a button and some emoji 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots withNotes with old API 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots withNotes with some emoji 1`] = `
+<p>
+  🤔😳😯😮
+</p>
+`;
+
+exports[`Storyshots withNotes with some text 1`] = `
+<div>
+  Hello guys
+</div>
 `;

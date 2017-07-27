@@ -2,7 +2,7 @@ import deprecate from 'util-deprecate';
 import addons from '@storybook/addons';
 import { WithNotes as ReactWithNotes } from './react';
 
-export const addonNotes = ({ notes }) => {
+export const withNotes = ({ notes }) => {
   const channel = addons.getChannel();
 
   return getStory => context => {

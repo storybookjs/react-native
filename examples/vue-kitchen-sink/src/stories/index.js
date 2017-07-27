@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { addonNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 
 import {
-  addonKnobs,
+  withKnobs,
   text,
   number,
   boolean,
@@ -51,7 +51,7 @@ storiesOf('Method for rendering Vue', module)
     template: `
       <div>
         <h1>A template</h1>
-        <p>rendered in vue in storybook</p> 
+        <p>rendered in vue in storybook</p>
       </div>`,
   }))
   .add('template + component', () => ({
@@ -137,14 +137,14 @@ storiesOf('Addon Actions', module)
 storiesOf('Addon Notes', module)
   .add(
     'Simple note',
-    addonNotes({ notes: 'My notes on some bold text' })(() => ({
+    withNotes({ notes: 'My notes on some bold text' })(() => ({
       template:
         '<p><strong>Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.</strong></p>',
     }))
   )
   .add(
     'Note with HTML',
-    addonNotes({
+    withNotes({
       notes: `
       <h2>My notes on emojies</h2>
 
@@ -158,43 +158,44 @@ storiesOf('Addon Notes', module)
   );
 
 storiesOf('Addon Knobs', module)
-  .add(
-    'Simple',
-    addonKnobs()(() => {
-      const name = text('Name', 'John Doe');
-      const age = number('Age', 44);
-      const content = `I am ${name} and I'm ${age} years old.`;
+  .addDecorator(withKnobs)
+  .add('Simple', () => {
+    const name = text('Name', 'John Doe');
+    const age = number('Age', 44);
+    const content = `I am ${name} and I'm ${age} years old.`;
 
-      return {
-        template: `<div>${content}</div>`,
-      };
-    })
-  )
-  .add(
-    'All knobs',
-    addonKnobs()(() => {
-      const name = text('Name', 'Jane');
-      const stock = number('Stock', 20, { range: true, min: 0, max: 30, step: 5 });
-      const fruits = {
-        apples: 'Apple',
-        bananas: 'Banana',
-        cherries: 'Cherry',
-      };
-      const fruit = select('Fruit', fruits, 'apple');
-      const price = number('Price', 2.25);
+    return {
+      template: `<div>${content}</div>`,
+    };
+  })
+  .add('All knobs', () => {
+    const name = text('Name', 'Jane');
+    const stock = number('Stock', 20, {
+      range: true,
+      min: 0,
+      max: 30,
+      step: 5,
+    });
+    const fruits = {
+      apples: 'Apple',
+      bananas: 'Banana',
+      cherries: 'Cherry',
+    };
+    const fruit = select('Fruit', fruits, 'apple');
+    const price = number('Price', 2.25);
 
-      const colour = color('Border', 'deeppink');
-      const today = date('Today', new Date('Jan 20 2017'));
-      const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
-      const nice = boolean('Nice', true);
+    const colour = color('Border', 'deeppink');
+    const today = date('Today', new Date('Jan 20 2017'));
+    const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
+    const nice = boolean('Nice', true);
 
-      const stockMessage = stock
-        ? `I have a stock of ${stock} ${fruit}, costing &dollar;${price} each.`
-        : `I'm out of ${fruit}${nice ? ', Sorry!' : '.'}`;
-      const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+    const stockMessage = stock
+      ? `I have a stock of ${stock} ${fruit}, costing &dollar;${price} each.`
+      : `I'm out of ${fruit}${nice ? ', Sorry!' : '.'}`;
+    const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
 
-      return {
-        template: `
+    return {
+      template: `
           <div style="border:2px dotted ${colour}; padding: 8px 22px; border-radius: 8px">
             <h1>My name is ${name},</h1>
             <h3>today is ${new Date(today).toLocaleDateString()}</h3>
@@ -206,6 +207,5 @@ storiesOf('Addon Knobs', module)
             <p>${salutation}</p>
           </div>
         `,
-      };
-    })
-  );
+    };
+  });

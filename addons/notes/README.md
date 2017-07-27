@@ -32,10 +32,10 @@ Then write your stories like this:
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { addonNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 
 import Component from './Component';
 
 storiesOf('Component', module)
-  .add('with some emoji', addonNotes({ notes: 'A very simple component'})(() => <Component></Component>));
+  .add('with some emoji', withNotes({ notes: 'A very simple component'})(() => <Component></Component>));
 ```
