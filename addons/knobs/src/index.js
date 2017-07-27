@@ -60,7 +60,9 @@ export function date(name, value = new Date()) {
 }
 
 // "Higher order component" / wrapper style API
-export function wrapperKnobs(options) {
+// In 3.3, this will become `withKnobs`, once our decorator API supports it.
+//   See https://github.com/storybooks/storybook/pull/1527
+function wrapperKnobs(options) {
   if (options) channel.emit('addon:knobs:setOptions', options);
 
   switch (window.STORYBOOK_ENV) {
