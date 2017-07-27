@@ -3,7 +3,7 @@ import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { addonNotes, WithNotes } from '@storybook/addon-notes';
+import { withNotes, WithNotes } from '@storybook/addon-notes';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
@@ -136,7 +136,7 @@ storiesOf('Button', module)
   .add(
     'addons composition',
     withInfo('see Notes panel for composition info')(
-      addonNotes({ notes: 'Composition: Info(Notes())' })(context =>
+      withNotes({ notes: 'Composition: Info(Notes())' })(context =>
         <div>
           click the <InfoButton /> label in top right for info about "{context.story}"
         </div>
@@ -207,12 +207,12 @@ storiesOf('WithEvents', module)
   )
   .add('Logger', () => <Logger emiter={emiter} />);
 
-storiesOf('addonNotes', module)
-  .add('with some text', addonNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
-  .add('with some emoji', addonNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
+storiesOf('withNotes', module)
+  .add('with some text', withNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
+  .add('with some emoji', withNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
   .add(
     'with a button and some emoji',
-    addonNotes({ notes: 'My notes on a button with emojies' })(() =>
+    withNotes({ notes: 'My notes on a button with emojies' })(() =>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     )
   )

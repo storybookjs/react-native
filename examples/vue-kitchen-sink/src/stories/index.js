@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { addonNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 
 import {
   withKnobs,
@@ -137,14 +137,14 @@ storiesOf('Addon Actions', module)
 storiesOf('Addon Notes', module)
   .add(
     'Simple note',
-    addonNotes({ notes: 'My notes on some bold text' })(() => ({
+    withNotes({ notes: 'My notes on some bold text' })(() => ({
       template:
         '<p><strong>Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.</strong></p>',
     }))
   )
   .add(
     'Note with HTML',
-    addonNotes({
+    withNotes({
       notes: `
       <h2>My notes on emojies</h2>
 
