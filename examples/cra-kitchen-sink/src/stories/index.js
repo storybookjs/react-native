@@ -8,7 +8,6 @@ import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
-  addonKnobs,
   text,
   number,
   boolean,
@@ -222,35 +221,6 @@ storiesOf('addonNotes', module)
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
   );
-
-storiesOf('Addon Knobs deprecated Decorator', module)
-  .addDecorator(withKnobs) // test deprecated
-  .add('with dynamic variables deprecated', () => {
-    const name = text('Name', 'Story Teller');
-    const age = number('Age', 120);
-
-    const content = `I am ${name} and I'm ${age} years old.`;
-    return (
-      <div>
-        {content}
-      </div>
-    );
-  });
-
-storiesOf('Addon Knobs', module).add(
-  'with dynamic variables new method',
-  addonKnobs()(() => {
-    const name = text('Name', 'Arunoda Susiripala');
-    const age = number('Age', 89);
-
-    const content = `I am ${name} and I'm ${age} years old.`;
-    return (
-      <div>
-        {content}
-      </div>
-    );
-  })
-);
 
 storiesOf('component.base.Link', module)
   .addDecorator(withKnobs)
