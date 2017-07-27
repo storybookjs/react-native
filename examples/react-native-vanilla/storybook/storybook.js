@@ -8,7 +8,12 @@ configure(() => {
   require('./stories');
 }, module);
 
-const StorybookUI = getStorybookUI({ port: 7007, host: 'localhost' });
+const StorybookUI = getStorybookUI({
+  port: 7007,
+  host: 'localhost',
+  onDeviceUI: true,
+  resetStorybook: true,
+});
 
 setTimeout(
   () =>

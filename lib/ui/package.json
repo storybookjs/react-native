@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.1.9",
+  "version": "3.2.0-alpha.11",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -28,14 +28,16 @@
     "podda": "^1.2.2",
     "prop-types": "^15.5.10",
     "qs": "^6.4.0",
+    "react-icons": "^2.2.5",
     "react-inspector": "^2.1.1",
     "react-komposer": "^2.0.0",
     "react-modal": "^1.7.7",
     "react-split-pane": "^0.1.65",
+    "react-treebeard": "^2.0.3",
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "enzyme": "^2.8.2"
+    "enzyme": "^2.9.1"
   },
   "peerDependencies": {
     "react": "*",

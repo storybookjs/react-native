@@ -3,9 +3,9 @@ import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withNotes, WithNotes } from '@storybook/addon-notes';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
-import { WithNotes } from '@storybook/addon-notes';
 import {
   withKnobs,
   text,
@@ -18,11 +18,13 @@ import {
   object,
 } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
+import { withInfo } from '@storybook/addon-info';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
+import Container from './Container';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -35,6 +37,22 @@ const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+
+const InfoButton = () =>
+  <span
+    style={{
+      fontFamily: 'sans-serif',
+      fontSize: 12,
+      textDecoration: 'none',
+      background: 'rgb(34, 136, 204)',
+      color: 'rgb(255, 255, 255)',
+      padding: '5px 15px',
+      margin: 10,
+      borderRadius: '0px 0px 0px 5px',
+    }}
+  >
+    {' '}Show Info{' '}
+  </span>;
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
@@ -100,7 +118,30 @@ storiesOf('Button', module)
   .addWithInfo(
     'with some info',
     'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
-    () => <Button>click the "?" in top right for info</Button>
+    context =>
+      <Container>
+        click the <InfoButton /> label in top right for info about "{context.story}"
+      </Container>
+  )
+  .add(
+    'with new info',
+    withInfo(
+      'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
+    )(context =>
+      <Container>
+        click the <InfoButton /> label in top right for info about "{context.story}"
+      </Container>
+    )
+  )
+  .add(
+    'addons composition',
+    withInfo('see Notes panel for composition info')(
+      withNotes({ notes: 'Composition: Info(Notes())' })(context =>
+        <div>
+          click the <InfoButton /> label in top right for info about "{context.story}"
+        </div>
+      )
+    )
   );
 
 storiesOf('App', module).add('full app', () => <App />);
@@ -165,3 +206,82 @@ storiesOf('WithEvents', module)
     </WithEvents>
   )
   .add('Logger', () => <Logger emiter={emiter} />);
+
+storiesOf('withNotes', module)
+  .add('with some text', withNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
+  .add('with some emoji', withNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
+  .add(
+    'with a button and some emoji',
+    withNotes({ notes: 'My notes on a button with emojies' })(() =>
+      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    )
+  )
+  .add('with old API', () =>
+    <WithNotes notes="Hello">
+      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    </WithNotes>
+  );
+
+storiesOf('component.base.Link', module)
+  .addDecorator(withKnobs)
+  .add('first', () =>
+    <a>
+      {text('firstLink', 'first link')}
+    </a>
+  )
+  .add('second', () =>
+    <a>
+      {text('secondLink', 'second link')}
+    </a>
+  );
+
+storiesOf('component.base.Span', module)
+  .add('first', () => <span>first span</span>)
+  .add('second', () => <span>second span</span>);
+
+storiesOf('component.common.Div', module)
+  .add('first', () => <div>first div</div>)
+  .add('second', () => <div>second div</div>);
+
+storiesOf('component.common.Table', module)
+  .add('first', () =>
+    <table>
+      <tr>
+        <td>first table</td>
+      </tr>
+    </table>
+  )
+  .add('second', () =>
+    <table>
+      <tr>
+        <td>first table</td>
+      </tr>
+    </table>
+  );
+
+storiesOf('component.Button', module)
+  .add('first', () => <button>first button</button>)
+  .add('second', () => <button>first second</button>);
+
+// Atomic
+
+storiesOf('Cells¯\\_(ツ)_/¯Molecules.Atoms/simple', module)
+  .addDecorator(withKnobs)
+  .add('with text', () =>
+    <Button>
+      {text('buttonText', 'Hello Button')}
+    </Button>
+  )
+  .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Cells/Molecules/Atoms.more', module)
+  .add('with text2', () => <Button>Hello Button</Button>)
+  .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Cells/Molecules', module)
+  .add('with text', () => <Button>Hello Button</Button>)
+  .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+
+storiesOf('Cells.Molecules.Atoms', module)
+  .add('with text2', () => <Button>Hello Button</Button>)
+  .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
