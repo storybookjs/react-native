@@ -1,6 +1,6 @@
 {
   "name": "@storybook/cli",
-  "version": "3.1.9",
+  "version": "3.2.0-alpha.10",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
   "keywords": [
     "cli",
@@ -24,7 +24,7 @@
     "postinstall": "opencollective postinstall --collective=storybook"
   },
   "dependencies": {
-    "@storybook/codemod": "^3.1.6",
+    "@storybook/codemod": "^3.2.0-alpha.10",
     "chalk": "^2.0.1",
     "child-process-promise": "^2.2.1",
     "commander": "^2.9.0",
@@ -33,7 +33,7 @@
     "json5": "^0.5.1",
     "merge-dirs": "^0.2.1",
     "opencollective": "^1.0.3",
-    "shelljs": "^0.7.7",
+    "shelljs": "^0.7.8",
     "update-notifier": "^2.1.0"
   }
 }

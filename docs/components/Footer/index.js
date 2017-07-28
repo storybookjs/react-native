@@ -14,7 +14,7 @@ const Footer = () =>
             .
           </center>
           <center>
-            <Link to="https://storybooks-slackin.herokuapp.com/" target="_blank">
+            <Link to="https://now-examples-slackin-nqnzoygycp.now.sh/" target="_blank">
               <img src={slackIcon} alt="Storybook Slack" />
             </Link>
             <Link to="https://github.com/storybooks/storybook" target="_blank">

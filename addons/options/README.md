@@ -44,6 +44,7 @@ setOptions({
   showSearchBox: false,
   downPanelInRight: false,
   sortStoriesByKind: false,
+  hierarchySeparator: /\//,
 });
 
 storybook.configure(() => require('./stories'), module);
