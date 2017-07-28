@@ -1,20 +1,17 @@
 import { storiesOf } from '@storybook/angular';
-
 import { addonNotes } from '@storybook/addon-notes';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
 
 import { Welcome, Button } from '@storybook/angular/demo';
 
-import { AppComponent } from '../app/app.component';
-
-storiesOf('Welcome')
+storiesOf('Welcome', module)
   .add('to Storybook', () => ({
     component: Welcome,
     props: {}
   }))
 
-storiesOf('Button')
+storiesOf('Button', module)
   .add('with text', () => ({
     component: Button,
     props: {
@@ -35,17 +32,11 @@ storiesOf('Button')
     }
   })))
 
-storiesOf('Another Button')
+storiesOf('Another Button', module)
   .add('button with link to another story', () => ({
     component: Button,
     props: {
       text: 'Go to Welcome Story',
       onClick: linkTo('Welcome')
     }
-  }))
-
-storiesOf('App Component')
-  .add('the whole app', () => ({
-    component: AppComponent,
-    props: {}
   }))
