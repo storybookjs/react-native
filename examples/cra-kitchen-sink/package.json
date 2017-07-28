@@ -6,7 +6,7 @@
     "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
@@ -14,23 +14,23 @@
     "format-json": "^1.0.3",
     "global": "^4.3.2",
     "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.0.0",
-    "@storybook/addon-centered": "^3.0.0",
-    "@storybook/addon-events": "^3.0.0",
-    "@storybook/addon-knobs": "^3.0.0",
-    "@storybook/addon-info": "^3.0.0",
-    "@storybook/addon-links": "^3.0.0",
-    "@storybook/addon-notes": "^3.0.0",
-    "@storybook/addon-options": "^3.0.0",
-    "@storybook/addon-storyshots": "^3.0.0",
-    "@storybook/addons": "^3.0.0",
-    "@storybook/react": "^3.0.0",
-    "react-scripts": "1.0.10"
+    "@storybook/addon-actions": "3.2.0-alpha.10",
+    "@storybook/addon-centered": "3.2.0-alpha.8",
+    "@storybook/addon-events": "3.2.0-alpha.10",
+    "@storybook/addon-knobs": "3.2.0-alpha.10",
+    "@storybook/addon-info": "3.2.0-alpha.10",
+    "@storybook/addon-links": "3.2.0-alpha.10",
+    "@storybook/addon-notes": "3.2.0-alpha.10",
+    "@storybook/addon-options": "3.2.0-alpha.10",
+    "@storybook/addon-storyshots": "3.2.0-alpha.11",
+    "@storybook/addons": "3.2.0-alpha.10",
+    "@storybook/react": "3.2.0-alpha.11",
+    "react-scripts": "1.0.1"
   },
   "private": true
 }
