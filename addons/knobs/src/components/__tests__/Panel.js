@@ -5,7 +5,17 @@ import Panel from '../Panel';
 describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
     const testChannel = { on: jest.fn() };
-    shallow(<Panel channel={testChannel} />);
+    const testApi = { onStory: jest.fn() };
+    shallow(<Panel channel={testChannel} api={testApi} />);
+    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
+  });
+
+  it('should subscribe to onStory event', () => {
+    const testChannel = { on: jest.fn() };
+    const testApi = { onStory: jest.fn() };
+    shallow(<Panel channel={testChannel} api={testApi} />);
+
+    expect(testApi.onStory).toHaveBeenCalled();
     expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
   });
 
@@ -28,6 +38,7 @@ describe('Panel', () => {
       const testApi = {
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
+        onStory: jest.fn(),
       };
 
       shallow(<Panel channel={testChannel} api={testApi} />);
@@ -74,6 +85,7 @@ describe('Panel', () => {
       const testApi = {
         getQueryParam: key => testQueryParams[key],
         setQueryParams: jest.fn(),
+        onStory: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
@@ -115,6 +127,7 @@ describe('Panel', () => {
       const testApi = {
         getQueryParam: jest.fn(),
         setQueryParams: jest.fn(),
+        onStory: jest.fn(),
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
