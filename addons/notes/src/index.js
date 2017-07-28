@@ -4,12 +4,11 @@ import { WithNotes as ReactWithNotes } from './react';
 
 export const withNotes = textOrOptions => {
   const channel = addons.getChannel();
-
-  const text = typeof textOrOptions === 'string' ? textOrOptions : textOrOptions.text;
+  const options = typeof textOrOptions === 'string' ? { text: textOrOptions } : textOrOptions;
 
   return getStory => context => {
     // send the notes to the channel before the story is rendered
-    channel.emit('storybook/notes/add_notes', text);
+    channel.emit('storybook/notes/add_notes', options.text);
     return getStory(context);
   };
 };

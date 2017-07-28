@@ -68,11 +68,7 @@ function addInfo(storyFn, context, infoOptions) {
 }
 
 export const withInfo = textOrOptions => {
-  if (typeof textOrOptions === 'string') {
-    const text = textOrOptions;
-    return withInfo({ text });
-  }
-  const options = textOrOptions;
+  const options = typeof textOrOptions === 'string' ? { text: textOrOptions } : textOrOptions;
   return storyFn => context => addInfo(storyFn, context, options);
 };
 
