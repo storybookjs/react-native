@@ -89,6 +89,7 @@ storiesOf('Button', module)
     const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
     return (
       <div style={style}>
@@ -96,7 +97,7 @@ storiesOf('Button', module)
           {intro}
         </p>
         <p>
-          My birthday is: {new Date(birthday).toLocaleDateString()}
+          My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}
         </p>
         <p>
           My wallet contains: ${dollars.toFixed(2)}
