@@ -1,29 +1,39 @@
 import React, { Component, PropTypes } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { Animated, Easing, View, TouchableOpacity, Text } from 'react-native';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 
 export default class OnDeviceUI extends Component {
   state = {
+    menuAnimation: new Animated.Value(0),
     isMenuOpen: false,
   };
 
-  handleOpenMenu = () => {
-    this.setState({
-      isMenuOpen: true,
-    });
-  };
+  handleToggleMenu = () => {
+    const isMenuOpen = !this.state.isMenuOpen;
 
-  handleCloseMenu = () => {
+    Animated.timing(this.state.menuAnimation, {
+      toValue: isMenuOpen ? 250 : 0,
+      duration: 150,
+      easing: Easing.linear,
+    }).start();
+
     this.setState({
-      isMenuOpen: false,
+      isMenuOpen,
     });
   };
 
   render() {
     const { stories, events, url } = this.props;
-    const { isMenuOpen } = this.state;
+    const { menuAnimation } = this.state;
+
+    const menuStyles = [
+      style.menuContainer,
+      {
+        transform: [{ translateX: menuAnimation }],
+      },
+    ];
 
     return (
       <View style={style.main}>
@@ -33,20 +43,20 @@ export default class OnDeviceUI extends Component {
           </View>
         </View>
         <View style={style.openMenuButton}>
-          <TouchableOpacity onPress={this.handleOpenMenu}>
+          <TouchableOpacity onPress={this.handleToggleMenu}>
             <View>
               <Text>Open Menu</Text>
             </View>
           </TouchableOpacity>
         </View>
-        <View style={[style.menuContainer, isMenuOpen && style.menuContainerOpen]}>
-          <TouchableOpacity onPress={this.handleCloseMenu}>
+        <Animated.View style={menuStyles}>
+          <TouchableOpacity onPress={this.handleToggleMenu}>
             <View>
               <Text>Close Menu</Text>
             </View>
           </TouchableOpacity>
           <StoryListView stories={stories} events={events} />
-        </View>
+        </Animated.View>
       </View>
     );
   }

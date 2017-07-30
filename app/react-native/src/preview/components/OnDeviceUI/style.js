@@ -17,9 +17,6 @@ export default {
     paddingBottom: 8,
     backgroundColor: 'rgba(247, 247, 247, 1)',
   },
-  menuContainerOpen: {
-    left: 0,
-  },
   previewContainer: {
     flex: 1,
     backgroundColor: 'rgba(255, 255, 255, 1)',
