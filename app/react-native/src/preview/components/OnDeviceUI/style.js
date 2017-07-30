@@ -4,7 +4,22 @@ export default {
   main: {
     flex: 1,
     paddingTop: 20,
-    backgroundColor: 'rgba(247, 247, 247, 1)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+  },
+  icon: {
+    width: 20,
+    height: 20,
+    opacity: 0.5,
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 5,
+  },
+  headerText: {
+    marginLeft: 5,
+    fontSize: 14,
+    color: 'rgba(0, 0, 0, 0.5)',
   },
   overlayContainer: {
     position: 'absolute',
@@ -25,33 +40,14 @@ export default {
     paddingBottom: 8,
     backgroundColor: 'rgba(247, 247, 247, 1)',
   },
-  headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingBottom: 5,
-    marginBottom: 5,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'rgba(0, 0, 0, 0.6)',
-  },
-  headerText: {
-    flex: 1,
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
   previewContainer: {
     flex: 1,
-    backgroundColor: 'rgba(255, 255, 255, 1)',
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: 'rgba(236, 236, 236, 1)',
-    borderRadius: 4,
-    marginBottom: 8,
-    marginHorizontal: 8,
   },
-  openMenuButton: {
-    position: 'absolute',
-    top: 20,
-    left: 10,
-    backgroundColor: 'transparent',
+  previewWrapper: {
+    flex: 1,
+  },
+  closeButton: {
+    marginVertical: 5,
   },
   preview: {
     ...StyleSheet.absoluteFillObject,

@@ -5,12 +5,35 @@ import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 
 export default class OnDeviceUI extends Component {
-  state = {
-    menuAnimation: new Animated.Value(0),
-    isMenuOpen: false,
-  };
+  constructor(props, ...args) {
+    super(props, ...args);
 
-  handleToggleMenu = () => {
+    this.state = {
+      menuAnimation: new Animated.Value(0),
+      isMenuOpen: false,
+      selectedKind: null,
+      selectedStory: null,
+    };
+
+    this.storyChangedHandler = this.handleStoryChanged.bind(this);
+    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+
+    this.props.events.on('story', this.storyChangedHandler);
+  }
+
+  componentWillUnmount() {
+    this.props.events.removeListener('story', this.storyChangedHandler);
+  }
+
+  handleStoryChanged(storyFn, selection) {
+    const { kind, story } = selection;
+    this.setState({
+      selectedKind: kind,
+      selectedStory: story,
+    });
+  }
+
+  handleToggleMenu() {
     const isMenuOpen = !this.state.isMenuOpen;
 
     Animated.timing(this.state.menuAnimation, {
@@ -22,11 +45,11 @@ export default class OnDeviceUI extends Component {
     this.setState({
       isMenuOpen,
     });
-  };
+  }
 
   render() {
     const { stories, events, url } = this.props;
-    const { isMenuOpen, menuAnimation } = this.state;
+    const { isMenuOpen, menuAnimation, selectedKind, selectedStory } = this.state;
 
     const overlayStyles = [style.overlayContainer, { opacity: menuAnimation }];
 
@@ -52,31 +75,38 @@ export default class OnDeviceUI extends Component {
     return (
       <View style={style.main}>
         <View style={style.previewContainer}>
-          <View style={style.preview}>
-            <StoryView url={url} events={events} />
+          <View style={style.headerContainer}>
+            <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
+              <View>
+                <Image source={openMenuImage} style={style.icon} />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={style.headerText} numberOfLines={1}>
+              {selectedKind} / {selectedStory}
+            </Text>
           </View>
-        </View>
-        <View style={style.openMenuButton}>
-          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
-            <View>
-              <Image source={openMenuImage} />
+          <View style={style.previewWrapper}>
+            <View style={style.preview}>
+              <StoryView url={url} events={events} />
             </View>
-          </TouchableWithoutFeedback>
+          </View>
         </View>
         {isMenuOpen &&
           <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
             <Animated.View style={overlayStyles} />
           </TouchableWithoutFeedback>}
         <Animated.View style={menuStyles}>
-          <View style={style.headerContainer}>
-            <Text style={style.headerText}>Storybook</Text>
-            <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
-              <View>
-                <Image source={closeMenuImage} />
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
-          <StoryListView stories={stories} events={events} />
+          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
+            <View style={style.closeButton}>
+              <Image source={closeMenuImage} style={style.icon} />
+            </View>
+          </TouchableWithoutFeedback>
+          <StoryListView
+            stories={stories}
+            events={events}
+            selectedKind={selectedKind}
+            selectedStory={selectedStory}
+          />
         </Animated.View>
       </View>
     );
