@@ -8,10 +8,9 @@ export function init() {
 }
 
 function regExpStringify(exp) {
-  if (!exp) return null;
-  if (Object.prototype.toString.call(exp) === '[object String]') return exp;
-  if (Object.prototype.toString.call(exp) !== '[object RegExp]') return null;
-  return exp.source;
+  if (typeof exp === 'string') return exp;
+  if (Object.prototype.toString.call(exp) === '[object RegExp]') return exp.source;
+  return null;
 }
 
 // setOptions function will send Storybook UI options when the channel is
