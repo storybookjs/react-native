@@ -1,9 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
+
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
 
 export default {
   main: {
     flex: 1,
-    paddingTop: 20,
+    flexDirection: 'row',
+    paddingTop: STATUS_BAR_HEIGHT,
     backgroundColor: 'rgba(255, 255, 255, 1)',
   },
   icon: {
@@ -21,22 +24,11 @@ export default {
     fontSize: 14,
     color: 'rgba(0, 0, 0, 0.5)',
   },
-  overlayContainer: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-  },
   menuContainer: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: -250,
-    width: 250,
+    ...StyleSheet.absoluteFillObject,
+    right: null,
     paddingHorizontal: 8,
-    paddingTop: 20,
+    paddingTop: STATUS_BAR_HEIGHT,
     paddingBottom: 8,
     backgroundColor: 'rgba(247, 247, 247, 1)',
   },

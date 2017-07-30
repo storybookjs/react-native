@@ -5,18 +5,20 @@ import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 
 export default class OnDeviceUI extends Component {
-  constructor(props, ...args) {
-    super(props, ...args);
+  constructor(...args) {
+    super(...args);
 
     this.state = {
       menuAnimation: new Animated.Value(0),
       isMenuOpen: false,
       selectedKind: null,
       selectedStory: null,
+      menuWidth: 0,
     };
 
     this.storyChangedHandler = this.handleStoryChanged.bind(this);
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.menuToggledHandler = this.handleToggleMenu.bind(this);
+    this.menuLayoutHandler = this.handleMenuLayout.bind(this);
 
     this.props.events.on('story', this.storyChangedHandler);
   }
@@ -47,11 +49,15 @@ export default class OnDeviceUI extends Component {
     });
   }
 
+  handleMenuLayout(e) {
+    this.setState({
+      menuWidth: e.nativeEvent.layout.width,
+    });
+  }
+
   render() {
     const { stories, events, url } = this.props;
-    const { isMenuOpen, menuAnimation, selectedKind, selectedStory } = this.state;
-
-    const overlayStyles = [style.overlayContainer, { opacity: menuAnimation }];
+    const { menuAnimation, selectedKind, selectedStory, menuWidth } = this.state;
 
     const menuStyles = [
       style.menuContainer,
@@ -60,10 +66,29 @@ export default class OnDeviceUI extends Component {
           {
             translateX: menuAnimation.interpolate({
               inputRange: [0, 1],
-              outputRange: [0, 250],
+              outputRange: [menuWidth * -1, 0],
             }),
           },
         ],
+      },
+    ];
+
+    const menuSpacerStyles = [
+      {
+        width: menuAnimation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, menuWidth],
+        }),
+      },
+    ];
+
+    const headerStyles = [
+      style.headerContainer,
+      {
+        opacity: menuAnimation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [1, 0],
+        }),
       },
     ];
 
@@ -74,9 +99,10 @@ export default class OnDeviceUI extends Component {
 
     return (
       <View style={style.main}>
+        <Animated.View style={menuSpacerStyles} />
         <View style={style.previewContainer}>
-          <View style={style.headerContainer}>
-            <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
+          <Animated.View style={headerStyles}>
+            <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
               <View>
                 <Image source={openMenuImage} style={style.icon} />
               </View>
@@ -84,19 +110,15 @@ export default class OnDeviceUI extends Component {
             <Text style={style.headerText} numberOfLines={1}>
               {selectedKind} / {selectedStory}
             </Text>
-          </View>
+          </Animated.View>
           <View style={style.previewWrapper}>
             <View style={style.preview}>
               <StoryView url={url} events={events} />
             </View>
           </View>
         </View>
-        {isMenuOpen &&
-          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
-            <Animated.View style={overlayStyles} />
-          </TouchableWithoutFeedback>}
-        <Animated.View style={menuStyles}>
-          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
+        <Animated.View style={menuStyles} onLayout={this.menuLayoutHandler}>
+          <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
             <View style={style.closeButton}>
               <Image source={closeMenuImage} style={style.icon} />
             </View>
