@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Animated, Easing, View, TouchableWithoutFeedback, Text } from 'react-native';
+import { Animated, Easing, View, TouchableWithoutFeedback, Image } from 'react-native';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -44,6 +44,11 @@ export default class OnDeviceUI extends Component {
       },
     ];
 
+    /* eslint-disable global-require */
+    const openMenuImage = require('./menu_open.png');
+    const closeMenuImage = require('./menu_close.png');
+    /* eslint-enable global-require */
+
     return (
       <View style={style.main}>
         <View style={style.previewContainer}>
@@ -54,7 +59,7 @@ export default class OnDeviceUI extends Component {
         <View style={style.openMenuButton}>
           <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
             <View>
-              <Text>Open Menu</Text>
+              <Image source={openMenuImage} />
             </View>
           </TouchableWithoutFeedback>
         </View>
@@ -65,7 +70,7 @@ export default class OnDeviceUI extends Component {
         <Animated.View style={menuStyles}>
           <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
             <View>
-              <Text>Close Menu</Text>
+              <Image source={closeMenuImage} />
             </View>
           </TouchableWithoutFeedback>
           <StoryListView stories={stories} events={events} />
