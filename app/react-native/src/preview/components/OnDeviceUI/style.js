@@ -25,6 +25,19 @@ export default {
     paddingBottom: 8,
     backgroundColor: 'rgba(247, 247, 247, 1)',
   },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 5,
+    marginBottom: 5,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'rgba(0, 0, 0, 0.6)',
+  },
+  headerText: {
+    flex: 1,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
   previewContainer: {
     flex: 1,
     backgroundColor: 'rgba(255, 255, 255, 1)',

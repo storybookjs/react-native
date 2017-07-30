@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Animated, Easing, View, TouchableWithoutFeedback, Image } from 'react-native';
+import { Animated, Easing, View, TouchableWithoutFeedback, Image, Text } from 'react-native';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -68,11 +68,14 @@ export default class OnDeviceUI extends Component {
             <Animated.View style={overlayStyles} />
           </TouchableWithoutFeedback>}
         <Animated.View style={menuStyles}>
-          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
-            <View>
-              <Image source={closeMenuImage} />
-            </View>
-          </TouchableWithoutFeedback>
+          <View style={style.headerContainer}>
+            <Text style={style.headerText}>Storybook</Text>
+            <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
+              <View>
+                <Image source={closeMenuImage} />
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
           <StoryListView stories={stories} events={events} />
         </Animated.View>
       </View>
