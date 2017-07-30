@@ -266,7 +266,7 @@ storiesOf('component.Button', module)
 
 // Atomic
 
-storiesOf('Cells¯\\_(ツ)_/¯Molecules.Atoms/simple', module)
+storiesOf('Cells/Molecules.Atoms/simple', module)
   .addDecorator(withKnobs)
   .add('with text', () =>
     <Button>
