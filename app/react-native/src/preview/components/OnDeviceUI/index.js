@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Animated, Easing, View, TouchableOpacity, Text } from 'react-native';
+import { Animated, Easing, View, TouchableWithoutFeedback, Text } from 'react-native';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -14,7 +14,7 @@ export default class OnDeviceUI extends Component {
     const isMenuOpen = !this.state.isMenuOpen;
 
     Animated.timing(this.state.menuAnimation, {
-      toValue: isMenuOpen ? 250 : 0,
+      toValue: isMenuOpen ? 1 : 0,
       duration: 150,
       easing: Easing.linear,
     }).start();
@@ -26,12 +26,21 @@ export default class OnDeviceUI extends Component {
 
   render() {
     const { stories, events, url } = this.props;
-    const { menuAnimation } = this.state;
+    const { isMenuOpen, menuAnimation } = this.state;
+
+    const overlayStyles = [style.overlayContainer, { opacity: menuAnimation }];
 
     const menuStyles = [
       style.menuContainer,
       {
-        transform: [{ translateX: menuAnimation }],
+        transform: [
+          {
+            translateX: menuAnimation.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, 250],
+            }),
+          },
+        ],
       },
     ];
 
@@ -43,18 +52,22 @@ export default class OnDeviceUI extends Component {
           </View>
         </View>
         <View style={style.openMenuButton}>
-          <TouchableOpacity onPress={this.handleToggleMenu}>
+          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
             <View>
               <Text>Open Menu</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
         </View>
+        {isMenuOpen &&
+          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
+            <Animated.View style={overlayStyles} />
+          </TouchableWithoutFeedback>}
         <Animated.View style={menuStyles}>
-          <TouchableOpacity onPress={this.handleToggleMenu}>
+          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
             <View>
               <Text>Close Menu</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
           <StoryListView stories={stories} events={events} />
         </Animated.View>
       </View>

@@ -6,6 +6,14 @@ export default {
     paddingTop: 20,
     backgroundColor: 'rgba(247, 247, 247, 1)',
   },
+  overlayContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  },
   menuContainer: {
     position: 'absolute',
     top: 0,
