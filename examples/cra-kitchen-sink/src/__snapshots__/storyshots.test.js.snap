@@ -435,7 +435,7 @@ exports[`Storyshots Button with knobs 1`] = `
   </p>
   <p>
     My birthday is: 
-    2017-1-20
+    January 20, 2017
   </p>
   <p>
     My wallet contains: $
@@ -1605,6 +1605,22 @@ exports[`Storyshots Cells/Molecules with text 1`] = `
 </button>
 `;
 
+exports[`Storyshots Cells/Molecules.Atoms/simple with some emoji 1`] = `
+<button
+  className="css-1yjiefr"
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Cells/Molecules.Atoms/simple with text 1`] = `
+<button
+  className="css-1yjiefr"
+>
+  Hello Button
+</button>
+`;
+
 exports[`Storyshots Cells/Molecules/Atoms.more with some emoji2 1`] = `
 <button
   className="css-1yjiefr"
@@ -1614,22 +1630,6 @@ exports[`Storyshots Cells/Molecules/Atoms.more with some emoji2 1`] = `
 `;
 
 exports[`Storyshots Cells/Molecules/Atoms.more with text2 1`] = `
-<button
-  className="css-1yjiefr"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Cells¯\\_(ツ)_/¯Molecules.Atoms/simple with some emoji 1`] = `
-<button
-  className="css-1yjiefr"
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots Cells¯\\_(ツ)_/¯Molecules.Atoms/simple with text 1`] = `
 <button
   className="css-1yjiefr"
 >
