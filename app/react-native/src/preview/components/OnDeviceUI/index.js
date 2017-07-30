@@ -1,5 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { Animated, Easing, View, TouchableWithoutFeedback, Image, Text } from 'react-native';
+import {
+  Animated,
+  Easing,
+  View,
+  TouchableWithoutFeedback,
+  Image,
+  Text,
+  StatusBar,
+} from 'react-native';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -99,6 +107,7 @@ export default class OnDeviceUI extends Component {
 
     return (
       <View style={style.main}>
+        <StatusBar hidden />
         <Animated.View style={menuSpacerStyles} />
         <View style={style.previewContainer}>
           <Animated.View style={headerStyles}>

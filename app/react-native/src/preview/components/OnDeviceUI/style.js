@@ -1,12 +1,9 @@
-import { StyleSheet, Platform } from 'react-native';
-
-const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+import { StyleSheet } from 'react-native';
 
 export default {
   main: {
     flex: 1,
     flexDirection: 'row',
-    paddingTop: STATUS_BAR_HEIGHT,
     backgroundColor: 'rgba(255, 255, 255, 1)',
   },
   icon: {
@@ -28,7 +25,6 @@ export default {
     ...StyleSheet.absoluteFillObject,
     right: null,
     paddingHorizontal: 8,
-    paddingTop: STATUS_BAR_HEIGHT,
     paddingBottom: 8,
     backgroundColor: 'rgba(247, 247, 247, 1)',
   },
