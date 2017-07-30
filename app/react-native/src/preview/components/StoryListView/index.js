@@ -54,7 +54,7 @@ export default class StoryListView extends Component {
   }
 
   componentWillUnmount() {
-    this.props.stories.removeListener('storyAdded', this.storiesHandler);
+    this.props.stories.removeListener('storyAdded', this.storyAddedHandler);
     this.props.events.removeListener('story', this.storyChangedHandler);
   }
 

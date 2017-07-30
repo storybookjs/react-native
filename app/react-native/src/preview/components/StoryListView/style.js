@@ -4,7 +4,7 @@ export default {
     maxWidth: 250,
   },
   header: {
-    paddingTop: 24,
+    paddingTop: 4,
     paddingBottom: 4,
   },
   headerText: {
