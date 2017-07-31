@@ -137,7 +137,7 @@ storiesOf('Button', module)
   .add(
     'addons composition',
     withInfo('see Notes panel for composition info')(
-      withNotes({ notes: 'Composition: Info(Notes())' })(context =>
+      withNotes('Composition: Info(Notes())')(context =>
         <div>
           click the <InfoButton /> label in top right for info about "{context.story}"
         </div>
@@ -209,11 +209,11 @@ storiesOf('WithEvents', module)
   .add('Logger', () => <Logger emiter={emiter} />);
 
 storiesOf('withNotes', module)
-  .add('with some text', withNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
-  .add('with some emoji', withNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
+  .add('with some text', withNotes('Hello guys')(() => <div>Hello guys</div>))
+  .add('with some emoji', withNotes('My notes on emojies')(() => <p>🤔😳😯😮</p>))
   .add(
     'with a button and some emoji',
-    withNotes({ notes: 'My notes on a button with emojies' })(() =>
+    withNotes('My notes on a button with emojies')(() =>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     )
   )

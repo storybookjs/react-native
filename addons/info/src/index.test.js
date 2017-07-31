@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AddonInfo, { withInfo, setDefaults, addInfo } from './';
+import AddonInfo, { withInfo, setDefaults } from './';
 
 /* eslint-disable */
 const TestComponent = ({ func, obj, array, number, string, bool, empty }) =>
@@ -48,9 +48,14 @@ describe('addon Info', () => {
     )(story);
     ReactDOM.render(<Info />, document.createElement('div'));
   });
+  it('should render with text options', () => {
+    const Info = withInfo({ text: 'some text here' })(story);
+    ReactDOM.render(<Info />, document.createElement('div'));
+  });
   it('should render with missed info', () => {
     setDefaults(testOptions);
-    addInfo(null, testContext, story, testOptions);
+    const Info = withInfo()(story);
+    ReactDOM.render(<Info />, document.createElement('div'));
   });
   it('should show deprecation warning', () => {
     const addWithInfo = AddonInfo.addWithInfo.bind(api);
