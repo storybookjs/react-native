@@ -1,4 +1,4 @@
-import { StyleSheet } from '../polyfills';
+import { StyleSheet } from 'react-native-compat';
 
 export default {
   main: {

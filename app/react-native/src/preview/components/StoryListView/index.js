@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { ListView, View, Text, TouchableOpacity } from 'react-native';
-import { MinMaxView } from '../polyfills';
+import { MinMaxView } from 'react-native-compat';
 import style from './style';
 
 const SectionHeader = ({ title, selected }) =>
