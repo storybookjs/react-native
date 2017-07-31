@@ -15,7 +15,7 @@ This addon works with Storybook for:
 
 ![Screenshot](docs/home-screenshot.png)
 
-## Usage
+## Installation
 
 Install the following npm module:
 
@@ -23,7 +23,66 @@ Install the following npm module:
 npm i -D @storybook/addon-info
 ```
 
-Then set the addon in the place you configure storybook like this:
+## Basic usage
+
+Then wrap your story with the `withInfo`, which is a function that takes either
+documentation text or an options object:
+
+```js
+import { configure, setAddon } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
+storiesOf('Component', module)
+  .add('simple info',
+    withInfo('doc string about my component')(() =>
+      <Component>Click the "?" mark at top-right to view the info.</Component>
+    )
+  )
+```
+
+## Usage with options
+
+`withInfo` can also take an options object in case you want to configure how
+the info panel looks on a per-story basis:
+
+```js
+import { configure, setAddon } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
+storiesOf('Component', module)
+  .add('simple info',
+    withInfo({
+      text: 'doc string about my component',
+      maxPropsIntoLine: 1,
+      maxPropObjectKeys: 10,
+      maxPropArrayLength: 10,
+    )(() =>
+      <Component>Click the "?" mark at top-right to view the info.</Component>
+    )
+  )
+```
+
+## Global options
+
+To configure default options for all usage of the info option, use `setDefaults` in `.storybook/config.js`:
+
+```js
+// config.js
+import { setDefaults } from '@storybook/addon-info';
+
+// addon-info
+setDefaults({
+  inline: true,
+  maxPropsIntoLine: 1,
+  maxPropObjectKeys: 10,
+  maxPropArrayLength: 10,
+  maxPropStringLength: 100,
+});
+```
+
+## Deprecated usage
+
+There is also a deprecated API that is slated for removal in Storybook 4.0.
 
 ```js
 import { configure, setAddon } from '@storybook/react';
@@ -54,23 +113,6 @@ storiesOf('Component')
 ```
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
-
-To customize your defaults:
-
-```js
-// config.js
-import infoAddon, { setDefaults } from '@storybook/addon-info';
-
-// addon-info
-setDefaults({
-  inline: true,
-  maxPropsIntoLine: 1,
-  maxPropObjectKeys: 10,
-  maxPropArrayLength: 10,
-  maxPropStringLength: 100,
-});
-setAddon(infoAddon);
-```
 
 ## The FAQ
 
