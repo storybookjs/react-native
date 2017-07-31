@@ -1,6 +1,6 @@
 # 3.2.0
 
-2017-July-27
+2017-July-31
 
 Storybook 3.2 is filled with new features to help make your components shine! Headline features:
 
