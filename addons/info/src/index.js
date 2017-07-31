@@ -1,13 +1,7 @@
 import React from 'react';
 import deprecate from 'util-deprecate';
-import _Story from './components/Story';
+import Story from './components/Story';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
-
-function addonCompose(addonFn) {
-  return storyFn => context => addonFn(storyFn, context);
-}
-
-export const Story = _Story;
 
 const defaultOptions = {
   inline: false,
@@ -34,20 +28,10 @@ const defaultMarksyConf = {
   ul: UL,
 };
 
-export function addInfo(storyFn, context, info, _options) {
-  if (typeof storyFn !== 'function') {
-    if (typeof info === 'function') {
-        _options = storyFn; // eslint-disable-line
-        storyFn = info; // eslint-disable-line
-        info = ''; // eslint-disable-line
-    } else {
-      throw new Error('No story defining function has been specified');
-    }
-  }
-
+function addInfo(storyFn, context, infoOptions) {
   const options = {
     ...defaultOptions,
-    ..._options,
+    ...infoOptions,
   };
 
   // props.propTables can only be either an array of components or null
@@ -62,7 +46,7 @@ export function addInfo(storyFn, context, info, _options) {
     Object.assign(marksyConf, options.marksyConf);
   }
   const props = {
-    info,
+    info: options.text,
     context,
     showInline: Boolean(options.inline),
     showHeader: Boolean(options.header),
@@ -83,12 +67,25 @@ export function addInfo(storyFn, context, info, _options) {
   );
 }
 
-export const withInfo = (info, _options) =>
-  addonCompose((storyFn, context) => addInfo(storyFn, context, info, _options));
+export const withInfo = textOrOptions => {
+  const options = typeof textOrOptions === 'string' ? { text: textOrOptions } : textOrOptions;
+  return storyFn => context => addInfo(storyFn, context, options);
+};
+
+export { Story };
 
 export default {
-  addWithInfo: deprecate(function addWithInfo(storyName, info, storyFn, _options) {
-    return this.add(storyName, withInfo(info, _options)(storyFn));
+  addWithInfo: deprecate(function addWithInfo(storyName, text, storyFn, options) {
+    if (typeof storyFn !== 'function') {
+      if (typeof text === 'function') {
+        options = storyFn; // eslint-disable-line
+        storyFn = text; // eslint-disable-line
+        text = ''; // eslint-disable-line
+      } else {
+        throw new Error('No story defining function has been specified');
+      }
+    }
+    return this.add(storyName, withInfo({ text, ...options })(storyFn));
   }, '@storybook/addon-info .addWithInfo() addon is deprecated, use withInfo() from the same package instead. \nSee https://github.com/storybooks/storybook/tree/master/addons/info'),
 };
 
