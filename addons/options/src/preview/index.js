@@ -22,10 +22,17 @@ export function setOptions(newOptions) {
       'Failed to find addon channel. This may be due to https://github.com/storybooks/storybook/issues/1192.'
     );
   }
-  const options = {
-    ...newOptions,
-    hierarchySeparator: regExpStringify(newOptions.hierarchySeparator),
-  };
+
+  let options = newOptions;
+
+  // since 'undefined' and 'null' are the valid values we don't want to
+  // override the hierarchySeparator if the prop is missing
+  if (Object.prototype.hasOwnProperty.call(newOptions, 'hierarchySeparator')) {
+    options = {
+      ...newOptions,
+      hierarchySeparator: regExpStringify(newOptions.hierarchySeparator),
+    };
+  }
 
   channel.emit(EVENT_ID, { options });
 }
