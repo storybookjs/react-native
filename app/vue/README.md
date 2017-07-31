@@ -10,10 +10,10 @@
 
 * * *
 
-Storybook for Vue is a UI development environment for your React components.
+Storybook for Vue is a UI development environment for your Vue components.
 With it, you can visualize different states of your UI components and develop them interactively.
 
-![Storybook Screenshot](https://github.com/storybooks/storybook/blob/master/app/react/docs/demo.gif)
+![Storybook Screenshot](https://github.com/storybooks/storybook/blob/master/app/vue/docs/demo.gif)
 
 Storybook runs outside of your app.
 So you can develop UI components in isolation without worrying about app specific dependencies and requirements.

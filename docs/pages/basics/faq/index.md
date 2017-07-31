@@ -1,7 +1,8 @@
----
+* * *
+
 id: 'faq'
-title: 'Frequently Asked Questions'
----
+
+## title: 'Frequently Asked Questions'
 
 Here are some answers to frequently asked questions. If you have a question, you can ask it by opening an issue on the [Storybook Repository](https://github.com/storybooks/storybook/).
 
@@ -29,3 +30,27 @@ You can generally reuse webpack rules fairly easily by placing them in a file th
 A common error is that an addon tries to access the "channel", but the channel is not set. This can happen in a few different cases:
 1. In storybook/addon development, it can be an NPM version problem. If there are two versions of the addons NPM package, it will cause problems. In this case, make sure there is only a single version of `@storybook/addons` being used by your project.
 2. In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
+
+### Can I modify React component state in stories?
+
+Not directly. If you control the component source, you can do something like this:
+
+```js
+import React, { Component} from 'react';
+import { storiesOf } from '@storybook/react';
+
+class MyComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.setState({
+      someVar: 'defaultValue',
+      ...props.initialState
+    })
+  }
+  // ...
+}
+
+storiesOf('MyComponent', module)
+  .add('default', () => <MyComponent />)
+  .add('other', () => <MyComponent initialState={{ someVar: 'otherVal' }});
+```
