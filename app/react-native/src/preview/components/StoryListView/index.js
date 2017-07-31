@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { ListView, View, Text, TouchableOpacity } from 'react-native';
+import { MinMaxView } from '../polyfills';
 import style from './style';
 
 const SectionHeader = ({ title, selected }) =>
@@ -86,21 +87,26 @@ export default class StoryListView extends Component {
 
   render() {
     return (
-      <ListView
-        style={style.list}
-        renderRow={item =>
-          <ListItem
-            title={item.name}
-            selected={
-              item.kind === this.props.selectedKind && item.name === this.props.selectedStory
-            }
-            onPress={() => this.changeStory(item.kind, item.name)}
-          />}
-        renderSectionHeader={(sectionData, sectionName) =>
-          <SectionHeader title={sectionName} selected={sectionName === this.props.selectedKind} />}
-        dataSource={this.state.dataSource}
-        stickySectionHeadersEnabled={false}
-      />
+      <MinMaxView maxWidth={250}>
+        <ListView
+          style={style.list}
+          renderRow={item =>
+            <ListItem
+              title={item.name}
+              selected={
+                item.kind === this.props.selectedKind && item.name === this.props.selectedStory
+              }
+              onPress={() => this.changeStory(item.kind, item.name)}
+            />}
+          renderSectionHeader={(sectionData, sectionName) =>
+            <SectionHeader
+              title={sectionName}
+              selected={sectionName === this.props.selectedKind}
+            />}
+          dataSource={this.state.dataSource}
+          stickySectionHeadersEnabled={false}
+        />
+      </MinMaxView>
     );
   }
 }

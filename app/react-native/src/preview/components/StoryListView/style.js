@@ -1,7 +1,6 @@
 export default {
   list: {
     flex: 1,
-    maxWidth: 250,
   },
   header: {
     paddingTop: 4,
