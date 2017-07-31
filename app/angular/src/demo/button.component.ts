@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'button-component',
   template: `
-      <button (click)="onClick();">{{ text }}</button>
+      <button (click)="onClick($event);">{{ text }}</button>
   `,
   styles: [
       `
