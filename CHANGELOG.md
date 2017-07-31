@@ -24,6 +24,7 @@ Plus many more features, documentation improvements, and bugfixes below!
 
 -   React Native - On Device UI [#1413](https://github.com/storybooks/storybook/pull/1413)
 -   Show first story on RN OnDeviceUI startup [#1510](https://github.com/storybooks/storybook/pull/1510)
+-   Added collapsible RN OnDeviceUI navigation [#1544](https://github.com/storybooks/storybook/pull/1544)
 
 
 -   Add warning when module is missing in storiesOf [#1525](https://github.com/storybooks/storybook/pull/1525)
