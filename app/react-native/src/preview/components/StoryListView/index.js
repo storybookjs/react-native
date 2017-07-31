@@ -32,16 +32,12 @@ export default class StoryListView extends Component {
     super(props, ...args);
     this.state = {
       sections: [],
-      selectedKind: null,
-      selectedStory: null,
     };
 
     this.storyAddedHandler = this.handleStoryAdded.bind(this);
-    this.storyChangedHandler = this.handleStoryChanged.bind(this);
     this.changeStoryHandler = this.changeStory.bind(this);
 
     this.props.stories.on('storyAdded', this.storyAddedHandler);
-    this.props.events.on('story', this.storyChangedHandler);
   }
 
   componentDidMount() {
@@ -54,8 +50,7 @@ export default class StoryListView extends Component {
   }
 
   componentWillUnmount() {
-    this.props.stories.removeListener('storyAdded', this.storiesHandler);
-    this.props.events.removeListener('story', this.storyChangedHandler);
+    this.props.stories.removeListener('storyAdded', this.storyAddedHandler);
   }
 
   handleStoryAdded() {
@@ -75,14 +70,6 @@ export default class StoryListView extends Component {
     }
   }
 
-  handleStoryChanged(storyFn, selection) {
-    const { kind, story } = selection;
-    this.setState({
-      selectedKind: kind,
-      selectedStory: story,
-    });
-  }
-
   changeStory(kind, story) {
     this.props.events.emit('setCurrentStory', { kind, story });
   }
@@ -95,14 +82,14 @@ export default class StoryListView extends Component {
           <ListItem
             title={item.name}
             selected={
-              item.kind === this.state.selectedKind && item.name === this.state.selectedStory
+              item.kind === this.props.selectedKind && item.name === this.props.selectedStory
             }
             onPress={() => this.changeStory(item.kind, item.name)}
           />}
         renderSectionHeader={({ section }) =>
           <SectionHeader
             title={section.title}
-            selected={section.title === this.state.selectedKind}
+            selected={section.title === this.props.selectedKind}
           />}
         sections={this.state.sections}
         stickySectionHeadersEnabled={false}
@@ -123,4 +110,11 @@ StoryListView.propTypes = {
     emit: PropTypes.func.isRequired,
     removeListener: PropTypes.func.isRequired,
   }).isRequired,
+  selectedKind: PropTypes.string,
+  selectedStory: PropTypes.string,
+};
+
+StoryListView.defaultProps = {
+  selectedKind: null,
+  selectedStory: null,
 };
