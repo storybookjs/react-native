@@ -35,16 +35,58 @@ Import and use the `setOptions` function in your config.js file.
 import * as storybook from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
+// Option defaults:
 setOptions({
-  name: 'My Storybook',
-  url: 'https://example.com',
+  /**
+   * string name to display in the top left corner
+   * @type {String}
+   */
+  name: 'Storybook',
+  /**
+   * URL for string in top left corner to link to
+   * @type {String}
+   */
+  url: '#',
+  /**
+   * show story component as full screen
+   * @type {Boolean}
+   */
   goFullScreen: false,
-  showLeftPanel: false,
-  showDownPanel: false,
-  showSearchBox: false,
+  /**
+   * display left panel that shows a list of stories
+   * @type {Boolean}
+   */
+  showLeftPanel: true,
+  /**
+   * display horizontal panel that displays addon configurations
+   * @type {Boolean}
+   */
+  showDownPanel: true,
+  /**
+   * display search box to filter stories
+   * @type {Boolean}
+   */
+  showSearchBox: true,
+  /**
+   * show horizontal addons panel as a vertical panel on the right
+   * @type {Boolean}
+   */
   downPanelInRight: false,
+  /**
+   * sorts stories
+   * @type {Boolean}
+   */
   sortStoriesByKind: false,
-  hierarchySeparator: /\//,
+  /**
+   * regex for finding the hierarchy separator
+   * @example:
+   *   null - turn off hierarchy
+   *   /\// - split by `/`
+   *   /\./ - split by `.`
+   *   /\/|\./ - split by `/` or `.`
+   * @type {Regex}
+   */
+  hierarchySeparator: null,
 });
 
 storybook.configure(() => require('./stories'), module);
