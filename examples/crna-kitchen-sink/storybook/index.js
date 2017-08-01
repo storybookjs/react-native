@@ -9,7 +9,6 @@ configure(() => {
 
 const StorybookUI = getStorybookUI({
   port: 7007,
-  // host: 'localhost',
   onDeviceUI: true,
 });
 
@@ -17,6 +16,7 @@ setTimeout(
   () =>
     setOptions({
       name: 'CRNA React Native App',
+      onDeviceUI: true,
     }),
   100
 );

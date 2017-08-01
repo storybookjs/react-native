@@ -10,7 +10,6 @@ configure(() => {
 
 const StorybookUI = getStorybookUI({
   port: 7007,
-  // host: 'localhost',
   onDeviceUI: true,
 });
 
