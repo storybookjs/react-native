@@ -1,3 +1,38 @@
+# 3.2.3
+
+2017-August-01
+
+#### Features
+
+-   Use the React Native packager's host by default [#1568](https://github.com/storybooks/storybook/pull/1568)
+-   Make onDeviceUI default for RN getstorybook [#1571](https://github.com/storybooks/storybook/pull/1571)
+
+#### Documentation
+
+-   Add short description to addon-options readme [#1566](https://github.com/storybooks/storybook/pull/1566)
+
+# 3.2.2
+
+2017-July-31
+
+#### Bug Fixes
+
+-   Fixed build-storybook for vue [#1564](https://github.com/storybooks/storybook/pull/1564)
+
+# 3.2.1
+
+2017-July-31
+
+#### Bug Fixes
+
+-   Check if hierarchySeparator presents in the options object [#1561](https://github.com/storybooks/storybook/pull/1561)
+-   React Native &lt;0.43 support [#1555](https://github.com/storybooks/storybook/pull/1555)
+
+#### Documentation
+
+-   Fix typo with Vue README referring to react [#1556](https://github.com/storybooks/storybook/pull/1556)
+-   Add state-setting FAQ [#1559](https://github.com/storybooks/storybook/pull/1559)
+
 # 3.2.0
 
 2017-July-31

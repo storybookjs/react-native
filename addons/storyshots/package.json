@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storyshots",
-  "version": "3.2.0",
+  "version": "3.2.3",
   "description": "StoryShots is a Jest Snapshot Testing Addon for Storybook.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@storybook/addons": "^3.2.0",
     "@storybook/channels": "^3.2.0",
-    "@storybook/react": "^3.2.0",
+    "@storybook/react": "^3.2.3",
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
@@ -33,7 +33,7 @@
   "peerDependencies": {
     "@storybook/addons": "^3.2.0",
     "@storybook/channels": "^3.2.0",
-    "@storybook/react": "^3.2.0",
+    "@storybook/react": "^3.2.3",
     "babel-core": "^6.25.0",
     "react": "*",
     "react-test-renderer": "*"

@@ -9,6 +9,7 @@
     "bootstrap": "lerna bootstrap --concurrency 1 --npm-client=\"yarn\" --hoist && node ./scripts/hoist-internals.js",
     "bootstrap:docs": "cd docs && yarn install",
     "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- yarn install",
+    "bootstrap:crna-kitchen-sink": "lerna exec --scope crna-kitchen-sink -- yarn install",
     "bootstrap:test-cra": "npm run build-packs && lerna exec --scope test-cra -- yarn install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
     "changelog": "pr-log --sloppy",
