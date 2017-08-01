@@ -1,3 +1,11 @@
+# 3.2.2
+
+2017-July-31
+
+#### Bug Fixes
+
+-   Fixed build-storybook for vue [#1564](https://github.com/storybooks/storybook/pull/1564)
+
 # 3.2.1
 
 2017-July-31
