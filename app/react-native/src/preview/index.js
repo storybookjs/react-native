@@ -1,6 +1,8 @@
 /* eslint no-underscore-dangle: 0 */
 
 import React from 'react';
+import { NativeModules } from 'react-native';
+import parse from 'url-parse';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
@@ -55,8 +57,7 @@ export default class Preview {
       let webUrl = null;
       let channel = addons.getChannel();
       if (params.resetStorybook || !channel) {
-        const host = params.host || 'localhost';
-
+        const host = params.host || parse(NativeModules.SourceCode.scriptURL).hostname;
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
