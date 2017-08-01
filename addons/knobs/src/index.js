@@ -3,6 +3,7 @@ import addons from '@storybook/addons';
 import KnobManager from './KnobManager';
 import { vueHandler } from './vue';
 import { reactHandler } from './react';
+import { angularHandler } from './angular';
 
 const manager = new KnobManager();
 
@@ -74,6 +75,9 @@ function wrapperKnobs(options) {
     case 'react': {
       return reactHandler(channel, manager.knobStore);
     }
+    case 'angular': {
+      return angularHandler(channel, manager.knobStore);
+    }
     default: {
       return reactHandler(channel, manager.knobStore);
     }
@@ -81,6 +85,7 @@ function wrapperKnobs(options) {
 }
 
 export function withKnobs(storyFn, context) {
+  console.log('hai');
   return wrapperKnobs()(storyFn)(context);
 }
 

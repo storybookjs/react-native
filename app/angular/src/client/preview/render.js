@@ -65,7 +65,14 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
 
-  const element = story(context);
+  const currentStory = story(context);
+  let element;
+
+  if (currentStory.render && typeof currentStory.render === 'function') {
+    element = currentStory.render();
+  }
+
+  logger.log(element);
   // if (!element) {
   //   const error = {
   //     title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
