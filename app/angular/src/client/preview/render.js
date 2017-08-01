@@ -70,6 +70,8 @@ export function renderMain(data, storyStore) {
 
   if (currentStory.render && typeof currentStory.render === 'function') {
     element = currentStory.render();
+  } else {
+    element = currentStory;
   }
 
   logger.log(element);
