@@ -5,6 +5,7 @@
 #### Features
 
 -   Use the React Native packager's host by default [#1568](https://github.com/storybooks/storybook/pull/1568)
+-   Make onDeviceUI default for RN getstorybook [#1571](https://github.com/storybooks/storybook/pull/1571)
 
 #### Documentation
 
