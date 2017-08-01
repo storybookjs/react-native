@@ -1,4 +1,3 @@
-import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 import { setOptions } from '@storybook/addon-options';
 
@@ -16,11 +15,10 @@ const StorybookUI = getStorybookUI({
 setTimeout(
   () =>
     setOptions({
-      name: 'React Native Vanilla',
+      name: 'CRNA React Native App',
+      onDeviceUI: true,
     }),
   100
 );
 
-AppRegistry.registerComponent('ReactNativeVanilla', () => StorybookUI);
-
-export { StorybookUI as default };
+export default StorybookUI;
