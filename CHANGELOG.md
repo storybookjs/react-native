@@ -1,3 +1,15 @@
+# 3.2.3
+
+2017-August-01
+
+#### Features
+
+-   Use the React Native packager's host by default [#1568](https://github.com/storybooks/storybook/pull/1568)
+
+#### Documentation
+
+-   Add short description to addon-options readme [#1566](https://github.com/storybooks/storybook/pull/1566)
+
 # 3.2.2
 
 2017-July-31
