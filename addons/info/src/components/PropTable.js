@@ -37,7 +37,7 @@ const renderDocgenPropType = propType => {
       return propType.value;
     case 'union':
       return propType.raw;
-	case 'signature':
+    case 'signature':
       return propType.raw;
     default:
       return name;
