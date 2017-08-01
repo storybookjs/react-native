@@ -38,12 +38,12 @@ import { setOptions } from '@storybook/addon-options';
 // Option defaults:
 setOptions({
   /**
-   * string name to display in the top left corner
+   * name to display in the top left corner
    * @type {String}
    */
   name: 'Storybook',
   /**
-   * URL for string in top left corner to link to
+   * URL for name in top left corner to link to
    * @type {String}
    */
   url: '#',
@@ -63,10 +63,10 @@ setOptions({
    */
   showDownPanel: true,
   /**
-   * display search box to filter stories
+   * display floating search box to search through stories
    * @type {Boolean}
    */
-  showSearchBox: true,
+  showSearchBox: false,
   /**
    * show horizontal addons panel as a vertical panel on the right
    * @type {Boolean}
