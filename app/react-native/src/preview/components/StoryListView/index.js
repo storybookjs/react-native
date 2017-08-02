@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { SectionList, View, Text, TouchableOpacity } from 'react-native';
+import { ListView, View, Text, TouchableOpacity } from 'react-native';
+import { MinMaxView } from 'react-native-compat';
 import style from './style';
 
 const SectionHeader = ({ title, selected }) =>
@@ -30,18 +31,20 @@ ListItem.propTypes = {
 export default class StoryListView extends Component {
   constructor(props, ...args) {
     super(props, ...args);
+
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+      sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
+    });
+
     this.state = {
-      sections: [],
-      selectedKind: null,
-      selectedStory: null,
+      dataSource: ds.cloneWithRowsAndSections({}),
     };
 
     this.storyAddedHandler = this.handleStoryAdded.bind(this);
-    this.storyChangedHandler = this.handleStoryChanged.bind(this);
     this.changeStoryHandler = this.changeStory.bind(this);
 
     this.props.stories.on('storyAdded', this.storyAddedHandler);
-    this.props.events.on('story', this.storyChangedHandler);
   }
 
   componentDidMount() {
@@ -54,33 +57,28 @@ export default class StoryListView extends Component {
   }
 
   componentWillUnmount() {
-    this.props.stories.removeListener('storyAdded', this.storiesHandler);
-    this.props.events.removeListener('story', this.storyChangedHandler);
+    this.props.stories.removeListener('storyAdded', this.storyAddedHandler);
   }
 
   handleStoryAdded() {
     if (this.props.stories) {
       const data = this.props.stories.dumpStoryBook();
-      this.setState({
-        sections: data.map(section => ({
-          key: section.kind,
-          title: section.kind,
-          data: section.stories.map(story => ({
+
+      const sections = data.reduce(
+        (map, section) => ({
+          ...map,
+          [section.kind]: section.stories.map(story => ({
             key: story,
-            kind: section.kind,
             name: story,
+            kind: section.kind,
           })),
-        })),
+        }),
+        {}
+      );
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRowsAndSections(sections),
       });
     }
-  }
-
-  handleStoryChanged(storyFn, selection) {
-    const { kind, story } = selection;
-    this.setState({
-      selectedKind: kind,
-      selectedStory: story,
-    });
   }
 
   changeStory(kind, story) {
@@ -89,24 +87,26 @@ export default class StoryListView extends Component {
 
   render() {
     return (
-      <SectionList
-        style={style.list}
-        renderItem={({ item }) =>
-          <ListItem
-            title={item.name}
-            selected={
-              item.kind === this.state.selectedKind && item.name === this.state.selectedStory
-            }
-            onPress={() => this.changeStory(item.kind, item.name)}
-          />}
-        renderSectionHeader={({ section }) =>
-          <SectionHeader
-            title={section.title}
-            selected={section.title === this.state.selectedKind}
-          />}
-        sections={this.state.sections}
-        stickySectionHeadersEnabled={false}
-      />
+      <MinMaxView maxWidth={250}>
+        <ListView
+          style={style.list}
+          renderRow={item =>
+            <ListItem
+              title={item.name}
+              selected={
+                item.kind === this.props.selectedKind && item.name === this.props.selectedStory
+              }
+              onPress={() => this.changeStory(item.kind, item.name)}
+            />}
+          renderSectionHeader={(sectionData, sectionName) =>
+            <SectionHeader
+              title={sectionName}
+              selected={sectionName === this.props.selectedKind}
+            />}
+          dataSource={this.state.dataSource}
+          stickySectionHeadersEnabled={false}
+        />
+      </MinMaxView>
     );
   }
 }
@@ -123,4 +123,11 @@ StoryListView.propTypes = {
     emit: PropTypes.func.isRequired,
     removeListener: PropTypes.func.isRequired,
   }).isRequired,
+  selectedKind: PropTypes.string,
+  selectedStory: PropTypes.string,
+};
+
+StoryListView.defaultProps = {
+  selectedKind: null,
+  selectedStory: null,
 };

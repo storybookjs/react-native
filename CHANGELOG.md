@@ -1,6 +1,41 @@
+# 3.2.3
+
+2017-August-01
+
+#### Features
+
+-   Use the React Native packager's host by default [#1568](https://github.com/storybooks/storybook/pull/1568)
+-   Make onDeviceUI default for RN getstorybook [#1571](https://github.com/storybooks/storybook/pull/1571)
+
+#### Documentation
+
+-   Add short description to addon-options readme [#1566](https://github.com/storybooks/storybook/pull/1566)
+
+# 3.2.2
+
+2017-July-31
+
+#### Bug Fixes
+
+-   Fixed build-storybook for vue [#1564](https://github.com/storybooks/storybook/pull/1564)
+
+# 3.2.1
+
+2017-July-31
+
+#### Bug Fixes
+
+-   Check if hierarchySeparator presents in the options object [#1561](https://github.com/storybooks/storybook/pull/1561)
+-   React Native &lt;0.43 support [#1555](https://github.com/storybooks/storybook/pull/1555)
+
+#### Documentation
+
+-   Fix typo with Vue README referring to react [#1556](https://github.com/storybooks/storybook/pull/1556)
+-   Add state-setting FAQ [#1559](https://github.com/storybooks/storybook/pull/1559)
+
 # 3.2.0
 
-2017-July-27
+2017-July-31
 
 Storybook 3.2 is filled with new features to help make your components shine! Headline features:
 
@@ -15,17 +50,12 @@ Plus many more features, documentation improvements, and bugfixes below!
 -   Vue support [#1267](https://github.com/storybooks/storybook/pull/1267)
 -   Add support for vue in addon-notes [#1278](https://github.com/storybooks/storybook/pull/1278)
 -   CLI support for Vue [#1287](https://github.com/storybooks/storybook/pull/1287)
-
-
 -   Story Hierarchy [#1329](https://github.com/storybooks/storybook/pull/1329)
 -   Story Hierarchy UI improvements [#1387](https://github.com/storybooks/storybook/pull/1387) [#1356](https://github.com/storybooks/storybook/pull/1356)
 -   Story Hierarchy - keyboard accessibility [#1427](https://github.com/storybooks/storybook/pull/1427)
-
-
 -   React Native - On Device UI [#1413](https://github.com/storybooks/storybook/pull/1413)
 -   Show first story on RN OnDeviceUI startup [#1510](https://github.com/storybooks/storybook/pull/1510)
-
-
+-   Added collapsible RN OnDeviceUI navigation [#1544](https://github.com/storybooks/storybook/pull/1544)
 -   Add warning when module is missing in storiesOf [#1525](https://github.com/storybooks/storybook/pull/1525)
 -   Provide styling hook for Addon Info story body [#1308](https://github.com/storybooks/storybook/pull/1308)
 -   Implement filtering on story-level [#1432](https://github.com/storybooks/storybook/pull/1432)

@@ -1,10 +1,9 @@
 export default {
   list: {
     flex: 1,
-    maxWidth: 250,
   },
   header: {
-    paddingTop: 24,
+    paddingTop: 4,
     paddingBottom: 4,
   },
   headerText: {
