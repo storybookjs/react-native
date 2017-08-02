@@ -45,6 +45,13 @@ export default function testStorySnapshots(options = {}) {
       dirname: configDirPath,
     };
 
+    const realStoriesOf = storybook.storiesOf;
+    storybook.storiesOf = (kind, module) => {
+      const storyFileName = module ? module.filename : '';
+      const newKindName = `${storyFileName}?${kind}`;
+      return realStoriesOf(newKindName, module);
+    };
+
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
     storybook = require.requireActual('@storybook/react-native');
@@ -70,13 +77,15 @@ export default function testStorySnapshots(options = {}) {
 
   // eslint-disable-next-line
   for (const group of stories) {
-    if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
+    const [storyFileName, kind] = group.kind.split('?');
+
+    if (options.storyKindRegex && !kind.match(options.storyKindRegex)) {
       // eslint-disable-next-line
       continue;
     }
 
     describe(suite, () => {
-      describe(group.kind, () => {
+      describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
           if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
@@ -85,7 +94,7 @@ export default function testStorySnapshots(options = {}) {
           }
 
           it(story.name, () => {
-            const context = { kind: group.kind, story: story.name };
+            const context = { storyFileName, kind, story: story.name };
             options.test({ story, context });
           });
         }
