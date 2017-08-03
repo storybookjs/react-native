@@ -83,7 +83,9 @@ export default function testStorySnapshots(options = {}) {
 
   // eslint-disable-next-line
   for (const group of stories) {
-    const [storyFileName, kind] = group.kind.split('?');
+    const groupKindParts = group.kind.split('?');
+    const [storyFileName, kind] =
+      groupKindParts.length === 1 ? ['', groupKindParts[0]] : groupKindParts;
 
     if (options.storyKindRegex && !kind.match(options.storyKindRegex)) {
       // eslint-disable-next-line
