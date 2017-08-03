@@ -1,3 +1,5 @@
-import initStoryshots from '../src';
+import initStoryshots, { multiSnapshotWithOptions } from '../src';
 
-initStoryshots();
+initStoryshots({
+  test: multiSnapshotWithOptions({}),
+});

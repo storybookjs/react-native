@@ -3,16 +3,26 @@ import renderer from 'react-test-renderer';
 import shallow from 'react-test-renderer/shallow';
 import 'jest-specific-snapshot';
 
-export const snapshotWithOptions = options => ({ story, context }) => {
+function getRenderedTree(story, context, options) {
   const storyElement = story.render(context);
-  const tree = renderer.create(storyElement, options).toJSON();
+  return renderer.create(storyElement, options).toJSON();
+}
 
+function getSnapshotFileName(context) {
   const fileName = context.storyFileName || __filename;
   const { dir, name } = path.parse(fileName);
-  const snapshotFileName = path.format({ dir, name, ext: '.storyshot' });
+  return path.format({ dir, name, ext: '.storyshot' });
+}
 
+export const snapshotWithOptions = options => ({ story, context }) => {
+  const tree = getRenderedTree(story, context, options);
+  expect(tree).toMatchSnapshot();
+};
+
+export const multiSnapshotWithOptions = options => ({ story, context }) => {
+  const tree = getRenderedTree(story, context, options);
+  const snapshotFileName = getSnapshotFileName(context);
   expect(tree).toMatchSpecificSnapshot(snapshotFileName);
-  // expect(tree).toMatchSnapshot();
 };
 
 export const snapshot = snapshotWithOptions({});

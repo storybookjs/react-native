@@ -7,7 +7,13 @@ import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
 
-export { snapshotWithOptions, snapshot, shallowSnapshot, renderOnly } from './test-bodies';
+export {
+  snapshot,
+  multiSnapshotWithOptions,
+  snapshotWithOptions,
+  shallowSnapshot,
+  renderOnly,
+} from './test-bodies';
 
 let storybook;
 let configPath;
