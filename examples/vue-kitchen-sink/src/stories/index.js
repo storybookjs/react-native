@@ -117,6 +117,36 @@ storiesOf('Method for rendering Vue', module)
       </p>`,
   }));
 
+storiesOf('Decorator for Vue', module)
+  .addDecorator(story => {
+    // Decorated with story function
+    const WrapButton = story();
+    return {
+      components: { WrapButton },
+      template: '<div :style="{ border: borderStyle }"><wrap-button/></div>',
+      data() {
+        return { borderStyle: 'medium solid red' };
+      },
+    };
+  })
+  .addDecorator(() => ({
+    // Decorated with `story` component
+    template: '<div :style="{ border: borderStyle }"><story/></div>',
+    data() {
+      return {
+        borderStyle: 'medium solid blue',
+      };
+    },
+  }))
+  .add('template', () => ({
+    template: '<my-button>MyButton with template</my-button>',
+  }))
+  .add('render', () => ({
+    render(h) {
+      return h(MyButton, { props: { color: 'pink' } }, ['renders component: MyButton']);
+    },
+  }));
+
 storiesOf('Addon Actions', module)
   .add('Action only', () => ({
     template: '<my-button :handle-click="log">Click me to log the action</my-button>',
