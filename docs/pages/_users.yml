@@ -1,7 +1,7 @@
 dbsbank:
   logo: ./logos/dbsbank.png
   title: DBS Bank
-  description: An internationalizable, mobile-friendly datepicker library for the web.
+  description: DBS Bank consumer products improves performance and maintainability with Storybook!
   source: https://www.dbs.com
   demo: https://www.dbs.com
   site: https://www.dbs.com
