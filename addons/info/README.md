@@ -69,7 +69,7 @@ It is possible to add infos by default to all components by using a global or st
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
 ```
-addDecorator(withInfo()(story => story()));
+addDecorator((story, context) => withInfo('common info')(story)(context));
 ```
 
 ## Global options
