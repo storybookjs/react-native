@@ -1,10 +1,3 @@
-dbsbank:
-  logo: ./logos/dbsbank.png
-  title: DBS Bank
-  description: DBS Bank consumer products improves performance and maintainability with Storybook!
-  source: https://www.dbs.com
-  demo: https://www.dbs.com
-  site: https://www.dbs.com
 airbnb:
   logo: ./logos/airbnb.svg
   title: Airbnb Dates
@@ -30,6 +23,13 @@ squarespace:
   title: Squarespace
   description: Component design and development at Squarespace
   site: http://squarespace.com
+dbsbank:
+  logo: ./logos/dbsbank.svg
+  title: DBS Bank
+  description: DBS Bank consumer products improves performance and maintainability with Storybook!
+  source: https://www.dbs.com
+  demo: https://www.dbs.com
+  site: https://www.dbs.com
 coursera:
   logo: ./logos/coursera.svg
   title: Coursera
