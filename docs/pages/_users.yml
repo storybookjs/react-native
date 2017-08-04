@@ -1,3 +1,10 @@
+dbsbank:
+  logo: ./logos/dbsbank.png
+  title: DBS Bank
+  description: An internationalizable, mobile-friendly datepicker library for the web.
+  source: https://www.dbs.com
+  demo: https://www.dbs.com
+  site: https://www.dbs.com
 airbnb:
   logo: ./logos/airbnb.svg
   title: Airbnb Dates
