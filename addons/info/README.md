@@ -62,6 +62,16 @@ storiesOf('Component', module)
   )
 ```
 
+## Usage as decorator
+
+It is possible to add infos by default to all components by using a global or story decorator. The drawback is you won't be able to display a distinct info message per story.
+
+It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
+
+```
+addDecorator((story, context) => withInfo('common info')(story)(context));
+```
+
 ## Global options
 
 To configure default options for all usage of the info option, use `setDefaults` in `.storybook/config.js`:
