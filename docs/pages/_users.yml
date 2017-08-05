@@ -23,6 +23,11 @@ squarespace:
   title: Squarespace
   description: Component design and development at Squarespace
   site: http://squarespace.com
+dbsbank:
+  logo: ./logos/dbsbank.svg
+  title: DBS Bank
+  description: DBS Bank consumer products improves performance and maintainability with Storybook!
+  site: https://www.dbs.com
 coursera:
   logo: ./logos/coursera.svg
   title: Coursera
