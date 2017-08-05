@@ -87,6 +87,12 @@ setOptions({
    * @type {Regex}
    */
   hierarchySeparator: null,
+
+  /**
+   * sidebar tree animations
+   * @type {Boolean}
+   */
+  sidebarAnimations: true,
 });
 
 storybook.configure(() => require('./stories'), module);
