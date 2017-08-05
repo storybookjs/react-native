@@ -174,7 +174,7 @@ describe('preview.client_api', () => {
       const story = 'ef349ff';
 
       const result = storyStore.stories[0].fn({ kind, story });
-      expect(result.template).toBe(`<div>aa<p>${kind}-${story}</p>/div>`);
+      expect(result.template).toBe(`<div>aa<p>${kind}-${story}</p></div>`);
     });
 
     it('should have access to the context', () => {
