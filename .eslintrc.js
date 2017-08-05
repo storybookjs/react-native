@@ -27,7 +27,7 @@ module.exports = {
         singleQuote: true,
       },
     ],
-    quotes: [warn, 'single'],
+    quotes: [warn, 'single', { avoidEscape: true }],
     'class-methods-use-this': ignore,
     'arrow-parens': [warn, 'as-needed'],
     'space-before-function-paren': ignore,

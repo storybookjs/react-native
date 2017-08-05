@@ -72,6 +72,9 @@ For RN apps:
 
 Once your app is started, changing the selected story in web browser will update the story displayed within your mobile app.
 
+If you are using Android and you get the following error after running the app: `'websocket: connection error', 'Failed to connect to localhost/127.0.0.1:7007'`, you have to forward the port 7007 on your device/emulator to port 7007 on your local machine with the following command:
+`adb reverse tcp:7007 tcp:7007`
+
 ## Using Haul-cli
 
 [Haul](https://github.com/callstack-io/haul) is an alternative to the react-native packager and has several advantages in that it allows you to define your own loaders, and handles symlinks better.

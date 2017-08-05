@@ -1,5 +1,3 @@
-import Vue from 'vue';
-
 <template>
   <div class="main">
     <h1>Welcome to Storybook for Vue</h1>
