@@ -16,3 +16,4 @@ yarn.lock
 docs/public
 packs/*.tgz
 package-lock.json
+.nvmrc
