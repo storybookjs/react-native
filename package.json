@@ -12,6 +12,7 @@
     "bootstrap:crna-kitchen-sink": "lerna exec --scope crna-kitchen-sink -- yarn install",
     "bootstrap:test-cra": "npm run build-packs && lerna exec --scope test-cra -- yarn install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
+    "start": "lerna run --stream --scope cra-kitchen-sink storybook",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
