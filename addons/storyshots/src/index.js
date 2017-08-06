@@ -27,6 +27,16 @@ const hasDependency = name =>
   (pkg.devDependencies && pkg.devDependencies[name]) ||
   (pkg.dependencies && pkg.dependencies[name]);
 
+function patchStoriesOfFunction(storybookImpl) {
+  const realStoriesOf = storybookImpl.storiesOf;
+  // eslint-disable-next-line
+  storybookImpl.storiesOf = (kind, module) => {
+    const storyFileName = module ? module.filename : '';
+    const newKindName = `${storyFileName}?${kind}`;
+    return realStoriesOf(newKindName, module);
+  };
+}
+
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
@@ -51,16 +61,14 @@ export default function testStorySnapshots(options = {}) {
       dirname: configDirPath,
     };
 
-    const realStoriesOf = storybook.storiesOf;
-    storybook.storiesOf = (kind, module) => {
-      const storyFileName = module ? module.filename : '';
-      const newKindName = `${storyFileName}?${kind}`;
-      return realStoriesOf(newKindName, module);
-    };
+    patchStoriesOfFunction(storybook);
 
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
     storybook = require.requireActual('@storybook/react-native');
+
+    patchStoriesOfFunction(storybook);
+
     configPath = path.resolve(options.configPath || 'storybook');
     require.requireActual(configPath);
   } else {
