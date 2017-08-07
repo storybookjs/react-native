@@ -2,12 +2,13 @@ import deprecate from 'util-deprecate';
 import addons from '@storybook/addons';
 import { WithNotes as ReactWithNotes } from './react';
 
-export const withNotes = ({ notes }) => {
+export const withNotes = textOrOptions => {
   const channel = addons.getChannel();
+  const options = typeof textOrOptions === 'string' ? { text: textOrOptions } : textOrOptions;
 
   return getStory => context => {
     // send the notes to the channel before the story is rendered
-    channel.emit('storybook/notes/add_notes', notes);
+    channel.emit('storybook/notes/add_notes', options.text);
     return getStory(context);
   };
 };
