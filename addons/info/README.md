@@ -68,9 +68,7 @@ It is possible to add infos by default to all components by using a global or st
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
-```
-addDecorator((story, context) => withInfo('common info')(story)(context));
-```
+    addDecorator((story, context) => withInfo('common info')(story)(context));
 
 ## Global options
 
@@ -141,53 +139,39 @@ setDefaults({
 setAddon(infoAddon);
 ```
 
-### React Docgen & Flowtype
+### React Docgen Integration
 
-Install the babel docgen plugin
-
-```bash
-npm install -D babel-plugin-react-docgen
-```
-
-Add the plugin to your `.babelrc` config
-
-```json
-{
-  "plugins": ["react-docgen"]
-}
-```
-
-And add the flowtype definitions to your component
+React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during compile time.
+When rendering a story with a React component commented in this supported format, the Addon Info prop table will display the prop's comment in the description column.
 
 ```js
-// @flow
 import React from 'react';
-
-type PropsType = {
-    /** Boolean indicating wether the button should render as disabled */
-    disabled?: boolean,
-	/** button label. */
-	label: string,
-	/** onClick handler */
-	onClick?: Function,
-	/** component styles */
-	style?: {}
-};
+import PropTypes from 'prop-types';
 
 /** Button component description */
-const Button = ({ disabled, label, style, onClick }: PropsType) => (
-  <button disabled={disabled} onClick={onClick}>
+const DocgenButton = ({ disabled, label, style, onClick }) =>
+  <button disabled={disabled} style={style} onClick={onClick}>
     {label}
-  </button>
-);
+  </button>;
 
-Button.defaultProps = {
-    disabled: false,
-	onClick: () => {},
-	style: {},
+DocgenButton.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+  style: {},
 };
 
-export default Button;
+DocgenButton.propTypes = {
+  /** Boolean indicating whether the button should render as disabled */
+  disabled: PropTypes.bool,
+  /** button label. */
+  label: PropTypes.string.isRequired,
+  /** onClick handler */
+  onClick: PropTypes.func,
+  /** component styles */
+  style: PropTypes.shape,
+};
+
+export default DocgenButton;
 ```
 
 Storybook Info Addon should now render all the correct types for your component.
