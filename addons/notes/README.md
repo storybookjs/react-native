@@ -31,17 +31,11 @@ import '@storybook/addon-notes/register';
 Then write your stories like this:
 
 ```js
-import React from 'react';
-
 import { storiesOf } from '@storybook/react';
-import { WithNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 
 import Component from './Component';
 
 storiesOf('Component', module)
-  .add('with some emoji', () => (
-    <WithNotes notes={'A very simple component'}>
-      <Component></Component>
-    </WithNotes>
-  ));
+  .add('with some emoji', withNotes('A very simple component')(() => <Component></Component>));
 ```

@@ -1,10 +1,9 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.1.9",
+  "version": "3.2.0",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "./storybook-addon-knobs.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -16,7 +15,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.1.6",
+    "@storybook/addons": "^3.2.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
@@ -26,18 +25,20 @@
     "prop-types": "^15.5.10",
     "react-color": "^2.11.4",
     "react-datetime": "^2.8.10",
-    "react-textarea-autosize": "^4.3.0"
+    "react-textarea-autosize": "^4.3.0",
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "git-url-parse": "^6.2.2",
     "raw-loader": "^0.5.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "style-loader": "^0.17.0",
     "typescript": "^2.2.2",
-    "typescript-definition-tester": "^0.0.5"
+    "typescript-definition-tester": "^0.0.5",
+    "vue": "^2.4.1"
   },
   "peerDependencies": {
     "react": "*",

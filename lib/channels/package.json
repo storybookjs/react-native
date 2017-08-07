@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channels",
-  "version": "3.1.6",
+  "version": "3.2.0",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
@@ -8,6 +8,6 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "devDependencies": {
-    "shelljs": "^0.7.7"
+    "shelljs": "^0.7.8"
   }
 }
