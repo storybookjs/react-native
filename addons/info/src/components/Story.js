@@ -349,7 +349,7 @@ export default class Story extends React.Component {
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
     const propTables = array.map(type =>
-      <div key={type.name}>
+      <div key={type.displayName || type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
         </h2>
