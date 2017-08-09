@@ -18,7 +18,7 @@ const logger = console;
 
 program
   .version(packageJson.version)
-  .option('-p, --port [number]', 'Port to run Storybook (Required)', parseInt)
+  .option('-p, --port [number]', 'Port to run Storybook (Required)', str => parseInt(str, 10))
   .option('-h, --host [string]', 'Host to run Storybook')
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
