@@ -27,16 +27,6 @@ const hasDependency = name =>
   (pkg.devDependencies && pkg.devDependencies[name]) ||
   (pkg.dependencies && pkg.dependencies[name]);
 
-function patchStoriesOfFunction(storybookImpl) {
-  const realStoriesOf = storybookImpl.storiesOf;
-  // eslint-disable-next-line
-  storybookImpl.storiesOf = (kind, module) => {
-    const storyFileName = module ? module.filename : '';
-    const newKindName = `${storyFileName}?${kind}`;
-    return realStoriesOf(newKindName, module);
-  };
-}
-
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
@@ -61,13 +51,9 @@ export default function testStorySnapshots(options = {}) {
       dirname: configDirPath,
     };
 
-    patchStoriesOfFunction(storybook);
-
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
     storybook = require.requireActual('@storybook/react-native');
-
-    patchStoriesOfFunction(storybook);
 
     configPath = path.resolve(options.configPath || 'storybook');
     require.requireActual(configPath);
@@ -91,9 +77,7 @@ export default function testStorySnapshots(options = {}) {
 
   // eslint-disable-next-line
   for (const group of stories) {
-    const groupKindParts = group.kind.split('?');
-    const [storyFileName, kind] =
-      groupKindParts.length === 1 ? ['', groupKindParts[0]] : groupKindParts;
+    const { fileName, kind } = group;
 
     if (options.storyKindRegex && !kind.match(options.storyKindRegex)) {
       // eslint-disable-next-line
@@ -110,7 +94,7 @@ export default function testStorySnapshots(options = {}) {
           }
 
           it(story.name, () => {
-            const context = { storyFileName, kind, story: story.name };
+            const context = { fileName, kind, story: story.name };
             options.test({ story, context });
           });
         }

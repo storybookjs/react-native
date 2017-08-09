@@ -9,7 +9,12 @@ function getRenderedTree(story, context, options) {
 }
 
 function getSnapshotFileName(context) {
-  const fileName = context.storyFileName || __filename;
+  const fileName = context.fileName;
+
+  if (!fileName) {
+    return null;
+  }
+
   const { dir, name } = path.parse(fileName);
   return path.format({ dir, name, ext: '.storyshot' });
 }
@@ -22,6 +27,12 @@ export const snapshotWithOptions = options => ({ story, context }) => {
 export const multiSnapshotWithOptions = options => ({ story, context }) => {
   const tree = getRenderedTree(story, context, options);
   const snapshotFileName = getSnapshotFileName(context);
+
+  if (!snapshotFileName) {
+    expect(tree).toMatchSnapshot();
+    return;
+  }
+
   expect(tree).toMatchSpecificSnapshot(snapshotFileName);
 };
 
