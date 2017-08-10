@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/addon-knobs": "file:../../addons/knobs",
     "@storybook/addon-links": "file:../../addons/links",
     "@storybook/addon-options": "file:../../addons/options",
     "@storybook/addon-storyshots": "file:../../addons/storyshots",

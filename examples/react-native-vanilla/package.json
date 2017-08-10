@@ -17,6 +17,7 @@
     "jest": "^20.0.4",
     "react-test-renderer": "16.0.0-alpha.6",
     "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/addon-knobs": "file:../../addons/knobs",
     "@storybook/addon-links": "file:../../addons/links",
     "@storybook/addon-options": "file:../../addons/options",
     "@storybook/addon-storyshots": "file:../../addons/storyshots",
