@@ -147,7 +147,7 @@ storiesOf('Button', module)
 
 storiesOf('App', module).add('full app', () => <App />);
 
-storiesOf('Centered Button', module)
+storiesOf('Some really long story kind description', module)
   .addDecorator(centered)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>);
 
