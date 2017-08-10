@@ -21,4 +21,4 @@ Then you can access your storybook from the browser.
 
 * * *
 
-To learn more about what `getstorybook` command does, have a look at our [Start Guide for React](/basics/slow-start-react) or [Start Guide for Vue](/basics/slow-start-vue).
+To learn more about what `getstorybook` command does, have a look at our [Start Guide for React](/basics/guide-react/) or [Start Guide for Vue](/basics/guide-vue/).
