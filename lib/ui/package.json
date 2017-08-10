@@ -19,7 +19,6 @@
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
     "@hypnosphi/fuse.js": "^3.0.8",
-    "fuzzysearch": "^1.0.3",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.8",
