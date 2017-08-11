@@ -1,11 +1,8 @@
 import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
-
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-
 import { withNotes } from '@storybook/addon-notes';
-
 import {
   withKnobs,
   text,
@@ -16,6 +13,7 @@ import {
   color,
   date,
 } from '@storybook/addon-knobs';
+import Centered from '@storybook/addon-centered';
 
 import MyButton from './Button.vue';
 import Welcome from './Welcome.vue';
@@ -30,6 +28,7 @@ storiesOf('App', module).add('App', () => ({
 }));
 
 storiesOf('Button', module)
+  .addDecorator(Centered)
   // Works if Vue.component is called in the config.js in .storybook
   .add('rounded', () => ({
     template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
