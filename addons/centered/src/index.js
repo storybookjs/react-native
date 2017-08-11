@@ -1,9 +1,7 @@
+import { window } from 'global';
 import ReactCentered from './react';
 import VueCentered from './vue';
 
-let Centered = ReactCentered; // default for React
-if (window.STORYBOOK_ENV === 'vue') {
-  Centered = VueCentered;
-}
+const Centered = window.STORYBOOK_ENV === 'vue' ? ReactCentered : VueCentered;
 
 export default Centered;
