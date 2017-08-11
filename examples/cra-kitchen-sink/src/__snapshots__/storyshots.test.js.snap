@@ -1637,7 +1637,7 @@ exports[`Storyshots Cells/Molecules/Atoms.more with text2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Centered Button with text 1`] = `
+exports[`Storyshots Some really long story kind description with text 1`] = `
 <div
   style={
     Object {
