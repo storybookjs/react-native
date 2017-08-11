@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import 'jasmine';
 
 describe('ng5test App', () => {
   let page: AppPage;
