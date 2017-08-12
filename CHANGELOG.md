@@ -1,3 +1,28 @@
+# 3.2.4
+
+2017-August-12
+
+#### Features
+
+-   Hierarchy expansion on search [#1598](https://github.com/storybooks/storybook/pull/1598)
+-   Add sidebarAnimations config prop [#1601](https://github.com/storybooks/storybook/pull/1601)
+-   Add hrefs to left menu links [#1523](https://github.com/storybooks/storybook/pull/1523)
+-   Enable many components of same type in addon-info prop tables [#1607](https://github.com/storybooks/storybook/pull/1607)
+-   Always collapse an expanded kind in tree view without changing selected story [#1590](https://github.com/storybooks/storybook/pull/1590)
+-   Option to select an addon panel [#1641](https://github.com/storybooks/storybook/pull/1641)
+
+#### Documentation
+
+-   Document how to use info addon as decorator [#1592](https://github.com/storybooks/storybook/pull/1592)
+-   Add Android simulator instructions for React Native [#1591](https://github.com/storybooks/storybook/pull/1591)
+
+#### Maintenance
+
+-   Tree view visual adjustments [#1599](https://github.com/storybooks/storybook/pull/1599)
+-   Add z-index to shortcuts popup overlay [#1617](https://github.com/storybooks/storybook/pull/1617)
+-   Use ReactModal for search box [#1548](https://github.com/storybooks/storybook/pull/1548)
+-   Limit react versions to >=15 [#1613](https://github.com/storybooks/storybook/pull/1613)
+
 # 3.2.3
 
 2017-August-01
