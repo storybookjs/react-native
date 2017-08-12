@@ -7,8 +7,8 @@ Storybook is very easy to use. You can use it with any kind of React or Vue proj
 Follow these steps to get started with Storybook.
 
 ```sh
-npm i -g @storybook/cli
 cd my-project-directory
+npm i -g @storybook/cli
 getstorybook
 ```
 
