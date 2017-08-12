@@ -3,7 +3,7 @@ id: 'quick-start-guide'
 title: 'Quick Start Guide'
 ---
 
-React Storybook is very easy to use. You can use it with any kind of React project.
+Storybook is very easy to use. You can use it with any kind of React or Vue project.
 Follow these steps to get started with Storybook.
 
 ```sh
