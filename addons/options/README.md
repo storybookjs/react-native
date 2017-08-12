@@ -98,7 +98,7 @@ setOptions({
    * id to select an addon panel
    * @type {String}
    */
-  selectedDownPanel: undefined, // The order of addons in the "Addons Panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
+  selectedAddonPanel: undefined, // The order of addons in the "Addons Panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
 });
 
 storybook.configure(() => require('./stories'), module);
