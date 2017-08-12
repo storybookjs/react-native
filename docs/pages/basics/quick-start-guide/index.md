@@ -8,6 +8,7 @@ Follow these steps to get started with Storybook.
 
 ```sh
 npm i -g @storybook/cli
+cd my-project-directory
 getstorybook
 ```
 
