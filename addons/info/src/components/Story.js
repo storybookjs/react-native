@@ -127,9 +127,7 @@ export default class Story extends React.Component {
     return (
       <div>
         {this._renderInlineHeader()}
-        <div style={this.state.stylesheet.infoStory}>
-          {this._renderStory()}
-        </div>
+        {this._renderStory()}
         <div style={this.state.stylesheet.infoPage}>
           <div style={this.state.stylesheet.infoBody}>
             {this._getInfoContent()}
@@ -349,7 +347,7 @@ export default class Story extends React.Component {
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
     const propTables = array.map(type =>
-      <div key={type.name}>
+      <div key={type.displayName || type.name}>
         <h2 style={this.state.stylesheet.propTableHead}>
           "{type.displayName || type.name}" Component
         </h2>
