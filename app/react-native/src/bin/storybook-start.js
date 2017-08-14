@@ -41,17 +41,19 @@ server.listen(...listenAddr, err => {
 });
 
 if (!program.skipPackager) {
-  let symlinks = []
-  
-  try{
+  let symlinks = [];
+
+  try {
     const findSymlinksPaths = require('react-native/local-cli/util/findSymlinksPaths'); // eslint-disable-line global-require
     symlinks = findSymlinksPaths(path.join(projectDir, 'node_modules'), [projectDir]);
-  }catch(e){
-   console.warn(`Unable to load findSymlinksPaths: ${e.message}`); 
+  } catch (e) {
+    console.warn(`Unable to load findSymlinksPaths: ${e.message}`);
   }
 
-  const projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(symlinks);
-  
+  const projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(
+    symlinks
+  );
+
   let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
   if (program.haul) {
     cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform all`;
