@@ -274,6 +274,22 @@ exports[`Storyshots Button addons composition 1`] = `
                       "color": "#777",
                     }
                   }
+                />
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 33,
+                    "paddingRight": 3,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }
                 >
                   click the 
                 </span>
@@ -708,6 +724,22 @@ exports[`Storyshots Button with new info 1`] = `
                 >
                   &gt;
                 </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 33,
+                    "paddingRight": 3,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }
+                />
               </div>
               <div
                 style={

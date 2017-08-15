@@ -54,6 +54,7 @@ export default function({ assets, publicPath, headHtml }) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base target="_parent">
         <script>
           if (window.parent !== window) {
             window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;

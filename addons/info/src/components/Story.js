@@ -127,9 +127,7 @@ export default class Story extends React.Component {
     return (
       <div>
         {this._renderInlineHeader()}
-        <div style={this.state.stylesheet.infoStory}>
-          {this._renderStory()}
-        </div>
+        {this._renderStory()}
         <div style={this.state.stylesheet.infoPage}>
           <div style={this.state.stylesheet.infoBody}>
             {this._getInfoContent()}

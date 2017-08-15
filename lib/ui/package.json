@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
