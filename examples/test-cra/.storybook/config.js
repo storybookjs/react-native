@@ -1,9 +1,10 @@
 import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
-setOptions({
-  sidebarAnimations: false,
-});
+setTimeout(
+  () => setOptions({ sidebarAnimations: false, }),
+  100
+);
 
 function loadStories() {
   require('../src/stories');

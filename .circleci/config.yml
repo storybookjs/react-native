@@ -150,8 +150,6 @@ jobs:
           name: "Bootstrapping"
           command: |
             npm run bootstrap
-            npm run bootstrap:docs
-            npm run bootstrap:test-cra
             npm run bootstrap:react-native-vanilla
       - run:
           name: "Unit testing"
