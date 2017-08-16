@@ -87,9 +87,8 @@ import { Provider } from '@storybook/ui';
 class ReactProvider extends Provider {
   handleAPI(api) {
     api.setOptions({
-      name: 'My Component', // change the name displayed in the left top portion
-      url: 'https://github.com/user/my-component', // change its URL
-      sortStoriesByKind: true // Sort the list of stories by their "kind"
+      // see available options in
+      // https://github.com/storybooks/storybook/tree/master/addons/options#getting-started
     });
   }
 };
