@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
 
-import { baseFonts, RoutedLink, MenuLink } from '../src';
+import { baseFonts, RoutedLink, MenuLink } from '@storybook/components';
 
 css.global('body', baseFonts);
 

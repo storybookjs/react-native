@@ -20,11 +20,7 @@
   },
   "devDependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "@storybook/react": "^3.2.4",
-    "@storybook/addon-actions": "^3.2.0",
-    "@storybook/addon-knobs": "^3.2.0",
-    "@storybook/addon-links": "^3.2.0"
+    "react-dom": "^15.6.1"
   },
   "peerDependencies": {
     "react": "*",
