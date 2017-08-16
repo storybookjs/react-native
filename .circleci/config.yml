@@ -71,6 +71,7 @@ jobs:
           name: "Bootstrapping"
           command: |
             npm run bootstrap
+            npm run build-packs
             npm run bootstrap:test-cra
       - run:
           name: "Running test-cra"
@@ -92,6 +93,7 @@ jobs:
           name: "Bootstrapping packages"
           command: |
             npm run bootstrap
+            npm run build-packs
             npm run bootstrap:react-native-vanilla
       - run:
           name: "Running react-native"
@@ -150,6 +152,7 @@ jobs:
           name: "Bootstrapping"
           command: |
             npm run bootstrap
+            npm run build-packs
             npm run bootstrap:react-native-vanilla
       - run:
           name: "Unit testing"
@@ -175,9 +178,9 @@ workflows:
       - docs
       - lint
       - unit-test
-      - deploy:
-          type: approval
-          requires:
-            - lint
-            - unit-test
-            - docs
+      # - deploy:
+      #     type: approval
+      #     requires:
+      #       - lint
+      #       - unit-test
+      #       - docs
