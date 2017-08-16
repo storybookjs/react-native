@@ -137,10 +137,7 @@ exports[`Storyshots Button addons composition 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -194,10 +191,7 @@ exports[`Storyshots Button addons composition 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -589,10 +583,7 @@ exports[`Storyshots Button with new info 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -646,10 +637,7 @@ exports[`Storyshots Button with new info 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -1165,10 +1153,7 @@ exports[`Storyshots Button with some info 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -1222,10 +1207,7 @@ exports[`Storyshots Button with some info 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
