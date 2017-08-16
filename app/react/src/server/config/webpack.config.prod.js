@@ -29,7 +29,7 @@ export default function() {
           screw_ie8: true,
           warnings: false,
         },
-        mangle: false,
+        mangle: true,
         output: {
           comments: false,
           screw_ie8: true,

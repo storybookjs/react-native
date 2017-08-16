@@ -9,6 +9,7 @@ module.exports = {
       },
     ],
     require.resolve('babel-preset-react'),
+    require.resolve('babel-preset-minify'),
   ],
   plugins: [
     require.resolve('babel-plugin-syntax-trailing-function-commas'),
