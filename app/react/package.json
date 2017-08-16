@@ -59,7 +59,7 @@
     "postcss-loader": "^2.0.5",
     "prop-types": "^15.5.10",
     "qs": "^6.4.0",
-    "react-modal": "^1.7.7",
+    "react-modal": "^2.2.4",
     "redux": "^3.6.0",
     "request": "^2.81.0",
     "serve-favicon": "^2.4.3",
