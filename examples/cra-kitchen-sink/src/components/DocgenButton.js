@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /** Button component description */
-const DocgenButton = ({ disabled, label, style, onClick }) =>
-  <button disabled={disabled} style={style} onClick={onClick}>
+const DocgenButton = ({ disabled, label, onClick }) =>
+  <button disabled={disabled} onClick={onClick}>
     {label}
   </button>;
 
@@ -20,8 +20,6 @@ DocgenButton.propTypes = {
   label: PropTypes.string.isRequired,
   /** onClick handler */
   onClick: PropTypes.func,
-  /** component styles */
-  style: PropTypes.shape,
 };
 
 export default DocgenButton;
