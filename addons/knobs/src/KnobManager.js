@@ -6,9 +6,12 @@ import KnobStore from './KnobStore';
 const PANEL_UPDATE_INTERVAL = 400;
 
 export default class KnobManager {
-  constructor(channel) {
-    this.channel = channel;
+  constructor() {
     this.knobStore = new KnobStore();
+  }
+
+  setChannel(channel) {
+    this.channel = channel;
   }
 
   knob(name, options) {
