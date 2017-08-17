@@ -1,0 +1,27 @@
+{
+  "name": "@storybook/addon-viewport",
+  "version": "1.0.0",
+  "description": "Creates an addon for the storybook action area to change the viewport for mobile screen sizes",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel --source-maps --out-dir dist src",
+    "watch": "npm run build -- -w",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.2.0",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
