@@ -1,3 +1,22 @@
+# 3.2.5
+
+2017-August-16
+
+#### Features
+
+-   Add codemod for deprecated addon-info API [#1582](https://github.com/storybooks/storybook/pull/1582)
+
+#### Bug Fixes
+
+-   Fixed addon-knobs for RN [#1635](https://github.com/storybooks/storybook/pull/1635)
+-   Make links navigate in the parent window [#1650](https://github.com/storybooks/storybook/pull/1650)
+-   Don’t render leftpanel stories tree if stories are empty [#1664](https://github.com/storybooks/storybook/pull/1664)
+-   Remove double styling for inline stories [#1651](https://github.com/storybooks/storybook/pull/1651)
+
+#### Dependency Upgrades
+
+-   Upgrade react-modal to v2.2.4 [#1666](https://github.com/storybooks/storybook/pull/1666)
+
 # 3.2.4
 
 2017-August-12
