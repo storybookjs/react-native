@@ -48,13 +48,30 @@ jobs:
             - docs/**/node_modules
             - examples/**/node_modules
             - lib/**/node_modules
-  example-kitchen-sink:
+  example-kitchen-sinks:
     <<: *defaults
     steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
       - run:
-          name: "Running kitchen-sink"
+          name: "Install root dependencies"
           command: |
-            echo "TODO"
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap
+      - run:
+          name: "Build react kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink && npm run build-storybook
+      - run:
+          name: "Build vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink && npm run build-storybook
   example-test-cra:
     <<: *defaults
     steps:
@@ -71,11 +88,12 @@ jobs:
           name: "Bootstrapping"
           command: |
             npm run bootstrap
+            npm run build-packs
             npm run bootstrap:test-cra
       - run:
-          name: "Running test-cra"
+          name: "Build test-cra"
           command: |
-            echo "TODO"
+            cd examples/test-cra && npm run build-storybook
   example-react-native:
     <<: *defaults
     steps:
@@ -92,12 +110,12 @@ jobs:
           name: "Bootstrapping packages"
           command: |
             npm run bootstrap
+            npm run build-packs
             npm run bootstrap:react-native-vanilla
       - run:
           name: "Running react-native"
           command: |
             echo "TODO"
-
   docs:
     <<: *defaults
     steps:
@@ -150,8 +168,7 @@ jobs:
           name: "Bootstrapping"
           command: |
             npm run bootstrap
-            npm run bootstrap:docs
-            npm run bootstrap:test-cra
+            npm run build-packs
             npm run bootstrap:react-native-vanilla
       - run:
           name: "Unit testing"
@@ -171,15 +188,15 @@ workflows:
     jobs:
       - validate
       - build
-      - example-kitchen-sink
+      - example-kitchen-sinks
       - example-test-cra
       - example-react-native
       - docs
       - lint
       - unit-test
-      - deploy:
-          type: approval
-          requires:
-            - lint
-            - unit-test
-            - docs
+      # - deploy:
+      #     type: approval
+      #     requires:
+      #       - lint
+      #       - unit-test
+      #       - docs

@@ -12,7 +12,7 @@ describe('babel_config', () => {
     mock({
       '.babelrc': `{
         "presets": [
-          "es2015",
+          "env",
           "foo-preset"
         ],
         "plugins": [
@@ -41,7 +41,7 @@ describe('babel_config', () => {
     mock({
       '.babelrc': `{
         "presets": [
-          "es2015",
+          "env",
           "foo-preset"
         ],
         "plugins": "bar-plugin"
@@ -68,7 +68,7 @@ describe('babel_config', () => {
     mock({
       '.babelrc': `{
         "presets": [
-          "es2015",
+          "env",
           "foo-preset"
         ]
       }`,
