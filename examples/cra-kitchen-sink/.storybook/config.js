@@ -11,13 +11,14 @@ setOptions({
   showSearchBox: false,
   downPanelInRight: true,
   sortStoriesByKind: false,
-  hierarchySeparator: '\\/|\\.|¯\\\\_\\(ツ\\)_\\/¯'
+  hierarchySeparator: /\/|\./,
 });
 
 setAddon(infoAddon);
 
 function loadStories() {
-  require('../src/stories');
+  require('../src/stories/index');
+  require('../src/stories/storybook-components');
 }
 
 configure(loadStories, module);

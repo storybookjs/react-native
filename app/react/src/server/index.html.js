@@ -67,11 +67,6 @@ export default function({ assets, publicPath, headHtml }) {
           .btn:hover{
             background-color: #eee
           }
-
-          /* Remove blue outline defined by the user argent*/
-          :focus {
-            outline: none !important;
-          }
         </style>
         ${headHtml}
       </head>

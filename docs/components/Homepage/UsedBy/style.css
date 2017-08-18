@@ -37,21 +37,21 @@
 
 .used-by-users {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
 
 .used-by-user {
   /*flex: 1;*/
-  margin-right: 30px;
+  margin: 0 15px 30px;
   max-width: 100px;
   filter: grayscale(100%);
   opacity: 0.8;
-}
-.used-by-user:last-child {
-  margin-right: 0;
+  transition: filter 0.3s ease-out, opacity 0.3s ease-out;
 }
 .used-by-user:hover {
+  transition: none;
   filter: none;
   opacity: 1;
 }

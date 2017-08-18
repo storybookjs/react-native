@@ -45,6 +45,11 @@ export default function() {
           include: includePaths,
           exclude: excludePaths,
         },
+        {
+          test: /\.vue$/,
+          loader: require.resolve('vue-loader'),
+          options: {},
+        },
       ],
     },
     resolve: {

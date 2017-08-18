@@ -137,10 +137,7 @@ exports[`Storyshots Button addons composition 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -194,10 +191,7 @@ exports[`Storyshots Button addons composition 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -259,6 +253,22 @@ exports[`Storyshots Button addons composition 1`] = `
                 >
                   &gt;
                 </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 33,
+                    "paddingRight": 3,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }
+                />
               </div>
               <div
                 style={
@@ -435,7 +445,7 @@ exports[`Storyshots Button with knobs 1`] = `
   </p>
   <p>
     My birthday is: 
-    2017-1-20
+    January 20, 2017
   </p>
   <p>
     My wallet contains: $
@@ -573,10 +583,7 @@ exports[`Storyshots Button with new info 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -630,10 +637,7 @@ exports[`Storyshots Button with new info 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -708,6 +712,22 @@ exports[`Storyshots Button with new info 1`] = `
                 >
                   &gt;
                 </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 33,
+                    "paddingRight": 3,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "color": "#777",
+                    }
+                  }
+                />
               </div>
               <div
                 style={
@@ -1133,10 +1153,7 @@ exports[`Storyshots Button with some info 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -1190,10 +1207,7 @@ exports[`Storyshots Button with some info 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -1605,6 +1619,22 @@ exports[`Storyshots Cells/Molecules with text 1`] = `
 </button>
 `;
 
+exports[`Storyshots Cells/Molecules.Atoms/simple with some emoji 1`] = `
+<button
+  className="css-1yjiefr"
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Cells/Molecules.Atoms/simple with text 1`] = `
+<button
+  className="css-1yjiefr"
+>
+  Hello Button
+</button>
+`;
+
 exports[`Storyshots Cells/Molecules/Atoms.more with some emoji2 1`] = `
 <button
   className="css-1yjiefr"
@@ -1621,23 +1651,30 @@ exports[`Storyshots Cells/Molecules/Atoms.more with text2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Cells¯\\_(ツ)_/¯Molecules.Atoms/simple with some emoji 1`] = `
-<button
-  className="css-1yjiefr"
+exports[`Storyshots Navigation Menu link 1`] = `
+<div
+  className="css-t9df35"
 >
-  😀 😎 👍 💯
-</button>
+  <a
+    className="css-1enjukp"
+    href="/"
+    onClick={[Function]}
+  >
+    Menu link item
+  </a>
+</div>
 `;
 
-exports[`Storyshots Cells¯\\_(ツ)_/¯Molecules.Atoms/simple with text 1`] = `
-<button
-  className="css-1yjiefr"
+exports[`Storyshots Navigation Routed link 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
 >
-  Hello Button
-</button>
+  Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
+</a>
 `;
 
-exports[`Storyshots Centered Button with text 1`] = `
+exports[`Storyshots Some really long story kind description with text 1`] = `
 <div
   style={
     Object {
