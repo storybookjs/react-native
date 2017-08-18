@@ -8,6 +8,9 @@
   "scripts": {
     "prepublish": "node ../../scripts/prepublish.js"
   },
+  "dependencies": {
+    "global": "^4.3.2"
+  },
   "peerDependencies": {
     "react": "*"
   }

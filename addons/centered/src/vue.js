@@ -1,4 +1,4 @@
-export default function () {
+export default function() {
   return {
     template: `
       <div :style="style">
@@ -22,8 +22,8 @@ export default function () {
         },
         innerStyle: {
           margin: 'auto',
-        }
-      }
-    }
-  }
+        },
+      };
+    },
+  };
 }
