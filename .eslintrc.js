@@ -40,9 +40,12 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': [
-      warn,
+      error,
       {
         devDependencies: [
+          'examples/**',
+          '**/example/**',
+          '*.js',
           '**/*.test.js',
           '**/scripts/*.js',
           '**/stories/*.js',

@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-
 import React, { PropTypes } from 'react';
 import { TouchableHighlight } from 'react-native';
 

@@ -31,6 +31,7 @@
     "cross-spawn": "^5.0.1",
     "jscodeshift": "^0.3.30",
     "json5": "^0.5.1",
+    "latest-version": "^3.1.0",
     "merge-dirs": "^0.2.1",
     "opencollective": "^1.0.3",
     "shelljs": "^0.7.8",
