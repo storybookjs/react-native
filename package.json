@@ -24,9 +24,9 @@
     "docs:dev": "cd docs && npm run dev",
     "github-release": "github-release-from-changelog",
     "import-repo": "lerna import",
-    "lint": "npm run lint:js && npm run lint:md",
-    "lint:js": "eslint . --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
-    "lint:md": "remark .",
+    "lint": "npm run lint:js . && npm run lint:md .",
+    "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
+    "lint:md": "remark",
     "publish": "lerna publish",
     "test": "jest --projects ./ ./examples/react-native-vanilla"
   },
