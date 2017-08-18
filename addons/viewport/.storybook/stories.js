@@ -1,7 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withViewport } from '../src';
 
-storiesOf('Viewport Example', module)
-    .addDecorator(withViewport)
-    .add('Example', <button>Change viewport sizes below</button>);
+storiesOf('Viewport', module)
+    .add('Example', () => (
+        <h1>
+            Change viewport sizes below
+        </h1>
+    ));

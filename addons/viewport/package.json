@@ -4,7 +4,7 @@
   "description": "Storybook addon to change the viewport size to mobile",
   "main": "dist/index.js",
   "keywords": [
-      "storybook"
+    "storybook"
   ],
   "scripts": {
     "build": "babel --source-maps --out-dir dist src",
@@ -15,6 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@storybook/react": "^3.2.5",
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {

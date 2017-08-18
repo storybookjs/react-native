@@ -5,9 +5,14 @@ import PropTypes from 'prop-types';
 export class WrapStory extends Component {
   static propTypes = {
     channel: PropTypes.object.isRequired,
-    context: PropTypes.object.isRequired,
-    storyFn: PropTypes.func.isRequired,
-  };
+    context: PropTypes.object,
+    storyFn: PropTypes.func,
+  }
+
+  static defaultProps = {
+    context: {},
+    storyFn: context => context,
+  }
 
   componentDidMount() {
     const { channel } = this.props;
