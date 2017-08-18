@@ -3,12 +3,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import global from 'global';
+import { baseFonts } from '@storybook/components';
 
 import marksy from 'marksy';
 
 import PropTable from './PropTable';
 import Node from './Node';
-import { baseFonts } from './theme';
 import { Pre } from './markdown';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
@@ -127,9 +127,7 @@ export default class Story extends React.Component {
     return (
       <div>
         {this._renderInlineHeader()}
-        <div style={this.state.stylesheet.infoStory}>
-          {this._renderStory()}
-        </div>
+        {this._renderStory()}
         <div style={this.state.stylesheet.infoPage}>
           <div style={this.state.stylesheet.infoBody}>
             {this._getInfoContent()}
