@@ -14,8 +14,7 @@
         "crna-kitchen-sink",
         "test-cra",
         "react-native-vanilla",
-        "vue-example",
-        "@storybook/components"
+        "vue-example"
       ]
     }
   },
