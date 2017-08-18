@@ -55,7 +55,15 @@ export default class Preview {
   getStorybookUI(params = {}) {
     return () => {
       let webUrl = null;
-      let channel = addons.getChannel();
+      let channel = null;
+
+      try {
+        channel = addons.getChannel();
+      } catch (e) {
+        // getChannel throws if the channel is not defined,
+        // which is fine in this case (we will define it below)
+      }
+
       if (params.resetStorybook || !channel) {
         const host = params.host || parse(NativeModules.SourceCode.scriptURL).hostname;
         const port = params.port !== false ? `:${params.port || 7007}` : '';

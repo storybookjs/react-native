@@ -68,9 +68,7 @@ It is possible to add infos by default to all components by using a global or st
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
-```
-addDecorator((story, context) => withInfo('common info')(story)(context));
-```
+    addDecorator((story, context) => withInfo('common info')(story)(context));
 
 ## Global options
 
@@ -123,6 +121,60 @@ storiesOf('Component')
 ```
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
+
+To customize your defaults:
+
+```js
+// config.js
+import infoAddon, { setDefaults } from '@storybook/addon-info';
+
+// addon-info
+setDefaults({
+  inline: true,
+  maxPropsIntoLine: 1,
+  maxPropObjectKeys: 10,
+  maxPropArrayLength: 10,
+  maxPropStringLength: 100,
+});
+setAddon(infoAddon);
+```
+
+### React Docgen Integration
+
+React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during compile time.
+When rendering a story with a React component commented in this supported format, the Addon Info prop table will display the prop's comment in the description column.
+
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
+
+/** Button component description */
+const DocgenButton = ({ disabled, label, style, onClick }) =>
+  <button disabled={disabled} style={style} onClick={onClick}>
+    {label}
+  </button>;
+
+DocgenButton.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+  style: {},
+};
+
+DocgenButton.propTypes = {
+  /** Boolean indicating whether the button should render as disabled */
+  disabled: PropTypes.bool,
+  /** button label. */
+  label: PropTypes.string.isRequired,
+  /** onClick handler */
+  onClick: PropTypes.func,
+  /** component styles */
+  style: PropTypes.shape,
+};
+
+export default DocgenButton;
+```
+
+Storybook Info Addon should now render all the correct types for your component.
 
 ## The FAQ
 

@@ -1,5 +1,7 @@
 import url from 'url';
 
+const getExtensionForFilename = filename => /.+\.(\w+)$/.exec(filename)[1];
+
 // assets.preview will be:
 // - undefined
 // - string e.g. 'static/preview.9adbb5ef965106be1cc3.bundle.js'
@@ -21,17 +23,27 @@ const urlsFromAssets = assets => {
     css: [],
   };
 
-  const re = /.+\.(\w+)$/;
   Object.keys(assets)
     // Don't load the manager script in the iframe
     .filter(key => key !== 'manager')
     .forEach(key => {
-      const asset = assets[key];
+      let asset = assets[key];
       if (typeof asset === 'string') {
-        urls[re.exec(asset)[1]].push(asset);
+        urls[getExtensionForFilename(asset)].push(asset);
       } else {
-        const assetUrl = asset.find(u => re.exec(u)[1] !== 'map');
-        urls[re.exec(assetUrl)[1]].push(assetUrl);
+      if (!Array.isArray(asset)) {
+        asset = [asset];
+      }
+      asset
+        .filter(assetUrl => {
+          const extension = getExtensionForFilename(assetUrl);
+          const isMap = extension === 'map';
+          const isSupportedExtension = Boolean(urls[extension]);
+          return isSupportedExtension && !isMap;
+        })
+        .forEach(assetUrl => {
+          urls[getExtensionForFilename(assetUrl)].push(assetUrl);
+        });
       }
     });
 
