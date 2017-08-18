@@ -33,7 +33,7 @@ module.exports = {
     'space-before-function-paren': ignore,
     'import/no-unresolved': warn,
     'import/extensions': [
-      warn,
+      error,
       {
         js: 'never',
         json: 'always',
