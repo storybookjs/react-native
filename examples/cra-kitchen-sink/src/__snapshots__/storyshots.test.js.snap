@@ -91,10 +91,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -148,10 +145,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -565,10 +559,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
             "borderRadius": "2px",
             "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
             "color": "#444",
-            "fontFamily": "
-              -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-              \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-            ",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
             "fontSize": "15px",
             "fontWeight": 300,
             "lineHeight": 1.45,
@@ -622,10 +613,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
               Object {
                 "WebkitFontSmoothing": "antialiased",
                 "color": "#444",
-                "fontFamily": "
-                  -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-                  \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-                ",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
                 "fontSize": "15px",
               }
             }
@@ -860,7 +848,7 @@ exports[`Storyshots App full app 1`] = `
     <img
       alt="logo"
       className="App-logo"
-      src="logo.svg"
+      src="file-stub"
     />
     <h2>
       Welcome to React
