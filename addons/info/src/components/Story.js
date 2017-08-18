@@ -3,12 +3,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import global from 'global';
+import { baseFonts } from '@storybook/components';
 
 import marksy from 'marksy';
 
 import PropTable from './PropTable';
 import Node from './Node';
-import { baseFonts } from './theme';
 import { Pre } from './markdown';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
