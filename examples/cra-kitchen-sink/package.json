@@ -12,6 +12,8 @@
   "dependencies": {
     "eventemitter3": "^2.0.3",
     "format-json": "^1.0.3",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.1.2",
     "global": "^4.3.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -19,17 +21,18 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.2.0-alpha.10",
-    "@storybook/addon-centered": "3.2.0-alpha.8",
-    "@storybook/addon-events": "3.2.0-alpha.10",
-    "@storybook/addon-knobs": "3.2.0-alpha.10",
-    "@storybook/addon-info": "3.2.0-alpha.10",
-    "@storybook/addon-links": "3.2.0-alpha.10",
-    "@storybook/addon-notes": "3.2.0-alpha.10",
-    "@storybook/addon-options": "3.2.0-alpha.10",
-    "@storybook/addon-storyshots": "3.2.0-alpha.11",
-    "@storybook/addons": "3.2.0-alpha.10",
-    "@storybook/react": "3.2.0-alpha.11",
+    "@storybook/addon-actions": "^3.2.0",
+    "@storybook/addon-centered": "^3.2.0",
+    "@storybook/addon-events": "^3.2.0",
+    "@storybook/addon-knobs": "^3.2.0",
+    "@storybook/addon-info": "^3.2.0",
+    "@storybook/addon-links": "^3.2.0",
+    "@storybook/addon-notes": "^3.2.0",
+    "@storybook/addon-options": "^3.2.0",
+    "@storybook/addon-storyshots": "^3.2.0",
+    "@storybook/addons": "^3.2.0",
+    "@storybook/components": "^3.2.0",
+    "@storybook/react": "^3.2.0",
     "react-scripts": "1.0.1"
   },
   "private": true
