@@ -2,13 +2,13 @@ import React from 'react';
 import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
-import { addonNotes, WithNotes } from '@storybook/addon-notes';
+import { withNotes, WithNotes } from '@storybook/addon-notes';
 import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
-  addonKnobs,
   text,
   number,
   boolean,
@@ -25,6 +25,8 @@ import { Button, Welcome } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
+import Container from './Container';
+import DocgenButton from '../components/DocgenButton';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -56,14 +58,28 @@ const InfoButton = () =>
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>)
+  .add('with text', () =>
+    <Button onClick={action('clicked')}>
+      {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
+      Hello Button
+    </Button>
+  )
+  .add('with some emoji', () =>
+    <Button onClick={action('clicked')}>
+      {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
+      😀 😎 👍 💯
+    </Button>
+  )
   .add('with notes', () =>
     <WithNotes notes={'A very simple button'}>
-      <Button>Check my notes in the notes panel</Button>
+      <Button>
+        {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
+        Check my notes in the notes panel
+      </Button>
     </WithNotes>
   )
   .add('with knobs', () => {
+    setOptions({ selectedAddonPanel: 'storybooks/storybook-addon-knobs' });
     const name = text('Name', 'Storyteller');
     const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
     const fruits = {
@@ -89,6 +105,7 @@ storiesOf('Button', module)
     const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
     return (
       <div style={style}>
@@ -96,7 +113,7 @@ storiesOf('Button', module)
           {intro}
         </p>
         <p>
-          My birthday is: {new Date(birthday).toLocaleDateString()}
+          My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}
         </p>
         <p>
           My wallet contains: ${dollars.toFixed(2)}
@@ -115,38 +132,44 @@ storiesOf('Button', module)
       </div>
     );
   })
-  // .addWithInfo(
-  //   'with some info',
-  //   'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
-  //   context =>
-  //     <div>
-  //       click the <InfoButton /> label in top right for info about "{context.story}"
-  //     </div>
-  // )
+  .addWithInfo(
+    'with some info',
+    'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
+    context =>
+      <Container>
+        click the <InfoButton /> label in top right for info about "{context.story}"
+      </Container>
+  )
   .add(
     'with new info',
     withInfo(
       'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
     )(context =>
-      <div>
+      <Container>
+        {setOptions({ selectedAddonPanel: 'storybook/info/info-panel' })}
         click the <InfoButton /> label in top right for info about "{context.story}"
-      </div>
+      </Container>
     )
   )
   .add(
     'addons composition',
     withInfo('see Notes panel for composition info')(
-      addonNotes({ notes: 'Composition: Info(Notes())' })(context =>
+      withNotes('Composition: Info(Notes())')(context =>
         <div>
+          {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
           click the <InfoButton /> label in top right for info about "{context.story}"
         </div>
       )
     )
   );
 
+storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () =>
+  <DocgenButton onClick={action('clicked')} label="Docgen Button" />
+);
+
 storiesOf('App', module).add('full app', () => <App />);
 
-storiesOf('Centered Button', module)
+storiesOf('Some really long story kind description', module)
   .addDecorator(centered)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>);
 
@@ -207,12 +230,12 @@ storiesOf('WithEvents', module)
   )
   .add('Logger', () => <Logger emiter={emiter} />);
 
-storiesOf('addonNotes', module)
-  .add('with some text', addonNotes({ notes: 'Hello guys' })(() => <div>Hello guys</div>))
-  .add('with some emoji', addonNotes({ notes: 'My notes on emojies' })(() => <p>🤔😳😯😮</p>))
+storiesOf('withNotes', module)
+  .add('with some text', withNotes('Hello guys')(() => <div>Hello guys</div>))
+  .add('with some emoji', withNotes('My notes on emojies')(() => <p>🤔😳😯😮</p>))
   .add(
     'with a button and some emoji',
-    addonNotes({ notes: 'My notes on a button with emojies' })(() =>
+    withNotes('My notes on a button with emojies')(() =>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     )
   )
@@ -222,36 +245,7 @@ storiesOf('addonNotes', module)
     </WithNotes>
   );
 
-storiesOf('Addon Knobs deprecated Decorator', module)
-  .addDecorator(withKnobs) // test deprecated
-  .add('with dynamic variables deprecated', () => {
-    const name = text('Name', 'Story Teller');
-    const age = number('Age', 120);
-
-    const content = `I am ${name} and I'm ${age} years old.`;
-    return (
-      <div>
-        {content}
-      </div>
-    );
-  });
-
-storiesOf('Addon Knobs', module).add(
-  'with dynamic variables new method',
-  addonKnobs()(() => {
-    const name = text('Name', 'Arunoda Susiripala');
-    const age = number('Age', 89);
-
-    const content = `I am ${name} and I'm ${age} years old.`;
-    return (
-      <div>
-        {content}
-      </div>
-    );
-  })
-);
-
-storiesOf('component.base.Link')
+storiesOf('component.base.Link', module)
   .addDecorator(withKnobs)
   .add('first', () =>
     <a>
@@ -264,15 +258,15 @@ storiesOf('component.base.Link')
     </a>
   );
 
-storiesOf('component.base.Span')
+storiesOf('component.base.Span', module)
   .add('first', () => <span>first span</span>)
   .add('second', () => <span>second span</span>);
 
-storiesOf('component.common.Div')
+storiesOf('component.common.Div', module)
   .add('first', () => <div>first div</div>)
   .add('second', () => <div>second div</div>);
 
-storiesOf('component.common.Table')
+storiesOf('component.common.Table', module)
   .add('first', () =>
     <table>
       <tr>
@@ -288,13 +282,13 @@ storiesOf('component.common.Table')
     </table>
   );
 
-storiesOf('component.Button')
+storiesOf('component.Button', module)
   .add('first', () => <button>first button</button>)
   .add('second', () => <button>first second</button>);
 
 // Atomic
 
-storiesOf('Cells¯\\_(ツ)_/¯Molecules.Atoms/simple', module)
+storiesOf('Cells/Molecules.Atoms/simple', module)
   .addDecorator(withKnobs)
   .add('with text', () =>
     <Button>
