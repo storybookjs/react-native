@@ -1,8 +1,11 @@
 /* eslint no-underscore-dangle: 0 */
+import { EventEmitter } from 'events';
+
 let count = 0;
 
-export default class StoryStore {
+export default class StoryStore extends EventEmitter {
   constructor() {
+    super();
     this._data = {};
   }
 
@@ -21,6 +24,8 @@ export default class StoryStore {
       index: count,
       fn,
     };
+
+    this.emit('storyAdded', kind, name, fn);
   }
 
   getStoryKinds() {

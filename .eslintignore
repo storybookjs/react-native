@@ -2,9 +2,11 @@ dist
 build
 coverage
 node_modules
-**/example/**
+addons/**/example/**
 app/**/demo/**
 docs/public
+
+vue
 
 *.bundle.js
 *.js.map

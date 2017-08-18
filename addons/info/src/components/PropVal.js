@@ -137,9 +137,16 @@ export default function PropVal(props) {
   );
 }
 
+PropVal.defaultProps = {
+  val: null,
+  maxPropObjectKeys: 3,
+  maxPropArrayLength: 3,
+  maxPropStringLength: 50,
+};
+
 PropVal.propTypes = {
-  val: PropTypes.any.isRequired, // eslint-disable-line
-  maxPropObjectKeys: PropTypes.number.isRequired,
-  maxPropArrayLength: PropTypes.number.isRequired,
-  maxPropStringLength: PropTypes.number.isRequired,
+  val: PropTypes.any, // eslint-disable-line
+  maxPropObjectKeys: PropTypes.number,
+  maxPropArrayLength: PropTypes.number,
+  maxPropStringLength: PropTypes.number,
 };

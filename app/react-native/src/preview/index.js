@@ -1,11 +1,14 @@
 /* eslint no-underscore-dangle: 0 */
 
 import React from 'react';
+import { NativeModules } from 'react-native';
+import parse from 'url-parse';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
 import StoryStore from './story_store';
 import StoryKindApi from './story_kind';
+import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 
 export default class Preview {
@@ -54,8 +57,7 @@ export default class Preview {
       let webUrl = null;
       let channel = addons.getChannel();
       if (params.resetStorybook || !channel) {
-        const host = params.host || 'localhost';
-
+        const host = params.host || parse(NativeModules.SourceCode.scriptURL).hostname;
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
@@ -70,11 +72,14 @@ export default class Preview {
       }
       channel.on('getStories', () => this._sendSetStories());
       channel.on('setCurrentStory', d => this._selectStory(d));
+      this._events.on('setCurrentStory', d => this._selectStory(d));
       this._sendSetStories();
       this._sendGetCurrentStory();
 
       // finally return the preview component
-      return <StoryView url={webUrl} events={this._events} />;
+      return params.onDeviceUI
+        ? <OnDeviceUI stories={this._stories} events={this._events} url={webUrl} />
+        : <StoryView url={webUrl} events={this._events} />;
     };
   }
 

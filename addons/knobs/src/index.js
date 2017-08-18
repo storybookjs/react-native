@@ -1,5 +1,8 @@
+import { window } from 'global';
 import addons from '@storybook/addons';
 import KnobManager from './KnobManager';
+import { vueHandler } from './vue';
+import { reactHandler } from './react';
 
 const manager = new KnobManager();
 
@@ -55,16 +58,32 @@ export function date(name, value = new Date()) {
   return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
-export function withKnobs(storyFn, context) {
+// "Higher order component" / wrapper style API
+// In 3.3, this will become `withKnobs`, once our decorator API supports it.
+//   See https://github.com/storybooks/storybook/pull/1527
+function wrapperKnobs(options) {
   const channel = addons.getChannel();
-  return manager.wrapStory(channel, storyFn, context);
+  manager.setChannel(channel);
+
+  if (options) channel.emit('addon:knobs:setOptions', options);
+
+  switch (window.STORYBOOK_ENV) {
+    case 'vue': {
+      return vueHandler(channel, manager.knobStore);
+    }
+    case 'react': {
+      return reactHandler(channel, manager.knobStore);
+    }
+    default: {
+      return reactHandler(channel, manager.knobStore);
+    }
+  }
+}
+
+export function withKnobs(storyFn, context) {
+  return wrapperKnobs()(storyFn)(context);
 }
 
 export function withKnobsOptions(options = {}) {
-  return (...args) => {
-    const channel = addons.getChannel();
-    channel.emit('addon:knobs:setOptions', options);
-
-    return withKnobs(...args);
-  };
+  return (storyFn, context) => wrapperKnobs(options)(storyFn)(context);
 }

@@ -10,8 +10,8 @@
     -   [See multiple (or all) stories in 1 preview.](#see-multiple-or-all-stories-in-1-preview)
     -   [Deeper level hierarchy](#deeper-level-hierarchy)
 -   [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    -   [Vue](#vue) (*in alpha*)
-    -   [Angular](#angular) (*in development*)
+    -   [Vue](#vue)
+    -   [Angular](#angular)
     -   [Webcomponents](#webcomponents)
     -   [Polymer](#polymer)
     -   [Aurelia](#aurelia)
@@ -20,7 +20,7 @@
     -   [API for adding stories](#api-for-adding-stories)
 -   [Documentation](#documentation)
     -   [Better design](#better-design)
-    -   [Record videos and write blog post on how to tweak storybook](#record-videos-and-write-blog-post-on-how-to-tweak-storybook)
+    -   [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use-tweak--develop-storybook)
 
 ## New features
 
@@ -110,8 +110,7 @@ We have a new logo, so next step is a overhaul of our documentation site.
 
 ### Record videos and write blog post on how to use, tweak & develop storybook
 
-- writing addons, 
-- choosing the right addons.
-- how to start developing on our codebase.
-- how to use storybook itself and the CLI.
-
+-   writing addons, 
+-   choosing the right addons.
+-   how to start developing on our codebase.
+-   how to use storybook itself and the CLI.
