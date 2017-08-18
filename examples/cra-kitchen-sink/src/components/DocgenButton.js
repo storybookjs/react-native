@@ -33,22 +33,22 @@ DocgenButton.propTypes = {
   two: PropTypes.objectOf(
     PropTypes.shape({
       /**
-     *  Just an internal propType for a shape.
-     *  It's also required, and as you can see it supports multi-line comments!
-     */
+       *  Just an internal propType for a shape.
+       *  It's also required, and as you can see it supports multi-line comments!
+       */
       id: PropTypes.number.isRequired,
       /**
-     *  A simple non-required function
-     */
+       *  A simple non-required function
+       */
       func: PropTypes.func,
       /**
-     * An `arrayOf` shape
-     */
+       * An `arrayOf` shape
+       */
       arr: PropTypes.arrayOf(
         PropTypes.shape({
           /**
-       * 5-level deep propType definition and still works.
-       */
+           * 5-level deep propType definition and still works.
+           */
           index: PropTypes.number.isRequired,
         })
       ),
