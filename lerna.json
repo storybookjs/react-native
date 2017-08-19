@@ -3,6 +3,7 @@
   "commands": {
     "bootstrap": {
       "ignore": [
+        "crna-kitchen-sink",
         "test-cra",
         "react-native-vanilla"
       ]
@@ -10,9 +11,10 @@
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
+        "crna-kitchen-sink",
         "test-cra",
         "react-native-vanilla",
-        "@storybook/components"
+        "vue-example"
       ]
     }
   },
@@ -23,5 +25,5 @@
     "examples/*"
   ],
   "concurrency": 1,
-  "version": "3.1.9"
+  "version": "3.2.5"
 }
