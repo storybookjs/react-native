@@ -88,18 +88,22 @@
     "url": "https://opencollective.com/storybook"
   },
   "lint-staged": {
-    "*.js": [
-      "npm run lint:js -- --fix",
-      "git add"
-    ],
-    "*.json": [
-      "npm run lint:js -- --fix",
-      "git add"
-    ],
-    "*.md": [
-      "npm run lint:md -- -o",
-      "git add"
-    ]
+    "linters": {
+      "*.js": [
+        "npm run lint:js -- --fix",
+        "git add"
+      ],
+      "*.json": [
+        "npm run lint:js -- --fix",
+        "git add"
+      ],
+      "*.md": [
+        "npm run lint:md -- -o",
+        "git add"
+      ]
+    },
+    "verbose": true,
+    "concurrent": false
   },
   "pr-log": {
     "skipLabels": [
