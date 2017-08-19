@@ -19,7 +19,7 @@ program
   .option('--react-native-vanilla', 'Bootstrap examples/react-native-vanilla')
   .parse(process.argv);
 
-const todo = {
+const bootstrapOptions = {
   core: {
     value: false,
     name: `Core & Examples ${chalk.gray('(core)')}`,
@@ -28,6 +28,11 @@ const todo = {
   docs: {
     value: false,
     name: `Documentation ${chalk.gray('(docs)')}`,
+    default: false,
+  },
+  'build-packs': {
+    value: false,
+    name: `Build tarballs of packages ${chalk.gray('(build-packs)')}`,
     default: false,
   },
   'test-cra': {
@@ -42,27 +47,33 @@ const todo = {
   },
 };
 
-Object.keys(todo).forEach(key => {
-  todo[key].value = program[key] || program.all;
+Object.keys(bootstrapOptions).forEach(key => {
+  bootstrapOptions[key].value = program[key] || program.all;
 });
 
 let selection;
-if (!Object.keys(todo).map(key => todo[key].value).filter(Boolean).length) {
+if (!Object.keys(bootstrapOptions).map(key => bootstrapOptions[key].value).filter(Boolean).length) {
   selection = inquirer
     .prompt([
       {
         type: 'checkbox',
         message: 'Select which packages to bootstrap',
         name: 'todo',
-        choices: Object.keys(todo).map(key => ({
-          name: todo[key].name,
-          checked: todo[key].default,
+        choices: Object.keys(bootstrapOptions).map(key => ({
+          name: bootstrapOptions[key].name,
+          checked: bootstrapOptions[key].default,
         })),
       },
     ])
-    .then(answers => answers.todo.map(name => Object.keys(todo).find(i => todo[i].name === name)));
+    .then(answers =>
+      answers.todo.map(name =>
+        Object.keys(bootstrapOptions).find(i => bootstrapOptions[i].name === name)
+      )
+    );
 } else {
-  selection = Promise.resolve(Object.keys(todo).filter(key => todo[key].value === true));
+  selection = Promise.resolve(
+    Object.keys(bootstrapOptions).filter(key => bootstrapOptions[key].value === true)
+  );
 }
 
 selection.then(list => {
@@ -71,7 +82,7 @@ selection.then(list => {
   } else {
     list.forEach(key => {
       if (list.length > 1) {
-        log.info(prefix, `Bootstrapping: ${todo[key].name}`);
+        log.info(prefix, `Bootstrapping: ${bootstrapOptions[key].name}`);
       }
       spawn('yarn', [`bootstrap:${key}`, '-s'], {
         shell: true,
