@@ -5,74 +5,126 @@ import childProcess from 'child_process';
 import chalk from 'chalk';
 import log from 'npmlog';
 
+const { lstatSync, readdirSync } = require('fs');
+const { join } = require('path');
+
+const isTgz = source => lstatSync(source).isFile() && source.match(/.tgz$/);
+const getDirectories = source => readdirSync(source).map(name => join(source, name)).filter(isTgz);
+
 log.heading = 'storybook';
 const prefix = 'bootstrap';
 
-const spawn = childProcess.spawnSync;
+const spawn = command =>
+  childProcess.spawnSync(`${command}`, {
+    shell: true,
+    stdio: 'inherit',
+  });
 
-program
+const main = program
   .version('3.0.0')
-  .option('--all', 'Run all without asking')
-  .option('--core', 'Bootstrap core')
-  .option('--docs', 'Bootstrap docs')
-  .option('--test-cra', 'Bootstrap examples/test-cra')
-  .option('--react-native-vanilla', 'Bootstrap examples/react-native-vanilla')
-  .parse(process.argv);
+  .option('--all', `Bootstrap everything ${chalk.gray('(all)')}`);
 
-const bootstrapOptions = {
-  core: {
-    value: false,
+const createTask = ({ defaultValue, option, name, check = () => true, command, pre = [] }) => ({
+  value: false,
+  defaultValue: defaultValue || false,
+  option: option || undefined,
+  name: name || 'unnamed task',
+  check: check || (() => true),
+  command: () => {
+    // run all pre tasks
+    // eslint-disable-next-line no-use-before-define
+    pre.map(key => tasks[key]).forEach(task => task.check() || task.command());
+
+    log.info(prefix, name);
+    command();
+  },
+});
+
+const tasks = {
+  reset: createTask({
+    name: `Clean and re-install root dependencies ${chalk.gray('(reset)')}`,
+    defaultValue: true,
+    option: '--reset',
+    command: () => {
+      log.info(prefix, 'git clean');
+      spawn('git clean -fdx');
+      log.info(prefix, 'yarn install');
+      spawn('yarn install --no-lockfile');
+    },
+  }),
+  core: createTask({
     name: `Core & Examples ${chalk.gray('(core)')}`,
-    default: true,
-  },
-  docs: {
-    value: false,
+    defaultValue: true,
+    option: '--core',
+    command: () => {
+      spawn('yarn bootstrap:core');
+    },
+  }),
+  docs: createTask({
     name: `Documentation ${chalk.gray('(docs)')}`,
-    default: false,
-  },
-  'build-packs': {
-    value: false,
+    defaultValue: false,
+    option: '--docs',
+    command: () => {
+      spawn('yarn bootstrap:docs');
+    },
+  }),
+  packs: createTask({
     name: `Build tarballs of packages ${chalk.gray('(build-packs)')}`,
-    default: false,
-  },
-  'test-cra': {
-    value: false,
+    defaultValue: true,
+    option: '--packs',
+    command: () => {
+      spawn('yarn build-packs');
+    },
+    check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
+  }),
+  'test-cra': createTask({
     name: `Realistic installed example ${chalk.gray('(test-cra)')}`,
-    default: false,
-  },
-  'react-native-vanilla': {
-    value: false,
+    defaultValue: false,
+    option: '--test',
+    pre: ['packs'],
+    command: () => {
+      spawn('yarn bootstrap:test-cra');
+    },
+  }),
+  'react-native-vanilla': createTask({
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
-    default: false,
-  },
+    defaultValue: false,
+    option: '--reactnative',
+    pre: ['packs'],
+    command: () => {
+      spawn('yarn bootstrap:react-native-vanilla');
+    },
+  }),
 };
 
-Object.keys(bootstrapOptions).forEach(key => {
-  bootstrapOptions[key].value = program[key] || program.all;
+Object.keys(tasks)
+  .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
+  .parse(process.argv);
+
+Object.keys(tasks).forEach(key => {
+  tasks[key].value = program[tasks[key].option.replace('--', '')] || program.all;
 });
 
 let selection;
-if (!Object.keys(bootstrapOptions).map(key => bootstrapOptions[key].value).filter(Boolean).length) {
+if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
   selection = inquirer
     .prompt([
       {
         type: 'checkbox',
         message: 'Select which packages to bootstrap',
         name: 'todo',
-        choices: Object.keys(bootstrapOptions).map(key => ({
-          name: bootstrapOptions[key].name,
-          checked: bootstrapOptions[key].default,
+        choices: Object.keys(tasks).map(key => ({
+          name: tasks[key].name,
+          checked: tasks[key].defaultValue,
         })),
       },
     ])
     .then(answers =>
-      answers.todo.map(name =>
-        Object.keys(bootstrapOptions).find(i => bootstrapOptions[i].name === name)
-      )
+      answers.todo.map(name => tasks[Object.keys(tasks).find(i => tasks[i].name === name)])
     );
 } else {
   selection = Promise.resolve(
-    Object.keys(bootstrapOptions).filter(key => bootstrapOptions[key].value === true)
+    Object.keys(tasks).map(key => tasks[key]).filter(item => item.value === true)
   );
 }
 
@@ -81,13 +133,13 @@ selection.then(list => {
     log.warn(prefix, 'Nothing to bootstrap');
   } else {
     list.forEach(key => {
-      if (list.length > 1) {
-        log.info(prefix, `Bootstrapping: ${bootstrapOptions[key].name}`);
-      }
-      spawn('yarn', [`bootstrap:${key}`, '-s'], {
-        shell: true,
-        stdio: 'inherit',
-      });
+      key.command();
     });
+    process.stdout.write('\x07');
+    try {
+      spawn('say "Bootstrapping sequence complete"');
+    } catch (e) {
+      // discard error
+    }
   }
 });
