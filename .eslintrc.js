@@ -33,7 +33,8 @@ module.exports = {
     'space-before-function-paren': ignore,
     'import/no-unresolved': warn,
     'import/extensions': [
-      error,
+      // because of highlight.js and fuse.js
+      warn,
       {
         js: 'never',
         json: 'always',
