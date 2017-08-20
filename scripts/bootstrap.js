@@ -1,9 +1,9 @@
-#!/usr/bin/env babel-node
-import inquirer from 'inquirer';
-import program from 'commander';
-import childProcess from 'child_process';
-import chalk from 'chalk';
-import log from 'npmlog';
+#!/usr/bin/env node
+const inquirer = require('inquirer');
+const program = require('commander');
+const childProcess = require('child_process');
+const chalk = require('chalk');
+const log = require('npmlog');
 
 const { lstatSync, readdirSync } = require('fs');
 const { join } = require('path');
@@ -33,7 +33,11 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
   command: () => {
     // run all pre tasks
     // eslint-disable-next-line no-use-before-define
-    pre.map(key => tasks[key]).forEach(task => task.check() || task.command());
+    pre.map(key => tasks[key]).forEach(task => {
+      if (!task.check()) {
+        task.command();
+      }
+    });
 
     log.info(prefix, name);
     command();
@@ -42,8 +46,8 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
 
 const tasks = {
   reset: createTask({
-    name: `Clean and re-install root dependencies ${chalk.gray('(reset)')}`,
-    defaultValue: true,
+    name: `Clean and re-install root dependencies ${chalk.red('(reset)')}`,
+    defaultValue: false,
     option: '--reset',
     command: () => {
       log.info(prefix, 'git clean');
@@ -70,7 +74,7 @@ const tasks = {
   }),
   packs: createTask({
     name: `Build tarballs of packages ${chalk.gray('(build-packs)')}`,
-    defaultValue: true,
+    defaultValue: false,
     option: '--packs',
     command: () => {
       spawn('yarn build-packs');
