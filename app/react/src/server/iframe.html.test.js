@@ -18,4 +18,14 @@ describe('server.urlsFromAssets', () => {
       css: ['static/preview.y.css'],
     });
   });
+
+  it('should not return non-js or non-css assets', () => {
+    const fixture = {
+      'some-thing.svg': 'some-thing.svg',
+    };
+    expect(urlsFromAssets(fixture)).toEqual({
+      js: [],
+      css: [],
+    });
+  });
 });

@@ -10,7 +10,9 @@
 Storybook Centered Decorator can be used to center components inside the preview in [Storybook](https://storybook.js.org).
 
 This addon works with Storybook for:
-[React](https://github.com/storybooks/storybook/tree/master/app/react).
+
+-   [React](https://github.com/storybooks/storybook/tree/master/app/react)
+-   [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
 
 ### Usage
 
@@ -20,7 +22,9 @@ npm install @storybook/addon-centered --save-dev
 
 #### As a decorator
 
-You can set the decorator locally:
+You can set the decorator locally.
+
+exampwle for React:
 
 ```js
 import { storiesOf } from '@storybook/react';
@@ -34,11 +38,45 @@ storiesOf('MyComponent', module)
   .add('with some props', () => (<MyComponent text="The Comp"/>));
 ```
 
-Or you can also add this decorator globally:
+example for Vue:
+
+```js
+import { storiesOf } from '@storybook/vue';
+import centered from '@storybook/addon-centered';
+
+import MyComponent from '../Component.vue';
+storiesOf('MyComponent', module)
+  .addDecorator(centered)
+  .add('without props', () => ({
+    components: { MyComponent },
+    template: '<my-component />'
+  })
+  .add('with some props', () => ({
+    components: { MyComponent },
+    template: '<my-component text="The Comp"/>'
+  });
+```
+
+Also, you can also add this decorator globally
+
+example for React:
 
 ```js
 import { configure, addDecorator } from '@storybook/react';
-import centered from '@storybook/react-storybook-decorator-centered';
+import centered from '@storybook/addon-centered';
+
+addDecorator(centered);
+
+configure(function () {
+  //...
+}, module);
+```
+
+example for Vue:
+
+```js
+import { configure, addDecorator } from '@storybook/vue';
+import centered from '@storybook/addon-centered';
 
 addDecorator(centered);
 
