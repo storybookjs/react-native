@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'using-addons'
-
-## title: 'Using Addons'
+title: 'Using Addons'
+---
 
 Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybooks/storybook/tree/master/addons/actions) and [links](https://github.com/storybooks/storybook/tree/master/addons/links). But it's easy to use any third party addons distributed via NPM.
 

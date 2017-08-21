@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'custom-webpack-config'
-
-## title: 'Custom Webpack Config'
+title: 'Custom Webpack Config'
+---
 
 ## Default mode
 

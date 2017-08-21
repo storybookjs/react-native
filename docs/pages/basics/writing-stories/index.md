@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'writing-stories'
-
-## title: 'Writing Stories'
+title: 'Writing Stories'
+---
 
 Storybook is all about writing stories. Usually a story contains a single state of one of your components. That's like a visual test case.
 

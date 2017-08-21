@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'slow-start-guide'
-
-## title: 'Slow start guide'
+title: 'Slow start guide'
+---
 
 Storybook supports multiple UI libraries, the manual setup for each is different:
 
