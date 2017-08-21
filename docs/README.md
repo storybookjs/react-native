@@ -5,9 +5,9 @@ This is the source for [storybook.js.org](https://storybook.js.org). It document
 ### Usage
 
 ```sh
-npm i
-npm run develop
-npm run storybook
+yarn install
+yarn run develop
+yarn run storybook
 ```
 
 ### Edit Documentation

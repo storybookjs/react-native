@@ -11,10 +11,10 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "global": "^4.3.2",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "global": "4.3.2",
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
@@ -27,7 +27,7 @@
     "@storybook/react": "file:../../packs/storybook-react.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "react-scripts": "1.0.2",
-    "react-test-renderer": "^15.4.2"
+    "react-test-renderer": "15.4.2"
   },
   "private": true
 }
