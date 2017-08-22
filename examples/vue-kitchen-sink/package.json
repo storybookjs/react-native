@@ -7,6 +7,7 @@
     "@storybook/addon-actions": "^3.2.0",
     "@storybook/addon-links": "^3.2.0",
     "@storybook/addons": "^3.2.0",
+    "@storybook/addon-centered": "^3.2.1",
     "@storybook/addon-notes": "^3.2.0",
     "@storybook/addon-knobs": "^3.2.0",
     "babel-core": "^6.25.0",
