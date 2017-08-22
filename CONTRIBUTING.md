@@ -41,7 +41,7 @@ To test your project against the current latest version of storybook, you can cl
 
 The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
-A good way to do that is using the example `test-cra` app embedded in this repository:
+A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
 
 ```bash
 # Download and build this repository:
@@ -50,7 +50,7 @@ cd storybook
 npm install
 npm run bootstrap
 
-cd examples/test-cra
+cd examples/cra-kitchen-sink
 
 # make changes to try and reproduce the problem, such as adding components + stories
 npm start storybook
