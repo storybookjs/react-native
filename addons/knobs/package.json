@@ -38,7 +38,7 @@
     "style-loader": "^0.17.0",
     "typescript": "^2.2.2",
     "typescript-definition-tester": "^0.0.5",
-    "vue": "^2.4.1"
+    "vue": "^2.4.2"
   },
   "peerDependencies": {
     "react": "*",
