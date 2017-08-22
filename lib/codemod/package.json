@@ -1,6 +1,6 @@
 {
   "name": "@storybook/codemod",
-  "version": "3.2.5",
+  "version": "3.2.6-alpha.0",
   "description": "A collection of codemod scripts written with JSCodeshift",
   "license": "MIT",
   "main": "dist/index.js",
