@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.2.6-alpha.0",
+  "version": "3.2.6",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6-alpha.0",
+    "@storybook/addons": "^3.2.6",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",

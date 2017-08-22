@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "3.2.6-alpha.0",
+  "version": "3.2.6",
   "description": "Storybook decorator to center components",
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",

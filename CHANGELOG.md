@@ -1,6 +1,6 @@
-# Next
+# 3.2.6
 
-2017-August-21
+2017-August-22
 
 #### Features
 
@@ -32,7 +32,7 @@
 
 -   Switch to babel preset env + async/await/generator support [#1668](https://github.com/storybooks/storybook/pull/1668)
 -   Upgrade react-native-compat to avoid PropTypes warnings [#1673](https://github.com/storybooks/storybook/pull/1673)
--   Change React.PropTypes to prop-types [#1674](https://github.com/storybooks/storybook/pull/1674)
+-   Change React.PropTypes to prop-types [#1674](https://github.com/storybooks/storybook/pull/1674) [#1710](https://github.com/storybooks/storybook/pull/1710)
 
 # 3.2.5
 

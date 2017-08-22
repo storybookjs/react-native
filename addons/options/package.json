@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "3.2.6-alpha.0",
+  "version": "3.2.6",
   "description": "Options addon for storybook",
   "keywords": [
     "storybook"
@@ -20,7 +20,7 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6-alpha.0"
+    "@storybook/addons": "^3.2.6"
   },
   "devDependencies": {
     "react": "^15.6.1",
