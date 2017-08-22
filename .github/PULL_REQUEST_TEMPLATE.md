@@ -2,11 +2,7 @@ Issue:
 
 ## What I did
 
-
-
 ## How to test
-
-
 
 Is this testable with jest or storyshots?
 

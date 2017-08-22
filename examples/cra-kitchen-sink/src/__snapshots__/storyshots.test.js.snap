@@ -345,21 +345,6 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                 </tr>
                 <tr>
                   <td>
-                    enm
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    -
-                  </td>
-                  <td />
-                </tr>
-                <tr>
-                  <td>
                     label
                   </td>
                   <td>
@@ -367,21 +352,6 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                   </td>
                   <td>
                     yes
-                  </td>
-                  <td>
-                    -
-                  </td>
-                  <td />
-                </tr>
-                <tr>
-                  <td>
-                    msg
-                  </td>
-                  <td>
-                    other
-                  </td>
-                  <td>
-                    no
                   </td>
                   <td>
                     -
@@ -431,6 +401,36 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                 <tr>
                   <td>
                     two
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    msg
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    -
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    enm
                   </td>
                   <td>
                     other
@@ -1766,31 +1766,6 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td>
-                    age
-                  </td>
-                  <td>
-                    number
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    <span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#a11",
-                          }
-                        }
-                      >
-                        0
-                      </span>
-                    </span>
-                  </td>
-                  <td />
-                </tr>
-                <tr>
-                  <td>
                     children
                   </td>
                   <td>
@@ -1824,6 +1799,31 @@ exports[`Storyshots Button with new info 1`] = `
                         }
                       >
                         false
+                      </span>
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    age
+                  </td>
+                  <td>
+                    number
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#a11",
+                          }
+                        }
+                      >
+                        0
                       </span>
                     </span>
                   </td>
@@ -2320,31 +2320,6 @@ exports[`Storyshots Button with some info 1`] = `
               <tbody>
                 <tr>
                   <td>
-                    age
-                  </td>
-                  <td>
-                    number
-                  </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
-                    <span>
-                      <span
-                        style={
-                          Object {
-                            "color": "#a11",
-                          }
-                        }
-                      >
-                        0
-                      </span>
-                    </span>
-                  </td>
-                  <td />
-                </tr>
-                <tr>
-                  <td>
                     children
                   </td>
                   <td>
@@ -2378,6 +2353,31 @@ exports[`Storyshots Button with some info 1`] = `
                         }
                       >
                         false
+                      </span>
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    age
+                  </td>
+                  <td>
+                    number
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#a11",
+                          }
+                        }
+                      >
+                        0
                       </span>
                     </span>
                   </td>

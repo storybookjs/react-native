@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
