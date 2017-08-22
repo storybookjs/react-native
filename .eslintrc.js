@@ -33,6 +33,7 @@ module.exports = {
     'space-before-function-paren': ignore,
     'import/no-unresolved': warn,
     'import/extensions': [
+      // because of highlight.js and fuse.js
       warn,
       {
         js: 'never',
@@ -40,9 +41,12 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': [
-      warn,
+      error,
       {
         devDependencies: [
+          'examples/**',
+          '**/example/**',
+          '*.js',
           '**/*.test.js',
           '**/scripts/*.js',
           '**/stories/*.js',

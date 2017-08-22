@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.2.5",
+  "version": "3.2.6",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -14,16 +14,16 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@hypnosphi/fuse.js": "^3.0.9",
+    "@storybook/components": "^3.2.6",
     "@storybook/react-fuzzy": "^0.4.0",
-    "@storybook/components": "^3.2.4",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
-    "@hypnosphi/fuse.js": "^3.0.9",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.8",
-    "lodash.debounce": "4.0.8",
+    "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
     "mantra-core": "^1.7.0",
