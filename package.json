@@ -10,7 +10,6 @@
     "bootstrap:docs": "cd docs && yarn install",
     "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- npm install",
     "bootstrap:crna-kitchen-sink": "lerna exec --scope crna-kitchen-sink -- npm install",
-    "bootstrap:test-cra": "lerna exec --scope test-cra -- npm install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
     "start": "lerna run --stream --scope cra-kitchen-sink storybook",
     "changelog": "pr-log --sloppy",
