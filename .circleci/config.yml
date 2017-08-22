@@ -72,28 +72,6 @@ jobs:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink && npm run build-storybook
-  example-test-cra:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
-      - run:
-          name: "Install root dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            npm run bootstrap
-            npm run build-packs
-            npm run bootstrap:test-cra
-      - run:
-          name: "Build test-cra"
-          command: |
-            cd examples/test-cra && npm run build-storybook
   example-react-native:
     <<: *defaults
     steps:
@@ -189,7 +167,6 @@ workflows:
       - validate
       - build
       - example-kitchen-sinks
-      - example-test-cra
       - example-react-native
       - docs
       - lint

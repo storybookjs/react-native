@@ -130,8 +130,6 @@ export default function PropTable(props) {
     return <small>No propTypes defined!</small>;
   }
 
-  array.sort((a, b) => a.property > b.property);
-
   const propValProps = {
     maxPropObjectKeys,
     maxPropArrayLength,
