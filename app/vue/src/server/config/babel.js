@@ -3,7 +3,6 @@ const findCacheDir = require('find-cache-dir');
 module.exports = {
   // Don't try to find .babelrc because we want to force this configuration.
   babelrc: false,
-  cacheDirectory: findCacheDir({ name: 'react-storybook' }),
   presets: [
     [
       require.resolve('babel-preset-env'),
