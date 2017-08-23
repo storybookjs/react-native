@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",

@@ -1,3 +1,16 @@
+# 3.2.8
+
+2017-August-23
+
+#### Bug Fixes
+
+-   Fix storyshots with new babel config [#1721](https://github.com/storybooks/storybook/pull/1721)
+-   Fix CLI generators export [#1722](https://github.com/storybooks/storybook/pull/1722)
+
+#### Documentation
+
+-   Add caveat about knobs date defaultValue [#1719](https://github.com/storybooks/storybook/pull/1719)
+
 # 3.2.7
 
 2017-August-23
