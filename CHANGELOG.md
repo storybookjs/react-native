@@ -1,3 +1,19 @@
+# 3.2.7
+
+2017-August-23
+
+#### Bug Fixes
+
+-   Fix storyshots by moving cacheDirectory to webpack config [#1713](https://github.com/storybooks/storybook/pull/1713)
+-   Revert "Improved error checking in global addDecorator" [#1716](https://github.com/storybooks/storybook/pull/1716)
+-   Stricter linting rules for imports [#1676](https://github.com/storybooks/storybook/pull/1676)
+-   Addon Info: Remove broken prop type sort (keep defined order) [#1711](https://github.com/storybooks/storybook/pull/1711)
+
+#### Maintenance
+
+-   Enable eslint for vue-related stuff [#1715](https://github.com/storybooks/storybook/pull/1715)
+-   CLI: ensure explicit dependency on `prop-types` for RN [#1714](https://github.com/storybooks/storybook/pull/1714)
+
 # 3.2.6
 
 2017-August-22
