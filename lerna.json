@@ -4,7 +4,6 @@
     "bootstrap": {
       "ignore": [
         "crna-kitchen-sink",
-        "test-cra",
         "react-native-vanilla"
       ]
     },
@@ -12,7 +11,6 @@
       "ignore": [
         "cra-kitchen-sink",
         "crna-kitchen-sink",
-        "test-cra",
         "react-native-vanilla",
         "vue-example"
       ]
@@ -25,5 +23,5 @@
     "examples/*"
   ],
   "concurrency": 1,
-  "version": "3.2.5"
+  "version": "3.2.6"
 }

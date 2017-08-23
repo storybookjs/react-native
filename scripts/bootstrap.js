@@ -81,15 +81,6 @@ const tasks = {
     },
     check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
   }),
-  'test-cra': createTask({
-    name: `Realistic installed example ${chalk.gray('(test-cra)')}`,
-    defaultValue: false,
-    option: '--test',
-    pre: ['packs'],
-    command: () => {
-      spawn('yarn bootstrap:test-cra');
-    },
-  }),
   'react-native-vanilla': createTask({
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
     defaultValue: false,
