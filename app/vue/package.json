@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
