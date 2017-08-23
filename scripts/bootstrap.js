@@ -13,6 +13,7 @@ const getDirectories = source => readdirSync(source).map(name => join(source, na
 
 log.heading = 'storybook';
 const prefix = 'bootstrap';
+log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
 const spawn = command =>
   childProcess.spawnSync(`${command}`, {
@@ -123,27 +124,54 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
         })),
       },
     ])
-    .then(answers =>
-      answers.todo.map(name => tasks[Object.keys(tasks).find(i => tasks[i].name === name)])
-    );
+    .then(({ todo }) =>
+      todo.map(name => tasks[Object.keys(tasks).find(i => tasks[i].name === name)])
+    )
+    .then(list => {
+      if (list.find(i => i === tasks.reset)) {
+        return inquirer
+          .prompt([
+            {
+              type: 'confirm',
+              message: `${chalk.red('DESTRUCTIVE')}, ${chalk.cyan(
+                'Are you sure?'
+              )} ${chalk.underline('files will get deleted')}`,
+              name: 'sure',
+            },
+          ])
+          .then(({ sure }) => {
+            if (sure) {
+              return list;
+            }
+            throw new Error('problem is between keyboard and chair');
+          });
+      }
+      return list;
+    });
 } else {
   selection = Promise.resolve(
     Object.keys(tasks).map(key => tasks[key]).filter(item => item.value === true)
   );
 }
 
-selection.then(list => {
-  if (list.length === 0) {
-    log.warn(prefix, 'Nothing to bootstrap');
-  } else {
-    list.forEach(key => {
-      key.command();
-    });
-    process.stdout.write('\x07');
-    try {
-      spawn('say "Bootstrapping sequence complete"');
-    } catch (e) {
-      // discard error
+selection
+  .then(list => {
+    if (list.length === 0) {
+      log.warn(prefix, 'Nothing to bootstrap');
+    } else {
+      list.forEach(key => {
+        key.command();
+      });
+      process.stdout.write('\x07');
+      try {
+        spawn('say "Bootstrapping sequence complete"');
+      } catch (e) {
+        // discard error
+      }
     }
-  }
-});
+  })
+  .catch(e => {
+    log.aborted(prefix, chalk.red(e.message));
+    log.silly(prefix, e);
+    return true;
+  });
