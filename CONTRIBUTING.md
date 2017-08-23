@@ -26,7 +26,7 @@ To test your project against the current latest version of storybook, you can cl
 git clone https://github.com/storybooks/storybook.git
 cd storybook
 npm install
-npm run bootstrap
+npm run bootstrap -- --core
 ```
 
 2.  Link `storybook` and any other required dependencies:
@@ -52,7 +52,7 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 git clone https://github.com/storybooks/storybook.git
 cd storybook
 npm install
-npm run bootstrap
+npm run bootstrap -- --core
 
 cd examples/cra-kitchen-sink
 
