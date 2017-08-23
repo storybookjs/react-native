@@ -1,5 +1,7 @@
 import url from 'url';
 
+const getExtensionForFilename = filename => /.+\.(\w+)$/.exec(filename)[1];
+
 // assets.preview will be:
 // - undefined
 // - string e.g. 'static/preview.9adbb5ef965106be1cc3.bundle.js'
@@ -21,7 +23,6 @@ export const urlsFromAssets = assets => {
     css: [],
   };
 
-  const re = /.+\.(\w+)$/;
   Object.keys(assets)
     // Don't load the manager script in the iframe
     .filter(key => key !== 'manager')
@@ -30,9 +31,16 @@ export const urlsFromAssets = assets => {
       if (!Array.isArray(assetList)) {
         assetList = [assetList];
       }
-      assetList.filter(assetUrl => re.exec(assetUrl)[1] !== 'map').forEach(assetUrl => {
-        urls[re.exec(assetUrl)[1]].push(assetUrl);
-      });
+      assetList
+        .filter(assetUrl => {
+          const extension = getExtensionForFilename(assetUrl);
+          const isMap = extension === 'map';
+          const isSupportedExtension = Boolean(urls[extension]);
+          return isSupportedExtension && !isMap;
+        })
+        .forEach(assetUrl => {
+          urls[getExtensionForFilename(assetUrl)].push(assetUrl);
+        });
     });
 
   return urls;
@@ -54,6 +62,7 @@ export default function({ assets, publicPath, headHtml }) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base target="_parent">
         <script>
           if (window.parent !== window) {
             window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;

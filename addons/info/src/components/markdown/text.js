@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { baseFonts } from '../theme';
+import { baseFonts } from '@storybook/components';
 
 const defaultProps = { children: null };
 const propTypes = { children: PropTypes.node };

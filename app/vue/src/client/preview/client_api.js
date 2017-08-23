@@ -54,6 +54,13 @@ export default class ClientApi {
       };
     });
 
+    const createWrapperComponent = Target => ({
+      functional: true,
+      render (h, c) {
+        return h(Target, c.data, c.children);
+      }
+    });
+
     api.add = (storyName, getStory) => {
       if (typeof storyName !== 'string') {
         throw new Error(`Invalid or missing storyName provided for a "${kind}" story.`);
@@ -69,7 +76,13 @@ export default class ClientApi {
       const decorators = [...localDecorators, ...this._globalDecorators];
 
       const getDecoratedStory = decorators.reduce(
-        (decorated, decorator) => context => decorator(() => decorated(context), context),
+        (decorated, decorator) => context => {
+          const story = () => decorated(context);
+          const decoratedStory = decorator(story, context);
+          decoratedStory.components = decoratedStory.components || {};
+          decoratedStory.components.story = createWrapperComponent(story());
+          return decoratedStory
+        },
         getStory
       );
 

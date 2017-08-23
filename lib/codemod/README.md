@@ -38,7 +38,7 @@ Explanation:
 
 ## Transforms
 
-### add-organisation-to-package-name
+### update-organisation-name
 
 Updates package names in imports to migrate to the new package names of storybook.
 
@@ -60,4 +60,59 @@ Becomes
 ```js
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
+```
+
+### update-addon-info
+
+Replaces the Info addon's deprecated `addWithInfo` API with the standard `withInfo` API.
+
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-addon-info.js . --ignore-pattern "node_modules|dist"
+```
+
+Simple example:
+
+```js
+storiesOf('Button').addWithInfo(
+  'simple usage',
+  'This is the basic usage of the button.',
+  () => (
+    <Button label="The Button" />
+  )
+)
+```
+
+Becomes
+
+```js
+storiesOf('Button').add('simple usage', withInfo(
+  'This is the basic usage of the button.'
+)(() => (
+  <Button label="The Button" />
+)))
+```
+
+With options example:
+
+```js
+storiesOf('Button').addWithInfo(
+  'simple usage (disable source)',
+  'This is the basic usage of the button.',
+  () => (
+    <Button label="The Button" />
+  ),
+  { source: false, inline: true }
+)
+```
+
+Becomes
+
+```js
+storiesOf('Button').add('simple usage (disable source)', withInfo({
+  text: 'This is the basic usage of the button.',
+  source: false,
+  inline: true
+})(() => (
+  <Button label="The Button" />
+)))
 ```

@@ -18,7 +18,7 @@
 <style>
   .button-styles {
     border: 1px solid #eee;
-    border-radiuas: 3px;
+    border-radius: 3px;
     background-color: #FFFFFF;
     cursor: pointer;
     font-size: 15pt;
