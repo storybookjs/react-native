@@ -12,7 +12,7 @@ const logger = console;
 // (inside working directory) if a config path is not provided.
 export default function(configType, baseConfig, configDir) {
   const config = baseConfig;
-  
+
   const babelConfig = loadBabelConfig(configDir);
   config.module.rules[0].query = {
     // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -21,7 +21,7 @@ export default function(configType, baseConfig, configDir) {
     cacheDirectory: findCacheDir({ name: 'react-storybook' }),
     ...babelConfig,
   };
-  
+
   // Check whether a config.js file exists inside the storybook
   // config directory and throw an error if it's not.
   const storybookConfigPath = path.resolve(configDir, 'config.js');
