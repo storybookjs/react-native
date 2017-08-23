@@ -133,9 +133,9 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
           .prompt([
             {
               type: 'confirm',
-              message: `${chalk.red('DESTRUCTIVE')}, ${chalk.cyan(
-                'Are you sure?'
-              )} ${chalk.underline('files will get deleted')}`,
+              message: `${chalk.red('DESTRUCTIVE')} files not present in git ${chalk.underline(
+                'will get deleted'
+              )}, except for .idea and .vscode, ${chalk.cyan('Continue?')}`,
               name: 'sure',
             },
           ])
