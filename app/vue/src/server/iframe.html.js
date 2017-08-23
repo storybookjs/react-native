@@ -31,19 +31,19 @@ const urlsFromAssets = assets => {
       if (typeof asset === 'string') {
         urls[getExtensionForFilename(asset)].push(asset);
       } else {
-      if (!Array.isArray(asset)) {
-        asset = [asset];
-      }
-      asset
-        .filter(assetUrl => {
-          const extension = getExtensionForFilename(assetUrl);
-          const isMap = extension === 'map';
-          const isSupportedExtension = Boolean(urls[extension]);
-          return isSupportedExtension && !isMap;
-        })
-        .forEach(assetUrl => {
-          urls[getExtensionForFilename(assetUrl)].push(assetUrl);
-        });
+        if (!Array.isArray(asset)) {
+          asset = [asset];
+        }
+        asset
+          .filter(assetUrl => {
+            const extension = getExtensionForFilename(assetUrl);
+            const isMap = extension === 'map';
+            const isSupportedExtension = Boolean(urls[extension]);
+            return isSupportedExtension && !isMap;
+          })
+          .forEach(assetUrl => {
+            urls[getExtensionForFilename(assetUrl)].push(assetUrl);
+          });
       }
     });
 
