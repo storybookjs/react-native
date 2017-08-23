@@ -181,7 +181,9 @@ describe('preview.client_api', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
       const localApi = api.storiesOf('none');
-      localApi.addDecorator((fn, { kind, story }) => ({ template: `<div>${kind}-${story}-${fn().template}</div>` }));
+      localApi.addDecorator((fn, { kind, story }) => ({
+        template: `<div>${kind}-${story}-${fn().template}</div>`,
+      }));
 
       localApi.add('storyName', () => ({ template: '<p>hello</p>' }));
 

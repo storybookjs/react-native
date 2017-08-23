@@ -57,6 +57,12 @@ griddle:
   source: https://github.com/GriddleGriddle/Griddle
   demo: https://griddlegriddle.github.io/Griddle/examples/controlling-griddle/
   site: https://griddlegriddle.github.io/Griddle/
+tachyons:
+  thumbnail: ./thumbnails/tachyons.png
+  title: Tachyons Components
+  description: A searchable directory of Tachyons Components
+  source: https://github.com/blairanderson/tachyonstemplates
+  demo: https://www.tachyonstemplates.com/components/
 appbase:
   thumbnail: ./thumbnails/appbase.jpg
   title: Appbase Maps
