@@ -5,7 +5,7 @@ module.exports = {
     [
       require.resolve('babel-preset-env'),
       {
-        modules: false,
+        modules: process.env.NODE_ENV === 'test' ? 'commonjs' : false,
       },
     ],
     require.resolve('babel-preset-react'),
