@@ -8,7 +8,7 @@ module.exports = {
         targets: {
           browsers: ['last 2 versions', 'safari >= 7'],
         },
-        modules: false,
+        modules: process.env.NODE_ENV === 'test' ? 'commonjs' : false,
       },
     ],
     require.resolve('babel-preset-stage-0'),
