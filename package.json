@@ -6,7 +6,8 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --concurrency 1 --npm-client=\"yarn\" --hoist && node ./scripts/hoist-internals.js",
+    "bootstrap": "./scripts/bootstrap.js",
+    "bootstrap:core": "lerna bootstrap --concurrency 1 --npm-client=\"yarn\" --hoist && node ./scripts/hoist-internals.js",
     "bootstrap:docs": "cd docs && yarn install",
     "bootstrap:react-native-vanilla": "lerna exec --scope react-native-vanilla -- npm install",
     "bootstrap:crna-kitchen-sink": "lerna exec --scope crna-kitchen-sink -- npm install",
@@ -22,7 +23,6 @@
     "docs:deploy:manual": "cd docs && npm run deploy:manual",
     "docs:dev": "cd docs && npm run dev",
     "github-release": "github-release-from-changelog",
-    "import-repo": "lerna import",
     "lint": "npm run lint:js . && npm run lint:md .",
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
@@ -41,6 +41,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.0.1",
     "codecov": "^2.2.0",
+    "commander": "^2.9.0",
     "danger": "^1.0.0",
     "enzyme": "^2.9.1",
     "eslint": "^4.3.0",
@@ -55,6 +56,7 @@
     "fs-extra": "^4.0.0",
     "gh-pages": "^1.0.0",
     "github-release-from-changelog": "^1.2.1",
+    "inquirer": "^3.1.0",
     "glob": "^7.1.2",
     "husky": "^0.14.3",
     "jest": "^20.0.4",
@@ -85,18 +87,22 @@
     "url": "https://opencollective.com/storybook"
   },
   "lint-staged": {
-    "*.js": [
-      "npm run lint:js -- --fix",
-      "git add"
-    ],
-    "*.json": [
-      "npm run lint:js -- --fix",
-      "git add"
-    ],
-    "*.md": [
-      "npm run lint:md -- -o",
-      "git add"
-    ]
+    "linters": {
+      "*.js": [
+        "npm run lint:js -- --fix",
+        "git add"
+      ],
+      "*.json": [
+        "npm run lint:js -- --fix",
+        "git add"
+      ],
+      "*.md": [
+        "npm run lint:md -- -o",
+        "git add"
+      ]
+    },
+    "verbose": true,
+    "concurrent": false
   },
   "pr-log": {
     "skipLabels": [
