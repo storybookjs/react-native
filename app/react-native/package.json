@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.2.6",
+  "version": "3.2.8",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -28,7 +28,7 @@
     "@storybook/addon-links": "^3.2.6",
     "@storybook/addons": "^3.2.6",
     "@storybook/channel-websocket": "^3.2.0",
-    "@storybook/ui": "^3.2.6",
+    "@storybook/ui": "^3.2.7",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",

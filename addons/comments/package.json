@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-comments",
-  "version": "3.2.6",
+  "version": "3.2.8",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
@@ -36,10 +36,10 @@
     "react-textarea-autosize": "^4.3.0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.5",
-    "@storybook/addon-actions": "^3.2.0",
     "@kadira/storybook-database-cloud": "*",
     "@kadira/storybook-deployer": "*",
+    "@storybook/addon-actions": "^3.2.0",
+    "@storybook/react": "^3.2.8",
     "git-url-parse": "^6.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

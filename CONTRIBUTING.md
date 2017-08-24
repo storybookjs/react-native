@@ -22,22 +22,24 @@ No software is bug free. So, if you got an issue, follow these steps:
 
 To test your project against the current latest version of storybook, you can clone the repository and link it with `yarn`. Try following these steps:
 
-1.  Download the latest version of this project, and build it
+1.  Download the latest version of this project, and build it:
 
+        ```sh
         git clone https://github.com/storybooks/storybook.git
         cd storybook
         yarn install
-        yarn run bootstrap
+        yarn run bootstrap -- --core
 
-2.  Link `storybook` and any other required dependencies
 
-        cd app/react
-        yarn link
+    2.  Link `storybook` and any other required dependencies:
 
-        cd <your-project>
-        yarn link @storybook/react
+            ```shcd app/react
+            yarn link
 
-        # repeat with whichever other parts of the monorepo you are using.
+            cd <your-project>
+            yarn link @storybook/react
+
+    # repeat with whichever other parts of the monorepo you are using.
 
 ### Reproductions
 
@@ -45,11 +47,11 @@ The best way to help figure out an issue you are having is to produce a minimal 
 
 A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
 
-```bash
+```sh
 # Download and build this repository:
 git clone https://github.com/storybooks/storybook.git
 cd storybook
-yarn install
+yarn install -- --core
 yarn run bootstrap
 
 # make changes to try and reproduce the problem, such as adding components + stories
@@ -115,15 +117,13 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 ### Closing issues
 
 -   Duplicate issues should be closed with a link to the original.
-
--   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, it is reasonable to wait 2 weeks before closing).
-
+-   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, 
+    it is reasonable to wait 2 weeks before closing).
 -   `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
-
--   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged, and closed when released or if the feature is deemed not appropriate.
-
--   `question / support`s should be closed when the question has been answered. If the questioner drops offline, a reasonable period to wait is two weeks.
-
+-   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged, 
+    and closed when released or if the feature is deemed not appropriate.
+-   `question / support`s should be closed when the question has been answered. 
+    If the questioner drops offline, a reasonable period to wait is two weeks.
 -   `discussion`s should be closed at a maintainer's discretion.
 
 ## Development Guide
@@ -133,9 +133,11 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
 
-    yarn run dev
+```sh
+yarn run dev
+```
 
-This will watch files and transpile.
+This will watch files and transpile in watch mode.
 
 ### Linking
 
@@ -194,7 +196,7 @@ git status
 git clean -fdx && yarn install
 
 # build all the packages
-yarn run bootstrap
+yarn run bootstrap -- --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.

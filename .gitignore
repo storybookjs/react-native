@@ -1,6 +1,7 @@
 node_modules
 *.log
 .idea
+.vscode
 npm-shrinkwrap.json
 dist
 .tern-port
