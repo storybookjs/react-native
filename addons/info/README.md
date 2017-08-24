@@ -78,8 +78,9 @@ import { setDefaults } from '@storybook/addon-info';
 
 // addon-info
 setDefaults({
-  inline: true,
-  maxPropsIntoLine: 1,
+  header: false, // Toggles display of header with component name and description
+  inline: true, // Displays info inline vs click button to view
+  maxPropsIntoLine: 1, // Max props to display per line in source code
   maxPropObjectKeys: 10,
   maxPropArrayLength: 10,
   maxPropStringLength: 100,
