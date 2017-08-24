@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.2.6",
+  "version": "3.2.7",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@hypnosphi/fuse.js": "^3.0.9",
-    "@storybook/components": "^3.2.6",
+    "@storybook/components": "^3.2.7",
     "@storybook/react-fuzzy": "^0.4.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
