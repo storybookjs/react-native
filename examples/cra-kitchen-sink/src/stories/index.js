@@ -27,6 +27,7 @@ import App from '../App';
 import Logger from './Logger';
 import Container from './Container';
 import DocgenButton from '../components/DocgenButton';
+import FlowTypeButton from '../components/FlowTypeButton';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -165,6 +166,13 @@ storiesOf('Button', module)
 
 storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () =>
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
+);
+
+storiesOf(
+  'AddonInfo.FlowTypeButton',
+  module
+).addWithInfo('FlowTypeButton', 'Some Description', () =>
+  <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
 );
 
 storiesOf('App', module).add('full app', () => <App />);

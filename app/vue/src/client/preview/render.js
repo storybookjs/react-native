@@ -1,12 +1,8 @@
+import { stripIndents } from 'common-tags';
 import Vue from 'vue';
+
 import ErrorDisplay from './ErrorDisplay.vue';
 import NoPreview from './NoPreview.vue';
-
-import { window } from 'global';
-import { stripIndents } from 'common-tags';
-
-// check whether we're running on node/browser
-const isBrowser = typeof window !== 'undefined';
 
 const logger = console;
 let previousKind = '';
@@ -20,9 +16,10 @@ function renderErrorDisplay(error) {
   err = new Vue({
     el: '#error-display',
     render(h) {
-      return h('div', { attrs: { id: 'error-display' } }, error
-        ? [h(ErrorDisplay, { props: { message: error.message, stack: error.stack } }) ]
-        : []
+      return h(
+        'div',
+        { attrs: { id: 'error-display' } },
+        error ? [h(ErrorDisplay, { props: { message: error.message, stack: error.stack } })] : []
       );
     },
   });
@@ -53,7 +50,7 @@ function renderRoot(options) {
 }
 
 export function renderMain(data, storyStore) {
-  if (storyStore.size() === 0) return null;
+  if (storyStore.size() === 0) return;
 
   const { selectedKind, selectedStory } = data;
 
@@ -87,13 +84,13 @@ export function renderMain(data, storyStore) {
         Use "() => ({ template: '<my-comp></my-comp>' })" or "() => ({ components: MyComp, template: '<my-comp></my-comp>' })" when defining the story.
       `,
     };
-    return renderError(error);
+    renderError(error);
   }
 
   renderRoot({
     el: '#root',
     render(h) {
-      return h('div', { attrs: { id: 'root' } }, [h(component)]);
+      return h('div', { attrs: { id: 'root' } }, [h(component)]);
     },
   });
 }

@@ -29,7 +29,6 @@ Then wrap your story with the `withInfo`, which is a function that takes either
 documentation text or an options object:
 
 ```js
-import { configure, setAddon } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Component', module)
@@ -46,7 +45,6 @@ storiesOf('Component', module)
 the info panel looks on a per-story basis:
 
 ```js
-import { configure, setAddon } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Component', module)
