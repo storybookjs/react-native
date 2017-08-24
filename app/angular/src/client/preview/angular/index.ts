@@ -10,8 +10,8 @@ const getComponent = ({ component, props = {} }) => {
   if (!component || typeof component !== 'function')
     throw new Error('No valid component provided');
 
-  const componentMeta = (<any>Reflect).getMetadata('annotations', component)[0];
-  const propsMeta = (<any>Reflect).getMetadata('propMetadata', component);
+  const componentMeta = component.__annotations__[0];
+  const propsMeta = component.__prop__metadata__ || {};
   return {
     component,
     props,
