@@ -6,8 +6,6 @@ addons/**/example/**
 app/**/demo/**
 docs/public
 
-vue
-
 *.bundle.js
 *.js.map
 
