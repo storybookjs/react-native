@@ -8,7 +8,6 @@ export default class ClientApi {
     this._storyStore = storyStore;
     this._addons = {};
     this._globalDecorators = [];
-    this._storiesAdded = false;
   }
 
   setAddon(addon) {
@@ -19,9 +18,6 @@ export default class ClientApi {
   }
 
   addDecorator(decorator) {
-    if (this._storiesAdded) {
-      throw new Error('Global decorators added after loading stories will not be applied');
-    }
     this._globalDecorators.push(decorator);
   }
 
@@ -62,8 +58,6 @@ export default class ClientApi {
     });
 
     api.add = (storyName, getStory) => {
-      this._storiesAdded = true;
-
       if (typeof storyName !== 'string') {
         throw new Error(`Invalid or missing storyName provided for a "${kind}" story.`);
       }

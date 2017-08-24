@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "3.2.6",
+  "version": "3.2.8",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
@@ -26,7 +26,7 @@
     "@storybook/addon-links": "^3.2.6",
     "@storybook/addons": "^3.2.6",
     "@storybook/channel-postmessage": "^3.2.0",
-    "@storybook/ui": "^3.2.6",
+    "@storybook/ui": "^3.2.7",
     "airbnb-js-shims": "^1.1.1",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
