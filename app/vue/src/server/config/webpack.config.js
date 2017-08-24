@@ -52,10 +52,10 @@ export default function() {
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
       alias: {
-        'vue$': require.resolve('vue/dist/vue.esm.js'),
-        'react$': require.resolve('react'),
+        vue$: require.resolve('vue/dist/vue.esm.js'),
+        react$: require.resolve('react'),
         'react-dom$': require.resolve('react-dom'),
-      }
+      },
     },
     performance: {
       hints: false,
