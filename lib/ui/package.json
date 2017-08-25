@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.1.6",
+  "version": "3.2.7",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -14,28 +14,32 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@hypnosphi/fuse.js": "^3.0.9",
+    "@storybook/components": "^3.2.7",
     "@storybook/react-fuzzy": "^0.4.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
-    "fuzzysearch": "^1.0.3",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.8",
+    "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
     "mantra-core": "^1.7.0",
     "podda": "^1.2.2",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "qs": "^6.4.0",
-    "react-inspector": "^2.0.0",
+    "react-icons": "^2.2.5",
+    "react-inspector": "^2.1.1",
     "react-komposer": "^2.0.0",
-    "react-modal": "^1.7.6",
-    "react-split-pane": "^0.1.63",
+    "react-modal": "^2.2.4",
+    "react-split-pane": "^0.1.65",
+    "react-treebeard": "^2.0.3",
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "enzyme": "^2.8.2"
+    "enzyme": "^2.9.1"
   },
   "peerDependencies": {
     "react": "*",

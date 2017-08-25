@@ -1,6 +1,7 @@
 node_modules
 *.log
 .idea
+.vscode
 npm-shrinkwrap.json
 dist
 .tern-port
@@ -16,3 +17,5 @@ yarn.lock
 docs/public
 packs/*.tgz
 package-lock.json
+.nvmrc
+storybook-static

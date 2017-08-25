@@ -1,0 +1,175 @@
+defaults: &defaults
+  working_directory: /tmp/storybook
+  docker:
+    - image: node:8
+
+version: 2
+dependencies:
+  pre:
+    - npm install -g npm
+jobs:
+  validate:
+    <<: *defaults
+    steps:
+      - run:
+          name: "Checking Versions"
+          command: |
+            node --version
+            npm --version
+            yarn --version
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - save_cache:
+          key: root-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - restore_cache:
+          keys:
+            - package-dependencies-{{ checksum "package.json" }}
+            - package-dependencies-
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap -- --all
+      - save_cache:
+          key: package-dependencies-{{ checksum "package.json" }}
+          paths:
+            - app/**/node_modules
+            - docs/**/node_modules
+            - examples/**/node_modules
+            - lib/**/node_modules
+  example-kitchen-sinks:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap -- --core
+      - run:
+          name: "Build react kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink && npm run build-storybook
+      - run:
+          name: "Build vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink && npm run build-storybook
+  example-react-native:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping packages"
+          command: |
+            npm run bootstrap -- --core --reactnative
+      - run:
+          name: "Running react-native"
+          command: |
+            echo "TODO"
+  docs:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap -- --docs
+      - run:
+          name: "Running docs"
+          command: |
+            npm run docs:build
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Linting"
+          command: |
+            npm run lint
+  unit-test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap -- --core --reactnative
+      - run:
+          name: "Unit testing"
+          command: |
+            npm run test -- --coverage -i
+            npm run coverage
+  deploy:
+    <<: *defaults
+    steps:
+      - run:
+          name: "Deploy"
+          command: |
+            echo "TODO"
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - validate
+      - build
+      - example-kitchen-sinks
+      - example-react-native
+      - docs
+      - lint
+      - unit-test
+      # - deploy:
+      #     type: approval
+      #     requires:
+      #       - lint
+      #       - unit-test
+      #       - docs

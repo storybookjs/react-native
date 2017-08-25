@@ -25,6 +25,13 @@ algolia:
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
+rebass:
+  thumbnail: ./thumbnails/rebass.png
+  title: Rebass
+  description: Functional React UI component library
+  demo: http://jxnblk.com/rebass/stories/
+  source: https://github.com/jxnblk/rebass
+  site: http://jxnblk.com/rebass
 coursera:
   thumbnail: ./thumbnails/coursera-ui.png
   title: Coursera
@@ -50,6 +57,12 @@ griddle:
   source: https://github.com/GriddleGriddle/Griddle
   demo: https://griddlegriddle.github.io/Griddle/examples/controlling-griddle/
   site: https://griddlegriddle.github.io/Griddle/
+tachyons:
+  thumbnail: ./thumbnails/tachyons.png
+  title: Tachyons Components
+  description: A searchable directory of Tachyons Components
+  source: https://github.com/blairanderson/tachyonstemplates
+  demo: https://www.tachyonstemplates.com/components/
 appbase:
   thumbnail: ./thumbnails/appbase.jpg
   title: Appbase Maps

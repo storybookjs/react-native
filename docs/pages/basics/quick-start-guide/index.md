@@ -3,12 +3,12 @@ id: 'quick-start-guide'
 title: 'Quick Start Guide'
 ---
 
-React Storybook is very easy to use. You can use it with any kind of React project.
+Storybook is very easy to use. You can use it with any kind of React or Vue project.
 Follow these steps to get started with Storybook.
 
 ```sh
+cd my-project-directory
 npm i -g @storybook/cli
-cd my-react-app
 getstorybook
 ```
 
@@ -22,4 +22,4 @@ Then you can access your storybook from the browser.
 
 * * *
 
-To learn more about what `getstorybook` command does, have a look at our [Slow Start Guide](/basics/slow-start-guide).
+To learn more about what `getstorybook` command does, have a look at our [Start Guide for React](/basics/guide-react/) or [Start Guide for Vue](/basics/guide-vue/).

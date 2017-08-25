@@ -2,6 +2,9 @@
 
 ## Table of contents
 
+-   [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
+    -   [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
+    -   [Updated Addons API](#updated-addons-api)
 -   [From version 3.0.x to 3.1.x](#from-version-30x-to-31x)
     -   [Moved TypeScript definitions](#moved-typescript-definitions)
     -   [Deprecated head.html](#deprecated-headhtml)
@@ -9,6 +12,39 @@
     -   [Webpack upgrade](#webpack-upgrade)
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 3.1.x to 3.2.x
+
+**NOTE:** technically this is a breaking change, but only if you use TypeScript. Sorry people!
+
+### Moved TypeScript addons definitions
+
+TypeScript users: we've moved the rest of our addons type definitions into [DefinitelyTyped](http://definitelytyped.org/). Starting in 3.2.0 make sure to use the right addons types:
+
+```sh
+npm install @types/storybook__addon-notes @types/storybook__addon-options @types/storybook__addon-knobs @types/storybook__addon-links --save-dev
+```
+
+See also [TypeScript definitions in 3.1.x](#moved-typescript-definitions).
+
+### Updated Addons API
+
+We're in the process of upgrading our addons APIs. As a first step, we've upgraded the Info and Notes addons. The old API will still work with your existing projects, but will be deprecated soon and removed in Storybook 4.0.
+
+Here's an example of using Notes and Info in 3.2 with the new API.
+
+```js
+storiesOf('composition', module)
+  .add('new addons api',
+    withInfo('see Notes panel for composition info')(
+      withNotes({ notes: 'Composition: Info(Notes())' })(context =>
+        <MyComponent name={context.story} />
+      )
+    )
+  );
+```
+
+It's not beautiful, but we'll be adding a more convenient/idiomatic way of using these [withX primitives](https://gist.github.com/shilman/792dc25550daa9c2bf37238f4ef7a398) in Storybook 3.3.
 
 ## From version 3.0.x to 3.1.x
 
@@ -124,5 +160,5 @@ If you **are** using these addons, migrating is simple:
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     import { action } from '@storybook/addon-actions';
-    import { link } from '@storybook/addon-links';
+    import { linkTo } from '@storybook/addon-links';
     ```

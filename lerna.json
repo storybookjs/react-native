@@ -1,18 +1,18 @@
 {
-  "lerna": "2.0.0-rc.5",
+  "lerna": "2.0.0",
   "commands": {
     "bootstrap": {
       "ignore": [
-        "test-cra",
+        "crna-kitchen-sink",
         "react-native-vanilla"
       ]
     },
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "test-cra",
+        "crna-kitchen-sink",
         "react-native-vanilla",
-        "@storybook/components"
+        "vue-example"
       ]
     }
   },
@@ -23,5 +23,5 @@
     "examples/*"
   ],
   "concurrency": 1,
-  "version": "3.1.8"
+  "version": "3.2.8"
 }

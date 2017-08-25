@@ -11,10 +11,8 @@ module.exports = {
     '<rootDir>/app',
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
-    '<rootDir>/examples/test-cra',
   ],
   testPathIgnorePatterns: ['/node_modules/'],
-  projects: ['./', './examples/react-native-vanilla'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
