@@ -5,16 +5,17 @@ const configuredStyles = {
   boxShadow: 'rgba(0,0,0,0.2) 0px 0px 60px 12px',
 };
 
+export const defaultViewport = 'default';
 export const resetViewport = {
-    name: 'Reset',
-    styles: {
-      width: '100%',
-      height: '100%',
-      border: 'none',
-      display: 'block',
-      margin: '0',
-      boxShadow: 'none',
-    },
+  name: 'Reset',
+  styles: {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    display: 'block',
+    margin: '0',
+    boxShadow: 'none',
+  },
 };
 
 export const viewports = {

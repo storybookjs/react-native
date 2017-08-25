@@ -7,12 +7,12 @@ export class WrapStory extends Component {
     channel: PropTypes.object.isRequired,
     context: PropTypes.object,
     storyFn: PropTypes.func,
-  }
+  };
 
   static defaultProps = {
     context: {},
     storyFn: context => context,
-  }
+  };
 
   componentDidMount() {
     const { channel } = this.props;
