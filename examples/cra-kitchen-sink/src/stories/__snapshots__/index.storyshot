@@ -2489,29 +2489,6 @@ exports[`Storyshots Cells/Molecules/Atoms.more with text2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Navigation Menu link 1`] = `
-<div
-  className="css-t9df35"
->
-  <a
-    className="css-1enjukp"
-    href="/"
-    onClick={[Function]}
-  >
-    Menu link item
-  </a>
-</div>
-`;
-
-exports[`Storyshots Navigation Routed link 1`] = `
-<a
-  href="/"
-  onClick={[Function]}
->
-  Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
-</a>
-`;
-
 exports[`Storyshots Some really long story kind description with text 1`] = `
 <div
   style={
