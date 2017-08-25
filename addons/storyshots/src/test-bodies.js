@@ -16,7 +16,7 @@ function getSnapshotFileName(context) {
   }
 
   const { dir, name } = path.parse(fileName);
-  return path.format({ dir, name, ext: '.storyshot' });
+  return path.format({ dir: path.join(dir, '__snapshots__'), name, ext: '.storyshot' });
 }
 
 export const snapshotWithOptions = options => ({ story, context }) => {
