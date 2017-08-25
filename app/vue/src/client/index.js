@@ -1,4 +1,4 @@
-import deprecate from 'util-deprecate';
+// import deprecate from 'util-deprecate';
 
 // NOTE export these to keep backwards compatibility
 // import { action as deprecatedAction } from '@storybook/addon-actions';

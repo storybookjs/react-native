@@ -150,16 +150,6 @@ describe('preview.client_api', () => {
       expect(storyStore.stories[0].fn()).toBe('bb-Hello');
     });
 
-    it('should throw on adding global decorators after stories', () => {
-      const storyStore = new StoryStore();
-      const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
-      localApi.add('storyName', () => 'Hello');
-      expect(() => {
-        api.addDecorator(fn => `bb-${fn()}`);
-      }).toThrow('Global decorators added after loading stories will not be applied');
-    });
-
     it('should utilize both decorators at once', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
