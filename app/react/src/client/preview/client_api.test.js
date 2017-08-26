@@ -60,7 +60,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none', {}).aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('foo');
     });
 
@@ -80,7 +80,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none', {}).aa().bb();
+      api.storiesOf('none', module).aa().bb();
       expect(data).toEqual(['foo', 'bar']);
     });
 
@@ -94,7 +94,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none', {}).aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('function');
     });
 
@@ -114,7 +114,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none', {}).bb();
+      api.storiesOf('none', module).bb();
       expect(data).toBe('foo');
     });
 
@@ -129,7 +129,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf(kind, {}).aa();
+      api.storiesOf(kind, module).aa();
       expect(data).toBe(kind);
     });
   });
@@ -138,7 +138,7 @@ describe('preview.client_api', () => {
     it('should add local decorators', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none', {});
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
@@ -149,7 +149,7 @@ describe('preview.client_api', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
       api.addDecorator(fn => `bb-${fn()}`);
-      const localApi = api.storiesOf('none', {});
+      const localApi = api.storiesOf('none', module);
 
       localApi.add('storyName', () => 'Hello');
       expect(storyStore.stories[0].fn()).toBe('bb-Hello');
@@ -158,7 +158,7 @@ describe('preview.client_api', () => {
     it('should utilize both decorators at once', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none', {});
+      const localApi = api.storiesOf('none', module);
 
       api.addDecorator(fn => `aa-${fn()}`);
       localApi.addDecorator(fn => `bb-${fn()}`);
@@ -170,7 +170,7 @@ describe('preview.client_api', () => {
     it('should pass the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none', {});
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', ({ kind, story }) => `${kind}-${story}`);
@@ -185,7 +185,7 @@ describe('preview.client_api', () => {
     it('should have access to the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none', {});
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator((fn, { kind, story }) => `${kind}-${story}-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');

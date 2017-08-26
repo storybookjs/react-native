@@ -1,3 +1,23 @@
+# 3.2.9
+
+2017-August-26
+
+#### Bug Fixes
+
+-   Fix getstorybook CLI for React Native projects [#1741](https://github.com/storybooks/storybook/pull/1741)
+
+#### Documentation
+
+-   Improve `addon-info` README options documentation [#1732](https://github.com/storybooks/storybook/pull/1732)
+
+#### Maintenance
+
+-   ADD a CLI for bootstrapping [#1216](https://github.com/storybooks/storybook/pull/1216)
+
+#### Dependency Upgrades
+
+-   Update lerna to the latest version 🚀 [#1727](https://github.com/storybooks/storybook/pull/1727)
+
 # 3.2.8
 
 2017-August-23
