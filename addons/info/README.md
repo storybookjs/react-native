@@ -29,7 +29,6 @@ Then wrap your story with the `withInfo`, which is a function that takes either
 documentation text or an options object:
 
 ```js
-import { configure, setAddon } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Component', module)
@@ -42,20 +41,17 @@ storiesOf('Component', module)
 
 ## Usage with options
 
-`withInfo` can also take an options object in case you want to configure how
+`withInfo` can also take an [options object](#global-options) in case you want to configure how
 the info panel looks on a per-story basis:
 
 ```js
-import { configure, setAddon } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Component', module)
   .add('simple info',
     withInfo({
-      text: 'doc string about my component',
-      maxPropsIntoLine: 1,
-      maxPropObjectKeys: 10,
-      maxPropArrayLength: 10,
+      text: 'String or React Element with docs about my component', // Warning! This option's name will be likely renamed to "summary" in 3.3 release. Follow this PR #1501 for details
+      // other possible options see in Global options section below
     )(() =>
       <Component>Click the "?" mark at top-right to view the info.</Component>
     )
@@ -68,9 +64,7 @@ It is possible to add infos by default to all components by using a global or st
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
-```
-addDecorator((story, context) => withInfo('common info')(story)(context));
-```
+    addDecorator((story, context) => withInfo('common info')(story)(context));
 
 ## Global options
 
@@ -82,8 +76,14 @@ import { setDefaults } from '@storybook/addon-info';
 
 // addon-info
 setDefaults({
-  inline: true,
-  maxPropsIntoLine: 1,
+  header: false, // Toggles display of header with component name and description
+  inline: true, // Displays info inline vs click button to view
+  source: true, // Displays the source of story Component
+  propTables: [/* Components used in story */], // displays Prop Tables with this components
+  propTablesExclude: [], // Exclude Components from being shoun in Prop Tables section
+  styles: {}, // Overrides styles of addon
+  marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
+  maxPropsIntoLine: 1, // Max props to display per line in source code
   maxPropObjectKeys: 10,
   maxPropArrayLength: 10,
   maxPropStringLength: 100,
@@ -123,6 +123,60 @@ storiesOf('Component')
 ```
 
 > Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
+
+To customize your defaults:
+
+```js
+// config.js
+import infoAddon, { setDefaults } from '@storybook/addon-info';
+
+// addon-info
+setDefaults({
+  inline: true,
+  maxPropsIntoLine: 1,
+  maxPropObjectKeys: 10,
+  maxPropArrayLength: 10,
+  maxPropStringLength: 100,
+});
+setAddon(infoAddon);
+```
+
+### React Docgen Integration
+
+React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during compile time.
+When rendering a story with a React component commented in this supported format, the Addon Info prop table will display the prop's comment in the description column.
+
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
+
+/** Button component description */
+const DocgenButton = ({ disabled, label, style, onClick }) =>
+  <button disabled={disabled} style={style} onClick={onClick}>
+    {label}
+  </button>;
+
+DocgenButton.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+  style: {},
+};
+
+DocgenButton.propTypes = {
+  /** Boolean indicating whether the button should render as disabled */
+  disabled: PropTypes.bool,
+  /** button label. */
+  label: PropTypes.string.isRequired,
+  /** onClick handler */
+  onClick: PropTypes.func,
+  /** component styles */
+  style: PropTypes.shape,
+};
+
+export default DocgenButton;
+```
+
+Storybook Info Addon should now render all the correct types for your component.
 
 ## The FAQ
 

@@ -1,3 +1,68 @@
+# 3.2.8
+
+2017-August-23
+
+#### Bug Fixes
+
+-   Fix storyshots with new babel config [#1721](https://github.com/storybooks/storybook/pull/1721)
+-   Fix CLI generators export [#1722](https://github.com/storybooks/storybook/pull/1722)
+
+#### Documentation
+
+-   Add caveat about knobs date defaultValue [#1719](https://github.com/storybooks/storybook/pull/1719)
+
+# 3.2.7
+
+2017-August-23
+
+#### Bug Fixes
+
+-   Fix storyshots by moving cacheDirectory to webpack config [#1713](https://github.com/storybooks/storybook/pull/1713)
+-   Revert "Improved error checking in global addDecorator" [#1716](https://github.com/storybooks/storybook/pull/1716)
+-   Stricter linting rules for imports [#1676](https://github.com/storybooks/storybook/pull/1676)
+-   Addon Info: Remove broken prop type sort (keep defined order) [#1711](https://github.com/storybooks/storybook/pull/1711)
+
+#### Maintenance
+
+-   Enable eslint for vue-related stuff [#1715](https://github.com/storybooks/storybook/pull/1715)
+-   CLI: ensure explicit dependency on `prop-types` for RN [#1714](https://github.com/storybooks/storybook/pull/1714)
+
+# 3.2.6
+
+2017-August-22
+
+#### Features
+
+-   Improve search and highlighting [#1693](https://github.com/storybooks/storybook/pull/1693)
+-   Add centered decorator for vue [#1595](https://github.com/storybooks/storybook/pull/1595)
+-   Add react-docgen propTypes to info addon [#1562](https://github.com/storybooks/storybook/pull/1562)
+
+#### Bug Fixes
+
+-   Fix stories panel resizing bug [#1689](https://github.com/storybooks/storybook/pull/1689)
+-   Check for React presence when detecting `WEBPACK_REACT` type [#1646](https://github.com/storybooks/storybook/pull/1646)
+-   Fix Create React App detection [#1645](https://github.com/storybooks/storybook/pull/1645)
+-   Add dependencies on plugins used by getstorybook CLI [#1652](https://github.com/storybooks/storybook/pull/1652)
+-   Fix preview window loading non js,css files [#1554](https://github.com/storybooks/storybook/pull/1554)
+
+#### Documentation
+
+-   Improve the warning given when using channel before it's defined [#1515](https://github.com/storybooks/storybook/pull/1515)
+-   Remove imports from README that are not necessary with latest API [#1700](https://github.com/storybooks/storybook/pull/1700)
+-   Add reminders to PR template [#1683](https://github.com/storybooks/storybook/pull/1683)
+-   Docgen Flow Type Example [#1684](https://github.com/storybooks/storybook/pull/1684)
+
+#### Maintenance
+
+-   Make lint-staged work properly [#1675](https://github.com/storybooks/storybook/pull/1675)
+-   Move baseFonts and RoutedLink to `@storybook/components` [#1659](https://github.com/storybooks/storybook/pull/1659)
+
+#### Dependency Upgrades
+
+-   Switch to babel preset env + async/await/generator support [#1668](https://github.com/storybooks/storybook/pull/1668)
+-   Upgrade react-native-compat to avoid PropTypes warnings [#1673](https://github.com/storybooks/storybook/pull/1673)
+-   Change React.PropTypes to prop-types [#1674](https://github.com/storybooks/storybook/pull/1674) [#1710](https://github.com/storybooks/storybook/pull/1710)
+
 # 3.2.5
 
 2017-August-16

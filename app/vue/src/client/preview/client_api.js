@@ -30,8 +30,11 @@ export default class ClientApi {
       throw new Error('Invalid or missing kind provided for stories, should be a string');
     }
 
-    if(!m) {
-      console.warn(`Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`);
+    if (!m) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
+      );
     }
 
     if (m && m.hot) {
@@ -54,6 +57,13 @@ export default class ClientApi {
       };
     });
 
+    const createWrapperComponent = Target => ({
+      functional: true,
+      render(h, c) {
+        return h(Target, c.data, c.children);
+      },
+    });
+
     api.add = (storyName, getStory) => {
       if (typeof storyName !== 'string') {
         throw new Error(`Invalid or missing storyName provided for a "${kind}" story.`);
@@ -61,7 +71,7 @@ export default class ClientApi {
 
       if (this._storyStore.hasStory(kind, storyName)) {
         throw new Error(`Story of "${kind}" named "${storyName}" already exists`);
-      } 
+      }
 
       // Wrap the getStory function with each decorator. The first
       // decorator will wrap the story function. The second will
@@ -69,7 +79,13 @@ export default class ClientApi {
       const decorators = [...localDecorators, ...this._globalDecorators];
 
       const getDecoratedStory = decorators.reduce(
-        (decorated, decorator) => context => decorator(() => decorated(context), context),
+        (decorated, decorator) => context => {
+          const story = () => decorated(context);
+          const decoratedStory = decorator(story, context);
+          decoratedStory.components = decoratedStory.components || {};
+          decoratedStory.components.story = createWrapperComponent(story());
+          return decoratedStory;
+        },
         getStory
       );
 

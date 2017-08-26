@@ -21,19 +21,61 @@ const stylesheet = {
   },
 };
 
-export default function PropTable(props) {
-  const { type, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = props;
+const isNotEmpty = obj => obj && obj.props && Object.keys(obj.props).length > 0;
 
-  if (!type) {
-    return null;
+const renderDocgenPropType = propType => {
+  if (!propType) {
+    return 'unknown';
   }
 
-  const accumProps = {};
+  const name = propType.name;
+
+  switch (name) {
+    case 'arrayOf':
+      return `${propType.value.name}[]`;
+    case 'instanceOf':
+      return propType.value;
+    case 'union':
+      return propType.raw;
+    case 'signature':
+      return propType.raw;
+    default:
+      return name;
+  }
+};
+
+const hasDocgen = type => isNotEmpty(type.__docgenInfo);
+
+const boolToString = value => (value ? 'yes' : 'no');
+
+const propsFromDocgen = type => {
+  const props = {};
+  const docgenInfoProps = type.__docgenInfo.props;
+
+  Object.keys(docgenInfoProps).forEach(property => {
+    const docgenInfoProp = docgenInfoProps[property];
+    const defaultValueDesc = docgenInfoProp.defaultValue || {};
+    const propType = docgenInfoProp.flowType || docgenInfoProp.type || 'other';
+
+    props[property] = {
+      property,
+      propType: renderDocgenPropType(propType),
+      required: boolToString(docgenInfoProp.required),
+      description: docgenInfoProp.description,
+      defaultValue: defaultValueDesc.value,
+    };
+  });
+
+  return props;
+};
+
+const propsFromPropTypes = type => {
+  const props = {};
 
   if (type.propTypes) {
     Object.keys(type.propTypes).forEach(property => {
       const typeInfo = type.propTypes[property];
-      const required = typeInfo.isRequired === undefined ? 'yes' : 'no';
+      const required = boolToString(typeInfo.isRequired === undefined);
       const description =
         type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property]
           ? type.__docgenInfo.props[property].description
@@ -51,7 +93,7 @@ export default function PropTable(props) {
         }
       }
 
-      accumProps[property] = { property, propType, required, description };
+      props[property] = { property, propType, required, description };
     });
   }
 
@@ -63,21 +105,30 @@ export default function PropTable(props) {
         return;
       }
 
-      if (!accumProps[property]) {
-        accumProps[property] = { property };
+      if (!props[property]) {
+        props[property] = { property };
       }
 
-      accumProps[property].defaultValue = value;
+      props[property].defaultValue = value;
     });
   }
 
+  return props;
+};
+
+export default function PropTable(props) {
+  const { type, maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = props;
+
+  if (!type) {
+    return null;
+  }
+
+  const accumProps = hasDocgen(type) ? propsFromDocgen(type) : propsFromPropTypes(type);
   const array = Object.values(accumProps);
 
   if (!array.length) {
     return <small>No propTypes defined!</small>;
   }
-
-  array.sort((a, b) => a.property > b.property);
 
   const propValProps = {
     maxPropObjectKeys,

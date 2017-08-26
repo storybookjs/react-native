@@ -40,7 +40,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
+            npm run bootstrap -- --all
       - save_cache:
           key: package-dependencies-{{ checksum "package.json" }}
           paths:
@@ -48,14 +48,7 @@ jobs:
             - docs/**/node_modules
             - examples/**/node_modules
             - lib/**/node_modules
-  example-kitchen-sink:
-    <<: *defaults
-    steps:
-      - run:
-          name: "Running kitchen-sink"
-          command: |
-            echo "TODO"
-  example-test-cra:
+  example-kitchen-sinks:
     <<: *defaults
     steps:
       - checkout
@@ -70,12 +63,15 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
-            npm run bootstrap:test-cra
+            npm run bootstrap -- --core
       - run:
-          name: "Running test-cra"
+          name: "Build react kitchen-sink"
           command: |
-            echo "TODO"
+            cd examples/cra-kitchen-sink && npm run build-storybook
+      - run:
+          name: "Build vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink && npm run build-storybook
   example-react-native:
     <<: *defaults
     steps:
@@ -91,13 +87,11 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            npm run bootstrap
-            npm run bootstrap:react-native-vanilla
+            npm run bootstrap -- --core --reactnative
       - run:
           name: "Running react-native"
           command: |
             echo "TODO"
-
   docs:
     <<: *defaults
     steps:
@@ -113,7 +107,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap:docs
+            npm run bootstrap -- --docs
       - run:
           name: "Running docs"
           command: |
@@ -149,10 +143,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
-            npm run bootstrap:docs
-            npm run bootstrap:test-cra
-            npm run bootstrap:react-native-vanilla
+            npm run bootstrap -- --core --reactnative
       - run:
           name: "Unit testing"
           command: |
@@ -171,15 +162,14 @@ workflows:
     jobs:
       - validate
       - build
-      - example-kitchen-sink
-      - example-test-cra
+      - example-kitchen-sinks
       - example-react-native
       - docs
       - lint
       - unit-test
-      - deploy:
-          type: approval
-          requires:
-            - lint
-            - unit-test
-            - docs
+      # - deploy:
+      #     type: approval
+      #     requires:
+      #       - lint
+      #       - unit-test
+      #       - docs
