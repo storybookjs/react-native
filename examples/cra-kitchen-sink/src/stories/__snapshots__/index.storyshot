@@ -150,7 +150,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
               }
             }
           >
-            Some Description
+            Button with PropTypes and doc comments
           </p>
         </div>
         <div>
@@ -618,7 +618,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
               }
             }
           >
-            Some Description
+            Button with Flow type documentation comments
           </p>
         </div>
         <div>
@@ -1316,7 +1316,7 @@ exports[`Storyshots App full app 1`] = `
     <img
       alt="logo"
       className="App-logo"
-      src="file-stub"
+      src="logo.svg"
     />
     <h2>
       Welcome to React
