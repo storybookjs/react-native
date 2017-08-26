@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This guide assumes you're using `yarn` as package manager. You can use `npm` as well, but it would be less deterministic, as we only commit `yarn.lock` to the repo.
+This guide assumes you're using `yarn` as package manager. You may have some success using `npm` as well, but there are chances you'll get wrong versions of root dependencies in that case (we only commit `yarn.lock` to the repo).
 
 ## Issues
 
@@ -24,22 +24,25 @@ To test your project against the current latest version of storybook, you can cl
 
 1.  Download the latest version of this project, and build it:
 
-        ```sh
-        git clone https://github.com/storybooks/storybook.git
-        cd storybook
-        yarn install
-        yarn run bootstrap -- --core
+    ```sh
+    git clone https://github.com/storybooks/storybook.git
+    cd storybook
+    yarn
+    yarn bootstrap -- --core
+    ```
 
 
-    2.  Link `storybook` and any other required dependencies:
+2.  Link `storybook` and any other required dependencies:
 
-            ```shcd app/react
-            yarn link
+    ```sh
+    cd app/react
+    yarn link
 
-            cd <your-project>
-            yarn link @storybook/react
+    cd <your-project>
+    yarn link @storybook/react
 
     # repeat with whichever other parts of the monorepo you are using.
+    ```
 
 ### Reproductions
 
@@ -51,8 +54,8 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 # Download and build this repository:
 git clone https://github.com/storybooks/storybook.git
 cd storybook
-yarn install -- --core
-yarn run bootstrap
+yarn
+yarn bootstrap -- --core
 
 # make changes to try and reproduce the problem, such as adding components + stories
 yarn start
@@ -69,7 +72,7 @@ git push -u <your-username> master
 
 If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn run eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
 ## Pull Requests (PRs)
 
@@ -134,7 +137,7 @@ This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
 
 ```sh
-yarn run dev
+yarn dev
 ```
 
 This will watch files and transpile in watch mode.
@@ -168,7 +171,7 @@ yarn link @storybook/react
 
 ### Getting Changes
 
-After you've done any change, you need to run the `yarn run storybook` command every time to see those changes.
+After you've done any change, you need to run the `yarn storybook` command every time to see those changes.
 
 ## Release Guide
 
@@ -193,10 +196,10 @@ git status
 
 # clean out extra files
 # WARNING: destructive if you have extra files lying around!
-git clean -fdx && yarn install
+git clean -fdx && yarn
 
 # build all the packages
-yarn run bootstrap -- --all
+yarn bootstrap -- --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
@@ -207,7 +210,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-yarn run publish -- --concurrency 1 --npm-tag=alpha
+yarn publish -- --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
@@ -217,14 +220,14 @@ git push --tags
 
 ```sh
 # publish but don't commit to git
-yarn run publish -- --concurrency 1 --skip-git
+yarn publish -- --concurrency 1 --skip-git
 
 # Update `CHANGELOG.md`
 # - Edit PR titles/labels on github until output is good
 # - Optionally, edit a handwritten description in `CHANGELOG.md`
-yarn run changelog
+yarn changelog
 
 # tag the release and push `CHANGELOG.md` and tags
 # FIXME: not end-to-end tested!
-yarn run github-release
+yarn github-release
 ```
