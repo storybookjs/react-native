@@ -6,5 +6,3 @@ initStoryshots({
   configPath: path.join(__dirname, '..', '.storybook'),
   test: multiSnapshotWithOptions({}),
 });
-
-console.log('Hey');
