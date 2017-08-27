@@ -1,7 +1,7 @@
-import path from 'path';
 import renderer from 'react-test-renderer';
 import shallow from 'react-test-renderer/shallow';
 import 'jest-specific-snapshot';
+import { getStoryshotFile } from './utils';
 
 function getRenderedTree(story, context, options) {
   const storyElement = story.render(context);
@@ -15,8 +15,7 @@ function getSnapshotFileName(context) {
     return null;
   }
 
-  const { dir, name } = path.parse(fileName);
-  return path.format({ dir: path.join(dir, '__snapshots__'), name, ext: '.storyshot' });
+  return getStoryshotFile(fileName);
 }
 
 export const snapshotWithOptions = options => ({ story, context }) => {

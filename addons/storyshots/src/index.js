@@ -1,4 +1,6 @@
 import path from 'path';
+import fs from 'fs';
+import glob from 'glob';
 import global, { describe, it } from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
@@ -6,6 +8,7 @@ import addons from '@storybook/addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
+import { getPossibleStoriesFiles } from './utils';
 
 export {
   snapshot,
@@ -102,3 +105,16 @@ export default function testStorySnapshots(options = {}) {
     });
   }
 }
+
+describe('Storyshots Integrity', () => {
+  describe('Abandoned Storyshots', () => {
+    const storyshots = glob.sync('**/*.storyshot');
+
+    const abandonedStoryshots = storyshots.filter(fileName => {
+      const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
+      return !possibleStoriesFiles.some(fs.existsSync);
+    });
+
+    expect(abandonedStoryshots).toHaveLength(0);
+  });
+});

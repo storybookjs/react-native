@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "glob": "^7.1.2",
     "global": "^4.3.2",
     "jest-specific-snapshot": "^0.2.0",
     "prop-types": "^15.5.10",
