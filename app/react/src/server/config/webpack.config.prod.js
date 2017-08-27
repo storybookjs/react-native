@@ -23,7 +23,7 @@ export default function() {
       publicPath: '',
     },
     plugins: [
-      new webpack.DefinePlugin(loadEnv()), // load development env so PropTypes are left alone for the Info Addon
+      new webpack.DefinePlugin(loadEnv({ production: true })),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           screw_ie8: true,
