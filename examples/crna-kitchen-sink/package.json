@@ -15,7 +15,7 @@
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "react-native-scripts": "1.1.0",
-    "jest-expo": "~19.0.0",
+    "jest-expo": "19.0.0",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -31,9 +31,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^19.0.0",
-    "prop-types": "^15.5.10",
+    "expo": "19.0.0",
+    "prop-types": "15.5.10",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.46.1"
+    "react-native": "0.46.1"
   }
 }
