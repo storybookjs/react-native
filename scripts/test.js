@@ -5,12 +5,6 @@ const childProcess = require('child_process');
 const chalk = require('chalk');
 const log = require('npmlog');
 
-const { lstatSync, readdirSync } = require('fs');
-const { join } = require('path');
-
-const isTgz = source => lstatSync(source).isFile() && source.match(/.tgz$/);
-const getDirectories = source => readdirSync(source).map(name => join(source, name)).filter(isTgz);
-
 log.heading = 'storybook';
 const prefix = 'test';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
@@ -30,28 +24,36 @@ const createProject = ({ defaultValue, option, name, projectLocation }) => ({
   name: name || 'unnamed task',
   projectLocation,
 });
-const createOption = ({}) => ({});
+const createOption = ({ defaultValue, option, name, extraParam }) => ({
+  value: false,
+  defaultValue: defaultValue || false,
+  option: option || undefined,
+  name: name || 'unnamed task',
+  extraParam,
+});
 
 const tasks = {
-  core: createTask({
+  core: createProject({
     name: `Core & React & Vue ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: './',
   }),
-  'react-native-vanilla': createTask({
+  'react-native-vanilla': createProject({
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
-    defaultValue: false,
+    defaultValue: true,
     option: '--reactnative',
     projectLocation: './examples/react-native-vanilla',
   }),
-  'crna-kitchen-sink': createTask({
-    name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}`,
-    defaultValue: false,
-    option: '--reactnativeapp',
-    projectLocation: './examples/crna-kitchen-sink',
-  }),
-  watchmode: createTask({
+  // 'crna-kitchen-sink': createProject({
+  //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
+  //     '[not implemented yet]'
+  //   )}`,
+  //   defaultValue: false,
+  //   option: '--reactnativeapp',
+  //   projectLocation: './examples/crna-kitchen-sink',
+  // }),
+  watchmode: createOption({
     name: `Run in watch-mode ${chalk.gray('(watchmode)')}`,
     defaultValue: false,
     option: '--watch',
@@ -60,12 +62,28 @@ const tasks = {
   }),
 };
 
+const getProjects = list => {
+  const filtered = list.filter(key => key.projectLocation);
+  if (filtered.length > 0) {
+    return filtered.map(key => key.projectLocation);
+  }
+
+  // if list would have been empty, we run with default projects
+  return Object.keys(tasks)
+    .map(key => tasks[key])
+    .filter(key => key.projectLocation && key.defaultValue)
+    .map(key => key.projectLocation);
+};
+
+const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
+
 Object.keys(tasks)
   .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
   .parse(process.argv);
 
 Object.keys(tasks).forEach(key => {
-  tasks[key].value = program[tasks[key].option.replace('--', '')] || program.all;
+  tasks[key].value =
+    program[tasks[key].option.replace('--', '')] || (program.all && tasks[key].projectLocation);
 });
 
 let selection;
@@ -77,17 +95,19 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
         message: 'Select which tests to run',
         name: 'todo',
         choices: Object.keys(tasks)
+          .map(key => tasks[key])
+          .filter(key => key.projectLocation)
           .map(key => ({
-            name: tasks[key].name,
-            checked: tasks[key].defaultValue,
+            name: key.name,
+            checked: key.defaultValue,
           }))
-          .concat([
-            new inquirer.Separator(),
-            {
-              name: 'Run in watchmode',
-              checked: false,
-            },
-          ]),
+          .concat(new inquirer.Separator())
+          .concat(
+            Object.keys(tasks).map(key => tasks[key]).filter(key => key.extraParam).map(key => ({
+              name: key.name,
+              checked: key.defaultValue,
+            }))
+          ),
       },
     ])
     .then(({ todo }) =>
@@ -104,9 +124,7 @@ selection
     if (list.length === 0) {
       log.warn(prefix, 'Nothing to test');
     } else {
-      // console.log('list', list)
-      // console.log(`jest --projects ${list.map(key => key.projectLocation).join(' ')}`);
-      spawn(`jest --projects ${list.map(key => key.projectLocation).join(' ')}`);
+      spawn(`jest --projects ${getProjects(list).join(' ')} ${getExtraParams(list).join(' ')}`);
       process.stdout.write('\x07');
       try {
         spawn('say "Testing sequence complete"');
@@ -118,5 +136,4 @@ selection
   .catch(e => {
     log.aborted(prefix, chalk.red(e.message));
     log.silly(prefix, e);
-    return true;
   });
