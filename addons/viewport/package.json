@@ -1,0 +1,35 @@
+{
+  "name": "@storybook/addon-viewport",
+  "version": "1.0.0",
+  "description": "Storybook addon to change the viewport size to mobile",
+  "main": "dist/index.js",
+  "keywords": [
+    "storybook"
+  ],
+  "scripts": {
+    "build": "babel --source-maps --out-dir dist src",
+    "watch": "npm run build -- -w",
+    "prepublish": "npm run build",
+    "storybook": "start-storybook -p 3000",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@storybook/react": "^3.2.5",
+    "prop-types": "^15.5.10"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.2.0",
+    "react": "*"
+  },
+  "devDependencies": {
+    "@storybook/addons": "^3.2.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1"
+  }
+}

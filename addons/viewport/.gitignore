@@ -1,0 +1,5 @@
+*.sw*
+node_modules
+dist
+jest
+jest_0
