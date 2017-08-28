@@ -28,7 +28,7 @@ jobs:
       - run:
           name: "Install root dependencies"
           command: |
-            yarn
+            yarn install
       - save_cache:
           key: root-dependencies-{{ checksum "package.json" }}
           paths:
@@ -59,7 +59,7 @@ jobs:
       - run:
           name: "Install root dependencies"
           command: |
-            yarn
+            yarn install
       - run:
           name: "Bootstrapping"
           command: |
@@ -83,7 +83,7 @@ jobs:
       - run:
           name: "Install root dependencies"
           command: |
-            yarn
+            yarn install
       - run:
           name: "Bootstrapping packages"
           command: |
@@ -103,7 +103,7 @@ jobs:
       - run:
           name: "Install root dependencies"
           command: |
-            yarn
+            yarn install
       - run:
           name: "Bootstrapping"
           command: |
@@ -123,7 +123,7 @@ jobs:
       - run:
           name: "Install root dependencies"
           command: |
-            yarn
+            yarn install
       - run:
           name: "Linting"
           command: |
@@ -139,7 +139,7 @@ jobs:
       - run:
           name: "Install root dependencies"
           command: |
-            yarn
+            yarn install
       - run:
           name: "Bootstrapping"
           command: |
@@ -147,7 +147,7 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            yarn test -- --coverage -i
+            yarn test -- --all --coverage --runInBand
             yarn coverage
   deploy:
     <<: *defaults

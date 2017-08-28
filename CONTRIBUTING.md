@@ -22,17 +22,44 @@ No software is bug free. So, if you got an issue, follow these steps:
 
 To test your project against the current latest version of storybook, you can clone the repository and link it with `yarn`. Try following these steps:
 
-1.  Download the latest version of this project, and build it:
+#### 1. Download the latest version of this project, and build it:
 
-    ```sh
-    git clone https://github.com/storybooks/storybook.git
-    cd storybook
-    yarn
+```sh
+git clone https://github.com/storybooks/storybook.git
+cd storybook
+yarn install
+yarn bootstrap
+```
+
+The bootstrap command will ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
+
+You can also pick directly from CLI:
+
     yarn bootstrap -- --core
-    ```
 
+#### 2a. Run unit tests
 
-2.  Link `storybook` and any other required dependencies:
+You can use one of the example projects in `examples/` to develop on.
+
+This command will list all the suites and options for running tests. 
+
+```sh
+yarn test
+```
+
+_Note that in order to run the tests fro ReactNative, you must have bootstrapped with ReactNative enabled_
+
+You can also pick suites from CLI:
+
+```sh
+yarn test -- --core
+```
+
+In order to run ALL unit tests, you must have bootstrapped the react-native
+
+#### 2b. Link `storybook` and any other required dependencies:
+
+If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
 
     ```sh
     cd app/react
@@ -54,11 +81,12 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 # Download and build this repository:
 git clone https://github.com/storybooks/storybook.git
 cd storybook
-yarn
-yarn bootstrap -- --core
+yarn install
+yarn bootstrap
 
 # make changes to try and reproduce the problem, such as adding components + stories
-yarn start
+cd examples/cra-kitchen-sink
+yarn storybook
 
 # see if you can see the problem, if so, commit it:
 git checkout "branch-describing-issue"
@@ -194,12 +222,9 @@ First, build the release:
 git checkout master
 git status
 
-# clean out extra files
+# clean out extra files & build all the packages
 # WARNING: destructive if you have extra files lying around!
-git clean -fdx && yarn
-
-# build all the packages
-yarn bootstrap -- --all
+yarn bootstrap -- --reset --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
@@ -210,7 +235,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-yarn publish -- --concurrency 1 --npm-tag=alpha
+yarn run publish -- --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
