@@ -2,58 +2,46 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import ObjectType from './ObjectType';
+import Shape from './Shape';
 import OneOfType from './OneOfType';
 import ArrayOf from './ArrayOf';
 import ObjectOf from './ObjectOf';
+import OneOf from './OneOf';
+import InstanceOf from './InstanceOf';
+import Signature from './Signature';
 
 import { TypeInfo } from './proptypes';
 
-const PrettyPropType = ({ propType, depth }) => {
+// propType -> Component map - these are a bit more complex prop types to display
+const propTypeComponentMap = new Map([
+  ['shape', Shape],
+  ['union', OneOfType],
+  ['arrayOf', ArrayOf],
+  ['objectOf', ObjectOf],
+  // Might be overkill to have below proptypes  as separate components *shrug*
+  ['object', ObjectType],
+  ['enum', OneOf],
+  ['instanceOf', InstanceOf],
+  ['signature', Signature],
+]);
+
+const PrettyPropType = props => {
+  const { propType, depth } = props;
   if (!propType) {
     return <span>unknown</span>;
   }
 
   const { name } = propType || {};
 
-  if (name === 'shape') {
-    return <ObjectType propType={propType} depth={depth} />;
+  if (propTypeComponentMap.has(name)) {
+    const Component = propTypeComponentMap.get(name);
+    return <Component propType={propType} depth={depth} />;
   }
 
-  if (name === 'union') {
-    return <OneOfType propType={propType} />;
-  }
-
-  if (name === 'arrayOf') {
-    return <ArrayOf propType={propType} />;
-  }
-
-  if (name === 'objectOf') {
-    return <ObjectOf propType={propType} />;
-  }
-
-  // Rest are just simple strings
-  let display;
-
-  switch (name) {
-    case 'object':
-      display = '{}';
-      break;
-    case 'enum':
-      display = propType.value.map(({ value }) => value).join(' | ');
-      break;
-    case 'instanceOf':
-      display = propType.value;
-      break;
-    case 'signature':
-      display = propType.raw;
-      break;
-    default:
-      display = name;
-  }
-
+  // Otherwise, propType does not have a dedicated component, display proptype name by default
   return (
     <span>
-      {display}
+      {name}
     </span>
   );
 };

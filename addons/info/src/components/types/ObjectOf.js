@@ -5,20 +5,9 @@ import { TypeInfo } from './proptypes';
 
 const ObjectOf = ({ propType }) =>
   <span>
-    <span>
-      {'{'}
-    </span>
-    <span />
-    <span>
-      {'[<key>]:'}
-    </span>
-    <span />
-    <span>
-      <PrettyPropType propType={propType.value} />
-    </span>
-    <span>
-      {'}'}
-    </span>
+    {'{[<key>]: '}
+    <PrettyPropType propType={propType.value} />
+    {'}'}
   </span>;
 
 ObjectOf.propTypes = {
