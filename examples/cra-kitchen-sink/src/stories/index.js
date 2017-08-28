@@ -28,6 +28,7 @@ import Logger from './Logger';
 import Container from './Container';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
+import ImportedPropsButton from '../components/ImportedPropsButton';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -164,14 +165,26 @@ storiesOf('Button', module)
     )
   );
 
-storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () =>
+storiesOf(
+  'AddonInfo.DocgenButton',
+  module
+).addWithInfo('DocgenButton', 'Button with PropTypes and doc comments', () =>
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
+);
+
+storiesOf(
+  'AddonInfo.ImportedPropsButton',
+  module
+).addWithInfo(
+  'ImportedPropsButton',
+  'Button with PropTypes imported from another file. Should fallback to using PropTypes for data.',
+  () => <ImportedPropsButton onClick={action('clicked')} label="Docgen Button" />
 );
 
 storiesOf(
   'AddonInfo.FlowTypeButton',
   module
-).addWithInfo('FlowTypeButton', 'Some Description', () =>
+).addWithInfo('FlowTypeButton', 'Button with Flow type documentation comments', () =>
   <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
 );
 
