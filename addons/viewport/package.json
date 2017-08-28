@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-viewport",
-  "version": "1.0.0",
+  "version": "3.2.0",
   "description": "Storybook addon to change the viewport size to mobile",
   "main": "dist/index.js",
   "keywords": [
