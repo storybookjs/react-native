@@ -147,8 +147,8 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            npm run test -- --all --coverage --runInBand
-            npm run coverage
+            yarn test -- --all --coverage --runInBand
+            yarn coverage
   deploy:
     <<: *defaults
     steps:
