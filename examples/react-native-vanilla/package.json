@@ -18,6 +18,7 @@
     "jest": "^20.0.4",
     "react-test-renderer": "16.0.0-alpha.6",
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
+    "@storybook/addon-knobs": "file:../../packs/storybook-addon-knobs.tgz",
     "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
     "@storybook/addon-options": "file:../../packs/storybook-addon-options.tgz",
     "@storybook/addon-storyshots": "file:../../packs/storybook-addon-storyshots.tgz",
