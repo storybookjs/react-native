@@ -3,7 +3,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styles from './styles';
+import { Table, Td, Th } from '@storybook/components';
 import PropVal from './PropVal';
 import PrettyPropType from './types/PrettyPropType';
 
@@ -103,40 +103,40 @@ export default function PropTable(props) {
   };
 
   return (
-    <table style={styles.propTable}>
+    <Table>
       <thead>
         <tr>
-          <th style={styles.propTableCell}>property</th>
-          <th style={styles.propTableCell}>propType</th>
-          <th style={styles.propTableCell}>required</th>
-          <th style={styles.propTableCell}>default</th>
-          <th style={styles.propTableCell}>description</th>
+          <Th bordered>property</Th>
+          <Th bordered>propType</Th>
+          <Th bordered>required</Th>
+          <Th bordered>default</Th>
+          <Th bordered>description</Th>
         </tr>
       </thead>
       <tbody>
         {array.map(row =>
           <tr key={row.property}>
-            <td style={{ ...styles.propTableCell, ...styles.code }}>
+            <Td bordered code>
               {row.property}
-            </td>
-            <td style={{ ...styles.propTableCell, ...styles.code }}>
+            </Td>
+            <Td bordered code>
               <PrettyPropType propType={row.propType} />
-            </td>
-            <td style={styles.propTableCell}>
+            </Td>
+            <Td bordered>
               {row.required ? 'yes' : '-'}
-            </td>
-            <td style={styles.propTableCell}>
+            </Td>
+            <Td bordered>
               {row.defaultValue === undefined
                 ? '-'
                 : <PropVal val={row.defaultValue} {...propValProps} />}
-            </td>
-            <td style={styles.propTableCell}>
+            </Td>
+            <Td bordered>
               {row.description}
-            </td>
+            </Td>
           </tr>
         )}
       </tbody>
-    </table>
+    </Table>
   );
 }
 

@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from '../styles';
+
+const styles = {
+  hasProperty: {
+    whiteSpace: 'nowrap',
+  },
+};
 
 const PropertyLabel = ({ property, required }) => {
   if (!property) return null;
