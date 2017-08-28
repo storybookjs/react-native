@@ -57,8 +57,19 @@ const tasks = {
     name: `Run in watch-mode ${chalk.gray('(watchmode)')}`,
     defaultValue: false,
     option: '--watch',
-    projectLocation: false,
     extraParam: '--watch',
+  }),
+  coverage: createOption({
+    name: `Output coverage reports ${chalk.gray('(coverage)')}`,
+    defaultValue: false,
+    option: '--coverage',
+    extraParam: '--coverage',
+  }),
+  runInBand: createOption({
+    name: `Run all tests serially in the current process ${chalk.gray('(runInBand)')}`,
+    defaultValue: false,
+    option: '--runInBand',
+    extraParam: '--runInBand',
   }),
 };
 
@@ -126,11 +137,6 @@ selection
     } else {
       spawn(`jest --projects ${getProjects(list).join(' ')} ${getExtraParams(list).join(' ')}`);
       process.stdout.write('\x07');
-      try {
-        spawn('say "Testing sequence complete"');
-      } catch (e) {
-        // discard error
-      }
     }
   })
   .catch(e => {
