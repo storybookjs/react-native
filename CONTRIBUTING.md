@@ -154,7 +154,7 @@ In order to test features you add, you may need to link the local copy of this r
 For that we need a sample project. Let's create it.
 
 ```sh
-yarn global install --global create-react-app getstorybook
+yarn global add create-react-app getstorybook
 create-react-app my-demo-app
 cd my-demo-app
 getstorybook
