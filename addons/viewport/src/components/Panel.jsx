@@ -1,9 +1,13 @@
+/* global document */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { viewports, defaultViewport, resetViewport } from './viewportInfo';
 
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
+
+import * as styles from './styles';
 
 const storybookIframe = 'storybook-preview-iframe';
 const containerStyles = {
@@ -14,11 +18,9 @@ const containerStyles = {
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Arial, sans-serif',
 };
 
-import * as styles from './styles';
-
 export class Panel extends Component {
   static propTypes = {
-    channel: PropTypes.object.isRequired,
+    channel: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
   constructor(props, context) {
@@ -38,7 +40,7 @@ export class Panel extends Component {
   iframe = undefined;
 
   changeViewport = viewport => {
-    const { viewport: previousViewport, isLandscape } = this.state;
+    const { viewport: previousViewport } = this.state;
 
     if (previousViewport !== viewport) {
       this.setState(
