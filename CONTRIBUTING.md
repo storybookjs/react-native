@@ -235,7 +235,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-yarn publish -- --concurrency 1 --npm-tag=alpha
+yarn run publish -- --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
