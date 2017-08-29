@@ -1,4 +1,6 @@
 import path from 'path';
+import fs from 'fs';
+import glob from 'glob';
 import global, { describe, it } from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
@@ -6,8 +8,15 @@ import addons from '@storybook/addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
+import { getPossibleStoriesFiles } from './utils';
 
-export { snapshotWithOptions, snapshot, shallowSnapshot, renderOnly } from './test-bodies';
+export {
+  snapshot,
+  multiSnapshotWithOptions,
+  snapshotWithOptions,
+  shallowSnapshot,
+  renderOnly,
+} from './test-bodies';
 
 let storybook;
 let configPath;
@@ -24,9 +33,11 @@ const hasDependency = name =>
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
-  const isStorybook = options.framework === 'react' || hasDependency('@storybook/react');
+  const isStorybook =
+    options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
   const isRNStorybook =
-    options.framework === 'react-native' || hasDependency('@storybook/react-native');
+    options.framework === 'react-native' ||
+    (!options.framework && hasDependency('@storybook/react-native'));
 
   if (isStorybook) {
     storybook = require.requireActual('@storybook/react');
@@ -46,6 +57,7 @@ export default function testStorySnapshots(options = {}) {
     runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
     storybook = require.requireActual('@storybook/react-native');
+
     configPath = path.resolve(options.configPath || 'storybook');
     require.requireActual(configPath);
   } else {
@@ -68,13 +80,15 @@ export default function testStorySnapshots(options = {}) {
 
   // eslint-disable-next-line
   for (const group of stories) {
-    if (options.storyKindRegex && !group.kind.match(options.storyKindRegex)) {
+    const { fileName, kind } = group;
+
+    if (options.storyKindRegex && !kind.match(options.storyKindRegex)) {
       // eslint-disable-next-line
       continue;
     }
 
     describe(suite, () => {
-      describe(group.kind, () => {
+      describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
           if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
@@ -83,7 +97,7 @@ export default function testStorySnapshots(options = {}) {
           }
 
           it(story.name, () => {
-            const context = { kind: group.kind, story: story.name };
+            const context = { fileName, kind, story: story.name };
             options.test({ story, context });
           });
         }
@@ -91,3 +105,16 @@ export default function testStorySnapshots(options = {}) {
     });
   }
 }
+
+describe('Storyshots Integrity', () => {
+  describe('Abandoned Storyshots', () => {
+    const storyshots = glob.sync('**/*.storyshot');
+
+    const abandonedStoryshots = storyshots.filter(fileName => {
+      const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
+      return !possibleStoriesFiles.some(fs.existsSync);
+    });
+
+    expect(abandonedStoryshots).toHaveLength(0);
+  });
+});

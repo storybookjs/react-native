@@ -4,6 +4,8 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
+This guide assumes you're using `yarn` as package manager. You may have some success using `npm` as well, but there are chances you'll get wrong versions of root dependencies in that case (we only commit `yarn.lock` to the repo).
+
 ## Issues
 
 No software is bug free. So, if you got an issue, follow these steps:
@@ -18,42 +20,73 @@ No software is bug free. So, if you got an issue, follow these steps:
 
 ### Testing against `master`
 
-To test your project against the current latest version of storybook, you can clone the repository and link it with `npm`. Try following these steps:
+To test your project against the current latest version of storybook, you can clone the repository and link it with `yarn`. Try following these steps:
 
-1.  Download the latest version of this project, and build it
+#### 1. Download the latest version of this project, and build it:
 
-        git clone https://github.com/storybooks/storybook.git
-        cd storybook
-        npm install
-        npm run bootstrap
+```sh
+git clone https://github.com/storybooks/storybook.git
+cd storybook
+yarn install
+yarn bootstrap
+```
 
-2.  Link `storybook` and any other required dependencies
+The bootstrap command will ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
 
-        cd app/react
-        npm link
+You can also pick directly from CLI:
 
-        cd <your-project>
-        npm link @storybook/react
+    yarn bootstrap -- --core
 
-        # repeat with whichever other parts of the monorepo you are using.
+#### 2a. Run unit tests
+
+You can use one of the example projects in `examples/` to develop on.
+
+This command will list all the suites and options for running tests. 
+
+```sh
+yarn test
+```
+
+_Note that in order to run the tests fro ReactNative, you must have bootstrapped with ReactNative enabled_
+
+You can also pick suites from CLI:
+
+```sh
+yarn test -- --core
+```
+
+In order to run ALL unit tests, you must have bootstrapped the react-native
+
+#### 2b. Link `storybook` and any other required dependencies:
+
+If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
+
+    ```sh
+    cd app/react
+    yarn link
+
+    cd <your-project>
+    yarn link @storybook/react
+
+    # repeat with whichever other parts of the monorepo you are using.
+    ```
 
 ### Reproductions
 
 The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
-A good way to do that is using the example `test-cra` app embedded in this repository:
+A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
 
-```bash
+```sh
 # Download and build this repository:
 git clone https://github.com/storybooks/storybook.git
 cd storybook
-npm install
-npm run bootstrap
-
-cd examples/test-cra
+yarn install
+yarn bootstrap
 
 # make changes to try and reproduce the problem, such as adding components + stories
-npm start storybook
+cd examples/cra-kitchen-sink
+yarn storybook
 
 # see if you can see the problem, if so, commit it:
 git checkout "branch-describing-issue"
@@ -67,7 +100,7 @@ git push -u <your-username> master
 
 If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `npm run eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
 ## Pull Requests (PRs)
 
@@ -78,7 +111,7 @@ We welcome your contributions. There are many ways you can help us. This is few 
 -   Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
 -   Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
-Before you submit a new PR, make you to run `npm test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
+Before you submit a new PR, make you to run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
 ### Reviewing PRs
 
@@ -115,15 +148,13 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 ### Closing issues
 
 -   Duplicate issues should be closed with a link to the original.
-
--   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, it is reasonable to wait 2 weeks before closing).
-
+-   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, 
+    it is reasonable to wait 2 weeks before closing).
 -   `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
-
--   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged, and closed when released or if the feature is deemed not appropriate.
-
--   `question / support`s should be closed when the question has been answered. If the questioner drops offline, a reasonable period to wait is two weeks.
-
+-   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged, 
+    and closed when released or if the feature is deemed not appropriate.
+-   `question / support`s should be closed when the question has been answered. 
+    If the questioner drops offline, a reasonable period to wait is two weeks.
 -   `discussion`s should be closed at a maintainer's discretion.
 
 ## Development Guide
@@ -133,23 +164,25 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
 
-    npm run dev
+```sh
+yarn dev
+```
 
-This will watch files and transpile.
+This will watch files and transpile in watch mode.
 
 ### Linking
 
 First of all link this repo with:
 
 ```sh
-npm link
+yarn link
 ```
 
 In order to test features you add, you may need to link the local copy of this repo.
 For that we need a sample project. Let's create it.
 
 ```sh
-npm install --global create-react-app getstorybook
+yarn global add create-react-app getstorybook
 create-react-app my-demo-app
 cd my-demo-app
 getstorybook
@@ -161,12 +194,12 @@ getstorybook
 Then link storybook inside the sample project with:
 
 ```sh
-npm link @storybook/react
+yarn link @storybook/react
 ```
 
 ### Getting Changes
 
-After you've done any change, you need to run the `npm run storybook` command every time to see those changes.
+After you've done any change, you need to run the `yarn storybook` command every time to see those changes.
 
 ## Release Guide
 
@@ -189,12 +222,9 @@ First, build the release:
 git checkout master
 git status
 
-# clean out extra files
+# clean out extra files & build all the packages
 # WARNING: destructive if you have extra files lying around!
-git clean -fdx && yarn
-
-# build all the packages
-npm run bootstrap
+yarn bootstrap -- --reset --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
@@ -205,7 +235,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-npm run publish -- --concurrency 1 --npm-tag=alpha
+yarn run publish -- --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
@@ -215,14 +245,14 @@ git push --tags
 
 ```sh
 # publish but don't commit to git
-npm run publish -- --concurrency 1 --skip-git
+yarn publish -- --concurrency 1 --skip-git
 
 # Update `CHANGELOG.md`
 # - Edit PR titles/labels on github until output is good
 # - Optionally, edit a handwritten description in `CHANGELOG.md`
-npm run changelog
+yarn changelog
 
 # tag the release and push `CHANGELOG.md` and tags
 # FIXME: not end-to-end tested!
-npm run github-release
+yarn github-release
 ```

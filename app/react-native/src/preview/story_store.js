@@ -1,16 +1,20 @@
 /* eslint no-underscore-dangle: 0 */
+import { EventEmitter } from 'events';
+
 let count = 0;
 
-export default class StoryStore {
+export default class StoryStore extends EventEmitter {
   constructor() {
+    super();
     this._data = {};
   }
 
-  addStory(kind, name, fn) {
+  addStory(kind, name, fn, fileName) {
     count += 1;
     if (!this._data[kind]) {
       this._data[kind] = {
         kind,
+        fileName,
         index: count,
         stories: {},
       };
@@ -21,6 +25,8 @@ export default class StoryStore {
       index: count,
       fn,
     };
+
+    this.emit('storyAdded', kind, name, fn);
   }
 
   getStoryKinds() {
@@ -39,6 +45,15 @@ export default class StoryStore {
       .map(name => this._data[kind].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
+  }
+
+  getStoryFileName(kind) {
+    const storiesKind = this._data[kind];
+    if (!storiesKind) {
+      return null;
+    }
+
+    return storiesKind.fileName;
   }
 
   getStory(kind, name) {

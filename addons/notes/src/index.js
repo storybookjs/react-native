@@ -1,24 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import deprecate from 'util-deprecate';
 import addons from '@storybook/addons';
+import { WithNotes as ReactWithNotes } from './react';
 
-export class WithNotes extends React.Component {
-  render() {
-    const { children, notes } = this.props;
-    const channel = addons.getChannel();
+export const withNotes = textOrOptions => {
+  const channel = addons.getChannel();
+  const options = typeof textOrOptions === 'string' ? { text: textOrOptions } : textOrOptions;
 
-    // send the notes to the channel.
-    channel.emit('storybook/notes/add_notes', notes);
-    // return children elements.
-    return children;
-  }
-}
-
-WithNotes.propTypes = {
-  children: PropTypes.node,
-  notes: PropTypes.string,
+  return getStory => context => {
+    // send the notes to the channel before the story is rendered
+    channel.emit('storybook/notes/add_notes', options.text);
+    return getStory(context);
+  };
 };
-WithNotes.defaultProps = {
-  children: null,
-  notes: '',
-};
+
+Object.defineProperty(exports, 'WithNotes', {
+  configurable: true,
+  enumerable: true,
+  get: deprecate(
+    () => ReactWithNotes,
+    '@storybook/addon-notes WithNotes Component is deprecated, use withNotes() instead. See https://github.com/storybooks/storybook/tree/master/addons/notes'
+  ),
+});

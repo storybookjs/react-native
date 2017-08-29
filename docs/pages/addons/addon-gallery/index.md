@@ -42,7 +42,7 @@ Storyshots is a way to automaticly jest-snapshot all your stories. [More info he
 
 You need to install these addons directly from NPM in order to use them.
 
-### [README](https://github.com/tuchk4/storybook-readme)
+### [Readme](https://github.com/tuchk4/storybook-readme)
 
 With this addon, you can add docs in markdown format for each story.
 It very useful because most projects and components already have README.md files.
@@ -97,3 +97,7 @@ With this addon you will have an additional panel at the bottom which provides y
 ### [Versions](https://github.com/buildit/storybook-addon-versions)
 
 This addon lets you navigate different versions of static Storybook builds. As such you can see how a component has changed over time.
+
+### [Apollo](https://github.com/abhiaiyer91/apollo-storybook-decorator)
+
+Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.

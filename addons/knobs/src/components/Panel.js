@@ -57,10 +57,16 @@ export default class Panel extends React.Component {
     this.loadedFromUrl = false;
     this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
     this.props.channel.on('addon:knobs:setOptions', this.setOptions);
+
+    this.stopListeningOnStory = this.props.api.onStory(() => {
+      this.setState({ knobs: [] });
+      this.props.channel.emit('addon:knobs:reset');
+    });
   }
 
   componentWillUnmount() {
     this.props.channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
+    this.stopListeningOnStory();
   }
 
   setOptions(options = { debounce: false, timestamps: false }) {
@@ -93,11 +99,10 @@ export default class Panel extends React.Component {
 
         queryParams[`knob-${name}`] = Types[knob.type].serialize(knob.value);
       });
+      this.loadedFromUrl = true;
+      api.setQueryParams(queryParams);
+      this.setState({ knobs });
     }
-
-    this.loadedFromUrl = true;
-    api.setQueryParams(queryParams);
-    this.setState({ knobs });
   }
 
   reset() {
@@ -157,6 +162,7 @@ Panel.propTypes = {
   }).isRequired,
   onReset: PropTypes.object, // eslint-disable-line
   api: PropTypes.shape({
+    onStory: PropTypes.func,
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,

@@ -1,6 +1,7 @@
 node_modules
 *.log
 .idea
+.vscode
 npm-shrinkwrap.json
 dist
 .tern-port
@@ -11,8 +12,9 @@ coverage/
 *.lerna_backup
 build
 packages/examples/automated-*
-yarn.lock
 /**/LICENSE
 docs/public
 packs/*.tgz
 package-lock.json
+.nvmrc
+storybook-static

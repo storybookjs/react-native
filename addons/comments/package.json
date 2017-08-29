@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-comments",
-  "version": "3.1.6",
+  "version": "3.2.8",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
@@ -23,7 +23,7 @@
     "storybook-remote": "start-storybook -p 3006"
   },
   "dependencies": {
-    "@storybook/addons": "^3.1.6",
+    "@storybook/addons": "^3.2.6",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
@@ -31,18 +31,20 @@
     "insert-css": "^1.0.0",
     "marked": "^0.3.6",
     "moment": "^2.18.1",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "react-render-html": "^0.1.6",
     "react-textarea-autosize": "^4.3.0"
   },
   "devDependencies": {
     "@kadira/storybook-database-cloud": "*",
     "@kadira/storybook-deployer": "*",
+    "@storybook/addon-actions": "^3.2.0",
+    "@storybook/react": "^3.2.8",
     "git-url-parse": "^6.2.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "shelljs": "^0.7.7"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "shelljs": "^0.7.8"
   },
   "peerDependencies": {
     "react": "*"
