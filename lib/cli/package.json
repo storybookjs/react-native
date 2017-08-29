@@ -42,7 +42,6 @@
     "update-notifier": "^2.1.0"
   },
   "devDependencies": {
-    "create-react-app": "1.4.0",
-    "create-react-native-app": "1.0.0"
+    "check-node-version": "2.1.0"
   }
 }

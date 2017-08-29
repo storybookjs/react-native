@@ -149,12 +149,8 @@ jobs:
           command: |
             yarn test -- --all --coverage --runInBand
             yarn coverage
-  cli:
+  cli-node-8:
     <<: *defaults
-    docker:
-      - image: node:4
-      - image: node:6
-      - image: node:8
     steps:
       - checkout
       - restore_cache:
@@ -173,6 +169,54 @@ jobs:
           name: "Testing CLI"
           command: |
             yarn test:cli
+  cli-node-6:
+    <<: *defaults
+    docker:
+      -image: livingdocs/nvm
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            nvm install 8
+            npm install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap:core
+      - run:
+          name: "Testing CLI"
+          command: |
+            nvm install 6
+            npm run test:cli
+  cli-node-4:
+    <<: *defaults
+    docker:
+      -image: livingdocs/nvm
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            nvm install 8
+            npm install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            npm run bootstrap:core
+      - run:
+          name: "Testing CLI"
+          command: |
+            nvm install 4
+            npm run test:cli
   deploy:
     <<: *defaults
     steps:
@@ -191,7 +235,9 @@ workflows:
       - docs
       - lint
       - unit-test
-      - cli
+      - cli-node-8
+      - cli-node-6
+      - cli-node-4
       # - deploy:
       #     type: approval
       #     requires:
