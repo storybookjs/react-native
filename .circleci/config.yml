@@ -170,7 +170,7 @@ jobs:
           command: |
             yarn test:cli
   cli-node-6:
-    <<: *defaults
+    working_directory: /tmp/storybook
     docker:
       -image: livingdocs/nvm
     steps:
@@ -194,7 +194,7 @@ jobs:
             nvm install 6
             npm run test:cli
   cli-node-4:
-    <<: *defaults
+    working_directory: /tmp/storybook
     docker:
       -image: livingdocs/nvm
     steps:
