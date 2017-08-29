@@ -8,7 +8,6 @@ export function RotateViewport({ active, ...props }) {
     ...styles.action,
     ...disabledStyles,
   };
-
   return (
     <div style={styles.row}>
       <label style={styles.label}>Rotate</label>
@@ -27,5 +26,5 @@ RotateViewport.propTypes = {
 
 RotateViewport.defaultProps = {
   disabled: true,
-  active: true,
+  active: false,
 };
