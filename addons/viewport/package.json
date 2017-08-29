@@ -30,6 +30,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.9.1",
     "react": "^15.6.1"
   }
 }

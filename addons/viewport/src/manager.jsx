@@ -6,17 +6,19 @@ import { Panel } from './components/Panel';
 const ADDON_ID = 'storybook-addon-viewport';
 const PANEL_ID = `${ADDON_ID}/addon-panel`;
 
-function init() {
-  addons.register(ADDON_ID, api => {
-    const channel = addons.getChannel();
+function addChannel(api) {
+  const channel = addons.getChannel();
 
-    addons.addPanel(PANEL_ID, {
-      title: 'Viewport',
-      render() {
-        return <Panel channel={channel} api={api} />;
-      },
-    });
+  addons.addPanel(PANEL_ID, {
+    title: 'Viewport',
+    render() {
+      return <Panel channel={channel} api={api} />;
+    },
   });
 }
 
-export { init };
+function init() {
+  addons.register(ADDON_ID, addChannel);
+}
+
+export { init, addChannel };

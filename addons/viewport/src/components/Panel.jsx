@@ -37,6 +37,10 @@ export class Panel extends Component {
     this.iframe = document.getElementById(storybookIframe);
   }
 
+  componentWillUnmount() {
+    this.props.channel.removeListener('addon:viewport:update', this.changeViewport);
+  }
+
   iframe = undefined;
 
   changeViewport = viewport => {
@@ -50,27 +54,16 @@ export class Panel extends Component {
         },
         this.updateIframe
       );
-    } else {
-      this.updateIframe();
     }
   };
 
   toggleLandscape = () => {
     const { isLandscape } = this.state;
 
-    // TODO simplify the state management
-    // ideally we simply dispatch an action to the iframe
-    this.setState(
-      {
-        isLandscape: !isLandscape,
-      },
-      () => {
-        this.changeViewport(this.state.viewport);
-      }
-    );
+    this.setState({ isLandscape: !isLandscape }, this.updateIframe);
   };
 
-  updateIframe() {
+  updateIframe = () => {
     const { viewport: viewportKey, isLandscape } = this.state;
     const viewport = viewports[viewportKey] || resetViewport;
 
@@ -86,7 +79,7 @@ export class Panel extends Component {
       this.iframe.style.height = viewport.styles.width;
       this.iframe.style.width = viewport.styles.height;
     }
-  }
+  };
 
   render() {
     const { isLandscape, viewport } = this.state;
