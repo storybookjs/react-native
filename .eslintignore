@@ -5,6 +5,8 @@ node_modules
 addons/**/example/**
 app/**/demo/**
 docs/public
+fixtures
+run
 
 *.bundle.js
 *.js.map

@@ -149,6 +149,30 @@ jobs:
           command: |
             yarn test -- --all --coverage --runInBand
             yarn coverage
+  cli:
+    <<: *defaults
+    docker:
+      - image: node:4
+      - image: node:6
+      - image: node:8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap -- --core
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test:cli
   deploy:
     <<: *defaults
     steps:
@@ -167,6 +191,7 @@ workflows:
       - docs
       - lint
       - unit-test
+      - cli
       # - deploy:
       #     type: approval
       #     requires:

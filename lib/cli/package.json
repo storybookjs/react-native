@@ -14,17 +14,21 @@
   "license": "MIT",
   "author": "Storybook Team",
   "bin": {
-    "getstorybook": "./bin/generate.js"
+    "getstorybook": "./bin/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
+    "pretest": "cd test && ./update_fixtures.sh",
+    "test": "cd test && ./run_tests.sh",
     "postinstall": "opencollective postinstall --collective=storybook"
   },
   "dependencies": {
     "@storybook/codemod": "^3.2.6",
+    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "chalk": "^2.0.1",
     "child-process-promise": "^2.2.1",
     "commander": "^2.9.0",
@@ -36,5 +40,9 @@
     "opencollective": "^1.0.3",
     "shelljs": "^0.7.8",
     "update-notifier": "^2.1.0"
+  },
+  "devDependencies": {
+    "create-react-app": "1.4.0",
+    "create-react-native-app": "1.0.0"
   }
 }
