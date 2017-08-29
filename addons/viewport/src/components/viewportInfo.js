@@ -1,4 +1,4 @@
-const configuredStyles = {
+export const configuredStyles = {
   border: '1px solid #728099',
   display: 'flex',
   margin: '0 auto',
