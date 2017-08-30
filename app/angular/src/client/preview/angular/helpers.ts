@@ -6,17 +6,22 @@ import { ErrorComponent } from './error.component';
 import { NoPreviewComponent } from './no-preview.component';
 import { STORY } from './app.token';
 
-const getComponent = ({ component, props = {} }) => {
+const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
   if (!component || typeof component !== 'function')
     throw new Error('No valid component provided');
 
-  const componentMeta = component.__annotations__[0];
-  const propsMeta = component.__prop__metadata__ || {};
+  const componentMetadata = component.__annotations__[0];
+  const propsMetadata = component.__prop__metadata__ || {};
+
+  Object.keys(propsMeta).map((key) => {
+    propsMetadata[key] = propsMeta[key];
+  });
+
   return {
     component,
     props,
-    componentMeta,
-    propsMeta
+    componentMeta: componentMetadata,
+    propsMeta: propsMetadata
   }
 }
 
@@ -68,7 +73,7 @@ export function renderNgError(error) {
   platformBrowserDynamic().bootstrapModule(Module);
 }
 
-export function renderNoPreviewComponent() {
+export function renderNoPreview() {
   const Module = getModule(
     [NoPreviewComponent],
     [],
@@ -84,12 +89,13 @@ export function renderNoPreviewComponent() {
 }
 
 export function renderNgApp(element) {
-  const { component, componentMeta, props, propsMeta } = getComponent(element);
+  const { component, componentMeta, props, propsMeta } = getComponentMetadata(element);
 
   if (!componentMeta)
     throw new Error('No component metadata available');
 
-  const AnnotatedComponent = getAnnotatedComponent(componentMeta, component); 
+  const AnnotatedComponent = getAnnotatedComponent(componentMeta, component);
+
   const story = {
     component: AnnotatedComponent,
     props,

@@ -85,7 +85,6 @@ function wrapperKnobs(options) {
 }
 
 export function withKnobs(storyFn, context) {
-  console.log('hai');
   return wrapperKnobs()(storyFn)(context);
 }
 

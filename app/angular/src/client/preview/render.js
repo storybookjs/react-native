@@ -3,13 +3,12 @@
 // import { ErrorComponent } from './error.component.ts';
 // import { window } from 'global';
 
-import { renderNgApp, renderNgError, renderNoPreviewComponent } from './angular/index.ts';
+import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers.ts';
 
 // check whether we're running on node/browser
 // const isBrowser = typeof window !== 'undefined';
 
 const logger = console;
-// let rootEl = null;
 let previousKind = '';
 let previousStory = '';
 
@@ -23,16 +22,13 @@ export function renderError(error) {
 export function renderException(error) {
   // We always need to render redbox in the mainPage if we get an error.
   // Since this is an error, this affects to the main page as well.
-  const realError = new Error(error.message);
-  realError.stack = error.stack;
-  renderNgError(realError);
+  const err = new Error(error.message);
+  err.stack = error.stack;
+  renderNgError(err);
 
   // Log the stack to the console. So, user could check the source code.
   logger.error(error.stack);
 }
-
-// const NoPreview = () => <p>No Preview Available!</p>;
-// const noPreview = <NoPreview />;
 
 export function renderMain(data, storyStore) {
   if (storyStore.size() === 0) return null;
@@ -41,7 +37,7 @@ export function renderMain(data, storyStore) {
 
   const story = storyStore.getStory(selectedKind, selectedStory);
   if (!story) {
-    renderNoPreviewComponent();
+    renderNoPreview();
     logger.log('no story');
     return null;
   }
@@ -65,16 +61,8 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
 
-  const currentStory = story(context);
-  let element;
+  const element = story(context);
 
-  if (currentStory.render && typeof currentStory.render === 'function') {
-    element = currentStory.render();
-  } else {
-    element = currentStory;
-  }
-
-  logger.log(element);
   // if (!element) {
   //   const error = {
   //     title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
@@ -96,7 +84,6 @@ export function renderMain(data, storyStore) {
   //   };
   //   return renderError(error);
   // }
-
   logger.log('generate module');
   return renderNgApp(element);
 }
