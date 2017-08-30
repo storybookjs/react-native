@@ -172,7 +172,7 @@ jobs:
   cli-node-6:
     working_directory: /tmp/storybook
     docker:
-      -image: bdfoster/nvm
+      -image: onedio2/nvmnode
     steps:
       - checkout
       - restore_cache:
@@ -196,7 +196,7 @@ jobs:
   cli-node-4:
     working_directory: /tmp/storybook
     docker:
-      -image: bdfoster/nvm
+      -image: onedio2/nvmnode
     steps:
       - checkout
       - restore_cache:
