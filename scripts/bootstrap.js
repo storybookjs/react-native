@@ -54,7 +54,7 @@ const tasks = {
       log.info(prefix, 'git clean');
       spawn('git clean -fdx --exclude=".vscode" --exclude=".idea"');
       log.info(prefix, 'yarn install');
-      spawn('yarn install --no-lockfile');
+      spawn('yarn install');
     },
   }),
   core: createTask({

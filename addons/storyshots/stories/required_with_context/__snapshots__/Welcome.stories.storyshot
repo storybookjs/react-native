@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Welcome to Storybook 1`] = `
+<article
+  className="css-1fqbdip"
+>
+  <h1
+    className="css-nil"
+  >
+    Welcome to storybook
+  </h1>
+  <p>
+    This is a UI component dev environment for your app.
+  </p>
+  <p>
+    We've added some basic stories inside the
+     
+    <code
+      className="css-mteq83"
+    >
+      src/stories
+    </code>
+     
+    directory.
+    <br />
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    <br />
+    (Basically a story is like a visual test case.)
+  </p>
+  <p>
+    See these sample
+     
+    <a
+      className="css-ca0824"
+      onClick={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      stories
+    </a>
+     
+    for a component called
+     
+    <code
+      className="css-mteq83"
+    >
+      Button
+    </code>
+    .
+  </p>
+  <p>
+    Just like that, you can add your own components as stories.
+    <br />
+    You can also edit those components and see changes right away.
+    <br />
+    (Try editing the 
+    <code
+      className="css-mteq83"
+    >
+      Button
+    </code>
+     stories located at 
+    <code
+      className="css-mteq83"
+    >
+      src/stories/index.js
+    </code>
+    .)
+  </p>
+  <p>
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    Have a look at the
+     
+    <a
+      className="css-ca0824"
+      href="https://storybook.js.org/basics/writing-stories"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Writing Stories
+    </a>
+     
+    section in our documentation.
+  </p>
+  <p
+    className="css-bwdon3"
+  >
+    <b>
+      NOTE:
+    </b>
+    <br />
+    Have a look at the
+     
+    <code
+      className="css-mteq83"
+    >
+      .storybook/webpack.config.js
+    </code>
+     
+    to add webpack loaders and plugins you are using in this project.
+  </p>
+</article>
+`;
