@@ -42,6 +42,7 @@
     "update-notifier": "^2.1.0"
   },
   "devDependencies": {
-    "check-node-version": "2.1.0"
+    "check-node-version": "2.1.0",
+    "npx": "9.6.0"
   }
 }

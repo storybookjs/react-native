@@ -3,7 +3,7 @@
 set -e -x
 
 cd ..
-yarn unlink
+yarn unlink || :
 yarn link
 cd test
 
@@ -17,5 +17,3 @@ do
   getstorybook
   cd ..
 done
-
-echo SUCCESS
