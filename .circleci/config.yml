@@ -6,7 +6,7 @@ defaults: &defaults
 version: 2
 dependencies:
   pre:
-    - npm install -g npm
+    - yarn global add npm
 jobs:
   validate:
     <<: *defaults
@@ -40,7 +40,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap -- --all
+            yarn bootstrap -- --all
       - save_cache:
           key: package-dependencies-{{ checksum "package.json" }}
           paths:
@@ -63,15 +63,15 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap -- --core
+            yarn bootstrap -- --core
       - run:
           name: "Build react kitchen-sink"
           command: |
-            cd examples/cra-kitchen-sink && npm run build-storybook
+            cd examples/cra-kitchen-sink && yarn build-storybook
       - run:
           name: "Build vue kitchen-sink"
           command: |
-            cd examples/vue-kitchen-sink && npm run build-storybook
+            cd examples/vue-kitchen-sink && yarn build-storybook
   example-react-native:
     <<: *defaults
     steps:
@@ -87,7 +87,7 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            npm run bootstrap -- --core --reactnative
+            yarn bootstrap -- --core --reactnative
       - run:
           name: "Running react-native"
           command: |
@@ -107,11 +107,11 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap -- --docs
+            yarn bootstrap -- --docs
       - run:
           name: "Running docs"
           command: |
-            npm run docs:build
+            yarn docs:build
   lint:
     <<: *defaults
     steps:
@@ -127,7 +127,7 @@ jobs:
       - run:
           name: "Linting"
           command: |
-            npm run lint
+            yarn lint
   unit-test:
     <<: *defaults
     steps:
@@ -143,12 +143,12 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap -- --core --reactnative
+            yarn bootstrap -- --core --reactnative
       - run:
           name: "Unit testing"
           command: |
-            npm run test -- --coverage -i
-            npm run coverage
+            yarn test -- --all --coverage --runInBand
+            yarn coverage
   deploy:
     <<: *defaults
     steps:
