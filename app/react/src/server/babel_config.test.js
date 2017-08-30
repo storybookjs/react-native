@@ -1,6 +1,8 @@
 import mock from 'mock-fs';
 import loadBabelConfig from './babel_config';
 
+jest.mock('global', () => ({ console: { log: jest.fn(), error: jest.fn(), info: jest.fn() } }));
+
 describe('babel_config', () => {
   // As the 'fs' is going to be mocked, let's call require.resolve
   // so the require.cache has the correct route to the file.

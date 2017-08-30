@@ -16,6 +16,12 @@ module.exports = {
     require.resolve('babel-preset-minify'),
   ],
   plugins: [
+    [
+      require.resolve('babel-plugin-react-docgen'),
+      {
+        DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
+      },
+    ],
     require.resolve('babel-plugin-transform-regenerator'),
     [
       require.resolve('babel-plugin-transform-runtime'),

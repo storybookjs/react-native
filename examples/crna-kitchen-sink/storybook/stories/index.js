@@ -4,7 +4,9 @@ import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withKnobs } from '@storybook/addon-knobs';
 
+import knobsWrapper from './Knobs';
 import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';
@@ -27,3 +29,5 @@ storiesOf('Button', module)
       <Text>😀 😎 👍 💯</Text>
     </Button>
   );
+
+storiesOf('Knobs', module).addDecorator(withKnobs).add('with knobs', knobsWrapper);
