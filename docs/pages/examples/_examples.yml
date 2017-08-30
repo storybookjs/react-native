@@ -1,3 +1,10 @@
+carbon:
+  thumbnail: ./thumbnails/carbon.png
+  title: Carbon Components
+  description: IBM's Carbon Design System implemented in React.
+  source: https://github.com/carbon-design-system/carbon-components-react
+  demo: http://react.carbondesignsystem.com
+  site: http://carbondesignsystem.com
 airbnb:
   thumbnail: ./thumbnails/airbnb.jpg
   title: Airbnb Dates
