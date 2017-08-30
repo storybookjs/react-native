@@ -169,54 +169,6 @@ jobs:
           name: "Testing CLI"
           command: |
             yarn test:cli
-  cli-node-6:
-    working_directory: /tmp/storybook
-    docker:
-      -image: onedio2/nvmnode
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
-      - run:
-          name: "Install root dependencies"
-          command: |
-            nvm install 8
-            npm install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            npm run bootstrap:core
-      - run:
-          name: "Testing CLI"
-          command: |
-            nvm install 6
-            npm run test:cli
-  cli-node-4:
-    working_directory: /tmp/storybook
-    docker:
-      -image: onedio2/nvmnode
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
-      - run:
-          name: "Install root dependencies"
-          command: |
-            nvm install 8
-            npm install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            npm run bootstrap:core
-      - run:
-          name: "Testing CLI"
-          command: |
-            nvm install 4
-            npm run test:cli
   deploy:
     <<: *defaults
     steps:
@@ -236,8 +188,6 @@ workflows:
       - lint
       - unit-test
       - cli-node-8
-      - cli-node-6
-      - cli-node-4
       # - deploy:
       #     type: approval
       #     requires:
