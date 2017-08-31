@@ -2,6 +2,8 @@ import url from 'url';
 
 const getExtensionForFilename = filename => /.+\.(\w+)$/.exec(filename)[1];
 
+export const isPreviewAsset = filename => filename.indexOf('preview.bundle.js') >= 0;
+
 // assets.preview will be:
 // - undefined
 // - string e.g. 'static/preview.9adbb5ef965106be1cc3.bundle.js'
@@ -39,7 +41,8 @@ export const urlsFromAssets = assets => {
           return isSupportedExtension && !isMap;
         })
         .forEach(assetUrl => {
-          urls[getExtensionForFilename(assetUrl)].push(assetUrl);
+          const method = isPreviewAsset(assetUrl) ? 'unshift' : 'push';
+          urls[getExtensionForFilename(assetUrl)][method](assetUrl);
         });
     });
 
