@@ -72,7 +72,6 @@ export default function({ assets, publicPath, headHtml }) {
       </head>
       <body style="margin: 0;">
         <div id="root"></div>
-        <my-app></my-app>
         <script src="${url.resolve(publicPath, managerUrls.js)}"></script>
       </body>
     </html>

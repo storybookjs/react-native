@@ -1,22 +1,38 @@
 // import { environment } from './environments/environment';
 
 // import { ErrorComponent } from './error.component.ts';
-// import { window } from 'global';
+import { document } from 'global';
 
 import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers.ts';
 
 // check whether we're running on node/browser
-// const isBrowser = typeof window !== 'undefined';
+const isBrowser = typeof window !== 'undefined';
 
 const logger = console;
 let previousKind = '';
 let previousStory = '';
+let currentModule = null;
+
+function cleanupRootNode() {
+  if (currentModule) {
+    currentModule.destroy();
+    currentModule = null;
+    if (isBrowser) {
+      const body = document.body;
+      const app = document.createElement('my-app');
+      body.appendChild(app);
+    }
+  }
+}
 
 export function renderError(error) {
-  const properError = new Error(error.title);
-  properError.stack = error.description;
+  const err = new Error(error.title);
+  err.stack = error.description;
+  cleanupRootNode();
 
-  renderNgError(properError);
+  renderNgError(err, appModule => {
+    currentModule = appModule;
+  });
 }
 
 export function renderException(error) {
@@ -24,7 +40,9 @@ export function renderException(error) {
   // Since this is an error, this affects to the main page as well.
   const err = new Error(error.message);
   err.stack = error.stack;
-  renderNgError(err);
+  renderNgError(err, appModule => {
+    currentModule = appModule;
+  });
 
   // Log the stack to the console. So, user could check the source code.
   logger.error(error.stack);
@@ -37,8 +55,10 @@ export function renderMain(data, storyStore) {
 
   const story = storyStore.getStory(selectedKind, selectedStory);
   if (!story) {
-    renderNoPreview();
-    logger.log('no story');
+    cleanupRootNode();
+    renderNoPreview(appModule => {
+      currentModule = appModule;
+    });
     return null;
   }
 
@@ -53,7 +73,7 @@ export function renderMain(data, storyStore) {
     //    https://github.com/storybooks/react-storybook/issues/81
     previousKind = selectedKind;
     previousStory = selectedStory;
-    // ReactDOM.unmountComponentAtNode(rootEl);
+    cleanupRootNode();
   }
 
   const context = {
@@ -84,8 +104,9 @@ export function renderMain(data, storyStore) {
   //   };
   //   return renderError(error);
   // }
-  logger.log('generate module');
-  return renderNgApp(element);
+  return renderNgApp(element, appModule => {
+    currentModule = appModule;
+  });
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {

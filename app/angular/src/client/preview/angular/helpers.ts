@@ -1,4 +1,4 @@
-import { enableProdMode, NgModule, Component } from '@angular/core';
+import { enableProdMode, NgModule, Component, NgModuleRef, ApplicationRef } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -49,7 +49,7 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
   return NewModule;
 }
 
-export function renderNgError(error) {
+export function renderNgError(error, cb) {
   const errorData = {
     component: null,
     props: {
@@ -70,10 +70,12 @@ export function renderNgError(error) {
     enableProdMode();
   } catch(e) {}
 
-  platformBrowserDynamic().bootstrapModule(Module);
+  platformBrowserDynamic().bootstrapModule(Module).then((appModule) => {
+      cb(appModule);
+  });
 }
 
-export function renderNoPreview() {
+export function renderNoPreview(cb) {
   const Module = getModule(
     [NoPreviewComponent],
     [],
@@ -85,10 +87,12 @@ export function renderNoPreview() {
     enableProdMode();
   } catch(e) {}
 
-  platformBrowserDynamic().bootstrapModule(Module);
+  platformBrowserDynamic().bootstrapModule(Module).then((appModule) => {
+      cb(appModule);
+  });
 }
 
-export function renderNgApp(element) {
+export function renderNgApp(element, cb) {
   const { component, componentMeta, props, propsMeta } = getComponentMetadata(element);
 
   if (!componentMeta)
@@ -112,5 +116,7 @@ export function renderNgApp(element) {
     enableProdMode();
   } catch(e) {}
 
-  platformBrowserDynamic().bootstrapModule(Module);
+  return platformBrowserDynamic().bootstrapModule(Module).then((appModule) => {
+      cb(appModule);
+  });
 }

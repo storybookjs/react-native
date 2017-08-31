@@ -3,7 +3,7 @@ declare var component: {
     new ();
 };
 
-const getComponent = ({ component, props = {} }) => {
+const getComponentMetadata = ({ component, props = {} }) => {
   if (!component || typeof component !== 'function')
     throw new Error('No valid component provided');
 
@@ -25,8 +25,8 @@ const getAnnotatedComponent = (meta, component) => {
 
     constructor(private cd: ChangeDetectorRef) {
         super();
-        this.onKnobReset = this.onKnobReset.bind(this);
-        this.onKnobChange =  this.onKnobChange.bind(this);
+        this.resetKnobs = this.resetKnobs.bind(this);
+        this.knobChanged =  this.knobChanged.bind(this);
         this.setPaneKnobs = this.setPaneKnobs.bind(this);
     }
 
@@ -40,8 +40,8 @@ const getAnnotatedComponent = (meta, component) => {
       if (super.ngOnInit) {
         super.ngOnInit();
       }
-      this.channel.on('addon:knobs:reset', this.onKnobReset);
-      this.channel.on('addon:knobs:knobChange', this.onKnobChange);
+      this.channel.on('addon:knobs:reset', this.resetKnobs);
+      this.channel.on('addon:knobs:knobChange', this.knobChanged);
       this.knobStore.subscribe(this.setPaneKnobs);
       this.setPaneKnobs();
     }
@@ -50,12 +50,16 @@ const getAnnotatedComponent = (meta, component) => {
       if (super.ngOnDestroy) {
         super.ngOnDestroy();
       }
-      this.channel.removeListener('addon:knobs:reset', this.onKnobReset);
-      this.channel.removeListener('addon:knobs:knobChange', this.onKnobChange);
+      this.channel.removeListener('addon:knobs:reset', this.resetKnobs);
+      this.channel.removeListener('addon:knobs:knobChange', this.knobChanged);
       this.knobStore.unsubscribe(this.setPaneKnobs);
     }
 
-    onKnobChange(change) {
+    setPaneKnobs(timestamp: any = +new Date()) {
+        this.channel.emit('addon:knobs:setKnobs', { knobs: this.knobStore.getAll(), timestamp });
+    }
+
+    knobChanged(change) {
         const { name, value } = change;
         const knobOptions = this.knobStore.get(name);
         knobOptions.value = value;
@@ -68,13 +72,9 @@ const getAnnotatedComponent = (meta, component) => {
         this.cd.detectChanges();
     }
 
-    onKnobReset() {
+    resetKnobs() {
         this.knobStore.reset();
         this.setPaneKnobs(false);
-    }
-
-    setPaneKnobs(timestamp: any = +new Date()) {
-        this.channel.emit('addon:knobs:setKnobs', { knobs: this.knobStore.getAll(), timestamp });
     }
   }
 
@@ -82,7 +82,7 @@ const getAnnotatedComponent = (meta, component) => {
 }
 
 export function prepareComponent(element, channel, knobStore) {
-  const { component, componentMeta, props, propsMeta } = getComponent(element);
+  const { component, componentMeta, props, propsMeta } = getComponentMetadata(element);
 
   if (!componentMeta)
     throw new Error('No component metadata available');

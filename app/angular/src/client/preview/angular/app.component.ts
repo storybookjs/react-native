@@ -3,14 +3,14 @@
 // https://github.com/angular/angular/issues/15360
 // For the time being, the ViewContainerRef approach works pretty well.
 
-import { Component, Inject, AfterViewInit ,ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, Inject, AfterViewInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnDestroy } from '@angular/core';
 import { STORY, Data } from './app.token';
 
 @Component({
   selector: 'my-app',
   template: '<ng-template #target></ng-template>'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef }) target: ViewContainerRef;
   constructor(
     private cfr: ComponentFactoryResolver,
@@ -19,6 +19,10 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.putInMyHtml();
+  }
+
+  ngOnDestroy() {
+    this.target.clear();
   }
 
   putInMyHtml() {
