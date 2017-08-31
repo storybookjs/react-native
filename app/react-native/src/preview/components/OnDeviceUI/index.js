@@ -124,7 +124,11 @@ export default class OnDeviceUI extends Component {
         <Animated.View style={menuSpacerStyles} />
         <View style={style.previewContainer}>
           <Animated.View style={headerStyles}>
-            <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
+            <TouchableWithoutFeedback
+              onPress={this.menuToggledHandler}
+              testID='Storybook.OnDeviceUI.open'
+              accessibilityLabel='Storybook.OnDeviceUI.open'
+            >
               <View>
                 <Image source={openIcon} style={style.icon} />
               </View>
@@ -140,7 +144,11 @@ export default class OnDeviceUI extends Component {
           </View>
         </View>
         <Animated.View style={menuStyles} onLayout={this.menuLayoutHandler}>
-          <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
+          <TouchableWithoutFeedback
+            onPress={this.menuToggledHandler}
+            testID='Storybook.OnDeviceUI.close'
+            accessibilityLabel='Storybook.OnDeviceUI.close'
+            >
             <View style={style.closeButton}>
               <Image source={closeIcon} style={style.icon} />
             </View>
