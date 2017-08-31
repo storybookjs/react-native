@@ -53,25 +53,25 @@ setOptions({
    */
   goFullScreen: false,
   /**
-   * display left panel that shows a list of stories
+   * display panel that shows a list of stories
    * @type {Boolean}
    */
-  showLeftPanel: true,
+  showStoriesPanel: true,
   /**
-   * display horizontal panel that displays addon configurations
+   * display panel that shows addon configurations
    * @type {Boolean}
    */
-  showDownPanel: true,
+  showAddonPanel: true,
   /**
    * display floating search box to search through stories
    * @type {Boolean}
    */
   showSearchBox: false,
   /**
-   * show horizontal addons panel as a vertical panel on the right
+   * show addon panel as a vertical panel on the right
    * @type {Boolean}
    */
-  downPanelInRight: false,
+  addonPanelInRight: false,
   /**
    * sorts stories
    * @type {Boolean}
@@ -98,7 +98,7 @@ setOptions({
    * id to select an addon panel
    * @type {String}
    */
-  selectedAddonPanel: undefined, // The order of addons in the "Addons Panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
+  selectedAddonPanel: undefined, // The order of addons in the "Addon panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
 });
 
 storybook.configure(() => require('./stories'), module);
