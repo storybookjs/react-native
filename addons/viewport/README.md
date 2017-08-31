@@ -4,13 +4,13 @@ Storybook Viewport Addon allows your stories to be displayed in different sizes 
 
 This addon works with Storybook for: [React](https://github.com/storybooks/storybook/tree/master/app/react) and [Vue](https://github.com/storybooks/storybook/tree/master/app/vue).
 
-![Screenshot](docs/viewport.png)
+![Screenshot](https://github.com/storybooks/storybook/blob/master/docs/viewport.png)
 
 ## Installation
 
 Install the following npm module:
 
-    npm i -D @storybook/addon-viewport
+    npm i --save-dev @storybook/addon-viewport
 
 or with yarn:
 
@@ -28,10 +28,10 @@ This will register the Viewport Addon to Storybook and will show up in the actio
 
 ## FAQ
 
-#### Adding more devices
+#### How do I add a new device?
 
 Unfortunately, this is currently not supported.
 
-#### Custom Screen Sizes
+#### How can I make a custom screen size?
 
 Unfortunately, this is currently not supported.
