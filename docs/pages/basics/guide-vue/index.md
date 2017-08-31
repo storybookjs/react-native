@@ -1,7 +1,8 @@
----
+* * *
+
 id: 'guide-vue'
-title: 'Storybook for Vue'
----
+
+## title: 'Storybook for Vue'
 
 You may have tried to use our quick start guide to setup your project for Storybook. If you want to set up Storybook manually, this is the guide for you.
 
