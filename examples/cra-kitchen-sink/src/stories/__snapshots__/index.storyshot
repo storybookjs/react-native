@@ -1754,6 +1754,25 @@ exports[`Storyshots Button with knobs 1`] = `
     January 20, 2017
   </p>
   <p>
+    I have 
+    2
+     children:
+  </p>
+  <ol>
+    <li>
+      Jane
+      , 
+      13
+       years old
+    </li>
+    <li>
+      John
+      , 
+      8
+       years old
+    </li>
+  </ol>
+  <p>
     My wallet contains: $
     12.50
   </p>
