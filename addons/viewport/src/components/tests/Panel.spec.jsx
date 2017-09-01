@@ -1,6 +1,6 @@
-/* global document */
 import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
+import { document } from 'global';
 
 import { Panel } from '../Panel';
 import { viewports, defaultViewport, resetViewport } from '../viewportInfo';

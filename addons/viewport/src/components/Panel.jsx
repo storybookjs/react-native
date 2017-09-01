@@ -1,8 +1,7 @@
-/* global document */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { viewports, defaultViewport, resetViewport } from './viewportInfo';
+import { document } from 'global';
 
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
