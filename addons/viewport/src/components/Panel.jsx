@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { viewports, defaultViewport, resetViewport } from './viewportInfo';
 import { document } from 'global';
+import { baseFonts } from '@storybook/components';
 
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
@@ -13,8 +14,7 @@ const containerStyles = {
   padding: 15,
   width: '100%',
   boxSizing: 'border-box',
-  fontFamily:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Arial, sans-serif',
+  ...baseFonts,
 };
 
 export class Panel extends Component {

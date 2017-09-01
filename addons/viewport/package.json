@@ -15,6 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@storybook/components": "^3.2.7",
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
