@@ -7,11 +7,7 @@
     "storybook"
   ],
   "scripts": {
-    "build": "babel --source-maps --out-dir dist src",
-    "watch": "npm run build -- -w",
-    "prepublish": "npm run build && node ../../scripts/prepublish.js",
-    "storybook": "start-storybook -p 3000",
-    "deploy-storybook": "storybook-to-ghpages"
+    "prepublish": "node ../../scripts/prepublish.js"
   },
   "license": "MIT",
   "dependencies": {
