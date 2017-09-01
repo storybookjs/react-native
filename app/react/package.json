@@ -50,6 +50,7 @@
     "glamor": "^2.20.40",
     "glamorous": "^4.1.2",
     "global": "^4.3.2",
+    "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.4",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",

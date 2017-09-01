@@ -23,11 +23,15 @@ export function loadEnv(options = {}) {
     PUBLIC_URL: JSON.stringify(options.production ? '.' : ''),
   };
 
-  Object.keys(process.env).filter(name => /^STORYBOOK_/.test(name)).forEach(name => {
-    env[name] = JSON.stringify(process.env[name]);
-  });
+  Object.keys(process.env)
+    .filter(name => /^STORYBOOK_/.test(name))
+    .forEach(name => {
+      env[name] = JSON.stringify(process.env[name]);
+    });
 
   return {
     'process.env': env,
   };
 }
+
+export const getConfigDir = () => process.env.SBCONFIG_CONFIG_DIR || './.storybook';

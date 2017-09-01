@@ -1,9 +1,20 @@
 import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
-import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
+
+import {
+  getConfigDir,
+  includePaths,
+  excludePaths,
+  nodeModulesPaths,
+  loadEnv,
+  nodePaths,
+} from './utils';
 import babelLoaderConfig from './babel';
+import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
+import { version } from '../../../package.json';
 
 export default function() {
   const config = {
@@ -22,6 +33,23 @@ export default function() {
       publicPath: '/',
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        chunks: ['manager'],
+        data: {
+          managerHead: getManagerHeadHtml(getConfigDir()),
+          version,
+        },
+        template: require.resolve('../index.html.ejs'),
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'iframe.html',
+        excludeChunks: ['manager'],
+        data: {
+          previewHead: getPreviewHeadHtml(getConfigDir()),
+        },
+        template: require.resolve('../iframe.html.ejs'),
+      }),
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
