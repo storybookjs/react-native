@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { viewports, defaultViewport, resetViewport } from './viewportInfo';
-import { document } from 'global';
 import { baseFonts } from '@storybook/components';
+import { document } from 'global';
 
+import { viewports, defaultViewport, resetViewport } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
 
