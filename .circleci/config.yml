@@ -150,7 +150,9 @@ jobs:
             yarn test -- --all --coverage --runInBand
             yarn coverage
   cli-node-8:
-    <<: *defaults
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
     steps:
       - checkout
       - restore_cache:
