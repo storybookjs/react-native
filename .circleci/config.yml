@@ -170,7 +170,7 @@ jobs:
       - run:
           name: "Testing CLI"
           command: |
-            yarn test:cli
+            yarn test -- --cli
   deploy:
     <<: *defaults
     steps:
