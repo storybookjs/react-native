@@ -42,7 +42,7 @@ const emit = emiter.emit.bind(emiter);
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-const InfoButton = () => (
+const InfoButton = () =>
   <span
     style={{
       fontFamily: 'sans-serif',
@@ -55,33 +55,31 @@ const InfoButton = () => (
       borderRadius: '0px 0px 0px 5px',
     }}
   >
-    {' '}
-    Show Info{' '}
-  </span>
-);
+    {' '}Show Info{' '}
+  </span>;
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('with text', () => (
+  .add('with text', () =>
     <Button onClick={action('clicked')}>
       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
       Hello Button
     </Button>
-  ))
-  .add('with some emoji', () => (
+  )
+  .add('with some emoji', () =>
     <Button onClick={action('clicked')}>
       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
       😀 😎 👍 💯
     </Button>
-  ))
-  .add('with notes', () => (
+  )
+  .add('with notes', () =>
     <WithNotes notes={'A very simple button'}>
       <Button>
         {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
         Check my notes in the notes panel
       </Button>
     </WithNotes>
-  ))
+  )
   .add('with knobs', () => {
     setOptions({ selectedAddonPanel: 'storybooks/storybook-addon-knobs' });
     const name = text('Name', 'Storyteller');
@@ -123,61 +121,76 @@ storiesOf('Button', module)
 
     return (
       <div style={style}>
-        <p>{intro}</p>
-        <p>My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</p>
-        <p>I have {children.length} children:</p>
+        <p>
+          {intro}
+        </p>
+        <p>
+          My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}
+        </p>
+        <p>
+          I have {children.length} children:
+        </p>
         <ol>
-          {children.map(child => (
+          {children.map(child =>
             <li key={child.name}>
               {child.name}, {child.age} years old
             </li>
-          ))}
+          )}
         </ol>
-        <p>My wallet contains: ${dollars.toFixed(2)}</p>
+        <p>
+          My wallet contains: ${dollars.toFixed(2)}
+        </p>
         <p>In my backpack, I have:</p>
-        <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
-        <p>{salutation}</p>
+        <ul>
+          {items.map(item =>
+            <li key={item}>
+              {item}
+            </li>
+          )}
+        </ul>
+        <p>
+          {salutation}
+        </p>
       </div>
     );
   })
   .addWithInfo(
     'with some info',
     'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
-    context => (
+    context =>
       <Container>
         click the <InfoButton /> label in top right for info about "{context.story}"
       </Container>
-    )
   )
   .add(
     'with new info',
     withInfo(
       'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
-    )(context => (
+    )(context =>
       <Container>
         {setOptions({ selectedAddonPanel: 'storybook/info/info-panel' })}
         click the <InfoButton /> label in top right for info about "{context.story}"
       </Container>
-    ))
+    )
   )
   .add(
     'addons composition',
     withInfo('see Notes panel for composition info')(
-      withNotes('Composition: Info(Notes())')(context => (
+      withNotes('Composition: Info(Notes())')(context =>
         <div>
           {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
           click the <InfoButton /> label in top right for info about "{context.story}"
         </div>
-      ))
+      )
     )
   );
 
 storiesOf(
   'AddonInfo.DocgenButton',
   module
-).addWithInfo('DocgenButton', 'Button with PropTypes and doc comments', () => (
+).addWithInfo('DocgenButton', 'Button with PropTypes and doc comments', () =>
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
-));
+);
 
 storiesOf(
   'AddonInfo.ImportedPropsButton',
@@ -191,9 +204,9 @@ storiesOf(
 storiesOf(
   'AddonInfo.FlowTypeButton',
   module
-).addWithInfo('FlowTypeButton', 'Button with Flow type documentation comments', () => (
+).addWithInfo('FlowTypeButton', 'Button with Flow type documentation comments', () =>
   <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
-));
+);
 
 storiesOf('App', module).add('full app', () => <App />);
 
@@ -202,7 +215,7 @@ storiesOf('Some really long story kind description', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>);
 
 storiesOf('WithEvents', module)
-  .addDecorator(getStory => (
+  .addDecorator(getStory =>
     <WithEvents
       emit={emit}
       events={[
@@ -255,7 +268,7 @@ storiesOf('WithEvents', module)
     >
       {getStory()}
     </WithEvents>
-  ))
+  )
   .add('Logger', () => <Logger emiter={emiter} />);
 
 storiesOf('withNotes', module)
@@ -263,20 +276,28 @@ storiesOf('withNotes', module)
   .add('with some emoji', withNotes('My notes on emojies')(() => <p>🤔😳😯😮</p>))
   .add(
     'with a button and some emoji',
-    withNotes('My notes on a button with emojies')(() => (
+    withNotes('My notes on a button with emojies')(() =>
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-    ))
+    )
   )
-  .add('with old API', () => (
+  .add('with old API', () =>
     <WithNotes notes="Hello">
       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
     </WithNotes>
-  ));
+  );
 
 storiesOf('component.base.Link', module)
   .addDecorator(withKnobs)
-  .add('first', () => <a>{text('firstLink', 'first link')}</a>)
-  .add('second', () => <a>{text('secondLink', 'second link')}</a>);
+  .add('first', () =>
+    <a>
+      {text('firstLink', 'first link')}
+    </a>
+  )
+  .add('second', () =>
+    <a>
+      {text('secondLink', 'second link')}
+    </a>
+  );
 
 storiesOf('component.base.Span', module)
   .add('first', () => <span>first span</span>)
@@ -287,20 +308,20 @@ storiesOf('component.common.Div', module)
   .add('second', () => <div>second div</div>);
 
 storiesOf('component.common.Table', module)
-  .add('first', () => (
+  .add('first', () =>
     <table>
       <tr>
         <td>first table</td>
       </tr>
     </table>
-  ))
-  .add('second', () => (
+  )
+  .add('second', () =>
     <table>
       <tr>
         <td>first table</td>
       </tr>
     </table>
-  ));
+  );
 
 storiesOf('component.Button', module)
   .add('first', () => <button>first button</button>)
@@ -310,7 +331,11 @@ storiesOf('component.Button', module)
 
 storiesOf('Cells/Molecules.Atoms/simple', module)
   .addDecorator(withKnobs)
-  .add('with text', () => <Button>{text('buttonText', 'Hello Button')}</Button>)
+  .add('with text', () =>
+    <Button>
+      {text('buttonText', 'Hello Button')}
+    </Button>
+  )
   .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
 
 storiesOf('Cells/Molecules/Atoms.more', module)
