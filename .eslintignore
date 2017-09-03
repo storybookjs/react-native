@@ -5,9 +5,7 @@ node_modules
 addons/**/example/**
 app/**/demo/**
 docs/public
-fixtures
-run
-
+lib/cli/test
 *.bundle.js
 *.js.map
 

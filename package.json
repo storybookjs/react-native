@@ -28,7 +28,8 @@
     "lint:md": "remark",
     "publish": "lerna publish",
     "test": "./scripts/test.js",
-    "test:cli": "lerna run --stream --scope @storybook/cli test"
+    "test:cli": "npm --prefix lib/cli test",
+    "test:cli:update": "npm run test:cli -- -- -u"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

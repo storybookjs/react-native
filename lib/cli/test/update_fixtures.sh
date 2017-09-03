@@ -1,9 +1,9 @@
 #!/bin/bash
 
-set -e -x
+set -e
 
 function update_fixture {
-  rm -rf $2
+  rm -rfd $2
 
   if [ $2 == "react_native_scripts" ]
   then

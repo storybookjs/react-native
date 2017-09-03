@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "env",
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    "babel-root-slash-import"
+  ]
+}
