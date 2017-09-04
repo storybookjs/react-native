@@ -100,6 +100,16 @@ storiesOf('Button', module)
       padding: '10px',
     });
     const nice = boolean('Nice', true);
+    const children = object('Children', [
+      {
+        name: 'Jane',
+        age: 13,
+      },
+      {
+        name: 'John',
+        age: 8,
+      },
+    ]);
 
     // NOTE: put this last because it currently breaks everything after it :D
     const birthday = date('Birthday', new Date('Jan 20 2017'));
@@ -117,6 +127,16 @@ storiesOf('Button', module)
         <p>
           My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}
         </p>
+        <p>
+          I have {children.length} children:
+        </p>
+        <ol>
+          {children.map(child =>
+            <li key={child.name}>
+              {child.name}, {child.age} years old
+            </li>
+          )}
+        </ol>
         <p>
           My wallet contains: ${dollars.toFixed(2)}
         </p>
