@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 import StackGrid from 'react-stack-grid';
 import GridItem from '../GridItem';
 
-const Grid = ({ items, columnWidth }) =>
+const Grid = ({ items, columnWidth }) => (
   <StackGrid columnWidth={columnWidth}>
     {items.map((item, idx) => <GridItem key={idx} {...item} />)}
-  </StackGrid>;
+  </StackGrid>
+);
 Grid.propTypes = {
   items: PropTypes.array, // eslint-disable-line
   columnWidth: PropTypes.number,

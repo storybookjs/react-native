@@ -101,8 +101,7 @@
         "git add"
       ]
     },
-    "verbose": true,
-    "concurrent": false
+    "verbose": true
   },
   "pr-log": {
     "skipLabels": [

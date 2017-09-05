@@ -30,17 +30,14 @@ const codeStyle = {
   overflow: 'auto',
 };
 
-const ErrorDisplay = ({ error }) =>
+const ErrorDisplay = ({ error }) => (
   <div style={mainStyle}>
-    <div style={headingStyle}>
-      {error.message}
-    </div>
+    <div style={headingStyle}>{error.message}</div>
     <pre style={codeStyle}>
-      <code>
-        {error.stack}
-      </code>
+      <code>{error.stack}</code>
     </pre>
-  </div>;
+  </div>
+);
 
 ErrorDisplay.propTypes = {
   error: PropTypes.shape({

@@ -27,7 +27,7 @@ const testContext = { kind: 'addon_info', story: 'jest_test' };
 const testOptions = { propTables: false };
 
 describe('addon Info', () => {
-  const story = context =>
+  const story = context => (
     <div>
       It's a {context.story} story:
       <TestComponent
@@ -38,7 +38,8 @@ describe('addon Info', () => {
         string={'seven'}
         bool
       />
-    </div>;
+    </div>
+  );
   const api = {
     add: (name, fn) => fn(testContext),
   };

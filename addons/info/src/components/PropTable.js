@@ -148,27 +148,21 @@ export default function PropTable(props) {
         </tr>
       </thead>
       <tbody>
-        {array.map(row =>
+        {array.map(row => (
           <tr key={row.property}>
+            <td>{row.property}</td>
+            <td>{row.propType}</td>
+            <td>{row.required}</td>
             <td>
-              {row.property}
+              {row.defaultValue === undefined ? (
+                '-'
+              ) : (
+                <PropVal val={row.defaultValue} {...propValProps} />
+              )}
             </td>
-            <td>
-              {row.propType}
-            </td>
-            <td>
-              {row.required}
-            </td>
-            <td>
-              {row.defaultValue === undefined
-                ? '-'
-                : <PropVal val={row.defaultValue} {...propValProps} />}
-            </td>
-            <td>
-              {row.description}
-            </td>
+            <td>{row.description}</td>
           </tr>
-        )}
+        ))}
       </tbody>
     </table>
   );
