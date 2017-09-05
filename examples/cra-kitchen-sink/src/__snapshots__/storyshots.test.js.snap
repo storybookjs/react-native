@@ -2654,9 +2654,9 @@ exports[`Storyshots WithEvents Logger 1`] = `
     Object {
       "color": "rgb(51, 51, 51)",
       "fontFamily": "
-          -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-          \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-        ",
+      -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
+      \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
+    ",
       "padding": 20,
     }
   }
