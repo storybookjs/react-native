@@ -156,17 +156,15 @@ export default class Item extends Component {
           value={this.state.payloadString}
           onChange={this.onChange}
         />
-        {isTextAreaShowed
-          ? <button style={styles.button} onClick={this.onToggleEditClick} title="Close editing">
-              ❌
-            </button>
-          : <button
-              style={styles.button}
-              onClick={this.onToggleEditClick}
-              title="Edit event payload"
-            >
-              ✏️
-            </button>}
+        {isTextAreaShowed ? (
+          <button style={styles.button} onClick={this.onToggleEditClick} title="Close editing">
+            ❌
+          </button>
+        ) : (
+          <button style={styles.button} onClick={this.onToggleEditClick} title="Edit event payload">
+            ✏️
+          </button>
+        )}
       </div>
     );
   }
