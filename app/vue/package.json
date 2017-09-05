@@ -78,7 +78,6 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "mock-fs": "^4.3.0",
     "nodemon": "^1.11.0"
   }
 }
