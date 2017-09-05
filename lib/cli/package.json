@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@storybook/codemod": "^3.2.6",
-    "chalk": "^2.0.1",
+    "chalk": "^2.1.0",
     "child-process-promise": "^2.2.1",
-    "commander": "^2.9.0",
+    "commander": "^2.11.0",
     "cross-spawn": "^5.0.1",
     "jscodeshift": "^0.3.30",
     "json5": "^0.5.1",
