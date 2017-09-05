@@ -36,12 +36,14 @@ Have a look at the linkTo function:
 import { linkTo } from '@storybook/addon-links'
 
 linkTo('Toggle', 'off')
+linkTo(() => 'Toggle', () => 'off')
+linkTo('Toggle') // Links to the first story in the 'Toggle' kind
 ```
 
 With that, you can link an event in a component to any story in the Storybook.
 
 -   First parameter is the the story kind name (what you named with `storiesOf`).
--   Second parameter is the story name (what you named with `.add`).
+-   Second (optional) parameter is the story name (what you named with `.add`). If the second parameter is omitted, the link will point to the first story in the given kind.
 
 > You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string. <br/>
 > Have a look at [PR86](https://github.com/kadirahq/react-storybook/pull/86) for more information.
