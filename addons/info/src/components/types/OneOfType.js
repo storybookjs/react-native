@@ -9,7 +9,10 @@ const OneOfType = ({ propType }) => {
     <span>
       {propType.value
         .map((value, i) => [
-          <PrettyPropType propType={value} />,
+          <PrettyPropType
+            key={`${value.name}${value.value ? `-${value.value}` : ''}`}
+            propType={value}
+          />,
           i < length - 1 ? <span> | </span> : null,
         ])
         .reduce((acc, tuple) => acc.concat(tuple), [])}
