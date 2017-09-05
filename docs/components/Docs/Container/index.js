@@ -12,7 +12,7 @@ const getEditUrl = (selectedSectionId, selectedItemId) => {
   return `${gitHubRepoUrl}/tree/master/docs/pages/${docPath}/index.md`;
 };
 
-const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }) =>
+const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }) => (
   <div id="docs-container" className="row">
     <div className="nav col-sm-3 col-md-3 hidden-xs">
       <Nav
@@ -46,7 +46,8 @@ const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }
         />
       </div>
     </div>
-  </div>;
+  </div>
+);
 Container.propTypes = {
   sections: PropTypes.array, // eslint-disable-line
   selectedItem: PropTypes.object, // eslint-disable-line

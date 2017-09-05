@@ -59,16 +59,10 @@ export default class CommentItem extends Component {
         </div>
         <div className="comment-content" style={style.commentContent}>
           <div style={style.commentHead}>
-            <span style={style.commentUser}>
-              {comment.user.name}
-            </span>
-            <span style={style.commentTime}>
-              {time}
-            </span>
+            <span style={style.commentUser}>{comment.user.name}</span>
+            <span style={style.commentTime}>{time}</span>
           </div>
-          <span style={style.commentText}>
-            {body}
-          </span>
+          <span style={style.commentText}>{body}</span>
           {showDelete ? this.renderDelete() : null}
         </div>
       </div>

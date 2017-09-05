@@ -19,9 +19,7 @@ const innerStyle = {
 export default function(storyFn) {
   return (
     <div style={style}>
-      <div style={innerStyle}>
-        {storyFn()}
-      </div>
+      <div style={innerStyle}>{storyFn()}</div>
     </div>
   );
 }

@@ -11,10 +11,11 @@ type PropsType = {
 };
 
 /** Flow type button description */
-const FlowTypeButton = ({ label, onClick, disabled }: PropsType) =>
+const FlowTypeButton = ({ label, onClick, disabled }: PropsType) => (
   <button onClick={onClick} disabled={disabled}>
     {label}
-  </button>;
+  </button>
+);
 
 FlowTypeButton.defaultProps = {
   disabled: false,

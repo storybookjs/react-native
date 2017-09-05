@@ -13,9 +13,9 @@
     "react-native": "0.44.1"
   },
   "devDependencies": {
-    "babel-jest": "20.0.3",
+    "babel-jest": "21.0.0",
     "babel-preset-react-native": "1.9.2",
-    "jest": "^20.0.4",
+    "jest": "^21.0.1",
     "react-test-renderer": "16.0.0-alpha.6",
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
     "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
