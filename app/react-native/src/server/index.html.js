@@ -9,15 +9,6 @@ export default function(publicPath, options) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Storybook for React</title>
         <style>
-          /*
-            When resizing panels, the drag event breaks if the cursor
-            moves over the iframe. Add the 'dragging' class to the body
-            at drag start and remove it when the drag ends.
-           */
-          .dragging iframe {
-            pointer-events: none;
-          }
-
           /* Styling the fuzzy search box placeholders */
           .searchBox::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: #ddd;
