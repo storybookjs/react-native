@@ -37,7 +37,7 @@ Here's an example of using Notes and Info in 3.2 with the new API.
 storiesOf('composition', module)
   .add('new addons api',
     withInfo('see Notes panel for composition info')(
-      withNotes({ notes: 'Composition: Info(Notes())' })(context =>
+      withNotes({ text: 'Composition: Info(Notes())' })(context =>
         <MyComponent name={context.story} />
       )
     )
