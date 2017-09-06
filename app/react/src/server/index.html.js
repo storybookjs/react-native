@@ -40,15 +40,6 @@ export default function({ assets, publicPath, headHtml }) {
         <meta content="IE=edge" http-equiv="X-UA-Compatible" />
         <title>Storybook</title>
         <style>
-          /*
-            When resizing panels, the drag event breaks if the cursor
-            moves over the iframe. Add the 'dragging' class to the body
-            at drag start and remove it when the drag ends.
-           */
-          .dragging iframe {
-            pointer-events: none;
-          }
-
           /* Styling the fuzzy search box placeholders */
           .searchBox::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: #ddd;
