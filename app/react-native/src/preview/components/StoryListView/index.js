@@ -17,7 +17,13 @@ SectionHeader.propTypes = {
 };
 
 const ListItem = ({ title, selected, onPress }) =>
-  <TouchableOpacity key={title} style={style.item} onPress={onPress}>
+  <TouchableOpacity
+    key={title}
+    style={style.item}
+    onPress={onPress}
+    testID={`Storybook.ListItem.${title}`}
+    accessibilityLabel={`Storybook.ListItem.${title}`}
+  >
     <Text style={[style.itemText, selected && style.itemTextSelected]}>
       {title}
     </Text>
