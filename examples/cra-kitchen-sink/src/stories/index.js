@@ -185,10 +185,7 @@ storiesOf('Button', module)
     )
   );
 
-storiesOf(
-  'AddonInfo.DocgenButton',
-  module
-).addWithInfo('DocgenButton', 'Button with PropTypes and doc comments', () =>
+storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () =>
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
 );
 
@@ -204,7 +201,7 @@ storiesOf(
 storiesOf(
   'AddonInfo.FlowTypeButton',
   module
-).addWithInfo('FlowTypeButton', 'Button with Flow type documentation comments', () =>
+).addWithInfo('FlowTypeButton', 'Some Description', () =>
   <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
 );
 
