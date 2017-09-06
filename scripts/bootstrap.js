@@ -178,11 +178,6 @@ selection
         key.command();
       });
       process.stdout.write('\x07');
-      try {
-        spawn('say "Bootstrapping sequence complete"');
-      } catch (e) {
-        // discard error
-      }
     }
   })
   .catch(e => {
