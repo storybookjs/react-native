@@ -45,7 +45,7 @@ class Shape extends React.Component {
         </HighlightButton>
         <HighlightButton onClick={this.handleToggle}>...</HighlightButton>
         {!this.state.minimized &&
-          Object.keys(propType.value).map(childProperty =>
+          Object.keys(propType.value).map(childProperty => (
             <div key={childProperty} style={{ marginLeft: depth * MARGIN_SIZE }}>
               <PropertyLabel
                 property={childProperty}
@@ -54,7 +54,7 @@ class Shape extends React.Component {
               <PrettyPropType depth={depth + 1} propType={propType.value[childProperty]} />
               ,
             </div>
-          )}
+          ))}
 
         <HighlightButton
           onMouseEnter={this.handleMouseEnter}

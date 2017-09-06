@@ -9,10 +9,8 @@ log.heading = 'storybook';
 const prefix = 'test';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-
 const spawn = command => {
   const out = childProcess.spawnSync(`${command}`, {
-
     shell: true,
     stdio: 'inherit',
   });

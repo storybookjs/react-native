@@ -10,11 +10,11 @@ export function SelectViewport({ activeViewport, onChange }) {
       <label style={styles.label}>Device</label>
       <select style={styles.action} value={activeViewport} onChange={onChange}>
         <option value={defaultViewport}>Default</option>
-        {Object.keys(viewports).map(key =>
+        {Object.keys(viewports).map(key => (
           <option value={key} key={key}>
             {viewports[key].name}
           </option>
-        )}
+        ))}
       </select>
     </div>
   );

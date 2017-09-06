@@ -39,11 +39,7 @@ const PrettyPropType = props => {
   }
 
   // Otherwise, propType does not have a dedicated component, display proptype name by default
-  return (
-    <span>
-      {name}
-    </span>
-  );
+  return <span>{name}</span>;
 };
 
 PrettyPropType.displayName = 'PrettyPropType';

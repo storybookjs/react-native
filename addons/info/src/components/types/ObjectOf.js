@@ -3,12 +3,13 @@ import React from 'react';
 import PrettyPropType from './PrettyPropType';
 import { TypeInfo } from './proptypes';
 
-const ObjectOf = ({ propType }) =>
+const ObjectOf = ({ propType }) => (
   <span>
     {'{[<key>]: '}
     <PrettyPropType propType={propType.value} />
     {'}'}
-  </span>;
+  </span>
+);
 
 ObjectOf.propTypes = {
   propType: TypeInfo.isRequired,

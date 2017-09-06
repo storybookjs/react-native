@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /** Button component description */
-const DocgenButton = ({ disabled, label, onClick }) =>
+const DocgenButton = ({ disabled, label, onClick }) => (
   <button disabled={disabled} onClick={onClick}>
     {label}
-  </button>;
+  </button>
+);
 
 DocgenButton.defaultProps = {
   disabled: false,

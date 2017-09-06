@@ -114,7 +114,7 @@ export default function PropTable(props) {
         </tr>
       </thead>
       <tbody>
-        {array.map(row =>
+        {array.map(row => (
           <tr key={row.property}>
             <Td bordered code>
               {row.property}
@@ -122,19 +122,17 @@ export default function PropTable(props) {
             <Td bordered code>
               <PrettyPropType propType={row.propType} />
             </Td>
+            <Td bordered>{row.required ? 'yes' : '-'}</Td>
             <Td bordered>
-              {row.required ? 'yes' : '-'}
+              {row.defaultValue === undefined ? (
+                '-'
+              ) : (
+                <PropVal val={row.defaultValue} {...propValProps} />
+              )}
             </Td>
-            <Td bordered>
-              {row.defaultValue === undefined
-                ? '-'
-                : <PropVal val={row.defaultValue} {...propValProps} />}
-            </Td>
-            <Td bordered>
-              {row.description}
-            </Td>
+            <Td bordered>{row.description}</Td>
           </tr>
-        )}
+        ))}
       </tbody>
     </Table>
   );

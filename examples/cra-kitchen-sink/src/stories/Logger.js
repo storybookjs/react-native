@@ -58,7 +58,7 @@ export default class Logger extends Component {
       <div style={styles.wrapper}>
         <h1>Logger</h1>
         <dl>
-          {events.map(({ id, name, payload }) =>
+          {events.map(({ id, name, payload }) => (
             <div style={styles.item} key={id}>
               <dt>
                 <b>Event name:</b> {name}
@@ -67,7 +67,7 @@ export default class Logger extends Component {
                 <b>Event payload:</b> {json.plain(payload)}
               </dd>
             </div>
-          )}
+          ))}
         </dl>
       </div>
     );
