@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "bootstrap": "./scripts/bootstrap.js",
-    "bootstrap:core": "yarn && lerna run prepublish && node ./scripts/hoist-internals.js",
-    "bootstrap:docs": "cd docs && yarn install",
+    "bootstrap:core": "yarn install && lerna run prepublish && node ./scripts/hoist-internals.js",
+    "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
