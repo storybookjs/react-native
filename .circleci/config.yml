@@ -176,13 +176,13 @@ workflows:
   version: 2
   build_accept_deploy:
     jobs:
-      - validate
-      - build
-      - example-kitchen-sinks
-      - example-react-native
-      - docs
+#      - validate
+#      - build
+#      - example-kitchen-sinks
+#      - example-react-native
+#      - docs
       - lint
-      - unit-test
+#      - unit-test
       # - deploy:
       #     type: approval
       #     requires:
