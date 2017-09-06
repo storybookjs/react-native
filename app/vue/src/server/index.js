@@ -33,6 +33,7 @@ program
   )
   .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
   .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
+  .option('--smoke-test', 'Exit after successful start')
   .option('-d, --db-path [db-file]', 'DEPRECATED!')
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
@@ -153,5 +154,8 @@ Promise.all([webpackValid, serverListening])
   .then(() => {
     const address = `http://${program.host || 'localhost'}:${program.port}/`;
     logger.info(`Storybook started on => ${chalk.cyan(address)}\n`);
+    if (program.smokeTest) {
+      process.exit(0);
+    }
   })
   .catch(error => logger.error(error));
