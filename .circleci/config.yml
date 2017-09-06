@@ -134,6 +134,7 @@ jobs:
           name: "Install yarn 1.0.0-prerelease"
           command: |
             curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            export PATH="$HOME/.yarn/bin:$PATH"
       - run:
           name: "Install root dependencies"
           command: |
