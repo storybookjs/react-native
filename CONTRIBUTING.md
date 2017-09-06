@@ -11,7 +11,7 @@ No software is bug free. So, if you got an issue, follow these steps:
 -   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
     -   If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
 -   If none of that is helping, create an issue with with following information:
-    -   Clear title (make is shorter if possible).
+    -   Clear title (shorter is better).
     -   Describe the issue in clear language.
     -   Share error logs, screenshots and etc.
     -   To speed up the issue fixing process, send us a sample repo with the issue you faced:
