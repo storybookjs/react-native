@@ -101,3 +101,7 @@ This addon lets you navigate different versions of static Storybook builds. As s
 ### [Apollo](https://github.com/abhiaiyer91/apollo-storybook-decorator)
 
 Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
+
+### [Screenshot](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
+
+Save the screenshot image of your stories. via [Puppeteer](https://github.com/GoogleChrome/puppeteer).
