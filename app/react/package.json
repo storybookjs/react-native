@@ -29,7 +29,7 @@
     "@storybook/ui": "^3.2.7",
     "airbnb-js-shims": "^1.1.1",
     "autoprefixer": "^7.1.1",
-    "babel-core": "^6.25.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-react-docgen": "^1.6.0",
     "babel-preset-env": "^1.6.0",
@@ -39,8 +39,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "case-sensitive-paths-webpack-plugin": "^2.0.0",
-    "chalk": "^2.0.1",
-    "commander": "^2.9.0",
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
     "common-tags": "^1.4.0",
     "configstore": "^3.1.0",
     "css-loader": "^0.28.1",
@@ -73,9 +73,8 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "mock-fs": "^4.3.0",
-    "nodemon": "^1.11.0",
+    "babel-cli": "^6.26.0",
+    "nodemon": "^1.12.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },

@@ -135,7 +135,9 @@ export default class Panel extends React.Component {
 
   render() {
     const { knobs } = this.state;
-    const knobsArray = Object.keys(knobs).filter(key => knobs[key].used).map(key => knobs[key]);
+    const knobsArray = Object.keys(knobs)
+      .filter(key => knobs[key].used)
+      .map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
       return <div style={styles.noKnobs}>NO KNOBS</div>;
