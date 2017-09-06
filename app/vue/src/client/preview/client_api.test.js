@@ -80,7 +80,10 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none', module).aa().bb();
+      api
+        .storiesOf('none', module)
+        .aa()
+        .bb();
       expect(data).toEqual(['foo', 'bar']);
     });
 

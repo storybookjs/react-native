@@ -2,10 +2,11 @@ import React from 'react';
 import DocgenButton from './DocgenButton';
 
 /** Button component description */
-const ImportedPropsButton = ({ disabled, label, onClick }) =>
+const ImportedPropsButton = ({ disabled, label, onClick }) => (
   <button disabled={disabled} onClick={onClick}>
     {label}
-  </button>;
+  </button>
+);
 
 ImportedPropsButton.defaultProps = DocgenButton.defaultProps;
 
