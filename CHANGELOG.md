@@ -19,6 +19,7 @@
 -   Height aligned 2 buttons in manager's header [#1769](https://github.com/storybooks/storybook/pull/1769)
 -   Search box: make found options selectable with click [#1697](https://github.com/storybooks/storybook/pull/1697)
 -   Info addon: Fix Docgen in static builds [#1725](https://github.com/storybooks/storybook/pull/1725)
+-   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
 
 #### Documentation
 
@@ -31,7 +32,6 @@
 
 #### Maintenance
 
--   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
 -   Deprecate confusing option names [#1692](https://github.com/storybooks/storybook/pull/1692)
 -   A CLI for running specific tests suites, like bootstrap CLI [#1752](https://github.com/storybooks/storybook/pull/1752)
 -   Remove check for sender on channel. [#1407](https://github.com/storybooks/storybook/pull/1407)
