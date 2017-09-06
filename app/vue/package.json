@@ -18,7 +18,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepublish'",
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {

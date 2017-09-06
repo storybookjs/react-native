@@ -46,7 +46,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --all
+            yarn bootstrap --all
       - save_cache:
           key: package-dependencies-{{ checksum "package.json" }}
           paths:
@@ -73,19 +73,19 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --core
+            yarn bootstrap --core
       - run:
           name: "Build react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
             yarn build-storybook
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
       - run:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
   example-react-native:
     <<: *defaults
     steps:
@@ -105,17 +105,17 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            yarn bootstrap -- --core --reactnative --reactnativeapp
+            yarn bootstrap --core --reactnative --reactnativeapp
       - run:
           name: "Running React-Native example"
           command: |
             cd examples/react-native-vanilla
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
       - run:
           name: "Running React-Native-App example"
           command: |
             cd examples/crna-kitchen-sink
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
   docs:
     <<: *defaults
     steps:
@@ -135,7 +135,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --docs
+            yarn bootstrap --docs
       - run:
           name: "Running docs"
           command: |
@@ -179,11 +179,11 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --core --reactnative
+            yarn bootstrap --core --reactnative
       - run:
           name: "Unit testing"
           command: |
-            yarn test -- --all --coverage --runInBand
+            yarn test --all --coverage --runInBand
             yarn coverage
   deploy:
     <<: *defaults
