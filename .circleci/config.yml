@@ -57,6 +57,10 @@ jobs:
             - root-dependencies-{{ checksum "package.json" }}
             - root-dependencies-
       - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
           name: "Bootstrapping"
           command: |
             yarn bootstrap -- --core
@@ -81,6 +85,10 @@ jobs:
             - root-dependencies-{{ checksum "package.json" }}
             - root-dependencies-
       - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
           name: "Bootstrapping packages"
           command: |
             yarn bootstrap -- --core --reactnative --reactnativeapp
@@ -102,6 +110,10 @@ jobs:
           keys:
             - root-dependencies-{{ checksum "package.json" }}
             - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
       - run:
           name: "Bootstrapping"
           command: |
@@ -134,6 +146,10 @@ jobs:
           keys:
             - root-dependencies-{{ checksum "package.json" }}
             - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
       - run:
           name: "Bootstrapping"
           command: |
