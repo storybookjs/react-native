@@ -2,6 +2,7 @@ node_modules
 *.log
 .idea
 .vscode
+*.sw*
 npm-shrinkwrap.json
 dist
 .tern-port

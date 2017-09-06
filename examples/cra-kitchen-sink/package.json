@@ -30,6 +30,7 @@
     "@storybook/addon-notes": "^3.2.0",
     "@storybook/addon-options": "^3.2.0",
     "@storybook/addon-storyshots": "^3.2.0",
+    "@storybook/addon-viewport": "^3.2.0",
     "@storybook/addons": "^3.2.0",
     "@storybook/components": "^3.2.0",
     "@storybook/react": "^3.2.0",
