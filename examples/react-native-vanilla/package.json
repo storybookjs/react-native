@@ -8,16 +8,17 @@
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "15.5.10",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.1"
   },
   "devDependencies": {
-    "babel-jest": "20.0.3",
+    "babel-jest": "21.0.0",
     "babel-preset-react-native": "1.9.2",
-    "jest": "^20.0.4",
+    "jest": "^21.0.1",
     "react-test-renderer": "16.0.0-alpha.6",
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
+    "@storybook/addon-knobs": "file:../../packs/storybook-addon-knobs.tgz",
     "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
     "@storybook/addon-options": "file:../../packs/storybook-addon-options.tgz",
     "@storybook/addon-storyshots": "file:../../packs/storybook-addon-storyshots.tgz",
@@ -27,6 +28,6 @@
     "@storybook/components": "file:../../packs/storybook-components.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "react-dom": "^15.6.1"
+    "react-dom": "15.6.1"
   }
 }
