@@ -67,11 +67,15 @@ jobs:
       - run:
           name: "Build react kitchen-sink"
           command: |
-            cd examples/cra-kitchen-sink && npm run build-storybook
+            cd examples/cra-kitchen-sink
+            yarn build-storybook
+            yarn storybook -- --smoke-test
       - run:
           name: "Build vue kitchen-sink"
           command: |
-            cd examples/vue-kitchen-sink && npm run build-storybook
+            cd examples/vue-kitchen-sink
+            yarn build-storybook
+            yarn storybook -- --smoke-test
   example-react-native:
     <<: *defaults
     steps:
@@ -87,11 +91,17 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            npm run bootstrap -- --core --reactnative
+            npm run bootstrap -- --core --reactnative --reactnativeapp
       - run:
-          name: "Running react-native"
+          name: "Running React-Native example"
           command: |
-            echo "TODO"
+            cd examples/react-native-vanilla
+            yarn storybook -- --smoke-test
+      - run:
+          name: "Running React-Native-App example"
+          command: |
+            cd examples/crna-kitchen-sink
+            yarn storybook -- --smoke-test
   docs:
     <<: *defaults
     steps:
