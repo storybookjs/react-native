@@ -1,12 +1,11 @@
 import { Router } from 'express';
 import webpack from 'webpack';
+import path from 'path';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import getBaseConfig from './config/webpack.config';
 import loadConfig from './config';
-import getIndexHtml from './index.html';
-import getIframeHtml from './iframe.html';
-import { getPreviewHeadHtml, getManagerHeadHtml, getMiddleware } from './utils';
+import { getMiddleware } from './utils';
 
 let webpackResolve = () => {};
 let webpackReject = () => {};
@@ -44,19 +43,14 @@ export default function(configDir) {
   middlewareFn(router);
 
   webpackDevMiddlewareInstance.waitUntilValid(stats => {
-    const data = {
-      publicPath: config.output.publicPath,
-      assets: stats.toJson().assetsByChunkName,
-    };
-
     router.get('/', (req, res) => {
-      const headHtml = getManagerHeadHtml(configDir);
-      res.send(getIndexHtml({ publicPath, headHtml }));
+      res.set('Content-Type', 'text/html');
+      res.sendFile(path.join(`${__dirname}/public/index.html`));
     });
 
     router.get('/iframe.html', (req, res) => {
-      const headHtml = getPreviewHeadHtml(configDir);
-      res.send(getIframeHtml({ ...data, headHtml, publicPath }));
+      res.set('Content-Type', 'text/html');
+      res.sendFile(path.join(`${__dirname}/public/iframe.html`));
     });
 
     if (stats.toJson().errors.length) {

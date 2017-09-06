@@ -9,11 +9,19 @@ log.heading = 'storybook';
 const prefix = 'test';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-const spawn = command =>
-  childProcess.spawnSync(`${command}`, {
+
+const spawn = command => {
+  const out = childProcess.spawnSync(`${command}`, {
+
     shell: true,
     stdio: 'inherit',
   });
+
+  if (out.status !== 0) {
+    process.exit(out.status);
+  }
+  return out;
+};
 
 const main = program.version('3.0.0').option('--all', `Test everything ${chalk.gray('(all)')}`);
 
@@ -98,7 +106,11 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
-if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
+if (
+  !Object.keys(tasks)
+    .map(key => tasks[key].value)
+    .filter(Boolean).length
+) {
   selection = inquirer
     .prompt([
       {
@@ -114,10 +126,13 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
           }))
           .concat(new inquirer.Separator())
           .concat(
-            Object.keys(tasks).map(key => tasks[key]).filter(key => key.extraParam).map(key => ({
-              name: key.name,
-              checked: key.defaultValue,
-            }))
+            Object.keys(tasks)
+              .map(key => tasks[key])
+              .filter(key => key.extraParam)
+              .map(key => ({
+                name: key.name,
+                checked: key.defaultValue,
+              }))
           ),
       },
     ])
@@ -126,7 +141,9 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
     );
 } else {
   selection = Promise.resolve(
-    Object.keys(tasks).map(key => tasks[key]).filter(item => item.value === true)
+    Object.keys(tasks)
+      .map(key => tasks[key])
+      .filter(item => item.value === true)
   );
 }
 
@@ -142,4 +159,5 @@ selection
   .catch(e => {
     log.aborted(prefix, chalk.red(e.message));
     log.silly(prefix, e);
+    process.exit(1);
   });
