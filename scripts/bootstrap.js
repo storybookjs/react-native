@@ -18,11 +18,17 @@ log.heading = 'storybook';
 const prefix = 'bootstrap';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-const spawn = command =>
-  childProcess.spawnSync(`${command}`, {
+const spawn = command => {
+  const out = childProcess.spawnSync(`${command}`, {
     shell: true,
     stdio: 'inherit',
   });
+
+  if (out.status !== 0) {
+    process.exit(out.status);
+  }
+  return out;
+};
 
 const main = program
   .version('3.0.0')
@@ -172,15 +178,10 @@ selection
         key.command();
       });
       process.stdout.write('\x07');
-      try {
-        spawn('say "Bootstrapping sequence complete"');
-      } catch (e) {
-        // discard error
-      }
     }
   })
   .catch(e => {
     log.aborted(prefix, chalk.red(e.message));
     log.silly(prefix, e);
-    return true;
+    process.exit(1);
   });
