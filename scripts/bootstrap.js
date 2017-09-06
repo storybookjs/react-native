@@ -9,7 +9,10 @@ const { lstatSync, readdirSync } = require('fs');
 const { join } = require('path');
 
 const isTgz = source => lstatSync(source).isFile() && source.match(/.tgz$/);
-const getDirectories = source => readdirSync(source).map(name => join(source, name)).filter(isTgz);
+const getDirectories = source =>
+  readdirSync(source)
+    .map(name => join(source, name))
+    .filter(isTgz);
 
 log.heading = 'storybook';
 const prefix = 'bootstrap';
@@ -111,7 +114,11 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
-if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
+if (
+  !Object.keys(tasks)
+    .map(key => tasks[key].value)
+    .filter(Boolean).length
+) {
   selection = inquirer
     .prompt([
       {
@@ -150,7 +157,9 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
     });
 } else {
   selection = Promise.resolve(
-    Object.keys(tasks).map(key => tasks[key]).filter(item => item.value === true)
+    Object.keys(tasks)
+      .map(key => tasks[key])
+      .filter(item => item.value === true)
   );
 }
 

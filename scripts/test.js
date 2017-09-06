@@ -98,7 +98,11 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
-if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
+if (
+  !Object.keys(tasks)
+    .map(key => tasks[key].value)
+    .filter(Boolean).length
+) {
   selection = inquirer
     .prompt([
       {
@@ -114,10 +118,13 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
           }))
           .concat(new inquirer.Separator())
           .concat(
-            Object.keys(tasks).map(key => tasks[key]).filter(key => key.extraParam).map(key => ({
-              name: key.name,
-              checked: key.defaultValue,
-            }))
+            Object.keys(tasks)
+              .map(key => tasks[key])
+              .filter(key => key.extraParam)
+              .map(key => ({
+                name: key.name,
+                checked: key.defaultValue,
+              }))
           ),
       },
     ])
@@ -126,7 +133,9 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
     );
 } else {
   selection = Promise.resolve(
-    Object.keys(tasks).map(key => tasks[key]).filter(item => item.value === true)
+    Object.keys(tasks)
+      .map(key => tasks[key])
+      .filter(item => item.value === true)
   );
 }
 
