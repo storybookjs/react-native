@@ -174,7 +174,7 @@ storiesOf('Addon Notes', module)
   .add(
     'Note with HTML',
     withNotes({
-      notes: `
+      text: `
       <h2>My notes on emojies</h2>
 
       <em>It's not all that important to be honest, but..</em>

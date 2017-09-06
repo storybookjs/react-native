@@ -7,8 +7,8 @@ class StoryStore {
     this.stories = [];
   }
 
-  addStory(kind, story, fn) {
-    this.stories.push({ kind, story, fn });
+  addStory(kind, story, fn, fileName) {
+    this.stories.push({ kind, story, fn, fileName });
   }
 
   getStoryKinds() {
@@ -27,6 +27,11 @@ class StoryStore {
       }
       return stories;
     }, []);
+  }
+
+  getStoryFileName(kind) {
+    const story = this.stories.find(info => info.kind === kind);
+    return story ? story.fileName : null;
   }
 
   getStory(kind, name) {
@@ -221,16 +226,17 @@ describe('preview.client_api', () => {
         'story-2.1': () => 'story-2.1',
         'story-2.2': () => 'story-2.2',
       };
-      const kind1 = api.storiesOf('kind-1', module);
+      const kind1 = api.storiesOf('kind-1', { filename: 'kind1.js' });
       kind1.add('story-1.1', functions['story-1.1']);
       kind1.add('story-1.2', functions['story-1.2']);
-      const kind2 = api.storiesOf('kind-2', module);
+      const kind2 = api.storiesOf('kind-2', { filename: 'kind2.js' });
       kind2.add('story-2.1', functions['story-2.1']);
       kind2.add('story-2.2', functions['story-2.2']);
       const book = api.getStorybook();
       expect(book).toEqual([
         {
           kind: 'kind-1',
+          fileName: 'kind1.js',
           stories: [
             { name: 'story-1.1', render: functions['story-1.1'] },
             { name: 'story-1.2', render: functions['story-1.2'] },
@@ -238,6 +244,43 @@ describe('preview.client_api', () => {
         },
         {
           kind: 'kind-2',
+          fileName: 'kind2.js',
+          stories: [
+            { name: 'story-2.1', render: functions['story-2.1'] },
+            { name: 'story-2.2', render: functions['story-2.2'] },
+          ],
+        },
+      ]);
+    });
+
+    it('should return storybook with file names when module with file name provided', () => {
+      const storyStore = new StoryStore();
+      const api = new ClientAPI({ storyStore });
+      const functions = {
+        'story-1.1': () => 'story-1.1',
+        'story-1.2': () => 'story-1.2',
+        'story-2.1': () => 'story-2.1',
+        'story-2.2': () => 'story-2.2',
+      };
+      const kind1 = api.storiesOf('kind-1', { filename: 'foo' });
+      kind1.add('story-1.1', functions['story-1.1']);
+      kind1.add('story-1.2', functions['story-1.2']);
+      const kind2 = api.storiesOf('kind-2', { filename: 'bar' });
+      kind2.add('story-2.1', functions['story-2.1']);
+      kind2.add('story-2.2', functions['story-2.2']);
+      const book = api.getStorybook();
+      expect(book).toEqual([
+        {
+          kind: 'kind-1',
+          fileName: 'foo',
+          stories: [
+            { name: 'story-1.1', render: functions['story-1.1'] },
+            { name: 'story-1.2', render: functions['story-1.2'] },
+          ],
+        },
+        {
+          kind: 'kind-2',
+          fileName: 'bar',
           stories: [
             { name: 'story-2.1', render: functions['story-2.1'] },
             { name: 'story-2.2', render: functions['story-2.2'] },
