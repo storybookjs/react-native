@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import webpack from 'webpack';
 import program from 'commander';
 import path from 'path';

@@ -42,7 +42,7 @@
   version "7.0.43"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.43.tgz#a187e08495a075f200ca946079c914e1a5fe962c"
 
-"@types/react@>=15", "@types/react@^15.0.21", "@types/react@^15.0.22":
+"@types/react@>=15", "@types/react@^15.0.21", "@types/react@^15.0.22", "@types/react@^15.0.24":
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.6.2.tgz#2c8495aa853cb37591d0046e9afe544fb837c612"
 
@@ -6559,6 +6559,12 @@ jest@20.0.3:
   dependencies:
     jest-cli "^20.0.3"
 
+jest@^20.0.4:
+  version "20.0.4"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-20.0.4.tgz#3dd260c2989d6dad678b1e9cc4d91944f6d602ac"
+  dependencies:
+    jest-cli "^20.0.4"
+
 jest@^21.0.1:
   version "21.0.1"
   resolved "https://registry.yarnpkg.com/jest/-/jest-21.0.1.tgz#746cddc89477beaea5b208e7017ca26652bfdb38"
@@ -6876,9 +6882,9 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-4.1.0.tgz#5d983361566aa5974cd58f0a64afa5acbd9d6118"
+lint-staged@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-4.1.2.tgz#d49caa518032eba51a45a5ce9a13d8641c0cf0c0"
   dependencies:
     app-root-path "^2.0.0"
     chalk "^2.1.0"

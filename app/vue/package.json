@@ -9,9 +9,9 @@
   "license": "MIT",
   "main": "dist/client/index.js",
   "bin": {
-    "build-storybook": "./dist/server/build.js",
-    "start-storybook": "./dist/server/index.js",
-    "storybook-server": "./dist/server/index.js"
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "bin/index.js",
+    "storybook-server": "bin/index.js"
   },
   "repository": {
     "type": "git",

@@ -131,6 +131,10 @@ jobs:
             - root-dependencies-{{ checksum "package.json" }}
             - root-dependencies-
       - run:
+          name: "Install yarn 1.0.0-prerelease"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+      - run:
           name: "Install root dependencies"
           command: |
             yarn install

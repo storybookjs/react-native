@@ -1,13 +1,21 @@
 {
+  "private": true,
   "name": "storybook",
   "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "workspaces": [
+    "addons/*",
+    "app/*",
+    "lib/*",
+    "examples/cra-kitchen-sink",
+    "examples/vue-kitchen-sink"
+  ],
   "scripts": {
     "bootstrap": "./scripts/bootstrap.js",
-    "bootstrap:core": "lerna bootstrap --concurrency 1 --npm-client=\"yarn\" --hoist && node ./scripts/hoist-internals.js",
+    "bootstrap:core": "yarn && lerna run prepublish && node ./scripts/hoist-internals.js",
     "bootstrap:docs": "cd docs && yarn install",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
@@ -80,7 +88,8 @@
     "symlink-dir": "^1.1.0"
   },
   "engines": {
-    "node": "node"
+    "node": "^8.0.0",
+    "yarn": "^1.0.0-0"
   },
   "collective": {
     "type": "opencollective",
