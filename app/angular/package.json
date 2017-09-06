@@ -22,11 +22,11 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@angular/common": "^5.0.0-beta.3",
-    "@angular/compiler": "^5.0.0-beta.3",
-    "@angular/core": "^5.0.0-beta.3",
-    "@angular/platform-browser": "^5.0.0-beta.3",
-    "@angular/platform-browser-dynamic": "^5.0.0-beta.3",
+    "@angular/common": "^5.0.0-beta.6",
+    "@angular/compiler": "^5.0.0-beta.6",
+    "@angular/core": "^5.0.0-beta.6",
+    "@angular/platform-browser": "^5.0.0-beta.6",
+    "@angular/platform-browser-dynamic": "^5.0.0-beta.6",
     "@storybook/addon-actions": "^3.2.0-alpha.7",
     "@storybook/addon-links": "^3.2.0-alpha.5",
     "@storybook/addons": "^3.1.6",

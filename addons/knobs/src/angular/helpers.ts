@@ -1,100 +1,131 @@
-import { NgModule, Component, Input, OnDestroy, OnInit, ChangeDetectorRef, OnChanges, SimpleChange, ChangeDetectionStrategy } from '@angular/core';
-declare var component: {
-    new ();
-};
+import {
+  NgModule,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  ChangeDetectorRef,
+  OnChanges,
+  SimpleChange,
+  ChangeDetectionStrategy
+} from "@angular/core";
 
 const getComponentMetadata = ({ component, props = {} }) => {
-  if (!component || typeof component !== 'function')
-    throw new Error('No valid component provided');
+  if (!component || typeof component !== "function")
+    throw new Error("No valid component provided");
 
-  const componentMeta = component.__annotations__[0];
-  const propsMeta = component.__prop__metadata__ || {};
+  const componentMeta =
+    component.__annotations__[0] || component.annotations[0];
+  const propsMeta =
+    component.__prop__metadata__ || component.propMetadata || {};
+  const paramsMetadata = component.__parameters__ || component.parameters || [];
   return {
     component,
     props,
     componentMeta,
-    propsMeta
-  }
-}
+    propsMeta,
+    params: paramsMetadata
+  };
+};
 
-const getAnnotatedComponent = (meta, component) => {
-  @Component(meta)
-  class NewComponent extends (component as { new(): any; }) implements OnDestroy, OnInit, OnChanges {
-    @Input() channel;
-    @Input() knobStore;
+const getAnnotatedComponent = ({
+  componentMeta,
+  component,
+  params,
+  knobStore,
+  channel
+}) => {
+  const NewComponent: any = function NewComponent(cd, ...args) {
+    component.call(this, ...args);
+    this.cd = cd;
+    this.knobChanged = this.knobChanged.bind(this);
+    this.setPaneKnobs = this.setPaneKnobs.bind(this);
+  };
+  NewComponent.prototype = Object.create(component.prototype);
+  NewComponent.__annotations__ = [new Component(componentMeta)];
+  NewComponent.__parameters__ = [[ChangeDetectorRef], ...params];
 
-    constructor(private cd: ChangeDetectorRef) {
-        super();
-        this.resetKnobs = this.resetKnobs.bind(this);
-        this.knobChanged =  this.knobChanged.bind(this);
-        this.setPaneKnobs = this.setPaneKnobs.bind(this);
-    }
-
-    ngOnChanges(changes) {
-      if (super.ngOnChanges) {
-        super.ngOnChanges(changes);
-      }
-    }
-  
-    ngOnInit() {
-      if (super.ngOnInit) {
-        super.ngOnInit();
-      }
-      this.channel.on('addon:knobs:reset', this.resetKnobs);
-      this.channel.on('addon:knobs:knobChange', this.knobChanged);
-      this.knobStore.subscribe(this.setPaneKnobs);
-      this.setPaneKnobs();
-    }
-  
-    ngOnDestroy() {
-      if (super.ngOnDestroy) {
-        super.ngOnDestroy();
-      }
-      this.channel.removeListener('addon:knobs:reset', this.resetKnobs);
-      this.channel.removeListener('addon:knobs:knobChange', this.knobChanged);
-      this.knobStore.unsubscribe(this.setPaneKnobs);
+  NewComponent.prototype.constructor = NewComponent;
+  NewComponent.prototype.ngOnInit = function() {
+    if (component.prototype.ngOnInit) {
+      component.prototype.ngOnInit();
     }
 
-    setPaneKnobs(timestamp: any = +new Date()) {
-        this.channel.emit('addon:knobs:setKnobs', { knobs: this.knobStore.getAll(), timestamp });
+    channel.on("addon:knobs:knobChange", this.knobChanged);
+    knobStore.subscribe(this.setPaneKnobs);
+    this.setPaneKnobs();
+  };
+
+  NewComponent.prototype.ngOnDestroy = function() {
+    if (component.prototype.ngOnDestroy) {
+      component.prototype.ngOnDestroy();
     }
 
-    knobChanged(change) {
-        const { name, value } = change;
-        const knobOptions = this.knobStore.get(name);
-        knobOptions.value = value;
-        this.knobStore.markAllUnused();
-        const lowercasedName = name.toLocaleLowerCase();
-        this[lowercasedName] = value;
-        this.ngOnChanges({
-          [lowercasedName]: new SimpleChange(this[lowercasedName], value, false)
-        });
-        this.cd.detectChanges();
-    }
+    channel.removeListener("addon:knobs:knobChange", this.knobChanged);
+    knobStore.unsubscribe(this.setPaneKnobs);
+  };
 
-    resetKnobs() {
-        this.knobStore.reset();
-        this.setPaneKnobs(false);
+  NewComponent.prototype.ngOnChanges = function(changes) {
+    if (component.prototype.ngOnChanges) {
+      component.prototype.ngOnChanges(changes);
     }
-  }
+  };
+
+  NewComponent.prototype.setPaneKnobs = function(timestamp: any = +new Date()) {
+    channel.emit("addon:knobs:setKnobs", {
+      knobs: knobStore.getAll(),
+      timestamp
+    });
+  };
+
+  NewComponent.prototype.knobChanged = function(change) {
+    const { name, value } = change;
+    const knobOptions = knobStore.get(name);
+    const oldValue = knobOptions.value;
+    knobOptions.value = value;
+    knobStore.markAllUnused();
+    const lowercasedName = name.toLocaleLowerCase();
+    this[lowercasedName] = value;
+    this.cd.detectChanges();
+    this.ngOnChanges({
+      [lowercasedName]: new SimpleChange(oldValue, value, false)
+    });
+  };
 
   return NewComponent;
+};
+
+const resetKnobs = (knobStore, channel) => {
+  knobStore.reset();
+  channel.emit("addon:knobs:setKnobs", {
+    knobs: knobStore.getAll(),
+    timestamp: false
+  });
 }
 
-export function prepareComponent(element, channel, knobStore) {
-  const { component, componentMeta, props, propsMeta } = getComponentMetadata(element);
+export function prepareComponent({ getStory, context, channel, knobStore }) {
+  resetKnobs(knobStore, channel);
+  const {
+    component,
+    componentMeta,
+    props,
+    propsMeta,
+    params
+  } = getComponentMetadata(getStory(context));
 
-  if (!componentMeta)
-    throw new Error('No component metadata available');
-    
-  const AnnotatedComponent = getAnnotatedComponent(componentMeta, component);
+  if (!componentMeta) throw new Error("No component metadata available");
 
-  props['channel'] = channel;
-  props['knobStore'] = knobStore;
+  const AnnotatedComponent = getAnnotatedComponent({
+    componentMeta,
+    component,
+    params,
+    knobStore,
+    channel
+  });
 
   return {
-      component: AnnotatedComponent,
-      props,
-      propsMeta
-  }
+    component: AnnotatedComponent,
+    props,
+    propsMeta
+  };
 }
