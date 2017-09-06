@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 
 // load the default config generator.

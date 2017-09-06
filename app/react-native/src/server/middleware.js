@@ -7,7 +7,6 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import baseConfig from './config/webpack.config';
 import baseProductionConfig from './config/webpack.config.prod';
 import loadConfig from './config';
-import getIndexHtml from './index.html';
 
 function getMiddleware(configDir) {
   const middlewarePath = path.resolve(configDir, 'middleware.js');
@@ -26,7 +25,7 @@ export default function({ projectDir, configDir, ...options }) {
   // custom `.babelrc` file and `webpack.config.js` files
   const environment = options.environment || 'DEVELOPMENT';
   const isProd = environment === 'PRODUCTION';
-  const currentWebpackConfig = isProd ? baseProductionConfig : baseConfig;
+  const currentWebpackConfig = isProd ? baseProductionConfig(options) : baseConfig(options);
   const config = loadConfig(environment, currentWebpackConfig, projectDir, configDir);
 
   // remove the leading '/'
@@ -53,12 +52,8 @@ export default function({ projectDir, configDir, ...options }) {
   }
 
   router.get('/', (req, res) => {
-    res.send(
-      getIndexHtml(publicPath, {
-        manualId: options.manualId,
-        secured: options.secured,
-      })
-    );
+    res.set('Content-Type', 'text/html');
+    res.sendFile(path.join(`${__dirname}/public/index.html`));
   });
 
   return router;

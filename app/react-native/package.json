@@ -53,6 +53,7 @@
     "file-loader": "^0.11.1",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
+    "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.4",
     "json5": "^0.5.1",
     "postcss-loader": "^2.0.5",

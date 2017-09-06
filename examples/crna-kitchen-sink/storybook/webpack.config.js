@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 // load the default config generator.
-const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
+const genDefaultConfig = require('@storybook/react-native/dist/server/config/defaults/webpack.config.js');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -14,11 +14,10 @@ module.exports = (storybookBaseConfig, configType) => {
   // Make whatever fine-grained changes you need
   config.plugins.push(
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      chunks: ['preview'],
-      minChunks: function (module) {
+      name: 'vendor',
+      minChunks(module) {
         // this assumes your vendor imports exist in the node_modules directory
-        return module.context && module.context.indexOf("node_modules") !== -1;
+        return module.context && module.context.indexOf('node_modules') !== -1;
       },
     })
   );
