@@ -1,3 +1,53 @@
+# 3.3.0-alpha.0
+
+2017-September-06
+
+#### Features
+
+-   Viewport addon: simulate device sizes in preview window [#1753](https://github.com/storybooks/storybook/pull/1753)
+-   CLI: Add codemod for deprecated addon-links and addon-actions from app [#1368](https://github.com/storybooks/storybook/pull/1368)
+-   Info addon: More detailed props table [#1485](https://github.com/storybooks/storybook/pull/1485)
+-   React native: Add accessibility labels to OnDeviceUI [#1780](https://github.com/storybooks/storybook/pull/1780)
+-   Stories panel: Stories on each hierarchy level [#1763](https://github.com/storybooks/storybook/pull/1763)
+-   Storyshots: Generate snapshot per story file [#1584](https://github.com/storybooks/storybook/pull/1584)
+-   CLI: Add support for Vue projects using Nuxt [#1794](https://github.com/storybooks/storybook/pull/1794)
+
+#### Bug Fixes
+
+-   Import chunks/assets in correct order using HtmlWebpackPlugin [#1775](https://github.com/storybooks/storybook/pull/1775)
+-   Fix preview scrolling [#1782](https://github.com/storybooks/storybook/pull/1782)
+-   Height aligned 2 buttons in manager's header [#1769](https://github.com/storybooks/storybook/pull/1769)
+-   Search box: make found options selectable with click [#1697](https://github.com/storybooks/storybook/pull/1697)
+-   Info addon: Fix Docgen in static builds [#1725](https://github.com/storybooks/storybook/pull/1725)
+-   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
+
+#### Documentation
+
+-   Improve linkTo documentation [#1793](https://github.com/storybooks/storybook/pull/1793)
+-   Add carbon to examples page [#1764](https://github.com/storybooks/storybook/pull/1764)
+-   Minor grammar fixes and clarification to Vue documentation [#1756](https://github.com/storybooks/storybook/pull/1756)
+-   Fix incorrect yarn command in docs [#1758](https://github.com/storybooks/storybook/pull/1758)
+-   Add storybook-chrome-screenshot to addon gallery [#1761](https://github.com/storybooks/storybook/pull/1761)
+-   Fixing typo on VueJS withNotes Example [#1787](https://github.com/storybooks/storybook/pull/1787)
+
+#### Maintenance
+
+-   Deprecate confusing option names [#1692](https://github.com/storybooks/storybook/pull/1692)
+-   A CLI for running specific tests suites, like bootstrap CLI [#1752](https://github.com/storybooks/storybook/pull/1752)
+-   Remove check for sender on channel. [#1407](https://github.com/storybooks/storybook/pull/1407)
+-   Use yarn instead of NPM [#1703](https://github.com/storybooks/storybook/pull/1703)
+-   Add config for dependencies.io [#1770](https://github.com/storybooks/storybook/pull/1770)
+-   Added addon-knobs to crna and vanilla react native. [#1636](https://github.com/storybooks/storybook/pull/1636)
+-   Fixed Jest warnings [#1744](https://github.com/storybooks/storybook/pull/1744)
+-   Smoke test master [#1801](https://github.com/storybooks/storybook/pull/1801)
+
+#### Dependency Upgrades
+
+-   Upgrade root dependencies and sync with packages [#1802](https://github.com/storybooks/storybook/pull/1802)
+-   Update jest to the latest version 🚀 [#1799](https://github.com/storybooks/storybook/pull/1799)
+-   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
+-   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
+
 # 3.2.9
 
 2017-August-26

@@ -1,4 +1,4 @@
-import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 import path from 'path';
 
 function createNodeMock(element) {
@@ -11,7 +11,7 @@ function createNodeMock(element) {
 initStoryshots({
   framework: 'react',
   configPath: path.join(__dirname, '..', '.storybook'),
-  test: snapshotWithOptions({
+  test: multiSnapshotWithOptions({
     createNodeMock,
   }),
 });

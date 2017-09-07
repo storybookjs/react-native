@@ -92,30 +92,30 @@ We welcome contributions to Storybook!
 
 ### Development scripts
 
-#### `npm run bootstrap`
+#### `yarn bootstrap`
 
 > Installs package dependencies and links packages together - using lerna
 
-#### `npm run publish`
+#### `yarn publish`
 
 > Push a release to git and npm
 > will ask for version in interactive mode - using lerna.
 
-#### `npm run lint`
+#### `yarn lint`
 
 > boolean check if code conforms to linting rules - uses remark & eslint
 
--   `npm run lint:js` - will check js
--   `npm run lint:md` - will check markdown + code samples
+-   `yarn lint:js` - will check js
+-   `yarn lint:md` - will check markdown + code samples
 
--   `npm run lint:js -- --fix` - will automatically fix js
--   `npm run lint:md -- -o` - will automatically fix markdown
+-   `yarn lint:js -- --fix` - will automatically fix js
+-   `yarn lint:md -- -o` - will automatically fix markdown
 
-#### `npm run test`
+#### `yarn test`
 
 > boolean check if unit tests all pass - uses jest
 
--   `npm run test:watch` - will run tests in watch-mode
+-   `yarn test:watch` - will run tests in watch-mode
 
 ### Backers
 

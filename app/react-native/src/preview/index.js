@@ -23,7 +23,10 @@ export default class Preview {
     if (module && module.hot) {
       // TODO remove the kind on dispose
     }
-    return new StoryKindApi(this._stories, this._addons, this._decorators, kind);
+
+    const fileName = module ? module.filename : null;
+
+    return new StoryKindApi(this._stories, this._addons, this._decorators, kind, fileName);
   }
 
   setAddon(addon) {
@@ -44,11 +47,14 @@ export default class Preview {
 
   getStorybook() {
     return this._stories.getStoryKinds().map(kind => {
+      const fileName = this._stories.getStoryFileName(kind);
+
       const stories = this._stories.getStories(kind).map(name => {
         const render = this._stories.getStory(kind, name);
         return { name, render };
       });
-      return { kind, stories };
+
+      return { kind, fileName, stories };
     });
   }
 

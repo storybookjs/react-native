@@ -145,6 +145,10 @@ Just render the story, don't check the output at all (useful if you just want to
 
 Like the default, but allows you to specify a set of options for the test renderer. [See for example here](https://github.com/storybooks/storybook/blob/b915b5439786e0edb17d7f5ab404bba9f7919381/examples/test-cra/src/storyshots.test.js#L14-L16).
 
+### `multiSnapshotWithOptions(options)`
+
+Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes.
+
 ### `shallowSnapshot`
 
 Take a snapshot of a shallow-rendered version of the component.
