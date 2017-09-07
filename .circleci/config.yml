@@ -16,31 +16,20 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "yarn.lock" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install yarn 1.0.0-prerelease"
+          name: "Install latest yarn version"
           command: |
             curl -o- -L https://yarnpkg.com/install.sh | bash -s
-      - run:
-          name: "Install root dependencies"
-          command: |
-            yarn install
-      - save_cache:
-          key: root-dependencies-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
-      - restore_cache:
-          keys:
-            - package-dependencies-{{ checksum "yarn.lock" }}
-            - package-dependencies-
       - run:
           name: "Bootstrapping"
           command: |
             yarn bootstrap --core --docs --reactnative --reactnativeapp
       - save_cache:
-          key: package-dependencies-{{ checksum "yarn.lock" }}
+          key: dependencies-{{ checksum "yarn.lock" }}
           paths:
+            - node_modules
             - app/**/node_modules
             - docs/**/node_modules
             - examples/**/node_modules
@@ -51,12 +40,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "yarn.lock" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install yarn 1.0.0-prerelease"
+          name: "Install latest yarn version"
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Bootstrapping"
           command: |
@@ -79,12 +68,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "yarn.lock" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install yarn 1.0.0-prerelease"
+          name: "Install latest yarn version"
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Bootstrapping packages"
           command: |
@@ -105,12 +94,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "yarn.lock" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install yarn 1.0.0-prerelease"
+          name: "Install latest yarn version"
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Bootstrapping"
           command: |
@@ -125,12 +114,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "yarn.lock" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install yarn 1.0.0-prerelease"
+          name: "Install latest yarn version"
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install root dependencies"
           command: |
@@ -145,12 +134,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "yarn.lock" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install yarn 1.0.0-prerelease"
+          name: "Install latest yarn version"
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Bootstrapping"
           command: |
