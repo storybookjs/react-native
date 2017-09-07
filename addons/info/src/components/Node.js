@@ -66,9 +66,7 @@ export default function Node(props) {
   if (!name) {
     return (
       <div style={containerStyle}>
-        <span style={tagStyle}>
-          {text}
-        </span>
+        <span style={tagStyle}>{text}</span>
       </div>
     );
   }
@@ -77,9 +75,7 @@ export default function Node(props) {
   if (!children) {
     return (
       <div style={containerStyle}>
-        <span style={tagStyle}>
-          &lt;{name}
-        </span>
+        <span style={tagStyle}>&lt;{name}</span>
         <Props
           node={node}
           singleLine
@@ -100,9 +96,7 @@ export default function Node(props) {
   return (
     <div>
       <div style={containerStyleCopy}>
-        <span style={tagStyle}>
-          &lt;{name}
-        </span>
+        <span style={tagStyle}>&lt;{name}</span>
         <Props
           node={node}
           maxPropsIntoLine={maxPropsIntoLine}
@@ -112,7 +106,7 @@ export default function Node(props) {
         />
         <span style={tagStyle}>&gt;</span>
       </div>
-      {React.Children.map(children, childElement =>
+      {React.Children.map(children, childElement => (
         <Node
           node={childElement}
           depth={depth + 1}
@@ -121,11 +115,9 @@ export default function Node(props) {
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
         />
-      )}
+      ))}
       <div style={containerStyleCopy}>
-        <span style={tagStyle}>
-          &lt;/{name}&gt;
-        </span>
+        <span style={tagStyle}>&lt;/{name}&gt;</span>
       </div>
     </div>
   );

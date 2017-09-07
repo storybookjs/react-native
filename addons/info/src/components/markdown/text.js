@@ -10,11 +10,7 @@ export function P(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return (
-    <p style={style}>
-      {props.children}
-    </p>
-  );
+  return <p style={style}>{props.children}</p>;
 }
 
 P.defaultProps = defaultProps;
@@ -25,11 +21,7 @@ export function LI(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return (
-    <li style={style}>
-      {props.children}
-    </li>
-  );
+  return <li style={style}>{props.children}</li>;
 }
 
 LI.defaultProps = defaultProps;
@@ -40,11 +32,7 @@ export function UL(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return (
-    <ul style={style}>
-      {props.children}
-    </ul>
-  );
+  return <ul style={style}>{props.children}</ul>;
 }
 
 UL.defaultProps = defaultProps;

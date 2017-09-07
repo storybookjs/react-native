@@ -10,10 +10,11 @@ const buttonStyles = {
   padding: '3px 10px',
 };
 
-const Button = ({ children, onClick, style = {} }) =>
+const Button = ({ children, onClick, style = {} }) => (
   <button style={{ ...buttonStyles, ...style }} onClick={onClick}>
     {children}
-  </button>;
+  </button>
+);
 
 Button.defaultProps = {
   onClick: () => {},

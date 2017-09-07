@@ -25,7 +25,7 @@ const styles = {
   },
 };
 
-const PreviewHelp = () =>
+const PreviewHelp = () => (
   <div style={styles.main}>
     <h1>Welcome to storybook</h1>
     <p>This is a UI component dev environment for your app.</p>
@@ -54,6 +54,7 @@ const PreviewHelp = () =>
     <div style={styles.codeBlock}>
       <pre style={styles.instructionsCode}>react-native run-&lt;platform&gt;</pre>
     </div>
-  </div>;
+  </div>
+);
 
 export { PreviewHelp as default };

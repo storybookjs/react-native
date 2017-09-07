@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-comments",
-  "version": "3.2.8",
+  "version": "3.3.0-alpha.0",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
@@ -23,7 +23,7 @@
     "storybook-remote": "start-storybook -p 3006"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6",
+    "@storybook/addons": "^3.3.0-alpha.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
@@ -38,8 +38,8 @@
   "devDependencies": {
     "@kadira/storybook-database-cloud": "*",
     "@kadira/storybook-deployer": "*",
-    "@storybook/addon-actions": "^3.2.0",
-    "@storybook/react": "^3.2.8",
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/react": "^3.3.0-alpha.0",
     "git-url-parse": "^6.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

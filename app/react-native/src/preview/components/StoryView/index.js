@@ -24,15 +24,17 @@ export default class StoryView extends Component {
   renderHelp() {
     return (
       <View style={style.help}>
-        {this.props.url
-          ? <Text>
-              Please open the Storybook UI (
-              {this.props.url}
-              ) with a web browser and select a story for preview.
-            </Text>
-          : <Text>
-              Please open the Storybook UI with a web browser and select a story for preview.
-            </Text>}
+        {this.props.url ? (
+          <Text>
+            Please open the Storybook UI (
+            {this.props.url}
+            ) with a web browser and select a story for preview.
+          </Text>
+        ) : (
+          <Text>
+            Please open the Storybook UI with a web browser and select a story for preview.
+          </Text>
+        )}
       </View>
     );
   }
