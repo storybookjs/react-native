@@ -10,45 +10,36 @@ dependencies:
   pre:
     - yarn global add npm
 jobs:
-  validate:
-    <<: *defaults
-    steps:
-      - run:
-          name: "Checking Versions"
-          command: |
-            node --version
-            npm --version
-            yarn --version
   build:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-{{ checksum "yarn.lock" }}
             - root-dependencies-
       - run:
           name: "Install yarn 1.0.0-prerelease"
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --nightly
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install root dependencies"
           command: |
             yarn install
       - save_cache:
-          key: root-dependencies-{{ checksum "package.json" }}
+          key: root-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - restore_cache:
           keys:
-            - package-dependencies-{{ checksum "package.json" }}
+            - package-dependencies-{{ checksum "yarn.lock" }}
             - package-dependencies-
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap --all
+            yarn bootstrap --core --docs --reactnative --reactnativeapp
       - save_cache:
-          key: package-dependencies-{{ checksum "package.json" }}
+          key: package-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - app/**/node_modules
             - docs/**/node_modules
@@ -60,7 +51,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-{{ checksum "yarn.lock" }}
             - root-dependencies-
       - run:
           name: "Install yarn 1.0.0-prerelease"
@@ -88,7 +79,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-{{ checksum "yarn.lock" }}
             - root-dependencies-
       - run:
           name: "Install yarn 1.0.0-prerelease"
@@ -114,7 +105,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-{{ checksum "yarn.lock" }}
             - root-dependencies-
       - run:
           name: "Install yarn 1.0.0-prerelease"
@@ -134,7 +125,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-{{ checksum "yarn.lock" }}
             - root-dependencies-
       - run:
           name: "Install yarn 1.0.0-prerelease"
@@ -154,7 +145,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-{{ checksum "yarn.lock" }}
             - root-dependencies-
       - run:
           name: "Install yarn 1.0.0-prerelease"
@@ -180,7 +171,6 @@ workflows:
   version: 2
   build_accept_deploy:
     jobs:
-      - validate
       - build
       - example-kitchen-sinks
       - example-react-native

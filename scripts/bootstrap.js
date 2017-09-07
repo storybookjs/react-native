@@ -18,11 +18,17 @@ log.heading = 'storybook';
 const prefix = 'bootstrap';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-const spawn = command => {
-  const out = childProcess.spawnSync(`${command}`, {
-    shell: true,
-    stdio: 'inherit',
-  });
+const spawn = (command, options = {}) => {
+  const out = childProcess.spawnSync(
+    `${command}`,
+    Object.assign(
+      {
+        shell: true,
+        stdio: 'inherit',
+      },
+      options
+    )
+  );
 
   if (out.status !== 0) {
     process.exit(out.status);
@@ -71,6 +77,9 @@ const tasks = {
     defaultValue: true,
     option: '--core',
     command: () => {
+      log.info(prefix, 'prepublish');
+      spawn('lerna run prepublish -- --silent');
+      log.info(prefix, 'yarn workspace');
       spawn('yarn bootstrap:core');
     },
   }),
