@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import express from 'express';
 import https from 'https';
 import favicon from 'serve-favicon';

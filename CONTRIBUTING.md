@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This guide assumes you're using `yarn` as package manager. You may have some success using `npm` as well, but there are chances you'll get wrong versions of root dependencies in that case (we only commit `yarn.lock` to the repo).
+This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](<>).
 
 ## Issues
 
@@ -35,7 +35,7 @@ The bootstrap command will ask which sections of the codebase you want to bootst
 
 You can also pick directly from CLI:
 
-    yarn bootstrap -- --core
+    yarn bootstrap --core
 
 #### 2a. Run unit tests
 
@@ -52,7 +52,7 @@ _Note that in order to run the tests fro ReactNative, you must have bootstrapped
 You can also pick suites from CLI:
 
 ```sh
-yarn test -- --core
+yarn test --core
 ```
 
 In order to run ALL unit tests, you must have bootstrapped the react-native
@@ -224,7 +224,7 @@ git status
 
 # clean out extra files & build all the packages
 # WARNING: destructive if you have extra files lying around!
-yarn bootstrap -- --reset --all
+yarn bootstrap --reset --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
@@ -235,7 +235,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-yarn run publish -- --concurrency 1 --npm-tag=alpha
+yarn run publish --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
@@ -245,7 +245,7 @@ git push --tags
 
 ```sh
 # publish but don't commit to git
-yarn publish -- --concurrency 1 --skip-git
+yarn run publish --concurrency 1 --skip-git
 
 # Update `CHANGELOG.md`
 # - Edit PR titles/labels on github until output is good

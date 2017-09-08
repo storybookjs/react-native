@@ -7,7 +7,7 @@
     "storybook"
   ],
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "license": "MIT",
   "dependencies": {
