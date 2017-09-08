@@ -63,8 +63,7 @@ If you made any changes to `lib/cli` package, the easiest way to verify that it 
 
     yarn test -- --cli
 
-This will run two bash scripts located at `lib/cli/test`. `update_fixtures.sh` runs latest versions of `create-react(-native)-app` to update `fixtures/react(_native)_scripts` directories, so that we can chec that we're still compatible with them. 
-`run_tests.sh` will copy the contents of `fixtures` into a temporary `run` directory, run `getstorybook` in each of the subdirectories, and check that storybook starts successfully using `yarn storybook -- --smoke-test`.
+This will run a bash script located at `lib/cli/test/run_tests.sh`. It will copy the contents of `fixtures` into a temporary `run` directory, run `getstorybook` in each of the subdirectories, and check that storybook starts successfully using `yarn storybook -- --smoke-test`.
 
 After that, the `run` directory content will be compared with `snapshots`. You can update the snapshots by passing an `--update` flag:
 

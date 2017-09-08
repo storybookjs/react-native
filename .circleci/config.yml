@@ -181,6 +181,32 @@ jobs:
           name: "Testing CLI"
           command: |
             yarn test -- --cli
+  cli-latest-cra:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - root-dependencies-{{ checksum "package.json" }}
+            - root-dependencies-
+      - run:
+          name: "Install root dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap -- --core
+      - run:
+          name: "Updating fixtures"
+          command: |
+            yarn update-cli-fixtures
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test -- --cli
   deploy:
     <<: *defaults
     steps:
@@ -200,6 +226,7 @@ workflows:
       - lint
       - unit-test
       - cli-node-8
+      - cli-latest-cra
       # - deploy:
       #     type: approval
       #     requires:

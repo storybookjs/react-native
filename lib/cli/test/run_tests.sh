@@ -17,11 +17,11 @@ do
   # check that storybook starts without errors
   # smoke-test option may be unknown in earlier storybook versions,
   # so skip `already_has_storybook` here
-  if [ $dir != "already_has_storybook" ]
-  then
-    # TODO uncomment when 3.3.0 gets released
-    # yarn storybook -- --smoke-test
-  fi
+# TODO uncomment when 3.3.0 gets released
+#  if [ $dir != "already_has_storybook" ]
+#  then
+#    yarn storybook -- --smoke-test
+#  fi
 
   cd ..
 done
@@ -49,7 +49,7 @@ if [ $update -eq 1 ]
   else
     # check if there is any difference between `run` and `snapshots` directories,
     # skipping irrelevant files
-    declare diff=`diff -rq -x node_modules** -x yarn.lock -x .DS_Store -x *.md run snapshots`
+    declare diff=`diff -r -x node_modules** -x yarn.lock -x .DS_Store -x *.md run snapshots`
     if [[ $diff ]]
     then
       # if there is some diff, output it to stderr along with a clarifying message

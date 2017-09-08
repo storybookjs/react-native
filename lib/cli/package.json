@@ -21,7 +21,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "pretest": "cd test && ./update_fixtures.sh",
+    "update-fixtures": "cd test && ./update_fixtures.sh",
     "test": "cd test && ./run_tests.sh",
     "postinstall": "opencollective postinstall --collective=storybook"
   },
