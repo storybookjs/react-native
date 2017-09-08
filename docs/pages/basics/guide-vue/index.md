@@ -38,6 +38,18 @@ Make sure that you have `vue` in your dependencies as well because we list is as
 npm i --save vue
 ```
 
+## Create the NPM script
+
+Add the following NPM script to your `package.json` in order to start the storybook later in this guide:
+
+```
+{
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  }
+}
+```
+
 ## Create the config file
 
 Storybook can be configured in several different ways. 
