@@ -80,7 +80,7 @@
     "symlink-dir": "^1.1.0"
   },
   "engines": {
-    "node": "node"
+    "node": ">=8.0.0"
   },
   "collective": {
     "type": "opencollective",
