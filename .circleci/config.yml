@@ -89,7 +89,7 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            yarn bootstrap --reactnative --reactnativeapp
+            yarn bootstrap --core --reactnative --reactnativeapp
       - run:
           name: "Running React-Native example"
           command: |
