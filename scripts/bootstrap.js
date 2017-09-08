@@ -79,8 +79,8 @@ const tasks = {
     command: () => {
       log.info(prefix, 'yarn workspace');
       spawn('yarn install');
-      log.info(prefix, 'prepublish');
-      spawn('lerna run prepublish -- --silent');
+      log.info(prefix, 'prepare');
+      spawn('lerna run prepare -- --silent');
     },
   }),
   docs: createTask({

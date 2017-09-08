@@ -18,8 +18,8 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepublish'",
-    "prepublish": "node ../../scripts/prepublish.js"
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepare'",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.3.0-alpha.0",

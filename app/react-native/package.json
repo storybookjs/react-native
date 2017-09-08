@@ -21,7 +21,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.3.0-alpha.0",
