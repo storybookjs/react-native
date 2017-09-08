@@ -15,7 +15,6 @@
   ],
   "scripts": {
     "bootstrap": "./scripts/bootstrap.js",
-    "bootstrap:core": "lerna bootstrap -–use-workspaces",
     "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",

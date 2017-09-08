@@ -62,7 +62,7 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
 
 const tasks = {
   reset: createTask({
-    name: `Clean and re-install root dependencies ${chalk.red('(reset)')}`,
+    name: `Clean and re-install dependencies ${chalk.red('(reset)')}`,
     defaultValue: false,
     option: '--reset',
     command: () => {
@@ -77,10 +77,10 @@ const tasks = {
     defaultValue: true,
     option: '--core',
     command: () => {
+      log.info(prefix, 'yarn workspace');
+      spawn('yarn install');
       log.info(prefix, 'prepublish');
       spawn('lerna run prepublish -- --silent');
-      log.info(prefix, 'yarn workspace');
-      spawn('yarn bootstrap:core');
     },
   }),
   docs: createTask({
