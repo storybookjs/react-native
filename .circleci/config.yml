@@ -169,6 +169,66 @@ jobs:
           command: |
             yarn test --all --coverage --runInBand
             yarn coverage
+  cli:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+      - run:
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test --cli
+  cli-latest-cra:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+      - run:
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core
+      - run:
+          name: "Updating fixtures"
+          command: |
+            yarn update-cli-fixtures
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test --cli
   deploy:
     <<: *defaults
     steps:
@@ -186,6 +246,8 @@ workflows:
       - docs
       - lint
       - unit-test
+      - cli
+      - cli-latest-cra
       # - deploy:
       #     type: approval
       #     requires:

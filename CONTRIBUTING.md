@@ -57,7 +57,21 @@ yarn test --core
 
 In order to run ALL unit tests, you must have bootstrapped the react-native
 
-#### 2b. Link `storybook` and any other required dependencies:
+#### 2b. Run e2e tests for CLI
+
+If you made any changes to `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
+
+    yarn test --cli
+
+This will run a bash script located at `lib/cli/test/run_tests.sh`. It will copy the contents of `fixtures` into a temporary `run` directory, run `getstorybook` in each of the subdirectories, and check that storybook starts successfully using `yarn storybook --smoke-test`.
+
+After that, the `run` directory content will be compared with `snapshots`. You can update the snapshots by passing an `--update` flag:
+
+    yarn test --cli --update
+
+In that case, please check the git diff before commiting to make sure it only contains the intended changes.
+
+#### 2c. Link `storybook` and any other required dependencies:
 
 If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
 

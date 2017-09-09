@@ -34,7 +34,8 @@
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "./scripts/test.js"
+    "test": "./scripts/test.js",
+    "update-cli-fixtures": "npm --prefix lib/cli run update-fixtures"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
