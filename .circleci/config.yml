@@ -180,7 +180,11 @@ jobs:
             - dependencies-{{ checksum "package.json" }}
             - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
@@ -202,7 +206,11 @@ jobs:
             - dependencies-{{ checksum "package.json" }}
             - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
@@ -234,7 +242,7 @@ workflows:
       - docs
       - lint
       - unit-test
-      - cli-node-8
+      - cli
       - cli-latest-cra
       # - deploy:
       #     type: approval
