@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.2.8",
+  "version": "3.3.0-alpha.0",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
   "bugs": {
@@ -9,24 +9,24 @@
   "license": "MIT",
   "main": "dist/client/index.js",
   "bin": {
-    "build-storybook": "./dist/server/build.js",
-    "start-storybook": "./dist/server/index.js",
-    "storybook-server": "./dist/server/index.js"
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
-    "prepublish": "node ../../scripts/prepublish.js"
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepare'",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6",
-    "@storybook/addons": "^3.2.6",
-    "@storybook/channel-postmessage": "^3.2.0",
-    "@storybook/ui": "^3.2.7",
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/addon-links": "^3.3.0-alpha.0",
+    "@storybook/addons": "^3.3.0-alpha.0",
+    "@storybook/channel-postmessage": "^3.3.0-alpha.0",
+    "@storybook/ui": "^3.3.0-alpha.0",
     "airbnb-js-shims": "^1.1.1",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.26.0",
@@ -50,6 +50,7 @@
     "glamor": "^2.20.40",
     "glamorous": "^4.1.2",
     "global": "^4.3.2",
+    "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.4",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",

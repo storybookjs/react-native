@@ -150,7 +150,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
               }
             }
           >
-            Button with PropTypes and doc comments
+            Some Description
           </p>
         </div>
         <div>
@@ -290,45 +290,57 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
               " Component
             </h2>
             <table
-              style={
-                Object {
-                  "borderCollapse": "separate",
-                  "borderSpacing": "10px 5px",
-                  "marginLeft": -10,
-                }
-              }
+              className="css-1ytzlk7"
             >
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     description
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     disabled
                   </td>
-                  <td>
-                    bool
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -341,34 +353,54 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     label
                   </td>
-                  <td>
-                    string
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     onClick
                   </td>
-                  <td>
-                    func
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -381,82 +413,209 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     one
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     two
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    obj
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    shape
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    arrayOf
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     msg
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     enm
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     union
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -618,7 +777,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
               }
             }
           >
-            Button with Flow type documentation comments
+            Some Description
           </p>
         </div>
         <div>
@@ -758,41 +917,59 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
               " Component
             </h2>
             <table
-              style={
-                Object {
-                  "borderCollapse": "separate",
-                  "borderSpacing": "10px 5px",
-                  "marginLeft": -10,
-                }
-              }
+              className="css-1ytzlk7"
             >
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     description
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     disabled
                   </td>
-                  <td />
-                  <td />
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span>
+                      unknown
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -805,15 +982,31 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     onClick
                   </td>
-                  <td />
-                  <td />
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span>
+                      unknown
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -826,7 +1019,9 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -1128,45 +1323,57 @@ exports[`Storyshots AddonInfo.ImportedPropsButton ImportedPropsButton 1`] = `
               " Component
             </h2>
             <table
-              style={
-                Object {
-                  "borderCollapse": "separate",
-                  "borderSpacing": "10px 5px",
-                  "marginLeft": -10,
-                }
-              }
+              className="css-1ytzlk7"
             >
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     description
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     disabled
                   </td>
-                  <td>
-                    bool
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -1179,34 +1386,54 @@ exports[`Storyshots AddonInfo.ImportedPropsButton ImportedPropsButton 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     label
                   </td>
-                  <td>
-                    string
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     onClick
                   </td>
-                  <td>
-                    func
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -1219,82 +1446,209 @@ exports[`Storyshots AddonInfo.ImportedPropsButton ImportedPropsButton 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     one
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     two
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    obj
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    shape
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    arrayOf
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     msg
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     enm
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     union
                   </td>
-                  <td>
-                    other
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
-                  </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -2204,60 +2558,82 @@ exports[`Storyshots Button with new info 1`] = `
               " Component
             </h2>
             <table
-              style={
-                Object {
-                  "borderCollapse": "separate",
-                  "borderSpacing": "10px 5px",
-                  "marginLeft": -10,
-                }
-              }
+              className="css-1ytzlk7"
             >
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     description
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     children
                   </td>
-                  <td>
-                    node
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     isAmazing
                   </td>
-                  <td>
-                    bool
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -2270,44 +2646,108 @@ exports[`Storyshots Button with new info 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     age
                   </td>
-                  <td>
-                    number
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
                           Object {
-                            "color": "#a11",
+                            "color": "#666",
                           }
                         }
                       >
-                        0
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#666",
+                            }
+                          }
+                        >
+                          isOld
+                        </span>
+                        : 
+                        <span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            false
+                          </span>
+                        </span>
+                        , 
+                        <span
+                          style={
+                            Object {
+                              "color": "#666",
+                            }
+                          }
+                        >
+                          value
+                        </span>
+                        : 
+                        <span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            0
+                          </span>
+                        </span>
+                        }
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     title
                   </td>
-                  <td>
-                    string
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span
                       style={
                         Object {
@@ -2321,7 +2761,9 @@ exports[`Storyshots Button with new info 1`] = `
                       "
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -2758,60 +3200,82 @@ exports[`Storyshots Button with some info 1`] = `
               " Component
             </h2>
             <table
-              style={
-                Object {
-                  "borderCollapse": "separate",
-                  "borderSpacing": "10px 5px",
-                  "marginLeft": -10,
-                }
-              }
+              className="css-1ytzlk7"
             >
               <thead>
                 <tr>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     property
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     propType
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     required
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     default
                   </th>
-                  <th>
+                  <th
+                    className="css-d52hbj"
+                  >
                     description
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     children
                   </td>
-                  <td>
-                    node
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     yes
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     -
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     isAmazing
                   </td>
-                  <td>
-                    bool
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
@@ -2824,44 +3288,108 @@ exports[`Storyshots Button with some info 1`] = `
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     age
                   </td>
-                  <td>
-                    number
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span>
                       <span
                         style={
                           Object {
-                            "color": "#a11",
+                            "color": "#666",
                           }
                         }
                       >
-                        0
+                        {
+                        <span
+                          style={
+                            Object {
+                              "color": "#666",
+                            }
+                          }
+                        >
+                          isOld
+                        </span>
+                        : 
+                        <span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            false
+                          </span>
+                        </span>
+                        , 
+                        <span
+                          style={
+                            Object {
+                              "color": "#666",
+                            }
+                          }
+                        >
+                          value
+                        </span>
+                        : 
+                        <span>
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            0
+                          </span>
+                        </span>
+                        }
                       </span>
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    className="css-1ygfcef"
+                  >
                     title
                   </td>
-                  <td>
-                    string
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
                   </td>
-                  <td>
-                    no
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
                   </td>
-                  <td>
+                  <td
+                    className="css-d52hbj"
+                  >
                     <span
                       style={
                         Object {
@@ -2875,7 +3403,9 @@ exports[`Storyshots Button with some info 1`] = `
                       "
                     </span>
                   </td>
-                  <td />
+                  <td
+                    className="css-d52hbj"
+                  />
                 </tr>
               </tbody>
             </table>
@@ -3118,9 +3648,9 @@ exports[`Storyshots WithEvents Logger 1`] = `
     Object {
       "color": "rgb(51, 51, 51)",
       "fontFamily": "
-      -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-      \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-    ",
+          -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
+          \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
+        ",
       "padding": 20,
     }
   }

@@ -40,7 +40,7 @@ import Footer from '../Footer';
 //   },
 // ];
 
-const Homepage = ({ users }) =>
+const Homepage = ({ users }) => (
   <div className="container">
     <Helmet title="Storybook - UI dev environment you'll love to use" />
     {/* <Header currentSection="home" /> */}
@@ -51,7 +51,8 @@ const Homepage = ({ users }) =>
     <UsedBy users={users} />
     {/* <Featured featuredStorybooks={featuredStorybooks} /> */}
     <Footer />
-  </div>;
+  </div>
+);
 
 Homepage.propTypes = {
   featuredStorybooks: PropTypes.array, // eslint-disable-line

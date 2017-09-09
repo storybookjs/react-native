@@ -48,22 +48,14 @@ function previewArray(val, maxPropArrayLength) {
   } else {
     delete items[`c${val.length - 1}`];
   }
-  return (
-    <span style={valueStyles.array}>
-      [{createFragment(items)}]
-    </span>
-  );
+  return <span style={valueStyles.array}>[{createFragment(items)}]</span>;
 }
 
 function previewObject(val, maxPropObjectKeys) {
   const names = Object.keys(val);
   const items = {};
   names.slice(0, maxPropObjectKeys).forEach((name, i) => {
-    items[`k${i}`] = (
-      <span style={valueStyles.attr}>
-        {name}
-      </span>
-    );
+    items[`k${i}`] = <span style={valueStyles.attr}>{name}</span>;
     items[`c${i}`] = ': ';
     items[`v${i}`] = <PropVal val={val[name]} />;
     items[`m${i}`] = ', ';
@@ -89,31 +81,19 @@ export default function PropVal(props) {
   let content = null;
 
   if (typeof val === 'number') {
-    content = (
-      <span style={valueStyles.number}>
-        {val}
-      </span>
-    );
+    content = <span style={valueStyles.number}>{val}</span>;
   } else if (typeof val === 'string') {
     if (val.length > maxPropStringLength) {
       val = `${val.slice(0, maxPropStringLength)}…`;
     }
-    content = (
-      <span style={valueStyles.string}>
-        "{val}"
-      </span>
-    );
+    content = <span style={valueStyles.string}>"{val}"</span>;
     braceWrap = false;
   } else if (typeof val === 'boolean') {
     content = <span style={valueStyles.bool}>{`${val}`}</span>;
   } else if (Array.isArray(val)) {
     content = previewArray(val, maxPropArrayLength);
   } else if (typeof val === 'function') {
-    content = (
-      <span style={valueStyles.func}>
-        {val.name ? `${val.name}()` : 'anonymous()'}
-      </span>
-    );
+    content = <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
   } else if (!val) {
     content = <span style={valueStyles.empty}>{`${val}`}</span>;
   } else if (typeof val !== 'object') {
@@ -130,11 +110,7 @@ export default function PropVal(props) {
 
   if (!braceWrap) return content;
 
-  return (
-    <span>
-      {content}
-    </span>
-  );
+  return <span>{content}</span>;
 }
 
 PropVal.defaultProps = {

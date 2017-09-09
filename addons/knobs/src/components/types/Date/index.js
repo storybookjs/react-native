@@ -21,7 +21,7 @@ const customStyle = `
 insertCss(style);
 insertCss(customStyle);
 
-const DateType = ({ knob, onChange }) =>
+const DateType = ({ knob, onChange }) => (
   <div>
     <Datetime
       id={knob.name}
@@ -29,7 +29,8 @@ const DateType = ({ knob, onChange }) =>
       type="date"
       onChange={date => onChange(date.valueOf())}
     />
-  </div>;
+  </div>
+);
 
 DateType.defaultProps = {
   knob: {},

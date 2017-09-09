@@ -1,6 +1,6 @@
 {
   "name": "@storybook/cli",
-  "version": "3.2.9",
+  "version": "3.3.0-alpha.0",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
   "keywords": [
     "cli",
@@ -14,17 +14,21 @@
   "license": "MIT",
   "author": "Storybook Team",
   "bin": {
-    "getstorybook": "./bin/generate.js"
+    "getstorybook": "./bin/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
+    "update-fixtures": "cd test && ./update_fixtures.sh",
+    "test": "cd test && ./run_tests.sh",
     "postinstall": "opencollective postinstall --collective=storybook"
   },
   "dependencies": {
-    "@storybook/codemod": "^3.2.6",
+    "@storybook/codemod": "^3.3.0-alpha.0",
+    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "chalk": "^2.1.0",
     "child-process-promise": "^2.2.1",
     "commander": "^2.11.0",
@@ -36,5 +40,9 @@
     "opencollective": "^1.0.3",
     "shelljs": "^0.7.8",
     "update-notifier": "^2.1.0"
+  },
+  "devDependencies": {
+    "check-node-version": "2.1.0",
+    "npx": "9.6.0"
   }
 }

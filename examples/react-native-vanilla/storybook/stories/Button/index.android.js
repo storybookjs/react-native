@@ -4,9 +4,7 @@ import { TouchableNativeFeedback } from 'react-native';
 
 export default function Button(props) {
   return (
-    <TouchableNativeFeedback onPress={props.onPress}>
-      {props.children}
-    </TouchableNativeFeedback>
+    <TouchableNativeFeedback onPress={props.onPress}>{props.children}</TouchableNativeFeedback>
   );
 }
 

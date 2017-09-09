@@ -9,17 +9,32 @@ const { lstatSync, readdirSync } = require('fs');
 const { join } = require('path');
 
 const isTgz = source => lstatSync(source).isFile() && source.match(/.tgz$/);
-const getDirectories = source => readdirSync(source).map(name => join(source, name)).filter(isTgz);
+const getDirectories = source =>
+  readdirSync(source)
+    .map(name => join(source, name))
+    .filter(isTgz);
 
 log.heading = 'storybook';
 const prefix = 'bootstrap';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-const spawn = command =>
-  childProcess.spawnSync(`${command}`, {
-    shell: true,
-    stdio: 'inherit',
-  });
+const spawn = (command, options = {}) => {
+  const out = childProcess.spawnSync(
+    `${command}`,
+    Object.assign(
+      {
+        shell: true,
+        stdio: 'inherit',
+      },
+      options
+    )
+  );
+
+  if (out.status !== 0) {
+    process.exit(out.status);
+  }
+  return out;
+};
 
 const main = program
   .version('3.0.0')
@@ -47,7 +62,7 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
 
 const tasks = {
   reset: createTask({
-    name: `Clean and re-install root dependencies ${chalk.red('(reset)')}`,
+    name: `Clean and re-install dependencies ${chalk.red('(reset)')}`,
     defaultValue: false,
     option: '--reset',
     command: () => {
@@ -62,7 +77,10 @@ const tasks = {
     defaultValue: true,
     option: '--core',
     command: () => {
-      spawn('yarn bootstrap:core');
+      log.info(prefix, 'yarn workspace');
+      spawn('yarn install');
+      log.info(prefix, 'prepare');
+      spawn('lerna run prepare -- --silent');
     },
   }),
   docs: createTask({
@@ -111,7 +129,11 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
-if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
+if (
+  !Object.keys(tasks)
+    .map(key => tasks[key].value)
+    .filter(Boolean).length
+) {
   selection = inquirer
     .prompt([
       {
@@ -150,7 +172,9 @@ if (!Object.keys(tasks).map(key => tasks[key].value).filter(Boolean).length) {
     });
 } else {
   selection = Promise.resolve(
-    Object.keys(tasks).map(key => tasks[key]).filter(item => item.value === true)
+    Object.keys(tasks)
+      .map(key => tasks[key])
+      .filter(item => item.value === true)
   );
 }
 
@@ -163,15 +187,10 @@ selection
         key.command();
       });
       process.stdout.write('\x07');
-      try {
-        spawn('say "Bootstrapping sequence complete"');
-      } catch (e) {
-        // discard error
-      }
     }
   })
   .catch(e => {
     log.aborted(prefix, chalk.red(e.message));
     log.silly(prefix, e);
-    return true;
+    process.exit(1);
   });

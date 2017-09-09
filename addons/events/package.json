@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "3.2.6",
+  "version": "3.3.0-alpha.0",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",
@@ -16,11 +16,11 @@
   },
   "scripts": {
     "build-storybook": "build-storybook",
-    "prepublish": "node ../../scripts/prepublish.js",
+    "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6",
+    "@storybook/addons": "^3.3.0-alpha.0",
     "babel-runtime": "^6.23.0",
     "format-json": "^1.0.3",
     "prop-types": "^15.5.10",

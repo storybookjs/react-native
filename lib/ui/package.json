@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.2.7",
+  "version": "3.3.0-alpha.0",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -9,13 +9,13 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js",
+    "prepare": "node ../../scripts/prepare.js",
     "publish-storybook": "bash ./.scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
     "@hypnosphi/fuse.js": "^3.0.9",
-    "@storybook/components": "^3.2.7",
+    "@storybook/components": "^3.3.0-alpha.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",

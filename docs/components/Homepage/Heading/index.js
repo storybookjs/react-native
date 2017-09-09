@@ -3,7 +3,7 @@ import './style.css';
 
 import storybookLogo from '../../../design/homepage/storybook-logo.svg';
 
-const Heading = () =>
+const Heading = () => (
   <div id="heading" className="row">
     <div className="col-xs-12">
       <img className="sb-title" src={storybookLogo} alt="Storybook Logo" />
@@ -13,6 +13,7 @@ const Heading = () =>
         You'll ♥️ to use
       </h3>
     </div>
-  </div>;
+  </div>
+);
 
 export default Heading;

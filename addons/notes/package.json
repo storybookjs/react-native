@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "3.2.7",
+  "version": "3.3.0-alpha.0",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -14,12 +14,12 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js",
+    "prepare": "node ../../scripts/prepare.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6",
+    "@storybook/addons": "^3.3.0-alpha.0",
     "babel-runtime": "^6.23.0",
     "prop-types": "^15.5.10",
     "util-deprecate": "^1.0.2"
