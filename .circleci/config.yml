@@ -173,6 +173,8 @@ jobs:
     working_directory: /tmp/storybook
     docker:
       - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
     steps:
       - checkout
       - restore_cache:
@@ -199,6 +201,8 @@ jobs:
     working_directory: /tmp/storybook
     docker:
       - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
     steps:
       - checkout
       - restore_cache:
