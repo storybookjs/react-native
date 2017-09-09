@@ -6,7 +6,7 @@
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "angular-test"
+        "angular-cli",
         "vue-kitchen-sink"
       ]
     }

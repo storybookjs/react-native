@@ -10,6 +10,7 @@
     "addons/*",
     "app/*",
     "lib/*",
+    "examples/angular-cli",
     "examples/cra-kitchen-sink",
     "examples/vue-kitchen-sink"
   ],
