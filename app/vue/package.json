@@ -9,17 +9,17 @@
   "license": "MIT",
   "main": "dist/client/index.js",
   "bin": {
-    "build-storybook": "./dist/server/build.js",
-    "start-storybook": "./dist/server/index.js",
-    "storybook-server": "./dist/server/index.js"
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "bin/index.js",
+    "storybook-server": "bin/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'npm run prepublish'",
-    "prepublish": "node ../../scripts/prepublish.js"
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepare'",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.3.0-alpha.0",

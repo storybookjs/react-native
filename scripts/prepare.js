@@ -1,12 +1,12 @@
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
+const log = require('npmlog');
 
-const packageJson = require('../package.json');
+const modulePath = path.resolve('./');
+// eslint-disable-next-line import/no-dynamic-require
+const packageJson = require(path.join(modulePath, 'package.json'));
 
-shell.echo(chalk.bold(`${packageJson.name}@${packageJson.version}`));
-
-shell.echo(chalk.gray('\n=> Clean dist.'));
 shell.rm('-rf', 'dist');
 
 const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
@@ -18,16 +18,14 @@ const args = [
 ].join(' ');
 
 const command = `${babel} ${args}`;
-shell.echo(chalk.gray('\n=> Transpiling "src" into ES5 ...\n'));
-shell.echo(chalk.gray(command));
-shell.echo('');
-const code = shell.exec(command).code;
-if (code === 0) {
-  shell.echo(chalk.gray('\n=> Transpiling completed.'));
-} else {
+const code = shell.exec(command, { silent: true }).code;
+
+if (code !== 0) {
+  log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);
   shell.exit(code);
 }
 
 const licence = path.join(__dirname, '..', 'LICENSE');
-shell.echo(chalk.gray('\n=> Copy LICENSE.'));
 shell.cp(licence, './');
+
+console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));
