@@ -15,35 +15,101 @@ This addon works with Storybook for:
 
 ## Getting Started
 
-You can use this addon without installing it.
+Install:
+
+```sh
+npm i -D @storybook/addon-actions
+```
+
+Then, add following content to `.storybook/addons.js`
 
 ```js
-import { storiesOf } from '@storybook/react'
-import { linkTo } from '@storybook/addon-links'
+import '@storybook/addon-actions/register';
+```
 
-storiesOf('Button', module)
+## LinkTo component
+
+To add a link from one story to another, just import `LinkTo` component and use it:
+
+```js
+import { storiesOf } from '@storybook/react';
+import { LinkTo } from '@storybook/addon-links';
+
+storiesOf('Link', module)
   .add('First', () => (
-    <button onClick={linkTo('Button', 'Second')}>Go to "Second"</button>
+    <LinkTo story="Second">Go to Second</LinkTo>
   ))
   .add('Second', () => (
-    <button onClick={linkTo('Button', 'First')}>Go to "First"</button>
+    <LinkTo story="First">Go to First</LinkTo>
   ));
 ```
 
-Have a look at the linkTo function:
+It uses native `a` element, but prevents page reloads on plain left click. You can still use default browser methods to open link in new tab.
+It accepts all the props the `a` element does, plus to special props, both optional:
+
+-   `kind` is the the story kind name (what you named with `storiesOf`). If it is omitted, the current kind will be preserved.
+-   `story` is the story name (what you named with `.add`). If it is omitted, the link will point to the first story in the given kind.
 
 ```js
-import { linkTo } from '@storybook/addon-links'
-
-linkTo('Toggle', 'off')
-linkTo(() => 'Toggle', () => 'off')
-linkTo('Toggle') // Links to the first story in the 'Toggle' kind
+<LinkTo
+  kind="Toggle"
+  story="off"
+  target="_blank"
+  title="link to second story"
+  style={{color: '#1474f3'}}
+>Go to Second</LinkTo>
 ```
 
-With that, you can link an event in a component to any story in the Storybook.
+## linkTo callback function
 
--   First parameter is the the story kind name (what you named with `storiesOf`).
--     Second (optional) parameter is the story name (what you named with `.add`). If the second parameter is omitted, the link will point to the first story in the given kind.
+If you want to use something other then `a` element, you may import `linkTo` function instead:
 
-> You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string. <br/>
-> Have a look at [PR86](https://github.com/kadirahq/react-storybook/pull/86) for more information.
+```js
+import { storiesOf } from '@storybook/react';
+import { linkTo } from '@storybook/addon-links';
+
+storiesOf('Button', module)
+  .add('First', () => (
+    <button onClick={linkTo('Button', 'Second')}>Go to Second</button>
+  ))
+  .add('Second', () => (
+    <button onClick={linkTo('Button', 'First')}>Go to First</button>
+  ));
+```
+
+You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string:
+
+```js
+import { storiesOf } from '@storybook/react';
+import { LinkTo, linkTo } from '@storybook/addon-links';
+
+storiesOf('Select', module)
+  .add('Index', () => (
+    <select value="Index" onChange={linkTo('Select', e => e.currentTarget.value)}>
+      <option>Index</option>
+      <option>First</option>
+      <option>Second</option>
+      <option>Third</option>
+    </select>
+  ))
+  .add('First', () =>  <LinkTo story="Index">Go back</LinkTo>)
+  .add('Second', () => <LinkTo story="Index">Go back</LinkTo>)
+  .add('Third', () => <LinkTo story="Index">Go back</LinkTo>);
+```
+
+## hrefTo function
+
+If you just want to get an URL for a particular story, you may use `hrefTo` function. It returns a promise, which resolves to string containing a relative URL:
+
+```js
+import { storiesOf } from '@storybook/react';
+import { hrefTo } from '@storybook/addon-links';
+import { action } from '@storybook/addon-actions';
+
+storiesOf('Href', module)
+  .add('log', () => {
+    hrefTo('Href', 'log').then(action('URL of this story'));
+
+    return <span>See action logger</span>;
+  });
+```

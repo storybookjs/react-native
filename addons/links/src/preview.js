@@ -1,12 +1,21 @@
 import addons from '@storybook/addons';
-import { EVENT_ID } from './';
+import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from './';
 
-export function linkTo(kind, story) {
-  return (...args) => {
-    const resolvedKind = typeof kind === 'function' ? kind(...args) : kind;
-    const resolvedStory = typeof story === 'function' ? story(...args) : story;
+export const openLink = params => addons.getChannel().emit(EVENT_ID, params);
 
+const valueOrCall = args => value => (typeof value === 'function' ? value(...args) : value);
+
+export const linkTo = (kind, story) => (...args) => {
+  const resolver = valueOrCall(args);
+  openLink({
+    kind: resolver(kind),
+    story: resolver(story),
+  });
+};
+
+export const hrefTo = (kind, story) =>
+  new Promise(resolve => {
     const channel = addons.getChannel();
-    channel.emit(EVENT_ID, { kind: resolvedKind, story: resolvedStory });
-  };
-}
+    channel.on(RECEIVE_HREF_EVENT_ID, resolve);
+    channel.emit(REQUEST_HREF_EVENT_ID, { kind, story });
+  });
