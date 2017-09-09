@@ -169,7 +169,7 @@ jobs:
           command: |
             yarn test --all --coverage --runInBand
             yarn coverage
-  cli-node-8:
+  cli:
     working_directory: /tmp/storybook
     docker:
       - image: andthensome/docker-node-rsync
@@ -177,8 +177,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
       - run:
           name: "Install root dependencies"
           command: |
@@ -186,11 +186,11 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --core
+            yarn bootstrap --core
       - run:
           name: "Testing CLI"
           command: |
-            yarn test -- --cli
+            yarn test --cli
   cli-latest-cra:
     working_directory: /tmp/storybook
     docker:
@@ -199,8 +199,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
       - run:
           name: "Install root dependencies"
           command: |
@@ -208,7 +208,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --core
+            yarn bootstrap --core
       - run:
           name: "Updating fixtures"
           command: |
@@ -216,7 +216,7 @@ jobs:
       - run:
           name: "Testing CLI"
           command: |
-            yarn test -- --cli
+            yarn test --cli
   deploy:
     <<: *defaults
     steps:

@@ -20,7 +20,7 @@ do
 # TODO uncomment when 3.3.0 gets released
 #  if [ $dir != "already_has_storybook" ]
 #  then
-#    yarn storybook -- --smoke-test
+#    yarn storybook --smoke-test
 #  fi
 
   cd ..
@@ -54,7 +54,7 @@ if [ $update -eq 1 ]
     then
       # if there is some diff, output it to stderr along with a clarifying message
       echo "$diff" 1>&2
-      echo "Snapshots don't match. Inspect your code changes or run 'yarn test -- --cli --update' to update them" 1>&2
+      echo "Snapshots don't match. Inspect your code changes or run 'yarn test --cli --update' to update them" 1>&2
       exit 1
     fi
   fi
