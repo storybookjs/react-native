@@ -14,9 +14,8 @@ deprecate(
   'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}'
 );
 
-// "Higher order component" / wrapper style API
-// In 3.3, this will become `withKnobs`, once our decorator API supports it.
-// See https://github.com/storybooks/storybook/pull/1527
+// generic higher-order component decorator for all platforms - usage is discouraged
+// This file Should be removed with 4.0 release
 function wrapperKnobs(options) {
   const channel = addons.getChannel();
   manager.setChannel(channel);

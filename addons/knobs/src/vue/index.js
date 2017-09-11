@@ -42,9 +42,6 @@ export const vueHandler = (channel, knobStore) => getStory => context => ({
   },
 });
 
-// "Higher order component" / wrapper style API
-// In 3.3, this will become `withKnobs`, once our decorator API supports it.
-// See https://github.com/storybooks/storybook/pull/1527
 function wrapperKnobs(options) {
   const channel = addons.getChannel();
   manager.setChannel(channel);

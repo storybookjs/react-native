@@ -256,9 +256,9 @@ Usage:
 ```js
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('')
+const stories = storiesOf('Storybook Knobs', module);
 
-story.addDecorator(withKnobsOptions({
+stories.addDecorator(withKnobsOptions({
   debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
   timestamps: true // Doesn't emit events while user is typing.
 }));

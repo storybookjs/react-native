@@ -7,9 +7,6 @@ import { knob, text, boolean, number, color, object, array, date, select, manage
 
 export { knob, text, boolean, number, color, object, array, date, select };
 
-/**
- * Handles a react story
- */
 export const reactHandler = (channel, knobStore) => getStory => context => {
   const initialContent = getStory(context);
   const props = { context, storyFn: getStory, channel, knobStore, initialContent };
