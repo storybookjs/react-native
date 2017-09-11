@@ -40,7 +40,7 @@ Now, write your stories with knobs.
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { addonKnobs, text, boolean, number } from '@storybook/addon-knobs/dist/react';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -55,29 +55,28 @@ stories.add('with a button', () => (
   </button>
 ));
 
-const options = {};
 // Knobs as dynamic variables.
-stories.add('as dynamic variables', withKnobsOptions(options)(() => {
+stories.add('as dynamic variables', () => {
   const name = text('Name', 'Arunoda Susiripala');
   const age = number('Age', 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
-}));
+});
 ```
 
 > In the case of Vue, use these imports:
 >
 > ```js
 > import { storiesOf } from '@storybook/vue';
-> import { addonKnobs, text, boolean, number } from '@storybook/addon-knobs/dist/vue';
+> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/vue';
 > ```
 >
 > In the case of React-Native, use these imports:
 >
 > ```js
 > import { storiesOf } from '@storybook/react-native';
-> import { addonKnobs, text, boolean, number } from '@storybook/addon-knobs/dist/react';
+> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 > ```
 
 You can see your Knobs in a Storybook panel as shown below.
@@ -107,7 +106,7 @@ Just like that, you can import any other following Knobs:
 Allows you to get some text from the user.
 
 ```js
-import { text } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs/react';
 
 const label = 'Your Name';
 const defaultValue = 'Arunoda Susiripala';
@@ -120,7 +119,7 @@ const value = text(label, defaultValue);
 Allows you to get a boolean value from the user.
 
 ```js
-import { boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs/react';
 
 const label = 'Agree?';
 const defaultValue = false;
@@ -133,7 +132,7 @@ const value = boolean(label, defaultValue);
 Allows you to get a number from the user.
 
 ```js
-import { number } from '@storybook/addon-knobs';
+import { number } from '@storybook/addon-knobs/react';
 
 const label = 'Age';
 const defaultValue = 78;
@@ -146,7 +145,7 @@ const value = number(label, defaultValue);
 Allows you to get a number from the user using a range slider.
 
 ```js
-import { number } from '@storybook/addon-knobs';
+import { number } from '@storybook/addon-knobs/react';
 
 const label = 'Temperature';
 const defaultValue = 73;
@@ -165,7 +164,7 @@ const value = number(label, defaultValue, options);
 Allows you to get a colour from the user.
 
 ```js
-import { color } from '@storybook/addon-knobs';
+import { color } from '@storybook/addon-knobs/react';
 
 const label = 'Color';
 const defaultValue = '#ff00ff';
@@ -178,7 +177,7 @@ const value = color(label, defaultValue);
 Allows you to get a JSON object or array from the user.
 
 ```js
-import { object } from '@storybook/addon-knobs';
+import { object } from '@storybook/addon-knobs/react';
 
 const label = 'Styles';
 const defaultValue = {
@@ -195,7 +194,7 @@ const value = object(label, defaultValue);
 Allows you to get an array of strings from the user.
 
 ```js
-import { array } from '@storybook/addon-knobs';
+import { array } from '@storybook/addon-knobs/react';
 
 const label = 'Styles';
 const defaultValue = ['Red']
@@ -207,7 +206,7 @@ const value = array(label, defaultValue);
 > By default it's a comma, but this can be override by passing a separator variable.
 >
 > ```js
-> import { array } from '@storybook/addon-knobs';
+> import { array } from '@storybook/addon-knobs/react';
 >
 > const label = 'Styles';
 > const defaultValue = ['Red'];
@@ -220,7 +219,7 @@ const value = array(label, defaultValue);
 Allows you to get a value from a select box from the user.
 
 ```js
-import { select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs/react';
 
 const label = 'Colors';
 const options = {
@@ -240,7 +239,7 @@ const value = select(label, options, defaultValue);
 Allow you to get date (and time) from the user.
 
 ```js
-import { date } from '@storybook/addon-knobs';
+import { date } from '@storybook/addon-knobs/react';
 
 const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
@@ -254,10 +253,16 @@ const value = date(label, defaultValue);
 If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.
 Usage:
 
-    story.addDecorator(withKnobsOptions({
-       debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
-       timestamps: true // Doesn't emit events while user is typing.
-    }));
+```js
+import { storiesOf } from '@storybook/react';
+
+const stories = storiesOf('')
+
+story.addDecorator(withKnobsOptions({
+  debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
+  timestamps: true // Doesn't emit events while user is typing.
+}));
+```
 
 ## Typescript
 

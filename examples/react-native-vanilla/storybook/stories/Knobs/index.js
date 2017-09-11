@@ -10,7 +10,7 @@ import {
   array,
   date,
   object,
-} from '@storybook/addon-knobs/dist/react';
+} from '@storybook/addon-knobs/react';
 
 export default () => {
   const name = text('Name', 'Storyteller');

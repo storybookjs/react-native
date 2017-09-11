@@ -11,7 +11,7 @@ export { knob, text, boolean, number, color, object, array, date };
 
 deprecate(
   () => {},
-  'Using @storybook/knobs directly is discouraged, please use @storybook/knobs/dist/{{framework}}'
+  'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}'
 );
 
 // "Higher order component" / wrapper style API
