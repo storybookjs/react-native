@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs/react';
 
 import knobsWrapper from './Knobs';
 import Button from './Button';

@@ -1,7 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { text, number, boolean, color, select, array, date, object } from '@storybook/addon-knobs';
+import {
+  text,
+  number,
+  boolean,
+  color,
+  select,
+  array,
+  date,
+  object,
+} from '@storybook/addon-knobs/react';
 
 export default () => {
   const name = text('Name', 'Storyteller');
