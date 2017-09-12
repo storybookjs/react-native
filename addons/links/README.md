@@ -15,16 +15,16 @@ This addon works with Storybook for:
 
 ## Getting Started
 
-Install:
+Install this addon by adding the `@storybook/addon-links` dependency:
 
 ```sh
-npm i -D @storybook/addon-actions
+yarn add @storybook/addon-links
 ```
 
-Then, add following content to `.storybook/addons.js`
+Then configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
 
 ```js
-import '@storybook/addon-actions/register';
+import '@storybook/addon-links/register';
 ```
 
 ## LinkTo component
