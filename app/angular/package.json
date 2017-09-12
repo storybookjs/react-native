@@ -1,6 +1,6 @@
 {
   "name": "@storybook/angular",
-  "version": "3.2.0-alpha.7",
+  "version": "3.3.0-alpha.0",
   "description": "Storybook for Anglar: Develop Angular Components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/angular",
   "bugs": {
@@ -9,9 +9,9 @@
   "license": "MIT",
   "main": "dist/client/index.js",
   "bin": {
-    "build-storybook": "./dist/server/build.js",
-    "start-storybook": "./dist/server/index.js",
-    "storybook-server": "./dist/server/index.js"
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "DEV_BUILD=1 nodemon -e js,ts --watch ./src --exec 'npm run prepublish'",
-    "prepublish": "node ../../scripts/prepublish.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@angular/common": "^5.0.0-beta.6",
@@ -27,11 +27,11 @@
     "@angular/core": "^5.0.0-beta.6",
     "@angular/platform-browser": "^5.0.0-beta.6",
     "@angular/platform-browser-dynamic": "^5.0.0-beta.6",
-    "@storybook/addon-actions": "^3.2.0-alpha.7",
-    "@storybook/addon-links": "^3.2.0-alpha.5",
-    "@storybook/addons": "^3.1.6",
-    "@storybook/channel-postmessage": "^3.1.6",
-    "@storybook/ui": "^3.2.0-alpha.7",
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/addon-links": "^3.3.0-alpha.0",
+    "@storybook/addons": "^3.3.0-alpha.0",
+    "@storybook/channel-postmessage": "^3.3.0-alpha.0",
+    "@storybook/ui": "^3.3.0-alpha.0",
     "airbnb-js-shims": "^1.1.1",
     "angular2-template-loader": "^0.6.2",
     "autoprefixer": "^7.1.1",
