@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'simple-knobs-component',
   template: `
-    <div style="border:2px dotted {{ colour }}; padding: 8px 22px; border-radius: 8px">
+    <div [ngStyle]="{ 'border': '2px dotted ' + border, 'padding.px': '8 22', 'border-radius.px': '8'}">
       <h1>My name is {{ name }},</h1>
       <h3>today is {{ today | date }}</h3>
       <p *ngIf="stock">I have a stock of {{ stock }} {{ fruit }}, costing $ {{ price }} each.</p>
@@ -28,13 +29,14 @@ export class AllKnobsComponent implements OnChanges, OnInit {
   }
   @Input() text;
   @Input() price;
-  @Input() colour;
+  @Input() border;
   @Input() fruit;
   @Input() name;
   @Input() items;
   @Input() today;
   @Input() stock;
   @Input() nice;
+
 
   constructor() {
     console.log('constructor');

@@ -135,7 +135,7 @@ storiesOf('Addon Knobs', module)
     const fruit = select('Fruit', fruits, 'apple');
     const price = number('Price', 2.25);
 
-    const colour = color('Border', 'deeppink');
+    const border = color('Border', 'deeppink');
     const today = date('Today', new Date('Jan 20 2017'));
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
     const nice = boolean('Nice', true);
@@ -148,7 +148,7 @@ storiesOf('Addon Knobs', module)
         fruits,
         fruit,
         price,
-        colour,
+        border,
         today,
         items,
         nice
