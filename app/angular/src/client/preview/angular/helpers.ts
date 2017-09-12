@@ -63,7 +63,7 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
   return NewModule;
 };
 
-const initModule = (currentStory, context) => {
+const initModule = (currentStory, context, reRender) => {
   const {
     component,
     componentMeta,
@@ -95,7 +95,7 @@ const initModule = (currentStory, context) => {
   return Module;
 };
 
-const draw = newModule => {
+const draw = (newModule, reRender = true) => {
   if (!platform || !lastModule) {
     try {
       enableProdMode();
@@ -106,7 +106,7 @@ const draw = newModule => {
   } else {
     lastModule.then(ngModule => {
       if (!ngModule._destroyed) ngModule.destroy();
-
+      
       const body = document.body;
       const app = document.createElement("my-app");
       body.appendChild(app);
@@ -141,6 +141,6 @@ export function renderNoPreview() {
   draw(Module);
 }
 
-export function renderNgApp(story, context) {
-  draw(initModule(story, context));
+export function renderNgApp(story, context, reRender) {
+  draw(initModule(story, context, reRender), reRender);
 }
