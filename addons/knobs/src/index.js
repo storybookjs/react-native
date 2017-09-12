@@ -4,7 +4,6 @@ import addons from '@storybook/addons';
 
 import { vueHandler } from './vue';
 import { reactHandler } from './react';
-import { angularHandler } from './angular';
 
 import { knob, text, boolean, number, color, object, array, date, manager } from './base';
 
@@ -29,9 +28,6 @@ function wrapperKnobs(options) {
     }
     case 'react': {
       return reactHandler(channel, manager.knobStore);
-    }
-    case 'angular': {
-      return angularHandler(channel, manager.knobStore);
     }
     default: {
       return reactHandler(channel, manager.knobStore);
