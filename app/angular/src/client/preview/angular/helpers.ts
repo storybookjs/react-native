@@ -3,7 +3,8 @@ import {
   NgModule,
   Component,
   NgModuleRef,
-  ApplicationRef
+  ApplicationRef,
+  CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
@@ -54,6 +55,7 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
     imports: [BrowserModule],
     providers: [{ provide: STORY, useValue: Object.assign({}, data) }],
     entryComponents: [...entryComponents],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [...bootstrap]
   });
 
