@@ -1,5 +1,4 @@
-/* eslint no-underscore-dangle: 0 */
-// import Vue from 'vue';
+/* eslint-disable no-underscore-dangle */
 
 export default class ClientApi {
   constructor({ channel, storyStore }) {

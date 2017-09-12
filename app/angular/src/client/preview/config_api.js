@@ -1,4 +1,4 @@
-/* eslint no-underscore-dangle: 0 */
+/* eslint-disable no-underscore-dangle */
 
 import { location } from 'global';
 import { setInitialStory, setError, clearError } from './actions';

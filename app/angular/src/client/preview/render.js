@@ -1,12 +1,4 @@
-// import { environment } from './environments/environment';
-
-// import { ErrorComponent } from './error.component.ts';
-// import { document } from 'global';
-
 import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers.ts';
-
-// // check whether we're running on node/browser
-// const isBrowser = typeof window !== 'undefined';
 
 const logger = console;
 let previousKind = '';

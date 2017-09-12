@@ -1,5 +1,4 @@
-/* global window */
-
+import { window } from 'global';
 import { createStore } from 'redux';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-postmessage';

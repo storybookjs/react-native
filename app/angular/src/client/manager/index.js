@@ -1,5 +1,4 @@
-/* global document */
-
+import { document } from 'global';
 import renderStorybookUI from '@storybook/ui';
 import Provider from './provider';
 

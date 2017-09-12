@@ -1,4 +1,4 @@
-/* eslint no-underscore-dangle: 0 */
+/* eslint-disable no-underscore-dangle */
 
 import ClientAPI from './client_api';
 
@@ -75,7 +75,10 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa().bb();
+      api
+        .storiesOf('none')
+        .aa()
+        .bb();
       expect(data).toEqual(['foo', 'bar']);
     });
 
