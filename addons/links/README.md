@@ -17,6 +17,14 @@ This addon works with Storybook for:
 
 You can use this addon without installing it.
 
+First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
+
+```js
+import '@storybook/addon-knobs/register'
+```
+
+Then you can import `linkTo` in your stories and use like this:
+
 ```js
 import { storiesOf } from '@storybook/react'
 import { linkTo } from '@storybook/addon-links'
