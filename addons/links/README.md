@@ -20,7 +20,7 @@ You can use this addon without installing it.
 First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
 
 ```js
-import '@storybook/addon-knobs/register'
+import '@storybook/addon-links/register';
 ```
 
 Then you can import `linkTo` in your stories and use like this:
