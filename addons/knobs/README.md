@@ -55,15 +55,14 @@ stories.add('with a button', () => (
   </button>
 ));
 
-const options = {};
 // Knobs as dynamic variables.
-stories.add('as dynamic variables', addonKnobs(options)(() => {
+stories.add('as dynamic variables', () => {
   const name = text('Name', 'Arunoda Susiripala');
   const age = number('Age', 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
-}));
+});
 ```
 
 > In the case of Vue, use these imports:
@@ -78,6 +77,13 @@ stories.add('as dynamic variables', addonKnobs(options)(() => {
 > ```js
 > import { storiesOf } from '@storybook/react-native';
 > import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+> ```
+>
+> In the case of Angular, use these imports:
+>
+> ```js
+> import { storiesOf } from '@storybook/angular';
+> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/angular';
 > ```
 
 You can see your Knobs in a Storybook panel as shown below.
