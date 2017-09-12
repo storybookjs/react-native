@@ -1,4 +1,4 @@
-import { window } from 'global';
+import { window, navigator } from 'global';
 import { createStore } from 'redux';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-postmessage';
@@ -12,7 +12,6 @@ import { selectStory } from './actions';
 import reducer from './reducer';
 
 // check whether we're running on node/browser
-const { navigator } = global;
 const isBrowser =
   navigator &&
   navigator.userAgent !== 'storyshots' &&
