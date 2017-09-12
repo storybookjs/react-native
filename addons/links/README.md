@@ -15,7 +15,18 @@ This addon works with Storybook for:
 
 ## Getting Started
 
-You can use this addon without installing it.
+Install this addon by adding the `@storybook/addon-links` dependency:
+```sh
+yarn add @storybook/addon-links
+```
+
+First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
+
+```js
+import '@storybook/addon-links/register';
+```
+
+Then you can import `linkTo` in your stories and use like this:
 
 ```js
 import { storiesOf } from '@storybook/react'

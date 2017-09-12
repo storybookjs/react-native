@@ -3,15 +3,15 @@ id: 'introduction'
 title: 'Introduction'
 ---
 
-React Storybook is a UI development environment for your React components.
+Storybook is a UI development environment for your UI components.
 With it, you can visualize different states of your UI components and develop them interactively.
 
-React Storybook runs outside of your app.
+Storybook runs outside of your app.
 So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
 
-![React Storybook](../static/screenshot.png)
+![Storybook](../static/screenshot.png)
 
-React Storybook also comes with a lot of [addons](/addons/introduction) and a great API to customize as you wish.
+Storybook also comes with a lot of [addons](/addons/introduction) and a great API to customize as you wish.
 You can also build a [static version](/basics/exporting-storybook) of your storybook and deploy it anywhere you want.
 
 Here are some featured storybooks that you can reference to see how Storybook works:
