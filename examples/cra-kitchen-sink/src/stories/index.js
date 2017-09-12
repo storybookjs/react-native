@@ -17,7 +17,7 @@ import {
   array,
   date,
   object,
-} from '@storybook/addon-knobs';
+} from '@storybook/addon-knobs/react';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
 

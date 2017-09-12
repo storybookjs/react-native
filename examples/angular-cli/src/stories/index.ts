@@ -13,7 +13,7 @@ import {
   select,
   color,
   date,
-} from '@storybook/addon-knobs';
+} from '@storybook/addon-knobs/angular';
 
 import { Welcome, Button } from '@storybook/angular/demo';
 import { SimpleKnobsComponent } from './knobs.component';

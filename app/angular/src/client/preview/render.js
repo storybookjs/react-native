@@ -45,21 +45,21 @@ export async function renderMain(data, storyStore) {
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
   //    https://github.com/storybooks/react-storybook/issues/116
-  if (selectedKind !== previousKind || previousStory !== selectedStory) {
+
+  const reRender = selectedKind !== previousKind || previousStory !== selectedStory;
+  if (reRender) {
     // We need to unmount the existing set of components in the DOM node.
     // Otherwise, React may not recrease instances for every story run.
     // This could leads to issues like below:
     //    https://github.com/storybooks/react-storybook/issues/81
     previousKind = selectedKind;
     previousStory = selectedStory;
-
-    const context = {
-      kind: selectedKind,
-      story: selectedStory,
-    };
-    return renderNgApp(story, context);
   }
-  return null;
+  const context = {
+    kind: selectedKind,
+    story: selectedStory,
+  };
+  return renderNgApp(story, context, reRender);
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {

@@ -6,8 +6,8 @@
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "angular-cli",
-        "vue-kitchen-sink"
+        "vue-kitchen-sink",
+        "angular-cli"
       ]
     }
   },

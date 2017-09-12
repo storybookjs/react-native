@@ -1,3 +1,9 @@
+import addons from '@storybook/addons';
+
+import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
+
+export { knob, text, boolean, number, color, object, array, date, select };
+
 export const vueHandler = (channel, knobStore) => getStory => context => ({
   render(h) {
     return h(getStory(context));
@@ -35,3 +41,20 @@ export const vueHandler = (channel, knobStore) => getStory => context => ({
     knobStore.unsubscribe(this.setPaneKnobs);
   },
 });
+
+function wrapperKnobs(options) {
+  const channel = addons.getChannel();
+  manager.setChannel(channel);
+
+  if (options) channel.emit('addon:knobs:setOptions', options);
+
+  return vueHandler(channel, manager.knobStore);
+}
+
+export function withKnobs(storyFn, context) {
+  return wrapperKnobs()(storyFn)(context);
+}
+
+export function withKnobsOptions(options = {}) {
+  return (storyFn, context) => wrapperKnobs(options)(storyFn)(context);
+}
