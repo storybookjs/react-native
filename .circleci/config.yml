@@ -70,6 +70,12 @@ jobs:
             cd examples/vue-kitchen-sink
             yarn build-storybook
             yarn storybook --smoke-test
+      - run:
+          name: "Build angular kitchen-sink"
+          command: |
+            cd examples/angular-cli
+            yarn build-storybook
+            yarn storybook --smoke-test
   example-react-native:
     <<: *defaults
     steps:
