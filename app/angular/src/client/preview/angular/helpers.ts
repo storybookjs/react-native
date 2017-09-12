@@ -107,12 +107,14 @@ const draw = (newModule, reRender = true) => {
     lastModule = platform.bootstrapModule(newModule);
   } else {
     lastModule.then(ngModule => {
-      if (!ngModule._destroyed) ngModule.destroy();
-      
-      const body = document.body;
-      const app = document.createElement("my-app");
-      body.appendChild(app);
-      lastModule = platform.bootstrapModule(newModule);
+      if (reRender) {
+        if (!ngModule._destroyed) ngModule.destroy();
+        
+        const body = document.body;
+        const app = document.createElement("my-app");
+        body.appendChild(app);
+        lastModule = platform.bootstrapModule(newModule);
+      }
     });
   }
 };
