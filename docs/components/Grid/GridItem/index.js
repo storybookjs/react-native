@@ -8,32 +8,29 @@ const linkProps = {
   className: 'link',
 };
 
-const GridItem = ({ title, description, source, demo, thumbnail }) =>
+const GridItem = ({ title, description, source, demo, thumbnail }) => (
   <div className="grid-item">
     <div className="photobox" style={{ backgroundImage: `url(${thumbnail})` }}>
       <div className="overlay" />
     </div>
     <div className="text">
-      <h2>
-        {title}
-      </h2>
-      <p className="desc">
-        {description}
-      </p>
+      <h2>{title}</h2>
+      <p className="desc">{description}</p>
       <div className="button-row">
-        {demo
-          ? <a href={demo} {...linkProps}>
-              Demo
-            </a>
-          : null}
-        {source
-          ? <a href={source} {...linkProps}>
-              Source
-            </a>
-          : null}
+        {demo ? (
+          <a href={demo} {...linkProps}>
+            Demo
+          </a>
+        ) : null}
+        {source ? (
+          <a href={source} {...linkProps}>
+            Source
+          </a>
+        ) : null}
       </div>
     </div>
-  </div>;
+  </div>
+);
 GridItem.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

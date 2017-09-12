@@ -143,7 +143,7 @@ setAddon(infoAddon);
 
 ### React Docgen Integration
 
-React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during compile time.
+React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during babel compile time.
 When rendering a story with a React component commented in this supported format, the Addon Info prop table will display the prop's comment in the description column.
 
 ```js
@@ -175,8 +175,7 @@ DocgenButton.propTypes = {
 
 export default DocgenButton;
 ```
-
-Storybook Info Addon should now render all the correct types for your component.
+Comments above flow types are also supported. Storybook Info Addon should now render all the correct types for your component if the PropTypes are in the same file as the React component.
 
 ## The FAQ
 

@@ -1,7 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { text, number, boolean, color, select, array, date, object } from '@storybook/addon-knobs';
+import {
+  text,
+  number,
+  boolean,
+  color,
+  select,
+  array,
+  date,
+  object,
+} from '@storybook/addon-knobs/react';
 
 export default () => {
   const name = text('Name', 'Storyteller');
@@ -34,26 +43,12 @@ export default () => {
 
   return (
     <View style={style}>
-      <Text>
-        {intro}
-      </Text>
-      <Text>
-        My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}
-      </Text>
-      <Text>
-        My wallet contains: ${dollars.toFixed(2)}
-      </Text>
+      <Text>{intro}</Text>
+      <Text>My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</Text>
+      <Text>My wallet contains: ${dollars.toFixed(2)}</Text>
       <Text>In my backpack, I have:</Text>
-      <View>
-        {items.map(item =>
-          <Text key={item}>
-            {item}
-          </Text>
-        )}
-      </View>
-      <Text>
-        {salutation}
-      </Text>
+      <View>{items.map(item => <Text key={item}>{item}</Text>)}</View>
+      <Text>{salutation}</Text>
     </View>
   );
 };

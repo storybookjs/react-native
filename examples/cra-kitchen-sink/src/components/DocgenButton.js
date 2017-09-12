@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /** Button component description */
-const DocgenButton = ({ disabled, label, onClick }) =>
+const DocgenButton = ({ disabled, label, onClick }) => (
   <button disabled={disabled} onClick={onClick}>
     {label}
-  </button>;
+  </button>
+);
 
 DocgenButton.defaultProps = {
   disabled: false,
@@ -54,6 +55,46 @@ DocgenButton.propTypes = {
       ),
     })
   ),
+
+  /**
+   * Plain object propType (use shape!!)
+   */
+  obj: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+
+  /**
+   * propType for shape with nested arraytOf
+   */
+  shape: PropTypes.shape({
+    /**
+     *  Just an internal propType for a shape.
+     *  It's also required, and as you can see it supports multi-line comments!
+     */
+    id: PropTypes.number.isRequired,
+    /**
+     *  A simple non-required function
+     */
+    func: PropTypes.func,
+    /**
+     * An `arrayOf` shape
+     */
+    arr: PropTypes.arrayOf(
+      PropTypes.shape({
+        /**
+         * 5-level deep propType definition and still works.
+         */
+        index: PropTypes.number.isRequired,
+      })
+    ),
+
+    shape: PropTypes.shape({
+      shape: PropTypes.shape({
+        foo: PropTypes.string,
+      }),
+    }),
+  }),
+
+  arrayOf: PropTypes.arrayOf(PropTypes.number),
+
   /**
    * `instanceOf` is also supported and the custom type will be shown instead of `instanceOf`
    */

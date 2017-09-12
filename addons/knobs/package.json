@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.2.8",
+  "version": "3.3.0-alpha.0",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",
@@ -9,13 +9,13 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js",
+    "prepare": "node ../../scripts/prepare.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
-    "start": "./example/prepublish.sh",
+    "start": "./example/prepare.sh",
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6",
+    "@storybook/addons": "^3.3.0-alpha.0",
     "babel-runtime": "^6.23.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",

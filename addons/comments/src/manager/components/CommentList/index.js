@@ -37,14 +37,14 @@ export default class CommentList extends Component {
         }}
         style={style.wrapper}
       >
-        {comments.map(comment =>
+        {comments.map(comment => (
           <CommentItem
             key={comment.id}
             comment={comment}
             ownComment={comment.userId === (this.props.user && this.props.user.id)}
             deleteComment={() => this.props.deleteComment(comment.id)}
           />
-        )}
+        ))}
       </div>
     );
   }

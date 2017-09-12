@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "3.2.7",
+  "version": "3.3.0-alpha.0",
   "description": "Core Storybook Components",
   "license": "MIT",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js",
+    "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

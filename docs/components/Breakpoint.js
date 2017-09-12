@@ -5,11 +5,7 @@ import './breakpoints.css';
 
 const Breakpoint = ({ mobile, children }) => {
   const className = mobile ? 'breakpoint-min-width-700' : 'breakpoint-max-width-700';
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  );
+  return <div className={className}>{children}</div>;
 };
 
 Breakpoint.propTypes = {

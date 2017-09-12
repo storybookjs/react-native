@@ -108,8 +108,8 @@ We welcome contributions to Storybook!
 -   `yarn lint:js` - will check js
 -   `yarn lint:md` - will check markdown + code samples
 
--   `yarn lint:js -- --fix` - will automatically fix js
--   `yarn lint:md -- -o` - will automatically fix markdown
+-   `yarn lint:js --fix` - will automatically fix js
+-   `yarn lint:md -o` - will automatically fix markdown
 
 #### `yarn test`
 

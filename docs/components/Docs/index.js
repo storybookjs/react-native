@@ -7,7 +7,7 @@ import Container from './Container';
 import Footer from '../Footer';
 import './style.css';
 
-const Docs = ({ sections, selectedItem, selectedSectionId, selectedItemId }) =>
+const Docs = ({ sections, selectedItem, selectedSectionId, selectedItemId }) => (
   <div className="container">
     <Helmet title={`${selectedItem.title}`} />
     <Header currentSection="docs" />
@@ -18,7 +18,8 @@ const Docs = ({ sections, selectedItem, selectedSectionId, selectedItemId }) =>
       selectedItemId={selectedItemId}
     />
     <Footer />
-  </div>;
+  </div>
+);
 Docs.propTypes = {
   sections: PropTypes.array, // eslint-disable-line
   selectedItem: PropTypes.object, // eslint-disable-line

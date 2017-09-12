@@ -2,48 +2,38 @@ defaults: &defaults
   working_directory: /tmp/storybook
   docker:
     - image: node:8
+  environment:
+    BASH_ENV: ~/.bashrc
 
 version: 2
 dependencies:
   pre:
     - yarn global add npm
 jobs:
-  validate:
-    <<: *defaults
-    steps:
-      - run:
-          name: "Checking Versions"
-          command: |
-            node --version
-            npm --version
-            yarn --version
   build:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
-      - save_cache:
-          key: root-dependencies-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - restore_cache:
-          keys:
-            - package-dependencies-{{ checksum "package.json" }}
-            - package-dependencies-
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --all
+            yarn bootstrap --core --docs --reactnative --reactnativeapp
       - save_cache:
-          key: package-dependencies-{{ checksum "package.json" }}
+          key: dependencies-{{ checksum "yarn.lock" }}
           paths:
+            - node_modules
             - app/**/node_modules
             - docs/**/node_modules
             - examples/**/node_modules
@@ -54,70 +44,82 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --core
+            yarn bootstrap --core
       - run:
           name: "Build react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
             yarn build-storybook
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
       - run:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
   example-react-native:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
           name: "Bootstrapping packages"
           command: |
-            yarn bootstrap -- --core --reactnative --reactnativeapp
+            yarn bootstrap --core --reactnative --reactnativeapp
       - run:
           name: "Running React-Native example"
           command: |
             cd examples/react-native-vanilla
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
       - run:
           name: "Running React-Native-App example"
           command: |
             cd examples/crna-kitchen-sink
-            yarn storybook -- --smoke-test
+            yarn storybook --smoke-test
   docs:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --docs
+            yarn bootstrap --docs
       - run:
           name: "Running docs"
           command: |
@@ -128,10 +130,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
@@ -144,21 +150,85 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
       - run:
-          name: "Install root dependencies"
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
           command: |
             yarn install
       - run:
           name: "Bootstrapping"
           command: |
-            yarn bootstrap -- --core --reactnative
+            yarn bootstrap --core --reactnative
       - run:
           name: "Unit testing"
           command: |
-            yarn test -- --all --coverage --runInBand
+            yarn test --all --coverage --runInBand
             yarn coverage
+  cli:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+      - run:
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test --cli
+  cli-latest-cra:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+      - run:
+          name: "Install latest yarn version"
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core
+      - run:
+          name: "Updating fixtures"
+          command: |
+            yarn update-cli-fixtures
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test --cli
   deploy:
     <<: *defaults
     steps:
@@ -170,13 +240,14 @@ workflows:
   version: 2
   build_accept_deploy:
     jobs:
-      - validate
       - build
       - example-kitchen-sinks
       - example-react-native
       - docs
       - lint
       - unit-test
+      - cli
+      - cli-latest-cra
       # - deploy:
       #     type: approval
       #     requires:

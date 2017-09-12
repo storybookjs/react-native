@@ -1,7 +1,8 @@
----
+* * *
+
 id: 'addon-gallery'
-title: 'Addon Gallery'
----
+
+## title: 'Addon Gallery'
 
 This is a list of available addons for Storybook.
 
@@ -36,7 +37,7 @@ The Storybook webapp UI can be customised with this addon. It can be used to cha
 
 ### [Storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots)
 
-Storyshots is a way to automaticly jest-snapshot all your stories. [More info here](/testing/structural-testing/).
+Storyshots is a way to automatically jest-snapshot all your stories. [More info here](/testing/structural-testing/).
 
 ## Community Addons
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { UsedByBg } from '../UsedBy/';
 import './style.css';
 
-const MainLinks = () =>
+const MainLinks = () => (
   <div id="main-links">
     <div className="main-links-container">
       <div className="try-now">
@@ -113,6 +113,7 @@ const MainLinks = () =>
         </div>
       </div>
     </div>
-  </div>;
+  </div>
+);
 
 export default MainLinks;

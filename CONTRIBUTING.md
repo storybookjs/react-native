@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This guide assumes you're using `yarn` as package manager. You may have some success using `npm` as well, but there are chances you'll get wrong versions of root dependencies in that case (we only commit `yarn.lock` to the repo).
+This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](<>).
 
 ## Issues
 
@@ -13,7 +13,7 @@ No software is bug free. So, if you got an issue, follow these steps:
 -   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
     -   If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
 -   If none of that is helping, create an issue with with following information:
-    -   Clear title (make is shorter if possible).
+    -   Clear title (shorter is better).
     -   Describe the issue in clear language.
     -   Share error logs, screenshots and etc.
     -   To speed up the issue fixing process, send us a sample repo with the issue you faced:
@@ -35,7 +35,7 @@ The bootstrap command will ask which sections of the codebase you want to bootst
 
 You can also pick directly from CLI:
 
-    yarn bootstrap -- --core
+    yarn bootstrap --core
 
 #### 2a. Run unit tests
 
@@ -52,12 +52,26 @@ _Note that in order to run the tests fro ReactNative, you must have bootstrapped
 You can also pick suites from CLI:
 
 ```sh
-yarn test -- --core
+yarn test --core
 ```
 
 In order to run ALL unit tests, you must have bootstrapped the react-native
 
-#### 2b. Link `storybook` and any other required dependencies:
+#### 2b. Run e2e tests for CLI
+
+If you made any changes to `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
+
+    yarn test --cli
+
+This will run a bash script located at `lib/cli/test/run_tests.sh`. It will copy the contents of `fixtures` into a temporary `run` directory, run `getstorybook` in each of the subdirectories, and check that storybook starts successfully using `yarn storybook --smoke-test`.
+
+After that, the `run` directory content will be compared with `snapshots`. You can update the snapshots by passing an `--update` flag:
+
+    yarn test --cli --update
+
+In that case, please check the git diff before commiting to make sure it only contains the intended changes.
+
+#### 2c. Link `storybook` and any other required dependencies:
 
 If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
 
@@ -224,7 +238,7 @@ git status
 
 # clean out extra files & build all the packages
 # WARNING: destructive if you have extra files lying around!
-yarn bootstrap -- --reset --all
+yarn bootstrap --reset --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
@@ -235,7 +249,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-yarn run publish -- --concurrency 1 --npm-tag=alpha
+yarn run publish --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
@@ -245,7 +259,7 @@ git push --tags
 
 ```sh
 # publish but don't commit to git
-yarn publish -- --concurrency 1 --skip-git
+yarn run publish --concurrency 1 --skip-git
 
 # Update `CHANGELOG.md`
 # - Edit PR titles/labels on github until output is good

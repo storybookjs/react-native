@@ -4,24 +4,28 @@ import { ListView, View, Text, TouchableOpacity } from 'react-native';
 import { MinMaxView } from 'react-native-compat';
 import style from './style';
 
-const SectionHeader = ({ title, selected }) =>
+const SectionHeader = ({ title, selected }) => (
   <View key={title} style={style.header}>
-    <Text style={[style.headerText, selected && style.headerTextSelected]}>
-      {title}
-    </Text>
-  </View>;
+    <Text style={[style.headerText, selected && style.headerTextSelected]}>{title}</Text>
+  </View>
+);
 
 SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
   selected: PropTypes.bool.isRequired,
 };
 
-const ListItem = ({ title, selected, onPress }) =>
-  <TouchableOpacity key={title} style={style.item} onPress={onPress}>
-    <Text style={[style.itemText, selected && style.itemTextSelected]}>
-      {title}
-    </Text>
-  </TouchableOpacity>;
+const ListItem = ({ title, selected, onPress }) => (
+  <TouchableOpacity
+    key={title}
+    style={style.item}
+    onPress={onPress}
+    testID={`Storybook.ListItem.${title}`}
+    accessibilityLabel={`Storybook.ListItem.${title}`}
+  >
+    <Text style={[style.itemText, selected && style.itemTextSelected]}>{title}</Text>
+  </TouchableOpacity>
+);
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
@@ -91,19 +95,18 @@ export default class StoryListView extends Component {
       <MinMaxView maxWidth={250}>
         <ListView
           style={style.list}
-          renderRow={item =>
+          renderRow={item => (
             <ListItem
               title={item.name}
               selected={
                 item.kind === this.props.selectedKind && item.name === this.props.selectedStory
               }
               onPress={() => this.changeStory(item.kind, item.name)}
-            />}
-          renderSectionHeader={(sectionData, sectionName) =>
-            <SectionHeader
-              title={sectionName}
-              selected={sectionName === this.props.selectedKind}
-            />}
+            />
+          )}
+          renderSectionHeader={(sectionData, sectionName) => (
+            <SectionHeader title={sectionName} selected={sectionName === this.props.selectedKind} />
+          )}
           dataSource={this.state.dataSource}
           stickySectionHeadersEnabled={false}
         />

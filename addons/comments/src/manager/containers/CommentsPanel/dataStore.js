@@ -79,10 +79,12 @@ export default class DataStore {
     // TODO: send a null and handle the loading part in the UI side.
     this.eventStore.emit('loading', true);
     this.fireComments([]);
-    this.loadUsers().then(() => this.loadComments()).then(() => {
-      this.eventStore.emit('loading', false);
-      return Promise.resolve(null);
-    });
+    this.loadUsers()
+      .then(() => this.loadComments())
+      .then(() => {
+        this.eventStore.emit('loading', false);
+        return Promise.resolve(null);
+      });
 
     return this.currentStory;
   }
@@ -98,15 +100,18 @@ export default class DataStore {
       if (!info) {
         return null;
       }
-      return this.db.getCollection('users').get(query, options).then(users => {
-        this.users = users.reduce((newUsers, user) => {
-          const usersObj = {
-            ...newUsers,
-          };
-          usersObj[user.id] = user;
-          return usersObj;
-        }, {});
-      });
+      return this.db
+        .getCollection('users')
+        .get(query, options)
+        .then(users => {
+          this.users = users.reduce((newUsers, user) => {
+            const usersObj = {
+              ...newUsers,
+            };
+            usersObj[user.id] = user;
+            return usersObj;
+          }, {});
+        });
     });
   }
 
@@ -118,15 +123,18 @@ export default class DataStore {
       if (!info) {
         return null;
       }
-      return this.db.getCollection('comments').get(query, options).then(comments => {
-        // add to cache
-        this.addToCache(currentStory, comments);
+      return this.db
+        .getCollection('comments')
+        .get(query, options)
+        .then(comments => {
+          // add to cache
+          this.addToCache(currentStory, comments);
 
-        // set comments only if we are on the relavant story
-        if (deepEquals(currentStory, this.currentStory)) {
-          this.fireComments(comments);
-        }
-      });
+          // set comments only if we are on the relavant story
+          if (deepEquals(currentStory, this.currentStory)) {
+            this.fireComments(comments);
+          }
+        });
     });
   }
 
