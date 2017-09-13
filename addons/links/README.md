@@ -15,7 +15,18 @@ This addon works with Storybook for:
 
 ## Getting Started
 
-You can use this addon without installing it.
+Install this addon by adding the `@storybook/addon-links` dependency:
+```sh
+yarn add @storybook/addon-links
+```
+
+First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
+
+```js
+import '@storybook/addon-links/register';
+```
+
+Then you can import `linkTo` in your stories and use like this:
 
 ```js
 import { storiesOf } from '@storybook/react'
@@ -36,12 +47,14 @@ Have a look at the linkTo function:
 import { linkTo } from '@storybook/addon-links'
 
 linkTo('Toggle', 'off')
+linkTo(() => 'Toggle', () => 'off')
+linkTo('Toggle') // Links to the first story in the 'Toggle' kind
 ```
 
 With that, you can link an event in a component to any story in the Storybook.
 
 -   First parameter is the the story kind name (what you named with `storiesOf`).
--   Second parameter is the story name (what you named with `.add`).
+-   Second (optional) parameter is the story name (what you named with `.add`). If the second parameter is omitted, the link will point to the first story in the given kind.
 
 > You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string. <br/>
 > Have a look at [PR86](https://github.com/kadirahq/react-storybook/pull/86) for more information.

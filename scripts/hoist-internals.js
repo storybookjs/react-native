@@ -105,8 +105,8 @@ const task = getLernaPackages()
 
 task
   .then(packages => {
-    log.info(prefix, packages.map(dir => dir.replace(cwd, '')).join(',\n'));
-    log.success(prefix, 'complete');
+    log.verbose(prefix, packages.map(dir => dir.replace(cwd, '')).join(',\n'));
+    log.success(prefix, `Hoisted ${packages.length} packages`);
   })
   .catch(error => {
     log.error(prefix, 'failed', error);

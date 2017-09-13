@@ -229,6 +229,8 @@ const defaultValue = new Date('Jan 20 2017');
 const value = date(label, defaultValue);
 ```
 
+> Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
+
 ### withKnobs vs withKnobsOptions
 
 If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.

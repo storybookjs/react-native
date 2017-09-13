@@ -40,7 +40,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
+            npm run bootstrap -- --all
       - save_cache:
           key: package-dependencies-{{ checksum "package.json" }}
           paths:
@@ -63,37 +63,19 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
+            npm run bootstrap -- --core
       - run:
           name: "Build react kitchen-sink"
           command: |
-            cd examples/cra-kitchen-sink && npm run build-storybook
+            cd examples/cra-kitchen-sink
+            yarn build-storybook
+            yarn storybook -- --smoke-test
       - run:
           name: "Build vue kitchen-sink"
           command: |
-            cd examples/vue-kitchen-sink && npm run build-storybook
-  example-test-cra:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - root-dependencies-{{ checksum "package.json" }}
-            - root-dependencies-
-      - run:
-          name: "Install root dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            npm run bootstrap
-            npm run build-packs
-            npm run bootstrap:test-cra
-      - run:
-          name: "Build test-cra"
-          command: |
-            cd examples/test-cra && npm run build-storybook
+            cd examples/vue-kitchen-sink
+            yarn build-storybook
+            yarn storybook -- --smoke-test
   example-react-native:
     <<: *defaults
     steps:
@@ -109,13 +91,17 @@ jobs:
       - run:
           name: "Bootstrapping packages"
           command: |
-            npm run bootstrap
-            npm run build-packs
-            npm run bootstrap:react-native-vanilla
+            npm run bootstrap -- --core --reactnative --reactnativeapp
       - run:
-          name: "Running react-native"
+          name: "Running React-Native example"
           command: |
-            echo "TODO"
+            cd examples/react-native-vanilla
+            yarn storybook -- --smoke-test
+      - run:
+          name: "Running React-Native-App example"
+          command: |
+            cd examples/crna-kitchen-sink
+            yarn storybook -- --smoke-test
   docs:
     <<: *defaults
     steps:
@@ -131,7 +117,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap:docs
+            npm run bootstrap -- --docs
       - run:
           name: "Running docs"
           command: |
@@ -167,9 +153,7 @@ jobs:
       - run:
           name: "Bootstrapping"
           command: |
-            npm run bootstrap
-            npm run build-packs
-            npm run bootstrap:react-native-vanilla
+            npm run bootstrap -- --core --reactnative
       - run:
           name: "Unit testing"
           command: |
@@ -189,7 +173,6 @@ workflows:
       - validate
       - build
       - example-kitchen-sinks
-      - example-test-cra
       - example-react-native
       - docs
       - lint

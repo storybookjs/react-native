@@ -65,6 +65,6 @@ PropField.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
-  }),
+  }).isRequired,
   onChange: PropTypes.func.isRequired,
 };

@@ -11,7 +11,6 @@ module.exports = {
     '<rootDir>/app',
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
-    '<rootDir>/examples/test-cra',
   ],
   testPathIgnorePatterns: ['/node_modules/'],
   collectCoverage: false,

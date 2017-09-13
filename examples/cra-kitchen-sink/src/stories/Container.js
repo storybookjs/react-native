@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Container = ({ children, title, age, isAmazing }) =>
+const Container = ({ children, title, age, isAmazing }) => (
   <div title={title}>
     {children}
     {isAmazing ? '!!!' : ''}
-    {age
-      ? <div>
-          age = {age}
-        </div>
-      : null}
-  </div>;
+    {age ? <div>age = {age}</div> : null}
+  </div>
+);
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,

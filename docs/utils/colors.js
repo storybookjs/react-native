@@ -7,7 +7,9 @@ export const colors = colorPairsPicker(config.baseColor, {
   contrast: 5.5,
 });
 
-const darker = chroma(config.baseColor).darken(10).hex();
+const darker = chroma(config.baseColor)
+  .darken(10)
+  .hex();
 export const activeColors = colorPairsPicker(darker, {
   contrast: 7,
 });

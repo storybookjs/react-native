@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '../Grid';
 import './style.css';
 
-const Examples = ({ items }) =>
+const Examples = ({ items }) => (
   <div className="examples">
     <div className="heading">
       <h1>Storybook Examples</h1>
@@ -17,7 +17,8 @@ const Examples = ({ items }) =>
       </a>
     </div>
     <Grid columnWidth={350} items={items} />
-  </div>;
+  </div>
+);
 Examples.propTypes = {
   items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };

@@ -76,7 +76,7 @@ class ColorType extends React.Component {
         </div>
         {conditionalRender(
           displayColorPicker,
-          () =>
+          () => (
             <div
               style={styles.popover}
               ref={e => {
@@ -84,7 +84,8 @@ class ColorType extends React.Component {
               }}
             >
               <SketchPicker color={knob.value} onChange={color => onChange(color.hex)} />
-            </div>,
+            </div>
+          ),
           () => null
         )}
       </div>

@@ -21,16 +21,16 @@ describe('Vue handler', () => {
     });
   });
 
-  it('Subscribes to the channel on creation', () => {
+  it('Subscribes to the channel on creation', () => {
     const testChannel = { emit: () => {}, on: jest.fn() };
-    const testStory = () => ({ render: (h) => h('div', ['testStory']) });
+    const testStory = () => ({ render: h => h('div', ['testStory']) });
     const testContext = {
       kind: 'Foo',
       story: 'bar baz',
     };
 
     const testStore = new KnobStore();
-    const component = new Vue(vueHandler(testChannel, testStore)(testStory)(testContext)).$mount();
+    new Vue(vueHandler(testChannel, testStore)(testStory)(testContext)).$mount();
 
     expect(testChannel.on).toHaveBeenCalledTimes(2);
     expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:reset', expect.any(Function));

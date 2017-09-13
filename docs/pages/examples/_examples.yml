@@ -1,3 +1,10 @@
+carbon:
+  thumbnail: ./thumbnails/carbon.png
+  title: Carbon Components
+  description: IBM's Carbon Design System implemented in React.
+  source: https://github.com/carbon-design-system/carbon-components-react
+  demo: http://react.carbondesignsystem.com
+  site: http://carbondesignsystem.com
 airbnb:
   thumbnail: ./thumbnails/airbnb.jpg
   title: Airbnb Dates
@@ -57,6 +64,12 @@ griddle:
   source: https://github.com/GriddleGriddle/Griddle
   demo: https://griddlegriddle.github.io/Griddle/examples/controlling-griddle/
   site: https://griddlegriddle.github.io/Griddle/
+tachyons:
+  thumbnail: ./thumbnails/tachyons.png
+  title: Tachyons Components
+  description: A searchable directory of Tachyons Components
+  source: https://github.com/blairanderson/tachyonstemplates
+  demo: https://www.tachyonstemplates.com/components/
 appbase:
   thumbnail: ./thumbnails/appbase.jpg
   title: Appbase Maps

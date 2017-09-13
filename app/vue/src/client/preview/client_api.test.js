@@ -55,7 +55,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('foo');
     });
 
@@ -75,7 +75,10 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa().bb();
+      api
+        .storiesOf('none', module)
+        .aa()
+        .bb();
       expect(data).toEqual(['foo', 'bar']);
     });
 
@@ -89,7 +92,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('function');
     });
 
@@ -109,7 +112,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').bb();
+      api.storiesOf('none', module).bb();
       expect(data).toBe('foo');
     });
 
@@ -124,7 +127,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf(kind).aa();
+      api.storiesOf(kind, module).aa();
       expect(data).toBe(kind);
     });
   });
@@ -133,63 +136,65 @@ describe('preview.client_api', () => {
     it('should add local decorators', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
-      localApi.addDecorator(fn => `aa-${fn()}`);
+      const localApi = api.storiesOf('none', module);
+      localApi.addDecorator(fn => ({ template: `<div>aa${fn().template}</div>` }));
 
-      localApi.add('storyName', () => 'Hello');
-      expect(storyStore.stories[0].fn()).toBe('aa-Hello');
+      localApi.add('storyName', () => ({ template: '<p>hello</p>' }));
+      expect(storyStore.stories[0].fn().template).toBe('<div>aa<p>hello</p></div>');
     });
 
     it('should add global decorators', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      api.addDecorator(fn => `bb-${fn()}`);
-      const localApi = api.storiesOf('none');
+      api.addDecorator(fn => ({ template: `<div>bb${fn().template}</div>` }));
+      const localApi = api.storiesOf('none', module);
 
-      localApi.add('storyName', () => 'Hello');
-      expect(storyStore.stories[0].fn()).toBe('bb-Hello');
+      localApi.add('storyName', () => ({ template: '<p>hello</p>' }));
+      expect(storyStore.stories[0].fn().template).toBe('<div>bb<p>hello</p></div>');
     });
 
     it('should utilize both decorators at once', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
 
-      api.addDecorator(fn => `aa-${fn()}`);
-      localApi.addDecorator(fn => `bb-${fn()}`);
+      api.addDecorator(fn => ({ template: `<div>aa${fn().template}</div>` }));
+      localApi.addDecorator(fn => ({ template: `<div>bb${fn().template}</div>` }));
 
-      localApi.add('storyName', () => 'Hello');
-      expect(storyStore.stories[0].fn()).toBe('aa-bb-Hello');
+      localApi.add('storyName', () => ({ template: '<p>hello</p>' }));
+      expect(storyStore.stories[0].fn().template).toBe('<div>aa<div>bb<p>hello</p></div></div>');
     });
 
     it('should pass the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
-      localApi.addDecorator(fn => `aa-${fn()}`);
+      const localApi = api.storiesOf('none', module);
+      localApi.addDecorator(fn => ({ template: `<div>aa${fn().template}</div>` }));
 
-      localApi.add('storyName', ({ kind, story }) => `${kind}-${story}`);
+      localApi.add('storyName', ({ kind, story }) => ({ template: `<p>${kind}-${story}</p>` }));
 
       const kind = 'dfdfd';
       const story = 'ef349ff';
 
       const result = storyStore.stories[0].fn({ kind, story });
-      expect(result).toBe(`aa-${kind}-${story}`);
+      expect(result.template).toBe(`<div>aa<p>${kind}-${story}</p></div>`);
     });
 
     it('should have access to the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
-      localApi.addDecorator((fn, { kind, story }) => `${kind}-${story}-${fn()}`);
+      const localApi = api.storiesOf('none', module);
+      localApi.addDecorator((fn, { kind, story }) => ({
+        template: `<div>${kind}-${story}-${fn().template}</div>`,
+      }));
 
-      localApi.add('storyName', () => 'Hello');
+      localApi.add('storyName', () => ({ template: '<p>hello</p>' }));
 
       const kind = 'dfdfd';
       const story = 'ef349ff';
 
       const result = storyStore.stories[0].fn({ kind, story });
-      expect(result).toBe(`${kind}-${story}-Hello`);
+      expect(result.template).toBe(`<div>${kind}-${story}-<p>hello</p></div>`);
     });
   });
 
@@ -219,10 +224,10 @@ describe('preview.client_api', () => {
         'story-2.1': () => 'story-2.1',
         'story-2.2': () => 'story-2.2',
       };
-      const kind1 = api.storiesOf('kind-1');
+      const kind1 = api.storiesOf('kind-1', module);
       kind1.add('story-1.1', functions['story-1.1']);
       kind1.add('story-1.2', functions['story-1.2']);
-      const kind2 = api.storiesOf('kind-2');
+      const kind2 = api.storiesOf('kind-2', module);
       kind2.add('story-2.1', functions['story-2.1']);
       kind2.add('story-2.2', functions['story-2.2']);
       const book = api.getStorybook();

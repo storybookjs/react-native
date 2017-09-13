@@ -5,12 +5,12 @@ title: 'Storybook for Vue'
 
 You may have tried to use our quick start guide to setup your project for Storybook. If you want to set up Storybook manually, this is the guide for you.
 
-> This will also help you to understand how Storybook works.
+> This will also help you understand how Storybook works.
 
 ## Starter Guide Vue
 
 Storybook has its own Webpack setup and a dev server.  
-Webpack setup is very similar to [Vue CLI](https://github.com/vuejs/vue-cli), but allows you to [configure as you want](/configurations/custom-webpack-config/).
+The Webpack setup is very similar to [Vue CLI's](https://github.com/vuejs/vue-cli), but allows you to [configure it however you want](/configurations/custom-webpack-config/).
 
 In this guide, we are trying to set up Storybook for your Vue project.
 
@@ -18,6 +18,7 @@ In this guide, we are trying to set up Storybook for your Vue project.
 
 -   [Add @storybook/vue](#add-storybookvue)
 -   [Add vue](#add-vue)
+-   [Create the NPM script](#create-the-npm-script)
 -   [Create the config file](#create-the-config-file)
 -   [Write your stories](#write-your-stories)
 -   [Run your Storybook](#run-your-storybook)
@@ -38,18 +39,28 @@ Make sure that you have `vue` in your dependencies as well because we list is as
 npm i --save vue
 ```
 
+## Create the NPM script
+
+Add the following NPM script to your `package.json` in order to start the storybook later in this guide:
+
+    {
+      "scripts": {
+        "storybook": "start-storybook -p 9001 -c .storybook"
+      }
+    }
+
 ## Create the config file
 
 Storybook can be configured in several different ways. 
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
-There's 3 things you need to tell Storybook to do:
+There are 3 things you need to tell Storybook to do:
 
-1.  In stories, if use the custom components without Vue `components` option, you need to register these with `Vue.component`.
-2.  In stories, if use the Vue plugins (e.g. `vuex`), you need to install these with `Vue.use`.
+1.  Import and globally register with [`Vue.component()`](https://vuejs.org/v2/api/#Vue-component) any global custom components just like you did with your project. (Note: [components registered locally](https://vuejs.org/v2/guide/components.html#Local-Registration) will be brought in automatically).
+2.  For any required Vue plugins (e.g. `vuex`), you'll also need to [install these with `Vue.use`](https://vuejs.org/v2/api/#Vue-use).
 3.  Require your stories.
 
-To do that, simply create a file at `.storybook/config.js` with the following content:
+Here's an example `.storybook/config.js` to get you started:
 
 ```js
 import { configure } from '@storybook/vue';
@@ -74,9 +85,9 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-That'll register all your custom components, install all Vue plugins and load stories in `../stories/index.js`.
+This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded you Storybook stories defined in `../stories/index.js`.
 
-All custom components and All Vue plugins should be registered before calling `configure`.
+All custom components and Vue plugins should be registered before calling `configure()`.
 
 > This stories folder is just an example, you can load stories from wherever you want to.
 > We think stories are best located close to the source files.

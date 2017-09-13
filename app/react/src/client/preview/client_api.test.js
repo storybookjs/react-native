@@ -55,7 +55,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('foo');
     });
 
@@ -75,7 +75,10 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa().bb();
+      api
+        .storiesOf('none', module)
+        .aa()
+        .bb();
       expect(data).toEqual(['foo', 'bar']);
     });
 
@@ -89,7 +92,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('function');
     });
 
@@ -109,7 +112,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').bb();
+      api.storiesOf('none', module).bb();
       expect(data).toBe('foo');
     });
 
@@ -124,7 +127,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf(kind).aa();
+      api.storiesOf(kind, module).aa();
       expect(data).toBe(kind);
     });
   });
@@ -133,7 +136,7 @@ describe('preview.client_api', () => {
     it('should add local decorators', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
@@ -144,26 +147,16 @@ describe('preview.client_api', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
       api.addDecorator(fn => `bb-${fn()}`);
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
 
       localApi.add('storyName', () => 'Hello');
       expect(storyStore.stories[0].fn()).toBe('bb-Hello');
     });
 
-    it('should throw on adding global decorators after stories', () => {
-      const storyStore = new StoryStore();
-      const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
-      localApi.add('storyName', () => 'Hello');
-      expect(() => {
-        api.addDecorator(fn => `bb-${fn()}`);
-      }).toThrow('Global decorators added after loading stories will not be applied');
-    });
-
     it('should utilize both decorators at once', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
 
       api.addDecorator(fn => `aa-${fn()}`);
       localApi.addDecorator(fn => `bb-${fn()}`);
@@ -175,7 +168,7 @@ describe('preview.client_api', () => {
     it('should pass the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', ({ kind, story }) => `${kind}-${story}`);
@@ -190,7 +183,7 @@ describe('preview.client_api', () => {
     it('should have access to the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator((fn, { kind, story }) => `${kind}-${story}-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
@@ -229,10 +222,10 @@ describe('preview.client_api', () => {
         'story-2.1': () => 'story-2.1',
         'story-2.2': () => 'story-2.2',
       };
-      const kind1 = api.storiesOf('kind-1');
+      const kind1 = api.storiesOf('kind-1', module);
       kind1.add('story-1.1', functions['story-1.1']);
       kind1.add('story-1.2', functions['story-1.2']);
-      const kind2 = api.storiesOf('kind-2');
+      const kind2 = api.storiesOf('kind-2', module);
       kind2.add('story-2.1', functions['story-2.1']);
       kind2.add('story-2.2', functions['story-2.2']);
       const book = api.getStorybook();

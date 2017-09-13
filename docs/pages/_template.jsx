@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../css/main.css';
 import '../css/github.css';
 
-const PageTemplate = ({ children }) =>
+const PageTemplate = ({ children }) => (
   <div>
     <a
       href="https://github.com/storybooks/storybook"
@@ -49,7 +49,8 @@ const PageTemplate = ({ children }) =>
       </svg>
     </a>
     {children}
-  </div>;
+  </div>
+);
 
 PageTemplate.propTypes = {
   children: PropTypes.object, // eslint-disable-line

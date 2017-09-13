@@ -1,42 +1,69 @@
-import mock from 'mock-fs';
-import { getPreviewHeadHtml } from './utils';
+import { getPreviewHeadHtml, getManagerHeadHtml } from './utils';
 
-const HEAD_HTML_CONTENTS = '<script>console.log("custom script!");</script>';
+// eslint-disable-next-line global-require
+jest.mock('fs', () => require('../../../../__mocks__/fs'));
+jest.mock('path', () => ({
+  resolve: (a, p) => p,
+}));
 
-describe('server.getPreviewHeadHtml', () => {
-  describe('when .storybook/head.html does not exist', () => {
-    beforeEach(() => {
-      mock({
-        config: {},
-      });
+const setup = ({ files }) => {
+  // eslint-disable-next-line no-underscore-dangle, global-require
+  require('fs').__setMockFiles(files);
+};
+
+const HEAD_HTML_CONTENTS = 'UNITTEST_HEAD_HTML_CONTENTS';
+
+describe('getPreviewHeadHtml', () => {
+  it('returns an empty string without head.html present', () => {
+    setup({
+      files: {},
     });
 
-    afterEach(() => {
-      mock.restore();
-    });
-
-    it('return an empty string', () => {
-      const result = getPreviewHeadHtml('./config');
-      expect(result).toEqual('');
-    });
+    const result = getPreviewHeadHtml('first');
+    expect(result).toEqual('');
   });
 
-  describe('when .storybook/head.html exists', () => {
-    beforeEach(() => {
-      mock({
-        config: {
-          'head.html': HEAD_HTML_CONTENTS,
-        },
-      });
+  it('return contents of head.html when present', () => {
+    setup({
+      files: {
+        'head.html': HEAD_HTML_CONTENTS,
+      },
     });
 
-    afterEach(() => {
-      mock.restore();
+    const result = getPreviewHeadHtml('second');
+    expect(result).toEqual(HEAD_HTML_CONTENTS);
+  });
+
+  it('returns contents of preview-head.html when present', () => {
+    setup({
+      files: {
+        'preview-head.html': HEAD_HTML_CONTENTS,
+      },
     });
 
-    it('return the contents of the file', () => {
-      const result = getPreviewHeadHtml('./config');
-      expect(result).toEqual(HEAD_HTML_CONTENTS);
+    const result = getPreviewHeadHtml('second');
+    expect(result).toEqual(HEAD_HTML_CONTENTS);
+  });
+});
+
+describe('getManagerHeadHtml', () => {
+  it('returns an empty string without manager-head.html present', () => {
+    setup({
+      files: {},
     });
+
+    const result = getManagerHeadHtml('first');
+    expect(result).toEqual('');
+  });
+
+  it('returns contents of manager-head.html when present', () => {
+    setup({
+      files: {
+        'manager-head.html': HEAD_HTML_CONTENTS,
+      },
+    });
+
+    const result = getManagerHeadHtml('second');
+    expect(result).toEqual(HEAD_HTML_CONTENTS);
   });
 });

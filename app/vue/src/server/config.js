@@ -1,6 +1,7 @@
 /* eslint-disable global-require, import/no-dynamic-require */
 import fs from 'fs';
 import path from 'path';
+import findCacheDir from 'find-cache-dir';
 import loadBabelConfig from './babel_config';
 
 // avoid ESLint errors
@@ -13,7 +14,13 @@ export default function(configType, baseConfig, configDir) {
   const config = baseConfig;
 
   const babelConfig = loadBabelConfig(configDir);
-  config.module.rules[0].query = babelConfig;
+  config.module.rules[0].query = {
+    // This is a feature of `babel-loader` for webpack (not Babel itself).
+    // It enables a cache directory for faster-rebuilds
+    // `find-cache-dir` will create the cache directory under the node_modules directory.
+    cacheDirectory: findCacheDir({ name: 'react-storybook' }),
+    ...babelConfig,
+  };
 
   // Check whether a config.js file exists inside the storybook
   // config directory and throw an error if it's not.
