@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import global, { describe, it } from 'global';
 import readPkgUp from 'read-pkg-up';
 import addons from '@storybook/addons';
@@ -19,7 +20,7 @@ const pkg = readPkgUp.sync().pkg;
 
 const hasDependency = name =>
   (pkg.devDependencies && pkg.devDependencies[name]) ||
-  (pkg.dependencies && pkg.dependencies[name]);
+  (pkg.dependencies && pkg.dependencies[name]) || fs.existsSync(path.join('node_modules', name, 'package.json'));
 
 export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
