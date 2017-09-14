@@ -30,13 +30,15 @@ storiesOf('Button', module)
   .add('with text', () => ({
     component: Button,
     props: {
-      text: 'Hello Button'
+      text: 'Hello Button',
+      onClick: () => {}
     }
   }))
   .add('with some emoji', () => ({
     component: Button,
     props: {
-      text: '😀 😎 👍 💯'
+      text: '😀 😎 👍 💯',
+      onClick: () => {}
     }
   }))
 
