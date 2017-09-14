@@ -22,11 +22,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@angular/common": "^5.0.0-beta.6",
-    "@angular/compiler": "^5.0.0-beta.6",
-    "@angular/core": "^5.0.0-beta.6",
-    "@angular/platform-browser": "^5.0.0-beta.6",
-    "@angular/platform-browser-dynamic": "^5.0.0-beta.6",
+    "@angular/common": "^5.0.0-beta.7",
+    "@angular/compiler": "^5.0.0-beta.7",
+    "@angular/core": "^5.0.0-beta.7",
+    "@angular/platform-browser": "^5.0.0-beta.7",
+    "@angular/platform-browser-dynamic": "^5.0.0-beta.7",
     "@storybook/addon-actions": "^3.3.0-alpha.0",
     "@storybook/addon-links": "^3.3.0-alpha.0",
     "@storybook/addons": "^3.3.0-alpha.0",
