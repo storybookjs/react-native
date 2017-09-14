@@ -152,3 +152,29 @@ Like `snapshotWithOptions`, but generate a separate snapshot file for each stori
 ### `shallowSnapshot`
 
 Take a snapshot of a shallow-rendered version of the component.
+
+### `getSnapshotFileName`
+
+Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
+
+###### Example:
+
+Let's say we wanted to create a test function for shallow && multi-file snapshots:
+
+```js
+import initStoryshots, { getSnapshotFileName } from '@storybook/addon-storyshots';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+initStoryshots({
+  test: ({ story, context }) => {
+    const snapshotFileName = getSnapshotFileName(context);
+    const storyElement = story.render(context);
+    const shallowTree = shallow(storyElement);
+
+    if (snapshotFileName) {
+      expect(toJson(shallowTree)).toMatchSpecificSnapshot(snapshotFileName);
+    }
+  }
+});
+```

@@ -8,7 +8,7 @@ import addons from '@storybook/addons';
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
 import { snapshot } from './test-bodies';
-import { getPossibleStoriesFiles } from './utils';
+import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
 
 export {
   snapshot,
@@ -17,6 +17,8 @@ export {
   shallowSnapshot,
   renderOnly,
 } from './test-bodies';
+
+export { getSnapshotFileName };
 
 let storybook;
 let configPath;
