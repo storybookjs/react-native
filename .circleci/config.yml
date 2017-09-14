@@ -179,7 +179,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "package.json" }}
+            - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
       - run:
           name: "Install latest yarn version"
@@ -207,7 +207,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "package.json" }}
+            - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
       - run:
           name: "Install latest yarn version"
@@ -222,13 +222,9 @@ jobs:
           command: |
             yarn bootstrap --core
       - run:
-          name: "Updating fixtures"
+          name: "Testing CLI with latest CR(N)A"
           command: |
-            yarn update-cli-fixtures
-      - run:
-          name: "Testing CLI"
-          command: |
-            yarn test --cli
+            yarn test-latest-cra
   deploy:
     <<: *defaults
     steps:
