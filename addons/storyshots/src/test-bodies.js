@@ -1,21 +1,11 @@
 import renderer from 'react-test-renderer';
 import shallow from 'react-test-renderer/shallow';
 import 'jest-specific-snapshot';
-import { getStoryshotFile } from './utils';
+import { getSnapshotFileName } from './utils';
 
 function getRenderedTree(story, context, options) {
   const storyElement = story.render(context);
   return renderer.create(storyElement, options).toJSON();
-}
-
-function getSnapshotFileName(context) {
-  const fileName = context.fileName;
-
-  if (!fileName) {
-    return null;
-  }
-
-  return getStoryshotFile(fileName);
 }
 
 export const snapshotWithOptions = options => ({ story, context }) => {
