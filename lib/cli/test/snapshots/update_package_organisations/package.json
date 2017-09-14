@@ -1,5 +1,5 @@
 {
-  "name": "update-package-organisations-run",
+  "name": "update-package-organisations-fixture",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

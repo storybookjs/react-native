@@ -22,7 +22,9 @@
   },
   "scripts": {
     "test-latest-cra": "cd test && ./test_latest_cra.sh",
+    "posttest-latest-cra": "yarn posttest",
     "test": "cd test && ./run_tests.sh",
+    "posttest": "rm -rfd test/run",
     "postinstall": "opencollective postinstall --collective=storybook"
   },
   "dependencies": {

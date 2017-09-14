@@ -66,7 +66,7 @@ if [ $update -eq 1 ]
 
 # install all the dependencies in a single run
 cd ..
-yarn
+yarn --pure-lockfile
 cd test/run
 
 for dir in *

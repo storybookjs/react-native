@@ -1,5 +1,5 @@
 {
-  "name": "already-has-storybook-run",
+  "name": "already-has-storybook-fixture",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
