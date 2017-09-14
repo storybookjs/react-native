@@ -37,7 +37,6 @@ export class AllKnobsComponent implements OnChanges, OnInit {
   @Input() stock;
   @Input() nice;
 
-
   constructor() {
     console.log('constructor');
   }

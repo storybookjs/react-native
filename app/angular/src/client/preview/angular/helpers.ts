@@ -13,7 +13,25 @@ import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
 let platform = null;
-let lastModule = null;
+let promises = [];
+
+// Taken from https://davidwalsh.name/javascript-debounce-function
+// We don't want to pull underscore
+
+const debounce = (func, wait = 100, immediate = false) => {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
 
 const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
   if (!component || typeof component !== "function")
@@ -98,28 +116,28 @@ const initModule = (currentStory, context, reRender) => {
 };
 
 const draw = (newModule, reRender = true) => {
-  if (!platform || !lastModule) {
+  if (!platform) {
     try {
       enableProdMode();
     } catch (e) {}
 
     platform = platformBrowserDynamic();
-    lastModule = platform.bootstrapModule(newModule);
+    promises.push(platform.bootstrapModule(newModule))
   } else {
-    lastModule.then(ngModule => {
-      if (reRender) {
-        if (!ngModule._destroyed) ngModule.destroy();
+    Promise.all(promises)
+      .then((modules) => {
+        modules.forEach(mod => mod.destroy());
         
         const body = document.body;
         const app = document.createElement("my-app");
         body.appendChild(app);
-        lastModule = platform.bootstrapModule(newModule);
-      }
-    });
+        promises = [];
+        promises.push(platform.bootstrapModule(newModule));
+      });
   }
 };
 
-export function renderNgError(error) {
+export const renderNgError = debounce((error) => {
   const errorData = {
     component: null,
     props: {
@@ -132,9 +150,9 @@ export function renderNgError(error) {
   const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData);
 
   draw(Module);
-}
+});
 
-export function renderNoPreview() {
+export const renderNoPreview = debounce(() => {
   const Module = getModule(
     [NoPreviewComponent],
     [],
@@ -143,8 +161,8 @@ export function renderNoPreview() {
   );
 
   draw(Module);
-}
+});
 
-export function renderNgApp(story, context, reRender) {
+export const renderNgApp = debounce((story, context, reRender) => {
   draw(initModule(story, context, reRender), reRender);
-}
+});

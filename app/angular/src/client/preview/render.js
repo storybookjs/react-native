@@ -22,7 +22,7 @@ export function renderException(error) {
   logger.error(error.stack);
 }
 
-export async function renderMain(data, storyStore) {
+export function renderMain(data, storyStore) {
   if (storyStore.size() === 0) return null;
 
   const { selectedKind, selectedStory } = data;
