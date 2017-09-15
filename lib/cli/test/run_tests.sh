@@ -74,7 +74,7 @@ do
   # check that storybook starts without errors
   # smoke-test option may be unknown in earlier storybook versions,
   # so skip `already_has_storybook` here
-  if [ $dir != "already_has_storybook" ]
+  if [ $dir != "already_has_storybook" ] && [ $dir != "angular-cli" ]
     then
       cd $dir
       echo "Running smoke test in $dir"
