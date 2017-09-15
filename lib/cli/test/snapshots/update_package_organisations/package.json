@@ -1,5 +1,5 @@
 {
-  "name": "update_package_organisations",
+  "name": "update-package-organisations-fixture",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,7 @@
     "react-scripts": "0.9.x"
   },
   "devDependencies": {
-    "@storybook/react": "3.2.8"
+    "@storybook/react": "^3.3.0-alpha.0"
   },
   "scripts": {
     "start": "react-scripts start",

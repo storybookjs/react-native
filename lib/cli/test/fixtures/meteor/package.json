@@ -1,5 +1,6 @@
 {
-  "name": "meteor",
+  "name": "meteor-fixture",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "meteor run"
