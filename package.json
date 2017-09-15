@@ -11,7 +11,8 @@
     "app/*",
     "lib/*",
     "examples/cra-kitchen-sink",
-    "examples/vue-kitchen-sink"
+    "examples/vue-kitchen-sink",
+    "lib/cli/test/run/*"
   ],
   "scripts": {
     "bootstrap": "./scripts/bootstrap.js",
@@ -35,7 +36,7 @@
     "lint:md": "remark",
     "publish": "lerna publish",
     "test": "./scripts/test.js",
-    "update-cli-fixtures": "npm --prefix lib/cli run update-fixtures"
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

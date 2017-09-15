@@ -21,14 +21,18 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "update-fixtures": "cd test && ./update_fixtures.sh",
+    "test-latest-cra": "cd test && ./test_latest_cra.sh",
+    "posttest-latest-cra": "yarn posttest",
     "test": "cd test && ./run_tests.sh",
+    "posttest": "rm -rfd test/run",
     "postinstall": "opencollective postinstall --collective=storybook"
   },
   "dependencies": {
     "@storybook/codemod": "^3.3.0-alpha.0",
-    "babel-register": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "chalk": "^2.1.0",
     "child-process-promise": "^2.2.1",
     "commander": "^2.11.0",
@@ -38,10 +42,29 @@
     "latest-version": "^3.1.0",
     "merge-dirs": "^0.2.1",
     "opencollective": "^1.0.3",
+    "semver": "^5.4.1",
     "shelljs": "^0.7.8",
     "update-notifier": "^2.1.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/addon-centered": "^3.3.0-alpha.0",
+    "@storybook/addon-comments": "^3.3.0-alpha.0",
+    "@storybook/addon-graphql": "^3.3.0-alpha.0",
+    "@storybook/addon-info": "^3.3.0-alpha.0",
+    "@storybook/addon-knobs": "^3.3.0-alpha.0",
+    "@storybook/addon-links": "^3.3.0-alpha.0",
+    "@storybook/addon-notes": "^3.3.0-alpha.0",
+    "@storybook/addon-options": "^3.3.0-alpha.0",
+    "@storybook/addon-storyshots": "^3.3.0-alpha.0",
+    "@storybook/addons": "^3.3.0-alpha.0",
+    "@storybook/channel-postmessage": "^3.3.0-alpha.0",
+    "@storybook/channel-websocket": "^3.3.0-alpha.0",
+    "@storybook/channels": "^3.3.0-alpha.0",
+    "@storybook/react": "^3.3.0-alpha.0",
+    "@storybook/react-native": "^3.3.0-alpha.0",
+    "@storybook/ui": "^3.3.0-alpha.0",
+    "@storybook/vue": "^3.3.0-alpha.0",
     "check-node-version": "2.1.0",
     "npx": "9.6.0"
   }

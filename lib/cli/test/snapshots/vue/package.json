@@ -1,5 +1,5 @@
 {
-  "name": "vue",
+  "name": "vue-fixture",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "hypnos <Filipp.Riabchun@jetbrains.com>",
@@ -34,8 +34,8 @@
     "rollup-plugin-serve": "^0.4.0",
     "rollup-plugin-vue": "^2.4.0",
     "rollup-watch": "^4.0.0",
-    "@storybook/vue": "^3.2.8",
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6"
+    "@storybook/vue": "^3.3.0-alpha.0",
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/addon-links": "^3.3.0-alpha.0"
   }
 }

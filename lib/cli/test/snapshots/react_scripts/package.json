@@ -1,5 +1,5 @@
 {
-  "name": "react_scripts",
+  "name": "react-scripts-fixture",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,8 +16,8 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.8",
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6"
+    "@storybook/react": "^3.3.0-alpha.0",
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/addon-links": "^3.3.0-alpha.0"
   }
 }
