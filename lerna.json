@@ -6,7 +6,8 @@
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "vue-kitchen-sink"
+        "vue-kitchen-sink",
+        "lib/cli/test/run/*"
       ]
     }
   },
