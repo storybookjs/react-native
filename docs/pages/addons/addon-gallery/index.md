@@ -39,6 +39,10 @@ The Storybook webapp UI can be customised with this addon. It can be used to cha
 
 Storyshots is a way to automatically jest-snapshot all your stories. [More info here](/testing/structural-testing/).
 
+### [Console](https://github.com/storybooks/storybook-addon-console)
+
+Redirects console output (logs, errors, warnings) into Action Logger Panel. `withConsole` decorator notifies from what stories logs are coming.
+
 ## Community Addons
 
 You need to install these addons directly from NPM in order to use them.
