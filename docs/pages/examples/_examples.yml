@@ -12,13 +12,6 @@ airbnb:
   source: https://github.com/airbnb/react-dates
   demo: http://airbnb.io/react-dates/
   site: http://airbnb.com
-buffer:
-  thumbnail: ./thumbnails/buffer.jpg
-  title: Buffer Components
-  description: A collection of Buffer UI React components.
-  source: https://github.com/bufferapp/buffer-components
-  demo: https://bufferapp.github.io/buffer-components/
-  site: https://buffer.com
 lonelyplanet:
   thumbnail: ./thumbnails/lonelyplanet.jpg
   title: Lonely Planet
@@ -26,6 +19,19 @@ lonelyplanet:
   source: https://github.com/lonelyplanet/backpack-ui
   demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
+atlassian:
+  thumbnail: ./thumbnails/atlassian.png
+  title: Atlassian AtlasKit
+  description: Atlassian's official UI library.
+  demo: https://atlaskit.atlassian.com/components
+  site: https://atlaskit.atlassian.com/
+buffer:
+  thumbnail: ./thumbnails/buffer.jpg
+  title: Buffer Components
+  description: A collection of Buffer UI React components.
+  source: https://github.com/bufferapp/buffer-components
+  demo: https://bufferapp.github.io/buffer-components/
+  site: https://buffer.com
 algolia:
   thumbnail: ./thumbnails/algolia.jpg
   title: Algolia InstantSearch
