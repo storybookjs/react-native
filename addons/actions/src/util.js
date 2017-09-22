@@ -5,6 +5,10 @@ export function muteProperties(keys, value) {
   keys.forEach(key => Object.defineProperty(value, key, { enumerable: false }));
 }
 
+export function isObject(value) {
+  return Object.prototype.toString.call(value) === '[object Object]';
+}
+
 export function createFakeConstructor(obj) {
   function FakeConstructor(data) {
     Object.assign(this, data);
@@ -61,7 +65,7 @@ export function decycle(object, depth = 15) {
         });
       }
 
-      if (_depth === 0 && Object.prototype.toString.call(value) === '[object Object]' && isCyclic) {
+      if (_depth === 0 && isObject(value) && isCyclic) {
         obj[CYCLIC_KEY] = true;
       }
 

@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { ObjectLabel, ObjectRootLabel } from 'react-inspector';
-import { CLASS_NAME_KEY, createFakeConstructor } from '../../util';
+import { CLASS_NAME_KEY, isObject, createFakeConstructor } from '../../util';
 
 export default function NodeRenderer({ depth, name, data, isNonEnumerable }) {
   let obj;
-  if (Object.prototype.toString.call(data) === '[object Object]' && data[CLASS_NAME_KEY]) {
+  if (isObject(data) && data[CLASS_NAME_KEY]) {
     obj = createFakeConstructor(data);
   } else {
     obj = data;
