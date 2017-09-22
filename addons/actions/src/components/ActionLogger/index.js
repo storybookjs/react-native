@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Inspector from 'react-inspector';
 import style from './style';
+import NodeRenderer from './NodeRenderer';
 
 class ActionLogger extends Component {
   getActionData() {
@@ -15,7 +16,9 @@ class ActionLogger extends Component {
         <div style={style.countwrap}>{action.count > 1 && counter}</div>
         <div style={style.inspector}>
           <Inspector
-            showNonenumerable
+            nodeRenderer={NodeRenderer}
+            sortObjectKeys
+            showNonenumerable={false}
             name={action.data.name}
             data={action.data.args || action.data}
           />
