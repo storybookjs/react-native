@@ -18,7 +18,7 @@ export function createFakeConstructor(obj) {
 }
 
 // Based on: https://github.com/douglascrockford/JSON-js/blob/master/cycle.js
-export function decycle(object, depth = 4) {
+export function decycle(object, depth = 15) {
   const objects = new WeakMap();
   let isCyclic = false;
 
