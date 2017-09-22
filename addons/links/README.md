@@ -21,61 +21,41 @@ Install this addon by adding the `@storybook/addon-links` dependency:
 yarn add @storybook/addon-links
 ```
 
-Then configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
+First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
 
 ```js
 import '@storybook/addon-links/register';
 ```
 
-## LinkTo component
-
-To add a link from one story to another, just import `LinkTo` component and use it:
+Then you can import `linkTo` in your stories and use like this:
 
 ```js
-import { storiesOf } from '@storybook/react';
-import { LinkTo } from '@storybook/addon-links';
-
-storiesOf('Link', module)
-  .add('First', () => (
-    <LinkTo story="Second">Go to Second</LinkTo>
-  ))
-  .add('Second', () => (
-    <LinkTo story="First">Go to First</LinkTo>
-  ));
-```
-
-It uses native `a` element, but prevents page reloads on plain left click. You can still use default browser methods to open link in new tab.
-It accepts all the props the `a` element does, plus to special props, both optional:
-
--   `kind` is the the story kind name (what you named with `storiesOf`). If it is omitted, the current kind will be preserved.
--   `story` is the story name (what you named with `.add`). If it is omitted, the link will point to the first story in the given kind.
-
-```js
-<LinkTo
-  kind="Toggle"
-  story="off"
-  target="_blank"
-  title="link to second story"
-  style={{color: '#1474f3'}}
->Go to Second</LinkTo>
-```
-
-## linkTo callback function
-
-If you want to use something other then `a` element, you may import `linkTo` function instead:
-
-```js
-import { storiesOf } from '@storybook/react';
-import { linkTo } from '@storybook/addon-links';
+import { storiesOf } from '@storybook/react'
+import { linkTo } from '@storybook/addon-links'
 
 storiesOf('Button', module)
   .add('First', () => (
-    <button onClick={linkTo('Button', 'Second')}>Go to Second</button>
+    <button onClick={linkTo('Button', 'Second')}>Go to "Second"</button>
   ))
   .add('Second', () => (
-    <button onClick={linkTo('Button', 'First')}>Go to First</button>
+    <button onClick={linkTo('Button', 'First')}>Go to "First"</button>
   ));
 ```
+
+Have a look at the linkTo function:
+
+```js
+import { linkTo } from '@storybook/addon-links'
+
+linkTo('Toggle', 'off')
+linkTo(() => 'Toggle', () => 'off')
+linkTo('Toggle') // Links to the first story in the 'Toggle' kind
+```
+
+With that, you can link an event in a component to any story in the Storybook.
+
+-   First parameter is the the story kind name (what you named with `storiesOf`).
+-   Second (optional) parameter is the story name (what you named with `.add`). If the second parameter is omitted, the link will point to the first story in the given kind.
 
 You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string:
 
@@ -99,7 +79,7 @@ storiesOf('Select', module)
 
 ## hrefTo function
 
-If you just want to get an URL for a particular story, you may use `hrefTo` function. It returns a promise, which resolves to string containing a relative URL:
+If you want to get an URL for a particular story, you may use `hrefTo` function. It returns a promise, which resolves to string containing a relative URL:
 
 ```js
 import { storiesOf } from '@storybook/react';
@@ -113,3 +93,35 @@ storiesOf('Href', module)
     return <span>See action logger</span>;
   });
 ```
+
+## LinkTo component (React only)
+
+One possible way of using `hrefTo` is to create a component that uses native `a` element, but prevents page reloads on plain left click, so that one can still use default browser methods to open link in new tab.
+A React implementation of such a component can be imported from `@storybook/addon-links` package:
+
+```js
+import { storiesOf } from '@storybook/react';
+import { LinkTo } from '@storybook/addon-links';
+
+storiesOf('Link', module)
+  .add('First', () => (
+    <LinkTo story="Second">Go to Second</LinkTo>
+  ))
+  .add('Second', () => (
+    <LinkTo story="First">Go to First</LinkTo>
+  ));
+```
+
+It accepts all the props the `a` element does, plus `story` and `kind`. It the `kind` prop is omitted, the current kind will be preserved.
+
+```js
+<LinkTo
+  kind="Toggle"
+  story="off"
+  target="_blank"
+  title="link to second story"
+  style={{color: '#1474f3'}}
+>Go to Second</LinkTo>
+```
+
+To implement such a component for another framework, you need to add special handling for `click` event on native `a` element. See [`RoutedLink` sources](https://github.com/storybooks/storybook/blob/master/lib/components/src/navigation/routed_link.js#L4-L9) for reference. 
