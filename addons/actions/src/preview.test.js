@@ -23,5 +23,8 @@ describe('preview', () => {
       expect(channel.emit.mock.calls[0][1].id).toBe('42');
       expect(channel.emit.mock.calls[1][1].id).toBe('24');
     });
+    it('should be able to handle cyclic object without hanging', () => {
+      action('foo')(process);
+    });
   });
 });
