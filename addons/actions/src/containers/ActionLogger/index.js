@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'deep-equal';
-import { CYCLIC_KEY, retrocycle } from '../../util';
+import { CYCLIC_KEY, isObject, retrocycle } from '../../util';
 
 import ActionLoggerComponent from '../../components/ActionLogger/';
 import { EVENT_ID } from '../../';
@@ -25,7 +25,7 @@ export default class ActionLogger extends React.Component {
 
   addAction(action) {
     action.data.args = action.data.args.map(arg => retrocycle(JSON.parse(arg))); // eslint-disable-line
-    const isCyclic = !!action.data.args.find(arg => arg[CYCLIC_KEY]);
+    const isCyclic = !!action.data.args.find(arg => isObject(arg) && arg[CYCLIC_KEY]);
     const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
 
