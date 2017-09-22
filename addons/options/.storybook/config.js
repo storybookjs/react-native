@@ -5,10 +5,10 @@ setOptions({
   name: 'CUSTOM-OPTIONS',
   url: 'https://github.com/storybooks/storybook',
   // goFullScreen: false,
-  // showLeftPanel: true,
-  showDownPanel: false,
+  // showStoriesPanel: true,
+  showAddonPanel: false,
   // showSearchBox: false,
-  // downPanelInRight: false,
+  // addonPanelInRight: false,
 });
 
 storybook.configure(() => require('./stories'), module);

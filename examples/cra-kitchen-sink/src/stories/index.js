@@ -17,7 +17,7 @@ import {
   array,
   date,
   object,
-} from '@storybook/addon-knobs';
+} from '@storybook/addon-knobs/react';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
 
@@ -28,6 +28,7 @@ import Logger from './Logger';
 import Container from './Container';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
+import ImportedPropsButton from '../components/ImportedPropsButton';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -101,6 +102,16 @@ storiesOf('Button', module)
       padding: '10px',
     });
     const nice = boolean('Nice', true);
+    const children = object('Children', [
+      {
+        name: 'Jane',
+        age: 13,
+      },
+      {
+        name: 'John',
+        age: 8,
+      },
+    ]);
 
     // NOTE: put this last because it currently breaks everything after it :D
     const birthday = date('Birthday', new Date('Jan 20 2017'));
@@ -114,6 +125,14 @@ storiesOf('Button', module)
       <div style={style}>
         <p>{intro}</p>
         <p>My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</p>
+        <p>I have {children.length} children:</p>
+        <ol>
+          {children.map(child => (
+            <li key={child.name}>
+              {child.name}, {child.age} years old
+            </li>
+          ))}
+        </ol>
         <p>My wallet contains: ${dollars.toFixed(2)}</p>
         <p>In my backpack, I have:</p>
         <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
@@ -156,6 +175,15 @@ storiesOf('Button', module)
 storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () => (
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
 ));
+
+storiesOf(
+  'AddonInfo.ImportedPropsButton',
+  module
+).addWithInfo(
+  'ImportedPropsButton',
+  'Button with PropTypes imported from another file. Should fallback to using PropTypes for data.',
+  () => <ImportedPropsButton onClick={action('clicked')} label="Docgen Button" />
+);
 
 storiesOf(
   'AddonInfo.FlowTypeButton',

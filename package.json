@@ -1,14 +1,22 @@
 {
+  "private": true,
   "name": "storybook",
   "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "workspaces": [
+    "addons/*",
+    "app/*",
+    "lib/*",
+    "examples/cra-kitchen-sink",
+    "examples/vue-kitchen-sink",
+    "lib/cli/test/run/*"
+  ],
   "scripts": {
     "bootstrap": "./scripts/bootstrap.js",
-    "bootstrap:core": "lerna bootstrap --concurrency 1 --npm-client=\"yarn\" --hoist && node ./scripts/hoist-internals.js",
-    "bootstrap:docs": "cd docs && yarn install",
+    "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
@@ -23,11 +31,12 @@
     "docs:deploy:manual": "cd docs && npm run deploy:manual",
     "docs:dev": "cd docs && npm run dev",
     "github-release": "github-release-from-changelog",
-    "lint": "npm run lint:js . && npm run lint:md .",
+    "lint": "yarn lint:js . && yarn lint:md .",
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "jest --projects ./ ./examples/react-native-vanilla"
+    "test": "./scripts/test.js",
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -62,7 +71,7 @@
     "jest": "^21.0.1",
     "jest-enzyme": "^3.8.2",
     "lerna": "^2.1.2",
-    "lint-staged": "^4.1.0",
+    "lint-staged": "^4.1.2",
     "lodash": "^4.17.4",
     "nodemon": "^1.12.0",
     "npmlog": "^4.1.2",
@@ -80,7 +89,8 @@
     "symlink-dir": "^1.1.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=8.0.0",
+    "yarn": ">=1.0.0"
   },
   "collective": {
     "type": "opencollective",
@@ -89,11 +99,11 @@
   "lint-staged": {
     "linters": {
       "*.js": [
-        "npm run lint:js -- --fix",
+        "yarn lint:js --fix",
         "git add"
       ],
       "*.json": [
-        "npm run lint:js -- --fix",
+        "yarn lint:js --fix",
         "git add"
       ],
       "*.md": [

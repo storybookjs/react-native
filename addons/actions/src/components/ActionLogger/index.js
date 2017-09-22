@@ -6,7 +6,7 @@ import NodeRenderer from './NodeRenderer';
 
 class ActionLogger extends Component {
   getActionData() {
-    return this.props.actions.map((action, i) => this.renderAction(action, i));
+    return this.props.actions.map(action => this.renderAction(action));
   }
 
   renderAction(action) {

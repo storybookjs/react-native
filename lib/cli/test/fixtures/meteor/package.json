@@ -1,0 +1,12 @@
+{
+  "name": "meteor-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "meteor-node-stubs": "~0.2.4"
+  }
+}

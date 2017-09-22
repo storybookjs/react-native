@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.2.8",
+  "version": "3.3.0-alpha.0",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -21,14 +21,14 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6",
-    "@storybook/addons": "^3.2.6",
-    "@storybook/channel-websocket": "^3.2.0",
-    "@storybook/ui": "^3.2.7",
+    "@storybook/addon-actions": "^3.3.0-alpha.0",
+    "@storybook/addon-links": "^3.3.0-alpha.0",
+    "@storybook/addons": "^3.3.0-alpha.0",
+    "@storybook/channel-websocket": "^3.3.0-alpha.0",
+    "@storybook/ui": "^3.3.0-alpha.0",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.0.0",
@@ -53,6 +53,7 @@
     "file-loader": "^0.11.1",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
+    "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.4",
     "json5": "^0.5.1",
     "postcss-loader": "^2.0.5",

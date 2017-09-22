@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import express from 'express';
 import https from 'https';
 import favicon from 'serve-favicon';
@@ -159,4 +157,9 @@ Promise.all([webpackValid, serverListening])
       process.exit(0);
     }
   })
-  .catch(error => logger.error(error));
+  .catch(error => {
+    logger.error(error);
+    if (program.smokeTest) {
+      process.exit(1);
+    }
+  });

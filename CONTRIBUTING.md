@@ -4,6 +4,8 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
+This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](<>).
+
 ## Issues
 
 No software is bug free. So, if you got an issue, follow these steps:
@@ -18,28 +20,70 @@ No software is bug free. So, if you got an issue, follow these steps:
 
 ### Testing against `master`
 
-To test your project against the current latest version of storybook, you can clone the repository and link it with `npm`. Try following these steps:
+To test your project against the current latest version of storybook, you can clone the repository and link it with `yarn`. Try following these steps:
 
-1.  Download the latest version of this project, and build it:
+#### 1. Download the latest version of this project, and build it:
 
 ```sh
 git clone https://github.com/storybooks/storybook.git
 cd storybook
-npm install
-npm run bootstrap -- --core
+yarn install
+yarn bootstrap
 ```
 
-2.  Link `storybook` and any other required dependencies:
+The bootstrap command will ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
+
+You can also pick directly from CLI:
+
+    yarn bootstrap --core
+
+#### 2a. Run unit tests
+
+You can use one of the example projects in `examples/` to develop on.
+
+This command will list all the suites and options for running tests. 
 
 ```sh
-cd app/react
-npm link
-
-cd <your-project>
-npm link @storybook/react
-
-# repeat with whichever other parts of the monorepo you are using.
+yarn test
 ```
+
+_Note that in order to run the tests fro ReactNative, you must have bootstrapped with ReactNative enabled_
+
+You can also pick suites from CLI:
+
+```sh
+yarn test --core
+```
+
+In order to run ALL unit tests, you must have bootstrapped the react-native
+
+#### 2b. Run e2e tests for CLI
+
+If you made any changes to `lib/cli` package, the easiest way to verify that it doesn't break anything is to run e2e tests:
+
+    yarn test --cli
+
+This will run a bash script located at `lib/cli/test/run_tests.sh`. It will copy the contents of `fixtures` into a temporary `run` directory, run `getstorybook` in each of the subdirectories, and check that storybook starts successfully using `yarn storybook --smoke-test`.
+
+After that, the `run` directory content will be compared with `snapshots`. You can update the snapshots by passing an `--update` flag:
+
+    yarn test --cli --update
+
+In that case, please check the git diff before commiting to make sure it only contains the intended changes.
+
+#### 2c. Link `storybook` and any other required dependencies:
+
+If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
+
+    ```sh
+    cd app/react
+    yarn link
+
+    cd <your-project>
+    yarn link @storybook/react
+
+    # repeat with whichever other parts of the monorepo you are using.
+    ```
 
 ### Reproductions
 
@@ -51,13 +95,12 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 # Download and build this repository:
 git clone https://github.com/storybooks/storybook.git
 cd storybook
-npm install
-npm run bootstrap -- --core
-
-cd examples/cra-kitchen-sink
+yarn install
+yarn bootstrap
 
 # make changes to try and reproduce the problem, such as adding components + stories
-npm start storybook
+cd examples/cra-kitchen-sink
+yarn storybook
 
 # see if you can see the problem, if so, commit it:
 git checkout "branch-describing-issue"
@@ -71,7 +114,7 @@ git push -u <your-username> master
 
 If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `npm run eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
 ## Pull Requests (PRs)
 
@@ -82,7 +125,7 @@ We welcome your contributions. There are many ways you can help us. This is few 
 -   Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
 -   Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
-Before you submit a new PR, make you to run `npm test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
+Before you submit a new PR, make you to run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
 ### Reviewing PRs
 
@@ -136,7 +179,7 @@ This project written in ES2016+ syntax so, we need to transpile it before use.
 So run the following command:
 
 ```sh
-npm run dev
+yarn dev
 ```
 
 This will watch files and transpile in watch mode.
@@ -146,14 +189,14 @@ This will watch files and transpile in watch mode.
 First of all link this repo with:
 
 ```sh
-npm link
+yarn link
 ```
 
 In order to test features you add, you may need to link the local copy of this repo.
 For that we need a sample project. Let's create it.
 
 ```sh
-npm install --global create-react-app getstorybook
+yarn global add create-react-app getstorybook
 create-react-app my-demo-app
 cd my-demo-app
 getstorybook
@@ -165,12 +208,12 @@ getstorybook
 Then link storybook inside the sample project with:
 
 ```sh
-npm link @storybook/react
+yarn link @storybook/react
 ```
 
 ### Getting Changes
 
-After you've done any change, you need to run the `npm run storybook` command every time to see those changes.
+After you've done any change, you need to run the `yarn storybook` command every time to see those changes.
 
 ## Release Guide
 
@@ -193,12 +236,9 @@ First, build the release:
 git checkout master
 git status
 
-# clean out extra files
+# clean out extra files & build all the packages
 # WARNING: destructive if you have extra files lying around!
-git clean -fdx && yarn
-
-# build all the packages
-npm run bootstrap -- --all
+yarn bootstrap --reset --all
 ```
 
 From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
@@ -209,7 +249,7 @@ From here there are different procedures for prerelease (e.g. alpha/beta/rc) and
 
 ```sh
 # publish and tag the release
-npm run publish -- --concurrency 1 --npm-tag=alpha
+yarn run publish --concurrency 1 --npm-tag=alpha
 
 # push the tags
 git push --tags
@@ -219,14 +259,14 @@ git push --tags
 
 ```sh
 # publish but don't commit to git
-npm run publish -- --concurrency 1 --skip-git
+yarn run publish --concurrency 1 --skip-git
 
 # Update `CHANGELOG.md`
 # - Edit PR titles/labels on github until output is good
 # - Optionally, edit a handwritten description in `CHANGELOG.md`
-npm run changelog
+yarn changelog
 
 # tag the release and push `CHANGELOG.md` and tags
 # FIXME: not end-to-end tested!
-npm run github-release
+yarn github-release
 ```

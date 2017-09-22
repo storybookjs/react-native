@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addons",
-  "version": "3.2.6",
+  "version": "3.3.0-alpha.0",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
@@ -16,7 +16,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "devDependencies": {
     "shelljs": "^0.7.8"
