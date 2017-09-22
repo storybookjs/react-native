@@ -150,7 +150,8 @@ server.listen(...listenAddr, error => {
 
 Promise.all([webpackValid, serverListening])
   .then(() => {
-    const address = `http://${program.host || 'localhost'}:${program.port}/`;
+    const proto = program.https ? 'https' : 'http';
+    const address = `${proto}://${program.host || 'localhost'}:${program.port}/`;
     logger.info(`Storybook started on => ${chalk.cyan(address)}\n`);
     if (program.smokeTest) {
       process.exit(0);
