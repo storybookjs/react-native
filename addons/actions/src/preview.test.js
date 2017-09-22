@@ -23,5 +23,17 @@ describe('preview', () => {
       expect(channel.emit.mock.calls[0][1].id).toBe('42');
       expect(channel.emit.mock.calls[1][1].id).toBe('24');
     });
+    it('should be able to handle cyclic object without hanging', () => {
+      const cyclicObject = {
+        propertyA: {
+          innerPropertyA: {},
+        },
+        propertyB: 'b',
+      };
+      cyclicObject.propertyA.innerPropertyA = cyclicObject;
+
+      expect(() => JSON.stringify(cyclicObject)).toThrow();
+      expect(() => action('foo')(cyclicObject)).not.toThrow();
+    });
   });
 });
