@@ -119,12 +119,12 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 ### Closing issues
 
 -   Duplicate issues should be closed with a link to the original.
--   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline, 
+-   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline,
     it is reasonable to wait 2 weeks before closing).
 -   `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
--   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged, 
+-   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged,
     and closed when released or if the feature is deemed not appropriate.
--   `question / support`s should be closed when the question has been answered. 
+-   `question / support`s should be closed when the question has been answered.
     If the questioner drops offline, a reasonable period to wait is two weeks.
 -   `discussion`s should be closed at a maintainer's discretion.
 
@@ -174,59 +174,70 @@ After you've done any change, you need to run the `npm run storybook` command ev
 
 ## Release Guide
 
-This section is for Storybook maintainers who will be creating releases.
+This section is for Storybook maintainers who will be creating releases. It assumes:
 
-Each release is described by:
+-   yarn >= 1.0.0 (otherwise you should pass a -- before command arguments)
+-   you've yarn linked `pr-log` from <https://github.com/storybooks/pr-log/pull/2>
 
--   A version
--   A list of merged pull requests
--   Optionally, a short hand-written description
+The current manual release sequence is as follows:
 
-Thus, the current release sequence is as follows:
+-   Generate a changelog and verify the release by hand
+-   Push the changelog to master or the release branch
+-   Clean, build, and publish the release
+-   Cut and paste the changelog to the github release page, and mark it as a (pre-) release
+
+This sequence applies to both releases and pre-releases, but differs slightly between the two.
 
 **NOTE: This is a work in progress. Don't try this unless you know what you're doing. We hope to automate this in CI, so this process is designed with that in mind.**
 
-First, build the release:
+#### Prerelease:
+
+```sh
+# make sure you current with origin/master.
+git checkout release/X.Y
+git status
+
+# generate changelog and edit as appropriate
+# generates a Next section
+yarn changelog Next
+
+# Edit the changelog/PRs as needed, then commit
+git commit -m "Updated changelog for vX.Y"
+
+# clean build
+yarn bootstrap --reset --core
+```
+
+> **NOTE:** the very first time you publish a scoped package (`@storybook/x`) you need to publish it by hand because the default for scoped packages is private, and we need to make our packages public. If you try to publish a package for the first time using our `lerna` publish script, `lerna` will crash halfway through and you'll be in a world of pain.
+
+```sh
+# publish and tag the release
+npm run publish -- --concurrency 1 --npm-tag=alpha
+
+# update the release page
+open https://github.com/storybooks/storybook/releases
+```
+
+#### Full release:
 
 ```sh
 # make sure you current with origin/master.
 git checkout master
 git status
 
-# clean out extra files
-# WARNING: destructive if you have extra files lying around!
-git clean -fdx && yarn
+# generate changelog and edit as appropriate
+# generates a vNext section
+yarn changelog X.Y
 
-# build all the packages
-npm run bootstrap -- --all
-```
+# Edit the changelog/PRs as needed, then commit
+git commit -m "Changelog for vX.Y"
 
-From here there are different procedures for prerelease (e.g. alpha/beta/rc) and proper release.
+# clean build
+yarn bootstrap --reset --core
 
-> **NOTE:** the very first time you publish a scoped package (`@storybook/x`) you need to publish it by hand because the default for scoped packages is private, and we need to make our packages public. If you try to publish a package for the first time using our `lerna` publish script, `lerna` will crash halfway through and you'll be in a world of pain.
-
-#### For prerelease (no CHANGELOG):
-
-```sh
 # publish and tag the release
-npm run publish -- --concurrency 1 --npm-tag=alpha
+npm run publish -- --concurrency 1
 
-# push the tags
-git push --tags
-```
-
-#### For full release (with CHANGELOG):
-
-```sh
-# publish but don't commit to git
-npm run publish -- --concurrency 1 --skip-git
-
-# Update `CHANGELOG.md`
-# - Edit PR titles/labels on github until output is good
-# - Optionally, edit a handwritten description in `CHANGELOG.md`
-npm run changelog
-
-# tag the release and push `CHANGELOG.md` and tags
-# FIXME: not end-to-end tested!
-npm run github-release
+# update the release page
+open https://github.com/storybooks/storybook/releases
 ```
