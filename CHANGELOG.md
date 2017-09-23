@@ -48,6 +48,45 @@
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
 
+# 3.2.10
+
+2017-September-22
+
+#### Features
+
+-   Added codemod for deprecated addon-links and addon-actions from app [#1368](https://github.com/storybooks/storybook/pull/1368)
+-   React native: Added option for custom packager port [#1837](https://github.com/storybooks/storybook/pull/1837)
+-   CLI: add support for Vue projects using Nuxt [#1794](https://github.com/storybooks/storybook/pull/1794)
+
+#### Bug Fixes
+
+-   Avoid error "storyshots is intended only to be used with storybook" [#1441](https://github.com/storybooks/storybook/pull/1441)
+-   Log correct url when using --https [#1871](https://github.com/storybooks/storybook/pull/1871)
+-   Fix broken links in the deprecation warning for RN and Vue apps [#1827](https://github.com/storybooks/storybook/pull/1827)
+-   Height aligned 2 buttons in manager's header [#1769](https://github.com/storybooks/storybook/pull/1769)
+-   Add missing regenerator and runtime babel transform pkgs to package.json [#1848](https://github.com/storybooks/storybook/pull/1848)
+
+#### Documentation
+
+-   Update README: mention that addon-links needs to be registered manually [#1835](https://github.com/storybooks/storybook/pull/1835)
+-   Improve linkTo documentation [#1793](https://github.com/storybooks/storybook/pull/1793)
+-   Minor grammar fixes and clarification to Vue documentation [#1756](https://github.com/storybooks/storybook/pull/1756)
+-   Add missing NPM script section to Vue guide [#1824](https://github.com/storybooks/storybook/pull/1824)
+-   Add storybook-chrome-screenshot to addon gallery [#1761](https://github.com/storybooks/storybook/pull/1761)
+
+#### Dependency Upgrades
+
+-   Update babel-eslint to the latest version 🚀 [#1836](https://github.com/storybooks/storybook/pull/1836)
+-   UPGRADE root dependencies and SYNC with packages [#1802](https://github.com/storybooks/storybook/pull/1802)
+-   Update jest to the latest version 🚀 [#1799](https://github.com/storybooks/storybook/pull/1799)
+-   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
+-   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
+
+#### Maintenance
+
+-   Smoke test master [#1801](https://github.com/storybooks/storybook/pull/1801)
+-   Fixed Jest warnings [#1744](https://github.com/storybooks/storybook/pull/1744)
+
 # 3.2.9
 
 2017-August-26
