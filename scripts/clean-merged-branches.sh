@@ -31,11 +31,14 @@ branches=$(
     exit 0
 }
 
-# delete the branches or just show what would be done without -f
-if [ "$1" = -f ]; then
-    git push origin $(echo "$branches" | sed 's/^ */:/')
-else
+[ "$1" != -f ] && {
     echo "These branches will be deleted:" 1>&2
     echo "$branches"
-    echo "Run \`$0 -f' if you're sure."
+    read -p "Press 'y' if you're sure. " -n 1 -r
+    echo    # move to a new line
+}
+
+# delete the branches or just show what would be done without -f
+if [ "$1" = -f ] || [[ $REPLY =~ ^[Yy]$ ]]; then
+    git push origin $(echo "$branches" | sed 's/^ */:/')
 fi
