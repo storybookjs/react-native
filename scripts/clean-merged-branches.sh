@@ -20,7 +20,7 @@ git fetch origin --prune
 branches=$(
   git branch -a --merged origin/master |
   grep remotes/origin/ |
-  grep -v /master |
+  grep -v origin/master |
   grep -v 'enterprise-.*-release' |
   sed 's@remotes/origin/@@'
 )
