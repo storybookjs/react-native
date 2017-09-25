@@ -2,7 +2,7 @@
   "name": "@storybook/react",
   "version": "3.3.0-alpha.0",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
