@@ -31,7 +31,7 @@
     "qs": "^6.4.0",
     "react-fuzzy": "^0.4.1",
     "react-icons": "^2.2.5",
-    "react-inspector": "^2.1.1",
+    "react-inspector": "^2.1.6",
     "react-komposer": "^2.0.0",
     "react-modal": "^2.2.4",
     "react-split-pane": "^0.1.65",
