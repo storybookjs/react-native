@@ -1,8 +1,8 @@
 export const CLASS_NAME_KEY = '$___storybook.className';
 export const CYCLIC_KEY = '$___storybook.isCyclic';
 
-export function muteProperties(keys, value) {
-  keys.forEach(key => Object.defineProperty(value, key, { enumerable: false }));
+export function muteProperty(key, value) {
+  return Object.defineProperty(value, key, { enumerable: false });
 }
 
 export function isObject(value) {
@@ -18,7 +18,17 @@ export function createFakeConstructor(obj) {
     value: obj[CLASS_NAME_KEY],
   });
 
+  delete obj[CLASS_NAME_KEY]; // eslint-disable-line no-param-reassign
+
   return new FakeConstructor(obj);
+}
+
+export function reviver(key, value) {
+  if (isObject(value) && value[CLASS_NAME_KEY]) {
+    return createFakeConstructor(value);
+  }
+
+  return value;
 }
 
 // Based on: https://github.com/douglascrockford/JSON-js/blob/master/cycle.js
@@ -76,8 +86,10 @@ export function decycle(object, depth = 15) {
   })(object, '$', 0);
 }
 
-export function retrocycle($) {
+export function retrocycle(json) {
   const pathReg = /^\$(?:\[(?:\d+|"(?:[^\\"\u0000-\u001f]|\\([\\"/bfnrt]|u[0-9a-zA-Z]{4}))*")])*$/;
+
+  const $ = JSON.parse(json, reviver);
 
   (function rez(value) {
     if (value && typeof value === 'object') {
@@ -94,8 +106,6 @@ export function retrocycle($) {
           }
         }
       } else {
-        muteProperties([CLASS_NAME_KEY, CYCLIC_KEY], value);
-
         Object.keys(value).forEach(name => {
           const item = value[name];
 
@@ -112,6 +122,8 @@ export function retrocycle($) {
       }
     }
   })($);
+
+  muteProperty(CYCLIC_KEY, $);
 
   return $;
 }

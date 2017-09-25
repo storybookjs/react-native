@@ -24,7 +24,7 @@ export default class ActionLogger extends React.Component {
   }
 
   addAction(action) {
-    action.data.args = action.data.args.map(arg => retrocycle(JSON.parse(arg))); // eslint-disable-line
+    action.data.args = action.data.args.map(arg => retrocycle(arg)); // eslint-disable-line
     const isCyclic = !!action.data.args.find(arg => isObject(arg) && arg[CYCLIC_KEY]);
     const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
