@@ -1,3 +1,20 @@
+# 3.2.11
+
+2017-September-27
+
+#### Features
+
+-   Add two new RN packager configuration options [#1865](https://github.com/storybooks/storybook/pull/1865)
+
+#### Bug Fixes
+
+-   Addon-info - Fix immutable props issues with React 16 [#1894](https://github.com/storybooks/storybook/pull/1894)
+-   Update react-inspector to fix #1831 [#1888](https://github.com/storybooks/storybook/pull/1888)
+
+#### Documentation
+
+-   Updated release process documentation [#1882](https://github.com/storybooks/storybook/pull/1882)
+
 # 3.2.10
 
 2017-September-22
