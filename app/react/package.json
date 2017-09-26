@@ -1,8 +1,8 @@
 {
   "name": "@storybook/react",
-  "version": "3.2.8",
+  "version": "3.2.10",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/react",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -22,16 +22,18 @@
     "prepublish": "node ../../scripts/prepublish.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6",
-    "@storybook/addons": "^3.2.6",
-    "@storybook/channel-postmessage": "^3.2.0",
-    "@storybook/ui": "^3.2.7",
+    "@storybook/addon-actions": "^3.2.10",
+    "@storybook/addon-links": "^3.2.10",
+    "@storybook/addons": "^3.2.10",
+    "@storybook/channel-postmessage": "^3.2.10",
+    "@storybook/ui": "^3.2.10",
     "airbnb-js-shims": "^1.1.1",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-react-docgen": "^1.6.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-minify": "^0.2.0",
     "babel-preset-react": "^6.24.1",

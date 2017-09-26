@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "3.2.6",
+  "version": "3.2.10",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
@@ -21,11 +21,11 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.6",
+    "@storybook/addons": "^3.2.10",
     "deep-equal": "^1.0.1",
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.5.10",
-    "react-inspector": "^2.1.1",
+    "react-inspector": "^2.1.6",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
