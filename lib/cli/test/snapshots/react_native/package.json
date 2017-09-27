@@ -20,7 +20,7 @@
     "@storybook/addon-actions": "^3.3.0-alpha.0",
     "@storybook/addon-links": "^3.3.0-alpha.0",
     "react-dom": "16.0.0-alpha.12",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.6.0"
   },
   "jest": {
     "preset": "react-native"
