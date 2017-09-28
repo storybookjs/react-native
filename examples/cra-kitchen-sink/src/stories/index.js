@@ -157,12 +157,11 @@ storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some De
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
 ));
 
-storiesOf(
-  'AddonInfo.FlowTypeButton',
-  module
-).addWithInfo('FlowTypeButton', 'Some Description', () => (
-  <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
-));
+storiesOf('AddonInfo.FlowTypeButton', module).addWithInfo(
+  'FlowTypeButton',
+  'Some Description',
+  () => <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
+);
 
 storiesOf('App', module).add('full app', () => <App />);
 
