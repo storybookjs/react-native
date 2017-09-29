@@ -198,7 +198,7 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 
 *This method is slow*
 
-1.  yarn bootstrap --all
+1.  `yarn bootstrap --all`
 2.  Have a beer 🍺
 3.  `yarn test` (to verify everything worked)
 
@@ -208,9 +208,8 @@ Within the `examples` folder of the Storybook repo, you will find kitchen sink e
 
 #### React and Vue
 
-1.  DO NOT RUN `yarn` or `yarn install`
-2. `yarn storybook`
-3.  Verify that your local version works
+1. `yarn storybook`
+2. Verify that your local version works
 
 ### Working with your own app
 
