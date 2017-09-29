@@ -1,245 +1,188 @@
-# Contributing to Storybook
+# Storybook
 
-Thanks for your interest in improving Storybook! We are a community-driven project and welcome contributions of all kinds: from discussion to documentation to bugfixes to feature improvements.
+[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
+[![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
+[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
+[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-Please review this document to help to streamline the process and save everyone's precious time.
+* * *
 
-This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
+Storybook is a development environment for UI components.
+It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
-## Issues
+## Intro
 
-No software is bug free. So, if you got an issue, follow these steps:
+![Storybook Screenshot](app/react/docs/demo.gif)
 
--   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
-    -   If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
--   If none of that is helping, create an issue with with following information:
-    -   Clear title (shorter is better).
-    -   Describe the issue in clear language.
-    -   Share error logs, screenshots and etc.
-    -   To speed up the issue fixing process, send us a sample repo with the issue you faced:
+Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
-### Testing against `master`
+Here are some featured examples that you can reference to see how Storybook works: <https://storybook.js.org/examples/>
 
-To test your project against the current latest version of storybook, you can clone the repository and link it with `yarn`. Try following these steps:
+Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduction/) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
 
-1.  Download the latest version of this project, and build it:
+## Table of contents
 
-```sh
-git clone https://github.com/storybooks/storybook.git
-cd storybook
-yarn install
-yarn bootstrap --core
-```
+-   [Getting Started](#getting-started)
+-   [Projects](#projects)
+    -   [Main Projects](#main-projects)
+    -   [Sub Projects](#sub-projects)
+    -   [Addons](#addons)
+-   [Contributing](#contributing)
+    -   [Development scripts](#development-scripts)
+    -   [Backers](#backers)
+    -   [Sponsors](#sponsors)
 
-2.  Link `storybook` and any other required dependencies:
+## Getting Started
 
-```sh
-cd app/react
-yarn link
-
-cd <your-project>
-yarn link @storybook/react
-
-# repeat with whichever other parts of the monorepo you are using.
-```
-
-### Reproductions
-
-The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
-
-A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
+First install storybook:
 
 ```sh
-# Download and build this repository:
-git clone https://github.com/storybooks/storybook.git
-cd storybook
-yarn install
-yarn bootstrap --core
-
-cd examples/cra-kitchen-sink
-
-# make changes to try and reproduce the problem, such as adding components + stories
-yarn start storybook
-
-# see if you can see the problem, if so, commit it:
-git checkout "branch-describing-issue"
-git add -A
-git commit -m "reproduction for issue #123"
-
-# fork the storybook repo to your account, then add the resulting remote
-git remote add <your-username> https://github.com/<your-username>/storybook.git
-git push -u <your-username> master
-```
-
-If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
-
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
-
-## Pull Requests (PRs)
-
-We welcome your contributions. There are many ways you can help us. This is few of those ways:
-
--   Fix typos and add more [documentation](https://github.com/storybooks/storybook/labels/needs%20docs).
--   Try to fix some [bugs](https://github.com/storybooks/storybook/labels/bug).
--   Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
--   Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
-
-Before you submit a new PR, make you to run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
-
-### Reviewing PRs
-
-**As a PR submitter**, you should reference the issue if there is one, include a short description of what you contributed and, if it is a code change, instructions for how to manually test out the change. This is informally enforced by our [PR template](https://github.com/storybooks/storybook/blob/master/.github/PULL_REQUEST_TEMPLATE.md). If your PR is reviewed as only needing trivial changes (e.g. small typos etc), and you have commit access, then you can merge the PR after making those changes.
-
-**As a PR reviewer**, you should read through the changes and comment on any potential problems. If you see something cool, a kind word never hurts either! Additionally, you should follow the testing instructions and manually test the changes. If the instructions are missing, unclear, or overly complex, feel free to request better instructions from the submitter. Unless the PR is tagged with the `do not merge` label, if you approve the review and there is no other required discussion or changes, you should also go ahead and merge the PR.
-
-## Issue Triage
-
-If you are looking for a way to help the project, triaging issues is a great place to start. Here's how you can help:
-
-### Responding to issues
-
-Issues that are tagged `question / support` or `needs reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using [this technique](https://github.com/storybooks/storybook/blob/master/CONTRIBUTING.md#reproductions).
-
-### Triaging issues
-
-Once you've helped out on a few issues, if you'd like triage access you can help label issues and respond to reporters.
-
-We use the following label scheme to categorize issues:
-
--   **type** - `bug`, `feature`, `question / support`, `discussion`, `greenkeeper`, `maintenance`.
--   **area** - `addon: x`, `addons-api`, `stories-api`, `ui`, etc.
--   **status** - `needs reproduction`, `needs PR`, `in progress`, etc.
-
-All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `greenkeeper` is for keeping package dependencies up to date. `maintenance` is a catch-all for any kind of cleanup or refactoring.
-
-They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can easily see all of the issues for a particular area, and keep the total number of open issues under control.
-
-For example, here is the list of [open, untyped issues](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20-label%3A%22bug%22%20-label%3A%22discussion%22%20-label%3A%22feature%22%20-label%3A%22maintenance%22%20-label%3A%22question%20%2F%20support%22%20-label%3A%22documentation%22%20-label%3A%22greenkeeper%22), or here is a list of [bugs that have not been modified since 2017-04-01](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3A%22bug%22%20updated%3A%3C%3D2017-04-01%20). For more info see [searching issues](https://help.github.com/articles/searching-issues/) in the Github docs.
-
-If an issue is a `bug`, and it doesn't have a clear reproduction that you have personally confirmed, label it `needs reproduction` and ask the author to try and create a reproduction, or have a go yourself.
-
-### Closing issues
-
--   Duplicate issues should be closed with a link to the original.
--   Unreproducible issues should be closed if it's not possible to reproduce them (if the reporter drops offline,
-    it is reasonable to wait 2 weeks before closing).
--   `bug`s should be labelled `merged` when merged, and be closed when the issue is fixed and released.
--   `feature`s, `maintenance`s, `greenkeeper`s should be labelled `merged` when merged,
-    and closed when released or if the feature is deemed not appropriate.
--   `question / support`s should be closed when the question has been answered.
-    If the questioner drops offline, a reasonable period to wait is two weeks.
--   `discussion`s should be closed at a maintainer's discretion.
-
-## Development Guide
-
-> If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/lib/ui) page.
-
-This project written in ES2016+ syntax so, we need to transpile it before use.
-So run the following command:
-
-```sh
-yarn dev
-```
-
-This will watch files and transpile in watch mode.
-
-### Linking
-
-First of all link this repo with:
-
-```sh
-yarn link
-```
-
-In order to test features you add, you may need to link the local copy of this repo.
-For that we need a sample project. Let's create it.
-
-```sh
-yarn global add create-react-app getstorybook
-create-react-app my-demo-app
-cd my-demo-app
+npm i -g @storybook/cli
+cd my-react-app
 getstorybook
 ```
 
-> It's pretty important to create a very simple sample project like above.
-> Otherwise some of the functionality won't work because of linking.
+Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
-Then link storybook inside the sample project with:
-
-```sh
-yarn link @storybook/react
-```
-
-### Getting Changes
-
-After you've done any change, you need to run the `yarn storybook` command every time to see those changes.
-
-## Release Guide
-
-This section is for Storybook maintainers who will be creating releases. It assumes:
-
--   yarn >= 1.0.0 (otherwise you should pass a -- before command arguments)
--   you've yarn linked `pr-log` from <https://github.com/storybooks/pr-log/pull/2>
-
-The current manual release sequence is as follows:
-
--   Generate a changelog and verify the release by hand
--   Push the changelog to master or the release branch
--   Clean, build, and publish the release
--   Cut and paste the changelog to the github release page, and mark it as a (pre-) release
-
-This sequence applies to both releases and pre-releases, but differs slightly between the two.
-
-**NOTE: This is a work in progress. Don't try this unless you know what you're doing. We hope to automate this in CI, so this process is designed with that in mind.**
-
-#### Prerelease:
+**Storybook v2.x migration note**: If you're using Storybook v2.x and want to shift to 3.x version the easiest way is:
 
 ```sh
-# make sure you current with origin/master.
-git checkout release/X.Y
-git status
-
-# generate changelog and edit as appropriate
-# generates a Next section
-yarn changelog Next
-
-# Edit the changelog/PRs as needed, then commit
-git commit -m "Updated changelog for vX.Y"
-
-# clean build
-yarn bootstrap --reset --core
+npm i -g @storybook/cli
+cd my-storybook-v2-app
+getstorybook
 ```
 
-> **NOTE:** the very first time you publish a scoped package (`@storybook/x`) you need to publish it by hand because the default for scoped packages is private, and we need to make our packages public. If you try to publish a package for the first time using our `lerna` publish script, `lerna` will crash halfway through and you'll be in a world of pain.
+It runs a codemod to update all package names. Read all migration details in our [Migration Guide](MIGRATION.md)
 
-```sh
-# publish and tag the release
-yarn run publish --concurrency 1 --npm-tag=alpha
+For full documentation on using Storybook visit: [storybook.js.org](https://storybook.js.org)
 
-# update the release page
-open https://github.com/storybooks/storybook/releases
-```
+## Projects
 
-#### Full release:
+### Main Projects
 
-```sh
-# make sure you current with origin/master.
-git checkout master
-git status
+-   [Storybook for react](app/react) - Storybook for React components
+-   [Storybook for react-native](app/react-native) - Storybook for React components
 
-# generate changelog and edit as appropriate
-# generates a vNext section
-yarn changelog X.Y
+### Sub Projects
 
-# Edit the changelog/PRs as needed, then commit
-git commit -m "Changelog for vX.Y"
+-   [CLI](lib/cli) - Streamlined installation for a variety of app types
+-   [examples](examples) - Code examples to illustrate different Storybook use cases
 
-# clean build
-yarn bootstrap --reset --core
+### Addons
 
-# publish and tag the release
-yarn run publish --concurrency 1
+-   [storyshots](addons/storyshots) - Easy snapshot testing for storybook
+-   [actions](addons/actions/) - Log actions as users interact with components in storybook
+-   [links](addons/links/) - Create links between stories
+-   [comments](addons/comments/) - Comment on storybook stories
+-   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
+-   [info](addons/info/) - Annotate stories with extra component usage information
+-   [knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
+-   [notes](addons/notes/) - Annotate storybook stories with notes
+-   [options](addons/options/) - Customize the storybook UI in code
 
-# update the release page
-open https://github.com/storybooks/storybook/releases
-```
+## Contributing
+
+We welcome contributions to Storybook!
+
+-   ⇄ Pull requests and ★ Stars are always welcome.
+-   Read our [contributing guide](CONTRIBUTING.md) to get started.
+
+### Development scripts
+
+#### `yarn bootstrap`
+
+> Installs package dependencies and links packages together - using lerna
+
+#### `yarn run publish`
+
+> Push a release to git and npm
+> will ask for version in interactive mode - using lerna.
+
+#### `yarn lint`
+
+> boolean check if code conforms to linting rules - uses remark & eslint
+
+-   `yarn lint:js` - will check js
+-   `yarn lint:md` - will check markdown + code samples
+
+-   `yarn lint:js --fix` - will automatically fix js
+-   `npm run lint:md -- -o` - will automatically fix markdown
+
+#### `yarn test`
+
+> boolean check if unit tests all pass - uses jest
+
+-   `yarn test:watch` - will run tests in watch-mode
+
+### Backers
+
+Support us with a monthly donation and help us continue our activities. \[[Become a backer](https://opencollective.com/storybook#backer)]
+
+<a href="https://opencollective.com/storybook/backer/0/website" target="_blank"><img src="https://opencollective.com/storybook/backer/0/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/1/website" target="_blank"><img src="https://opencollective.com/storybook/backer/1/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/2/website" target="_blank"><img src="https://opencollective.com/storybook/backer/2/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/3/website" target="_blank"><img src="https://opencollective.com/storybook/backer/3/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/4/website" target="_blank"><img src="https://opencollective.com/storybook/backer/4/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/5/website" target="_blank"><img src="https://opencollective.com/storybook/backer/5/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/6/website" target="_blank"><img src="https://opencollective.com/storybook/backer/6/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/7/website" target="_blank"><img src="https://opencollective.com/storybook/backer/7/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/8/website" target="_blank"><img src="https://opencollective.com/storybook/backer/8/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/9/website" target="_blank"><img src="https://opencollective.com/storybook/backer/9/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/10/website" target="_blank"><img src="https://opencollective.com/storybook/backer/10/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/11/website" target="_blank"><img src="https://opencollective.com/storybook/backer/11/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/12/website" target="_blank"><img src="https://opencollective.com/storybook/backer/12/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/13/website" target="_blank"><img src="https://opencollective.com/storybook/backer/13/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/14/website" target="_blank"><img src="https://opencollective.com/storybook/backer/14/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/15/website" target="_blank"><img src="https://opencollective.com/storybook/backer/15/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/16/website" target="_blank"><img src="https://opencollective.com/storybook/backer/16/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/17/website" target="_blank"><img src="https://opencollective.com/storybook/backer/17/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/18/website" target="_blank"><img src="https://opencollective.com/storybook/backer/18/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/19/website" target="_blank"><img src="https://opencollective.com/storybook/backer/19/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/20/website" target="_blank"><img src="https://opencollective.com/storybook/backer/20/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/21/website" target="_blank"><img src="https://opencollective.com/storybook/backer/21/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/22/website" target="_blank"><img src="https://opencollective.com/storybook/backer/22/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/23/website" target="_blank"><img src="https://opencollective.com/storybook/backer/23/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/24/website" target="_blank"><img src="https://opencollective.com/storybook/backer/24/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/25/website" target="_blank"><img src="https://opencollective.com/storybook/backer/25/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/26/website" target="_blank"><img src="https://opencollective.com/storybook/backer/26/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/27/website" target="_blank"><img src="https://opencollective.com/storybook/backer/27/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/28/website" target="_blank"><img src="https://opencollective.com/storybook/backer/28/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/backer/29/website" target="_blank"><img src="https://opencollective.com/storybook/backer/29/avatar.svg"></a>
+
+### Sponsors
+
+Become a sponsor and get your logo on our README on Github with a link to your site. \[[Become a sponsor](https://opencollective.com/storybook#sponsor)]
+
+<a href="https://opencollective.com/storybook/sponsor/0/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/1/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/2/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/3/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/4/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/5/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/6/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/7/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/8/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/9/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/10/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/10/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/11/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/11/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/12/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/12/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/13/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/13/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/14/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/14/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/15/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/15/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/16/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/16/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/17/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/17/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/18/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/18/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/19/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/19/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/20/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/20/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/21/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/21/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/22/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/22/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/23/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/23/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/24/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/24/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/25/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/25/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/26/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/26/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/27/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/27/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/28/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/28/avatar.svg"></a>
+<a href="https://opencollective.com/storybook/sponsor/29/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/29/avatar.svg"></a>
