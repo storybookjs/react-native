@@ -206,6 +206,8 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 
 Within the `examples` folder of the Storybook repo, you will find kitchen sink examples of storybook implementations for the various platforms that storybook supports.
 
+Not only do these show many of the options and addons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
+
 #### React and Vue
 
 1. `yarn storybook`
@@ -238,11 +240,11 @@ First we are going to install storyboook, then we are going to link `@storybook/
 
 ##### 2. Link
 
-**_Note_**: This process is the same fore `@storybook/vue`, `@storybook/addon-foo`, etc
+**_Note_**: This process is the same for `@storybook/vue`, `@storybook/addon-foo`, etc
 
 1.  Go to your storybook _root_ directory 
 2.  `yarn dev`
-3.  Wait for the output to stop 
+3.  Wait until the output stops (changes you make will be transpiled into dist and logged here)
 4.  Go to your storybook-sandbox-app directory
 5.  `yarn link @storybook/react`
 6.  `yarn storybook`
