@@ -6,7 +6,7 @@
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "node ../../scripts/prepublish.js"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "global": "^4.3.2"
