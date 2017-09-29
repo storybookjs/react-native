@@ -127,7 +127,7 @@ react-svg-pan-zoom:
   source: https://github.com/chrvadala/react-svg-pan-zoom
   demo: https://chrvadala.github.io/react-svg-pan-zoom/
 fyndiq-ui:
-  thumbnail: ./thumbnails/fyndiq-ui.png
+  thumbnail: ./thumbnails/fyndiq.jpg
   title: Fyndiq
   description: Fyndiq UI Component library
   source: https://github.com/fyndiq/fyndiq-ui
