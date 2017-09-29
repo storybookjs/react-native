@@ -175,45 +175,89 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 
 > If you want to work on a UI feature, refer to the [Storybook UI](https://github.com/storybooks/storybook/tree/master/lib/ui) page.
 
-This project written in ES2016+ syntax so, we need to transpile it before use.
-So run the following command:
+### Prerequisites
 
-```sh
-yarn dev
-```
+Please have the **_latest_** stable versions of the following on your machine
 
-This will watch files and transpile in watch mode.
+-   node
+-   yarn
 
-### Linking
+### Initial Setup
 
-First of all link this repo with:
+If you run into trouble here, make sure your node, npm, and **_yarn_** are on the latest versions (yarn at least v1.0.0).
 
-```sh
-yarn link
-```
+1.  `cd ~` (optional)
+2.  `git clone https://github.com/storybooks/storybook.git` _bonus_: use your own fork for this step
+3.  `cd storybook`
+4.  `yarn`
+5.  `yarn bootstrap --core`
+6.  `yarn test --core`
+7. `yarn dev` *You must have this running for your changes to show up*
 
-In order to test features you add, you may need to link the local copy of this repo.
-For that we need a sample project. Let's create it.
+#### Bootstrapping everything
 
-```sh
-yarn global add create-react-app getstorybook
-create-react-app my-demo-app
-cd my-demo-app
-getstorybook
-```
+*This method is slow*
 
-> It's pretty important to create a very simple sample project like above.
-> Otherwise some of the functionality won't work because of linking.
+1.  `yarn bootstrap --all`
+2.  Have a beer 🍺
+3.  `yarn test` (to verify everything worked)
 
-Then link storybook inside the sample project with:
+### Working with the kitchen sink apps
 
-```sh
-yarn link @storybook/react
-```
+Within the `examples` folder of the Storybook repo, you will find kitchen sink examples of storybook implementations for the various platforms that storybook supports.
 
-### Getting Changes
+Not only do these show many of the options and addons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
 
-After you've done any change, you need to run the `yarn storybook` command every time to see those changes.
+#### React and Vue
+
+1. `yarn storybook`
+2. Verify that your local version works
+
+### Working with your own app
+
+#### Linking Storybook
+
+Storybook is broken up into sub-projects that you can install as you need them. For this example we will be working with `@storybook/react`.
+**Note:** You need to `yarn link` from inside the sub project you are working on **_NOT_** the storybook root directory
+
+1.  `cd app/react`
+2.  `yarn link`
+
+#### Connecting Your App To Storybook
+
+**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by simply linking each addon you want to use.
+This applies for the kitchen sink apps as well as your own projects.
+
+*Make sure `yarn dev` is running*
+
+##### 1. Setup storybook in your project
+
+First we are going to install storyboook, then we are going to link `@storybook/react` into our project. This will replace `node_modules/@storybook/react` with a symlink to our local version of storybook. 
+
+1.  `getstorybook`
+2.  `yarn storybook`
+3.  Verify that your local version works
+
+##### 2. Link
+
+**_Note_**: This process is the same for `@storybook/vue`, `@storybook/addon-foo`, etc
+
+1.  Go to your storybook _root_ directory 
+2.  `yarn dev`
+3.  Wait until the output stops (changes you make will be transpiled into dist and logged here)
+4.  Go to your storybook-sandbox-app directory
+5.  `yarn link @storybook/react`
+6.  `yarn storybook`
+
+#### Verify your local version is working
+
+You should now have a working storybook dev environment up and running. To verify this you can make changes to the following file:
+
+`open app/react/src/client/manager/preview.js`
+
+Save and go to `http://localhost:9009` (or wherever storybook is running)
+
+If you don't see the changes rerun `yarn storybook` again in your sandbox app
 
 ## Release Guide
 
