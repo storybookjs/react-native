@@ -2,8 +2,6 @@ defaults: &defaults
   working_directory: /tmp/storybook
   docker:
     - image: node:8
-  environment:
-    BASH_ENV: ~/.bashrc
 
 version: 2
 dependencies:

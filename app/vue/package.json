@@ -10,8 +10,8 @@
   "main": "dist/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",
-    "start-storybook": "bin/index.js",
-    "storybook-server": "bin/index.js"
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
   },
   "repository": {
     "type": "git",

@@ -96,7 +96,7 @@ We welcome contributions to Storybook!
 
 > Installs package dependencies and links packages together - using lerna
 
-#### `yarn publish`
+#### `yarn run publish`
 
 > Push a release to git and npm
 > will ask for version in interactive mode - using lerna.
@@ -109,7 +109,7 @@ We welcome contributions to Storybook!
 -   `yarn lint:md` - will check markdown + code samples
 
 -   `yarn lint:js --fix` - will automatically fix js
--   `yarn lint:md -o` - will automatically fix markdown
+-   `npm run lint:md -- -o` - will automatically fix markdown
 
 #### `yarn test`
 

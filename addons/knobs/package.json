@@ -11,7 +11,6 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
-    "start": "./example/prepare.sh",
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {

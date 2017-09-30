@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](<>).
+This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
 
 ## Issues
 
@@ -28,7 +28,7 @@ To test your project against the current latest version of storybook, you can cl
 git clone https://github.com/storybooks/storybook.git
 cd storybook
 yarn install
-yarn bootstrap
+yarn bootstrap --core
 ```
 
 The bootstrap command will ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
@@ -75,42 +75,42 @@ In that case, please check the git diff before commiting to make sure it only co
 
 If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
 
-    ```sh
+````sh
     cd app/react
     yarn link
 
     cd <your-project>
     yarn link @storybook/react
 
-    # repeat with whichever other parts of the monorepo you are using.
-    ```
+        # repeat with whichever other parts of the monorepo you are using.
+        ```
 
-### Reproductions
+    ### Reproductions
 
-The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
+    The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
-A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
+    A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
 
-```sh
-# Download and build this repository:
-git clone https://github.com/storybooks/storybook.git
-cd storybook
-yarn install
-yarn bootstrap
+    ```sh
+    # Download and build this repository:
+    git clone https://github.com/storybooks/storybook.git
+    cd storybook
+    yarn install
+    yarn bootstrap --core
 
-# make changes to try and reproduce the problem, such as adding components + stories
-cd examples/cra-kitchen-sink
-yarn storybook
+    # make changes to try and reproduce the problem, such as adding components + stories
+    cd examples/cra-kitchen-sink
+    yarn storybook
 
-# see if you can see the problem, if so, commit it:
-git checkout "branch-describing-issue"
-git add -A
-git commit -m "reproduction for issue #123"
+    # see if you can see the problem, if so, commit it:
+    git checkout "branch-describing-issue"
+    git add -A
+    git commit -m "reproduction for issue #123"
 
-# fork the storybook repo to your account, then add the resulting remote
-git remote add <your-username> https://github.com/<your-username>/storybook.git
-git push -u <your-username> master
-```
+    # fork the storybook repo to your account, then add the resulting remote
+    git remote add <your-username> https://github.com/<your-username>/storybook.git
+    git push -u <your-username> master
+````
 
 If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
@@ -192,11 +192,11 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 4.  `yarn`
 5.  `yarn bootstrap --core`
 6.  `yarn test --core`
-7. `yarn dev` *You must have this running for your changes to show up*
+7.  `yarn dev` _You must have this running for your changes to show up_
 
 #### Bootstrapping everything
 
-*This method is slow*
+_This method is slow_
 
 1.  `yarn bootstrap --all`
 2.  Have a beer 🍺
@@ -210,8 +210,8 @@ Not only do these show many of the options and addons available, they are also a
 
 #### React and Vue
 
-1. `yarn storybook`
-2. Verify that your local version works
+1.  `yarn storybook`
+2.  Verify that your local version works
 
 ### Working with your own app
 
@@ -228,7 +228,7 @@ Storybook is broken up into sub-projects that you can install as you need them. 
 **_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by simply linking each addon you want to use.
 This applies for the kitchen sink apps as well as your own projects.
 
-*Make sure `yarn dev` is running*
+_Make sure `yarn dev` is running_
 
 ##### 1. Setup storybook in your project
 
@@ -323,7 +323,7 @@ git commit -m "Changelog for vX.Y"
 yarn bootstrap --reset --core
 
 # publish and tag the release
-yarn run publish -- --concurrency 1
+yarn run publish --concurrency 1
 
 # update the release page
 open https://github.com/storybooks/storybook/releases
