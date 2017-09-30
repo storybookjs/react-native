@@ -210,6 +210,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                       style={Object {}}
                     >
                       <span>
+                        {
                         <span
                           style={
                             Object {
@@ -219,6 +220,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                         >
                           clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -330,6 +332,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                   </td>
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -339,6 +342,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                       >
                         false
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -370,6 +374,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                   </td>
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -379,6 +384,7 @@ exports[`Storyshots AddonInfo.DocgenButton DocgenButton 1`] = `
                       >
                         onClick()
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -678,6 +684,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                       style={Object {}}
                     >
                       <span>
+                        {
                         <span
                           style={
                             Object {
@@ -687,6 +694,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                         >
                           clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -794,6 +802,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                   <td />
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -803,6 +812,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                       >
                         false
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -815,6 +825,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                   <td />
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -824,6 +835,7 @@ exports[`Storyshots AddonInfo.FlowTypeButton FlowTypeButton 1`] = `
                       >
                         onClick()
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -1772,6 +1784,7 @@ exports[`Storyshots Button with new info 1`] = `
                   </td>
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -1781,6 +1794,7 @@ exports[`Storyshots Button with new info 1`] = `
                       >
                         false
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -1797,6 +1811,7 @@ exports[`Storyshots Button with new info 1`] = `
                   </td>
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -1806,6 +1821,7 @@ exports[`Storyshots Button with new info 1`] = `
                       >
                         0
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -2326,6 +2342,7 @@ exports[`Storyshots Button with some info 1`] = `
                   </td>
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -2335,6 +2352,7 @@ exports[`Storyshots Button with some info 1`] = `
                       >
                         false
                       </span>
+                      }
                     </span>
                   </td>
                   <td />
@@ -2351,6 +2369,7 @@ exports[`Storyshots Button with some info 1`] = `
                   </td>
                   <td>
                     <span>
+                      {
                       <span
                         style={
                           Object {
@@ -2360,6 +2379,7 @@ exports[`Storyshots Button with some info 1`] = `
                       >
                         0
                       </span>
+                      }
                     </span>
                   </td>
                   <td />

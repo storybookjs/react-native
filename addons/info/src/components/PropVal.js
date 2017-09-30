@@ -110,7 +110,7 @@ export default function PropVal(props) {
 
   if (!braceWrap) return content;
 
-  return <span>{content}</span>;
+  return <span>&#123;{content}&#125;</span>;
 }
 
 PropVal.defaultProps = {
