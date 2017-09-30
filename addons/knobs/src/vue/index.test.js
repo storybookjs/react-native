@@ -4,7 +4,7 @@ import KnobStore from '../KnobStore';
 
 describe('Vue handler', () => {
   it('Returns a component with a created function', () => {
-    const testChannel = { emit: () => {} };
+    const testChannel = { emit: jest.fn(), on: jest.fn() };
     const testStory = () => ({ template: '<div> testStory </div>' });
     const testContext = {
       kind: 'Foo',

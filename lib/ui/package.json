@@ -16,7 +16,7 @@
   "dependencies": {
     "@hypnosphi/fuse.js": "^3.0.9",
     "@storybook/components": "^3.3.0-alpha.0",
-    "babel-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
     "global": "^4.3.2",
@@ -27,19 +27,19 @@
     "lodash.sortby": "^4.7.0",
     "mantra-core": "^1.7.0",
     "podda": "^1.2.2",
-    "prop-types": "^15.5.10",
-    "qs": "^6.4.0",
+    "prop-types": "^15.6.0",
+    "qs": "^6.5.1",
     "react-fuzzy": "^0.4.1",
     "react-icons": "^2.2.5",
-    "react-inspector": "^2.1.6",
+    "react-inspector": "^2.2.0",
     "react-komposer": "^2.0.0",
-    "react-modal": "^2.2.4",
+    "react-modal": "^2.3.2",
     "react-split-pane": "^0.1.65",
     "react-treebeard": "^2.0.3",
-    "redux": "^3.6.0"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
-    "enzyme": "^2.9.1"
+    "enzyme": "^3.0.0"
   },
   "peerDependencies": {
     "react": "*",

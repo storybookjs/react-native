@@ -21,15 +21,15 @@
   },
   "dependencies": {
     "@storybook/addons": "^3.3.0-alpha.0",
-    "babel-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "format-json": "^1.0.3",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
     "react-textarea-autosize": "^4.3.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "peerDependencies": {
     "react": "*"

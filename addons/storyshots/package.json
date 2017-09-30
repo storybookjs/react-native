@@ -15,11 +15,11 @@
     "example": "jest storyshot.test"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
     "jest-specific-snapshot": "^0.2.0",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
     "read-pkg-up": "^2.0.0"
   },
   "devDependencies": {
@@ -33,8 +33,8 @@
     "babel-preset-react": "^6.24.1",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0-alpha.0",

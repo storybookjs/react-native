@@ -1,15 +1,5 @@
 collectors:
 
-- type: js-npm
-  path: docs
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
 # Temporarily disabled
 # - type: js-npm
 #   path: examples/crna-kitchen-sink
@@ -20,16 +10,6 @@ collectors:
 #   # create issues for new major versions
 #   - type: repo-issue
 #     versions: "Y.0.0"
-
-- type: js-npm
-  path: examples/vue-kitchen-sink
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
 
 # Temporarily disabled
 # - type: js-npm
@@ -42,242 +22,36 @@ collectors:
 #   - type: repo-issue
 #     versions: "Y.0.0"
 
-- type: js-npm
-  path: examples/cra-kitchen-sink
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: app/react-native
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: app/vue
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: app/react
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
+- type: js-lerna
   path: /
+  settings:
+    collect_root: true
+    bootstrap_command: yarn
   actors:
   # pull requests for updates to our major version
-  - type: js-npm
+  - type: js-lerna
     versions: "L.Y.Y"
+    settings:
+      bootstrap_command: yarn
+      github_labels:
+      - dependencies:update
+      github_assignees:
+      - Hypnosphi
   # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
+#  - type: repo-issue
+#    versions: "Y.0.0"
 
 - type: js-npm
-  path: lib/channel-websocket
+  path: docs
   actors:
   # pull requests for updates to our major version
   - type: js-npm
     versions: "L.Y.Y"
+    settings:
+      github_labels:
+      - dependencies:update
+      github_assignees:
+      - Hypnosphi
   # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/channel-postmessage
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/components
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/codemod
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/ui
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/cli
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/channels
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: lib/addons
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/info
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/centered
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/knobs
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/graphql
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/notes
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/comments
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/actions
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/storyshots
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/options
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/links
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
-
-- type: js-npm
-  path: addons/events
-  actors:
-  # pull requests for updates to our major version
-  - type: js-npm
-    versions: "L.Y.Y"
-  # create issues for new major versions
-  - type: repo-issue
-    versions: "Y.0.0"
+#  - type: repo-issue
+#    versions: "Y.0.0"
