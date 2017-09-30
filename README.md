@@ -1,6 +1,5 @@
 # Storybook
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
@@ -64,6 +63,7 @@ For full documentation on using Storybook visit: [storybook.js.org](https://stor
 ### Main Projects
 
 -   [Storybook for react](app/react) - Storybook for React components
+-   [Storybook for vue](app/vue) - Storybook for Vue components
 -   [Storybook for react-native](app/react-native) - Storybook for React components
 
 ### Sub Projects

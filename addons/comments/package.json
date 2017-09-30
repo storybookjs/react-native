@@ -32,7 +32,7 @@
     "marked": "^0.3.6",
     "moment": "^2.18.1",
     "prop-types": "^15.6.0",
-    "react-render-html": "^0.1.6",
+    "react-render-html": "^0.5.2",
     "react-textarea-autosize": "^4.3.0"
   },
   "devDependencies": {
