@@ -59,7 +59,7 @@ yarn bootstrap --core
 cd examples/cra-kitchen-sink
 
 # make changes to try and reproduce the problem, such as adding components + stories
-yarn start storybook
+yarn storybook
 
 # see if you can see the problem, if so, commit it:
 git checkout "branch-describing-issue"
