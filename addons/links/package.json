@@ -17,7 +17,7 @@
   },
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublish": "node ../../scripts/prepublish.js",
+    "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {

@@ -18,11 +18,17 @@ log.heading = 'storybook';
 const prefix = 'bootstrap';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-const spawn = command => {
-  const out = childProcess.spawnSync(`${command}`, {
-    shell: true,
-    stdio: 'inherit',
-  });
+const spawn = (command, options = {}) => {
+  const out = childProcess.spawnSync(
+    `${command}`,
+    Object.assign(
+      {
+        shell: true,
+        stdio: 'inherit',
+      },
+      options
+    )
+  );
 
   if (out.status !== 0) {
     process.exit(out.status);
@@ -56,14 +62,14 @@ const createTask = ({ defaultValue, option, name, check = () => true, command, p
 
 const tasks = {
   reset: createTask({
-    name: `Clean and re-install root dependencies ${chalk.red('(reset)')}`,
+    name: `Clean and re-install dependencies ${chalk.red('(reset)')}`,
     defaultValue: false,
     option: '--reset',
     command: () => {
       log.info(prefix, 'git clean');
       spawn('git clean -fdx --exclude=".vscode" --exclude=".idea"');
       log.info(prefix, 'yarn install');
-      spawn('yarn install --no-lockfile');
+      spawn('yarn install');
     },
   }),
   core: createTask({
@@ -71,7 +77,10 @@ const tasks = {
     defaultValue: true,
     option: '--core',
     command: () => {
-      spawn('yarn bootstrap:core');
+      log.info(prefix, 'yarn workspace');
+      spawn('yarn install');
+      log.info(prefix, 'prepare');
+      spawn('lerna run prepare -- --silent');
     },
   }),
   docs: createTask({
