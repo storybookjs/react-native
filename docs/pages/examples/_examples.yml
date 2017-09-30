@@ -126,3 +126,9 @@ react-svg-pan-zoom:
   description: A React component that adds pan and zoom features to SVG
   source: https://github.com/chrvadala/react-svg-pan-zoom
   demo: https://chrvadala.github.io/react-svg-pan-zoom/
+fyndiq-ui:
+  thumbnail: ./thumbnails/fyndiq.jpg
+  title: Fyndiq
+  description: Fyndiq UI Component library
+  source: https://github.com/fyndiq/fyndiq-ui
+  demo: https://fyndiq.github.io/fyndiq-ui/
