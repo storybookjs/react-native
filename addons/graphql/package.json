@@ -21,7 +21,7 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
-    "global": "^4.3.2"
+    "global": "^4.3.2",
     "graphiql": "^0.11.5",
     "graphql": "^0.11.6",
     "prop-types": "^15.6.0"
