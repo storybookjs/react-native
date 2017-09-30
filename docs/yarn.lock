@@ -6963,9 +6963,9 @@ react-treebeard@^2.0.3:
     shallowequal "^0.2.2"
     velocity-react "^1.3.1"
 
-react-typography@^0.15.0:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.15.10.tgz#1ece7bbd856735bd2ada4f6c40be508e994655a8"
+react-typography@^0.16.5:
+  version "0.16.5"
+  resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.16.5.tgz#86e539430e0efb3a326c9de20d9e3a32662a2a6b"
 
 react@^15.6.1:
   version "15.6.2"
