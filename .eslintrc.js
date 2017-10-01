@@ -31,10 +31,9 @@ module.exports = {
     'class-methods-use-this': ignore,
     'arrow-parens': [warn, 'as-needed'],
     'space-before-function-paren': ignore,
-    'import/no-unresolved': warn,
+    'import/no-unresolved': error,
     'import/extensions': [
-      // because of highlight.js and fuse.js
-      warn,
+      error,
       {
         js: 'never',
         json: 'always',

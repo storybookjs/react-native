@@ -28,4 +28,5 @@ if (code !== 0) {
 const licence = path.join(__dirname, '..', 'LICENSE');
 shell.cp(licence, './');
 
+// eslint-disable-next-line no-console
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));
