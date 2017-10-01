@@ -1,4 +1,4 @@
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import addons from '@storybook/addons';
 
@@ -14,8 +14,9 @@ describe('LinkTo', () => {
       const channel = mockChannel();
       addons.getChannel.mockReturnValue(channel);
 
-      const wrapper = mount(<LinkTo kind="foo" story="bar" />);
+      const wrapper = shallow(<LinkTo kind="foo" story="bar" />);
       await wrapper.instance().updateHref(wrapper.props());
+      wrapper.update();
       expect(wrapper).toMatchSnapshot();
     });
   });

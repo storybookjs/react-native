@@ -1,18 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LinkTo render should render a link 1`] = `
-<LinkTo
-  kind="foo"
-  story="bar"
->
-  <RoutedLink
-    href="?selectedKind=foo&selectedStory=bar"
-    onClick={[Function]}
-  >
-    <a
-      href="?selectedKind=foo&selectedStory=bar"
-      onClick={[Function]}
-    />
-  </RoutedLink>
-</LinkTo>
+<RoutedLink
+  href="?selectedKind=undefined&selectedStory=undefined"
+  onClick={[Function]}
+/>
 `;
