@@ -119,6 +119,10 @@ jobs:
           command: |
             yarn install
       - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core --docs
+      - run:
           name: "Linting"
           command: |
             yarn lint
