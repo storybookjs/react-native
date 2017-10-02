@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 import path from 'path';
 import program from 'commander';
@@ -41,7 +42,7 @@ server.listen(...listenAddr, err => {
     throw err;
   }
   const address = `http://${program.host || 'localhost'}:${program.port}/`;
-  console.info(`\nReact Native Storybook started on => ${address}\n`); // eslint-disable-line no-console
+  console.info(`\nReact Native Storybook started on => ${address}\n`);
   if (program.smokeTest) {
     process.exit(0);
   }
