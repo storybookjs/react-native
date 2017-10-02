@@ -6,7 +6,7 @@
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "vue-kitchen-sink"
+        "vue-example"
       ]
     }
   },
