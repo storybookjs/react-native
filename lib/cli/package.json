@@ -24,8 +24,7 @@
     "test-latest-cra": "cd test && ./test_latest_cra.sh",
     "posttest-latest-cra": "yarn posttest",
     "test": "cd test && ./run_tests.sh",
-    "posttest": "rm -rfd test/run",
-    "postinstall": "opencollective postinstall --collective=storybook"
+    "posttest": "rm -rfd test/run"
   },
   "dependencies": {
     "@storybook/codemod": "^3.3.0-alpha.0",
@@ -41,7 +40,6 @@
     "json5": "^0.5.1",
     "latest-version": "^3.1.0",
     "merge-dirs": "^0.2.1",
-    "opencollective": "^1.0.3",
     "semver": "^5.4.1",
     "shelljs": "^0.7.8",
     "update-notifier": "^2.1.0"

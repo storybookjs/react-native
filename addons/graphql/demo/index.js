@@ -49,4 +49,5 @@ express()
   .use('/graphql', graphqlHTTP({ schema, pretty: true }))
   .listen(3000);
 
+// eslint-disable-next-line no-console
 console.log('GraphQL server running on http://localhost:3000/graphql');

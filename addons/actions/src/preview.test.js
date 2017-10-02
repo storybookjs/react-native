@@ -9,7 +9,7 @@ describe('preview', () => {
   describe('action()', () => {
     it('should use a uuid for action ids', () => {
       const channel = { emit: jest.fn() };
-      const uuidGenerator = (function*() {
+      const uuidGenerator = (function* uuidGenerator() {
         yield '42';
         yield '24';
       })();
