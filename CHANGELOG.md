@@ -1,3 +1,49 @@
+# 3.2.12
+
+2017-October-02
+
+#### Bug Fixes
+
+-   addon-info: wrap prop values in braces [#1915](https://github.com/storybooks/storybook/pull/1915)
+-   Add polyfills to fix addon-actions in IE11 [#1917](https://github.com/storybooks/storybook/pull/1917)
+-   Gracefully handle fatal webpack errors. [#1918](https://github.com/storybooks/storybook/pull/1918)
+-   Fix polyfills loading order [#1905](https://github.com/storybooks/storybook/pull/1905)
+
+#### Documentation
+
+-   Improve documentation for react-native : clarify where left pane is [#1901](https://github.com/storybooks/storybook/pull/1901)
+
+#### Maintenance
+
+-   Use yarn workspaces on master [#1916](https://github.com/storybooks/storybook/pull/1916)
+-   Run `eslint --fix` on master [#1909](https://github.com/storybooks/storybook/pull/1909)
+-   Remove open collective notice from storybook install [#1940](https://github.com/storybooks/storybook/pull/1940)
+-   Run bootstrap before linting on CI [#1934](https://github.com/storybooks/storybook/pull/1934)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+14 PRs
+</summary>
+
+-   Update raf from 3.3.2 to 3.4.0 in / [#1939](https://github.com/storybooks/storybook/pull/1939)
+-   Update graphql from 0.7.2 to 0.11.6 in addons/graphql [#1930](https://github.com/storybooks/storybook/pull/1930)
+-   Update react-typography from 0.15.10 to 0.16.5 [#1927](https://github.com/storybooks/storybook/pull/1927)
+-   Update react-render-html from 0.1.6 to 0.5.2 in addons/comments [#1933](https://github.com/storybooks/storybook/pull/1933)
+-   Update react-datetime from 2.10.2 to 2.10.3 in addons/knobs [#1931](https://github.com/storybooks/storybook/pull/1931)
+-   Update typography from 0.15.12 to 0.16.6 [#1929](https://github.com/storybooks/storybook/pull/1929)
+-   Update graphiql from 0.7.8 to 0.11.5 in addons/graphql [#1928](https://github.com/storybooks/storybook/pull/1928)
+-   Update prettier from 1.7.2 to 1.7.3 in / [#1926](https://github.com/storybooks/storybook/pull/1926)
+-   Update react-stack-grid from 0.2.2 to 0.5.0 [#1925](https://github.com/storybooks/storybook/pull/1925)
+-   Update react-motion from 0.1.0 to 0.5.1 [#1924](https://github.com/storybooks/storybook/pull/1924)
+-   Update eslint from 4.7.2 to 4.8.0 in / [#1923](https://github.com/storybooks/storybook/pull/1923)
+-   Update chroma-js from 0.7.2 to 0.7.8 [#1922](https://github.com/storybooks/storybook/pull/1922)
+-   Use dependencies.io for dependencies management [#1920](https://github.com/storybooks/storybook/pull/1920)
+-   UPGRADE react & friends && UPGRADE other dependencies [#1908](https://github.com/storybooks/storybook/pull/1908)
+
+</details>
+
 # 3.2.11
 
 2017-September-27
