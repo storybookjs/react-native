@@ -6,11 +6,11 @@
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "vue-kitchen-sink",
+        "vue-example",
         "lib/cli/test/run/*"
       ]
     }
   },
   "concurrency": 1,
-  "version": "3.3.0-alpha.0"
+  "version": "3.3.0-alpha.1"
 }
