@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@storybook/addon-actions": "latest",
-    "@storybook/addon-links": "latest",
+    "@storybook/addon-links": "3.2.12",
     "@storybook/addons": "latest",
     "@storybook/react": "latest",
     "babel-cli": "^6.26.0",

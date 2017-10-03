@@ -17,7 +17,13 @@
     react-inspector "^2.1.6"
     uuid "^3.1.0"
 
-"@storybook/addon-links@^3.2.10", "@storybook/addon-links@latest":
+"@storybook/addon-links@3.2.12":
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.12.tgz#8b2f1d1496e1066d165d1e0615224a5e0a3e2db6"
+  dependencies:
+    "@storybook/addons" "^3.2.12"
+
+"@storybook/addon-links@^3.2.10":
   version "3.2.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.10.tgz#95ea12a405f42a570f4a6820722102310897d5f5"
   dependencies:
@@ -26,6 +32,10 @@
 "@storybook/addons@^3.2.10", "@storybook/addons@latest":
   version "3.2.10"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.10.tgz#dd71654674a417f62dcc91009c61e47dffdcac03"
+
+"@storybook/addons@^3.2.12":
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.12.tgz#61adccaa8c0016f1439dc8934d8d61042b35e741"
 
 "@storybook/channel-postmessage@^3.2.10":
   version "3.2.10"
