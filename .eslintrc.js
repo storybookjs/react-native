@@ -15,6 +15,9 @@ module.exports = {
     node: true,
     'jest/globals': true,
   },
+  settings: {
+    'import/core-modules': ['enzyme'],
+  },
   rules: {
     strict: [error, 'never'],
     'prettier/prettier': [
