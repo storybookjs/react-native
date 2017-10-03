@@ -17,10 +17,10 @@
     "storybook": "start-storybook -p 9009 -s pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "latest",
-    "@storybook/addon-links": "latest",
-    "@storybook/addons": "latest",
-    "@storybook/react": "latest",
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-links": "^3.2.12",
+    "@storybook/addons": "^3.2.12",
+    "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -48,7 +48,7 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.0.3",
-    "react-motion": "^0.5.1",
+    "react-motion": "^0.5.2",
     "react-responsive-grid": "^0.3.3",
     "react-router": "^2.6.1",
     "react-stack-grid": "^0.5.0",

@@ -1,5 +1,5 @@
 {
-  "lerna": "2.0.0",
+  "lerna": "2.3.1",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "commands": {
@@ -8,7 +8,8 @@
         "cra-kitchen-sink",
         "vue-example",
         "lib/cli/test/run/*"
-      ]
+      ],
+      "allowBranch": "released/3.3"
     }
   },
   "concurrency": 1,

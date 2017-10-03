@@ -38,9 +38,6 @@
     "react-treebeard": "^2.0.3",
     "redux": "^3.7.2"
   },
-  "devDependencies": {
-    "enzyme": "^3.0.0"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
