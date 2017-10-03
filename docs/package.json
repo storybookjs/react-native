@@ -17,7 +17,7 @@
     "storybook": "start-storybook -p 9009 -s pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "latest",
+    "@storybook/addon-actions": "3.2.12",
     "@storybook/addon-links": "latest",
     "@storybook/addons": "latest",
     "@storybook/react": "latest",
