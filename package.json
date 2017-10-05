@@ -107,10 +107,6 @@
       "*.json": [
         "yarn lint:js --fix",
         "git add"
-      ],
-      "*.md": [
-        "npm run lint:md -- -o",
-        "git add"
       ]
     },
     "verbose": true
