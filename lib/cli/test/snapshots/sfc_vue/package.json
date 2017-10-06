@@ -49,9 +49,9 @@
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0",
-    "@storybook/vue": "^3.3.0-alpha.0",
-    "@storybook/addon-actions": "^3.3.0-alpha.0",
-    "@storybook/addon-links": "^3.3.0-alpha.0"
+    "@storybook/vue": "^3.3.0-alpha.2",
+    "@storybook/addon-actions": "^3.3.0-alpha.2",
+    "@storybook/addon-links": "^3.3.0-alpha.2"
   },
   "engines": {
     "node": ">= 4.0.0",

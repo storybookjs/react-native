@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
 import { withNotes, WithNotes } from '@storybook/addon-notes';
-import { linkTo } from '@storybook/addon-links';
+import { LinkTo, linkTo, hrefTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
@@ -40,7 +40,7 @@ const EVENTS = {
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf('Welcome', module).add('to Storybook', () => <Welcome showKind="Button" />);
 
 const InfoButton = () => (
   <span
@@ -172,25 +172,52 @@ storiesOf('Button', module)
     )
   );
 
+storiesOf('AddonLink.Link', module)
+  .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)
+  .add('Second', () => <LinkTo story="First">Go to First</LinkTo>);
+
+storiesOf('AddonLink.Button', module)
+  .add('First', () => (
+    <button onClick={linkTo('AddonLink.Button', 'Second')}>Go to "Second"</button>
+  ))
+  .add('Second', () => (
+    <button onClick={linkTo('AddonLink.Button', 'First')}>Go to "First"</button>
+  ));
+
+storiesOf('AddonLink.Select', module)
+  .add('Index', () => (
+    <select value="Index" onChange={linkTo('AddonLink.Select', e => e.currentTarget.value)}>
+      <option>Index</option>
+      <option>First</option>
+      <option>Second</option>
+      <option>Third</option>
+    </select>
+  ))
+  .add('First', () => <LinkTo story="Index">Go back</LinkTo>)
+  .add('Second', () => <LinkTo story="Index">Go back</LinkTo>)
+  .add('Third', () => <LinkTo story="Index">Go back</LinkTo>);
+
+storiesOf('AddonLink.Href', module).add('log', () => {
+  hrefTo('AddonLink.Href', 'log').then(action('URL of this story'));
+
+  return <span>See action logger</span>;
+});
+
 storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () => (
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
 ));
 
-storiesOf(
-  'AddonInfo.ImportedPropsButton',
-  module
-).addWithInfo(
+storiesOf('AddonInfo.ImportedPropsButton', module).addWithInfo(
   'ImportedPropsButton',
   'Button with PropTypes imported from another file. Should fallback to using PropTypes for data.',
   () => <ImportedPropsButton onClick={action('clicked')} label="Docgen Button" />
 );
 
-storiesOf(
-  'AddonInfo.FlowTypeButton',
-  module
-).addWithInfo('FlowTypeButton', 'Some Description', () => (
-  <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
-));
+storiesOf('AddonInfo.FlowTypeButton', module).addWithInfo(
+  'FlowTypeButton',
+  'Some Description',
+  () => <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
+);
 
 storiesOf('App', module).add('full app', () => <App />);
 

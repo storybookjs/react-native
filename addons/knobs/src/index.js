@@ -9,10 +9,8 @@ import { knob, text, boolean, number, color, object, array, date, manager } from
 
 export { knob, text, boolean, number, color, object, array, date };
 
-deprecate(
-  () => {},
-  'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}'
-);
+deprecate(() => {},
+'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}');
 
 // generic higher-order component decorator for all platforms - usage is discouraged
 // This file Should be removed with 4.0 release

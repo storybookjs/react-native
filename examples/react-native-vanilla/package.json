@@ -8,7 +8,7 @@
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
-    "prop-types": "15.5.10",
+    "prop-types": "^15.6.0",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.1"
   },
@@ -28,6 +28,6 @@
     "@storybook/components": "file:../../packs/storybook-components.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "react-dom": "15.6.1"
+    "react-dom": "^16.0.0"
   }
 }

@@ -2,8 +2,6 @@ defaults: &defaults
   working_directory: /tmp/storybook
   docker:
     - image: node:8
-  environment:
-    BASH_ENV: ~/.bashrc
 
 version: 2
 dependencies:
@@ -18,10 +16,6 @@ jobs:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -46,10 +40,6 @@ jobs:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -85,10 +75,6 @@ jobs:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
       - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
-      - run:
           name: "Install dependencies"
           command: |
             yarn install
@@ -115,10 +101,6 @@ jobs:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
       - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
-      - run:
           name: "Install dependencies"
           command: |
             yarn install
@@ -139,13 +121,13 @@ jobs:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
       - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
-      - run:
           name: "Install dependencies"
           command: |
             yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core --docs
       - run:
           name: "Linting"
           command: |
@@ -158,10 +140,6 @@ jobs:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -188,10 +166,6 @@ jobs:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
       - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
-      - run:
           name: "Install dependencies"
           command: |
             yarn install
@@ -215,10 +189,6 @@ jobs:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |

@@ -16,11 +16,11 @@
     "babel-preset-react-native": "3.0.1",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.12",
-    "@storybook/react-native": "^3.3.0-alpha.0",
-    "@storybook/addon-actions": "^3.3.0-alpha.0",
-    "@storybook/addon-links": "^3.3.0-alpha.0",
+    "@storybook/react-native": "^3.3.0-alpha.2",
+    "@storybook/addon-actions": "^3.3.0-alpha.2",
+    "@storybook/addon-links": "^3.3.0-alpha.2",
     "react-dom": "16.0.0-alpha.12",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.6.0"
   },
   "jest": {
     "preset": "react-native"
