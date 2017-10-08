@@ -68,6 +68,14 @@ storiesOf('Method for rendering Vue', module)
       action: linkTo('Button'),
     },
   }))
+  .add('JSX', () => ({
+    components: { MyButton },
+    render(h) {
+      return (
+        <my-button>MyButton rendered with JSX</my-button>
+      )
+    }
+  }))
   .add('vuex + actions', () => ({
     components: { MyButton },
     template: '<my-button :handle-click="log">with vuex: {{ $store.state.count }}</my-button>',
