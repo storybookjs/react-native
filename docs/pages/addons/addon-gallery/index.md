@@ -54,7 +54,7 @@ Now it is easy to add them into your Storybook.
 
 ### [Story-router](https://github.com/gvaldambrini/storybook-router)
 
-A [decorator](/addons/introduction) that allows you to integrate react-router components in your stories.
+A [decorator](/addons/introduction) that allows you to use your routing-aware components in your stories.
 
 ### [Host](https://github.com/philcockfield/storybook-host)
 
