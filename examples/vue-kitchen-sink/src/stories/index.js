@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+
 import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
@@ -67,6 +69,12 @@ storiesOf('Method for rendering Vue', module)
       </p>`,
     methods: {
       action: linkTo('Button'),
+    },
+  }))
+  .add('JSX', () => ({
+    components: { MyButton },
+    render() {
+      return <my-button>MyButton rendered with JSX</my-button>;
     },
   }))
   .add('vuex + actions', () => ({
@@ -241,3 +249,5 @@ storiesOf('Addon Knobs', module)
         `,
     };
   });
+
+/* eslint-enable react/react-in-jsx-scope */
