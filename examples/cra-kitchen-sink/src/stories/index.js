@@ -10,13 +10,13 @@ import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
   text,
-  button,
   number,
   boolean,
   color,
   select,
   array,
   date,
+  button,
   object,
 } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
@@ -85,9 +85,6 @@ storiesOf('Button', module)
   .add('with knobs', () => {
     setOptions({ selectedAddonPanel: 'storybooks/storybook-addon-knobs' });
     const name = text('Name', 'Storyteller');
-
-    button('Arbitrary action', action('You clicked it!'));
-
     const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
     const fruits = {
       apple: 'Apple',
@@ -113,6 +110,8 @@ storiesOf('Button', module)
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
     const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
+    button('Arbitrary action', action('You clicked it!'));
 
     return (
       <div style={style}>
