@@ -109,3 +109,7 @@ Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
 ### [Screenshot](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
 
 Save the screenshot image of your stories. via [Puppeteer](https://github.com/GoogleChrome/puppeteer).
+
+### [Styles](https://github.com/Sambego/storybook-styles)
+
+Add some general styles to the preview area. 
