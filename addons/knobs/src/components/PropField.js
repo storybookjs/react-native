@@ -53,7 +53,7 @@ export default class PropField extends React.Component {
     return (
       <div style={stylesheet.field}>
         <label htmlFor={knob.name} style={stylesheet.label}>
-          {`${knob.name}`}
+          {!knob.hideLabel && `${knob.name}`}
         </label>
         <InputType knob={knob} onChange={onChange} />
       </div>

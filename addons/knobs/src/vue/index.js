@@ -8,6 +8,10 @@ export const vueHandler = (channel, knobStore) => getStory => context => ({
       const { name, value } = change;
       // Update the related knob and it's value.
       const knobOptions = knobStore.get(name);
+
+      // if the knob is a button, a change event should call the callback
+      if (knobOptions.callback) knobOptions.callback();
+
       knobOptions.value = value;
       this.$forceUpdate();
     },

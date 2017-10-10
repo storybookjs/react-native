@@ -90,8 +90,8 @@ export default class Panel extends React.Component {
         if (!this.loadedFromUrl) {
           const urlValue = api.getQueryParam(`knob-${name}`);
 
-          if (urlValue !== undefined) {
-            // If the knob value present in url
+          if (urlValue !== undefined && knob.type !== 'button') {
+            // If the knob value present in url and type is not a button
             knob.value = Types[knob.type].deserialize(urlValue);
             channel.emit('addon:knobs:knobChange', knob);
           }
