@@ -113,3 +113,7 @@ Save the screenshot image of your stories. via [Puppeteer](https://github.com/Go
 ### [Styles](https://github.com/Sambego/storybook-styles)
 
 Add ability to customize styles in the story preview area
+
+### [Figma](https://github.com/hharnisc/storybook-addon-figma)
+
+Embed [Figma](https://figma.com) designs in a storybook panel.
