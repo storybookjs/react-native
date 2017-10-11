@@ -113,3 +113,7 @@ Save the screenshot image of your stories. via [Puppeteer](https://github.com/Go
 ### [Figma](https://github.com/hharnisc/storybook-addon-figma)
 
 Embed [Figma](https://figma.com) designs in a storybook panel.
+
+### [State](https://github.com/Sambego/storybook-state)
+
+Manage state inside a story. Update components when this state changes.
