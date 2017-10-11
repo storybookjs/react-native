@@ -112,4 +112,4 @@ Save the screenshot image of your stories. via [Puppeteer](https://github.com/Go
 
 ### [Styles](https://github.com/Sambego/storybook-styles)
 
-Add some general styles to the preview area. 
+Add ability to customize styles in the story preview area
