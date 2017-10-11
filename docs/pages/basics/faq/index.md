@@ -32,6 +32,8 @@ A common error is that an addon tries to access the "channel", but the channel i
 2. In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
 3. You have inadvertently installed multiple addons with differing versions. Upgrade or downgrade all `@storybook/addon-*` modules so they have the same version.
 
+Most of the time, the fix is deleting the `node_modules` folder with any `package-lock.json` or `yarn.lock` and reinstalling.
+
 ### Can I modify React component state in stories?
 
 Not directly. If you control the component source, you can do something like this:
