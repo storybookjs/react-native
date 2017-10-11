@@ -117,3 +117,7 @@ Add ability to customize styles in the story preview area
 ### [Figma](https://github.com/hharnisc/storybook-addon-figma)
 
 Embed [Figma](https://figma.com) designs in a storybook panel.
+
+### [State](https://github.com/Sambego/storybook-state)
+
+Manage state inside a story. Update components when this state changes.
