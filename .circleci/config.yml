@@ -24,6 +24,10 @@ jobs:
           name: "Bootstrapping"
           command: |
             yarn bootstrap --core --docs --reactnative --reactnativeapp
+      - run:
+          name: "Dirty checking"
+          command: |
+            yarn repo-dirty-check
       - save_cache:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
