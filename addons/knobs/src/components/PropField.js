@@ -46,7 +46,7 @@ export default class PropField extends React.Component {
   }
 
   render() {
-    const { onChange, knob } = this.props;
+    const { onChange, onClick, knob } = this.props;
 
     const InputType = TypeMap[knob.type] || InvalidType;
 
@@ -55,7 +55,7 @@ export default class PropField extends React.Component {
         <label htmlFor={knob.name} style={stylesheet.label}>
           {!knob.hideLabel && `${knob.name}`}
         </label>
-        <InputType knob={knob} onChange={onChange} />
+        <InputType knob={knob} onChange={onChange} onClick={onClick} />
       </div>
     );
   }
@@ -67,4 +67,5 @@ PropField.propTypes = {
     value: PropTypes.any,
   }).isRequired,
   onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

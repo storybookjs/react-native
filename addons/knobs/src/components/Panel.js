@@ -46,6 +46,7 @@ export default class Panel extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.setKnobs = this.setKnobs.bind(this);
     this.reset = this.reset.bind(this);
     this.setOptions = this.setOptions.bind(this);
@@ -90,8 +91,8 @@ export default class Panel extends React.Component {
         if (!this.loadedFromUrl) {
           const urlValue = api.getQueryParam(`knob-${name}`);
 
-          if (urlValue !== undefined && knob.type !== 'button') {
-            // If the knob value present in url and type is not a button
+          if (urlValue !== undefined) {
+            // If the knob value present in url
             knob.value = Types[knob.type].deserialize(urlValue);
             channel.emit('addon:knobs:knobChange', knob);
           }
@@ -133,6 +134,10 @@ export default class Panel extends React.Component {
     this.setState({ knobs: newKnobs }, this.emitChange(changedKnob));
   }
 
+  handleClick(knob) {
+    this.props.channel.emit('addon:knobs:knobClick', knob);
+  }
+
   render() {
     const { knobs } = this.state;
     const knobsArray = Object.keys(knobs)
@@ -146,7 +151,11 @@ export default class Panel extends React.Component {
     return (
       <div style={styles.panelWrapper}>
         <div style={styles.panel}>
-          <PropForm knobs={knobsArray} onFieldChange={this.handleChange} />
+          <PropForm
+            knobs={knobsArray}
+            onFieldChange={this.handleChange}
+            onFieldClick={this.handleClick}
+          />
         </div>
         <button style={styles.resetButton} onClick={this.reset}>
           RESET

@@ -7,7 +7,7 @@ const styles = {
 
 class ButtonType extends React.Component {
   render() {
-    const { knob, onChange } = this.props;
+    const { knob, onClick } = this.props;
     return (
       <button
         type="button"
@@ -16,7 +16,7 @@ class ButtonType extends React.Component {
           this.input = c;
         }}
         style={styles}
-        onClick={() => onChange('clicked')}
+        onClick={() => onClick(knob)}
       >
         {knob.name}
       </button>
@@ -26,14 +26,13 @@ class ButtonType extends React.Component {
 
 ButtonType.defaultProps = {
   knob: {},
-  onChange: value => value,
 };
 
 ButtonType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
   }),
-  onChange: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 };
 
 ButtonType.serialize = value => value;
