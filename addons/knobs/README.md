@@ -240,7 +240,7 @@ import { button } from '@storybook/addon-knobs';
 
 const label = 'Do Something';
 const handler = () => doSomething('foobar');
-const value = button(label, handler);
+button(label, handler);
 ```
 
 ### withKnobs vs withKnobsOptions
