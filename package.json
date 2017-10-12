@@ -34,7 +34,8 @@
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "jest --projects ./ ./examples/react-native-vanilla"
+    "test": "jest --projects ./ ./examples/react-native-vanilla",
+    "repo-dirty-check": "node ./scripts/repo-dirty-check"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
