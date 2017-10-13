@@ -12100,6 +12100,13 @@ vue-template-compiler@^2.4.2:
     de-indent "^1.0.2"
     he "^1.1.0"
 
+vue-template-compiler@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.1.tgz#d62e1655970c17c97278d52c9e2809d1a4b39e17"
+  dependencies:
+    de-indent "^1.0.2"
+    he "^1.1.0"
+
 vue-template-es2015-compiler@^1.2.2:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.3.tgz#22787de4e37ebd9339b74223bc467d1adee30545"
