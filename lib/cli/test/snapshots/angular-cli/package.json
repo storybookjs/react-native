@@ -40,10 +40,10 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
-    "protractor": "~4.0.13",
+    "protractor": "~5.1.0",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.0.3",
+    "typescript": "~2.4.0",
     "@storybook/angular": "^3.3.0-alpha.0"
   }
 }

@@ -1,9 +1,11 @@
 import { storiesOf } from '@storybook/angular';
-import { addonNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
 import { Welcome, Button } from '@storybook/angular/demo';
+
+declare let module;
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => ({
@@ -18,13 +20,13 @@ storiesOf('Button', module)
       text: 'Hello Button'
     }
   }))
-  .add('with some emoji', addonNotes({ notes: 'My notes on a button with emojis' })(() => ({
+  .add('with some emoji', withNotes({ notes: 'My notes on a button with emojis' })(() => ({
     component: Button,
     props: {
       text: '😀 😎 👍 💯'
     }
   })))
-  .add('with some emoji and action', addonNotes({ notes: 'My notes on a button with emojis' })(() => ({
+  .add('with some emoji and action', withNotes({ notes: 'My notes on a button with emojis' })(() => ({
     component: Button,
     props: {
       text: '😀 😎 👍 💯',

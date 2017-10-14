@@ -1,4 +1,5 @@
 import { FixturePage } from './app.po';
+import 'jasmine';
 
 describe('fixture App', function() {
   let page: FixturePage;
