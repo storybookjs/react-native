@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropTable multiLineText should have 2 br tags for 3 lines of text 1`] = `
+Array [
+  <span>
+     
+    foo 
+</span>,
+  <span>
+    <br />
+     
+     bar 
+</span>,
+  <span>
+    <br />
+     
+     baz
+</span>,
+]
+`;
