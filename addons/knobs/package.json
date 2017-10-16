@@ -14,6 +14,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@angular/core": "^5.0.0-beta.7",
     "@storybook/addons": "^3.3.0-alpha.2",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
@@ -28,15 +29,11 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^7.0.12",
-    "@types/react": "^16.0.9",
     "git-url-parse": "^6.2.2",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "style-loader": "^0.19.0",
-    "typescript": "^2.2.2",
-    "typescript-definition-tester": "^0.0.5",
     "vue": "^2.4.2"
   },
   "peerDependencies": {
