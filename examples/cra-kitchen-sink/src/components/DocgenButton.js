@@ -62,7 +62,9 @@ DocgenButton.propTypes = {
   obj: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 
   /**
-   * propType for shape with nested arraytOf
+   * propType for shape with nested arrayOf
+   *
+   * Also, multi-line description
    */
   shape: PropTypes.shape({
     /**
