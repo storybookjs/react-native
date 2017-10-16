@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 
-import { prepareComponent } from './helpers.ts';
+import { prepareComponent } from './helpers';
 
 import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
 
