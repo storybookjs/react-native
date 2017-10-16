@@ -9,10 +9,13 @@ describe('PropTable', () => {
     const windowsMultiLineText = 'foo \r bar \r baz';
 
     it('should return a blank string for a null input', () => {
-      expect(multiLineText(null)).toBe('');
+      expect(multiLineText(null)).toBe(null);
     });
     it('should return a blank string for an undefined input', () => {
-      expect(multiLineText(undefined)).toBe('');
+      expect(multiLineText(undefined)).toBe(undefined);
+    });
+    it('should cast a number to a string', () => {
+      expect(multiLineText(1)).toBe('1');
     });
     it('should return its input for a single line of text', () => {
       expect(multiLineText(singleLine)).toBe(singleLine);
