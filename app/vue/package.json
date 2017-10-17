@@ -74,18 +74,18 @@
     "vue-style-loader": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-hot-middleware": "^2.19.1"
+    "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "nodemon": "^1.12.1",
     "vue": "^2.5.2",
     "vue-loader": "^13.3.0",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.5.2"
   },
   "peerDependencies": {
     "vue": "*",
     "vue-loader": "*",
-    "vue-template-compiler": "*",
+    "vue-template-compiler": "*"
   }
 }

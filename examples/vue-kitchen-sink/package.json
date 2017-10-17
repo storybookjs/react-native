@@ -17,16 +17,16 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.28.7",
     "file-loader": "^0.11.2",
-    "vue-hot-reload-api": "^2.1.0",
+    "vue-hot-reload-api": "^2.2.0",
     "vue-loader": "^12.2.1",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.4.2",
+    "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.2"
   },
   "dependencies": {
-    "vue": "^2.4.2",
-    "vuex": "^2.3.1"
+    "vue": "^2.5.2",
+    "vuex": "^2.5.0"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
