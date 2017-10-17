@@ -67,6 +67,8 @@ export function renderMain(data, storyStore) {
     //    https://github.com/storybooks/react-storybook/issues/81
     previousKind = selectedKind;
     previousStory = selectedStory;
+  } else {
+    return;
   }
 
   const context = {

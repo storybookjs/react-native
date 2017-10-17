@@ -28,8 +28,12 @@ You can generally reuse webpack rules fairly easily by placing them in a file th
 ### Why is there no addons channel?
 
 A common error is that an addon tries to access the "channel", but the channel is not set. This can happen in a few different cases:
+
 1. In storybook/addon development, it can be an NPM version problem. If there are two versions of the addons NPM package, it will cause problems. In this case, make sure there is only a single version of `@storybook/addons` being used by your project.
 2. In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
+3. You have inadvertently installed multiple addons with differing versions. Upgrade or downgrade all `@storybook/addon-*` modules so they have the same version.
+
+Most of the time, the fix is deleting the `node_modules` folder with any `package-lock.json` or `yarn.lock` and reinstalling.
 
 ### Can I modify React component state in stories?
 
