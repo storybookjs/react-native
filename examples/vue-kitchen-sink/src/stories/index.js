@@ -14,6 +14,7 @@ import {
   select,
   color,
   date,
+  button,
 } from '@storybook/addon-knobs';
 import Centered from '@storybook/addon-centered';
 
@@ -230,6 +231,8 @@ storiesOf('Addon Knobs', module)
       ? `I have a stock of ${stock} ${fruit}, costing &dollar;${price} each.`
       : `I'm out of ${fruit}${nice ? ', Sorry!' : '.'}`;
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+
+    button('Arbitrary action', action('You clicked it!'));
 
     return {
       template: `
