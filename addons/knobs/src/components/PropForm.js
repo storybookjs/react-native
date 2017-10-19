@@ -46,6 +46,7 @@ export default class propForm extends React.Component {
               value={knob.value}
               knob={knob}
               onChange={changeHandler}
+              onClick={this.props.onFieldClick}
             />
           );
         })}
@@ -68,4 +69,5 @@ propForm.propTypes = {
     })
   ),
   onFieldChange: PropTypes.func.isRequired,
+  onFieldClick: PropTypes.func.isRequired,
 };

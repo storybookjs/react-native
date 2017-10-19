@@ -58,6 +58,10 @@ export function date(name, value = new Date()) {
   return manager.knob(name, { type: 'date', value: proxyValue });
 }
 
+export function button(name, callback) {
+  return manager.knob(name, { type: 'button', callback, hideLabel: true });
+}
+
 // "Higher order component" / wrapper style API
 // In 3.3, this will become `withKnobs`, once our decorator API supports it.
 //   See https://github.com/storybooks/storybook/pull/1527
