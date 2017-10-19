@@ -44,17 +44,17 @@
   version "6.0.88"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.88.tgz#f618f11a944f6a18d92b5c472028728a3e3d4b66"
 
-"@types/node@^7.0.44":
-  version "7.0.44"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.44.tgz#20422b3dada536f35bf318ac3e24b8c48200803d"
+"@types/node@^7.0.46":
+  version "7.0.46"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.46.tgz#c3dedd25558c676b3d6303e51799abb9c3f8f314"
 
 "@types/react@^15.0.24":
   version "15.6.4"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.6.4.tgz#3bb57bd43183a05919ceb025a264287348f47e9d"
 
-"@types/react@^16.0.13":
-  version "16.0.13"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.13.tgz#973836e6deec10184937322cd10a1605f9de81fc"
+"@types/react@^16.0.14":
+  version "16.0.14"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.14.tgz#c46d92be936820a93a14ffc84ad805e83f6535ef"
 
 JSONStream@^1.0.4:
   version "1.3.1"
