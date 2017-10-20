@@ -121,6 +121,7 @@
       "documentation": "Documentation",
       "maintenance": "Maintenance",
       "dependencies:update": "Dependency Upgrades",
+      "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
   }
