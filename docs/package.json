@@ -17,8 +17,8 @@
     "storybook": "start-storybook -p 9009 -s pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.12",
-    "@storybook/addon-links": "^3.2.12",
+    "@storybook/addon-actions": "^3.2.13",
+    "@storybook/addon-links": "^3.2.13",
     "@storybook/addons": "^3.2.12",
     "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",
