@@ -23,9 +23,19 @@
   dependencies:
     "@storybook/addons" "^3.2.12"
 
+"@storybook/addon-links@^3.2.13":
+  version "3.2.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.13.tgz#925bb46350583a73538ac655f23df6f55019b560"
+  dependencies:
+    "@storybook/addons" "^3.2.13"
+
 "@storybook/addons@^3.2.12":
   version "3.2.12"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.12.tgz#61adccaa8c0016f1439dc8934d8d61042b35e741"
+
+"@storybook/addons@^3.2.13":
+  version "3.2.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.13.tgz#a133103770a7f2330bc931571df1b2ae660f8f71"
 
 "@storybook/channel-postmessage@^3.2.12":
   version "3.2.12"
