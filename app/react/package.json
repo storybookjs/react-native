@@ -51,7 +51,7 @@
     "file-loader": "^0.11.2",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.9.7",
+    "glamorous": "^4.10.0",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
     "json-stringify-safe": "^5.0.1",
