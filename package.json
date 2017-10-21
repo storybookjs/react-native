@@ -56,7 +56,7 @@
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.0.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -121,6 +121,7 @@
       "documentation": "Documentation",
       "maintenance": "Maintenance",
       "dependencies:update": "Dependency Upgrades",
+      "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
   }

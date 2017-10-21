@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.2.12",
+  "version": "3.2.13",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -14,8 +14,8 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.12",
-    "@storybook/components": "^3.2.12",
+    "@storybook/addons": "^3.2.13",
+    "@storybook/components": "^3.2.13",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "marksy": "^2.0.0",
