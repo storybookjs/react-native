@@ -21,9 +21,9 @@
     git-url-parse "^6.0.2"
     shelljs "^0.7.0"
 
-"@storybook/react-fuzzy@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react-fuzzy/-/react-fuzzy-0.4.1.tgz#612bdf7768585ad6e086b4738efbf204e94290a0"
+"@storybook/react-fuzzy@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@storybook/react-fuzzy/-/react-fuzzy-0.4.3.tgz#36f7536ba97bf08b03cb57f47c58ae2cca330aec"
   dependencies:
     babel-runtime "^6.23.0"
     classnames "^2.2.5"
