@@ -2252,6 +2252,13 @@ exports[`Storyshots Button with knobs 1`] = `
   <p>
     Nice to meet you!
   </p>
+  <hr />
+  <p>
+    PS. My shirt pocket contains: 
+  </p>
+  <li>
+    No items!
+  </li>
 </div>
 `;
 

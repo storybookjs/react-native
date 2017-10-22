@@ -53,3 +53,7 @@ export function date(name, value = new Date()) {
   const proxyValue = value ? value.getTime() : null;
   return manager.knob(name, { type: 'date', value: proxyValue });
 }
+
+export function button(name, callback) {
+  return manager.knob(name, { type: 'button', callback, hideLabel: true });
+}

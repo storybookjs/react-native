@@ -5,9 +5,9 @@ import addons from '@storybook/addons';
 import { vueHandler } from './vue';
 import { reactHandler } from './react';
 
-import { knob, text, boolean, number, color, object, array, date, manager } from './base';
+import { knob, text, boolean, number, color, object, array, date, button, manager } from './base';
 
-export { knob, text, boolean, number, color, object, array, date };
+export { knob, text, boolean, number, color, object, array, date, button };
 
 deprecate(() => {},
 'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}');

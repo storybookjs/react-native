@@ -13,6 +13,7 @@ import {
   select,
   color,
   date,
+  button,
 } from '@storybook/addon-knobs/angular';
 
 import { Welcome, Button } from '@storybook/angular/demo';
@@ -141,6 +142,7 @@ storiesOf('Addon Knobs', module)
     const today = date('Today', new Date('Jan 20 2017'));
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
     const nice = boolean('Nice', true);
+    button('Arbitrary action', action('You clicked it!'));
 
     return {
       component: AllKnobsComponent,

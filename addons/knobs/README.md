@@ -255,6 +255,18 @@ const value = date(label, defaultValue);
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
 
+### button
+
+Allows you to include a button and associated handler.
+
+```js
+import { button } from '@storybook/addon-knobs';
+
+const label = 'Do Something';
+const handler = () => doSomething('foobar');
+button(label, handler);
+```
+
 ### withKnobs vs withKnobsOptions
 
 If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.
