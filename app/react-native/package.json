@@ -29,7 +29,7 @@
     "@storybook/addons": "^3.2.13",
     "@storybook/channel-websocket": "^3.2.13",
     "@storybook/ui": "^3.2.13",
-    "autoprefixer": "^7.1.5",
+    "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
