@@ -16,7 +16,7 @@
   "dependencies": {
     "@hypnosphi/fuse.js": "^3.0.9",
     "@storybook/components": "^3.2.13",
-    "@storybook/react-fuzzy": "^0.4.1",
+    "@storybook/react-fuzzy": "^0.4.3",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
