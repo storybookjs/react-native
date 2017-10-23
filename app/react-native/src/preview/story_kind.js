@@ -1,10 +1,11 @@
 /* eslint no-underscore-dangle: 0 */
 
 export default class StoryKindApi {
-  constructor(stories, addons, decorators, kind) {
+  constructor(stories, addons, decorators, kind, fileName) {
     this.kind = kind;
     this._stories = stories;
     this._decorators = decorators.slice();
+    this._fileName = fileName;
     Object.assign(this, addons);
   }
 
@@ -15,7 +16,7 @@ export default class StoryKindApi {
 
   add(story, fn) {
     const decorated = this._decorate(fn);
-    this._stories.addStory(this.kind, story, decorated);
+    this._stories.addStory(this.kind, story, decorated, this._fileName);
     return this;
   }
 

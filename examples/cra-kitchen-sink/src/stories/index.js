@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
 import { withNotes, WithNotes } from '@storybook/addon-notes';
-import { linkTo } from '@storybook/addon-links';
+import { LinkTo, linkTo, hrefTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
@@ -19,7 +19,7 @@ import {
   date,
   button,
   object,
-} from '@storybook/addon-knobs';
+} from '@storybook/addon-knobs/react';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
 
@@ -30,6 +30,7 @@ import Logger from './Logger';
 import Container from './Container';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
+import ImportedPropsButton from '../components/ImportedPropsButton';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -41,7 +42,7 @@ const EVENTS = {
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf('Welcome', module).add('to Storybook', () => <Welcome showKind="Button" />);
 
 const InfoButton = () => (
   <span
@@ -120,6 +121,16 @@ storiesOf('Button', module)
       padding: '10px',
     });
     const nice = boolean('Nice', true);
+    const children = object('Children', [
+      {
+        name: 'Jane',
+        age: 13,
+      },
+      {
+        name: 'John',
+        age: 8,
+      },
+    ]);
 
     // NOTE: put this last because it currently breaks everything after it :D
     const birthday = date('Birthday', new Date('Jan 20 2017'));
@@ -133,6 +144,14 @@ storiesOf('Button', module)
       <div style={style}>
         <p>{intro}</p>
         <p>My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</p>
+        <p>I have {children.length} children:</p>
+        <ol>
+          {children.map(child => (
+            <li key={child.name}>
+              {child.name}, {child.age} years old
+            </li>
+          ))}
+        </ol>
         <p>My wallet contains: ${dollars.toFixed(2)}</p>
         <p>In my backpack, I have:</p>
         <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
@@ -180,9 +199,46 @@ storiesOf('Button', module)
     )
   );
 
+storiesOf('AddonLink.Link', module)
+  .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)
+  .add('Second', () => <LinkTo story="First">Go to First</LinkTo>);
+
+storiesOf('AddonLink.Button', module)
+  .add('First', () => (
+    <button onClick={linkTo('AddonLink.Button', 'Second')}>Go to "Second"</button>
+  ))
+  .add('Second', () => (
+    <button onClick={linkTo('AddonLink.Button', 'First')}>Go to "First"</button>
+  ));
+
+storiesOf('AddonLink.Select', module)
+  .add('Index', () => (
+    <select value="Index" onChange={linkTo('AddonLink.Select', e => e.currentTarget.value)}>
+      <option>Index</option>
+      <option>First</option>
+      <option>Second</option>
+      <option>Third</option>
+    </select>
+  ))
+  .add('First', () => <LinkTo story="Index">Go back</LinkTo>)
+  .add('Second', () => <LinkTo story="Index">Go back</LinkTo>)
+  .add('Third', () => <LinkTo story="Index">Go back</LinkTo>);
+
+storiesOf('AddonLink.Href', module).add('log', () => {
+  hrefTo('AddonLink.Href', 'log').then(action('URL of this story'));
+
+  return <span>See action logger</span>;
+});
+
 storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () => (
   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
 ));
+
+storiesOf('AddonInfo.ImportedPropsButton', module).addWithInfo(
+  'ImportedPropsButton',
+  'Button with PropTypes imported from another file. Should fallback to using PropTypes for data.',
+  () => <ImportedPropsButton onClick={action('clicked')} label="Docgen Button" />
+);
 
 storiesOf('AddonInfo.FlowTypeButton', module).addWithInfo(
   'FlowTypeButton',

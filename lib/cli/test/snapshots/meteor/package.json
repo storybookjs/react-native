@@ -1,0 +1,25 @@
+{
+  "name": "meteor-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "meteor-node-stubs": "~0.2.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-root-slash-import": "^1.1.0",
+    "@storybook/react": "^3.3.0-alpha.2",
+    "@storybook/addon-actions": "^3.3.0-alpha.2",
+    "@storybook/addon-links": "^3.3.0-alpha.2"
+  }
+}

@@ -64,6 +64,12 @@ jobs:
             cd examples/vue-kitchen-sink
             yarn build-storybook
             yarn storybook --smoke-test
+      - run:
+          name: "Build angular kitchen-sink"
+          command: |
+            cd examples/angular-cli
+            yarn build-storybook
+            yarn storybook --smoke-test
   example-react-native:
     <<: *defaults
     steps:
@@ -149,8 +155,56 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            yarn test --coverage -i
+            yarn test --all --coverage --runInBand
             yarn coverage
+  cli:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core
+      - run:
+          name: "Testing CLI"
+          command: |
+            yarn test --cli
+  cli-latest-cra:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core
+      - run:
+          name: "Testing CLI with latest CR(N)A"
+          command: |
+            yarn test-latest-cra
   deploy:
     <<: *defaults
     steps:
@@ -168,6 +222,8 @@ workflows:
       - docs
       - lint
       - unit-test
+      - cli
+      - cli-latest-cra
       # - deploy:
       #     type: approval
       #     requires:

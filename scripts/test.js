@@ -23,12 +23,13 @@ const spawn = command => {
 
 const main = program.version('3.0.0').option('--all', `Test everything ${chalk.gray('(all)')}`);
 
-const createProject = ({ defaultValue, option, name, projectLocation }) => ({
+const createProject = ({ defaultValue, option, name, projectLocation, isJest }) => ({
   value: false,
   defaultValue: defaultValue || false,
   option: option || undefined,
   name: name || 'unnamed task',
   projectLocation,
+  isJest,
 });
 const createOption = ({ defaultValue, option, name, extraParam }) => ({
   value: false,
@@ -44,12 +45,14 @@ const tasks = {
     defaultValue: true,
     option: '--core',
     projectLocation: './',
+    isJest: true,
   }),
   'react-native-vanilla': createProject({
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
     defaultValue: true,
     option: '--reactnative',
     projectLocation: './examples/react-native-vanilla',
+    isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
@@ -58,7 +61,14 @@ const tasks = {
   //   defaultValue: false,
   //   option: '--reactnativeapp',
   //   projectLocation: './examples/crna-kitchen-sink',
+  //   isJest: true,
   // }),
+  cli: createProject({
+    name: `Command Line Interface ${chalk.gray('(cli)')}`,
+    defaultValue: false,
+    option: '--cli',
+    projectLocation: './lib/cli',
+  }),
   watchmode: createOption({
     name: `Run in watch-mode ${chalk.gray('(watchmode)')}`,
     defaultValue: false,
@@ -77,19 +87,24 @@ const tasks = {
     option: '--runInBand',
     extraParam: '--runInBand',
   }),
+  update: createOption({
+    name: `Update all snapshots ${chalk.gray('(update)')}`,
+    defaultValue: false,
+    option: '--update',
+    extraParam: '-u',
+  }),
 };
 
 const getProjects = list => {
   const filtered = list.filter(key => key.projectLocation);
   if (filtered.length > 0) {
-    return filtered.map(key => key.projectLocation);
+    return filtered;
   }
 
   // if list would have been empty, we run with default projects
   return Object.keys(tasks)
     .map(key => tasks[key])
-    .filter(key => key.projectLocation && key.defaultValue)
-    .map(key => key.projectLocation);
+    .filter(key => key.projectLocation && key.defaultValue);
 };
 
 const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
@@ -115,6 +130,7 @@ if (
         type: 'checkbox',
         message: 'Select which tests to run',
         name: 'todo',
+        pageSize: 8,
         choices: Object.keys(tasks)
           .map(key => tasks[key])
           .filter(key => key.projectLocation)
@@ -150,7 +166,16 @@ selection
     if (list.length === 0) {
       log.warn(prefix, 'Nothing to test');
     } else {
-      spawn(`jest --projects ${getProjects(list).join(' ')} ${getExtraParams(list).join(' ')}`);
+      const projects = getProjects(list);
+      const jestProjects = projects.filter(key => key.isJest).map(key => key.projectLocation);
+      const nonJestProjects = projects.filter(key => !key.isJest);
+      const extraParams = getExtraParams(list).join(' ');
+      if (jestProjects.length > 0) {
+        spawn(`jest --projects ${jestProjects.join(' ')} ${extraParams}`);
+      }
+      nonJestProjects.forEach(key =>
+        spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
+      );
       process.stdout.write('\x07');
     }
   })
