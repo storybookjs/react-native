@@ -35,6 +35,7 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     }
 
     channel.on('addon:knobs:knobChange', this.knobChanged);
+    channel.on('addon:knobs:knobClick', this.knobClicked);
     knobStore.subscribe(this.setPaneKnobs);
     this.setPaneKnobs();
   };
@@ -45,6 +46,7 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     }
 
     channel.removeListener('addon:knobs:knobChange', this.knobChanged);
+    channel.removeListener('addon:knobs:knobClick', this.knobClicked);
     knobStore.unsubscribe(this.setPaneKnobs);
   };
 
@@ -73,6 +75,11 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     this.ngOnChanges({
       [lowercasedName]: new SimpleChange(oldValue, value, false),
     });
+  };
+
+  NewComponent.prototype.knobClicked = function knobClicked(clicked) {
+    const knobOptions = knobStore.get(clicked.name);
+    knobOptions.callback();
   };
 
   return NewComponent;

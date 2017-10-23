@@ -100,6 +100,97 @@
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
 
+# 3.2.13
+
+2017-October-20
+
+#### Features
+
+-   Knobs addon: new knob type `button` [#2004](https://github.com/storybooks/storybook/pull/2004)
+-   Vue: Support JSX for Vue Components [#1993](https://github.com/storybooks/storybook/pull/1993)
+-   Vue CLI: support Nuxt.js projects [#2056](https://github.com/storybooks/storybook/pull/2056)
+
+#### Bug Fixes
+
+-   UI: ix sidebar header wrapping [#1962](https://github.com/storybooks/storybook/pull/1962)
+-   Vue: Make Vue a peer dependency [#2041](https://github.com/storybooks/storybook/pull/2041)
+
+#### Documentation
+
+-   Update empty addons channel bug description [#1977](https://github.com/storybooks/storybook/pull/1977)
+-   Fix README.md example for addons/info [#1960](https://github.com/storybooks/storybook/pull/1960)
+
+#### Maintenance
+
+-   Dirty-check repo state on CI to ensure lockfiles being up-to-date [#1980](https://github.com/storybooks/storybook/pull/1980)
+-   Enable batch mode for dependencies.io [#2093](https://github.com/storybooks/storybook/pull/2093)
+-   Fixed lifecycle twice executing (closes #1742) [#1983](https://github.com/storybooks/storybook/pull/1983)
+-   Disable npm publish on all non-master branches [#1963](https://github.com/storybooks/storybook/pull/1963)
+-   Fix lerna.json to ignore vue-kitchen-sink correctly [#1944](https://github.com/storybooks/storybook/pull/1944)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+66 PRs
+</summary>
+
+-   2 packages updated by dependencies.io [#2097](https://github.com/storybooks/storybook/pull/2097)
+-   2 packages updated by dependencies.io [#2094](https://github.com/storybooks/storybook/pull/2094)
+-   Update deps [#2090](https://github.com/storybooks/storybook/pull/2090)
+-   Update enzyme-adapter-react-16 from 1.0.1 to 1.0.2 in / [#2068](https://github.com/storybooks/storybook/pull/2068)
+-   Update deps [#2077](https://github.com/storybooks/storybook/pull/2077)
+-   Update webpack-hot-middleware from 2.19.1 to 2.20.0 in app/react [#2060](https://github.com/storybooks/storybook/pull/2060)
+-   Update webpack-hot-middleware from 2.19.1 to 2.20.0 in app/react-native [#2059](https://github.com/storybooks/storybook/pull/2059)
+-   Update @types/react from 16.0.10 to 16.0.11 in addons/knobs [#2058](https://github.com/storybooks/storybook/pull/2058)
+-   Update vue versions [#2032](https://github.com/storybooks/storybook/pull/2032)
+-   Update eslint from 4.8.0 to 4.9.0 in / [#2054](https://github.com/storybooks/storybook/pull/2054)
+-   Update webpack-dev-server from 2.9.1 to 2.9.2 in examples/vue-kitchen-sink [#2055](https://github.com/storybooks/storybook/pull/2055)
+-   Update postcss-loader from 2.0.7 to 2.0.8 in app/react [#2045](https://github.com/storybooks/storybook/pull/2045)
+-   Update codecov from 2.3.0 to 2.3.1 in / [#2042](https://github.com/storybooks/storybook/pull/2042)
+-   Update webpack from 3.6.0 to 3.7.1 in app/react-native [#2027](https://github.com/storybooks/storybook/pull/2027)
+-   Update moment from 2.19.0 to 2.19.1 in addons/knobs [#2026](https://github.com/storybooks/storybook/pull/2026)
+-   Update express from 4.16.1 to 4.16.2 in app/vue [#2018](https://github.com/storybooks/storybook/pull/2018)
+-   Update postcss-loader from 2.0.6 to 2.0.7 in app/react [#2017](https://github.com/storybooks/storybook/pull/2017)
+-   Update express from 4.16.1 to 4.16.2 in app/react [#2016](https://github.com/storybooks/storybook/pull/2016)
+-   Update postcss-loader from 2.0.6 to 2.0.7 in app/react-native [#2015](https://github.com/storybooks/storybook/pull/2015)
+-   Update express from 4.16.1 to 4.16.2 in app/react-native [#2014](https://github.com/storybooks/storybook/pull/2014)
+-   Update moment from 2.18.1 to 2.19.0 in addons/knobs [#2013](https://github.com/storybooks/storybook/pull/2013)
+-   Update autoprefixer from 7.1.4 to 7.1.5 in app/vue [#2003](https://github.com/storybooks/storybook/pull/2003)
+-   Update update-notifier from 2.2.0 to 2.3.0 in lib/cli [#1999](https://github.com/storybooks/storybook/pull/1999)
+-   Update autoprefixer from 7.1.4 to 7.1.5 in app/react [#2002](https://github.com/storybooks/storybook/pull/2002)
+-   Update autoprefixer from 7.1.4 to 7.1.5 in app/react-native [#2000](https://github.com/storybooks/storybook/pull/2000)
+-   Update @types/react from 16.0.9 to 16.0.10 in addons/knobs [#1998](https://github.com/storybooks/storybook/pull/1998)
+-   Update jest-enzyme from 4.0.0 to 4.0.1 in / [#1997](https://github.com/storybooks/storybook/pull/1997)
+-   Update storybook-router description in the addon gallery. [#1991](https://github.com/storybooks/storybook/pull/1991)
+-   Update lerna from 2.3.1 to 2.4.0 in / [#1985](https://github.com/storybooks/storybook/pull/1985)
+-   Update react-modal from 2.3.3 to 2.4.1 in app/vue [#1989](https://github.com/storybooks/storybook/pull/1989)
+-   Update react-modal from 2.3.3 to 2.4.1 in app/react [#1988](https://github.com/storybooks/storybook/pull/1988)
+-   Update react-modal from 2.3.3 to 2.4.1 in lib/ui [#1987](https://github.com/storybooks/storybook/pull/1987)
+-   Update react-icons from 2.2.5 to 2.2.7 in lib/ui [#1986](https://github.com/storybooks/storybook/pull/1986)
+-   Remove markdown autofixing on precommit hook [#1964](https://github.com/storybooks/storybook/pull/1964)
+-   Update vue-hot-reload-api from 2.1.0 to 2.1.1 in app/vue [#1976](https://github.com/storybooks/storybook/pull/1976)
+-   Update url-loader from 0.5.9 to 0.6.2 in app/vue [#1975](https://github.com/storybooks/storybook/pull/1975)
+-   Update react-modal from 2.3.2 to 2.3.3 in app/vue [#1974](https://github.com/storybooks/storybook/pull/1974)
+-   Update url-loader from 0.5.9 to 0.6.2 in app/react [#1973](https://github.com/storybooks/storybook/pull/1973)
+-   Update react-modal from 2.3.2 to 2.3.3 in app/react [#1972](https://github.com/storybooks/storybook/pull/1972)
+-   Update url-loader from 0.5.9 to 0.6.2 in app/react-native [#1970](https://github.com/storybooks/storybook/pull/1970)
+-   Update react-modal from 2.3.2 to 2.3.3 in lib/ui [#1969](https://github.com/storybooks/storybook/pull/1969)
+-   Update @types/react from 16.0.8 to 16.0.9 in addons/knobs [#1968](https://github.com/storybooks/storybook/pull/1968)
+-   Update graphql from 0.11.6 to 0.11.7 in addons/graphql [#1967](https://github.com/storybooks/storybook/pull/1967)
+-   Update @storybook/addon-links from 3.2.10 to 3.2.12 [#1949](https://github.com/storybooks/storybook/pull/1949)
+-   Update style-loader from 0.18.2 to 0.19.0 in addons/knobs [#1958](https://github.com/storybooks/storybook/pull/1958)
+-   Update @types/react from 16.0.7 to 16.0.8 in addons/knobs [#1957](https://github.com/storybooks/storybook/pull/1957)
+-   Update prettier from 1.7.3 to 1.7.4 in / [#1955](https://github.com/storybooks/storybook/pull/1955)
+-   Update react-motion from 0.5.1 to 0.5.2 [#1953](https://github.com/storybooks/storybook/pull/1953)
+-   Update lerna from 2.2.0 to 2.3.1 in / [#1954](https://github.com/storybooks/storybook/pull/1954)
+-   Update @storybook/addons from 3.2.10 to 3.2.12 [#1950](https://github.com/storybooks/storybook/pull/1950)
+-   Update enzyme from 3.0.0 to 3.1.0 in / [#1948](https://github.com/storybooks/storybook/pull/1948)
+-   Update enzyme-adapter-react-16 from 1.0.0 to 1.0.1 in / [#1951](https://github.com/storybooks/storybook/pull/1951)
+-   Update @storybook/addon-actions from 3.2.11 to 3.2.12 [#1947](https://github.com/storybooks/storybook/pull/1947)
+
+</details>
+
 # 3.2.12
 
 2017-October-02

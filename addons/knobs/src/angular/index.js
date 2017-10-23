@@ -2,9 +2,21 @@ import addons from '@storybook/addons';
 
 import { prepareComponent } from './helpers';
 
-import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
+import {
+  knob,
+  text,
+  boolean,
+  number,
+  color,
+  object,
+  array,
+  date,
+  select,
+  button,
+  manager,
+} from '../base';
 
-export { knob, text, boolean, number, color, object, array, date, select };
+export { knob, text, boolean, number, color, object, array, date, select, button };
 
 export const angularHandler = (channel, knobStore) => getStory => context =>
   prepareComponent({ getStory, context, channel, knobStore });

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import EventEmiter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
@@ -16,6 +17,7 @@ import {
   select,
   array,
   date,
+  button,
   object,
 } from '@storybook/addon-knobs/react';
 import centered from '@storybook/addon-centered';
@@ -59,6 +61,23 @@ const InfoButton = () => (
     Show Info{' '}
   </span>
 );
+
+class AsyncItemLoader extends React.Component {
+  constructor() {
+    super();
+    this.state = { items: [] };
+  }
+
+  loadItems() {
+    setTimeout(() => this.setState({ items: ['pencil', 'pen', 'eraser'] }), 1500);
+  }
+
+  render() {
+    button('Load the items', () => this.loadItems());
+    return this.props.children(this.state.items);
+  }
+}
+AsyncItemLoader.propTypes = { children: PropTypes.func.isRequired };
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
@@ -137,6 +156,14 @@ storiesOf('Button', module)
         <p>In my backpack, I have:</p>
         <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
         <p>{salutation}</p>
+        <hr />
+        <p>PS. My shirt pocket contains: </p>
+        <AsyncItemLoader>
+          {loadedItems => {
+            if (!loadedItems.length) return <li>No items!</li>;
+            return <ul>{loadedItems.map(i => <li key={i}>{i}</li>)}</ul>;
+          }}
+        </AsyncItemLoader>
       </div>
     );
   })

@@ -6,6 +6,7 @@ import ObjectType from './Object';
 import SelectType from './Select';
 import ArrayType from './Array';
 import DateType from './Date';
+import ButtonType from './Button';
 
 export default {
   text: TextType,
@@ -16,4 +17,5 @@ export default {
   select: SelectType,
   array: ArrayType,
   date: DateType,
+  button: ButtonType,
 };
