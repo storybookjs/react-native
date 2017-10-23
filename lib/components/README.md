@@ -1,4 +1,4 @@
-# Storybook Comments Addon
+# Storybook Components
 
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -9,27 +9,6 @@
 
 * * *
 
-> THIS ADDON IS CURRENTLY NOT WORKING - NOT MAINTAINED
+Storybook Components is a React UI components collection used by the UI of Storybook and Addons.
 
-* * *
-
-Storybook Comments Addon allows you to add comments for your stories in [Storybook](https://storybook.js.org).
-
-This addon works with Storybook for:
-[React](https://github.com/storybooks/storybook/tree/master/app/react).
-
-![Screenshot](docs/screenshot.png)
-
-## Getting Started
-
-First, install the addon
-
-```sh
-npm install -D @storybook/addon-comments
-```
-
-Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
-
-```js
-import '@storybook/addon-comments/register';
-```
+All components use [`glamorous`](https://glamorous.rocks) for styling.

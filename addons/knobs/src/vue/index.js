@@ -17,8 +17,16 @@ import {
 export { knob, text, boolean, number, color, object, array, date, select, button };
 
 export const vueHandler = (channel, knobStore) => getStory => context => ({
+  data() {
+    return {
+      context,
+      getStory,
+      story: getStory(context),
+    };
+  },
+
   render(h) {
-    return h(getStory(context));
+    return h(this.story);
   },
 
   methods: {
@@ -28,6 +36,7 @@ export const vueHandler = (channel, knobStore) => getStory => context => ({
       const knobOptions = knobStore.get(name);
 
       knobOptions.value = value;
+      this.story = this.getStory(this.context);
       this.$forceUpdate();
     },
 
@@ -39,6 +48,7 @@ export const vueHandler = (channel, knobStore) => getStory => context => ({
     onKnobReset() {
       knobStore.reset();
       this.setPaneKnobs(false);
+      this.story = this.getStory(this.context);
       this.$forceUpdate();
     },
 
