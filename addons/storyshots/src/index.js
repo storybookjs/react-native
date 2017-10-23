@@ -75,6 +75,10 @@ export default function testStorySnapshots(options = {}) {
   const suite = options.suite || options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
+  if (stories.length === 0) {
+    throw new Error('storyshots found 0 stories');
+  }
+
   // Added not to break existing storyshots configs (can be removed in a future major release)
   // eslint-disable-next-line
   options.storyNameRegex = options.storyNameRegex || options.storyRegex;
