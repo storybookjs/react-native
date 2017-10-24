@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
  
 sudo apt-get update

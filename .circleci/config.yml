@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: /tmp/storybook
   docker:
-    - image: node:8
+    - image: circleci/node:latest
 
 version: 2
 dependencies:
