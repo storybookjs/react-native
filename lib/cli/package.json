@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@storybook/codemod": "^3.2.13",
-    "chalk": "^2.2.0",
+    "chalk": "^2.3.0",
     "child-process-promise": "^2.2.1",
     "commander": "^2.11.0",
     "cross-spawn": "^5.0.1",
