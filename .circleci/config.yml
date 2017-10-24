@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: /tmp/storybook
   docker:
-    - image: node:8
+    - image: circleci/node:latest
 
 version: 2
 dependencies:
@@ -15,7 +15,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
           name: "Install dependencies"
           command: |
@@ -32,10 +31,9 @@ jobs:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - app/**/node_modules
-            - docs/**/node_modules
-            - examples/**/node_modules
-            - lib/**/node_modules
+            - docs/node_modules
+            - examples/react-native-vanilla/node_modules
+            - examples/crna-kitchen-sink/node_modules
   example-kitchen-sinks:
     <<: *defaults
     steps:
@@ -43,7 +41,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
           name: "Install dependencies"
           command: |
@@ -57,19 +54,30 @@ jobs:
           command: |
             cd examples/cra-kitchen-sink
             yarn build-storybook
-            yarn storybook --smoke-test
       - run:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
-            yarn storybook --smoke-test
+
       - run:
-          name: "Build angular kitchen-sink"
+          name: "Run vue kitchen-sink"
           command: |
-            cd examples/angular-cli
-            yarn build-storybook
-            yarn storybook --smoke-test
+            cd examples/vue-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: "Run react kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
+          command: sh ./scripts/workaround-puppeteer-issue-290.sh
+      - run:
+          name: Integration Test - Kichen sinks
+          command: yarn test --integration
   example-react-native:
     <<: *defaults
     steps:
@@ -77,7 +85,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
           name: "Install dependencies"
           command: |
@@ -103,7 +110,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
           name: "Install dependencies"
           command: |
@@ -123,7 +129,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
           name: "Install dependencies"
           command: |
@@ -143,7 +148,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
           name: "Install dependencies"
           command: |
@@ -155,7 +159,7 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            yarn test --all --coverage --runInBand
+            yarn test --coverage --runInBand --core --reactnative
             yarn coverage
   cli:
     working_directory: /tmp/storybook
@@ -224,9 +228,3 @@ workflows:
       - unit-test
       - cli
       - cli-latest-cra
-      # - deploy:
-      #     type: approval
-      #     requires:
-      #       - lint
-      #       - unit-test
-      #       - docs

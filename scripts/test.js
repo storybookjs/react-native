@@ -54,6 +54,12 @@ const tasks = {
     projectLocation: './examples/react-native-vanilla',
     isJest: true,
   }),
+  integration: createProject({
+    name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
+    defaultValue: false,
+    option: '--integration',
+    projectLocation: './integration',
+  }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
   //     '[not implemented yet]'
