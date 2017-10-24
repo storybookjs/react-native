@@ -158,7 +158,7 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            yarn test --coverage -i
+            yarn test -- --coverage --runInBand
             yarn coverage
   deploy:
     <<: *defaults
