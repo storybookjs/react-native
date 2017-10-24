@@ -157,4 +157,8 @@ Promise.all([webpackValid, serverListening])
       process.exit(0);
     }
   })
-  .catch(error => logger.error(error));
+  .catch(error => {
+    if (error instanceof Error) {
+      logger.error(error);
+    }
+  });
