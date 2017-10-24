@@ -61,13 +61,17 @@ jobs:
             yarn build-storybook
       - run:
           name: "Run vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink
+            yarn storybook
           background: true
-          command: cd examples/vue-kitchen-sink && yarn storybook
       - run:
           name: "Run react kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn storybook
           background: true
-          command: cd examples/cra-kitchen-sink && yarn storybook
-       - run:
+      - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
