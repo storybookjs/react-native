@@ -53,7 +53,7 @@ const tasks = {
   }),
   integration: createProject({
     name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
-    defaultValue: true,
+    defaultValue: false,
     option: '--integration',
     projectLocation: './integration',
   }),

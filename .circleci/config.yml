@@ -158,7 +158,7 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            yarn test -- --coverage --runInBand
+            yarn test --coverage --runInBand --core --reactnative
             yarn coverage
   deploy:
     <<: *defaults
