@@ -94,3 +94,9 @@ storiesOf('Addon Info.Options.styles', module).add(
     styles: { backgroundColor: 'blue' },
   })(() => <BaseButton label="Button" />)
 );
+
+storiesOf('Addon Info.Decorator', module)
+  .addDecorator((story, context) =>
+    withInfo('Info could be used as a global or local decorator as well.')(story)(context)
+  )
+  .add('Use Info as story decorator', () => <BaseButton label="Button" />);
