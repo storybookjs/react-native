@@ -1,5 +1,7 @@
 import { configure, setAddon } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
+
+// deprecated usage of infoAddon
 import infoAddon from '@storybook/addon-info';
 
 setOptions({
@@ -14,11 +16,13 @@ setOptions({
   hierarchySeparator: /\/|\./,
 });
 
+// deprecated usage of infoAddon
 setAddon(infoAddon);
 
+const req = require.context('../src/stories', true, /\.stories\.js$/)
+
 function loadStories() {
-  require('../src/stories/index');
-  require('../src/stories/storybook-components');
+  req.keys().forEach((filename) => req(filename))
 }
 
 configure(loadStories, module);
