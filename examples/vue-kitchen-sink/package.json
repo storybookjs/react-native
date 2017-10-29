@@ -16,7 +16,7 @@
     "babel-preset-vue": "^1.2.1",
     "cross-env": "^3.0.0",
     "css-loader": "^0.28.7",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.5",
     "vue-hot-reload-api": "^2.2.0",
     "vue-loader": "^12.2.1",
     "vue-style-loader": "^3.0.1",
