@@ -10,7 +10,7 @@ type PropsType = {
   disabled?: boolean,
 };
 
-/** Flow type button description */
+/** FlowTypeButton component description imported from comments inside the component file */
 const FlowTypeButton = ({ label, onClick, disabled }: PropsType) => (
   <button onClick={onClick} disabled={disabled}>
     {label}

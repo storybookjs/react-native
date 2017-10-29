@@ -6,7 +6,6 @@ import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
 import { withNotes, WithNotes } from '@storybook/addon-notes';
-import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
@@ -22,14 +21,11 @@ import {
 } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
-
-import { Button, Welcome } from '@storybook/react/demo';
+import { Button } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
 import Container from './Container';
-import DocgenButton from '../components/DocgenButton';
-import FlowTypeButton from '../components/FlowTypeButton';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -40,8 +36,6 @@ const EVENTS = {
 
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 const InfoButton = () => (
   <span
@@ -179,16 +173,6 @@ storiesOf('Button', module)
       ))
     )
   );
-
-storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () => (
-  <DocgenButton onClick={action('clicked')} label="Docgen Button" />
-));
-
-storiesOf('AddonInfo.FlowTypeButton', module).addWithInfo(
-  'FlowTypeButton',
-  'Some Description',
-  () => <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
-);
 
 storiesOf('App', module).add('full app', () => <App />);
 
