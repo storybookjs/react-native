@@ -106,3 +106,4 @@ setOptions({
 
 storybook.configure(() => require('./stories'), module);
 ```
+It is also possible to call `setOptions()` inside individual stories. Note that this will bring impact story render performance significantly.
