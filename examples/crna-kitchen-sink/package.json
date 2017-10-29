@@ -15,7 +15,7 @@
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "react-native-scripts": "1.1.0",
     "jest-expo": "^22.0.0",
-    "react-test-renderer": "^16.0.0"
+    "react-test-renderer": "~16.0.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
