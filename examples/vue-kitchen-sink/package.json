@@ -16,9 +16,9 @@
     "babel-preset-vue": "^1.2.1",
     "cross-env": "^3.0.0",
     "css-loader": "^0.28.7",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.5",
     "vue-hot-reload-api": "^2.2.0",
-    "vue-loader": "^12.2.1",
+    "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vuex": "^2.5.0"
+    "vuex": "^3.0.0"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
