@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/** Button component description */
+/** DocgenButton component description imported from comments inside the component file */
 const DocgenButton = ({ disabled, label, onClick }) => (
   <button disabled={disabled} onClick={onClick}>
     {label}
