@@ -19,8 +19,10 @@ setOptions({
 // deprecated usage of infoAddon
 setAddon(infoAddon);
 
-const req = require.context('../src/stories', true, /\.stories\.js$/)
+// put welcome screen at the top of the list so it's the first one displayed
+require('../src/stories/welcome');
 
+const req = require.context('../src/stories', true, /\.stories\.js$/)
 function loadStories() {
   req.keys().forEach((filename) => req(filename))
 }

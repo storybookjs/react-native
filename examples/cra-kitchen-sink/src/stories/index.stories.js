@@ -6,7 +6,6 @@ import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
 import { withNotes, WithNotes } from '@storybook/addon-notes';
-import { linkTo } from '@storybook/addon-links';
 import WithEvents from '@storybook/addon-events';
 import {
   withKnobs,
@@ -22,8 +21,7 @@ import {
 } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
-
-import { Button, Welcome } from '@storybook/react/demo';
+import { Button } from '@storybook/react/demo';
 
 import App from '../App';
 import Logger from './Logger';
@@ -38,8 +36,6 @@ const EVENTS = {
 
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 const InfoButton = () => (
   <span
