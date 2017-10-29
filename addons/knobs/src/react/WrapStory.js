@@ -7,6 +7,7 @@ export default class WrapStory extends React.Component {
   constructor(props) {
     super(props);
     this.knobChanged = this.knobChanged.bind(this);
+    this.knobClicked = this.knobClicked.bind(this);
     this.resetKnobs = this.resetKnobs.bind(this);
     this.setPaneKnobs = this.setPaneKnobs.bind(this);
     this._knobsAreReset = false;
@@ -16,6 +17,8 @@ export default class WrapStory extends React.Component {
   componentDidMount() {
     // Watch for changes in knob editor.
     this.props.channel.on('addon:knobs:knobChange', this.knobChanged);
+    // Watch for clicks in knob editor.
+    this.props.channel.on('addon:knobs:knobClick', this.knobClicked);
     // Watch for the reset event and reset knobs.
     this.props.channel.on('addon:knobs:reset', this.resetKnobs);
     // Watch for any change in the knobStore and set the panel again for those
@@ -31,6 +34,7 @@ export default class WrapStory extends React.Component {
 
   componentWillUnmount() {
     this.props.channel.removeListener('addon:knobs:knobChange', this.knobChanged);
+    this.props.channel.removeListener('addon:knobs:knobClick', this.knobClicked);
     this.props.channel.removeListener('addon:knobs:reset', this.resetKnobs);
     this.props.knobStore.unsubscribe(this.setPaneKnobs);
   }
@@ -45,9 +49,15 @@ export default class WrapStory extends React.Component {
     const { knobStore, storyFn, context } = this.props;
     // Update the related knob and it's value.
     const knobOptions = knobStore.get(name);
+
     knobOptions.value = value;
     knobStore.markAllUnused();
     this.setState({ storyContent: storyFn(context) });
+  }
+
+  knobClicked(knob) {
+    const knobOptions = this.props.knobStore.get(knob.name);
+    knobOptions.callback();
   }
 
   resetKnobs() {

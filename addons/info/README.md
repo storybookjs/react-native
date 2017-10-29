@@ -1,17 +1,19 @@
 # Storybook Info Addon
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/storybooks/storybook.svg?branch=master)](https://travis-ci.org/storybooks/storybook)
+[![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
-[![Storybook Slack](https://storybooks-slackin.herokuapp.com/badge.svg)](https://storybooks-slackin.herokuapp.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
+[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
+
+* * *
 
 Storybook Info Addon will show additional information for your stories in [Storybook](https://storybook.js.org).
 Useful when you want to display usage or other types of documentation alongside your story.
 
 This addon works with Storybook for:
-[React](https://github.com/storybooks/storybook/tree/master/app/react).
+- [React](https://github.com/storybooks/storybook/tree/master/app/react)
 
 ![Screenshot](docs/home-screenshot.png)
 
@@ -64,7 +66,9 @@ It is possible to add infos by default to all components by using a global or st
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
-    addDecorator((story, context) => withInfo('common info')(story)(context));
+```js
+addDecorator((story, context) => withInfo('common info')(story)(context));
+```
 
 ## Global options
 
@@ -80,7 +84,7 @@ setDefaults({
   inline: true, // Displays info inline vs click button to view
   source: true, // Displays the source of story Component
   propTables: [/* Components used in story */], // displays Prop Tables with this components
-  propTablesExclude: [], // Exclude Components from being shoun in Prop Tables section
+  propTablesExclude: [], // Exclude Components from being shown in Prop Tables section
   styles: {}, // Overrides styles of addon
   marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
   maxPropsIntoLine: 1, // Max props to display per line in source code
@@ -175,6 +179,7 @@ DocgenButton.propTypes = {
 
 export default DocgenButton;
 ```
+
 Comments above flow types are also supported. Storybook Info Addon should now render all the correct types for your component if the PropTypes are in the same file as the React component.
 
 ## The FAQ
