@@ -82,7 +82,7 @@ If you are using Android and you get the following error after running the app: 
 If you want to use haul instead of the react-native packager, modify the storybook npm script to:
 
 ```sh
-storybook start -p 7007 --haul webpack.haul.storybook.js
+storybook start -p 7007 --haul webpack.haul.storybook.js --platform android | ios | all
 ```
 
 Where webpack.haul.storybook.js should look something like this:
