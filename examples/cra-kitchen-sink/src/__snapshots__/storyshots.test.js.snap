@@ -4321,6 +4321,139 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
 </div>
 `;
 
+exports[`Storyshots Addon Knobs.withKnobs triggers actions via button 1`] = `
+<div>
+  <p>
+    Hit the knob load button and it should trigger an async load after a short delay
+  </p>
+  <p>
+    No items loaded
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#ffff00",
+      "border": "3px solid #ff00ff",
+      "padding": "10px",
+    }
+  }
+>
+  <p>
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+  </p>
+  <p>
+    My birthday is: 
+    January 20, 2017
+  </p>
+  <p>
+    My wallet contains: $
+    12.50
+  </p>
+  <p>
+    In my backpack, I have:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+  <p>
+    Nice to meet you!
+  </p>
+  <hr />
+  <p>
+    PS. My shirt pocket contains: 
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs.withKnobsOptions triggers actions via button with debounce delay 1`] = `
+<div>
+  <p>
+    Hit the knob load button and it should trigger an async load after a short delay
+  </p>
+  <p>
+    No items loaded
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debounce delay 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#ffff00",
+      "border": "3px solid #ff00ff",
+      "padding": "10px",
+    }
+  }
+>
+  <p>
+    If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
+  </p>
+  <p>
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+  </p>
+  <p>
+    My birthday is: 
+    January 20, 2017
+  </p>
+  <p>
+    My wallet contains: $
+    12.50
+  </p>
+  <p>
+    In my backpack, I have:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+  <p>
+    Nice to meet you!
+  </p>
+  <hr />
+  <p>
+    PS. My shirt pocket contains: 
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Notes using deprecated API 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Addon Notes withNotes 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
 exports[`Storyshots App full app 1`] = `
 <div
   className="App"
@@ -4748,54 +4881,6 @@ exports[`Storyshots Button addons composition 1`] = `
       </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`Storyshots Button with knobs 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#ffff00",
-      "border": "3px solid #ff00ff",
-      "padding": "10px",
-    }
-  }
->
-  <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
-  </p>
-  <p>
-    My birthday is: 
-    January 20, 2017
-  </p>
-  <p>
-    My wallet contains: $
-    12.50
-  </p>
-  <p>
-    In my backpack, I have:
-  </p>
-  <ul>
-    <li>
-      Laptop
-    </li>
-    <li>
-      Book
-    </li>
-    <li>
-      Whiskey
-    </li>
-  </ul>
-  <p>
-    Nice to meet you!
-  </p>
-  <hr />
-  <p>
-    PS. My shirt pocket contains: 
-  </p>
-  <li>
-    No items!
-  </li>
 </div>
 `;
 
@@ -5923,70 +6008,6 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Cells.Molecules.Atoms with some emoji2 1`] = `
-<button
-  className="css-1yjiefr"
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots Cells.Molecules.Atoms with text2 1`] = `
-<button
-  className="css-1yjiefr"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Cells/Molecules with some emoji 1`] = `
-<button
-  className="css-1yjiefr"
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots Cells/Molecules with text 1`] = `
-<button
-  className="css-1yjiefr"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Cells/Molecules.Atoms/simple with some emoji 1`] = `
-<button
-  className="css-1yjiefr"
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots Cells/Molecules.Atoms/simple with text 1`] = `
-<button
-  className="css-1yjiefr"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Cells/Molecules/Atoms.more with some emoji2 1`] = `
-<button
-  className="css-1yjiefr"
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots Cells/Molecules/Atoms.more with text2 1`] = `
-<button
-  className="css-1yjiefr"
->
-  Hello Button
-</button>
-`;
-
 exports[`Storyshots Navigation Menu link 1`] = `
 <div
   className="css-t9df35"
@@ -6163,103 +6184,5 @@ exports[`Storyshots WithEvents Logger 1`] = `
     Logger
   </h1>
   <dl />
-</div>
-`;
-
-exports[`Storyshots component.Button first 1`] = `
-<button>
-  first button
-</button>
-`;
-
-exports[`Storyshots component.Button second 1`] = `
-<button>
-  first second
-</button>
-`;
-
-exports[`Storyshots component.base.Link first 1`] = `
-<a>
-  first link
-</a>
-`;
-
-exports[`Storyshots component.base.Link second 1`] = `
-<a>
-  second link
-</a>
-`;
-
-exports[`Storyshots component.base.Span first 1`] = `
-<span>
-  first span
-</span>
-`;
-
-exports[`Storyshots component.base.Span second 1`] = `
-<span>
-  second span
-</span>
-`;
-
-exports[`Storyshots component.common.Div first 1`] = `
-<div>
-  first div
-</div>
-`;
-
-exports[`Storyshots component.common.Div second 1`] = `
-<div>
-  second div
-</div>
-`;
-
-exports[`Storyshots component.common.Table first 1`] = `
-<table>
-  <tr>
-    <td>
-      first table
-    </td>
-  </tr>
-</table>
-`;
-
-exports[`Storyshots component.common.Table second 1`] = `
-<table>
-  <tr>
-    <td>
-      first table
-    </td>
-  </tr>
-</table>
-`;
-
-exports[`Storyshots withNotes with a button and some emoji 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots withNotes with old API 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
->
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots withNotes with some emoji 1`] = `
-<p>
-  🤔😳😯😮
-</p>
-`;
-
-exports[`Storyshots withNotes with some text 1`] = `
-<div>
-  Hello guys
 </div>
 `;
