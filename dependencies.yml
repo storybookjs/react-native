@@ -39,8 +39,13 @@ collectors:
       github_assignees:
       - Hypnosphi
   # create issues for new major versions
-#  - type: repo-issue
-#    versions: "Y.0.0"
+  - type: repo-issue
+    versions: "Y.0.0"
+    settings:
+      github_labels:
+      - dependencies:update
+      github_assignees:
+      - Hypnosphi
 
 - type: js-npm
   path: docs
@@ -54,5 +59,10 @@ collectors:
       github_assignees:
       - Hypnosphi
   # create issues for new major versions
-#  - type: repo-issue
-#    versions: "Y.0.0"
+  - type: repo-issue
+    versions: "Y.0.0"
+    settings:
+      github_labels:
+      - dependencies:update
+      github_assignees:
+      - Hypnosphi

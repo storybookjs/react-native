@@ -3,20 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "node node_modules/react-native/local-cli/cli.js run-ios",
     "test": "jest",
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "16.0.0-alpha.6",
-    "react-native": "0.44.1"
+    "react": "~16.0.0",
+    "react-native": "~0.49.3"
   },
   "devDependencies": {
     "babel-jest": "21.0.0",
     "babel-preset-react-native": "1.9.2",
     "jest": "^21.0.1",
-    "react-test-renderer": "16.0.0-alpha.6",
+    "react-test-renderer": "~16.0.0",
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
     "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
     "@storybook/addon-options": "file:../../packs/storybook-addon-options.tgz",
