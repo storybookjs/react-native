@@ -169,5 +169,9 @@ OnDeviceUI.propTypes = {
     emit: PropTypes.func.isRequired,
     removeListener: PropTypes.func.isRequired,
   }).isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
+};
+
+OnDeviceUI.defaultProps = {
+  url: '',
 };
