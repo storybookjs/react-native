@@ -150,21 +150,6 @@
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@hypnosphi/fuse.js/-/fuse.js-3.0.9.tgz#ea99f6121b4a8f065b4c71f85595db2714498807"
 
-"@kadira/storybook-database-cloud@*":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@kadira/storybook-database-cloud/-/storybook-database-cloud-2.3.2.tgz#28864d7d0a1e17e7aa864ef4d87f69a5c52e7a35"
-  dependencies:
-    graphqlify "^1.0.0"
-    uuid "^2.0.3"
-    whatwg-fetch "^1.0.0"
-
-"@kadira/storybook-deployer@*":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@kadira/storybook-deployer/-/storybook-deployer-1.2.0.tgz#1708f5cb37fa08ab4173b1bd99df6f4717dfae12"
-  dependencies:
-    git-url-parse "^6.0.2"
-    shelljs "^0.7.0"
-
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
@@ -176,6 +161,22 @@
     loader-utils "^1.0.2"
     magic-string "^0.22.3"
     source-map "^0.5.6"
+
+"@storybook/addon-comments@^3.3.0-alpha.2":
+  version "3.3.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-comments/-/addon-comments-3.3.0-alpha.2.tgz#7dad77b3ba94c4714a11d9cbb8e7579a33682b37"
+  dependencies:
+    "@storybook/addons" "^3.3.0-alpha.2"
+    babel-runtime "^6.26.0"
+    deep-equal "^1.0.1"
+    events "^1.1.1"
+    global "^4.3.2"
+    insert-css "^1.0.0"
+    marked "^0.3.6"
+    moment "^2.18.1"
+    prop-types "^15.6.0"
+    react-render-html "^0.5.2"
+    react-textarea-autosize "^4.3.0"
 
 "@types/jasmine@*":
   version "2.6.0"
@@ -5773,7 +5774,7 @@ git-up@^2.0.0:
     is-ssh "^1.3.0"
     parse-url "^1.3.0"
 
-git-url-parse@^6.0.2, git-url-parse@^6.2.2:
+git-url-parse@^6.2.2:
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-6.2.2.tgz#be49024e14b8487553436b4572b8b439532fa871"
   dependencies:
@@ -6066,10 +6067,6 @@ graphql@^0.11.7:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
   dependencies:
     iterall "1.1.3"
-
-graphqlify@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/graphqlify/-/graphqlify-1.1.0.tgz#1d1d81e37b209fc09742fe48da3ac4763e20ddc7"
 
 grizzly@^2.0.0:
   version "2.1.5"
@@ -9024,7 +9021,7 @@ modify-values@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.0.tgz#e2b6cdeb9ce19f99317a53722f3dbf5df5eaaab2"
 
-moment@2.x.x, moment@^2.19.0, moment@^2.19.1, moment@^2.6.0:
+moment@2.x.x, moment@^2.18.1, moment@^2.19.1, moment@^2.6.0:
   version "2.19.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
 
@@ -12503,7 +12500,7 @@ shelljs@0.3.x:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.3.0.tgz#3596e6307a781544f591f37da618360f31db57b1"
 
-shelljs@^0.7.0, shelljs@^0.7.5, shelljs@^0.7.8:
+shelljs@^0.7.5, shelljs@^0.7.8:
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
   dependencies:
@@ -13986,7 +13983,7 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
 
-uuid@^2.0.1, uuid@^2.0.2, uuid@^2.0.3:
+uuid@^2.0.1, uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
