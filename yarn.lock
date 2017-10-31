@@ -967,6 +967,14 @@ babel-plugin-dynamic-import-node@1.0.2:
     babel-template "^6.24.1"
     babel-types "^6.24.1"
 
+babel-plugin-dynamic-import-node@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-1.1.0.tgz#bd1d88ac7aaf98df4917c384373b04d971a2b37a"
+  dependencies:
+    babel-plugin-syntax-dynamic-import "^6.18.0"
+    babel-template "^6.26.0"
+    babel-types "^6.26.0"
+
 babel-plugin-eval@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-eval/-/babel-plugin-eval-1.0.1.tgz#a2faed25ce6be69ade4bfec263f70169195950da"
@@ -1486,7 +1494,7 @@ babel-plugin-transform-object-rest-spread@6.23.0:
     babel-plugin-syntax-object-rest-spread "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-object-rest-spread@^6.20.2, babel-plugin-transform-object-rest-spread@^6.22.0, babel-plugin-transform-object-rest-spread@^6.23.0, babel-plugin-transform-object-rest-spread@^6.5.0, babel-plugin-transform-object-rest-spread@^6.8.0:
+babel-plugin-transform-object-rest-spread@6.26.0, babel-plugin-transform-object-rest-spread@^6.20.2, babel-plugin-transform-object-rest-spread@^6.22.0, babel-plugin-transform-object-rest-spread@^6.23.0, babel-plugin-transform-object-rest-spread@^6.5.0, babel-plugin-transform-object-rest-spread@^6.8.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.26.0.tgz#0f36692d50fef6b7e2d4b3ac1478137a963b7b06"
   dependencies:
@@ -1539,7 +1547,7 @@ babel-plugin-transform-regenerator@6.24.1:
   dependencies:
     regenerator-transform "0.9.11"
 
-babel-plugin-transform-regenerator@^6.22.0, babel-plugin-transform-regenerator@^6.24.1, babel-plugin-transform-regenerator@^6.26.0, babel-plugin-transform-regenerator@^6.5.0:
+babel-plugin-transform-regenerator@6.26.0, babel-plugin-transform-regenerator@^6.22.0, babel-plugin-transform-regenerator@^6.24.1, babel-plugin-transform-regenerator@^6.26.0, babel-plugin-transform-regenerator@^6.5.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-regenerator/-/babel-plugin-transform-regenerator-6.26.0.tgz#e0703696fbde27f0a3efcacf8b4dca2f7b3a8f2f"
   dependencies:
@@ -1643,7 +1651,7 @@ babel-preset-env@1.5.2:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-env@^1.6.0, babel-preset-env@^1.6.1:
+babel-preset-env@1.6.1, babel-preset-env@^1.6.0, babel-preset-env@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.1.tgz#a18b564cc9b9afdf4aae57ae3c1b0d99188e6f48"
   dependencies:
@@ -1816,6 +1824,23 @@ babel-preset-react-app@^3.0.3:
     babel-plugin-transform-regenerator "6.24.1"
     babel-plugin-transform-runtime "6.23.0"
     babel-preset-env "1.5.2"
+    babel-preset-react "6.24.1"
+
+babel-preset-react-app@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-react-app/-/babel-preset-react-app-3.1.0.tgz#d77f6061ab9d7bf4b3cdc86b7cde9ded0df03e48"
+  dependencies:
+    babel-plugin-dynamic-import-node "1.1.0"
+    babel-plugin-syntax-dynamic-import "6.18.0"
+    babel-plugin-transform-class-properties "6.24.1"
+    babel-plugin-transform-object-rest-spread "6.26.0"
+    babel-plugin-transform-react-constant-elements "6.23.0"
+    babel-plugin-transform-react-jsx "6.24.1"
+    babel-plugin-transform-react-jsx-self "6.22.0"
+    babel-plugin-transform-react-jsx-source "6.22.0"
+    babel-plugin-transform-regenerator "6.26.0"
+    babel-plugin-transform-runtime "6.23.0"
+    babel-preset-env "1.6.1"
     babel-preset-react "6.24.1"
 
 babel-preset-react-native@^2.0.0:
