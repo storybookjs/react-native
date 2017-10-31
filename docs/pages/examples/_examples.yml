@@ -25,6 +25,13 @@ atlassian:
   description: Atlassian's official UI library.
   demo: https://atlaskit.atlassian.com/components
   site: https://atlaskit.atlassian.com/
+wix:
+  thumbnail: ./thumbnails/wix.png
+  title: Wix Style React
+  description: Components that conform to Wix Style
+  source: https://github.com/wix/wix-style-react
+  demo: https://wix.github.io/wix-style-react/
+  site: https://wix.com
 buffer:
   thumbnail: ./thumbnails/buffer.jpg
   title: Buffer Components
