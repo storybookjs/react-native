@@ -13,32 +13,29 @@ const examples = [
 
 examples.forEach(({ name, port }) => {
   let browser = puppeteer.launch();
+  let page;
 
   describe('sandboxes', () => {
+    beforeAll(async () => {
+      browser = await browser;
+      page = await browser.newPage();
+      await page.setViewport({ width: 1400, height: 1000 });
+    });
     afterAll(() => {
       browser.close();
     });
 
-    it.concurrent(
-      `Take screenshots for '${name}'`,
-      async () => {
-        browser = await browser;
-        const page = await browser.newPage();
-        await page.setViewport({ width: 1400, height: 1000 });
-        await page.goto(`http://localhost:${port}`);
-        await page.waitForSelector('[role="menuitem"][data-name="Welcome"]');
-        await page.waitFor(2000);
+    it(`Take screenshots for '${name}'`, async () => {
+      await page.goto(`http://localhost:${port}`);
+      await page.waitForSelector('[role="menuitem"][data-name="Welcome"]');
+      await page.waitFor(2000);
 
-        const screenshot = await page.screenshot({ fullPage: true });
-
-        expect(screenshot).toMatchImageSnapshot({
-          customDiffConfig: {
-            threshold: 0.03, // 3% threshold
-          },
-          customSnapshotIdentifier: name.split('/').join('-'),
-        });
-      },
-      1000 * 60 * 10 // 10 minutes for all tests in total
-    );
+      const screenshot = await page.screenshot({ fullPage: true });
+      expect(screenshot).toMatchImageSnapshot({
+        failureThreshold: 0.04, // 4% threshold,
+        failureThresholdType: 'percent',
+        customSnapshotIdentifier: name.split('/').join('-'),
+      });
+    });
   });
 });
