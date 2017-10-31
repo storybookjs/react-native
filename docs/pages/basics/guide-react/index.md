@@ -31,7 +31,7 @@ npm i --save-dev @storybook/react
 
 ## Add react and react-dom
 
-Make sure that you have `react` and `react-dom` in your dependencies as well because we list is as a peerDependency:
+Make sure that you have `react` and `react-dom` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
 npm i --save react react-dom
