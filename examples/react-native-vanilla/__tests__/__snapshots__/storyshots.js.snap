@@ -19,6 +19,7 @@ exports[`Storyshots Button with some emoji 1`] = `
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
+    nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -40,6 +41,7 @@ exports[`Storyshots Button with some emoji 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
     >
       😀 😎 👍 💯
@@ -67,6 +69,7 @@ exports[`Storyshots Button with text 1`] = `
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
+    nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -88,6 +91,7 @@ exports[`Storyshots Button with text 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
     >
       Hello Button
@@ -110,6 +114,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
   >
     My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
@@ -117,6 +122,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
   >
     My birthday is: 
@@ -125,6 +131,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
   >
     My wallet contains: $
@@ -133,6 +140,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
   >
     In my backpack, I have:
@@ -141,6 +149,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
     >
       Laptop
@@ -148,6 +157,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
     >
       Book
@@ -155,6 +165,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
     >
       Whiskey
@@ -163,6 +174,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
   >
     Nice to meet you!
@@ -183,6 +195,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -196,6 +209,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -210,6 +224,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
