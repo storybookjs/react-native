@@ -9578,13 +9578,6 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
-react-inspector@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-2.2.0.tgz#2aa0778c3512063f598d7a89a28a5d5c7733cad7"
-  dependencies:
-    babel-runtime "^6.26.0"
-    is-dom "^1.0.9"
-
 react-inspector@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-2.2.1.tgz#c24f9a0131960b8e63c8392254d34df0717aabdf"
