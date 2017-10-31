@@ -35,7 +35,7 @@ import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Component', module)
   .add('simple info',
-    withInfo('doc string about my component')(() =>
+    withInfo('description or documentation about my component, supports markdown')(() =>
       <Component>Click the "?" mark at top-right to view the info.</Component>
     )
   )
@@ -148,7 +148,7 @@ setAddon(infoAddon);
 ### React Docgen Integration
 
 React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during babel compile time.
-When rendering a story with a React component commented in this supported format, the Addon Info prop table will display the prop's comment in the description column.
+When rendering a story with a React component commented in this supported format, the Addon Info description will render the comments above the component declaration and the prop table will display the prop's comment in the description column.
 
 ```js
 import React from 'react';
