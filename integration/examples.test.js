@@ -32,7 +32,7 @@ examples.forEach(({ name, port }) => {
         const screenshot = await page.screenshot({ fullPage: true });
 
         expect(screenshot).toMatchImageSnapshot({
-          failureThreshold: 0.03, // 3% threshold,
+          failureThreshold: 0.04, // 4% threshold,
           failureThresholdType: 'percent',
           customSnapshotIdentifier: name.split('/').join('-'),
         });
