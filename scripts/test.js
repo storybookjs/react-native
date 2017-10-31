@@ -59,6 +59,7 @@ const tasks = {
     defaultValue: false,
     option: '--integration',
     projectLocation: './integration',
+    isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
