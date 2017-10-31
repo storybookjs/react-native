@@ -11,7 +11,7 @@ setOptions({
   showStoriesPanel: true,
   showAddonsPanel: true,
   showSearchBox: false,
-  addonsPanelInRight: true,
+  addonPanelInRight: true,
   sortStoriesByKind: false,
   hierarchySeparator: /\/|\./,
 });
