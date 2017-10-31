@@ -24,7 +24,7 @@ export default class StoryView extends Component {
   renderHelp() {
     return (
       <View style={style.help}>
-        {this.props.url ? (
+        {this.props.url && this.props.url.length ? (
           <Text>
             Please open the Storybook UI (
             {this.props.url}
@@ -58,5 +58,9 @@ StoryView.propTypes = {
     on: PropTypes.func.isRequired,
     removeListener: PropTypes.func.isRequired,
   }).isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
+};
+
+StoryView.defaultProps = {
+  url: '',
 };
