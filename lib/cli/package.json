@@ -22,9 +22,7 @@
   },
   "scripts": {
     "test-latest-cra": "cd test && ./test_latest_cra.sh",
-    "posttest-latest-cra": "yarn posttest",
-    "test": "cd test && ./run_tests.sh",
-    "posttest": "rm -rfd test/run"
+    "test": "cd test && ./run_tests.sh"
   },
   "dependencies": {
     "@storybook/codemod": "^3.3.0-alpha.2",

@@ -3,6 +3,14 @@
 # exit on error
 set -e
 
+declare test_root=$PWD
+
+# remove run directory before exit to prevent yarn.lock spoiling
+function cleanup {
+  rm -rfd ${test_root}/run
+}
+trap cleanup EXIT
+
 update=0
 skip=0
 fixtures_dir='fixtures'
@@ -65,9 +73,9 @@ if [ $update -eq 1 ]
   fi
 
 # install all the dependencies in a single run
-cd ..
+cd ../../..
 yarn --pure-lockfile
-cd test/run
+cd ${test_root}/run
 
 for dir in *
 do
