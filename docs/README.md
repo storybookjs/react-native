@@ -6,7 +6,7 @@ This is the source for [storybook.js.org](https://storybook.js.org). It document
 
 ```sh
 yarn
-yarn develop
+yarn dev
 yarn storybook
 ```
 
