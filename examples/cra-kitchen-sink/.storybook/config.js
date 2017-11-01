@@ -1,5 +1,7 @@
 import { configure, setAddon } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
+
+// deprecated usage of infoAddon
 import infoAddon from '@storybook/addon-info';
 
 setOptions({
@@ -9,16 +11,21 @@ setOptions({
   showStoriesPanel: true,
   showAddonsPanel: true,
   showSearchBox: false,
-  addonsPanelInRight: true,
+  addonPanelInRight: true,
   sortStoriesByKind: false,
   hierarchySeparator: /\/|\./,
 });
 
+// deprecated usage of infoAddon
 setAddon(infoAddon);
 
+// put welcome screen at the top of the list so it's the first one displayed
+require('../src/stories/welcome');
+
+// automatically import all story js files that end with *.stories.js
+const req = require.context('../src/stories', true, /\.stories\.js$/)
 function loadStories() {
-  require('../src/stories/index');
-  require('../src/stories/storybook-components');
+  req.keys().forEach((filename) => req(filename))
 }
 
 configure(loadStories, module);

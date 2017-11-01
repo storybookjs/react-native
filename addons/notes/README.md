@@ -43,3 +43,17 @@ import Component from './Component';
 storiesOf('Component', module)
   .add('with some emoji', withNotes('A very simple component')(() => <Component></Component>));
 ```
+
+### Deprecated API
+This API is slated for removal in 4.0
+
+```js
+import { WithNotes } from '@storybook/addon-notes';
+
+storiesOf('Addon Notes', module)
+  .add('using deprecated API', () => (
+    <WithNotes notes="Hello">
+      <BaseButton onClick={action('clicked')} label="😀 😎 👍 💯" />
+    </WithNotes>
+  ));
+```

@@ -78,6 +78,9 @@ jobs:
       - run:
           name: Integration Test - Kichen sinks
           command: yarn test --integration
+      - store_artifacts:
+          path: integration/__image_snapshots__
+          destination: integration_image_snapshots
   example-react-native:
     <<: *defaults
     steps:
