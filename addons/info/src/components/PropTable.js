@@ -28,7 +28,7 @@ const renderDocgenPropType = propType => {
     return 'unknown';
   }
 
-  const name = propType.name;
+  const { name } = propType;
 
   switch (name) {
     case 'arrayOf':

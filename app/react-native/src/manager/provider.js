@@ -16,7 +16,7 @@ export default class ReactProvider extends Provider {
       this.channel = undefined;
     }
 
-    const secured = options.secured;
+    const { secured } = options;
     const websocketType = secured ? 'wss' : 'ws';
     let url = `${websocketType}://${domain}`;
     if (options.manualId) {
