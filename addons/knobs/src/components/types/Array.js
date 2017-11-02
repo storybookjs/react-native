@@ -47,6 +47,10 @@ ArrayType.propTypes = {
 };
 
 ArrayType.serialize = value => value;
-ArrayType.deserialize = value => value;
+ArrayType.deserialize = value => {
+  if (Array.isArray(value)) return value;
+
+  return Object.keys(value).reduce((array, key) => [...array, value[key]], []);
+};
 
 export default ArrayType;

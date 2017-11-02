@@ -15,4 +15,21 @@ describe('Array', () => {
     wrapper.simulate('change', { target: { value: 'Fhishing,Skiing,Dancing' } });
     expect(onChange).toHaveBeenCalledWith(['Fhishing', 'Skiing', 'Dancing']);
   });
+
+  it('deserializes an Array to an Array', () => {
+    const array = ['a', 'b', 'c'];
+    const deserialized = ArrayType.deserialize(array);
+
+    expect(Array.isArray(deserialized)).toEqual(true);
+    expect(deserialized).toEqual(['a', 'b', 'c']);
+  });
+
+  it('deserializes an Object to an Array', () => {
+    const object = { 1: 'one', 0: 'zero', 2: 'two' };
+
+    const deserialized = ArrayType.deserialize(object);
+
+    expect(Array.isArray(deserialized)).toEqual(true);
+    expect(deserialized).toEqual(['zero', 'one', 'two']);
+  });
 });
