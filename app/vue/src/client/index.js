@@ -4,7 +4,7 @@
 // import { action as deprecatedAction } from '@storybook/addon-actions';
 // import { linkTo as deprecatedLinkTo } from '@storybook/addon-links';
 
-export * from './preview';
+export { storiesOf, setAddon, addDecorator, configure, getStorybook } from './preview';
 
 // export const action = deprecate(
 //   deprecatedAction,
