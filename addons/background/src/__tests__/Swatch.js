@@ -1,42 +1,39 @@
-import React from "react";
-const EventEmitter = require("events");
-import { shallow, mount } from "enzyme";
-import Swatch from "../Swatch";
-const TestUtils = require("react-dom/test-utils");
-const mockedSetBackround = (val) => {}
+import React from 'react';
+import { shallow, mount } from 'enzyme';
 
-describe("Swatch", function() {
-  it("should exist", () => {
-    const SpiedChannel = new EventEmitter();
+import Swatch from '../Swatch';
+
+const mockedSetBackround = jest.fn();
+
+describe('Swatch', () => {
+  it('should exist', () => {
     const swatch = shallow(<Swatch value="bar" name="foo" setBackground={mockedSetBackround} />);
 
     expect(swatch).toBeDefined();
   });
 
-  it("should render the name of the swatch", () => {
-
-    const markup = shallow(
-      <Swatch value="bar" name="foo" setBackground={mockedSetBackround}/>
-    ).html();
-
-    expect(markup.match(/foo/gmi).length).toBe(1);
-  });
-
-  it("should render the value of the swatch and set it to be the background", () => {
-
+  it('should render the name of the swatch', () => {
     const markup = shallow(
       <Swatch value="bar" name="foo" setBackground={mockedSetBackround} />
     ).html();
 
-    expect(markup.match(/background:bar/gmi).length).toBe(1);
-    expect(markup.match(/bar/gmi).length).toBe(2);
+    expect(markup.match(/foo/gim).length).toBe(1);
   });
 
-  it("should emit message on click", () => {
+  it('should render the value of the swatch and set it to be the background', () => {
+    const markup = shallow(
+      <Swatch value="bar" name="foo" setBackground={mockedSetBackround} />
+    ).html();
+
+    expect(markup.match(/background:bar/gim).length).toBe(1);
+    expect(markup.match(/bar/gim).length).toBe(2);
+  });
+
+  it('should emit message on click', () => {
     const spy = jest.fn();
     const swatch = mount(<Swatch value="#e6e6e6" name="Gray" setBackground={spy} />);
-    swatch.simulate("click");
+    swatch.simulate('click');
 
-    expect(spy).toBeCalledWith("#e6e6e6");
+    expect(spy).toBeCalledWith('#e6e6e6');
   });
 });

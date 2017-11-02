@@ -1,19 +1,19 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import centered from "@storybook/addon-centered";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import centered from '@storybook/addon-centered';
 
-import backgrounds from "./index.js";
+import backgrounds from './index.js';
 
-storiesOf("First Component", module)
+storiesOf('First Component', module)
   .addDecorator(centered)
-  .add("First Button", () => <button>Click me</button>)
-  ;
+  .add('First Button', () => <button>Click me</button>);
 
-storiesOf("Second Component", module)
+storiesOf('Second Component', module)
   .addDecorator(centered)
-  .addDecorator(backgrounds([
-    { name: "twitter", value: "#00aced" },
-    { name: "facebook", value: "#3b5998", default: true },
-  ]))
-  .add("Second Button", () => <button>Click me</button>)
-  ;
+  .addDecorator(
+    backgrounds([
+      { name: 'twitter', value: '#00aced' },
+      { name: 'facebook', value: '#3b5998', default: true },
+    ])
+  )
+  .add('Second Button', () => <button>Click me</button>);
