@@ -4,6 +4,7 @@ const program = require('commander');
 const childProcess = require('child_process');
 const chalk = require('chalk');
 const log = require('npmlog');
+const path = require('path');
 
 log.heading = 'storybook';
 const prefix = 'test';
@@ -18,6 +19,7 @@ const spawn = command => {
   if (out.status !== 0) {
     process.exit(out.status);
   }
+
   return out;
 };
 
@@ -43,7 +45,7 @@ const tasks = {
     name: `Core & React & Vue ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
-    projectLocation: './',
+    projectLocation: path.join(__dirname, '..'),
   }),
   'react-native-vanilla': createProject({
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
@@ -110,6 +112,7 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
+
 if (
   !Object.keys(tasks)
     .map(key => tasks[key].value)
@@ -153,10 +156,14 @@ if (
 
 selection
   .then(list => {
+    const command = `jest --projects ${getProjects(list).join(' ')} ${getExtraParams(list).join(
+      ' '
+    )}`;
+    console.log('command: ', command);
     if (list.length === 0) {
       log.warn(prefix, 'Nothing to test');
     } else {
-      spawn(`jest --projects ${getProjects(list).join(' ')} ${getExtraParams(list).join(' ')}`);
+      spawn(command);
       process.stdout.write('\x07');
     }
   })
