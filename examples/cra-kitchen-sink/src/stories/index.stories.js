@@ -57,7 +57,7 @@ storiesOf('Button', module)
   ))
   .add('with notes', () => (
     // deprecated usage
-    <WithNotes notes={'A very simple button'}>
+    <WithNotes notes="A very simple button">
       <Button>
         {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
         Check my notes in the notes panel

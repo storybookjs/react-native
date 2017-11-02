@@ -11,7 +11,7 @@ const stylesheet = {
 export default function Props(props) {
   const { maxPropsIntoLine, maxPropArrayLength, maxPropObjectKeys, maxPropStringLength } = props;
   const nodeProps = props.node.props;
-  const defaultProps = props.node.type.defaultProps;
+  const { defaultProps } = props.node.type;
   if (!nodeProps || typeof nodeProps !== 'object') {
     return <span />;
   }

@@ -1,5 +1,4 @@
-/* global location */
-
+import { location } from 'global';
 import qs from 'qs';
 import React from 'react';
 import { Provider } from '@storybook/ui';

@@ -31,7 +31,7 @@ function getData(element) {
   }
 
   data.children = element.props.children;
-  const type = element.type;
+  const { type } = element;
 
   if (typeof type === 'string') {
     data.name = type;

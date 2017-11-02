@@ -1,6 +1,4 @@
-const global = require('global');
-
-const document = global.document;
+const { document } = require('global');
 
 exports.onRouteUpdate = location => {
   if (location.hash) {

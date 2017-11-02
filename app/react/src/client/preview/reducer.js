@@ -29,7 +29,7 @@ export default function reducer(state = {}, action) {
       const { storyKindList } = action;
       if (!newState.selectedKind && storyKindList.length > 0) {
         newState.selectedKind = storyKindList[0].kind;
-        newState.selectedStory = storyKindList[0].stories[0];
+        [newState.selectedStory] = storyKindList[0].stories;
       }
       return newState;
     }

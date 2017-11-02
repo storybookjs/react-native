@@ -19,7 +19,7 @@ function WatchMissingNodeModulesPlugin(nodeModulesPath) {
 WatchMissingNodeModulesPlugin.prototype.apply = function apply(compiler) {
   compiler.plugin('emit', (compilation, callback) => {
     const missingDeps = compilation.missingDependencies;
-    const nodeModulesPath = this.nodeModulesPath;
+    const { nodeModulesPath } = this;
 
     // If any missing files are expected to appear in node_modules...
     if (missingDeps.some(file => file.indexOf(nodeModulesPath) !== -1)) {
