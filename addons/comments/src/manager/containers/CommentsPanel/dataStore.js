@@ -32,7 +32,7 @@ export default class DataStore {
       };
     }
 
-    const comments = item.comments;
+    const { comments } = item;
     let invalidated = false;
 
     // invalid caches created 60 minutes ago.

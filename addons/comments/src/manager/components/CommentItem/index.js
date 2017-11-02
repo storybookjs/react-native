@@ -42,7 +42,7 @@ export default class CommentItem extends Component {
   }
 
   render() {
-    const comment = this.props.comment;
+    const { comment } = this.props;
     let commentStyle = style.commentItem;
     if (comment.loading) {
       commentStyle = style.commentItemloading;

@@ -31,7 +31,7 @@ export default class propForm extends React.Component {
   }
 
   render() {
-    const knobs = this.props.knobs;
+    const { knobs } = this.props;
 
     return (
       <form style={stylesheet.propForm}>
