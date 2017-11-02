@@ -9,7 +9,6 @@ export default class Container extends Component {
     super(props, ...args);
     this.state = {
       user: null,
-      users: [],
       comments: [],
       loading: true,
     };

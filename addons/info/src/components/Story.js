@@ -12,7 +12,7 @@ import Node from './Node';
 import { Pre } from './markdown';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
-const STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES;
+const { STORYBOOK_REACT_CLASSES } = global;
 
 const stylesheet = {
   link: {

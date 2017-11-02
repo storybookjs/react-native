@@ -59,7 +59,7 @@ const result = coloured.split('').map((char, index) => {
   return colorPrefix + (isSpace ? '⠀' : char);
 });
 
-const exec = require('child_process').exec;
+const { exec } = require('child_process');
 
 exec(`printf "%b" "${result.join('')}\\033[0m"`, {}).stdout.pipe(process.stdout);
 

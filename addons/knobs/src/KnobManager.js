@@ -17,7 +17,7 @@ export default class KnobManager {
   knob(name, options) {
     this._mayCallChannel();
 
-    const knobStore = this.knobStore;
+    const { knobStore } = this;
     const existingKnob = knobStore.get(name);
     // We need to return the value set by the knob editor via this.
     // But, if the user changes the code for the defaultValue we should set
