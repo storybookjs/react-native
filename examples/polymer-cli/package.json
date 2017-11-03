@@ -1,0 +1,13 @@
+{
+  "name": "polymer-cli",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack && polymer serve -o"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^2.2.0",
+    "@webcomponents/webcomponentsjs": "^1.0.17",
+    "polymer-webpack-loader": "^2.0.0",
+    "webpack": "^3.8.1"
+  }
+}
