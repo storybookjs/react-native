@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import capitalize from 'lodash/capitalize';
 
 import Docs from '../components/Docs';
-import { config } from '../config.toml';
 
 const categories = [
   {
@@ -49,7 +48,7 @@ const DocsContainer = props => {
   const docProps = {
     categories,
     selectedCatId: catId,
-    sections: getSections(catId, config, pages),
+    sections: getSections(catId, props.data.site.siteMetadata, pages),
     selectedItem: getSelectedItem(children, sectionId),
     selectedSectionId: sectionId,
     selectedItemId: itemId,
@@ -59,6 +58,13 @@ const DocsContainer = props => {
 };
 
 DocsContainer.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        docsSections: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
+      }),
+    }),
+  }).isRequired,
   location: PropTypes.object, // eslint-disable-line
   route: PropTypes.object, // eslint-disable-line
   children: PropTypes.node.isRequired,
@@ -68,3 +74,18 @@ DocsContainer.contextTypes = {
 };
 
 export default DocsContainer;
+
+export const pageQuery = graphql`
+  query SiteMetadataLookup($slug: String!) {
+    site {
+      siteMetadata {
+        docSections {
+          basics
+          configurations
+          testing
+          addons
+        }
+      }
+    }
+  }
+`;

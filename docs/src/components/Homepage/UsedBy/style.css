@@ -67,7 +67,11 @@
   font-size: 2em;
 }
 
-.used-by-more-examples a {
+.used-by-more-examples a,
+.used-by-more-examples a:visited,
+.used-by-more-examples a:hover,
+.used-by-more-examples a:active,
+.used-by-more-examples a:focus {
   background-color: #e4004f;
   color: #fff;
   padding: 20px;

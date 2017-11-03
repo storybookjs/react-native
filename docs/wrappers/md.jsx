@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
-import { config } from '../config.toml';
+import { config } from '../gatsby-config';
 
 const Markdown = ({ route }) => {
   const post = route.page.data;

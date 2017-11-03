@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'gatsby-link';
 import slackIcon from './images/slack-icon.png';
 import githubIcon from './images/github-icon.png';
 import './style.css';

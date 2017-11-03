@@ -3,10 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 
-import { prefixLink } from 'gatsby/dist/isomorphic/gatsby-helpers';
 import favicon from './design/homepage/storybook-icon.png';
-
-const BUILD_TIME = new Date().getTime();
 
 const HTML = props => {
   const title = DocumentTitle.rewind();
@@ -14,25 +11,19 @@ const HTML = props => {
   let css;
   if (process.env.NODE_ENV === 'production') {
     // eslint-disable-next-line
-    css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />;
+    css = <style dangerouslySetInnerHTML={{ __html: require('!raw!../public/styles.css') }} />;
   }
 
   const searchScript = [
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />,
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"
+    <link
+      key="docsearch-css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"
     />,
     <script
+      key="docsearch-js"
       type="text/javascript"
-      dangerouslySetInnerHTML={{
-        __html: `docsearch({
-          apiKey: 'a4f7f972f1d8f99a66e237e7fd2e489f',
-          indexName: 'storybook-js',
-          inputSelector: '#search',
-          debug: false // Set debug to true if you want to inspect the dropdown
-        });`,
-      }}
+      src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"
     />,
   ];
 
@@ -45,10 +36,11 @@ const HTML = props => {
         <title>{title}</title>
         <link rel="icon" href={favicon} type="image/x-icon" />
         {css}
+        {props.headComponents}
       </head>
       <body>
-        <div id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
-        <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+        <div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
+        {props.postBodyComponents}
         {searchScript}
       </body>
     </html>
@@ -57,6 +49,8 @@ const HTML = props => {
 
 HTML.displayName = 'HTML';
 HTML.propTypes = {
+  headComponents: PropTypes.node.isRequired,
+  postBodyComponents: PropTypes.node.isRequired,
   body: PropTypes.string,
 };
 HTML.defaultProps = {
