@@ -1,4 +1,7 @@
 import { document } from 'global';
+import { stripIndents } from 'common-tags';
+import { nopreview } from './nopreview';
+import { errorpreview } from './errorpreview';
 
 let previousKind = '';
 let previousStory = '';
@@ -6,7 +9,7 @@ let previousStory = '';
 const rootElement = document.getElementById('root');
 
 export function renderError(error) {
-  rootElement.innerHTML = error;
+  rootElement.innerHTML = errorpreview(error.message, error.stack);
 }
 
 export function renderException(error) {
@@ -29,11 +32,16 @@ export function renderMain(data, storyStore) {
     kind: selectedKind,
     story: selectedStory,
   };
-  const component = story
-    ? story(context)
-    : "<h1>“I'd far rather be happy than right any day.” ~ Douglas Adams (also no component) </h1>";
+  const component = story ? story(context) : nopreview;
   if (!component) {
-    renderError(`No component found for ${selectedStory}`);
+    renderError({
+      message: `Expecting a Polymer component from the story: "${selectedStory}" of "${selectedKind}".`,
+      stack: stripIndents`
+        Did you forget to return the Polymer component from the story?
+        Use "() => '&lt;your-component-name&gt;&lt;/your-component-name\&gt;'" when defining the story.
+      `,
+    });
+    return;
   }
   rootElement.innerHTML = component;
 }
