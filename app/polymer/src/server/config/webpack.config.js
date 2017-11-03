@@ -22,6 +22,8 @@ export default function() {
       manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
       preview: [
         require.resolve('./polyfills'),
+        require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
+        require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
         require.resolve('./globals'),
         `${require.resolve('webpack-hot-middleware/client')}?reload=true`,
       ],
