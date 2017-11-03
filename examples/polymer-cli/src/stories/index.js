@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/polymer';
+// import { action } from '@storybook/addon-actions';
 import '../PlaygroundButton.html';
 import './storybook-welcom-to-polymer.html';
 
