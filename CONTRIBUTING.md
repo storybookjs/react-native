@@ -102,7 +102,7 @@ Before these tests are ran, the project must be bootstrapped with the React Nati
 This option executes tests from `<rootdir>/integration`
 In order for the snapshot-integration tests to be executed properly, examples being tested must be running on their defaults ports, as declared in `integration/examples.test.js`
 
-Pupeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
+Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
 
 ### Updating Tests
 
@@ -158,11 +158,11 @@ Once you've helped out on a few issues, if you'd like triage access you can help
 
 We use the following label scheme to categorize issues:
 
--   **type** - `bug`, `feature`, `question / support`, `discussion`, `greenkeeper`, `maintenance`.
+-   **type** - `bug`, `feature`, `question / support`, `discussion`, `dependencies`, `maintenance`.
 -   **area** - `addon: x`, `addons-api`, `stories-api`, `ui`, etc.
 -   **status** - `needs reproduction`, `needs PR`, `in progress`, etc.
 
-All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `greenkeeper` is for keeping package dependencies up to date. `maintenance` is ta catch-all for any kind of cleanup or refactoring.
+All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `dependencies` is for keeping package dependencies up to date. `maintenance` is a catch-all for any kind of cleanup or refactoring.
 
 They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can easily see all of the issues for a particular area, and keep the total number of open issues under control.
 
