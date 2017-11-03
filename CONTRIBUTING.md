@@ -49,6 +49,8 @@ yarn test
 
 The options for running tests can be selected from the cli or be passed to `yarn test` with specific parameters.  Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
 
+You can use the `--update` flag to update snapshots or screenshots as needed.
+
 You can also pick suites from CLI.  Suites available are listed below.
 
 ##### Core & React & Vue Tests
