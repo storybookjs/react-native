@@ -20,7 +20,6 @@ describe('Array', () => {
     const array = ['a', 'b', 'c'];
     const deserialized = ArrayType.deserialize(array);
 
-    expect(Array.isArray(deserialized)).toEqual(true);
     expect(deserialized).toEqual(['a', 'b', 'c']);
   });
 
@@ -29,7 +28,6 @@ describe('Array', () => {
 
     const deserialized = ArrayType.deserialize(object);
 
-    expect(Array.isArray(deserialized)).toEqual(true);
     expect(deserialized).toEqual(['zero', 'one', 'two']);
   });
 });
