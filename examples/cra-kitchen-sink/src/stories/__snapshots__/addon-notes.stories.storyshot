@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Notes using deprecated API 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Addon Notes withNotes 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+>
+  Button with notes - check the notes panel for details
+</button>
+`;

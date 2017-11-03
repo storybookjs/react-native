@@ -15,7 +15,7 @@ import {
   color,
   date,
   button,
-} from '@storybook/addon-knobs';
+} from '@storybook/addon-knobs/vue';
 import Centered from '@storybook/addon-centered';
 
 import MyButton from './Button.vue';

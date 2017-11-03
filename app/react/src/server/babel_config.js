@@ -1,10 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import JSON5 from 'json5';
+import { console as logger } from 'global';
 import defaultConfig from './config/babel';
-
-// avoid ESLint errors
-const logger = console;
 
 function removeReactHmre(presets) {
   const index = presets.indexOf('react-hmre');

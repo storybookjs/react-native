@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Navigation Menu link 1`] = `
+<div
+  className="css-t9df35"
+>
+  <a
+    className="css-1enjukp"
+    href="/"
+    onClick={[Function]}
+  >
+    Menu link item
+  </a>
+</div>
+`;
+
+exports[`Storyshots Navigation Routed link 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
+>
+  Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
+</a>
+`;
