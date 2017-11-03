@@ -42,13 +42,13 @@
     glamorous "^4.9.7"
     prop-types "^15.6.0"
 
-"@storybook/polymer@file:../../packs/storybook-polymer.tgz":
+"@storybook/polymer@file:../../app/polymer":
   version "3.3.0-alpha.2"
-  resolved "file:../../packs/storybook-polymer.tgz#d8d7a20f4ba54c10294d80bd961195a5f1667cb9"
   dependencies:
     "@storybook/addons" "^3.3.0-alpha.2"
     "@storybook/channel-postmessage" "^3.3.0-alpha.2"
     "@storybook/ui" "^3.3.0-alpha.2"
+    "@webcomponents/webcomponentsjs" "^1.0.17"
     airbnb-js-shims "^1.3.0"
     autoprefixer "^7.1.6"
     babel-core "^6.26.0"
