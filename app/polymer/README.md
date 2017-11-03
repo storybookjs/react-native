@@ -21,8 +21,6 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ## Getting Started
 
-> This is currently not yet implemented, sorry!
-
 ```sh
 npm i -g @storybook/cli
 cd my-polymer-app
