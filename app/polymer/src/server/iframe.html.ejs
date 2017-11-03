@@ -3,14 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base target="_parent">
-    <script>
-        if (window.parent !== window) {
-            window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__VUE_DEVTOOLS_GLOBAL_HOOK__;
-            window.parent.__VUE_DEVTOOLS_CONTEXT__ = window.document;
-        }
-    </script>
+    <base target="_parent"
     <title>Storybook</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.17/custom-elements-es5-adapter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.17/webcomponents-loader.js"></script>
     <%= htmlWebpackPlugin.options.data.previewHead %>
 </head>
 <body>
