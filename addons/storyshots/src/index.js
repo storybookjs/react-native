@@ -105,7 +105,7 @@ export default function testStorySnapshots(options = {}) {
 
           it(story.name, () => {
             const context = { fileName, kind, story: story.name };
-            options.test({ story, context });
+            return options.test({ story, context });
           });
         }
       });

@@ -29,7 +29,6 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "git-url-parse": "^6.2.2",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
