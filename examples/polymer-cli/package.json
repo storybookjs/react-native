@@ -7,9 +7,9 @@
   },
   "dependencies": {
     "@polymer/polymer": "^2.2.0",
-    "@storybook/addon-actions": "file:../../addons/actions",
-    "@storybook/addon-notes": "file:../../addons/notes",
-    "@storybook/polymer": "file:../../app/polymer",
+    "@storybook/addon-actions": "3.3.0-alpha.2",
+    "@storybook/addon-notes": "3.3.0-alpha.2",
+    "@storybook/polymer": "3.3.0-alpha.2",
     "@webcomponents/webcomponentsjs": "^1.0.17",
     "global": "^4.3.2",
     "polymer-cli": "1.5.2",
