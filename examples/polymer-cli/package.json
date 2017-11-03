@@ -7,6 +7,7 @@
   "dependencies": {
     "@polymer/polymer": "^2.2.0",
     "@webcomponents/webcomponentsjs": "^1.0.17",
+    "polymer-cli": "1.5.2",
     "polymer-webpack-loader": "^2.0.0",
     "webpack": "^3.8.1"
   }
