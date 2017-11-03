@@ -48,7 +48,7 @@ export default function(configType, baseConfig, configDir) {
   const customConfigPath = path.resolve(configDir, 'webpack.config.js');
 
   if (!fs.existsSync(customConfigPath)) {
-    logger.info('=> Using default webpack setup based on "vue-cli".');
+    logger.info('=> Using default webpack setup based on "polymer-cli".');
     const configPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
     const customConfig = require(configPath);
 

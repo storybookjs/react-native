@@ -66,9 +66,18 @@ export default function() {
           exclude: excludePaths,
         },
         {
-          test: /\.vue$/,
-          loader: require.resolve('vue-loader'),
-          options: {},
+          test: /\.html$/,
+          exclude: /node_modules\/(?!(polymer-redux|polymer-webpack-loader)\/).*/,
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+              options: { cacheDirectory: '.babel-cache' },
+            },
+            {
+              loader: require.resolve('polymer-webpack-loader'),
+              options: { processStyleLinks: true },
+            },
+          ],
         },
       ],
     },
