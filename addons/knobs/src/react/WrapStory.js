@@ -55,8 +55,8 @@ export default class WrapStory extends React.Component {
     this.setState({ storyContent: storyFn(context) });
   }
 
-  knobClicked(knob) {
-    const knobOptions = this.props.knobStore.get(knob.name);
+  knobClicked(clicked) {
+    const knobOptions = this.props.knobStore.get(clicked.name);
     knobOptions.callback();
   }
 

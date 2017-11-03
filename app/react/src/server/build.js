@@ -7,9 +7,7 @@ import shelljs from 'shelljs';
 import packageJson from '../../package.json';
 import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
-import getIndexHtml from './index.html';
-import getIframeHtml from './iframe.html';
-import { getPreviewHeadHtml, getManagerHeadHtml, parseList, getEnvConfig } from './utils';
+import { parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
@@ -84,19 +82,4 @@ webpack(config).run((err, stats) => {
     stats && stats.hasErrors() && stats.toJson().errors.forEach(e => logger.error(e));
     process.exit(1);
   }
-
-  const data = {
-    publicPath: config.output.publicPath,
-    assets: stats.toJson().assetsByChunkName,
-  };
-
-  // Write both the storybook UI and IFRAME HTML files to destination path.
-  fs.writeFileSync(
-    path.resolve(outputDir, 'index.html'),
-    getIndexHtml({ ...data, headHtml: getManagerHeadHtml(configDir) })
-  );
-  fs.writeFileSync(
-    path.resolve(outputDir, 'iframe.html'),
-    getIframeHtml({ ...data, headHtml: getPreviewHeadHtml(configDir) })
-  );
 });

@@ -1,7 +1,8 @@
----
+* * *
+
 id: 'introduction'
-title: 'Introduction'
----
+
+## title: 'Introduction'
 
 Storybook is a UI development environment for your UI components.
 With it, you can visualize different states of your UI components and develop them interactively.
