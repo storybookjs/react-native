@@ -2,10 +2,12 @@
   "name": "polymer-cli",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "@polymer/polymer": "^2.2.0",
+    "@storybook/polymer": "^3.3.0-alpha.2",
     "@webcomponents/webcomponentsjs": "^1.0.17",
     "polymer-cli": "1.5.2",
     "polymer-webpack-loader": "^2.0.0",
