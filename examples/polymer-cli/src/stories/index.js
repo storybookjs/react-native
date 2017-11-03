@@ -8,7 +8,7 @@ storiesOf('Welcome', module).add(
   () => '<storybook-welcome-to-polymer></storybook-welcome-to-polymer>'
 );
 
-storiesOf('playground-button', module).add(
+storiesOf('<playground-button>', module).add(
   'default mode',
   () => '<playground-button></playground-button>'
 );
