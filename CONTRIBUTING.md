@@ -49,9 +49,7 @@ yarn test
 
 The options for running tests can be selected from the cli or be passed to `yarn test` with specific parameters.  Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
 
-_Note that in order to run the tests fro ReactNative, you must have bootstrapped with ReactNative enabled.  You can do this with the `yarn bootstrap --reactnative` command_
-
-You can also pick suites from CLI.  Suites availabe are listed below.
+You can also pick suites from CLI.  Suites available are listed below.
 
 ##### Core & React & Vue Tests
 
@@ -76,8 +74,6 @@ In order for the snapshot-integration tests to be executed properly, examples be
 
 Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
 
-
-In order to run ALL unit tests, you must have bootstrapped the react-native
 
 #### 2b. Run e2e tests for CLI
 
@@ -148,17 +144,6 @@ When creating new unit test files, the tests should adhere to a particular folde
 +-- parentFolder
 |   +-- [filename].js
 |   +-- [filename].test.js
-```
-
-#### Updating Integration Screenshots
-
-Integration screenshots can be updated using pupeteer's screenshot command. For example:
-
-```
-# Take an updated screenshot of http://localhost:9010 and save over existing
-
-await page.goto('http://localhost:9010'); 
-page.screenshot({path: '__image_snapshots__/cra-kitchen-sink-snap.png'});
 ```
 
 
