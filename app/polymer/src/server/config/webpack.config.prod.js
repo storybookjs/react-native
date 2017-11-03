@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import babelLoaderConfig from './babel.prod';
 import { getConfigDir, includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
@@ -8,12 +9,7 @@ import { version } from '../../../package.json';
 
 export default function() {
   const entries = {
-    preview: [
-      require.resolve('./polyfills'),
-      require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
-      require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
-      require.resolve('./globals'),
-    ],
+    preview: [require.resolve('./polyfills'), require.resolve('./globals')],
     manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')],
   };
 
@@ -48,6 +44,15 @@ export default function() {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
+      new CopyWebpackPlugin([
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi-ce.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-sd-ce.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
+      ]),
       new webpack.DefinePlugin(loadEnv({ production: true })),
       new webpack.optimize.UglifyJsPlugin({
         compress: {

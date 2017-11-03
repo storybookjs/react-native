@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
 import {
   getConfigDir,
@@ -22,8 +23,6 @@ export default function() {
       manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
       preview: [
         require.resolve('./polyfills'),
-        require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
-        require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
         require.resolve('./globals'),
         `${require.resolve('webpack-hot-middleware/client')}?reload=true`,
       ],
@@ -51,6 +50,15 @@ export default function() {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
+      new CopyWebpackPlugin([
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi-ce.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-sd-ce.js') },
+        { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
+      ]),
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
