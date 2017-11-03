@@ -7,9 +7,10 @@
   },
   "dependencies": {
     "@polymer/polymer": "^2.2.0",
-    "@storybook/polymer": "file:../../app/polymer",
     "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/polymer": "file:../../app/polymer",
     "@webcomponents/webcomponentsjs": "^1.0.17",
+    "global": "^4.3.2",
     "polymer-cli": "1.5.2",
     "polymer-webpack-loader": "^2.0.0",
     "webpack": "^3.8.1"

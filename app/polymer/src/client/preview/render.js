@@ -43,7 +43,12 @@ export function renderMain(data, storyStore) {
     });
     return;
   }
-  rootElement.innerHTML = component;
+  if (typeof component === 'string') {
+    rootElement.innerHTML = component;
+  } else {
+    rootElement.innerHTML = '';
+    rootElement.appendChild(component);
+  }
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {
