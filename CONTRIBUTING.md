@@ -79,6 +79,8 @@ If you follow that process, you can then link to the github repository in the is
 
 Tests can be executed locally with the `yarn test` command, which gives you CLI options to execute various test suites in different modes. Some of the test suites have special set-up needs, which are listed below.
 
+You can use the `--update` flag to update snapshots or screenshots as needed.
+
 The execution modes available can be selected from the cli or passed to `yarn test` with specific parameters.  Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
 
 #### Core & React & Vue Tests
@@ -86,7 +88,7 @@ The execution modes available can be selected from the cli or passed to `yarn te
 `yarn test --core`
 
 This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`
-Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core` 
+Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
 
 #### React-Native example Tests
 
@@ -123,7 +125,7 @@ Integration screenshots can be updated using pupeteer's screenshot command. For 
 ```
 # Take an updated screenshot of http://localhost:9010 and save over existing
 
-await page.goto('http://localhost:9010'); 
+await page.goto('http://localhost:9010');
 page.screenshot({path: '__image_snapshots__/cra-kitchen-sink-snap.png'});
 ```
 
