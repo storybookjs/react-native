@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -p dist"
+    "build": "webpack -p dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@polymer/polymer": "^2.2.0"
   },
   "devDependencies": {
-
+    "@storybook/polymer": "^3.3.0-alpha.2"
   }
 }
