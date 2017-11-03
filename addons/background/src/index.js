@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import EventEmitter from 'events';
+
 import addons from '@storybook/addons';
 
 const style = {
@@ -17,19 +20,21 @@ const style = {
 };
 
 export class BackgroundDecorator extends React.Component {
-  state = { background: 'transparent' };
-
   constructor(props) {
     super(props);
 
+    const { channel, story } = props;
+
     // A channel is explicitly passed in for testing
-    if (this.props.channel) {
-      this.channel = this.props.channel;
+    if (channel) {
+      this.channel = channel;
     } else {
       this.channel = addons.getChannel();
     }
 
-    this.story = this.props.story();
+    this.state = { background: 'transparent' };
+
+    this.story = story();
   }
 
   componentWillMount() {
@@ -56,6 +61,15 @@ export class BackgroundDecorator extends React.Component {
     return <div style={Object.assign({}, styles)}>{this.story}</div>;
   }
 }
+BackgroundDecorator.propTypes = {
+  backgrounds: PropTypes.arrayOf(PropTypes.object),
+  channel: PropTypes.instanceOf(EventEmitter),
+  story: PropTypes.func.isRequired,
+};
+BackgroundDecorator.defaultProps = {
+  backgrounds: [],
+  channel: undefined,
+};
 
 export default backgrounds => story => (
   <BackgroundDecorator story={story} backgrounds={backgrounds} />

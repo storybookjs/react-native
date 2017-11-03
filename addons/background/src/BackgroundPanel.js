@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
+import EventEmitter from 'events';
 
 import Swatch from './Swatch';
 
@@ -56,9 +58,11 @@ export default class BackgroundPanel extends Component {
   constructor(props) {
     super(props);
 
+    const { channel, api } = props;
+
     // A channel is explicitly passed in for testing
-    if (this.props.channel) {
-      this.channel = this.props.channel;
+    if (channel) {
+      this.channel = channel;
     } else {
       this.channel = addons.getChannel();
     }
@@ -67,7 +71,7 @@ export default class BackgroundPanel extends Component {
 
     this.channel.on('background-set', backgrounds => {
       this.setState({ backgrounds });
-      const currentBackground = this.props.api.getQueryParam('background');
+      const currentBackground = api.getQueryParam('background');
 
       if (currentBackground) {
         this.setBackgroundInPreview(currentBackground);
@@ -77,9 +81,9 @@ export default class BackgroundPanel extends Component {
       }
     });
 
-    this.channel.on('background-unset', backgrounds => {
+    this.channel.on('background-unset', () => {
       this.setState({ backgrounds: [] });
-      this.props.api.setQueryParams({ background: null });
+      api.setQueryParams({ background: null });
     });
   }
 
@@ -109,3 +113,13 @@ export default class BackgroundPanel extends Component {
     );
   }
 }
+BackgroundPanel.propTypes = {
+  api: PropTypes.shape({
+    getQueryParam: PropTypes.func,
+    setQueryParams: PropTypes.func,
+  }).isRequired,
+  channel: PropTypes.instanceOf(EventEmitter),
+};
+BackgroundPanel.defaultProps = {
+  channel: undefined,
+};

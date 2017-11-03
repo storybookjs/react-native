@@ -1,10 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import EventEmitter from 'events';
 
 import BackgroundPanel from '../BackgroundPanel';
-
-const EventEmitter = require('events');
-// const TestUtils = require('react-dom/test-utils');
 
 const backgrounds = [
   { name: 'black', value: '#000000' },
