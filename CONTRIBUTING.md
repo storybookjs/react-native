@@ -47,15 +47,35 @@ This command will list all the suites and options for running tests.
 yarn test
 ```
 
-_Note that in order to run the tests fro ReactNative, you must have bootstrapped with ReactNative enabled_
+The options for running tests can be selected from the cli or be passed to `yarn test` with specific parameters.  Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
 
-You can also pick suites from CLI:
+You can use the `--update` flag to update snapshots or screenshots as needed.
 
-```sh
-yarn test --core
-```
+You can also pick suites from CLI.  Suites available are listed below.
 
-In order to run ALL unit tests, you must have bootstrapped the react-native
+##### Core & React & Vue Tests
+
+`yarn test --core`
+
+This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`
+Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core` 
+
+##### React-Native example Tests
+
+`yarn test --reactnative`
+
+This option executes tests from `<rootdir>/app/react-native`
+Before these tests are ran, the project must be bootstrapped with the React Native example enabled.  You can accomplish this by running `yarn bootstrap --reactnative`
+
+##### Integration Tests (Screenshots of running apps)
+
+`yarn test --integration`
+
+This option executes tests from `<rootdir>/integration`
+In order for the snapshot-integration tests to be executed properly, examples being tested must be running on their defaults ports, as declared in `integration/examples.test.js`
+
+Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
+
 
 #### 2b. Run e2e tests for CLI
 
@@ -116,35 +136,6 @@ If you follow that process, you can then link to the github repository in the is
 
 **NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
-### Executing Tests Locally
-
-Tests can be executed locally with the `yarn test` command, which gives you CLI options to execute various test suites in different modes. Some of the test suites have special set-up needs, which are listed below.
-
-The execution modes available can be selected from the cli or passed to `yarn test` with specific parameters.  Available modes include `--watch`, `--coverage`, and `--runInBand`, which will respectively run tests in watch mode, output code coverage, and run selected test suites serially in the current process.
-
-#### Core & React & Vue Tests
-
-`yarn test --core`
-
-This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`
-Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core` 
-
-#### React-Native example Tests
-
-`yarn test --reactnative`
-
-This option executes tests from `<rootdir>/app/react-native`
-Before these tests are ran, the project must be bootstrapped with the React Native example enabled.  You can accomplish this by running `yarn bootstrap --reactnative`
-
-#### Integration Tests (Screenshots of running apps)
-
-`yarn test --integration`
-
-This option executes tests from `<rootdir>/integration`
-In order for the snapshot-integration tests to be executed properly, examples being tested must be running on their defaults ports, as declared in `integration/examples.test.js`
-
-Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
-
 ### Updating Tests
 
 Before any contributes are submitted in a PR, make sure to add or update meaningful tests. A PR that has failing tests will be regarded as a “Work in Progress” and will not be merged until all tests pass.
@@ -157,16 +148,6 @@ When creating new unit test files, the tests should adhere to a particular folde
 |   +-- [filename].test.js
 ```
 
-#### Updating Integration Screenshots
-
-Integration screenshots can be updated using pupeteer's screenshot command. For example:
-
-```
-# Take an updated screenshot of http://localhost:9010 and save over existing
-
-await page.goto('http://localhost:9010'); 
-page.screenshot({path: '__image_snapshots__/cra-kitchen-sink-snap.png'});
-```
 
 ## Pull Requests (PRs)
 
