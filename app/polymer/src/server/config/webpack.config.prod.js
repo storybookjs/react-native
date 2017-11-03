@@ -66,9 +66,18 @@ export default function() {
           exclude: excludePaths,
         },
         {
-          test: /\.vue$/,
-          loader: require.resolve('vue-loader'),
-          options: {},
+          test: /\.html$/,
+          exclude: /node_modules\/(?!(polymer-redux|polymer-webpack-loader)\/).*/,
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+              options: { cacheDirectory: '.babel-cache' },
+            },
+            {
+              loader: require.resolve('polymer-webpack-loader'),
+              options: { processStyleLinks: true },
+            },
+          ],
         },
       ],
     },
@@ -80,7 +89,6 @@ export default function() {
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
       alias: {
-        vue$: require.resolve('vue/dist/vue.esm.js'),
         react$: require.resolve('react'),
         'react-dom$': require.resolve('react-dom'),
       },

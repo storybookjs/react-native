@@ -1,7 +1,7 @@
 {
   "name": "@storybook/polymer",
   "version": "3.3.0-alpha.2",
-  "description": "Storybook for Polymer: Develop Vue Component in isolation with Hot Reloading.",
+  "description": "Storybook for Polymer: Develop Polymer Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/polymer",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
