@@ -13,7 +13,6 @@
     "examples/angular-cli",
     "examples/cra-kitchen-sink",
     "examples/vue-kitchen-sink",
-    "examples/polymer-cli",
     "lib/cli/test/run/*"
   ],
   "scripts": {
