@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
+import { document } from 'global';
 
-import { stripIndents } from 'common-tags';
+// import { stripIndents } from 'common-tags';
 // import Vue from 'vue';
 
 // import ErrorDisplay from './ErrorDisplay.vue';
@@ -48,6 +49,9 @@ function renderRoot(options) {
 }
 
 export function renderMain(data, storyStore) {
+  document.getElementById('root').innerHTML =
+    '<playground-button></playground-button><h1>Testing dude</h1>';
+
   // if (storyStore.size() === 0) return;
   // const { selectedKind, selectedStory } = data;
   // const story = storyStore.getStory(selectedKind, selectedStory);
@@ -89,13 +93,13 @@ export function renderMain(data, storyStore) {
 }
 
 export default function renderPreview({ reduxStore, storyStore }) {
-  // const state = reduxStore.getState();
-  // if (state.error) {
-  //   return renderException(state.error);
-  // }
-  // try {
-  //   return renderMain(state, storyStore);
-  // } catch (ex) {
-  //   return renderException(ex);
-  // }
+  const state = reduxStore.getState();
+  if (state.error) {
+    return renderException(state.error);
+  }
+  try {
+    return renderMain(state, storyStore);
+  } catch (ex) {
+    return renderException(ex);
+  }
 }

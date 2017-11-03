@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/polymer';
+// import '../PlaygroundButton.html';
 
-storiesOf('Welcome', module).add('Welcome', () =>
-  console.log('TODO', 'we do not know what to do here yet!')
-);
+storiesOf('Welcome', module).add('Welcome', () => '<playground-button></playground-button>');
