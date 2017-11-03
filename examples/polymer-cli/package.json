@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@polymer/polymer": "^2.2.0",
-    "@storybook/polymer": "^3.3.0-alpha.2",
     "@webcomponents/webcomponentsjs": "^1.0.17",
     "polymer-cli": "1.5.2",
     "polymer-webpack-loader": "^2.0.0",
@@ -21,6 +21,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "copy-webpack-plugin": "^4.2.0",
     "html-webpack-plugin": "^2.30.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.9.4",
+    "@storybook/polymer": "^3.3.0-alpha.2"
   }
 }

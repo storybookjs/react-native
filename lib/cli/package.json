@@ -58,6 +58,7 @@
     "@storybook/channel-postmessage": "^3.3.0-alpha.2",
     "@storybook/channel-websocket": "^3.3.0-alpha.2",
     "@storybook/channels": "^3.3.0-alpha.2",
+    "@storybook/polymer": "^3.3.0-alpha.2",
     "@storybook/react": "^3.3.0-alpha.2",
     "@storybook/react-native": "^3.3.0-alpha.2",
     "@storybook/ui": "^3.3.0-alpha.2",

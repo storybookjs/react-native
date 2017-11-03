@@ -39,5 +39,5 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 ## Polymer Notes
 
 - This is super super experimental, if you want to use this, expect some bugs, and missing features.
-- We're looking for help to support this. If you're a member of the Polymer community and like this projet, please help us!
+- We're looking for help to support this. If you're a member of the Polymer community and like this project, please help us!
   If you need any onboarding from us, we're happy to help you in any way!
