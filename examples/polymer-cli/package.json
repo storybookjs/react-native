@@ -8,6 +8,7 @@
   "dependencies": {
     "@polymer/polymer": "^2.2.0",
     "@storybook/addon-actions": "file:../../addons/actions",
+    "@storybook/addon-notes": "file:../../addons/notes",
     "@storybook/polymer": "file:../../app/polymer",
     "@webcomponents/webcomponentsjs": "^1.0.17",
     "global": "^4.3.2",
