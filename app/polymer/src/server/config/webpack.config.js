@@ -23,7 +23,7 @@ export default function() {
       preview: [
         require.resolve('./polyfills'),
         require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
-        require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
+        require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
         require.resolve('./globals'),
         `${require.resolve('webpack-hot-middleware/client')}?reload=true`,
       ],

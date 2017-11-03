@@ -8,7 +8,12 @@ import { version } from '../../../package.json';
 
 export default function() {
   const entries = {
-    preview: [require.resolve('./polyfills'), require.resolve('./globals')],
+    preview: [
+      require.resolve('./polyfills'),
+      require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js'),
+      require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
+      require.resolve('./globals'),
+    ],
     manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')],
   };
 
