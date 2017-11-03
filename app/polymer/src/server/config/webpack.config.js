@@ -66,7 +66,6 @@ export default function() {
         },
         {
           test: /\.html$/,
-          exclude: /node_modules\/(?!(polymer-redux|polymer-webpack-loader)\/).*/,
           use: [
             {
               loader: require.resolve('babel-loader'),
