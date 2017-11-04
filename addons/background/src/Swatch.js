@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const style = {
   swatches: {
+    backgroundColor: '#fff',
     textAlign: 'center',
     padding: '0',
     border: '1px solid rgba(0,0,0,0.1)',
@@ -34,9 +35,11 @@ const style = {
 };
 
 const Swatch = ({ name, value, setBackground }) => (
-  <div
+  <button
     style={Object.assign({}, style.swatches, style.listStyle, style.hard)}
     onClick={() => setBackground(value)}
+    // Prevent focusing on mousedown
+    onMouseDown={event => event.preventDefault()}
   >
     <div
       style={Object.assign({}, style.swatch, {
@@ -51,7 +54,7 @@ const Swatch = ({ name, value, setBackground }) => (
         <em>{value}</em>
       </h4>
     </div>
-  </div>
+  </button>
 );
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,
