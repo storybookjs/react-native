@@ -161,7 +161,7 @@ const value = color(label, defaultValue);
 
 ### object
 
-Allows you to get a JSON object from the user.
+Allows you to get a JSON object or array from the user.
 
 ```js
 import { object } from '@storybook/addon-knobs';
@@ -178,7 +178,7 @@ const value = object(label, defaultValue);
 
 ### array
 
-Allows you to get an array from the user.
+Allows you to get an array of strings from the user.
 
 ```js
 import { array } from '@storybook/addon-knobs';
