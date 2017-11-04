@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import capitalize from 'lodash/capitalize';
-import groupBy from 'lodash/groupBy';
 
 import Docs from '../components/Docs';
 
