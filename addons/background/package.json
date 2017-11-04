@@ -1,0 +1,32 @@
+{
+  "name": "@storybook/addon-backgrounds",
+  "version": "3.2.14",
+  "description": "A storybook addon to show different backgrounds for your preview",
+  "keywords": [
+    "addon",
+    "background",
+    "react",
+    "storybook"
+  ],
+  "homepage": "https://storybook.js.org",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
+  "author": "jbaxleyiii",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.2.14",
+    "react": "*"
+  }
+}
