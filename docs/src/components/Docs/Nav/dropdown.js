@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { Redirect } from 'react-router';
 import './style.css';
 
 class Nav extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {};
+  }
+
   handleHeadingChange(event) {
     const { sections } = this.props;
     const selectedSectionId = event.target.value;
@@ -20,7 +25,7 @@ class Nav extends React.Component {
 
   changeRoute(selectedSectionId, selectedItemId) {
     const url = `/${selectedSectionId}/${selectedItemId}/`;
-    browserHistory.push(url);
+    this.setState({ redirect: url });
   }
 
   renderNavOpts(nav) {
@@ -46,7 +51,9 @@ class Nav extends React.Component {
     const selectedSectionData = sections.find(section => section.id === selectedSectionId);
     const navs = selectedSectionData.items;
 
-    return (
+    return this.state.redirect ? (
+      <Redirect to={this.state.redirect} />
+    ) : (
       <div>
         <div>
           <select value={selectedSectionId} onChange={event => this.handleHeadingChange(event)}>
