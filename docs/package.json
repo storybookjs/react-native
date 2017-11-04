@@ -14,7 +14,7 @@
     "deploy:ci": "gh-pages -t -r https://${GH_TOKEN}@github.com/storybooks/storybook.git -d public -o origin -b gh-pages",
     "deploy:manual": "gh-pages -t -r git@github.com:storybooks/storybook.git -d public -o origin -b gh-pages",
     "dev": "gatsby develop",
-    "storybook": "start-storybook -p 9009 -s pages"
+    "storybook": "start-storybook -p 9009 -s src/pages"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.2.13",

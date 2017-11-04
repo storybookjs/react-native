@@ -22,9 +22,19 @@ function generateSitemap(pages) {
 }
 
 module.exports = {
-  onPostBuild(pages, callback) {
-    generateSitemap(pages);
-    callback();
+  async onPostBuild({ graphql }) {
+    const result = await graphql(`
+      {
+        allSitePage {
+          edges {
+            node {
+              path
+            }
+          }
+        }
+      }
+    `);
+    generateSitemap(result.data.allSitePage.edges.map(({ node }) => node));
   },
   onCreateNode({ node, boundActionCreators, getNode }) {
     const { createNodeField } = boundActionCreators;
@@ -44,46 +54,39 @@ module.exports = {
       createNodeField({ node, name: 'slug', value: slug });
     }
   },
-  createPages({ graphql, boundActionCreators }) {
+  async createPages({ graphql, boundActionCreators }) {
     const { createPage } = boundActionCreators;
 
-    return new Promise((resolve, reject) => {
-      const template = path.resolve('src/templates/docs.js');
-      // Query for all markdown "nodes" and for the slug we previously created.
-      resolve(
-        graphql(
-          `
-            {
-              allMarkdownRemark {
-                edges {
-                  node {
-                    fields {
-                      slug
-                    }
-                  }
+    const template = path.resolve('src/templates/_docstemplate.jsx');
+    // Query for all markdown "nodes" and for the slug we previously created.
+    const result = await graphql(
+      `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
                 }
               }
             }
-          `
-        ).then(result => {
-          if (result.errors) {
-            // eslint-disable-next-line no-console
-            console.log(result.errors);
-            reject(result.errors);
           }
+        }
+      `
+    );
+    if (result.errors) {
+      throw result.errors;
+    }
 
-          // Create pages.
-          result.data.allMarkdownRemark.edges.forEach(edge => {
-            createPage({
-              path: edge.node.fields.slug, // required
-              component: template,
-              context: {
-                slug: edge.node.fields.slug,
-              },
-            });
-          });
-        })
-      );
+    // Create pages.
+    result.data.allMarkdownRemark.edges.forEach(edge => {
+      createPage({
+        path: edge.node.fields.slug, // required
+        component: template,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      });
     });
   },
 };

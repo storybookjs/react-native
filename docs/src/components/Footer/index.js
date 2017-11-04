@@ -14,12 +14,20 @@ const Footer = () => (
             .
           </center>
           <center>
-            <Link to="https://now-examples-slackin-nqnzoygycp.now.sh/" target="_blank">
+            <a
+              href="https://now-examples-slackin-nqnzoygycp.now.sh/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img src={slackIcon} alt="Storybook Slack" />
-            </Link>
-            <Link to="https://github.com/storybooks/storybook" target="_blank">
+            </a>
+            <a
+              href="https://github.com/storybooks/storybook"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img src={githubIcon} alt="Storybook GitHub" style={{ padding: '7px' }} />
-            </Link>
+            </a>
           </center>
         </div>
       </div>
