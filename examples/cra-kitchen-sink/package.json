@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.3.0-alpha.2",
+    "@storybook/addon-backgrounds": "^3.2.14",
     "@storybook/addon-centered": "3.3.0-alpha.2",
     "@storybook/addon-events": "3.3.0-alpha.2",
     "@storybook/addon-info": "3.3.0-alpha.2",
