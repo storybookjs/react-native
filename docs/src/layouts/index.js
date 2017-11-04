@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-// import { Container } from 'react-responsive-grid';
-// import { colors, activeColors } from 'utils/colors';
-//
-// import { rhythm, adjustFontSizeTo } from 'utils/typography';
-// import { config } from 'config';
-
 // Import styles.
 import '../css/main.css';
 import '../css/github.css';
