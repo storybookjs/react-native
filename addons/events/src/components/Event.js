@@ -149,7 +149,7 @@ export default class Item extends Component {
         </button>
         <Textarea
           id={`addon-event-${name}`}
-          ref={ref => {
+          inputRef={ref => {
             this.input = ref;
           }}
           style={{ ...styles.textArea, ...extraStyle }}

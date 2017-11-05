@@ -22,7 +22,7 @@ class ArrayType extends React.Component {
     return (
       <Textarea
         id={knob.name}
-        ref={c => {
+        inputRef={c => {
           this.input = c;
         }}
         style={styles}
