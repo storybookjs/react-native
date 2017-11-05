@@ -34,7 +34,7 @@
     "@storybook/addons": "^3.2.10",
     "@storybook/components": "^3.2.10",
     "@storybook/react": "^3.2.11",
-    "react-scripts": "1.0.16"
+    "react-scripts": "1.0.17"
   },
   "private": true
 }

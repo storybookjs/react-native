@@ -79,9 +79,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "nodemon": "^1.12.1",
-    "vue": "^2.5.2",
-    "vue-loader": "^13.3.0",
-    "vue-template-compiler": "^2.5.2"
+    "vue": "^2.5.3",
+    "vue-loader": "^13.4.0",
+    "vue-template-compiler": "^2.5.3"
   },
   "peerDependencies": {
     "vue": "*",
