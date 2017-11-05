@@ -1,0 +1,22 @@
+{
+  "name": "@storybook/core",
+  "version": "3.3.0-alpha.2",
+  "description": "Storybook framework-agnostic API",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
+  "main": "dist/client/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "scripts": {
+    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepare'",
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}

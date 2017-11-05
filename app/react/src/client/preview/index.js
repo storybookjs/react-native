@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-postmessage';
 import qs from 'qs';
-import StoryStore from './story_store';
+import { StoryStore } from '@storybook/core/client';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import render from './render';
