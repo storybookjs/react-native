@@ -33,7 +33,7 @@
     "moment": "^2.19.0",
     "prop-types": "^15.6.0",
     "react-render-html": "^0.5.2",
-    "react-textarea-autosize": "^4.3.0"
+    "react-textarea-autosize": "^5.1.0"
   },
   "devDependencies": {
     "@kadira/storybook-database-cloud": "*",
