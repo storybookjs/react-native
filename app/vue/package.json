@@ -18,8 +18,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepare-root": "cd ../../ && yarn && cd ./app/vue",
-    "dev": "yarn prepare-root && cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
+    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {

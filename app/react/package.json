@@ -18,8 +18,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepare-root": "cd ../../ && yarn && cd ./app/react",
-    "dev": "yarn prepare-root && cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
+    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
@@ -77,7 +76,6 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "cross-env": "^5.0.5",
     "nodemon": "^1.12.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"

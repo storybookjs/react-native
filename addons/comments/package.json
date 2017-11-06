@@ -19,7 +19,7 @@
     "prepare": "node ../../scripts/prepare.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 3006",
-    "storybook-local": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 9010",
+    "storybook-local": "cross-env STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 9010",
     "storybook-remote": "start-storybook -p 3006"
   },
   "dependencies": {
