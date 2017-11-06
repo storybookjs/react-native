@@ -62,7 +62,6 @@
     "postcss-loader": "^2.0.8",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
-    "react-modal": "^2.4.1",
     "redux": "^3.7.2",
     "request": "^2.83.0",
     "serve-favicon": "^2.4.5",
