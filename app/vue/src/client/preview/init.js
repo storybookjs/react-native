@@ -1,11 +1,11 @@
 import keyEvents from '@storybook/ui/dist/libs/key_events';
-import { selectStory } from './actions';
+import { Actions } from '@storybook/core/client';
 
 export default function(context) {
   const { queryParams, reduxStore, window, channel } = context;
   // set the story if correct params are loaded via the URL.
   if (queryParams.selectedKind) {
-    reduxStore.dispatch(selectStory(queryParams.selectedKind, queryParams.selectedStory));
+    reduxStore.dispatch(Actions.selectStory(queryParams.selectedKind, queryParams.selectedStory));
   }
 
   // Handle keyEvents and pass them to the parent.
