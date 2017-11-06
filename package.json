@@ -14,7 +14,7 @@
     "examples/vue-kitchen-sink"
   ],
   "scripts": {
-    "bootstrap": "./scripts/bootstrap.js",
+    "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
@@ -34,7 +34,7 @@
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "./scripts/test.js",
+    "test": "node ./scripts/test.js",
     "repo-dirty-check": "node ./scripts/repo-dirty-check"
   },
   "devDependencies": {
@@ -50,6 +50,7 @@
     "chalk": "^2.3.0",
     "codecov": "^3.0.0",
     "commander": "^2.11.0",
+    "cross-env": "^5.1.1",
     "danger": "^2.0.0",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",

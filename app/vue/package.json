@@ -18,7 +18,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon --watch ./src --exec 'yarn prepare'",
+    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
