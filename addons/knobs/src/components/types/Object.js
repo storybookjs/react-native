@@ -69,9 +69,6 @@ class ObjectType extends React.Component {
     return (
       <Textarea
         id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
         style={{ ...styles, ...extraStyle }}
         value={jsonString}
         onChange={e => this.handleChange(e)}
