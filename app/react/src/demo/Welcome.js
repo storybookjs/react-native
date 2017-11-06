@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
-import { LinkTo } from '@storybook/addon-links';
+import LinkTo from '@storybook/addon-links/react';
 
 const Main = glamorous.article({
   margin: 15,
