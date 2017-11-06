@@ -2,8 +2,8 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import addons from '@storybook/addons';
 
-import { EVENT_ID } from '..';
-import { mockChannel } from '../preview.test';
+import { EVENT_ID } from '../../index';
+import { mockChannel } from '../../preview.test';
 import LinkTo from './link';
 
 jest.mock('@storybook/addons');
