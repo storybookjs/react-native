@@ -34,7 +34,7 @@
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "./scripts/test.js",
+    "test": "node ./scripts/test.js",
     "repo-dirty-check": "node ./scripts/repo-dirty-check"
   },
   "devDependencies": {
