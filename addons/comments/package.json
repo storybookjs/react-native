@@ -28,12 +28,12 @@
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
     "global": "^4.3.2",
-    "insert-css": "^1.0.0",
+    "insert-css": "^2.0.0",
     "marked": "^0.3.6",
     "moment": "^2.19.0",
     "prop-types": "^15.6.0",
     "react-render-html": "^0.5.2",
-    "react-textarea-autosize": "^4.3.0"
+    "react-textarea-autosize": "^5.1.0"
   },
   "devDependencies": {
     "@kadira/storybook-database-cloud": "*",
