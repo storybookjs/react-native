@@ -45,7 +45,6 @@
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.0-alpha.3",
     "@storybook/addon-centered": "^3.3.0-alpha.3",
-    "@storybook/addon-comments": "^3.3.0-alpha.2",
     "@storybook/addon-graphql": "^3.3.0-alpha.3",
     "@storybook/addon-info": "^3.3.0-alpha.3",
     "@storybook/addon-knobs": "^3.3.0-alpha.3",

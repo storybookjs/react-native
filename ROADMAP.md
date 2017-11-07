@@ -2,25 +2,23 @@
 
 ## Table of contents
 
--   [New features](#new-features)
-    -   [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
-    -   [Automatic story detection](#automatic-story-detection)
-    -   [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
-    -   [Add a playground addon](#add-a-playground-addon)
-    -   [See multiple (or all) stories in 1 preview.](#see-multiple-or-all-stories-in-1-preview)
-    -   [Deeper level hierarchy](#deeper-level-hierarchy)
--   [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    -   [Vue](#vue)
-    -   [Angular](#angular)
-    -   [Webcomponents](#webcomponents)
-    -   [Polymer](#polymer)
-    -   [Aurelia](#aurelia)
--   [Breaking changes](#breaking-changes)
-    -   [Addon API](#addon-api)
-    -   [API for adding stories](#api-for-adding-stories)
--   [Documentation](#documentation)
-    -   [Better design](#better-design)
-    -   [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use-tweak--develop-storybook)
+  * [New features](#new-features)
+    + [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
+    + [Automatic story detection](#automatic-story-detection)
+    + [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
+    + [Add a playground addon](#add-a-playground-addon)
+    + [See multiple (or all) stories in 1 preview.](#see-multiple--or-all--stories-in-1-preview)
+  * [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
+    + [Angular](#angular)
+    + [Polymer & Webcomponents](#polymer---webcomponents)
+    + [Aurelia](#aurelia)
+    + [Ember](#ember)
+  * [Breaking changes](#breaking-changes)
+    + [Addon API](#addon-api)
+    + [API for adding stories](#api-for-adding-stories)
+  * [Documentation](#documentation)
+    + [Better design](#better-design)
+    + [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use--tweak---develop-storybook)
 
 ## New features
 
@@ -56,13 +54,6 @@ It's quite common to see users write a single story, with a wrapper components a
 We plan to add a second mode to storybook that will allow you to see all stories in 1 preview.
 That way you can write your stories how they are best, and preview them how you like.
 
-### Deeper level hierarchy
-
-A very long standing issue is about "what about larger styleguides?". Some styleguides have lots and lots of components.
-At some point is becomes unmaintainable if you do not group them somehow.
-Storybook's UI is not exactly setup for very large styleguides, right now.
-But we are going to add a way of defining groups! And develop a UI that allows you to quickly navigate to other groups / stories.
-
 ## Supporting other frameworks and libraries
 
 We believe in the power of react, and think it's the right choice for a lot of projects.
@@ -71,25 +62,21 @@ Unfortunately if you choose anything other then React or React-Native you can no
 
 We want you to be able to use storybook with the framework / library of your choice.
 
-### Vue
-
-Storybook for Vue is currently in alpha release, it won't be long now!
-
 ### Angular
 
-Storybook for Angular is in development.
+Storybook for Angular is in alpha and will be included in the 3.3.0 release.
 
-### Webcomponents
+### Polymer & Webcomponents
 
-Interested in supporting.
-
-### Polymer
-
-Interested in supporting, once bower and html-imports are gone.
+Storybook for Polymer is currently in development, and will support custom elements.
 
 ### Aurelia
 
-Please contact us if you want this.
+We're reaching out to the Aurelia maintainers to cooperate on this.
+
+### Ember
+
+We're reaching out to the Ember maintainers to cooperate on this.
 
 ## Breaking changes
 

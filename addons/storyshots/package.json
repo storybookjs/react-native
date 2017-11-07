@@ -20,7 +20,7 @@
     "global": "^4.3.2",
     "jest-specific-snapshot": "^0.2.0",
     "prop-types": "^15.6.0",
-    "read-pkg-up": "^2.0.0"
+    "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
     "@storybook/addons": "^3.3.0-alpha.3",
