@@ -10,7 +10,7 @@
         "vue-example",
         "lib/cli/test/run/*"
       ],
-      "allowBranch": "released/3.3"
+      "allowBranch": "release/3.3"
     }
   },
   "concurrency": 1,
