@@ -33,6 +33,6 @@
     "react": "*"
   },
   "optionalDependencies": {
-    "@types/react": "^15.0.24"
+    "@types/react": "^16.0.20"
   }
 }
