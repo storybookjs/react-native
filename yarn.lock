@@ -101,9 +101,9 @@
   version "6.0.88"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.88.tgz#f618f11a944f6a18d92b5c472028728a3e3d4b66"
 
-"@types/node@^8.0.49":
-  version "8.0.49"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.49.tgz#417f86ab4829c629fe561779ee48751e0fe2a11b"
+"@types/node@^8.0.50":
+  version "8.0.50"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.50.tgz#dc545448e128c88c4eec7cd64025fcc3b7604541"
 
 "@types/react@^16.0.18":
   version "16.0.19"
@@ -112,6 +112,10 @@
 "@types/react@^16.0.20":
   version "16.0.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.20.tgz#dc16feb9c0bdf50e439482c6fd3c43d5a1d9f3b1"
+
+"@types/react@^16.0.21":
+  version "16.0.21"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.21.tgz#1f4313594f784a477521a0795c46e7b832051ef3"
 
 JSONStream@^1.0.4:
   version "1.3.1"
@@ -6418,9 +6422,9 @@ jest-haste-map@^21, jest-haste-map@^21.2.0:
     sane "^2.0.0"
     worker-farm "^1.3.1"
 
-jest-image-snapshot@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/jest-image-snapshot/-/jest-image-snapshot-2.1.0.tgz#a8863f38de868e0175335dd9a1b170650e0bcdc9"
+jest-image-snapshot@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jest-image-snapshot/-/jest-image-snapshot-2.2.0.tgz#48b9aa6d9545e55b1eae4086454694ce80f8f434"
   dependencies:
     chalk "^1.1.3"
     lodash "^4.17.4"
@@ -9381,9 +9385,9 @@ react-native-compat@^1.0.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native@^0.50.1:
-  version "0.50.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.1.tgz#3d8bb7c96dd3151788e795a22155d305f15abfd1"
+react-native@^0.50.2:
+  version "0.50.2"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.2.tgz#cad6152c716a4fda950f226c71affc2d494fa730"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -11892,13 +11896,17 @@ voca@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/voca/-/voca-1.3.0.tgz#02751ac839bf0c92e2cfe88e49c393c94dd50ac3"
 
-vue-hot-reload-api@^2.1.1, vue-hot-reload-api@^2.2.0:
+vue-hot-reload-api@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
 
-vue-loader@^13.4.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.4.0.tgz#44aa7eef4fb1be89fbc37193ad33b8253417c4b9"
+vue-hot-reload-api@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.3.tgz#43c8e5506d65a271d2571936d77253019fd3eb17"
+
+vue-loader@^13.5.0:
+  version "13.5.0"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.5.0.tgz#52f7b3790a267eff80012b77ea187a54586dd5d4"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
