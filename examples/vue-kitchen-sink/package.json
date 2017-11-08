@@ -18,7 +18,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
     "vue-hot-reload-api": "^2.2.3",
-    "vue-loader": "^13.4.0",
+    "vue-loader": "^13.5.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.6.0",
