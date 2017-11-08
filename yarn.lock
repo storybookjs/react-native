@@ -9385,9 +9385,9 @@ react-native-compat@^1.0.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native@^0.50.1:
-  version "0.50.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.1.tgz#3d8bb7c96dd3151788e795a22155d305f15abfd1"
+react-native@^0.50.2:
+  version "0.50.2"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.2.tgz#cad6152c716a4fda950f226c71affc2d494fa730"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
