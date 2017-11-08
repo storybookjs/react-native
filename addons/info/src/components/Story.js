@@ -14,6 +14,8 @@ import { Pre } from './markdown';
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
 const { STORYBOOK_REACT_CLASSES } = global;
 
+const getName = type => type.displayName || type.name;
+
 const stylesheet = {
   link: {
     base: {
@@ -324,14 +326,13 @@ export default class Story extends React.Component {
     extract(this.props.children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
+    array.sort((a, b) => getName(a) > getName(b));
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
-    const propTables = array.map(type => (
-      <div key={type.displayName || type.name}>
-        <h2 style={this.state.stylesheet.propTableHead}>
-          "{type.displayName || type.name}" Component
-        </h2>
+    const propTables = array.map((type, i) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <div key={`${getName(type)}_${i}`}>
+        <h2 style={this.state.stylesheet.propTableHead}>"{getName(type)}" Component</h2>
         <PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
