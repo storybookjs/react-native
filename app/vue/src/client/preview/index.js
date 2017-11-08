@@ -49,16 +49,10 @@ if (isBrowser) {
 }
 
 const clientApi = new ClientApi(context);
-
-// do exports
-export const storiesOf = clientApi.storiesOf.bind(clientApi);
-export const setAddon = clientApi.setAddon.bind(clientApi);
-export const addDecorator = clientApi.addDecorator.bind(clientApi);
-export const clearDecorators = clientApi.clearDecorators.bind(clientApi);
-export const getStorybook = clientApi.getStorybook.bind(clientApi);
+export const { storiesOf, setAddon, addDecorator, clearDecorators } = clientApi;
 
 const configApi = new ConfigApi({ ...context, clearDecorators });
-export const configure = configApi.configure.bind(configApi);
+export const { configure } = configApi;
 
 // initialize the UI
 const renderUI = () => {
