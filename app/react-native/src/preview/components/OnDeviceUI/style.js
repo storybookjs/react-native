@@ -7,18 +7,18 @@ export default {
     backgroundColor: 'rgba(255, 255, 255, 1)',
   },
   icon: {
-    width: 20,
-    height: 20,
+    width: 30,
+    height: 30,
     opacity: 0.5,
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    margin: 5,
+    margin: 10,
   },
   headerText: {
-    marginLeft: 5,
-    fontSize: 14,
+    marginLeft: 10,
+    fontSize: 20,
     color: 'rgba(0, 0, 0, 0.5)',
   },
   menuContainer: {
@@ -35,7 +35,7 @@ export default {
     flex: 1,
   },
   closeButton: {
-    marginVertical: 5,
+    marginVertical: 10,
   },
   preview: {
     ...StyleSheet.absoluteFillObject,

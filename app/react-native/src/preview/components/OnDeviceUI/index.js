@@ -7,6 +7,7 @@ import {
   View,
   TouchableWithoutFeedback,
   Image,
+  Platform,
   Text,
   StatusBar,
 } from 'react-native';
@@ -72,6 +73,8 @@ export default class OnDeviceUI extends Component {
     const { stories, events, url } = this.props;
     const { menuAnimation, selectedKind, selectedStory, menuWidth } = this.state;
 
+    const StatusBarHeight = Platform.OS === 'ios' ? 30 : 0;
+
     const menuStyles = [
       style.menuContainer,
       {
@@ -83,6 +86,7 @@ export default class OnDeviceUI extends Component {
             }),
           },
         ],
+        marginTop: StatusBarHeight,
       },
     ];
 
@@ -92,6 +96,7 @@ export default class OnDeviceUI extends Component {
           inputRange: [0, 1],
           outputRange: [0, menuWidth],
         }),
+        marginTop: StatusBarHeight,
       },
     ];
 
@@ -102,6 +107,13 @@ export default class OnDeviceUI extends Component {
           inputRange: [0, 1],
           outputRange: [1, 0],
         }),
+      },
+    ];
+
+    const previewContainerStyles = [
+      style.previewContainer,
+      {
+        marginTop: StatusBarHeight,
       },
     ];
 
@@ -120,9 +132,9 @@ export default class OnDeviceUI extends Component {
 
     return (
       <View style={style.main}>
-        <StatusBar hidden />
+        <StatusBar />
         <Animated.View style={menuSpacerStyles} />
-        <View style={style.previewContainer}>
+        <View style={previewContainerStyles}>
           <Animated.View style={headerStyles}>
             <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
               <View>
