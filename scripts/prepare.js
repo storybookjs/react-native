@@ -18,7 +18,7 @@ const args = [
 ].join(' ');
 
 const command = `${babel} ${args}`;
-const code = shell.exec(command, { silent: true }).code;
+const { code } = shell.exec(command, { silent: true });
 
 if (code !== 0) {
   log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);

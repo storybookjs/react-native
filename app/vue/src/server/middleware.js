@@ -21,7 +21,7 @@ export default function(configDir) {
   const middlewareFn = getMiddleware(configDir);
 
   // remove the leading '/'
-  let publicPath = config.output.publicPath;
+  let { publicPath } = config.output;
   if (publicPath[0] === '/') {
     publicPath = publicPath.slice(1);
   }

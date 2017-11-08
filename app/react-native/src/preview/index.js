@@ -75,7 +75,7 @@ export default class Preview {
         const port = params.port !== false ? `:${params.port || 7007}` : '';
 
         const query = params.query || '';
-        const secured = params.secured;
+        const { secured } = params;
         const websocketType = secured ? 'wss' : 'ws';
         const httpType = secured ? 'https' : 'http';
 

@@ -35,7 +35,7 @@ describe('addon Info', () => {
         obj={{ a: 'a', b: 'b' }}
         array={[1, 2, 3]}
         number={7}
-        string={'seven'}
+        string="seven"
         bool
       />
     </div>

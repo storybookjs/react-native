@@ -10,6 +10,7 @@ program
   .option('-h, --host <host>', 'host to listen on')
   .option('-p, --port <port>', 'port to listen on')
   .option('--haul <configFile>', 'use haul with config file')
+  .option('--platform <ios|android|all>', 'build platform-specific build')
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
   .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
@@ -76,7 +77,10 @@ if (!program.skipPackager) {
 
   let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
   if (program.haul) {
-    cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform all`;
+    const platform = program.platform || 'all';
+    cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform ${
+      platform
+    }`;
   }
   // RN packager
   shelljs.exec(

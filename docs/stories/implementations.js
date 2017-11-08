@@ -39,7 +39,7 @@ export default {
       sections={docsData.sections}
       selectedItem={docsData.selectedItem}
       categories={docsData.categories}
-      selectedCatId={'cat-2'}
+      selectedCatId="cat-2"
     />
   ),
   'Docs.docs-container': (
@@ -47,7 +47,7 @@ export default {
       sections={docsData.sections}
       selectedItem={docsData.selectedItem}
       categories={docsData.categories}
-      selectedCatId={'cat-2'}
+      selectedCatId="cat-2"
     />
   ),
   'Docs.docs-content': (

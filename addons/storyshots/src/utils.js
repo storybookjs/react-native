@@ -15,7 +15,7 @@ export function getPossibleStoriesFiles(storyshotFile) {
 }
 
 export function getSnapshotFileName(context) {
-  const fileName = context.fileName;
+  const { fileName } = context;
 
   if (!fileName) {
     return null;

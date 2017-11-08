@@ -29,7 +29,7 @@ export default function({ projectDir, configDir, ...options }) {
   const config = loadConfig(environment, currentWebpackConfig, projectDir, configDir);
 
   // remove the leading '/'
-  let publicPath = config.output.publicPath;
+  let { publicPath } = config.output;
   if (publicPath[0] === '/') {
     publicPath = publicPath.slice(1);
   }

@@ -1,5 +1,5 @@
 {
-  "lerna": "2.4.0",
+  "lerna": "2.5.1",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "commands": {
@@ -10,9 +10,9 @@
         "vue-example",
         "lib/cli/test/run/*"
       ],
-      "allowBranch": "released/3.3"
+      "allowBranch": "release/3.3"
     }
   },
   "concurrency": 1,
-  "version": "3.3.0-alpha.2"
+  "version": "3.3.0-alpha.3"
 }

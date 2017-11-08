@@ -5,4 +5,18 @@ export const RECEIVE_HREF_EVENT_ID = `${ADDON_ID}/receive-href-event`;
 
 export { register } from './manager';
 export { linkTo, hrefTo } from './preview';
-export { default as LinkTo } from './components/link';
+
+let hasWarned = false;
+
+export function LinkTo() {
+  if (!hasWarned) {
+    // eslint-disable-next-line no-console
+    console.error(`
+LinkTo has moved to addon-links/react:
+
+import LinkTo from '@storybook/addon-links/react';
+    `);
+    hasWarned = true;
+  }
+  return null;
+}

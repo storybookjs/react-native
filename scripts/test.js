@@ -4,6 +4,7 @@ const program = require('commander');
 const childProcess = require('child_process');
 const chalk = require('chalk');
 const log = require('npmlog');
+const path = require('path');
 
 log.heading = 'storybook';
 const prefix = 'test';
@@ -18,6 +19,7 @@ const spawn = command => {
   if (out.status !== 0) {
     process.exit(out.status);
   }
+
   return out;
 };
 
@@ -44,7 +46,7 @@ const tasks = {
     name: `Core & React & Vue ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
-    projectLocation: './',
+    projectLocation: path.join(__dirname, '..'),
     isJest: true,
   }),
   'react-native-vanilla': createProject({
@@ -59,6 +61,7 @@ const tasks = {
     defaultValue: false,
     option: '--integration',
     projectLocation: './integration',
+    isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
@@ -125,6 +128,7 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
+
 if (
   !Object.keys(tasks)
     .map(key => tasks[key].value)

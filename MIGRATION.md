@@ -126,7 +126,6 @@ The new package names are:
 | `@kadira/storybook-addon-links`              | `@storybook/addon-links`         |
 | `@kadira/storybook-addon-info`               | `@storybook/addon-info`          |
 | `@kadira/storybook-addon-knobs`              | `@storybook/addon-knobs`         |
-| `@kadira/storybook-addon-comments`           | `@storybook/addon-comments`      |
 | `@kadira/storybook-addon-notes`              | `@storybook/addon-notes`         |
 | `@kadira/storybook-addon-options`            | `@storybook/addon-options`       |
 | `@kadira/storybook-addon-graphql`            | `@storybook/addon-graphql`       |

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.3.0-alpha.2",
+  "version": "3.3.0-alpha.3",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -24,12 +24,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.3.0-alpha.2",
-    "@storybook/addon-links": "^3.3.0-alpha.2",
-    "@storybook/addons": "^3.3.0-alpha.2",
-    "@storybook/channel-websocket": "^3.3.0-alpha.2",
-    "@storybook/core": "^3.3.0-alpha.2",
-    "@storybook/ui": "^3.3.0-alpha.2",
+    "@storybook/addon-actions": "^3.3.0-alpha.3",
+    "@storybook/addon-links": "^3.3.0-alpha.3",
+    "@storybook/addons": "^3.3.0-alpha.3",
+    "@storybook/channel-websocket": "^3.3.0-alpha.3",
+    "@storybook/core": "^3.3.0-alpha.3",
+    "@storybook/ui": "^3.3.0-alpha.3",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -49,9 +49,8 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "commander": "^2.11.0",
     "css-loader": "^0.28.7",
-    "events": "^1.1.1",
     "express": "^4.16.2",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-webpack-plugin": "^2.30.1",
@@ -69,13 +68,13 @@
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.20.0",
-    "ws": "^3.0.0"
+    "ws": "^3.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-native": "^0.43.3"
+    "react-native": "^0.50.1"
   },
   "peerDependencies": {
     "react": "*",

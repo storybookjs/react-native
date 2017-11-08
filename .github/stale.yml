@@ -1,0 +1,26 @@
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 45
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 15
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - bug
+  - 'help wanted'
+  - 'in progress'
+  - 'do not merge'
+  - 'needs review'
+
+# Label to use when marking an issue as stale
+staleLabel: inactive
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  Hi everyone! Seems like there hasn't been much going on in this issue lately.
+  If there are still questions, comments, or bugs, please feel free to continue
+  the discussion. We do try to do some housekeeping every once in a while so
+  inactive issues will get closed after 60 days. Thanks!
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: >
+  Hey there, it's me again! I am going to help our maintainers close this issue
+  so they can focus on development efforts instead. If the issue mentioned is
+  still a concern, please open a new ticket and mention this old one. Cheers
+  and thanks for using Storybook!

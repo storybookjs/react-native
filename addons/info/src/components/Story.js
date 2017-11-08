@@ -12,7 +12,7 @@ import Node from './Node';
 import { Pre } from './markdown';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
-const STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES;
+const { STORYBOOK_REACT_CLASSES } = global;
 
 const stylesheet = {
   link: {
@@ -237,7 +237,7 @@ export default class Story extends React.Component {
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.kind) {
+        if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.story) {
           retDiv = <div>{STORYBOOK_REACT_CLASSES[key].docgenInfo.description}</div>;
         }
       });

@@ -11,6 +11,7 @@ cd my-project-directory
 npm i -g @storybook/cli
 getstorybook
 ```
+The `-g` global install is used to run our cli tool in your project directory to generate templates for your existing projects. To avoid the global install and start your project manually, take a look at our [Slow Start Guide](/basics/slow-start-guide/).
 
 This will configure your app for Storybook. After that, you can run your Storybook with:
 

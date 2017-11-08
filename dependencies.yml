@@ -29,7 +29,7 @@ collectors:
     bootstrap_command: yarn
   actors:
   # pull requests for updates to our major version
-  - type: js-lerna:0.9.0-beta
+  - type: js-lerna
     versions: "L.Y.Y"
     settings:
       batch_mode: true
@@ -39,8 +39,13 @@ collectors:
       github_assignees:
       - Hypnosphi
   # create issues for new major versions
-#  - type: repo-issue
-#    versions: "Y.0.0"
+  - type: repo-issue
+    versions: "Y.0.0"
+    settings:
+      github_labels:
+      - dependencies:update
+      github_assignees:
+      - Hypnosphi
 
 - type: js-npm
   path: docs
@@ -49,10 +54,16 @@ collectors:
   - type: js-npm
     versions: "L.Y.Y"
     settings:
+      batch_mode: true
       github_labels:
       - dependencies:update
       github_assignees:
       - Hypnosphi
   # create issues for new major versions
-#  - type: repo-issue
-#    versions: "Y.0.0"
+  - type: repo-issue
+    versions: "Y.0.0"
+    settings:
+      github_labels:
+      - dependencies:update
+      github_assignees:
+      - Hypnosphi

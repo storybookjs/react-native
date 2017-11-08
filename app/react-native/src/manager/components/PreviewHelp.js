@@ -30,9 +30,7 @@ const PreviewHelp = () => (
     <h1>Welcome to storybook</h1>
     <p>This is a UI component dev environment for your app.</p>
     <p>
-      We've added some basic stories inside the <span style={styles.code}>
-        storybook/stories
-      </span>{' '}
+      We've added some basic stories inside the {<span style={styles.code}>storybook/stories</span>}{' '}
       directory. A story is a single state of one or more UI components. You can have as many
       stories as you want. Basically a story is like a visual test case.
     </p>

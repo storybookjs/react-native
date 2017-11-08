@@ -44,6 +44,8 @@ cd my-react-app
 getstorybook
 ```
 
+The `-g` global install is used to run our cli tool in your project directory to generate templates for your existing projects. To avoid the global install and start your project manually, take a look at our [Slow Start Guide](https://storybook.js.org/basics/slow-start-guide/).
+
 Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
 **Storybook v2.x migration note**: If you're using Storybook v2.x and want to shift to 3.x version the easiest way is:
@@ -64,7 +66,8 @@ For full documentation on using Storybook visit: [storybook.js.org](https://stor
 
 -   [Storybook for react](app/react) - Storybook for React components
 -   [Storybook for vue](app/vue) - Storybook for Vue components
--   [Storybook for react-native](app/react-native) - Storybook for React components
+-   [Storybook for angular](app/angular) - Storybook for Angular components
+-   [Storybook for react-native](app/react-native) - Storybook for React-Native components
 
 ### Sub Projects
 

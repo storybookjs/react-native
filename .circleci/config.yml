@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: /tmp/storybook
   docker:
-    - image: circleci/node:latest
+    - image: circleci/node:8.9
 
 version: 2
 dependencies:
@@ -78,6 +78,9 @@ jobs:
       - run:
           name: Integration Test - Kichen sinks
           command: yarn test --integration
+      - store_artifacts:
+          path: integration/__image_snapshots__
+          destination: integration_image_snapshots
   example-react-native:
     <<: *defaults
     steps:

@@ -35,7 +35,14 @@ import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Component', module)
   .add('simple info',
-    withInfo('doc string about my component')(() =>
+    withInfo(`
+      description or documentation about my component, supports markdown
+    
+      ~~~js
+      <Button>Click Here</Button>
+      ~~~
+    
+    `)(() =>
       <Component>Click the "?" mark at top-right to view the info.</Component>
     )
   )
@@ -81,6 +88,14 @@ import { setDefaults } from '@storybook/addon-info';
 // addon-info
 setDefaults({
   header: false, // Toggles display of header with component name and description
+});
+```
+
+## Options and Defaults
+
+```js
+{
+  header: false, // Toggles display of header with component name and description
   inline: true, // Displays info inline vs click button to view
   source: true, // Displays the source of story Component
   propTables: [/* Components used in story */], // displays Prop Tables with this components
@@ -88,10 +103,10 @@ setDefaults({
   styles: {}, // Overrides styles of addon
   marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
   maxPropsIntoLine: 1, // Max props to display per line in source code
-  maxPropObjectKeys: 10,
-  maxPropArrayLength: 10,
-  maxPropStringLength: 100,
-});
+  maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name
+  maxPropArrayLength: 10, // Displays the first 10 items in the default prop array
+  maxPropStringLength: 100, // Displays the first 100 characters in the default prop string
+}
 ```
 
 ## Deprecated usage
@@ -148,7 +163,7 @@ setAddon(infoAddon);
 ### React Docgen Integration
 
 React Docgen is included as part of the @storybook/react package through the use of `babel-plugin-react-docgen` during babel compile time.
-When rendering a story with a React component commented in this supported format, the Addon Info prop table will display the prop's comment in the description column.
+When rendering a story with a React component commented in this supported format, the Addon Info description will render the comments above the component declaration and the prop table will display the prop's comment in the description column.
 
 ```js
 import React from 'react';

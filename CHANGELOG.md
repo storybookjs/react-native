@@ -1,3 +1,46 @@
+# 3.3.0-alpha.3
+
+2017-November-07
+
+#### Features
+
+-   Add angular support: Storybook for Angular [#1474](https://github.com/storybooks/storybook/pull/1474)
+-   Fix addon Knobs: add array in Object PropTypes [#2227](https://github.com/storybooks/storybook/pull/2227)
+-   Adds error when storyshots finds no stories [#2079](https://github.com/storybooks/storybook/pull/2079)
+-   Add addon background to monorepo [#2220](https://github.com/storybooks/storybook/pull/2220)
+-   Add ability to parse line breaks into <br/> for Docgen descriptions [#2053](https://github.com/storybooks/storybook/pull/2053)
+
+#### Bug Fixes
+
+-   Move LinkTo component to a separate `addon-links/react` endpoint [#2239](https://github.com/storybooks/storybook/pull/2239)
+-   Fix Array Knob deserialization [#2217](https://github.com/storybooks/storybook/pull/2217)
+-   Return the test in storyshots to respect promises. [#2218](https://github.com/storybooks/storybook/pull/2218)
+-   Knobs refactor accidentally removed select [#2210](https://github.com/storybooks/storybook/pull/2210)
+-   Add HMR to other RN app templates [#2213](https://github.com/storybooks/storybook/pull/2213)
+-   Autoload all `*.stories.js` files in cli templates [#2195](https://github.com/storybooks/storybook/pull/2195)
+-   Fix info upgrade codemod failing when optional description string is not supplied [#2138](https://github.com/storybooks/storybook/pull/2138)
+-   Fix `flex-basis` of `DownPanel` content div [#2126](https://github.com/storybooks/storybook/pull/2126)
+
+#### Documentation
+
+-   Updated local test documentation [#2224](https://github.com/storybooks/storybook/pull/2224)
+-   Add state addon to the addons page [#2012](https://github.com/storybooks/storybook/pull/2012)
+-   Add community addon to add the ability to customize styles in the story preview area [#2007](https://github.com/storybooks/storybook/pull/2007)
+-   Add Figma addon to community supported section [#2009](https://github.com/storybooks/storybook/pull/2009)
+-   Update storybook-router description in the addon gallery. [#1991](https://github.com/storybooks/storybook/pull/1991)
+
+#### Maintenance
+
+-   FIX `yarn test` & selecting only core [#2219](https://github.com/storybooks/storybook/pull/2219)
+-   CLI test: always remove `run` directory before exiting [#2201](https://github.com/storybooks/storybook/pull/2201)
+-   Bot for closing old issues [#2186](https://github.com/storybooks/storybook/pull/2186)
+
+#### Dependency Upgrades
+
+-   Update react-native from 0.43.4 to 0.49.3 in app/react-native [#1971](https://github.com/storybooks/storybook/pull/1971)
+-   React-Native - Docs - Add Issues section for Android Emulator [#2078](https://github.com/storybooks/storybook/pull/2078)
+-   Upgrade eslint-config-airbnb and make it pass [#2212](https://github.com/storybooks/storybook/pull/2212)
+
 # 3.3.0-alpha.2
 
 2017-October-03
@@ -99,6 +142,57 @@
 -   Update jest to the latest version 🚀 [#1799](https://github.com/storybooks/storybook/pull/1799)
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
+
+# 3.2.14
+
+2017-November-01
+
+#### Features
+
+-   React-native: Add platform option for haul bundler [#2129](https://github.com/storybooks/storybook/pull/2129)
+
+#### Bug Fixes
+
+-   Fixed addon-info not importing docgen descriptions [#2133](https://github.com/storybooks/storybook/pull/2133)
+-   Handle full screen scrolling on iOS [#2040](https://github.com/storybooks/storybook/pull/2040)
+-   Fixed infinite render loop [#2100](https://github.com/storybooks/storybook/pull/2100)
+-   Fix hmr in react-native template [#2194](https://github.com/storybooks/storybook/pull/2194)
+-   Fix prop type in react-native [#2185](https://github.com/storybooks/storybook/pull/2185)
+-   Avoid logging an object on compilation errors [#2199](https://github.com/storybooks/storybook/pull/2199)
+
+#### Documentation
+
+-   CRA Example Cleanup - Info [#2143](https://github.com/storybooks/storybook/pull/2143)
+
+#### Maintenance
+
+-   IMPROVE integration tests so they all output a diff image when multiple fail [#2197](https://github.com/storybooks/storybook/pull/2197)
+-   ADD integration artefacts store step to circle.yml [#2182](https://github.com/storybooks/storybook/pull/2182)
+-   ADD integration test [#2119](https://github.com/storybooks/storybook/pull/2119)
+-   Updating to new favicon [#2113](https://github.com/storybooks/storybook/pull/2113)
+-   Bot for closing old issues [#2186](https://github.com/storybooks/storybook/pull/2186)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+12 PRs
+</summary>
+
+-   7 packages updated by dependencies.io [#2200](https://github.com/storybooks/storybook/pull/2200)
+-   Update jest-image-snapshot to 2.1.0 [#2184](https://github.com/storybooks/storybook/pull/2184)
+-   2 packages updated by dependencies.io [#2175](https://github.com/storybooks/storybook/pull/2175)
+-   3 packages updated by dependencies.io [#2137](https://github.com/storybooks/storybook/pull/2137)
+-   2 packages updated by dependencies.io [#2131](https://github.com/storybooks/storybook/pull/2131)
+-   4 packages updated by dependencies.io [#2124](https://github.com/storybooks/storybook/pull/2124)
+-   2 packages updated by dependencies.io [#2116](https://github.com/storybooks/storybook/pull/2116)
+-   5 packages updated by dependencies.io [#2111](https://github.com/storybooks/storybook/pull/2111)
+-   4 packages updated by dependencies.io [#2109](https://github.com/storybooks/storybook/pull/2109)
+-   Add index.js file for RN 0.49 [#2176](https://github.com/storybooks/storybook/pull/2176)
+-   Enable issue creation for dependencies.io [#2141](https://github.com/storybooks/storybook/pull/2141)
+-   Major updates in devDependencies [#2178](https://github.com/storybooks/storybook/pull/2178)
+
+</details>
 
 # 3.2.13
 
