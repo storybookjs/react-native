@@ -11896,9 +11896,13 @@ voca@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/voca/-/voca-1.3.0.tgz#02751ac839bf0c92e2cfe88e49c393c94dd50ac3"
 
-vue-hot-reload-api@^2.1.1, vue-hot-reload-api@^2.2.0:
+vue-hot-reload-api@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
+
+vue-hot-reload-api@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.3.tgz#43c8e5506d65a271d2571936d77253019fd3eb17"
 
 vue-loader@^13.4.0:
   version "13.4.0"
