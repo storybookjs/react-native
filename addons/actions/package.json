@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "@storybook/addons": "^3.2.14",
+    "@storybook/components": "^3.2.14",
     "deep-equal": "^1.0.1",
+    "glamorous": "^4.11.0",
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.6.0",
     "react-inspector": "^2.2.1",

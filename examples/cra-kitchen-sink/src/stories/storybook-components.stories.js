@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
 
-import { baseFonts, RoutedLink, MenuLink } from '@storybook/components';
+import { baseFonts, RoutedLink, MenuLink, Button } from '@storybook/components';
 
 css.global('body', baseFonts);
 
@@ -24,3 +24,7 @@ storiesOf('Navigation', module)
       </MenuLink>
     </Div>
   ));
+
+storiesOf('Form', module)
+  .addDecorator(withKnobs)
+  .add('Button', () => <Button onClick={action('click')}>{text('Text', 'Submit')}</Button>);
