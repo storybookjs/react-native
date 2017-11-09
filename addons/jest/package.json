@@ -5,10 +5,20 @@
   "main": "dist/index.js",
   "homepage": "https://github.com/renaudtertrais/storybook-addon-jest",
   "bugs": "https://github.com/renaudtertrais/storybook-addon-jest/issues",
+  "keywords": [
+    "storybook",
+    "react",
+    "jest",
+    "addon",
+    "unit-testing",
+    "results",
+    "report"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/renaudtertrais/storybook-addon-jest"
   },
+  "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
   "files": [
     "dist",
     "styles.js",
@@ -24,7 +34,7 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 3001 -c example/.storybook",
     "prebuild": "npm run clear",
     "build": "cross-env NODE_ENV=production babel -d ./dist ./src",
-    "prepublish": "npm run build ",
+    "prepublish": "npm run build",
     "clear": "rm -rf ./dist"
   },
   "dependencies": {},
