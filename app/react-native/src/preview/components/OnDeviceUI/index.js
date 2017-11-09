@@ -4,6 +4,7 @@ import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 import {
   Animated,
+  Dimensions,
   Easing,
   View,
   TouchableWithoutFeedback,
@@ -14,6 +15,14 @@ import {
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
+
+/**
+ * Returns true if the screen is in portrait mode
+ */
+const isDeviceInPortrait = () => {
+  const dim = Dimensions.get('screen');
+  return dim.height >= dim.width;
+};
 
 const openMenuImage = require('./menu_open.png');
 const closeMenuImage = require('./menu_close.png');
@@ -27,29 +36,41 @@ export default class OnDeviceUI extends Component {
       isMenuOpen: false,
       selectedKind: null,
       selectedStory: null,
-      menuWidth: 0,
+      menuWidth: Dimensions.get('screen').width / 2,
+      isPortrait: isDeviceInPortrait(),
     };
-
-    this.storyChangedHandler = this.handleStoryChanged.bind(this);
-    this.menuToggledHandler = this.handleToggleMenu.bind(this);
-    this.menuLayoutHandler = this.handleMenuLayout.bind(this);
-
-    this.props.events.on('story', this.storyChangedHandler);
   }
 
-  componentWillUnmount() {
-    this.props.events.removeListener('story', this.storyChangedHandler);
+  componentWillMount = () => {
+    Dimensions.addEventListener('change', this.handleDeviceRotation);
+    this.props.events.on('story', this.handleStoryChange);
+  };
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
   }
 
-  handleStoryChanged(storyFn, selection) {
+  componentWillUnmount = () => {
+    Dimensions.removeEventListener('change', this.handleDeviceRotation);
+    this.props.events.removeListener('story', this.handleStoryChange);
+  };
+
+  handleDeviceRotation = () => {
+    this.setState({
+      isPortrait: isDeviceInPortrait(),
+      menuWidth: Dimensions.get('screen').width / 2,
+    });
+  };
+
+  handleStoryChange = (storyFn, selection) => {
     const { kind, story } = selection;
     this.setState({
       selectedKind: kind,
       selectedStory: story,
     });
-  }
+  };
 
-  handleToggleMenu() {
+  handleToggleMenu = () => {
     const isMenuOpen = !this.state.isMenuOpen;
 
     Animated.timing(this.state.menuAnimation, {
@@ -61,17 +82,22 @@ export default class OnDeviceUI extends Component {
     this.setState({
       isMenuOpen,
     });
-  }
-
-  handleMenuLayout(e) {
-    this.setState({
-      menuWidth: e.nativeEvent.layout.width,
-    });
-  }
+  };
 
   render() {
     const { stories, events, url } = this.props;
-    const { menuAnimation, selectedKind, selectedStory, menuWidth } = this.state;
+    const { isPortrait, menuAnimation, selectedKind, selectedStory, menuWidth } = this.state;
+
+    const iPhoneXStyles = ifIphoneX(
+      isPortrait
+        ? {
+            marginVertical: 30,
+          }
+        : {
+            marginHorizontal: 30,
+          },
+      {}
+    );
 
     const menuStyles = [
       style.menuContainer,
@@ -84,28 +110,8 @@ export default class OnDeviceUI extends Component {
             }),
           },
         ],
-        ...ifIphoneX(
-          {
-            paddingTop: 30,
-          },
-          {}
-        ),
       },
-    ];
-
-    const menuSpacerStyles = [
-      {
-        width: menuAnimation.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, menuWidth],
-        }),
-        ...ifIphoneX(
-          {
-            paddingTop: 30,
-          },
-          {}
-        ),
-      },
+      iPhoneXStyles,
     ];
 
     const headerStyles = [
@@ -118,17 +124,9 @@ export default class OnDeviceUI extends Component {
       },
     ];
 
-    const previewContainerStyles = [
-      style.previewContainer,
-      {
-        ...ifIphoneX(
-          {
-            paddingTop: 30,
-          },
-          {}
-        ),
-      },
-    ];
+    const previewContainerStyles = [style.previewContainer, iPhoneXStyles];
+
+    const previewWrapperStyles = [style.previewWrapper, iPhoneXStyles];
 
     /*
       Checks if import is a base64 encoded string uri.
@@ -145,27 +143,25 @@ export default class OnDeviceUI extends Component {
 
     return (
       <View style={style.main}>
-        <StatusBar hidden />
-        <Animated.View style={menuSpacerStyles} />
         <View style={previewContainerStyles}>
           <Animated.View style={headerStyles}>
-            <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
+            <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
               <View>
                 <Image source={openIcon} style={style.icon} />
               </View>
             </TouchableWithoutFeedback>
             <Text style={style.headerText} numberOfLines={1}>
-              {selectedKind} / {selectedStory}
+              {selectedKind} {selectedStory}
             </Text>
           </Animated.View>
-          <View style={style.previewWrapper}>
+          <View style={previewWrapperStyles}>
             <View style={style.preview}>
               <StoryView url={url} events={events} />
             </View>
           </View>
         </View>
-        <Animated.View style={menuStyles} onLayout={this.menuLayoutHandler}>
-          <TouchableWithoutFeedback onPress={this.menuToggledHandler}>
+        <Animated.View style={menuStyles}>
+          <TouchableWithoutFeedback onPress={this.handleToggleMenu}>
             <View style={style.closeButton}>
               <Image source={closeIcon} style={style.icon} />
             </View>
