@@ -5495,7 +5495,7 @@ exports[`Storyshots Button with new info 1`] = `
 
 exports[`Storyshots Button with notes 1`] = `
 <button
-  className="css-button-eamyfd"
+  className="css-1yjiefr"
 >
   Check my notes in the notes panel
 </button>
@@ -5503,7 +5503,7 @@ exports[`Storyshots Button with notes 1`] = `
 
 exports[`Storyshots Button with some emoji 1`] = `
 <button
-  className="css-button-eamyfd"
+  className="css-1yjiefr"
   onClick={[Function]}
 >
   😀 😎 👍 💯
@@ -6053,7 +6053,7 @@ exports[`Storyshots Button with some info 1`] = `
 
 exports[`Storyshots Button with text 1`] = `
 <button
-  className="css-button-eamyfd"
+  className="css-1yjiefr"
   onClick={[Function]}
 >
   Hello Button
@@ -6062,7 +6062,7 @@ exports[`Storyshots Button with text 1`] = `
 
 exports[`Storyshots Form Button 1`] = `
 <button
-  className="css-glamorous-glamorous-button---fiy5tw"
+  className="css-1ppmjb7"
   onClick={[Function]}
   type="button"
 >
@@ -6072,10 +6072,10 @@ exports[`Storyshots Form Button 1`] = `
 
 exports[`Storyshots Navigation Menu link 1`] = `
 <div
-  className="css-glamorous-div-1glkmo8"
+  className="css-t9df35"
 >
   <a
-    className="css-glamorous-routedlink--1cigum0"
+    className="css-1enjukp"
     href="/"
     onClick={[Function]}
   >
@@ -6117,7 +6117,7 @@ exports[`Storyshots Some really long story kind description with text 1`] = `
     }
   >
     <button
-      className="css-button-eamyfd"
+      className="css-1yjiefr"
       onClick={[Function]}
     >
       Hello Button
@@ -6128,10 +6128,10 @@ exports[`Storyshots Some really long story kind description with text 1`] = `
 
 exports[`Storyshots Welcome to Storybook 1`] = `
 <article
-  className="css-glamorous-article--qu08m0"
+  className="css-1fqbdip"
 >
   <h1
-    className="css-glamorous-h1--1xl4xjm"
+    className="css-nil"
   >
     Welcome to storybook
   </h1>
@@ -6142,7 +6142,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     We've added some basic stories inside the
      
     <code
-      className="css-glamorous-code--1lkdzil"
+      className="css-mteq83"
     >
       src/stories
     </code>
@@ -6157,7 +6157,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     See these sample
      
     <a
-      className="css-glamorous-a--k5zri2"
+      className="css-ca0824"
       onClick={[Function]}
       role="button"
       tabIndex="0"
@@ -6168,7 +6168,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     for a component called
      
     <code
-      className="css-glamorous-code--1lkdzil"
+      className="css-mteq83"
     >
       Button
     </code>
@@ -6181,13 +6181,13 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     (Try editing the 
     <code
-      className="css-glamorous-code--1lkdzil"
+      className="css-mteq83"
     >
       Button
     </code>
      stories located at 
     <code
-      className="css-glamorous-code--1lkdzil"
+      className="css-mteq83"
     >
       src/stories/index.js
     </code>
@@ -6199,7 +6199,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <a
-      className="css-glamorous-a--k5zri2"
+      className="css-ca0824"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
       target="_blank"
@@ -6210,7 +6210,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     section in our documentation.
   </p>
   <p
-    className="css-glamorous-p--8ijop4"
+    className="css-bwdon3"
   >
     <b>
       NOTE:
@@ -6219,7 +6219,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <code
-      className="css-glamorous-code--1lkdzil"
+      className="css-mteq83"
     >
       .storybook/webpack.config.js
     </code>
