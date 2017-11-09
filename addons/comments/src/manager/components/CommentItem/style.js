@@ -54,5 +54,8 @@ export default {
     right: 0,
     fontSize: 11,
     color: 'rgb(200, 200, 200)',
+    border: 'none',
+    background: 'transparent',
+    padding: 0,
   },
 };
