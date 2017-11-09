@@ -13,6 +13,7 @@ const styles = {
     display: 'inline-block',
     cursor: 'pointer',
     width: '100%',
+    padding: 0,
   },
   popover: {
     position: 'absolute',
@@ -71,9 +72,9 @@ class ColorType extends React.Component {
     };
     return (
       <div id={knob.name}>
-        <div style={styles.swatch} onClick={this.handleClick} role="button" tabIndex="0">
+        <button type="button" style={styles.swatch} onClick={this.handleClick}>
           <div style={colorStyle} />
-        </div>
+        </button>
         {conditionalRender(
           displayColorPicker,
           () => (

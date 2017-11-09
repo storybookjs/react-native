@@ -69,12 +69,12 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -84,14 +84,13 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -108,12 +107,12 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -123,14 +122,13 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -440,12 +438,12 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -455,14 +453,13 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -479,12 +476,12 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -494,14 +491,13 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -890,12 +886,12 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -905,14 +901,13 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -929,12 +924,12 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -944,14 +939,13 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -1554,12 +1548,12 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -1569,14 +1563,13 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -1593,12 +1586,12 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -1608,14 +1601,13 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -2023,12 +2015,12 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
       </button>
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -2038,14 +2030,13 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -2062,12 +2053,12 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -2077,14 +2068,13 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -2503,12 +2493,12 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -2518,14 +2508,13 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -2542,12 +2531,12 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -2557,14 +2546,13 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -2789,12 +2777,12 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -2804,14 +2792,13 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -2828,12 +2815,12 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -2843,14 +2830,13 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -3141,12 +3127,12 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
       Flow Typed Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -3156,14 +3142,13 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -3180,12 +3165,12 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -3195,14 +3180,13 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -3517,12 +3501,12 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
       Docgen Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -3532,14 +3516,13 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -3556,12 +3539,12 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -3571,14 +3554,13 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -3991,12 +3973,12 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
       Button
     </button>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -4006,14 +3988,13 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -4030,12 +4011,12 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -4045,14 +4026,13 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -4569,12 +4549,12 @@ exports[`Storyshots Button addons composition 1`] = `
       "
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -4584,14 +4564,13 @@ exports[`Storyshots Button addons composition 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -4608,12 +4587,12 @@ exports[`Storyshots Button addons composition 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -4623,14 +4602,13 @@ exports[`Storyshots Button addons composition 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -4974,12 +4952,12 @@ exports[`Storyshots Button with new info 1`] = `
       
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -4989,14 +4967,13 @@ exports[`Storyshots Button with new info 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -5013,12 +4990,12 @@ exports[`Storyshots Button with new info 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -5028,14 +5005,13 @@ exports[`Storyshots Button with new info 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -5548,12 +5524,12 @@ exports[`Storyshots Button with some info 1`] = `
       
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -5563,14 +5539,13 @@ exports[`Storyshots Button with some info 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -5587,12 +5562,12 @@ exports[`Storyshots Button with some info 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -5602,14 +5577,13 @@ exports[`Storyshots Button with some info 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >

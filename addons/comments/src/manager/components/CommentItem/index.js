@@ -35,9 +35,9 @@ export default class CommentItem extends Component {
 
   renderDelete() {
     return (
-      <a style={style.commentDelete} onClick={this.deleteComment} role="button" tabIndex="0">
+      <button type="button" style={style.commentDelete} onClick={this.deleteComment}>
         delete
-      </a>
+      </button>
     );
   }
 
