@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 import {
   Animated,
@@ -7,7 +8,6 @@ import {
   View,
   TouchableWithoutFeedback,
   Image,
-  Platform,
   Text,
   StatusBar,
 } from 'react-native';
@@ -73,8 +73,6 @@ export default class OnDeviceUI extends Component {
     const { stories, events, url } = this.props;
     const { menuAnimation, selectedKind, selectedStory, menuWidth } = this.state;
 
-    const StatusBarHeight = Platform.OS === 'ios' ? 30 : 0;
-
     const menuStyles = [
       style.menuContainer,
       {
@@ -86,7 +84,12 @@ export default class OnDeviceUI extends Component {
             }),
           },
         ],
-        marginTop: StatusBarHeight,
+        ...ifIphoneX(
+          {
+            paddingTop: 30,
+          },
+          {}
+        ),
       },
     ];
 
@@ -96,7 +99,12 @@ export default class OnDeviceUI extends Component {
           inputRange: [0, 1],
           outputRange: [0, menuWidth],
         }),
-        marginTop: StatusBarHeight,
+        ...ifIphoneX(
+          {
+            paddingTop: 30,
+          },
+          {}
+        ),
       },
     ];
 
@@ -113,7 +121,12 @@ export default class OnDeviceUI extends Component {
     const previewContainerStyles = [
       style.previewContainer,
       {
-        marginTop: StatusBarHeight,
+        ...ifIphoneX(
+          {
+            paddingTop: 30,
+          },
+          {}
+        ),
       },
     ];
 
@@ -132,7 +145,7 @@ export default class OnDeviceUI extends Component {
 
     return (
       <View style={style.main}>
-        <StatusBar />
+        <StatusBar hidden />
         <Animated.View style={menuSpacerStyles} />
         <View style={previewContainerStyles}>
           <Animated.View style={headerStyles}>
