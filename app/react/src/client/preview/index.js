@@ -2,10 +2,10 @@
 
 import { createStore } from 'redux';
 import addons from '@storybook/addons';
-import createChannel from '@storybook/channel-postmessage';
 import qs from 'qs';
+import createChannel from '@storybook/channel-postmessage';
+import { handleKeyboardShortcuts } from '@storybook/ui/dist/libs/key_events';
 import { StoryStore, ClientApi, ConfigApi, Actions, reducer } from '@storybook/core/client';
-import init from './init';
 import render from './render';
 
 // check whether we're running on node/browser
@@ -20,14 +20,22 @@ const reduxStore = createStore(reducer);
 const context = { storyStore, reduxStore };
 
 if (isBrowser) {
-  const queryParams = qs.parse(window.location.search.substring(1));
+  // setup preview channel
   const channel = createChannel({ page: 'preview' });
   channel.on('setCurrentStory', data => {
     reduxStore.dispatch(Actions.selectStory(data.kind, data.story));
   });
-  Object.assign(context, { channel, window, queryParams });
   addons.setChannel(channel);
-  init(context);
+  Object.assign(context, { channel });
+
+  // handle query params
+  const queryParams = qs.parse(window.location.search.substring(1));
+  if (queryParams.selectedKind) {
+    reduxStore.dispatch(Actions.selectStory(queryParams.selectedKind, queryParams.selectedStory));
+  }
+
+  // Handle keyboard shortcuts
+  window.onkeydown = handleKeyboardShortcuts(channel);
 }
 
 const clientApi = new ClientApi(context);
