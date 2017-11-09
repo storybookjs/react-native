@@ -17,13 +17,13 @@ const { STORYBOOK_REACT_CLASSES } = global;
 const getName = type => type.displayName || type.name;
 
 const stylesheet = {
-  link: {
+  button: {
     base: {
       fontFamily: 'sans-serif',
       fontSize: '12px',
       display: 'block',
       position: 'fixed',
-      textDecoration: 'none',
+      border: 'none',
       background: '#28c',
       color: '#fff',
       padding: '5px 15px',
@@ -151,9 +151,9 @@ export default class Story extends React.Component {
   }
 
   _renderOverlay() {
-    const linkStyle = {
-      ...stylesheet.link.base,
-      ...stylesheet.link.topRight,
+    const buttonStyle = {
+      ...stylesheet.button.base,
+      ...stylesheet.button.topRight,
     };
 
     const infoStyle = Object.assign({}, stylesheet.info);
@@ -174,13 +174,13 @@ export default class Story extends React.Component {
     return (
       <div>
         <div style={this.state.stylesheet.children}>{this.props.children}</div>
-        <a style={linkStyle} onClick={openOverlay} role="button" tabIndex="0">
+        <button type="button" style={buttonStyle} onClick={openOverlay}>
           Show Info
-        </a>
+        </button>
         <div style={infoStyle}>
-          <a style={linkStyle} onClick={closeOverlay} role="button" tabIndex="0">
+          <button type="button" style={buttonStyle} onClick={closeOverlay}>
             ×
-          </a>
+          </button>
           <div style={this.state.stylesheet.infoPage}>
             <div style={this.state.stylesheet.infoBody}>
               {this._getInfoHeader()}
