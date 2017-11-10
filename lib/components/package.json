@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "3.2.14",
+  "version": "3.2.15",
   "description": "Core Storybook Components",
   "license": "MIT",
   "main": "dist/index.js",

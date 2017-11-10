@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-comments",
-  "version": "3.2.14",
+  "version": "3.2.15",
   "description": "Comments addon for Storybook",
   "keywords": [
     "storybook"
@@ -19,11 +19,11 @@
     "prepare": "node ../../scripts/prepare.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 3006",
-    "storybook-local": "STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 9010",
+    "storybook-local": "cross-env STORYBOOK_CLOUD_SERVER='http://localhost:3003/graphql' start-storybook -p 9010",
     "storybook-remote": "start-storybook -p 3006"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.14",
+    "@storybook/addons": "^3.2.15",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "events": "^1.1.1",
@@ -33,13 +33,13 @@
     "moment": "^2.19.0",
     "prop-types": "^15.6.0",
     "react-render-html": "^0.5.2",
-    "react-textarea-autosize": "^5.1.0"
+    "react-textarea-autosize": "^5.2.0"
   },
   "devDependencies": {
     "@kadira/storybook-database-cloud": "*",
     "@kadira/storybook-deployer": "*",
-    "@storybook/addon-actions": "^3.2.14",
-    "@storybook/react": "^3.2.14",
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/react": "^3.2.15",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
