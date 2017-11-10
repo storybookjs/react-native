@@ -34,6 +34,33 @@ Add it the result file to `.gitignore`:
 .jest-test-results.json
 ```
 
+**Known issue**: if you use a deploy script using for example `gh-pages`, be sure to not put
+the `test` script that write the result in part of the script process (in `predeploy` for example).
+Instead use a different script:
+
+```json
+"scripts": {
+  "test:output": "jest --json --outputFile=.jest-test-results.json",
+  "test": "jest",
+  "prebuild:storybook": "npm run test",
+  "build:storybook": "build-storybook -c .storybook -o build/",
+  "predeploy": "npm run build:storybook",
+  "deploy": "gh-pages -d build/",
+}
+```
+
+Then in dev use:
+
+```shell
+npm run test:output -- --watch
+```
+
+When deploying:
+
+```shell
+npm run deploy
+```
+
 ### Register
 
 Register addon at `.storybook/addons.js`
@@ -91,6 +118,8 @@ If you already use `storybook-readme` addon, you do not need to import it.
 ## TODO
 
 - [ ] Add coverage
+- [ ] Display nested test better (describe)
+- [ ] Display the date of the test
 - [ ] Add unit tests
 - [ ] Add linting
 - [ ] Split <TestPanel />
