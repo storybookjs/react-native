@@ -24,8 +24,8 @@
     "@storybook/addons": "^3.2.15"
   },
   "devDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
     "shelljs": "^0.7.8"
   },
   "peerDependencies": {
