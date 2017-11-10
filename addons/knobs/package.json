@@ -28,7 +28,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^8.0.50",
+    "@types/node": "^8.0.51",
     "@types/react": "^16.0.21",
     "raw-loader": "^0.5.1",
     "react": "^16.1.0",
