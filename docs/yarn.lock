@@ -34,6 +34,12 @@
   dependencies:
     "@storybook/addons" "^3.2.13"
 
+"@storybook/addon-links@^3.2.15":
+  version "3.2.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.15.tgz#87a0dc9bad7b208aca7142863a237b5135a47a34"
+  dependencies:
+    "@storybook/addons" "^3.2.15"
+
 "@storybook/addons@^3.2.13":
   version "3.2.13"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.13.tgz#a133103770a7f2330bc931571df1b2ae660f8f71"
