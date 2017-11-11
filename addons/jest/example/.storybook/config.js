@@ -5,7 +5,7 @@ import { setOptions } from '@storybook/addon-options';
 
 setOptions({
   name: 'JEST ADDON',
-  url: 'https://github.com/renaudtertrais/storybook-addon-jest',
+  url: 'https://github.com/storybooks/storybook',
   downPanelInRight: true,
   showLeftPanel: true,
 });

@@ -1,41 +1,42 @@
 {
-  "name": "storybook-addon-jest",
-  "version": "0.0.1",
+  "name": "@storybook/addon-jest",
+  "version": "3.2.14",
   "description": "React storybook addon that show component jest report",
-  "main": "dist/index.js",
-  "homepage": "https://github.com/renaudtertrais/storybook-addon-jest",
-  "bugs": "https://github.com/renaudtertrais/storybook-addon-jest/issues",
   "keywords": [
-    "storybook",
-    "react",
-    "jest",
     "addon",
-    "unit-testing",
+    "jest",
+    "react",
+    "report",
     "results",
-    "report"
+    "storybook",
+    "unit-testing"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/renaudtertrais/storybook-addon-jest"
-  },
+  "homepage": "https://storybook.js.org",
+  "bugs": "https://github.com/storybooks/storybook",
+  "license": "MIT",
   "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
   "files": [
     "dist",
     "styles.js",
     "register.js"
   ],
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybooks/storybook"
+  },
   "scripts": {
-    "test:example": "jest example --json --outputFile=example/.jest-test-results.json",
-    "clean:storybook": "rm -rf build",
-    "prebuild:storybook": "npm run clean:storybook",
-    "build:storybook": "build-storybook -c example/.storybook -o build/",
-    "predeploy": "npm run build:storybook",
-    "deploy": "gh-pages -d build",
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 3001 -c example/.storybook",
     "prebuild": "npm run clear",
     "build": "cross-env NODE_ENV=production babel -d ./dist ./src",
+    "prebuild:storybook": "npm run clean:storybook",
+    "build:storybook": "build-storybook -c example/.storybook -o build/",
+    "clean:storybook": "rm -rf build",
+    "clear": "rm -rf ./dist",
+    "predeploy": "npm run build:storybook",
+    "deploy": "gh-pages -d build",
     "prepublish": "npm run build",
-    "clear": "rm -rf ./dist"
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 3001 -c example/.storybook",
+    "test:example": "jest example --json --outputFile=example/.jest-test-results.json"
   },
   "dependencies": {},
   "devDependencies": {
@@ -66,8 +67,5 @@
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  }
 }
