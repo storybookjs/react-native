@@ -9,7 +9,7 @@ This storybook addon can be helpfull to make your UI components more accessibile
 First, install the addon.
 
 ```sh
-$ npm install -D storybook-addon-a11y
+$ npm install -D @storybook/addon-a11y
 ```
 
 Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
@@ -24,7 +24,7 @@ import the `'checkA11y'` decorator to check your stories for violations within y
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { checkA11y } from 'storybook-addon-a11y';
+import { checkA11y } from '@storybook/addon-a11y';
 
 storiesOf('button', module)
   .addDecorator(checkA11y)
