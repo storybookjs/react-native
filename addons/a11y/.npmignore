@@ -1,7 +1,0 @@
-node_modules
-.babelrc
-src
-docs
-.scripts
-.storybook
-*.md
