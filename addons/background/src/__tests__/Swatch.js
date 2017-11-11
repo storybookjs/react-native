@@ -17,7 +17,7 @@ describe('Swatch', () => {
       <Swatch value="bar" name="foo" setBackground={mockedSetBackround} />
     ).html();
 
-    expect(markup.match(/foo/gim).length).toBe(1);
+    expect(markup.match(/foo/gim)).toHaveLength(1);
   });
 
   it('should render the value of the swatch and set it to be the background', () => {
@@ -25,8 +25,8 @@ describe('Swatch', () => {
       <Swatch value="bar" name="foo" setBackground={mockedSetBackround} />
     ).html();
 
-    expect(markup.match(/background:bar/gim).length).toBe(1);
-    expect(markup.match(/bar/gim).length).toBe(2);
+    expect(markup.match(/background:bar/gim)).toHaveLength(1);
+    expect(markup.match(/bar/gim)).toHaveLength(2);
   });
 
   it('should emit message on click', () => {
