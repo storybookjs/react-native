@@ -5,7 +5,7 @@ import { Actions, Action, Button, Wrapper, InspectorContainer, Countwrap, Counte
 
 class ActionLogger extends Component {
   getActionData() {
-    return this.props.actions.map((action, i) => this.renderAction(action, i));
+    return this.props.actions.map(action => this.renderAction(action));
   }
 
   renderAction(action) {
@@ -15,7 +15,8 @@ class ActionLogger extends Component {
         <Countwrap>{action.count > 1 && counter}</Countwrap>
         <InspectorContainer>
           <Inspector
-            showNonenumerable
+            sortObjectKeys
+            showNonenumerable={false}
             name={action.data.name}
             data={action.data.args || action.data}
           />

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import EventEmitter from 'events';
 
 import addons from '@storybook/addons';
 
@@ -63,7 +62,11 @@ export class BackgroundDecorator extends React.Component {
 }
 BackgroundDecorator.propTypes = {
   backgrounds: PropTypes.arrayOf(PropTypes.object),
-  channel: PropTypes.instanceOf(EventEmitter),
+  channel: PropTypes.shape({
+    emit: PropTypes.func,
+    on: PropTypes.func,
+    removeListener: PropTypes.func,
+  }),
   story: PropTypes.func.isRequired,
 };
 BackgroundDecorator.defaultProps = {

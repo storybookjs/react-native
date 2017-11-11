@@ -100,3 +100,19 @@ storiesOf('Addon Info.Decorator', module)
     withInfo('Info could be used as a global or local decorator as well.')(story)(context)
   )
   .add('Use Info as story decorator', () => <BaseButton label="Button" />);
+
+const hoc = WrapComponent => ({ ...props }) => <WrapComponent {...props} />;
+
+const Input = hoc(() => <input type="text" />);
+
+const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
+
+storiesOf('Addon Info.GitHub issues', module).add(
+  '#1814',
+  withInfo('Allow Duplicate DisplayNames for HOC #1814')(() => (
+    <div>
+      <Input />
+      <TextArea />
+    </div>
+  ))
+);

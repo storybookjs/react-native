@@ -1,3 +1,189 @@
+# 3.3.0-alpha.3
+
+2017-November-07
+
+#### Features
+
+-   Add angular support: Storybook for Angular [#1474](https://github.com/storybooks/storybook/pull/1474)
+-   Fix addon Knobs: add array in Object PropTypes [#2227](https://github.com/storybooks/storybook/pull/2227)
+-   Adds error when storyshots finds no stories [#2079](https://github.com/storybooks/storybook/pull/2079)
+-   Add addon background to monorepo [#2220](https://github.com/storybooks/storybook/pull/2220)
+-   Add ability to parse line breaks into <br/> for Docgen descriptions [#2053](https://github.com/storybooks/storybook/pull/2053)
+
+#### Bug Fixes
+
+-   Move LinkTo component to a separate `addon-links/react` endpoint [#2239](https://github.com/storybooks/storybook/pull/2239)
+-   Fix Array Knob deserialization [#2217](https://github.com/storybooks/storybook/pull/2217)
+-   Return the test in storyshots to respect promises. [#2218](https://github.com/storybooks/storybook/pull/2218)
+-   Knobs refactor accidentally removed select [#2210](https://github.com/storybooks/storybook/pull/2210)
+-   Add HMR to other RN app templates [#2213](https://github.com/storybooks/storybook/pull/2213)
+-   Autoload all `*.stories.js` files in cli templates [#2195](https://github.com/storybooks/storybook/pull/2195)
+-   Fix info upgrade codemod failing when optional description string is not supplied [#2138](https://github.com/storybooks/storybook/pull/2138)
+-   Fix `flex-basis` of `DownPanel` content div [#2126](https://github.com/storybooks/storybook/pull/2126)
+
+#### Documentation
+
+-   Updated local test documentation [#2224](https://github.com/storybooks/storybook/pull/2224)
+-   Add state addon to the addons page [#2012](https://github.com/storybooks/storybook/pull/2012)
+-   Add community addon to add the ability to customize styles in the story preview area [#2007](https://github.com/storybooks/storybook/pull/2007)
+-   Add Figma addon to community supported section [#2009](https://github.com/storybooks/storybook/pull/2009)
+-   Update storybook-router description in the addon gallery. [#1991](https://github.com/storybooks/storybook/pull/1991)
+
+#### Maintenance
+
+-   FIX `yarn test` & selecting only core [#2219](https://github.com/storybooks/storybook/pull/2219)
+-   CLI test: always remove `run` directory before exiting [#2201](https://github.com/storybooks/storybook/pull/2201)
+-   Bot for closing old issues [#2186](https://github.com/storybooks/storybook/pull/2186)
+
+#### Dependency Upgrades
+
+-   Update react-native from 0.43.4 to 0.49.3 in app/react-native [#1971](https://github.com/storybooks/storybook/pull/1971)
+-   React-Native - Docs - Add Issues section for Android Emulator [#2078](https://github.com/storybooks/storybook/pull/2078)
+-   Upgrade eslint-config-airbnb and make it pass [#2212](https://github.com/storybooks/storybook/pull/2212)
+
+# 3.3.0-alpha.2
+
+2017-October-03
+
+#### Features
+
+-   Ability for custom storyshots testFunctions to utilise "snapshot per story file" [#1841](https://github.com/storybooks/storybook/pull/1841)
+-   Viewport Addon [#1753](https://github.com/storybooks/storybook/pull/1753)
+-   More detailed props table [#1485](https://github.com/storybooks/storybook/pull/1485)
+-   RN: Add accessibility labels to OnDeviceUI [#1780](https://github.com/storybooks/storybook/pull/1780)
+-   Have Stories on each level of hierarchy [#1763](https://github.com/storybooks/storybook/pull/1763)
+-   Viewport Addon [#1740](https://github.com/storybooks/storybook/pull/1740)
+-   Generate snapshot per story file [#1584](https://github.com/storybooks/storybook/pull/1584)
+-   addon-links: add `LinkTo` component, and `hrefTo` function [#1829](https://github.com/storybooks/storybook/pull/1829)
+
+#### Bug Fixes
+
+-   CLI: Use actions in sample stories for vue + fix them in SFC_VUE template [#1867](https://github.com/storybooks/storybook/pull/1867)
+-   Improve rendering of 'types' in addon-actions [#1887](https://github.com/storybooks/storybook/pull/1887)
+-   Circular json can possibly hang [#1881](https://github.com/storybooks/storybook/pull/1881)
+-   Use HtmlWebpackPlugin to import all assets (importing chunks in order) [#1775](https://github.com/storybooks/storybook/pull/1775)
+-   Fix preview scrolling [#1782](https://github.com/storybooks/storybook/pull/1782)
+-   Search box: make found options selectable with click [#1697](https://github.com/storybooks/storybook/pull/1697)
+-   Fix Docgen in static builds for Info [#1725](https://github.com/storybooks/storybook/pull/1725)
+-   Return empty array when Array knob is empty [#1811](https://github.com/storybooks/storybook/pull/1811)
+
+#### Documentation
+
+-   Make dependencies more deterministic [#1703](https://github.com/storybooks/storybook/pull/1703)
+-   Synced changes from new-docs to CONTRIBUTING.md [#1911](https://github.com/storybooks/storybook/pull/1911)
+-   Fix incorrect yarn command in docs [#1758](https://github.com/storybooks/storybook/pull/1758)
+
+#### Maintenance
+
+-   Drop "Install latest yarn version" step on CI [#1910](https://github.com/storybooks/storybook/pull/1910)
+-   CLI: A more human-friendly message for undetected project types [#1825](https://github.com/storybooks/storybook/pull/1825)
+-   CLI: handle promise rejections [#1826](https://github.com/storybooks/storybook/pull/1826)
+-   Add tests for CLI [#1767](https://github.com/storybooks/storybook/pull/1767)
+-   Yarn workspaces [#1810](https://github.com/storybooks/storybook/pull/1810)
+-   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
+-   Deprecate confusing option names [#1692](https://github.com/storybooks/storybook/pull/1692)
+-   A CLI for running specific tests suites, like bootstrap CLI [#1752](https://github.com/storybooks/storybook/pull/1752)
+-   Remove check for sender on channel. [#1407](https://github.com/storybooks/storybook/pull/1407)
+-   Exit with code 1 if `start-storybook --smoke-test` fails [#1851](https://github.com/storybooks/storybook/pull/1851)
+-   Refactor CLI [#1840](https://github.com/storybooks/storybook/pull/1840)
+-   Refactor knobs - no longer include all runtimes [#1832](https://github.com/storybooks/storybook/pull/1832)
+-   Added addon-knobs to crna and vanilla react native. [#1636](https://github.com/storybooks/storybook/pull/1636)
+
+#### Dependency Upgrades
+
+-   Add config for dependencies.io [#1770](https://github.com/storybooks/storybook/pull/1770)
+
+# 3.3.0-alpha.0
+
+2017-September-06
+
+#### Features
+
+-   Viewport addon: simulate device sizes in preview window [#1753](https://github.com/storybooks/storybook/pull/1753)
+-   CLI: Add codemod for deprecated addon-links and addon-actions from app [#1368](https://github.com/storybooks/storybook/pull/1368)
+-   Info addon: More detailed props table [#1485](https://github.com/storybooks/storybook/pull/1485)
+-   React native: Add accessibility labels to OnDeviceUI [#1780](https://github.com/storybooks/storybook/pull/1780)
+-   Stories panel: Stories on each hierarchy level [#1763](https://github.com/storybooks/storybook/pull/1763)
+-   Storyshots: Generate snapshot per story file [#1584](https://github.com/storybooks/storybook/pull/1584)
+-   CLI: Add support for Vue projects using Nuxt [#1794](https://github.com/storybooks/storybook/pull/1794)
+
+#### Bug Fixes
+
+-   Import chunks/assets in correct order using HtmlWebpackPlugin [#1775](https://github.com/storybooks/storybook/pull/1775)
+-   Fix preview scrolling [#1782](https://github.com/storybooks/storybook/pull/1782)
+-   Height aligned 2 buttons in manager's header [#1769](https://github.com/storybooks/storybook/pull/1769)
+-   Search box: make found options selectable with click [#1697](https://github.com/storybooks/storybook/pull/1697)
+-   Info addon: Fix Docgen in static builds [#1725](https://github.com/storybooks/storybook/pull/1725)
+-   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
+
+#### Documentation
+
+-   Improve linkTo documentation [#1793](https://github.com/storybooks/storybook/pull/1793)
+-   Add carbon to examples page [#1764](https://github.com/storybooks/storybook/pull/1764)
+-   Minor grammar fixes and clarification to Vue documentation [#1756](https://github.com/storybooks/storybook/pull/1756)
+-   Fix incorrect yarn command in docs [#1758](https://github.com/storybooks/storybook/pull/1758)
+-   Add storybook-chrome-screenshot to addon gallery [#1761](https://github.com/storybooks/storybook/pull/1761)
+-   Fixing typo on VueJS withNotes Example [#1787](https://github.com/storybooks/storybook/pull/1787)
+
+#### Maintenance
+
+-   Deprecate confusing option names [#1692](https://github.com/storybooks/storybook/pull/1692)
+-   A CLI for running specific tests suites, like bootstrap CLI [#1752](https://github.com/storybooks/storybook/pull/1752)
+-   Remove check for sender on channel. [#1407](https://github.com/storybooks/storybook/pull/1407)
+-   Use yarn instead of NPM [#1703](https://github.com/storybooks/storybook/pull/1703)
+-   Add config for dependencies.io [#1770](https://github.com/storybooks/storybook/pull/1770)
+-   Added addon-knobs to crna and vanilla react native. [#1636](https://github.com/storybooks/storybook/pull/1636)
+-   Fixed Jest warnings [#1744](https://github.com/storybooks/storybook/pull/1744)
+-   Smoke test master [#1801](https://github.com/storybooks/storybook/pull/1801)
+
+#### Dependency Upgrades
+
+-   Upgrade root dependencies and sync with packages [#1802](https://github.com/storybooks/storybook/pull/1802)
+-   Update jest to the latest version 🚀 [#1799](https://github.com/storybooks/storybook/pull/1799)
+-   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
+-   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
+
+# 3.2.15
+
+2017-November-10
+
+#### Features
+
+-   Optimizing for iphone x [#2260](https://github.com/storybooks/storybook/pull/2260)
+-   Fix accessibility warnings [#2270](https://github.com/storybooks/storybook/pull/2270)
+
+#### Bug Fixes
+
+-   Fix propTypes in addon-background [#2279](https://github.com/storybooks/storybook/pull/2279)
+-   Addon-info: allow duplicate displayNames [#2269](https://github.com/storybooks/storybook/pull/2269)
+-   Fix browser navigation [#2261](https://github.com/storybooks/storybook/pull/2261)
+
+#### Maintenance
+
+-   Fixes to build scripts for Windows. [#2051](https://github.com/storybooks/storybook/pull/2051)
+-   Update dependencies.yml to include batch updates for docs dependencies [#2252](https://github.com/storybooks/storybook/pull/2252)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+11 PRs
+</summary>
+
+-   Update 4 dependencies from npm [#2267](https://github.com/storybooks/storybook/pull/2267)
+-   Update 8 dependencies from npm [#2262](https://github.com/storybooks/storybook/pull/2262)
+-   Update 3 dependencies from npm [#2257](https://github.com/storybooks/storybook/pull/2257)
+-   Update babel-eslint in / from 8.0.1 to 8.0.2 [#2253](https://github.com/storybooks/storybook/pull/2253)
+-   3 packages updated by dependencies.io [#2251](https://github.com/storybooks/storybook/pull/2251)
+-   Update devDependencies [#2232](https://github.com/storybooks/storybook/pull/2232)
+-   Update react-textarea-autosize to 5.1.0 [#2233](https://github.com/storybooks/storybook/pull/2233)
+-   Update insert-css to 2.0.0 [#2234](https://github.com/storybooks/storybook/pull/2234)
+-   Update file-loader to 1.1.5 [#2236](https://github.com/storybooks/storybook/pull/2236)
+-   Update read-pkg-up to 3.0.0 [#2237](https://github.com/storybooks/storybook/pull/2237)
+-   Update react-modal to 3.1.0 [#2238](https://github.com/storybooks/storybook/pull/2238)
+
+</details>
+
 # 3.2.14
 
 2017-November-01

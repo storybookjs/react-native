@@ -27,7 +27,7 @@ describe('Background Panel', () => {
   it('should have a default background value of transparent', () => {
     const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} />);
 
-    expect(backgroundPanel.state().backgrounds.length).toBe(0);
+    expect(backgroundPanel.state().backgrounds).toHaveLength(0);
   });
 
   it('should show setup instructions if no colors provided', () => {
@@ -72,7 +72,7 @@ describe('Background Panel', () => {
 
     // check to make sure the default bg was added
     const headings = backgroundPanel.find('h4');
-    expect(headings.length).toBe(8);
+    expect(headings).toHaveLength(8);
   });
 
   it('should allow the default swatch become the background color', () => {
@@ -90,7 +90,7 @@ describe('Background Panel', () => {
 
     // check to make sure the default bg was added
     const headings = backgroundPanel.find('h4');
-    expect(headings.length).toBe(8);
+    expect(headings).toHaveLength(8);
   });
 
   it('should unset all swatches on receiving the background-unset message', () => {

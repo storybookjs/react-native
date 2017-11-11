@@ -8,10 +8,10 @@ setOptions({
   name: 'CRA Kitchen Sink',
   url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
   goFullScreen: false,
-  showLeftPanel: true,
-  showDownPanel: true,
+  showStoriesPanel: true,
+  showAddonsPanel: true,
   showSearchBox: false,
-  downPanelInRight: true,
+  addonPanelInRight: true,
   sortStoriesByKind: false,
   hierarchySeparator: /\/|\./,
 });
