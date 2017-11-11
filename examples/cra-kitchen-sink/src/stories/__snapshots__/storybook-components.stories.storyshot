@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Form Button 1`] = `
+<button
+  className="css-1ppmjb7"
+  onClick={[Function]}
+  type="button"
+>
+  Submit
+</button>
+`;
+
 exports[`Storyshots Navigation Menu link 1`] = `
 <div
   className="css-t9df35"
