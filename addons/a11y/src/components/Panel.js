@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import addons from '@storybook/addons';
-import { EVENT_ID } from './../shared';
 
 import Tabs from './Tabs';
 import Report from './Report';
@@ -58,8 +57,6 @@ class Panel extends Component {
         ]}
       />
     );
-
-    return <div>{this.state.text}</div>;
   }
 }
 

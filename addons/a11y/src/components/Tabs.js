@@ -78,8 +78,6 @@ class Tabs extends Component {
   }
 
   render() {
-    const { tabs } = this.props;
-
     return (
       <div style={styles.container}>
         {this.renderTabs()}

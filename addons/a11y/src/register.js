@@ -5,7 +5,7 @@ import Panel from './components/Panel';
 import { ADDON_ID, PANEL_ID } from './shared';
 
 function init() {
-  addons.register(ADDON_ID, api => {
+  addons.register(ADDON_ID, () => {
     addons.addPanel(PANEL_ID, {
       title: 'Accessibility',
       render() {
