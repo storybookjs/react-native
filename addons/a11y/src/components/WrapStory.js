@@ -8,14 +8,14 @@ class WrapStory extends Component {
     context: PropTypes.object,
     storyFn: PropTypes.func,
     channel: PropTypes.object,
-  }
+  };
 
   componentDidMount() {
     const { channel } = this.props;
     const wrapper = findDOMNode(this);
 
     if (wrapper !== null) {
-      axe.a11yCheck(wrapper, {}, (results) => {
+      axe.a11yCheck(wrapper, {}, results => {
         channel.emit('addon:a11y:check', results);
       });
     }

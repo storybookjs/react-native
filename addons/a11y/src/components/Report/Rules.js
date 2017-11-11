@@ -34,14 +34,11 @@ const styles = {
   },
   message: {
     paddingLeft: '6px',
-  }
-}
+  },
+};
 
 function Rule({ rule, passes }) {
-  const color = ( passes ?
-    impactColors.success :
-    impactColors[rule.impact]
-  )
+  const color = passes ? impactColors.success : impactColors[rule.impact];
 
   return (
     <div style={styles.rule}>
@@ -51,27 +48,19 @@ function Rule({ rule, passes }) {
           backgroundColor: color,
         }}
       >
-        { passes ? '✔' : '✘' }
+        {passes ? '✔' : '✘'}
       </div>
-      <span style={styles.message}>
-        {rule.message}
-      </span>
+      <span style={styles.message}>{rule.message}</span>
     </div>
-  )
+  );
 }
 
 function Rules({ rules, passes }) {
   return (
     <div style={styles.rules}>
-      {rules.map((rule, index) => (
-        <Rule
-          passes={passes}
-          rule={rule}
-          key={index}
-        />
-      ))}
+      {rules.map((rule, index) => <Rule passes={passes} rule={rule} key={index} />)}
     </div>
-  )
+  );
 }
 
 export default Rules;

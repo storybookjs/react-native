@@ -13,17 +13,14 @@ const styles = {
     borderRadius: '2px',
     color: 'rgb(130, 130, 130)',
     fontSize: '12px',
-  }
-}
+  },
+};
 
 function Tags({ tags }) {
   return (
     <div style={styles.tags}>
-      {tags.map((tag) => (
-        <div
-          key={tag}
-          style={styles.tag}
-        >
+      {tags.map(tag => (
+        <div key={tag} style={styles.tag}>
           {tag}
         </div>
       ))}

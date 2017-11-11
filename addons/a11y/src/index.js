@@ -1,7 +1,7 @@
 import addons from '@storybook/addons';
 
 import A11yManager from './A11yManager';
-import * as shared from './shared'
+import * as shared from './shared';
 
 const manager = new A11yManager();
 
@@ -10,7 +10,4 @@ function checkA11y(storyFn, context) {
   return manager.wrapStory(channel, storyFn, context);
 }
 
-export {
-  checkA11y,
-  shared,
-};
+export { checkA11y, shared };

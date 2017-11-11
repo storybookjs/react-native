@@ -11,7 +11,8 @@ const styles = {
     display: 'flex',
   },
   tab: {
-    fontFamily: '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+    fontFamily:
+      '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
     color: 'rgb(68, 68, 68)',
     fontSize: '11px',
     textDecoration: 'none',
@@ -25,8 +26,8 @@ const styles = {
   tabActive: {
     opacity: 1,
     fontWeight: 600,
-  }
-}
+  },
+};
 
 class Tabs extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class Tabs extends Component {
 
     this.state = {
       active: 0,
-    }
+    };
 
     this.onToggle = this.onToggle.bind(this);
     this.renderPanel = this.renderPanel.bind(this);
@@ -44,18 +45,14 @@ class Tabs extends Component {
   onToggle(index) {
     this.setState({
       active: index,
-    })
+    });
   }
 
   renderPanel() {
     const { tabs } = this.props;
     const { active } = this.state;
 
-    return (
-      <div style={styles.panel}>
-        {tabs[active].panel}
-      </div>
-    )
+    return <div style={styles.panel}>{tabs[active].panel}</div>;
   }
 
   renderTabs() {
@@ -69,15 +66,15 @@ class Tabs extends Component {
             key={index}
             style={{
               ...styles.tab,
-              ...(index === active ? styles.tabActive : undefined)
+              ...(index === active ? styles.tabActive : undefined),
             }}
             onClick={() => this.onToggle(index)}
           >
-            { tab.label }
+            {tab.label}
           </div>
         ))}
       </div>
-    )
+    );
   }
 
   render() {
@@ -93,10 +90,12 @@ class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.node,
-    panel: PropTypes.node,
-  })),
+  tabs: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.node,
+      panel: PropTypes.node,
+    })
+  ),
 };
 
 export default Tabs;

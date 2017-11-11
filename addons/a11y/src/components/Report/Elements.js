@@ -12,8 +12,8 @@ const styles = {
     display: 'inline-block',
     paddingBottom: '4px',
     marginBottom: '4px',
-  }
-}
+  },
+};
 
 function Element({ element, passes }) {
   const { any, all, none } = element;
@@ -22,27 +22,16 @@ function Element({ element, passes }) {
 
   return (
     <li style={styles.element}>
-      <span style={styles.target}>
-        {element.target[0]}
-      </span>
-      <Rules
-        rules={rules}
-        passes={passes}
-      />
+      <span style={styles.target}>{element.target[0]}</span>
+      <Rules rules={rules} passes={passes} />
     </li>
-  )
+  );
 }
 
 function Elements({ elements, passes }) {
   return (
     <ol style={styles.element}>
-      {elements.map((element, index) => (
-        <Element
-          passes={passes}
-          element={element}
-          key={index}
-        />
-      ))}
+      {elements.map((element, index) => <Element passes={passes} element={element} key={index} />)}
     </ol>
   );
 }

@@ -12,7 +12,7 @@ const styles = {
   violations: {
     color: '#e74c3c',
   },
-}
+};
 
 class Panel extends Component {
   constructor(props, ...args) {
@@ -38,7 +38,7 @@ class Panel extends Component {
     this.setState({
       passes,
       violations,
-    })
+    });
   }
 
   render() {
@@ -46,35 +46,18 @@ class Panel extends Component {
 
     return (
       <Tabs
-        tabs={[{
-          label: (
-            <span style={styles.violations}>
-              Violations
-            </span>
-          ),
-          panel: (
-            <Report
-              passes={false}
-              items={violations}
-              empty="No a11y violations found."
-            />
-          )
-        }, {
-          label: (
-            <span style={styles.passes}>
-              Passes
-            </span>
-          ),
-          panel: (
-            <Report
-              passes
-              items={passes}
-              empty="No a11y check passed"
-            />
-          )
-        }]}
+        tabs={[
+          {
+            label: <span style={styles.violations}>Violations</span>,
+            panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
+          },
+          {
+            label: <span style={styles.passes}>Passes</span>,
+            panel: <Report passes items={passes} empty="No a11y check passed" />,
+          },
+        ]}
       />
-    )
+    );
 
     return <div>{this.state.text}</div>;
   }

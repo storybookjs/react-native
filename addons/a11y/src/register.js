@@ -10,9 +10,9 @@ function init() {
       title: 'Accessibility',
       render() {
         return <Panel />;
-      }
+      },
     });
   });
 }
 
-export { init }
+export { init };

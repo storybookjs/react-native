@@ -7,7 +7,7 @@ class A11yManager {
   wrapStory(channel, storyFn, context) {
     const props = { context, storyFn, channel };
 
-    return (<WrapStory {...props} />);
+    return <WrapStory {...props} />;
   }
 }
 

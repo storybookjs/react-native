@@ -16,25 +16,26 @@ const styles = {
     display: 'block',
     width: '100%',
   },
-}
+};
 
 class Item extends Component {
   static propTypes = {
     item: PropTypes.object,
     passes: PropTypes.bool,
-  }
+  };
 
   constructor() {
     super();
 
     this.state = {
       open: false,
-    }
+    };
   }
 
-  onToggle = () => this.setState((prevState) => ({
-    open: !prevState.open,
-  }))
+  onToggle = () =>
+    this.setState(prevState => ({
+      open: !prevState.open,
+    }));
 
   render() {
     const { item, passes } = this.props;
@@ -42,22 +43,14 @@ class Item extends Component {
 
     return (
       <div style={styles.item}>
-        <div
-          style={styles.headerBar}
-          onClick={() => this.onToggle()}
-        >
+        <div style={styles.headerBar} onClick={() => this.onToggle()}>
           {item.description}
         </div>
-        { open && (<Info item={item} />) }
-        { open && (
-          <Elements
-            elements={item.nodes}
-            passes={passes}
-          />
-        ) }
-        { open && (<Tags tags={item.tags} />) }
+        {open && <Info item={item} />}
+        {open && <Elements elements={item.nodes} passes={passes} />}
+        {open && <Tags tags={item.tags} />}
       </div>
-    )
+    );
   }
 }
 
