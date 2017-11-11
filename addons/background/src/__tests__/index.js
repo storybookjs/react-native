@@ -31,7 +31,7 @@ describe('Background Decorator', () => {
       <BackgroundDecorator story={testStory} channel={SpiedChannel} />
     );
 
-    expect(backgroundDecorator.html().match(/background:transparent/gim).length).toBe(1);
+    expect(backgroundDecorator.html().match(/background:transparent/gim)).toHaveLength(1);
   });
 
   it('should set internal state when background event called', () => {
@@ -87,6 +87,6 @@ describe('Background Decorator', () => {
     );
 
     backgroundDecorator.setProps({ randomProp: true });
-    expect(story.mock.calls.length).toBe(1);
+    expect(story.mock.calls).toHaveLength(1);
   });
 });
