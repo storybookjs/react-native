@@ -8,14 +8,14 @@ This storybook addon can be helpfull to make your UI components more accessibile
 
 First, install the addon.
 
-```shell
+```sh
 $ npm install -D storybook-addon-a11y
 ```
 
 Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
 
 ```js
-import 'storybook-addon-a11y/register';
+import '@storybook/addon-a11y/register';
 ```
 
 import the `'checkA11y'` decorator to check your stories for violations within your components.
@@ -39,3 +39,13 @@ storiesOf('button', module)
     </button>
   ));
 ```
+
+## Roadmap
+
+* Make UI accessibile
+* Add color blindness filters ([Example](http://lowvision.support/))
+* Show in story where violations are.
+* Make it configurable
+* Add more example tests
+* Add tests
+* Make CI integration possible
