@@ -38,7 +38,7 @@
     "gatsby-remark-images": "^1.5.31",
     "gatsby-remark-smartypants": "^1.4.8",
     "gatsby-source-filesystem": "^1.5.8",
-    "gatsby-transformer-remark": "^1.7.19",
+    "gatsby-transformer-remark": "^1.7.20",
     "gh-pages": "^1.0.0",
     "global": "^4.3.2",
     "highlight.js": "^9.12.0",
