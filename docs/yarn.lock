@@ -4239,9 +4239,9 @@ gatsby-remark-autolink-headers@^1.4.8:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.16:
-  version "1.5.16"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.16.tgz#9251448048ea0a72bdec6f46793046f6e36b9904"
+gatsby-remark-copy-linked-files@^1.5.20:
+  version "1.5.20"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.20.tgz#ebd53a07738b67d13d75cdecea3d8fdde3914c79"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
@@ -4249,6 +4249,7 @@ gatsby-remark-copy-linked-files@^1.5.16:
     image-size "^0.6.1"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
+    path-is-inside "^1.0.2"
     unist-util-visit "^1.1.1"
 
 gatsby-remark-images@^1.5.30:
@@ -7343,7 +7344,7 @@ path-is-absolute@^1.0.0, path-is-absolute@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
 
-path-is-inside@^1.0.1:
+path-is-inside@^1.0.1, path-is-inside@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
 
