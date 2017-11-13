@@ -12,9 +12,11 @@ const styles = {
     borderBottom: '1px solid rgb(234, 234, 234)',
   },
   headerBar: {
-    margin: '12px 0',
+    padding: '12px 0px',
     display: 'block',
     width: '100%',
+    border: 0,
+    background: 'none',
   },
 };
 
@@ -47,7 +49,7 @@ class Item extends Component {
 
     return (
       <div style={styles.item}>
-        <button style={styles.hebuttonderBar} onClick={() => this.onToggle()}>
+        <button style={styles.headerBar} onClick={() => this.onToggle()}>
           {item.description}
         </button>
         {open && <Info item={item} />}

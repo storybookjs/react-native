@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@storybook/addons": "^3.2.15",
+    "@storybook/components": "^3.2.15",    
     "axe-core": "^2.0.7",
     "prop-types": "^15.6.0"
   },
