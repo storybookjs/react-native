@@ -69,9 +69,7 @@ const TestsPanel = ({ tests }) => {
                 }}
               >
                 {successNumber > 0 && (
-                  <div style={{ color: colors.success }}>
-                    {successNumber} passed
-                  </div>
+                  <div style={{ color: colors.success }}>{successNumber} passed</div>
                 )}
                 {failedNumber > 0 && (
                   <div style={{ marginLeft: 10, color: colors.error }}>{failedNumber} failed</div>
@@ -136,7 +134,7 @@ const TestsPanel = ({ tests }) => {
                               .replace(/\[22?m?/g, '')
                               .replace(/\[31m/g, `<strong style="color: ${colors.error}">`)
                               .replace(/\[32m/g, `<strong style="color: ${colors.success}">`)
-                              .replace(/\[39m/g, `</strong>`),
+                              .replace(/\[39m/g, '</strong>'),
                           }}
                         />
                       ))}

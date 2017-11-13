@@ -3,4 +3,4 @@ export default {
   error: 'CRIMSON',
   warning: 'DARKORANGE',
   grey: 'LIGHTSLATEGRAY',
-}
+};
