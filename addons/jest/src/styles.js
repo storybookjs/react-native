@@ -1,3 +1,5 @@
+import { document } from 'global';
+
 const styles = `
   @font-face {
     font-family: octicons-link;
@@ -562,11 +564,10 @@ const styles = `
   }
 `;
 
-if(!document.getElementById('github-markdown-css')) {
+if (document && !document.getElementById('github-markdown-css')) {
   const styleNode = document.createElement('style');
   styleNode.id = 'github-markdown-css';
   styleNode.innerHTML = styles;
 
   document.head.appendChild(styleNode);
 }
-

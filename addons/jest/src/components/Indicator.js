@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Indicator = ({ color, size, children = '', right }) => (
   <div
@@ -20,5 +21,11 @@ const Indicator = ({ color, size, children = '', right }) => (
     {children}
   </div>
 );
+Indicator.propTypes = {
+  color: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired,
+  right: PropTypes.bool.isRequired,
+};
 
 export default Indicator;

@@ -15,19 +15,17 @@ const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
     return { fileName, name };
   });
 
-const withTests = (results, options) => (...testFiles) => {
-  const emitAddTests = ({ kind, story }) => {
-    addons.getChannel().emit('storybook/tests/add_tests', {
-      kind,
-      storyName: story,
-      tests: findTestResults(testFiles, results, options.filesExt),
-    });
-  };
+const emitAddTests = ({ kind, story, testFiles, results, options }) => {
+  addons.getChannel().emit('storybook/tests/add_tests', {
+    kind,
+    storyName: story,
+    tests: findTestResults(testFiles, results, options.filesExt),
+  });
+};
 
-  return (storyFn, { kind, story }) => {
-    emitAddTests({ kind, story });
-    return storyFn();
-  };
+const withTests = (results, options) => (...testFiles) => (storyFn, { kind, story }) => {
+  emitAddTests({ kind, story, testFiles, results, options });
+  return storyFn();
 };
 
 export default withTests;

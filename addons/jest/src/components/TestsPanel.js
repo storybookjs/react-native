@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Indicator from './Indicator';
 import provideTests from '../hoc/provideTests';
@@ -124,6 +125,7 @@ const TestsPanel = ({ tests }) => {
                         </Indicator>
                       </div>
                     </div>
+                    {/* eslint-disable react/no-array-index-key */}
                     {failureMessages &&
                       failureMessages.map((msg, i) => (
                         <pre
@@ -147,6 +149,13 @@ const TestsPanel = ({ tests }) => {
       })}
     </div>
   );
+};
+TestsPanel.propTypes = {
+  tests: PropTypes.arrayOf(
+    PropTypes.shape({
+      result: PropTypes.object,
+    })
+  ).isRequired,
 };
 
 export default provideTests(TestsPanel);

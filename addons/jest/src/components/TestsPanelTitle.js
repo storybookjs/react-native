@@ -16,7 +16,7 @@ const TestPanelTitle = ({ tests }) => {
   }
 
   const results = tests.map(report => report.result).filter(report => !!report);
-  const success = results.reduce((acc, result) => acc & (result.status === 'passed'), true);
+  const success = results.reduce((acc, result) => acc && result.status === 'passed', true);
   const color = success ? colors.success : colors.error;
 
   return (
@@ -25,6 +25,13 @@ const TestPanelTitle = ({ tests }) => {
       <div>Tests</div>
     </div>
   );
+};
+TestPanelTitle.propTypes = {
+  tests: PropTypes.arrayOf(
+    PropTypes.shape({
+      result: PropTypes.object,
+    })
+  ).isRequired,
 };
 
 export default provideTests(TestPanelTitle);
