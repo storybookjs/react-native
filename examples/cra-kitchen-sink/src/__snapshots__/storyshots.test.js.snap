@@ -4825,6 +4825,43 @@ exports[`Storyshots Addon Notes withNotes 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addon a11y Content 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+/>
+`;
+
+exports[`Storyshots Addon a11y Default 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+/>
+`;
+
+exports[`Storyshots Addon a11y Disabled 1`] = `
+<button
+  disabled={true}
+  onClick={[Function]}
+/>
+`;
+
+exports[`Storyshots Addon a11y Invalid contrast 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+/>
+`;
+
+exports[`Storyshots Addon a11y Label 1`] = `
+<button
+  disabled={false}
+  onClick={[Function]}
+>
+  Testing the a11y addon
+</button>
+`;
+
 exports[`Storyshots App full app 1`] = `
 <div
   className="App"
