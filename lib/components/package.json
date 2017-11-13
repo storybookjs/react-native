@@ -18,10 +18,6 @@
     "glamorous": "^4.11.0",
     "prop-types": "^15.6.0"
   },
-  "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
