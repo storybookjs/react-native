@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   tags: {
@@ -27,5 +28,8 @@ function Tags({ tags }) {
     </div>
   );
 }
+Tags.propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.node).isRequired,
+};
 
 export default Tags;

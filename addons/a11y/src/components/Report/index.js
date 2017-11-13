@@ -5,13 +5,9 @@ import Item from './Item';
 
 const styles = {
   container: {
-    fontFamily:
-      '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
     fontSize: '12px',
   },
   empty: {
-    fontFamily:
-      '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
     fontSize: '11px',
     padding: '20px 12px',
     width: '100%',
@@ -34,8 +30,15 @@ function Report({ items, empty, passes }) {
 }
 
 Report.propTypes = {
-  items: PropTypes.array,
-  empty: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string,
+      nodes: PropTypes.array,
+      tags: PropTypes.array,
+    })
+  ).isRequired,
+  empty: PropTypes.string.isRequired,
+  passes: PropTypes.bool.isRequired,
 };
 
 export default Report;

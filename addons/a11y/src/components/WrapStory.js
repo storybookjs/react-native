@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import axe from 'axe-core';
 
 class WrapStory extends Component {
   static propTypes = {
-    context: PropTypes.object,
+    context: PropTypes.shape({}),
     storyFn: PropTypes.func,
-    channel: PropTypes.object,
+    channel: PropTypes.shape({}),
+  };
+  static defaultProps = {
+    context: {},
+    storyFn: () => {},
+    channel: {},
   };
 
+  /* eslint-disable react/no-find-dom-node */
   componentDidMount() {
     const { channel } = this.props;
     const wrapper = findDOMNode(this);

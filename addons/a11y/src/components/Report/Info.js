@@ -30,7 +30,10 @@ function Info({ item }) {
 }
 
 Info.propTypes = {
-  item: PropTypes.object,
+  item: PropTypes.shape({
+    help: PropTypes.node,
+    helpUrl: PropTypes.string,
+  }).isRequired,
 };
 
 export default Info;

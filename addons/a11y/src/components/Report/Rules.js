@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const impactColors = {
   minor: '#f1c40f',
@@ -55,6 +56,14 @@ function Rule({ rule, passes }) {
   );
 }
 
+Rule.propTypes = {
+  rule: PropTypes.shape({
+    message: PropTypes.node,
+  }).isRequired,
+  passes: PropTypes.bool.isRequired,
+};
+
+/* eslint-disable react/no-array-index-key */
 function Rules({ rules, passes }) {
   return (
     <div style={styles.rules}>
@@ -62,5 +71,13 @@ function Rules({ rules, passes }) {
     </div>
   );
 }
+Rules.propTypes = {
+  rules: PropTypes.arrayOf(
+    PropTypes.shape({
+      message: PropTypes.node,
+    })
+  ).isRequired,
+  passes: PropTypes.bool.isRequired,
+};
 
 export default Rules;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Rules from './Rules';
 
@@ -27,7 +28,16 @@ function Element({ element, passes }) {
     </li>
   );
 }
+Element.propTypes = {
+  element: PropTypes.shape({
+    any: PropTypes.array.isRequired,
+    all: PropTypes.array.isRequired,
+    none: PropTypes.array.isRequired,
+  }).isRequired,
+  passes: PropTypes.bool.isRequired,
+};
 
+/* eslint-disable react/no-array-index-key */
 function Elements({ elements, passes }) {
   return (
     <ol style={styles.element}>
@@ -35,5 +45,15 @@ function Elements({ elements, passes }) {
     </ol>
   );
 }
+Elements.propTypes = {
+  elements: PropTypes.arrayOf(
+    PropTypes.shape({
+      any: PropTypes.array.isRequired,
+      all: PropTypes.array.isRequired,
+      none: PropTypes.array.isRequired,
+    })
+  ).isRequired,
+  passes: PropTypes.bool.isRequired,
+};
 
 export default Elements;

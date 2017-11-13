@@ -20,8 +20,12 @@ const styles = {
 
 class Item extends Component {
   static propTypes = {
-    item: PropTypes.object,
-    passes: PropTypes.bool,
+    item: PropTypes.shape({
+      description: PropTypes.string,
+      nodes: PropTypes.array,
+      tags: PropTypes.array,
+    }).isRequired,
+    passes: PropTypes.bool.isRequired,
   };
 
   constructor() {
@@ -43,9 +47,9 @@ class Item extends Component {
 
     return (
       <div style={styles.item}>
-        <div style={styles.headerBar} onClick={() => this.onToggle()}>
+        <button style={styles.hebuttonderBar} onClick={() => this.onToggle()}>
           {item.description}
-        </div>
+        </button>
         {open && <Info item={item} />}
         {open && <Elements elements={item.nodes} passes={passes} />}
         {open && <Tags tags={item.tags} />}

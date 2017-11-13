@@ -11,8 +11,6 @@ const styles = {
     display: 'flex',
   },
   tab: {
-    fontFamily:
-      '-apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
     color: 'rgb(68, 68, 68)',
     fontSize: '11px',
     textDecoration: 'none',
@@ -28,6 +26,11 @@ const styles = {
     fontWeight: 600,
   },
 };
+
+const tabStyle = active => ({
+  ...styles.tab,
+  ...(active ? styles.tabActive : undefined),
+});
 
 class Tabs extends Component {
   constructor(props) {
@@ -59,19 +62,17 @@ class Tabs extends Component {
     const { tabs } = this.props;
     const { active } = this.state;
 
+    /* eslint-disable react/no-array-index-key */
     return (
       <div style={styles.tabs}>
         {tabs.map((tab, index) => (
-          <div
+          <button
             key={index}
-            style={{
-              ...styles.tab,
-              ...(index === active ? styles.tabActive : undefined),
-            }}
+            style={tabStyle(active === index)}
             onClick={() => this.onToggle(index)}
           >
             {tab.label}
-          </div>
+          </button>
         ))}
       </div>
     );
@@ -93,7 +94,7 @@ Tabs.propTypes = {
       label: PropTypes.node,
       panel: PropTypes.node,
     })
-  ),
+  ).isRequired,
 };
 
 export default Tabs;
