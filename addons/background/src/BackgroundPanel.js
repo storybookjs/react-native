@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
-import EventEmitter from 'events';
 
 import Swatch from './Swatch';
 
@@ -118,7 +117,11 @@ BackgroundPanel.propTypes = {
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,
   }).isRequired,
-  channel: PropTypes.instanceOf(EventEmitter),
+  channel: PropTypes.shape({
+    emit: PropTypes.func,
+    on: PropTypes.func,
+    removeListener: PropTypes.func,
+  }),
 };
 BackgroundPanel.defaultProps = {
   channel: undefined,

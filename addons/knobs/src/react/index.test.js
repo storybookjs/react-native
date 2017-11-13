@@ -17,7 +17,7 @@ describe('React Handler', () => {
 
       const wrappedStory = reactHandler(testChannel, testStore)(testStory)(testContext);
       const wrapper = shallow(wrappedStory);
-      expect(wrapper.find('#test-story').length).toBe(1);
+      expect(wrapper.find('#test-story')).toHaveLength(1);
 
       const storyWrapperProps = wrappedStory.props;
       expect(storyWrapperProps.channel).toEqual(testChannel);
