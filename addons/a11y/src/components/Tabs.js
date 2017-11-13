@@ -22,6 +22,9 @@ const styles = {
     cursor: 'pointer',
     fontWeight: 500,
     opacity: 0.7,
+    border: 'none',
+    background: 'none',
+    flex: 1,
   },
   tabActive: {
     opacity: 1,
