@@ -26,7 +26,8 @@
   "dependencies": {
     "@storybook/addons": "^3.2.15",
     "global": "^4.3.2",
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "styled-components": "^2.2.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

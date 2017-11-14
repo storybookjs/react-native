@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Indicator from './Indicator';
-import provideTests from '../hoc/provideTests';
+import Result from './Result';
+import provideJestResult from '../hoc/provideJestResult';
 import colors from '../colors';
 
-const TestsPanel = ({ tests }) => {
+const Panel = ({ tests }) => {
   const style = {
     padding: '10px 20px',
     flex: 1,
@@ -104,45 +105,11 @@ const TestsPanel = ({ tests }) => {
               </div>
             </h2>
             <ul style={{ listStyle: 'none', fontSize: 14 }}>
-              {result.assertionResults.map(({ fullName, status, failureMessages }) => {
-                const color = status === 'passed' ? colors.success : colors.error;
-                return (
-                  <li key={fullName}>
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <Indicator color={color} size={10} />
-                        <div>{fullName}</div>
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <Indicator color={color} size={14} right>
-                          {status}
-                        </Indicator>
-                      </div>
-                    </div>
-                    {/* eslint-disable react/no-array-index-key */}
-                    {failureMessages &&
-                      failureMessages.map((msg, i) => (
-                        <pre
-                          key={i}
-                          style={{ marginTop: 5, whiteSpace: 'pre-wrap' }}
-                          dangerouslySetInnerHTML={{
-                            __html: msg
-                              .replace(/\[22?m?/g, '')
-                              .replace(/\[31m/g, `<strong style="color: ${colors.error}">`)
-                              .replace(/\[32m/g, `<strong style="color: ${colors.success}">`)
-                              .replace(/\[39m/g, '</strong>'),
-                          }}
-                        />
-                      ))}
-                  </li>
-                );
-              })}
+              {result.assertionResults.map(res => (
+                <li key={res.fullName || res.title}>
+                  <Result {...res} />
+                </li>
+              ))}
             </ul>
           </section>
         );
@@ -150,12 +117,17 @@ const TestsPanel = ({ tests }) => {
     </div>
   );
 };
-TestsPanel.propTypes = {
+
+Panel.defaultProps = {
+  tests: null,
+};
+
+Panel.propTypes = {
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       result: PropTypes.object,
     })
-  ).isRequired,
+  ),
 };
 
-export default provideTests(TestsPanel);
+export default provideJestResult(Panel);

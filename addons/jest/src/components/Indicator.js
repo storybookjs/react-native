@@ -21,11 +21,17 @@ const Indicator = ({ color, size, children = '', right }) => (
     {children}
   </div>
 );
+
+Indicator.defaultProps = {
+  right: false,
+  children: null,
+};
+
 Indicator.propTypes = {
   color: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
-  right: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+  right: PropTypes.bool,
 };
 
 export default Indicator;
