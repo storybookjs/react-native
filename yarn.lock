@@ -9549,12 +9549,6 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.1.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-textarea-autosize@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-5.2.0.tgz#a5dba76149b658c2c5dcd3a25e5a0a96b9fe668e"
-  dependencies:
-    prop-types "^15.6.0"
-
 react-textarea-autosize@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-5.2.1.tgz#2b78f9067180f41b08ac59f78f1581abadd61e54"
