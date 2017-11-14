@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ListView, View, Text, TouchableOpacity } from 'react-native';
-import { MinMaxView } from 'react-native-compat';
 import style from './style';
 
 const SectionHeader = ({ title, selected }) => (
@@ -86,25 +85,23 @@ export default class StoryListView extends Component {
 
   render() {
     return (
-      <MinMaxView maxWidth={250}>
-        <ListView
-          style={style.list}
-          renderRow={item => (
-            <ListItem
-              title={item.name}
-              selected={
-                item.kind === this.props.selectedKind && item.name === this.props.selectedStory
-              }
-              onPress={() => this.changeStory(item.kind, item.name)}
-            />
-          )}
-          renderSectionHeader={(sectionData, sectionName) => (
-            <SectionHeader title={sectionName} selected={sectionName === this.props.selectedKind} />
-          )}
-          dataSource={this.state.dataSource}
-          stickySectionHeadersEnabled={false}
-        />
-      </MinMaxView>
+      <ListView
+        style={[style.list, { width: this.props.width }]}
+        renderRow={item => (
+          <ListItem
+            title={item.name}
+            selected={
+              item.kind === this.props.selectedKind && item.name === this.props.selectedStory
+            }
+            onPress={() => this.changeStory(item.kind, item.name)}
+          />
+        )}
+        renderSectionHeader={(sectionData, sectionName) => (
+          <SectionHeader title={sectionName} selected={sectionName === this.props.selectedKind} />
+        )}
+        dataSource={this.state.dataSource}
+        stickySectionHeadersEnabled={false}
+      />
     );
   }
 }
@@ -123,6 +120,7 @@ StoryListView.propTypes = {
   }).isRequired,
   selectedKind: PropTypes.string,
   selectedStory: PropTypes.string,
+  width: PropTypes.number.isRequired,
 };
 
 StoryListView.defaultProps = {
