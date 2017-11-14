@@ -8,8 +8,10 @@ const text = 'Testing the a11y addon';
 
 storiesOf('Addon a11y', module)
   .addDecorator(checkA11y)
-  .add('Default', () => <BaseButton />)
-  .add('Content', () => <BaseButton content={text} />)
+  .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)
-  .add('Disabled', () => <BaseButton disabled content={text} />)
-  .add('Invalid contrast', () => <BaseButton contrast="wrong" content={text} />);
+  .add('Disabled', () => <BaseButton disabled label={text} />)
+  .add('Invalid contrast', () => (
+    // FIXME has no effect on score
+    <BaseButton style={{ color: 'black', backgroundColor: 'black' }} label={text} />
+  ));
