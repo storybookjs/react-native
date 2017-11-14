@@ -53,6 +53,17 @@ const getConfig = options => {
           include: includePaths,
           exclude: excludePaths,
         },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
+        },
       ],
     },
   };

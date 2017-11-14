@@ -78,6 +78,17 @@ export default function() {
           loader: 'raw-loader',
           exclude: /\.async\.(html|css)$/,
         },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
+        },
       ],
     },
     resolve: {

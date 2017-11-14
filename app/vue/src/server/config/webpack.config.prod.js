@@ -70,6 +70,17 @@ export default function() {
           loader: require.resolve('vue-loader'),
           options: {},
         },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
+        },
       ],
     },
     resolve: {
