@@ -4222,9 +4222,9 @@ gatsby-remark-autolink-headers@^1.4.8:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.20:
-  version "1.5.20"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.20.tgz#ebd53a07738b67d13d75cdecea3d8fdde3914c79"
+gatsby-remark-copy-linked-files@^1.5.21:
+  version "1.5.21"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.21.tgz#5933aef21cc905320090464efcd3a7d756c25e3e"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
