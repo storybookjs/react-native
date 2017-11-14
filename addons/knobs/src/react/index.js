@@ -3,9 +3,21 @@ import addons from '@storybook/addons';
 
 import WrapStory from './WrapStory';
 
-import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
+import {
+  knob,
+  text,
+  boolean,
+  number,
+  color,
+  object,
+  array,
+  date,
+  select,
+  button,
+  manager,
+} from '../base';
 
-export { knob, text, boolean, number, color, object, array, date, select };
+export { knob, text, boolean, number, color, object, array, date, select, button };
 
 export const reactHandler = (channel, knobStore) => getStory => context => {
   const initialContent = getStory(context);

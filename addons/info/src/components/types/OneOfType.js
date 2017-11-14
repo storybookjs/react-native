@@ -4,7 +4,7 @@ import PrettyPropType from './PrettyPropType';
 import { TypeInfo } from './proptypes';
 
 const OneOfType = ({ propType }) => {
-  const length = propType.value.length;
+  const { length } = propType.value;
   return (
     <span>
       {propType.value

@@ -48,7 +48,7 @@ module.exports = function markdownLoader(content) {
 
   const query = loaderUtils.parseQuery(this.query);
   const linkPrefix = query.config.linkPrefix || '';
-  const shouldPrefix = query.shouldPrefix;
+  const { shouldPrefix } = query;
 
   const meta = frontMatter(content);
   const body = md(linkPrefix, shouldPrefix).render(meta.body);

@@ -12,16 +12,18 @@ import Node from './Node';
 import { Pre } from './markdown';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || [];
-const STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES;
+const { STORYBOOK_REACT_CLASSES } = global;
+
+const getName = type => type.displayName || type.name;
 
 const stylesheet = {
-  link: {
+  button: {
     base: {
       fontFamily: 'sans-serif',
       fontSize: '12px',
       display: 'block',
       position: 'fixed',
-      textDecoration: 'none',
+      border: 'none',
       background: '#28c',
       color: '#fff',
       padding: '5px 15px',
@@ -149,9 +151,9 @@ export default class Story extends React.Component {
   }
 
   _renderOverlay() {
-    const linkStyle = {
-      ...stylesheet.link.base,
-      ...stylesheet.link.topRight,
+    const buttonStyle = {
+      ...stylesheet.button.base,
+      ...stylesheet.button.topRight,
     };
 
     const infoStyle = Object.assign({}, stylesheet.info);
@@ -172,13 +174,13 @@ export default class Story extends React.Component {
     return (
       <div>
         <div style={this.state.stylesheet.children}>{this.props.children}</div>
-        <a style={linkStyle} onClick={openOverlay} role="button" tabIndex="0">
+        <button type="button" style={buttonStyle} onClick={openOverlay}>
           Show Info
-        </a>
+        </button>
         <div style={infoStyle}>
-          <a style={linkStyle} onClick={closeOverlay} role="button" tabIndex="0">
+          <button type="button" style={buttonStyle} onClick={closeOverlay}>
             ×
-          </a>
+          </button>
           <div style={this.state.stylesheet.infoPage}>
             <div style={this.state.stylesheet.infoBody}>
               {this._getInfoHeader()}
@@ -237,7 +239,7 @@ export default class Story extends React.Component {
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.kind) {
+        if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.story) {
           retDiv = <div>{STORYBOOK_REACT_CLASSES[key].docgenInfo.description}</div>;
         }
       });
@@ -324,14 +326,13 @@ export default class Story extends React.Component {
     extract(this.props.children);
 
     const array = Array.from(types.keys());
-    array.sort((a, b) => (a.displayName || a.name) > (b.displayName || b.name));
+    array.sort((a, b) => getName(a) > getName(b));
 
     const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
-    const propTables = array.map(type => (
-      <div key={type.displayName || type.name}>
-        <h2 style={this.state.stylesheet.propTableHead}>
-          "{type.displayName || type.name}" Component
-        </h2>
+    const propTables = array.map((type, i) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <div key={`${getName(type)}_${i}`}>
+        <h2 style={this.state.stylesheet.propTableHead}>"{getName(type)}" Component</h2>
         <PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}

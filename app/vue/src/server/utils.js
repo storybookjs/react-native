@@ -2,10 +2,8 @@ import path from 'path';
 import fs from 'fs';
 import deprecate from 'util-deprecate';
 
-const fallbackHeadUsage = deprecate(
-  () => {},
-  'Usage of head.html has been deprecated. Please rename head.html to preview-head.html'
-);
+const fallbackHeadUsage = deprecate(() => {},
+'Usage of head.html has been deprecated. Please rename head.html to preview-head.html');
 
 export function parseList(str) {
   return str.split(',');

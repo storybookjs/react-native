@@ -1,16 +1,18 @@
 {
-  "lerna": "2.0.0",
+  "lerna": "2.5.1",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "commands": {
     "publish": {
       "ignore": [
         "cra-kitchen-sink",
-        "vue-kitchen-sink",
+        "angular-cli",
+        "vue-example",
         "lib/cli/test/run/*"
-      ]
+      ],
+      "allowBranch": "release/3.3"
     }
   },
   "concurrency": 1,
-  "version": "3.3.0-alpha.0"
+  "version": "3.3.0-alpha.3"
 }

@@ -37,21 +37,14 @@ describe('Viewport/SelectViewport', () => {
     describe('dynamic options', () => {
       const viewportKeys = Object.keys(viewports);
       it('has at least 1 option', () => {
-        expect(!!viewportKeys.length).toEqual(true);
+        expect(viewportKeys.length).toBeGreaterThan(0);
       });
 
       viewportKeys.forEach(key => {
         let option;
 
-        beforeEach(() => {
-          option = subject.find(`[value="${key}"]`);
-        });
-
-        it(`renders an option with key ${key}`, () => {
-          expect(option.node).toBeDefined();
-        });
-
         it(`renders an option for ${viewports[key].name}`, () => {
+          option = subject.find(`[value="${key}"]`);
           expect(option.text()).toEqual(viewports[key].name);
         });
       });

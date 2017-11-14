@@ -1,9 +1,7 @@
 defaults: &defaults
   working_directory: /tmp/storybook
   docker:
-    - image: node:8
-  environment:
-    BASH_ENV: ~/.bashrc
+    - image: circleci/node:8.9
 
 version: 2
 dependencies:
@@ -17,11 +15,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -30,14 +23,17 @@ jobs:
           name: "Bootstrapping"
           command: |
             yarn bootstrap --core --docs --reactnative --reactnativeapp
+      - run:
+          name: "Dirty checking"
+          command: |
+            yarn repo-dirty-check
       - save_cache:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - app/**/node_modules
-            - docs/**/node_modules
-            - examples/**/node_modules
-            - lib/**/node_modules
+            - docs/node_modules
+            - examples/react-native-vanilla/node_modules
+            - examples/crna-kitchen-sink/node_modules
   example-kitchen-sinks:
     <<: *defaults
     steps:
@@ -45,11 +41,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -63,13 +54,33 @@ jobs:
           command: |
             cd examples/cra-kitchen-sink
             yarn build-storybook
-            yarn storybook --smoke-test
       - run:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
-            yarn storybook --smoke-test
+
+      - run:
+          name: "Run vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: "Run react kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
+          command: sh ./scripts/workaround-puppeteer-issue-290.sh
+      - run:
+          name: Integration Test - Kichen sinks
+          command: yarn test --integration
+      - store_artifacts:
+          path: integration/__image_snapshots__
+          destination: integration_image_snapshots
   example-react-native:
     <<: *defaults
     steps:
@@ -77,11 +88,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -107,11 +113,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -131,15 +132,14 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
             yarn install
+      - run:
+          name: "Bootstrapping"
+          command: |
+            yarn bootstrap --core --docs
       - run:
           name: "Linting"
           command: |
@@ -151,11 +151,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -167,7 +162,7 @@ jobs:
       - run:
           name: "Unit testing"
           command: |
-            yarn test --all --coverage --runInBand
+            yarn test --coverage --runInBand --core --reactnative
             yarn coverage
   cli:
     working_directory: /tmp/storybook
@@ -181,10 +176,6 @@ jobs:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -209,10 +200,6 @@ jobs:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
-      - run:
-          name: "Install latest yarn version"
-          command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash -s
       - run:
           name: "Install dependencies"
           command: |
@@ -244,9 +231,3 @@ workflows:
       - unit-test
       - cli
       - cli-latest-cra
-      # - deploy:
-      #     type: approval
-      #     requires:
-      #       - lint
-      #       - unit-test
-      #       - docs

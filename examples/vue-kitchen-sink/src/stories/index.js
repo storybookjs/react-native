@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+
 import Vuex from 'vuex';
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
@@ -12,6 +14,7 @@ import {
   select,
   color,
   date,
+  button,
 } from '@storybook/addon-knobs/vue';
 import Centered from '@storybook/addon-centered';
 
@@ -66,6 +69,12 @@ storiesOf('Method for rendering Vue', module)
       </p>`,
     methods: {
       action: linkTo('Button'),
+    },
+  }))
+  .add('JSX', () => ({
+    components: { MyButton },
+    render() {
+      return <my-button>MyButton rendered with JSX</my-button>;
     },
   }))
   .add('vuex + actions', () => ({
@@ -223,6 +232,8 @@ storiesOf('Addon Knobs', module)
       : `I'm out of ${fruit}${nice ? ', Sorry!' : '.'}`;
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
 
+    button('Arbitrary action', action('You clicked it!'));
+
     return {
       template: `
           <div style="border:2px dotted ${colour}; padding: 8px 22px; border-radius: 8px">
@@ -238,3 +249,5 @@ storiesOf('Addon Knobs', module)
         `,
     };
   });
+
+/* eslint-enable react/react-in-jsx-scope */

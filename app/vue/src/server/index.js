@@ -158,7 +158,9 @@ Promise.all([webpackValid, serverListening])
     }
   })
   .catch(error => {
-    logger.error(error);
+    if (error instanceof Error) {
+      logger.error(error);
+    }
     if (program.smokeTest) {
       process.exit(1);
     }

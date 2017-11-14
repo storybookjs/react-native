@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/** Button component description */
+/** DocgenButton component description imported from comments inside the component file */
 const DocgenButton = ({ disabled, label, onClick }) => (
   <button disabled={disabled} onClick={onClick}>
     {label}
@@ -62,7 +62,9 @@ DocgenButton.propTypes = {
   obj: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 
   /**
-   * propType for shape with nested arraytOf
+   * propType for shape with nested arrayOf
+   *
+   * Also, multi-line description
    */
   shape: PropTypes.shape({
     /**

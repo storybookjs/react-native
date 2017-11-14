@@ -16,23 +16,14 @@ const styles = {
   color: '#555',
 };
 
-class TextType extends React.Component {
-  render() {
-    const { knob, onChange } = this.props;
-
-    return (
-      <Textarea
-        id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
-        style={styles}
-        value={knob.value}
-        onChange={e => onChange(e.target.value)}
-      />
-    );
-  }
-}
+const TextType = ({ knob, onChange }) => (
+  <Textarea
+    id={knob.name}
+    style={styles}
+    value={knob.value}
+    onChange={e => onChange(e.target.value)}
+  />
+);
 
 TextType.defaultProps = {
   knob: {},

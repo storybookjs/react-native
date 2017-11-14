@@ -1,7 +1,5 @@
 # Story Links Addon
 
-The Storybook Links addon can be used to create links between stories in [Storybook](https://storybook.js.org).
-
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
@@ -9,10 +7,14 @@ The Storybook Links addon can be used to create links between stories in [Storyb
 [![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
+* * *
+
+The Storybook Links addon can be used to create links that navigate between stories in [Storybook](https://storybook.js.org).
+
 This addon works with Storybook for:
-[React](https://github.com/storybooks/storybook/tree/master/app/react) and
-[React Native](https://github.com/storybooks/storybook/tree/master/app/react-native).
-[Vue](https://github.com/storybooks/storybook/tree/master/app/vue) and
+- [React](https://github.com/storybooks/storybook/tree/master/app/react)
+- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
+- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
 
 ## Getting Started
 

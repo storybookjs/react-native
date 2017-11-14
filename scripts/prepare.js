@@ -18,7 +18,7 @@ const args = [
 ].join(' ');
 
 const command = `${babel} ${args}`;
-const code = shell.exec(command, { silent: true }).code;
+const { code } = shell.exec(command, { silent: true });
 
 if (code !== 0) {
   log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);
@@ -28,4 +28,5 @@ if (code !== 0) {
 const licence = path.join(__dirname, '..', 'LICENSE');
 shell.cp(licence, './');
 
+// eslint-disable-next-line no-console
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

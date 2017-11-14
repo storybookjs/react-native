@@ -31,7 +31,7 @@ function getData(element) {
   }
 
   data.children = element.props.children;
-  const type = element.type;
+  const { type } = element;
 
   if (typeof type === 'string') {
     data.name = type;
@@ -58,14 +58,15 @@ export default function Node(props) {
     paddingRight: 3,
   };
 
-  Object.assign(containerStyle, leftPad);
+  // Keep a copy so that further mutations to containerStyle don't impact us:
+  const containerStyleCopy = Object.assign({}, containerStyle, leftPad);
 
   const { name, text, children } = getData(node);
 
   // Just text
   if (!name) {
     return (
-      <div style={containerStyle}>
+      <div style={containerStyleCopy}>
         <span style={tagStyle}>{text}</span>
       </div>
     );
@@ -74,7 +75,7 @@ export default function Node(props) {
   // Single-line tag
   if (!children) {
     return (
-      <div style={containerStyle}>
+      <div style={containerStyleCopy}>
         <span style={tagStyle}>&lt;{name}</span>
         <Props
           node={node}
@@ -88,9 +89,6 @@ export default function Node(props) {
       </div>
     );
   }
-
-  // Keep a copy so that further mutations to containerStyle don't impact us:
-  const containerStyleCopy = Object.assign({}, containerStyle);
 
   // tag with children
   return (

@@ -1,9 +1,5 @@
 # Storybook Addon Knobs
 
-Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
-You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
@@ -15,6 +11,16 @@ This addon works with Storybook for:
 [React](https://github.com/storybooks/storybook/tree/master/app/react).
 [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native).
 [Vue](https://github.com/storybooks/storybook/tree/master/app/vue).
+
+* * *
+
+Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
+You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
+
+This addon works with Storybook for:
+- [React](https://github.com/storybooks/storybook/tree/master/app/react)
+- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
+- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
 
 This is how Knobs look like:
 
@@ -77,6 +83,13 @@ stories.add('as dynamic variables', () => {
 > ```js
 > import { storiesOf } from '@storybook/react-native';
 > import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+> ```
+>
+> In the case of Angular, use these imports:
+>
+> ```js
+> import { storiesOf } from '@storybook/angular';
+> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/angular';
 > ```
 
 You can see your Knobs in a Storybook panel as shown below.
@@ -247,6 +260,18 @@ const value = date(label, defaultValue);
 ```
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
+
+### button
+
+Allows you to include a button and associated handler.
+
+```js
+import { button } from '@storybook/addon-knobs';
+
+const label = 'Do Something';
+const handler = () => doSomething('foobar');
+button(label, handler);
+```
 
 ### withKnobs vs withKnobsOptions
 

@@ -26,7 +26,7 @@ global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
 const babel = require('babel-core');
 
-const pkg = readPkgUp.sync().pkg;
+const { pkg } = readPkgUp.sync();
 
 const hasDependency = name =>
   (pkg.devDependencies && pkg.devDependencies[name]) ||
@@ -75,6 +75,10 @@ export default function testStorySnapshots(options = {}) {
   const suite = options.suite || options.suit || 'Storyshots';
   const stories = storybook.getStorybook();
 
+  if (stories.length === 0) {
+    throw new Error('storyshots found 0 stories');
+  }
+
   // Added not to break existing storyshots configs (can be removed in a future major release)
   // eslint-disable-next-line
   options.storyNameRegex = options.storyNameRegex || options.storyRegex;
@@ -101,7 +105,7 @@ export default function testStorySnapshots(options = {}) {
 
           it(story.name, () => {
             const context = { fileName, kind, story: story.name };
-            options.test({ story, context });
+            return options.test({ story, context });
           });
         }
       });

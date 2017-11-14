@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 import path from 'path';
 import program from 'commander';
@@ -9,6 +10,7 @@ program
   .option('-h, --host <host>', 'host to listen on')
   .option('-p, --port <port>', 'port to listen on')
   .option('--haul <configFile>', 'use haul with config file')
+  .option('--platform <ios|android|all>', 'build platform-specific build')
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
   .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
@@ -17,6 +19,8 @@ program
   .option('-i, --manual-id', 'allow multiple users to work with same storybook')
   .option('--smoke-test', 'Exit after successful start')
   .option('--packager-port <packagerPort>', 'Custom packager port')
+  .option('--root [root]', 'Add additional root(s) to be used by the packager in this project')
+  .option('--projectRoots [projectRoots]', 'Override the root(s) to be used by the packager')
   .parse(process.argv);
 
 const projectDir = path.resolve();
@@ -39,7 +43,7 @@ server.listen(...listenAddr, err => {
     throw err;
   }
   const address = `http://${program.host || 'localhost'}:${program.port}/`;
-  console.info(`\nReact Native Storybook started on => ${address}\n`); // eslint-disable-line no-console
+  console.info(`\nReact Native Storybook started on => ${address}\n`);
   if (program.smokeTest) {
     process.exit(0);
   }
@@ -48,6 +52,12 @@ server.listen(...listenAddr, err => {
 if (!program.skipPackager) {
   let symlinks = [];
 
+  let roots = [projectDir];
+
+  if (program.root) {
+    roots = roots.concat(program.root.split(',').map(root => path.resolve(root)));
+  }
+
   try {
     const findSymlinksPaths = require('react-native/local-cli/util/findSymlinksPaths'); // eslint-disable-line global-require
     symlinks = findSymlinksPaths(path.join(projectDir, 'node_modules'), [projectDir]);
@@ -55,20 +65,29 @@ if (!program.skipPackager) {
     console.warn(`Unable to load findSymlinksPaths: ${e.message}`);
   }
 
-  const projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(
+  let projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(
     symlinks
   );
 
+  if (program.projectRoots) {
+    projectRoots = projectRoots.concat(
+      program.projectRoots.split(',').map(root => path.resolve(root))
+    );
+  }
+
   let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
   if (program.haul) {
-    cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform all`;
+    const platform = program.platform || 'all';
+    cliCommand = `node node_modules/.bin/haul start --config ${program.haul} --platform ${
+      platform
+    }`;
   }
   // RN packager
   shelljs.exec(
     [
       cliCommand,
       `--projectRoots ${projectRoots.join(',')}`,
-      `--root ${projectDir}`,
+      `--root ${roots.join(',')}`,
       program.resetCache && '--reset-cache',
       program.packagerPort && `--port=${program.packagerPort}`,
     ]

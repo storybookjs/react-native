@@ -23,6 +23,7 @@ class Highlight extends React.Component {
 
   render() {
     const { children } = this.props;
+    // eslint-disable-next-line react/no-danger
     return <div dangerouslySetInnerHTML={{ __html: children }} />;
   }
 }

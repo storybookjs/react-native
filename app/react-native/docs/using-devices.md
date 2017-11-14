@@ -14,6 +14,11 @@ In order to work with React Native Storybook, one or more devices should be conn
 -   Forward port 9001 `adb reverse tcp:9001 tcp:9001`
 -   Start with `react-native run-android`
 
+### Issues
+**Problem**: If you run into a `No such file or directory` error
+
+**Solution**: You must run the emulator from its directory: `cd $(dirname $(which emulator)) && ./emulator -avd MY_AVD_NAME`
+
 ## Android device
 
 -   Connect your device with adb

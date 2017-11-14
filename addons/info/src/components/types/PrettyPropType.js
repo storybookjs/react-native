@@ -51,7 +51,7 @@ PrettyPropType.defaultProps = {
 
 PrettyPropType.propTypes = {
   propType: TypeInfo,
-  depth: PropTypes.number.isRequired,
+  depth: PropTypes.number,
 };
 
 export default PrettyPropType;

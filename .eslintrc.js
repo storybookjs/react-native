@@ -15,6 +15,9 @@ module.exports = {
     node: true,
     'jest/globals': true,
   },
+  settings: {
+    'import/core-modules': ['enzyme'],
+  },
   rules: {
     strict: [error, 'never'],
     'prettier/prettier': [
@@ -31,10 +34,9 @@ module.exports = {
     'class-methods-use-this': ignore,
     'arrow-parens': [warn, 'as-needed'],
     'space-before-function-paren': ignore,
-    'import/no-unresolved': warn,
+    'import/no-unresolved': error,
     'import/extensions': [
-      // because of highlight.js and fuse.js
-      warn,
+      error,
       {
         js: 'never',
         json: 'always',
@@ -72,6 +74,7 @@ module.exports = {
     'jsx-a11y/accessible-emoji': ignore,
     'jsx-a11y/href-no-hash': ignore,
     'jsx-a11y/label-has-for': ignore,
+    'jsx-a11y/click-events-have-key-events': error,
     'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
     'react/no-unescaped-entities': ignore,
   },

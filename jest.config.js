@@ -18,9 +18,11 @@ module.exports = {
     'app/**/*.{js,jsx}',
     'lib/**/*.{js,jsx}',
     'addons/**/*.{js,jsx}',
+    '!**/cli/test/**',
     '!**/generators/**',
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
-  setupTestFrameworkScriptFile: './node_modules/jest-enzyme/lib/index.js',
+  setupTestFrameworkScriptFile: './scripts/jest.init.js',
+  setupFiles: ['raf/polyfill'],
 };

@@ -6,7 +6,7 @@ import KnobStore from '../KnobStore';
 describe('React Handler', () => {
   describe('wrapStory', () => {
     it('should contain the story and add correct props', () => {
-      const testChannel = { emit: () => {} };
+      const testChannel = { emit: jest.fn(), on: jest.fn() };
       const testStory = () => <div id="test-story">Test Content</div>;
       const testContext = {
         kind: 'Foo',
@@ -17,7 +17,7 @@ describe('React Handler', () => {
 
       const wrappedStory = reactHandler(testChannel, testStore)(testStory)(testContext);
       const wrapper = shallow(wrappedStory);
-      expect(wrapper.find('#test-story').length).toBe(1);
+      expect(wrapper.find('#test-story')).toHaveLength(1);
 
       const storyWrapperProps = wrappedStory.props;
       expect(storyWrapperProps.channel).toEqual(testChannel);
