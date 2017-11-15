@@ -123,11 +123,11 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@^8.0.0", "@types/node@^8.0.51":
+"@types/node@*", "@types/node@^8.0.0", "@types/node@^8.0.52":
   version "8.0.52"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.52.tgz#8e7f47747868e7687f2cd4922966e2d6af78d22d"
 
-"@types/react@^16.0.18", "@types/react@^16.0.20", "@types/react@^16.0.22":
+"@types/react@^16.0.18", "@types/react@^16.0.20", "@types/react@^16.0.23":
   version "16.0.23"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.23.tgz#f0f713b07912c6fd8e10c9ccc539443ceb06dbca"
 
@@ -3756,7 +3756,7 @@ envinfo@^3.0.0:
     os-name "^2.0.1"
     which "^1.2.14"
 
-enzyme-adapter-react-16@^1.0.4:
+enzyme-adapter-react-16@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.1.0.tgz#86c5db7c10f0be6ec25d54ca41b59f2abb397cf4"
   dependencies:
@@ -3787,7 +3787,7 @@ enzyme-to-json@^3.0.0:
   dependencies:
     lodash "^4.17.4"
 
-enzyme@^3.1.1:
+enzyme@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.2.0.tgz#998bdcda0fc71b8764a0017f7cc692c943f54a7a"
   dependencies:
@@ -9512,7 +9512,7 @@ react-scripts@1.0.17:
   optionalDependencies:
     fsevents "1.1.2"
 
-react-split-pane@^0.1.68:
+react-split-pane@^0.1.71:
   version "0.1.71"
   resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.71.tgz#19b1b30638655e655f9f5fe57b1ae7cc6c151829"
   dependencies:
