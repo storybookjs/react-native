@@ -23,6 +23,9 @@
     "react-addons-create-fragment": "^15.5.3",
     "util-deprecate": "^1.0.2"
   },
+  "devDependencies": {
+    "react-test-renderer": "^16.1.0"
+  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
