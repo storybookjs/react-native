@@ -52,10 +52,10 @@ To use markdown in your notes simply import a markdown file and use that in your
 import { storiesOf } from '@storybook/react';
 import { withNotes } from '@storybook/addon-notes';
 import Component from './Component';
-import someMarkdownText from './someMarkdownText';
+import someMarkdownText from './someMarkdownText.md';
 
 storiesOf('Component', module)
-  .add('with some emoji', withNotes(someMarkdownText)(() => <Component/>));
+  .add('With Markdown', withNotes(someMarkdownText)(() => <Component/>));
 
 ```
 ### Deprecated API
