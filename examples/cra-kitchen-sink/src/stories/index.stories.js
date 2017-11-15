@@ -55,6 +55,12 @@ storiesOf('Button', module)
       😀 😎 👍 💯
     </Button>
   ))
+  .add('delete', () => (
+    <Button onClick={action('delete')}>
+      {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
+      Delete
+    </Button>
+  ))
   .add('with notes', () => (
     // deprecated usage
     <WithNotes notes="A very simple button">
