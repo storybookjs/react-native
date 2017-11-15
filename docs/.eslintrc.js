@@ -1,8 +1,8 @@
 const warn = 1;
 
 module.exports = {
-  settings: {
-    'import/core-modules': ['config'],
+  globals: {
+    graphql: false,
   },
   rules: {
     'import/no-unresolved': warn,

@@ -76,10 +76,7 @@
     "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "nodemon": "^1.12.1",
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "nodemon": "^1.12.1"
   },
   "peerDependencies": {
     "react": ">=15.0.0 || ^16.0.0",

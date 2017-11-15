@@ -13,6 +13,7 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -393,6 +394,44 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -755,6 +794,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -1214,6 +1254,44 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1237,6 +1315,7 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -1584,6 +1663,44 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1658,6 +1775,7 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -1945,6 +2063,44 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
                   className="css-d52hbj"
                 />
               </tr>
+              <tr>
+                <td
+                  className="css-1ygfcef"
+                >
+                  style
+                </td>
+                <td
+                  className="css-1ygfcef"
+                >
+                  <span />
+                </td>
+                <td
+                  className="css-d52hbj"
+                >
+                  -
+                </td>
+                <td
+                  className="css-d52hbj"
+                >
+                  <span>
+                    {
+                    <span
+                      style={
+                        Object {
+                          "color": "#666",
+                        }
+                      }
+                    >
+                      {
+                      }
+                    </span>
+                    }
+                  </span>
+                </td>
+                <td
+                  className="css-d52hbj"
+                />
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1967,6 +2123,7 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -2347,6 +2504,44 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -2497,6 +2692,7 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
       <button
         disabled={false}
         onClick={[Function]}
+        style={Object {}}
       >
         Button
       </button>
@@ -2993,6 +3189,44 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -3016,6 +3250,7 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -3311,6 +3546,44 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -3334,6 +3607,7 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -3687,6 +3961,44 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
                         }
                       >
                         onClick()
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
                       </span>
                       }
                     </span>
@@ -4759,6 +5071,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -5159,6 +5472,44 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
                         }
                       >
                         onClick()
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
                       </span>
                       }
                     </span>
