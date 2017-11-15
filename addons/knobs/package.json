@@ -21,17 +21,15 @@
     "global": "^4.3.2",
     "insert-css": "^2.0.0",
     "lodash.debounce": "^4.0.8",
-    "moment": "^2.19.1",
+    "moment": "^2.19.2",
     "prop-types": "^15.6.0",
     "react-color": "^2.11.4",
-    "react-datetime": "^2.10.3",
-    "react-textarea-autosize": "^5.2.0",
+    "react-datetime": "^2.11.0",
+    "react-textarea-autosize": "^5.2.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "raw-loader": "^0.5.1",
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
     "style-loader": "^0.19.0",
     "vue": "^2.5.3"
   },

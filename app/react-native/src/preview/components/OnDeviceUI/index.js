@@ -27,6 +27,8 @@ const isDeviceInPortrait = () => {
 const openMenuImage = require('./menu_open.png');
 const closeMenuImage = require('./menu_close.png');
 
+const DRAWER_WIDTH = 250;
+
 export default class OnDeviceUI extends Component {
   constructor(...args) {
     super(...args);
@@ -36,7 +38,6 @@ export default class OnDeviceUI extends Component {
       isMenuOpen: false,
       selectedKind: null,
       selectedStory: null,
-      menuWidth: Dimensions.get('screen').width / 2,
       isPortrait: isDeviceInPortrait(),
     };
   }
@@ -58,7 +59,6 @@ export default class OnDeviceUI extends Component {
   handleDeviceRotation = () => {
     this.setState({
       isPortrait: isDeviceInPortrait(),
-      menuWidth: Dimensions.get('screen').width / 2,
     });
   };
 
@@ -86,7 +86,7 @@ export default class OnDeviceUI extends Component {
 
   render() {
     const { stories, events, url } = this.props;
-    const { isPortrait, menuAnimation, selectedKind, selectedStory, menuWidth } = this.state;
+    const { isPortrait, menuAnimation, selectedKind, selectedStory } = this.state;
 
     const iPhoneXStyles = ifIphoneX(
       isPortrait
@@ -106,7 +106,7 @@ export default class OnDeviceUI extends Component {
           {
             translateX: menuAnimation.interpolate({
               inputRange: [0, 1],
-              outputRange: [menuWidth * -1, 0],
+              outputRange: [-DRAWER_WIDTH - 30, 0],
             }),
           },
         ],
@@ -177,6 +177,7 @@ export default class OnDeviceUI extends Component {
           <StoryListView
             stories={stories}
             events={events}
+            width={DRAWER_WIDTH}
             selectedKind={selectedKind}
             selectedStory={selectedStory}
           />

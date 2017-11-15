@@ -22,12 +22,6 @@
   "dependencies": {
     "@storybook/addons": "^3.3.0-alpha.3"
   },
-  "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
-    "react-test-renderer": "^16.1.0",
-    "shelljs": "^0.7.8"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"

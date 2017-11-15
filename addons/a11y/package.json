@@ -1,0 +1,36 @@
+{
+  "name": "@storybook/addon-a11y",
+  "version": "3.3.0-alpha.3",
+  "description": "a11y addon for storybook",
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "addon",
+    "storybook",
+    "valid",
+    "verify"
+  ],
+  "homepage": "https://github.com/storybooks/storybook#readme",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybooks/storybook.git"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "^3.3.0-alpha.3",
+    "@storybook/components": "^3.3.0-alpha.3",    
+    "axe-core": "^2.0.7",
+    "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  }
+}

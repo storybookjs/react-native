@@ -11,8 +11,5 @@
     "@storybook/channels": "^3.3.0-alpha.3",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }
