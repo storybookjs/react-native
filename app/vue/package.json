@@ -77,7 +77,6 @@
     "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "nodemon": "^1.12.1",
     "vue": "^2.5.3",
     "vue-loader": "^13.5.0",

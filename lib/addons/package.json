@@ -17,8 +17,5 @@
   },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }
