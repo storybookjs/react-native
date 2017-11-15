@@ -20,6 +20,7 @@ exports[`Storyshots Addon Backgrounds story 1 1`] = `
   <button
     disabled={false}
     onClick={[Function]}
+    style={Object {}}
   >
     You should be able to switch backgrounds for this story
   </button>
@@ -46,6 +47,7 @@ exports[`Storyshots Addon Backgrounds story 2 1`] = `
   <button
     disabled={false}
     onClick={[Function]}
+    style={Object {}}
   >
     This one too!
   </button>
