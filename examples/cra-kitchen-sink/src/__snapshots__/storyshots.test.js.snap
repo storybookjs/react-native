@@ -20,6 +20,7 @@ exports[`Storyshots Addon Backgrounds story 1 1`] = `
   <button
     disabled={false}
     onClick={[Function]}
+    style={Object {}}
   >
     You should be able to switch backgrounds for this story
   </button>
@@ -46,6 +47,7 @@ exports[`Storyshots Addon Backgrounds story 2 1`] = `
   <button
     disabled={false}
     onClick={[Function]}
+    style={Object {}}
   >
     This one too!
   </button>
@@ -65,6 +67,7 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -405,6 +408,34 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
                         }
                       >
                         onClick()
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
                       </span>
                       }
                     </span>
@@ -773,6 +804,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -1198,6 +1230,34 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
                   </td>
                   <td />
                 </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1221,6 +1281,7 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -1534,6 +1595,34 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
                   </td>
                   <td />
                 </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1608,6 +1697,7 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -1861,6 +1951,34 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
                 </td>
                 <td />
               </tr>
+              <tr>
+                <td>
+                  style
+                </td>
+                <td>
+                  other
+                </td>
+                <td>
+                  no
+                </td>
+                <td>
+                  <span>
+                    {
+                    <span
+                      style={
+                        Object {
+                          "color": "#666",
+                        }
+                      }
+                    >
+                      {
+                      }
+                    </span>
+                    }
+                  </span>
+                </td>
+                <td />
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1883,6 +2001,7 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -2229,6 +2348,34 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
                   </td>
                   <td />
                 </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -2343,6 +2490,7 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
       <button
         disabled={false}
         onClick={[Function]}
+        style={Object {}}
       >
         Button
       </button>
@@ -2805,6 +2953,34 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
                   </td>
                   <td />
                 </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -2828,6 +3004,7 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -3089,6 +3266,34 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
                   </td>
                   <td />
                 </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -3112,6 +3317,7 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -3433,6 +3639,34 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
                         }
                       >
                         onClick()
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
                       </span>
                       }
                     </span>
@@ -4308,6 +4542,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
     <button
       disabled={false}
       onClick={[Function]}
+      style={Object {}}
     >
       Button
     </button>
@@ -4682,6 +4917,34 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
                   </td>
                   <td />
                 </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    other
+                  </td>
+                  <td>
+                    no
+                  </td>
+                  <td>
+                    <span>
+                      {
+                      <span
+                        style={
+                          Object {
+                            "color": "#666",
+                          }
+                        }
+                      >
+                        {
+                        }
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -4811,6 +5074,7 @@ exports[`Storyshots Addon Notes using deprecated API 1`] = `
 <button
   disabled={false}
   onClick={[Function]}
+  style={Object {}}
 >
   😀 😎 👍 💯
 </button>
@@ -4820,43 +5084,52 @@ exports[`Storyshots Addon Notes withNotes 1`] = `
 <button
   disabled={false}
   onClick={[Function]}
+  style={Object {}}
 >
   Button with notes - check the notes panel for details
 </button>
-`;
-
-exports[`Storyshots Addon a11y Content 1`] = `
-<button
-  disabled={false}
-  onClick={[Function]}
-/>
 `;
 
 exports[`Storyshots Addon a11y Default 1`] = `
 <button
   disabled={false}
   onClick={[Function]}
-/>
+  style={Object {}}
+>
+  
+</button>
 `;
 
 exports[`Storyshots Addon a11y Disabled 1`] = `
 <button
   disabled={true}
   onClick={[Function]}
-/>
+  style={Object {}}
+>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addon a11y Invalid contrast 1`] = `
 <button
   disabled={false}
   onClick={[Function]}
-/>
+  style={
+    Object {
+      "backgroundColor": "black",
+      "color": "black",
+    }
+  }
+>
+  Testing the a11y addon
+</button>
 `;
 
 exports[`Storyshots Addon a11y Label 1`] = `
 <button
   disabled={false}
   onClick={[Function]}
+  style={Object {}}
 >
   Testing the a11y addon
 </button>

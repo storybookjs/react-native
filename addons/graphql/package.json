@@ -26,11 +26,6 @@
     "graphql": "^0.11.7",
     "prop-types": "^15.6.0"
   },
-  "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
-    "shelljs": "^0.7.8"
-  },
   "peerDependencies": {
     "react": "*"
   }
