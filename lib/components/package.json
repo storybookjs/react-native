@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "3.2.14",
+  "version": "3.2.15",
   "description": "Core Storybook Components",
   "license": "MIT",
   "main": "dist/index.js",
@@ -17,10 +17,6 @@
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
     "prop-types": "^15.6.0"
-  },
-  "devDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
   },
   "peerDependencies": {
     "react": "*",

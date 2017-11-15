@@ -1,3 +1,44 @@
+# 3.2.15
+
+2017-November-10
+
+#### Features
+
+-   Optimizing for iphone x [#2260](https://github.com/storybooks/storybook/pull/2260)
+-   Fix accessibility warnings [#2270](https://github.com/storybooks/storybook/pull/2270)
+
+#### Bug Fixes
+
+-   Fix propTypes in addon-background [#2279](https://github.com/storybooks/storybook/pull/2279)
+-   Addon-info: allow duplicate displayNames [#2269](https://github.com/storybooks/storybook/pull/2269)
+-   Fix browser navigation [#2261](https://github.com/storybooks/storybook/pull/2261)
+
+#### Maintenance
+
+-   Fixes to build scripts for Windows. [#2051](https://github.com/storybooks/storybook/pull/2051)
+-   Update dependencies.yml to include batch updates for docs dependencies [#2252](https://github.com/storybooks/storybook/pull/2252)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+11 PRs
+</summary>
+
+-   Update 4 dependencies from npm [#2267](https://github.com/storybooks/storybook/pull/2267)
+-   Update 8 dependencies from npm [#2262](https://github.com/storybooks/storybook/pull/2262)
+-   Update 3 dependencies from npm [#2257](https://github.com/storybooks/storybook/pull/2257)
+-   Update babel-eslint in / from 8.0.1 to 8.0.2 [#2253](https://github.com/storybooks/storybook/pull/2253)
+-   3 packages updated by dependencies.io [#2251](https://github.com/storybooks/storybook/pull/2251)
+-   Update devDependencies [#2232](https://github.com/storybooks/storybook/pull/2232)
+-   Update react-textarea-autosize to 5.1.0 [#2233](https://github.com/storybooks/storybook/pull/2233)
+-   Update insert-css to 2.0.0 [#2234](https://github.com/storybooks/storybook/pull/2234)
+-   Update file-loader to 1.1.5 [#2236](https://github.com/storybooks/storybook/pull/2236)
+-   Update read-pkg-up to 3.0.0 [#2237](https://github.com/storybooks/storybook/pull/2237)
+-   Update react-modal to 3.1.0 [#2238](https://github.com/storybooks/storybook/pull/2238)
+
+</details>
+
 # 3.2.14
 
 2017-November-01
