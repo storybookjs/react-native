@@ -21,6 +21,7 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^3.3.0-alpha.3",
     "@storybook/addon-actions": "3.3.0-alpha.3",
     "@storybook/addon-backgrounds": "^3.3.0-alpha.3",
     "@storybook/addon-centered": "3.3.0-alpha.3",

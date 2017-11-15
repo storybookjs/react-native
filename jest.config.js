@@ -18,6 +18,7 @@ module.exports = {
     'app/**/*.{js,jsx}',
     'lib/**/*.{js,jsx}',
     'addons/**/*.{js,jsx}',
+    '!**/cli/test/**',
     '!**/generators/**',
   ],
   coverageDirectory: 'coverage',
