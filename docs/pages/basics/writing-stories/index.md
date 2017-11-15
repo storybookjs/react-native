@@ -107,7 +107,7 @@ configure(function () {
 
 ## Using Markdown
 
-As of storybook 3.3, [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can be used in storybook by default. All you need to do is import a markdown file, and it will automatically be parsed into an HTMl string. You can then use that string in any addon that supports HTML (such as notes).
+As of storybook 3.3, [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can be used in storybook by default. All you need to do is import a markdown file, and it will automatically be parsed into an HTML string. You can then use that string in any addon that supports HTML (such as notes).
 
 
 ```js
