@@ -25,7 +25,7 @@ jobs:
           command: |
             yarn install
       - run:
-          name: "Bootstrapping"
+          name: "Bootstrap"
           command: |
             yarn bootstrap --core --docs --reactnative --reactnativeapp
       - run:
@@ -121,12 +121,12 @@ jobs:
           keys:
             - reactnativeapp-dependencies-{{ .Revision }}
       - run:
-          name: "Running React-Native example"
+          name: "Run React-Native example"
           command: |
             cd examples/react-native-vanilla
             yarn storybook --smoke-test
       - run:
-          name: "Running React-Native-App example"
+          name: "Run React-Native-App example"
           command: |
             cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
@@ -144,7 +144,7 @@ jobs:
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
       - run:
-          name: "Running docs"
+          name: "Run docs"
           command: |
             yarn docs:build
   lint:
@@ -164,7 +164,7 @@ jobs:
           command: |
             yarn install
       - run:
-          name: "Linting"
+          name: "Lint"
           command: |
             yarn lint
   unit-test:
@@ -188,7 +188,7 @@ jobs:
           command: |
             yarn install
       - run:
-          name: "Unit testing"
+          name: "Run unit tests"
           command: |
             yarn test --coverage --runInBand --core --reactnative
             yarn coverage
