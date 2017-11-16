@@ -14,7 +14,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
           name: "Install dependencies"
           command: |
@@ -28,27 +29,41 @@ jobs:
           command: |
             yarn repo-dirty-check
       - save_cache:
-          key: dependencies-{{ checksum "yarn.lock" }}
+          key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+            - addons/**/node_modules
+            - app/**/node_modules
+            - example/cra-kitchen-sink/node_modules
+            - example/vue-kitchen-sink/node_modules
+            - lib/**/node_modules
+      - save_cache:
+          key: core-dist-{{ .Revision }}
+            - addons/**/dist
+            - app/**/dist
+            - lib/**/dist
+      - save_cache:
+          key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
+          paths:
             - docs/node_modules
+      - save_cache:
+          key: reactnative-dependencies-{{ .Revision }}
+          paths:
             - examples/react-native-vanilla/node_modules
+      - save_cache:
+          key: reactnativeapp-dependencies-{{ .Revision }}
+          paths:
             - examples/crna-kitchen-sink/node_modules
   example-kitchen-sinks:
     <<: *defaults
+    requires:
+      - build
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core
+            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dist-{{ .Revision }}
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -60,15 +75,15 @@ jobs:
             cd examples/vue-kitchen-sink
             yarn build-storybook
       - run:
-          name: "Run vue kitchen-sink"
-          command: |
-            cd examples/vue-kitchen-sink
-            yarn storybook
-          background: true
-      - run:
           name: "Run react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: "Run vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink
             yarn storybook
           background: true
       - run:
@@ -82,19 +97,14 @@ jobs:
           destination: integration_image_snapshots
   example-react-native:
     <<: *defaults
+    requires:
+      - build
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping packages"
-          command: |
-            yarn bootstrap --core --reactnative --reactnativeapp
+            - reactnative-dependencies-{{ .Revision }}
+            - reactnativeapp-dependencies-{{ .Revision }}
       - run:
           name: "Running React-Native example"
           command: |
@@ -107,49 +117,42 @@ jobs:
             yarn storybook --smoke-test
   docs:
     <<: *defaults
+    requires:
+      - build
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --docs
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
           name: "Running docs"
           command: |
             yarn docs:build
   lint:
     <<: *defaults
+    requires:
+      - build
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core --docs
+            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dist-{{ .Revision }}
       - run:
           name: "Linting"
           command: |
             yarn lint
   unit-test:
     <<: *defaults
+    requires:
+      - build
     steps:
       - checkout
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dist-{{ .Revision }}
+            - reactnative-dependencies-{{ .Revision }}
       - run:
           name: "Install dependencies"
           command: |
