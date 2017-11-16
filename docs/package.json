@@ -21,7 +21,7 @@
     "@storybook/addon-actions": "^3.2.16",
     "@storybook/addon-links": "^3.2.16",
     "@storybook/addons": "^3.2.16",
-    "@storybook/react": "^3.2.15",
+    "@storybook/react": "^3.2.16",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
