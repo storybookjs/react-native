@@ -7,7 +7,8 @@
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
-    "test": "jest --env=jsdom --json --outputFile=./node_modules/.cache/jest-results.json"
+    "test": "react-scripts test --env=jsdom",
+    "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json"
   },
   "dependencies": {
     "eventemitter3": "^2.0.3",
@@ -22,23 +23,21 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.2.15",
-    "@storybook/addon-actions": "^3.2.11",
-    "@storybook/addon-backgrounds": "^3.2.14",
-    "@storybook/addon-centered": "^3.2.10",
-    "@storybook/addon-events": "^3.2.10",
-    "@storybook/addon-info": "^3.2.11",
-    "@storybook/addon-jest": "^3.2.11",
-    "@storybook/addon-knobs": "^3.2.10",
-    "@storybook/addon-links": "^3.2.10",
-    "@storybook/addon-notes": "^3.2.10",
-    "@storybook/addon-options": "^3.2.10",
-    "@storybook/addon-storyshots": "^3.2.11",
-    "@storybook/addons": "^3.2.10",
-    "@storybook/components": "^3.2.10",
-    "@storybook/react": "^3.2.11",
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/addon-backgrounds": "^3.2.15",
+    "@storybook/addon-centered": "^3.2.15",
+    "@storybook/addon-events": "^3.2.15",
+    "@storybook/addon-info": "^3.2.15",
+    "@storybook/addon-jest": "^3.2.15",
+    "@storybook/addon-knobs": "^3.2.15",
+    "@storybook/addon-links": "^3.2.15",
+    "@storybook/addon-notes": "^3.2.15",
+    "@storybook/addon-options": "^3.2.15",
+    "@storybook/addon-storyshots": "^3.2.15",
+    "@storybook/addons": "^3.2.15",
+    "@storybook/components": "^3.2.15",
+    "@storybook/react": "^3.2.15",
     "babel-jest": "^21.2.0",
-    "enzyme": "^3.1.1",
-    "enzyme-adapter-react-16": "^1.0.4",
     "jest": "^21.2.1",
     "react-scripts": "1.0.17"
   },
@@ -47,9 +46,8 @@
     "verbose": true,
     "coverageDirectory": "coverage/",
     "notify": true,
-    "setupTestFrameworkScriptFile": "<rootDir>/.jest-setup.js",
     "transform": {
-      ".*": "<rootDir>/node_modules/babel-jest"
+      ".*": "babel-jest"
     },
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",

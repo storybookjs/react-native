@@ -24,7 +24,7 @@
     "precommit": "lint-staged",
     "coverage": "codecov",
     "danger": "danger",
-    "dev": "lerna exec --parallel -- babel src -d dist --ignore tests,__tests__,test.js,stories/,story.jsx --plugins \"transform-runtime\" --copy-files -w",
+    "dev": "lerna exec --parallel -- babel src -d dist --ignore tests/,__tests__/,.test.js,stories/,.story.js,.stories.js --plugins \"transform-runtime\" --copy-files -w",
     "docs:build": "npm --prefix docs run build",
     "docs:deploy:ci": "npm --prefix docs run deploy:ci",
     "docs:deploy:manual": "npm --prefix docs run deploy:manual",
