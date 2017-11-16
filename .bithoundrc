@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "mute": [
-      "shelljs"
+      "shelljs",
+      "eslint-plugin-json",
+      "remark-lint-code-eslint"
     ]
   }
 }
