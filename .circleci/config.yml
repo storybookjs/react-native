@@ -13,8 +13,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
             - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
           name: "Install dependencies"
@@ -29,29 +33,31 @@ jobs:
           command: |
             yarn repo-dirty-check
       - save_cache:
+          name: "Cache core dependencies"
           key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - addons/**/node_modules
-            - app/**/node_modules
             - example/cra-kitchen-sink/node_modules
             - example/vue-kitchen-sink/node_modules
-            - lib/**/node_modules
       - save_cache:
+          name: "Cache core dist"
           key: core-dist-{{ .Revision }}
           paths:
-            - addons/**/dist
-            - app/**/dist
-            - lib/**/dist
+            - addons
+            - app
+            - lib
       - save_cache:
+          name: "Cache docs dependencies"
           key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
           paths:
             - docs/node_modules
       - save_cache:
+          name: "Cache React-Native dependencies"
           key: reactnative-dependencies-{{ .Revision }}
           paths:
             - examples/react-native-vanilla/node_modules
       - save_cache:
+          name: "Cache React-Native-App dependencies"
           key: reactnativeapp-dependencies-{{ .Revision }}
           paths:
             - examples/crna-kitchen-sink/node_modules
@@ -60,9 +66,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
             - core-dist-{{ .Revision }}
+      - run:
+          name: "Link packages"
+          command: |
+            yarn install
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -99,8 +113,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore React-Native dependencies cache"
           keys:
             - reactnative-dependencies-{{ .Revision }}
+      - restore_cache:
+          name: "Restore React-Native-App dependencies cache"
+          keys:
             - reactnativeapp-dependencies-{{ .Revision }}
       - run:
           name: "Running React-Native example"
@@ -117,8 +135,14 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore docs dependencies cache"
           keys:
             - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+      # TODO remove when #2203 gets merged
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: "Running docs"
           command: |
@@ -128,9 +152,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
             - core-dist-{{ .Revision }}
+      - run:
+          name: "Link packages"
+          command: |
+            yarn install
       - run:
           name: "Linting"
           command: |
@@ -140,18 +172,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
             - core-dist-{{ .Revision }}
+      - restore_cache:
+          name: "Restore React-Native-App dependencies cache"
+          keys:
             - reactnative-dependencies-{{ .Revision }}
       - run:
-          name: "Install dependencies"
+          name: "Link packages"
           command: |
             yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core --reactnative
       - run:
           name: "Unit testing"
           command: |
