@@ -8,5 +8,10 @@
     "wc": {
       "limit": 500
     }
+  },
+  "dependencies": {
+    "mute": [
+      "shelljs"
+    ]
   }
 }
