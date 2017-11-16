@@ -27,7 +27,7 @@ jobs:
       - run:
           name: "Bootstrap"
           command: |
-            yarn bootstrap --core --reactnative --reactnativeapp
+            yarn bootstrap --core
       - save_cache:
           name: "Cache core dependencies"
           key: core-dependencies-{{ checksum "yarn.lock" }}
@@ -42,16 +42,6 @@ jobs:
             - addons
             - app
             - lib
-      - save_cache:
-          name: "Cache React-Native dependencies"
-          key: reactnative-dependencies-{{ .Revision }}
-          paths:
-            - examples/react-native-vanilla/node_modules
-      - save_cache:
-          name: "Cache React-Native-App dependencies"
-          key: reactnativeapp-dependencies-{{ .Revision }}
-          paths:
-            - examples/crna-kitchen-sink/node_modules
   example-kitchen-sinks:
     <<: *defaults
     steps:
@@ -104,13 +94,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore React-Native dependencies cache"
+          name: "Restore core dependencies cache"
           keys:
-            - reactnative-dependencies-{{ .Revision }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
       - restore_cache:
-          name: "Restore React-Native-App dependencies cache"
+          name: "Restore core dist cache"
           keys:
-            - reactnativeapp-dependencies-{{ .Revision }}
+            - core-dist-{{ .Revision }}
+      - run:
+          name: "Bootstrap"
+          command: |
+            yarn bootstrap --reactnative --reactnativeapp
       - run:
           name: "Run React-Native example"
           command: |
@@ -121,6 +115,11 @@ jobs:
           command: |
             cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
+      - save_cache:
+          name: "Cache React-Native dependencies"
+          key: reactnative-dependencies-{{ .Revision }}
+          paths:
+            - examples/react-native-vanilla/node_modules
   docs:
     <<: *defaults
     steps:
@@ -228,3 +227,4 @@ workflows:
       - unit-test:
           requires:
             - build
+            - example-react-native
