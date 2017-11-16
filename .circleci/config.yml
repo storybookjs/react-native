@@ -39,6 +39,7 @@ jobs:
             - lib/**/node_modules
       - save_cache:
           key: core-dist-{{ .Revision }}
+          paths:
             - addons/**/dist
             - app/**/dist
             - lib/**/dist
@@ -56,8 +57,6 @@ jobs:
             - examples/crna-kitchen-sink/node_modules
   example-kitchen-sinks:
     <<: *defaults
-    requires:
-      - build
     steps:
       - checkout
       - restore_cache:
@@ -97,8 +96,6 @@ jobs:
           destination: integration_image_snapshots
   example-react-native:
     <<: *defaults
-    requires:
-      - build
     steps:
       - checkout
       - restore_cache:
@@ -117,8 +114,6 @@ jobs:
             yarn storybook --smoke-test
   docs:
     <<: *defaults
-    requires:
-      - build
     steps:
       - checkout
       - restore_cache:
@@ -130,8 +125,6 @@ jobs:
             yarn docs:build
   lint:
     <<: *defaults
-    requires:
-      - build
     steps:
       - checkout
       - restore_cache:
@@ -144,8 +137,6 @@ jobs:
             yarn lint
   unit-test:
     <<: *defaults
-    requires:
-      - build
     steps:
       - checkout
       - restore_cache:
@@ -178,8 +169,18 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
-      - example-kitchen-sinks
-      - example-react-native
-      - docs
-      - lint
-      - unit-test
+      - example-kitchen-sinks:
+          requires:
+            - build
+      - example-react-native:
+          requires:
+            - build
+      - docs:
+          requires:
+            - build
+      - lint:
+          requires:
+            - build
+      - unit-test:
+           requires:
+             - build
