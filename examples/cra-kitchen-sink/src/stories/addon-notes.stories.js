@@ -8,6 +8,12 @@ import notes from './notes/notes.md';
 
 storiesOf('Addon Notes', module)
   .add(
+    'withNotes',
+    withNotes(
+      'This is the notes for a button. This is helpful for adding details about a story in a separate panel.'
+    )(() => <BaseButton label="Button with notes - check the notes panel for details" />)
+  )
+  .add(
     'withNotes (markdown)',
     withNotes(notes)(() => (
       <BaseButton label="Button with notes - check the notes panel for details" />
