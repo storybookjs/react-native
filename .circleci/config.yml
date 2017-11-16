@@ -89,7 +89,7 @@ jobs:
       - store_artifacts:
           path: integration/__image_snapshots__
           destination: integration_image_snapshots
-  example-react-native:
+  react-native:
     <<: *defaults
     steps:
       - checkout
@@ -115,11 +115,11 @@ jobs:
           command: |
             cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
-      - save_cache:
-          name: "Cache React-Native dependencies"
-          key: reactnative-dependencies-{{ .Revision }}
-          paths:
-            - examples/react-native-vanilla/node_modules
+      - run:
+          name: "Run React-Native unit tests"
+          command: |
+            yarn test --coverage --runInBand --reactnative
+            yarn coverage
   docs:
     <<: *defaults
     steps:
@@ -189,10 +189,6 @@ jobs:
           name: "Restore core dist cache"
           keys:
             - core-dist-{{ .Revision }}
-      - restore_cache:
-          name: "Restore React-Native-App dependencies cache"
-          keys:
-            - reactnative-dependencies-{{ .Revision }}
       - run:
           name: "Link packages"
           command: |
@@ -200,7 +196,7 @@ jobs:
       - run:
           name: "Run unit tests"
           command: |
-            yarn test --coverage --runInBand --core --reactnative
+            yarn test --coverage --runInBand --core
             yarn coverage
   deploy:
     <<: *defaults
@@ -217,7 +213,7 @@ workflows:
       - example-kitchen-sinks:
           requires:
             - build
-      - example-react-native:
+      - react-native:
           requires:
             - build
       - docs
@@ -227,4 +223,3 @@ workflows:
       - unit-test:
           requires:
             - build
-            - example-react-native
