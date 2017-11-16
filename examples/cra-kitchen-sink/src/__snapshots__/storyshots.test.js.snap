@@ -5584,6 +5584,15 @@ exports[`Storyshots Button addons composition 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button delete 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Delete
+</button>
+`;
+
 exports[`Storyshots Button with new info 1`] = `
 <div>
   <div
