@@ -1,7 +1,8 @@
-# Hello
+# This is a Markdown File
 
-## World
+#### It is imported and compiled using a webpack markdown loader
 
+Supports code snippets too:
 ```jsx
 <div>
   Foo

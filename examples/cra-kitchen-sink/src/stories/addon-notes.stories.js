@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withNotes, WithNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
 import BaseButton from '../components/BaseButton';
-import notes from './notes/notes.md';
+import markdownNotes from './notes/notes.md';
 
 storiesOf('Addon Notes', module)
   .add(
@@ -14,8 +14,8 @@ storiesOf('Addon Notes', module)
     )(() => <BaseButton label="Button with notes - check the notes panel for details" />)
   )
   .add(
-    'withNotes (markdown)',
-    withNotes(notes)(() => (
+    'withNotes rendering imported markdown',
+    withNotes(markdownNotes)(() => (
       <BaseButton label="Button with notes - check the notes panel for details" />
     ))
   )
