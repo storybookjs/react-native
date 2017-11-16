@@ -143,6 +143,64 @@
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
 
+# 3.2.16
+
+2017-November-15
+
+#### Features
+
+-   Add addon-a11y to monorepo [#2292](https://github.com/storybooks/storybook/pull/2292)
+
+#### Bug Fixes
+
+-   Addon actions: replace eval with function name assignment [#2321](https://github.com/storybooks/storybook/pull/2321)
+-   FIX propwarning on basebutton && ADD style prop on basebutton [#2305](https://github.com/storybooks/storybook/pull/2305)
+-   React-native: fix drawer width [#2300](https://github.com/storybooks/storybook/pull/2300)
+
+#### Maintenance
+
+-   Add Previews of deployed examples via Netlify [#2304](https://github.com/storybooks/storybook/pull/2304)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+30 upgrades
+</summary>
+
+-   Update 5 dependencies from npm [#2312](https://github.com/storybooks/storybook/pull/2312)
+-   Upgraded gatsby-link in `docs` from `1.6.27` to `1.6.28` [#2311](https://github.com/storybooks/storybook/pull/2311)
+-   Upgraded gatsby-plugin-sharp in `docs` from `1.6.20` to `1.6.21` [#2311](https://github.com/storybooks/storybook/pull/2311)
+-   Upgraded gatsby-remark-images in `docs` from `1.5.31` to `1.5.32` [#2311](https://github.com/storybooks/storybook/pull/2311)
+-   Upgraded gatsby in `docs` from `1.9.108` to `1.9.112` [#2308](https://github.com/storybooks/storybook/pull/2308)
+-   Upgraded gatsby-link in `docs` from `1.6.26` to `1.6.27` [#2308](https://github.com/storybooks/storybook/pull/2308)
+-   Upgraded gatsby-remark-copy-linked-files in `docs` from `1.5.20` to `1.5.21` [#2308](https://github.com/storybooks/storybook/pull/2308)
+-   Upgraded gatsby-transformer-remark in `docs` from `1.7.20` to `1.7.21` [#2308](https://github.com/storybooks/storybook/pull/2308)
+-   Upgraded react-textarea-autosize in `addons/events` from `5.2.0` to `5.2.1` [#2309](https://github.com/storybooks/storybook/pull/2309)
+-   Upgraded react-datetime in `addons/knobs` from `2.10.3` to `2.11.0` [#2309](https://github.com/storybooks/storybook/pull/2309)
+-   Upgraded react-textarea-autosize in `addons/knobs` from `5.2.0` to `5.2.1` [#2309](https://github.com/storybooks/storybook/pull/2309)
+-   Upgraded react-textarea-autosize in `addons/comments` from `5.2.0` to `5.2.1` [#2309](https://github.com/storybooks/storybook/pull/2309)
+-   Upgraded moment in `addons/knobs` from `2.19.1` to `2.19.2` [#2293](https://github.com/storybooks/storybook/pull/2293)
+-   Upgraded moment in `addons/comments` from `2.19.1` to `2.19.2` [#2293](https://github.com/storybooks/storybook/pull/2293)
+-   Upgraded gatsby in `docs` from `1.9.100` to `1.9.108` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-link in `docs` from `1.6.24` to `1.6.26` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-plugin-sharp in `docs` from `1.6.19` to `1.6.20` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-remark-autolink-headers in `docs` from `1.4.7` to `1.4.8` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-remark-copy-linked-files in `docs` from `1.5.16` to `1.5.20` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-remark-images in `docs` from `1.5.30` to `1.5.31` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-source-filesystem in `docs` from `1.5.7` to `1.5.8` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Upgraded gatsby-transformer-remark in `docs` from `1.7.19` to `1.7.20` [#2294](https://github.com/storybooks/storybook/pull/2294)
+-   Update lint-staged to 5.0.0 [#2291](https://github.com/storybooks/storybook/pull/2291)
+-   Upgraded eslint in `/` from `4.10.0` to `4.11.0` [#2290](https://github.com/storybooks/storybook/pull/2290)
+-   Upgraded puppeteer in `/` from `0.12.0` to `0.13.0` [#2290](https://github.com/storybooks/storybook/pull/2290)
+-   Update 6 dependencies from npm [#2286](https://github.com/storybooks/storybook/pull/2286)
+-   Update React to 16.1.0 [#2285](https://github.com/storybooks/storybook/pull/2285)
+-   Update 4 dependencies from npm [#2284](https://github.com/storybooks/storybook/pull/2284)
+-   use @storybook published deprecated dependencies [#2314](https://github.com/storybooks/storybook/pull/2314)
+-   Update inquirer to 4.0.0 [#2298](https://github.com/storybooks/storybook/pull/2298)
+
+</details>
+
 # 3.2.15
 
 2017-November-10
