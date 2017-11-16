@@ -16,22 +16,18 @@ jobs:
           name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore docs dependencies cache"
-          keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
           name: "Install dependencies"
           command: |
             yarn install
       - run:
-          name: "Bootstrap"
-          command: |
-            yarn bootstrap --core --docs --reactnative --reactnativeapp
-      - run:
-          name: "Dirty checking"
+          name: "Dirty check"
           command: |
             yarn repo-dirty-check
+      - run:
+          name: "Bootstrap"
+          command: |
+            yarn bootstrap --core --reactnative --reactnativeapp
       - save_cache:
           name: "Cache core dependencies"
           key: core-dependencies-{{ checksum "yarn.lock" }}
@@ -46,11 +42,6 @@ jobs:
             - addons
             - app
             - lib
-      - save_cache:
-          name: "Cache docs dependencies"
-          key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
-          paths:
-            - docs/node_modules
       - save_cache:
           name: "Cache React-Native dependencies"
           key: reactnative-dependencies-{{ .Revision }}
@@ -135,18 +126,34 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore docs dependencies cache"
-          keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
-      # TODO remove when #2203 gets merged
-      - restore_cache:
           name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+      - run:
+          name: "Install core dependencies"
+          command: |
+            yarn install
+      - run:
+          name: "Install dependencies"
+          command: |
+            yarn bootstrap --docs
+      - run:
+          name: "Dirty check"
+          command: |
+            yarn repo-dirty-check
       - run:
           name: "Run docs"
           command: |
             yarn docs:build
+      - save_cache:
+          name: "Cache dependencies"
+          key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
+          paths:
+            - docs/node_modules
   lint:
     <<: *defaults
     steps:
@@ -155,6 +162,10 @@ jobs:
           name: "Restore core dependencies cache"
           keys:
             - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
@@ -210,12 +221,10 @@ workflows:
       - example-react-native:
           requires:
             - build
-      - docs:
-          requires:
-            - build
+      - docs
       - lint:
           requires:
             - build
       - unit-test:
-           requires:
-             - build
+          requires:
+            - build
