@@ -27,7 +27,7 @@ const createSubgroup = (acc, item, i, list) => {
     acc.grouped = [];
   }
 
-  // start of stop extraction
+  // start or stop extraction
   if (acc.startTrigger(item)) {
     // debugger; //eslint-disable-line
     acc.mode = 'inject';
@@ -47,21 +47,20 @@ const createSubgroup = (acc, item, i, list) => {
   // on last iteration inject at detected injectionpoint, and group
   if (i === list.length - 1) {
     return acc.list.reduce((eacc, el, ei) => {
-      switch (acc.injectionPoint - 1) {
-        // case -1: {
-        //   return eacc.concat(acc.grouper({ children: acc.grouped })).concat(el);
-        // }
-        case ei: {
-          // return eacc.concat(acc.grouper({ children: acc.grouped })).concat(el);
-          return eacc.concat(el).concat(acc.grouper({ children: acc.grouped }));
+      switch (true) {
+        case acc.injectionPoint === 0 && ei === 0: {
+          // at index 0, inject before
+          return eacc.concat(acc.grouper(acc.grouped)).concat(el);
+        }
+        case acc.injectionPoint > 0 && acc.injectionPoint === ei + 1: {
+          // at index > 0, and next index WOULD BE injectionPoint, inject after
+          return eacc.concat(el).concat(acc.grouper(acc.grouped));
         }
         default: {
+          // do not inject
           return eacc.concat(el);
         }
       }
-      // ei === acc.injectionPoint
-      //   ? eacc.concat(acc.grouper({ children: acc.grouped })).concat(el)
-      //   : eacc.concat(el),
     }, []);
   }
   return acc;
@@ -78,6 +77,7 @@ const Message = ({ msg }) => {
         typeof item === 'string'
           ? item
               .split(/\[32m(.*?)\[39m/)
+              // eslint-disable-next-line react/no-array-index-key
               .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
           : item
     )
@@ -87,27 +87,36 @@ const Message = ({ msg }) => {
         typeof item === 'string'
           ? item
               .split(/\[31m(.*?)\[39m/)
+              // eslint-disable-next-line react/no-array-index-key
               .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
           : item
     )
     .reduce((acc, item) => acc.concat(item), [])
-    // trim all section of whitespace - BUGGY
-    // .reduce((acc, i) => {
-    //   if (typeof i === 'string') {
-    //     const ii = i.trim();
-    //     return ii === '' ? acc : acc.concat(ii);
-    //   }
-    //   return acc.concat(i);
-    // }, [])
+    .reduce((acc, item) => acc.concat(item), [])
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.indexOf('Error: ') === 0,
       endTrigger: e => typeof e === 'string' && e.match('Expected '),
-      grouper: props => <section {...props} />,
+      grouper: list => <section>{list}</section>,
     })
+    .reduce(
+      (acc, it) =>
+        typeof it === 'string' ? acc.concat(it.split(/(at(.|\n)+\d+:\d+\))/)) : acc.concat(it),
+      []
+    )
+    .reduce((acc, item) => acc.concat(item), [])
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.match(/at(.|\n)+\d+:\d+\)/),
       endTrigger: () => false,
-      grouper: props => <section {...props} />,
+      grouper: list => (
+        <details>
+          <summary>Callstack</summary>
+          {list
+            .join('')
+            .trim()
+            .split(/\n/)
+            .map(i => <div>{i.trim()}</div>)}
+        </details>
+      ),
     });
 
   return <pre>{data}</pre>;
