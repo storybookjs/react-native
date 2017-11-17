@@ -37,9 +37,9 @@
     "react-dom": "^16.1.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0-alpha.3",
-    "@storybook/channels": "^3.3.0-alpha.3",
-    "@storybook/react": "^3.3.0-alpha.3",
+    "@storybook/addons": "^3.3.0-alpha",
+    "@storybook/channels": "^3.3.0-alpha",
+    "@storybook/react": "^3.3.0-alpha",
     "babel-core": "^6.26.0",
     "react": "*",
     "react-test-renderer": "*"
