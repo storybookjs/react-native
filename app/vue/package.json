@@ -69,7 +69,7 @@
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.1.0",
-    "vue-hot-reload-api": "^2.2.3",
+    "vue-hot-reload-api": "^2.2.4",
     "vue-style-loader": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
@@ -77,9 +77,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1",
-    "vue": "^2.5.3",
+    "vue": "^2.5.5",
     "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.3"
+    "vue-template-compiler": "^2.5.5"
   },
   "peerDependencies": {
     "vue": "*",
