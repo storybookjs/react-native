@@ -10,6 +10,7 @@
     "@storybook/addon-actions": "3.3.0-alpha.2",
     "@storybook/addon-notes": "3.3.0-alpha.2",
     "@storybook/addon-knobs": "3.3.0-alpha.2",
+    "@storybook/addon-viewport": "3.3.0-alpha.2",
     "@storybook/polymer": "3.3.0-alpha.2",
     "@webcomponents/webcomponentsjs": "^1.0.17",
     "global": "^4.3.2",
