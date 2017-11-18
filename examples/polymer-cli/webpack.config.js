@@ -22,8 +22,8 @@ module.exports = {
       template: 'index.html',
     }),
     new CopyWebpackPlugin([
-      { from: 'node_modules/@webcomponents/webcomponentsjs/webcomponents*.js', flatten: true },
-      { from: 'node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js' },
+      { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
+      { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
     ]),
   ],
   devServer: { historyApiFallback: true },
