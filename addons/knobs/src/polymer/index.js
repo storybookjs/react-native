@@ -1,21 +1,13 @@
 import addons from '@storybook/addons';
 import WrapStory from './WrapStory';
 
-import {
-  knob,
-  text,
-  boolean,
-  number,
-  color,
-  object,
-  array,
-  date,
-  select,
-  button,
-  manager,
-} from '../base';
+import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
 
-export { knob, text, boolean, number, color, object, array, date, select, button };
+export { knob, text, boolean, number, color, object, array, date, select };
+
+export function button(name, callback) {
+  return manager.knob(name, { type: 'button', value: Date.now(), callback, hideLabel: true });
+}
 
 function prepareComponent({ getStory, context, channel, knobStore }) {
   return new WrapStory(getStory(context), channel, context, getStory, knobStore);
