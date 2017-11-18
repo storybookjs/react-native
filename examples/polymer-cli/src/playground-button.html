@@ -2,13 +2,17 @@
 
 <dom-module id="playground-button">
   <template>
-    <button on-click="handleTap">Click me: [[counter]]</button>
+    <button on-click="handleTap">[[title]] [[counter]]</button>
   </template>
   <script>
     class PlaygroundButton extends Polymer.Element {
       static get is() { return 'playground-button'; }
       static get properties() {
         return {
+          title: {
+            type: String,
+            value: 'Click me:',
+          },
           counter: {
             type: Number,
             value: 0

@@ -33,6 +33,7 @@ export function renderMain(data, storyStore) {
     story: selectedStory,
   };
   const component = story ? story(context) : nopreview;
+
   if (!component) {
     renderError({
       message: `Expecting a Polymer component from the story: "${selectedStory}" of "${selectedKind}".`,
