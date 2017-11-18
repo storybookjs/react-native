@@ -34,6 +34,66 @@ const FileTitle = glamorous.h2({
   fontSize: 18,
 });
 
+const SuiteHead = glamorous.div({
+  display: 'flex',
+  alignItems: 'baseline',
+  justifyContent: 'space-between',
+  position: 'relative',
+  paddingTop: 10,
+});
+
+const SuiteTotals = glamorous(({ successNumber, failedNumber, result, className }) => (
+  <div className={className}>
+    {successNumber > 0 && <div style={{ color: colors.success }}>{successNumber} passed</div>}
+    {failedNumber > 0 && <div style={{ color: colors.error }}>{failedNumber} failed</div>}
+    <div>{result.assertionResults.length} total</div>
+    <div>
+      <strong>{result.endTime - result.startTime}ms</strong>
+    </div>
+  </div>
+))({
+  display: 'flex',
+  alignItems: 'center',
+  color: colors.grey,
+  fontSize: '10px',
+
+  '& > *': {
+    marginLeft: 10,
+  },
+});
+
+const SuiteProgress = glamorous(({ successNumber, result, className }) => (
+  <div className={className} role="progressbar">
+    <span style={{ width: `${successNumber / result.assertionResults.length * 100}%` }}>
+      {`${successNumber / result.assertionResults.length * 100}%`}
+    </span>
+  </div>
+))(() => ({
+  width: '100%',
+  backgroundColor: colors.error,
+  height: 4,
+  top: 0,
+  position: 'absolute',
+  left: 0,
+  borderRadius: 3,
+  overflow: 'hidden',
+  appearance: 'none',
+
+  '& > span': {
+    backgroundColor: colors.success,
+    bottom: 0,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    boxShadow: '4px 0 0 white',
+  },
+}));
+
+const SuiteTitle = glamorous.div({
+  display: 'flex',
+  alignItems: 'center',
+});
+
 const Content = glamorous(({ tests, className }) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
@@ -47,16 +107,8 @@ const Content = glamorous(({ tests, className }) => (
 
       return (
         <section key={name}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              justifyContent: 'space-between',
-              position: 'relative',
-              paddingTop: 10,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+          <SuiteHead>
+            <SuiteTitle>
               <Indicator
                 color={result.status === 'passed' ? colors.success : colors.error}
                 size={16}
@@ -65,51 +117,10 @@ const Content = glamorous(({ tests, className }) => (
                 {result.status}
               </Indicator>
               <FileTitle>{name}</FileTitle>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                color: colors.grey,
-                fontSize: '10px',
-              }}
-            >
-              {successNumber > 0 && (
-                <div style={{ color: colors.success }}>{successNumber} passed</div>
-              )}
-              {failedNumber > 0 && (
-                <div style={{ marginLeft: 10, color: colors.error }}>{failedNumber} failed</div>
-              )}
-              <div style={{ marginLeft: 10 }}>{result.assertionResults.length} total</div>
-              <div style={{ marginLeft: 20 }}>{result.endTime - result.startTime}ms</div>
-            </div>
-
-            <div
-              style={{
-                width: '100%',
-                backgroundColor: colors.error,
-                height: 4,
-                top: 0,
-                position: 'absolute',
-                left: 0,
-                borderRadius: 3,
-                overflow: 'hidden',
-              }}
-            >
-              <div
-                style={{
-                  width: `${successNumber / result.assertionResults.length * 100}%`,
-                  backgroundColor: colors.success,
-                  height: '100%',
-                  bottom: -2,
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  boxShadow: '4px 0 0 white',
-                }}
-              />
-            </div>
-          </div>
+            </SuiteTitle>
+            <SuiteTotals {...{ successNumber, failedNumber, result }} />
+            <SuiteProgress {...{ successNumber, failedNumber, result }} />
+          </SuiteHead>
           <List>
             {result.assertionResults.map(res => (
               <Item key={res.fullName || res.title}>
