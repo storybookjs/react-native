@@ -47,13 +47,20 @@ storiesOf('Button', module)
     el.setAttribute('title', title);
     button('testing', () => el.setAttribute('title', 'testing'));
     return el;
-  })
-  .add(
-    'with notes',
-    withNotes('We have the <strong>best</strong> playground buttons, ever.')(
-      () => '<playground-button></playground-button>'
-    )
-  );
+  });
+
+storiesOf('Addon Notes', module).add(
+  'with notes',
+  withNotes({
+    text: `
+      <h2>My notes on emojies</h2>
+
+      <em>It's not all that important to be honest, but..</em>
+
+      Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
+    `,
+  })(() => '<p>🤔😳😯😮<br/>😄😩😓😱<br/>🤓😑😶😊</p>')
+);
 
 storiesOf('Addon Knobs', module)
   .addDecorator(withKnobs)
