@@ -1,4 +1,4 @@
-import { window, document, HTMLElement } from 'global';
+import { window, HTMLElement } from 'global';
 
 class WrapStory extends HTMLElement {
   static get is() {
@@ -78,16 +78,13 @@ class WrapStory extends HTMLElement {
   }
 
   render(component) {
-    let tag = component;
-    if (typeof component === 'string') {
-      const tagName = /^<([A-Za-z0-9-]+)/.exec(component)[1];
-      tag = document.createElement(tagName);
-    }
-
     const wrapper = this.shadowRoot.querySelector('div#wrapper');
-
-    wrapper.innerHTML = '';
-    wrapper.appendChild(tag);
+    if (typeof component === 'string') {
+      wrapper.innerHTML = component;
+    } else {
+      wrapper.innerHTML = '';
+      wrapper.appendChild(component);
+    }
   }
 }
 
