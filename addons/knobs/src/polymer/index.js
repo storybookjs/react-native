@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { document } from 'global';
+import WrapStory from './WrapStory';
 
 import {
   knob,
@@ -17,16 +17,8 @@ import {
 
 export { knob, text, boolean, number, color, object, array, date, select, button };
 
-function prepareComponent({ getStory, context, channel }) {
-  let component = getStory(context);
-  if (typeof component === 'string') {
-    const tagName = /<([A-Za-z0-9-]{1,})>/.exec(component)[1];
-    component = document.createElement(tagName);
-  }
-  channel.on('addon:knobs:knobChange', e => {
-    component.setAttribute(e.name, e.value);
-  });
-  return component;
+function prepareComponent({ getStory, context, channel, knobStore }) {
+  return new WrapStory(getStory(context), channel, context, getStory, knobStore);
 }
 
 export const polymerHandler = (channel, knobStore) => getStory => context =>

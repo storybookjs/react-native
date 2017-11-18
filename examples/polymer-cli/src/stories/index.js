@@ -7,13 +7,15 @@ import '../polymer-playground-app.html';
 import '../playground-button.html';
 import './storybook-welcome-to-polymer.html';
 
-const stories = storiesOf('Welcome', module);
-stories.addDecorator(withKnobs);
+storiesOf('Welcome', module).add(
+  'Welcome',
+  () => '<storybook-welcome-to-polymer></storybook-welcome-to-polymer>'
+);
 
-stories.add('Welcome', () => '<storybook-welcome-to-polymer></storybook-welcome-to-polymer>');
 storiesOf('App', module).add('full app', () => '<polymer-playground-app></polymer-playground-app>');
 
 storiesOf('Button', module)
+  .addDecorator(withKnobs)
   .add('default', () => '<playground-button></playground-button>')
   .add('with actions', () => {
     const el = document.createElement('playground-button');
@@ -21,8 +23,9 @@ storiesOf('Button', module)
     return el;
   })
   .add('with knobs', () => {
+    const title = text('Button title', 'Hello');
     const el = document.createElement('playground-button');
-    el.setAttribute('title', text('title', 'Hello'));
+    el.setAttribute('title', title);
     return el;
   })
   .add(
