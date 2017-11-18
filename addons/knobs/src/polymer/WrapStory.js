@@ -15,7 +15,6 @@ class WrapStory extends HTMLElement {
     this.createShadowRoot();
     this.shadowRoot.innerHTML = this.template;
 
-    this.component = component;
     this.channel = channel;
     this.context = context;
     this.storyFn = storyFn;
@@ -28,7 +27,7 @@ class WrapStory extends HTMLElement {
 
     this.connectChannel(this.channel);
     this.knobStore.subscribe(this.setPaneKnobs);
-    this.render(this.component);
+    this.render(component);
   }
 
   disconnectedCallback() {
@@ -62,7 +61,6 @@ class WrapStory extends HTMLElement {
   knobClicked(clicked) {
     const knobOptions = this.knobStore.get(clicked.name);
     knobOptions.callback();
-    this.render(this.component);
   }
 
   resetKnobs() {
