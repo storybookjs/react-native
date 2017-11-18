@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import glamorous from 'glamorous';
+
 import provideJestResult from '../hoc/provideJestResult';
 import Indicator from './Indicator';
 import colors from '../colors';
 
+const Wrapper = glamorous.div({
+  display: 'flex',
+  alignItems: 'center',
+});
+const PanelName = glamorous.div({
+  paddingLeft: 5,
+});
+
 const PanelTitle = ({ tests }) => {
   if (!tests) {
-    return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Indicator color={colors.grey} size={10} />
-        <div>Tests</div>
-      </div>
-    );
+    return null;
   }
 
   const results = tests.map(report => report.result).filter(report => !!report);
@@ -20,10 +25,10 @@ const PanelTitle = ({ tests }) => {
   const color = success ? colors.success : colors.error;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <Wrapper>
       <Indicator color={results.length < tests.length ? colors.warning : color} size={10} />
-      <div>Tests</div>
-    </div>
+      <PanelName>Tests</PanelName>
+    </Wrapper>
   );
 };
 

@@ -2,9 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import glamorous from 'glamorous';
+import { monoFonts } from '@storybook/components';
 
 import Indicator from './Indicator';
 import colors from '../colors';
+
+const Pre = glamorous.pre({
+  margin: 0,
+  ...monoFonts,
+});
 
 const FlexContainer = glamorous.div`
   display: flex;
@@ -16,9 +22,11 @@ const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
 
 const Positive = glamorous.strong({
   color: colors.success,
+  fontWeight: 500,
 });
 const Negative = glamorous.strong({
   color: colors.error,
+  fontWeight: 500,
 });
 const StackTrace = glamorous(({ trace, className }) => (
   <details className={className}>
@@ -31,9 +39,11 @@ const StackTrace = glamorous(({ trace, className }) => (
   </details>
 ))({
   background: 'silver',
+  padding: 10,
 });
 const Main = glamorous(({ msg, className }) => <section className={className}>{msg}</section>)({
-  border: '1px solid hotpink',
+  padding: 10,
+  borderBottom: '1px solid silver',
 });
 const Sub = glamorous(({ msg, className }) => (
   <section className={className}>
@@ -59,7 +69,7 @@ const Sub = glamorous(({ msg, className }) => (
       })}
   </section>
 ))({
-  border: '1px solid deepskyblue',
+  padding: 10,
 });
 
 const createSubgroup = (acc, item, i, list) => {
@@ -159,40 +169,74 @@ const Message = ({ msg }) => {
       grouper: list => <StackTrace trace={list} />,
     });
 
-  return <pre>{data}</pre>;
+  return <Pre>{data}</Pre>;
 };
 Message.propTypes = {
   msg: PropTypes.string.isRequired,
 };
 
-const Result = ({ fullName, title, status, failureMessages }) => {
-  const color = status === 'passed' ? colors.success : colors.error;
+const Head = glamorous.header({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-start',
+});
 
-  // debugger; //eslint-disable-line
-  return (
-    <div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
+const Title = glamorous.h3({
+  padding: '10px 10px 0 10px',
+  margin: 0,
+});
+
+export const FailedResult = glamorous(({ fullName, title, status, failureMessages, className }) => (
+  <div className={className}>
+    <Head>
+      <FlexContainer>
+        <Indicator
+          color={colors.error}
+          size={10}
+          styles={{ borderRadius: '5px 0', position: 'relative', top: -1, left: -1 }}
+        />
+        <Title>{fullName || title}</Title>
+      </FlexContainer>
+      <Indicator
+        color={colors.error}
+        size={16}
+        styles={{ borderRadius: '0 5px', position: 'relative', top: -1, right: -1 }}
       >
-        <FlexContainer>
-          <Indicator color={color} size={10} />
-          <div>{fullName || title}</div>
-        </FlexContainer>
-        <FlexContainer>
-          <Indicator color={color} size={14} right>
-            {status}
-          </Indicator>
-        </FlexContainer>
-      </div>
-      {/* eslint-disable react/no-array-index-key, react/no-danger  */}
-      {failureMessages && failureMessages.map((msg, i) => <Message msg={msg} key={i} />)}
-    </div>
-  );
-};
+        {status}
+      </Indicator>
+    </Head>
+    {/* eslint-disable react/no-array-index-key  */}
+    {failureMessages.map((msg, i) => <Message msg={msg} key={i} />)}
+  </div>
+))({
+  display: 'block',
+  borderRadius: 5,
+  margin: 0,
+  padding: 0,
+  position: 'relative',
+  border: '1px solid silver',
+  boxSizing: 'border-box',
+});
+
+const Result = ({ fullName, title, status }) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    }}
+  >
+    <FlexContainer>
+      <Indicator color={colors.success} size={10} />
+      <div>{fullName || title}</div>
+    </FlexContainer>
+    <FlexContainer>
+      <Indicator color={colors.success} size={14} right>
+        {status}
+      </Indicator>
+    </FlexContainer>
+  </div>
+);
 
 Result.defaultProps = {
   fullName: '',
@@ -203,7 +247,6 @@ Result.propTypes = {
   fullName: PropTypes.string,
   title: PropTypes.string,
   status: PropTypes.string.isRequired,
-  failureMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Result;
