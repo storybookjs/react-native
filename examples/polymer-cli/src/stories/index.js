@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/polymer';
 import { action } from '@storybook/addon-actions';
 import { withNotes } from '@storybook/addon-notes';
-import { withKnobs, text } from '@storybook/addon-knobs/polymer';
+import { withKnobs, text, button } from '@storybook/addon-knobs/polymer';
 import { document } from 'global';
 import '../polymer-playground-app.html';
 import '../playground-button.html';
@@ -35,6 +35,7 @@ storiesOf('Button', module)
     const title = text('Button title', 'Hello');
     const el = document.createElement('playground-button');
     el.setAttribute('title', title);
+    button('testing', () => el.setAttribute('title', 'testing'));
     return el;
   })
   .add(

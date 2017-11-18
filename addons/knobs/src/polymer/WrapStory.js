@@ -62,6 +62,7 @@ class WrapStory extends HTMLElement {
   knobClicked(clicked) {
     const knobOptions = this.knobStore.get(clicked.name);
     knobOptions.callback();
+    this.render(this.component);
   }
 
   resetKnobs() {
