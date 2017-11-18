@@ -104,7 +104,7 @@ const Panel = ({ tests }) => {
                 />
               </div>
             </h2>
-            <ul style={{ listStyle: 'none', fontSize: 14 }}>
+            <ul style={{ listStyle: 'none', fontSize: 14, padding: 0, margin: 0 }}>
               {result.assertionResults.map(res => (
                 <li key={res.fullName || res.title}>
                   <Result {...res} />

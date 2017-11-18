@@ -11,11 +11,55 @@ const FlexContainer = glamorous.div`
   align-items: center;
 `;
 
+/* eslint no-control-regex:0 */
+const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
+
 const Positive = glamorous.strong({
   color: colors.success,
 });
 const Negative = glamorous.strong({
   color: colors.error,
+});
+const StackTrace = glamorous(({ trace, className }) => (
+  <details className={className}>
+    <summary>Callstack</summary>
+    {trace
+      .join('')
+      .trim()
+      .split(/\n/)
+      .map(i => <div>{i.trim()}</div>)}
+  </details>
+))({
+  background: 'silver',
+});
+const Main = glamorous(({ msg, className }) => <section className={className}>{msg}</section>)({
+  border: '1px solid hotpink',
+});
+const Sub = glamorous(({ msg, className }) => (
+  <section className={className}>
+    {msg
+      .filter(item => typeof item !== 'string' || (typeof item === 'string' && item.trim() !== ''))
+      .map((item, index, list) => {
+        switch (true) {
+          case typeof item === 'string' && index === 0 && index === list.length - 1: {
+            return item.trim();
+          }
+          case typeof item === 'string' && index === 0: {
+            return item.replace(/^[\s\n]*/, '');
+          }
+          case typeof item === 'string' && index === list.length - 1: {
+            debugger; //eslint-disable-line
+            return item.replace(/[\s\n]*$/, '');
+          }
+          default: {
+            return item;
+          }
+        }
+        // typeof item === 'string' ? <span>{item}</span> : item;
+      })}
+  </section>
+))({
+  border: '1px solid deepskyblue',
 });
 
 const createSubgroup = (acc, item, i, list) => {
@@ -67,7 +111,8 @@ const createSubgroup = (acc, item, i, list) => {
 };
 
 const Message = ({ msg }) => {
-  const data = msg
+  const data = patterns
+    .reduce((acc, regex) => acc.replace(regex, ''), msg)
     .split(/\[2m/)
     .join('')
     .split(/\[22m/)
@@ -92,11 +137,10 @@ const Message = ({ msg }) => {
           : item
     )
     .reduce((acc, item) => acc.concat(item), [])
-    .reduce((acc, item) => acc.concat(item), [])
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.indexOf('Error: ') === 0,
       endTrigger: e => typeof e === 'string' && e.match('Expected '),
-      grouper: list => <section>{list}</section>,
+      grouper: list => <Main msg={list} />,
     })
     .reduce(
       (acc, it) =>
@@ -105,18 +149,14 @@ const Message = ({ msg }) => {
     )
     .reduce((acc, item) => acc.concat(item), [])
     .reduce(createSubgroup, {
+      startTrigger: e => typeof e === 'string' && e.indexOf('Expected ') !== -1,
+      endTrigger: e => typeof e === 'string' && e.match(/^at/),
+      grouper: list => <Sub msg={list} />,
+    })
+    .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.match(/at(.|\n)+\d+:\d+\)/),
       endTrigger: () => false,
-      grouper: list => (
-        <details>
-          <summary>Callstack</summary>
-          {list
-            .join('')
-            .trim()
-            .split(/\n/)
-            .map(i => <div>{i.trim()}</div>)}
-        </details>
-      ),
+      grouper: list => <StackTrace trace={list} />,
     });
 
   return <pre>{data}</pre>;
