@@ -12,7 +12,7 @@ class WrapStory extends HTMLElement {
   constructor(component, channel, context, storyFn, knobStore) {
     super();
 
-    this.createShadowRoot();
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = this.template;
 
     this.channel = channel;
