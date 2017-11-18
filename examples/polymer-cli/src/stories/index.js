@@ -12,7 +12,16 @@ storiesOf('Welcome', module).add(
   () => '<storybook-welcome-to-polymer></storybook-welcome-to-polymer>'
 );
 
-storiesOf('App', module).add('full app', () => '<polymer-playground-app></polymer-playground-app>');
+storiesOf('App', module)
+  .addDecorator(withKnobs)
+  .add(
+    'full app',
+    () =>
+      `<polymer-playground-app title="${text(
+        'App title',
+        'This is an app'
+      )}"></polymer-playground-app>`
+  );
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)

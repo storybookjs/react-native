@@ -41,7 +41,7 @@ class WrapStory extends HTMLElement {
   render(component) {
     let tag = component;
     if (typeof component === 'string') {
-      const tagName = /<([A-Za-z0-9-]+)>/.exec(component)[1];
+      const tagName = /^<([A-Za-z0-9-]+)/.exec(component)[1];
       tag = document.createElement(tagName);
     }
 
