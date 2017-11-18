@@ -17,38 +17,6 @@ exports[`manager.ui.components.layout.index with default options should render p
     onChange={[Function]}
     onDragFinished={[Function]}
     onDragStarted={[Function]}
-    pane1ClassName=""
-    pane2ClassName=""
-    paneClassName=""
-    prefixer={
-      Prefixer {
-        "_browserInfo": Object {
-          "blink": true,
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "name": "Safari",
-          "osVersion": NaN,
-          "safari": true,
-          "x": true,
-        },
-        "_hasPropsRequiringPrefix": false,
-        "_keepUnprefixed": false,
-        "_metaData": Object {
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "keepUnprefixed": false,
-          "requiresPrefix": Object {},
-        },
-        "_requiresPrefix": Object {},
-        "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-        "prefixedKeyframes": "keyframes",
-      }
-    }
-    primary="first"
     resizerStyle={
       Object {
         "cursor": "col-resize",
@@ -95,37 +63,6 @@ exports[`manager.ui.components.layout.index with default options should render p
       onChange={[Function]}
       onDragFinished={[Function]}
       onDragStarted={[Function]}
-      pane1ClassName=""
-      pane2ClassName=""
-      paneClassName=""
-      prefixer={
-        Prefixer {
-          "_browserInfo": Object {
-            "blink": true,
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "name": "Safari",
-            "osVersion": NaN,
-            "safari": true,
-            "x": true,
-          },
-          "_hasPropsRequiringPrefix": false,
-          "_keepUnprefixed": false,
-          "_metaData": Object {
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "keepUnprefixed": false,
-            "requiresPrefix": Object {},
-          },
-          "_requiresPrefix": Object {},
-          "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-          "prefixedKeyframes": "keyframes",
-        }
-      }
       primary="second"
       resizerStyle={
         Object {
@@ -210,38 +147,6 @@ exports[`manager.ui.components.layout.index with goFullScreen=true should render
     onChange={[Function]}
     onDragFinished={[Function]}
     onDragStarted={[Function]}
-    pane1ClassName=""
-    pane2ClassName=""
-    paneClassName=""
-    prefixer={
-      Prefixer {
-        "_browserInfo": Object {
-          "blink": true,
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "name": "Safari",
-          "osVersion": NaN,
-          "safari": true,
-          "x": true,
-        },
-        "_hasPropsRequiringPrefix": false,
-        "_keepUnprefixed": false,
-        "_metaData": Object {
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "keepUnprefixed": false,
-          "requiresPrefix": Object {},
-        },
-        "_requiresPrefix": Object {},
-        "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-        "prefixedKeyframes": "keyframes",
-      }
-    }
-    primary="first"
     resizerStyle={
       Object {
         "cursor": undefined,
@@ -288,37 +193,6 @@ exports[`manager.ui.components.layout.index with goFullScreen=true should render
       onChange={[Function]}
       onDragFinished={[Function]}
       onDragStarted={[Function]}
-      pane1ClassName=""
-      pane2ClassName=""
-      paneClassName=""
-      prefixer={
-        Prefixer {
-          "_browserInfo": Object {
-            "blink": true,
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "name": "Safari",
-            "osVersion": NaN,
-            "safari": true,
-            "x": true,
-          },
-          "_hasPropsRequiringPrefix": false,
-          "_keepUnprefixed": false,
-          "_metaData": Object {
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "keepUnprefixed": false,
-            "requiresPrefix": Object {},
-          },
-          "_requiresPrefix": Object {},
-          "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-          "prefixedKeyframes": "keyframes",
-        }
-      }
       primary="second"
       resizerStyle={
         Object {
@@ -411,38 +285,6 @@ exports[`manager.ui.components.layout.index with showDownPanel=false should hide
     onChange={[Function]}
     onDragFinished={[Function]}
     onDragStarted={[Function]}
-    pane1ClassName=""
-    pane2ClassName=""
-    paneClassName=""
-    prefixer={
-      Prefixer {
-        "_browserInfo": Object {
-          "blink": true,
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "name": "Safari",
-          "osVersion": NaN,
-          "safari": true,
-          "x": true,
-        },
-        "_hasPropsRequiringPrefix": false,
-        "_keepUnprefixed": false,
-        "_metaData": Object {
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "keepUnprefixed": false,
-          "requiresPrefix": Object {},
-        },
-        "_requiresPrefix": Object {},
-        "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-        "prefixedKeyframes": "keyframes",
-      }
-    }
-    primary="first"
     resizerStyle={
       Object {
         "cursor": "col-resize",
@@ -489,37 +331,6 @@ exports[`manager.ui.components.layout.index with showDownPanel=false should hide
       onChange={[Function]}
       onDragFinished={[Function]}
       onDragStarted={[Function]}
-      pane1ClassName=""
-      pane2ClassName=""
-      paneClassName=""
-      prefixer={
-        Prefixer {
-          "_browserInfo": Object {
-            "blink": true,
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "name": "Safari",
-            "osVersion": NaN,
-            "safari": true,
-            "x": true,
-          },
-          "_hasPropsRequiringPrefix": false,
-          "_keepUnprefixed": false,
-          "_metaData": Object {
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "keepUnprefixed": false,
-            "requiresPrefix": Object {},
-          },
-          "_requiresPrefix": Object {},
-          "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-          "prefixedKeyframes": "keyframes",
-        }
-      }
       primary="second"
       resizerStyle={
         Object {
@@ -604,38 +415,6 @@ exports[`manager.ui.components.layout.index with showLeftPanel=false should hide
     onChange={[Function]}
     onDragFinished={[Function]}
     onDragStarted={[Function]}
-    pane1ClassName=""
-    pane2ClassName=""
-    paneClassName=""
-    prefixer={
-      Prefixer {
-        "_browserInfo": Object {
-          "blink": true,
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "name": "Safari",
-          "osVersion": NaN,
-          "safari": true,
-          "x": true,
-        },
-        "_hasPropsRequiringPrefix": false,
-        "_keepUnprefixed": false,
-        "_metaData": Object {
-          "browserName": "safari",
-          "browserVersion": NaN,
-          "cssPrefix": "-webkit-",
-          "jsPrefix": "Webkit",
-          "keepUnprefixed": false,
-          "requiresPrefix": Object {},
-        },
-        "_requiresPrefix": Object {},
-        "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-        "prefixedKeyframes": "keyframes",
-      }
-    }
-    primary="first"
     resizerStyle={
       Object {
         "cursor": undefined,
@@ -682,37 +461,6 @@ exports[`manager.ui.components.layout.index with showLeftPanel=false should hide
       onChange={[Function]}
       onDragFinished={[Function]}
       onDragStarted={[Function]}
-      pane1ClassName=""
-      pane2ClassName=""
-      paneClassName=""
-      prefixer={
-        Prefixer {
-          "_browserInfo": Object {
-            "blink": true,
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "name": "Safari",
-            "osVersion": NaN,
-            "safari": true,
-            "x": true,
-          },
-          "_hasPropsRequiringPrefix": false,
-          "_keepUnprefixed": false,
-          "_metaData": Object {
-            "browserName": "safari",
-            "browserVersion": NaN,
-            "cssPrefix": "-webkit-",
-            "jsPrefix": "Webkit",
-            "keepUnprefixed": false,
-            "requiresPrefix": Object {},
-          },
-          "_requiresPrefix": Object {},
-          "_userAgent": "Node.js (darwin; U; rv:v8.7.0) AppleWebKit/537.36 (KHTML, like Gecko)",
-          "prefixedKeyframes": "keyframes",
-        }
-      }
       primary="second"
       resizerStyle={
         Object {
