@@ -28,6 +28,12 @@ const NoTests = glamorous.div({
   ...baseFonts,
 });
 
+const FileTitle = glamorous.h2({
+  margin: 0,
+  fontWeight: 500,
+  fontSize: 18,
+});
+
 const Content = glamorous(({ tests, className }) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
@@ -41,30 +47,31 @@ const Content = glamorous(({ tests, className }) => (
 
       return (
         <section key={name}>
-          <h2
+          <div
             style={{
               display: 'flex',
-              alignItems: 'flex-end',
+              alignItems: 'baseline',
               justifyContent: 'space-between',
               position: 'relative',
+              paddingTop: 10,
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <div>{name}</div>
               <Indicator
                 color={result.status === 'passed' ? colors.success : colors.error}
                 size={16}
-                right
+                styles={{ marginRight: 5 }}
               >
                 {result.status}
               </Indicator>
+              <FileTitle>{name}</FileTitle>
             </div>
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 color: colors.grey,
-                fontSize: '.5em',
+                fontSize: '10px',
               }}
             >
               {successNumber > 0 && (
@@ -82,9 +89,11 @@ const Content = glamorous(({ tests, className }) => (
                 width: '100%',
                 backgroundColor: colors.error,
                 height: 4,
-                bottom: -2,
+                top: 0,
                 position: 'absolute',
                 left: 0,
+                borderRadius: 3,
+                overflow: 'hidden',
               }}
             >
               <div
@@ -100,7 +109,7 @@ const Content = glamorous(({ tests, className }) => (
                 }}
               />
             </div>
-          </h2>
+          </div>
           <List>
             {result.assertionResults.map(res => (
               <Item key={res.fullName || res.title}>
