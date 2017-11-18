@@ -45,12 +45,7 @@ export default function() {
         template: require.resolve('../iframe.html.ejs'),
       }),
       new CopyWebpackPlugin([
-        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-loader.js') },
-        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi.js') },
-        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi-ce.js') },
-        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js') },
         { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
-        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-sd-ce.js') },
         { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
       ]),
       new webpack.DefinePlugin(loadEnv({ production: true })),
