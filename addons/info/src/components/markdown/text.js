@@ -11,7 +11,7 @@ export function P(props) {
     fontSize: '15px',
   };
 
-  // P is oftentimes used as a parent element of
+  // <P> is oftentimes used as a parent element of
   // <a> and <pre> elements, which is why <div>
   // is used as the outputted element when parsing
   // marksy content rather than <p>.

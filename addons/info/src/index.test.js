@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AddonInfo, { withInfo, setDefaults } from './';
 
+/* eslint-disable */
 const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
   <div>
     <h1>{func.toString()}</h1>
@@ -19,8 +20,8 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
       <li>1</li>
       <li>2</li>
     </ui>
-  </div>
-);
+  </div>);
+/* eslint-enable */
 
 const testContext = { kind: 'addon_info', story: 'jest_test' };
 const testOptions = { propTables: false };
@@ -48,7 +49,7 @@ describe('addon Info', () => {
       '# Test story \n## with markdown info \ncontaing **bold**, *cursive* text, `code` and [a link](https://github.com)'
     )(story);
 
-    const ex = ReactDOM.render(<Info />, document.createElement('div'));
+    ReactDOM.render(<Info />, document.createElement('div'));
   });
   it('should render with text options', () => {
     const Info = withInfo({ text: 'some text here' })(story);
