@@ -1,5 +1,6 @@
 import addons from '@storybook/addons';
-import WrapStory from './WrapStory';
+import window from 'global';
+import './WrapStory.html';
 
 import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
 
@@ -10,6 +11,7 @@ export function button(name, callback) {
 }
 
 function prepareComponent({ getStory, context, channel, knobStore }) {
+  const WrapStory = window.customElements.get('wrap-story');
   return new WrapStory(getStory(context), channel, context, getStory, knobStore);
 }
 

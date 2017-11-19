@@ -71,7 +71,7 @@ export default function() {
         },
         {
           test: /\.html$/,
-          use: [require.resolve('babel-loader'), require.resolve('polymer-webpack-loader')],
+          use: [require.resolve('polymer-webpack-loader')],
         },
       ],
     },
