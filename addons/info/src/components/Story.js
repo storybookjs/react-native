@@ -108,6 +108,7 @@ export default class Story extends React.Component {
       open: false,
       stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
     };
+
     this.marksy = marksy(this.props.marksyConf);
   }
 
@@ -231,6 +232,7 @@ export default class Story extends React.Component {
       padding = matches[0].length;
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
+
     return <div style={this.state.stylesheet.infoContent}>{this.marksy(source).tree}</div>;
   }
 

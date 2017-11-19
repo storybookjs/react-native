@@ -4,10 +4,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AddonInfo, { withInfo, setDefaults } from './';
 
-/* eslint-disable */
-const TestComponent = ({ func, obj, array, number, string, bool, empty }) =>
+const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
   <div>
-    <h1>{func}</h1>
+    <h1>{func.toString()}</h1>
     <h2>{obj.toString()}</h2>
     <h3>{array}</h3>
     <h4>{number}</h4>
@@ -20,8 +19,8 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) =>
       <li>1</li>
       <li>2</li>
     </ui>
-  </div>;
-/* eslint-enable */
+  </div>
+);
 
 const testContext = { kind: 'addon_info', story: 'jest_test' };
 const testOptions = { propTables: false };
@@ -43,11 +42,13 @@ describe('addon Info', () => {
   const api = {
     add: (name, fn) => fn(testContext),
   };
+
   it('should render <Info /> and markdown', () => {
     const Info = withInfo(
-      '# Test story \n## with markdown info \ncontaing **bold**, *cursive* text and `code`'
+      '# Test story \n## with markdown info \ncontaing **bold**, *cursive* text, `code` and [a link](https://github.com)'
     )(story);
-    ReactDOM.render(<Info />, document.createElement('div'));
+
+    const ex = ReactDOM.render(<Info />, document.createElement('div'));
   });
   it('should render with text options', () => {
     const Info = withInfo({ text: 'some text here' })(story);

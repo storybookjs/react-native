@@ -60,6 +60,7 @@ function addInfo(storyFn, context, infoOptions) {
     maxPropsIntoLine: options.maxPropsIntoLine,
     maxPropStringLength: options.maxPropStringLength,
   };
+
   return <Story {...props}>{storyFn(context)}</Story>;
 }
 
