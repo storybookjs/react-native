@@ -2,7 +2,15 @@
 
 <dom-module id="playground-button">
   <template>
-    <button on-click="handleTap">[[title]] [[counter]]</button>
+    <style>
+      .square {
+        border: 1px solid black;
+      }
+    </style>
+    <button on-click="handleTap"
+            class$="[[computedClass]]">
+      [[title]] [[counter]]
+    </button>
   </template>
   <script>
     class PlaygroundButton extends Polymer.Element {
@@ -16,12 +24,24 @@
           counter: {
             type: Number,
             value: 0
+          },
+          isSquare: {
+            type: Boolean,
+            value: false
+          },
+          computedClass: {
+            type: String,
+            computed: '_computeClass(isSquare)'
           }
         };
       }
 
       handleTap() {
         this.counter += 1;
+      }
+
+      _computeClass(isSquare) {
+        return isSquare && 'square';
       }
     }
 
