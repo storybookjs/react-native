@@ -2,9 +2,9 @@
 
 Brings Jest results in storybook.
 
-[![Storybook Jest Addon Demo](@storybook/addon-jest.gif)](https://@storybook/addon-jest-example.herokuapp.com/)
+[![Storybook Jest Addon Demo](@storybook/addon-jest.gif)](https://storybook-addon-jest-example.herokuapp.com/)
 
-> Checkout the above [Live Storybook](https://@storybook/addon-jest-example.herokuapp.com/).
+> Checkout the above [Live Storybook](https://storybook-addon-jest-example.herokuapp.com/).
 
 ## Getting started
 
