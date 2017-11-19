@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-backgrounds",
-  "version": "3.2.15",
+  "version": "3.2.16",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",

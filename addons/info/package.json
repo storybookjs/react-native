@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.2.15",
+  "version": "3.2.16",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -14,8 +14,8 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.15",
-    "@storybook/components": "^3.2.15",
+    "@storybook/addons": "^3.2.16",
+    "@storybook/components": "^3.2.16",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "marksy": "^2.0.0",
@@ -23,12 +23,8 @@
     "react-addons-create-fragment": "^15.5.3",
     "util-deprecate": "^1.0.2"
   },
-  "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
-    "react-test-renderer": "^16.1.0"
-  },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   }
 }

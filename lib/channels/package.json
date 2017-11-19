@@ -1,13 +1,10 @@
 {
   "name": "@storybook/channels",
-  "version": "3.2.15",
+  "version": "3.2.16",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }
