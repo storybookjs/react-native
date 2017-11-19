@@ -34,31 +34,30 @@ Add it the result file to `.gitignore`:
 .jest-test-results.json
 ```
 
-**Known issue**: if you use a deploy script using for example `gh-pages`, be sure to not put
-the `test` script that write the result in part of the script process (in `predeploy` for example).
-Instead use a different script:
+## Generating the test results
 
+You should run jest before you start storybook and have the json file generated prior.
+During development you will likely start jest in watch-mode 
+and so the json file will be re-generated every time code or tests change.
+
+```sh
+npm run test:generate-output -- --watch
+```
+
+This change will then be HMR (hot module reloaded) using webpack and displayed by this addon.
+
+If you want to pre-run jest automaticly during development or a static build, 
+you may need to consider that if your tests fail, the script receives a non-0 exit code and will exit.
+You could create a `prebuild:storybook` npm script, which will never fail by appending `|| true`:
 ```json
 "scripts": {
-  "test:output": "jest --json --outputFile=.jest-test-results.json",
+  "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
   "test": "jest",
-  "prebuild:storybook": "npm run test",
+  "prebuild:storybook": "npm run test:generate-output",
   "build:storybook": "build-storybook -c .storybook -o build/",
   "predeploy": "npm run build:storybook",
   "deploy": "gh-pages -d build/",
 }
-```
-
-Then in dev use:
-
-```sh
-npm run test:output -- --watch
-```
-
-When deploying:
-
-```sh
-npm run deploy
 ```
 
 ### Register
@@ -112,8 +111,6 @@ The panel comes with a basic design. If you want to make it look a bit nicer, yo
 import '@storybook/addon-jest/register';
 import '@storybook/addon-jest/styles';
 ```
-
-If you already use `storybook-readme` addon, you do not need to import it.
 
 ## TODO
 
