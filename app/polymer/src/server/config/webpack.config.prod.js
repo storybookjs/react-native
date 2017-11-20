@@ -75,7 +75,7 @@ export default function() {
           use: [
             {
               loader: require.resolve('babel-loader'),
-              options: { query: babelLoaderConfig },
+              query: babelLoaderConfig,
             },
             {
               loader: require.resolve('polymer-webpack-loader'),
