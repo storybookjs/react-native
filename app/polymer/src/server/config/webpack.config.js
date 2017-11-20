@@ -72,7 +72,10 @@ export default function() {
         {
           test: /\.html$/,
           use: [
-            { loader: require.resolve('babel-loader') },
+            {
+              loader: require.resolve('babel-loader'),
+              options: { presets: ['env', 'stage-0', 'react'] },
+            },
             {
               loader: require.resolve('polymer-webpack-loader'),
               options: { processStyleLinks: true },
