@@ -71,7 +71,16 @@ export default function() {
         },
         {
           test: /\.html$/,
-          use: [require.resolve('polymer-webpack-loader')],
+          exclude: /node_modules\/(?!(polymer-redux|polymer-webpack-loader)\/).*/,
+          use: [
+            { loader: require.resolve('babel-loader') },
+            { loader: 'polymer-webpack-loader', options: { processStyleLinks: true } },
+          ],
+        },
+        {
+          test: /\.js/,
+          use: [require.resolve('babel-loader')],
+          exclude: /node_modules\/(?!(polymer-redux|polymer-webpack-loader)\/).*/,
         },
       ],
     },
