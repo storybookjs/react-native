@@ -24,19 +24,21 @@ When running **Jest**, be sure to save the results in a json file:
 
 ```js
 "scripts": {
-  "test": "jest --json --outputFile=.jest-test-results.json"
+  "test:generate-output": "jest --json --outputFile=jest-test-results.json"
 }
 ```
 
-Add it the result file to `.gitignore`:
-
+You may want to add it the result file to `.gitignore`, since it's a generated file:
 ```
-.jest-test-results.json
+jest-test-results.json
 ```
+But much like lockfiles and snapshots checking-in generated files can have certain advantages as well. It's up to you.
+We recommend to **do** check in the test results file so starting storybook from an clean git clone doesn't require running all tests first, 
+but this can mean you'll experience merge conflicts on this file in the future. (*re-generating this file is super easy though, just like lockfiles and snapshots*)
 
 ## Generating the test results
 
-You should run jest before you start storybook and have the json file generated prior.
+You need to make sure the generated test-restuls file exists before you start storybook.
 During development you will likely start jest in watch-mode 
 and so the json file will be re-generated every time code or tests change.
 
@@ -79,7 +81,10 @@ import jestTestResults from '../.jest-test-results.json';
 import withTests from '@storybook/addon-jest';
 
 storiesOf('MyComponent', module)
-  .addDecorator(withTests(jestTestResults, { filesExt: '.test.js' })('MyComponent', 'MyOtherComponent'));
+  .addDecorator(withTests(jestTestResults, { filesExt: '.test.js' })('MyComponent', 'MyOtherComponent'))
+  .add('This story shows test results from MyComponent.test.js and MyOtherComponent.test.js', () => (
+    <div>Jest results in storybook</div>
+  ));
 ```
 
 Or in order to avoid importing `.jest-test-results.json` in each story, you can create a simple file `withTests.js`:
@@ -100,16 +105,10 @@ Then in your story:
 import withTests from '.withTests';
 
 storiesOf('MyComponent', module)
-  .addDecorator(withTests('MyComponent', 'MyOtherComponent'));
-```
-
-### Styling
-
-The panel comes with a basic design. If you want to make it look a bit nicer, you add github markdown style by importing it in `.storybook/addons.js`
-
-```js
-import '@storybook/addon-jest/register';
-import '@storybook/addon-jest/styles';
+  .addDecorator(withTests('MyComponent', 'MyOtherComponent'))
+  .add('This story shows test results from MyComponent.test.js and MyOtherComponent.test.js', () => (
+    <div>Jest results in storybook</div>
+  ));
 ```
 
 ## TODO
