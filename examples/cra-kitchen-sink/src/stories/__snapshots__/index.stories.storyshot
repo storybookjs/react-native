@@ -184,7 +184,7 @@ exports[`Storyshots Button addons composition 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -195,7 +195,7 @@ exports[`Storyshots Button addons composition 1`] = `
             }
           >
             see Notes panel for composition info
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -596,7 +596,7 @@ exports[`Storyshots Button with new info 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -620,7 +620,7 @@ exports[`Storyshots Button with new info 1`] = `
               info addon
             </a>
              with its new painless API.
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -1260,7 +1260,7 @@ exports[`Storyshots Button with some info 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -1284,7 +1284,7 @@ exports[`Storyshots Button with some info 1`] = `
               info addon
             </a>
              with its painful API.
-          </p>
+          </div>
         </div>
         <div>
           <h1
