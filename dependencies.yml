@@ -29,7 +29,7 @@ collectors:
     bootstrap_command: yarn
   actors:
   # pull requests for updates to our major version
-  - type: js-lerna:0.9.0-beta
+  - type: js-lerna
     versions: "L.Y.Y"
     settings:
       batch_mode: true
@@ -54,6 +54,7 @@ collectors:
   - type: js-npm
     versions: "L.Y.Y"
     settings:
+      batch_mode: true
       github_labels:
       - dependencies:update
       github_assignees:

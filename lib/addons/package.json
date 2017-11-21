@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addons",
-  "version": "3.3.0-alpha.2",
+  "version": "3.3.0-alpha.3",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
@@ -17,8 +17,5 @@
   },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }

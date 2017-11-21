@@ -63,12 +63,12 @@ exports[`Storyshots Button addons composition 1`] = `
       "
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -78,14 +78,13 @@ exports[`Storyshots Button addons composition 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -102,12 +101,12 @@ exports[`Storyshots Button addons composition 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -117,14 +116,13 @@ exports[`Storyshots Button addons composition 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -186,7 +184,7 @@ exports[`Storyshots Button addons composition 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -197,7 +195,7 @@ exports[`Storyshots Button addons composition 1`] = `
             }
           >
             see Notes panel for composition info
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -430,6 +428,15 @@ exports[`Storyshots Button addons composition 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button delete 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Delete
+</button>
+`;
+
 exports[`Storyshots Button with new info 1`] = `
 <div>
   <div
@@ -468,12 +475,12 @@ exports[`Storyshots Button with new info 1`] = `
       
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -483,14 +490,13 @@ exports[`Storyshots Button with new info 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -507,12 +513,12 @@ exports[`Storyshots Button with new info 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -522,14 +528,13 @@ exports[`Storyshots Button with new info 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -591,7 +596,7 @@ exports[`Storyshots Button with new info 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -615,7 +620,7 @@ exports[`Storyshots Button with new info 1`] = `
               info addon
             </a>
              with its new painless API.
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -1134,12 +1139,12 @@ exports[`Storyshots Button with some info 1`] = `
       
     </div>
   </div>
-  <a
+  <button
     onClick={[Function]}
-    role="button"
     style={
       Object {
         "background": "#28c",
+        "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
         "cursor": "pointer",
@@ -1149,14 +1154,13 @@ exports[`Storyshots Button with some info 1`] = `
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
-        "textDecoration": "none",
         "top": 0,
       }
     }
-    tabIndex="0"
+    type="button"
   >
     Show Info
-  </a>
+  </button>
   <div
     style={
       Object {
@@ -1173,12 +1177,12 @@ exports[`Storyshots Button with some info 1`] = `
       }
     }
   >
-    <a
+    <button
       onClick={[Function]}
-      role="button"
       style={
         Object {
           "background": "#28c",
+          "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
           "cursor": "pointer",
@@ -1188,14 +1192,13 @@ exports[`Storyshots Button with some info 1`] = `
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
-          "textDecoration": "none",
           "top": 0,
         }
       }
-      tabIndex="0"
+      type="button"
     >
       ×
-    </a>
+    </button>
     <div
       style={undefined}
     >
@@ -1257,7 +1260,7 @@ exports[`Storyshots Button with some info 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -1281,7 +1284,7 @@ exports[`Storyshots Button with some info 1`] = `
               info addon
             </a>
              with its painful API.
-          </p>
+          </div>
         </div>
         <div>
           <h1

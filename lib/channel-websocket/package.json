@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-websocket",
-  "version": "3.3.0-alpha.2",
+  "version": "3.3.0-alpha.3",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
@@ -8,10 +8,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "^3.3.0-alpha.2",
+    "@storybook/channels": "^3.3.0-alpha.3",
     "global": "^4.3.2"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }

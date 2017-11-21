@@ -261,6 +261,16 @@ const value = date(label, defaultValue);
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
 
+The `date` knob returns the selected date as stringified Unix timestamp (e.g. `"1510913096516"`).
+If your component needs the date in a different form you can wrap the `date` function:
+
+```
+function myDateKnob(name, defaultValue) {
+  const stringTimestamp = date(name, defaultValue)
+  return new Date(stringTimestamp)
+}
+```
+
 ### button
 
 Allows you to include a button and associated handler.

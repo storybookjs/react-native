@@ -13,42 +13,51 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: "Install dependencies"
           command: |
             yarn install
       - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core --docs --reactnative --reactnativeapp
-      - run:
-          name: "Dirty checking"
+          name: "Dirty check"
           command: |
             yarn repo-dirty-check
+      - run:
+          name: "Bootstrap"
+          command: |
+            yarn bootstrap --core
       - save_cache:
-          key: dependencies-{{ checksum "yarn.lock" }}
+          name: "Cache core dependencies"
+          key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - docs/node_modules
-            - examples/react-native-vanilla/node_modules
-            - examples/crna-kitchen-sink/node_modules
+            - example/cra-kitchen-sink/node_modules
+            - example/vue-kitchen-sink/node_modules
+      - save_cache:
+          name: "Cache core dist"
+          key: core-dist-{{ .Revision }}
+          paths:
+            - addons
+            - app
+            - lib
   example-kitchen-sinks:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
+          name: "Link packages"
           command: |
             yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -61,15 +70,15 @@ jobs:
             yarn build-storybook
 
       - run:
-          name: "Run vue kitchen-sink"
-          command: |
-            cd examples/vue-kitchen-sink
-            yarn storybook
-          background: true
-      - run:
           name: "Run react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: "Run vue kitchen-sink"
+          command: |
+            cd examples/vue-kitchen-sink
             yarn storybook
           background: true
       - run:
@@ -81,67 +90,92 @@ jobs:
       - store_artifacts:
           path: integration/__image_snapshots__
           destination: integration_image_snapshots
-  example-react-native:
+  react-native:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
+          name: "Bootstrap"
           command: |
-            yarn install
+            yarn bootstrap --reactnative --reactnativeapp
       - run:
-          name: "Bootstrapping packages"
-          command: |
-            yarn bootstrap --core --reactnative --reactnativeapp
-      - run:
-          name: "Running React-Native example"
+          name: "Run React-Native example"
           command: |
             cd examples/react-native-vanilla
             yarn storybook --smoke-test
       - run:
-          name: "Running React-Native-App example"
+          name: "Run React-Native-App example"
           command: |
             cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
+      - run:
+          name: "Run React-Native unit tests"
+          command: |
+            yarn test --coverage --runInBand --reactnative
+            yarn coverage
   docs:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
-          name: "Install dependencies"
+          name: "Install core dependencies"
           command: |
             yarn install
       - run:
-          name: "Bootstrapping"
+          name: "Install dependencies"
           command: |
             yarn bootstrap --docs
       - run:
-          name: "Running docs"
+          name: "Dirty check"
+          command: |
+            yarn repo-dirty-check
+      - run:
+          name: "Run docs"
           command: |
             yarn docs:build
+      - save_cache:
+          name: "Cache dependencies"
+          key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
+          paths:
+            - docs/node_modules
   lint:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
+          name: "Link packages"
           command: |
             yarn install
       - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core --docs
-      - run:
-          name: "Linting"
+          name: "Lint"
           command: |
             yarn lint
   unit-test:
@@ -149,20 +183,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
+          name: "Link packages"
           command: |
             yarn install
       - run:
-          name: "Bootstrapping"
+          name: "Run unit tests"
           command: |
-            yarn bootstrap --core --reactnative
-      - run:
-          name: "Unit testing"
-          command: |
-            yarn test --coverage --runInBand --core --reactnative
+            yarn test --coverage --runInBand --core
             yarn coverage
   cli:
     working_directory: /tmp/storybook
@@ -173,19 +208,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core
-      - run:
-          name: "Testing CLI"
+          name: "Test CLI"
           command: |
             yarn test --cli
   cli-latest-cra:
@@ -197,19 +228,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core
-      - run:
-          name: "Testing CLI with latest CR(N)A"
+          name: "Test CLI with latest CR(N)A"
           command: |
             yarn test-latest-cra
   deploy:
@@ -224,10 +251,22 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
-      - example-kitchen-sinks
-      - example-react-native
+      - example-kitchen-sinks:
+          requires:
+            - build
+      - react-native:
+          requires:
+            - build
       - docs
-      - lint
-      - unit-test
-      - cli
-      - cli-latest-cra
+      - lint:
+          requires:
+            - build
+      - unit-test:
+          requires:
+            - build
+      - cli:
+          requires:
+            - build
+      - cli-latest-cra:
+          requires:
+            - build
