@@ -97,6 +97,8 @@ Add following content to the `webpack.config.js` in your Storybook config direct
 > We plan to expose our default webpack-config as it's own package in the future.
 
 ```js
+const path = require('path');
+
 // load the default config generator.
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
