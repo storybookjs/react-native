@@ -10,7 +10,12 @@ export function P(props) {
     ...baseFonts,
     fontSize: '15px',
   };
-  return <p style={style}>{props.children}</p>;
+
+  // <P> is oftentimes used as a parent element of
+  // <a> and <pre> elements, which is why <div>
+  // is used as the outputted element when parsing
+  // marksy content rather than <p>.
+  return <div style={style}>{props.children}</div>;
 }
 
 P.defaultProps = defaultProps;
