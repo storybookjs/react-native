@@ -15,7 +15,9 @@ import {
 import { document } from 'global';
 import '../polymer-playground-app.html';
 import '../playground-button.html';
+import '../separated-button/separated-button.html';
 import './storybook-welcome-to-polymer.html';
+import { StringTemplateButton } from '../string-template-button';
 
 storiesOf('Welcome', module).add(
   'Welcome',
@@ -132,3 +134,7 @@ storiesOf('Addon Knobs', module)
           </div>
         `;
   });
+
+storiesOf('Element definition types', module)
+  .add('separated js', () => '<separated-button title="Click me!"></separated-button>')
+  .add('string template', () => new StringTemplateButton());
