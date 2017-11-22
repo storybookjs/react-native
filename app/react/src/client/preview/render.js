@@ -3,12 +3,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
-import logger from 'npmlog';
 import isReactRenderable from './element_check';
 import ErrorDisplay from './error_display';
 
 // check whether we're running on node/browser
 const isBrowser = typeof window !== 'undefined';
+
+const logger = console;
 
 let rootEl = null;
 let previousKind = '';

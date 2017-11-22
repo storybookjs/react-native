@@ -1,5 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
-import logger from 'npmlog';
+
+const logger = console;
 
 export default class ClientApi {
   constructor({ channel, storyStore }) {
