@@ -1,3 +1,12 @@
+# 3.3.0-alpha.4
+
+2017-November-22
+
+#### Bug Fixes
+
+-   Fix HMR by saving the preview frame URL as the story changes [#2349](https://github.com/storybooks/storybook/pull/2349)
+-   Fix CLI babel transpilation [#2350](https://github.com/storybooks/storybook/pull/2350)
+
 # 3.3.0-alpha.3
 
 2017-November-07
