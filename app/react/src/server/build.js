@@ -4,15 +4,13 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
+import logger from 'npmlog';
 import packageJson from '../../package.json';
 import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import { parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-
-// avoid ESLint errors
-const logger = console;
 
 program
   .version(packageJson.version)

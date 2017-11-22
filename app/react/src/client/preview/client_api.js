@@ -1,4 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
+import logger from 'npmlog';
 
 export default class ClientApi {
   constructor({ channel, storyStore }) {
@@ -31,8 +32,7 @@ export default class ClientApi {
     }
 
     if (!m) {
-      // eslint-disable-next-line no-console
-      console.warn(
+      logger.warn(
         `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
       );
     }
