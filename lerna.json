@@ -4,10 +4,6 @@
   "useWorkspaces": true,
   "commands": {
     "publish": {
-      "ignore": [
-        "cra-kitchen-sink",
-        "vue-example"
-      ],
       "allowBranch": "master"
     }
   },
