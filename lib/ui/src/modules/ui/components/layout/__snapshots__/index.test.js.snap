@@ -220,6 +220,7 @@ exports[`manager.ui.components.layout.index with goFullScreen=true should render
         <div
           style={
             Object {
+              "WebkitOverflowScrolling": "touch",
               "backgroundColor": "#FFF",
               "border": 0,
               "height": "100%",
@@ -230,7 +231,6 @@ exports[`manager.ui.components.layout.index with goFullScreen=true should render
               "position": "fixed",
               "right": "0px",
               "top": "0px",
-              "webkitOverflowScrolling": "touch",
               "width": "100%",
               "zIndex": 1,
             }
