@@ -5,16 +5,16 @@ Array [
   <span>
      
     foo 
-</span>,
+  </span>,
   <span>
     <br />
      
      bar 
-</span>,
+  </span>,
   <span>
     <br />
      
      baz
-</span>,
+  </span>,
 ]
 `;

@@ -19,7 +19,7 @@ describe('Array', () => {
   it('should change to an empty array when emptied', () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <Array
+      <ArrayType
         onChange={onChange}
         knob={{ name: 'passions', value: ['Fishing', 'Skiing'], separator: ',' }}
       />
