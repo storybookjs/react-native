@@ -42,7 +42,7 @@
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "^2.3.0",
-    "commander": "^2.11.0",
+    "commander": "^2.12.1",
     "common-tags": "^1.4.0",
     "configstore": "^3.1.1",
     "core-js": "^2.5.1",
@@ -72,7 +72,7 @@
     "util-deprecate": "^1.0.2",
     "uuid": "^3.1.0",
     "webpack": "^3.8.1",
-    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-middleware": "^1.12.1",
     "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
