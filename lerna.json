@@ -4,12 +4,6 @@
   "useWorkspaces": true,
   "commands": {
     "publish": {
-      "ignore": [
-        "cra-kitchen-sink",
-        "angular-cli",
-        "vue-example",
-        "lib/cli/test/run/*"
-      ],
       "allowBranch": "release/3.3"
     }
   },
