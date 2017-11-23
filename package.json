@@ -10,8 +10,10 @@
     "addons/*",
     "app/*",
     "lib/*",
+    "examples/angular-cli",
     "examples/cra-kitchen-sink",
-    "examples/vue-kitchen-sink"
+    "examples/vue-kitchen-sink",
+    "lib/cli/test/run/*"
   ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
@@ -34,7 +36,8 @@
     "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "node ./scripts/test.js",
+    "test": "./scripts/test.js",
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra",
     "repo-dirty-check": "node ./scripts/repo-dirty-check"
   },
   "devDependencies": {

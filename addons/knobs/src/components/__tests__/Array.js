@@ -16,18 +16,16 @@ describe('Array', () => {
     expect(onChange).toHaveBeenCalledWith(['Fhishing', 'Skiing', 'Dancing']);
   });
 
-  it('deserializes an Array to an Array', () => {
-    const array = ['a', 'b', 'c'];
-    const deserialized = ArrayType.deserialize(array);
+  it('should change to an empty array when emptied', () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Array
+        onChange={onChange}
+        knob={{ name: 'passions', value: ['Fishing', 'Skiing'], separator: ',' }}
+      />
+    );
 
-    expect(deserialized).toEqual(['a', 'b', 'c']);
-  });
-
-  it('deserializes an Object to an Array', () => {
-    const object = { 1: 'one', 0: 'zero', 2: 'two' };
-
-    const deserialized = ArrayType.deserialize(object);
-
-    expect(deserialized).toEqual(['zero', 'one', 'two']);
+    wrapper.simulate('change', { target: { value: '' } });
+    expect(onChange).toHaveBeenCalledWith([]);
   });
 });
