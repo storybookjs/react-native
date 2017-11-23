@@ -7,7 +7,8 @@
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json"
   },
   "dependencies": {
     "eventemitter3": "^2.0.3",
@@ -27,6 +28,7 @@
     "@storybook/addon-centered": "^3.2.16",
     "@storybook/addon-events": "^3.2.16",
     "@storybook/addon-info": "^3.2.16",
+    "@storybook/addon-jest": "^3.2.16",
     "@storybook/addon-knobs": "^3.2.16",
     "@storybook/addon-links": "^3.2.16",
     "@storybook/addon-notes": "^3.2.16",
@@ -35,7 +37,31 @@
     "@storybook/addons": "^3.2.16",
     "@storybook/components": "^3.2.16",
     "@storybook/react": "^3.2.16",
+    "babel-jest": "^21.2.0",
+    "jest": "^21.2.1",
     "react-scripts": "1.0.17"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "verbose": true,
+    "coverageDirectory": "coverage/",
+    "notify": true,
+    "transform": {
+      ".*": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.s?css$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "src/*.js",
+      "!src/.*",
+      "!src/__test__/*",
+      "!src/**/__test__/*",
+      "!src/**/index.js",
+      "!src/**/story.js"
+    ]
+  }
 }
