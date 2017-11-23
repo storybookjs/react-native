@@ -5135,6 +5135,14 @@ exports[`Storyshots Addon a11y Label 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addon jest withTests 1`] = `
+<div>
+  <p>
+    Hello
+  </p>
+</div>
+`;
+
 exports[`Storyshots App full app 1`] = `
 <div
   className="App"
