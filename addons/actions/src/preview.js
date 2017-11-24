@@ -13,9 +13,9 @@ function _format(arg) {
 }
 
 export function action(name) {
-  // eslint-disable-next-line no-unused-vars, func-names
-  const handler = function(..._args) {
-    const args = Array.from(_args).map(_format);
+  // eslint-disable-next-line no-shadow
+  const handler = function action(..._args) {
+    const args = _args.map(_format);
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {
@@ -24,8 +24,12 @@ export function action(name) {
     });
   };
 
-  const fnName = name && typeof name === 'string' ? name.replace(/\W+/g, '_') : 'action';
-  Object.defineProperty(handler, 'name', { value: fnName });
+  // This condition is true in modern browsers that implement Function#name properly
+  const canConfigureName = Object.getOwnPropertyDescriptor(handler, 'name').configurable;
+
+  if (canConfigureName && name && typeof name === 'string') {
+    Object.defineProperty(handler, 'name', { value: name });
+  }
   return handler;
 }
 
