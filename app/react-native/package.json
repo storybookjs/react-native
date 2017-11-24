@@ -71,7 +71,7 @@
     "ws": "^3.3.2"
   },
   "devDependencies": {
-    "react-native": "^0.50.3"
+    "react-native": "^0.50.4"
   },
   "peerDependencies": {
     "react": "*",
