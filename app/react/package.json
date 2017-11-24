@@ -60,7 +60,7 @@
     "lodash.flattendeep": "^4.4.0",
     "lodash.pick": "^4.4.0",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "postcss-loader": "^2.0.8",
+    "postcss-loader": "^2.0.9",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "redux": "^3.7.2",
