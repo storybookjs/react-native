@@ -215,7 +215,13 @@ export default class Story extends React.Component {
 
     if (React.isValidElement(this.props.info)) {
       return (
-        <div style={this.props.showInline ? this.state.stylesheet.jsxInfoContent : this.state.stylesheet.infoContent}>
+        <div
+          style={
+            this.props.showInline
+              ? this.state.stylesheet.jsxInfoContent
+              : this.state.stylesheet.infoContent
+          }
+        >
           {this.props.info}
         </div>
       );
