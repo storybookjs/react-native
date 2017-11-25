@@ -9,15 +9,17 @@
 
 * * *
 
-Any logging that is done through storybook should be done through this package.
+Any client-side logging that is done through storybook should be done through this package.
 
 Examples:
 
 ```js
 
-import { nodeLogger, browserLogger } from '@storybook/logger'
+import { logger } from '@storybook/client-logger'
 
-nodeLogger.info('foo')
+logger.info('Info message')
+logger.warn('Warning message')
+logger.error('Error message')
 
 ```
 

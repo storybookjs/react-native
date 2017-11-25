@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import JSON5 from 'json5';
-import logger from 'npmlog';
+import { logger } from '@storybook/node-logger';
 import defaultConfig from './config/babel';
 
 function removeReactHmre(presets) {

@@ -1,5 +1,5 @@
 {
-  "name": "@storybook/logger",
+  "name": "@storybook/node-logger",
   "version": "3.3.0-alpha.4",
   "description": "",
   "license": "MIT",
