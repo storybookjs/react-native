@@ -152,11 +152,11 @@ export default class Story extends React.Component {
 
   _renderOverlay() {
     const buttonStyle = {
-      ...stylesheet.button.base,
-      ...stylesheet.button.topRight,
+      ...this.state.stylesheet.button.base,
+      ...this.state.stylesheet.button.topRight,
     };
 
-    const infoStyle = Object.assign({}, stylesheet.info);
+    const infoStyle = Object.assign({}, this.state.stylesheet.info);
     if (!this.state.open) {
       infoStyle.display = 'none';
     }
@@ -215,7 +215,13 @@ export default class Story extends React.Component {
 
     if (React.isValidElement(this.props.info)) {
       return (
-        <div style={this.props.showInline ? stylesheet.jsxInfoContent : stylesheet.infoContent}>
+        <div
+          style={
+            this.props.showInline
+              ? this.state.stylesheet.jsxInfoContent
+              : this.state.stylesheet.infoContent
+          }
+        >
           {this.props.info}
         </div>
       );
