@@ -78,7 +78,7 @@ In your `story.js`
 
 ```js
 import jestTestResults from '../.jest-test-results.json';
-import withTests from '@storybook/addon-jest';
+import { withTests } from '@storybook/addon-jest';
 
 storiesOf('MyComponent', module)
   .addDecorator(withTests(jestTestResults, { filesExt: '.test.js' })('MyComponent', 'MyOtherComponent'))
@@ -91,7 +91,7 @@ Or in order to avoid importing `.jest-test-results.json` in each story, you can 
 
 ```js
 import jestTestResults from '../.jest-test-results.json';
-import withTests from '@storybook/addon-jest';
+import { withTests } from '@storybook/addon-jest';
 
 export default withTests(jestTestResults, {
   filesExt: '.test.js',
