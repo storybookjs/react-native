@@ -56,7 +56,7 @@ storiesOf('Addon Knobs.withKnobs', module)
       cherry: 'Cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
-    const dollars = number('Dollars', 12.5);
+    const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
 
     const backgroundColor = color('background', '#ffff00');
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
@@ -111,7 +111,7 @@ storiesOf('Addon Knobs.withKnobsOptions', module)
       cherry: 'Cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
-    const dollars = number('Dollars', 12.5);
+    const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
 
     const backgroundColor = color('background', '#ffff00');
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
