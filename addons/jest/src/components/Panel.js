@@ -98,7 +98,7 @@ const Content = glamorous(({ tests, className }) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
-        return <NoTests>This story has tests configures, but no file not found</NoTests>;
+        return <NoTests>This story has tests configured, but no file was found</NoTests>;
       }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
