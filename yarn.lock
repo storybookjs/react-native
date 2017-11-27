@@ -202,21 +202,6 @@
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@hypnosphi/fuse.js/-/fuse.js-3.0.9.tgz#ea99f6121b4a8f065b4c71f85595db2714498807"
 
-"@kadira/storybook-database-cloud@*":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@kadira/storybook-database-cloud/-/storybook-database-cloud-2.3.2.tgz#28864d7d0a1e17e7aa864ef4d87f69a5c52e7a35"
-  dependencies:
-    graphqlify "^1.0.0"
-    uuid "^2.0.3"
-    whatwg-fetch "^1.0.0"
-
-"@kadira/storybook-deployer@*":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@kadira/storybook-deployer/-/storybook-deployer-1.2.0.tgz#1708f5cb37fa08ab4173b1bd99df6f4717dfae12"
-  dependencies:
-    git-url-parse "^6.0.2"
-    shelljs "^0.7.0"
-
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
@@ -229,47 +214,6 @@
     magic-string "^0.22.3"
     source-map "^0.5.6"
 
-"@storybook/addon-actions@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.2.16.tgz#dc53d48dc8035b426a02628687c6cb0601b933b9"
-  dependencies:
-    "@storybook/addons" "^3.2.16"
-    deep-equal "^1.0.1"
-    json-stringify-safe "^5.0.1"
-    prop-types "^15.6.0"
-    react-inspector "^2.2.1"
-    uuid "^3.1.0"
-
-"@storybook/addon-links@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.16.tgz#58b807f7fbcdadb405c6379e69a22c48025c9558"
-  dependencies:
-    "@storybook/addons" "^3.2.16"
-
-"@storybook/addons@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.16.tgz#cbad5d9e8222aba3d5a5d06af98a095322f62cb5"
-
-"@storybook/channel-postmessage@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.2.16.tgz#036b2c1c412e2806badc1c1f7bcbb19b069fedde"
-  dependencies:
-    "@storybook/channels" "^3.2.16"
-    global "^4.3.2"
-    json-stringify-safe "^5.0.1"
-
-"@storybook/channels@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.2.16.tgz#07d8686328c0bb885aa8b69254fcf0745d22a620"
-
-"@storybook/components@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.2.16.tgz#381c4ce414f139fb03b059f1f0265c6246457e7b"
-  dependencies:
-    glamor "^2.20.40"
-    glamorous "^4.11.0"
-    prop-types "^15.6.0"
-
 "@storybook/mantra-core@^1.7.0":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@storybook/mantra-core/-/mantra-core-1.7.2.tgz#e10c7faca29769e97131e0e0308ef7cfb655b70c"
@@ -277,15 +221,6 @@
     "@storybook/react-komposer" "^2.0.1"
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
-
-"@storybook/react-fuzzy@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/react-fuzzy/-/react-fuzzy-0.4.3.tgz#36f7536ba97bf08b03cb57f47c58ae2cca330aec"
-  dependencies:
-    babel-runtime "^6.23.0"
-    classnames "^2.2.5"
-    fuse.js "^3.0.1"
-    prop-types "^15.5.9"
 
 "@storybook/react-komposer@^2.0.0", "@storybook/react-komposer@^2.0.1":
   version "2.0.3"
@@ -309,90 +244,6 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-stubber/-/react-stubber-1.0.1.tgz#8c312c2658b9eeafce470e1c39e4193f0b5bf9b1"
   dependencies:
     babel-runtime "^6.5.0"
-
-"@storybook/react@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.2.16.tgz#9a0eaecbc7ba6c97e89ce1d17dee7a2af68260c9"
-  dependencies:
-    "@storybook/addon-actions" "^3.2.16"
-    "@storybook/addon-links" "^3.2.16"
-    "@storybook/addons" "^3.2.16"
-    "@storybook/channel-postmessage" "^3.2.16"
-    "@storybook/ui" "^3.2.16"
-    airbnb-js-shims "^1.3.0"
-    autoprefixer "^7.1.6"
-    babel-core "^6.26.0"
-    babel-loader "^7.1.2"
-    babel-plugin-react-docgen "^1.8.0"
-    babel-plugin-transform-regenerator "^6.26.0"
-    babel-plugin-transform-runtime "^6.23.0"
-    babel-preset-env "^1.6.1"
-    babel-preset-minify "^0.2.0"
-    babel-preset-react "^6.24.1"
-    babel-preset-react-app "^3.1.0"
-    babel-preset-stage-0 "^6.24.1"
-    babel-runtime "^6.26.0"
-    case-sensitive-paths-webpack-plugin "^2.1.1"
-    chalk "^2.3.0"
-    commander "^2.11.0"
-    common-tags "^1.4.0"
-    configstore "^3.1.1"
-    core-js "^2.5.1"
-    css-loader "^0.28.7"
-    express "^4.16.2"
-    file-loader "^1.1.5"
-    find-cache-dir "^1.0.0"
-    glamor "^2.20.40"
-    glamorous "^4.11.0"
-    global "^4.3.2"
-    json-loader "^0.5.7"
-    json-stringify-safe "^5.0.1"
-    json5 "^0.5.1"
-    lodash.flattendeep "^4.4.0"
-    lodash.pick "^4.4.0"
-    postcss-flexbugs-fixes "^3.2.0"
-    postcss-loader "^2.0.8"
-    prop-types "^15.6.0"
-    qs "^6.5.1"
-    redux "^3.7.2"
-    request "^2.83.0"
-    serve-favicon "^2.4.5"
-    shelljs "^0.7.8"
-    style-loader "^0.18.2"
-    url-loader "^0.6.2"
-    util-deprecate "^1.0.2"
-    uuid "^3.1.0"
-    webpack "^3.8.1"
-    webpack-dev-middleware "^1.12.0"
-    webpack-hot-middleware "^2.20.0"
-
-"@storybook/ui@^3.2.16":
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.2.16.tgz#b7df979c2f5770e54cf84300cc09b7072c2fef16"
-  dependencies:
-    "@hypnosphi/fuse.js" "^3.0.9"
-    "@storybook/components" "^3.2.16"
-    "@storybook/mantra-core" "^1.7.0"
-    "@storybook/react-fuzzy" "^0.4.3"
-    "@storybook/react-komposer" "^2.0.0"
-    babel-runtime "^6.26.0"
-    deep-equal "^1.0.1"
-    events "^1.1.1"
-    global "^4.3.2"
-    json-stringify-safe "^5.0.1"
-    keycode "^2.1.8"
-    lodash.debounce "^4.0.8"
-    lodash.pick "^4.4.0"
-    lodash.sortby "^4.7.0"
-    podda "^1.2.2"
-    prop-types "^15.6.0"
-    qs "^6.5.1"
-    react-icons "^2.2.7"
-    react-inspector "^2.2.1"
-    react-modal "^3.1.2"
-    react-split-pane "^0.1.71"
-    react-treebeard "^2.0.3"
-    redux "^3.7.2"
 
 "@types/inline-style-prefixer@^3.0.0":
   version "3.0.1"
@@ -5813,19 +5664,6 @@ git-semver-tags@^1.2.3:
     meow "^3.3.0"
     semver "^5.0.1"
 
-git-up@^2.0.0:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/git-up/-/git-up-2.0.9.tgz#219bfd27c82daeead8495beb386dc18eae63636d"
-  dependencies:
-    is-ssh "^1.3.0"
-    parse-url "^1.3.0"
-
-git-url-parse@^6.0.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-6.2.2.tgz#be49024e14b8487553436b4572b8b439532fa871"
-  dependencies:
-    git-up "^2.0.0"
-
 gitconfiglocal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gitconfiglocal/-/gitconfiglocal-1.0.0.tgz#41d045f3851a5ea88f03f24ca1c6178114464b9b"
@@ -6104,10 +5942,6 @@ graphql@^0.11.7:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
   dependencies:
     iterall "1.1.3"
-
-graphqlify@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/graphqlify/-/graphqlify-1.1.0.tgz#1d1d81e37b209fc09742fe48da3ac4763e20ddc7"
 
 grizzly@^2.0.0:
   version "2.1.5"
@@ -7080,12 +6914,6 @@ is-retry-allowed@^1.0.0:
 is-root@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-root/-/is-root-1.0.0.tgz#07b6c233bc394cd9d02ba15c966bd6660d6342d5"
-
-is-ssh@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/is-ssh/-/is-ssh-1.3.0.tgz#ebea1169a2614da392a63740366c3ce049d8dff6"
-  dependencies:
-    protocols "^1.1.0"
 
 is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
@@ -10005,18 +9833,11 @@ parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
 
-parse-url@^1.3.0:
-  version "1.3.11"
-  resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-1.3.11.tgz#57c15428ab8a892b1f43869645c711d0e144b554"
-  dependencies:
-    is-ssh "^1.3.0"
-    protocols "^1.4.0"
-
 parse5@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-1.5.1.tgz#9b7f3b0de32be78dc2401b17573ccaf0f6f59d94"
 
-parse5@^3.0.1, parse5@^3.0.2:
+parse5@^3.0.1:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.3.tgz#042f792ffdd36851551cf4e9e066b3874ab45b5c"
   dependencies:
@@ -10353,7 +10174,7 @@ postcss-loader@^1.3.3:
     postcss "^5.2.15"
     postcss-load-config "^1.2.0"
 
-postcss-loader@^2.0.8, postcss-loader@^2.0.9:
+postcss-loader@^2.0.9:
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.9.tgz#001fdf7bfeeb159405ee61d1bb8e59b528dbd309"
   dependencies:
@@ -10681,10 +10502,6 @@ proto-list@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
 
-protocols@^1.1.0, protocols@^1.4.0:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/protocols/-/protocols-1.4.6.tgz#f8bb263ea1b5fd7a7604d26b8be39bd77678bf8a"
-
 protoduck@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/protoduck/-/protoduck-4.0.0.tgz#fe4874d8c7913366cfd9ead12453a22cd3657f8e"
@@ -10925,10 +10742,6 @@ react-addons-create-fragment@^15.5.3:
     loose-envify "^1.3.1"
     object-assign "^4.1.0"
 
-react-attr-converter@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-attr-converter/-/react-attr-converter-0.3.1.tgz#4a2abf6d907b7ddae4d862dfec80e489ce41ad6e"
-
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-clone-referenced-element/-/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -11050,7 +10863,7 @@ react-modal@^2.2.4:
     exenv "^1.2.0"
     prop-types "^15.5.10"
 
-react-modal@^3.1.2, react-modal@^3.1.4:
+react-modal@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.4.tgz#eea7369ea4f05ab2897ccca2c676d7d81a5a88b0"
   dependencies:
@@ -11134,13 +10947,6 @@ react-proxy@^1.1.7:
   dependencies:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
-
-react-render-html@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/react-render-html/-/react-render-html-0.6.0.tgz#1af51d859ed75474435a1c65c293a48e12c36627"
-  dependencies:
-    parse5 "^3.0.2"
-    react-attr-converter "^0.3.1"
 
 react-scripts@1.0.17:
   version "1.0.17"
@@ -12463,7 +12269,7 @@ shelljs@0.3.x:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.3.0.tgz#3596e6307a781544f591f37da618360f31db57b1"
 
-shelljs@^0.7.0, shelljs@^0.7.5, shelljs@^0.7.8:
+shelljs@^0.7.5, shelljs@^0.7.8:
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
   dependencies:
@@ -13943,7 +13749,7 @@ uuid@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
-uuid@^2.0.1, uuid@^2.0.2, uuid@^2.0.3:
+uuid@^2.0.1, uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
@@ -14212,7 +14018,7 @@ webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.11.0:
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
 
-webpack-dev-middleware@^1.12.0, webpack-dev-middleware@^1.12.1:
+webpack-dev-middleware@^1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.12.1.tgz#338be3ca930973be1c2ce07d84d275e997e1a25a"
   dependencies:
