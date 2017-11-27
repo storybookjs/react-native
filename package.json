@@ -38,7 +38,8 @@
     "publish": "lerna publish",
     "test": "./scripts/test.js",
     "test-latest-cra": "npm --prefix lib/cli run test-latest-cra",
-    "repo-dirty-check": "node ./scripts/repo-dirty-check"
+    "repo-dirty-check": "node ./scripts/repo-dirty-check",
+    "storybook": "start-storybook -p 6006"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
