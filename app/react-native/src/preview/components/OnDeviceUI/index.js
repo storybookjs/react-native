@@ -146,7 +146,7 @@ export default class OnDeviceUI extends Component {
         <View style={previewContainerStyles}>
           <Animated.View style={headerStyles}>
             <TouchableWithoutFeedback
-              onPress={this.menuToggledHandler}
+              onPress={this.handleToggleMenu}
               testID="Storybook.OnDeviceUI.open"
               accessibilityLabel="Storybook.OnDeviceUI.open"
             >
@@ -164,9 +164,9 @@ export default class OnDeviceUI extends Component {
             </View>
           </View>
         </View>
-        <Animated.View style={menuStyles} onLayout={this.menuLayoutHandler}>
+        <Animated.View style={menuStyles}>
           <TouchableWithoutFeedback
-            onPress={this.menuToggledHandler}
+            onPress={this.handleToggleMenu}
             testID="Storybook.OnDeviceUI.close"
             accessibilityLabel="Storybook.OnDeviceUI.close"
           >

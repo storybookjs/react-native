@@ -32,9 +32,8 @@ exports[`Storyshots Welcome to Storybook 1`] = `
      
     <a
       className="css-ca0824"
+      href="/"
       onClick={[Function]}
-      role="button"
-      tabIndex="0"
     >
       stories
     </a>

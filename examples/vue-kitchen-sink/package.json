@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@storybook/addon-actions": "3.3.0-alpha.2",
-    "@storybook/addon-centered": "3.3.0-alpha.2",
-    "@storybook/addon-knobs": "3.3.0-alpha.2",
-    "@storybook/addon-links": "3.3.0-alpha.2",
-    "@storybook/addon-notes": "3.3.0-alpha.2",
-    "@storybook/addon-viewport": "3.3.0-alpha.2",
-    "@storybook/addons": "3.3.0-alpha.2",
-    "@storybook/vue": "3.3.0-alpha.2",
+    "@storybook/addon-actions": "^3.3.0-alpha.4",
+    "@storybook/addon-centered": "^3.3.0-alpha.4",
+    "@storybook/addon-knobs": "^3.3.0-alpha.4",
+    "@storybook/addon-links": "^3.3.0-alpha.4",
+    "@storybook/addon-notes": "^3.3.0-alpha.4",
+    "@storybook/addon-viewport": "^3.3.0-alpha.4",
+    "@storybook/addons": "^3.3.0-alpha.4",
+    "@storybook/vue": "^3.3.0-alpha.4",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
@@ -21,12 +21,12 @@
     "vue-hot-reload-api": "^2.2.4",
     "vue-loader": "^13.5.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.6",
+    "vue-template-compiler": "^2.5.8",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
-    "vue": "^2.5.6",
+    "vue": "^2.5.8",
     "vuex": "^3.0.0"
   },
   "scripts": {

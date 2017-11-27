@@ -208,19 +208,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core
-      - run:
-          name: "Testing CLI"
+          name: "Test CLI"
           command: |
             yarn test --cli
   cli-latest-cra:
@@ -232,19 +228,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: "Restore core dependencies cache"
           keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
       - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
-      - run:
-          name: "Bootstrapping"
-          command: |
-            yarn bootstrap --core
-      - run:
-          name: "Testing CLI with latest CR(N)A"
+          name: "Test CLI with latest CR(N)A"
           command: |
             yarn test-latest-cra
   deploy:
@@ -266,7 +258,15 @@ workflows:
           requires:
             - build
       - docs
-      - lint
-      - unit-test
-      - cli
-      - cli-latest-cra
+      - lint:
+          requires:
+            - build
+      - unit-test:
+          requires:
+            - build
+      - cli:
+          requires:
+            - build
+      - cli-latest-cra:
+          requires:
+            - build

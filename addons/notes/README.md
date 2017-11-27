@@ -41,9 +41,23 @@ import { withNotes } from '@storybook/addon-notes';
 import Component from './Component';
 
 storiesOf('Component', module)
-  .add('with some emoji', withNotes('A very simple component')(() => <Component></Component>));
+  .add('with some emoji', withNotes('A very simple component')(() => </Component>>));
 ```
 
+#### Using Markdown
+
+To use markdown in your notes simply import a markdown file and use that in your note.
+
+```js
+import { storiesOf } from '@storybook/react';
+import { withNotes } from '@storybook/addon-notes';
+import Component from './Component';
+import someMarkdownText from './someMarkdownText.md';
+
+storiesOf('Component', module)
+  .add('With Markdown', withNotes(someMarkdownText)(() => <Component/>));
+
+```
 ### Deprecated API
 This API is slated for removal in 4.0
 

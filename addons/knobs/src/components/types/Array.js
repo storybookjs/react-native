@@ -23,22 +23,14 @@ function formatArray(value, separator) {
   return value.split(separator);
 }
 
-class ArrayType extends React.Component {
-  render() {
-    const { knob, onChange } = this.props;
-    return (
-      <Textarea
-        id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
-        style={styles}
-        value={knob.value.join(knob.separator)}
-        onChange={e => onChange(formatArray(e.target.value, knob.separator))}
-      />
-    );
-  }
-}
+const ArrayType = ({ knob, onChange }) => (
+  <Textarea
+    id={knob.name}
+    style={styles}
+    value={knob.value.join(knob.separator)}
+    onChange={e => onChange(formatArray(e.target.value, knob.separator))}
+  />
+);
 
 ArrayType.defaultProps = {
   knob: {},
