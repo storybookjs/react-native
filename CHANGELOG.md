@@ -4,7 +4,7 @@
 
 #### Bug Fixes
 
-- Cleaned up unit test warnings [#2196]
+- Cleaned up unit test warnings [#2196](https://github.com/storybooks/storybook/pull/2381)
 
 -   Fix HMR by saving the preview frame URL as the story changes [#2349](https://github.com/storybooks/storybook/pull/2349)
 -   Fix CLI babel transpilation [#2350](https://github.com/storybooks/storybook/pull/2350)
@@ -153,8 +153,6 @@
 -   Update jest to the latest version 🚀 [#1799](https://github.com/storybooks/storybook/pull/1799)
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
-<<<<<<< HEAD
-=======
 
 # 3.2.16
 
@@ -254,7 +252,6 @@
 -   Update react-modal to 3.1.0 [#2238](https://github.com/storybooks/storybook/pull/2238)
 
 </details>
->>>>>>> cd3ae79daf9f2a8255424e72c36798237f6c9821
 
 # 3.2.14
 
