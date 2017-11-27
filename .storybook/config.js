@@ -4,7 +4,10 @@ import { configure } from '@storybook/react';
 
 function loadStories() {
   let req;
-  req = require.context('../lib/ui', true, /\.stories\.js$/);
+  req = require.context('../lib/ui/src', true, /\.stories\.js$/);
+  req.keys().forEach(filename => req(filename));
+
+  req = require.context('../lib/components/src', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 }
 

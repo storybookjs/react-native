@@ -21,5 +21,9 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.2.16",
+    "@storybook/addon-actions": "^3.2.16"
   }
 }
