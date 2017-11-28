@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@angular/core": "^5.0.0-beta.7",
-    "@storybook/addons": "^3.3.0-alpha.4",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
@@ -34,6 +33,7 @@
     "vue": "^2.5.8"
   },
   "peerDependencies": {
+    "@storybook/addons": "^3.3.0-alpha.4",
     "react": "*",
     "react-dom": "*"
   }

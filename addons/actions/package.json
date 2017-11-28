@@ -21,13 +21,13 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.6.0",
     "react-inspector": "^2.2.1",
     "uuid": "^3.1.0"
   },
   "peerDependencies": {
+    "@storybook/addons": "^3.3.0-alpha.4",
     "react": "*",
     "react-dom": "*"
   }
