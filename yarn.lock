@@ -2992,11 +2992,21 @@ commander@2.11.0, commander@2.11.x, commander@^2.11.0, commander@^2.5.0, command
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
+commander@^2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.1.tgz#468635c4168d06145b9323356d1da84d14ac4a7a"
+
 common-tags@^1.3.1, common-tags@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.4.0.tgz#1187be4f3d4cf0c0427d43f74eef1f73501614c0"
   dependencies:
     babel-runtime "^6.18.0"
+
+common-tags@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.5.1.tgz#e2e39931a013cd02253defeed89a1ad615a27f07"
+  dependencies:
+    babel-runtime "^6.26.0"
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -3697,9 +3707,9 @@ damerau-levenshtein@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
-danger@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-2.0.1.tgz#d3b303162c1132cb0a5471eb79f041f1941f9de2"
+danger@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-2.0.3.tgz#09d7c790f25a53dc73b5ed63873b186ebdcc6d69"
   dependencies:
     babel-polyfill "7.0.0-alpha.19"
     chalk "^2.0.0"
@@ -4009,6 +4019,12 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
     isarray "^1.0.0"
+
+doctrine@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.2.tgz#68f96ce8efc56cc42651f1faadb4f175273b0075"
+  dependencies:
+    esutils "^2.0.2"
 
 dom-converter@~0.1:
   version "0.1.4"
@@ -4506,9 +4522,9 @@ eslint-config-airbnb@^16.1.0:
   dependencies:
     eslint-config-airbnb-base "^12.1.0"
 
-eslint-config-prettier@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.8.0.tgz#929861a11de0249677686eba908118175d1a26bc"
+eslint-config-prettier@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
   dependencies:
     get-stdin "^5.0.1"
 
@@ -4713,9 +4729,9 @@ eslint@^3.16.1:
     text-table "~0.2.0"
     user-home "^2.0.0"
 
-eslint@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.11.0.tgz#39a8c82bc0a3783adf5a39fa27fdd9d36fac9a34"
+eslint@^4.12.0:
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.12.0.tgz#a7ce78eba8cc8f2443acfbbc870cc31a65135884"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -4723,7 +4739,7 @@ eslint@^4.11.0:
     concat-stream "^1.6.0"
     cross-spawn "^5.1.0"
     debug "^3.0.1"
-    doctrine "^2.0.0"
+    doctrine "^2.0.2"
     eslint-scope "^3.7.1"
     espree "^3.5.2"
     esquery "^1.0.0"
@@ -4732,7 +4748,7 @@ eslint@^4.11.0:
     file-entry-cache "^2.0.0"
     functional-red-black-tree "^1.0.1"
     glob "^7.1.2"
-    globals "^9.17.0"
+    globals "^11.0.1"
     ignore "^3.3.3"
     imurmurhash "^0.1.4"
     inquirer "^3.0.6"
@@ -5784,6 +5800,10 @@ global@^4.3.0, global@^4.3.2:
 globals@^10.0.0:
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-10.3.0.tgz#716aba93657b56630b5a0e77de5ea8ac6215afaa"
+
+globals@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.0.1.tgz#12a87bb010e5154396acc535e1e43fc753b0e5e8"
 
 globals@^6.4.0:
   version "6.4.1"
@@ -7535,7 +7555,7 @@ jest@20.0.4, jest@^20.0.4:
   dependencies:
     jest-cli "^20.0.4"
 
-jest@^21.2.0:
+jest@^21.2.0, jest@^21.2.1:
   version "21.2.1"
   resolved "https://registry.yarnpkg.com/jest/-/jest-21.2.1.tgz#c964e0b47383768a1438e3ccf3c3d470327604e1"
   dependencies:
@@ -10136,7 +10156,7 @@ postcss-load-plugins@^2.3.0:
     cosmiconfig "^2.1.1"
     object-assign "^4.1.0"
 
-postcss-loader@2.0.8, postcss-loader@^2.0.5, postcss-loader@^2.0.8:
+postcss-loader@2.0.8, postcss-loader@^2.0.5:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.8.tgz#8c67ddb029407dfafe684a406cfc16bad2ce0814"
   dependencies:
@@ -10153,6 +10173,15 @@ postcss-loader@^1.3.3:
     object-assign "^4.1.1"
     postcss "^5.2.15"
     postcss-load-config "^1.2.0"
+
+postcss-loader@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.9.tgz#001fdf7bfeeb159405ee61d1bb8e59b528dbd309"
+  dependencies:
+    loader-utils "^1.1.0"
+    postcss "^6.0.0"
+    postcss-load-config "^1.2.0"
+    schema-utils "^0.3.0"
 
 postcss-merge-idents@^2.1.5:
   version "2.1.7"
@@ -10834,9 +10863,9 @@ react-modal@^2.2.4:
     exenv "^1.2.0"
     prop-types "^15.5.10"
 
-react-modal@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.2.tgz#6e1fd656315d6fc62a1edda2b5aecc9752ac6bca"
+react-modal@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.4.tgz#eea7369ea4f05ab2897ccca2c676d7d81a5a88b0"
   dependencies:
     exenv "^1.2.0"
     prop-types "^15.5.10"
@@ -10851,9 +10880,9 @@ react-native-iphone-x-helper@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.0.1.tgz#950dbdaca66f458689a7e9697c5beb9bd53f98f2"
 
-react-native@^0.50.3:
-  version "0.50.3"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.3.tgz#91282bd5356cc7d794969cdc443cc764389b9af4"
+react-native@^0.50.4:
+  version "0.50.4"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.4.tgz#194f5da4939087b3acee712a503475f4942dca7e"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -13979,12 +14008,22 @@ webidl-conversions@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.11.0, webpack-dev-middleware@^1.12.0:
+webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.11.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.12.0.tgz#d34efefb2edda7e1d3b5dbe07289513219651709"
   dependencies:
     memory-fs "~0.4.1"
     mime "^1.3.4"
+    path-is-absolute "^1.0.0"
+    range-parser "^1.0.3"
+    time-stamp "^2.0.0"
+
+webpack-dev-middleware@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.12.1.tgz#338be3ca930973be1c2ce07d84d275e997e1a25a"
+  dependencies:
+    memory-fs "~0.4.1"
+    mime "^1.4.1"
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
