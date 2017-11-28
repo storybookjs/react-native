@@ -121,3 +121,7 @@ Embed [Figma](https://figma.com) designs in a storybook panel.
 ### [State](https://github.com/Sambego/storybook-state)
 
 Manage state inside a story. Update components when this state changes.
+
+### [State](https://github.com/dump247/storybook-state/)
+
+Manage state inside a story. Update components when this state changes.
