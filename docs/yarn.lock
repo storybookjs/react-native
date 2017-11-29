@@ -4211,23 +4211,6 @@ gatsby-module-loader@^1.0.9:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-sharp@^1.6.21:
-  version "1.6.21"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.21.tgz#990e856153b65be28316c23ab29b4e78dd5634de"
-  dependencies:
-    async "^2.1.2"
-    babel-runtime "^6.26.0"
-    bluebird "^3.5.0"
-    image-size "^0.5.1"
-    imagemin "^5.2.2"
-    imagemin-pngquant "^5.0.0"
-    imagemin-webp "^4.0.0"
-    lodash "^4.17.4"
-    potrace "^2.1.1"
-    progress "^1.1.8"
-    sharp "^0.17.3"
-    svgo "^0.7.2"
-
 gatsby-plugin-sharp@^1.6.22:
   version "1.6.22"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.22.tgz#7d1c71a881e89c4327450b15820d4614eb72e6e3"
@@ -4275,13 +4258,13 @@ gatsby-remark-copy-linked-files@^1.5.22:
     path-is-inside "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.32:
-  version "1.5.32"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.32.tgz#1e6bbc5991343f082f224869ffb14abb4a02c6ba"
+gatsby-remark-images@^1.5.33:
+  version "1.5.33"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.33.tgz#41f3a7eb68d4f59f5868401242ef217c3a7f2189"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
-    gatsby-plugin-sharp "^1.6.21"
+    gatsby-plugin-sharp "^1.6.22"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     slash "^1.0.0"
