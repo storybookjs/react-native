@@ -4196,9 +4196,9 @@ gatsby-cli@^1.1.24:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@^1.6.29:
-  version "1.6.29"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.29.tgz#a3ecedb8a1bd0f9430bda8f193375309ff2e9efa"
+gatsby-link@^1.6.30:
+  version "1.6.30"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.30.tgz#d75a7ceaa9e138b5f4f64cc6dbf1e0632876bd09"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
@@ -4317,9 +4317,9 @@ gatsby-transformer-remark@^1.7.22:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.125:
-  version "1.9.125"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.125.tgz#5674fab6f54c5a635edc8ba1ad6c57431e1ef14d"
+gatsby@^1.9.126:
+  version "1.9.126"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.126.tgz#879d9136b179500a7ca0f95b032d1763184e8594"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
