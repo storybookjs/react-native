@@ -77,11 +77,11 @@ Assuming that you have created a test files `MyComponent.test.js` and `MyOtherCo
 In your `story.js`
 
 ```js
-import jestTestResults from '../.jest-test-results.json';
+import results from '../.jest-test-results.json';
 import { withTests } from '@storybook/addon-jest';
 
 storiesOf('MyComponent', module)
-  .addDecorator(withTests(jestTestResults, { filesExt: '.test.js' })('MyComponent', 'MyOtherComponent'))
+  .addDecorator(withTests({ results })('MyComponent', 'MyOtherComponent'))
   .add('This story shows test results from MyComponent.test.js and MyOtherComponent.test.js', () => (
     <div>Jest results in storybook</div>
   ));
@@ -90,11 +90,11 @@ storiesOf('MyComponent', module)
 Or in order to avoid importing `.jest-test-results.json` in each story, you can create a simple file `withTests.js`:
 
 ```js
-import jestTestResults from '../.jest-test-results.json';
+import results from '../.jest-test-results.json';
 import { withTests } from '@storybook/addon-jest';
 
-export default withTests(jestTestResults, {
-  filesExt: '.test.js',
+export default withTests({
+  results,
 });
 ```
 
@@ -110,6 +110,11 @@ storiesOf('MyComponent', module)
     <div>Jest results in storybook</div>
   ));
 ```
+
+### withTests(options)
+
+- **options.results**: [OBJECT] jest output results. *mandatory*
+- **filteExt**: [STRING] test file extention. *optionnal*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## TODO
 
