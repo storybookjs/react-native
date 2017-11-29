@@ -74,8 +74,8 @@
     "vue-hot-reload-api": "^2.2.4",
     "vue-style-loader": "^3.0.1",
     "webpack": "^3.6.0",
-    "webpack-dev-middleware": "^1.12.1",
-    "webpack-hot-middleware": "^2.20.0"
+    "webpack-dev-middleware": "^1.12.2",
+    "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
     "nodemon": "^1.12.1",
