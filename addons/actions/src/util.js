@@ -70,9 +70,12 @@ export function decycle(object, depth = 15) {
       } else {
         obj = { [CLASS_NAME_KEY]: value.constructor ? value.constructor.name : 'Object' };
 
-        Object.keys(value).forEach(name => {
+        // We want to iterate over all the enumerable properties, including the ones in prototype chain
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
+        for (const name in value) {
+          // noinspection JSUnfilteredForInLoop
           obj[name] = derez(value[name], `${path}[${JSON.stringify(name)}]`, _depth + 1);
-        });
+        }
       }
 
       if (_depth === 0 && isObject(value) && isCyclic) {
