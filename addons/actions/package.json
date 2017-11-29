@@ -16,9 +16,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 9001"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
