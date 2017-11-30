@@ -14,7 +14,6 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
     "@storybook/components": "^3.3.0-alpha.4",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
