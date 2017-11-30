@@ -14,9 +14,9 @@ configure({ adapter: new Adapter() });
  free of warnings going forward.
  */
 
-/* const throwError = message => {
+const throwError = message => {
   throw new Error(message);
 };
 
 global.console.error = throwError;
-global.console.warn = throwError; */
+global.console.warn = throwError;
