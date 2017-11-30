@@ -4,8 +4,6 @@
 
 #### Bug Fixes
 
-- Cleaned up unit test warnings [#2196](https://github.com/storybooks/storybook/pull/2381)
-
 -   Fix HMR by saving the preview frame URL as the story changes [#2349](https://github.com/storybooks/storybook/pull/2349)
 -   Fix CLI babel transpilation [#2350](https://github.com/storybooks/storybook/pull/2350)
 
