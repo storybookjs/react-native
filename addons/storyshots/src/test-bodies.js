@@ -4,8 +4,9 @@ import 'jest-specific-snapshot';
 import { getSnapshotFileName } from './utils';
 
 function getRenderedTree(story, context, options) {
+  const currentRenderer = options.renderer || renderer.create;
   const storyElement = story.render(context);
-  return renderer.create(storyElement, options).toJSON();
+  return currentRenderer(storyElement, options).toJSON();
 }
 
 export const snapshotWithOptions = options => ({ story, context }) => {
@@ -27,8 +28,8 @@ export const multiSnapshotWithOptions = options => ({ story, context }) => {
 
 export const snapshot = snapshotWithOptions({});
 
-export function shallowSnapshot({ story, context }) {
-  const shallowRenderer = shallow.createRenderer();
+export function shallowSnapshot({ story, context, options }) {
+  const shallowRenderer = options.shallowRenderer || shallow.createRenderer();
   const result = shallowRenderer.render(story.render(context));
   expect(result).toMatchSnapshot();
 }
