@@ -1,13 +1,27 @@
 import puppeteer from 'puppeteer';
+import path from 'path';
+
+// We do screenshots against the static build of the storybook.
+// For this test to be meaningful, you must build the static version of the storybook *before* running this test suite.
+const pathToVueKitchenSink = path.join(
+  __dirname,
+  '..',
+  'examples/vue-kitchen-sink/storybook-static/index.html'
+);
+const pathToCraKitchenSink = path.join(
+  __dirname,
+  '..',
+  'examples/cra-kitchen-sink/storybook-static/index.html'
+);
 
 const examples = [
   {
     name: 'cra-kitchen-sink',
-    port: 9010,
+    storybookUrl: pathToCraKitchenSink,
   },
   {
     name: 'vue-kitchen-sink',
-    port: 9009,
+    storybookUrl: pathToVueKitchenSink,
   },
   {
     name: 'angular-cli',
@@ -15,7 +29,7 @@ const examples = [
   },
 ];
 
-examples.forEach(({ name, port }) => {
+examples.forEach(({ name, storybookUrl }) => {
   let browser = puppeteer.launch();
   let page;
 
@@ -30,10 +44,7 @@ examples.forEach(({ name, port }) => {
     });
 
     it(`Take screenshots for '${name}'`, async () => {
-      await page.goto(`http://localhost:${port}`);
-      await page.waitForSelector('[role="menuitem"][data-name="Welcome"]');
-      await page.waitFor(2000);
-
+      await page.goto(`file://${storybookUrl}`);
       const screenshot = await page.screenshot({ fullPage: true });
       expect(screenshot).toMatchImageSnapshot({
         failureThreshold: 0.04, // 4% threshold,

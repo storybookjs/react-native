@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Storyshots.Button.ImageSnapshot with notes 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Check my notes in the notes panel
+</button>
+`;
+
+exports[`Storyshots Addon Storyshots.Button.ImageSnapshot with some emoji 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Addon Storyshots.Button.ImageSnapshot with text 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello Button
+</button>
+`;

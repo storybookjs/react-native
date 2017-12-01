@@ -8,7 +8,8 @@
     "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --config=config-addon-jest.json --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "test-image-snapshots": "yarn run build-storybook && RUN_IMAGE_SNAPSHOTS=true react-scripts test --env=jsdom image-storyshots.test.js"
   },
   "dependencies": {
     "glamor": "^2.20.40",

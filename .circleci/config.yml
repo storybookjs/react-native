@@ -59,6 +59,9 @@ jobs:
           command: |
             yarn install
       - run:
+          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
+          command: sh ./scripts/workaround-puppeteer-issue-290.sh
+      - run:
           name: "Build react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
@@ -69,32 +72,31 @@ jobs:
             cd examples/vue-kitchen-sink
             yarn build-storybook
       - run:
+          name: "Run react kitchen-sink (smoke test)"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn storybook --smoke-test
+      - run:
+          name: "Run vue kitchen-sink (smoke test)"
+          command: |
+            cd examples/vue-kitchen-sink
+            yarn storybook --smoke-test
+      - run:
           name: "Build angular-cli"
           command: |
             cd examples/angular-cli
             yarn build-storybook
-
       - run:
-          name: "Run react kitchen-sink"
+          name: "Run image snapshots on react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
-            yarn storybook
-          background: true
-      - run:
-          name: "Run vue kitchen-sink"
-          command: |
-            cd examples/vue-kitchen-sink
-            yarn storybook
-          background: true
+            yarn test-image-snapshots
       - run:
           name: "Run angular-cli"
           command: |
             cd examples/angular-cli
             yarn storybook
           background: true
-      - run:
-          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-          command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
           name: Integration Test - Kichen sinks
           command: yarn test --integration
@@ -195,6 +197,11 @@ jobs:
           name: "Link packages"
           command: |
             yarn install
+      - run:
+          name: "Build static React kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn build-storybook
       - run:
           name: "Run unit tests"
           command: |
