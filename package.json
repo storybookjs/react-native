@@ -56,6 +56,7 @@
     "cross-env": "^5.1.1",
     "danger": "^2.0.3",
     "enzyme": "^3.2.0",
+    "enzyme-to-json": "^3.2.2",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.12.0",
     "eslint-config-airbnb": "^16.1.0",
