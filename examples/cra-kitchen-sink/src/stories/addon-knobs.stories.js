@@ -13,7 +13,7 @@ import {
   date,
   button,
   object,
-} from '@storybook/addon-knobs';
+} from '@storybook/addon-knobs/react';
 
 class AsyncItemLoader extends React.Component {
   constructor() {

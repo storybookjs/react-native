@@ -66,6 +66,7 @@ For full documentation on using Storybook visit: [storybook.js.org](https://stor
 
 -   [Storybook for react](app/react) - Storybook for React components
 -   [Storybook for vue](app/vue) - Storybook for Vue components
+-   [Storybook for angular](app/angular) - Storybook for Angular components
 -   [Storybook for react-native](app/react-native) - Storybook for React-Native components
 
 ### Sub Projects

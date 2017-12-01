@@ -1,7 +1,10 @@
 import path from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import babelLoaderConfig from './babel.prod';
-import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
+import { getConfigDir, includePaths, excludePaths, loadEnv, nodePaths } from './utils';
+import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
+import { version } from '../../../package.json';
 
 export default function() {
   const entries = {
@@ -23,6 +26,23 @@ export default function() {
       publicPath: '',
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        chunks: ['manager'],
+        data: {
+          managerHead: getManagerHeadHtml(getConfigDir()),
+          version,
+        },
+        template: require.resolve('../index.html.ejs'),
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'iframe.html',
+        excludeChunks: ['manager'],
+        data: {
+          previewHead: getPreviewHeadHtml(getConfigDir()),
+        },
+        template: require.resolve('../iframe.html.ejs'),
+      }),
       new webpack.DefinePlugin(loadEnv({ production: true })),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -44,6 +64,17 @@ export default function() {
           query: babelLoaderConfig,
           include: includePaths,
           exclude: excludePaths,
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
         },
       ],
     },
