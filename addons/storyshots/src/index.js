@@ -37,7 +37,8 @@ export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
   const isStorybook =
-    options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
+    options.framework === 'react' ||
+    (!options.framework && hasDependency('@storybook/react'));
   const isRNStorybook =
     options.framework === 'react-native' ||
     (!options.framework && hasDependency('@storybook/react-native'));
@@ -84,10 +85,11 @@ export default function testStorySnapshots(options = {}) {
   options.storyNameRegex = options.storyNameRegex || options.storyRegex;
   const snapshotOptions = {
     renderer: options.renderer,
-    shallowRenderer: options.shallowRenderer,
+    serializer: options.serializer,
   };
   // eslint-disable-next-line
-  options.test = options.test || snapshotWithOptions({options: snapshotOptions});
+  options.test =
+    options.test || snapshotWithOptions({ options: snapshotOptions });
 
   // eslint-disable-next-line
   for (const group of stories) {
