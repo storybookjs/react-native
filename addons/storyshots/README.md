@@ -129,7 +129,51 @@ If you are running tests from outside of your app's directory, storyshots' detec
 
 ### `test`
 
-Run a custom test function for each story, rather than the default (a vanilla snapshot test). See the exports section below for more details.
+Run a custom test function for each story, rather than the default (a vanilla snapshot test). Setting `test` will take precedence over the `renderer` option. See the exports section below for more details.
+
+### `renderer`
+
+Pass a custom renderer (such as enzymes `mount`) to record snapshots.
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import { mount } from 'enzyme';
+
+initStoryshots({
+  renderer: mount,
+});
+```
+
+If you are using enzyme, you need to make sure jest knows how to serialize rendered components.
+You can either pass in a serializer (see below) or specify an enzyme-compatible serializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) as the default `snapshotSerializer` in your config.
+
+Example for jest config in `package.json`:
+```json
+"devDependencies": {
+    "enzyme-to-json": "^3.2.2"
+},
+"jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+```
+
+### `serializer`
+
+Pass a custom serializer (such as enzyme-to-json) to serialize components to snapshot-comparable data.
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import toJSON from 'enzyme-to-json';
+
+initStoryshots({
+  renderer: mount,
+  serializer: toJSON,
+});
+```
+
+This option only needs to be set if the default `snapshotSerializers` is not set in your jest config.
 
 ## Exports
 
@@ -153,7 +197,7 @@ Like `snapshotWithOptions`, but generate a separate snapshot file for each stori
 
 ### `shallowSnapshot`
 
-Take a snapshot of a shallow-rendered version of the component.
+Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
 
 ### `getSnapshotFileName`
 

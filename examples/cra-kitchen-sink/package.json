@@ -39,6 +39,9 @@
     "@storybook/components": "^3.3.0-alpha.4",
     "@storybook/react": "^3.3.0-alpha.4",
     "babel-jest": "^21.2.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
     "jest": "^21.2.1",
     "react-scripts": "1.0.17"
   },
@@ -50,6 +53,12 @@
     "transform": {
       ".*": "babel-jest"
     },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "<rootDir>/src/enzyme.js"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.s?css$": "<rootDir>/__mocks__/styleMock.js"
