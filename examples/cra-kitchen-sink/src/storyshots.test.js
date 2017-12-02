@@ -1,6 +1,6 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 import path from 'path';
-import { mount as renderer } from 'enzyme';
+import { render as renderer } from 'enzyme';
 
 initStoryshots({
   framework: 'react',
