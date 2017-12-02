@@ -13,24 +13,16 @@ exports[`Storyshots Addon Knobs.withKnobs triggers actions via button 1`] = `
 
 exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
 <div
-  style={
-    Object {
-      "backgroundColor": "#ffff00",
-      "border": "3px solid #ff00ff",
-      "padding": "10px",
-    }
-  }
+  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
   <p>
     My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
   </p>
   <p>
-    My birthday is: 
-    January 20, 2017
+    My birthday is: January 20, 2017
   </p>
   <p>
-    My wallet contains: $
-    12.50
+    My wallet contains: $12.50
   </p>
   <p>
     In my backpack, I have:
@@ -49,7 +41,9 @@ exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
   <p>
     Nice to meet you!
   </p>
-  <hr />
+  <hr>
+    
+  </hr>
   <p>
     PS. My shirt pocket contains: 
   </p>
@@ -69,13 +63,7 @@ exports[`Storyshots Addon Knobs.withKnobsOptions triggers actions via button wit
 
 exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debounce delay 1`] = `
 <div
-  style={
-    Object {
-      "backgroundColor": "#ffff00",
-      "border": "3px solid #ff00ff",
-      "padding": "10px",
-    }
-  }
+  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
   <p>
     If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
@@ -84,12 +72,10 @@ exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debou
     My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
   </p>
   <p>
-    My birthday is: 
-    January 20, 2017
+    My birthday is: January 20, 2017
   </p>
   <p>
-    My wallet contains: $
-    12.50
+    My wallet contains: $12.50
   </p>
   <p>
     In my backpack, I have:
@@ -108,7 +94,9 @@ exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debou
   <p>
     Nice to meet you!
   </p>
-  <hr />
+  <hr>
+    
+  </hr>
   <p>
     PS. My shirt pocket contains: 
   </p>
