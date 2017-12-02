@@ -1,9 +1,11 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 import path from 'path';
 import { mount as renderer } from 'enzyme';
 
 initStoryshots({
   framework: 'react',
   configPath: path.join(__dirname, '..', '.storybook'),
-  renderer,
+  test: snapshotWithOptions({
+    renderer,
+  }),
 });
