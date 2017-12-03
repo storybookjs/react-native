@@ -1,17 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon Links.Button First 1`] = `
-<button
-  onClick={[Function]}
->
+<button>
   Go to "Second"
 </button>
 `;
 
 exports[`Storyshots Addon Links.Button Second 1`] = `
-<button
-  onClick={[Function]}
->
+<button>
   Go to "First"
 </button>
 `;
@@ -25,7 +21,6 @@ exports[`Storyshots Addon Links.Href log 1`] = `
 exports[`Storyshots Addon Links.Link First 1`] = `
 <a
   href="/"
-  onClick={[Function]}
 >
   Go to Second
 </a>
@@ -34,7 +29,6 @@ exports[`Storyshots Addon Links.Link First 1`] = `
 exports[`Storyshots Addon Links.Link Second 1`] = `
 <a
   href="/"
-  onClick={[Function]}
 >
   Go to First
 </a>
@@ -43,18 +37,16 @@ exports[`Storyshots Addon Links.Link Second 1`] = `
 exports[`Storyshots Addon Links.Select First 1`] = `
 <a
   href="/"
-  onClick={[Function]}
 >
   Go back
 </a>
 `;
 
 exports[`Storyshots Addon Links.Select Index 1`] = `
-<select
-  onChange={[Function]}
-  value="Index"
->
-  <option>
+<select>
+  <option
+    selected=""
+  >
     Index
   </option>
   <option>
@@ -72,7 +64,6 @@ exports[`Storyshots Addon Links.Select Index 1`] = `
 exports[`Storyshots Addon Links.Select Second 1`] = `
 <a
   href="/"
-  onClick={[Function]}
 >
   Go back
 </a>
@@ -81,7 +72,6 @@ exports[`Storyshots Addon Links.Select Second 1`] = `
 exports[`Storyshots Addon Links.Select Third 1`] = `
 <a
   href="/"
-  onClick={[Function]}
 >
   Go back
 </a>
