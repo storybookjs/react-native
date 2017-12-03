@@ -18,6 +18,7 @@ export const snapshotWithOptions = options => ({ story, context, snapshotFileNam
   } else {
     expect(tree).toMatchSnapshot();
   }
+
   tree.unmount();
 };
 
