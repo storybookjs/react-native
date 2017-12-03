@@ -10,21 +10,19 @@ function getRenderedTree(story, context, { renderer, serializer, ...rendererOpti
   return serializer ? serializer(tree) : tree;
 }
 
-export const snapshotWithOptions = options => ({ story, context }) => {
+export const snapshotWithOptions = options => ({ story, context, snapshotFileName }) => {
   const tree = getRenderedTree(story, context, options);
-  expect(tree).toMatchSnapshot();
+
+  if (snapshotFileName) {
+    expect(tree).toMatchSpecificSnapshot(snapshotFileName);
+  } else {
+    expect(tree).toMatchSnapshot();
+  }
+  tree.unmount();
 };
 
-export const multiSnapshotWithOptions = options => ({ story, context }) => {
-  const tree = getRenderedTree(story, context, options);
-  const snapshotFileName = getSnapshotFileName(context);
-
-  if (!snapshotFileName) {
-    expect(tree).toMatchSnapshot();
-    return;
-  }
-
-  expect(tree).toMatchSpecificSnapshot(snapshotFileName);
+export const multiSnapshotWithOptions = options => ({ context }) => {
+  snapshotWithOptions({ ...options, snapshotFileName: getSnapshotFileName(context) });
 };
 
 export const snapshot = snapshotWithOptions({});
