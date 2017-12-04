@@ -30,7 +30,7 @@
     "global": "^4.3.2",
     "insert-css": "^2.0.0",
     "marked": "^0.3.7",
-    "moment": "^2.19.2",
+    "moment": "^2.19.3",
     "prop-types": "^15.6.0",
     "react-render-html": "^0.6.0",
     "react-textarea-autosize": "^5.2.1"
