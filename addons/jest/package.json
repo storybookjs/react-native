@@ -30,10 +30,6 @@
     "global": "^4.3.2",
     "prop-types": "^15.6.0"
   },
-  "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
-  },
   "peerDependencies": {
     "@storybook/addons": "^3.2.16",
     "react": "*",
