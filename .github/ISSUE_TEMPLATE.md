@@ -4,20 +4,20 @@ _Please provide issue details here - What did you expect to happen? What happene
 
 ### Steps to reproduce
 
-_Please provide necessary steps for reproduction of this issue. Describe the exact steps a maintainer has to take to make the problem occur._
-_If the problem is non-trivial to reproduce, please link a repo or provide some example code snippets._
+_Please provide necessary steps for reproduction of this issue. Describe the exact steps a maintainer has to take to make the problem occur. If the problem is non-trivial to reproduce, please link a repo or provide some example code snippets._
+
 _(A screencast can be useful for visual bugs, but it is not a substitute for a textual description.)_
 
 ### Please specify which version of Storybook and optionally any affected addons that you're running
 
-Storybook v[x.x.x]
-Addon-X v[x.x.x]
+- Storybook v[x.x.x]
+- Addon-X v[x.x.x]
 
 ### Affected platforms 
 
-_If UI related, please indicate browser, OS, and version_
-_If dependency related, please include relevant version numbers_
-_If developer tooling related, please include the platform information_
+- _If UI related, please indicate browser, OS, and version_
+- _If dependency related, please include relevant version numbers_
+- _If developer tooling related, please include the platform information_
 
 ### Screenshots / Screencast / Code Snippets (Optional)
 
