@@ -24,8 +24,10 @@ export function action(name) {
     });
   };
 
+  // IE11 may return an undefined descriptor
+  const nameDescriptor = Object.getOwnPropertyDescriptor(handler, 'name');
   // This condition is true in modern browsers that implement Function#name properly
-  const canConfigureName = Object.getOwnPropertyDescriptor(handler, 'name').configurable;
+  const canConfigureName = nameDescriptor && nameDescriptor.configurable;
 
   if (canConfigureName && name && typeof name === 'string') {
     Object.defineProperty(handler, 'name', { value: name });
