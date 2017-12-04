@@ -9,7 +9,7 @@ const Examples = ({ items }) => (
       <h1>Storybook Examples</h1>
       <a
         className="edit-link"
-        href="https://github.com/storybooks/storybook/edit/master/docs/pages/examples/_examples.yml"
+        href="https://github.com/storybooks/storybook/blob/master/docs/src/pages/examples/_examples.yml"
         target="_blank"
         rel="noopener noreferrer"
       >

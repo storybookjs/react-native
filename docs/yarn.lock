@@ -4175,9 +4175,9 @@ gatsby-1-config-css-modules@^1.0.7:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.24:
-  version "1.1.24"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.24.tgz#0a61ef6f5073524a574f8d40a823595b4afb036b"
+gatsby-cli@^1.1.25:
+  version "1.1.25"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.25.tgz#767899c351711870a3b08a9758da94e224abbfe7"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4196,9 +4196,9 @@ gatsby-cli@^1.1.24:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@^1.6.29:
-  version "1.6.29"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.29.tgz#a3ecedb8a1bd0f9430bda8f193375309ff2e9efa"
+gatsby-link@^1.6.30:
+  version "1.6.30"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.30.tgz#d75a7ceaa9e138b5f4f64cc6dbf1e0632876bd09"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
@@ -4295,9 +4295,9 @@ gatsby-source-filesystem@^1.5.9:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-transformer-remark@^1.7.22:
-  version "1.7.22"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.22.tgz#c4807317b92753d811f4b857b786c73ee245177a"
+gatsby-transformer-remark@^1.7.23:
+  version "1.7.23"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.23.tgz#a0510889334223340f39244348b391be36806f6b"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
@@ -4317,9 +4317,9 @@ gatsby-transformer-remark@^1.7.22:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.125:
-  version "1.9.125"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.125.tgz#5674fab6f54c5a635edc8ba1ad6c57431e1ef14d"
+gatsby@^1.9.128:
+  version "1.9.128"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.128.tgz#9b78bee5cf160886610f53ef203c645b698454d4"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4358,7 +4358,7 @@ gatsby@^1.9.125:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.7"
-    gatsby-cli "^1.1.24"
+    gatsby-cli "^1.1.25"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.6"
     glob "^7.1.1"
@@ -6409,9 +6409,9 @@ markdown-table@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.1.tgz#4b3dd3a133d1518b8ef0dbc709bf2a1b4824bc8c"
 
-marked@^0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
+marked@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.7.tgz#80ef3bbf1bd00d1c9cfebe42ba1b8c85da258d0d"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
