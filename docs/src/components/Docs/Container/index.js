@@ -9,7 +9,7 @@ const getEditUrl = (selectedSectionId, selectedItemId) => {
   const gitHubRepoUrl = 'https://github.com/storybooks/storybook';
   const docPath = `${selectedSectionId}/${selectedItemId}`;
 
-  return `${gitHubRepoUrl}/tree/master/docs/pages/${docPath}/index.md`;
+  return `${gitHubRepoUrl}/blob/master/docs/src/pages/${docPath}/index.md`;
 };
 
 const Container = ({ sections, selectedItem, selectedSectionId, selectedItemId }) => (
