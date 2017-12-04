@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import json from 'format-json';
 import PropTypes from 'prop-types';
-import EventEmiter from 'eventemitter3';
+import EventEmitter from 'eventemitter3';
 
 import uuid from 'uuid/v4';
 
@@ -29,7 +29,7 @@ const styles = {
 
 export default class Logger extends Component {
   static propTypes = {
-    emiter: PropTypes.instanceOf(EventEmiter).isRequired,
+    emitter: PropTypes.instanceOf(EventEmitter).isRequired,
   };
 
   state = {
@@ -37,12 +37,12 @@ export default class Logger extends Component {
   };
 
   componentWillMount() {
-    const { emiter } = this.props;
+    const { emitter } = this.props;
 
-    emiter.on(EVENTS.TEST_EVENT_1, this.onEventHandler(EVENTS.TEST_EVENT_1));
-    emiter.on(EVENTS.TEST_EVENT_2, this.onEventHandler(EVENTS.TEST_EVENT_2));
-    emiter.on(EVENTS.TEST_EVENT_3, this.onEventHandler(EVENTS.TEST_EVENT_3));
-    emiter.on(EVENTS.TEST_EVENT_4, this.onEventHandler(EVENTS.TEST_EVENT_4));
+    emitter.on(EVENTS.TEST_EVENT_1, this.onEventHandler(EVENTS.TEST_EVENT_1));
+    emitter.on(EVENTS.TEST_EVENT_2, this.onEventHandler(EVENTS.TEST_EVENT_2));
+    emitter.on(EVENTS.TEST_EVENT_3, this.onEventHandler(EVENTS.TEST_EVENT_3));
+    emitter.on(EVENTS.TEST_EVENT_4, this.onEventHandler(EVENTS.TEST_EVENT_4));
   }
 
   onEventHandler = name => payload => {
