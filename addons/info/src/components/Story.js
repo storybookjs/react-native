@@ -7,7 +7,6 @@ import { baseFonts } from '@storybook/components';
 
 import marksy from 'marksy';
 
-import PropTable from './PropTable';
 import Node from './Node';
 import { Pre } from './markdown';
 
@@ -339,7 +338,7 @@ export default class Story extends React.Component {
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
         <h2 style={this.state.stylesheet.propTableHead}>"{getName(type)}" Component</h2>
-        <PropTable
+        <this.props.PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
           maxPropArrayLength={maxPropArrayLength}
