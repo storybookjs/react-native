@@ -23,7 +23,7 @@
     "moment": "^2.19.3",
     "prop-types": "^15.6.0",
     "react-color": "^2.11.4",
-    "react-datetime": "^2.11.0",
+    "react-datetime": "^2.11.1",
     "react-textarea-autosize": "^5.2.1",
     "util-deprecate": "^1.0.2"
   },
