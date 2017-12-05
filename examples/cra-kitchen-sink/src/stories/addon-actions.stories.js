@@ -21,10 +21,6 @@ storiesOf('Addon Actions', module)
     return <Button onClick={fn}>Action.name: {fn.name}</Button>;
   })
   .add('Reserved keyword as name', () => <Button onClick={action('delete')}>Delete</Button>)
-  .add('File object as payload', () => {
-    const file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
-    return <Button onClick={() => action('file')(file)}>File</Button>;
-  })
   .add('All types', () => {
     function A() {}
     function B() {}
