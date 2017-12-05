@@ -86,7 +86,7 @@ describe('preview', () => {
         });
       });
 
-      it('undefined', () => {
+      it('undefined value', () => {
         const channel = { emit: jest.fn() };
         addons.getChannel.mockReturnValue(channel);
 
@@ -95,10 +95,15 @@ describe('preview', () => {
         expect(JSON.parse(channel.emit.mock.calls[0][1].data.args[0])).toEqual({
           [undefinedType.KEY]: true,
         });
+      });
+
+      it('symbol value', () => {
+        const channel = { emit: jest.fn() };
+        addons.getChannel.mockReturnValue(channel);
 
         action('foo')(Symbol('A Symbol'));
 
-        expect(JSON.parse(channel.emit.mock.calls[1][1].data.args[0])).toEqual({
+        expect(JSON.parse(channel.emit.mock.calls[0][1].data.args[0])).toEqual({
           [symbolType.KEY]: 'A Symbol',
         });
       });
