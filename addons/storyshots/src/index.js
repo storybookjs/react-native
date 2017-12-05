@@ -37,8 +37,7 @@ export default function testStorySnapshots(options = {}) {
   addons.setChannel(createChannel());
 
   const isStorybook =
-    options.framework === 'react' ||
-    (!options.framework && hasDependency('@storybook/react'));
+    options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
   const isRNStorybook =
     options.framework === 'react-native' ||
     (!options.framework && hasDependency('@storybook/react-native'));

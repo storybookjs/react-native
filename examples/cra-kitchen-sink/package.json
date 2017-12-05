@@ -8,7 +8,7 @@
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom",
-    "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json"
+    "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --config=config-addon-jest.json --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json"
   },
   "dependencies": {
     "eventemitter3": "^3.0.0",
@@ -45,33 +45,5 @@
     "jest": "^21.2.1",
     "react-scripts": "1.0.17"
   },
-  "private": true,
-  "jest": {
-    "verbose": true,
-    "coverageDirectory": "coverage/",
-    "notify": true,
-    "transform": {
-      ".*": "babel-jest"
-    },
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "setupFiles": [
-      "<rootDir>/src/enzyme.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.s?css$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "src/*.js",
-      "!src/.*",
-      "!src/__test__/*",
-      "!src/**/__test__/*",
-      "!src/**/index.js",
-      "!src/**/story.js"
-    ]
-  }
+  "private": true
 }
