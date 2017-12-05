@@ -4086,9 +4086,9 @@ eslint-plugin-import@2.8.0, eslint-plugin-import@^2.8.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-jest@^21.4.0:
-  version "21.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.4.0.tgz#8d8a1166c92a7530217d201a5d440a1f4a042f61"
+eslint-plugin-jest@^21.4.1:
+  version "21.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.4.1.tgz#7fcc407924d44f78cb7197eb0d5f65152f81fcf9"
 
 eslint-plugin-json@^1.2.0:
   version "1.2.0"
