@@ -18,6 +18,15 @@ exports[`Storyshots Addon Actions Decorated Action 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addon Actions File object as payload 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  File
+</button>
+`;
+
 exports[`Storyshots Addon Actions Function Name 1`] = `
 <button
   className="css-1yjiefr"
