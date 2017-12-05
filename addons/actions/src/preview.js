@@ -3,7 +3,7 @@
 import addons from '@storybook/addons';
 import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
-import { decycle } from './util';
+import { decycle } from './lib';
 
 export function action(name) {
   // eslint-disable-next-line no-shadow
