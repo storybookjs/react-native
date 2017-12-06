@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "3.2.15",
+  "version": "3.2.17",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
@@ -16,12 +16,10 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 9001"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.15",
+    "@storybook/addons": "^3.2.17",
     "deep-equal": "^1.0.1",
     "json-stringify-safe": "^5.0.1",
     "prop-types": "^15.6.0",

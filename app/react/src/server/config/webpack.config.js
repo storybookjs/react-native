@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import Dotenv from 'dotenv-webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
@@ -27,6 +28,7 @@ export default function() {
       new CaseSensitivePathsPlugin(),
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
+      new Dotenv(),
     ],
     module: {
       rules: [

@@ -13,9 +13,9 @@ function _format(arg) {
 }
 
 export function action(name) {
-  // eslint-disable-next-line no-unused-vars, func-names
-  const handler = function(..._args) {
-    const args = Array.from(_args).map(_format);
+  // eslint-disable-next-line no-shadow
+  const handler = function action(..._args) {
+    const args = _args.map(_format);
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {
@@ -24,16 +24,15 @@ export function action(name) {
     });
   };
 
-  // some day when {[name]: function() {}} syntax is not transpiled by babel
-  // we can get rid of this eval as by ES2015 spec the above function gets the
-  // name `name`, but babel transpiles to Object.defineProperty which doesn't do
-  // the same.
-  //
-  // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  const fnName = name && typeof name === 'string' ? name.replace(/\W+/g, '_') : 'action';
-  // eslint-disable-next-line no-eval
-  const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`);
-  return named;
+  // IE11 may return an undefined descriptor, but it supports Function#name
+  const nameDescriptor = Object.getOwnPropertyDescriptor(handler, 'name');
+  // This condition is true in modern browsers that implement Function#name properly
+  const canConfigureName = !nameDescriptor || nameDescriptor.configurable;
+
+  if (canConfigureName && name && typeof name === 'string') {
+    Object.defineProperty(handler, 'name', { value: name });
+  }
+  return handler;
 }
 
 export function decorateAction(decorators) {

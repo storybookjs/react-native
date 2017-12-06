@@ -1,5 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addon Actions Circular Payload 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Circular Payload
+</button>
+`;
+
+exports[`Storyshots Addon Actions Decorated Action 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  First Argument
+</button>
+`;
+
+exports[`Storyshots Addon Actions Function Name 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Action.name: 
+  fnName
+</button>
+`;
+
+exports[`Storyshots Addon Actions Hello World 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addon Actions Reserved keyword as name 1`] = `
+<button
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Delete
+</button>
+`;
+
 exports[`Storyshots Addon Backgrounds story 1 1`] = `
 <div
   style={
@@ -193,7 +239,7 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -204,7 +250,7 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
             }
           >
             Info could be used as a global or local decorator as well.
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -590,7 +636,7 @@ exports[`Storyshots Addon Info.GitHub issues #1814 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -601,7 +647,7 @@ exports[`Storyshots Addon Info.GitHub issues #1814 1`] = `
             }
           >
             Allow Duplicate DisplayNames for HOC #1814
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -946,7 +992,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
           >
             You can use markdown in your withInfo() description.
           </h4>
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -957,7 +1003,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
             }
           >
             Sometimes you might want to manually include some code examples:
-          </p>
+          </div>
           <pre>
             <code
               className="hljs js"
@@ -968,7 +1014,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
               }
             />
           </pre>
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -992,7 +1038,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
               link
             </a>
              to your project as well.
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -1374,7 +1420,7 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -1385,7 +1431,7 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
             }
           >
             The Info Addon header should be hidden
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -1730,7 +1776,7 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
           }
         }
       >
-        <p
+        <div
           style={
             Object {
               "WebkitFontSmoothing": "antialiased",
@@ -1741,7 +1787,7 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
           }
         >
           Component should be inlined between description and PropType table
-        </p>
+        </div>
       </div>
       <div>
         <h1
@@ -2127,7 +2173,7 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -2138,7 +2184,7 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
             }
           >
             There should be a prop table added for a component not included in the story
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -2623,7 +2669,7 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -2634,7 +2680,7 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
             }
           >
             This can exclude extraneous components from being displayed in prop tables.
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -3130,7 +3176,7 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -3141,7 +3187,7 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
             }
           >
             The Info Addon source section should be hidden
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -3821,7 +3867,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -3832,7 +3878,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
             }
           >
             Comments above the Flow declarations should be extracted from the React component file itself and rendered in the Info Addon prop table
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -4195,7 +4241,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -4206,7 +4252,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
             }
           >
             Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -4668,7 +4714,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -4679,7 +4725,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
             }
           >
             Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -4984,6 +5030,11 @@ exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
     January 20, 2017
   </p>
   <p>
+    I live in NY for 
+    9
+     years.
+  </p>
+  <p>
     My wallet contains: $
     12.50
   </p>
@@ -5133,6 +5184,14 @@ exports[`Storyshots Addon a11y Label 1`] = `
 >
   Testing the a11y addon
 </button>
+`;
+
+exports[`Storyshots Addon jest withTests 1`] = `
+<div>
+  <p>
+    Hello
+  </p>
+</div>
 `;
 
 exports[`Storyshots App full app 1`] = `
@@ -5319,7 +5378,7 @@ exports[`Storyshots Button addons composition 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -5330,7 +5389,7 @@ exports[`Storyshots Button addons composition 1`] = `
             }
           >
             see Notes panel for composition info
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -5722,7 +5781,7 @@ exports[`Storyshots Button with new info 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -5746,7 +5805,7 @@ exports[`Storyshots Button with new info 1`] = `
               info addon
             </a>
              with its new painless API.
-          </p>
+          </div>
         </div>
         <div>
           <h1
@@ -6294,7 +6353,7 @@ exports[`Storyshots Button with some info 1`] = `
             }
           }
         >
-          <p
+          <div
             style={
               Object {
                 "WebkitFontSmoothing": "antialiased",
@@ -6318,7 +6377,7 @@ exports[`Storyshots Button with some info 1`] = `
               info addon
             </a>
              with its painful API.
-          </p>
+          </div>
         </div>
         <div>
           <h1
