@@ -1,4 +1,4 @@
-/* global File */
+import { File, Math } from 'global';
 import getPropertiesList from '../getPropertiesList';
 
 describe('getPropertiesList', () => {
