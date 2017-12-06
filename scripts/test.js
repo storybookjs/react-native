@@ -167,7 +167,7 @@ selection
     } else {
       const projects = getProjects(list);
       const extraParams = getExtraParams(list).join(' ');
-      spawn(`jest --projects ${jestProjects.join(' ')} ${extraParams}`);
+      spawn(`jest --projects ${projects.map(key => key.projectLocation).join(' ')} ${extraParams}`);
       process.stdout.write('\x07');
     }
   })
