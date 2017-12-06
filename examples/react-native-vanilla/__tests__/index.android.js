@@ -5,6 +5,16 @@ import 'react-native';
 import React from 'react';
 import Index from '../index.android.js';
 
+jest.mock('global', () => ({
+  ...global,
+  WebSocket: function WebSocket(){},
+}));
+
+jest.mock("Dimensions", () => ({
+  get: jest.fn().mockReturnValue({ width: 600, height:1800 }),
+  addEventListener: jest.fn(),
+}))
+
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
