@@ -140,7 +140,7 @@ class ReactProvider extends Provider {
 
 If you like to add features to the Storybook UI or fix bugs, this is the guide you need to follow.
 
-First of all, you can need to start the [example](/example) app to see your changes.
+First of all, you can need to start the [example](./example) app to see your changes.
 
 ### The App
 
