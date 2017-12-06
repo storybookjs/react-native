@@ -72,12 +72,6 @@ const tasks = {
   //   projectLocation: './examples/crna-kitchen-sink',
   //   isJest: true,
   // }),
-  cli: createProject({
-    name: `Command Line Interface ${chalk.gray('(cli)')}`,
-    defaultValue: false,
-    option: '--cli',
-    projectLocation: './lib/cli',
-  }),
   watchmode: createOption({
     name: `Run in watch-mode ${chalk.gray('(watchmode)')}`,
     defaultValue: false,
