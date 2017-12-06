@@ -33,7 +33,7 @@ collectors:
     versions: "L.Y.Y"
     settings:
       batch_mode: true
-      bootstrap_command: echo 'Skip updating lockfile'
+      bootstrap_command: yarn
       github_labels:
       - dependencies:update
       github_assignees:
