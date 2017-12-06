@@ -51,13 +51,13 @@ const tasks = {
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
     defaultValue: true,
     option: '--reactnative',
-    projectLocation: './examples/react-native-vanilla',
+    projectLocation: path.join(__dirname, '..', 'examples/react-native-vanilla'),
   }),
   integration: createProject({
     name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
     defaultValue: false,
     option: '--integration',
-    projectLocation: './integration',
+    projectLocation: path.join(__dirname, '..', 'integration'),
   }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
@@ -85,19 +85,24 @@ const tasks = {
     option: '--runInBand',
     extraParam: '--runInBand',
   }),
+  update: createOption({
+    name: `Update all snapshots ${chalk.gray('(update)')}`,
+    defaultValue: false,
+    option: '--update',
+    extraParam: '-u',
+  }),
 };
 
 const getProjects = list => {
   const filtered = list.filter(key => key.projectLocation);
   if (filtered.length > 0) {
-    return filtered.map(key => key.projectLocation);
+    return filtered;
   }
 
   // if list would have been empty, we run with default projects
   return Object.keys(tasks)
     .map(key => tasks[key])
-    .filter(key => key.projectLocation && key.defaultValue)
-    .map(key => key.projectLocation);
+    .filter(key => key.projectLocation && key.defaultValue);
 };
 
 const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
@@ -124,6 +129,7 @@ if (
         type: 'checkbox',
         message: 'Select which tests to run',
         name: 'todo',
+        pageSize: 8,
         choices: Object.keys(tasks)
           .map(key => tasks[key])
           .filter(key => key.projectLocation)
@@ -156,14 +162,12 @@ if (
 
 selection
   .then(list => {
-    const command = `jest --projects ${getProjects(list).join(' ')} ${getExtraParams(list).join(
-      ' '
-    )}`;
-    console.log('command: ', command);
     if (list.length === 0) {
       log.warn(prefix, 'Nothing to test');
     } else {
-      spawn(command);
+      const projects = getProjects(list);
+      const extraParams = getExtraParams(list).join(' ');
+      spawn(`jest --projects ${projects.map(key => key.projectLocation).join(' ')} ${extraParams}`);
       process.stdout.write('\x07');
     }
   })
