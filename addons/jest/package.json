@@ -25,14 +25,10 @@
   },
   "dependencies": {
     "@storybook/components": "^3.3.0-alpha.4",
-    "global": "^4.3.2",
-    "prop-types": "^15.6.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0"
-  },
-  "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "glamorous": "^4.11.0",
+    "global": "^4.3.2",
+    "prop-types": "^15.6.0"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0-alpha.4",

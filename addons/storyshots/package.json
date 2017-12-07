@@ -15,6 +15,8 @@
     "example": "jest storyshot.test"
   },
   "dependencies": {
+    "@storybook/channels": "^3.2.17",
+    "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
@@ -24,13 +26,14 @@
   },
   "devDependencies": {
     "@storybook/addons": "^3.3.0-alpha.4",
-    "@storybook/channels": "^3.3.0-alpha.4",
     "@storybook/react": "^3.3.0-alpha.4",
     "babel-cli": "^6.26.0",
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme-to-json": "^3.2.2",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
     "react": "^16.1.0",
@@ -38,9 +41,6 @@
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0-alpha.4",
-    "@storybook/channels": "^3.3.0-alpha.4",
-    "@storybook/react": "^3.3.0-alpha.4",
-    "babel-core": "^6.26.0",
     "react": "*",
     "react-test-renderer": "*"
   }

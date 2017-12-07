@@ -2,26 +2,9 @@
 
 exports[`Storyshots Addon Backgrounds story 1 1`] = `
 <div
-  style={
-    Object {
-      "background": "transparent",
-      "backgroundPosition": "center",
-      "backgroundSize": "cover",
-      "bottom": 0,
-      "left": 0,
-      "overflow": "scroll",
-      "position": "fixed",
-      "right": 0,
-      "top": 0,
-      "transition": "background 0.25s ease-in-out",
-    }
-  }
+  style="overflow:scroll;position:fixed;top:0;bottom:0;right:0;left:0;transition:background 0.25s ease-in-out;background-position:center;background-size:cover;background:transparent"
 >
-  <button
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-  >
+  <button>
     You should be able to switch backgrounds for this story
   </button>
 </div>
@@ -29,26 +12,9 @@ exports[`Storyshots Addon Backgrounds story 1 1`] = `
 
 exports[`Storyshots Addon Backgrounds story 2 1`] = `
 <div
-  style={
-    Object {
-      "background": "transparent",
-      "backgroundPosition": "center",
-      "backgroundSize": "cover",
-      "bottom": 0,
-      "left": 0,
-      "overflow": "scroll",
-      "position": "fixed",
-      "right": 0,
-      "top": 0,
-      "transition": "background 0.25s ease-in-out",
-    }
-  }
+  style="overflow:scroll;position:fixed;top:0;bottom:0;right:0;left:0;transition:background 0.25s ease-in-out;background-position:center;background-size:cover;background:transparent"
 >
-  <button
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-  >
+  <button>
     This one too!
   </button>
 </div>
