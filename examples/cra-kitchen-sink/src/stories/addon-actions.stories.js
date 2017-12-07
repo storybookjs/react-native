@@ -27,13 +27,13 @@ storiesOf('Addon Actions', module)
 
     const bound = B.bind({});
     const file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
-    const reg = /Whatever/g;
+    const reg = /fooBar/g;
 
     return (
       <div>
         {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
-        <Button onClick={() => action('Array')(['some', 'array', { what: 'ever' }])}>Array</Button>
-        <Button onClick={() => action('Boolean?')(false)}>Boolean</Button>
+        <Button onClick={() => action('Array')(['foo', 'bar', { foo: 'bar' }])}>Array</Button>
+        <Button onClick={() => action('Boolean')(false)}>Boolean</Button>
         <Button onClick={() => action('Empty Object')({})}>Empty Object</Button>
         <Button onClick={() => action('File')(file)}>File</Button>
         <Button onClick={() => action('Function')(A)}>Function A</Button>
@@ -45,24 +45,24 @@ storiesOf('Addon Actions', module)
         <Button onClick={() => action('Number')(10000)}>Number</Button>
         <Button
           onClick={() =>
-            action('clicked')(
-              'a string',
+            action('Multiple')(
+              'foo',
               1000,
               true,
               false,
               [1, 2, 3],
               null,
               undefined,
-              { something: 'else' },
+              { foo: 'bar' },
               window
             )
           }
         >
           Multiple
         </Button>
-        <Button onClick={() => action('Plain Object')({ something: 'else' })}>Plain Object</Button>
+        <Button onClick={() => action('Plain Object')({ foo: 'bar' })}>Plain Object</Button>
         <Button onClick={() => action('RegExp')(reg)}>RegExp</Button>
-        <Button onClick={() => action('String')('test')}>String</Button>
+        <Button onClick={() => action('String')('foo')}>String</Button>
         <Button onClick={() => action('Symbol')(Symbol('A_SYMBOL'))}>Symbol</Button>
         <Button onClick={() => action('undefined')(undefined)}>undefined</Button>
         <Button onClick={() => action('window')(window)}>Window</Button>
