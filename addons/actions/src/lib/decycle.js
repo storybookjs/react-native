@@ -1,4 +1,4 @@
-import { getPropertiesList, typeReplacer } from './util';
+import { typeReplacer } from './util';
 
 import { CYCLIC_KEY } from './';
 
@@ -48,9 +48,10 @@ export default function decycle(object, depth = 10) {
       } else {
         obj = classType.serialize(value);
 
-        getPropertiesList(value).forEach(name => {
+        // eslint-disable-next-line guard-for-in, no-restricted-syntax
+        for (const name in value) {
           obj[name] = derez(value[name], `${path}[${JSON.stringify(name)}]`, _depth + 1);
-        });
+        }
       }
 
       if (_depth === 0 && value instanceof Object && isCyclic) {
