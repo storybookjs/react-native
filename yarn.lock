@@ -11879,9 +11879,9 @@ webpack-dev-server@2.9.4:
     webpack-dev-middleware "^1.11.0"
     yargs "^6.6.0"
 
-webpack-dev-server@^2.9.6:
-  version "2.9.6"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.6.tgz#3e3b56c4222694d2b900c3e8e19dd2e990a817f3"
+webpack-dev-server@^2.9.7:
+  version "2.9.7"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.7.tgz#100ad6a14775478924d417ca6dcfb9d52a98faed"
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
