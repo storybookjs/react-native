@@ -1,14 +1,12 @@
 import createBoundFunction from './createBoundFunction';
 import createFunction from './createFunction';
-import isReserved from './isReserved';
 
 const KEY = '$___storybook.functionName';
 
 const functionType = {
   KEY,
   is: value => typeof value === 'function',
-  serialize: value =>
-    isReserved(value.name) ? { [KEY]: `$${value.name}` } : { [KEY]: value.name || '' },
+  serialize: value => ({ [KEY]: value.name || '' }),
   deserialize: value => {
     const parts = value[KEY].split(' ');
 

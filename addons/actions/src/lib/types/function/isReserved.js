@@ -1,3 +1,5 @@
+import reservedKeywords from './reservedKeywords';
+
 export default function isReserved(name) {
-  return ['delete'].indexOf(name) >= 0;
+  return reservedKeywords.indexOf(name) >= 0;
 }

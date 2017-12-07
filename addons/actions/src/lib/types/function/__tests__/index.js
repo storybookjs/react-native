@@ -1,4 +1,5 @@
 import functionType from '../';
+import reservedKeywords from '../reservedKeywords';
 import createFunction from '../createFunction';
 import createBoundFunction from '../createBoundFunction';
 
@@ -33,5 +34,13 @@ describe('function', () => {
     const func = functionType.deserialize({ [functionType.KEY]: 'bound B' });
 
     expect(func.name).toEqual('bound B');
+  });
+
+  it('Deserializes functions with reserved names', () => {
+    reservedKeywords.forEach(reservedKeyword => {
+      const func = functionType.deserialize({ [functionType.KEY]: reservedKeyword });
+
+      expect(func.name).toEqual(reservedKeyword);
+    });
   });
 });

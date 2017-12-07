@@ -1,4 +1,14 @@
-/* eslint-disable no-new-func */
+import canConfigureName from '../../util/canConfigureName';
+import createFunctionEval from './createFunctionEval';
+
 export default function createFunction(name = '') {
-  return new Function(`return function ${name}() {}`)();
+  if (canConfigureName) {
+    const func = function unnamed() {};
+
+    Object.defineProperty(func, 'name', { value: name });
+
+    return func;
+  }
+
+  return createFunctionEval(name);
 }

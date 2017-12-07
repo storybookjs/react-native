@@ -4,6 +4,7 @@ import addons from '@storybook/addons';
 import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
 import { decycle } from './lib';
+import { canConfigureName } from './lib/util';
 
 export function action(name) {
   // eslint-disable-next-line no-shadow
@@ -16,9 +17,6 @@ export function action(name) {
       data: { name, args },
     });
   };
-
-  // This condition is true in modern browsers that implement Function#name properly
-  const canConfigureName = Object.getOwnPropertyDescriptor(handler, 'name').configurable;
 
   if (canConfigureName && name && typeof name === 'string') {
     Object.defineProperty(handler, 'name', { value: name });
