@@ -2,22 +2,24 @@
 
 exports[`Storyshots App full app 1`] = `
 <div
-  className="App"
+  class="App"
 >
   <div
-    className="App-header"
+    class="App-header"
   >
     <img
       alt="logo"
-      className="App-logo"
+      class="App-logo"
       src="file-stub"
-    />
+    >
+      
+    </img>
     <h2>
       Welcome to React
     </h2>
   </div>
   <p
-    className="App-intro"
+    class="App-intro"
   >
     To get started, edit 
     <code>
@@ -31,362 +33,156 @@ exports[`Storyshots App full app 1`] = `
 exports[`Storyshots Button addons composition 1`] = `
 <div>
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    style="position:relative;z-index:0"
   >
     <div>
       click the 
       <span
-        style={
-          Object {
-            "background": "rgb(34, 136, 204)",
-            "borderRadius": "0px 0px 0px 5px",
-            "color": "rgb(255, 255, 255)",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "margin": 10,
-            "padding": "5px 15px",
-            "textDecoration": "none",
-          }
-        }
+        style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
       >
-         
-        Show Info
-         
+         Show Info 
       </span>
-       label in top right for info about "
-      addons composition
-      "
+       label in top right for info about "addons composition"
     </div>
   </div>
   <button
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-        "zIndex": 99999,
-      }
-    }
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#28c",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
     </button>
-    <div
-      style={undefined}
-    >
+    <div>
       <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginTop": "50px",
-            "padding": "20px 40px 40px",
-          }
-        }
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
       >
         <div
-          style={
-            Object {
-              "borderBottom": "1px solid #eee",
-              "marginBottom": 10,
-              "paddingTop": 10,
-            }
-          }
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
         >
           <h1
-            style={
-              Object {
-                "fontSize": "35px",
-                "margin": 0,
-                "padding": 0,
-              }
-            }
+            style="margin:0;padding:0;font-size:35px"
           >
             Button
           </h1>
           <h2
-            style={
-              Object {
-                "fontSize": "22px",
-                "fontWeight": 400,
-                "margin": "0 0 10px 0",
-                "padding": 0,
-              }
-            }
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
           >
             addons composition
           </h2>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 0,
-            }
-          }
+          style="margin-bottom:0"
         >
           <div
-            style={
-              Object {
-                "WebkitFontSmoothing": "antialiased",
-                "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-                "fontSize": "15px",
-              }
-            }
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
           >
             see Notes panel for composition info
           </div>
         </div>
         <div>
           <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
           >
             Story Source
           </h1>
           <pre
-            style={
-              Object {
-                "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                "fontSize": ".88em",
-                "lineHeight": 1.5,
-                "overflowX": "scroll",
-                "padding": ".5rem",
-              }
-            }
+            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
             <div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;
-                  div
+                  &lt;div
                 </span>
-                <span />
+                <span>
+                  
+                </span>
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   &gt;
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                />
+                  style="color:#777"
+                >
+                  
+                </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   click the 
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;
-                  InfoButton
+                  &lt;InfoButton
                 </span>
-                <span />
+                <span>
+                  
+                </span>
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   /&gt;
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                    label in top right for info about "
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   addons composition
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   "
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;/
-                  div
-                  &gt;
+                  &lt;/div&gt;
                 </span>
               </div>
             </div>
@@ -394,28 +190,15 @@ exports[`Storyshots Button addons composition 1`] = `
         </div>
         <div>
           <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
           >
             Prop Types
           </h1>
           <div>
             <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
+              style="margin:20px 0 0 0"
             >
-              "
-              InfoButton
-              " Component
+              "InfoButton" Component
             </h2>
             <small>
               No propTypes defined!
@@ -431,181 +214,64 @@ exports[`Storyshots Button addons composition 1`] = `
 exports[`Storyshots Button with new info 1`] = `
 <div>
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    style="position:relative;z-index:0"
   >
     <div
       title="the best container ever"
     >
       click the 
       <span
-        style={
-          Object {
-            "background": "rgb(34, 136, 204)",
-            "borderRadius": "0px 0px 0px 5px",
-            "color": "rgb(255, 255, 255)",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "margin": 10,
-            "padding": "5px 15px",
-            "textDecoration": "none",
-          }
-        }
+        style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
       >
-         
-        Show Info
-         
+         Show Info 
       </span>
-       label in top right for info about "
-      with new info
-      "
-      
+       label in top right for info about "with new info"
     </div>
   </div>
   <button
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-        "zIndex": 99999,
-      }
-    }
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#28c",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
     </button>
-    <div
-      style={undefined}
-    >
+    <div>
       <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginTop": "50px",
-            "padding": "20px 40px 40px",
-          }
-        }
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
       >
         <div
-          style={
-            Object {
-              "borderBottom": "1px solid #eee",
-              "marginBottom": 10,
-              "paddingTop": 10,
-            }
-          }
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
         >
           <h1
-            style={
-              Object {
-                "fontSize": "35px",
-                "margin": 0,
-                "padding": 0,
-              }
-            }
+            style="margin:0;padding:0;font-size:35px"
           >
             Button
           </h1>
           <h2
-            style={
-              Object {
-                "fontSize": "22px",
-                "fontWeight": 400,
-                "margin": "0 0 10px 0",
-                "padding": 0,
-              }
-            }
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
           >
             with new info
           </h2>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 0,
-            }
-          }
+          style="margin-bottom:0"
         >
           <div
-            style={
-              Object {
-                "WebkitFontSmoothing": "antialiased",
-                "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-                "fontSize": "15px",
-              }
-            }
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
           >
             Use the 
             <a
               href="https://github.com/storybooks/storybook/tree/master/addons/info"
               rel="noopener noreferrer"
-              style={
-                Object {
-                  "color": "#3498db",
-                }
-              }
+              style="color:#3498db"
               target="_blank"
             >
               info addon
@@ -615,194 +281,100 @@ exports[`Storyshots Button with new info 1`] = `
         </div>
         <div>
           <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
           >
             Story Source
           </h1>
           <pre
-            style={
-              Object {
-                "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                "fontSize": ".88em",
-                "lineHeight": 1.5,
-                "overflowX": "scroll",
-                "padding": ".5rem",
-              }
-            }
+            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
             <div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;
-                  Container
+                  &lt;Container
                 </span>
-                <span />
+                <span>
+                  
+                </span>
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   &gt;
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                />
+                  style="color:#777"
+                >
+                  
+                </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   click the 
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;
-                  InfoButton
+                  &lt;InfoButton
                 </span>
-                <span />
+                <span>
+                  
+                </span>
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   /&gt;
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                    label in top right for info about "
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   with new info
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   "
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;/
-                  Container
-                  &gt;
+                  &lt;/Container&gt;
                 </span>
               </div>
             </div>
@@ -810,56 +382,43 @@ exports[`Storyshots Button with new info 1`] = `
         </div>
         <div>
           <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
           >
             Prop Types
           </h1>
           <div>
             <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
+              style="margin:20px 0 0 0"
             >
-              "
-              Container
-              " Component
+              "Container" Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              class="css-1ytzlk7"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     description
                   </th>
@@ -868,56 +427,58 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     children
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     isAmazing
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     <span>
                       {
                       <span
-                        style={
-                          Object {
-                            "color": "#a11",
-                          }
-                        }
+                        style="color:#a11"
                       >
                         false
                       </span>
@@ -925,44 +486,40 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     age
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     <span>
                       {
                       <span
-                        style={
-                          Object {
-                            "color": "#666",
-                          }
-                        }
+                        style="color:#666"
                       >
                         {
                         <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
+                          style="color:#666"
                         >
                           isOld
                         </span>
@@ -970,11 +527,7 @@ exports[`Storyshots Button with new info 1`] = `
                         <span>
                           {
                           <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
+                            style="color:#a11"
                           >
                             false
                           </span>
@@ -982,11 +535,7 @@ exports[`Storyshots Button with new info 1`] = `
                         </span>
                         , 
                         <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
+                          style="color:#666"
                         >
                           value
                         </span>
@@ -994,11 +543,7 @@ exports[`Storyshots Button with new info 1`] = `
                         <span>
                           {
                           <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
+                            style="color:#a11"
                           >
                             0
                           </span>
@@ -1010,59 +555,52 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     title
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
+                      style="color:#22a;word-break:break-word"
                     >
-                      "
-                      the best container ever
-                      "
+                      "the best container ever"
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div>
             <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
+              style="margin:20px 0 0 0"
             >
-              "
-              InfoButton
-              " Component
+              "InfoButton" Component
             </h2>
             <small>
               No propTypes defined!
@@ -1077,7 +615,7 @@ exports[`Storyshots Button with new info 1`] = `
 
 exports[`Storyshots Button with notes 1`] = `
 <button
-  className="css-1yjiefr"
+  class="css-1yjiefr"
 >
   Check my notes in the notes panel
 </button>
@@ -1085,8 +623,7 @@ exports[`Storyshots Button with notes 1`] = `
 
 exports[`Storyshots Button with some emoji 1`] = `
 <button
-  className="css-1yjiefr"
-  onClick={[Function]}
+  class="css-1yjiefr"
 >
   😀 😎 👍 💯
 </button>
@@ -1095,181 +632,64 @@ exports[`Storyshots Button with some emoji 1`] = `
 exports[`Storyshots Button with some info 1`] = `
 <div>
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    style="position:relative;z-index:0"
   >
     <div
       title="the best container ever"
     >
       click the 
       <span
-        style={
-          Object {
-            "background": "rgb(34, 136, 204)",
-            "borderRadius": "0px 0px 0px 5px",
-            "color": "rgb(255, 255, 255)",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "margin": 10,
-            "padding": "5px 15px",
-            "textDecoration": "none",
-          }
-        }
+        style="font-family:sans-serif;font-size:12px;text-decoration:none;background:rgb(34, 136, 204);color:rgb(255, 255, 255);padding:5px 15px;margin:10px;border-radius:0px 0px 0px 5px"
       >
-         
-        Show Info
-         
+         Show Info 
       </span>
-       label in top right for info about "
-      with some info
-      "
-      
+       label in top right for info about "with some info"
     </div>
   </div>
   <button
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#28c",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
     type="button"
   >
     Show Info
   </button>
   <div
-    style={
-      Object {
-        "background": "white",
-        "bottom": 0,
-        "display": "none",
-        "left": 0,
-        "overflow": "auto",
-        "padding": "0 40px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-        "zIndex": 99999,
-      }
-    }
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
   >
     <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#28c",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
       type="button"
     >
       ×
     </button>
-    <div
-      style={undefined}
-    >
+    <div>
       <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginTop": "50px",
-            "padding": "20px 40px 40px",
-          }
-        }
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
       >
         <div
-          style={
-            Object {
-              "borderBottom": "1px solid #eee",
-              "marginBottom": 10,
-              "paddingTop": 10,
-            }
-          }
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
         >
           <h1
-            style={
-              Object {
-                "fontSize": "35px",
-                "margin": 0,
-                "padding": 0,
-              }
-            }
+            style="margin:0;padding:0;font-size:35px"
           >
             Button
           </h1>
           <h2
-            style={
-              Object {
-                "fontSize": "22px",
-                "fontWeight": 400,
-                "margin": "0 0 10px 0",
-                "padding": 0,
-              }
-            }
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
           >
             with some info
           </h2>
         </div>
         <div
-          style={
-            Object {
-              "marginBottom": 0,
-            }
-          }
+          style="margin-bottom:0"
         >
           <div
-            style={
-              Object {
-                "WebkitFontSmoothing": "antialiased",
-                "color": "#444",
-                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-                "fontSize": "15px",
-              }
-            }
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
           >
             Use the 
             <a
               href="https://github.com/storybooks/storybook/tree/master/addons/info"
               rel="noopener noreferrer"
-              style={
-                Object {
-                  "color": "#3498db",
-                }
-              }
+              style="color:#3498db"
               target="_blank"
             >
               info addon
@@ -1279,178 +699,91 @@ exports[`Storyshots Button with some info 1`] = `
         </div>
         <div>
           <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
           >
             Story Source
           </h1>
           <pre
-            style={
-              Object {
-                "backgroundColor": "#fafafa",
-                "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
-                "fontSize": ".88em",
-                "lineHeight": 1.5,
-                "overflowX": "scroll",
-                "padding": ".5rem",
-              }
-            }
+            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
           >
             <div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;
-                  Container
+                  &lt;Container
                 </span>
-                <span />
+                <span>
+                  
+                </span>
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   &gt;
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   click the 
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;
-                  InfoButton
+                  &lt;InfoButton
                 </span>
-                <span />
+                <span>
+                  
+                </span>
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   /&gt;
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                    label in top right for info about "
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   with some info
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 33,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:33px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
                   "
                 </span>
               </div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
+                style="padding-left:18px;padding-right:3px"
               >
                 <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
+                  style="color:#777"
                 >
-                  &lt;/
-                  Container
-                  &gt;
+                  &lt;/Container&gt;
                 </span>
               </div>
             </div>
@@ -1458,56 +791,43 @@ exports[`Storyshots Button with some info 1`] = `
         </div>
         <div>
           <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
           >
             Prop Types
           </h1>
           <div>
             <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
+              style="margin:20px 0 0 0"
             >
-              "
-              Container
-              " Component
+              "Container" Component
             </h2>
             <table
-              className="css-1ytzlk7"
+              class="css-1ytzlk7"
             >
               <thead>
                 <tr>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     property
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     propType
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     required
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     default
                   </th>
                   <th
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     description
                   </th>
@@ -1516,56 +836,58 @@ exports[`Storyshots Button with some info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     children
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     yes
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     isAmazing
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     <span>
                       {
                       <span
-                        style={
-                          Object {
-                            "color": "#a11",
-                          }
-                        }
+                        style="color:#a11"
                       >
                         false
                       </span>
@@ -1573,44 +895,40 @@ exports[`Storyshots Button with some info 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     age
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     <span>
                       {
                       <span
-                        style={
-                          Object {
-                            "color": "#666",
-                          }
-                        }
+                        style="color:#666"
                       >
                         {
                         <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
+                          style="color:#666"
                         >
                           isOld
                         </span>
@@ -1618,11 +936,7 @@ exports[`Storyshots Button with some info 1`] = `
                         <span>
                           {
                           <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
+                            style="color:#a11"
                           >
                             false
                           </span>
@@ -1630,11 +944,7 @@ exports[`Storyshots Button with some info 1`] = `
                         </span>
                         , 
                         <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
+                          style="color:#666"
                         >
                           value
                         </span>
@@ -1642,11 +952,7 @@ exports[`Storyshots Button with some info 1`] = `
                         <span>
                           {
                           <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
+                            style="color:#a11"
                           >
                             0
                           </span>
@@ -1658,59 +964,52 @@ exports[`Storyshots Button with some info 1`] = `
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
                 <tr>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
                     title
                   </td>
                   <td
-                    className="css-1ygfcef"
+                    class="css-1ygfcef"
                   >
-                    <span />
+                    <span>
+                      
+                    </span>
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     -
                   </td>
                   <td
-                    className="css-d52hbj"
+                    class="css-d52hbj"
                   >
                     <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
+                      style="color:#22a;word-break:break-word"
                     >
-                      "
-                      the best container ever
-                      "
+                      "the best container ever"
                     </span>
                   </td>
                   <td
-                    className="css-d52hbj"
-                  />
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div>
             <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
+              style="margin:20px 0 0 0"
             >
-              "
-              InfoButton
-              " Component
+              "InfoButton" Component
             </h2>
             <small>
               No propTypes defined!
@@ -1725,8 +1024,7 @@ exports[`Storyshots Button with some info 1`] = `
 
 exports[`Storyshots Button with text 1`] = `
 <button
-  className="css-1yjiefr"
-  onClick={[Function]}
+  class="css-1yjiefr"
 >
   Hello Button
 </button>
@@ -1734,30 +1032,13 @@ exports[`Storyshots Button with text 1`] = `
 
 exports[`Storyshots Some really long story kind description with text 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": 0,
-      "display": "flex",
-      "justifyContent": "center",
-      "left": 0,
-      "overflow": "auto",
-      "position": "fixed",
-      "right": 0,
-      "top": 0,
-    }
-  }
+  style="position:fixed;top:0;left:0;bottom:0;right:0;display:flex;align-items:center;justify-content:center;overflow:auto"
 >
   <div
-    style={
-      Object {
-        "margin": "auto",
-      }
-    }
+    style="margin:auto"
   >
     <button
-      className="css-1yjiefr"
-      onClick={[Function]}
+      class="css-1yjiefr"
     >
       Hello Button
     </button>
@@ -1767,20 +1048,14 @@ exports[`Storyshots Some really long story kind description with text 1`] = `
 
 exports[`Storyshots WithEvents Logger 1`] = `
 <div
-  style={
-    Object {
-      "color": "rgb(51, 51, 51)",
-      "fontFamily": "
-          -apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-          \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif
-        ",
-      "padding": 20,
-    }
-  }
+  style="padding:20px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
+      \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;color:rgb(51, 51, 51)"
 >
   <h1>
     Logger
   </h1>
-  <dl />
+  <dl>
+    
+  </dl>
 </div>
 `;

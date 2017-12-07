@@ -1,6 +1,6 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "1.0.0",
+  "version": "3.2.17",
   "scripts": {
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
@@ -8,17 +8,17 @@
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom",
-    "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json"
+    "generate-addon-jest-testresults": "jest src/stories/addon-jest.test.js --config=config-addon-jest.json --env=jsdom --json --outputFile=src/stories/addon-jest.testresults.json"
   },
   "dependencies": {
-    "eventemitter3": "^2.0.3",
+    "eventemitter3": "^3.0.0",
     "format-json": "^1.0.3",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
     "global": "^4.3.2",
     "prop-types": "^15.6.0",
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
@@ -39,30 +39,11 @@
     "@storybook/components": "^3.3.0-alpha.4",
     "@storybook/react": "^3.3.0-alpha.4",
     "babel-jest": "^21.2.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
     "jest": "^21.2.1",
     "react-scripts": "1.0.17"
   },
-  "private": true,
-  "jest": {
-    "verbose": true,
-    "coverageDirectory": "coverage/",
-    "notify": true,
-    "transform": {
-      ".*": "babel-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.s?css$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "src/*.js",
-      "!src/.*",
-      "!src/__test__/*",
-      "!src/**/__test__/*",
-      "!src/**/index.js",
-      "!src/**/story.js"
-    ]
-  }
+  "private": true
 }

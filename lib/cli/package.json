@@ -32,7 +32,7 @@
     "babel-runtime": "^6.26.0",
     "chalk": "^2.3.0",
     "child-process-promise": "^2.2.1",
-    "commander": "^2.12.1",
+    "commander": "^2.12.2",
     "cross-spawn": "^5.0.1",
     "jscodeshift": "^0.3.30",
     "json5": "^0.5.1",

@@ -7,7 +7,7 @@ import addons from '@storybook/addons';
 
 import runWithRequireContext from './require_context';
 import createChannel from './storybook-channel-mock';
-import { snapshot } from './test-bodies';
+import { snapshotWithOptions } from './test-bodies';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
 
 export {
@@ -82,8 +82,13 @@ export default function testStorySnapshots(options = {}) {
   // Added not to break existing storyshots configs (can be removed in a future major release)
   // eslint-disable-next-line
   options.storyNameRegex = options.storyNameRegex || options.storyRegex;
+  const snapshotOptions = {
+    renderer: options.renderer,
+    serializer: options.serializer,
+  };
   // eslint-disable-next-line
-  options.test = options.test || snapshot;
+  options.test =
+    options.test || snapshotWithOptions({ options: snapshotOptions });
 
   // eslint-disable-next-line
   for (const group of stories) {
@@ -105,7 +110,10 @@ export default function testStorySnapshots(options = {}) {
 
           it(story.name, () => {
             const context = { fileName, kind, story: story.name };
-            return options.test({ story, context });
+            return options.test({
+              story,
+              context,
+            });
           });
         }
       });
