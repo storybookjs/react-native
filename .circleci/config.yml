@@ -1,9 +1,7 @@
 defaults: &defaults
   working_directory: /tmp/storybook
   docker:
-    - image: circleci/node:8-browsers
-      environment:
-        CHROME_BIN: "/usr/bin/google-chrome"
+    - image: circleci/node:8
 
 version: 2
 dependencies:
