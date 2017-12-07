@@ -64,6 +64,7 @@ storiesOf('Addon Actions', module)
         <Button onClick={() => action('RegExp')(reg)}>RegExp</Button>
         <Button onClick={() => action('String')('foo')}>String</Button>
         <Button onClick={() => action('Symbol')(Symbol('A_SYMBOL'))}>Symbol</Button>
+        <Button onClick={action('SyntheticMouseEvent')}>SyntheticEvent</Button>
         <Button onClick={() => action('undefined')(undefined)}>undefined</Button>
         <Button onClick={() => action('window')(window)}>Window</Button>
       </div>
