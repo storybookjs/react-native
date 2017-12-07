@@ -72,12 +72,6 @@ exports[`Storyshots Addon Actions All types 1`] = `
     className="css-1yjiefr"
     onClick={[Function]}
   >
-    Math
-  </button>
-  <button
-    className="css-1yjiefr"
-    onClick={[Function]}
-  >
     Multiple
   </button>
   <button
@@ -103,6 +97,12 @@ exports[`Storyshots Addon Actions All types 1`] = `
     onClick={[Function]}
   >
     Symbol
+  </button>
+  <button
+    className="css-1yjiefr"
+    onClick={[Function]}
+  >
+    SyntheticEvent
   </button>
   <button
     className="css-1yjiefr"
@@ -134,15 +134,6 @@ exports[`Storyshots Addon Actions Decorated Action 1`] = `
   onClick={[Function]}
 >
   First Argument
-</button>
-`;
-
-exports[`Storyshots Addon Actions File object as payload 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
->
-  File
 </button>
 `;
 
