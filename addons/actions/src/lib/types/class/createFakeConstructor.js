@@ -1,13 +1,12 @@
-export default function createFakeConstructor(obj, key) {
-  function FakeConstructor(data) {
-    Object.assign(this, data);
-  }
+import createFunction from '../function/createFunction';
 
-  Object.defineProperty(FakeConstructor, 'name', {
-    value: obj[key],
-  });
+export default function createFakeConstructor(obj, key) {
+  const Func = createFunction(obj[key]);
+  const func = new Func();
 
   delete obj[key]; // eslint-disable-line no-param-reassign
 
-  return new FakeConstructor(obj);
+  Object.assign(func, obj);
+
+  return func;
 }
