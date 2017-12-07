@@ -43,6 +43,7 @@ storiesOf('Addon Actions', module)
         <Button onClick={() => action('NaN')(NaN)}>NaN</Button>
         <Button onClick={() => action('null')(null)}>null</Button>
         <Button onClick={() => action('Number')(10000)}>Number</Button>
+        <Button onClick={() => action('Math')(Math)}>Math</Button>
         <Button
           onClick={() =>
             action('clicked')(
