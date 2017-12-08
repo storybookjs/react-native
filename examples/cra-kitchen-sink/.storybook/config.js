@@ -13,7 +13,8 @@ setOptions({
   showSearchBox: false,
   addonPanelInRight: true,
   sortStoriesByKind: false,
-  hierarchySeparator: /\/|\./,
+  hierarchySeparator: /\./,
+  rootSeparator: /\|/,
 });
 
 // deprecated usage of infoAddon
