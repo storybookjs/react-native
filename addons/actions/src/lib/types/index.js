@@ -1,4 +1,4 @@
-import classType from './class';
+import objectType from './object';
 import dateType from './date';
 import functionType from './function';
 import infinityType from './infinity';
@@ -7,7 +7,7 @@ import regexpType from './regexp';
 import symbolType from './symbol';
 import undefinedType from './undefined';
 
-export { classType };
+export { objectType };
 export { dateType };
 export { functionType };
 export { infinityType };

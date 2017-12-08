@@ -1,6 +1,6 @@
 import typeReviver from '../typeReviver';
 import {
-  classType,
+  objectType,
   dateType,
   functionType,
   infinityType,
@@ -13,8 +13,8 @@ import {
 const date = '2017-12-02T11:13:22.492Z';
 
 describe('typeReviver', () => {
-  it('Revives className', () => {
-    expect(typeReviver({ [classType.KEY]: 'C' }).value.constructor.name).toEqual('C');
+  it('Revives object name', () => {
+    expect(typeReviver({ [objectType.KEY]: 'C' }).value.constructor.name).toEqual('C');
   });
   it('Revives Date', () => {
     expect(typeReviver({ [dateType.KEY]: date })).toEqual({

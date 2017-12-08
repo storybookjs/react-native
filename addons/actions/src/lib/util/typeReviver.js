@@ -1,8 +1,8 @@
-import { types, classType } from '../types';
+import { types, objectType } from '../types';
 
 const { hasOwnProperty } = Object.prototype;
 
-const allTypes = types.concat(classType);
+const allTypes = types.concat(objectType);
 
 function typeFilter(value) {
   const found = allTypes.find(type => hasOwnProperty.call(value, type.KEY));

@@ -50,7 +50,7 @@ describe('preview', () => {
       action('foo')(a);
 
       expect(JSON.parse(channel.emit.mock.calls[0][1].data.args[0])).toEqual({
-        '$___storybook.className': 'A',
+        '$___storybook.objectName': 'A',
         a: 'b',
       });
     });
@@ -66,7 +66,7 @@ describe('preview', () => {
       action('foo')(a);
 
       expect(JSON.parse(channel.emit.mock.calls[0][1].data.args[0])).toEqual({
-        '$___storybook.className': 'A',
+        '$___storybook.objectName': 'A',
         '$___storybook.isCyclic': true,
         a: {
           $ref: '$',

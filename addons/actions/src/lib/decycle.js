@@ -2,7 +2,7 @@ import { getPropertiesList, typeReplacer } from './util';
 
 import { CYCLIC_KEY } from './';
 
-import { classType } from './types';
+import { objectType } from './types';
 
 export default function decycle(object, depth = 10) {
   const objects = new WeakMap();
@@ -46,7 +46,7 @@ export default function decycle(object, depth = 10) {
           obj[i] = derez(value[i], `${path}[${i}]`, _depth + 1);
         }
       } else {
-        obj = classType.serialize(value);
+        obj = objectType.serialize(value);
 
         getPropertiesList(value).forEach(name => {
           obj[name] = derez(value[name], `${path}[${JSON.stringify(name)}]`, _depth + 1);

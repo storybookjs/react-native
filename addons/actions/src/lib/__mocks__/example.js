@@ -17,7 +17,7 @@ const input = {
 input.circular = input;
 
 const output = {
-  '$___storybook.className': 'Object',
+  '$___storybook.objectName': 'Object',
   '$___storybook.isCyclic': true,
   a: 'A',
   b: 1,
@@ -30,7 +30,7 @@ const output = {
   },
   e: '2017-12-02T11:13:22.492Z',
   f: {
-    '$___storybook.className': 'File',
+    '$___storybook.objectName': 'File',
     isClosed: false,
     lastModified: 1512213202492,
     name: 'filename.txt',

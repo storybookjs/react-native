@@ -1,12 +1,12 @@
 import createFunction from '../function/createFunction';
 
-export default function createFakeConstructor(obj, key) {
+export default function createNamedObject(obj, key) {
   const Func = createFunction(obj[key]);
-  const func = new Func();
+  const namedObj = new Func();
 
   delete obj[key]; // eslint-disable-line no-param-reassign
 
-  Object.assign(func, obj);
+  Object.assign(namedObj, obj);
 
-  return func;
+  return namedObj;
 }

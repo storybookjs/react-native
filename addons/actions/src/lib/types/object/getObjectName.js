@@ -1,4 +1,4 @@
-export default function getClassName(value) {
+export default function getObjectName(value) {
   if (value.toString) {
     const stringValue = value.toString();
 
