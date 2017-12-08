@@ -908,16 +908,65 @@ exports[`Storyshots Addon Info.Options.TableComponent Use a custom component for
               </thead>
               <tbody>
                 <tr>
-                  
+                  <td>
+                    disabled
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    false
+                  </td>
+                  <td>
+                    
+                  </td>
                 </tr>
                 <tr>
-                  
+                  <td>
+                    label
+                    <span
+                      style="color:red"
+                    >
+                      *
+                    </span>
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
                 </tr>
                 <tr>
-                  
+                  <td>
+                    onClick
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
                 </tr>
                 <tr>
-                  
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    {}
+                  </td>
+                  <td>
+                    
+                  </td>
                 </tr>
               </tbody>
             </table>
