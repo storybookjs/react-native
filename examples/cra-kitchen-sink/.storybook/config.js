@@ -14,7 +14,7 @@ setOptions({
   addonPanelInRight: true,
   sortStoriesByKind: false,
   hierarchySeparator: /\./,
-  rootSeparator: /\|/,
+  hierarchyRootSeparator: /\|/,
 });
 
 // deprecated usage of infoAddon

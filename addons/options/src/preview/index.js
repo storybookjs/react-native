@@ -7,14 +7,18 @@ export function init() {
   // NOTE nothing to do here
 }
 
-function hasOwnProp(object, propName) {
-  return Object.prototype.hasOwnProperty.call(object, propName);
-}
-
 function regExpStringify(exp) {
   if (typeof exp === 'string') return exp;
   if (Object.prototype.toString.call(exp) === '[object RegExp]') return exp.source;
   return null;
+}
+
+function hasOwnProp(object, propName) {
+  return Object.prototype.hasOwnProperty.call(object, propName);
+}
+
+function withRegexProp(object, propName) {
+  return hasOwnProp(object, propName) ? { [propName]: regExpStringify(object[propName]) } : {};
 }
 
 // setOptions function will send Storybook UI options when the channel is
@@ -28,15 +32,11 @@ export function setOptions(newOptions) {
   }
 
   // since 'undefined' and 'null' are the valid values we don't want to
-  // override the hierarchySeparator or rootSeparator if the prop is missing
+  // override the hierarchySeparator or hierarchyRootSeparator if the prop is missing
   const options = {
     ...newOptions,
-    ...(hasOwnProp(newOptions, 'hierarchySeparator')
-      ? { hierarchySeparator: regExpStringify(newOptions.hierarchySeparator) }
-      : {}),
-    ...(hasOwnProp(newOptions, 'rootSeparator')
-      ? { rootSeparator: regExpStringify(newOptions.rootSeparator) }
-      : {}),
+    ...withRegexProp(newOptions, 'hierarchySeparator'),
+    ...withRegexProp(newOptions, 'hierarchyRootSeparator'),
   };
 
   channel.emit(EVENT_ID, { options });

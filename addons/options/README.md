@@ -97,7 +97,7 @@ setOptions({
    *   /\|/ - split by `|`
    * @type {Regex}
    */
-  rootSeparator: null,
+  hierarchyRootSeparator: null,
   /**
    * sidebar tree animations
    * @type {Boolean}
