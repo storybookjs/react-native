@@ -45,7 +45,7 @@
     "commander": "^2.12.2",
     "common-tags": "^1.5.1",
     "configstore": "^3.1.1",
-    "core-js": "^2.5.1",
+    "core-js": "^2.5.2",
     "css-loader": "^0.28.7",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
