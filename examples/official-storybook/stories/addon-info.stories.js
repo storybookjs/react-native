@@ -130,7 +130,7 @@ storiesOf('Addons|Info.Options.TableComponent', module).add(
   })(() => <BaseButton label="Button" />)
 );
 
-storiesOf('Addon Info.Decorator', module)
+storiesOf('Addons|Info.Decorator', module)
   .addDecorator((story, context) =>
     withInfo('Info could be used as a global or local decorator as well.')(story)(context)
   )
