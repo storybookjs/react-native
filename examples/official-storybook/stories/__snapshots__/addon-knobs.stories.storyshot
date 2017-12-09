@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon Knobs.withKnobs triggers actions via button 1`] = `
+exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
 <div>
   <p>
     Hit the knob load button and it should trigger an async load after a short delay
@@ -11,7 +11,7 @@ exports[`Storyshots Addon Knobs.withKnobs triggers actions via button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
+exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
 <div
   style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
@@ -51,7 +51,7 @@ exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon Knobs.withKnobsOptions triggers actions via button with debounce delay 1`] = `
+exports[`Storyshots Addons|Knobs.withKnobsOptions triggers actions via button with debounce delay 1`] = `
 <div>
   <p>
     Hit the knob load button and it should trigger an async load after a short delay
@@ -62,7 +62,7 @@ exports[`Storyshots Addon Knobs.withKnobsOptions triggers actions via button wit
 </div>
 `;
 
-exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debounce delay 1`] = `
+exports[`Storyshots Addons|Knobs.withKnobsOptions tweaks static values with debounce delay 1`] = `
 <div
   style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
