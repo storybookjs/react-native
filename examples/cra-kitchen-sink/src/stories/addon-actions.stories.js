@@ -5,7 +5,7 @@ import { Button } from '@storybook/react/demo';
 
 const pickFirst = decorateAction([args => args.slice(0, 1)]);
 
-storiesOf('Addons|Addon Actions', module)
+storiesOf('Addons|Actions', module)
   .add('Hello World', () => <Button onClick={action('hello-world')}>Hello World</Button>)
   .add('Decorated Action', () => <Button onClick={pickFirst('decorated')}>First Argument</Button>)
   .add('Circular Payload', () => {

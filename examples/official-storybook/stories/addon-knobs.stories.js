@@ -45,7 +45,7 @@ class AsyncItemLoader extends React.Component {
   }
 }
 
-storiesOf('Addons|Addon Knobs.withKnobs', module)
+storiesOf('Addons|Knobs.withKnobs', module)
   .addDecorator(withKnobs)
   .add('tweaks static values', () => {
     const name = text('Name', 'Storyteller');
@@ -97,7 +97,7 @@ storiesOf('Addons|Addon Knobs.withKnobs', module)
     </div>
   ));
 
-storiesOf('Addons|Addon Knobs.withKnobsOptions', module)
+storiesOf('Addons|Knobs.withKnobsOptions', module)
   .addDecorator(
     withKnobsOptions({
       debounce: { wait: 100, leading: boolean }, // Same as lodash debounce.
