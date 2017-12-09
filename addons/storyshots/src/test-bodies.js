@@ -19,11 +19,13 @@ export const snapshotWithOptions = options => ({ story, context, snapshotFileNam
     expect(tree).toMatchSnapshot();
   }
 
-  tree.unmount();
+  if (typeof tree.unmount === 'function') {
+    tree.unmount();
+  }
 };
 
-export const multiSnapshotWithOptions = options => ({ context }) => {
-  snapshotWithOptions({ ...options, snapshotFileName: getSnapshotFileName(context) });
+export const multiSnapshotWithOptions = options => ({ story, context }) => {
+  snapshotWithOptions(options)({ story, context, snapshotFileName: getSnapshotFileName(context) });
 };
 
 export const snapshot = snapshotWithOptions({});
