@@ -19,12 +19,12 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
     "babel-runtime": "^6.26.0",
     "prop-types": "^15.6.0",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
+    "@storybook/addons": "^3.3.0-alpha.4",
     "react": "*"
   },
   "optionalDependencies": {

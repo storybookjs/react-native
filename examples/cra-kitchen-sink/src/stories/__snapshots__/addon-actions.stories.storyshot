@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Actions Circular Payload 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Circular Payload
+</button>
+`;
+
+exports[`Storyshots Addon Actions Decorated Action 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  First Argument
+</button>
+`;
+
+exports[`Storyshots Addon Actions Function Name 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Action.name: fnName
+</button>
+`;
+
+exports[`Storyshots Addon Actions Hello World 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addon Actions Reserved keyword as name 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Delete
+</button>
+`;

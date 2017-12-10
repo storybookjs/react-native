@@ -20,7 +20,6 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
     "babel-runtime": "^6.26.0",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.0",
@@ -28,6 +27,7 @@
     "uuid": "^3.1.0"
   },
   "peerDependencies": {
+    "@storybook/addons": "^3.3.0-alpha.4",
     "react": "*"
   }
 }

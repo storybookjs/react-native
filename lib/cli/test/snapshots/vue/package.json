@@ -37,6 +37,6 @@
     "@storybook/vue": "^3.3.0-alpha.4",
     "@storybook/addon-actions": "^3.3.0-alpha.4",
     "@storybook/addon-links": "^3.3.0-alpha.4",
-    "babel-preset-vue": "^1.2.1"
+    "babel-preset-vue": "^2.0.0"
   }
 }

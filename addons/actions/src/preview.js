@@ -6,9 +6,9 @@ import { EVENT_ID } from './';
 import { decycle } from './util';
 
 export function action(name) {
-  // eslint-disable-next-line no-unused-vars, func-names
-  const handler = function(..._args) {
-    const args = Array.from(_args).map(arg => JSON.stringify(decycle(arg)));
+  // eslint-disable-next-line no-shadow
+  const handler = function action(..._args) {
+    const args = _args.map(arg => JSON.stringify(decycle(arg)));
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {
@@ -17,8 +17,14 @@ export function action(name) {
     });
   };
 
-  const fnName = name && typeof name === 'string' ? name.replace(/\W+/g, '_') : 'action';
-  Object.defineProperty(handler, 'name', { value: fnName });
+  // IE11 may return an undefined descriptor, but it supports Function#name
+  const nameDescriptor = Object.getOwnPropertyDescriptor(handler, 'name');
+  // This condition is true in modern browsers that implement Function#name properly
+  const canConfigureName = !nameDescriptor || nameDescriptor.configurable;
+
+  if (canConfigureName && name && typeof name === 'string') {
+    Object.defineProperty(handler, 'name', { value: name });
+  }
   return handler;
 }
 

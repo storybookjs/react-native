@@ -1,5 +1,5 @@
 import React from 'react';
-import EventEmiter from 'eventemitter3';
+import EventEmitter from 'eventemitter3';
 
 import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
@@ -21,8 +21,8 @@ const EVENTS = {
   TEST_EVENT_4: 'test-event-4',
 };
 
-const emiter = new EventEmiter();
-const emit = emiter.emit.bind(emiter);
+const emitter = new EventEmitter();
+const emit = emitter.emit.bind(emitter);
 
 const InfoButton = () => (
   <span
@@ -53,12 +53,6 @@ storiesOf('Button', module)
     <Button onClick={action('clicked')}>
       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
       😀 😎 👍 💯
-    </Button>
-  ))
-  .add('delete', () => (
-    <Button onClick={action('delete')}>
-      {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
-      Delete
     </Button>
   ))
   .add('with notes', () => (
@@ -163,4 +157,4 @@ storiesOf('WithEvents', module)
       {getStory()}
     </WithEvents>
   ))
-  .add('Logger', () => <Logger emiter={emiter} />);
+  .add('Logger', () => <Logger emitter={emitter} />);
