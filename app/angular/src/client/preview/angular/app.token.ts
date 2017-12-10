@@ -4,6 +4,6 @@ export const STORY = new InjectionToken<Data>("story");
 
 export type Data = {
   component: any;
-  props: object;
-  propsMeta: object;
+  props: {[p: string]: any};
+  propsMeta: {[p: string]: any};
 }

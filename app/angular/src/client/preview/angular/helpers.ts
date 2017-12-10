@@ -1,4 +1,6 @@
 import {
+  Type,
+  PlatformRef,
   enableProdMode,
   NgModule,
   Component,
@@ -11,29 +13,48 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
-import { STORY } from "./app.token";
-let platform = null;
-let promises = [];
+import { STORY, Data } from "./app.token";
+
+let platform: PlatformRef = null;
+let promises: Promise<NgModuleRef<any>>[] = [];
+
+export interface IContext {
+  [p: string]: any
+};
+export type IGetStoryWithContext = (context: IContext) => Data
+type IRenderStoryFn = (story: IGetStoryWithContext, context: IContext, reRender?: boolean) => void;
+type IRenderErrorFn = (error: Error) => void;
+
+interface IModule extends Type<any> {
+  annotations: any[];
+}
+interface IComponent extends Type<any> {
+  annotations: any[];
+  parameters: any[];
+  propsMetadata: any[]
+  
+}
 
 // Taken from https://davidwalsh.name/javascript-debounce-function
 // We don't want to pull underscore
-
-const debounce = (func, wait = 100, immediate = false) => {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
+const debounce = (func: IRenderStoryFn | IRenderErrorFn,
+                  wait: number = 100,
+                  immediate: boolean = false): () => void => {
+  var timeout: number;
+  return function () {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 };
 
-const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
+const getComponentMetadata = ({component, props = {}, propsMeta = {}}: Data) => {
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
 
@@ -56,8 +77,11 @@ const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
   };
 };
 
-const getAnnotatedComponent = (meta, component, propsMeta, params) => {
-  const NewComponent: any = function NewComponent(...args) {
+const getAnnotatedComponent = (meta: NgModule,
+                               component: any,
+                               propsMeta: { [p: string]: any },
+                               params: any[]): IComponent => {
+  const NewComponent: any = function NewComponent(...args: any[]) {
     component.call(this, ...args);
   };
   NewComponent.prototype = Object.create(component.prototype);
@@ -67,7 +91,10 @@ const getAnnotatedComponent = (meta, component, propsMeta, params) => {
   return NewComponent;
 };
 
-const getModule = (declarations, entryComponents, bootstrap, data) => {
+const getModule = (declarations: Array<Type<any> | any[]>,
+                   entryComponents: Array<Type<any> | any[]>,
+                   bootstrap: Array<Type<any> | any[]>,
+                   data: Data): IModule => {
   const moduleMeta = new NgModule({
     declarations: [...declarations],
     imports: [BrowserModule],
@@ -78,12 +105,12 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
   });
 
   const NewModule: any = function NewModule() {};
-  NewModule.annotations = [moduleMeta];
+  (<IModule>NewModule).annotations = [moduleMeta];
 
   return NewModule;
 };
 
-const initModule = (currentStory, context, reRender) => {
+const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRender: boolean): IModule => {
   const {
     component,
     componentMeta,
@@ -115,7 +142,7 @@ const initModule = (currentStory, context, reRender) => {
   return Module;
 };
 
-const draw = (newModule, reRender = true) => {
+const draw = (newModule: IModule, reRender: boolean = true): void => {
   if (!platform) {
     try {
       enableProdMode();
@@ -137,9 +164,9 @@ const draw = (newModule, reRender = true) => {
   }
 };
 
-export const renderNgError = debounce((error) => {
+export const renderNgError = debounce((error: Error) => {
   const errorData = {
-    component: null,
+    component: <any>null,
     props: {
       message: error.message,
       stack: error.stack
@@ -157,7 +184,7 @@ export const renderNoPreview = debounce(() => {
     [NoPreviewComponent],
     [],
     [NoPreviewComponent],
-    {}
+    <Data>{}
   );
 
   draw(Module);
