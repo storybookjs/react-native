@@ -22,6 +22,7 @@ elif [ "$BUILD_CONTEXT" = "CRA" ]; then
 elif [ "$BUILD_CONTEXT" = "VUE" ]; then
   echo "netlify-build Vue examples"
   pushd examples/vue-kitchen-sink
+  yarn
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd

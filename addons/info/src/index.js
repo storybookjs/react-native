@@ -1,6 +1,8 @@
 import React from 'react';
 import deprecate from 'util-deprecate';
 import Story from './components/Story';
+import PropTable from './components/PropTable';
+import makeTableComponent from './components/makeTableComponent';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
 
 const defaultOptions = {
@@ -8,6 +10,7 @@ const defaultOptions = {
   header: true,
   source: true,
   propTables: [],
+  TableComponent: PropTable,
   maxPropsIntoLine: 3,
   maxPropObjectKeys: 3,
   maxPropArrayLength: 3,
@@ -53,6 +56,7 @@ function addInfo(storyFn, context, infoOptions) {
     showSource: Boolean(options.source),
     propTables: options.propTables,
     propTablesExclude: options.propTablesExclude,
+    PropTable: makeTableComponent(options.TableComponent),
     styles: typeof options.styles === 'function' ? options.styles : s => s,
     marksyConf,
     maxPropObjectKeys: options.maxPropObjectKeys,

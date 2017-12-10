@@ -105,7 +105,8 @@ setDefaults({
   maxPropsIntoLine: 1, // Max props to display per line in source code
   maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name
   maxPropArrayLength: 10, // Displays the first 10 items in the default prop array
-  maxPropStringLength: 100, // Displays the first 100 characters in the default prop string
+  maxPropStringLength: 100, // Displays the first 100 characters in the default prop string,
+  TableComponent: props => {}, // Override the component used to render the props table
 }
 ```
 
@@ -158,6 +159,102 @@ setDefaults({
   maxPropStringLength: 100,
 });
 setAddon(infoAddon);
+```
+
+### Rendering a Custom Table
+
+The `TableComponent` option allows you to define how the prop table should be rendered. Your component will be rendered with the following props.
+
+```js
+  {
+    propDefinitions: Array<{
+      property: string, // The name of the prop
+      propType: Object | string, // The prop type. TODO: info about what this object is...
+      required: boolean, // True if the prop is required
+      description: string, // The description of the prop
+      defaultValue: any // The default value of the prop
+    }>
+  }
+```
+
+Example:
+
+```js
+// button.js
+// @flow
+import React from 'react'
+
+const paddingStyles = {
+  small: '4px 8px',
+  medium: '8px 16px'
+}
+
+const Button = ({
+  size,
+  ...rest
+}: {
+  /** The size of the button */
+  size: 'small' | 'medium'
+}) => {
+  const style = {
+    padding: paddingStyles[size] || ''
+  }
+  return <button style={style} {...rest} />
+}
+Button.defaultProps = {
+  size: 'medium'
+}
+
+export default Button
+```
+```js
+// stories.js
+import React from "react";
+
+import { storiesOf } from "@storybook/react";
+import { withInfo } from "@storybook/addon-info";
+import Button from "./button";
+
+const Red = props => <span style={{ color: "red" }} {...props} />;
+
+const TableComponent = ({ propDefinitions }) => {
+  const props = propDefinitions.map(
+    ({ property, propType, required, description, defaultValue }) => {
+      return (
+        <tr key={property}>
+          <td>
+            {property}
+            {required ? <Red>*</Red> : null}
+          </td>
+          <td>{propType.name}</td>
+          <td>{defaultValue}</td>
+          <td>{description}</td>
+        </tr>
+      );
+    }
+  );
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>{props}</tbody>
+    </table>
+  );
+};
+
+storiesOf("Button", module).add(
+  "with text",
+  withInfo({
+    TableComponent
+  })(() => <Button>Hello Button</Button>)
+);
 ```
 
 ### React Docgen Integration
