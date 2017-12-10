@@ -53,7 +53,7 @@ function addInfo(storyFn, context, infoOptions) {
     showSource: Boolean(options.source),
     propTables: options.propTables,
     propTablesExclude: options.propTablesExclude,
-    styles: typeof options.styles === 'function' ? options.styles : s => s,
+    styles: options.styles,
     marksyConf,
     maxPropObjectKeys: options.maxPropObjectKeys,
     maxPropArrayLength: options.maxPropArrayLength,

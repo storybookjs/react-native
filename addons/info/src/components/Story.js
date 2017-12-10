@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import nestedObjectAssign from 'nested-object-assign';
 import global from 'global';
 import { baseFonts } from '@storybook/components';
 
@@ -106,14 +107,14 @@ export default class Story extends React.Component {
     super(...args);
     this.state = {
       open: false,
-      stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
+      stylesheet: nestedObjectAssign({}, stylesheet, this.props.styles),
     };
     this.marksy = marksy(this.props.marksyConf);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet))),
+      stylesheet: nestedObjectAssign({}, stylesheet, nextProps.styles),
     });
   }
 
@@ -382,7 +383,7 @@ Story.propTypes = {
   showInline: PropTypes.bool,
   showHeader: PropTypes.bool,
   showSource: PropTypes.bool,
-  styles: PropTypes.func.isRequired,
+  styles: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   maxPropsIntoLine: PropTypes.number.isRequired,
@@ -399,5 +400,6 @@ Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
+  styles: {},
   marksyConf: {},
 };

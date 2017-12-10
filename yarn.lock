@@ -7820,6 +7820,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+nested-object-assign@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.1.tgz#72d4996d77acbbfda92421f48e1d14eba0962159"
+
 netrc@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/netrc/-/netrc-0.1.4.tgz#6be94fcaca8d77ade0a9670dc460914c94472444"
