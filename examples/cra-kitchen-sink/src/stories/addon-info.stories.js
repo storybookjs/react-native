@@ -89,16 +89,20 @@ storiesOf('Addon Info.Options.propTablesExclude', module).add(
 );
 
 storiesOf('Addon Info.Options.styles', module).add(
-  'Change info styles // I think this is broken or I am using it wrong?',
+  'Change info styles',
   withInfo({
-    styles: () => ({
-      backgroundColor: 'gray',
+    styles: {
+      button: {
+        base: {
+          background: 'purple',
+        },
+      },
       header: {
         h1: {
-          color: 'red'
-        }
-      }
-    }),
+          color: 'red',
+        },
+      },
+    },
   })(() => <BaseButton label="Button" />)
 );
 

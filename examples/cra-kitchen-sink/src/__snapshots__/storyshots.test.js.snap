@@ -3350,7 +3350,7 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
 </div>
 `;
 
-exports[`Storyshots Addon Info.Options.styles Change info styles // I think this is broken or I am using it wrong? 1`] = `
+exports[`Storyshots Addon Info.Options.styles Change info styles 1`] = `
 <div>
   <div
     style={
@@ -3372,7 +3372,7 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
     onClick={[Function]}
     style={
       Object {
-        "background": "#28c",
+        "background": "purple",
         "border": "none",
         "borderRadius": "0 0 0 5px",
         "color": "#fff",
@@ -3410,7 +3410,7 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
       onClick={[Function]}
       style={
         Object {
-          "background": "#28c",
+          "background": "purple",
           "border": "none",
           "borderRadius": "0 0 0 5px",
           "color": "#fff",
@@ -3461,6 +3461,7 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
           <h1
             style={
               Object {
+                "color": "red",
                 "fontSize": "35px",
                 "margin": 0,
                 "padding": 0,
@@ -3479,7 +3480,7 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
               }
             }
           >
-            Change info styles // I think this is broken or I am using it wrong?
+            Change info styles
           </h2>
         </div>
         
