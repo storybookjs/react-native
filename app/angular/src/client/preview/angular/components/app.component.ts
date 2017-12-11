@@ -45,10 +45,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       const value = (<any>props)[key];
       const property = (<any>instance)[key];
 
-      if (property instanceof EventEmitter && typeof value === 'function') {
-        property.subscribe((<any>props)[key]);
-      } else {
-        (<any>instance)[key] = (<any>props)[key];
+      if (!(property instanceof EventEmitter)) {
+          (<any>instance)[key] = (<any>props)[key];
+      } else if (typeof value === 'function') {
+          property.subscribe((<any>props)[key]);
       }
     });
   }
