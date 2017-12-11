@@ -20,7 +20,13 @@ const isBrowser =
   !(navigator.userAgent.indexOf('Node.js') > -1);
 
 const storyStore = new StoryStore();
-const reduxStore = createStore(reducer);
+/* eslint-disable no-underscore-dangle */
+const reduxStore = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__({ name: 'Storybook Preview', instanceId: 'sbPreview' })
+);
+/* eslint-enable */
 const context = { storyStore, reduxStore };
 
 if (isBrowser) {
@@ -53,3 +59,5 @@ const renderUI = () => {
 };
 
 reduxStore.subscribe(renderUI);
+
+export const forceReRender = () => renderUI();
