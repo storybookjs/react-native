@@ -12,6 +12,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "jscodeshift": "^0.3.30"
+    "jscodeshift": "^0.4.0"
   }
 }
