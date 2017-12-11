@@ -2,12 +2,21 @@
 
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
 
+import {
+  getParameters,
+  getAnnotations,
+  getPropMetadata,
+  setAnnotations,
+  setParameters,
+} from './utils';
+
 const getComponentMetadata = ({ component, props = {} }) => {
   if (!component || typeof component !== 'function') throw new Error('No valid component provided');
 
-  const componentMeta = component.__annotations__[0] || component.annotations[0];
-  const propsMeta = component.__prop__metadata__ || component.propMetadata || {};
-  const paramsMetadata = component.__parameters__ || component.parameters || [];
+  const componentMeta = getAnnotations(component)[0] || {};
+  const propsMeta = getPropMetadata(component);
+  const paramsMetadata = getParameters(component);
+
   return {
     component,
     props,
@@ -25,8 +34,9 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     this.setPaneKnobs = this.setPaneKnobs.bind(this);
   };
   NewComponent.prototype = Object.create(component.prototype);
-  NewComponent.__annotations__ = [new Component(componentMeta)];
-  NewComponent.__parameters__ = [[ChangeDetectorRef], ...params];
+
+  setAnnotations(NewComponent, [new Component(componentMeta)]);
+  setParameters(NewComponent, [[ChangeDetectorRef], ...params]);
 
   NewComponent.prototype.constructor = NewComponent;
   NewComponent.prototype.ngOnInit = function onInit() {

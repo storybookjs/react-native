@@ -6,12 +6,15 @@ import {
   ApplicationRef,
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
+
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
+import { getAnnotations, getParameters, getPropMetadata } from '../utils';
+
 let platform = null;
 let promises = [];
 
@@ -37,11 +40,9 @@ const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
 
-  const componentMetadata =
-    component.__annotations__[0] || component.annotations[0] || {};
-  const propsMetadata =
-    component.__prop__metadata__ || component.propMetadata || {};
-  const paramsMetadata = component.__parameters__ || component.parameters || [];
+  const componentMetadata = getAnnotations(component)[0] || {};
+  const propsMetadata = getPropMetadata(component);
+  const paramsMetadata = getParameters(component);
 
   Object.keys(propsMeta).map(key => {
     propsMetadata[key] = propsMeta[key];
