@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 
-import React from 'react';
+import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import global from 'global';
 import { baseFonts } from '@storybook/components';
@@ -107,7 +107,10 @@ export default class Story extends React.Component {
       open: false,
       stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
     };
-    this.marksy = marksy(this.props.marksyConf);
+    this.marksy = marksy({
+      createElement,
+      elements: this.props.components,
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -383,7 +386,7 @@ Story.propTypes = {
   showSource: PropTypes.bool,
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  components: PropTypes.shape({}),
   maxPropsIntoLine: PropTypes.number.isRequired,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
@@ -398,5 +401,5 @@ Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
-  marksyConf: {},
+  components: {},
 };
