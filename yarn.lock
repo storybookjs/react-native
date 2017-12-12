@@ -3155,9 +3155,9 @@ damerau-levenshtein@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
-danger@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-2.1.3.tgz#eaf6893f6aa568c30153ba780113288a8b933d81"
+danger@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-2.1.4.tgz#908c59cf8ddcbe64fc6968f2ae70a5c641a27a9b"
   dependencies:
     babel-polyfill "7.0.0-alpha.19"
     chalk "^2.0.0"
@@ -11724,7 +11724,7 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vm2@patriksimek/vm2#custom_files:
+"vm2@github:patriksimek/vm2#custom_files":
   version "3.5.0"
   resolved "https://codeload.github.com/patriksimek/vm2/tar.gz/7e82f90ac705fc44fad044147cb0df09b4c79a57"
 
