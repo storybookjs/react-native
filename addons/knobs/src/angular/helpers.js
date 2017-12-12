@@ -3,7 +3,7 @@
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
 import { getParameters, getAnnotations, getPropMetadata } from './utils';
 
-const getComponentMetadata = ({ component, props = {}, pipes = [] }) => {
+const getComponentMetadata = ({ component, props = {}, moduleMetadata }) => {
   if (!component || typeof component !== 'function') throw new Error('No valid component provided');
 
   const componentMeta = getAnnotations(component)[0] || {};
@@ -13,9 +13,9 @@ const getComponentMetadata = ({ component, props = {}, pipes = [] }) => {
   return {
     component,
     props,
-    pipes,
     componentMeta,
     propsMeta,
+    moduleMetadata,
     params: paramsMetadata,
   };
 };
@@ -35,7 +35,7 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
   KnobWrapperComponent.prototype.constructor = KnobWrapperComponent;
   KnobWrapperComponent.prototype.ngOnInit = function onInit() {
     if (component.prototype.ngOnInit) {
-      component.prototype.ngOnInit();
+      component.prototype.ngOnInit.call(this);
     }
 
     channel.on('addon:knobs:knobChange', this.knobChanged);
@@ -46,7 +46,7 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
 
   KnobWrapperComponent.prototype.ngOnDestroy = function onDestroy() {
     if (component.prototype.ngOnDestroy) {
-      component.prototype.ngOnDestroy();
+      component.prototype.ngOnDestroy.call(this);
     }
 
     channel.removeListener('addon:knobs:knobChange', this.knobChanged);
@@ -56,7 +56,7 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
 
   KnobWrapperComponent.prototype.ngOnChanges = function onChanges(changes) {
     if (component.prototype.ngOnChanges) {
-      component.prototype.ngOnChanges(changes);
+      component.prototype.ngOnChanges.call(this, changes);
     }
   };
 
@@ -99,9 +99,14 @@ const resetKnobs = (knobStore, channel) => {
 
 export function prepareComponent({ getStory, context, channel, knobStore }) {
   resetKnobs(knobStore, channel);
-  const { component, componentMeta, props, pipes, propsMeta, params } = getComponentMetadata(
-    getStory(context)
-  );
+  const {
+    component,
+    componentMeta,
+    props,
+    propsMeta,
+    params,
+    moduleMetadata,
+  } = getComponentMetadata(getStory(context));
 
   if (!componentMeta) throw new Error('No component metadata available');
 
@@ -116,7 +121,7 @@ export function prepareComponent({ getStory, context, channel, knobStore }) {
   return {
     component: AnnotatedComponent,
     props,
-    pipes,
     propsMeta,
+    moduleMetadata,
   };
 }

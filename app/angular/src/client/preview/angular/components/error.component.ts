@@ -1,5 +1,6 @@
 import { Component, Inject } from "@angular/core";
-import { STORY, Data } from "../app.token";
+import { STORY } from "../app.token";
+import { Data } from "../types";
 
 @Component({
   selector: "my-app",

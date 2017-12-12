@@ -1,10 +1,4 @@
-import { InjectionToken, PipeTransform } from "@angular/core";
+import { InjectionToken } from "@angular/core";
+import { Data } from "./types";
 
 export const STORY = new InjectionToken<Data>("story");
-
-export type Data = {
-  component: any;
-  props: object;
-  propsMeta: object;
-  pipes: PipeTransform[];
-}
