@@ -19,7 +19,7 @@ function getMeta(component, [name1, name2], defaultValue) {
     }
   }
 
-  if (VERSION.major === '4') {
+  if (VERSION.major === '4' || VERSION.major === '2') {
     return window.Reflect.getMetadata(name2, component) || defaultValue;
   }
 
@@ -36,7 +36,7 @@ function setMeta(component, [name1, name2], value) {
     component[name1] = value;
   }
 
-  if (VERSION.major === '4') {
+  if (VERSION.major === '4' || VERSION.major === '2') {
     window.Reflect.defineMetadata(name2, value, component);
   }
 }
