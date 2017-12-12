@@ -1,16 +1,12 @@
-/* eslint-disable no-param-reassign */
-/* eslint no-underscore-dangle: 0 */
-/* globals window */
-
 import { VERSION } from '@angular/core';
 
-function getMeta(component, [name1, name2], defaultValue) {
+function getMeta(component, [name1, name2]: any, defaultValue) {
   if (!name2) {
     name2 = name1;
     name1 = `__${name1}__`;
   }
 
-  if (VERSION.major >= 5) {
+  if (VERSION.major === '5') {
     if (component[name1]) {
       return component[name1];
     }
@@ -20,25 +16,25 @@ function getMeta(component, [name1, name2], defaultValue) {
     }
   }
 
-  if (VERSION.major >= 4) {
-    return window.Reflect.getMetadata(name2, component) || defaultValue;
+  if (VERSION.major === '4') {
+    return window['Reflect'].getMetadata(name2, component) || defaultValue;
   }
 
   return defaultValue;
 }
 
-function setMeta(component, [name1, name2], value) {
+function setMeta(component, [name1, name2]: any, value) {
   if (!name2) {
     name2 = name1;
     name1 = `__${name1}__`;
   }
 
-  if (VERSION.major >= 5) {
+  if (VERSION.major === '5') {
     component[name1] = value;
   }
 
-  if (VERSION.major >= 4) {
-    window.Reflect.defineMetadata(name2, value, component);
+  if (VERSION.major === '4') {
+      window['Reflect'].defineMetadata(name2, value, component);
   }
 }
 
