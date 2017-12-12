@@ -29,7 +29,7 @@ const urlsFromAssets = assets => {
     .forEach(key => {
       let asset = assets[key];
       if (typeof asset === 'string') {
-        if (Boolean(urls[getExtensionForFilename(asset)])) {
+        if (urls[getExtensionForFilename(asset)]) {
           urls[getExtensionForFilename(asset)].push(asset);
         }
       } else {
