@@ -20,7 +20,7 @@
     "global": "^4.3.2",
     "insert-css": "^2.0.0",
     "lodash.debounce": "^4.0.8",
-    "moment": "^2.19.3",
+    "moment": "^2.19.4",
     "prop-types": "^15.6.0",
     "react-color": "^2.11.4",
     "react-datetime": "^2.11.1",
