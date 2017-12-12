@@ -101,7 +101,7 @@ setDefaults({
   propTables: [/* Components used in story */], // displays Prop Tables with this components
   propTablesExclude: [], // Exclude Components from being shown in Prop Tables section
   styles: {}, // Overrides styles of addon
-  marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
+  components: {}, // Overrides components used to display markdown
   maxPropsIntoLine: 1, // Max props to display per line in source code
   maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name
   maxPropArrayLength: 10, // Displays the first 10 items in the default prop array
