@@ -3320,9 +3320,9 @@ core-js@^2.2.0, core-js@^2.2.2, core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
 
-core-js@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.2.tgz#bc4648656e7dc9dc80d7d3c7bbc172d96e744e63"
+core-js@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
 
 core-object@^3.1.0:
   version "3.1.5"
@@ -3620,9 +3620,9 @@ damerau-levenshtein@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
-danger@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-2.1.3.tgz#eaf6893f6aa568c30153ba780113288a8b933d81"
+danger@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-2.1.4.tgz#908c59cf8ddcbe64fc6968f2ae70a5c641a27a9b"
   dependencies:
     babel-polyfill "7.0.0-alpha.19"
     chalk "^2.0.0"
@@ -4631,9 +4631,9 @@ eslint@^3.16.1:
     text-table "~0.2.0"
     user-home "^2.0.0"
 
-eslint@^4.13.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.0.tgz#1991aa359586af83877bde59de9d41f53e20826d"
+eslint@^4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.1.tgz#0055e0014464c7eb7878caf549ef2941992b444f"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -10319,9 +10319,9 @@ prettier@^1.7.0:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.8.2.tgz#bff83e7fd573933c607875e5ba3abbdffb96aeb8"
 
-prettier@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.9.1.tgz#41638a0d47c1efbd1b7d5a742aaa5548eab86d70"
+prettier@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.9.2.tgz#96bc2132f7a32338e6078aeb29727178c6335827"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
