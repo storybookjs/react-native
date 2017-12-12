@@ -57,3 +57,7 @@ export function setAnnotations(component, value) {
 export function setParameters(component, value) {
   setMeta(component, ['parameters'], value);
 }
+
+export function setPropMetadata(component, value) {
+    setMeta(component, ['__prop__metadata__', 'propMetadata'], value);
+}

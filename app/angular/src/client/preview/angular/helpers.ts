@@ -13,7 +13,15 @@ import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
-import { getAnnotations, getParameters, getPropMetadata } from './utils';
+
+import {
+  getAnnotations,
+  getParameters,
+  getPropMetadata,
+  setAnnotations,
+  setParameters,
+  setPropMetadata,
+} from './utils';
 
 let platform = null;
 let promises = [];
@@ -61,10 +69,13 @@ const getAnnotatedComponent = (meta, component, propsMeta, params) => {
   const NewComponent: any = function NewComponent(...args) {
     component.call(this, ...args);
   };
+
   NewComponent.prototype = Object.create(component.prototype);
-  NewComponent.annotations = [new Component(meta)];
-  NewComponent.parameters = params;
-  NewComponent.propsMetadata = propsMeta;
+
+  setAnnotations(NewComponent,[new Component(meta)]);
+  setParameters(NewComponent, params);
+  setPropMetadata(NewComponent, propsMeta);
+
   return NewComponent;
 };
 
@@ -79,7 +90,8 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
   });
 
   const NewModule: any = function NewModule() {};
-  NewModule.annotations = [moduleMeta];
+
+  setAnnotations(NewModule,[moduleMeta]);
 
   return NewModule;
 };
