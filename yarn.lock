@@ -128,9 +128,9 @@
   version "8.0.52"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.52.tgz#8e7f47747868e7687f2cd4922966e2d6af78d22d"
 
-"@types/node@^8.0.57":
-  version "8.0.57"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
+"@types/node@^8.0.58":
+  version "8.0.58"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.58.tgz#5b3881c0be3a646874803fee3197ea7f1ed6df90"
 
 "@types/react@^16.0.18", "@types/react@^16.0.20":
   version "16.0.23"
