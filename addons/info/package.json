@@ -14,10 +14,11 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@storybook/client-logger": "^3.3.0-alpha.4",
     "@storybook/components": "^3.3.0-alpha.4",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
-    "marksy": "^2.0.0",
+    "marksy": "^6.0.1",
     "prop-types": "^15.6.0",
     "react-addons-create-fragment": "^15.5.3",
     "util-deprecate": "^1.0.2"

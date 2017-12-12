@@ -510,11 +510,15 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
           >
             Sometimes you might want to manually include some code examples:
           </div>
-          <pre>
+          <pre
+            class="language-js"
+            style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          >
             <code
-              class="hljs js"
+              class="language-js"
+              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
             >
-              const codeblock = [];
+              const Button = () =&gt; &lt;button /&gt;;
             </code>
           </pre>
           <div
@@ -778,6 +782,193 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
                   <td
                     class="css-d52hbj"
                   >
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon Info.Options.TableComponent Use a custom component for the table 1`] = `
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button>
+      Button
+    </button>
+  </div>
+  <button
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addon Info.Options.TableComponent
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Use a custom component for the table
+          </h2>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          >
+            <div
+              style="padding-left:18px;padding-right:3px"
+            >
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
+              <span>
+                <span>
+                   
+                  <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        "Button"
+                      </span>
+                    </span>
+                  </span>
+                   
+                </span>
+              </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    name
+                  </th>
+                  <th>
+                    type
+                  </th>
+                  <th>
+                    default
+                  </th>
+                  <th>
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    disabled
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    false
+                  </td>
+                  <td>
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    label
+                    <span
+                      style="color:red"
+                    >
+                      *
+                    </span>
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    onClick
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    style
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    {}
+                  </td>
+                  <td>
                     
                   </td>
                 </tr>

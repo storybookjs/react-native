@@ -96,8 +96,8 @@ PropTable.propTypes = {
   propDefinitions: PropTypes.arrayOf(
     PropTypes.shape({
       property: PropTypes.string.isRequired,
-      propType: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-      required: PropTypes.bool.isRequired,
+      propType: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      required: PropTypes.bool,
       description: PropTypes.string,
       defaultValue: PropTypes.any,
     })
