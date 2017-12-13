@@ -1,3 +1,5 @@
+import { DecycleError } from './errors';
+
 import { getPropertiesList, typeReplacer } from './util';
 
 import { CYCLIC_KEY } from './';
@@ -6,6 +8,7 @@ import { objectType } from './types';
 
 export default function decycle(object, depth = 10) {
   const objects = new WeakMap();
+
   let isCyclic = false;
 
   const res = (function derez(value, path, _depth) {
@@ -38,7 +41,12 @@ export default function decycle(object, depth = 10) {
         return { $ref: oldPath };
       }
 
-      objects.set(value, path);
+      try {
+        objects.set(value, path);
+      } catch (error) {
+        console.error(error); // eslint-disable-line no-console
+        return new DecycleError(error.message);
+      }
 
       if (Array.isArray(value)) {
         obj = [];
@@ -49,7 +57,12 @@ export default function decycle(object, depth = 10) {
         obj = objectType.serialize(value);
 
         getPropertiesList(value).forEach(name => {
-          obj[name] = derez(value[name], `${path}[${JSON.stringify(name)}]`, _depth + 1);
+          try {
+            obj[name] = derez(value[name], `${path}[${JSON.stringify(name)}]`, _depth + 1);
+          } catch (error) {
+            console.error(error); // eslint-disable-line no-console
+            obj[name] = new DecycleError(error.message);
+          }
         });
       }
 

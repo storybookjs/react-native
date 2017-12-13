@@ -9,7 +9,19 @@ import { canConfigureName } from './lib/util';
 export function action(name) {
   // eslint-disable-next-line no-shadow
   const handler = function action(..._args) {
-    const args = _args.map(arg => JSON.stringify(decycle(arg)));
+    const args = _args.map(arg => {
+      let result;
+
+      try {
+        result = JSON.stringify(decycle(arg));
+      } catch (error) {
+        // IE still cyclic.
+
+        return JSON.stringify(error.toString());
+      }
+
+      return result;
+    });
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {

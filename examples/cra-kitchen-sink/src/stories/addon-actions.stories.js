@@ -26,7 +26,13 @@ storiesOf('Addon Actions', module)
     function B() {}
 
     const bound = B.bind({});
-    const file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
+
+    let file;
+    try {
+      file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
+    } catch (error) {
+      file = error;
+    }
     const reg = /fooBar/g;
 
     return (

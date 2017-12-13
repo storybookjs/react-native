@@ -1,5 +1,7 @@
+import canAccessProperty from './canAccessProperty';
+
 export default function getObjectName(value) {
-  if (value.toString) {
+  if (canAccessProperty('toString', value)) {
     const stringValue = value.toString();
 
     if (stringValue.slice(0, 5) === 'class') {
