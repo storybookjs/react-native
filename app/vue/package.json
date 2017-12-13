@@ -79,11 +79,11 @@
     "nodemon": "^1.12.6",
     "vue": "^2.5.10",
     "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.9"
+    "vue-template-compiler": "^2.5.10"
   },
   "peerDependencies": {
     "vue": "2.5.10",
     "vue-loader": "*",
-    "vue-template-compiler": "*"
+    "vue-template-compiler": "2.5.10"
   }
 }
