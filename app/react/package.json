@@ -81,7 +81,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.5"
+    "nodemon": "^1.12.6"
   },
   "peerDependencies": {
     "react": ">=15.0.0 || ^16.0.0",

@@ -30,7 +30,7 @@
   "devDependencies": {
     "raw-loader": "^0.5.1",
     "style-loader": "^0.19.0",
-    "vue": "^2.5.9"
+    "vue": "^2.5.10"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0-alpha.4",
