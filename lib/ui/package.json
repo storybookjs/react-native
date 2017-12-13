@@ -33,7 +33,7 @@
     "react-fuzzy": "^0.5.1",
     "react-icons": "^2.2.7",
     "react-inspector": "^2.2.2",
-    "react-modal": "^3.1.7",
+    "react-modal": "^3.1.8",
     "react-split-pane": "^0.1.71",
     "react-treebeard": "^2.0.3",
     "redux": "^3.7.2"
