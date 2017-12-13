@@ -383,7 +383,7 @@ Story.propTypes = {
   showInline: PropTypes.bool,
   showHeader: PropTypes.bool,
   showSource: PropTypes.bool,
-  styles: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  styles: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   maxPropsIntoLine: PropTypes.number.isRequired,
