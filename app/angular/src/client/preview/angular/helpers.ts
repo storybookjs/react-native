@@ -2,8 +2,6 @@ import {
   enableProdMode,
   NgModule,
   Component,
-  NgModuleRef,
-  ApplicationRef,
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
 
@@ -13,15 +11,7 @@ import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
-
-import {
-  getAnnotations,
-  getParameters,
-  getPropMetadata,
-  setAnnotations,
-  setParameters,
-  setPropMetadata,
-} from './utils';
+import { getAnnotations, getParameters, getPropMetadata } from './utils';
 
 let platform = null;
 let promises = [];
@@ -30,18 +20,18 @@ let promises = [];
 // We don't want to pull underscore
 
 const debounce = (func, wait = 100, immediate = false) => {
-    var timeout;
-    return function () {
-        var context = this, args = arguments;
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
+  var timeout;
+  return function () {
+    var context = this, args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
     };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 };
 
 const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
@@ -71,10 +61,9 @@ const getAnnotatedComponent = (meta, component, propsMeta, params) => {
   };
 
   NewComponent.prototype = Object.create(component.prototype);
-
-  setAnnotations(NewComponent,[new Component(meta)]);
-  setParameters(NewComponent, params);
-  setPropMetadata(NewComponent, propsMeta);
+  NewComponent.annotations = [new Component(meta)];
+  NewComponent.parameters = params;
+  NewComponent.propsMetadata = propsMeta;
 
   return NewComponent;
 };
@@ -91,7 +80,7 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
 
   const NewModule: any = function NewModule() {};
 
-  setAnnotations(NewModule,[moduleMeta]);
+  NewModule.annotations = [moduleMeta];
 
   return NewModule;
 };

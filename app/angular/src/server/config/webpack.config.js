@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
@@ -28,6 +29,7 @@ export default function() {
       ],
     },
     output: {
+      pathinfo: true,
       path: path.join(__dirname, 'dist'),
       filename: 'static/[name].bundle.js',
       publicPath: '/',
@@ -55,6 +57,16 @@ export default function() {
       new CaseSensitivePathsPlugin(),
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
+      // temp plugin to make webpack bundle only one v5 version.
+      new webpack.NormalModuleReplacementPlugin(
+        /addons(\\|\/)knobs(\\|\/)node_modules(\\|\/)@angular/,
+        resource => {
+          resource.request = resource.request.replace(
+            /addons(\\|\/)knobs(\\|\/)node_modules(\\|\/)@angular/,
+            'app\\angular\\node_modules\\@angular'
+          );
+        }
+      ),
       new webpack.ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)@angular/,
         path.resolve(__dirname, '../src')
