@@ -1,11 +1,9 @@
 import {
   Type,
-  PlatformRef,
   enableProdMode,
   NgModule,
   Component,
   NgModuleRef,
-  ApplicationRef,
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
@@ -15,12 +13,13 @@ import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY, Data } from "./app.token";
 
-let platform: PlatformRef = null;
+let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
 
 export interface IContext {
   [p: string]: any
-};
+}
+
 export type IGetStoryWithContext = (context: IContext) => Data
 type IRenderStoryFn = (story: IGetStoryWithContext, context: IContext, reRender?: boolean) => void;
 type IRenderErrorFn = (error: Error) => void;
@@ -40,7 +39,7 @@ interface IComponent extends Type<any> {
 const debounce = (func: IRenderStoryFn | IRenderErrorFn,
                   wait: number = 100,
                   immediate: boolean = false): () => void => {
-  var timeout: number;
+  var timeout: any;
   return function () {
     var context = this, args = arguments;
     var later = function() {
