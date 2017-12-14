@@ -11,7 +11,7 @@ shell.rm('-rf', 'dist');
 
 const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 const args = [
-  '--ignore tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js',
+  '--ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js',
   '--plugins "transform-runtime"',
   './src --out-dir ./dist',
   '--copy-files',
