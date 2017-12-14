@@ -21,12 +21,12 @@
     "vue-hot-reload-api": "^2.2.4",
     "vue-loader": "^13.5.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.9",
+    "vue-template-compiler": "^2.5.10",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
-    "vue": "^2.5.9",
+    "vue": "^2.5.10",
     "vuex": "^3.0.0"
   },
   "scripts": {
