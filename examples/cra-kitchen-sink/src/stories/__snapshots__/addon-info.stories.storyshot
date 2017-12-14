@@ -510,11 +510,15 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
           >
             Sometimes you might want to manually include some code examples:
           </div>
-          <pre>
+          <pre
+            class="language-js"
+            style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          >
             <code
-              class="hljs js"
+              class="language-js"
+              style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
             >
-              const codeblock = [];
+              const Button = () =&gt; &lt;button /&gt;;
             </code>
           </pre>
           <div

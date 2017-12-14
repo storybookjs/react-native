@@ -79,14 +79,15 @@ Now you can write some stories inside the `../stories/index.js` file, like this:
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import Button from '../components/Button';
 
 storiesOf('Button', module)
   .add('with text', () => (
-    <button onClick={action('clicked')}>Hello Button</button>
+    <Button onClick={action('clicked')}>Hello Button</Button>
   ))
   .add('with some emoji', () => (
-    <button onClick={action('clicked')}>😀 😎 👍 💯</button>
-  ));
+    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+  ));   
 ```
 
 Story is a single state of your component. In the above case, there are two stories for the native button component:
