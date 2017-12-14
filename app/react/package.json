@@ -30,7 +30,7 @@
     "@storybook/node-logger": "^3.3.0-alpha.4",
     "@storybook/ui": "^3.3.0-alpha.4",
     "airbnb-js-shims": "^1.4.0",
-    "autoprefixer": "^7.2.2",
+    "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-react-docgen": "^1.8.0",
@@ -72,7 +72,7 @@
     "request": "^2.83.0",
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.7.8",
-    "style-loader": "^0.18.2",
+    "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.1.0",
@@ -81,7 +81,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.6"
+    "nodemon": "^1.12.7"
   },
   "peerDependencies": {
     "react": ">=15.0.0 || ^16.0.0",
