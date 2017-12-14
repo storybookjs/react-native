@@ -4214,7 +4214,7 @@ gatsby-cli@^1.1.27:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@^1.6.32:
+gatsby-link@^1.6.30, gatsby-link@^1.6.32:
   version "1.6.32"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.32.tgz#49114e5fc649f274254953e06bfaafebb296ccb8"
   dependencies:
@@ -4335,9 +4335,9 @@ gatsby-transformer-remark@^1.7.25:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.131:
-  version "1.9.131"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.131.tgz#15ad010885bdb1dd6bfe8c8d069108b6f06f4311"
+gatsby@^1.9.134:
+  version "1.9.134"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.134.tgz#fe6c088151f3442e089d3b81238a5c56827fa578"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4377,6 +4377,7 @@ gatsby@^1.9.131:
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
     gatsby-cli "^1.1.27"
+    gatsby-link "^1.6.30"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.6"
     glob "^7.1.1"
