@@ -31,7 +31,7 @@
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:md .",
-    "lint:js": "eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
+    "lint:js": "NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
     "test": "node ./scripts/test.js",
