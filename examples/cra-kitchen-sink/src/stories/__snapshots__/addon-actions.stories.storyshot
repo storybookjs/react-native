@@ -3,116 +3,97 @@
 exports[`Storyshots Addon Actions All types 1`] = `
 <div>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Array
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Boolean
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Empty Object
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     File
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Function A
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Bound Function A
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Infinity
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     -Infinity
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     NaN
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     null
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Number
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Multiple
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Plain Object
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     RegExp
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     String
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Symbol
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     SyntheticEvent
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     undefined
   </button>
   <button
-    className="css-1yjiefr"
-    onClick={[Function]}
+    class="css-1yjiefr"
   >
     Window
   </button>
