@@ -29,7 +29,6 @@
     "@storybook/ui": "^3.2.17",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
-    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-react-docgen": "^1.8.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
@@ -82,6 +81,7 @@
     "vue-template-compiler": "^2.5.11"
   },
   "peerDependencies": {
+    "babel-core": "^6.26.0 | ^7.0.0-0",
     "vue": "2.5.11",
     "vue-loader": "*",
     "vue-template-compiler": "2.5.11"
