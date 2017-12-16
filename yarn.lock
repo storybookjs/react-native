@@ -5146,9 +5146,9 @@ graphql@^0.10.1:
   dependencies:
     iterall "^1.1.0"
 
-graphql@^0.11.7:
-  version "0.11.7"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
+graphql@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.12.0.tgz#a62576995f67f7a94a02f3e57e91d752bae70055"
   dependencies:
     iterall "1.1.3"
 
