@@ -80,6 +80,12 @@
   dependencies:
     ps-tree "^1.1.0"
 
+"@remy/pstree@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@remy/pstree/-/pstree-1.1.0.tgz#414045d4fec60946604f3718023052aaf49bd8d3"
+  dependencies:
+    ps-tree "^1.1.0"
+
 "@storybook/mantra-core@^1.7.0":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@storybook/mantra-core/-/mantra-core-1.7.2.tgz#e10c7faca29769e97131e0e0308ef7cfb655b70c"
@@ -7917,6 +7923,21 @@ nodemon@^1.13.2:
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.13.2.tgz#4f772d8e68ecbd9792d5af39f0dad6f708e46ef1"
   dependencies:
     "@remy/pstree" "^1.0.1"
+    chokidar "^1.7.0"
+    debug "^2.6.8"
+    es6-promise "^3.3.1"
+    ignore-by-default "^1.0.1"
+    lodash.defaults "^3.1.2"
+    minimatch "^3.0.4"
+    touch "^3.1.0"
+    undefsafe "0.0.3"
+    update-notifier "^2.3.0"
+
+nodemon@^1.13.3:
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.13.3.tgz#92d23e6b91dca351215a4b8a50d2bd838cd0f9e3"
+  dependencies:
+    "@remy/pstree" "^1.1.0"
     chokidar "^1.7.0"
     debug "^2.6.8"
     es6-promise "^3.3.1"
