@@ -132,7 +132,7 @@ setDefaults({
   propTables: [/* Components used in story */], // displays Prop Tables with this components
   propTablesExclude: [], // Exclude Components from being shown in Prop Tables section
   styles: {}, // Overrides styles of addon. The object should follow this shape: https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19. This prop can also accept a function which has the default stylesheet passed as an argument.
-  marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
+  components: {}, // Overrides components used to display markdown
   maxPropsIntoLine: 1, // Max props to display per line in source code
   maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name
   maxPropArrayLength: 10, // Displays the first 10 items in the default prop array

@@ -33,7 +33,7 @@ const markdownDescription = `
 
 Sometimes you might want to manually include some code examples:
 ~~~js
-const codeblock = [];
+const Button = () => <button />;
 ~~~
 
 Maybe include a [link](http://storybook.js.org) to your project as well.

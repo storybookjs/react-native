@@ -11,7 +11,7 @@ const TableComponent = ({ propDefinitions }) => {
           {required ? <Red>*</Red> : null}
         </td>
         <td>{propType.name}</td>
-        <td>{defaultValue}</td>
+        <td>{JSON.stringify(defaultValue)}</td>
         <td>{description}</td>
       </tr>
     )
