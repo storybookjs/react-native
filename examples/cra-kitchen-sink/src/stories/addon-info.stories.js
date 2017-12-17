@@ -88,23 +88,39 @@ storiesOf('Addon Info.Options.propTablesExclude', module).add(
   ))
 );
 
-storiesOf('Addon Info.Options.styles', module).add(
-  'Change info styles',
-  withInfo({
-    styles: {
-      button: {
-        base: {
-          background: 'purple',
+storiesOf('Addon Info.Options.styles', module)
+  .add(
+    'Extend info styles with an object',
+    withInfo({
+      styles: {
+        button: {
+          base: {
+            background: 'purple',
+          },
+        },
+        header: {
+          h1: {
+            color: 'red',
+          },
         },
       },
-      header: {
-        h1: {
-          color: 'red',
+    })(() => <BaseButton label="Button" />)
+  )
+  .add(
+    'Full control over styles using a function',
+    withInfo({
+      styles: stylesheet => ({
+        ...stylesheet,
+        header: {
+          ...stylesheet.header,
+          h1: {
+            ...stylesheet.header.h1,
+            color: 'red',
+          },
         },
-      },
-    },
-  })(() => <BaseButton label="Button" />)
-);
+      }),
+    })(() => <BaseButton label="Button" />)
+  );
 
 storiesOf('Addon Info.Decorator', module)
   .addDecorator((story, context) =>

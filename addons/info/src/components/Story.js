@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import nestedObjectAssign from 'nested-object-assign';
 import global from 'global';
 import { baseFonts } from '@storybook/components';
 
@@ -107,14 +106,14 @@ export default class Story extends React.Component {
     super(...args);
     this.state = {
       open: false,
-      stylesheet: nestedObjectAssign({}, stylesheet, this.props.styles),
+      stylesheet: this.props.styles(stylesheet),
     };
     this.marksy = marksy(this.props.marksyConf);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      stylesheet: nestedObjectAssign({}, stylesheet, nextProps.styles),
+      stylesheet: nextProps.styles(stylesheet),
     });
   }
 

@@ -74,6 +74,30 @@ storiesOf('Component', module)
   )
 ```
 
+The `styles` prop can also accept a function. The default stylesheet is passed as argument:
+
+```js
+import { withInfo } from '@storybook/addon-info';
+
+storiesOf('Component', module)
+  .add('custom info styles using a function',
+    withInfo({
+      styles: stylesheet => ({
+        ...stylesheet,
+        header: {
+          ...stylesheet.header,
+          h1: {
+            ...stylesheet.header.h1,
+            color: 'red'
+          }
+        }
+      })
+    })(() =>
+      <Component>Click the "?" mark at top-right to view the info.</Component>
+    )
+  )
+```
+
 ## Usage as decorator
 
 It is possible to add infos by default to all components by using a global or story decorator. The drawback is you won't be able to display a distinct info message per story.
@@ -107,7 +131,7 @@ setDefaults({
   source: true, // Displays the source of story Component
   propTables: [/* Components used in story */], // displays Prop Tables with this components
   propTablesExclude: [], // Exclude Components from being shown in Prop Tables section
-  styles: {}, // Overrides styles of addon. The object should follow this shape: https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19
+  styles: {}, // Overrides styles of addon. The object should follow this shape: https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19. This prop can also accept a function which has the default stylesheet passed as an argument.
   marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
   maxPropsIntoLine: 1, // Max props to display per line in source code
   maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name

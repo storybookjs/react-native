@@ -1,5 +1,6 @@
 import React from 'react';
 import deprecate from 'util-deprecate';
+import nestedObjectAssign from 'nested-object-assign';
 import Story from './components/Story';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
 
@@ -53,7 +54,10 @@ function addInfo(storyFn, context, infoOptions) {
     showSource: Boolean(options.source),
     propTables: options.propTables,
     propTablesExclude: options.propTablesExclude,
-    styles: options.styles,
+    styles:
+      typeof options.styles === 'function'
+        ? options.styles
+        : s => nestedObjectAssign({}, s, options.styles),
     marksyConf,
     maxPropObjectKeys: options.maxPropObjectKeys,
     maxPropArrayLength: options.maxPropArrayLength,
