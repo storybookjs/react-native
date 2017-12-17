@@ -1,21 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 
 import addons from '@storybook/addons';
-import stringify from 'json-stringify-safe';
 import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
-
-function _format(arg) {
-  if (arg && typeof arg.preventDefault !== 'undefined') {
-    return stringify('[SyntheticEvent]');
-  }
-  return stringify(arg);
-}
+import { decycle } from './util';
 
 export function action(name) {
   // eslint-disable-next-line no-shadow
   const handler = function action(..._args) {
-    const args = _args.map(_format);
+    const args = _args.map(arg => JSON.stringify(decycle(arg)));
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {

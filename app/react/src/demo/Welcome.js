@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
+import LinkTo from '@storybook/addon-links/react';
 
 const Main = glamorous.article({
   margin: 15,
@@ -32,6 +33,8 @@ const Link = glamorous.a({
   paddingBottom: 2,
 });
 
+const StoryLink = Link.withComponent(LinkTo);
+
 const Welcome = props =>
   <Main>
     <Title>Welcome to storybook</Title>
@@ -51,7 +54,10 @@ const Welcome = props =>
     <p>
       See these sample
       {' '}
-      <Link onClick={props.showApp} role="button" tabIndex="0">stories</Link>
+      {props.showApp
+        ? <Link onClick={props.showApp} role="button" tabIndex="0">stories</Link>
+        : <StoryLink kind={props.showKind} story={props.showStory}>stories</StoryLink>
+      }
       {' '}
       for a component called
       {' '}
@@ -95,10 +101,8 @@ const Welcome = props =>
 Welcome.displayName = 'Welcome';
 Welcome.propTypes = {
   showApp: PropTypes.func,
-};
-Welcome.defaultProps = {
-  // eslint-disable-next-line no-console
-  showApp: () => console.log('Welcome to storybook!'),
+  showKind: PropTypes.string,
+  showStory: PropTypes.string,
 };
 
 export { Welcome as default };

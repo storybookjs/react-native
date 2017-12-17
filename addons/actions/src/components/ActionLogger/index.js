@@ -5,7 +5,7 @@ import style from './style';
 
 class ActionLogger extends Component {
   getActionData() {
-    return this.props.actions.map((action, i) => this.renderAction(action, i));
+    return this.props.actions.map(action => this.renderAction(action));
   }
 
   renderAction(action) {
@@ -15,7 +15,8 @@ class ActionLogger extends Component {
         <div style={style.countwrap}>{action.count > 1 && counter}</div>
         <div style={style.inspector}>
           <Inspector
-            showNonenumerable
+            sortObjectKeys
+            showNonenumerable={false}
             name={action.data.name}
             data={action.data.args || action.data}
           />

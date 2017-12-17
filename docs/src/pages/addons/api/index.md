@@ -1,7 +1,8 @@
----
+* * *
+
 id: 'api'
-title: 'API'
----
+
+## title: 'API'
 
 ## Core Addon API
 
@@ -110,6 +111,16 @@ addonAPI.register('my-organisation/my-addon', storybookAPI => {
 })
 ```
 
+### storybookAPI.selectInCurrentKind()
+
+Same as `selectStory`, but accepts a story inside current kind as the only parameter:
+
+```js
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  storybookAPI.selectInCurrentKind('with text');
+});
+```
+
 ### storybookAPI.setQueryParams()
 
 This method allows you to set query string parameters. You can use that as temporary storage for addons. Here's how you set query params.
@@ -140,6 +151,19 @@ This method allows you to get a query param set by above API `setQueryParams`. F
 ```js
 addonAPI.register('my-organisation/my-addon', storybookAPI => {
   storybookAPI.getQueryParam('bbc');
+});
+```
+
+### storybookAPI.getURLState(overrideParams)
+
+This method allows you to get application url state with some changed params. For example, if you want to get a link to a particular story:
+
+```js
+addonAPI.register('my-organisation/my-addon', storybookAPI => {
+  const href = storybookAPI.getUrlState({
+    selectedKind: 'kind',
+    selectedStory: 'story'
+  }).url;
 });
 ```
 

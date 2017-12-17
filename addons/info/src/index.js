@@ -2,6 +2,8 @@ import React from 'react';
 import deprecate from 'util-deprecate';
 import nestedObjectAssign from 'nested-object-assign';
 import Story from './components/Story';
+import PropTable from './components/PropTable';
+import makeTableComponent from './components/makeTableComponent';
 import { H1, H2, H3, H4, H5, H6, Code, P, UL, A, LI } from './components/markdown';
 
 const defaultOptions = {
@@ -9,6 +11,7 @@ const defaultOptions = {
   header: true,
   source: true,
   propTables: [],
+  TableComponent: PropTable,
   maxPropsIntoLine: 3,
   maxPropObjectKeys: 3,
   maxPropArrayLength: 3,
@@ -52,12 +55,13 @@ function addInfo(storyFn, context, infoOptions) {
     showInline: Boolean(options.inline),
     showHeader: Boolean(options.header),
     showSource: Boolean(options.source),
-    propTables: options.propTables,
-    propTablesExclude: options.propTablesExclude,
     styles:
       typeof options.styles === 'function'
         ? options.styles
         : s => nestedObjectAssign({}, s, options.styles),
+    propTables: options.propTables,
+    propTablesExclude: options.propTablesExclude,
+    PropTable: makeTableComponent(options.TableComponent),
     marksyConf,
     maxPropObjectKeys: options.maxPropObjectKeys,
     maxPropArrayLength: options.maxPropArrayLength,

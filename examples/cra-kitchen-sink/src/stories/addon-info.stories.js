@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
+import TableComponent from '../components/TableComponent';
 
 storiesOf('Addon Info.React Docgen', module)
   .add(
@@ -121,6 +122,13 @@ storiesOf('Addon Info.Options.styles', module)
       }),
     })(() => <BaseButton label="Button" />)
   );
+
+storiesOf('Addon Info.Options.TableComponent', module).add(
+  'Use a custom component for the table',
+  withInfo({
+    TableComponent,
+  })(() => <BaseButton label="Button" />)
+);
 
 storiesOf('Addon Info.Decorator', module)
   .addDecorator((story, context) =>

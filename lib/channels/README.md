@@ -15,6 +15,7 @@ Channels are used with Storybook implementations to send/receive events between 
 ```js
 class Channel {
   addListener(type, listener) {}
+  addPeerListener(type, listener) {} // ignore events from itself
   emit(type, ...args) {}
   eventNames() {}
   listenerCount(type) {}
