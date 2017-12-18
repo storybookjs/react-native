@@ -87,7 +87,9 @@ export function renderMain(data, storyStore) {
 
   if (!isReactRenderable(element)) {
     const error = {
-      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
+      title: `Expecting a valid React element from the story: "${selectedStory}" of "${
+        selectedKind
+      }".`,
       description: stripIndents`
          Seems like you are not returning a correct React element from the story.
          Could you double check that?
