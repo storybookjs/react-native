@@ -199,6 +199,26 @@ jobs:
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
+  storybook:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+      - run:
+          name: "Link packages"
+          command: |
+            yarn install
+      - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
