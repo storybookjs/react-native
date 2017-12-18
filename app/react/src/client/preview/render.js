@@ -55,7 +55,7 @@ export function renderMain(data, storyStore) {
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
   //    https://github.com/storybooks/react-storybook/issues/116
-  if (selectedKind === previousKind || previousStory === selectedStory) {
+  if (selectedKind === previousKind && previousStory === selectedStory) {
     return null;
   }
 
