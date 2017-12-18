@@ -2544,7 +2544,288 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
 </div>
 `;
 
-exports[`Storyshots Addon Info.Options.styles Change info styles // I think this is broken or I am using it wrong? 1`] = `
+exports[`Storyshots Addon Info.Options.styles Extend info styles with an object 1`] = `
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <button>
+      Button
+    </button>
+  </div>
+  <button
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:purple;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px;color:green"
+          >
+            Addon Info.Options.styles
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Extend info styles with an object
+          </h2>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          >
+            <div
+              style="padding-left:18px;padding-right:3px"
+            >
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
+              <span>
+                <span>
+                   
+                  <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        "Button"
+                      </span>
+                    </span>
+                  </span>
+                   
+                </span>
+              </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table
+              class="css-1ytzlk7"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span>
+                      
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style="color:#a11"
+                      >
+                        false
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span>
+                      
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span>
+                      
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style="color:#170"
+                      >
+                        onClick()
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span>
+                      
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {}
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon Info.Options.styles Full control over styles using a function 1`] = `
 <div>
   <div
     style="position:relative;z-index:0"
@@ -2576,14 +2857,14 @@ exports[`Storyshots Addon Info.Options.styles Change info styles // I think this
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
         >
           <h1
-            style="margin:0;padding:0;font-size:35px"
+            style="margin:0;padding:0;font-size:35px;color:red"
           >
             Addon Info.Options.styles
           </h1>
           <h2
             style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
           >
-            Change info styles // I think this is broken or I am using it wrong?
+            Full control over styles using a function
           </h2>
         </div>
         <div>

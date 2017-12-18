@@ -1,5 +1,6 @@
 import React from 'react';
 import deprecate from 'util-deprecate';
+import nestedObjectAssign from 'nested-object-assign';
 import logger from '@storybook/client-logger';
 import Story from './components/Story';
 import PropTable from './components/PropTable';
@@ -65,10 +66,13 @@ function addInfo(storyFn, context, infoOptions) {
     showInline: Boolean(options.inline),
     showHeader: Boolean(options.header),
     showSource: Boolean(options.source),
+    styles:
+      typeof options.styles === 'function'
+        ? options.styles
+        : s => nestedObjectAssign({}, s, options.styles),
     propTables: options.propTables,
     propTablesExclude: options.propTablesExclude,
     PropTable: makeTableComponent(options.TableComponent),
-    styles: typeof options.styles === 'function' ? options.styles : s => s,
     components,
     maxPropObjectKeys: options.maxPropObjectKeys,
     maxPropArrayLength: options.maxPropArrayLength,
