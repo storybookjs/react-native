@@ -101,7 +101,7 @@ storiesOf('Addon Info.Options.styles', module)
         },
         header: {
           h1: {
-            color: 'red',
+            color: 'green',
           },
         },
       },
