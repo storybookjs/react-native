@@ -4347,9 +4347,9 @@ gatsby-transformer-remark@^1.7.25:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.139:
-  version "1.9.139"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.139.tgz#35003af4acf083bb9cec073a2c707d9249b53ca7"
+gatsby@^1.9.141:
+  version "1.9.141"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.141.tgz#8cde1d84900abcb7dfa910778cafebdb461e73cd"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
