@@ -13,6 +13,7 @@ import { Button } from '@storybook/react/demo';
 import App from '../App';
 import Logger from './Logger';
 import Container from './Container';
+import LifecycleLogger from '../components/LifecycleLogger';
 
 const EVENTS = {
   TEST_EVENT_1: 'test-event-1',
@@ -101,6 +102,8 @@ storiesOf('App', module).add('full app', () => <App />);
 storiesOf('Some really long story kind description', module)
   .addDecorator(centered)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>);
+
+storiesOf('Lifecycle', module).add('logging', () => <LifecycleLogger />);
 
 storiesOf('WithEvents', module)
   .addDecorator(getStory => (
