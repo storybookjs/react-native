@@ -384,7 +384,7 @@ Story.propTypes = {
   showInline: PropTypes.bool,
   showHeader: PropTypes.bool,
   showSource: PropTypes.bool,
-  styles: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   components: PropTypes.shape({}),
   maxPropsIntoLine: PropTypes.number.isRequired,
@@ -401,6 +401,5 @@ Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
-  styles: {},
   components: {},
 };
