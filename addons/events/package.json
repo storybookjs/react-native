@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",
@@ -20,7 +20,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.17",
+    "@storybook/addons": "^3.2.18",
     "babel-runtime": "^6.26.0",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.0",
