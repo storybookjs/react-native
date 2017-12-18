@@ -105,7 +105,7 @@ export default class Story extends React.Component {
     super(...args);
     this.state = {
       open: false,
-      stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
+      stylesheet: this.props.styles(stylesheet),
     };
     this.marksy = marksy({
       createElement,
@@ -115,7 +115,7 @@ export default class Story extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet))),
+      stylesheet: nextProps.styles(stylesheet),
     });
   }
 
