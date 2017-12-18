@@ -1030,6 +1030,12 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
+exports[`Storyshots Lifecycle logging 1`] = `
+<div>
+  Lifecycle methods are logged to the console
+</div>
+`;
+
 exports[`Storyshots Some really long story kind description with text 1`] = `
 <div
   style="position:fixed;top:0;left:0;bottom:0;right:0;display:flex;align-items:center;justify-content:center;overflow:auto"
