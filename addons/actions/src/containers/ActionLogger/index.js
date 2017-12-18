@@ -3,7 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'deep-equal';
-import { CYCLIC_KEY, isObject, retrocycle } from '../../util';
+import { CYCLIC_KEY, retrocycle } from '../../lib';
+import { isObject } from '../../lib/util';
 
 import ActionLoggerComponent from '../../components/ActionLogger/';
 import { EVENT_ID } from '../../';

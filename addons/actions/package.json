@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
+    "global": "^4.3.2",
+    "make-error": "^1.3.0",
     "prop-types": "^15.6.0",
     "react-inspector": "^2.2.2",
     "uuid": "^3.1.0"
