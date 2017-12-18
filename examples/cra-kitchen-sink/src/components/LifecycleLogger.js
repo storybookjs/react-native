@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { logger } from '@storybook/client-logger';
 
 function log(name) {
-  console.log(`LifecycleLogger: ${name}`);
+  logger.info(`LifecycleLogger: ${name}`);
 }
 
 // A component that logs its lifecycle so we can check that things happen
