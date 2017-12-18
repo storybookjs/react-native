@@ -284,6 +284,9 @@ workflows:
       - unit-test:
           requires:
             - build
+      - storybook:
+          requires:
+            - build
       - cli:
           requires:
             - build
