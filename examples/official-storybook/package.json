@@ -4,7 +4,8 @@
   "scripts": {
     "build-storybook": "build-storybook -c ./",
     "storybook": "start-storybook -p 9010 -c ./",
-    "chromatic": "chromatic test --storybook-addon"
+    "chromatic":
+      "chromatic test --storybook-addon --app-code $CHROMATIC_APP_CODE"
   },
   "dependencies": {},
   "devDependencies": {
