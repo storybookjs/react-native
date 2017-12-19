@@ -601,9 +601,9 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-axe-core@^2.0.7:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.5.0.tgz#2f7c662c4d7d07cc8dc81f2f1d3d8288d8628039"
+axe-core@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.6.0.tgz#fa88e4cc34badee7eb208aae31fb4977ae488223"
 
 axobject-query@^0.1.0:
   version "0.1.0"
