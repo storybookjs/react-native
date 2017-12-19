@@ -6377,9 +6377,9 @@ jest-haste-map@^21, jest-haste-map@^21.2.0:
     sane "^2.0.0"
     worker-farm "^1.3.1"
 
-jest-image-snapshot@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/jest-image-snapshot/-/jest-image-snapshot-2.2.0.tgz#48b9aa6d9545e55b1eae4086454694ce80f8f434"
+jest-image-snapshot@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/jest-image-snapshot/-/jest-image-snapshot-2.2.1.tgz#06e05cad6a01ded0d8d43d4b92d2758de2fce52a"
   dependencies:
     chalk "^1.1.3"
     lodash "^4.17.4"
