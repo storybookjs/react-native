@@ -43,7 +43,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.16",
-    "@storybook/addon-actions": "^3.2.16"
+    "@storybook/react": "^3.3.0-alpha.4",
+    "@storybook/addon-actions": "^3.3.0-alpha.4"
   }
 }
