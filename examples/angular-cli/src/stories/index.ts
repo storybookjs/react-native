@@ -23,9 +23,22 @@ import { AppComponent } from '../app/app.component';
 import { NameComponent } from './name.component';
 import { CustomPipePipe } from './custom.pipe';
 
-storiesOf('NameComponent', module)
-  .add('with text', () => ({
+storiesOf('Custom Pipe', module)
+  .add('Default', () => ({
     component: NameComponent,
+    props: {
+      field: 'foobar',
+    },
+    pipes: [ CustomPipePipe ],
+  }));
+
+storiesOf('Custom Pipe/With Knobs', module)
+  .addDecorator(withKnobs)
+  .add('NameComponent', () => ({
+    component: NameComponent,
+    props: {
+      field: text('field', 'foobar'),
+    },
     pipes: [ CustomPipePipe ],
   }));
 

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'name',
-  template: `<h1>{{ 'foobar' | customPipe }}</h1>`
+  template: `<h1>{{ field | customPipe }}</h1>`
 })
-export class NameComponent {}
+export class NameComponent {
+  @Input() field;
+}
