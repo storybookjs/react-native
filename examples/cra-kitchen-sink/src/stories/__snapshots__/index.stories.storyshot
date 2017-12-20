@@ -1051,17 +1051,3 @@ exports[`Storyshots Some really long story kind description with text 1`] = `
   </div>
 </div>
 `;
-
-exports[`Storyshots WithEvents Logger 1`] = `
-<div
-  style="padding:20px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-      \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;color:rgb(51, 51, 51)"
->
-  <h1>
-    Logger
-  </h1>
-  <dl>
-    
-  </dl>
-</div>
-`;

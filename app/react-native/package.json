@@ -50,7 +50,7 @@
     "css-loader": "^0.28.7",
     "events": "^1.1.1",
     "express": "^4.16.2",
-    "file-loader": "^1.1.5",
+    "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-webpack-plugin": "^2.30.1",
@@ -69,7 +69,7 @@
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0",
-    "ws": "^3.3.2"
+    "ws": "^3.3.3"
   },
   "devDependencies": {
     "react-native": "^0.51.0"
