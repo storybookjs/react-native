@@ -28,7 +28,6 @@ export default function() {
       ],
     },
     output: {
-      pathinfo: true,
       path: path.join(__dirname, 'dist'),
       filename: 'static/[name].bundle.js',
       publicPath: '/',
