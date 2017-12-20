@@ -2,7 +2,6 @@ import {
   enableProdMode,
   NgModule,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA,
   NgModuleRef,
   ApplicationRef
 } from "@angular/core";
