@@ -218,7 +218,7 @@ jobs:
       - run:
           name: "Visually test storybook"
           command: |
-            yarn chromatic
+            cd examples/official-storybook; yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
