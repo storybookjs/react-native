@@ -22,11 +22,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@angular/common": "^5.0.0-beta.7",
-    "@angular/compiler": "^5.0.0-beta.7",
-    "@angular/core": "^5.0.0-beta.7",
-    "@angular/platform-browser": "^5.0.0-beta.7",
-    "@angular/platform-browser-dynamic": "^5.0.0-beta.7",
     "@storybook/addon-actions": "^3.3.0-alpha.4",
     "@storybook/addon-links": "^3.3.0-alpha.4",
     "@storybook/addons": "^3.3.0-alpha.4",
@@ -91,5 +86,12 @@
     "mock-fs": "^4.3.0",
     "nodemon": "^1.12.0",
     "typescript": "^2.4.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "=>4.0.0",
+    "@angular/compiler": "=>4.0.0",
+    "@angular/core": "=>4.0.0",
+    "@angular/platform-browser": "=>4.0.0",
+    "@angular/platform-browser-dynamic": "=>4.0.0"
   }
 }
