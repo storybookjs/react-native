@@ -10,7 +10,8 @@ import {
   ViewChild,
   ViewContainerRef,
   ComponentFactoryResolver,
-  OnDestroy
+  OnDestroy,
+  EventEmitter
 } from "@angular/core";
 import { STORY, Data } from "../app.token";
 
@@ -41,7 +42,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     const instance = this.target.createComponent(compFactory).instance;
 
     Object.keys(propsMeta).map(key => {
-      (<any>instance)[key] = props[key];
+      const value = (<any>props)[key];
+      const property = (<any>instance)[key];
+
+      if (!(property instanceof EventEmitter)) {
+          (<any>instance)[key] = (<any>props)[key];
+      } else if (typeof value === 'function') {
+          property.subscribe((<any>props)[key]);
+      }
     });
   }
 }
