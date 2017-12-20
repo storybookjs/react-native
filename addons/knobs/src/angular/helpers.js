@@ -3,7 +3,7 @@
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
 import { getParameters, getAnnotations, getPropMetadata } from './utils';
 
-const getComponentMetadata = ({ component, props = {} }) => {
+const getComponentMetadata = ({ component, props = {}, pipes = [] }) => {
   if (!component || typeof component !== 'function') throw new Error('No valid component provided');
 
   const componentMeta = getAnnotations(component)[0] || {};
@@ -13,6 +13,7 @@ const getComponentMetadata = ({ component, props = {} }) => {
   return {
     component,
     props,
+    pipes,
     componentMeta,
     propsMeta,
     params: paramsMetadata,
@@ -98,7 +99,7 @@ const resetKnobs = (knobStore, channel) => {
 
 export function prepareComponent({ getStory, context, channel, knobStore }) {
   resetKnobs(knobStore, channel);
-  const { component, componentMeta, props, propsMeta, params } = getComponentMetadata(
+  const { component, componentMeta, props, pipes, propsMeta, params } = getComponentMetadata(
     getStory(context)
   );
 
@@ -115,6 +116,7 @@ export function prepareComponent({ getStory, context, channel, knobStore }) {
   return {
     component: AnnotatedComponent,
     props,
+    pipes,
     propsMeta,
   };
 }
