@@ -14,7 +14,6 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@angular/core": "^5.0.0-beta.7",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
@@ -34,6 +33,7 @@
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0-alpha.4",
+    "@angular/core": "=>4.0.0",
     "react": "*",
     "react-dom": "*"
   }
