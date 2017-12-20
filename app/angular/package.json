@@ -18,7 +18,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon -e js,ts --watch ./src --exec 'npm run prepublish'",
+    "dev": "cross-env DEV_BUILD=1 nodemon -e js,ts --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
@@ -45,6 +45,7 @@
     "configstore": "^3.1.0",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.1",
+    "cross-env": "^5.1.1",
     "express": "^4.15.3",
     "file-loader": "^0.11.1",
     "find-cache-dir": "^1.0.0",
@@ -87,10 +88,10 @@
     "typescript": "^2.4.0"
   },
   "peerDependencies": {
-    "@angular/common": "*",
-    "@angular/compiler": "*",
-    "@angular/core": "*",
-    "@angular/platform-browser": "*",
-    "@angular/platform-browser-dynamic": "*"
+    "@angular/common": "=>4.0.0",
+    "@angular/compiler": "=>4.0.0",
+    "@angular/core": "=>4.0.0",
+    "@angular/platform-browser": "=>4.0.0",
+    "@angular/platform-browser-dynamic": "=>4.0.0"
   }
 }

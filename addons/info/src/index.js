@@ -1,5 +1,7 @@
 import React from 'react';
 import deprecate from 'util-deprecate';
+import nestedObjectAssign from 'nested-object-assign';
+import logger from '@storybook/client-logger';
 import Story from './components/Story';
 import PropTable from './components/PropTable';
 import makeTableComponent from './components/makeTableComponent';
@@ -17,7 +19,7 @@ const defaultOptions = {
   maxPropStringLength: 50,
 };
 
-const defaultMarksyConf = {
+const defaultComponents = {
   h1: H1,
   h2: H2,
   h3: H3,
@@ -30,6 +32,8 @@ const defaultMarksyConf = {
   li: LI,
   ul: UL,
 };
+
+let hasWarned = false;
 
 function addInfo(storyFn, context, infoOptions) {
   const options = {
@@ -44,9 +48,17 @@ function addInfo(storyFn, context, infoOptions) {
     options.propTables = null;
   }
 
-  const marksyConf = { ...defaultMarksyConf };
+  const components = { ...defaultComponents };
+  if (options && options.components) {
+    Object.assign(components, options.components);
+  }
   if (options && options.marksyConf) {
-    Object.assign(marksyConf, options.marksyConf);
+    if (!hasWarned) {
+      logger.warn('@storybook/addon-info: "marksyConf" option has been renamed to "components"');
+      hasWarned = true;
+    }
+
+    Object.assign(components, options.marksyConf);
   }
   const props = {
     info: options.text,
@@ -54,11 +66,14 @@ function addInfo(storyFn, context, infoOptions) {
     showInline: Boolean(options.inline),
     showHeader: Boolean(options.header),
     showSource: Boolean(options.source),
+    styles:
+      typeof options.styles === 'function'
+        ? options.styles
+        : s => nestedObjectAssign({}, s, options.styles),
     propTables: options.propTables,
     propTablesExclude: options.propTablesExclude,
     PropTable: makeTableComponent(options.TableComponent),
-    styles: typeof options.styles === 'function' ? options.styles : s => s,
-    marksyConf,
+    components,
     maxPropObjectKeys: options.maxPropObjectKeys,
     maxPropArrayLength: options.maxPropArrayLength,
     maxPropsIntoLine: options.maxPropsIntoLine,

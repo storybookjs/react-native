@@ -1,16 +1,9 @@
 /* eslint no-underscore-dangle: 0 */
 
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
+import { getParameters, getAnnotations, getPropMetadata } from './utils';
 
-import {
-  getParameters,
-  getAnnotations,
-  getPropMetadata,
-  setAnnotations,
-  setParameters,
-} from './utils';
-
-const getComponentMetadata = ({ component, props = {} }) => {
+const getComponentMetadata = ({ component, props = {}, pipes = [] }) => {
   if (!component || typeof component !== 'function') throw new Error('No valid component provided');
 
   const componentMeta = getAnnotations(component)[0] || {};
@@ -20,6 +13,7 @@ const getComponentMetadata = ({ component, props = {} }) => {
   return {
     component,
     props,
+    pipes,
     componentMeta,
     propsMeta,
     params: paramsMetadata,
@@ -27,19 +21,19 @@ const getComponentMetadata = ({ component, props = {} }) => {
 };
 
 const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, channel }) => {
-  const NewComponent = function NewComponent(cd, ...args) {
+  const KnobWrapperComponent = function KnobWrapperComponent(cd, ...args) {
     component.call(this, ...args);
     this.cd = cd;
     this.knobChanged = this.knobChanged.bind(this);
     this.setPaneKnobs = this.setPaneKnobs.bind(this);
   };
-  NewComponent.prototype = Object.create(component.prototype);
 
-  setAnnotations(NewComponent, [new Component(componentMeta)]);
-  setParameters(NewComponent, [[ChangeDetectorRef], ...params]);
+  KnobWrapperComponent.prototype = Object.create(component.prototype);
+  KnobWrapperComponent.__annotations__ = [new Component(componentMeta)];
+  KnobWrapperComponent.__parameters__ = [[ChangeDetectorRef], ...params];
 
-  NewComponent.prototype.constructor = NewComponent;
-  NewComponent.prototype.ngOnInit = function onInit() {
+  KnobWrapperComponent.prototype.constructor = KnobWrapperComponent;
+  KnobWrapperComponent.prototype.ngOnInit = function onInit() {
     if (component.prototype.ngOnInit) {
       component.prototype.ngOnInit();
     }
@@ -50,7 +44,7 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     this.setPaneKnobs();
   };
 
-  NewComponent.prototype.ngOnDestroy = function onDestroy() {
+  KnobWrapperComponent.prototype.ngOnDestroy = function onDestroy() {
     if (component.prototype.ngOnDestroy) {
       component.prototype.ngOnDestroy();
     }
@@ -60,20 +54,20 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     knobStore.unsubscribe(this.setPaneKnobs);
   };
 
-  NewComponent.prototype.ngOnChanges = function onChanges(changes) {
+  KnobWrapperComponent.prototype.ngOnChanges = function onChanges(changes) {
     if (component.prototype.ngOnChanges) {
       component.prototype.ngOnChanges(changes);
     }
   };
 
-  NewComponent.prototype.setPaneKnobs = function setPaneKnobs(timestamp = +new Date()) {
+  KnobWrapperComponent.prototype.setPaneKnobs = function setPaneKnobs(timestamp = +new Date()) {
     channel.emit('addon:knobs:setKnobs', {
       knobs: knobStore.getAll(),
       timestamp,
     });
   };
 
-  NewComponent.prototype.knobChanged = function knobChanged(change) {
+  KnobWrapperComponent.prototype.knobChanged = function knobChanged(change) {
     const { name, value } = change;
     const knobOptions = knobStore.get(name);
     const oldValue = knobOptions.value;
@@ -87,12 +81,12 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     });
   };
 
-  NewComponent.prototype.knobClicked = function knobClicked(clicked) {
+  KnobWrapperComponent.prototype.knobClicked = function knobClicked(clicked) {
     const knobOptions = knobStore.get(clicked.name);
     knobOptions.callback();
   };
 
-  return NewComponent;
+  return KnobWrapperComponent;
 };
 
 const resetKnobs = (knobStore, channel) => {
@@ -105,7 +99,7 @@ const resetKnobs = (knobStore, channel) => {
 
 export function prepareComponent({ getStory, context, channel, knobStore }) {
   resetKnobs(knobStore, channel);
-  const { component, componentMeta, props, propsMeta, params } = getComponentMetadata(
+  const { component, componentMeta, props, pipes, propsMeta, params } = getComponentMetadata(
     getStory(context)
   );
 
@@ -122,6 +116,7 @@ export function prepareComponent({ getStory, context, channel, knobStore }) {
   return {
     component: AnnotatedComponent,
     props,
+    pipes,
     propsMeta,
   };
 }

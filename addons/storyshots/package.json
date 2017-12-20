@@ -15,7 +15,7 @@
     "example": "jest storyshot.test"
   },
   "dependencies": {
-    "@storybook/channels": "^3.2.17",
+    "@storybook/channels": "^3.3.0-alpha.4",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
