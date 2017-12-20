@@ -14,12 +14,5 @@ module.exports = {
         },
       },
     ],
-    [
-      'remark-toc',
-      {
-        tight: true,
-        maxDepth: 3,
-      },
-    ],
   ],
 };

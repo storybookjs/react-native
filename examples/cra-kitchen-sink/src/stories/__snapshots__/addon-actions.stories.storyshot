@@ -1,5 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addon Actions All types 1`] = `
+<div>
+  <button
+    class="css-1yjiefr"
+  >
+    Array
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Boolean
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Empty Object
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    File
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Function A
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Bound Function A
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Infinity
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    -Infinity
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    NaN
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    null
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Number
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Multiple
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Plain Object
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    RegExp
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    String
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Symbol
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    SyntheticEvent
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    undefined
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    Window
+  </button>
+</div>
+`;
+
 exports[`Storyshots Addon Actions Circular Payload 1`] = `
 <button
   class="css-1yjiefr"
