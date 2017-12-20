@@ -56,7 +56,7 @@ export default function() {
         },
       }),
       new webpack.ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)@angular/,
+        /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
         path.resolve(__dirname, '../src')
       ),
     ],
