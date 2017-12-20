@@ -51,7 +51,7 @@
     "css-loader": "^0.28.7",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
-    "file-loader": "^1.1.5",
+    "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
@@ -81,7 +81,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.7"
+    "nodemon": "^1.13.3"
   },
   "peerDependencies": {
     "react": ">=15.0.0 || ^16.0.0",
