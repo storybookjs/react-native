@@ -30,6 +30,7 @@ module.exports = {
         singleQuote: true,
       },
     ],
+    'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
     quotes: [warn, 'single', { avoidEscape: true }],
     'class-methods-use-this': ignore,
     'arrow-parens': [warn, 'as-needed'],

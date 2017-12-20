@@ -53,7 +53,7 @@ const debounce = (func: IRenderStoryFn | IRenderErrorFn,
   };
 };
 
-const getComponentMetadata = ({component, props = {}, propsMeta = {}}: Data) => {
+const getComponentMetadata = ({ component, props = {}, propsMeta = {}, pipes = [] }: Data) => {
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
 
@@ -70,6 +70,7 @@ const getComponentMetadata = ({component, props = {}, propsMeta = {}}: Data) => 
   return {
     component,
     props,
+    pipes,
     componentMeta: componentMetadata,
     propsMeta: propsMetadata,
     params: paramsMetadata
@@ -114,6 +115,7 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     component,
     componentMeta,
     props,
+    pipes,
     propsMeta,
     params
   } = getComponentMetadata(currentStory(context));
@@ -133,7 +135,7 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     propsMeta
   };
   const Module = getModule(
-    [AppComponent, AnnotatedComponent],
+    [AppComponent, AnnotatedComponent, ...pipes],
     [AnnotatedComponent],
     [AppComponent],
     story
