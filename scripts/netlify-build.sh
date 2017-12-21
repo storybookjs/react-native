@@ -3,8 +3,10 @@
 # Make sure to set $BUILD_CONTEXT in the Netlify "Deploy Settings"
 echo "Building for Netlify. BUILD_CONTEXT: $BUILD_CONTEXT"
 
+# Fixes
+npm i -g process-nextick-args util-deprecate gauge
+
 yarn
-yarn add gauge --ignore-workspace-root-check # quirk with netlify build instance
 yarn bootstrap --core
 
 if [ "$BUILD_CONTEXT" = "DOCS" ]; then

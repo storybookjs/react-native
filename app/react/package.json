@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -22,11 +22,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.17",
-    "@storybook/addon-links": "^3.2.17",
-    "@storybook/addons": "^3.2.17",
-    "@storybook/channel-postmessage": "^3.2.17",
-    "@storybook/ui": "^3.2.17",
+    "@storybook/addon-actions": "^3.2.18",
+    "@storybook/addon-links": "^3.2.18",
+    "@storybook/addons": "^3.2.18",
+    "@storybook/channel-postmessage": "^3.2.18",
+    "@storybook/ui": "^3.2.18",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -48,7 +48,7 @@
     "css-loader": "^0.28.7",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
-    "file-loader": "^1.1.5",
+    "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
@@ -74,7 +74,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.13.2"
+    "nodemon": "^1.13.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 | ^7.0.0-0",

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "storybook"
@@ -23,7 +23,7 @@
   "dependencies": {
     "global": "^4.3.2",
     "graphiql": "^0.11.10",
-    "graphql": "^0.11.7",
+    "graphql": "^0.12.3",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {

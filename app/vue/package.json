@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
@@ -22,11 +22,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.17",
-    "@storybook/addon-links": "^3.2.17",
-    "@storybook/addons": "^3.2.17",
-    "@storybook/channel-postmessage": "^3.2.17",
-    "@storybook/ui": "^3.2.17",
+    "@storybook/addon-actions": "^3.2.18",
+    "@storybook/addon-links": "^3.2.18",
+    "@storybook/addons": "^3.2.18",
+    "@storybook/channel-postmessage": "^3.2.18",
+    "@storybook/ui": "^3.2.18",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -48,7 +48,7 @@
     "css-loader": "^0.28.7",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
-    "file-loader": "^1.1.5",
+    "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
@@ -75,15 +75,15 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.13.2",
-    "vue": "^2.5.11",
-    "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.11"
+    "nodemon": "^1.13.3",
+    "vue": "^2.5.12",
+    "vue-loader": "^13.6.0",
+    "vue-template-compiler": "^2.5.12"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 | ^7.0.0-0",
-    "vue": "2.5.11",
-    "vue-loader": "*",
-    "vue-template-compiler": "2.5.11"
+    "vue": "2.5.12",
+    "vue-loader": "13.6.0",
+    "vue-template-compiler": "2.5.12"
   }
 }

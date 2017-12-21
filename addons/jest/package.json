@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-jest",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "description": "React storybook addon that show component jest report",
   "keywords": [
     "addon",
@@ -24,7 +24,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/components": "^3.2.17",
+    "@storybook/components": "^3.2.18",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
     "global": "^4.3.2",
