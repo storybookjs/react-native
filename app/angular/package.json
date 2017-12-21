@@ -18,15 +18,10 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "DEV_BUILD=1 nodemon -e js,ts --watch ./src --exec 'npm run prepublish'",
+    "dev": "cross-env DEV_BUILD=1 nodemon -e js,ts --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@angular/common": "^5.0.0-beta.7",
-    "@angular/compiler": "^5.0.0-beta.7",
-    "@angular/core": "^5.0.0-beta.7",
-    "@angular/platform-browser": "^5.0.0-beta.7",
-    "@angular/platform-browser-dynamic": "^5.0.0-beta.7",
     "@storybook/addon-actions": "^3.3.0-alpha.4",
     "@storybook/addon-links": "^3.3.0-alpha.4",
     "@storybook/addons": "^3.3.0-alpha.4",
@@ -50,6 +45,7 @@
     "configstore": "^3.1.0",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.1",
+    "cross-env": "^5.1.1",
     "express": "^4.15.3",
     "file-loader": "^0.11.1",
     "find-cache-dir": "^1.0.0",
@@ -90,5 +86,12 @@
     "mock-fs": "^4.3.0",
     "nodemon": "^1.12.0",
     "typescript": "^2.4.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "=>4.0.0",
+    "@angular/compiler": "=>4.0.0",
+    "@angular/core": "=>4.0.0",
+    "@angular/platform-browser": "=>4.0.0",
+    "@angular/platform-browser-dynamic": "=>4.0.0"
   }
 }
