@@ -1,4 +1,4 @@
 import { InjectionToken } from "@angular/core";
-import { Data } from "./types";
+import { NgStory } from "./types";
 
-export const STORY = new InjectionToken<Data>("story");
+export const STORY = new InjectionToken<NgStory>("story");

@@ -1,9 +1,7 @@
 import {
   enableProdMode,
   NgModule,
-  Component,
-  NgModuleRef,
-  ApplicationRef
+  Component
 } from "@angular/core";
 
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
@@ -13,7 +11,7 @@ import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
-import { NgModuleMetadata, NgStory } from "./types";
+import { NgModuleMetadata, NgStory, NgError, NgProvidedData } from "./types";
 
 let platform = null;
 let promises = [];
@@ -37,7 +35,12 @@ const debounce = (func, wait = 100, immediate = false) => {
 };
 
 const getComponentMetadata = (
-  { component, props = {}, propsMeta = {}, moduleMetadata }: NgStory
+  { component, props = {}, propsMeta = {}, moduleMetadata = {
+    imports: [],
+    schemas: [],
+    declarations: [],
+    providers: []
+  } }: NgStory
 ) => {
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
@@ -55,7 +58,7 @@ const getComponentMetadata = (
     schemas = [],
     declarations = [],
     providers = []
-  } = moduleMetadata || {};
+  } = moduleMetadata;
 
   return {
     component,
@@ -85,7 +88,7 @@ const getAnnotatedComponent = (meta, component, propsMeta, params) => {
   return NewComponent;
 };
 
-const getModule = (declarations, entryComponents, bootstrap, data, moduleMetadata: NgModuleMetadata = {
+const getModule = (declarations, entryComponents, bootstrap, data: NgProvidedData, moduleMetadata: NgModuleMetadata = {
   imports: [],
   schemas: [],
   declarations: [],
@@ -157,7 +160,7 @@ const draw = (newModule, reRender = true) => {
         modules.forEach(mod => mod.destroy());
         
         const body = document.body;
-        const app = document.createElement("my-app");
+        const app = document.createElement("app-root");
         body.appendChild(app);
         promises = [];
         promises.push(platform.bootstrapModule(newModule));
@@ -167,12 +170,8 @@ const draw = (newModule, reRender = true) => {
 
 export const renderNgError = debounce((error) => {
   const errorData = {
-    component: null,
-    props: {
-      message: error.message,
-      stack: error.stack
-    },
-    propsMeta: {}
+    message: error.message,
+    stack: error.stack
   };
 
   const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData);
@@ -185,7 +184,10 @@ export const renderNoPreview = debounce(() => {
     [NoPreviewComponent],
     [],
     [NoPreviewComponent],
-    {}
+    {
+      message: 'No Preview available.',
+      stack: ''
+    }
   );
 
   draw(Module);

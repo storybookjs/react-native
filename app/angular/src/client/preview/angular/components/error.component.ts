@@ -1,14 +1,14 @@
 import { Component, Inject } from "@angular/core";
 import { STORY } from "../app.token";
-import { Data } from "../types";
+import { NgError } from "../types";
 
 @Component({
-  selector: "my-app",
+  selector: "app-root",
   template: `
     <div class="main">
-      <h1>{{ error.props.message }}</h1>
+      <h1>{{ error.message }}</h1>
       <pre>
-        <code>{{ error.props.stack }}</code>
+        <code>{{ error.stack }}</code>
       </pre>
     </div>
   `,
@@ -44,5 +44,5 @@ import { Data } from "../types";
   ]
 })
 export class ErrorComponent {
-  constructor(@Inject(STORY) public error: Data) {}
+  constructor(@Inject(STORY) public error: NgError) {}
 }

@@ -1,24 +1,20 @@
-export type NgModuleMetadata = {
+export interface NgModuleMetadata {
     declarations: Array<any>,
     imports: Array<any>,
     schemas: Array<any>,
-    providers: Array<any>
+    providers: Array<any>,
 }
   
-export type NgStory = {
-    component: any;
-    props: object;
-    propsMeta: object;
-    moduleMetadata: NgModuleMetadata
-} 
-
-export type Data = {
-    component: any;
-    props: ErrorProps | object;
-    propsMeta: object;
+export interface NgStory {
+    component: any,
+    props: object,
+    propsMeta: object,
+    moduleMetadata?: NgModuleMetadata
 }
 
-type ErrorProps = {
-    message: string
+export interface NgError {
+    message: string,
     stack: string
 }
+
+export type NgProvidedData = NgStory | NgError;

@@ -3,7 +3,7 @@
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
 import { getParameters, getAnnotations, getPropMetadata } from './utils';
 
-const getComponentMetadata = ({ component, props = {}, moduleMetadata }) => {
+const getComponentMetadata = ({ component, props = {}, moduleMetadata = {} }) => {
   if (!component || typeof component !== 'function') throw new Error('No valid component provided');
 
   const componentMeta = getAnnotations(component)[0] || {};
