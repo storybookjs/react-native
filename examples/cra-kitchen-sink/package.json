@@ -36,6 +36,7 @@
     "@storybook/addon-storyshots": "^3.3.0-alpha.4",
     "@storybook/addon-viewport": "^3.3.0-alpha.4",
     "@storybook/addons": "^3.3.0-alpha.4",
+    "@storybook/client-logger": "^3.3.0-alpha.4",
     "@storybook/components": "^3.3.0-alpha.4",
     "@storybook/react": "^3.3.0-alpha.4",
     "babel-jest": "^21.2.0",
