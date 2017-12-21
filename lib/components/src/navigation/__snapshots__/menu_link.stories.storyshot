@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components/MenuLink active 1`] = `
+<a
+  class="css-1enjukp"
+  href="http://google.com"
+>
+  Link
+</a>
+`;
+
+exports[`Storyshots components/MenuLink default 1`] = `
+<a
+  class="css-1b2u8sb"
+  href="http://google.com"
+>
+  Link
+</a>
+`;
+
+exports[`Storyshots components/MenuLink with knobs 1`] = `
+<div
+  class="css-t9df35"
+>
+  <a
+    class="css-1enjukp"
+    href="/"
+  >
+    Menu link item
+  </a>
+</div>
+`;
