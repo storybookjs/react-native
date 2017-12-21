@@ -3,13 +3,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
+import { logger } from '@storybook/client-logger';
 import isReactRenderable from './element_check';
 import ErrorDisplay from './error_display';
 
 // check whether we're running on node/browser
 const isBrowser = typeof window !== 'undefined';
-
-const logger = console;
 
 let rootEl = null;
 let previousKind = '';
@@ -56,15 +55,17 @@ export function renderMain(data, storyStore) {
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
   //    https://github.com/storybooks/react-storybook/issues/116
-  if (selectedKind !== previousKind || previousStory !== selectedStory) {
-    // We need to unmount the existing set of components in the DOM node.
-    // Otherwise, React may not recrease instances for every story run.
-    // This could leads to issues like below:
-    //    https://github.com/storybooks/react-storybook/issues/81
-    previousKind = selectedKind;
-    previousStory = selectedStory;
-    ReactDOM.unmountComponentAtNode(rootEl);
+  if (selectedKind === previousKind && previousStory === selectedStory) {
+    return null;
   }
+
+  // We need to unmount the existing set of components in the DOM node.
+  // Otherwise, React may not recrease instances for every story run.
+  // This could leads to issues like below:
+  //    https://github.com/storybooks/react-storybook/issues/81
+  previousKind = selectedKind;
+  previousStory = selectedStory;
+  ReactDOM.unmountComponentAtNode(rootEl);
 
   const context = {
     kind: selectedKind,
@@ -86,9 +87,7 @@ export function renderMain(data, storyStore) {
 
   if (!isReactRenderable(element)) {
     const error = {
-      title: `Expecting a valid React element from the story: "${selectedStory}" of "${
-        selectedKind
-      }".`,
+      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
          Seems like you are not returning a correct React element from the story.
          Could you double check that?

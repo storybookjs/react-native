@@ -53,14 +53,14 @@ const tasks = {
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
     defaultValue: true,
     option: '--reactnative',
-    projectLocation: './examples/react-native-vanilla',
+    projectLocation: path.join(__dirname, '..', 'examples/react-native-vanilla'),
     isJest: true,
   }),
   integration: createProject({
     name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
     defaultValue: false,
     option: '--integration',
-    projectLocation: './integration',
+    projectLocation: path.join(__dirname, '..', 'integration'),
     isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({

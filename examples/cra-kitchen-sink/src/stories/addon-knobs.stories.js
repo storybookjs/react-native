@@ -56,7 +56,8 @@ storiesOf('Addon Knobs.withKnobs', module)
       cherry: 'Cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
-    const dollars = number('Dollars', 12.5);
+    const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
+    const years = number('Years in NY', 9);
 
     const backgroundColor = color('background', '#ffff00');
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
@@ -79,6 +80,7 @@ storiesOf('Addon Knobs.withKnobs', module)
       <div style={style}>
         <p>{intro}</p>
         <p>My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</p>
+        <p>I live in NY for {years} years.</p>
         <p>My wallet contains: ${dollars.toFixed(2)}</p>
         <p>In my backpack, I have:</p>
         <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
@@ -111,7 +113,7 @@ storiesOf('Addon Knobs.withKnobsOptions', module)
       cherry: 'Cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
-    const dollars = number('Dollars', 12.5);
+    const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
 
     const backgroundColor = color('background', '#ffff00');
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);

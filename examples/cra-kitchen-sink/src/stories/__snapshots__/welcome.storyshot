@@ -2,10 +2,10 @@
 
 exports[`Storyshots Welcome to Storybook 1`] = `
 <article
-  className="css-1fqbdip"
+  class="css-1fqbdip"
 >
   <h1
-    className="css-nil"
+    class="css-nil"
   >
     Welcome to storybook
   </h1>
@@ -13,35 +13,33 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     This is a UI component dev environment for your app.
   </p>
   <p>
-    We've added some basic stories inside the
-     
+    We've added some basic stories inside the 
     <code
-      className="css-mteq83"
+      class="css-mteq83"
     >
       src/stories
     </code>
-     
-    directory.
-    <br />
+     directory.
+    <br>
+      
+    </br>
     A story is a single state of one or more UI components. You can have as many stories as you want.
-    <br />
+    <br>
+      
+    </br>
     (Basically a story is like a visual test case.)
   </p>
   <p>
-    See these sample
-     
+    See these sample 
     <a
-      className="css-ca0824"
+      class="css-ca0824"
       href="/"
-      onClick={[Function]}
     >
       stories
     </a>
-     
-    for a component called
-     
+     for a component called 
     <code
-      className="css-mteq83"
+      class="css-mteq83"
     >
       Button
     </code>
@@ -49,18 +47,22 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   </p>
   <p>
     Just like that, you can add your own components as stories.
-    <br />
+    <br>
+      
+    </br>
     You can also edit those components and see changes right away.
-    <br />
+    <br>
+      
+    </br>
     (Try editing the 
     <code
-      className="css-mteq83"
+      class="css-mteq83"
     >
       Button
     </code>
      stories located at 
     <code
-      className="css-mteq83"
+      class="css-mteq83"
     >
       src/stories/index.js
     </code>
@@ -68,36 +70,36 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   </p>
   <p>
     Usually we create stories with smaller UI components in the app.
-    <br />
-    Have a look at the
-     
+    <br>
+      
+    </br>
+    Have a look at the 
     <a
-      className="css-ca0824"
+      class="css-ca0824"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
       target="_blank"
     >
       Writing Stories
     </a>
-     
-    section in our documentation.
+     section in our documentation.
   </p>
   <p
-    className="css-bwdon3"
+    class="css-bwdon3"
   >
     <b>
       NOTE:
     </b>
-    <br />
-    Have a look at the
-     
+    <br>
+      
+    </br>
+    Have a look at the 
     <code
-      className="css-mteq83"
+      class="css-mteq83"
     >
       .storybook/webpack.config.js
     </code>
-     
-    to add webpack loaders and plugins you are using in this project.
+     to add webpack loaders and plugins you are using in this project.
   </p>
 </article>
 `;

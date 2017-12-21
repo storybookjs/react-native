@@ -20,6 +20,27 @@ import { Welcome, Button } from '@storybook/angular/demo';
 import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 import { AppComponent } from '../app/app.component';
+import { NameComponent } from './name.component';
+import { CustomPipePipe } from './custom.pipe';
+
+storiesOf('Custom Pipe', module)
+  .add('Default', () => ({
+    component: NameComponent,
+    props: {
+      field: 'foobar',
+    },
+    pipes: [ CustomPipePipe ],
+  }));
+
+storiesOf('Custom Pipe/With Knobs', module)
+  .addDecorator(withKnobs)
+  .add('NameComponent', () => ({
+    component: NameComponent,
+    props: {
+      field: text('field', 'foobar'),
+    },
+    pipes: [ CustomPipePipe ],
+  }));
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => ({
@@ -84,7 +105,8 @@ storiesOf('Addon Notes', module)
     withNotes({ text: 'My notes on some button' })(() => ({
       component: Button,
       props: {
-        text: 'Notes on some Button'
+        text: 'Notes on some Button',
+        onClick: () => {},
       }
     }))
   )
@@ -101,7 +123,8 @@ storiesOf('Addon Notes', module)
     })(() => ({
       component: Button,
       props: {
-        text: 'Notes with HTML'
+        text: 'Notes with HTML',
+        onClick: () => {},
       }
     }))
   );

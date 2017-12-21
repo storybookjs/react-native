@@ -1,17 +1,13 @@
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 import path from 'path';
-
-function createNodeMock(element) {
-  if (element.type === 'div') {
-    return { scrollWidth: 123 };
-  }
-  return null;
-}
+import { render as renderer } from 'enzyme';
+import serializer from 'enzyme-to-json';
 
 initStoryshots({
   framework: 'react',
   configPath: path.join(__dirname, '..', '.storybook'),
   test: multiSnapshotWithOptions({
-    createNodeMock,
+    renderer,
+    serializer,
   }),
 });

@@ -13,7 +13,7 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
   ],
-  testPathIgnorePatterns: ['/node_modules/', '/cli/test/'],
+  testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',

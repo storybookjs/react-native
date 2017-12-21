@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
+import TableComponent from '../components/TableComponent';
 
 storiesOf('Addon Info.React Docgen', module)
   .add(
@@ -32,7 +33,7 @@ const markdownDescription = `
 
 Sometimes you might want to manually include some code examples:
 ~~~js
-const codeblock = [];
+const Button = () => <button />;
 ~~~
 
 Maybe include a [link](http://storybook.js.org) to your project as well.
@@ -88,10 +89,44 @@ storiesOf('Addon Info.Options.propTablesExclude', module).add(
   ))
 );
 
-storiesOf('Addon Info.Options.styles', module).add(
-  'Change info styles // I think this is broken or I am using it wrong?',
+storiesOf('Addon Info.Options.styles', module)
+  .add(
+    'Extend info styles with an object',
+    withInfo({
+      styles: {
+        button: {
+          base: {
+            background: 'purple',
+          },
+        },
+        header: {
+          h1: {
+            color: 'green',
+          },
+        },
+      },
+    })(() => <BaseButton label="Button" />)
+  )
+  .add(
+    'Full control over styles using a function',
+    withInfo({
+      styles: stylesheet => ({
+        ...stylesheet,
+        header: {
+          ...stylesheet.header,
+          h1: {
+            ...stylesheet.header.h1,
+            color: 'red',
+          },
+        },
+      }),
+    })(() => <BaseButton label="Button" />)
+  );
+
+storiesOf('Addon Info.Options.TableComponent', module).add(
+  'Use a custom component for the table',
   withInfo({
-    styles: { backgroundColor: 'blue' },
+    TableComponent,
   })(() => <BaseButton label="Button" />)
 );
 

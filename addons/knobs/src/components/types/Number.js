@@ -34,6 +34,9 @@ class NumberType extends React.Component {
         style={styles}
         value={knob.value}
         type="number"
+        min={knob.min}
+        max={knob.max}
+        step={knob.step}
         onChange={() => onChange(parseFloat(this.input.value))}
       />
     );

@@ -15,14 +15,18 @@ export function boolean(name, value) {
 }
 
 export function number(name, value, options = {}) {
-  const defaults = {
-    range: false,
+  const rangeDefaults = {
     min: 0,
     max: 10,
     step: 1,
   };
 
-  const mergedOptions = { ...defaults, ...options };
+  const mergedOptions = options.range
+    ? {
+        ...rangeDefaults,
+        ...options,
+      }
+    : options;
 
   const finalOptions = {
     ...mergedOptions,
