@@ -1,25 +1,16 @@
 {
-  "private": true,
-  "name": "storybook",
+  "name": "@storybook/root",
   "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "workspaces": [
-    "addons/*",
-    "app/*",
-    "lib/*",
-    "examples/cra-kitchen-sink",
-    "examples/vue-kitchen-sink"
-  ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
+    "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
-    "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
-    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
@@ -34,8 +25,9 @@
     "lint:js": "NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "node ./scripts/test.js",
-    "repo-dirty-check": "node ./scripts/repo-dirty-check"
+    "repo-dirty-check": "node ./scripts/repo-dirty-check",
+    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
+    "test": "node ./scripts/test.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -95,6 +87,7 @@
     "node": ">=8.0.0",
     "yarn": ">=1.0.0"
   },
+  "private": true,
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
@@ -125,5 +118,12 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
-  }
+  },
+  "workspaces": [
+    "addons/*",
+    "app/*",
+    "lib/*",
+    "examples/cra-kitchen-sink",
+    "examples/vue-kitchen-sink"
+  ]
 }
