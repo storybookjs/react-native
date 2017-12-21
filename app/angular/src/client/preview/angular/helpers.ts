@@ -2,16 +2,17 @@ import {
   enableProdMode,
   NgModule,
   Component,
-  NgModuleRef,
-  ApplicationRef,
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
+
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
+import { getAnnotations, getParameters, getPropMetadata } from './utils';
+
 let platform = null;
 let promises = [];
 
@@ -19,29 +20,27 @@ let promises = [];
 // We don't want to pull underscore
 
 const debounce = (func, wait = 100, immediate = false) => {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
+  var timeout;
+  return function () {
+    var context = this, args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 };
 
-const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
+const getComponentMetadata = ({ component, props = {}, propsMeta = {}, pipes = [] }) => {
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
 
-  const componentMetadata =
-    component.__annotations__[0] || component.annotations[0] || {};
-  const propsMetadata =
-    component.__prop__metadata__ || component.propMetadata || {};
-  const paramsMetadata = component.__parameters__ || component.parameters || [];
+  const componentMetadata = getAnnotations(component)[0] || {};
+  const propsMetadata = getPropMetadata(component);
+  const paramsMetadata = getParameters(component);
 
   Object.keys(propsMeta).map(key => {
     propsMetadata[key] = propsMeta[key];
@@ -50,6 +49,7 @@ const getComponentMetadata = ({ component, props = {}, propsMeta = {} }) => {
   return {
     component,
     props,
+    pipes,
     componentMeta: componentMetadata,
     propsMeta: propsMetadata,
     params: paramsMetadata
@@ -60,10 +60,12 @@ const getAnnotatedComponent = (meta, component, propsMeta, params) => {
   const NewComponent: any = function NewComponent(...args) {
     component.call(this, ...args);
   };
+
   NewComponent.prototype = Object.create(component.prototype);
   NewComponent.annotations = [new Component(meta)];
   NewComponent.parameters = params;
   NewComponent.propsMetadata = propsMeta;
+
   return NewComponent;
 };
 
@@ -78,6 +80,7 @@ const getModule = (declarations, entryComponents, bootstrap, data) => {
   });
 
   const NewModule: any = function NewModule() {};
+
   NewModule.annotations = [moduleMeta];
 
   return NewModule;
@@ -88,6 +91,7 @@ const initModule = (currentStory, context, reRender) => {
     component,
     componentMeta,
     props,
+    pipes,
     propsMeta,
     params
   } = getComponentMetadata(currentStory(context));
@@ -107,7 +111,7 @@ const initModule = (currentStory, context, reRender) => {
     propsMeta
   };
   const Module = getModule(
-    [AppComponent, AnnotatedComponent],
+    [AppComponent, AnnotatedComponent, ...pipes],
     [AnnotatedComponent],
     [AppComponent],
     story
