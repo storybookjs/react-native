@@ -6,12 +6,14 @@ import {
   NgModuleRef,
   CUSTOM_ELEMENTS_SCHEMA
 } from "@angular/core";
+
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY, Data } from "./app.token";
+import { getAnnotations, getParameters, getPropMetadata } from './utils';
 
 let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
@@ -39,10 +41,10 @@ interface IComponent extends Type<any> {
 const debounce = (func: IRenderStoryFn | IRenderErrorFn,
                   wait: number = 100,
                   immediate: boolean = false): () => void => {
-  var timeout: any;
+  var timeout;
   return function () {
     var context = this, args = arguments;
-    var later = function() {
+    var later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -57,11 +59,9 @@ const getComponentMetadata = ({ component, props = {}, propsMeta = {}, pipes = [
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
 
-  const componentMetadata =
-    component.__annotations__[0] || component.annotations[0] || {};
-  const propsMetadata =
-    component.__prop__metadata__ || component.propMetadata || {};
-  const paramsMetadata = component.__parameters__ || component.parameters || [];
+  const componentMetadata = getAnnotations(component)[0] || {};
+  const propsMetadata = getPropMetadata(component);
+  const paramsMetadata = getParameters(component);
 
   Object.keys(propsMeta).map(key => {
     propsMetadata[key] = propsMeta[key];
@@ -84,10 +84,12 @@ const getAnnotatedComponent = (meta: NgModule,
   const NewComponent: any = function NewComponent(...args: any[]) {
     component.call(this, ...args);
   };
+
   NewComponent.prototype = Object.create(component.prototype);
   NewComponent.annotations = [new Component(meta)];
   NewComponent.parameters = params;
   NewComponent.propsMetadata = propsMeta;
+
   return NewComponent;
 };
 
@@ -106,7 +108,6 @@ const getModule = (declarations: Array<Type<any> | any[]>,
 
   const NewModule: any = function NewModule() {};
   (<IModule>NewModule).annotations = [moduleMeta];
-
   return NewModule;
 };
 

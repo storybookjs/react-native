@@ -1,27 +1,16 @@
 {
-  "private": true,
-  "name": "storybook",
+  "name": "@storybook/root",
   "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "workspaces": [
-    "addons/*",
-    "app/*",
-    "lib/*",
-    "examples/angular-cli",
-    "examples/cra-kitchen-sink",
-    "examples/vue-kitchen-sink",
-    "lib/cli/test/run/*"
-  ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
+    "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
-    "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
-    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
@@ -36,9 +25,10 @@
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
-    "test": "./scripts/test.js",
-    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra",
-    "repo-dirty-check": "node ./scripts/repo-dirty-check"
+    "repo-dirty-check": "node ./scripts/repo-dirty-check",
+    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
+    "test": "node ./scripts/test.js",
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -56,7 +46,7 @@
     "cross-env": "^5.1.1",
     "danger": "^2.1.6",
     "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -74,7 +64,7 @@
     "jest": "^21.2.0",
     "jest-cli": "^21.2.1",
     "jest-enzyme": "^4.0.1",
-    "jest-image-snapshot": "^2.2.0",
+    "jest-image-snapshot": "^2.2.1",
     "lerna": "^2.5.1",
     "lint-staged": "^6.0.0",
     "lodash": "^4.17.4",
@@ -98,6 +88,7 @@
     "node": ">=8.0.0",
     "yarn": ">=1.0.0"
   },
+  "private": true,
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
@@ -128,5 +119,14 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
-  }
+  },
+  "workspaces": [
+    "addons/*",
+    "app/*",
+    "lib/*",
+    "examples/angular-cli",
+    "examples/cra-kitchen-sink",
+    "examples/vue-kitchen-sink",
+    "lib/cli/test/run/*"
+  ]
 }

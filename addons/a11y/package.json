@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@storybook/components": "^3.3.0-alpha.4",
-    "axe-core": "^2.0.7",
+    "axe-core": "^2.6.0",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {

@@ -10,6 +10,7 @@ import { Button } from '@storybook/react/demo';
 
 import App from '../App';
 import Container from './Container';
+import LifecycleLogger from '../components/LifecycleLogger';
 
 const InfoButton = () => (
   <span
@@ -88,3 +89,6 @@ storiesOf('App', module).add('full app', () => <App />);
 storiesOf('Some really long story kind description', module)
   .addDecorator(centered)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>);
+
+storiesOf('Lifecycle', module).add('logging', () => <LifecycleLogger />);
+

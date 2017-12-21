@@ -105,7 +105,8 @@ storiesOf('Addon Notes', module)
     withNotes({ text: 'My notes on some button' })(() => ({
       component: Button,
       props: {
-        text: 'Notes on some Button'
+        text: 'Notes on some Button',
+        onClick: () => {},
       }
     }))
   )
@@ -122,7 +123,8 @@ storiesOf('Addon Notes', module)
     })(() => ({
       component: Button,
       props: {
-        text: 'Notes with HTML'
+        text: 'Notes with HTML',
+        onClick: () => {},
       }
     }))
   );
