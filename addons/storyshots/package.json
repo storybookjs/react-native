@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@storybook/channels": "^3.3.0-alpha.4",
-    "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
@@ -41,6 +40,7 @@
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0-alpha.4",
+    "babel-core": "^6.26.0 | ^7.0.0-0",
     "react": "*",
     "react-test-renderer": "*"
   }

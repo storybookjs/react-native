@@ -31,7 +31,6 @@
     "@storybook/ui": "^3.3.0-alpha.4",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
-    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-react-docgen": "^1.8.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
@@ -84,6 +83,7 @@
     "nodemon": "^1.13.3"
   },
   "peerDependencies": {
+    "babel-core": "^6.26.0 | ^7.0.0-0",
     "react": ">=15.0.0 || ^16.0.0",
     "react-dom": ">=15.0.0 || ^16.0.0"
   }
