@@ -11,18 +11,13 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./components/app.component";
 import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
-import { STORY, Data } from "./app.token";
+import { STORY } from "./app.token";
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
-import { NgModuleMetadata, NgStory, NgError, NgProvidedData } from "./types";
+import { NgModuleMetadata, NgStory, IGetStoryWithContext, IContext, NgProvidedData } from "./types";
 
 let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
 
-export interface IContext {
-  [p: string]: any
-}
-
-export type IGetStoryWithContext = (context: IContext) => Data
 type IRenderStoryFn = (story: IGetStoryWithContext, context: IContext, reRender?: boolean) => void;
 type IRenderErrorFn = (error: Error) => void;
 
@@ -33,7 +28,6 @@ interface IComponent extends Type<any> {
   annotations: any[];
   parameters: any[];
   propsMetadata: any[]
-  
 }
 
 // Taken from https://davidwalsh.name/javascript-debounce-function
@@ -41,14 +35,14 @@ interface IComponent extends Type<any> {
 const debounce = (func: IRenderStoryFn | IRenderErrorFn,
                   wait: number = 100,
                   immediate: boolean = false): () => void => {
-  var timeout;
+  let timeout: any;
   return function () {
-    var context = this, args = arguments;
-    var later = function () {
+    let context = this, args = arguments;
+    let later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
-    var callNow = immediate && !timeout;
+    let callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
@@ -71,7 +65,7 @@ const getComponentMetadata = (
   const paramsMetadata = getParameters(component);
 
   Object.keys(propsMeta).map(key => {
-    propsMetadata[key] = propsMeta[key];
+      (<any>propsMetadata)[key] = (<any>propsMeta)[key];
   });
 
   const {
@@ -161,15 +155,13 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     propsMeta
   };
 
-  const Module = getModule(
+  return getModule(
     [AppComponent, AnnotatedComponent],
     [AnnotatedComponent],
     [AppComponent],
     story,
     moduleMeta
   );
-  
-  return Module;
 };
 
 const draw = (newModule: IModule, reRender: boolean = true): void => {
