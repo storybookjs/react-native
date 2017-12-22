@@ -7,8 +7,8 @@ export interface NgModuleMetadata {
   
 export interface NgStory {
     component: any,
-    props: object,
-    propsMeta: object,
+    props: {[p: string]: any},
+    propsMeta: {[p: string]: any},
     moduleMetadata?: NgModuleMetadata
 }
 
@@ -18,3 +18,9 @@ export interface NgError {
 }
 
 export type NgProvidedData = NgStory | NgError;
+
+export interface IContext {
+    [p: string]: any
+}
+
+export type IGetStoryWithContext = (context: IContext) => NgStory
