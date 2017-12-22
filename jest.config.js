@@ -1,5 +1,5 @@
 module.exports = {
-  cacheDirectory: '.cache/jest',
+  // cacheDirectory: '.cache/jest',
   clearMocks: true,
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
@@ -27,4 +27,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
+  testURL: 'http://localhost',
 };
