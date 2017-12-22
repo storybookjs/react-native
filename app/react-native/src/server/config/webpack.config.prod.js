@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
 const config = {
@@ -21,17 +22,15 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
+    new UglifyJsPlugin({
+      parallel: true,
+      uglifyOptions: {
+        ie8: false,
+        mangle: false,
         warnings: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-        screw_ie8: true,
+        output: {
+          comments: false,
+        },
       },
     }),
   ],
