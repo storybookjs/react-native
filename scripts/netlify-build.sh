@@ -35,6 +35,13 @@ elif [ "$BUILD_CONTEXT" = "ANGULAR" ]; then
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "OFFICIAL" ]; then
+  echo "netlify-build official examples"
+  pushd examples/official-storybook
+  yarn
+  yarn build-storybook
+  mv storybook-static ../../netlify-build
+  popd
 else
   RED='\033[0;31m'
   NOCOLOR='\033[0m'
