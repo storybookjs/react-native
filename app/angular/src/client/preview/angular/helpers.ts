@@ -1,8 +1,7 @@
 import {
   enableProdMode,
   NgModule,
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA
+  Component
 } from "@angular/core";
 
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
@@ -12,6 +11,7 @@ import { ErrorComponent } from "./components/error.component";
 import { NoPreviewComponent } from "./components/no-preview.component";
 import { STORY } from "./app.token";
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
+import { NgModuleMetadata, NgStory, NgError, NgProvidedData } from "./types";
 
 let platform = null;
 let promises = [];
@@ -34,7 +34,14 @@ const debounce = (func, wait = 100, immediate = false) => {
   };
 };
 
-const getComponentMetadata = ({ component, props = {}, propsMeta = {}, pipes = [] }) => {
+const getComponentMetadata = (
+  { component, props = {}, propsMeta = {}, moduleMetadata = {
+    imports: [],
+    schemas: [],
+    declarations: [],
+    providers: []
+  } }: NgStory
+) => {
   if (!component || typeof component !== "function")
     throw new Error("No valid component provided");
 
@@ -46,13 +53,25 @@ const getComponentMetadata = ({ component, props = {}, propsMeta = {}, pipes = [
     propsMetadata[key] = propsMeta[key];
   });
 
+  const {
+    imports = [],
+    schemas = [],
+    declarations = [],
+    providers = []
+  } = moduleMetadata;
+
   return {
     component,
     props,
-    pipes,
     componentMeta: componentMetadata,
     propsMeta: propsMetadata,
-    params: paramsMetadata
+    params: paramsMetadata,
+    moduleMeta: {
+      imports,
+      schemas,
+      declarations,
+      providers
+    }
   };
 };
 
@@ -69,13 +88,18 @@ const getAnnotatedComponent = (meta, component, propsMeta, params) => {
   return NewComponent;
 };
 
-const getModule = (declarations, entryComponents, bootstrap, data) => {
+const getModule = (declarations, entryComponents, bootstrap, data: NgProvidedData, moduleMetadata: NgModuleMetadata = {
+  imports: [],
+  schemas: [],
+  declarations: [],
+  providers: []
+}) => {
   const moduleMeta = new NgModule({
-    declarations: [...declarations],
-    imports: [BrowserModule],
-    providers: [{ provide: STORY, useValue: Object.assign({}, data) }],
+    declarations: [...declarations, ...moduleMetadata.declarations],
+    imports: [BrowserModule, ...moduleMetadata.imports],
+    providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
     entryComponents: [...entryComponents],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    schemas: [...moduleMetadata.schemas],
     bootstrap: [...bootstrap]
   });
 
@@ -91,9 +115,9 @@ const initModule = (currentStory, context, reRender) => {
     component,
     componentMeta,
     props,
-    pipes,
     propsMeta,
-    params
+    params,
+    moduleMeta
   } = getComponentMetadata(currentStory(context));
 
   if (!componentMeta) throw new Error("No component metadata available");
@@ -102,7 +126,7 @@ const initModule = (currentStory, context, reRender) => {
     componentMeta,
     component,
     propsMeta,
-    params
+    [...params, ...moduleMeta.providers.map(provider => [provider])]
   );
 
   const story = {
@@ -110,12 +134,15 @@ const initModule = (currentStory, context, reRender) => {
     props,
     propsMeta
   };
+
   const Module = getModule(
-    [AppComponent, AnnotatedComponent, ...pipes],
+    [AppComponent, AnnotatedComponent],
     [AnnotatedComponent],
     [AppComponent],
-    story
+    story,
+    moduleMeta
   );
+  
   return Module;
 };
 
@@ -133,7 +160,7 @@ const draw = (newModule, reRender = true) => {
         modules.forEach(mod => mod.destroy());
         
         const body = document.body;
-        const app = document.createElement("my-app");
+        const app = document.createElement("app-root");
         body.appendChild(app);
         promises = [];
         promises.push(platform.bootstrapModule(newModule));
@@ -143,12 +170,8 @@ const draw = (newModule, reRender = true) => {
 
 export const renderNgError = debounce((error) => {
   const errorData = {
-    component: null,
-    props: {
-      message: error.message,
-      stack: error.stack
-    },
-    propsMeta: {}
+    message: error.message,
+    stack: error.stack
   };
 
   const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData);
@@ -161,7 +184,10 @@ export const renderNoPreview = debounce(() => {
     [NoPreviewComponent],
     [],
     [NoPreviewComponent],
-    {}
+    {
+      message: 'No Preview available.',
+      stack: ''
+    }
   );
 
   draw(Module);
