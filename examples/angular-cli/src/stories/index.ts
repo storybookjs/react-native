@@ -20,27 +20,10 @@ import { Welcome, Button } from '@storybook/angular/demo';
 import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 import { AppComponent } from '../app/app.component';
+import { DummyService } from './moduleMetadata/dummy.service';
+import { ServiceComponent } from './moduleMetadata/service.component'
 import { NameComponent } from './name.component';
 import { CustomPipePipe } from './custom.pipe';
-
-storiesOf('Custom Pipe', module)
-  .add('Default', () => ({
-    component: NameComponent,
-    props: {
-      field: 'foobar',
-    },
-    pipes: [ CustomPipePipe ],
-  }));
-
-storiesOf('Custom Pipe/With Knobs', module)
-  .addDecorator(withKnobs)
-  .add('NameComponent', () => ({
-    component: NameComponent,
-    props: {
-      field: text('field', 'foobar'),
-    },
-    pipes: [ CustomPipePipe ],
-  }));
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => ({
@@ -135,7 +118,6 @@ storiesOf('Addon Knobs', module)
   .add('Simple', () => {
     const name = text('Name', 'John Doe');
     const age = number('Age', 44);
-    const content = `I am ${name} and I'm ${age} years old.`;
 
     return {
       component: SimpleKnobsComponent,
@@ -182,3 +164,63 @@ storiesOf('Addon Knobs', module)
       }
     };
   });
+
+storiesOf('Custom ngModule metadata', module)
+  .add('simple', () => ({
+    component: ServiceComponent,
+    props: {
+      name: 'Static name'
+    },
+    moduleMetadata: {
+      imports: [],
+      schemas: [],
+      declarations: [],
+      providers: [DummyService]
+    }
+  }))
+  .addDecorator(withKnobs)
+  .add('with knobs', () => {
+    const name = text('Name', 'Dynamic knob');
+
+    return {
+      component: ServiceComponent,
+      props: {
+        name
+      },
+      moduleMetadata: {
+        imports: [],
+        schemas: [],
+        declarations: [],
+        providers: [DummyService]
+      }
+    };
+  });
+
+storiesOf('Custom Pipe', module)
+  .add('Default', () => ({
+    component: NameComponent,
+    props: {
+      field: 'foobar',
+    },
+    moduleMetadata: {
+      imports: [],
+      schemas: [],
+      declarations: [CustomPipePipe],
+      providers: []
+    }
+  }));
+
+storiesOf('Custom Pipe/With Knobs', module)
+  .addDecorator(withKnobs)
+  .add('NameComponent', () => ({
+    component: NameComponent,
+    props: {
+      field: text('field', 'foobar'),
+    },
+    moduleMetadata: {
+      imports: [],
+      schemas: [],
+      declarations: [CustomPipePipe],
+      providers: []
+    }
+  }));
