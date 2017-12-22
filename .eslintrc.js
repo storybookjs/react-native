@@ -51,6 +51,7 @@ module.exports = {
           '**/example/**',
           '*.js',
           '**/*.test.js',
+          '**/*.stories.js',
           '**/scripts/*.js',
           '**/stories/**/*.js',
           '**/__tests__/**/*.js',
