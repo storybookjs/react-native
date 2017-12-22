@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components/RoutedLink w/ href 1`] = `
+<a
+  href="http://google.com"
+>
+  Link
+</a>
+`;
+
+exports[`Storyshots components/RoutedLink w/ onClick 1`] = `
+<a
+  href="/"
+>
+  Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
+</a>
+`;

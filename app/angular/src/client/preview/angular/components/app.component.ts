@@ -13,10 +13,11 @@ import {
   OnDestroy,
   EventEmitter
 } from "@angular/core";
-import { STORY, Data } from "../app.token";
+import { STORY } from "../app.token";
+import { NgStory } from "../types";
 
 @Component({
-  selector: "my-app",
+  selector: "app-root",
   template: "<ng-template #target></ng-template>"
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
@@ -24,7 +25,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   target: ViewContainerRef;
   constructor(
     private cfr: ComponentFactoryResolver,
-    @Inject(STORY) private data: Data
+    @Inject(STORY) private data: NgStory
   ) {}
 
   ngAfterViewInit() {

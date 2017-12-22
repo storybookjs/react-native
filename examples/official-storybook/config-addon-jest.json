@@ -1,0 +1,28 @@
+{
+  "verbose": true,
+  "coverageDirectory": "coverage/",
+  "notify": true,
+  "transform": {
+    ".*": "babel-jest"
+  },
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "setupFiles": [
+    "<rootDir>/src/enzyme.js"
+  ],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.s?css$": "<rootDir>/__mocks__/styleMock.js"
+  },
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/*.js",
+    "*.js",
+    "!.*",
+    "!__test__/*",
+    "!**/__test__/*",
+    "!**/index.js",
+    "!**/story.js"
+  ]
+}

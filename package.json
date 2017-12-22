@@ -15,7 +15,8 @@
     "precommit": "lint-staged",
     "coverage": "codecov",
     "danger": "danger",
-    "dev": "lerna exec --parallel -- babel src -d dist --ignore tests/,__tests__/,.test.js,stories/,.story.js,.stories.js --plugins \"transform-runtime\" --copy-files -w",
+    "dev":
+      "lerna exec --parallel -- babel src -d dist --copy-files --ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__ --plugins \"transform-runtime\" -w",
     "docs:build": "npm --prefix docs run build",
     "docs:deploy:ci": "npm --prefix docs run deploy:ci",
     "docs:deploy:manual": "npm --prefix docs run deploy:manual",
@@ -128,6 +129,7 @@
     "examples/cra-kitchen-sink",
     "examples/polymer-cli",
     "examples/vue-kitchen-sink",
+    "examples/official-storybook",
     "lib/cli/test/run/*"
   ]
 }

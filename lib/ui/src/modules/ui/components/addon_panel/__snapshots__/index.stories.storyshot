@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ui/AddonPanel default 1`] = `
+<div
+  style="height:100px;display:flex"
+>
+  <div
+    style="flex:1 1 auto;display:flex;flex-direction:column;background:white;border-radius:4px;border:solid 1px rgb(236, 236, 236);margin-top:5px;width:100%"
+  >
+    <div
+      role="tablist"
+      style="display:flex;flex-wrap:wrap;flex-direction:row;justify-content:flex-start;align-items:center;border-bottom:solid 1px #eaeaea"
+    >
+      <button
+        role="tab"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:11px;letter-spacing:1px;padding:10px 15px;text-transform:uppercase;transition:opacity 0.3s;opacity:0.5;max-height:60px;overflow:hidden;cursor:pointer;background:transparent;border:none"
+        type="button"
+      >
+        Test 1
+      </button>
+      <button
+        role="tab"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:11px;letter-spacing:1px;padding:10px 15px;text-transform:uppercase;transition:opacity 0.3s;opacity:1;max-height:60px;overflow:hidden;cursor:pointer;background:transparent;border:none"
+        type="button"
+      >
+        Test 2
+      </button>
+    </div>
+    <div
+      style="flex:1 1 0;display:flex;overflow:auto"
+    >
+      <div
+        role="tabpanel"
+        style="display:none"
+      >
+        <div
+          id="test1"
+        >
+          TEST 1
+        </div>
+      </div>
+      <div
+        role="tabpanel"
+        style="display:flex;flex:1"
+      >
+        <div
+          id="test2"
+        >
+          TEST 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ui/AddonPanel no panels 1`] = `
+<div
+  style="height:100px;display:flex"
+>
+  <div
+    style="flex:1;display:flex;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:11px;letter-spacing:1px;text-transform:uppercase;align-items:center;justify-content:center"
+  >
+    no panels available
+  </div>
+</div>
+`;
