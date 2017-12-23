@@ -42,7 +42,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "^2.3.0",
     "commander": "^2.12.2",
-    "common-tags": "^1.5.1",
+    "common-tags": "^1.6.0",
     "configstore": "^3.1.1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.7",
@@ -51,7 +51,7 @@
     "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0",
+    "glamorous": "^4.11.2",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
     "json-stringify-safe": "^5.0.1",
@@ -74,7 +74,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.13.3"
+    "nodemon": "^1.14.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 | ^7.0.0-0",

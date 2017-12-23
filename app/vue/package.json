@@ -42,7 +42,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "^2.3.0",
     "commander": "^2.12.2",
-    "common-tags": "^1.5.1",
+    "common-tags": "^1.6.0",
     "configstore": "^3.1.1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.7",
@@ -75,15 +75,15 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.13.3",
-    "vue": "^2.5.12",
-    "vue-loader": "^13.6.0",
-    "vue-template-compiler": "^2.5.12"
+    "nodemon": "^1.14.3",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.6.1",
+    "vue-template-compiler": "^2.5.13"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 | ^7.0.0-0",
-    "vue": "2.5.12",
-    "vue-loader": "13.6.0",
-    "vue-template-compiler": "2.5.12"
+    "vue": "2.5.13",
+    "vue-loader": "13.6.1",
+    "vue-template-compiler": "2.5.13"
   }
 }
