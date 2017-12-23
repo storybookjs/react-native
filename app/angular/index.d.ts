@@ -1,4 +1,4 @@
-import {NgModuleMetadata } from './dist/client/preview/angular/types';
+import {NgModuleMetadata, ICollection} from './dist/client/preview/angular/types';
 
 export interface IStorybookStory {
     name: string,
@@ -11,8 +11,8 @@ export interface IStoribookSection {
 }
 
 export type IGetStory = () => {
-    props?: {[p: string]: any};
-    moduleMetadata?: {[p: string]: NgModuleMetadata};
+    props?: ICollection;
+    moduleMetadata?: Partial<NgModuleMetadata>;
     component: any
 };
 
