@@ -14,8 +14,10 @@ import reducer from './reducer';
 // check whether we're running on node/browser
 const isBrowser =
   navigator &&
+  navigator.userAgent &&
   navigator.userAgent !== 'storyshots' &&
-  !(navigator.userAgent.indexOf('Node.js') > -1);
+  !(navigator.userAgent.indexOf('Node.js') > -1) &&
+  !(navigator.userAgent.indexOf('jsdom') > -1);
 
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
