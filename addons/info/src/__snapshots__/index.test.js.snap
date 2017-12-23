@@ -1,0 +1,1050 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addon Info should render <Info /> and markdown 1`] = `
+<Component>
+  <Story
+    PropTable={[Function]}
+    components={
+      Object {
+        "a": [Function],
+        "code": [Function],
+        "h1": [Function],
+        "h2": [Function],
+        "h3": [Function],
+        "h4": [Function],
+        "h5": [Function],
+        "h6": [Function],
+        "li": [Function],
+        "p": [Function],
+        "ul": [Function],
+      }
+    }
+    context={Object {}}
+    info="# Test story
+## with markdown info
+containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
+    maxPropArrayLength={3}
+    maxPropObjectKeys={3}
+    maxPropStringLength={50}
+    maxPropsIntoLine={3}
+    propTables={Array []}
+    propTablesExclude={Array []}
+    showHeader={true}
+    showInline={false}
+    showSource={true}
+    styles={[Function]}
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div>
+          It's a 
+           story:
+          <TestComponent
+            array={
+              Array [
+                1,
+                2,
+                3,
+              ]
+            }
+            bool={true}
+            func={[Function]}
+            number={7}
+            obj={
+              Object {
+                "a": "a",
+                "b": "b",
+              }
+            }
+            string="seven"
+          >
+            <div>
+              <h1>
+                function func(x) {return x + 1;}
+              </h1>
+              <h2>
+                [object Object]
+              </h2>
+              <h3>
+                1,2,3
+              </h3>
+              <h4>
+                7
+              </h4>
+              <h5>
+                seven
+              </h5>
+              <h6>
+                true
+              </h6>
+              <p>
+                undefined
+              </p>
+              <a
+                href="#"
+              >
+                test
+              </a>
+              <code>
+                storiesOf
+              </code>
+              <ul>
+                <li>
+                  1
+                </li>
+                <li>
+                  2
+                </li>
+              </ul>
+            </div>
+          </TestComponent>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+      <div
+        style={
+          Object {
+            "background": "white",
+            "bottom": 0,
+            "display": "none",
+            "left": 0,
+            "overflow": "auto",
+            "padding": "0 40px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "zIndex": 99999,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#28c",
+              "border": "none",
+              "borderRadius": "0 0 0 5px",
+              "color": "#fff",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "sans-serif",
+              "fontSize": "12px",
+              "padding": "5px 15px",
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+          type="button"
+        >
+          ×
+        </button>
+        <div>
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "backgroundColor": "#fff",
+                "border": "1px solid #eee",
+                "borderRadius": "2px",
+                "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+                "fontWeight": 300,
+                "lineHeight": 1.45,
+                "marginTop": "50px",
+                "padding": "20px 40px 40px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid #eee",
+                  "marginBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <h1
+                style={
+                  Object {
+                    "fontSize": "35px",
+                    "margin": 0,
+                    "padding": 0,
+                  }
+                }
+              />
+              <h2
+                style={
+                  Object {
+                    "fontSize": "22px",
+                    "fontWeight": 400,
+                    "margin": "0 0 10px 0",
+                    "padding": 0,
+                  }
+                }
+              />
+            </div>
+            <div
+              style={
+                Object {
+                  "marginBottom": 0,
+                }
+              }
+            >
+              <H1
+                context={Object {}}
+                id="test-story"
+                key="0"
+              >
+                <h1
+                  id="test-story"
+                  style={
+                    Object {
+                      "WebkitFontSmoothing": "antialiased",
+                      "borderBottom": "1px solid #eee",
+                      "color": "#444",
+                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                      "fontSize": "40px",
+                      "fontWeight": 600,
+                      "margin": 0,
+                      "padding": 0,
+                    }
+                  }
+                >
+                  Test story
+                </h1>
+              </H1>
+              <H2
+                context={Object {}}
+                id="test-story-with-markdown-info"
+                key="1"
+              >
+                <h2
+                  id="test-story-with-markdown-info"
+                  style={
+                    Object {
+                      "WebkitFontSmoothing": "antialiased",
+                      "color": "#444",
+                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                      "fontSize": "30px",
+                      "fontWeight": 600,
+                      "margin": 0,
+                      "padding": 0,
+                    }
+                  }
+                >
+                  with markdown info
+                </h2>
+              </H2>
+              <P
+                context={Object {}}
+                key="6"
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitFontSmoothing": "antialiased",
+                      "color": "#444",
+                      "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                      "fontSize": "15px",
+                    }
+                  }
+                >
+                  containing 
+                  <strong
+                    key="2"
+                  >
+                    bold
+                  </strong>
+                  , 
+                  <em
+                    key="3"
+                  >
+                    cursive
+                  </em>
+                   text, 
+                  <code
+                    key="4"
+                  >
+                    code
+                  </code>
+                   and 
+                  <A
+                    context={Object {}}
+                    href="https://github.com"
+                    key="5"
+                    title={null}
+                  >
+                    <a
+                      href="https://github.com"
+                      rel="noopener noreferrer"
+                      style={
+                        Object {
+                          "color": "#3498db",
+                        }
+                      }
+                      target="_blank"
+                    >
+                      a link
+                    </a>
+                  </A>
+                </div>
+              </P>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Story Source
+              </h1>
+              <Pre>
+                <pre
+                  style={
+                    Object {
+                      "backgroundColor": "#fafafa",
+                      "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                      "fontSize": ".88em",
+                      "lineHeight": 1.5,
+                      "overflowX": "scroll",
+                      "padding": ".5rem",
+                    }
+                  }
+                >
+                  <Node
+                    depth={0}
+                    key="0/.0"
+                    maxPropArrayLength={3}
+                    maxPropObjectKeys={3}
+                    maxPropStringLength={50}
+                    maxPropsIntoLine={3}
+                    node={
+                      <div>
+                        It's a 
+                         story:
+                        <TestComponent
+                          array={
+                            Array [
+                              1,
+                              2,
+                              3,
+                            ]
+                          }
+                          bool={true}
+                          func={[Function]}
+                          number={7}
+                          obj={
+                            Object {
+                              "a": "a",
+                              "b": "b",
+                            }
+                          }
+                          string="seven"
+                        />
+                      </div>
+                    }
+                  >
+                    <div>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;
+                          div
+                        </span>
+                        <Props
+                          maxPropArrayLength={3}
+                          maxPropObjectKeys={3}
+                          maxPropStringLength={50}
+                          maxPropsIntoLine={3}
+                          node={
+                            <div>
+                              It's a 
+                               story:
+                              <TestComponent
+                                array={
+                                  Array [
+                                    1,
+                                    2,
+                                    3,
+                                  ]
+                                }
+                                bool={true}
+                                func={[Function]}
+                                number={7}
+                                obj={
+                                  Object {
+                                    "a": "a",
+                                    "b": "b",
+                                  }
+                                }
+                                string="seven"
+                              />
+                            </div>
+                          }
+                          singleLine={false}
+                        >
+                          <span />
+                        </Props>
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &gt;
+                        </span>
+                      </div>
+                      <Node
+                        depth={1}
+                        key=".0"
+                        maxPropArrayLength={3}
+                        maxPropObjectKeys={3}
+                        maxPropStringLength={50}
+                        maxPropsIntoLine={3}
+                        node="It's a "
+                      >
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            It's a 
+                          </span>
+                        </div>
+                      </Node>
+                      <Node
+                        depth={1}
+                        key=".1"
+                        maxPropArrayLength={3}
+                        maxPropObjectKeys={3}
+                        maxPropStringLength={50}
+                        maxPropsIntoLine={3}
+                        node={null}
+                      >
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          />
+                        </div>
+                      </Node>
+                      <Node
+                        depth={1}
+                        key=".2"
+                        maxPropArrayLength={3}
+                        maxPropObjectKeys={3}
+                        maxPropStringLength={50}
+                        maxPropsIntoLine={3}
+                        node=" story:"
+                      >
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                             story:
+                          </span>
+                        </div>
+                      </Node>
+                      <Node
+                        depth={1}
+                        key=".3"
+                        maxPropArrayLength={3}
+                        maxPropObjectKeys={3}
+                        maxPropStringLength={50}
+                        maxPropsIntoLine={3}
+                        node={
+                          <TestComponent
+                            array={
+                              Array [
+                                1,
+                                2,
+                                3,
+                              ]
+                            }
+                            bool={true}
+                            func={[Function]}
+                            number={7}
+                            obj={
+                              Object {
+                                "a": "a",
+                                "b": "b",
+                              }
+                            }
+                            string="seven"
+                          />
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "paddingLeft": 33,
+                              "paddingRight": 3,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            &lt;
+                            TestComponent
+                          </span>
+                          <Props
+                            maxPropArrayLength={3}
+                            maxPropObjectKeys={3}
+                            maxPropStringLength={50}
+                            maxPropsIntoLine={3}
+                            node={
+                              <TestComponent
+                                array={
+                                  Array [
+                                    1,
+                                    2,
+                                    3,
+                                  ]
+                                }
+                                bool={true}
+                                func={[Function]}
+                                number={7}
+                                obj={
+                                  Object {
+                                    "a": "a",
+                                    "b": "b",
+                                  }
+                                }
+                                string="seven"
+                              />
+                            }
+                            singleLine={true}
+                          >
+                            <span>
+                              <span
+                                key="func"
+                              >
+                                <span>
+                                  <br />
+                                    
+                                </span>
+                                <span
+                                  style={Object {}}
+                                >
+                                  func
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <PropVal
+                                      maxPropArrayLength={3}
+                                      maxPropObjectKeys={3}
+                                      maxPropStringLength={50}
+                                      val={[Function]}
+                                    >
+                                      <span>
+                                        {
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#170",
+                                            }
+                                          }
+                                        >
+                                          func()
+                                        </span>
+                                        }
+                                      </span>
+                                    </PropVal>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                key="obj"
+                              >
+                                <span>
+                                  <br />
+                                    
+                                </span>
+                                <span
+                                  style={Object {}}
+                                >
+                                  obj
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <PropVal
+                                      maxPropArrayLength={3}
+                                      maxPropObjectKeys={3}
+                                      maxPropStringLength={50}
+                                      val={
+                                        Object {
+                                          "a": "a",
+                                          "b": "b",
+                                        }
+                                      }
+                                    >
+                                      <span>
+                                        {
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          {
+                                          <span
+                                            key="k0/.0"
+                                            style={
+                                              Object {
+                                                "color": "#666",
+                                              }
+                                            }
+                                          >
+                                            a
+                                          </span>
+                                          : 
+                                          <PropVal
+                                            key="v0/.0"
+                                            maxPropArrayLength={3}
+                                            maxPropObjectKeys={3}
+                                            maxPropStringLength={50}
+                                            val="a"
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              "
+                                              a
+                                              "
+                                            </span>
+                                          </PropVal>
+                                          , 
+                                          <span
+                                            key="k1/.0"
+                                            style={
+                                              Object {
+                                                "color": "#666",
+                                              }
+                                            }
+                                          >
+                                            b
+                                          </span>
+                                          : 
+                                          <PropVal
+                                            key="v1/.0"
+                                            maxPropArrayLength={3}
+                                            maxPropObjectKeys={3}
+                                            maxPropStringLength={50}
+                                            val="b"
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "color": "#22a",
+                                                  "wordBreak": "break-word",
+                                                }
+                                              }
+                                            >
+                                              "
+                                              b
+                                              "
+                                            </span>
+                                          </PropVal>
+                                          }
+                                        </span>
+                                        }
+                                      </span>
+                                    </PropVal>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                key="array"
+                              >
+                                <span>
+                                  <br />
+                                    
+                                </span>
+                                <span
+                                  style={Object {}}
+                                >
+                                  array
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <PropVal
+                                      maxPropArrayLength={3}
+                                      maxPropObjectKeys={3}
+                                      maxPropStringLength={50}
+                                      val={
+                                        Array [
+                                          1,
+                                          2,
+                                          3,
+                                        ]
+                                      }
+                                    >
+                                      <span>
+                                        {
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          [
+                                          <PropVal
+                                            key="n0/.0"
+                                            maxPropArrayLength={3}
+                                            maxPropObjectKeys={3}
+                                            maxPropStringLength={50}
+                                            val={1}
+                                          >
+                                            <span>
+                                              {
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#a11",
+                                                  }
+                                                }
+                                              >
+                                                1
+                                              </span>
+                                              }
+                                            </span>
+                                          </PropVal>
+                                          , 
+                                          <PropVal
+                                            key="n1/.0"
+                                            maxPropArrayLength={3}
+                                            maxPropObjectKeys={3}
+                                            maxPropStringLength={50}
+                                            val={2}
+                                          >
+                                            <span>
+                                              {
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#a11",
+                                                  }
+                                                }
+                                              >
+                                                2
+                                              </span>
+                                              }
+                                            </span>
+                                          </PropVal>
+                                          , 
+                                          <PropVal
+                                            key="n2/.0"
+                                            maxPropArrayLength={3}
+                                            maxPropObjectKeys={3}
+                                            maxPropStringLength={50}
+                                            val={3}
+                                          >
+                                            <span>
+                                              {
+                                              <span
+                                                style={
+                                                  Object {
+                                                    "color": "#a11",
+                                                  }
+                                                }
+                                              >
+                                                3
+                                              </span>
+                                              }
+                                            </span>
+                                          </PropVal>
+                                          ]
+                                        </span>
+                                        }
+                                      </span>
+                                    </PropVal>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                key="number"
+                              >
+                                <span>
+                                  <br />
+                                    
+                                </span>
+                                <span
+                                  style={Object {}}
+                                >
+                                  number
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <PropVal
+                                      maxPropArrayLength={3}
+                                      maxPropObjectKeys={3}
+                                      maxPropStringLength={50}
+                                      val={7}
+                                    >
+                                      <span>
+                                        {
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#a11",
+                                            }
+                                          }
+                                        >
+                                          7
+                                        </span>
+                                        }
+                                      </span>
+                                    </PropVal>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                key="string"
+                              >
+                                <span>
+                                  <br />
+                                    
+                                </span>
+                                <span
+                                  style={Object {}}
+                                >
+                                  string
+                                </span>
+                                <span>
+                                  =
+                                  <span
+                                    style={Object {}}
+                                  >
+                                    <PropVal
+                                      maxPropArrayLength={3}
+                                      maxPropObjectKeys={3}
+                                      maxPropStringLength={50}
+                                      val="seven"
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        "
+                                        seven
+                                        "
+                                      </span>
+                                    </PropVal>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                key="bool"
+                              >
+                                <span>
+                                  <br />
+                                    
+                                </span>
+                                <span
+                                  style={Object {}}
+                                >
+                                  bool
+                                </span>
+                                <br />
+                              </span>
+                            </span>
+                          </Props>
+                          <span
+                            style={
+                              Object {
+                                "color": "#777",
+                              }
+                            }
+                          >
+                            /&gt;
+                          </span>
+                        </div>
+                      </Node>
+                      <div
+                        style={
+                          Object {
+                            "paddingLeft": 18,
+                            "paddingRight": 3,
+                          }
+                        }
+                      >
+                        <span
+                          style={
+                            Object {
+                              "color": "#777",
+                            }
+                          }
+                        >
+                          &lt;/
+                          div
+                          &gt;
+                        </span>
+                      </div>
+                    </div>
+                  </Node>
+                </pre>
+              </Pre>
+            </div>
+            <div>
+              <h1
+                style={
+                  Object {
+                    "borderBottom": "1px solid #EEE",
+                    "fontSize": "25px",
+                    "margin": "20px 0 0 0",
+                    "padding": "0 0 5px 0",
+                  }
+                }
+              >
+                Prop Types
+              </h1>
+              <div
+                key="TestComponent_0"
+              >
+                <h2
+                  style={
+                    Object {
+                      "margin": "20px 0 0 0",
+                    }
+                  }
+                >
+                  "
+                  TestComponent
+                  " Component
+                </h2>
+                <Component
+                  maxPropArrayLength={3}
+                  maxPropObjectKeys={3}
+                  maxPropStringLength={50}
+                  type={[Function]}
+                >
+                  <PropTable
+                    maxPropArrayLength={3}
+                    maxPropObjectKeys={3}
+                    maxPropStringLength={50}
+                    propDefinitions={Array []}
+                    type={[Function]}
+                  >
+                    <small>
+                      No propTypes defined!
+                    </small>
+                  </PropTable>
+                </Component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Story>
+</Component>
+`;

@@ -2,6 +2,7 @@ node_modules
 *.log
 .idea
 .vscode
+*.sw*
 npm-shrinkwrap.json
 dist
 .tern-port
@@ -20,4 +21,3 @@ package-lock.json
 storybook-static
 integration/__image_snapshots__/__diff_output__
 .jest-test-results.json
-

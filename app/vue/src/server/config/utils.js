@@ -33,3 +33,5 @@ export function loadEnv(options = {}) {
     'process.env': env,
   };
 }
+
+export const getConfigDir = () => process.env.SBCONFIG_CONFIG_DIR || './.storybook';

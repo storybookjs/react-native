@@ -30,4 +30,17 @@ describe('Array', () => {
 
     expect(deserialized).toEqual(['zero', 'one', 'two']);
   });
+
+  it('should change to an empty array when emptied', () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <ArrayType
+        onChange={onChange}
+        knob={{ name: 'passions', value: ['Fishing', 'Skiing'], separator: ',' }}
+      />
+    );
+
+    wrapper.simulate('change', { target: { value: '' } });
+    expect(onChange).toHaveBeenCalledWith([]);
+  });
 });

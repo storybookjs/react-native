@@ -1,9 +1,10 @@
 import path from 'path';
 import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
 
-const config = {
+const getConfig = options => ({
   devtool: '#cheap-module-eval-source-map',
   entry: {
     manager: [require.resolve('../../manager')],
@@ -14,6 +15,13 @@ const config = {
     publicPath: '/',
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      data: {
+        options: JSON.stringify(options),
+      },
+      template: require.resolve('../index.html.ejs'),
+    }),
     new OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
@@ -27,8 +35,19 @@ const config = {
         include: includePaths,
         exclude: excludePaths,
       },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+          },
+        ],
+      },
     ],
   },
-};
+});
 
-export default config;
+export default getConfig;

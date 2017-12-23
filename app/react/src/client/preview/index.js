@@ -1,9 +1,9 @@
-/* global window */
-
 import { createStore } from 'redux';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-postmessage';
 import qs from 'qs';
+import { navigator, window } from 'global';
+
 import StoryStore from './story_store';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
@@ -13,11 +13,12 @@ import { selectStory } from './actions';
 import reducer from './reducer';
 
 // check whether we're running on node/browser
-const { navigator } = global;
 const isBrowser =
   navigator &&
+  navigator.userAgent &&
   navigator.userAgent !== 'storyshots' &&
-  !(navigator.userAgent.indexOf('Node.js') > -1);
+  !(navigator.userAgent.indexOf('Node.js') > -1) &&
+  !(navigator.userAgent.indexOf('jsdom') > -1);
 
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
