@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "@angular/core": "=>4.0.0",
-    "@storybook/addons": "^3.3.0-alpha.4",
+    "@storybook/addons": "^3.3.0-alpha.6",
     "react": "*",
     "react-dom": "*"
   }
