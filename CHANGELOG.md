@@ -244,6 +244,86 @@
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
 
+# 3.2.19
+
+2017-December-23
+
+#### Bug Fixes
+
+-   fix compatibility with @babel/core v7 [#2494](https://github.com/storybooks/storybook/pull/2494)
+
+#### Maintenance
+
+-   FIX the failing netlify builds [#2527](https://github.com/storybooks/storybook/pull/2527)
+
+#### Documentation
+
+-   UPDATE readme with new slackin link [#2536](https://github.com/storybooks/storybook/pull/2536)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+55 Updates
+</summary>
+-   UPDATE "react-split-pane": "^0.1.74", to FIX an breaking issue [#2528](https://github.com/storybooks/storybook/pull/2528)
+-   Upgraded `cross-env` in `/` from "5.1.1" to "5.1.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `nodemon` in `/` from "1.13.3" to "1.14.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `lib/components` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `addons/jest` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `@types/node` in `addons/knobs` from "8.5.1" to "8.5.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue` in `addons/knobs` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `common-tags` in `app/react` from "1.5.1" to "1.6.0" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `app/react` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `nodemon` in `app/react` from "1.13.3" to "1.14.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `common-tags` in `app/vue` from "1.5.1" to "1.6.0" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `nodemon` in `app/vue` from "1.13.3" to "1.14.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue` in `app/vue` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-loader` in `app/vue` from "13.6.0" to "13.6.1" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `cross-env` in `examples/vue-kitchen-sink` from "5.1.1" to "5.1.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.6.0" to "13.6.1" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `examples/cra-kitchen-sink` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `gatsby-remark-autolink-headers` in `/docs` from "1.4.10" to "1.4.11" [#2541](https://github.com/storybooks/storybook/pull/2541)
+-   Upgraded `gatsby-transformer-remark` in `/docs` from "1.7.25" to "1.7.26" [#2541](https://github.com/storybooks/storybook/pull/2541)
+-   Upgraded `gatsby` in `/docs` from "1.9.148" to "1.9.149" [#2541](https://github.com/storybooks/storybook/pull/2541)
+-   Update gatsby in /docs from 1.9.146 to 1.9.147 [#2535](https://github.com/storybooks/storybook/pull/2535)
+-   Upgraded `gatsby-remark-copy-linked-files` in `/docs` from "1.5.24" to "1.5.25" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Upgraded `gatsby` in `/docs` from "1.9.144" to "1.9.146" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Update gatsby in /docs from 1.9.143 to 1.9.144 [#2524](https://github.com/storybooks/storybook/pull/2524)
+-   Update gatsby in /docs from 1.9.142 to 1.9.143 [#2521](https://github.com/storybooks/storybook/pull/2521)
+-   Upgraded `enzyme-adapter-react-16` in `/` from "1.1.0" to "1.1.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.0" to "2.2.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `axe-core` in `addons/a11y` from "2.5.0" to "2.6.0" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/knobs` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `addons/knobs` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/comments` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `gatsby` in `/docs` from "1.9.141" to "1.9.142" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `nodemon` in `/` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `graphql` in `addons/graphql` from "0.11.7" to "0.12.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `@types/react` in `addons/knobs` from "16.0.30" to "16.0.31" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react-native` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/react` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/vue` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/vue` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `app/vue` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `examples/vue-kitchen-sink` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Update danger in / from 2.1.5 to 2.1.6 [#2511](https://github.com/storybooks/storybook/pull/2511)
+
+</details>
+
 # 3.2.18
 
 2017-December-18
@@ -273,7 +353,7 @@
 
 <details>
 <summary>
-139 PRs
+139 Updates
 </summary>
 
 -   Update gatsby in /docs from 1.9.139 to 1.9.141 [#2510](https://github.com/storybooks/storybook/pull/2510)
