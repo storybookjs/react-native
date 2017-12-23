@@ -26,7 +26,7 @@
   "dependencies": {
     "@storybook/components": "^3.3.0-alpha.6",
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0",
+    "glamorous": "^4.11.2",
     "global": "^4.3.2",
     "prop-types": "^15.6.0"
   },
