@@ -1,3 +1,95 @@
+# 3.3.0-alpha.6
+
+2017-December-23
+
+#### Features
+
+-   Add support for importing markdown in storybook [#2299](https://github.com/storybooks/storybook/pull/2299)
+-   Add `TableComponent` option for addon-info [#2400](https://github.com/storybooks/storybook/pull/2400)
+-   Change keyboard shortcuts to platform safe [#1858](https://github.com/storybooks/storybook/pull/1858)
+-   Replace `console` with `client-logger` and `node-logger` packages [#2347](https://github.com/storybooks/storybook/pull/2347)
+-   Add renderer option to storyshots [#2414](https://github.com/storybooks/storybook/pull/2414)
+
+#### Angular Support
+
+-   Added type annotation to helpers, added ts declaration files for angu… [#2459](https://github.com/storybooks/storybook/pull/2459)
+-   Adding extra metadata to module/components [#2526](https://github.com/storybooks/storybook/pull/2526)
+-   Fix ng component prop output override [#2456](https://github.com/storybooks/storybook/pull/2456)
+-   [WIP] Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
+-   Angular Add custom pipes support [#2518](https://github.com/storybooks/storybook/pull/2518)
+
+#### Bug Fixes
+
+-   Remove redundant render in react [#2503](https://github.com/storybooks/storybook/pull/2503)
+-   Addon-actions: Fix types and refactor [#2438](https://github.com/storybooks/storybook/pull/2438)
+-   Fix warnings in search box [#2479](https://github.com/storybooks/storybook/pull/2479)
+-   Migrate to marksy@6 [#2464](https://github.com/storybooks/storybook/pull/2464)
+-   Extract Jest config from package.json to config file  [#2424](https://github.com/storybooks/storybook/pull/2424)
+-   Fix Horizontal Scrollbar of DownPanel [#2410](https://github.com/storybooks/storybook/pull/2410)
+-   Move `@storybook/addons` to peerDependencies in all addons [#2335](https://github.com/storybooks/storybook/pull/2335)
+-   Fix compatibility with @babel/core v7 [#2494](https://github.com/storybooks/storybook/pull/2494)
+-   Unmount after storyshot snapshot [#2417](https://github.com/storybooks/storybook/pull/2417)
+
+#### Documentation
+
+-   Addon-info: deep merge passed styles with default ones [#2449](https://github.com/storybooks/storybook/pull/2449)
+-   Test documentation duplication fix [#2228](https://github.com/storybooks/storybook/pull/2228)
+
+#### Maintenance
+
+-   Netlify for angularexample [#2533](https://github.com/storybooks/storybook/pull/2533)
+-   Netlify for officialexample [#2532](https://github.com/storybooks/storybook/pull/2532)
+-   Add a storybook for the ui package [#2504](https://github.com/storybooks/storybook/pull/2504)
+-   FIX the failing netlify builds [#2527](https://github.com/storybooks/storybook/pull/2527)
+-   fix tests not actually running [#2450](https://github.com/storybooks/storybook/pull/2450)
+-   Add method to channel that ignores event from self [#1879](https://github.com/storybooks/storybook/pull/1879)
+-   Fix broken CI build [#2255](https://github.com/storybooks/storybook/pull/2255)
+-   Fix unittest warnings r3.3 [#2381](https://github.com/storybooks/storybook/pull/2381)
+-   Move addon events into its own story file [#2502](https://github.com/storybooks/storybook/pull/2502)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+33 Upgrades
+</summary>
+
+-   Move back to original fuse.js package [#2478](https://github.com/storybooks/storybook/pull/2478)
+-   UPDATE "react-split-pane": "^0.1.74", to FIX an breaking issue [#2528](https://github.com/storybooks/storybook/pull/2528)
+-   Upgraded `gatsby-remark-copy-linked-files` in `/docs` from "1.5.24" to "1.5.25" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Upgraded `gatsby` in `/docs` from "1.9.144" to "1.9.146" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Update gatsby in /docs from 1.9.143 to 1.9.144 [#2524](https://github.com/storybooks/storybook/pull/2524)
+-   Update gatsby in /docs from 1.9.142 to 1.9.143 [#2521](https://github.com/storybooks/storybook/pull/2521)
+-   Upgraded `enzyme-adapter-react-16` in `/` from "1.1.0" to "1.1.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.0" to "2.2.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `axe-core` in `addons/a11y` from "2.5.0" to "2.6.0" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/knobs` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `addons/knobs` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/comments` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `gatsby` in `/docs` from "1.9.141" to "1.9.142" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `nodemon` in `/` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `graphql` in `addons/graphql` from "0.11.7" to "0.12.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `@types/react` in `addons/knobs` from "16.0.30" to "16.0.31" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react-native` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/react` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/vue` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/vue` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `app/vue` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `examples/vue-kitchen-sink` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Update danger in / from 2.1.5 to 2.1.6 [#2511](https://github.com/storybooks/storybook/pull/2511)
+
+</details>
+
 # 3.3.0-alpha.4
 
 2017-November-22

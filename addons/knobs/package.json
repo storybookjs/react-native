@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.3.0-alpha.4",
+  "version": "3.3.0-alpha.6",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",
@@ -29,11 +29,11 @@
   "devDependencies": {
     "raw-loader": "^0.5.1",
     "style-loader": "^0.19.1",
-    "vue": "^2.5.12"
+    "vue": "^2.5.13"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
     "@angular/core": "=>4.0.0",
+    "@storybook/addons": "^3.3.0-alpha.6",
     "react": "*",
     "react-dom": "*"
   }

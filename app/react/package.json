@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.3.0-alpha.4",
+  "version": "3.3.0-alpha.6",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -22,13 +22,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.3.0-alpha.4",
-    "@storybook/addon-links": "^3.3.0-alpha.4",
-    "@storybook/addons": "^3.3.0-alpha.4",
-    "@storybook/channel-postmessage": "^3.3.0-alpha.4",
-    "@storybook/client-logger": "^3.3.0-alpha.4",
-    "@storybook/node-logger": "^3.3.0-alpha.4",
-    "@storybook/ui": "^3.3.0-alpha.4",
+    "@storybook/addon-actions": "^3.3.0-alpha.6",
+    "@storybook/addon-links": "^3.3.0-alpha.6",
+    "@storybook/addons": "^3.3.0-alpha.6",
+    "@storybook/channel-postmessage": "^3.3.0-alpha.6",
+    "@storybook/client-logger": "^3.3.0-alpha.6",
+    "@storybook/node-logger": "^3.3.0-alpha.6",
+    "@storybook/ui": "^3.3.0-alpha.6",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -44,7 +44,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "^2.3.0",
     "commander": "^2.12.2",
-    "common-tags": "^1.5.1",
+    "common-tags": "^1.6.0",
     "configstore": "^3.1.1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.7",
@@ -53,7 +53,7 @@
     "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0",
+    "glamorous": "^4.11.2",
     "global": "^4.3.2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
@@ -80,7 +80,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.13.3"
+    "nodemon": "^1.14.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 | ^7.0.0-0",
