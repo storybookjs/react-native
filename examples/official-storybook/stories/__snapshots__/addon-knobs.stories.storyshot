@@ -44,9 +44,7 @@ exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
   <p>
     Nice to meet you!
   </p>
-  <hr>
-    
-  </hr>
+  <hr />
   <p>
     PS. My shirt pocket contains: 
   </p>
@@ -97,9 +95,7 @@ exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debou
   <p>
     Nice to meet you!
   </p>
-  <hr>
-    
-  </hr>
+  <hr />
   <p>
     PS. My shirt pocket contains: 
   </p>
