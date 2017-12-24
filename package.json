@@ -31,6 +31,7 @@
     "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.91",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
@@ -71,7 +72,7 @@
     "jest-jasmine2": "^22.0.4",
     "lerna": "^2.5.1",
     "lint-staged": "^6.0.0",
-    "lodash-es": "^4.17.4",
+    "lodash": "^4.17.4",
     "nodemon": "^1.14.3",
     "npmlog": "^4.1.2",
     "prettier": "^1.9.2",

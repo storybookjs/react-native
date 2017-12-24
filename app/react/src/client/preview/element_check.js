@@ -1,5 +1,5 @@
 import React from 'react';
-import flattenDeep from 'lodash-es/flattenDeep';
+import flattenDeep from 'lodash.flattendeep';
 
 // return true if the element is renderable with react fiber
 export const isValidFiberElement = element =>

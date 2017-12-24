@@ -1,5 +1,5 @@
 import React from 'react';
-import { values } from 'lodash-es';
+import { values } from 'lodash';
 
 import Homepage from '../components/Homepage';
 import Header from '../components/Header';
