@@ -36,7 +36,7 @@
     "@storybook/addon-notes": "^3.3.0-alpha.6",
     "@storybook/addons": "^3.3.0-alpha.6",
     "@storybook/angular": "^3.3.0-alpha.6",
-    "@types/jasmine": "~2.5.53",
+    "@types/jasmine": "~2.8.2",
     "@types/node": "~6.0.60",
     "codelyzer": "^3.1.2",
     "jasmine-core": "~2.6.2",
