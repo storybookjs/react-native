@@ -4,11 +4,13 @@ export interface NgModuleMetadata {
     schemas: Array<any>,
     providers: Array<any>,
 }
-  
+
+export interface ICollection {[p: string]: any}
+
 export interface NgStory {
     component: any,
-    props: object,
-    propsMeta: object,
+    props: ICollection,
+    propsMeta: ICollection,
     moduleMetadata?: NgModuleMetadata
 }
 
@@ -18,3 +20,9 @@ export interface NgError {
 }
 
 export type NgProvidedData = NgStory | NgError;
+
+export interface IContext {
+    [p: string]: any
+}
+
+export type IGetStoryWithContext = (context: IContext) => NgStory

@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon a11y Default 1`] = `
-<button>
-  
-</button>
-`;
+exports[`Storyshots Addon a11y Default 1`] = `<button />`;
 
 exports[`Storyshots Addon a11y Disabled 1`] = `
 <button

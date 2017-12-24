@@ -50,4 +50,4 @@ export default Storybook;
 //   }
 // });
 //
-// AppRegistry.registerComponent('ReactNativeVanilla', () => ReactNativeVanilla);
+// AppRegistry.registerComponent('react-native-vanilla', () => ReactNativeVanilla);

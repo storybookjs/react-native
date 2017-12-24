@@ -1,30 +1,33 @@
-/* global document */
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { mount } from 'enzyme';
+
 import AddonInfo, { withInfo, setDefaults } from './';
 
 /* eslint-disable */
 const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
   <div>
-    <h1>{func.toString()}</h1>
-    <h2>{obj.toString()}</h2>
-    <h3>{array}</h3>
-    <h4>{number}</h4>
-    <h5>{string}</h5>
-    <h6>{bool}</h6>
-    <p>{empty}</p>
+    <h1>{String(func)}</h1>
+    <h2>{String(obj)}</h2>
+    <h3>{String(array)}</h3>
+    <h4>{String(number)}</h4>
+    <h5>{String(string)}</h5>
+    <h6>{String(bool)}</h6>
+    <p>{String(empty)}</p>
     <a href="#">test</a>
     <code>storiesOf</code>
-    <ui>
+    <ul>
       <li>1</li>
       <li>2</li>
-    </ui>
+    </ul>
   </div>);
 /* eslint-enable */
 
 const testContext = { kind: 'addon_info', story: 'jest_test' };
 const testOptions = { propTables: false };
+
+const testMarkdown = `# Test story
+## with markdown info
+containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
   const story = context => (
@@ -45,20 +48,18 @@ describe('addon Info', () => {
   };
 
   it('should render <Info /> and markdown', () => {
-    const Info = withInfo(
-      '# Test story \n## with markdown info \ncontaing **bold**, *cursive* text, `code` and [a link](https://github.com)'
-    )(story);
+    const Info = withInfo(testMarkdown)(story);
 
-    ReactDOM.render(<Info />, document.createElement('div'));
+    expect(mount(<Info />)).toMatchSnapshot();
   });
   it('should render with text options', () => {
     const Info = withInfo({ text: 'some text here' })(story);
-    ReactDOM.render(<Info />, document.createElement('div'));
+    mount(<Info />);
   });
   it('should render with missed info', () => {
     setDefaults(testOptions);
     const Info = withInfo()(story);
-    ReactDOM.render(<Info />, document.createElement('div'));
+    mount(<Info />);
   });
   it('should show deprecation warning', () => {
     const addWithInfo = AddonInfo.addWithInfo.bind(api);
