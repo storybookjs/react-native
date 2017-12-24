@@ -62,6 +62,6 @@
     "@storybook/ui": "^3.3.0-rc.0",
     "@storybook/vue": "^3.3.0-rc.0",
     "check-node-version": "2.1.0",
-    "npx": "9.6.0"
+    "npx": "9.7.1"
   }
 }

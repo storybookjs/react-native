@@ -8,8 +8,6 @@ exports[`Storyshots Addon Events Logger 1`] = `
   <h1>
     Logger
   </h1>
-  <dl>
-    
-  </dl>
+  <dl />
 </div>
 `;
