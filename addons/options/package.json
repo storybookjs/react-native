@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "3.3.0-alpha.6",
+  "version": "3.3.0-rc.0",
   "description": "Options addon for storybook",
   "keywords": [
     "storybook"
