@@ -1,5 +1,5 @@
 import React from 'react';
-import { values } from 'lodash';
+import { values } from 'lodash-es';
 
 import Examples from '../../components/Grid/Examples';
 import data from './_examples.yml';

@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 
+import _debounce from 'lodash-es/debounce';
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './components/app.component';
@@ -31,28 +33,7 @@ interface IComponent extends Type<any> {
   propsMetadata: any[]
 }
 
-// Taken from https://davidwalsh.name/javascript-debounce-function
-// We don't want to pull underscore
-const debounce = (func: IRenderStoryFn | IRenderErrorFn,
-                  wait: number = 100,
-                  immediate: boolean = false): () => void => {
-  let timeout: any;
-  return function () {
-    const context = this, args = arguments;
-    const later = function () {
-      timeout = null;
-      if (!immediate) {
-        func.apply(context, args);
-      }
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) {
-      func.apply(context, args);
-    }
-  };
-};
+const debounce = (func: IRenderStoryFn | IRenderErrorFn) => _debounce(func, 100);
 
 const getComponentMetadata = (
   { component, props = {}, propsMeta = {}, moduleMetadata = {
