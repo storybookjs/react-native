@@ -90,7 +90,8 @@ jobs:
           name: "Run angular-cli"
           command: |
             cd examples/angular-cli
-            yarn storybook --smoke-test
+            yarn storybook
+          background: true
       - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
