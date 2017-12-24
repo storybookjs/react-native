@@ -1,3 +1,15 @@
+# 3.3.0-rc.0
+
+2017-December-23
+
+#### Bug Fixes
+
+-   Angular component props assignment improvements [#2554](https://github.com/storybooks/storybook/pull/2554)
+
+#### Dependency Upgrades
+
+-   UPGRADE jest & react-native [#2542](https://github.com/storybooks/storybook/pull/2542)
+
 # 3.3.0-alpha.6
 
 2017-December-23
