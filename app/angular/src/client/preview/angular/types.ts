@@ -4,11 +4,13 @@ export interface NgModuleMetadata {
     schemas: Array<any>,
     providers: Array<any>,
 }
-  
+
+export interface ICollection {[p: string]: any}
+
 export interface NgStory {
     component: any,
-    props: {[p: string]: any},
-    propsMeta: {[p: string]: any},
+    props: ICollection,
+    propsMeta: ICollection,
     moduleMetadata?: NgModuleMetadata
 }
 
