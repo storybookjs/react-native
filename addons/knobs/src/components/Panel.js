@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash-es/debounce';
 
 import PropForm from './PropForm';
 import Types from './types';
