@@ -4,16 +4,17 @@ import {
   NgModule,
   Component,
   NgModuleRef
-} from "@angular/core";
+} from '@angular/core';
+import {FormsModule} from '@angular/forms'
 
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./components/app.component";
-import { ErrorComponent } from "./components/error.component";
-import { NoPreviewComponent } from "./components/no-preview.component";
-import { STORY } from "./app.token";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './components/app.component';
+import { ErrorComponent } from './components/error.component';
+import { NoPreviewComponent } from './components/no-preview.component';
+import { STORY } from './app.token';
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
-import { NgModuleMetadata, NgStory, IGetStoryWithContext, IContext, NgProvidedData } from "./types";
+import { NgModuleMetadata, NgStory, IGetStoryWithContext, IContext, NgProvidedData } from './types';
 
 let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
@@ -37,15 +38,19 @@ const debounce = (func: IRenderStoryFn | IRenderErrorFn,
                   immediate: boolean = false): () => void => {
   let timeout: any;
   return function () {
-    let context = this, args = arguments;
-    let later = function () {
+    const context = this, args = arguments;
+    const later = function () {
       timeout = null;
-      if (!immediate) func.apply(context, args);
+      if (!immediate) {
+        func.apply(context, args);
+      }
     };
-    let callNow = immediate && !timeout;
+    const callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
+    if (callNow) {
+      func.apply(context, args);
+    }
   };
 };
 
@@ -57,8 +62,9 @@ const getComponentMetadata = (
     providers: []
   } }: NgStory
 ) => {
-  if (!component || typeof component !== "function")
-    throw new Error("No valid component provided");
+  if (!component || typeof component !== 'function') {
+    throw new Error('No valid component provided');
+  }
 
   const componentMetadata = getAnnotations(component)[0] || {};
   const propsMetadata = getPropMetadata(component);
@@ -118,7 +124,7 @@ moduleMetadata: NgModuleMetadata = {
 }): IModule => {
   const moduleMeta = new NgModule({
     declarations: [...declarations, ...moduleMetadata.declarations],
-    imports: [BrowserModule, ...moduleMetadata.imports],
+    imports: [BrowserModule, FormsModule, ...moduleMetadata.imports],
     providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
     entryComponents: [...entryComponents],
     schemas: [...moduleMetadata.schemas],
@@ -140,7 +146,9 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     moduleMeta
   } = getComponentMetadata(currentStory(context));
 
-  if (!componentMeta) throw new Error("No component metadata available");
+  if (!componentMeta) {
+    throw new Error('No component metadata available');
+  }
 
   const AnnotatedComponent = getAnnotatedComponent(
     componentMeta,
@@ -176,9 +184,9 @@ const draw = (newModule: IModule, reRender: boolean = true): void => {
     Promise.all(promises)
       .then((modules) => {
         modules.forEach(mod => mod.destroy());
-        
+
         const body = document.body;
-        const app = document.createElement("app-root");
+        const app = document.createElement('app-root');
         body.appendChild(app);
         promises = [];
         promises.push(platform.bootstrapModule(newModule));

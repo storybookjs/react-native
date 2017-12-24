@@ -25,6 +25,8 @@ import { ServiceComponent } from './moduleMetadata/service.component'
 import { NameComponent } from './name.component';
 import { CustomPipePipe } from './custom.pipe';
 
+import './customControlValueAccessor/custom-cva-component.stories';
+
 storiesOf('Welcome', module)
   .add('to Storybook', () => ({
     component: Welcome,

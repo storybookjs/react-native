@@ -31,6 +31,7 @@
     "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.91",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
