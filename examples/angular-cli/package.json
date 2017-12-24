@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "storybook": "start-storybook -p 9009 -s src/assets",
+    "storybook": "start-storybook -p 9008 -s src/assets",
     "build-storybook": "build-storybook -s src"
   },
   "private": true,
