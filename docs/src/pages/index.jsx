@@ -1,5 +1,5 @@
 import React from 'react';
-import { values } from 'lodash';
+import { values } from 'lodash-es';
 import Homepage from '../components/Homepage';
 import users from './_users.yml';
 
