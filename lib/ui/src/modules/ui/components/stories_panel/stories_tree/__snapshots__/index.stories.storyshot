@@ -10,9 +10,7 @@ exports[`Storyshots ui/stories/Stories empty 1`] = `
     <span>
       <ul
         style="padding-left:19px;list-style:none"
-      >
-        
-      </ul>
+      />
     </span>
   </li>
 </ul>
@@ -58,9 +56,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -76,9 +72,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
               </div>
             </div>
           </div>
-          <span>
-            
-          </span>
+          <span />
         </li>
         <li
           style="position:relative"
@@ -109,9 +103,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -151,9 +143,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                     </div>
                   </div>
                 </a>
-                <span>
-                  
-                </span>
+                <span />
               </li>
               <li
                 style="position:relative"
@@ -175,9 +165,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                     </div>
                   </div>
                 </a>
-                <span>
-                  
-                </span>
+                <span />
               </li>
             </ul>
           </span>
@@ -228,9 +216,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -246,9 +232,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
               </div>
             </div>
           </div>
-          <span>
-            
-          </span>
+          <span />
         </li>
         <li
           style="position:relative"
@@ -279,9 +263,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -330,9 +312,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                           <g>
                             <path
                               d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                            >
-                              
-                            </path>
+                            />
                           </g>
                         </svg>
                       </div>
@@ -381,9 +361,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                                 <g>
                                   <path
                                     d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                                  >
-                                    
-                                  </path>
+                                  />
                                 </g>
                               </svg>
                             </div>
@@ -423,9 +401,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                                 </div>
                               </div>
                             </a>
-                            <span>
-                              
-                            </span>
+                            <span />
                           </li>
                           <li
                             style="position:relative"
@@ -447,9 +423,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                                 </div>
                               </div>
                             </a>
-                            <span>
-                              
-                            </span>
+                            <span />
                           </li>
                         </ul>
                       </span>
@@ -506,9 +480,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -567,9 +539,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                           <g>
                             <path
                               d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                            >
-                              
-                            </path>
+                            />
                           </g>
                         </svg>
                       </div>
@@ -618,9 +588,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                                 <g>
                                   <path
                                     d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                                  >
-                                    
-                                  </path>
+                                  />
                                 </g>
                               </svg>
                             </div>
@@ -660,9 +628,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                                 </div>
                               </div>
                             </a>
-                            <span>
-                              
-                            </span>
+                            <span />
                           </li>
                           <li
                             style="position:relative"
@@ -684,9 +650,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                                 </div>
                               </div>
                             </a>
-                            <span>
-                              
-                            </span>
+                            <span />
                           </li>
                         </ul>
                       </span>
@@ -743,9 +707,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -761,9 +723,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
               </div>
             </div>
           </div>
-          <span>
-            
-          </span>
+          <span />
         </li>
         <li
           style="position:relative"
@@ -794,9 +754,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                     <g>
                       <path
                         d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                      >
-                        
-                      </path>
+                      />
                     </g>
                   </svg>
                 </div>
@@ -836,9 +794,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                     </div>
                   </div>
                 </a>
-                <span>
-                  
-                </span>
+                <span />
               </li>
               <li
                 style="position:relative"
@@ -860,9 +816,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                     </div>
                   </div>
                 </a>
-                <span>
-                  
-                </span>
+                <span />
               </li>
             </ul>
           </span>

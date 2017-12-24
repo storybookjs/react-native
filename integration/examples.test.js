@@ -9,6 +9,10 @@ const examples = [
     name: 'vue-kitchen-sink',
     port: 9009,
   },
+  {
+    name: 'angular-cli',
+    port: 9008,
+  },
 ];
 
 examples.forEach(({ name, port }) => {

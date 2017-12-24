@@ -68,6 +68,11 @@ jobs:
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
+      - run:
+          name: "Build angular-cli"
+          command: |
+            cd examples/angular-cli
+            yarn build-storybook
 
       - run:
           name: "Run react kitchen-sink"
@@ -79,6 +84,12 @@ jobs:
           name: "Run vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: "Run angular-cli"
+          command: |
+            cd examples/angular-cli
             yarn storybook
           background: true
       - run:
