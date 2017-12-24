@@ -14,7 +14,7 @@ module.exports = {
     '<rootDir>/examples/cra-kitchen-sink',
     '<rootDir>/examples/official-storybook',
   ],
-  testPathIgnorePatterns: ['/node_modules/(?!lodash-es/.*)', 'addon-jest.test.js', '/cli/test/'],
+  testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
