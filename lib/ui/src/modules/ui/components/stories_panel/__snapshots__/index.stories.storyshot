@@ -15,9 +15,7 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
     >
       <h3
         style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#828282;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bolder;text-align:center;cursor:pointer;padding:5px;margin:0;overflow:hidden"
-      >
-        
-      </h3>
+      />
     </a>
     <button
       style="text-transform:uppercase;font-size:12px;font-weight:bolder;color:rgb(130, 130, 130);border:1px solid rgb(193, 193, 193);text-align:center;border-radius:2px;cursor:pointer;display:inlineBlock;padding:0;margin:0 0 0 5px;background-color:inherit;outline:0;width:30px;flex-shrink:0"
@@ -37,16 +35,12 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
         style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
         type="text"
         value=""
-      >
-        
-      </input>
+      />
     </div>
   </div>
   <div
     style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
-  >
-    
-  </div>
+  />
 </div>
 `;
 
@@ -65,9 +59,7 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchy exists but is empty
     >
       <h3
         style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#828282;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bolder;text-align:center;cursor:pointer;padding:5px;margin:0;overflow:hidden"
-      >
-        
-      </h3>
+      />
     </a>
     <button
       style="text-transform:uppercase;font-size:12px;font-weight:bolder;color:rgb(130, 130, 130);border:1px solid rgb(193, 193, 193);text-align:center;border-radius:2px;cursor:pointer;display:inlineBlock;padding:0;margin:0 0 0 5px;background-color:inherit;outline:0;width:30px;flex-shrink:0"
@@ -87,16 +79,12 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchy exists but is empty
         style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
         type="text"
         value=""
-      >
-        
-      </input>
+      />
     </div>
   </div>
   <div
     style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
-  >
-    
-  </div>
+  />
 </div>
 `;
 
@@ -115,9 +103,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchy prop 1`] = `
     >
       <h3
         style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#828282;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bolder;text-align:center;cursor:pointer;padding:5px;margin:0;overflow:hidden"
-      >
-        
-      </h3>
+      />
     </a>
     <button
       style="text-transform:uppercase;font-size:12px;font-weight:bolder;color:rgb(130, 130, 130);border:1px solid rgb(193, 193, 193);text-align:center;border-radius:2px;cursor:pointer;display:inlineBlock;padding:0;margin:0 0 0 5px;background-color:inherit;outline:0;width:30px;flex-shrink:0"
@@ -137,9 +123,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchy prop 1`] = `
         style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
         type="text"
         value=""
-      >
-        
-      </input>
+      />
     </div>
   </div>
   <div
@@ -184,9 +168,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchy prop 1`] = `
                         <g>
                           <path
                             d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                          >
-                            
-                          </path>
+                          />
                         </g>
                       </svg>
                     </div>
@@ -226,9 +208,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchy prop 1`] = `
                         </div>
                       </div>
                     </a>
-                    <span>
-                      
-                    </span>
+                    <span />
                   </li>
                 </ul>
               </span>
