@@ -8207,9 +8207,9 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libnpx@9.6.0:
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/libnpx/-/libnpx-9.6.0.tgz#c441ddd698b043bd8e8dc78384fa8eb7d77991e5"
+libnpx@9.7.1:
+  version "9.7.1"
+  resolved "https://registry.yarnpkg.com/libnpx/-/libnpx-9.7.1.tgz#55300b5e119bd47b714be9704ca0696ffb18b025"
   dependencies:
     dotenv "^4.0.0"
     npm-package-arg "^5.1.2"
@@ -9642,11 +9642,11 @@ npmlog@^2.0.4:
     are-we-there-yet "~1.1.2"
     gauge "~1.2.5"
 
-npx@9.6.0:
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/npx/-/npx-9.6.0.tgz#00a23de5e6a490878a800d5f65a893b19633d575"
+npx@9.7.1:
+  version "9.7.1"
+  resolved "https://registry.yarnpkg.com/npx/-/npx-9.7.1.tgz#88d50f18cb08337fab5f4302705ca74c9995838e"
   dependencies:
-    libnpx "9.6.0"
+    libnpx "9.7.1"
     npm "5.1.0"
 
 nth-check@~1.0.1:
