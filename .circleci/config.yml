@@ -68,6 +68,11 @@ jobs:
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
+      - run:
+          name: "Build angular-cli"
+          command: |
+            cd examples/angular-cli
+            yarn build-storybook
 
       - run:
           name: "Run react kitchen-sink"
@@ -81,6 +86,11 @@ jobs:
             cd examples/vue-kitchen-sink
             yarn storybook
           background: true
+      - run:
+          name: "Run angular-cli"
+          command: |
+            cd examples/angular-cli
+            yarn storybook --smoke-test
       - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
