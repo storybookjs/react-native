@@ -4,7 +4,7 @@
   "useWorkspaces": true,
   "commands": {
     "publish": {
-      "allowBranch": "release/3.3"
+      "allowBranch": "master"
     }
   },
   "concurrency": 1,
