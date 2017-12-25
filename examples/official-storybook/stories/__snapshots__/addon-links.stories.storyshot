@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Links.Button First 1`] = `
+<button>
+  Go to "Second"
+</button>
+`;
+
+exports[`Storyshots Addon Links.Button Second 1`] = `
+<button>
+  Go to "First"
+</button>
+`;
+
+exports[`Storyshots Addon Links.Href log 1`] = `
+<span>
+  See action logger
+</span>
+`;
+
+exports[`Storyshots Addon Links.Link First 1`] = `
+<a
+  href="/"
+>
+  Go to Second
+</a>
+`;
+
+exports[`Storyshots Addon Links.Link Second 1`] = `
+<a
+  href="/"
+>
+  Go to First
+</a>
+`;
+
+exports[`Storyshots Addon Links.Select First 1`] = `
+<a
+  href="/"
+>
+  Go back
+</a>
+`;
+
+exports[`Storyshots Addon Links.Select Index 1`] = `
+<select>
+  <option
+    selected=""
+  >
+    Index
+  </option>
+  <option>
+    First
+  </option>
+  <option>
+    Second
+  </option>
+  <option>
+    Third
+  </option>
+</select>
+`;
+
+exports[`Storyshots Addon Links.Select Second 1`] = `
+<a
+  href="/"
+>
+  Go back
+</a>
+`;
+
+exports[`Storyshots Addon Links.Select Third 1`] = `
+<a
+  href="/"
+>
+  Go back
+</a>
+`;

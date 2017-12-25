@@ -6,13 +6,12 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
+import { logger } from '@storybook/node-logger';
 import storybook, { webpackValid } from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-const logger = console;
 
 program
   .version(packageJson.version)
@@ -103,7 +102,7 @@ if (program.staticDir) {
       logger.error(`Error: no such directory to load static files: ${staticPath}`);
       process.exit(-1);
     }
-    logger.log(`=> Loading static files from: ${staticPath} .`);
+    logger.info(`=> Loading static files from: ${staticPath} .`);
     app.use(express.static(staticPath, { index: false }));
 
     const faviconPath = path.resolve(staticPath, 'favicon.ico');
@@ -160,5 +159,8 @@ Promise.all([webpackValid, serverListening])
   .catch(error => {
     if (error instanceof Error) {
       logger.error(error);
+    }
+    if (program.smokeTest) {
+      process.exit(1);
     }
   });

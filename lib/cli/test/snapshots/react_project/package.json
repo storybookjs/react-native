@@ -1,0 +1,24 @@
+{
+  "name": "react-project-fixture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel index.js -d dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "@storybook/react": "^3.3.0-rc.0",
+    "@storybook/addon-actions": "^3.3.0-rc.0",
+    "@storybook/addon-links": "^3.3.0-rc.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  }
+}

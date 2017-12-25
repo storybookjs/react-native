@@ -1,7 +1,8 @@
----
+* * *
+
 id: 'addon-gallery'
-title: 'Addon Gallery'
----
+
+## title: 'Addon Gallery'
 
 This is a list of available addons for Storybook.
 

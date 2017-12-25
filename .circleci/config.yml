@@ -69,6 +69,12 @@ jobs:
             cd examples/vue-kitchen-sink
             yarn build-storybook
       - run:
+          name: "Build angular-cli"
+          command: |
+            cd examples/angular-cli
+            yarn build-storybook
+
+      - run:
           name: "Run react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
@@ -78,6 +84,12 @@ jobs:
           name: "Run vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
+            yarn storybook
+          background: true
+      - run:
+          name: "Run angular-cli"
+          command: |
+            cd examples/angular-cli
             yarn storybook
           background: true
       - run:
@@ -198,6 +210,46 @@ jobs:
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
+  cli:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+      - run:
+          name: "Test CLI"
+          command: |
+            yarn test --cli
+  cli-latest-cra:
+    working_directory: /tmp/storybook
+    docker:
+      - image: andthensome/docker-node-rsync
+    environment:
+        BASH_ENV: ~/.bashrc
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+      - run:
+          name: "Test CLI with latest CR(N)A"
+          command: |
+            yarn test-latest-cra
   deploy:
     <<: *defaults
     steps:
@@ -221,5 +273,11 @@ workflows:
           requires:
             - build
       - unit-test:
+          requires:
+            - build
+      - cli:
+          requires:
+            - build
+      - cli-latest-cra:
           requires:
             - build

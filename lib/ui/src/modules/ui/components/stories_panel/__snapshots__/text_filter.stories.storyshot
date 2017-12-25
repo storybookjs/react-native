@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ui/stories/TextFilter with filterText 1`] = `
+<div
+  style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;border:1px solid #ECECEC;border-radius:2px;position:relative"
+>
+  <div
+    style="background:#F7F7F7"
+  >
+    <input
+      name="filter-text"
+      placeholder="Filter"
+      style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
+      type="text"
+      value="Filter Text"
+    />
+  </div>
+  <button
+    class="clear"
+    style="position:absolute;background-color:transparent;color:#868686;border:none;width:25px;height:26px;right:1px;top:0;text-align:center;cursor:pointer;line-height:23px;font-size:20px"
+  >
+    ×
+  </button>
+</div>
+`;
+
+exports[`Storyshots ui/stories/TextFilter without filterText 1`] = `
+<div
+  style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;border:1px solid #ECECEC;border-radius:2px;position:relative"
+>
+  <div
+    style="background:#F7F7F7"
+  >
+    <input
+      name="filter-text"
+      placeholder="Filter"
+      style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

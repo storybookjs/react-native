@@ -1,5 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 
+import { logger } from '@storybook/client-logger';
+
 export default class ClientApi {
   constructor({ channel, storyStore }) {
     // channel can be null when running in node
@@ -31,8 +33,7 @@ export default class ClientApi {
     }
 
     if (!m) {
-      // eslint-disable-next-line no-console
-      console.warn(
+      logger.warn(
         `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
       );
     }
@@ -76,8 +77,10 @@ export default class ClientApi {
         getStory
       );
 
+      const fileName = m ? m.filename : null;
+
       // Add the fully decorated getStory function.
-      this._storyStore.addStory(kind, storyName, fn);
+      this._storyStore.addStory(kind, storyName, fn, fileName);
       return api;
     };
 
@@ -91,11 +94,14 @@ export default class ClientApi {
 
   getStorybook() {
     return this._storyStore.getStoryKinds().map(kind => {
+      const fileName = this._storyStore.getStoryFileName(kind);
+
       const stories = this._storyStore.getStories(kind).map(name => {
         const render = this._storyStore.getStory(kind, name);
         return { name, render };
       });
-      return { kind, stories };
+
+      return { kind, fileName, stories };
     });
   }
 }

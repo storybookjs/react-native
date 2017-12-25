@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ui/MenuItem default 1`] = `
+<div
+  role="menuitem"
+  tabindex="0"
+  title="title"
+>
+  Content
+</div>
+`;

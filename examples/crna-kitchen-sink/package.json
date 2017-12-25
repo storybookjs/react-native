@@ -4,18 +4,20 @@
   "private": true,
   "devDependencies": {
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
+    "@storybook/addon-knobs": "file:../../packs/storybook-addon-knobs.tgz",
     "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
     "@storybook/addon-options": "file:../../packs/storybook-addon-options.tgz",
     "@storybook/addon-storyshots": "file:../../packs/storybook-addon-storyshots.tgz",
     "@storybook/addons": "file:../../packs/storybook-addons.tgz",
-    "@storybook/channels": "file:../../packs/storybook-channels.tgz",
     "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
+    "@storybook/channels": "file:../../packs/storybook-channels.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "react-native-scripts": "1.1.0",
-    "jest-expo": "^22.0.0",
-    "react-test-renderer": "~16.0.0"
+    "jest-expo": "^24.0.0",
+    "react-native-scripts": "^1.8.1",
+    "react-test-renderer": "~16.2.0",
+    "webpack": "^3.8.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -30,9 +32,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^22.0.0",
-    "prop-types": "^15.5.0",
-    "react": "~16.0.0",
-    "react-native": "~0.49.3"
+    "expo": "^24.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-native": "^0.51.0"
   }
 }

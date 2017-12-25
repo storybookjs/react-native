@@ -1,0 +1,14 @@
+{
+  "name": "@storybook/node-logger",
+  "version": "3.3.0-rc.0",
+  "description": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "npmlog": "^4.1.2"
+  }
+}

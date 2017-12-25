@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Knobs.withKnobs triggers actions via button 1`] = `
+<div>
+  <p>
+    Hit the knob load button and it should trigger an async load after a short delay
+  </p>
+  <p>
+    No items loaded
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs.withKnobs tweaks static values 1`] = `
+<div
+  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
+>
+  <p>
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+  </p>
+  <p>
+    My birthday is: January 20, 2017
+  </p>
+  <p>
+    I live in NY for 9 years.
+  </p>
+  <p>
+    My wallet contains: $12.50
+  </p>
+  <p>
+    In my backpack, I have:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+  <p>
+    Nice to meet you!
+  </p>
+  <hr />
+  <p>
+    PS. My shirt pocket contains: 
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs.withKnobsOptions triggers actions via button with debounce delay 1`] = `
+<div>
+  <p>
+    Hit the knob load button and it should trigger an async load after a short delay
+  </p>
+  <p>
+    No items loaded
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs.withKnobsOptions tweaks static values with debounce delay 1`] = `
+<div
+  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
+>
+  <p>
+    If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
+  </p>
+  <p>
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+  </p>
+  <p>
+    My birthday is: January 20, 2017
+  </p>
+  <p>
+    My wallet contains: $12.50
+  </p>
+  <p>
+    In my backpack, I have:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+  <p>
+    Nice to meet you!
+  </p>
+  <hr />
+  <p>
+    PS. My shirt pocket contains: 
+  </p>
+</div>
+`;

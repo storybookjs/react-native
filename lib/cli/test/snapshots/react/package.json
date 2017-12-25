@@ -1,0 +1,27 @@
+{
+  "name": "react-fixture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-react": "^6.24.1",
+    "rollup": "^0.49.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "@storybook/react": "^3.3.0-rc.0",
+    "@storybook/addon-actions": "^3.3.0-rc.0",
+    "@storybook/addon-links": "^3.3.0-rc.0"
+  }
+}
