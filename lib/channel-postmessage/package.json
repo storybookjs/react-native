@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "3.2.18",
+  "version": "3.3.0-rc.0",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "^3.2.18",
+    "@storybook/channels": "^3.3.0-rc.0",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1"
   }

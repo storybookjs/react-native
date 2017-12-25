@@ -4,7 +4,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
-[![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
+[![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
 * * *
@@ -56,25 +56,25 @@ setOptions({
    */
   goFullScreen: false,
   /**
-   * display left panel that shows a list of stories
+   * display panel that shows a list of stories
    * @type {Boolean}
    */
-  showLeftPanel: true,
+  showStoriesPanel: true,
   /**
-   * display horizontal panel that displays addon configurations
+   * display panel that shows addon configurations
    * @type {Boolean}
    */
-  showDownPanel: true,
+  showAddonPanel: true,
   /**
    * display floating search box to search through stories
    * @type {Boolean}
    */
   showSearchBox: false,
   /**
-   * show horizontal addons panel as a vertical panel on the right
+   * show addon panel as a vertical panel on the right
    * @type {Boolean}
    */
-  downPanelInRight: false,
+  addonPanelInRight: false,
   /**
    * sorts stories
    * @type {Boolean}
@@ -101,7 +101,7 @@ setOptions({
    * id to select an addon panel
    * @type {String}
    */
-  selectedAddonPanel: undefined, // The order of addons in the "Addons Panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
+  selectedAddonPanel: undefined, // The order of addons in the "Addon panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
 });
 
 storybook.configure(() => require('./stories'), module);

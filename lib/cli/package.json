@@ -1,6 +1,6 @@
 {
   "name": "@storybook/cli",
-  "version": "3.2.18",
+  "version": "3.3.0-rc.0",
   "description": "Storybook's CLI - easiest method of adding storybook to your projects",
   "keywords": [
     "cli",
@@ -14,14 +14,22 @@
   "license": "MIT",
   "author": "Storybook Team",
   "bin": {
-    "getstorybook": "./bin/generate.js"
+    "getstorybook": "./bin/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "scripts": {
+    "test-latest-cra": "cd test && ./test_latest_cra.sh",
+    "test": "cd test && ./run_tests.sh"
+  },
   "dependencies": {
-    "@storybook/codemod": "^3.2.18",
+    "@storybook/codemod": "^3.3.0-rc.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "chalk": "^2.3.0",
     "child-process-promise": "^2.2.1",
     "commander": "^2.12.2",
@@ -30,7 +38,30 @@
     "json5": "^0.5.1",
     "latest-version": "^3.1.0",
     "merge-dirs": "^0.2.1",
+    "semver": "^5.4.1",
     "shelljs": "^0.7.8",
     "update-notifier": "^2.3.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.3.0-rc.0",
+    "@storybook/addon-centered": "^3.3.0-rc.0",
+    "@storybook/addon-graphql": "^3.3.0-rc.0",
+    "@storybook/addon-info": "^3.3.0-rc.0",
+    "@storybook/addon-knobs": "^3.3.0-rc.0",
+    "@storybook/addon-links": "^3.3.0-rc.0",
+    "@storybook/addon-notes": "^3.3.0-rc.0",
+    "@storybook/addon-options": "^3.3.0-rc.0",
+    "@storybook/addon-storyshots": "^3.3.0-rc.0",
+    "@storybook/addons": "^3.3.0-rc.0",
+    "@storybook/angular": "^3.3.0-rc.0",
+    "@storybook/channel-postmessage": "^3.3.0-rc.0",
+    "@storybook/channel-websocket": "^3.3.0-rc.0",
+    "@storybook/channels": "^3.3.0-rc.0",
+    "@storybook/react": "^3.3.0-rc.0",
+    "@storybook/react-native": "^3.3.0-rc.0",
+    "@storybook/ui": "^3.3.0-rc.0",
+    "@storybook/vue": "^3.3.0-rc.0",
+    "check-node-version": "2.1.0",
+    "npx": "9.7.1"
   }
 }

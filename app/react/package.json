@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.2.18",
+  "version": "3.3.0-rc.0",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -22,14 +22,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.18",
-    "@storybook/addon-links": "^3.2.18",
-    "@storybook/addons": "^3.2.18",
-    "@storybook/channel-postmessage": "^3.2.18",
-    "@storybook/ui": "^3.2.18",
+    "@storybook/addon-actions": "^3.3.0-rc.0",
+    "@storybook/addon-links": "^3.3.0-rc.0",
+    "@storybook/addons": "^3.3.0-rc.0",
+    "@storybook/channel-postmessage": "^3.3.0-rc.0",
+    "@storybook/client-logger": "^3.3.0-rc.0",
+    "@storybook/node-logger": "^3.3.0-rc.0",
+    "@storybook/ui": "^3.3.0-rc.0",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
-    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-react-docgen": "^1.8.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
@@ -43,7 +44,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "^2.3.0",
     "commander": "^2.12.2",
-    "common-tags": "^1.5.1",
+    "common-tags": "^1.6.0",
     "configstore": "^3.1.1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.7",
@@ -52,12 +53,16 @@
     "file-loader": "^1.1.6",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0",
+    "glamorous": "^4.11.2",
     "global": "^4.3.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.7",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
-    "lodash.flattendeep": "^4.4.0",
+    "lodash-es": "^4.17.4",
+    "markdown-loader": "^2.0.1",
+    "npmlog": "^4.1.2",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.9",
     "prop-types": "^15.6.0",
@@ -76,9 +81,10 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.13.3"
+    "nodemon": "^1.14.3"
   },
   "peerDependencies": {
+    "babel-core": "^6.26.0 | ^7.0.0-0",
     "react": ">=15.0.0 || ^16.0.0",
     "react-dom": ">=15.0.0 || ^16.0.0"
   }

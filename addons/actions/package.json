@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "3.2.18",
+  "version": "3.3.0-rc.0",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
@@ -19,14 +19,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^3.2.18",
     "deep-equal": "^1.0.1",
-    "json-stringify-safe": "^5.0.1",
+    "global": "^4.3.2",
+    "make-error": "^1.3.0",
     "prop-types": "^15.6.0",
     "react-inspector": "^2.2.2",
     "uuid": "^3.1.0"
   },
   "peerDependencies": {
+    "@storybook/addons": "^3.3.0-alpha.6",
     "react": "*",
     "react-dom": "*"
   }

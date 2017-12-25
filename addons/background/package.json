@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-backgrounds",
-  "version": "3.2.18",
+  "version": "3.3.0-rc.0",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -26,7 +26,7 @@
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.2.14",
+    "@storybook/addons": "^3.3.0-alpha.6",
     "react": "*"
   }
 }

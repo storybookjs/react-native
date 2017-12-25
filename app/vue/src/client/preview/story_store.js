@@ -12,10 +12,11 @@ export default class StoryStore {
     this._data = {};
   }
 
-  addStory(kind, name, fn) {
+  addStory(kind, name, fn, fileName) {
     if (!this._data[kind]) {
       this._data[kind] = {
         kind,
+        fileName,
         index: getId(),
         stories: {},
       };
@@ -45,6 +46,15 @@ export default class StoryStore {
       .map(name => this._data[kind].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
+  }
+
+  getStoryFileName(kind) {
+    const storiesKind = this._data[kind];
+    if (!storiesKind) {
+      return null;
+    }
+
+    return storiesKind.fileName;
   }
 
   getStory(kind, name) {

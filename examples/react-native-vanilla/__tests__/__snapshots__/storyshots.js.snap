@@ -41,7 +41,6 @@ exports[`Storyshots Button with some emoji 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
     >
       😀 😎 👍 💯
@@ -91,12 +90,85 @@ exports[`Storyshots Button with text 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
     >
       Hello Button
     </Text>
   </View>
+</View>
+`;
+
+exports[`Storyshots Knobs with knobs 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffff00",
+      "borderColor": "#ff00ff",
+      "borderWidth": 3,
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    My birthday is: 
+    January 20, 2017
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    My wallet contains: $
+    12.50
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    In my backpack, I have:
+  </Text>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Laptop
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Book
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Whiskey
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Nice to meet you!
+  </Text>
 </View>
 `;
 
@@ -113,7 +185,6 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -127,7 +198,6 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -142,7 +212,6 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {

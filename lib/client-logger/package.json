@@ -1,0 +1,10 @@
+{
+  "name": "@storybook/client-logger",
+  "version": "3.3.0-rc.0",
+  "description": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  }
+}

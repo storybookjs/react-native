@@ -1,46 +1,39 @@
 {
-  "private": true,
-  "name": "storybook",
+  "name": "@storybook/root",
   "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
-  "workspaces": [
-    "addons/*",
-    "app/*",
-    "lib/*",
-    "examples/cra-kitchen-sink",
-    "examples/vue-kitchen-sink"
-  ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
+    "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
-    "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
-    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
     "danger": "danger",
-    "dev": "lerna exec --parallel -- babel src -d dist --ignore tests/,__tests__/,.test.js,stories/,.story.js,.stories.js --plugins \"transform-runtime\" --copy-files -w",
+    "dev": "lerna exec --parallel -- babel src -d dist --copy-files --ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__ --plugins \"transform-runtime\" -w",
     "docs:build": "npm --prefix docs run build",
     "docs:deploy:ci": "npm --prefix docs run deploy:ci",
     "docs:deploy:manual": "npm --prefix docs run deploy:manual",
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:md .",
-    "lint:js": "NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
+    "repo-dirty-check": "node ./scripts/repo-dirty-check",
+    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
     "test": "node ./scripts/test.js",
-    "repo-dirty-check": "node ./scripts/repo-dirty-check"
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.3",
+    "babel-eslint": "^8.1.0",
     "babel-plugin-transform-md-import-to-string": "^1.0.6",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
@@ -50,7 +43,7 @@
     "chalk": "^2.3.0",
     "codecov": "^3.0.0",
     "commander": "^2.12.2",
-    "cross-env": "^5.1.1",
+    "cross-env": "^5.1.3",
     "danger": "^2.1.6",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -68,14 +61,18 @@
     "glob": "^7.1.2",
     "husky": "^0.14.3",
     "inquirer": "^4.0.1",
-    "jest": "^21.2.0",
-    "jest-cli": "^21.2.1",
+    "jest": "^22.0.4",
+    "jest-cli": "^22.0.4",
+    "jest-config": "^22.0.4",
+    "jest-diff": "^22.0.3",
+    "jest-environment-jsdom": "^22.0.4",
     "jest-enzyme": "^4.0.1",
     "jest-image-snapshot": "^2.2.1",
+    "jest-jasmine2": "^22.0.4",
     "lerna": "^2.5.1",
     "lint-staged": "^6.0.0",
-    "lodash": "^4.17.4",
-    "nodemon": "^1.13.3",
+    "lodash-es": "^4.17.4",
+    "nodemon": "^1.14.3",
     "npmlog": "^4.1.2",
     "prettier": "^1.9.2",
     "puppeteer": "^0.13.0",
@@ -95,6 +92,7 @@
     "node": ">=8.0.0",
     "yarn": ">=1.0.0"
   },
+  "private": true,
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
@@ -125,5 +123,15 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
-  }
+  },
+  "workspaces": [
+    "addons/*",
+    "app/*",
+    "lib/*",
+    "examples/angular-cli",
+    "examples/cra-kitchen-sink",
+    "examples/vue-kitchen-sink",
+    "examples/official-storybook",
+    "lib/cli/test/run/*"
+  ]
 }
