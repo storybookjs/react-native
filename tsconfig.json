@@ -1,0 +1,13 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  }
+}

@@ -13,7 +13,12 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
     '<rootDir>/examples/official-storybook',
+    '<rootDir>/examples/angular-cli',
   ],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest',
+  },
   transformIgnorePatterns: ['/node_modules/(?!lodash-es/.*)'],
   testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
@@ -29,4 +34,5 @@ module.exports = {
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };

@@ -6,11 +6,11 @@ import {
   NgModuleRef
 } from '@angular/core';
 import {FormsModule} from '@angular/forms'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserModule } from '@angular/platform-browser';
 
 import _debounce from 'lodash-es/debounce';
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './components/app.component';
 import { ErrorComponent } from './components/error.component';
 import { NoPreviewComponent } from './components/no-preview.component';

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Knobs All knobs 1`] = `
+<simple-knobs-component
+  cd={[Function ViewRef_]}
+  knobChanged={[Function Function]}
+  setPaneKnobs={[Function Function]}
+>
+  
+      <div
+    ng-reflect-ng-style="[object Object]"
+    style="border-radius: 8px;"
+  >
+    
+        
+    <h1>
+      My name is ,
+    </h1>
+    
+        
+    <h3>
+      today is 
+    </h3>
+    
+        
+    
+    
+        
+    
+    <p>
+      I'm out of .
+    </p>
+     
+    
+    
+        
+    <p>
+      Also, I have:
+    </p>
+    
+        
+    <ul>
+      
+          
+      
+      
+        
+    </ul>
+    
+        
+    
+    
+        
+    
+    <p>
+      Leave me alone!
+    </p>
+    
+      
+  </div>
+    
+</simple-knobs-component>
+`;
+
+exports[`Storyshots Addon Knobs Simple 1`] = `
+<simple-knobs-component
+  cd={[Function ViewRef_]}
+  knobChanged={[Function Function]}
+  setPaneKnobs={[Function Function]}
+>
+  
+      <div>
+    I am  and I'm  years old.
+  </div>
+    
+</simple-knobs-component>
+`;

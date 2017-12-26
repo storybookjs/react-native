@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import path from 'path';
 import fs from 'fs';
 import glob from 'glob';
@@ -22,6 +23,7 @@ export { getSnapshotFileName };
 
 let storybook;
 let configPath;
+let framework;
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
 const babel = require('babel-core');
@@ -38,11 +40,14 @@ export default function testStorySnapshots(options = {}) {
 
   const isStorybook =
     options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
+  const isAngularStorybook =
+    options.framework === 'angular' || (!options.framework && hasDependency('@storybook/angular'));
   const isRNStorybook =
     options.framework === 'react-native' ||
     (!options.framework && hasDependency('@storybook/react-native'));
 
   if (isStorybook) {
+    framework = 'react';
     storybook = require.requireActual('@storybook/react');
     // eslint-disable-next-line
     const loadBabelConfig = require('@storybook/react/dist/server/babel_config')
@@ -58,7 +63,25 @@ export default function testStorySnapshots(options = {}) {
     };
 
     runWithRequireContext(content, contextOpts);
+  } else if (isAngularStorybook) {
+    framework = 'angular';
+    storybook = require.requireActual('@storybook/angular');
+    // eslint-disable-next-line
+    const loadBabelConfig = require('@storybook/angular/dist/server/babel_config')
+      .default;
+    const configDirPath = path.resolve(options.configPath || '.storybook');
+    configPath = path.join(configDirPath, 'config.js');
+
+    const babelConfig = loadBabelConfig(configDirPath);
+    const content = babel.transformFileSync(configPath, babelConfig).code;
+    const contextOpts = {
+      filename: configPath,
+      dirname: configDirPath,
+    };
+
+    runWithRequireContext(content, contextOpts);
   } else if (isRNStorybook) {
+    framework = 'rn';
     storybook = require.requireActual('@storybook/react-native');
 
     configPath = path.resolve(options.configPath || 'storybook');
@@ -109,7 +132,7 @@ export default function testStorySnapshots(options = {}) {
           }
 
           it(story.name, () => {
-            const context = { fileName, kind, story: story.name };
+            const context = { fileName, kind, story: story.name, framework };
             return options.test({
               story,
               context,

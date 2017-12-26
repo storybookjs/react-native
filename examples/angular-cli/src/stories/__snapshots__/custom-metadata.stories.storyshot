@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Custom Pipe Default 1`] = `
+<name>
+  <h1>
+    CustomPipe: undefined
+  </h1>
+</name>
+`;
+
+exports[`Storyshots Custom Pipe/With Knobs NameComponent 1`] = `
+<name
+  cd={[Function ViewRef_]}
+  knobChanged={[Function Function]}
+  setPaneKnobs={[Function Function]}
+>
+  <h1>
+    CustomPipe: undefined
+  </h1>
+</name>
+`;
+
+exports[`Storyshots Custom ngModule metadata simple 1`] = `
+<simple-service-component
+  dummy={[Function DummyService]}
+>
+  
+      <p>
+    :
+  </p>
+      <ul>
+    
+        
+    
+    
+      
+  </ul>
+    
+</simple-service-component>
+`;
+
+exports[`Storyshots Custom ngModule metadata with knobs 1`] = `
+<simple-service-component
+  cd={[Function ViewRef_]}
+  dummy={[Function DummyService]}
+  knobChanged={[Function Function]}
+  setPaneKnobs={[Function Function]}
+>
+  
+      <p>
+    :
+  </p>
+      <ul>
+    
+        
+    
+    
+      
+  </ul>
+    
+</simple-service-component>
+`;

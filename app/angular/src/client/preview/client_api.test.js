@@ -7,8 +7,8 @@ class StoryStore {
     this.stories = [];
   }
 
-  addStory(kind, story, fn) {
-    this.stories.push({ kind, story, fn });
+  addStory(kind, story, fn, fileName) {
+    this.stories.push({ kind, story, fn, fileName });
   }
 
   getStoryKinds() {
@@ -27,6 +27,11 @@ class StoryStore {
       }
       return stories;
     }, []);
+  }
+
+  getStoryFileName(kind) {
+    const story = this.stories.find(info => info.kind === kind);
+    return story ? story.fileName : null;
   }
 
   getStory(kind, name) {
@@ -55,7 +60,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('foo');
     });
 
@@ -76,7 +81,7 @@ describe('preview.client_api', () => {
       });
 
       api
-        .storiesOf('none')
+        .storiesOf('none', module)
         .aa()
         .bb();
       expect(data).toEqual(['foo', 'bar']);
@@ -92,7 +97,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').aa();
+      api.storiesOf('none', module).aa();
       expect(data).toBe('function');
     });
 
@@ -112,7 +117,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf('none').bb();
+      api.storiesOf('none', module).bb();
       expect(data).toBe('foo');
     });
 
@@ -127,7 +132,7 @@ describe('preview.client_api', () => {
         },
       });
 
-      api.storiesOf(kind).aa();
+      api.storiesOf(kind, module).aa();
       expect(data).toBe(kind);
     });
   });
@@ -136,7 +141,7 @@ describe('preview.client_api', () => {
     it('should add local decorators', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
@@ -147,7 +152,7 @@ describe('preview.client_api', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
       api.addDecorator(fn => `bb-${fn()}`);
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
 
       localApi.add('storyName', () => 'Hello');
       expect(storyStore.stories[0].fn()).toBe('bb-Hello');
@@ -156,7 +161,7 @@ describe('preview.client_api', () => {
     it('should utilize both decorators at once', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
 
       api.addDecorator(fn => `aa-${fn()}`);
       localApi.addDecorator(fn => `bb-${fn()}`);
@@ -168,7 +173,7 @@ describe('preview.client_api', () => {
     it('should pass the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator(fn => `aa-${fn()}`);
 
       localApi.add('storyName', ({ kind, story }) => `${kind}-${story}`);
@@ -183,7 +188,7 @@ describe('preview.client_api', () => {
     it('should have access to the context', () => {
       const storyStore = new StoryStore();
       const api = new ClientAPI({ storyStore });
-      const localApi = api.storiesOf('none');
+      const localApi = api.storiesOf('none', module);
       localApi.addDecorator((fn, { kind, story }) => `${kind}-${story}-${fn()}`);
 
       localApi.add('storyName', () => 'Hello');
@@ -222,16 +227,17 @@ describe('preview.client_api', () => {
         'story-2.1': () => 'story-2.1',
         'story-2.2': () => 'story-2.2',
       };
-      const kind1 = api.storiesOf('kind-1');
+      const kind1 = api.storiesOf('kind-1', { filename: 'kind1.js' });
       kind1.add('story-1.1', functions['story-1.1']);
       kind1.add('story-1.2', functions['story-1.2']);
-      const kind2 = api.storiesOf('kind-2');
+      const kind2 = api.storiesOf('kind-2', { filename: 'kind2.js' });
       kind2.add('story-2.1', functions['story-2.1']);
       kind2.add('story-2.2', functions['story-2.2']);
       const book = api.getStorybook();
       expect(book).toEqual([
         {
           kind: 'kind-1',
+          fileName: 'kind1.js',
           stories: [
             { name: 'story-1.1', render: functions['story-1.1'] },
             { name: 'story-1.2', render: functions['story-1.2'] },
@@ -239,6 +245,43 @@ describe('preview.client_api', () => {
         },
         {
           kind: 'kind-2',
+          fileName: 'kind2.js',
+          stories: [
+            { name: 'story-2.1', render: functions['story-2.1'] },
+            { name: 'story-2.2', render: functions['story-2.2'] },
+          ],
+        },
+      ]);
+    });
+
+    it('should return storybook with file names when module with file name provided', () => {
+      const storyStore = new StoryStore();
+      const api = new ClientAPI({ storyStore });
+      const functions = {
+        'story-1.1': () => 'story-1.1',
+        'story-1.2': () => 'story-1.2',
+        'story-2.1': () => 'story-2.1',
+        'story-2.2': () => 'story-2.2',
+      };
+      const kind1 = api.storiesOf('kind-1', { filename: 'foo' });
+      kind1.add('story-1.1', functions['story-1.1']);
+      kind1.add('story-1.2', functions['story-1.2']);
+      const kind2 = api.storiesOf('kind-2', { filename: 'bar' });
+      kind2.add('story-2.1', functions['story-2.1']);
+      kind2.add('story-2.2', functions['story-2.2']);
+      const book = api.getStorybook();
+      expect(book).toEqual([
+        {
+          kind: 'kind-1',
+          fileName: 'foo',
+          stories: [
+            { name: 'story-1.1', render: functions['story-1.1'] },
+            { name: 'story-1.2', render: functions['story-1.2'] },
+          ],
+        },
+        {
+          kind: 'kind-2',
+          fileName: 'bar',
           stories: [
             { name: 'story-2.1', render: functions['story-2.1'] },
             { name: 'story-2.2', render: functions['story-2.2'] },

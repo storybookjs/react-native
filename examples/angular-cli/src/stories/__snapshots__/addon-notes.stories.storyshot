@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Notes Note with HTML 1`] = `
+<button-component
+  onClick={[Function EventEmitter]}
+  text=""
+>
+  
+        <button
+    _ngcontent-c7=""
+  >
+    
+  </button>
+    
+</button-component>
+`;
+
+exports[`Storyshots Addon Notes Simple note 1`] = `
+<button-component
+  onClick={[Function EventEmitter]}
+  text=""
+>
+  
+        <button
+    _ngcontent-c6=""
+  >
+    
+  </button>
+    
+</button-component>
+`;
