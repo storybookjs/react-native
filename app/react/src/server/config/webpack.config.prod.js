@@ -1,6 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+
 import babelLoaderConfig from './babel.prod';
 import { getConfigDir, includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
@@ -44,15 +46,15 @@ export default function() {
         template: require.resolve('../iframe.html.ejs'),
       }),
       new webpack.DefinePlugin(loadEnv({ production: true })),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          screw_ie8: true,
+      new UglifyJsPlugin({
+        parallel: true,
+        uglifyOptions: {
+          ie8: false,
+          mangle: false,
           warnings: false,
-        },
-        mangle: false,
-        output: {
-          comments: false,
-          screw_ie8: true,
+          output: {
+            comments: false,
+          },
         },
       }),
     ],

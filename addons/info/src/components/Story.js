@@ -59,7 +59,8 @@ const stylesheet = {
     borderRadius: '2px',
     boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.05)',
     backgroundColor: '#fff',
-    marginTop: '50px',
+    marginTop: '20px',
+    marginBottom: '20px',
   },
   infoContent: {
     marginBottom: 0,

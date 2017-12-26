@@ -26,7 +26,7 @@ exports[`Storyshots Addon Info.Decorator Use Info as story decorator 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -303,7 +303,7 @@ exports[`Storyshots Addon Info.GitHub issues #1814 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -454,7 +454,7 @@ exports[`Storyshots Addon Info.Markdown Displays Markdown in description 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -779,7 +779,7 @@ exports[`Storyshots Addon Info.Options.TableComponent Use a custom component for
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -946,7 +946,7 @@ exports[`Storyshots Addon Info.Options.header Shows or hides Info Addon header 1
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="margin-bottom:0"
@@ -1184,7 +1184,7 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
 <div>
   <div>
     <div
-      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
     >
       <div
         style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -1209,7 +1209,7 @@ exports[`Storyshots Addon Info.Options.inline Inlines component inside story 1`]
   </div>
   <div>
     <div
-      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
     >
       <div
         style="margin-bottom:0"
@@ -1468,7 +1468,7 @@ exports[`Storyshots Addon Info.Options.propTables Shows additional component pro
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -1859,7 +1859,7 @@ exports[`Storyshots Addon Info.Options.propTablesExclude Exclude component from 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2192,7 +2192,7 @@ exports[`Storyshots Addon Info.Options.source Shows or hides Info Addon source 1
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2422,7 +2422,7 @@ exports[`Storyshots Addon Info.Options.styles Extend info styles with an object 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2687,7 +2687,7 @@ exports[`Storyshots Addon Info.Options.styles Full control over styles using a f
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2952,7 +2952,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from Flow declarations 1`] 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -3192,7 +3192,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from PropType declarations 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -3653,7 +3653,7 @@ exports[`Storyshots Addon Info.React Docgen Comments from component declaration 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:50px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
