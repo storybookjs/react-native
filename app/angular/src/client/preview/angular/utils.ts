@@ -42,7 +42,7 @@ function convertTsickleDecoratorIntoMetadata(decoratorInvocations: any[]): any[]
     const decoratorType = decoratorInvocation.type;
     const annotationCls = decoratorType.annotationCls;
     const annotationArgs = decoratorInvocation.args ? decoratorInvocation.args : [];
-    return new annotationCls(...annotationArgs);
+    return new (Function.prototype.bind.apply(annotationCls, [null].concat(annotationArgs)))();
   });
 }
 
