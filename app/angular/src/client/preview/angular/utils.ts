@@ -60,32 +60,32 @@ function parameters(type: Type<any>): any {
   if (typeof type !== 'function') {
     return [];
   }
-  
-  
+
+
   const parentCtor = getParentCtor(type);
-  let parameters = getOwnParameters(type, parentCtor);
-  if (!parameters && parentCtor !== Object && parameters !== null) {
-    parameters = (<any>parameters)(parentCtor);
+  let _parameters = getOwnParameters(type, parentCtor);
+  if (!_parameters && parentCtor !== Object && _parameters !== null) {
+    _parameters = (<any>_parameters)(parentCtor);
   }
-  return parameters || [];
+  return _parameters || [];
 }
 
 function _zipTypesAndAnnotations(paramTypes: any[], paramAnnotations: any[]): any[][] {
   let result: any[][];
-  
+
   if (typeof paramTypes === 'undefined') {
     result = new Array(paramAnnotations.length);
   } else {
     result = new Array(paramTypes.length);
   }
-  
+
   for (let i = 0; i < result.length; i++) {
     // TS outputs Object for parameters without types, while Traceur omits
     // the annotations. For now we preserve the Traceur behavior to aid
     // migration, but this can be revisited.
     if (typeof paramTypes === 'undefined') {
       result[i] = [];
-    } else if (paramTypes[i] != Object) {
+    } else if (paramTypes[i] !== Object) {
       result[i] = [paramTypes[i]];
     } else {
       result[i] = [];
@@ -109,12 +109,12 @@ function getOwnParameters(type: Type<any>, parentCtor: any): any[][] {
   if (DELEGATE_CTOR.exec(type.toString())) {
     return null;
   }
-  
+
   // Prefer the direct API.
   if ((<any>type).parameters && (<any>type).parameters !== parentCtor.parameters) {
     return (<any>type).parameters;
   }
-  
+
   // API of tsickle for lowering decorators to properties on the class.
   const tsickleCtorParams = (<any>type).ctorParameters;
   if (tsickleCtorParams && tsickleCtorParams !== parentCtor.ctorParameters) {
@@ -128,15 +128,15 @@ function getOwnParameters(type: Type<any>, parentCtor: any): any[][] {
         ctorParam && convertTsickleDecoratorIntoMetadata(ctorParam.decorators));
     return _zipTypesAndAnnotations(paramTypes, paramAnnotations);
   }
-  
+
   // API for metadata created by invoking the decorators.
-  const paramAnnotations = type.hasOwnProperty(PARAMETERS) && (type as any)[PARAMETERS];
-  const paramTypes = (<any>window)['Reflect'] && (<any>window)['Reflect'].getOwnMetadata &&
+  const _paramAnnotations = type.hasOwnProperty(PARAMETERS) && (type as any)[PARAMETERS];
+  const _paramTypes = (<any>window)['Reflect'] && (<any>window)['Reflect'].getOwnMetadata &&
     (<any>window)['Reflect'].getOwnMetadata('design:paramtypes', type);
-  if (paramTypes || paramAnnotations) {
-    return _zipTypesAndAnnotations(paramTypes, paramAnnotations);
+  if (_paramTypes || _paramAnnotations) {
+    return _zipTypesAndAnnotations(_paramTypes, _paramAnnotations);
   }
-  
+
   // If a class has no decorators, at least create metadata
   // based on function.length.
   // Note: We know that this is a real constructor as we checked
