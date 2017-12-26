@@ -115,6 +115,10 @@ function getOwnParameters(type: Type<any>, parentCtor: any): any[][] {
     return (<any>type).parameters;
   }
 
+  if ((<any>type)['__parameters__']) {
+    return getMeta(type, ['__parameters__'], {});
+  }
+
   // API of tsickle for lowering decorators to properties on the class.
   const tsickleCtorParams = (<any>type).ctorParameters;
   if (tsickleCtorParams && tsickleCtorParams !== parentCtor.ctorParameters) {
