@@ -18,7 +18,7 @@ or with yarn:
 
 ## Basic Usage
 
-Simply import the Storybook Viewport Addon in the `addon.js` file in your `.storybook` directory.
+Simply import the Storybook Viewport Addon in the `addons.js` file in your `.storybook` directory.
 
 ```js
 import '@storybook/addon-viewport/register'
