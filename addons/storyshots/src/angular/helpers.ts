@@ -3,8 +3,6 @@ import {
   NgModule,
   Component,
 } from '@angular/core';
-import {FormsModule} from '@angular/forms'
-import { BrowserModule } from '@angular/platform-browser';
 
 import { STORY } from './app.token';
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
@@ -88,7 +86,7 @@ const getModule = (
 ): any => {
   return {
     declarations: [...declarations, ...moduleMetadata.declarations],
-    imports: [BrowserModule, FormsModule, ...moduleMetadata.imports],
+    imports: [...moduleMetadata.imports],
     providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
     entryComponents: [...entryComponents],
     schemas: [...moduleMetadata.schemas],
