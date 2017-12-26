@@ -1,12 +1,12 @@
 /* eslint-disable no-loop-func */
-import path from 'path';
+
 import fs from 'fs';
 import glob from 'glob';
 import global, { describe, it } from 'global';
-import readPkgUp from 'read-pkg-up';
+
 import addons from '@storybook/addons';
 
-import runWithRequireContext from './require_context';
+import loadFramework from './frameworkLoader';
 import createChannel from './storybook-channel-mock';
 import { snapshotWithOptions } from './test-bodies';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
@@ -21,78 +21,16 @@ export {
 
 export { getSnapshotFileName };
 
-let storybook;
-let configPath;
-let framework;
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
-const babel = require('babel-core');
-
-const { pkg } = readPkgUp.sync();
-
-const hasDependency = name =>
-  (pkg.devDependencies && pkg.devDependencies[name]) ||
-  (pkg.dependencies && pkg.dependencies[name]) ||
-  fs.existsSync(path.join('node_modules', name, 'package.json'));
-
 export default function testStorySnapshots(options = {}) {
-  addons.setChannel(createChannel());
-
-  const isStorybook =
-    options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
-  const isAngularStorybook =
-    options.framework === 'angular' || (!options.framework && hasDependency('@storybook/angular'));
-  const isRNStorybook =
-    options.framework === 'react-native' ||
-    (!options.framework && hasDependency('@storybook/react-native'));
-
-  if (isStorybook) {
-    framework = 'react';
-    storybook = require.requireActual('@storybook/react');
-    // eslint-disable-next-line
-    const loadBabelConfig = require('@storybook/react/dist/server/babel_config')
-      .default;
-    const configDirPath = path.resolve(options.configPath || '.storybook');
-    configPath = path.join(configDirPath, 'config.js');
-
-    const babelConfig = loadBabelConfig(configDirPath);
-    const content = babel.transformFileSync(configPath, babelConfig).code;
-    const contextOpts = {
-      filename: configPath,
-      dirname: configDirPath,
-    };
-
-    runWithRequireContext(content, contextOpts);
-  } else if (isAngularStorybook) {
-    framework = 'angular';
-    storybook = require.requireActual('@storybook/angular');
-    // eslint-disable-next-line
-    const loadBabelConfig = require('@storybook/angular/dist/server/babel_config')
-      .default;
-    const configDirPath = path.resolve(options.configPath || '.storybook');
-    configPath = path.join(configDirPath, 'config.js');
-
-    const babelConfig = loadBabelConfig(configDirPath);
-    const content = babel.transformFileSync(configPath, babelConfig).code;
-    const contextOpts = {
-      filename: configPath,
-      dirname: configDirPath,
-    };
-
-    runWithRequireContext(content, contextOpts);
-  } else if (isRNStorybook) {
-    framework = 'rn';
-    storybook = require.requireActual('@storybook/react-native');
-
-    configPath = path.resolve(options.configPath || 'storybook');
-    require.requireActual(configPath);
-  } else {
-    throw new Error('storyshots is intended only to be used with storybook');
-  }
-
   if (typeof describe !== 'function') {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
+
+  addons.setChannel(createChannel());
+
+  const { framework, storybook } = loadFramework(options);
 
   // NOTE: keep `suit` typo for backwards compatibility
   const suite = options.suite || options.suit || 'Storyshots';
@@ -103,15 +41,14 @@ export default function testStorySnapshots(options = {}) {
   }
 
   // Added not to break existing storyshots configs (can be removed in a future major release)
-  // eslint-disable-next-line
-  options.storyNameRegex = options.storyNameRegex || options.storyRegex;
+  const storyNameRegex = options.storyNameRegex || options.storyRegex;
+
   const snapshotOptions = {
     renderer: options.renderer,
     serializer: options.serializer,
   };
-  // eslint-disable-next-line
-  options.test =
-    options.test || snapshotWithOptions({ options: snapshotOptions });
+
+  const testMethod = options.test || snapshotWithOptions({ options: snapshotOptions });
 
   // eslint-disable-next-line
   for (const group of stories) {
@@ -126,14 +63,14 @@ export default function testStorySnapshots(options = {}) {
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
-          if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
+          if (storyNameRegex && !story.name.match(storyNameRegex)) {
             // eslint-disable-next-line
             continue;
           }
 
           it(story.name, () => {
             const context = { fileName, kind, story: story.name, framework };
-            return options.test({
+            return testMethod({
               story,
               context,
             });
