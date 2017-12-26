@@ -181,7 +181,8 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                 "fontSize": "15px",
                 "fontWeight": 300,
                 "lineHeight": 1.45,
-                "marginTop": "50px",
+                "marginBottom": "20px",
+                "marginTop": "20px",
                 "padding": "20px 40px 40px",
               }
             }
