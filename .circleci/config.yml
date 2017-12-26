@@ -229,7 +229,7 @@ jobs:
       - run:
           name: "Visually test storybook"
           command: |
-            cd examples/official-storybook; yarn chromatic
+            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
