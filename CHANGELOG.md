@@ -1,3 +1,48 @@
+# 3.3.0-rc.1
+
+2017-December-26
+
+#### Bug Fixes
+
+-   Fix whitespace on info add-on card [#2543](https://github.com/storybooks/storybook/pull/2543)
+
+#### Documentation
+
+-   Make dependencies more deterministic [#1703](https://github.com/storybooks/storybook/pull/1703)
+
+#### Maintenance
+
+-   Switch to UglifyJS that supports ES6 and up [#2530](https://github.com/storybooks/storybook/pull/2530)
+-   Move everything from lodash to lodash-es [#2558](https://github.com/storybooks/storybook/pull/2558)
+-   Misc fixes [#2556](https://github.com/storybooks/storybook/pull/2556)
+-   CI: test that angular example works [#2557](https://github.com/storybooks/storybook/pull/2557)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+17 Upgrades
+</summary>
+
+-   Update babel-eslint in / from 8.1.1 to 8.1.2 [#2562](https://github.com/storybooks/storybook/pull/2562)
+-   Update babel-eslint in / from 8.1.0 to 8.1.1 [#2561](https://github.com/storybooks/storybook/pull/2561)
+-   Update babel-eslint in / from 8.0.3 to 8.1.0 [#2559](https://github.com/storybooks/storybook/pull/2559)
+-   Upgraded `eslint` in `/` from "4.13.1" to "4.14.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jest-specific-snapshot` in `addons/storyshots` from "0.2.0" to "0.3.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `style-loader` in `app/angular` from "0.17.0" to "0.18.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `npx` in `lib/cli` from "9.6.0" to "9.7.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `@angular/cli` in `examples/angular-cli` from "1.3.0" to "1.6.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `@types/jasmine` in `examples/angular-cli` from "2.5.54" to "2.8.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jasmine-core` in `examples/angular-cli` from "2.6.4" to "2.8.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jasmine-spec-reporter` in `examples/angular-cli` from "4.1.1" to "4.2.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `karma-chrome-launcher` in `examples/angular-cli` from "2.1.1" to "2.2.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `karma-coverage-istanbul-reporter` in `examples/angular-cli` from "1.3.0" to "1.3.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `protractor` in `examples/angular-cli` from "5.1.2" to "5.2.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `ts-node` in `examples/angular-cli` from "3.2.2" to "3.3.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `tslint` in `examples/angular-cli` from "5.3.2" to "5.8.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+
+</details>
+
 # 3.3.0-rc.0
 
 2017-December-23
