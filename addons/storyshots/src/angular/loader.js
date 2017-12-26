@@ -28,6 +28,7 @@ function load(options) {
   runWithRequireContext(content, contextOpts);
 
   return {
+    renderTree: require('./renderTree').default,
     framework: 'angular',
     storybook,
   };

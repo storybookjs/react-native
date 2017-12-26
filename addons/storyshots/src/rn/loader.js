@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import path from 'path';
 import hasDependency from '../hasDependency';
 
@@ -15,6 +16,7 @@ function load(options) {
   require.requireActual(configPath);
 
   return {
+    renderTree: require('../react/renderTree').default,
     framework: 'rn',
     storybook,
   };

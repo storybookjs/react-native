@@ -1,27 +1,24 @@
 /* eslint-disable no-loop-func */
-
 import fs from 'fs';
 import glob from 'glob';
 import global, { describe, it } from 'global';
-
 import addons from '@storybook/addons';
-
 import loadFramework from './frameworkLoader';
 import createChannel from './storybook-channel-mock';
-import { snapshotWithOptions } from './test-bodies';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
+import { multiSnapshotWithOptions, snapshotWithOptions, snapshot } from './test-bodies';
+import { shallowSnapshot, renderOnly } from './react/test-bodies';
+
+global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
 export {
+  getSnapshotFileName,
   snapshot,
   multiSnapshotWithOptions,
   snapshotWithOptions,
   shallowSnapshot,
   renderOnly,
-} from './test-bodies';
-
-export { getSnapshotFileName };
-
-global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
+};
 
 export default function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
@@ -30,7 +27,7 @@ export default function testStorySnapshots(options = {}) {
 
   addons.setChannel(createChannel());
 
-  const { framework, storybook } = loadFramework(options);
+  const { framework, storybook, renderTree } = loadFramework(options);
 
   // NOTE: keep `suit` typo for backwards compatibility
   const suite = options.suite || options.suit || 'Storyshots';
@@ -73,6 +70,7 @@ export default function testStorySnapshots(options = {}) {
             return testMethod({
               story,
               context,
+              renderTree,
             });
           });
         }
