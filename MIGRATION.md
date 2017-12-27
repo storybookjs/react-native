@@ -4,6 +4,7 @@
 
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
+    -   [Storyshots Jest configuration](#storyshots-jest-configuration)
 -   [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
     -   [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
     -   [Updated Addons API](#updated-addons-api)
