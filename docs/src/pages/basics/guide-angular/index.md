@@ -10,8 +10,8 @@ You may have tried to use our quick start guide to setup your project for Storyb
 
 ## Starter Guide Angular
 
-Storybook has its own Webpack setup and a dev server.  
-The Webpack setup is very similar to [Angular CLI](https://cli.angular.io), but allows you to [configure it however you want](/configurations/custom-webpack-config/).
+Storybook has its own webpack setup and a dev server.  
+The webpack setup is very similar to [Angular CLI](https://cli.angular.io), but allows you to [configure it however you want](/configurations/custom-webpack-config/).
 
 In this guide, we are trying to set up Storybook for your Angular project.
 
@@ -113,4 +113,4 @@ npm run storybook
 ```
 
 Now you can change components and write stories whenever you need to.
-You'll get those changes into Storybook in a snap with the help of Webpack's HMR API.
+You'll get those changes into Storybook in a snap with the help of webpack's HMR API.
