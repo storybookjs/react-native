@@ -38,7 +38,7 @@ export function renderException(error) {
   logger.error(error.stack);
 }
 
-export function renderMain(data, storyStore) {
+export function renderMain(data, storyStore, forceRender) {
   if (storyStore.size() === 0) return null;
 
   const NoPreview = () => <p>No Preview Available!</p>;
@@ -55,7 +55,7 @@ export function renderMain(data, storyStore) {
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
   //    https://github.com/storybooks/react-storybook/issues/116
-  if (selectedKind === previousKind && previousStory === selectedStory) {
+  if (!forceRender && selectedKind === previousKind && previousStory === selectedStory) {
     return null;
   }
 
@@ -100,14 +100,14 @@ export function renderMain(data, storyStore) {
   return null;
 }
 
-export default function renderPreview({ reduxStore, storyStore }) {
+export default function renderPreview({ reduxStore, storyStore }, forceRender = false) {
   const state = reduxStore.getState();
   if (state.error) {
     return renderException(state.error);
   }
 
   try {
-    return renderMain(state, storyStore);
+    return renderMain(state, storyStore, forceRender);
   } catch (ex) {
     return renderException(ex);
   }
