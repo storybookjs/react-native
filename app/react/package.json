@@ -72,7 +72,7 @@
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.7.8",
     "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.4",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.1.0",
@@ -84,7 +84,7 @@
     "nodemon": "^1.14.3"
   },
   "peerDependencies": {
-    "babel-core": "^6.26.0 | ^7.0.0-0",
+    "babel-core": "^6.26.0 || ^7.0.0-0",
     "react": ">=15.0.0 || ^16.0.0",
     "react-dom": ">=15.0.0 || ^16.0.0"
   }
