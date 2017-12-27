@@ -12,7 +12,9 @@ module.exports = {
     '<rootDir>/app',
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
+    '<rootDir>/examples/official-storybook',
   ],
+  transformIgnorePatterns: ['/node_modules/(?!lodash-es/.*)'],
   testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
@@ -26,4 +28,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
+  testURL: 'http://localhost',
 };

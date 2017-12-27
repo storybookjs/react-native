@@ -9,6 +9,6 @@ describe('getPropertiesList', () => {
   it('for File object', () => {
     const file = new File([''], 'filename.txt', { type: 'text/plain', lastModified: new Date() });
 
-    expect(getPropertiesList(file)).toEqual(['name', 'lastModified', 'size', 'type', 'isClosed']);
+    expect(getPropertiesList(file)).toEqual(['name', 'lastModified', 'size', 'type']);
   });
 });

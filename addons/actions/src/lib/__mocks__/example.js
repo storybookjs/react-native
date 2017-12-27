@@ -31,7 +31,6 @@ const output = {
   e: '2017-12-02T11:13:22.492Z',
   f: {
     '$___storybook.objectName': 'File',
-    isClosed: false,
     lastModified: 1512213202492,
     name: 'filename.txt',
     size: 0,

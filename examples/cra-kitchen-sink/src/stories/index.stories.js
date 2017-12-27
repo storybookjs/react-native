@@ -91,4 +91,3 @@ storiesOf('Some really long story kind description', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>);
 
 storiesOf('Lifecycle', module).add('logging', () => <LifecycleLogger />);
-

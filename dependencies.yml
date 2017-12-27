@@ -33,7 +33,7 @@ collectors:
     versions: "L.Y.Y"
     settings:
       batch_mode: true
-      bootstrap_command: yarn --ignore-scripts --ignore-engines --silent --prefer-offline
+      bootstrap_command: yarn --ignore-scripts --ignore-engines --silent
       github_labels:
       - dependencies:update
       github_assignees:
