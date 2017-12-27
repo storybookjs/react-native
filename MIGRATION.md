@@ -4,6 +4,7 @@
 
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
+    -   [Storyshots Jest configuration](#storyshots-jest-configuration)
 -   [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
     -   [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
     -   [Updated Addons API](#updated-addons-api)
@@ -32,6 +33,16 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
 
 In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
+
+### Storyshots Jest configuration
+
+Storyshots users will need to add a line to their `jest.config.js`:
+
+```js
+  transformIgnorePatterns: ['/node_modules/(?!lodash-es/.*)'],
+```
+
+We are working to resolve the issue that requires this: https://github.com/storybooks/storybook/issues/2570
 
 ## From version 3.1.x to 3.2.x
 

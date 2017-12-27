@@ -1,3 +1,15 @@
+# 3.3.1
+
+2017-December-26
+
+#### Bug Fixes
+
+-   Fix storybook CLI for angular: dev dependencies and fix addon-notes usage [#2572](https://github.com/storybooks/storybook/pull/2572)
+
+#### Documentation
+
+-   Add migration note about #2570 [#2571](https://github.com/storybooks/storybook/pull/2571)
+
 # 3.3.0
 
 2017-December-26
