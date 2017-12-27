@@ -13661,19 +13661,6 @@ uglifyjs-webpack-plugin@^0.4.6:
     uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
 
-uglifyjs-webpack-plugin@^1.1.4, uglifyjs-webpack-plugin@~1.1.2:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.4.tgz#e43ad6e736c315024eb99481a7cc9362d6a066be"
-  dependencies:
-    cacache "^10.0.0"
-    find-cache-dir "^1.0.0"
-    schema-utils "^0.3.0"
-    serialize-javascript "^1.4.0"
-    source-map "^0.6.1"
-    uglify-es "^3.2.1"
-    webpack-sources "^1.0.1"
-    worker-farm "^1.4.1"
-
 uglifyjs-webpack-plugin@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.5.tgz#5ec4a16da0fd10c96538f715caed10dbdb180875"
@@ -13684,6 +13671,19 @@ uglifyjs-webpack-plugin@^1.1.5:
     serialize-javascript "^1.4.0"
     source-map "^0.6.1"
     uglify-es "3.2.2"
+    webpack-sources "^1.0.1"
+    worker-farm "^1.4.1"
+
+uglifyjs-webpack-plugin@~1.1.2:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.4.tgz#e43ad6e736c315024eb99481a7cc9362d6a066be"
+  dependencies:
+    cacache "^10.0.0"
+    find-cache-dir "^1.0.0"
+    schema-utils "^0.3.0"
+    serialize-javascript "^1.4.0"
+    source-map "^0.6.1"
+    uglify-es "^3.2.1"
     webpack-sources "^1.0.1"
     worker-farm "^1.4.1"
 
