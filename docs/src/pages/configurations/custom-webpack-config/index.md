@@ -85,8 +85,7 @@ Storybook uses the config returned from the above function. So, try to edit the 
 -   entry
 -   output
 -   first loader in the module.loaders (Babel loader for JS)
-
-Other than that, you should try to keep the default set of plugins.
+-   all existing plugins
 
 ## Full control mode + default
 
