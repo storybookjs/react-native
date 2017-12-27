@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.3.1",
-    "@storybook/addon-links": "^3.2.18",
+    "@storybook/addon-links": "^3.3.1",
     "@storybook/addons": "^3.2.18",
     "@storybook/react": "^3.2.18",
     "babel-cli": "^6.26.0",

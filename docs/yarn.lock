@@ -34,6 +34,14 @@
   dependencies:
     "@storybook/addons" "^3.2.18"
 
+"@storybook/addon-links@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.3.1.tgz#e3098a72aa09fefa8a1af6d114e002852d649be3"
+  dependencies:
+    "@storybook/components" "^3.3.1"
+    global "^4.3.2"
+    prop-types "^15.5.10"
+
 "@storybook/addons@^3.2.18":
   version "3.2.18"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.18.tgz#2c1d42a0b661db2e429d1c406e79765ae5c71458"
@@ -56,6 +64,14 @@
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.11.0"
+    prop-types "^15.6.0"
+
+"@storybook/components@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.3.1.tgz#c4a1fdb44d0411cb89a964ac373c1300f56ccf02"
+  dependencies:
+    glamor "^2.20.40"
+    glamorous "^4.11.2"
     prop-types "^15.6.0"
 
 "@storybook/mantra-core@^1.7.0":
@@ -4590,6 +4606,18 @@ glamor@^2.20.40:
 glamorous@^4.11.0:
   version "4.11.0"
   resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-4.11.0.tgz#cb846dda1450c895c59a34060fb19e3251ed619f"
+  dependencies:
+    brcast "^3.0.0"
+    fast-memoize "^2.2.7"
+    html-tag-names "^1.1.1"
+    is-function "^1.0.1"
+    is-plain-object "^2.0.4"
+    react-html-attributes "^1.3.0"
+    svg-tag-names "^1.1.0"
+
+glamorous@^4.11.2:
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-4.11.2.tgz#ce144c6a53e247ddf0896ad6faddebf78c49d864"
   dependencies:
     brcast "^3.0.0"
     fast-memoize "^2.2.7"
