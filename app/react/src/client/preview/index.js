@@ -22,11 +22,7 @@ const isBrowser =
 
 const storyStore = new StoryStore();
 /* eslint-disable no-underscore-dangle */
-const reduxStore = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ &&
-    window.__REDUX_DEVTOOLS_EXTENSION__({ name: 'Storybook Preview', instanceId: 'sbPreview' })
-);
+const reduxStore = createStore(reducer);
 /* eslint-enable */
 const context = { storyStore, reduxStore };
 
