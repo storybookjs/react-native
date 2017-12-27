@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "3.3.0-rc.1",
+  "version": "3.3.1",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -24,7 +24,7 @@
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0-alpha.6",
+    "@storybook/addons": "^3.3.0",
     "react": "*"
   },
   "optionalDependencies": {
