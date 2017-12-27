@@ -3,8 +3,6 @@ id: 'guide-angular'
 title: 'Storybook for Angular'
 ---
 
-## Storybook for Angular
-
 You may have tried to use our quick start guide to setup your project for Storybook. If you want to set up Storybook manually, this is the guide for you.
 
 > This will also help you understand how Storybook works.
