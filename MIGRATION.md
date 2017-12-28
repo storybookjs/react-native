@@ -2,6 +2,9 @@
 
 ## Table of contents
 
+-   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
+    -   [Refactored Knobs](#refactored-knobs)
+    -   [Storyshots Jest configuration](#storyshots-jest-configuration)
 -   [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
     -   [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
     -   [Updated Addons API](#updated-addons-api)
@@ -12,6 +15,24 @@
     -   [Webpack upgrade](#webpack-upgrade)
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 3.2.x to 3.3.x
+
+There should be no breaking changes in this release, but read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
+
+### Refactored Knobs
+
+Knobs users: there was a bug in 3.2.x where using the knobs addon imported all framework runtimes (e.g. React and Vue). To fix the problem, we [refactored knobs](https://github.com/storybooks/storybook/pull/1832). Switching to the new style is easy:
+
+In the case of React or React-Native, import knobs like this:
+
+```js
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+```
+
+In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
+
+In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
 
 ## From version 3.1.x to 3.2.x
 

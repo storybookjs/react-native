@@ -1,9 +1,10 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.3.0-rc.1",
+  "version": "3.3.2",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -14,8 +15,8 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/client-logger": "^3.3.0-rc.1",
-    "@storybook/components": "^3.3.0-rc.1",
+    "@storybook/client-logger": "^3.3.2",
+    "@storybook/components": "^3.3.2",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "marksy": "^6.0.1",

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.3.0-rc.1",
+  "version": "3.3.2",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
+  "jsnext:main": "src/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -22,13 +23,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.3.0-rc.1",
-    "@storybook/addon-links": "^3.3.0-rc.1",
-    "@storybook/addons": "^3.3.0-rc.1",
-    "@storybook/channel-postmessage": "^3.3.0-rc.1",
-    "@storybook/client-logger": "^3.3.0-rc.1",
-    "@storybook/node-logger": "^3.3.0-rc.1",
-    "@storybook/ui": "^3.3.0-rc.1",
+    "@storybook/addon-actions": "^3.3.2",
+    "@storybook/addon-links": "^3.3.2",
+    "@storybook/addons": "^3.3.2",
+    "@storybook/channel-postmessage": "^3.3.2",
+    "@storybook/client-logger": "^3.3.2",
+    "@storybook/node-logger": "^3.3.2",
+    "@storybook/ui": "^3.3.2",
     "airbnb-js-shims": "^1.4.0",
     "autoprefixer": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -60,7 +61,7 @@
     "json-loader": "^0.5.7",
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
-    "lodash-es": "^4.17.4",
+    "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.1",
     "npmlog": "^4.1.2",
     "postcss-flexbugs-fixes": "^3.2.0",
@@ -72,7 +73,7 @@
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.7.8",
     "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.4",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.1.0",
@@ -84,7 +85,7 @@
     "nodemon": "^1.14.3"
   },
   "peerDependencies": {
-    "babel-core": "^6.26.0 | ^7.0.0-0",
+    "babel-core": "^6.26.0 || ^7.0.0-0",
     "react": ">=15.0.0 || ^16.0.0",
     "react-dom": ">=15.0.0 || ^16.0.0"
   }

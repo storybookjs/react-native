@@ -1,9 +1,10 @@
 {
   "name": "@storybook/codemod",
-  "version": "3.3.0-rc.1",
+  "version": "3.3.2",
   "description": "A collection of codemod scripts written with JSCodeshift",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
