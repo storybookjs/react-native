@@ -853,9 +853,9 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-axe-core@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.6.0.tgz#fa88e4cc34badee7eb208aae31fb4977ae488223"
+axe-core@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.6.1.tgz#28772c4f76966d373acda35b9a409299dc00d1b5"
 
 axobject-query@^0.1.0:
   version "0.1.0"
@@ -3725,9 +3725,9 @@ damerau-levenshtein@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
-danger@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-2.1.6.tgz#ea4b3024cbef422286dc6bdb4d23da132d8ebbe5"
+danger@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-2.1.8.tgz#11cb654831be528e068257846df2141f5b049b79"
   dependencies:
     babel-polyfill "7.0.0-alpha.19"
     chalk "^2.3.0"
@@ -3737,6 +3737,7 @@ danger@^2.1.6:
     github "^13.0.1"
     hyperlinker "^1.0.0"
     jsome "^2.3.25"
+    json5 "^0.5.1"
     jsonpointer "^4.0.1"
     lodash.find "^4.6.0"
     lodash.includes "^4.3.0"

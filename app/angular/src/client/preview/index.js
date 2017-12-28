@@ -53,3 +53,5 @@ const renderUI = () => {
 };
 
 reduxStore.subscribe(renderUI);
+
+export const forceReRender = () => render(context, true);
