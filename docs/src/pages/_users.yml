@@ -1,84 +1,84 @@
 airbnb:
-  logo: ./logos/airbnb.svg
+  logo: airbnb.svg
   title: Airbnb Dates
   description: An internationalizable, mobile-friendly datepicker library for the web.
   source: https://github.com/airbnb/react-dates
   demo: http://airbnb.io/react-dates/
   site: http://airbnb.com
 slack:
-  logo: ./logos/slack.svg
+  logo: slack.svg
   title: Slack Emoji Picker
   description: Slack improves performance and maintainability with Storybook!
   demo: https://slack.engineering/rebuilding-slacks-emoji-picker-in-react-bfbd8ce6fbfe
   site: http://slack.com
 lonelyplanet:
-  logo: ./logos/lonelyplanet.svg
+  logo: lonelyplanet.svg
   title: Lonely Planet
   description: All the tools you need to build the Lonely Planet UI experience.
   source: https://github.com/lonelyplanet/backpack-ui
   demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
 squarespace:
-  logo: ./logos/squarespace.png
+  logo: squarespace.png
   title: Squarespace
   description: Component design and development at Squarespace
   site: http://squarespace.com
 dbsbank:
-  logo: ./logos/dbsbank.svg
+  logo: dbsbank.svg
   title: DBS Bank
   description: DBS Bank consumer products improves performance and maintainability with Storybook!
   site: https://www.dbs.com
 coursera:
-  logo: ./logos/coursera.svg
+  logo: coursera.svg
   title: Coursera
   description: Coursera UI component library
   site: https://building.coursera.org/ui/
 # buffer:
-#   logo: ./logos/buffer.svg
+#   logo: buffer.svg
 #   title: Buffer Components
 #   description: A collection of Buffer UI React components.
 #   source: https://github.com/bufferapp/buffer-components
 #   demo: https://bufferapp.github.io/buffer-components/
 #   site: https://buffer.com
 # wix:
-#   logo: ./logos/wix.svg
+#   logo: wix.svg
 #   title: Wix
 #   description: React component library for all Wix verticals
 #   demo: https://wix.github.io/wix-style-react/
 #   source: https://github.com/wix/wix-style-react
 #   source2: https://github.com/wix/react-native-storybook-example/
 # algolia:
-#   logo: ./logos/algolia.svg
+#   logo: algolia.svg
 #   title: Algolia Instantsearch
 #   description: Lightning-fast, hyper-configurable search.
 #   source: https://github.com/algolia/react-instantsearch/
 #   demo: https://community.algolia.com/react-instantsearch/storybook/
 # mozilla:
-#   logo: ./logos/mozilla.svg
+#   logo: mozilla.svg
 #   title: Mozilla Foundation
 #   site: https://mozilla.org
 # remitly:
-#   logo: ./logos/remitly.svg
+#   logo: remitly.svg
 #   title: Remitly
 #   site: https://remitly.com
 # nulogy:
-#   logo: ./logos/nulogy.png
+#   logo: nulogy.png
 #   title: Nulogy
 #   description: SaaS for Supply Chain
 #   site: https://nulogy.com
 # postmates:
-#   logo: ./logos/postmates.png
+#   logo: postmates.png
 #   title: Quran.com
 #   site: https://postmates.com
 # appbase:
-#   logo: ./logos/appbase.svg
+#   logo: appbase.svg
 #   title: Appbase Maps
 #   description: A storybook playground for ReactiveMaps and ReactiveSearch.
 #   source: https://github.com/appbaseio/playground
 #   demo: https://opensource.appbase.io/playground/
 #   site: https://appbase.io
 # quran:
-#   logo: ./logos/quran.svg
+#   logo: quran.svg
 #   title: Quran.com
 #   description: Component library for Quran.com, Quranicaudio.com and Salah.com.
 #   source: https://github.com/quran/common-components
