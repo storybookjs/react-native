@@ -5,6 +5,7 @@
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },

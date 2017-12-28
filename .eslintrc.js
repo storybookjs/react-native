@@ -17,6 +17,7 @@ module.exports = {
   },
   settings: {
     'import/core-modules': ['enzyme'],
+    'import/ignore': ['node_modules\\/(?!@storybook)'],
   },
   rules: {
     strict: [error, 'never'],
@@ -60,6 +61,9 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': ignore,
+    'import/default': error,
+    'import/named': error,
+    'import/namespace': error,
     'react/jsx-wrap-multilines': ignore,
     'react/jsx-indent': ignore,
     'react/jsx-indent-props': ignore,
