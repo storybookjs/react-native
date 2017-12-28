@@ -16,6 +16,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/storybooks/storybook.git"

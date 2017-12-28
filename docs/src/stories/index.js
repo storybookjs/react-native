@@ -1,3 +1,5 @@
+// TODO reenable when @storybook/react with jsnext:main is published
+// eslint-disable-next-line import/named
 import { storiesOf } from '@storybook/react';
 import implementations from './implementations';
 
