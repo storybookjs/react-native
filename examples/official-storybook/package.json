@@ -3,7 +3,9 @@
   "version": "3.3.1",
   "scripts": {
     "build-storybook": "build-storybook -c ./",
-    "storybook": "start-storybook -p 9010 -c ./"
+    "storybook": "start-storybook -p 9010 -c ./",
+    "chromatic":
+      "chromatic test --storybook-addon --exit-zero-on-changes --app-code $CHROMATIC_APP_CODE"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.3.1",
@@ -32,6 +34,7 @@
     "jest": "^21.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-chromatic": "^0.7.3",
     "react-dom": "^16.2.0",
     "uuid": "^3.1.0"
   },
