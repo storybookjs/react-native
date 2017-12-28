@@ -8,6 +8,11 @@ const pathToVueKitchenSink = path.join(
   '..',
   'examples/vue-kitchen-sink/storybook-static/index.html'
 );
+const pathToAngularKitchenSink = path.join(
+  __dirname,
+  '..',
+  'examples/angular-cli/storybook-static/index.html'
+);
 const pathToCraKitchenSink = path.join(
   __dirname,
   '..',
@@ -25,7 +30,7 @@ const examples = [
   },
   {
     name: 'angular-cli',
-    port: 9008,
+    storybookUrl: pathToAngularKitchenSink,
   },
 ];
 
