@@ -137,29 +137,19 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore docs dependencies cache"
+          name: "Restore dependencies cache"
           keys:
             - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
-          name: "Install core dependencies"
-          command: |
-            yarn install
-      - run:
           name: "Install dependencies"
           command: |
-            yarn bootstrap --docs
+            cd docs
+            yarn install --frozen-lockfile
       - run:
-          name: "Dirty check"
+          name: "Build docs"
           command: |
-            yarn repo-dirty-check
-      - run:
-          name: "Run docs"
-          command: |
-            yarn docs:build
+            cd docs
+            yarn build
       - save_cache:
           name: "Cache dependencies"
           key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
@@ -210,6 +200,26 @@ jobs:
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
+  storybook:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+      - run:
+          name: "Link packages"
+          command: |
+            yarn install
+      - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
@@ -273,6 +283,9 @@ workflows:
           requires:
             - build
       - unit-test:
+          requires:
+            - build
+      - storybook:
           requires:
             - build
       - cli:

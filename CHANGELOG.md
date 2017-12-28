@@ -1,3 +1,37 @@
+# 3.3.2
+
+2017-December-28
+
+#### Bug Fixes
+
+-   Use store revisions to ensure that stories re-render on HMR. [#2588](https://github.com/storybooks/storybook/pull/2588)
+-   Fix @storybook/client-logger import [#2576](https://github.com/storybooks/storybook/pull/2576)
+-   Fixed react peer dependency [#2584](https://github.com/storybooks/storybook/pull/2584)
+
+#### Documentation
+
+-   Docs: fix logos display & add babelrc [#2585](https://github.com/storybooks/storybook/pull/2585)
+-   add guide for Angular [#2574](https://github.com/storybooks/storybook/pull/2574)
+-   Update custom webpack config docs [#2578](https://github.com/storybooks/storybook/pull/2578)
+-   Attempt to make propTablesExclude usage clearer [#2568](https://github.com/storybooks/storybook/pull/2568)
+
+#### Maintenance
+
+-   Add chromatic visual tests [#2505](https://github.com/storybooks/storybook/pull/2505)
+-   Update snapshots to fix tests [#2579](https://github.com/storybooks/storybook/pull/2579)
+
+#### Dependency Upgrades
+
+-   Upgraded `make-error` in `addons/actions` from "1.3.0" to "1.3.2" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `zone.js` in `app/angular` from "0.8.18" to "0.8.19" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `zone.js` in `examples/angular-cli` from "0.8.18" to "0.8.19" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `@angular/cli` in `examples/angular-cli` from "1.6.2" to "1.6.3" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `karma-coverage-istanbul-reporter` in `examples/angular-cli` from "1.3.1" to "1.3.3" [#2581](https://github.com/storybooks/storybook/pull/2581)
+
 # 3.3.1
 
 2017-December-26
