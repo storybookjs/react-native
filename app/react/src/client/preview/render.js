@@ -13,6 +13,7 @@ const isBrowser = typeof window !== 'undefined';
 let rootEl = null;
 let previousKind = '';
 let previousStory = '';
+let previousRevision = -1;
 
 if (isBrowser) {
   rootEl = document.getElementById('root');
@@ -45,6 +46,7 @@ export function renderMain(data, storyStore, forceRender) {
   const noPreview = <NoPreview />;
   const { selectedKind, selectedStory } = data;
 
+  const revision = storyStore.getRevision();
   const story = storyStore.getStory(selectedKind, selectedStory);
   if (!story) {
     ReactDOM.render(noPreview, rootEl);
@@ -55,7 +57,14 @@ export function renderMain(data, storyStore, forceRender) {
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
   //    https://github.com/storybooks/react-storybook/issues/116
-  if (!forceRender && selectedKind === previousKind && previousStory === selectedStory) {
+  // However, we do want the story to re-render if the store itself has changed
+  // (which happens at the moment when HMR occurs)
+  if (
+    !forceRender &&
+    revision === previousRevision &&
+    selectedKind === previousKind &&
+    previousStory === selectedStory
+  ) {
     return null;
   }
 
@@ -63,6 +72,7 @@ export function renderMain(data, storyStore, forceRender) {
   // Otherwise, React may not recrease instances for every story run.
   // This could leads to issues like below:
   //    https://github.com/storybooks/react-storybook/issues/81
+  previousRevision = revision;
   previousKind = selectedKind;
   previousStory = selectedStory;
   ReactDOM.unmountComponentAtNode(rootEl);
