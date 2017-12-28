@@ -10,6 +10,18 @@ function getId() {
 export default class StoryStore {
   constructor() {
     this._data = {};
+    // This number is incremented on every HMR.
+    // In theory it could also be incremented if stories were dynamically
+    // changed in the store
+    this._revision = 0;
+  }
+
+  getRevision() {
+    return this._revision;
+  }
+
+  incrementRevision() {
+    this._revision += 1;
   }
 
   addStory(kind, name, fn, fileName) {
