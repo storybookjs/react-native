@@ -34,16 +34,6 @@ In the case of Vue: `import { ... } from '@storybook/addon-knobs/vue';`
 
 In the case of Angular: `import { ... } from '@storybook/addon-knobs/angular';`
 
-### Storyshots Jest configuration
-
-Storyshots users will need to add a line to their `jest.config.js`:
-
-```js
-  transformIgnorePatterns: ['/node_modules/(?!lodash-es/.*)'],
-```
-
-We are working to resolve the issue that requires this: https://github.com/storybooks/storybook/issues/2570
-
 ## From version 3.1.x to 3.2.x
 
 **NOTE:** technically this is a breaking change, but only if you use TypeScript. Sorry people!
