@@ -1,6 +1,6 @@
 {
   "name": "angular-cli",
-  "version": "3.3.0-rc.0",
+  "version": "3.3.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -25,18 +25,18 @@
     "@angular/router": "^5.0.0-beta.7",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.2",
+    "@angular/cli": "1.6.3",
     "@angular/compiler-cli": "^5.0.0-beta.7",
     "@angular/language-service": "^5.0.0-beta.7",
-    "@storybook/addon-actions": "^3.3.0-rc.0",
-    "@storybook/addon-links": "^3.3.0-rc.0",
-    "@storybook/addon-notes": "^3.3.0-rc.0",
-    "@storybook/addon-storyshots": "^3.3.0-rc.0",
-    "@storybook/addons": "^3.3.0-rc.0",
-    "@storybook/angular": "^3.3.0-rc.0",
+    "@storybook/addon-actions": "^3.3.2",
+    "@storybook/addon-links": "^3.3.2",
+    "@storybook/addon-notes": "^3.3.2",
+	"@storybook/addon-storyshots": "^3.3.2",
+    "@storybook/addons": "^3.3.2",
+    "@storybook/angular": "^3.3.2",
     "@types/jasmine": "~2.8.2",
     "@types/node": "~6.0.60",
     "codelyzer": "^3.1.2",
@@ -45,7 +45,7 @@
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.3.1",
+    "karma-coverage-istanbul-reporter": "^1.3.3",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.2.2",

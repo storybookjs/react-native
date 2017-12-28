@@ -19,7 +19,6 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest',
   },
-  transformIgnorePatterns: ['/node_modules/(?!lodash-es/.*)'],
   testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
