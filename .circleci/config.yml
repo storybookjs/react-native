@@ -87,10 +87,8 @@ jobs:
             cd examples/angular-cli
             yarn build-storybook
       - run:
-          name: "Run image snapshots on react kitchen-sink"
-          command: |
-            cd examples/cra-kitchen-sink
-            yarn test-image-snapshots
+          name: "Run image snapshots on cra-kitchen-sink"
+          command: yarn test --image
       - run:
           name: "Run angular-cli"
           command: |
