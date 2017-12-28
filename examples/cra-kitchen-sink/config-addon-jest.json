@@ -5,6 +5,7 @@
   "transform": {
     ".*": "babel-jest"
   },
+  "transformIgnorePatterns": ["/node_modules/(?!lodash-es/.*)"],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ],
@@ -24,5 +25,6 @@
     "!src/**/__test__/*",
     "!src/**/index.js",
     "!src/**/story.js"
-  ]
+  ],
+  "testMatch": ["<rootDir>/src/addon-jest.runner.js"]
 }

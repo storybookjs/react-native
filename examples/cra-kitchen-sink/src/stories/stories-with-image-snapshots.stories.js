@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { WithNotes } from '@storybook/addon-notes';
 import { Button } from '@storybook/react/demo';
 
-storiesOf('Addon Storyshots.Button.ImageSnapshot', module)
+storiesOf('Addon Storyshots.Button.withImageSnapshot', module)
   .add('with text', () => (
     <Button onClick={action('clicked')}>
       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}

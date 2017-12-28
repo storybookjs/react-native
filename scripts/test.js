@@ -25,23 +25,13 @@ const spawn = command => {
 
 const main = program.version('3.0.0').option('--all', `Test everything ${chalk.gray('(all)')}`);
 
-const createProject = ({
-  defaultValue,
-  option,
-  name,
-  projectLocation,
-  isJest,
-  extraParam,
-  env = '',
-}) => ({
+const createProject = ({ defaultValue, option, name, projectLocation, isJest }) => ({
   value: false,
   defaultValue: defaultValue || false,
   option: option || undefined,
   name: name || 'unnamed task',
   projectLocation,
   isJest,
-  extraParam,
-  env,
 });
 const createOption = ({ defaultValue, option, name, extraParam }) => ({
   value: false,
@@ -77,10 +67,8 @@ const tasks = {
     name: `Image snapshots of CRA example app ${chalk.gray('(image)')}`,
     defaultValue: false,
     option: '--image',
-    projectLocation: path.join(__dirname, '..', 'examples/cra-kitchen-sink'),
-    extraParam: 'image-storyshots.test.js',
-    isJest: false,
-    env: 'RUN_IMAGE_SNAPSHOTS=true',
+    projectLocation: path.join(__dirname, '..', 'examples/cra-kitchen-sink/image-storyshots'),
+    isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
@@ -136,7 +124,6 @@ const getProjects = list => {
 };
 
 const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
-const getEnv = list => list.filter(key => key.env).map(key => key.env);
 
 Object.keys(tasks)
   .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
@@ -200,14 +187,11 @@ selection
       const jestProjects = projects.filter(key => key.isJest).map(key => key.projectLocation);
       const nonJestProjects = projects.filter(key => !key.isJest);
       const extraParams = getExtraParams(list).join(' ');
-      const env = getEnv(list).join(' ');
-
       if (jestProjects.length > 0) {
         spawn(`jest --projects ${jestProjects.join(' ')} ${extraParams}`);
       }
-
       nonJestProjects.forEach(key =>
-        spawn(`${env} npm --prefix ${key.projectLocation} test -- ${extraParams}`)
+        spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
       );
       process.stdout.write('\x07');
     }
