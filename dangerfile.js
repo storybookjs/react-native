@@ -1,5 +1,5 @@
 import { fail, danger } from 'danger';
-import { flatten, intersection, isEmpty, includes } from 'lodash-es';
+import { flatten, intersection, isEmpty, includes } from 'lodash';
 
 const pkg = require('./package.json'); // eslint-disable-line import/newline-after-import
 const prLogConfig = pkg['pr-log'];
