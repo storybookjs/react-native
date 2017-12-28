@@ -41,6 +41,7 @@ export default class ClientApi {
     if (m && m.hot) {
       m.hot.dispose(() => {
         this._storyStore.removeStoryKind(kind);
+        this._storyStore.incrementRevision();
       });
     }
 

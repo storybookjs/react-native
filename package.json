@@ -25,6 +25,7 @@
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:md": "remark",
     "publish": "lerna publish",
+    "postpublish": "yarn test --cli --update",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "npm --prefix examples/cra-kitchen-sink run storybook",
     "test": "node ./scripts/test.js",
@@ -32,6 +33,7 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.91",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.1.2",
@@ -72,7 +74,7 @@
     "jest-jasmine2": "^22.0.4",
     "lerna": "^2.5.1",
     "lint-staged": "^6.0.0",
-    "lodash-es": "^4.17.4",
+    "lodash": "^4.17.4",
     "nodemon": "^1.14.3",
     "npmlog": "^4.1.2",
     "prettier": "^1.9.2",
