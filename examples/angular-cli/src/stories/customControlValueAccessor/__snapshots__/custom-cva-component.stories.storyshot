@@ -10,7 +10,6 @@ exports[`Storyshots ngModel custom ControlValueAccessor 1`] = `
     
   </div>
       <input
-    class="ng-untouched ng-pristine ng-valid"
     type="text"
   />
     

@@ -7,7 +7,7 @@ exports[`Storyshots Addon Actions Action and method 1`] = `
 >
   
         <button
-    _ngcontent-c5=""
+    _ngcontent-c4=""
   >
     
   </button>
@@ -22,7 +22,7 @@ exports[`Storyshots Addon Actions Action only 1`] = `
 >
   
         <button
-    _ngcontent-c4=""
+    _ngcontent-c3=""
   >
     
   </button>
