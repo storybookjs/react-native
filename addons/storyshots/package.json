@@ -41,7 +41,7 @@
     "react-dom": "^16.1.0"
   },
   "peerDependencies": {
-	"@angular/core": ">=4.0.0",
+    "@angular/core": ">=4.0.0",
     "@storybook/addons": "^3.3.3",
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "react": "*",
