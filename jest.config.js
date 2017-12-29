@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    __TRANSFORM_HTML__: true,
+  },
   cacheDirectory: '.cache/jest',
   clearMocks: true,
   moduleNameMapper: {
@@ -16,8 +19,8 @@ module.exports = {
     '<rootDir>/examples/angular-cli',
   ],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
   },
   testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
@@ -33,5 +36,5 @@ module.exports = {
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html'],
 };
