@@ -7,26 +7,33 @@ export const snapshotWithOptions = options => ({
   renderTree,
   snapshotFileName,
 }) => {
-  const tree = renderTree(story, context, options);
+  const result = renderTree(story, context, options);
 
-  if (snapshotFileName) {
-    expect(tree).toMatchSpecificSnapshot(snapshotFileName);
-  } else {
-    expect(tree).toMatchSnapshot();
+  function match(tree) {
+    if (snapshotFileName) {
+      expect(tree).toMatchSpecificSnapshot(snapshotFileName);
+    } else {
+      expect(tree).toMatchSnapshot();
+    }
+
+    if (typeof tree.unmount === 'function') {
+      tree.unmount();
+    }
   }
 
-  if (typeof tree.unmount === 'function') {
-    tree.unmount();
+  if (typeof result.then === 'function') {
+    return result.then(match);
   }
+
+  return match(result);
 };
 
-export const multiSnapshotWithOptions = options => ({ story, context, renderTree }) => {
+export const multiSnapshotWithOptions = options => ({ story, context, renderTree }) =>
   snapshotWithOptions(options)({
     story,
     context,
     renderTree,
     snapshotFileName: getSnapshotFileName(context),
   });
-};
 
 export const snapshot = snapshotWithOptions({});

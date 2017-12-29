@@ -10,9 +10,9 @@ addSerializer(HTMLCommentSerializer);
 addSerializer(AngularSnapshotSerializer);
 
 function getRenderedTree(story, context) {
-  const curentStory = story.render(context);
+  const currentStory = story.render(context);
 
-  const { moduleMeta, AnnotatedComponent } = initModuleData(curentStory);
+  const { moduleMeta, AnnotatedComponent } = initModuleData(currentStory);
 
   TestBed.configureTestingModule({
     imports: [...moduleMeta.imports],
@@ -23,13 +23,12 @@ function getRenderedTree(story, context) {
     bootstrap: [...moduleMeta.bootstrap],
   });
 
-  // this is async. Should be somehow called in beforeEach
-  TestBed.compileComponents();
+  return TestBed.compileComponents().then(() => {
+    const tree = TestBed.createComponent(AnnotatedComponent);
+    tree.detectChanges();
 
-  const tree = TestBed.createComponent(AnnotatedComponent);
-  tree.detectChanges();
-
-  return tree;
+    return tree;
+  });
 }
 
 export default getRenderedTree;
