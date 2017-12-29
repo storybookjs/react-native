@@ -39,7 +39,7 @@ export function renderException(error) {
   logger.error(error.stack);
 }
 
-export function renderMain(data, storyStore) {
+export function renderMain(data, storyStore, forceRender) {
   if (storyStore.size() === 0) return null;
 
   const NoPreview = () => <p>No Preview Available!</p>;
@@ -60,6 +60,7 @@ export function renderMain(data, storyStore) {
   // However, we do want the story to re-render if the store itself has changed
   // (which happens at the moment when HMR occurs)
   if (
+    !forceRender &&
     revision === previousRevision &&
     selectedKind === previousKind &&
     previousStory === selectedStory
@@ -109,14 +110,14 @@ export function renderMain(data, storyStore) {
   return null;
 }
 
-export default function renderPreview({ reduxStore, storyStore }) {
+export default function renderPreview({ reduxStore, storyStore }, forceRender = false) {
   const state = reduxStore.getState();
   if (state.error) {
     return renderException(state.error);
   }
 
   try {
-    return renderMain(state, storyStore);
+    return renderMain(state, storyStore, forceRender);
   } catch (ex) {
     return renderException(ex);
   }

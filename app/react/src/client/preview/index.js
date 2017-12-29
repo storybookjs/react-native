@@ -21,7 +21,9 @@ const isBrowser =
   !(navigator.userAgent.indexOf('jsdom') > -1);
 
 const storyStore = new StoryStore();
+/* eslint-disable no-underscore-dangle */
 const reduxStore = createStore(reducer);
+/* eslint-enable */
 const context = { storyStore, reduxStore };
 
 if (isBrowser) {
@@ -54,3 +56,5 @@ const renderUI = () => {
 };
 
 reduxStore.subscribe(renderUI);
+
+export const forceReRender = () => render(context, true);
