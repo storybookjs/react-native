@@ -27,17 +27,16 @@ export default function testStorySnapshots(options = {}) {
 
   addons.setChannel(createChannel());
 
-  const { framework, storybook, renderTree } = loadFramework(options);
-
-  // NOTE: keep `suit` typo for backwards compatibility
-  const suite = options.suite || options.suit || 'Storyshots';
+  const { storybook, framework, renderTree } = loadFramework(options);
   const stories = storybook.getStorybook();
 
   if (stories.length === 0) {
     throw new Error('storyshots found 0 stories');
   }
 
-  // Added not to break existing storyshots configs (can be removed in a future major release)
+  // NOTE: keep `suit` typo for backwards compatibility
+  const suite = options.suite || options.suit || 'Storyshots';
+  // NOTE: Added not to break existing storyshots configs (can be removed in a future major release)
   const storyNameRegex = options.storyNameRegex || options.storyRegex;
 
   const snapshotOptions = {
