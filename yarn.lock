@@ -5930,13 +5930,13 @@ graceful-fs@4.1.11, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.3,
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-graphiql@^0.11.10:
-  version "0.11.10"
-  resolved "https://registry.yarnpkg.com/graphiql/-/graphiql-0.11.10.tgz#6d24261b5ccd04bafcea4b8168ee2ff89bb22248"
+graphiql@^0.11.11:
+  version "0.11.11"
+  resolved "https://registry.yarnpkg.com/graphiql/-/graphiql-0.11.11.tgz#eeaf9a38927dbe8c6ecbf81e700735e16ec50e71"
   dependencies:
     codemirror "^5.26.0"
     codemirror-graphql "^0.6.11"
-    marked "0.3.6"
+    markdown-it "^8.4.0"
 
 graphql-config@1.0.8:
   version "1.0.8"
@@ -8306,6 +8306,12 @@ lie@~3.1.0:
   dependencies:
     immediate "~3.0.5"
 
+linkify-it@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.3.tgz#d94a4648f9b1c179d64fa97291268bdb6ce9434f"
+  dependencies:
+    uc.micro "^1.0.1"
+
 lint-staged@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-6.0.0.tgz#7ab7d345f2fe302ff196f1de6a005594ace03210"
@@ -8853,6 +8859,16 @@ markdown-extensions@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/markdown-extensions/-/markdown-extensions-1.1.0.tgz#fba0f1a2ebb4f4123d25b7a93bc35792c11f504e"
 
+markdown-it@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.0.tgz#e2400881bf171f7018ed1bd9da441dac8af6306d"
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.3"
+
 markdown-loader@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/markdown-loader/-/markdown-loader-2.0.1.tgz#eed8bead82978bacf17b76a11c5593a013e2d976"
@@ -8863,10 +8879,6 @@ markdown-loader@^2.0.1:
 markdown-table@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.1.tgz#4b3dd3a133d1518b8ef0dbc709bf2a1b4824bc8c"
-
-marked@0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
 marked@^0.3.6:
   version "0.3.9"
@@ -8913,6 +8925,10 @@ mdast-util-heading-style@^1.0.2:
 mdast-util-to-string@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mdast-util-to-string/-/mdast-util-to-string-1.0.4.tgz#5c455c878c9355f0c1e7f3e8b719cf583691acfb"
+
+mdurl@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -13718,6 +13734,10 @@ typescript@^2.4.0, typescript@~2.6.1:
 ua-parser-js@^0.7.9:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
+
+uc.micro@^1.0.1, uc.micro@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.3.tgz#7ed50d5e0f9a9fb0a573379259f2a77458d50192"
 
 uglify-es@3.2.2, uglify-es@^3.1.8:
   version "3.2.2"
