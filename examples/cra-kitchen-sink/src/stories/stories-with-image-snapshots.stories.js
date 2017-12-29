@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
-import { WithNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 import { Button } from '@storybook/react/demo';
 
 storiesOf('Addon Storyshots.Button.withImageSnapshot', module)
@@ -19,12 +19,12 @@ storiesOf('Addon Storyshots.Button.withImageSnapshot', module)
       😀 😎 👍 💯
     </Button>
   ))
-  .add('with notes', () => (
-    // deprecated usage
-    <WithNotes notes="A very simple button">
+  .add(
+    'with notes',
+    withNotes('A very simple button')(() => (
       <Button>
         {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
         Check my notes in the notes panel
       </Button>
-    </WithNotes>
-  ));
+    ))
+  );
