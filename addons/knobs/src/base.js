@@ -49,6 +49,10 @@ export function select(name, options, value) {
   return manager.knob(name, { type: 'select', options, value });
 }
 
+export function selectV2(name, options, value) {
+  return manager.knob(name, { type: 'select', selectV2: true, options, value });
+}
+
 export function array(name, value, separator = ',') {
   return manager.knob(name, { type: 'array', value, separator });
 }
