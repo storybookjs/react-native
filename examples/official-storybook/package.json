@@ -24,7 +24,7 @@
     "@storybook/components": "^3.3.3",
     "@storybook/react": "^3.3.3",
     "babel-jest": "^21.2.0",
-    "enzyme": "^3.2.0",
+    "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
     "eventemitter3": "^3.0.0",
