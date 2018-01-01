@@ -1,3 +1,24 @@
+# 3.3.3
+
+2017-December-29
+
+#### Bug Fixes
+
+-   [app:angular] Fixed dependency injection for components [#2566](https://github.com/storybooks/storybook/pull/2566)
+-   Revert "Move everything from lodash to lodash-es" [#2591](https://github.com/storybooks/storybook/pull/2591)
+
+#### Maintenance
+
+-   Update CLI snapshots as a postpublish step [#2565](https://github.com/storybooks/storybook/pull/2565)
+-   Add more `imports` eslint rules [#2589](https://github.com/storybooks/storybook/pull/2589)
+
+#### Dependency Upgrades
+
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+
 # 3.3.2
 
 2017-December-28

@@ -9,7 +9,6 @@
     + [Add a playground addon](#add-a-playground-addon)
     + [See multiple (or all) stories in 1 preview.](#see-multiple--or-all--stories-in-1-preview)
   * [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    + [Angular](#angular)
     + [Polymer & Webcomponents](#polymer---webcomponents)
     + [Aurelia](#aurelia)
     + [Ember](#ember)
@@ -62,13 +61,9 @@ Unfortunately if you choose anything other then React or React-Native you can no
 
 We want you to be able to use storybook with the framework / library of your choice.
 
-### Angular
-
-Storybook for Angular is in alpha and will be included in the 3.3.0 release.
-
 ### Polymer & Webcomponents
 
-Storybook for Polymer is currently in development, and will support custom elements.
+Storybook for Polymer is currently in development, and will support custom elements and plain HTML.
 
 ### Aurelia
 
