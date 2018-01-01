@@ -78,15 +78,15 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.5",
+    "nodemon": "^1.14.7",
     "vue": "^2.5.13",
-    "vue-loader": "^13.6.1",
+    "vue-loader": "^13.6.2",
     "vue-template-compiler": "^2.5.13"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "vue": "2.5.13",
-    "vue-loader": "13.6.1",
+    "vue-loader": "13.6.2",
     "vue-template-compiler": "2.5.13"
   }
 }
