@@ -1,3 +1,7 @@
+import { ɵReflectionCapabilities } from '@angular/core';
+
+const reflectionCapabilities = new ɵReflectionCapabilities();
+
 function getMeta(component: any, [name1, name2]: any, defaultValue: any) {
   if (!name2) {
     name2 = name1;
@@ -24,5 +28,11 @@ export function getPropMetadata(component: any) {
 }
 
 export function getParameters(component: any) {
-  return getMeta(component, ['parameters'], []);
+  const params = reflectionCapabilities.parameters(component);
+
+  if (!params || !params[0]) {
+    return getMeta(component, ['parameters'], []);
+  }
+
+  return params;
 }

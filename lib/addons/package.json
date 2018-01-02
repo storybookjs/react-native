@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addons",
-  "version": "3.3.1",
+  "version": "3.3.3",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"

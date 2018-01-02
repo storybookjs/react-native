@@ -1,9 +1,10 @@
 {
   "name": "@storybook/client-logger",
-  "version": "3.3.1",
+  "version": "3.3.3",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   }

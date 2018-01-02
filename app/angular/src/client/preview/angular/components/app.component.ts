@@ -2,16 +2,7 @@
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
 // For the time being, the ViewContainerRef approach works pretty well.
-
-import has from 'lodash-es/has';
-import get from 'lodash-es/get';
-import set from 'lodash-es/set';
-import isFunction from 'lodash-es/isFunction';
-import isUndefined from 'lodash-es/isUndefined';
-import isEmpty from 'lodash-es/isEmpty';
-import forEach from 'lodash-es/forEach';
-import invoke from 'lodash-es/invoke';
-
+import * as _ from 'lodash';
 import {
   Component,
   Inject,
@@ -24,11 +15,8 @@ import {
   SimpleChanges,
   SimpleChange
 } from '@angular/core';
-
 import { STORY } from '../app.token';
 import { NgStory, ICollection } from '../types';
-
-const _ = { has, get, set, isFunction, isUndefined, isEmpty , forEach, invoke };
 
 @Component({
   selector: 'app-root',
@@ -37,7 +25,6 @@ const _ = { has, get, set, isFunction, isUndefined, isEmpty , forEach, invoke };
 export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
-
   constructor(
     private cfr: ComponentFactoryResolver,
     @Inject(STORY) private data: NgStory
@@ -103,7 +90,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
 
     if (_.isFunction(props.ngModelChange)) {
-      _.invoke(instance, 'registerOnChange', props.ngModelChange);
+        _.invoke(instance, 'registerOnChange', props.ngModelChange);
     }
   }
 }
