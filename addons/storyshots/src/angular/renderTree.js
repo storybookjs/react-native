@@ -1,10 +1,10 @@
 import AngularSnapshotSerializer from 'jest-preset-angular/AngularSnapshotSerializer';
 import HTMLCommentSerializer from 'jest-preset-angular/HTMLCommentSerializer';
-// eslint-disable-next-line
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { TestBed } from '@angular/core/testing';
-// eslint-disable-next-line
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
-// eslint-disable-next-line
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { addSerializer } from 'jest-specific-snapshot';
 import { initModuleData } from './helpers.ts';
