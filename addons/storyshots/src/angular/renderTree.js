@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import AngularSnapshotSerializer from 'jest-preset-angular/AngularSnapshotSerializer';
 import HTMLCommentSerializer from 'jest-preset-angular/HTMLCommentSerializer';
 import { TestBed } from '@angular/core/testing';
