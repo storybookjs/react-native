@@ -64,10 +64,10 @@ const tasks = {
     isJest: true,
   }),
   image: createProject({
-    name: `Image snapshots of CRA example app ${chalk.gray('(image)')}`,
+    name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
     defaultValue: false,
     option: '--image',
-    projectLocation: path.join(__dirname, '..', 'examples/cra-kitchen-sink/image-storyshots'),
+    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
     isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({

@@ -1,10 +1,15 @@
-import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+/* This file is not suffixed by ".test.js" to not being run with all other test files.
+* This test needs the static build of the storybook to run.
+* `yarn run image-snapshots` generates the static build & uses the image snapshots behavior of storyshots.
+* */
 import path from 'path';
 import fs from 'fs';
+import initStoryshots, { imageSnapshot } from '../../../addons/storyshots/src/index';
 
+// Image snapshots
 // We do screenshots against the static build of the storybook.
 // For this test to be meaningful, you must build the static version of the storybook *before* running this test suite.
-const pathToStorybookStatic = path.join(__dirname, '..', 'storybook-static');
+const pathToStorybookStatic = path.join(__dirname, '../', 'storybook-static');
 
 if (!fs.existsSync(pathToStorybookStatic)) {
   console.error(
@@ -14,8 +19,7 @@ if (!fs.existsSync(pathToStorybookStatic)) {
   initStoryshots({
     suite: 'Image snapshots',
     framework: 'react',
-    storyKindRegex: /withImageSnapshot$/,
-    configPath: path.join(__dirname, '..', '.storybook'),
+    configPath: path.join(__dirname, '..'),
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
       getMatchOptions: () => ({

@@ -4,7 +4,8 @@
   "scripts": {
     "build-storybook": "build-storybook -c ./",
     "storybook": "start-storybook -p 9010 -c ./",
-    "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p"
+    "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
+    "image-snapshots": "yarn run build-storybook && jest projects=../image-snapshots"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.3.3",
