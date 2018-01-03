@@ -30,7 +30,7 @@
     "@storybook/addons": "^3.3.3",
     "@storybook/channel-websocket": "^3.3.3",
     "@storybook/ui": "^3.3.3",
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^7.2.4",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
