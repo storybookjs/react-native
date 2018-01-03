@@ -16,6 +16,7 @@
     "example": "jest storyshot.test"
   },
   "dependencies": {
+    "@angular/core": ">=4.0.0",
     "@storybook/channels": "^3.3.3",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
@@ -23,6 +24,8 @@
     "jest-preset-angular": "^5.0.0",
     "jest-specific-snapshot": "^0.3.0",
     "prop-types": "^15.6.0",
+    "react": "*",
+    "react-test-renderer": "*",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
@@ -41,10 +44,7 @@
     "react-dom": "^16.1.0"
   },
   "peerDependencies": {
-    "@angular/core": ">=4.0.0",
     "@storybook/addons": "^3.3.3",
-    "babel-core": "^6.26.0 || ^7.0.0-0",
-    "react": "*",
-    "react-test-renderer": "*"
+    "babel-core": "^6.26.0 || ^7.0.0-0"
   }
 }

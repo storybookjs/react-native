@@ -118,7 +118,7 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.0.0-beta.7":
+"@angular/core@>=4.0.0", "@angular/core@^5.0.0-beta.7":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.1.2.tgz#751070c0f4e5a8c4e2170204e08eca06391b84b1"
   dependencies:
@@ -11401,7 +11401,7 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-test-renderer@^16.0.0-0, react-test-renderer@^16.1.0, react-test-renderer@^16.2.0:
+react-test-renderer@*, react-test-renderer@^16.0.0-0, react-test-renderer@^16.1.0, react-test-renderer@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.2.0.tgz#bddf259a6b8fcd8555f012afc8eacc238872a211"
   dependencies:
