@@ -19,7 +19,8 @@
   "dependencies": {
     "@storybook/client-logger": "^3.3.3",
     "events": "^1.1.1",
-    "global": "^4.3.2"
+    "global": "^4.3.2",
+    "qs": "^6.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"

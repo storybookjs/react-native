@@ -60,7 +60,7 @@
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.5",
     "prop-types": "^15.5.10",
-    "qs": "^6.4.0",
+    "qs": "^6.5.1",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
