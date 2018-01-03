@@ -56,7 +56,7 @@ export default function() {
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
       new webpack.ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)@angular/,
+        /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
         path.resolve(__dirname, '../src')
       ),
     ],
@@ -77,6 +77,17 @@ export default function() {
           test: /\.(html|css)$/,
           loader: 'raw-loader',
           exclude: /\.async\.(html|css)$/,
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
         },
       ],
     },

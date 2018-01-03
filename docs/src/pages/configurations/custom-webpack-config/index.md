@@ -85,8 +85,7 @@ Storybook uses the config returned from the above function. So, try to edit the 
 -   entry
 -   output
 -   first loader in the module.loaders (Babel loader for JS)
-
-Other than that, you should try to keep the default set of plugins.
+-   all existing plugins
 
 ## Full control mode + default
 
@@ -97,6 +96,8 @@ Add following content to the `webpack.config.js` in your Storybook config direct
 > We plan to expose our default webpack-config as it's own package in the future.
 
 ```js
+const path = require('path');
+
 // load the default config generator.
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 

@@ -3,12 +3,25 @@
 import addons from '@storybook/addons';
 import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
-import { decycle } from './util';
+import { decycle } from './lib';
+import { canConfigureName } from './lib/util';
 
 export function action(name) {
-  // eslint-disable-next-line no-unused-vars, func-names
-  const handler = function(..._args) {
-    const args = Array.from(_args).map(arg => JSON.stringify(decycle(arg)));
+  // eslint-disable-next-line no-shadow
+  const handler = function action(..._args) {
+    const args = _args.map(arg => {
+      let result;
+
+      try {
+        result = JSON.stringify(decycle(arg));
+      } catch (error) {
+        // IE still cyclic.
+
+        return JSON.stringify(error.toString());
+      }
+
+      return result;
+    });
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {
@@ -17,16 +30,10 @@ export function action(name) {
     });
   };
 
-  // some day when {[name]: function() {}} syntax is not transpiled by babel
-  // we can get rid of this eval as by ES2015 spec the above function gets the
-  // name `name`, but babel transpiles to Object.defineProperty which doesn't do
-  // the same.
-  //
-  // Ref: https://bocoup.com/weblog/whats-in-a-function-name
-  const fnName = name && typeof name === 'string' ? name.replace(/\W+/g, '_') : 'action';
-  // eslint-disable-next-line no-eval
-  const named = eval(`(function ${fnName}() { return handler.apply(this, arguments) })`);
-  return named;
+  if (canConfigureName && name && typeof name === 'string') {
+    Object.defineProperty(handler, 'name', { value: name });
+  }
+  return handler;
 }
 
 export function decorateAction(decorators) {

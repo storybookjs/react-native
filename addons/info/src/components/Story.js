@@ -1,13 +1,12 @@
 /* eslint no-underscore-dangle: 0 */
 
-import React from 'react';
+import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import global from 'global';
 import { baseFonts } from '@storybook/components';
 
 import marksy from 'marksy';
 
-import PropTable from './PropTable';
 import Node from './Node';
 import { Pre } from './markdown';
 
@@ -60,7 +59,8 @@ const stylesheet = {
     borderRadius: '2px',
     boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.05)',
     backgroundColor: '#fff',
-    marginTop: '50px',
+    marginTop: '20px',
+    marginBottom: '20px',
   },
   infoContent: {
     marginBottom: 0,
@@ -106,14 +106,17 @@ export default class Story extends React.Component {
     super(...args);
     this.state = {
       open: false,
-      stylesheet: this.props.styles(JSON.parse(JSON.stringify(stylesheet))),
+      stylesheet: this.props.styles(stylesheet),
     };
-    this.marksy = marksy(this.props.marksyConf);
+    this.marksy = marksy({
+      createElement,
+      elements: this.props.components,
+    });
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      stylesheet: nextProps.styles(JSON.parse(JSON.stringify(stylesheet))),
+      stylesheet: nextProps.styles(stylesheet),
     });
   }
 
@@ -152,11 +155,11 @@ export default class Story extends React.Component {
 
   _renderOverlay() {
     const buttonStyle = {
-      ...stylesheet.button.base,
-      ...stylesheet.button.topRight,
+      ...this.state.stylesheet.button.base,
+      ...this.state.stylesheet.button.topRight,
     };
 
-    const infoStyle = Object.assign({}, stylesheet.info);
+    const infoStyle = Object.assign({}, this.state.stylesheet.info);
     if (!this.state.open) {
       infoStyle.display = 'none';
     }
@@ -215,7 +218,13 @@ export default class Story extends React.Component {
 
     if (React.isValidElement(this.props.info)) {
       return (
-        <div style={this.props.showInline ? stylesheet.jsxInfoContent : stylesheet.infoContent}>
+        <div
+          style={
+            this.props.showInline
+              ? this.state.stylesheet.jsxInfoContent
+              : this.state.stylesheet.infoContent
+          }
+        >
           {this.props.info}
         </div>
       );
@@ -333,7 +342,7 @@ export default class Story extends React.Component {
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
         <h2 style={this.state.stylesheet.propTableHead}>"{getName(type)}" Component</h2>
-        <PropTable
+        <this.props.PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
           maxPropArrayLength={maxPropArrayLength}
@@ -378,7 +387,7 @@ Story.propTypes = {
   showSource: PropTypes.bool,
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  marksyConf: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  components: PropTypes.shape({}),
   maxPropsIntoLine: PropTypes.number.isRequired,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
@@ -393,5 +402,5 @@ Story.defaultProps = {
   showInline: false,
   showHeader: true,
   showSource: true,
-  marksyConf: {},
+  components: {},
 };

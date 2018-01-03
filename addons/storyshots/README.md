@@ -4,7 +4,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
-[![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
+[![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
 * * *
@@ -129,7 +129,51 @@ If you are running tests from outside of your app's directory, storyshots' detec
 
 ### `test`
 
-Run a custom test function for each story, rather than the default (a vanilla snapshot test). See the exports section below for more details.
+Run a custom test function for each story, rather than the default (a vanilla snapshot test). Setting `test` will take precedence over the `renderer` option. See the exports section below for more details.
+
+### `renderer`
+
+Pass a custom renderer (such as enzymes `mount`) to record snapshots.
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import { mount } from 'enzyme';
+
+initStoryshots({
+  renderer: mount,
+});
+```
+
+If you are using enzyme, you need to make sure jest knows how to serialize rendered components.
+You can either pass in a serializer (see below) or specify an enzyme-compatible serializer (like [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json), [jest-serializer-enzyme](https://github.com/rogeliog/jest-serializer-enzyme) etc.) as the default `snapshotSerializer` in your config.
+
+Example for jest config in `package.json`:
+```json
+"devDependencies": {
+    "enzyme-to-json": "^3.2.2"
+},
+"jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+```
+
+### `serializer`
+
+Pass a custom serializer (such as enzyme-to-json) to serialize components to snapshot-comparable data.
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import toJSON from 'enzyme-to-json';
+
+initStoryshots({
+  renderer: mount,
+  serializer: toJSON,
+});
+```
+
+This option only needs to be set if the default `snapshotSerializers` is not set in your jest config.
 
 ## Exports
 
@@ -153,7 +197,7 @@ Like `snapshotWithOptions`, but generate a separate snapshot file for each stori
 
 ### `shallowSnapshot`
 
-Take a snapshot of a shallow-rendered version of the component.
+Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
 
 ### `getSnapshotFileName`
 

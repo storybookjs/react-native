@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import Dotenv from 'dotenv-webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
@@ -55,6 +56,7 @@ export default function() {
       new CaseSensitivePathsPlugin(),
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
+      new Dotenv(),
     ],
     module: {
       rules: [
@@ -64,6 +66,17 @@ export default function() {
           query: babelLoaderConfig,
           include: includePaths,
           exclude: excludePaths,
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
         },
       ],
     },

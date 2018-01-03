@@ -49,7 +49,7 @@ function renderRoot(options) {
   app = new Vue(options);
 }
 
-export function renderMain(data, storyStore) {
+export function renderMain(data, storyStore, forceRender) {
   if (storyStore.size() === 0) return;
 
   const { selectedKind, selectedStory } = data;
@@ -60,7 +60,7 @@ export function renderMain(data, storyStore) {
   // renderMain() gets executed after each action. Actions will cause the whole
   // story to re-render without this check.
   //    https://github.com/storybooks/react-storybook/issues/116
-  if (selectedKind !== previousKind || previousStory !== selectedStory) {
+  if (forceRender || selectedKind !== previousKind || previousStory !== selectedStory) {
     // We need to unmount the existing set of components in the DOM node.
     // Otherwise, React may not recrease instances for every story run.
     // This could leads to issues like below:
@@ -97,14 +97,14 @@ export function renderMain(data, storyStore) {
   });
 }
 
-export default function renderPreview({ reduxStore, storyStore }) {
+export default function renderPreview({ reduxStore, storyStore }, forceRender = false) {
   const state = reduxStore.getState();
   if (state.error) {
     return renderException(state.error);
   }
 
   try {
-    return renderMain(state, storyStore);
+    return renderMain(state, storyStore, forceRender);
   } catch (ex) {
     return renderException(ex);
   }

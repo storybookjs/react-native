@@ -1,19 +1,20 @@
-/* global window */
-
 import { createStore } from 'redux';
 import qs from 'qs';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-postmessage';
+import { navigator, window } from 'global';
 import { handleKeyboardShortcuts } from '@storybook/ui/dist/libs/key_events';
 import { StoryStore, ClientApi, ConfigApi, Actions, reducer } from '@storybook/core/client';
+
 import render from './render';
 
 // check whether we're running on node/browser
-const { navigator } = global;
 const isBrowser =
   navigator &&
+  navigator.userAgent &&
   navigator.userAgent !== 'storyshots' &&
-  !(navigator.userAgent.indexOf('Node.js') > -1);
+  !(navigator.userAgent.indexOf('Node.js') > -1) &&
+  !(navigator.userAgent.indexOf('jsdom') > -1);
 
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
@@ -70,3 +71,5 @@ const renderUI = () => {
 };
 
 reduxStore.subscribe(renderUI);
+
+export const forceReRender = () => render(context, true);
