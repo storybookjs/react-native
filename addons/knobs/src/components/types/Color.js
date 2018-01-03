@@ -87,14 +87,7 @@ class ColorType extends React.Component {
               <SketchPicker
                 color={knob.value}
                 onChange={color =>
-                  onChange(`
-                  rgba(
-                    ${color.rgb.r},
-                    ${color.rgb.g},
-                    ${color.rgb.b},
-                    ${color.rgb.a}
-                  )
-                `)
+                  onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`)
                 }
               />
             </div>
