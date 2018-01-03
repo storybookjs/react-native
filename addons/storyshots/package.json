@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@angular/core": ">=4.0.0",
+    "@angular/platform-browser-dynamic": ">=4.0.0",
     "@storybook/channels": "^3.3.3",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",

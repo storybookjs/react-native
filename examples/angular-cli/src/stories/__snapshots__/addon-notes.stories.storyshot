@@ -1,31 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon Notes Note with HTML 1`] = `
-<button-component
-  onClick={[Function EventEmitter]}
-  text=""
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-        <button
-    _ngcontent-c7=""
+  <button-component
+    _nghost-c7=""
   >
     
-  </button>
+        
+    <button
+      _ngcontent-c7=""
+    >
+      Notes with HTML
+    </button>
     
-</button-component>
+    
+  </button-component>
+</app-root>
 `;
 
 exports[`Storyshots Addon Notes Simple note 1`] = `
-<button-component
-  onClick={[Function EventEmitter]}
-  text=""
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-        <button
-    _ngcontent-c6=""
+  <button-component
+    _nghost-c6=""
   >
     
-  </button>
+        
+    <button
+      _ngcontent-c6=""
+    >
+      Notes on some Button
+    </button>
     
-</button-component>
+    
+  </button-component>
+</app-root>
 `;

@@ -4,9 +4,10 @@ import {
   Component,
 } from '@angular/core';
 
+import { AppComponent } from './app.component';
 import { STORY } from './app.token';
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
-import { NgModuleMetadata, NgStory, NgProvidedData } from './types';
+import { NgModuleMetadata, NgStory } from './types';
 
 interface IComponent extends Type<any> {
   annotations: any[];
@@ -76,7 +77,7 @@ const getModule = (
     declarations: Array<Type<any> | any[]>,
     entryComponents: Array<Type<any> | any[]>,
     bootstrap: Array<Type<any> | any[]>,
-    data: NgProvidedData,
+    data: NgStory,
     moduleMetadata: NgModuleMetadata = {
       imports: [],
       schemas: [],
@@ -122,11 +123,11 @@ export const initModuleData = (currentStory: NgStory): any => {
   };
 
   return {
-    AnnotatedComponent,
+    AppComponent,
     moduleMeta: getModule(
+      [AppComponent, AnnotatedComponent],
       [AnnotatedComponent],
-      [AnnotatedComponent],
-      [],
+      [AppComponent],
       story,
       moduleMeta
     ),

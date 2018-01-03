@@ -13,16 +13,3 @@ export interface NgStory {
     propsMeta: ICollection,
     moduleMetadata?: NgModuleMetadata
 }
-
-export interface NgError {
-    message: string,
-    stack: string
-}
-
-export type NgProvidedData = NgStory | NgError;
-
-export interface IContext {
-    [p: string]: any
-}
-
-export type IGetStoryWithContext = (context: IContext) => NgStory

@@ -1,88 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Component dependencies inputs and inject dependencies 1`] = `
-<di-component
-  elRef={[Function ElementRef]}
-  injector={[Function Injector_]}
-  testToken={[Function Number]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  <div>
-    
-    
+  <di-component>
     <div>
-      All dependencies are defined: false
-    </div>
+      
     
+      <div>
+        All dependencies are defined: true
+      </div>
+      
     
-    <div>
-      Title: 
-    </div>
+      <div>
+        Title: Component dependencies
+      </div>
+      
     
-    
-    <div>
-      Injector: function Injector_(view, elDef) {
+      <div>
+        Injector: function Injector_(view, elDef) {
           this.view = view;
           this.elDef = elDef;
       }
-    </div>
+      </div>
+      
     
+      <div>
+        ElementRef: {"nativeElement":{}}
+      </div>
+      
     
-    <div>
-      ElementRef: {"nativeElement":{}}
-    </div>
-    
-    
-    <div>
-      TestToken: 123
+      <div>
+        TestToken: 123
+      </div>
+      
+  
     </div>
     
   
-  </div>
-  
-</di-component>
+  </di-component>
+</app-root>
 `;
 
 exports[`Storyshots Component dependencies inputs and inject dependencies with knobs 1`] = `
-<di-component
-  cd={[Function ViewRef_]}
-  elRef={[Function ElementRef]}
-  injector={[Function Injector_]}
-  knobChanged={[Function Function]}
-  setPaneKnobs={[Function Function]}
-  testToken={[Function Number]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  <div>
-    
-    
+  <di-component>
     <div>
-      All dependencies are defined: false
-    </div>
+      
     
+      <div>
+        All dependencies are defined: true
+      </div>
+      
     
-    <div>
-      Title: 
-    </div>
+      <div>
+        Title: Component dependencies
+      </div>
+      
     
-    
-    <div>
-      Injector: function Injector_(view, elDef) {
+      <div>
+        Injector: function Injector_(view, elDef) {
           this.view = view;
           this.elDef = elDef;
       }
-    </div>
+      </div>
+      
     
+      <div>
+        ElementRef: {"nativeElement":{}}
+      </div>
+      
     
-    <div>
-      ElementRef: {"nativeElement":{}}
-    </div>
-    
-    
-    <div>
-      TestToken: 123
+      <div>
+        TestToken: 123
+      </div>
+      
+  
     </div>
     
   
-  </div>
-  
-</di-component>
+  </di-component>
+</app-root>
 `;

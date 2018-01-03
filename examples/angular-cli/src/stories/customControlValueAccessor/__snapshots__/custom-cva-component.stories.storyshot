@@ -1,17 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ngModel custom ControlValueAccessor 1`] = `
-<custom-cva-component
-  onChange={[Function Function]}
-  onTouch={[Function Function]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-      <div>
+  <custom-cva-component>
     
-  </div>
-      <input
-    type="text"
-  />
+      
+    <div>
+      Type anything
+    </div>
     
-</custom-cva-component>
+      
+    <input
+      type="text"
+    />
+    
+    
+  </custom-cva-component>
+</app-root>
 `;

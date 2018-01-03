@@ -1,31 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon Actions Action and method 1`] = `
-<button-component
-  onClick={[Function EventEmitter]}
-  text=""
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-        <button
-    _ngcontent-c4=""
+  <button-component
+    _nghost-c4=""
   >
     
-  </button>
+        
+    <button
+      _ngcontent-c4=""
+    >
+      Action and Method
+    </button>
     
-</button-component>
+    
+  </button-component>
+</app-root>
 `;
 
 exports[`Storyshots Addon Actions Action only 1`] = `
-<button-component
-  onClick={[Function EventEmitter]}
-  text=""
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-        <button
-    _ngcontent-c3=""
+  <button-component
+    _nghost-c3=""
   >
     
-  </button>
+        
+    <button
+      _ngcontent-c3=""
+    >
+      Action only
+    </button>
     
-</button-component>
+    
+  </button-component>
+</app-root>
 `;

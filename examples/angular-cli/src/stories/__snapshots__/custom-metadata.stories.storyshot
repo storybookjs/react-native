@@ -1,62 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Custom Pipe Default 1`] = `
-<name>
-  <h1>
-    CustomPipe: undefined
-  </h1>
-</name>
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <name>
+    <h1>
+      CustomPipe: foobar
+    </h1>
+  </name>
+</app-root>
 `;
 
 exports[`Storyshots Custom Pipe/With Knobs NameComponent 1`] = `
-<name
-  cd={[Function ViewRef_]}
-  knobChanged={[Function Function]}
-  setPaneKnobs={[Function Function]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  <h1>
-    CustomPipe: undefined
-  </h1>
-</name>
+  <name>
+    <h1>
+      CustomPipe: foobar
+    </h1>
+  </name>
+</app-root>
 `;
 
 exports[`Storyshots Custom ngModule metadata simple 1`] = `
-<simple-service-component
-  dummy={[Function DummyService]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-      <p>
-    :
-  </p>
-      <ul>
-    
-        
-    
+  <simple-service-component>
     
       
-  </ul>
+    <p>
+      Static name:
+    </p>
     
-</simple-service-component>
+      
+    <ul>
+      
+        
+      
+      
+      
+    </ul>
+    
+    
+  </simple-service-component>
+</app-root>
 `;
 
 exports[`Storyshots Custom ngModule metadata with knobs 1`] = `
-<simple-service-component
-  cd={[Function ViewRef_]}
-  dummy={[Function DummyService]}
-  knobChanged={[Function Function]}
-  setPaneKnobs={[Function Function]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-      <p>
-    :
-  </p>
-      <ul>
-    
-        
-    
+  <simple-service-component>
     
       
-  </ul>
+    <p>
+      Dynamic knob:
+    </p>
     
-</simple-service-component>
+      
+    <ul>
+      
+        
+      
+      
+      
+    </ul>
+    
+    
+  </simple-service-component>
+</app-root>
 `;

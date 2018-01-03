@@ -1,16 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button button with link to another story 1`] = `
-<button-component
-  onClick={[Function EventEmitter]}
-  text=""
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-        <button
-    _ngcontent-c5=""
+  <button-component
+    _nghost-c5=""
   >
     
-  </button>
+        
+    <button
+      _ngcontent-c5=""
+    >
+      Go to Welcome Story
+    </button>
     
-</button-component>
+    
+  </button-component>
+</app-root>
 `;

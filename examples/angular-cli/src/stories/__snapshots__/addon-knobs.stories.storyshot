@@ -1,77 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon Knobs All knobs 1`] = `
-<simple-knobs-component
-  cd={[Function ViewRef_]}
-  knobChanged={[Function Function]}
-  setPaneKnobs={[Function Function]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-      <div
-    ng-reflect-ng-style="[object Object]"
-    style="border-radius: 8px;"
-  >
+  <simple-knobs-component>
     
-        
-    <h1>
-      My name is ,
-    </h1>
-    
-        
-    <h3>
-      today is 
-    </h3>
-    
-        
-    
-    
-        
-    
-    <p>
-      I'm out of .
-    </p>
-     
-    
-    
-        
-    <p>
-      Also, I have:
-    </p>
-    
-        
-    <ul>
       
+    <div
+      ng-reflect-ng-style="[object Object]"
+      style="border-radius: 8px;"
+    >
+      
+        
+      <h1>
+        My name is Jane,
+      </h1>
+      
+        
+      <h3>
+        today is Jan 20, 2017
+      </h3>
+      
+        
+      
+      <p>
+        I have a stock of 20 apple, costing $ 2.25 each.
+      </p>
+      
+        
+      
+       
+      
+      <p>
+        Sorry.
+      </p>
+      
+        
+      <p>
+        Also, I have:
+      </p>
+      
+        
+      <ul>
+        
           
-      
+        
+        <li>
+          
+            Laptop
+          
+        </li>
+        <li>
+          
+            Book
+          
+        </li>
+        <li>
+          
+            Whiskey
+          
+        </li>
+        
+        
+      </ul>
       
         
-    </ul>
-    
-        
-    
-    
-        
-    
-    <p>
-      Leave me alone!
-    </p>
-    
       
-  </div>
+      <p>
+        Nice to meet you!
+      </p>
+      
+        
+      
+      
+      
+    </div>
     
-</simple-knobs-component>
+    
+  </simple-knobs-component>
+</app-root>
 `;
 
 exports[`Storyshots Addon Knobs Simple 1`] = `
-<simple-knobs-component
-  cd={[Function ViewRef_]}
-  knobChanged={[Function Function]}
-  setPaneKnobs={[Function Function]}
+<app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
 >
-  
-      <div>
-    I am  and I'm  years old.
-  </div>
+  <simple-knobs-component>
     
-</simple-knobs-component>
+      
+    <div>
+      I am John Doe and I'm 44 years old.
+    </div>
+    
+    
+  </simple-knobs-component>
+</app-root>
 `;
