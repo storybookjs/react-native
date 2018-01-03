@@ -28,6 +28,7 @@
     "@storybook/addons": "^3.3.3",
     "@storybook/channel-postmessage": "^3.3.3",
     "@storybook/client-logger": "^3.3.3",
+    "@storybook/core": "^3.3.3",
     "@storybook/node-logger": "^3.3.3",
     "@storybook/ui": "^3.3.3",
     "airbnb-js-shims": "^1.4.0",
