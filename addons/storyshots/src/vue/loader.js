@@ -1,3 +1,4 @@
+import global from 'global';
 import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
 import loadConfig from '../config-loader';
@@ -11,6 +12,7 @@ function test(options) {
 }
 
 function load(options) {
+  global.STORYBOOK_ENV = 'vue';
   mockVueToIncludeCompiler();
 
   const { content, contextOpts } = loadConfig({

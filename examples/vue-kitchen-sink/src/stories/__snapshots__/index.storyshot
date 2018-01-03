@@ -176,6 +176,40 @@ exports[`Storyshots App App 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button rounded 1`] = `
+<div
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+>
+  <div
+    style="margin: auto;"
+  >
+    <button
+      class="button rounded"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
+    >
+      A Button with rounded edges!
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button square 1`] = `
+<div
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+>
+  <div
+    style="margin: auto;"
+  >
+    <button
+      class="button"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
+    >
+      A Button with square edges!
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Decorator for Vue render 1`] = `
 <div
   style="border: medium solid blue;"
