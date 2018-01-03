@@ -1,4 +1,3 @@
-import 'jest-preset-angular/setupJest';
 import AngularSnapshotSerializer from 'jest-preset-angular/AngularSnapshotSerializer';
 import HTMLCommentSerializer from 'jest-preset-angular/HTMLCommentSerializer';
 import { TestBed } from '@angular/core/testing';

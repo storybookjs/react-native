@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build-storybook": "build-storybook",
-    "prepare": "babel ./src --out-dir ./dist",
+    "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006",
     "example": "jest storyshot.test"
   },
