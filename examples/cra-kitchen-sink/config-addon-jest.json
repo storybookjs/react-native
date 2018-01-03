@@ -5,7 +5,6 @@
   "transform": {
     ".*": "babel-jest"
   },
-  "transformIgnorePatterns": ["/node_modules/(?!lodash-es/.*)"],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ],

@@ -4,7 +4,6 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
-  transformIgnorePatterns: ['/node_modules/(?!lodash-es/.*)'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFiles: ['../src/enzyme.js'],
   moduleNameMapper: {
