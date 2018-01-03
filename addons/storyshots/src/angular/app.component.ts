@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 
   /*
   * We need to use here the ngOnInit instead of ngAfterViewInit,
-  * otherwise there will get ExpressionChangedAfterItHasBeenCheckedError in tests
+  * otherwise there will be ExpressionChangedAfterItHasBeenCheckedError in tests
    */
   ngOnInit(): void {
     this.putInMyHtml();
