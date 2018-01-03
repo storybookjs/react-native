@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+// eslint-disable-next-line
 import Vue from 'vue';
 
 function getRenderedTree(story, context) {
