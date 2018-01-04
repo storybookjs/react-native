@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
 import { getParameters, getAnnotations, getPropMetadata } from './utils';
 
