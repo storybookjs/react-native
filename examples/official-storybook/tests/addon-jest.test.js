@@ -1,3 +1,4 @@
+// This file is excluded from the `/scripts/test.js` script. (see root `jest.config.js` file)
 test('true should be true', () => {
   expect(true).toBe(true);
 });
