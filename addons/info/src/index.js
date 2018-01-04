@@ -1,7 +1,7 @@
 import React from 'react';
 import deprecate from 'util-deprecate';
 import nestedObjectAssign from 'nested-object-assign';
-import logger from '@storybook/client-logger';
+import { logger } from '@storybook/client-logger';
 import Story from './components/Story';
 import PropTable from './components/PropTable';
 import makeTableComponent from './components/makeTableComponent';

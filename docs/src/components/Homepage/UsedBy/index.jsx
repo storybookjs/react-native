@@ -37,18 +37,18 @@ UsedByBg.defaultProps = {
   style: {},
 };
 
-const User = ({ logo, demo, site, title }) => (
+const User = ({ logoSrc, demo, site, title }) => (
   <a
     className="used-by-user"
     href={demo || site}
     target="_blank"
     rel="noopener nofollow noreferrer"
   >
-    <img className="used-by-user-image" src={logo} alt={title} />
+    <img className="used-by-user-image" src={logoSrc} alt={title} />
   </a>
 );
 User.propTypes = {
-  logo: PropTypes.string.isRequired,
+  logoSrc: PropTypes.string.isRequired,
   demo: PropTypes.string,
   site: PropTypes.string.isRequired,
   title: PropTypes.string,

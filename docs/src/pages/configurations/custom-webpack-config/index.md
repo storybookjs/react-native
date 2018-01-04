@@ -85,8 +85,9 @@ Storybook uses the config returned from the above function. So, try to edit the 
 -   entry
 -   output
 -   first loader in the module.loaders (Babel loader for JS)
+-   all existing plugins
 
-Other than that, you should try to keep the default set of plugins.
+> If your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
 
 ## Full control mode + default
 
