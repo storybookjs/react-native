@@ -8,9 +8,11 @@ import { withNotes, WithNotes } from '@storybook/addon-notes';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '@storybook/react/demo';
+import { checkA11y } from '@storybook/addon-a11y';
 
 import App from '../App';
 import Container from './Container';
+import DelayedRender from './DelayedRender';
 import LifecycleLogger from '../components/LifecycleLogger';
 
 const InfoButton = () => (
@@ -84,6 +86,23 @@ storiesOf('Button', module)
       ))
     )
   );
+
+storiesOf('Accessibility', module)
+  .addDecorator(checkA11y)
+  .add('button', () => (
+    <Button>
+      {setOptions({ selectedAddonPanel: '@storybook/addon-a11y/panel' })}
+      Just a regular button
+    </Button>
+  ))
+  .add('delayed render', () => (
+    <DelayedRender>
+      <Button>
+        {setOptions({ selectedAddonPanel: '@storybook/addon-a11y/panel' })}
+        This button has a delayed render of 1s
+      </Button>
+    </DelayedRender>
+  ));
 
 storiesOf('App', module).add('full app', () => <App />);
 
