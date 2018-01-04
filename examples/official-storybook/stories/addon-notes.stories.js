@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 import BaseButton from '../components/BaseButton';
 import markdownNotes from './notes/notes.md';
 
-storiesOf('Addon Notes', module)
+storiesOf('Addons|Notes', module)
   .add(
     'withNotes',
     withNotes(
