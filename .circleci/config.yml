@@ -67,6 +67,11 @@ jobs:
             cd examples/cra-kitchen-sink
             yarn build-storybook
       - run:
+          name: "Build official-storybook"
+          command: |
+            cd examples/official-storybook
+            yarn build-storybook
+      - run:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
@@ -92,7 +97,7 @@ jobs:
             cd examples/angular-cli
             yarn storybook --smoke-test
       - run:
-          name: "Run image snapshots on cra-kitchen-sink"
+          name: "Run image snapshots"
           command: yarn test --image
       - run:
           name: Integration Test - Kichen sinks
