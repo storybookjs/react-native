@@ -8,7 +8,7 @@ import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import TableComponent from '../components/TableComponent';
 
-storiesOf('Addon Info.React Docgen', module)
+storiesOf('Addons|Info.React Docgen', module)
   .add(
     'Comments from PropType declarations',
     withInfo(
@@ -39,12 +39,12 @@ const Button = () => <button />;
 Maybe include a [link](http://storybook.js.org) to your project as well.
 `;
 
-storiesOf('Addon Info.Markdown', module).add(
+storiesOf('Addons|Info.Markdown', module).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
 );
 
-storiesOf('Addon Info.Options.inline', module).add(
+storiesOf('Addons|Info.Options.inline', module).add(
   'Inlines component inside story',
   withInfo({
     text: 'Component should be inlined between description and PropType table',
@@ -52,7 +52,7 @@ storiesOf('Addon Info.Options.inline', module).add(
   })(() => <BaseButton label="Button" />)
 );
 
-storiesOf('Addon Info.Options.header', module).add(
+storiesOf('Addons|Info.Options.header', module).add(
   'Shows or hides Info Addon header',
   withInfo({
     text: 'The Info Addon header should be hidden',
@@ -60,7 +60,7 @@ storiesOf('Addon Info.Options.header', module).add(
   })(() => <BaseButton label="Button" />)
 );
 
-storiesOf('Addon Info.Options.source', module).add(
+storiesOf('Addons|Info.Options.source', module).add(
   'Shows or hides Info Addon source',
   withInfo({
     text: 'The Info Addon source section should be hidden',
@@ -68,7 +68,7 @@ storiesOf('Addon Info.Options.source', module).add(
   })(() => <BaseButton label="Button" />)
 );
 
-storiesOf('Addon Info.Options.propTables', module).add(
+storiesOf('Addons|Info.Options.propTables', module).add(
   'Shows additional component prop tables',
   withInfo({
     text: 'There should be a prop table added for a component not included in the story',
@@ -76,7 +76,7 @@ storiesOf('Addon Info.Options.propTables', module).add(
   })(() => <BaseButton label="Button" />)
 );
 
-storiesOf('Addon Info.Options.propTablesExclude', module).add(
+storiesOf('Addons|Info.Options.propTablesExclude', module).add(
   'Exclude component from prop tables',
   withInfo({
     text: 'This can exclude extraneous components from being displayed in prop tables.',
@@ -89,7 +89,7 @@ storiesOf('Addon Info.Options.propTablesExclude', module).add(
   ))
 );
 
-storiesOf('Addon Info.Options.styles', module)
+storiesOf('Addons|Info.Options.styles', module)
   .add(
     'Extend info styles with an object',
     withInfo({
@@ -123,14 +123,14 @@ storiesOf('Addon Info.Options.styles', module)
     })(() => <BaseButton label="Button" />)
   );
 
-storiesOf('Addon Info.Options.TableComponent', module).add(
+storiesOf('Addons|Info.Options.TableComponent', module).add(
   'Use a custom component for the table',
   withInfo({
     TableComponent,
   })(() => <BaseButton label="Button" />)
 );
 
-storiesOf('Addon Info.Decorator', module)
+storiesOf('Addons|Info.Decorator', module)
   .addDecorator((story, context) =>
     withInfo('Info could be used as a global or local decorator as well.')(story)(context)
   )
@@ -142,7 +142,7 @@ const Input = hoc(() => <input type="text" />);
 
 const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
 
-storiesOf('Addon Info.GitHub issues', module).add(
+storiesOf('Addons|Info.GitHub issues', module).add(
   '#1814',
   withInfo('Allow Duplicate DisplayNames for HOC #1814')(() => (
     <div>

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon Notes using deprecated API 1`] = `
+exports[`Storyshots Addons|Notes using deprecated API 1`] = `
 <button>
   😀 😎 👍 💯
 </button>
 `;
 
-exports[`Storyshots Addon Notes withNotes 1`] = `
+exports[`Storyshots Addons|Notes withNotes 1`] = `
 <button>
   Button with notes - check the notes panel for details
 </button>
 `;
 
-exports[`Storyshots Addon Notes withNotes rendering imported markdown 1`] = `
+exports[`Storyshots Addons|Notes withNotes rendering imported markdown 1`] = `
 <button>
   Button with notes - check the notes panel for details
 </button>

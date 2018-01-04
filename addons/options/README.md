@@ -90,13 +90,19 @@ setOptions({
    * @type {Regex}
    */
   hierarchySeparator: null,
-
+  /**
+   * regex for finding the hierarchy root separator
+   * @example:
+   *   null - turn off mulitple hierarchy roots
+   *   /\|/ - split by `|`
+   * @type {Regex}
+   */
+  hierarchyRootSeparator: null,
   /**
    * sidebar tree animations
    * @type {Boolean}
    */
   sidebarAnimations: true,
-
   /**
    * id to select an addon panel
    * @type {String}
