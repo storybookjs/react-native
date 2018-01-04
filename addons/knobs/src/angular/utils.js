@@ -1,5 +1,6 @@
-/* eslint-disable no-param-reassign */
 /* globals window */
+/* eslint-disable no-param-reassign */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ɵReflectionCapabilities } from '@angular/core';
 
 // eslint-disable-next-line new-cap
