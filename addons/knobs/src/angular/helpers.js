@@ -73,11 +73,10 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
     const oldValue = knobOptions.value;
     knobOptions.value = value;
     knobStore.markAllUnused();
-    const lowercasedName = name.toLocaleLowerCase();
-    this[lowercasedName] = value;
+    this[name] = value;
     this.cd.detectChanges();
     this.ngOnChanges({
-      [lowercasedName]: new SimpleChange(oldValue, value, false),
+      [name]: new SimpleChange(oldValue, value, false),
     });
   };
 
