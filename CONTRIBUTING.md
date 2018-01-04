@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should `yarn@1.0.0` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
+This repo uses yarn workspaces, so you should `yarn@1.3.2` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
 
 ## Issues
 
@@ -217,7 +217,7 @@ Please have the **_latest_** stable versions of the following on your machine
 
 ### Initial Setup
 
-If you run into trouble here, make sure your node, npm, and **_yarn_** are on the latest versions (yarn at least v1.0.0).
+If you run into trouble here, make sure your node, npm, and **_yarn_** are on the latest versions (yarn at least v1.3.2).
 
 1.  `cd ~` (optional)
 2.  `git clone https://github.com/storybooks/storybook.git` _bonus_: use your own fork for this step
@@ -296,7 +296,7 @@ If you don't see the changes rerun `yarn storybook` again in your sandbox app
 
 This section is for Storybook maintainers who will be creating releases. It assumes:
 
--   yarn >= 1.0.0
+-   yarn >= 1.3.2
 -   you've yarn linked `pr-log` from <https://github.com/storybooks/pr-log/pull/2>
 
 The current manual release sequence is as follows:

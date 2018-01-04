@@ -33,7 +33,6 @@
     "vue": "^2.5.13"
   },
   "peerDependencies": {
-    "@angular/core": ">=4.0.0",
     "@storybook/addons": "^3.3.0",
     "react": "*",
     "react-dom": "*"

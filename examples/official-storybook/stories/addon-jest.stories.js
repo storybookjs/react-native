@@ -8,7 +8,7 @@ const withTestsFiles = withTests({
   results,
 });
 
-storiesOf('Addon jest', module)
+storiesOf('Addons|jest', module)
   .addDecorator(withTestsFiles('addon-jest'))
   .add('withTests', () => (
     <div>
