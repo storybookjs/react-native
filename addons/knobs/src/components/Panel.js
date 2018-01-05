@@ -169,7 +169,9 @@ export default class Panel extends React.Component {
     const knobsArray = Object.keys(knobs)
       .filter(key => {
         const filter =
-          groupId === 'ALL' ? knobs[key].used : knobs[key].used && knobs[key].groupId === groupId;
+          groupId === DEFAULT_GROUP_ID
+            ? knobs[key].used
+            : knobs[key].used && knobs[key].groupId === groupId;
         return filter;
       })
       .map(key => knobs[key]);
