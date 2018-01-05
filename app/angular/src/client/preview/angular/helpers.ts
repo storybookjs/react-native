@@ -5,7 +5,7 @@ import {
   Component,
   NgModuleRef
 } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
@@ -179,7 +179,7 @@ const draw = (newModule: IModule, reRender: boolean = true): void => {
     } catch (e) {}
 
     platform = platformBrowserDynamic();
-    promises.push(platform.bootstrapModule(newModule))
+    promises.push(platform.bootstrapModule(newModule));
   } else {
     Promise.all(promises)
       .then((modules) => {
