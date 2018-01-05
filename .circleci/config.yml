@@ -62,11 +62,6 @@ jobs:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
-          name: "Build react kitchen-sink"
-          command: |
-            cd examples/cra-kitchen-sink
-            yarn build-storybook
-      - run:
           name: "Build official-storybook"
           command: |
             cd examples/official-storybook
@@ -105,6 +100,9 @@ jobs:
       - store_artifacts:
           path: integration/__image_snapshots__
           destination: integration_image_snapshots
+      - store_artifacts:
+          path: examples/official-storybook/image-snapshots/__image_snapshots__
+          destination: official_storybook_image_snapshots
   react-native:
     <<: *defaults
     steps:
