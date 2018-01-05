@@ -153,7 +153,7 @@ const label = 'Age';
 const defaultValue = 78;
 const groupId = 'GROUP-ID1';
 
-const value = number(label, defaultValue, groupId);
+const value = number(label, defaultValue, {}, groupId);
 ```
 
 ### number bound by range
@@ -219,7 +219,7 @@ const label = 'Styles';
 const defaultValue = ['Red'];
 const groupId = 'GROUP-ID1';
 
-const value = array(label, defaultValue);
+const value = array(label, defaultValue, ',', groupId);
 ```
 
 > While editing values inside the knob, you will need to use a separator.
