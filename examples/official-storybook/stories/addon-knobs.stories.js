@@ -48,15 +48,15 @@ class AsyncItemLoader extends React.Component {
 storiesOf('Addons|Knobs.withKnobs', module)
   .addDecorator(withKnobs)
   .add('tweaks static values', () => {
-    const name = text('Name', 'Storyteller');
-    const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
+    const name = text('Name', 'Storyteller', 'GROUP-1');
+    const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 }, 'GROUP-1');
     const fruits = {
       apple: 'Apple',
       banana: 'Banana',
       cherry: 'Cherry',
     };
-    const fruit = select('Fruit', fruits, 'apple');
-    const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
+    const fruit = select('Fruit', fruits, 'apple', 'GROUP-1');
+    const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 }, 'GROUP-2');
     const years = number('Years in NY', 9);
 
     const backgroundColor = color('background', '#ffff00');

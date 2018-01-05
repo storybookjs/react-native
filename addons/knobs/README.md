@@ -123,8 +123,9 @@ import { text } from '@storybook/addon-knobs/react';
 
 const label = 'Your Name';
 const defaultValue = 'Arunoda Susiripala';
+const groupId = 'GROUP-ID1';
 
-const value = text(label, defaultValue);
+const value = text(label, defaultValue, groupId);
 ```
 
 ### boolean
@@ -136,8 +137,9 @@ import { boolean } from '@storybook/addon-knobs/react';
 
 const label = 'Agree?';
 const defaultValue = false;
+const groupId = 'GROUP-ID1';
 
-const value = boolean(label, defaultValue);
+const value = boolean(label, defaultValue, groupId);
 ```
 
 ### number
@@ -149,8 +151,9 @@ import { number } from '@storybook/addon-knobs/react';
 
 const label = 'Age';
 const defaultValue = 78;
+const groupId = 'GROUP-ID1';
 
-const value = number(label, defaultValue);
+const value = number(label, defaultValue, groupId);
 ```
 
 ### number bound by range
@@ -168,8 +171,9 @@ const options = {
    max: 90,
    step: 1,
 };
+const groupId = 'GROUP-ID1';
 
-const value = number(label, defaultValue, options);
+const value = number(label, defaultValue, options, groupId);
 ```
 
 ### color
@@ -181,8 +185,9 @@ import { color } from '@storybook/addon-knobs/react';
 
 const label = 'Color';
 const defaultValue = '#ff00ff';
+const groupId = 'GROUP-ID1';
 
-const value = color(label, defaultValue);
+const value = color(label, defaultValue, groupId);
 ```
 
 ### object
@@ -196,8 +201,9 @@ const label = 'Styles';
 const defaultValue = {
   backgroundColor: 'red'
 };
+const groupId = 'GROUP-ID1';
 
-const value = object(label, defaultValue);
+const value = object(label, defaultValue, groupId);
 ```
 
 > Make sure to enter valid JSON syntax while editing values inside the knob.
@@ -210,7 +216,8 @@ Allows you to get an array of strings from the user.
 import { array } from '@storybook/addon-knobs/react';
 
 const label = 'Styles';
-const defaultValue = ['Red']
+const defaultValue = ['Red'];
+const groupId = 'GROUP-ID1';
 
 const value = array(label, defaultValue);
 ```
@@ -224,7 +231,8 @@ const value = array(label, defaultValue);
 > const label = 'Styles';
 > const defaultValue = ['Red'];
 > const separator = ':';
-> const value = array(label, defaultValue, separator);
+> const groupId = 'GROUP-ID1';
+> const value = array(label, defaultValue, separator, groupId);
 > ```
 
 ### select
@@ -241,8 +249,9 @@ const options = {
   yellow: 'Yellow',
 };
 const defaultValue = 'red';
+const groupId = 'GROUP-ID1';
 
-const value = select(label, options, defaultValue);
+const value = select(label, options, defaultValue, groupId);
 ```
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
@@ -256,7 +265,9 @@ import { date } from '@storybook/addon-knobs/react';
 
 const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
-const value = date(label, defaultValue);
+const groupId = 'GROUP-ID1';
+
+const value = date(label, defaultValue, groupId);
 ```
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
@@ -280,7 +291,9 @@ import { button } from '@storybook/addon-knobs';
 
 const label = 'Do Something';
 const handler = () => doSomething('foobar');
-button(label, handler);
+const groupId = 'GROUP-ID1';
+
+button(label, handler, groupId);
 ```
 
 ### withKnobs vs withKnobsOptions

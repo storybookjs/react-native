@@ -5,6 +5,8 @@ import debounce from 'lodash.debounce';
 import PropForm from './PropForm';
 import Types from './types';
 
+import AddonPanel from '../../../../lib/ui/src/modules/ui/components/addon_panel/index';
+
 const getTimestamp = () => +new Date();
 
 const styles = {
@@ -50,8 +52,9 @@ export default class Panel extends React.Component {
     this.setKnobs = this.setKnobs.bind(this);
     this.reset = this.reset.bind(this);
     this.setOptions = this.setOptions.bind(this);
+    this.onPanelSelect = this.onPanelSelect.bind(this);
 
-    this.state = { knobs: {} };
+    this.state = { knobs: {}, groupId: 'ALL' };
     this.options = {};
 
     this.lastEdit = getTimestamp();
@@ -68,6 +71,10 @@ export default class Panel extends React.Component {
   componentWillUnmount() {
     this.props.channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
     this.stopListeningOnStory();
+  }
+
+  onPanelSelect(name) {
+    this.setState({ groupId: name });
   }
 
   setOptions(options = { debounce: false, timestamps: false }) {
@@ -139,9 +146,31 @@ export default class Panel extends React.Component {
   }
 
   render() {
-    const { knobs } = this.state;
+    const { knobs, groupId } = this.state;
+
+    const groupIds = {
+      ALL: {
+        render: () => <div id="ALL">ALL</div>,
+        title: 'ALL',
+      },
+    };
+
+    Object.keys(knobs)
+      .filter(key => knobs[key].used && knobs[key].groupId)
+      .forEach(key => {
+        const keyGroupId = knobs[key].groupId;
+        groupIds[keyGroupId] = {
+          render: () => <div id={keyGroupId}>{keyGroupId}</div>,
+          title: keyGroupId,
+        };
+      });
+
     const knobsArray = Object.keys(knobs)
-      .filter(key => knobs[key].used)
+      .filter(key => {
+        const filter =
+          groupId === 'ALL' ? knobs[key].used : knobs[key].used && knobs[key].groupId === groupId;
+        return filter;
+      })
       .map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
@@ -150,6 +179,11 @@ export default class Panel extends React.Component {
 
     return (
       <div style={styles.panelWrapper}>
+        <AddonPanel
+          panels={groupIds}
+          onPanelSelect={this.onPanelSelect}
+          selectedPanel={this.state.groupId}
+        />
         <div style={styles.panel}>
           <PropForm
             knobs={knobsArray}
