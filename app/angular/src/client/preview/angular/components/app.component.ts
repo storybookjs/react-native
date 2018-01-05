@@ -19,7 +19,7 @@ import { STORY } from '../app.token';
 import { NgStory, ICollection } from '../types';
 
 @Component({
-  selector: 'app-root',
+  selector: 'storybook-dynamic-app-root',
   template: '<ng-template #target></ng-template>'
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
