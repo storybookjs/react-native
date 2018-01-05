@@ -12,6 +12,7 @@
     "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
     "@storybook/channels": "file:../../packs/storybook-channels.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
+    "@storybook/core": "file:../../packs/storybook-core.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "jest-expo": "^24.0.0",
