@@ -186,7 +186,7 @@ const draw = (newModule: IModule, reRender: boolean = true): void => {
         modules.forEach(mod => mod.destroy());
 
         const body = document.body;
-        const app = document.createElement('app-root');
+        const app = document.createElement('storybook-dynamic-app-root');
         body.appendChild(app);
         promises = [];
         promises.push(platform.bootstrapModule(newModule));
