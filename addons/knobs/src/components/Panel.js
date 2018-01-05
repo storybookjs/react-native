@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
+import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 import Types from './types';
 
-import AddonPanel from '../../../../lib/ui/src/modules/ui/components/addon_panel/index';
-
 const getTimestamp = () => +new Date();
+
+const DEFAULT_GROUP_ID = 'ALL';
 
 const styles = {
   panelWrapper: {
@@ -52,9 +53,9 @@ export default class Panel extends React.Component {
     this.setKnobs = this.setKnobs.bind(this);
     this.reset = this.reset.bind(this);
     this.setOptions = this.setOptions.bind(this);
-    this.onPanelSelect = this.onPanelSelect.bind(this);
+    this.onGroupSelect = this.onGroupSelect.bind(this);
 
-    this.state = { knobs: {}, groupId: 'ALL' };
+    this.state = { knobs: {}, groupId: DEFAULT_GROUP_ID };
     this.options = {};
 
     this.lastEdit = getTimestamp();
@@ -73,7 +74,7 @@ export default class Panel extends React.Component {
     this.stopListeningOnStory();
   }
 
-  onPanelSelect(name) {
+  onGroupSelect(name) {
     this.setState({ groupId: name });
   }
 
@@ -148,18 +149,18 @@ export default class Panel extends React.Component {
   render() {
     const { knobs, groupId } = this.state;
 
-    const groupIds = {
-      ALL: {
-        render: () => <div id="ALL">ALL</div>,
-        title: 'ALL',
-      },
+    const groups = {};
+
+    groups[DEFAULT_GROUP_ID] = {
+      render: () => <div id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</div>,
+      title: DEFAULT_GROUP_ID,
     };
 
     Object.keys(knobs)
       .filter(key => knobs[key].used && knobs[key].groupId)
       .forEach(key => {
         const keyGroupId = knobs[key].groupId;
-        groupIds[keyGroupId] = {
+        groups[keyGroupId] = {
           render: () => <div id={keyGroupId}>{keyGroupId}</div>,
           title: keyGroupId,
         };
@@ -179,10 +180,10 @@ export default class Panel extends React.Component {
 
     return (
       <div style={styles.panelWrapper}>
-        <AddonPanel
-          panels={groupIds}
-          onPanelSelect={this.onPanelSelect}
-          selectedPanel={this.state.groupId}
+        <GroupTabs
+          groups={groups}
+          onGroupSelect={this.onGroupSelect}
+          selectedGroup={this.state.groupId}
         />
         <div style={styles.panel}>
           <PropForm
