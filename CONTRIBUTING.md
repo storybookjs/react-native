@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should `yarn@1.3.2` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
+This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
 
 ## Issues
 
@@ -31,7 +31,7 @@ yarn install
 yarn bootstrap --core
 ```
 
-The bootstrap command will ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
+The bootstrap command might ask which sections of the codebase you want to bootstrap. Unless you're going to work with ReactNative or the Documentation, you can keep the default.
 
 You can also pick directly from CLI:
 
@@ -57,21 +57,21 @@ You can also pick suites from CLI.  Suites available are listed below.
 
 `yarn test --core`
 
-This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`
+This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
 Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core` 
 
 ##### React-Native example Tests
 
 `yarn test --reactnative`
 
-This option executes tests from `<rootdir>/app/react-native`
+This option executes tests from `<rootdir>/app/react-native`.
 Before these tests are ran, the project must be bootstrapped with the React Native example enabled.  You can accomplish this by running `yarn bootstrap --reactnative`
 
 ##### Integration Tests (Screenshots of running apps)
 
 `yarn test --integration`
 
-This option executes tests from `<rootdir>/integration`
+This option executes tests from `<rootdir>/integration`.
 In order for the snapshot-integration tests to be executed properly, examples being tested must be running on their defaults ports, as declared in `integration/examples.test.js`
 
 Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
@@ -95,23 +95,23 @@ In that case, please check the git diff before commiting to make sure it only co
 
 If you want to test your own existing project using the github version of storybook, you need to `link` the packages you use in your project.
 
-````sh
+```sh
     cd app/react
     yarn link
 
     cd <your-project>
     yarn link @storybook/react
 
-        # repeat with whichever other parts of the monorepo you are using.
-        ```
+    # repeat with whichever other parts of the monorepo you are using.
+```
 
-    ### Reproductions
+### Reproductions
 
-    The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
+The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
-    A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
+A good way to do that is using the example `cra-kitchen-sink` app embedded in this repository:
 
-    ```sh
+```sh
     # Download and build this repository:
     git clone https://github.com/storybooks/storybook.git
     cd storybook
@@ -130,7 +130,7 @@ If you want to test your own existing project using the github version of storyb
     # fork the storybook repo to your account, then add the resulting remote
     git remote add <your-username> https://github.com/<your-username>/storybook.git
     git push -u <your-username> master
-````
+```
 
 If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
