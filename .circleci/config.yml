@@ -67,6 +67,11 @@ jobs:
             cd examples/official-storybook
             yarn build-storybook
       - run:
+          name: "Build react kitchen-sink"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn build-storybook
+      - run:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
