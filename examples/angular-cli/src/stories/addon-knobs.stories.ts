@@ -19,20 +19,22 @@ import { AllKnobsComponent } from './all-knobs.component';
 storiesOf('Addon Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
-    const name = text('Name', 'John Doe');
-    const age = number('Age', 44);
+    const name = text('name', 'John Doe');
+    const age = number('age', 44);
+    const phoneNumber = text('phoneNumber', '555-55-55');
 
     return {
       component: SimpleKnobsComponent,
       props: {
         name,
-        age
+        age,
+        phoneNumber
       }
     };
   })
   .add('All knobs', () => {
-    const name = text('Name', 'Jane');
-    const stock = number('Stock', 20, {
+    const name = text('name', 'Jane');
+    const stock = number('stock', 20, {
       range: true,
       min: 0,
       max: 30,
@@ -43,13 +45,13 @@ storiesOf('Addon Knobs', module)
       bananas: 'Banana',
       cherries: 'Cherry',
     };
-    const fruit = select('Fruit', fruits, 'apple');
-    const price = number('Price', 2.25);
+    const fruit = select('fruit', fruits, 'apple');
+    const price = number('price', 2.25);
 
-    const border = color('Border', 'deeppink');
-    const today = date('Today', new Date('Jan 20 2017'));
-    const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
-    const nice = boolean('Nice', true);
+    const border = color('border', 'deeppink');
+    const today = date('today', new Date('Jan 20 2017'));
+    const items = array('items', ['Laptop', 'Book', 'Whiskey']);
+    const nice = boolean('nice', true);
     button('Arbitrary action', action('You clicked it!'));
 
     return {
@@ -57,7 +59,6 @@ storiesOf('Addon Knobs', module)
       props: {
         name,
         stock,
-        fruits,
         fruit,
         price,
         border,
