@@ -3,7 +3,7 @@ import { STORY } from "../app.token";
 import { NgError } from "../types";
 
 @Component({
-  selector: "app-root",
+  selector: 'storybook-dynamic-app-root',
   template: `
     <div class="main">
       <h1>{{ error.message }}</h1>
