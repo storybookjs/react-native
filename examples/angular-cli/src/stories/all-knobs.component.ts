@@ -27,7 +27,6 @@ export class AllKnobsComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
   }
-  @Input() text;
   @Input() price;
   @Input() border;
   @Input() fruit;
