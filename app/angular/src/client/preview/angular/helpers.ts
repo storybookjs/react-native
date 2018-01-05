@@ -5,7 +5,7 @@ import {
   Component,
   NgModuleRef
 } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +28,7 @@ interface IModule extends Type<any> {
 interface IComponent extends Type<any> {
   annotations: any[];
   parameters: any[];
-  propsMetadata: any[]
+  propsMetadata: any[];
 }
 
 // Taken from https://davidwalsh.name/javascript-debounce-function
@@ -179,7 +179,7 @@ const draw = (newModule: IModule, reRender: boolean = true): void => {
     } catch (e) {}
 
     platform = platformBrowserDynamic();
-    promises.push(platform.bootstrapModule(newModule))
+    promises.push(platform.bootstrapModule(newModule));
   } else {
     Promise.all(promises)
       .then((modules) => {
