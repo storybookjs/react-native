@@ -2046,7 +2046,7 @@ babel-runtime@6.26.0, babel-runtime@6.x.x, babel-runtime@^6.0.0, babel-runtime@^
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
 
-babel-standalone@^6.24.0:
+babel-standalone@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-standalone/-/babel-standalone-6.26.0.tgz#15fb3d35f2c456695815ebf1ed96fe7f015b6886"
 
@@ -8904,11 +8904,11 @@ marked@^0.3.6, marked@^0.3.9:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.9.tgz#54ce6a57e720c3ac6098374ec625fcbcc97ff290"
 
-marksy@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/marksy/-/marksy-6.0.2.tgz#2c7b54b43652144cfddc8d674f88d61aee9fc63e"
+marksy@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/marksy/-/marksy-6.0.3.tgz#6079076e8689b563b61be058942090c7ba1f5d20"
   dependencies:
-    babel-standalone "^6.24.0"
+    babel-standalone "^6.26.0"
     he "^1.1.1"
     marked "^0.3.9"
 
