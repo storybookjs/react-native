@@ -2,6 +2,9 @@
 import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import 'react-chromatic/storybook-addon';
+import addHeadWarning from './head-warning';
+
+addHeadWarning('Preview');
 
 setOptions({
   hierarchySeparator: /\/|\./,
