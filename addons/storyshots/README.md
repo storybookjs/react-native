@@ -14,6 +14,8 @@ StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storyboo
 This addon works with Storybook for:
 - [React](https://github.com/storybooks/storybook/tree/master/app/react)
 - [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
+- [Angular](https://github.com/storybooks/storybook/tree/master/app/angular)
+- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
 
 ![StoryShots In Action](docs/storyshots-fail.png)
 
@@ -36,6 +38,35 @@ Usually, you might already have completed this step. If not, here are some resou
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
+### Configure Jest for Angular
+StoryShots addon brings with it a [jest-preset-angular](https://github.com/thymikee/jest-preset-angular). 
+If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
+Anyway you can add these lines to your jest config:
+```js
+module.exports = {
+  globals: {
+    __TRANSFORM_HTML__: true,
+  },
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html'],
+};
+```
+### Configure Jest for Vue
+StoryShots addon brings with it a [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor). 
+If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
+Anyway you can add these lines to your jest config:
+```js
+module.exports = {
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
+  },
+  moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
+};
+```
 ## Configure Storyshots
 
 Create a new test file with the name `Storyshots.test.js`. (Or whatever the name you prefer, as long as it matches Jest's config [`testMatch`](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)).
