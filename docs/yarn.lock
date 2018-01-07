@@ -32,6 +32,14 @@
     global "^4.3.2"
     prop-types "^15.5.10"
 
+"@storybook/addon-links@^3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.3.4.tgz#1a4a165a1d0b5b1100464250efe14510760d6c76"
+  dependencies:
+    "@storybook/components" "^3.3.4"
+    global "^4.3.2"
+    prop-types "^15.5.10"
+
 "@storybook/addons@^3.3.3":
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.3.3.tgz#968d98a61957bc30db642b43924c3332dbaec40e"
@@ -55,6 +63,14 @@
 "@storybook/components@^3.3.3":
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.3.3.tgz#a01adb8eb065a9e9627d85d7268deb270b57d2de"
+  dependencies:
+    glamor "^2.20.40"
+    glamorous "^4.11.2"
+    prop-types "^15.6.0"
+
+"@storybook/components@^3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.3.4.tgz#91e06c60daac4f6a3cac773c14bb0f136384c434"
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.11.2"
