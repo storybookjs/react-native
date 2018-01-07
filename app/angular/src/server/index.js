@@ -120,8 +120,6 @@ if (!hasCustomFavicon) {
   app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
 }
 
-// Build the webpack configuration using the `baseConfig`
-// custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
 
 // The repository info is sent to the storybook while running on
