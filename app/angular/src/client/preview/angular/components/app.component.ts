@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import {
   Component,
   Inject,
-  AfterViewInit,
+  OnInit,
   ViewChild,
   ViewContainerRef,
   ComponentFactoryResolver,
@@ -22,7 +22,7 @@ import { NgStory, ICollection } from '../types';
   selector: 'storybook-dynamic-app-root',
   template: '<ng-template #target></ng-template>'
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
   constructor(
@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     @Inject(STORY) private data: NgStory
   ) {}
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.putInMyHtml();
   }
 

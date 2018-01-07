@@ -3,7 +3,7 @@
 import { Component, SimpleChange, ChangeDetectorRef } from '@angular/core';
 import { getParameters, getAnnotations, getPropMetadata } from './utils';
 
-const getComponentMetadata = ({ component, props = {}, moduleMetadata = {} }) => {
+const getComponentMetadata = ({ component, props = {}, moduleMetadata = {}, template = '' }) => {
   if (!component || typeof component !== 'function') throw new Error('No valid component provided');
 
   const componentMeta = getAnnotations(component)[0] || {};
@@ -16,6 +16,7 @@ const getComponentMetadata = ({ component, props = {}, moduleMetadata = {} }) =>
     componentMeta,
     propsMeta,
     moduleMetadata,
+    template,
     params: paramsMetadata,
   };
 };
@@ -29,8 +30,8 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
   };
 
   KnobWrapperComponent.prototype = Object.create(component.prototype);
-  KnobWrapperComponent.__annotations__ = [new Component(componentMeta)];
-  KnobWrapperComponent.__parameters__ = [[ChangeDetectorRef], ...params];
+  KnobWrapperComponent.annotations = [new Component(componentMeta)];
+  KnobWrapperComponent.parameters = [[ChangeDetectorRef], ...params];
 
   KnobWrapperComponent.prototype.constructor = KnobWrapperComponent;
   KnobWrapperComponent.prototype.ngOnInit = function onInit() {

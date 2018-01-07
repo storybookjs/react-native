@@ -55,7 +55,7 @@ const debounce = (func: IRenderStoryFn | IRenderErrorFn,
 };
 
 const getComponentMetadata = (
-  { component, props = {}, propsMeta = {}, moduleMetadata = {
+  { component, props = {}, propsMeta = {}, template = '', moduleMetadata = {
     imports: [],
     schemas: [],
     declarations: [],
@@ -87,6 +87,7 @@ const getComponentMetadata = (
     componentMeta: componentMetadata,
     propsMeta: propsMetadata,
     params: paramsMetadata,
+    template,
     moduleMeta: {
       imports,
       schemas,
@@ -94,22 +95,6 @@ const getComponentMetadata = (
       providers
     }
   };
-};
-
-const getAnnotatedComponent = (meta: NgModule,
-                               component: any,
-                               propsMeta: { [p: string]: any },
-                               params: any[]): IComponent => {
-  const NewComponent: any = function NewComponent(...args: any[]) {
-    component.call(this, ...args);
-  };
-
-  NewComponent.prototype = Object.create(component.prototype);
-  NewComponent.annotations = [new Component(meta)];
-  NewComponent.parameters = params;
-  NewComponent.propsMetadata = propsMeta;
-
-  return NewComponent;
 };
 
 const getModule = (declarations: Array<Type<any> | any[]>,
@@ -136,6 +121,29 @@ moduleMetadata: NgModuleMetadata = {
   return NewModule;
 };
 
+const DYNAMIC_COMPONENT_SELECTOR = 'storybook-dynamic-component';
+const createComponentFromTemplate = (
+  template: string,
+  propsMeta: object,
+  params: any[],
+  selector?: string,
+) => {
+
+  const metadata = new Component({
+    selector: selector || DYNAMIC_COMPONENT_SELECTOR,
+    template: template,
+  });
+
+  const NewComponent: any = function(...args: any[]) {};
+
+  NewComponent.prototype = Object.create({});
+  NewComponent.annotations = metadata
+  NewComponent.parameters = params;
+  NewComponent.propsMetadata = propsMeta;
+
+  return NewComponent;
+};
+
 const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRender: boolean): IModule => {
   const {
     component,
@@ -143,19 +151,23 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     props,
     propsMeta,
     params,
-    moduleMeta
+    moduleMeta,
+    template
   } = getComponentMetadata(currentStory(context));
 
   if (!componentMeta) {
     throw new Error('No component metadata available');
   }
 
-  const AnnotatedComponent = getAnnotatedComponent(
-    componentMeta,
-    component,
-    propsMeta,
-    [...params, ...moduleMeta.providers.map(provider => [provider])]
-  );
+  let AnnotatedComponent;
+  const declarations = [AppComponent];
+  const entryComponents = [];
+
+  if (template) {
+    AnnotatedComponent = createComponentFromTemplate(template, propsMeta, params);
+  } else {
+    AnnotatedComponent = component;
+  }
 
   const story = {
     component: AnnotatedComponent,
@@ -164,8 +176,8 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
   };
 
   return getModule(
-    [AppComponent, AnnotatedComponent],
-    [AnnotatedComponent],
+    [AppComponent, AnnotatedComponent, component],
+    [AnnotatedComponent, component],
     [AppComponent],
     story,
     moduleMeta

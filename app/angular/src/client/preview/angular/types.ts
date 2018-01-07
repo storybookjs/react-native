@@ -14,6 +14,7 @@ export interface NgStory {
     props: ICollection;
     propsMeta: ICollection;
     moduleMetadata?: NgModuleMetadata;
+    template?: string;
 }
 
 export interface NgError {
