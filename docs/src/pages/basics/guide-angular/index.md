@@ -63,19 +63,19 @@ To do that, simply create a file at `.storybook/config.js` with the following co
 import { configure } from '@storybook/angular';
 
 function loadStories() {
-  require('../stories/index.ts');
+  require('../src/stories/index.ts');
 }
 
 configure(loadStories, module);
 ```
 
-That'll load stories in `../stories/index.ts`.
+That'll load stories in `../src/stories/index.ts`.
 
 Just like that, you can load stories from wherever you want to.
 
 ## Write your stories
 
-Now you can write some stories inside the `../stories/index.ts` file, like this:
+Now you can write some stories inside the `../src/stories/index.ts` file, like this:
 
 ```js
 import { storiesOf } from '@storybook/angular';
