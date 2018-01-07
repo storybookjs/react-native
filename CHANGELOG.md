@@ -16,10 +16,12 @@
 <summary>
 4 PRs
 </summary>
+
 -   Update webpack extend warning. [#2660](https://github.com/storybooks/storybook/pull/2660)
 -   ADD demo images to a new img folder with the documentation site [#2644](https://github.com/storybooks/storybook/pull/2644)
 -   write doc about .css/.scss rules for Angular [#2634](https://github.com/storybooks/storybook/pull/2634)
 -   Updated documentation wrt ejs exclusion [#2633](https://github.com/storybooks/storybook/pull/2633)
+
 </details>
 
 #### Maintenance
@@ -28,10 +30,12 @@
 <summary>
 4 PRs
 </summary>
+
 -   Only update CLI snapsots on postpublish script, skip smoke tests [#2671](https://github.com/storybooks/storybook/pull/2671)
 -   Fix the timezone for example dates [#2654](https://github.com/storybooks/storybook/pull/2654)
 -   Update prereq yarn install level [#2638](https://github.com/storybooks/storybook/pull/2638)
 -   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
+
 </details>
 
 #### Dependency Upgrades
