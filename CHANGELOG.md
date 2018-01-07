@@ -1,3 +1,49 @@
+# 3.3.4
+
+2018-January-07
+
+#### Bug Fixes
+
+-   Fix config dir detection [#2666](https://github.com/storybooks/storybook/pull/2666)
+-   Removed lowercase-only restriction for knobs [#2646](https://github.com/storybooks/storybook/pull/2646)
+-   Add IE11 compatibility meta tag [#2650](https://github.com/storybooks/storybook/pull/2650)
+-   Allow transparency in color knob [#2624](https://github.com/storybooks/storybook/pull/2624)
+-   RN: Use haul/bin/cli.js for cross-platform support [#2577](https://github.com/storybooks/storybook/pull/2577)
+-   Publish package sources along with transpiled files [#2604](https://github.com/storybooks/storybook/pull/2604)
+-   Fixed all peerDependencies for apps. [#2601](https://github.com/storybooks/storybook/pull/2601)
+-   Renamed angular root node to avoid name collisions [#2657](https://github.com/storybooks/storybook/pull/2657)
+-   Add .ts compatibility to storyshots [#2639](https://github.com/storybooks/storybook/pull/2639)
+-   Remove @angular/core dep from knobs peer. [#2640](https://github.com/storybooks/storybook/pull/2640)
+-   Angular: Change template story files extension .ts [#2594](https://github.com/storybooks/storybook/pull/2594)
+-   Skip serializing (Synthetic)Events [#2626](https://github.com/storybooks/storybook/pull/2626)
+
+#### Maintenance
+
+-   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+13 Upgrades
+</summary>
+
+-   Upgraded `@types/lodash` in `/` from "4.14.91" to "4.14.92" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `marksy` in `addons/info` from "6.0.1" to "6.0.2" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `html-loader` in `app/react` from "0.5.1" to "0.5.4" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/angular` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react-native` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/vue` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `@types/node` in `examples/angular-cli` from "6.0.95" to "6.0.96" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `examples/vue-kitchen-sink` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+
+</details>
+
 # 3.3.3
 
 2017-December-29
