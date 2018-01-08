@@ -10,11 +10,11 @@ export interface ICollection {
 }
 
 export interface NgStory {
-    component: any;
-    props: ICollection;
-    propsMeta: ICollection;
-    moduleMetadata?: NgModuleMetadata;
-    template?: string;
+  component: any;
+  props: ICollection;
+  propsMeta: ICollection;
+  moduleMetadata?: NgModuleMetadata;
+  template?: string;
 }
 
 export interface NgError {

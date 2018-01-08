@@ -58,7 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (hasNgOnChangesHook) {
           changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
         }
-      } else if (typeof value === 'function' && (key !== 'ngModelChange')) {
+      } else if (typeof value === 'function' && key !== 'ngModelChange') {
         instanceProperty.subscribe(value);
       }
     });

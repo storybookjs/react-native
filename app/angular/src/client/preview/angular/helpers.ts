@@ -50,8 +50,12 @@ const debounce = (
   };
 };
 
-const getComponentMetadata = (
-  { component, props = {}, propsMeta = {}, template = '', moduleMetadata = {
+const getComponentMetadata = ({
+  component,
+  props = {},
+  propsMeta = {},
+  template = '',
+  moduleMetadata = {
     imports: [],
     schemas: [],
     declarations: [],
@@ -88,16 +92,18 @@ const getComponentMetadata = (
   };
 };
 
-const getModule = (declarations: Array<Type<any> | any[]>,
-entryComponents: Array<Type<any> | any[]>,
-bootstrap: Array<Type<any> | any[]>,
-data: NgProvidedData,
-moduleMetadata: NgModuleMetadata = {
-  imports: [],
-  schemas: [],
-  declarations: [],
-  providers: []
-}): IModule => {
+const getModule = (
+  declarations: Array<Type<any> | any[]>,
+  entryComponents: Array<Type<any> | any[]>,
+  bootstrap: Array<Type<any> | any[]>,
+  data: NgProvidedData,
+  moduleMetadata: NgModuleMetadata = {
+    imports: [],
+    schemas: [],
+    declarations: [],
+    providers: [],
+  }
+): IModule => {
   const moduleMeta = new NgModule({
     declarations: [...declarations, ...moduleMetadata.declarations],
     imports: [BrowserModule, FormsModule, ...moduleMetadata.imports],
@@ -117,9 +123,8 @@ const createComponentFromTemplate = (
   template: string,
   propsMeta: object,
   params: any[],
-  selector?: string,
-) => {
-
+  selector?: string
+): IComponent => {
   const metadata = new Component({
     selector: selector || DYNAMIC_COMPONENT_SELECTOR,
     template: template,
@@ -128,14 +133,18 @@ const createComponentFromTemplate = (
   const NewComponent: any = function(...args: any[]) {};
 
   NewComponent.prototype = Object.create({});
-  NewComponent.annotations = metadata
+  NewComponent.annotations = metadata;
   NewComponent.parameters = params;
   NewComponent.propsMetadata = propsMeta;
 
   return NewComponent;
 };
 
-const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRender: boolean): IModule => {
+const initModule = (
+  currentStory: IGetStoryWithContext,
+  context: IContext,
+  reRender: boolean
+): IModule => {
   const {
     component,
     componentMeta,
@@ -143,7 +152,7 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     propsMeta,
     params,
     moduleMeta,
-    template
+    template,
   } = getComponentMetadata(currentStory(context));
 
   if (!componentMeta) {
@@ -151,8 +160,6 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
   }
 
   let AnnotatedComponent;
-  const declarations = [AppComponent];
-  const entryComponents = [];
 
   if (template) {
     AnnotatedComponent = createComponentFromTemplate(template, propsMeta, params);

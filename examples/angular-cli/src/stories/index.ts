@@ -14,15 +14,15 @@ storiesOf('Button', module)
     component: Button,
     props: {
       text: 'Hello Button',
-      onClick: (event) => {
+      onClick: event => {
         console.log('some bindings work');
-        console.log(event)
-      }
+        console.log(event);
+      },
     },
     template: `
       <h1> This is a template </h1>
       <button-component [text]="text" (onClick)="onClick($event)"></button-component>
-    `
+    `,
   }))
   .add('with some emoji', () => ({
     component: Button,
