@@ -1,0 +1,73 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import glamorous, { withTheme } from 'glamorous';
+
+const Button = glamorous.button(
+  {
+    outline: 'none',
+    overflow: 'hidden',
+    border: '1px solid #eee',
+    borderRadius: 3,
+    backgroundColor: '#FFFFFF',
+    cursor: 'pointer',
+    fontSize: 13,
+    padding: '3px 10px',
+    position: 'absolute',
+    right: 12,
+    top: 12,
+
+    ':hover': {
+      backgroundColor: '#f4f7fa',
+      borderColor: '#ddd',
+    },
+
+    ':active': {
+      backgroundColor: '#e9ecef',
+      borderColor: '#ccc',
+    },
+  },
+  props => props.styles
+);
+
+const ContentWrapper = glamorous.div(
+  {
+    transition: 'transform .2s ease',
+    height: 16,
+  },
+  props => ({
+    ...props.styles,
+    transform: props.toggled ? 'translateY(0px)' : 'translateY(-100%) translateY(-6px)',
+  })
+);
+
+function CopyButton(props) {
+  const {
+    copyButton: { toggleText = 'Copied!', text = 'Copy', ...copyButtonStyles } = {},
+    copyButtonContent,
+  } = props.theme;
+
+  return (
+    <Button onClick={props.onClick} styles={copyButtonStyles}>
+      <ContentWrapper styles={copyButtonContent} toggled={props.toggled}>
+        <div style={{ marginBottom: 6 }}>{toggleText}</div>
+        <div>{text}</div>
+      </ContentWrapper>
+    </Button>
+  );
+}
+
+CopyButton.propTypes = {
+  onClick: PropTypes.func,
+  toggled: PropTypes.bool,
+  theme: PropTypes.shape({
+    copyButton: PropTypes.object,
+  }),
+};
+
+CopyButton.defaultProps = {
+  onClick: () => {},
+  toggled: false,
+  theme: {},
+};
+
+export default withTheme(CopyButton);

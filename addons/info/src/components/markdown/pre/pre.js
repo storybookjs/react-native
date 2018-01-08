@@ -1,12 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import glamorous, { withTheme } from 'glamorous';
 
-import ToggleButton from './toggleButton';
+import CopyButton from './copyButton';
 import copy from './copy';
 
 const TOGGLE_TIMEOUT = 1800;
 
-export class Pre extends React.Component {
+const StyledPre = glamorous(({ setRef, styles, ...rest }) => <pre {...rest} ref={setRef} />)(
+  {
+    fontSize: '.88em',
+    fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+    backgroundColor: '#fafafa',
+    padding: '.5rem',
+    lineHeight: 1.5,
+    overflowX: 'scroll',
+  },
+  props => props.styles
+);
+
+const wrapperStyle = {
+  position: 'relative',
+};
+
+class Pre extends React.Component {
   state = {
     copied: false,
   };
@@ -33,37 +50,29 @@ export class Pre extends React.Component {
   };
 
   render() {
-    const preStyle = {
-      fontSize: '.88em',
-      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-      backgroundColor: '#fafafa',
-      padding: '.5rem',
-      lineHeight: 1.5,
-      overflowX: 'scroll',
-    };
-
-    const wrapperStyle = {
-      position: 'relative',
-    };
-
-    const buttonWrapperStyle = {
-      position: 'absolute',
-      right: 10,
-      top: 10,
-    };
+    const { pre } = this.props.theme;
 
     return (
       <div style={wrapperStyle}>
-        <div style={buttonWrapperStyle}>
-          <ToggleButton onClick={this.handleClick} toggled={this.state.copied} />
-        </div>
-        <pre style={preStyle} ref={this.setRef}>
+        <CopyButton onClick={this.handleClick} toggled={this.state.copied} />
+        <StyledPre styles={pre} setRef={this.setRef}>
           {this.props.children}
-        </pre>
+        </StyledPre>
       </div>
     );
   }
 }
 
-Pre.propTypes = { children: PropTypes.node };
-Pre.defaultProps = { children: null };
+Pre.propTypes = {
+  children: PropTypes.node,
+  theme: PropTypes.shape({
+    pre: PropTypes.object,
+  }),
+};
+
+Pre.defaultProps = {
+  children: null,
+  theme: {},
+};
+
+export default withTheme(Pre);

@@ -65,4 +65,4 @@ export function Blockquote(props) {
 Blockquote.propTypes = { children: PropTypes.node };
 Blockquote.defaultProps = { children: null };
 
-export { Pre } from './pre/pre';
+export { default as Pre } from './pre/pre';
