@@ -63,7 +63,7 @@
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
     "lodash.flattendeep": "^4.4.0",
-    "markdown-loader": "^2.0.1",
+    "markdown-loader": "^2.0.2",
     "npmlog": "^4.1.2",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.10",
