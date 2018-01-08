@@ -1,8 +1,8 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DummyService } from './dummy.service';
 
 @Component({
-  selector: 'simple-service-component',
+  selector: 'storybook-simple-service-component',
   template: `
     <p>{{ name }}:</p>
     <ul>
@@ -10,9 +10,9 @@ import { DummyService } from './dummy.service';
         {{ item }}
       </li>
     </ul>
-  `
+  `,
 })
-export class ServiceComponent {
+export class ServiceComponent implements OnInit {
   items;
   @Input() name;
 

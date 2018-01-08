@@ -7,7 +7,6 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 9008 -s src/assets",
     "build-storybook": "build-storybook -s src"
@@ -38,7 +37,6 @@
     "@storybook/angular": "^3.4.0-alpha.0",
     "@types/jasmine": "~2.8.3",
     "@types/node": "~6.0.96",
-    "codelyzer": "^3.1.2",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.0",
@@ -49,7 +47,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.2.2",
     "ts-node": "~3.3.0",
-    "tslint": "~5.8.0",
     "typescript": "^2.4.0"
   }
 }
