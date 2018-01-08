@@ -1,3 +1,11 @@
+# 3.3.5
+
+2018-January-08
+
+#### Bug Fixes
+
+-   Remove src from indidivudal .npmignore files [#2677](https://github.com/storybooks/storybook/pull/2677)
+
 # 3.4.0-alpha.0
 
 2018-January-07
