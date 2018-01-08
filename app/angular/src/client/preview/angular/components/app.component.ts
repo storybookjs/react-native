@@ -13,22 +13,19 @@ import {
   OnDestroy,
   EventEmitter,
   SimpleChanges,
-  SimpleChange
+  SimpleChange,
 } from '@angular/core';
 import { STORY } from '../app.token';
 import { NgStory, ICollection } from '../types';
 
 @Component({
   selector: 'storybook-dynamic-app-root',
-  template: '<ng-template #target></ng-template>'
+  template: '<ng-template #target></ng-template>',
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
-  constructor(
-    private cfr: ComponentFactoryResolver,
-    @Inject(STORY) private data: NgStory
-  ) {}
+  constructor(private cfr: ComponentFactoryResolver, @Inject(STORY) private data: NgStory) {}
 
   ngAfterViewInit(): void {
     this.putInMyHtml();
@@ -49,7 +46,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   /**
    * Set inputs and outputs
    */
-  private setProps(instance: any, {props = {}, propsMeta = {}}: NgStory): void {
+  private setProps(instance: any, { props = {}, propsMeta = {} }: NgStory): void {
     const changes: SimpleChanges = {};
     const hasNgOnChangesHook = _.has(instance, 'ngOnChanges');
 
@@ -62,7 +59,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         if (hasNgOnChangesHook) {
           changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
         }
-      } else if (_.isFunction(value) && (key !== 'ngModelChange')) {
+      } else if (_.isFunction(value) && key !== 'ngModelChange') {
         instanceProperty.subscribe(value);
       }
     });
@@ -90,7 +87,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
 
     if (_.isFunction(props.ngModelChange)) {
-        _.invoke(instance, 'registerOnChange', props.ngModelChange);
+      _.invoke(instance, 'registerOnChange', props.ngModelChange);
     }
   }
 }
