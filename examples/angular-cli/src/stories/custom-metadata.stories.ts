@@ -4,21 +4,20 @@ import { withKnobs, text } from '@storybook/addon-knobs/angular';
 import { NameComponent } from './name.component';
 import { CustomPipePipe } from './custom.pipe';
 import { DummyService } from './moduleMetadata/dummy.service';
-import { ServiceComponent } from './moduleMetadata/service.component'
+import { ServiceComponent } from './moduleMetadata/service.component';
 
-storiesOf('Custom Pipe', module)
-  .add('Default', () => ({
-    component: NameComponent,
-    props: {
-      field: 'foobar',
-    },
-    moduleMetadata: {
-      imports: [],
-      schemas: [],
-      declarations: [CustomPipePipe],
-      providers: []
-    }
-  }));
+storiesOf('Custom Pipe', module).add('Default', () => ({
+  component: NameComponent,
+  props: {
+    field: 'foobar',
+  },
+  moduleMetadata: {
+    imports: [],
+    schemas: [],
+    declarations: [CustomPipePipe],
+    providers: [],
+  },
+}));
 
 storiesOf('Custom Pipe/With Knobs', module)
   .addDecorator(withKnobs)
@@ -31,22 +30,22 @@ storiesOf('Custom Pipe/With Knobs', module)
       imports: [],
       schemas: [],
       declarations: [CustomPipePipe],
-      providers: []
-    }
+      providers: [],
+    },
   }));
 
 storiesOf('Custom ngModule metadata', module)
   .add('simple', () => ({
     component: ServiceComponent,
     props: {
-      name: 'Static name'
+      name: 'Static name',
     },
     moduleMetadata: {
       imports: [],
       schemas: [],
       declarations: [],
-      providers: [DummyService]
-    }
+      providers: [DummyService],
+    },
   }))
   .addDecorator(withKnobs)
   .add('with knobs', () => {
@@ -55,13 +54,13 @@ storiesOf('Custom ngModule metadata', module)
     return {
       component: ServiceComponent,
       props: {
-        name
+        name,
       },
       moduleMetadata: {
         imports: [],
         schemas: [],
         declarations: [],
-        providers: [DummyService]
-      }
+        providers: [DummyService],
+      },
     };
   });
