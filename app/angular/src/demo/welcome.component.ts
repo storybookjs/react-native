@@ -45,7 +45,7 @@ import { Component } from '@angular/core';
       </main>
   `,
   styles: [
-      `
+    `
         main {
           margin: 15px;
           max-width: 600;
@@ -77,5 +77,5 @@ import { Component } from '@angular/core';
   ],
 })
 export default class WelcomeComponent {
-    displayName = 'Welcome';
+  displayName = 'Welcome';
 }

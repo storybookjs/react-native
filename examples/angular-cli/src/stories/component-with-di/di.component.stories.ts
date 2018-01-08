@@ -16,4 +16,3 @@ storiesOf('Component dependencies', module)
       title: text('title', 'Component dependencies'),
     },
   }));
-

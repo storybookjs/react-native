@@ -6,19 +6,18 @@ import { CustomPipePipe } from './custom.pipe';
 import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';
 
-storiesOf('Custom Pipe', module)
-  .add('Default', () => ({
-    component: NameComponent,
-    props: {
-      field: 'foobar',
-    },
-    moduleMetadata: {
-      imports: [],
-      schemas: [],
-      declarations: [CustomPipePipe],
-      providers: [],
-    },
-  }));
+storiesOf('Custom Pipe', module).add('Default', () => ({
+  component: NameComponent,
+  props: {
+    field: 'foobar',
+  },
+  moduleMetadata: {
+    imports: [],
+    schemas: [],
+    declarations: [CustomPipePipe],
+    providers: [],
+  },
+}));
 
 storiesOf('Custom Pipe/With Knobs', module)
   .addDecorator(withKnobs)

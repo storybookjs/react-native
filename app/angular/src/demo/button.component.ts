@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       <button (click)="onClick.emit($event);">{{ text }}</button>
   `,
   styles: [
-      `
+    `
         button {
           border: 1px solid #eee;
           border-radius: 3px;
@@ -20,6 +20,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   ],
 })
 export default class ButtonComponent {
-    @Input() text = '';
-    @Output() onClick = new EventEmitter<any>();
+  @Input() text = '';
+  @Output() onClick = new EventEmitter<any>();
 }

@@ -2,15 +2,12 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DummyService {
-  constructor() { }
+  constructor() {}
 
   getItems() {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       setTimeout(() => {
-        resolve([
-          'Joe',
-          'Jane',
-        ]);
+        resolve(['Joe', 'Jane']);
       }, 2000);
     });
   }

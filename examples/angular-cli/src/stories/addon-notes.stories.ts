@@ -11,7 +11,7 @@ storiesOf('Addon Notes', module)
         text: 'Notes on some Button',
         onClick: () => {},
       },
-    })),
+    }))
   )
   .add(
     'Note with HTML',
@@ -29,5 +29,5 @@ storiesOf('Addon Notes', module)
         text: 'Notes with HTML',
         onClick: () => {},
       },
-    })),
+    }))
   );
