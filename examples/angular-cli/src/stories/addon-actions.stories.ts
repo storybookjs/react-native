@@ -7,8 +7,8 @@ storiesOf('Addon Actions', module)
     component: Button,
     props: {
       text: 'Action only',
-      onClick: action('log 1')
-    }
+      onClick: action('log 1'),
+    },
   }))
   .add('Action and method', () => ({
     component: Button,
@@ -18,6 +18,6 @@ storiesOf('Addon Actions', module)
         console.log(e);
         e.preventDefault();
         action('log2')(e.target);
-      }
-    }
+      },
+    },
   }));

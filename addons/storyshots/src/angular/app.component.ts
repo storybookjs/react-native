@@ -11,16 +11,13 @@ import { NgStory } from './types';
 import { setProps } from './setPropsToComponent';
 
 @Component({
-  selector: 'app-root',
-  template: '<ng-template #target></ng-template>'
+  selector: 'storybook-storyshot-root',
+  template: '<ng-template #target></ng-template>',
 })
 export class AppComponent implements OnInit {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
-  constructor(
-    private cfr: ComponentFactoryResolver,
-    @Inject(STORY) private data: NgStory
-  ) {}
+  constructor(private cfr: ComponentFactoryResolver, @Inject(STORY) private data: NgStory) {}
 
   /*
   * We need to use here the ngOnInit instead of ngAfterViewInit,

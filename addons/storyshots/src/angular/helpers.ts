@@ -1,8 +1,4 @@
-import {
-  Type,
-  NgModule,
-  Component,
-} from '@angular/core';
+import { Type, NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { STORY } from './app.token';
@@ -12,17 +8,20 @@ import { NgModuleMetadata, NgStory } from './types';
 interface IComponent extends Type<any> {
   annotations: any[];
   parameters: any[];
-  propsMetadata: any[]
+  propsMetadata: any[];
 }
 
-const getComponentMetadata = (
-  { component, props = {}, propsMeta = {}, moduleMetadata = {
+const getComponentMetadata = ({
+  component,
+  props = {},
+  propsMeta = {},
+  moduleMetadata = {
     imports: [],
     schemas: [],
     declarations: [],
-    providers: []
-  } }: NgStory
-) => {
+    providers: [],
+  },
+}: NgStory) => {
   if (!component || typeof component !== 'function') {
     throw new Error('No valid component provided');
   }
@@ -32,15 +31,10 @@ const getComponentMetadata = (
   const paramsMetadata = getParameters(component);
 
   Object.keys(propsMeta).map(key => {
-      (<any>propsMetadata)[key] = (<any>propsMeta)[key];
+    (<any>propsMetadata)[key] = (<any>propsMeta)[key];
   });
 
-  const {
-    imports = [],
-    schemas = [],
-    declarations = [],
-    providers = []
-  } = moduleMetadata;
+  const { imports = [], schemas = [], declarations = [], providers = [] } = moduleMetadata;
 
   return {
     component,
@@ -52,16 +46,18 @@ const getComponentMetadata = (
       imports,
       schemas,
       declarations,
-      providers
-    }
+      providers,
+    },
   };
 };
 
-const getAnnotatedComponent = (meta: NgModule,
-                               component: any,
-                               propsMeta: { [p: string]: any },
-                               params: any[]): IComponent => {
-  const NewComponent: any = function NewComponent(...args: any[]) {
+const getAnnotatedComponent = (
+  meta: NgModule,
+  component: any,
+  propsMeta: { [p: string]: any },
+  params: any[]
+): IComponent => {
+  const NewComponent: any = function(...args: any[]) {
     component.call(this, ...args);
   };
 
@@ -74,15 +70,15 @@ const getAnnotatedComponent = (meta: NgModule,
 };
 
 const getModule = (
-    declarations: Array<Type<any> | any[]>,
-    entryComponents: Array<Type<any> | any[]>,
-    bootstrap: Array<Type<any> | any[]>,
-    data: NgStory,
-    moduleMetadata: NgModuleMetadata = {
-      imports: [],
-      schemas: [],
-      declarations: [],
-      providers: []
+  declarations: Array<Type<any> | any[]>,
+  entryComponents: Array<Type<any> | any[]>,
+  bootstrap: Array<Type<any> | any[]>,
+  data: NgStory,
+  moduleMetadata: NgModuleMetadata = {
+    imports: [],
+    schemas: [],
+    declarations: [],
+    providers: [],
   }
 ): any => {
   return {
@@ -91,35 +87,28 @@ const getModule = (
     providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
     entryComponents: [...entryComponents],
     schemas: [...moduleMetadata.schemas],
-    bootstrap: [...bootstrap]
+    bootstrap: [...bootstrap],
   };
 };
 
 export const initModuleData = (currentStory: NgStory): any => {
-  const {
-    component,
-    componentMeta,
-    props,
-    propsMeta,
-    params,
-    moduleMeta
-  } = getComponentMetadata(currentStory);
+  const { component, componentMeta, props, propsMeta, params, moduleMeta } = getComponentMetadata(
+    currentStory
+  );
 
   if (!componentMeta) {
     throw new Error('No component metadata available');
   }
 
-  const AnnotatedComponent = getAnnotatedComponent(
-    componentMeta,
-    component,
-    propsMeta,
-    [...params, ...moduleMeta.providers.map(provider => [provider])]
-  );
+  const AnnotatedComponent = getAnnotatedComponent(componentMeta, component, propsMeta, [
+    ...params,
+    ...moduleMeta.providers.map(provider => [provider]),
+  ]);
 
   const story = {
     component: AnnotatedComponent,
     props,
-    propsMeta
+    propsMeta,
   };
 
   return {

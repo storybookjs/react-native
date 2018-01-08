@@ -1,18 +1,13 @@
 import * as _ from 'lodash';
 
-import {
-  EventEmitter,
-  SimpleChanges,
-  SimpleChange,
-} from '@angular/core';
+import { EventEmitter, SimpleChanges, SimpleChange } from '@angular/core';
 
 import { NgStory, ICollection } from './types';
-
 
 /**
  * Set inputs and outputs
  */
-function setProps(instance: any, {props = {}, propsMeta = {}}: NgStory): void {
+function setProps(instance: any, { props = {}, propsMeta = {} }: NgStory): void {
   const changes: SimpleChanges = {};
   const hasNgOnChangesHook = _.has(instance, 'ngOnChanges');
 
@@ -25,7 +20,7 @@ function setProps(instance: any, {props = {}, propsMeta = {}}: NgStory): void {
       if (hasNgOnChangesHook) {
         changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
       }
-    } else if (_.isFunction(value) && (key !== 'ngModelChange')) {
+    } else if (_.isFunction(value) && key !== 'ngModelChange') {
       instanceProperty.subscribe(value);
     }
   });
