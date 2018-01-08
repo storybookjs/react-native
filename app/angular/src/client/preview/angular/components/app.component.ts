@@ -58,11 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (hasNgOnChangesHook) {
           changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
         }
-<<<<<<< HEAD
-      } else if (_.isFunction(value) && key !== 'ngModelChange') {
-=======
       } else if (typeof value === 'function' && (key !== 'ngModelChange')) {
->>>>>>> Removed lodash
         instanceProperty.subscribe(value);
       }
     });
@@ -89,13 +85,8 @@ export class AppComponent implements OnInit, OnDestroy {
       instance.writeValue(props.ngModel);
     }
 
-<<<<<<< HEAD
-    if (_.isFunction(props.ngModelChange)) {
-      _.invoke(instance, 'registerOnChange', props.ngModelChange);
-=======
     if (typeof props.ngModelChange === 'function') {
       instance.registerOnChange(props.ngModelChange);
->>>>>>> Removed lodash
     }
   }
 }
