@@ -1,5 +1,4 @@
 import { Type, NgModule, Component } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { STORY } from './app.token';
 import { getAnnotations, getParameters, getPropMetadata } from './utils';
