@@ -2,7 +2,6 @@
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
 // For the time being, the ViewContainerRef approach works pretty well.
-import * as _ from 'lodash';
 import {
   Component,
   Inject,
@@ -51,18 +50,18 @@ export class AppComponent implements OnInit, OnDestroy {
    */
   private setProps(instance: any, {props = {}, propsMeta = {}}: NgStory): void {
     const changes: SimpleChanges = {};
-    const hasNgOnChangesHook = _.has(instance, 'ngOnChanges');
+    const hasNgOnChangesHook = !!instance['ngOnChanges'];
 
-    _.forEach(propsMeta, (meta, key) => {
+    Object.keys(propsMeta).map((key: string) => {
       const value = props[key];
-      const instanceProperty = <any>_.get(instance, key);
+      const instanceProperty = instance[key];
 
-      if (!(instanceProperty instanceof EventEmitter) && !_.isUndefined(value)) {
-        _.set(instance, key, value);
+      if (!(instanceProperty instanceof EventEmitter) && !!value) {
+        instance[key] = value;
         if (hasNgOnChangesHook) {
           changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
         }
-      } else if (_.isFunction(value) && (key !== 'ngModelChange')) {
+      } else if (typeof value === 'function' && (key !== 'ngModelChange')) {
         instanceProperty.subscribe(value);
       }
     });
@@ -76,8 +75,8 @@ export class AppComponent implements OnInit, OnDestroy {
    * Issue: [https://github.com/angular/angular/issues/8903]
    */
   private callNgOnChangesHook(instance: any, changes: SimpleChanges): void {
-    if (!_.isEmpty(changes)) {
-      _.invoke(instance, 'ngOnChanges', changes);
+    if (!!Object.keys(changes).length) {
+      instance.ngOnChanges(changes);
     }
   }
 
@@ -85,12 +84,12 @@ export class AppComponent implements OnInit, OnDestroy {
    * If component implements ControlValueAccessor interface try to set ngModel
    */
   private setNgModel(instance: any, props: ICollection): void {
-    if (_.has(props, 'ngModel')) {
-      _.invoke(instance, 'writeValue', props.ngModel);
+    if (!!props['ngModel']) {
+      instance.writeValue(props.ngModel);
     }
 
-    if (_.isFunction(props.ngModelChange)) {
-        _.invoke(instance, 'registerOnChange', props.ngModelChange);
+    if (typeof props.ngModelChange === 'function') {
+      instance.registerOnChange(props.ngModelChange);
     }
   }
 }
