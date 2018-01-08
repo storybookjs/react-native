@@ -12,16 +12,22 @@ function cleanup {
 trap cleanup EXIT
 
 update=0
+update_only=0
 skip=0
 fixtures_dir='fixtures'
 
 # parse command-line options
 # `-u` turns on snapshot update mode
+# `-o` does the same, plus skips the smoke tests
 # `-s` skips snapshot testing
 # '-f' sets fixtures directory
-while getopts ":usf:" opt; do
+while getopts ":uosf:" opt; do
   case $opt in
     u)
+      update=1
+      ;;
+    o)
+      update_only=1
       update=1
       ;;
     s)
@@ -70,6 +76,11 @@ if [ $update -eq 1 ]
         exit 1
       fi
     fi
+  fi
+
+if [ $update_only -eq 1 ]
+  then
+    exit 0
   fi
 
 # install all the dependencies in a single run
