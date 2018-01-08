@@ -4,7 +4,7 @@
 
 #### Bug Fixes
 
--   Remove src from indidivudal .npmignore files [#2677](https://github.com/storybooks/storybook/pull/2677)
+-   Remove src from individual .npmignore files [#2677](https://github.com/storybooks/storybook/pull/2677)
 
 # 3.4.0-alpha.0
 
