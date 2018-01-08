@@ -146,5 +146,13 @@
     "no-access-missing-member": true,
     "templates-use-public": true,
     "invoke-injectable": true
+  },
+  "linterOptions": {
+    "exclude": [
+      "lib/cli/test/**",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/storybook-static/**"
+    ]
   }
 }
