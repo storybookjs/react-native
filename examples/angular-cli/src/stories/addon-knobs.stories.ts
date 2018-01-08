@@ -28,8 +28,8 @@ storiesOf('Addon Knobs', module)
       props: {
         name,
         age,
-        phoneNumber
-      }
+        phoneNumber,
+      },
     };
   })
   .add('All knobs', () => {
@@ -64,7 +64,7 @@ storiesOf('Addon Knobs', module)
         border,
         today,
         items,
-        nice
-      }
+        nice,
+      },
     };
   });

@@ -3,7 +3,7 @@ import {
   enableProdMode,
   NgModule,
   Component,
-  NgModuleRef
+  NgModuleRef,
 } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
@@ -59,8 +59,8 @@ const getComponentMetadata = (
     imports: [],
     schemas: [],
     declarations: [],
-    providers: []
-  } }: NgStory
+    providers: [],
+  } }: NgStory,
 ) => {
   if (!component || typeof component !== 'function') {
     throw new Error('No valid component provided');
@@ -78,7 +78,7 @@ const getComponentMetadata = (
     imports = [],
     schemas = [],
     declarations = [],
-    providers = []
+    providers = [],
   } = moduleMetadata;
 
   return {
@@ -91,8 +91,8 @@ const getComponentMetadata = (
       imports,
       schemas,
       declarations,
-      providers
-    }
+      providers,
+    },
   };
 };
 
@@ -100,7 +100,7 @@ const getAnnotatedComponent = (meta: NgModule,
                                component: any,
                                propsMeta: { [p: string]: any },
                                params: any[]): IComponent => {
-  const NewComponent: any = function NewComponent(...args: any[]) {
+  const NewComponent: any = function (...args: any[]) {
     component.call(this, ...args);
   };
 
@@ -120,7 +120,7 @@ moduleMetadata: NgModuleMetadata = {
   imports: [],
   schemas: [],
   declarations: [],
-  providers: []
+  providers: [],
 }): IModule => {
   const moduleMeta = new NgModule({
     declarations: [...declarations, ...moduleMetadata.declarations],
@@ -128,10 +128,10 @@ moduleMetadata: NgModuleMetadata = {
     providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
     entryComponents: [...entryComponents],
     schemas: [...moduleMetadata.schemas],
-    bootstrap: [...bootstrap]
+    bootstrap: [...bootstrap],
   });
 
-  const NewModule: any = function NewModule() {};
+  const NewModule: any = function () {};
   (<IModule>NewModule).annotations = [moduleMeta];
   return NewModule;
 };
@@ -143,7 +143,7 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     props,
     propsMeta,
     params,
-    moduleMeta
+    moduleMeta,
   } = getComponentMetadata(currentStory(context));
 
   if (!componentMeta) {
@@ -154,13 +154,13 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     componentMeta,
     component,
     propsMeta,
-    [...params, ...moduleMeta.providers.map(provider => [provider])]
+    [...params, ...moduleMeta.providers.map(provider => [provider])],
   );
 
   const story = {
     component: AnnotatedComponent,
     props,
-    propsMeta
+    propsMeta,
   };
 
   return getModule(
@@ -168,7 +168,7 @@ const initModule = (currentStory: IGetStoryWithContext, context: IContext, reRen
     [AnnotatedComponent],
     [AppComponent],
     story,
-    moduleMeta
+    moduleMeta,
   );
 };
 
@@ -197,7 +197,7 @@ const draw = (newModule: IModule, reRender: boolean = true): void => {
 export const renderNgError = debounce((error: Error) => {
   const errorData = {
     message: error.message,
-    stack: error.stack
+    stack: error.stack,
   };
 
   const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData);
@@ -212,8 +212,8 @@ export const renderNoPreview = debounce(() => {
     [NoPreviewComponent],
     {
       message: 'No Preview available.',
-      stack: ''
-    }
+      stack: '',
+    },
   );
 
   draw(Module);

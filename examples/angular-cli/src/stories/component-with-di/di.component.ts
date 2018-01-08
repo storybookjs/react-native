@@ -3,11 +3,11 @@ import { Component, Input, InjectionToken, Injector, ElementRef, Inject } from '
 export const TEST_TOKEN = new InjectionToken<string>('test');
 
 @Component({
-  selector: 'di-component',
+  selector: 'storybook-di-component',
   templateUrl: './di.component.html',
   providers: [
-    { provide: TEST_TOKEN, useValue: 123}
-  ]
+    { provide: TEST_TOKEN, useValue: 123},
+  ],
 })
 export class DiComponent {
   @Input() title: string;
@@ -15,7 +15,7 @@ export class DiComponent {
   constructor(
     protected injector: Injector,
     protected elRef: ElementRef,
-    @Inject(TEST_TOKEN) protected testToken: number
+    @Inject(TEST_TOKEN) protected testToken: number,
   ) {}
 
   isAllDeps(): boolean {

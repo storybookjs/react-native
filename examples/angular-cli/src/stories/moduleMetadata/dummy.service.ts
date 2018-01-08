@@ -8,10 +8,10 @@ export class DummyService {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve([
-          "Joe",
-          "Jane"
-        ])
-      }, 2000)
-    })
+          'Joe',
+          'Jane',
+        ]);
+      }, 2000);
+    });
   }
 }

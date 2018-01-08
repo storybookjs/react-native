@@ -71,6 +71,7 @@
     "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
+    "no-unused-variable": true,
     "object-literal-sort-keys": false,
     "one-line": [
       true,
@@ -88,6 +89,13 @@
     "semicolon": [
       true,
       "always"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
     ],
     "triple-equals": [
       true,
@@ -123,7 +131,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "storybook",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

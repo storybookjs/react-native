@@ -13,21 +13,21 @@ import {
   OnDestroy,
   EventEmitter,
   SimpleChanges,
-  SimpleChange
+  SimpleChange,
 } from '@angular/core';
 import { STORY } from '../app.token';
 import { NgStory, ICollection } from '../types';
 
 @Component({
   selector: 'storybook-dynamic-app-root',
-  template: '<ng-template #target></ng-template>'
+  template: '<ng-template #target></ng-template>',
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
   constructor(
     private cfr: ComponentFactoryResolver,
-    @Inject(STORY) private data: NgStory
+    @Inject(STORY) private data: NgStory,
   ) {}
 
   ngAfterViewInit(): void {

@@ -12,6 +12,6 @@ storiesOf('ngModel', module)
     component: CustomCvaComponent,
     props: {
       ngModel: 'Type anything',
-      ngModelChange: action('ngModelChnange')
-    }
+      ngModelChange: action('ngModelChnange'),
+    },
   })));

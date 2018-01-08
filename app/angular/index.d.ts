@@ -1,13 +1,13 @@
 import {NgModuleMetadata, ICollection} from './dist/client/preview/angular/types';
 
 export interface IStorybookStory {
-    name: string,
-    render: () => any
+    name: string;
+    render: () => any;
 }
 
 export interface IStoribookSection {
-    kind: string,
-    stories: IStorybookStory[]
+    kind: string;
+    stories: IStorybookStory[];
 }
 
 export type IGetStory = () => {

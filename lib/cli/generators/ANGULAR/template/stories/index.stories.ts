@@ -24,7 +24,7 @@ storiesOf('Button', module)
       props: {
         text: '😀 😎 👍 💯',
       },
-    }))
+    })),
   )
   .add(
     'with some emoji and action',
@@ -34,7 +34,7 @@ storiesOf('Button', module)
         text: '😀 😎 👍 💯',
         onClick: action('This was clicked OMG'),
       },
-    }))
+    })),
   );
 
 storiesOf('Another Button', module).add('button with link to another story', () => ({
