@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button button with link to another story 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <button-component
+  <storybook-button-component
     _nghost-c5=""
   >
     
@@ -18,6 +18,6 @@ exports[`Storyshots Another Button button with link to another story 1`] = `
     </button>
     
     
-  </button-component>
-</app-root>
+  </storybook-button-component>
+</storybook-storyshot-root>
 `;

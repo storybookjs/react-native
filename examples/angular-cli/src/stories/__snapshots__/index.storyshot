@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Button with some emoji 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <button-component
+  <storybook-button-component
     _nghost-c2=""
   >
     
@@ -18,17 +18,17 @@ exports[`Storyshots Button with some emoji 1`] = `
     </button>
     
     
-  </button-component>
-</app-root>
+  </storybook-button-component>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Button with text 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <button-component
+  <storybook-button-component
     _nghost-c1=""
   >
     
@@ -40,17 +40,17 @@ exports[`Storyshots Button with text 1`] = `
     </button>
     
     
-  </button-component>
-</app-root>
+  </storybook-button-component>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <welcome-component
+  <storybook-welcome-component
     _nghost-c0=""
   >
     
@@ -115,7 +115,8 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         >
           stories
         </a>
-         for a component called 
+         for a component called
+            
         <span
           _ngcontent-c0=""
           class="inline-code"
@@ -212,7 +213,8 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         >
           .storybook/webpack.config.js
         </span>
-         to add webpack loaders and plugins you are using in this project.
+        
+            to add webpack loaders and plugins you are using in this project.
           
       </p>
       
@@ -220,6 +222,6 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     </main>
     
     
-  </welcome-component>
-</app-root>
+  </storybook-welcome-component>
+</storybook-storyshot-root>
 `;

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Component dependencies inputs and inject dependencies 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <di-component>
+  <storybook-di-component>
     <div>
       
     
@@ -41,17 +41,17 @@ exports[`Storyshots Component dependencies inputs and inject dependencies 1`] = 
     </div>
     
   
-  </di-component>
-</app-root>
+  </storybook-di-component>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Component dependencies inputs and inject dependencies with knobs 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <di-component>
+  <storybook-di-component>
     <div>
       
     
@@ -86,6 +86,6 @@ exports[`Storyshots Component dependencies inputs and inject dependencies with k
     </div>
     
   
-  </di-component>
-</app-root>
+  </storybook-di-component>
+</storybook-storyshot-root>
 `;

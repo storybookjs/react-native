@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon Knobs All knobs 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <simple-knobs-component>
+  <storybook-simple-knobs-component>
     
       
     <div
@@ -80,17 +80,17 @@ exports[`Storyshots Addon Knobs All knobs 1`] = `
     </div>
     
     
-  </simple-knobs-component>
-</app-root>
+  </storybook-simple-knobs-component>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Addon Knobs Simple 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <simple-knobs-component>
+  <storybook-simple-knobs-component>
     
       
     <div>
@@ -103,6 +103,6 @@ exports[`Storyshots Addon Knobs Simple 1`] = `
     </div>
     
     
-  </simple-knobs-component>
-</app-root>
+  </storybook-simple-knobs-component>
+</storybook-storyshot-root>
 `;

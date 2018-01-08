@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon Notes Note with HTML 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <button-component
+  <storybook-button-component
     _nghost-c7=""
   >
     
@@ -18,17 +18,17 @@ exports[`Storyshots Addon Notes Note with HTML 1`] = `
     </button>
     
     
-  </button-component>
-</app-root>
+  </storybook-button-component>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Addon Notes Simple note 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <button-component
+  <storybook-button-component
     _nghost-c6=""
   >
     
@@ -40,6 +40,6 @@ exports[`Storyshots Addon Notes Simple note 1`] = `
     </button>
     
     
-  </button-component>
-</app-root>
+  </storybook-button-component>
+</storybook-storyshot-root>
 `;

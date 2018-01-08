@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots App Component Component with separate template 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <app-root>
+  <storybook-app-root>
     
   
     <div
@@ -90,6 +90,6 @@ exports[`Storyshots App Component Component with separate template 1`] = `
     
   
   
-  </app-root>
-</app-root>
+  </storybook-app-root>
+</storybook-storyshot-root>
 `;

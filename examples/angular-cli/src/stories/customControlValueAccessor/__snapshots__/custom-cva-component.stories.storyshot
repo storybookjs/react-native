@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ngModel custom ControlValueAccessor 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <custom-cva-component>
+  <storybook-custom-cva-component>
     
       
     <div>
@@ -19,6 +19,6 @@ exports[`Storyshots ngModel custom ControlValueAccessor 1`] = `
     />
     
     
-  </custom-cva-component>
-</app-root>
+  </storybook-custom-cva-component>
+</storybook-storyshot-root>
 `;

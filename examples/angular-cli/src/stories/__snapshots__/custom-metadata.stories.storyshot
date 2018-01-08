@@ -1,40 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Custom Pipe Default 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <name>
+  <storybook-name>
     <h1>
       CustomPipe: foobar
     </h1>
-  </name>
-</app-root>
+  </storybook-name>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Custom Pipe/With Knobs NameComponent 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <name>
+  <storybook-name>
     <h1>
       CustomPipe: foobar
     </h1>
-  </name>
-</app-root>
+  </storybook-name>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Custom ngModule metadata simple 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <simple-service-component>
+  <storybook-simple-service-component>
     
       
     <p>
@@ -51,17 +51,17 @@ exports[`Storyshots Custom ngModule metadata simple 1`] = `
     </ul>
     
     
-  </simple-service-component>
-</app-root>
+  </storybook-simple-service-component>
+</storybook-storyshot-root>
 `;
 
 exports[`Storyshots Custom ngModule metadata with knobs 1`] = `
-<app-root
+<storybook-storyshot-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <simple-service-component>
+  <storybook-simple-service-component>
     
       
     <p>
@@ -78,6 +78,6 @@ exports[`Storyshots Custom ngModule metadata with knobs 1`] = `
     </ul>
     
     
-  </simple-service-component>
-</app-root>
+  </storybook-simple-service-component>
+</storybook-storyshot-root>
 `;
