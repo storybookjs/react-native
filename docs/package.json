@@ -44,14 +44,14 @@
     "global": "^4.3.2",
     "highlight.js": "^9.12.0",
     "lodash": "^4.17.2",
-    "marked": "^0.3.7",
+    "marked": "^0.3.12",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-document-title": "^2.0.3",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.0.3",
     "react-router": "^4.2.0",
-    "react-stack-grid": "^0.7.0",
+    "react-stack-grid": "^0.7.1",
     "sitemap": "^1.12.0"
   },
   "private": true
