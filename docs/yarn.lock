@@ -8773,9 +8773,9 @@ react-split-pane@^0.1.74:
     prop-types "^15.5.10"
     react-style-proptype "^3.0.0"
 
-react-stack-grid@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-stack-grid/-/react-stack-grid-0.7.0.tgz#396109b811ae8a43920ce8b67421ed9978a8b677"
+react-stack-grid@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/react-stack-grid/-/react-stack-grid-0.7.1.tgz#cbf7353ce6c2acf712b827c36b0be234af84bee9"
   dependencies:
     easy-css-transform-builder "^0.0.2"
     exenv "^1.2.1"
