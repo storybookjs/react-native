@@ -47,7 +47,7 @@ export function renderMain(data, storyStore, forceRender) {
   const { selectedKind, selectedStory } = data;
 
   const revision = storyStore.getRevision();
-  const story = storyStore.getStory(selectedKind, selectedStory);
+  const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
   if (!story) {
     ReactDOM.render(noPreview, rootEl);
     return null;
@@ -77,12 +77,8 @@ export function renderMain(data, storyStore, forceRender) {
   previousStory = selectedStory;
   ReactDOM.unmountComponentAtNode(rootEl);
 
-  const context = {
-    kind: selectedKind,
-    story: selectedStory,
-  };
-
-  const element = story(context);
+  console.log(story);
+  const element = story();
 
   if (!element) {
     const error = {
