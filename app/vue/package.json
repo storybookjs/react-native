@@ -81,13 +81,13 @@
   "devDependencies": {
     "nodemon": "^1.14.10",
     "vue": "^2.5.13",
-    "vue-loader": "^13.6.2",
+    "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "vue": "2.5.13",
-    "vue-loader": "13.6.2",
+    "vue-loader": "13.7.0",
     "vue-template-compiler": "2.5.13"
   }
 }
