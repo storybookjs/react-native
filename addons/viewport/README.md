@@ -4,7 +4,7 @@ Storybook Viewport Addon allows your stories to be displayed in different sizes 
 
 This addon works with Storybook for: [React](https://github.com/storybooks/storybook/tree/master/app/react) and [Vue](https://github.com/storybooks/storybook/tree/master/app/vue).
 
-![Screenshot](https://github.com/storybooks/storybook/blob/master/docs/viewport.png)
+![Screenshot](https://github.com/storybooks/storybook/blob/master/addons/viewport/docs/viewport.png)
 
 ## Installation
 
