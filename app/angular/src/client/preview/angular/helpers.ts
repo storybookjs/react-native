@@ -59,6 +59,7 @@ const getComponentMetadata = ({
     schemas: [],
     declarations: [],
     providers: [],
+    entryComponents: [],
   },
 }: NgStory) => {
   if (!component || typeof component !== 'function') {
@@ -73,7 +74,7 @@ const getComponentMetadata = ({
     (<any>propsMetadata)[key] = (<any>propsMeta)[key];
   });
 
-  const { imports = [], schemas = [], declarations = [], providers = [] } = moduleMetadata;
+  const { imports = [], schemas = [], declarations = [], providers = [], entryComponents = [] } = moduleMetadata;
 
   return {
     component,
@@ -86,6 +87,7 @@ const getComponentMetadata = ({
       schemas,
       declarations,
       providers,
+      entryComponents,
     },
   };
 };
@@ -118,13 +120,14 @@ const getModule = (
     schemas: [],
     declarations: [],
     providers: [],
+    entryComponents: [],
   }
 ): IModule => {
   const moduleMeta = new NgModule({
     declarations: [...declarations, ...moduleMetadata.declarations],
     imports: [BrowserModule, FormsModule, ...moduleMetadata.imports],
     providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
-    entryComponents: [...entryComponents],
+    entryComponents: [...entryComponents, ...moduleMetadata.entryComponents],
     schemas: [...moduleMetadata.schemas],
     bootstrap: [...bootstrap],
   });

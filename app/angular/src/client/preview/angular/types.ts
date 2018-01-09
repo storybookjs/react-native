@@ -3,6 +3,7 @@ export interface NgModuleMetadata {
   imports: Array<any>;
   schemas: Array<any>;
   providers: Array<any>;
+  entryComponents: Array<any>;
 }
 
 export interface ICollection {
