@@ -114,6 +114,42 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'h
 `getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
 
 
+### Integrate image storyshots with regular app
+You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
+You can find a working example of this in the [official-storybook](https://github.com/storybooks/storybook/tree/master/examples/official-storybook) example.
+
+### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
+You have two options here, you can either: 
+
+- Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
+
+- Create a custom test file using Jest outside of the CRA scope:
+
+    A more robust approach would be to separate existing test files ran by create-react-app (anything `(test|spec).js` suffixed files) from the test files to run storyshots with image snapshots.
+    This use case can be achieved by using a custom name for the test file, ie something like `image-storyshots.runner.js`. This file will contains the `initStoryshots` call with image snapshots configuration.
+    Then you will create a separate script entry in your package.json, for instance 
+    ```json
+    {
+        "scripts": { 
+            "image-snapshots" : "jest image-storyshots.runner.js --config path/to/custom/jest.config.json"
+        }
+    }
+    ```
+    Note that you will certainly need a custom config file for Jest as you run it outside of the CRA scope and thus you do not have the built-in config.
+
+    Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
+
+### Reminder
+An image snapshot is simply a screenshot taken by a web browser (in our case, Chrome).
+
+The browser opens a page (either using the static build of storybook or a running instance of Storybook)
+
+If you run your test without either the static build or a running instance, this wont work.
+
+To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date. 
+This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
+If you run the image snapshots against a running Storybook in dev mode, you don't have to care about being up-to-date because the dev-server is watching changes and rebuilds automatically.
+
 ## Options
 
 ### `configPath`
