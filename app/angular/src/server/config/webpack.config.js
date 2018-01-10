@@ -72,9 +72,13 @@ export default function(configDir) {
           ],
         },
         {
-          test: /\.(html|css)$/,
+          test: /\.html$/,
           loader: 'raw-loader',
-          exclude: /\.async\.(html|css)$/,
+          exclude: /\.async\.css$/,
+        },
+        {
+          test: /\.scss$/,
+          loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
         {
           test: /\.md$/,
