@@ -45,11 +45,11 @@ export class AppComponent implements OnInit, OnDestroy {
   /**
    * Set inputs and outputs
    */
-  private setProps(instance: any, { props = {}, propsMeta = {} }: NgStory): void {
+  private setProps(instance: any, { props = {} }: NgStory): void {
     const changes: SimpleChanges = {};
     const hasNgOnChangesHook = !!instance['ngOnChanges'];
 
-    Object.keys(propsMeta).map((key: string) => {
+    Object.keys(props).map((key: string) => {
       const value = props[key];
       const instanceProperty = instance[key];
 

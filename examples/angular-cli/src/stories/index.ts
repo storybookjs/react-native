@@ -11,7 +11,10 @@ storiesOf('Welcome', module).add('to Storybook', () => ({
 
 storiesOf('Button', module)
   .add('with text', () => ({
-    component: Button,
+    moduleMetadata: {
+      entryComponents: [Button, Welcome],
+      declarations: [Button, Welcome],
+    },
     props: {
       text: 'Hello Button',
       onClick: event => {
@@ -21,7 +24,8 @@ storiesOf('Button', module)
     },
     template: `
       <h1> This is a template </h1>
-      <button-component [text]="text" (onClick)="onClick($event)"></button-component>
+      <storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>
+      <storybook-welcome-component></storybook-welcome-component>
     `,
   }))
   .add('with some emoji', () => ({

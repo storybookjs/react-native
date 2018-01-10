@@ -1,8 +1,11 @@
+import { Type } from '@angular/core';
+
 export interface NgModuleMetadata {
-  declarations: Array<any>;
-  imports: Array<any>;
-  schemas: Array<any>;
-  providers: Array<any>;
+  declarations?: Array<any>;
+  entryComponents?: Array<any>;
+  imports?: Array<any>;
+  schemas?: Array<any>;
+  providers?: Array<any>;
 }
 
 export interface ICollection {
@@ -10,9 +13,9 @@ export interface ICollection {
 }
 
 export interface NgStory {
-  component: any;
+  component?: any;
   props: ICollection;
-  propsMeta: ICollection;
+  propsMeta?: ICollection;
   moduleMetadata?: NgModuleMetadata;
   template?: string;
 }
@@ -29,3 +32,20 @@ export interface IContext {
 }
 
 export type IGetStoryWithContext = (context: IContext) => NgStory;
+
+export type IRenderStoryFn = (
+  story: IGetStoryWithContext,
+  context: IContext,
+  reRender?: boolean
+) => void;
+export type IRenderErrorFn = (error: Error) => void;
+
+export interface IModule extends Type<any> {
+  annotations: any[];
+}
+
+export interface IComponent extends Type<any> {
+  annotations: any[];
+  parameters: any[];
+  propsMetadata: any[];
+}
