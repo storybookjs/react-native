@@ -103,14 +103,14 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@^5.1.3":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.1.3.tgz#e9cfd183a8a12fddad0188d2b7e4e9a45f302d82"
+"@angular/compiler-cli@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.0.tgz#336b6d0127c69f25637cbcd82a4b76de6f3a2cce"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
-    tsickle "^0.25.5"
+    tsickle "^0.26.0"
 
 "@angular/compiler@^5.2.0":
   version "5.2.0"
@@ -14220,9 +14220,9 @@ tsconfig@^6.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tsickle@^0.25.5:
-  version "0.25.6"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.25.6.tgz#b595db16b236721824eeeda8bb262365b47ef334"
+tsickle@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.26.0.tgz#40b30a2dd6abcb33b182e37596674bd1cfe4039c"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
