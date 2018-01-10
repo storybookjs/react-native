@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import loadBabelConfig from './babel_config';
+import loadTsConfig from './ts_config';
 
 // avoid ESLint errors
 const logger = console;
@@ -14,6 +15,9 @@ export default function(configType, baseConfig, configDir) {
 
   const babelConfig = loadBabelConfig(configDir);
   config.module.rules[0].query = babelConfig;
+
+  const tsOptions = loadTsConfig(configDir);
+  config.module.rules[1].loaders[0].options = tsOptions;
 
   // Check whether a config.js file exists inside the storybook
   // config directory and throw an error if it's not.
