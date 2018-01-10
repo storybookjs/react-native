@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import reactTestRenderer from 'react-test-renderer';
 
 function getRenderedTree(story, context, { renderer, serializer, ...rendererOptions }) {

@@ -20,10 +20,8 @@
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
-    "jest-preset-angular": "^5.0.0",
     "jest-specific-snapshot": "^0.3.0",
     "prop-types": "^15.6.0",
-    "react-test-renderer": "^16.2.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
