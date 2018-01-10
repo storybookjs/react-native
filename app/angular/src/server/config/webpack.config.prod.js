@@ -83,7 +83,7 @@ export default function(configDir) {
         {
           test: /\.html$/,
           loader: 'raw-loader',
-          exclude: /\.async\.(html|css)$/,
+          exclude: /\.async\.html$/,
         },
         {
           test: /\.scss$/,
