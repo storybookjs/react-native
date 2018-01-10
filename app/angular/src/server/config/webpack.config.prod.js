@@ -73,12 +73,21 @@ export default function(configDir) {
         },
         {
           test: /\.ts?$/,
-          loaders: [require.resolve('ts-loader'), require.resolve('angular2-template-loader')],
+          loaders: [
+            {
+              loader: require.resolve('ts-loader'),
+            },
+            require.resolve('angular2-template-loader'),
+          ],
         },
         {
-          test: /\.(html|css)$/,
+          test: /\.html$/,
           loader: 'raw-loader',
-          exclude: /\.async\.(html|css)$/,
+          exclude: /\.async\.html$/,
+        },
+        {
+          test: /\.scss$/,
+          loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
       ],
     },
