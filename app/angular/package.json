@@ -43,7 +43,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.0.0",
     "chalk": "^2.1.0",
     "commander": "^2.11.0",
-    "common-tags": "^1.7.0",
+    "common-tags": "^1.7.1",
     "configstore": "^3.1.0",
     "core-js": "^2.4.1",
     "cross-env": "^5.1.1",
