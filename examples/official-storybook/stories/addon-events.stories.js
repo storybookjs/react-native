@@ -15,7 +15,7 @@ const EVENTS = {
 const emitter = new EventEmitter();
 const emit = emitter.emit.bind(emitter);
 
-storiesOf('Addon Events', module)
+storiesOf('Addons|Events', module)
   .addDecorator(getStory => (
     <WithEvents
       emit={emit}

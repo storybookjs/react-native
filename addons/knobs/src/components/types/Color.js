@@ -84,7 +84,12 @@ class ColorType extends React.Component {
                 this.popover = e;
               }}
             >
-              <SketchPicker color={knob.value} onChange={color => onChange(color.hex)} />
+              <SketchPicker
+                color={knob.value}
+                onChange={color =>
+                  onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`)
+                }
+              />
             </div>
           ),
           () => null

@@ -1,8 +1,22 @@
 {
+  "extends": [
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
+  ],
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
   "rules": {
+    "prettier": {
+      "severity": "warning",
+      "options": {
+        "printWidth": 100,
+        "tabWidth": 2,
+        "bracketSpacing": true,
+        "trailingComma": "es5",
+        "singleQuote": true
+      }
+    },
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
@@ -20,7 +34,8 @@
     "import-spacing": true,
     "indent": [
       true,
-      "spaces"
+      "spaces",
+      2
     ],
     "interface-over-type-literal": true,
     "label-position": true,
@@ -71,6 +86,7 @@
     "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
+    "no-unused-variable": true,
     "object-literal-sort-keys": false,
     "one-line": [
       true,
@@ -106,14 +122,6 @@
     "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
     "directive-selector": [
       true,
       "attribute",
@@ -123,7 +131,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "storybook",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
@@ -138,5 +146,13 @@
     "no-access-missing-member": true,
     "templates-use-public": true,
     "invoke-injectable": true
+  },
+  "linterOptions": {
+    "exclude": [
+      "lib/cli/test/**",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/storybook-static/**"
+    ]
   }
 }

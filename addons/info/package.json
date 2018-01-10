@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.3.3",
+  "version": "3.4.0-alpha.1",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,11 +15,11 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/client-logger": "^3.3.3",
-    "@storybook/components": "^3.3.3",
+    "@storybook/client-logger": "^3.4.0-alpha.1",
+    "@storybook/components": "^3.4.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
-    "marksy": "^6.0.1",
+    "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.0",
     "react-addons-create-fragment": "^15.5.3",

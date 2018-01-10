@@ -6,7 +6,7 @@ import BaseButton from '../components/BaseButton';
 
 const text = 'Testing the a11y addon';
 
-storiesOf('Addon a11y', module)
+storiesOf('Addons|a11y', module)
   .addDecorator(checkA11y)
   .add('Default', () => <BaseButton label="" />)
   .add('Label', () => <BaseButton label={text} />)

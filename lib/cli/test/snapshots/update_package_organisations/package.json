@@ -8,7 +8,7 @@
     "react-scripts": "0.9.x"
   },
   "devDependencies": {
-    "@storybook/react": "^3.3.3"
+    "@storybook/react": "^3.4.0-alpha.1"
   },
   "scripts": {
     "start": "react-scripts start",

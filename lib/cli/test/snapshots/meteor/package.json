@@ -18,8 +18,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-root-slash-import": "^1.1.0",
-    "@storybook/react": "^3.3.3",
-    "@storybook/addon-actions": "^3.3.3",
-    "@storybook/addon-links": "^3.3.3"
+    "@storybook/react": "^3.4.0-alpha.1",
+    "@storybook/addon-actions": "^3.4.0-alpha.1",
+    "@storybook/addon-links": "^3.4.0-alpha.1"
   }
 }

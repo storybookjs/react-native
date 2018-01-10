@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon jest withTests 1`] = `
+exports[`Storyshots Addons|jest withTests 1`] = `
 <div>
   <p>
     Hello
