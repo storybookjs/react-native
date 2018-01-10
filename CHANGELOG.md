@@ -1,3 +1,17 @@
+# 3.3.7
+
+2018-January-10
+
+#### Bug Fixes
+
+-   Angular: add entry components to modulemetadata - #2701 [#2702](https://github.com/storybooks/storybook/pull/2702)
+-   Add html and markup loaders to angular and vue apps [#2692](https://github.com/storybooks/storybook/pull/2692)
+
+#### Maintenance
+
+-   Extract tslint exclusions out of package.json scripts [#2684](https://github.com/storybooks/storybook/pull/2684)
+-   Add tslint to the linting pipe [#2682](https://github.com/storybooks/storybook/pull/2682)
+
 # 3.3.6
 
 2018-January-08
