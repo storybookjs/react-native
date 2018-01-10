@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 const NOOP = () => {};
 
 @Component({
-  selector: 'custom-cva-component',
+  selector: 'storybook-custom-cva-component',
   template: `
     <div>{{value}}</div>
     <input type="text" [(ngModel)]="value" />
@@ -14,8 +14,8 @@ const NOOP = () => {};
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => CustomCvaComponent),
       multi: true,
-    }
-  ]
+    },
+  ],
 })
 export class CustomCvaComponent implements ControlValueAccessor {
   disabled: boolean;

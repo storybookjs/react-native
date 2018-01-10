@@ -1,8 +1,7 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NgStyle } from '@angular/common';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'simple-knobs-component',
+  selector: 'storybook-simple-knobs-component',
   template: `
     <div [ngStyle]="{ 'border': '2px dotted ' + border, 'padding.px': '8 22', 'border-radius.px': '8'}">
       <h1>My name is {{ name }},</h1>
@@ -18,15 +17,9 @@ import { NgStyle } from '@angular/common';
       <p *ngIf="nice">Nice to meet you!</p>
       <p *ngIf="!nice">Leave me alone!</p>
     </div>
-  `
+  `,
 })
 export class AllKnobsComponent implements OnChanges, OnInit {
-  ngOnInit(): void {
-    console.log('on init, user component');
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
   @Input() price;
   @Input() border;
   @Input() fruit;
@@ -38,5 +31,12 @@ export class AllKnobsComponent implements OnChanges, OnInit {
 
   constructor() {
     console.log('constructor');
+  }
+
+  ngOnInit(): void {
+    console.log('on init, user component');
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 }
