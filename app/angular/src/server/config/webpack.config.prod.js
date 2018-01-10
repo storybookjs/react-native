@@ -73,7 +73,12 @@ export default function(configDir) {
         },
         {
           test: /\.ts?$/,
-          loaders: [require.resolve('ts-loader'), require.resolve('angular2-template-loader')],
+          loaders: [
+            {
+              loader: require.resolve('ts-loader'),
+            },
+            require.resolve('angular2-template-loader'),
+          ],
         },
         {
           test: /\.(html|css)$/,
