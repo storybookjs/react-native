@@ -1,4 +1,3 @@
-import { Type } from '@angular/core';
 
 export interface NgModuleMetadata {
   declarations?: Array<any>;
@@ -39,13 +38,3 @@ export type IRenderStoryFn = (
   reRender?: boolean
 ) => void;
 export type IRenderErrorFn = (error: Error) => void;
-
-export interface IModule extends Type<any> {
-  annotations: any[];
-}
-
-export interface IComponent extends Type<any> {
-  annotations: any[];
-  parameters: any[];
-  propsMetadata: any[];
-}

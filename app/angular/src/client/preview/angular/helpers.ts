@@ -13,7 +13,6 @@ import {
   NgProvidedData,
   IRenderErrorFn,
   IRenderStoryFn,
-  IModule,
 } from './types';
 
 let platform: any = null;
@@ -51,7 +50,7 @@ const getModule = (
   bootstrap: Array<Type<any> | any[]>,
   data: NgProvidedData,
   moduleMetadata: NgModuleMetadata
-): any => {
+) => {
   const moduleMeta = {
     declarations: [...declarations, ...(moduleMetadata.declarations || [])],
     imports: [BrowserModule, FormsModule, ...(moduleMetadata.imports || [])],
@@ -70,7 +69,11 @@ const getModule = (
 };
 
 const DYNAMIC_COMPONENT_SELECTOR = 'storybook-dynamic-component';
-const createComponentFromTemplate = (template: string, params?: any[], selector?: string): any => {
+const createComponentFromTemplate = (
+  template: string,
+  params?: any[],
+  selector?: string
+): Function => {
   const componentClass = class DynamicComponent {};
 
   return Component({
@@ -83,7 +86,7 @@ const initModule = (
   currentStory: IGetStoryWithContext,
   context: IContext,
   reRender: boolean
-): IModule => {
+): Function => {
   const storyObj = currentStory(context);
   const { component, template, props, moduleMetadata = {} } = storyObj;
 
@@ -109,7 +112,7 @@ const initModule = (
   );
 };
 
-const draw = (newModule: IModule, reRender: boolean = true): void => {
+const draw = (newModule: Function, reRender: boolean = true): void => {
   if (!platform) {
     try {
       enableProdMode();
