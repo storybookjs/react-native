@@ -12,9 +12,7 @@ const Button = glamorous.button(
     cursor: 'pointer',
     fontSize: 13,
     padding: '3px 10px',
-    position: 'absolute',
-    right: 12,
-    top: 12,
+    alignSelf: 'flex-start',
 
     ':hover': {
       backgroundColor: '#f4f7fa',

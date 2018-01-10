@@ -7,8 +7,11 @@ import copy from './copy';
 
 const TOGGLE_TIMEOUT = 1800;
 
-const StyledPre = glamorous(({ setRef, styles, ...rest }) => <pre {...rest} ref={setRef} />)(
+const StyledPre = glamorous.pre(
   {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     fontSize: '.88em',
     fontFamily: 'Menlo, Monaco, "Courier New", monospace',
     backgroundColor: '#fafafa',
@@ -18,10 +21,6 @@ const StyledPre = glamorous(({ setRef, styles, ...rest }) => <pre {...rest} ref=
   },
   props => props.styles
 );
-
-const wrapperStyle = {
-  position: 'relative',
-};
 
 class Pre extends React.Component {
   state = {
@@ -53,12 +52,10 @@ class Pre extends React.Component {
     const { pre } = this.props.theme;
 
     return (
-      <div style={wrapperStyle}>
+      <StyledPre styles={pre}>
+        <div ref={this.setRef}>{this.props.children}</div>
         <CopyButton onClick={this.handleClick} toggled={this.state.copied} />
-        <StyledPre styles={pre} setRef={this.setRef}>
-          {this.props.children}
-        </StyledPre>
-      </div>
+      </StyledPre>
     );
   }
 }
