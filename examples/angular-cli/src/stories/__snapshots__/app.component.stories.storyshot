@@ -10,6 +10,16 @@ exports[`Storyshots App Component Component with separate template 1`] = `
     
   
     <div
+      class="hide"
+      style="color: red; font-size: 30px; text-align: center;"
+    >
+      
+    This should be hidden, if not - scss is not loaded as needed.
+  
+    </div>
+    
+  
+    <div
       style="text-align:center"
     >
       
