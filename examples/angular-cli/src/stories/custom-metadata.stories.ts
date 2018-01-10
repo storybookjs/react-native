@@ -49,7 +49,7 @@ storiesOf('Custom ngModule metadata', module)
   }))
   .addDecorator(withKnobs)
   .add('with knobs', () => {
-    const name = text('Name', 'Dynamic knob');
+    const name = text('name', 'Dynamic knob');
 
     return {
       component: ServiceComponent,
