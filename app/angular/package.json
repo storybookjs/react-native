@@ -1,6 +1,6 @@
 {
   "name": "@storybook/angular",
-  "version": "3.4.0-alpha.0",
+  "version": "3.4.0-alpha.1",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/angular",
   "bugs": {
@@ -23,12 +23,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.0",
-    "@storybook/addon-links": "^3.4.0-alpha.0",
-    "@storybook/addons": "^3.4.0-alpha.0",
-    "@storybook/channel-postmessage": "^3.4.0-alpha.0",
-    "@storybook/core": "^3.4.0-alpha.0",
-    "@storybook/ui": "^3.4.0-alpha.0",
+    "@storybook/addon-actions": "^3.4.0-alpha.1",
+    "@storybook/addon-links": "^3.4.0-alpha.1",
+    "@storybook/addons": "^3.4.0-alpha.1",
+    "@storybook/channel-postmessage": "^3.4.0-alpha.1",
+    "@storybook/core": "^3.4.0-alpha.1",
+    "@storybook/ui": "^3.4.0-alpha.1",
     "airbnb-js-shims": "^1.1.1",
     "angular2-template-loader": "^0.6.2",
     "autoprefixer": "^7.2.4",
@@ -59,6 +59,7 @@
     "json5": "^0.5.1",
     "lodash.pick": "^4.4.0",
     "markdown-loader": "^2.0.2",
+    "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.10",
     "prop-types": "^15.5.10",
@@ -70,6 +71,7 @@
     "redux": "^3.6.0",
     "request": "^2.81.0",
     "rxjs": "^5.4.2",
+    "sass-loader": "^6.0.6",
     "serve-favicon": "^2.4.3",
     "shelljs": "^0.7.8",
     "style-loader": "^0.18.2",
