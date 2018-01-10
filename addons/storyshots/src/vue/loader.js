@@ -25,6 +25,9 @@ function load(options) {
   return {
     framework: 'vue',
     renderTree: require.requireActual('./renderTree').default,
+    renderShallowTree: () => {
+      throw new Error('Shallow renderer is not supported for vue');
+    },
     storybook: require.requireActual('@storybook/vue'),
   };
 }

@@ -36,4 +36,19 @@ export const multiSnapshotWithOptions = options => ({ story, context, renderTree
     snapshotFileName: getSnapshotFileName(context),
   });
 
+export function shallowSnapshot({ story, context, renderShallowTree, options = {} }) {
+  const result = renderShallowTree(story, context, options);
+  expect(result).toMatchSnapshot();
+}
+
+export function renderOnly({ story, context, renderTree }) {
+  const result = renderTree(story, context, {});
+
+  if (typeof result.then === 'function') {
+    return result;
+  }
+
+  return undefined;
+}
+
 export const snapshot = snapshotWithOptions({});

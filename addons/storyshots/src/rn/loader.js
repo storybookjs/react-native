@@ -17,6 +17,7 @@ function load(options) {
 
   return {
     renderTree: require('../react/renderTree').default,
+    renderShallowTree: require('../react/renderShallowTree').default,
     framework: 'rn',
     storybook,
   };

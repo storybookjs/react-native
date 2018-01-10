@@ -6,8 +6,14 @@ import addons from '@storybook/addons';
 import loadFramework from './frameworkLoader';
 import createChannel from './storybook-channel-mock';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
-import { multiSnapshotWithOptions, snapshotWithOptions, snapshot } from './test-bodies';
-import { shallowSnapshot, renderOnly } from './react/test-bodies';
+
+import {
+  multiSnapshotWithOptions,
+  snapshotWithOptions,
+  snapshot,
+  shallowSnapshot,
+  renderOnly,
+} from './test-bodies';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
@@ -27,7 +33,7 @@ export default function testStorySnapshots(options = {}) {
 
   addons.setChannel(createChannel());
 
-  const { storybook, framework, renderTree } = loadFramework(options);
+  const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
   const stories = storybook.getStorybook();
 
   if (stories.length === 0) {
@@ -70,6 +76,7 @@ export default function testStorySnapshots(options = {}) {
               story,
               context,
               renderTree,
+              renderShallowTree,
             });
           });
         }

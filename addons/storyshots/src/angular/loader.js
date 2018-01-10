@@ -30,6 +30,9 @@ function load(options) {
   return {
     framework: 'angular',
     renderTree: require.requireActual('./renderTree').default,
+    renderShallowTree: () => {
+      throw new Error('Shallow renderer is not supported for angular');
+    },
     storybook: require.requireActual('@storybook/angular'),
   };
 }
