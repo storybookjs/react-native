@@ -15,6 +15,7 @@ import {
   IRenderStoryFn,
 } from './types';
 
+const DYNAMIC_COMPONENT_SELECTOR = 'storybook-dynamic-component';
 let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
 
@@ -68,12 +69,7 @@ const getModule = (
   return NgModule(moduleMeta)(moduleClass);
 };
 
-const DYNAMIC_COMPONENT_SELECTOR = 'storybook-dynamic-component';
-const createComponentFromTemplate = (
-  template: string,
-  params?: any[],
-  selector?: string
-): Function => {
+const createComponentFromTemplate = (template: string, selector?: string): Function => {
   const componentClass = class DynamicComponent {};
 
   return Component({
