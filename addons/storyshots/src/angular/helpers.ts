@@ -1,123 +1,64 @@
-import { Type, NgModule, Component } from '@angular/core';
+import { Component, Type } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { STORY } from './app.token';
-import { getAnnotations, getParameters, getPropMetadata } from './utils';
-import { NgModuleMetadata, NgStory } from './types';
+import { NgStory } from './types';
 
-interface IComponent extends Type<any> {
-  annotations: any[];
-  parameters: any[];
-  propsMetadata: any[];
-}
-
-const getComponentMetadata = ({
-  component,
-  props = {},
-  propsMeta = {},
-  moduleMetadata = {
-    imports: [],
-    schemas: [],
-    declarations: [],
-    providers: [],
-  },
-}: NgStory) => {
-  if (!component || typeof component !== 'function') {
-    throw new Error('No valid component provided');
-  }
-
-  const componentMetadata = getAnnotations(component)[0] || {};
-  const propsMetadata = getPropMetadata(component);
-  const paramsMetadata = getParameters(component);
-
-  Object.keys(propsMeta).map(key => {
-    (<any>propsMetadata)[key] = (<any>propsMeta)[key];
-  });
-
-  const { imports = [], schemas = [], declarations = [], providers = [] } = moduleMetadata;
-
-  return {
-    component,
-    props,
-    componentMeta: componentMetadata,
-    propsMeta: propsMetadata,
-    params: paramsMetadata,
-    moduleMeta: {
-      imports,
-      schemas,
-      declarations,
-      providers,
-    },
-  };
-};
-
-const getAnnotatedComponent = (
-  meta: NgModule,
-  component: any,
-  propsMeta: { [p: string]: any },
-  params: any[]
-): IComponent => {
-  const NewComponent: any = function(...args: any[]) {
-    component.call(this, ...args);
-  };
-
-  NewComponent.prototype = Object.create(component.prototype);
-  NewComponent.annotations = [new Component(meta)];
-  NewComponent.parameters = params;
-  NewComponent.propsMetadata = propsMeta;
-
-  return NewComponent;
-};
-
-const getModule = (
+const getModuleMeta = (
   declarations: Array<Type<any> | any[]>,
   entryComponents: Array<Type<any> | any[]>,
   bootstrap: Array<Type<any> | any[]>,
   data: NgStory,
-  moduleMetadata: NgModuleMetadata = {
-    imports: [],
-    schemas: [],
-    declarations: [],
-    providers: [],
-  }
-): any => {
+  moduleMetadata: any
+) => {
   return {
-    declarations: [...declarations, ...moduleMetadata.declarations],
-    imports: [...moduleMetadata.imports],
-    providers: [{ provide: STORY, useValue: Object.assign({}, data) }, ...moduleMetadata.providers],
-    entryComponents: [...entryComponents],
-    schemas: [...moduleMetadata.schemas],
+    declarations: [...declarations, ...(moduleMetadata.declarations || [])],
+    imports: [BrowserModule, FormsModule, ...(moduleMetadata.imports || [])],
+    providers: [
+      { provide: STORY, useValue: Object.assign({}, data) },
+      ...(moduleMetadata.providers || []),
+    ],
+    entryComponents: [...entryComponents, ...(moduleMetadata.entryComponents || [])],
+    schemas: [...(moduleMetadata.schemas || [])],
     bootstrap: [...bootstrap],
   };
 };
 
-export const initModuleData = (currentStory: NgStory): any => {
-  const { component, componentMeta, props, propsMeta, params, moduleMeta } = getComponentMetadata(
-    currentStory
-  );
+const createComponentFromTemplate = (template: string): Function => {
+  const componentClass = class DynamicComponent {};
 
-  if (!componentMeta) {
-    throw new Error('No component metadata available');
+  return Component({
+    template: template,
+  })(componentClass);
+};
+
+export const initModuleData = (storyObj: NgStory): any => {
+  const { component, template, props, moduleMetadata = {} } = storyObj;
+
+  let AnnotatedComponent;
+
+  if (template) {
+    AnnotatedComponent = createComponentFromTemplate(template);
+  } else {
+    AnnotatedComponent = component;
   }
-
-  const AnnotatedComponent = getAnnotatedComponent(componentMeta, component, propsMeta, [
-    ...params,
-    ...moduleMeta.providers.map(provider => [provider]),
-  ]);
 
   const story = {
     component: AnnotatedComponent,
     props,
-    propsMeta,
   };
+
+  const moduleMeta = getModuleMeta(
+    [AppComponent, AnnotatedComponent],
+    [AnnotatedComponent],
+    [AppComponent],
+    story,
+    moduleMetadata
+  );
 
   return {
     AppComponent,
-    moduleMeta: getModule(
-      [AppComponent, AnnotatedComponent],
-      [AnnotatedComponent],
-      [AppComponent],
-      story,
-      moduleMeta
-    ),
+    moduleMeta,
   };
 };

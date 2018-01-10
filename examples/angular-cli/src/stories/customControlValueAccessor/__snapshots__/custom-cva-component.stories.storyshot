@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ngModel custom ControlValueAccessor 1`] = `
-<storybook-storyshot-root
+<storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
@@ -15,10 +15,12 @@ exports[`Storyshots ngModel custom ControlValueAccessor 1`] = `
     
       
     <input
+      class="ng-untouched ng-pristine ng-valid"
+      ng-reflect-model="Type anything"
       type="text"
     />
     
     
   </storybook-custom-cva-component>
-</storybook-storyshot-root>
+</storybook-dynamic-app-root>
 `;

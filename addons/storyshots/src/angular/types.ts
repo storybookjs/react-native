@@ -1,8 +1,9 @@
 export interface NgModuleMetadata {
-  declarations: Array<any>;
-  imports: Array<any>;
-  schemas: Array<any>;
-  providers: Array<any>;
+  declarations?: Array<any>;
+  entryComponents?: Array<any>;
+  imports?: Array<any>;
+  schemas?: Array<any>;
+  providers?: Array<any>;
 }
 
 export interface ICollection {
@@ -10,8 +11,9 @@ export interface ICollection {
 }
 
 export interface NgStory {
-  component: any;
+  component?: any;
   props: ICollection;
-  propsMeta: ICollection;
+  propsMeta?: ICollection;
   moduleMetadata?: NgModuleMetadata;
+  template?: string;
 }

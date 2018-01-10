@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button button with link to another story 1`] = `
-<storybook-storyshot-root
+<storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-c5=""
+    _nghost-c6=""
   >
     
         
     <button
-      _ngcontent-c5=""
+      _ngcontent-c6=""
     >
       Go to Welcome Story
     </button>
     
     
   </storybook-button-component>
-</storybook-storyshot-root>
+</storybook-dynamic-app-root>
 `;
