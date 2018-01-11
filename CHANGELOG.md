@@ -1,3 +1,9 @@
+# 3.3.8
+
+2018-January-11
+
+This is a duplicate of `3.3.7`, re-published because I accidentally published `3.4.0-alpha.1` on the `latest` NPM tag.
+
 # 3.4.0-alpha.1
 
 2018-January-10
