@@ -139,3 +139,9 @@ fyndiq-ui:
   description: Fyndiq UI Component library
   source: https://github.com/fyndiq/fyndiq-ui
   demo: https://fyndiq.github.io/fyndiq-ui/
+gumgum:
+  thumbnail: ./thumbnails/gumgum.png
+  title: GumGum
+  description: GumGum (Computer Vision Company) Component library
+  demo: https://storybook.gumgum.com
+  site: https://gumgum.com
