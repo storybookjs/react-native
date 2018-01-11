@@ -48,6 +48,7 @@
     "@storybook/addon-notes": "^3.4.0-alpha.1",
     "@storybook/addon-actions": "^3.4.0-alpha.1",
     "@storybook/addon-links": "^3.4.0-alpha.1",
-    "@types/lodash-es": "^4.17.0"
+    "@storybook/addons": "^3.4.0-alpha.1",
+    "babel-core": "^6.26.0"
   }
 }
