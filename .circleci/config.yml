@@ -59,6 +59,14 @@ jobs:
           command: |
             yarn install
       - run:
+          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
+          command: sh ./scripts/workaround-puppeteer-issue-290.sh
+      - run:
+          name: "Build official-storybook"
+          command: |
+            cd examples/official-storybook
+            yarn build-storybook
+      - run:
           name: "Build react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
@@ -73,34 +81,33 @@ jobs:
           command: |
             cd examples/angular-cli
             yarn build-storybook
-
       - run:
-          name: "Run react kitchen-sink"
+          name: "Run react kitchen-sink (smoke test)"
           command: |
             cd examples/cra-kitchen-sink
-            yarn storybook
-          background: true
+            yarn storybook --smoke-test
       - run:
-          name: "Run vue kitchen-sink"
+          name: "Run vue kitchen-sink (smoke test)"
           command: |
             cd examples/vue-kitchen-sink
-            yarn storybook
-          background: true
+            yarn storybook --smoke-test
       - run:
-          name: "Run angular-cli"
+          name: "Run angular-cli (smoke test)"
           command: |
             cd examples/angular-cli
-            yarn storybook
-          background: true
+            yarn storybook --smoke-test
       - run:
-          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-          command: sh ./scripts/workaround-puppeteer-issue-290.sh
+          name: "Run image snapshots"
+          command: yarn test --image
       - run:
           name: Integration Test - Kichen sinks
           command: yarn test --integration
       - store_artifacts:
           path: integration/__image_snapshots__
           destination: integration_image_snapshots
+      - store_artifacts:
+          path: examples/official-storybook/image-snapshots/__image_snapshots__
+          destination: official_storybook_image_snapshots
   react-native:
     <<: *defaults
     steps:

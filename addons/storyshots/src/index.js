@@ -1,11 +1,12 @@
 /* eslint-disable no-loop-func */
 import fs from 'fs';
 import glob from 'glob';
-import global, { describe, it } from 'global';
+import global, { describe, it, beforeEach, afterEach } from 'global';
 import addons from '@storybook/addons';
 import loadFramework from './frameworkLoader';
 import createChannel from './storybook-channel-mock';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
+import { imageSnapshot } from './test-body-image-snapshot';
 
 import {
   multiSnapshotWithOptions,
@@ -24,6 +25,7 @@ export {
   snapshotWithOptions,
   shallowSnapshot,
   renderOnly,
+  imageSnapshot,
 };
 
 export default function testStorySnapshots(options = {}) {
@@ -62,6 +64,20 @@ export default function testStorySnapshots(options = {}) {
     }
 
     describe(suite, () => {
+      beforeEach(() => {
+        if (typeof testMethod.beforeEach === 'function') {
+          return testMethod.beforeEach();
+        }
+        return Promise.resolve();
+      });
+
+      afterEach(() => {
+        if (typeof testMethod.afterEach === 'function') {
+          return testMethod.afterEach();
+        }
+        return Promise.resolve();
+      });
+
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
@@ -86,14 +102,13 @@ export default function testStorySnapshots(options = {}) {
 }
 
 describe('Storyshots Integrity', () => {
-  describe('Abandoned Storyshots', () => {
+  test('Abandoned Storyshots', () => {
     const storyshots = glob.sync('**/*.storyshot');
 
     const abandonedStoryshots = storyshots.filter(fileName => {
       const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
       return !possibleStoriesFiles.some(fs.existsSync);
     });
-
     expect(abandonedStoryshots).toHaveLength(0);
   });
 });
