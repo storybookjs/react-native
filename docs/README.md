@@ -12,4 +12,4 @@ yarn storybook
 
 ### Edit Documentation
 
-Documentation is written in Markdown and located inside the [`pages/`](pages/) directory.
+Documentation is written in Markdown and located inside the [`docs/src/pages`](https://github.com/storybooks/storybook/tree/master/docs/src/pages) directory.

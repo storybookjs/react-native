@@ -6,14 +6,13 @@ storiesOf('Component dependencies', module)
   .add('inputs and inject dependencies', () => ({
     component: DiComponent,
     props: {
-      title: 'Component dependencies'
-    }
+      title: 'Component dependencies',
+    },
   }))
   .addDecorator(withKnobs)
   .add('inputs and inject dependencies with knobs', () => ({
     component: DiComponent,
     props: {
-      title: text('title', 'Component dependencies')
-    }
+      title: text('title', 'Component dependencies'),
+    },
   }));
-
