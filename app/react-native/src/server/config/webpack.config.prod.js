@@ -37,6 +37,9 @@ const getConfig = options => {
           ie8: false,
           mangle: false,
           warnings: false,
+          compress: {
+            keep_fnames: true,
+          },
           output: {
             comments: false,
           },
