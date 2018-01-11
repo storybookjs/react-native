@@ -17,7 +17,7 @@ In this guide, we are trying to set up Storybook for your Angular project.
 ## Table of contents
 
 -   [Create Angular project](#create-angular-project)
--   [Add @storybook/angular](#add-storybookangular)
+-   [Add @storybook/angular and babel-core](#add-storybookangular-and-babel-core)
 -   [Create the config file](#create-the-config-file)
 -   [Write your stories](#write-your-stories)
 -   [Run your Storybook](#run-your-storybook)
@@ -32,12 +32,12 @@ ng new your-angular-prj
 cd your-angular-prj
 ```
 
-## Add @storybook/angular
+## Add @storybook/angular and babel-core
 
-Next, install `@storybook/angular` to your project:
+Next, install `@storybook/angular` and `babel-core` (it's a peerDependency) to your project:
 
 ```sh
-npm i --save-dev @storybook/angular
+npm i --save-dev @storybook/angular babel-core
 ```
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:
