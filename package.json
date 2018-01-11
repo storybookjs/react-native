@@ -69,7 +69,7 @@
     "jest": "^22.0.6",
     "jest-cli": "^22.0.6",
     "jest-config": "^22.0.6",
-    "jest-diff": "^22.0.5",
+    "jest-diff": "^22.0.6",
     "jest-environment-jsdom": "^22.0.5",
     "jest-enzyme": "^4.0.2",
     "jest-image-snapshot": "^2.2.1",
