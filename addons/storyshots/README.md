@@ -40,11 +40,19 @@ Usually, you might already have completed this step. If not, here are some resou
 
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but 
-doesn't install it, so you need yo install it separately.
+doesn't install it, so you need to install it separately (read [here](#deps-issue) why).
+
+```sh
+npm install --save-dev react-test-renderer
+```
 
 ### Configure Jest for Angular
 StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but 
-doesn't install it, so you need yo install it separately.
+doesn't install it, so you need to install it separately (read [here](#deps-issue) why).
+
+```sh
+npm install --save-dev jest-preset-angular
+```
 
 If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
@@ -62,7 +70,11 @@ module.exports = {
 ```
 ### Configure Jest for Vue
 StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
-doesn't install it, so you need yo install it separately.
+doesn't install it, so you need yo install it separately (read [here](#deps-issue) why).
+ 
+ ```sh
+ npm install --save-dev jest-vue-preprocessor
+ ```
  
 If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
@@ -75,6 +87,20 @@ module.exports = {
   moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
 };
 ```
+
+### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
+Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them. 
+
+`dependancies` - will installed an exact version of the particular dep - Storyshots can work with different versions of the same framework (let's say React v16 and React v15), that have to be compatible with a version of its plugin (react-test-renderer).
+
+`optionalDependencies` - behaves like a regular dependency, but do not fail the installation in case there is a problem to bring the dep.
+
+`peerDependancies` - listing all the deps in peer will trigger warnings during the installation - we don't want users to install unneeded deps by hand.
+
+`optionalPeerDependancies` - unfortunately there is nothing like this =(
+    
+For more information read npm [docs](https://docs.npmjs.com/files/package.json#dependencies)
+
 ## Configure Storyshots
 
 Create a new test file with the name `Storyshots.test.js`. (Or whatever the name you prefer, as long as it matches Jest's config [`testMatch`](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)).
