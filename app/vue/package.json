@@ -81,7 +81,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.10",
+    "nodemon": "^1.14.11",
     "vue": "^2.5.13",
     "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13"
