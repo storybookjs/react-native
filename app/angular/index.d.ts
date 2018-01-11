@@ -13,7 +13,8 @@ export interface IStoribookSection {
 export type IGetStory = () => {
   props?: ICollection;
   moduleMetadata?: Partial<NgModuleMetadata>;
-  component: any;
+  component?: any;
+  template?: string;
 };
 
 export interface IApi {
