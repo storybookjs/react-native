@@ -4468,9 +4468,9 @@ gatsby-transformer-remark@^1.7.28:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.151:
-  version "1.9.151"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.151.tgz#b51414980ebf4b1dcb06b0a193264bb80c175284"
+gatsby@^1.9.153:
+  version "1.9.153"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.153.tgz#5a435d2e75ee5a714ed5ea934b44a574d1bf0487"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4564,7 +4564,7 @@ gatsby@^1.9.151:
     socket.io "^2.0.3"
     static-site-generator-webpack-plugin "^3.4.1"
     string-similarity "^1.2.0"
-    style-loader "^0.19.1"
+    style-loader "^0.13.0"
     type-of "^2.0.1"
     url-loader "^0.5.7"
     v8-compile-cache "^1.1.0"
@@ -10304,6 +10304,12 @@ strip-outer@^1.0.0:
   resolved "https://registry.yarnpkg.com/strip-outer/-/strip-outer-1.0.0.tgz#aac0ba60d2e90c5d4f275fd8869fd9a2d310ffb8"
   dependencies:
     escape-string-regexp "^1.0.2"
+
+style-loader@^0.13.0:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.2.tgz#74533384cf698c7104c7951150b49717adc2f3bb"
+  dependencies:
+    loader-utils "^1.0.2"
 
 style-loader@^0.19.1:
   version "0.19.1"
