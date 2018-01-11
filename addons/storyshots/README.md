@@ -38,8 +38,14 @@ Usually, you might already have completed this step. If not, here are some resou
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
+### Configure Jest for React
+StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but 
+doesn't install it, so you need yo install it separately.
+
 ### Configure Jest for Angular
-StoryShots addon brings with it a [jest-preset-angular](https://github.com/thymikee/jest-preset-angular). 
+StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but 
+doesn't install it, so you need yo install it separately.
+
 If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
 ```js
@@ -55,7 +61,9 @@ module.exports = {
 };
 ```
 ### Configure Jest for Vue
-StoryShots addon brings with it a [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor). 
+StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
+doesn't install it, so you need yo install it separately.
+ 
 If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
 ```js
