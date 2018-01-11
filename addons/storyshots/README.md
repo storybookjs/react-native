@@ -40,7 +40,7 @@ Usually, you might already have completed this step. If not, here are some resou
 
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but 
-doesn't install it, so you need to install it separately (read [here](#deps-issue) why).
+[doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
 npm install --save-dev react-test-renderer
@@ -48,7 +48,7 @@ npm install --save-dev react-test-renderer
 
 ### Configure Jest for Angular
 StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but 
-doesn't install it, so you need to install it separately (read [here](#deps-issue) why).
+[doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
 npm install --save-dev jest-preset-angular
@@ -70,7 +70,7 @@ module.exports = {
 ```
 ### Configure Jest for Vue
 StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
-doesn't install it, so you need yo install it separately (read [here](#deps-issue) why).
+[doesn't](#deps-issue) install it, so you need yo install it separately.
  
  ```sh
  npm install --save-dev jest-vue-preprocessor
@@ -91,13 +91,13 @@ module.exports = {
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
 Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them. 
 
-`dependancies` - will installed an exact version of the particular dep - Storyshots can work with different versions of the same framework (let's say React v16 and React v15), that have to be compatible with a version of its plugin (react-test-renderer).
+`dependencies` - will installed an exact version of the particular dep - Storyshots can work with different versions of the same framework (let's say React v16 and React v15), that have to be compatible with a version of its plugin (react-test-renderer).
 
 `optionalDependencies` - behaves like a regular dependency, but do not fail the installation in case there is a problem to bring the dep.
 
-`peerDependancies` - listing all the deps in peer will trigger warnings during the installation - we don't want users to install unneeded deps by hand.
+`peerDependencies` - listing all the deps in peer will trigger warnings during the installation - we don't want users to install unneeded deps by hand.
 
-`optionalPeerDependancies` - unfortunately there is nothing like this =(
+`optionalPeerDependencies` - unfortunately there is nothing like this =(
     
 For more information read npm [docs](https://docs.npmjs.com/files/package.json#dependencies)
 
