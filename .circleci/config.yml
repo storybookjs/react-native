@@ -203,11 +203,6 @@ jobs:
           command: |
             yarn install
       - run:
-          name: "Build static React kitchen-sink"
-          command: |
-            cd examples/cra-kitchen-sink
-            yarn build-storybook
-      - run:
           name: "Run unit tests"
           command: |
             yarn test --coverage --runInBand --core
