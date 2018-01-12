@@ -73,7 +73,7 @@
     "rxjs": "^5.4.2",
     "sass-loader": "^6.0.6",
     "serve-favicon": "^2.4.3",
-    "shelljs": "^0.7.8",
+    "shelljs": "^0.8.0",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.2.2",
     "uglifyjs-webpack-plugin": "^1.1.6",
