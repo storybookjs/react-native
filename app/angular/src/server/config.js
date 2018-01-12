@@ -3,6 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import loadBabelConfig from './babel_config';
 import loadTsConfig from './ts_config';
+import {
+  getAngularCliWebpackConfigOptions,
+  applyAngularCliWebpackConfig,
+} from './angular-cli_config';
 
 // avoid ESLint errors
 const logger = console;
@@ -39,6 +43,12 @@ export default function(configType, baseConfig, configDir) {
     config.entry.manager.unshift(storybookDefaultAddonsPath);
   }
 
+  // Check whether project has Angular CLI configuration file
+  const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(process.cwd());
+  if (cliWebpackConfigOptions) {
+    logger.info('=> Loading angular-cli config.');
+  }
+
   // Check whether user has a custom webpack config file and
   // return the (extended) base configuration if it's not available.
   const customConfigPath = path.resolve(configDir, 'webpack.config.js');
@@ -48,15 +58,16 @@ export default function(configType, baseConfig, configDir) {
     const configPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
     const customConfig = require(configPath);
 
-    return customConfig(config);
+    return applyAngularCliWebpackConfig(customConfig(config), cliWebpackConfigOptions);
   }
   const customConfig = require(customConfigPath);
 
   if (typeof customConfig === 'function') {
     logger.info('=> Loading custom webpack config (full-control mode).');
-    return customConfig(config, configType);
+    return customConfig(applyAngularCliWebpackConfig(config, cliWebpackConfigOptions), configType);
   }
   logger.info('=> Loading custom webpack config (extending mode).');
+
   return {
     ...customConfig,
     // We'll always load our configurations after the custom config.
