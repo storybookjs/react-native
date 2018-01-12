@@ -75,10 +75,10 @@ if (!program.skipPackager) {
     );
   }
 
-  let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
+  let cliCommand = 'react-native start';
   if (program.haul) {
     const platform = program.platform || 'all';
-    cliCommand = `node node_modules/haul/bin/cli.js start --config ${
+    cliCommand = `haul start --config ${
       program.haul
     } --platform ${platform}`;
   }

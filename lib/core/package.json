@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "3.3.3",
+  "version": "3.4.0-alpha.1",
   "description": "Storybook framework-agnostic API",
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
   "bugs": {
@@ -17,7 +17,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "^3.3.3",
+    "@storybook/client-logger": "^3.4.0-alpha.1",
     "events": "^1.1.1",
     "global": "^4.3.2",
     "qs": "^6.5.1"

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.3.3",
+  "version": "3.4.0-alpha.1",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/components": "^3.3.3",
+    "@storybook/components": "^3.4.0-alpha.1",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/react-komposer": "^2.0.3",
     "babel-runtime": "^6.26.0",
@@ -44,7 +44,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.3",
-    "@storybook/react": "^3.3.3"
+    "@storybook/addon-actions": "^3.4.0-alpha.1",
+    "@storybook/react": "^3.4.0-alpha.1"
   }
 }
