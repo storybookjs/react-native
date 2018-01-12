@@ -77,7 +77,6 @@ export function renderMain(data, storyStore, forceRender) {
   previousStory = selectedStory;
   ReactDOM.unmountComponentAtNode(rootEl);
 
-  console.log(story);
   const element = story();
 
   if (!element) {
