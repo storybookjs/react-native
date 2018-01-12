@@ -2,10 +2,8 @@
 import fs from 'fs';
 import path from 'path';
 import findCacheDir from 'find-cache-dir';
+import { logger } from '@storybook/node-logger';
 import loadBabelConfig from './babel_config';
-
-// avoid ESLint errors
-const logger = console;
 
 // `baseConfig` is a webpack configuration bundled with storybook.
 // Storybook will look in the `configDir` directory

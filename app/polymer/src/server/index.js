@@ -6,13 +6,12 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
+import { logger } from '@storybook/node-logger';
 import storybook, { webpackValid } from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-const logger = console;
 
 program
   .version(packageJson.version)

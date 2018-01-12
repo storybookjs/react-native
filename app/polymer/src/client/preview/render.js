@@ -1,5 +1,6 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
+import { logger } from '@storybook/client-logger';
 import { nopreview } from './nopreview';
 import { errorpreview } from './errorpreview';
 
@@ -14,7 +15,7 @@ export function renderError(error) {
 
 export function renderException(error) {
   renderError(error);
-  console.error(error.stack);
+  logger.error(error.stack);
 }
 
 export function renderMain(data, storyStore) {

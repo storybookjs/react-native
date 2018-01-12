@@ -24,6 +24,9 @@
   "dependencies": {
     "@storybook/addons": "^3.4.0-alpha.1",
     "@storybook/channel-postmessage": "^3.4.0-alpha.1",
+    "@storybook/core": "^3.4.0-alpha.1",
+    "@storybook/client-logger": "^3.4.0-alpha.1",
+    "@storybook/node-logger": "^3.4.0-alpha.1",
     "@storybook/ui": "^3.4.0-alpha.1",
     "airbnb-js-shims": "^1.3.0",
     "autoprefixer": "^7.1.6",
