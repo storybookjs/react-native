@@ -17,40 +17,8 @@ import '../polymer-playground-app.html';
 import '../playground-button.html';
 import '../separated-button/separated-button.html';
 import './storybook-welcome-to-polymer.html';
-import { StringTemplateButton } from '../string-template-button';
 
-storiesOf('Welcome', module).add(
-  'Welcome',
-  () => '<storybook-welcome-to-polymer></storybook-welcome-to-polymer>'
-);
-
-storiesOf('App', module)
-  .addDecorator(withKnobs)
-  .add(
-    'full app',
-    () =>
-      `<polymer-playground-app title="${text(
-        'App title',
-        'This is an app'
-      )}"></polymer-playground-app>`
-  );
-
-storiesOf('Button', module)
-  .add('rounded', () => '<playground-button></playground-button>')
-  .add('square', () => '<playground-button is-square></playground-button>');
-
-storiesOf('Methods for rendering Polymer', module)
-  .add(
-    'string',
-    () => '<div><p>Rendered with string:</p><playground-button></playground-button></div>'
-  )
-  .add('document.createElement', () => {
-    const el = document.createElement('playground-button');
-    el.setAttribute('title', 'Rendered with document.createElement');
-    return el;
-  });
-
-storiesOf('Decorator', module)
+storiesOf('Advanced/Decorator', module)
   .addDecorator(story => {
     const el = story();
     el.setAttribute('title', `${el.getAttribute('title')} - decorated`);
@@ -62,7 +30,7 @@ storiesOf('Decorator', module)
     return el;
   });
 
-storiesOf('Addon Actions', module)
+storiesOf('Advanced/Addon Actions', module)
   .add('Action only', () => {
     const el = document.createElement('playground-button');
     el.addEventListener('click', action('log1'));
@@ -74,7 +42,7 @@ storiesOf('Addon Actions', module)
     return el;
   });
 
-storiesOf('Addon Notes', module)
+storiesOf('Advanced/Addon Notes', module)
   .add(
     'Simple note',
     withNotes({ text: 'My notes on some bold text' })(
@@ -95,7 +63,7 @@ storiesOf('Addon Notes', module)
     })(() => '<p>🤔😳😯😮<br/>😄😩😓😱<br/>🤓😑😶😊</p>')
   );
 
-storiesOf('Addon Knobs', module)
+storiesOf('Advanced/Addon Knobs', module)
   .addDecorator(withKnobs)
   .add('simple', () => {
     const title = text('Button title', 'Hello');
@@ -134,7 +102,3 @@ storiesOf('Addon Knobs', module)
           </div>
         `;
   });
-
-storiesOf('Element definition types', module)
-  .add('separated js', () => '<separated-button title="Click me!"></separated-button>')
-  .add('string template', () => new StringTemplateButton());
