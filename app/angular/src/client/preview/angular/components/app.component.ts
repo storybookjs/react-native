@@ -2,55 +2,91 @@
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
 // For the time being, the ViewContainerRef approach works pretty well.
-
 import {
   Component,
   Inject,
-  AfterViewInit,
+  OnInit,
   ViewChild,
   ViewContainerRef,
   ComponentFactoryResolver,
   OnDestroy,
-  EventEmitter
-} from "@angular/core";
-import { STORY } from "../app.token";
-import { NgStory } from "../types";
+  EventEmitter,
+  SimpleChanges,
+  SimpleChange,
+} from '@angular/core';
+import { STORY } from '../app.token';
+import { NgStory, ICollection } from '../types';
 
 @Component({
-  selector: "app-root",
-  template: "<ng-template #target></ng-template>"
+  selector: 'storybook-dynamic-app-root',
+  template: '<ng-template #target></ng-template>',
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
-  @ViewChild("target", { read: ViewContainerRef })
+export class AppComponent implements OnInit, OnDestroy {
+  @ViewChild('target', { read: ViewContainerRef })
   target: ViewContainerRef;
-  constructor(
-    private cfr: ComponentFactoryResolver,
-    @Inject(STORY) private data: NgStory
-  ) {}
+  constructor(private cfr: ComponentFactoryResolver, @Inject(STORY) private data: NgStory) {}
 
-  ngAfterViewInit() {
+  ngOnInit(): void {
     this.putInMyHtml();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.target.clear();
   }
 
-  putInMyHtml() {
+  private putInMyHtml(): void {
     this.target.clear();
-    const { component, props = {}, propsMeta = {} } = this.data;
-    let compFactory = this.cfr.resolveComponentFactory(component);
+    const compFactory = this.cfr.resolveComponentFactory(this.data.component);
     const instance = this.target.createComponent(compFactory).instance;
 
-    Object.keys(propsMeta).map(key => {
-      const value = (<any>props)[key];
-      const property = (<any>instance)[key];
+    this.setProps(instance, this.data);
+  }
 
-      if (!(property instanceof EventEmitter)) {
-          (<any>instance)[key] = (<any>props)[key];
-      } else if (typeof value === 'function') {
-          property.subscribe((<any>props)[key]);
+  /**
+   * Set inputs and outputs
+   */
+  private setProps(instance: any, { props = {} }: NgStory): void {
+    const changes: SimpleChanges = {};
+    const hasNgOnChangesHook = !!instance['ngOnChanges'];
+
+    Object.keys(props).map((key: string) => {
+      const value = props[key];
+      const instanceProperty = instance[key];
+
+      if (!(instanceProperty instanceof EventEmitter) && !!value) {
+        instance[key] = value;
+        if (hasNgOnChangesHook) {
+          changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
+        }
+      } else if (typeof value === 'function' && key !== 'ngModelChange') {
+        instanceProperty.subscribe(value);
       }
     });
+
+    this.callNgOnChangesHook(instance, changes);
+    this.setNgModel(instance, props);
+  }
+
+  /**
+   * Manually call 'ngOnChanges' hook because angular doesn't do that for dynamic components
+   * Issue: [https://github.com/angular/angular/issues/8903]
+   */
+  private callNgOnChangesHook(instance: any, changes: SimpleChanges): void {
+    if (!!Object.keys(changes).length) {
+      instance.ngOnChanges(changes);
+    }
+  }
+
+  /**
+   * If component implements ControlValueAccessor interface try to set ngModel
+   */
+  private setNgModel(instance: any, props: ICollection): void {
+    if (!!props['ngModel']) {
+      instance.writeValue(props.ngModel);
+    }
+
+    if (typeof props.ngModelChange === 'function') {
+      instance.registerOnChange(props.ngModelChange);
+    }
   }
 }

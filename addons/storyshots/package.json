@@ -1,9 +1,10 @@
 {
   "name": "@storybook/addon-storyshots",
-  "version": "3.3.0-alpha.4",
+  "version": "3.4.0-alpha.1",
   "description": "StoryShots is a Jest Snapshot Testing Addon for Storybook.",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -15,17 +16,19 @@
     "example": "jest storyshot.test"
   },
   "dependencies": {
-    "@storybook/channels": "^3.3.0-alpha.4",
+    "@storybook/channels": "^3.4.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
-    "jest-specific-snapshot": "^0.2.0",
+    "jest-specific-snapshot": "^0.3.0",
+    "jest-image-snapshot": "^2.2.0",
     "prop-types": "^15.6.0",
+    "puppeteer": "^0.13.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
-    "@storybook/react": "^3.3.0-alpha.4",
+    "@storybook/addons": "^3.4.0-alpha.1",
+    "@storybook/react": "^3.4.0-alpha.1",
     "babel-cli": "^6.26.0",
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -39,8 +42,8 @@
     "react-dom": "^16.1.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
-    "babel-core": "^6.26.0 | ^7.0.0-0",
+    "@storybook/addons": "^3.4.0-alpha.1",
+    "babel-core": "^6.26.0 || ^7.0.0-0",
     "react": "*",
     "react-test-renderer": "*"
   }

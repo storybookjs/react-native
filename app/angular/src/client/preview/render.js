@@ -22,7 +22,7 @@ export function renderException(error) {
   logger.error(error.stack);
 }
 
-export function renderMain(data, storyStore) {
+export function renderMain(data, storyStore, forceRender) {
   if (storyStore.size() === 0) return null;
 
   const { selectedKind, selectedStory } = data;
@@ -39,7 +39,7 @@ export function renderMain(data, storyStore) {
   //    https://github.com/storybooks/react-storybook/issues/116
 
   const reRender = selectedKind !== previousKind || previousStory !== selectedStory;
-  if (reRender) {
+  if (reRender || forceRender) {
     // We need to unmount the existing set of components in the DOM node.
     // Otherwise, React may not recrease instances for every story run.
     // This could leads to issues like below:
@@ -54,14 +54,14 @@ export function renderMain(data, storyStore) {
   return renderNgApp(story, context, reRender);
 }
 
-export default function renderPreview({ reduxStore, storyStore }) {
+export default function renderPreview({ reduxStore, storyStore }, forceRender = false) {
   const state = reduxStore.getState();
   if (state.error) {
     return renderException(state.error);
   }
 
   try {
-    return renderMain(state, storyStore);
+    return renderMain(state, storyStore, forceRender);
   } catch (ex) {
     return renderException(ex);
   }

@@ -1,9 +1,10 @@
 {
   "name": "@storybook/components",
-  "version": "3.3.0-alpha.4",
+  "version": "3.4.0-alpha.1",
   "description": "Core Storybook Components",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -15,7 +16,7 @@
   },
   "dependencies": {
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0",
+    "glamorous": "^4.11.2",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
@@ -23,8 +24,8 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/react": "^3.3.0-alpha.4",
-    "@storybook/addon-actions": "^3.3.0-alpha.4",
-    "@storybook/addon-knobs": "^3.3.0-alpha.4"
+    "@storybook/addon-actions": "^3.4.0-alpha.1",
+    "@storybook/addon-knobs": "^3.4.0-alpha.1",
+    "@storybook/react": "^3.4.0-alpha.1"
   }
 }

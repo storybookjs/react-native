@@ -27,4 +27,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
+  testURL: 'http://localhost',
 };

@@ -1,3 +1,756 @@
+# 3.4.0-alpha.2
+
+2018-January-11
+
+This is a duplicate of `3.4.0-alpha.1`, re-published because I accidentally published `3.4.0-alpha.1` on the `latest` NPM tag.
+
+# 3.3.8
+
+2018-January-11
+
+This is a duplicate of `3.3.7`, re-published because I accidentally published `3.4.0-alpha.1` on the `latest` NPM tag.
+
+# 3.4.0-alpha.1
+
+2018-January-10
+
+In addition to the changes listed here, also contains fixes from [3.3.5](#335) and [3.3.6](#336) and [3.3.7](#337).
+
+#### Features
+
+-   Custom tsconfig.json for angular apps. [#2669](https://github.com/storybooks/storybook/pull/2669)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+105 Upgrades
+</summary>
+
+-   Upgraded `babel-eslint` in `/` from "8.1.2" to "8.2.1" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `eslint-plugin-jest` in `/` from "21.5.0" to "21.6.1" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest` in `/` from "22.0.4" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest-cli` in `/` from "22.0.4" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest-config` in `/` from "22.0.4" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest-diff` in `/` from "22.0.3" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest-environment-jsdom` in `/` from "22.0.4" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest-jasmine2` in `/` from "22.0.4" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `lerna` in `/` from "2.5.1" to "2.6.0" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `nodemon` in `/` from "1.14.9" to "1.14.10" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `common-tags` in `app/react` from "1.6.0" to "1.7.0" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `nodemon` in `app/react` from "1.14.9" to "1.14.10" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `common-tags` in `app/angular` from "1.6.0" to "1.7.0" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `nodemon` in `app/angular` from "1.14.9" to "1.14.10" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `common-tags` in `app/vue` from "1.6.0" to "1.7.0" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `nodemon` in `app/vue` from "1.14.9" to "1.14.10" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `vue-loader` in `app/vue` from "13.6.2" to "13.7.0" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `jest` in `examples/cra-kitchen-sink` from "22.0.4" to "22.0.5" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.6.2" to "13.7.0" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `webpack-dev-server` in `examples/vue-kitchen-sink` from "2.10.0" to "2.10.1" [#2700](https://github.com/storybooks/storybook/pull/2700)
+-   Upgraded `marked` in `/docs` from "0.3.7" to "0.3.12" [#2699](https://github.com/storybooks/storybook/pull/2699)
+-   Upgraded `react-stack-grid` in `/docs` from "0.7.0" to "0.7.1" [#2699](https://github.com/storybooks/storybook/pull/2699)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.3.4" to "3.3.6" [#2686](https://github.com/storybooks/storybook/pull/2686)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.3.4" to "3.3.6" [#2686](https://github.com/storybooks/storybook/pull/2686)
+-   Upgraded `@storybook/addons` in `/docs` from "3.3.4" to "3.3.6" [#2686](https://github.com/storybooks/storybook/pull/2686)
+-   Upgraded `@storybook/react` in `/docs` from "3.3.4" to "3.3.6" [#2686](https://github.com/storybooks/storybook/pull/2686)
+-   Upgraded `gatsby-link` in `/docs` from "1.6.32" to "1.6.33" [#2686](https://github.com/storybooks/storybook/pull/2686)
+-   Upgraded `gatsby` in `/docs` from "1.9.149" to "1.9.150" [#2686](https://github.com/storybooks/storybook/pull/2686)
+-   Upgraded `nodemon` in `/` from "1.14.8" to "1.14.9" [#2687](https://github.com/storybooks/storybook/pull/2687)
+-   Upgraded `markdown-loader` in `app/react` from "2.0.1" to "2.0.2" [#2687](https://github.com/storybooks/storybook/pull/2687)
+-   Upgraded `nodemon` in `app/react` from "1.14.8" to "1.14.9" [#2687](https://github.com/storybooks/storybook/pull/2687)
+-   Upgraded `nodemon` in `app/angular` from "1.14.8" to "1.14.9" [#2687](https://github.com/storybooks/storybook/pull/2687)
+-   Upgraded `react-native` in `app/react-native` from "0.51.0" to "0.52.0" [#2687](https://github.com/storybooks/storybook/pull/2687)
+-   Upgraded `nodemon` in `app/vue` from "1.14.8" to "1.14.9" [#2687](https://github.com/storybooks/storybook/pull/2687)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.3.3" to "3.3.4" [#2674](https://github.com/storybooks/storybook/pull/2674)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.3.3" to "3.3.4" [#2674](https://github.com/storybooks/storybook/pull/2674)
+-   Upgraded `@storybook/addons` in `/docs` from "3.3.3" to "3.3.4" [#2674](https://github.com/storybooks/storybook/pull/2674)
+-   Upgraded `@storybook/react` in `/docs` from "3.3.3" to "3.3.4" [#2674](https://github.com/storybooks/storybook/pull/2674)
+-   Update eslint in / from 4.14.0 to 4.15.0 [#2673](https://github.com/storybooks/storybook/pull/2673)
+-   Upgraded `nodemon` in `/` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `marksy` in `addons/info` from "6.0.2" to "6.0.3" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `nodemon` in `app/react` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `nodemon` in `app/angular` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `nodemon` in `app/vue` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `webpack-dev-server` in `examples/vue-kitchen-sink` from "2.9.7" to "2.10.0" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `@types/lodash` in `/` from "4.14.91" to "4.14.92" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `marksy` in `addons/info` from "6.0.1" to "6.0.2" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `html-loader` in `app/react` from "0.5.1" to "0.5.4" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/angular` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react-native` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/vue` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `@types/node` in `examples/angular-cli` from "6.0.95" to "6.0.96" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `examples/vue-kitchen-sink` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `@angular/animations` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/common` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/compiler` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/core` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/forms` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/http` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/platform-browser` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/platform-browser-dynamic` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/router` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/compiler-cli` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/language-service` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `postcss-loader` in `app/react` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Upgraded `postcss-loader` in `app/angular` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Upgraded `postcss-loader` in `app/react-native` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Upgraded `postcss-loader` in `app/vue` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Update inquirer in / from 4.0.1 to 4.0.2 [#2632](https://github.com/storybooks/storybook/pull/2632)
+-   Upgraded `danger` in `/` from "2.1.8" to "2.1.10" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/react` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/angular` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/react-native` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/vue` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `nodemon` in `/` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `nodemon` in `app/react` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `nodemon` in `app/angular` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `nodemon` in `app/vue` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `vue-loader` in `app/vue` from "13.6.1" to "13.6.2" [#2611](https://github.com/storybooks/storybook/pull/2611)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.6.1" to "13.6.2" [#2611](https://github.com/storybooks/storybook/pull/2611)
+-   Upgraded `nodemon` in `/` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `nodemon` in `app/react` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `nodemon` in `app/angular` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `nodemon` in `app/vue` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `enzyme` in `/` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `/` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `graphiql` in `addons/graphql` from "0.11.10" to "0.11.11" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `enzyme` in `addons/links` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `app/react` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `app/angular` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `app/vue` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `enzyme` in `examples/cra-kitchen-sink` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `enzyme` in `examples/official-storybook` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Update 2 dependencies from npm [#2597](https://github.com/storybooks/storybook/pull/2597)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `@storybook/addons` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `@storybook/react` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `danger` in `/` from "2.1.6" to "2.1.8" [#2599](https://github.com/storybooks/storybook/pull/2599)
+-   Upgraded `axe-core` in `addons/a11y` from "2.6.0" to "2.6.1" [#2599](https://github.com/storybooks/storybook/pull/2599)
+
+</details>
+
+# 3.3.7
+
+2018-January-10
+
+#### Maintenance
+
+-   Extract tslint exclusions out of package.json scripts [#2684](https://github.com/storybooks/storybook/pull/2684)
+-   Add tslint to the linting pipe [#2682](https://github.com/storybooks/storybook/pull/2682)
+
+#### Bug Fixes
+
+-   Angular: add entry components to modulemetadata - #2701 [#2702](https://github.com/storybooks/storybook/pull/2702)
+-   Add html and markup loaders to angular and vue apps [#2692](https://github.com/storybooks/storybook/pull/2692)
+
+# 3.3.6
+
+2018-January-08
+
+#### Bug Fixes
+
+-   Remove `src/` from remaining `.npmignore`s [#2678](https://github.com/storybooks/storybook/pull/2678)
+
+# 3.3.5
+
+2018-January-08
+
+#### Bug Fixes
+
+-   Remove src from individual .npmignore files [#2677](https://github.com/storybooks/storybook/pull/2677)
+
+# 3.4.0-alpha.0
+
+2018-January-07
+
+#### Features
+
+-   Multiple hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
+-   Change template story files extension to .ts [#2594](https://github.com/storybooks/storybook/pull/2594)
+-   Use store revisions to ensure that stories re-render on HMR. [#2605](https://github.com/storybooks/storybook/pull/2605)
+-   Ability to force re-render a story [#2463](https://github.com/storybooks/storybook/pull/2463)
+-   Introduce framework-independent core library [#2241](https://github.com/storybooks/storybook/pull/2241)
+
+#### Documentation
+
+<details>
+<summary>
+4 PRs
+</summary>
+
+-   Update webpack extend warning. [#2660](https://github.com/storybooks/storybook/pull/2660)
+-   ADD demo images to a new img folder with the documentation site [#2644](https://github.com/storybooks/storybook/pull/2644)
+-   write doc about .css/.scss rules for Angular [#2634](https://github.com/storybooks/storybook/pull/2634)
+-   Updated documentation wrt ejs exclusion [#2633](https://github.com/storybooks/storybook/pull/2633)
+
+</details>
+
+#### Maintenance
+
+<details>
+<summary>
+4 PRs
+</summary>
+
+-   Only update CLI snapsots on postpublish script, skip smoke tests [#2671](https://github.com/storybooks/storybook/pull/2671)
+-   Fix the timezone for example dates [#2654](https://github.com/storybooks/storybook/pull/2654)
+-   Update prereq yarn install level [#2638](https://github.com/storybooks/storybook/pull/2638)
+-   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
+
+</details>
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+66 Upgrades
+</summary>
+
+-   Upgraded `nodemon` in `/` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `marksy` in `addons/info` from "6.0.2" to "6.0.3" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `nodemon` in `app/react` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `nodemon` in `app/angular` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `nodemon` in `app/vue` from "1.14.7" to "1.14.8" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `webpack-dev-server` in `examples/vue-kitchen-sink` from "2.9.7" to "2.10.0" [#2664](https://github.com/storybooks/storybook/pull/2664)
+-   Upgraded `@types/lodash` in `/` from "4.14.91" to "4.14.92" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `marksy` in `addons/info` from "6.0.1" to "6.0.2" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `html-loader` in `app/react` from "0.5.1" to "0.5.4" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/angular` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react-native` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/vue` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `@types/node` in `examples/angular-cli` from "6.0.95" to "6.0.96" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `examples/vue-kitchen-sink` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `@angular/animations` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/common` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/compiler` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/core` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/forms` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/http` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/platform-browser` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/platform-browser-dynamic` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/router` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/compiler-cli` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `@angular/language-service` in `examples/angular-cli` from "5.1.2" to "5.1.3" [#2648](https://github.com/storybooks/storybook/pull/2648)
+-   Upgraded `postcss-loader` in `app/react` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Upgraded `postcss-loader` in `app/angular` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Upgraded `postcss-loader` in `app/react-native` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Upgraded `postcss-loader` in `app/vue` from "2.0.9" to "2.0.10" [#2637](https://github.com/storybooks/storybook/pull/2637)
+-   Update inquirer in / from 4.0.1 to 4.0.2 [#2632](https://github.com/storybooks/storybook/pull/2632)
+-   Upgraded `danger` in `/` from "2.1.8" to "2.1.10" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/react` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/angular` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/react-native` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `autoprefixer` in `app/vue` from "7.2.3" to "7.2.4" [#2618](https://github.com/storybooks/storybook/pull/2618)
+-   Upgraded `nodemon` in `/` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `nodemon` in `app/react` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `nodemon` in `app/angular` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `nodemon` in `app/vue` from "1.14.6" to "1.14.7" [#2612](https://github.com/storybooks/storybook/pull/2612)
+-   Upgraded `vue-loader` in `app/vue` from "13.6.1" to "13.6.2" [#2611](https://github.com/storybooks/storybook/pull/2611)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.6.1" to "13.6.2" [#2611](https://github.com/storybooks/storybook/pull/2611)
+-   Upgraded `nodemon` in `/` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `nodemon` in `app/react` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `nodemon` in `app/angular` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `nodemon` in `app/vue` from "1.14.5" to "1.14.6" [#2609](https://github.com/storybooks/storybook/pull/2609)
+-   Upgraded `enzyme` in `/` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `/` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `graphiql` in `addons/graphql` from "0.11.10" to "0.11.11" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `enzyme` in `addons/links` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `app/react` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `app/angular` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `nodemon` in `app/vue` from "1.14.3" to "1.14.5" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `enzyme` in `examples/cra-kitchen-sink` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Upgraded `enzyme` in `examples/official-storybook` from "3.2.0" to "3.3.0" [#2608](https://github.com/storybooks/storybook/pull/2608)
+-   Update 2 dependencies from npm [#2597](https://github.com/storybooks/storybook/pull/2597)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `@storybook/addons` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `@storybook/react` in `/docs` from "3.3.1" to "3.3.3" [#2598](https://github.com/storybooks/storybook/pull/2598)
+-   Upgraded `danger` in `/` from "2.1.6" to "2.1.8" [#2599](https://github.com/storybooks/storybook/pull/2599)
+-   Upgraded `axe-core` in `addons/a11y` from "2.6.0" to "2.6.1" [#2599](https://github.com/storybooks/storybook/pull/2599)
+
+</details>
+
+# 3.3.4
+
+2018-January-07
+
+#### Bug Fixes
+
+-   Fix config dir detection [#2666](https://github.com/storybooks/storybook/pull/2666)
+-   Removed lowercase-only restriction for knobs [#2646](https://github.com/storybooks/storybook/pull/2646)
+-   Add IE11 compatibility meta tag [#2650](https://github.com/storybooks/storybook/pull/2650)
+-   Allow transparency in color knob [#2624](https://github.com/storybooks/storybook/pull/2624)
+-   RN: Use haul/bin/cli.js for cross-platform support [#2577](https://github.com/storybooks/storybook/pull/2577)
+-   Publish package sources along with transpiled files [#2604](https://github.com/storybooks/storybook/pull/2604)
+-   Fixed all peerDependencies for apps. [#2601](https://github.com/storybooks/storybook/pull/2601)
+-   Renamed angular root node to avoid name collisions [#2657](https://github.com/storybooks/storybook/pull/2657)
+-   Add .ts compatibility to storyshots [#2639](https://github.com/storybooks/storybook/pull/2639)
+-   Remove @angular/core dep from knobs peer. [#2640](https://github.com/storybooks/storybook/pull/2640)
+-   Angular: Change template story files extension .ts [#2594](https://github.com/storybooks/storybook/pull/2594)
+-   Skip serializing (Synthetic)Events [#2626](https://github.com/storybooks/storybook/pull/2626)
+
+#### Maintenance
+
+-   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+13 Upgrades
+</summary>
+
+-   Upgraded `@types/lodash` in `/` from "4.14.91" to "4.14.92" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `marksy` in `addons/info` from "6.0.1" to "6.0.2" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `html-loader` in `app/react` from "0.5.1" to "0.5.4" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/angular` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/react-native` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `app/vue` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.5" to "1.1.6" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `@types/node` in `examples/angular-cli` from "6.0.95" to "6.0.96" [#2659](https://github.com/storybooks/storybook/pull/2659)
+-   Upgraded `css-loader` in `examples/vue-kitchen-sink` from "0.28.7" to "0.28.8" [#2659](https://github.com/storybooks/storybook/pull/2659)
+
+</details>
+
+# 3.3.3
+
+2017-December-29
+
+#### Bug Fixes
+
+-   [app:angular] Fixed dependency injection for components [#2566](https://github.com/storybooks/storybook/pull/2566)
+-   Revert "Move everything from lodash to lodash-es" [#2591](https://github.com/storybooks/storybook/pull/2591)
+
+#### Maintenance
+
+-   Update CLI snapshots as a postpublish step [#2565](https://github.com/storybooks/storybook/pull/2565)
+-   Add more `imports` eslint rules [#2589](https://github.com/storybooks/storybook/pull/2589)
+
+#### Dependency Upgrades
+
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.18" to "3.3.1" [#2580](https://github.com/storybooks/storybook/pull/2580)
+
+# 3.3.2
+
+2017-December-28
+
+#### Bug Fixes
+
+-   Use store revisions to ensure that stories re-render on HMR. [#2588](https://github.com/storybooks/storybook/pull/2588)
+-   Fix @storybook/client-logger import [#2576](https://github.com/storybooks/storybook/pull/2576)
+-   Fixed react peer dependency [#2584](https://github.com/storybooks/storybook/pull/2584)
+
+#### Documentation
+
+-   Docs: fix logos display & add babelrc [#2585](https://github.com/storybooks/storybook/pull/2585)
+-   add guide for Angular [#2574](https://github.com/storybooks/storybook/pull/2574)
+-   Update custom webpack config docs [#2578](https://github.com/storybooks/storybook/pull/2578)
+-   Attempt to make propTablesExclude usage clearer [#2568](https://github.com/storybooks/storybook/pull/2568)
+
+#### Maintenance
+
+-   Add chromatic visual tests [#2505](https://github.com/storybooks/storybook/pull/2505)
+-   Update snapshots to fix tests [#2579](https://github.com/storybooks/storybook/pull/2579)
+
+#### Dependency Upgrades
+
+-   Upgraded `make-error` in `addons/actions` from "1.3.0" to "1.3.2" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `zone.js` in `app/angular` from "0.8.18" to "0.8.19" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `zone.js` in `examples/angular-cli` from "0.8.18" to "0.8.19" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `@angular/cli` in `examples/angular-cli` from "1.6.2" to "1.6.3" [#2586](https://github.com/storybooks/storybook/pull/2586)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.1.4" to "1.1.5" [#2581](https://github.com/storybooks/storybook/pull/2581)
+-   Upgraded `karma-coverage-istanbul-reporter` in `examples/angular-cli` from "1.3.1" to "1.3.3" [#2581](https://github.com/storybooks/storybook/pull/2581)
+
+# 3.3.1
+
+2017-December-26
+
+#### Bug Fixes
+
+-   Fix storybook CLI for angular: dev dependencies and fix addon-notes usage [#2572](https://github.com/storybooks/storybook/pull/2572)
+
+#### Documentation
+
+-   Add migration note about #2570 [#2571](https://github.com/storybooks/storybook/pull/2571)
+
+# 3.3.0
+
+2017-December-26
+
+At long last! 3.3 contains a few major features and a ginormous backlog of smaller changes. A few highlights:
+
+-   Add angular support: Storybook for Angular [#1474](https://github.com/storybooks/storybook/pull/1474)
+-   Viewport Addon: simulate device sizes [#1740](https://github.com/storybooks/storybook/pull/1740)
+-   Jest Addon: preview test results in Storybook [#2295](https://github.com/storybooks/storybook/pull/2295)
+-   Stories panel: Stories on each hierarchy level [#1763](https://github.com/storybooks/storybook/pull/1763)
+-   Storyshots: Generate snapshot per story file [#1584](https://github.com/storybooks/storybook/pull/1584)
+-   Add support for importing markdown in storybook [#2299](https://github.com/storybooks/storybook/pull/2299)
+
+We'll do a better job of getting out smaller releases next time around. ;-)
+
+#### Features
+
+-   Add support for importing markdown in storybook [#2299](https://github.com/storybooks/storybook/pull/2299)
+-   Add `TableComponent` option for addon-info [#2400](https://github.com/storybooks/storybook/pull/2400)
+-   Change keyboard shortcuts to platform safe [#1858](https://github.com/storybooks/storybook/pull/1858)
+-   Replace `console` with `client-logger` and `node-logger` packages [#2347](https://github.com/storybooks/storybook/pull/2347)
+-   Add renderer option to storyshots [#2414](https://github.com/storybooks/storybook/pull/2414)
+-   Added type annotation to helpers, added ts declaration files for angu… [#2459](https://github.com/storybooks/storybook/pull/2459)
+-   Adding extra metadata to module/components [#2526](https://github.com/storybooks/storybook/pull/2526)
+-   Fix ng component prop output override [#2456](https://github.com/storybooks/storybook/pull/2456)
+-   [WIP] Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
+-   Angular Add custom pipes support [#2518](https://github.com/storybooks/storybook/pull/2518)
+-   Add angular support: Storybook for Angular [#1474](https://github.com/storybooks/storybook/pull/1474)
+-   Fix addon Knobs: add array in Object PropTypes [#2227](https://github.com/storybooks/storybook/pull/2227)
+-   Adds error when storyshots finds no stories [#2079](https://github.com/storybooks/storybook/pull/2079)
+-   Add addon background to monorepo [#2220](https://github.com/storybooks/storybook/pull/2220)
+-   Add ability to parse line breaks into <br/> for Docgen descriptions [#2053](https://github.com/storybooks/storybook/pull/2053)
+-   Ability for custom storyshots testFunctions to utilise "snapshot per story file" [#1841](https://github.com/storybooks/storybook/pull/1841)
+-   Viewport Addon [#1753](https://github.com/storybooks/storybook/pull/1753)
+-   Viewport Addon [#1740](https://github.com/storybooks/storybook/pull/1740)
+-   Generate snapshot per story file [#1584](https://github.com/storybooks/storybook/pull/1584)
+-   addon-links: add `LinkTo` component, and `hrefTo` function [#1829](https://github.com/storybooks/storybook/pull/1829)
+-   Viewport addon: simulate device sizes in preview window [#1753](https://github.com/storybooks/storybook/pull/1753)
+-   CLI: Add codemod for deprecated addon-links and addon-actions from app [#1368](https://github.com/storybooks/storybook/pull/1368)
+-   Info addon: More detailed props table [#1485](https://github.com/storybooks/storybook/pull/1485)
+-   React native: Add accessibility labels to OnDeviceUI [#1780](https://github.com/storybooks/storybook/pull/1780)
+-   Stories panel: Stories on each hierarchy level [#1763](https://github.com/storybooks/storybook/pull/1763)
+-   Storyshots: Generate snapshot per story file [#1584](https://github.com/storybooks/storybook/pull/1584)
+-   CLI: Add support for Vue projects using Nuxt [#1794](https://github.com/storybooks/storybook/pull/1794)
+
+#### Bug Fixes
+
+-   Fix whitespace on info add-on card [#2543](https://github.com/storybooks/storybook/pull/2543)
+-   Angular component props assignment improvements [#2554](https://github.com/storybooks/storybook/pull/2554)
+-   Remove redundant render in react [#2503](https://github.com/storybooks/storybook/pull/2503)
+-   Addon-actions: Fix types and refactor [#2438](https://github.com/storybooks/storybook/pull/2438)
+-   Fix warnings in search box [#2479](https://github.com/storybooks/storybook/pull/2479)
+-   Migrate to marksy@6 [#2464](https://github.com/storybooks/storybook/pull/2464)
+-   Extract Jest config from package.json to config file  [#2424](https://github.com/storybooks/storybook/pull/2424)
+-   Fix Horizontal Scrollbar of DownPanel [#2410](https://github.com/storybooks/storybook/pull/2410)
+-   Move `@storybook/addons` to peerDependencies in all addons [#2335](https://github.com/storybooks/storybook/pull/2335)
+-   Fix compatibility with @babel/core v7 [#2494](https://github.com/storybooks/storybook/pull/2494)
+-   Unmount after storyshot snapshot [#2417](https://github.com/storybooks/storybook/pull/2417)
+-   Fix HMR by saving the preview frame URL as the story changes [#2349](https://github.com/storybooks/storybook/pull/2349)
+-   Fix CLI babel transpilation [#2350](https://github.com/storybooks/storybook/pull/2350)
+-   Move LinkTo component to a separate `addon-links/react` endpoint [#2239](https://github.com/storybooks/storybook/pull/2239)
+-   Fix Array Knob deserialization [#2217](https://github.com/storybooks/storybook/pull/2217)
+-   Return the test in storyshots to respect promises. [#2218](https://github.com/storybooks/storybook/pull/2218)
+-   Knobs refactor accidentally removed select [#2210](https://github.com/storybooks/storybook/pull/2210)
+-   Add HMR to other RN app templates [#2213](https://github.com/storybooks/storybook/pull/2213)
+-   Autoload all `*.stories.js` files in cli templates [#2195](https://github.com/storybooks/storybook/pull/2195)
+-   Fix info upgrade codemod failing when optional description string is not supplied [#2138](https://github.com/storybooks/storybook/pull/2138)
+-   Fix `flex-basis` of `DownPanel` content div [#2126](https://github.com/storybooks/storybook/pull/2126)
+-   CLI: Use actions in sample stories for vue + fix them in SFC_VUE template [#1867](https://github.com/storybooks/storybook/pull/1867)
+-   Improve rendering of 'types' in addon-actions [#1887](https://github.com/storybooks/storybook/pull/1887)
+-   Circular json can possibly hang [#1881](https://github.com/storybooks/storybook/pull/1881)
+-   Use HtmlWebpackPlugin to import all assets (importing chunks in order) [#1775](https://github.com/storybooks/storybook/pull/1775)
+-   Fix preview scrolling [#1782](https://github.com/storybooks/storybook/pull/1782)
+-   Search box: make found options selectable with click [#1697](https://github.com/storybooks/storybook/pull/1697)
+-   Fix Docgen in static builds for Info [#1725](https://github.com/storybooks/storybook/pull/1725)
+-   Return empty array when Array knob is empty [#1811](https://github.com/storybooks/storybook/pull/1811)
+-   Import chunks/assets in correct order using HtmlWebpackPlugin [#1775](https://github.com/storybooks/storybook/pull/1775)
+-   Fix preview scrolling [#1782](https://github.com/storybooks/storybook/pull/1782)
+-   Height aligned 2 buttons in manager's header [#1769](https://github.com/storybooks/storybook/pull/1769)
+-   Search box: make found options selectable with click [#1697](https://github.com/storybooks/storybook/pull/1697)
+-   Info addon: Fix Docgen in static builds [#1725](https://github.com/storybooks/storybook/pull/1725)
+-   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
+
+#### Documentation
+
+-   Make dependencies more deterministic [#1703](https://github.com/storybooks/storybook/pull/1703)
+-   Addon-info: deep merge passed styles with default ones [#2449](https://github.com/storybooks/storybook/pull/2449)
+-   Test documentation duplication fix [#2228](https://github.com/storybooks/storybook/pull/2228)
+-   Updated local test documentation [#2224](https://github.com/storybooks/storybook/pull/2224)
+-   Add state addon to the addons page [#2012](https://github.com/storybooks/storybook/pull/2012)
+-   Add community addon to add the ability to customize styles in the story preview area [#2007](https://github.com/storybooks/storybook/pull/2007)
+-   Add Figma addon to community supported section [#2009](https://github.com/storybooks/storybook/pull/2009)
+-   Update storybook-router description in the addon gallery. [#1991](https://github.com/storybooks/storybook/pull/1991)
+-   Make dependencies more deterministic [#1703](https://github.com/storybooks/storybook/pull/1703)
+-   Synced changes from new-docs to CONTRIBUTING.md [#1911](https://github.com/storybooks/storybook/pull/1911)
+-   Fix incorrect yarn command in docs [#1758](https://github.com/storybooks/storybook/pull/1758)
+-   Improve linkTo documentation [#1793](https://github.com/storybooks/storybook/pull/1793)
+-   Add carbon to examples page [#1764](https://github.com/storybooks/storybook/pull/1764)
+-   Minor grammar fixes and clarification to Vue documentation [#1756](https://github.com/storybooks/storybook/pull/1756)
+-   Fix incorrect yarn command in docs [#1758](https://github.com/storybooks/storybook/pull/1758)
+-   Add storybook-chrome-screenshot to addon gallery [#1761](https://github.com/storybooks/storybook/pull/1761)
+-   Fixing typo on VueJS withNotes Example [#1787](https://github.com/storybooks/storybook/pull/1787)
+-   Improve linkTo documentation [#1793](https://github.com/storybooks/storybook/pull/1793)
+-   Add carbon to examples page [#1764](https://github.com/storybooks/storybook/pull/1764)
+-   Minor grammar fixes and clarification to Vue documentation [#1756](https://github.com/storybooks/storybook/pull/1756)
+-   Fix incorrect yarn command in docs [#1758](https://github.com/storybooks/storybook/pull/1758)
+-   Add storybook-chrome-screenshot to addon gallery [#1761](https://github.com/storybooks/storybook/pull/1761)
+-   Fixing typo on VueJS withNotes Example [#1787](https://github.com/storybooks/storybook/pull/1787)
+
+#### Maintenance
+
+-   Switch to UglifyJS that supports ES6 and up [#2530](https://github.com/storybooks/storybook/pull/2530)
+-   Move everything from lodash to lodash-es [#2558](https://github.com/storybooks/storybook/pull/2558)
+-   Misc fixes [#2556](https://github.com/storybooks/storybook/pull/2556)
+-   CI: test that angular example works [#2557](https://github.com/storybooks/storybook/pull/2557)
+-   FIX `yarn test` & selecting only core [#2219](https://github.com/storybooks/storybook/pull/2219)
+-   CLI test: always remove `run` directory before exiting [#2201](https://github.com/storybooks/storybook/pull/2201)
+-   Bot for closing old issues [#2186](https://github.com/storybooks/storybook/pull/2186)
+-   Drop "Install latest yarn version" step on CI [#1910](https://github.com/storybooks/storybook/pull/1910)
+-   CLI: A more human-friendly message for undetected project types [#1825](https://github.com/storybooks/storybook/pull/1825)
+-   CLI: handle promise rejections [#1826](https://github.com/storybooks/storybook/pull/1826)
+-   Add tests for CLI [#1767](https://github.com/storybooks/storybook/pull/1767)
+-   Yarn workspaces [#1810](https://github.com/storybooks/storybook/pull/1810)
+-   Knobs: allow arrays in object knob proptypes [#1701](https://github.com/storybooks/storybook/pull/1701)
+-   Deprecate confusing option names [#1692](https://github.com/storybooks/storybook/pull/1692)
+-   A CLI for running specific tests suites, like bootstrap CLI [#1752](https://github.com/storybooks/storybook/pull/1752)
+-   Remove check for sender on channel. [#1407](https://github.com/storybooks/storybook/pull/1407)
+-   Exit with code 1 if `start-storybook --smoke-test` fails [#1851](https://github.com/storybooks/storybook/pull/1851)
+-   Refactor CLI [#1840](https://github.com/storybooks/storybook/pull/1840)
+-   Refactor knobs - no longer include all runtimes [#1832](https://github.com/storybooks/storybook/pull/1832)
+-   Added addon-knobs to crna and vanilla react native. [#1636](https://github.com/storybooks/storybook/pull/1636)
+-   Deprecate confusing option names [#1692](https://github.com/storybooks/storybook/pull/1692)
+-   A CLI for running specific tests suites, like bootstrap CLI [#1752](https://github.com/storybooks/storybook/pull/1752)
+-   Remove check for sender on channel. [#1407](https://github.com/storybooks/storybook/pull/1407)
+-   Use yarn instead of NPM [#1703](https://github.com/storybooks/storybook/pull/1703)
+-   Add config for dependencies.io [#1770](https://github.com/storybooks/storybook/pull/1770)
+-   Added addon-knobs to crna and vanilla react native. [#1636](https://github.com/storybooks/storybook/pull/1636)
+-   Fixed Jest warnings [#1744](https://github.com/storybooks/storybook/pull/1744)
+-   Smoke test master [#1801](https://github.com/storybooks/storybook/pull/1801)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+57 Upgrades
+</summary>
+
+-   Update babel-eslint in / from 8.1.1 to 8.1.2 [#2562](https://github.com/storybooks/storybook/pull/2562)
+-   Update babel-eslint in / from 8.1.0 to 8.1.1 [#2561](https://github.com/storybooks/storybook/pull/2561)
+-   Update babel-eslint in / from 8.0.3 to 8.1.0 [#2559](https://github.com/storybooks/storybook/pull/2559)
+-   Upgraded `eslint` in `/` from "4.13.1" to "4.14.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jest-specific-snapshot` in `addons/storyshots` from "0.2.0" to "0.3.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `style-loader` in `app/angular` from "0.17.0" to "0.18.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `npx` in `lib/cli` from "9.6.0" to "9.7.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `@angular/cli` in `examples/angular-cli` from "1.3.0" to "1.6.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `@types/jasmine` in `examples/angular-cli` from "2.5.54" to "2.8.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jasmine-core` in `examples/angular-cli` from "2.6.4" to "2.8.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jasmine-spec-reporter` in `examples/angular-cli` from "4.1.1" to "4.2.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `karma-chrome-launcher` in `examples/angular-cli` from "2.1.1" to "2.2.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `karma-coverage-istanbul-reporter` in `examples/angular-cli` from "1.3.0" to "1.3.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `protractor` in `examples/angular-cli` from "5.1.2" to "5.2.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `ts-node` in `examples/angular-cli` from "3.2.2" to "3.3.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `tslint` in `examples/angular-cli` from "5.3.2" to "5.8.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   UPGRADE jest & react-native [#2542](https://github.com/storybooks/storybook/pull/2542)
+-   Move back to original fuse.js package [#2478](https://github.com/storybooks/storybook/pull/2478)
+-   UPDATE "react-split-pane": "^0.1.74", to FIX an breaking issue [#2528](https://github.com/storybooks/storybook/pull/2528)
+-   Upgraded `gatsby-remark-copy-linked-files` in `/docs` from "1.5.24" to "1.5.25" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Upgraded `gatsby` in `/docs` from "1.9.144" to "1.9.146" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Update gatsby in /docs from 1.9.143 to 1.9.144 [#2524](https://github.com/storybooks/storybook/pull/2524)
+-   Update gatsby in /docs from 1.9.142 to 1.9.143 [#2521](https://github.com/storybooks/storybook/pull/2521)
+-   Upgraded `enzyme-adapter-react-16` in `/` from "1.1.0" to "1.1.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.0" to "2.2.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `axe-core` in `addons/a11y` from "2.5.0" to "2.6.0" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/knobs` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `addons/knobs` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/comments` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `gatsby` in `/docs` from "1.9.141" to "1.9.142" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `nodemon` in `/` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `graphql` in `addons/graphql` from "0.11.7" to "0.12.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `@types/react` in `addons/knobs` from "16.0.30" to "16.0.31" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react-native` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/react` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/vue` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/vue` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `app/vue` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `examples/vue-kitchen-sink` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Update danger in / from 2.1.5 to 2.1.6 [#2511](https://github.com/storybooks/storybook/pull/2511)
+-   Update react-native from 0.43.4 to 0.49.3 in app/react-native [#1971](https://github.com/storybooks/storybook/pull/1971)
+-   React-Native - Docs - Add Issues section for Android Emulator [#2078](https://github.com/storybooks/storybook/pull/2078)
+-   Upgrade eslint-config-airbnb and make it pass [#2212](https://github.com/storybooks/storybook/pull/2212)
+-   Add config for dependencies.io [#1770](https://github.com/storybooks/storybook/pull/1770)
+-   Upgrade root dependencies and sync with packages [#1802](https://github.com/storybooks/storybook/pull/1802)
+-   Update jest to the latest version 🚀 [#1799](https://github.com/storybooks/storybook/pull/1799)
+-   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
+-   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
+
+</details>
+
+# 3.3.0-rc.1
+
+2017-December-26
+
+#### Bug Fixes
+
+-   Fix whitespace on info add-on card [#2543](https://github.com/storybooks/storybook/pull/2543)
+
+#### Documentation
+
+-   Make dependencies more deterministic [#1703](https://github.com/storybooks/storybook/pull/1703)
+
+#### Maintenance
+
+-   Switch to UglifyJS that supports ES6 and up [#2530](https://github.com/storybooks/storybook/pull/2530)
+-   Move everything from lodash to lodash-es [#2558](https://github.com/storybooks/storybook/pull/2558)
+-   Misc fixes [#2556](https://github.com/storybooks/storybook/pull/2556)
+-   CI: test that angular example works [#2557](https://github.com/storybooks/storybook/pull/2557)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+17 Upgrades
+</summary>
+
+-   Update babel-eslint in / from 8.1.1 to 8.1.2 [#2562](https://github.com/storybooks/storybook/pull/2562)
+-   Update babel-eslint in / from 8.1.0 to 8.1.1 [#2561](https://github.com/storybooks/storybook/pull/2561)
+-   Update babel-eslint in / from 8.0.3 to 8.1.0 [#2559](https://github.com/storybooks/storybook/pull/2559)
+-   Upgraded `eslint` in `/` from "4.13.1" to "4.14.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jest-specific-snapshot` in `addons/storyshots` from "0.2.0" to "0.3.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `style-loader` in `app/angular` from "0.17.0" to "0.18.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `npx` in `lib/cli` from "9.6.0" to "9.7.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `@angular/cli` in `examples/angular-cli` from "1.3.0" to "1.6.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `@types/jasmine` in `examples/angular-cli` from "2.5.54" to "2.8.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jasmine-core` in `examples/angular-cli` from "2.6.4" to "2.8.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `jasmine-spec-reporter` in `examples/angular-cli` from "4.1.1" to "4.2.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `karma-chrome-launcher` in `examples/angular-cli` from "2.1.1" to "2.2.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `karma-coverage-istanbul-reporter` in `examples/angular-cli` from "1.3.0" to "1.3.1" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `protractor` in `examples/angular-cli` from "5.1.2" to "5.2.2" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `ts-node` in `examples/angular-cli` from "3.2.2" to "3.3.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+-   Upgraded `tslint` in `examples/angular-cli` from "5.3.2" to "5.8.0" [#2555](https://github.com/storybooks/storybook/pull/2555)
+
+</details>
+
+# 3.3.0-rc.0
+
+2017-December-23
+
+#### Bug Fixes
+
+-   Angular component props assignment improvements [#2554](https://github.com/storybooks/storybook/pull/2554)
+
+#### Dependency Upgrades
+
+-   UPGRADE jest & react-native [#2542](https://github.com/storybooks/storybook/pull/2542)
+
+# 3.3.0-alpha.6
+
+2017-December-23
+
+#### Features
+
+-   Add support for importing markdown in storybook [#2299](https://github.com/storybooks/storybook/pull/2299)
+-   Add `TableComponent` option for addon-info [#2400](https://github.com/storybooks/storybook/pull/2400)
+-   Change keyboard shortcuts to platform safe [#1858](https://github.com/storybooks/storybook/pull/1858)
+-   Replace `console` with `client-logger` and `node-logger` packages [#2347](https://github.com/storybooks/storybook/pull/2347)
+-   Add renderer option to storyshots [#2414](https://github.com/storybooks/storybook/pull/2414)
+
+#### Angular Support
+
+-   Added type annotation to helpers, added ts declaration files for angu… [#2459](https://github.com/storybooks/storybook/pull/2459)
+-   Adding extra metadata to module/components [#2526](https://github.com/storybooks/storybook/pull/2526)
+-   Fix ng component prop output override [#2456](https://github.com/storybooks/storybook/pull/2456)
+-   [WIP] Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
+-   Angular Add custom pipes support [#2518](https://github.com/storybooks/storybook/pull/2518)
+
+#### Bug Fixes
+
+-   Remove redundant render in react [#2503](https://github.com/storybooks/storybook/pull/2503)
+-   Addon-actions: Fix types and refactor [#2438](https://github.com/storybooks/storybook/pull/2438)
+-   Fix warnings in search box [#2479](https://github.com/storybooks/storybook/pull/2479)
+-   Migrate to marksy@6 [#2464](https://github.com/storybooks/storybook/pull/2464)
+-   Extract Jest config from package.json to config file  [#2424](https://github.com/storybooks/storybook/pull/2424)
+-   Fix Horizontal Scrollbar of DownPanel [#2410](https://github.com/storybooks/storybook/pull/2410)
+-   Move `@storybook/addons` to peerDependencies in all addons [#2335](https://github.com/storybooks/storybook/pull/2335)
+-   Fix compatibility with @babel/core v7 [#2494](https://github.com/storybooks/storybook/pull/2494)
+-   Unmount after storyshot snapshot [#2417](https://github.com/storybooks/storybook/pull/2417)
+
+#### Documentation
+
+-   Addon-info: deep merge passed styles with default ones [#2449](https://github.com/storybooks/storybook/pull/2449)
+-   Test documentation duplication fix [#2228](https://github.com/storybooks/storybook/pull/2228)
+
+#### Maintenance
+
+-   Netlify for angularexample [#2533](https://github.com/storybooks/storybook/pull/2533)
+-   Netlify for officialexample [#2532](https://github.com/storybooks/storybook/pull/2532)
+-   Add a storybook for the ui package [#2504](https://github.com/storybooks/storybook/pull/2504)
+-   FIX the failing netlify builds [#2527](https://github.com/storybooks/storybook/pull/2527)
+-   fix tests not actually running [#2450](https://github.com/storybooks/storybook/pull/2450)
+-   Add method to channel that ignores event from self [#1879](https://github.com/storybooks/storybook/pull/1879)
+-   Fix broken CI build [#2255](https://github.com/storybooks/storybook/pull/2255)
+-   Fix unittest warnings r3.3 [#2381](https://github.com/storybooks/storybook/pull/2381)
+-   Move addon events into its own story file [#2502](https://github.com/storybooks/storybook/pull/2502)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+33 Upgrades
+</summary>
+
+-   Move back to original fuse.js package [#2478](https://github.com/storybooks/storybook/pull/2478)
+-   UPDATE "react-split-pane": "^0.1.74", to FIX an breaking issue [#2528](https://github.com/storybooks/storybook/pull/2528)
+-   Upgraded `gatsby-remark-copy-linked-files` in `/docs` from "1.5.24" to "1.5.25" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Upgraded `gatsby` in `/docs` from "1.9.144" to "1.9.146" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Update gatsby in /docs from 1.9.143 to 1.9.144 [#2524](https://github.com/storybooks/storybook/pull/2524)
+-   Update gatsby in /docs from 1.9.142 to 1.9.143 [#2521](https://github.com/storybooks/storybook/pull/2521)
+-   Upgraded `enzyme-adapter-react-16` in `/` from "1.1.0" to "1.1.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.0" to "2.2.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `axe-core` in `addons/a11y` from "2.5.0" to "2.6.0" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/knobs` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `addons/knobs` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/comments` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `gatsby` in `/docs` from "1.9.141" to "1.9.142" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `nodemon` in `/` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `graphql` in `addons/graphql` from "0.11.7" to "0.12.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `@types/react` in `addons/knobs` from "16.0.30" to "16.0.31" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react-native` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/react` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/vue` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/vue` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `app/vue` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `examples/vue-kitchen-sink` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Update danger in / from 2.1.5 to 2.1.6 [#2511](https://github.com/storybooks/storybook/pull/2511)
+
+</details>
+
 # 3.3.0-alpha.4
 
 2017-November-22
@@ -152,6 +905,86 @@
 -   Update eslint-plugin-jest to the latest version 🚀 [#1795](https://github.com/storybooks/storybook/pull/1795)
 -   Update lerna to the latest version 🚀 [#1768](https://github.com/storybooks/storybook/pull/1768)
 
+# 3.2.19
+
+2017-December-23
+
+#### Bug Fixes
+
+-   fix compatibility with @babel/core v7 [#2494](https://github.com/storybooks/storybook/pull/2494)
+
+#### Maintenance
+
+-   FIX the failing netlify builds [#2527](https://github.com/storybooks/storybook/pull/2527)
+
+#### Documentation
+
+-   UPDATE readme with new slackin link [#2536](https://github.com/storybooks/storybook/pull/2536)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+55 Updates
+</summary>
+-   UPDATE "react-split-pane": "^0.1.74", to FIX an breaking issue [#2528](https://github.com/storybooks/storybook/pull/2528)
+-   Upgraded `cross-env` in `/` from "5.1.1" to "5.1.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `nodemon` in `/` from "1.13.3" to "1.14.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `lib/components` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `addons/jest` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `@types/node` in `addons/knobs` from "8.5.1" to "8.5.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue` in `addons/knobs` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `common-tags` in `app/react` from "1.5.1" to "1.6.0" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `app/react` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `nodemon` in `app/react` from "1.13.3" to "1.14.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `common-tags` in `app/vue` from "1.5.1" to "1.6.0" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `nodemon` in `app/vue` from "1.13.3" to "1.14.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue` in `app/vue` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-loader` in `app/vue` from "13.6.0" to "13.6.1" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `cross-env` in `examples/vue-kitchen-sink` from "5.1.1" to "5.1.3" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.6.0" to "13.6.1" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.12" to "2.5.13" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `glamorous` in `examples/cra-kitchen-sink` from "4.11.0" to "4.11.2" [#2540](https://github.com/storybooks/storybook/pull/2540)
+-   Upgraded `gatsby-remark-autolink-headers` in `/docs` from "1.4.10" to "1.4.11" [#2541](https://github.com/storybooks/storybook/pull/2541)
+-   Upgraded `gatsby-transformer-remark` in `/docs` from "1.7.25" to "1.7.26" [#2541](https://github.com/storybooks/storybook/pull/2541)
+-   Upgraded `gatsby` in `/docs` from "1.9.148" to "1.9.149" [#2541](https://github.com/storybooks/storybook/pull/2541)
+-   Update gatsby in /docs from 1.9.146 to 1.9.147 [#2535](https://github.com/storybooks/storybook/pull/2535)
+-   Upgraded `gatsby-remark-copy-linked-files` in `/docs` from "1.5.24" to "1.5.25" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Upgraded `gatsby` in `/docs` from "1.9.144" to "1.9.146" [#2529](https://github.com/storybooks/storybook/pull/2529)
+-   Update gatsby in /docs from 1.9.143 to 1.9.144 [#2524](https://github.com/storybooks/storybook/pull/2524)
+-   Update gatsby in /docs from 1.9.142 to 1.9.143 [#2521](https://github.com/storybooks/storybook/pull/2521)
+-   Upgraded `enzyme-adapter-react-16` in `/` from "1.1.0" to "1.1.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.0" to "2.2.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `axe-core` in `addons/a11y` from "2.5.0" to "2.6.0" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/knobs` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `addons/knobs` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `moment` in `addons/comments` from "2.20.0" to "2.20.1" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `vue-template-compiler` in `examples/vue-kitchen-sink` from "2.5.11" to "2.5.12" [#2520](https://github.com/storybooks/storybook/pull/2520)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/addons` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `@storybook/react` in `/docs` from "3.2.17" to "3.2.18" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `gatsby` in `/docs` from "1.9.141" to "1.9.142" [#2519](https://github.com/storybooks/storybook/pull/2519)
+-   Upgraded `nodemon` in `/` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `graphql` in `addons/graphql` from "0.11.7" to "0.12.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `@types/react` in `addons/knobs` from "16.0.30" to "16.0.31" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react-native` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/react` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/react` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `app/vue` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `nodemon` in `app/vue` from "1.13.2" to "1.13.3" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `app/vue` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `file-loader` in `examples/vue-kitchen-sink` from "1.1.5" to "1.1.6" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Upgraded `vue-loader` in `examples/vue-kitchen-sink` from "13.5.0" to "13.6.0" [#2498](https://github.com/storybooks/storybook/pull/2498)
+-   Update danger in / from 2.1.5 to 2.1.6 [#2511](https://github.com/storybooks/storybook/pull/2511)
+
+</details>
+
 # 3.2.18
 
 2017-December-18
@@ -181,7 +1014,7 @@
 
 <details>
 <summary>
-139 PRs
+139 Updates
 </summary>
 
 -   Update gatsby in /docs from 1.9.139 to 1.9.141 [#2510](https://github.com/storybooks/storybook/pull/2510)
@@ -333,7 +1166,7 @@
 #### Features
 
 -   Add dotenv support for storybook in vue and react [#2345](https://github.com/storybooks/storybook/pull/2345)
--   Add addon jest [#2295](https://github.com/storybooks/storybook/pull/2295)
+-   Addon jest [#2295](https://github.com/storybooks/storybook/pull/2295)
 -   Addon-knobs: add number config options [#2371](https://github.com/storybooks/storybook/pull/2371)
 -   Addon-info: Expose style for customization [#2370](https://github.com/storybooks/storybook/pull/2370)
 

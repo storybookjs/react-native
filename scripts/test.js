@@ -63,6 +63,13 @@ const tasks = {
     projectLocation: path.join(__dirname, '..', 'integration'),
     isJest: true,
   }),
+  image: createProject({
+    name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
+    defaultValue: false,
+    option: '--image',
+    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
+    isJest: true,
+  }),
   // 'crna-kitchen-sink': createProject({
   //   name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}  ${chalk.red(
   //     '[not implemented yet]'

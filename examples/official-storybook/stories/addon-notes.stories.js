@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+// eslint-disable-next-line import/named
 import { withNotes, WithNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
 import BaseButton from '../components/BaseButton';
 import markdownNotes from './notes/notes.md';
 
-storiesOf('Addon Notes', module)
+storiesOf('Addons|Notes', module)
   .add(
     'withNotes',
     withNotes(

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "3.3.0-alpha.4",
+  "version": "3.4.0-alpha.1",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",
@@ -10,6 +10,7 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:storybooks/storybook.git"
@@ -27,7 +28,7 @@
     "uuid": "^3.1.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0-alpha.4",
+    "@storybook/addons": "^3.3.0",
     "react": "*"
   }
 }

@@ -1,12 +1,14 @@
 import path from 'path';
 import webpack from 'webpack';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+
 import babelLoaderConfig from './babel.prod';
-import { getConfigDir, includePaths, excludePaths, loadEnv, nodePaths } from './utils';
+import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
-export default function() {
+export default function(configDir) {
   const entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
     manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')],
@@ -30,7 +32,7 @@ export default function() {
         filename: 'index.html',
         chunks: ['manager'],
         data: {
-          managerHead: getManagerHeadHtml(getConfigDir()),
+          managerHead: getManagerHeadHtml(configDir),
           version,
         },
         template: require.resolve('../index.html.ejs'),
@@ -39,20 +41,23 @@ export default function() {
         filename: 'iframe.html',
         excludeChunks: ['manager'],
         data: {
-          previewHead: getPreviewHeadHtml(getConfigDir()),
+          previewHead: getPreviewHeadHtml(configDir),
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
       new webpack.DefinePlugin(loadEnv({ production: true })),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          screw_ie8: true,
+      new UglifyJsPlugin({
+        parallel: true,
+        uglifyOptions: {
+          ie8: false,
+          mangle: false,
           warnings: false,
-        },
-        mangle: false,
-        output: {
-          comments: false,
-          screw_ie8: true,
+          compress: {
+            keep_fnames: true,
+          },
+          output: {
+            comments: false,
+          },
         },
       }),
       new webpack.ContextReplacementPlugin(
@@ -71,12 +76,21 @@ export default function() {
         },
         {
           test: /\.ts?$/,
-          loaders: [require.resolve('ts-loader'), require.resolve('angular2-template-loader')],
+          loaders: [
+            {
+              loader: require.resolve('ts-loader'),
+            },
+            require.resolve('angular2-template-loader'),
+          ],
         },
         {
-          test: /\.(html|css)$/,
+          test: /\.html$/,
           loader: 'raw-loader',
-          exclude: /\.async\.(html|css)$/,
+          exclude: /\.async\.html$/,
+        },
+        {
+          test: /\.scss$/,
+          loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
       ],
     },
