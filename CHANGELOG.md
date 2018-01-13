@@ -1,3 +1,12 @@
+# 3.3.9
+
+2018-January-13
+
+#### Bug Fixes
+
+-   Start haul/react-native using named binaries instead of cli.js [#2715](https://github.com/storybooks/storybook/pull/2715)
+-   Reflect the new peer dependencies in docs and CLI templates [#2714](https://github.com/storybooks/storybook/pull/2714)
+-   Don't mangle function names for production builds [#2705](https://github.com/storybooks/storybook/pull/2705)
 # 3.4.0-alpha.2
 
 2018-January-11
