@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class DelayedRender extends React.Component {
+export default class DelayedRender extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
   state = {
     show: false,
   };
+
   componentDidMount() {
     setTimeout(() => {
       this.setState({
