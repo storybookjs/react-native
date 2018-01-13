@@ -23,12 +23,11 @@ export function getAngularCliWebpackConfigOptions(dirToSearch, appIndex = 0) {
   }
   const appConfig = cliConfig.apps[appIndex];
 
-  // FIXME dummy value
   const cliWebpackConfigOptions = {
     projectRoot: dirToSearch,
     appConfig,
     buildOptions: {
-      outputPath: 'outputPath',
+      outputPath: 'outputPath', // It's dummy value to avoid to Angular CLI's error
     },
     supportES2015: false,
   };
