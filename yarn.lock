@@ -7775,11 +7775,12 @@ jest-haste-map@^22.0.6:
     micromatch "^2.3.11"
     sane "^2.0.0"
 
-jest-image-snapshot@^2.2.0, jest-image-snapshot@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/jest-image-snapshot/-/jest-image-snapshot-2.2.1.tgz#06e05cad6a01ded0d8d43d4b92d2758de2fce52a"
+jest-image-snapshot@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/jest-image-snapshot/-/jest-image-snapshot-2.3.0.tgz#bf9535dee5b9bcd862fa9312750a90c10bfba052"
   dependencies:
     chalk "^1.1.3"
+    get-stdin "^5.0.1"
     lodash "^4.17.4"
     mkdirp "^0.5.1"
     pixelmatch "^4.0.2"
@@ -10825,21 +10826,7 @@ podda@^1.2.2:
     babel-runtime "^6.11.6"
     immutable "^3.8.1"
 
-polymer-webpack-loader@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.0.tgz#4189780271dd24fe3a10f06f62e722b6abf9f8e2"
-  dependencies:
-    css-selector-tokenizer "^0.7.0"
-    dom5 "^2.3.0"
-    espree "^3.4.3"
-    html-loader "^0.5.1"
-    loader-utils "^1.1.0"
-    parse5 "^3.0.2"
-    parse5-utils "^2.0.0"
-    postcss "^6.0.9"
-    source-map "^0.5.6"
-
-polymer-webpack-loader@^2.0.0:
+polymer-webpack-loader@2.0.1, polymer-webpack-loader@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.1.tgz#d15d45328f6a6700366dfaee83fc606f39cdcee0"
   dependencies:
