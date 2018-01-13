@@ -1,3 +1,9 @@
+# 3.4.0-alpha.4
+
+2018-January-13
+
+Republish `3.4.0-alpha.3` due to potential publishing errors
+
 # 3.4.0-alpha.3
 
 2018-January-13
