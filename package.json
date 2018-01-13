@@ -74,7 +74,7 @@
     "jest-enzyme": "^4.0.2",
     "jest-image-snapshot": "^2.3.0",
     "jest-jasmine2": "^22.0.6",
-    "lerna": "^2.7.0",
+    "lerna": "^2.6.0",
     "lint-staged": "^6.0.0",
     "lodash": "^4.17.4",
     "nodemon": "^1.14.11",
