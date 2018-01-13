@@ -5,7 +5,7 @@
 #### Features
 
 -   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
--   Add ability to use image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
+-   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
 -   Angular template support for Storybook [#2690](https://github.com/storybooks/storybook/pull/2690)
 
 #### Bug Fixes
