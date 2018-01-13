@@ -1,3 +1,87 @@
+# 3.4.0-alpha.3
+
+2018-January-13
+
+#### Features
+
+-   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
+-   Add ability to use image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
+-   Angular template support for Storybook [#2690](https://github.com/storybooks/storybook/pull/2690)
+
+#### Bug Fixes
+
+-   Remove polymer-cli dependency [#2741](https://github.com/storybooks/storybook/pull/2741)
+-   Add scss for components in angular apps by default. [#2703](https://github.com/storybooks/storybook/pull/2703)
+
+#### Maintenance
+
+-   Change ng stories dir [#2672](https://github.com/storybooks/storybook/pull/2672)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+54 Upgrades
+</summary>
+
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.1" to "2.3.0" [#2740](https://github.com/storybooks/storybook/pull/2740)
+-   Upgraded `polymer-webpack-loader` in `app/polymer` from "2.0.0" to "2.0.1" [#2740](https://github.com/storybooks/storybook/pull/2740)
+-   Upgraded `jest-image-snapshot` in `addons/storyshots` from "2.2.1" to "2.3.0" [#2740](https://github.com/storybooks/storybook/pull/2740)
+-   Upgraded `lerna` in `/` from "2.6.0" to "2.7.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `/` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `addons/links` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `autoprefixer` in `app/react` from "7.2.4" to "7.2.5" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `app/react` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `autoprefixer` in `app/angular` from "7.2.4" to "7.2.5" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `app/angular` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `autoprefixer` in `app/react-native` from "7.2.4" to "7.2.5" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `app/react-native` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `autoprefixer` in `app/vue` from "7.2.4" to "7.2.5" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `app/vue` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Upgraded `shelljs` in `lib/cli` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
+-   Update gatsby in /docs from 1.9.153 to 1.9.154 [#2733](https://github.com/storybooks/storybook/pull/2733)
+-   Update @angular/cli in examples/angular-cli from 1.6.3 to 1.6.4 [#2726](https://github.com/storybooks/storybook/pull/2726)
+-   Upgraded `commander` in `/` from "2.12.2" to "2.13.0" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest` in `/` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest-cli` in `/` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest-config` in `/` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest-diff` in `/` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest-environment-jsdom` in `/` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest-jasmine2` in `/` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `nodemon` in `/` from "1.14.10" to "1.14.11" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `prettier` in `/` from "1.9.2" to "1.10.2" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `tslint` in `/` from "5.8.0" to "5.9.1" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `commander` in `app/react` from "2.12.2" to "2.13.0" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `common-tags` in `app/react` from "1.7.0" to "1.7.2" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `nodemon` in `app/react` from "1.14.10" to "1.14.11" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `commander` in `app/angular` from "2.12.2" to "2.13.0" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `common-tags` in `app/angular` from "1.7.0" to "1.7.2" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `zone.js` in `app/angular` from "0.8.19" to "0.8.20" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `nodemon` in `app/angular` from "1.14.10" to "1.14.11" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `commander` in `app/react-native` from "2.12.2" to "2.13.0" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `commander` in `app/vue` from "2.12.2" to "2.13.0" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `common-tags` in `app/vue` from "1.7.0" to "1.7.2" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `nodemon` in `app/vue` from "1.14.10" to "1.14.11" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `babel-jest` in `examples/cra-kitchen-sink` from "22.0.4" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `jest` in `examples/cra-kitchen-sink` from "22.0.5" to "22.0.6" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `commander` in `lib/cli` from "2.12.2" to "2.13.0" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `zone.js` in `examples/angular-cli` from "0.8.19" to "0.8.20" [#2724](https://github.com/storybooks/storybook/pull/2724)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.3.7" to "3.3.8" [#2722](https://github.com/storybooks/storybook/pull/2722)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.3.7" to "3.3.8" [#2722](https://github.com/storybooks/storybook/pull/2722)
+-   Upgraded `@storybook/addons` in `/docs` from "3.3.7" to "3.3.8" [#2722](https://github.com/storybooks/storybook/pull/2722)
+-   Upgraded `@storybook/react` in `/docs` from "3.3.7" to "3.3.8" [#2722](https://github.com/storybooks/storybook/pull/2722)
+-   Upgraded `gatsby-transformer-remark` in `/docs` from "1.7.27" to "1.7.28" [#2722](https://github.com/storybooks/storybook/pull/2722)
+-   Upgraded `gatsby` in `/docs` from "1.9.151" to "1.9.153" [#2722](https://github.com/storybooks/storybook/pull/2722)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.3.6" to "3.3.7" [#2710](https://github.com/storybooks/storybook/pull/2710)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.3.6" to "3.3.7" [#2710](https://github.com/storybooks/storybook/pull/2710)
+-   Upgraded `@storybook/addons` in `/docs` from "3.3.6" to "3.3.7" [#2710](https://github.com/storybooks/storybook/pull/2710)
+-   Upgraded `@storybook/react` in `/docs` from "3.3.6" to "3.3.7" [#2710](https://github.com/storybooks/storybook/pull/2710)
+-   Upgraded `gatsby-link` in `/docs` from "1.6.33" to "1.6.34" [#2710](https://github.com/storybooks/storybook/pull/2710)
+-   Upgraded `gatsby-transformer-remark` in `/docs` from "1.7.26" to "1.7.27" [#2710](https://github.com/storybooks/storybook/pull/2710)
+-   Upgraded `gatsby` in `/docs` from "1.9.150" to "1.9.151" [#2710](https://github.com/storybooks/storybook/pull/2710)
+
+</details>
+
 # 3.3.9
 
 2018-January-13
