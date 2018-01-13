@@ -1,6 +1,17 @@
 const path = require('path');
 const fs = require('fs');
 
+const logger = console;
+
+export function isAngularCliInstalled() {
+  try {
+    require.resolve('@angular/cli');
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 export function getAngularCliWebpackConfigOptions(dirToSearch, appIndex = 0) {
   const fname = path.join(dirToSearch, '.angular-cli.json');
   if (!fs.existsSync(fname)) {
@@ -28,17 +39,24 @@ export function getAngularCliWebpackConfigOptions(dirToSearch, appIndex = 0) {
 export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions) {
   if (!cliWebpackConfigOptions) return baseConfig;
 
-  let ngcliConfigFactory;
-  try {
-    // We should not require('@angular/cli') at the top script level because user project might not have `@angular/cli`.
-    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-    ngcliConfigFactory = require('@angular/cli/models/webpack-configs');
-  } catch (e) {
+  if (!isAngularCliInstalled()) {
+    logger.info('=> Using base config because @angular/cli is not installed.');
     return baseConfig;
   }
 
-  const cliCommonConfig = ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions);
-  const cliStyleConfig = ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions);
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  const ngcliConfigFactory = require('@angular/cli/models/webpack-configs');
+
+  let cliCommonConfig;
+  let cliStyleConfig;
+  try {
+    cliCommonConfig = ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions);
+    cliStyleConfig = ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions);
+  } catch (e) {
+    logger.warn('=> Failed to get angular-cli webpack config.');
+    return baseConfig;
+  }
+  logger.info('=> Get angular-cli webpack config.');
 
   // Don't use storybooks .css rules because we have to use .css rules created by @angualr/cli
   // because @angular/cli created has include/exclude rules of global .css files.
