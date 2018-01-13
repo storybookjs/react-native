@@ -11,7 +11,6 @@ const RerunButton = glamorous.button({
   padding: '5px 10px',
   borderRadius: '4px 0 0 0',
   color: 'rgba(0, 0, 0, 0.5)',
-  outline: 'none',
 });
 
 export default RerunButton;
