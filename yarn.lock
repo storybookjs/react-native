@@ -12484,21 +12484,7 @@ polymer-project-config@^3.2.1, polymer-project-config@^3.4.0:
     minimatch-all "^1.1.0"
     plylog "^0.5.0"
 
-polymer-webpack-loader@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.0.tgz#4189780271dd24fe3a10f06f62e722b6abf9f8e2"
-  dependencies:
-    css-selector-tokenizer "^0.7.0"
-    dom5 "^2.3.0"
-    espree "^3.4.3"
-    html-loader "^0.5.1"
-    loader-utils "^1.1.0"
-    parse5 "^3.0.2"
-    parse5-utils "^2.0.0"
-    postcss "^6.0.9"
-    source-map "^0.5.6"
-
-polymer-webpack-loader@^2.0.0:
+polymer-webpack-loader@2.0.1, polymer-webpack-loader@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.1.tgz#d15d45328f6a6700366dfaee83fc606f39cdcee0"
   dependencies:
