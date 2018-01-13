@@ -21,9 +21,8 @@ storiesOf('Addons|a11y', module)
     // FIXME has no effect on score
     <BaseButton style={{ color: 'black', backgroundColor: 'black' }} label={text} />
   ))
-  .add('button', () => <BaseButton>Just a regular button</BaseButton>)
   .add('delayed render', () => (
     <DelayedRender>
-      <BaseButton>This button has a delayed render of 1s</BaseButton>
+      <BaseButton label="This button has a delayed render of 1s" />
     </DelayedRender>
   ));

@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Accessibility button 1`] = `
-<button
-  class="css-1yjiefr"
->
-  Just a regular button
-</button>
-`;
-
-exports[`Storyshots Accessibility delayed render 1`] = `<div />`;
-
 exports[`Storyshots App full app 1`] = `
 <div
   class="App"
