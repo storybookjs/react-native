@@ -142,6 +142,7 @@
     "lib/*",
     "examples/angular-cli",
     "examples/cra-kitchen-sink",
+    "examples/polymer-cli",
     "examples/vue-kitchen-sink",
     "examples/official-storybook",
     "lib/cli/test/run/*"
