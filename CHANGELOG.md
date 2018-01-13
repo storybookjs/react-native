@@ -27,7 +27,6 @@
 -   Upgraded `jest-image-snapshot` in `/` from "2.2.1" to "2.3.0" [#2740](https://github.com/storybooks/storybook/pull/2740)
 -   Upgraded `polymer-webpack-loader` in `app/polymer` from "2.0.0" to "2.0.1" [#2740](https://github.com/storybooks/storybook/pull/2740)
 -   Upgraded `jest-image-snapshot` in `addons/storyshots` from "2.2.1" to "2.3.0" [#2740](https://github.com/storybooks/storybook/pull/2740)
--   Upgraded `lerna` in `/` from "2.6.0" to "2.7.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
 -   Upgraded `shelljs` in `/` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
 -   Upgraded `shelljs` in `addons/links` from "0.7.8" to "0.8.0" [#2734](https://github.com/storybooks/storybook/pull/2734)
 -   Upgraded `autoprefixer` in `app/react` from "7.2.4" to "7.2.5" [#2734](https://github.com/storybooks/storybook/pull/2734)
