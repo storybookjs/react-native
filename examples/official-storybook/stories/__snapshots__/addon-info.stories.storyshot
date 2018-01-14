@@ -58,41 +58,59 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -335,64 +353,82 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;div
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;div
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;Unknown
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &lt;Unknown
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;Unknown
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;Unknown
-                </span>
-                <span />
-                <span
-                  style="color:#777"
-                >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/div&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/div&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -517,61 +553,79 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -802,41 +856,59 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -964,41 +1036,59 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -1227,41 +1317,59 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
           Story Source
         </h1>
         <pre
-          style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          class="css-4akams"
         >
-          <div
-            style="padding-left:18px;padding-right:3px"
-          >
-            <span
-              style="color:#777"
+          <div>
+            <div
+              style="padding-left:18px;padding-right:3px"
             >
-              &lt;BaseButton
-            </span>
-            <span>
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
               <span>
-                 
                 <span>
-                  label
-                </span>
-                <span>
-                  =
+                   
                   <span>
-                    <span
-                      style="color:#22a;word-break:break-word"
-                    >
-                      "Button"
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        "Button"
+                      </span>
                     </span>
                   </span>
+                   
                 </span>
-                 
               </span>
-            </span>
-            <span
-              style="color:#777"
-            >
-              /&gt;
-            </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
           </div>
+          <button
+            class="css-gydez8"
+          >
+            <div
+              class="css-kv47nt"
+            >
+              <div
+                style="margin-bottom:6px"
+              >
+                Copied!
+              </div>
+              <div>
+                Copy
+              </div>
+            </div>
+          </button>
         </pre>
       </div>
       <div>
@@ -1500,41 +1608,59 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -1891,100 +2017,118 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;div
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;div
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;BaseButton
-                </span>
-                <span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;BaseButton
+                  </span>
                   <span>
-                     
                     <span>
-                      label
-                    </span>
-                    <span>
-                      =
+                       
                       <span>
-                        <span
-                          style="color:#22a;word-break:break-word"
-                        >
-                          "Button"
+                        label
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "Button"
+                          </span>
                         </span>
                       </span>
+                       
                     </span>
-                     
                   </span>
-                </span>
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;FlowTypeButton
-                </span>
-                <span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;FlowTypeButton
+                  </span>
                   <span>
-                     
                     <span>
-                      label
-                    </span>
-                    <span>
-                      =
+                       
                       <span>
-                        <span
-                          style="color:#22a;word-break:break-word"
-                        >
-                          "Flow Typed Button"
+                        label
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "Flow Typed Button"
+                          </span>
                         </span>
                       </span>
+                       
                     </span>
-                     
                   </span>
-                </span>
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/div&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/div&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -2445,41 +2589,59 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -2710,41 +2872,59 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -2984,61 +3164,79 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;FlowTypeButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;FlowTypeButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Flow Typed Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Flow Typed Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -3224,61 +3422,79 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;DocgenButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;DocgenButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Docgen Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Docgen Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -3685,61 +3901,79 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Button"
+                        </span>
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
