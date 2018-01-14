@@ -4761,9 +4761,9 @@ eslint-plugin-import@2.8.0, eslint-plugin-import@^2.8.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-jest@^21.6.1:
-  version "21.6.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.6.1.tgz#adca015bbdb8d23b210438ff9e1cee1dd9ec35df"
+eslint-plugin-jest@^21.6.2:
+  version "21.6.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.6.2.tgz#aaa7b37c621e49aa0b13f4dc5f7038f73c64b438"
 
 eslint-plugin-json@^1.2.0:
   version "1.2.0"
@@ -15089,9 +15089,9 @@ webpack-dev-server@2.9.4:
     webpack-dev-middleware "^1.11.0"
     yargs "^6.6.0"
 
-webpack-dev-server@^2.10.1, webpack-dev-server@^2.9.4:
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.10.1.tgz#a9768375346e62155860fe3cef3d4d641b24273e"
+webpack-dev-server@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.11.0.tgz#e9d4830ab7eb16c6f92ed68b92f6089027960e1b"
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
