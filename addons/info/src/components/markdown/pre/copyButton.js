@@ -4,7 +4,6 @@ import glamorous, { withTheme } from 'glamorous';
 
 const Button = glamorous.button(
   {
-    outline: 'none',
     overflow: 'hidden',
     border: '1px solid #eee',
     borderRadius: 3,
@@ -39,10 +38,8 @@ const ContentWrapper = glamorous.div(
 );
 
 function CopyButton(props) {
-  const {
-    copyButton: { toggleText = 'Copied!', text = 'Copy', ...copyButtonStyles } = {},
-    copyButtonContent,
-  } = props.theme;
+  const { copyButton = {}, copyButtonContent } = props.theme;
+  const { toggleText = 'Copied!', text = 'Copy', ...copyButtonStyles } = copyButton;
 
   return (
     <Button onClick={props.onClick} styles={copyButtonStyles}>
