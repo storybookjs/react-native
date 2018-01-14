@@ -18,6 +18,7 @@
     "@storybook/client-logger": "^3.4.0-alpha.1",
     "@storybook/components": "^3.4.0-alpha.1",
     "babel-runtime": "^6.26.0",
+    "glamorous": "^4.11.2",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
