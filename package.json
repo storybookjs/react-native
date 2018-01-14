@@ -28,7 +28,7 @@
     "publish": "lerna publish",
     "postpublish": "yarn --cwd lib/cli test -o",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
-    "start": "npm --prefix examples/cra-kitchen-sink run storybook",
+    "start": "npm --prefix examples/official-storybook run storybook",
     "test": "node ./scripts/test.js",
     "test-latest-cra": "npm --prefix lib/cli run test-latest-cra",
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
