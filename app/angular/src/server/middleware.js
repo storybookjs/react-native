@@ -17,7 +17,7 @@ export const webpackValid = new Promise((resolve, reject) => {
 export default function(configDir) {
   // Build the webpack configuration using the `getBaseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
-  const config = loadConfig('DEVELOPMENT', getBaseConfig(), configDir);
+  const config = loadConfig('DEVELOPMENT', getBaseConfig(configDir), configDir);
   const middlewareFn = getMiddleware(configDir);
 
   // remove the leading '/'

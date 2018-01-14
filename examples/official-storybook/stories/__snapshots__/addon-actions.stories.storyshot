@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon Actions All types 1`] = `
+exports[`Storyshots Addons|Actions All types 1`] = `
 <div>
   <button
     class="css-1yjiefr"
@@ -100,7 +100,7 @@ exports[`Storyshots Addon Actions All types 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon Actions Circular Payload 1`] = `
+exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 <button
   class="css-1yjiefr"
 >
@@ -108,7 +108,7 @@ exports[`Storyshots Addon Actions Circular Payload 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon Actions Decorated Action 1`] = `
+exports[`Storyshots Addons|Actions Decorated Action 1`] = `
 <button
   class="css-1yjiefr"
 >
@@ -116,7 +116,7 @@ exports[`Storyshots Addon Actions Decorated Action 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon Actions Function Name 1`] = `
+exports[`Storyshots Addons|Actions Function Name 1`] = `
 <button
   class="css-1yjiefr"
 >
@@ -124,7 +124,7 @@ exports[`Storyshots Addon Actions Function Name 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon Actions Hello World 1`] = `
+exports[`Storyshots Addons|Actions Hello World 1`] = `
 <button
   class="css-1yjiefr"
 >
@@ -132,7 +132,7 @@ exports[`Storyshots Addon Actions Hello World 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon Actions Reserved keyword as name 1`] = `
+exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 <button
   class="css-1yjiefr"
 >

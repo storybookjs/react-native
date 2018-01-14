@@ -34,9 +34,9 @@
     "rollup-plugin-serve": "^0.4.0",
     "rollup-plugin-vue": "^2.4.0",
     "rollup-watch": "^4.0.0",
-    "@storybook/vue": "^3.3.3",
-    "@storybook/addon-actions": "^3.3.3",
-    "@storybook/addon-links": "^3.3.3",
+    "@storybook/vue": "^3.4.0-alpha.1",
+    "@storybook/addon-actions": "^3.4.0-alpha.1",
+    "@storybook/addon-links": "^3.4.0-alpha.1",
     "babel-preset-vue": "^2.0.0"
   }
 }

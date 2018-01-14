@@ -17,8 +17,8 @@
     "babel-loader": "^7.1.2",
     "babel-preset-react": "^6.24.1",
     "webpack": "^3.5.5",
-    "@storybook/react": "^3.3.3",
-    "@storybook/addon-actions": "^3.3.3",
-    "@storybook/addon-links": "^3.3.3"
+    "@storybook/react": "^3.4.0-alpha.1",
+    "@storybook/addon-actions": "^3.4.0-alpha.1",
+    "@storybook/addon-links": "^3.4.0-alpha.1"
   }
 }
