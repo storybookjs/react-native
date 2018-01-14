@@ -5,7 +5,7 @@ import addons from '@storybook/addons';
 
 const style = {
   wrapper: {
-    overflow: 'scroll',
+    overflow: 'auto',
     position: 'fixed',
     top: 0,
     bottom: 0,
