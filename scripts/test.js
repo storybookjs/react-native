@@ -43,7 +43,7 @@ const createOption = ({ defaultValue, option, name, extraParam }) => ({
 
 const tasks = {
   core: createProject({
-    name: `Core & React & Vue ${chalk.gray('(core)')}`,
+    name: `Core & React & Vue & Polymer ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: path.join(__dirname, '..'),

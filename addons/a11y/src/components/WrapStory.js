@@ -15,8 +15,24 @@ class WrapStory extends Component {
     channel: {},
   };
 
-  /* eslint-disable react/no-find-dom-node */
+  constructor(props) {
+    super(props);
+    this.runA11yCheck = this.runA11yCheck.bind(this);
+  }
+
   componentDidMount() {
+    const { channel } = this.props;
+    channel.on('addon:a11y:rerun', this.runA11yCheck);
+    this.runA11yCheck();
+  }
+
+  componentWillUnmount() {
+    const { channel } = this.props;
+    channel.removeListener('addon:a11y:rerun', this.runA11yCheck);
+  }
+
+  /* eslint-disable react/no-find-dom-node */
+  runA11yCheck() {
     const { channel } = this.props;
     const wrapper = findDOMNode(this);
 
