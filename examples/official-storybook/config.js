@@ -1,6 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 import 'react-chromatic/storybook-addon';
+import addHeadWarning from './head-warning';
+
+addHeadWarning('Preview');
+
+setOptions({
+  hierarchySeparator: /\/|\./,
+  hierarchyRootSeparator: /\|/,
+});
 
 function loadStories() {
   let req;

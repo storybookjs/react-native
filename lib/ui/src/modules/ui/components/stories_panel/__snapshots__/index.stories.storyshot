@@ -44,7 +44,7 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/stories/StoriesPanel storiesHierarchy exists but is empty 1`] = `
+exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is empty 1`] = `
 <div
   style="padding:10px 0 10px 10px"
 >
@@ -84,11 +84,13 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchy exists but is empty
   </div>
   <div
     style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
-  />
+  >
+    0
+  </div>
 </div>
 `;
 
-exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchy prop 1`] = `
+exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
 <div
   style="padding:10px 0 10px 10px"
 >
@@ -129,94 +131,96 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchy prop 1`] = `
   <div
     style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
   >
-    <ul
-      style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
-    >
-      <li
-        style="position:relative"
+    <div>
+      <ul
+        style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
       >
-        <span>
-          <ul
-            style="padding-left:19px;list-style:none"
-          >
-            <li
-              style="position:relative"
+        <li
+          style="position:relative"
+        >
+          <span>
+            <ul
+              style="padding-left:19px;list-style:none"
             >
-              <div
-                data-name="kk"
-                role="menuitem"
-                style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
-                tabindex="0"
+              <li
+                style="position:relative"
               >
                 <div
-                  data-radium="true"
+                  data-name="kk"
+                  role="menuitem"
+                  style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
+                  tabindex="0"
                 >
                   <div
-                    style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
+                    data-radium="true"
                   >
                     <div
-                      style="position:absolute;top:50%;left:50%;margin:-6px 0 0 -5px"
+                      style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="10"
-                        preserveAspectRatio="xMidYMid meet"
-                        style="vertical-align:top;fill:#9DA5AB"
-                        viewBox="0 0 40 40"
-                        width="10"
+                      <div
+                        style="position:absolute;top:50%;left:50%;margin:-6px 0 0 -5px"
                       >
-                        <g>
-                          <path
-                            d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
-                          />
-                        </g>
-                      </svg>
+                        <svg
+                          fill="currentColor"
+                          height="10"
+                          preserveAspectRatio="xMidYMid meet"
+                          style="vertical-align:top;fill:#9DA5AB"
+                          viewBox="0 0 40 40"
+                          width="10"
+                        >
+                          <g>
+                            <path
+                              d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
+                            />
+                          </g>
+                        </svg>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
-                  >
                     <div
-                      style="line-height:18px;padding:1px 0 5px"
+                      style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
                     >
-                      kk
+                      <div
+                        style="line-height:18px;padding:1px 0 5px"
+                      >
+                        kk
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <span>
-                <ul
-                  style="padding-left:19px;list-style:none"
-                >
-                  <li
-                    style="position:relative"
+                <span>
+                  <ul
+                    style="padding-left:19px;list-style:none"
                   >
-                    <a
-                      class="css-1enjukp"
-                      data-name="bb"
-                      href="?selectedKind=kk&selectedStory=bb&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
+                    <li
+                      style="position:relative"
                     >
-                      <div
-                        data-radium="true"
+                      <a
+                        class="css-1enjukp"
+                        data-name="bb"
+                        href="?selectedKind=kk&selectedStory=bb&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                       >
                         <div
-                          style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                          data-radium="true"
                         >
-                          <div>
-                            bb
+                          <div
+                            style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                          >
+                            <div>
+                              bb
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </a>
-                    <span />
-                  </li>
-                </ul>
-              </span>
-            </li>
-          </ul>
-        </span>
-      </li>
-    </ul>
+                      </a>
+                      <span />
+                    </li>
+                  </ul>
+                </span>
+              </li>
+            </ul>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;

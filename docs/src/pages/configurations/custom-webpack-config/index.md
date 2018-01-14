@@ -38,7 +38,7 @@ Since this config file stays in the Storybook directory, you need to set the inc
 
 You also need to install the loaders (style, css, and sass) used in above config manually.
 
-> Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/configurations/default-config/) other than loading JS files with the Babel loader.
+> Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/configurations/default-config/) other than loading JS files with the Babel loader. This will disable included functionality like svg loading. Read on to learn how to [retain defaults](#full-control-mode--default).
 
 ### Supported Webpack Options
 
@@ -86,6 +86,8 @@ Storybook uses the config returned from the above function. So, try to edit the 
 -   output
 -   first loader in the module.loaders (Babel loader for JS)
 -   all existing plugins
+
+> If your custom webpack config uses a loader that does not explicitly include specific file extensions via the `test` property, it is necessary to `exclude` the `.ejs` file extension from that loader.
 
 ## Full control mode + default
 

@@ -3,25 +3,12 @@
 import addons from '@storybook/addons';
 import uuid from 'uuid/v1';
 import { EVENT_ID } from './';
-import { decycle } from './lib';
-import { canConfigureName } from './lib/util';
+import { canConfigureName, prepareArguments } from './lib/util';
 
 export function action(name) {
   // eslint-disable-next-line no-shadow
   const handler = function action(..._args) {
-    const args = _args.map(arg => {
-      let result;
-
-      try {
-        result = JSON.stringify(decycle(arg));
-      } catch (error) {
-        // IE still cyclic.
-
-        return JSON.stringify(error.toString());
-      }
-
-      return result;
-    });
+    const args = _args.map(prepareArguments);
     const channel = addons.getChannel();
     const id = uuid();
     channel.emit(EVENT_ID, {

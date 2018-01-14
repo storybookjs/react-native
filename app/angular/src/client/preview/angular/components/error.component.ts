@@ -1,9 +1,9 @@
-import { Component, Inject } from "@angular/core";
-import { STORY } from "../app.token";
-import { NgError } from "../types";
+import { Component, Inject } from '@angular/core';
+import { STORY } from '../app.token';
+import { NgError } from '../types';
 
 @Component({
-  selector: "app-root",
+  selector: 'storybook-dynamic-app-root',
   template: `
     <div class="main">
       <h1>{{ error.message }}</h1>
@@ -40,8 +40,8 @@ import { NgError } from "../types";
         width: 100vw;
         overflow: auto;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class ErrorComponent {
   constructor(@Inject(STORY) public error: NgError) {}
