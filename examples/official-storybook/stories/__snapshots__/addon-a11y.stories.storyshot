@@ -23,3 +23,5 @@ exports[`Storyshots Addons|a11y Label 1`] = `
   Testing the a11y addon
 </button>
 `;
+
+exports[`Storyshots Addons|a11y delayed render 1`] = `<div />`;
