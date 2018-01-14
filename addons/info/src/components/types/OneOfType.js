@@ -8,13 +8,13 @@ const OneOfType = ({ propType }) => {
   return (
     <span>
       {propType.value
-        .map((value, i) => [
-          <PrettyPropType
-            key={`${value.name}${value.value ? `-${value.value}` : ''}`}
-            propType={value}
-          />,
-          i < length - 1 ? <span> | </span> : null,
-        ])
+        .map((value, i) => {
+          const key = `${value.name}${value.value ? `-${value.value}` : ''}`;
+          return [
+            <PrettyPropType key={key} propType={value} />,
+            i < length - 1 ? <span key={`${key}-separator`}> | </span> : null,
+          ];
+        })
         .reduce((acc, tuple) => acc.concat(tuple), [])}
     </span>
   );
