@@ -32,7 +32,7 @@ const Report = ({ items, empty, passes }) => (
     ) : (
       <span style={styles.empty}>{empty}</span>
     )}
-    <RerunButton onClick={onRerunClick}>RE-RUN</RerunButton>
+    <RerunButton onClick={onRerunClick}>Re-run tests</RerunButton>
   </Fragment>
 );
 
