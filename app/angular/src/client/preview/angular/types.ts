@@ -1,4 +1,3 @@
-
 export interface NgModuleMetadata {
   declarations?: Array<any>;
   entryComponents?: Array<any>;
