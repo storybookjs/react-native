@@ -35,12 +35,12 @@
     "@storybook/client-logger": "^3.4.0-alpha.4",
     "@storybook/components": "^3.4.0-alpha.4",
     "@storybook/react": "^3.4.0-alpha.4",
-    "babel-jest": "^22.0.6",
+    "babel-jest": "^22.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
-    "jest": "^22.0.6",
-    "react-scripts": "^1.0.17"
+    "jest": "^22.1.1",
+    "react-scripts": "^1.1.0"
   },
   "private": true
 }
