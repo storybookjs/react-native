@@ -3,11 +3,9 @@ import { Component, Input, InjectionToken, Injector, ElementRef, Inject } from '
 export const TEST_TOKEN = new InjectionToken<string>('test');
 
 @Component({
-  selector: 'di-component',
+  selector: 'storybook-di-component',
   templateUrl: './di.component.html',
-  providers: [
-    { provide: TEST_TOKEN, useValue: 123}
-  ]
+  providers: [{ provide: TEST_TOKEN, useValue: 123 }],
 })
 export class DiComponent {
   @Input() title: string;
