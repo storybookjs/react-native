@@ -14,6 +14,8 @@ StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storyboo
 This addon works with Storybook for:
 - [React](https://github.com/storybooks/storybook/tree/master/app/react)
 - [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
+- [Angular](https://github.com/storybooks/storybook/tree/master/app/angular)
+- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
 
 ![StoryShots In Action](docs/storyshots-fail.png)
 
@@ -35,6 +37,69 @@ Usually, you might already have completed this step. If not, here are some resou
 -   Otherwise check this Egghead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
+
+### Configure Jest for React
+StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but 
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+```sh
+npm install --save-dev react-test-renderer
+```
+
+### Configure Jest for Angular
+StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but 
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+```sh
+npm install --save-dev jest-preset-angular
+```
+
+If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
+Anyway you can add these lines to your jest config:
+```js
+module.exports = {
+  globals: {
+    __TRANSFORM_HTML__: true,
+  },
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html'],
+};
+```
+### Configure Jest for Vue
+StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
+[doesn't](#deps-issue) install it, so you need yo install it separately.
+ 
+ ```sh
+ npm install --save-dev jest-vue-preprocessor
+ ```
+ 
+If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
+Anyway you can add these lines to your jest config:
+```js
+module.exports = {
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
+  },
+  moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
+};
+```
+
+### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
+Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them. 
+
+`dependencies` - will installed an exact version of the particular dep - Storyshots can work with different versions of the same framework (let's say React v16 and React v15), that have to be compatible with a version of its plugin (react-test-renderer).
+
+`optionalDependencies` - behaves like a regular dependency, but do not fail the installation in case there is a problem to bring the dep.
+
+`peerDependencies` - listing all the deps in peer will trigger warnings during the installation - we don't want users to install unneeded deps by hand.
+
+`optionalPeerDependencies` - unfortunately there is nothing like this =(
+    
+For more information read npm [docs](https://docs.npmjs.com/files/package.json#dependencies)
 
 ## Configure Storyshots for HTML snapshots
 
