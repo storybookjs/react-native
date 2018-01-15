@@ -36,7 +36,7 @@ Usually, you might already have completed this step. If not, here are some resou
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
-## Configure Storyshots
+## Configure Storyshots for HTML snapshots
 
 Create a new test file with the name `Storyshots.test.js`. (Or whatever the name you prefer, as long as it matches Jest's config [`testMatch`](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)).
 Then add following content to it:
@@ -52,6 +52,103 @@ That's all.
 Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
 
 ![Screenshot](docs/storyshots.png)
+
+
+## Configure Storyshots for image snapshots
+
+/*\ **React-native** is **not supported** by this test function.
+
+Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
+
+When willing to generate and compare image snapshots for your stories, you have to two options: 
+ - Have a storybook running (ie. accessible via http(s):// , for instance using `yarn run storybook`)
+ - Have a static build of the storybook (for instance, using `yarn run build-storybook`)
+
+Then you will need to reference the storybook URL (`file://...` if local, `http(s)://...` if served)
+
+### Using default values for _imageSnapshots_
+
+Then you can either create a new Storyshots instance or edit the one you previously used: 
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot});
+```
+This will assume you have a storybook running on at _http://localhost:6006_.
+Internally here are the steps:  
+- Launches a Chrome headless using [puppeteer](https://github.com/GoogleChrome/puppeteer)
+- Browses each stories (calling _http://localhost:6006/iframe.html?..._ URL),
+- Take screenshots & save all images under _\_image_snapshots\__ folder.
+
+### Specifying the storybook URL
+
+If you want to set specific storybook URL, you can specify via the `storybookUrl` parameter, see below: 
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://my-specific-domain.com:9010'})});
+```
+The above config will use _https://my-specific-domain.com:9010_ for screenshots.
+
+
+You may also use a local static build of storybook if you do not want to run the webpack dev-server:
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'file:///path/to/my/storybook-static'})});
+```
+
+### Specifying options to _jest-image-snapshots_
+
+If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object.
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+const getMatchOptions = ({context : {kind, story}, url}) => {
+  return {
+    failureThreshold: 0.2,
+    failureThresholdType: 'percent',
+  }
+}
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getMatchOptions})});
+```
+`getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
+
+
+### Integrate image storyshots with regular app
+You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
+You can find a working example of this in the [official-storybook](https://github.com/storybooks/storybook/tree/master/examples/official-storybook) example.
+
+### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
+You have two options here, you can either: 
+
+- Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
+
+- Create a custom test file using Jest outside of the CRA scope:
+
+    A more robust approach would be to separate existing test files ran by create-react-app (anything `(test|spec).js` suffixed files) from the test files to run storyshots with image snapshots.
+    This use case can be achieved by using a custom name for the test file, ie something like `image-storyshots.runner.js`. This file will contains the `initStoryshots` call with image snapshots configuration.
+    Then you will create a separate script entry in your package.json, for instance 
+    ```json
+    {
+        "scripts": { 
+            "image-snapshots" : "jest image-storyshots.runner.js --config path/to/custom/jest.config.json"
+        }
+    }
+    ```
+    Note that you will certainly need a custom config file for Jest as you run it outside of the CRA scope and thus you do not have the built-in config.
+
+    Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
+
+### Reminder
+An image snapshot is simply a screenshot taken by a web browser (in our case, Chrome).
+
+The browser opens a page (either using the static build of storybook or a running instance of Storybook)
+
+If you run your test without either the static build or a running instance, this wont work.
+
+To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date. 
+This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
+If you run the image snapshots against a running Storybook in dev mode, you don't have to care about being up-to-date because the dev-server is watching changes and rebuilds automatically.
 
 ## Options
 

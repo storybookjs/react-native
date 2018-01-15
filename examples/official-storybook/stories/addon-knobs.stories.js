@@ -45,7 +45,7 @@ class AsyncItemLoader extends React.Component {
   }
 }
 
-storiesOf('Addon Knobs.withKnobs', module)
+storiesOf('Addons|Knobs.withKnobs', module)
   .addDecorator(withKnobs)
   .add('tweaks static values', () => {
     const name = text('Name', 'Storyteller');
@@ -68,7 +68,7 @@ storiesOf('Addon Knobs.withKnobs', module)
     const nice = boolean('Nice', true);
 
     // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
-    const defaultBirthday = new Date('Jan 20 2017');
+    const defaultBirthday = new Date('Jan 20 2017 GMT+0');
     const birthday = date('Birthday', defaultBirthday);
 
     const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
@@ -97,7 +97,7 @@ storiesOf('Addon Knobs.withKnobs', module)
     </div>
   ));
 
-storiesOf('Addon Knobs.withKnobsOptions', module)
+storiesOf('Addons|Knobs.withKnobsOptions', module)
   .addDecorator(
     withKnobsOptions({
       debounce: { wait: 100, leading: boolean }, // Same as lodash debounce.
@@ -124,7 +124,7 @@ storiesOf('Addon Knobs.withKnobsOptions', module)
     const nice = boolean('Nice', true);
 
     // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
-    const defaultBirthday = new Date('Jan 20 2017');
+    const defaultBirthday = new Date('Jan 20 2017 GMT+0');
     const birthday = date('Birthday', defaultBirthday);
 
     const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'welcome-component',
+  selector: 'storybook-welcome-component',
   template: `
       <main>
         <h1>Welcome to storybook</h1>
@@ -15,7 +15,8 @@ import { Component } from '@angular/core';
           (Basically a story is like a visual test case.)
         </p>
         <p>
-          See these sample <a (click)="showApp();" role="button" tabIndex="0">stories</a> for a component called <span class="inline-code">Button</span> .
+          See these sample <a (click)="showApp();" role="button" tabIndex="0">stories</a> for a component called
+          <span class="inline-code">Button</span> .
         </p>
         <p>
           Just like that, you can add your own components as stories.
@@ -38,12 +39,13 @@ import { Component } from '@angular/core';
         <p class="note">
           <b>NOTE:</b>
           <br />
-          Have a look at the <span class="inline-code">.storybook/webpack.config.js</span> to add webpack loaders and plugins you are using in this project.
+          Have a look at the <span class="inline-code">.storybook/webpack.config.js</span>
+          to add webpack loaders and plugins you are using in this project.
         </p>
       </main>
   `,
   styles: [
-      `
+    `
         main {
           margin: 15px;
           max-width: 600;
@@ -71,9 +73,9 @@ import { Component } from '@angular/core';
           border-bottom: 1px solid #1474f3;
           padding-bottom: 2px;
         }
-      `
-  ]
+      `,
+  ],
 })
 export default class WelcomeComponent {
-    displayName = 'Welcome';
+  displayName = 'Welcome';
 }

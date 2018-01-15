@@ -1,6 +1,6 @@
 # Storybook for Angular
 
-Storybook for Angular is a UI development environment for your React components.
+Storybook for Angular is a UI development environment for your Angular components.
 With it, you can visualize different states of your UI components and develop them interactively.
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/storybooks/storybook.svg)](https://greenkeeper.io/)

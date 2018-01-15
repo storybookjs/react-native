@@ -4,19 +4,12 @@ import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
 
-import {
-  getConfigDir,
-  includePaths,
-  excludePaths,
-  nodeModulesPaths,
-  loadEnv,
-  nodePaths,
-} from './utils';
+import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
-export default function() {
+export default function(configDir) {
   const config = {
     devtool: 'cheap-module-source-map',
     entry: {
@@ -37,7 +30,7 @@ export default function() {
         filename: 'index.html',
         chunks: ['manager'],
         data: {
-          managerHead: getManagerHeadHtml(getConfigDir()),
+          managerHead: getManagerHeadHtml(configDir),
           version,
         },
         template: require.resolve('../index.html.ejs'),
@@ -46,7 +39,7 @@ export default function() {
         filename: 'iframe.html',
         excludeChunks: ['manager'],
         data: {
-          previewHead: getPreviewHeadHtml(getConfigDir()),
+          previewHead: getPreviewHeadHtml(configDir),
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
@@ -71,12 +64,21 @@ export default function() {
         },
         {
           test: /\.ts?$/,
-          loaders: [require.resolve('ts-loader'), require.resolve('angular2-template-loader')],
+          loaders: [
+            {
+              loader: require.resolve('ts-loader'),
+            },
+            require.resolve('angular2-template-loader'),
+          ],
         },
         {
-          test: /\.(html|css)$/,
+          test: /\.html$/,
           loader: 'raw-loader',
-          exclude: /\.async\.(html|css)$/,
+          exclude: /\.async\.css$/,
+        },
+        {
+          test: /\.scss$/,
+          loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
         {
           test: /\.md$/,

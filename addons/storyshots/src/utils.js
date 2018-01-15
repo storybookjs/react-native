@@ -11,6 +11,8 @@ export function getPossibleStoriesFiles(storyshotFile) {
   return [
     path.format({ dir: path.dirname(dir), name, ext: '.js' }),
     path.format({ dir: path.dirname(dir), name, ext: '.jsx' }),
+    path.format({ dir: path.dirname(dir), name, ext: '.ts' }),
+    path.format({ dir: path.dirname(dir), name, ext: '.tsx' }),
   ];
 }
 
