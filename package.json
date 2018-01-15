@@ -68,7 +68,7 @@
     "inquirer": "^4.0.2",
     "jest": "^22.1.1",
     "jest-cli": "^22.1.1",
-    "jest-config": "^22.0.6",
+    "jest-config": "^22.1.1",
     "jest-diff": "^22.0.6",
     "jest-environment-jsdom": "^22.0.6",
     "jest-enzyme": "^4.0.2",
