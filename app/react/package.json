@@ -77,7 +77,7 @@
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
-    "uuid": "^3.1.0",
+    "uuid": "^3.2.0",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"
