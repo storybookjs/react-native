@@ -25,7 +25,7 @@
     "format-json": "^1.0.3",
     "prop-types": "^15.6.0",
     "react-textarea-autosize": "^5.2.1",
-    "uuid": "^3.1.0"
+    "uuid": "^3.2.0"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",
