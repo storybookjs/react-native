@@ -33,6 +33,7 @@
     "@storybook/addon-actions": "^3.4.0-alpha.4",
     "@storybook/addon-links": "^3.4.0-alpha.4",
     "@storybook/addon-notes": "^3.4.0-alpha.4",
+    "@storybook/addon-storyshots": "^3.4.0-alpha.4",
     "@storybook/addons": "^3.4.0-alpha.4",
     "@storybook/angular": "^3.4.0-alpha.4",
     "@types/jasmine": "~2.8.3",
