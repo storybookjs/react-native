@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const logger = console;
 
-export function isAngularCliInstalled() {
+function isAngularCliInstalled() {
   try {
     require.resolve('@angular/cli');
     return true;
@@ -59,7 +59,7 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   // Don't use storybooks .css/.scss rules because we have to use rules created by @angualr/cli
   // because @angular/cli created rules have include/exclude for global style files.
-  const styleRules = baseConfig.module.rules.filter(
+  const rulesExcludingStyles = baseConfig.module.rules.filter(
     rule =>
       !rule.test || (rule.test.toString() !== '/\\.css$/' && rule.test.toString() !== '/\\.scss$/')
   );
@@ -72,7 +72,7 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   const mod = {
     ...baseConfig.module,
-    rules: [...cliStyleConfig.module.rules, ...styleRules],
+    rules: [...cliStyleConfig.module.rules, ...rulesExcludingStyles],
   };
 
   // We use cliCommonConfig plugins to serve static assets files.
