@@ -125,8 +125,8 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 
 Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
 
-When willing to generate and compare image snapshots for your stories, you have to two options: 
- - Have a storybook running (ie. accessible via http(s):// , for instance using `yarn run storybook`)
+When willing to generate and compare image snapshots for your stories, you have two options: 
+ - Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
  - Have a static build of the storybook (for instance, using `yarn run build-storybook`)
 
 Then you will need to reference the storybook URL (`file://...` if local, `http(s)://...` if served)
@@ -145,7 +145,7 @@ Internally here are the steps:
 - Browses each stories (calling _http://localhost:6006/iframe.html?..._ URL),
 - Take screenshots & save all images under _\_image_snapshots\__ folder.
 
-### Specifying the storybook URL
+### Specifying the storybook URL
 
 If you want to set specific storybook URL, you can specify via the `storybookUrl` parameter, see below: 
 ```js
@@ -180,10 +180,12 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'h
 
 
 ### Integrate image storyshots with regular app
+
 You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
 You can find a working example of this in the [official-storybook](https://github.com/storybooks/storybook/tree/master/examples/official-storybook) example.
 
-### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
+### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
+
 You have two options here, you can either: 
 
 - Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
@@ -204,7 +206,8 @@ You have two options here, you can either:
 
     Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
 
-### Reminder
+### Reminder
+
 An image snapshot is simply a screenshot taken by a web browser (in our case, Chrome).
 
 The browser opens a page (either using the static build of storybook or a running instance of Storybook)
@@ -364,6 +367,10 @@ Take a snapshot of a shallow-rendered version of the component. Note that this o
 ### `getSnapshotFileName`
 
 Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
+
+### `imageSnapshot`
+
+Render the story and take Jest snapshots as images. see [Configure image snapshots](#configure-storyshots-for-image-snapshots)
 
 ###### Example:
 
