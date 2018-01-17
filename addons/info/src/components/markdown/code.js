@@ -52,21 +52,6 @@ Code.defaultProps = {
   code: null,
 };
 
-export function Pre(props) {
-  const style = {
-    fontSize: '.88em',
-    fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-    backgroundColor: '#fafafa',
-    padding: '.5rem',
-    lineHeight: 1.5,
-    overflowX: 'scroll',
-  };
-  return <pre style={style}>{props.children}</pre>;
-}
-
-Pre.propTypes = { children: PropTypes.node };
-Pre.defaultProps = { children: null };
-
 export function Blockquote(props) {
   const style = {
     fontSize: '1.88em',
@@ -79,3 +64,5 @@ export function Blockquote(props) {
 
 Blockquote.propTypes = { children: PropTypes.node };
 Blockquote.defaultProps = { children: null };
+
+export { default as Pre } from './pre/pre';
