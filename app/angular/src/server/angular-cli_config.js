@@ -1,7 +1,6 @@
-const path = require('path');
-const fs = require('fs');
-
-const logger = console;
+import path from 'path';
+import fs from 'fs';
+import { logger } from '@storybook/node-logger';
 
 function isAngularCliInstalled() {
   try {

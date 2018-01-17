@@ -4,15 +4,13 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
+import { logger } from '@storybook/node-logger';
 import packageJson from '../../package.json';
 import getBaseConfig from './config/webpack.config.prod';
 import loadConfig from './config';
 import { parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-
-// avoid ESLint errors
-const logger = console;
 
 program
   .version(packageJson.version)
@@ -66,13 +64,13 @@ if (program.staticDir) {
       logger.error(`Error: no such directory to load static files: ${dir}`);
       process.exit(-1);
     }
-    logger.log(`=> Copying static files from: ${dir}`);
+    logger.info(`=> Copying static files from: ${dir}`);
     shelljs.cp('-r', `${dir}/*`, outputDir);
   });
 }
 
 // compile all resources with webpack and write them to the disk.
-logger.log('Building storybook ...');
+logger.info('Building storybook ...');
 webpack(config).run((err, stats) => {
   if (err || stats.hasErrors()) {
     logger.error('Failed to build the storybook');

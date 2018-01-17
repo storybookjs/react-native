@@ -1,15 +1,13 @@
 /* eslint-disable global-require, import/no-dynamic-require */
 import fs from 'fs';
 import path from 'path';
+import { logger } from '@storybook/node-logger';
 import loadBabelConfig from './babel_config';
 import loadTsConfig from './ts_config';
 import {
   getAngularCliWebpackConfigOptions,
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
-
-// avoid ESLint errors
-const logger = console;
 
 // `baseConfig` is a webpack configuration bundled with storybook.
 // Storybook will look in the `configDir` directory
