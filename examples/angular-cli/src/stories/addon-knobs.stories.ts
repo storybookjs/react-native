@@ -24,7 +24,19 @@ storiesOf('Addon Knobs', module)
     const phoneNumber = text('phoneNumber', '555-55-55');
 
     return {
-      component: SimpleKnobsComponent,
+      moduleMetadata: {
+        entryComponents: [SimpleKnobsComponent],
+        declarations: [SimpleKnobsComponent],
+      },
+      template: `
+        <h1> This is a template </h1>
+        <storybook-simple-knobs-component
+          [age]="age"
+          [phoneNumber]="phoneNumber"
+          [name]="name"
+        >
+        </storybook-simple-knobs-component>
+      `,
       props: {
         name,
         age,
