@@ -70,7 +70,7 @@
     "jest-cli": "^22.1.2",
     "jest-config": "^22.1.2",
     "jest-diff": "^22.1.0",
-    "jest-environment-jsdom": "^22.1.0",
+    "jest-environment-jsdom": "^22.1.2",
     "jest-enzyme": "^4.0.2",
     "jest-image-snapshot": "^2.3.0",
     "jest-jasmine2": "^22.1.1",
