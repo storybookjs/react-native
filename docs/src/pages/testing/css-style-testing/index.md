@@ -21,6 +21,11 @@ Then, we can see the above story using the following URL:
 
 ![Storybook Iframe Screenshot](../static/storybook-iframe-screenshot.png)
 
-Just like that, you can access all of the stories in your Storybook.
+Just like that, you can access all of the stories in your Storybook and use them as a base for visual regression testing.
 
-And with the help of [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) and [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot) you can [automate the visual regression testing of your stories](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots)!
+## Supported CSS/Style Testing Frameworks
+
+- [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) includes [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
+- [Loki](https://loki.js.org/) also integrates seamlessly with Storybook
+
+additionally frameworks which are based on URL as the input source such as [BackstopJS](https://github.com/garris/BackstopJS) or [Gemini](https://github.com/gemini-testing/gemini) can be used in conjuction with Storybook.
