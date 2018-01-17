@@ -90,19 +90,33 @@ exports[`Storyshots Addon Knobs Simple 1`] = `
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <storybook-simple-knobs-component>
+  <ng-component>
     
+          
+    <h1>
+       This is a template 
+    </h1>
+    
+          
+    <storybook-simple-knobs-component
+      ng-reflect-name="John Doe"
+      ng-reflect-phone-number="555-55-55"
+    >
       
-    <div>
-      I am John Doe and I'm 44 years old.
-    </div>
-    
       
-    <div>
-      Phone Number: 555-55-55
-    </div>
+      <div>
+        I am John Doe and I'm  years old.
+      </div>
+      
+      
+      <div>
+        Phone Number: 555-55-55
+      </div>
+      
     
+    </storybook-simple-knobs-component>
     
-  </storybook-simple-knobs-component>
+        
+  </ng-component>
 </storybook-dynamic-app-root>
 `;
