@@ -28,4 +28,4 @@ Just like that, you can access all of the stories in your Storybook and use the
 - [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) includes [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
 - [Loki](https://loki.js.org/) also integrates seamlessly with Storybook
 
-additionally frameworks which are based on URL as the input source such as [BackstopJS](https://github.com/garris/BackstopJS) or [Gemini](https://github.com/gemini-testing/gemini) can be used in conjuction with Storybook.
+Additionally frameworks which are based on URL as the input source such as [BackstopJS](https://github.com/garris/BackstopJS) or [Gemini](https://github.com/gemini-testing/gemini) can be used in conjuction with Storybook.
