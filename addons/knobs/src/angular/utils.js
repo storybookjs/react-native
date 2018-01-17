@@ -27,10 +27,6 @@ export function getAnnotations(component) {
   return getMeta(component, ['annotations'], []);
 }
 
-export function getPropMetadata(component) {
-  return getMeta(component, ['__prop__metadata__', 'propMetadata'], {});
-}
-
 export function getParameters(component) {
   const params = reflectionCapabilities.parameters(component);
 
