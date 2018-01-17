@@ -73,7 +73,7 @@
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
-    "uuid": "^3.2.0",
+    "uuid": "^3.2.1",
     "vue-hot-reload-api": "^2.2.4",
     "vue-style-loader": "^3.0.1",
     "webpack": "^3.10.0",
