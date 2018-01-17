@@ -20,7 +20,7 @@ storiesOf('Addon Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
     const name = text('name', 'John Doe');
-    const age = number('age', 44);
+    const age = number('age', 0);
     const phoneNumber = text('phoneNumber', '555-55-55');
 
     return {
