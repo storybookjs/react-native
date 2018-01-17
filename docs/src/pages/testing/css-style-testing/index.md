@@ -23,10 +23,4 @@ Then, we can see the above story using the following URL:
 
 Just like that, you can access all of the stories in your Storybook.
 
-## Supported CSS/Style Testing Frameworks
-
-It will be hard to use all the frameworks we've [mentioned](/testing/react-ui-testing#3-css-style-testing), but we'll be able to use frameworks which are based on URL as the input source. (Such as [BackstopJS](https://github.com/garris/BackstopJS) and [Gemini](https://github.com/gemini-testing/gemini))
-
-- [Loki](https://loki.js.org/): Is a great tool for visual regression testing.
-
-> In the future we are also planning to smooth this process with the help of [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots).
+And with the help of [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) and [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot) you can [automate the visual regression testing of your stories](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots)!
