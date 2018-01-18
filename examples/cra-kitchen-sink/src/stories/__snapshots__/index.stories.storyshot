@@ -92,92 +92,110 @@ exports[`Storyshots Button addons composition 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;div
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;div
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                />
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  />
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  click the 
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    click the 
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &lt;InfoButton
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;InfoButton
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                     label in top right for info about "
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                   label in top right for info about "
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    addons composition
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  addons composition
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    "
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  "
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/div&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/div&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -278,92 +296,110 @@ exports[`Storyshots Button with new info 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;Container
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;Container
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                />
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  />
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  click the 
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    click the 
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &lt;InfoButton
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;InfoButton
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                     label in top right for info about "
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                   label in top right for info about "
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    with new info
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  with new info
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    "
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  "
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/Container&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/Container&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -674,85 +710,103 @@ exports[`Storyshots Button with some info 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;Container
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;Container
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    click the 
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  click the 
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;InfoButton
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &lt;InfoButton
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                     label in top right for info about "
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    with some info
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                   label in top right for info about "
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    "
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  with some info
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  "
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/Container&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/Container&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
