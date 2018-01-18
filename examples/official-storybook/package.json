@@ -35,7 +35,7 @@
     "jest": "^21.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-chromatic": "^0.7.3",
+    "react-chromatic": "^0.7.8",
     "react-dom": "^16.2.0",
     "uuid": "^3.2.1"
   },
