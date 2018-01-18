@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build-storybook": "build-storybook",
-    "prepare": "babel ./src --out-dir ./dist",
+    "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006",
     "example": "jest storyshot.test"
   },
@@ -43,8 +43,6 @@
   },
   "peerDependencies": {
     "@storybook/addons": "^3.4.0-alpha.4",
-    "babel-core": "^6.26.0 || ^7.0.0-0",
-    "react": "*",
-    "react-test-renderer": "*"
+    "babel-core": "^6.26.0 || ^7.0.0-0"
   }
 }

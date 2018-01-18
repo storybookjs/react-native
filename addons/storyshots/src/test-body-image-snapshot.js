@@ -11,7 +11,7 @@ export const imageSnapshot = ({
   let page; // Hold ref to the page to screenshot.
 
   const testFn = ({ context }) => {
-    if (context.isRNStorybook) {
+    if (context.framework === 'rn') {
       // Skip tests since we de not support RN image snapshots.
       console.error(
         "It seems you are running imageSnapshot on RN app and it's not supported. Skipping test."

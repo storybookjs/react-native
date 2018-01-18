@@ -176,5 +176,5 @@ When you are developing your addon as a package, you can't use `npm link` to add
 
 ### Package Maintenance
 
-Your packaged Storybook addon needed to be written in ES5. If you are using ES6, then you need to transpile it.
+Your packaged Storybook addon needs to be written in ES5. If you are using ES6, then you need to transpile it.
 In that case, we recommend to use [React CDK](https://github.com/kadirahq/react-cdk) for that.

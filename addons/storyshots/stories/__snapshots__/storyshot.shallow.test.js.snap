@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Another Button with some emoji 1`] = `
+<Unknown
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  😀 😎 👍 💯
+</Unknown>
+`;
+
+exports[`Storyshots Another Button with text 1`] = `
+<Unknown
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Hello Button
+</Unknown>
+`;
+
+exports[`Storyshots Button with some emoji 1`] = `
+<Unknown
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  😀 😎 👍 💯
+</Unknown>
+`;
+
+exports[`Storyshots Button with text 1`] = `
+<Unknown
+  className="css-1yjiefr"
+  onClick={[Function]}
+>
+  Hello Button
+</Unknown>
+`;
+
+exports[`Storyshots Welcome to Storybook 1`] = `
+<glamorous(article)>
+  <glamorous(h1)>
+    Welcome to storybook
+  </glamorous(h1)>
+  <p>
+    This is a UI component dev environment for your app.
+  </p>
+  <p>
+    We've added some basic stories inside the
+     
+    <glamorous(code)>
+      src/stories
+    </glamorous(code)>
+     
+    directory.
+    <br />
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    <br />
+    (Basically a story is like a visual test case.)
+  </p>
+  <p>
+    See these sample
+     
+    <glamorous(a)
+      onClick={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      stories
+    </glamorous(a)>
+     
+    for a component called
+     
+    <glamorous(code)>
+      Button
+    </glamorous(code)>
+    .
+  </p>
+  <p>
+    Just like that, you can add your own components as stories.
+    <br />
+    You can also edit those components and see changes right away.
+    <br />
+    (Try editing the 
+    <glamorous(code)>
+      Button
+    </glamorous(code)>
+     stories located at 
+    <glamorous(code)>
+      src/stories/index.js
+    </glamorous(code)>
+    .)
+  </p>
+  <p>
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    Have a look at the
+     
+    <glamorous(a)
+      href="https://storybook.js.org/basics/writing-stories"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Writing Stories
+    </glamorous(a)>
+     
+    section in our documentation.
+  </p>
+  <glamorous(p)>
+    <b>
+      NOTE:
+    </b>
+    <br />
+    Have a look at the
+     
+    <glamorous(code)>
+      .storybook/webpack.config.js
+    </glamorous(code)>
+     
+    to add webpack loaders and plugins you are using in this project.
+  </glamorous(p)>
+</glamorous(article)>
+`;

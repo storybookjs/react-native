@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Notes Note with HTML 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-button-component
+    _nghost-c8=""
+  >
+    
+        
+    <button
+      _ngcontent-c8=""
+    >
+      Notes with HTML
+    </button>
+    
+    
+  </storybook-button-component>
+</storybook-dynamic-app-root>
+`;
+
+exports[`Storyshots Addon Notes Simple note 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-button-component
+    _nghost-c7=""
+  >
+    
+        
+    <button
+      _ngcontent-c7=""
+    >
+      Notes on some Button
+    </button>
+    
+    
+  </storybook-button-component>
+</storybook-dynamic-app-root>
+`;

@@ -53,7 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
       const value = props[key];
       const instanceProperty = instance[key];
 
-      if (!(instanceProperty instanceof EventEmitter) && !!value) {
+      if (!(instanceProperty instanceof EventEmitter) && (value !== undefined && value !== null)) {
         instance[key] = value;
         if (hasNgOnChangesHook) {
           changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
