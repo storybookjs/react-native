@@ -30,5 +30,6 @@ There are several frameworks that have out of the box Storybook integrations:
 - [Loki](https://loki.js.org/)
 - [Perci](https://percy.io/docs/clients/javascript/react-storybook)
 - [Screener](https://screener.io/v2/docs) 
+- [Chromatic](https://www.chromaticqa.com)
 
 Additionally frameworks which are based on URL as the input source such as [BackstopJS](https://github.com/garris/BackstopJS) or [Gemini](https://github.com/gemini-testing/gemini) can be used.
