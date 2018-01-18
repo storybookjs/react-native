@@ -11,6 +11,8 @@ export default class ReactProvider extends Provider {
     super();
     this.channel = createChannel({ page: 'manager' });
     addons.setChannel(this.channel);
+
+    this.channel.emit('channelCreated');
   }
 
   getPanels() {
