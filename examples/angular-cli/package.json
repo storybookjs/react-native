@@ -39,7 +39,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/node": "~6.0.96",
     "global": "^4.3.2",
-    "jasmine-core": "~2.8.0",
+    "jasmine-core": "~2.9.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.2.0",
