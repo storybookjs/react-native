@@ -54,10 +54,7 @@ export function select(name, options, value) {
 }
 
 export function selectV2(name, options, value) {
-  return deprecate(
-    manager.knob(name, { type: 'select', selectV2: true, options, value }),
-    'in v4 selectV2 will be renamed to select'
-  );
+  return manager.knob(name, { type: 'select', selectV2: true, options, value });
 }
 
 export function array(name, value, separator = ',') {
