@@ -1,7 +1,7 @@
-import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import { pathToManager } from '@storybook/core/client';
 import babelLoaderConfig from './babel.prod';
 import { getConfigDir, includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
@@ -10,7 +10,7 @@ import { version } from '../../../package.json';
 export default function() {
   const entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
-    manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')],
+    manager: [require.resolve('./polyfills'), pathToManager],
   };
 
   const config = {
