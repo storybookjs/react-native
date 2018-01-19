@@ -1,3 +1,12 @@
+# 3.3.10
+
+2018-January-19
+
+#### Bug Fixes
+
+-   Addon-backgrounds: remove redundant scrollbars [#2744](https://github.com/storybooks/storybook/pull/2744)
+-   Addon-info: add keys for separator spans in OneOfType [#2743](https://github.com/storybooks/storybook/pull/2743)
+
 # 3.4.0-alpha.4
 
 2018-January-13
