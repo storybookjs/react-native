@@ -70,7 +70,7 @@ module.exports = {
 ```
 ### Configure Jest for Vue
 StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
-[doesn't](#deps-issue) install it, so you need yo install it separately.
+[doesn't](#deps-issue) install it, so you need to install it separately.
  
  ```sh
  npm install --save-dev jest-vue-preprocessor
