@@ -59,7 +59,7 @@
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
-    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-loader": "^2.0.10",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
