@@ -1,3 +1,135 @@
+# 3.4.0-alpha.5
+
+2018-January-19
+
+#### Features
+
+-   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
+-   Addon-info: Added "Copy button" for code example [#2713](https://github.com/storybooks/storybook/pull/2713)
+-   Angular: Serve styles and assets using .angular-cli webpack configuration [#2735](https://github.com/storybooks/storybook/pull/2735)
+-   API: Added an event that is emitted when a channel is created. [#2711](https://github.com/storybooks/storybook/pull/2711)
+-   Addon-a11y: Handle components with delayed rendering [#2651](https://github.com/storybooks/storybook/pull/2651)
+
+#### Bug Fixes
+
+-   Angular: knobs with template [#2766](https://github.com/storybooks/storybook/pull/2766)
+
+#### Documentation
+
+<details>
+<summary>
+4 PRs
+</summary>
+
+-   Updating css-style testing docs to mention StoryShots image snapshots feature [#2767](https://github.com/storybooks/storybook/pull/2767)
+-   Fix introduction page header [#2757](https://github.com/storybooks/storybook/pull/2757)
+-   fix Storyshots README, add missing export for image snapshots [#2759](https://github.com/storybooks/storybook/pull/2759)
+-   Update MIGRATION.md [#2709](https://github.com/storybooks/storybook/pull/2709)
+
+</details>
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+91 upgrades
+</summary>
+
+-   Upgraded `@types/lodash` in `/` from "4.14.92" to "4.14.93" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `jest` in `/` from "22.1.2" to "22.1.3" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `jest-cli` in `/` from "22.1.2" to "22.1.3" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `jest-config` in `/` from "22.1.2" to "22.1.3" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `jest-jasmine2` in `/` from "22.1.2" to "22.1.3" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `postcss-flexbugs-fixes` in `app/angular` from "3.2.0" to "3.3.0" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `postcss-flexbugs-fixes` in `app/polymer` from "3.2.0" to "3.3.0" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `postcss-flexbugs-fixes` in `app/react` from "3.2.0" to "3.3.0" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `postcss-flexbugs-fixes` in `app/vue` from "3.2.0" to "3.3.0" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `@angular/cli` in `examples/angular-cli` from "1.6.4" to "1.6.5" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Upgraded `jest` in `examples/cra-kitchen-sink` from "22.1.2" to "22.1.3" [#2783](https://github.com/storybooks/storybook/pull/2783)
+-   Update gatsby in /docs from 1.9.157 to 1.9.158 [#2779](https://github.com/storybooks/storybook/pull/2779)
+-   Upgraded `jasmine-core` in `examples/angular-cli` from "2.8.0" to "2.9.0" [#2780](https://github.com/storybooks/storybook/pull/2780)
+-   Upgraded `react-chromatic` in `examples/official-storybook` from "0.7.7" to "0.7.8" [#2780](https://github.com/storybooks/storybook/pull/2780)
+-   Upgraded `eslint-plugin-jest` in `/` from "21.6.2" to "21.7.0" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `jest` in `/` from "22.1.1" to "22.1.2" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `jest-cli` in `/` from "22.1.1" to "22.1.2" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `jest-config` in `/` from "22.1.1" to "22.1.2" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `jest-environment-jsdom` in `/` from "22.1.0" to "22.1.2" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `jest-jasmine2` in `/` from "22.1.1" to "22.1.2" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `addons/actions` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `addons/events` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `glamorous` in `lib/components` from "4.11.2" to "4.11.3" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `glamorous` in `addons/a11y` from "4.11.2" to "4.11.3" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `glamorous` in `addons/info` from "4.11.2" to "4.11.3" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `glamorous` in `addons/jest` from "4.11.2" to "4.11.3" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `css-loader` in `app/angular` from "0.28.8" to "0.28.9" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `html-loader` in `app/angular` from "0.5.4" to "0.5.5" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `app/angular` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `css-loader` in `app/polymer` from "0.28.8" to "0.28.9" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `app/polymer` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `css-loader` in `app/react-native` from "0.28.8" to "0.28.9" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `app/react-native` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `css-loader` in `app/react` from "0.28.8" to "0.28.9" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `glamorous` in `app/react` from "4.11.2" to "4.11.3" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `html-loader` in `app/react` from "0.5.4" to "0.5.5" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `app/react` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `css-loader` in `app/vue` from "0.28.8" to "0.28.9" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `html-loader` in `app/vue` from "0.5.4" to "0.5.5" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `app/vue` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `semver` in `lib/cli` from "5.4.1" to "5.5.0" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/animations` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/common` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/compiler` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/core` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/forms` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/http` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/platform-browser` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/platform-browser-dynamic` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/router` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/compiler-cli` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `@angular/language-service` in `examples/angular-cli` from "5.2.0" to "5.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `glamorous` in `examples/cra-kitchen-sink` from "4.11.2" to "4.11.3" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `jest` in `examples/cra-kitchen-sink` from "22.1.1" to "22.1.2" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `css-loader` in `examples/vue-kitchen-sink` from "0.28.8" to "0.28.9" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `uuid` in `examples/official-storybook` from "3.2.0" to "3.2.1" [#2770](https://github.com/storybooks/storybook/pull/2770)
+-   Upgraded `gatsby-plugin-sharp` in `/docs` from "1.6.24" to "1.6.25" [#2768](https://github.com/storybooks/storybook/pull/2768)
+-   Upgraded `gatsby-remark-images` in `/docs` from "1.5.36" to "1.5.37" [#2768](https://github.com/storybooks/storybook/pull/2768)
+-   Upgraded `eslint-plugin-prettier` in `/` from "2.4.0" to "2.5.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `lerna` in `/` from "2.7.0" to "2.7.1" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `addons/actions` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `addons/events` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `react-modal` in `lib/ui` from "3.1.10" to "3.1.11" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `app/angular` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `app/polymer` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `app/react-native` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `app/react` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `app/vue` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Upgraded `uuid` in `examples/official-storybook` from "3.1.0" to "3.2.0" [#2764](https://github.com/storybooks/storybook/pull/2764)
+-   Update gatsby in /docs from 1.9.155 to 1.9.157 [#2763](https://github.com/storybooks/storybook/pull/2763)
+-   Upgraded `jest` in `/` from "22.0.6" to "22.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `jest-cli` in `/` from "22.0.6" to "22.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `jest-config` in `/` from "22.0.6" to "22.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `jest-diff` in `/` from "22.0.6" to "22.1.0" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `jest-environment-jsdom` in `/` from "22.0.6" to "22.1.0" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `jest-jasmine2` in `/` from "22.0.6" to "22.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-plugin-react-docgen` in `app/angular` from "1.8.1" to "1.8.2" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-preset-react-app` in `app/angular` from "3.1.0" to "3.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-plugin-react-docgen` in `app/polymer` from "1.8.1" to "1.8.2" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-preset-react-app` in `app/polymer` from "3.1.0" to "3.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-plugin-react-docgen` in `app/react` from "1.8.1" to "1.8.2" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-preset-react-app` in `app/react` from "3.1.0" to "3.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-plugin-react-docgen` in `app/vue` from "1.8.1" to "1.8.2" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-preset-react-app` in `app/vue` from "3.1.0" to "3.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `babel-jest` in `examples/cra-kitchen-sink` from "22.0.6" to "22.1.0" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `jest` in `examples/cra-kitchen-sink` from "22.0.6" to "22.1.1" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `react-scripts` in `examples/cra-kitchen-sink` from "1.0.17" to "1.1.0" [#2754](https://github.com/storybooks/storybook/pull/2754)
+-   Upgraded `eslint-plugin-jest` in `/` from "21.6.1" to "21.6.2" [#2746](https://github.com/storybooks/storybook/pull/2746)
+-   Upgraded `webpack-dev-server` in `examples/polymer-cli` from "2.10.1" to "2.11.0" [#2746](https://github.com/storybooks/storybook/pull/2746)
+-   Upgraded `webpack-dev-server` in `examples/vue-kitchen-sink` from "2.10.1" to "2.11.0" [#2746](https://github.com/storybooks/storybook/pull/2746)
+-   Upgraded `jest-image-snapshot` in `/` from "2.2.1" to "2.3.0" [#2740](https://github.com/storybooks/storybook/pull/2740)
+-   Upgraded `polymer-webpack-loader` in `app/polymer` from "2.0.0" to "2.0.1"
+
+</details>
+
 # 3.3.10
 
 2018-January-19
