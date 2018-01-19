@@ -61,7 +61,7 @@
     "lodash.pick": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.7.2",
-    "postcss-flexbugs-fixes": "^3.0.0",
+    "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-loader": "^2.0.10",
     "prop-types": "^15.5.10",
     "qs": "^6.5.1",
