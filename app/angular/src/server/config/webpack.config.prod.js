@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { pathToManager } from '@storybook/core/client';
+import { managerPath } from '@storybook/core/client';
 
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
@@ -12,7 +12,7 @@ import { version } from '../../../package.json';
 export default function(configDir) {
   const entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
-    manager: [require.resolve('./polyfills'), pathToManager],
+    manager: [require.resolve('./polyfills'), managerPath],
   };
 
   const config = {
