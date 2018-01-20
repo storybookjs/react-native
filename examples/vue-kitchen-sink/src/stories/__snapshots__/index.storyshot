@@ -1,0 +1,478 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon Actions Action and method 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  Click me to log the action!
+</button>
+`;
+
+exports[`Storyshots Addon Actions Action only 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  Click me to log the action!
+</button>
+`;
+
+exports[`Storyshots Addon Knobs All knobs 1`] = `
+<div
+  style="padding: 8px 22px; border-radius: 8px;"
+>
+  <h1>
+    My name is Jane,
+  </h1>
+   
+  <h3>
+    today is 2017-1-20
+  </h3>
+   
+  <p>
+    I have a stock of 20 apple, costing $2.25 each.
+  </p>
+   
+  <p>
+    Also, I have:
+  </p>
+   
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+   
+  <p>
+    Nice to meet you!
+  </p>
+</div>
+`;
+
+exports[`Storyshots Addon Knobs Simple 1`] = `
+<div>
+  I am John Doe and I'm 44 years old.
+</div>
+`;
+
+exports[`Storyshots Addon Notes Note with HTML 1`] = `
+<p>
+  🤔😳😯😮
+  <br />
+  😄😩😓😱
+  <br />
+  🤓😑😶😊
+</p>
+`;
+
+exports[`Storyshots Addon Notes Simple note 1`] = `
+<p>
+  <strong>
+    Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
+  </strong>
+</p>
+`;
+
+exports[`Storyshots App App 1`] = `
+<div
+  id="app"
+>
+  <img
+    src="./logo.png"
+  />
+   
+  <h1 />
+   
+  <h2>
+    Essential Links
+  </h2>
+   
+  <ul>
+    <li>
+      <a
+        href="https://vuejs.org"
+        target="_blank"
+      >
+        Core Docs
+      </a>
+    </li>
+     
+    <li>
+      <a
+        href="https://forum.vuejs.org"
+        target="_blank"
+      >
+        Forum
+      </a>
+    </li>
+     
+    <li>
+      <a
+        href="https://gitter.im/vuejs/vue"
+        target="_blank"
+      >
+        Gitter Chat
+      </a>
+    </li>
+     
+    <li>
+      <a
+        href="https://twitter.com/vuejs"
+        target="_blank"
+      >
+        Twitter
+      </a>
+    </li>
+  </ul>
+   
+  <h2>
+    Ecosystem
+  </h2>
+   
+  <ul>
+    <li>
+      <a
+        href="http://router.vuejs.org/"
+        target="_blank"
+      >
+        vue-router
+      </a>
+    </li>
+     
+    <li>
+      <a
+        href="http://vuex.vuejs.org/"
+        target="_blank"
+      >
+        vuex
+      </a>
+    </li>
+     
+    <li>
+      <a
+        href="http://vue-loader.vuejs.org/"
+        target="_blank"
+      >
+        vue-loader
+      </a>
+    </li>
+     
+    <li>
+      <a
+        href="https://github.com/vuejs/awesome-vue"
+        target="_blank"
+      >
+        awesome-vue
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Button rounded 1`] = `
+<div
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+>
+  <div
+    style="margin: auto;"
+  >
+    <button
+      class="button rounded"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
+    >
+      A Button with rounded edges!
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button square 1`] = `
+<div
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+>
+  <div
+    style="margin: auto;"
+  >
+    <button
+      class="button"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
+    >
+      A Button with square edges!
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Decorator for Vue render 1`] = `
+<div
+  style="border: medium solid blue;"
+>
+  <div
+    style="border: medium solid red;"
+  >
+    <button
+      class="button"
+    >
+      renders component: MyButton!
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Decorator for Vue template 1`] = `
+<div
+  style="border: medium solid blue;"
+>
+  <div
+    style="border: medium solid red;"
+  >
+    <button
+      class="button"
+      style="color: rgb(66, 185, 131); border-color: #42b983;"
+    >
+      MyButton with template!
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Method for rendering Vue JSX 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  MyButton rendered with JSX!
+</button>
+`;
+
+exports[`Storyshots Method for rendering Vue pre-registered component 1`] = `
+<p>
+  <em>
+    This component was pre-registered in .storybook/config.js
+  </em>
+  <br />
+   
+  <button
+    class="button"
+    style="color: rgb(66, 185, 131); border-color: #42b983;"
+  >
+    MyButton rendered in a template!
+  </button>
+</p>
+`;
+
+exports[`Storyshots Method for rendering Vue render + component 1`] = `
+<button
+  class="button"
+>
+  renders component: MyButton!
+</button>
+`;
+
+exports[`Storyshots Method for rendering Vue render 1`] = `
+<div>
+  renders a div with some text in it..
+</div>
+`;
+
+exports[`Storyshots Method for rendering Vue template + component 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  MyButton rendered in a template!
+</button>
+`;
+
+exports[`Storyshots Method for rendering Vue template + methods 1`] = `
+<p>
+  <em>
+    Clicking the button will navigate to another story using the 'addon-links'
+  </em>
+  <br />
+   
+  <button
+    class="button rounded"
+    style="color: rgb(66, 185, 131); border-color: #42b983;"
+  >
+    MyButton rendered in a template + props & methods!
+  </button>
+</p>
+`;
+
+exports[`Storyshots Method for rendering Vue template 1`] = `
+<div>
+  <h1>
+    A template
+  </h1>
+   
+  <p>
+    rendered in vue in storybook
+  </p>
+</div>
+`;
+
+exports[`Storyshots Method for rendering Vue vuex + actions 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  with vuex: 0!
+</button>
+`;
+
+exports[`Storyshots Method for rendering Vue whatever you want 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  with awesomeness: 0!
+</button>
+`;
+
+exports[`Storyshots Welcome Welcome 1`] = `
+<div
+  class="main"
+>
+  <h1>
+    Welcome to Storybook for Vue
+  </h1>
+   
+  <p>
+    
+    This is a UI component dev environment for your vue app.
+  
+  </p>
+   
+  <p>
+    
+    We've added some basic stories inside the
+    
+    <code
+      class="code"
+    >
+      src/stories
+    </code>
+    
+    directory.
+    
+    <br />
+    
+    A story is a single state of one or more UI components.
+    You can have as many stories as you want.
+    
+    <br />
+    
+    (Basically a story is like a visual test case.)
+  
+  </p>
+   
+  <p>
+    
+    See these sample
+    
+    <a
+      class="link"
+      href="#"
+    >
+      stories
+    </a>
+    
+    for a component called
+    
+    <code
+      class="code"
+    >
+      Button
+    </code>
+    
+    .
+  
+  </p>
+   
+  <p
+    style="text-align: center;"
+  >
+    <img
+      src="../logo.png"
+    />
+  </p>
+   
+  <p>
+    
+    Just like that, you can add your own components as stories.
+    
+    <br />
+    
+    You can also edit those components and see changes right away.
+    
+    <br />
+    
+    (Try editing the 
+    <code
+      class="code"
+    >
+      Button
+    </code>
+     component
+    located at 
+    <code
+      class="code"
+    >
+      src/stories/Button.js
+    </code>
+    .)
+  
+  </p>
+   
+  <p>
+    
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    
+    Have a look at the
+    
+    <a
+      class="link"
+      href="https://storybook.js.org/basics/writing-stories"
+      target="_blank"
+    >
+      
+      Writing Stories
+    
+    </a>
+    
+    section in our documentation.
+  
+  </p>
+   
+  <p
+    class="note"
+  >
+    <b>
+      NOTE:
+    </b>
+     
+    <br />
+    
+    Have a look at the
+    
+    <code
+      class="code"
+    >
+      .storybook/webpack.config.js
+    </code>
+    
+    to add webpack
+    loaders and plugins you are using in this project.
+  
+  </p>
+</div>
+`;

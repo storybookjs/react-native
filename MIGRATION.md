@@ -18,7 +18,20 @@
 
 ## From version 3.2.x to 3.3.x
 
-There should be no breaking changes in this release, but read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
+There wasn't expected be any breaking changes in this release, but unfortunately it turned out that there are some. We're revisiting our [release strategy](https://github.com/storybooks/storybook/blob/master/RELEASES.md) to follow semver more strictly.
+Also read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
+
+### `babel-core` is now a peer dependency ([#2494](https://github.com/storybooks/storybook/pull/2494))
+
+This affects you if you don't use babel in your project. You may need to add `babel-core` as dev dependency:
+```
+npm install --save-dev babel-core
+```
+This was done to support different major versions of babel.
+
+### Base webpack config now contains vital plugins ([#1775](https://github.com/storybooks/storybook/pull/1775))
+
+This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a reccomendation, but now it [became](https://github.com/storybooks/storybook/pull/2578) a requirement.
 
 ### Refactored Knobs
 

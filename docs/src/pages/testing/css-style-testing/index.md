@@ -21,10 +21,15 @@ Then, we can see the above story using the following URL:
 
 ![Storybook Iframe Screenshot](../static/storybook-iframe-screenshot.png)
 
-Just like that, you can access all of the stories in your Storybook.
+Just like that, you can access all of the stories in your Storybook and use them as a base for visual regression testing.
 
 ## Supported CSS/Style Testing Frameworks
 
-It will be hard to use all the frameworks we've [mentioned](/testing/react-ui-testing#3-css-style-testing), but we'll be able to use frameworks which are based on URL as the input source. (Such as [BackstopJS](https://github.com/garris/BackstopJS) and [Gemini](https://github.com/gemini-testing/gemini))
+There are several frameworks that have out of the box Storybook integrations:
+- [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
+- [Loki](https://loki.js.org/)
+- [Perci](https://percy.io/docs/clients/javascript/react-storybook)
+- [Screener](https://screener.io/v2/docs) 
+- [Chromatic](https://www.chromaticqa.com)
 
-> In the future we are also planning to smooth this process with the help of [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots).
+Additionally frameworks which are based on URL as the input source such as [BackstopJS](https://github.com/garris/BackstopJS) or [Gemini](https://github.com/gemini-testing/gemini) can be used.

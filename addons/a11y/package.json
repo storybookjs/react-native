@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "3.4.0-alpha.1",
+  "version": "3.4.0-alpha.5",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -25,8 +25,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/components": "^3.4.0-alpha.1",
+    "@storybook/components": "^3.4.0-alpha.5",
     "axe-core": "^2.6.1",
+    "glamorous": "^4.11.3",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {

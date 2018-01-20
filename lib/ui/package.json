@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.4.0-alpha.1",
+  "version": "3.4.0-alpha.5",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/components": "^3.4.0-alpha.1",
+    "@storybook/components": "^3.4.0-alpha.5",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/react-komposer": "^2.0.3",
     "babel-runtime": "^6.26.0",
@@ -34,7 +34,7 @@
     "react-fuzzy": "^0.5.1",
     "react-icons": "^2.2.7",
     "react-inspector": "^2.2.2",
-    "react-modal": "^3.1.10",
+    "react-modal": "^3.1.11",
     "react-split-pane": "^0.1.74",
     "react-treebeard": "^2.1.0",
     "redux": "^3.7.2"
@@ -44,7 +44,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.1",
-    "@storybook/react": "^3.4.0-alpha.1"
+    "@storybook/addon-actions": "^3.4.0-alpha.5",
+    "@storybook/react": "^3.4.0-alpha.5"
   }
 }
