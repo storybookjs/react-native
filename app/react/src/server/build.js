@@ -78,6 +78,6 @@ webpack(config).run((err, stats) => {
     err && logger.error(err.message);
     // eslint-disable-next-line no-unused-expressions
     stats && stats.hasErrors() && stats.toJson().errors.forEach(e => logger.error(e));
-    process.exit(1);
+    process.exitCode = 1;
   }
 });
