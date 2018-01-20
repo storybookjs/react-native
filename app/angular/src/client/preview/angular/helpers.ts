@@ -79,7 +79,7 @@ const createComponentFromTemplate = (template: string): Function => {
 const initModule = (
   currentStory: IGetStoryWithContext,
   context: IContext,
-  reRender: boolean
+  reRender: boolean = false,
 ): Function => {
   const storyObj = currentStory(context);
   const { component, template, props, moduleMetadata = {} } = storyObj;
@@ -131,7 +131,7 @@ export const renderNgError = debounce((error: Error) => {
   const errorData = {
     message: error.message,
     stack: error.stack,
-  };
+  } as NgProvidedData;
 
   const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData, {});
 

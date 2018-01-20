@@ -3,6 +3,8 @@ import webpack from 'webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import { managerPath } from '@storybook/core/client';
+
 import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
 import {
   getConfigDir,
@@ -20,7 +22,7 @@ export default function() {
   const config = {
     devtool: 'cheap-module-source-map',
     entry: {
-      manager: [require.resolve('./polyfills'), require.resolve('../../client/manager')],
+      manager: [require.resolve('./polyfills'), managerPath],
       preview: [
         require.resolve('./polyfills'),
         require.resolve('./globals'),
