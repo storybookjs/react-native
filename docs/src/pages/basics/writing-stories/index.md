@@ -143,6 +143,26 @@ storiesOf('My App/Buttons/Emoji', module)
   ));
 ```
 
+## Generating nesting path based on __dirname
+
+The name is just a javascript string, by using a template literal, you can easily interpolate data.
+
+One example would be to use `__dirname`:
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+import BaseButton from './BaseButton';
+
+const base = __dirname;
+
+storiesOf(`Category|${base}/BaseButton`, module)
+  .add('story 1', () => <BaseButton label="Story 1" />)
+  .add('story 2', () => <BaseButton label="Story 2" />);
+```
+
+*The usage of `__dirname` is dependent on webpack transforming it correctly. Either don't change the default config, add the nessesary config yourself, or import the storybook default, see [custom webpack config](/configurations/custom-webpack-config/#full-control-mode--default)*
+
 ## Run multiple storybooks
 
 You can run multiple storybooks for different kinds of stories (or components). To do that, you can create different NPM scripts to start different stories. See:
