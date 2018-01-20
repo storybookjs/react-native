@@ -9,7 +9,6 @@ storiesOf('Welcome', module).add('to Storybook', () => ({
 storiesOf('Button', module)
   .add('with text', () => ({
     moduleMetadata: {
-      entryComponents: [Button, Welcome],
       declarations: [Button, Welcome],
     },
     props: {
