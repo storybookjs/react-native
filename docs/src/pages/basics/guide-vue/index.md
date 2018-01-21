@@ -86,7 +86,7 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded you Storybook stories defined in `../stories/index.js`.
+This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded your Storybook stories defined in `../stories/index.js`.
 
 All custom components and Vue plugins should be registered before calling `configure()`.
 
