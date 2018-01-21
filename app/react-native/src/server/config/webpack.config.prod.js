@@ -47,7 +47,7 @@ const getConfig = options => {
       }),
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.jsx?$/,
           loader: require.resolve('babel-loader'),
