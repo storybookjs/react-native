@@ -154,7 +154,7 @@ import { storiesOf } from '@storybook/react';
 
 import BaseButton from './BaseButton';
 
-const base = __dirname;
+const base = __dirname.replace(process.cwd(), '');
 
 storiesOf(`Category|${base}/BaseButton`, module)
   .add('story 1', () => <BaseButton label="Story 1" />)
