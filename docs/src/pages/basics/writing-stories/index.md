@@ -147,21 +147,23 @@ storiesOf('My App/Buttons/Emoji', module)
 
 The name is just a javascript string, by using a template literal, you can easily interpolate data.
 
-One example would be to use `__dirname`:
+One example would be to use `__dirname` combined with `babel-plugin-preval`:
 ```js
 import React from 'react';
+import preval from 'babel-plugin-preval/macro';
+
 import { storiesOf } from '@storybook/react';
 
-import BaseButton from './BaseButton';
+import BaseButton from '../components/BaseButton';
 
-const base = __dirname.replace(process.cwd(), '');
+const base = preval`module.exports = __dirname.replace(process.cwd() + '/', '')`;
 
-storiesOf(`Category|${base}/BaseButton`, module)
+storiesOf(`Other|${base}/Dirname Example`, module)
   .add('story 1', () => <BaseButton label="Story 1" />)
   .add('story 2', () => <BaseButton label="Story 2" />);
 ```
 
-*The usage of `__dirname` is dependent on webpack transforming it correctly. Either don't change the default config, add the nessesary config yourself, or import the storybook default, see [custom webpack config](/configurations/custom-webpack-config/#full-control-mode--default)*
+*This uses [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros) & [babel-plugin-preval](https://github.com/kentcdodds/babel-plugin-preval)*.
 
 ## Run multiple storybooks
 
