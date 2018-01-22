@@ -70,7 +70,7 @@
     "redux": "^3.7.2",
     "request": "^2.83.0",
     "serve-favicon": "^2.4.5",
-    "shelljs": "^0.8.0",
+    "shelljs": "^0.8.1",
     "style-loader": "^0.19.1",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
