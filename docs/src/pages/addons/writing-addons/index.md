@@ -100,7 +100,7 @@ export class WithNotes extends React.Component {
 
 In this case, our component can access something called the channel. It lets us communicate with the panel (where we display notes). It has a NodeJS [EventEmitter](https://nodejs.org/api/events.html) compatible API.
 
-In the above case, it will emit the note's text to the channel, so our panel can listen to it.
+In the above case, it will emit the notes' text to the channel, so our panel can listen to it.
 
 Then add the following code to the register.js.
 
