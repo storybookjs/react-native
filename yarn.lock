@@ -1247,6 +1247,12 @@ babel-plugin-jsx-vue-functional@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-jsx-vue-functional/-/babel-plugin-jsx-vue-functional-2.1.0.tgz#5630a0c86fe1904d28c30465e6bf1cf71235a239"
 
+babel-plugin-macros@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.0.0.tgz#fd3aee135f7dec0b82898b7c8f1aed6fa75f9af9"
+  dependencies:
+    cosmiconfig "3.1.0"
+
 babel-plugin-minify-builtins@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-minify-builtins/-/babel-plugin-minify-builtins-0.2.0.tgz#317f824b0907210b6348671bb040ca072e2e0c82"
@@ -1311,6 +1317,15 @@ babel-plugin-minify-type-constructors@^0.2.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-minify-type-constructors/-/babel-plugin-minify-type-constructors-0.2.0.tgz#7f3b6458be0863cfd59e9985bed6d134aa7a2e17"
   dependencies:
     babel-helper-is-void-0 "^0.2.0"
+
+babel-plugin-preval@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-preval/-/babel-plugin-preval-1.6.3.tgz#df784357410a9762f01bf0c5705e2c070eac3ccb"
+  dependencies:
+    babel-plugin-macros "^2.0.0"
+    babel-register "^6.26.0"
+    babylon "^6.18.0"
+    require-from-string "^2.0.1"
 
 babel-plugin-react-docgen@^1.8.2:
   version "1.8.2"
@@ -3556,6 +3571,15 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+cosmiconfig@3.1.0, cosmiconfig@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-3.1.0.tgz#640a94bf9847f321800403cd273af60665c73397"
+  dependencies:
+    is-directory "^0.3.1"
+    js-yaml "^3.9.0"
+    parse-json "^3.0.0"
+    require-from-string "^2.0.1"
+
 cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-2.2.2.tgz#6173cebd56fac042c1f4390edf7af6c07c7cb892"
@@ -3567,15 +3591,6 @@ cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
     os-homedir "^1.0.1"
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
-
-cosmiconfig@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-3.1.0.tgz#640a94bf9847f321800403cd273af60665c73397"
-  dependencies:
-    is-directory "^0.3.1"
-    js-yaml "^3.9.0"
-    parse-json "^3.0.0"
-    require-from-string "^2.0.1"
 
 cpx@^1.5.0:
   version "1.5.0"

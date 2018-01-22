@@ -26,6 +26,7 @@
     "@storybook/components": "^3.4.0-alpha.5",
     "@storybook/react": "^3.4.0-alpha.5",
     "babel-jest": "^21.2.0",
+    "babel-plugin-preval": "^1.6.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
