@@ -24,6 +24,14 @@
     react-inspector "^2.2.2"
     uuid "^3.1.0"
 
+"@storybook/addon-links@^3.3.10":
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.3.10.tgz#4e6c1a0b0bf5b18101bc5001b858b33202ae8209"
+  dependencies:
+    "@storybook/components" "^3.3.10"
+    global "^4.3.2"
+    prop-types "^15.5.10"
+
 "@storybook/addon-links@^3.3.9":
   version "3.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.3.9.tgz#13781ac1c21ddfe347ece6ceab8518c8d1f98a0f"
@@ -51,6 +59,14 @@
 "@storybook/client-logger@^3.3.9":
   version "3.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.3.9.tgz#a73e382c383c1bfa6d2ff7fa5cae77cd09efa524"
+
+"@storybook/components@^3.3.10":
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.3.10.tgz#f213a129ed49de33cdaf116da2c2b662b8eb3ea0"
+  dependencies:
+    glamor "^2.20.40"
+    glamorous "^4.11.2"
+    prop-types "^15.6.0"
 
 "@storybook/components@^3.3.9":
   version "3.3.9"
