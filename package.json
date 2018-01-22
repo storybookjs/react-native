@@ -92,7 +92,7 @@
     "remark-lint-code": "^2.0.0",
     "remark-lint-code-eslint": "^2.0.0",
     "remark-preset-lint-recommended": "^3.0.1",
-    "shelljs": "^0.8.0",
+    "shelljs": "^0.8.1",
     "symlink-dir": "^1.1.1",
     "ts-jest": "^22.0.0",
     "tslint": "~5.9.1",
