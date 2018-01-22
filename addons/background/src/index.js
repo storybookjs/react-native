@@ -5,12 +5,12 @@ import addons from '@storybook/addons';
 
 const style = {
   wrapper: {
-    overflow: 'auto',
     position: 'fixed',
     top: 0,
     bottom: 0,
     right: 0,
     left: 0,
+    zIndex: -1,
     transition: 'background 0.25s ease-in-out',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -57,7 +57,12 @@ export class BackgroundDecorator extends React.Component {
   render() {
     const styles = style.wrapper;
     styles.background = this.state.background;
-    return <div style={Object.assign({}, styles)}>{this.story}</div>;
+    return (
+      <div>
+        <div style={Object.assign({}, styles)} />
+        {this.story}
+      </div>
+    );
   }
 }
 BackgroundDecorator.propTypes = {
