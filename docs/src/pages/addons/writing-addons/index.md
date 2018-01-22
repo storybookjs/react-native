@@ -100,7 +100,7 @@ export class WithNotes extends React.Component {
 
 In this case, our component can access something called the channel. It lets us communicate with the panel (where we display notes). It has a NodeJS [EventEmitter](https://nodejs.org/api/events.html) compatible API.
 
-In the above case, it will emit the notes text to the channel, so our panel can listen to it.
+In the above case, it will emit the notes' text to the channel, so our panel can listen to it.
 
 Then add the following code to the register.js.
 
@@ -158,13 +158,13 @@ You can learn more about the complete API [here](/addons/api).
 
 ## Packaging
 
-You can package this addon into a NPM module very easily. Have a look at this [package](https://github.com/storybooks/storybook/tree/master/addons/notes).
+You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybooks/storybook/tree/master/addons/notes).
 
-In addition to moving the above code to an NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
+In addition to moving the above code to a NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 
 ### Local Development
 
-When you are developing your addon as a package, you can't use `npm link` to add it your project. Instead add your package as a local dependency into your `package.json` as shown below:
+When you are developing your addon as a package, you can't use `npm link` to add it to your project. Instead add your package as a local dependency into your `package.json` as shown below:
 
 ```json
 {

@@ -41,7 +41,7 @@ import { withNotes } from '@storybook/addon-notes';
 import Component from './Component';
 
 storiesOf('Component', module)
-  .add('with some emoji', withNotes('A very simple component')(() => </Component>>));
+  .add('with some emoji', withNotes('A very simple component')(() => </Component>));
 ```
 
 #### Using Markdown

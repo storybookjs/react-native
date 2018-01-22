@@ -1,6 +1,5 @@
 import { configure } from '@storybook/angular';
 import addCssWarning from '../src/cssWarning';
-import '../src/assets/common.css'
 
 addCssWarning();
 

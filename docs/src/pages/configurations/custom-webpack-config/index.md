@@ -95,28 +95,21 @@ You may want to keep Storybook's [default config](/configurations/default-config
 If so, this is how you do it using the Full Control Mode.
 Add following content to the `webpack.config.js` in your Storybook config directory.
 
-> We plan to expose our default webpack-config as it's own package in the future.
-
 ```js
 const path = require('path');
 
-// load the default config generator.
-const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
-
-module.exports = (baseConfig, env) => {
-  const config = genDefaultConfig(baseConfig, env);
-
-  // Extend it as you need.
+module.exports = (baseConfig, env, defaultConfig) => {
+  // Extend defaultConfig as you need.
 
   // For example, add typescript loader:
-  config.module.rules.push({
+  defaultConfig.module.rules.push({
     test: /\.(ts|tsx)$/,
     include: path.resolve(__dirname, '../src'),
     loader: require.resolve('ts-loader')
   });
-  config.resolve.extensions.push('.ts', '.tsx');
+  defaultConfig.resolve.extensions.push('.ts', '.tsx');
 
-  return config;
+  return defaultConfig;
 };
 ```
 

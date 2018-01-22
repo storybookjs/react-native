@@ -1,63 +1,7 @@
-import autoprefixer from 'autoprefixer';
-import { includePaths } from '../utils';
+import deprecate from 'util-deprecate';
+import { createDefaultWebpackConfig } from '@storybook/core/server';
 
-// Add a default custom config which is similar to what React Create App does.
-module.exports = storybookBaseConfig => {
-  const newConfig = { ...storybookBaseConfig };
-
-  newConfig.module.loaders = [
-    ...newConfig.module.loaders,
-    {
-      test: /\.css?$/,
-      include: includePaths,
-      use: [
-        require.resolve('style-loader'),
-        require.resolve('css-loader'),
-        {
-          loader: require.resolve('postcss-loader'),
-          options: {
-            plugins: () => [
-              autoprefixer({
-                browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-              }),
-            ],
-          },
-        },
-      ],
-    },
-    {
-      test: /\.json$/,
-      include: includePaths,
-      loader: require.resolve('json-loader'),
-    },
-    {
-      test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
-      include: includePaths,
-      loader: require.resolve('file-loader'),
-      query: {
-        name: 'static/media/[name].[hash:8].[ext]',
-      },
-    },
-    {
-      test: /\.(mp4|webm)(\?.*)?$/,
-      include: includePaths,
-      loader: require.resolve('url-loader'),
-      query: {
-        limit: 10000,
-        name: 'static/media/[name].[hash:8].[ext]',
-      },
-    },
-  ];
-
-  newConfig.resolve = {
-    ...newConfig.resolve,
-    alias: {
-      ...((newConfig.resolve && newConfig.resolve.alias) || {}),
-      // This is to support NPM2
-      'babel-runtime/regenerator': require.resolve('babel-runtime/regenerator'),
-    },
-  };
-
-  // Return the altered config
-  return newConfig;
-};
+module.exports = deprecate(
+  createDefaultWebpackConfig,
+  "importing default webpack config generator from '@storybook/react-native/dist/server/config/defaults/webpack.config.js' is deprecated. Use third argument of your exported function instead. See https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode--default"
+);
