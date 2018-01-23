@@ -2,6 +2,16 @@
   "name": "vue-example",
   "version": "3.4.0-alpha.5",
   "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build-storybook": "build-storybook -s public",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "storybook": "start-storybook -p 9009 -s public"
+  },
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vuex": "^3.0.0"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.0-alpha.5",
     "@storybook/addon-centered": "^3.4.0-alpha.5",
@@ -25,15 +35,5 @@
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
-  },
-  "dependencies": {
-    "vue": "^2.5.13",
-    "vuex": "^3.0.0"
-  },
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
   }
 }

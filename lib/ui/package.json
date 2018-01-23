@@ -39,12 +39,12 @@
     "react-treebeard": "^2.1.0",
     "redux": "^3.7.2"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.0-alpha.5",
     "@storybook/react": "^3.4.0-alpha.5"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   }
 }

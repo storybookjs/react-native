@@ -1,17 +1,17 @@
 {
   "name": "angular-cli",
   "version": "3.4.0-alpha.5",
+  "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "ng build",
+    "build-storybook": "build-storybook -s src",
+    "e2e": "ng e2e",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "e2e": "ng e2e",
     "storybook": "start-storybook -p 9008 -s src/assets",
-    "build-storybook": "build-storybook -s src"
+    "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.1",
     "@angular/common": "^5.2.1",

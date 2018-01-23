@@ -4,8 +4,8 @@
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
-    "storybook",
-    "notes"
+    "notes",
+    "storybook"
   ],
   "license": "MIT",
   "main": "dist/index.js",

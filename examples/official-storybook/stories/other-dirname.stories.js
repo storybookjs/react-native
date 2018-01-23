@@ -1,5 +1,5 @@
 import React from 'react';
-import base from 'babel-plugin-paths/macro';
+import base from 'paths.macro';
 
 import { storiesOf } from '@storybook/react';
 

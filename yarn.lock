@@ -1324,14 +1324,6 @@ babel-plugin-minify-type-constructors@^0.2.0:
   dependencies:
     babel-helper-is-void-0 "^0.2.0"
 
-babel-plugin-paths@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-paths/-/babel-plugin-paths-1.0.0.tgz#01b2988dcbb98eabf1785aaa144cebd0ecda44b1"
-  dependencies:
-    babel-macros "^1.2.0"
-    babel-plugin-macros "^2.0.0"
-    find-root "^1.1.0"
-
 babel-plugin-react-docgen@^1.8.2:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-1.8.2.tgz#4615da43588c8cf5bdcae028f217954c70e6770b"
@@ -10979,6 +10971,14 @@ path@^0.12.7:
   dependencies:
     process "^0.11.1"
     util "^0.10.3"
+
+paths.macro@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/paths.macro/-/paths.macro-1.0.1.tgz#faa4667e5454f5ab9812e9a9af687a683d02330f"
+  dependencies:
+    babel-macros "^1.2.0"
+    babel-plugin-macros "^2.0.0"
+    find-root "^1.1.0"
 
 pause-stream@0.0.11:
   version "0.0.11"

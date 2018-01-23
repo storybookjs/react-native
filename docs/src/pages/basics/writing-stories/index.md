@@ -147,10 +147,10 @@ storiesOf('My App/Buttons/Emoji', module)
 
 The name is just a javascript string, by using a template literal, you can easily interpolate data.
 
-One example would be to use `base` from [`babel-plugin-paths`](https://github.com/storybooks/babel-plugin-paths):
+One example would be to use `base` from [`paths.macro`](https://github.com/storybooks/paths.macro):
 ```js
 import React from 'react';
-import base from 'babel-plugin-paths/macro';
+import base from 'paths.macro';
 
 import { storiesOf } from '@storybook/react';
 
