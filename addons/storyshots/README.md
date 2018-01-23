@@ -119,7 +119,7 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 ![Screenshot](docs/storyshots.png)
 
 
-## Configure Storyshots for image snapshots
+## Configure Storyshots for image snapshots ( alpha )
 
 /*\ **React-native** is **not supported** by this test function.
 
@@ -368,7 +368,7 @@ Take a snapshot of a shallow-rendered version of the component. Note that this o
 
 Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
 
-### `imageSnapshot`
+### `imageSnapshot` ( alpha )
 
 Render the story and take Jest snapshots as images. see [Configure image snapshots](#configure-storyshots-for-image-snapshots)
 
