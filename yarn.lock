@@ -4554,7 +4554,7 @@ enzyme-matchers@^4.0.2:
     circular-json-es6 "^2.0.1"
     deep-equal-ident "^1.1.1"
 
-enzyme-to-json@^3.2.2, enzyme-to-json@^3.3.0:
+enzyme-to-json@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.3.0.tgz#553e23a09ffb4b0cf09287e2edf9c6539fddaa84"
   dependencies:
