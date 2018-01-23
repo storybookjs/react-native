@@ -7,7 +7,7 @@ import addHeadWarning from './head-warning';
 addHeadWarning('Preview');
 
 setOptions({
-  hierarchySeparator: /\/|\./,
+  hierarchySeparator: /\/|\.|\\/,
   hierarchyRootSeparator: /\|/,
 });
 
