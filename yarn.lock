@@ -1185,6 +1185,12 @@ babel-loader@7.1.2, babel-loader@^7.0.0, babel-loader@^7.1.2:
     loader-utils "^1.0.2"
     mkdirp "^0.5.1"
 
+babel-macros@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/babel-macros/-/babel-macros-1.2.0.tgz#39e47ed6d286d4a98f1948d8bab45dac17e4e2d4"
+  dependencies:
+    cosmiconfig "3.1.0"
+
 babel-messages@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-messages/-/babel-messages-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
@@ -1318,14 +1324,13 @@ babel-plugin-minify-type-constructors@^0.2.0:
   dependencies:
     babel-helper-is-void-0 "^0.2.0"
 
-babel-plugin-preval@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-preval/-/babel-plugin-preval-1.6.3.tgz#df784357410a9762f01bf0c5705e2c070eac3ccb"
+babel-plugin-paths@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-paths/-/babel-plugin-paths-1.0.0.tgz#01b2988dcbb98eabf1785aaa144cebd0ecda44b1"
   dependencies:
+    babel-macros "^1.2.0"
     babel-plugin-macros "^2.0.0"
-    babel-register "^6.26.0"
-    babylon "^6.18.0"
-    require-from-string "^2.0.1"
+    find-root "^1.1.0"
 
 babel-plugin-react-docgen@^1.8.2:
   version "1.8.2"
@@ -5604,6 +5609,10 @@ find-index@^0.1.1:
 find-parent-dir@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
+
+find-root@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
 
 find-up@^1.0.0:
   version "1.1.2"
