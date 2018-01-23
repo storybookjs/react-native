@@ -1,3 +1,5 @@
+import '@storybook/core/env';
+
 import express from 'express';
 import https from 'https';
 import favicon from 'serve-favicon';

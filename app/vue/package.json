@@ -64,6 +64,7 @@
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "react": "^16.2.0",
+    "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
     "redux": "^3.7.2",
     "request": "^2.83.0",
