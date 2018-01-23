@@ -334,10 +334,6 @@
   version "2.53.43"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-2.53.43.tgz#2de3d718819bc20165754c4a59afb7e9833f6707"
 
-"@webcomponents/webcomponentsjs@^1.0.17":
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.0.22.tgz#a9fed9f346d81dab738b0c3e04614ee6303a24b6"
-
 "@webcomponents/webcomponentsjs@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.1.0.tgz#1392799c266fca142622a720176f688beb74d181"
