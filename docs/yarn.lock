@@ -4325,9 +4325,9 @@ gatsby-1-config-css-modules@^1.0.8:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.28:
-  version "1.1.28"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.28.tgz#0d0a397566154a3ce3e4680d545c9cfdc33ad95b"
+gatsby-cli@^1.1.29:
+  version "1.1.29"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.29.tgz#590f766ca61591e69a7793660b767257b896d6fe"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4470,9 +4470,9 @@ gatsby-transformer-remark@^1.7.29:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.165:
-  version "1.9.165"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.165.tgz#ca223028a1b07b9195bd25bf36855d520b1a3050"
+gatsby@^1.9.166:
+  version "1.9.166"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.166.tgz#556e7c3450b7cbb674ca03c776eda598d073d493"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4512,7 +4512,7 @@ gatsby@^1.9.165:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
-    gatsby-cli "^1.1.28"
+    gatsby-cli "^1.1.29"
     gatsby-link "^1.6.34"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.8"
