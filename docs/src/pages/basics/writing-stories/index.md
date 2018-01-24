@@ -118,7 +118,7 @@ import MyComponent from './MyComponent';
 import someMarkdownText from './someMarkdownText.md';
 
 storiesOf('Component', module)
-  .add('With Markdown', withNotes(someMarkdownText)(() => <Component/>));
+  .add('With Markdown', withNotes(someMarkdownText)(() => <MyComponent/>));
 ```
 
 ## Nesting stories

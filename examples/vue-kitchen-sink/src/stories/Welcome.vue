@@ -53,6 +53,9 @@
   </div>
 </template>
 
+<script>
+</script>
+
 <style>
   .main {
     margin: 15px;

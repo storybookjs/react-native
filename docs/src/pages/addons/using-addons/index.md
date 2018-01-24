@@ -12,7 +12,7 @@ We are going to use an addon called [Notes](https://github.com/storybooks/storyb
 First, we need to install the addons:
 
 ```sh
-npm i --save-dev @storybook-addons @storybook/addon-actions @storybook/addon-links @storybook/addon-notes
+npm i --save-dev @storybook/addons @storybook/addon-actions @storybook/addon-links @storybook/addon-notes
 ```
 
 Then, we need to create a file called `addons.js` inside the storybook config directory and add the following content:

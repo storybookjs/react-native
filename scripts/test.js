@@ -57,7 +57,7 @@ const tasks = {
     isJest: true,
   }),
   integration: createProject({
-    name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
+    name: `Screenshots of built apps ${chalk.gray('(integration)')}`,
     defaultValue: false,
     option: '--integration',
     projectLocation: path.join(__dirname, '..', 'integration'),
