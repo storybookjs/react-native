@@ -140,9 +140,9 @@
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.1.tgz#438bc1f61bab5ba2e0eeb687ae6be9e6ab0edb18"
 
-"@angular/platform-browser-dynamic@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.1.tgz#df073c48f5b90e8c5d5b0774aa2bef49f288989c"
+"@angular/platform-browser-dynamic@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.2.tgz#2ddd7fa28bb34ae9e181e6f286dfe4c96bde95a6"
   dependencies:
     tslib "^1.7.1"
 
