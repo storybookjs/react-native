@@ -34,7 +34,7 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.93",
+    "@types/lodash": "^4.14.95",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
