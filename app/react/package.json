@@ -31,7 +31,7 @@
     "@storybook/core": "^3.4.0-alpha.5",
     "@storybook/node-logger": "^3.4.0-alpha.5",
     "@storybook/ui": "^3.4.0-alpha.5",
-    "airbnb-js-shims": "^1.4.0",
+    "airbnb-js-shims": "^1.4.1",
     "autoprefixer": "^7.2.5",
     "babel-loader": "^7.1.2",
     "babel-plugin-react-docgen": "^1.8.2",
