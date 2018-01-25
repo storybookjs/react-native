@@ -113,33 +113,3 @@ npm run storybook
 
 Now you can change components and write stories whenever you need to.
 You'll get those changes into Storybook in a snap with the help of webpack's HMR API.
-
-## Tips
-
-### Configure style rules
-
-If you use `templateUrl` in your components, you need to configure webpack rules for .css/.scss files. Create a file named `webpack.config.js` under the config directory(by default `.storybook`):
-
-```js
-const genDefaultConfig = require('@storybook/angular/dist/server/config/defaults/webpack.config.js');
-
-module.exports = (baseConfig, env) => {
-  const config = genDefaultConfig(baseConfig, env);
-
-  // Overwrite .css rule
-  const cssRule = config.module.rules.find(rule => rule.test && rule.test.toString() === '/\\.css$/');
-  if (cssRule) {
-    cssRule.exclude = /\.component\.css$/;
-  }
-
-  // Add .scss rule
-  config.module.rules.unshift({
-    test: /\.scss$/,
-    loaders: ['raw-loader', 'sass-loader'],
-  });
-
-  return config;
-};
-```
-
-If you want more details, see [customize the webpack config](/configurations/custom-webpack-config/).
