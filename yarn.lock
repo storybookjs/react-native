@@ -146,9 +146,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.1.tgz#0d05a4ba107e7ad8241a862683c83193c26b3c5e"
+"@angular/platform-browser@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.2.tgz#3eedcbbcc8c0e6c91eba7ed2b32de7c6679d9b62"
   dependencies:
     tslib "^1.7.1"
 
