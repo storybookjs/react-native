@@ -1,3 +1,5 @@
+import '@storybook/core/env';
+
 import webpack from 'webpack';
 import program from 'commander';
 import path from 'path';

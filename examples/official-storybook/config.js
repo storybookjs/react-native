@@ -4,7 +4,8 @@ import { setOptions } from '@storybook/addon-options';
 import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
 
-addHeadWarning('Preview');
+addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
+addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 
 setOptions({
   hierarchySeparator: /\/|\./,

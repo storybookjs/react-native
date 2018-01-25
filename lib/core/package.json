@@ -24,6 +24,7 @@
     "autoprefixer": "^7.2.5",
     "babel-runtime": "^6.26.0",
     "css-loader": "^0.28.9",
+    "dotenv": "^4.0.0",
     "events": "^1.1.1",
     "file-loader": "^1.1.6",
     "global": "^4.3.2",
@@ -31,10 +32,10 @@
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.10",
     "prop-types": "^15.5.10",
+    "qs": "^6.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "style-loader": "^0.19.1",
-    "qs": "^6.5.1",
     "url-loader": "^0.6.2"
   },
   "devDependencies": {

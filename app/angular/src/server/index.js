@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+import '@storybook/core/env';
 
 import express from 'express';
 import https from 'https';
