@@ -298,9 +298,9 @@
   version "4.14.92"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.92.tgz#6e3cb0b71a1e12180a47a42a744e856c3ae99a57"
 
-"@types/lodash@^4.14.95":
-  version "4.14.95"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.95.tgz#02c170690719bbaca8293d9c8cdcccb565728081"
+"@types/lodash@^4.14.96":
+  version "4.14.96"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.96.tgz#49a402bb6984af7dd9a48cea3781744a3774bff1"
 
 "@types/mz@0.0.32":
   version "0.0.32"
