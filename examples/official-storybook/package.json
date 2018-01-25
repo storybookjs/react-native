@@ -34,7 +34,7 @@
     "format-json": "^1.0.3",
     "global": "^4.3.2",
     "jest": "^21.2.1",
-    "paths.macro": "^1.0.1",
+    "paths.macro": "^2.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-chromatic": "^0.7.9",

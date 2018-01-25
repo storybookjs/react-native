@@ -60,7 +60,6 @@
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
-    "paths.macro": "^1.0.1",
     "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-loader": "^2.0.10",
     "prop-types": "^15.6.0",

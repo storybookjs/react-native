@@ -61,7 +61,6 @@
     "json-stringify-safe": "^5.0.1",
     "json5": "^0.5.1",
     "lodash.pick": "^4.4.0",
-    "paths.macro": "^1.0.1",
     "polymer-webpack-loader": "2.0.1",
     "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-loader": "^2.0.8",
