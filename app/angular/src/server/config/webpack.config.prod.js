@@ -1,6 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { managerPath } from '@storybook/core/client';
 
@@ -29,6 +31,7 @@ export default function(configDir) {
       publicPath: '',
     },
     plugins: [
+      new InterpolateHtmlPlugin(process.env),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
@@ -65,6 +68,7 @@ export default function(configDir) {
         /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
         path.resolve(__dirname, '../src')
       ),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [

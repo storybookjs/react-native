@@ -1,5 +1,7 @@
 import webpack from 'webpack';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { managerPath } from '@storybook/core/client';
 import babelLoaderConfig from './babel.prod';
@@ -27,6 +29,7 @@ export default function(configDir) {
       publicPath: '',
     },
     plugins: [
+      new InterpolateHtmlPlugin(process.env),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
@@ -59,6 +62,7 @@ export default function(configDir) {
           },
         },
       }),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [
