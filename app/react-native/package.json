@@ -73,11 +73,11 @@
     "ws": "^3.3.3"
   },
   "devDependencies": {
-    "react-native": "^0.52.1"
+    "react-native": "^0.52.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "react": "*",
-    "react-native": "0.52.1"
+    "react-native": "0.52.2"
   }
 }
