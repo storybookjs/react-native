@@ -1,3 +1,10 @@
+# 3.3.11
+
+2018-January-26
+
+#### Bug Fixes
+
+-   Angular: update helpers.ts [#2777](https://github.com/storybooks/storybook/pull/2777)
 # 3.4.0-alpha.5
 
 2018-January-19
