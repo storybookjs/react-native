@@ -2,6 +2,15 @@
 
 2018-January-27
 
+#### Features
+
+-   Pass default webpack config as third argument in Full Control Mode [#2796](https://github.com/storybooks/storybook/pull/2796)
+
+#### Bug Fixes
+
+-   Angular: remove entryComponents prop from metadata [#2790](https://github.com/storybooks/storybook/pull/2790)
+-   Use process.exitCode instead of process.exit() [#2717](https://github.com/storybooks/storybook/pull/2717)
+
 #### Documentation
 
 -   Extending webpack section is no longer needed for the common usage [#2826](https://github.com/storybooks/storybook/pull/2826)
@@ -99,19 +108,6 @@
 -   Upgraded `gatsby` in `/docs` from "1.9.158" to "1.9.164" [#2799](https://github.com/storybooks/storybook/pull/2799)
 
 </details>
-
-#### Other
-
--   Improve dotenv file support [#2820](https://github.com/storybooks/storybook/pull/2820)
--   Update index.md [#2814](https://github.com/storybooks/storybook/pull/2814)
--   Update README.md [#2811](https://github.com/storybooks/storybook/pull/2811)
--   Spelling fixes [#2795](https://github.com/storybooks/storybook/pull/2795)
--   Fix wrong package name [#2803](https://github.com/storybooks/storybook/pull/2803)
--   Update README.md [#2801](https://github.com/storybooks/storybook/pull/2801)
--   Pass default webpack config as third argument in Full Control Mode [#2796](https://github.com/storybooks/storybook/pull/2796)
--   Fixed Spelling Error [#2793](https://github.com/storybooks/storybook/pull/2793)
--   remove entryComponents prop from metadata [#2790](https://github.com/storybooks/storybook/pull/2790)
--   using process.exitCode instead of process.exit() [#2717](https://github.com/storybooks/storybook/pull/2717)
 
 # 3.3.11
 
