@@ -7,7 +7,7 @@
   },
   "private": true,
   "dependencies": {
-    "@polymer/polymer": "^2.2.0",
+    "@polymer/polymer": "^2.4.0",
     "@storybook/addon-actions": "^3.4.0-alpha.6",
     "@storybook/addon-knobs": "^3.4.0-alpha.6",
     "@storybook/addon-notes": "^3.4.0-alpha.6",
