@@ -235,9 +235,9 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@polymer/polymer@^2.2.0":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-2.3.1.tgz#1300123c5060bdc75b32dd3ed986abca25482000"
+"@polymer/polymer@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-2.4.0.tgz#a6151e43a72141bc39e9e2c420d04f702a923cf3"
 
 "@schematics/angular@~0.1.17":
   version "0.1.17"
