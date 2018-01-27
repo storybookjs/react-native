@@ -19,7 +19,7 @@
 
 #### Maintenance
 
--   ADD autolabeler.yml for https://github.com/probot/autolabeler [#2809](https://github.com/storybooks/storybook/pull/2809)
+-   ADD autolabeler.yml for <https://github.com/probot/autolabeler> [#2809](https://github.com/storybooks/storybook/pull/2809)
 -   Fix css warning in angular-cli example [#2789](https://github.com/storybooks/storybook/pull/2789)
 -   Move more things to core [#2788](https://github.com/storybooks/storybook/pull/2788)
 

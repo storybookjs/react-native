@@ -79,7 +79,7 @@ const createComponentFromTemplate = (template: string): Function => {
 const initModule = (
   currentStory: IGetStoryWithContext,
   context: IContext,
-  reRender: boolean = false,
+  reRender: boolean = false
 ): Function => {
   const storyObj = currentStory(context);
   const { component, template, props, moduleMetadata = {} } = storyObj;
