@@ -1,8 +1,9 @@
-const fs = require('fs');
+/* eslint-disable no-console */
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
 const log = require('npmlog');
+const { tscfy } = require('./compile-ts');
 
 const modulePath = path.resolve('./');
 // eslint-disable-next-line import/no-dynamic-require
@@ -30,23 +31,6 @@ function babelify() {
   }
 }
 
-function tscify() {
-  if (!fs.existsSync('tsconfig.json')) {
-    return;
-  }
-
-  const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
-  const args = ['--outDir dist', '-d true'].join(' ');
-
-  const command = `${tsc} ${args}`;
-  const { code } = shell.exec(command, { silent: true });
-
-  if (code !== 0) {
-    log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);
-    shell.exit(code);
-  }
-}
-
 function copyLicence() {
   const licence = path.join(__dirname, '..', 'LICENSE');
   shell.cp(licence, './');
@@ -54,8 +38,7 @@ function copyLicence() {
 
 removeDist();
 babelify();
-tscify();
+tscfy();
 copyLicence();
 
-// eslint-disable-next-line no-console
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));
