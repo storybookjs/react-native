@@ -17,6 +17,18 @@ function removeDist() {
   shell.rm('-rf', 'dist');
 }
 
+function removeTsFromDist() {
+  // add .ts filtering to babel args and remove after babel - 7 is adopted
+  // --copy-files option doesn't work with --ignore
+  // https://github.com/babel/babel/issues/5404
+
+  const tsFiles = shell.find('dist').filter(tsFile => tsFile.match(/\.ts$/));
+
+  if (tsFiles.length) {
+    shell.rm(tsFiles);
+  }
+}
+
 function copyLicence() {
   const licence = path.join(__dirname, '..', 'LICENSE');
   shell.cp(licence, './');
@@ -32,6 +44,7 @@ const packageJson = getPackageJson();
 
 removeDist();
 babelify({ errorCallback: () => logError('js', packageJson) });
+removeTsFromDist();
 tscfy({ errorCallback: () => logError('ts', packageJson) });
 copyLicence();
 
