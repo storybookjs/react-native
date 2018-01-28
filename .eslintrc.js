@@ -88,6 +88,5 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': error,
     'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
     'react/no-unescaped-entities': ignore,
-    'linebreak-style': ignore,
   },
 };
