@@ -1,10 +1,8 @@
-/* eslint-disable no-console */
 const path = require('path');
 const shell = require('shelljs');
-// const log = require('npmlog');
 
 function babelify(options = {}) {
-  const { watch = false, silent = true } = options;
+  const { watch = false, silent = true, errorCallback } = options;
 
   const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
   const args = [
@@ -22,8 +20,10 @@ function babelify(options = {}) {
   const { code } = shell.exec(command, { silent });
 
   if (code !== 0) {
-    // log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);
-    console.error('Failed to compile js');
+    if (errorCallback && typeof errorCallback === 'function') {
+      errorCallback();
+    }
+
     shell.exit(code);
   }
 }

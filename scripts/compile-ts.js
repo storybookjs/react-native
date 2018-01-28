@@ -2,10 +2,9 @@
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
-// const log = require('npmlog');
 
 function tscfy(options = {}) {
-  const { watch = false, silent = true } = options;
+  const { watch = false, silent = true, errorCallback } = options;
   const tsConfigFile = 'tsconfig.json';
 
   if (!fs.existsSync(tsConfigFile)) {
@@ -32,8 +31,10 @@ function tscfy(options = {}) {
   const { code } = shell.exec(command, { silent });
 
   if (code !== 0) {
-    // log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);
-    console.error('Failed to compile ts');
+    if (errorCallback && typeof errorCallback === 'function') {
+      errorCallback();
+    }
+
     shell.exit(code);
   }
 }
