@@ -18,6 +18,11 @@ module.exports = {
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts'],
+      },
+    },
   },
   rules: {
     strict: [error, 'never'],
@@ -83,5 +88,6 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': error,
     'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
     'react/no-unescaped-entities': ignore,
+    'linebreak-style': ignore,
   },
 };

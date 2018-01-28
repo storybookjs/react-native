@@ -9,7 +9,7 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { addSerializer } from 'jest-specific-snapshot';
-import { initModuleData } from './helpers.ts';
+import { initModuleData } from './helpers';
 
 addSerializer(HTMLCommentSerializer);
 addSerializer(AngularSnapshotSerializer);
