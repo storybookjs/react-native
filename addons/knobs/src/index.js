@@ -9,6 +9,7 @@ import {
   array,
   boolean,
   button,
+  files,
   color,
   date,
   knob,
@@ -19,7 +20,7 @@ import {
   text,
 } from './base';
 
-export { knob, text, boolean, number, color, object, array, date, button, select };
+export { knob, text, boolean, number, color, object, array, date, button, files, select };
 
 deprecate(() => {},
 'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}');

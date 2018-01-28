@@ -61,3 +61,7 @@ export function date(name, value = new Date()) {
 export function button(name, callback) {
   return manager.knob(name, { type: 'button', callback, hideLabel: true });
 }
+
+export function files(name, value = []) {
+  return manager.knob(name, { type: 'files', value });
+}

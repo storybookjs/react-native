@@ -11,10 +11,11 @@ import {
   date,
   select,
   button,
+  files,
   manager,
 } from '../base';
 
-export { knob, text, boolean, number, color, object, array, date, select, button };
+export { knob, text, boolean, number, color, object, array, date, select, button, files };
 
 export const vueHandler = (channel, knobStore) => getStory => context => ({
   data() {
