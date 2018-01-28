@@ -16,7 +16,7 @@
     "coverage": "codecov",
     "danger": "danger",
     "dev": "concurrently --kill-others \"yarn dev:ts\" \"yarn dev:js\"",
-    "dev:js": "lerna exec --parallel -- babel src -d dist --copy-files --ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__ --plugins \"transform-runtime\" -w",
+    "dev:js": "lerna exec --parallel -- node %LERNA_ROOT_PATH%/scripts/watch-js.js",
     "dev:ts": "lerna exec --parallel -- node %LERNA_ROOT_PATH%/scripts/watch-ts.js",
     "docs:build": "npm --prefix docs run build",
     "docs:deploy:ci": "npm --prefix docs run deploy:ci",

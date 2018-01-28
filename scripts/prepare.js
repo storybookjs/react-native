@@ -2,39 +2,26 @@
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
-const log = require('npmlog');
+const { babelify } = require('./compile-js');
 const { tscfy } = require('./compile-ts');
 
-const modulePath = path.resolve('./');
-// eslint-disable-next-line import/no-dynamic-require
-const packageJson = require(path.join(modulePath, 'package.json'));
+function getPackageJson() {
+  const modulePath = path.resolve('./');
+
+  // eslint-disable-next-line global-require,import/no-dynamic-require
+  return require(path.join(modulePath, 'package.json'));
+}
 
 function removeDist() {
   shell.rm('-rf', 'dist');
-}
-
-function babelify() {
-  const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
-  const args = [
-    '--ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__',
-    '--plugins "transform-runtime"',
-    './src --out-dir ./dist',
-    '--copy-files',
-  ].join(' ');
-
-  const command = `${babel} ${args}`;
-  const { code } = shell.exec(command, { silent: true });
-
-  if (code !== 0) {
-    log.error(`FAILED: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`);
-    shell.exit(code);
-  }
 }
 
 function copyLicence() {
   const licence = path.join(__dirname, '..', 'LICENSE');
   shell.cp(licence, './');
 }
+
+const packageJson = getPackageJson();
 
 removeDist();
 babelify();
