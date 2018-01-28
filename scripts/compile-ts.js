@@ -3,6 +3,27 @@ const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
 
+function getCommand(watch) {
+  const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
+  const args = ['--outDir dist', '-d true', '--listEmittedFiles true'];
+
+  if (watch) {
+    args.push('-w');
+  }
+
+  return `${tsc} ${args.join(' ')}`;
+}
+
+function handleExit(code, errorCallback) {
+  if (code !== 0) {
+    if (errorCallback && typeof errorCallback === 'function') {
+      errorCallback();
+    }
+
+    shell.exit(code);
+  }
+}
+
 function tscfy(options = {}) {
   const { watch = false, silent = true, errorCallback } = options;
   const tsConfigFile = 'tsconfig.json';
@@ -20,23 +41,10 @@ function tscfy(options = {}) {
     return;
   }
 
-  const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
-  const args = ['--outDir dist', '-d true', '--listEmittedFiles true'];
-
-  if (watch) {
-    args.push('-w');
-  }
-
-  const command = `${tsc} ${args.join(' ')}`;
+  const command = getCommand(watch);
   const { code } = shell.exec(command, { silent });
 
-  if (code !== 0) {
-    if (errorCallback && typeof errorCallback === 'function') {
-      errorCallback();
-    }
-
-    shell.exit(code);
-  }
+  handleExit(code, errorCallback);
 }
 
 module.exports = {
