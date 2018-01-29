@@ -3,9 +3,6 @@
   "include": [
     "src/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ],
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "src"
