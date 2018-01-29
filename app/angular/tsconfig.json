@@ -5,6 +5,6 @@
   ],
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": "src"
+    "rootDir": "./src"
   }
 }
