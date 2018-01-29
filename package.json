@@ -36,6 +36,11 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
+    "@angular/common": "^5.2.2",
+    "@angular/compiler": "^5.2.2",
+    "@angular/core": "^5.2.2",
+    "@angular/platform-browser": "^5.2.2",
+    "@angular/platform-browser-dynamic": "^5.2.2",
     "@types/lodash": "^4.14.97",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
