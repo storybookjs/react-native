@@ -72,8 +72,8 @@ const createComponentFromTemplate = (template: string, styles: string[]): Functi
   const componentClass = class DynamicComponent {};
 
   return Component({
-    template: template,
-    styles: styles,
+    template,
+    styles,
   })(componentClass);
 };
 
