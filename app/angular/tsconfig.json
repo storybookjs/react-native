@@ -1,7 +1,10 @@
 {
   "extends": "../../tsconfig.json",
-  "include" : [
+  "include": [
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ],
   "compileOnSave": false,
   "compilerOptions": {
