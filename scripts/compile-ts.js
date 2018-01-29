@@ -5,6 +5,7 @@ const shell = require('shelljs');
 
 function getCommand(watch) {
   const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
+
   const args = ['--outDir dist', '-d true', '--listEmittedFiles true'];
 
   if (watch) {
