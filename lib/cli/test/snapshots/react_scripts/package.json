@@ -16,10 +16,10 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/react": "^3.4.0-alpha.5",
-    "@storybook/addon-actions": "^3.4.0-alpha.5",
-    "@storybook/addon-links": "^3.4.0-alpha.5",
-    "@storybook/addons": "^3.4.0-alpha.5",
+    "@storybook/react": "^3.4.0-alpha.6",
+    "@storybook/addon-actions": "^3.4.0-alpha.6",
+    "@storybook/addon-links": "^3.4.0-alpha.6",
+    "@storybook/addons": "^3.4.0-alpha.6",
     "babel-core": "^6.26.0"
   }
 }

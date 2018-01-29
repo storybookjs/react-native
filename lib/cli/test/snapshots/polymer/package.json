@@ -12,6 +12,6 @@
     "@polymer/polymer": "^2.2.0"
   },
   "devDependencies": {
-    "@storybook/polymer": "^3.4.0-alpha.5"
+    "@storybook/polymer": "^3.4.0-alpha.6"
   }
 }

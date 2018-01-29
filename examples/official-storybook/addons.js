@@ -11,4 +11,4 @@ import '@storybook/addon-jest/register';
 
 import addHeadWarning from './head-warning';
 
-addHeadWarning('Manager');
+addHeadWarning('Manager head not loaded', 'manager-head-not-loaded');

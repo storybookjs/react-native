@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.4.0-alpha.5",
+  "version": "3.4.0-alpha.6",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -25,12 +25,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.5",
-    "@storybook/addon-links": "^3.4.0-alpha.5",
-    "@storybook/addons": "^3.4.0-alpha.5",
-    "@storybook/channel-websocket": "^3.4.0-alpha.5",
-    "@storybook/core": "^3.4.0-alpha.5",
-    "@storybook/ui": "^3.4.0-alpha.5",
+    "@storybook/addon-actions": "^3.4.0-alpha.6",
+    "@storybook/addon-links": "^3.4.0-alpha.6",
+    "@storybook/addons": "^3.4.0-alpha.6",
+    "@storybook/channel-websocket": "^3.4.0-alpha.6",
+    "@storybook/core": "^3.4.0-alpha.6",
+    "@storybook/ui": "^3.4.0-alpha.6",
     "autoprefixer": "^7.2.5",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -61,7 +61,7 @@
     "react-native-compat": "^1.0.0",
     "react-native-iphone-x-helper": "^1.0.1",
     "shelljs": "^0.8.1",
-    "style-loader": "^0.19.1",
+    "style-loader": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "url-parse": "^1.1.9",
@@ -73,11 +73,11 @@
     "ws": "^3.3.3"
   },
   "devDependencies": {
-    "react-native": "^0.52.1"
+    "react-native": "^0.52.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "react": "*",
-    "react-native": "0.52.1"
+    "react-native": "0.52.2"
   }
 }
