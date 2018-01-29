@@ -45,7 +45,7 @@ const packageJson = getPackageJson();
 removeDist();
 babelify({ errorCallback: () => logError('js', packageJson) });
 removeTsFromDist();
-tscfy({ errorCallback: () => logError('ts', packageJson) });
+tscfy({ silent: false, errorCallback: () => logError('ts', packageJson) });
 copyLicence();
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));
