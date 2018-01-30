@@ -48,9 +48,9 @@ export function object(name, value) {
 
 export function select(name, options, value) {
   return deprecate(
-    manager.knob(name, { type: 'select', options, value }),
+    manager.knob.bind(manager),
     'in v4 keys/values of the options argument are reversed'
-  );
+  )(name, { type: 'select', options, value });
 }
 
 export function selectV2(name, options, value) {
