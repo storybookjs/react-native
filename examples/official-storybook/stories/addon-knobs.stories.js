@@ -78,9 +78,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
     const birthday = date('Birthday', defaultBirthday);
 
-    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.${
-      otherFruit === 'None' ? '' : ` I also enjoy ${otherFruit}`
-    }`;
+    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
     const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
