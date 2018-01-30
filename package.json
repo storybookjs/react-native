@@ -71,7 +71,7 @@
     "jest-config": "^22.1.4",
     "jest-diff": "^22.1.0",
     "jest-environment-jsdom": "^22.1.4",
-    "jest-enzyme": "^4.0.2",
+    "jest-enzyme": "^4.1.0",
     "jest-image-snapshot": "^2.3.0",
     "jest-jasmine2": "^22.1.4",
     "jest-preset-angular": "^5.0.0",
