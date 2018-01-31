@@ -12,16 +12,20 @@ setOptions({
   hierarchyRootSeparator: /\|/,
 });
 
+function importAll(req) {
+  req.keys().forEach(filename => req(filename));
+}
+
 function loadStories() {
   let req;
   req = require.context('../../lib/ui/src', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
+  importAll(req);
 
   req = require.context('../../lib/components/src', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
+  importAll(req);
 
   req = require.context('./stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
+  importAll(req);
 }
 
 configure(loadStories, module);
