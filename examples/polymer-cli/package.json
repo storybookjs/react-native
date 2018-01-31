@@ -1,11 +1,11 @@
 {
   "name": "polymer-cli",
   "version": "3.4.0-alpha.6",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "private": true,
   "dependencies": {
     "@polymer/polymer": "^2.4.0",
     "@storybook/addon-actions": "^3.4.0-alpha.6",

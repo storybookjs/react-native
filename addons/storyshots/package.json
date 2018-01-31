@@ -11,9 +11,9 @@
   },
   "scripts": {
     "build-storybook": "build-storybook",
+    "example": "jest storyshot.test",
     "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 6006",
-    "example": "jest storyshot.test"
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@storybook/channels": "^3.4.0-alpha.6",
