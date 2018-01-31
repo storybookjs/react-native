@@ -46,12 +46,10 @@ export function object(name, value) {
   return manager.knob(name, { type: 'object', value });
 }
 
-export function select(name, options, value) {
-  return deprecate(
-    manager.knob.bind(manager),
-    'in v4 keys/values of the options argument are reversed'
-  )(name, { type: 'select', options, value });
-}
+export const select = deprecate(
+  (name, options, value) => manager.knob(name, { type: 'select', options, value }),
+  'in v4 keys/values of the options argument are reversed'
+);
 
 export function selectV2(name, options, value) {
   return manager.knob(name, { type: 'select', selectV2: true, options, value });
