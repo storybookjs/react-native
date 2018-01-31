@@ -76,6 +76,14 @@ In order for the snapshot-integration tests to be executed properly, examples be
 
 Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
 
+##### CRA-kitchen-sink - Image snapshots using Storyshots
+
+`yarn test --image`
+
+This option executes tests from `<rootdir>/examples/cra-kitchen-sink`
+In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date.
+
+Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images. (just like integration tests)
 
 #### 2b. Run e2e tests for CLI
 

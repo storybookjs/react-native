@@ -83,6 +83,8 @@ export default class Preview {
         webUrl = `${httpType}://${host}${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
+
+        channel.emit('channelCreated');
       }
       channel.on('getStories', () => this._sendSetStories());
       channel.on('setCurrentStory', d => this._selectStory(d));

@@ -1,6 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-
 import { configure } from '@storybook/angular';
+import addCssWarning from '../src/cssWarning';
+
+addCssWarning();
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed

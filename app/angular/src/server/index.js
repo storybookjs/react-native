@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+import '@storybook/core/env';
 
 import express from 'express';
 import https from 'https';
@@ -8,13 +8,12 @@ import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
 import shelljs from 'shelljs';
+import { logger } from '@storybook/node-logger';
 import storybook, { webpackValid } from './middleware';
 import packageJson from '../../package.json';
 import { parseList, getEnvConfig } from './utils';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-const logger = console;
 
 program
   .version(packageJson.version)
@@ -105,7 +104,7 @@ if (program.staticDir) {
       logger.error(`Error: no such directory to load static files: ${staticPath}`);
       process.exit(-1);
     }
-    logger.log(`=> Loading static files from: ${staticPath} .`);
+    logger.info(`=> Loading static files from: ${staticPath} .`);
     app.use(express.static(staticPath, { index: false }));
 
     const faviconPath = path.resolve(staticPath, 'favicon.ico');
@@ -120,8 +119,6 @@ if (!hasCustomFavicon) {
   app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
 }
 
-// Build the webpack configuration using the `baseConfig`
-// custom `.babelrc` file and `webpack.config.js` files
 const configDir = program.configDir || './.storybook';
 
 // The repository info is sent to the storybook while running on

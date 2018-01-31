@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'addon-gallery'
-
-## title: 'Addon Gallery'
+title: 'Addon Gallery'
+---
 
 This is a list of available addons for Storybook.
 
@@ -50,7 +49,7 @@ You need to install these addons directly from NPM in order to use them.
 ### [Readme](https://github.com/tuchk4/storybook-readme)
 
 With this addon, you can add docs in markdown format for each story.
-It very useful because most projects and components already have README.md files.
+It's very useful because most projects and components already have README.md files.
 Now it is easy to add them into your Storybook.
 
 ### [Story-router](https://github.com/gvaldambrini/storybook-router)
