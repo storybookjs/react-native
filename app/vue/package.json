@@ -77,7 +77,7 @@
     "util-deprecate": "^1.0.2",
     "uuid": "^3.2.1",
     "vue-hot-reload-api": "^2.2.4",
-    "vue-style-loader": "^3.1.1",
+    "vue-style-loader": "^3.1.2",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"

@@ -15327,6 +15327,13 @@ vue-style-loader@^3.1.1:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue-style-loader@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.1.2.tgz#6b66ad34998fc9520c2f1e4d5fa4091641c1597a"
+  dependencies:
+    hash-sum "^1.0.2"
+    loader-utils "^1.0.2"
+
 vue-template-compiler@^2.5.13:
   version "2.5.13"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.13.tgz#12a2aa0ecd6158ac5e5f14d294b0993f399c3d38"
