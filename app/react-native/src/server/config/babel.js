@@ -11,6 +11,7 @@ module.exports = {
     require.resolve('babel-preset-react'),
   ],
   plugins: [
+    require.resolve('babel-plugin-macros'),
     require.resolve('babel-plugin-syntax-trailing-function-commas'),
     require.resolve('babel-plugin-syntax-async-functions'),
     require.resolve('babel-plugin-transform-class-properties'),
