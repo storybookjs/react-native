@@ -34,7 +34,7 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.97",
+    "@types/lodash": "^4.14.98",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -42,6 +42,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-plugin-macros": "^2.1.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.3.0",
@@ -71,7 +72,7 @@
     "jest-config": "^22.1.4",
     "jest-diff": "^22.1.0",
     "jest-environment-jsdom": "^22.1.4",
-    "jest-enzyme": "^4.0.2",
+    "jest-enzyme": "^4.1.0",
     "jest-image-snapshot": "^2.3.0",
     "jest-jasmine2": "^22.1.4",
     "jest-preset-angular": "^5.0.0",
