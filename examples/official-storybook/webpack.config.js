@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = baseConfig => {
-  const originJsRule = baseConfig.module.rules.find(rule => rule.test.test('text.js'));
+  const originalJsRule = baseConfig.module.rules.find(rule => rule.test.test('text.js'));
 
-  if (originJsRule) {
-    originJsRule.exclude.push(/\.stories\.jsx?$/);
+  if (originalJsRule) {
+    originalJsRule.exclude.push(/\.stories\.jsx?$/);
   }
 
   baseConfig.module.rules.push({

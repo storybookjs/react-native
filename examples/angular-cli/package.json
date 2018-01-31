@@ -33,6 +33,7 @@
     "@storybook/addon-actions": "^3.4.0-alpha.6",
     "@storybook/addon-links": "^3.4.0-alpha.6",
     "@storybook/addon-notes": "^3.4.0-alpha.6",
+    "@storybook/addon-stories": "^3.4.0-alpha.6",
     "@storybook/addon-storyshots": "^3.4.0-alpha.6",
     "@storybook/addons": "^3.4.0-alpha.6",
     "@storybook/angular": "^3.4.0-alpha.6",
