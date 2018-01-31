@@ -30,7 +30,7 @@
     "css-loader": "^0.28.9",
     "file-loader": "^1.1.6",
     "vue-hot-reload-api": "^2.2.4",
-    "vue-loader": "^13.7.0",
+    "vue-loader": "^13.7.1",
     "vue-style-loader": "^3.1.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
