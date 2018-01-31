@@ -10,9 +10,9 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
+    "build-storybook": "build-storybook",
     "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "glamor": "^2.20.40",
