@@ -233,7 +233,6 @@ storiesOf('Addon Knobs', module)
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
     const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
 
-
     button('Arbitrary action', action('You clicked it!'));
 
     return {

@@ -1,12 +1,13 @@
 {
   "name": "official-storybook",
   "version": "3.4.0-alpha.6",
+  "private": true,
   "scripts": {
     "build-storybook": "build-storybook -c ./",
-    "storybook": "start-storybook -p 9010 -c ./",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
-    "image-snapshots": "yarn run build-storybook && jest --projects=./image-snapshots"
+    "image-snapshots": "yarn run build-storybook && jest --projects=./image-snapshots",
+    "storybook": "start-storybook -p 9010 -c ./"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.4.0-alpha.6",
@@ -33,11 +34,11 @@
     "format-json": "^1.0.3",
     "global": "^4.3.2",
     "jest": "^21.2.1",
+    "paths.macro": "^2.0.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-chromatic": "^0.7.9",
     "react-dom": "^16.2.0",
     "uuid": "^3.2.1"
-  },
-  "private": true
+  }
 }
