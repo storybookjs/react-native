@@ -122,6 +122,30 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 ![Screenshot](docs/storyshots.png)
 
 
+### Using `createNodeMock` to mock refs
+
+`react-test-renderer` doesn't provide refs for rendered components. By
+default, it returns null when the refs are referenced. In order to mock
+out elements that rely on refs, you will have to use the
+`createNodeMock` option [added to React](https://reactjs.org/blog/2016/11/16/react-v15.4.0.html#mocking-refs-for-snapshot-testing) starting with version 15.4.0.
+
+Here is an example of how to specify the `createNodeMock` option in Storyshots:
+
+```js
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots'
+import TextareaThatUsesRefs from '../component/TextareaThatUsesRefs'
+
+initStoryshots({
+  test: snapshotWithOptions({
+    createNodeMock: (element) => {
+      if (element.type === TextareaThatUsesRefs) {
+        return document.createElement('textarea')
+      }
+    },
+  }),
+})
+```
+
 ## Configure Storyshots for image snapshots ( alpha )
 
 /*\ **React-native** is **not supported** by this test function.
