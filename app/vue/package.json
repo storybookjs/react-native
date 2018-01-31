@@ -71,7 +71,7 @@
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.8.1",
     "style-loader": "^0.20.1",
-    "uglifyjs-webpack-plugin": "^1.1.6",
+    "uglifyjs-webpack-plugin": "^1.1.7",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.2.1",
