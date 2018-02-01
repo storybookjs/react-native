@@ -41,6 +41,14 @@ function isRelativeRequest(request) {
   );
 }
 
+function getFullPath(dirname, request) {
+  if (isRelativeRequest(request) || !process.env.NODE_PATH) {
+    return path.resolve(dirname, request);
+  }
+
+  return path.resolve(process.env.NODE_PATH, request);
+}
+
 export default function runWithRequireContext(content, options) {
   const { filename, dirname } = options;
 
@@ -52,21 +60,13 @@ export default function runWithRequireContext(content, options) {
     return require(request); // eslint-disable-line
   };
 
-  const getFullPath = directory => {
-    if (process.env.NODE_PATH) {
-      return path.resolve(process.env.NODE_PATH, directory);
-    }
-
-    return path.resolve(dirname, directory);
-  };
-
   newRequire.resolve = require.resolve;
   newRequire.extensions = require.extensions;
   newRequire.main = require.main;
   newRequire.cache = require.cache;
 
   newRequire.context = (directory, useSubdirectories = false, regExp = /^\.\//) => {
-    const fullPath = getFullPath(directory);
+    const fullPath = getFullPath(dirname, directory);
 
     const keys = {};
     requireModules(keys, fullPath, '.', regExp, useSubdirectories);
