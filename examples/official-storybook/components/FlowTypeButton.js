@@ -2,11 +2,11 @@
 import React from 'react';
 
 type PropsType = {
-  /** The text to be rendered in the button */
-  label: string,
+  /** A multi-type prop to be rendered in the button */
+  label: string | number,
   /** Function to be called when the button is clicked */
   onClick?: Function,
-  /** Boolean representing wether the button is disabled */
+  /** Boolean representing whether the button is disabled */
   disabled?: boolean,
 };
 

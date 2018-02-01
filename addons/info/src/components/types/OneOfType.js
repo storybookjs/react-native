@@ -4,15 +4,15 @@ import PrettyPropType from './PrettyPropType';
 import { TypeInfo } from './proptypes';
 
 const OneOfType = ({ propType }) => {
-  const { length } = propType.value;
+  const propTypes = propType.elements || propType.value;
   return (
     <span>
-      {propType.value
+      {propTypes
         .map((value, i) => {
           const key = `${value.name}${value.value ? `-${value.value}` : ''}`;
           return [
             <PrettyPropType key={key} propType={value} />,
-            i < length - 1 ? <span key={`${key}-separator`}> | </span> : null,
+            i < propTypes.length - 1 ? <span key={`${key}-separator`}> | </span> : null,
           ];
         })
         .reduce((acc, tuple) => acc.concat(tuple), [])}
