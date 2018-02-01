@@ -19,6 +19,7 @@ program
   .option('-s, --static-dir <dir-names>', 'Directory where to load static files from', parseList)
   .option('-o, --output-dir [dir-name]', 'Directory where to store built files')
   .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')
+  .option('-w, --watch', 'Enable watch mode')
   .option('-d, --db-path [db-file]', 'DEPRECATED!')
   .option('--enable-db', 'DEPRECATED!')
   .parse(process.argv);
@@ -73,13 +74,20 @@ if (program.staticDir) {
 
 // compile all resources with webpack and write them to the disk.
 logger.info('Building storybook ...');
-webpack(config).run((err, stats) => {
+const webpackCb = (err, stats) => {
   if (err || stats.hasErrors()) {
     logger.error('Failed to build the storybook');
     // eslint-disable-next-line no-unused-expressions
     err && logger.error(err.message);
     // eslint-disable-next-line no-unused-expressions
-    stats.hasErrors() && stats.toJson().errors.forEach(e => logger.error(e));
-    process.exit(1);
+    stats && stats.hasErrors() && stats.toJson().errors.forEach(e => logger.error(e));
+    process.exitCode = 1;
   }
-});
+  logger.info('Building storybook completed.');
+};
+const compiler = webpack(config);
+if (program.watch) {
+  compiler.watch({}, webpackCb);
+} else {
+  compiler.run(webpackCb);
+}
