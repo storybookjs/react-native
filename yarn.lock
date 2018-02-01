@@ -12223,9 +12223,9 @@ react-scripts@^1.1.0:
   optionalDependencies:
     fsevents "1.1.2"
 
-react-split-pane@^0.1.74:
-  version "0.1.74"
-  resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.74.tgz#cf79fc98b51ab0763fdc778749b810a102b036ca"
+react-split-pane@^0.1.75:
+  version "0.1.76"
+  resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.76.tgz#b2ba11e1055e18b6b0fd56e13e3adb35aec87af6"
   dependencies:
     "@types/inline-style-prefixer" "^3.0.0"
     "@types/react" "^16.0.18"
