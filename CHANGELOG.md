@@ -1,3 +1,15 @@
+# 3.3.12
+
+2018-February-02
+
+#### Bug Fixes
+
+-   Fix browser navigation again [#2870](https://github.com/storybooks/storybook/pull/2870)
+
+#### Dependency Upgrades
+
+-   Update url-loader from 0.5.8 to 0.6.2 in app/angular [#2847](https://github.com/storybooks/storybook/pull/2847)
+
 # 3.4.0-alpha.6
 
 2018-January-27
