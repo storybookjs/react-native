@@ -1,4 +1,4 @@
-import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers.ts';
+import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers';
 
 const logger = console;
 let previousKind = '';
