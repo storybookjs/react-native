@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import jsx from 'react-syntax-highlighter/languages/prism/jsx';
+import { darcula } from 'react-syntax-highlighter/styles/prism';
 import { EVENT_ID } from './';
+
+registerLanguage('jsx', jsx);
 
 export default class StoryPanel extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { source: '' };
+    this.state = { source: '// Here will be dragons 🐉' };
 
     const { channel } = props;
 
@@ -19,9 +24,14 @@ export default class StoryPanel extends Component {
 
   render() {
     return (
-      <pre>
-        <code>{this.state.source}</code>
-      </pre>
+      <SyntaxHighlighter
+        language="jsx"
+        showLineNumbers="true"
+        style={darcula}
+        customStyle={{ width: '100%' }}
+      >
+        {this.state.source}
+      </SyntaxHighlighter>
     );
   }
 }

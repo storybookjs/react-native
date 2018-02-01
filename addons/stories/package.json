@@ -20,7 +20,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "react-syntax-highlighter": "^7.0.0"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",
