@@ -103,6 +103,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/common@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.2.3.tgz#f2a5c12ec44b73a248d8dcb2d37ac2749f091cf7"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/compiler-cli@^5.2.2":
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.2.tgz#0929463252adcf3f8094b1689cc5cbdcb6f8ceaa"
