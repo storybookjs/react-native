@@ -15,7 +15,9 @@
     "precommit": "lint-staged",
     "coverage": "codecov",
     "danger": "danger",
-    "dev": "lerna exec --parallel -- babel src -d dist --copy-files --ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__ --plugins \"transform-runtime\" -w",
+    "dev": "concurrently --kill-others \"yarn dev:ts\" \"yarn dev:js\"",
+    "dev:js": "lerna exec --parallel -- node %LERNA_ROOT_PATH%/scripts/watch-js.js",
+    "dev:ts": "lerna exec --parallel -- node %LERNA_ROOT_PATH%/scripts/watch-ts.js",
     "docs:build": "npm --prefix docs run build",
     "docs:deploy:ci": "npm --prefix docs run deploy:ci",
     "docs:deploy:manual": "npm --prefix docs run deploy:manual",
@@ -34,7 +36,12 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.98",
+    "@angular/common": "^5.2.2",
+    "@angular/compiler": "^5.2.2",
+    "@angular/core": "^5.2.2",
+    "@angular/forms": "^5.2.2",
+    "@angular/platform-browser": "^5.2.2",
+    "@angular/platform-browser-dynamic": "^5.2.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -49,6 +56,7 @@
     "codecov": "^3.0.0",
     "codelyzer": "^3.1.2",
     "commander": "^2.13.0",
+    "concurrently": "^3.5.1",
     "cross-env": "^5.1.3",
     "danger": "^2.1.10",
     "enzyme": "^3.3.0",
@@ -98,7 +106,8 @@
     "ts-jest": "^22.0.0",
     "tslint": "~5.9.1",
     "tslint-config-prettier": "^1.6.0",
-    "tslint-plugin-prettier": "^1.3.0"
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^2.7.1"
   },
   "engines": {
     "node": ">=8.0.0",
