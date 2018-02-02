@@ -16,8 +16,7 @@ export default class StoryPanel extends Component {
 
     const { channel } = props;
 
-    channel.on(EVENT_ID, ({ source, context, map }) => {
-      const location = map[context.story];
+    channel.on(EVENT_ID, ({ source, location }) => {
       this.setState({
         source,
         location,
