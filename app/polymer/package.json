@@ -64,7 +64,7 @@
     "lodash.pick": "^4.4.0",
     "polymer-webpack-loader": "2.0.1",
     "postcss-flexbugs-fixes": "^3.3.0",
-    "postcss-loader": "^2.0.8",
+    "postcss-loader": "^2.1.0",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "react": "^16.0.0",
@@ -85,6 +85,6 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.14.12"
   }
 }
