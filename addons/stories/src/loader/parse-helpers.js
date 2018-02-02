@@ -20,9 +20,12 @@ function getKindFromStoryOfNode(object) {
   }
 
   if (kindArgument.type === 'TemplateLiteral') {
+    // we can generate template, but it will not be a real value
+    // until the full template compilation. probably won't fix.
     return '';
   }
 
+  // other options may include some complex usages.
   return '';
 }
 
@@ -53,6 +56,7 @@ export function handleADD(node, parent, adds) {
   const lastArg = addArgs[addArgs.length - 1];
 
   if (storyName.type !== 'Literal') {
+    // if story name is not literal, it much harder to extract it
     return;
   }
 
