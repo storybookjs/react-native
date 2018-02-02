@@ -88,7 +88,7 @@
     "lerna": "2.6.0",
     "lint-staged": "^6.1.0",
     "lodash": "^4.17.4",
-    "nodemon": "^1.14.11",
+    "nodemon": "^1.14.12",
     "npmlog": "^4.1.2",
     "prettier": "^1.10.2",
     "puppeteer": "^0.13.0",
