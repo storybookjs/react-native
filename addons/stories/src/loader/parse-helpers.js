@@ -57,7 +57,7 @@ export function handleADD(node, parent, adds) {
   }
 
   const kind = findRelatedKind(node.object) || '';
-  const key = `${kind}#${storyName.value}`;
+  const key = `${kind}@${storyName.value}`;
 
   // eslint-disable-next-line no-param-reassign
   adds[key] = {
