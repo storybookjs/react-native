@@ -170,7 +170,7 @@ const Message = ({ msg }) => {
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.match(/at(.|\n)+\d+:\d+\)/),
       endTrigger: () => false,
-      grouper: (list, key) => <StackTrace trace={list} />,
+      grouper: (list, key) => <StackTrace key={key} trace={list} />,
     });
 
   return <Pre>{data}</Pre>;
