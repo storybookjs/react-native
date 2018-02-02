@@ -1,10 +1,12 @@
 import fs from 'fs';
 import injectDecorator from './inject-decorator';
 
+const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__, __ADDS_MAP__))';
+
 describe('inject-decorator', () => {
   describe('positive', () => {
     const source = fs.readFileSync('./__mocks__/inject-decorator.stories.txt', 'utf-8');
-    const result = injectDecorator(source);
+    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
 
     it('returns "changed" flag', () => {
       expect(result.changed).toBeTruthy();
@@ -22,7 +24,7 @@ describe('inject-decorator', () => {
   it('will not change the source when there are no "storiesOf" functions', () => {
     const source = fs.readFileSync('./__mocks__/inject-decorator.no-stories.txt', 'utf-8');
 
-    const result = injectDecorator(source);
+    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
 
     expect(result.changed).toBeFalsy();
     expect(result.addsMap).toEqual({});

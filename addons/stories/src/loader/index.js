@@ -1,7 +1,9 @@
 import injectDecorator from './inject-decorator';
 
+const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__, __ADDS_MAP__))';
+
 function transform(source) {
-  const result = injectDecorator(source);
+  const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
 
   if (!result.changed) {
     return source;

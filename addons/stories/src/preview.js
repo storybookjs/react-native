@@ -3,7 +3,7 @@ import { EVENT_ID } from './';
 
 function setStorySource(source, map, context) {
   const channel = addons.getChannel();
-  const location = map[context.story];
+  const location = map[`${context.kind}#${context.story}`];
 
   channel.emit(EVENT_ID, {
     source,

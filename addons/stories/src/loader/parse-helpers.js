@@ -1,0 +1,78 @@
+const STORIES_OF = 'storiesOf';
+
+function pushParts(source, parts, from, to) {
+  const start = source.slice(from, to);
+  parts.push(start);
+
+  const end = source.slice(to);
+  parts.push(end);
+}
+
+function getKindFromStoryOfNode(object) {
+  if (object.arguments.length < 1) {
+    return '';
+  }
+
+  const kindArgument = object.arguments[0];
+
+  if (kindArgument.type === 'Literal') {
+    return kindArgument.value;
+  }
+
+  if (kindArgument.type === 'TemplateLiteral') {
+    return '';
+  }
+
+  return '';
+}
+
+function findRelatedKind(object) {
+  if (!object || !object.callee) {
+    return '';
+  }
+
+  if (object.callee.name === STORIES_OF) {
+    return getKindFromStoryOfNode(object);
+  }
+
+  return findRelatedKind(object.callee.object);
+}
+
+export function handleADD(node, parent, adds) {
+  if (!node.property || !node.property.name || node.property.name.indexOf('add') !== 0) {
+    return;
+  }
+
+  const addArgs = parent.arguments;
+
+  if (!addArgs || addArgs.length < 2) {
+    return;
+  }
+
+  const storyName = addArgs[0];
+  const lastArg = addArgs[addArgs.length - 1];
+
+  if (storyName.type !== 'Literal') {
+    return;
+  }
+
+  const kind = findRelatedKind(node.object) || '';
+  const key = `${kind}#${storyName.value}`;
+
+  // eslint-disable-next-line no-param-reassign
+  adds[key] = {
+    // Debug: code: source.slice(storyName.start, lastArg.end),
+    start: storyName.start,
+    end: lastArg.end,
+  };
+}
+
+export function handleSTORYOF(node, parts, source, lastIndex) {
+  if (!node.callee || !node.callee.name || node.callee.name !== STORIES_OF) {
+    return lastIndex;
+  }
+
+  parts.pop();
+  pushParts(source, parts, lastIndex, node.end);
+  return node.end;
+}
