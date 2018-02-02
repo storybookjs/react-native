@@ -61,7 +61,7 @@
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
     "postcss-flexbugs-fixes": "^3.3.0",
-    "postcss-loader": "^2.0.10",
+    "postcss-loader": "^2.1.0",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "react": "^16.2.0",
