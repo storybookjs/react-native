@@ -36,6 +36,40 @@ function calculateLocations(source, adds) {
   }
 }
 
+function handleADD(node, parent, adds) {
+  if (!node.property || !node.property.name || node.property.name.indexOf('add') !== 0) {
+    return;
+  }
+
+  const addArgs = parent.arguments;
+
+  if (!addArgs || addArgs.length < 2) {
+    return;
+  }
+
+  const storyName = addArgs[0];
+  const lastArg = addArgs[addArgs.length - 1];
+
+  if (storyName.type === 'Literal') {
+    // eslint-disable-next-line no-param-reassign
+    adds[storyName.value] = {
+      // Debug: code: source.slice(storyName.start, lastArg.end),
+      start: storyName.start,
+      end: lastArg.end,
+    };
+  }
+}
+
+function handleSTORYOF(node, parts, source, lastIndex) {
+  if (!node.callee || !node.callee.name || node.callee.name !== 'storiesOf') {
+    return lastIndex;
+  }
+
+  parts.pop();
+  pushParts(source, parts, lastIndex, node.end);
+  return node.end;
+}
+
 function inject(source) {
   const ast = acorn.parse(source, acornConfig);
 
@@ -47,32 +81,11 @@ function inject(source) {
     fallback: 'iteration',
     enter: (node, parent) => {
       if (node.type === 'MemberExpression') {
-        if (!node.property || !node.property.name || node.property.name.indexOf('add') !== 0) {
-          return;
-        }
-
-        const addArgs = parent.arguments;
-
-        if (!addArgs || addArgs.length < 2) {
-          return;
-        }
-
-        const storyName = addArgs[0];
-        const lastArg = addArgs[addArgs.length - 1];
-
-        if (storyName.type === 'Literal') {
-          adds[storyName.value] = {
-            // Debug: code: source.slice(storyName.start, lastArg.end),
-            start: storyName.start,
-            end: lastArg.end,
-          };
-        }
+        handleADD(node, parent, adds);
       }
 
-      if (node.type === 'CallExpression' && node.callee && node.callee.name === 'storiesOf') {
-        parts.pop();
-        pushParts(source, parts, lastIndex, node.end);
-        lastIndex = node.end;
+      if (node.type === 'CallExpression') {
+        lastIndex = handleSTORYOF(node, parts, source, lastIndex);
       }
     },
   });
