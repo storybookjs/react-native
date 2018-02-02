@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
 import jsx from 'react-syntax-highlighter/languages/prism/jsx';
 import { darcula } from 'react-syntax-highlighter/styles/prism';
+import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './';
 
 registerLanguage('jsx', jsx);
@@ -15,11 +16,49 @@ export default class StoryPanel extends Component {
 
     const { channel } = props;
 
-    channel.on(EVENT_ID, ({ source }) => {
+    channel.on(EVENT_ID, ({ source, context, map }) => {
+      const location = map[context.story];
       this.setState({
         source,
+        location,
       });
     });
+
+    this.lineRenderer = this.lineRenderer.bind(this);
+  }
+
+  createPart(rows, stylesheet, useInlineStyles) {
+    return rows.map((node, i) =>
+      createElement({
+        node,
+        stylesheet,
+        useInlineStyles,
+        key: `code-segement${i}`,
+      })
+    );
+  }
+
+  lineRenderer({ rows, stylesheet, useInlineStyles }) {
+    const { location } = this.state;
+
+    if (location) {
+      const first = location.startLoc.line - 1;
+      const last = location.endLoc.line;
+
+      const start = this.createPart(rows.slice(0, first), stylesheet, useInlineStyles);
+      const selected = this.createPart(rows.slice(first, last), stylesheet, useInlineStyles);
+      const end = this.createPart(rows.slice(last), stylesheet, useInlineStyles);
+
+      return (
+        <span>
+          {start}
+          <div style={{ backgroundColor: 'rgba(255, 242, 60, 0.2)' }}>{selected}</div>
+          {end}
+        </span>
+      );
+    }
+
+    return this.createPart(rows, stylesheet, useInlineStyles);
   }
 
   render() {
@@ -28,6 +67,7 @@ export default class StoryPanel extends Component {
         language="jsx"
         showLineNumbers="true"
         style={darcula}
+        renderer={this.lineRenderer}
         customStyle={{ width: '100%' }}
       >
         {this.state.source}

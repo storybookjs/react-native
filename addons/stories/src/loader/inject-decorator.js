@@ -1,7 +1,9 @@
+import lineColumn from 'line-column';
+
 const acorn = require('acorn-stage3/inject')(require('acorn-jsx'));
 const estraverse = require('estraverse');
 
-const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__))';
+const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__, __ADDS_MAP__))';
 
 const acornConfig = {
   ecmaVersion: '6',
@@ -20,20 +22,54 @@ function pushParts(source, parts, from, to) {
   parts.push(end);
 }
 
+function calculateLocations(source, adds) {
+  const addsKeys = Object.keys(adds);
+
+  if (addsKeys.length > 0) {
+    const lineColumnFinder = lineColumn(source);
+
+    Object.keys(adds).forEach(key => {
+      const value = adds[key];
+      value.startLoc = lineColumnFinder.fromIndex(value.start);
+      value.endLoc = lineColumnFinder.fromIndex(value.end);
+    });
+  }
+}
+
 function inject(source) {
   const ast = acorn.parse(source, acornConfig);
 
   let lastIndex = 0;
   const parts = [source];
+  const adds = {};
 
   estraverse.traverse(ast, {
     fallback: 'iteration',
-    enter: node => {
-      if (node.type !== 'CallExpression') {
-        return;
+    enter: (node, parent) => {
+      if (node.type === 'MemberExpression') {
+        if (!node.property || !node.property.name || node.property.name.indexOf('add') !== 0) {
+          return;
+        }
+
+        const addArgs = parent.arguments;
+
+        if (!addArgs || addArgs.length < 2) {
+          return;
+        }
+
+        const storyName = addArgs[0];
+        const lastArg = addArgs[addArgs.length - 1];
+
+        if (storyName.type === 'Literal') {
+          adds[storyName.value] = {
+            // Debug: code: source.slice(storyName.start, lastArg.end),
+            start: storyName.start,
+            end: lastArg.end,
+          };
+        }
       }
 
-      if (node.callee.name === 'storiesOf') {
+      if (node.type === 'CallExpression' && node.callee && node.callee.name === 'storiesOf') {
         parts.pop();
         pushParts(source, parts, lastIndex, node.end);
         lastIndex = node.end;
@@ -41,11 +77,14 @@ function inject(source) {
     },
   });
 
+  calculateLocations(source, adds);
+
   const newSource = parts.join(ADD_DECORATOR_STATEMENT);
 
   return {
     changed: lastIndex > 0,
     source: newSource,
+    addsMap: adds,
   };
 }
 
