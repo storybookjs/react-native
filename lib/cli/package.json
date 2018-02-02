@@ -21,8 +21,8 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "test-latest-cra": "cd test && ./test_latest_cra.sh",
-    "test": "cd test && ./run_tests.sh"
+    "test": "cd test && ./run_tests.sh",
+    "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
   "dependencies": {
     "@storybook/codemod": "^3.4.0-alpha.6",
