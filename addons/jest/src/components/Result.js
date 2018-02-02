@@ -35,7 +35,8 @@ const StackTrace = glamorous(({ trace, className }) => (
       .join('')
       .trim()
       .split(/\n/)
-      .map(traceLine, traceLineIndex => <div key={traceLineIndex}>{traceLine.trim()}</div>)}
+      // eslint-disable-next-line react/no-array-index-key
+      .map((traceLine, traceLineIndex) => <div key={traceLineIndex}>{traceLine.trim()}</div>)}
   </details>
 ))({
   background: 'silver',
@@ -80,10 +81,11 @@ const createSubgroup = (acc, item, i, list) => {
   if (!acc.grouped) {
     acc.grouped = [];
   }
-  if (!('grouperIndex' in acc))
+  if (!('grouperIndex' in acc)) {
     acc.grouperIndex = 0;
-  else
-    acc.grouperIndex++;
+  } else {
+    acc.grouperIndex += 1;
+  }
 
   // start or stop extraction
   if (acc.startTrigger(item)) {
