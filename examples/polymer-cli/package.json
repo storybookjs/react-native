@@ -7,7 +7,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
-    "@polymer/polymer": "^2.4.0",
+    "@polymer/polymer": "^2.5.0",
     "@storybook/addon-actions": "^3.4.0-alpha.7",
     "@storybook/addon-knobs": "^3.4.0-alpha.7",
     "@storybook/addon-notes": "^3.4.0-alpha.7",
