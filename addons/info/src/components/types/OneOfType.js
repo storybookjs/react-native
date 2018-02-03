@@ -1,10 +1,10 @@
 import React from 'react';
 
 import PrettyPropType from './PrettyPropType';
-import { TypeInfo } from './proptypes';
+import { TypeInfo, getPropTypes } from './proptypes';
 
 const OneOfType = ({ propType }) => {
-  const propTypes = propType.elements || propType.value;
+  const propTypes = getPropTypes(propType);
   return (
     <span>
       {propTypes
