@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "3.4.0-alpha.6",
+  "version": "3.4.0-alpha.7",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
