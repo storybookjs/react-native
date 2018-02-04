@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-stories",
-  "version": "3.4.0-alpha.6",
+  "version": "3.4.0-alpha.7",
   "description": "Stories addon for storybook",
   "keywords": [
     "storybook"
