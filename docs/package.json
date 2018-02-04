@@ -18,10 +18,10 @@
     "storybook": "start-storybook -p 9009 -s src/pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.3.11",
-    "@storybook/addon-links": "^3.3.11",
-    "@storybook/addons": "^3.3.11",
-    "@storybook/react": "^3.3.11",
+    "@storybook/addon-actions": "^3.3.12",
+    "@storybook/addon-links": "^3.3.12",
+    "@storybook/addons": "^3.3.12",
+    "@storybook/react": "^3.3.12",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^6.4.1",
@@ -31,7 +31,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^3.3.7",
-    "gatsby": "^1.9.177",
+    "gatsby": "^1.9.178",
     "gatsby-link": "^1.6.36",
     "gatsby-plugin-sharp": "^1.6.27",
     "gatsby-remark-autolink-headers": "^1.4.11",
