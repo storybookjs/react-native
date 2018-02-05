@@ -6,7 +6,7 @@ import { CustomPipePipe } from './moduleMetadata/custom.pipe';
 import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';
 
-storiesOf('Custom Pipe', module).add('Default', () => ({
+storiesOf('Custom|Pipe', module).add('Default', () => ({
   component: NameComponent,
   props: {
     field: 'foobar',
@@ -19,7 +19,7 @@ storiesOf('Custom Pipe', module).add('Default', () => ({
   },
 }));
 
-storiesOf('Custom Pipe/With Knobs', module)
+storiesOf('Custom|Pipe/With Knobs', module)
   .addDecorator(withKnobs)
   .add('NameComponent', () => ({
     component: NameComponent,
@@ -34,7 +34,7 @@ storiesOf('Custom Pipe/With Knobs', module)
     },
   }));
 
-storiesOf('Custom ngModule metadata', module)
+storiesOf('Custom|Metadata', module)
   .add('simple', () => ({
     component: ServiceComponent,
     props: {
