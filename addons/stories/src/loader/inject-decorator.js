@@ -16,15 +16,23 @@ const acornConfig = {
 function calculateLocations(source, adds) {
   const addsKeys = Object.keys(adds);
 
-  if (addsKeys.length > 0) {
-    const lineColumnFinder = lineColumn(source);
-
-    Object.keys(adds).forEach(key => {
-      const value = adds[key];
-      value.startLoc = lineColumnFinder.fromIndex(value.start);
-      value.endLoc = lineColumnFinder.fromIndex(value.end);
-    });
+  if (!addsKeys.length) {
+    return {};
   }
+
+  const lineColumnFinder = lineColumn(source);
+
+  return addsKeys.reduce((map, key) => {
+    const value = adds[key];
+
+    // eslint-disable-next-line no-param-reassign
+    map[key] = {
+      startLoc: lineColumnFinder.fromIndex(value.start),
+      endLoc: lineColumnFinder.fromIndex(value.end),
+    };
+
+    return map;
+  }, {});
 }
 
 function inject(source, decorator) {
@@ -47,14 +55,13 @@ function inject(source, decorator) {
     },
   });
 
-  calculateLocations(source, adds);
-
+  const addsMap = calculateLocations(source, adds);
   const newSource = parts.join(decorator);
 
   return {
     changed: lastIndex > 0,
     source: newSource,
-    addsMap: adds,
+    addsMap,
   };
 }
 

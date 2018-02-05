@@ -3,168 +3,140 @@
 exports[`inject-decorator positive calculates "adds" map 1`] = `
 Object {
   "Addons|Info.Decorator@Use Info as story decorator": Object {
-    "end": 4570,
     "endLoc": Object {
       "col": 74,
       "line": 137,
     },
-    "start": 4504,
     "startLoc": Object {
       "col": 8,
       "line": 137,
     },
   },
   "Addons|Info.GitHub issues@#1814": Object {
-    "end": 4978,
     "endLoc": Object {
       "col": 5,
       "line": 152,
     },
-    "start": 4838,
     "startLoc": Object {
       "col": 3,
       "line": 146,
     },
   },
   "Addons|Info.Markdown@Displays Markdown in description": Object {
-    "end": 1827,
     "endLoc": Object {
       "col": 97,
       "line": 44,
     },
-    "start": 1694,
     "startLoc": Object {
       "col": 3,
       "line": 43,
     },
   },
   "Addons|Info.Options.TableComponent@Use a custom component for the table": Object {
-    "end": 4311,
     "endLoc": Object {
       "col": 42,
       "line": 130,
     },
-    "start": 4194,
     "startLoc": Object {
       "col": 3,
       "line": 127,
     },
   },
   "Addons|Info.Options.header@Shows or hides Info Addon header": Object {
-    "end": 2423,
     "endLoc": Object {
       "col": 42,
       "line": 60,
     },
-    "start": 2193,
     "startLoc": Object {
       "col": 3,
       "line": 56,
     },
   },
   "Addons|Info.Options.inline@Inlines component inside story": Object {
-    "end": 2129,
     "endLoc": Object {
       "col": 42,
       "line": 52,
     },
-    "start": 1891,
     "startLoc": Object {
       "col": 3,
       "line": 48,
     },
   },
   "Addons|Info.Options.propTables@Shows additional component prop tables": Object {
-    "end": 2994,
     "endLoc": Object {
       "col": 42,
       "line": 76,
     },
-    "start": 2770,
     "startLoc": Object {
       "col": 3,
       "line": 72,
     },
   },
   "Addons|Info.Options.propTablesExclude@Exclude component from prop tables": Object {
-    "end": 3384,
     "endLoc": Object {
       "col": 5,
       "line": 89,
     },
-    "start": 3069,
     "startLoc": Object {
       "col": 3,
       "line": 80,
     },
   },
   "Addons|Info.Options.source@Shows or hides Info Addon source": Object {
-    "end": 2702,
     "endLoc": Object {
       "col": 42,
       "line": 68,
     },
-    "start": 2487,
     "startLoc": Object {
       "col": 3,
       "line": 64,
     },
   },
   "Addons|Info.Options.styles@Extend info styles with an object": Object {
-    "end": 3768,
     "endLoc": Object {
       "col": 44,
       "line": 108,
     },
-    "start": 3454,
     "startLoc": Object {
       "col": 5,
       "line": 94,
     },
   },
   "Addons|Info.Options.styles@Full control over styles using a function": Object {
-    "end": 4120,
     "endLoc": Object {
       "col": 44,
       "line": 123,
     },
-    "start": 3788,
     "startLoc": Object {
       "col": 5,
       "line": 111,
     },
   },
   "Addons|Info.React Docgen@Comments from Flow declarations": Object {
-    "end": 1054,
     "endLoc": Object {
       "col": 86,
       "line": 22,
     },
-    "start": 773,
     "startLoc": Object {
       "col": 5,
       "line": 19,
     },
   },
   "Addons|Info.React Docgen@Comments from PropType declarations": Object {
-    "end": 753,
     "endLoc": Object {
       "col": 80,
       "line": 16,
     },
-    "start": 470,
     "startLoc": Object {
       "col": 5,
       "line": 13,
     },
   },
   "Addons|Info.React Docgen@Comments from component declaration": Object {
-    "end": 1348,
     "endLoc": Object {
       "col": 71,
       "line": 28,
     },
-    "start": 1074,
     "startLoc": Object {
       "col": 5,
       "line": 25,
