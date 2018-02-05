@@ -16,7 +16,7 @@ function transform(source) {
   const addsMap = JSON.stringify(result.addsMap);
 
   return `
-  var withStorySource = require('@storybook/addon-stories').withStorySource;
+  var withStorySource = require('@storybook/addon-storysource').withStorySource;
   var __STORY__ = ${sourceJson};
   var __ADDS_MAP__ = ${addsMap};
   

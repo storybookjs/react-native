@@ -1,11 +1,11 @@
 {
-  "name": "@storybook/addon-stories",
+  "name": "@storybook/addon-storysource",
   "version": "3.4.0-alpha.7",
   "description": "Stories addon for storybook",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/stories",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/storysource",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

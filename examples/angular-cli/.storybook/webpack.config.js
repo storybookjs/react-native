@@ -13,7 +13,7 @@ module.exports = (baseConfig) => {
       /\.stories\.tsx?$/,
       /index\.ts$/
     ],
-    loaders: [ ...originalTsRule.loaders, require.resolve('@storybook/addon-stories/loader') ],
+    loaders: [ ...originalTsRule.loaders, require.resolve('@storybook/addon-storysource/loader') ],
     include: [
       path.resolve(__dirname, '../src')
     ],

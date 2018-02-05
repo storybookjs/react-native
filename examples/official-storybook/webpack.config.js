@@ -19,7 +19,10 @@ module.exports = baseConfig => {
 
   baseConfig.module.rules.push({
     test: /\.stories\.jsx?$/,
-    loaders: [require.resolve('babel-loader'), require.resolve('@storybook/addon-stories/loader')],
+    loaders: [
+      require.resolve('babel-loader'),
+      require.resolve('@storybook/addon-storysource/loader'),
+    ],
     include: [
       path.resolve(__dirname, './stories'),
       path.resolve(__dirname, '../../lib/ui/src'),

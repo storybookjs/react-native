@@ -7,7 +7,7 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
       /\.stories\.js$/,
       /index\.js$/
     ],
-    loaders: [ require.resolve('babel-loader'), require.resolve('@storybook/addon-stories/loader') ],
+    loaders: [ require.resolve('babel-loader'), require.resolve('@storybook/addon-storysource/loader') ],
     include: [
       path.resolve(__dirname, '../src')
     ],
