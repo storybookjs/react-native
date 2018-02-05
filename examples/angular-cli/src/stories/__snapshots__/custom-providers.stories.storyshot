@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Metadata simple 1`] = `
+exports[`Storyshots Custom|Providers Simple 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -27,7 +27,7 @@ exports[`Storyshots Custom|Metadata simple 1`] = `
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Custom|Metadata with knobs 1`] = `
+exports[`Storyshots Custom|Providers With knobs 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -51,33 +51,5 @@ exports[`Storyshots Custom|Metadata with knobs 1`] = `
     
     
   </storybook-simple-service-component>
-</storybook-dynamic-app-root>
-`;
-
-exports[`Storyshots Custom|Pipe Default 1`] = `
-<storybook-dynamic-app-root
-  cfr={[Function CodegenComponentFactoryResolver]}
-  data={[Function Object]}
-  target={[Function ViewContainerRef_]}
->
-  <storybook-name>
-    <h1>
-      CustomPipe: foobar
-    </h1>
-  </storybook-name>
-</storybook-dynamic-app-root>
-`;
-
-exports[`Storyshots Custom|Pipe/With Knobs NameComponent 1`] = `
-<storybook-dynamic-app-root
-  cfr={[Function CodegenComponentFactoryResolver]}
-  data={[Function Object]}
-  target={[Function ViewContainerRef_]}
->
-  <storybook-name>
-    <h1>
-      CustomPipe: foobar
-    </h1>
-  </storybook-name>
 </storybook-dynamic-app-root>
 `;
