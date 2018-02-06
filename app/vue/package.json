@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "3.4.0-alpha.6",
+  "version": "3.4.0-alpha.7",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
@@ -23,12 +23,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.6",
-    "@storybook/addon-links": "^3.4.0-alpha.6",
-    "@storybook/addons": "^3.4.0-alpha.6",
-    "@storybook/channel-postmessage": "^3.4.0-alpha.6",
-    "@storybook/core": "^3.4.0-alpha.6",
-    "@storybook/ui": "^3.4.0-alpha.6",
+    "@storybook/addon-actions": "^3.4.0-alpha.7",
+    "@storybook/addon-links": "^3.4.0-alpha.7",
+    "@storybook/addons": "^3.4.0-alpha.7",
+    "@storybook/channel-postmessage": "^3.4.0-alpha.7",
+    "@storybook/core": "^3.4.0-alpha.7",
+    "@storybook/ui": "^3.4.0-alpha.7",
     "airbnb-js-shims": "^1.4.1",
     "autoprefixer": "^7.2.5",
     "babel-loader": "^7.1.2",
@@ -61,7 +61,7 @@
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
     "postcss-flexbugs-fixes": "^3.3.0",
-    "postcss-loader": "^2.0.10",
+    "postcss-loader": "^2.1.0",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "react": "^16.2.0",
@@ -83,7 +83,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.11",
+    "nodemon": "^1.14.12",
     "vue": "^2.5.13",
     "vue-loader": "^13.7.1",
     "vue-template-compiler": "^2.5.13"

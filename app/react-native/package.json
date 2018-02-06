@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "3.4.0-alpha.6",
+  "version": "3.4.0-alpha.7",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -25,12 +25,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.6",
-    "@storybook/addon-links": "^3.4.0-alpha.6",
-    "@storybook/addons": "^3.4.0-alpha.6",
-    "@storybook/channel-websocket": "^3.4.0-alpha.6",
-    "@storybook/core": "^3.4.0-alpha.6",
-    "@storybook/ui": "^3.4.0-alpha.6",
+    "@storybook/addon-actions": "^3.4.0-alpha.7",
+    "@storybook/addon-links": "^3.4.0-alpha.7",
+    "@storybook/addons": "^3.4.0-alpha.7",
+    "@storybook/channel-websocket": "^3.4.0-alpha.7",
+    "@storybook/core": "^3.4.0-alpha.7",
+    "@storybook/ui": "^3.4.0-alpha.7",
     "autoprefixer": "^7.2.5",
     "babel-loader": "^7.1.2",
     "babel-plugin-macros": "^2.1.0",
@@ -57,7 +57,7 @@
     "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.7",
     "json5": "^0.5.1",
-    "postcss-loader": "^2.0.10",
+    "postcss-loader": "^2.1.0",
     "prop-types": "^15.6.0",
     "react-native-compat": "^1.0.0",
     "react-native-iphone-x-helper": "^1.0.1",
