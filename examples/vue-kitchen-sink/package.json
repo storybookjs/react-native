@@ -18,6 +18,7 @@
     "@storybook/addon-knobs": "^3.4.0-alpha.7",
     "@storybook/addon-links": "^3.4.0-alpha.7",
     "@storybook/addon-notes": "^3.4.0-alpha.7",
+    "@storybook/addon-options": "^3.4.0-alpha.7",
     "@storybook/addon-storyshots": "^3.4.0-alpha.7",
     "@storybook/addon-viewport": "^3.4.0-alpha.7",
     "@storybook/addons": "^3.4.0-alpha.7",
