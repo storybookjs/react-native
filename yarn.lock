@@ -7584,9 +7584,9 @@ jasmine-core@~2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.8.0.tgz#bcc979ae1f9fd05701e45e52e65d3a5d63f1a24e"
 
-jasmine-core@~2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.9.1.tgz#b6bbc1d8e65250d56f5888461705ebeeeb88f22f"
+jasmine-core@~2.99.0:
+  version "2.99.0"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.99.0.tgz#c105ab5222da45f1b0a10580383f5adbbff56d2c"
 
 jasmine-spec-reporter@~4.2.1:
   version "4.2.1"
