@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "3.4.0-alpha.6",
+  "version": "3.4.0-alpha.7",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",

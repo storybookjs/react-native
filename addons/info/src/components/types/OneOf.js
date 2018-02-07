@@ -1,11 +1,12 @@
 import React from 'react';
-import { TypeInfo } from './proptypes';
+import { TypeInfo, getPropTypes } from './proptypes';
 
-const joinValues = propType => propType.value.map(({ value }) => value).join(' | ');
+const joinValues = propTypes => propTypes.map(({ value }) => value).join(' | ');
 
-const OneOf = ({ propType }) => (
-  <span>{`oneOf ${Array.isArray(propType.value) ? joinValues(propType) : propType.value}`}</span>
-);
+const OneOf = ({ propType }) => {
+  const propTypes = getPropTypes(propType);
+  return <span>{`oneOf ${Array.isArray(propTypes) ? joinValues(propTypes) : propTypes}`}</span>;
+};
 
 OneOf.propTypes = {
   propType: TypeInfo.isRequired,

@@ -105,7 +105,7 @@ A React implementation of such a component can be imported from `@storybook/addo
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { LinkTo } from '@storybook/addon-links';
+import LinkTo from '@storybook/addon-links/react';
 
 storiesOf('Link', module)
   .add('First', () => (

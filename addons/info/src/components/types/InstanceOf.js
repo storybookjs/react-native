@@ -1,7 +1,7 @@
 import React from 'react';
-import { TypeInfo } from './proptypes';
+import { TypeInfo, getPropTypes } from './proptypes';
 
-const InstanceOf = ({ propType }) => <span>{propType.value}</span>;
+const InstanceOf = ({ propType }) => <span>{getPropTypes(propType)}</span>;
 
 InstanceOf.propTypes = {
   propType: TypeInfo.isRequired,
