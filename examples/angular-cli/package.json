@@ -29,7 +29,7 @@
   "devDependencies": {
     "@angular/cli": "1.6.7",
     "@angular/compiler-cli": "^5.2.4",
-    "@angular/language-service": "^5.2.3",
+    "@angular/language-service": "^5.2.4",
     "@storybook/addon-actions": "^3.4.0-alpha.7",
     "@storybook/addon-links": "^3.4.0-alpha.7",
     "@storybook/addon-notes": "^3.4.0-alpha.7",
