@@ -4,9 +4,9 @@ import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { WatchMissingNodeModulesPlugin } from '@storybook/core/server';
 import { managerPath } from '@storybook/core/client';
 
-import WatchMissingNodeModulesPlugin from './WatchMissingNodeModulesPlugin';
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
