@@ -3812,6 +3812,31 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-1ygfcef"
                   >
+                    enmEval
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
                     union
                   </td>
                   <td

@@ -43,8 +43,6 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
-    "chalk": "^2.3.0",
-    "commander": "^2.13.0",
     "common-tags": "^1.7.2",
     "configstore": "^3.1.1",
     "core-js": "^2.5.3",
@@ -69,18 +67,13 @@
     "react-dom": "^16.2.0",
     "redux": "^3.7.2",
     "request": "^2.83.0",
-    "serve-favicon": "^2.4.5",
-    "shelljs": "^0.8.1",
     "style-loader": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.1.7",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
-    "uuid": "^3.2.1",
     "vue-hot-reload-api": "^2.2.4",
     "vue-style-loader": "^3.1.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-middleware": "^1.12.2",
-    "webpack-hot-middleware": "^2.21.0"
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "nodemon": "^1.14.12",

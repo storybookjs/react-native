@@ -105,6 +105,7 @@ DocgenButton.propTypes = {
    * `oneOf` is basically an Enum which is also supported but can be pretty big.
    */
   enm: PropTypes.oneOf(['News', 'Photos']),
+  enmEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */

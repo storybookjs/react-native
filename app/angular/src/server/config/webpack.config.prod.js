@@ -97,6 +97,17 @@ export default function(configDir) {
           test: /\.scss$/,
           loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
         },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+            },
+          ],
+        },
       ],
     },
     resolve: {
