@@ -4352,9 +4352,9 @@ gatsby-1-config-css-modules@^1.0.8:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.34:
-  version "1.1.34"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.34.tgz#85c17bf67bc717be0274c8e4a56c7df819ede1f5"
+gatsby-cli@^1.1.37:
+  version "1.1.37"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.37.tgz#2d86e766211a39e94ba38ecdfc426c8b9c4fcbf3"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4408,12 +4408,12 @@ gatsby-plugin-sharp@^1.6.27:
     sharp "^0.19.0"
     svgo "^0.7.2"
 
-gatsby-react-router-scroll@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.9.tgz#0a321e7ae8c69ac6ba9528abf5b7be4e549a943f"
+gatsby-react-router-scroll@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.10.tgz#a520ea98fd25d5c307790974b13955cb128e01df"
   dependencies:
     babel-runtime "^6.26.0"
-    scroll-behavior "^0.9.1"
+    scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
 gatsby-remark-autolink-headers@^1.4.11:
@@ -4425,9 +4425,9 @@ gatsby-remark-autolink-headers@^1.4.11:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.25:
-  version "1.5.25"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.25.tgz#ca2098551de4df929f03b8ab0d3bfa54b9f68deb"
+gatsby-remark-copy-linked-files@^1.5.26:
+  version "1.5.26"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.26.tgz#d223fc9d7dba45b48b90a29d5e40af4c59807baa"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
@@ -4438,9 +4438,9 @@ gatsby-remark-copy-linked-files@^1.5.25:
     path-is-inside "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.41:
-  version "1.5.41"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.41.tgz#8692c6609a64ecd80a0137acc9a9878dc02ebc47"
+gatsby-remark-images@^1.5.42:
+  version "1.5.42"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.42.tgz#fb1497ef2fbcd73a3cc28094679c854c3af39c45"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
@@ -4459,9 +4459,9 @@ gatsby-remark-smartypants@^1.4.10:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.16:
-  version "1.5.16"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.16.tgz#1439093b6ad53322667870ca4ed636ad0e2121b0"
+gatsby-source-filesystem@^1.5.18:
+  version "1.5.18"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.18.tgz#e2cb96a2c248c304e58ba3d0142316a695d3ef35"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4500,9 +4500,9 @@ gatsby-transformer-remark@^1.7.30:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.178:
-  version "1.9.178"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.178.tgz#56601badc81d527fef7a6d25d87e9d7ff44e52e9"
+gatsby@^1.9.184:
+  version "1.9.184"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.184.tgz#03ee3b39fb4056180140ebaed041a7523acf955a"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4542,10 +4542,10 @@ gatsby@^1.9.178:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
-    gatsby-cli "^1.1.34"
+    gatsby-cli "^1.1.37"
     gatsby-link "^1.6.36"
     gatsby-module-loader "^1.0.9"
-    gatsby-react-router-scroll "^1.0.9"
+    gatsby-react-router-scroll "^1.0.10"
     glob "^7.1.1"
     graphql "^0.11.7"
     graphql-relay "^0.5.1"
@@ -9662,9 +9662,9 @@ schema-utils@^0.4.2:
     ajv "^5.0.0"
     ajv-keywords "^2.1.0"
 
-scroll-behavior@^0.9.1:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/scroll-behavior/-/scroll-behavior-0.9.4.tgz#73b4a0eae3e59c0b8f3b6fc1ff78f054a513e79c"
+scroll-behavior@^0.9.9:
+  version "0.9.9"
+  resolved "https://registry.yarnpkg.com/scroll-behavior/-/scroll-behavior-0.9.9.tgz#ebfe0658455b82ad885b66195215416674dacce2"
   dependencies:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"

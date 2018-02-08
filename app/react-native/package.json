@@ -48,7 +48,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
-    "commander": "^2.13.0",
+    "commander": "^2.14.1",
     "css-loader": "^0.28.9",
     "express": "^4.16.2",
     "file-loader": "^1.1.6",
