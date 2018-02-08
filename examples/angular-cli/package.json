@@ -27,7 +27,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.7",
+    "@angular/cli": "1.6.8",
     "@angular/compiler-cli": "^5.2.4",
     "@angular/language-service": "^5.2.4",
     "@storybook/addon-actions": "^3.4.0-alpha.7",
@@ -37,9 +37,9 @@
     "@storybook/addons": "^3.4.0-alpha.7",
     "@storybook/angular": "^3.4.0-alpha.7",
     "@types/jasmine": "~2.8.6",
-    "@types/node": "~6.0.97",
+    "@types/node": "~6.0.99",
     "global": "^4.3.2",
-    "jasmine-core": "~2.99.0",
+    "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.2.0",
