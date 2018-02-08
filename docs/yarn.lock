@@ -4438,9 +4438,9 @@ gatsby-remark-copy-linked-files@^1.5.26:
     path-is-inside "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.42:
-  version "1.5.42"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.42.tgz#fb1497ef2fbcd73a3cc28094679c854c3af39c45"
+gatsby-remark-images@^1.5.43:
+  version "1.5.43"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.43.tgz#155137f259391342c5d2832d085d63319412180a"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
