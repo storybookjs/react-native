@@ -36,11 +36,11 @@
     "@storybook/client-logger": "^3.4.0-alpha.7",
     "@storybook/components": "^3.4.0-alpha.7",
     "@storybook/react": "^3.4.0-alpha.7",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^22.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.1",
-    "jest": "^22.1.4",
+    "jest": "^22.2.0",
     "react-scripts": "^1.1.0"
   }
 }
