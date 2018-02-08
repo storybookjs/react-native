@@ -311,9 +311,9 @@
   version "6.0.96"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.96.tgz#7bf0bf40d6ce51e93762cc47d010c8cc5ebb2179"
 
-"@types/node@~6.0.97":
-  version "6.0.97"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.97.tgz#72199848e8f3cfa975864031ac12e0ef6ccfe054"
+"@types/node@~6.0.99":
+  version "6.0.99"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.99.tgz#3169584cc922a362ec45207c957e04b0c8d8c8f5"
 
 "@types/parse5@^2.2.32":
   version "2.2.34"
