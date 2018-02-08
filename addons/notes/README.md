@@ -7,15 +7,14 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
----
+* * *
 
 Storybook Addon Notes allows you to write notes (text or HTML) for your stories in [Storybook](https://storybook.js.org).
 
 This addon works with Storybook for:
-
-* [React](https://github.com/storybooks/storybook/tree/master/app/react)
-* [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-* [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+- [React](https://github.com/storybooks/storybook/tree/master/app/react)
+- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
+- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
 
 ![Storybook Addon Notes Demo](docs/demo.png)
 
@@ -30,7 +29,7 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import "@storybook/addon-notes/register";
+import '@storybook/addon-notes/register';
 ```
 
 Then write your stories like this:
@@ -50,24 +49,25 @@ storiesOf('Component', module)
 To use markdown in your notes simply import a markdown file and use that in your note.
 
 ```js
-import { storiesOf } from "@storybook/react";
-import { withNotes } from "@storybook/addon-notes";
-import Component from "./Component";
-import someMarkdownText from "./someMarkdownText.md";
+import { storiesOf } from '@storybook/react';
+import { withNotes } from '@storybook/addon-notes';
+import Component from './Component';
+import someMarkdownText from './someMarkdownText.md';
 
-storiesOf("Component", module).add("With Markdown", withNotes(someMarkdownText)(() => <Component />));
+storiesOf('Component', module)
+  .add('With Markdown', withNotes(someMarkdownText)(() => <Component/>));
+
 ```
 
 If you want to use Github flavored markdown inline, use `withMarkdownNotes`:
 
 ```js
-import { storiesOf } from "@storybook/react";
-import { withMarkdownNotes } from "@storybook/addon-notes";
-import Component from "./Component";
+import { storiesOf } from '@storybook/react';
+import { withMarkdownNotes } from '@storybook/addon-notes';
+import Component from './Component';
 
-storiesOf("Component", module).add(
-  "With Markdown",
-  withMarkdownNotes(`
+storiesOf('Component', module)
+  .add('With Markdown', withMarkdownNotes(`
   # Hello World
 
   This is some code showing usage of the component and other inline documentation
@@ -78,20 +78,20 @@ storiesOf("Component", module).add(
     <Component/>
   </div>
   ~~~
-  `)(() => <Component />)
-);
+  `)(() => <Component/>));
+
 ```
 
 ### Deprecated API
-
 This API is slated for removal in 4.0
 
 ```js
-import { WithNotes } from "@storybook/addon-notes";
+import { WithNotes } from '@storybook/addon-notes';
 
-storiesOf("Addon Notes", module).add("using deprecated API", () => (
-  <WithNotes notes="Hello">
-    <BaseButton onClick={action("clicked")} label="😀 😎 👍 💯" />
-  </WithNotes>
-));
+storiesOf('Addon Notes', module)
+  .add('using deprecated API', () => (
+    <WithNotes notes="Hello">
+      <BaseButton onClick={action('clicked')} label="😀 😎 👍 💯" />
+    </WithNotes>
+  ));
 ```
