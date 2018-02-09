@@ -82,6 +82,11 @@ jobs:
             cd examples/angular-cli
             yarn build-storybook
       - run:
+          name: "Build polymer-cli"
+          command: |
+            cd examples/polymer-cli
+            yarn build-storybook
+      - run:
           name: "Run react kitchen-sink (smoke test)"
           command: |
             cd examples/cra-kitchen-sink
