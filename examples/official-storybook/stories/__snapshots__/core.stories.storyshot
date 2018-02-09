@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots core/options passed to story 1`] = `
+<div>
+  Value of 
+  <code>
+    myOption
+  </code>
+   is '
+  <code>
+    value
+  </code>
+  '
+</div>
+`;
