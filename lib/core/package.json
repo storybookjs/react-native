@@ -22,7 +22,7 @@
     "@storybook/client-logger": "^3.4.0-alpha.7",
     "@storybook/node-logger": "^3.4.0-alpha.7",
     "@storybook/ui": "^3.4.0-alpha.7",
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^7.2.6",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.3.0",
     "commander": "^2.14.1",
@@ -43,7 +43,7 @@
     "shelljs": "^0.8.1",
     "style-loader": "^0.20.1",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0",
+    "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"
   },
