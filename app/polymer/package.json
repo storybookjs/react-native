@@ -30,7 +30,7 @@
     "@storybook/ui": "^3.4.0-alpha.7",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "airbnb-js-shims": "^1.4.1",
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^7.2.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-macros": "^2.1.0",
