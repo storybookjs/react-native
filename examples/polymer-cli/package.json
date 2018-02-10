@@ -16,7 +16,7 @@
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "global": "^4.3.2",
     "polymer-webpack-loader": "^2.0.0",
-    "webpack": "^3.8.1"
+    "webpack": "^3.11.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
