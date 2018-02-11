@@ -1,4 +1,5 @@
 import { NgModuleMetadata, ICollection } from './dist/client/preview/angular/types';
+export { moduleMetadata } from './dist/client/preview/angular/decorators';
 
 export interface IStorybookStory {
   name: string;

@@ -1,4 +1,4 @@
-import { storiesOf } from '@storybook/angular';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs, text } from '@storybook/addon-knobs/angular';
 
 import { NameComponent } from './moduleMetadata/name.component';
@@ -35,16 +35,18 @@ storiesOf('Custom Pipe/With Knobs', module)
   }));
 
 storiesOf('Custom ngModule metadata', module)
-  .add('simple', () => ({
-    component: ServiceComponent,
-    props: {
-      name: 'Static name',
-    },
-    moduleMetadata: {
+  .addDecorator(
+    moduleMetadata({
       imports: [],
       schemas: [],
       declarations: [],
       providers: [DummyService],
+    })
+  )
+  .add('simple', () => ({
+    component: ServiceComponent,
+    props: {
+      name: 'Static name',
     },
   }))
   .addDecorator(withKnobs)
@@ -55,12 +57,6 @@ storiesOf('Custom ngModule metadata', module)
       component: ServiceComponent,
       props: {
         name,
-      },
-      moduleMetadata: {
-        imports: [],
-        schemas: [],
-        declarations: [],
-        providers: [DummyService],
       },
     };
   });
