@@ -1,1 +1,1 @@
-export { storiesOf, setAddon, addDecorator, configure, getStorybook } from './preview';
+export { storiesOf, setAddon, addDecorator, addOptions, configure, getStorybook } from './preview';

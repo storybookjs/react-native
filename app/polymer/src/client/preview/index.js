@@ -27,7 +27,14 @@ const reduxStore = createStore(reducer);
 const context = { storyStore, reduxStore };
 
 const clientApi = new ClientApi(context);
-export const { storiesOf, setAddon, addDecorator, clearDecorators, getStorybook } = clientApi;
+export const {
+  storiesOf,
+  setAddon,
+  addDecorator,
+  addOptions,
+  clearDecorators,
+  getStorybook,
+} = clientApi;
 
 if (isBrowser) {
   // setup preview channel

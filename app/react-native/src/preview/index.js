@@ -18,7 +18,14 @@ export default class Preview {
     this._stories = new StoryStore();
     this._clientApi = new ClientApi({ storyStore: this._stories });
 
-    ['storiesOf', 'setAddon', 'addDecorator', 'clearDecorators', 'getStorybook'].forEach(method => {
+    [
+      'storiesOf',
+      'setAddon',
+      'addDecorator',
+      'addOptions',
+      'clearDecorators',
+      'getStorybook',
+    ].forEach(method => {
       this[method] = this._clientApi[method].bind(this._clientApi);
     });
   }
