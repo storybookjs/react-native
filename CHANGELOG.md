@@ -1,3 +1,11 @@
+# 3.3.13
+
+2018-February-11
+
+#### Bug Fixes
+
+-   Angular: add rule for .md to webpack.config.prod.js [#2924](https://github.com/storybooks/storybook/pull/2924)
+-   Check for correct props in Flow or prop-types [#2902](https://github.com/storybooks/storybook/pull/2902)
 # 3.4.0-alpha.7
 
 2018-February-03
@@ -108,6 +116,7 @@
 -   Update url-loader from 0.5.8 to 0.6.2 in app/angular [#2847](https://github.com/storybooks/storybook/pull/2847)
 
 </details>
+>>>>>>> 66f0066f6... Changelog 3.3.13
 
 # 3.3.12
 
