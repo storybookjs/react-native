@@ -12291,9 +12291,9 @@ react-color@^2.11.4:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-datetime@^2.13.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-2.13.0.tgz#a5121e83a5b7512b3cd78af5fadc17a7be3f1534"
+react-datetime@^2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-2.14.0.tgz#c7859c5b765275d7980f1cca27c03a727ff9ccef"
   dependencies:
     create-react-class "^15.5.2"
     object-assign "^3.0.0"
