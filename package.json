@@ -103,7 +103,7 @@
     "remark-preset-lint-recommended": "^3.0.1",
     "shelljs": "^0.8.1",
     "symlink-dir": "^1.1.1",
-    "ts-jest": "^22.0.3",
+    "ts-jest": "^22.0.4",
     "tslint": "~5.9.1",
     "tslint-config-prettier": "^1.7.0",
     "tslint-plugin-prettier": "^1.3.0",
