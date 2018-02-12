@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import findCacheDir from 'find-cache-dir';
 import { logger } from '@storybook/node-logger';
+import { createDefaultWebpackConfig } from '@storybook/core/server';
 import loadBabelConfig from './babel_config';
 
 // `baseConfig` is a webpack configuration bundled with storybook.
@@ -41,22 +42,21 @@ export default function(configType, baseConfig, configDir) {
     config.entry.manager.splice(1, 0, storybookDefaultAddonsPath);
   }
 
+  const defaultConfig = createDefaultWebpackConfig(config);
+
   // Check whether user has a custom webpack config file and
   // return the (extended) base configuration if it's not available.
   const customConfigPath = path.resolve(configDir, 'webpack.config.js');
 
   if (!fs.existsSync(customConfigPath)) {
     logger.info('=> Using default webpack setup based on "Create React App".');
-    const configPath = path.resolve(__dirname, './config/defaults/webpack.config.js');
-    const customConfig = require(configPath);
-
-    return customConfig(config);
+    return defaultConfig;
   }
   const customConfig = require(customConfigPath);
 
   if (typeof customConfig === 'function') {
     logger.info('=> Loading custom webpack config (full-control mode).');
-    return customConfig(config, configType);
+    return customConfig(config, configType, defaultConfig);
   }
   logger.info('=> Loading custom webpack config (extending mode).');
   return {

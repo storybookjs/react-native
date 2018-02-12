@@ -68,26 +68,27 @@ const getModule = (
   return NgModule(moduleMeta)(moduleClass);
 };
 
-const createComponentFromTemplate = (template: string): Function => {
+const createComponentFromTemplate = (template: string, styles: string[]): Function => {
   const componentClass = class DynamicComponent {};
 
   return Component({
-    template: template,
+    template,
+    styles,
   })(componentClass);
 };
 
 const initModule = (
   currentStory: IGetStoryWithContext,
   context: IContext,
-  reRender: boolean
+  reRender: boolean = false
 ): Function => {
   const storyObj = currentStory(context);
-  const { component, template, props, moduleMetadata = {} } = storyObj;
+  const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
   let AnnotatedComponent;
 
   if (template) {
-    AnnotatedComponent = createComponentFromTemplate(template);
+    AnnotatedComponent = createComponentFromTemplate(template, styles);
   } else {
     AnnotatedComponent = component;
   }
@@ -131,7 +132,7 @@ export const renderNgError = debounce((error: Error) => {
   const errorData = {
     message: error.message,
     stack: error.stack,
-  };
+  } as NgProvidedData;
 
   const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData, {});
 

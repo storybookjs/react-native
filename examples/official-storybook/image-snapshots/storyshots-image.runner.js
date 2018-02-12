@@ -20,10 +20,11 @@ if (!fs.existsSync(pathToStorybookStatic)) {
     suite: 'Image snapshots',
     framework: 'react',
     configPath: path.join(__dirname, '..'),
+    storyNameRegex: /^((?!tweaks static values with debounce delay|Inlines component inside story).)$/,
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
       getMatchOptions: () => ({
-        failureThreshold: 0.01, // 1% threshold,
+        failureThreshold: 0.04, // 4% threshold,
         failureThresholdType: 'percent',
       }),
     }),

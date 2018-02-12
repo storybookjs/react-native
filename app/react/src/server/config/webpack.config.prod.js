@@ -1,8 +1,9 @@
-import path from 'path';
 import webpack from 'webpack';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-
+import { managerPath } from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
@@ -11,7 +12,7 @@ import { version } from '../../../package.json';
 export default function(configDir) {
   const entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
-    manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')],
+    manager: [require.resolve('./polyfills'), managerPath],
   };
 
   const config = {
@@ -28,6 +29,7 @@ export default function(configDir) {
       publicPath: '',
     },
     plugins: [
+      new InterpolateHtmlPlugin(process.env),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
@@ -60,6 +62,7 @@ export default function(configDir) {
           },
         },
       }),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [

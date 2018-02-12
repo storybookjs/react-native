@@ -27,7 +27,7 @@ const getConfig = options => ({
     new CaseSensitivePathsPlugin(),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         loader: require.resolve('babel-loader'),

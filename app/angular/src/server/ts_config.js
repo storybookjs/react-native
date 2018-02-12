@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-
-// avoid ESLint errors
-const logger = console;
+import { logger } from '@storybook/node-logger';
 
 function resolveTsConfig(tsConfigPath) {
   if (!fs.existsSync(tsConfigPath)) {
