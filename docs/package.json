@@ -34,7 +34,7 @@
     "gatsby": "^1.9.187",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-sharp": "^1.6.28",
-    "gatsby-remark-autolink-headers": "^1.4.11",
+    "gatsby-remark-autolink-headers": "^1.4.12",
     "gatsby-remark-copy-linked-files": "^1.5.26",
     "gatsby-remark-images": "^1.5.43",
     "gatsby-remark-smartypants": "^1.4.10",
