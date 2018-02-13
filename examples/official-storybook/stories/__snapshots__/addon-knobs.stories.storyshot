@@ -16,7 +16,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
   style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
     My birthday is: January 20, 2017
@@ -70,7 +70,7 @@ exports[`Storyshots Addons|Knobs.withKnobsOptions tweaks static values with debo
     If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
   </p>
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
     My birthday is: January 20, 2017

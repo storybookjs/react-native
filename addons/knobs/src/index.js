@@ -16,10 +16,11 @@ import {
   number,
   object,
   select,
+  selectV2,
   text,
 } from './base';
 
-export { knob, text, boolean, number, color, object, array, date, button, select };
+export { knob, text, boolean, number, color, object, array, date, button, select, selectV2 };
 
 deprecate(() => {},
 'Using @storybook/addon-knobs directly is discouraged, please use @storybook/addon-knobs/{{framework}}');
