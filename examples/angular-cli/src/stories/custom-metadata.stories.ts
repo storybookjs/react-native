@@ -35,18 +35,16 @@ storiesOf('Custom Pipe/With Knobs', module)
   }));
 
 storiesOf('Custom ngModule metadata', module)
-  .addDecorator(
-    moduleMetadata({
-      imports: [],
-      schemas: [],
-      declarations: [],
-      providers: [DummyService],
-    })
-  )
   .add('simple', () => ({
     component: ServiceComponent,
     props: {
       name: 'Static name',
+    },
+    moduleMetadata: {
+      imports: [],
+      schemas: [],
+      declarations: [],
+      providers: [DummyService],
     },
   }))
   .addDecorator(withKnobs)
@@ -58,5 +56,48 @@ storiesOf('Custom ngModule metadata', module)
       props: {
         name,
       },
+      moduleMetadata: {
+        imports: [],
+        schemas: [],
+        declarations: [],
+        providers: [DummyService],
+      },
     };
   });
+
+storiesOf('Common ngModule metadata', module)
+  .addDecorator(
+    moduleMetadata({
+      imports: [],
+      schemas: [],
+      declarations: [ServiceComponent],
+      providers: [DummyService],
+    })
+  )
+  .add('simple', () => ({
+    component: ServiceComponent,
+    props: {
+      name: 'Static name',
+    },
+  }))
+  .add('template', () => ({
+    template:
+      '<storybook-simple-service-component [name]="name"></storybook-simple-service-component>',
+    props: {
+      name: 'Static name',
+    },
+  }))
+  .addDecorator(withKnobs)
+  .add('with knobs', () => ({
+    template: `
+      <storybook-name [field]="field"></storybook-name>
+      <storybook-simple-service-component [name]="name"></storybook-simple-service-component>
+    `,
+    props: {
+      field: text('field', 'foobar'),
+      name: 'Static name',
+    },
+    moduleMetadata: {
+      declarations: [NameComponent, CustomPipePipe],
+    },
+  }));
