@@ -43,7 +43,7 @@ export const imageSnapshot = ({
         );
         throw e;
       })
-      .then(() => beforeScreenshot({ context, url }))
+      .then(() => beforeScreenshot(page, { context, url }))
       .then(() =>
         page.screenshot().then(image => {
           expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));

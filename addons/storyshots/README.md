@@ -201,7 +201,7 @@ const getMatchOptions = ({context : {kind, story}, url}) => {
     failureThresholdType: 'percent',
   }
 }
-const beforeScreenshot = () => {
+const beforeScreenshot = (page, {context : {kind, story}, url}) => {
   return new Promise(resolve =>
       setTimeout(() => {
           resolve();
@@ -210,9 +210,9 @@ const beforeScreenshot = () => {
 }
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getMatchOptions, beforeScreenshot})});
 ```
-`getMatchOptions` and `beforeScreenshot` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
+`getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
 
-`beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for delaying the screenshot and can be used avoid regressions due to mounting animations.
+`beforeScreenshot` receives the [Puppeteer page instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) and an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot. `beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for delaying the screenshot and can be used avoid regressions due to mounting animations.
 
 ### Integrate image storyshots with regular app
 
