@@ -192,7 +192,7 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'f
 
 ### Specifying options to _jest-image-snapshots_
 
-If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` wich is called before the screenshot is captured.
+If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` which is called before the screenshot is captured.
 ```js
 import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 const getMatchOptions = ({context : {kind, story}, url}) => {
