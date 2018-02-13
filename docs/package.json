@@ -37,7 +37,7 @@
     "gatsby-remark-autolink-headers": "^1.4.12",
     "gatsby-remark-copy-linked-files": "^1.5.27",
     "gatsby-remark-images": "^1.5.44",
-    "gatsby-remark-smartypants": "^1.4.10",
+    "gatsby-remark-smartypants": "^1.4.11",
     "gatsby-source-filesystem": "^1.5.18",
     "gatsby-transformer-remark": "^1.7.31",
     "gh-pages": "^1.1.0",

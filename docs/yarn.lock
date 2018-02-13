@@ -4460,9 +4460,9 @@ gatsby-remark-images@^1.5.44:
     slash "^1.0.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-smartypants@^1.4.10:
-  version "1.4.10"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-1.4.10.tgz#b04c06741529e693dc54fe23e191edb3cf0aea9e"
+gatsby-remark-smartypants@^1.4.11:
+  version "1.4.11"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-1.4.11.tgz#86e756aa9f093f25627961b00c14bcec6ebd1894"
   dependencies:
     babel-runtime "^6.26.0"
     retext "^4.0.0"
