@@ -1,4 +1,4 @@
-# Storybook Addon Knobs
+# New Document# Storybook Addon Knobs
 
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -125,9 +125,13 @@ const label = 'Your Name';
 const defaultValue = 'Arunoda Susiripala';
 const groupId = 'GROUP-ID1';
 
-const value = text(label, defaultValue, groupId);
+const value = text(label, defaultValue);
 ```
 
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const value = text(label, defaultValue, groupId);
+```
 ### boolean
 
 Allows you to get a boolean value from the user.
@@ -139,9 +143,13 @@ const label = 'Agree?';
 const defaultValue = false;
 const groupId = 'GROUP-ID1';
 
-const value = boolean(label, defaultValue, groupId);
+const value = boolean(label, defaultValue);
 ```
 
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const value = boolean(label, defaultValue, groupId);
+```
 ### number
 
 Allows you to get a number from the user.
@@ -153,9 +161,15 @@ const label = 'Age';
 const defaultValue = 78;
 const groupId = 'GROUP-ID1';
 
-const value = number(label, defaultValue, {}, groupId);
+const value = number(label, defaultValue);
 ```
 
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+
+Note that you must add `{}` as a third argument and groupId as the fourth argument.
+```
+const value = number(label, defaultValue, {}, groupId);
+```
 ### number bound by range
 
 Allows you to get a number from the user using a range slider.
@@ -176,6 +190,10 @@ const groupId = 'GROUP-ID1';
 const value = number(label, defaultValue, options, groupId);
 ```
 
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const value = number(label, defaultValue, options, groupId);
+```
 ### color
 
 Allows you to get a colour from the user.
@@ -187,6 +205,11 @@ const label = 'Color';
 const defaultValue = '#ff00ff';
 const groupId = 'GROUP-ID1';
 
+const value = color(label, defaultValue);
+```
+
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
 const value = color(label, defaultValue, groupId);
 ```
 
@@ -203,6 +226,11 @@ const defaultValue = {
 };
 const groupId = 'GROUP-ID1';
 
+const value = object(label, defaultValue);
+```
+
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
 const value = object(label, defaultValue, groupId);
 ```
 
@@ -219,7 +247,7 @@ const label = 'Styles';
 const defaultValue = ['Red'];
 const groupId = 'GROUP-ID1';
 
-const value = array(label, defaultValue, ',', groupId);
+const value = array(label, defaultValue);
 ```
 
 > While editing values inside the knob, you will need to use a separator.
@@ -231,9 +259,15 @@ const value = array(label, defaultValue, ',', groupId);
 > const label = 'Styles';
 > const defaultValue = ['Red'];
 > const separator = ':';
-> const groupId = 'GROUP-ID1';
-> const value = array(label, defaultValue, separator, groupId);
+> const value = array(label, defaultValue, separator);
 > ```
+
+Optionally, you can add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+
+Note that you must add `','` as a third argument (the default separator) and groupId as the fourth argument.
+```
+const value = array(label, defaultValue, ',', groupId);
+```
 
 ### select
 
@@ -251,10 +285,15 @@ const options = {
 const defaultValue = 'red';
 const groupId = 'GROUP-ID1';
 
-const value = select(label, options, defaultValue, groupId);
+const value = select(label, options, defaultValue);
 ```
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
+
+Optionally, you can also add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const value = select(label, options, defaultValue, groupId);
+```
 
 ### selectV2
 
@@ -272,8 +311,14 @@ const options = {
   None: null,
 };
 const defaultValue = 'Red';
+const groupId = 'GROUP-ID1';
 
 const value = selectV2(label, options, defaultValue)
+```
+
+Optionally, you can also add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const value = selectV2(label, options, defaultValue, groupId);
 ```
 
 ### date
@@ -287,7 +332,7 @@ const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
 const groupId = 'GROUP-ID1';
 
-const value = date(label, defaultValue, groupId);
+const value = date(label, defaultValue);
 ```
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
@@ -302,6 +347,11 @@ function myDateKnob(name, defaultValue) {
 }
 ```
 
+Optionally, you can also add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const value = date(label, defaultValue, groupId);
+```
+
 ### button
 
 Allows you to include a button and associated handler.
@@ -313,7 +363,12 @@ const label = 'Do Something';
 const handler = () => doSomething('foobar');
 const groupId = 'GROUP-ID1';
 
-button(label, handler, groupId);
+button(label, handler);
+```
+
+Optionally, you can also add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
+```
+const button = date(label, handler, groupId);
 ```
 
 ### withKnobs vs withKnobsOptions
