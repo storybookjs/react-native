@@ -64,7 +64,7 @@ export default class Panel extends React.Component {
     this.props.channel.on('addon:knobs:setOptions', this.setOptions);
 
     this.stopListeningOnStory = this.props.api.onStory(() => {
-      this.setState({ knobs: [] });
+      this.setState({ knobs: [], groupId: DEFAULT_GROUP_ID });
       this.props.channel.emit('addon:knobs:reset');
     });
   }
@@ -150,31 +150,36 @@ export default class Panel extends React.Component {
     const { knobs, groupId } = this.state;
 
     const groups = {};
-
-    groups[DEFAULT_GROUP_ID] = {
-      render: () => <div id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</div>,
-      title: DEFAULT_GROUP_ID,
-    };
+    const groupIds = [];
 
     Object.keys(knobs)
       .filter(key => knobs[key].used && knobs[key].groupId)
       .forEach(key => {
-        const keyGroupId = knobs[key].groupId;
-        groups[keyGroupId] = {
-          render: () => <div id={keyGroupId}>{keyGroupId}</div>,
-          title: keyGroupId,
+        const knobKeyGroupId = knobs[key].groupId;
+        groupIds.push(knobKeyGroupId);
+        groups[knobKeyGroupId] = {
+          render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
+          title: knobKeyGroupId,
         };
       });
 
-    const knobsArray = Object.keys(knobs)
-      .filter(key => {
+    let knobsArray = Object.keys(knobs);
+
+    if (groupIds.length > 0) {
+      groups[DEFAULT_GROUP_ID] = {
+        render: () => <div id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</div>,
+        title: DEFAULT_GROUP_ID,
+      };
+      knobsArray = knobsArray.filter(key => {
         const filter =
           groupId === DEFAULT_GROUP_ID
             ? knobs[key].used
             : knobs[key].used && knobs[key].groupId === groupId;
         return filter;
-      })
-      .map(key => knobs[key]);
+      });
+    }
+
+    knobsArray = knobsArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
       return <div style={styles.noKnobs}>NO KNOBS</div>;
@@ -182,11 +187,13 @@ export default class Panel extends React.Component {
 
     return (
       <div style={styles.panelWrapper}>
-        <GroupTabs
-          groups={groups}
-          onGroupSelect={this.onGroupSelect}
-          selectedGroup={this.state.groupId}
-        />
+        {groupIds.length > 0 && (
+          <GroupTabs
+            groups={groups}
+            onGroupSelect={this.onGroupSelect}
+            selectedGroup={this.state.groupId}
+          />
+        )}
         <div style={styles.panel}>
           <PropForm
             knobs={knobsArray}
