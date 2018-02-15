@@ -9,6 +9,7 @@ import ObjectOf from './ObjectOf';
 import OneOf from './OneOf';
 import InstanceOf from './InstanceOf';
 import Signature from './Signature';
+import Literal from './Literal';
 
 import { TypeInfo } from './proptypes';
 
@@ -20,6 +21,7 @@ const propTypeComponentMap = new Map([
   ['objectOf', ObjectOf],
   // Might be overkill to have below proptypes  as separate components *shrug*
   ['object', ObjectType],
+  ['literal', Literal],
   ['enum', OneOf],
   ['instanceOf', InstanceOf],
   ['signature', Signature],

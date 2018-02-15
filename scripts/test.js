@@ -43,7 +43,7 @@ const createOption = ({ defaultValue, option, name, extraParam }) => ({
 
 const tasks = {
   core: createProject({
-    name: `Core & React & Vue ${chalk.gray('(core)')}`,
+    name: `Core & React & Vue & Polymer ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: path.join(__dirname, '..'),
@@ -57,10 +57,17 @@ const tasks = {
     isJest: true,
   }),
   integration: createProject({
-    name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
+    name: `Screenshots of built apps ${chalk.gray('(integration)')}`,
     defaultValue: false,
     option: '--integration',
     projectLocation: path.join(__dirname, '..', 'integration'),
+    isJest: true,
+  }),
+  image: createProject({
+    name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
+    defaultValue: false,
+    option: '--image',
+    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
     isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({

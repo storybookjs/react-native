@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'api'
-
-## title: 'API'
+title: 'API'
+---
 
 ## Core Addon API
 

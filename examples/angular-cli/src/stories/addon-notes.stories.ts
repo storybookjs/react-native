@@ -10,7 +10,7 @@ storiesOf('Addon Notes', module)
       props: {
         text: 'Notes on some Button',
         onClick: () => {},
-      }
+      },
     }))
   )
   .add(
@@ -28,6 +28,6 @@ storiesOf('Addon Notes', module)
       props: {
         text: 'Notes with HTML',
         onClick: () => {},
-      }
+      },
     }))
   );

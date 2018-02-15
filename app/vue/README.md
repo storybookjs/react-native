@@ -28,7 +28,7 @@ getstorybook
 For more information visit: [storybook.js.org](https://storybook.js.org)
 
 ## Starter Storybook-for-Vue Boilerplate project with [Vuetify](https://github.com/vuetifyjs/vuetify) Material Component Framework
-https://github.com/white-rabbit-japan/vuetify-storyboard-boilerplate
+<https://github.com/white-rabbit-japan/vuetify-storyboard-boilerplate>
 
 * * *
 

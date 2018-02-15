@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "3.3.3",
+  "version": "3.4.0-alpha.8",
   "description": "Core Storybook Components",
   "license": "MIT",
   "main": "dist/index.js",
@@ -10,13 +10,13 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
+    "build-storybook": "build-storybook",
     "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.2",
+    "glamorous": "^4.11.4",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
@@ -24,8 +24,8 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.3",
-    "@storybook/addon-knobs": "^3.3.3",
-    "@storybook/react": "^3.3.3"
+    "@storybook/addon-actions": "^3.4.0-alpha.8",
+    "@storybook/addon-knobs": "^3.4.0-alpha.8",
+    "@storybook/react": "^3.4.0-alpha.8"
   }
 }

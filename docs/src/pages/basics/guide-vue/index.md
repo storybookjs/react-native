@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'guide-vue'
-
-## title: 'Storybook for Vue'
+title: 'Storybook for Vue'
+---
 
 You may have tried to use our quick start guide to setup your project for Storybook. If you want to set up Storybook manually, this is the guide for you.
 
@@ -18,7 +17,7 @@ In this guide, we are trying to set up Storybook for your Vue project.
 ## Table of contents
 
 -   [Add @storybook/vue](#add-storybookvue)
--   [Add vue](#add-vue)
+-   [Add vue and babel-core](#add-vue-and-babel-core)
 -   [Create the NPM script](#create-the-npm-script)
 -   [Create the config file](#create-the-config-file)
 -   [Write your stories](#write-your-stories)
@@ -32,12 +31,13 @@ First of all, you need to add `@storybook/vue` to your project. To do that, simp
 npm i --save-dev @storybook/vue
 ```
 
-## Add vue
+## Add vue and babel-core
 
-Make sure that you have `vue` in your dependencies as well because we list is as a peerDependency:
+Make sure that you have `vue` and `babel-core` in your dependencies as well because we list is as a peerDependency:
 
 ```sh
 npm i --save vue
+npm i --save-dev babel-core
 ```
 
 ## Create the NPM script
@@ -86,7 +86,7 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded you Storybook stories defined in `../stories/index.js`.
+This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded your Storybook stories defined in `../stories/index.js`.
 
 All custom components and Vue plugins should be registered before calling `configure()`.
 
