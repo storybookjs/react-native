@@ -3955,6 +3955,10 @@ fast-glob@^1.0.1:
     micromatch "^3.0.3"
     readdir-enhanced "^1.5.2"
 
+fast-levenshtein@~2.0.4:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
+
 fast-memoize@^2.2.7:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/fast-memoize/-/fast-memoize-2.2.8.tgz#d7f899f31d037b12d9db4281912f9018575720b1"
@@ -4500,9 +4504,9 @@ gatsby-transformer-remark@^1.7.32:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.194:
-  version "1.9.194"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.194.tgz#6cc32ed3ab408ba25e6150c0571c3153924e8055"
+gatsby@^1.9.199:
+  version "1.9.199"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.199.tgz#8d23dcd1d3b33d012074cc8a439174dfc5a700f6"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4536,6 +4540,7 @@ gatsby@^1.9.194:
     express "^4.14.0"
     express-graphql "^0.6.6"
     extract-text-webpack-plugin "^1.0.1"
+    fast-levenshtein "~2.0.4"
     file-loader "^0.9.0"
     flat "^2.0.1"
     friendly-errors-webpack-plugin "^1.6.1"

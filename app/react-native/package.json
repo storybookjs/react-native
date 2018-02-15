@@ -60,7 +60,7 @@
     "postcss-loader": "^2.1.0",
     "prop-types": "^15.6.0",
     "react-native-compat": "^1.0.0",
-    "react-native-iphone-x-helper": "^1.0.1",
+    "react-native-iphone-x-helper": "^1.0.2",
     "shelljs": "^0.8.1",
     "style-loader": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.1.7",

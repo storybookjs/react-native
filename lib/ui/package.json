@@ -31,7 +31,7 @@
     "podda": "^1.2.2",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
-    "react-fuzzy": "^0.5.1",
+    "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
     "react-inspector": "^2.2.2",
     "react-modal": "^3.1.13",
