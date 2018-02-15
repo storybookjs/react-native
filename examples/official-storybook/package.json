@@ -7,7 +7,7 @@
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "image-snapshots": "yarn run build-storybook && jest --projects=./image-snapshots",
-    "storybook": "start-storybook -p 9010 -c ./"
+    "storybook": "start-storybook -p 9010 -c ./ -s built-storybooks"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.4.0-alpha.8",
@@ -33,7 +33,7 @@
     "eventemitter3": "^3.0.1",
     "format-json": "^1.0.3",
     "global": "^4.3.2",
-    "jest": "^22.1.4",
+    "jest": "^22.3.0",
     "paths.macro": "^2.0.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
