@@ -12449,7 +12449,7 @@ react-native-compat@^1.0.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-iphone-x-helper@^1.0.1:
+react-native-iphone-x-helper@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.0.2.tgz#7dbca530930f7c1ce8633cc8fd13ba94102992e1"
 
@@ -14766,7 +14766,7 @@ symbol-tree@^3.2.1:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
 
-symlink-dir@^1.1.1:
+symlink-dir@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/symlink-dir/-/symlink-dir-1.1.2.tgz#eb367da33401e9c6e95b1ca87efd921cef369852"
   dependencies:
