@@ -79,20 +79,21 @@ storiesOf('Advanced/Addon Knobs', module)
     const fruit = select('Fruit', fruits, 'apple');
     const price = number('Price', 2.25);
     const colour = color('Border', 'deeppink');
-    const today = date('Today', new Date('Jan 20 2017'));
+    const today = date('Today', new Date('Jan 20 2017 GMT+0'));
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
     const nice = boolean('Nice', true);
 
     const stockMessage = stock
       ? `I have a stock of ${stock} ${fruit}, costing &dollar;${price} each.`
       : `I'm out of ${fruit}${nice ? ', Sorry!' : '.'}`;
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
 
     button('Arbitrary action', action('You clicked it!'));
 
     return `
           <div style="border:2px dotted ${colour}; padding: 8px 22px; border-radius: 8px">
             <h1>My name is ${name},</h1>
-            <h3>today is ${new Date(today).toLocaleDateString()}</h3>
+            <h3>today is ${new Date(today).toLocaleDateString('en-US', dateOptions)}</h3>
             <p>${stockMessage}</p>
             <p>Also, I have:</p>
             <ul>

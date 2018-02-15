@@ -247,6 +247,26 @@ const value = select(label, options, defaultValue);
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
 
+### selectV2
+
+In v4 this will replace `select`. The value from the select now uses the values from the `options` object.
+
+```js
+import { selectV2 } from '@storybook/addon-knobs';
+
+const label = 'Colors';
+const options = {
+  Red: 'red',
+  Blue: 'blue',
+  Yellow: 'yellow',
+  Rainbow: ['red', 'orange', 'etc'],
+  None: null,
+};
+const defaultValue = 'Red';
+
+const value = selectV2(label, options, defaultValue)
+```
+
 ### date
 
 Allow you to get date (and time) from the user.
@@ -264,7 +284,7 @@ const value = date(label, defaultValue);
 The `date` knob returns the selected date as stringified Unix timestamp (e.g. `"1510913096516"`).
 If your component needs the date in a different form you can wrap the `date` function:
 
-```
+```js
 function myDateKnob(name, defaultValue) {
   const stringTimestamp = date(name, defaultValue)
   return new Date(stringTimestamp)

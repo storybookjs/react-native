@@ -1,22 +1,22 @@
 {
   "name": "polymer-cli",
-  "version": "3.4.0-alpha.5",
+  "version": "3.4.0-alpha.8",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "private": true,
   "dependencies": {
-    "@polymer/polymer": "^2.2.0",
-    "@storybook/addon-actions": "^3.4.0-alpha.5",
-    "@storybook/addon-knobs": "^3.4.0-alpha.5",
-    "@storybook/addon-notes": "^3.4.0-alpha.5",
-    "@storybook/addon-viewport": "^3.4.0-alpha.5",
-    "@storybook/polymer": "^3.4.0-alpha.5",
+    "@polymer/polymer": "^2.5.0",
+    "@storybook/addon-actions": "^3.4.0-alpha.8",
+    "@storybook/addon-knobs": "^3.4.0-alpha.8",
+    "@storybook/addon-notes": "^3.4.0-alpha.8",
+    "@storybook/addon-viewport": "^3.4.0-alpha.8",
+    "@storybook/polymer": "^3.4.0-alpha.8",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "global": "^4.3.2",
     "polymer-webpack-loader": "^2.0.0",
-    "webpack": "^3.8.1"
+    "webpack": "^3.11.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -24,7 +24,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
-    "copy-webpack-plugin": "^4.2.0",
+    "copy-webpack-plugin": "^4.4.0",
     "html-webpack-plugin": "^2.30.1",
     "webpack-dev-server": "^2.11.1"
   }

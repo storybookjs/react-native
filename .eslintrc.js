@@ -18,6 +18,11 @@ module.exports = {
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts'],
+      },
+    },
   },
   rules: {
     strict: [error, 'never'],

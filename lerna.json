@@ -1,5 +1,5 @@
 {
-  "lerna": "2.5.1",
+  "lerna": "2.9.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "commands": {
@@ -8,5 +8,5 @@
     }
   },
   "concurrency": 1,
-  "version": "3.4.0-alpha.5"
+  "version": "3.4.0-alpha.8"
 }
