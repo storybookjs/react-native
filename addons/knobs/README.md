@@ -368,7 +368,7 @@ button(label, handler);
 
 Optionally, you can also add the `groupId` argument, which creates a group tab in the knob panel, useful for categorizing your knob.
 ```
-const button = date(label, handler, groupId);
+button(label, handler, groupId);
 ```
 
 ### withKnobs vs withKnobsOptions
