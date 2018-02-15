@@ -86,11 +86,12 @@ const getAnnotatedComponent = ({ componentMeta, component, params, knobStore, ch
   return KnobWrapperComponent;
 };
 
-const createComponentFromTemplate = template => {
+const createComponentFromTemplate = (template, styles) => {
   const componentClass = class DynamicComponent {};
 
   return Component({
     template,
+    styles,
   })(componentClass);
 };
 
@@ -106,10 +107,10 @@ export function prepareComponent({ getStory, context, channel, knobStore }) {
   resetKnobs(knobStore, channel);
   const story = getStory(context);
   let { component } = story;
-  const { template } = story;
+  const { template, styles } = story;
 
   if (!component) {
-    component = createComponentFromTemplate(template);
+    component = createComponentFromTemplate(template, styles);
   }
 
   const { componentMeta, props, params, moduleMetadata } = getComponentMetadata({
