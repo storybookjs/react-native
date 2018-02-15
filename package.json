@@ -103,7 +103,7 @@
     "symlink-dir": "^1.1.1",
     "ts-jest": "^22.0.4",
     "tslint": "~5.9.1",
-    "tslint-config-prettier": "^1.7.0",
+    "tslint-config-prettier": "^1.8.0",
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.7.1"
   },
