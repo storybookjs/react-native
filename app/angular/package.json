@@ -89,7 +89,7 @@
     "codelyzer": "^4.1.0",
     "mock-fs": "^4.3.0",
     "nodemon": "^1.15.0",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.2"
   },
   "peerDependencies": {
     "@angular/common": ">=4.0.0",
