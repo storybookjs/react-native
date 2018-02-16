@@ -27,7 +27,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.8",
+    "@angular/cli": "1.7.0",
     "@angular/compiler-cli": "^5.2.5",
     "@angular/language-service": "^5.2.5",
     "@storybook/addon-actions": "^3.4.0-alpha.8",
@@ -50,6 +50,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~4.1.0",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.2"
   }
 }
