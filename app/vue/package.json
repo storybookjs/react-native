@@ -76,7 +76,7 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.12",
+    "nodemon": "^1.15.0",
     "vue": "^2.5.13",
     "vue-loader": "^13.7.1",
     "vue-template-compiler": "^2.5.13"
