@@ -12,7 +12,6 @@ export default class Server {
     this.expressApp.use(storybook(options));
     this.httpServer.on('request', this.expressApp);
     this.wsServer = new ws.Server({ server: this.httpServer });
-    // see https://github.com/websockets/ws/issues/1256#issuecomment-364996586
     this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
   }
 
@@ -25,6 +24,7 @@ export default class Server {
       }
     }
 
+    // see https://github.com/websockets/ws/issues/1256#issuecomment-364988689
     socket.on('error', err => {
       // Ignore network errors like `ECONNRESET`, `EPIPE`, etc.
       if (err.errno) return;
