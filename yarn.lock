@@ -257,6 +257,14 @@
   dependencies:
     typescript "~2.6.2"
 
+"@storybook/components@^3.3.3":
+  version "3.3.13"
+  resolved "https://build-tools.learnvest.net/nexus/repository/npm-all/@storybook/components/-/components-3.3.13.tgz#003addacf9c98d61a35246eb7c76908d38d323c4"
+  dependencies:
+    glamor "^2.20.40"
+    glamorous "^4.11.2"
+    prop-types "^15.6.0"
+
 "@storybook/mantra-core@^1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@storybook/mantra-core/-/mantra-core-1.7.2.tgz#e10c7faca29769e97131e0e0308ef7cfb655b70c"
@@ -6346,7 +6354,7 @@ glamor@^2.20.40:
     prop-types "^15.5.10"
     through "^2.3.8"
 
-glamorous@^4.11.4:
+glamorous@^4.11.2, glamorous@^4.11.4:
   version "4.11.4"
   resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-4.11.4.tgz#61b333e1ec552abbe48e2fea48fea89fc0026149"
   dependencies:
