@@ -78,7 +78,7 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.12"
+    "nodemon": "^1.15.0"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
