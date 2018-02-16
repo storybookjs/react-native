@@ -4412,6 +4412,23 @@ gatsby-plugin-sharp@^1.6.28:
     sharp "^0.19.0"
     svgo "^0.7.2"
 
+gatsby-plugin-sharp@^1.6.29:
+  version "1.6.29"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.29.tgz#6e1df0ea3ac165decd579e574b8e53e49b6c787f"
+  dependencies:
+    async "^2.1.2"
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    image-size "^0.5.1"
+    imagemin "^5.2.2"
+    imagemin-pngquant "^5.0.0"
+    imagemin-webp "^4.0.0"
+    lodash "^4.17.4"
+    potrace "^2.1.1"
+    progress "^1.1.8"
+    sharp "^0.19.0"
+    svgo "^0.7.2"
+
 gatsby-react-router-scroll@^1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.11.tgz#1ad3bdfc7f0a897abf24e4d89111ee49de516691"
