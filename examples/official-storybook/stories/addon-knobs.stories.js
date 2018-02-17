@@ -164,7 +164,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
         <p>Fruit: {fruit}</p>
         <p>Second Fruit: {otherFruit}</p>
         <p>Items:</p>
-        <ul>{items.map(item => <li>{item}</li>)}</ul>
+        <ul>{items.map(item => <li key={`${item}`}>{item}</li>)}</ul>
       </div>
     );
   })
