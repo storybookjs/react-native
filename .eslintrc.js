@@ -4,7 +4,7 @@ const ignore = 0;
 
 module.exports = {
   root: true,
-  extends: ['eslint-config-airbnb', 'plugin:jest/recommended', 'prettier'],
+  extends: ['eslint-config-airbnb', 'plugin:jest/recommended', 'prettier', 'prettier/react'],
   plugins: ['prettier', 'jest', 'react', 'json'],
   parser: 'babel-eslint',
   parserOptions: {
@@ -37,10 +37,7 @@ module.exports = {
       },
     ],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
-    quotes: [warn, 'single', { avoidEscape: true }],
     'class-methods-use-this': ignore,
-    'arrow-parens': [warn, 'as-needed'],
-    'space-before-function-paren': ignore,
     'import/no-unresolved': error,
     'import/extensions': [
       error,
@@ -69,10 +66,6 @@ module.exports = {
     'import/default': error,
     'import/named': error,
     'import/namespace': error,
-    'react/jsx-wrap-multilines': ignore,
-    'react/jsx-indent': ignore,
-    'react/jsx-indent-props': ignore,
-    'react/jsx-closing-bracket-location': ignore,
     'react/jsx-uses-react': error,
     'react/jsx-uses-vars': error,
     'react/react-in-jsx-scope': error,
