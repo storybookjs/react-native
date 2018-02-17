@@ -82,6 +82,11 @@ jobs:
             cd examples/angular-cli
             yarn build-storybook
       - run:
+          name: "Build polymer-cli"
+          command: |
+            cd examples/polymer-cli
+            yarn build-storybook
+      - run:
           name: "Run react kitchen-sink (smoke test)"
           command: |
             cd examples/cra-kitchen-sink
@@ -96,6 +101,10 @@ jobs:
           command: |
             cd examples/angular-cli
             yarn storybook --smoke-test
+      - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
       - run:
           name: "Run image snapshots"
           command: yarn test --image
@@ -207,26 +216,6 @@ jobs:
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
-  storybook:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-{{ .Revision }}
-      - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
-          name: "Visually test storybook"
-          command: |
-            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
@@ -290,9 +279,6 @@ workflows:
           requires:
             - build
       - unit-test:
-          requires:
-            - build
-      - storybook:
           requires:
             - build
       - cli:

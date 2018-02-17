@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs/angular';
 import { Button } from '@storybook/angular/demo';
 
-storiesOf('Custom Style', module)
+storiesOf('Custom|Style', module)
   .add('Default', () => ({
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
     moduleMetadata: {
