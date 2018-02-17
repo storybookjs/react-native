@@ -2,7 +2,6 @@ dist
 build
 coverage
 node_modules
-#addons/**/example/**
 docs/public
 lib/cli/test
 *.bundle.js
