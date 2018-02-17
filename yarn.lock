@@ -431,6 +431,12 @@ acorn-dynamic-import@^2.0.0, acorn-dynamic-import@^2.0.2:
   dependencies:
     acorn "^4.0.3"
 
+acorn-es7@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/acorn-es7/-/acorn-es7-0.1.0.tgz#4a6de4522faacb4c31209e1b73b5f301ed2bb30a"
+  dependencies:
+    acorn "^2.6.4"
+
 acorn-globals@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/acorn-globals/-/acorn-globals-3.1.0.tgz#fd8270f71fbb4996b004fa880ee5d46573a731bf"
@@ -499,6 +505,10 @@ acorn5-object-spread@^5.1.0:
   resolved "https://registry.yarnpkg.com/acorn5-object-spread/-/acorn5-object-spread-5.1.2.tgz#fbd6c8f483867bd859f479c1396aa495c9b07458"
   dependencies:
     acorn "^5.2.1"
+
+acorn@^2.6.4:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-2.7.0.tgz#ab6e7d9d886aaca8b085bc3312b79a198433f0e7"
 
 acorn@^3.0.4:
   version "3.3.0"

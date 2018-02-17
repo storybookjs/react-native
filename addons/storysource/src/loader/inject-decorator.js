@@ -1,8 +1,12 @@
 import lineColumn from 'line-column';
 import { handleADD, handleSTORYOF } from './parse-helpers';
 
-const acorn = require('acorn-stage3/inject')(require('acorn-jsx'));
 const estraverse = require('estraverse');
+const acorn = require('acorn');
+
+require('acorn-stage3/inject')(acorn);
+require('acorn-jsx/inject')(acorn);
+require('acorn-es7')(acorn);
 
 const acornConfig = {
   ecmaVersion: '6',
@@ -10,6 +14,7 @@ const acornConfig = {
   plugins: {
     jsx: true,
     stage3: true,
+    es7: true,
   },
 };
 

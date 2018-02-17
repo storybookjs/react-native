@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`inject-decorator positive - angular calculates "adds" map 1`] = `
+Object {
+  "Custom|ng-content@Default": Object {
+    "endLoc": Object {
+      "col": 3,
+      "line": 15,
+    },
+    "startLoc": Object {
+      "col": 44,
+      "line": 10,
+    },
+  },
+}
+`;
+
+exports[`inject-decorator positive - angular injects stories decorator after the all "storiesOf" functions 1`] = `
+"import { Component } from '@angular/core';
+import { storiesOf } from '@storybook/angular';
+
+@Component({
+  selector: 'storybook-with-ng-content',
+  template: \`<div style=\\"color: #1e88e5;\\"><ng-content></ng-content></div>\`,
+})
+class WithNgContentComponent {}
+
+storiesOf('Custom|ng-content', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add('Default', () => ({
+  template: \`<storybook-with-ng-content><h1>This is rendered in ng-content</h1></storybook-with-ng-content>\`,
+  moduleMetadata: {
+    declarations: [WithNgContentComponent],
+  },
+}));
+"
+`;
+
 exports[`inject-decorator positive calculates "adds" map 1`] = `
 Object {
   "Addons|Info.Decorator@Use Info as story decorator": Object {
