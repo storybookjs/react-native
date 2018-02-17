@@ -24,7 +24,7 @@
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:ts **/*.ts && yarn lint:md .",
-    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
     "publish": "lerna publish",
