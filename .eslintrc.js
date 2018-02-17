@@ -4,7 +4,13 @@ const ignore = 0;
 
 module.exports = {
   root: true,
-  extends: ['eslint-config-airbnb', 'plugin:jest/recommended', 'prettier', 'prettier/react'],
+  extends: [
+    'eslint-config-airbnb',
+    'plugin:jest/recommended',
+    'plugin:import/react-native',
+    'prettier',
+    'prettier/react',
+  ],
   plugins: ['prettier', 'jest', 'react', 'json'],
   parser: 'babel-eslint',
   parserOptions: {
@@ -25,7 +31,6 @@ module.exports = {
     },
   },
   rules: {
-    strict: [error, 'never'],
     'prettier/prettier': [
       warn,
       {
@@ -38,12 +43,12 @@ module.exports = {
     ],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
     'class-methods-use-this': ignore,
-    'import/no-unresolved': error,
     'import/extensions': [
       error,
+      'always',
       {
         js: 'never',
-        json: 'always',
+        ts: 'never',
       },
     ],
     'import/no-extraneous-dependencies': [
@@ -66,20 +71,15 @@ module.exports = {
     'import/default': error,
     'import/named': error,
     'import/namespace': error,
-    'react/jsx-uses-react': error,
-    'react/jsx-uses-vars': error,
-    'react/react-in-jsx-scope': error,
     'react/jsx-filename-extension': [
       warn,
       {
         extensions: ['.js', '.jsx'],
       },
     ],
-    'jsx-a11y/accessible-emoji': ignore,
-    'jsx-a11y/href-no-hash': ignore,
-    'jsx-a11y/label-has-for': ignore,
-    'jsx-a11y/click-events-have-key-events': error,
-    'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
     'react/no-unescaped-entities': ignore,
+    'jsx-a11y/accessible-emoji': ignore,
+    'jsx-a11y/label-has-for': ignore,
+    'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
   },
 };
