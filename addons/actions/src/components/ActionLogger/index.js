@@ -29,7 +29,7 @@ class ActionLogger extends Component {
     return (
       <Wrapper>
         <Actions>{this.getActionData()}</Actions>
-        <Button onClick={this.props.onClear}>CLEAR</Button>
+        <Button onClick={this.props.onClear}>Clear</Button>
       </Wrapper>
     );
   }

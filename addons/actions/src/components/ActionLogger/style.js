@@ -22,10 +22,11 @@ export const Button = glamorous(BaseButton)({
   position: 'absolute',
   bottom: 0,
   right: 0,
-  borderBottom: 'none',
-  borderRight: 'none',
   borderRadius: '4px 0 0 0',
-  outline: 'none',
+  textTransform: 'uppercase',
+  letterSpacing: 1,
+  paddingTop: 5,
+  paddingBootom: 5,
 });
 
 export const Counter = glamorous.div({

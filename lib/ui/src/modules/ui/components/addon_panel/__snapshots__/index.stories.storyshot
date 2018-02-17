@@ -5,7 +5,7 @@ exports[`Storyshots ui/AddonPanel default 1`] = `
   style="height:100px;display:flex"
 >
   <div
-    style="flex:1 1 auto;display:flex;flex-direction:column;background:white;border-radius:4px;border:solid 1px rgb(236, 236, 236);margin-top:5px;width:100%"
+    style="flex:1 1 auto;display:flex;flex-direction:column;background:white;border-radius:4px;border:solid 1px rgb(236, 236, 236);margin-top:5px;overflow:hidden;width:100%"
   >
     <div
       role="tablist"
