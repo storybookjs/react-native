@@ -78,7 +78,7 @@ stories.add('as dynamic variables', () => {
   const groupId = 'GROUP-ID1'
   const name = text('Name', 'Arunoda Susiripala', groupId);
 
-  const content = `I am ${name} and I'm ${age} years old.`;
+  const content = `My name is ${name}.`;
   return (<div>{content}</div>);
 });
 ```
