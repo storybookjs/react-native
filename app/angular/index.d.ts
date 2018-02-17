@@ -30,4 +30,5 @@ declare module '@storybook/angular' {
   export function addDecorator(decorator: any): IApi;
   export function configure(loaders: () => NodeRequire, module: NodeModule): void;
   export function getStorybook(): IStoribookSection[];
+  export function clearDecorators(): void;
 }

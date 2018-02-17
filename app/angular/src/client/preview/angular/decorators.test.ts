@@ -1,4 +1,5 @@
 import { moduleMetadata } from './decorators';
+import { addDecorator, storiesOf, clearDecorators, getStorybook } from '@storybook/angular';
 
 class MockModule {}
 class MockModuleTwo {}
@@ -67,5 +68,32 @@ describe('moduleMetadata', () => {
         providers: [MockService],
       },
     });
+  });
+
+  it('should work when added globally', () => {
+    const metadata = {
+      declarations: [MockComponent],
+      providers: [MockService],
+      entryComponents: [MockComponent],
+      imports: [MockModule],
+    };
+
+    addDecorator(moduleMetadata(metadata));
+
+    storiesOf('Test', module).add('Default', () => ({
+      component: MockComponent,
+    }));
+
+    const [storybook] = getStorybook();
+
+    expect(storybook.stories[0].render().moduleMetadata).toEqual({
+      declarations: [MockComponent],
+      providers: [MockService],
+      entryComponents: [MockComponent],
+      imports: [MockModule],
+      schemas: [],
+    });
+
+    clearDecorators();
   });
 });
