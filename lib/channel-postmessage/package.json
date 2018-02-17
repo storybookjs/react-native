@@ -1,18 +1,16 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "3.3.0-alpha.3",
+  "version": "3.4.0-alpha.8",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "^3.3.0-alpha.3",
+    "@storybook/channels": "^3.4.0-alpha.8",
     "global": "^4.3.2",
     "json-stringify-safe": "^5.0.1"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }

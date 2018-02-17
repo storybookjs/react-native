@@ -1,39 +1,54 @@
-import renderer from 'react-test-renderer';
-import shallow from 'react-test-renderer/shallow';
 import 'jest-specific-snapshot';
 import { getSnapshotFileName } from './utils';
 
-function getRenderedTree(story, context, options) {
-  const storyElement = story.render(context);
-  return renderer.create(storyElement, options).toJSON();
-}
+export const snapshotWithOptions = options => ({
+  story,
+  context,
+  renderTree,
+  snapshotFileName,
+}) => {
+  const result = renderTree(story, context, options);
 
-export const snapshotWithOptions = options => ({ story, context }) => {
-  const tree = getRenderedTree(story, context, options);
-  expect(tree).toMatchSnapshot();
-};
+  function match(tree) {
+    if (snapshotFileName) {
+      expect(tree).toMatchSpecificSnapshot(snapshotFileName);
+    } else {
+      expect(tree).toMatchSnapshot();
+    }
 
-export const multiSnapshotWithOptions = options => ({ story, context }) => {
-  const tree = getRenderedTree(story, context, options);
-  const snapshotFileName = getSnapshotFileName(context);
-
-  if (!snapshotFileName) {
-    expect(tree).toMatchSnapshot();
-    return;
+    if (typeof tree.unmount === 'function') {
+      tree.unmount();
+    }
   }
 
-  expect(tree).toMatchSpecificSnapshot(snapshotFileName);
+  if (typeof result.then === 'function') {
+    return result.then(match);
+  }
+
+  return match(result);
 };
 
-export const snapshot = snapshotWithOptions({});
+export const multiSnapshotWithOptions = options => ({ story, context, renderTree }) =>
+  snapshotWithOptions(options)({
+    story,
+    context,
+    renderTree,
+    snapshotFileName: getSnapshotFileName(context),
+  });
 
-export function shallowSnapshot({ story, context }) {
-  const shallowRenderer = shallow.createRenderer();
-  const result = shallowRenderer.render(story.render(context));
+export function shallowSnapshot({ story, context, renderShallowTree, options = {} }) {
+  const result = renderShallowTree(story, context, options);
   expect(result).toMatchSnapshot();
 }
 
-export function renderOnly({ story, context }) {
-  const storyElement = story.render(context);
-  renderer.create(storyElement);
+export function renderOnly({ story, context, renderTree }) {
+  const result = renderTree(story, context, {});
+
+  if (typeof result.then === 'function') {
+    return result;
+  }
+
+  return undefined;
 }
+
+export const snapshot = snapshotWithOptions({});

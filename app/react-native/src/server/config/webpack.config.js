@@ -27,13 +27,24 @@ const getConfig = options => ({
     new CaseSensitivePathsPlugin(),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         loader: require.resolve('babel-loader'),
         query: require('./babel.js'), // eslint-disable-line
         include: includePaths,
         exclude: excludePaths,
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+          },
+        ],
       },
     ],
   },

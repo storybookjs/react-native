@@ -2,23 +2,22 @@
 
 ## Table of contents
 
-  * [New features](#new-features)
-    + [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
-    + [Automatic story detection](#automatic-story-detection)
-    + [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
-    + [Add a playground addon](#add-a-playground-addon)
-    + [See multiple (or all) stories in 1 preview.](#see-multiple--or-all--stories-in-1-preview)
-  * [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    + [Angular](#angular)
-    + [Polymer & Webcomponents](#polymer---webcomponents)
-    + [Aurelia](#aurelia)
-    + [Ember](#ember)
-  * [Breaking changes](#breaking-changes)
-    + [Addon API](#addon-api)
-    + [API for adding stories](#api-for-adding-stories)
-  * [Documentation](#documentation)
-    + [Better design](#better-design)
-    + [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use--tweak---develop-storybook)
+* [New features](#new-features)
+  + [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
+  + [Automatic story detection](#automatic-story-detection)
+  + [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
+  + [Add a playground addon](#add-a-playground-addon)
+  + [See multiple (or all) stories in 1 preview.](#see-multiple--or-all--stories-in-1-preview)
+* [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
+  + [Polymer & Webcomponents](#polymer---webcomponents)
+  + [Aurelia](#aurelia)
+  + [Ember](#ember)
+* [Breaking changes](#breaking-changes)
+  + [Addon API](#addon-api)
+  + [API for adding stories](#api-for-adding-stories)
+* [Documentation](#documentation)
+  + [Better design](#better-design)
+  + [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use--tweak---develop-storybook)
 
 ## New features
 
@@ -62,13 +61,9 @@ Unfortunately if you choose anything other then React or React-Native you can no
 
 We want you to be able to use storybook with the framework / library of your choice.
 
-### Angular
-
-Storybook for Angular is in alpha and will be included in the 3.3.0 release.
-
 ### Polymer & Webcomponents
 
-Storybook for Polymer is currently in development, and will support custom elements.
+Storybook for Polymer is currently in development, and will support custom elements and plain HTML.
 
 ### Aurelia
 

@@ -6,7 +6,7 @@ import parse from 'url-parse';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
-import StoryStore from './story_store';
+import { StoryStore } from '@storybook/core/client';
 import StoryKindApi from './story_kind';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
@@ -83,6 +83,8 @@ export default class Preview {
         webUrl = `${httpType}://${host}${port}`;
         channel = createChannel({ url });
         addons.setChannel(channel);
+
+        channel.emit('channelCreated');
       }
       channel.on('getStories', () => this._sendSetStories());
       channel.on('setCurrentStory', d => this._selectStory(d));

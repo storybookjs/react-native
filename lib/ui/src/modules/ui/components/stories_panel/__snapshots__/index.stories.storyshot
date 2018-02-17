@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
+<div
+  style="padding:10px 0 10px 10px"
+>
+  <div
+    style="background:#F7F7F7;margin-bottom:10px;display:flex"
+  >
+    <a
+      href=""
+      rel="noopener noreferrer"
+      style="text-decoration:none;flex-grow:1;display:flex;align-items:center;justify-content:center;border:1px solid rgb(193, 193, 193);border-radius:2px"
+      target="_blank"
+    >
+      <h3
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#828282;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bolder;text-align:center;cursor:pointer;padding:5px;margin:0;overflow:hidden"
+      />
+    </a>
+    <button
+      style="text-transform:uppercase;font-size:12px;font-weight:bolder;color:rgb(130, 130, 130);border:1px solid rgb(193, 193, 193);text-align:center;border-radius:2px;cursor:pointer;display:inlineBlock;padding:0;margin:0 0 0 5px;background-color:inherit;outline:0;width:30px;flex-shrink:0"
+    >
+      ⌘
+    </button>
+  </div>
+  <div
+    style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;border:1px solid #ECECEC;border-radius:2px;position:relative"
+  >
+    <div
+      style="background:#F7F7F7"
+    >
+      <input
+        name="filter-text"
+        placeholder="Filter"
+        style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
+  />
+</div>
+`;
+
+exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is empty 1`] = `
+<div
+  style="padding:10px 0 10px 10px"
+>
+  <div
+    style="background:#F7F7F7;margin-bottom:10px;display:flex"
+  >
+    <a
+      href=""
+      rel="noopener noreferrer"
+      style="text-decoration:none;flex-grow:1;display:flex;align-items:center;justify-content:center;border:1px solid rgb(193, 193, 193);border-radius:2px"
+      target="_blank"
+    >
+      <h3
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#828282;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bolder;text-align:center;cursor:pointer;padding:5px;margin:0;overflow:hidden"
+      />
+    </a>
+    <button
+      style="text-transform:uppercase;font-size:12px;font-weight:bolder;color:rgb(130, 130, 130);border:1px solid rgb(193, 193, 193);text-align:center;border-radius:2px;cursor:pointer;display:inlineBlock;padding:0;margin:0 0 0 5px;background-color:inherit;outline:0;width:30px;flex-shrink:0"
+    >
+      ⌘
+    </button>
+  </div>
+  <div
+    style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;border:1px solid #ECECEC;border-radius:2px;position:relative"
+  >
+    <div
+      style="background:#F7F7F7"
+    >
+      <input
+        name="filter-text"
+        placeholder="Filter"
+        style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
+  />
+</div>
+`;
+
+exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
+<div
+  style="padding:10px 0 10px 10px"
+>
+  <div
+    style="background:#F7F7F7;margin-bottom:10px;display:flex"
+  >
+    <a
+      href=""
+      rel="noopener noreferrer"
+      style="text-decoration:none;flex-grow:1;display:flex;align-items:center;justify-content:center;border:1px solid rgb(193, 193, 193);border-radius:2px"
+      target="_blank"
+    >
+      <h3
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#828282;-webkit-font-smoothing:antialiased;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bolder;text-align:center;cursor:pointer;padding:5px;margin:0;overflow:hidden"
+      />
+    </a>
+    <button
+      style="text-transform:uppercase;font-size:12px;font-weight:bolder;color:rgb(130, 130, 130);border:1px solid rgb(193, 193, 193);text-align:center;border-radius:2px;cursor:pointer;display:inlineBlock;padding:0;margin:0 0 0 5px;background-color:inherit;outline:0;width:30px;flex-shrink:0"
+    >
+      ⌘
+    </button>
+  </div>
+  <div
+    style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;border:1px solid #ECECEC;border-radius:2px;position:relative"
+  >
+    <div
+      style="background:#F7F7F7"
+    >
+      <input
+        name="filter-text"
+        placeholder="Filter"
+        style="font-size:12px;color:#828282;padding:5px;display:block;width:100%;box-sizing:border-box;outline:none;border:0;height:26px"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
+  >
+    <div>
+      <ul
+        style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+      >
+        <li
+          style="position:relative"
+        >
+          <span>
+            <ul
+              style="padding-left:19px;list-style:none"
+            >
+              <li
+                style="position:relative"
+              >
+                <div
+                  data-name="kk"
+                  role="menuitem"
+                  style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
+                  tabindex="0"
+                >
+                  <div
+                    data-radium="true"
+                  >
+                    <div
+                      style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
+                    >
+                      <div
+                        style="position:absolute;top:50%;left:50%;margin:-6px 0 0 -5px"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="10"
+                          preserveAspectRatio="xMidYMid meet"
+                          style="vertical-align:top;fill:#9DA5AB"
+                          viewBox="0 0 40 40"
+                          width="10"
+                        >
+                          <g>
+                            <path
+                              d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                    >
+                      <div
+                        style="line-height:18px;padding:1px 0 5px"
+                      >
+                        kk
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span>
+                  <ul
+                    style="padding-left:19px;list-style:none"
+                  >
+                    <li
+                      style="position:relative"
+                    >
+                      <a
+                        class="css-1enjukp"
+                        data-name="bb"
+                        href="?selectedKind=kk&selectedStory=bb&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
+                      >
+                        <div
+                          data-radium="true"
+                        >
+                          <div
+                            style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                          >
+                            <div>
+                              bb
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <span />
+                    </li>
+                  </ul>
+                </span>
+              </li>
+            </ul>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

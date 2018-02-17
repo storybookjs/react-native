@@ -1,9 +1,10 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.3.0-alpha.3",
+  "version": "3.4.0-alpha.8",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -14,21 +15,22 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/addons": "^3.3.0-alpha.3",
-    "@storybook/components": "^3.3.0-alpha.3",
+    "@storybook/client-logger": "^3.4.0-alpha.8",
+    "@storybook/components": "^3.4.0-alpha.8",
     "babel-runtime": "^6.26.0",
+    "glamorous": "^4.11.6",
     "global": "^4.3.2",
-    "marksy": "^2.0.0",
+    "marksy": "^6.0.3",
+    "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.0",
     "react-addons-create-fragment": "^15.5.3",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
     "react-test-renderer": "^16.1.0"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   }
 }

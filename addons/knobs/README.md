@@ -4,7 +4,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
-[![Storybook Slack](https://now-examples-slackin-nqnzoygycp.now.sh/badge.svg)](https://now-examples-slackin-nqnzoygycp.now.sh/)
+[![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
 This addon works with Storybook for:
@@ -247,6 +247,26 @@ const value = select(label, options, defaultValue);
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
 
+### selectV2
+
+In v4 this will replace `select`. The value from the select now uses the values from the `options` object.
+
+```js
+import { selectV2 } from '@storybook/addon-knobs';
+
+const label = 'Colors';
+const options = {
+  Red: 'red',
+  Blue: 'blue',
+  Yellow: 'yellow',
+  Rainbow: ['red', 'orange', 'etc'],
+  None: null,
+};
+const defaultValue = 'Red';
+
+const value = selectV2(label, options, defaultValue)
+```
+
 ### date
 
 Allow you to get date (and time) from the user.
@@ -260,6 +280,16 @@ const value = date(label, defaultValue);
 ```
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
+
+The `date` knob returns the selected date as stringified Unix timestamp (e.g. `"1510913096516"`).
+If your component needs the date in a different form you can wrap the `date` function:
+
+```js
+function myDateKnob(name, defaultValue) {
+  const stringTimestamp = date(name, defaultValue)
+  return new Date(stringTimestamp)
+}
+```
 
 ### button
 

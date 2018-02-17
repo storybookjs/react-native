@@ -13,18 +13,19 @@ setOptions({
   showSearchBox: false,
   addonPanelInRight: true,
   sortStoriesByKind: false,
-  hierarchySeparator: /\/|\./,
+  hierarchySeparator: /\./,
+  hierarchyRootSeparator: /\|/,
 });
 
 // deprecated usage of infoAddon
 setAddon(infoAddon);
 
-// put welcome screen at the top of the list so it's the first one displayed
-require('../src/stories/welcome');
-
-// automatically import all story js files that end with *.stories.js
-const req = require.context('../src/stories', true, /\.stories\.js$/)
 function loadStories() {
+  // put welcome screen at the top of the list so it's the first one displayed
+  require('../src/stories/welcome');
+
+  // automatically import all story js files that end with *.stories.js
+  const req = require.context('../src/stories', true, /\.stories\.js$/)
   req.keys().forEach((filename) => req(filename))
 }
 

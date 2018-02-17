@@ -1,13 +1,11 @@
 {
   "name": "@storybook/channels",
-  "version": "3.3.0-alpha.3",
+  "version": "3.4.0-alpha.8",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
-  },
-  "devDependencies": {
-    "shelljs": "^0.7.8"
   }
 }

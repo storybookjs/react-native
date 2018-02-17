@@ -8,5 +8,12 @@
     "wc": {
       "limit": 500
     }
+  },
+  "dependencies": {
+    "mute": [
+      "shelljs",
+      "eslint-plugin-json",
+      "remark-lint-code-eslint"
+    ]
   }
 }
