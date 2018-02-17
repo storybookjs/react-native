@@ -71,14 +71,14 @@
     "react-modal": "^3.2.1",
     "redux": "^3.7.2",
     "request": "^2.83.0",
-    "style-loader": "^0.20.1",
-    "uglifyjs-webpack-plugin": "^1.1.7",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.0",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "nodemon": "^1.14.12"
+    "nodemon": "^1.15.0"
   }
 }

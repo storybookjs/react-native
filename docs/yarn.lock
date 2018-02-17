@@ -4395,9 +4395,9 @@ gatsby-module-loader@^1.0.10:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-sharp@^1.6.28:
-  version "1.6.28"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.28.tgz#4f485f4be15d2e64a7876455aea1fc9ed80b05a7"
+gatsby-plugin-sharp@^1.6.30:
+  version "1.6.30"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.30.tgz#c9c76c24687ed8c55e1524bae90486fe512586c2"
   dependencies:
     async "^2.1.2"
     babel-runtime "^6.26.0"
@@ -4442,13 +4442,13 @@ gatsby-remark-copy-linked-files@^1.5.27:
     path-is-inside "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.44:
-  version "1.5.44"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.44.tgz#19c0cdbb8fbe49c2b3f3e76d02994af8bb57d586"
+gatsby-remark-images@^1.5.46:
+  version "1.5.46"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.46.tgz#b0b615236858a3a1ec80119057ce5c133d1b3313"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
-    gatsby-plugin-sharp "^1.6.28"
+    gatsby-plugin-sharp "^1.6.30"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     slash "^1.0.0"
@@ -4463,9 +4463,9 @@ gatsby-remark-smartypants@^1.4.11:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.19:
-  version "1.5.19"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.19.tgz#bce5596d525f2098624a0c99c27d956fcb753c3d"
+gatsby-source-filesystem@^1.5.20:
+  version "1.5.20"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.20.tgz#5f5bc8989497795adee7302451174ef5eaf6086d"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4504,9 +4504,9 @@ gatsby-transformer-remark@^1.7.32:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.199:
-  version "1.9.199"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.199.tgz#8d23dcd1d3b33d012074cc8a439174dfc5a700f6"
+gatsby@^1.9.201:
+  version "1.9.201"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.201.tgz#792ed6dfd8e75ad89bb6c8e1fe262b493f88eb7d"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -6730,9 +6730,9 @@ markdown-table@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.1.tgz#4b3dd3a133d1518b8ef0dbc709bf2a1b4824bc8c"
 
-marked@^0.3.12:
-  version "0.3.12"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
+marked@^0.3.14:
+  version "0.3.14"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.14.tgz#42375c23e206b95fdd497dd1d2f33ae4d1cf3d6c"
 
 marked@^0.3.6:
   version "0.3.9"
