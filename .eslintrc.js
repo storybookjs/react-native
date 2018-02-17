@@ -78,8 +78,28 @@ module.exports = {
       },
     ],
     'react/no-unescaped-entities': ignore,
-    'jsx-a11y/accessible-emoji': ignore,
-    'jsx-a11y/label-has-for': ignore,
-    'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
+    'jsx-a11y/label-has-for': [
+      error,
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
+    'jsx-a11y/anchor-is-valid': [
+      error,
+      {
+        components: ['RoutedLink', 'MenuLink', 'LinkTo', 'Link'],
+        specialLink: ['overrideParams', 'kind', 'story', 'to'],
+      },
+    ],
   },
+  overrides: [
+    {
+      files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
+      rules: {
+        'jsx-a11y/accessible-emoji': ignore,
+      },
+    },
+  ],
 };
