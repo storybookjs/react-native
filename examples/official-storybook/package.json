@@ -25,6 +25,7 @@
     "@storybook/addon-viewport": "^3.4.0-alpha.8",
     "@storybook/addons": "^3.4.0-alpha.8",
     "@storybook/components": "^3.4.0-alpha.8",
+    "@storybook/node-logger": "^3.4.0-alpha.8",
     "@storybook/react": "^3.4.0-alpha.8",
     "babel-jest": "^22.1.0",
     "enzyme": "^3.3.0",
