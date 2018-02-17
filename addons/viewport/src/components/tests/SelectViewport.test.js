@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
+import { shallow } from 'enzyme';
 import { SelectViewport } from '../SelectViewport';
 import { viewports, defaultViewport } from '../viewportInfo';
 import * as styles from '../styles';

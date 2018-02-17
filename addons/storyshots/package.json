@@ -28,6 +28,7 @@
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.0-alpha.8",
     "@storybook/addons": "^3.4.0-alpha.8",
     "@storybook/react": "^3.4.0-alpha.8",
     "babel-cli": "^6.26.0",
