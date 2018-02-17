@@ -2,8 +2,7 @@ dist
 build
 coverage
 node_modules
-addons/**/example/**
-app/**/demo/**
+#addons/**/example/**
 docs/public
 lib/cli/test
 *.bundle.js
@@ -13,3 +12,4 @@ lib/cli/test
 !.eslintrc.js
 !.eslintrc-markdown.js
 !.jest.config.js
+!.storybook

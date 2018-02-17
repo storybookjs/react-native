@@ -63,6 +63,7 @@ module.exports = {
           '**/scripts/*.js',
           '**/stories/**/*.js',
           '**/__tests__/**/*.js',
+          '**/.storybook/**/*.js',
         ],
         peerDependencies: true,
       },
@@ -99,6 +100,12 @@ module.exports = {
       files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
       rules: {
         'jsx-a11y/accessible-emoji': ignore,
+      },
+    },
+    {
+      files: '**/.storybook/config.js',
+      rules: {
+        'global-require': ignore,
       },
     },
   ],
