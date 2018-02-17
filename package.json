@@ -26,7 +26,7 @@
     "lint": "yarn lint:js . && yarn lint:ts **/*.ts && yarn lint:md .",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
-    "lint:md": "remark",
+    "lint:md": "remark -q",
     "publish": "lerna publish",
     "postpublish": "yarn --cwd lib/cli test -o",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
