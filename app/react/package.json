@@ -72,7 +72,7 @@
     "redux": "^3.7.2",
     "request": "^2.83.0",
     "style-loader": "^0.20.2",
-    "uglifyjs-webpack-plugin": "^1.1.7",
+    "uglifyjs-webpack-plugin": "^1.2.0",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
     "webpack": "^3.11.0"
