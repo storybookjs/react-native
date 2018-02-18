@@ -10,8 +10,10 @@ export function RotateViewport({ active, ...props }) {
   };
   return (
     <div style={styles.row}>
-      <label style={styles.label}>Rotate</label>
-      <button {...props} style={actionStyles}>
+      <label htmlFor="rotate" style={styles.label}>
+        Rotate
+      </label>
+      <button id="rotate" {...props} style={actionStyles}>
         {active ? 'Vertical' : 'Landscape'}
       </button>
     </div>

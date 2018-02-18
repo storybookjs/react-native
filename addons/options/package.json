@@ -19,6 +19,9 @@
     "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 9001"
   },
+  "devDependencies": {
+    "@storybook/react": "^3.4.0-alpha.8"
+  },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",
     "react": "*",

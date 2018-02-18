@@ -5,7 +5,12 @@ exports[`Storyshots Another Button with some emoji 1`] = `
   className="css-1yjiefr"
   onClick={[Function]}
 >
-  😀 😎 👍 💯
+  <span
+    aria-label="so cool"
+    role="img"
+  >
+    😀 😎 👍 💯
+  </span>
 </Unknown>
 `;
 
@@ -23,7 +28,12 @@ exports[`Storyshots Button with some emoji 1`] = `
   className="css-1yjiefr"
   onClick={[Function]}
 >
-  😀 😎 👍 💯
+  <span
+    aria-label="so cool"
+    role="img"
+  >
+    😀 😎 👍 💯
+  </span>
 </Unknown>
 `;
 
@@ -45,13 +55,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     This is a UI component dev environment for your app.
   </p>
   <p>
-    We've added some basic stories inside the
-     
+    We've added some basic stories inside the 
     <glamorous(code)>
       src/stories
     </glamorous(code)>
-     
-    directory.
+     directory.
     <br />
     A story is a single state of one or more UI components. You can have as many stories as you want.
     <br />
@@ -60,16 +68,13 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     See these sample
      
-    <glamorous(a)
+    <glamorous(glamorous(glamorous(a)))
       onClick={[Function]}
-      role="button"
-      tabIndex="0"
     >
       stories
-    </glamorous(a)>
+    </glamorous(glamorous(glamorous(a)))>
      
-    for a component called
-     
+    for a component called 
     <glamorous(code)>
       Button
     </glamorous(code)>
@@ -84,7 +89,8 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <glamorous(code)>
       Button
     </glamorous(code)>
-     stories located at 
+     stories located at
+     
     <glamorous(code)>
       src/stories/index.js
     </glamorous(code)>
@@ -110,13 +116,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       NOTE:
     </b>
     <br />
-    Have a look at the
-     
+    Have a look at the 
     <glamorous(code)>
       .storybook/webpack.config.js
     </glamorous(code)>
-     
-    to add webpack loaders and plugins you are using in this project.
+     to add webpack loaders and plugins you are using in this project.
   </glamorous(p)>
 </glamorous(article)>
 `;

@@ -28,6 +28,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.0-alpha.8",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.20.2",
     "vue": "^2.5.13"

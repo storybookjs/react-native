@@ -1,6 +1,6 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
-import { MemoryRouter } from 'react-router'
+import { MemoryRouter } from 'react-router';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../src/css/main.css';
