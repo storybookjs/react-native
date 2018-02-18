@@ -9,7 +9,7 @@ require('acorn-jsx/inject')(acorn);
 require('acorn-es7')(acorn);
 
 const acornConfig = {
-  ecmaVersion: '6',
+  ecmaVersion: '9',
   sourceType: 'module',
   plugins: {
     jsx: true,
