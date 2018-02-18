@@ -4,8 +4,7 @@ import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { WatchMissingNodeModulesPlugin } from '@storybook/core/server';
-import { managerPath } from '@storybook/core/client';
+import { WatchMissingNodeModulesPlugin, managerPath } from '@storybook/core/server';
 
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
@@ -84,7 +83,7 @@ export default function(configDir) {
     resolve: {
       // Since we ship with json-loader always, it's better to move extensions to here
       // from the default config.
-      extensions: ['.js', '.json', '.jsx'],
+      extensions: ['.js', '.json', '.jsx', '.vue'],
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
