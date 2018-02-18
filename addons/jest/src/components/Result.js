@@ -35,7 +35,8 @@ const StackTrace = glamorous(({ trace, className }) => (
       .join('')
       .trim()
       .split(/\n/)
-      .map(i => <div>{i.trim()}</div>)}
+      // eslint-disable-next-line react/no-array-index-key
+      .map((traceLine, traceLineIndex) => <div key={traceLineIndex}>{traceLine.trim()}</div>)}
   </details>
 ))({
   background: 'silver',
@@ -80,6 +81,11 @@ const createSubgroup = (acc, item, i, list) => {
   if (!acc.grouped) {
     acc.grouped = [];
   }
+  if (!('grouperIndex' in acc)) {
+    acc.grouperIndex = 0;
+  } else {
+    acc.grouperIndex += 1;
+  }
 
   // start or stop extraction
   if (acc.startTrigger(item)) {
@@ -104,11 +110,11 @@ const createSubgroup = (acc, item, i, list) => {
       switch (true) {
         case acc.injectionPoint === 0 && ei === 0: {
           // at index 0, inject before
-          return eacc.concat(acc.grouper(acc.grouped)).concat(el);
+          return eacc.concat(acc.grouper(acc.grouped, acc.grouperIndex)).concat(el);
         }
         case acc.injectionPoint > 0 && acc.injectionPoint === ei + 1: {
           // at index > 0, and next index WOULD BE injectionPoint, inject after
-          return eacc.concat(el).concat(acc.grouper(acc.grouped));
+          return eacc.concat(el).concat(acc.grouper(acc.grouped, acc.grouperIndex));
         }
         default: {
           // do not inject
@@ -131,9 +137,9 @@ const Message = ({ msg }) => {
       (item, li) =>
         typeof item === 'string'
           ? item
-              .split(/\[32m(.*?)\[39m/)
-              // eslint-disable-next-line react/no-array-index-key
-              .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
+            .split(/\[32m(.*?)\[39m/)
+            // eslint-disable-next-line react/no-array-index-key
+            .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
           : item
     )
     .reduce((acc, item) => acc.concat(item), [])
@@ -141,16 +147,16 @@ const Message = ({ msg }) => {
       (item, li) =>
         typeof item === 'string'
           ? item
-              .split(/\[31m(.*?)\[39m/)
-              // eslint-disable-next-line react/no-array-index-key
-              .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
+            .split(/\[31m(.*?)\[39m/)
+            // eslint-disable-next-line react/no-array-index-key
+            .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
           : item
     )
     .reduce((acc, item) => acc.concat(item), [])
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.indexOf('Error: ') === 0,
       endTrigger: e => typeof e === 'string' && e.match('Expected '),
-      grouper: list => <Main msg={list} />,
+      grouper: (list, key) => <Main key={key} msg={list} />,
     })
     .reduce(
       (acc, it) =>
@@ -161,12 +167,12 @@ const Message = ({ msg }) => {
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.indexOf('Expected ') !== -1,
       endTrigger: e => typeof e === 'string' && e.match(/^at/),
-      grouper: list => <Sub msg={list} />,
+      grouper: (list, key) => <Sub key={key} msg={list} />,
     })
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.match(/at(.|\n)+\d+:\d+\)/),
       endTrigger: () => false,
-      grouper: list => <StackTrace trace={list} />,
+      grouper: (list, key) => <StackTrace key={key} trace={list} />,
     });
 
   return <Pre>{data}</Pre>;
