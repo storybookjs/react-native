@@ -3,7 +3,7 @@
   "version": "3.4.0-alpha.8",
   "private": true,
   "scripts": {
-    "build-storybook": "build-storybook -c ./",
+    "build-storybook": "build-storybook -c ./ -s built-storybooks",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "image-snapshots": "yarn run build-storybook && jest --projects=./image-snapshots",
@@ -21,6 +21,7 @@
     "@storybook/addon-links": "^3.4.0-alpha.8",
     "@storybook/addon-notes": "^3.4.0-alpha.8",
     "@storybook/addon-options": "^3.4.0-alpha.8",
+    "@storybook/addon-storysource": "^3.4.0-alpha.8",
     "@storybook/addon-storyshots": "^3.4.0-alpha.8",
     "@storybook/addon-viewport": "^3.4.0-alpha.8",
     "@storybook/addons": "^3.4.0-alpha.8",

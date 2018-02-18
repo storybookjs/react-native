@@ -1,11 +1,14 @@
+const path = require('path');
 const webpack = require('webpack');
 
 module.exports = (storybookBaseConfig, configType, defaultConfig) => {
-  // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
-  // You can change the configuration based on that.
-  // 'PRODUCTION' is used when building the static version of storybook.
+  defaultConfig.module.rules.push({
+    test: [/\.stories\.js$/, /index\.js$/],
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    include: [path.resolve(__dirname, '../src')],
+    enforce: 'pre',
+  });
 
-  // Make whatever fine-grained changes you need
   defaultConfig.plugins.push(
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -17,6 +20,5 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     })
   );
 
-  // Return the altered config
   return defaultConfig;
 };
