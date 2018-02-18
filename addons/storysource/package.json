@@ -1,0 +1,37 @@
+{
+  "name": "@storybook/addon-storysource",
+  "version": "3.4.0-alpha.8",
+  "description": "Stories addon for storybook",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/storysource",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "acorn": "^5.3.0",
+    "acorn-es7": "^0.1.0",
+    "acorn-jsx": "^4.1.1",
+    "acorn-stage3": "^0.4.0",
+    "estraverse": "^4.2.0",
+    "line-column": "^1.0.2",
+    "prop-types": "^15.5.10",
+    "react-syntax-highlighter": "^7.0.0"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.3.0",
+    "react": "*",
+    "react-dom": "*"
+  }
+}
