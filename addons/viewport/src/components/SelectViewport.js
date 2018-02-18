@@ -7,8 +7,10 @@ import * as styles from './styles';
 export function SelectViewport({ activeViewport, onChange }) {
   return (
     <div style={styles.row}>
-      <label style={styles.label}>Device</label>
-      <select style={styles.action} value={activeViewport} onChange={onChange}>
+      <label htmlFor="device" style={styles.label}>
+        Device
+      </label>
+      <select style={styles.action} id="device" value={activeViewport} onChange={onChange}>
         <option value={defaultViewport}>Default</option>
         {Object.keys(viewports).map(key => (
           <option value={key} key={key}>

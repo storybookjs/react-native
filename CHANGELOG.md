@@ -951,7 +951,7 @@ In addition to the changes listed here, also contains fixes from [3.3.5](#335) a
 
 #### Bug Fixes
 
--   [app:angular] Fixed dependency injection for components [#2566](https://github.com/storybooks/storybook/pull/2566)
+-   `app:angular` Fixed dependency injection for components [#2566](https://github.com/storybooks/storybook/pull/2566)
 -   Revert "Move everything from lodash to lodash-es" [#2591](https://github.com/storybooks/storybook/pull/2591)
 
 #### Maintenance
@@ -1037,7 +1037,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Added type annotation to helpers, added ts declaration files for angu… [#2459](https://github.com/storybooks/storybook/pull/2459)
 -   Adding extra metadata to module/components [#2526](https://github.com/storybooks/storybook/pull/2526)
 -   Fix ng component prop output override [#2456](https://github.com/storybooks/storybook/pull/2456)
--   [WIP] Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
+-   `WIP` Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
 -   Angular Add custom pipes support [#2518](https://github.com/storybooks/storybook/pull/2518)
 -   Add angular support: Storybook for Angular [#1474](https://github.com/storybooks/storybook/pull/1474)
 -   Fix addon Knobs: add array in Object PropTypes [#2227](https://github.com/storybooks/storybook/pull/2227)
@@ -1294,7 +1294,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 -   Added type annotation to helpers, added ts declaration files for angu… [#2459](https://github.com/storybooks/storybook/pull/2459)
 -   Adding extra metadata to module/components [#2526](https://github.com/storybooks/storybook/pull/2526)
 -   Fix ng component prop output override [#2456](https://github.com/storybooks/storybook/pull/2456)
--   [WIP] Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
+-   `WIP` Angular versions support [#2467](https://github.com/storybooks/storybook/pull/2467)
 -   Angular Add custom pipes support [#2518](https://github.com/storybooks/storybook/pull/2518)
 
 #### Bug Fixes
@@ -1610,7 +1610,7 @@ We'll do a better job of getting out smaller releases next time around. ;-)
 #### Bug Fixes
 
 -   Number knob: apply default min/max/step values only in range mode [#2437](https://github.com/storybooks/storybook/pull/2437)
--   [addon-actions] Check result of getPropertyDescriptor for IE11 [#2428](https://github.com/storybooks/storybook/pull/2428)
+-   `addon-actions` Check result of getPropertyDescriptor for IE11 [#2428](https://github.com/storybooks/storybook/pull/2428)
 -   Edited template of search box result item to fix overflow text in row [#2419](https://github.com/storybooks/storybook/pull/2419)
 -   Fix missing supported extension check in case when asset is a string [#2468](https://github.com/storybooks/storybook/pull/2468)
 
@@ -2654,7 +2654,7 @@ Minor bug fixes and documentation updates post 3.0.0 release.
 
 -   Fixed typo in react-native browser instructions [#1189](https://github.com/storybooks/storybook/pull/1189)
 -   Add instruction for npm install with -D for development dependency [#1168](https://github.com/storybooks/storybook/pull/1168)
--   Fix broken link for [addons] in README [#1167](https://github.com/storybooks/storybook/pull/1167)
+-   Fix broken link for `addons` in README [#1167](https://github.com/storybooks/storybook/pull/1167)
 -   Refreshed logo in docs [#1149](https://github.com/storybooks/storybook/pull/1149)
 -   fix addon broken links in documentation [#1165](https://github.com/storybooks/storybook/pull/1165)
 -   start-storybook cli - expand commands descriptions [#1161](https://github.com/storybooks/storybook/pull/1161)
