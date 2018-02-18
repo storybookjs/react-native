@@ -5,22 +5,19 @@ const styles = {
   label: {
     padding: '0 6px',
   },
-}
+};
 
 function Label({ id, content }) {
   return (
-    <label
-      style={styles.label}
-      htmlFor={id}
-    >
-      { content }
+    <label style={styles.label} htmlFor={id}>
+      {content}
     </label>
-  )
+  );
 }
 
 Label.propTypes = {
-  content: PropTypes.string,
-  id: PropTypes.string,
+  content: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Label;
