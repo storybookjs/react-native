@@ -86,6 +86,35 @@ jobs:
             cd examples/official-storybook
             yarn build-storybook
       - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
+      - run:
+          name: "Run image snapshots"
+          command: yarn test --image
+      - run:
+          name: Integration Test - Kichen sinks
+          command: yarn test --integration
+      - store_artifacts:
+          path: integration/__image_snapshots__
+          destination: integration_image_snapshots
+      - store_artifacts:
+          path: examples/official-storybook/image-snapshots/__image_snapshots__
+          destination: official_storybook_image_snapshots
+  smoke-tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+
+      - run:
           name: "Run react kitchen-sink (smoke test)"
           command: |
             cd examples/cra-kitchen-sink
@@ -110,22 +139,6 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn storybook --smoke-test
-      - run:
-          name: "Visually test storybook"
-          command: |
-            yarn chromatic
-      - run:
-          name: "Run image snapshots"
-          command: yarn test --image
-      - run:
-          name: Integration Test - Kichen sinks
-          command: yarn test --integration
-      - store_artifacts:
-          path: integration/__image_snapshots__
-          destination: integration_image_snapshots
-      - store_artifacts:
-          path: examples/official-storybook/image-snapshots/__image_snapshots__
-          destination: official_storybook_image_snapshots
   react-native:
     <<: *defaults
     steps:
@@ -270,6 +283,9 @@ workflows:
     jobs:
       - build
       - example-kitchen-sinks:
+          requires:
+            - build
+      - smoke-tests:
           requires:
             - build
       - react-native:
