@@ -58,10 +58,6 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
@@ -201,10 +197,6 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: "Lint"
           command: |
             yarn lint
@@ -220,10 +212,6 @@ jobs:
           name: "Restore core dist cache"
           keys:
             - core-dist-{{ .Revision }}
-      - run:
-          name: "Link packages"
-          command: |
-            yarn install
       - run:
           name: "Run unit tests"
           command: |
