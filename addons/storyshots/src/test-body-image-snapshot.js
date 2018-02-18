@@ -7,7 +7,7 @@ expect.extend({ toMatchImageSnapshot });
 export const imageSnapshot = ({
   storybookUrl = 'http://localhost:6006',
   getMatchOptions = () => {},
-  beforeScreenshot = () => {}
+  beforeScreenshot = () => {},
 }) => {
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
