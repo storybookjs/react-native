@@ -55,7 +55,7 @@ storiesOf('Button', module)
   ))
   .add('with some emoji', () => (
     <WithNotes notes={'Here we use some emoji as the Button text. Doesn&apos;t it look nice?'}>
-      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+      <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
     </WithNotes>
   ));
 ```
@@ -104,7 +104,77 @@ In the above case, it will emit the notes' text to the channel, so our panel can
 
 Then add the following code to the register.js.
 
-See: <https://gist.github.com/arunoda/fb3859840ff616cc5ea0fa3ef8e3f358>
+```js
+import React from 'react';
+import addons from '@storybook/addons';
+
+const styles = {
+  notesPanel: {
+    margin: 10,
+    fontFamily: 'Arial',
+    fontSize: 14,
+    color: '#444',
+    width: '100%',
+    overflow: 'auto',
+  }
+};
+
+class Notes extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {text: ''};
+    this.onAddNotes = this.onAddNotes.bind(this);
+  }
+
+  onAddNotes(text) {
+    this.setState({text});
+  }
+
+  componentDidMount() {
+    const { channel, api } = this.props;
+    // Listen to the notes and render it.
+    channel.on('kadira/notes/add_notes', this.onAddNotes);
+
+    // Clear the current notes on every story change.
+    this.stopListeningOnStory = api.onStory(() => {
+      this.onAddNotes('');
+    });
+  }
+
+  render() {
+    const { text } = this.state;
+    const textAfterFormatted = text? text.trim().replace(/\n/g, '<br />') : "";
+
+    return (
+      <div style={styles.notesPanel}>
+        <div dangerouslySetInnerHTML={{__html: textAfterFormatted}} />
+      </div>
+    );
+  }
+
+  // This is some cleanup tasks when the Notes panel is unmounting.
+  componentWillUnmount() {
+    if(this.stopListeningOnStory) {
+      this.stopListeningOnStory();
+    }
+
+    this.unmounted = true;
+    const { channel, api } = this.props;
+    channel.removeListener('kadira/notes/add_notes', this.onAddNotes);
+  }
+}
+
+// Register the addon with a unique name.
+addons.register('kadira/notes', (api) => {
+  // Also need to set a unique name to the panel.
+  addons.addPanel('kadira/notes/panel', {
+    title: 'Notes',
+    render: () => (
+      <Notes channel={addons.getChannel()} api={api}/>
+    ),
+  })
+})
+```
 
 It will register our addon and add a panel. In this case, the panel represents a React component called `Notes`. That component has access to the channel and storybook api.
 
@@ -146,7 +216,7 @@ storiesOf('Button', module)
   ))
   .add('with some emojies', () => (
     <WithNotes notes={'Here we use emojies as the Button text. Doesn&apos;t it look nice?'}>
-      <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+      <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
     </WithNotes>
   ));
 ```
