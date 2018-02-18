@@ -19,7 +19,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
     My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
-    My birthday is: January 19, 2017
+    My birthday is: January 20, 2017
   </p>
   <p>
     I live in NY for 9 years.
@@ -65,7 +65,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
     Age: 70
   </p>
   <p>
-    Birthday: January 19, 2017
+    Birthday: January 20, 2017
   </p>
   <p>
     Account Balance: 12.5

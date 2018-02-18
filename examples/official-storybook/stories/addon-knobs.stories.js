@@ -81,7 +81,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
-    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
 
     return (
       <div style={style}>
@@ -148,7 +148,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const style = { backgroundColor, ...otherStyles };
 
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
-    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
 
     return (
       <div style={style}>
