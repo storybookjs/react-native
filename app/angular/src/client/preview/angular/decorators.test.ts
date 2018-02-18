@@ -1,5 +1,5 @@
 import { moduleMetadata } from './decorators';
-import { addDecorator, storiesOf, clearDecorators, getStorybook } from '@storybook/angular';
+import { addDecorator, storiesOf, clearDecorators, getStorybook } from '..';
 
 class MockModule {}
 class MockModuleTwo {}
