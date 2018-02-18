@@ -68,16 +68,16 @@ import Component from './Component';
 
 storiesOf('Component', module)
   .add('With Markdown', withMarkdownNotes(`
-  # Hello World
+# Hello World
 
-  This is some code showing usage of the component and other inline documentation
+This is some code showing usage of the component and other inline documentation
 
-  ~~~js
-  <div>
-    hello world!
-    <Component/>
-  </div>
-  ~~~
+~~~js
+<div>
+  hello world!
+  <Component/>
+</div>
+~~~
   `)(() => <Component/>));
 
 ```
