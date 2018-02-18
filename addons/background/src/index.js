@@ -3,21 +3,6 @@ import PropTypes from 'prop-types';
 
 import addons from '@storybook/addons';
 
-const style = {
-  wrapper: {
-    overflow: 'auto',
-    position: 'fixed',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    transition: 'background 0.25s ease-in-out',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    background: 'transparent',
-  },
-};
-
 export class BackgroundDecorator extends React.Component {
   constructor(props) {
     super(props);
@@ -31,13 +16,10 @@ export class BackgroundDecorator extends React.Component {
       this.channel = addons.getChannel();
     }
 
-    this.state = { background: 'transparent' };
-
     this.story = story();
   }
 
   componentWillMount() {
-    this.channel.on('background', this.setBackground);
     this.channel.emit('background-set', this.props.backgrounds);
   }
 
@@ -48,16 +30,11 @@ export class BackgroundDecorator extends React.Component {
   }
 
   componentWillUnmount() {
-    this.channel.removeListener('background', this.setBackground);
     this.channel.emit('background-unset');
   }
 
-  setBackground = background => this.setState({ background });
-
   render() {
-    const styles = style.wrapper;
-    styles.background = this.state.background;
-    return <div style={Object.assign({}, styles)}>{this.story}</div>;
+    return this.story;
   }
 }
 BackgroundDecorator.propTypes = {
