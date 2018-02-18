@@ -137,9 +137,9 @@ const Message = ({ msg }) => {
       (item, li) =>
         typeof item === 'string'
           ? item
-            .split(/\[32m(.*?)\[39m/)
-            // eslint-disable-next-line react/no-array-index-key
-            .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
+              .split(/\[32m(.*?)\[39m/)
+              // eslint-disable-next-line react/no-array-index-key
+              .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
           : item
     )
     .reduce((acc, item) => acc.concat(item), [])
@@ -147,9 +147,9 @@ const Message = ({ msg }) => {
       (item, li) =>
         typeof item === 'string'
           ? item
-            .split(/\[31m(.*?)\[39m/)
-            // eslint-disable-next-line react/no-array-index-key
-            .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
+              .split(/\[31m(.*?)\[39m/)
+              // eslint-disable-next-line react/no-array-index-key
+              .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
           : item
     )
     .reduce((acc, item) => acc.concat(item), [])
