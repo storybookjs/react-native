@@ -33,10 +33,11 @@ jobs:
           key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - example/angular-cli/node_modules
-            - example/cra-kitchen-sink/node_modules
-            - example/polymer-cli/node_modules
-            - example/vue-kitchen-sink/node_modules
+            - examples/angular-cli/node_modules
+            - examples/cra-kitchen-sink/node_modules
+            - examples/official-storybook/node_modules
+            - examples/polymer-cli/node_modules
+            - examples/vue-kitchen-sink/node_modules
       - save_cache:
           name: "Cache core dist"
           key: core-dist-{{ .Revision }}
