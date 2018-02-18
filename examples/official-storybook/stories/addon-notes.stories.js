@@ -23,20 +23,20 @@ storiesOf('Addons|Notes', module)
   .add(
     'withNotes rendering inline, github-flavored markdown',
     withMarkdownNotes(`
-    # Documentation
+# Documentation
 
-    This is inline github-flavored markdown!
+This is inline github-flavored markdown!
 
-    ## Example Usage
-    ~~~js
-    storiesOf('Addons|Notes', module)
-    .add(
-      'withNotes rendering imported markdown',
-      withNotes(markdownNotes)(() => (
-        <BaseButton label="Button with notes - check the notes panel for details" />
-      ))
-    )
-    ~~~
+## Example Usage
+~~~js
+storiesOf('Addons|Notes', module)
+  .add(
+    'withNotes rendering imported markdown',
+    withNotes(markdownNotes)(() => (
+      <BaseButton label="Button with notes - check the notes panel for details" />
+    ))
+  )
+~~~
     `)(() => (
       <BaseButton label="Button with notes from inline github-flavored markdown - check the notes panel for details" />
     ))
