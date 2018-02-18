@@ -278,6 +278,7 @@ workflows:
       - docs
       - lint:
           requires:
+            - docs
             - build
       - unit-test:
           requires:
