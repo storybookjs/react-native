@@ -106,6 +106,13 @@ const createSubgroup = (acc, item, i, list) => {
 
   // on last iteration inject at detected injectionpoint, and group
   if (i === list.length - 1) {
+    // Provide a "safety net" when Jest returns a partially recognized "group"
+    // (recognized by acc.startTrigger but acc.endTrigger was never found) and
+    // it's the only group in output for a test result. In that case, acc.list
+    // will be empty, so return whatever was found, even if it will be unstyled
+    // and prevent next createSubgroup calls from throwing due to empty lists.
+    acc.list.push(null);
+
     return acc.list.reduce((eacc, el, ei) => {
       switch (true) {
         case acc.injectionPoint === 0 && ei === 0: {
