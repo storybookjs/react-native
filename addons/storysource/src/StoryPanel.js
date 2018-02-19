@@ -8,6 +8,15 @@ import { EVENT_ID } from './';
 
 registerLanguage('jsx', jsx);
 
+const styles = {
+  selections: {
+    backgroundColor: 'rgba(255, 242, 60, 0.2)',
+  },
+  panel: {
+    width: '100%',
+  },
+};
+
 export default class StoryPanel extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +32,18 @@ export default class StoryPanel extends Component {
       });
     });
 
+    this.setSelectedStoryRef = this.setSelectedStoryRef.bind(this);
     this.lineRenderer = this.lineRenderer.bind(this);
+  }
+
+  componentDidUpdate() {
+    if (this.selectedStoryRef) {
+      this.selectedStoryRef.scrollIntoView();
+    }
+  }
+
+  setSelectedStoryRef(ref) {
+    this.selectedStoryRef = ref;
   }
 
   createPart(rows, stylesheet, useInlineStyles) {
@@ -51,7 +71,9 @@ export default class StoryPanel extends Component {
       return (
         <span>
           {start}
-          <div style={{ backgroundColor: 'rgba(255, 242, 60, 0.2)' }}>{selected}</div>
+          <div ref={this.setSelectedStoryRef} style={styles.selections}>
+            {selected}
+          </div>
           {end}
         </span>
       );
@@ -67,7 +89,7 @@ export default class StoryPanel extends Component {
         showLineNumbers="true"
         style={darcula}
         renderer={this.lineRenderer}
-        customStyle={{ width: '100%' }}
+        customStyle={styles.panel}
       >
         {this.state.source}
       </SyntaxHighlighter>
