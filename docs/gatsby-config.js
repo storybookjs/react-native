@@ -16,6 +16,7 @@ module.exports = {
         '/basics/exporting-storybook/',
         '/basics/faq/',
         '/basics/community/',
+        '/basics/live-examples/',
       ],
       configurations: [
         '/configurations/default-config/',
