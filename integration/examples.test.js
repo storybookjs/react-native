@@ -34,10 +34,6 @@ const examples = [
   },
 ];
 
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 examples.forEach(({ name, storybookUrl }) => {
   let browser = puppeteer.launch();
   let page;
@@ -54,7 +50,6 @@ examples.forEach(({ name, storybookUrl }) => {
 
     it(`Take screenshots for '${name}'`, async () => {
       await page.goto(`file://${storybookUrl}`);
-      await delay(2000);
       const screenshot = await page.screenshot({ fullPage: true });
       expect(screenshot).toMatchImageSnapshot({
         failureThreshold: 0.04, // 4% threshold,
