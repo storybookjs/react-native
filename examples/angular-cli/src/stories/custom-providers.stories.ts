@@ -3,18 +3,21 @@ import { withKnobs, text } from '@storybook/addon-knobs/angular';
 
 import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';
+import { moduleMetadata } from '@storybook/angular';
 
 storiesOf('Custom|Providers', module)
-  .add('Simple', () => ({
-    component: ServiceComponent,
-    props: {
-      name: 'Static name',
-    },
-    moduleMetadata: {
+  .addDecorator(
+    moduleMetadata({
       imports: [],
       schemas: [],
       declarations: [],
       providers: [DummyService],
+    })
+  )
+  .add('Simple', () => ({
+    component: ServiceComponent,
+    props: {
+      name: 'Static name',
     },
   }))
   .addDecorator(withKnobs)
@@ -25,12 +28,6 @@ storiesOf('Custom|Providers', module)
       component: ServiceComponent,
       props: {
         name,
-      },
-      moduleMetadata: {
-        imports: [],
-        schemas: [],
-        declarations: [],
-        providers: [DummyService],
       },
     };
   });
