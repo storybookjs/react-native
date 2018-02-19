@@ -15,6 +15,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@storybook/components": "^3.4.0-alpha.8",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
@@ -28,6 +29,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.0-alpha.8",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.20.2",
     "vue": "^2.5.13"

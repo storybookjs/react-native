@@ -35,39 +35,3 @@ exports[`Storyshots Custom|Inheritance icon button 1`] = `
   </storybook-icon-button>
 </storybook-dynamic-app-root>
 `;
-
-exports[`Storyshots Inheritance base button 1`] = `
-<storybook-dynamic-app-root
-  cfr={[Function CodegenComponentFactoryResolver]}
-  data={[Function Object]}
-  target={[Function ViewContainerRef_]}
->
-  <storybook-base-button>
-    
-      
-    <button>
-      this is label
-    </button>
-    
-    
-  </storybook-base-button>
-</storybook-dynamic-app-root>
-`;
-
-exports[`Storyshots Inheritance icon button 1`] = `
-<storybook-dynamic-app-root
-  cfr={[Function CodegenComponentFactoryResolver]}
-  data={[Function Object]}
-  target={[Function ViewContainerRef_]}
->
-  <storybook-icon-button>
-    
-      
-    <button>
-      this is label - this is icon
-    </button>
-    
-    
-  </storybook-icon-button>
-</storybook-dynamic-app-root>
-`;

@@ -11,6 +11,7 @@ export default class KnobStore {
   set(key, value) {
     this.store[key] = value;
     this.store[key].used = true;
+    this.store[key].groupId = value.groupId;
     this.callbacks.forEach(cb => cb());
   }
 

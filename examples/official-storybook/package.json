@@ -3,11 +3,11 @@
   "version": "3.4.0-alpha.8",
   "private": true,
   "scripts": {
-    "build-storybook": "build-storybook -c ./",
+    "build-storybook": "build-storybook -c ./ -s built-storybooks",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "image-snapshots": "yarn run build-storybook && jest --projects=./image-snapshots",
-    "storybook": "start-storybook -p 9010 -c ./ -s built-storybooks"
+    "storybook": "start-storybook -p 9011 -c ./ -s built-storybooks"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.4.0-alpha.8",
@@ -21,10 +21,12 @@
     "@storybook/addon-links": "^3.4.0-alpha.8",
     "@storybook/addon-notes": "^3.4.0-alpha.8",
     "@storybook/addon-options": "^3.4.0-alpha.8",
+    "@storybook/addon-storysource": "^3.4.0-alpha.8",
     "@storybook/addon-storyshots": "^3.4.0-alpha.8",
     "@storybook/addon-viewport": "^3.4.0-alpha.8",
     "@storybook/addons": "^3.4.0-alpha.8",
     "@storybook/components": "^3.4.0-alpha.8",
+    "@storybook/node-logger": "^3.4.0-alpha.8",
     "@storybook/react": "^3.4.0-alpha.8",
     "babel-jest": "^22.1.0",
     "enzyme": "^3.3.0",
