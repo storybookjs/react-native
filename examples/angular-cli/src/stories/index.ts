@@ -2,14 +2,18 @@ import { storiesOf } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
-  component: Welcome,
+  template: `<storybook-welcome-component></storybook-welcome-component>`,
   props: {},
+  moduleMetadata: {
+    declarations: [Welcome],
+  },
 }));
 
 storiesOf('Button', module)
   .add('with text', () => ({
+    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
     moduleMetadata: {
-      declarations: [Button, Welcome],
+      declarations: [Button],
     },
     props: {
       text: 'Hello Button',
@@ -18,14 +22,12 @@ storiesOf('Button', module)
         console.log(event);
       },
     },
-    template: `
-      <h1> This is a template </h1>
-      <storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>
-      <storybook-welcome-component></storybook-welcome-component>
-    `,
   }))
   .add('with some emoji', () => ({
-    component: Button,
+    template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
+    moduleMetadata: {
+      declarations: [Button],
+    },
     props: {
       text: '😀 😎 👍 💯',
       onClick: () => {},

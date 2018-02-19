@@ -16,7 +16,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
   style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
     My birthday is: January 20, 2017
@@ -51,6 +51,58 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in groups 1`] = `
+<div
+  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
+>
+  <h1>
+    General Information
+  </h1>
+  <p>
+    Name: Storyteller
+  </p>
+  <p>
+    Age: 70
+  </p>
+  <p>
+    Birthday: January 20, 2017
+  </p>
+  <p>
+    Account Balance: 12.5
+  </p>
+  <p>
+    Years in NY: 9
+  </p>
+  <hr />
+  <h1>
+    Favorites
+  </h1>
+  <p>
+    Catchphrase: Nice to meet you!
+  </p>
+  <p>
+    Fruit: apple
+  </p>
+  <p>
+    Second Fruit: lime
+  </p>
+  <p>
+    Items:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots Addons|Knobs.withKnobsOptions triggers actions via button with debounce delay 1`] = `
 <div>
   <p>
@@ -70,7 +122,7 @@ exports[`Storyshots Addons|Knobs.withKnobsOptions tweaks static values with debo
     If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
   </p>
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
     My birthday is: January 20, 2017

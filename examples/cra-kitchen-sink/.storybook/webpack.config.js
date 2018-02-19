@@ -9,11 +9,11 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
   // Make whatever fine-grained changes you need
   defaultConfig.plugins.push(
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
+      name: 'vendor',
       chunks: ['preview'],
-      minChunks: function (module) {
+      minChunks(module) {
         // this assumes your vendor imports exist in the node_modules directory
-        return module.context && module.context.indexOf("node_modules") !== -1;
+        return module.context && module.context.indexOf('node_modules') !== -1;
       },
     })
   );

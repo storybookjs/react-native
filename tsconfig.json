@@ -5,6 +5,7 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
+    "target": "es5",
     "lib": [
       "es2016",
       "dom"
