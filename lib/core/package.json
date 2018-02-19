@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "3.4.0-alpha.6",
+  "version": "3.4.0-alpha.8",
   "description": "Storybook framework-agnostic API",
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
   "bugs": {
@@ -17,26 +17,35 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^3.4.0-alpha.6",
-    "@storybook/channel-postmessage": "^3.4.0-alpha.6",
-    "@storybook/client-logger": "^3.4.0-alpha.6",
-    "@storybook/ui": "^3.4.0-alpha.6",
-    "autoprefixer": "^7.2.5",
+    "@storybook/addons": "^3.4.0-alpha.8",
+    "@storybook/channel-postmessage": "^3.4.0-alpha.8",
+    "@storybook/client-logger": "^3.4.0-alpha.8",
+    "@storybook/node-logger": "^3.4.0-alpha.8",
+    "@storybook/ui": "^3.4.0-alpha.8",
+    "autoprefixer": "^7.2.6",
     "babel-runtime": "^6.26.0",
+    "chalk": "^2.3.1",
+    "commander": "^2.14.1",
     "css-loader": "^0.28.9",
-    "dotenv": "^4.0.0",
+    "dotenv": "^5.0.0",
     "events": "^1.1.1",
+    "express": "^4.16.2",
     "file-loader": "^1.1.6",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "postcss-loader": "^2.0.10",
+    "postcss-loader": "^2.1.0",
     "prop-types": "^15.5.10",
     "qs": "^6.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "style-loader": "^0.20.1",
-    "url-loader": "^0.6.2"
+    "serve-favicon": "^2.4.5",
+    "shelljs": "^0.8.1",
+    "style-loader": "^0.20.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-middleware": "^1.12.2",
+    "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"

@@ -26,7 +26,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
 
 -   [Getting Started](#getting-started)
 -   [Projects](#projects)
-    -   [Main Projects](#main-projects)
+    -   [Supported Frameworks](#supported-frameworks)
     -   [Sub Projects](#sub-projects)
     -   [Addons](#addons)
 -   [Contributing](#contributing)
@@ -64,12 +64,13 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ## Projects
 
-### Main Projects
+### Supported Frameworks
 
--   [Storybook for react](app/react) - Storybook for React components
--   [Storybook for vue](app/vue) - Storybook for Vue components
--   [Storybook for angular](app/angular) - Storybook for Angular components
--   [Storybook for react-native](app/react-native) - Storybook for React-Native components
+-   [React](app/react)
+-   [React Native](app/react-native)
+-   [Vue](app/vue)
+-   [Angular](app/angular)
+-   [Polymer](app/angular) <sup>alpha</sup>
 
 ### Sub Projects
 
@@ -87,6 +88,8 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
 -   [notes](addons/notes/) - Annotate storybook stories with notes
 -   [options](addons/options/) - Customize the storybook UI in code
+
+See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 ## Contributing
 

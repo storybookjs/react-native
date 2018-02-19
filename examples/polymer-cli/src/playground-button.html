@@ -4,7 +4,15 @@
   <template>
     <style>
       .square {
-        border: 1px solid black;
+        border: 1px solid #3c763d;
+        background-color: #5cb85c;
+        padding: 10px;
+      }
+      .rounded {
+        border-radius: 5px;
+        border: 1px solid #1b6d85;
+        background-color: #5bc0de;
+        padding: 10px;
       }
     </style>
     <button on-click="handleTap"
@@ -41,7 +49,7 @@
       }
 
       _computeClass(isSquare) {
-        return isSquare && 'square';
+        return isSquare ? 'square' : 'rounded';
       }
     }
 

@@ -60,7 +60,12 @@ class MainLinks extends React.Component {
                   id="search"
                   placeholder="type to search"
                 />
-                <span className="form-control-feedback" aria-hidden="true">
+                <span
+                  className="form-control-feedback"
+                  role="img"
+                  aria-hidden="true"
+                  aria-label="magnifying glass"
+                >
                   🔍
                 </span>
               </div>

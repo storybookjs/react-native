@@ -62,11 +62,6 @@ jobs:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
-          name: "Build official-storybook"
-          command: |
-            cd examples/official-storybook
-            yarn build-storybook
-      - run:
           name: "Build react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
@@ -80,6 +75,16 @@ jobs:
           name: "Build angular-cli"
           command: |
             cd examples/angular-cli
+            yarn build-storybook
+      - run:
+          name: "Build polymer-cli"
+          command: |
+            cd examples/polymer-cli
+            yarn build-storybook
+      - run:
+          name: "Build official-storybook"
+          command: |
+            cd examples/official-storybook
             yarn build-storybook
       - run:
           name: "Run react kitchen-sink (smoke test)"
@@ -96,6 +101,20 @@ jobs:
           command: |
             cd examples/angular-cli
             yarn storybook --smoke-test
+      - run:
+          name: "Run polymer-cli (smoke test)"
+          command: |
+            cd examples/polymer-cli
+            yarn storybook --smoke-test
+      - run:
+          name: "Run official-storybook (smoke test)"
+          command: |
+            cd examples/official-storybook
+            yarn storybook --smoke-test
+      - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
       - run:
           name: "Run image snapshots"
           command: yarn test --image
@@ -207,26 +226,6 @@ jobs:
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
-  storybook:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-{{ .Revision }}
-      - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
-          name: "Visually test storybook"
-          command: |
-            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
@@ -290,9 +289,6 @@ workflows:
           requires:
             - build
       - unit-test:
-          requires:
-            - build
-      - storybook:
           requires:
             - build
       - cli:
