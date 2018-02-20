@@ -31,3 +31,83 @@ module.exports = {
   },
 };
 ```
+
+## Loader Options
+
+The loader can be customized with the following options:
+
+### prettierConfig
+
+The prettier configuration that will be used to format the story source in the addon panel.
+
+Defaults:
+```js
+{
+  printWidth: 120,
+  tabWidth: 2,
+  bracketSpacing: true,
+  trailingComma: 'es5',
+  singleQuote: true,
+}
+```
+
+Usage: 
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [
+          {
+            loader: require.resolve('@storybook/addon-storysource/loader'),
+            options: {
+              prettierConfig: {
+                printWidth: 80,
+                singleQuote: false,
+              }
+            }
+          }
+        ],
+        enforce: 'pre',
+      },
+    ],
+  },
+};
+```
+
+### uglyCommentsRegex
+
+The array of regex that is used to remove "ugly" comments.
+
+Defaults:
+```js
+[/^eslint-.*/, /^global.*/]
+```
+
+Usage:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [
+          {
+            loader: require.resolve('@storybook/addon-storysource/loader'),
+            options: {
+              uglyCommentsRegex: [
+                /^eslint-.*/, 
+                /^global.*/,
+              ]
+            }
+          }
+        ],
+        enforce: 'pre',
+      },
+    ],
+  },
+};
+```
