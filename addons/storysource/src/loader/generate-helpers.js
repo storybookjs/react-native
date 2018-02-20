@@ -21,7 +21,7 @@ const acornConfig = {
 };
 
 function isUglyComment(comment, uglyCommentsRegex) {
-  return uglyCommentsRegex.find(regex => regex.test(comment));
+  return uglyCommentsRegex.some(regex => regex.test(comment));
 }
 
 function generateSourceWithoutUglyComments(source, { comments, uglyCommentsRegex }) {
