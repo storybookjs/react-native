@@ -28,7 +28,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
-    "podda": "^1.2.2",
+    "@storybook/podda": "^1.2.3",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "react-fuzzy": "^0.5.2",
