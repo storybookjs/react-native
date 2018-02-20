@@ -122,6 +122,30 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 ![Screenshot](docs/storyshots.png)
 
 
+### Using `createNodeMock` to mock refs
+
+`react-test-renderer` doesn't provide refs for rendered components. By
+default, it returns null when the refs are referenced. In order to mock
+out elements that rely on refs, you will have to use the
+`createNodeMock` option [added to React](https://reactjs.org/blog/2016/11/16/react-v15.4.0.html#mocking-refs-for-snapshot-testing) starting with version 15.4.0.
+
+Here is an example of how to specify the `createNodeMock` option in Storyshots:
+
+```js
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots'
+import TextareaThatUsesRefs from '../component/TextareaThatUsesRefs'
+
+initStoryshots({
+  test: snapshotWithOptions({
+    createNodeMock: (element) => {
+      if (element.type === TextareaThatUsesRefs) {
+        return document.createElement('textarea')
+      }
+    },
+  }),
+})
+```
+
 ## Configure Storyshots for image snapshots ( alpha )
 
 /*\ **React-native** is **not supported** by this test function.
@@ -129,8 +153,8 @@ Now run your Jest test command. (Usually, `npm test`.) Then you can see all of y
 Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
 
 When willing to generate and compare image snapshots for your stories, you have two options: 
- - Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
- - Have a static build of the storybook (for instance, using `yarn run build-storybook`)
+- Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
+- Have a static build of the storybook (for instance, using `yarn run build-storybook`)
 
 Then you will need to reference the storybook URL (`file://...` if local, `http(s)://...` if served)
 
@@ -142,10 +166,10 @@ import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot});
 ```
-This will assume you have a storybook running on at _http://localhost:6006_.
+This will assume you have a storybook running on at _<http://localhost:6006>_.
 Internally here are the steps:  
 - Launches a Chrome headless using [puppeteer](https://github.com/GoogleChrome/puppeteer)
-- Browses each stories (calling _http://localhost:6006/iframe.html?..._ URL),
+- Browses each stories (calling _<http://localhost:6006/iframe.html?...>_ URL),
 - Take screenshots & save all images under _\_image_snapshots\__ folder.
 
 ### Specifying the storybook URL
@@ -156,7 +180,7 @@ import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://my-specific-domain.com:9010'})});
 ```
-The above config will use _https://my-specific-domain.com:9010_ for screenshots.
+The above config will use _<https://my-specific-domain.com:9010>_ for screenshots.
 
 
 You may also use a local static build of storybook if you do not want to run the webpack dev-server:
@@ -168,7 +192,7 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'f
 
 ### Specifying options to _jest-image-snapshots_
 
-If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object.
+If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` which is called before the screenshot is captured.
 ```js
 import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 const getMatchOptions = ({context : {kind, story}, url}) => {
@@ -177,10 +201,18 @@ const getMatchOptions = ({context : {kind, story}, url}) => {
     failureThresholdType: 'percent',
   }
 }
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getMatchOptions})});
+const beforeScreenshot = (page, {context : {kind, story}, url}) => {
+  return new Promise(resolve =>
+      setTimeout(() => {
+          resolve();
+      }, 600)
+  )
+}
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getMatchOptions, beforeScreenshot})});
 ```
 `getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
 
+`beforeScreenshot` receives the [Puppeteer page instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) and an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot. `beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for triggering events on the page elements and delaying the screenshot and can be used avoid regressions due to mounting animations.
 
 ### Integrate image storyshots with regular app
 

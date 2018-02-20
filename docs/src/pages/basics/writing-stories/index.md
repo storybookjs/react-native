@@ -35,7 +35,7 @@ storiesOf('Button', module)
     <Button onClick={action('clicked')}>Hello Button</Button>
   ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));
 ```
 
@@ -139,9 +139,29 @@ storiesOf('My App/Buttons/Simple', module)
 
 storiesOf('My App/Buttons/Emoji', module)
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));
 ```
+
+## Generating nesting path based on __dirname
+
+The name is just a javascript string, by using a template literal, you can easily interpolate data.
+
+One example would be to use `base` from [`paths.macro`](https://github.com/storybooks/paths.macro):
+```js
+import React from 'react';
+import base from 'paths.macro';
+
+import { storiesOf } from '@storybook/react';
+
+import BaseButton from '../components/BaseButton';
+
+storiesOf(`Other|${base}/Dirname Example`, module)
+  .add('story 1', () => <BaseButton label="Story 1" />)
+  .add('story 2', () => <BaseButton label="Story 2" />);
+```
+
+*This uses [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros)*.
 
 ## Run multiple storybooks
 

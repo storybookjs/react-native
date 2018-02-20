@@ -1,4 +1,3 @@
-/* eslint-disable no-loop-func */
 import fs from 'fs';
 import glob from 'glob';
 import global, { describe, it, beforeEach, afterEach } from 'global';
