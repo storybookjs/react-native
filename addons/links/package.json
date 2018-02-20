@@ -27,6 +27,7 @@
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.0-alpha.8",
     "enzyme": "^3.3.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",

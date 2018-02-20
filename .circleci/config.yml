@@ -33,8 +33,11 @@ jobs:
           key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - example/cra-kitchen-sink/node_modules
-            - example/vue-kitchen-sink/node_modules
+            - examples/angular-cli/node_modules
+            - examples/cra-kitchen-sink/node_modules
+            - examples/official-storybook/node_modules
+            - examples/polymer-cli/node_modules
+            - examples/vue-kitchen-sink/node_modules
       - save_cache:
           name: "Cache core dist"
           key: core-dist-{{ .Revision }}
@@ -55,17 +58,8 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
-      - run:
-          name: "Build official-storybook"
-          command: |
-            cd examples/official-storybook
-            yarn build-storybook
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -87,20 +81,10 @@ jobs:
             cd examples/polymer-cli
             yarn build-storybook
       - run:
-          name: "Run react kitchen-sink (smoke test)"
+          name: "Build official-storybook"
           command: |
-            cd examples/cra-kitchen-sink
-            yarn storybook --smoke-test
-      - run:
-          name: "Run vue kitchen-sink (smoke test)"
-          command: |
-            cd examples/vue-kitchen-sink
-            yarn storybook --smoke-test
-      - run:
-          name: "Run angular-cli (smoke test)"
-          command: |
-            cd examples/angular-cli
-            yarn storybook --smoke-test
+            cd examples/official-storybook
+            yarn build-storybook
       - run:
           name: "Visually test storybook"
           command: |
@@ -117,6 +101,44 @@ jobs:
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots
+  smoke-tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+
+      - run:
+          name: "Run react kitchen-sink (smoke test)"
+          command: |
+            cd examples/cra-kitchen-sink
+            yarn storybook --smoke-test
+      - run:
+          name: "Run vue kitchen-sink (smoke test)"
+          command: |
+            cd examples/vue-kitchen-sink
+            yarn storybook --smoke-test
+      - run:
+          name: "Run angular-cli (smoke test)"
+          command: |
+            cd examples/angular-cli
+            yarn storybook --smoke-test
+      - run:
+          name: "Run polymer-cli (smoke test)"
+          command: |
+            cd examples/polymer-cli
+            yarn storybook --smoke-test
+      - run:
+          name: "Run official-storybook (smoke test)"
+          command: |
+            cd examples/official-storybook
+            yarn storybook --smoke-test
   react-native:
     <<: *defaults
     steps:
@@ -188,10 +210,6 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: "Lint"
           command: |
             yarn lint
@@ -207,10 +225,6 @@ jobs:
           name: "Restore core dist cache"
           keys:
             - core-dist-{{ .Revision }}
-      - run:
-          name: "Link packages"
-          command: |
-            yarn install
       - run:
           name: "Run unit tests"
           command: |
@@ -271,12 +285,16 @@ workflows:
       - example-kitchen-sinks:
           requires:
             - build
+      - smoke-tests:
+          requires:
+            - build
       - react-native:
           requires:
             - build
       - docs
       - lint:
           requires:
+            - docs
             - build
       - unit-test:
           requires:

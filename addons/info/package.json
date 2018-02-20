@@ -27,6 +27,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.0-alpha.8",
+    "@storybook/react": "^3.4.0-alpha.8",
     "react-test-renderer": "^16.1.0"
   },
   "peerDependencies": {

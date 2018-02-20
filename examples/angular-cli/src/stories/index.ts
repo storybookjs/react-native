@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
+import { moduleMetadata } from '@storybook/angular';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
   template: `<storybook-welcome-component></storybook-welcome-component>`,
@@ -10,11 +11,13 @@ storiesOf('Welcome', module).add('to Storybook', () => ({
 }));
 
 storiesOf('Button', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [Button],
+    })
+  )
   .add('with text', () => ({
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
-    moduleMetadata: {
-      declarations: [Button],
-    },
     props: {
       text: 'Hello Button',
       onClick: event => {
@@ -25,9 +28,6 @@ storiesOf('Button', module)
   }))
   .add('with some emoji', () => ({
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
-    moduleMetadata: {
-      declarations: [Button],
-    },
     props: {
       text: '😀 😎 👍 💯',
       onClick: () => {},
