@@ -28,7 +28,7 @@
     "@storybook/components": "^3.4.0-alpha.8",
     "@storybook/node-logger": "^3.4.0-alpha.8",
     "@storybook/react": "^3.4.0-alpha.8",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^22.4.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.1",
