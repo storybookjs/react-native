@@ -2,6 +2,8 @@
 
 This addon is used to show stories source in the addon panel.
 
+![Storysource Demo](demo.gif)
+
 ## Getting Started
 
 First, install the addon
