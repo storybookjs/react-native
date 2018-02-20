@@ -25,7 +25,8 @@
     "acorn-jsx": "^4.1.1",
     "acorn-stage3": "^0.5.0",
     "estraverse": "^4.2.0",
-    "line-column": "^1.0.2",
+    "loader-utils": "^1.1.0",
+    "prettier": "^1.10.2",
     "prop-types": "^15.5.10",
     "react-syntax-highlighter": "^7.0.0"
   },

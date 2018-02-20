@@ -1,72 +1,39 @@
-import lineColumn from 'line-column';
-import { handleADD, handleSTORYOF } from './parse-helpers';
+import defaultOptions from './default-options';
 
-const estraverse = require('estraverse');
-const acorn = require('acorn');
+import {
+  generateSourceWithDecorators,
+  generateStorySource,
+  generateAddsMap,
+} from './generate-helpers';
 
-require('acorn-stage3/inject')(acorn);
-require('acorn-jsx/inject')(acorn);
-require('acorn-es7')(acorn);
-
-const acornConfig = {
-  ecmaVersion: '9',
-  sourceType: 'module',
-  plugins: {
-    jsx: true,
-    stage3: true,
-    es7: true,
-  },
-};
-
-function calculateLocations(source, adds) {
-  const addsKeys = Object.keys(adds);
-
-  if (!addsKeys.length) {
-    return {};
-  }
-
-  const lineColumnFinder = lineColumn(source);
-
-  return addsKeys.reduce((map, key) => {
-    const value = adds[key];
-
-    // eslint-disable-next-line no-param-reassign
-    map[key] = {
-      startLoc: lineColumnFinder.fromIndex(value.start),
-      endLoc: lineColumnFinder.fromIndex(value.end),
-    };
-
-    return map;
-  }, {});
+function extendOptions(source, comments, options) {
+  return {
+    ...defaultOptions,
+    ...options,
+    source,
+    comments,
+  };
 }
 
-function inject(source, decorator) {
-  const ast = acorn.parse(source, acornConfig);
+function inject(source, decorator, options = {}) {
+  const { changed, source: newSource, comments } = generateSourceWithDecorators(source, decorator);
 
-  let lastIndex = 0;
-  const parts = [source];
-  const adds = {};
+  if (!changed) {
+    return {
+      source: newSource,
+      addsMap: {},
+      changed,
+    };
+  }
 
-  estraverse.traverse(ast, {
-    fallback: 'iteration',
-    enter: (node, parent) => {
-      if (node.type === 'MemberExpression') {
-        handleADD(node, parent, adds);
-      }
-
-      if (node.type === 'CallExpression') {
-        lastIndex = handleSTORYOF(node, parts, source, lastIndex);
-      }
-    },
-  });
-
-  const addsMap = calculateLocations(source, adds);
-  const newSource = parts.join(decorator);
+  const storySource = generateStorySource(extendOptions(source, comments, options));
+  const addsMap = generateAddsMap(storySource);
 
   return {
-    changed: lastIndex > 0,
     source: newSource,
+    storySource,
     addsMap,
+    changed,
   };
 }
 

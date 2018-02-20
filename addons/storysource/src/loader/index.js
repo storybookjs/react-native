@@ -1,15 +1,17 @@
+import { getOptions } from 'loader-utils';
 import injectDecorator from './inject-decorator';
 
 const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__, __ADDS_MAP__))';
 
 function transform(source) {
-  const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
+  const options = getOptions(this) || {};
+  const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, options);
 
   if (!result.changed) {
     return source;
   }
 
-  const sourceJson = JSON.stringify(source)
+  const sourceJson = JSON.stringify(result.storySource)
     .replace(/\u2028/g, '\\u2028')
     .replace(/\u2029/g, '\\u2029');
 

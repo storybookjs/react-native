@@ -24,7 +24,7 @@
     "jest-image-snapshot": "^2.3.0",
     "jest-specific-snapshot": "^0.3.0",
     "prop-types": "^15.6.0",
-    "puppeteer": "^0.13.0",
+    "puppeteer": "^1.0.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
