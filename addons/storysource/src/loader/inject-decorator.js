@@ -1,10 +1,21 @@
+import defaultOptions from './default-options';
+
 import {
   generateSourceWithDecorators,
   generateStorySource,
   generateAddsMap,
 } from './generate-helpers';
 
-function inject(source, decorator) {
+function extendOptions(source, comments, options) {
+  return {
+    ...defaultOptions,
+    ...options,
+    source,
+    comments,
+  };
+}
+
+function inject(source, decorator, options = {}) {
   const { changed, source: newSource, comments } = generateSourceWithDecorators(source, decorator);
 
   if (!changed) {
@@ -15,7 +26,7 @@ function inject(source, decorator) {
     };
   }
 
-  const storySource = generateStorySource({ source, comments });
+  const storySource = generateStorySource(extendOptions(source, comments, options));
   const addsMap = generateAddsMap(storySource);
 
   return {

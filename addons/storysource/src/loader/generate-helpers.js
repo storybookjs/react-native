@@ -20,33 +20,31 @@ const acornConfig = {
   },
 };
 
-function generateSourceWithoutUglyComments(source, comments) {
+function isUglyComment(comment, uglyCommentsRegex) {
+  return uglyCommentsRegex.find(regex => regex.test(comment));
+}
+
+function generateSourceWithoutUglyComments(source, { comments, uglyCommentsRegex }) {
   let lastIndex = 0;
   const parts = [source];
 
-  const isUgly = comment => comment.value.trim().indexOf('eslint-') === 0;
+  comments
+    .filter(comment => isUglyComment(comment.value.trim(), uglyCommentsRegex))
+    .forEach(comment => {
+      parts.pop();
 
-  comments.filter(isUgly).forEach(comment => {
-    parts.pop();
+      const start = source.slice(lastIndex, comment.start);
+      const end = source.slice(comment.end);
 
-    const start = source.slice(lastIndex, comment.start);
-    const end = source.slice(comment.end);
-
-    parts.push(start, end);
-    lastIndex = comment.end;
-  });
+      parts.push(start, end);
+      lastIndex = comment.end;
+    });
 
   return parts.join('');
 }
 
-function prettifyCode(source) {
-  return prettier.format(source, {
-    printWidth: 120,
-    tabWidth: 2,
-    bracketSpacing: true,
-    trailingComma: 'es5',
-    singleQuote: true,
-  });
+function prettifyCode(source, { prettierConfig }) {
+  return prettier.format(source, prettierConfig);
 }
 
 export function generateSourceWithDecorators(source, decorator) {
@@ -96,11 +94,11 @@ export function generateAddsMap(source) {
   return adds;
 }
 
-export function generateStorySource({ source, comments }) {
+export function generateStorySource({ source, ...options }) {
   let storySource = source;
 
-  storySource = generateSourceWithoutUglyComments(storySource, comments);
-  storySource = prettifyCode(storySource);
+  storySource = generateSourceWithoutUglyComments(storySource, options);
+  storySource = prettifyCode(storySource, options);
 
   return storySource;
 }

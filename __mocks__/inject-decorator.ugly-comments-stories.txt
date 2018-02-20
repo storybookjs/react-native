@@ -1,6 +1,14 @@
+/* global window */
 /* eslint-disable global-require, import/no-dynamic-require */
 
 import React from 'react';
+
+/*
+ eslint-disable some kind
+ of multi line ignore, though
+ I'm not sure it's possible.
+*/
+
 import { storiesOf } from '@storybook/react';
 
 /* eslint-disable-line */ const x = 0;

@@ -338,6 +338,7 @@ storiesOf('Addons|Info.GitHub issues', module).addDecorator(withStorySource(__ST
 
 exports[`inject-decorator stories with ugly comments should delete ugly comments from the generated story source 1`] = `
 "import React from 'react';
+
 import { storiesOf } from '@storybook/react';
 
 const x = 0;
