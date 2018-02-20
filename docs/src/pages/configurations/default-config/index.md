@@ -55,6 +55,11 @@ import './styles.css';
 ```
 
 > **Note:** this is plain CSS only. If you need a preprocessor like SASS, you need to [customize the webpack config](/configurations/custom-webpack-config/).
+>
+> **Warning:** storybooks for projects that use Angular CLI cannot import CSS by default. They must either [customize the webpack config](/configurations/custom-webpack-config/), or use the inline loader syntax:
+> ```js
+> import '!style-loader!css-loader!./styles.css';
+> ```
 
 ### Image and Static File Support
 

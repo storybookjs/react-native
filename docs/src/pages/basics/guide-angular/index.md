@@ -113,3 +113,55 @@ npm run storybook
 
 Now you can change components and write stories whenever you need to.
 You'll get those changes into Storybook in a snap with the help of webpack's HMR API.
+
+## Module Metadata
+
+If your component has dependencies on other Angular directives and modules, these can be supplied using the `moduleMetadata` property on an individual story:
+
+```js
+import { CommonModule } from '@angular/common';
+import { storiesOf } from '@storybook/angular';
+import { MyButtonComponent } from '../src/app/my-button/my-button.component';
+import { MyPanelComponent } from '../src/app/my-panel/my-panel.component';
+import { MyDataService } from '../src/app/my-data/my-data.service';
+
+storiesOf('My Panel', module)
+  .add('Default', () => ({
+    component: MyPanelComponent,
+    moduleMetadata: {
+      imports: [CommonModule],
+      schemas: [],
+      declarations: [MyButtonComponent],
+      providers: [MyDataService],
+    }
+  }));
+```
+
+If you have metadata that is common between your stories, this can configured once using the `moduleMetadata()` decorator:
+
+```js
+import { CommonModule } from '@angular/common';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
+import { MyButtonComponent } from '../src/app/my-button/my-button.component';
+import { MyPanelComponent } from '../src/app/my-panel/my-panel.component';
+import { MyDataService } from '../src/app/my-data/my-data.service';
+
+storiesOf('My Panel', module)
+  .addDecorator(
+    moduleMetadata({
+      imports: [CommonModule],
+      schemas: [],
+      declarations: [MyButtonComponent],
+      providers: [MyDataService],
+    })
+  )
+  .add('Default', () => ({
+    component: MyPanelComponent
+  }))
+  .add('with a title', () => ({
+    component: MyPanelComponent,
+    props: {
+      title: 'Foo',
+    }
+  }));
+```

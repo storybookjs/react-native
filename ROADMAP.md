@@ -57,7 +57,7 @@ That way you can write your stories how they are best, and preview them how you 
 
 We believe in the power of react, and think it's the right choice for a lot of projects.
 But it's up to you and your team to decide your stack.
-Unfortunately if you choose anything other then React or React-Native you can not use storybook.
+Unfortunately if you choose anything not from the list of [supported frameworks](README.md#supported-frameworks) you can not use storybook.
 
 We want you to be able to use storybook with the framework / library of your choice.
 

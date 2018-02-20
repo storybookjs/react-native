@@ -23,18 +23,21 @@ const examples = [
   {
     name: 'cra-kitchen-sink',
     storybookUrl: pathToCraKitchenSink,
+    storySelector: '#root *',
   },
   {
     name: 'vue-kitchen-sink',
     storybookUrl: pathToVueKitchenSink,
+    storySelector: '#root *',
   },
   {
     name: 'angular-cli',
     storybookUrl: pathToAngularKitchenSink,
+    storySelector: 'storybook-dynamic-app-root *',
   },
 ];
 
-examples.forEach(({ name, storybookUrl }) => {
+examples.forEach(({ name, storybookUrl, storySelector }) => {
   let browser = puppeteer.launch();
   let page;
 
@@ -50,6 +53,8 @@ examples.forEach(({ name, storybookUrl }) => {
 
     it(`Take screenshots for '${name}'`, async () => {
       await page.goto(`file://${storybookUrl}`);
+      const iframe = page.mainFrame().childFrames()[0];
+      await iframe.waitFor(storySelector);
       const screenshot = await page.screenshot({ fullPage: true });
       expect(screenshot).toMatchImageSnapshot({
         failureThreshold: 0.04, // 4% threshold,

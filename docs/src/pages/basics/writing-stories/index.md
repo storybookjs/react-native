@@ -35,7 +35,7 @@ storiesOf('Button', module)
     <Button onClick={action('clicked')}>Hello Button</Button>
   ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));
 ```
 
@@ -139,7 +139,7 @@ storiesOf('My App/Buttons/Simple', module)
 
 storiesOf('My App/Buttons/Emoji', module)
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));
 ```
 
