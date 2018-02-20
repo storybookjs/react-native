@@ -1,72 +1,28 @@
-import lineColumn from 'line-column';
-import { handleADD, handleSTORYOF } from './parse-helpers';
-
-const estraverse = require('estraverse');
-const acorn = require('acorn');
-
-require('acorn-stage3/inject')(acorn);
-require('acorn-jsx/inject')(acorn);
-require('acorn-es7')(acorn);
-
-const acornConfig = {
-  ecmaVersion: '9',
-  sourceType: 'module',
-  plugins: {
-    jsx: true,
-    stage3: true,
-    es7: true,
-  },
-};
-
-function calculateLocations(source, adds) {
-  const addsKeys = Object.keys(adds);
-
-  if (!addsKeys.length) {
-    return {};
-  }
-
-  const lineColumnFinder = lineColumn(source);
-
-  return addsKeys.reduce((map, key) => {
-    const value = adds[key];
-
-    // eslint-disable-next-line no-param-reassign
-    map[key] = {
-      startLoc: lineColumnFinder.fromIndex(value.start),
-      endLoc: lineColumnFinder.fromIndex(value.end),
-    };
-
-    return map;
-  }, {});
-}
+import {
+  generateSourceWithDecorators,
+  generateStorySource,
+  generateAddsMap,
+} from './generate-helpers';
 
 function inject(source, decorator) {
-  const ast = acorn.parse(source, acornConfig);
+  const { changed, source: newSource, comments } = generateSourceWithDecorators(source, decorator);
 
-  let lastIndex = 0;
-  const parts = [source];
-  const adds = {};
+  if (!changed) {
+    return {
+      source: newSource,
+      addsMap: {},
+      changed,
+    };
+  }
 
-  estraverse.traverse(ast, {
-    fallback: 'iteration',
-    enter: (node, parent) => {
-      if (node.type === 'MemberExpression') {
-        handleADD(node, parent, adds);
-      }
-
-      if (node.type === 'CallExpression') {
-        lastIndex = handleSTORYOF(node, parts, source, lastIndex);
-      }
-    },
-  });
-
-  const addsMap = calculateLocations(source, adds);
-  const newSource = parts.join(decorator);
+  const storySource = generateStorySource({ source, comments });
+  const addsMap = generateAddsMap(storySource);
 
   return {
-    changed: lastIndex > 0,
     source: newSource,
+    storySource,
     addsMap,
+    changed,
   };
 }
 

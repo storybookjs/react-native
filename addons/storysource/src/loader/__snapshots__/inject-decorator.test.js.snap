@@ -4,11 +4,11 @@ exports[`inject-decorator positive - angular calculates "adds" map 1`] = `
 Object {
   "Custom|ng-content@Default": Object {
     "endLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 15,
     },
     "startLoc": Object {
-      "col": 44,
+      "col": 43,
       "line": 10,
     },
   },
@@ -38,141 +38,141 @@ exports[`inject-decorator positive calculates "adds" map 1`] = `
 Object {
   "Addons|Info.Decorator@Use Info as story decorator": Object {
     "endLoc": Object {
-      "col": 74,
+      "col": 73,
       "line": 137,
     },
     "startLoc": Object {
-      "col": 8,
+      "col": 7,
       "line": 137,
     },
   },
   "Addons|Info.GitHub issues@#1814": Object {
     "endLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 152,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 146,
     },
   },
   "Addons|Info.Markdown@Displays Markdown in description": Object {
     "endLoc": Object {
-      "col": 97,
+      "col": 96,
       "line": 44,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 43,
     },
   },
   "Addons|Info.Options.TableComponent@Use a custom component for the table": Object {
     "endLoc": Object {
-      "col": 42,
+      "col": 41,
       "line": 130,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 127,
     },
   },
   "Addons|Info.Options.header@Shows or hides Info Addon header": Object {
     "endLoc": Object {
-      "col": 42,
+      "col": 41,
       "line": 60,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 56,
     },
   },
   "Addons|Info.Options.inline@Inlines component inside story": Object {
     "endLoc": Object {
-      "col": 42,
+      "col": 41,
       "line": 52,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 48,
     },
   },
   "Addons|Info.Options.propTables@Shows additional component prop tables": Object {
     "endLoc": Object {
-      "col": 42,
+      "col": 41,
       "line": 76,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 72,
     },
   },
   "Addons|Info.Options.propTablesExclude@Exclude component from prop tables": Object {
     "endLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 89,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 80,
     },
   },
   "Addons|Info.Options.source@Shows or hides Info Addon source": Object {
     "endLoc": Object {
-      "col": 42,
+      "col": 41,
       "line": 68,
     },
     "startLoc": Object {
-      "col": 3,
+      "col": 2,
       "line": 64,
     },
   },
   "Addons|Info.Options.styles@Extend info styles with an object": Object {
     "endLoc": Object {
-      "col": 44,
+      "col": 43,
       "line": 108,
     },
     "startLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 94,
     },
   },
   "Addons|Info.Options.styles@Full control over styles using a function": Object {
     "endLoc": Object {
-      "col": 44,
+      "col": 43,
       "line": 123,
     },
     "startLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 111,
     },
   },
   "Addons|Info.React Docgen@Comments from Flow declarations": Object {
     "endLoc": Object {
-      "col": 86,
+      "col": 85,
       "line": 22,
     },
     "startLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 19,
     },
   },
   "Addons|Info.React Docgen@Comments from PropType declarations": Object {
     "endLoc": Object {
-      "col": 80,
+      "col": 79,
       "line": 16,
     },
     "startLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 13,
     },
   },
   "Addons|Info.React Docgen@Comments from component declaration": Object {
     "endLoc": Object {
-      "col": 71,
+      "col": 70,
       "line": 28,
     },
     "startLoc": Object {
-      "col": 5,
+      "col": 4,
       "line": 25,
     },
   },
@@ -333,6 +333,21 @@ storiesOf('Addons|Info.GitHub issues', module).addDecorator(withStorySource(__ST
     </div>
   ))
 );
+"
+`;
+
+exports[`inject-decorator stories with ugly comments should delete ugly comments from the generated story source 1`] = `
+"import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+const x = 0;
+
+storiesOf('Foo', module).add('bar', () => <div>baz</div>);
+
+/*
+ This is actually a good comment that will help
+ users to understand what's going on here.
+*/
 "
 `;
 

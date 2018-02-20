@@ -9,7 +9,7 @@ function transform(source) {
     return source;
   }
 
-  const sourceJson = JSON.stringify(source)
+  const sourceJson = JSON.stringify(result.storySource)
     .replace(/\u2028/g, '\\u2028')
     .replace(/\u2029/g, '\\u2029');
 

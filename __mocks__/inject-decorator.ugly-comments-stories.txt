@@ -1,0 +1,15 @@
+/* eslint-disable global-require, import/no-dynamic-require */
+
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+/* eslint-disable-line */ const x = 0;
+
+// eslint-disable-line
+storiesOf('Foo', module)
+  .add('bar', () => <div>baz</div>);
+
+/*
+ This is actually a good comment that will help
+ users to understand what's going on here.
+*/

@@ -66,8 +66,14 @@ export function handleADD(node, parent, adds) {
   // eslint-disable-next-line no-param-reassign
   adds[key] = {
     // Debug: code: source.slice(storyName.start, lastArg.end),
-    start: storyName.start,
-    end: lastArg.end,
+    startLoc: {
+      col: storyName.loc.start.column,
+      line: storyName.loc.start.line,
+    },
+    endLoc: {
+      col: lastArg.loc.end.column,
+      line: lastArg.loc.end.line,
+    },
   };
 }
 
