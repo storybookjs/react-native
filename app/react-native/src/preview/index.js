@@ -6,8 +6,7 @@ import parse from 'url-parse';
 import addons from '@storybook/addons';
 import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
-import { StoryStore } from '@storybook/core/client';
-import StoryKindApi from './story_kind';
+import { StoryStore, ClientApi } from '@storybook/core/client';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 
@@ -15,26 +14,13 @@ export default class Preview {
   constructor() {
     this._addons = {};
     this._decorators = [];
-    this._stories = new StoryStore();
     this._events = new EventEmitter();
-  }
+    this._stories = new StoryStore();
+    this._clientApi = new ClientApi({ storyStore: this._stories });
 
-  storiesOf(kind, module) {
-    if (module && module.hot) {
-      // TODO remove the kind on dispose
-    }
-
-    const fileName = module ? module.filename : null;
-
-    return new StoryKindApi(this._stories, this._addons, this._decorators, kind, fileName);
-  }
-
-  setAddon(addon) {
-    Object.assign(this._addons, addon);
-  }
-
-  addDecorator(decorator) {
-    this._decorators.push(decorator);
+    ['storiesOf', 'setAddon', 'addDecorator', 'clearDecorators', 'getStorybook'].forEach(method => {
+      this[method] = this._clientApi[method].bind(this._clientApi);
+    });
   }
 
   configure(loadStories, module) {
@@ -43,19 +29,6 @@ export default class Preview {
       module.hot.accept(() => this._sendSetStories());
       // TODO remove all global decorators on dispose
     }
-  }
-
-  getStorybook() {
-    return this._stories.getStoryKinds().map(kind => {
-      const fileName = this._stories.getStoryFileName(kind);
-
-      const stories = this._stories.getStories(kind).map(name => {
-        const render = this._stories.getStory(kind, name);
-        return { name, render };
-      });
-
-      return { kind, fileName, stories };
-    });
   }
 
   getStorybookUI(params = {}) {
