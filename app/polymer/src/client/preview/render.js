@@ -21,7 +21,7 @@ export function renderException(error) {
 export function renderMain(data, storyStore) {
   if (storyStore.size() === 0) return;
   const { selectedKind, selectedStory } = data;
-  const story = storyStore.getStory(selectedKind, selectedStory);
+  const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
 
   if (selectedKind !== previousKind || previousStory !== selectedStory) {
     previousKind = selectedKind;
@@ -29,11 +29,7 @@ export function renderMain(data, storyStore) {
   } else {
     return;
   }
-  const context = {
-    kind: selectedKind,
-    story: selectedStory,
-  };
-  const component = story ? story(context) : nopreview;
+  const component = story ? story() : nopreview;
 
   if (!component) {
     renderError({

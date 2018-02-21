@@ -11,7 +11,15 @@ export interface IStoribookSection {
   stories: IStorybookStory[];
 }
 
-export type IGetStory = () => {
+export interface IStoryContext {
+  kind: string;
+  name: string;
+  options: any;
+}
+
+export type IGetStory = (
+  IStoryContext
+) => {
   props?: ICollection;
   moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
@@ -21,13 +29,15 @@ export type IGetStory = () => {
 export interface IApi {
   kind: string;
   addDecorator: (decorator: any) => IApi;
-  add: (storyName: string, getStory: IGetStory) => IApi;
+  addOptions: (options: any) => IApi;
+  add: (storyName: string, getStory: IGetStory, options?: any) => IApi;
 }
 
 declare module '@storybook/angular' {
   export function storiesOf(kind: string, module: NodeModule): IApi;
   export function setAddon(addon: any): void;
   export function addDecorator(decorator: any): IApi;
+  export function addOptions(options: any): IApi;
   export function configure(loaders: () => NodeRequire, module: NodeModule): void;
   export function getStorybook(): IStoribookSection[];
 }

@@ -1,5 +1,4 @@
-import React from 'react';
-import { storiesOf, addOptions } from '@storybook/react';
+import { storiesOf, addOptions } from '@storybook/polymer';
 
 const globalOption = 'globalOption';
 const chapterOption = 'chapterOption';
@@ -9,6 +8,6 @@ addOptions({ globalOption });
 
 storiesOf('Core|Options', module)
   .addOptions({ chapterOption })
-  .add('passed to story', ({ options }) => <div>Options are {JSON.stringify(options)}</div>, {
+  .add('passed to story', ({ options }) => `<div>${JSON.stringify(options)}</div>`, {
     storyOption,
   });
