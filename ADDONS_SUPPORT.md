@@ -13,6 +13,7 @@
 |[knobs](addons/knobs)            |+|+|+|+|+|
 |[links](addons/links)            |+|+|+|+| |
 |[notes](addons/notes)            |+| |+|+|+|
+|[options](addons/options)        |+|+|+|+|+|
 |[storyshots](addons/storyshots)  |+|+|+|+| |
 |[storysource](addons/storysource)|+| |+|+|+|
-|[viewport](addons/viewport)      |+| | | | |
+|[viewport](addons/viewport)      |+| |+| |+|

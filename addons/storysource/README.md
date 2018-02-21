@@ -1,6 +1,8 @@
 # Storybook Storysource Addon
 
-This addon is used to show stories source in the addon panel.
+This addon is used to show stories source in the addon panel. 
+
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Storysource Demo](demo.gif)
 

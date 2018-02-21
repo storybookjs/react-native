@@ -7,20 +7,12 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-This addon works with Storybook for:
-[React](https://github.com/storybooks/storybook/tree/master/app/react).
-[React Native](https://github.com/storybooks/storybook/tree/master/app/react-native).
-[Vue](https://github.com/storybooks/storybook/tree/master/app/vue).
-
 * * *
 
 Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 This is how Knobs look like:
 

@@ -11,10 +11,7 @@
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Screenshot](docs/screenshot.png)
 
