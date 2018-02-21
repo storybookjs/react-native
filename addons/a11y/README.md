@@ -2,6 +2,8 @@
 
 This storybook addon can be helpfull to make your UI components more accessibile.
 
+[Framework Support](../../ADDONS_SUPPORT.md)
+
 ![](docs/screenshot.png)
 
 ## Getting started
