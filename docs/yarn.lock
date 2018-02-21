@@ -44,6 +44,10 @@
   version "3.3.13"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.3.13.tgz#b5c0395494b856cadc5bcb946cab7c206bc4f9af"
 
+"@storybook/addons@^3.3.14":
+  version "3.3.14"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.3.14.tgz#20a65085b834898ea6154b9061ebc65a74c6cb33"
+
 "@storybook/channel-postmessage@^3.3.13":
   version "3.3.13"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.3.13.tgz#35eda62a97d0d1479452dc3a5338d320d5117083"
