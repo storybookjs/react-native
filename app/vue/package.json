@@ -49,7 +49,7 @@
     "css-loader": "^0.28.9",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
-    "file-loader": "^1.1.7",
+    "file-loader": "^1.1.8",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
@@ -71,7 +71,7 @@
     "uglifyjs-webpack-plugin": "^1.2.0",
     "url-loader": "^0.6.2",
     "util-deprecate": "^1.0.2",
-    "vue-hot-reload-api": "^2.2.4",
+    "vue-hot-reload-api": "^2.3.0",
     "vue-style-loader": "^3.1.2",
     "webpack": "^3.11.0"
   },
