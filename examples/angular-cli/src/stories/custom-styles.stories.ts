@@ -1,14 +1,16 @@
-import { storiesOf } from '@storybook/angular';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs/angular';
 import { Button } from '@storybook/angular/demo';
 
-storiesOf('Custom Style', module)
+storiesOf('Custom|Style', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [Button],
+    })
+  )
   .add('Default', () => ({
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
-    moduleMetadata: {
-      declarations: [Button],
-    },
     props: {
       text: 'Button with custom styles',
       onClick: action('log'),
@@ -25,9 +27,6 @@ storiesOf('Custom Style', module)
   .addDecorator(withKnobs)
   .add('With Knobs', () => ({
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
-    moduleMetadata: {
-      declarations: [Button],
-    },
     props: {
       text: text('text', 'Button with custom styles'),
       onClick: action('log'),

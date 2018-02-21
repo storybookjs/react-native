@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inject-decorator positive - angular calculates "adds" map 1`] = `
+Object {
+  "Custom|ng-content@Default": Object {
+    "endLoc": Object {
+      "col": 2,
+      "line": 15,
+    },
+    "startLoc": Object {
+      "col": 43,
+      "line": 10,
+    },
+  },
+}
+`;
+
+exports[`inject-decorator positive - angular injects stories decorator after the all "storiesOf" functions 1`] = `
+"import { Component } from '@angular/core';
+import { storiesOf } from '@storybook/angular';
+
+@Component({
+  selector: 'storybook-with-ng-content',
+  template: \`<div style=\\"color: #1e88e5;\\"><ng-content></ng-content></div>\`,
+})
+class WithNgContentComponent {}
+
+storiesOf('Custom|ng-content', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add('Default', () => ({
+  template: \`<storybook-with-ng-content><h1>This is rendered in ng-content</h1></storybook-with-ng-content>\`,
+  moduleMetadata: {
+    declarations: [WithNgContentComponent],
+  },
+}));
+"
+`;
+
+exports[`inject-decorator positive calculates "adds" map 1`] = `
+Object {
+  "Addons|Info.Decorator@Use Info as story decorator": Object {
+    "endLoc": Object {
+      "col": 73,
+      "line": 137,
+    },
+    "startLoc": Object {
+      "col": 7,
+      "line": 137,
+    },
+  },
+  "Addons|Info.GitHub issues@#1814": Object {
+    "endLoc": Object {
+      "col": 4,
+      "line": 152,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 146,
+    },
+  },
+  "Addons|Info.Markdown@Displays Markdown in description": Object {
+    "endLoc": Object {
+      "col": 96,
+      "line": 44,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 43,
+    },
+  },
+  "Addons|Info.Options.TableComponent@Use a custom component for the table": Object {
+    "endLoc": Object {
+      "col": 41,
+      "line": 130,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 127,
+    },
+  },
+  "Addons|Info.Options.header@Shows or hides Info Addon header": Object {
+    "endLoc": Object {
+      "col": 41,
+      "line": 60,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 56,
+    },
+  },
+  "Addons|Info.Options.inline@Inlines component inside story": Object {
+    "endLoc": Object {
+      "col": 41,
+      "line": 52,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 48,
+    },
+  },
+  "Addons|Info.Options.propTables@Shows additional component prop tables": Object {
+    "endLoc": Object {
+      "col": 41,
+      "line": 76,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 72,
+    },
+  },
+  "Addons|Info.Options.propTablesExclude@Exclude component from prop tables": Object {
+    "endLoc": Object {
+      "col": 4,
+      "line": 89,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 80,
+    },
+  },
+  "Addons|Info.Options.source@Shows or hides Info Addon source": Object {
+    "endLoc": Object {
+      "col": 41,
+      "line": 68,
+    },
+    "startLoc": Object {
+      "col": 2,
+      "line": 64,
+    },
+  },
+  "Addons|Info.Options.styles@Extend info styles with an object": Object {
+    "endLoc": Object {
+      "col": 43,
+      "line": 108,
+    },
+    "startLoc": Object {
+      "col": 4,
+      "line": 94,
+    },
+  },
+  "Addons|Info.Options.styles@Full control over styles using a function": Object {
+    "endLoc": Object {
+      "col": 43,
+      "line": 123,
+    },
+    "startLoc": Object {
+      "col": 4,
+      "line": 111,
+    },
+  },
+  "Addons|Info.React Docgen@Comments from Flow declarations": Object {
+    "endLoc": Object {
+      "col": 85,
+      "line": 22,
+    },
+    "startLoc": Object {
+      "col": 4,
+      "line": 19,
+    },
+  },
+  "Addons|Info.React Docgen@Comments from PropType declarations": Object {
+    "endLoc": Object {
+      "col": 79,
+      "line": 16,
+    },
+    "startLoc": Object {
+      "col": 4,
+      "line": 13,
+    },
+  },
+  "Addons|Info.React Docgen@Comments from component declaration": Object {
+    "endLoc": Object {
+      "col": 70,
+      "line": 28,
+    },
+    "startLoc": Object {
+      "col": 4,
+      "line": 25,
+    },
+  },
+}
+`;
+
+exports[`inject-decorator positive injects stories decorator after the all "storiesOf" functions 1`] = `
+"import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+import { action } from '@storybook/addon-actions';
+
+import DocgenButton from '../components/DocgenButton';
+import FlowTypeButton from '../components/FlowTypeButton';
+import BaseButton from '../components/BaseButton';
+import TableComponent from '../components/TableComponent';
+
+storiesOf('Addons|Info.React Docgen', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__))
+  .add(
+    'Comments from PropType declarations',
+    withInfo(
+      'Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table'
+    )(() => <DocgenButton onClick={action('clicked')} label=\\"Docgen Button\\" />)
+  )
+  .add(
+    'Comments from Flow declarations',
+    withInfo(
+      'Comments above the Flow declarations should be extracted from the React component file itself and rendered in the Info Addon prop table'
+    )(() => <FlowTypeButton onClick={action('clicked')} label=\\"Flow Typed Button\\" />)
+  )
+  .add(
+    'Comments from component declaration',
+    withInfo(
+      'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
+    )(() => <BaseButton onClick={action('clicked')} label=\\"Button\\" />)
+  );
+
+const markdownDescription = \`
+#### You can use markdown in your withInfo() description.
+
+Sometimes you might want to manually include some code examples:
+~~~js
+const Button = () => <button />;
+~~~
+
+Maybe include a [link](http://storybook.js.org) to your project as well.
+\`;
+
+storiesOf('Addons|Info.Markdown', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Displays Markdown in description',
+  withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label=\\"Button\\" />)
+);
+
+storiesOf('Addons|Info.Options.inline', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Inlines component inside story',
+  withInfo({
+    text: 'Component should be inlined between description and PropType table',
+    inline: true, // Displays info inline vs click button to view
+  })(() => <BaseButton label=\\"Button\\" />)
+);
+
+storiesOf('Addons|Info.Options.header', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Shows or hides Info Addon header',
+  withInfo({
+    text: 'The Info Addon header should be hidden',
+    header: false, // Toggles display of header with component name and description
+  })(() => <BaseButton label=\\"Button\\" />)
+);
+
+storiesOf('Addons|Info.Options.source', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Shows or hides Info Addon source',
+  withInfo({
+    text: 'The Info Addon source section should be hidden',
+    source: false, // Displays the source of story Component
+  })(() => <BaseButton label=\\"Button\\" />)
+);
+
+storiesOf('Addons|Info.Options.propTables', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Shows additional component prop tables',
+  withInfo({
+    text: 'There should be a prop table added for a component not included in the story',
+    propTables: [FlowTypeButton],
+  })(() => <BaseButton label=\\"Button\\" />)
+);
+
+storiesOf('Addons|Info.Options.propTablesExclude', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Exclude component from prop tables',
+  withInfo({
+    text: 'This can exclude extraneous components from being displayed in prop tables.',
+    propTablesExclude: [FlowTypeButton],
+  })(() => (
+    <div>
+      <BaseButton label=\\"Button\\" />
+      <FlowTypeButton label=\\"Flow Typed Button\\" />
+    </div>
+  ))
+);
+
+storiesOf('Addons|Info.Options.styles', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__))
+  .add(
+    'Extend info styles with an object',
+    withInfo({
+      styles: {
+        button: {
+          base: {
+            background: 'purple',
+          },
+        },
+        header: {
+          h1: {
+            color: 'green',
+          },
+        },
+      },
+    })(() => <BaseButton label=\\"Button\\" />)
+  )
+  .add(
+    'Full control over styles using a function',
+    withInfo({
+      styles: stylesheet => ({
+        ...stylesheet,
+        header: {
+          ...stylesheet.header,
+          h1: {
+            ...stylesheet.header.h1,
+            color: 'red',
+          },
+        },
+      }),
+    })(() => <BaseButton label=\\"Button\\" />)
+  );
+
+storiesOf('Addons|Info.Options.TableComponent', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  'Use a custom component for the table',
+  withInfo({
+    TableComponent,
+  })(() => <BaseButton label=\\"Button\\" />)
+);
+
+storiesOf('Addons|Info.Decorator', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__))
+  .addDecorator((story, context) =>
+    withInfo('Info could be used as a global or local decorator as well.')(story)(context)
+  )
+  .add('Use Info as story decorator', () => <BaseButton label=\\"Button\\" />);
+
+const hoc = WrapComponent => ({ ...props }) => <WrapComponent {...props} />;
+
+const Input = hoc(() => <input type=\\"text\\" />);
+
+const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
+
+storiesOf('Addons|Info.GitHub issues', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__)).add(
+  '#1814',
+  withInfo('Allow Duplicate DisplayNames for HOC #1814')(() => (
+    <div>
+      <Input />
+      <TextArea />
+    </div>
+  ))
+);
+"
+`;
+
+exports[`inject-decorator stories with ugly comments should delete ugly comments from the generated story source 1`] = `
+"import React from 'react';
+
+import { storiesOf } from '@storybook/react';
+
+const x = 0;
+
+storiesOf('Foo', module).add('bar', () => <div>baz</div>);
+
+/*
+ This is actually a good comment that will help
+ users to understand what's going on here.
+*/
+"
+`;
+
+exports[`inject-decorator will not change the source when there are no "storiesOf" functions 1`] = `
+"while(true) {
+  console.log(\\"it's a kind of magic\\");
+}"
+`;

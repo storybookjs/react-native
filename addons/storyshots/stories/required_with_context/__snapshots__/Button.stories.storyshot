@@ -5,7 +5,12 @@ exports[`Storyshots Button with some emoji 1`] = `
   className="css-1yjiefr"
   onClick={[Function]}
 >
-  😀 😎 👍 💯
+  <span
+    aria-label="so cool"
+    role="img"
+  >
+    😀 😎 👍 💯
+  </span>
 </button>
 `;
 

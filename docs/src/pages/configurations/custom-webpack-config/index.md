@@ -36,7 +36,7 @@ module.exports = {
 
 Since this config file stays in the Storybook directory, you need to set the include path as above. If the config directory stays in a different directory, you need to set the include path relative to that.
 
-You also need to install the loaders (style, css, and sass) used in above config manually.
+You also need to install the loaders (style, css, sass, as well as node-sass) used in above config manually.
 
 > Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/configurations/default-config/) other than loading JS files with the Babel loader. This will disable included functionality like svg loading. Read on to learn how to [retain defaults](#full-control-mode--default).
 
