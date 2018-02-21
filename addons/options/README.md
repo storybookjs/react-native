@@ -11,7 +11,7 @@
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
-[Framework Support](../../ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Screenshot](docs/screenshot.png)
 

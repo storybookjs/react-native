@@ -12,7 +12,7 @@
 Storybook Info Addon will show additional information for your stories in [Storybook](https://storybook.js.org).
 Useful when you want to display usage or other types of documentation alongside your story.
 
-[Framework Support](../../ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Screenshot](docs/home-screenshot.png)
 

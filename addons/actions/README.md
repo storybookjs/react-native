@@ -11,7 +11,7 @@
 
 Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybook.js.org).
 
-[Framework Support](../../ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Screenshot](docs/screenshot.png)
 

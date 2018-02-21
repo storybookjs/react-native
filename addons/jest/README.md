@@ -2,7 +2,7 @@
 
 Brings Jest results in storybook.
 
-[Framework Support](../../ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 [![Storybook Jest Addon Demo](@storybook/addon-jest.gif)](https://storybook-addon-jest-example.herokuapp.com/)
 
