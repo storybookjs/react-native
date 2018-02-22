@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@angular/cli": "1.7.1",
-    "@angular/compiler-cli": "^5.2.5",
+    "@angular/compiler-cli": "^5.2.6",
     "@angular/language-service": "^5.2.5",
     "@storybook/addon-actions": "^3.4.0-alpha.9",
     "@storybook/addon-knobs": "^3.4.0-alpha.9",
