@@ -7,9 +7,10 @@
 -   RN: Add error handler on WS to fix crashing on page reload [#3002](https://github.com/storybooks/storybook/pull/3002)
 -   Added safety net preventing storybook Jest addon from throwing. [#3023](https://github.com/storybooks/storybook/pull/3023)
 -   Added "key" prop to list items inside test failure message. [#2867](https://github.com/storybooks/storybook/pull/2867)
--   Add type check to PropType on OneOf [#2653](https://github.com/storybooks/storybook/pull/2653)
--   Fix examples thumbnails display [#2974](https://github.com/storybooks/storybook/pull/2974)
+-   Addon-info: Add type check to PropType on OneOf [#2653](https://github.com/storybooks/storybook/pull/2653)
 -   Use @storybook/podda to fix npm engine version in podda [#3033](https://github.com/storybooks/storybook/pull/3033)
+-   Addon-backgrounds: set background on iframe instead of adding a wrapper in preview [#2807](https://github.com/storybooks/storybook/pull/3033)
+
 # 3.4.0-alpha.8
 
 2018-February-11
@@ -136,7 +137,6 @@
 -   Upgraded `@polymer/polymer` in `examples/polymer-cli` from "2.4.0" to "2.5.0" [#2912](https://github.com/storybooks/storybook/pull/2912)
 
 </details>
->>>>>>> 7420705d5... 3.3.14 changelog
 
 # 3.3.13
 
