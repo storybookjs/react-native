@@ -19,7 +19,7 @@
     "@angular/core": "^5.2.6",
     "@angular/forms": "^5.2.6",
     "@angular/http": "^5.2.6",
-    "@angular/platform-browser": "^5.2.5",
+    "@angular/platform-browser": "^5.2.6",
     "@angular/platform-browser-dynamic": "^5.2.5",
     "@angular/router": "^5.2.5",
     "core-js": "^2.4.1",
