@@ -4511,9 +4511,9 @@ gatsby-transformer-remark@^1.7.33:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.204:
-  version "1.9.204"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.204.tgz#de4ce3b6c7c74b16f8680986568224328056b3cb"
+gatsby@^1.9.206:
+  version "1.9.206"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.206.tgz#7576a4a479ff56e6df0d9563f023bfd217d010c5"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
