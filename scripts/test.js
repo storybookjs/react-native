@@ -56,13 +56,6 @@ const tasks = {
     projectLocation: path.join(__dirname, '..', 'examples/react-native-vanilla'),
     isJest: true,
   }),
-  integration: createProject({
-    name: `Screenshots of built apps ${chalk.gray('(integration)')}`,
-    defaultValue: false,
-    option: '--integration',
-    projectLocation: path.join(__dirname, '..', 'integration'),
-    isJest: true,
-  }),
   image: createProject({
     name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
     defaultValue: false,
