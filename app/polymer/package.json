@@ -52,7 +52,7 @@
     "css-loader": "^0.28.9",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
-    "file-loader": "^1.1.8",
+    "file-loader": "^1.1.9",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-webpack-plugin": "^2.30.1",
