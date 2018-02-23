@@ -31,7 +31,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^3.3.7",
-    "gatsby": "^1.9.206",
+    "gatsby": "^1.9.209",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-sharp": "^1.6.33",
     "gatsby-remark-autolink-headers": "^1.4.12",
