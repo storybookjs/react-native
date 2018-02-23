@@ -48,7 +48,7 @@
     "common-tags": "^1.7.2",
     "configstore": "^3.1.1",
     "core-js": "^2.5.3",
-    "css-loader": "^0.28.9",
+    "css-loader": "^0.28.10",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
     "file-loader": "^1.1.9",
