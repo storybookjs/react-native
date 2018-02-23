@@ -24,6 +24,8 @@ const isBrowser =
 const storyStore = new StoryStore();
 const reduxStore = createStore(reducer);
 const context = { storyStore, reduxStore };
+const clientApi = new ClientApi(context);
+export const { storiesOf, setAddon, addDecorator, clearDecorators, getStorybook } = clientApi;
 
 if (isBrowser) {
   // create preview channel
@@ -38,10 +40,10 @@ if (isBrowser) {
 
   // Handle keyboard shortcuts
   window.onkeydown = handleKeyboardShortcuts(channel);
-}
 
-const clientApi = new ClientApi(context);
-export const { storiesOf, setAddon, addDecorator, clearDecorators, getStorybook } = clientApi;
+  // Provide access to external scripts
+  window.__STORYBOOK_CLIENT_API__ = clientApi;
+}
 
 const configApi = new ConfigApi({ ...context, clearDecorators });
 export const { configure } = configApi;

@@ -94,6 +94,12 @@ module.exports = {
         specialLink: ['overrideParams', 'kind', 'story', 'to'],
       },
     ],
+    'no-underscore-dangle': [
+      error,
+      {
+        allow: ['__STORYBOOK_CLIENT_API__'],
+      },
+    ],
   },
   overrides: [
     {
