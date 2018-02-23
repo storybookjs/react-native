@@ -32,7 +32,7 @@
     "@storybook/addons": "^3.4.0-alpha.9",
     "@storybook/react": "^3.4.0-alpha.9",
     "babel-cli": "^6.26.0",
-    "babel-jest": "^22.4.0",
+    "babel-jest": "^22.4.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
