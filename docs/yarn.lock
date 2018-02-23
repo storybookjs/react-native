@@ -4461,17 +4461,17 @@ gatsby-remark-autolink-headers@^1.4.12:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.27:
-  version "1.5.27"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.27.tgz#09657a439e14696e2e81b3b752632d1ae1367c89"
+gatsby-remark-copy-linked-files@^1.5.28:
+  version "1.5.28"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.28.tgz#e590a604f4758da7e88ec7c59e12ee0b7bc845ef"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
     fs-extra "^4.0.1"
-    image-size "^0.6.1"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     path-is-inside "^1.0.2"
+    probe-image-size "^3.2.0"
     unist-util-visit "^1.1.1"
 
 gatsby-remark-images@^1.5.48:
@@ -5469,10 +5469,6 @@ iferr@^0.1.5:
 image-size@^0.5.1:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
-
-image-size@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.1.tgz#98122a562d59dcc097ef1b2c8191866eb8f5d663"
 
 imagemin-pngquant@^5.0.0:
   version "5.0.1"
