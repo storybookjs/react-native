@@ -58,9 +58,6 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-          command: sh ./scripts/workaround-puppeteer-issue-290.sh
-      - run:
           name: "Build react kitchen-sink"
           command: |
             cd examples/cra-kitchen-sink
@@ -92,12 +89,6 @@ jobs:
       - run:
           name: "Run image snapshots"
           command: yarn test --image
-      - run:
-          name: Integration Test - Kichen sinks
-          command: yarn test --integration
-      - store_artifacts:
-          path: integration/__image_snapshots__
-          destination: integration_image_snapshots
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
           destination: official_storybook_image_snapshots

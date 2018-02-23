@@ -41,7 +41,7 @@ You can also pick directly from CLI:
 
 You can use one of the example projects in `examples/` to develop on.
 
-This command will list all the suites and options for running tests. 
+This command will list all the suites and options for running tests.
 
 ```sh
 yarn test
@@ -58,7 +58,7 @@ You can also pick suites from CLI.  Suites available are listed below.
 `yarn test --core`
 
 This option executes test from `<rootdir>/app/react`, `<rootdir>/app/vue`, and `<rootdir>/lib`.
-Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core` 
+Before the tests are ran, the project must be bootstrapped with core. You can accomplish this with `yarn bootstrap --core`
 
 ##### React-Native example Tests
 
@@ -66,15 +66,6 @@ Before the tests are ran, the project must be bootstrapped with core. You can ac
 
 This option executes tests from `<rootdir>/app/react-native`.
 Before these tests are ran, the project must be bootstrapped with the React Native example enabled.  You can accomplish this by running `yarn bootstrap --reactnative`
-
-##### Integration Tests (Screenshots of running apps)
-
-`yarn test --integration`
-
-This option executes tests from `<rootdir>/integration`.
-In order for the snapshot-integration tests to be executed properly, examples being tested must be running on their defaults ports, as declared in `integration/examples.test.js`
-
-Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images.
 
 ##### CRA-kitchen-sink - Image snapshots using Storyshots
 
@@ -273,7 +264,7 @@ _Make sure `yarn dev` is running_
 
 ##### 1. Setup storybook in your project
 
-First we are going to install storyboook, then we are going to link `@storybook/react` into our project. This will replace `node_modules/@storybook/react` with a symlink to our local version of storybook. 
+First we are going to install storyboook, then we are going to link `@storybook/react` into our project. This will replace `node_modules/@storybook/react` with a symlink to our local version of storybook.
 
 1.  `getstorybook`
 2.  `yarn storybook`
@@ -283,7 +274,7 @@ First we are going to install storyboook, then we are going to link `@storybook/
 
 **_Note_**: This process is the same for `@storybook/vue`, `@storybook/addon-foo`, etc
 
-1.  Go to your storybook _root_ directory 
+1.  Go to your storybook _root_ directory
 2.  `yarn dev`
 3.  Wait until the output stops (changes you make will be transpiled into dist and logged here)
 4.  Go to your storybook-sandbox-app directory
