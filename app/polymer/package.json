@@ -49,7 +49,7 @@
     "configstore": "^3.1.1",
     "copy-webpack-plugin": "^4.4.0",
     "core-js": "^2.5.1",
-    "css-loader": "^0.28.9",
+    "css-loader": "^0.28.10",
     "dotenv-webpack": "^1.5.4",
     "express": "^4.16.2",
     "file-loader": "^1.1.9",
