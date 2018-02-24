@@ -27,8 +27,8 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@storybook/addon-actions';
-import '@storybook/addon-links';
+import '@storybook/addon-actions/register';
+import '@storybook/addon-links/register';
 import '@storybook/addon-events/register';
 ```
 
