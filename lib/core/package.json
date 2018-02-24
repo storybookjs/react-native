@@ -28,7 +28,7 @@
     "commander": "^2.14.1",
     "css-loader": "^0.28.10",
     "dotenv": "^5.0.0",
-    "events": "^1.1.1",
+    "events": "^2.0.0",
     "express": "^4.16.2",
     "file-loader": "^1.1.9",
     "global": "^4.3.2",
