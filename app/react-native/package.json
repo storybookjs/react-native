@@ -71,7 +71,7 @@
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0",
-    "ws": "^3.3.3"
+    "ws": "^4.1.0"
   },
   "devDependencies": {
     "react-native": "^0.52.2"
