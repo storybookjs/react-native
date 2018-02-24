@@ -31,7 +31,6 @@
     "@storybook/channel-websocket": "^3.4.0-alpha.9",
     "@storybook/core": "^3.4.0-alpha.9",
     "@storybook/ui": "^3.4.0-alpha.9",
-    "autoprefixer": "^7.2.6",
     "babel-loader": "^7.1.2",
     "babel-plugin-macros": "^2.1.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
