@@ -6,6 +6,7 @@ import { document } from 'global';
 import { viewports, defaultViewport, resetViewport } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
+import { UPDATE_VIEWPORT_EVENT_ID } from '../../shared';
 
 import * as styles from './styles';
 
@@ -29,7 +30,7 @@ export class Panel extends Component {
       isLandscape: false,
     };
 
-    this.props.channel.on('addon:viewport:update', this.changeViewport);
+    this.props.channel.on(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
   }
 
   componentDidMount() {
@@ -37,7 +38,7 @@ export class Panel extends Component {
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener('addon:viewport:update', this.changeViewport);
+    this.props.channel.removeListener(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
   }
 
   iframe = undefined;
