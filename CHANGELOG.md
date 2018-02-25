@@ -208,7 +208,7 @@
 -   Addon Storysource improvements [#3040](https://github.com/storybooks/storybook/pull/3040)
 -   #3029 use @storybook/podda to fix npm engine version in podda [#3033](https://github.com/storybooks/storybook/pull/3033)
 -   Add moduleMetdata decorator for supplying common Angular metadata [#2959](https://github.com/storybooks/storybook/pull/2959)
--   [Addon Storysource] Add auto scrolling to the selected story [#3025](https://github.com/storybooks/storybook/pull/3025)
+-   `Addon Storysource` Add auto scrolling to the selected story [#3025](https://github.com/storybooks/storybook/pull/3025)
 -   add GitHub flavored markdown notes [#2946](https://github.com/storybooks/storybook/pull/2946)
 -   Added beforeScreenshot config option to addons/storyshots, to allow testing of components with mounting animations [#2972](https://github.com/storybooks/storybook/pull/2972)
 -   Enable groupId option for knobs to be organized into sub panels. [#2661](https://github.com/storybooks/storybook/pull/2661)
