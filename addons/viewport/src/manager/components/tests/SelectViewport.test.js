@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { SelectViewport } from '../SelectViewport';
-import { viewports, defaultViewport } from '../viewportInfo';
+import { initialViewports, defaultViewport } from '../viewportInfo';
 import * as styles from '../styles';
 
 describe('Viewport/SelectViewport', () => {
@@ -12,6 +12,8 @@ describe('Viewport/SelectViewport', () => {
     props = {
       onChange: jest.fn(),
       activeViewport: defaultViewport,
+      viewports: initialViewports,
+      defaultViewport,
     };
 
     subject = shallow(<SelectViewport {...props} />);
@@ -35,7 +37,7 @@ describe('Viewport/SelectViewport', () => {
     });
 
     describe('dynamic options', () => {
-      const viewportKeys = Object.keys(viewports);
+      const viewportKeys = Object.keys(initialViewports);
       it('has at least 1 option', () => {
         expect(viewportKeys.length).toBeGreaterThan(0);
       });
@@ -43,9 +45,9 @@ describe('Viewport/SelectViewport', () => {
       viewportKeys.forEach(key => {
         let option;
 
-        it(`renders an option for ${viewports[key].name}`, () => {
+        it(`renders an option for ${initialViewports[key].name}`, () => {
           option = subject.find(`[value="${key}"]`);
-          expect(option.text()).toEqual(viewports[key].name);
+          expect(option.text()).toEqual(initialViewports[key].name);
         });
       });
     });

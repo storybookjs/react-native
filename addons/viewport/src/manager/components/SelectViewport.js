@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { viewports, defaultViewport } from './viewportInfo';
 import * as styles from './styles';
 
-export function SelectViewport({ activeViewport, onChange }) {
+export function SelectViewport({ viewports, defaultViewport, activeViewport, onChange }) {
   return (
     <div style={styles.row}>
       <label htmlFor="device" style={styles.label}>
@@ -25,4 +24,6 @@ export function SelectViewport({ activeViewport, onChange }) {
 SelectViewport.propTypes = {
   onChange: PropTypes.func.isRequired,
   activeViewport: PropTypes.string.isRequired,
+  viewports: PropTypes.shape({}).isRequired,
+  defaultViewport: PropTypes.string.isRequired,
 };

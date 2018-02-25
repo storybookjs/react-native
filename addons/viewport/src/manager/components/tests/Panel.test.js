@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { document } from 'global';
 
 import { Panel } from '../Panel';
-import { viewports, defaultViewport, resetViewport } from '../viewportInfo';
+import { initialViewports, defaultViewport, resetViewport } from '../viewportInfo';
 import * as styles from '../styles';
 
 describe('Viewport/Panel', () => {
@@ -24,6 +24,7 @@ describe('Viewport/Panel', () => {
     it('creates the initial state', () => {
       expect(subject.instance().state).toEqual({
         viewport: defaultViewport,
+        viewports: initialViewports,
         isLandscape: false,
       });
     });
@@ -76,13 +77,13 @@ describe('Viewport/Panel', () => {
 
     describe('new viewport', () => {
       beforeEach(() => {
-        subject.instance().changeViewport(viewports[0]);
+        subject.instance().changeViewport(initialViewports[0]);
       });
 
       it('sets the state with the new information', () => {
         expect(subject.instance().setState).toHaveBeenCalledWith(
           {
-            viewport: viewports[0],
+            viewport: initialViewports[0],
             isLandscape: false,
           },
           subject.instance().updateIframe
@@ -200,6 +201,22 @@ describe('Viewport/Panel', () => {
         expect(select.props()).toEqual(
           expect.objectContaining({
             activeViewport: defaultViewport,
+          })
+        );
+      });
+
+      it('passes the defaultViewport', () => {
+        expect(select.props()).toEqual(
+          expect.objectContaining({
+            defaultViewport,
+          })
+        );
+      });
+
+      it('passes the initialViewports', () => {
+        expect(select.props()).toEqual(
+          expect.objectContaining({
+            viewports: initialViewports,
           })
         );
       });

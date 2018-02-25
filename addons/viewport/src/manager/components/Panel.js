@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { baseFonts } from '@storybook/components';
 import { document } from 'global';
 
-import { viewports, defaultViewport, resetViewport } from './viewportInfo';
+import { initialViewports, defaultViewport, resetViewport } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
 import { UPDATE_VIEWPORT_EVENT_ID } from '../../shared';
@@ -27,6 +27,7 @@ export class Panel extends Component {
     super(props, context);
     this.state = {
       viewport: defaultViewport,
+      viewports: initialViewports,
       isLandscape: false,
     };
 
@@ -64,7 +65,7 @@ export class Panel extends Component {
   };
 
   updateIframe = () => {
-    const { viewport: viewportKey, isLandscape } = this.state;
+    const { viewports, viewport: viewportKey, isLandscape } = this.state;
     const viewport = viewports[viewportKey] || resetViewport;
 
     if (!this.iframe) {
@@ -82,7 +83,7 @@ export class Panel extends Component {
   };
 
   render() {
-    const { isLandscape, viewport } = this.state;
+    const { isLandscape, viewport, viewports } = this.state;
 
     const disableDefault = viewport === defaultViewport;
     const disabledStyles = disableDefault ? styles.disabled : {};
@@ -97,6 +98,8 @@ export class Panel extends Component {
     return (
       <div style={containerStyles}>
         <SelectViewport
+          viewports={viewports}
+          defaultViewport={defaultViewport}
           activeViewport={viewport}
           onChange={e => this.changeViewport(e.target.value)}
         />

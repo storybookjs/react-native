@@ -18,7 +18,7 @@ export const resetViewport = {
   },
 };
 
-export const viewports = {
+export const initialViewports = {
   iphone5: {
     name: 'iPhone 5',
     styles: {

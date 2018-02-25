@@ -1,12 +1,12 @@
-import { viewports, resetViewport, configuredStyles } from '../viewportInfo';
+import { initialViewports, resetViewport, configuredStyles } from '../viewportInfo';
 
 describe('Viewport/constants', () => {
-  describe('viewports', () => {
+  describe('initialViewports', () => {
     it('includes the default styles on every custom viewport', () => {
-      const keys = Object.keys(viewports);
+      const keys = Object.keys(initialViewports);
 
       keys.forEach(key => {
-        expect(viewports[key].styles).toEqual(expect.objectContaining(configuredStyles));
+        expect(initialViewports[key].styles).toEqual(expect.objectContaining(configuredStyles));
       });
     });
   });
