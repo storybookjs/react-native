@@ -24,7 +24,7 @@
     "@storybook/react": "^3.3.14",
     "babel-loader": "^6.4.1",
     "bootstrap": "^3.3.7",
-    "gatsby": "^1.9.212",
+    "gatsby": "^1.9.214",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-sharp": "^1.6.34",
     "gatsby-remark-autolink-headers": "^1.4.12",
