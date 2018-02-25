@@ -5,7 +5,6 @@ export const configuredStyles = {
   boxShadow: 'rgba(0,0,0,0.2) 0px 0px 60px 12px',
 };
 
-export const defaultViewport = 'default';
 export const resetViewport = {
   name: 'Reset',
   styles: {
@@ -18,61 +17,29 @@ export const resetViewport = {
   },
 };
 
-export const initialViewports = {
-  iphone5: {
-    name: 'iPhone 5',
-    styles: {
-      height: '568px',
-      width: '320px',
-      ...configuredStyles,
-    },
-  },
-  iphone6: {
-    name: 'iPhone 6',
-    styles: {
-      height: '667px',
-      width: '375px',
-      ...configuredStyles,
-    },
-  },
-  iphone6p: {
-    name: 'iPhone 6 Plus',
-    styles: {
-      height: '736px',
-      width: '414px',
-      ...configuredStyles,
-    },
-  },
-  ipad: {
-    name: 'iPad',
-    styles: {
-      height: '1024px',
-      width: '768px',
-      ...configuredStyles,
-    },
-  },
-  galaxys5: {
-    name: 'Galaxy S5',
-    styles: {
-      height: '640px',
-      width: '360px',
-      ...configuredStyles,
-    },
-  },
-  nexus5x: {
-    name: 'Nexus 5X',
-    styles: {
-      height: '660px',
-      width: '412px',
-      ...configuredStyles,
-    },
-  },
-  nexus6p: {
-    name: 'Nexus 6P',
-    styles: {
-      height: '732px',
-      width: '412px',
-      ...configuredStyles,
-    },
-  },
-};
+export function applyStyles(viewport, styles) {
+  const mixedStyles = {
+    ...viewport.styles,
+    ...styles,
+  };
+
+  return {
+    ...viewport,
+    styles: mixedStyles,
+  };
+}
+
+export function applyDefaultStyles(viewport) {
+  return applyStyles(viewport, configuredStyles);
+}
+
+export const transformViewports = transformer => viewports =>
+  Object.keys(viewports).reduce(
+    (all, key) => ({
+      ...all,
+      [key]: transformer(viewports[key]),
+    }),
+    {}
+  );
+
+export const viewportsTransformer = transformViewports(applyDefaultStyles);

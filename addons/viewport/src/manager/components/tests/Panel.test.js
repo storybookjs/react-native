@@ -3,8 +3,9 @@ import { shallow } from 'enzyme';
 import { document } from 'global';
 
 import { Panel } from '../Panel';
-import { initialViewports, defaultViewport, resetViewport } from '../viewportInfo';
+import { resetViewport, viewportsTransformer, configuredStyles } from '../viewportInfo';
 import * as styles from '../styles';
+import { DEFAULT_VIEWPORT, INITIAL_VIEWPORTS } from '../../../shared';
 
 describe('Viewport/Panel', () => {
   const props = {
@@ -12,6 +13,9 @@ describe('Viewport/Panel', () => {
       on: jest.fn(),
       removeListener: jest.fn(),
     },
+    api: {
+      onStory: jest.fn()
+    }
   };
 
   let subject;
@@ -23,13 +27,14 @@ describe('Viewport/Panel', () => {
   describe('construct', () => {
     it('creates the initial state', () => {
       expect(subject.instance().state).toEqual({
-        viewport: defaultViewport,
-        viewports: initialViewports,
+        viewport: DEFAULT_VIEWPORT,
+        defaultViewport: DEFAULT_VIEWPORT,
+        viewports: viewportsTransformer(INITIAL_VIEWPORTS),
         isLandscape: false,
       });
     });
 
-    it('listens on the channel', () => {
+    it('listens on `update` channel', () => {
       expect(props.channel.on).toHaveBeenCalledWith(
         'addon:viewport:update',
         subject.instance().changeViewport
@@ -54,6 +59,13 @@ describe('Viewport/Panel', () => {
     it('gets the iframe', () => {
       expect(subject.instance().iframe).toEqual('iframe');
     });
+
+    it('listens on the `configure` topic', () => {
+      expect(props.channel.on).toHaveBeenCalledWith(
+        'addon:viewport:configure',
+        subject.instance().configure
+      );
+    });
   });
 
   describe('componentWillUnmount', () => {
@@ -61,10 +73,63 @@ describe('Viewport/Panel', () => {
       subject.instance().componentWillUnmount();
     });
 
-    it('removes the channel listener', () => {
+    it('removes `update` channel listener', () => {
       expect(props.channel.removeListener).toHaveBeenCalledWith(
         'addon:viewport:update',
         subject.instance().changeViewport
+      );
+    });
+
+    it('removes `configure` channel listener', () => {
+      expect(props.channel.removeListener).toHaveBeenCalledWith(
+        'addon:viewport:configure',
+        subject.instance().configure
+      );
+    });
+  });
+
+  describe('configure', () => {
+    beforeEach(() => {
+      subject.instance().setState = jest.fn();
+      subject.instance().updateIframe = jest.fn();
+      subject.instance().configure({
+        defaultViewport: 'iphone6',
+        viewports: {
+          foo: {
+            styles: {
+              width: '50px'
+            }
+          },
+          bar: {
+            styles: {
+              width: '100px'
+            }
+          }
+        }
+      });
+    });
+
+    it('sets the state with the new information', () => {
+      expect(subject.instance().setState).toHaveBeenCalledWith(
+        {
+          defaultViewport: 'iphone6',
+          viewport: 'iphone6',
+          viewports: {
+            foo: {
+              styles: {
+                width: '50px',
+                ...configuredStyles
+              }
+            },
+            bar: {
+              styles: {
+                width: '100px',
+                ...configuredStyles
+              }
+            }
+          }
+        },
+        subject.instance().updateIframe
       );
     });
   });
@@ -77,13 +142,13 @@ describe('Viewport/Panel', () => {
 
     describe('new viewport', () => {
       beforeEach(() => {
-        subject.instance().changeViewport(initialViewports[0]);
+        subject.instance().changeViewport(INITIAL_VIEWPORTS[0]);
       });
 
       it('sets the state with the new information', () => {
         expect(subject.instance().setState).toHaveBeenCalledWith(
           {
-            viewport: initialViewports[0],
+            viewport: INITIAL_VIEWPORTS[0],
             isLandscape: false,
           },
           subject.instance().updateIframe
@@ -93,7 +158,7 @@ describe('Viewport/Panel', () => {
 
     describe('same as previous viewport', () => {
       beforeEach(() => {
-        subject.instance().changeViewport(defaultViewport);
+        subject.instance().changeViewport(DEFAULT_VIEWPORT);
       });
 
       it('doesnt update the state', () => {
@@ -185,7 +250,7 @@ describe('Viewport/Panel', () => {
 
       it('toggles the landscape on click', () => {
         resetBtn.simulate('click');
-        expect(subject.instance().changeViewport).toHaveBeenCalledWith(defaultViewport);
+        expect(subject.instance().changeViewport).toHaveBeenCalledWith(DEFAULT_VIEWPORT);
       });
     });
 
@@ -200,7 +265,7 @@ describe('Viewport/Panel', () => {
       it('passes the activeViewport', () => {
         expect(select.props()).toEqual(
           expect.objectContaining({
-            activeViewport: defaultViewport,
+            activeViewport: DEFAULT_VIEWPORT,
           })
         );
       });
@@ -208,15 +273,15 @@ describe('Viewport/Panel', () => {
       it('passes the defaultViewport', () => {
         expect(select.props()).toEqual(
           expect.objectContaining({
-            defaultViewport,
+            defaultViewport: DEFAULT_VIEWPORT,
           })
         );
       });
 
-      it('passes the initialViewports', () => {
+      it('passes the INITIAL_VIEWPORTS', () => {
         expect(select.props()).toEqual(
           expect.objectContaining({
-            viewports: initialViewports,
+            viewports: viewportsTransformer(INITIAL_VIEWPORTS),
           })
         );
       });
@@ -243,7 +308,7 @@ describe('Viewport/Panel', () => {
 
       describe('is on the default viewport', () => {
         beforeEach(() => {
-          subject.setState({ viewport: defaultViewport });
+          subject.setState({ viewport: DEFAULT_VIEWPORT });
         });
 
         it('sets the disabled property', () => {
@@ -251,7 +316,7 @@ describe('Viewport/Panel', () => {
         });
       });
 
-      describe('is on a responsive viewport', () => {
+      describe('is on a non-default viewport', () => {
         beforeEach(() => {
           subject.setState({ viewport: 'iphone6' });
           toggle = subject.find('RotateViewport');
