@@ -82,10 +82,10 @@ export default function(configDir) {
           test: /\.md$/,
           use: [
             {
-              loader: 'html-loader',
+              loader: require.resolve('html-loader'),
             },
             {
-              loader: 'markdown-loader',
+              loader: require.resolve('markdown-loader'),
             },
           ],
         },
@@ -100,8 +100,6 @@ export default function(configDir) {
       modules: ['node_modules'].concat(nodePaths),
       alias: {
         vue$: require.resolve('vue/dist/vue.esm.js'),
-        react$: require.resolve('react'),
-        'react-dom$': require.resolve('react-dom'),
       },
     },
   };
