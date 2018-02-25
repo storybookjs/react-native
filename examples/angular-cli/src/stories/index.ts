@@ -1,10 +1,13 @@
 import { storiesOf } from '@storybook/angular';
 import { Welcome, Button } from '@storybook/angular/demo';
 import { moduleMetadata } from '@storybook/angular';
+import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
-  template: `<storybook-welcome-component></storybook-welcome-component>`,
-  props: {},
+  template: `<storybook-welcome-component (showApp)="showApp()"></storybook-welcome-component>`,
+  props: {
+    showApp: linkTo('Button'),
+  },
   moduleMetadata: {
     declarations: [Welcome],
   },
