@@ -15,6 +15,7 @@
   "devDependencies": {
     "babel-jest": "^22.0.4",
     "babel-preset-react-native": "^4.0.0",
+    "babel-runtime": "^6.26.0",
     "jest": "^22.0.4",
     "react-test-renderer": "^16.2.0",
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
