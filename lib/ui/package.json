@@ -24,7 +24,6 @@
     "events": "^1.1.1",
     "fuse.js": "^3.2.0",
     "global": "^4.3.2",
-    "json-stringify-safe": "^5.0.1",
     "keycode": "^2.1.9",
     "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
@@ -33,11 +32,9 @@
     "qs": "^6.5.1",
     "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
-    "react-inspector": "^2.2.2",
     "react-modal": "^3.3.1",
     "react-split-pane": "^0.1.77",
-    "react-treebeard": "^2.1.0",
-    "redux": "^3.7.2"
+    "react-treebeard": "^2.1.0"
   },
   "peerDependencies": {
     "react": "*",
