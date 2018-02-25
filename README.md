@@ -3,7 +3,7 @@
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
@@ -80,15 +80,21 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Addons
 
--   [storyshots](addons/storyshots) - Easy snapshot testing for storybook
--   [actions](addons/actions/) - Log actions as users interact with components in storybook
--   [links](addons/links/) - Create links between stories
--   [comments](addons/comments/) - Comment on storybook stories
+-   [a11y](addons/a11y/) - Test components for user accessibility in Storybook
+-   [actions](addons/actions/) - Log actions as users interact with components in the Storybook UI
+-   [background](addons/background/) - Let users choose backgrounds in the Storybook UI
+-   [centered](addons/centered/) - Center the alignment of your components within the Storybook UI
+-   [events](addons/events/) - Interactively fire events to components that respond to EventEmitter
 -   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
 -   [info](addons/info/) - Annotate stories with extra component usage information
+-   [jest](addons/jest/) - View the results of components' unit tests in Storybook
 -   [knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
--   [notes](addons/notes/) - Annotate storybook stories with notes
--   [options](addons/options/) - Customize the storybook UI in code
+-   [links](addons/links/) - Create links between stories
+-   [notes](addons/notes/) - Annotate Storybook stories with notes
+-   [options](addons/options/) - Customize the Storybook UI in code
+-   [storyshots](addons/storyshots/) - Easy snapshot testing for components in Storybook
+-   [storysource](addons/storysource/) - View the code of your stories within the Storybook UI
+-   [viewport](addons/viewport/) - Change display sizes and layouts for responsive components using Storybook
 
 See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
