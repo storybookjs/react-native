@@ -33,13 +33,6 @@ describe('Viewport/Panel', () => {
         isLandscape: false,
       });
     });
-
-    it('listens on `update` channel', () => {
-      expect(props.channel.on).toHaveBeenCalledWith(
-        'addon:viewport:update',
-        subject.instance().changeViewport
-      );
-    });
   });
 
   describe('componentDidMount', () => {
@@ -60,10 +53,17 @@ describe('Viewport/Panel', () => {
       expect(subject.instance().iframe).toEqual('iframe');
     });
 
-    it('listens on the `configure` topic', () => {
+    it('listens on `configure` channel', () => {
       expect(props.channel.on).toHaveBeenCalledWith(
         'addon:viewport:configure',
         subject.instance().configure
+      );
+    });
+
+    it('listens on `update` channel', () => {
+      expect(props.channel.on).toHaveBeenCalledWith(
+        'addon:viewport:update',
+        subject.instance().changeViewport
       );
     });
   });
