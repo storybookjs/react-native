@@ -12,18 +12,6 @@ module.exports = {
       },
     ],
     require.resolve('babel-preset-stage-0'),
-    require.resolve('babel-preset-react'),
   ],
-  plugins: [
-    require.resolve('babel-plugin-macros'),
-    require.resolve('babel-plugin-transform-regenerator'),
-    [
-      require.resolve('babel-plugin-transform-runtime'),
-      {
-        helpers: true,
-        polyfill: true,
-        regenerator: true,
-      },
-    ],
-  ],
+  plugins: [require.resolve('babel-plugin-macros')],
 };

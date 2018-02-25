@@ -5,13 +5,13 @@ const ignore = 0;
 module.exports = {
   root: true,
   extends: [
-    'eslint-config-airbnb',
+    'airbnb',
     'plugin:jest/recommended',
     'plugin:import/react-native',
     'prettier',
     'prettier/react',
   ],
-  plugins: ['prettier', 'jest', 'react', 'json'],
+  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json'],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
