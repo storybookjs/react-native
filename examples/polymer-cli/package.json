@@ -11,6 +11,7 @@
     "@polymer/polymer": "^2.5.0",
     "@storybook/addon-actions": "^3.4.0-alpha.9",
     "@storybook/addon-knobs": "^3.4.0-alpha.9",
+    "@storybook/addon-links": "^3.4.0-alpha.9",
     "@storybook/addon-notes": "^3.4.0-alpha.9",
     "@storybook/addon-options": "^3.4.0-alpha.9",
     "@storybook/addon-storysource": "^3.4.0-alpha.9",
