@@ -46,8 +46,5 @@
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0"
   }
 }
