@@ -11,8 +11,6 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "glamor": "^2.20.40",
-    "glamorous": "^4.11.6",
     "global": "^4.3.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -31,16 +29,14 @@
     "@storybook/addon-notes": "^3.4.0-alpha.9",
     "@storybook/addon-options": "^3.4.0-alpha.9",
     "@storybook/addon-storyshots": "^3.4.0-alpha.9",
-    "@storybook/addon-viewport": "^3.4.0-alpha.9",
     "@storybook/addons": "^3.4.0-alpha.9",
     "@storybook/client-logger": "^3.4.0-alpha.9",
-    "@storybook/components": "^3.4.0-alpha.9",
     "@storybook/react": "^3.4.0-alpha.9",
-    "babel-jest": "^22.4.1",
+    "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.1",
-    "jest": "^22.4.2",
+    "jest": "^20.0.4",
     "react-scripts": "^1.1.1",
     "webpack": "^3.11.0"
   }
