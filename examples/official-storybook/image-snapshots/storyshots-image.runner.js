@@ -24,11 +24,6 @@ if (!fs.existsSync(pathToStorybookStatic)) {
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
       beforeScreenshot: (page, { context }) => {
-        // Default viewport set. The height is not restrictive since we tell Chrome to take the 'fullPage' screenshot.
-        // Also, setViewport does not accept setting a width and not an height.
-        // Finally, setting an explicit height is useful to generate diffs even if there is no content.
-        page.setViewport({ width: 1024, height: 500 });
-
         // Screenshots for this story have to be tweaked.
         if (context.kind === 'ui/Layout') {
           // Some weird stuff are done inside Layout component, so we have to wait some to get a viable screenshot.

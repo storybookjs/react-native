@@ -7,17 +7,13 @@ expect.extend({ toMatchImageSnapshot });
 // We consider taking the full page is a reasonnable default.
 const defaultScreenshotOptions = () => ({ fullPage: true });
 
-// Enforce default viewport to have a minimal width & height for screenshots.
-// Helps avoiding image size inconsistency thus not generating image diff.
-const defaultBeforeScreenshot = page => {
-  page.setViewport({ width: 1024, height: 500 });
-};
+const noop = () => {};
 
 export const imageSnapshot = ({
   storybookUrl = 'http://localhost:6006',
-  getMatchOptions = () => {},
+  getMatchOptions = noop,
   getScreenshotOptions = defaultScreenshotOptions,
-  beforeScreenshot = defaultBeforeScreenshot,
+  beforeScreenshot = noop,
 }) => {
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
