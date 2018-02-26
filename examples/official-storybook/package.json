@@ -6,7 +6,8 @@
     "build-storybook": "build-storybook -c ./ -s built-storybooks",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
-    "image-snapshots": "yarn run build-storybook && jest --projects=./image-snapshots",
+    "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
+    "do-image-snapshots": "../../node_modules/.bin/jest --projects=./image-snapshots",
     "storybook": "start-storybook -p 9011 -c ./ -s built-storybooks"
   },
   "devDependencies": {

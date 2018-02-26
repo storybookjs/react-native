@@ -4,10 +4,20 @@ import { logger } from '@storybook/node-logger';
 
 expect.extend({ toMatchImageSnapshot });
 
+// We consider taking the full page is a reasonnable default.
+const defaultScreenshotOptions = () => ({ fullPage: true });
+
+// Enforce default viewport to have a minimal width & height for screenshots.
+// Helps avoiding image size inconsistency thus not generating image diff.
+const defaultBeforeScreenshot = page => {
+  page.setViewport({ width: 1024, height: 500 });
+};
+
 export const imageSnapshot = ({
   storybookUrl = 'http://localhost:6006',
   getMatchOptions = () => {},
-  beforeScreenshot = () => {},
+  getScreenshotOptions = defaultScreenshotOptions,
+  beforeScreenshot = defaultBeforeScreenshot,
 }) => {
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
@@ -45,14 +55,13 @@ export const imageSnapshot = ({
         throw e;
       })
       .then(() => beforeScreenshot(page, { context, url }))
-      .then(() =>
-        page.screenshot().then(image => {
-          expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
-        })
-      );
+      .then(() => page.screenshot(getScreenshotOptions({ context, url })))
+      .then(image => {
+        expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
+      });
   };
 
-  testFn.beforeEach = () =>
+  testFn.beforeAll = () =>
     puppeteer
       // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
       .launch({ args: ['--no-sandbox ', '--disable-setuid-sandbox'] })
@@ -64,7 +73,7 @@ export const imageSnapshot = ({
         page = p;
       });
 
-  testFn.afterEach = () => browser.close();
+  testFn.afterAll = () => browser.close();
 
   return testFn;
 };

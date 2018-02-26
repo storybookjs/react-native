@@ -210,6 +210,22 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'h
 
 `beforeScreenshot` receives the [Puppeteer page instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) and an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot. `beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for triggering events on the page elements and delaying the screenshot and can be used avoid regressions due to mounting animations.
 
+### Specifying options to _screenshot()_
+
+You might use `getScreenshotOptions` to specify options for screenshot. Will be passed to [Puppeteer .screenshot() fn](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions)
+
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+const getScreenshotOptions = ({context, url}) {
+  return {
+    fullPage: false // Do not take the full page screenshot. Default is 'true' in Storyshots.
+  }
+}
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getScreenshotOptions})});
+```
+
+`getScreenshotOptions` receives an object `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
+
 ### Integrate image storyshots with regular app
 
 You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.

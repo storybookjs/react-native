@@ -21,13 +21,23 @@ if (!fs.existsSync(pathToStorybookStatic)) {
     suite: 'Image snapshots',
     framework: 'react',
     configPath: path.join(__dirname, '..'),
-    storyNameRegex: /^((?!tweaks static values with debounce delay|Inlines component inside story).)$/,
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
-      getMatchOptions: () => ({
-        failureThreshold: 0.04, // 4% threshold,
-        failureThresholdType: 'percent',
-      }),
+      beforeScreenshot: (page, { context }) => {
+        // Default viewport set. The height is not restrictive since we tell Chrome to take the 'fullPage' screenshot.
+        // Also, setViewport does not accept setting a width and not an height.
+        // Finally, setting an explicit height is useful to generate diffs even if there is no content.
+        page.setViewport({ width: 1024, height: 500 });
+
+        // Screenshots for this story have to be tweaked.
+        if (context.kind === 'ui/Layout') {
+          // Some weird stuff are done inside Layout component, so we have to wait some to get a viable screenshot.
+          // Tried some values here, seems 200 is long enough, not too short either :)
+          // Not sure why this is required but seems better than to avoid taking screenshots for these.
+          return new Promise(resolve => setTimeout(resolve, 200));
+        }
+        return Promise.resolve();
+      },
     }),
   });
 }
