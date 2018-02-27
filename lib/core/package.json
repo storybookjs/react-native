@@ -27,15 +27,15 @@
     "chalk": "^2.3.1",
     "commander": "^2.14.1",
     "css-loader": "^0.28.10",
-    "dotenv": "^5.0.0",
+    "dotenv": "^5.0.1",
     "events": "^2.0.0",
     "express": "^4.16.2",
-    "file-loader": "^1.1.9",
+    "file-loader": "^1.1.10",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "postcss-loader": "^2.1.0",
-    "prop-types": "^15.5.10",
+    "postcss-loader": "^2.1.1",
+    "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -46,8 +46,5 @@
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0"
   }
 }

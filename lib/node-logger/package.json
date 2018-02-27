@@ -9,7 +9,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "chalk": "^2.3.1",
     "npmlog": "^4.1.2"
   }
 }

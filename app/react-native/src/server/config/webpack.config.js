@@ -39,10 +39,10 @@ const getConfig = options => ({
         test: /\.md$/,
         use: [
           {
-            loader: 'html-loader',
+            loader: require.resolve('html-loader'),
           },
           {
-            loader: 'markdown-loader',
+            loader: require.resolve('markdown-loader'),
           },
         ],
       },
