@@ -28,7 +28,7 @@
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
     "prettier": "^1.11.0",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.1",
     "react-syntax-highlighter": "^7.0.1"
   },
   "peerDependencies": {
