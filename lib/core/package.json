@@ -30,7 +30,7 @@
     "dotenv": "^5.0.1",
     "events": "^1.1.1",
     "express": "^4.16.2",
-    "file-loader": "^1.1.9",
+    "file-loader": "^1.1.10",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
     "postcss-flexbugs-fixes": "^3.2.0",
