@@ -27,7 +27,7 @@
     "chalk": "^2.3.1",
     "commander": "^2.14.1",
     "css-loader": "^0.28.10",
-    "dotenv": "^5.0.0",
+    "dotenv": "^5.0.1",
     "events": "^1.1.1",
     "express": "^4.16.2",
     "file-loader": "^1.1.9",
