@@ -18,11 +18,12 @@
     "@storybook/client-logger": "^3.4.0-alpha.9",
     "@storybook/components": "^3.4.0-alpha.9",
     "babel-runtime": "^6.26.0",
+    "glamor": "^2.20.40",
     "glamorous": "^4.11.6",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "react-addons-create-fragment": "^15.5.3",
     "util-deprecate": "^1.0.2"
   },
