@@ -16,7 +16,7 @@
     </p>
     <p>
       See these sample
-      <a class="link" href="#">stories</a>
+      <a class="link" @click="goToButton">stories</a>
       for a component called
       <code class="code">Button</code>
       .
@@ -54,6 +54,13 @@
 </template>
 
 <script>
+  export default {
+    props: {
+      goToButton: {
+        default: () => () => null
+      },
+    }
+  }
 </script>
 
 <style>
