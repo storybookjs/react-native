@@ -28,7 +28,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
