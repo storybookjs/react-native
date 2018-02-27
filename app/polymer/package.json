@@ -43,7 +43,7 @@
     "common-tags": "^1.4.0",
     "copy-webpack-plugin": "^4.4.2",
     "core-js": "^2.5.1",
-    "dotenv-webpack": "^1.5.4",
+    "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-webpack-plugin": "^2.30.1",

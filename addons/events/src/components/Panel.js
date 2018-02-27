@@ -66,7 +66,7 @@ export default class Events extends Component {
     const { events } = this.state;
     return (
       <div style={styles.wrapper}>
-        {events.map(event => <Event key={event.id} {...event} onEmit={this.onEmit} />)}
+        {events.map(event => <Event key={event.name} {...event} onEmit={this.onEmit} />)}
       </div>
     );
   }
