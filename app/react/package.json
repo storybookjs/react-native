@@ -45,7 +45,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "common-tags": "^1.7.2",
     "core-js": "^2.5.3",
-    "dotenv-webpack": "^1.5.4",
+    "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.6",
