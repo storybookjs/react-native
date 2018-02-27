@@ -38,7 +38,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.0.0",
     "core-js": "^2.4.1",
     "cross-env": "^5.1.1",
-    "dotenv-webpack": "^1.5.4",
+    "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",

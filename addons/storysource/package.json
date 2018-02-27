@@ -20,15 +20,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "acorn": "^5.3.0",
+    "acorn": "^5.5.0",
     "acorn-es7": "^0.1.0",
     "acorn-jsx": "^4.1.1",
-    "acorn-stage3": "^0.5.0",
+    "acorn-stage3": "^0.6.0",
     "babel-runtime": "^6.26.0",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
-    "prettier": "^1.10.2",
-    "prop-types": "^15.5.10",
+    "prettier": "^1.11.0",
+    "prop-types": "^15.6.1",
     "react-syntax-highlighter": "^7.0.1"
   },
   "peerDependencies": {
