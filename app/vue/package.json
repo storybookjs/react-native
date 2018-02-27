@@ -39,7 +39,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "common-tags": "^1.7.2",
     "core-js": "^2.5.3",
-    "dotenv-webpack": "^1.5.4",
+    "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
