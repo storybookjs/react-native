@@ -2535,6 +2535,13 @@ color@^2.0.1:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
+color@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/color/-/color-3.0.0.tgz#d920b4328d534a3ac8295d68f7bd4ba6c427be9a"
+  dependencies:
+    color-convert "^1.9.1"
+    color-string "^1.5.2"
+
 colormin@^1.0.5:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/colormin/-/colormin-1.1.2.tgz#ea2f7420a72b96881a38aae59ec124a6f7298133"
@@ -4425,6 +4432,23 @@ gatsby-plugin-sharp@^1.6.34:
     probe-image-size "^3.2.0"
     progress "^1.1.8"
     sharp "^0.19.0"
+    svgo "^0.7.2"
+
+gatsby-plugin-sharp@^1.6.35:
+  version "1.6.35"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.35.tgz#3ef8578163b47842377f14825c98d27dc32f061d"
+  dependencies:
+    async "^2.1.2"
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    imagemin "^5.2.2"
+    imagemin-pngquant "^5.0.0"
+    imagemin-webp "^4.0.0"
+    lodash "^4.17.4"
+    potrace "^2.1.1"
+    probe-image-size "^3.2.0"
+    progress "^1.1.8"
+    sharp "^0.19.1"
     svgo "^0.7.2"
 
 gatsby-react-router-scroll@^1.0.11:
@@ -7104,6 +7128,10 @@ nan@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
 
+nan@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
+
 nanomatch@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.5.tgz#5c9ab02475c76676275731b0bf0a7395c624a9c4"
@@ -9719,7 +9747,7 @@ semver@^4.0.3, semver@^4.3.3:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 
-semver@^5.4.1:
+semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -9885,6 +9913,18 @@ sharp@^0.19.0:
     semver "^5.4.1"
     simple-get "^2.7.0"
     tar "^4.2.0"
+    tunnel-agent "^0.6.0"
+
+sharp@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.19.1.tgz#819bf11f5c3f4ff32eb465f255b5fb87e43ceea1"
+  dependencies:
+    color "^3.0.0"
+    detect-libc "^1.0.3"
+    nan "^2.9.2"
+    semver "^5.5.0"
+    simple-get "^2.7.0"
+    tar "^4.4.0"
     tunnel-agent "^0.6.0"
 
 shebang-command@^1.2.0:
@@ -10609,6 +10649,17 @@ tar@^2.2.1:
 tar@^4.2.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/tar/-/tar-4.3.0.tgz#11351be1c7944c59dd197850119c2081d8bc7fe5"
+  dependencies:
+    chownr "^1.0.1"
+    fs-minipass "^1.2.3"
+    minipass "^2.2.1"
+    minizlib "^1.1.0"
+    mkdirp "^0.5.0"
+    yallist "^3.0.2"
+
+tar@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.0.tgz#3aaf8c29b6b800a8215f33efb4df1c95ce2ac2f5"
   dependencies:
     chownr "^1.0.1"
     fs-minipass "^1.2.3"
