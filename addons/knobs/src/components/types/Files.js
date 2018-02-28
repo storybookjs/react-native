@@ -16,6 +16,7 @@ const FilesType = ({ knob, onChange }) => (
     type="file"
     multiple
     onChange={e => Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange)}
+    accept={knob.accept}
   />
 );
 

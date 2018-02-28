@@ -62,6 +62,6 @@ export function button(name, callback) {
   return manager.knob(name, { type: 'button', callback, hideLabel: true });
 }
 
-export function files(name, value = []) {
-  return manager.knob(name, { type: 'files', value });
+export function files(name, accept, value = []) {
+  return manager.knob(name, { type: 'files', accept, value });
 }
