@@ -58,7 +58,7 @@
   "devDependencies": {
     "nodemon": "^1.15.1",
     "vue": "^2.5.13",
-    "vue-loader": "^13.7.1",
+    "vue-loader": "^14.1.1",
     "vue-template-compiler": "^2.5.13"
   },
   "peerDependencies": {
