@@ -2,9 +2,21 @@ import addons from '@storybook/addons';
 import window from 'global';
 import './WrapStory.html';
 
-import { knob, text, boolean, number, color, object, array, date, select, manager } from '../base';
+import {
+  knob,
+  text,
+  boolean,
+  number,
+  color,
+  object,
+  array,
+  date,
+  select,
+  files,
+  manager,
+} from '../base';
 
-export { knob, text, boolean, number, color, object, array, date, select };
+export { knob, text, boolean, number, color, object, array, date, select, files };
 
 export function button(name, callback) {
   return manager.knob(name, { type: 'button', value: Date.now(), callback, hideLabel: true });
