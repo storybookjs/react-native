@@ -23,6 +23,10 @@ if (!fs.existsSync(pathToStorybookStatic)) {
     configPath: path.join(__dirname, '..'),
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
+      getMatchOptions: () => ({
+        failureThreshold: 0.01, // 1% threshold,
+        failureThresholdType: 'percent',
+      }),
       beforeScreenshot: (page, { context }) => {
         // Screenshots for this story have to be tweaked.
         if (context.kind === 'ui/Layout') {
