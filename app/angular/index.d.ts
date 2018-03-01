@@ -14,7 +14,7 @@ export interface IStoribookSection {
 export interface IStoryContext {
   kind: string;
   name: string;
-  options: any;
+  parameters: any;
 }
 
 export type IGetStory = (
@@ -29,15 +29,15 @@ export type IGetStory = (
 export interface IApi {
   kind: string;
   addDecorator: (decorator: any) => IApi;
-  addOptions: (options: any) => IApi;
-  add: (storyName: string, getStory: IGetStory, options?: any) => IApi;
+  addParameters: (parameters: any) => IApi;
+  add: (storyName: string, getStory: IGetStory, parameters?: any) => IApi;
 }
 
 declare module '@storybook/angular' {
   export function storiesOf(kind: string, module: NodeModule): IApi;
   export function setAddon(addon: any): void;
   export function addDecorator(decorator: any): IApi;
-  export function addOptions(options: any): IApi;
+  export function addParameters(parameters: any): IApi;
   export function configure(loaders: () => NodeRequire, module: NodeModule): void;
   export function getStorybook(): IStoribookSection[];
 }

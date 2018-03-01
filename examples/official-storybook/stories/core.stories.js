@@ -1,14 +1,18 @@
 import React from 'react';
-import { storiesOf, addOptions } from '@storybook/react';
+import { storiesOf, addParameters } from '@storybook/react';
 
-const globalOption = 'globalOption';
-const chapterOption = 'chapterOption';
-const storyOption = 'storyOption';
+const globalParameter = 'globalParameter';
+const chapterParameter = 'chapterParameter';
+const storyParameter = 'storyParameter';
 
-addOptions({ globalOption });
+addParameters({ globalParameter });
 
-storiesOf('Core|Options', module)
-  .addOptions({ chapterOption })
-  .add('passed to story', ({ options }) => <div>Options are {JSON.stringify(options)}</div>, {
-    storyOption,
-  });
+storiesOf('Core|Parameters', module)
+  .addParameters({ chapterParameter })
+  .add(
+    'passed to story',
+    ({ parameters }) => <div>Parameters are {JSON.stringify(parameters)}</div>,
+    {
+      storyParameter,
+    }
+  );

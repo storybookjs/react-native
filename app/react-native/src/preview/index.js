@@ -22,7 +22,7 @@ export default class Preview {
       'storiesOf',
       'setAddon',
       'addDecorator',
-      'addOptions',
+      'addParameters',
       'clearDecorators',
       'getStorybook',
     ].forEach(method => {

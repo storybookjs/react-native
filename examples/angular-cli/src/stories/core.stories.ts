@@ -1,22 +1,22 @@
-import { storiesOf, addOptions } from '@storybook/angular';
+import { storiesOf, addParameters } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 
-const globalOption = 'globalOption';
-const chapterOption = 'chapterOption';
-const storyOption = 'storyOption';
+const globalParameter = 'globalParameter';
+const chapterParameter = 'chapterParameter';
+const storyParameter = 'storyParameter';
 
-addOptions({ globalOption });
+addParameters({ globalParameter });
 
-storiesOf('Core|Options', module)
-  .addOptions({ chapterOption })
+storiesOf('Core|Parameters', module)
+  .addParameters({ chapterParameter })
   .add(
     'passed to story',
-    ({ options }) => ({
+    ({ parameters }) => ({
       component: Button,
       props: {
-        text: JSON.stringify(options),
+        text: `Parameters are ${JSON.stringify(parameters)}`,
         onClick: () => 0,
       },
     }),
-    { storyOption }
+    { storyParameter }
   );

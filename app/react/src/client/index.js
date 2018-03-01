@@ -8,7 +8,7 @@ export {
   storiesOf,
   setAddon,
   addDecorator,
-  addOptions,
+  addParameters,
   configure,
   getStorybook,
   forceReRender,

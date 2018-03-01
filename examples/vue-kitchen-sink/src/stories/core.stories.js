@@ -1,19 +1,19 @@
-import { storiesOf, addOptions } from '@storybook/vue';
+import { storiesOf, addParameters } from '@storybook/vue';
 
-const globalOption = 'globalOption';
-const chapterOption = 'chapterOption';
-const storyOption = 'storyOption';
+const globalParameter = 'globalParameter';
+const chapterParameter = 'chapterParameter';
+const storyParameter = 'storyParameter';
 
-addOptions({ globalOption });
+addParameters({ globalParameter });
 
-storiesOf('Core|Options', module)
-  .addOptions({ chapterOption })
+storiesOf('Core|Parameters', module)
+  .addParameters({ chapterParameter })
   .add(
     'passed to story',
-    ({ options }) => ({
-      template: `<div>${JSON.stringify(options)}</div>`,
+    ({ parameters }) => ({
+      template: `<div>Parameters are ${JSON.stringify(parameters)}</div>`,
     }),
     {
-      storyOption,
+      storyParameter,
     }
   );

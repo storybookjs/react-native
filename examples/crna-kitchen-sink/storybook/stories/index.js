@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { storiesOf, addOptions } from '@storybook/react-native';
+import { storiesOf, addParameters } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -30,14 +30,18 @@ storiesOf('Knobs', module)
   .addDecorator(withKnobs)
   .add('with knobs', knobsWrapper);
 
-const globalOption = 'globalOption';
-const chapterOption = 'chapterOption';
-const storyOption = 'storyOption';
+const globalParameter = 'globalParameter';
+const chapterParameter = 'chapterParameter';
+const storyParameter = 'storyParameter';
 
-addOptions({ globalOption });
+addParameters({ globalParameter });
 
-storiesOf('Core|Options', module)
-  .addOptions({ chapterOption })
-  .add('passed to story', ({ options }) => <Text>Options are {JSON.stringify(options)}</Text>, {
-    storyOption,
-  });
+storiesOf('Core|Parameters', module)
+  .addParameters({ chapterParameter })
+  .add(
+    'passed to story',
+    ({ parameters }) => <Text>Parameters are {JSON.stringify(parameters)}</Text>,
+    {
+      storyParameter,
+    }
+  );

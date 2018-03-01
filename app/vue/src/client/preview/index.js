@@ -48,7 +48,7 @@ export const {
   storiesOf,
   setAddon,
   addDecorator,
-  addOptions,
+  addParameters,
   clearDecorators,
   getStorybook,
 } = clientApi;
