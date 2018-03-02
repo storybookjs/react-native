@@ -66,7 +66,9 @@ storiesOf('Addons|Actions', module)
         >
           Multiple
         </Button>
-        <Button onClick={() => action('Plain Object')({ foo: 'bar' })}>Plain Object</Button>
+        <Button onClick={() => action('Plain Object')({ foo: { bar: { baz: { bar: 'foo' } } } })}>
+          Plain Object
+        </Button>
         <Button onClick={() => action('RegExp')(reg)}>RegExp</Button>
         <Button onClick={() => action('String')('foo')}>String</Button>
         <Button onClick={() => action('Symbol')(Symbol('A_SYMBOL'))}>Symbol</Button>
