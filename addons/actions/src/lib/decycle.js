@@ -1,6 +1,6 @@
 import { DecycleError } from './errors';
 
-import { getPropertiesList, typeReplacer } from './util';
+import { getPropertiesList, typeReplacer, omitProperty } from './util';
 
 import { CYCLIC_KEY } from './';
 
@@ -9,10 +9,6 @@ import { objectType } from './types';
 import { DEPTH_KEY } from './types/object/configureDepth';
 
 const { hasOwnProperty } = Object.prototype;
-
-function omitProperty(name) {
-  return name.startsWith('__') || name.startsWith('STORYBOOK_');
-}
 
 export default function decycle(object, depth = 10) {
   const objects = new WeakMap();

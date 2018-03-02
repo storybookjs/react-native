@@ -5,3 +5,4 @@ export muteProperty from './muteProperty';
 export prepareArguments from './prepareArguments';
 export typeReviver from './typeReviver';
 export typeReplacer from './typeReplacer';
+export omitProperty from './omitProperty';
