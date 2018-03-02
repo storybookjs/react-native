@@ -24,7 +24,7 @@ if (!fs.existsSync(pathToStorybookStatic)) {
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
       getMatchOptions: () => ({
-        failureThreshold: 0.01, // 1% threshold,
+        failureThreshold: 0.06, // 6% threshold,
         failureThresholdType: 'percent',
       }),
       beforeScreenshot: (page, { context }) => {
