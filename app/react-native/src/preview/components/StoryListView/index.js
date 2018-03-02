@@ -93,6 +93,7 @@ export default class StoryListView extends Component {
   render() {
     return (
       <ListView
+        testID="Storybook.ListView"
         style={[style.list, { width: this.props.width }]}
         renderRow={item => (
           <ListItem
