@@ -3355,9 +3355,9 @@ codecov@^3.0.0:
     request "2.81.0"
     urlgrey "0.4.4"
 
-codelyzer@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.1.0.tgz#3117754538d8f5ffa36dff91d340573a836cf373"
+codelyzer@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.2.1.tgz#d56eaacefca7e8138aac0a630e484bdb09988544"
   dependencies:
     app-root-path "^2.0.1"
     css-selector-tokenizer "^0.7.0"
@@ -3931,15 +3931,15 @@ copy-paste@^1.3.0:
   optionalDependencies:
     sync-exec "~0.6.x"
 
-copy-webpack-plugin@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.4.2.tgz#c92bcd7df4d5e42c51398cc36b23820d0d10446a"
+copy-webpack-plugin@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.5.0.tgz#9cb012163317666ea47479d2a8c57daca3557da5"
   dependencies:
     cacache "^10.0.1"
     find-cache-dir "^1.0.0"
     globby "^7.1.1"
     is-glob "^4.0.0"
-    loader-utils "^0.2.15"
+    loader-utils "^1.1.0"
     minimatch "^3.0.4"
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
@@ -5930,9 +5930,9 @@ file-loader@1.1.5:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
-file-loader@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.10.tgz#77e97dfeab13da64c7085ab3e3887e29ae588aea"
+file-loader@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.11.tgz#6fe886449b0f2a936e43cabaac0cdbfb369506f8"
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"

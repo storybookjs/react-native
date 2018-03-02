@@ -52,7 +52,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.3.1",
     "codecov": "^3.0.0",
-    "codelyzer": "^4.1.0",
+    "codelyzer": "^4.2.1",
     "commander": "^2.14.1",
     "concurrently": "^3.5.1",
     "cross-env": "^5.1.3",
