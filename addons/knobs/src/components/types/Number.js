@@ -2,17 +2,33 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = {
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  height: '25px',
-  width: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  padding: '5px',
-  color: '#444',
+  common: {
+    boxSizing: 'border-box',
+    height: '25px',
+    outline: 'none',
+    border: '1px solid #f7f4f4',
+    borderRadius: 2,
+    fontSize: 11,
+    padding: '5px',
+    color: '#444',
+  },
+  normal: {
+    display: 'table-cell',
+    width: '100%',
+    verticalAlign: 'middle',
+  },
+  range: {
+    flexGrow: 1,
+  },
+  rangeLabel: {
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+  rangeWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+  },
 };
 
 class NumberType extends React.Component {
@@ -31,7 +47,7 @@ class NumberType extends React.Component {
         ref={c => {
           this.input = c;
         }}
-        style={styles}
+        style={{ ...styles.common, ...styles.normal }}
         value={knob.value}
         type="number"
         min={knob.min}
@@ -46,19 +62,23 @@ class NumberType extends React.Component {
     const { knob, onChange } = this.props;
 
     return (
-      <input
-        id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
-        style={styles}
-        value={knob.value}
-        type="range"
-        min={knob.min}
-        max={knob.max}
-        step={knob.step}
-        onChange={() => onChange(parseFloat(this.input.value))}
-      />
+      <div style={styles.rangeWrapper}>
+        <span style={styles.rangeLabel}>{knob.min}</span>
+        <input
+          id={knob.name}
+          ref={c => {
+            this.input = c;
+          }}
+          style={{ ...styles.common, ...styles.range }}
+          value={knob.value}
+          type="range"
+          min={knob.min}
+          max={knob.max}
+          step={knob.step}
+          onChange={() => onChange(parseFloat(this.input.value))}
+        />
+        <span style={styles.rangeLabel}>{`${knob.value} / ${knob.max}`}</span>
+      </div>
     );
   }
 
