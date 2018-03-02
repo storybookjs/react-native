@@ -10,6 +10,10 @@ import { DEPTH_KEY } from './types/object/configureDepth';
 
 const { hasOwnProperty } = Object.prototype;
 
+function omitProperty(name) {
+  return name.startsWith('__') || name.startsWith('STORYBOOK_');
+}
+
 export default function decycle(object, depth = 10) {
   const objects = new WeakMap();
 
@@ -70,16 +74,18 @@ export default function decycle(object, depth = 10) {
 
         if (_depth <= maxDepth) {
           getPropertiesList(value).forEach(name => {
-            try {
-              obj[name] = derez(
-                value[name],
-                `${path}[${JSON.stringify(name)}]`,
-                _depth + 1,
-                maxDepth
-              );
-            } catch (error) {
-              console.error(error); // eslint-disable-line no-console
-              obj[name] = new DecycleError(error.message);
+            if (!omitProperty(name)) {
+              try {
+                obj[name] = derez(
+                  value[name],
+                  `${path}[${JSON.stringify(name)}]`,
+                  _depth + 1,
+                  maxDepth
+                );
+              } catch (error) {
+                console.error(error); // eslint-disable-line no-console
+                obj[name] = new DecycleError(error.message);
+              }
             }
           });
         }
