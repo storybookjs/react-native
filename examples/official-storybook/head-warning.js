@@ -1,9 +1,9 @@
 import { document } from 'global';
 
-export default function addHeadWarning(bundle) {
+export default function addHeadWarning(text, className) {
   const warning = document.createElement('h1');
-  warning.textContent = `${bundle} head not loaded`;
-  warning.className = `${bundle.toLowerCase()}-head-not-loaded`;
+  warning.textContent = text;
+  warning.className = className;
   warning.style.color = 'red';
 
   document.body.insertBefore(warning, document.body.firstChild);

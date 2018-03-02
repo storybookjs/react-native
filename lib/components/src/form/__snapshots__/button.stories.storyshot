@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Form/Button with onclick 1`] = `
+<button
+  class="css-1ibnlbj"
+  type="button"
+>
+  Submit
+</button>
+`;

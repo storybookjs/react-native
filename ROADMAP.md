@@ -2,22 +2,22 @@
 
 ## Table of contents
 
-  * [New features](#new-features)
-    + [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
-    + [Automatic story detection](#automatic-story-detection)
-    + [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
-    + [Add a playground addon](#add-a-playground-addon)
-    + [See multiple (or all) stories in 1 preview.](#see-multiple--or-all--stories-in-1-preview)
-  * [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
-    + [Polymer & Webcomponents](#polymer---webcomponents)
-    + [Aurelia](#aurelia)
-    + [Ember](#ember)
-  * [Breaking changes](#breaking-changes)
-    + [Addon API](#addon-api)
-    + [API for adding stories](#api-for-adding-stories)
-  * [Documentation](#documentation)
-    + [Better design](#better-design)
-    + [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use--tweak---develop-storybook)
+* [New features](#new-features)
+  + [Responsive + multi-device viewports preview.](#responsive--multi-device-viewports-preview)
+  + [Automatic story detection](#automatic-story-detection)
+  + [Theme ability and override core UI components](#theme-ability-and-override-core-ui-components)
+  + [Add a playground addon](#add-a-playground-addon)
+  + [See multiple (or all) stories in 1 preview.](#see-multiple--or-all--stories-in-1-preview)
+* [Supporting other frameworks and libraries](#supporting-other-frameworks-and-libraries)
+  + [Polymer & Webcomponents](#polymer---webcomponents)
+  + [Aurelia](#aurelia)
+  + [Ember](#ember)
+* [Breaking changes](#breaking-changes)
+  + [Addon API](#addon-api)
+  + [API for adding stories](#api-for-adding-stories)
+* [Documentation](#documentation)
+  + [Better design](#better-design)
+  + [Record videos and write blog post on how to use, tweak & develop storybook](#record-videos-and-write-blog-post-on-how-to-use--tweak---develop-storybook)
 
 ## New features
 
@@ -57,7 +57,7 @@ That way you can write your stories how they are best, and preview them how you 
 
 We believe in the power of react, and think it's the right choice for a lot of projects.
 But it's up to you and your team to decide your stack.
-Unfortunately if you choose anything other then React or React-Native you can not use storybook.
+Unfortunately if you choose anything not from the list of [supported frameworks](README.md#supported-frameworks) you can not use storybook.
 
 We want you to be able to use storybook with the framework / library of your choice.
 

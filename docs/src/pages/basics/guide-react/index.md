@@ -16,7 +16,7 @@ In this guide, we are trying to set up Storybook for your React project.
 ## Table of contents
 
 -   [Add @storybook/react](#add-storybookreact)
--   [Add react and react-dom](#add-react-and-react-dom)
+-   [Add react, react-dom, and babel-core](#add-react-react-dom-and-babel-core)
 -   [Create the config file](#create-the-config-file)
 -   [Write your stories](#write-your-stories)
 -   [Run your Storybook](#run-your-storybook)
@@ -29,12 +29,13 @@ First of all, you need to add `@storybook/react` to your project. To do that, si
 npm i --save-dev @storybook/react
 ```
 
-## Add react and react-dom
+## Add react, react-dom, and babel-core
 
-Make sure that you have `react` and `react-dom` in your dependencies as well because we list these as a peerDependency:
+Make sure that you have `react`, `react-dom`, and `babel-core` in your dependencies as well because we list these as a peerDependency:
 
 ```sh
 npm i --save react react-dom
+npm i --save-dev babel-core
 ```
 
 Then add the following NPM script to your package json in order to start the storybook later in this guide:
@@ -86,7 +87,7 @@ storiesOf('Button', module)
     <Button onClick={action('clicked')}>Hello Button</Button>
   ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+    <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));   
 ```
 

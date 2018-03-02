@@ -90,7 +90,7 @@
 //   .add('with some emoji', () => (
 //     <Button onClick={action('clicked')}>
 //       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
-//       😀 😎 👍 💯
+//       <span role="img" aria-label="so cool">😀 😎 👍 💯</span>
 //     </Button>
 //   ))
 //   .add('with notes', () => (
@@ -315,12 +315,12 @@
 //   .add(
 //     'with a button and some emoji',
 //     withNotes('My notes on a button with emojies')(() => (
-//       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+//       <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
 //     ))
 //   )
 //   .add('with old API', () => (
 //     <WithNotes notes="Hello">
-//       <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+//       <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
 //     </WithNotes>
 //   ));
 
@@ -362,16 +362,16 @@
 // storiesOf('Cells/Molecules.Atoms/simple', module)
 //   .addDecorator(withKnobs)
 //   .add('with text', () => <Button>{text('buttonText', 'Hello Button')}</Button>)
-//   .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+//   .add('with some emoji', () => <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>);
 
 // storiesOf('Cells/Molecules/Atoms.more', module)
 //   .add('with text2', () => <Button>Hello Button</Button>)
-//   .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+//   .add('with some emoji2', () => <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>);
 
 // storiesOf('Cells/Molecules', module)
 //   .add('with text', () => <Button>Hello Button</Button>)
-//   .add('with some emoji', () => <Button>😀 😎 👍 💯</Button>);
+//   .add('with some emoji', () => <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>);
 
 // storiesOf('Cells.Molecules.Atoms', module)
 //   .add('with text2', () => <Button>Hello Button</Button>)
-//   .add('with some emoji2', () => <Button>😀 😎 👍 💯</Button>);
+//   .add('with some emoji2', () => <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>);

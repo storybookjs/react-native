@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/angular';
 import { withNotes } from '@storybook/addon-notes';
 import { Button } from '@storybook/angular/demo';
 
-storiesOf('Addon Notes', module)
+storiesOf('Addon|Notes', module)
   .add(
     'Simple note',
     withNotes({ text: 'My notes on some button' })(() => ({
@@ -10,7 +10,7 @@ storiesOf('Addon Notes', module)
       props: {
         text: 'Notes on some Button',
         onClick: () => {},
-      }
+      },
     }))
   )
   .add(
@@ -28,6 +28,6 @@ storiesOf('Addon Notes', module)
       props: {
         text: 'Notes with HTML',
         onClick: () => {},
-      }
+      },
     }))
   );

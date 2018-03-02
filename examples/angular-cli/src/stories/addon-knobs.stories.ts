@@ -16,20 +16,32 @@ import {
 import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 
-storiesOf('Addon Knobs', module)
+storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
     const name = text('name', 'John Doe');
-    const age = number('age', 44);
+    const age = number('age', 0);
     const phoneNumber = text('phoneNumber', '555-55-55');
 
     return {
-      component: SimpleKnobsComponent,
+      moduleMetadata: {
+        entryComponents: [SimpleKnobsComponent],
+        declarations: [SimpleKnobsComponent],
+      },
+      template: `
+        <h1> This is a template </h1>
+        <storybook-simple-knobs-component
+          [age]="age"
+          [phoneNumber]="phoneNumber"
+          [name]="name"
+        >
+        </storybook-simple-knobs-component>
+      `,
       props: {
         name,
         age,
-        phoneNumber
-      }
+        phoneNumber,
+      },
     };
   })
   .add('All knobs', () => {
@@ -64,7 +76,7 @@ storiesOf('Addon Knobs', module)
         border,
         today,
         items,
-        nice
-      }
+        nice,
+      },
     };
   });

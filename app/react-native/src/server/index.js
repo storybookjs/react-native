@@ -24,6 +24,13 @@ export default class Server {
       }
     }
 
+    // see https://github.com/websockets/ws/issues/1256#issuecomment-364988689
+    socket.on('error', err => {
+      // Ignore network errors like `ECONNRESET`, `EPIPE`, etc.
+      if (err.errno) return;
+      throw err;
+    });
+
     socket.on('message', data => {
       this.wsServer.clients.forEach(c => {
         if (!this.options.manualId || (socket.pairedId && socket.pairedId === c.pairedId)) {

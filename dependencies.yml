@@ -30,9 +30,11 @@ collectors:
   actors:
   # pull requests for updates to our major version
   - type: js-lerna
+    dependencies_not_matching: "^react-native$"
     versions: "L.Y.Y"
     settings:
       batch_mode: true
+      batch_bootstrap: true
       bootstrap_command: yarn --ignore-scripts --ignore-engines --silent
       github_labels:
       - dependencies:update

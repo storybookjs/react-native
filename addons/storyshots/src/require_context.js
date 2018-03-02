@@ -1,3 +1,4 @@
+import { process } from 'global';
 import vm from 'vm';
 import fs from 'fs';
 import path from 'path';
@@ -40,6 +41,14 @@ function isRelativeRequest(request) {
   );
 }
 
+function getFullPath(dirname, request) {
+  if (isRelativeRequest(request) || !process.env.NODE_PATH) {
+    return path.resolve(dirname, request);
+  }
+
+  return path.resolve(process.env.NODE_PATH, request);
+}
+
 export default function runWithRequireContext(content, options) {
   const { filename, dirname } = options;
 
@@ -57,7 +66,8 @@ export default function runWithRequireContext(content, options) {
   newRequire.cache = require.cache;
 
   newRequire.context = (directory, useSubdirectories = false, regExp = /^\.\//) => {
-    const fullPath = path.resolve(dirname, directory);
+    const fullPath = getFullPath(dirname, directory);
+
     const keys = {};
     requireModules(keys, fullPath, '.', regExp, useSubdirectories);
 

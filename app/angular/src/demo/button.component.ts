@@ -1,12 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'button-component',
+  selector: 'storybook-button-component',
   template: `
       <button (click)="onClick.emit($event);">{{ text }}</button>
   `,
   styles: [
-      `
+    `
         button {
           border: 1px solid #eee;
           border-radius: 3px;
@@ -16,10 +16,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
           padding: 3px 10px;
           margin: 10px;
         }
-      `
-  ]
+      `,
+  ],
 })
 export default class ButtonComponent {
-    @Input() text = '';
-    @Output() onClick = new EventEmitter<any>();
+  @Input() text = '';
+  @Output() onClick = new EventEmitter<any>();
 }

@@ -37,6 +37,9 @@ const getConfig = options => {
           ie8: false,
           mangle: false,
           warnings: false,
+          compress: {
+            keep_fnames: true,
+          },
           output: {
             comments: false,
           },
@@ -44,7 +47,7 @@ const getConfig = options => {
       }),
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.jsx?$/,
           loader: require.resolve('babel-loader'),
@@ -56,10 +59,10 @@ const getConfig = options => {
           test: /\.md$/,
           use: [
             {
-              loader: 'html-loader',
+              loader: require.resolve('html-loader'),
             },
             {
-              loader: 'markdown-loader',
+              loader: require.resolve('markdown-loader'),
             },
           ],
         },

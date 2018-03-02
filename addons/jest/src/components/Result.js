@@ -35,7 +35,8 @@ const StackTrace = glamorous(({ trace, className }) => (
       .join('')
       .trim()
       .split(/\n/)
-      .map(i => <div>{i.trim()}</div>)}
+      // eslint-disable-next-line react/no-array-index-key
+      .map((traceLine, traceLineIndex) => <div key={traceLineIndex}>{traceLine.trim()}</div>)}
   </details>
 ))({
   background: 'silver',
@@ -80,6 +81,11 @@ const createSubgroup = (acc, item, i, list) => {
   if (!acc.grouped) {
     acc.grouped = [];
   }
+  if (!('grouperIndex' in acc)) {
+    acc.grouperIndex = 0;
+  } else {
+    acc.grouperIndex += 1;
+  }
 
   // start or stop extraction
   if (acc.startTrigger(item)) {
@@ -100,15 +106,22 @@ const createSubgroup = (acc, item, i, list) => {
 
   // on last iteration inject at detected injectionpoint, and group
   if (i === list.length - 1) {
+    // Provide a "safety net" when Jest returns a partially recognized "group"
+    // (recognized by acc.startTrigger but acc.endTrigger was never found) and
+    // it's the only group in output for a test result. In that case, acc.list
+    // will be empty, so return whatever was found, even if it will be unstyled
+    // and prevent next createSubgroup calls from throwing due to empty lists.
+    acc.list.push(null);
+
     return acc.list.reduce((eacc, el, ei) => {
       switch (true) {
         case acc.injectionPoint === 0 && ei === 0: {
           // at index 0, inject before
-          return eacc.concat(acc.grouper(acc.grouped)).concat(el);
+          return eacc.concat(acc.grouper(acc.grouped, acc.grouperIndex)).concat(el);
         }
         case acc.injectionPoint > 0 && acc.injectionPoint === ei + 1: {
           // at index > 0, and next index WOULD BE injectionPoint, inject after
-          return eacc.concat(el).concat(acc.grouper(acc.grouped));
+          return eacc.concat(el).concat(acc.grouper(acc.grouped, acc.grouperIndex));
         }
         default: {
           // do not inject
@@ -150,7 +163,7 @@ const Message = ({ msg }) => {
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.indexOf('Error: ') === 0,
       endTrigger: e => typeof e === 'string' && e.match('Expected '),
-      grouper: list => <Main msg={list} />,
+      grouper: (list, key) => <Main key={key} msg={list} />,
     })
     .reduce(
       (acc, it) =>
@@ -161,12 +174,12 @@ const Message = ({ msg }) => {
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.indexOf('Expected ') !== -1,
       endTrigger: e => typeof e === 'string' && e.match(/^at/),
-      grouper: list => <Sub msg={list} />,
+      grouper: (list, key) => <Sub key={key} msg={list} />,
     })
     .reduce(createSubgroup, {
       startTrigger: e => typeof e === 'string' && e.match(/at(.|\n)+\d+:\d+\)/),
       endTrigger: () => false,
-      grouper: list => <StackTrace trace={list} />,
+      grouper: (list, key) => <StackTrace key={key} trace={list} />,
     });
 
   return <Pre>{data}</Pre>;

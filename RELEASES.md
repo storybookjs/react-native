@@ -86,7 +86,7 @@ addressed before a release can go out by adding them to the milestone. For examp
 Adding bugs to the milestone helps people looking for good ways to contribute,
 or to understand what is blocking the release so they can actually do something
 about it. Discussion about which bugs are critical happens in the `#maintenance`
-channel [in our Slack](https://now-examples-slackin-rrirkqohko.now.sh/) [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)].(https://now-examples-slackin-rrirkqohko.now.sh/)
+channel [in our Slack](https://now-examples-slackin-rrirkqohko.now.sh/) [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 
 
 If you're experiencing a bug, the best way to make sure that it gets attention
@@ -116,3 +116,4 @@ in a patch release.
 
 -   For PATCH PR's, any maintainer can review, test, approve, and merge it.
 -   For MINOR/MAJOR PR's, once a maintainer reviews, tests, and approves it, s/he should clear it with the other maintainers before merging it into the release branch.
+
