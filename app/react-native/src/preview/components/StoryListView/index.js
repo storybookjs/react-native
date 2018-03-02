@@ -28,6 +28,7 @@ const ListItem = ({ kind, title, selected, onPress }) => (
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
+  kind: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
 };
