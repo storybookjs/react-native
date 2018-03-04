@@ -24,7 +24,7 @@
     "@storybook/ui": "^3.4.0-alpha.9",
     "autoprefixer": "^7.2.6",
     "babel-runtime": "^6.26.0",
-    "chalk": "^2.3.1",
+    "chalk": "^2.3.2",
     "commander": "^2.14.1",
     "css-loader": "^0.28.10",
     "dotenv": "^5.0.1",
@@ -45,6 +45,6 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.0.1",
     "webpack-dev-middleware": "^3.0.0",
-    "webpack-hot-middleware": "^2.21.1"
+    "webpack-hot-middleware": "^2.21.2"
   }
 }
