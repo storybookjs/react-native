@@ -4410,9 +4410,9 @@ gatsby-module-loader@^1.0.11:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-sharp@^1.6.37:
-  version "1.6.37"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.37.tgz#26801f6a7075508b10aaf1a016acf74b7be20aa2"
+gatsby-plugin-sharp@^1.6.38:
+  version "1.6.38"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.38.tgz#4906b236b846b383adbd30359493f76cf3bfefbd"
   dependencies:
     async "^2.1.2"
     babel-runtime "^6.26.0"
@@ -4457,13 +4457,13 @@ gatsby-remark-copy-linked-files@^1.5.30:
     probe-image-size "^3.2.0"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.53:
-  version "1.5.53"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.53.tgz#9fb3883748e680c88ad6c42598a7e08b64c27f57"
+gatsby-remark-images@^1.5.54:
+  version "1.5.54"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.54.tgz#d3a30dee378570b301c88bf3a0b8c47adaca0cd6"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
-    gatsby-plugin-sharp "^1.6.37"
+    gatsby-plugin-sharp "^1.6.38"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     slash "^1.0.0"
@@ -4478,9 +4478,9 @@ gatsby-remark-smartypants@^1.4.12:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.25:
-  version "1.5.25"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.25.tgz#51c08f9812d3d8554721df4e32a0cdd12eccb0cd"
+gatsby-source-filesystem@^1.5.26:
+  version "1.5.26"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.26.tgz#1901649fddf31e8fab35b94aefb9e16af81f01a0"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4519,9 +4519,9 @@ gatsby-transformer-remark@^1.7.34:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.222:
-  version "1.9.222"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.222.tgz#691af7d75f3baa4a15610d9c636eb36a050c140c"
+gatsby@^1.9.223:
+  version "1.9.223"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.223.tgz#1bf9416cd6a6ceccb1f74da7f0eb10f16fb8010b"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
