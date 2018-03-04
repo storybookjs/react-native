@@ -63,7 +63,7 @@
     "uuid": "^3.2.1",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.2",
-    "webpack-hot-middleware": "^2.21.1",
+    "webpack-hot-middleware": "^2.21.2",
     "ws": "^4.1.0"
   },
   "devDependencies": {
