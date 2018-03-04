@@ -4478,9 +4478,9 @@ gatsby-remark-smartypants@^1.4.12:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.25:
-  version "1.5.25"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.25.tgz#51c08f9812d3d8554721df4e32a0cdd12eccb0cd"
+gatsby-source-filesystem@^1.5.26:
+  version "1.5.26"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.26.tgz#1901649fddf31e8fab35b94aefb9e16af81f01a0"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
