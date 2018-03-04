@@ -1,18 +1,18 @@
 import path from 'path';
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
-import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { WatchMissingNodeModulesPlugin, managerPath } from '@storybook/core/server';
+import { managerPath } from '@storybook/core/server';
 
-import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
+import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
 export default function(configDir) {
   const config = {
+    mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
       manager: [require.resolve('./polyfills'), managerPath],
@@ -28,7 +28,7 @@ export default function(configDir) {
       publicPath: '/',
     },
     plugins: [
-      new InterpolateHtmlPlugin(process.env),
+      // new InterpolateHtmlPlugin(process.env),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
@@ -49,7 +49,7 @@ export default function(configDir) {
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
-      new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+      // new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
       new Dotenv({ silent: true }),
     ],

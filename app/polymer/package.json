@@ -46,7 +46,7 @@
     "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.0.4",
     "json5": "^0.5.1",
     "polymer-webpack-loader": "2.0.1",
     "react": "^16.0.0",
@@ -55,7 +55,7 @@
     "redux": "^3.7.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^3.11.0",
+    "webpack": "^4.0.1",
     "webpack-hot-middleware": "^2.21.1"
   },
   "devDependencies": {
