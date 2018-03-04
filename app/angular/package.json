@@ -52,9 +52,8 @@
     "redux": "^3.6.0",
     "sass-loader": "^6.0.7",
     "ts-loader": "^4.0.1",
-    "uglifyjs-webpack-plugin": "^1.2.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.0.1",
+    "webpack": "^4.1.0",
     "webpack-hot-middleware": "^2.21.2",
     "zone.js": "^0.8.20"
   },

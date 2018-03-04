@@ -4,7 +4,8 @@ import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
 
 addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
-addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
+// TODO enable back after react-dev-utils release, see https://github.com/facebook/create-react-app/pull/4077
+// addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 
 setOptions({
   hierarchySeparator: /\/|\./,

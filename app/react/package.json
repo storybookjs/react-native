@@ -58,9 +58,8 @@
     "prop-types": "^15.6.1",
     "react-dev-utils": "^6.0.0-next.47d2d941",
     "redux": "^3.7.2",
-    "uglifyjs-webpack-plugin": "^1.2.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.0.1",
+    "webpack": "^4.1.0",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
