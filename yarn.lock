@@ -8664,9 +8664,9 @@ jest-snapshot@^22.4.0:
     natural-compare "^1.4.0"
     pretty-format "^22.4.0"
 
-jest-specific-snapshot@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/jest-specific-snapshot/-/jest-specific-snapshot-0.4.0.tgz#31d1a644a3d86e481aa3cb8fd62eddc1ff4ea676"
+jest-specific-snapshot@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/jest-specific-snapshot/-/jest-specific-snapshot-0.5.0.tgz#92201b5f51fbe56cc744bdfab08f379867c1bb18"
   dependencies:
     jest-snapshot ">=20.0.3"
 
