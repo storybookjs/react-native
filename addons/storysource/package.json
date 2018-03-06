@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@storybook/components": "^3.4.0-alpha.9",
-    "acorn": "^5.5.0",
+    "acorn": "^5.5.1",
     "acorn-es7": "^0.1.0",
     "acorn-jsx": "^4.1.1",
     "acorn-stage3": "^0.6.0",
