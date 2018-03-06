@@ -14,7 +14,7 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     <button
       _ngcontent-c8=""
     >
-      Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter","fileName":"/Users/tom/OSS/storybook/examples/angular-cli/src/stories/core.stories.ts"}
+      Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
     </button>
     
     

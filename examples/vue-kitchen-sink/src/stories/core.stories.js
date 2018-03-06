@@ -10,7 +10,7 @@ storiesOf('Core|Parameters', module)
   .addParameters({ chapterParameter })
   .add(
     'passed to story',
-    ({ parameters }) => ({
+    ({ parameters: { fileName, ...parameters } }) => ({
       template: `<div>Parameters are ${JSON.stringify(parameters)}</div>`,
     }),
     {

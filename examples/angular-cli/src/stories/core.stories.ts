@@ -11,7 +11,7 @@ storiesOf('Core|Parameters', module)
   .addParameters({ chapterParameter })
   .add(
     'passed to story',
-    ({ parameters }) => ({
+    ({ parameters: { fileName, ...parameters } }) => ({
       component: Button,
       props: {
         text: `Parameters are ${JSON.stringify(parameters)}`,
