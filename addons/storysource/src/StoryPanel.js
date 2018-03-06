@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { RoutedLink } from '@storybook/components';
 import jsx from 'react-syntax-highlighter/languages/prism/jsx';
 import { darcula } from 'react-syntax-highlighter/styles/prism';
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
@@ -8,11 +9,11 @@ import { EVENT_ID } from './';
 
 registerLanguage('jsx', jsx);
 
-const keyCodeEnter = 13;
-
 const styles = {
   story: {
-    cursor: 'pointer',
+    display: 'block',
+    textDecoration: 'none',
+    color: darcula['code[class*="language-"]'].color,
   },
   selectedStory: {
     backgroundColor: 'rgba(255, 242, 60, 0.2)',
@@ -61,7 +62,6 @@ export default class StoryPanel extends Component {
     this.setSelectedStoryRef = this.setSelectedStoryRef.bind(this);
     this.lineRenderer = this.lineRenderer.bind(this);
     this.clickOnStory = this.clickOnStory.bind(this);
-    this.keyDownOnStory = this.keyDownOnStory.bind(this);
   }
 
   componentDidUpdate() {
@@ -74,21 +74,12 @@ export default class StoryPanel extends Component {
     this.selectedStoryRef = ref;
   }
 
-  clickOnStory(key) {
+  clickOnStory(kind, story) {
     const { api } = this.props;
-    const [kind, story] = key.split('@');
 
     if (kind && story) {
       api.selectStory(kind, story);
     }
-  }
-
-  keyDownOnStory(e, key) {
-    if (e.keyCode !== keyCodeEnter) {
-      return;
-    }
-
-    this.clickOnStory(key);
   }
 
   createPart(rows, stylesheet, useInlineStyles) {
@@ -119,17 +110,18 @@ export default class StoryPanel extends Component {
       );
     }
 
+    const [selectedKind, selectedStory] = kindStory.split('@');
+    const url = `/?selectedKind=${selectedKind}&selectedStory=${selectedStory}`;
+
     return (
-      <div
+      <RoutedLink
+        href={url}
         key={storyKey}
-        onClick={() => this.clickOnStory(kindStory)}
-        onKeyDown={e => this.keyDownOnStory(e, kindStory)}
-        tabIndex="0"
+        onClick={() => this.clickOnStory(selectedKind, selectedStory)}
         style={styles.story}
-        role="link"
       >
         {story}
-      </div>
+      </RoutedLink>
     );
   }
 
