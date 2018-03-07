@@ -4502,9 +4502,9 @@ gatsby-source-filesystem@^1.5.26:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-transformer-remark@^1.7.34:
-  version "1.7.34"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.34.tgz#b5177080ff39f1e7ee45009d779f18d7baf78cb3"
+gatsby-transformer-remark@^1.7.36:
+  version "1.7.36"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.36.tgz#896a1d0fffc624f5a7b75692ba1e92c0347944b5"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
