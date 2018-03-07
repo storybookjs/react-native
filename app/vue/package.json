@@ -58,14 +58,14 @@
   "devDependencies": {
     "nodemon": "^1.17.1",
     "vue": "^2.5.13",
-    "vue-loader": "^14.1.1",
+    "vue-loader": "^14.2.1",
     "vue-template-compiler": "^2.5.13"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "babel-runtime": ">=6.0.0",
     "vue": ">=2.0.0",
-    "vue-loader": ">=13.0.0",
+    "vue-loader": "14.2.1",
     "vue-template-compiler": ">=2.0.0"
   }
 }
