@@ -48,7 +48,6 @@
     "global": "^4.3.2",
     "html-webpack-plugin": "^2.30.1",
     "json5": "^0.5.1",
-    "polymer-webpack-loader": "2.0.1",
     "react": "^16.0.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.0.0",
@@ -59,10 +58,12 @@
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.1",
+    "polymer-webpack-loader": "^2.0.1"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
-    "babel-runtime": ">=6.0.0"
+    "babel-runtime": ">=6.0.0",
+    "polymer-webpack-loader": ">=2.0.0"
   }
 }

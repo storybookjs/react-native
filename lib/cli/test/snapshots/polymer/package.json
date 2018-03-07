@@ -14,6 +14,7 @@
   "devDependencies": {
     "@storybook/polymer": "^3.4.0-alpha.9",
     "babel-core": "^6.26.0",
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "polymer-webpack-loader": "^2.0.1"
   }
 }
