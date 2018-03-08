@@ -36,7 +36,7 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
-    "@angular/common": "^5.2.7",
+    "@angular/common": "^5.2.8",
     "@angular/compiler": "^5.2.7",
     "@angular/core": "^5.2.7",
     "@angular/forms": "^5.2.7",
