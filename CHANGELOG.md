@@ -1,3 +1,14 @@
+# 3.3.15
+
+2018-March-07
+
+#### Bug Fixes
+
+-   Unset background when switching to a non-background story [#3142](https://github.com/storybooks/storybook/pull/3142)
+-   Updated testIds in RN StoryListView to use kind [#3129](https://github.com/storybooks/storybook/pull/3129)
+-   Added missing key prop to NoTests component. [#3111](https://github.com/storybooks/storybook/pull/3111)
+-   Events addon: fix React keys warning [#3072](https://github.com/storybooks/storybook/pull/3072)
+
 # 3.4.0-alpha.9
 
 2018-February-22
