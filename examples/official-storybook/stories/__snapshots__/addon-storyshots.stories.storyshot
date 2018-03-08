@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Storyshots Default 1`] = `<button />`;
+
+exports[`Storyshots Addons|Storyshots Disabled 1`] = `
+<button
+  disabled=""
+>
+  Testing the storyshots addon
+</button>
+`;
+
+exports[`Storyshots Addons|Storyshots Label 1`] = `
+<button>
+  Testing the storyshots addon
+</button>
+`;
