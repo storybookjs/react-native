@@ -51,7 +51,7 @@
     "glamorous": "^4.12.0",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.0.4",
+    "html-webpack-plugin": "^3.0.6",
     "json5": "^0.5.1",
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
@@ -59,7 +59,7 @@
     "react-dev-utils": "^6.0.0-next.47d2d941",
     "redux": "^3.7.2",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.1.0",
+    "webpack": "^4.1.1",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
