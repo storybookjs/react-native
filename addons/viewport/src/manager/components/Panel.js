@@ -7,6 +7,8 @@ import { resetViewport, viewportsTransformer } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
 import {
+  SET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
+  UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
   CONFIGURE_VIEWPORT_EVENT_ID,
   UPDATE_VIEWPORT_EVENT_ID,
   INITIAL_VIEWPORTS,
@@ -23,10 +25,21 @@ const containerStyles = {
   ...baseFonts,
 };
 
+const getDefaultViewport = (viewports, candidateViewport) =>
+  candidateViewport in viewports ? candidateViewport : Object.keys(viewports)[0];
+
+const getViewports = viewports =>
+  Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
+
 export class Panel extends Component {
   static propTypes = {
     channel: PropTypes.shape({}).isRequired,
     api: PropTypes.shape({}).isRequired,
+  };
+
+  static defaultOptions = {
+    viewports: INITIAL_VIEWPORTS,
+    defaultViewport: DEFAULT_VIEWPORT,
   };
 
   constructor(props, context) {
@@ -46,6 +59,8 @@ export class Panel extends Component {
 
     channel.on(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.on(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
+    channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
+    channel.on(UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.unsetStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
       this.changeViewport(this.state.defaultViewport);
@@ -58,19 +73,39 @@ export class Panel extends Component {
     if (this.unsubscribeFromOnStory) {
       this.unsubscribeFromOnStory();
     }
-    
+
     channel.removeListener(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.removeListener(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
+    channel.removeListener(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
+    channel.removeListener(UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.unsetStoryDefaultViewport);
   }
 
-  configure = ({ viewports = INITIAL_VIEWPORTS, defaultViewport = DEFAULT_VIEWPORT }) => {
-    if (Object.keys(viewports).length === 0) {
-      viewports = INITIAL_VIEWPORTS;
-    }
+  setStoryDefaultViewport = viewport => {
+    const { viewports } = this.state;
+    const defaultViewport = getDefaultViewport(viewports, viewport);
 
-    if (!(defaultViewport in viewports)) {
-      defaultViewport = Object.keys(viewports)[0];
-    }
+    this.setState(
+      {
+        storyDefaultViewport: defaultViewport,
+        viewport: defaultViewport,
+      },
+      this.updateIframe
+    );
+  };
+
+  unsetStoryDefaultViewport = () => {
+    this.setState(
+      {
+        storyDefaultViewport: undefined,
+        viewport: this.state.defaultViewport,
+      },
+      this.updateIframe
+    );
+  };
+
+  configure = (options = Panel.defaultOptions) => {
+    const viewports = getViewports(options.viewports);
+    const defaultViewport = getDefaultViewport(viewports, options.defaultViewport);
 
     this.setState(
       {
@@ -123,9 +158,15 @@ export class Panel extends Component {
   };
 
   render() {
-    const { isLandscape, defaultViewport, viewport, viewports } = this.state;
+    const {
+      isLandscape,
+      defaultViewport,
+      storyDefaultViewport = defaultViewport,
+      viewport,
+      viewports,
+    } = this.state;
 
-    const disableDefault = viewport === defaultViewport;
+    const disableDefault = viewport === storyDefaultViewport;
     const disabledStyles = disableDefault ? styles.disabled : {};
 
     const buttonStyles = {
@@ -139,7 +180,7 @@ export class Panel extends Component {
       <div style={containerStyles}>
         <SelectViewport
           viewports={viewports}
-          defaultViewport={defaultViewport}
+          defaultViewport={storyDefaultViewport}
           activeViewport={viewport}
           onChange={e => this.changeViewport(e.target.value)}
         />
@@ -152,7 +193,7 @@ export class Panel extends Component {
 
         <button
           style={buttonStyles}
-          onClick={() => this.changeViewport(defaultViewport)}
+          onClick={() => this.changeViewport(storyDefaultViewport)}
           disabled={disableDefault}
         >
           Reset Viewport

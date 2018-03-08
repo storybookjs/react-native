@@ -1,9 +1,6 @@
 import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
-import {
-  configure as configureViewport,
-  INITIAL_VIEWPORTS
-} from '@storybook/addon-viewport';
+import { configure as configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
 import extraViewports from './extra-viewports.json';
@@ -19,8 +16,8 @@ setOptions({
 configureViewport({
   viewports: {
     ...INITIAL_VIEWPORTS,
-    ...extraViewports
-  }
+    ...extraViewports,
+  },
 });
 
 function importAll(req) {

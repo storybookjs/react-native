@@ -2,6 +2,8 @@ export const ADDON_ID = 'storybook-addon-viewport';
 export const PANEL_ID = `${ADDON_ID}/addon-panel`;
 export const UPDATE_VIEWPORT_EVENT_ID = 'addon:viewport:update';
 export const CONFIGURE_VIEWPORT_EVENT_ID = 'addon:viewport:configure';
+export const SET_STORY_DEFAULT_VIEWPORT_EVENT_ID = 'addon:viewport:setStoryDefaultViewport';
+export const UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID = 'addon:viewport:unsetStoryDefaultViewport';
 export const INITIAL_VIEWPORTS = {
   responsive: {
     name: 'Responsive',

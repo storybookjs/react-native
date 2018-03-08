@@ -2,7 +2,7 @@ import {
   resetViewport,
   configuredStyles,
   applyStyles,
-  viewportsTransformer
+  viewportsTransformer,
 } from '../viewportInfo';
 
 describe('Viewport/constants', () => {
@@ -40,23 +40,21 @@ describe('Viewport/constants', () => {
       const viewports = {
         foo: {
           styles: {
-            width: '50px'
-          }
+            width: '50px',
+          },
         },
         bar: {
           styles: {
-            width: '100px'
-          }
-        }
+            width: '100px',
+          },
+        },
       };
 
       const transformedViewports = viewportsTransformer(viewports);
       const keys = Object.keys(transformedViewports);
 
       keys.forEach(key => {
-        expect(transformedViewports[key].styles).toEqual(
-          expect.objectContaining(configuredStyles)
-        );
+        expect(transformedViewports[key].styles).toEqual(expect.objectContaining(configuredStyles));
       });
     });
   });
