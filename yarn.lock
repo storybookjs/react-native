@@ -11703,7 +11703,7 @@ pngjs@^3.0.0, pngjs@^3.3.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.1.tgz#8e14e6679ee7424b544334c3b2d21cea6d8c209a"
 
-polymer-webpack-loader@2.0.1, polymer-webpack-loader@^2.0.0:
+polymer-webpack-loader@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/polymer-webpack-loader/-/polymer-webpack-loader-2.0.1.tgz#d15d45328f6a6700366dfaee83fc606f39cdcee0"
   dependencies:
