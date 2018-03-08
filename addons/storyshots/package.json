@@ -31,7 +31,7 @@
     "@storybook/addon-links": "^3.4.0-rc.0",
     "@storybook/addons": "^3.4.0-rc.0",
     "@storybook/react": "^3.4.0-rc.0",
-    "enzyme-to-json": "^3.3.1",
+    "enzyme-to-json": "^3.3.2",
     "react": "^16.1.0",
     "react-dom": "^16.1.0"
   },
