@@ -28,16 +28,6 @@ if (!fs.existsSync(pathToStorybookStatic)) {
         failureThreshold: 0.02, // 2% threshold,
         failureThresholdType: 'percent',
       }),
-      beforeScreenshot: (page, { context }) => {
-        // Screenshots for this story have to be tweaked.
-        if (context.kind === 'ui/Layout') {
-          // Some weird stuff are done inside Layout component, so we have to wait some to get a viable screenshot.
-          // Tried some values here, seems 200 is long enough, not too short either :)
-          // Not sure why this is required but seems better than to avoid taking screenshots for these.
-          return new Promise(resolve => setTimeout(resolve, 200));
-        }
-        return Promise.resolve();
-      },
     }),
   });
 }
