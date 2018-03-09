@@ -44,10 +44,12 @@ describe('Viewport/SelectViewport', () => {
 
       viewportKeys.forEach(key => {
         let option;
+        const { name } = INITIAL_VIEWPORTS[key];
+        const expectedText = key === DEFAULT_VIEWPORT ? `(Default) ${name}` : name;
 
-        it(`renders an option for ${INITIAL_VIEWPORTS[key].name}`, () => {
-          option = subject.find(`[value="${key}"]`);
-          expect(option.text()).toEqual(INITIAL_VIEWPORTS[key].name);
+        it(`renders an option for ${name}`, () => {
+          option = subject.find(`option[value="${key}"]`);
+          expect(option.text()).toEqual(expectedText);
         });
       });
     });

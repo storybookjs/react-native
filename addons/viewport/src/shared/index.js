@@ -3,6 +3,17 @@ export const PANEL_ID = `${ADDON_ID}/addon-panel`;
 export const UPDATE_VIEWPORT_EVENT_ID = 'addon:viewport:update';
 export const CONFIGURE_VIEWPORT_EVENT_ID = 'addon:viewport:configure';
 export const INITIAL_VIEWPORTS = {
+  responsive: {
+    name: 'Responsive',
+    styles: {
+      width: '100%',
+      height: '100%',
+      border: 'none',
+      display: 'block',
+      margin: '0',
+      boxShadow: 'none',
+    },
+  },
   iphone5: {
     name: 'iPhone 5',
     styles: {
@@ -53,4 +64,4 @@ export const INITIAL_VIEWPORTS = {
     },
   },
 };
-export const DEFAULT_VIEWPORT = 'default';
+export const DEFAULT_VIEWPORT = 'responsive';

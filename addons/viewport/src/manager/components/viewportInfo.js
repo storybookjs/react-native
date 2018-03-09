@@ -19,8 +19,8 @@ export const resetViewport = {
 
 export function applyStyles(viewport, styles) {
   const mixedStyles = {
-    ...viewport.styles,
     ...styles,
+    ...viewport.styles,
   };
 
   return {

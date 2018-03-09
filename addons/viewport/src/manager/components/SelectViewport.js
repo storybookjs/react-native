@@ -10,12 +10,14 @@ export function SelectViewport({ viewports, defaultViewport, activeViewport, onC
         Device
       </label>
       <select style={styles.action} id="device" value={activeViewport} onChange={onChange}>
-        <option value={defaultViewport}>Default</option>
-        {Object.keys(viewports).map(key => (
-          <option value={key} key={key}>
-            {viewports[key].name}
-          </option>
-        ))}
+        {Object.keys(viewports).map(key => {
+          const { name } = viewports[key];
+          return (
+            <option value={key} key={key}>
+              {key === defaultViewport ? `(Default) ${name}` : name}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
