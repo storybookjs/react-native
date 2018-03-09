@@ -13,19 +13,19 @@
     "test": "ng test"
   },
   "dependencies": {
-    "@angular/common": "^5.2.7",
-    "@angular/compiler": "^5.2.7",
-    "@angular/core": "^5.2.7",
-    "@angular/forms": "^5.2.7",
-    "@angular/platform-browser": "^5.2.7",
-    "@angular/platform-browser-dynamic": "^5.2.7",
+    "@angular/common": "^5.2.8",
+    "@angular/compiler": "^5.2.8",
+    "@angular/core": "^5.2.8",
+    "@angular/forms": "^5.2.8",
+    "@angular/platform-browser": "^5.2.8",
+    "@angular/platform-browser-dynamic": "^5.2.8",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "1.7.2",
-    "@angular/compiler-cli": "^5.2.7",
+    "@angular/cli": "1.7.3",
+    "@angular/compiler-cli": "^5.2.8",
     "@storybook/addon-actions": "^3.4.0-rc.0",
     "@storybook/addon-knobs": "^3.4.0-rc.0",
     "@storybook/addon-links": "^3.4.0-rc.0",
