@@ -88,6 +88,16 @@ export default function(configDir) {
         vue$: require.resolve('vue/dist/vue.esm.js'),
       },
     },
+    optimization: {
+      // Automatically split vendor and commons
+      // https://twitter.com/wSokra/status/969633336732905474
+      splitChunks: {
+        chunks: 'all',
+      },
+      // Keep the runtime chunk seperated to enable long term caching
+      // https://twitter.com/wSokra/status/969679223278505985
+      runtimeChunk: true,
+    },
   };
 
   return config;
