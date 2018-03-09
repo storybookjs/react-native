@@ -48,7 +48,7 @@ With this addon, you can switch between background colors and background images 
 
 ### [Viewport](https://github.com/storybooks/storybook/tree/master/addons/viewport)
 
-Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybookjs.org).  This helps build responsive components inside of Storybook.
+Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org).  This helps build responsive components inside of Storybook.
 
 ## Community Addons
 
