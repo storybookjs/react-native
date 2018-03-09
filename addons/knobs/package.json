@@ -31,7 +31,7 @@
   "devDependencies": {
     "@storybook/react": "^3.4.0-rc.0",
     "raw-loader": "^0.5.1",
-    "style-loader": "^0.20.2",
+    "style-loader": "^0.20.3",
     "vue": "^2.5.13"
   },
   "peerDependencies": {
