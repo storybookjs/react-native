@@ -50,16 +50,6 @@ const getConfig = options => ({
       },
     ],
   },
-  optimization: {
-    // Automatically split vendor and commons
-    // https://twitter.com/wSokra/status/969633336732905474
-    splitChunks: {
-      chunks: 'all',
-    },
-    // Keep the runtime chunk seperated to enable long term caching
-    // https://twitter.com/wSokra/status/969679223278505985
-    runtimeChunk: true,
-  },
 });
 
 export default getConfig;
