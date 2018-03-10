@@ -41,7 +41,7 @@
     "react-dom": "^16.0.0",
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.8.1",
-    "style-loader": "^0.20.2",
+    "style-loader": "^0.20.3",
     "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.2",
