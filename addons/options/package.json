@@ -23,10 +23,10 @@
     "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.4.0-rc.0"
+    "@storybook/react": "3.4.0-rc.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0",
+    "@storybook/addons": "3.4.0-rc.0",
     "react": "*",
     "react-dom": "*"
   }
