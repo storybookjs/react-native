@@ -23,10 +23,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^3.4.0-rc.0",
-    "@storybook/channel-postmessage": "^3.4.0-rc.0",
-    "@storybook/core": "^3.4.0-rc.0",
-    "@storybook/ui": "^3.4.0-rc.0",
+    "@storybook/addons": "3.4.0-rc.0",
+    "@storybook/channel-postmessage": "3.4.0-rc.0",
+    "@storybook/core": "3.4.0-rc.0",
+    "@storybook/ui": "3.4.0-rc.0",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
