@@ -35,7 +35,7 @@
     "vue": "^2.5.13"
   },
   "peerDependencies": {
-    "@storybook/addons": "3.4.0-rc.0",
+    "@storybook/addons": "^3.3.0",
     "react": "*",
     "react-dom": "*"
   }
