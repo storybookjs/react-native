@@ -28,6 +28,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
+    "lodash.throttle": "^4.1.1",
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "react-fuzzy": "^0.5.2",
