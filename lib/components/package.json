@@ -24,8 +24,8 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.0-rc.0",
-    "@storybook/addon-knobs": "^3.4.0-rc.0",
-    "@storybook/react": "^3.4.0-rc.0"
+    "@storybook/addon-actions": "3.4.0-rc.0",
+    "@storybook/addon-knobs": "3.4.0-rc.0",
+    "@storybook/react": "3.4.0-rc.0"
   }
 }
