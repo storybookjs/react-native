@@ -1,6 +1,6 @@
 # Storybook Viewport Addon
 
-Storybook Viewport Addon allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybookjs.org).  This helps build responsive components inside of Storybook.
+Storybook Viewport Addon allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org).  This helps build responsive components inside of Storybook.
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 

@@ -45,6 +45,18 @@ jobs:
             - addons
             - app
             - lib
+  danger:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Danger"
+          command: |
+            yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
     steps:
@@ -57,6 +69,9 @@ jobs:
           name: "Restore core dist cache"
           keys:
             - core-dist-{{ .Revision }}
+      - run:
+          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
+          command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -273,6 +288,9 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
+      - danger:
+          requires:
+            - build
       - example-kitchen-sinks:
           requires:
             - build

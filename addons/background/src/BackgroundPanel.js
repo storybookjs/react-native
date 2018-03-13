@@ -89,6 +89,7 @@ export default class BackgroundPanel extends Component {
     this.channel.on('background-unset', () => {
       this.setState({ backgrounds: [] });
       api.setQueryParams({ background: null });
+      this.updateIframe('none');
     });
   }
 
