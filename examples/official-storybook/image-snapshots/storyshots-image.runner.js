@@ -19,13 +19,13 @@ if (!fs.existsSync(pathToStorybookStatic)) {
 } else {
   initStoryshots({
     suite: 'Image snapshots',
+    storyKindRegex: /^Addons\|Storyshots/,
     framework: 'react',
     configPath: path.join(__dirname, '..'),
-    storyNameRegex: /^((?!tweaks static values with debounce delay|Inlines component inside story).)$/,
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
       getMatchOptions: () => ({
-        failureThreshold: 0.04, // 4% threshold,
+        failureThreshold: 0.02, // 2% threshold,
         failureThresholdType: 'percent',
       }),
     }),
