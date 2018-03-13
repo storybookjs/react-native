@@ -288,6 +288,9 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
+      - danger:
+          requires:
+            - build
       - example-kitchen-sinks:
           requires:
             - build
