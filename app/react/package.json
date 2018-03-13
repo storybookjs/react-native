@@ -48,7 +48,7 @@
     "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.12.0",
+    "glamorous": "^4.12.1",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
