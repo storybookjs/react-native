@@ -1,3 +1,11 @@
+# 3.4.0-rc.2
+
+2018-March-13
+
+Fix publishing options to use exact versions for cross-dependencies per this change:
+
+-   use exact versions for cross-dependencies between our own packages [#3183](https://github.com/storybooks/storybook/pull/3183)
+
 # 3.4.0-rc.1
 
 2018-March-13
