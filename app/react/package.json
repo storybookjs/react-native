@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "3.4.0-rc.0",
+  "version": "3.4.0-rc.1",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -23,14 +23,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "3.4.0-rc.0",
-    "@storybook/addon-links": "3.4.0-rc.0",
-    "@storybook/addons": "3.4.0-rc.0",
-    "@storybook/channel-postmessage": "3.4.0-rc.0",
-    "@storybook/client-logger": "3.4.0-rc.0",
-    "@storybook/core": "3.4.0-rc.0",
-    "@storybook/node-logger": "3.4.0-rc.0",
-    "@storybook/ui": "3.4.0-rc.0",
+    "@storybook/addon-actions": "^3.4.0-rc.1",
+    "@storybook/addon-links": "^3.4.0-rc.1",
+    "@storybook/addons": "^3.4.0-rc.1",
+    "@storybook/channel-postmessage": "^3.4.0-rc.1",
+    "@storybook/client-logger": "^3.4.0-rc.1",
+    "@storybook/core": "^3.4.0-rc.1",
+    "@storybook/node-logger": "^3.4.0-rc.1",
+    "@storybook/ui": "^3.4.0-rc.1",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
