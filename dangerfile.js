@@ -1,4 +1,4 @@
-import { fail, danger } from 'danger';
+import { fail as dangerFail, danger } from 'danger';
 import { flatten, intersection, isEmpty } from 'lodash';
 
 const pkg = require('./package.json'); // eslint-disable-line import/newline-after-import
@@ -11,6 +11,11 @@ const Versions = {
 };
 
 const branchVersion = Versions.PATCH;
+
+const fail = (...args) => {
+  dangerFail(...args);
+  process.exit(1);
+};
 
 const checkRequiredLabels = labels => {
   const forbiddenLabels = flatten([

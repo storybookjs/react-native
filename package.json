@@ -27,7 +27,7 @@
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
-    "publish": "lerna publish",
+    "publish": "lerna publish --exact",
     "postpublish": "yarn --cwd lib/cli test -o",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "npm --prefix examples/official-storybook run storybook",
