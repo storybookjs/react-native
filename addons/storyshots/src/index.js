@@ -1,6 +1,6 @@
 import fs from 'fs';
 import glob from 'glob';
-import global, { describe, it, beforeEach, afterEach } from 'global';
+import global, { describe, it } from 'global';
 import addons from '@storybook/addons';
 import loadFramework from './frameworkLoader';
 import createChannel from './storybook-channel-mock';
@@ -26,6 +26,8 @@ export {
   renderOnly,
   imageSnapshot,
 };
+
+const methods = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];
 
 export default function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
@@ -53,6 +55,12 @@ export default function testStorySnapshots(options = {}) {
 
   const testMethod = options.test || snapshotWithOptions({ options: snapshotOptions });
 
+  methods.forEach(method => {
+    if (typeof testMethod[method] === 'function') {
+      global[method](testMethod[method]);
+    }
+  });
+
   // eslint-disable-next-line
   for (const group of stories) {
     const { fileName, kind } = group;
@@ -63,20 +71,6 @@ export default function testStorySnapshots(options = {}) {
     }
 
     describe(suite, () => {
-      beforeEach(() => {
-        if (typeof testMethod.beforeEach === 'function') {
-          return testMethod.beforeEach();
-        }
-        return Promise.resolve();
-      });
-
-      afterEach(() => {
-        if (typeof testMethod.afterEach === 'function') {
-          return testMethod.afterEach();
-        }
-        return Promise.resolve();
-      });
-
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
