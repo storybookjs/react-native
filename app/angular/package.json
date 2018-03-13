@@ -44,7 +44,7 @@
     "html-webpack-plugin": "^2.30.1",
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
-    "node-sass": "^4.8.1",
+    "node-sass": "^4.8.2",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dev-utils": "^5.0.0",
