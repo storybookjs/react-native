@@ -45,6 +45,18 @@ jobs:
             - addons
             - app
             - lib
+  danger:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Danger"
+          command: |
+            yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
     steps:
