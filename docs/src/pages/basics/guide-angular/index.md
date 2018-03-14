@@ -165,6 +165,7 @@ storiesOf('My Panel', module)
     }
   }));
 ```
+## Trouble Shooting
 
 If you have problems running @angular/cli using "ng serve" after install specifically the following error: 
 
