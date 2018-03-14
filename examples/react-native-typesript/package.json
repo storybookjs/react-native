@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --config $PWD/rn-cli.config.js",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook start -p 7007 --metro-config $PWD/rn-cli.config.js"
   },
   "dependencies": {
     "react": "^16.3.0-alpha.1",
@@ -21,7 +22,25 @@
     "react-native-typescript-transformer": "^1.2.3",
     "react-test-renderer": "^16.3.0-alpha.1",
     "ts-jest": "^22.4.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
+    "@storybook/addon-knobs": "file:../../packs/storybook-addon-knobs.tgz",
+    "@storybook/addon-links": "file:../../packs/storybook-addon-links.tgz",
+    "@storybook/addon-options": "file:../../packs/storybook-addon-options.tgz",
+    "@storybook/addon-storyshots": "file:../../packs/storybook-addon-storyshots.tgz",
+    "@storybook/addons": "file:../../packs/storybook-addons.tgz",
+    "@storybook/channels": "file:../../packs/storybook-channels.tgz",
+    "@storybook/client-logger": "file:../../packs/storybook-client-logger.tgz",
+    "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
+    "@storybook/channel-websocket": "file:../../packs/storybook-channel-websocket.tgz",
+    "@storybook/components": "file:../../packs/storybook-components.tgz",
+    "@storybook/core": "file:../../packs/storybook-core.tgz",
+    "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
+    "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
+    "@storybook/ui": "file:../../packs/storybook-ui.tgz",
+    "babel-core": "^6.26.0",
+    "react-dom": "^16.3.0-alpha.1",
+    "prop-types": "^15.6.1"
   },
   "jest": {
     "preset": "react-native",
