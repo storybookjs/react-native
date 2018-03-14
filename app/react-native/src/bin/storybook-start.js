@@ -13,6 +13,7 @@ program
   .option('--platform <ios|android|all>', 'build platform-specific build')
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
+  .option('--metro-config [relative-config-path]', 'Metro Bundler Custom config')
   .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
   .option('-r, --reset-cache', 'reset react native packager')
   .option('--skip-packager', 'run only storybook server')
@@ -76,6 +77,11 @@ if (!program.skipPackager) {
   }
 
   let cliCommand = 'react-native start';
+
+  if (program.metroConfig) {
+    cliCommand += ` --config ${program.metroConfig}`;
+  }
+
   if (program.haul) {
     const platform = program.platform || 'all';
     cliCommand = `haul start --config ${program.haul} --platform ${platform}`;
