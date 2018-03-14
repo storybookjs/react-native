@@ -64,7 +64,7 @@
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
