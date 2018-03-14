@@ -42,7 +42,7 @@ export const imageSnapshot = ({
 
     expect.assertions(1);
     return page
-      .goto(url, {"waitUntil" : "networkidle0"})
+      .goto(url, { waitUntil: 'networkidle0' })
       .catch(e => {
         logger.error(
           `ERROR WHILE CONNECTING TO ${url}, did you start or build the storybook first ? A storybook instance should be running or a static version should be built when using image snapshot feature.`,
