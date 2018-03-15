@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "mock-fs": "^4.3.0",
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.2"
   },
   "peerDependencies": {
     "@angular/common": ">=4.0.0",
