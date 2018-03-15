@@ -17,7 +17,7 @@
     "@angular/compiler": "^5.2.9",
     "@angular/core": "^5.2.9",
     "@angular/forms": "^5.2.9",
-    "@angular/platform-browser": "^5.2.8",
+    "@angular/platform-browser": "^5.2.9",
     "@angular/platform-browser-dynamic": "^5.2.8",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.7",
