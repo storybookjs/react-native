@@ -13,7 +13,7 @@
     "test": "ng test"
   },
   "dependencies": {
-    "@angular/common": "^5.2.8",
+    "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.8",
     "@angular/core": "^5.2.8",
     "@angular/forms": "^5.2.8",
