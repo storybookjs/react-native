@@ -40,7 +40,7 @@
     "@angular/compiler": "^5.2.9",
     "@angular/core": "^5.2.9",
     "@angular/forms": "^5.2.9",
-    "@angular/platform-browser": "^5.2.8",
+    "@angular/platform-browser": "^5.2.9",
     "@angular/platform-browser-dynamic": "^5.2.8",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
