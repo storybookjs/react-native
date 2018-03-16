@@ -57,7 +57,7 @@
     "react-native-compat": "^1.0.0",
     "react-native-iphone-x-helper": "^1.0.2",
     "shelljs": "^0.8.1",
-    "uglifyjs-webpack-plugin": "^1.2.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "url-parse": "^1.1.9",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.2.1",
