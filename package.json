@@ -132,7 +132,7 @@
     ],
     "validLabels": {
       "breaking": "Breaking Changes",
-      "feature": "Features",
+      "feature request": "Features",
       "bug": "Bug Fixes",
       "documentation": "Documentation",
       "maintenance": "Maintenance",
