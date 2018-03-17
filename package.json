@@ -14,7 +14,7 @@
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
     "coverage": "codecov",
-    "danger": "danger",
+    "danger": "cross-env DANGER_GITHUB_API_TOKEN=b52c8239191b17d6bad5883229c98172a9a1a8a5 danger",
     "dev": "concurrently --kill-others \"yarn dev:ts\" \"yarn dev:js\"",
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
     "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
