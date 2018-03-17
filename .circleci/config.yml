@@ -59,6 +59,7 @@ jobs:
       - run:
           name: "Danger"
           command: |
+            echo $DANGER_GITHUB_API_TOKEN
             yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
