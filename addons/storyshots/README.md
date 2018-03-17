@@ -29,8 +29,12 @@ npm install --save-dev @storybook/addon-storyshots
 
 Usually, you might already have completed this step. If not, here are some resources for you.
 
--   If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
--   Otherwise check this Egghead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
+If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
+
+Otherwise check these links:
+
+-   [Egghead lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest). ***paid content***
+-   [Official Docs](https://facebook.github.io/jest/docs/en/getting-started.html) 
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
