@@ -165,3 +165,19 @@ storiesOf('My Panel', module)
     }
   }));
 ```
+## Trouble Shooting
+
+If you have problems running @angular/cli using "ng serve" after install specifically the following error: 
+
+```ERROR in node_modules/@storybook/angular/index.d.ts(31,44): error TS2304: Cannot find name 'NodeRequire'.```
+
+You may need to exclude your stories from being compiled when running your angular dev environment.  To do this add "stories", "\*\*/\*.stories.ts" to the exclude section in src/app/tsconfig.app.json:
+
+```json
+{
+  "exclude": [
+    "stories",
+    "**/*.stories.ts"
+  ]
+}
+```
