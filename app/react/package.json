@@ -58,13 +58,13 @@
     "prop-types": "^15.6.1",
     "react-dev-utils": "^5.0.0",
     "redux": "^3.7.2",
-    "uglifyjs-webpack-plugin": "^1.2.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "util-deprecate": "^1.0.2",
     "webpack": "^3.11.0",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
