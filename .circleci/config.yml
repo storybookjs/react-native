@@ -48,7 +48,7 @@ jobs:
   danger:
     <<: *defaults
     environment:
-      - DANGER_GITHUB_API_TOKEN: "b52c8239191b17d6bad5883229c98172a9a1a8a5"
+      - DANGER_GITHUB_API_TOKEN: "b3fae7263d9dbbeffb5ea3267a937f8ab5e62da6"
     steps:
       - checkout
       - restore_cache:
