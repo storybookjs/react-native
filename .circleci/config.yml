@@ -47,6 +47,8 @@ jobs:
             - lib
   danger:
     <<: *defaults
+    environment:
+      - DANGER_GITHUB_API_TOKEN: "b52c8239191b17d6bad5883229c98172a9a1a8a5"
     steps:
       - checkout
       - restore_cache:
@@ -56,7 +58,7 @@ jobs:
       - run:
           name: "Danger"
           command: |
-            DANGER_GITHUB_API_TOKEN=b52c8239191b17d6bad5883229c98172a9a1a8a5 bash -c 'yarn danger ci'
+            yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
     steps:
