@@ -48,7 +48,8 @@ jobs:
   danger:
     <<: *defaults
     environment:
-      - DANGER_GITHUB_API_TOKEN: "b3fae7263d9dbbeffb5ea3267a937f8ab5e62da6"
+      - TOKEN_HEAD: 49aa9a6549007391dfcef9c76fca32a73560fd8
+      - DANGER_GITHUB_API_TOKEN: ${TOKEN_HEAD}3
     steps:
       - checkout
       - restore_cache:
@@ -58,7 +59,7 @@ jobs:
       - run:
           name: "Danger"
           command: |
-            yarn danger ci
+            DANGER_GITHUB_API_TOKEN = '${TOKEN_HEAD}' yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
     steps:
