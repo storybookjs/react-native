@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "3.4.0-rc.0",
+  "version": "3.4.0-rc.2",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
@@ -23,10 +23,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^3.4.0-rc.0",
-    "@storybook/channel-postmessage": "^3.4.0-rc.0",
-    "@storybook/core": "^3.4.0-rc.0",
-    "@storybook/ui": "^3.4.0-rc.0",
+    "@storybook/addons": "3.4.0-rc.2",
+    "@storybook/channel-postmessage": "3.4.0-rc.2",
+    "@storybook/core": "3.4.0-rc.2",
+    "@storybook/ui": "3.4.0-rc.2",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
@@ -55,16 +55,16 @@
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1",
-    "vue": "^2.5.13",
+    "nodemon": "^1.17.2",
+    "vue": "^2.5.16",
     "vue-loader": "^14.2.1",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.16"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "babel-runtime": ">=6.0.0",
-    "vue": ">=2.0.0",
+    "vue": "2.5.16",
     "vue-loader": "14.2.1",
-    "vue-template-compiler": ">=2.0.0"
+    "vue-template-compiler": "2.5.16"
   }
 }

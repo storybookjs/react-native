@@ -44,10 +44,10 @@
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
     "typescript": "~2.4.0",
-    "@storybook/angular": "^3.4.0-rc.0",
-    "@storybook/addon-notes": "^3.4.0-rc.0",
-    "@storybook/addon-actions": "^3.4.0-rc.0",
-    "@storybook/addon-links": "^3.4.0-rc.0",
-    "@storybook/addons": "^3.4.0-rc.0"
+    "@storybook/angular": "^3.4.0-rc.2",
+    "@storybook/addon-notes": "^3.4.0-rc.2",
+    "@storybook/addon-actions": "^3.4.0-rc.2",
+    "@storybook/addon-links": "^3.4.0-rc.2",
+    "@storybook/addons": "^3.4.0-rc.2"
   }
 }
