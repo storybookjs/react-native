@@ -131,7 +131,7 @@
       "cleanup"
     ],
     "validLabels": {
-      "breaking": "Breaking Changes",
+      "BREAKING CHANGE": "Breaking Changes",
       "feature request": "Features",
       "bug": "Bug Fixes",
       "documentation": "Documentation",
