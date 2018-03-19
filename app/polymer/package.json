@@ -1,6 +1,6 @@
 {
   "name": "@storybook/polymer",
-  "version": "3.4.0-alpha.9",
+  "version": "3.4.0-rc.3",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/polymer",
   "bugs": {
@@ -22,16 +22,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^3.4.0-alpha.9",
-    "@storybook/channel-postmessage": "^3.4.0-alpha.9",
-    "@storybook/client-logger": "^3.4.0-alpha.9",
-    "@storybook/core": "^3.4.0-alpha.9",
-    "@storybook/node-logger": "^3.4.0-alpha.9",
-    "@storybook/ui": "^3.4.0-alpha.9",
+    "@storybook/addons": "3.4.0-rc.3",
+    "@storybook/channel-postmessage": "3.4.0-rc.3",
+    "@storybook/client-logger": "3.4.0-rc.3",
+    "@storybook/core": "3.4.0-rc.3",
+    "@storybook/node-logger": "3.4.0-rc.3",
+    "@storybook/ui": "3.4.0-rc.3",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "airbnb-js-shims": "^1.4.1",
-    "babel-loader": "^7.1.3",
-    "babel-plugin-macros": "^2.1.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-macros": "^2.2.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
@@ -39,30 +39,31 @@
     "babel-preset-minify": "^0.3.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.4.0",
-    "copy-webpack-plugin": "^4.4.2",
+    "copy-webpack-plugin": "^4.5.1",
     "core-js": "^2.5.1",
     "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-webpack-plugin": "^2.30.1",
     "json5": "^0.5.1",
-    "polymer-webpack-loader": "2.0.1",
     "react": "^16.0.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.0.0",
     "redux": "^3.7.2",
-    "uglifyjs-webpack-plugin": "^1.2.2",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "util-deprecate": "^1.0.2",
     "webpack": "^3.11.0",
-    "webpack-hot-middleware": "^2.21.1"
+    "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.2",
+    "polymer-webpack-loader": "^2.0.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
-    "babel-runtime": ">=6.0.0"
+    "babel-runtime": ">=6.0.0",
+    "polymer-webpack-loader": "2.0.2"
   }
 }

@@ -14,12 +14,12 @@ SectionHeader.propTypes = {
   selected: PropTypes.bool.isRequired,
 };
 
-const ListItem = ({ title, selected, onPress }) => (
+const ListItem = ({ kind, title, selected, onPress }) => (
   <TouchableOpacity
     key={title}
     style={style.item}
     onPress={onPress}
-    testID={`Storybook.ListItem.${title}`}
+    testID={`Storybook.ListItem.${kind}.${title}`}
     accessibilityLabel={`Storybook.ListItem.${title}`}
   >
     <Text style={[style.itemText, selected && style.itemTextSelected]}>{title}</Text>
@@ -28,6 +28,7 @@ const ListItem = ({ title, selected, onPress }) => (
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
+  kind: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
 };
@@ -92,10 +93,12 @@ export default class StoryListView extends Component {
   render() {
     return (
       <ListView
+        testID="Storybook.ListView"
         style={[style.list, { width: this.props.width }]}
         renderRow={item => (
           <ListItem
             title={item.name}
+            kind={item.kind}
             selected={
               item.kind === this.props.selectedKind && item.name === this.props.selectedStory
             }

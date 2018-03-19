@@ -11,7 +11,7 @@ You may have tried to use our quick start guide to setup your project for Storyb
 
 Storybook has its own Webpack setup and a dev server. Webpack setup is very similar to [Create React App](https://github.com/facebookincubator/create-react-app), but allows you to configure as you want.
 
-In this guide, we are trying to set up Storybook for your React project.
+In this guide, we will set up Storybook for your React project.
 
 ## Table of contents
 
