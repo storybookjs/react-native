@@ -109,7 +109,7 @@ setOptions({
    * enable/disable shortcuts
    * @type {Boolean}
    */
-  enableShortcuts: false, // true by defaul
+  enableShortcuts: false, // true by default
 });
 
 storybook.configure(() => require('./stories'), module);
