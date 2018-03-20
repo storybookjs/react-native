@@ -15,6 +15,7 @@ setOptions({
   sortStoriesByKind: false,
   hierarchySeparator: /\./,
   hierarchyRootSeparator: /\|/,
+  enableShortcuts: false,
 });
 
 // deprecated usage of infoAddon
