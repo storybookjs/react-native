@@ -15,8 +15,6 @@ describe('babel_config', () => {
   // As the 'fs' is going to be mocked, let's call require.resolve
   // so the require.cache has the correct route to the file.
   // In fact let's use it in the tests :)
-  const babelPluginReactDocgenPath = require.resolve('babel-plugin-react-docgen');
-
   it('should return the config with the extra plugins when `plugins` is an array.', () => {
     setup({
       files: {
@@ -36,15 +34,7 @@ describe('babel_config', () => {
 
     expect(config).toEqual({
       babelrc: false,
-      plugins: [
-        'foo-plugin',
-        [
-          babelPluginReactDocgenPath,
-          {
-            DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
-          },
-        ],
-      ],
+      plugins: ['foo-plugin'],
       presets: ['env', 'foo-preset'],
     });
   });
@@ -66,15 +56,7 @@ describe('babel_config', () => {
 
     expect(config).toEqual({
       babelrc: false,
-      plugins: [
-        'bar-plugin',
-        [
-          babelPluginReactDocgenPath,
-          {
-            DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
-          },
-        ],
-      ],
+      plugins: 'bar-plugin',
       presets: ['env', 'foo-preset'],
     });
   });
@@ -96,14 +78,6 @@ describe('babel_config', () => {
 
     expect(config).toEqual({
       babelrc: false,
-      plugins: [
-        [
-          babelPluginReactDocgenPath,
-          {
-            DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
-          },
-        ],
-      ],
       presets: ['env', 'foo-preset'],
     });
   });
