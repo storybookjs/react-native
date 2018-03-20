@@ -19,7 +19,13 @@ function renderErrorDisplay(error) {
       return h(
         'div',
         { attrs: { id: 'error-display' } },
-        error ? [h(ErrorDisplay, { props: { message: error.message, stack: error.stack } })] : []
+        error
+          ? [
+              h(ErrorDisplay, {
+                props: { message: error.message, stack: error.stack },
+              }),
+            ]
+          : []
       );
     },
   });
@@ -54,7 +60,7 @@ export function renderMain(data, storyStore, forceRender) {
 
   const { selectedKind, selectedStory } = data;
 
-  const story = storyStore.getStory(selectedKind, selectedStory);
+  const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
 
   // Unmount the previous story only if selectedKind or selectedStory has changed.
   // renderMain() gets executed after each action. Actions will cause the whole
@@ -71,12 +77,7 @@ export function renderMain(data, storyStore, forceRender) {
     return;
   }
 
-  const context = {
-    kind: selectedKind,
-    story: selectedStory,
-  };
-
-  const component = story ? story(context) : NoPreview;
+  const component = story ? story() : NoPreview;
 
   if (!component) {
     const error = {
