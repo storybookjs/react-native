@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { SelectViewport } from '../SelectViewport';
-import { viewports, defaultViewport } from '../viewportInfo';
+import { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from '../../../shared';
 import * as styles from '../styles';
 
 describe('Viewport/SelectViewport', () => {
@@ -11,7 +11,9 @@ describe('Viewport/SelectViewport', () => {
   beforeEach(() => {
     props = {
       onChange: jest.fn(),
-      activeViewport: defaultViewport,
+      activeViewport: DEFAULT_VIEWPORT,
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: DEFAULT_VIEWPORT,
     };
 
     subject = shallow(<SelectViewport {...props} />);
@@ -31,21 +33,23 @@ describe('Viewport/SelectViewport', () => {
   describe('select', () => {
     it('has a default option first', () => {
       const firstOption = subject.find('option').first();
-      expect(firstOption.props().value).toEqual(defaultViewport);
+      expect(firstOption.props().value).toEqual(DEFAULT_VIEWPORT);
     });
 
     describe('dynamic options', () => {
-      const viewportKeys = Object.keys(viewports);
+      const viewportKeys = Object.keys(INITIAL_VIEWPORTS);
       it('has at least 1 option', () => {
         expect(viewportKeys.length).toBeGreaterThan(0);
       });
 
       viewportKeys.forEach(key => {
         let option;
+        const { name } = INITIAL_VIEWPORTS[key];
+        const expectedText = key === DEFAULT_VIEWPORT ? `(Default) ${name}` : name;
 
-        it(`renders an option for ${viewports[key].name}`, () => {
-          option = subject.find(`[value="${key}"]`);
-          expect(option.text()).toEqual(viewports[key].name);
+        it(`renders an option for ${name}`, () => {
+          option = subject.find(`option[value="${key}"]`);
+          expect(option.text()).toEqual(expectedText);
         });
       });
     });
