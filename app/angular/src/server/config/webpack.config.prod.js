@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
-// import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { managerPath } from '@storybook/core/server';
 
@@ -48,7 +48,7 @@ export default function(configDir) {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
-      // new InterpolateHtmlPlugin(process.env),
+      new InterpolateHtmlPlugin(process.env),
       new webpack.DefinePlugin(loadEnv({ production: true })),
       new webpack.ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)(@angular|esm5)/,

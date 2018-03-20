@@ -6,8 +6,7 @@ import addHeadWarning from './head-warning';
 import extraViewports from './extra-viewports.json';
 
 addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
-// TODO enable back after react-dev-utils release, see https://github.com/facebook/create-react-app/pull/4077
-// addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
+addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 
 setOptions({
   hierarchySeparator: /\/|\./,

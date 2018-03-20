@@ -1,9 +1,9 @@
 import path from 'path';
 import webpack from 'webpack';
-// import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
+import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { includePaths, excludePaths } from './utils';
+import { includePaths, excludePaths, nodeModulesPaths } from './utils';
 
 const getConfig = options => ({
   mode: 'development',
@@ -26,7 +26,7 @@ const getConfig = options => ({
     }),
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
-    // new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+    new WatchMissingNodeModulesPlugin(nodeModulesPaths),
   ],
   module: {
     rules: [

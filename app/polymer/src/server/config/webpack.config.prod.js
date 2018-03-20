@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
-// import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { managerPath } from '@storybook/core/server';
@@ -47,7 +47,7 @@ export default function(configDir) {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
-      // new InterpolateHtmlPlugin(process.env),
+      new InterpolateHtmlPlugin(process.env),
       new CopyWebpackPlugin([
         { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
         { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },

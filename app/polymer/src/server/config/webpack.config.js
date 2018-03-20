@@ -1,14 +1,14 @@
 import path from 'path';
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
-// import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
-// import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
+import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { managerPath } from '@storybook/core/server';
 
-import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
+import { includePaths, excludePaths, loadEnv, nodePaths, nodeModulesPaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import babelLoaderConfig from './babel';
 import { version } from '../../../package.json';
@@ -48,7 +48,7 @@ export default function(configDir) {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
-      // new InterpolateHtmlPlugin(process.env),
+      new InterpolateHtmlPlugin(process.env),
       new CopyWebpackPlugin([
         { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
         { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
@@ -56,7 +56,7 @@ export default function(configDir) {
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
-      // new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+      new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
       new Dotenv({ silent: true }),
     ],
