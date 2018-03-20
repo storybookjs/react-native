@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "3.4.0-rc.2",
+  "version": "3.4.0-rc.3",
   "description": "Stories addon for storybook",
   "keywords": [
     "storybook"
@@ -20,7 +20,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/components": "3.4.0-rc.2",
+    "@storybook/components": "3.4.0-rc.3",
     "acorn": "^5.5.3",
     "acorn-es7": "^0.1.0",
     "acorn-jsx": "^4.1.1",

@@ -18,7 +18,14 @@ export default class Preview {
     this._stories = new StoryStore();
     this._clientApi = new ClientApi({ storyStore: this._stories });
 
-    ['storiesOf', 'setAddon', 'addDecorator', 'clearDecorators', 'getStorybook'].forEach(method => {
+    [
+      'storiesOf',
+      'setAddon',
+      'addDecorator',
+      'addParameters',
+      'clearDecorators',
+      'getStorybook',
+    ].forEach(method => {
       this[method] = this._clientApi[method].bind(this._clientApi);
     });
   }
@@ -87,7 +94,7 @@ export default class Preview {
 
   _selectStory(selection) {
     const { kind, story } = selection;
-    const storyFn = this._stories.getStory(kind, story);
+    const storyFn = this._stories.getStoryWithContext(kind, story);
     this._events.emit('story', storyFn, selection);
   }
 }

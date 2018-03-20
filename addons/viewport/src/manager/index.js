@@ -3,8 +3,7 @@ import addons from '@storybook/addons';
 
 import { Panel } from './components/Panel';
 
-const ADDON_ID = 'storybook-addon-viewport';
-const PANEL_ID = `${ADDON_ID}/addon-panel`;
+import { ADDON_ID, PANEL_ID } from '../shared';
 
 const addChannel = api => {
   const channel = addons.getChannel();

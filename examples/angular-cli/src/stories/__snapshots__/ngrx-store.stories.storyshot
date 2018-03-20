@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ngrx|Store With component 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-comp-with-store>
+    <div>
+      Store is injected
+    </div>
+  </storybook-comp-with-store>
+</storybook-dynamic-app-root>
+`;
+
+exports[`Storyshots ngrx|Store With template 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    <storybook-comp-with-store>
+      <div>
+        Store is injected
+      </div>
+    </storybook-comp-with-store>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;
