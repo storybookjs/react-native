@@ -97,7 +97,7 @@ module.exports = {
     'no-underscore-dangle': [
       error,
       {
-        allow: ['__STORYBOOK_CLIENT_API__'],
+        allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'],
       },
     ],
   },
