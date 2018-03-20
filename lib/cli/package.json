@@ -57,6 +57,7 @@
     "@storybook/channel-postmessage": "3.4.0-rc.3",
     "@storybook/channel-websocket": "3.4.0-rc.3",
     "@storybook/channels": "3.4.0-rc.3",
+    "@storybook/mithril": "3.4.0-rc.3",
     "@storybook/polymer": "3.4.0-rc.3",
     "@storybook/react": "3.4.0-rc.3",
     "@storybook/react-native": "3.4.0-rc.3",
