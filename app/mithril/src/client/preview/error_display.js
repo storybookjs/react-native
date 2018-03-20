@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+/** @jsx m */
+
+import m from 'mithril';
 
 const mainStyle = {
   position: 'fixed',
@@ -30,20 +31,15 @@ const codeStyle = {
   overflow: 'auto',
 };
 
-const ErrorDisplay = ({ error }) => (
-  <div style={mainStyle}>
-    <div style={headingStyle}>{error.message}</div>
-    <pre style={codeStyle}>
-      <code>{error.stack}</code>
-    </pre>
-  </div>
-);
-
-ErrorDisplay.propTypes = {
-  error: PropTypes.shape({
-    message: PropTypes.string,
-    stack: PropTypes.string,
-  }).isRequired,
+const ErrorDisplay = {
+  view: vnode => (
+    <div style={mainStyle}>
+      <div style={headingStyle}>{vnode.attrs.error.message}</div>
+      <pre style={codeStyle}>
+        <code>{vnode.attrs.error.stack}</code>
+      </pre>
+    </div>
+  ),
 };
 
 export default ErrorDisplay;

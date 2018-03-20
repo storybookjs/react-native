@@ -1,21 +1,23 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import glamorous from 'glamorous';
+/** @jsx m */
 
-const Button = glamorous(({ children, ...rest }) => <button {...rest}>{children}</button>)({
+import m from 'mithril';
+
+const style = {
   border: '1px solid #eee',
-  borderRadius: 3,
+  borderRadius: '3px',
   backgroundColor: '#FFFFFF',
   cursor: 'pointer',
-  fontSize: 15,
+  fontSize: '15px',
   padding: '3px 10px',
-  margin: 10,
-});
+  margin: '10px',
+};
 
-Button.displayName = 'Button';
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func,
+const Button = {
+  view: vnode => (
+    <button style={style} {...vnode.attrs}>
+      {vnode.children}
+    </button>
+  ),
 };
 
 export default Button;

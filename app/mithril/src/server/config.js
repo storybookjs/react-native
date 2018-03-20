@@ -33,13 +33,10 @@ export default function(configType, baseConfig, configDir) {
   // Check whether addons.js file exists inside the storybook.
   // Load the default addons.js file if it's missing.
   // Insert it after polyfills.js, but before client/manager.
-  const storybookDefaultAddonsPath = path.resolve(__dirname, 'addons.js');
   const storybookCustomAddonsPath = path.resolve(configDir, 'addons.js');
   if (fs.existsSync(storybookCustomAddonsPath)) {
     logger.info('=> Loading custom addons config.');
     config.entry.manager.splice(1, 0, storybookCustomAddonsPath);
-  } else {
-    config.entry.manager.splice(1, 0, storybookDefaultAddonsPath);
   }
 
   const defaultConfig = createDefaultWebpackConfig(config);
@@ -49,7 +46,7 @@ export default function(configType, baseConfig, configDir) {
   const customConfigPath = path.resolve(configDir, 'webpack.config.js');
 
   if (!fs.existsSync(customConfigPath)) {
-    logger.info('=> Using default webpack setup based on "Create React App".');
+    logger.info('=> Using default webpack setup.');
     return defaultConfig;
   }
   const customConfig = require(customConfigPath);

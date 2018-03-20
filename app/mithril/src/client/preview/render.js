@@ -1,10 +1,9 @@
 /* global document */
+/** @jsx m */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import m from 'mithril';
 import { stripIndents } from 'common-tags';
 import { logger } from '@storybook/client-logger';
-import isReactRenderable from './element_check';
 import ErrorDisplay from './error_display';
 
 // check whether we're running on node/browser
@@ -13,7 +12,6 @@ const isBrowser = typeof window !== 'undefined';
 let rootEl = null;
 let previousKind = '';
 let previousStory = '';
-let previousRevision = -1;
 
 if (isBrowser) {
   rootEl = document.getElementById('root');
@@ -24,7 +22,7 @@ export function renderError(error) {
   properError.stack = error.description;
 
   const redBox = <ErrorDisplay error={properError} />;
-  ReactDOM.render(redBox, rootEl);
+  m.mount(rootEl, { view: () => redBox });
 }
 
 export function renderException(error) {
@@ -33,49 +31,31 @@ export function renderException(error) {
   const realError = new Error(error.message);
   realError.stack = error.stack;
   const redBox = <ErrorDisplay error={realError} />;
-  ReactDOM.render(redBox, rootEl);
+  m.mount(rootEl, { view: () => redBox });
 
   // Log the stack to the console. So, user could check the source code.
   logger.error(error.stack);
 }
 
 export function renderMain(data, storyStore, forceRender) {
-  if (storyStore.size() === 0) return null;
+  if (storyStore.size() === 0) return;
 
-  const NoPreview = () => <p>No Preview Available!</p>;
+  const NoPreview = { view: () => <p>No Preview Available!</p> };
   const noPreview = <NoPreview />;
   const { selectedKind, selectedStory } = data;
 
-  const revision = storyStore.getRevision();
   const story = storyStore.getStory(selectedKind, selectedStory);
   if (!story) {
-    ReactDOM.render(noPreview, rootEl);
-    return null;
+    m.mount(rootEl, { view: () => noPreview });
+    return;
   }
 
-  // Unmount the previous story only if selectedKind or selectedStory has changed.
-  // renderMain() gets executed after each action. Actions will cause the whole
-  // story to re-render without this check.
-  //    https://github.com/storybooks/react-storybook/issues/116
-  // However, we do want the story to re-render if the store itself has changed
-  // (which happens at the moment when HMR occurs)
-  if (
-    !forceRender &&
-    revision === previousRevision &&
-    selectedKind === previousKind &&
-    previousStory === selectedStory
-  ) {
-    return null;
+  if (!forceRender && selectedKind === previousKind && previousStory === selectedStory) {
+    return;
   }
 
-  // We need to unmount the existing set of components in the DOM node.
-  // Otherwise, React may not recrease instances for every story run.
-  // This could leads to issues like below:
-  //    https://github.com/storybooks/react-storybook/issues/81
-  previousRevision = revision;
   previousKind = selectedKind;
   previousStory = selectedStory;
-  ReactDOM.unmountComponentAtNode(rootEl);
 
   const context = {
     kind: selectedKind,
@@ -86,28 +66,17 @@ export function renderMain(data, storyStore, forceRender) {
 
   if (!element) {
     const error = {
-      title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
+      title: `Expecting a Mithril element from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
-        Did you forget to return the React element from the story?
-        Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
+        Did you forget to return the Mithril element from the story?
+        Use "() => MyComp" or "() => { return MyComp; }" when defining the story.
       `,
     };
-    return renderError(error);
+    renderError(error);
+    return;
   }
 
-  if (!isReactRenderable(element)) {
-    const error = {
-      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-         Seems like you are not returning a correct React element from the story.
-         Could you double check that?
-       `,
-    };
-    return renderError(error);
-  }
-
-  ReactDOM.render(element, rootEl);
-  return null;
+  m.mount(rootEl, { view: () => m(element) });
 }
 
 export default function renderPreview({ reduxStore, storyStore }, forceRender = false) {
