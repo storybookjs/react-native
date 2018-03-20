@@ -1,0 +1,75 @@
+{
+  "name": "@storybook/react",
+  "version": "3.4.0-rc.3",
+  "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "license": "MIT",
+  "main": "dist/client/index.js",
+  "jsnext:main": "src/client/index.js",
+  "bin": {
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "scripts": {
+    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "3.4.0-rc.3",
+    "@storybook/addon-links": "3.4.0-rc.3",
+    "@storybook/addons": "3.4.0-rc.3",
+    "@storybook/channel-postmessage": "3.4.0-rc.3",
+    "@storybook/client-logger": "3.4.0-rc.3",
+    "@storybook/core": "3.4.0-rc.3",
+    "@storybook/node-logger": "3.4.0-rc.3",
+    "@storybook/ui": "3.4.0-rc.3",
+    "airbnb-js-shims": "^1.4.1",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-macros": "^2.2.0",
+    "babel-plugin-react-docgen": "^1.8.3",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.3.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
+    "common-tags": "^1.7.2",
+    "core-js": "^2.5.3",
+    "dotenv-webpack": "^1.5.5",
+    "find-cache-dir": "^1.0.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.12.1",
+    "global": "^4.3.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^2.30.1",
+    "json5": "^0.5.1",
+    "lodash.flattendeep": "^4.4.0",
+    "markdown-loader": "^2.0.2",
+    "prop-types": "^15.6.1",
+    "react-dev-utils": "^5.0.0",
+    "redux": "^3.7.2",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "util-deprecate": "^1.0.2",
+    "webpack": "^3.11.0",
+    "webpack-hot-middleware": "^2.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "peerDependencies": {
+    "babel-core": "^6.26.0 || ^7.0.0-0",
+    "babel-runtime": ">=6.0.0",
+    "react": ">=15.0.0 || ^16.0.0",
+    "react-dom": ">=15.0.0 || ^16.0.0"
+  }
+}
