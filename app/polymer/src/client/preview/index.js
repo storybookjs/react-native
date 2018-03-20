@@ -36,9 +36,10 @@ export const {
   getStorybook,
 } = clientApi;
 
+let channel;
 if (isBrowser) {
   // setup preview channel
-  const channel = createChannel({ page: 'preview' });
+  channel = createChannel({ page: 'preview' });
   channel.on('setCurrentStory', data => {
     reduxStore.dispatch(Actions.selectStory(data.kind, data.story));
   });
@@ -49,9 +50,13 @@ if (isBrowser) {
 
   // Handle keyboard shortcuts
   window.onkeydown = handleKeyboardShortcuts(channel);
+}
 
-  // Provide access to external scripts
+// Provide access to external scripts if `window` is defined.
+// NOTE this is different to isBrowser, primarily for the JSDOM use case
+if (typeof window !== 'undefined') {
   window.__STORYBOOK_CLIENT_API__ = clientApi;
+  window.__STORYBOOK_ADDONS_CHANNEL__ = channel; // may not be defined
 }
 
 const configApi = new ConfigApi({ clearDecorators, ...context });

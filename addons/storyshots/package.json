@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storyshots",
-  "version": "3.4.0-alpha.9",
+  "version": "3.4.0-rc.3",
   "description": "StoryShots is a Jest Snapshot Testing Addon for Storybook.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -16,27 +16,27 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@storybook/channels": "^3.4.0-alpha.9",
-    "@storybook/node-logger": "^3.4.0-alpha.9",
+    "@storybook/channels": "3.4.0-rc.3",
+    "@storybook/node-logger": "3.4.0-rc.3",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
-    "jest-image-snapshot": "^2.3.0",
-    "jest-specific-snapshot": "^0.3.0",
-    "puppeteer": "^1.1.1",
+    "jest-image-snapshot": "^2.4.0",
+    "jest-specific-snapshot": "^0.5.0",
+    "puppeteer": "^1.2.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.9",
-    "@storybook/addon-links": "^3.4.0-alpha.9",
-    "@storybook/addons": "^3.4.0-alpha.9",
-    "@storybook/react": "^3.4.0-alpha.9",
-    "enzyme-to-json": "^3.3.1",
+    "@storybook/addon-actions": "3.4.0-rc.3",
+    "@storybook/addon-links": "3.4.0-rc.3",
+    "@storybook/addons": "3.4.0-rc.3",
+    "@storybook/react": "3.4.0-rc.3",
+    "enzyme-to-json": "^3.3.3",
     "react": "^16.1.0",
     "react-dom": "^16.1.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.4.0-alpha.9",
+    "@storybook/addons": "3.4.0-rc.3",
     "babel-core": "^6.26.0 || ^7.0.0-0"
   }
 }

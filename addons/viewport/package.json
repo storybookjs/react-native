@@ -1,17 +1,17 @@
 {
   "name": "@storybook/addon-viewport",
-  "version": "3.4.0-alpha.9",
+  "version": "3.4.0-rc.3",
   "description": "Storybook addon to change the viewport size to mobile",
   "keywords": [
     "storybook"
   ],
   "license": "MIT",
-  "main": "register.js",
+  "main": "preview.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/components": "^3.4.0-alpha.9",
+    "@storybook/components": "3.4.0-rc.3",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "prop-types": "^15.6.1"

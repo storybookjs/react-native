@@ -1,17 +1,37 @@
 import { fail, danger } from 'danger';
-import { flatten, intersection, isEmpty, includes } from 'lodash';
+import { flatten, intersection, isEmpty } from 'lodash';
 
 const pkg = require('./package.json'); // eslint-disable-line import/newline-after-import
 const prLogConfig = pkg['pr-log'];
 
+const Versions = {
+  PATCH: 'PATCH',
+  MINOR: 'MINOR',
+  MAJOR: 'MAJOR',
+};
+
+const branchVersion = Versions.MAJOR;
+
 const checkRequiredLabels = labels => {
+  const forbiddenLabels = flatten([
+    'do not merge',
+    'in progress',
+    branchVersion !== Versions.MAJOR ? 'BREAKING CHANGE' : [],
+    branchVersion === Versions.PATCH ? 'feature request' : [],
+  ]);
+
   const requiredLabels = flatten([
     prLogConfig.skipLabels || [],
     Object.keys(prLogConfig.validLabels || {}),
   ]);
 
-  if (includes(labels, 'do not merge')) {
-    fail('PR is marked with "do not merge" label.');
+  const blockingLabels = intersection(forbiddenLabels, labels);
+  if (!isEmpty(blockingLabels)) {
+    fail(
+      `PR is marked with ${blockingLabels.map(label => `"${label}"`).join(', ')} label${
+        blockingLabels.length > 1 ? 's' : ''
+      }.`
+    );
   }
 
   const foundLabels = intersection(requiredLabels, labels);

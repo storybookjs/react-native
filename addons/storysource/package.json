@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "3.4.0-alpha.9",
+  "version": "3.4.0-rc.3",
   "description": "Stories addon for storybook",
   "keywords": [
     "storybook"
@@ -20,16 +20,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "acorn": "^5.5.0",
+    "@storybook/components": "3.4.0-rc.3",
+    "acorn": "^5.5.3",
     "acorn-es7": "^0.1.0",
     "acorn-jsx": "^4.1.1",
     "acorn-stage3": "^0.6.0",
     "babel-runtime": "^6.26.0",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
-    "prettier": "^1.11.0",
+    "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
-    "react-syntax-highlighter": "^7.0.1"
+    "react-syntax-highlighter": "^7.0.2"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",
