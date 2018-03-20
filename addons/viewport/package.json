@@ -6,7 +6,7 @@
     "storybook"
   ],
   "license": "MIT",
-  "main": "register.js",
+  "main": "preview.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
