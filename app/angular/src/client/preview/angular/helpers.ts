@@ -8,8 +8,7 @@ import { NoPreviewComponent } from './components/no-preview.component';
 import { STORY } from './app.token';
 import {
   NgModuleMetadata,
-  IGetStoryWithContext,
-  IContext,
+  IGetStory,
   NgProvidedData,
   IRenderErrorFn,
   IRenderStoryFn,
@@ -78,11 +77,10 @@ const createComponentFromTemplate = (template: string, styles: string[]): Functi
 };
 
 const initModule = (
-  currentStory: IGetStoryWithContext,
-  context: IContext,
+  currentStory: IGetStory,
   reRender: boolean = false
 ): Function => {
-  const storyObj = currentStory(context);
+  const storyObj = currentStory();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
   let AnnotatedComponent;
@@ -154,6 +152,6 @@ export const renderNoPreview = debounce(() => {
   draw(Module);
 });
 
-export const renderNgApp = debounce((story, context, reRender) => {
-  draw(initModule(story, context, reRender), reRender);
+export const renderNgApp = debounce((story, reRender) => {
+  draw(initModule(story, reRender), reRender);
 });

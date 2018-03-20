@@ -44,7 +44,14 @@ const decorateStory = (getStory, decorators) =>
   );
 const context = { storyStore, reduxStore, decorateStory };
 const clientApi = new ClientApi(context);
-export const { storiesOf, setAddon, addDecorator, clearDecorators, getStorybook } = clientApi;
+export const {
+  storiesOf,
+  setAddon,
+  addDecorator,
+  addParameters,
+  clearDecorators,
+  getStorybook,
+} = clientApi;
 
 let channel;
 if (isBrowser) {
