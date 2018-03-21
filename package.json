@@ -73,7 +73,7 @@
     "husky": "^0.14.3",
     "inquirer": "^5.1.0",
     "jest": "^22.4.3",
-    "jest-cli": "^22.4.2",
+    "jest-cli": "^22.4.3",
     "jest-config": "^22.4.2",
     "jest-diff": "^22.4.0",
     "jest-environment-jsdom": "^22.4.1",
