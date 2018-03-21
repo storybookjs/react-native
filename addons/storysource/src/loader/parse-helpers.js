@@ -15,7 +15,7 @@ function getKindFromStoryOfNode(object) {
 
   const kindArgument = object.arguments[0];
 
-  if (kindArgument.type === 'Literal') {
+  if (kindArgument.type === 'Literal' || kindArgument.type === 'StringLiteral') {
     return kindArgument.value;
   }
 
@@ -41,6 +41,24 @@ function findRelatedKind(object) {
   return findRelatedKind(object.callee.object);
 }
 
+export function patchNode(node) {
+  if (node.range && node.range.length === 2 && node.start === undefined && node.end === undefined) {
+    const [start, end] = node.range;
+
+    // eslint-disable-next-line no-param-reassign
+    node.start = start;
+    // eslint-disable-next-line no-param-reassign
+    node.end = end;
+  }
+
+  if (!node.range && node.start !== undefined && node.end !== undefined) {
+    // eslint-disable-next-line no-param-reassign
+    node.range = [node.start, node.end];
+  }
+
+  return node;
+}
+
 export function handleADD(node, parent, adds) {
   if (!node.property || !node.property.name || node.property.name.indexOf('add') !== 0) {
     return;
@@ -55,8 +73,8 @@ export function handleADD(node, parent, adds) {
   const storyName = addArgs[0];
   const lastArg = addArgs[addArgs.length - 1];
 
-  if (storyName.type !== 'Literal') {
-    // if story name is not literal, it much harder to extract it
+  if (storyName.type !== 'Literal' && storyName.type !== 'StringLiteral') {
+    // if story name is not literal, it's much harder to extract it
     return;
   }
 
