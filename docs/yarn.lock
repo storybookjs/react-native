@@ -4528,9 +4528,9 @@ gatsby-plugin-sharp@^1.6.41:
     sharp "^0.20.0"
     svgo "^0.7.2"
 
-gatsby-react-router-scroll@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.13.tgz#d1cfd43c334497ad174ae9409c24bb5d4dcda3aa"
+gatsby-react-router-scroll@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.14.tgz#7e3b59c2266772030c6bfeaa8914c71dd3c12c59"
   dependencies:
     babel-runtime "^6.26.0"
     scroll-behavior "^0.9.9"
@@ -4620,9 +4620,9 @@ gatsby-transformer-remark@^1.7.37:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.236:
-  version "1.9.236"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.236.tgz#ece3784aac05be3ade58e6eb2e99c5557464e65c"
+gatsby@^1.9.238:
+  version "1.9.238"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.238.tgz#b97354208e60140c2d7f2a369494b20e8138f540"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4667,7 +4667,7 @@ gatsby@^1.9.236:
     gatsby-cli "^1.1.46"
     gatsby-link "^1.6.39"
     gatsby-module-loader "^1.0.11"
-    gatsby-react-router-scroll "^1.0.13"
+    gatsby-react-router-scroll "^1.0.14"
     glob "^7.1.1"
     graphql "^0.11.7"
     graphql-relay "^0.5.1"
