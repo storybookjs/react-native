@@ -349,7 +349,7 @@ Run a custom test function for each story, rather than the default (a vanilla sn
 
 ### `renderer`
 
-Pass a custom renderer (such as enzymes `mount`) to record snapshots.
+Pass a custom renderer (such as enzymes `mount`) to record snapshots. Note that setting `test` overrides `renderer`.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
