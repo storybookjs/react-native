@@ -1,4 +1,4 @@
-[//]: # (If you are reporting a bug or requesting support, start here:)
+If you are reporting a bug or requesting support, start here:
 ### Bug or support request summary
 
 _Please provide issue details here - What did you expect to happen? What happened instead?_ 
@@ -25,10 +25,10 @@ _(A screencast can be useful for visual bugs, but it is not a substitute for a t
 ```js
 // code here
 ```
-[//]: # (End bug report support request - delete the rest below)
+End bug report support request - delete the rest below
 
 
-[//]: # (If you are creating a issue to track work to be completed, start here:)
+If you are creating a issue to track work to be completed, start here:
 ### Work summary
 
 _Please provide a description of the work to be completed here - Include some context as to why something needs to be done and link any related tickets._ 
@@ -44,4 +44,4 @@ _Please inclide a checklist of the requirements necessary to close this ticket. 
 ### Who to contact
 
 _Add yourself or someone who is familiar with the code changes and requirements. This person(s) should be able to review the completed code._
-[//]: # (End work issue - please tag this issue with the correct status and type labels)
+End work issue - please tag this issue with the correct status and type labels
