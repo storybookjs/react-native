@@ -16,6 +16,7 @@
     "@storybook/addon-links": "^3.4.0-rc.3",
     "@storybook/addons": "^3.4.0-rc.3",
     "@storybook/mithril": "3.4.0-rc.3",
-    "babel-core": "^6.26.0"
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
   }
 }
