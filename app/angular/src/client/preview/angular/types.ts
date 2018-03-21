@@ -28,8 +28,5 @@ export type NgProvidedData = NgStory | NgError;
 
 export type IGetStory = () => NgStory;
 
-export type IRenderStoryFn = (
-  story: IGetStory,
-  reRender?: boolean
-) => void;
+export type IRenderStoryFn = (story: IGetStory, reRender?: boolean) => void;
 export type IRenderErrorFn = (error: Error) => void;
