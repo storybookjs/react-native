@@ -73,14 +73,14 @@ import { Button } from '@storybook/angular/demo';
 
 const stories = storiesOf('Storybook Knobs', module);
 
-// The "addDecorator" must come before the "add"
+// "withKnobs" decorator should be applied before the stories using knobs
 stories.addDecorator(withKnobs);
 
 // Knobs for Angular props
 stories.add('with text', () => ({
   component: Button,
   props: {
-   text: text('text', 'Hello Button'), // The first param on the text knob has to be exactly the same as the component input.
+   text: text('text', 'Hello Button'), // The first param of the knob function has to be exactly the same as the component input.
   },
 }));
 
