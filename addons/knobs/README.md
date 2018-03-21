@@ -36,6 +36,7 @@ import '@storybook/addon-knobs/register'
 
 Now, write your stories with knobs.
 
+### With React
 ```js
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
@@ -61,6 +62,28 @@ stories.add('as dynamic variables', () => {
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
 });
+```
+
+### With Angular
+```js
+import { storiesOf } from '@storybook/angular';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs/angular';
+
+import { Button } from '@storybook/angular/demo';
+
+const stories = storiesOf('Storybook Knobs', module);
+
+// "withKnobs" decorator should be applied before the stories using knobs
+stories.addDecorator(withKnobs);
+
+// Knobs for Angular props
+stories.add('with text', () => ({
+  component: Button,
+  props: {
+   text: text('text', 'Hello Button'), // The first param of the knob function has to be exactly the same as the component input.
+  },
+}));
+
 ```
 
 Categorize your knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
