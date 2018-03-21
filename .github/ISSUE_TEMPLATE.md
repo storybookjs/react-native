@@ -39,9 +39,9 @@ _Please list the file(s) a contributor needs to figure out where to start work a
 
 ### Acceptance criteria
 
-_Please inclide a checklist of the requirements necessary to close this ticket. The work should be narrowly scoped and limited to a few hours worth by an experienced developer at the most._
+_Please include a checklist of the requirements necessary to close this ticket. The work should be narrowly scoped and limited to a few hours worth by an experienced developer at the most._
 
 ### Who to contact
 
-_Add yourself or someone who is familiar with the code changes and requirements. This person(s) should be able to review the completed code._
+_Add yourself and/or people who are familiar with the code changes and requirements. These people should be able to review the completed code._
 End work issue - please tag this issue with the correct status and type labels
