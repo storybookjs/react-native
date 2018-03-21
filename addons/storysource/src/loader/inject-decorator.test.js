@@ -23,7 +23,24 @@ describe('inject-decorator', () => {
 
   describe('positive - angular', () => {
     const source = fs.readFileSync('./__mocks__/inject-decorator.angular-stories.txt', 'utf-8');
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
+    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, { parser: 'typescript' });
+
+    it('returns "changed" flag', () => {
+      expect(result.changed).toBeTruthy();
+    });
+
+    it('injects stories decorator after the all "storiesOf" functions', () => {
+      expect(result.source).toMatchSnapshot();
+    });
+
+    it('calculates "adds" map', () => {
+      expect(result.addsMap).toMatchSnapshot();
+    });
+  });
+
+  describe('positive - ts', () => {
+    const source = fs.readFileSync('./__mocks__/inject-decorator.ts.txt', 'utf-8');
+    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, { parser: 'typescript' });
 
     it('returns "changed" flag', () => {
       expect(result.changed).toBeTruthy();
@@ -44,6 +61,18 @@ describe('inject-decorator', () => {
       'utf-8'
     );
     const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
+
+    it('should delete ugly comments from the generated story source', () => {
+      expect(result.storySource).toMatchSnapshot();
+    });
+  });
+
+  describe('stories with ugly comments in ts', () => {
+    const source = fs.readFileSync(
+      './__mocks__/inject-decorator.ts.ugly-comments-stories.txt',
+      'utf-8'
+    );
+    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, { parser: 'typescript' });
 
     it('should delete ugly comments from the generated story source', () => {
       expect(result.storySource).toMatchSnapshot();

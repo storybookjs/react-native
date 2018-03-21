@@ -1,24 +1,7 @@
 import prettier from 'prettier';
-import { handleADD, handleSTORYOF } from './parse-helpers';
-
-const estraverse = require('estraverse');
-const acorn = require('acorn');
-
-require('acorn-stage3/inject')(acorn);
-require('acorn-jsx/inject')(acorn);
-require('acorn-es7')(acorn);
-
-const acornConfig = {
-  ecmaVersion: '9',
-  sourceType: 'module',
-  ranges: true,
-  locations: true,
-  plugins: {
-    jsx: true,
-    stage3: true,
-    es7: true,
-  },
-};
+import { patchNode } from './parse-helpers';
+import { splitSTORYOF, findAddsMap } from './traverse-helpers';
+import getParser from './parsers';
 
 function isUglyComment(comment, uglyCommentsRegex) {
   return uglyCommentsRegex.some(regex => regex.test(comment));
@@ -30,6 +13,7 @@ function generateSourceWithoutUglyComments(source, { comments, uglyCommentsRegex
 
   comments
     .filter(comment => isUglyComment(comment.value.trim(), uglyCommentsRegex))
+    .map(patchNode)
     .forEach(comment => {
       parts.pop();
 
@@ -43,55 +27,41 @@ function generateSourceWithoutUglyComments(source, { comments, uglyCommentsRegex
   return parts.join('');
 }
 
-function prettifyCode(source, { prettierConfig }) {
-  return prettier.format(source, prettierConfig);
+function prettifyCode(source, { prettierConfig, parser }) {
+  let config = prettierConfig;
+
+  if (!config.parser && parser && parser !== 'javascript') {
+    config = {
+      ...prettierConfig,
+      parser,
+    };
+  }
+
+  return prettier.format(source, config);
 }
 
-export function generateSourceWithDecorators(source, decorator) {
-  const comments = [];
+export function generateSourceWithDecorators(source, decorator, parserType) {
+  const parser = getParser(parserType);
+  const ast = parser.parse(source);
 
-  const config = {
-    ...acornConfig,
-    onComment: comments,
-  };
+  const { comments = [] } = ast;
 
-  const ast = acorn.parse(source, config);
-
-  let lastIndex = 0;
-  const parts = [source];
-
-  estraverse.traverse(ast, {
-    fallback: 'iteration',
-    enter: node => {
-      if (node.type === 'CallExpression') {
-        lastIndex = handleSTORYOF(node, parts, source, lastIndex);
-      }
-    },
-  });
+  const parts = splitSTORYOF(ast, source);
 
   const newSource = parts.join(decorator);
 
   return {
-    changed: lastIndex > 0,
+    changed: parts.length > 1,
     source: newSource,
     comments,
   };
 }
 
-export function generateAddsMap(source) {
-  const ast = acorn.parse(source, acornConfig);
-  const adds = {};
+export function generateAddsMap(source, parserType) {
+  const parser = getParser(parserType);
+  const ast = parser.parse(source);
 
-  estraverse.traverse(ast, {
-    fallback: 'iteration',
-    enter: (node, parent) => {
-      if (node.type === 'MemberExpression') {
-        handleADD(node, parent, adds);
-      }
-    },
-  });
-
-  return adds;
+  return findAddsMap(ast);
 }
 
 export function generateStorySource({ source, ...options }) {
