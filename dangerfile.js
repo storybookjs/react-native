@@ -10,7 +10,7 @@ const Versions = {
   MAJOR: 'MAJOR',
 };
 
-const branchVersion = Versions.PATCH;
+const branchVersion = Versions.MAJOR;
 
 const checkRequiredLabels = labels => {
   const forbiddenLabels = flatten([

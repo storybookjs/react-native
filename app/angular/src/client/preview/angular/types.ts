@@ -26,15 +26,7 @@ export interface NgError {
 
 export type NgProvidedData = NgStory | NgError;
 
-export interface IContext {
-  [p: string]: any;
-}
+export type IGetStory = () => NgStory;
 
-export type IGetStoryWithContext = (context: IContext) => NgStory;
-
-export type IRenderStoryFn = (
-  story: IGetStoryWithContext,
-  context: IContext,
-  reRender?: boolean
-) => void;
+export type IRenderStoryFn = (story: IGetStory, reRender?: boolean) => void;
 export type IRenderErrorFn = (error: Error) => void;

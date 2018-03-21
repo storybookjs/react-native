@@ -53,10 +53,10 @@
     "chalk": "^2.3.2",
     "codecov": "^3.0.0",
     "codelyzer": "^4.2.1",
-    "commander": "^2.15.0",
+    "commander": "^2.15.1",
     "concurrently": "^3.5.1",
     "cross-env": "^5.1.4",
-    "danger": "^3.2.0",
+    "danger": "^3.3.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.0",
@@ -131,7 +131,7 @@
       "cleanup"
     ],
     "validLabels": {
-      "breaking": "Breaking Changes",
+      "BREAKING CHANGE": "Breaking Changes",
       "feature request": "Features",
       "bug": "Bug Fixes",
       "documentation": "Documentation",
