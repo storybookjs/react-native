@@ -53,7 +53,7 @@ export default function testStorySnapshots(options = {}) {
     serializer: options.serializer,
   };
 
-  const testMethod = options.test || snapshotWithOptions({ options: snapshotOptions });
+  const testMethod = options.test || snapshotWithOptions(snapshotOptions);
 
   methods.forEach(method => {
     if (typeof testMethod[method] === 'function') {
