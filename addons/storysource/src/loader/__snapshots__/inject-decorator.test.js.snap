@@ -34,6 +34,56 @@ storiesOf('Custom|ng-content', module).addDecorator(withStorySource(__STORY__, _
 "
 `;
 
+exports[`inject-decorator positive - ts calculates "adds" map 1`] = `
+Object {
+  "ngrx|Store@With component": Object {
+    "endLoc": Object {
+      "col": 3,
+      "line": 32,
+    },
+    "startLoc": Object {
+      "col": 7,
+      "line": 28,
+    },
+  },
+}
+`;
+
+exports[`inject-decorator positive - ts injects stories decorator after the all "storiesOf" functions 1`] = `
+"import { Component } from '@angular/core';
+import { Store, StoreModule } from '@ngrx/store';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
+
+@Component({
+  selector: 'storybook-comp-with-store',
+  template: '<div>{{this.getSotreState()}}</div>',
+})
+class WithStoreComponent {
+  private store: Store<any>;
+
+  constructor(store: Store<any>) {
+    this.store = store;
+  }
+
+  getSotreState(): string {
+    return this.store === undefined ? 'Store is NOT injected' : 'Store is injected';
+  }
+}
+
+storiesOf('ngrx|Store', module).addDecorator(withStorySource(__STORY__, __ADDS_MAP__))
+  .addDecorator(
+    moduleMetadata({
+      imports: [StoreModule.forRoot({})],
+      declarations: [WithStoreComponent],
+    })
+  )
+  .add('With component', () => {
+    return {
+      component: WithStoreComponent,
+    };
+  });"
+`;
+
 exports[`inject-decorator positive calculates "adds" map 1`] = `
 Object {
   "Addons|Info.Decorator@Use Info as story decorator": Object {
@@ -333,6 +383,38 @@ storiesOf('Addons|Info.GitHub issues', module).addDecorator(withStorySource(__ST
     </div>
   ))
 );
+"
+`;
+
+exports[`inject-decorator stories with ugly comments in ts should delete ugly comments from the generated story source 1`] = `
+"import React from 'react';
+
+@Component({
+  selector: 'storybook-comp-with-store',
+  template: '<div>{{this.getSotreState()}}</div>',
+})
+class WithStoreComponent {
+  private store: Store<any>;
+
+  constructor(store: Store<any>) {
+    this.store = store;
+  }
+
+  getSotreState(): string {
+    return this.store === undefined ? 'Store is NOT injected' : 'Store is injected';
+  }
+}
+
+import { storiesOf } from '@storybook/react';
+
+const x = 0;
+
+storiesOf('Foo', module).add('bar', () => <div>baz</div>);
+
+/*
+ This is actually a good comment that will help
+ users to understand what's going on here.
+*/
 "
 `;
 
