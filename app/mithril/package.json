@@ -23,7 +23,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-links": "3.4.0-rc.3",
     "@storybook/addons": "3.4.0-rc.3",
     "@storybook/channel-postmessage": "3.4.0-rc.3",
     "@storybook/client-logger": "3.4.0-rc.3",

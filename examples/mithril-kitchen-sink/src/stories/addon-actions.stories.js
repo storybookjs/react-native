@@ -4,7 +4,7 @@ import m from 'mithril';
 
 import { storiesOf } from '@storybook/mithril';
 import { action } from '@storybook/addon-actions';
-import { Button } from '@storybook/mithril/demo';
+import Button from '../Button';
 
 storiesOf('Addons|Actions', module)
   .add('Action only', () => ({
