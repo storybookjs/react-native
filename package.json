@@ -79,7 +79,7 @@
     "jest-environment-jsdom": "^22.4.3",
     "jest-enzyme": "^4.2.0",
     "jest-image-snapshot": "^2.4.0",
-    "jest-jasmine2": "^22.4.2",
+    "jest-jasmine2": "^22.4.3",
     "jest-preset-angular": "^5.2.1",
     "jest-vue-preprocessor": "^1.4.0",
     "lerna": "2.5.1",
