@@ -39,6 +39,7 @@
     "qs": "^6.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "redux": "^3.7.2",
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.8.1",
     "style-loader": "^0.20.3",
