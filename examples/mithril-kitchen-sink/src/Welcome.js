@@ -1,7 +1,6 @@
 /** @jsx m */
 
 import m from 'mithril';
-import { linkTo, hrefTo } from '@storybook/addon-links';
 
 const Main = {
   view: vnode => (
@@ -87,39 +86,6 @@ const NavButton = {
   ),
 };
 
-const StoryLink = {
-  oninit: vnode => {
-    // eslint-disable-next-line no-param-reassign
-    vnode.state.href = '/';
-    // eslint-disable-next-line no-param-reassign
-    vnode.state.onclick = () => {
-      linkTo(vnode.attrs.kind, vnode.attrs.story)();
-      return false;
-    };
-    StoryLink.updateHref(vnode);
-  },
-  updateHref: async vnode => {
-    const href = await hrefTo(vnode.attrs.kind, vnode.attrs.story);
-    // eslint-disable-next-line no-param-reassign
-    vnode.state.href = href;
-    m.redraw();
-  },
-  view: vnode => (
-    <a
-      href={vnode.state.href}
-      style={{
-        color: '#1474f3',
-        textDecoration: 'none',
-        borderBottom: '1px solid #1474f3',
-        paddingBottom: '2px',
-      }}
-      onClick={vnode.state.onclick}
-    >
-      {vnode.children}
-    </a>
-  ),
-};
-
 const Welcome = {
   view: vnode => (
     <Main>
@@ -134,15 +100,8 @@ const Welcome = {
         (Basically a story is like a visual test case.)
       </p>
       <p>
-        See these sample{' '}
-        {vnode.attrs.showApp ? (
-          <NavButton onclick={vnode.attrs.showApp}>stories</NavButton>
-        ) : (
-          <StoryLink kind={vnode.attrs.showKind} story={vnode.attrs.showStory}>
-            stories
-          </StoryLink>
-        )}{' '}
-        for a component called <InlineCode>Button</InlineCode>
+        See these sample <NavButton onclick={vnode.attrs.showApp}>stories</NavButton> for a
+        component called <InlineCode>Button</InlineCode>
         .
       </p>
       <p>
