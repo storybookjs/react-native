@@ -37,6 +37,7 @@
   },
   "peerDependencies": {
     "@storybook/addons": "3.4.0-rc.3",
+    "@storybook/core": "3.4.0-rc.3",
     "babel-core": "^6.26.0 || ^7.0.0-0"
   }
 }
