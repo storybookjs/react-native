@@ -72,7 +72,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [Vue](app/vue)
 -   [Angular](app/angular)
 -   [Polymer](app/polymer) <sup>alpha</sup>
--   [Mithril](app/mithril)
+-   [Mithril](app/mithril) <sup>alpha</sup>
 
 ### Sub Projects
 
