@@ -37,7 +37,7 @@
     "@storybook/addons": "3.4.0-rc.3",
     "@storybook/angular": "3.4.0-rc.3",
     "@types/jasmine": "~2.8.6",
-    "@types/node": "~9.4.7",
+    "@types/node": "~9.6.0",
     "global": "^4.3.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
