@@ -31,10 +31,10 @@ Usually, you might already have completed this step. If not, here are some resou
 
 If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
 
-Otherwise check these links:
+If you aren't familiar with Jest, here are some resources:
 
--   [Egghead lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest). ***paid content***
--   [Official Docs](https://facebook.github.io/jest/docs/en/getting-started.html) 
+-   [Getting Started - Jest Official Documentation](https://facebook.github.io/jest/docs/en/getting-started.html) 
+-   [Javascript Testing with Jest - Egghead](https://egghead.io/lessons/javascript-test-javascript-with-jest). ***paid content***
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
