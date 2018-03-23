@@ -2,7 +2,7 @@
 
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
-[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/badge.svg)](https://snyk.io/test/github/storybooks/storybook)
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
@@ -100,13 +100,19 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 ## Live Examples
 
-### 3.4.alpha
+### 4.0.alpha
 > Note, this is an Alpha version. Some of the features still might not be released
 
 - [React Official](https://storybooks-official.netlify.com)
 - [Vue](https://storybooks-vue.netlify.com/)
 - [Angular](https://storybooks-angular.netlify.com/)
 - [Polymer](https://storybooks-polymer.netlify.com/)
+
+### 3.4
+- [React Official](https://release-3-4--storybooks-official.netlify.com)
+- [Vue](https://release-3-4--storybooks-vue.netlify.com/)
+- [Angular](https://release-3-4--storybooks-angular.netlify.com/)
+- [Polymer](https://release-3-4--storybooks-polymer.netlify.com/)
 
 ### 3.3
 - [React Official](https://release-3-3--storybooks-official.netlify.com)

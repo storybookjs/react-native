@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { viewports, defaultViewport } from './viewportInfo';
 import * as styles from './styles';
 
-export function SelectViewport({ activeViewport, onChange }) {
+export function SelectViewport({ viewports, defaultViewport, activeViewport, onChange }) {
   return (
     <div style={styles.row}>
       <label htmlFor="device" style={styles.label}>
         Device
       </label>
       <select style={styles.action} id="device" value={activeViewport} onChange={onChange}>
-        <option value={defaultViewport}>Default</option>
-        {Object.keys(viewports).map(key => (
-          <option value={key} key={key}>
-            {viewports[key].name}
-          </option>
-        ))}
+        {Object.keys(viewports).map(key => {
+          const { name } = viewports[key];
+          return (
+            <option value={key} key={key}>
+              {key === defaultViewport ? `(Default) ${name}` : name}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
@@ -25,4 +26,6 @@ export function SelectViewport({ activeViewport, onChange }) {
 SelectViewport.propTypes = {
   onChange: PropTypes.func.isRequired,
   activeViewport: PropTypes.string.isRequired,
+  viewports: PropTypes.shape({}).isRequired,
+  defaultViewport: PropTypes.string.isRequired,
 };

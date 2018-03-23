@@ -1,6 +1,6 @@
 {
   "name": "@storybook/angular",
-  "version": "3.4.0-rc.2",
+  "version": "3.4.0-rc.3",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/angular",
   "bugs": {
@@ -23,11 +23,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "3.4.0-rc.2",
-    "@storybook/channel-postmessage": "3.4.0-rc.2",
-    "@storybook/core": "3.4.0-rc.2",
-    "@storybook/node-logger": "3.4.0-rc.2",
-    "@storybook/ui": "3.4.0-rc.2",
+    "@storybook/addons": "3.4.0-rc.3",
+    "@storybook/channel-postmessage": "3.4.0-rc.3",
+    "@storybook/core": "3.4.0-rc.3",
+    "@storybook/node-logger": "3.4.0-rc.3",
+    "@storybook/ui": "3.4.0-rc.3",
     "airbnb-js-shims": "^1.4.1",
     "angular2-template-loader": "^0.6.2",
     "babel-loader": "^7.1.4",
@@ -44,15 +44,14 @@
     "html-webpack-plugin": "^2.30.1",
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
-    "node-sass": "^4.8.2",
+    "node-sass": "^4.8.3",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.0.0",
-    "redux": "^3.6.0",
     "sass-loader": "^6.0.7",
     "ts-loader": "^3.5.0",
-    "uglifyjs-webpack-plugin": "^1.2.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "util-deprecate": "^1.0.2",
     "webpack": "^3.11.0",
     "webpack-hot-middleware": "^2.21.2",
@@ -60,7 +59,7 @@
   },
   "devDependencies": {
     "mock-fs": "^4.3.0",
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.2"
   },
   "peerDependencies": {
     "@angular/common": ">=4.0.0",
