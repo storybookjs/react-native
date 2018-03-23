@@ -78,7 +78,7 @@ export default class Preview {
             stories={this._stories}
             events={this._events}
             url={webUrl}
-            animated={params.animated}
+            animated={params.onDeviceUIAnimated}
           />
         : <StoryView url={webUrl} events={this._events} />;
     };
