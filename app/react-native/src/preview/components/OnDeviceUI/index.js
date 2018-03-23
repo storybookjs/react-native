@@ -73,11 +73,13 @@ export default class OnDeviceUI extends Component {
   handleToggleMenu = () => {
     const isMenuOpen = !this.state.isMenuOpen;
 
-    Animated.timing(this.state.menuAnimation, {
-      toValue: isMenuOpen ? 1 : 0,
-      duration: 150,
-      easing: Easing.linear,
-    }).start();
+    if (this.props.animated) {
+      Animated.timing(this.state.menuAnimation, {
+        toValue: isMenuOpen ? 1 : 0,
+        duration: 150,
+        easing: Easing.linear,
+      }).start();
+    }
 
     this.setState({
       isMenuOpen,
@@ -85,8 +87,8 @@ export default class OnDeviceUI extends Component {
   };
 
   render() {
-    const { stories, events, url } = this.props;
-    const { isPortrait, menuAnimation, selectedKind, selectedStory } = this.state;
+    const { stories, animated, events, url } = this.props;
+    const { isPortrait, isMenuOpen, menuAnimation, selectedKind, selectedStory } = this.state;
 
     const iPhoneXStyles = ifIphoneX(
       isPortrait
@@ -99,15 +101,23 @@ export default class OnDeviceUI extends Component {
       {}
     );
 
+    let translateX;
+
+    if (animated) {
+      translateX = menuAnimation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [-DRAWER_WIDTH - 30, 0],
+      });
+    } else {
+      translateX = isMenuOpen ? 0 : -DRAWER_WIDTH - 30;
+    }
+
     const menuStyles = [
       style.menuContainer,
       {
         transform: [
           {
-            translateX: menuAnimation.interpolate({
-              inputRange: [0, 1],
-              outputRange: [-DRAWER_WIDTH - 30, 0],
-            }),
+            translateX,
           },
         ],
       },
@@ -117,10 +127,12 @@ export default class OnDeviceUI extends Component {
     const headerStyles = [
       style.headerContainer,
       {
-        opacity: menuAnimation.interpolate({
-          inputRange: [0, 1],
-          outputRange: [1, 0],
-        }),
+        opacity: animated
+          ? menuAnimation.interpolate({
+              inputRange: [0, 1],
+              outputRange: [1, 0],
+            })
+          : +!isMenuOpen,
       },
     ];
 
@@ -200,8 +212,10 @@ OnDeviceUI.propTypes = {
     removeListener: PropTypes.func.isRequired,
   }).isRequired,
   url: PropTypes.string,
+  animated: PropTypes.bool,
 };
 
 OnDeviceUI.defaultProps = {
   url: '',
+  animated: true,
 };
