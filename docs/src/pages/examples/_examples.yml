@@ -19,6 +19,13 @@ lonelyplanet:
   source: https://github.com/lonelyplanet/backpack-ui
   demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
+uber:
+  thumbnail: uber.png
+  title: Uber React-Vis
+  description: A composable charting library.
+  source: https://github.com/uber/react-vis
+  demo: https://uber.github.io/react-vis/website/dist/storybook/index.html
+  site: https://uber.github.io/react-vis/
 atlassian:
   thumbnail: atlassian.png
   title: Atlassian AtlasKit
