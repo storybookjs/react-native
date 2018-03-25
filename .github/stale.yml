@@ -1,7 +1,7 @@
 # Number of days of inactivity before an issue becomes stale
-daysUntilStale: 45
+daysUntilStale: 21
 # Number of days of inactivity before a stale issue is closed
-daysUntilClose: 15
+daysUntilClose: 30
 # Issues with these labels will never be considered stale
 exemptLabels:
   - todo
@@ -20,7 +20,7 @@ markComment: >
   If there are still questions, comments, or bugs, please feel free to continue
   the discussion. Unfortunately, we don't have time to get to every issue. We
   are always open to contributions so please send us a pull request if you would
-  like to help. Inactive issues will be closed after 60 days. Thanks!
+  like to help. Inactive issues will be closed after 30 days. Thanks!
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: >
   Hey there, it's me again! I am going close this issue to help our maintainers 
