@@ -1,3 +1,80 @@
+# 3.4.0-rc.3
+
+2018-March-19
+
+#### Documentation
+
+-   Add example for @ngrx/store [#3233](https://github.com/storybooks/storybook/pull/3233)
+-   Fix missing declaration in Angular example [#3213](https://github.com/storybooks/storybook/pull/3213)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+58 Updates
+</summary>
+
+-   Update node-sass in app/angular from 4.8.2 to 4.8.3 [#3239](https://github.com/storybooks/storybook/pull/3239)
+-   Update postcss-loader in lib/core from 2.1.1 to 2.1.2 [#3234](https://github.com/storybooks/storybook/pull/3234)
+-   Upgraded `eslint` in `/` from "4.18.2" to "4.19.0" [#3230](https://github.com/storybooks/storybook/pull/3230)
+-   Upgraded `graphql` in `addons/graphql` from "0.13.1" to "0.13.2" [#3230](https://github.com/storybooks/storybook/pull/3230)
+-   Update gatsby in /docs from 1.9.233 to 1.9.236 [#3229](https://github.com/storybooks/storybook/pull/3229)
+-   Upgraded `gatsby-transformer-remark` in `/docs` from "1.7.36" to "1.7.37" [#3226](https://github.com/storybooks/storybook/pull/3226)
+-   Upgraded `gatsby` in `/docs` from "1.9.232" to "1.9.233" [#3226](https://github.com/storybooks/storybook/pull/3226)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react` from "1.2.3" to "1.2.4" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `puppeteer` in `addons/storyshots` from "1.1.1" to "1.2.0" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `enzyme-to-json` in `addons/storyshots` from "3.3.1" to "3.3.3" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `css-loader` in `lib/core` from "0.28.10" to "0.28.11" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/angular` from "1.2.3" to "1.2.4" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/polymer` from "1.2.3" to "1.2.4" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/react-native` from "1.2.3" to "1.2.4" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `uglifyjs-webpack-plugin` in `app/vue` from "1.2.3" to "1.2.4" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `enzyme-to-json` in `examples/cra-kitchen-sink` from "3.3.1" to "3.3.3" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `enzyme-to-json` in `examples/official-storybook` from "3.3.1" to "3.3.3" [#3227](https://github.com/storybooks/storybook/pull/3227)
+-   Upgraded `@angular/common` in `/` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/compiler` in `/` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/core` in `/` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/forms` in `/` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/platform-browser` in `/` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/platform-browser-dynamic` in `/` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `danger` in `/` from "3.1.8" to "3.2.0" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `eslint-plugin-jest` in `/` from "21.14.1" to "21.15.0" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `jest-vue-preprocessor` in `/` from "1.3.1" to "1.4.0" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `react-chromatic` in `examples/official-storybook` from "0.7.10" to "0.7.11" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/common` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/compiler` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/core` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/forms` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/platform-browser` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/platform-browser-dynamic` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `@angular/compiler-cli` in `examples/angular-cli` from "5.2.8" to "5.2.9" [#3219](https://github.com/storybooks/storybook/pull/3219)
+-   Upgraded `eslint-plugin-jest` in `/` from "21.14.0" to "21.14.1" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `jest-image-snapshot` in `/` from "2.3.0" to "2.4.0" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `nodemon` in `app/react` from "1.17.1" to "1.17.2" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `vue` in `addons/knobs` from "2.5.15" to "2.5.16" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `jest-image-snapshot` in `addons/storyshots` from "2.3.0" to "2.4.0" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `nodemon` in `app/angular` from "1.17.1" to "1.17.2" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `nodemon` in `app/polymer` from "1.17.1" to "1.17.2" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `nodemon` in `app/vue` from "1.17.1" to "1.17.2" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `vue` in `app/vue` from "2.5.15" to "2.5.16" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `vue-template-compiler` in `app/vue` from "2.5.15" to "2.5.16" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `vue` in `examples/vue-kitchen-sink` from "2.5.15" to "2.5.16" [#3210](https://github.com/storybooks/storybook/pull/3210)
+-   Upgraded `tslint-config-prettier` in `/` from "1.9.0" to "1.10.0" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `glamorous` in `app/react` from "4.12.0" to "4.12.1" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `glamorous` in `addons/actions` from "4.12.0" to "4.12.1" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `glamorous` in `lib/components` from "4.12.0" to "4.12.1" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `glamorous` in `addons/a11y` from "4.12.0" to "4.12.1" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `glamorous` in `addons/info` from "4.12.0" to "4.12.1" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `glamorous` in `addons/jest` from "4.12.0" to "4.12.1" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `react-modal` in `lib/ui` from "3.3.1" to "3.3.2" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `express` in `lib/core` from "4.16.2" to "4.16.3" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `node-sass` in `app/angular` from "4.8.1" to "4.8.2" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `express` in `app/react-native` from "4.16.2" to "4.16.3" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Upgraded `rxjs` in `examples/angular-cli` from "5.5.6" to "5.5.7" [#3201](https://github.com/storybooks/storybook/pull/3201)
+-   Update gatsby in /docs from 1.9.231 to 1.9.232 [#3200](https://github.com/storybooks/storybook/pull/3200)
+
+</details>
+
 # 3.4.0-rc.2
 
 2018-March-13
@@ -376,10 +453,17 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 #### Features
 
 -   Addon-storysource: story source in addon pane [#2885](https://github.com/storybooks/storybook/pull/2885)
+-   Addon Storysource improvements [#3040](https://github.com/storybooks/storybook/pull/3040)
+-   Add moduleMetdata decorator for supplying common Angular metadata [#2959](https://github.com/storybooks/storybook/pull/2959)
+-   `Addon Storysource` Add auto scrolling to the selected story [#3025](https://github.com/storybooks/storybook/pull/3025)
+-   Enable groupId option for knobs to be organized into sub panels. [#2661](https://github.com/storybooks/storybook/pull/2661)
+-   Added beforeScreenshot config option to addons/storyshots, to allow testing of components with mounting animations [#2972](https://github.com/storybooks/storybook/pull/2972)
+-   Add GitHub flavored markdown notes [#2946](https://github.com/storybooks/storybook/pull/2946)
 
 #### Bug Fixes
 
 -   Fix problem with RN on latest `master` build [#3045](https://github.com/storybooks/storybook/pull/3045)
+-   Use @storybook/podda to fix npm engine version in podda [#3033](https://github.com/storybooks/storybook/pull/3033)
 
 #### Documentation
 
@@ -573,16 +657,6 @@ Fix publishing options to use exact versions for cross-dependencies per this cha
 -   Upgraded `chalk` in `lib/cli` from "2.3.0" to "2.3.1" [#2961](https://github.com/storybooks/storybook/pull/2961)
 
 </details>
-
-#### Other
-
--   Addon Storysource improvements [#3040](https://github.com/storybooks/storybook/pull/3040)
--   #3029 use @storybook/podda to fix npm engine version in podda [#3033](https://github.com/storybooks/storybook/pull/3033)
--   Add moduleMetdata decorator for supplying common Angular metadata [#2959](https://github.com/storybooks/storybook/pull/2959)
--   `Addon Storysource` Add auto scrolling to the selected story [#3025](https://github.com/storybooks/storybook/pull/3025)
--   add GitHub flavored markdown notes [#2946](https://github.com/storybooks/storybook/pull/2946)
--   Added beforeScreenshot config option to addons/storyshots, to allow testing of components with mounting animations [#2972](https://github.com/storybooks/storybook/pull/2972)
--   Enable groupId option for knobs to be organized into sub panels. [#2661](https://github.com/storybooks/storybook/pull/2661)
 
 # 3.3.14
 

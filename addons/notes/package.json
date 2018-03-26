@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "3.4.0-rc.2",
+  "version": "3.4.0-rc.3",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -21,13 +21,13 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "marked": "^0.3.17",
+    "marked": "^0.3.18",
     "prop-types": "^15.6.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@storybook/react": "3.4.0-rc.2",
-    "@types/react": "^16.0.40"
+    "@storybook/react": "3.4.0-rc.3",
+    "@types/react": "^16.0.41"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",

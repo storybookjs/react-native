@@ -16,7 +16,11 @@ function extendOptions(source, comments, options) {
 }
 
 function inject(source, decorator, options = {}) {
-  const { changed, source: newSource, comments } = generateSourceWithDecorators(source, decorator);
+  const { changed, source: newSource, comments } = generateSourceWithDecorators(
+    source,
+    decorator,
+    options.parser
+  );
 
   if (!changed) {
     return {
@@ -27,7 +31,7 @@ function inject(source, decorator, options = {}) {
   }
 
   const storySource = generateStorySource(extendOptions(source, comments, options));
-  const addsMap = generateAddsMap(storySource);
+  const addsMap = generateAddsMap(storySource, options.parser);
 
   return {
     source: newSource,

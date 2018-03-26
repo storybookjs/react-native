@@ -34,10 +34,10 @@
     "rollup-plugin-serve": "^0.4.0",
     "rollup-plugin-vue": "^2.4.0",
     "rollup-watch": "^4.0.0",
-    "@storybook/vue": "^3.4.0-rc.2",
-    "@storybook/addon-actions": "^3.4.0-rc.2",
-    "@storybook/addon-links": "^3.4.0-rc.2",
-    "@storybook/addons": "^3.4.0-rc.2",
-    "babel-preset-vue": "^2.0.1"
+    "@storybook/vue": "^3.4.0-rc.3",
+    "@storybook/addon-actions": "^3.4.0-rc.3",
+    "@storybook/addon-links": "^3.4.0-rc.3",
+    "@storybook/addons": "^3.4.0-rc.3",
+    "babel-preset-vue": "^2.0.2"
   }
 }
