@@ -43,15 +43,14 @@
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.1.0",
     "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
     "react": "^16.2.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
-    "uglifyjs-webpack-plugin": "^1.2.4",
     "util-deprecate": "^1.0.2",
-    "webpack": "^3.11.0",
+    "webpack": "^4.2.0",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
