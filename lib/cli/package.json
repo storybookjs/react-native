@@ -39,7 +39,7 @@
     "merge-dirs": "^0.2.1",
     "semver": "^5.5.0",
     "shelljs": "^0.8.1",
-    "update-notifier": "^2.3.0"
+    "update-notifier": "^2.4.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.4.0-rc.3",
