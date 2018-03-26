@@ -11,6 +11,7 @@ import {
   SET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
   CONFIGURE_VIEWPORT_EVENT_ID,
   UPDATE_VIEWPORT_EVENT_ID,
+  VIEWPORT_CHANGED_EVENT_ID,
   INITIAL_VIEWPORTS,
   DEFAULT_VIEWPORT,
 } from '../../shared';
@@ -52,6 +53,8 @@ export class Panel extends Component {
       viewports: viewportsTransformer(INITIAL_VIEWPORTS),
       isLandscape: false,
     };
+
+    this.previousViewport = DEFAULT_VIEWPORT;
 
     this.setStoryDefaultViewport = debounce(
       this.setStoryDefaultViewport,
@@ -120,10 +123,30 @@ export class Panel extends Component {
           viewport,
           isLandscape: false,
         },
-        this.updateIframe
+        () => {
+          this.updateIframe();
+          this.emitViewportChanged();
+        }
       );
     }
   };
+
+  emitViewportChanged = () => {
+    const { channel } = this.props;
+    const { viewport, viewports } = this.state;
+
+    if (!this.shouldNotify()) {
+      return;
+    }
+
+    this.previousViewport = viewport;
+
+    channel.emit(VIEWPORT_CHANGED_EVENT_ID, {
+      viewport: viewports[viewport],
+    });
+  };
+
+  shouldNotify = () => this.previousViewport !== this.state.viewport;
 
   toggleLandscape = () => {
     const { isLandscape } = this.state;

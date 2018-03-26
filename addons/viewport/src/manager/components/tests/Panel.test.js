@@ -8,11 +8,15 @@ import * as styles from '../styles';
 import { DEFAULT_VIEWPORT, INITIAL_VIEWPORTS } from '../../../shared';
 
 const initialViewportAt = index => Object.keys(INITIAL_VIEWPORTS)[index];
+const transformedInitialViewports = viewportsTransformer(INITIAL_VIEWPORTS);
+
+jest.mock('lodash.debounce', () => jest.fn(fn => fn));
 
 describe('Viewport/Panel', () => {
   const props = {
     channel: {
       on: jest.fn(),
+      emit: jest.fn(),
       removeListener: jest.fn(),
     },
     api: {
@@ -31,7 +35,7 @@ describe('Viewport/Panel', () => {
       expect(subject.instance().state).toEqual({
         viewport: DEFAULT_VIEWPORT,
         defaultViewport: DEFAULT_VIEWPORT,
-        viewports: viewportsTransformer(INITIAL_VIEWPORTS),
+        viewports: transformedInitialViewports,
         isLandscape: false,
       });
     });
@@ -161,7 +165,7 @@ describe('Viewport/Panel', () => {
         {
           defaultViewport: DEFAULT_VIEWPORT,
           viewport: DEFAULT_VIEWPORT,
-          viewports: viewportsTransformer(INITIAL_VIEWPORTS),
+          viewports: transformedInitialViewports,
         },
         subject.instance().updateIframe
       );
@@ -180,12 +184,11 @@ describe('Viewport/Panel', () => {
       });
 
       it('sets the state with the new information', () => {
-        expect(subject.instance().setState).toHaveBeenCalledWith(
+        expect(subject.instance().setState.mock.calls[0][0]).toEqual(
           {
             viewport: initialViewportAt(1),
             isLandscape: false,
-          },
-          subject.instance().updateIframe
+          }
         );
       });
     });
@@ -205,6 +208,7 @@ describe('Viewport/Panel', () => {
     beforeEach(() => {
       subject.instance().setState = jest.fn();
       subject.instance().updateIframe = jest.fn();
+      subject.instance().emitViewportChanged = jest.fn();
       subject.instance().setStoryDefaultViewport(initialViewportAt(1));
     });
 
@@ -222,9 +226,49 @@ describe('Viewport/Panel', () => {
           isLandscape: false
         }
       );
-      expect(subject.instance().setState.mock.calls[1][1]).toEqual(
-        subject.instance().updateIframe
-      );
+      expect(typeof subject.instance().setState.mock.calls[1][1]).toEqual('function');
+      
+      const updaterFunction = subject.instance().setState.mock.calls[1][1];
+      updaterFunction();
+
+      expect(subject.instance().updateIframe).toHaveBeenCalled();
+      expect(subject.instance().emitViewportChanged).toHaveBeenCalled();
+    });
+  });
+
+  describe('emitViewportChanged', () => {
+    beforeEach(() => {
+      subject.instance().setState = jest.fn();
+      subject.instance().updateIframe = jest.fn();
+    });
+
+    describe('new viewport', () => {
+      beforeEach(() => {
+        subject.instance().state = {
+          ...subject.instance().state,
+          viewport: initialViewportAt(1)
+        };
+        subject.instance().emitViewportChanged();
+      });
+
+      it('emits viewport changed event', () => {
+        const viewport = transformedInitialViewports[initialViewportAt(1)];
+
+        expect(props.channel.emit).toHaveBeenCalledWith(
+          'addon:viewport:viewportChanged',
+          { viewport }
+        );
+      });
+    });
+
+    describe('same as previous viewport', () => {
+      beforeEach(() => {
+        subject.instance().emitViewportChanged();
+      });
+
+      it('does not emit viewport changed event', () => {
+        expect(props.channel.emit).not.toHaveBeenCalled();
+      });
     });
   });
 
@@ -342,7 +386,7 @@ describe('Viewport/Panel', () => {
       it('passes the INITIAL_VIEWPORTS', () => {
         expect(select.props()).toEqual(
           expect.objectContaining({
-            viewports: viewportsTransformer(INITIAL_VIEWPORTS),
+            viewports: transformedInitialViewports,
           })
         );
       });

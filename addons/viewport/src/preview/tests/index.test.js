@@ -6,6 +6,7 @@ jest.mock('@storybook/addons');
 describe('Viewport preview', () => {
   const channel = {
     emit: jest.fn(),
+    on: jest.fn(),
   };
   addons.getChannel.mockReturnValue(channel);
 
