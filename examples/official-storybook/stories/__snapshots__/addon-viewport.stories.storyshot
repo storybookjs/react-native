@@ -20,7 +20,19 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Inherited 1`]
 </div>
 `;
 
-exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden 1`] = `
+exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "Viewport" component 1`] = `
+<div
+  style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased"
+>
+  I respect my parents but I should be looking good on 
+  <b>
+    iPhone 6 Plus
+  </b>
+  .
+</div>
+`;
+
+exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" decorator 1`] = `
 <div
   style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased"
 >
