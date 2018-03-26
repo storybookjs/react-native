@@ -10,8 +10,15 @@ const config = {
         use: ['json-loader', 'yaml-loader'],
       },
       {
-        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        test: /\.(jpg|png|gif|eot|ttf|woff|woff2)$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+        options: {
+          noquotes: true,
+        },
       },
     ],
   },
