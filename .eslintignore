@@ -3,6 +3,8 @@ build
 coverage
 node_modules
 docs/public
+storybook-static
+built-storybooks
 lib/cli/test
 *.bundle.js
 *.js.map
