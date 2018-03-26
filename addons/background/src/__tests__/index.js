@@ -16,34 +16,6 @@ describe('Background Decorator', () => {
     expect(backgroundDecorator).toBeDefined();
   });
 
-  it('should initially have a transparent background state', () => {
-    const SpiedChannel = new EventEmitter();
-    const backgroundDecorator = shallow(
-      <BackgroundDecorator story={testStory} channel={SpiedChannel} />
-    );
-
-    expect(backgroundDecorator.state().background).toBe('transparent');
-  });
-
-  it('should have a background matching its state', () => {
-    const SpiedChannel = new EventEmitter();
-    const backgroundDecorator = shallow(
-      <BackgroundDecorator story={testStory} channel={SpiedChannel} />
-    );
-
-    expect(backgroundDecorator.html().match(/background:transparent/gim)).toHaveLength(1);
-  });
-
-  it('should set internal state when background event called', () => {
-    const SpiedChannel = new EventEmitter();
-    const backgroundDecorator = shallow(
-      <BackgroundDecorator story={testStory} channel={SpiedChannel} />
-    );
-
-    SpiedChannel.emit('background', '#123456');
-    expect(backgroundDecorator.state().background).toBe('#123456');
-  });
-
   it('should send background-unset event when the component unmounts', () => {
     const SpiedChannel = new EventEmitter();
     const backgroundDecorator = shallow(

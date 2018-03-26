@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Custom|ng-content Default 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    <storybook-with-ng-content>
+      <div
+        style="color: #1e88e5;"
+      >
+        <h1>
+          This is rendered in ng-content
+        </h1>
+      </div>
+    </storybook-with-ng-content>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;

@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/angular';
 import { IconButtonComponent } from './icon-button.component';
 import { BaseButtonComponent } from './base-button.component';
 
-storiesOf('Inheritance', module)
+storiesOf('Custom|Inheritance', module)
   .add('icon button', () => ({
     component: IconButtonComponent,
     props: {

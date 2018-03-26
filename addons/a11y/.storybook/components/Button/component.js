@@ -15,10 +15,10 @@ const styles = {
   wrong: {
     color: '#ffffff',
     backgroundColor: '#4caf50',
-  }
-}
+  },
+};
 
-function Button({ label, content, disabled, contrast }) {
+function Button({ content, disabled, contrast }) {
   return (
     <button
       style={{
@@ -27,19 +27,19 @@ function Button({ label, content, disabled, contrast }) {
       }}
       disabled={disabled}
     >
-      { content }
+      {content}
     </button>
-  )
+  );
 }
 
 Button.propTypes = {
-  label: PropTypes.string,
   content: PropTypes.string,
   disabled: PropTypes.bool,
-  contrast: PropTypes.oneOf(['ok', 'wrong'])
+  contrast: PropTypes.oneOf(['ok', 'wrong']),
 };
 
 Button.defaultProps = {
+  content: 'null',
   disabled: false,
   contrast: 'ok',
 };

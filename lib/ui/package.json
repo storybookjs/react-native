@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "3.4.0-alpha.5",
+  "version": "3.4.0-rc.3",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,36 +15,34 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/components": "^3.4.0-alpha.5",
+    "@storybook/components": "3.4.0-rc.3",
     "@storybook/mantra-core": "^1.7.2",
+    "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.3",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
-    "events": "^1.1.1",
+    "events": "^2.0.0",
     "fuse.js": "^3.2.0",
     "global": "^4.3.2",
-    "json-stringify-safe": "^5.0.1",
-    "keycode": "^2.1.9",
+    "keycode": "^2.2.0",
     "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
-    "podda": "^1.2.2",
-    "prop-types": "^15.6.0",
+    "lodash.throttle": "^4.1.1",
+    "prop-types": "^15.6.1",
     "qs": "^6.5.1",
-    "react-fuzzy": "^0.5.1",
+    "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
-    "react-inspector": "^2.2.2",
-    "react-modal": "^3.1.11",
-    "react-split-pane": "^0.1.74",
-    "react-treebeard": "^2.1.0",
-    "redux": "^3.7.2"
+    "react-modal": "^3.3.2",
+    "react-split-pane": "^0.1.77",
+    "react-treebeard": "^2.1.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.0-alpha.5",
-    "@storybook/react": "^3.4.0-alpha.5"
+    "@storybook/addon-actions": "3.4.0-rc.3",
+    "@storybook/react": "3.4.0-rc.3"
   }
 }

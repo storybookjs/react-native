@@ -33,8 +33,11 @@ jobs:
           key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - example/cra-kitchen-sink/node_modules
-            - example/vue-kitchen-sink/node_modules
+            - examples/angular-cli/node_modules
+            - examples/cra-kitchen-sink/node_modules
+            - examples/official-storybook/node_modules
+            - examples/polymer-cli/node_modules
+            - examples/vue-kitchen-sink/node_modules
       - save_cache:
           name: "Cache core dist"
           key: core-dist-{{ .Revision }}
@@ -42,6 +45,21 @@ jobs:
             - addons
             - app
             - lib
+  danger:
+    <<: *defaults
+    environment:
+      - TOKEN_HEAD: 49aa9a6549007391dfcef9c76fca32a73560fd8
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Danger"
+          command: |
+            echo $DANGER_GITHUB_API_TOKEN
+            DANGER_GITHUB_API_TOKEN=${TOKEN_HEAD}3 yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
     steps:
@@ -55,17 +73,8 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
-      - run:
-          name: "Build official-storybook"
-          command: |
-            cd examples/official-storybook
-            yarn build-storybook
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -82,6 +91,39 @@ jobs:
             cd examples/angular-cli
             yarn build-storybook
       - run:
+          name: "Build polymer-cli"
+          command: |
+            cd examples/polymer-cli
+            yarn build-storybook
+      - run:
+          name: "Build official-storybook"
+          command: |
+            cd examples/official-storybook
+            yarn build-storybook
+      - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
+      - run:
+          name: "Run image snapshots"
+          command: yarn test --image
+      - store_artifacts:
+          path: examples/official-storybook/image-snapshots/__image_snapshots__
+          destination: official_storybook_image_snapshots
+  smoke-tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
+
+      - run:
           name: "Run react kitchen-sink (smoke test)"
           command: |
             cd examples/cra-kitchen-sink
@@ -97,17 +139,15 @@ jobs:
             cd examples/angular-cli
             yarn storybook --smoke-test
       - run:
-          name: "Run image snapshots"
-          command: yarn test --image
+          name: "Run polymer-cli (smoke test)"
+          command: |
+            cd examples/polymer-cli
+            yarn storybook --smoke-test
       - run:
-          name: Integration Test - Kichen sinks
-          command: yarn test --integration
-      - store_artifacts:
-          path: integration/__image_snapshots__
-          destination: integration_image_snapshots
-      - store_artifacts:
-          path: examples/official-storybook/image-snapshots/__image_snapshots__
-          destination: official_storybook_image_snapshots
+          name: "Run official-storybook (smoke test)"
+          command: |
+            cd examples/official-storybook
+            yarn storybook --smoke-test
   react-native:
     <<: *defaults
     steps:
@@ -179,10 +219,6 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: "Lint"
           command: |
             yarn lint
@@ -199,34 +235,10 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: "Run unit tests"
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
-  storybook:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-{{ .Revision }}
-      - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
-          name: "Visually test storybook"
-          command: |
-            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
@@ -279,7 +291,13 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
+      - danger:
+          requires:
+            - build
       - example-kitchen-sinks:
+          requires:
+            - build
+      - smoke-tests:
           requires:
             - build
       - react-native:
@@ -288,11 +306,9 @@ workflows:
       - docs
       - lint:
           requires:
+            - docs
             - build
       - unit-test:
-          requires:
-            - build
-      - storybook:
           requires:
             - build
       - cli:

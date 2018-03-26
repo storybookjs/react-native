@@ -5,13 +5,13 @@ module.exports = {
     graphql: false,
   },
   rules: {
-    'import/no-unresolved': warn,
+    'import/no-unresolved': [warn, { commonjs: true, caseSensitive: true }],
     'import/extensions': [
       // because of highlight.js
       warn,
+      'always',
       {
         js: 'never',
-        json: 'always',
       },
     ],
   },

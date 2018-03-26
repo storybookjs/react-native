@@ -8,8 +8,7 @@ import { NoPreviewComponent } from './components/no-preview.component';
 import { STORY } from './app.token';
 import {
   NgModuleMetadata,
-  IGetStoryWithContext,
-  IContext,
+  IGetStory,
   NgProvidedData,
   IRenderErrorFn,
   IRenderStoryFn,
@@ -68,26 +67,23 @@ const getModule = (
   return NgModule(moduleMeta)(moduleClass);
 };
 
-const createComponentFromTemplate = (template: string): Function => {
+const createComponentFromTemplate = (template: string, styles: string[]): Function => {
   const componentClass = class DynamicComponent {};
 
   return Component({
-    template: template,
+    template,
+    styles,
   })(componentClass);
 };
 
-const initModule = (
-  currentStory: IGetStoryWithContext,
-  context: IContext,
-  reRender: boolean = false,
-): Function => {
-  const storyObj = currentStory(context);
-  const { component, template, props, moduleMetadata = {} } = storyObj;
+const initModule = (currentStory: IGetStory, reRender: boolean = false): Function => {
+  const storyObj = currentStory();
+  const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
   let AnnotatedComponent;
 
   if (template) {
-    AnnotatedComponent = createComponentFromTemplate(template);
+    AnnotatedComponent = createComponentFromTemplate(template, styles);
   } else {
     AnnotatedComponent = component;
   }
@@ -153,6 +149,6 @@ export const renderNoPreview = debounce(() => {
   draw(Module);
 });
 
-export const renderNgApp = debounce((story, context, reRender) => {
-  draw(initModule(story, context, reRender), reRender);
+export const renderNgApp = debounce((story, reRender) => {
+  draw(initModule(story, reRender), reRender);
 });

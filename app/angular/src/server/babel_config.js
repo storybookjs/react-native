@@ -63,12 +63,5 @@ export default function(configDir) {
     }
   }
 
-  const finalConfig = babelConfig || defaultConfig;
-  // Ensure plugins are defined or fallback to an array to avoid empty values.
-  const babelConfigPlugins = finalConfig.plugins || [];
-  // If `babelConfigPlugins` is not an `Array`, calling `concat` will inject it
-  // as a single value, if it is an `Array` it will be spreaded.
-  finalConfig.plugins = [].concat(babelConfigPlugins);
-
-  return finalConfig;
+  return babelConfig || defaultConfig;
 }

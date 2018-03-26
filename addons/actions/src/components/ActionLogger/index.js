@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Inspector from 'react-inspector';
-import style from './style';
+import { Actions, Action, Button, Wrapper, InspectorContainer, Countwrap, Counter } from './style';
 
 class ActionLogger extends Component {
   getActionData() {
@@ -9,30 +9,28 @@ class ActionLogger extends Component {
   }
 
   renderAction(action) {
-    const counter = <div style={style.counter}>{action.count}</div>;
+    const counter = <Counter>{action.count}</Counter>;
     return (
-      <div key={action.id} style={style.action}>
-        <div style={style.countwrap}>{action.count > 1 && counter}</div>
-        <div style={style.inspector}>
+      <Action key={action.id}>
+        <Countwrap>{action.count > 1 && counter}</Countwrap>
+        <InspectorContainer>
           <Inspector
             sortObjectKeys
             showNonenumerable={false}
             name={action.data.name}
             data={action.data.args || action.data}
           />
-        </div>
-      </div>
+        </InspectorContainer>
+      </Action>
     );
   }
 
   render() {
     return (
-      <div style={style.wrapper}>
-        <pre style={style.actions}>{this.getActionData()}</pre>
-        <button style={style.button} onClick={this.props.onClear}>
-          CLEAR
-        </button>
-      </div>
+      <Wrapper>
+        <Actions>{this.getActionData()}</Actions>
+        <Button onClick={this.props.onClear}>Clear</Button>
+      </Wrapper>
     );
   }
 }

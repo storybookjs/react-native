@@ -1,1 +1,1 @@
-require('./dist').register();
+require('./dist/manager').register();

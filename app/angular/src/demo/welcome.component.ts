@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'storybook-welcome-component',
@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
           (Basically a story is like a visual test case.)
         </p>
         <p>
-          See these sample <a (click)="showApp();" role="button" tabIndex="0">stories</a> for a component called
+          See these sample <a (click)="showApp.emit($event);" role="button" tabIndex="0">stories</a> for a component called
           <span class="inline-code">Button</span> .
         </p>
         <p>
@@ -77,5 +77,5 @@ import { Component } from '@angular/core';
   ],
 })
 export default class WelcomeComponent {
-  displayName = 'Welcome';
+  @Output() showApp = new EventEmitter<any>();
 }

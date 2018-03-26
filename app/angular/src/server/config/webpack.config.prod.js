@@ -4,7 +4,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath } from '@storybook/core/client';
+import { managerPath } from '@storybook/core/server';
 
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
@@ -96,6 +96,17 @@ export default function(configDir) {
         {
           test: /\.scss$/,
           loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: require.resolve('html-loader'),
+            },
+            {
+              loader: require.resolve('markdown-loader'),
+            },
+          ],
         },
       ],
     },

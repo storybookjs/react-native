@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-links",
-  "version": "3.4.0-alpha.5",
+  "version": "3.4.0-rc.3",
   "description": "Story Links addon for storybook",
   "keywords": [
     "storybook"
@@ -22,15 +22,16 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
-    "@storybook/components": "^3.4.0-alpha.5",
+    "@storybook/components": "3.4.0-rc.3",
+    "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.6.1"
   },
   "devDependencies": {
+    "@storybook/react": "3.4.0-rc.3",
     "enzyme": "^3.3.0",
     "react": "^16.1.0",
-    "react-dom": "^16.1.0",
-    "shelljs": "^0.8.1"
+    "react-dom": "^16.1.0"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",

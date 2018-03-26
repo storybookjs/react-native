@@ -2,8 +2,8 @@
 
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
-[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/badge.svg)](https://snyk.io/test/github/storybooks/storybook)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
@@ -26,9 +26,10 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
 
 -   [Getting Started](#getting-started)
 -   [Projects](#projects)
-    -   [Main Projects](#main-projects)
+    -   [Supported Frameworks](#supported-frameworks)
     -   [Sub Projects](#sub-projects)
     -   [Addons](#addons)
+-   [Live Examples](#live-examples) 💪
 -   [Contributing](#contributing)
     -   [Development scripts](#development-scripts)
     -   [Backers](#backers)
@@ -64,12 +65,13 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ## Projects
 
-### Main Projects
+### Supported Frameworks
 
--   [Storybook for react](app/react) - Storybook for React components
--   [Storybook for vue](app/vue) - Storybook for Vue components
--   [Storybook for angular](app/angular) - Storybook for Angular components
--   [Storybook for react-native](app/react-native) - Storybook for React-Native components
+-   [React](app/react)
+-   [React Native](app/react-native)
+-   [Vue](app/vue)
+-   [Angular](app/angular)
+-   [Polymer](app/polymer) <sup>alpha</sup>
 
 ### Sub Projects
 
@@ -78,15 +80,44 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Addons
 
--   [storyshots](addons/storyshots) - Easy snapshot testing for storybook
--   [actions](addons/actions/) - Log actions as users interact with components in storybook
--   [links](addons/links/) - Create links between stories
--   [comments](addons/comments/) - Comment on storybook stories
+-   [a11y](addons/a11y/) - Test components for user accessibility in Storybook
+-   [actions](addons/actions/) - Log actions as users interact with components in the Storybook UI
+-   [background](addons/background/) - Let users choose backgrounds in the Storybook UI
+-   [centered](addons/centered/) - Center the alignment of your components within the Storybook UI
+-   [events](addons/events/) - Interactively fire events to components that respond to EventEmitter
 -   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
 -   [info](addons/info/) - Annotate stories with extra component usage information
+-   [jest](addons/jest/) - View the results of components' unit tests in Storybook
 -   [knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
--   [notes](addons/notes/) - Annotate storybook stories with notes
--   [options](addons/options/) - Customize the storybook UI in code
+-   [links](addons/links/) - Create links between stories
+-   [notes](addons/notes/) - Annotate Storybook stories with notes
+-   [options](addons/options/) - Customize the Storybook UI in code
+-   [storyshots](addons/storyshots/) - Easy snapshot testing for components in Storybook
+-   [storysource](addons/storysource/) - View the code of your stories within the Storybook UI
+-   [viewport](addons/viewport/) - Change display sizes and layouts for responsive components using Storybook
+
+See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
+
+## Live Examples
+
+### 4.0.alpha
+> Note, this is an Alpha version. Some of the features still might not be released
+
+- [React Official](https://storybooks-official.netlify.com)
+- [Vue](https://storybooks-vue.netlify.com/)
+- [Angular](https://storybooks-angular.netlify.com/)
+- [Polymer](https://storybooks-polymer.netlify.com/)
+
+### 3.4
+- [React Official](https://release-3-4--storybooks-official.netlify.com)
+- [Vue](https://release-3-4--storybooks-vue.netlify.com/)
+- [Angular](https://release-3-4--storybooks-angular.netlify.com/)
+- [Polymer](https://release-3-4--storybooks-polymer.netlify.com/)
+
+### 3.3
+- [React Official](https://release-3-3--storybooks-official.netlify.com)
+- [Vue](https://release-3-3--storybooks-vue.netlify.com/)
+- [Angular](https://release-3-3--storybooks-angular.netlify.com/)
 
 ## Contributing
 

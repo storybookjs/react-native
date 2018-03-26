@@ -82,5 +82,6 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     entry,
     module: mod,
     plugins,
+    resolveLoader: cliCommonConfig.resolveLoader,
   };
 }

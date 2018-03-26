@@ -1,15 +1,16 @@
 import webpack from 'webpack';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { managerPath } from '@storybook/core/client';
+import { managerPath } from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
-import { getConfigDir, includePaths, excludePaths, loadEnv, nodePaths } from './utils';
+import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
-export default function() {
+export default function(configDir) {
   const entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
     manager: [require.resolve('./polyfills'), managerPath],
@@ -34,7 +35,7 @@ export default function() {
         filename: 'index.html',
         chunks: ['manager'],
         data: {
-          managerHead: getManagerHeadHtml(getConfigDir()),
+          managerHead: getManagerHeadHtml(configDir),
           version,
         },
         template: require.resolve('../index.html.ejs'),
@@ -43,7 +44,7 @@ export default function() {
         filename: 'iframe.html',
         excludeChunks: ['manager'],
         data: {
-          previewHead: getPreviewHeadHtml(getConfigDir()),
+          previewHead: getPreviewHeadHtml(configDir),
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
@@ -52,15 +53,18 @@ export default function() {
         { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
       ]),
       new webpack.DefinePlugin(loadEnv({ production: true })),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          screw_ie8: true,
+      new UglifyJsPlugin({
+        parallel: true,
+        uglifyOptions: {
+          ie8: false,
+          mangle: false,
           warnings: false,
-        },
-        mangle: false,
-        output: {
-          comments: false,
-          screw_ie8: true,
+          compress: {
+            keep_fnames: true,
+          },
+          output: {
+            comments: false,
+          },
         },
       }),
       new Dotenv({ silent: true }),
@@ -96,10 +100,6 @@ export default function() {
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
-      alias: {
-        react$: require.resolve('react'),
-        'react-dom$': require.resolve('react-dom'),
-      },
     },
   };
 

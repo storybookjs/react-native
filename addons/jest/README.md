@@ -2,6 +2,8 @@
 
 Brings Jest results in storybook.
 
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+
 [![Storybook Jest Addon Demo](@storybook/addon-jest.gif)](https://storybook-addon-jest-example.herokuapp.com/)
 
 > Checkout the above [Live Storybook](https://storybook-addon-jest-example.herokuapp.com/).
@@ -113,8 +115,8 @@ storiesOf('MyComponent', module)
 
 ### withTests(options)
 
-- **options.results**: [OBJECT] jest output results. *mandatory*
-- **filteExt**: [STRING] test file extention. *optionnal*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
+- **options.results**: OBJECT jest output results. *mandatory*
+- **filteExt**: STRING test file extention. *optionnal*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## TODO
 

@@ -145,7 +145,9 @@ export default class Item extends Component {
           disabled={failed}
           title="Submit event"
         >
-          📢
+          <span role="img" aria-label="loudspeaker">
+            📢
+          </span>
         </button>
         <Textarea
           id={`addon-event-${name}`}
@@ -155,11 +157,15 @@ export default class Item extends Component {
         />
         {isTextAreaShowed ? (
           <button style={styles.button} onClick={this.onToggleEditClick} title="Close editing">
-            ❌
+            <span role="img" aria-label="cross">
+              ❌
+            </span>
           </button>
         ) : (
           <button style={styles.button} onClick={this.onToggleEditClick} title="Edit event payload">
-            ✏️
+            <span role="img" aria-label="pencil">
+              ✏️
+            </span>
           </button>
         )}
       </div>

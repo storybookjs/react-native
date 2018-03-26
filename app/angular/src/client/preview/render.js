@@ -1,4 +1,4 @@
-import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers.ts';
+import { renderNgApp, renderNgError, renderNoPreview } from './angular/helpers';
 
 const logger = console;
 let previousKind = '';
@@ -27,7 +27,7 @@ export function renderMain(data, storyStore, forceRender) {
 
   const { selectedKind, selectedStory } = data;
 
-  const story = storyStore.getStory(selectedKind, selectedStory);
+  const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
   if (!story) {
     renderNoPreview();
     return null;
@@ -47,11 +47,7 @@ export function renderMain(data, storyStore, forceRender) {
     previousKind = selectedKind;
     previousStory = selectedStory;
   }
-  const context = {
-    kind: selectedKind,
-    story: selectedStory,
-  };
-  return renderNgApp(story, context, reRender);
+  return renderNgApp(story, reRender);
 }
 
 export default function renderPreview({ reduxStore, storyStore }, forceRender = false) {

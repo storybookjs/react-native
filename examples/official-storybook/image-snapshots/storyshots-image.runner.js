@@ -4,7 +4,8 @@
 * */
 import path from 'path';
 import fs from 'fs';
-import initStoryshots, { imageSnapshot } from '../../../addons/storyshots/src/index';
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+import { logger } from '@storybook/node-logger';
 
 // Image snapshots
 // We do screenshots against the static build of the storybook.
@@ -12,19 +13,19 @@ import initStoryshots, { imageSnapshot } from '../../../addons/storyshots/src/in
 const pathToStorybookStatic = path.join(__dirname, '../', 'storybook-static');
 
 if (!fs.existsSync(pathToStorybookStatic)) {
-  console.error(
+  logger.error(
     'You are running image snapshots without having the static build of storybook. Please run "yarn run build-storybook" before running tests.'
   );
 } else {
   initStoryshots({
     suite: 'Image snapshots',
+    storyKindRegex: /^Addons\|Storyshots/,
     framework: 'react',
     configPath: path.join(__dirname, '..'),
-    storyNameRegex: /^((?!tweaks static values with debounce delay|Inlines component inside story).)$/,
     test: imageSnapshot({
       storybookUrl: `file://${pathToStorybookStatic}`,
       getMatchOptions: () => ({
-        failureThreshold: 0.04, // 4% threshold,
+        failureThreshold: 0.02, // 2% threshold,
         failureThresholdType: 'percent',
       }),
     }),

@@ -1,21 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Backgrounds story 1 1`] = `
-<div
-  style="overflow:auto;position:fixed;top:0;bottom:0;right:0;left:0;transition:background 0.25s ease-in-out;background-position:center;background-size:cover;background:transparent"
->
-  <button>
-    You should be able to switch backgrounds for this story
-  </button>
-</div>
+<button>
+  You should be able to switch backgrounds for this story
+</button>
 `;
 
 exports[`Storyshots Addons|Backgrounds story 2 1`] = `
-<div
-  style="overflow:auto;position:fixed;top:0;bottom:0;right:0;left:0;transition:background 0.25s ease-in-out;background-position:center;background-size:cover;background:transparent"
->
-  <button>
-    This one too!
-  </button>
-</div>
+<button>
+  This one too!
+</button>
 `;

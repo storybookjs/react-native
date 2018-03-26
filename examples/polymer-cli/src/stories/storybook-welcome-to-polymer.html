@@ -39,7 +39,7 @@
         (Basically a story is like a visual test case.)
       </p>
       <p>
-        See these sample <a class="link" href="#">stories</a> for a component called <code class="code">playground-button</code>
+        See these sample <a class="link" href="#" on-click="goToButtonWrapper">stories</a> for a component called <code class="code">playground-button</code>
       </p>
 
       <p style="text-align:center"><img src="../logo.svg" class="logo" /></p>
@@ -71,7 +71,22 @@
   <script>
     class StorybookWelcomeToPolymer extends Polymer.Element {
       static get is() { return 'storybook-welcome-to-polymer'; }
+
+      static get properties() {
+        return {
+          goToButton: {
+            type: Function,
+            value: () => {}
+          }
+        };
+      }
+
+      goToButtonWrapper(e) {
+        e.preventDefault();
+        this.goToButton();
+      }
     }
+
     customElements.define(StorybookWelcomeToPolymer.is, StorybookWelcomeToPolymer);
   </script>
 </dom-module>

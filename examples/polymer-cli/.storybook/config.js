@@ -1,10 +1,15 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-
 import { configure } from '@storybook/polymer';
+import { setOptions } from '@storybook/addon-options';
+
+setOptions({
+  hierarchyRootSeparator: /\|/,
+});
 
 function loadStories() {
   require('../src/stories/index.stories');
-  require('../src/stories/advanced.stories');
+
+  const req = require.context('../src/stories', true, /\.stories\.js$/);
+  req.keys().forEach(filename => req(filename));
 }
 
 configure(loadStories, module);

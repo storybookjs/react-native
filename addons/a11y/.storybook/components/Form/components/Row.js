@@ -15,7 +15,11 @@ function Row({ label, input }) {
 
 Row.propTypes = {
   label: PropTypes.instanceOf(Label),
-  input: PropTypes.instanceOf(Input),
-}
+  input: PropTypes.instanceOf(Input).isRequired,
+};
+
+Row.defaultProps = {
+  label: null,
+};
 
 export default Row;

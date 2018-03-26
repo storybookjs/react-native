@@ -19,7 +19,7 @@ const config = {
         test: /\.json?$/,
         loaders: ['json'],
         include: path.resolve(__dirname, '../'),
-      }
+      },
     ],
   },
 };

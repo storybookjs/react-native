@@ -41,7 +41,9 @@ storiesOf('Button', module)
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>
       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
-      😀 😎 👍 💯
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
     </Button>
   ))
   .add('with notes', () => (

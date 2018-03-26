@@ -7,20 +7,12 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-This addon works with Storybook for:
-[React](https://github.com/storybooks/storybook/tree/master/app/react).
-[React Native](https://github.com/storybooks/storybook/tree/master/app/react-native).
-[Vue](https://github.com/storybooks/storybook/tree/master/app/vue).
-
 * * *
 
 Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 This is how Knobs look like:
 
@@ -44,6 +36,7 @@ import '@storybook/addon-knobs/register'
 
 Now, write your stories with knobs.
 
+### With React
 ```js
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
@@ -67,6 +60,40 @@ stories.add('as dynamic variables', () => {
   const age = number('Age', 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
+  return (<div>{content}</div>);
+});
+```
+
+### With Angular
+```js
+import { storiesOf } from '@storybook/angular';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs/angular';
+
+import { Button } from '@storybook/angular/demo';
+
+const stories = storiesOf('Storybook Knobs', module);
+
+// "withKnobs" decorator should be applied before the stories using knobs
+stories.addDecorator(withKnobs);
+
+// Knobs for Angular props
+stories.add('with text', () => ({
+  component: Button,
+  props: {
+   text: text('text', 'Hello Button'), // The first param of the knob function has to be exactly the same as the component input.
+  },
+}));
+
+```
+
+Categorize your knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
+```
+// Knob assigned a groupId.
+stories.add('as dynamic variables', () => {
+  const groupId = 'GROUP-ID1'
+  const name = text('Name', 'Arunoda Susiripala', groupId);
+
+  const content = `My name is ${name}.`;
   return (<div>{content}</div>);
 });
 ```
@@ -123,10 +150,10 @@ import { text } from '@storybook/addon-knobs/react';
 
 const label = 'Your Name';
 const defaultValue = 'Arunoda Susiripala';
+const groupId = 'GROUP-ID1';
 
-const value = text(label, defaultValue);
+const value = text(label, defaultValue, groupId);
 ```
-
 ### boolean
 
 Allows you to get a boolean value from the user.
@@ -136,10 +163,10 @@ import { boolean } from '@storybook/addon-knobs/react';
 
 const label = 'Agree?';
 const defaultValue = false;
+const groupId = 'GROUP-ID1';
 
-const value = boolean(label, defaultValue);
+const value = boolean(label, defaultValue, groupId);
 ```
-
 ### number
 
 Allows you to get a number from the user.
@@ -149,10 +176,15 @@ import { number } from '@storybook/addon-knobs/react';
 
 const label = 'Age';
 const defaultValue = 78;
+const groupId = 'GROUP-ID1';
 
 const value = number(label, defaultValue);
 ```
 
+For use with `groupId`, pass the default `options` as the third argument
+```
+const value = number(label, defaultValue, {}, groupId);
+```
 ### number bound by range
 
 Allows you to get a number from the user using a range slider.
@@ -168,8 +200,9 @@ const options = {
    max: 90,
    step: 1,
 };
+const groupId = 'GROUP-ID1';
 
-const value = number(label, defaultValue, options);
+const value = number(label, defaultValue, options, groupId);
 ```
 
 ### color
@@ -181,8 +214,9 @@ import { color } from '@storybook/addon-knobs/react';
 
 const label = 'Color';
 const defaultValue = '#ff00ff';
+const groupId = 'GROUP-ID1';
 
-const value = color(label, defaultValue);
+const value = color(label, defaultValue, groupId);
 ```
 
 ### object
@@ -196,8 +230,9 @@ const label = 'Styles';
 const defaultValue = {
   backgroundColor: 'red'
 };
+const groupId = 'GROUP-ID1';
 
-const value = object(label, defaultValue);
+const value = object(label, defaultValue, groupId);
 ```
 
 > Make sure to enter valid JSON syntax while editing values inside the knob.
@@ -210,7 +245,8 @@ Allows you to get an array of strings from the user.
 import { array } from '@storybook/addon-knobs/react';
 
 const label = 'Styles';
-const defaultValue = ['Red']
+const defaultValue = ['Red'];
+const groupId = 'GROUP-ID1';
 
 const value = array(label, defaultValue);
 ```
@@ -227,6 +263,11 @@ const value = array(label, defaultValue);
 > const value = array(label, defaultValue, separator);
 > ```
 
+For use with `groupId`, pass the default `separator` as the third argument
+```
+const value = array(label, defaultValue, ',', groupId);
+```
+
 ### select
 
 Allows you to get a value from a select box from the user.
@@ -241,11 +282,33 @@ const options = {
   yellow: 'Yellow',
 };
 const defaultValue = 'red';
+const groupId = 'GROUP-ID1';
 
-const value = select(label, options, defaultValue);
+const value = select(label, options, defaultValue, groupId);
 ```
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
+
+### selectV2
+
+In v4 this will replace `select`. The value from the select now uses the values from the `options` object.
+
+```js
+import { selectV2 } from '@storybook/addon-knobs';
+
+const label = 'Colors';
+const options = {
+  Red: 'red',
+  Blue: 'blue',
+  Yellow: 'yellow',
+  Rainbow: ['red', 'orange', 'etc'],
+  None: null,
+};
+const defaultValue = 'Red';
+const groupId = 'GROUP-ID1';
+
+const value = selectV2(label, options, defaultValue, groupId);
+```
 
 ### files
 
@@ -271,7 +334,9 @@ import { date } from '@storybook/addon-knobs/react';
 
 const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
-const value = date(label, defaultValue);
+const groupId = 'GROUP-ID1';
+
+const value = date(label, defaultValue, groupId);
 ```
 
 > Note: the default value must not change - e.g., do not do `date('Label', new Date())` or `date('Label')`
@@ -279,7 +344,7 @@ const value = date(label, defaultValue);
 The `date` knob returns the selected date as stringified Unix timestamp (e.g. `"1510913096516"`).
 If your component needs the date in a different form you can wrap the `date` function:
 
-```
+```js
 function myDateKnob(name, defaultValue) {
   const stringTimestamp = date(name, defaultValue)
   return new Date(stringTimestamp)
@@ -295,7 +360,9 @@ import { button } from '@storybook/addon-knobs';
 
 const label = 'Do Something';
 const handler = () => doSomething('foobar');
-button(label, handler);
+const groupId = 'GROUP-ID1';
+
+button(label, handler, groupId);
 ```
 
 ### withKnobs vs withKnobsOptions

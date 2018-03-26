@@ -3,7 +3,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath } from '@storybook/core/client';
+import { managerPath } from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
@@ -82,10 +82,10 @@ export default function(configDir) {
           test: /\.md$/,
           use: [
             {
-              loader: 'html-loader',
+              loader: require.resolve('html-loader'),
             },
             {
-              loader: 'markdown-loader',
+              loader: require.resolve('markdown-loader'),
             },
           ],
         },
@@ -94,14 +94,12 @@ export default function(configDir) {
     resolve: {
       // Since we ship with json-loader always, it's better to move extensions to here
       // from the default config.
-      extensions: ['.js', '.json', '.jsx'],
+      extensions: ['.js', '.json', '.jsx', '.vue'],
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
       alias: {
         vue$: require.resolve('vue/dist/vue.esm.js'),
-        react$: require.resolve('react'),
-        'react-dom$': require.resolve('react-dom'),
       },
     },
   };

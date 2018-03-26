@@ -13,8 +13,8 @@
     "react-native": "^0.51.0"
   },
   "devDependencies": {
-    "babel-jest": "^22.0.4",
     "babel-preset-react-native": "^4.0.0",
+    "babel-runtime": "^6.26.0",
     "jest": "^22.0.4",
     "react-test-renderer": "^16.2.0",
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
@@ -24,9 +24,12 @@
     "@storybook/addon-storyshots": "file:../../packs/storybook-addon-storyshots.tgz",
     "@storybook/addons": "file:../../packs/storybook-addons.tgz",
     "@storybook/channels": "file:../../packs/storybook-channels.tgz",
+    "@storybook/client-logger": "file:../../packs/storybook-client-logger.tgz",
     "@storybook/channel-postmessage": "file:../../packs/storybook-channel-postmessage.tgz",
+    "@storybook/channel-websocket": "file:../../packs/storybook-channel-websocket.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
     "@storybook/core": "file:../../packs/storybook-core.tgz",
+    "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
     "react-dom": "^16.2.0"

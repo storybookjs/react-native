@@ -1,21 +1,18 @@
 import React from 'react';
-import Button from './Button';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-storiesOf(
-  'Button'
-).addWithInfo(
+import Button from './Button';
+
+storiesOf('Button').addWithInfo(
   'simple usage',
   'This is the basic usage with the button with providing a label to show the text.',
   () => (
     <div>
       <Button label="The Button" onClick={action('onClick')} />
       <br />
-      <p>
-        Click the "?" mark at top-right to view the info.
-      </p>
+      <p>Click the "?" mark at top-right to view the info.</p>
     </div>
   )
 );
@@ -88,27 +85,22 @@ storiesOf('Button').addWithInfo(
   <div>
     <h2>This is a JSX info section</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed ornare massa rutrum metus commodo, a mattis velit dignissim.
-      Fusce vestibulum turpis sed massa egestas pharetra. Sed at libero
-      nulla.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus
+      commodo, a mattis velit dignissim. Fusce vestibulum turpis sed massa egestas pharetra. Sed at
+      libero nulla.
     </p>
     <p>
-      <a href="https://github.com/storybooks/react-storybook-addon-info">
-        This is a link
-      </a>
+      <a href="https://github.com/storybooks/react-storybook-addon-info">This is a link</a>
     </p>
     <p>
-      <img src="http://placehold.it/350x150" />
+      <img alt="350x150" src="http://placehold.it/350x150" />
     </p>
   </div>,
   () => (
     <div>
       <Button label="The Button" onClick={action('onClick')} />
       <br />
-      <p>
-        Click the "?" mark at top-right to view the info.
-      </p>
+      <p>Click the "?" mark at top-right to view the info.</p>
     </div>
   )
 );
@@ -118,18 +110,15 @@ storiesOf('Button').addWithInfo(
   <div>
     <h2>This is a JSX info section</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed ornare massa rutrum metus commodo, a mattis velit dignissim.
-      Fusce vestibulum turpis sed massa egestas pharetra. Sed at libero
-      nulla.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus
+      commodo, a mattis velit dignissim. Fusce vestibulum turpis sed massa egestas pharetra. Sed at
+      libero nulla.
     </p>
     <p>
-      <a href="https://github.com/storybooks/react-storybook-addon-info">
-        This is a link
-      </a>
+      <a href="https://github.com/storybooks/react-storybook-addon-info">This is a link</a>
     </p>
     <p>
-      <img src="http://placehold.it/350x150" />
+      <img alt="350x150" src="http://placehold.it/350x150" />
     </p>
   </div>,
   () => <Button label="The Button" onClick={action('onClick')} />,
@@ -182,11 +171,11 @@ storiesOf('Button').addWithInfo(
   () => <Button label="The Button" onClick={action('onClick')} />,
   {
     inline: true,
-    styles: stylesheet => {
-      stylesheet.infoPage = {
+    styles: stylesheet => ({
+      ...stylesheet,
+      infoPage: {
         backgroundColor: '#ccc',
-      };
-      return stylesheet;
-    },
+      },
+    }),
   }
 );

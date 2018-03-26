@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Custom|Style Default 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    <storybook-button-component
+      _nghost-c9=""
+      ng-reflect-text="Button with custom styles"
+    >
+      
+        
+      <button
+        _ngcontent-c9=""
+      >
+        Button with custom styles
+      </button>
+      
+    
+    </storybook-button-component>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;
+
+exports[`Storyshots Custom|Style With Knobs 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component
+    _nghost-c10=""
+  >
+    <storybook-button-component
+      _ngcontent-c10=""
+      _nghost-c11=""
+      ng-reflect-text="Button with custom styles"
+    >
+      
+        
+      <button
+        _ngcontent-c11=""
+      >
+        Button with custom styles
+      </button>
+      
+    
+    </storybook-button-component>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;

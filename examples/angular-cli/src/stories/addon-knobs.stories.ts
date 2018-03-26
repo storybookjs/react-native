@@ -16,7 +16,7 @@ import {
 import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 
-storiesOf('Addon Knobs', module)
+storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
     const name = text('name', 'John Doe');

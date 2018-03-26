@@ -36,8 +36,8 @@ stories.add('with all knobs', () => {
 
   return (
     <div style={style}>
-      I'm {name} and I was born on "{moment(dob).format('DD MMM YYYY')}"
-      I like: <ul>{passions.map((p, i) => <li key={i}>{p}</li>)}</ul>
+      I'm {name} and I was born on "{moment(dob).format('DD MMM YYYY')}" I like:{' '}
+      <ul>{passions.map(p => <li key={p}>{p}</li>)}</ul>
       <p>My favorite number is {favoriteNumber}.</p>
       <p>My most comfortable room temperature is {comfortTemp} degrees Fahrenheit.</p>
       <p>When I am happy I look like this: <img src={images[0]} /></p>
@@ -53,25 +53,33 @@ stories.add('dates Knob', () => {
   return (
     <ul style={{ listStyleType: 'none', listStyle: 'none', paddingLeft: '15px' }}>
       <li>
-        <p><b>Javascript Date</b> default value, passes date value</p>
+        <p>
+          <b>Javascript Date</b> default value, passes date value
+        </p>
         <blockquote>
           <code>const myDob = date('My DOB', new Date('July 07 1993'));</code>
-          <pre>// I was born in: "{moment(myDob).format('DD MMM YYYY')}"</pre>
+          <pre>{`// I was born in: "${moment(myDob).format('DD MMM YYYY')}"`}</pre>
         </blockquote>
       </li>
       <li>
-        <p><b>undefined</b> default value passes today's date</p>
+        <p>
+          <b>undefined</b> default value passes today's date
+        </p>
         <blockquote>
           <code>const today = date('today');</code>
-          <pre>// Today's date is: "{moment(today).format('DD MMM YYYY')}"</pre>
+          <pre>{`// Today's date is: "${moment(today).format('DD MMM YYYY')}"`}</pre>
         </blockquote>
       </li>
       <li>
-        <p><b>null</b> default value passes null value</p>
+        <p>
+          <b>null</b> default value passes null value
+        </p>
         <blockquote>
           <code>const dob = date('DOB', null);</code>
           <pre>
-            // You were born in: "{dob ? moment(dob).format('DD MMM YYYY') : 'Please select date.'}"
+            {`// You were born in: "${
+              dob ? moment(dob).format('DD MMM YYYY') : 'Please select date.'
+            }"`}
           </pre>
         </blockquote>
       </li>
@@ -83,9 +91,7 @@ stories.add('dynamic knobs', () => {
   const showOptional = select('Show optional', ['yes', 'no'], 'yes');
   return (
     <div>
-      <div>
-        {text('compulsary', 'I must be here')}
-      </div>
+      <div>{text('compulsary', 'I must be here')}</div>
       {showOptional === 'yes' ? <div>{text('optional', 'I can disapear')}</div> : null}
     </div>
   );

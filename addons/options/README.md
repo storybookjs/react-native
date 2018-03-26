@@ -11,10 +11,7 @@
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Screenshot](docs/screenshot.png)
 
@@ -108,6 +105,11 @@ setOptions({
    * @type {String}
    */
   selectedAddonPanel: undefined, // The order of addons in the "Addon panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
+  /**
+   * enable/disable shortcuts
+   * @type {Boolean}
+   */
+  enableShortcuts: false, // true by default
 });
 
 storybook.configure(() => require('./stories'), module);

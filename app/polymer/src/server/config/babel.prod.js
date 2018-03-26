@@ -12,8 +12,12 @@ module.exports = {
       },
     ],
     require.resolve('babel-preset-stage-0'),
-    require.resolve('babel-preset-react'),
-    require.resolve('babel-preset-minify'),
+    [
+      require.resolve('babel-preset-minify'),
+      {
+        mangle: false,
+      },
+    ],
   ],
   plugins: [
     require.resolve('babel-plugin-transform-regenerator'),

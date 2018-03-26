@@ -60,7 +60,12 @@ class MainLinks extends React.Component {
                   id="search"
                   placeholder="type to search"
                 />
-                <span className="form-control-feedback" aria-hidden="true">
+                <span
+                  className="form-control-feedback"
+                  role="img"
+                  aria-hidden="true"
+                  aria-label="magnifying glass"
+                >
                   🔍
                 </span>
               </div>
@@ -79,6 +84,9 @@ class MainLinks extends React.Component {
                 </li>
                 <li>
                   <Link to="/basics/writing-stories/">Writing stories</Link>
+                </li>
+                <li>
+                  <Link to="/basics/live-examples/">Live Examples</Link>
                 </li>
               </ul>
             </div>

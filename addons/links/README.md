@@ -11,10 +11,7 @@
 
 The Storybook Links addon can be used to create links that navigate between stories in [Storybook](https://storybook.js.org).
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ## Getting Started
 
@@ -105,7 +102,7 @@ A React implementation of such a component can be imported from `@storybook/addo
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { LinkTo } from '@storybook/addon-links';
+import LinkTo from '@storybook/addon-links/react';
 
 storiesOf('Link', module)
   .add('First', () => (

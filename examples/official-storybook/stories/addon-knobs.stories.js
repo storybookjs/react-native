@@ -9,6 +9,7 @@ import {
   boolean,
   color,
   select,
+  selectV2,
   array,
   date,
   button,
@@ -57,6 +58,12 @@ storiesOf('Addons|Knobs.withKnobs', module)
       cherry: 'Cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
+    const otherFruits = {
+      Lime: 'lime',
+      Coconut: 'coconut',
+      Tomato: 'tomato',
+    };
+    const otherFruit = selectV2('Other Fruit', otherFruits, 'lime');
     const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
     const years = number('Years in NY', 9);
 
@@ -75,10 +82,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
     const birthday = date('Birthday', defaultBirthday);
 
-    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
-    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
 
     return (
       <div style={style}>
@@ -94,6 +101,77 @@ storiesOf('Addons|Knobs.withKnobs', module)
         </p>
         <hr />
         <p>PS. My shirt pocket contains: </p>
+      </div>
+    );
+  })
+  .add('tweaks static values organized in groups', () => {
+    const GROUP_IDS = {
+      DISPLAY: 'DISPLAY',
+      GENERAL: 'GENERAL',
+      FAVORITES: 'FAVORITES',
+    };
+
+    const fruits = {
+      apple: 'Apple',
+      banana: 'Banana',
+      cherry: 'Cherry',
+    };
+
+    const otherFruits = {
+      Lime: 'lime',
+      Coconut: 'coconut',
+      Tomato: 'tomato',
+    };
+
+    // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
+    const defaultBirthday = new Date('Jan 20 2017 GMT+0');
+
+    // General
+    const name = text('Name', 'Storyteller', GROUP_IDS.GENERAL);
+    const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 }, GROUP_IDS.GENERAL);
+    const birthday = date('Birthday', defaultBirthday, GROUP_IDS.GENERAL);
+    const dollars = number(
+      'Account Balance',
+      12.5,
+      { min: 0, max: 100, step: 0.01 },
+      GROUP_IDS.GENERAL
+    );
+    const years = number('Years in NY', 9, {}, GROUP_IDS.GENERAL);
+
+    // Favorites
+    const nice = boolean('Nice', true, GROUP_IDS.FAVORITES);
+    const fruit = select('Fruit', fruits, 'apple', GROUP_IDS.FAVORITES);
+    const otherFruit = selectV2('Other Fruit', otherFruits, 'lime', GROUP_IDS.FAVORITES);
+    const items = array('Items', ['Laptop', 'Book', 'Whiskey'], ',', GROUP_IDS.FAVORITES);
+
+    // Display
+    const backgroundColor = color('Color', '#ffff00', GROUP_IDS.DISPLAY);
+    const otherStyles = object(
+      'Styles',
+      { border: '3px solid #ff00ff', padding: '10px' },
+      GROUP_IDS.DISPLAY
+    );
+
+    const style = { backgroundColor, ...otherStyles };
+
+    const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+
+    return (
+      <div style={style}>
+        <h1>General Information</h1>
+        <p>Name: {name}</p>
+        <p>Age: {age}</p>
+        <p>Birthday: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</p>
+        <p>Account Balance: {dollars}</p>
+        <p>Years in NY: {years}</p>
+        <hr />
+        <h1>Favorites</h1>
+        <p>Catchphrase: {salutation}</p>
+        <p>Fruit: {fruit}</p>
+        <p>Second Fruit: {otherFruit}</p>
+        <p>Items:</p>
+        <ul>{items.map(item => <li key={`${item}`}>{item}</li>)}</ul>
       </div>
     );
   })
@@ -120,6 +198,12 @@ storiesOf('Addons|Knobs.withKnobsOptions', module)
       cherry: 'Cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
+    const otherFruits = {
+      Lime: 'lime',
+      Coconut: 'coconut',
+      Tomato: 'tomato',
+    };
+    const otherFruit = selectV2('Other Fruit', otherFruits, 'lime');
     const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
 
     const backgroundColor = color('background', '#ffff00');
@@ -137,10 +221,10 @@ storiesOf('Addons|Knobs.withKnobsOptions', module)
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
     const birthday = date('Birthday', defaultBirthday);
 
-    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
-    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
 
     return (
       <div style={style}>

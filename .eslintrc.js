@@ -4,8 +4,14 @@ const ignore = 0;
 
 module.exports = {
   root: true,
-  extends: ['eslint-config-airbnb', 'plugin:jest/recommended', 'prettier'],
-  plugins: ['prettier', 'jest', 'react', 'json'],
+  extends: [
+    'airbnb',
+    'plugin:jest/recommended',
+    'plugin:import/react-native',
+    'prettier',
+    'prettier/react',
+  ],
+  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json'],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
@@ -18,9 +24,13 @@ module.exports = {
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts'],
+      },
+    },
   },
   rules: {
-    strict: [error, 'never'],
     'prettier/prettier': [
       warn,
       {
@@ -32,16 +42,13 @@ module.exports = {
       },
     ],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
-    quotes: [warn, 'single', { avoidEscape: true }],
     'class-methods-use-this': ignore,
-    'arrow-parens': [warn, 'as-needed'],
-    'space-before-function-paren': ignore,
-    'import/no-unresolved': error,
     'import/extensions': [
       error,
+      'always',
       {
         js: 'never',
-        json: 'always',
+        ts: 'never',
       },
     ],
     'import/no-extraneous-dependencies': [
@@ -56,6 +63,7 @@ module.exports = {
           '**/scripts/*.js',
           '**/stories/**/*.js',
           '**/__tests__/**/*.js',
+          '**/.storybook/**/*.js',
         ],
         peerDependencies: true,
       },
@@ -64,24 +72,47 @@ module.exports = {
     'import/default': error,
     'import/named': error,
     'import/namespace': error,
-    'react/jsx-wrap-multilines': ignore,
-    'react/jsx-indent': ignore,
-    'react/jsx-indent-props': ignore,
-    'react/jsx-closing-bracket-location': ignore,
-    'react/jsx-uses-react': error,
-    'react/jsx-uses-vars': error,
-    'react/react-in-jsx-scope': error,
     'react/jsx-filename-extension': [
       warn,
       {
         extensions: ['.js', '.jsx'],
       },
     ],
-    'jsx-a11y/accessible-emoji': ignore,
-    'jsx-a11y/href-no-hash': ignore,
-    'jsx-a11y/label-has-for': ignore,
-    'jsx-a11y/click-events-have-key-events': error,
-    'jsx-a11y/anchor-is-valid': [warn, { aspects: ['invalidHref'] }],
     'react/no-unescaped-entities': ignore,
+    'jsx-a11y/label-has-for': [
+      error,
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
+    'jsx-a11y/anchor-is-valid': [
+      error,
+      {
+        components: ['RoutedLink', 'MenuLink', 'LinkTo', 'Link'],
+        specialLink: ['overrideParams', 'kind', 'story', 'to'],
+      },
+    ],
+    'no-underscore-dangle': [
+      error,
+      {
+        allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'],
+      },
+    ],
   },
+  overrides: [
+    {
+      files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
+      rules: {
+        'jsx-a11y/accessible-emoji': ignore,
+      },
+    },
+    {
+      files: '**/.storybook/config.js',
+      rules: {
+        'global-require': ignore,
+      },
+    },
+  ],
 };

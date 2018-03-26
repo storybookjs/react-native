@@ -1,146 +1,153 @@
 carbon:
-  thumbnail: ./thumbnails/carbon.png
+  thumbnail: carbon.png
   title: Carbon Components
   description: IBM's Carbon Design System implemented in React.
   source: https://github.com/carbon-design-system/carbon-components-react
   demo: http://react.carbondesignsystem.com
   site: http://carbondesignsystem.com
 airbnb:
-  thumbnail: ./thumbnails/airbnb.jpg
+  thumbnail: airbnb.jpg
   title: Airbnb Dates
   description: An internationalizable, mobile-friendly datepicker library for the web.
   source: https://github.com/airbnb/react-dates
   demo: http://airbnb.io/react-dates/
   site: http://airbnb.com
 lonelyplanet:
-  thumbnail: ./thumbnails/lonelyplanet.jpg
+  thumbnail: lonelyplanet.jpg
   title: Lonely Planet
   description: All the tools you need to build the Lonely Planet UI experience.
   source: https://github.com/lonelyplanet/backpack-ui
   demo: https://lonelyplanet.github.io/backpack-ui/
   site: https://www.lonelyplanet.com/
+uber:
+  thumbnail: uber.png
+  title: Uber React-Vis
+  description: A composable charting library.
+  source: https://github.com/uber/react-vis
+  demo: https://uber.github.io/react-vis/website/dist/storybook/index.html
+  site: https://uber.github.io/react-vis/
 atlassian:
-  thumbnail: ./thumbnails/atlassian.png
+  thumbnail: atlassian.png
   title: Atlassian AtlasKit
   description: Atlassian's official UI library.
   demo: https://atlaskit.atlassian.com/components
   site: https://atlaskit.atlassian.com/
 wix:
-  thumbnail: ./thumbnails/wix.png
+  thumbnail: wix.png
   title: Wix Style React
   description: Components that conform to Wix Style
   source: https://github.com/wix/wix-style-react
   demo: https://wix.github.io/wix-style-react/
   site: https://wix.com
 buffer:
-  thumbnail: ./thumbnails/buffer.jpg
+  thumbnail: buffer.jpg
   title: Buffer Components
   description: A collection of Buffer UI React components.
   source: https://github.com/bufferapp/buffer-components
   demo: https://bufferapp.github.io/buffer-components/
   site: https://buffer.com
 algolia:
-  thumbnail: ./thumbnails/algolia.jpg
+  thumbnail: algolia.jpg
   title: Algolia InstantSearch
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
 rebass:
-  thumbnail: ./thumbnails/rebass.png
+  thumbnail: rebass.png
   title: Rebass
   description: Functional React UI component library
   demo: http://jxnblk.com/rebass/stories/
   source: https://github.com/jxnblk/rebass
   site: http://jxnblk.com/rebass
 coursera:
-  thumbnail: ./thumbnails/coursera-ui.png
+  thumbnail: coursera-ui.png
   title: Coursera
   description: Coursera UI component library
   demo: https://building.coursera.org/coursera-ui
 artsy:
-  thumbnail: ./thumbnails/artsy.png
+  thumbnail: artsy.png
   title: Artsy Force
   description: Artsy's "Force" component library
   demo: https://artsy.github.io/reaction/
   source: https://github.com/artsy/reaction-force
   site: https://artsy.net
 necolas:
-  thumbnail: ./thumbnails/reactnativeweb.jpg
+  thumbnail: reactnativeweb.jpg
   title: React Native Web
   description: Storybook demo for React Native Web.
   source: https://github.com/necolas/react-native-web
   demo: https://necolas.github.io/react-native-web/storybook/
 griddle:
-  thumbnail: ./thumbnails/griddle.jpg
+  thumbnail: griddle.jpg
   title: Griddle
   description: An ultra customizable datagrid component for React.
   source: https://github.com/GriddleGriddle/Griddle
   demo: https://griddlegriddle.github.io/Griddle/examples/controlling-griddle/
   site: https://griddlegriddle.github.io/Griddle/
 tachyons:
-  thumbnail: ./thumbnails/tachyons.png
+  thumbnail: tachyons.png
   title: Tachyons Components
   description: A searchable directory of Tachyons Components
   source: https://github.com/blairanderson/tachyonstemplates
   demo: https://www.tachyonstemplates.com/components/
 appbase:
-  thumbnail: ./thumbnails/appbase.jpg
+  thumbnail: appbase.jpg
   title: Appbase Maps
   description: A storybook playground for ReactiveMaps and ReactiveSearch.
   source: https://github.com/appbaseio/playground
   demo: https://opensource.appbase.io/playground/
   site: https://appbase.io
 quran:
-  thumbnail: ./thumbnails/quran.jpg
+  thumbnail: quran.jpg
   title: Quran.com
   description: Component library for Quran.com, Quranicaudio.com and Salah.com.
   source: https://github.com/quran/common-components
   demo: https://quran.github.io/common-components/
   site: https://quran.com/
 terraeclipse:
-  thumbnail: ./thumbnails/terraeclipse.jpg
+  thumbnail: terraeclipse.jpg
   title: TerraEclipse
   description: React components for TerraEclipse, a political technology and strategy firm.
   source: https://github.com/TerraEclipse/react-stack
   demo: https://terraeclipse.github.io/react-stack/
 timeline:
-  thumbnail: ./thumbnails/timeline.jpg
+  thumbnail: timeline.jpg
   title: React Event Timeline
   description: Event timeline component.
   source: https://github.com/rcdexta/react-event-timeline
   demo: https://rcdexta.github.io/react-event-timeline/
 semanticui:
-  thumbnail: ./thumbnails/semanticui.png
+  thumbnail: semanticui.png
   title: Semantic-UI
   description: Storybook for Semantic-UI React components
   source: https://github.com/white-rabbit-japan/Semantic-UI-React-Storybook
   demo: https://white-rabbit-japan.github.io/Semantic-UI-React-Storybook/
 hackoregon:
-  thumbnail: ./thumbnails/hackoregon.png
+  thumbnail: hackoregon.png
   title: Hack Oregon
   description: Official component library and storybook for Hack Oregon.
   source: https://github.com/hackoregon/component-library
   demo: https://hackoregon.github.io/component-library/
 todomvc:
-  thumbnail: ./thumbnails/todomvc.png
+  thumbnail: todomvc.png
   title: TodoMVC with Specs
   description: Todo app Storybook with built-in unit tests.
   source: https://github.com/thorjarhun/react-storybook-todolist
   demo: https://thorjarhun.github.io/react-storybook-todolist/
 react-svg-pan-zoom:
-  thumbnail: ./thumbnails/react-svg-pan-zoom.png
+  thumbnail: react-svg-pan-zoom.png
   title: React SVG Pan Zoom
   description: A React component that adds pan and zoom features to SVG
   source: https://github.com/chrvadala/react-svg-pan-zoom
   demo: https://chrvadala.github.io/react-svg-pan-zoom/
 fyndiq-ui:
-  thumbnail: ./thumbnails/fyndiq.jpg
+  thumbnail: fyndiq.jpg
   title: Fyndiq
   description: Fyndiq UI Component library
   source: https://github.com/fyndiq/fyndiq-ui
   demo: https://fyndiq.github.io/fyndiq-ui/
 gumgum:
-  thumbnail: ./thumbnails/gumgum.png
+  thumbnail: gumgum.png
   title: GumGum
   description: GumGum (Computer Vision Company) Component library
   demo: https://storybook.gumgum.com

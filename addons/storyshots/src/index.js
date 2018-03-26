@@ -1,7 +1,6 @@
-/* eslint-disable no-loop-func */
 import fs from 'fs';
 import glob from 'glob';
-import global, { describe, it, beforeEach, afterEach } from 'global';
+import global, { describe, it } from 'global';
 import addons from '@storybook/addons';
 import loadFramework from './frameworkLoader';
 import createChannel from './storybook-channel-mock';
@@ -28,6 +27,8 @@ export {
   imageSnapshot,
 };
 
+const methods = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];
+
 export default function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
@@ -52,7 +53,13 @@ export default function testStorySnapshots(options = {}) {
     serializer: options.serializer,
   };
 
-  const testMethod = options.test || snapshotWithOptions({ options: snapshotOptions });
+  const testMethod = options.test || snapshotWithOptions(snapshotOptions);
+
+  methods.forEach(method => {
+    if (typeof testMethod[method] === 'function') {
+      global[method](testMethod[method]);
+    }
+  });
 
   // eslint-disable-next-line
   for (const group of stories) {
@@ -64,20 +71,6 @@ export default function testStorySnapshots(options = {}) {
     }
 
     describe(suite, () => {
-      beforeEach(() => {
-        if (typeof testMethod.beforeEach === 'function') {
-          return testMethod.beforeEach();
-        }
-        return Promise.resolve();
-      });
-
-      afterEach(() => {
-        if (typeof testMethod.afterEach === 'function') {
-          return testMethod.afterEach();
-        }
-        return Promise.resolve();
-      });
-
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {

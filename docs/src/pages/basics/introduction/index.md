@@ -16,6 +16,5 @@ You can also build a [static version](/basics/exporting-storybook) of your story
 
 Here are some featured storybooks that you can reference to see how Storybook works:
 
--   [React Button](http://kadira-samples.github.io/react-button) - [source](https://github.com/kadira-samples/react-button)
 -   [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
 -   [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
