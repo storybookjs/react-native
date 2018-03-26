@@ -8,7 +8,6 @@ import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
 import {
   SET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
-  UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
   CONFIGURE_VIEWPORT_EVENT_ID,
   UPDATE_VIEWPORT_EVENT_ID,
   INITIAL_VIEWPORTS,
@@ -60,10 +59,9 @@ export class Panel extends Component {
     channel.on(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.on(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
-    channel.on(UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.unsetStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
-      this.changeViewport(this.state.defaultViewport);
+      this.setStoryDefaultViewport(this.state.defaultViewport);
     });
   }
 
@@ -77,30 +75,16 @@ export class Panel extends Component {
     channel.removeListener(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.removeListener(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
     channel.removeListener(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
-    channel.removeListener(UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.unsetStoryDefaultViewport);
   }
 
   setStoryDefaultViewport = viewport => {
     const { viewports } = this.state;
     const defaultViewport = getDefaultViewport(viewports, viewport);
 
-    this.setState(
-      {
-        storyDefaultViewport: defaultViewport,
-        viewport: defaultViewport,
-      },
-      this.updateIframe
-    );
-  };
-
-  unsetStoryDefaultViewport = () => {
-    this.setState(
-      {
-        storyDefaultViewport: undefined,
-        viewport: this.state.defaultViewport,
-      },
-      this.updateIframe
-    );
+    this.setState({
+      storyDefaultViewport: defaultViewport,
+    });
+    this.changeViewport(defaultViewport);
   };
 
   configure = (options = Panel.defaultOptions) => {

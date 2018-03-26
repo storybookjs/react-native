@@ -37,19 +37,4 @@ describe('Viewport', () => {
       );
     });
   });
-
-  describe('componentWillUnmount', () => {
-    beforeEach(() => {
-      channel.emit.mockReset();
-      subject.unmount();
-    });
-
-    it('publishes `unset` event', () => {
-      expect(channel.emit).toHaveBeenCalledTimes(1);
-      expect(channel.emit).toHaveBeenCalledWith(
-        'addon:viewport:unsetStoryDefaultViewport',
-        'iphone6'
-      );
-    });
-  });
 });

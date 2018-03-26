@@ -75,13 +75,6 @@ describe('Viewport/Panel', () => {
         subject.instance().setStoryDefaultViewport
       );
     });
-
-    it('listens on `unsetStoryDefaultViewport` channel', () => {
-      expect(props.channel.on).toHaveBeenCalledWith(
-        'addon:viewport:unsetStoryDefaultViewport',
-        subject.instance().unsetStoryDefaultViewport
-      );
-    });
   });
 
   describe('componentWillUnmount', () => {
@@ -107,13 +100,6 @@ describe('Viewport/Panel', () => {
       expect(props.channel.removeListener).toHaveBeenCalledWith(
         'addon:viewport:setStoryDefaultViewport',
         subject.instance().setStoryDefaultViewport
-      );
-    });
-
-    it('removes `unsetStoryDefaultViewport` channel listener', () => {
-      expect(props.channel.removeListener).toHaveBeenCalledWith(
-        'addon:viewport:unsetStoryDefaultViewport',
-        subject.instance().unsetStoryDefaultViewport
       );
     });
   });
@@ -223,29 +209,20 @@ describe('Viewport/Panel', () => {
     });
 
     it('sets the state with the new information', () => {
-      expect(subject.instance().setState).toHaveBeenCalledWith(
+      expect(subject.instance().setState.mock.calls.length).toBe(2);
+      expect(subject.instance().setState.mock.calls[0][0]).toEqual(
+        {
+          storyDefaultViewport: 'iphone5'
+        }
+      );
+
+      expect(subject.instance().setState.mock.calls[1][0]).toEqual(
         {
           viewport: initialViewportAt(1),
-          storyDefaultViewport: initialViewportAt(1),
-        },
-        subject.instance().updateIframe
+          isLandscape: false
+        }
       );
-    });
-  });
-
-  describe('unsetStoryDefaultViewport', () => {
-    beforeEach(() => {
-      subject.instance().setState = jest.fn();
-      subject.instance().updateIframe = jest.fn();
-      subject.instance().unsetStoryDefaultViewport();
-    });
-
-    it('resets the state', () => {
-      expect(subject.instance().setState).toHaveBeenCalledWith(
-        {
-          viewport: DEFAULT_VIEWPORT,
-          storyDefaultViewport: undefined,
-        },
+      expect(subject.instance().setState.mock.calls[1][1]).toEqual(
         subject.instance().updateIframe
       );
     });
