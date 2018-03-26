@@ -25,7 +25,7 @@ export default {
     right: null,
     paddingHorizontal: 10,
     paddingBottom: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'white',
   },
   previewContainer: {
     flex: 1,
