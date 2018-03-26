@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { baseFonts } from '@storybook/components';
 import { document } from 'global';
+import debounce from 'lodash.debounce';
 
 import { resetViewport, viewportsTransformer } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
@@ -30,6 +31,8 @@ const getDefaultViewport = (viewports, candidateViewport) =>
 const getViewports = viewports =>
   Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
 
+const setStoryDefaultViewportWait = 100;
+
 export class Panel extends Component {
   static propTypes = {
     channel: PropTypes.shape({}).isRequired,
@@ -49,6 +52,11 @@ export class Panel extends Component {
       viewports: viewportsTransformer(INITIAL_VIEWPORTS),
       isLandscape: false,
     };
+
+    this.setStoryDefaultViewport = debounce(
+      this.setStoryDefaultViewport,
+      setStoryDefaultViewportWait
+    );
   }
 
   componentDidMount() {
