@@ -51,14 +51,14 @@
     "glamorous": "^4.12.1",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.0.7",
+    "html-webpack-plugin": "^3.1.0",
     "json5": "^0.5.1",
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
     "react-dev-utils": "^5.0.0",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.1.1",
+    "webpack": "^4.2.0",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
