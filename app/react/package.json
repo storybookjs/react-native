@@ -56,7 +56,7 @@
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
-    "react-dev-utils": "zanettin/react-dev-utils",
+    "@storybook/react-dev-utils": "^5.0.0",
     "util-deprecate": "^1.0.2",
     "webpack": "^4.1.1",
     "webpack-hot-middleware": "^2.21.2"

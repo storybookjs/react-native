@@ -49,7 +49,7 @@
     "html-webpack-plugin": "^3.0.7",
     "json5": "^0.5.1",
     "react": "^16.0.0",
-    "react-dev-utils": "zanettin/react-dev-utils",
+    "@storybook/react-dev-utils": "^5.0.0",
     "react-dom": "^16.0.0",
     "util-deprecate": "^1.0.2",
     "webpack": "^4.1.1",
