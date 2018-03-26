@@ -42,6 +42,31 @@ storiesOf('button', module)
   ));
 ```
 
+For more customizability. Use the `'configure'` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+import { checkA11y, configure } from '@storybook/addon-a11y';
+
+const whateverOptionsYouWant = {};
+configure(whateverOptionsYouWant);
+
+storiesOf('button', module)
+  .addDecorator(checkA11y)
+  .add('Accessible', () => (
+    <button>
+      Accessible button
+    </button>
+  ))
+  .add('Inaccessible', () => (
+    <button style={{ backgroundColor: 'red', color: 'darkRed', }}>
+      Inaccessible button
+    </button>
+  ));
+```
+
 ## Roadmap
 
 * Make UI accessibile
