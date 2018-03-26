@@ -14,6 +14,7 @@ import { version } from '../../../package.json';
 
 export default function(configDir) {
   const config = {
+    mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
       manager: [require.resolve('./polyfills'), managerPath],
@@ -29,7 +30,6 @@ export default function(configDir) {
       publicPath: '/',
     },
     plugins: [
-      new InterpolateHtmlPlugin(process.env),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
@@ -47,6 +47,7 @@ export default function(configDir) {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
+      new InterpolateHtmlPlugin(process.env),
       new CopyWebpackPlugin([
         { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
         { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
