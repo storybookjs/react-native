@@ -1,5 +1,4 @@
 import webpack from 'webpack';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -16,6 +15,7 @@ export default function(configDir) {
   };
 
   const config = {
+    mode: 'production',
     bail: true,
     devtool: '#cheap-module-source-map',
     entry: entries,
@@ -29,7 +29,6 @@ export default function(configDir) {
       publicPath: '',
     },
     plugins: [
-      new InterpolateHtmlPlugin(process.env),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
@@ -47,21 +46,8 @@ export default function(configDir) {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
+      new InterpolateHtmlPlugin(process.env),
       new webpack.DefinePlugin(loadEnv({ production: true })),
-      new UglifyJsPlugin({
-        parallel: true,
-        uglifyOptions: {
-          ie8: false,
-          mangle: false,
-          warnings: false,
-          compress: {
-            keep_fnames: true,
-          },
-          output: {
-            comments: false,
-          },
-        },
-      }),
       new Dotenv({ silent: true }),
     ],
     module: {
