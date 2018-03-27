@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^5.2.9",
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@ngrx/store": "^5.2.0",
-    "core-js": "^2.4.1",
+    "core-js": "^2.5.4",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.20"
   },
@@ -49,6 +49,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~4.1.0",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.1"
   }
 }
