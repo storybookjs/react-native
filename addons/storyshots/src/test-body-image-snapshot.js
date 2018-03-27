@@ -14,6 +14,7 @@ export const imageSnapshot = ({
   getMatchOptions = noop,
   getScreenshotOptions = defaultScreenshotOptions,
   beforeScreenshot = noop,
+  getGotoOptions = noop,
 }) => {
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
@@ -42,7 +43,7 @@ export const imageSnapshot = ({
 
     expect.assertions(1);
     return page
-      .goto(url, { waitUntil: 'networkidle0' })
+      .goto(url, getGotoOptions({ context, url }))
       .catch(e => {
         logger.error(
           `ERROR WHILE CONNECTING TO ${url}, did you start or build the storybook first ? A storybook instance should be running or a static version should be built when using image snapshot feature.`,
