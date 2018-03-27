@@ -11,8 +11,8 @@ function checkA11y(storyFn, context) {
   return manager.wrapStory(channel, storyFn, context, axeOptions);
 }
 
-function configure(options = {}) {
+function configureA11y(options = {}) {
   axeOptions = options;
 }
 
-export { checkA11y, shared, configure };
+export { checkA11y, shared, configureA11y };

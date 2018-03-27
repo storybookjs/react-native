@@ -42,16 +42,16 @@ storiesOf('button', module)
   ));
 ```
 
-For more customizability. Use the `'configure'` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
+For more customizability. Use the `'configureA11y'` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
 
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { checkA11y, configure } from '@storybook/addon-a11y';
+import { checkA11y, configureA11y } from '@storybook/addon-a11y';
 
 const whateverOptionsYouWant = {};
-configure(whateverOptionsYouWant);
+configureA11y(whateverOptionsYouWant);
 
 storiesOf('button', module)
   .addDecorator(checkA11y)
