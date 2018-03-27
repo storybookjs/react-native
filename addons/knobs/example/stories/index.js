@@ -1,7 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import moment from 'moment';
-import { withKnobs, number, object, boolean, text, select, date, array, color } from '../../src';
+import {
+  withKnobs,
+  number,
+  object,
+  boolean,
+  text,
+  select,
+  date,
+  array,
+  color,
+  files,
+} from '../../src';
 
 const stories = storiesOf('Example of Knobs', module);
 
@@ -19,6 +30,10 @@ stories.add('with all knobs', () => {
   const comfortTemp = number('Comfort Temp', 72, { range: true, min: 60, max: 90, step: 1 });
 
   const passions = array('Passions', ['Fishing', 'Skiing']);
+
+  const images = files('Happy Picture', 'image/*', [
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII=',
+  ]);
 
   const customStyle = object('Style', {
     fontFamily: 'Arial',
@@ -38,6 +53,9 @@ stories.add('with all knobs', () => {
       <ul>{passions.map(p => <li key={p}>{p}</li>)}</ul>
       <p>My favorite number is {favoriteNumber}.</p>
       <p>My most comfortable room temperature is {comfortTemp} degrees Fahrenheit.</p>
+      <p>
+        When I am happy I look like this: <img src={images[0]} alt="happy" />
+      </p>
     </div>
   );
 });
