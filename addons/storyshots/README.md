@@ -220,7 +220,7 @@ You might use `getGotoOptions` to specify options when the storybook is navigati
 
 ```js
 import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
-const getGotoOptions = ({context, url}) {
+const getGotoOptions = ({context, url}) => {
   return {
     waitUntil: 'networkidle0',
   }
