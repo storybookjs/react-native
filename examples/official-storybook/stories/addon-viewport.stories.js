@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { baseFonts } from '@storybook/components';
-
 import { Viewport, withViewport } from '@storybook/addon-viewport';
+import EventEmitter from 'eventemitter3';
+
+import Logger from './Logger';
 
 // eslint-disable-next-line react/prop-types
 const Panel = ({ children }) => <div style={baseFonts}>{children}</div>;
@@ -33,3 +35,18 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
       </Panel>
     </Viewport>
   ));
+
+const emitter = new EventEmitter();
+
+storiesOf('Addons|Viewport.withViewport', module)
+  .addDecorator(
+    withViewport({
+      onViewportChange({ viewport }) {
+        emitter.emit(Logger.LOG_EVENT, {
+          name: 'Viewport Changed',
+          payload: `${viewport.name} (${viewport.type})`,
+        });
+      },
+    })
+  )
+  .add('onViewportChange', () => <Logger title="Select device/viewport" emitter={emitter} />);
