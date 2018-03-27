@@ -4551,9 +4551,9 @@ gatsby-remark-copy-linked-files@^1.5.30:
     probe-image-size "^3.2.0"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.59:
-  version "1.5.59"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.59.tgz#2701f4812698d492a3114b6014bb6c2e120837ff"
+gatsby-remark-images@^1.5.60:
+  version "1.5.60"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.60.tgz#873717f46d427335d26b7542427d18a424cc888c"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
