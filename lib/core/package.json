@@ -44,9 +44,9 @@
     "shelljs": "^0.8.1",
     "style-loader": "^0.20.3",
     "svg-url-loader": "^2.3.2",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.11.0",
-    "webpack-dev-middleware": "^1.12.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.2.0",
+    "webpack-dev-middleware": "^3.0.1",
     "webpack-hot-middleware": "^2.21.2"
   }
 }

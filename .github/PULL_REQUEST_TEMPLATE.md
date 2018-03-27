@@ -4,7 +4,7 @@ Issue:
 
 ## How to test
 
-Is this testable with jest or storyshots?
+Is this testable with Jest or Chromatic screenshots?
 
 Does this need a new example in the kitchen sink apps?
 
