@@ -62,12 +62,12 @@ cd ..
 if [ $update -eq 1 ]
   then
     # copy `run` directory contents to `snapshots`, skipping irrelevant files
-    rsync -r --exclude={node_modules**,.DS_Store,*.md} run/ snapshots
+    rsync -r --exclude={node_modules**,.DS_Store,*.md,yarn-error.log} run/ snapshots
   else if [ $skip -eq 0 ]
     then
       # check if there is any difference between `run` and `snapshots` directories,
       # skipping irrelevant files
-      declare diff=`diff -r -x node_modules** -x .DS_Store -x *.md run snapshots`
+      declare diff=`diff -r -x node_modules** -x .DS_Store -x *.md -x yarn-error.log run snapshots`
       if [[ $diff ]]
       then
         # if there is some diff, output it to stderr along with a clarifying message
