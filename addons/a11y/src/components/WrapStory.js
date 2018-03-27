@@ -8,11 +8,13 @@ class WrapStory extends Component {
     context: PropTypes.shape({}),
     storyFn: PropTypes.func,
     channel: PropTypes.shape({}),
+    axeOptions: PropTypes.shape({}),
   };
   static defaultProps = {
     context: {},
     storyFn: () => {},
     channel: {},
+    axeOptions: {},
   };
 
   constructor(props) {
@@ -33,10 +35,12 @@ class WrapStory extends Component {
 
   /* eslint-disable react/no-find-dom-node */
   runA11yCheck() {
-    const { channel } = this.props;
+    const { channel, axeOptions } = this.props;
     const wrapper = findDOMNode(this);
 
     if (wrapper !== null) {
+      axe.reset();
+      axe.configure(axeOptions);
       axe.a11yCheck(wrapper, {}, results => {
         channel.emit('addon:a11y:check', results);
       });

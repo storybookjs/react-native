@@ -42,7 +42,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.4.0",
     "copy-webpack-plugin": "^4.5.1",
-    "core-js": "^2.5.1",
+    "core-js": "^2.5.4",
     "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
