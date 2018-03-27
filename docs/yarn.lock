@@ -4448,16 +4448,16 @@ gatsby-1-config-css-modules@^1.0.11:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-1-config-extract-plugin@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-1-config-extract-plugin/-/gatsby-1-config-extract-plugin-1.0.2.tgz#2ca0779f212009d06e444cb084d182f957b7190c"
+gatsby-1-config-extract-plugin@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-1-config-extract-plugin/-/gatsby-1-config-extract-plugin-1.0.3.tgz#9e2c962d4563c95fa29da83e3d93017129af0115"
   dependencies:
     babel-runtime "^6.26.0"
     extract-text-webpack-plugin "^1.0.1"
 
-gatsby-cli@^1.1.48:
-  version "1.1.48"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.48.tgz#7ce1e15e5c02195ff4d8981a23a385e51e7d6cf0"
+gatsby-cli@^1.1.49:
+  version "1.1.49"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.49.tgz#3114c562cb2739ebce20719be38e2535978cd896"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4476,16 +4476,6 @@ gatsby-cli@^1.1.48:
     update-notifier "^2.3.0"
     yargs "^8.0.2"
     yurnalist "^0.2.1"
-
-gatsby-link@^1.6.39:
-  version "1.6.39"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.39.tgz#4189d26a66476b61fb524c2c8dd97b74aee728d4"
-  dependencies:
-    "@types/history" "^4.6.2"
-    "@types/react-router-dom" "^4.2.2"
-    babel-runtime "^6.26.0"
-    prop-types "^15.5.8"
-    ric "^1.3.0"
 
 gatsby-link@^1.6.40:
   version "1.6.40"
@@ -4613,9 +4603,9 @@ gatsby-transformer-remark@^1.7.38:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.241:
-  version "1.9.241"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.241.tgz#550f04177851c44be3bb235adf8461d5b1d89624"
+gatsby@^1.9.243:
+  version "1.9.243"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.243.tgz#13b7ec57627c2a4c10fa09d3a7a369cc502ecaf9"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4656,9 +4646,9 @@ gatsby@^1.9.241:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.11"
-    gatsby-1-config-extract-plugin "^1.0.2"
-    gatsby-cli "^1.1.48"
-    gatsby-link "^1.6.39"
+    gatsby-1-config-extract-plugin "^1.0.3"
+    gatsby-cli "^1.1.49"
+    gatsby-link "^1.6.40"
     gatsby-module-loader "^1.0.11"
     gatsby-react-router-scroll "^1.0.14"
     glob "^7.1.1"
