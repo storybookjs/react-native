@@ -37,7 +37,7 @@
 /lib/channel-postmessage/ @mnmtanish @ndelangen
 /lib/channel-websocket/ @mnmtanish @ndelangen
 /lib/channels/ @mnmtanish @ndelangen
-/lib/cli/ @hypnosphi @ndelangen @danielduan @shilman @stijnkoopal
+/lib/cli/ @hypnosphi @ndelangen @shilman @stijnkoopal
 /lib/client-logger/ @dangreenisrael
 /lib/codemod/ @aaronmcadam @ndelangen
 /lib/components/ @ndelangen @hypnosphi @tmeasday
