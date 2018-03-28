@@ -1,0 +1,14 @@
+{
+  "name": "mithril-fixture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p dist"
+  },
+  "dependencies": {
+    "mithril": "^1.1.6"
+  },
+  "devDependencies": {
+  }
+}
