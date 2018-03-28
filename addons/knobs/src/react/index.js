@@ -15,10 +15,11 @@ import {
   select,
   selectV2,
   button,
+  files,
   manager,
 } from '../base';
 
-export { knob, text, boolean, number, color, object, array, date, select, selectV2, button };
+export { knob, text, boolean, number, color, object, array, date, select, selectV2, button, files };
 
 export const reactHandler = (channel, knobStore) => getStory => context => {
   const initialContent = getStory(context);

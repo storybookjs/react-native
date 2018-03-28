@@ -44,7 +44,7 @@
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.7.2",
-    "core-js": "^2.5.3",
+    "core-js": "^2.5.4",
     "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
@@ -58,7 +58,7 @@
     "prop-types": "^15.6.1",
     "react-dev-utils": "^5.0.0",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.2.0",
+    "webpack": "^4.3.0",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {

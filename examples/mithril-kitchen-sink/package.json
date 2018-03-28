@@ -1,0 +1,29 @@
+{
+  "name": "mithril-example",
+  "version": "3.4.0-rc.3",
+  "private": true,
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 9007"
+  },
+  "dependencies": {
+    "mithril": "^1.1.6"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "3.4.0-rc.3",
+    "@storybook/addon-backgrounds": "3.4.0-rc.3",
+    "@storybook/addon-centered": "3.4.0-rc.3",
+    "@storybook/addon-knobs": "3.4.0-rc.3",
+    "@storybook/addon-links": "3.4.0-rc.3",
+    "@storybook/addon-notes": "3.4.0-rc.3",
+    "@storybook/addon-options": "3.4.0-rc.3",
+    "@storybook/addon-storyshots": "3.4.0-rc.3",
+    "@storybook/addon-storysource": "3.4.0-rc.3",
+    "@storybook/addon-viewport": "3.4.0-rc.3",
+    "@storybook/addons": "3.4.0-rc.3",
+    "@storybook/mithril": "3.4.0-rc.3",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "webpack": "^4.3.0"
+  }
+}

@@ -16,6 +16,14 @@ exports[`Storyshots App|acceptance cra-kitchen-sink 1`] = `
 />
 `;
 
+exports[`Storyshots App|acceptance mithril-kitchen-sink 1`] = `
+<iframe
+  src="/mithril-kitchen-sink/index.html"
+  style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
+  title="mithril-kitchen-sink"
+/>
+`;
+
 exports[`Storyshots App|acceptance polymer-cli 1`] = `
 <iframe
   src="/polymer-cli/index.html"
