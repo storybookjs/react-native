@@ -31,7 +31,53 @@ Setting this property to, let say `iphone6`, will make `iPhone 6` the default de
 
 ### viewports : Object
 ----
-A key-value pair of viewport's key and properties for all viewports to be displayed. Default is [`INITIAL_VIEWPORTS`](src/shared/index.js)
+A key-value pair of viewport's key and properties (see `Viewport` definition below) for all viewports to be displayed. Default is [`INITIAL_VIEWPORTS`](src/shared/index.js)
+
+#### Viewport Model
+```js
+{
+  /**
+   * name to display in the dropdown
+   * @type {String}
+   */
+  name: 'Responsive',
+
+  /**
+   * Inline styles to be applied to the story (iframe).
+   * styles is an object whose key is the camelCased version of the style name, and whose
+   * value is the style’s value, usually a string
+   * @type {Object}
+   */
+  styles: {
+    width: '100%',
+    height: '100%',
+  },
+
+  /**
+   * type of the device (e.g. desktop, mobile, or tablet)
+   * @type {String}
+   */
+  type: 'desktop',
+}
+```
+
+## Decorators
+
+Sometimes you want to show collection of mobile stories, and you know those stories look horible on desktop (`responsive`), so you think you need to change the default viewport only for those?
+
+Here is the answer, with `withViewport` decorator, you can change the default viewport of single, multiple, or all stories.
+
+`withViewport` accepts either
+* A `String`, which represents the default viewport, or
+* An `Object`, which looks like
+```js
+{
+  name: 'iphone6', // default viewport
+  onViewportChange({ viewport }) { // called whenever different viewport is selected from the dropdown
+
+  }
+}
+```
 
 ## Examples
 
@@ -119,4 +165,57 @@ import { configure } from '@storybook/addon-viewport';
 configure({
   defaultViewport: 'iphone6'
 });
+```
+
+## withViewport Decorator
+
+Change the default viewport for single/multiple/global stories, or listen to viewport selection changes
+
+```js
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import { withViewport } from '@storybook/addon-viewport';
+
+// Globablly
+addDecorator(withViewport('iphone5'));
+
+// Collection
+storiesOf('Decorator with string', module)
+  .addDecorator(withViewport('iphone6'))
+  .add('iPhone 6', () => (
+    <h1>
+      Do I look good on <b>iPhone 6</b>?
+    </h1>
+  ));
+
+storiesOf('Decorator with object', module)
+  .addDecorator(
+    withViewport({
+      onViewportChange({ viewport }) {
+        console.log(`Viewport changed: ${viewport.name} (${viewport.type})`); // e.g. Viewport changed: iphone6 (mobile)
+      },
+    })
+  )
+  .add('onViewportChange', () => <MobileFirstComponent />);
+
+```
+
+## Viewport Component
+
+You can also change the default viewport for a single story using `Viewport` component
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Viewport } from '@storybook/addon-viewport';
+
+// Collection
+storiesOf('Custom Default', module)
+  .add('iphone6p', () => (
+    <Viewport name="iphone6p">
+      <h1>
+        Do I look good on <b>iPhone 6 Plus</b>?
+      </h1>
+    </Viewport>
+  ));
 ```

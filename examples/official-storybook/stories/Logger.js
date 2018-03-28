@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import json from 'format-json';
 import PropTypes from 'prop-types';
 import EventEmitter from 'eventemitter3';
-
 import uuid from 'uuid/v4';
-
-const EVENTS = {
-  TEST_EVENT_1: 'test-event-1',
-  TEST_EVENT_2: 'test-event-2',
-  TEST_EVENT_3: 'test-event-3',
-  TEST_EVENT_4: 'test-event-4',
-};
 
 const styles = {
   wrapper: {
@@ -21,6 +13,9 @@ const styles = {
     `,
     color: 'rgb(51, 51, 51)',
   },
+  title: {
+    margin: 0,
+  },
   item: {
     listStyle: 'none',
     marginBottom: 10,
@@ -28,8 +23,15 @@ const styles = {
 };
 
 export default class Logger extends Component {
+  static LOG_EVENT = 'Logger:log';
+
   static propTypes = {
     emitter: PropTypes.instanceOf(EventEmitter).isRequired,
+    title: PropTypes.string,
+  };
+
+  static defaultProps = {
+    title: 'Logger',
   };
 
   state = {
@@ -37,15 +39,14 @@ export default class Logger extends Component {
   };
 
   componentWillMount() {
-    const { emitter } = this.props;
-
-    emitter.on(EVENTS.TEST_EVENT_1, this.onEventHandler(EVENTS.TEST_EVENT_1));
-    emitter.on(EVENTS.TEST_EVENT_2, this.onEventHandler(EVENTS.TEST_EVENT_2));
-    emitter.on(EVENTS.TEST_EVENT_3, this.onEventHandler(EVENTS.TEST_EVENT_3));
-    emitter.on(EVENTS.TEST_EVENT_4, this.onEventHandler(EVENTS.TEST_EVENT_4));
+    this.props.emitter.on(Logger.LOG_EVENT, this.onEventHandler);
   }
 
-  onEventHandler = name => payload => {
+  componentWillUnmount() {
+    this.props.emitter.removeListener(Logger.LOG_EVENT, this.onEventHandler);
+  }
+
+  onEventHandler = ({ name, payload }) => {
     this.setState(({ events }) => ({
       events: [...events, { name, id: uuid(), payload }],
     }));
@@ -53,10 +54,11 @@ export default class Logger extends Component {
 
   render() {
     const { events } = this.state;
+    const { title } = this.props;
 
     return (
       <div style={styles.wrapper}>
-        <h1>Logger</h1>
+        <h1 style={styles.title}>{title}</h1>
         <dl>
           {events.map(({ id, name, payload }) => (
             <div style={styles.item} key={id}>
