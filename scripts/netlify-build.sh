@@ -42,6 +42,13 @@ elif [ "$BUILD_CONTEXT" = "POLYMER" ]; then
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "MITHRIL" ]; then
+  echo "netlify-build Mithril examples"
+  pushd examples/mithril-kitchen-sink
+  yarn
+  yarn build-storybook
+  mv storybook-static ../../netlify-build
+  popd
 elif [ "$BUILD_CONTEXT" = "OFFICIAL" ]; then
   echo "netlify-build official examples"
   pushd examples/official-storybook

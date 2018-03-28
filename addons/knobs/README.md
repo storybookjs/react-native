@@ -118,6 +118,13 @@ stories.add('as dynamic variables', () => {
 > import { storiesOf } from '@storybook/angular';
 > import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/angular';
 > ```
+>
+> In the case of Mithril, use these imports:
+>
+> ```js
+> import { storiesOf } from '@storybook/mithril';
+> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/mithril';
+> ```
 
 You can see your Knobs in a Storybook panel as shown below.
 

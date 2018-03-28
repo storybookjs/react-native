@@ -10,6 +10,7 @@ title: 'Live Examples'
 - [Vue](https://storybooks-vue.netlify.com/)
 - [Angular](https://storybooks-angular.netlify.com/)
 - [Polymer](https://storybooks-polymer.netlify.com/)
+- [Mithril](https://storybooks-mithril.netlify.com/)
 
 ### 3.4
 - [React Official](https://release-3-4--storybooks-official.netlify.com)
