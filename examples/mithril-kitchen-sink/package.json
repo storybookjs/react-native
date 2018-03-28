@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 9009"
+    "storybook": "start-storybook -p 9007"
   },
   "dependencies": {
     "mithril": "^1.1.6"
