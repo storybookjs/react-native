@@ -357,9 +357,9 @@
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-0.0.32.tgz#bd284e57c84f1325da702babfc82a5328190c0c5"
 
-"@types/react@^16.0.41":
-  version "16.0.41"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.41.tgz#72146737f4d439dc95a53315de4bfb43ac8542ca"
+"@types/react@^16.1.0":
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.1.0.tgz#6c0e9955ce73f332b4a1948d45decaf18c764c6e"
 
 "@types/selenium-webdriver@^2.53.35", "@types/selenium-webdriver@~2.53.39":
   version "2.53.43"
@@ -12893,9 +12893,9 @@ react-addons-create-fragment@^15.5.3:
     loose-envify "^1.3.1"
     object-assign "^4.1.0"
 
-react-chromatic@^0.7.11:
-  version "0.7.11"
-  resolved "https://registry.yarnpkg.com/react-chromatic/-/react-chromatic-0.7.11.tgz#8ecc2b183e391304f277b014b90ee7368f17c7d9"
+react-chromatic@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-chromatic/-/react-chromatic-0.8.1.tgz#dfec55b8e2064be4d68c94fe971984e7f4aa93dc"
   dependencies:
     apollo-fetch "^0.6.0"
     babel-runtime "^6.26.0"
