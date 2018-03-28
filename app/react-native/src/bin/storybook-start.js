@@ -60,6 +60,7 @@ if (!program.skipPackager) {
 
   
   try {
+     // eslint-disable-next-line global-require
     require("babel-register")({
       "presets": ["flow"],
       ignore: false,
@@ -67,13 +68,10 @@ if (!program.skipPackager) {
 
      // eslint-disable-next-line global-require
     const findSymlinkedModules = require('react-native/local-cli/util/findSymlinkedModules');
-    const resolveSymlinksForRoots = roots =>
-      roots.reduce(
-        (arr, rootPath) => arr.concat(
-          findSymlinkedModules(rootPath, roots)
-        ),
-        [...roots]);
-    symlinks = resolveSymlinksForRoots(roots);
+    symlinks = roots.reduce(
+      (arr, rootPath) => arr.concat(findSymlinkedModules(rootPath, roots)),
+      [...roots]
+    );
   } catch (e) {
     console.warn(`Unable to load findSymlinksPaths: ${e.message}`, e);
   }
