@@ -213,6 +213,11 @@ jobs:
           key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
           paths:
             - docs/node_modules
+      - save_cache:
+          name: "Cache built docs"
+          key: built-docs-{{ .Revision }}
+          paths:
+            - docs/public
   lint:
     <<: *defaults
     steps:
@@ -293,10 +298,25 @@ jobs:
   deploy:
     <<: *defaults
     steps:
+      - checkout
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+      - restore_cache:
+          name: "Restore built docs"
+          keys:
+            - built-docs-{{ .Revision }}
+      - add_ssh_keys:
+          fingerprints:
+            - "35:aa:b9:c3:b8:1c:27:1f:02:0a:73:1a:ac:58:77:df"
       - run:
           name: "Deploy"
           command: |
-            echo "TODO"
+            cd docs
+            git config --global user.email "gh-pages@localhost"
+            git config --global user.name "npm gh-pages"
+            yarn deploy:ci
 workflows:
   version: 2
   build_accept_deploy:
@@ -328,3 +348,10 @@ workflows:
       - cli-latest-cra:
           requires:
             - build
+      - deploy:
+          requires:
+            - docs
+          filters:
+            branches:
+              only:
+                - release/3.4
