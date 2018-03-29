@@ -49,10 +49,7 @@ describe('Viewport', () => {
       subject = shallow(<Viewport {...props} onViewportChange={noop} />);
 
       expect(channel.on).toHaveBeenCalledTimes(1);
-      expect(channel.on).toHaveBeenCalledWith(
-        'addon:viewport:viewportChanged',
-        noop
-      );
+      expect(channel.on).toHaveBeenCalledWith('addon:viewport:viewportChanged', noop);
     });
   });
 
@@ -60,12 +57,9 @@ describe('Viewport', () => {
     it('removes viewport changes listener', () => {
       subject = shallow(<Viewport {...props} onViewportChange={noop} />);
       subject.unmount();
-      
+
       expect(channel.removeListener).toHaveBeenCalledTimes(1);
-      expect(channel.removeListener).toHaveBeenCalledWith(
-        'addon:viewport:viewportChanged',
-        noop
-      );
+      expect(channel.removeListener).toHaveBeenCalledWith('addon:viewport:viewportChanged', noop);
     });
   });
 
@@ -74,7 +68,7 @@ describe('Viewport', () => {
     const propsWithCallback = {
       name: 'unknown',
       children: 'do not exist',
-      onViewportChange: jest.fn()
+      onViewportChange: jest.fn(),
     };
 
     beforeAll(() => {
@@ -87,15 +81,13 @@ describe('Viewport', () => {
 
     it('calls onViewportChange with the newly selected viewport', () => {
       emitter.emit(VIEWPORT_CHANGED_EVENT_ID, {
-        viewport: INITIAL_VIEWPORTS.iphone5
+        viewport: INITIAL_VIEWPORTS.iphone5,
       });
 
       expect(propsWithCallback.onViewportChange).toHaveBeenCalled();
-      expect(propsWithCallback.onViewportChange).toHaveBeenCalledWith(
-        {
-          viewport: INITIAL_VIEWPORTS.iphone5
-        }
-      );
+      expect(propsWithCallback.onViewportChange).toHaveBeenCalledWith({
+        viewport: INITIAL_VIEWPORTS.iphone5,
+      });
     });
   });
 });

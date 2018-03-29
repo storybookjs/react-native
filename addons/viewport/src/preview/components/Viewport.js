@@ -18,7 +18,7 @@ export default class Viewport extends React.Component {
 
   static defaultProps = {
     name: DEFAULT_VIEWPORT,
-    onViewportChange: noop
+    onViewportChange: noop,
   };
 
   constructor(props) {

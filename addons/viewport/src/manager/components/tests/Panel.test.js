@@ -184,12 +184,10 @@ describe('Viewport/Panel', () => {
       });
 
       it('sets the state with the new information', () => {
-        expect(subject.instance().setState.mock.calls[0][0]).toEqual(
-          {
-            viewport: initialViewportAt(1),
-            isLandscape: false,
-          }
-        );
+        expect(subject.instance().setState.mock.calls[0][0]).toEqual({
+          viewport: initialViewportAt(1),
+          isLandscape: false,
+        });
       });
     });
 
@@ -213,21 +211,17 @@ describe('Viewport/Panel', () => {
     });
 
     it('sets the state with the new information', () => {
-      expect(subject.instance().setState.mock.calls.length).toBe(2);
-      expect(subject.instance().setState.mock.calls[0][0]).toEqual(
-        {
-          storyDefaultViewport: 'iphone5'
-        }
-      );
+      expect(subject.instance().setState.mock.calls).toHaveLength(2);
+      expect(subject.instance().setState.mock.calls[0][0]).toEqual({
+        storyDefaultViewport: 'iphone5',
+      });
 
-      expect(subject.instance().setState.mock.calls[1][0]).toEqual(
-        {
-          viewport: initialViewportAt(1),
-          isLandscape: false
-        }
-      );
+      expect(subject.instance().setState.mock.calls[1][0]).toEqual({
+        viewport: initialViewportAt(1),
+        isLandscape: false,
+      });
       expect(typeof subject.instance().setState.mock.calls[1][1]).toEqual('function');
-      
+
       const updaterFunction = subject.instance().setState.mock.calls[1][1];
       updaterFunction();
 
@@ -246,7 +240,7 @@ describe('Viewport/Panel', () => {
       beforeEach(() => {
         subject.instance().state = {
           ...subject.instance().state,
-          viewport: initialViewportAt(1)
+          viewport: initialViewportAt(1),
         };
         subject.instance().emitViewportChanged();
       });
@@ -254,10 +248,9 @@ describe('Viewport/Panel', () => {
       it('emits viewport changed event', () => {
         const viewport = transformedInitialViewports[initialViewportAt(1)];
 
-        expect(props.channel.emit).toHaveBeenCalledWith(
-          'addon:viewport:viewportChanged',
-          { viewport }
-        );
+        expect(props.channel.emit).toHaveBeenCalledWith('addon:viewport:viewportChanged', {
+          viewport,
+        });
       });
     });
 
