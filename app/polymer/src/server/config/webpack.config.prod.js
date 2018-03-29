@@ -32,7 +32,7 @@ export default function(configDir) {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        chunks: ['manager'],
+        chunks: ['manager', 'runtime~manager'],
         data: {
           managerHead: getManagerHeadHtml(configDir),
           version,
@@ -41,7 +41,7 @@ export default function(configDir) {
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
-        excludeChunks: ['manager'],
+        excludeChunks: ['manager', 'runtime~manager'],
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
