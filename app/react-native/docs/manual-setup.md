@@ -3,7 +3,7 @@
 First, install the `@storybook/react-native` module
 
 ```sh
-npm install @storybook/react-native --save-dev
+npm install @storybook/react-native
 ```
 
 Create a new directory called `storybook` in your project root and create an entry file (index.ios.js or index.android.js) as given below. (Don't forget to replace "MyApplicationName" with your app name).
@@ -25,7 +25,7 @@ const StorybookUI = getStorybookUI({
 AppRegistry.registerComponent('MyApplicationName', () => StorybookUI);
 ```
 
-Create a file named `addons.js` file in `storybook` directory to use default set of addons.
+Create a file named `addons.js` file in `storybook` directory to use addons. Here is a list of default addons:
 
 ```js
 import '@storybook/addon-actions';

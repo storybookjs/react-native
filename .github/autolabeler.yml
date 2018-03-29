@@ -17,6 +17,7 @@
 'app: react-native': ["app/react-native/**"]
 'app: react': ["app/react/**"]
 'app: vue': ["app/vue/**"]
+'app: mithril': ["app/mithril/**"]
 'babel / webpack': ["webpack", "babel"]
 'cli': ["lib/cli/**"]
 'compatibility with other tools': []

@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { baseFonts } from '@storybook/components';
 import { document } from 'global';
+import debounce from 'lodash.debounce';
 
 import { resetViewport, viewportsTransformer } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
 import {
   SET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
-  UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
   CONFIGURE_VIEWPORT_EVENT_ID,
   UPDATE_VIEWPORT_EVENT_ID,
+  VIEWPORT_CHANGED_EVENT_ID,
   INITIAL_VIEWPORTS,
   DEFAULT_VIEWPORT,
 } from '../../shared';
@@ -31,6 +32,8 @@ const getDefaultViewport = (viewports, candidateViewport) =>
 const getViewports = viewports =>
   Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
 
+const setStoryDefaultViewportWait = 100;
+
 export class Panel extends Component {
   static propTypes = {
     channel: PropTypes.shape({}).isRequired,
@@ -50,6 +53,13 @@ export class Panel extends Component {
       viewports: viewportsTransformer(INITIAL_VIEWPORTS),
       isLandscape: false,
     };
+
+    this.previousViewport = DEFAULT_VIEWPORT;
+
+    this.setStoryDefaultViewport = debounce(
+      this.setStoryDefaultViewport,
+      setStoryDefaultViewportWait
+    );
   }
 
   componentDidMount() {
@@ -60,10 +70,9 @@ export class Panel extends Component {
     channel.on(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.on(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
-    channel.on(UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.unsetStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
-      this.changeViewport(this.state.defaultViewport);
+      this.setStoryDefaultViewport(this.state.defaultViewport);
     });
   }
 
@@ -77,30 +86,16 @@ export class Panel extends Component {
     channel.removeListener(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.removeListener(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
     channel.removeListener(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
-    channel.removeListener(UNSET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.unsetStoryDefaultViewport);
   }
 
   setStoryDefaultViewport = viewport => {
     const { viewports } = this.state;
     const defaultViewport = getDefaultViewport(viewports, viewport);
 
-    this.setState(
-      {
-        storyDefaultViewport: defaultViewport,
-        viewport: defaultViewport,
-      },
-      this.updateIframe
-    );
-  };
-
-  unsetStoryDefaultViewport = () => {
-    this.setState(
-      {
-        storyDefaultViewport: undefined,
-        viewport: this.state.defaultViewport,
-      },
-      this.updateIframe
-    );
+    this.setState({
+      storyDefaultViewport: defaultViewport,
+    });
+    this.changeViewport(defaultViewport);
   };
 
   configure = (options = Panel.defaultOptions) => {
@@ -128,10 +123,30 @@ export class Panel extends Component {
           viewport,
           isLandscape: false,
         },
-        this.updateIframe
+        () => {
+          this.updateIframe();
+          this.emitViewportChanged();
+        }
       );
     }
   };
+
+  emitViewportChanged = () => {
+    const { channel } = this.props;
+    const { viewport, viewports } = this.state;
+
+    if (!this.shouldNotify()) {
+      return;
+    }
+
+    this.previousViewport = viewport;
+
+    channel.emit(VIEWPORT_CHANGED_EVENT_ID, {
+      viewport: viewports[viewport],
+    });
+  };
+
+  shouldNotify = () => this.previousViewport !== this.state.viewport;
 
   toggleLandscape = () => {
     const { isLandscape } = this.state;

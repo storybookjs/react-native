@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "3.4.0-rc.3",
+  "version": "4.0.0-alpha.0",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,8 +15,8 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/client-logger": "3.4.0-rc.3",
-    "@storybook/components": "3.4.0-rc.3",
+    "@storybook/client-logger": "4.0.0-alpha.0",
+    "@storybook/components": "4.0.0-alpha.0",
     "babel-runtime": "^6.26.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.1",
@@ -28,8 +28,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.4.0-rc.3",
-    "@storybook/react": "3.4.0-rc.3",
+    "@storybook/addon-actions": "4.0.0-alpha.0",
+    "@storybook/react": "4.0.0-alpha.0",
     "react-test-renderer": "^16.1.0"
   },
   "peerDependencies": {

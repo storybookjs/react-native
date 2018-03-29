@@ -1,6 +1,6 @@
 {
   "name": "@storybook/polymer",
-  "version": "3.4.0-rc.3",
+  "version": "4.0.0-alpha.0",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/polymer",
   "bugs": {
@@ -22,12 +22,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "3.4.0-rc.3",
-    "@storybook/channel-postmessage": "3.4.0-rc.3",
-    "@storybook/client-logger": "3.4.0-rc.3",
-    "@storybook/core": "3.4.0-rc.3",
-    "@storybook/node-logger": "3.4.0-rc.3",
-    "@storybook/ui": "3.4.0-rc.3",
+    "@storybook/addons": "4.0.0-alpha.0",
+    "@storybook/channel-postmessage": "4.0.0-alpha.0",
+    "@storybook/client-logger": "4.0.0-alpha.0",
+    "@storybook/core": "4.0.0-alpha.0",
+    "@storybook/node-logger": "4.0.0-alpha.0",
+    "@storybook/ui": "4.0.0-alpha.0",
     "@webcomponents/webcomponentsjs": "^1.1.1",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
@@ -42,18 +42,17 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.4.0",
     "copy-webpack-plugin": "^4.5.1",
-    "core-js": "^2.5.1",
+    "core-js": "^2.5.4",
     "dotenv-webpack": "^1.5.5",
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.1.0",
     "json5": "^0.5.1",
     "react": "^16.0.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.0.0",
-    "uglifyjs-webpack-plugin": "^1.2.4",
     "util-deprecate": "^1.0.2",
-    "webpack": "^3.11.0",
+    "webpack": "^4.3.0",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {

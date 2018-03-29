@@ -40,6 +40,34 @@ module.exports = {
 
 The loader can be customized with the following options:
 
+### parser
+The parser that will be parsing your code to AST (based on [prettier](https://github.com/prettier/prettier/tree/master/src/language-js))
+
+Alowed values:
+* `javascript` - default
+* `typescript`
+
+Usage:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [
+          {
+            loader: require.resolve('@storybook/addon-storysource/loader'),
+            options: { parser: 'typescript' }
+          }
+        ],
+        enforce: 'pre',
+      },
+    ],
+  },
+};
+```
+
 ### prettierConfig
 
 The prettier configuration that will be used to format the story source in the addon panel.
