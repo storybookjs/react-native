@@ -1,3 +1,16 @@
+# 3.4.0-rc.4
+
+2018-March-28
+
+#### Bug Fixes
+
+-   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
+-   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
+-   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
+-   Object proptype is shown in addon-info proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
+-   Fix storyshots renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
+-   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
+
 # 3.4.0-rc.3
 
 2018-March-19
