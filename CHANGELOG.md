@@ -38,7 +38,7 @@
 
 <details>
 <summary>
-64 PRs
+64 Updates
 </summary>
 
 -   Update gatsby-transformer-remark in /docs from 1.7.38 to 1.7.39 [#3310](https://github.com/storybooks/storybook/pull/3310)
