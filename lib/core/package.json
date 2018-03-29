@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "3.4.0-rc.3",
+  "version": "4.0.0-alpha.0",
   "description": "Storybook framework-agnostic API",
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
   "bugs": {
@@ -17,11 +17,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "3.4.0-rc.3",
-    "@storybook/channel-postmessage": "3.4.0-rc.3",
-    "@storybook/client-logger": "3.4.0-rc.3",
-    "@storybook/node-logger": "3.4.0-rc.3",
-    "@storybook/ui": "3.4.0-rc.3",
+    "@storybook/addons": "4.0.0-alpha.0",
+    "@storybook/channel-postmessage": "4.0.0-alpha.0",
+    "@storybook/client-logger": "4.0.0-alpha.0",
+    "@storybook/node-logger": "4.0.0-alpha.0",
+    "@storybook/ui": "4.0.0-alpha.0",
     "autoprefixer": "^8.2.0",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.3.2",
