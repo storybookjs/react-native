@@ -87,6 +87,16 @@ export default function(configDir) {
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
     },
+    optimization: {
+      // Automatically split vendor and commons for preview bundle
+      // https://twitter.com/wSokra/status/969633336732905474
+      splitChunks: {
+        chunks: chunk => chunk.name !== 'manager',
+      },
+      // Keep the runtime chunk seperated to enable long term caching
+      // https://twitter.com/wSokra/status/969679223278505985
+      runtimeChunk: true,
+    },
   };
 
   return config;

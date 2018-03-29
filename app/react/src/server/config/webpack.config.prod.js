@@ -31,7 +31,7 @@ export default function(configDir) {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        chunks: ['manager'],
+        chunks: ['manager', 'runtime~manager'],
         data: {
           managerHead: getManagerHeadHtml(configDir),
           version,
@@ -40,7 +40,7 @@ export default function(configDir) {
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
-        excludeChunks: ['manager'],
+        excludeChunks: ['manager', 'runtime~manager'],
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
@@ -79,6 +79,16 @@ export default function(configDir) {
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
+    },
+    optimization: {
+      // Automatically split vendor and commons for preview bundle
+      // https://twitter.com/wSokra/status/969633336732905474
+      splitChunks: {
+        chunks: chunk => chunk.name !== 'manager',
+      },
+      // Keep the runtime chunk seperated to enable long term caching
+      // https://twitter.com/wSokra/status/969679223278505985
+      runtimeChunk: true,
     },
   };
 
