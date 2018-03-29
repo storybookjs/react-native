@@ -1,3 +1,11 @@
+# 4.0.0-alpha.1
+
+2018-March-29
+
+#### Bug Fixes
+
+-   [Hotfix]  Use published webpack 4 compatible fork of react-dev-utils [#3312](https://github.com/storybooks/storybook/pull/3312)
+
 # 4.0.0-alpha.0
 
 2018-March-28
