@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-events",
-  "version": "4.0.0-alpha.0",
+  "version": "4.0.0-alpha.1",
   "description": "Add events to your Storybook stories.",
   "keywords": [
     "addon",

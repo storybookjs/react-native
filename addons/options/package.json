@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "4.0.0-alpha.0",
+  "version": "4.0.0-alpha.1",
   "description": "Options addon for storybook",
   "keywords": [
     "storybook"
@@ -23,7 +23,7 @@
     "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.0"
+    "@storybook/react": "4.0.0-alpha.1"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",
