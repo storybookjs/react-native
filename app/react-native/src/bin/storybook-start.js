@@ -58,14 +58,25 @@ if (!program.skipPackager) {
     roots = roots.concat(program.root.split(',').map(root => path.resolve(root)));
   }
 
+  
   try {
-    const findSymlinksPaths = require('react-native/local-cli/util/findSymlinksPaths'); // eslint-disable-line global-require
-    symlinks = findSymlinksPaths(path.join(projectDir, 'node_modules'), [projectDir]);
+     // eslint-disable-next-line global-require
+    require("babel-register")({
+      "presets": ["flow"],
+      ignore: false,
+      babelrc: false});
+
+     // eslint-disable-next-line global-require
+    const findSymlinkedModules = require('react-native/local-cli/util/findSymlinkedModules');
+    symlinks = roots.reduce(
+      (arr, rootPath) => arr.concat(findSymlinkedModules(rootPath, roots)),
+      [...roots]
+    );
   } catch (e) {
-    console.warn(`Unable to load findSymlinksPaths: ${e.message}`);
+    console.warn(`Unable to load findSymlinksPaths: ${e.message}`, e);
   }
 
-  let projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(
+  let projectRoots = (configDir === projectDir ? [] : [configDir]).concat(
     symlinks
   );
 
@@ -85,7 +96,6 @@ if (!program.skipPackager) {
     [
       cliCommand,
       `--projectRoots ${projectRoots.join(',')}`,
-      `--root ${roots.join(',')}`,
       program.resetCache && '--reset-cache',
       program.packagerPort && `--port=${program.packagerPort}`,
     ]
