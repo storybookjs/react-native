@@ -30,7 +30,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.1",
     "@storybook/react": "4.0.0-alpha.1",
-    "react-test-renderer": "^16.1.0"
+    "react-test-renderer": "^16.3.0"
   },
   "peerDependencies": {
     "react": "*",

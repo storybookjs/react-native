@@ -7,7 +7,7 @@ export class BackgroundDecorator extends React.Component {
   constructor(props) {
     super(props);
 
-    const { channel, story } = props;
+    const { channel } = props;
 
     // A channel is explicitly passed in for testing
     if (channel) {
@@ -15,18 +15,10 @@ export class BackgroundDecorator extends React.Component {
     } else {
       this.channel = addons.getChannel();
     }
-
-    this.story = story();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.channel.emit('background-set', this.props.backgrounds);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.story !== this.props.story) {
-      this.story = nextProps.story();
-    }
   }
 
   componentWillUnmount() {
@@ -34,7 +26,7 @@ export class BackgroundDecorator extends React.Component {
   }
 
   render() {
-    return this.story;
+    return this.props.story();
   }
 }
 BackgroundDecorator.propTypes = {

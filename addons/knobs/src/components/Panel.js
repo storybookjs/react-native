@@ -60,6 +60,9 @@ export default class Panel extends React.Component {
 
     this.lastEdit = getTimestamp();
     this.loadedFromUrl = false;
+  }
+
+  componentDidMount() {
     this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
     this.props.channel.on('addon:knobs:setOptions', this.setOptions);
 
