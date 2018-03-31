@@ -32,7 +32,7 @@ export default class Viewport extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (this.onViewportChange) {
       this.channel.on(VIEWPORT_CHANGED_EVENT_ID, this.onViewportChange);
     }

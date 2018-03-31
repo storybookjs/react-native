@@ -1,4 +1,5 @@
 import React from 'react';
+import polyfill from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 
 import addons from '@storybook/addons';
@@ -15,6 +16,8 @@ export class BackgroundDecorator extends React.Component {
     } else {
       this.channel = addons.getChannel();
     }
+
+    this.state = {};
   }
 
   componentDidMount() {
@@ -26,9 +29,20 @@ export class BackgroundDecorator extends React.Component {
   }
 
   render() {
-    return this.props.story();
+    return this.state.story;
   }
 }
+
+BackgroundDecorator.getDerivedStateFromProps = ({ story }, { prevStory }) => {
+  if (story !== prevStory) {
+    return {
+      story: story(),
+      prevStory: story,
+    };
+  }
+  return null;
+};
+
 BackgroundDecorator.propTypes = {
   backgrounds: PropTypes.arrayOf(PropTypes.object),
   channel: PropTypes.shape({
@@ -36,12 +50,16 @@ BackgroundDecorator.propTypes = {
     on: PropTypes.func,
     removeListener: PropTypes.func,
   }),
+  // eslint-disable-next-line react/no-unused-prop-types
   story: PropTypes.func.isRequired,
 };
+
 BackgroundDecorator.defaultProps = {
   backgrounds: [],
   channel: undefined,
 };
+
+polyfill(BackgroundDecorator);
 
 export default backgrounds => story => (
   <BackgroundDecorator story={story} backgrounds={backgrounds} />

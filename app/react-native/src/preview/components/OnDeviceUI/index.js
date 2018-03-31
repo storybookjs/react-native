@@ -32,19 +32,16 @@ export default class OnDeviceUI extends Component {
     };
   }
 
-  componentWillMount = () => {
+  componentDidMount() {
     Dimensions.addEventListener('change', this.handleDeviceRotation);
     this.props.events.on('story', this.handleStoryChange);
-  };
-
-  componentDidMount() {
     StatusBar.setHidden(true);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     Dimensions.removeEventListener('change', this.handleDeviceRotation);
     this.props.events.removeListener('story', this.handleStoryChange);
-  };
+  }
 
   handleDeviceRotation = () => {
     this.setState({
