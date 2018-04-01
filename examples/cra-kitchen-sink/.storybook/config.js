@@ -8,14 +8,13 @@ setOptions({
   name: 'CRA Kitchen Sink',
   url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
   goFullScreen: false,
-  // showStoriesPanel: true,
   showAddonsPanel: true,
   showSearchBox: false,
   addonPanelInRight: true,
   sortStoriesByKind: false,
   hierarchySeparator: /\./,
   hierarchyRootSeparator: /\|/,
-}, 'shit');
+});
 
 // deprecated usage of infoAddon
 setAddon(infoAddon);
