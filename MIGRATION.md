@@ -2,6 +2,7 @@
 
 ## Table of contents
 
+-   [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
     -   [Storyshots Jest configuration](#storyshots-jest-configuration)
@@ -15,6 +16,10 @@
     -   [Webpack upgrade](#webpack-upgrade)
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 3.3.x to 3.4.x
+
+There are no expected breaking changes in the 3.4.x release, but 3.4 contains a major refactor to make it easier to support new frameworks, and we will document any breaking changes here if they arise.
 
 ## From version 3.2.x to 3.3.x
 

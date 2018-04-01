@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "4.0.0-alpha.0",
+  "version": "4.0.0-alpha.1",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -23,14 +23,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.0",
-    "@storybook/addon-links": "4.0.0-alpha.0",
-    "@storybook/addons": "4.0.0-alpha.0",
-    "@storybook/channel-postmessage": "4.0.0-alpha.0",
-    "@storybook/client-logger": "4.0.0-alpha.0",
-    "@storybook/core": "4.0.0-alpha.0",
-    "@storybook/node-logger": "4.0.0-alpha.0",
-    "@storybook/ui": "4.0.0-alpha.0",
+    "@storybook/addon-actions": "4.0.0-alpha.1",
+    "@storybook/addon-links": "4.0.0-alpha.1",
+    "@storybook/addons": "4.0.0-alpha.1",
+    "@storybook/channel-postmessage": "4.0.0-alpha.1",
+    "@storybook/client-logger": "4.0.0-alpha.1",
+    "@storybook/core": "4.0.0-alpha.1",
+    "@storybook/node-logger": "4.0.0-alpha.1",
+    "@storybook/react-dev-utils": "^5.0.0",
+    "@storybook/ui": "4.0.0-alpha.1",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
@@ -56,9 +57,8 @@
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
-    "react-dev-utils": "^5.0.0",
     "util-deprecate": "^1.0.2",
-    "webpack": "^4.3.0",
+    "webpack": "^4.4.1",
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {

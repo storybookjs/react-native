@@ -1,6 +1,6 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "4.0.0-alpha.0",
+  "version": "4.0.0-alpha.1",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -17,27 +17,27 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "4.0.0-alpha.0",
-    "@storybook/addon-actions": "4.0.0-alpha.0",
-    "@storybook/addon-backgrounds": "4.0.0-alpha.0",
-    "@storybook/addon-centered": "4.0.0-alpha.0",
-    "@storybook/addon-events": "4.0.0-alpha.0",
-    "@storybook/addon-info": "4.0.0-alpha.0",
-    "@storybook/addon-jest": "4.0.0-alpha.0",
-    "@storybook/addon-knobs": "4.0.0-alpha.0",
-    "@storybook/addon-links": "4.0.0-alpha.0",
-    "@storybook/addon-notes": "4.0.0-alpha.0",
-    "@storybook/addon-options": "4.0.0-alpha.0",
-    "@storybook/addon-storyshots": "4.0.0-alpha.0",
-    "@storybook/addons": "4.0.0-alpha.0",
-    "@storybook/client-logger": "4.0.0-alpha.0",
-    "@storybook/react": "4.0.0-alpha.0",
+    "@storybook/addon-a11y": "4.0.0-alpha.1",
+    "@storybook/addon-actions": "4.0.0-alpha.1",
+    "@storybook/addon-backgrounds": "4.0.0-alpha.1",
+    "@storybook/addon-centered": "4.0.0-alpha.1",
+    "@storybook/addon-events": "4.0.0-alpha.1",
+    "@storybook/addon-info": "4.0.0-alpha.1",
+    "@storybook/addon-jest": "4.0.0-alpha.1",
+    "@storybook/addon-knobs": "4.0.0-alpha.1",
+    "@storybook/addon-links": "4.0.0-alpha.1",
+    "@storybook/addon-notes": "4.0.0-alpha.1",
+    "@storybook/addon-options": "4.0.0-alpha.1",
+    "@storybook/addon-storyshots": "4.0.0-alpha.1",
+    "@storybook/addons": "4.0.0-alpha.1",
+    "@storybook/client-logger": "4.0.0-alpha.1",
+    "@storybook/react": "4.0.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.3",
     "jest": "^20.0.4",
     "react-scripts": "^1.1.1",
-    "webpack": "^4.3.0"
+    "webpack": "^4.4.1"
   }
 }

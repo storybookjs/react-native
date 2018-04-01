@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
+import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { includePaths, excludePaths, nodeModulesPaths } from './utils';
