@@ -12,6 +12,7 @@ module.exports = {
         '/basics/guide-react/',
         '/basics/guide-vue/',
         '/basics/guide-angular/',
+        '/basics/guide-mithril/',
         '/basics/writing-stories/',
         '/basics/exporting-storybook/',
         '/basics/faq/',

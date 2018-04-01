@@ -16,7 +16,13 @@ const style = {
   height: '100vh',
 };
 
-['cra-kitchen-sink', 'vue-kitchen-sink', 'angular-cli', 'polymer-cli'].forEach(name => {
+[
+  'cra-kitchen-sink',
+  'vue-kitchen-sink',
+  'angular-cli',
+  'polymer-cli',
+  'mithril-kitchen-sink',
+].forEach(name => {
   chapter.add(
     name,
     withNotes(`You must build the storybook for the ${name} example for this story to work.`)(

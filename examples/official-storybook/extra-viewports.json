@@ -4,13 +4,15 @@
     "styles": {
       "width": "600px",
       "height": "963px"
-    }
+    },
+    "type": "tablet"
   },
   "kindleFireHD": {
     "name": "Kindle Fire HD",
     "styles": {
       "width": "533px",
       "height": "801px"
-    }
+    },
+    "type": "tablet"
   }
 }

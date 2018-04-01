@@ -15,6 +15,10 @@ const EVENTS = {
 const emitter = new EventEmitter();
 const emit = emitter.emit.bind(emitter);
 
+const eventHandler = name => payload => emit(Logger.LOG_EVENT, { name, payload });
+
+Object.keys(EVENTS).forEach(event => emitter.on(EVENTS[event], eventHandler(EVENTS[event])));
+
 storiesOf('Addons|Events', module)
   .addDecorator(getStory => (
     <WithEvents
