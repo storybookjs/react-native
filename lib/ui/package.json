@@ -18,7 +18,7 @@
     "@storybook/components": "4.0.0-alpha.1",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
-    "@storybook/react-komposer": "^2.0.3",
+    "@storybook/react-komposer": "^2.0.4",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "events": "^2.0.0",
@@ -33,6 +33,7 @@
     "qs": "^6.5.1",
     "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
+    "react-lifecycles-compat": "^1.1.0",
     "react-modal": "^3.3.2",
     "react-split-pane": "^0.1.77",
     "react-treebeard": "^2.1.0"
