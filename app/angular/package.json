@@ -43,7 +43,6 @@
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.1.0",
-    "json5": "^0.5.1",
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.8.3",
     "raw-loader": "^0.5.1",
