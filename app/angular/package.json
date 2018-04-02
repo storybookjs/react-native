@@ -54,7 +54,7 @@
     "util-deprecate": "^1.0.2",
     "webpack": "^4.4.1",
     "webpack-hot-middleware": "^2.21.2",
-    "zone.js": "^0.8.20"
+    "zone.js": "^0.8.24"
   },
   "devDependencies": {
     "mock-fs": "^4.3.0",
