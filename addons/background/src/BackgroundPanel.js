@@ -72,11 +72,11 @@ export default class BackgroundPanel extends Component {
       this.channel = addons.getChannel();
     }
 
-    this.state = { backgrounds: [], currentBackground: null };
+    this.state = { backgrounds: [] };
 
     this.channel.on('background-set', backgrounds => {
       this.setState({ backgrounds });
-      const currentBackground = api.getQueryParam('background') || this.state.currentBackground;
+      const currentBackground = api.getQueryParam('background');
 
       if (currentBackground) {
         this.updateIframe(currentBackground);
@@ -106,19 +106,12 @@ export default class BackgroundPanel extends Component {
   }
 
   setBackgroundFromSwatch = background => {
-    this.updateCurrentBackground(background);
     this.updateIframe(background);
     this.props.api.setQueryParams({ background });
   };
 
   updateIframe(background) {
     this.iframe.style.background = background;
-  }
-
-  updateCurrentBackground(background) {
-    this.setState({
-      currentBackground: background,
-    });
   }
 
   render() {

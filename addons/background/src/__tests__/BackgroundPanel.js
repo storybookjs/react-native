@@ -129,19 +129,4 @@ describe('Background Panel', () => {
       background: backgrounds[0].value,
     });
   });
-
-  it('should persist the current background color in state', () => {
-    const SpiedChannel = new EventEmitter();
-    const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
-    backgroundPanel.setState({ backgrounds }); // force re-render
-
-    expect(backgroundPanel.state('currentBackground')).toEqual(null);
-
-    backgroundPanel
-      .find('h4')
-      .first()
-      .simulate('click');
-
-    expect(backgroundPanel.state('currentBackground')).toEqual(backgrounds[0].value);
-  });
 });
