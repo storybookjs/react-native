@@ -16,17 +16,18 @@ export default class LinkTo extends PureComponent {
   }
 
   componentDidMount() {
-    this.updateHref(this.props);
+    this.updateHref();
   }
 
-  componentWillReceiveProps(props) {
-    if (props.kind !== this.props.kind || props.story !== this.props.story) {
-      this.updateHref(props);
+  componentDidUpdate(prevProps) {
+    if (prevProps.kind !== this.props.kind || prevProps.story !== this.props.story) {
+      this.updateHref();
     }
   }
 
-  async updateHref(props) {
-    const href = await hrefTo(props.kind, props.story);
+  async updateHref() {
+    const { kind, story } = this.props;
+    const href = await hrefTo(kind, story);
     this.setState({ href });
   }
 

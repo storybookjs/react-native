@@ -1,8 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
-import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin';
-import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
+import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
+import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -33,6 +33,7 @@ export default function(configDir) {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['manager'],
+        chunksSortMode: 'none',
         data: {
           managerHead: getManagerHeadHtml(configDir),
           version,
@@ -42,6 +43,7 @@ export default function(configDir) {
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
         excludeChunks: ['manager'],
+        chunksSortMode: 'none',
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },

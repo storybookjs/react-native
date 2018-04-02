@@ -1,6 +1,6 @@
 {
   "name": "polymer-cli",
-  "version": "3.4.0-rc.3",
+  "version": "4.0.0-alpha.1",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook",
@@ -9,18 +9,18 @@
   },
   "dependencies": {
     "@polymer/polymer": "^2.6.0",
-    "@storybook/addon-actions": "3.4.0-rc.3",
-    "@storybook/addon-knobs": "3.4.0-rc.3",
-    "@storybook/addon-links": "3.4.0-rc.3",
-    "@storybook/addon-notes": "3.4.0-rc.3",
-    "@storybook/addon-options": "3.4.0-rc.3",
-    "@storybook/addon-storysource": "3.4.0-rc.3",
-    "@storybook/addon-viewport": "3.4.0-rc.3",
-    "@storybook/polymer": "3.4.0-rc.3",
+    "@storybook/addon-actions": "4.0.0-alpha.1",
+    "@storybook/addon-knobs": "4.0.0-alpha.1",
+    "@storybook/addon-links": "4.0.0-alpha.1",
+    "@storybook/addon-notes": "4.0.0-alpha.1",
+    "@storybook/addon-options": "4.0.0-alpha.1",
+    "@storybook/addon-storysource": "4.0.0-alpha.1",
+    "@storybook/addon-viewport": "4.0.0-alpha.1",
+    "@storybook/polymer": "4.0.0-alpha.1",
     "@webcomponents/webcomponentsjs": "^1.1.1",
     "global": "^4.3.2",
     "polymer-webpack-loader": "^2.0.2",
-    "webpack": "^4.3.0"
+    "webpack": "^4.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
+import Dotenv from 'dotenv-webpack';
+import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { includePaths, excludePaths, nodeModulesPaths } from './utils';
@@ -27,6 +28,7 @@ const getConfig = options => ({
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+    new Dotenv({ silent: true }),
   ],
   module: {
     rules: [
