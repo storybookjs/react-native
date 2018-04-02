@@ -2,10 +2,9 @@ import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath } from '@storybook/core/server';
+import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
-import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
 export default function(configDir) {
