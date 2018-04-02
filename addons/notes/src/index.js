@@ -3,10 +3,10 @@ import addons from '@storybook/addons';
 import marked from 'marked';
 import { WithNotes as ReactWithNotes } from './react';
 
-export const withMarkdownNotes = text => {
+export const withMarkdownNotes = (text, options) => {
   const channel = addons.getChannel();
-
   return getStory => context => {
+    marked.setOptions({ ...marked.defaults, options });
     // send the notes to the channel before the story is rendered
     channel.emit('storybook/notes/add_notes', marked(text));
     return getStory(context);
