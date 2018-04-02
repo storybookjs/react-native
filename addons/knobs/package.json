@@ -26,7 +26,7 @@
     "react-color": "^2.14.0",
     "react-datetime": "^2.14.0",
     "react-lifecycles-compat": "^1.1.1",
-    "react-textarea-autosize": "^6.1.0-0",
+    "react-textarea-autosize": "^6.1.0",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
