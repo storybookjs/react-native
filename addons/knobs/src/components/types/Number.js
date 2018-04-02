@@ -23,6 +23,8 @@ const styles = {
   rangeLabel: {
     paddingLeft: 5,
     paddingRight: 5,
+    fontSize: 12,
+    whiteSpace: 'nowrap',
   },
   rangeWrapper: {
     display: 'flex',
