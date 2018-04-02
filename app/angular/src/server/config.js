@@ -9,7 +9,11 @@ import {
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
 
-let cliWebpackConfigOptions;
+const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(process.cwd());
+
+if (cliWebpackConfigOptions) {
+  logger.info('=> Loading angular-cli config.');
+}
 
 const configLoader = configLoaderCreator({
   defaultConfigName: 'angular-cli',
@@ -21,16 +25,7 @@ const configLoader = configLoaderCreator({
 
     return config;
   },
-  wrapDefaultConfig: config => {
-    // Check whether project has Angular CLI configuration file
-    cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(process.cwd());
-
-    if (cliWebpackConfigOptions) {
-      logger.info('=> Loading angular-cli config.');
-    }
-
-    return applyAngularCliWebpackConfig(config, cliWebpackConfigOptions);
-  },
+  wrapDefaultConfig: config => applyAngularCliWebpackConfig(config, cliWebpackConfigOptions),
   wrapBasicConfig: config => applyAngularCliWebpackConfig(config, cliWebpackConfigOptions),
 });
 
