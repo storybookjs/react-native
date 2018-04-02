@@ -8,6 +8,7 @@
     "storybook": "storybook start -p 7007 --metro-config $PWD/rn-cli.config.js"
   },
   "dependencies": {
+    "identity-obj-proxy": "^3.0.0",
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.2"
   },
@@ -47,8 +48,12 @@
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js"
+      "js",
+      "json"
     ],
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
     "transform": {
       "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
