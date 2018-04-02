@@ -10,12 +10,17 @@ export default class DelayedRender extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => {
+    this.showTO = setTimeout(() => {
       this.setState({
         show: true,
       });
     }, 1000);
   }
+
+  componentWillUnmount() {
+    clearTimeout(this.showTO);
+  }
+
   render() {
     return this.state.show ? this.props.children : <div />;
   }

@@ -27,8 +27,8 @@ export default class WithEvents extends Component {
     this.channel.emit(EVENTS.ADD, events);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { events } = nextProps;
+  componentDidUpdate() {
+    const { events } = this.props;
 
     this.channel.emit(EVENTS.ADD, events);
   }

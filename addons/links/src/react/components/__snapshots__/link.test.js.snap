@@ -2,7 +2,7 @@
 
 exports[`LinkTo render should render a link 1`] = `
 <RoutedLink
-  href="?selectedKind=undefined&selectedStory=undefined"
+  href="?selectedKind=foo&selectedStory=bar"
   onClick={[Function]}
 />
 `;

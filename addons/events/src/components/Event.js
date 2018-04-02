@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import polyfill from 'react-lifecycles-compat';
 import json from 'format-json';
 import Textarea from 'react-textarea-autosize';
 import PropTypes from 'prop-types';
@@ -65,12 +66,12 @@ const styles = {
   },
 };
 
-export default class Item extends Component {
+class Item extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    payload: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    payload: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
   };
 
   static defaultProps = {
@@ -85,18 +86,23 @@ export default class Item extends Component {
     }
   }
 
-  state = {};
+  static getDerivedStateFromProps = ({ payload }, { prevPayload }) => {
+    if (payload !== prevPayload) {
+      const payloadString = json.plain(payload);
 
-  componentWillMount() {
-    const payloadString = json.plain(this.props.payload);
+      return {
+        failed: false,
+        payload: Item.getJSONFromString(payloadString),
+        payloadString,
+        prevPayload,
+      };
+    }
+    return null;
+  };
 
-    this.setState({
-      failed: false,
-      payload: Item.getJSONFromString(payloadString),
-      payloadString,
-      isTextAreaShowed: false,
-    });
-  }
+  state = {
+    isTextAreaShowed: false,
+  };
 
   onChange = ({ target: { value } }) => {
     const newState = {
@@ -172,3 +178,7 @@ export default class Item extends Component {
     );
   }
 }
+
+polyfill(Item);
+
+export default Item;

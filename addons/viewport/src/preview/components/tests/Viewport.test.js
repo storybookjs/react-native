@@ -35,7 +35,7 @@ describe('Viewport', () => {
     channel.removeListener.mockReset();
   });
 
-  describe('componentWillMount', () => {
+  describe('componentDidMount', () => {
     it('publishes `set` event with `iphone6`', () => {
       expect(channel.emit).toHaveBeenCalledTimes(1);
       expect(channel.emit).toHaveBeenCalledWith(
