@@ -54,12 +54,12 @@ describe('Background Panel', () => {
     expect(mockedApi.getQueryParam).toBeCalledWith('background');
   });
 
-  it('should unset the query string', () => {
+  it('should not unset the query string', () => {
     const SpiedChannel = new EventEmitter();
     mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     SpiedChannel.emit('background-unset', []);
 
-    expect(mockedApi.setQueryParams).toBeCalledWith({ background: null });
+    expect(mockedApi.setQueryParams).not.toHaveBeenCalled();
   });
 
   it('should accept colors through channel and render the correct swatches with a default swatch', () => {
