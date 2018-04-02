@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { includePaths, excludePaths } from './utils';
 
@@ -31,6 +32,7 @@ const getConfig = options => {
       }),
       new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
       new webpack.optimize.DedupePlugin(),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [
