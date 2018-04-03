@@ -18,7 +18,7 @@ This is how Knobs look like:
 
 [![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://git.io/vXdhZ)
 
-> Checkout the above [Live Storybook](https://git.io/vXdhZ) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
+> Checkout the above [Live Storybook](https://storybooks-official.netlify.com/) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
 
 ## Getting Started
 
