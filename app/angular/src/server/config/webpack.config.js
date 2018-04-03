@@ -5,11 +5,10 @@ import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlu
 import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath } from '@storybook/core/server';
+import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
 
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
-import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
 export default function(configDir) {

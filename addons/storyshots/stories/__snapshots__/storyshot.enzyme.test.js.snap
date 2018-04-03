@@ -85,8 +85,6 @@ exports[`Storyshots Button with text 1`] = `
 exports[`Storyshots Welcome to Storybook 1`] = `
 <Welcome
   showApp={[Function]}
-  showKind={null}
-  showStory={null}
 >
   <glamorous(article)>
     <article
@@ -118,8 +116,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         (Basically a story is like a visual test case.)
       </p>
       <p>
-        See these sample
-         
+        See these sample 
         <glamorous(glamorous(glamorous(a)))
           onClick={[Function]}
         >
@@ -130,8 +127,8 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             stories
           </button>
         </glamorous(glamorous(glamorous(a)))>
+         for a component called
          
-        for a component called 
         <glamorous(code)>
           <code
             className="css-mteq83"

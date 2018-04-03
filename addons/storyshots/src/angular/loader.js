@@ -22,7 +22,7 @@ function load(options) {
 
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
-    babelConfigPath: '@storybook/angular/dist/server/babel_config',
+    babelConfigPath: '@storybook/angular/dist/server/config/babel',
   });
 
   runWithRequireContext(content, contextOpts);

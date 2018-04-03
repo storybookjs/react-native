@@ -23,8 +23,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.1",
-    "@storybook/addon-links": "4.0.0-alpha.1",
     "@storybook/addons": "4.0.0-alpha.1",
     "@storybook/channel-postmessage": "4.0.0-alpha.1",
     "@storybook/client-logger": "4.0.0-alpha.1",
@@ -47,17 +45,14 @@
     "common-tags": "^1.7.2",
     "core-js": "^2.5.4",
     "dotenv-webpack": "^1.5.5",
-    "find-cache-dir": "^1.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.1",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.1.0",
-    "json5": "^0.5.1",
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
-    "util-deprecate": "^1.0.2",
     "webpack": "^4.4.1",
     "webpack-hot-middleware": "^2.21.2"
   },

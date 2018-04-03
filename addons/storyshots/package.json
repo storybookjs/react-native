@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@storybook/channels": "4.0.0-alpha.1",
+    "@storybook/core": "4.0.0-alpha.1",
     "@storybook/node-logger": "4.0.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",

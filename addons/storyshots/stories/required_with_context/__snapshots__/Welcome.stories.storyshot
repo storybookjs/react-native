@@ -26,16 +26,15 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     (Basically a story is like a visual test case.)
   </p>
   <p>
-    See these sample
-     
+    See these sample 
     <button
       className="css-1opliz7"
       onClick={[Function]}
     >
       stories
     </button>
+     for a component called
      
-    for a component called 
     <code
       className="css-mteq83"
     >

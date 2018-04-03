@@ -17,7 +17,7 @@ function load(options) {
 
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
-    babelConfigPath: '@storybook/vue/dist/server/babel_config',
+    babelConfigPath: '@storybook/vue/dist/server/config/babel',
   });
 
   runWithRequireContext(content, contextOpts);
