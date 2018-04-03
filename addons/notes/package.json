@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@storybook/react": "4.0.0-alpha.1",
-    "@types/react": "^16.1.0"
+    "@types/react": "^16.3.1"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",

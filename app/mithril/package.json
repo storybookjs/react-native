@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "mithril": "^1.1.6",
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",

@@ -27,7 +27,7 @@
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "prop-types": "^15.6.1",
-    "react-lifecycles-compat": "^1.1.0"
+    "react-lifecycles-compat": "^1.1.1"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.3.0",
