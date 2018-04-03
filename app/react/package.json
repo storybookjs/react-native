@@ -35,7 +35,7 @@
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
-    "babel-plugin-react-docgen": "^1.8.3",
+    "babel-plugin-react-docgen": "^1.9.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
@@ -62,7 +62,7 @@
     "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
