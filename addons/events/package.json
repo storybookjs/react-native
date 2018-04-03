@@ -24,7 +24,7 @@
     "babel-runtime": "^6.26.0",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.1",
-    "react-lifecycles-compat": "^1.1.1",
+    "react-lifecycles-compat": "^1.1.4",
     "react-textarea-autosize": "^6.1.0"
   },
   "peerDependencies": {
