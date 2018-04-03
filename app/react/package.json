@@ -23,8 +23,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.1",
-    "@storybook/addon-links": "4.0.0-alpha.1",
     "@storybook/addons": "4.0.0-alpha.1",
     "@storybook/channel-postmessage": "4.0.0-alpha.1",
     "@storybook/client-logger": "4.0.0-alpha.1",
@@ -55,7 +53,6 @@
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
-    "util-deprecate": "^1.0.2",
     "webpack": "^4.4.1",
     "webpack-hot-middleware": "^2.21.2"
   },
