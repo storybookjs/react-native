@@ -4617,9 +4617,9 @@ gatsby-react-router-scroll@^1.0.14:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-remark-autolink-headers@^1.4.15:
-  version "1.4.15"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-1.4.15.tgz#711c9542a3a4342fdf8a3cb5f05f71ae8176c03d"
+gatsby-remark-autolink-headers@^1.4.16:
+  version "1.4.16"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-1.4.16.tgz#96846df4afae24d42a428ff100039d7209e20ac4"
   dependencies:
     babel-runtime "^6.26.0"
     github-slugger "^1.1.1"
@@ -4701,9 +4701,9 @@ gatsby-transformer-remark@^1.7.39:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.244:
-  version "1.9.244"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.244.tgz#20c28b48ef207161e35edd85e351d6c3ac3f4d45"
+gatsby@^1.9.246:
+  version "1.9.246"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.246.tgz#0e6c66ce1de88d8369480b57f737c7c88d351bc7"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
