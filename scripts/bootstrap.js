@@ -109,6 +109,15 @@ const tasks = {
       spawn('yarn bootstrap:react-native-vanilla');
     },
   }),
+  'react-native-typesript': createTask({
+    name: `React-Native Typesript example ${chalk.gray('(react-native-typescript)')}`,
+    defaultValue: false,
+    option: '--reactnativetypescript',
+    pre: ['packs'],
+    command: () => {
+      spawn('yarn bootstrap:react-native-typescript');
+    },
+  }),
   'crna-kitchen-sink': createTask({
     name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}`,
     defaultValue: false,
