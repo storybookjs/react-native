@@ -140,6 +140,14 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello World
+</button>
+`;
+
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 <button
   class="css-1yjiefr"
