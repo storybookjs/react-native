@@ -49,7 +49,7 @@
     "glamorous": "^4.12.1",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",

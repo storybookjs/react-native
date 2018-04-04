@@ -33,7 +33,7 @@
     "qs": "^6.5.1",
     "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
-    "react-lifecycles-compat": "^1.1.1",
+    "react-lifecycles-compat": "^1.1.4",
     "react-modal": "^3.3.2",
     "react-split-pane": "^0.1.77",
     "react-treebeard": "^2.1.0"
