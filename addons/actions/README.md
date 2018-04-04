@@ -54,8 +54,17 @@ import { actions } from '@storybook/addon-actions';
 
 import Button from './button';
 
-const events = actions('onClick', 'onDoubleClick');
-storiesOf('Button', module).add('default view', () => <Button {...events}>Hello World!</Button>);
+// This will lead to { onClick: action('onClick'), ... }
+const eventsFromNames = actions('onClick', 'onDoubleClick');
+
+// This will lead to { onClick: action('clicked'), ... }
+const eventsFromObject = actions({ onClick: 'clicked', onDoubleClick: 'double clicked' });
+
+storiesOf('Button', module)
+  .add('default view', () => <Button {...eventsFromNames}>Hello World!</Button>)
+  .add('default view, different actions', () => (
+    <Button {...eventsFromObject}>Hello World!</Button>
+  ));
 ```
 
 ## Action Decorators

@@ -22,9 +22,17 @@ export function action(name) {
 }
 
 export function actions(...names) {
+  let namesObject = names[0];
+  if (names.length !== 1 || typeof namesObject === 'string') {
+    namesObject = {};
+    names.forEach(name => {
+      namesObject[name] = name;
+    });
+  }
+
   const actionsObject = {};
-  names.forEach(name => {
-    actionsObject[name] = action(name);
+  Object.keys(namesObject).forEach(name => {
+    actionsObject[name] = action(namesObject[name]);
   });
   return actionsObject;
 }

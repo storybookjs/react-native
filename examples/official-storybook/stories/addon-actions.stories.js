@@ -13,6 +13,11 @@ storiesOf('Addons|Actions', module)
   .add('Multiple actions', () => (
     <Button {...actions('onClick', 'onDoubleClick')}>Hello World</Button>
   ))
+  .add('Multiple actions, object', () => (
+    <Button {...actions({ onClick: 'clicked', onDoubleClick: 'double clicked' })}>
+      Hello World
+    </Button>
+  ))
   .add('Decorated Action', () => <Button onClick={pickFirst('decorated')}>First Argument</Button>)
   .add('Circular Payload', () => {
     const circular = { foo: {} };
