@@ -1,7 +1,7 @@
 /* global window */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, decorateAction } from '@storybook/addon-actions';
+import { action, actions, decorateAction } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { Button } from '@storybook/react/demo';
 import { File } from 'global';
@@ -10,6 +10,9 @@ const pickFirst = decorateAction([args => args.slice(0, 1)]);
 
 storiesOf('Addons|Actions', module)
   .add('Hello World', () => <Button onClick={action('hello-world')}>Hello World</Button>)
+  .add('Multiple actions', () => (
+    <Button {...actions('onClick', 'onDoubleClick')}>Hello World</Button>
+  ))
   .add('Decorated Action', () => <Button onClick={pickFirst('decorated')}>First Argument</Button>)
   .add('Circular Payload', () => {
     const circular = { foo: {} };

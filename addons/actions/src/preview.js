@@ -21,6 +21,14 @@ export function action(name) {
   return handler;
 }
 
+export function actions(...names) {
+  const actionsObject = {};
+  names.forEach(name => {
+    actionsObject[name] = action(name);
+  });
+  return actionsObject;
+}
+
 export function decorateAction(decorators) {
   return name => {
     const callAction = action(name);

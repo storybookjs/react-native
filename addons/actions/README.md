@@ -7,7 +7,7 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-* * *
+---
 
 Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybook.js.org).
 
@@ -39,12 +39,23 @@ import { action } from '@storybook/addon-actions';
 
 import Button from './button';
 
-storiesOf('Button', module)
-  .add('default view', () => (
-    <Button onClick={ action('button-click') }>
-      Hello World!
-    </Button>
-  ))
+storiesOf('Button', module).add('default view', () => (
+  <Button onClick={action('button-click')}>Hello World!</Button>
+));
+```
+
+## Multiple actions
+
+If your story requires multiple actions, it may be convenient to use `actions` to create many at once:
+
+```js
+import { storiesOf } from '@storybook/react';
+import { actions } from '@storybook/addon-actions';
+
+import Button from './button';
+
+const events = actions('onClick', 'onDoubleClick');
+storiesOf('Button', module).add('default view', () => <Button {...events}>Hello World!</Button>);
 ```
 
 ## Action Decorators
@@ -58,14 +69,9 @@ import { decorateAction } from '@storybook/addon-actions';
 
 import Button from './button';
 
-const firstArgAction = decorateAction([
-  args => args.slice(0, 1)
-]);
+const firstArgAction = decorateAction([args => args.slice(0, 1)]);
 
-storiesOf('Button', module)
-  .add('default view', () => (
-    <Button onClick={ firstArgAction('button-click') }>
-      Hello World!
-    </Button>
-  ))
+storiesOf('Button', module).add('default view', () => (
+  <Button onClick={firstArgAction('button-click')}>Hello World!</Button>
+));
 ```
