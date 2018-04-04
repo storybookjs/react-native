@@ -42,8 +42,7 @@
     "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
-    "json5": "^0.5.1",
+    "html-webpack-plugin": "^3.2.0",
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.8.3",
     "raw-loader": "^0.5.1",
@@ -51,14 +50,13 @@
     "react-dom": "^16.0.0",
     "sass-loader": "^6.0.7",
     "ts-loader": "^4.1.0",
-    "util-deprecate": "^1.0.2",
     "webpack": "^4.4.1",
     "webpack-hot-middleware": "^2.21.2",
-    "zone.js": "^0.8.20"
+    "zone.js": "^0.8.24"
   },
   "devDependencies": {
     "mock-fs": "^4.3.0",
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.3"
   },
   "peerDependencies": {
     "@angular/common": ">=4.0.0",

@@ -66,15 +66,14 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     (Basically a story is like a visual test case.)
   </p>
   <p>
-    See these sample
-     
+    See these sample 
     <glamorous(glamorous(glamorous(a)))
       onClick={[Function]}
     >
       stories
     </glamorous(glamorous(glamorous(a)))>
+     for a component called
      
-    for a component called 
     <glamorous(code)>
       Button
     </glamorous(code)>

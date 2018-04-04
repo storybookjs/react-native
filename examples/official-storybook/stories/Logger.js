@@ -38,7 +38,7 @@ export default class Logger extends Component {
     events: [],
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.emitter.on(Logger.LOG_EVENT, this.onEventHandler);
   }
 

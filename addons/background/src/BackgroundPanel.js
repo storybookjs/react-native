@@ -63,7 +63,7 @@ export default class BackgroundPanel extends Component {
   constructor(props) {
     super(props);
 
-    const { channel, api } = props;
+    const { channel } = props;
 
     // A channel is explicitly passed in for testing
     if (channel) {
@@ -73,6 +73,20 @@ export default class BackgroundPanel extends Component {
     }
 
     this.state = { backgrounds: [] };
+  }
+
+  componentDidMount() {
+    this.iframe = document.getElementById(storybookIframe);
+
+    if (!this.iframe) {
+      throw new Error('Cannot find Storybook iframe');
+    }
+
+    Object.keys(style.iframe).forEach(prop => {
+      this.iframe.style[prop] = style.iframe[prop];
+    });
+
+    const { api } = this.props;
 
     this.channel.on('background-set', backgrounds => {
       this.setState({ backgrounds });
@@ -88,20 +102,7 @@ export default class BackgroundPanel extends Component {
 
     this.channel.on('background-unset', () => {
       this.setState({ backgrounds: [] });
-      api.setQueryParams({ background: null });
       this.updateIframe('none');
-    });
-  }
-
-  componentDidMount() {
-    this.iframe = document.getElementById(storybookIframe);
-
-    if (!this.iframe) {
-      throw new Error('Cannot find Storybook iframe');
-    }
-
-    Object.keys(style.iframe).forEach(prop => {
-      this.iframe.style[prop] = style.iframe[prop];
     });
   }
 

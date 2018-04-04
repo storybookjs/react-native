@@ -1,10 +1,11 @@
 import path from 'path';
+import { loadBabelConfig } from '@storybook/core/server';
 
 const babel = require('babel-core');
 
 function getConfigContent({ resolvedConfigDirPath, configPath, babelConfigPath }) {
-  const loadBabelConfig = require.requireActual(babelConfigPath).default;
-  const babelConfig = loadBabelConfig(resolvedConfigDirPath);
+  const defaultBabelConfig = require.requireActual(babelConfigPath).default;
+  const babelConfig = loadBabelConfig(resolvedConfigDirPath, defaultBabelConfig);
   return babel.transformFileSync(configPath, babelConfig).code;
 }
 

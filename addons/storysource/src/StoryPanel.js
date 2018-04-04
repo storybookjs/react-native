@@ -46,7 +46,13 @@ export default class StoryPanel extends Component {
 
     this.state = { source: '// Here will be dragons 🐉' };
 
-    const { channel } = props;
+    this.setSelectedStoryRef = this.setSelectedStoryRef.bind(this);
+    this.lineRenderer = this.lineRenderer.bind(this);
+    this.clickOnStory = this.clickOnStory.bind(this);
+  }
+
+  componentDidMount() {
+    const { channel } = this.props;
 
     channel.on(EVENT_ID, ({ source, currentLocation, locationsMap }) => {
       const locationsKeys = StoryPanel.getLocationKeys(locationsMap);
@@ -58,10 +64,6 @@ export default class StoryPanel extends Component {
         locationsKeys,
       });
     });
-
-    this.setSelectedStoryRef = this.setSelectedStoryRef.bind(this);
-    this.lineRenderer = this.lineRenderer.bind(this);
-    this.clickOnStory = this.clickOnStory.bind(this);
   }
 
   componentDidUpdate() {

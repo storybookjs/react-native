@@ -170,6 +170,11 @@ export class Panel extends Component {
       this.iframe.style.height = viewport.styles.width;
       this.iframe.style.width = viewport.styles.height;
     }
+
+    // Always make parent's height equals iframe
+    if (this.iframe.parentElement) {
+      this.iframe.parentElement.style.height = this.iframe.style.height;
+    }
   };
 
   render() {

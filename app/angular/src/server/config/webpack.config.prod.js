@@ -3,11 +3,10 @@ import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath } from '@storybook/core/server';
+import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
 
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
-import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
 export default function(configDir) {
@@ -33,7 +32,8 @@ export default function(configDir) {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        chunks: ['manager'],
+        chunks: ['manager', 'runtime~manager'],
+        chunksSortMode: 'none',
         data: {
           managerHead: getManagerHeadHtml(configDir),
           version,
@@ -42,7 +42,8 @@ export default function(configDir) {
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
-        excludeChunks: ['manager'],
+        excludeChunks: ['manager', 'runtime~manager'],
+        chunksSortMode: 'none',
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
@@ -103,6 +104,16 @@ export default function(configDir) {
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
+    },
+    optimization: {
+      // Automatically split vendor and commons for preview bundle
+      // https://twitter.com/wSokra/status/969633336732905474
+      splitChunks: {
+        chunks: chunk => chunk.name !== 'manager',
+      },
+      // Keep the runtime chunk seperated to enable long term caching
+      // https://twitter.com/wSokra/status/969679223278505985
+      runtimeChunk: true,
     },
   };
 

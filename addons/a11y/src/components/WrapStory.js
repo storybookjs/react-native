@@ -41,7 +41,7 @@ class WrapStory extends Component {
     if (wrapper !== null) {
       axe.reset();
       axe.configure(axeOptions);
-      axe.a11yCheck(wrapper, {}, results => {
+      axe.run(wrapper, {}, results => {
         channel.emit('addon:a11y:check', results);
       });
     }

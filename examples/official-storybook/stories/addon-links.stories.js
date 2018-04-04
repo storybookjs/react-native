@@ -34,3 +34,13 @@ storiesOf('Addons|Links.Href', module).add('log', () => {
 
   return <span>See action logger</span>;
 });
+
+storiesOf('Addons|Links.Scroll position', module)
+  .addDecorator(story => (
+    <React.Fragment>
+      <div style={{ marginBottom: '100vh' }}>Scroll down to see the link</div>
+      {story()}
+    </React.Fragment>
+  ))
+  .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)
+  .add('Second', () => <LinkTo story="First">Go to First</LinkTo>);
