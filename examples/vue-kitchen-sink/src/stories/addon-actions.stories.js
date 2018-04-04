@@ -10,12 +10,12 @@ storiesOf('Addon|Actions', module)
   }))
   .add('Multiple actions', () => ({
     template:
-      '<my-button :handle-click="click" :handle-dblclick="doubleclick">Click me to log the action</my-button>',
+      '<my-button :handle-click="click" :handle-dblclick="doubleclick">(Double) click me to log the action</my-button>',
     methods: actions('click', 'doubleclick'),
   }))
   .add('Multiple actions, object', () => ({
     template:
-      '<my-button :handle-click="click" :handle-dblclick="doubleclick">Click me to log the action</my-button>',
+      '<my-button :handle-click="click" :handle-dblclick="doubleclick">(Double) click me to log the action</my-button>',
     methods: actions({ click: 'clicked', doubleclick: 'double clicked' }),
   }))
   .add('Action and method', () => ({
