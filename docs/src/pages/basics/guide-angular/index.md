@@ -80,7 +80,7 @@ Now you can write some stories inside the `../src/stories/index.ts` file, like t
 ```js
 import { storiesOf } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
-import { MyButtonComponent } from '../src/app/my-button/my-button.component';
+import { MyButtonComponent } from '../app/my-button/my-button.component';
 
 storiesOf('My Button', module)
   .add('with some emoji', () => ({
@@ -121,9 +121,9 @@ If your component has dependencies on other Angular directives and modules, thes
 ```js
 import { CommonModule } from '@angular/common';
 import { storiesOf } from '@storybook/angular';
-import { MyButtonComponent } from '../src/app/my-button/my-button.component';
-import { MyPanelComponent } from '../src/app/my-panel/my-panel.component';
-import { MyDataService } from '../src/app/my-data/my-data.service';
+import { MyButtonComponent } from '../app/my-button/my-button.component';
+import { MyPanelComponent } from '../app/my-panel/my-panel.component';
+import { MyDataService } from '../app/my-data/my-data.service';
 
 storiesOf('My Panel', module)
   .add('Default', () => ({
@@ -142,9 +142,9 @@ If you have metadata that is common between your stories, this can configured on
 ```js
 import { CommonModule } from '@angular/common';
 import { storiesOf, moduleMetadata } from '@storybook/angular';
-import { MyButtonComponent } from '../src/app/my-button/my-button.component';
-import { MyPanelComponent } from '../src/app/my-panel/my-panel.component';
-import { MyDataService } from '../src/app/my-data/my-data.service';
+import { MyButtonComponent } from '../app/my-button/my-button.component';
+import { MyPanelComponent } from '../app/my-panel/my-panel.component';
+import { MyDataService } from '../app/my-data/my-data.service';
 
 storiesOf('My Panel', module)
   .addDecorator(
