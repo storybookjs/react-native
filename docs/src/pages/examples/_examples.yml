@@ -1,37 +1,8 @@
-carbon:
-  thumbnail: carbon.png
-  title: Carbon Components
-  description: IBM's Carbon Design System implemented in React.
-  source: https://github.com/carbon-design-system/carbon-components-react
-  demo: http://react.carbondesignsystem.com
-  site: http://carbondesignsystem.com
-airbnb:
-  thumbnail: airbnb.jpg
-  title: Airbnb Dates
-  description: An internationalizable, mobile-friendly datepicker library for the web.
-  source: https://github.com/airbnb/react-dates
-  demo: http://airbnb.io/react-dates/
-  site: http://airbnb.com
-lonelyplanet:
-  thumbnail: lonelyplanet.jpg
-  title: Lonely Planet
-  description: All the tools you need to build the Lonely Planet UI experience.
-  source: https://github.com/lonelyplanet/backpack-ui
-  demo: https://lonelyplanet.github.io/backpack-ui/
-  site: https://www.lonelyplanet.com/
-uber:
-  thumbnail: uber.png
-  title: Uber React-Vis
-  description: A composable charting library.
-  source: https://github.com/uber/react-vis
-  demo: https://uber.github.io/react-vis/website/dist/storybook/index.html
-  site: https://uber.github.io/react-vis/
-atlassian:
-  thumbnail: atlassian.png
-  title: Atlassian AtlasKit
-  description: Atlassian's official UI library.
-  demo: https://atlaskit.atlassian.com/components
-  site: https://atlaskit.atlassian.com/
+coursera:
+  thumbnail: coursera-ui.png
+  title: Coursera
+  description: Coursera UI component library
+  demo: https://building.coursera.org/ui/
 wix:
   thumbnail: wix.png
   title: Wix Style React
@@ -39,6 +10,34 @@ wix:
   source: https://github.com/wix/wix-style-react
   demo: https://wix.github.io/wix-style-react/
   site: https://wix.com
+carbon:
+  thumbnail: carbon.png
+  title: Carbon Components
+  description: IBM's Carbon Design System implemented in React.
+  source: https://github.com/carbon-design-system/carbon-components-react
+  demo: http://react.carbondesignsystem.com
+  site: http://carbondesignsystem.com
+lonelyplanet:
+  thumbnail: lonelyplanet.jpg
+  title: Lonely Planet
+  description: All the tools you need to build the Lonely Planet UI experience.
+  source: https://github.com/lonelyplanet/backpack-ui
+  demo: https://lonelyplanet.github.io/backpack-ui/
+  site: https://www.lonelyplanet.com/
+airbnb:
+  thumbnail: airbnb.jpg
+  title: Airbnb Dates
+  description: An internationalizable, mobile-friendly datepicker library for the web.
+  source: https://github.com/airbnb/react-dates
+  demo: http://airbnb.io/react-dates/
+  site: http://airbnb.com
+uber:
+  thumbnail: uber.png
+  title: Uber React-Vis
+  description: A composable charting library.
+  source: https://github.com/uber/react-vis
+  demo: https://uber.github.io/react-vis/website/dist/storybook/index.html
+  site: https://uber.github.io/react-vis/
 buffer:
   thumbnail: buffer.jpg
   title: Buffer Components
@@ -52,18 +51,6 @@ algolia:
   description: Lightning-fast, hyper-configurable search.
   source: https://github.com/algolia/react-instantsearch/
   demo: https://community.algolia.com/react-instantsearch/storybook/
-rebass:
-  thumbnail: rebass.png
-  title: Rebass
-  description: Functional React UI component library
-  demo: http://jxnblk.com/rebass/stories/
-  source: https://github.com/jxnblk/rebass
-  site: http://jxnblk.com/rebass
-coursera:
-  thumbnail: coursera-ui.png
-  title: Coursera
-  description: Coursera UI component library
-  demo: https://building.coursera.org/ui/
 artsy:
   thumbnail: artsy.png
   title: Artsy Force
@@ -82,7 +69,6 @@ griddle:
   title: Griddle
   description: An ultra customizable datagrid component for React.
   source: https://github.com/GriddleGriddle/Griddle
-  demo: https://griddlegriddle.github.io/Griddle/examples/controlling-griddle/
   site: https://griddlegriddle.github.io/Griddle/
 tachyons:
   thumbnail: tachyons.png
