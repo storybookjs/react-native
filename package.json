@@ -91,7 +91,7 @@
     "prettier": "^1.11.1",
     "raf": "^3.4.0",
     "react": "^16.3.1",
-    "react-dom": "^16.3.0",
+    "react-dom": "^16.3.1",
     "react-test-renderer": "^16.3.0",
     "remark-cli": "^5.0.0",
     "remark-lint": "^6.0.1",
