@@ -16,7 +16,7 @@ There are a few ways to do it:
 You'll get _extend-mode_ by returning an object.
 
 Let's say you want to add [SASS](http://sass-lang.com/) support to Storybook. This is how to do it.
-Simply add the following content to a file called `webpack.config.js` in your Storybook config directory (`.storybook` by default ).
+Add the following content to a file called `webpack.config.js` in your Storybook config directory (`.storybook` by default ).
 
 ```js
 const path = require("path");
@@ -121,5 +121,5 @@ You may have an existing Webpack config for your project. So, you may need to co
 
 But you don't need to. There are a few options:
 
-* Simply import your main Webpack config into Storybook's `webpack.config.js` and use the loaders and plugins used in that.
+* Import your main Webpack config into Storybook's `webpack.config.js` and use the loaders and plugins used in that.
 * Create a new file with common Webpack options and use it in both inside the main Webpack config and inside Storybook's `webpack.config.js`.

@@ -14,9 +14,11 @@ yarn add -D @storybook/addon-info react-docgen-typescript-webpack-plugin # optio
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
 
+We have no opinion on whether you use `awesome-typescript-loader` or `ts-loader`, just configure either accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
+
 ## Setting up Typescript to work with Storybook
 
-We first have to use the [custom Webpack config in full control mode, extending default configs](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode--default):
+We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default):
 
 ```js
 // load the default config generator.
@@ -223,7 +225,5 @@ You will need to set up some scripts - these may help:
 
 ## Related Issues and Helpful Resources
 
-* [Issue: Add proper typescript webpack setup in readme #1778](https://github.com/storybooks/storybook/issues/1778)
-* [Issue: Addons info and Typescript props docgen? #1519](https://github.com/storybooks/storybook/issues/1519)
 * [Storybook, React, TypeScript and Jest](https://medium.com/@mtiller/storybook-react-typescript-and-jest-c9059ea06fa7)
 * [React, Storybook & TypeScript](http://www.joshschreuder.me/react-storybooks-with-typescript/)
