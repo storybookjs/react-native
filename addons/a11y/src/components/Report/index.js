@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 import RerunButton from './RerunButton';
@@ -24,7 +24,7 @@ function onRerunClick() {
 }
 
 const Report = ({ items, empty, passes }) => (
-  <Fragment>
+  <div>
     {items.length ? (
       <div style={styles.container}>
         {items.map(item => <Item passes={passes} item={item} key={item.id} />)}
@@ -33,7 +33,7 @@ const Report = ({ items, empty, passes }) => (
       <span style={styles.empty}>{empty}</span>
     )}
     <RerunButton onClick={onRerunClick}>Re-run tests</RerunButton>
-  </Fragment>
+  </div>
 );
 
 Report.propTypes = {
