@@ -16,9 +16,9 @@ You can also use Knobs as a dynamic variable inside stories in [Storybook](https
 
 This is how Knobs look like:
 
-[![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://git.io/vXdhZ)
+[![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://goo.gl/uX9WLf)
 
-> Checkout the above [Live Storybook](https://storybooks-official.netlify.com/) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
+> Checkout the above [Live Storybook](https://goo.gl/uX9WLf) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
 
 ## Getting Started
 
@@ -50,7 +50,7 @@ stories.addDecorator(withKnobs);
 // Knobs for React props
 stories.add('with a button', () => (
   <button disabled={boolean('Disabled', false)} >
-    {text('Label', 'Hello Button')}
+    {text('Label', 'Hello Storybook')}
   </button>
 ));
 
@@ -77,17 +77,17 @@ const stories = storiesOf('Storybook Knobs', module);
 stories.addDecorator(withKnobs);
 
 // Knobs for Angular props
-stories.add('with text', () => ({
+stories.add('with a button', () => ({
   component: Button,
   props: {
-   text: text('text', 'Hello Button'), // The first param of the knob function has to be exactly the same as the component input.
+   text: text('text', 'Hello Storybook'), // The first param of the knob function has to be exactly the same as the component input.
   },
 }));
 
 ```
 
 Categorize your knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
-```
+```js
 // Knob assigned a groupId.
 stories.add('as dynamic variables', () => {
   const groupId = 'GROUP-ID1'
