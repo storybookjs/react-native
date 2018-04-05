@@ -35,9 +35,9 @@
     "global": "^4.3.2",
     "paths.macro": "^2.0.2",
     "prop-types": "^15.6.1",
-    "react": "^16.3.0",
+    "react": "^16.3.1",
     "react-chromatic": "^0.8.1",
-    "react-dom": "^16.3.0",
+    "react-dom": "^16.3.1",
     "uuid": "^3.2.1"
   }
 }
