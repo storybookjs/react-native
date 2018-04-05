@@ -1,12 +1,13 @@
 /* global window */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, actions, decorateAction } from '@storybook/addon-actions';
+import { action, actions, decorate, decorateAction } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { Button } from '@storybook/react/demo';
 import { File } from 'global';
 
-const pickFirst = decorateAction([args => args.slice(0, 1)]);
+const pickFirst = decorate([args => args.slice(0, 1)]);
+const pickFirstAction = decorateAction([args => args.slice(0, 1)]);
 
 storiesOf('Addons|Actions', module)
   .add('Hello World', () => <Button onClick={action('hello-world')}>Hello World</Button>)
@@ -18,7 +19,15 @@ storiesOf('Addons|Actions', module)
       Hello World
     </Button>
   ))
-  .add('Decorated Action', () => <Button onClick={pickFirst('decorated')}>First Argument</Button>)
+  .add('Decorated action', () => (
+    <Button onClick={pickFirst.action('decorated')}>First Argument</Button>
+  ))
+  .add('Decorated actions', () => (
+    <Button {...pickFirst.actions('onClick', 'onDoubleClick')}>First Argument</Button>
+  ))
+  .add('Decorated Action (deprecated)', () => (
+    <Button onClick={pickFirstAction('decorated')}>First Argument</Button>
+  ))
   .add('Circular Payload', () => {
     const circular = { foo: {} };
     circular.foo.circular = circular;

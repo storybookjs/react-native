@@ -37,12 +37,28 @@ export function actions(...names) {
   return actionsObject;
 }
 
+function applyDecorators(decorators, actionCallback) {
+  return (..._args) => {
+    const decorated = decorators.reduce((args, fn) => fn(args), _args);
+    actionCallback(...decorated);
+  };
+}
+
 export function decorateAction(decorators) {
-  return name => {
-    const callAction = action(name);
-    return (..._args) => {
-      const decorated = decorators.reduce((args, fn) => fn(args), _args);
-      callAction(...decorated);
-    };
+  return name => applyDecorators(decorators, action(name));
+}
+
+export function decorate(decorators) {
+  const decorated = decorateAction(decorators);
+  return {
+    action: decorated,
+    actions: (...args) => {
+      const rawActions = actions(...args);
+      const decoratedActions = {};
+      Object.keys(rawActions).forEach(name => {
+        decoratedActions[name] = applyDecorators(decorators, rawActions[name]);
+      });
+      return decoratedActions;
+    },
   };
 }
