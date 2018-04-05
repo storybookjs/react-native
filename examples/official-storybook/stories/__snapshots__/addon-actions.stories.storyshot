@@ -108,7 +108,23 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Decorated Action 1`] = `
+exports[`Storyshots Addons|Actions Decorated Action (deprecated) 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  First Argument
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated action 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  First Argument
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 <button
   class="css-1yjiefr"
 >
