@@ -9,34 +9,24 @@ This is a central reference for using Storybook with Typescript.
 
 ```bash
 yarn add -D typescript
-yarn add -D awesome-typescript-loader # alternative to ts-loader
+yarn add -D awesome-typescript-loader
 yarn add -D @storybook/addon-info react-docgen-typescript-webpack-plugin # optional but recommended
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
 
-We have no opinion on whether you use `awesome-typescript-loader` or `ts-loader`, just configure either accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
+We have had the best experience using `awesome-typescript-loader`, but other tutorials may use `ts-loader`, just configure accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
 
 ## Setting up Typescript to work with Storybook
 
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default):
 
 ```js
-// load the default config generator.
-const genDefaultConfig = require("@storybook/react/dist/server/config/defaults/webpack.config.js");
 const path = require("path");
-const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin"); // optional
-
-module.exports = (baseConfig, env) => {
-  const config = genDefaultConfig(baseConfig, env);
+const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin");
+module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    include: [
-      path.resolve(__dirname, "../src"),
-      path.resolve(__dirname, "../stories") // e.g. if you have a separate /stories folder
-    ],
-    loader: require.resolve("awesome-typescript-loader") // or ts-loader
-    // alternatively
-    // loader: 'babel-loader!ts-loader',
+    loader: require.resolve("awesome-typescript-loader")
   });
   config.plugins.push(new TSDocgenPlugin()); // optional
   config.resolve.extensions.push(".ts", ".tsx");
@@ -59,7 +49,7 @@ The above example shows a working config with the TSDocgen plugin also integrate
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "rootDirs": ["src", "stories"],
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -77,7 +67,7 @@ The above example shows a working config with the TSDocgen plugin also integrate
 }
 ```
 
-If you have your stories in a separate `/stories` folder you may wish to replace `rootDir` above with `"rootDirs": ["src", "stories"]`.
+This is for the default configuration where `/stories` is a peer of `src`. If you have them all in just `src` you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
 
 ## Using Typescript with the TSDocgen addon
 
