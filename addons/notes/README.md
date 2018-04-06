@@ -7,7 +7,7 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-* * *
+---
 
 Storybook Addon Notes allows you to write notes (text or HTML) for your stories in [Storybook](https://storybook.js.org).
 
@@ -29,16 +29,24 @@ Add following content to it:
 import '@storybook/addon-notes/register';
 ```
 
-Then write your stories like this:
+Then add the `withNotes` decorator to all stories in your `config.js`:
+
+```js
+import { configure, addDecorator } from '@storybook/react`; // <- whichever storybook version you use
+import { withNotes } from '@storybook/addon-notes';
+
+addDecorator(withNotes);
+```
+
+You can use the `notes` parameter to add a note to each story:
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { withNotes } from '@storybook/addon-notes';
 
 import Component from './Component';
 
 storiesOf('Component', module)
-  .add('with some emoji', withNotes('A very simple component')(() => </Component>));
+  .add('with some emoji', () => </Component>, { notes: 'A very simple component' });
 ```
 
 #### Using Markdown
@@ -47,25 +55,27 @@ To use markdown in your notes simply import a markdown file and use that in your
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { withNotes } from '@storybook/addon-notes';
 import Component from './Component';
 import someMarkdownText from './someMarkdownText.md';
 
-storiesOf('Component', module)
-  .add('With Markdown', withNotes(someMarkdownText)(() => <Component/>));
-
+storiesOf('Component', module).add(
+  'With Markdown',
+  () => <Component />
+  { notes: someMarkdownText }
+);
 ```
 
-If you want to use Github flavored markdown inline, use `withMarkdownNotes`:
+If you want to use Github flavored markdown inline, use `notes: { markdownText: 'your md' }`:
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { withMarkdownNotes } from '@storybook/addon-notes';
 import Component from './Component';
 
-storiesOf('Component', module)
-  .add('With Markdown', withMarkdownNotes(`
-# Hello World
+storiesOf('Component', module).add(
+  'With Markdown',
+  () => <Component />
+  { notes: { markdown: `
+  # Hello World
 
 This is some code showing usage of the component and other inline documentation
 
@@ -75,20 +85,6 @@ This is some code showing usage of the component and other inline documentation
   <Component/>
 </div>
 ~~~
-  `)(() => <Component/>));
-
-```
-
-### Deprecated API
-This API is slated for removal in 4.0
-
-```js
-import { WithNotes } from '@storybook/addon-notes';
-
-storiesOf('Addon Notes', module)
-  .add('using deprecated API', () => (
-    <WithNotes notes="Hello">
-      <BaseButton onClick={action('clicked')} label="😀 😎 👍 💯" />
-    </WithNotes>
-  ));
+`} }
+);
 ```

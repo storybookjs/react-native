@@ -34,7 +34,7 @@ storiesOf('Addons|Notes', module)
     notes:
       'This is the notes for a button. This is helpful for adding details about a story in a separate panel.',
   })
-  .add('withNotes rendering imported markdown', baseStory, { notes: { markdown: markdownNotes } })
+  .add('withNotes rendering imported markdown', baseStory, { notes: markdownNotes })
   .add('withNotes rendering inline, github-flavored markdown', baseStory, {
     notes: { markdown: markdownString },
   })
