@@ -4,7 +4,7 @@ Brings Jest results in storybook.
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
-[![Storybook Jest Addon Demo](https://raw.githubusercontent.com/storybooks/storybook-addon-jest/master/storybook-addon-jest.gif)](https://storybook-addon-jest-example.herokuapp.com/)
+[![Storybook Jest Addon Demo](https://raw.githubusercontent.com/storybooks/storybook-addon-jest/master/storybook-addon-jest.gif)](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel)
 
 > Checkout the above [Live Storybook](https://storybook-addon-jest-example.herokuapp.com/).
 
