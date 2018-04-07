@@ -146,6 +146,7 @@
     "addons/*",
     "app/*",
     "lib/*",
+    "examples/marko-cli",
     "examples/angular-cli",
     "examples/cra-kitchen-sink",
     "examples/mithril-kitchen-sink",
