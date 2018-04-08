@@ -18,5 +18,9 @@
   },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/channels": "4.0.0-alpha.1",
+    "global": "^4.3.2"
   }
 }
