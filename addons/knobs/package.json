@@ -15,6 +15,7 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@storybook/addons": "4.0.0-alpha.1",
     "@storybook/components": "4.0.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
@@ -36,7 +37,6 @@
     "vue": "^2.5.16"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0",
     "react": "*",
     "react-dom": "*"
   }

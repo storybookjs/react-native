@@ -20,6 +20,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@storybook/addons": "4.0.0-alpha.1",
     "@storybook/components": "4.0.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
@@ -32,7 +33,6 @@
     "uuid": "^3.2.1"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0",
     "react": "*",
     "react-dom": "*"
   }

@@ -1,9 +1,8 @@
 import fs from 'fs';
 import glob from 'glob';
 import global, { describe, it } from 'global';
-import addons from '@storybook/addons';
+import addons, { mockChannel } from '@storybook/addons';
 import loadFramework from './frameworkLoader';
-import createChannel from './storybook-channel-mock';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
 import { imageSnapshot } from './test-body-image-snapshot';
 
@@ -34,7 +33,7 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
-  addons.setChannel(createChannel());
+  addons.setChannel(mockChannel());
 
   const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
   const stories = storybook.getStorybook();

@@ -22,6 +22,7 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
+    "@storybook/addons": "4.0.0-alpha.1",
     "@storybook/components": "4.0.0-alpha.1",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
@@ -34,7 +35,6 @@
     "react-dom": "^16.3.1"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0",
     "react": "16.3.1",
     "react-dom": "16.3.1"
   }
