@@ -64,7 +64,7 @@
     "util-deprecate": "^1.0.2",
     "uuid": "^3.2.1",
     "webpack": "^4.5.0",
-    "webpack-dev-middleware": "^3.1.1",
+    "webpack-dev-middleware": "^3.1.2",
     "webpack-hot-middleware": "^2.21.2",
     "ws": "^5.1.1"
   },
