@@ -52,7 +52,7 @@
     "ts-loader": "^4.2.0",
     "webpack": "^4.5.0",
     "webpack-hot-middleware": "^2.22.0",
-    "zone.js": "^0.8.25"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "mock-fs": "^4.3.0",
