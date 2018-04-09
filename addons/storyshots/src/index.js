@@ -3,6 +3,7 @@ import glob from 'glob';
 import global, { describe, it } from 'global';
 import addons, { mockChannel } from '@storybook/addons';
 import loadFramework from './frameworkLoader';
+import getIntegrityOptions from './getIntegrityOptions';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
 import { imageSnapshot } from './test-body-image-snapshot';
 
@@ -42,10 +43,7 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('storyshots found 0 stories');
   }
 
-  // NOTE: keep `suit` typo for backwards compatibility
-  const suite = options.suite || options.suit || 'Storyshots';
-  // NOTE: Added not to break existing storyshots configs (can be removed in a future major release)
-  const storyNameRegex = options.storyNameRegex || options.storyRegex;
+  const suite = options.suite || 'Storyshots';
 
   const snapshotOptions = {
     renderer: options.renderer,
@@ -53,6 +51,7 @@ export default function testStorySnapshots(options = {}) {
   };
 
   const testMethod = options.test || snapshotWithOptions(snapshotOptions);
+  const integrityOptions = getIntegrityOptions(options);
 
   methods.forEach(method => {
     if (typeof testMethod[method] === 'function') {
@@ -73,7 +72,7 @@ export default function testStorySnapshots(options = {}) {
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
-          if (storyNameRegex && !story.name.match(storyNameRegex)) {
+          if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
             // eslint-disable-next-line
             continue;
           }
@@ -91,16 +90,20 @@ export default function testStorySnapshots(options = {}) {
       });
     });
   }
-}
 
-describe('Storyshots Integrity', () => {
-  test('Abandoned Storyshots', () => {
-    const storyshots = glob.sync('**/*.storyshot');
+  if (integrityOptions !== false) {
+    describe('Storyshots Integrity', () => {
+      test('Abandoned Storyshots', () => {
+        const storyshots = glob.sync('**/*.storyshot', integrityOptions);
 
-    const abandonedStoryshots = storyshots.filter(fileName => {
-      const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
-      return !possibleStoriesFiles.some(fs.existsSync);
+        console.log(storyshots);
+
+        const abandonedStoryshots = storyshots.filter(fileName => {
+          const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
+          return !possibleStoriesFiles.some(fs.existsSync);
+        });
+        expect(abandonedStoryshots).toHaveLength(0);
+      });
     });
-    expect(abandonedStoryshots).toHaveLength(0);
-  });
-});
+  }
+}
