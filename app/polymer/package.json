@@ -29,7 +29,7 @@
     "@storybook/node-logger": "4.0.0-alpha.1",
     "@storybook/react-dev-utils": "^5.0.0",
     "@storybook/ui": "4.0.0-alpha.1",
-    "@webcomponents/webcomponentsjs": "^1.1.1",
+    "@webcomponents/webcomponentsjs": "^1.2.0",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
