@@ -51,7 +51,7 @@
     "sass-loader": "^6.0.7",
     "ts-loader": "^4.2.0",
     "webpack": "^4.5.0",
-    "webpack-hot-middleware": "^2.21.2",
+    "webpack-hot-middleware": "^2.22.0",
     "zone.js": "^0.8.25"
   },
   "devDependencies": {
