@@ -41,7 +41,7 @@
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.7.2",
-    "core-js": "^2.5.4",
+    "core-js": "^2.5.5",
     "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
