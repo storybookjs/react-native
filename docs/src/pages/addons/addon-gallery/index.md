@@ -132,3 +132,7 @@ Manage state inside a story. Update components when this state changes.
 Wrap the story in a function call to setup state management. The story can modify
 state properties with the provided store. The addon provides a panel to view and
 reset state.
+
+### [story2sketch](https://github.com/chrisvxd/story2sketch)
+
+Convert stories into Sketch 💎 symbols.
