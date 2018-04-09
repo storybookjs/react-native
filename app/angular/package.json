@@ -37,7 +37,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
-    "core-js": "^2.5.4",
+    "core-js": "^2.5.5",
     "cross-env": "^5.1.4",
     "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
@@ -49,10 +49,10 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "sass-loader": "^6.0.7",
-    "ts-loader": "^4.1.0",
+    "ts-loader": "^4.2.0",
     "webpack": "^4.5.0",
-    "webpack-hot-middleware": "^2.21.2",
-    "zone.js": "^0.8.25"
+    "webpack-hot-middleware": "^2.22.0",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "mock-fs": "^4.3.0",

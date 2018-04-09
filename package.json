@@ -83,7 +83,7 @@
     "jest-jasmine2": "^22.4.3",
     "jest-preset-angular": "^5.2.1",
     "jest-vue-preprocessor": "^1.4.0",
-    "lerna": "2.9.1",
+    "lerna": "2.10.0",
     "lint-staged": "^7.0.4",
     "lodash": "^4.17.5",
     "npmlog": "^4.1.2",
