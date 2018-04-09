@@ -1,3 +1,100 @@
+# 3.4.0
+
+2018-March-30
+
+Welcome to Storybook 3.4 with the following key improvements:
+
+-   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
+-   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
+-   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
+-   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
+-   Addon-storysource: story source in addon pane [#2885](https://github.com/storybooks/storybook/pull/2885)
+
+Read on for more improvements, fixes, 1In addition, there are hundreds of dependency upgrades in the 3.4 release, so to see the details, please see the changelogs for `3.4.0-rc.*` and  `3.4.0-alpha.*`.
+
+#### Features
+
+-   Bind window access if `window` is defined; add `addons channel` access too [#3243](https://github.com/storybooks/storybook/pull/3243)
+-   Fix screenshots tests & add getScreenshotOption to storyshots [#3102](https://github.com/storybooks/storybook/pull/3102)
+-   Add `__STORYBOOK_CLIENT_API__` for external tools [#3058](https://github.com/storybooks/storybook/pull/3058)
+-   Addon storysource: select stories from inside of the StoryPanel [#3154](https://github.com/storybooks/storybook/pull/3154)
+-   Storyshots: env.NODE_PATH support [#2873](https://github.com/storybooks/storybook/pull/2873)
+-   Knobs: Select knob key/value ordering [#1745](https://github.com/storybooks/storybook/pull/1745)
+-   Angular: Add option to pass custom styles for ng components [#2856](https://github.com/storybooks/storybook/pull/2856)
+-   Core: Add watch mode for build-storybook [#2866](https://github.com/storybooks/storybook/pull/2866)
+-   Core: Add `__dirname` support [#2791](https://github.com/storybooks/storybook/pull/2791)
+-   Pass default webpack config as third argument in Full Control Mode [#2796](https://github.com/storybooks/storybook/pull/2796)
+-   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
+-   Addon-info: Added "Copy button" for code example [#2713](https://github.com/storybooks/storybook/pull/2713)
+-   Angular: Serve styles and assets using .angular-cli webpack configuration [#2735](https://github.com/storybooks/storybook/pull/2735)
+-   API: Added an event that is emitted when a channel is created. [#2711](https://github.com/storybooks/storybook/pull/2711)
+-   Addon-a11y: Handle components with delayed rendering [#2651](https://github.com/storybooks/storybook/pull/2651)
+-   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
+-   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
+-   Angular template support for Storybook [#2690](https://github.com/storybooks/storybook/pull/2690)
+-   Custom tsconfig.json for angular apps. [#2669](https://github.com/storybooks/storybook/pull/2669)
+-   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
+-   Change template story files extension to .ts [#2594](https://github.com/storybooks/storybook/pull/2594)
+-   Use store revisions to ensure that stories re-render on HMR. [#2605](https://github.com/storybooks/storybook/pull/2605)
+-   Ability to force re-render a story [#2463](https://github.com/storybooks/storybook/pull/2463)
+-   Introduce framework-independent core library [#2241](https://github.com/storybooks/storybook/pull/2241)
+
+#### Bug Fixes
+
+-   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
+-   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297     
+-   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
+-   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
+-   Object proptype is shown in addon-info proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
+-   Fix storyshots renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
+-   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
+-   Delaying update of height and width in Layout [#3180](https://github.com/storybooks/storybook/pull/3180)
+-   Add 'waitUntil' option to puppeteer of storyshots [#3156](https://github.com/storybooks/storybook/pull/3156)
+-   Move polymer loader to peerDependencies [#3161](https://github.com/storybooks/storybook/pull/3161)
+-   Addons: avoid mixing manager and preview code together [#3068](https://github.com/storybooks/storybook/pull/3068)
+-   React-Native: Fix by moving managerPath export to `server.js` [#2947](https://github.com/storybooks/storybook/pull/2947)
+-   Addon-Info: Add type check to PropType on OneOf [#2653](https://github.com/storybooks/storybook/pull/2653)
+-   Vue: Support .vue extension resolving [#2896](https://github.com/storybooks/storybook/pull/2896)
+-   UI: remove zero on story loading [#2857](https://github.com/storybooks/storybook/pull/2857)
+-   Angular: remove entryComponents prop from metadata [#2790](https://github.com/storybooks/storybook/pull/2790)
+-   Use process.exitCode instead of process.exit() [#2717](https://github.com/storybooks/storybook/pull/2717)
+-   Angular: knobs with template [#2766](https://github.com/storybooks/storybook/pull/2766)
+-   Remove polymer-cli dependency [#2741](https://github.com/storybooks/storybook/pull/2741)
+-   Add scss for components in angular apps by default. [#2703](https://github.com/storybooks/storybook/pull/2703)
+
+#### Documentation
+
+-   Add example for @ngrx/store [#3233](https://github.com/storybooks/storybook/pull/3233)
+-   Fix missing declaration in Angular example [#3213](https://github.com/storybooks/storybook/pull/3213)
+-   Update ADDONS_SUPPORT.md [#3114](https://github.com/storybooks/storybook/pull/3114)
+-   StoryShots: Document ref mocking [#2869](https://github.com/storybooks/storybook/pull/2869)
+-   Extending webpack section is no longer needed for the common usage [#2826](https://github.com/storybooks/storybook/pull/2826)
+-   Updating Vue Jest Config [#2821](https://github.com/storybooks/storybook/pull/2821)
+-   Angular inheritance example [#2787](https://github.com/storybooks/storybook/pull/2787)
+-   Revisit addon/framework support [#3046](https://github.com/storybooks/storybook/pull/3046)
+-   Docs live examples [#3019](https://github.com/storybooks/storybook/pull/3019)
+-   Mention new supported frameworks [#2895](https://github.com/storybooks/storybook/pull/2895)
+-   Update writing addons documentation [#2951](https://github.com/storybooks/storybook/pull/2951)
+-   Update docs on LinkTo in addon-links [#2926](https://github.com/storybooks/storybook/pull/2926)
+
+#### Maintenance
+
+-   Fix errors on starting example Angular app [#3078](https://github.com/storybooks/storybook/pull/3078)
+-   Use WatchMissingNodeModulesPlugin from react-dev-utils package [#3141](https://github.com/storybooks/storybook/pull/3141)
+-   Don't use exact versions in peerDependencies [#3073](https://github.com/storybooks/storybook/pull/3073)
+-   Remove integration tests [#3052](https://github.com/storybooks/storybook/pull/3052)
+-   Fix "dev" script to be cross-platform [#2922](https://github.com/storybooks/storybook/pull/2922)
+-   Typescript distribution [#2846](https://github.com/storybooks/storybook/pull/2846)
+-   Use UTC timezone in formatting too for knobs test [#2861](https://github.com/storybooks/storybook/pull/2861)
+-   ADD autolabeler.yml for <https://github.com/probot/autolabeler> [#2809](https://github.com/storybooks/storybook/pull/2809)
+-   Fix css warning in angular-cli example [#2789](https://github.com/storybooks/storybook/pull/2789)
+-   Move more things to core [#2788](https://github.com/storybooks/storybook/pull/2788)
+-   Change ng stories dir [#2672](https://github.com/storybooks/storybook/pull/2672)
+-   Only update CLI snapsots on postpublish script, skip smoke tests [#2671](https://github.com/storybooks/storybook/pull/2671)
+-   Fix the timezone for example dates [#2654](https://github.com/storybooks/storybook/pull/2654)
+-   Update prereq yarn install level [#2638](https://github.com/storybooks/storybook/pull/2638)
+-   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
+
 # 4.0.0-alpha.1
 
 2018-March-29
@@ -115,199 +212,6 @@
 -   Update gatsby in /docs from 1.9.236 to 1.9.238 [#3249](https://github.com/storybooks/storybook/pull/3249)
 
 </details>
-# 3.4.0
-
-2018-March-30
-
-Welcome to Storybook 3.4 with the following key improvements:
-
--   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
--   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
--   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
--   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
--   Addon-storysource: story source in addon pane [#2885](https://github.com/storybooks/storybook/pull/2885)
-
-Read on for more improvements, fixes, 1In addition, there are hundreds of dependency upgrades in the 3.4 release, so to see the details, please see the changelogs for `3.4.0-rc.*` and  `3.4.0-alpha.*`.
-
-#### Features
-
--   Bind window access if `window` is defined; add `addons channel` access too [#3243](https://github.com/storybooks/storybook/pull/3243)
--   Fix screenshots tests & add getScreenshotOption to storyshots [#3102](https://github.com/storybooks/storybook/pull/3102)
--   Add `__STORYBOOK_CLIENT_API__` for external tools [#3058](https://github.com/storybooks/storybook/pull/3058)
--   Addon storysource: select stories from inside of the StoryPanel [#3154](https://github.com/storybooks/storybook/pull/3154)
--   Storyshots: env.NODE_PATH support [#2873](https://github.com/storybooks/storybook/pull/2873)
--   Knobs: Select knob key/value ordering [#1745](https://github.com/storybooks/storybook/pull/1745)
--   Angular: Add option to pass custom styles for ng components [#2856](https://github.com/storybooks/storybook/pull/2856)
--   Core: Add watch mode for build-storybook [#2866](https://github.com/storybooks/storybook/pull/2866)
--   Core: Add `__dirname` support [#2791](https://github.com/storybooks/storybook/pull/2791)
--   Pass default webpack config as third argument in Full Control Mode [#2796](https://github.com/storybooks/storybook/pull/2796)
--   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
--   Addon-info: Added "Copy button" for code example [#2713](https://github.com/storybooks/storybook/pull/2713)
--   Angular: Serve styles and assets using .angular-cli webpack configuration [#2735](https://github.com/storybooks/storybook/pull/2735)
--   API: Added an event that is emitted when a channel is created. [#2711](https://github.com/storybooks/storybook/pull/2711)
--   Addon-a11y: Handle components with delayed rendering [#2651](https://github.com/storybooks/storybook/pull/2651)
--   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
--   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
--   Angular template support for Storybook [#2690](https://github.com/storybooks/storybook/pull/2690)
--   Custom tsconfig.json for angular apps. [#2669](https://github.com/storybooks/storybook/pull/2669)
--   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
--   Change template story files extension to .ts [#2594](https://github.com/storybooks/storybook/pull/2594)
--   Use store revisions to ensure that stories re-render on HMR. [#2605](https://github.com/storybooks/storybook/pull/2605)
--   Ability to force re-render a story [#2463](https://github.com/storybooks/storybook/pull/2463)
--   Introduce framework-independent core library [#2241](https://github.com/storybooks/storybook/pull/2241)
-
-#### Bug Fixes
-
--   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
--   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297     
--   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
--   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
--   Object proptype is shown in addon-info proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
--   Fix storyshots renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
--   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
--   Delaying update of height and width in Layout [#3180](https://github.com/storybooks/storybook/pull/3180)
--   Add 'waitUntil' option to puppeteer of storyshots [#3156](https://github.com/storybooks/storybook/pull/3156)
--   Move polymer loader to peerDependencies [#3161](https://github.com/storybooks/storybook/pull/3161)
--   Addons: avoid mixing manager and preview code together [#3068](https://github.com/storybooks/storybook/pull/3068)
--   React-Native: Fix by moving managerPath export to `server.js` [#2947](https://github.com/storybooks/storybook/pull/2947)
--   Addon-Info: Add type check to PropType on OneOf [#2653](https://github.com/storybooks/storybook/pull/2653)
--   Vue: Support .vue extension resolving [#2896](https://github.com/storybooks/storybook/pull/2896)
--   UI: remove zero on story loading [#2857](https://github.com/storybooks/storybook/pull/2857)
--   Angular: remove entryComponents prop from metadata [#2790](https://github.com/storybooks/storybook/pull/2790)
--   Use process.exitCode instead of process.exit() [#2717](https://github.com/storybooks/storybook/pull/2717)
--   Angular: knobs with template [#2766](https://github.com/storybooks/storybook/pull/2766)
--   Remove polymer-cli dependency [#2741](https://github.com/storybooks/storybook/pull/2741)
--   Add scss for components in angular apps by default. [#2703](https://github.com/storybooks/storybook/pull/2703)
-
-#### Documentation
-
--   Add example for @ngrx/store [#3233](https://github.com/storybooks/storybook/pull/3233)
--   Fix missing declaration in Angular example [#3213](https://github.com/storybooks/storybook/pull/3213)
--   Update ADDONS_SUPPORT.md [#3114](https://github.com/storybooks/storybook/pull/3114)
--   StoryShots: Document ref mocking [#2869](https://github.com/storybooks/storybook/pull/2869)
--   Extending webpack section is no longer needed for the common usage [#2826](https://github.com/storybooks/storybook/pull/2826)
--   Updating Vue Jest Config [#2821](https://github.com/storybooks/storybook/pull/2821)
--   Angular inheritance example [#2787](https://github.com/storybooks/storybook/pull/2787)
--   Revisit addon/framework support [#3046](https://github.com/storybooks/storybook/pull/3046)
--   Docs live examples [#3019](https://github.com/storybooks/storybook/pull/3019)
--   Mention new supported frameworks [#2895](https://github.com/storybooks/storybook/pull/2895)
--   Update writing addons documentation [#2951](https://github.com/storybooks/storybook/pull/2951)
--   Update docs on LinkTo in addon-links [#2926](https://github.com/storybooks/storybook/pull/2926)
-
-#### Maintenance
-
--   Fix errors on starting example Angular app [#3078](https://github.com/storybooks/storybook/pull/3078)
--   Use WatchMissingNodeModulesPlugin from react-dev-utils package [#3141](https://github.com/storybooks/storybook/pull/3141)
--   Don't use exact versions in peerDependencies [#3073](https://github.com/storybooks/storybook/pull/3073)
--   Remove integration tests [#3052](https://github.com/storybooks/storybook/pull/3052)
--   Fix "dev" script to be cross-platform [#2922](https://github.com/storybooks/storybook/pull/2922)
--   Typescript distribution [#2846](https://github.com/storybooks/storybook/pull/2846)
--   Use UTC timezone in formatting too for knobs test [#2861](https://github.com/storybooks/storybook/pull/2861)
--   ADD autolabeler.yml for <https://github.com/probot/autolabeler> [#2809](https://github.com/storybooks/storybook/pull/2809)
--   Fix css warning in angular-cli example [#2789](https://github.com/storybooks/storybook/pull/2789)
--   Move more things to core [#2788](https://github.com/storybooks/storybook/pull/2788)
--   Change ng stories dir [#2672](https://github.com/storybooks/storybook/pull/2672)
--   Only update CLI snapsots on postpublish script, skip smoke tests [#2671](https://github.com/storybooks/storybook/pull/2671)
--   Fix the timezone for example dates [#2654](https://github.com/storybooks/storybook/pull/2654)
--   Update prereq yarn install level [#2638](https://github.com/storybooks/storybook/pull/2638)
--   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
-# 3.4.0
-
-2018-March-30
-
-Welcome to Storybook 3.4 with the following key improvements:
-
--   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
--   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
--   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
--   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
--   Addon-storysource: story source in addon pane [#2885](https://github.com/storybooks/storybook/pull/2885)
-
-Read on for more improvements, fixes, 1In addition, there are hundreds of dependency upgrades in the 3.4 release, so to see the details, please see the changelogs for `3.4.0-rc.*` and  `3.4.0-alpha.*`.
-
-#### Features
-
--   Bind window access if `window` is defined; add `addons channel` access too [#3243](https://github.com/storybooks/storybook/pull/3243)
--   Fix screenshots tests & add getScreenshotOption to storyshots [#3102](https://github.com/storybooks/storybook/pull/3102)
--   Add `__STORYBOOK_CLIENT_API__` for external tools [#3058](https://github.com/storybooks/storybook/pull/3058)
--   Addon storysource: select stories from inside of the StoryPanel [#3154](https://github.com/storybooks/storybook/pull/3154)
--   Storyshots: env.NODE_PATH support [#2873](https://github.com/storybooks/storybook/pull/2873)
--   Knobs: Select knob key/value ordering [#1745](https://github.com/storybooks/storybook/pull/1745)
--   Angular: Add option to pass custom styles for ng components [#2856](https://github.com/storybooks/storybook/pull/2856)
--   Core: Add watch mode for build-storybook [#2866](https://github.com/storybooks/storybook/pull/2866)
--   Core: Add `__dirname` support [#2791](https://github.com/storybooks/storybook/pull/2791)
--   Pass default webpack config as third argument in Full Control Mode [#2796](https://github.com/storybooks/storybook/pull/2796)
--   Angular and Vue storyshots [#2564](https://github.com/storybooks/storybook/pull/2564)
--   Addon-info: Added "Copy button" for code example [#2713](https://github.com/storybooks/storybook/pull/2713)
--   Angular: Serve styles and assets using .angular-cli webpack configuration [#2735](https://github.com/storybooks/storybook/pull/2735)
--   API: Added an event that is emitted when a channel is created. [#2711](https://github.com/storybooks/storybook/pull/2711)
--   Addon-a11y: Handle components with delayed rendering [#2651](https://github.com/storybooks/storybook/pull/2651)
--   Polymer 2 support [#2225](https://github.com/storybooks/storybook/pull/2225)
--   Add image snapshots to addon-storyshots [#2413](https://github.com/storybooks/storybook/pull/2413)
--   Angular template support for Storybook [#2690](https://github.com/storybooks/storybook/pull/2690)
--   Custom tsconfig.json for angular apps. [#2669](https://github.com/storybooks/storybook/pull/2669)
--   Multiple story hierarchies [#2452](https://github.com/storybooks/storybook/pull/2452)
--   Change template story files extension to .ts [#2594](https://github.com/storybooks/storybook/pull/2594)
--   Use store revisions to ensure that stories re-render on HMR. [#2605](https://github.com/storybooks/storybook/pull/2605)
--   Ability to force re-render a story [#2463](https://github.com/storybooks/storybook/pull/2463)
--   Introduce framework-independent core library [#2241](https://github.com/storybooks/storybook/pull/2241)
-
-#### Bug Fixes
-
--   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
--   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297     
--   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
--   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
--   Object proptype is shown in addon-info proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
--   Fix storyshots renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
--   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
--   Delaying update of height and width in Layout [#3180](https://github.com/storybooks/storybook/pull/3180)
--   Add 'waitUntil' option to puppeteer of storyshots [#3156](https://github.com/storybooks/storybook/pull/3156)
--   Move polymer loader to peerDependencies [#3161](https://github.com/storybooks/storybook/pull/3161)
--   Addons: avoid mixing manager and preview code together [#3068](https://github.com/storybooks/storybook/pull/3068)
--   React-Native: Fix by moving managerPath export to `server.js` [#2947](https://github.com/storybooks/storybook/pull/2947)
--   Addon-Info: Add type check to PropType on OneOf [#2653](https://github.com/storybooks/storybook/pull/2653)
--   Vue: Support .vue extension resolving [#2896](https://github.com/storybooks/storybook/pull/2896)
--   UI: remove zero on story loading [#2857](https://github.com/storybooks/storybook/pull/2857)
--   Angular: remove entryComponents prop from metadata [#2790](https://github.com/storybooks/storybook/pull/2790)
--   Use process.exitCode instead of process.exit() [#2717](https://github.com/storybooks/storybook/pull/2717)
--   Angular: knobs with template [#2766](https://github.com/storybooks/storybook/pull/2766)
--   Remove polymer-cli dependency [#2741](https://github.com/storybooks/storybook/pull/2741)
--   Add scss for components in angular apps by default. [#2703](https://github.com/storybooks/storybook/pull/2703)
-
-#### Documentation
-
--   Add example for @ngrx/store [#3233](https://github.com/storybooks/storybook/pull/3233)
--   Fix missing declaration in Angular example [#3213](https://github.com/storybooks/storybook/pull/3213)
--   Update ADDONS_SUPPORT.md [#3114](https://github.com/storybooks/storybook/pull/3114)
--   StoryShots: Document ref mocking [#2869](https://github.com/storybooks/storybook/pull/2869)
--   Extending webpack section is no longer needed for the common usage [#2826](https://github.com/storybooks/storybook/pull/2826)
--   Updating Vue Jest Config [#2821](https://github.com/storybooks/storybook/pull/2821)
--   Angular inheritance example [#2787](https://github.com/storybooks/storybook/pull/2787)
--   Revisit addon/framework support [#3046](https://github.com/storybooks/storybook/pull/3046)
--   Docs live examples [#3019](https://github.com/storybooks/storybook/pull/3019)
--   Mention new supported frameworks [#2895](https://github.com/storybooks/storybook/pull/2895)
--   Update writing addons documentation [#2951](https://github.com/storybooks/storybook/pull/2951)
--   Update docs on LinkTo in addon-links [#2926](https://github.com/storybooks/storybook/pull/2926)
-
-#### Maintenance
-
--   Fix errors on starting example Angular app [#3078](https://github.com/storybooks/storybook/pull/3078)
--   Use WatchMissingNodeModulesPlugin from react-dev-utils package [#3141](https://github.com/storybooks/storybook/pull/3141)
--   Don't use exact versions in peerDependencies [#3073](https://github.com/storybooks/storybook/pull/3073)
--   Remove integration tests [#3052](https://github.com/storybooks/storybook/pull/3052)
--   Fix "dev" script to be cross-platform [#2922](https://github.com/storybooks/storybook/pull/2922)
--   Typescript distribution [#2846](https://github.com/storybooks/storybook/pull/2846)
--   Use UTC timezone in formatting too for knobs test [#2861](https://github.com/storybooks/storybook/pull/2861)
--   ADD autolabeler.yml for <https://github.com/probot/autolabeler> [#2809](https://github.com/storybooks/storybook/pull/2809)
--   Fix css warning in angular-cli example [#2789](https://github.com/storybooks/storybook/pull/2789)
--   Move more things to core [#2788](https://github.com/storybooks/storybook/pull/2788)
--   Change ng stories dir [#2672](https://github.com/storybooks/storybook/pull/2672)
--   Only update CLI snapsots on postpublish script, skip smoke tests [#2671](https://github.com/storybooks/storybook/pull/2671)
--   Fix the timezone for example dates [#2654](https://github.com/storybooks/storybook/pull/2654)
--   Update prereq yarn install level [#2638](https://github.com/storybooks/storybook/pull/2638)
--   Separate stories in angular-cli example [#2592](https://github.com/storybooks/storybook/pull/2592)
->>>>>>> ea4634b1d... 3.4.0 changelog
 
 # 3.4.0-rc.4
 
