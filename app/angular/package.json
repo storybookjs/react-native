@@ -37,7 +37,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
-    "core-js": "^2.5.4",
+    "core-js": "^2.5.5",
     "cross-env": "^5.1.4",
     "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
