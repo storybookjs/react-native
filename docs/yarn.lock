@@ -4626,9 +4626,9 @@ gatsby-remark-autolink-headers@^1.4.16:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.30:
-  version "1.5.30"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.30.tgz#5834fb6d4a8a50c58e7e91309bd0af396474dd29"
+gatsby-remark-copy-linked-files@^1.5.31:
+  version "1.5.31"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.31.tgz#c24449c7597a37fecffab9fbc060c77eca19cc32"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
@@ -4660,9 +4660,9 @@ gatsby-remark-smartypants@^1.4.12:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.28:
-  version "1.5.28"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.28.tgz#4fe2452e425d5e39233f6892983291e3282cac6c"
+gatsby-source-filesystem@^1.5.29:
+  version "1.5.29"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.29.tgz#27efb1214d8a326f7a1cb8f0cdee579f96a2be69"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4701,9 +4701,9 @@ gatsby-transformer-remark@^1.7.39:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.246:
-  version "1.9.246"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.246.tgz#0e6c66ce1de88d8369480b57f737c7c88d351bc7"
+gatsby@^1.9.247:
+  version "1.9.247"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.247.tgz#e5d52c88c8bc23e5f0fc137946a8f5ec4f967923"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
