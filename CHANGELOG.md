@@ -1,3 +1,28 @@
+# 3.4.1
+
+2018-April-10
+
+#### Features
+
+-   Bind window access if `window` is defined; add `addons channel` access too [#3243](https://github.com/storybooks/storybook/pull/3243)
+
+#### Bug Fixes
+
+-   Replacing Report Fragment with div [#3372](https://github.com/storybooks/storybook/pull/3372)
+-   Don't use direct react dependency in core [#3382](https://github.com/storybooks/storybook/pull/3382)
+-   Storyshots: Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
+-   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
+-   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
+-   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
+-   Info addon: Object proptype is shown proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
+-   Storyshots: fix renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
+-   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
+
+#### Documentation
+
+-   Add typescript docs [#3361](https://github.com/storybooks/storybook/pull/3361)
+-   Update links of the live examples for the new release [#3197](https://github.com/storybooks/storybook/pull/3197)
+
 # 3.4.0
 
 2018-March-30
