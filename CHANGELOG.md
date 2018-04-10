@@ -4,7 +4,7 @@
 
 #### Features
 
--   Bind window access if `window` is defined; add `addons channel` access too [#3243](https://github.com/storybooks/storybook/pull/3243)
+-   Make storybook addons channel available globally in `window` [#3243](https://github.com/storybooks/storybook/pull/3243)
 
 #### Bug Fixes
 
