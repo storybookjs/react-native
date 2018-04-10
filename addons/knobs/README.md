@@ -311,7 +311,7 @@ const options = {
   Rainbow: ['red', 'orange', 'etc'],
   None: null,
 };
-const defaultValue = 'Red';
+const defaultValue = 'red';
 const groupId = 'GROUP-ID1';
 
 const value = selectV2(label, options, defaultValue, groupId);
