@@ -8,10 +8,6 @@ const DocgenButton = ({ disabled, label, onClick }) => (
   </button>
 );
 
-const Message = {
-  hello: 'world',
-};
-
 DocgenButton.defaultProps = {
   disabled: false,
   onClick: () => {},
@@ -38,7 +34,7 @@ DocgenButton.defaultProps = {
     },
   },
   arrayOf: [1, 2, 3],
-  msg: Message,
+  msg: new Set(),
   enm: 'News',
   enmEval: 'Photos',
   union: 'hello',
@@ -132,7 +128,7 @@ DocgenButton.propTypes = {
   /**
    * `instanceOf` is also supported and the custom type will be shown instead of `instanceOf`
    */
-  msg: PropTypes.instanceOf(Message),
+  msg: PropTypes.instanceOf(Set),
   /**
    * `oneOf` is basically an Enum which is also supported but can be pretty big.
    */
@@ -141,7 +137,7 @@ DocgenButton.propTypes = {
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
-  union: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Message)]),
+  union: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Set)]),
   /**
    * test string
    */

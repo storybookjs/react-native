@@ -81,7 +81,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -596,7 +596,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -879,7 +879,7 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -1059,7 +1059,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -1340,7 +1340,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                       <span
                         style="color:#22a;word-break:break-word"
                       >
-                        "Button"
+                        Button
                       </span>
                     </span>
                   </span>
@@ -1631,7 +1631,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -2056,7 +2056,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                           <span
                             style="color:#22a;word-break:break-word"
                           >
-                            "Button"
+                            Button
                           </span>
                         </span>
                       </span>
@@ -2089,7 +2089,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                           <span
                             style="color:#22a;word-break:break-word"
                           >
-                            "Flow Typed Button"
+                            Flow Typed Button
                           </span>
                         </span>
                       </span>
@@ -2612,7 +2612,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -2895,7 +2895,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
@@ -3207,7 +3207,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Flow Typed Button"
+                          Flow Typed Button
                         </span>
                       </span>
                     </span>
@@ -3465,7 +3465,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Docgen Button"
+                          Docgen Button
                         </span>
                       </span>
                     </span>
@@ -3652,7 +3652,31 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          key
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            1
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3677,7 +3701,79 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          thing
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#666"
+                          >
+                            {
+                            <span
+                              style="color:#666"
+                            >
+                              id
+                            </span>
+                            : 
+                            <span>
+                              {
+                              <span
+                                style="color:#a11"
+                              >
+                                2
+                              </span>
+                              }
+                            </span>
+                            , 
+                            <span
+                              style="color:#666"
+                            >
+                              func
+                            </span>
+                            : 
+                            <span>
+                              {
+                              <span
+                                style="color:#170"
+                              >
+                                func()
+                              </span>
+                              }
+                            </span>
+                            , 
+                            <span
+                              style="color:#666"
+                            >
+                              arr
+                            </span>
+                            : 
+                            <span>
+                              {
+                              <span
+                                style="color:#666"
+                              >
+                                []
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3702,7 +3798,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          key
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          value
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3727,7 +3843,63 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          id
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            3
+                          </span>
+                          }
+                        </span>
+                        , 
+                        <span
+                          style="color:#666"
+                        >
+                          func
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            func()
+                          </span>
+                          }
+                        </span>
+                        , 
+                        <span
+                          style="color:#666"
+                        >
+                          arr
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#666"
+                          >
+                            []
+                          </span>
+                          }
+                        </span>
+                        , …}
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3752,7 +3924,45 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        [
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            1
+                          </span>
+                          }
+                        </span>
+                        , 
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            2
+                          </span>
+                          }
+                        </span>
+                        , 
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            3
+                          </span>
+                          }
+                        </span>
+                        ]
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3777,7 +3987,15 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {}
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3802,7 +4020,11 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      News
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3827,7 +4049,11 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      Photos
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3852,7 +4078,40 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      hello
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    optionalString
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
                     -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      Default String
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3969,7 +4228,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                         <span
                           style="color:#22a;word-break:break-word"
                         >
-                          "Button"
+                          Button
                         </span>
                       </span>
                     </span>
