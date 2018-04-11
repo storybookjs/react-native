@@ -8,14 +8,43 @@ const DocgenButton = ({ disabled, label, onClick }) => (
   </button>
 );
 
+const Message = {
+  hello: 'world',
+};
+
 DocgenButton.defaultProps = {
   disabled: false,
   onClick: () => {},
+  optionalString: 'Default String',
+  one: { key: 1 },
+  two: {
+    thing: {
+      id: 2,
+      func: () => {},
+      arr: [],
+    },
+  },
+  obj: {
+    key: 'value',
+  },
+  shape: {
+    id: 3,
+    func: () => {},
+    arr: [],
+    shape: {
+      shape: {
+        foo: 'bar',
+      },
+    },
+  },
+  arrayOf: [1, 2, 3],
+  msg: Message,
+  enm: 'News',
+  enmEval: 'Photos',
+  union: 'hello',
 };
 
-/* eslint-disable react/no-unused-prop-types,react/require-default-props */
-
-const Message = {};
+/* eslint-disable react/no-unused-prop-types */
 
 DocgenButton.propTypes = {
   /** Boolean indicating whether the button should render as disabled */
@@ -95,6 +124,9 @@ DocgenButton.propTypes = {
     }),
   }),
 
+  /**
+   * array of a certain type
+   */
   arrayOf: PropTypes.arrayOf(PropTypes.number),
 
   /**
@@ -110,6 +142,10 @@ DocgenButton.propTypes = {
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
   union: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Message)]),
+  /**
+   * test string
+   */
+  optionalString: PropTypes.string,
 };
 
 export default DocgenButton;

@@ -89,7 +89,7 @@ function PropVal(props) {
     if (val.length > maxPropStringLength) {
       val = `${val.slice(0, maxPropStringLength)}…`;
     }
-    content = <span style={valueStyles.string}>"{val}"</span>;
+    content = <span style={valueStyles.string}>{val}</span>;
     braceWrap = false;
   } else if (typeof val === 'boolean') {
     content = <span style={valueStyles.bool}>{`${val}`}</span>;
