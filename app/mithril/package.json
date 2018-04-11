@@ -1,6 +1,6 @@
 {
   "name": "@storybook/mithril",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "description": "Storybook for Mithril: Develop Mithril Component in isolation.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/mithril",
   "bugs": {
@@ -23,13 +23,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.1",
-    "@storybook/channel-postmessage": "4.0.0-alpha.1",
-    "@storybook/client-logger": "4.0.0-alpha.1",
-    "@storybook/core": "4.0.0-alpha.1",
-    "@storybook/node-logger": "4.0.0-alpha.1",
+    "@storybook/addons": "4.0.0-alpha.2",
+    "@storybook/channel-postmessage": "4.0.0-alpha.2",
+    "@storybook/client-logger": "4.0.0-alpha.2",
+    "@storybook/core": "4.0.0-alpha.2",
+    "@storybook/node-logger": "4.0.0-alpha.2",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.1",
+    "@storybook/ui": "4.0.0-alpha.2",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
