@@ -102,7 +102,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 ## Live Examples
 
 ### 4.0.alpha
-> Note, this is an Alpha version. Some of the features still might not be released
+> Note, this is an Alpha version which may not be well tested. Features in this version are not final.
 
 - [React Official](https://storybooks-official.netlify.com)
 - [Vue](https://storybooks-vue.netlify.com/)
