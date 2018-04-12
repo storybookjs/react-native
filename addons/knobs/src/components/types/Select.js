@@ -18,7 +18,22 @@ const styles = {
 };
 
 class SelectType extends React.Component {
-  _makeOpt(key, value, selectV2) {
+  constructor(props, context) {
+    super(props, context);
+
+    if (!props.knob.selectV2) {
+      console.warn('Select Knob V1 will be deprecated, please upgrade to V2 of Select Knob'); // eslint-disable-line no-console
+    }
+  }
+
+  renderOptionList({ options, selectV2 }) {
+    if (Array.isArray(options)) {
+      return options.map(val => this.renderOption(val, val));
+    }
+    return Object.keys(options).map(key => this.renderOption(key, options[key], selectV2));
+  }
+
+  renderOption(key, value, selectV2) {
     const opts = {
       key,
       value: key,
@@ -33,30 +48,18 @@ class SelectType extends React.Component {
 
     return <option {...opts}>{display}</option>;
   }
-  _options({ options, selectV2 }) {
-    let data = [];
-    if (Array.isArray(options)) {
-      data = options.map(val => this._makeOpt(val, val));
-    } else {
-      data = Object.keys(options).map(key => this._makeOpt(key, options[key], selectV2));
-    }
 
-    return data;
-  }
   render() {
     const { knob, onChange } = this.props;
 
     return (
       <select
         id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
         style={styles}
         value={knob.value}
         onChange={e => onChange(e.target.value)}
       >
-        {this._options(knob)}
+        {this.renderOptionList(knob)}
       </select>
     );
   }
