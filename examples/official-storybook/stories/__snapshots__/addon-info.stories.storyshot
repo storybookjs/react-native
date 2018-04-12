@@ -78,11 +78,13 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -593,11 +595,13 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -876,11 +880,13 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -1056,11 +1062,13 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -1337,11 +1345,13 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                   <span>
                     =
                     <span>
+                      "
                       <span
                         style="color:#22a;word-break:break-word"
                       >
                         Button
                       </span>
+                      "
                     </span>
                   </span>
                    
@@ -1628,11 +1638,13 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -2053,11 +2065,13 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                       <span>
                         =
                         <span>
+                          "
                           <span
                             style="color:#22a;word-break:break-word"
                           >
                             Button
                           </span>
+                          "
                         </span>
                       </span>
                        
@@ -2086,11 +2100,13 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                       <span>
                         =
                         <span>
+                          "
                           <span
                             style="color:#22a;word-break:break-word"
                           >
                             Flow Typed Button
                           </span>
+                          "
                         </span>
                       </span>
                        
@@ -2609,11 +2625,13 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -2892,11 +2910,13 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -3204,11 +3224,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Flow Typed Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -3462,11 +3484,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Docgen Button
                         </span>
+                        "
                       </span>
                     </span>
                      
@@ -4225,11 +4249,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                     <span>
                       =
                       <span>
+                        "
                         <span
                           style="color:#22a;word-break:break-word"
                         >
                           Button
                         </span>
+                        "
                       </span>
                     </span>
                      
