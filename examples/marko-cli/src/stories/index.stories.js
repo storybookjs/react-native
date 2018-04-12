@@ -13,7 +13,14 @@ import { storiesOf } from '@storybook/marko';
 // import Container from './Container';
 // import LifecycleLogger from '../components/LifecycleLogger';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    `<div>hey this works</div>`
-  ));
+storiesOf('Button', module).add('with text', function() {
+  //var myComponent = require('../components/hello/index.marko');
+  //return myComponent.renderSync({ name:'Marko' });
+
+  var myComponent = require('../components/click-count/index.marko');
+  return myComponent.renderSync({});
+
+  //.appendTo(document.getElementById('my-client-button')) // change so that we can continue to use the sticky header without the transform issue (SRP non-breaking)
+  //.getComponent();
+  //return `<div>hey this works</div>`
+});

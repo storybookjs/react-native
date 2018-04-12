@@ -97,18 +97,21 @@ export function renderMain(data, storyStore, forceRender) {
     return renderError(error);
   }
 
-  if (!isReactRenderable(element)) {
-    const error = {
-      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-         Seems like you are not returning a correct React element from the story.
-         Could you double check that?
-       `,
-    };
-    return renderError(error);
-  }
+  // if (!isReactRenderable(element)) {
+  //   const error = {
+  //     title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
+  //     description: stripIndents`
+  //        Seems like you are not returning a correct React element from the story.
+  //        Could you double check that?
+  //      `,
+  //   };
+  //   return renderError(error);
+  // }
 
-  render(element, rootEl);
+  // render(element, rootEl);
+
+  element.appendTo(rootEl);
+
   return null;
 }
 
