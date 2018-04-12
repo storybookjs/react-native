@@ -22,7 +22,7 @@ class SelectType extends React.Component {
     super(props, context);
 
     if (!props.knob.selectV2) {
-      console.warn('Select Knob V1 will be deprecated, please upgrade to V2 of Select Knob'); // eslint-disable-line no-console
+      console.info('Select Knob V1 will be deprecated, please upgrade to V2 of Select Knob'); // eslint-disable-line no-console
     }
   }
 

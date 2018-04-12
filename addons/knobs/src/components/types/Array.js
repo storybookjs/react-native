@@ -38,12 +38,10 @@ class ArrayType extends React.Component {
 
   handleChange = e => {
     const { knob } = this.props;
-    const newVal = formatArray(e.target.value, knob.separator);
+    const { value } = e.target;
+    const newVal = formatArray(value, knob.separator);
 
-    this.setState({
-      value: newVal,
-    });
-
+    this.setState({ value });
     this.onChange(newVal);
   };
 
