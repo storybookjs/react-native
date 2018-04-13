@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import polyfill from 'react-lifecycles-compat';
+import { polyfill } from 'react-lifecycles-compat';
 import json from 'format-json';
 import Textarea from 'react-textarea-autosize';
 import PropTypes from 'prop-types';

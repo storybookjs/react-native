@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "description": "Storybook framework-agnostic API",
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
   "bugs": {
@@ -17,11 +17,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.1",
-    "@storybook/channel-postmessage": "4.0.0-alpha.1",
-    "@storybook/client-logger": "4.0.0-alpha.1",
-    "@storybook/node-logger": "4.0.0-alpha.1",
-    "@storybook/ui": "4.0.0-alpha.1",
+    "@storybook/addons": "4.0.0-alpha.2",
+    "@storybook/channel-postmessage": "4.0.0-alpha.2",
+    "@storybook/client-logger": "4.0.0-alpha.2",
+    "@storybook/node-logger": "4.0.0-alpha.2",
+    "@storybook/ui": "4.0.0-alpha.2",
     "autoprefixer": "^8.2.0",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.3.2",
@@ -46,8 +46,8 @@
     "svg-url-loader": "^2.3.2",
     "url-loader": "^1.0.1",
     "webpack": "^4.5.0",
-    "webpack-dev-middleware": "^3.1.1",
-    "webpack-hot-middleware": "^2.21.2"
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-hot-middleware": "^2.22.0"
   },
   "devDependencies": {
     "mock-fs": "^4.3.0"

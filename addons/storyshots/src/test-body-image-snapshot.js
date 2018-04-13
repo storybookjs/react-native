@@ -9,13 +9,22 @@ const defaultScreenshotOptions = () => ({ fullPage: true });
 
 const noop = () => {};
 
-export const imageSnapshot = ({
-  storybookUrl = 'http://localhost:6006',
-  getMatchOptions = noop,
-  getScreenshotOptions = defaultScreenshotOptions,
-  beforeScreenshot = noop,
-  getGotoOptions = noop,
-}) => {
+const defaultConfig = {
+  storybookUrl: 'http://localhost:6006',
+  getMatchOptions: noop,
+  getScreenshotOptions: defaultScreenshotOptions,
+  beforeScreenshot: noop,
+  getGotoOptions: noop,
+};
+
+export const imageSnapshot = (customConfig = {}) => {
+  const {
+    storybookUrl,
+    getMatchOptions,
+    getScreenshotOptions,
+    beforeScreenshot,
+    getGotoOptions,
+  } = { ...defaultConfig, ...customConfig };
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
 

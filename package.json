@@ -25,6 +25,7 @@
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:ts **/*.ts && yarn lint:md .",
+    "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:ts **/*.ts && yarn lint:md .",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
@@ -69,6 +70,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "eslint-teamcity": "^2.0.0",
     "github-release-from-changelog": "^1.3.1",
     "glob": "^7.1.2",
     "husky": "^0.14.3",
@@ -82,8 +84,9 @@
     "jest-image-snapshot": "^2.4.0",
     "jest-jasmine2": "^22.4.3",
     "jest-preset-angular": "^5.2.1",
+    "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.4.0",
-    "lerna": "2.9.1",
+    "lerna": "2.10.0",
     "lint-staged": "^7.0.4",
     "lodash": "^4.17.5",
     "npmlog": "^4.1.2",
@@ -141,6 +144,9 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
+  },
+  "eslint-teamcity": {
+    "reporter": "inspections"
   },
   "workspaces": [
     "addons/*",

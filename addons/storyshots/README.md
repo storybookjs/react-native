@@ -164,7 +164,7 @@ Then you can either create a new Storyshots instance or edit the one you previou
 ```js
 import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot});
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot()});
 ```
 This will assume you have a storybook running on at _<http://localhost:6006>_.
 Internally here are the steps:  
