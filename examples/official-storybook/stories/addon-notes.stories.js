@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-// eslint-disable-next-line import/named
-import { withNotes, WithNotes, withMarkdownNotes } from '@storybook/addon-notes';
-import { action } from '@storybook/addon-actions';
+import { withNotes, withMarkdownNotes } from '@storybook/addon-notes';
 import BaseButton from '../components/BaseButton';
 import markdownNotes from './notes/notes.md';
 
@@ -39,9 +37,7 @@ storiesOf('Addons|Notes', module)
     notes: { markdown: markdownString },
   })
   .add('using decorator arguments, withNotes', withNotes('Notes into withNotes')(baseStory))
-  .add('using decorator arguments, withMarkdownNotes', withMarkdownNotes(markdownString)(baseStory))
-  .add('using deprecated API', () => (
-    <WithNotes notes="Hello">
-      <BaseButton onClick={action('clicked')} label="😀 😎 👍 💯" />
-    </WithNotes>
-  ));
+  .add(
+    'using decorator arguments, withMarkdownNotes',
+    withMarkdownNotes(markdownString)(baseStory)
+  );

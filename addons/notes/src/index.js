@@ -1,7 +1,5 @@
-import deprecate from 'util-deprecate';
 import addons from '@storybook/addons';
 import marked from 'marked';
-import { WithNotes as ReactWithNotes } from './react';
 
 function renderMarkdown(text, options) {
   marked.setOptions({ ...marked.defaults, options });
@@ -46,12 +44,3 @@ export const withNotes = (...args) => {
   // Input are options, ala .add('name', withNotes('note')(() => <Story/>))
   return hoc(args[0]);
 };
-
-Object.defineProperty(exports, 'WithNotes', {
-  configurable: true,
-  enumerable: true,
-  get: deprecate(
-    () => ReactWithNotes,
-    '@storybook/addon-notes WithNotes Component is deprecated, use withNotes() instead. See https://github.com/storybooks/storybook/tree/master/addons/notes'
-  ),
-});
