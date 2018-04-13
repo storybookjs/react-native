@@ -32,7 +32,8 @@ import '@storybook/addon-notes/register';
 Then add the `withNotes` decorator to all stories in your `config.js`:
 
 ```js
-import { configure, addDecorator } from '@storybook/react`; // <- whichever storybook version you use
+// Import from @storybook/X where X is your framework
+import { configure, addDecorator } from '@storybook/react';
 import { withNotes } from '@storybook/addon-notes';
 
 addDecorator(withNotes);

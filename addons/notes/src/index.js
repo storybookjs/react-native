@@ -12,7 +12,6 @@ const decorator = options => {
   const channel = addons.getChannel();
   return (getStory, context) => {
     const { parameters: { notes } } = context;
-    console.log({ options, getStory, context, notes });
     const storyOptions = notes || options;
 
     if (storyOptions) {
