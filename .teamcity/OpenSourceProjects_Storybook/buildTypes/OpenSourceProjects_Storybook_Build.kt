@@ -35,13 +35,13 @@ object OpenSourceProjects_Storybook_Build : BuildType({
             dockerImage = "node:latest"
         }
         script {
-            name = "Test"
-            scriptContent = "yarn test --core --coverage --runInBand"
+            name = "Lint"
+            scriptContent = "yarn lint"
             dockerImage = "node:latest"
         }
         script {
-            name = "Lint"
-            scriptContent = "yarn lint"
+            name = "Test"
+            scriptContent = "yarn test --core --coverage --runInBand"
             dockerImage = "node:latest"
         }
         script {
