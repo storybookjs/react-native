@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Textarea from 'react-textarea-autosize';
+import debounce from 'lodash.debounce';
 
 const styles = {
   display: 'table-cell',
@@ -16,14 +17,32 @@ const styles = {
   color: '#555',
 };
 
-const TextType = ({ knob, onChange }) => (
-  <Textarea
-    id={knob.name}
-    style={styles}
-    value={knob.value}
-    onChange={e => onChange(e.target.value)}
-  />
-);
+class TextType extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      value: props.knob.value,
+    };
+
+    this.onChange = debounce(props.onChange, 200);
+  }
+
+  handleChange = event => {
+    const { value } = event.target;
+
+    this.setState({ value });
+
+    this.onChange(value);
+  };
+
+  render() {
+    const { knob } = this.props;
+    const { value } = this.state;
+
+    return <Textarea id={knob.name} style={styles} value={value} onChange={this.handleChange} />;
+  }
+}
 
 TextType.defaultProps = {
   knob: {},
