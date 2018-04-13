@@ -5515,6 +5515,12 @@ eslint-scope@^3.7.1, eslint-scope@~3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+eslint-teamcity@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-teamcity/-/eslint-teamcity-2.0.0.tgz#720523f4886032d1c61997674bec43acca4c6e73"
+  dependencies:
+    fs-extra "^5.0.0"
+
 eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
@@ -6482,6 +6488,14 @@ fs-extra@^1.0.0:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
     klaw "^1.0.0"
+
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
 
 fs-readdir-recursive@^1.0.0:
   version "1.1.0"
@@ -9053,6 +9067,10 @@ jest-specific-snapshot@^0.5.0:
   resolved "https://registry.yarnpkg.com/jest-specific-snapshot/-/jest-specific-snapshot-0.5.0.tgz#92201b5f51fbe56cc744bdfab08f379867c1bb18"
   dependencies:
     jest-snapshot ">=20.0.3"
+
+jest-teamcity-reporter@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/jest-teamcity-reporter/-/jest-teamcity-reporter-0.9.0.tgz#a9f337a928a14e7e84163817456b930ecf7cbce8"
 
 jest-util@^20.0.3:
   version "20.0.3"
