@@ -38,8 +38,9 @@ create("69382d9b-7791-418a-9ff6-1c83b86ed6b5", BuildType({
             dockerImage = "node:latest"
         }
         script {
-            name = "Test (1)"
-            scriptContent = "yarn test"
+            name = "Build"
+            workingDir = "server"
+            scriptContent = "yarn build"
             dockerImage = "node:latest"
         }
     }
