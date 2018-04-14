@@ -92,5 +92,19 @@ object Project : Project({
             param("title", "Vue")
             param("type", "BuildReportTab")
         }
+        feature {
+            type = "ReportTab"
+            id = "PROJECT_EXT_272"
+            param("startPage", "docs.zip!index.html")
+            param("title", "Docs")
+            param("type", "BuildReportTab")
+        }
+        feature {
+            type = "ReportTab"
+            id = "PROJECT_EXT_274"
+            param("startPage", "demo.zip!index.html")
+            param("title", "Demo")
+            param("type", "BuildReportTab")
+        }
     }
 })
