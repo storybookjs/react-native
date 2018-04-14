@@ -20,5 +20,14 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
                 param("type", "BuildReportTab")
             }
         }
+        add {
+            feature {
+                type = "ReportTab"
+                id = "PROJECT_EXT_273"
+                param("startPage", "demo!index.html")
+                param("title", "Demo")
+                param("type", "BuildReportTab")
+            }
+        }
     }
 }
