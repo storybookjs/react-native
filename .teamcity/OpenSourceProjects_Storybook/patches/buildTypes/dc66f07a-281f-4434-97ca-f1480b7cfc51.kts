@@ -27,6 +27,11 @@ create("69382d9b-7791-418a-9ff6-1c83b86ed6b5", BuildType({
             scriptContent = "yarn"
             dockerImage = "node:latest"
         }
+        script {
+            name = "Install (1)"
+            scriptContent = "yarn"
+            dockerImage = "node:latest"
+        }
     }
 
     triggers {
