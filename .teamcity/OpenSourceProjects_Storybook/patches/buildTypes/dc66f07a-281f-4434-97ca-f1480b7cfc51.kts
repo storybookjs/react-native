@@ -16,6 +16,8 @@ create("69382d9b-7791-418a-9ff6-1c83b86ed6b5", BuildType({
     id = "OpenSourceProjects_Storybook_SBNext"
     name = "SBNext"
 
+    artifactRules = "ui/out => demo.zip"
+
     vcs {
         root("OpenSourceProjects_Storybook_SBNext")
 
