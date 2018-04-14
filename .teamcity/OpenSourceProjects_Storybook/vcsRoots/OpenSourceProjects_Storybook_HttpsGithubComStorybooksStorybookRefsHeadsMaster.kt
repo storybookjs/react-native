@@ -8,6 +8,11 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     id = "OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster"
     name = "https://github.com/storybooks/storybook#refs/heads/master"
     url = "https://github.com/storybooks/storybook"
+    branchSpec = """
+        +:refs/(pull/*)/merge
+        +:refs/heads/(release/3.4)
+        +:refs/heads/(master)
+    """.trimIndent()
     authMethod = password {
         userName = "Hypnosphi"
         password = "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa"

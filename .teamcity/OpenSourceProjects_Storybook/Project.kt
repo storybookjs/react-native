@@ -14,61 +14,83 @@ object Project : Project({
     parentId = "OpenSourceProjects"
     name = "Storybook"
 
+    vcsRoot(OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster1)
     vcsRoot(OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
 
-    buildType(OpenSourceProjects_Storybook_Build)
+    buildType(OpenSourceProjects_Storybook_CliTestLatestCra)
+    buildType(OpenSourceProjects_Storybook_Examples)
+    buildType(OpenSourceProjects_Storybook_SmokeTests)
+    buildType(OpenSourceProjects_Storybook_Danger)
+    buildType(OpenSourceProjects_Storybook_ReactNative)
+    buildType(OpenSourceProjects_Storybook_Docs)
+    buildType(OpenSourceProjects_Storybook_Build_2)
+    buildType(OpenSourceProjects_Storybook_CliTest)
+    buildType(OpenSourceProjects_Storybook_Test)
+    buildType(OpenSourceProjects_Storybook_Lint)
 
     features {
-        feature {
-            id = "PROJECT_EXT_252"
-            type = "ReportTab"
-            param("startPage", "cra/index.html")
-            param("title", "CRA")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_253"
-            type = "ReportTab"
-            param("startPage", "vue/index.html")
-            param("title", "Vue")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_254"
-            type = "ReportTab"
-            param("startPage", "angular/index.html")
-            param("title", "Angular")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_255"
-            type = "ReportTab"
-            param("startPage", "polymer/index.html")
-            param("title", "Polymer")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_256"
-            type = "ReportTab"
-            param("startPage", "mithril/index.html")
-            param("title", "Mithril")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_257"
-            type = "ReportTab"
-            param("startPage", "storybook/index.html")
-            param("title", "Official")
-            param("type", "BuildReportTab")
-        }
         versionedSettings {
             id = "PROJECT_EXT_258"
             mode = VersionedSettings.Mode.ENABLED
-            buildSettingsMode = VersionedSettings.BuildSettingsMode.PREFER_CURRENT_SETTINGS
+            buildSettingsMode = VersionedSettings.BuildSettingsMode.PREFER_SETTINGS_FROM_VCS
             rootExtId = OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster.id
             showChanges = true
             settingsFormat = VersionedSettings.Format.KOTLIN
             storeSecureParamsOutsideOfVcs = true
+        }
+        feature {
+            id = "PROJECT_EXT_259"
+            type = "IssueTracker"
+            param("secure:password", "")
+            param("name", "storybooks/storybook")
+            param("pattern", """#(\d+)""")
+            param("authType", "anonymous")
+            param("repository", "https://github.com/storybooks/storybook")
+            param("type", "GithubIssues")
+            param("secure:accessToken", "")
+            param("username", "")
+        }
+        feature {
+            id = "PROJECT_EXT_264"
+            type = "ReportTab"
+            param("startPage", "cra.zip!index.html")
+            param("title", "CRA")
+            param("type", "BuildReportTab")
+        }
+        feature {
+            id = "PROJECT_EXT_265"
+            type = "ReportTab"
+            param("startPage", "angular.zip!index.html")
+            param("title", "Angular")
+            param("type", "BuildReportTab")
+        }
+        feature {
+            id = "PROJECT_EXT_266"
+            type = "ReportTab"
+            param("startPage", "mithril.zip!index.html")
+            param("title", "Mithril")
+            param("type", "BuildReportTab")
+        }
+        feature {
+            id = "PROJECT_EXT_267"
+            type = "ReportTab"
+            param("startPage", "official.zip!index.html")
+            param("title", "Official")
+            param("type", "BuildReportTab")
+        }
+        feature {
+            id = "PROJECT_EXT_268"
+            type = "ReportTab"
+            param("startPage", "polymer.zip!index.html")
+            param("title", "Polymer")
+            param("type", "BuildReportTab")
+        }
+        feature {
+            id = "PROJECT_EXT_269"
+            type = "ReportTab"
+            param("startPage", "vue.zip!index.html")
+            param("title", "Vue")
+            param("type", "BuildReportTab")
         }
     }
 })

@@ -3,22 +3,11 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
-object OpenSourceProjects_Storybook_Build : BuildType({
-    uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6"
-    id = "OpenSourceProjects_Storybook_Build"
-    name = "Build"
-
-    artifactRules = """
-        examples/official-storybook/storybook-static => official
-        examples/angular-cli/storybook-static => angular
-        examples/polymer-cli/storybook-static => polymer
-        examples/cra-kitchen-sink/storybook-static => cra
-        examples/mithril-kitchen-sink/storybook-static => mithril
-        examples/vue-kitchen-sink/storybook-static => vue
-        coverage/lcov-report => coverage.zip
-    """.trimIndent()
+object OpenSourceProjects_Storybook_SmokeTests : BuildType({
+    uuid = "1ea2b5bd-28f6-44f5-8ab3-6c659ce8fbd6"
+    id = "OpenSourceProjects_Storybook_SmokeTests"
+    name = "Smoke tests"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -30,72 +19,81 @@ object OpenSourceProjects_Storybook_Build : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core --docs
+                yarn bootstrap --core
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "Lint"
-            scriptContent = "yarn lint"
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "Test"
-            scriptContent = "yarn test --core --coverage --runInBand"
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "Build angular-cli"
+            name = "angular-cli"
             scriptContent = """
+                #!/bin/sh
+                
+                set -e -x
+                
                 cd examples/angular-cli
-                yarn build-storybook
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "Build polymer-cli"
+            name = "polymer-cli"
             scriptContent = """
+                #!/bin/sh
+                
+                set -e -x
+                
                 cd examples/polymer-cli
-                yarn build-storybook
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "Build cra-kitchen-sink"
+            name = "cra-kitchen-sink"
             scriptContent = """
+                #!/bin/sh
+                
+                set -e -x
+                
                 cd examples/cra-kitchen-sink
-                yarn build-storybook
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "Build mithril-kitchen-sink"
+            name = "mithril-kitchen-sink"
             scriptContent = """
+                #!/bin/sh
+                
+                set -e -x
+                
                 cd examples/mithril-kitchen-sink
-                yarn build-storybook
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "Build vue-kitchen-sink"
+            name = "vue-kitchen-sink"
             scriptContent = """
+                #!/bin/sh
+                
+                set -e -x
+                
                 cd examples/vue-kitchen-sink
-                yarn build-storybook
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "Build official-storybook"
+            name = "official-storybook"
             scriptContent = """
+                #!/bin/sh
+                
+                set -e -x
+                
                 cd examples/official-storybook
-                yarn build-storybook
+                yarn storybook --smoke-test
             """.trimIndent()
             dockerImage = "node:latest"
-        }
-    }
-
-    triggers {
-        vcs {
         }
     }
 
