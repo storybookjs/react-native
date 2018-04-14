@@ -4,6 +4,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
 object OpenSourceProjects_Storybook_Build_2 : BuildType({
@@ -22,6 +23,8 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
 
     triggers {
         vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            triggerRules = "-:.teamcity/**"
         }
     }
 
