@@ -80,7 +80,7 @@ Now you can write some stories inside the `../src/stories/index.ts` file, like t
 ```js
 import { storiesOf } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
-import { MyButtonComponent } from '../src/app/my-button/my-button.component';
+import { MyButtonComponent } from '../app/my-button/my-button.component';
 
 storiesOf('My Button', module)
   .add('with some emoji', () => ({
@@ -121,9 +121,9 @@ If your component has dependencies on other Angular directives and modules, thes
 ```js
 import { CommonModule } from '@angular/common';
 import { storiesOf } from '@storybook/angular';
-import { MyButtonComponent } from '../src/app/my-button/my-button.component';
-import { MyPanelComponent } from '../src/app/my-panel/my-panel.component';
-import { MyDataService } from '../src/app/my-data/my-data.service';
+import { MyButtonComponent } from '../app/my-button/my-button.component';
+import { MyPanelComponent } from '../app/my-panel/my-panel.component';
+import { MyDataService } from '../app/my-data/my-data.service';
 
 storiesOf('My Panel', module)
   .add('Default', () => ({
@@ -142,9 +142,9 @@ If you have metadata that is common between your stories, this can configured on
 ```js
 import { CommonModule } from '@angular/common';
 import { storiesOf, moduleMetadata } from '@storybook/angular';
-import { MyButtonComponent } from '../src/app/my-button/my-button.component';
-import { MyPanelComponent } from '../src/app/my-panel/my-panel.component';
-import { MyDataService } from '../src/app/my-data/my-data.service';
+import { MyButtonComponent } from '../app/my-button/my-button.component';
+import { MyPanelComponent } from '../app/my-panel/my-panel.component';
+import { MyDataService } from '../app/my-data/my-data.service';
 
 storiesOf('My Panel', module)
   .addDecorator(
@@ -164,4 +164,20 @@ storiesOf('My Panel', module)
       title: 'Foo',
     }
   }));
+```
+## Trouble Shooting
+
+If you have problems running @angular/cli using "ng serve" after install specifically the following error: 
+
+```ERROR in node_modules/@storybook/angular/index.d.ts(31,44): error TS2304: Cannot find name 'NodeRequire'.```
+
+You may need to exclude your stories from being compiled when running your angular dev environment.  To do this add "stories", "\*\*/\*.stories.ts" to the exclude section in src/app/tsconfig.app.json:
+
+```json
+{
+  "exclude": [
+    "stories",
+    "**/*.stories.ts"
+  ]
+}
 ```

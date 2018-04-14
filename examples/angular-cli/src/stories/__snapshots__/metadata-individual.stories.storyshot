@@ -7,7 +7,41 @@ exports[`Storyshots Metadata|Individual Individual 1 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <ng-component>
-    <storybook-simple-token-component />
+    <storybook-simple-token-component
+      ng-reflect-name="Prop Name"
+    >
+      
+      
+      <h3>
+        Prop Name
+      </h3>
+      
+      
+      <p>
+        Items:
+      </p>
+      
+      
+      <ul>
+        
+        
+        
+        <li>
+          
+          Joe
+        
+        </li>
+        <li>
+          
+          Jane
+        
+        </li>
+        
+      
+      </ul>
+      
+    
+    </storybook-simple-token-component>
   </ng-component>
 </storybook-dynamic-app-root>
 `;

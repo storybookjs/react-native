@@ -2,8 +2,9 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import { polyfill } from 'react-lifecycles-compat';
 
-export default class WrapStory extends React.Component {
+class WrapStory extends React.Component {
   constructor(props) {
     super(props);
     this.knobChanged = this.knobChanged.bind(this);
@@ -11,7 +12,7 @@ export default class WrapStory extends React.Component {
     this.resetKnobs = this.resetKnobs.bind(this);
     this.setPaneKnobs = this.setPaneKnobs.bind(this);
     this._knobsAreReset = false;
-    this.state = { storyContent: this.props.initialContent };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -26,10 +27,6 @@ export default class WrapStory extends React.Component {
     this.props.knobStore.subscribe(this.setPaneKnobs);
     // Set knobs in the panel for the first time.
     this.setPaneKnobs();
-  }
-
-  componentWillReceiveProps(props) {
-    this.setState({ storyContent: props.initialContent });
   }
 
   componentWillUnmount() {
@@ -72,6 +69,16 @@ export default class WrapStory extends React.Component {
   }
 }
 
+WrapStory.getDerivedStateFromProps = ({ initialContent }, { prevContent }) => {
+  if (initialContent !== prevContent) {
+    return {
+      storyContent: initialContent,
+      prevContent: initialContent,
+    };
+  }
+  return null;
+};
+
 WrapStory.defaultProps = {
   context: {},
   initialContent: {},
@@ -94,5 +101,9 @@ WrapStory.propTypes = {
     subscribe: PropTypes.func,
     unsubscribe: PropTypes.func,
   }).isRequired,
-  initialContent: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  initialContent: PropTypes.object, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
 };
+
+polyfill(WrapStory);
+
+export default WrapStory;

@@ -2,16 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 
-import {
-  Animated,
-  Dimensions,
-  Easing,
-  View,
-  TouchableWithoutFeedback,
-  Image,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { Dimensions, View, TouchableWithoutFeedback, Image, Text, StatusBar } from 'react-native';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -34,7 +25,6 @@ export default class OnDeviceUI extends Component {
     super(...args);
 
     this.state = {
-      menuAnimation: new Animated.Value(0),
       isMenuOpen: false,
       selectedKind: null,
       selectedStory: null,
@@ -42,19 +32,16 @@ export default class OnDeviceUI extends Component {
     };
   }
 
-  componentWillMount = () => {
+  componentDidMount() {
     Dimensions.addEventListener('change', this.handleDeviceRotation);
     this.props.events.on('story', this.handleStoryChange);
-  };
-
-  componentDidMount() {
     StatusBar.setHidden(true);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     Dimensions.removeEventListener('change', this.handleDeviceRotation);
     this.props.events.removeListener('story', this.handleStoryChange);
-  };
+  }
 
   handleDeviceRotation = () => {
     this.setState({
@@ -71,22 +58,14 @@ export default class OnDeviceUI extends Component {
   };
 
   handleToggleMenu = () => {
-    const isMenuOpen = !this.state.isMenuOpen;
-
-    Animated.timing(this.state.menuAnimation, {
-      toValue: isMenuOpen ? 1 : 0,
-      duration: 150,
-      easing: Easing.linear,
-    }).start();
-
     this.setState({
-      isMenuOpen,
+      isMenuOpen: !this.state.isMenuOpen,
     });
   };
 
   render() {
     const { stories, events, url } = this.props;
-    const { isPortrait, menuAnimation, selectedKind, selectedStory } = this.state;
+    const { isPortrait, isMenuOpen, selectedKind, selectedStory } = this.state;
 
     const iPhoneXStyles = ifIphoneX(
       isPortrait
@@ -104,10 +83,7 @@ export default class OnDeviceUI extends Component {
       {
         transform: [
           {
-            translateX: menuAnimation.interpolate({
-              inputRange: [0, 1],
-              outputRange: [-DRAWER_WIDTH - 30, 0],
-            }),
+            translateX: isMenuOpen ? 0 : -DRAWER_WIDTH - 30,
           },
         ],
       },
@@ -117,10 +93,7 @@ export default class OnDeviceUI extends Component {
     const headerStyles = [
       style.headerContainer,
       {
-        opacity: menuAnimation.interpolate({
-          inputRange: [0, 1],
-          outputRange: [1, 0],
-        }),
+        opacity: +!isMenuOpen,
       },
     ];
 
@@ -144,7 +117,7 @@ export default class OnDeviceUI extends Component {
     return (
       <View style={style.main}>
         <View style={previewContainerStyles}>
-          <Animated.View style={headerStyles}>
+          <View style={headerStyles}>
             <TouchableWithoutFeedback
               onPress={this.handleToggleMenu}
               testID="Storybook.OnDeviceUI.open"
@@ -157,14 +130,14 @@ export default class OnDeviceUI extends Component {
             <Text style={style.headerText} numberOfLines={1}>
               {selectedKind} {selectedStory}
             </Text>
-          </Animated.View>
+          </View>
           <View style={previewWrapperStyles}>
             <View style={style.preview}>
               <StoryView url={url} events={events} />
             </View>
           </View>
         </View>
-        <Animated.View style={menuStyles}>
+        <View style={menuStyles}>
           <TouchableWithoutFeedback
             onPress={this.handleToggleMenu}
             testID="Storybook.OnDeviceUI.close"
@@ -181,7 +154,7 @@ export default class OnDeviceUI extends Component {
             selectedKind={selectedKind}
             selectedStory={selectedStory}
           />
-        </Animated.View>
+        </View>
       </View>
     );
   }

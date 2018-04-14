@@ -1,6 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import React, { createElement } from 'react';
+import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
 import { baseFonts } from '@storybook/components';
@@ -58,7 +59,6 @@ const stylesheet = {
     border: '1px solid #eee',
     padding: '20px 40px 40px',
     borderRadius: '2px',
-    boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.05)',
     backgroundColor: '#fff',
     marginTop: '20px',
     marginBottom: '20px',
@@ -102,22 +102,15 @@ const stylesheet = {
   },
 };
 
-export default class Story extends React.Component {
+class Story extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       open: false,
-      stylesheet: this.props.styles(stylesheet),
     };
     this.marksy = marksy({
       createElement,
       elements: this.props.components,
-    });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      stylesheet: nextProps.styles(stylesheet),
     });
   }
 
@@ -373,6 +366,8 @@ export default class Story extends React.Component {
   }
 }
 
+Story.getDerivedStateFromProps = ({ styles }) => ({ stylesheet: styles(stylesheet) });
+
 Story.displayName = 'Story';
 
 Story.propTypes = {
@@ -386,6 +381,7 @@ Story.propTypes = {
   showInline: PropTypes.bool,
   showHeader: PropTypes.bool,
   showSource: PropTypes.bool,
+  // eslint-disable-next-line react/no-unused-prop-types
   styles: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   components: PropTypes.shape({}),
@@ -394,6 +390,7 @@ Story.propTypes = {
   maxPropArrayLength: PropTypes.number.isRequired,
   maxPropStringLength: PropTypes.number.isRequired,
 };
+
 Story.defaultProps = {
   context: null,
   info: '',
@@ -405,3 +402,7 @@ Story.defaultProps = {
   showSource: true,
   components: {},
 };
+
+polyfill(Story);
+
+export default Story;

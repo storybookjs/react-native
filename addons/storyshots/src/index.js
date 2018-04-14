@@ -1,9 +1,8 @@
 import fs from 'fs';
 import glob from 'glob';
-import global, { describe, it, beforeEach, afterEach } from 'global';
-import addons from '@storybook/addons';
+import global, { describe, it } from 'global';
+import addons, { mockChannel } from '@storybook/addons';
 import loadFramework from './frameworkLoader';
-import createChannel from './storybook-channel-mock';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
 import { imageSnapshot } from './test-body-image-snapshot';
 
@@ -27,12 +26,14 @@ export {
   imageSnapshot,
 };
 
+const methods = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];
+
 export default function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
-  addons.setChannel(createChannel());
+  addons.setChannel(mockChannel());
 
   const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
   const stories = storybook.getStorybook();
@@ -51,7 +52,13 @@ export default function testStorySnapshots(options = {}) {
     serializer: options.serializer,
   };
 
-  const testMethod = options.test || snapshotWithOptions({ options: snapshotOptions });
+  const testMethod = options.test || snapshotWithOptions(snapshotOptions);
+
+  methods.forEach(method => {
+    if (typeof testMethod[method] === 'function') {
+      global[method](testMethod[method]);
+    }
+  });
 
   // eslint-disable-next-line
   for (const group of stories) {
@@ -63,20 +70,6 @@ export default function testStorySnapshots(options = {}) {
     }
 
     describe(suite, () => {
-      beforeEach(() => {
-        if (typeof testMethod.beforeEach === 'function') {
-          return testMethod.beforeEach();
-        }
-        return Promise.resolve();
-      });
-
-      afterEach(() => {
-        if (typeof testMethod.afterEach === 'function') {
-          return testMethod.afterEach();
-        }
-        return Promise.resolve();
-      });
-
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {

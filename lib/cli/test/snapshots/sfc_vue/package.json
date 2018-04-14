@@ -49,11 +49,11 @@
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0",
-    "@storybook/vue": "^3.4.0-alpha.9",
-    "@storybook/addon-actions": "^3.4.0-alpha.9",
-    "@storybook/addon-links": "^3.4.0-alpha.9",
-    "@storybook/addons": "^3.4.0-alpha.9",
-    "babel-preset-vue": "^2.0.1"
+    "@storybook/vue": "^4.0.0-alpha.2",
+    "@storybook/addon-actions": "^4.0.0-alpha.2",
+    "@storybook/addon-links": "^4.0.0-alpha.2",
+    "@storybook/addons": "^4.0.0-alpha.2",
+    "babel-preset-vue": "^2.0.2"
   },
   "engines": {
     "node": ">= 4.0.0",

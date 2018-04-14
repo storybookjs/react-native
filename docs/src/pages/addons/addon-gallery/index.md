@@ -48,7 +48,7 @@ With this addon, you can switch between background colors and background images 
 
 ### [Viewport](https://github.com/storybooks/storybook/tree/master/addons/viewport)
 
-Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybookjs.org).  This helps build responsive components inside of Storybook.
+Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org).  This helps build responsive components inside of Storybook.
 
 ## Community Addons
 
@@ -132,3 +132,7 @@ Manage state inside a story. Update components when this state changes.
 Wrap the story in a function call to setup state management. The story can modify
 state properties with the provided store. The addon provides a panel to view and
 reset state.
+
+### [story2sketch](https://github.com/chrisvxd/story2sketch)
+
+Convert stories into Sketch 💎 symbols.

@@ -1,0 +1,3 @@
+rootProject.name = 'ReactNativeTypescript'
+
+include ':app'

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Textarea from 'react-textarea-autosize';
-import deepEqual from 'deep-equal';
+import debounce from 'lodash.debounce';
 
 const styles = {
   display: 'table-cell',
@@ -18,50 +18,49 @@ const styles = {
 };
 
 class ObjectType extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {};
-  }
-
-  getJSONString() {
-    const { json, jsonString } = this.state;
-    const { knob } = this.props;
-
-    // If there is an error in the JSON, we need to give that errored JSON.
-    if (this.failed) return jsonString;
-
-    // If the editor value and the knob value is the same, we need to return the
-    // editor value as it allow user to add new fields to the JSON.
-    if (deepEqual(json, knob.value)) return jsonString;
-
-    // If the knob's value is different from the editor, it seems like
-    // there's a outside change and we need to get that.
-    return JSON.stringify(knob.value, null, 2);
-  }
-
-  handleChange(e) {
-    const { onChange } = this.props;
-    const newState = {
-      jsonString: e.target.value,
-    };
+  constructor(props, context) {
+    super(props, context);
 
     try {
-      newState.json = JSON.parse(e.target.value.trim());
-      onChange(newState.json);
-      this.failed = false;
-    } catch (err) {
-      this.failed = true;
+      this.state = {
+        value: JSON.stringify(props.knob.value, null, 2),
+        failed: false,
+      };
+    } catch (e) {
+      this.state = {
+        // if it can't be JSON stringified, it's probably some weird stuff
+        value: 'Default object cannot not be JSON stringified',
+        failed: true,
+      };
     }
 
-    this.setState(newState);
+    this.onChange = debounce(props.onChange, 200);
   }
+
+  handleChange = e => {
+    const { value } = e.target;
+
+    try {
+      const json = JSON.parse(e.target.value.trim());
+      this.onChange(json);
+      this.setState({
+        value,
+        failed: false,
+      });
+    } catch (err) {
+      this.setState({
+        value,
+        failed: true,
+      });
+    }
+  };
 
   render() {
     const { knob } = this.props;
-    const jsonString = this.getJSONString();
+    const { value, failed } = this.state;
     const extraStyle = {};
 
-    if (this.failed) {
+    if (failed) {
       extraStyle.border = '1px solid #fadddd';
       extraStyle.backgroundColor = '#fff5f5';
     }
@@ -70,8 +69,8 @@ class ObjectType extends React.Component {
       <Textarea
         id={knob.name}
         style={{ ...styles, ...extraStyle }}
-        value={jsonString}
-        onChange={e => this.handleChange(e)}
+        value={value}
+        onChange={this.handleChange}
       />
     );
   }

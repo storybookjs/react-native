@@ -4,11 +4,27 @@ import { logger } from '@storybook/node-logger';
 
 expect.extend({ toMatchImageSnapshot });
 
-export const imageSnapshot = ({
-  storybookUrl = 'http://localhost:6006',
-  getMatchOptions = () => {},
-  beforeScreenshot = () => {},
-}) => {
+// We consider taking the full page is a reasonnable default.
+const defaultScreenshotOptions = () => ({ fullPage: true });
+
+const noop = () => {};
+
+const defaultConfig = {
+  storybookUrl: 'http://localhost:6006',
+  getMatchOptions: noop,
+  getScreenshotOptions: defaultScreenshotOptions,
+  beforeScreenshot: noop,
+  getGotoOptions: noop,
+};
+
+export const imageSnapshot = (customConfig = {}) => {
+  const {
+    storybookUrl,
+    getMatchOptions,
+    getScreenshotOptions,
+    beforeScreenshot,
+    getGotoOptions,
+  } = { ...defaultConfig, ...customConfig };
   let browser; // holds ref to browser. (ie. Chrome)
   let page; // Hold ref to the page to screenshot.
 
@@ -36,7 +52,7 @@ export const imageSnapshot = ({
 
     expect.assertions(1);
     return page
-      .goto(url)
+      .goto(url, getGotoOptions({ context, url }))
       .catch(e => {
         logger.error(
           `ERROR WHILE CONNECTING TO ${url}, did you start or build the storybook first ? A storybook instance should be running or a static version should be built when using image snapshot feature.`,
@@ -45,14 +61,13 @@ export const imageSnapshot = ({
         throw e;
       })
       .then(() => beforeScreenshot(page, { context, url }))
-      .then(() =>
-        page.screenshot().then(image => {
-          expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
-        })
-      );
+      .then(() => page.screenshot(getScreenshotOptions({ context, url })))
+      .then(image => {
+        expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
+      });
   };
 
-  testFn.beforeEach = () =>
+  testFn.beforeAll = () =>
     puppeteer
       // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
       .launch({ args: ['--no-sandbox ', '--disable-setuid-sandbox'] })
@@ -64,7 +79,7 @@ export const imageSnapshot = ({
         page = p;
       });
 
-  testFn.afterEach = () => browser.close();
+  testFn.afterAll = () => browser.close();
 
   return testFn;
 };

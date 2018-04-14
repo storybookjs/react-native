@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
+import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
 
 storiesOf('Addons|Info.React Docgen', module)
@@ -26,6 +27,12 @@ storiesOf('Addons|Info.React Docgen', module)
     withInfo(
       'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
     )(() => <BaseButton onClick={action('clicked')} label="Button" />)
+  )
+  .add(
+    'Comments from named export component declaration',
+    withInfo(
+      'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
+    )(() => <NamedExportButton onClick={action('clicked')} label="Button" />)
   );
 
 const markdownDescription = `

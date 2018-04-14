@@ -1,6 +1,6 @@
 {
   "name": "@storybook/codemod",
-  "version": "3.4.0-alpha.9",
+  "version": "4.0.0-alpha.2",
   "description": "A collection of codemod scripts written with JSCodeshift",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,6 +13,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "jscodeshift": "^0.4.1"
+    "jscodeshift": "^0.5.0"
   }
 }

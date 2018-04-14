@@ -19,7 +19,7 @@ Specifically, testing is important when working with teams since it allows diffe
 
 ## Different Aspects of UI Testing
 
-We refer UI for many things. To put this in focus, let's narrow it down to React based user interfaces.
+We refer to UI for many things. To put this in focus, let's narrow it down to React based user interfaces.
 
 ### 1. Structural Testing
 
@@ -30,7 +30,7 @@ For an example, let's say we have a "login component" as shown below:
 
 For structural testing, we are testing whether or not it has following content:
 
--   A title with "Login in to Facebook"
+-   A title with "Log in to Facebook"
 -   Two inputs for the username and password.
 -   A submit button.
 -   An error screen to show errors.

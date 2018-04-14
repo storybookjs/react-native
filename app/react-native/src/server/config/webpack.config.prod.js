@@ -1,11 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { OccurenceOrderPlugin, includePaths, excludePaths } from './utils';
+import { includePaths, excludePaths } from './utils';
 
 const getConfig = options => {
   const config = {
+    mode: 'production',
     bail: true,
     devtool: '#cheap-module-source-map',
     entry: {
@@ -31,20 +32,7 @@ const getConfig = options => {
       }),
       new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
       new webpack.optimize.DedupePlugin(),
-      new UglifyJsPlugin({
-        parallel: true,
-        uglifyOptions: {
-          ie8: false,
-          mangle: false,
-          warnings: false,
-          compress: {
-            keep_fnames: true,
-          },
-          output: {
-            comments: false,
-          },
-        },
-      }),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [
@@ -69,12 +57,6 @@ const getConfig = options => {
       ],
     },
   };
-
-  // Webpack 2 doesn't have a OccurenceOrderPlugin plugin in the production mode.
-  // But webpack 1 has it. That's why we do this.
-  if (OccurenceOrderPlugin) {
-    config.plugins.unshift(new OccurenceOrderPlugin());
-  }
 
   return config;
 };

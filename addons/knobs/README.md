@@ -18,7 +18,7 @@ This is how Knobs look like:
 
 [![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://git.io/vXdhZ)
 
-> Checkout the above [Live Storybook](https://git.io/vXdhZ) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
+> Checkout the above [Live Storybook](https://storybooks-official.netlify.com/) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
 
 ## Getting Started
 
@@ -36,6 +36,7 @@ import '@storybook/addon-knobs/register'
 
 Now, write your stories with knobs.
 
+### With React
 ```js
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
@@ -61,6 +62,28 @@ stories.add('as dynamic variables', () => {
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
 });
+```
+
+### With Angular
+```js
+import { storiesOf } from '@storybook/angular';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs/angular';
+
+import { Button } from '@storybook/angular/demo';
+
+const stories = storiesOf('Storybook Knobs', module);
+
+// "withKnobs" decorator should be applied before the stories using knobs
+stories.addDecorator(withKnobs);
+
+// Knobs for Angular props
+stories.add('with text', () => ({
+  component: Button,
+  props: {
+   text: text('text', 'Hello Button'), // The first param of the knob function has to be exactly the same as the component input.
+  },
+}));
+
 ```
 
 Categorize your knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
@@ -94,6 +117,13 @@ stories.add('as dynamic variables', () => {
 > ```js
 > import { storiesOf } from '@storybook/angular';
 > import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/angular';
+> ```
+>
+> In the case of Mithril, use these imports:
+>
+> ```js
+> import { storiesOf } from '@storybook/mithril';
+> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/mithril';
 > ```
 
 You can see your Knobs in a Storybook panel as shown below.
@@ -281,11 +311,26 @@ const options = {
   Rainbow: ['red', 'orange', 'etc'],
   None: null,
 };
-const defaultValue = 'Red';
+const defaultValue = 'red';
 const groupId = 'GROUP-ID1';
 
 const value = selectV2(label, options, defaultValue, groupId);
 ```
+
+### files
+
+Allows you to get a value from a file input from the user.
+
+```js
+import { files } from '@storybook/addon-knobs/react';
+
+const label = 'Images';
+const defaultValue = [];
+
+const value = files(label, accept, defaultValue);
+```
+
+> Multiple files can be selected, and will be returned as an array of [Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
 
 ### date
 

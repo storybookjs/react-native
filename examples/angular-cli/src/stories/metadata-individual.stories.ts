@@ -9,7 +9,7 @@ storiesOf('Metadata|Individual', module)
     },
     moduleMetadata: {
       imports: [],
-      declarations: [],
+      declarations: [TokenComponent],
       providers: [
         {
           provide: ITEMS,

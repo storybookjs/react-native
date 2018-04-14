@@ -9,7 +9,7 @@ function test(options) {
 function load(options) {
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
-    babelConfigPath: '@storybook/react/dist/server/babel_config',
+    babelConfigPath: '@storybook/react/dist/server/config/babel',
   });
 
   runWithRequireContext(content, contextOpts);

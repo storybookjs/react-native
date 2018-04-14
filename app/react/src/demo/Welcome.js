@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
-import LinkTo from '@storybook/addon-links/react';
 
 const Main = glamorous.article({
   margin: 15,
@@ -42,7 +41,6 @@ const NavButton = glamorous(Link.withComponent('button'))({
   cursor: 'pointer',
   font: 'inherit',
 });
-const StoryLink = Link.withComponent(LinkTo);
 
 const Welcome = props => (
   <Main>
@@ -57,15 +55,8 @@ const Welcome = props => (
       (Basically a story is like a visual test case.)
     </p>
     <p>
-      See these sample{' '}
-      {props.showApp ? (
-        <NavButton onClick={props.showApp}>stories</NavButton>
-      ) : (
-        <StoryLink kind={props.showKind} story={props.showStory}>
-          stories
-        </StoryLink>
-      )}{' '}
-      for a component called <InlineCode>Button</InlineCode>
+      See these sample <NavButton onClick={props.showApp}>stories</NavButton> for a component called{' '}
+      <InlineCode>Button</InlineCode>
       .
     </p>
     <p>
@@ -100,13 +91,9 @@ const Welcome = props => (
 Welcome.displayName = 'Welcome';
 Welcome.propTypes = {
   showApp: PropTypes.func,
-  showKind: PropTypes.string,
-  showStory: PropTypes.string,
 };
 Welcome.defaultProps = {
   showApp: null,
-  showKind: null,
-  showStory: null,
 };
 
 export { Welcome as default };

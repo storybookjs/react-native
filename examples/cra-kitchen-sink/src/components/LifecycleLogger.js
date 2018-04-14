@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { polyfill } from 'react-lifecycles-compat';
 import { logger } from '@storybook/client-logger';
 
 function log(name) {
@@ -7,22 +8,18 @@ function log(name) {
 
 // A component that logs its lifecycle so we can check that things happen
 // the right number of times (i.e. we are using React properly)
-export default class LifecycleLogger extends Component {
+class LifecycleLogger extends Component {
   constructor() {
     super();
-    log('contructor');
-  }
-  componentWillMount() {
-    log('componentWillMount');
+    log('constructor');
+    this.state = {};
   }
   componentDidMount() {
     log('componentDidMount');
   }
-  componentWillReceiveProps() {
-    log('componentWillReceiveProps');
-  }
-  componentWillUpdate() {
-    log('componentWillUpdate');
+  // eslint-disable-next-line react/sort-comp
+  getSnapshotBeforeUpdate() {
+    log('getSnapshotBeforeUpdate');
   }
   componentDidUpdate() {
     log('componentDidUpdate');
@@ -38,3 +35,12 @@ export default class LifecycleLogger extends Component {
     return <div>Lifecycle methods are logged to the console</div>;
   }
 }
+
+LifecycleLogger.getDerivedStateFromProps = () => {
+  log('getDerivedStateFromProps');
+  return null;
+};
+
+polyfill(LifecycleLogger);
+
+export default LifecycleLogger;

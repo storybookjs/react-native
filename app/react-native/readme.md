@@ -96,6 +96,22 @@ module.exports = ({ platform }) => ({
 });
 ```
 
+## Seamless Typescript Integration
+
+*Note: These instructions are for react-native >= 0.45 and the (default) [metro](https://github.com/facebook/metro) bundler*
+
+For seamless type integration (no intermediate build step) we use the custom rn cli config feature and the [react-native-typescript-transformer](https://github.com/ds300/react-native-typescript-transformer) project 
+
+First follow the instructions [here](https://github.com/ds300/react-native-typescript-transformer#step-1-install).
+
+Now update your storybook `package.json` script to the following
+
+    "scripts": {
+       "storybook": "storybook --metro-config $PWD/rn-cli.config.js"
+    }
+
+The metro bundler requires an absolute path to the config. The above setup assumes the `rn-cli.config.js` is in the root of your project or next to your `package.json`
+
 ## Learn More
 
 Check the `docs` directory in this repo for more advanced setup guides and other info.

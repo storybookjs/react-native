@@ -19,12 +19,19 @@ if (isBrowser) {
   rootEl = document.getElementById('root');
 }
 
+function render(node, el) {
+  ReactDOM.render(
+    process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
+    el
+  );
+}
+
 export function renderError(error) {
   const properError = new Error(error.title);
   properError.stack = error.description;
 
   const redBox = <ErrorDisplay error={properError} />;
-  ReactDOM.render(redBox, rootEl);
+  render(redBox, rootEl);
 }
 
 export function renderException(error) {
@@ -33,7 +40,7 @@ export function renderException(error) {
   const realError = new Error(error.message);
   realError.stack = error.stack;
   const redBox = <ErrorDisplay error={realError} />;
-  ReactDOM.render(redBox, rootEl);
+  render(redBox, rootEl);
 
   // Log the stack to the console. So, user could check the source code.
   logger.error(error.stack);
@@ -47,9 +54,9 @@ export function renderMain(data, storyStore, forceRender) {
   const { selectedKind, selectedStory } = data;
 
   const revision = storyStore.getRevision();
-  const story = storyStore.getStory(selectedKind, selectedStory);
+  const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
   if (!story) {
-    ReactDOM.render(noPreview, rootEl);
+    render(noPreview, rootEl);
     return null;
   }
 
@@ -77,12 +84,7 @@ export function renderMain(data, storyStore, forceRender) {
   previousStory = selectedStory;
   ReactDOM.unmountComponentAtNode(rootEl);
 
-  const context = {
-    kind: selectedKind,
-    story: selectedStory,
-  };
-
-  const element = story(context);
+  const element = story();
 
   if (!element) {
     const error = {
@@ -106,7 +108,7 @@ export function renderMain(data, storyStore, forceRender) {
     return renderError(error);
   }
 
-  ReactDOM.render(element, rootEl);
+  render(element, rootEl);
   return null;
 }
 
