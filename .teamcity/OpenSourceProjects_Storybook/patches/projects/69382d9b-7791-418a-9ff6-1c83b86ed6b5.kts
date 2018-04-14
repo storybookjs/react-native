@@ -23,8 +23,8 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
         add {
             feature {
                 type = "ReportTab"
-                id = "PROJECT_EXT_273"
-                param("startPage", "demo!index.html")
+                id = "PROJECT_EXT_274"
+                param("startPage", "demo.zip!index.html")
                 param("title", "Demo")
                 param("type", "BuildReportTab")
             }
