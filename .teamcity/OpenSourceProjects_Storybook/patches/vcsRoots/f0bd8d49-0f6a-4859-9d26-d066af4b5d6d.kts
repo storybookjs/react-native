@@ -14,6 +14,7 @@ create("69382d9b-7791-418a-9ff6-1c83b86ed6b5", GitVcsRoot({
     id = "OpenSourceProjects_Storybook_SBNext"
     name = "SBNext"
     url = "https://github.com/storybooks/SBNext"
+    branch = "refs/heads/POC-bundler"
     authMethod = password {
         userName = "Hypnosphi"
         password = "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa"
