@@ -31,7 +31,6 @@ create("69382d9b-7791-418a-9ff6-1c83b86ed6b5", BuildType({
         }
         script {
             name = "Lint"
-            enabled = false
             scriptContent = "yarn lint"
             dockerImage = "node:latest"
         }
