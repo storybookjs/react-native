@@ -2,6 +2,7 @@ package OpenSourceProjects_Storybook.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
@@ -18,6 +19,13 @@ create("69382d9b-7791-418a-9ff6-1c83b86ed6b5", BuildType({
     vcs {
         root("OpenSourceProjects_Storybook_SBNext")
 
+    }
+
+    steps {
+        script {
+            scriptContent = "yarn"
+            dockerImage = "node:latest"
+        }
     }
 
     triggers {
