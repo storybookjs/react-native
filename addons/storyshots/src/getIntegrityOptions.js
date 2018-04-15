@@ -1,7 +1,7 @@
 const ignore = ['**/node_modules/**'];
 
 export default function getIntegrityOptions(options) {
-  const { integrityOptions = {} } = options;
+  const { integrityOptions } = options;
 
   if (integrityOptions === false) {
     return false;
