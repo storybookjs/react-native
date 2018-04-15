@@ -9,6 +9,7 @@ object OpenSourceProjects_Storybook_SBNext : GitVcsRoot({
     name = "SBNext"
     url = "git@github.com:storybooks/SBNext.git"
     branch = "refs/heads/POC-bundler"
+    agentCleanPolicy = GitVcsRoot.AgentCleanPolicy.NEVER
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "Storybook bot"
