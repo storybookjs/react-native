@@ -2,7 +2,7 @@
 
 exports[`Storyshots App|acceptance angular-cli 1`] = `
 <iframe
-  src="/angular-cli/index.html"
+  src="angular-cli/index.html"
   style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
   title="angular-cli"
 />
@@ -10,7 +10,7 @@ exports[`Storyshots App|acceptance angular-cli 1`] = `
 
 exports[`Storyshots App|acceptance cra-kitchen-sink 1`] = `
 <iframe
-  src="/cra-kitchen-sink/index.html"
+  src="cra-kitchen-sink/index.html"
   style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
   title="cra-kitchen-sink"
 />
@@ -18,7 +18,7 @@ exports[`Storyshots App|acceptance cra-kitchen-sink 1`] = `
 
 exports[`Storyshots App|acceptance mithril-kitchen-sink 1`] = `
 <iframe
-  src="/mithril-kitchen-sink/index.html"
+  src="mithril-kitchen-sink/index.html"
   style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
   title="mithril-kitchen-sink"
 />
@@ -26,7 +26,7 @@ exports[`Storyshots App|acceptance mithril-kitchen-sink 1`] = `
 
 exports[`Storyshots App|acceptance polymer-cli 1`] = `
 <iframe
-  src="/polymer-cli/index.html"
+  src="polymer-cli/index.html"
   style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
   title="polymer-cli"
 />
@@ -34,7 +34,7 @@ exports[`Storyshots App|acceptance polymer-cli 1`] = `
 
 exports[`Storyshots App|acceptance vue-kitchen-sink 1`] = `
 <iframe
-  src="/vue-kitchen-sink/index.html"
+  src="vue-kitchen-sink/index.html"
   style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
   title="vue-kitchen-sink"
 />
