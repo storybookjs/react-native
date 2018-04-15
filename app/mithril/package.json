@@ -1,6 +1,6 @@
 {
   "name": "@storybook/mithril",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "description": "Storybook for Mithril: Develop Mithril Component in isolation.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/mithril",
   "bugs": {
@@ -23,25 +23,25 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.1",
-    "@storybook/channel-postmessage": "4.0.0-alpha.1",
-    "@storybook/client-logger": "4.0.0-alpha.1",
-    "@storybook/core": "4.0.0-alpha.1",
-    "@storybook/node-logger": "4.0.0-alpha.1",
+    "@storybook/addons": "4.0.0-alpha.2",
+    "@storybook/channel-postmessage": "4.0.0-alpha.2",
+    "@storybook/client-logger": "4.0.0-alpha.2",
+    "@storybook/core": "4.0.0-alpha.2",
+    "@storybook/node-logger": "4.0.0-alpha.2",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.1",
+    "@storybook/ui": "4.0.0-alpha.2",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-minify": "^0.3.0",
+    "babel-preset-minify": "^0.4.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.7.2",
-    "core-js": "^2.5.4",
+    "core-js": "^2.5.5",
     "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
@@ -50,7 +50,7 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "webpack": "^4.5.0",
-    "webpack-hot-middleware": "^2.21.2"
+    "webpack-hot-middleware": "^2.22.0"
   },
   "devDependencies": {
     "mithril": "^1.1.6",

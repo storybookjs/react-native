@@ -17,6 +17,14 @@
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
 
+## From 3.4.x to 4.0
+
+* Keyboard shortcuts have been moved:
+  - Addon Panel to `Z`
+  - Stories Panel to `X`
+  - Show Search to `O`
+  - Addon Panel right side to `G`
+
 ## From version 3.3.x to 3.4.x
 
 There are no expected breaking changes in the 3.4.x release, but 3.4 contains a major refactor to make it easier to support new frameworks, and we will document any breaking changes here if they arise.

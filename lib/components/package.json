@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "description": "Core Storybook Components",
   "license": "MIT",
   "main": "dist/index.js",
@@ -24,8 +24,8 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.1",
-    "@storybook/addon-knobs": "4.0.0-alpha.1",
-    "@storybook/react": "4.0.0-alpha.1"
+    "@storybook/addon-actions": "4.0.0-alpha.2",
+    "@storybook/addon-knobs": "4.0.0-alpha.2",
+    "@storybook/react": "4.0.0-alpha.2"
   }
 }
