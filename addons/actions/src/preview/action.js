@@ -1,9 +1,9 @@
-import addons from '@storybook/addons';
 import uuid from 'uuid/v1';
-import { EVENT_ID } from './';
-import { canConfigureName, prepareArguments } from './lib/util';
+import addons from '@storybook/addons';
+import { EVENT_ID } from '../';
+import { canConfigureName, prepareArguments } from '../lib/util';
 
-export function action(name) {
+export default function action(name) {
   // eslint-disable-next-line no-shadow
   const handler = function action(..._args) {
     const args = _args.map(prepareArguments);
@@ -19,14 +19,4 @@ export function action(name) {
     Object.defineProperty(handler, 'name', { value: name });
   }
   return handler;
-}
-
-export function decorateAction(decorators) {
-  return name => {
-    const callAction = action(name);
-    return (..._args) => {
-      const decorated = decorators.reduce((args, fn) => fn(args), _args);
-      callAction(...decorated);
-    };
-  };
 }
