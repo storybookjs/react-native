@@ -99,8 +99,6 @@ export default function testStorySnapshots(options = {}) {
       test('Abandoned Storyshots', () => {
         const storyshots = glob.sync('**/*.storyshot', integrityOptions);
 
-        console.log(storyshots);
-
         const abandonedStoryshots = storyshots.filter(fileName => {
           const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
           return !possibleStoriesFiles.some(fs.existsSync);
