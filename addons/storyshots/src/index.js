@@ -43,7 +43,10 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('storyshots found 0 stories');
   }
 
-  const suite = options.suite || 'Storyshots';
+  // NOTE: keep `suit` typo for backwards compatibility
+  const suite = options.suite || options.suit || 'Storyshots';
+  // NOTE: Added not to break existing storyshots configs (can be removed in a future major release)
+  const storyNameRegex = options.storyNameRegex || options.storyRegex;
 
   const snapshotOptions = {
     renderer: options.renderer,
@@ -72,7 +75,7 @@ export default function testStorySnapshots(options = {}) {
       describe(kind, () => {
         // eslint-disable-next-line
         for (const story of group.stories) {
-          if (options.storyNameRegex && !story.name.match(options.storyNameRegex)) {
+          if (storyNameRegex && !story.name.match(storyNameRegex)) {
             // eslint-disable-next-line
             continue;
           }
