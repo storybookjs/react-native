@@ -8,9 +8,7 @@ export default function getIntegrityOptions(options) {
   }
 
   if (typeof integrityOptions !== 'object') {
-    return {
-      ignore,
-    };
+    return false;
   }
 
   return {
