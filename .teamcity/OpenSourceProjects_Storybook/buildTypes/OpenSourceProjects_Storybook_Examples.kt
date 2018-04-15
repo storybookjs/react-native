@@ -103,6 +103,10 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             snapshot {
                 onDependencyCancel = FailureAction.CANCEL
             }
+
+            artifacts {
+                artifactRules = "cra.zip!** => examples/cra-kitchen-sink/storybook-static"
+            }
         }
     }
 
