@@ -3,17 +3,15 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
+import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
-object OpenSourceProjects_Storybook_ReactNative : BuildType({
-    uuid = "ac276912-df1a-44f1-8de2-056276193ce8"
-    id = "OpenSourceProjects_Storybook_ReactNative"
-    name = "React Native"
+object OpenSourceProjects_Storybook_CRA : BuildType({
+    uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6-cra"
+    id = "OpenSourceProjects_Storybook_CRA"
+    name = "CRA"
 
-    artifactRules = "examples/react-native-vanilla/coverage/lcov-report => coverage.zip"
-
-    params {
-        param("env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD", "true")
-    }
+    artifactRules = "examples/cra-kitchen-sink/storybook-static => cra.zip"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -25,33 +23,33 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core --reactnative --reactnativeapp
+                yarn bootstrap --core
             """.trimIndent()
             dockerImage = "node:latest"
         }
         script {
-            name = "react-native-vanilla"
+            name = "build"
             scriptContent = """
-                cd examples/react-native-vanilla
-                yarn storybook --smoke-test
+                #!/bin/sh
+                
+                set -e -x
+
+                cd examples/cra-kitchen-sink
+                yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"
         }
-        script {
-            name = "crna-kitchen-sink"
-            scriptContent = """
-                cd examples/crna-kitchen-sink
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "Test"
-            scriptContent = """
-                yarn test --reactnative --coverage --runInBand --teamcity
-                yarn coverage
-            """.trimIndent()
-            dockerImage = "node:latest"
+    }
+
+    failureConditions {
+        failOnMetricChange {
+            metric = BuildFailureOnMetric.MetricType.ARTIFACT_SIZE
+            threshold = 50
+            units = BuildFailureOnMetric.MetricUnit.PERCENTS
+            comparison = BuildFailureOnMetric.MetricComparison.LESS
+            compareTo = build {
+                buildRule = lastSuccessful()
+            }
         }
     }
 

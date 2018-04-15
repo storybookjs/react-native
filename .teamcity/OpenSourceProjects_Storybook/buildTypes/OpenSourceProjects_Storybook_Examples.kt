@@ -36,66 +36,6 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             dockerImage = "node:latest"
         }
         script {
-            name = "angular-cli"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                cd examples/angular-cli
-                yarn build-storybook
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "polymer-cli"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                cd examples/polymer-cli
-                yarn build-storybook
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "cra-kitchen-sink"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                cd examples/cra-kitchen-sink
-                yarn build-storybook
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "mithril-kitchen-sink"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                cd examples/mithril-kitchen-sink
-                yarn build-storybook
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "vue-kitchen-sink"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                cd examples/vue-kitchen-sink
-                yarn build-storybook
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
             name = "official-storybook"
             scriptContent = """
                 #!/bin/sh
@@ -154,6 +94,54 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
                 }
             }
             param("github_oauth_user", "Hypnosphi")
+        }
+    }
+
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CRA) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "cra.zip!** => examples/cra-kitchen-sink/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Vue) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "vue.zip!** => examples/vue-kitchen-sink/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Angular) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "angular.zip!** => examples/angular-cli/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Polymer) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "polymer.zip!** => examples/polymer-cli/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Mithril) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "mithril.zip!** => examples/mithril-kitchen-sink/storybook-static"
+            }
         }
     }
 

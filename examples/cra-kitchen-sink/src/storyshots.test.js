@@ -10,6 +10,7 @@ configure({ adapter: new Adapter() });
 initStoryshots({
   framework: 'react',
   configPath: path.join(__dirname, '..', '.storybook'),
+  integrityOptions: { cwd: path.join(__dirname, 'stories') },
   test: multiSnapshotWithOptions({
     renderer,
     serializer,

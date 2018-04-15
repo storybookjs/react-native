@@ -7,10 +7,11 @@ object OpenSourceProjects_Storybook_SBNext : GitVcsRoot({
     uuid = "f0bd8d49-0f6a-4859-9d26-d066af4b5d6d"
     id = "OpenSourceProjects_Storybook_SBNext"
     name = "SBNext"
-    url = "https://github.com/storybooks/SBNext"
+    url = "git@github.com:storybooks/SBNext.git"
     branch = "refs/heads/POC-bundler"
-    authMethod = password {
-        userName = "Hypnosphi"
-        password = "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa"
+    agentCleanPolicy = GitVcsRoot.AgentCleanPolicy.NEVER
+    authMethod = uploadedKey {
+        userName = "git"
+        uploadedKey = "Storybook bot"
     }
 })

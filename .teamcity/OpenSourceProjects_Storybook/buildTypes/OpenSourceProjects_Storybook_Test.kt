@@ -10,6 +10,8 @@ object OpenSourceProjects_Storybook_Test : BuildType({
     id = "OpenSourceProjects_Storybook_Test"
     name = "Test"
 
+    artifactRules = "coverage/lcov-report => coverage.zip"
+
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
 

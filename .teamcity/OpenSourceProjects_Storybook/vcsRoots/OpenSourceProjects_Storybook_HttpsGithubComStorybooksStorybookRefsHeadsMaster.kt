@@ -7,14 +7,15 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     uuid = "cec03c4b-d52c-42a0-8e9e-53bde85d6b33"
     id = "OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster"
     name = "https://github.com/storybooks/storybook#refs/heads/master"
-    url = "https://github.com/storybooks/storybook"
+    url = "git@github.com:storybooks/storybook.git"
     branchSpec = """
-        +:refs/(pull/*)/merge
+        +:refs/(pull/*)/head
         +:refs/heads/(release/3.4)
         +:refs/heads/(master)
     """.trimIndent()
-    authMethod = password {
-        userName = "Hypnosphi"
-        password = "credentialsJSON:5ffe2d7e-531e-4f6f-b1fc-a41bfea26eaa"
+    agentCleanPolicy = GitVcsRoot.AgentCleanPolicy.NEVER
+    authMethod = uploadedKey {
+        userName = "git"
+        uploadedKey = "Storybook bot"
     }
 })
