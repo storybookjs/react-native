@@ -108,6 +108,42 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
                 artifactRules = "cra.zip!** => examples/cra-kitchen-sink/storybook-static"
             }
         }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Vue) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "vue.zip!** => examples/vue-kitchen-sink/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Angular) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "angular.zip!** => examples/angular-cli/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Polymer) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "polymer.zip!** => examples/polymer-cli/storybook-static"
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Mithril) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "mithril.zip!** => examples/mithril-kitchen-sink/storybook-static"
+            }
+        }
     }
 
     requirements {
