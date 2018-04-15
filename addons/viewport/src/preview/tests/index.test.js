@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { configure } from '../';
+import { configureViewport } from '../';
 
 jest.mock('@storybook/addons');
 
@@ -10,13 +10,13 @@ describe('Viewport preview', () => {
   };
   addons.getChannel.mockReturnValue(channel);
 
-  describe('configure', () => {
+  describe('configureViewport', () => {
     it('publishes configure event with all passed configurations', () => {
       const configs = {
         foo: 'bar',
         john: 'Doe',
       };
-      configure(configs);
+      configureViewport(configs);
 
       expect(channel.emit).toHaveBeenCalledTimes(1);
       expect(channel.emit).toHaveBeenCalledWith('addon:viewport:configure', {
