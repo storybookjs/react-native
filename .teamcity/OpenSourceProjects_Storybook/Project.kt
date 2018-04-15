@@ -20,7 +20,6 @@ object Project : Project({
 
     buildType(OpenSourceProjects_Storybook_CliTestLatestCra)
     buildType(OpenSourceProjects_Storybook_Examples)
-    buildType(OpenSourceProjects_Storybook_SmokeTests)
     buildType(OpenSourceProjects_Storybook_Danger)
     buildType(OpenSourceProjects_Storybook_ReactNative)
     buildType(OpenSourceProjects_Storybook_Docs)
@@ -28,6 +27,11 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_CliTest)
     buildType(OpenSourceProjects_Storybook_Test)
     buildType(OpenSourceProjects_Storybook_Lint)
+    buildType(OpenSourceProjects_Storybook_CRA)
+    buildType(OpenSourceProjects_Storybook_Vue)
+    buildType(OpenSourceProjects_Storybook_Angular)
+    buildType(OpenSourceProjects_Storybook_Polymer)
+    buildType(OpenSourceProjects_Storybook_Mithril)
 
     features {
         versionedSettings {
