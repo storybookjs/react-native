@@ -13,6 +13,7 @@ object Project : Project({
     id = "OpenSourceProjects_Storybook"
     parentId = "OpenSourceProjects"
     name = "Storybook"
+    description = "https://storybook.js.org/"
 
     vcsRoot(OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster1)
     vcsRoot(OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
