@@ -43,7 +43,6 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
                 set -e -x
                 
                 cd examples/official-storybook
-                yarn storybook --smoke-test
                 yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"

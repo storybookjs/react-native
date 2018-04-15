@@ -73,6 +73,11 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 onDependencyCancel = FailureAction.CANCEL
             }
         }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_SmokeTests) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+        }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Test) {
             snapshot {
                 onDependencyCancel = FailureAction.CANCEL

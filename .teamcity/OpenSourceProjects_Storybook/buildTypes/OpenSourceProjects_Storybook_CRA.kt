@@ -35,7 +35,6 @@ object OpenSourceProjects_Storybook_CRA : BuildType({
                 set -e -x
 
                 cd examples/cra-kitchen-sink
-                yarn storybook --smoke-test
                 yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"

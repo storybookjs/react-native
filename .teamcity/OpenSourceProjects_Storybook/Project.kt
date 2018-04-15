@@ -32,6 +32,7 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_Angular)
     buildType(OpenSourceProjects_Storybook_Polymer)
     buildType(OpenSourceProjects_Storybook_Mithril)
+    buildType(OpenSourceProjects_Storybook_SmokeTests)
 
     features {
         versionedSettings {

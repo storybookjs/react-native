@@ -35,7 +35,6 @@ object OpenSourceProjects_Storybook_Polymer : BuildType({
                 set -e -x
 
                 cd examples/polymer-cli
-                yarn storybook --smoke-test
                 yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"

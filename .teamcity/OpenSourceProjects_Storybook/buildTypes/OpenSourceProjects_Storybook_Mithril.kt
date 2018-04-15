@@ -35,7 +35,6 @@ object OpenSourceProjects_Storybook_Mithril : BuildType({
                 set -e -x
 
                 cd examples/mithril-kitchen-sink
-                yarn storybook --smoke-test
                 yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"

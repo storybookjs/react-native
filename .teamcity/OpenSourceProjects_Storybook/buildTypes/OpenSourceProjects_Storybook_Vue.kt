@@ -35,7 +35,6 @@ object OpenSourceProjects_Storybook_Vue : BuildType({
                 set -e -x
 
                 cd examples/vue-kitchen-sink
-                yarn storybook --smoke-test
                 yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"
