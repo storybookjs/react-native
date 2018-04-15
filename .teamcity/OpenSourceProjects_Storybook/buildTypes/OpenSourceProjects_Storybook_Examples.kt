@@ -98,6 +98,14 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
         }
     }
 
+    dependencies {
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CRA) {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+        }
+    }
+
     requirements {
         doesNotContain("env.OS", "Windows")
     }
