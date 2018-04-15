@@ -6,7 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
-object OpenSourceProjects_Storybook_Examples : BuildType({
+object OpenSourceProjects_Storybook_CRA : BuildType({
     uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6-cra"
     id = "OpenSourceProjects_Storybook_CRA"
     name = "CRA"
