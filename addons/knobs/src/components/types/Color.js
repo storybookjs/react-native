@@ -2,6 +2,7 @@ import { document } from 'global';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { SketchPicker } from 'react-color';
+import debounce from 'lodash.debounce';
 
 const conditionalRender = (condition, positive, negative) => (condition ? positive() : negative());
 
@@ -29,40 +30,50 @@ const styles = {
 };
 
 class ColorType extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.onWindowMouseDown = this.onWindowMouseDown.bind(this);
+  constructor(props, context) {
+    super(props, context);
+
     this.state = {
       displayColorPicker: false,
+      value: props.knob.value,
     };
+
+    this.onChange = debounce(props.onChange, 200);
   }
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.onWindowMouseDown);
+    document.addEventListener('mousedown', this.handleWindowMouseDown);
   }
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.onWindowMouseDown);
+    document.removeEventListener('mousedown', this.handleWindowMouseDown);
   }
 
-  onWindowMouseDown(e) {
+  handleWindowMouseDown = e => {
     if (!this.state.displayColorPicker) return;
     if (this.popover.contains(e.target)) return;
 
     this.setState({
       displayColorPicker: false,
     });
-  }
+  };
 
-  handleClick() {
+  handleClick = () => {
     this.setState({
       displayColorPicker: !this.state.displayColorPicker,
     });
-  }
+  };
+
+  handleChange = color => {
+    this.setState({
+      value: color,
+    });
+
+    this.onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
+  };
 
   render() {
-    const { knob, onChange } = this.props;
-    const { displayColorPicker } = this.state;
+    const { knob } = this.props;
+    const { displayColorPicker, value } = this.state;
     const colorStyle = {
       width: 'auto',
       height: '20px',
@@ -84,12 +95,7 @@ class ColorType extends React.Component {
                 this.popover = e;
               }}
             >
-              <SketchPicker
-                color={knob.value}
-                onChange={color =>
-                  onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`)
-                }
-              />
+              <SketchPicker color={value} onChange={this.handleChange} />
             </div>
           ),
           () => null

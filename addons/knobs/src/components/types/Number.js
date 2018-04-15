@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import debounce from 'lodash.debounce';
 
 const styles = {
   common: {
@@ -36,50 +37,64 @@ const styles = {
 class NumberType extends React.Component {
   constructor(props) {
     super(props);
-    this.renderNormal = this.renderNormal.bind(this);
-    this.renderRange = this.renderRange.bind(this);
+
+    this.state = {
+      value: props.knob.value,
+    };
+
+    this.onChange = debounce(props.onChange, 400);
   }
 
+  handleChange = event => {
+    const { value } = event.target;
+
+    this.setState({ value });
+
+    let parsedValue = Number(value);
+
+    if (Number.isNaN(parsedValue)) {
+      parsedValue = null;
+    }
+
+    this.onChange(parsedValue);
+  };
+
   renderNormal() {
-    const { knob, onChange } = this.props;
+    const { knob } = this.props;
+    const { value } = this.state;
 
     return (
       <input
         id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
         style={{ ...styles.common, ...styles.normal }}
-        value={knob.value}
+        value={value}
         type="number"
         min={knob.min}
         max={knob.max}
         step={knob.step}
-        onChange={() => onChange(parseFloat(this.input.value))}
+        onChange={this.handleChange}
       />
     );
   }
 
   renderRange() {
-    const { knob, onChange } = this.props;
+    const { knob } = this.props;
+    const { value } = this.state;
 
     return (
       <div style={styles.rangeWrapper}>
         <span style={styles.rangeLabel}>{knob.min}</span>
         <input
           id={knob.name}
-          ref={c => {
-            this.input = c;
-          }}
           style={{ ...styles.common, ...styles.range }}
-          value={knob.value}
+          value={value}
           type="range"
           min={knob.min}
           max={knob.max}
           step={knob.step}
-          onChange={() => onChange(parseFloat(this.input.value))}
+          onChange={this.handleChange}
         />
-        <span style={styles.rangeLabel}>{`${knob.value} / ${knob.max}`}</span>
+        <span style={styles.rangeLabel}>{`${value} / ${knob.max}`}</span>
       </div>
     );
   }

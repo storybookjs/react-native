@@ -44,7 +44,7 @@ export function renderMain(data, storyStore, forceRender) {
   const noPreview = <NoPreview />;
   const { selectedKind, selectedStory } = data;
 
-  const story = storyStore.getStory(selectedKind, selectedStory);
+  const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
   if (!story) {
     m.mount(rootEl, { view: () => noPreview });
     return;
@@ -57,12 +57,7 @@ export function renderMain(data, storyStore, forceRender) {
   previousKind = selectedKind;
   previousStory = selectedStory;
 
-  const context = {
-    kind: selectedKind,
-    story: selectedStory,
-  };
-
-  const element = story(context);
+  const element = story();
 
   if (!element) {
     const error = {
