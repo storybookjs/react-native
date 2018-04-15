@@ -26,7 +26,7 @@ const style = {
   chapter.add(
     name,
     withNotes(`You must build the storybook for the ${name} example for this story to work.`)(
-      () => <iframe style={style} title={name} src={`/${name}/index.html`} />
+      () => <iframe style={style} title={name} src={`${name}/index.html`} />
     )
   );
 });
