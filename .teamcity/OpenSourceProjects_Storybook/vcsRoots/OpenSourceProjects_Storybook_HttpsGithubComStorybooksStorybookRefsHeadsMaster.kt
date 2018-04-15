@@ -9,7 +9,7 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     name = "https://github.com/storybooks/storybook#refs/heads/master"
     url = "https://github.com/storybooks/storybook"
     branchSpec = """
-        +:refs/(pull/*)/merge
+        +:refs/(pull/*)/head
         +:refs/heads/(release/3.4)
         +:refs/heads/(master)
     """.trimIndent()
