@@ -3,7 +3,12 @@ import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
+import {
+  managerPath,
+  getPreviewHeadHtml,
+  getManagerHeadHtml,
+  indexHtmlPath,
+} from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { version } from '../../../package.json';
@@ -37,7 +42,7 @@ export default function(configDir) {
           managerHead: getManagerHeadHtml(configDir),
           version,
         },
-        template: require.resolve('../index.html.ejs'),
+        template: indexHtmlPath,
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',

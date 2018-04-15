@@ -6,7 +6,12 @@ import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissi
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
+import {
+  managerPath,
+  getPreviewHeadHtml,
+  getManagerHeadHtml,
+  indexHtmlPath,
+} from '@storybook/core/server';
 
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
@@ -38,7 +43,7 @@ export default function(configDir) {
           managerHead: getManagerHeadHtml(configDir),
           version,
         },
-        template: require.resolve('../index.html.ejs'),
+        template: indexHtmlPath,
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
