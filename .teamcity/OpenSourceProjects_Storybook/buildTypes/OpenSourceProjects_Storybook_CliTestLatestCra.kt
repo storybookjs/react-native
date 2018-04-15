@@ -4,6 +4,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
 object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
     uuid = "d4320bd8-6094-4dd6-9bed-e13d6f0d12e2"
@@ -33,7 +34,8 @@ object OpenSourceProjects_Storybook_CliTestLatestCra : BuildType({
 
     triggers {
         vcs {
-            enabled = false
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            triggerRules = "-:comment=^TeamCity change:**"
         }
     }
 

@@ -53,18 +53,6 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
     }
 
     dependencies {
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CliTest) {
-            snapshot {
-                onDependencyFailure = FailureAction.IGNORE
-                onDependencyCancel = FailureAction.IGNORE
-            }
-        }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CliTestLatestCra) {
-            snapshot {
-                onDependencyFailure = FailureAction.IGNORE
-                onDependencyCancel = FailureAction.IGNORE
-            }
-        }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Docs) {
             snapshot {
                 onDependencyCancel = FailureAction.CANCEL
