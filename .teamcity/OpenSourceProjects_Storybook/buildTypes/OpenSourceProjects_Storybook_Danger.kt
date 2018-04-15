@@ -11,7 +11,7 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
     name = "Danger"
 
     params {
-        param("env.DANGER_GITHUB_API_TOKEN", "49aa9a6549007391dfcef9c76fca32a73560fd83")
+        password("env.DANGER_GITHUB_API_TOKEN", "credentialsJSON:8fa112e0-d0e0-4f9f-9f18-01471a999b4d", display = ParameterDisplay.HIDDEN)
         param("env.PULL_REQUEST_URL", "%vcsroot.url%/%teamcity.build.branch%")
     }
 
