@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "glamor": "^2.20.40",
-    "glamorous": "^4.12.1",
+    "glamorous": "^4.12.3",
     "prop-types": "^15.6.1"
   },
   "peerDependencies": {
