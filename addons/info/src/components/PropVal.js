@@ -38,6 +38,18 @@ const getValueStyles = (codeColors = {}) => ({
   },
 });
 
+function indent(breakIntoNewLines, level, isBlock) {
+  return (
+    breakIntoNewLines && (
+      <span>
+        <br />
+        {`${Array(level).join('  ')}  `}
+        {!isBlock && '  '}
+      </span>
+    )
+  );
+}
+
 function PreviewArray({
   val,
   level,
@@ -48,17 +60,10 @@ function PreviewArray({
 }) {
   const items = {};
   const breakIntoNewLines = val.length > maxPropsIntoLine;
-  const indentation = breakIntoNewLines && (
-    <span>
-      <br />
-      {`${Array(level).join('  ')}  `}
-    </span>
-  );
   val.slice(0, maxPropArrayLength).forEach((item, i) => {
     items[`n${i}`] = (
       <span>
-        {indentation}
-        {breakIntoNewLines && '  '}
+        {indent(breakIntoNewLines, level)}
         <PropVal
           val={item}
           level={level + 1}
@@ -71,7 +76,12 @@ function PreviewArray({
     items[`c${i}`] = ',';
   });
   if (val.length > maxPropArrayLength) {
-    items.last = '…';
+    items.last = (
+      <span>
+        {indent(breakIntoNewLines, level)}
+        {'…'}
+      </span>
+    );
   } else {
     delete items[`c${val.length - 1}`];
   }
@@ -79,7 +89,7 @@ function PreviewArray({
   return (
     <span style={valueStyles.array}>
       [{createFragment(items)}
-      {indentation}]
+      {indent(breakIntoNewLines, level, true)}]
     </span>
   );
 }
@@ -113,17 +123,10 @@ function PreviewObject({
   const names = Object.keys(val);
   const items = {};
   const breakIntoNewLines = names.length > maxPropsIntoLine;
-  const indentation = breakIntoNewLines && (
-    <span>
-      <br />
-      {`${Array(level).join('  ')}  `}
-    </span>
-  );
   names.slice(0, maxPropObjectKeys).forEach((name, i) => {
     items[`k${i}`] = (
       <span>
-        {indentation}
-        {breakIntoNewLines && '  '}
+        {indent(breakIntoNewLines, level)}
         <span style={valueStyles.attr}>{name}</span>
       </span>
     );
@@ -140,7 +143,12 @@ function PreviewObject({
     items[`m${i}`] = ',';
   });
   if (names.length > maxPropObjectKeys) {
-    items.rest = '…';
+    items.rest = (
+      <span>
+        {indent(breakIntoNewLines, level)}
+        {'…'}
+      </span>
+    );
   } else {
     delete items[`m${names.length - 1}`];
   }
@@ -148,7 +156,7 @@ function PreviewObject({
     <span style={valueStyles.object}>
       {'{'}
       {createFragment(items)}
-      {indentation}
+      {indent(breakIntoNewLines, level, true)}
       {'}'}
     </span>
   );
