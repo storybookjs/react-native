@@ -424,6 +424,17 @@ Like the default, but allows you to specify a set of options for the test render
 
 Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes.
 
+#### integrityOptions
+This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
+The value is just a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
+
+```js
+initStoryshots({
+  integrityOptions: { cwd: __dirname }, // it will start searching from the current directory
+  test: multiSnapshotWithOptions({}),
+});
+```
+
 ### `shallowSnapshot`
 
 Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
