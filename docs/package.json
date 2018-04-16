@@ -21,7 +21,7 @@
     "@storybook/addon-actions": "^3.4.1",
     "@storybook/addon-links": "^3.4.1",
     "@storybook/addons": "^3.4.1",
-    "@storybook/react": "^3.4.0",
+    "@storybook/react": "^3.4.1",
     "babel-loader": "^6.4.1",
     "bootstrap": "^3.3.7",
     "gatsby": "^1.9.247",
