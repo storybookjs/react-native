@@ -3,8 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
-// eslint-disable-next-line import/named
-import { withNotes, WithNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 import centered from '@storybook/addon-centered';
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '@storybook/react/demo';
@@ -32,6 +31,7 @@ const InfoButton = () => (
 );
 
 storiesOf('Button', module)
+  .addDecorator(withNotes)
   .add('with text', () => (
     <Button onClick={action('clicked')}>
       {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
@@ -46,15 +46,16 @@ storiesOf('Button', module)
       </span>
     </Button>
   ))
-  .add('with notes', () => (
-    // deprecated usage
-    <WithNotes notes="A very simple button">
+  .add(
+    'with notes',
+    () => (
       <Button>
         {setOptions({ selectedAddonPanel: 'storybook/notes/panel' })}
         Check my notes in the notes panel
       </Button>
-    </WithNotes>
-  ))
+    ),
+    { notes: 'A very simple button' }
+  )
   .addWithInfo(
     'with some info',
     'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',

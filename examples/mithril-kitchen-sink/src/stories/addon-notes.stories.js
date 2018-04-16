@@ -7,9 +7,10 @@ import { storiesOf } from '@storybook/mithril';
 import { withNotes } from '@storybook/addon-notes';
 
 storiesOf('Addons|Notes', module)
+  .addDecorator(withNotes)
   .add(
     'Simple note',
-    withNotes({ text: 'My notes on some bold text' })(() => ({
+    () => ({
       view: () => (
         <p>
           <strong>
@@ -22,19 +23,12 @@ storiesOf('Addons|Notes', module)
           </strong>
         </p>
       ),
-    }))
+    }),
+    { notes: 'My notes on some bold text' }
   )
   .add(
     'Note with HTML',
-    withNotes({
-      text: `
-      <h2>My notes on emojies</h2>
-
-      <em>It's not all that important to be honest, but..</em>
-
-      Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
-    `,
-    })(() => ({
+    () => ({
       view: () => (
         <p>
           <span>🤔😳😯😮</span>
@@ -44,5 +38,14 @@ storiesOf('Addons|Notes', module)
           <span>🤓😑😶😊</span>
         </p>
       ),
-    }))
+    }),
+    {
+      notes: `
+      <h2>My notes on emojies</h2>
+
+      <em>It's not all that important to be honest, but..</em>
+
+      Emojis are great, I love emojis, in fact I like using them in my Component notes too! 😇
+    `,
+    }
   );

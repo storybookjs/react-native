@@ -7,6 +7,7 @@ import serializer from 'enzyme-to-json';
 initStoryshots({
   framework: 'react',
   configPath: path.join(__dirname, '../'),
+  integrityOptions: { cwd: path.join(__dirname, '..', 'stories') },
   test: multiSnapshotWithOptions({
     renderer,
     serializer,

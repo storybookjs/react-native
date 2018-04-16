@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ArrayType from '../types/Array';
 
+jest.useFakeTimers();
+
 describe('Array', () => {
   it('should subscribe to setKnobs event of channel', () => {
     const onChange = jest.fn();
@@ -12,8 +14,9 @@ describe('Array', () => {
       />
     );
 
-    wrapper.simulate('change', { target: { value: 'Fhishing,Skiing,Dancing' } });
-    expect(onChange).toHaveBeenCalledWith(['Fhishing', 'Skiing', 'Dancing']);
+    wrapper.simulate('change', { target: { value: 'Fishing,Skiing,Dancing' } });
+    jest.runAllTimers();
+    expect(onChange).toHaveBeenCalledWith(['Fishing', 'Skiing', 'Dancing']);
   });
 
   it('deserializes an Array to an Array', () => {
@@ -41,6 +44,7 @@ describe('Array', () => {
     );
 
     wrapper.simulate('change', { target: { value: '' } });
+    jest.runAllTimers();
     expect(onChange).toHaveBeenCalledWith([]);
   });
 });
