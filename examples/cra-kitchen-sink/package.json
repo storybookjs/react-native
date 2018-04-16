@@ -15,7 +15,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-lifecycles-compat": "^3.0.0"
+    "react-lifecycles-compat": "^3.0.2"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "4.0.0-alpha.2",
