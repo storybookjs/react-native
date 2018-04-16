@@ -3682,10 +3682,12 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          key
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            key
+                          </span>
                         </span>
                         : 
                         <span>
@@ -3731,10 +3733,12 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          thing
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            thing
+                          </span>
                         </span>
                         : 
                         <span>
@@ -3743,10 +3747,12 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                             style="color:#666"
                           >
                             {
-                            <span
-                              style="color:#666"
-                            >
-                              id
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                id
+                              </span>
                             </span>
                             : 
                             <span>
@@ -3758,11 +3764,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                               </span>
                               }
                             </span>
-                            , 
-                            <span
-                              style="color:#666"
-                            >
-                              func
+                            ,
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                func
+                              </span>
                             </span>
                             : 
                             <span>
@@ -3774,11 +3782,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                               </span>
                               }
                             </span>
-                            , 
-                            <span
-                              style="color:#666"
-                            >
-                              arr
+                            ,
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                arr
+                              </span>
                             </span>
                             : 
                             <span>
@@ -3828,10 +3838,12 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          key
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            key
+                          </span>
                         </span>
                         : 
                         <span
@@ -3873,10 +3885,17 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          id
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                            
+                          <span
+                            style="color:#666"
+                          >
+                            id
+                          </span>
                         </span>
                         : 
                         <span>
@@ -3888,11 +3907,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                           </span>
                           }
                         </span>
-                        , 
-                        <span
-                          style="color:#666"
-                        >
-                          func
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                            
+                          <span
+                            style="color:#666"
+                          >
+                            func
+                          </span>
                         </span>
                         : 
                         <span>
@@ -3904,11 +3930,18 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                           </span>
                           }
                         </span>
-                        , 
-                        <span
-                          style="color:#666"
-                        >
-                          arr
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                            
+                          <span
+                            style="color:#666"
+                          >
+                            arr
+                          </span>
                         </span>
                         : 
                         <span>
@@ -3920,7 +3953,12 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                           </span>
                           }
                         </span>
-                        , …}
+                        ,…
+                        <span>
+                          <br />
+                            
+                        </span>
+                        }
                       </span>
                       }
                     </span>
@@ -3955,33 +3993,39 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                       >
                         [
                         <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            1
+                          <span>
+                            {
+                            <span
+                              style="color:#a11"
+                            >
+                              1
+                            </span>
+                            }
                           </span>
-                          }
                         </span>
-                        , 
+                        ,
                         <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            2
+                          <span>
+                            {
+                            <span
+                              style="color:#a11"
+                            >
+                              2
+                            </span>
+                            }
                           </span>
-                          }
                         </span>
-                        , 
+                        ,
                         <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            3
+                          <span>
+                            {
+                            <span
+                              style="color:#a11"
+                            >
+                              3
+                            </span>
+                            }
                           </span>
-                          }
                         </span>
                         ]
                       </span>
