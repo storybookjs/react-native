@@ -6,21 +6,21 @@ import { storiesOf } from '@storybook/marko';
 // // eslint-disable-next-line import/named
 // import { withNotes, WithNotes } from '@storybook/addon-notes';
 // import centered from '@storybook/addon-centered';
-// import { withInfo } from '@storybook/addon-info';
-// import { Button } from '@storybook/marko/demo';
 
-// import App from '../App';
-// import Container from './Container';
-// import LifecycleLogger from '../components/LifecycleLogger';
+import Hello from '../components/hello/index.marko';
+import ClickCount from '../components/click-count/index.marko';
+import StopWatch from '../components/stop-watch/index.marko';
+import Welcome from '../components/welcome/index.old.marko';
 
-storiesOf('Button', module).add('with text', function() {
-  //var myComponent = require('../components/hello/index.marko');
-  //return myComponent.renderSync({ name:'Marko' });
+storiesOf('Hello', module).
+  add('with text abc', () => Hello.renderSync({name: 'abc'})).
+  add('with text xyz', () => Hello.renderSync({name: 'xyz'})).
+  add('with No Preview!').
+  add('with ERROR!', () => 'NOT A MARKO RENDER_RESULT');
 
-  var myComponent = require('../components/click-count/index.marko');
-  return myComponent.renderSync({});
+storiesOf('Watch', module).
+  add('click counter', () => ClickCount.renderSync({})).
+  add('stop watch', () => StopWatch.renderSync({}));
 
-  //.appendTo(document.getElementById('my-client-button')) // change so that we can continue to use the sticky header without the transform issue (SRP non-breaking)
-  //.getComponent();
-  //return `<div>hey this works</div>`
-});
+storiesOf('Welcome', module).
+  add('welcome', () => Welcome.renderSync({}));

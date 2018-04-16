@@ -1,11 +1,9 @@
 /* global document */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { stripIndents } from 'common-tags';
 import { logger } from '@storybook/client-logger';
-import isReactRenderable from './element_check';
-import ErrorDisplay from './error_display';
+import ErrorDisplay from './ErrorDisplay.marko';
+import NoPreview from './NoPreview.marko';
 
 // check whether we're running on node/browser
 const isBrowser = typeof window !== 'undefined';
@@ -13,52 +11,28 @@ const isBrowser = typeof window !== 'undefined';
 let rootEl = null;
 let previousKind = '';
 let previousStory = '';
-let previousRevision = -1;
+let currLoadedComponent = null; // currently loaded marko widget!
 
 if (isBrowser) {
   rootEl = document.getElementById('root');
 }
 
-function render(node, el) {
-  ReactDOM.render(
-    process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
-    el
-  );
-}
-
-export function renderError(error) {
-  const properError = new Error(error.title);
-  properError.stack = error.description;
-
-  const redBox = <ErrorDisplay error={properError} />;
-  render(redBox, rootEl);
-}
-
 export function renderException(error) {
-  // We always need to render redbox in the mainPage if we get an error.
-  // Since this is an error, this affects to the main page as well.
-  const realError = new Error(error.message);
-  realError.stack = error.stack;
-  const redBox = <ErrorDisplay error={realError} />;
-  render(redBox, rootEl);
+  currLoadedComponent = ErrorDisplay.renderSync({
+    message: error.message,
+    stack: error.stack
+  }).appendTo(rootEl).getComponent();
 
   // Log the stack to the console. So, user could check the source code.
-  logger.error(error.stack);
+  logger.error(error);
 }
 
 export function renderMain(data, storyStore, forceRender) {
   if (storyStore.size() === 0) return null;
 
-  const NoPreview = () => <p>No Preview Available!</p>;
-  const noPreview = <NoPreview />;
   const { selectedKind, selectedStory } = data;
 
-  const revision = storyStore.getRevision();
   const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
-  if (!story) {
-    render(noPreview, rootEl);
-    return null;
-  }
 
   // Unmount the previous story only if selectedKind or selectedStory has changed.
   // renderMain() gets executed after each action. Actions will cause the whole
@@ -68,7 +42,6 @@ export function renderMain(data, storyStore, forceRender) {
   // (which happens at the moment when HMR occurs)
   if (
     !forceRender &&
-    revision === previousRevision &&
     selectedKind === previousKind &&
     previousStory === selectedStory
   ) {
@@ -79,38 +52,35 @@ export function renderMain(data, storyStore, forceRender) {
   // Otherwise, React may not recrease instances for every story run.
   // This could leads to issues like below:
   //    https://github.com/storybooks/react-storybook/issues/81
-  previousRevision = revision;
   previousKind = selectedKind;
   previousStory = selectedStory;
-  ReactDOM.unmountComponentAtNode(rootEl);
-
-  const element = story();
-
-  if (!element) {
-    const error = {
-      title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-        Did you forget to return the React element from the story?
-        Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
-      `,
-    };
-    return renderError(error);
+  
+  // destroy currently loaded component!
+  if(currLoadedComponent) {
+    currLoadedComponent.destroy();
   }
 
-  // if (!isReactRenderable(element)) {
-  //   const error = {
-  //     title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
-  //     description: stripIndents`
-  //        Seems like you are not returning a correct React element from the story.
-  //        Could you double check that?
-  //      `,
-  //   };
-  //   return renderError(error);
-  // }
+  // if story not found in context, render no preview!
+  if (!story) {
+    currLoadedComponent = NoPreview.renderSync({}).appendTo(rootEl).getComponent();
+    return null;
+  }
 
-  // render(element, rootEl);
-
-  element.appendTo(rootEl);
+  const element = story();
+  
+  // check if it is marko renderable! (better way to do this?)
+  if (!element || !element.out) {
+    const error = {
+      message: `Expecting a Marko element from the story: "${selectedStory}" of "${selectedKind}".`,
+      stack: stripIndents`
+        Did you forget to return the Marko element from the story?
+        Use "() => MyComp.renderSync({})" or "() => { return MyComp.renderSync({}); }" when defining the story.
+      `,
+    };  
+    return renderException(error);
+  }
+  
+  currLoadedComponent = element.appendTo(rootEl).getComponent();
 
   return null;
 }

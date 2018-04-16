@@ -5,6 +5,9 @@ class {
   increment() {
     this.state.count++;
   }
+  onDestroy() {
+    console.log('click-count onDestroy');
+  }
 }
 
 style {
