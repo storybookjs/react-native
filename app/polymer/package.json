@@ -1,6 +1,6 @@
 {
   "name": "@storybook/polymer",
-  "version": "4.0.0-alpha.2",
+  "version": "4.0.0-alpha.3",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/polymer",
   "bugs": {
@@ -22,13 +22,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.2",
-    "@storybook/channel-postmessage": "4.0.0-alpha.2",
-    "@storybook/client-logger": "4.0.0-alpha.2",
-    "@storybook/core": "4.0.0-alpha.2",
-    "@storybook/node-logger": "4.0.0-alpha.2",
+    "@storybook/addons": "4.0.0-alpha.3",
+    "@storybook/channel-postmessage": "4.0.0-alpha.3",
+    "@storybook/client-logger": "4.0.0-alpha.3",
+    "@storybook/core": "4.0.0-alpha.3",
+    "@storybook/node-logger": "4.0.0-alpha.3",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.2",
+    "@storybook/ui": "4.0.0-alpha.3",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
