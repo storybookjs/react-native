@@ -130,13 +130,6 @@ You can see your Knobs in a Storybook panel as shown below.
 
 ![](docs/demo.png)
 
-### Additional Links
-
--   Introduction blog post.
--   Watch this video on how to use knobs
--   [Live Storybook with Knobs](https://goo.gl/uX9WLf)
--   Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
-
 ## Available Knobs
 
 These are the knobs available for you to use. You can import these Knobs from the `@storybook/addon-knobs` module.
