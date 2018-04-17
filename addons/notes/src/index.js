@@ -9,7 +9,9 @@ function renderMarkdown(text, options) {
 const decorator = options => {
   const channel = addons.getChannel();
   return (getStory, context) => {
-    const { parameters: { notes } } = context;
+    const {
+      parameters: { notes },
+    } = context;
     const storyOptions = notes || options;
 
     if (storyOptions) {
