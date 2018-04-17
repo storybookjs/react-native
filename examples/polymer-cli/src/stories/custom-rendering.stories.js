@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/polymer';
 import { document } from 'global';
+import { html } from 'lit-html';
 import { StringTemplateButton } from '../string-template-button';
 
 import '../separated-button/separated-button.html';
@@ -12,4 +13,5 @@ storiesOf('Custom|Methods for rendering', module)
     el.setAttribute('title', 'Rendered with document.createElement');
     return el;
   })
-  .add('Polymer instance', () => new StringTemplateButton());
+  .add('Polymer instance', () => new StringTemplateButton())
+  .add('Lit html', () => html`<separated-button title="yes!"></separated-button>`);

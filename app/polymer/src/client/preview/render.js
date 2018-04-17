@@ -1,5 +1,6 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
+import { html, render, TemplateResult } from 'lit-html';
 import { logger } from '@storybook/client-logger';
 import { nopreview } from './nopreview';
 import { errorpreview } from './errorpreview';
@@ -43,6 +44,11 @@ export function renderMain(data, storyStore) {
   }
   if (typeof component === 'string') {
     rootElement.innerHTML = component;
+  } else if (component instanceof TemplateResult) {
+    // `render` stores the TemplateInstance in the Node and tries to update based on that.
+    // Since we reuse `rootElement` for all stories, remove the stored instance first.
+    render(html``, rootElement);
+    render(component, rootElement);
   } else {
     rootElement.innerHTML = '';
     rootElement.appendChild(component);

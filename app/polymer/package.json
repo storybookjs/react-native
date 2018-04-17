@@ -53,12 +53,14 @@
     "webpack-hot-middleware": "^2.22.0"
   },
   "devDependencies": {
+    "lit-html": "^0.9.0",
     "nodemon": "^1.17.3",
     "polymer-webpack-loader": "^2.0.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
     "babel-runtime": ">=6.0.0",
+    "lit-html": "0.9.0",
     "polymer-webpack-loader": "2.0.2"
   }
 }
