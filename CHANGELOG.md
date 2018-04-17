@@ -1,3 +1,16 @@
+# 3.4.2
+
+2018-April-17
+
+#### Bug Fixes
+
+-   Serialize boolean type only for non-nullable values [#3432](https://github.com/storybooks/storybook/pull/3432)
+-   Addon actions: fix slow logging [#3133](https://github.com/storybooks/storybook/pull/3133)
+
+#### Documentation
+
+-   Fix storyshots readme for image snapshotting [#3397](https://github.com/storybooks/storybook/pull/3397)
+
 # 4.0.0-alpha.2
 
 2018-April-10
