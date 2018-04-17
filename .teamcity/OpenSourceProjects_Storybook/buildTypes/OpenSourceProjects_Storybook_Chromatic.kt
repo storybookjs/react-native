@@ -6,20 +6,10 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
-object OpenSourceProjects_Storybook_Examples : BuildType({
-    uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6"
-    id = "OpenSourceProjects_Storybook_Examples"
-    name = "Examples"
-
-    artifactRules = """
-        examples/official-storybook/storybook-static => official.zip
-        examples/angular-cli/storybook-static => angular.zip
-        examples/polymer-cli/storybook-static => polymer.zip
-        examples/cra-kitchen-sink/storybook-static => cra.zip
-        examples/mithril-kitchen-sink/storybook-static => mithril.zip
-        examples/vue-kitchen-sink/storybook-static => vue.zip
-        examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapshots
-    """.trimIndent()
+object OpenSourceProjects_Storybook_Chromatic : BuildType({
+    uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6-chromatic"
+    id = "OpenSourceProjects_Storybook_Chromatic"
+    name = "Chromatic"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -36,47 +26,9 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             dockerImage = "node:latest"
         }
         script {
-            name = "official-storybook"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                cd examples/official-storybook
-                yarn build-storybook
-            """.trimIndent()
+            name = "Chromatic"
+            scriptContent = "yarn chromatic"
             dockerImage = "node:latest"
-        }
-        script {
-            name = "Image storyshots"
-            scriptContent = """
-                #!/bin/sh
-                
-                set -e -x
-                
-                # Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-                
-                apt-get update
-                apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
-                  libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
-                  libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
-                  libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-                  ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
-                yarn test --image --teamcity
-            """.trimIndent()
-            dockerImage = "node:8"
-        }
-    }
-
-    failureConditions {
-        failOnMetricChange {
-            metric = BuildFailureOnMetric.MetricType.ARTIFACT_SIZE
-            threshold = 50
-            units = BuildFailureOnMetric.MetricUnit.PERCENTS
-            comparison = BuildFailureOnMetric.MetricComparison.LESS
-            compareTo = build {
-                buildRule = lastSuccessful()
-            }
         }
     }
 

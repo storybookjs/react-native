@@ -19,7 +19,6 @@ Also includes changes from 3.4.1
 #### Bug Fixes
 
 -   Enforce addons store being a singleton by storing it in global variable [#3383](https://github.com/storybooks/storybook/pull/3383)
--   Scroll preview pane for non-percentage heights [#3342](https://github.com/storybooks/storybook/pull/3342)
 -   Scroll to top of the page when changing story [#3338](https://github.com/storybooks/storybook/pull/3338)
 -   Fix HtmlWebpackPlugin error [#3328](https://github.com/storybooks/storybook/pull/3328)
 
@@ -189,15 +188,9 @@ Also includes changes from 3.4.1
 
 #### Bug Fixes
 
+-   Scroll preview pane for non-percentage heights [#3342](https://github.com/storybooks/storybook/pull/3342)
 -   Replacing Report Fragment with div [#3372](https://github.com/storybooks/storybook/pull/3372)
 -   Don't use direct react dependency in core [#3382](https://github.com/storybooks/storybook/pull/3382)
--   Storyshots: Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
--   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
--   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
--   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
--   Info addon: Object proptype is shown proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
--   Storyshots: fix renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
--   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
 
 #### Documentation
 

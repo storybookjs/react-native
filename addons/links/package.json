@@ -31,11 +31,11 @@
   "devDependencies": {
     "@storybook/react": "4.0.0-alpha.2",
     "enzyme": "^3.3.0",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "peerDependencies": {
-    "react": "16.3.1",
-    "react-dom": "16.3.1"
+    "react": "16.3.2",
+    "react-dom": "16.3.2"
   }
 }

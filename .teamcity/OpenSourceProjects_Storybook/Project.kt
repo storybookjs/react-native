@@ -33,6 +33,7 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_Polymer)
     buildType(OpenSourceProjects_Storybook_Mithril)
     buildType(OpenSourceProjects_Storybook_SmokeTests)
+    buildType(OpenSourceProjects_Storybook_Chromatic)
 
     features {
         versionedSettings {

@@ -18,6 +18,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
 
+        cleanCheckout = true
     }
 
     steps {
