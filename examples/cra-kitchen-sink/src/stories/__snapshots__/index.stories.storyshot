@@ -530,10 +530,12 @@ exports[`Storyshots Button with new info 1`] = `
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          isOld
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            isOld
+                          </span>
                         </span>
                         : 
                         <span>
@@ -545,11 +547,13 @@ exports[`Storyshots Button with new info 1`] = `
                           </span>
                           }
                         </span>
-                        , 
-                        <span
-                          style="color:#666"
-                        >
-                          value
+                        ,
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            value
+                          </span>
                         </span>
                         : 
                         <span>
@@ -942,10 +946,12 @@ exports[`Storyshots Button with some info 1`] = `
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          isOld
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            isOld
+                          </span>
                         </span>
                         : 
                         <span>
@@ -957,11 +963,13 @@ exports[`Storyshots Button with some info 1`] = `
                           </span>
                           }
                         </span>
-                        , 
-                        <span
-                          style="color:#666"
-                        >
-                          value
+                        ,
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            value
+                          </span>
                         </span>
                         : 
                         <span>

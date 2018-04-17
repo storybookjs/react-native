@@ -48,11 +48,6 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             dockerImage = "node:latest"
         }
         script {
-            name = "Chromatic"
-            scriptContent = "yarn chromatic"
-            dockerImage = "node:latest"
-        }
-        script {
             name = "Image storyshots"
             scriptContent = """
                 #!/bin/sh

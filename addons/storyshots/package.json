@@ -24,7 +24,7 @@
     "global": "^4.3.2",
     "jest-image-snapshot": "^2.4.0",
     "jest-specific-snapshot": "^0.5.0",
-    "puppeteer": "^1.2.0",
+    "puppeteer": "^1.3.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
@@ -33,8 +33,8 @@
     "@storybook/addons": "4.0.0-alpha.2",
     "@storybook/react": "4.0.0-alpha.2",
     "enzyme-to-json": "^3.3.3",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0"

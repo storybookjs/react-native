@@ -1,7 +1,7 @@
 import addons from '@storybook/addons';
 import uuid from 'uuid/v1';
-import { action } from './preview';
-import { undefinedType, symbolType } from './lib/types';
+import { action } from '../';
+import { undefinedType, symbolType } from '../../lib/types';
 
 jest.mock('uuid/v1');
 jest.mock('@storybook/addons');

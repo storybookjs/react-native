@@ -44,7 +44,7 @@ BooleanType.propTypes = {
   onChange: PropTypes.func,
 };
 
-BooleanType.serialize = value => String(value);
+BooleanType.serialize = value => (value ? String(value) : null);
 BooleanType.deserialize = value => value === 'true';
 
 export default BooleanType;
