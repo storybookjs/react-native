@@ -24,7 +24,6 @@ const getConfig = options => ({
       filename: 'index.html',
       data: {
         version,
-        options: JSON.stringify(options),
       },
       template: indexHtmlPath,
     }),
@@ -32,6 +31,9 @@ const getConfig = options => ({
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(nodeModulesPaths),
     new Dotenv({ silent: true }),
+    new webpack.DefinePlugin({
+      storybookOptions: JSON.stringify(options),
+    }),
   ],
   module: {
     rules: [
