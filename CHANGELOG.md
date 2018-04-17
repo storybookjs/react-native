@@ -19,7 +19,6 @@ Also includes changes from 3.4.1
 #### Bug Fixes
 
 -   Enforce addons store being a singleton by storing it in global variable [#3383](https://github.com/storybooks/storybook/pull/3383)
--   Scroll preview pane for non-percentage heights [#3342](https://github.com/storybooks/storybook/pull/3342)
 -   Scroll to top of the page when changing story [#3338](https://github.com/storybooks/storybook/pull/3338)
 -   Fix HtmlWebpackPlugin error [#3328](https://github.com/storybooks/storybook/pull/3328)
 
