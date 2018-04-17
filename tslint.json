@@ -119,7 +119,6 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
     "directive-selector": [
@@ -142,9 +141,14 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true,
-    "no-access-missing-member": true,
-    "templates-use-public": true,
-    "invoke-injectable": true
+    "directive-class-suffix": true
+  },
+  "linterOptions": {
+    "exclude": [
+      "lib/cli/test/**",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/storybook-static/**"
+    ]
   }
 }

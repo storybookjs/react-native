@@ -7,3 +7,5 @@ export const TypeInfo = oneOfType([
   }),
   PropTypes.string,
 ]);
+
+export const getPropTypes = propType => propType.value || propType.elements;

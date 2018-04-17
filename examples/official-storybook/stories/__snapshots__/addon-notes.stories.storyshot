@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Notes using deprecated API 1`] = `
+exports[`Storyshots Addons|Notes using decorator arguments, withMarkdownNotes 1`] = `
 <button>
-  😀 😎 👍 💯
+  Button with notes - check the notes panel for details
+</button>
+`;
+
+exports[`Storyshots Addons|Notes using decorator arguments, withNotes 1`] = `
+<button>
+  Button with notes - check the notes panel for details
 </button>
 `;
 
@@ -13,6 +19,12 @@ exports[`Storyshots Addons|Notes withNotes 1`] = `
 `;
 
 exports[`Storyshots Addons|Notes withNotes rendering imported markdown 1`] = `
+<button>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
+exports[`Storyshots Addons|Notes withNotes rendering inline, github-flavored markdown 1`] = `
 <button>
   Button with notes - check the notes panel for details
 </button>

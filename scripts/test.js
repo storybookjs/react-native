@@ -43,7 +43,7 @@ const createOption = ({ defaultValue, option, name, extraParam }) => ({
 
 const tasks = {
   core: createProject({
-    name: `Core & React & Vue ${chalk.gray('(core)')}`,
+    name: `Core & React & Vue & Polymer & Angular ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: path.join(__dirname, '..'),
@@ -56,11 +56,11 @@ const tasks = {
     projectLocation: path.join(__dirname, '..', 'examples/react-native-vanilla'),
     isJest: true,
   }),
-  integration: createProject({
-    name: `Screenshots of running apps ${chalk.gray('(integration)')}`,
+  image: createProject({
+    name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
     defaultValue: false,
-    option: '--integration',
-    projectLocation: path.join(__dirname, '..', 'integration'),
+    option: '--image',
+    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
     isJest: true,
   }),
   // 'crna-kitchen-sink': createProject({
@@ -101,6 +101,12 @@ const tasks = {
     defaultValue: false,
     option: '--update',
     extraParam: '-u',
+  }),
+  teamcity: createOption({
+    name: `Use TeamCity reporter`,
+    defaultValue: false,
+    option: '--teamcity',
+    extraParam: '--testResultsProcessor=jest-teamcity-reporter',
   }),
 };
 

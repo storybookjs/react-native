@@ -1,12 +1,12 @@
 import React from 'react';
 
 import PrettyPropType from './PrettyPropType';
-import { TypeInfo } from './proptypes';
+import { TypeInfo, getPropTypes } from './proptypes';
 
 const ObjectOf = ({ propType }) => (
   <span>
     {'{[<key>]: '}
-    <PrettyPropType propType={propType.value} />
+    <PrettyPropType propType={getPropTypes(propType)} />
     {'}'}
   </span>
 );

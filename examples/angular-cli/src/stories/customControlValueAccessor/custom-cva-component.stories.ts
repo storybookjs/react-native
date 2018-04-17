@@ -7,7 +7,7 @@ const description = `
   This is an example of component that implements ControlValueAccessor interface
 `;
 
-storiesOf('ngModel', module).add(
+storiesOf('Custom|ngModel', module).add(
   'custom ControlValueAccessor',
   withNotes(description)(() => ({
     component: CustomCvaComponent,

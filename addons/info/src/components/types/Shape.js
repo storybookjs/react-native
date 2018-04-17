@@ -5,7 +5,7 @@ import { HighlightButton } from '@storybook/components';
 import PrettyPropType from './PrettyPropType';
 import PropertyLabel from './PropertyLabel';
 
-import { TypeInfo } from './proptypes';
+import { TypeInfo, getPropTypes } from './proptypes';
 
 const MARGIN_SIZE = 15;
 
@@ -33,6 +33,7 @@ class Shape extends React.Component {
 
   render() {
     const { propType, depth } = this.props;
+    const propTypes = getPropTypes(propType);
     return (
       <span>
         <HighlightButton
@@ -45,13 +46,13 @@ class Shape extends React.Component {
         </HighlightButton>
         <HighlightButton onClick={this.handleToggle}>...</HighlightButton>
         {!this.state.minimized &&
-          Object.keys(propType.value).map(childProperty => (
+          Object.keys(propTypes).map(childProperty => (
             <div key={childProperty} style={{ marginLeft: depth * MARGIN_SIZE }}>
               <PropertyLabel
                 property={childProperty}
-                required={propType.value[childProperty].required}
+                required={propTypes[childProperty].required}
               />
-              <PrettyPropType depth={depth + 1} propType={propType.value[childProperty]} />
+              <PrettyPropType depth={depth + 1} propType={propTypes[childProperty]} />
               ,
             </div>
           ))}

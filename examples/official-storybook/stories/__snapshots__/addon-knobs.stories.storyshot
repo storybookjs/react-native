@@ -16,7 +16,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
   style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
     My birthday is: January 20, 2017
@@ -44,10 +44,69 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
   <p>
     Nice to meet you!
   </p>
+  <p>
+    When I am happy I look like this: 
+    <img
+      alt="happy"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII="
+    />
+  </p>
   <hr />
   <p>
     PS. My shirt pocket contains: 
   </p>
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in groups 1`] = `
+<div
+  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
+>
+  <h1>
+    General Information
+  </h1>
+  <p>
+    Name: Storyteller
+  </p>
+  <p>
+    Age: 70
+  </p>
+  <p>
+    Birthday: January 20, 2017
+  </p>
+  <p>
+    Account Balance: 12.5
+  </p>
+  <p>
+    Years in NY: 9
+  </p>
+  <hr />
+  <h1>
+    Favorites
+  </h1>
+  <p>
+    Catchphrase: Nice to meet you!
+  </p>
+  <p>
+    Fruit: apple
+  </p>
+  <p>
+    Second Fruit: lime
+  </p>
+  <p>
+    Items:
+  </p>
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
 </div>
 `;
 
@@ -70,7 +129,7 @@ exports[`Storyshots Addons|Knobs.withKnobsOptions tweaks static values with debo
     If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
   </p>
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
   </p>
   <p>
     My birthday is: January 20, 2017
@@ -94,6 +153,13 @@ exports[`Storyshots Addons|Knobs.withKnobsOptions tweaks static values with debo
   </ul>
   <p>
     Nice to meet you!
+  </p>
+  <p>
+    When I am happy I look like this: 
+    <img
+      alt="happy"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII="
+    />
   </p>
   <hr />
   <p>

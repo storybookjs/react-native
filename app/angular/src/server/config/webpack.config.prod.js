@@ -1,20 +1,22 @@
 import path from 'path';
 import webpack from 'webpack';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
 
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
-import { getPreviewHeadHtml, getManagerHeadHtml } from '../utils';
 import { version } from '../../../package.json';
 
 export default function(configDir) {
   const entries = {
     preview: [require.resolve('./polyfills'), require.resolve('./globals')],
-    manager: [require.resolve('./polyfills'), path.resolve(__dirname, '../../client/manager')],
+    manager: [require.resolve('./polyfills'), managerPath],
   };
 
   const config = {
+    mode: 'production',
     bail: true,
     devtool: '#cheap-module-source-map',
     entry: entries,
@@ -30,7 +32,8 @@ export default function(configDir) {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        chunks: ['manager'],
+        chunks: ['manager', 'runtime~manager'],
+        chunksSortMode: 'none',
         data: {
           managerHead: getManagerHeadHtml(configDir),
           version,
@@ -39,28 +42,20 @@ export default function(configDir) {
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
-        excludeChunks: ['manager'],
+        excludeChunks: ['manager', 'runtime~manager'],
+        chunksSortMode: 'none',
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
+      new InterpolateHtmlPlugin(process.env),
       new webpack.DefinePlugin(loadEnv({ production: true })),
-      new UglifyJsPlugin({
-        parallel: true,
-        uglifyOptions: {
-          ie8: false,
-          mangle: false,
-          warnings: false,
-          output: {
-            comments: false,
-          },
-        },
-      }),
       new webpack.ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
         path.resolve(__dirname, '../src')
       ),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [
@@ -73,12 +68,32 @@ export default function(configDir) {
         },
         {
           test: /\.ts?$/,
-          loaders: [require.resolve('ts-loader'), require.resolve('angular2-template-loader')],
+          loaders: [
+            {
+              loader: require.resolve('ts-loader'),
+            },
+            require.resolve('angular2-template-loader'),
+          ],
         },
         {
-          test: /\.(html|css)$/,
+          test: /\.html$/,
           loader: 'raw-loader',
-          exclude: /\.async\.(html|css)$/,
+          exclude: /\.async\.html$/,
+        },
+        {
+          test: /\.scss$/,
+          loaders: [require.resolve('raw-loader'), require.resolve('sass-loader')],
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: require.resolve('html-loader'),
+            },
+            {
+              loader: require.resolve('markdown-loader'),
+            },
+          ],
         },
       ],
     },
@@ -89,6 +104,16 @@ export default function(configDir) {
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),
+    },
+    optimization: {
+      // Automatically split vendor and commons for preview bundle
+      // https://twitter.com/wSokra/status/969633336732905474
+      splitChunks: {
+        chunks: chunk => chunk.name !== 'manager',
+      },
+      // Keep the runtime chunk seperated to enable long term caching
+      // https://twitter.com/wSokra/status/969679223278505985
+      runtimeChunk: true,
     },
   };
 

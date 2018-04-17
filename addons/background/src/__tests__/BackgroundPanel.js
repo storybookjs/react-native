@@ -17,6 +17,16 @@ const mockedApi = {
 };
 const channel = new EventEmitter();
 
+jest.mock('global', () => ({
+  document: {
+    getElementById() {
+      return {
+        style: {},
+      };
+    },
+  },
+}));
+
 describe('Background Panel', () => {
   it('should exist', () => {
     const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} />);
@@ -44,12 +54,12 @@ describe('Background Panel', () => {
     expect(mockedApi.getQueryParam).toBeCalledWith('background');
   });
 
-  it('should unset the query string', () => {
+  it('should not unset the query string', () => {
     const SpiedChannel = new EventEmitter();
     mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     SpiedChannel.emit('background-unset', []);
 
-    expect(mockedApi.setQueryParams).toBeCalledWith({ background: null });
+    expect(mockedApi.setQueryParams).not.toHaveBeenCalled();
   });
 
   it('should accept colors through channel and render the correct swatches with a default swatch', () => {
@@ -105,19 +115,18 @@ describe('Background Panel', () => {
     expect(backgroundPanel.state('backgrounds')).toHaveLength(0);
   });
 
-  it('should pass the event from swatch clicks through the provided channel', () => {
+  it('should set iframe background', () => {
     const SpiedChannel = new EventEmitter();
     const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     backgroundPanel.setState({ backgrounds }); // force re-render
-
-    const spy = jest.fn();
-    SpiedChannel.on('background', spy);
 
     backgroundPanel
       .find('h4')
       .first()
       .simulate('click');
 
-    expect(spy).toBeCalledWith(backgrounds[0].value);
+    expect(backgroundPanel.instance().iframe.style).toMatchObject({
+      background: backgrounds[0].value,
+    });
   });
 });

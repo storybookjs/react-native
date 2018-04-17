@@ -8,9 +8,9 @@ const linkProps = {
   className: 'link',
 };
 
-const GridItem = ({ title, description, source, demo, thumbnail }) => (
+const GridItem = ({ title, description, source, demo, thumbnailSrc }) => (
   <div className="grid-item">
-    <div className="photobox" style={{ backgroundImage: `url(${thumbnail})` }}>
+    <div className="photobox" style={{ backgroundImage: `url(${thumbnailSrc})` }}>
       <div className="overlay" />
     </div>
     <div className="text">
@@ -34,7 +34,7 @@ const GridItem = ({ title, description, source, demo, thumbnail }) => (
 GridItem.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  thumbnail: PropTypes.string.isRequired,
+  thumbnailSrc: PropTypes.string.isRequired,
   source: PropTypes.string,
   demo: PropTypes.string,
 };

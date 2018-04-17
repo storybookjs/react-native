@@ -26,7 +26,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -58,41 +58,61 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -303,7 +323,7 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -335,64 +355,82 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;div
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;div
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;Unknown
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &lt;Unknown
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;Unknown
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;Unknown
-                </span>
-                <span />
-                <span
-                  style="color:#777"
-                >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/div&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/div&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -454,7 +492,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -517,61 +555,81 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -779,7 +837,7 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -802,41 +860,61 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -946,7 +1024,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="margin-bottom:0"
@@ -964,41 +1042,61 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -1184,7 +1282,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
 <div>
   <div>
     <div
-      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
     >
       <div
         style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -1209,7 +1307,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
   </div>
   <div>
     <div
-      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
     >
       <div
         style="margin-bottom:0"
@@ -1227,41 +1325,1093 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
           Story Source
         </h1>
         <pre
-          style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+          class="css-4akams"
         >
-          <div
-            style="padding-left:18px;padding-right:3px"
-          >
-            <span
-              style="color:#777"
+          <div>
+            <div
+              style="padding-left:18px;padding-right:3px"
             >
-              &lt;BaseButton
-            </span>
-            <span>
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
               <span>
-                 
                 <span>
-                  label
-                </span>
-                <span>
-                  =
+                   
                   <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      "
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        Button
+                      </span>
+                      "
+                    </span>
+                  </span>
+                   
+                </span>
+              </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
+          </div>
+          <button
+            class="css-gydez8"
+          >
+            <div
+              class="css-kv47nt"
+            >
+              <div
+                style="margin-bottom:6px"
+              >
+                Copied!
+              </div>
+              <div>
+                Copy
+              </div>
+            </div>
+          </button>
+        </pre>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Prop Types
+        </h1>
+        <div>
+          <h2
+            style="margin:20px 0 0 0"
+          >
+            "BaseButton" Component
+          </h2>
+          <table
+            class="css-1ytzlk7"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="css-d52hbj"
+                >
+                  property
+                </th>
+                <th
+                  class="css-d52hbj"
+                >
+                  propType
+                </th>
+                <th
+                  class="css-d52hbj"
+                >
+                  required
+                </th>
+                <th
+                  class="css-d52hbj"
+                >
+                  default
+                </th>
+                <th
+                  class="css-d52hbj"
+                >
+                  description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="css-1ygfcef"
+                >
+                  disabled
+                </td>
+                <td
+                  class="css-1ygfcef"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  -
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  <span>
+                    {
                     <span
-                      style="color:#22a;word-break:break-word"
+                      style="color:#a11"
                     >
-                      "Button"
+                      false
+                    </span>
+                    }
+                  </span>
+                </td>
+                <td
+                  class="css-d52hbj"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1ygfcef"
+                >
+                  label
+                </td>
+                <td
+                  class="css-1ygfcef"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  yes
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  -
+                </td>
+                <td
+                  class="css-d52hbj"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1ygfcef"
+                >
+                  onClick
+                </td>
+                <td
+                  class="css-1ygfcef"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  -
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  <span>
+                    {
+                    <span
+                      style="color:#170"
+                    >
+                      onClick()
+                    </span>
+                    }
+                  </span>
+                </td>
+                <td
+                  class="css-d52hbj"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1ygfcef"
+                >
+                  style
+                </td>
+                <td
+                  class="css-1ygfcef"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  -
+                </td>
+                <td
+                  class="css-d52hbj"
+                >
+                  <span>
+                    {
+                    <span
+                      style="color:#666"
+                    >
+                      {}
+                    </span>
+                    }
+                  </span>
+                </td>
+                <td
+                  class="css-d52hbj"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.Options.maxPropsIntoLine Object and array props are broken to lines 1`] = `
+<div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+      >
+        <h1
+          style="margin:0;padding:0;font-size:35px"
+        >
+          Addons|Info.Options.maxPropsIntoLine
+        </h1>
+        <h2
+          style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+        >
+          Object and array props are broken to lines
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button>
+      Button
+    </button>
+  </div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="margin-bottom:0"
+      >
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+        >
+          Component should be inlined between description and PropType table
+        </div>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Story Source
+        </h1>
+        <pre
+          class="css-4akams"
+        >
+          <div>
+            <div
+              style="padding-left:18px;padding-right:3px"
+            >
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
+              <span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      "
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        Button
+                      </span>
+                      "
                     </span>
                   </span>
                 </span>
-                 
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span>
+                    object
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      <span>
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          {
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#666"
+                            >
+                              one
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            Object and array properties
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#666"
+                            >
+                              two
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            will be broken to different lines
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#666"
+                            >
+                              three
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            if greater than \`maxPropsIntoLine\` option threshol…
+                          </span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span>
+                    array
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      <span>
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          [
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              one
+                            </span>
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              two
+                            </span>
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              three
+                            </span>
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            …
+                          </span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          ]
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span>
+                    <br />
+                      
+                  </span>
+                  <span>
+                    arrayOfObjects
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      <span>
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          [
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span>
+                              {
+                              <span
+                                style="color:#666"
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                  </span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    one
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  Object and array properties will be broken to diff…
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                  </span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    two
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  if greater than \`maxPropsIntoLine\` option threshol…
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                  </span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    object
+                                  </span>
+                                </span>
+                                : 
+                                <span>
+                                  {
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    {
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
+                                      </span>
+                                      <span
+                                        style="color:#666"
+                                      >
+                                        object1
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span>
+                                      {
+                                      <span
+                                        style="color:#666"
+                                      >
+                                        {
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            one
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span
+                                          style="color:#22a;word-break:break-word"
+                                        >
+                                          one
+                                        </span>
+                                        ,
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            two
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span
+                                          style="color:#22a;word-break:break-word"
+                                        >
+                                          two
+                                        </span>
+                                        ,
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            three
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span
+                                          style="color:#22a;word-break:break-word"
+                                        >
+                                          three
+                                        </span>
+                                        <span>
+                                          <br />
+                                                  
+                                        </span>
+                                        }
+                                      </span>
+                                      }
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
+                                      </span>
+                                      <span
+                                        style="color:#666"
+                                      >
+                                        array
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span>
+                                      {
+                                      <span
+                                        style="color:#666"
+                                      >
+                                        [
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#22a;word-break:break-word"
+                                          >
+                                            one
+                                          </span>
+                                        </span>
+                                        ,
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#22a;word-break:break-word"
+                                          >
+                                            two
+                                          </span>
+                                        </span>
+                                        ,
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#22a;word-break:break-word"
+                                          >
+                                            three
+                                          </span>
+                                        </span>
+                                        <span>
+                                          <br />
+                                                  
+                                        </span>
+                                        ]
+                                      </span>
+                                      }
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
+                                      </span>
+                                      <span
+                                        style="color:#666"
+                                      >
+                                        object2
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span>
+                                      {
+                                      <span
+                                        style="color:#666"
+                                      >
+                                        {
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            object
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span>
+                                          {
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            {
+                                            <span>
+                                              <span>
+                                                <br />
+                                                            
+                                              </span>
+                                              <span
+                                                style="color:#666"
+                                              >
+                                                one
+                                              </span>
+                                            </span>
+                                            : 
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              one
+                                            </span>
+                                            ,
+                                            <span>
+                                              <span>
+                                                <br />
+                                                            
+                                              </span>
+                                              <span
+                                                style="color:#666"
+                                              >
+                                                two
+                                              </span>
+                                            </span>
+                                            : 
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              two
+                                            </span>
+                                            ,
+                                            <span>
+                                              <span>
+                                                <br />
+                                                            
+                                              </span>
+                                              <span
+                                                style="color:#666"
+                                              >
+                                                three
+                                              </span>
+                                            </span>
+                                            : 
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              three
+                                            </span>
+                                            <span>
+                                              <br />
+                                                        
+                                            </span>
+                                            }
+                                          </span>
+                                          }
+                                        </span>
+                                        ,
+                                        <span>
+                                          <span>
+                                            <br />
+                                                      
+                                          </span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            array
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span>
+                                          {
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            [
+                                            <span>
+                                              <span>
+                                                <br />
+                                                            
+                                              </span>
+                                              <span
+                                                style="color:#22a;word-break:break-word"
+                                              >
+                                                one
+                                              </span>
+                                            </span>
+                                            ,
+                                            <span>
+                                              <span>
+                                                <br />
+                                                            
+                                              </span>
+                                              <span
+                                                style="color:#22a;word-break:break-word"
+                                              >
+                                                two
+                                              </span>
+                                            </span>
+                                            ,
+                                            <span>
+                                              <span>
+                                                <br />
+                                                            
+                                              </span>
+                                              <span>
+                                                {
+                                                <span
+                                                  style="color:#666"
+                                                >
+                                                  {
+                                                  <span>
+                                                    <span>
+                                                      <br />
+                                                                    
+                                                    </span>
+                                                    <span
+                                                      style="color:#666"
+                                                    >
+                                                      object
+                                                    </span>
+                                                  </span>
+                                                  : 
+                                                  <span>
+                                                    {
+                                                    <span
+                                                      style="color:#666"
+                                                    >
+                                                      {
+                                                      <span>
+                                                        <span>
+                                                          <br />
+                                                                          
+                                                        </span>
+                                                        <span
+                                                          style="color:#666"
+                                                        >
+                                                          object
+                                                        </span>
+                                                      </span>
+                                                      : 
+                                                      <span>
+                                                        {
+                                                        <span
+                                                          style="color:#666"
+                                                        >
+                                                          {
+                                                          <span>
+                                                            <span>
+                                                              <br />
+                                                                                
+                                                            </span>
+                                                            <span
+                                                              style="color:#666"
+                                                            >
+                                                              one
+                                                            </span>
+                                                          </span>
+                                                          : 
+                                                          <span
+                                                            style="color:#22a;word-break:break-word"
+                                                          >
+                                                            one
+                                                          </span>
+                                                          ,
+                                                          <span>
+                                                            <span>
+                                                              <br />
+                                                                                
+                                                            </span>
+                                                            <span
+                                                              style="color:#666"
+                                                            >
+                                                              two
+                                                            </span>
+                                                          </span>
+                                                          : 
+                                                          <span
+                                                            style="color:#22a;word-break:break-word"
+                                                          >
+                                                            two
+                                                          </span>
+                                                          ,
+                                                          <span>
+                                                            <span>
+                                                              <br />
+                                                                                
+                                                            </span>
+                                                            <span
+                                                              style="color:#666"
+                                                            >
+                                                              three
+                                                            </span>
+                                                          </span>
+                                                          : 
+                                                          <span
+                                                            style="color:#22a;word-break:break-word"
+                                                          >
+                                                            three
+                                                          </span>
+                                                          <span>
+                                                            <br />
+                                                                            
+                                                          </span>
+                                                          }
+                                                        </span>
+                                                        }
+                                                      </span>
+                                                      ,
+                                                      <span>
+                                                        <span>
+                                                          <br />
+                                                                          
+                                                        </span>
+                                                        <span
+                                                          style="color:#666"
+                                                        >
+                                                          array
+                                                        </span>
+                                                      </span>
+                                                      : 
+                                                      <span>
+                                                        {
+                                                        <span
+                                                          style="color:#666"
+                                                        >
+                                                          [
+                                                          <span>
+                                                            <span>
+                                                              <br />
+                                                                                
+                                                            </span>
+                                                            <span
+                                                              style="color:#22a;word-break:break-word"
+                                                            >
+                                                              one
+                                                            </span>
+                                                          </span>
+                                                          ,
+                                                          <span>
+                                                            <span>
+                                                              <br />
+                                                                                
+                                                            </span>
+                                                            <span
+                                                              style="color:#22a;word-break:break-word"
+                                                            >
+                                                              two
+                                                            </span>
+                                                          </span>
+                                                          ,
+                                                          <span>
+                                                            <span>
+                                                              <br />
+                                                                                
+                                                            </span>
+                                                            <span
+                                                              style="color:#22a;word-break:break-word"
+                                                            >
+                                                              three
+                                                            </span>
+                                                          </span>
+                                                          <span>
+                                                            <br />
+                                                                            
+                                                          </span>
+                                                          ]
+                                                        </span>
+                                                        }
+                                                      </span>
+                                                      <span>
+                                                        <br />
+                                                                      
+                                                      </span>
+                                                      }
+                                                    </span>
+                                                    }
+                                                  </span>
+                                                  <span>
+                                                    <br />
+                                                                
+                                                  </span>
+                                                  }
+                                                </span>
+                                                }
+                                              </span>
+                                            </span>
+                                            <span>
+                                              <br />
+                                                        
+                                            </span>
+                                            ]
+                                          </span>
+                                          }
+                                        </span>
+                                        <span>
+                                          <br />
+                                                  
+                                        </span>
+                                        }
+                                      </span>
+                                      }
+                                    </span>
+                                    <span>
+                                      <br />
+                                            
+                                    </span>
+                                    }
+                                  </span>
+                                  }
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                              }
+                            </span>
+                          </span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          ]
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <br />
+                </span>
               </span>
-            </span>
-            <span
-              style="color:#777"
-            >
-              /&gt;
-            </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
           </div>
+          <button
+            class="css-gydez8"
+          >
+            <div
+              class="css-kv47nt"
+            >
+              <div
+                style="margin-bottom:6px"
+              >
+                Copied!
+              </div>
+              <div>
+                Copy
+              </div>
+            </div>
+          </button>
         </pre>
       </div>
       <div>
@@ -1468,7 +2618,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -1500,41 +2650,61 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -1859,7 +3029,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -1891,100 +3061,122 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
             <div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
+              <div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  &lt;div
-                </span>
-                <span />
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;div
+                  </span>
+                  <span />
+                  <span
+                    style="color:#777"
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  &gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;BaseButton
-                </span>
-                <span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;BaseButton
+                  </span>
                   <span>
-                     
                     <span>
-                      label
-                    </span>
-                    <span>
-                      =
+                       
                       <span>
-                        <span
-                          style="color:#22a;word-break:break-word"
-                        >
-                          "Button"
+                        label
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          "
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            Button
+                          </span>
+                          "
                         </span>
                       </span>
+                       
                     </span>
-                     
                   </span>
-                </span>
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:33px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:33px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;FlowTypeButton
-                </span>
-                <span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;FlowTypeButton
+                  </span>
                   <span>
-                     
                     <span>
-                      label
-                    </span>
-                    <span>
-                      =
+                       
                       <span>
-                        <span
-                          style="color:#22a;word-break:break-word"
-                        >
-                          "Flow Typed Button"
+                        label
+                      </span>
+                      <span>
+                        =
+                        <span>
+                          "
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            Flow Typed Button
+                          </span>
+                          "
                         </span>
                       </span>
+                       
                     </span>
-                     
                   </span>
-                </span>
-                <span
-                  style="color:#777"
+                  <span
+                    style="color:#777"
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style="padding-left:18px;padding-right:3px"
                 >
-                  /&gt;
-                </span>
-              </div>
-              <div
-                style="padding-left:18px;padding-right:3px"
-              >
-                <span
-                  style="color:#777"
-                >
-                  &lt;/div&gt;
-                </span>
+                  <span
+                    style="color:#777"
+                  >
+                    &lt;/div&gt;
+                  </span>
+                </div>
               </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -2192,7 +3384,7 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2422,7 +3614,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2445,41 +3637,61 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -2687,7 +3899,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2710,41 +3922,61 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -2952,7 +4184,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -2984,61 +4216,81 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;FlowTypeButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;FlowTypeButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Flow Typed Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Flow Typed Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -3192,7 +4444,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -3224,61 +4476,81 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;DocgenButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;DocgenButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Docgen Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Docgen Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -3436,7 +4708,33 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            key
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            1
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3461,7 +4759,87 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            thing
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#666"
+                          >
+                            {
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                id
+                              </span>
+                            </span>
+                            : 
+                            <span>
+                              {
+                              <span
+                                style="color:#a11"
+                              >
+                                2
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                func
+                              </span>
+                            </span>
+                            : 
+                            <span>
+                              {
+                              <span
+                                style="color:#170"
+                              >
+                                func()
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                arr
+                              </span>
+                            </span>
+                            : 
+                            <span>
+                              {
+                              <span
+                                style="color:#666"
+                              >
+                                []
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3486,7 +4864,29 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            key
+                          </span>
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          value
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3511,7 +4911,93 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#666"
+                          >
+                            id
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#a11"
+                          >
+                            3
+                          </span>
+                          }
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#666"
+                          >
+                            func
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            func()
+                          </span>
+                          }
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#666"
+                          >
+                            arr
+                          </span>
+                        </span>
+                        : 
+                        <span>
+                          {
+                          <span
+                            style="color:#666"
+                          >
+                            []
+                          </span>
+                          }
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          …
+                        </span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        }
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3536,7 +5022,51 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        [
+                        <span>
+                          <span>
+                            {
+                            <span
+                              style="color:#a11"
+                            >
+                              1
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            {
+                            <span
+                              style="color:#a11"
+                            >
+                              2
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            {
+                            <span
+                              style="color:#a11"
+                            >
+                              3
+                            </span>
+                            }
+                          </span>
+                        </span>
+                        ]
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3561,7 +5091,15 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
-                    -
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {}
+                      </span>
+                      }
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3586,7 +5124,40 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      News
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    enmEval
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
                     -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      Photos
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3611,7 +5182,40 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                   <td
                     class="css-d52hbj"
                   >
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      hello
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    optionalString
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
                     -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span
+                      style="color:#22a;word-break:break-word"
+                    >
+                      Default String
+                    </span>
                   </td>
                   <td
                     class="css-d52hbj"
@@ -3653,7 +5257,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
     </button>
     <div>
       <div
-        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);background-color:#fff;margin-top:20px;margin-bottom:20px"
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
       >
         <div
           style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
@@ -3685,61 +5289,81 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
             Story Source
           </h1>
           <pre
-            style="font-size:.88em;font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+            class="css-4akams"
           >
-            <div
-              style="padding-left:18px;padding-right:3px"
-            >
-              <span
-                style="color:#777"
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
               >
-                &lt;BaseButton
-              </span>
-              <span>
+                <span
+                  style="color:#777"
+                >
+                  &lt;BaseButton
+                </span>
                 <span>
-                   
                   <span>
-                    onClick
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
                       <span>
-                        {
-                        <span
-                          style="color:#170"
-                        >
-                          clicked()
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
                         </span>
-                        }
                       </span>
                     </span>
                   </span>
-                </span>
-                <span>
-                   
                   <span>
-                    label
-                  </span>
-                  <span>
-                    =
+                     
                     <span>
-                      <span
-                        style="color:#22a;word-break:break-word"
-                      >
-                        "Button"
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
                       </span>
                     </span>
+                     
                   </span>
-                   
                 </span>
-              </span>
-              <span
-                style="color:#777"
-              >
-                /&gt;
-              </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
             </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
           </pre>
         </div>
         <div>
@@ -3753,6 +5377,322 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
               style="margin:20px 0 0 0"
             >
               "BaseButton" Component
+            </h2>
+            <table
+              class="css-1ytzlk7"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="css-d52hbj"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style="color:#a11"
+                      >
+                        false
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style="color:#170"
+                      >
+                        onClick()
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  >
+                    <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        {}
+                      </span>
+                      }
+                    </span>
+                  </td>
+                  <td
+                    class="css-d52hbj"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.React Docgen Comments from named export component declaration 1`] = `
+<div>
+  <div
+    style="position:relative;z-index:0"
+  >
+    <div>
+      <button>
+        Button
+      </button>
+    </div>
+  </div>
+  <button
+    style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style="position:fixed;background:white;top:0;bottom:0;left:0;right:0;padding:0 40px;overflow:auto;z-index:99999;display:none"
+  >
+    <button
+      style="font-family:sans-serif;font-size:12px;display:block;position:fixed;border:none;background:#28c;color:#fff;padding:5px 15px;cursor:pointer;top:0;right:0;border-radius:0 0 0 5px"
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+      >
+        <div
+          style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+        >
+          <h1
+            style="margin:0;padding:0;font-size:35px"
+          >
+            Addons|Info.React Docgen
+          </h1>
+          <h2
+            style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+          >
+            Comments from named export component declaration
+          </h2>
+        </div>
+        <div
+          style="margin-bottom:0"
+        >
+          <div
+            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+          >
+            Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading
+          </div>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Story Source
+          </h1>
+          <pre
+            class="css-4akams"
+          >
+            <div>
+              <div
+                style="padding-left:18px;padding-right:3px"
+              >
+                <span
+                  style="color:#777"
+                >
+                  &lt;NamedExportButton
+                </span>
+                <span>
+                  <span>
+                     
+                    <span>
+                      onClick
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        <span>
+                          {
+                          <span
+                            style="color:#170"
+                          >
+                            clicked()
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                     
+                    <span>
+                      label
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        "
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          Button
+                        </span>
+                        "
+                      </span>
+                    </span>
+                     
+                  </span>
+                </span>
+                <span
+                  style="color:#777"
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+            <button
+              class="css-gydez8"
+            >
+              <div
+                class="css-kv47nt"
+              >
+                <div
+                  style="margin-bottom:6px"
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "NamedExportButton" Component
             </h2>
             <table
               class="css-1ytzlk7"

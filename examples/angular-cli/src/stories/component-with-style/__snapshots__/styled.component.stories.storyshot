@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Custom|styleUrls Component with styles 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-styled-component>
+    <div>
+      
+    
+      <p
+        class="red-color"
+      >
+        Styled with scoped CSS
+      </p>
+      
+    
+      <p
+        class="blue-color"
+      >
+        Styled with scoped SCSS
+      </p>
+      
+    
+      <p
+        class="green-color"
+      >
+        Styled with global CSS
+      </p>
+      
+  
+    </div>
+    
+  
+  </storybook-styled-component>
+</storybook-dynamic-app-root>
+`;

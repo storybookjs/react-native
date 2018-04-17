@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
+import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
 
 storiesOf('Addons|Info.React Docgen', module)
@@ -26,6 +27,12 @@ storiesOf('Addons|Info.React Docgen', module)
     withInfo(
       'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
     )(() => <BaseButton onClick={action('clicked')} label="Button" />)
+  )
+  .add(
+    'Comments from named export component declaration',
+    withInfo(
+      'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
+    )(() => <NamedExportButton onClick={action('clicked')} label="Button" />)
   );
 
 const markdownDescription = `
@@ -149,5 +156,59 @@ storiesOf('Addons|Info.GitHub issues', module).add(
       <Input />
       <TextArea />
     </div>
+  ))
+);
+
+storiesOf('Addons|Info.Options.maxPropsIntoLine', module).add(
+  'Object and array props are broken to lines',
+  withInfo({
+    text: 'Component should be inlined between description and PropType table',
+    inline: true,
+    maxPropsIntoLine: 0,
+  })(() => (
+    <BaseButton
+      label="Button"
+      object={{
+        one: 'Object and array properties',
+        two: 'will be broken to different lines',
+        three: 'if greater than `maxPropsIntoLine` option threshold.',
+      }}
+      array={['one', 'two', 'three', 'four']}
+      arrayOfObjects={[
+        {
+          one: 'Object and array properties will be broken to different lines',
+          two: 'if greater than `maxPropsIntoLine` option threshold.',
+          object: {
+            object1: {
+              one: 'one',
+              two: 'two',
+              three: 'three',
+            },
+            array: ['one', 'two', 'three'],
+            object2: {
+              object: {
+                one: 'one',
+                two: 'two',
+                three: 'three',
+              },
+              array: [
+                'one',
+                'two',
+                {
+                  object: {
+                    object: {
+                      one: 'one',
+                      two: 'two',
+                      three: 'three',
+                    },
+                    array: ['one', 'two', 'three'],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ]}
+    />
   ))
 );

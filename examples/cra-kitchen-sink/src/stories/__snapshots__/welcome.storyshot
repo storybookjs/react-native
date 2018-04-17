@@ -27,12 +27,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   </p>
   <p>
     See these sample 
-    <a
-      class="css-ca0824"
-      href="/"
+    <button
+      class="css-1opliz7"
     >
       stories
-    </a>
+    </button>
      for a component called 
     <code
       class="css-mteq83"

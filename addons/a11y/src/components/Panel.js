@@ -6,10 +6,10 @@ import Report from './Report';
 
 const styles = {
   passes: {
-    color: '#2ecc71',
+    color: '#0D6731',
   },
   violations: {
-    color: '#e74c3c',
+    color: '#AC2300',
   },
 };
 
@@ -47,11 +47,11 @@ class Panel extends Component {
       <Tabs
         tabs={[
           {
-            label: <span style={styles.violations}>Violations</span>,
+            label: <span style={styles.violations}>{violations.length} Violations</span>,
             panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
           },
           {
-            label: <span style={styles.passes}>Passes</span>,
+            label: <span style={styles.passes}>{passes.length} Passes</span>,
             panel: <Report passes items={passes} empty="No a11y check passed" />,
           },
         ]}

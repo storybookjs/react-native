@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "3.4.0-alpha.0",
+  "version": "4.0.0-alpha.2",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,25 +15,28 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
+    "@storybook/addons": "4.0.0-alpha.2",
+    "@storybook/components": "4.0.0-alpha.2",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
     "insert-css": "^2.0.0",
     "lodash.debounce": "^4.0.8",
-    "moment": "^2.20.1",
-    "prop-types": "^15.6.0",
-    "react-color": "^2.11.4",
-    "react-datetime": "^2.11.1",
-    "react-textarea-autosize": "^5.2.1",
+    "moment": "^2.22.1",
+    "prop-types": "^15.6.1",
+    "react-color": "^2.14.1",
+    "react-datetime": "^2.14.0",
+    "react-lifecycles-compat": "^3.0.2",
+    "react-textarea-autosize": "^6.1.0",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "@storybook/react": "4.0.0-alpha.2",
     "raw-loader": "^0.5.1",
-    "style-loader": "^0.19.1",
-    "vue": "^2.5.13"
+    "style-loader": "^0.20.3",
+    "vue": "^2.5.16"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.3.0",
     "react": "*",
     "react-dom": "*"
   }

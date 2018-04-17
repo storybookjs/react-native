@@ -2,6 +2,8 @@
 
 This storybook addon can be helpfull to make your UI components more accessibile.
 
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+
 ![](docs/screenshot.png)
 
 ## Getting started
@@ -25,6 +27,31 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { checkA11y } from '@storybook/addon-a11y';
+
+storiesOf('button', module)
+  .addDecorator(checkA11y)
+  .add('Accessible', () => (
+    <button>
+      Accessible button
+    </button>
+  ))
+  .add('Inaccessible', () => (
+    <button style={{ backgroundColor: 'red', color: 'darkRed', }}>
+      Inaccessible button
+    </button>
+  ));
+```
+
+For more customizability. Use the `'configureA11y'` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+import { checkA11y, configureA11y } from '@storybook/addon-a11y';
+
+const whateverOptionsYouWant = {};
+configureA11y(whateverOptionsYouWant);
 
 storiesOf('button', module)
   .addDecorator(checkA11y)

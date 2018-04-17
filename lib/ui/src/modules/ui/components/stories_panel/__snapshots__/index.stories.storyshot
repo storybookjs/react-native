@@ -84,9 +84,7 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
   </div>
   <div
     style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
-  >
-    0
-  </div>
+  />
 </div>
 `;
 
@@ -111,9 +109,7 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
   </div>
   <div
     style="height:calc(100vh - 105px);margin-top:10px;overflow:auto"
-  >
-    0
-  </div>
+  />
 </div>
 `;
 

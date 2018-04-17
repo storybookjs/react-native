@@ -11,10 +11,7 @@
 
 Storybook Centered Decorator can be used to center components inside the preview in [Storybook](https://storybook.js.org).
 
-This addon works with Storybook for:
-
--   [React](https://github.com/storybooks/storybook/tree/master/app/react)
--   [Vue](https://github.com/storybooks/storybook/tree/master/app/vue)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ### Usage
 
@@ -52,11 +49,29 @@ storiesOf('MyComponent', module)
   .add('without props', () => ({
     components: { MyComponent },
     template: '<my-component />'
-  })
+  }))
   .add('with some props', () => ({
     components: { MyComponent },
     template: '<my-component text="The Comp"/>'
-  });
+  }));
+```
+
+example for Mithril:
+
+```js
+import { storiesOf } from '@storybook/mithril';
+import centered from '@storybook/addon-centered/mithril';
+
+import MyComponent from '../Component';
+
+storiesOf('MyComponent', module)
+  .addDecorator(centered)
+  .add('without props', () => ({
+    view: () => <MyComponent />
+  }))
+  .add('with some props', () => ({
+    view: () => <MyComponent text="The Comp"/>
+  }));
 ```
 
 Also, you can also add this decorator globally
@@ -79,6 +94,19 @@ example for Vue:
 ```js
 import { configure, addDecorator } from '@storybook/vue';
 import centered from '@storybook/addon-centered';
+
+addDecorator(centered);
+
+configure(function () {
+  //...
+}, module);
+```
+
+example for Mithril:
+
+```js
+import { configure, addDecorator } from '@storybook/mithril';
+import centered from '@storybook/addon-centered/mithril';
 
 addDecorator(centered);
 

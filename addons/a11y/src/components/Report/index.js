@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import addons from '@storybook/addons';
+import RerunButton from './RerunButton';
 import Item from './Item';
 
 const styles = {
@@ -17,17 +18,23 @@ const styles = {
   },
 };
 
-function Report({ items, empty, passes }) {
-  if (items.length) {
-    return (
+function onRerunClick() {
+  const channel = addons.getChannel();
+  channel.emit('addon:a11y:rerun');
+}
+
+const Report = ({ items, empty, passes }) => (
+  <div>
+    {items.length ? (
       <div style={styles.container}>
         {items.map(item => <Item passes={passes} item={item} key={item.id} />)}
       </div>
-    );
-  }
-
-  return <span style={styles.empty}>{empty}</span>;
-}
+    ) : (
+      <span style={styles.empty}>{empty}</span>
+    )}
+    <RerunButton onClick={onRerunClick}>Re-run tests</RerunButton>
+  </div>
+);
 
 Report.propTypes = {
   items: PropTypes.arrayOf(

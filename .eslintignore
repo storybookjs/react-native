@@ -2,9 +2,9 @@ dist
 build
 coverage
 node_modules
-addons/**/example/**
-app/**/demo/**
 docs/public
+storybook-static
+built-storybooks
 lib/cli/test
 *.bundle.js
 *.js.map
@@ -13,3 +13,4 @@ lib/cli/test
 !.eslintrc.js
 !.eslintrc-markdown.js
 !.jest.config.js
+!.storybook

@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
+import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 import Types from './types';
 
 const getTimestamp = () => +new Date();
+
+const DEFAULT_GROUP_ID = 'ALL';
 
 const styles = {
   panelWrapper: {
@@ -50,17 +53,21 @@ export default class Panel extends React.Component {
     this.setKnobs = this.setKnobs.bind(this);
     this.reset = this.reset.bind(this);
     this.setOptions = this.setOptions.bind(this);
+    this.onGroupSelect = this.onGroupSelect.bind(this);
 
-    this.state = { knobs: {} };
+    this.state = { knobs: {}, groupId: DEFAULT_GROUP_ID };
     this.options = {};
 
     this.lastEdit = getTimestamp();
     this.loadedFromUrl = false;
+  }
+
+  componentDidMount() {
     this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
     this.props.channel.on('addon:knobs:setOptions', this.setOptions);
 
     this.stopListeningOnStory = this.props.api.onStory(() => {
-      this.setState({ knobs: [] });
+      this.setState({ knobs: [], groupId: DEFAULT_GROUP_ID });
       this.props.channel.emit('addon:knobs:reset');
     });
   }
@@ -68,6 +75,10 @@ export default class Panel extends React.Component {
   componentWillUnmount() {
     this.props.channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
     this.stopListeningOnStory();
+  }
+
+  onGroupSelect(name) {
+    this.setState({ groupId: name });
   }
 
   setOptions(options = { debounce: false, timestamps: false }) {
@@ -139,10 +150,39 @@ export default class Panel extends React.Component {
   }
 
   render() {
-    const { knobs } = this.state;
-    const knobsArray = Object.keys(knobs)
-      .filter(key => knobs[key].used)
-      .map(key => knobs[key]);
+    const { knobs, groupId } = this.state;
+
+    const groups = {};
+    const groupIds = [];
+
+    Object.keys(knobs)
+      .filter(key => knobs[key].used && knobs[key].groupId)
+      .forEach(key => {
+        const knobKeyGroupId = knobs[key].groupId;
+        groupIds.push(knobKeyGroupId);
+        groups[knobKeyGroupId] = {
+          render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
+          title: knobKeyGroupId,
+        };
+      });
+
+    let knobsArray = Object.keys(knobs);
+
+    if (groupIds.length > 0) {
+      groups[DEFAULT_GROUP_ID] = {
+        render: () => <div id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</div>,
+        title: DEFAULT_GROUP_ID,
+      };
+      knobsArray = knobsArray.filter(key => {
+        const filter =
+          groupId === DEFAULT_GROUP_ID
+            ? knobs[key].used
+            : knobs[key].used && knobs[key].groupId === groupId;
+        return filter;
+      });
+    }
+
+    knobsArray = knobsArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
       return <div style={styles.noKnobs}>NO KNOBS</div>;
@@ -150,6 +190,13 @@ export default class Panel extends React.Component {
 
     return (
       <div style={styles.panelWrapper}>
+        {groupIds.length > 0 && (
+          <GroupTabs
+            groups={groups}
+            onGroupSelect={this.onGroupSelect}
+            selectedGroup={this.state.groupId}
+          />
+        )}
         <div style={styles.panel}>
           <PropForm
             knobs={knobsArray}

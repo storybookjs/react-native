@@ -9,4 +9,4 @@ You can read about how to get involved in detail in our [Contribution Guide](htt
 
 1.  Report issues at the [issue tracker](https://github.com/storybooks/storybook/issues).
 2.  Help us to triage issues above, by answering questions, helping to create [reproductions](https://github.com/storybooks/storybook/blob/master/CONTRIBUTING.md#reproductions), and clarifying feature requests.
-3.  Pitch in with a PR, especially those marked ["good first contribution"](https://github.com/storybooks/storybook/labels/good%20first%20contribution).
+3.  Pitch in with a PR, especially those marked ["good first issue"](https://github.com/storybooks/storybook/labels/good%20first%20issue).

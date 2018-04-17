@@ -1,14 +1,20 @@
+import { document } from 'global';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 
 import Swatch from './Swatch';
 
+const storybookIframe = 'storybook-preview-iframe';
+
 const style = {
   font: {
     fontFamily:
       "-apple-system,'.SFNSText-Regular', 'San Francisco', Roboto, 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     fontSize: '14px',
+  },
+  iframe: {
+    transition: 'background 0.25s ease-in-out',
   },
 };
 
@@ -57,7 +63,7 @@ export default class BackgroundPanel extends Component {
   constructor(props) {
     super(props);
 
-    const { channel, api } = props;
+    const { channel } = props;
 
     // A channel is explicitly passed in for testing
     if (channel) {
@@ -67,31 +73,47 @@ export default class BackgroundPanel extends Component {
     }
 
     this.state = { backgrounds: [] };
+  }
+
+  componentDidMount() {
+    this.iframe = document.getElementById(storybookIframe);
+
+    if (!this.iframe) {
+      throw new Error('Cannot find Storybook iframe');
+    }
+
+    Object.keys(style.iframe).forEach(prop => {
+      this.iframe.style[prop] = style.iframe[prop];
+    });
+
+    const { api } = this.props;
 
     this.channel.on('background-set', backgrounds => {
       this.setState({ backgrounds });
       const currentBackground = api.getQueryParam('background');
 
       if (currentBackground) {
-        this.setBackgroundInPreview(currentBackground);
+        this.updateIframe(currentBackground);
       } else if (backgrounds.filter(x => x.default).length) {
         const defaultBgs = backgrounds.filter(x => x.default);
-        this.setBackgroundInPreview(defaultBgs[0].value);
+        this.updateIframe(defaultBgs[0].value);
       }
     });
 
     this.channel.on('background-unset', () => {
       this.setState({ backgrounds: [] });
-      api.setQueryParams({ background: null });
+      this.updateIframe('none');
     });
   }
 
-  setBackgroundInPreview = background => this.channel.emit('background', background);
-
   setBackgroundFromSwatch = background => {
-    this.setBackgroundInPreview(background);
+    this.updateIframe(background);
     this.props.api.setQueryParams({ background });
   };
+
+  updateIframe(background) {
+    this.iframe.style.background = background;
+  }
 
   render() {
     const backgrounds = [...this.state.backgrounds];

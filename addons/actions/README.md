@@ -11,10 +11,7 @@
 
 Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybook.js.org).
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
-- [Vue](https://github.com/storybooks/storybook/tree/master/app/vue).
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![Screenshot](docs/screenshot.png)
 
@@ -38,9 +35,11 @@ Import the `action` function and use it to create actions handlers. When creatin
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action, configureActions } from '@storybook/addon-actions';
 
 import Button from './button';
+
+action('button-click')
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -72,3 +71,34 @@ storiesOf('Button', module)
     </Button>
   ))
 ```
+
+## Configuration
+
+Arguments which are passed to the action call will have to be serialized while be "transfered"
+over the channel.
+
+This is not very optimal and can cause lag when large objects are being logged, for this reason it is possible 
+to configure a maximum depth.
+
+To apply the configuration globally use the `configureActions` function in your `config.js` file.
+
+```js
+import { configureActions } from '@storybook/addon-actions';
+
+configureActions({
+  depth: 100
+})
+```
+
+To apply the configuration per action use:
+```js
+action('my-action', {
+  depth: 5 
+})
+```
+
+### Available Options
+
+|Name|Type|Description|Default|
+|---|---|---|---|
+|`depth`|Number|Configures the transfered depth of any logged objects.|`10`|

@@ -1,7 +1,12 @@
 {
   "presets": [
     ["env", { "modules": false }],
+    "stage-0",
     "vue"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["env"]
+    }
+  }
 }
-

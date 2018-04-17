@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/angular';
 import { withKnobs, text } from '@storybook/addon-knobs/angular';
 import { DiComponent } from './di.component';
 
-storiesOf('Component dependencies', module)
+storiesOf('Custom|Dependencies', module)
   .add('inputs and inject dependencies', () => ({
     component: DiComponent,
     props: {

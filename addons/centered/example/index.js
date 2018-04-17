@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import decorator from '../index';
+import { document } from 'global';
+
+import decorator from '../src';
 
 const content = decorator(() => 'Hello World!');
 const wrapper = document.querySelector('#content');

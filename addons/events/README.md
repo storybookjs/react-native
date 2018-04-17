@@ -11,6 +11,8 @@
 
 This [storybook](https://storybooks.js.org) ([source](https://github.com/storybooks/storybook)) addon allows you to add events for your stories.
 
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+
 ![Storybook Addon Events Example](docs/demo1.png)
 [Storybook Addon Events Live Demo](https://z4o4z.github.io/storybook-addon-events/index.html)
 
@@ -25,8 +27,8 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@storybook/addon-actions';
-import '@storybook/addon-links';
+import '@storybook/addon-actions/register';
+import '@storybook/addon-links/register';
 import '@storybook/addon-events/register';
 ```
 

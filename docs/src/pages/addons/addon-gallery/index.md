@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'addon-gallery'
-
-## title: 'Addon Gallery'
+title: 'Addon Gallery'
+---
 
 This is a list of available addons for Storybook.
 
@@ -43,6 +42,14 @@ Storyshots is a way to automatically jest-snapshot all your stories. [More info 
 
 Redirects console output (logs, errors, warnings) into Action Logger Panel. `withConsole` decorator notifies from what stories logs are coming.
 
+### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/background)
+
+With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
+
+### [Viewport](https://github.com/storybooks/storybook/tree/master/addons/viewport)
+
+Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org).  This helps build responsive components inside of Storybook.
+
 ## Community Addons
 
 You need to install these addons directly from NPM in order to use them.
@@ -50,7 +57,7 @@ You need to install these addons directly from NPM in order to use them.
 ### [Readme](https://github.com/tuchk4/storybook-readme)
 
 With this addon, you can add docs in markdown format for each story.
-It very useful because most projects and components already have README.md files.
+It's very useful because most projects and components already have README.md files.
 Now it is easy to add them into your Storybook.
 
 ### [Story-router](https://github.com/gvaldambrini/storybook-router)
@@ -75,10 +82,6 @@ Break your stories down into smaller categories (chapters) and subcategories (se
 
 Given possible values for each prop, renders your component with all combinations of prop values.
 Useful for finding edge cases or just seeing all component states at once.
-
-### [Backgrounds](https://github.com/NewSpring/react-storybook-addon-backgrounds)
-
-With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
 
 ### [Material-UI](https://github.com/sm-react/storybook-addon-material-ui)
 
@@ -129,3 +132,7 @@ Manage state inside a story. Update components when this state changes.
 Wrap the story in a function call to setup state management. The story can modify
 state properties with the provided store. The addon provides a panel to view and
 reset state.
+
+### [story2sketch](https://github.com/chrisvxd/story2sketch)
+
+Convert stories into Sketch 💎 symbols.

@@ -2,6 +2,7 @@
 
 ## Table of contents
 
+-   [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
     -   [Storyshots Jest configuration](#storyshots-jest-configuration)
@@ -16,9 +17,34 @@
     -   [Packages renaming](#packages-renaming)
     -   [Deprecated embedded addons](#deprecated-embedded-addons)
 
+## From 3.4.x to 4.0
+
+* Keyboard shortcuts have been moved:
+  - Addon Panel to `Z`
+  - Stories Panel to `X`
+  - Show Search to `O`
+  - Addon Panel right side to `G`
+
+## From version 3.3.x to 3.4.x
+
+There are no expected breaking changes in the 3.4.x release, but 3.4 contains a major refactor to make it easier to support new frameworks, and we will document any breaking changes here if they arise.
+
 ## From version 3.2.x to 3.3.x
 
-There should be no breaking changes in this release, but read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
+There wasn't expected be any breaking changes in this release, but unfortunately it turned out that there are some. We're revisiting our [release strategy](https://github.com/storybooks/storybook/blob/master/RELEASES.md) to follow semver more strictly.
+Also read on if you're using `addon-knobs`: we advise an update to your code for efficiency's sake.
+
+### `babel-core` is now a peer dependency ([#2494](https://github.com/storybooks/storybook/pull/2494))
+
+This affects you if you don't use babel in your project. You may need to add `babel-core` as dev dependency:
+```
+npm install --save-dev babel-core
+```
+This was done to support different major versions of babel.
+
+### Base webpack config now contains vital plugins ([#1775](https://github.com/storybooks/storybook/pull/1775))
+
+This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a reccomendation, but now it [became](https://github.com/storybooks/storybook/pull/2578) a requirement.
 
 ### Refactored Knobs
 

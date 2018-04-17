@@ -11,11 +11,36 @@ const DocgenButton = ({ disabled, label, onClick }) => (
 DocgenButton.defaultProps = {
   disabled: false,
   onClick: () => {},
+  optionalString: 'Default String',
+  one: { key: 1 },
+  two: {
+    thing: {
+      id: 2,
+      func: () => {},
+      arr: [],
+    },
+  },
+  obj: {
+    key: 'value',
+  },
+  shape: {
+    id: 3,
+    func: () => {},
+    arr: [],
+    shape: {
+      shape: {
+        foo: 'bar',
+      },
+    },
+  },
+  arrayOf: [1, 2, 3],
+  msg: new Set(),
+  enm: 'News',
+  enmEval: 'Photos',
+  union: 'hello',
 };
 
-/* eslint-disable react/no-unused-prop-types,react/require-default-props */
-
-const Message = {};
+/* eslint-disable react/no-unused-prop-types */
 
 DocgenButton.propTypes = {
   /** Boolean indicating whether the button should render as disabled */
@@ -95,20 +120,28 @@ DocgenButton.propTypes = {
     }),
   }),
 
+  /**
+   * array of a certain type
+   */
   arrayOf: PropTypes.arrayOf(PropTypes.number),
 
   /**
    * `instanceOf` is also supported and the custom type will be shown instead of `instanceOf`
    */
-  msg: PropTypes.instanceOf(Message),
+  msg: PropTypes.instanceOf(Set),
   /**
    * `oneOf` is basically an Enum which is also supported but can be pretty big.
    */
   enm: PropTypes.oneOf(['News', 'Photos']),
+  enmEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
-  union: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Message)]),
+  union: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Set)]),
+  /**
+   * test string
+   */
+  optionalString: PropTypes.string,
 };
 
 export default DocgenButton;

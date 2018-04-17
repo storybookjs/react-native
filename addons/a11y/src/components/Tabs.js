@@ -5,6 +5,7 @@ import { baseFonts } from '@storybook/components';
 const styles = {
   container: {
     width: '100%',
+    position: 'relative',
     ...baseFonts,
   },
   tabs: {

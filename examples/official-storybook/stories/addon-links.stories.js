@@ -10,15 +10,15 @@ storiesOf('Addons|Links.Link', module)
 
 storiesOf('Addons|Links.Button', module)
   .add('First', () => (
-    <button onClick={linkTo('Addon Links.Button', 'Second')}>Go to "Second"</button>
+    <button onClick={linkTo('Addons|Links.Button', 'Second')}>Go to "Second"</button>
   ))
   .add('Second', () => (
-    <button onClick={linkTo('Addon Links.Button', 'First')}>Go to "First"</button>
+    <button onClick={linkTo('Addons|Links.Button', 'First')}>Go to "First"</button>
   ));
 
 storiesOf('Addons|Links.Select', module)
   .add('Index', () => (
-    <select value="Index" onChange={linkTo('Addon Links.Select', e => e.currentTarget.value)}>
+    <select value="Index" onChange={linkTo('Addons|Links.Select', e => e.currentTarget.value)}>
       <option>Index</option>
       <option>First</option>
       <option>Second</option>
@@ -30,7 +30,17 @@ storiesOf('Addons|Links.Select', module)
   .add('Third', () => <LinkTo story="Index">Go back</LinkTo>);
 
 storiesOf('Addons|Links.Href', module).add('log', () => {
-  hrefTo('Addon Links.Href', 'log').then(href => action('URL of this story')({ href }));
+  hrefTo('Addons|Links.Href', 'log').then(href => action('URL of this story')({ href }));
 
   return <span>See action logger</span>;
 });
+
+storiesOf('Addons|Links.Scroll position', module)
+  .addDecorator(story => (
+    <React.Fragment>
+      <div style={{ marginBottom: '100vh' }}>Scroll down to see the link</div>
+      {story()}
+    </React.Fragment>
+  ))
+  .add('First', () => <LinkTo story="Second">Go to Second</LinkTo>)
+  .add('Second', () => <LinkTo story="First">Go to First</LinkTo>);

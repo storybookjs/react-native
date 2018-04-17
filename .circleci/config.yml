@@ -33,8 +33,12 @@ jobs:
           key: core-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-            - example/cra-kitchen-sink/node_modules
-            - example/vue-kitchen-sink/node_modules
+            - examples/angular-cli/node_modules
+            - examples/cra-kitchen-sink/node_modules
+            - examples/mithril-kitchen-sink/node_modules
+            - examples/official-storybook/node_modules
+            - examples/polymer-cli/node_modules
+            - examples/vue-kitchen-sink/node_modules
       - save_cache:
           name: "Cache core dist"
           key: core-dist-{{ .Revision }}
@@ -55,9 +59,8 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
+          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
+          command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
           name: "Build react kitchen-sink"
           command: |
@@ -73,34 +76,74 @@ jobs:
           command: |
             cd examples/angular-cli
             yarn build-storybook
+      - run:
+          name: "Build polymer-cli"
+          command: |
+            cd examples/polymer-cli
+            yarn build-storybook
+      - run:
+          name: "Build official-storybook"
+          command: |
+            cd examples/official-storybook
+            yarn build-storybook
+      - run:
+          name: "Build mithril kitchen-sink"
+          command: |
+            cd examples/mithril-kitchen-sink
+            yarn build-storybook
+      - run:
+          name: "Visually test storybook"
+          command: |
+            yarn chromatic
+      - run:
+          name: "Run image snapshots"
+          command: yarn test --image
+      - store_artifacts:
+          path: examples/official-storybook/image-snapshots/__image_snapshots__
+          destination: official_storybook_image_snapshots
+  smoke-tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: "Restore core dependencies cache"
+          keys:
+            - core-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: "Restore core dist cache"
+          keys:
+            - core-dist-{{ .Revision }}
 
       - run:
-          name: "Run react kitchen-sink"
+          name: "Run react kitchen-sink (smoke test)"
           command: |
             cd examples/cra-kitchen-sink
-            yarn storybook
-          background: true
+            yarn storybook --smoke-test
       - run:
-          name: "Run vue kitchen-sink"
+          name: "Run vue kitchen-sink (smoke test)"
           command: |
             cd examples/vue-kitchen-sink
-            yarn storybook
-          background: true
+            yarn storybook --smoke-test
       - run:
-          name: "Run angular-cli"
+          name: "Run angular-cli (smoke test)"
           command: |
             cd examples/angular-cli
-            yarn storybook
-          background: true
+            yarn storybook --smoke-test
       - run:
-          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-          command: sh ./scripts/workaround-puppeteer-issue-290.sh
+          name: "Run polymer-cli (smoke test)"
+          command: |
+            cd examples/polymer-cli
+            yarn storybook --smoke-test
       - run:
-          name: Integration Test - Kichen sinks
-          command: yarn test --integration
-      - store_artifacts:
-          path: integration/__image_snapshots__
-          destination: integration_image_snapshots
+          name: "Run official-storybook (smoke test)"
+          command: |
+            cd examples/official-storybook
+            yarn storybook --smoke-test
+      - run:
+          name: "Run mithril kitchen-sink (smoke test)"
+          command: |
+            cd examples/mithril-kitchen-sink
+            yarn storybook --smoke-test
   react-native:
     <<: *defaults
     steps:
@@ -155,6 +198,11 @@ jobs:
           key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
           paths:
             - docs/node_modules
+      - save_cache:
+          name: "Cache built docs"
+          key: built-docs-{{ .Revision }}
+          paths:
+            - docs/public
   lint:
     <<: *defaults
     steps:
@@ -172,10 +220,6 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: "Lint"
           command: |
             yarn lint
@@ -192,34 +236,10 @@ jobs:
           keys:
             - core-dist-{{ .Revision }}
       - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
           name: "Run unit tests"
           command: |
             yarn test --coverage --runInBand --core
             yarn coverage
-  storybook:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-{{ .Revision }}
-      - run:
-          name: "Link packages"
-          command: |
-            yarn install
-      - run:
-          name: "Visually test storybook"
-          command: |
-            yarn chromatic
   cli:
     working_directory: /tmp/storybook
     docker:
@@ -263,10 +283,25 @@ jobs:
   deploy:
     <<: *defaults
     steps:
+      - checkout
+      - restore_cache:
+          name: "Restore docs dependencies cache"
+          keys:
+            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+      - restore_cache:
+          name: "Restore built docs"
+          keys:
+            - built-docs-{{ .Revision }}
+      - add_ssh_keys:
+          fingerprints:
+            - "35:aa:b9:c3:b8:1c:27:1f:02:0a:73:1a:ac:58:77:df"
       - run:
           name: "Deploy"
           command: |
-            echo "TODO"
+            cd docs
+            git config --global user.email "gh-pages@localhost"
+            git config --global user.name "npm gh-pages"
+            yarn deploy:ci
 workflows:
   version: 2
   build_accept_deploy:
@@ -275,17 +310,18 @@ workflows:
       - example-kitchen-sinks:
           requires:
             - build
+      - smoke-tests:
+          requires:
+            - build
       - react-native:
           requires:
             - build
       - docs
       - lint:
           requires:
+            - docs
             - build
       - unit-test:
-          requires:
-            - build
-      - storybook:
           requires:
             - build
       - cli:
@@ -294,3 +330,10 @@ workflows:
       - cli-latest-cra:
           requires:
             - build
+      - deploy:
+          requires:
+            - docs
+          filters:
+            branches:
+              only:
+                - release/3.4

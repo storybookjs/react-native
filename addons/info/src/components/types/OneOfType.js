@@ -1,20 +1,20 @@
 import React from 'react';
 
 import PrettyPropType from './PrettyPropType';
-import { TypeInfo } from './proptypes';
+import { TypeInfo, getPropTypes } from './proptypes';
 
 const OneOfType = ({ propType }) => {
-  const { length } = propType.value;
+  const propTypes = getPropTypes(propType);
   return (
     <span>
-      {propType.value
-        .map((value, i) => [
-          <PrettyPropType
-            key={`${value.name}${value.value ? `-${value.value}` : ''}`}
-            propType={value}
-          />,
-          i < length - 1 ? <span> | </span> : null,
-        ])
+      {propTypes
+        .map((value, i) => {
+          const key = `${value.name}${value.value ? `-${value.value}` : ''}`;
+          return [
+            <PrettyPropType key={key} propType={value} />,
+            i < propTypes.length - 1 ? <span key={`${key}-separator`}> | </span> : null,
+          ];
+        })
         .reduce((acc, tuple) => acc.concat(tuple), [])}
     </span>
   );

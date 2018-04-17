@@ -11,9 +11,7 @@
 
 StoryShots adds automatic Jest Snapshot Testing for [Storybook](https://storybook.js.org/).
 
-This addon works with Storybook for:
-- [React](https://github.com/storybooks/storybook/tree/master/app/react)
-- [React Native](https://github.com/storybooks/storybook/tree/master/app/react-native)
+[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ![StoryShots In Action](docs/storyshots-fail.png)
 
@@ -31,12 +29,82 @@ npm install --save-dev @storybook/addon-storyshots
 
 Usually, you might already have completed this step. If not, here are some resources for you.
 
--   If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
--   Otherwise check this Egghead [lesson](https://egghead.io/lessons/javascript-test-javascript-with-jest).
+If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
+
+If you aren't familiar with Jest, here are some resources:
+
+-   [Getting Started - Jest Official Documentation](https://facebook.github.io/jest/docs/en/getting-started.html) 
+-   [Javascript Testing with Jest - Egghead](https://egghead.io/lessons/javascript-test-javascript-with-jest). ***paid content***
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
-## Configure Storyshots
+### Configure Jest for React
+StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but 
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+```sh
+npm install --save-dev react-test-renderer
+```
+
+### Configure Jest for Angular
+StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but 
+[doesn't](#deps-issue) install it, so you need to install it separately.
+
+```sh
+npm install --save-dev jest-preset-angular
+```
+
+If you already use Jest for testing your angular app - probably you already have the needed jest configuration.
+Anyway you can add these lines to your jest config:
+```js
+module.exports = {
+  globals: {
+    __TRANSFORM_HTML__: true,
+  },
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html'],
+};
+```
+### Configure Jest for Vue
+StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
+[doesn't](#deps-issue) install it, so you need to install it separately.
+ 
+ ```sh
+ npm install --save-dev jest-vue-preprocessor
+ ```
+ 
+If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
+Anyway you can add these lines to your jest config:
+```js
+module.exports = {
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
+  },
+  transformIgnorePatterns: [
+    '/node_modules/(?!(@storybook/.*\\.vue$))',
+  ],
+  moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
+};
+```
+
+### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
+Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them. 
+
+`dependencies` - will installed an exact version of the particular dep - Storyshots can work with different versions of the same framework (let's say React v16 and React v15), that have to be compatible with a version of its plugin (react-test-renderer).
+
+`optionalDependencies` - behaves like a regular dependency, but do not fail the installation in case there is a problem to bring the dep.
+
+`peerDependencies` - listing all the deps in peer will trigger warnings during the installation - we don't want users to install unneeded deps by hand.
+
+`optionalPeerDependencies` - unfortunately there is nothing like this =(
+    
+For more information read npm [docs](https://docs.npmjs.com/files/package.json#dependencies)
+
+## Configure Storyshots for HTML snapshots
 
 Create a new test file with the name `Storyshots.test.js`. (Or whatever the name you prefer, as long as it matches Jest's config [`testMatch`](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)).
 Then add following content to it:
@@ -52,6 +120,167 @@ That's all.
 Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
 
 ![Screenshot](docs/storyshots.png)
+
+
+### Using `createNodeMock` to mock refs
+
+`react-test-renderer` doesn't provide refs for rendered components. By
+default, it returns null when the refs are referenced. In order to mock
+out elements that rely on refs, you will have to use the
+`createNodeMock` option [added to React](https://reactjs.org/blog/2016/11/16/react-v15.4.0.html#mocking-refs-for-snapshot-testing) starting with version 15.4.0.
+
+Here is an example of how to specify the `createNodeMock` option in Storyshots:
+
+```js
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots'
+import TextareaThatUsesRefs from '../component/TextareaThatUsesRefs'
+
+initStoryshots({
+  test: snapshotWithOptions({
+    createNodeMock: (element) => {
+      if (element.type === TextareaThatUsesRefs) {
+        return document.createElement('textarea')
+      }
+    },
+  }),
+})
+```
+
+## Configure Storyshots for image snapshots ( alpha )
+
+/*\ **React-native** is **not supported** by this test function.
+
+Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
+
+When willing to generate and compare image snapshots for your stories, you have two options: 
+- Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
+- Have a static build of the storybook (for instance, using `yarn run build-storybook`)
+
+Then you will need to reference the storybook URL (`file://...` if local, `http(s)://...` if served)
+
+### Using default values for _imageSnapshots_
+
+Then you can either create a new Storyshots instance or edit the one you previously used: 
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot()});
+```
+This will assume you have a storybook running on at _<http://localhost:6006>_.
+Internally here are the steps:  
+- Launches a Chrome headless using [puppeteer](https://github.com/GoogleChrome/puppeteer)
+- Browses each stories (calling _<http://localhost:6006/iframe.html?...>_ URL),
+- Take screenshots & save all images under _\_image_snapshots\__ folder.
+
+### Specifying the storybook URL
+
+If you want to set specific storybook URL, you can specify via the `storybookUrl` parameter, see below: 
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://my-specific-domain.com:9010'})});
+```
+The above config will use _<https://my-specific-domain.com:9010>_ for screenshots.
+
+
+You may also use a local static build of storybook if you do not want to run the webpack dev-server:
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'file:///path/to/my/storybook-static'})});
+```
+
+### Specifying options to _jest-image-snapshots_
+
+If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` which is called before the screenshot is captured.
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+const getMatchOptions = ({context : {kind, story}, url}) => {
+  return {
+    failureThreshold: 0.2,
+    failureThresholdType: 'percent',
+  }
+}
+const beforeScreenshot = (page, {context : {kind, story}, url}) => {
+  return new Promise(resolve =>
+      setTimeout(() => {
+          resolve();
+      }, 600)
+  )
+}
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getMatchOptions, beforeScreenshot})});
+```
+`getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
+
+`beforeScreenshot` receives the [Puppeteer page instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) and an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot. `beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for triggering events on the page elements and delaying the screenshot and can be used avoid regressions due to mounting animations.
+
+### Specifying options to _goto()_ (puppeteer API)
+
+You might use `getGotoOptions` to specify options when the storybook is navigating to a story (using the `goto` method). Will be passed to [Puppeteer .goto() fn](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options)
+
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+const getGotoOptions = ({context, url}) => {
+  return {
+    waitUntil: 'networkidle0',
+  }
+}
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getGotoOptions})});
+```
+### Specifying options to _screenshot()_ (puppeteer API)
+
+You might use `getScreenshotOptions` to specify options for screenshot. Will be passed to [Puppeteer .screenshot() fn](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions)
+
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+const getScreenshotOptions = ({context, url}) {
+  return {
+    fullPage: false // Do not take the full page screenshot. Default is 'true' in Storyshots.
+  }
+}
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getScreenshotOptions})});
+```
+
+`getScreenshotOptions` receives an object `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
+
+### Integrate image storyshots with regular app
+
+You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
+You can find a working example of this in the [official-storybook](https://github.com/storybooks/storybook/tree/master/examples/official-storybook) example.
+
+### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
+
+You have two options here, you can either: 
+
+- Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
+
+- Create a custom test file using Jest outside of the CRA scope:
+
+    A more robust approach would be to separate existing test files ran by create-react-app (anything `(test|spec).js` suffixed files) from the test files to run storyshots with image snapshots.
+    This use case can be achieved by using a custom name for the test file, ie something like `image-storyshots.runner.js`. This file will contains the `initStoryshots` call with image snapshots configuration.
+    Then you will create a separate script entry in your package.json, for instance 
+    ```json
+    {
+        "scripts": { 
+            "image-snapshots" : "jest image-storyshots.runner.js --config path/to/custom/jest.config.json"
+        }
+    }
+    ```
+    Note that you will certainly need a custom config file for Jest as you run it outside of the CRA scope and thus you do not have the built-in config.
+
+    Once that's setup, you can run `yarn run image-snapshots` (or `npm run image-snapshots`).
+
+### Reminder
+
+An image snapshot is simply a screenshot taken by a web browser (in our case, Chrome).
+
+The browser opens a page (either using the static build of storybook or a running instance of Storybook)
+
+If you run your test without either the static build or a running instance, this wont work.
+
+To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date. 
+This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
+If you run the image snapshots against a running Storybook in dev mode, you don't have to care about being up-to-date because the dev-server is watching changes and rebuilds automatically.
 
 ## Options
 
@@ -133,7 +362,7 @@ Run a custom test function for each story, rather than the default (a vanilla sn
 
 ### `renderer`
 
-Pass a custom renderer (such as enzymes `mount`) to record snapshots.
+Pass a custom renderer (such as enzymes `mount`) to record snapshots. Note that setting `test` overrides `renderer`.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
@@ -195,6 +424,17 @@ Like the default, but allows you to specify a set of options for the test render
 
 Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes.
 
+#### integrityOptions
+This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
+The value is just a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
+
+```js
+initStoryshots({
+  integrityOptions: { cwd: __dirname }, // it will start searching from the current directory
+  test: multiSnapshotWithOptions({}),
+});
+```
+
 ### `shallowSnapshot`
 
 Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
@@ -202,6 +442,10 @@ Take a snapshot of a shallow-rendered version of the component. Note that this o
 ### `getSnapshotFileName`
 
 Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
+
+### `imageSnapshot` ( alpha )
+
+Render the story and take Jest snapshots as images. see [Configure image snapshots](#configure-storyshots-for-image-snapshots)
 
 ###### Example:
 

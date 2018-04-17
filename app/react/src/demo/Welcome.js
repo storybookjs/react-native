@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
-import LinkTo from '@storybook/addon-links/react';
 
 const Main = glamorous.article({
   margin: 15,
@@ -33,34 +32,30 @@ const Link = glamorous.a({
   paddingBottom: 2,
 });
 
-const StoryLink = Link.withComponent(LinkTo);
+const NavButton = glamorous(Link.withComponent('button'))({
+  borderTop: 'none',
+  borderRight: 'none',
+  borderLeft: 'none',
+  backgroundColor: 'transparent',
+  padding: 0,
+  cursor: 'pointer',
+  font: 'inherit',
+});
 
-const Welcome = props =>
+const Welcome = props => (
   <Main>
     <Title>Welcome to storybook</Title>
     <p>This is a UI component dev environment for your app.</p>
     <p>
-      We've added some basic stories inside the
-      {' '}
-      <InlineCode>src/stories</InlineCode>
-      {' '}
-      directory.
+      We've added some basic stories inside the <InlineCode>src/stories</InlineCode> directory.
       <br />
-      A story is a single state of one or more UI components. You can have as many stories as
-      you want.
+      A story is a single state of one or more UI components. You can have as many stories as you
+      want.
       <br />
       (Basically a story is like a visual test case.)
     </p>
     <p>
-      See these sample
-      {' '}
-      {props.showApp
-        ? <Link onClick={props.showApp} role="button" tabIndex="0">stories</Link>
-        : <StoryLink kind={props.showKind} story={props.showStory}>stories</StoryLink>
-      }
-      {' '}
-      for a component called
-      {' '}
+      See these sample <NavButton onClick={props.showApp}>stories</NavButton> for a component called{' '}
       <InlineCode>Button</InlineCode>
       .
     </p>
@@ -69,40 +64,36 @@ const Welcome = props =>
       <br />
       You can also edit those components and see changes right away.
       <br />
-      (Try editing the <InlineCode>Button</InlineCode> stories
-      located at <InlineCode>src/stories/index.js</InlineCode>.)
+      (Try editing the <InlineCode>Button</InlineCode> stories located at{' '}
+      <InlineCode>src/stories/index.js</InlineCode>.)
     </p>
     <p>
       Usually we create stories with smaller UI components in the app.<br />
-      Have a look at the
-      {' '}
+      Have a look at the{' '}
       <Link
         href="https://storybook.js.org/basics/writing-stories"
         target="_blank"
         rel="noopener noreferrer"
       >
         Writing Stories
-      </Link>
-      {' '}
+      </Link>{' '}
       section in our documentation.
     </p>
     <Note>
       <b>NOTE:</b>
       <br />
-      Have a look at the
-      {' '}
-      <InlineCode>.storybook/webpack.config.js</InlineCode>
-      {' '}
-      to add webpack
+      Have a look at the <InlineCode>.storybook/webpack.config.js</InlineCode> to add webpack
       loaders and plugins you are using in this project.
     </Note>
-  </Main>;
+  </Main>
+);
 
 Welcome.displayName = 'Welcome';
 Welcome.propTypes = {
   showApp: PropTypes.func,
-  showKind: PropTypes.string,
-  showStory: PropTypes.string,
+};
+Welcome.defaultProps = {
+  showApp: null,
 };
 
 export { Welcome as default };

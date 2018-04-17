@@ -13,6 +13,7 @@ program
   .option('--platform <ios|android|all>', 'build platform-specific build')
   .option('-s, --secured', 'whether server is running on https')
   .option('-c, --config-dir [dir-name]', 'storybook config directory')
+  .option('--metro-config [relative-config-path]', 'Metro Bundler Custom config')
   .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
   .option('-r, --reset-cache', 'reset react native packager')
   .option('--skip-packager', 'run only storybook server')
@@ -59,15 +60,23 @@ if (!program.skipPackager) {
   }
 
   try {
-    const findSymlinksPaths = require('react-native/local-cli/util/findSymlinksPaths'); // eslint-disable-line global-require
-    symlinks = findSymlinksPaths(path.join(projectDir, 'node_modules'), [projectDir]);
+    // eslint-disable-next-line global-require
+    require('babel-register')({
+      presets: ['flow'],
+      ignore: false,
+      babelrc: false,
+    });
+
+    // eslint-disable-next-line global-require
+    const findSymlinkedModules = require('react-native/local-cli/util/findSymlinkedModules');
+    symlinks = roots.reduce((arr, rootPath) => arr.concat(findSymlinkedModules(rootPath, roots)), [
+      ...roots,
+    ]);
   } catch (e) {
-    console.warn(`Unable to load findSymlinksPaths: ${e.message}`);
+    console.warn(`Unable to load findSymlinksPaths: ${e.message}`, e);
   }
 
-  let projectRoots = (configDir === projectDir ? [configDir] : [configDir, projectDir]).concat(
-    symlinks
-  );
+  let projectRoots = (configDir === projectDir ? [] : [configDir]).concat(symlinks);
 
   if (program.projectRoots) {
     projectRoots = projectRoots.concat(
@@ -75,19 +84,21 @@ if (!program.skipPackager) {
     );
   }
 
-  let cliCommand = 'node node_modules/react-native/local-cli/cli.js start';
+  let cliCommand = 'react-native start';
+
+  if (program.metroConfig) {
+    cliCommand += ` --config ${program.metroConfig}`;
+  }
+
   if (program.haul) {
     const platform = program.platform || 'all';
-    cliCommand = `node node_modules/haul/bin/cli.js start --config ${
-      program.haul
-    } --platform ${platform}`;
+    cliCommand = `haul start --config ${program.haul} --platform ${platform}`;
   }
   // RN packager
   shelljs.exec(
     [
       cliCommand,
       `--projectRoots ${projectRoots.join(',')}`,
-      `--root ${roots.join(',')}`,
       program.resetCache && '--reset-cache',
       program.packagerPort && `--port=${program.packagerPort}`,
     ]
