@@ -102,8 +102,15 @@ const initModule = (currentStory: IGetStory, reRender: boolean = false): Functio
   );
 };
 
+const staticRoot = document.getElementById('root');
+const insertDynamicRoot = () => {
+  const app = document.createElement('storybook-dynamic-app-root');
+  staticRoot.appendChild(app);
+};
+
 const draw = (newModule: Function, reRender: boolean = true): void => {
   if (!platform) {
+    insertDynamicRoot();
     try {
       enableProdMode();
     } catch (e) {}
@@ -114,9 +121,7 @@ const draw = (newModule: Function, reRender: boolean = true): void => {
     Promise.all(promises).then(modules => {
       modules.forEach(mod => mod.destroy());
 
-      const body = document.body;
-      const app = document.createElement('storybook-dynamic-app-root');
-      body.appendChild(app);
+      insertDynamicRoot();
       promises = [];
       promises.push(platform.bootstrapModule(newModule));
     });

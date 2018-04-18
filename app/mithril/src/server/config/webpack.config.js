@@ -10,6 +10,7 @@ import {
   getPreviewHeadHtml,
   getManagerHeadHtml,
   indexHtmlPath,
+  iframeHtmlPath,
 } from '@storybook/core/server';
 
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
@@ -51,7 +52,7 @@ export default function(configDir) {
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
-        template: require.resolve('../iframe.html.ejs'),
+        template: iframeHtmlPath,
       }),
       new InterpolateHtmlPlugin(process.env),
       new webpack.DefinePlugin(loadEnv()),
