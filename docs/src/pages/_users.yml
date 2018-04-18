@@ -5,12 +5,12 @@ airbnb:
   source: https://github.com/airbnb/react-dates
   demo: http://airbnb.io/react-dates/
   site: http://airbnb.com
-# slack:
-#   logo: slack.svg
-#   title: Slack Emoji Picker
-#   description: Slack improves performance and maintainability with Storybook!
-#   demo: https://slack.engineering/rebuilding-slacks-emoji-picker-in-react-bfbd8ce6fbfe
-#   site: http://slack.com
+slack:
+  logo: slack.svg
+  title: Slack Emoji Picker
+  description: Slack improves performance and maintainability with Storybook!
+  demo: https://slack.engineering/rebuilding-slacks-emoji-picker-in-react-bfbd8ce6fbfe
+  site: http://slack.com
 lonelyplanet:
   logo: lonelyplanet.svg
   title: Lonely Planet
