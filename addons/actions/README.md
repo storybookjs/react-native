@@ -80,20 +80,26 @@ over the channel.
 This is not very optimal and can cause lag when large objects are being logged, for this reason it is possible 
 to configure a maximum depth.
 
+The action logger, by default, will log all actions fired during the lifetime of the story. After a while
+this can make the storybook laggy. As a workaround, you can configure an upper limit to how many actions should 
+be logged.
+
 To apply the configuration globally use the `configureActions` function in your `config.js` file.
 
 ```js
 import { configureActions } from '@storybook/addon-actions';
 
 configureActions({
-  depth: 100
+  depth: 100,
+  // Limit the number of items logged into the actions panel
+  limit: 20,
 })
 ```
 
 To apply the configuration per action use:
 ```js
 action('my-action', {
-  depth: 5 
+  depth: 5,
 })
 ```
 

@@ -48,7 +48,7 @@ export default class ActionLogger extends React.Component {
       action.count = 1; // eslint-disable-line
       actions.unshift(action);
     }
-    this.setState({ actions });
+    this.setState({ actions: actions.slice(0, action.options.limit) });
   }
 
   clearActions() {
