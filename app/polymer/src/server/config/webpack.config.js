@@ -5,8 +5,13 @@ import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlu
 import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
+import {
+  managerPath,
+  getPreviewHeadHtml,
+  getManagerHeadHtml,
+  indexHtmlPath,
+  iframeHtmlPath,
+} from '@storybook/core/server';
 
 import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
@@ -38,7 +43,7 @@ export default function(configDir) {
           managerHead: getManagerHeadHtml(configDir),
           version,
         },
-        template: require.resolve('../index.html.ejs'),
+        template: indexHtmlPath,
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
@@ -47,13 +52,9 @@ export default function(configDir) {
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
-        template: require.resolve('../iframe.html.ejs'),
+        template: iframeHtmlPath,
       }),
       new InterpolateHtmlPlugin(process.env),
-      new CopyWebpackPlugin([
-        { from: require.resolve('@webcomponents/webcomponentsjs/webcomponents-lite.js') },
-        { from: require.resolve('@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js') },
-      ]),
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
