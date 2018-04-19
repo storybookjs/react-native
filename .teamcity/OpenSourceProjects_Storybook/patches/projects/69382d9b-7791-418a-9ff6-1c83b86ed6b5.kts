@@ -24,8 +24,10 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
                       }
                     ]
                 """.trimIndent())
-                param("format", "text")
+                param("format", "duration")
+                param("hideFilters", "")
                 param("title", "Build Duration")
+                param("defaultFilters", "")
                 param("seriesTitle", "Serie")
             }
         }
