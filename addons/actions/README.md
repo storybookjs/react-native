@@ -102,3 +102,4 @@ action('my-action', {
 |Name|Type|Description|Default|
 |---|---|---|---|
 |`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
+|`clearActionLogger`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`false`|
