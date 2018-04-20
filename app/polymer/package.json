@@ -22,12 +22,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.3",
-    "@storybook/channel-postmessage": "4.0.0-alpha.3",
     "@storybook/core": "4.0.0-alpha.3",
-    "@storybook/node-logger": "4.0.0-alpha.3",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.3",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
@@ -45,14 +41,11 @@
     "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
     "html-webpack-plugin": "^3.2.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
     "webpack": "^4.6.0",
     "webpack-hot-middleware": "^2.22.0"
   },
   "devDependencies": {
     "lit-html": "^0.9.0",
-    "nodemon": "^1.17.3",
     "polymer-webpack-loader": "^2.0.2"
   },
   "peerDependencies": {

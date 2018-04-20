@@ -1,4 +1,4 @@
-/* global document */
+import { document } from 'global';
 /** @jsx m */
 
 import m from 'mithril';
