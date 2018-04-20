@@ -39,5 +39,8 @@
     "react-chromatic": "^0.8.1",
     "react-dom": "^16.3.2",
     "uuid": "^3.2.1"
+  },
+  "dependencies": {
+    "faker": "^4.1.0"
   }
 }
