@@ -29,11 +29,13 @@ const getConfig = options => {
         filename: 'index.html',
         data: {
           version,
-          options: JSON.stringify(options),
         },
         template: indexHtmlPath,
       }),
-      new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"',
+        storybookOptions: JSON.stringify(options),
+      }),
       new webpack.optimize.DedupePlugin(),
       new Dotenv({ silent: true }),
     ],

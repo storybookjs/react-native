@@ -8,8 +8,8 @@
     "react-scripts": "0.9.x"
   },
   "devDependencies": {
-    "@storybook/react": "^4.0.0-alpha.2",
-    "@storybook/addons": "^4.0.0-alpha.2",
+    "@storybook/react": "^4.0.0-alpha.3",
+    "@storybook/addons": "^4.0.0-alpha.3",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0"
   },
