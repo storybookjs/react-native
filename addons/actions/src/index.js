@@ -4,5 +4,6 @@ import { action, configureActions, decorateAction } from './preview';
 export const ADDON_ID = 'storybook/actions';
 export const PANEL_ID = `${ADDON_ID}/actions-panel`;
 export const EVENT_ID = `${ADDON_ID}/action-event`;
+export const STORY_CHANGE_ID = `storybook/stories/story-event`;
 
 export { action, configureActions, decorateAction };

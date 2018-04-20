@@ -7,21 +7,31 @@ import { CYCLIC_KEY, retrocycle } from '../../lib';
 import { isObject } from '../../lib/util';
 
 import ActionLoggerComponent from '../../components/ActionLogger/';
-import { EVENT_ID } from '../../';
+import { EVENT_ID, STORY_CHANGE_ID } from '../../';
 
 export default class ActionLogger extends React.Component {
   constructor(props, ...args) {
     super(props, ...args);
     this.state = { actions: [] };
     this._actionListener = action => this.addAction(action);
+    this._storyChangeListener = () => this.handleStoryChange();
   }
 
   componentDidMount() {
     this.props.channel.on(EVENT_ID, this._actionListener);
+    this.props.channel.on(STORY_CHANGE_ID, this._storyChangeListener);
   }
 
   componentWillUnmount() {
     this.props.channel.removeListener(EVENT_ID, this._actionListener);
+    this.props.channel.removeListener(STORY_CHANGE_ID, this._storyChangeListener);
+  }
+
+  handleStoryChange() {
+    const { actions } = this.state;
+    if (actions.length > 0 && actions[0].options.clearActionLogger) {
+      this.clearActions();
+    }
   }
 
   addAction(action) {
