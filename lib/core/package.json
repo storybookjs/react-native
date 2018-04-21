@@ -34,7 +34,7 @@
     "find-cache-dir": "^1.0.0",
     "global": "^4.3.2",
     "json-loader": "^0.5.7",
-    "json5": "^0.5.1",
+    "json5": "^1.0.1",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.1.4",
     "prop-types": "^15.6.1",
