@@ -54,7 +54,7 @@
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
     "webpack": "^4.6.0",
-    "webpack-hot-middleware": "^2.22.0"
+    "webpack-hot-middleware": "^2.22.1"
   },
   "devDependencies": {
     "nodemon": "^1.17.3"
