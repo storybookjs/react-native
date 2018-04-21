@@ -189,7 +189,8 @@ storiesOf('Addons|Knobs.withKnobs', module)
       <p>Hit the knob load button and it should trigger an async load after a short delay</p>
       <AsyncItemLoader />
     </div>
-  ));
+  ))
+  .add('XSS safety', () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'));
 
 storiesOf('Addons|Knobs.withKnobsOptions', module)
   .addDecorator(

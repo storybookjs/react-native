@@ -2,7 +2,7 @@ import addons from '@storybook/addons';
 
 import {
   knob,
-  text,
+  escapedText as text,
   boolean,
   number,
   color,

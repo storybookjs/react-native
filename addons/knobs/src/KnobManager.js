@@ -1,9 +1,13 @@
 /* eslint no-underscore-dangle: 0 */
 import deepEqual from 'deep-equal';
+import escape from 'escape-html';
+
 import KnobStore from './KnobStore';
 
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
+
+const getKnobValue = ({ value, options = {} }) => (options.escapeHTML ? escape(value) : value);
 
 export default class KnobManager {
   constructor() {
@@ -23,7 +27,7 @@ export default class KnobManager {
     // But, if the user changes the code for the defaultValue we should set
     // that value instead.
     if (existingKnob && deepEqual(options.value, existingKnob.defaultValue)) {
-      return existingKnob.value;
+      return getKnobValue(existingKnob);
     }
 
     const defaultValue = options.value;
@@ -34,7 +38,7 @@ export default class KnobManager {
     };
 
     knobStore.set(name, knobInfo);
-    return knobStore.get(name).value;
+    return getKnobValue(knobStore.get(name));
   }
 
   _mayCallChannel() {

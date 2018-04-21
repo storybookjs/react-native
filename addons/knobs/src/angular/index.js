@@ -4,7 +4,7 @@ import { prepareComponent } from './helpers';
 
 import {
   knob,
-  text,
+  escapedText as text,
   boolean,
   number,
   color,

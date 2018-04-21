@@ -7,8 +7,12 @@ export function knob(name, options) {
   return manager.knob(name, options);
 }
 
-export function text(name, value, groupId) {
-  return manager.knob(name, { type: 'text', value, groupId });
+export function text(name, value, options = {}, groupId) {
+  return manager.knob(name, { type: 'text', value, options, groupId });
+}
+
+export function escapedText(name, value, options = {}, groupId) {
+  return text(name, value, { escapeHTML: true, ...options }, groupId);
 }
 
 export function boolean(name, value, groupId) {

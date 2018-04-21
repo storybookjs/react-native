@@ -4,7 +4,7 @@ import './WrapStory.html';
 
 import {
   knob,
-  text,
+  escapedText as text,
   boolean,
   number,
   color,
