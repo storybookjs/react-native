@@ -50,7 +50,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "webpack": "^4.6.0",
-    "webpack-hot-middleware": "^2.22.0"
+    "webpack-hot-middleware": "^2.22.1"
   },
   "devDependencies": {
     "mithril": "^1.1.6",
