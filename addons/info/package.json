@@ -24,6 +24,7 @@
     "prop-types": "^15.6.1",
     "react-addons-create-fragment": "^15.5.3",
     "react-lifecycles-compat": "^3.0.2",
+    "turndown": "^4.0.1",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
