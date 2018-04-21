@@ -331,7 +331,7 @@ class Story extends React.Component {
     const array = Array.from(types.keys());
     array.sort((a, b) => getName(a) > getName(b));
 
-    const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength } = this.props;
+    const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength, excludedPropTypes } = this.props;
     const propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
@@ -341,6 +341,7 @@ class Story extends React.Component {
           maxPropObjectKeys={maxPropObjectKeys}
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
+          excludedPropTypes={excludedPropTypes}
         />
       </div>
     ));
@@ -389,6 +390,7 @@ Story.propTypes = {
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
   maxPropStringLength: PropTypes.number.isRequired,
+  excludedPropTypes: PropTypes.arrayOf(PropTypes.string)
 };
 
 Story.defaultProps = {
@@ -401,6 +403,7 @@ Story.defaultProps = {
   showHeader: true,
   showSource: true,
   components: {},
+  excludedPropTypes: [],
 };
 
 polyfill(Story);

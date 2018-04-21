@@ -1,5 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PropTable multiLineText should exclude excluded propTypes 1`] = `
+<PropTable
+  excludedPropTypes={
+    Array [
+      "foo",
+    ]
+  }
+  maxPropArrayLength={5}
+  maxPropObjectKeys={5}
+  maxPropStringLength={5}
+  propDefinitions={
+    Array [
+      Object {
+        "defaultValue": undefined,
+        "description": "",
+        "propType": Object {
+          "name": "string",
+        },
+        "property": "foo",
+        "required": false,
+      },
+    ]
+  }
+  type={[Function]}
+>
+  <small>
+    No propTypes defined!
+  </small>
+</PropTable>
+`;
+
 exports[`PropTable multiLineText should have 2 br tags for 3 lines of text 1`] = `
 Array [
   <span>
@@ -17,4 +48,144 @@ Array [
      baz
   </span>,
 ]
+`;
+
+exports[`PropTable multiLineText should include all propTypes by default 1`] = `
+<PropTable
+  maxPropArrayLength={5}
+  maxPropObjectKeys={5}
+  maxPropStringLength={5}
+  propDefinitions={
+    Array [
+      Object {
+        "defaultValue": undefined,
+        "description": "",
+        "propType": Object {
+          "name": "string",
+        },
+        "property": "foo",
+        "required": false,
+      },
+    ]
+  }
+  type={[Function]}
+>
+  <glamorous(table)>
+    <table
+      className="css-1ytzlk7"
+    >
+      <thead>
+        <tr>
+          <glamorous(th)
+            bordered={true}
+          >
+            <th
+              className="css-d52hbj"
+            >
+              property
+            </th>
+          </glamorous(th)>
+          <glamorous(th)
+            bordered={true}
+          >
+            <th
+              className="css-d52hbj"
+            >
+              propType
+            </th>
+          </glamorous(th)>
+          <glamorous(th)
+            bordered={true}
+          >
+            <th
+              className="css-d52hbj"
+            >
+              required
+            </th>
+          </glamorous(th)>
+          <glamorous(th)
+            bordered={true}
+          >
+            <th
+              className="css-d52hbj"
+            >
+              default
+            </th>
+          </glamorous(th)>
+          <glamorous(th)
+            bordered={true}
+          >
+            <th
+              className="css-d52hbj"
+            >
+              description
+            </th>
+          </glamorous(th)>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          key="foo"
+        >
+          <glamorous(td)
+            bordered={true}
+            code={true}
+          >
+            <td
+              className="css-1ygfcef"
+            >
+              foo
+            </td>
+          </glamorous(td)>
+          <glamorous(td)
+            bordered={true}
+            code={true}
+          >
+            <td
+              className="css-1ygfcef"
+            >
+              <PrettyPropType
+                depth={1}
+                propType={
+                  Object {
+                    "name": "string",
+                  }
+                }
+              >
+                <span>
+                  string
+                </span>
+              </PrettyPropType>
+            </td>
+          </glamorous(td)>
+          <glamorous(td)
+            bordered={true}
+          >
+            <td
+              className="css-d52hbj"
+            >
+              -
+            </td>
+          </glamorous(td)>
+          <glamorous(td)
+            bordered={true}
+          >
+            <td
+              className="css-d52hbj"
+            >
+              -
+            </td>
+          </glamorous(td)>
+          <glamorous(td)
+            bordered={true}
+          >
+            <td
+              className="css-d52hbj"
+            />
+          </glamorous(td)>
+        </tr>
+      </tbody>
+    </table>
+  </glamorous(table)>
+</PropTable>
 `;

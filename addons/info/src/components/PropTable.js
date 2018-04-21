@@ -22,6 +22,16 @@ export const multiLineText = input => {
       ));
 };
 
+const determineIncludedPropTypes = (propDefinitions, excludedPropTypes) => {
+  if (excludedPropTypes.length === 0) {
+    return propDefinitions;
+  }
+
+  return propDefinitions.filter(
+    propDefinition => !excludedPropTypes.includes(propDefinition.property)
+  );
+};
+
 export default function PropTable(props) {
   const {
     type,
@@ -29,13 +39,16 @@ export default function PropTable(props) {
     maxPropArrayLength,
     maxPropStringLength,
     propDefinitions,
+    excludedPropTypes,
   } = props;
 
   if (!type) {
     return null;
   }
 
-  if (!propDefinitions.length) {
+  const includedPropDefinitions = determineIncludedPropTypes(propDefinitions, excludedPropTypes);
+
+  if (!includedPropDefinitions.length) {
     return <small>No propTypes defined!</small>;
   }
 
@@ -57,7 +70,7 @@ export default function PropTable(props) {
         </tr>
       </thead>
       <tbody>
-        {propDefinitions.map(row => (
+        {includedPropDefinitions.map(row => (
           <tr key={row.property}>
             <Td bordered code>
               {row.property}
@@ -85,12 +98,14 @@ PropTable.displayName = 'PropTable';
 PropTable.defaultProps = {
   type: null,
   propDefinitions: [],
+  excludedPropTypes: [],
 };
 PropTable.propTypes = {
   type: PropTypes.func,
   maxPropObjectKeys: PropTypes.number.isRequired,
   maxPropArrayLength: PropTypes.number.isRequired,
   maxPropStringLength: PropTypes.number.isRequired,
+  excludedPropTypes: PropTypes.arrayOf(PropTypes.string),
   propDefinitions: PropTypes.arrayOf(
     PropTypes.shape({
       property: PropTypes.string.isRequired,
