@@ -17,9 +17,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 9001"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/addons": "4.0.0-alpha.3",
@@ -28,14 +26,7 @@
     "global": "^4.3.2",
     "prop-types": "^15.6.1"
   },
-  "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.3",
-    "enzyme": "^3.3.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
-  },
   "peerDependencies": {
-    "react": "16.3.2",
-    "react-dom": "16.3.2"
+    "react": "*"
   }
 }

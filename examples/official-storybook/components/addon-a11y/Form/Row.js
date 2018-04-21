@@ -14,8 +14,8 @@ function Row({ label, input }) {
 }
 
 Row.propTypes = {
-  label: PropTypes.instanceOf(Label),
-  input: PropTypes.instanceOf(Input).isRequired,
+  label: PropTypes.shape({ type: PropTypes.oneOf([Label]) }),
+  input: PropTypes.shape({ type: PropTypes.oneOf([Input]) }).isRequired,
 };
 
 Row.defaultProps = {

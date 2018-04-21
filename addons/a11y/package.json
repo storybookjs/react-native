@@ -34,10 +34,6 @@
     "glamorous": "^4.12.3",
     "prop-types": "^15.6.1"
   },
-  "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.3",
-    "faker": "^4.1.0"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
