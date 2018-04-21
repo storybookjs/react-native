@@ -30,7 +30,6 @@
     "react-syntax-highlighter": "^7.0.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   }
 }
