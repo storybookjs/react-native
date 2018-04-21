@@ -55,7 +55,7 @@ exports[`Storyshots Addons|a11y/Button Invalid contrast 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
 >
-  molestiae quibusdam eveniet
+  Testing the a11y addon
 </button>
 `;
 
@@ -73,7 +73,7 @@ exports[`Storyshots Addons|a11y/Form With label 1`] = `
     for="1"
     style="padding:0 6px"
   >
-    omnis
+    Testing the a11y addon
   </label>
   <input
     id="1"
@@ -85,7 +85,7 @@ exports[`Storyshots Addons|a11y/Form With placeholder 1`] = `
 <div>
   <input
     id="1"
-    placeholder="dolorem"
+    placeholder="Testing the a11y addon"
   />
 </div>
 `;
@@ -105,7 +105,7 @@ exports[`Storyshots Addons|a11y/Image Presentation 1`] = `
 
 exports[`Storyshots Addons|a11y/Image With alt 1`] = `
 <img
-  alt="expedita et voluptas"
+  alt="Testing the a11y addon"
   src="http://lorempixel.com/640/480/animals"
 />
 `;
@@ -119,15 +119,15 @@ exports[`Storyshots Addons|a11y/Image Without alt 1`] = `
 exports[`Storyshots Addons|a11y/Typography Correct 1`] = `
 <div>
   <h1>
-    Vel nihil est ut modi itaque sit ut ullam in.
+    Testing the a11y addon
   </h1>
   <p>
-    Deleniti dolor corrupti aut nam. Voluptates voluptas consequuntur nulla qui eum dolorum perspiciatis atque. Eligendi autem ea omnis repellat. Aperiam et qui aut ipsa accusamus dicta est non. Id id sit necessitatibus deleniti sunt omnis.
+    Testing the a11y addon
   </p>
   <a
     href="javascript:void 0"
   >
-    ipsa non voluptate aspernatur...
+    Testing the a11y addon...
   </a>
 </div>
 `;
@@ -144,6 +144,6 @@ exports[`Storyshots Addons|a11y/Typography Empty Paragraph 1`] = `<p />`;
 
 exports[`Storyshots Addons|a11y/Typography Link without href 1`] = `
 <a>
-  quaerat tenetur natus cumque...
+  Testing the a11y addon...
 </a>
 `;

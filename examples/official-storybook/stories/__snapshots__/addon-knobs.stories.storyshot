@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
+<div>
+  <div>
+    I must be here
+  </div>
+  <div>
+    I can disapear
+  </div>
+</div>
+`;
+
 exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
 <div>
   <p>

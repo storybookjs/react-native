@@ -38,28 +38,22 @@ storiesOf('Addons|a11y/Button', module)
   .add('Content', () => <Button content={text} />)
   .add('Label', () => <Button label={text} />)
   .add('Disabled', () => <Button disabled content={text} />)
-  .add('Invalid contrast', () => <Button contrast="wrong" content={Faker.lorem.words()} />);
-
-const label = Faker.lorem.word();
-const placeholder = Faker.lorem.word();
+  .add('Invalid contrast', () => <Button contrast="wrong" content={text} />);
 
 storiesOf('Addons|a11y/Form', module)
   .addDecorator(checkA11y)
   .add('Without Label', () => <Form.Row input={<Form.Input />} />)
   .add('With label', () => (
-    <Form.Row label={<Form.Label content={label} id="1" />} input={<Form.Input id="1" />} />
+    <Form.Row label={<Form.Label content={text} id="1" />} input={<Form.Input id="1" />} />
   ))
-  .add('With placeholder', () => (
-    <Form.Row input={<Form.Input id="1" placeholder={placeholder} />} />
-  ));
+  .add('With placeholder', () => <Form.Row input={<Form.Input id="1" placeholder={text} />} />);
 
 const image = Faker.image.animals();
-const alt = Faker.lorem.words();
 
 storiesOf('Addons|a11y/Image', module)
   .addDecorator(checkA11y)
   .add('Without alt', () => <Image src={image} />)
-  .add('With alt', () => <Image src={image} alt={alt} />)
+  .add('With alt', () => <Image src={image} alt={text} />)
   .add('Presentation', () => <Image presentation src={image} />);
 
 // eslint-disable-next-line no-script-url
@@ -69,14 +63,14 @@ storiesOf('Addons|a11y/Typography', module)
   .addDecorator(checkA11y)
   .add('Correct', () => (
     <div>
-      <Typography.Heading level={1}>{Faker.lorem.sentence()}</Typography.Heading>
+      <Typography.Heading level={1}>{text}</Typography.Heading>
 
-      <Typography.Text>{Faker.lorem.paragraph()}</Typography.Text>
+      <Typography.Text>{text}</Typography.Text>
 
-      <Typography.Link content={`${Faker.lorem.words(4)}...`} href={href} />
+      <Typography.Link content={`${text}...`} href={href} />
     </div>
   ))
   .add('Empty Heading', () => <Typography.Heading level={2} />)
   .add('Empty Paragraph', () => <Typography.Text />)
   .add('Empty Link', () => <Typography.Link href={href} />)
-  .add('Link without href', () => <Typography.Link content={`${Faker.lorem.words(4)}...`} />);
+  .add('Link without href', () => <Typography.Link content={`${text}...`} />);
