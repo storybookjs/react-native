@@ -97,4 +97,12 @@ storiesOf('Addons|Actions', module)
         Object (configured depth: 2)
       </Button>
     );
-  });
+  })
+  .add('Clearing the action logger', () => (
+    <div>
+      <p>Moving away from this story will clear the action logger</p>
+      <Button onClick={action('clear-action-logger', { clearActionLogger: true })}>
+        Object (clearActionLogger: true)
+      </Button>
+    </div>
+  ));
