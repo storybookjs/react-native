@@ -3,6 +3,7 @@ const graphql = require('graphql');
 const graphqlHTTP = require('express-graphql');
 const express = require('express');
 const cors = require('cors');
+const { logger } = require('@storybook/node-logger');
 
 // Import the data you created above
 const data = require('./data.json');
@@ -49,5 +50,4 @@ express()
   .use('/graphql', graphqlHTTP({ schema, pretty: true }))
   .listen(3000);
 
-// eslint-disable-next-line no-console
-console.log('GraphQL server running on http://localhost:3000/graphql');
+logger.info('GraphQL server running on http://localhost:3000/graphql');

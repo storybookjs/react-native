@@ -28,9 +28,6 @@
     "graphql": "^0.13.2",
     "prop-types": "^15.6.1"
   },
-  "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.3"
-  },
   "peerDependencies": {
     "react": "*"
   }

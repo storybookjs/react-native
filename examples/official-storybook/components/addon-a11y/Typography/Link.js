@@ -6,8 +6,13 @@ function Link({ href, content }) {
 }
 
 Link.propTypes = {
-  href: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  content: PropTypes.string,
+};
+
+Link.defaultProps = {
+  href: null,
+  content: null,
 };
 
 export default Link;

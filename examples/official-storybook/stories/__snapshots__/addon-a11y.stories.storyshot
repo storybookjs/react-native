@@ -25,3 +25,125 @@ exports[`Storyshots Addons|a11y Label 1`] = `
 `;
 
 exports[`Storyshots Addons|a11y delayed render 1`] = `<div />`;
+
+exports[`Storyshots Addons|a11y/Button Content 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|a11y/Button Default 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+>
+  null
+</button>
+`;
+
+exports[`Storyshots Addons|a11y/Button Disabled 1`] = `
+<button
+  disabled=""
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|a11y/Button Invalid contrast 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
+>
+  molestiae quibusdam eveniet
+</button>
+`;
+
+exports[`Storyshots Addons|a11y/Button Label 1`] = `
+<button
+  style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+>
+  null
+</button>
+`;
+
+exports[`Storyshots Addons|a11y/Form With label 1`] = `
+<div>
+  <label
+    for="1"
+    style="padding:0 6px"
+  >
+    omnis
+  </label>
+  <input
+    id="1"
+  />
+</div>
+`;
+
+exports[`Storyshots Addons|a11y/Form With placeholder 1`] = `
+<div>
+  <input
+    id="1"
+    placeholder="dolorem"
+  />
+</div>
+`;
+
+exports[`Storyshots Addons|a11y/Form Without Label 1`] = `
+<div>
+  <input />
+</div>
+`;
+
+exports[`Storyshots Addons|a11y/Image Presentation 1`] = `
+<img
+  role="presentation"
+  src="http://lorempixel.com/640/480/animals"
+/>
+`;
+
+exports[`Storyshots Addons|a11y/Image With alt 1`] = `
+<img
+  alt="expedita et voluptas"
+  src="http://lorempixel.com/640/480/animals"
+/>
+`;
+
+exports[`Storyshots Addons|a11y/Image Without alt 1`] = `
+<img
+  src="http://lorempixel.com/640/480/animals"
+/>
+`;
+
+exports[`Storyshots Addons|a11y/Typography Correct 1`] = `
+<div>
+  <h1>
+    Vel nihil est ut modi itaque sit ut ullam in.
+  </h1>
+  <p>
+    Deleniti dolor corrupti aut nam. Voluptates voluptas consequuntur nulla qui eum dolorum perspiciatis atque. Eligendi autem ea omnis repellat. Aperiam et qui aut ipsa accusamus dicta est non. Id id sit necessitatibus deleniti sunt omnis.
+  </p>
+  <a
+    href="javascript:void 0"
+  >
+    ipsa non voluptate aspernatur...
+  </a>
+</div>
+`;
+
+exports[`Storyshots Addons|a11y/Typography Empty Heading 1`] = `<h2 />`;
+
+exports[`Storyshots Addons|a11y/Typography Empty Link 1`] = `
+<a
+  href="javascript:void 0"
+/>
+`;
+
+exports[`Storyshots Addons|a11y/Typography Empty Paragraph 1`] = `<p />`;
+
+exports[`Storyshots Addons|a11y/Typography Link without href 1`] = `
+<a>
+  quaerat tenetur natus cumque...
+</a>
+`;
