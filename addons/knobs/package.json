@@ -31,13 +31,9 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.3",
-    "raw-loader": "^0.5.1",
-    "style-loader": "^0.20.3",
     "vue": "^2.5.16"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   }
 }
