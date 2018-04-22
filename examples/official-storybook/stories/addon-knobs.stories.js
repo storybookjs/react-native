@@ -190,7 +190,9 @@ storiesOf('Addons|Knobs.withKnobs', module)
       <AsyncItemLoader />
     </div>
   ))
-  .add('XSS safety', () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'));
+  .add('XSS safety', () => (
+    <div>{text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >')}</div>
+  ));
 
 storiesOf('Addons|Knobs.withKnobsOptions', module)
   .addDecorator(
