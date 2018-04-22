@@ -50,6 +50,26 @@ changeBuildType("8cc5f747-4ca7-4f0d-940d-b0c422f501a6") {
             }
         }
 
+        expect("OpenSourceProjects_Storybook_Polymer") {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "polymer.zip!** => examples/polymer-cli/storybook-static"
+            }
+        }
+        update("OpenSourceProjects_Storybook_Polymer") {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                cleanDestination = true
+                artifactRules = "polymer.zip!** => examples/polymer-cli/storybook-static"
+            }
+        }
+
         expect("OpenSourceProjects_Storybook_Mithril") {
             snapshot {
                 onDependencyCancel = FailureAction.CANCEL
