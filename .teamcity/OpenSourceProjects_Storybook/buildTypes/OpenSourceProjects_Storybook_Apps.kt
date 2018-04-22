@@ -6,14 +6,14 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
-enum class StorybookApp(val name: String, val exampleDir: String) {
+enum class StorybookApp(val appName: String, val exampleDir: String) {
     CRA("CRA", "cra-kitchen-sink"),
     VUE("Vue", "vue-kitchen-sink"),
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),
     MITHRIL("Mithril", "mithril-kitchen-sink");
 
-    val lowerName = name.toLowerCase()
+    val lowerName = appName.toLowerCase()
 
     val artifactPath = "examples/$exampleDir/storybook-static => $lowerName.zip"
 
