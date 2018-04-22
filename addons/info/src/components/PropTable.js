@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import 'core-js/fn/array/includes';
 
 import { Table, Td, Th } from '@storybook/components';
 import PropVal from './PropVal';
