@@ -29,7 +29,7 @@ export default class ActionLogger extends React.Component {
 
   handleStoryChange() {
     const { actions } = this.state;
-    if (actions.length > 0 && actions[0].options.clearActionLogger) {
+    if (actions.length > 0 && actions[0].options.clearOnStoryChange) {
       this.clearActions();
     }
   }

@@ -1,6 +1,6 @@
 export const config = {
   depth: 10,
-  clearActionLogger: false,
+  clearOnStoryChange: true,
 };
 
 export function configureActions(options = {}) {
