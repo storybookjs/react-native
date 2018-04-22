@@ -46,13 +46,15 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
 
     dependencies {
         allApps {
-            dependency(config) {
-                snapshot {
-                    onDependencyCancel = FailureAction.CANCEL
-                }
+            if (branch == null) {
+                dependency(config) {
+                    snapshot {
+                        onDependencyCancel = FailureAction.CANCEL
+                    }
 
-                artifacts {
-                    artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                    artifacts {
+                        artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                    }
                 }
             }
         }

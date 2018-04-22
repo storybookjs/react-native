@@ -3,16 +3,18 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
-enum class StorybookApp(val appName: String, val exampleDir: String) {
+enum class StorybookApp(val appName: String, val exampleDir: String, val branch: String? = null) {
     CRA("CRA", "cra-kitchen-sink"),
     VUE("Vue", "vue-kitchen-sink"),
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),
     MITHRIL("Mithril", "mithril-kitchen-sink"),
-    HTML("HTML", "html-kitchen-sink");
+    HTML("HTML", "html-kitchen-sink", "pull/3475");
 
     val lowerName = appName.toLowerCase()
 
@@ -27,6 +29,10 @@ enum class StorybookApp(val appName: String, val exampleDir: String) {
 
         vcs {
             root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
+
+            if (branch != null) {
+                buildDefaultBranch = false
+            }
         }
 
         steps {
@@ -60,6 +66,15 @@ enum class StorybookApp(val appName: String, val exampleDir: String) {
                 comparison = BuildFailureOnMetric.MetricComparison.LESS
                 compareTo = build {
                     buildRule = lastSuccessful()
+                }
+            }
+        }
+
+        if (branch != null) {
+            triggers {
+                vcs {
+                    quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+                    branchFilter = "+:$branch"
                 }
             }
         }

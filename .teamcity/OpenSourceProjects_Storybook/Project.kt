@@ -74,46 +74,20 @@ object Project : Project({
             param("secure:accessToken", "")
             param("username", "")
         }
-        feature {
-            id = "PROJECT_EXT_264"
-            type = "ReportTab"
-            param("startPage", "cra.zip!index.html")
-            param("title", "CRA")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_265"
-            type = "ReportTab"
-            param("startPage", "angular.zip!index.html")
-            param("title", "Angular")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_266"
-            type = "ReportTab"
-            param("startPage", "mithril.zip!index.html")
-            param("title", "Mithril")
-            param("type", "BuildReportTab")
+        allApps {
+            feature {
+                id = "PROJECT_EXT_264_$lowerName"
+                type = "ReportTab"
+                param("startPage", "$lowerName.zip!index.html")
+                param("title", appName)
+                param("type", "BuildReportTab")
+            }
         }
         feature {
             id = "PROJECT_EXT_267"
             type = "ReportTab"
             param("startPage", "official.zip!index.html")
             param("title", "Official")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_268"
-            type = "ReportTab"
-            param("startPage", "polymer.zip!index.html")
-            param("title", "Polymer")
-            param("type", "BuildReportTab")
-        }
-        feature {
-            id = "PROJECT_EXT_269"
-            type = "ReportTab"
-            param("startPage", "vue.zip!index.html")
-            param("title", "Vue")
             param("type", "BuildReportTab")
         }
         feature {
