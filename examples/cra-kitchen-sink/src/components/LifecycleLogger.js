@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import polyfill from 'react-lifecycles-compat';
+import { polyfill } from 'react-lifecycles-compat';
 import { logger } from '@storybook/client-logger';
 
 function log(name) {

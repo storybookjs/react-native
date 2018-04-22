@@ -19,14 +19,4 @@ export interface NgStory {
   styles?: string[];
 }
 
-export interface NgError {
-  message: string;
-  stack: string;
-}
-
-export type NgProvidedData = NgStory | NgError;
-
 export type IGetStory = () => NgStory;
-
-export type IRenderStoryFn = (story: IGetStory, reRender?: boolean) => void;
-export type IRenderErrorFn = (error: Error) => void;

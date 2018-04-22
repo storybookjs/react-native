@@ -5,7 +5,7 @@ export { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from '../shared';
 export { default as withViewport } from './withViewport';
 export { default as Viewport } from './components/Viewport';
 
-export function configure(configs = {}) {
+export function configureViewport(configs = {}) {
   const channel = addons.getChannel();
 
   if (channel) {

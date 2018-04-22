@@ -4,5 +4,6 @@ import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-story
 initStoryshots({
   framework: 'vue',
   configPath: path.join(__dirname, '.storybook'),
+  integrityOptions: { cwd: path.join(__dirname, 'src', 'stories') },
   test: multiSnapshotWithOptions({}),
 });

@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import DocgenButton from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
+import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
 
 storiesOf('Addons|Info.React Docgen', module)
@@ -26,6 +27,12 @@ storiesOf('Addons|Info.React Docgen', module)
     withInfo(
       'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
     )(() => <BaseButton onClick={action('clicked')} label="Button" />)
+  )
+  .add(
+    'Comments from named export component declaration',
+    withInfo(
+      'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
+    )(() => <NamedExportButton onClick={action('clicked')} label="Button" />)
   );
 
 const markdownDescription = `
@@ -42,6 +49,30 @@ Maybe include a [link](http://storybook.js.org) to your project as well.
 storiesOf('Addons|Info.Markdown', module).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+);
+
+const JSXDescription = (
+  <div>
+    <h2>This is a JSX info section</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus
+      commodo, a mattis velit dignissim. Fusce vestibulum turpis sed massa egestas pharetra. Sed at
+      libero nulla.
+    </p>
+    <p>
+      <a href="https://github.com/storybooks/react-storybook-addon-info">This is a link</a>
+    </p>
+    <p>
+      <img alt="350x150" src="http://placehold.it/350x150" />
+    </p>
+  </div>
+);
+
+storiesOf('Addons|Info.JSX', module).add(
+  'Displays JSX in description',
+  withInfo({ text: JSXDescription })(() => (
+    <BaseButton onClick={action('clicked')} label="Button" />
+  ))
 );
 
 storiesOf('Addons|Info.Options.inline', module).add(
@@ -149,5 +180,113 @@ storiesOf('Addons|Info.GitHub issues', module).add(
       <Input />
       <TextArea />
     </div>
+  ))
+);
+
+storiesOf('Addons|Info.Options.maxPropsIntoLine === 0', module).add(
+  'Object and array props are broken to lines',
+  withInfo({
+    text: 'Component should be inlined between description and PropType table',
+    inline: true,
+    maxPropsIntoLine: 0,
+  })(() => (
+    <BaseButton
+      label="Button"
+      object={{
+        one: 'Object and array properties',
+        two: 'will be broken to different lines',
+        three: 'if greater than `maxPropsIntoLine` option threshold.',
+      }}
+      array={['one', 'two', 'three', 'four']}
+      arrayOfObjects={[
+        {
+          one: 'Object and array properties will be broken to different lines',
+          two: 'if greater than `maxPropsIntoLine` option threshold.',
+          object: {
+            object1: {
+              one: 'one',
+              two: 'two',
+              three: 'three',
+            },
+            array: ['one', 'two', 'three'],
+            object2: {
+              object: {
+                one: 'one',
+                two: 'two',
+                three: 'three',
+              },
+              array: [
+                'one',
+                'two',
+                {
+                  object: {
+                    object: {
+                      one: 'one',
+                      two: 'two',
+                      three: 'three',
+                    },
+                    array: ['one', 'two', 'three'],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ]}
+    />
+  ))
+);
+
+storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module).add(
+  'Object and array props are broken to lines',
+  withInfo({
+    text: 'Component should be inlined between description and PropType table',
+    inline: true,
+    maxPropsIntoLine: 3,
+  })(() => (
+    <BaseButton
+      label="Button"
+      object={{
+        one: 'Object and array properties',
+        two: 'will be broken to different lines',
+        three: 'if greater than `maxPropsIntoLine` option threshold.',
+      }}
+      array={['one', 'two', 'three', 'four']}
+      arrayOfObjects={[
+        {
+          one: 'Object and array properties will be broken to different lines',
+          two: 'if greater than `maxPropsIntoLine` option threshold.',
+          object: {
+            object1: {
+              one: 'one',
+              two: 'two',
+              three: 'three',
+            },
+            array: ['one', 'two', 'three'],
+            object2: {
+              object: {
+                one: 'one',
+                two: 'two',
+                three: 'three',
+              },
+              array: [
+                'one',
+                'two',
+                {
+                  object: {
+                    object: {
+                      one: 'one',
+                      two: 'two',
+                      three: 'three',
+                    },
+                    array: ['one', 'two', 'three'],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ]}
+    />
   ))
 );

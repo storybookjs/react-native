@@ -70,6 +70,11 @@ exports[`Storyshots Addons|Actions All types 1`] = `
   <button
     class="css-1yjiefr"
   >
+    Object (depth: 2)
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
     RegExp
   </button>
   <button
@@ -137,5 +142,13 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
   class="css-1yjiefr"
 >
   Delete
+</button>
+`;
+
+exports[`Storyshots Addons|Actions configureActions 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Object (configured depth: 2)
 </button>
 `;

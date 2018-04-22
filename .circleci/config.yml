@@ -46,21 +46,6 @@ jobs:
             - addons
             - app
             - lib
-  danger:
-    <<: *defaults
-    environment:
-      - TOKEN_HEAD: 49aa9a6549007391dfcef9c76fca32a73560fd8
-    steps:
-      - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: "Danger"
-          command: |
-            echo $DANGER_GITHUB_API_TOKEN
-            DANGER_GITHUB_API_TOKEN=${TOKEN_HEAD}3 yarn danger ci
   example-kitchen-sinks:
     <<: *defaults
     steps:
@@ -322,9 +307,6 @@ workflows:
   build_accept_deploy:
     jobs:
       - build
-      - danger:
-          requires:
-            - build
       - example-kitchen-sinks:
           requires:
             - build

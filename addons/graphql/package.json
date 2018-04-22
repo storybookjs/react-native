@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.3",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "storybook"
@@ -17,9 +17,7 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 9001"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -27,9 +25,6 @@
     "graphiql": "^0.11.11",
     "graphql": "^0.13.2",
     "prop-types": "^15.6.1"
-  },
-  "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.1"
   },
   "peerDependencies": {
     "react": "*"

@@ -1,5 +1,4 @@
 import React from 'react';
-import addons from '@storybook/addons';
 
 import WrapStory from './WrapStory';
 
@@ -16,7 +15,7 @@ import {
   selectV2,
   button,
   files,
-  manager,
+  makeDecorators,
 } from '../base';
 
 export { knob, text, boolean, number, color, object, array, date, select, selectV2, button, files };
@@ -27,19 +26,4 @@ export const reactHandler = (channel, knobStore) => getStory => context => {
   return <WrapStory {...props} />;
 };
 
-function wrapperKnobs(options) {
-  const channel = addons.getChannel();
-  manager.setChannel(channel);
-
-  if (options) channel.emit('addon:knobs:setOptions', options);
-
-  return reactHandler(channel, manager.knobStore);
-}
-
-export function withKnobs(storyFn, context) {
-  return wrapperKnobs()(storyFn)(context);
-}
-
-export function withKnobsOptions(options = {}) {
-  return (storyFn, context) => wrapperKnobs(options)(storyFn)(context);
-}
+export const { withKnobs, withKnobsOptions } = makeDecorators(reactHandler);

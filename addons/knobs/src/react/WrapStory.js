@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import polyfill from 'react-lifecycles-compat';
+import { polyfill } from 'react-lifecycles-compat';
 
 class WrapStory extends React.Component {
   constructor(props) {
@@ -101,7 +101,7 @@ WrapStory.propTypes = {
     subscribe: PropTypes.func,
     unsubscribe: PropTypes.func,
   }).isRequired,
-  initialContent: PropTypes.object, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
+  initialContent: PropTypes.node, // eslint-disable-line react/no-unused-prop-types
 };
 
 polyfill(WrapStory);
