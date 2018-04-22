@@ -56,6 +56,7 @@
     "@storybook/channel-postmessage": "4.0.0-alpha.3",
     "@storybook/channel-websocket": "4.0.0-alpha.3",
     "@storybook/channels": "4.0.0-alpha.3",
+    "@storybook/html": "4.0.0-alpha.3",
     "@storybook/mithril": "4.0.0-alpha.3",
     "@storybook/polymer": "4.0.0-alpha.3",
     "@storybook/react": "4.0.0-alpha.3",

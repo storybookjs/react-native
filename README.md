@@ -72,8 +72,9 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [React Native](app/react-native)
 -   [Vue](app/vue)
 -   [Angular](app/angular)
--   [Polymer](app/polymer) <sup>release candidate</sup>
+-   [Polymer](app/polymer)
 -   [Mithril](app/mithril) <sup>alpha</sup>
+-   [HTML](app/html) <sup>alpha</sup>
 
 ### Sub Projects
 
