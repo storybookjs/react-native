@@ -11,7 +11,7 @@ enum class StorybookApp(val appName: String, val exampleDir: String) {
     VUE("Vue", "vue-kitchen-sink"),
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),
-    MITHRIL("Mithril", "mithril-kitchen-sink");
+    MITHRIL("Mithril", "mithril-kitchen-sink"),
     HTML("HTML", "html-kitchen-sink");
 
     val lowerName = appName.toLowerCase()
