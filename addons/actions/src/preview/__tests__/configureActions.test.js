@@ -4,16 +4,16 @@ import { configureActions } from '../../';
 describe('Configure Actions', () => {
   it('can configure actions', () => {
     const depth = 100;
-    const clearActionLogger = true;
+    const clearOnStoryChange = false;
 
     configureActions({
       depth,
-      clearActionLogger,
+      clearOnStoryChange,
     });
 
     expect(config).toEqual({
       depth,
-      clearActionLogger,
+      clearOnStoryChange,
     });
   });
 });
