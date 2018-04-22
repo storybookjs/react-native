@@ -78,7 +78,7 @@ enum class StorybookApp(val appName: String, val exampleDir: String) {
         requirements {
             doesNotContain("env.OS", "Windows")
         }
-    })
+    }) {}
 }
 
 fun allApps(handler: StorybookApp.() -> Unit) =
