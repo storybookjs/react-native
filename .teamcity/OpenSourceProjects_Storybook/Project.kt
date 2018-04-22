@@ -27,13 +27,12 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_CliTest)
     buildType(OpenSourceProjects_Storybook_Test)
     buildType(OpenSourceProjects_Storybook_Lint)
-    buildType(OpenSourceProjects_Storybook_CRA)
-    buildType(OpenSourceProjects_Storybook_Vue)
-    buildType(OpenSourceProjects_Storybook_Angular)
-    buildType(OpenSourceProjects_Storybook_Polymer)
-    buildType(OpenSourceProjects_Storybook_Mithril)
     buildType(OpenSourceProjects_Storybook_SmokeTests)
     buildType(OpenSourceProjects_Storybook_Chromatic)
+
+    allApps {
+        buildType(config)
+    }
 
     features {
         versionedSettings {

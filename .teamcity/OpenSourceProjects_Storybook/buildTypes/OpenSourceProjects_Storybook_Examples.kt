@@ -12,12 +12,8 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
     name = "Examples"
 
     artifactRules = """
+        ${StorybookApp.values().map { it.artifactPath }.joinToString("\n")}
         examples/official-storybook/storybook-static => official.zip
-        examples/angular-cli/storybook-static => angular.zip
-        examples/polymer-cli/storybook-static => polymer.zip
-        examples/cra-kitchen-sink/storybook-static => cra.zip
-        examples/mithril-kitchen-sink/storybook-static => mithril.zip
-        examples/vue-kitchen-sink/storybook-static => vue.zip
         examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapshots
     """.trimIndent()
 
@@ -94,54 +90,16 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
     }
 
     dependencies {
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CRA) {
-            snapshot {
-                onDependencyCancel = FailureAction.CANCEL
-            }
+        allApps {
+            dependency(config) {
+                snapshot {
+                    onDependencyCancel = FailureAction.CANCEL
+                }
 
-            artifacts {
-                cleanDestination = true
-                artifactRules = "cra.zip!** => examples/cra-kitchen-sink/storybook-static"
-            }
-        }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Vue) {
-            snapshot {
-                onDependencyCancel = FailureAction.CANCEL
-            }
-
-            artifacts {
-                cleanDestination = true
-                artifactRules = "vue.zip!** => examples/vue-kitchen-sink/storybook-static"
-            }
-        }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Angular) {
-            snapshot {
-                onDependencyCancel = FailureAction.CANCEL
-            }
-
-            artifacts {
-                cleanDestination = true
-                artifactRules = "angular.zip!** => examples/angular-cli/storybook-static"
-            }
-        }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Polymer) {
-            snapshot {
-                onDependencyCancel = FailureAction.CANCEL
-            }
-
-            artifacts {
-                cleanDestination = true
-                artifactRules = "polymer.zip!** => examples/polymer-cli/storybook-static"
-            }
-        }
-        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Mithril) {
-            snapshot {
-                onDependencyCancel = FailureAction.CANCEL
-            }
-
-            artifacts {
-                cleanDestination = true
-                artifactRules = "mithril.zip!** => examples/mithril-kitchen-sink/storybook-static"
+                artifacts {
+                    cleanDestination = true
+                    artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                }
             }
         }
     }
