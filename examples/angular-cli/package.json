@@ -37,6 +37,7 @@
     "@storybook/addons": "4.0.0-alpha.3",
     "@storybook/angular": "4.0.0-alpha.3",
     "@types/jasmine": "~2.8.6",
+    "@types/jasminewd2": "^2.0.3",
     "@types/node": "~9.6.5",
     "babel-core": "^6.26.0",
     "global": "^4.3.2",
@@ -49,7 +50,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^1.0.0",
     "protractor": "~5.3.1",
-    "ts-node": "~5.0.1",
+    "ts-node": "~6.0.0",
     "typescript": "^2.8.1"
   }
 }

@@ -51,6 +51,30 @@ storiesOf('Addons|Info.Markdown', module).add(
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
 );
 
+const JSXDescription = (
+  <div>
+    <h2>This is a JSX info section</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare massa rutrum metus
+      commodo, a mattis velit dignissim. Fusce vestibulum turpis sed massa egestas pharetra. Sed at
+      libero nulla.
+    </p>
+    <p>
+      <a href="https://github.com/storybooks/react-storybook-addon-info">This is a link</a>
+    </p>
+    <p>
+      <img alt="350x150" src="http://placehold.it/350x150" />
+    </p>
+  </div>
+);
+
+storiesOf('Addons|Info.JSX', module).add(
+  'Displays JSX in description',
+  withInfo({ text: JSXDescription })(() => (
+    <BaseButton onClick={action('clicked')} label="Button" />
+  ))
+);
+
 storiesOf('Addons|Info.Options.inline', module).add(
   'Inlines component inside story',
   withInfo({
@@ -159,12 +183,66 @@ storiesOf('Addons|Info.GitHub issues', module).add(
   ))
 );
 
-storiesOf('Addons|Info.Options.maxPropsIntoLine', module).add(
+storiesOf('Addons|Info.Options.maxPropsIntoLine === 0', module).add(
   'Object and array props are broken to lines',
   withInfo({
     text: 'Component should be inlined between description and PropType table',
     inline: true,
     maxPropsIntoLine: 0,
+  })(() => (
+    <BaseButton
+      label="Button"
+      object={{
+        one: 'Object and array properties',
+        two: 'will be broken to different lines',
+        three: 'if greater than `maxPropsIntoLine` option threshold.',
+      }}
+      array={['one', 'two', 'three', 'four']}
+      arrayOfObjects={[
+        {
+          one: 'Object and array properties will be broken to different lines',
+          two: 'if greater than `maxPropsIntoLine` option threshold.',
+          object: {
+            object1: {
+              one: 'one',
+              two: 'two',
+              three: 'three',
+            },
+            array: ['one', 'two', 'three'],
+            object2: {
+              object: {
+                one: 'one',
+                two: 'two',
+                three: 'three',
+              },
+              array: [
+                'one',
+                'two',
+                {
+                  object: {
+                    object: {
+                      one: 'one',
+                      two: 'two',
+                      three: 'three',
+                    },
+                    array: ['one', 'two', 'three'],
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ]}
+    />
+  ))
+);
+
+storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module).add(
+  'Object and array props are broken to lines',
+  withInfo({
+    text: 'Component should be inlined between description and PropType table',
+    inline: true,
+    maxPropsIntoLine: 3,
   })(() => (
     <BaseButton
       label="Button"

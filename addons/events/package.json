@@ -16,9 +16,7 @@
     "url": "git@github.com:storybooks/storybook.git"
   },
   "scripts": {
-    "build-storybook": "build-storybook",
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 6006"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@storybook/addons": "4.0.0-alpha.3",
