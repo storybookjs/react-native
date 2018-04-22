@@ -89,7 +89,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
     }
 
     dependencies {
-        allApps {
+        StorybookApp.HTML.apply {
             dependency(config) {
                 snapshot {
                     onDependencyCancel = FailureAction.CANCEL
