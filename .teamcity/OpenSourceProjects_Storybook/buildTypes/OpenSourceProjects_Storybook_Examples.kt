@@ -90,14 +90,16 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
 
     dependencies {
         allApps {
-            dependency(config) {
-                snapshot {
-                    onDependencyCancel = FailureAction.CANCEL
-                }
+            if (branch == null) {
+                dependency(config) {
+                    snapshot {
+                        onDependencyCancel = FailureAction.CANCEL
+                    }
 
-                artifacts {
-                    cleanDestination = true
-                    artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                    artifacts {
+                        cleanDestination = true
+                        artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                    }
                 }
             }
         }
