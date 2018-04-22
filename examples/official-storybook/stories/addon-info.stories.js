@@ -59,6 +59,14 @@ storiesOf('Addons|Info.Options.inline', module).add(
   })(() => <BaseButton label="Button" />)
 );
 
+storiesOf('Addons|Info.Options.excludedPropTypes').add(
+  'Excludes propTypes that are in the excludedPropTypes array',
+  withInfo({
+    text: 'Label propType should be excluded',
+    excludedPropTypes: ['label']
+  })(() => <BaseButton />)
+);
+
 storiesOf('Addons|Info.Options.header', module).add(
   'Shows or hides Info Addon header',
   withInfo({
