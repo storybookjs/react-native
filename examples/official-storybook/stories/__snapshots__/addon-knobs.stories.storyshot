@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addons|Knobs.withKnobs XSS safety 1`] = `
+<div>
+  &lt;img src=x onerror="alert('XSS Attack')" &gt;
+</div>
+`;
+
 exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 <div>
   <div>

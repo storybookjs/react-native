@@ -58,4 +58,5 @@ storiesOf('Addon|Knobs', module)
             <p>${nice ? 'Nice to meet you!' : 'Leave me alone!'}</p>
           </div>
         `;
-  });
+  })
+  .add('XSS safety', () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'));

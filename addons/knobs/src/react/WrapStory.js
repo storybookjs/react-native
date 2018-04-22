@@ -101,7 +101,7 @@ WrapStory.propTypes = {
     subscribe: PropTypes.func,
     unsubscribe: PropTypes.func,
   }).isRequired,
-  initialContent: PropTypes.object, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
+  initialContent: PropTypes.node, // eslint-disable-line react/no-unused-prop-types
 };
 
 polyfill(WrapStory);
