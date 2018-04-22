@@ -19,17 +19,11 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.3",
-    "@storybook/channel-postmessage": "4.0.0-alpha.3",
-    "@storybook/client-logger": "4.0.0-alpha.3",
     "@storybook/core": "4.0.0-alpha.3",
-    "@storybook/node-logger": "4.0.0-alpha.3",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.3",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
@@ -55,9 +49,6 @@
     "prop-types": "^15.6.1",
     "webpack": "^4.6.0",
     "webpack-hot-middleware": "^2.22.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",

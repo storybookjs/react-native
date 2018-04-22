@@ -3,51 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './components/app.component';
-import { ErrorComponent } from './components/error.component';
-import { NoPreviewComponent } from './components/no-preview.component';
 import { STORY } from './app.token';
-import {
-  NgModuleMetadata,
-  IGetStory,
-  NgProvidedData,
-  IRenderErrorFn,
-  IRenderStoryFn,
-} from './types';
+import { NgModuleMetadata, IGetStory, NgStory } from './types';
 
 let platform: any = null;
 let promises: Promise<NgModuleRef<any>>[] = [];
-
-// Taken from https://davidwalsh.name/javascript-debounce-function
-// We don't want to pull underscore
-const debounce = (
-  func: IRenderStoryFn | IRenderErrorFn,
-  wait: number = 100,
-  immediate: boolean = false
-): (() => void) => {
-  let timeout: any;
-  return function() {
-    const context = this,
-      args = arguments;
-    const later = function() {
-      timeout = null;
-      if (!immediate) {
-        func.apply(context, args);
-      }
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) {
-      func.apply(context, args);
-    }
-  };
-};
 
 const getModule = (
   declarations: Array<Type<any> | any[]>,
   entryComponents: Array<Type<any> | any[]>,
   bootstrap: Array<Type<any> | any[]>,
-  data: NgProvidedData,
+  data: NgStory,
   moduleMetadata: NgModuleMetadata
 ) => {
   const moduleMeta = {
@@ -76,7 +42,7 @@ const createComponentFromTemplate = (template: string, styles: string[]): Functi
   })(componentClass);
 };
 
-const initModule = (currentStory: IGetStory, reRender: boolean = false): Function => {
+const initModule = (currentStory: IGetStory): Function => {
   const storyObj = currentStory();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
@@ -108,7 +74,7 @@ const insertDynamicRoot = () => {
   staticRoot.appendChild(app);
 };
 
-const draw = (newModule: Function, reRender: boolean = true): void => {
+const draw = (newModule: Function): void => {
   if (!platform) {
     insertDynamicRoot();
     try {
@@ -128,32 +94,6 @@ const draw = (newModule: Function, reRender: boolean = true): void => {
   }
 };
 
-export const renderNgError = debounce((error: Error) => {
-  const errorData = {
-    message: error.message,
-    stack: error.stack,
-  } as NgProvidedData;
-
-  const Module = getModule([ErrorComponent], [], [ErrorComponent], errorData, {});
-
-  draw(Module);
-});
-
-export const renderNoPreview = debounce(() => {
-  const Module = getModule(
-    [NoPreviewComponent],
-    [],
-    [NoPreviewComponent],
-    {
-      message: 'No Preview available.',
-      stack: '',
-    },
-    {}
-  );
-
-  draw(Module);
-});
-
-export const renderNgApp = debounce((story, reRender) => {
-  draw(initModule(story, reRender), reRender);
-});
+export const renderNgApp = (story: IGetStory) => {
+  draw(initModule(story));
+};
