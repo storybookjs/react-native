@@ -1,4 +1,6 @@
 import deprecate from 'util-deprecate';
+import addons from '@storybook/addons';
+
 import KnobManager from './KnobManager';
 
 export const manager = new KnobManager();
@@ -7,12 +9,8 @@ export function knob(name, options) {
   return manager.knob(name, options);
 }
 
-export function text(name, value, options = {}, groupId) {
-  return manager.knob(name, { type: 'text', value, options, groupId });
-}
-
-export function escapedText(name, value, options = {}, groupId) {
-  return text(name, value, { escapeHTML: true, ...options }, groupId);
+export function text(name, value, groupId) {
+  return manager.knob(name, { type: 'text', value, groupId });
 }
 
 export function boolean(name, value, groupId) {
@@ -76,4 +74,26 @@ export function button(name, callback, groupId) {
 
 export function files(name, accept, value = []) {
   return manager.knob(name, { type: 'files', accept, value });
+}
+
+export function makeDecorators(handler, defaultOptions = {}) {
+  function wrapperKnobs(options) {
+    const allOptions = { ...defaultOptions, ...options };
+
+    manager.setOptions(allOptions);
+    const channel = addons.getChannel();
+    manager.setChannel(channel);
+    channel.emit('addon:knobs:setOptions', allOptions);
+
+    return handler(channel, manager.knobStore);
+  }
+
+  return {
+    withKnobs(storyFn, context) {
+      return wrapperKnobs()(storyFn)(context);
+    },
+    withKnobsOptions(options = {}) {
+      return (storyFn, context) => wrapperKnobs(options)(storyFn)(context);
+    },
+  };
 }

@@ -162,13 +162,6 @@ const groupId = 'GROUP-ID1';
 const value = text(label, defaultValue, groupId);
 ```
 
-Text knob accepts `escapeHTML` option:
-```js
-text(label, defaultValue, {escapeHTML: true}, groupId)
-```
-This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
-You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
-
 ### boolean
 
 Allows you to get a boolean value from the user.
@@ -393,6 +386,9 @@ const stories = storiesOf('Storybook Knobs', module);
 stories.addDecorator(withKnobsOptions({
   debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
   timestamps: true // Doesn't emit events while user is typing.
+  escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
+                   // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
+
 }));
 ```
 

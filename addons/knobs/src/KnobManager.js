@@ -7,15 +7,40 @@ import KnobStore from './KnobStore';
 // This is used by _mayCallChannel to determine how long to wait to before triggering a panel update
 const PANEL_UPDATE_INTERVAL = 400;
 
-const getKnobValue = ({ value, options = {} }) => (options.escapeHTML ? escape(value) : value);
+const escapeStrings = obj => {
+  if (typeof obj === 'string') {
+    return escape(obj);
+  }
+  if (obj == null || typeof obj !== 'object') {
+    return obj;
+  }
+  if (Array.isArray(obj)) {
+    const newArray = obj.map(escapeStrings);
+    const didChange = newArray.some((newValue, key) => newValue !== obj[key]);
+    return didChange ? newArray : obj;
+  }
+  return Object.entries(obj).reduce((acc, [key, oldValue]) => {
+    const newValue = escapeStrings(oldValue);
+    return newValue === oldValue ? acc : { ...acc, [key]: newValue };
+  }, obj);
+};
 
 export default class KnobManager {
   constructor() {
     this.knobStore = new KnobStore();
+    this.options = {};
   }
 
   setChannel(channel) {
     this.channel = channel;
+  }
+
+  setOptions(options) {
+    this.options = options;
+  }
+
+  getKnobValue({ value }) {
+    return this.options.escapeHTML ? escapeStrings(value) : value;
   }
 
   knob(name, options) {
@@ -27,7 +52,7 @@ export default class KnobManager {
     // But, if the user changes the code for the defaultValue we should set
     // that value instead.
     if (existingKnob && deepEqual(options.value, existingKnob.defaultValue)) {
-      return getKnobValue(existingKnob);
+      return this.getKnobValue(existingKnob);
     }
 
     const defaultValue = options.value;
@@ -38,7 +63,7 @@ export default class KnobManager {
     };
 
     knobStore.set(name, knobInfo);
-    return getKnobValue(knobStore.get(name));
+    return this.getKnobValue(knobStore.get(name));
   }
 
   _mayCallChannel() {
