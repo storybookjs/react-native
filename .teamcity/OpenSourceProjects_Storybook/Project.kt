@@ -46,6 +46,24 @@ object Project : Project({
             storeSecureParamsOutsideOfVcs = true
         }
         feature {
+            type = "buildtype-graphs"
+            id = "PROJECT_EXT_132"
+            param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Build Duration (all stages)",
+                        "key": "BuildDuration"
+                      }
+                    ]
+                """.trimIndent())
+            param("format", "duration")
+            param("hideFilters", "")
+            param("title", "Build Duration")
+            param("defaultFilters", "")
+            param("seriesTitle", "Serie")
+        }
+        feature {
             id = "PROJECT_EXT_259"
             type = "IssueTracker"
             param("secure:password", "")

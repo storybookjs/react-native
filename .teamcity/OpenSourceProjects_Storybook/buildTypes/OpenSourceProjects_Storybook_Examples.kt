@@ -43,6 +43,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
                 set -e -x
                 
                 cd examples/official-storybook
+                rm -rf storybook-static
                 yarn build-storybook
             """.trimIndent()
             dockerImage = "node:latest"
@@ -99,6 +100,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             }
 
             artifacts {
+                cleanDestination = true
                 artifactRules = "cra.zip!** => examples/cra-kitchen-sink/storybook-static"
             }
         }
@@ -108,6 +110,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             }
 
             artifacts {
+                cleanDestination = true
                 artifactRules = "vue.zip!** => examples/vue-kitchen-sink/storybook-static"
             }
         }
@@ -117,6 +120,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             }
 
             artifacts {
+                cleanDestination = true
                 artifactRules = "angular.zip!** => examples/angular-cli/storybook-static"
             }
         }
@@ -126,6 +130,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             }
 
             artifacts {
+                cleanDestination = true
                 artifactRules = "polymer.zip!** => examples/polymer-cli/storybook-static"
             }
         }
@@ -135,6 +140,7 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
             }
 
             artifacts {
+                cleanDestination = true
                 artifactRules = "mithril.zip!** => examples/mithril-kitchen-sink/storybook-static"
             }
         }
