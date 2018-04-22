@@ -27,13 +27,12 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_CliTest)
     buildType(OpenSourceProjects_Storybook_Test)
     buildType(OpenSourceProjects_Storybook_Lint)
-    buildType(OpenSourceProjects_Storybook_CRA)
-    buildType(OpenSourceProjects_Storybook_Vue)
-    buildType(OpenSourceProjects_Storybook_Angular)
-    buildType(OpenSourceProjects_Storybook_Polymer)
-    buildType(OpenSourceProjects_Storybook_Mithril)
     buildType(OpenSourceProjects_Storybook_SmokeTests)
     buildType(OpenSourceProjects_Storybook_Chromatic)
+
+    allApps {
+        buildType(config)
+    }
 
     features {
         versionedSettings {
@@ -44,6 +43,24 @@ object Project : Project({
             showChanges = true
             settingsFormat = VersionedSettings.Format.KOTLIN
             storeSecureParamsOutsideOfVcs = true
+        }
+        feature {
+            type = "buildtype-graphs"
+            id = "PROJECT_EXT_132"
+            param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Build Duration (all stages)",
+                        "key": "BuildDuration"
+                      }
+                    ]
+                """.trimIndent())
+            param("format", "duration")
+            param("hideFilters", "")
+            param("title", "Build Duration")
+            param("defaultFilters", "")
+            param("seriesTitle", "Serie")
         }
         feature {
             id = "PROJECT_EXT_259"

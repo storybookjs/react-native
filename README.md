@@ -155,7 +155,7 @@ We welcome contributions to Storybook!
 
 > boolean check if unit tests all pass - uses jest
 
--   `yarn test:watch` - will run tests in watch-mode
+-   `yarn run test --core --watch` - will run core tests in watch-mode
 
 ### Backers
 
