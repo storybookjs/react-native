@@ -11,10 +11,11 @@ object OpenSourceProjects_Storybook_Examples : BuildType({
     id = "OpenSourceProjects_Storybook_Examples"
     name = "Examples"
 
-    artifactRules = StorybookApp.values().map { it.artifactPath }.joinToString("\n") + """
-        examples/official-storybook/storybook-static => official.zip
-        examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapshots
-    """.trimIndent()
+    artifactRules = """
+${StorybookApp.values().map { it.artifactPath }.joinToString("\n")}
+examples/official-storybook/storybook-static => official.zip
+examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapshots
+""".trimIndent()
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
