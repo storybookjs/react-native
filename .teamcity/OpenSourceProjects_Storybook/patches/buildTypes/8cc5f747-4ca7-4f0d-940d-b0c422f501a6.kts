@@ -30,6 +30,26 @@ changeBuildType("8cc5f747-4ca7-4f0d-940d-b0c422f501a6") {
             }
         }
 
+        expect("OpenSourceProjects_Storybook_Vue") {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                artifactRules = "vue.zip!** => examples/vue-kitchen-sink/storybook-static"
+            }
+        }
+        update("OpenSourceProjects_Storybook_Vue") {
+            snapshot {
+                onDependencyCancel = FailureAction.CANCEL
+            }
+
+            artifacts {
+                cleanDestination = true
+                artifactRules = "vue.zip!** => examples/vue-kitchen-sink/storybook-static"
+            }
+        }
+
         expect("OpenSourceProjects_Storybook_Angular") {
             snapshot {
                 onDependencyCancel = FailureAction.CANCEL
