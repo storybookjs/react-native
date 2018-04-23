@@ -14,14 +14,26 @@ export default class ActionLogger extends React.Component {
     super(props, ...args);
     this.state = { actions: [] };
     this._actionListener = action => this.addAction(action);
+    this._storyChangeListener = () => this.handleStoryChange();
   }
 
   componentDidMount() {
     this.props.channel.on(EVENT_ID, this._actionListener);
+    this.stopListeningOnStory = this.props.api.onStory(this._storyChangeListener);
   }
 
   componentWillUnmount() {
     this.props.channel.removeListener(EVENT_ID, this._actionListener);
+    if (this.stopListeningOnStory) {
+      this.stopListeningOnStory();
+    }
+  }
+
+  handleStoryChange() {
+    const { actions } = this.state;
+    if (actions.length > 0 && actions[0].options.clearOnStoryChange) {
+      this.clearActions();
+    }
   }
 
   addAction(action) {
@@ -54,6 +66,9 @@ export default class ActionLogger extends React.Component {
 
 ActionLogger.propTypes = {
   channel: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  api: PropTypes.shape({
+    onStory: PropTypes.func.isRequired,
+  }).isRequired,
 };
 ActionLogger.defaultProps = {
   channel: {},
