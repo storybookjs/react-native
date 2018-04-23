@@ -3,18 +3,16 @@ package OpenSourceProjects_Storybook.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
-enum class StorybookApp(val appName: String, val exampleDir: String, val branch: String? = null) {
+enum class StorybookApp(val appName: String, val exampleDir: String, val merged: Boolean = true) {
     CRA("CRA", "cra-kitchen-sink"),
     VUE("Vue", "vue-kitchen-sink"),
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),
     MITHRIL("Mithril", "mithril-kitchen-sink"),
-    HTML("HTML", "html-kitchen-sink", "pull/3475");
+    HTML("HTML", "html-kitchen-sink", false);
 
     val lowerName = appName.toLowerCase()
 
@@ -25,14 +23,12 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val branch:
         id = "OpenSourceProjects_Storybook_$appName"
         name = appName
 
+        if (!merged) return
+
         artifactRules = artifactPath
 
         vcs {
             root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
-
-            if (branch != null) {
-                buildDefaultBranch = false
-            }
         }
 
         steps {
@@ -66,15 +62,6 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val branch:
                 comparison = BuildFailureOnMetric.MetricComparison.LESS
                 compareTo = build {
                     buildRule = lastSuccessful()
-                }
-            }
-        }
-
-        if (branch != null) {
-            triggers {
-                vcs {
-                    quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-                    branchFilter = "+:$branch"
                 }
             }
         }
