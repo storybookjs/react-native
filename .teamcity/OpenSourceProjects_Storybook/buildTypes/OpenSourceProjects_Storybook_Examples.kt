@@ -91,16 +91,14 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
 
     dependencies {
         allApps {
-            if (branch == null) {
-                dependency(config) {
-                    snapshot {
-                        onDependencyCancel = FailureAction.CANCEL
-                    }
+            dependency(config) {
+                snapshot {
+                    onDependencyCancel = FailureAction.CANCEL
+                }
 
-                    artifacts {
-                        cleanDestination = true
-                        artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
-                    }
+                artifacts {
+                    cleanDestination = true
+                    artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
                 }
             }
         }
