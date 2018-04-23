@@ -63,9 +63,10 @@ export default class ActionLogger extends React.Component {
 
 ActionLogger.propTypes = {
   channel: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  api: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  api: PropTypes.shape({
+    onStory: PropTypes.func.isRequired,
+  }).isRequired,
 };
 ActionLogger.defaultProps = {
   channel: {},
-  api: {},
 };
