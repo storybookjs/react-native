@@ -92,10 +92,6 @@ jobs:
             cd examples/mithril-kitchen-sink
             yarn build-storybook
       - run:
-          name: "Visually test storybook"
-          command: |
-            yarn chromatic
-      - run:
           name: "Run image snapshots"
           command: yarn test --image
       - store_artifacts:
