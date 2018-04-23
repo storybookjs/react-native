@@ -19,11 +19,14 @@ export default class ActionLogger extends React.Component {
 
   componentDidMount() {
     this.props.channel.on(EVENT_ID, this._actionListener);
-    this.props.api.onStory(this._storyChangeListener);
+    this.stopListeningOnStory = this.props.api.onStory(this._storyChangeListener);
   }
 
   componentWillUnmount() {
     this.props.channel.removeListener(EVENT_ID, this._actionListener);
+    if (this.stopListeningOnStory) {
+      this.stopListeningOnStory();
+    }
   }
 
   handleStoryChange() {
