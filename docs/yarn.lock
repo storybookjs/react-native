@@ -4655,9 +4655,9 @@ gatsby-remark-autolink-headers@^1.4.17:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.31:
-  version "1.5.31"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.31.tgz#c24449c7597a37fecffab9fbc060c77eca19cc32"
+gatsby-remark-copy-linked-files@^1.5.32:
+  version "1.5.32"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.32.tgz#cc54437710d5c3c153c2f681adcd487f468abfd1"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
@@ -4665,7 +4665,7 @@ gatsby-remark-copy-linked-files@^1.5.31:
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     path-is-inside "^1.0.2"
-    probe-image-size "^3.2.0"
+    probe-image-size "^4.0.0"
     unist-util-visit "^1.1.1"
 
 gatsby-remark-images@^1.5.61:
