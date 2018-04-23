@@ -12,7 +12,7 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
     ANGULAR("Angular", "angular-cli"),
     POLYMER("Polymer", "polymer-cli"),
     MITHRIL("Mithril", "mithril-kitchen-sink"),
-    HTML("HTML", "html-kitchen-sink", false);
+    HTML("HTML", "html-kitchen-sink");
 
     val lowerName = appName.toLowerCase()
 
