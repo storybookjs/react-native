@@ -54,7 +54,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.4.0",
     "codecov": "^3.0.0",
-    "codelyzer": "^4.2.1",
+    "codelyzer": "^4.3.0",
     "commander": "^2.15.1",
     "concurrently": "^3.5.1",
     "cross-env": "^5.1.4",
