@@ -25,7 +25,7 @@
     "babel-loader": "^6.4.1",
     "bootstrap": "^3.3.7",
     "gatsby": "^1.9.252",
-    "gatsby-link": "^1.6.40",
+    "gatsby-link": "^1.6.41",
     "gatsby-plugin-sharp": "^1.6.42",
     "gatsby-remark-autolink-headers": "^1.4.16",
     "gatsby-remark-copy-linked-files": "^1.5.31",
