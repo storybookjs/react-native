@@ -29,7 +29,7 @@
     "@storybook/components": "4.0.0-alpha.3",
     "babel-runtime": "^6.26.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.12.3",
+    "glamorous": "^4.12.4",
     "global": "^4.3.2",
     "prop-types": "^15.6.1"
   },
