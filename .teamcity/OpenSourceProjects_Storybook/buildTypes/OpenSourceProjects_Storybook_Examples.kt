@@ -96,9 +96,11 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
                     onDependencyCancel = FailureAction.CANCEL
                 }
 
-                artifacts {
-                    cleanDestination = true
-                    artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                if (merged) {
+                    artifacts {
+                        cleanDestination = true
+                        artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                    }
                 }
             }
         }

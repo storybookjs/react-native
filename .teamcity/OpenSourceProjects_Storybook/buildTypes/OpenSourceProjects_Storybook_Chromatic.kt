@@ -51,8 +51,11 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
                     onDependencyCancel = FailureAction.CANCEL
                 }
 
-                artifacts {
-                    artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                if (merged) {
+                    artifacts {
+                        cleanDestination = true
+                        artifactRules = "$lowerName.zip!** => examples/$exampleDir/storybook-static"
+                    }
                 }
             }
         }

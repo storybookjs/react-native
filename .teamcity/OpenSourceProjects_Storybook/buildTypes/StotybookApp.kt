@@ -18,12 +18,12 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
 
     val artifactPath = "examples/$exampleDir/storybook-static => $lowerName.zip"
 
-    val config = object : BuildType({
+    val config = object : BuildType(init@{
         uuid = "8cc5f747-4ca7-4f0d-940d-b0c422f501a6-$lowerName"
         id = "OpenSourceProjects_Storybook_$appName"
         name = appName
 
-        if (!merged) return
+        if (!merged) return@init
 
         artifactRules = artifactPath
 
