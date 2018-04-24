@@ -17,6 +17,7 @@
     "@storybook/addon-centered": "^4.0.0-alpha.3",
     "@storybook/addon-knobs": "^4.0.0-alpha.3",
     "@storybook/addon-links": "^4.0.0-alpha.3",
+    "@storybook/addon-notes": "^4.0.0-alpha.3",
     "@storybook/addon-options": "^4.0.0-alpha.3",
     "@storybook/addon-storysource": "^4.0.0-alpha.3",
     "@storybook/addon-viewport": "^4.0.0-alpha.3",
