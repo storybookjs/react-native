@@ -18,7 +18,7 @@ export interface IStoryContext {
   parameters: any;
 }
 
-export type IStory = {
+export interface IStory {
   props?: ICollection;
   moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
