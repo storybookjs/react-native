@@ -18,6 +18,7 @@
     "@storybook/client-logger": "4.0.0-alpha.2",
     "@storybook/components": "4.0.0-alpha.2",
     "babel-runtime": "^6.26.0",
+    "core-js": "2.5.5",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.1",
     "global": "^4.3.2",
