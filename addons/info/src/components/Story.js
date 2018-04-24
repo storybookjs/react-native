@@ -8,7 +8,6 @@ import { baseFonts } from '@storybook/components';
 import { ThemeProvider } from 'glamorous';
 
 import marksy from 'marksy';
-import TurndownService from 'turndown';
 
 import Node from './Node';
 import { Pre } from './markdown';
@@ -102,10 +101,6 @@ const stylesheet = {
     margin: '20px 0 0 0',
   },
 };
-
-const turndownService = new TurndownService({
-  headingStyle: 'atx',
-});
 
 class Story extends React.Component {
   constructor(...args) {
@@ -228,11 +223,8 @@ class Story extends React.Component {
         </div>
       );
     }
-    let { info } = this.props;
-    if (/^<[a-z][\s\S]*>/i.test(info)) {
-      info = turndownService.turndown(info);
-    }
-    const lines = info.split('\n');
+
+    const lines = this.props.info.split('\n');
     while (lines[0].trim() === '') {
       lines.shift();
     }
