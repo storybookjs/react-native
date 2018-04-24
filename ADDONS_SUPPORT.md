@@ -1,11 +1,11 @@
 ## Addon / Framework Support Table
 
-| |[React](app/react)|[React Native](app/react-native)|[Vue](app/vue)|[Angular](app/angular)| [Polymer](app/polymer)| [Mithril](app/mithril)| [Mithril](app/html)|
+| |[React](app/react)|[React Native](app/react-native)|[Vue](app/vue)|[Angular](app/angular)| [Polymer](app/polymer)| [Mithril](app/mithril)| [HTML](app/html)|
 | ----------- |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |[a11y](addons/a11y)              |+| | | | | | |
 |[actions](addons/actions)        |+|+|+|+|+|+|+|
 |[background](addons/background)  |+| | | | |+| |
-|[centered](addons/centered)      |+| |+| | |+| |
+|[centered](addons/centered)      |+| |+| | |+|+|
 |[events](addons/events)          |+| | | | | | |
 |[graphql](addons/graphql)        |+| | | | | | |
 |[info](addons/info)              |+| | | | | | |
