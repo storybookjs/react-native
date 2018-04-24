@@ -310,29 +310,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                   }
                 }
               >
-                <H1
-                  context={Object {}}
-                  id="html-mock"
-                  key="0"
-                >
-                  <h1
-                    id="html-mock"
-                    style={
-                      Object {
-                        "WebkitFontSmoothing": "antialiased",
-                        "borderBottom": "1px solid #eee",
-                        "color": "#444",
-                        "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-                        "fontSize": "40px",
-                        "fontWeight": 600,
-                        "margin": 0,
-                        "padding": 0,
-                      }
+                <div
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<h1>HTML Mock</h1>",
                     }
-                  >
-                    HTML Mock
-                  </h1>
-                </H1>
+                  }
+                  key="0"
+                />
               </div>
               <div>
                 <h1

@@ -1186,12 +1186,11 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
         <div
           style="margin-bottom:0"
         >
-          <h1
-            id="html-mock"
-            style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;border-bottom:1px solid #eee;font-weight:600;margin:0;padding:0;font-size:40px"
-          >
-            HTML Mock
-          </h1>
+          <div>
+            <h1>
+              HTML Mock
+            </h1>
+          </div>
         </div>
         <div>
           <h1
