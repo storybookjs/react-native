@@ -29,7 +29,6 @@ export default function(storyFn) {
   if (typeof component === 'string') {
     inner.innerHTML = component;
   } else if (component instanceof Node) {
-    inner.innerHTML = '';
     inner.appendChild(component);
   } else {
     return component;
