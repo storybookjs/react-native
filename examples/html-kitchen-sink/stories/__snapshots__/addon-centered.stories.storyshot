@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Centered button in center 1`] = `
+<div
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+>
+  <div
+    style="margin: auto;"
+  >
+    <button>
+      I am a Button !
+    </button>
+  </div>
+</div>
+`;

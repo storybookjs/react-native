@@ -32,7 +32,7 @@ storiesOf('Demo', module)
   .add('heading', () => '<h1>Hello World</h1>')
   .add('button', () => {
     const button = document.createElement('button');
-    button.innerText = 'Hello Button';
+    button.innerHTML = 'Hello Button';
     button.addEventListener('click', action('Click'));
     return button;
   });
