@@ -22,11 +22,9 @@ export function button(name, callback) {
 }
 
 function prepareComponent({ getStory, context }) {
-  const component = getStory(context);
-
   registerKnobs();
 
-  return component;
+  return getStory(context);
 }
 
 export const htmlHandler = () => getStory => context => prepareComponent({ getStory, context });

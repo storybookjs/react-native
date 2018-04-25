@@ -5,10 +5,10 @@ import { subscriptionsStore } from '@storybook/core/client';
 import { forceReRender } from '@storybook/html';
 import { manager } from '../base';
 
-const channel = addons.getChannel();
 const { knobStore } = manager;
 
 function setPaneKnobs(timestamp = +new Date()) {
+  const channel = addons.getChannel();
   channel.emit('addon:knobs:setKnobs', { knobs: knobStore.getAll(), timestamp });
 }
 
@@ -34,10 +34,12 @@ function resetKnobs() {
 
   forceReRender();
 
+  const channel = addons.getChannel();
   setPaneKnobs(channel, knobStore, false);
 }
 
 function disconnectCallbacks() {
+  const channel = addons.getChannel();
   channel.removeListener('addon:knobs:knobChange', knobChanged);
   channel.removeListener('addon:knobs:knobClick', knobClicked);
   channel.removeListener('addon:knobs:reset', resetKnobs);
@@ -45,6 +47,7 @@ function disconnectCallbacks() {
 }
 
 function connectCallbacks() {
+  const channel = addons.getChannel();
   channel.on('addon:knobs:knobChange', knobChanged);
   channel.on('addon:knobs:knobClick', knobClicked);
   channel.on('addon:knobs:reset', resetKnobs);
