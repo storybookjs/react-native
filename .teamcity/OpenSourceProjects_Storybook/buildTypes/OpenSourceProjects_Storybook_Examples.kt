@@ -92,9 +92,7 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
     dependencies {
         allApps {
             dependency(config) {
-                snapshot {
-                    onDependencyCancel = FailureAction.CANCEL
-                }
+                snapshot {}
 
                 if (merged) {
                     artifacts {

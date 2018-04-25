@@ -47,9 +47,7 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
     dependencies {
         allApps {
             dependency(config) {
-                snapshot {
-                    onDependencyCancel = FailureAction.CANCEL
-                }
+                snapshot {}
 
                 if (merged) {
                     artifacts {
