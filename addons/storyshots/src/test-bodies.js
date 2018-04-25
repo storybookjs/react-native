@@ -42,7 +42,7 @@ export function shallowSnapshot({ story, context, renderShallowTree, options = {
 }
 
 export const renderWithOptions = options => ({ story, context, renderTree }) => {
-  const result = renderTree(story, context, { options });
+  const result = renderTree(story, context, options);
 
   if (typeof result.then === 'function') {
     return result;

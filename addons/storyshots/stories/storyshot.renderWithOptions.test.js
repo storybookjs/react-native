@@ -1,8 +1,8 @@
 import path from 'path';
-import initStoryshots, { renderOnly } from '../src';
+import initStoryshots, { renderWithOptions } from '../src';
 
 initStoryshots({
   framework: 'react',
   configPath: path.join(__dirname, '..', '.storybook'),
-  test: renderOnly,
+  test: renderWithOptions({}),
 });
