@@ -85,7 +85,7 @@ storiesOf('Addons|Actions', module)
       </div>
     );
   })
-  .add('configureActions', () => {
+  .add('configureActionsDepth', () => {
     configureActions({
       depth: 2,
     });
@@ -105,4 +105,16 @@ storiesOf('Addons|Actions', module)
         Object (configured clearOnStoryChange: false)
       </Button>
     </div>
-  ));
+  ))
+  .add('Limit Action Output', () => {
+    configureActions({
+      limit: 2,
+    });
+
+    return (
+      <div>
+        <Button onClick={() => action('False')(false)}>False</Button>
+        <Button onClick={() => action('True')(true)}>True</Button>
+      </div>
+    );
+  });

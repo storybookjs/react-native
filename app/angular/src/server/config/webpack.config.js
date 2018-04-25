@@ -17,7 +17,7 @@ import { includePaths, excludePaths, nodeModulesPaths, loadEnv, nodePaths } from
 import babelLoaderConfig from './babel';
 import { version } from '../../../package.json';
 
-export default function(configDir) {
+export default function(configDir, quiet) {
   const config = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
@@ -60,12 +60,13 @@ export default function(configDir) {
       new CaseSensitivePathsPlugin(),
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
       new webpack.ProgressPlugin(),
+      quiet ? null : new webpack.ProgressPlugin(),
       new webpack.ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
         path.resolve(__dirname, '../src')
       ),
       new Dotenv({ silent: true }),
-    ],
+    ].filter(Boolean),
     module: {
       rules: [
         {
