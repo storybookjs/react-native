@@ -21,6 +21,7 @@ Here are all those options:
       -h, --host [string]           Host to run Storybook
       -s, --static-dir <dir-names>  Directory where to load static files from, comma-separated list
       -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
+      --quiet                       Suppress verbose build output
 
 ## For build-storybook
 
