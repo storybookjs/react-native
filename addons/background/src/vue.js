@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 
-const vueHandler = (channel, backgrounds) => (getStory, context) => ({
+export const vueHandler = (channel, backgrounds) => (getStory, context) => ({
   data() {
     return {
       context,

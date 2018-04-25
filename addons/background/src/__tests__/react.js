@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { BackgroundDecorator } from '../index';
+import { BackgroundDecorator } from '../react';
 
 const EventEmitter = require('events');
 
