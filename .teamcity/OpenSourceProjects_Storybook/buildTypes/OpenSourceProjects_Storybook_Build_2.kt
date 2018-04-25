@@ -55,37 +55,37 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
     dependencies {
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Docs) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Examples) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Lint) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_ReactNative) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_SmokeTests) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Test) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Chromatic) {
             snapshot {
-                onDependencyCancel = FailureAction.CANCEL
+                onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
     }
