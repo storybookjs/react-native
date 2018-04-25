@@ -33,13 +33,13 @@ If you are using Create React App, it's already configured for Jest. You just ne
 
 If you aren't familiar with Jest, here are some resources:
 
--   [Getting Started - Jest Official Documentation](https://facebook.github.io/jest/docs/en/getting-started.html) 
+-   [Getting Started - Jest Official Documentation](https://facebook.github.io/jest/docs/en/getting-started.html)
 -   [Javascript Testing with Jest - Egghead](https://egghead.io/lessons/javascript-test-javascript-with-jest). ***paid content***
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
 ### Configure Jest for React
-StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but 
+StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
@@ -47,7 +47,7 @@ npm install --save-dev react-test-renderer
 ```
 
 ### Configure Jest for Angular
-StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but 
+StoryShots addon for Angular is dependent on [jest-preset-angular](https://github.com/thymikee/jest-preset-angular), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
 
 ```sh
@@ -69,13 +69,13 @@ module.exports = {
 };
 ```
 ### Configure Jest for Vue
-StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but 
+StoryShots addon for Vue is dependent on [jest-vue-preprocessor](https://github.com/vire/jest-vue-preprocessor), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
- 
+
  ```sh
  npm install --save-dev jest-vue-preprocessor
  ```
- 
+
 If you already use Jest for testing your vue app - probably you already have the needed jest configuration.
 Anyway you can add these lines to your jest config:
 ```js
@@ -92,7 +92,7 @@ module.exports = {
 ```
 
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
-Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them. 
+Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them.
 
 `dependencies` - will installed an exact version of the particular dep - Storyshots can work with different versions of the same framework (let's say React v16 and React v15), that have to be compatible with a version of its plugin (react-test-renderer).
 
@@ -101,7 +101,7 @@ Storyshots addon is currently supporting React, Angular and Vue. Each framework 
 `peerDependencies` - listing all the deps in peer will trigger warnings during the installation - we don't want users to install unneeded deps by hand.
 
 `optionalPeerDependencies` - unfortunately there is nothing like this =(
-    
+
 For more information read npm [docs](https://docs.npmjs.com/files/package.json#dependencies)
 
 ## Configure Storyshots for HTML snapshots
@@ -152,7 +152,7 @@ initStoryshots({
 
 Internally, it uses [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
 
-When willing to generate and compare image snapshots for your stories, you have two options: 
+When willing to generate and compare image snapshots for your stories, you have two options:
 - Have a storybook running (ie. accessible via http(s), for instance using `yarn run storybook`)
 - Have a static build of the storybook (for instance, using `yarn run build-storybook`)
 
@@ -160,7 +160,7 @@ Then you will need to reference the storybook URL (`file://...` if local, `http(
 
 ### Using default values for _imageSnapshots_
 
-Then you can either create a new Storyshots instance or edit the one you previously used: 
+Then you can either create a new Storyshots instance or edit the one you previously used:
 ```js
 import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 
@@ -174,7 +174,7 @@ Internally here are the steps:
 
 ### Specifying the storybook URL
 
-If you want to set specific storybook URL, you can specify via the `storybookUrl` parameter, see below: 
+If you want to set specific storybook URL, you can specify via the `storybookUrl` parameter, see below:
 ```js
 import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
 
@@ -250,7 +250,7 @@ You can find a working example of this in the [official-storybook](https://githu
 
 ### Integrate image storyshots with [Create React App](https://github.com/facebookincubator/create-react-app)
 
-You have two options here, you can either: 
+You have two options here, you can either:
 
 - Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
 
@@ -258,10 +258,10 @@ You have two options here, you can either:
 
     A more robust approach would be to separate existing test files ran by create-react-app (anything `(test|spec).js` suffixed files) from the test files to run storyshots with image snapshots.
     This use case can be achieved by using a custom name for the test file, ie something like `image-storyshots.runner.js`. This file will contains the `initStoryshots` call with image snapshots configuration.
-    Then you will create a separate script entry in your package.json, for instance 
+    Then you will create a separate script entry in your package.json, for instance
     ```json
     {
-        "scripts": { 
+        "scripts": {
             "image-snapshots" : "jest image-storyshots.runner.js --config path/to/custom/jest.config.json"
         }
     }
@@ -278,7 +278,7 @@ The browser opens a page (either using the static build of storybook or a runnin
 
 If you run your test without either the static build or a running instance, this wont work.
 
-To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date. 
+To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date.
 This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
 If you run the image snapshots against a running Storybook in dev mode, you don't have to care about being up-to-date because the dev-server is watching changes and rebuilds automatically.
 
@@ -412,14 +412,17 @@ Apart from the default export (`initStoryshots`), Storyshots also exports some n
 
 The default, render the story as normal and take a Jest snapshot.
 
-### `renderOnly(options)`
+### `renderOnly`
 
-Just render the story, don't check the output at all (useful if you just want to ensure it doesn't error). Also allows you to specify
-a set of options for the test renderer. Same as the options for `snapshotWithOptions(options)`.
+Just render the story, don't check the output at all (useful if you just want to ensure it doesn't error)
 
 ### `snapshotWithOptions(options)`
 
 Like the default, but allows you to specify a set of options for the test renderer. [See for example here](https://github.com/storybooks/storybook/blob/b915b5439786e0edb17d7f5ab404bba9f7919381/examples/test-cra/src/storyshots.test.js#L14-L16).
+
+### `renderWithOptions(options)`
+
+Like the default, but allows you to specify a set of options for the renderer. See above.
 
 ### `multiSnapshotWithOptions(options)`
 
