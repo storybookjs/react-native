@@ -30,6 +30,10 @@ storiesOf('Welcome', module)
 
 storiesOf('Demo', module)
   .add('heading', () => '<h1>Hello World</h1>')
+  .add(
+    'headings',
+    () => '<h1>Hello World</h1><h2>Hello World</h2><h3>Hello World</h3><h4>Hello World</h4>'
+  )
   .add('button', () => {
     const button = document.createElement('button');
     button.innerHTML = 'Hello Button';
