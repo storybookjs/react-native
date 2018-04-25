@@ -1,27 +1,34 @@
 import { document, Node } from 'global';
+import styles from './styles';
 
-const style = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  bottom: 0,
-  right: 0,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  overflow: 'auto',
-};
+const INNER_ID = 'sb-addon-centered-inner';
+const WRAPPER_ID = 'sb-addon-centered-wrapper';
 
-const innerStyle = {
-  margin: 'auto',
-};
+function getOrCreate(id, style) {
+  const elementOnDom = document.getElementById(id);
+
+  if (elementOnDom) {
+    return elementOnDom;
+  }
+
+  const element = document.createElement('div');
+  element.setAttribute('id', id);
+  Object.assign(element.style, style);
+
+  return element;
+}
+
+function getInnerDiv() {
+  return getOrCreate(INNER_ID, styles.innerStyle);
+}
+
+function getWrapperDiv() {
+  return getOrCreate(WRAPPER_ID, styles.style);
+}
 
 export default function(storyFn) {
-  const inner = document.createElement('div');
-  Object.assign(inner.style, innerStyle);
-
-  const wrapper = document.createElement('div');
-  Object.assign(wrapper.style, style);
+  const inner = getInnerDiv();
+  const wrapper = getWrapperDiv();
   wrapper.appendChild(inner);
 
   const component = storyFn();
@@ -29,6 +36,7 @@ export default function(storyFn) {
   if (typeof component === 'string') {
     inner.innerHTML = component;
   } else if (component instanceof Node) {
+    inner.innerHTML = '';
     inner.appendChild(component);
   } else {
     return component;
