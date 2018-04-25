@@ -137,6 +137,19 @@ exports[`Storyshots Addons|Actions Hello World 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
+<div>
+  <p>
+    Moving away from this story will persist the action logger
+  </p>
+  <button
+    class="css-1yjiefr"
+  >
+    Object (configured clearOnStoryChange: false)
+  </button>
+</div>
+`;
+
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 <button
   class="css-1yjiefr"

@@ -18,6 +18,7 @@ export default function action(name, options = {}) {
     channel.emit(EVENT_ID, {
       id,
       data: { name, args },
+      options: actionOptions,
     });
   };
 

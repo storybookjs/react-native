@@ -97,4 +97,12 @@ storiesOf('Addons|Actions', module)
         Object (configured depth: 2)
       </Button>
     );
-  });
+  })
+  .add('Persisting the action logger', () => (
+    <div>
+      <p>Moving away from this story will persist the action logger</p>
+      <Button onClick={action('clear-action-logger', { clearOnStoryChange: false })}>
+        Object (configured clearOnStoryChange: false)
+      </Button>
+    </div>
+  ));
