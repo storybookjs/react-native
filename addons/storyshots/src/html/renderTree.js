@@ -10,6 +10,10 @@ function getRenderedTree(story, context) {
   const section = document.createElement('section');
   section.innerHTML = component;
 
+  if (section.childElementCount > 1) {
+    return section;
+  }
+
   return section.firstChild;
 }
 
