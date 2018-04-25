@@ -50,6 +50,10 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
             }
             param("github_oauth_user", "Hypnosphi")
         }
+
+        merge {
+            branchFilter = "+:dependencies.io-*"
+        }
     }
 
     dependencies {

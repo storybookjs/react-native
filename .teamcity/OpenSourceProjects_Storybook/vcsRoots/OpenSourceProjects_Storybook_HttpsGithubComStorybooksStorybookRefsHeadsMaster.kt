@@ -12,6 +12,7 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
         +:refs/(pull/*)/head
         +:refs/heads/(release/3.4)
         +:refs/heads/(master)
+        +:refs/heads/(dependencies.io-*)
     """.trimIndent()
     agentCleanPolicy = GitVcsRoot.AgentCleanPolicy.NEVER
     authMethod = uploadedKey {
