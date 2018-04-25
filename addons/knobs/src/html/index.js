@@ -1,4 +1,4 @@
-import WrapStory from './WrapStory';
+import registerKnobs from './registerKnobs';
 
 import {
   knob,
@@ -21,13 +21,14 @@ export function button(name, callback) {
   return manager.knob(name, { type: 'button', value: Date.now(), callback, hideLabel: true });
 }
 
-function prepareComponent({ getStory, context, channel, knobStore }) {
-  const wrapper = new WrapStory(getStory(context), channel, context, getStory, knobStore);
+function prepareComponent({ getStory, context }) {
+  const component = getStory(context);
 
-  return wrapper.getElement();
+  registerKnobs();
+
+  return component;
 }
 
-export const htmlHandler = (channel, knobStore) => getStory => context =>
-  prepareComponent({ getStory, context, channel, knobStore });
+export const htmlHandler = () => getStory => context => prepareComponent({ getStory, context });
 
 export const { withKnobs, withKnobsOptions } = makeDecorators(htmlHandler, { escapeHTML: true });
