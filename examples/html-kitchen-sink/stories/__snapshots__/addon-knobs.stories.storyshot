@@ -5,7 +5,7 @@ exports[`Storyshots Addons|Knobs simple 1`] = `
   id="sb-knobs-addon-wrapper"
 >
   <div>
-    Hello
+    Hello 1
   </div>
 </div>
 `;
