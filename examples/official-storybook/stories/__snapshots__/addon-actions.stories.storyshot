@@ -137,6 +137,21 @@ exports[`Storyshots Addons|Actions Hello World 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
+<div>
+  <button
+    class="css-1yjiefr"
+  >
+    False
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    True
+  </button>
+</div>
+`;
+
 exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
 <div>
   <p>
@@ -158,7 +173,7 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions configureActions 1`] = `
+exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 <button
   class="css-1yjiefr"
 >
