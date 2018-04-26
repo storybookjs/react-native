@@ -6,6 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailu
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.merge
 
 object OpenSourceProjects_Storybook_Build_2 : BuildType({
     uuid = "2b9c73e2-0a6e-47ca-95ae-729cac42be2b"
