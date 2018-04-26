@@ -12880,6 +12880,25 @@ react-chromatic@^0.8.2:
     node-ask "^1.0.1"
     tree-kill "^1.1.0"
 
+react-chromatic@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-chromatic/-/react-chromatic-0.8.3.tgz#73200fb357e64436d3822950f88b7b10f257c78c"
+  dependencies:
+    apollo-fetch "^0.6.0"
+    babel-runtime "^6.26.0"
+    commander "^2.9.0"
+    debug "^3.0.1"
+    denodeify "^1.2.1"
+    ejson "^2.1.2"
+    env-ci "^1.5.0"
+    es6-error "^4.0.2"
+    isomorphic-fetch "^2.2.1"
+    jsdom "^11.5.1"
+    jsonfile "^4.0.0"
+    localtunnel "^1.8.3"
+    node-ask "^1.0.1"
+    tree-kill "^1.1.0"
+
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-clone-referenced-element/-/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
