@@ -54,6 +54,8 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
         }
         merge {
             branchFilter = "+:dependencies.io-*"
+            destinationBranch = "<default>"
+            commitMessage = "Merge branch '%teamcity.build.branch%'"
         }
     }
 
