@@ -70,31 +70,16 @@ storiesOf("Button", module)
   .add("with text", () => <button>Click me</button>);
 ```
 
-In the case of Vue, use it similarly to React!
-
-```js
-import { storiesOf } from '@storybook/vue';
-import backgrounds from '@storybook/addon-backgrounds';
-
-storiesOf('Addon|Backgrounds', module)
-  .addDecorator(
-    backgrounds([
-      { name: 'twitter', value: '#00aced' },
-      { name: 'facebook', value: '#3b5998', default: true },
-    ])
-  )
-  .add('story 1', () => {
-    const content = 'You should be able to switch backgrounds for this story';
-
-    return {
-      template: `<button>${content}</button>`,
-    };
-  })
-```
-
 > In the case of Mithril, use these imports:
 >
 > ```js
 > import { storiesOf } from '@storybook/mithril';
 > import backgrounds from "@storybook/addon-backgrounds/mithril";
+> ```
+
+> In the case of Vue, use these imports:
+>
+> ```js
+> import { storiesOf } from '@storybook/vue';
+> import backgrounds from "@storybook/addon-backgrounds/vue";
 > ```

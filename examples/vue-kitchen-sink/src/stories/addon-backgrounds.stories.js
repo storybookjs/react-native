@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import backgrounds from '@storybook/addon-backgrounds';
+import backgrounds from '@storybook/addon-backgrounds/vue';
 
 storiesOf('Addon|Backgrounds', module)
   .addDecorator(
