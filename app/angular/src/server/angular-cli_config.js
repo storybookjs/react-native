@@ -4,7 +4,7 @@ import { logger } from '@storybook/node-logger';
 
 function isAngularCliInstalled() {
   try {
-    require.resolve('@angular/cli');
+    require.resolve('@angular-devkit/build-angular');
     return true;
   } catch (e) {
     return false;
@@ -21,12 +21,20 @@ export function getAngularCliWebpackConfigOptions(dirToSearch, appIndex = 0) {
     throw new Error('.angular-cli.json must have apps entry.');
   }
   const appConfig = cliConfig.apps[appIndex];
+  // const { scripts, styles, root } = appConfig;
+  const { root, styles, scripts } = appConfig;
 
   const cliWebpackConfigOptions = {
+    root,
     projectRoot: dirToSearch,
     appConfig,
     buildOptions: {
       outputPath: 'outputPath', // It's dummy value to avoid to Angular CLI's error
+      scripts,
+      styles,
+    },
+    tsConfig: {
+      options: {},
     },
     supportES2015: false,
   };
@@ -43,7 +51,8 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   }
 
   // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const ngcliConfigFactory = require('@angular/cli/models/webpack-configs');
+  const ngcliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
+  // const ngcliConfigFactory = require('C:\\Projects\\storybook2\\node_modules\\@angular-devkit\\build-angular\\src\\angular-cli-files\\models\\webpack-configs\\index.js');
 
   let cliCommonConfig;
   let cliStyleConfig;

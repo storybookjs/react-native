@@ -62,7 +62,7 @@ export default function(configDir, quiet) {
       new webpack.ProgressPlugin(),
       quiet ? null : new webpack.ProgressPlugin(),
       new webpack.ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
+        /angular(\\|\/)core(\\|\/)(@angular|esm5|fesm5)/,
         path.resolve(__dirname, '../src')
       ),
       new Dotenv({ silent: true }),
