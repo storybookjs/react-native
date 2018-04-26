@@ -52,6 +52,7 @@ Array [
 
 exports[`PropTable multiLineText should include all propTypes by default 1`] = `
 <PropTable
+  excludedPropTypes={Array []}
   maxPropArrayLength={5}
   maxPropObjectKeys={5}
   maxPropStringLength={5}
