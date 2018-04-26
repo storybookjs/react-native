@@ -38,12 +38,12 @@
     "@storybook/angular": "4.0.0-alpha.3",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "^2.0.3",
-    "@types/node": "~9.6.5",
+    "@types/node": "~9.6.6",
     "babel-core": "^6.26.0",
     "global": "^4.3.2",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.0",
+    "karma": "~2.0.2",
     "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^1.4.2",
@@ -51,6 +51,6 @@
     "karma-jasmine-html-reporter": "^1.0.0",
     "protractor": "~5.3.1",
     "ts-node": "~6.0.0",
-    "typescript": "^2.8.1"
+    "typescript": "^2.8.3"
   }
 }
