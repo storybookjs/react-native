@@ -21,7 +21,6 @@ export function getAngularCliWebpackConfigOptions(dirToSearch, appIndex = 0) {
     throw new Error('.angular-cli.json must have apps entry.');
   }
   const appConfig = cliConfig.apps[appIndex];
-  // const { scripts, styles, root } = appConfig;
   const { root, styles, scripts } = appConfig;
 
   const cliWebpackConfigOptions = {
@@ -52,7 +51,6 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
 
   // eslint-disable-next-line global-require, import/no-extraneous-dependencies
   const ngcliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
-  // const ngcliConfigFactory = require('C:\\Projects\\storybook2\\node_modules\\@angular-devkit\\build-angular\\src\\angular-cli-files\\models\\webpack-configs\\index.js');
 
   let cliCommonConfig;
   let cliStyleConfig;
