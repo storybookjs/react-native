@@ -1,4 +1,6 @@
 import deprecate from 'util-deprecate';
+import addons from '@storybook/addons';
+
 import KnobManager from './KnobManager';
 
 export const manager = new KnobManager();
@@ -72,4 +74,26 @@ export function button(name, callback, groupId) {
 
 export function files(name, accept, value = []) {
   return manager.knob(name, { type: 'files', accept, value });
+}
+
+export function makeDecorators(handler, defaultOptions = {}) {
+  function wrapperKnobs(options) {
+    const allOptions = { ...defaultOptions, ...options };
+
+    manager.setOptions(allOptions);
+    const channel = addons.getChannel();
+    manager.setChannel(channel);
+    channel.emit('addon:knobs:setOptions', allOptions);
+
+    return handler(channel, manager.knobStore);
+  }
+
+  return {
+    withKnobs(storyFn, context) {
+      return wrapperKnobs()(storyFn)(context);
+    },
+    withKnobsOptions(options = {}) {
+      return (storyFn, context) => wrapperKnobs(options)(storyFn)(context);
+    },
+  };
 }

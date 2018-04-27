@@ -120,3 +120,15 @@ exports[`Storyshots Addon|Knobs Simple 1`] = `
   </ng-component>
 </storybook-dynamic-app-root>
 `;
+
+exports[`Storyshots Addon|Knobs XSS safety 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    &lt;img src=x onerror="alert('XSS Attack')" &gt;
+  </ng-component>
+</storybook-dynamic-app-root>
+`;

@@ -14,7 +14,7 @@ storiesOf('Welcome', module).add('Welcome', () => {
 
 storiesOf('App', module).add(
   'full app',
-  () => '<polymer-playground-app title="Storybook fro Polymer"></polymer-playground-app>'
+  () => '<polymer-playground-app title="Storybook for Polymer"></polymer-playground-app>'
 );
 
 storiesOf('Button', module)

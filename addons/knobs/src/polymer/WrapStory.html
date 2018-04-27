@@ -1,5 +1,7 @@
 <dom-module id="wrap-story">
   <script>
+    import { html, render, TemplateResult } from 'lit-html';
+
     class WrapStory extends HTMLElement {
       static get is() {
         return 'wrap-story';
@@ -75,6 +77,11 @@
         const wrapper = this.shadowRoot.querySelector('div#wrapper');
         if (typeof component === 'string') {
           wrapper.innerHTML = component;
+        } else if (component instanceof TemplateResult) {
+          //`render` stores the TemplateInstance in the Node and tries to update based on that.
+          //Since we reuse `rootElement` for all stories, remove the stored instance first.
+          render(html``, wrapper);
+          render(component, wrapper);
         } else {
           wrapper.innerHTML = '';
           wrapper.appendChild(component);

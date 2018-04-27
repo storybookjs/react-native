@@ -29,7 +29,13 @@ You can generally reuse webpack rules fairly easily by placing them in a file th
 
 A common error is that an addon tries to access the "channel", but the channel is not set. This can happen in a few different cases:
 
-1.  In storybook/addon development, it can be an NPM version problem. If there are two versions of the `@storybook/addons` NPM package, it will cause problems. In this case, make sure there is only a single version of `@storybook/addons` being used by your project.
+1.  You're trying to access addon channel (e.g. by calling `setOptions`) in a non-browser environment like Jest. You may need to add a channel mock:
+    ```js
+    import addons, { mockChannel } from '@storybook/addons';
+
+    addons.setChannel(mockChannel());
+    ```
+
 2.  In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
 
 ### Can I modify React component state in stories?

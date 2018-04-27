@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import axe from 'axe-core';
+import { logger } from '@storybook/client-logger';
 
 class WrapStory extends Component {
   static propTypes = {
@@ -41,9 +42,7 @@ class WrapStory extends Component {
     if (wrapper !== null) {
       axe.reset();
       axe.configure(axeOptions);
-      axe.run(wrapper, {}, results => {
-        channel.emit('addon:a11y:check', results);
-      });
+      axe.run(wrapper).then(results => channel.emit('addon:a11y:check', results), logger.error);
     }
   }
 

@@ -2,6 +2,8 @@ import path from 'path';
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { indexHtmlPath } from '@storybook/core/server';
+import { version } from '../../../package.json';
 import { includePaths, excludePaths } from './utils';
 
 const getConfig = options => {
@@ -26,11 +28,14 @@ const getConfig = options => {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         data: {
-          options: JSON.stringify(options),
+          version,
         },
-        template: require.resolve('../index.html.ejs'),
+        template: indexHtmlPath,
       }),
-      new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"',
+        storybookOptions: JSON.stringify(options),
+      }),
       new webpack.optimize.DedupePlugin(),
       new Dotenv({ silent: true }),
     ],

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.3",
   "description": "A Storybook addon to show additional information for your stories.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -10,31 +10,26 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "publish-storybook": "bash .scripts/publish_storybook.sh",
-    "storybook": "start-storybook -p 9010"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "4.0.0-alpha.1",
-    "@storybook/components": "4.0.0-alpha.1",
+    "@storybook/client-logger": "4.0.0-alpha.3",
+    "@storybook/components": "4.0.0-alpha.3",
     "babel-runtime": "^6.26.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.12.1",
+    "glamorous": "^4.12.4",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.1",
     "react-addons-create-fragment": "^15.5.3",
-    "react-lifecycles-compat": "^1.1.4",
+    "react-lifecycles-compat": "^3.0.2",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.1",
-    "@storybook/react": "4.0.0-alpha.1",
-    "react-test-renderer": "^16.3.1"
+    "react-test-renderer": "^16.3.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   }
 }

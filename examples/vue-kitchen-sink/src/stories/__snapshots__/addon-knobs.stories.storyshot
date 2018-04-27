@@ -43,3 +43,11 @@ exports[`Storyshots Addon|Knobs Simple 1`] = `
   I am John Doe and I'm 44 years old.
 </div>
 `;
+
+exports[`Storyshots Addon|Knobs XSS safety 1`] = `
+<div>
+  
+        &lt;img src=x onerror="alert('XSS Attack')" &gt;
+      
+</div>
+`;

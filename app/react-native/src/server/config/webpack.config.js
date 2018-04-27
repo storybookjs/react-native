@@ -4,6 +4,8 @@ import Dotenv from 'dotenv-webpack';
 import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { indexHtmlPath } from '@storybook/core/server';
+import { version } from '../../../package.json';
 import { includePaths, excludePaths, nodeModulesPaths } from './utils';
 
 const getConfig = options => ({
@@ -21,14 +23,17 @@ const getConfig = options => ({
     new HtmlWebpackPlugin({
       filename: 'index.html',
       data: {
-        options: JSON.stringify(options),
+        version,
       },
-      template: require.resolve('../index.html.ejs'),
+      template: indexHtmlPath,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(nodeModulesPaths),
     new Dotenv({ silent: true }),
+    new webpack.DefinePlugin({
+      storybookOptions: JSON.stringify(options),
+    }),
   ],
   module: {
     rules: [

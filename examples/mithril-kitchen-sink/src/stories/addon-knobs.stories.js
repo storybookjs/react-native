@@ -68,4 +68,7 @@ storiesOf('Addons|Knobs', module)
         </div>
       ),
     };
-  });
+  })
+  .add('XSS safety', () => ({
+    view: () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'),
+  }));

@@ -35,7 +35,7 @@ Import the `action` function and use it to create actions handlers. When creatin
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action, configureActions } from '@storybook/addon-actions';
 
 import Button from './button';
 
@@ -84,3 +84,42 @@ storiesOf('Button', module).add('default view', () => (
   <Button onClick={firstArg.action('button-click')}>Hello World!</Button>
 ));
 ```
+
+## Configuration
+
+Arguments which are passed to the action call will have to be serialized while be "transfered"
+over the channel.
+
+This is not very optimal and can cause lag when large objects are being logged, for this reason it is possible 
+to configure a maximum depth.
+
+The action logger, by default, will log all actions fired during the lifetime of the story. After a while
+this can make the storybook laggy. As a workaround, you can configure an upper limit to how many actions should 
+be logged.
+
+To apply the configuration globally use the `configureActions` function in your `config.js` file.
+
+```js
+import { configureActions } from '@storybook/addon-actions';
+
+configureActions({
+  depth: 100,
+  // Limit the number of items logged into the actions panel
+  limit: 20,
+})
+```
+
+To apply the configuration per action use:
+```js
+action('my-action', {
+  depth: 5,
+})
+```
+
+### Available Options
+
+|Name|Type|Description|Default|
+|---|---|---|---|
+|`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
+|`clearOnStoryChange`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`true`|
+|`limit`|Number|Limits the number of items logged in the action logger|`50`|

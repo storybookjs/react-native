@@ -2,7 +2,13 @@ import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
+import {
+  managerPath,
+  getPreviewHeadHtml,
+  getManagerHeadHtml,
+  indexHtmlPath,
+  iframeHtmlPath,
+} from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import { version } from '../../../package.json';
@@ -36,7 +42,7 @@ export default function(configDir) {
           managerHead: getManagerHeadHtml(configDir),
           version,
         },
-        template: require.resolve('../index.html.ejs'),
+        template: indexHtmlPath,
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
@@ -45,7 +51,7 @@ export default function(configDir) {
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
-        template: require.resolve('../iframe.html.ejs'),
+        template: iframeHtmlPath,
       }),
       new InterpolateHtmlPlugin(process.env),
       new webpack.DefinePlugin(loadEnv({ production: true })),

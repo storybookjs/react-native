@@ -103,6 +103,9 @@ class MainLinks extends React.Component {
                   <Link to="/configurations/custom-webpack-config/">Webpack configurations</Link>
                 </li>
                 <li>
+                  <Link to="/configurations/typescript-config/">Typescript configurations</Link>
+                </li>
+                <li>
                   <Link to="/configurations/add-custom-head-tags/">Custom scripts & styling</Link>
                 </li>
                 <li>

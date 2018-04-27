@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.3",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -19,45 +19,36 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.1",
-    "@storybook/channel-postmessage": "4.0.0-alpha.1",
-    "@storybook/client-logger": "4.0.0-alpha.1",
-    "@storybook/core": "4.0.0-alpha.1",
-    "@storybook/node-logger": "4.0.0-alpha.1",
+    "@storybook/core": "4.0.0-alpha.3",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.1",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
-    "babel-plugin-react-docgen": "^1.9.0",
+    "babel-plugin-react-docgen": "^2.0.0-rc.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-minify": "^0.3.0",
+    "babel-preset-minify": "^0.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.7.2",
-    "core-js": "^2.5.4",
+    "core-js": "^2.5.5",
     "dotenv-webpack": "^1.5.5",
     "glamor": "^2.20.40",
-    "glamorous": "^4.12.1",
+    "glamorous": "^4.12.4",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "lodash.flattendeep": "^4.4.0",
     "markdown-loader": "^2.0.2",
     "prop-types": "^15.6.1",
-    "webpack": "^4.5.0",
-    "webpack-hot-middleware": "^2.21.2"
-  },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
+    "webpack": "^4.6.0",
+    "webpack-hot-middleware": "^2.22.1"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",

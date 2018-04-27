@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import slackIcon from './images/slack-icon.png';
 import githubIcon from './images/github-icon.png';
 import './style.css';
 
@@ -13,6 +14,13 @@ const Footer = () => (
             .
           </center>
           <center>
+            <a
+              href="https://now-examples-slackin-nqnzoygycp.now.sh/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img src={slackIcon} alt="Storybook Slack" />
+            </a>
             <a
               href="https://github.com/storybooks/storybook"
               target="_blank"
