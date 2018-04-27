@@ -1,3 +1,57 @@
+# 4.0.0-alpha.4
+
+2018-April-27
+
+#### Breaking Changes
+
+-   Knobs: add escapeHTML option; use it by default in Vue, Angular, and Polymer [#3473](https://github.com/storybooks/storybook/pull/3473)
+
+#### Features
+
+-   Added `actions` to addon-actions to create multiple actions [#3352](https://github.com/storybooks/storybook/pull/3352)
+-   Add excludedPropTypes as an option to info addon [#3468](https://github.com/storybooks/storybook/pull/3468)
+-   Addon-background: add Vue support [#3488](https://github.com/storybooks/storybook/pull/3488)
+-   Suppress verbose build output [#3487](https://github.com/storybooks/storybook/pull/3487)
+-   Provide a configuration option to limit the number of actions logged [#3447](https://github.com/storybooks/storybook/pull/3447)
+-   Add IStory interface. [#3482](https://github.com/storybooks/storybook/pull/3482)
+-   Add option to clear action logger [#3459](https://github.com/storybooks/storybook/pull/3459)
+
+#### Bug Fixes
+
+-   Fix auto focus of searchbox [#3494](https://github.com/storybooks/storybook/pull/3494)
+-   Don't try to access the devtools hook if we are cross-origin [#3485](https://github.com/storybooks/storybook/pull/3485)
+-   Improve yarn detection [#3453](https://github.com/storybooks/storybook/pull/3453)
+
+#### Maintenance
+
+-   Refactor error and "no preview" views into core [#3457](https://github.com/storybooks/storybook/pull/3457)
+-   Refactor templates into core [#3422](https://github.com/storybooks/storybook/pull/3422)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+15 Upgrades
+</summary>
+
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.4.1" to "3.4.2" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.4.1" to "3.4.2" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `@storybook/addons` in `/docs` from "3.4.1" to "3.4.2" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `@storybook/react` in `/docs` from "3.4.1" to "3.4.2" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `gatsby-link` in `/docs` from "1.6.40" to "1.6.41" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `gatsby-plugin-sharp` in `/docs` from "1.6.42" to "1.6.43" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `gatsby-remark-autolink-headers` in `/docs` from "1.4.16" to "1.4.17" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `gatsby-remark-copy-linked-files` in `/docs` from "1.5.31" to "1.5.32" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `gatsby-remark-images` in `/docs` from "1.5.61" to "1.5.62" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgraded `gatsby` in `/docs` from "1.9.252" to "1.9.253" [#3478](https://github.com/storybooks/storybook/pull/3478)
+-   Upgrade redux to 4.0.0 [#3470](https://github.com/storybooks/storybook/pull/3470)
+-   Upgrade sass-loader to 7.0.1 & stop bringing node-sass bin to each user [#3467](https://github.com/storybooks/storybook/pull/3467)
+-   Upgrate ts-node to 6.0.0 [#3460](https://github.com/storybooks/storybook/pull/3460)
+-   Upgrade to json5@1.0.1 [#3466](https://github.com/storybooks/storybook/pull/3466)
+-   Update webpack-hot-middleware to fix HMR [#3463](https://github.com/storybooks/storybook/pull/3463)
+
+</details>
+
 # 3.4.3
 
 2018-April-27
