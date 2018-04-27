@@ -1,3 +1,20 @@
+# 3.4.3
+
+2018-April-27
+
+#### Features
+
+-   Suppress verbose build output [#3487](https://github.com/storybooks/storybook/pull/3487)
+
+#### Bug Fixes
+
+-   Improve yarn detection [#3453](https://github.com/storybooks/storybook/pull/3453)
+-   Don't try to access the devtools hook if we are cross-origin [#3485](https://github.com/storybooks/storybook/pull/3485)
+
+#### Dependency Upgrades
+
+-   Update webpack-hot-middleware to fix HMR [#3463](https://github.com/storybooks/storybook/pull/3463)
+
 # 4.0.0-alpha.3
 
 2018-April-17
