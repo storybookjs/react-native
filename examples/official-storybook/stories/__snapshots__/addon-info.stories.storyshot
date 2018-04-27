@@ -553,7 +553,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                 </span>
                 <span>
                   <span>
-
+                     
                     <span>
                       onClick
                     </span>
@@ -573,7 +573,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                     </span>
                   </span>
                   <span>
-
+                     
                     <span>
                       label
                     </span>
@@ -589,7 +589,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                         "
                       </span>
                     </span>
-
+                     
                   </span>
                 </span>
                 <span
@@ -1399,7 +1399,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                 </span>
                 <span>
                   <span>
-
+                     
                     <span>
                       label
                     </span>
@@ -1415,7 +1415,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                         "
                       </span>
                     </span>
-
+                     
                   </span>
                 </span>
                 <span
@@ -1953,7 +1953,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                       "
                     </span>
                   </span>
-
+                   
                 </span>
               </span>
               <span
@@ -2259,7 +2259,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#666"
@@ -2267,7 +2267,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                               one
                             </span>
                           </span>
-                          :
+                          : 
                           <span
                             style="color:#22a;word-break:break-word"
                           >
@@ -2277,7 +2277,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#666"
@@ -2285,7 +2285,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                               two
                             </span>
                           </span>
-                          :
+                          : 
                           <span
                             style="color:#22a;word-break:break-word"
                           >
@@ -2295,7 +2295,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#666"
@@ -2303,7 +2303,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                               three
                             </span>
                           </span>
-                          :
+                          : 
                           <span
                             style="color:#22a;word-break:break-word"
                           >
@@ -2311,7 +2311,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           </span>
                           <span>
                             <br />
-
+                              
                           </span>
                           }
                         </span>
@@ -2340,7 +2340,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#22a;word-break:break-word"
@@ -2352,7 +2352,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#22a;word-break:break-word"
@@ -2364,7 +2364,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#22a;word-break:break-word"
@@ -2376,13 +2376,13 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             …
                           </span>
                           <span>
                             <br />
-
+                              
                           </span>
                           ]
                         </span>
@@ -2411,7 +2411,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span>
                               {
@@ -2422,7 +2422,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                 <span>
                                   <span>
                                     <br />
-
+                                          
                                   </span>
                                   <span
                                     style="color:#666"
@@ -2430,7 +2430,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     one
                                   </span>
                                 </span>
-                                :
+                                : 
                                 <span
                                   style="color:#22a;word-break:break-word"
                                 >
@@ -2440,7 +2440,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                 <span>
                                   <span>
                                     <br />
-
+                                          
                                   </span>
                                   <span
                                     style="color:#666"
@@ -2448,7 +2448,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     two
                                   </span>
                                 </span>
-                                :
+                                : 
                                 <span
                                   style="color:#22a;word-break:break-word"
                                 >
@@ -2458,7 +2458,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                 <span>
                                   <span>
                                     <br />
-
+                                          
                                   </span>
                                   <span
                                     style="color:#666"
@@ -2466,7 +2466,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     object
                                   </span>
                                 </span>
-                                :
+                                : 
                                 <span>
                                   {
                                   <span
@@ -2476,7 +2476,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     <span>
                                       <span>
                                         <br />
-
+                                                
                                       </span>
                                       <span
                                         style="color:#666"
@@ -2484,7 +2484,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         object1
                                       </span>
                                     </span>
-                                    :
+                                    : 
                                     <span>
                                       {
                                       <span
@@ -2494,7 +2494,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#666"
@@ -2502,7 +2502,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             one
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span
                                           style="color:#22a;word-break:break-word"
                                         >
@@ -2512,7 +2512,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#666"
@@ -2520,7 +2520,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             two
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span
                                           style="color:#22a;word-break:break-word"
                                         >
@@ -2530,7 +2530,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#666"
@@ -2538,7 +2538,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             three
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span
                                           style="color:#22a;word-break:break-word"
                                         >
@@ -2546,7 +2546,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         </span>
                                         <span>
                                           <br />
-
+                                                  
                                         </span>
                                         }
                                       </span>
@@ -2556,7 +2556,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     <span>
                                       <span>
                                         <br />
-
+                                                
                                       </span>
                                       <span
                                         style="color:#666"
@@ -2564,7 +2564,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         array
                                       </span>
                                     </span>
-                                    :
+                                    : 
                                     <span>
                                       {
                                       <span
@@ -2574,7 +2574,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#22a;word-break:break-word"
@@ -2586,7 +2586,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#22a;word-break:break-word"
@@ -2598,7 +2598,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#22a;word-break:break-word"
@@ -2608,7 +2608,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         </span>
                                         <span>
                                           <br />
-
+                                                  
                                         </span>
                                         ]
                                       </span>
@@ -2618,7 +2618,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     <span>
                                       <span>
                                         <br />
-
+                                                
                                       </span>
                                       <span
                                         style="color:#666"
@@ -2626,7 +2626,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         object2
                                       </span>
                                     </span>
-                                    :
+                                    : 
                                     <span>
                                       {
                                       <span
@@ -2636,7 +2636,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#666"
@@ -2644,7 +2644,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             object
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span>
                                           {
                                           <span
@@ -2654,7 +2654,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             <span>
                                               <span>
                                                 <br />
-
+                                                            
                                               </span>
                                               <span
                                                 style="color:#666"
@@ -2662,7 +2662,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                 one
                                               </span>
                                             </span>
-                                            :
+                                            : 
                                             <span
                                               style="color:#22a;word-break:break-word"
                                             >
@@ -2672,7 +2672,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             <span>
                                               <span>
                                                 <br />
-
+                                                            
                                               </span>
                                               <span
                                                 style="color:#666"
@@ -2680,7 +2680,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                 two
                                               </span>
                                             </span>
-                                            :
+                                            : 
                                             <span
                                               style="color:#22a;word-break:break-word"
                                             >
@@ -2690,7 +2690,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             <span>
                                               <span>
                                                 <br />
-
+                                                            
                                               </span>
                                               <span
                                                 style="color:#666"
@@ -2698,7 +2698,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                 three
                                               </span>
                                             </span>
-                                            :
+                                            : 
                                             <span
                                               style="color:#22a;word-break:break-word"
                                             >
@@ -2706,7 +2706,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             </span>
                                             <span>
                                               <br />
-
+                                                        
                                             </span>
                                             }
                                           </span>
@@ -2716,7 +2716,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-
+                                                      
                                           </span>
                                           <span
                                             style="color:#666"
@@ -2724,7 +2724,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             array
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span>
                                           {
                                           <span
@@ -2734,7 +2734,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             <span>
                                               <span>
                                                 <br />
-
+                                                            
                                               </span>
                                               <span
                                                 style="color:#22a;word-break:break-word"
@@ -2746,7 +2746,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             <span>
                                               <span>
                                                 <br />
-
+                                                            
                                               </span>
                                               <span
                                                 style="color:#22a;word-break:break-word"
@@ -2758,7 +2758,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             <span>
                                               <span>
                                                 <br />
-
+                                                            
                                               </span>
                                               <span>
                                                 {
@@ -2769,7 +2769,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                   <span>
                                                     <span>
                                                       <br />
-
+                                                                    
                                                     </span>
                                                     <span
                                                       style="color:#666"
@@ -2777,7 +2777,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                       object
                                                     </span>
                                                   </span>
-                                                  :
+                                                  : 
                                                   <span>
                                                     {
                                                     <span
@@ -2787,7 +2787,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                       <span>
                                                         <span>
                                                           <br />
-
+                                                                          
                                                         </span>
                                                         <span
                                                           style="color:#666"
@@ -2795,7 +2795,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           object
                                                         </span>
                                                       </span>
-                                                      :
+                                                      : 
                                                       <span>
                                                         {
                                                         <span
@@ -2805,7 +2805,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           <span>
                                                             <span>
                                                               <br />
-
+                                                                                
                                                             </span>
                                                             <span
                                                               style="color:#666"
@@ -2813,7 +2813,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                               one
                                                             </span>
                                                           </span>
-                                                          :
+                                                          : 
                                                           <span
                                                             style="color:#22a;word-break:break-word"
                                                           >
@@ -2823,7 +2823,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           <span>
                                                             <span>
                                                               <br />
-
+                                                                                
                                                             </span>
                                                             <span
                                                               style="color:#666"
@@ -2831,7 +2831,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                               two
                                                             </span>
                                                           </span>
-                                                          :
+                                                          : 
                                                           <span
                                                             style="color:#22a;word-break:break-word"
                                                           >
@@ -2841,7 +2841,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           <span>
                                                             <span>
                                                               <br />
-
+                                                                                
                                                             </span>
                                                             <span
                                                               style="color:#666"
@@ -2849,7 +2849,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                               three
                                                             </span>
                                                           </span>
-                                                          :
+                                                          : 
                                                           <span
                                                             style="color:#22a;word-break:break-word"
                                                           >
@@ -2857,7 +2857,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           </span>
                                                           <span>
                                                             <br />
-
+                                                                            
                                                           </span>
                                                           }
                                                         </span>
@@ -2867,7 +2867,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                       <span>
                                                         <span>
                                                           <br />
-
+                                                                          
                                                         </span>
                                                         <span
                                                           style="color:#666"
@@ -2875,7 +2875,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           array
                                                         </span>
                                                       </span>
-                                                      :
+                                                      : 
                                                       <span>
                                                         {
                                                         <span
@@ -2885,7 +2885,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           <span>
                                                             <span>
                                                               <br />
-
+                                                                                
                                                             </span>
                                                             <span
                                                               style="color:#22a;word-break:break-word"
@@ -2897,7 +2897,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           <span>
                                                             <span>
                                                               <br />
-
+                                                                                
                                                             </span>
                                                             <span
                                                               style="color:#22a;word-break:break-word"
@@ -2909,7 +2909,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           <span>
                                                             <span>
                                                               <br />
-
+                                                                                
                                                             </span>
                                                             <span
                                                               style="color:#22a;word-break:break-word"
@@ -2919,7 +2919,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                           </span>
                                                           <span>
                                                             <br />
-
+                                                                            
                                                           </span>
                                                           ]
                                                         </span>
@@ -2927,7 +2927,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                       </span>
                                                       <span>
                                                         <br />
-
+                                                                      
                                                       </span>
                                                       }
                                                     </span>
@@ -2935,7 +2935,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                                   </span>
                                                   <span>
                                                     <br />
-
+                                                                
                                                   </span>
                                                   }
                                                 </span>
@@ -2944,7 +2944,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                             </span>
                                             <span>
                                               <br />
-
+                                                        
                                             </span>
                                             ]
                                           </span>
@@ -2952,7 +2952,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         </span>
                                         <span>
                                           <br />
-
+                                                  
                                         </span>
                                         }
                                       </span>
@@ -2960,7 +2960,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                     </span>
                                     <span>
                                       <br />
-
+                                            
                                     </span>
                                     }
                                   </span>
@@ -2968,7 +2968,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                 </span>
                                 <span>
                                   <br />
-
+                                      
                                 </span>
                                 }
                               </span>
@@ -2977,7 +2977,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                           </span>
                           <span>
                             <br />
-
+                              
                           </span>
                           ]
                         </span>
@@ -3295,7 +3295,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                               one
                             </span>
                           </span>
-                          :
+                          : 
                           <span
                             style="color:#22a;word-break:break-word"
                           >
@@ -3309,7 +3309,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                               two
                             </span>
                           </span>
-                          :
+                          : 
                           <span
                             style="color:#22a;word-break:break-word"
                           >
@@ -3323,7 +3323,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                               three
                             </span>
                           </span>
-                          :
+                          : 
                           <span
                             style="color:#22a;word-break:break-word"
                           >
@@ -3356,7 +3356,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#22a;word-break:break-word"
@@ -3368,7 +3368,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#22a;word-break:break-word"
@@ -3380,7 +3380,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             <span
                               style="color:#22a;word-break:break-word"
@@ -3392,13 +3392,13 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                           <span>
                             <span>
                               <br />
-
+                                  
                             </span>
                             …
                           </span>
                           <span>
                             <br />
-
+                              
                           </span>
                           ]
                         </span>
@@ -3438,7 +3438,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                     one
                                   </span>
                                 </span>
-                                :
+                                : 
                                 <span
                                   style="color:#22a;word-break:break-word"
                                 >
@@ -3452,7 +3452,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                     two
                                   </span>
                                 </span>
-                                :
+                                : 
                                 <span
                                   style="color:#22a;word-break:break-word"
                                 >
@@ -3466,7 +3466,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                     object
                                   </span>
                                 </span>
-                                :
+                                : 
                                 <span>
                                   {
                                   <span
@@ -3480,7 +3480,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                         object1
                                       </span>
                                     </span>
-                                    :
+                                    : 
                                     <span>
                                       {
                                       <span
@@ -3494,7 +3494,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                             one
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span
                                           style="color:#22a;word-break:break-word"
                                         >
@@ -3508,7 +3508,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                             two
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span
                                           style="color:#22a;word-break:break-word"
                                         >
@@ -3522,7 +3522,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                             three
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span
                                           style="color:#22a;word-break:break-word"
                                         >
@@ -3540,7 +3540,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                         array
                                       </span>
                                     </span>
-                                    :
+                                    : 
                                     <span>
                                       {
                                       <span
@@ -3582,7 +3582,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                         object2
                                       </span>
                                     </span>
-                                    :
+                                    : 
                                     <span>
                                       {
                                       <span
@@ -3596,7 +3596,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                             object
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span>
                                           {
                                           <span
@@ -3610,7 +3610,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                 one
                                               </span>
                                             </span>
-                                            :
+                                            : 
                                             <span
                                               style="color:#22a;word-break:break-word"
                                             >
@@ -3624,7 +3624,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                 two
                                               </span>
                                             </span>
-                                            :
+                                            : 
                                             <span
                                               style="color:#22a;word-break:break-word"
                                             >
@@ -3638,7 +3638,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                 three
                                               </span>
                                             </span>
-                                            :
+                                            : 
                                             <span
                                               style="color:#22a;word-break:break-word"
                                             >
@@ -3656,7 +3656,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                             array
                                           </span>
                                         </span>
-                                        :
+                                        : 
                                         <span>
                                           {
                                           <span
@@ -3693,7 +3693,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                       object
                                                     </span>
                                                   </span>
-                                                  :
+                                                  : 
                                                   <span>
                                                     {
                                                     <span
@@ -3707,7 +3707,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                           object
                                                         </span>
                                                       </span>
-                                                      :
+                                                      : 
                                                       <span>
                                                         {
                                                         <span
@@ -3721,7 +3721,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                               one
                                                             </span>
                                                           </span>
-                                                          :
+                                                          : 
                                                           <span
                                                             style="color:#22a;word-break:break-word"
                                                           >
@@ -3735,7 +3735,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                               two
                                                             </span>
                                                           </span>
-                                                          :
+                                                          : 
                                                           <span
                                                             style="color:#22a;word-break:break-word"
                                                           >
@@ -3749,7 +3749,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                               three
                                                             </span>
                                                           </span>
-                                                          :
+                                                          : 
                                                           <span
                                                             style="color:#22a;word-break:break-word"
                                                           >
@@ -3767,7 +3767,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                                           array
                                                         </span>
                                                       </span>
-                                                      :
+                                                      : 
                                                       <span>
                                                         {
                                                         <span
@@ -6367,7 +6367,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         <span>
                           <span>
                             <br />
-
+                                
                           </span>
                           <span
                             style="color:#666"
@@ -6389,7 +6389,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         <span>
                           <span>
                             <br />
-
+                                
                           </span>
                           <span
                             style="color:#666"
@@ -6411,7 +6411,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         <span>
                           <span>
                             <br />
-
+                                
                           </span>
                           <span
                             style="color:#666"
@@ -6433,13 +6433,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         <span>
                           <span>
                             <br />
-
+                                
                           </span>
                           …
                         </span>
                         <span>
                           <br />
-
+                            
                         </span>
                         }
                       </span>
