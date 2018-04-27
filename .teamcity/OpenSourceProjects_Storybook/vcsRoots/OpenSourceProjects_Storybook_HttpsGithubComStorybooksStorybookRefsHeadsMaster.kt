@@ -14,7 +14,6 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
         +:refs/heads/(master)
         +:refs/heads/(dependencies.io-*)
     """.trimIndent()
-    agentCleanPolicy = GitVcsRoot.AgentCleanPolicy.NEVER
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "Storybook bot"
