@@ -62,7 +62,7 @@ if (!program.skipPackager) {
   try {
     // eslint-disable-next-line global-require
     require('babel-register')({
-      presets: ['flow'],
+      presets: [require.resolve('babel-preset-flow')],
       ignore: false,
       babelrc: false,
     });

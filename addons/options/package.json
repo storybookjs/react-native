@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "4.0.0-alpha.2",
+  "version": "4.0.0-alpha.3",
   "description": "Options addon for storybook",
   "keywords": [
     "storybook"
@@ -16,18 +16,13 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "storybook": "start-storybook -p 9001"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.2",
+    "@storybook/addons": "4.0.0-alpha.3",
     "babel-runtime": "^6.26.0"
   },
-  "devDependencies": {
-    "@storybook/react": "4.0.0-alpha.2"
-  },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   }
 }

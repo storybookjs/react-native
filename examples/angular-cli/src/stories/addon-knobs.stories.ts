@@ -79,4 +79,7 @@ storiesOf('Addon|Knobs', module)
         nice,
       },
     };
-  });
+  })
+  .add('XSS safety', () => ({
+    template: text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'),
+  }));

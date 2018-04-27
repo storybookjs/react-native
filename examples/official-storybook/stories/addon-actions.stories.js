@@ -1,7 +1,7 @@
 /* global window */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, decorateAction } from '@storybook/addon-actions';
+import { action, configureActions, decorateAction } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { Button } from '@storybook/react/demo';
 import { File } from 'global';
@@ -66,13 +66,55 @@ storiesOf('Addons|Actions', module)
         >
           Multiple
         </Button>
-        <Button onClick={() => action('Plain Object')({ foo: 'bar' })}>Plain Object</Button>
+        <Button onClick={() => action('Plain Object')({ foo: { bar: { baz: { bar: 'foo' } } } })}>
+          Plain Object
+        </Button>
+        <Button
+          onClick={() =>
+            action('ObjectDepth2', { depth: 2 })({ root: { one: { two: { three: 'foo' } } } })
+          }
+        >
+          Object (depth: 2)
+        </Button>
         <Button onClick={() => action('RegExp')(reg)}>RegExp</Button>
         <Button onClick={() => action('String')('foo')}>String</Button>
         <Button onClick={() => action('Symbol')(Symbol('A_SYMBOL'))}>Symbol</Button>
         <Button onClick={action('SyntheticMouseEvent')}>SyntheticEvent</Button>
         <Button onClick={() => action('undefined')(undefined)}>undefined</Button>
         <Button onClick={() => action('window')(window)}>Window</Button>
+      </div>
+    );
+  })
+  .add('configureActionsDepth', () => {
+    configureActions({
+      depth: 2,
+    });
+
+    return (
+      <Button
+        onClick={() => action('ConfiguredDepth')({ root: { one: { two: { three: 'foo' } } } })}
+      >
+        Object (configured depth: 2)
+      </Button>
+    );
+  })
+  .add('Persisting the action logger', () => (
+    <div>
+      <p>Moving away from this story will persist the action logger</p>
+      <Button onClick={action('clear-action-logger', { clearOnStoryChange: false })}>
+        Object (configured clearOnStoryChange: false)
+      </Button>
+    </div>
+  ))
+  .add('Limit Action Output', () => {
+    configureActions({
+      limit: 2,
+    });
+
+    return (
+      <div>
+        <Button onClick={() => action('False')(false)}>False</Button>
+        <Button onClick={() => action('True')(true)}>True</Button>
       </div>
     );
   });

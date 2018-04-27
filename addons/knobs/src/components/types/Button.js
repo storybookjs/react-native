@@ -35,7 +35,7 @@ ButtonType.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-ButtonType.serialize = value => value;
-ButtonType.deserialize = value => value;
+ButtonType.serialize = () => undefined;
+ButtonType.deserialize = () => undefined;
 
 export default ButtonType;

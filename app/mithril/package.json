@@ -1,6 +1,6 @@
 {
   "name": "@storybook/mithril",
-  "version": "4.0.0-alpha.2",
+  "version": "4.0.0-alpha.3",
   "description": "Storybook for Mithril: Develop Mithril Component in isolation.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/mithril",
   "bugs": {
@@ -19,17 +19,11 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.2",
-    "@storybook/channel-postmessage": "4.0.0-alpha.2",
-    "@storybook/client-logger": "4.0.0-alpha.2",
-    "@storybook/core": "4.0.0-alpha.2",
-    "@storybook/node-logger": "4.0.0-alpha.2",
+    "@storybook/core": "4.0.0-alpha.3",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.2",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.0",
@@ -47,14 +41,11 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "markdown-loader": "^2.0.2",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "webpack": "^4.5.0",
-    "webpack-hot-middleware": "^2.22.0"
+    "webpack": "^4.6.0",
+    "webpack-hot-middleware": "^2.22.1"
   },
   "devDependencies": {
-    "mithril": "^1.1.6",
-    "nodemon": "^1.17.3"
+    "mithril": "^1.1.6"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",

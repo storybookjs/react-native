@@ -1,3 +1,149 @@
+# 4.0.0-alpha.3
+
+2018-April-17
+
+Also includes changes from 3.4.2
+
+#### Features
+
+-   Mobile device view: toggling stories panel with ☰ button  [#3337](https://github.com/storybooks/storybook/pull/3337)
+-   Add lit-html support [#3433](https://github.com/storybooks/storybook/pull/3433)
+-   Addon info prop options [#3428](https://github.com/storybooks/storybook/pull/3428)
+-   Use per-story parameters in Notes addon [#3373](https://github.com/storybooks/storybook/pull/3373)
+
+#### Bug Fixes
+
+-   Fixed Duplicate declaration h [#3409](https://github.com/storybooks/storybook/pull/3409)
+-   Storyshots integrity tests options [#3418](https://github.com/storybooks/storybook/pull/3418)
+-   Debounce Knob input to improve performance, fix number Knob undefined/NaN [#3412](https://github.com/storybooks/storybook/pull/3412)
+-   Fix double quotes in prop table and add additional examples [#3401](https://github.com/storybooks/storybook/pull/3401)
+
+#### Documentation
+
+-   doc(addon-jest): fix option name [#3420](https://github.com/storybooks/storybook/pull/3420)
+-   Storyshots integrity tests fixes - README [#3419](https://github.com/storybooks/storybook/pull/3419)
+
+#### Maintenance
+
+-   viewport-addon: configure => configureViewport [#3414](https://github.com/storybooks/storybook/pull/3414)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+94 Upgrades
+</summary>
+
+-   Upgraded `chalk` in `/` from "2.3.2" to "2.4.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `danger` in `/` from "3.4.7" to "3.5.1" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `prettier` in `/` from "1.12.0" to "1.12.1" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `app/react` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `prettier` in `addons/storysource` from "1.12.0" to "1.12.1" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `react-modal` in `lib/ui` from "3.3.2" to "3.4.1" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `chalk` in `lib/core` from "2.3.2" to "2.4.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `lib/core` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `app/angular` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `app/mithril` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `app/polymer` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `app/react-native` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `app/vue` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `chalk` in `lib/cli` from "2.3.2" to "2.4.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `examples/cra-kitchen-sink` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `examples/mithril-kitchen-sink` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `examples/polymer-cli` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `webpack` in `examples/vue-kitchen-sink` from "4.5.0" to "4.6.0" [#3440](https://github.com/storybooks/storybook/pull/3440)
+-   Upgraded `gatsby-source-filesystem` in `/docs` from "1.5.32" to "1.5.33" [#3439](https://github.com/storybooks/storybook/pull/3439)
+-   Upgraded `gatsby` in `/docs` from "1.9.251" to "1.9.252" [#3439](https://github.com/storybooks/storybook/pull/3439)
+-   Update lerna in / from 2.10.1 to 2.10.2 [#3431](https://github.com/storybooks/storybook/pull/3431)
+-   Update gatsby in /docs from 1.9.250 to 1.9.251 [#3430](https://github.com/storybooks/storybook/pull/3430)
+-   Upgraded `@angular/common` in `/` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/compiler` in `/` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/core` in `/` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/forms` in `/` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/platform-browser` in `/` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/platform-browser-dynamic` in `/` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `babel-eslint` in `/` from "8.2.2" to "8.2.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `danger` in `/` from "3.4.5" to "3.4.7" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `eslint-plugin-import` in `/` from "2.10.0" to "2.11.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `lerna` in `/` from "2.10.0" to "2.10.1" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `prettier` in `/` from "1.11.1" to "1.12.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `/` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `/` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-test-renderer` in `/` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `addons/centered` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-lifecycles-compat` in `addons/background` from "3.0.0" to "3.0.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-lifecycles-compat` in `addons/events` from "3.0.0" to "3.0.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `glamorous` in `app/react` from "4.12.1" to "4.12.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@types/react` in `addons/notes` from "16.3.5" to "16.3.11" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `glamorous` in `addons/actions` from "4.12.1" to "4.12.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-inspector` in `addons/actions` from "2.2.2" to "2.3.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `glamorous` in `lib/components` from "4.12.1" to "4.12.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `glamorous` in `addons/a11y` from "4.12.1" to "4.12.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `glamorous` in `addons/info` from "4.12.1" to "4.12.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-lifecycles-compat` in `addons/info` from "3.0.0" to "3.0.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-test-renderer` in `addons/info` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `glamorous` in `addons/jest` from "4.12.1" to "4.12.3" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `moment` in `addons/knobs` from "2.22.0" to "2.22.1" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-color` in `addons/knobs` from "2.14.0" to "2.14.1" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-lifecycles-compat` in `addons/knobs` from "3.0.0" to "3.0.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `addons/links` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `addons/links` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `prettier` in `addons/storysource` from "1.11.1" to "1.12.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-lifecycles-compat` in `lib/ui` from "3.0.0" to "3.0.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `autoprefixer` in `lib/core` from "8.2.0" to "8.3.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `postcss-loader` in `lib/core` from "2.1.3" to "2.1.4" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `puppeteer` in `addons/storyshots` from "1.2.0" to "1.3.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `addons/storyshots` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `addons/storyshots` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `app/angular` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `app/angular` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `app/mithril` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `app/mithril` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `app/polymer` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `app/polymer` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `app/vue` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `app/vue` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `update-notifier` in `lib/cli` from "2.4.0" to "2.5.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `npx` in `lib/cli` from "10.0.1" to "10.2.0" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/common` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/compiler` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/core` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/forms` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/platform-browser` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/platform-browser-dynamic` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `rxjs` in `examples/angular-cli` from "5.5.8" to "5.5.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@angular/compiler-cli` in `examples/angular-cli` from "5.2.9" to "5.2.10" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@types/node` in `examples/angular-cli` from "9.6.2" to "9.6.5" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `examples/cra-kitchen-sink` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `examples/cra-kitchen-sink` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-lifecycles-compat` in `examples/cra-kitchen-sink` from "3.0.0" to "3.0.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react` in `examples/official-storybook` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `react-dom` in `examples/official-storybook` from "16.3.1" to "16.3.2" [#3429](https://github.com/storybooks/storybook/pull/3429)
+-   Upgraded `@storybook/addon-actions` in `/docs` from "3.4.0" to "3.4.1" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `@storybook/addon-links` in `/docs` from "3.4.0" to "3.4.1" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `@storybook/addons` in `/docs` from "3.4.0" to "3.4.1" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `@storybook/react` in `/docs` from "3.4.0" to "3.4.1" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `gatsby-plugin-sharp` in `/docs` from "1.6.41" to "1.6.42" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `gatsby-remark-images` in `/docs` from "1.5.60" to "1.5.61" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `gatsby-source-filesystem` in `/docs` from "1.5.29" to "1.5.32" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `gatsby-transformer-remark` in `/docs` from "1.7.39" to "1.7.40" [#3426](https://github.com/storybooks/storybook/pull/3426)
+-   Upgraded `gatsby` in `/docs` from "1.9.247" to "1.9.250" [#3426](https://github.com/storybooks/storybook/pull/3426)
+
+</details>
+
+# 3.4.2
+
+2018-April-17
+
+#### Bug Fixes
+
+-   Serialize boolean type only for non-nullable values [#3432](https://github.com/storybooks/storybook/pull/3432)
+-   Addon actions: fix slow logging [#3133](https://github.com/storybooks/storybook/pull/3133)
+
+#### Documentation
+
+-   Fix storyshots readme for image snapshotting [#3397](https://github.com/storybooks/storybook/pull/3397)
+
 # 4.0.0-alpha.2
 
 2018-April-10
@@ -19,7 +165,6 @@ Also includes changes from 3.4.1
 #### Bug Fixes
 
 -   Enforce addons store being a singleton by storing it in global variable [#3383](https://github.com/storybooks/storybook/pull/3383)
--   Scroll preview pane for non-percentage heights [#3342](https://github.com/storybooks/storybook/pull/3342)
 -   Scroll to top of the page when changing story [#3338](https://github.com/storybooks/storybook/pull/3338)
 -   Fix HtmlWebpackPlugin error [#3328](https://github.com/storybooks/storybook/pull/3328)
 
@@ -189,15 +334,9 @@ Also includes changes from 3.4.1
 
 #### Bug Fixes
 
+-   Scroll preview pane for non-percentage heights [#3342](https://github.com/storybooks/storybook/pull/3342)
 -   Replacing Report Fragment with div [#3372](https://github.com/storybooks/storybook/pull/3372)
 -   Don't use direct react dependency in core [#3382](https://github.com/storybooks/storybook/pull/3382)
--   Storyshots: Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
--   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
--   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
--   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
--   Info addon: Object proptype is shown proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
--   Storyshots: fix renderer and serializer options [#3252](https://github.com/storybooks/storybook/pull/3252)
--   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
 
 #### Documentation
 

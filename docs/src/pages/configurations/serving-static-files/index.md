@@ -59,7 +59,7 @@ storiesOf('<img />', module)
   ));
 ```
 
-> You can also pass a list of directories, instead of a single directory, as shown below.
+> You can also pass a list of directories separated by commas without spaces instead of a single directory.
 >
 > ```json
 > {

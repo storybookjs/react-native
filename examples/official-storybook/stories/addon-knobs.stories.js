@@ -175,11 +175,23 @@ storiesOf('Addons|Knobs.withKnobs', module)
       </div>
     );
   })
+  .add('dynamic knobs', () => {
+    const showOptional = select('Show optional', ['yes', 'no'], 'yes');
+    return (
+      <div>
+        <div>{text('compulsary', 'I must be here')}</div>
+        {showOptional === 'yes' ? <div>{text('optional', 'I can disapear')}</div> : null}
+      </div>
+    );
+  })
   .add('triggers actions via button', () => (
     <div>
       <p>Hit the knob load button and it should trigger an async load after a short delay</p>
       <AsyncItemLoader />
     </div>
+  ))
+  .add('XSS safety', () => (
+    <div>{text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >')}</div>
   ));
 
 storiesOf('Addons|Knobs.withKnobsOptions', module)
