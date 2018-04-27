@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-logger",
-  "version": "4.0.0-alpha.3",
+  "version": "4.0.0-alpha.4",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
