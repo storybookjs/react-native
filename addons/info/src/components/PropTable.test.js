@@ -9,14 +9,16 @@ describe('PropTable', () => {
     const singleLine = 'Foo bar baz';
     const unixMultiLineText = 'foo \n bar \n baz';
     const windowsMultiLineText = 'foo \r bar \r baz';
-    const propDefinitions = [{
-      defaultValue: undefined,
-      description: '',
-      propType: { name: 'string' },
-      property: 'foo',
-      required: false
-    }];
-    const FooComponent = () => (<div />);
+    const propDefinitions = [
+      {
+        defaultValue: undefined,
+        description: '',
+        propType: { name: 'string' },
+        property: 'foo',
+        required: false,
+      },
+    ];
+    const FooComponent = () => <div />;
     const propTableProps = {
       type: FooComponent,
       maxPropArrayLength: 5,
@@ -26,13 +28,13 @@ describe('PropTable', () => {
     };
 
     it('should include all propTypes by default', () => {
-      const wrapper = mount(<PropTable { ...propTableProps } />);
+      const wrapper = mount(<PropTable {...propTableProps} />);
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should exclude excluded propTypes', () => {
       const props = { ...propTableProps, excludedPropTypes: ['foo'] };
-      const wrapper = mount(<PropTable { ...props } />);
+      const wrapper = mount(<PropTable {...props} />);
       expect(wrapper).toMatchSnapshot();
     });
 
