@@ -30,6 +30,7 @@ export function renderException(error) {
 export function renderMain(data, storyStore, forceRender) {
   if (storyStore.size() === 0) return null;
 
+  console.log('renderMain called!!')
   const { selectedKind, selectedStory } = data;
 
   const story = storyStore.getStoryWithContext(selectedKind, selectedStory);
@@ -81,6 +82,7 @@ export function renderMain(data, storyStore, forceRender) {
   }
   
   currLoadedComponent = element.appendTo(rootEl).getComponent();
+  // rootEl.innerHTML = element;
 
   return null;
 }
