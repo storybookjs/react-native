@@ -45,12 +45,15 @@ export default function Props(props) {
           <span>
             =
             <span style={propValueStyle}>
+              {typeof nodeProps[name] === 'string' && '"'}
               <PropVal
                 val={nodeProps[name]}
                 maxPropObjectKeys={maxPropObjectKeys}
                 maxPropArrayLength={maxPropArrayLength}
                 maxPropStringLength={maxPropStringLength}
+                maxPropsIntoLine={maxPropsIntoLine}
               />
+              {typeof nodeProps[name] === 'string' && '"'}
             </span>
           </span>
         )}

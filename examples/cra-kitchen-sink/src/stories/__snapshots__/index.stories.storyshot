@@ -530,10 +530,12 @@ exports[`Storyshots Button with new info 1`] = `
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          isOld
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            isOld
+                          </span>
                         </span>
                         : 
                         <span>
@@ -545,11 +547,13 @@ exports[`Storyshots Button with new info 1`] = `
                           </span>
                           }
                         </span>
-                        , 
-                        <span
-                          style="color:#666"
-                        >
-                          value
+                        ,
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            value
+                          </span>
                         </span>
                         : 
                         <span>
@@ -592,7 +596,7 @@ exports[`Storyshots Button with new info 1`] = `
                     <span
                       style="color:#22a;word-break:break-word"
                     >
-                      "the best container ever"
+                      the best container ever
                     </span>
                   </td>
                   <td
@@ -942,10 +946,12 @@ exports[`Storyshots Button with some info 1`] = `
                         style="color:#666"
                       >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          isOld
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            isOld
+                          </span>
                         </span>
                         : 
                         <span>
@@ -957,11 +963,13 @@ exports[`Storyshots Button with some info 1`] = `
                           </span>
                           }
                         </span>
-                        , 
-                        <span
-                          style="color:#666"
-                        >
-                          value
+                        ,
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            value
+                          </span>
                         </span>
                         : 
                         <span>
@@ -1004,7 +1012,7 @@ exports[`Storyshots Button with some info 1`] = `
                     <span
                       style="color:#22a;word-break:break-word"
                     >
-                      "the best container ever"
+                      the best container ever
                     </span>
                   </td>
                   <td

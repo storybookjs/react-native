@@ -17,3 +17,21 @@ exports[`Storyshots Addon|Actions Action only 1`] = `
   Click me to log the action!
 </button>
 `;
+
+exports[`Storyshots Addon|Actions Multiple actions 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  (Double) click me to log the action!
+</button>
+`;
+
+exports[`Storyshots Addon|Actions Multiple actions, object 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  (Double) click me to log the action!
+</button>
+`;

@@ -19,10 +19,10 @@ or with yarn:
 
 ## Configuration
 
-Import and use the `configure` function in your `config.js` file.
+Import and use the `configureViewport` function in your `config.js` file.
 
 ```js
-import { configure } from '@storybook/addon-viewport';
+import { configureViewport } from '@storybook/addon-viewport';
 ```
 
 ### defaultViewport : String
@@ -94,10 +94,10 @@ This will register the Viewport Addon to Storybook and will show up in the actio
 
 ### Use Custom Set of Devices
 
-This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by simply calling `configure` with the two devices as `viewports` in `config.js` file in your `.storybook` directory.
+This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by simply calling `configureViewport` with the two devices as `viewports` in `config.js` file in your `.storybook` directory.
 
 ```js
-import { configure } from '@storybook/addon-viewport';
+import { configureViewport } from '@storybook/addon-viewport';
 
 const newViewports = {
   kindleFire2: {
@@ -116,7 +116,7 @@ const newViewports = {
   }
 };
 
-configure({
+configureViewport({
   viewports: newViewports
 });
 ```
@@ -124,10 +124,10 @@ configure({
 
 ### Add New Device
 
-This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is acheived by making use of the exported [`INITIAL_VIEWPORTS`](src/shared/index.js) property, by merging it with the new viewports and pass the result as `viewports` to `configure` function
+This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is acheived by making use of the exported [`INITIAL_VIEWPORTS`](src/shared/index.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
 
 ```js
-import { configure, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const newViewports = {
   kindleFire2: {
@@ -146,7 +146,7 @@ const newViewports = {
   }
 };
 
-configure({
+configureViewport({
   viewports: {
     ...INITIAL_VIEWPORTS,
     ...newViewports
@@ -160,9 +160,9 @@ configure({
 This will make `iPhone 6` the default viewport for all stories.
 
 ```js
-import { configure } from '@storybook/addon-viewport';
+import { configureViewport } from '@storybook/addon-viewport';
 
-configure({
+configureViewport({
   defaultViewport: 'iphone6'
 });
 ```

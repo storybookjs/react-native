@@ -38,31 +38,117 @@ const getValueStyles = (codeColors = {}) => ({
   },
 });
 
-function previewArray(val, maxPropArrayLength, valueStyles) {
+function indent(breakIntoNewLines, level, isBlock) {
+  return (
+    breakIntoNewLines && (
+      <span>
+        <br />
+        {`${Array(level).join('  ')}  `}
+        {!isBlock && '  '}
+      </span>
+    )
+  );
+}
+
+function PreviewArray({
+  val,
+  level,
+  maxPropArrayLength,
+  maxPropStringLength,
+  maxPropsIntoLine,
+  valueStyles,
+}) {
   const items = {};
+  const breakIntoNewLines = val.length > maxPropsIntoLine;
   val.slice(0, maxPropArrayLength).forEach((item, i) => {
-    items[`n${i}`] = <PropVal val={item} valueStyles={valueStyles} />;
-    items[`c${i}`] = ', ';
+    items[`n${i}`] = (
+      <span>
+        {indent(breakIntoNewLines, level)}
+        <PropVal
+          val={item}
+          level={level + 1}
+          valueStyles={valueStyles}
+          maxPropStringLength={maxPropStringLength}
+          maxPropsIntoLine={maxPropsIntoLine}
+        />
+      </span>
+    );
+    items[`c${i}`] = ',';
   });
   if (val.length > maxPropArrayLength) {
-    items.last = '…';
+    items.last = (
+      <span>
+        {indent(breakIntoNewLines, level)}
+        {'…'}
+      </span>
+    );
   } else {
     delete items[`c${val.length - 1}`];
   }
-  return <span style={valueStyles.array}>[{createFragment(items)}]</span>;
+
+  return (
+    <span style={valueStyles.array}>
+      [{createFragment(items)}
+      {indent(breakIntoNewLines, level, true)}]
+    </span>
+  );
 }
 
-function previewObject(val, maxPropObjectKeys, valueStyles) {
+PreviewArray.propTypes = {
+  val: PropTypes.any, // eslint-disable-line
+  maxPropArrayLength: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
+  maxPropsIntoLine: PropTypes.number.isRequired,
+  level: PropTypes.number.isRequired,
+  valueStyles: PropTypes.shape({
+    func: PropTypes.object,
+    attr: PropTypes.object,
+    object: PropTypes.object,
+    array: PropTypes.object,
+    number: PropTypes.object,
+    string: PropTypes.object,
+    bool: PropTypes.object,
+    empty: PropTypes.object,
+  }).isRequired,
+};
+
+function PreviewObject({
+  val,
+  level,
+  maxPropObjectKeys,
+  maxPropStringLength,
+  maxPropsIntoLine,
+  valueStyles,
+}) {
   const names = Object.keys(val);
   const items = {};
+  const breakIntoNewLines = names.length > maxPropsIntoLine;
   names.slice(0, maxPropObjectKeys).forEach((name, i) => {
-    items[`k${i}`] = <span style={valueStyles.attr}>{name}</span>;
+    items[`k${i}`] = (
+      <span>
+        {indent(breakIntoNewLines, level)}
+        <span style={valueStyles.attr}>{name}</span>
+      </span>
+    );
     items[`c${i}`] = ': ';
-    items[`v${i}`] = <PropVal val={val[name]} valueStyles={valueStyles} />;
-    items[`m${i}`] = ', ';
+    items[`v${i}`] = (
+      <PropVal
+        val={val[name]}
+        level={level + 1}
+        valueStyles={valueStyles}
+        maxPropStringLength={maxPropStringLength}
+        maxPropsIntoLine={maxPropsIntoLine}
+      />
+    );
+    items[`m${i}`] = ',';
   });
   if (names.length > maxPropObjectKeys) {
-    items.rest = '…';
+    items.rest = (
+      <span>
+        {indent(breakIntoNewLines, level)}
+        {'…'}
+      </span>
+    );
   } else {
     delete items[`m${names.length - 1}`];
   }
@@ -70,13 +156,39 @@ function previewObject(val, maxPropObjectKeys, valueStyles) {
     <span style={valueStyles.object}>
       {'{'}
       {createFragment(items)}
+      {indent(breakIntoNewLines, level, true)}
       {'}'}
     </span>
   );
 }
 
+PreviewObject.propTypes = {
+  val: PropTypes.any, // eslint-disable-line
+  maxPropObjectKeys: PropTypes.number.isRequired,
+  maxPropStringLength: PropTypes.number.isRequired,
+  maxPropsIntoLine: PropTypes.number.isRequired,
+  level: PropTypes.number.isRequired,
+  valueStyles: PropTypes.shape({
+    func: PropTypes.object,
+    attr: PropTypes.object,
+    object: PropTypes.object,
+    array: PropTypes.object,
+    number: PropTypes.object,
+    string: PropTypes.object,
+    bool: PropTypes.object,
+    empty: PropTypes.object,
+  }).isRequired,
+};
+
 function PropVal(props) {
-  const { maxPropObjectKeys, maxPropArrayLength, maxPropStringLength, theme } = props;
+  const {
+    level,
+    maxPropObjectKeys,
+    maxPropArrayLength,
+    maxPropStringLength,
+    maxPropsIntoLine,
+    theme,
+  } = props;
   let { val } = props;
   const { codeColors } = theme || {};
   let braceWrap = true;
@@ -89,12 +201,23 @@ function PropVal(props) {
     if (val.length > maxPropStringLength) {
       val = `${val.slice(0, maxPropStringLength)}…`;
     }
-    content = <span style={valueStyles.string}>"{val}"</span>;
+    content = <span style={valueStyles.string}>{val}</span>;
     braceWrap = false;
   } else if (typeof val === 'boolean') {
     content = <span style={valueStyles.bool}>{`${val}`}</span>;
   } else if (Array.isArray(val)) {
-    content = previewArray(val, maxPropArrayLength, valueStyles);
+    content = (
+      <PreviewArray
+        {...{
+          val,
+          level,
+          maxPropArrayLength,
+          maxPropStringLength,
+          maxPropsIntoLine,
+          valueStyles,
+        }}
+      />
+    );
   } else if (typeof val === 'function') {
     content = <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
   } else if (!val) {
@@ -108,7 +231,18 @@ function PropVal(props) {
       </span>
     );
   } else {
-    content = previewObject(val, maxPropObjectKeys, valueStyles);
+    content = (
+      <PreviewObject
+        {...{
+          val,
+          level,
+          maxPropObjectKeys,
+          maxPropStringLength,
+          maxPropsIntoLine,
+          valueStyles,
+        }}
+      />
+    );
   }
 
   if (!braceWrap) return content;
@@ -121,6 +255,8 @@ PropVal.defaultProps = {
   maxPropObjectKeys: 3,
   maxPropArrayLength: 3,
   maxPropStringLength: 50,
+  maxPropsIntoLine: 3,
+  level: 1,
   theme: {},
   valueStyles: null,
 };
@@ -130,6 +266,8 @@ PropVal.propTypes = {
   maxPropObjectKeys: PropTypes.number,
   maxPropArrayLength: PropTypes.number,
   maxPropStringLength: PropTypes.number,
+  maxPropsIntoLine: PropTypes.number,
+  level: PropTypes.number,
   theme: PropTypes.shape({
     codeColors: PropTypes.object,
   }),

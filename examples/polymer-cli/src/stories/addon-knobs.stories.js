@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/polymer';
 import { action } from '@storybook/addon-actions';
 import { document } from 'global';
+import { html } from 'lit-html';
 
 import {
   withKnobs,
@@ -22,6 +23,10 @@ storiesOf('Addon|Knobs', module)
     el.setAttribute('title', title);
     button('callback', () => el.setAttribute('title', 'testing'));
     return el;
+  })
+  .add('lit-html', () => {
+    const title = text('Button title', 'Hello');
+    return html`<playground-button title="${title}"></playground-button>`;
   })
   .add('complex', () => {
     const name = text('Name', 'Jane');
@@ -53,4 +58,5 @@ storiesOf('Addon|Knobs', module)
             <p>${nice ? 'Nice to meet you!' : 'Leave me alone!'}</p>
           </div>
         `;
-  });
+  })
+  .add('XSS safety', () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'));

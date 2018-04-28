@@ -1,9 +1,9 @@
 import fs from 'fs';
 import glob from 'glob';
 import global, { describe, it } from 'global';
-import addons from '@storybook/addons';
+import addons, { mockChannel } from '@storybook/addons';
 import loadFramework from './frameworkLoader';
-import createChannel from './storybook-channel-mock';
+import getIntegrityOptions from './getIntegrityOptions';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
 import { imageSnapshot } from './test-body-image-snapshot';
 
@@ -34,7 +34,7 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('testStorySnapshots is intended only to be used inside jest');
   }
 
-  addons.setChannel(createChannel());
+  addons.setChannel(mockChannel());
 
   const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
   const stories = storybook.getStorybook();
@@ -54,6 +54,7 @@ export default function testStorySnapshots(options = {}) {
   };
 
   const testMethod = options.test || snapshotWithOptions(snapshotOptions);
+  const integrityOptions = getIntegrityOptions(options);
 
   methods.forEach(method => {
     if (typeof testMethod[method] === 'function') {
@@ -92,16 +93,18 @@ export default function testStorySnapshots(options = {}) {
       });
     });
   }
-}
 
-describe('Storyshots Integrity', () => {
-  test('Abandoned Storyshots', () => {
-    const storyshots = glob.sync('**/*.storyshot');
+  if (integrityOptions !== false) {
+    describe('Storyshots Integrity', () => {
+      test('Abandoned Storyshots', () => {
+        const storyshots = glob.sync('**/*.storyshot', integrityOptions);
 
-    const abandonedStoryshots = storyshots.filter(fileName => {
-      const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
-      return !possibleStoriesFiles.some(fs.existsSync);
+        const abandonedStoryshots = storyshots.filter(fileName => {
+          const possibleStoriesFiles = getPossibleStoriesFiles(fileName);
+          return !possibleStoriesFiles.some(fs.existsSync);
+        });
+        expect(abandonedStoryshots).toHaveLength(0);
+      });
     });
-    expect(abandonedStoryshots).toHaveLength(0);
-  });
-});
+  }
+}

@@ -1,4 +1,3 @@
-import addons from '@storybook/addons';
 import window from 'global';
 import './WrapStory.html';
 
@@ -14,6 +13,7 @@ import {
   select,
   files,
   manager,
+  makeDecorators,
 } from '../base';
 
 export { knob, text, boolean, number, color, object, array, date, select, files };
@@ -30,19 +30,4 @@ function prepareComponent({ getStory, context, channel, knobStore }) {
 export const polymerHandler = (channel, knobStore) => getStory => context =>
   prepareComponent({ getStory, context, channel, knobStore });
 
-function wrapperKnobs(options) {
-  const channel = addons.getChannel();
-  manager.setChannel(channel);
-
-  if (options) channel.emit('addon:knobs:setOptions', options);
-
-  return polymerHandler(channel, manager.knobStore);
-}
-
-export function withKnobs(storyFn, context) {
-  return wrapperKnobs()(storyFn)(context);
-}
-
-export function withKnobsOptions(options = {}) {
-  return (storyFn, context) => wrapperKnobs(options)(storyFn)(context);
-}
+export const { withKnobs, withKnobsOptions } = makeDecorators(polymerHandler, { escapeHTML: true });

@@ -13,11 +13,11 @@
     "babel-preset-react": "^6.24.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "@storybook/react": "^4.0.0-alpha.1",
-    "@storybook/addon-actions": "^4.0.0-alpha.1",
-    "@storybook/addon-links": "^4.0.0-alpha.1",
-    "@storybook/addons": "^4.0.0-alpha.1",
-    "babel-core": "^6.26.0",
+    "@storybook/react": "^4.0.0-alpha.4",
+    "@storybook/addon-actions": "^4.0.0-alpha.4",
+    "@storybook/addon-links": "^4.0.0-alpha.4",
+    "@storybook/addons": "^4.0.0-alpha.4",
+    "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0"
   },
   "peerDependencies": {

@@ -6,6 +6,7 @@ export interface IStorybookStory {
   render: () => any;
 }
 
+/** @todo typo in Storibook */
 export interface IStoribookSection {
   kind: string;
   stories: IStorybookStory[];
@@ -17,14 +18,14 @@ export interface IStoryContext {
   parameters: any;
 }
 
-export type IGetStory = (
-  IStoryContext
-) => {
+export interface IStory {
   props?: ICollection;
   moduleMetadata?: Partial<NgModuleMetadata>;
   component?: any;
   template?: string;
-};
+}
+
+export type IGetStory = (context: IStoryContext) => IStory;
 
 export interface IApi {
   kind: string;

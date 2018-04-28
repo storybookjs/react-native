@@ -70,6 +70,11 @@ exports[`Storyshots Addons|Actions All types 1`] = `
   <button
     class="css-1yjiefr"
   >
+    Object (depth: 2)
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
     RegExp
   </button>
   <button
@@ -108,11 +113,43 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Decorated Action 1`] = `
+exports[`Storyshots Addons|Actions Decorated Action (deprecated) 1`] = `
 <button
   class="css-1yjiefr"
 >
-  First Argument
+  Native Event
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated action 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Native Event
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated actions 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Native Event
 </button>
 `;
 
@@ -132,10 +169,78 @@ exports[`Storyshots Addons|Actions Hello World 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
+<div>
+  <button
+    class="css-1yjiefr"
+  >
+    False
+  </button>
+  <button
+    class="css-1yjiefr"
+  >
+    True
+  </button>
+</div>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
+<div>
+  <p>
+    Moving away from this story will persist the action logger
+  </p>
+  <button
+    class="css-1yjiefr"
+  >
+    Object (configured clearOnStoryChange: false)
+  </button>
+</div>
+`;
+
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 <button
   class="css-1yjiefr"
 >
   Delete
+</button>
+`;
+
+exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Object (configured depth: 2)
 </button>
 `;

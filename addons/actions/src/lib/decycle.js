@@ -1,25 +1,25 @@
 import { DecycleError } from './errors';
 
-import { getPropertiesList, typeReplacer } from './util';
+import { getPropertiesList, typeReplacer, omitProperty } from './util';
 
 import { CYCLIC_KEY } from './';
 
 import { objectType } from './types';
+
+import { DEPTH_KEY } from './types/object/configureDepth';
+
+const { hasOwnProperty } = Object.prototype;
 
 export default function decycle(object, depth = 10) {
   const objects = new WeakMap();
 
   let isCyclic = false;
 
-  const res = (function derez(value, path, _depth) {
+  const res = (function derez(value, path, _depth, _branchDepthMax) {
     let oldPath;
     let obj;
 
-    if (Object(value) === value && _depth > depth) {
-      const name = value.constructor ? value.constructor.name : typeof value;
-
-      return `[${name}...]`;
-    }
+    let maxDepth = _branchDepthMax;
 
     const result = typeReplacer(value);
 
@@ -51,19 +51,40 @@ export default function decycle(object, depth = 10) {
       if (Array.isArray(value)) {
         obj = [];
         for (let i = 0; i < value.length; i += 1) {
-          obj[i] = derez(value[i], `${path}[${i}]`, _depth + 1);
+          obj[i] = derez(value[i], `${path}[${i}]`, _depth + 1, maxDepth);
         }
       } else {
         obj = objectType.serialize(value);
 
-        getPropertiesList(value).forEach(name => {
-          try {
-            obj[name] = derez(value[name], `${path}[${JSON.stringify(name)}]`, _depth + 1);
-          } catch (error) {
-            console.error(error); // eslint-disable-line no-console
-            obj[name] = new DecycleError(error.message);
+        let newDepth;
+        if (hasOwnProperty.call(obj, DEPTH_KEY)) {
+          if (_depth + 1 < maxDepth) {
+            const depthKey = obj[DEPTH_KEY];
+
+            newDepth = depthKey === 0 ? 0 : _depth + depthKey;
+            maxDepth = newDepth >= depth ? depth : newDepth;
           }
-        });
+
+          delete obj[DEPTH_KEY];
+        }
+
+        if (_depth <= maxDepth) {
+          getPropertiesList(value).forEach(name => {
+            if (!omitProperty(name)) {
+              try {
+                obj[name] = derez(
+                  value[name],
+                  `${path}[${JSON.stringify(name)}]`,
+                  _depth + 1,
+                  maxDepth
+                );
+              } catch (error) {
+                console.error(error); // eslint-disable-line no-console
+                obj[name] = new DecycleError(error.message);
+              }
+            }
+          });
+        }
       }
 
       if (_depth === 0 && value instanceof Object && isCyclic) {
@@ -74,7 +95,7 @@ export default function decycle(object, depth = 10) {
     }
 
     return value;
-  })(object, '$', 0);
+  })(object, '$', 0, depth);
 
   return res;
 }

@@ -2,7 +2,7 @@ coursera:
   thumbnail: coursera-ui.png
   title: Coursera
   description: Coursera UI component library
-  demo: https://building.coursera.org/ui/
+  demo: https://building.coursera.org/coursera-ui/
 wix:
   thumbnail: wix.png
   title: Wix Style React
@@ -138,3 +138,11 @@ gumgum:
   description: GumGum (Computer Vision Company) Component library
   demo: https://storybook.gumgum.com
   site: https://gumgum.com
+lucid-ui:
+  thumbnail: lucid-ui.png
+  title: Lucid UI
+  description: Component and charts library by AppNexus
+  demo: https://appnexus.github.io/lucid/
+  source: https://github.com/appnexus/lucid
+  site: https://appnexus.com/
+

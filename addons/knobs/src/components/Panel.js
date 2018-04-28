@@ -155,31 +155,25 @@ export default class Panel extends React.Component {
     const groups = {};
     const groupIds = [];
 
-    Object.keys(knobs)
-      .filter(key => knobs[key].used && knobs[key].groupId)
-      .forEach(key => {
-        const knobKeyGroupId = knobs[key].groupId;
-        groupIds.push(knobKeyGroupId);
-        groups[knobKeyGroupId] = {
-          render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
-          title: knobKeyGroupId,
-        };
-      });
+    let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    let knobsArray = Object.keys(knobs);
+    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
+      const knobKeyGroupId = knobs[key].groupId;
+      groupIds.push(knobKeyGroupId);
+      groups[knobKeyGroupId] = {
+        render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
+        title: knobKeyGroupId,
+      };
+    });
 
     if (groupIds.length > 0) {
       groups[DEFAULT_GROUP_ID] = {
         render: () => <div id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</div>,
         title: DEFAULT_GROUP_ID,
       };
-      knobsArray = knobsArray.filter(key => {
-        const filter =
-          groupId === DEFAULT_GROUP_ID
-            ? knobs[key].used
-            : knobs[key].used && knobs[key].groupId === groupId;
-        return filter;
-      });
+      if (groupId !== DEFAULT_GROUP_ID) {
+        knobsArray = knobsArray.filter(key => knobs[key].groupId === groupId);
+      }
     }
 
     knobsArray = knobsArray.map(key => knobs[key]);

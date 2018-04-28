@@ -181,3 +181,5 @@ You may need to exclude your stories from being compiled when running your angul
   ]
 }
 ```
+
+If you're using scss for styling, you need to have `node-sass` dependency installed on your side (directly or via `@angular/cli`).

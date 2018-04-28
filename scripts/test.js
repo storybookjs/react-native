@@ -102,6 +102,12 @@ const tasks = {
     option: '--update',
     extraParam: '-u',
   }),
+  teamcity: createOption({
+    name: `Use TeamCity reporter`,
+    defaultValue: false,
+    option: '--teamcity',
+    extraParam: '--testResultsProcessor=jest-teamcity-reporter',
+  }),
 };
 
 const getProjects = list => {
