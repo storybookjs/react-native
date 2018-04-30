@@ -49,8 +49,7 @@ export function renderMain(data, storyStore, forceRender) {
     return null;
   }
 
-  // We need to unmount the existing set of components in the DOM node.
-  // Otherwise, React may not recrease instances for every story run.
+  // We should unmount/destroy the existing set of components in the DOM node.
   // This could leads to issues like below:
   //    https://github.com/storybooks/react-storybook/issues/81
   previousKind = selectedKind;

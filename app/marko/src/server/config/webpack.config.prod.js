@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
-import InterpolateHtmlPlugin from '@storybook/react-dev-utils/InterpolateHtmlPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
 import babelLoaderConfig from './babel.prod';
@@ -47,7 +46,6 @@ export default function(configDir) {
         },
         template: require.resolve('../iframe.html.ejs'),
       }),
-      new InterpolateHtmlPlugin(process.env),
       new webpack.DefinePlugin(loadEnv({ production: true })),
       new Dotenv({ silent: true }),
     ],

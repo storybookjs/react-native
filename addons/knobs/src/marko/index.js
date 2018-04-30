@@ -1,9 +1,4 @@
-/** @jsx m */
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-import m from 'mithril';
 import addons from '@storybook/addons';
-
 import WrapStory from './WrapStory.marko';
 
 import {
