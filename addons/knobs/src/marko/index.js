@@ -21,8 +21,8 @@ export { knob, text, boolean, number, color, object, array, date, select, select
 export const markoHandler = (channel, knobStore) => getStory => context => {
   const initialContent = getStory(context);
   const props = { context, storyFn: getStory, channel, knobStore, initialContent };
-  
-  return WrapStory.renderSync({props: props});
+
+  return WrapStory.renderSync({ props });
 };
 
 function wrapperKnobs(options) {

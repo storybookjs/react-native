@@ -1,5 +1,4 @@
-import { configure, setAddon } from '@storybook/marko';
-import { setOptions } from '@storybook/addon-options';
+import { configure } from '@storybook/marko';
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed
