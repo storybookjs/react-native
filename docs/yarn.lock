@@ -50,9 +50,13 @@
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.2", "@storybook/addons@^3.4.2":
+"@storybook/addons@3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.2.tgz#77f0d5cb3b9443da6765600d83cd5acda6115af6"
+
+"@storybook/addons@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.3.tgz#537311d621cb3d582d581a160813608d6b27e4bd"
 
 "@storybook/channel-postmessage@3.4.2":
   version "3.4.2"
