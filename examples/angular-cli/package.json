@@ -38,8 +38,8 @@
     "@storybook/angular": "4.0.0-alpha.4",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "^2.0.3",
-    "@types/node": "~9.6.6",
-    "babel-core": "^6.26.0",
+    "@types/node": "~9.6.7",
+    "babel-core": "^6.26.3",
     "global": "^4.3.2",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -50,7 +50,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^1.0.0",
     "protractor": "~5.3.1",
-    "ts-node": "~6.0.0",
+    "ts-node": "~6.0.2",
     "typescript": "^2.8.3"
   }
 }
