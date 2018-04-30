@@ -52,7 +52,7 @@ storiesOf('Component', module)
 
 #### Using Markdown
 
-To use markdown in your notes simply import a markdown file and use that in your note.
+To use markdown in your notes simply import a markdown file and use that in the `markdown` property of your note.
 
 ```js
 import { storiesOf } from '@storybook/react';
@@ -62,11 +62,11 @@ import someMarkdownText from './someMarkdownText.md';
 storiesOf('Component', module).add(
   'With Markdown',
   () => <Component />
-  { notes: someMarkdownText }
+  { notes: { markdown: someMarkdownText } }
 );
 ```
 
-If you want to use Github flavored markdown inline, use `notes: { markdownText: 'your md' }`:
+Similarly, if you want to use Github flavored markdown inline, use `notes: { markdownText: 'your md' }`:
 
 ```js
 import { storiesOf } from '@storybook/react';
