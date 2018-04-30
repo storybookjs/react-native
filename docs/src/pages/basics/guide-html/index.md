@@ -11,7 +11,7 @@ You may have tried to use our quick start guide to setup your project for Storyb
 
 Storybook has its own Webpack setup and a dev server.
 
-In this guide, we will set up Storybook for your Mithril project.
+In this guide, we will set up Storybook for your HTML project.
 
 ## Table of contents
 
@@ -26,7 +26,7 @@ In this guide, we will set up Storybook for your Mithril project.
 First of all, you need to add `@storybook/html` to your project. To do that, simply run:
 
 ```sh
-npm i --save-dev @storybook/mithril
+npm i --save-dev @storybook/html
 ```
 
 If you don't have `package.json` in your project, you'll need to init it first:
@@ -64,7 +64,7 @@ For the basic Storybook configuration file, you don't need to do much, but simpl
 To do that, simply create a file at `.storybook/config.js` with the following content:
 
 ```js
-import { configure } from '@storybook/mithril';
+import { configure } from '@storybook/html';
 
 function loadStories() {
   require('../stories/index.js');
@@ -96,7 +96,7 @@ storiesOf('Demo', module)
 
 ```
 
-Story is a single HTML snippet or DOM note. In the above case, there are two stories:
+Story is a single HTML snippet or DOM node. In the above case, there are two stories:
 
 1.  heading — an HTML snippet
 2.  button — a DOM node with event listener
