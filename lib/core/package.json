@@ -21,7 +21,7 @@
     "@storybook/client-logger": "4.0.0-alpha.4",
     "@storybook/node-logger": "4.0.0-alpha.4",
     "@storybook/ui": "4.0.0-alpha.4",
-    "autoprefixer": "^8.3.0",
+    "autoprefixer": "^8.4.1",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.4.0",
     "commander": "^2.15.1",
