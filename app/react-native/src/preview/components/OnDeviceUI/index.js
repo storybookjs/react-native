@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 import { Dimensions, View, TouchableWithoutFeedback, Image, Text, StatusBar } from 'react-native';
+import Events from '@storybook/core-events';
 import style from './style';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -34,13 +35,13 @@ export default class OnDeviceUI extends Component {
 
   componentDidMount() {
     Dimensions.addEventListener('change', this.handleDeviceRotation);
-    this.props.events.on('story', this.handleStoryChange);
+    this.props.events.on(Events.SELECT_STORY, this.handleStoryChange);
     StatusBar.setHidden(true);
   }
 
   componentWillUnmount() {
     Dimensions.removeEventListener('change', this.handleDeviceRotation);
-    this.props.events.removeListener('story', this.handleStoryChange);
+    this.props.events.removeListener(Events.SELECT_STORY, this.handleStoryChange);
   }
 
   handleDeviceRotation = () => {
