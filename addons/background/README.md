@@ -76,3 +76,10 @@ storiesOf("Button", module)
 > import { storiesOf } from '@storybook/mithril';
 > import backgrounds from "@storybook/addon-backgrounds/mithril";
 > ```
+
+> In the case of Vue, use these imports:
+>
+> ```js
+> import { storiesOf } from '@storybook/vue';
+> import backgrounds from "@storybook/addon-backgrounds/vue";
+> ```

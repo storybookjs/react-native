@@ -78,6 +78,7 @@ function addInfo(storyFn, context, infoOptions) {
     maxPropArrayLength: options.maxPropArrayLength,
     maxPropsIntoLine: options.maxPropsIntoLine,
     maxPropStringLength: options.maxPropStringLength,
+    excludedPropTypes: options.excludedPropTypes,
   };
   return <Story {...props}>{storyFn(context)}</Story>;
 }

@@ -1,3 +1,4 @@
 export { default as action } from './action';
+export { default as actions } from './actions';
 export { configureActions } from './configureActions';
-export { default as decorateAction } from './decorateAction';
+export { decorateAction, decorate } from './decorateAction';

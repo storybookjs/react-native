@@ -23,65 +23,21 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
             """.trimIndent()
             dockerImage = "node:latest"
         }
-        script {
-            name = "angular-cli"
-            scriptContent = """
-                #!/bin/sh
+        allApps {
+            if (merged) {
+                script {
+                    name = appName
+                    scriptContent = """
+                        #!/bin/sh
 
-                set -e -x
+                        set -e -x
 
-                cd examples/angular-cli
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "polymer-cli"
-            scriptContent = """
-                #!/bin/sh
-
-                set -e -x
-
-                cd examples/polymer-cli
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "cra-kitchen-sink"
-            scriptContent = """
-                #!/bin/sh
-
-                set -e -x
-
-                cd examples/cra-kitchen-sink
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "mithril-kitchen-sink"
-            scriptContent = """
-                #!/bin/sh
-
-                set -e -x
-
-                cd examples/mithril-kitchen-sink
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
-            name = "vue-kitchen-sink"
-            scriptContent = """
-                #!/bin/sh
-
-                set -e -x
-
-                cd examples/vue-kitchen-sink
-                yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:latest"
+                        cd examples/$exampleDir
+                        yarn storybook --smoke-test
+                    """.trimIndent()
+                    dockerImage = "node:latest"
+                }
+            }
         }
         script {
             name = "official-storybook"

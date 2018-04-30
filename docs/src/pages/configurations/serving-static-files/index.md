@@ -23,7 +23,7 @@ const image = {
 };
 
 storiesOf('<img />', module)
-  .add('with a image', () => (
+  .add('with an image', () => (
     <img src={image.src} alt={image.alt} />
   ));
 ```
