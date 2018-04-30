@@ -61,7 +61,7 @@ import someMarkdownText from './someMarkdownText.md';
 
 storiesOf('Component', module).add(
   'With Markdown',
-  () => <Component />
+  () => <Component />,
   { notes: { markdown: someMarkdownText } }
 );
 ```
@@ -74,7 +74,7 @@ import Component from './Component';
 
 storiesOf('Component', module).add(
   'With Markdown',
-  () => <Component />
+  () => <Component />,
   { notes: { markdown: `
   # Hello World
 
