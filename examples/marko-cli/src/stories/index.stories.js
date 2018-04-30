@@ -1,13 +1,5 @@
-//import React from 'react';
-
 import { storiesOf } from '@storybook/marko';
 import { action, configureActions } from '@storybook/addon-actions';
-
-// import { setOptions } from '@storybook/addon-options';
-// import { action } from '@storybook/addon-actions';
-// // eslint-disable-next-line import/named
-// import { withNotes, WithNotes } from '@storybook/addon-notes';
-// import centered from '@storybook/addon-centered';
 
 import Hello from '../components/hello/index.marko';
 import ClickCount from '../components/click-count/index.marko';

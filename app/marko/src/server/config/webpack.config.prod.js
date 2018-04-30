@@ -54,6 +54,10 @@ export default function(configDir) {
     module: {
       rules: [
         {
+          test: /\.marko$/,
+          loader: require.resolve('marko-loader'),
+        },
+        {
           test: /\.jsx?$/,
           loader: require.resolve('babel-loader'),
           query: babelLoaderConfig,
@@ -76,7 +80,7 @@ export default function(configDir) {
     resolve: {
       // Since we ship with json-loader always, it's better to move extensions to here
       // from the default config.
-      extensions: ['.js', '.json', '.jsx'],
+      extensions: ['.js', '.json', '.jsx', '.marko'],
       // Add support to NODE_PATH. With this we could avoid relative path imports.
       // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
       modules: ['node_modules'].concat(nodePaths),

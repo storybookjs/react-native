@@ -1,4 +1,4 @@
-# Storybook for React
+# Storybook for Marko
 
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
@@ -9,7 +9,7 @@
 
 * * *
 
-Storybook for React is a UI development environment for your React components.
+Storybook for Marko is a UI development environment for your Marko components.
 With it, you can visualize different states of your UI components and develop them interactively.
 
 ![Storybook Screenshot](docs/demo.gif)
@@ -21,7 +21,7 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ```sh
 npm i -g @storybook/cli
-cd my-react-app
+cd my-marko-app
 getstorybook
 ```
 
@@ -34,12 +34,7 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 
 Here are some featured storybooks that you can reference to see how Storybook works:
 
--   [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
--   [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
-
 ## Typescript
-
-If you are using Typescript, make sure you have the type definitions installed via `yarn add @types/node @types/react @types/storybook__react --dev`.
 
 ## Docs
 
