@@ -52,7 +52,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "chalk": "^2.4.0",
+    "chalk": "^2.4.1",
     "codecov": "^3.0.0",
     "codelyzer": "^4.3.0",
     "commander": "^2.15.1",
