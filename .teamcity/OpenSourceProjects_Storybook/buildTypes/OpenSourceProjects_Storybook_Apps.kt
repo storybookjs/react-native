@@ -23,13 +23,13 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
         id = "OpenSourceProjects_Storybook_$appName"
         name = appName
 
-        if (!merged) return@init
-
-        artifactRules = artifactPath
-
         vcs {
             root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
         }
+
+        if (!merged) return@init
+
+        artifactRules = artifactPath
 
         steps {
             script {

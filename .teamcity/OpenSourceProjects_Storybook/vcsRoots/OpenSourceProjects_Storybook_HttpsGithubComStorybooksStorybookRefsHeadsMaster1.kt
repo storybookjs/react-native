@@ -9,7 +9,6 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     name = "https://github.com/storybooks/storybook#refs/heads/master (1)"
     url = "git@github.com:storybooks/storybook.git"
     branchSpec = "+:refs/(pull/*)/head"
-    agentCleanPolicy = GitVcsRoot.AgentCleanPolicy.NEVER
     authMethod = uploadedKey {
         userName = "git"
         uploadedKey = "Storybook bot"

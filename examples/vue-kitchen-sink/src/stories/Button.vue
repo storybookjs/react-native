@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :style="{color: color, borderColor: color}" @click="handleClick" :class="{rounded: rounded}"><slot></slot>!</button>
+  <button class="button" :style="{color: color, borderColor: color}" @click="handleClick" @dblclick="handleDblclick" :class="{rounded: rounded}"><slot></slot>!</button>
 </template>
 
 <script>
@@ -7,6 +7,9 @@
     props: {
       rounded: Boolean,
       handleClick: {
+        default: () => () => null
+      },
+      handleDblclick: {
         default: () => () => null
       },
       color: {

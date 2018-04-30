@@ -7,7 +7,7 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-* * *
+---
 
 Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybook.js.org).
 
@@ -39,37 +39,50 @@ import { action, configureActions } from '@storybook/addon-actions';
 
 import Button from './button';
 
-action('button-click')
+storiesOf('Button', module).add('default view', () => (
+  <Button onClick={action('button-click')}>Hello World!</Button>
+));
+```
+
+## Multiple actions
+
+If your story requires multiple actions, it may be convenient to use `actions` to create many at once:
+
+```js
+import { storiesOf } from '@storybook/react';
+import { actions } from '@storybook/addon-actions';
+
+import Button from './button';
+
+// This will lead to { onClick: action('onClick'), ... }
+const eventsFromNames = actions('onClick', 'onDoubleClick');
+
+// This will lead to { onClick: action('clicked'), ... }
+const eventsFromObject = actions({ onClick: 'clicked', onDoubleClick: 'double clicked' });
 
 storiesOf('Button', module)
-  .add('default view', () => (
-    <Button onClick={ action('button-click') }>
-      Hello World!
-    </Button>
-  ))
+  .add('default view', () => <Button {...eventsFromNames}>Hello World!</Button>)
+  .add('default view, different actions', () => (
+    <Button {...eventsFromObject}>Hello World!</Button>
+  ));
 ```
 
 ## Action Decorators
 
 If you wish to process action data before sending them over to the logger, you can do it with action decorators.
 
-`decorateAction` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorateAction` returns a function that can be used like `action` but will log the modified arguments instead of the original arguments.
+`decorate` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorate` returns a object with two functions: `action` and `actions`, that act like the above, except they log the modified arguments instead of the original arguments.
 
 ```js
-import { decorateAction } from '@storybook/addon-actions';
+import { decorate } from '@storybook/addon-actions';
 
 import Button from './button';
 
-const firstArgAction = decorateAction([
-  args => args.slice(0, 1)
-]);
+const firstArg = decorate([args => args.slice(0, 1)]);
 
-storiesOf('Button', module)
-  .add('default view', () => (
-    <Button onClick={ firstArgAction('button-click') }>
-      Hello World!
-    </Button>
-  ))
+storiesOf('Button', module).add('default view', () => (
+  <Button onClick={firstArg.action('button-click')}>Hello World!</Button>
+));
 ```
 
 ## Configuration
@@ -80,20 +93,26 @@ over the channel.
 This is not very optimal and can cause lag when large objects are being logged, for this reason it is possible 
 to configure a maximum depth.
 
+The action logger, by default, will log all actions fired during the lifetime of the story. After a while
+this can make the storybook laggy. As a workaround, you can configure an upper limit to how many actions should 
+be logged.
+
 To apply the configuration globally use the `configureActions` function in your `config.js` file.
 
 ```js
 import { configureActions } from '@storybook/addon-actions';
 
 configureActions({
-  depth: 100
+  depth: 100,
+  // Limit the number of items logged into the actions panel
+  limit: 20,
 })
 ```
 
 To apply the configuration per action use:
 ```js
 action('my-action', {
-  depth: 5 
+  depth: 5,
 })
 ```
 
@@ -102,3 +121,5 @@ action('my-action', {
 |Name|Type|Description|Default|
 |---|---|---|---|
 |`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
+|`clearOnStoryChange`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`true`|
+|`limit`|Number|Limits the number of items logged in the action logger|`50`|

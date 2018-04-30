@@ -2,7 +2,7 @@ coursera:
   thumbnail: coursera-ui.png
   title: Coursera
   description: Coursera UI component library
-  demo: https://building.coursera.org/ui/
+  demo: https://building.coursera.org/coursera-ui/
 wix:
   thumbnail: wix.png
   title: Wix Style React

@@ -2043,6 +2043,7 @@ exports[`addon Info should render <Info /> and markdown 1`] = `
       }
     }
     context={Object {}}
+    excludedPropTypes={Array []}
     info="# Test story
 ## with markdown info
 containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
@@ -4111,12 +4112,14 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                     " Component
                   </h2>
                   <Component
+                    excludedPropTypes={Array []}
                     maxPropArrayLength={3}
                     maxPropObjectKeys={3}
                     maxPropStringLength={50}
                     type={[Function]}
                   >
                     <PropTable
+                      excludedPropTypes={Array []}
                       maxPropArrayLength={3}
                       maxPropObjectKeys={3}
                       maxPropStringLength={50}

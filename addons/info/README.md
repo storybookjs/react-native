@@ -137,6 +137,7 @@ setDefaults({
   maxPropArrayLength: 10, // Displays the first 10 items in the default prop array
   maxPropStringLength: 100, // Displays the first 100 characters in the default prop string,
   TableComponent: props => {}, // Override the component used to render the props table
+  excludedPropTypes: [], // Will exclude any respective properties whose name is included in array
 }
 ```
 
