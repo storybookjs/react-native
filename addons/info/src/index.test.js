@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import AddonInfo, { withInfo, setDefaults } from './';
+import externalMdDocs from '../README.md';
 
 /* eslint-disable */
 const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
@@ -49,6 +50,11 @@ describe('addon Info', () => {
 
   it('should render <Info /> and markdown', () => {
     const Info = withInfo(testMarkdown)(story);
+
+    expect(mount(<Info />)).toMatchSnapshot();
+  });
+  it('should render <Info /> and external markdown', () => {
+    const Info = withInfo(externalMdDocs)(story);
 
     expect(mount(<Info />)).toMatchSnapshot();
   });
