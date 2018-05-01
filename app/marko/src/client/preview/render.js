@@ -14,8 +14,8 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
 
   if (!element || !element.out) {
     showError({
-      message: `Expecting a Marko element from the story: "${selectedStory}" of "${selectedKind}".`,
-      stack: stripIndents`
+      title: `Expecting a Marko element from the story: "${selectedStory}" of "${selectedKind}".`,
+      description: stripIndents`
         Did you forget to return the Marko element from the story?
         Use "() => MyComp.renderSync({})" or "() => { return MyComp.renderSync({}); }" when defining the story.
       `,
