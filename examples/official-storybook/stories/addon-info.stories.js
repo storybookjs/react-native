@@ -8,6 +8,7 @@ import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
+import externalMdDocs from './addon-info-resources/EXAMPLE.md';
 
 storiesOf('Addons|Info.React Docgen', module)
   .add(
@@ -46,10 +47,23 @@ const Button = () => <button />;
 Maybe include a [link](http://storybook.js.org) to your project as well.
 `;
 
-storiesOf('Addons|Info.Markdown', module).add(
-  'Displays Markdown in description',
-  withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
-);
+storiesOf('Addons|Info.Markdown', module)
+  .add(
+    'Displays Markdown in description',
+    withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+  )
+  .add(
+    'From internal Markdown file',
+    withInfo(`
+      # internal
+      ## markdown
+      file
+    `)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+  )
+  .add(
+    'From external Markdown file',
+    withInfo(externalMdDocs)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+  );
 
 const JSXDescription = (
   <div>
