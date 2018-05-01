@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import Events from '@storybook/core-events';
 import style from './style';
 
 export default class StoryView extends Component {
@@ -10,11 +11,11 @@ export default class StoryView extends Component {
 
     this.storyHandler = this.selectStory.bind(this);
 
-    this.props.events.on('story', this.storyHandler);
+    this.props.events.on(Events.SELECT_STORY, this.storyHandler);
   }
 
   componentWillUnmount() {
-    this.props.events.removeListener('story', this.storyHandler);
+    this.props.events.removeListener(Events.SELECT_STORY, this.storyHandler);
   }
 
   selectStory(storyFn, selection) {

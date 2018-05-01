@@ -4,6 +4,7 @@ import React from 'react';
 import { NativeModules } from 'react-native';
 import parse from 'url-parse';
 import addons from '@storybook/addons';
+import Events from '@storybook/core-events';
 import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
 import { StoryStore, ClientApi } from '@storybook/core/client';
@@ -64,11 +65,11 @@ export default class Preview {
         channel = createChannel({ url });
         addons.setChannel(channel);
 
-        channel.emit('channelCreated');
+        channel.emit(Events.CHANNEL_CREATED);
       }
-      channel.on('getStories', () => this._sendSetStories());
-      channel.on('setCurrentStory', d => this._selectStory(d));
-      this._events.on('setCurrentStory', d => this._selectStory(d));
+      channel.on(Events.GET_STORIES, () => this._sendSetStories());
+      channel.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
+      this._events.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
       this._sendSetStories();
       this._sendGetCurrentStory();
 
@@ -84,17 +85,17 @@ export default class Preview {
   _sendSetStories() {
     const channel = addons.getChannel();
     const stories = this._stories.dumpStoryBook();
-    channel.emit('setStories', { stories });
+    channel.emit(Events.SET_STORIES, { stories });
   }
 
   _sendGetCurrentStory() {
     const channel = addons.getChannel();
-    channel.emit('getCurrentStory');
+    channel.emit(Events.GET_CURRENT_STORY);
   }
 
   _selectStory(selection) {
     const { kind, story } = selection;
     const storyFn = this._stories.getStoryWithContext(kind, story);
-    this._events.emit('story', storyFn, selection);
+    this._events.emit(Events.SELECT_STORY, storyFn, selection);
   }
 }

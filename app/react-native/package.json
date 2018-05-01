@@ -30,6 +30,7 @@
     "@storybook/addons": "4.0.0-alpha.4",
     "@storybook/channel-websocket": "4.0.0-alpha.4",
     "@storybook/core": "4.0.0-alpha.4",
+    "@storybook/core-events": "4.0.0-alpha.4",
     "@storybook/react-dev-utils": "^5.0.0",
     "@storybook/ui": "4.0.0-alpha.4",
     "babel-loader": "^7.1.4",

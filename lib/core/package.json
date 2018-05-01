@@ -19,6 +19,7 @@
     "@storybook/addons": "4.0.0-alpha.4",
     "@storybook/channel-postmessage": "4.0.0-alpha.4",
     "@storybook/client-logger": "4.0.0-alpha.4",
+    "@storybook/core-events": "4.0.0-alpha.4",
     "@storybook/node-logger": "4.0.0-alpha.4",
     "@storybook/ui": "4.0.0-alpha.4",
     "autoprefixer": "^8.4.1",
