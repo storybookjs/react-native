@@ -29,6 +29,7 @@
     "@storybook/addon-viewport": "4.0.0-alpha.4",
     "@storybook/addons": "4.0.0-alpha.4",
     "@storybook/components": "4.0.0-alpha.4",
+    "@storybook/core-events": "4.0.0-alpha.4",
     "@storybook/node-logger": "4.0.0-alpha.4",
     "@storybook/react": "4.0.0-alpha.4",
     "babel-runtime": "^6.26.0",

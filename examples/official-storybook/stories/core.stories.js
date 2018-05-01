@@ -1,5 +1,8 @@
 import React from 'react';
 import { storiesOf, addParameters } from '@storybook/react';
+import addons from '@storybook/addons';
+import Events from '@storybook/core-events';
+import { Button } from '@storybook/components';
 
 const globalParameter = 'globalParameter';
 const chapterParameter = 'chapterParameter';
@@ -18,3 +21,11 @@ storiesOf('Core|Parameters', module)
       storyParameter,
     }
   );
+
+const forceReRender = () => addons.getChannel().emit(Events.FORCE_RE_RENDER);
+
+storiesOf('Core|Events', module).add('Force re-render', () => (
+  <React.Fragment>
+    Random number is {Math.random()} <Button onClick={forceReRender}>Refresh</Button>
+  </React.Fragment>
+));

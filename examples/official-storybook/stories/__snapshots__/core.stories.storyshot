@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Core|Events Force re-render 1`] = `
+Array [
+  "Random number is 0.07705746569617533 ",
+  <button
+    class="css-1ibnlbj"
+    type="button"
+  >
+    Refresh
+  </button>,
+]
+`;
+
 exports[`Storyshots Core|Parameters passed to story 1`] = `
 <div>
   Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
