@@ -22,10 +22,12 @@ storiesOf('Core|Parameters', module)
     }
   );
 
-const forceReRender = () => addons.getChannel().emit(Events.FORCE_RE_RENDER);
+let timesClicked = 0;
+const increment = () => {
+  timesClicked += 1;
+  addons.getChannel().emit(Events.FORCE_RE_RENDER);
+};
 
 storiesOf('Core|Events', module).add('Force re-render', () => (
-  <React.Fragment>
-    Random number is {Math.random()} <Button onClick={forceReRender}>Refresh</Button>
-  </React.Fragment>
+  <Button onClick={increment}>Clicked: {timesClicked}</Button>
 ));
