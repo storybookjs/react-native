@@ -1,6 +1,4 @@
 import addons from '@storybook/addons';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { subscriptionsStore } from '@storybook/core/client';
 import Events from '@storybook/core-events';
 import { manager } from '../base';
 
@@ -60,7 +58,7 @@ function connectCallbacks() {
 }
 
 function registerKnobs() {
-  subscriptionsStore.register(connectCallbacks);
+  addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, connectCallbacks);
 }
 
 export default registerKnobs;
