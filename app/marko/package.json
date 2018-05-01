@@ -19,7 +19,6 @@
     "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
-    "dev": "cross-env DEV_BUILD=1 nodemon --watch ./src --exec \"yarn prepare\"",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
@@ -52,9 +51,6 @@
     "prop-types": "^15.6.1",
     "webpack": "^4.5.0",
     "webpack-hot-middleware": "^2.21.2"
-  },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",

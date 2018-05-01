@@ -3,13 +3,19 @@ import webpack from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { managerPath, getPreviewHeadHtml, getManagerHeadHtml } from '@storybook/core/server';
+import {
+  managerPath,
+  getPreviewHeadHtml,
+  getManagerHeadHtml,
+  indexHtmlPath,
+  iframeHtmlPath,
+} from '@storybook/core/server';
 
 import { includePaths, excludePaths, loadEnv, nodePaths } from './utils';
 import babelLoaderConfig from './babel';
 import { version } from '../../../package.json';
 
-export default function(configDir) {
+export default function(configDir, quiet) {
   const config = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
@@ -35,7 +41,7 @@ export default function(configDir) {
           managerHead: getManagerHeadHtml(configDir),
           version,
         },
-        template: require.resolve('../index.html.ejs'),
+        template: indexHtmlPath,
       }),
       new HtmlWebpackPlugin({
         filename: 'iframe.html',
@@ -44,14 +50,14 @@ export default function(configDir) {
         data: {
           previewHead: getPreviewHeadHtml(configDir),
         },
-        template: require.resolve('../iframe.html.ejs'),
+        template: iframeHtmlPath,
       }),
       new webpack.DefinePlugin(loadEnv()),
       new webpack.HotModuleReplacementPlugin(),
       new CaseSensitivePathsPlugin(),
-      new webpack.ProgressPlugin(),
+      quiet ? null : new webpack.ProgressPlugin(),
       new Dotenv({ silent: true }),
-    ],
+    ].filter(Boolean),
     module: {
       rules: [
         {

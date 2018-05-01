@@ -34,8 +34,6 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 
 Here are some featured storybooks that you can reference to see how Storybook works:
 
-## Typescript
-
 ## Docs
 
 -   [Basics](https://storybook.js.org/basics/introduction)
