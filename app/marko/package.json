@@ -1,6 +1,6 @@
 {
   "name": "@storybook/marko",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.4",
   "description": "Storybook for Marko: Develop Marko Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/marko",
   "bugs": {
