@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from '@storybook/ui';
 import createChannel from '@storybook/channel-websocket';
 import addons from '@storybook/addons';
+import Events from '@storybook/core-events';
 import uuid from 'uuid';
 import PreviewHelp from './components/PreviewHelp';
 
@@ -28,7 +29,7 @@ export default class ReactProvider extends Provider {
       this.channel = createChannel({ url });
       addons.setChannel(this.channel);
 
-      this.channel.emit('channelCreated', {
+      this.channel.emit(Events.CHANNEL_CREATED, {
         pairedId: this.pairedId,
         secured,
         host,
@@ -43,7 +44,7 @@ export default class ReactProvider extends Provider {
 
   renderPreview(kind, story) {
     this.selection = { kind, story };
-    this.channel.emit('setCurrentStory', { kind, story });
+    this.channel.emit(Events.SET_CURRENT_STORY, { kind, story });
     const renderPreview = addons.getPreview();
 
     const innerPreview = renderPreview ? renderPreview(kind, story) : null;
@@ -53,15 +54,15 @@ export default class ReactProvider extends Provider {
   handleAPI(api) {
     api.onStory((kind, story) => {
       this.selection = { kind, story };
-      this.channel.emit('setCurrentStory', this.selection);
+      this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
     });
-    this.channel.on('setStories', data => {
+    this.channel.on(Events.SET_STORIES, data => {
       api.setStories(data.stories);
     });
-    this.channel.on('getCurrentStory', () => {
-      this.channel.emit('setCurrentStory', this.selection);
+    this.channel.on(Events.GET_CURRENT_STORY, () => {
+      this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
     });
-    this.channel.emit('getStories');
+    this.channel.emit(Events.GET_STORIES);
     addons.loadAddons(api);
   }
 }
