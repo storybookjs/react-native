@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ListView, View, Text, TouchableOpacity } from 'react-native';
+import Events from '@storybook/core-events';
 import style from './style';
 
 const SectionHeader = ({ title, selected }) => (
@@ -49,7 +50,7 @@ export default class StoryListView extends Component {
     this.storyAddedHandler = this.handleStoryAdded.bind(this);
     this.changeStoryHandler = this.changeStory.bind(this);
 
-    this.props.stories.on('storyAdded', this.storyAddedHandler);
+    this.props.stories.on(Events.STORY_ADDED, this.storyAddedHandler);
   }
 
   componentDidMount() {
@@ -62,7 +63,7 @@ export default class StoryListView extends Component {
   }
 
   componentWillUnmount() {
-    this.props.stories.removeListener('storyAdded', this.storyAddedHandler);
+    this.props.stories.removeListener(Events.STORY_ADDED, this.storyAddedHandler);
   }
 
   handleStoryAdded() {
@@ -87,7 +88,7 @@ export default class StoryListView extends Component {
   }
 
   changeStory(kind, story) {
-    this.props.events.emit('setCurrentStory', { kind, story });
+    this.props.events.emit(Events.SET_CURRENT_STORY, { kind, story });
   }
 
   render() {
