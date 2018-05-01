@@ -1,11 +1,14 @@
 import addons from '@storybook/addons';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { subscriptionsStore } from '@storybook/core/client';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { forceReRender } from '@storybook/html';
+import Events from '@storybook/core-events';
 import { manager } from '../base';
 
 const { knobStore } = manager;
+
+function forceReRender() {
+  addons.getChannel().emit(Events.FORCE_RE_RENDER);
+}
 
 function setPaneKnobs(timestamp = +new Date()) {
   const channel = addons.getChannel();
