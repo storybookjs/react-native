@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/marko';
 import { withKnobs, text, number } from '@storybook/addon-knobs/marko';
 import Hello from '../components/hello/index.marko';
 
-storiesOf('Addons|Knobs', module)
+storiesOf('Addons|Knobs/Hello', module)
   .addDecorator(withKnobs)
   .add('Simple', () => {
     const name = text('Name', 'John Doe');

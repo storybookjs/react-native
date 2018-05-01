@@ -5,14 +5,13 @@ import ClickCount from '../components/click-count/index.marko';
 import StopWatch from '../components/stop-watch/index.marko';
 import Welcome from '../components/welcome/index.marko';
 
+storiesOf('Welcome', module).add('welcome', () => Welcome.renderSync({}));
+
 storiesOf('Hello', module)
-  .add('with text abc', () => Hello.renderSync({ name: 'abc', age: 20 }))
-  .add('with text xyz', () => Hello.renderSync({ name: 'xyz', age: 30 }))
+  .add('Simple', () => Hello.renderSync({ name: 'abc', age: 20 }))
   .add('with No Preview!')
   .add('with ERROR!', () => 'NOT A MARKO RENDER_RESULT');
 
-storiesOf('Watch', module)
-  .add('click counter', () => ClickCount.renderSync({}))
-  .add('stop watch', () => StopWatch.renderSync({}));
+storiesOf('ClickCount', module).add('Simple', () => ClickCount.renderSync({}));
 
-storiesOf('Welcome', module).add('welcome', () => Welcome.renderSync({}));
+storiesOf('StopWatch', module).add('Simple', () => StopWatch.renderSync({}));
