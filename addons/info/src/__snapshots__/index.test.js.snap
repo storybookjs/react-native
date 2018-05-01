@@ -20,6 +20,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
       }
     }
     context={Object {}}
+    excludedPropTypes={Array []}
     info="<h1>HTML Mock</h1>"
     maxPropArrayLength={3}
     maxPropObjectKeys={3}
@@ -1995,12 +1996,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                     " Component
                   </h2>
                   <Component
+                    excludedPropTypes={Array []}
                     maxPropArrayLength={3}
                     maxPropObjectKeys={3}
                     maxPropStringLength={50}
                     type={[Function]}
                   >
                     <PropTable
+                      excludedPropTypes={Array []}
                       maxPropArrayLength={3}
                       maxPropObjectKeys={3}
                       maxPropStringLength={50}
