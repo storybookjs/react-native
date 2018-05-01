@@ -78,10 +78,7 @@ export default function(configDir) {
           test: /\.md$/,
           use: [
             {
-              loader: require.resolve('html-loader'),
-            },
-            {
-              loader: require.resolve('markdown-loader'),
+              loader: require.resolve('raw-loader'),
             },
           ],
         },
