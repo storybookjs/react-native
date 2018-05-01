@@ -1,5 +1,4 @@
 import React from 'react';
-import Faker from 'faker';
 import { storiesOf } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
@@ -48,7 +47,7 @@ storiesOf('Addons|a11y/Form', module)
   ))
   .add('With placeholder', () => <Form.Row input={<Form.Input id="1" placeholder={text} />} />);
 
-const image = Faker.image.animals();
+const image = 'http://placehold.it/350x150';
 
 storiesOf('Addons|a11y/Image', module)
   .addDecorator(checkA11y)
