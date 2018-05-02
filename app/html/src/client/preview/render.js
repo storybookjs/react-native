@@ -6,6 +6,7 @@ const rootElement = document.getElementById('root');
 export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
   const component = story();
 
+  showMain();
   if (typeof component === 'string') {
     rootElement.innerHTML = component;
   } else if (component instanceof Node) {
@@ -19,7 +20,5 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
         Use "() => <your snippet or node>" or when defining the story.
       `,
     });
-    return;
   }
-  showMain();
 }
