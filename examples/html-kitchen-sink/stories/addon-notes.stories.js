@@ -6,13 +6,11 @@ storiesOf('Addons|Notes', module)
   .add(
     'Simple note',
     () =>
-      `
-      <p>
+      `<p>
         <strong>
           This is a fragment of HTML
         </strong>
-      </p>
-      `,
+      </p>`,
     {
       notes: 'My notes on some bold text',
     }
