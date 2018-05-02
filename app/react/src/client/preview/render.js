@@ -43,6 +43,6 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
   // This could leads to issues like below:
   //    https://github.com/storybooks/react-storybook/issues/81
   ReactDOM.unmountComponentAtNode(rootEl);
-  render(element, rootEl);
   showMain();
+  render(element, rootEl);
 }

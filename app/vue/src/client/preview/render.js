@@ -32,11 +32,11 @@ export default function render({
     return;
   }
 
+  showMain();
   renderRoot({
     el: '#root',
     render(h) {
       return h('div', { attrs: { id: 'root' } }, [h(component)]);
     },
   });
-  showMain();
 }
