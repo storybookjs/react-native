@@ -9,8 +9,8 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
 
   if (!component) {
     showError({
-      message: `Expecting a Polymer component from the story: "${selectedStory}" of "${selectedKind}".`,
-      stack: stripIndents`
+      title: `Expecting a Polymer component from the story: "${selectedStory}" of "${selectedKind}".`,
+      description: stripIndents`
         Did you forget to return the Polymer component from the story?
         Use "() => '&lt;your-component-name&gt;&lt;/your-component-name\&gt;'" when defining the story.
       `,

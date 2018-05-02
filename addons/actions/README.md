@@ -55,10 +55,10 @@ import { actions } from '@storybook/addon-actions';
 import Button from './button';
 
 // This will lead to { onClick: action('onClick'), ... }
-const eventsFromNames = actions('onClick', 'onDoubleClick');
+const eventsFromNames = actions('onClick', 'onMouseOver');
 
 // This will lead to { onClick: action('clicked'), ... }
-const eventsFromObject = actions({ onClick: 'clicked', onDoubleClick: 'double clicked' });
+const eventsFromObject = actions({ onClick: 'clicked', onMouseOver: 'hovered' });
 
 storiesOf('Button', module)
   .add('default view', () => <Button {...eventsFromNames}>Hello World!</Button>)
@@ -123,3 +123,22 @@ action('my-action', {
 |`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
 |`clearOnStoryChange`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`true`|
 |`limit`|Number|Limits the number of items logged in the action logger|`50`|
+
+## withActions decorator
+
+You can define action handles in a declarative way using `withActions` decorators. It accepts the same arguments as [`actions`](#multiple-actions)
+Keys have `'<eventName> <selector>'` format, e.g. `'click .btn'`. Selector is optional. This can be used with any framework but is especially useful for `@storybook/html`.
+
+```js
+import { storiesOf } from '@storybook/html';
+import { withActions } from '@storybook/addon-actions';
+
+storiesOf('button', module)
+  // Log mousovers on entire story and clicks on .btn
+  .addDecorator(withActions('mouseover', 'click .btn'))
+  .add('with actions', () => `
+    <div>
+      Clicks on this button will be logged: <button class="btn" type="button">Button</button>
+    </div>
+  `);
+```

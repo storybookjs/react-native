@@ -14,8 +14,8 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
     rootElement.appendChild(component);
   } else {
     showError({
-      message: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,
-      stack: stripIndents`
+      title: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,
+      description: stripIndents`
         Did you forget to return the HTML snippet from the story?
         Use "() => <your snippet or node>" or when defining the story.
       `,
