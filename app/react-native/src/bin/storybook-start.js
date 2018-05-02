@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-/* eslint-disable-next-line no-camelcase */
+/* eslint-disable-next-line camelcase */
 import child_process from 'child_process';
 import path from 'path';
 import program from 'commander';
