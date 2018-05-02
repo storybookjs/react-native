@@ -17,6 +17,8 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
     });
     return;
   }
+
+  showMain();
   if (typeof component === 'string') {
     rootElement.innerHTML = component;
   } else if (component instanceof TemplateResult) {
@@ -28,5 +30,4 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
     rootElement.innerHTML = '';
     rootElement.appendChild(component);
   }
-  showMain();
 }

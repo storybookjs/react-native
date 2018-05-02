@@ -243,6 +243,18 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'h
 
 `getScreenshotOptions` receives an object `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
 
+### Specifying custom Chrome executable path (puppeteer API)
+
+You might use `chromeExecutablePath` to specify the path to a different version of Chrome, without downloading Chromium. Will be passed to [Runs a bundled version of Chromium](https://github.com/GoogleChrome/puppeteer#default-runtime-settings)
+
+```js
+import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+
+const chromeExecutablePath = '/usr/local/bin/chrome';
+
+initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', chromeExecutablePath})});
+```
+
 ### Integrate image storyshots with regular app
 
 You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
@@ -422,7 +434,7 @@ Like the default, but allows you to specify a set of options for the test render
 
 ### `multiSnapshotWithOptions(options)`
 
-Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes.
+Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, simply pass an empty object.
 
 #### integrityOptions
 This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
