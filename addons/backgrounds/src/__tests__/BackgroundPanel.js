@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import EventEmitter from 'events';
 
 import BackgroundPanel from '../BackgroundPanel';
+import Events from '../events';
 
 const backgrounds = [
   { name: 'black', value: '#000000' },
@@ -49,7 +50,7 @@ describe('Background Panel', () => {
   it('should set the query string', () => {
     const SpiedChannel = new EventEmitter();
     mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
-    SpiedChannel.emit('background-set', backgrounds);
+    SpiedChannel.emit(Events.SET, backgrounds);
 
     expect(mockedApi.getQueryParam).toBeCalledWith('background');
   });
@@ -57,7 +58,7 @@ describe('Background Panel', () => {
   it('should not unset the query string', () => {
     const SpiedChannel = new EventEmitter();
     mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
-    SpiedChannel.emit('background-unset', []);
+    SpiedChannel.emit(Events.UNSET, []);
 
     expect(mockedApi.setQueryParams).not.toHaveBeenCalled();
   });
@@ -65,7 +66,7 @@ describe('Background Panel', () => {
   it('should accept colors through channel and render the correct swatches with a default swatch', () => {
     const SpiedChannel = new EventEmitter();
     const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
-    SpiedChannel.emit('background-set', backgrounds);
+    SpiedChannel.emit(Events.SET, backgrounds);
 
     expect(backgroundPanel.state('backgrounds')).toEqual(backgrounds);
   });
@@ -75,7 +76,7 @@ describe('Background Panel', () => {
     const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
     const [head, ...tail] = backgrounds;
     const localBgs = [{ ...head, default: true }, ...tail];
-    SpiedChannel.emit('background-set', localBgs);
+    SpiedChannel.emit(Events.SET, localBgs);
 
     expect(backgroundPanel.state('backgrounds')).toEqual(localBgs);
     backgroundPanel.setState({ backgrounds: localBgs }); // force re-render
@@ -93,7 +94,7 @@ describe('Background Panel', () => {
     SpiedChannel.on('background', bg => {
       expect(bg).toBe(second.value);
     });
-    SpiedChannel.emit('background-set', localBgs);
+    SpiedChannel.emit(Events.SET, localBgs);
 
     expect(backgroundPanel.state('backgrounds')).toEqual(localBgs);
     backgroundPanel.setState({ backgrounds: localBgs }); // force re-render
@@ -106,12 +107,12 @@ describe('Background Panel', () => {
   it('should unset all swatches on receiving the background-unset message', () => {
     const SpiedChannel = new EventEmitter();
     const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
-    SpiedChannel.emit('background-set', backgrounds);
+    SpiedChannel.emit(Events.SET, backgrounds);
 
     expect(backgroundPanel.state('backgrounds')).toEqual(backgrounds);
     backgroundPanel.setState({ backgrounds }); // force re-render
 
-    SpiedChannel.emit('background-unset');
+    SpiedChannel.emit(Events.UNSET);
     expect(backgroundPanel.state('backgrounds')).toHaveLength(0);
   });
 

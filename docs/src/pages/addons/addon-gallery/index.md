@@ -42,7 +42,7 @@ Storyshots is a way to automatically jest-snapshot all your stories. [More info 
 
 Redirects console output (logs, errors, warnings) into Action Logger Panel. `withConsole` decorator notifies from what stories logs are coming.
 
-### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/background)
+### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/backgrounds)
 
 With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
 

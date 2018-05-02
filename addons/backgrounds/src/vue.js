@@ -1,5 +1,7 @@
 import addons from '@storybook/addons';
 
+import Events from './events';
+
 export const vueHandler = (channel, backgrounds) => (getStory, context) => ({
   data() {
     return {
@@ -14,11 +16,11 @@ export const vueHandler = (channel, backgrounds) => (getStory, context) => ({
   },
 
   created() {
-    channel.emit('background-set', backgrounds);
+    channel.emit(Events.SET, backgrounds);
   },
 
   beforeDestroy() {
-    channel.emit('background-unset');
+    channel.emit(Events.UNSET);
   },
 });
 

@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import { vueHandler } from '../vue';
 
+import Events from '../events';
+
 describe('Vue handler', () => {
   it('Returns a component with a created function', () => {
     const testChannel = { emit: jest.fn() };
@@ -37,6 +39,6 @@ describe('Vue handler', () => {
     new Vue(vueHandler(testChannel, testBackground)(testStory, testContext)).$mount();
 
     expect(testChannel.emit).toHaveBeenCalledTimes(1);
-    expect(testChannel.emit).toHaveBeenCalledWith('background-set', expect.any(Array));
+    expect(testChannel.emit).toHaveBeenCalledWith(Events.SET, expect.any(Array));
   });
 });

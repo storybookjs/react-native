@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 
+import Events from './events';
 import Swatch from './Swatch';
 
 const storybookIframe = 'storybook-preview-iframe';
@@ -88,7 +89,7 @@ export default class BackgroundPanel extends Component {
 
     const { api } = this.props;
 
-    this.channel.on('background-set', backgrounds => {
+    this.channel.on(Events.SET, backgrounds => {
       this.setState({ backgrounds });
       const currentBackground = api.getQueryParam('background');
 
@@ -100,7 +101,7 @@ export default class BackgroundPanel extends Component {
       }
     });
 
-    this.channel.on('background-unset', () => {
+    this.channel.on(Events.UNSET, () => {
       this.setState({ backgrounds: [] });
       this.updateIframe('none');
     });

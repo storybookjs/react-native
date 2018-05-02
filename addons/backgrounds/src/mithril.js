@@ -5,6 +5,8 @@ import m from 'mithril';
 
 import addons from '@storybook/addons';
 
+import Events from './events';
+
 export class BackgroundDecorator {
   constructor(vnode) {
     this.props = vnode.attrs;
@@ -22,11 +24,11 @@ export class BackgroundDecorator {
   }
 
   oncreate() {
-    this.channel.emit('background-set', this.props.backgrounds);
+    this.channel.emit(Events.SET, this.props.backgrounds);
   }
 
   onremove() {
-    this.channel.emit('background-unset');
+    this.channel.emit(Events.UNSET);
   }
 
   view() {

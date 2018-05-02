@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import EventEmitter from 'events';
 
 import { BackgroundDecorator } from '../index';
-
-const EventEmitter = require('events');
+import Events from '../events';
 
 const testStory = () => () => <p>Hello World!</p>;
 
@@ -23,7 +23,7 @@ describe('Background Decorator', () => {
     );
 
     const spy = jest.fn();
-    SpiedChannel.on('background-unset', spy);
+    SpiedChannel.on(Events.UNSET, spy);
 
     backgroundDecorator.unmount();
 
@@ -33,7 +33,7 @@ describe('Background Decorator', () => {
   it('should send background-set event when the component mounts', () => {
     const SpiedChannel = new EventEmitter();
     const spy = jest.fn();
-    SpiedChannel.on('background-set', spy);
+    SpiedChannel.on(Events.SET, spy);
 
     shallow(<BackgroundDecorator story={testStory} channel={SpiedChannel} />);
 

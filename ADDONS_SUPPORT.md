@@ -4,7 +4,7 @@
 | ----------- |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |[a11y](addons/a11y)              |+| | | | | |+|
 |[actions](addons/actions)        |+|+|+|+|+|+|+|
-|[background](addons/background)  |+| | | | |+| |
+|[backgrounds](addons/backgrounds)  |+| | | | |+|+|
 |[centered](addons/centered)      |+| |+| | |+|+|
 |[events](addons/events)          |+| | | | | | |
 |[graphql](addons/graphql)        |+| | | | | | |

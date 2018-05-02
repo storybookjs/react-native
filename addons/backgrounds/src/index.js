@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import addons from '@storybook/addons';
 
+import Events from './events';
+
 export class BackgroundDecorator extends React.Component {
   constructor(props) {
     super(props);
@@ -21,11 +23,11 @@ export class BackgroundDecorator extends React.Component {
   }
 
   componentDidMount() {
-    this.channel.emit('background-set', this.props.backgrounds);
+    this.channel.emit(Events.SET, this.props.backgrounds);
   }
 
   componentWillUnmount() {
-    this.channel.emit('background-unset');
+    this.channel.emit(Events.UNSET);
   }
 
   render() {

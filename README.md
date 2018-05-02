@@ -85,7 +85,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 -   [a11y](addons/a11y/) - Test components for user accessibility in Storybook
 -   [actions](addons/actions/) - Log actions as users interact with components in the Storybook UI
--   [background](addons/background/) - Let users choose backgrounds in the Storybook UI
+-   [backgrounds](addons/backgrounds/) - Let users choose backgrounds in the Storybook UI
 -   [centered](addons/centered/) - Center the alignment of your components within the Storybook UI
 -   [events](addons/events/) - Interactively fire events to components that respond to EventEmitter
 -   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
