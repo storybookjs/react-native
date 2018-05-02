@@ -99,20 +99,20 @@ exports[`Storyshots Addons|a11y/Form Without Label 1`] = `
 exports[`Storyshots Addons|a11y/Image Presentation 1`] = `
 <img
   role="presentation"
-  src="http://lorempixel.com/640/480/animals"
+  src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|a11y/Image With alt 1`] = `
 <img
   alt="Testing the a11y addon"
-  src="http://lorempixel.com/640/480/animals"
+  src="http://placehold.it/350x150"
 />
 `;
 
 exports[`Storyshots Addons|a11y/Image Without alt 1`] = `
 <img
-  src="http://lorempixel.com/640/480/animals"
+  src="http://placehold.it/350x150"
 />
 `;
 
