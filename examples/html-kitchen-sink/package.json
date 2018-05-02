@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "@storybook/addon-a11y": "^4.0.0-alpha.3",
     "@storybook/addon-actions": "^4.0.0-alpha.3",
     "@storybook/addon-centered": "^4.0.0-alpha.3",
     "@storybook/addon-knobs": "^4.0.0-alpha.3",

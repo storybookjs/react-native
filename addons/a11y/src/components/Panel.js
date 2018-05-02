@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import addons from '@storybook/addons';
 
+import { CHECK_EVENT_ID } from '../shared';
+
 import Tabs from './Tabs';
 import Report from './Report';
 
@@ -26,11 +28,11 @@ class Panel extends Component {
   }
 
   componentDidMount() {
-    this.channel.on('addon:a11y:check', this.onUpdate);
+    this.channel.on(CHECK_EVENT_ID, this.onUpdate);
   }
 
   componentWillUnmount() {
-    this.channel.removeListener('addon:a11y:check', this.onUpdate);
+    this.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
   }
 
   onUpdate({ passes, violations }) {
