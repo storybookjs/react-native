@@ -21,6 +21,6 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
     return;
   }
 
-  m.mount(rootEl, { view: () => m(element) });
   showMain();
+  m.mount(rootEl, { view: () => m(element) });
 }
