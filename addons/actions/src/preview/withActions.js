@@ -11,10 +11,10 @@ let lastArgs;
 
 const delegateEventSplitter = /^(\S+)\s*(.*)$/;
 
-const isIE = !Element.prototype.matches;
+const isIE = Element != null && !Element.prototype.matches;
 const matchesMethod = isIE ? 'msMatchesSelector' : 'matches';
 
-const root = document.getElementById('root');
+const root = document && document.getElementById('root');
 
 const hasMatchInAncestry = (element, selector) => {
   if (element[matchesMethod](selector)) {
