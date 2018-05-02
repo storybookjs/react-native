@@ -23,6 +23,6 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
     return;
   }
 
-  currLoadedComponent = element.appendTo(rootEl).getComponent();
   showMain();
+  currLoadedComponent = element.appendTo(rootEl).getComponent();
 }
