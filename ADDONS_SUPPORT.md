@@ -6,7 +6,7 @@
 |[actions](addons/actions)        |+|+|+|+|+|+|+|
 |[backgrounds](addons/backgrounds)  |+| | | | |+|+|
 |[centered](addons/centered)      |+| |+| | |+|+|
-|[events](addons/events)          |+| | | | | | |
+|[events](addons/events)          |+| | | | | |+|
 |[graphql](addons/graphql)        |+| | | | | | |
 |[info](addons/info)              |+| | | | | | |
 |[jest](addons/jest)              |+| | | | | | |
