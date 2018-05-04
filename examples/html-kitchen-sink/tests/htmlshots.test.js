@@ -3,7 +3,7 @@ import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-story
 
 initStoryshots({
   framework: 'html',
-  integrityOptions: { cwd: path.join(__dirname, 'stories') },
-  configPath: path.join(__dirname, '.storybook'),
+  integrityOptions: { cwd: path.resolve(__dirname, '../stories') },
+  configPath: path.resolve(__dirname, '../.storybook'),
   test: multiSnapshotWithOptions({}),
 });

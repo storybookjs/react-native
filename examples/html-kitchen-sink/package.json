@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "storybook": "start-storybook -p 9006",
     "build-storybook": "build-storybook"
   },
@@ -19,6 +19,7 @@
     "@storybook/addon-backgrounds": "^4.0.0-alpha.3",
     "@storybook/addon-centered": "^4.0.0-alpha.3",
     "@storybook/addon-events": "^4.0.0-alpha.3",
+    "@storybook/addon-jest": "^4.0.0-alpha.3",
     "@storybook/addon-knobs": "^4.0.0-alpha.3",
     "@storybook/addon-links": "^4.0.0-alpha.3",
     "@storybook/addon-notes": "^4.0.0-alpha.3",
@@ -33,6 +34,7 @@
     "babel-runtime": "^6.26.0",
     "eventemitter3": "^3.1.0",
     "format-json": "^1.0.3",
-    "global": "^4.3.2"
+    "global": "^4.3.2",
+    "jest": "^22.4.3"
   }
 }
