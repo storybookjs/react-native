@@ -298,25 +298,6 @@
     semver "^5.3.0"
     semver-intersect "^1.1.2"
 
-"@storybook/addon-jest@^3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-3.4.3.tgz#442ffb30b67c57e8d8c8e05fedab850a7d8baf7b"
-  dependencies:
-    "@storybook/components" "3.4.3"
-    babel-runtime "^6.26.0"
-    glamor "^2.20.40"
-    glamorous "^4.12.1"
-    global "^4.3.2"
-    prop-types "^15.6.1"
-
-"@storybook/components@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.3.tgz#d21a9eb63c61529cfbb802d96ceaa67fb7fd50b0"
-  dependencies:
-    glamor "^2.20.40"
-    glamorous "^4.12.1"
-    prop-types "^15.6.1"
-
 "@storybook/mantra-core@^1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@storybook/mantra-core/-/mantra-core-1.7.2.tgz#e10c7faca29769e97131e0e0308ef7cfb655b70c"
@@ -6439,7 +6420,7 @@ glamor@^2.20.40:
     prop-types "^15.5.10"
     through "^2.3.8"
 
-glamorous@^4.12.1, glamorous@^4.12.5:
+glamorous@^4.12.5:
   version "4.12.5"
   resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-4.12.5.tgz#909e0ec2ab3136e4749bf82edd9f33b51745e41f"
   dependencies:

@@ -41,4 +41,6 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/jest_0
 .jest-test-results.json
