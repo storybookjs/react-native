@@ -9,7 +9,7 @@
 |[events](addons/events)          |+| | | | | |
 |[graphql](addons/graphql)        |+| | | | | |
 |[info](addons/info)              |+| | | | | |
-|[jest](addons/jest)              |+| | | | | |
+|[jest](addons/jest)              |+| | |+| | |
 |[knobs](addons/knobs)            |+|+|+|+|+|+|
 |[links](addons/links)            |+|+|+|+|+|+|
 |[notes](addons/notes)            |+| |+|+|+|+|
