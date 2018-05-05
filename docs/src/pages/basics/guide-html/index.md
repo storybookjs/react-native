@@ -89,7 +89,6 @@ storiesOf('Demo', module)
   .add('button', () => {
     const button = document.createElement('button');
     button.innerText = 'Hello Button';
-    // eslint-disable-next-line no-console
     button.addEventListener('click', e => console.log(e));
     return button;
   });
