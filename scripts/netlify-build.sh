@@ -49,6 +49,13 @@ elif [ "$BUILD_CONTEXT" = "MITHRIL" ]; then
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "MARKO" ]; then
+  echo "netlify-build Marko examples"
+  pushd examples/marko-cli
+  yarn
+  yarn build-storybook
+  mv storybook-static ../../netlify-build
+  popd
 elif [ "$BUILD_CONTEXT" = "OFFICIAL" ]; then
   echo "netlify-build official examples"
   pushd examples/official-storybook
