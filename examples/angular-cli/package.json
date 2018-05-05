@@ -10,7 +10,10 @@
     "ng": "ng",
     "start": "ng serve",
     "storybook": "start-storybook -p 9008 -s src/assets",
-    "test": "ng test"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true"
   },
   "dependencies": {
     "@angular/common": "^5.2.10",
@@ -38,19 +41,31 @@
     "@storybook/angular": "4.0.0-alpha.4",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "^2.0.3",
+    "@types/jest": "^22.2.3",
     "@types/node": "~9.6.7",
     "babel-core": "^6.26.3",
     "global": "^4.3.2",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.2",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.4.2",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^1.0.0",
+    "jest": "^22.4.3",
+    "jest-preset-angular": "^5.2.2",
     "protractor": "~5.3.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "ts-node": "~6.0.2",
     "typescript": "^2.8.3"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/",
+      "angularshots.test.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/jest-config/",
+      "/node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "./jest-config/setup.ts"
   }
 }
