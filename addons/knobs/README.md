@@ -16,9 +16,9 @@ You can also use Knobs as a dynamic variable inside stories in [Storybook](https
 
 This is how Knobs look like:
 
-[![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://git.io/vXdhZ)
+[![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://storybooks-official.netlify.com/?knob-Dollars=12.5&knob-Name=Storyteller&knob-Years%20in%20NY=9&knob-background=%23ffff00&knob-Age=70&knob-Items%5B0%5D=Laptop&knob-Items%5B1%5D=Book&knob-Items%5B2%5D=Whiskey&knob-Other%20Fruit=lime&knob-Birthday=1484870400000&knob-Nice=true&knob-Styles=%7B%22border%22%3A%223px%20solid%20%23ff00ff%22%2C%22padding%22%3A%2210px%22%7D&knob-Fruit=apple&selectedKind=Addons%7CKnobs.withKnobs&selectedStory=tweaks%20static%20values&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybooks%2Fstorybook-addon-knobs)
 
-> Checkout the above [Live Storybook](https://storybooks-official.netlify.com/) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
+> Checkout the above [Live Storybook](https://storybooks-official.netlify.com/?knob-Dollars=12.5&knob-Name=Storyteller&knob-Years%20in%20NY=9&knob-background=%23ffff00&knob-Age=70&knob-Items%5B0%5D=Laptop&knob-Items%5B1%5D=Book&knob-Items%5B2%5D=Whiskey&knob-Other%20Fruit=lime&knob-Birthday=1484870400000&knob-Nice=true&knob-Styles=%7B%22border%22%3A%223px%20solid%20%23ff00ff%22%2C%22padding%22%3A%2210px%22%7D&knob-Fruit=apple&selectedKind=Addons%7CKnobs.withKnobs&selectedStory=tweaks%20static%20values&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybooks%2Fstorybook-addon-knobs) or [watch this video](https://www.youtube.com/watch?v=kopW6vzs9dg&feature=youtu.be).
 
 ## Getting Started
 
@@ -50,7 +50,7 @@ stories.addDecorator(withKnobs);
 // Knobs for React props
 stories.add('with a button', () => (
   <button disabled={boolean('Disabled', false)} >
-    {text('Label', 'Hello Button')}
+    {text('Label', 'Hello Storybook')}
   </button>
 ));
 
@@ -77,17 +77,17 @@ const stories = storiesOf('Storybook Knobs', module);
 stories.addDecorator(withKnobs);
 
 // Knobs for Angular props
-stories.add('with text', () => ({
+stories.add('with a button', () => ({
   component: Button,
   props: {
-   text: text('text', 'Hello Button'), // The first param of the knob function has to be exactly the same as the component input.
+   text: text('text', 'Hello Storybook'), // The first param of the knob function has to be exactly the same as the component input.
   },
 }));
 
 ```
 
 Categorize your knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
-```
+```js
 // Knob assigned a groupId.
 stories.add('as dynamic variables', () => {
   const groupId = 'GROUP-ID1'
@@ -129,13 +129,6 @@ stories.add('as dynamic variables', () => {
 You can see your Knobs in a Storybook panel as shown below.
 
 ![](docs/demo.png)
-
-### Additional Links
-
--   Introduction blog post.
--   Watch this video on how to use knobs
--   [Live Storybook with Knobs](https://goo.gl/uX9WLf)
--   Have a look at this [sample Storybook repo](https://github.com/kadira-samples/storybook-knobs-example).
 
 ## Available Knobs
 
