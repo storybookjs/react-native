@@ -1,4 +1,9 @@
 import { configure } from '@storybook/marko';
+import { setOptions } from '@storybook/addon-options';
+
+setOptions({
+  hierarchyRootSeparator: /\|/,
+});
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed
