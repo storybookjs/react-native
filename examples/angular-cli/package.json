@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "ng build",
-    "build-storybook": "build-storybook -s src",
+    "build-storybook": "npm run storybook:prebuild && build-storybook -s src",
     "e2e": "ng e2e",
     "ng": "ng",
     "start": "ng serve",
