@@ -122,9 +122,9 @@ storiesOf('MyComponent', module)
 
 Assuming that you have created a test files `my.component.spec.ts` and `my-other.comonent.spec.ts`
 
-Config Jest with [jest-preset-angular](https://www.npmjs.com/package/jest-preset-angular)
+Configure Jest with [jest-preset-angular](https://www.npmjs.com/package/jest-preset-angular)
 
-In project `typings.d.ts` add
+In project`s `typings.d.ts` add
 
 ```ts
 declare module '*.json' {
