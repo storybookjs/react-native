@@ -153,7 +153,7 @@ import wTests from '.withTests';
 
 storiesOf('MyComponent', module)
   .addDecorator(wTests('my.component', 'my-other.component'))
-  .add('This story shows test results from MyComponent.test.js and MyOtherComponent.test.js', () => (
+  .add('This story shows test results from my.component.spec.ts and my-other.component.test.ts', () => (
     <div>Jest results in storybook</div>
   ));
 ```
