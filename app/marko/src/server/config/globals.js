@@ -1,3 +1,3 @@
-/* globals window */
+import { window } from 'global';
 
 window.STORYBOOK_ENV = 'marko';
