@@ -32,7 +32,7 @@ Now when you are writing a story it like this and add some notes:
 ```js
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 
 import Button from './Button';
 

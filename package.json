@@ -156,6 +156,7 @@
     "examples/marko-cli",
     "examples/angular-cli",
     "examples/cra-kitchen-sink",
+    "examples/html-kitchen-sink",
     "examples/mithril-kitchen-sink",
     "examples/polymer-cli",
     "examples/vue-kitchen-sink",

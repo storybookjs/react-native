@@ -10,3 +10,4 @@ Storybook supports multiple UI libraries. The manual setup for each is different
 -   [Storybook for Angular](/basics/guide-angular/)
 -   [Storybook for Mithril](/basics/guide-mithril/)
 -   [Storybook for Marko](/basics/guide-marko/)
+-   [Storybook for HTML](/basics/guide-html/)

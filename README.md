@@ -72,9 +72,10 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [React Native](app/react-native)
 -   [Vue](app/vue)
 -   [Angular](app/angular)
--   [Polymer](app/polymer) <sup>release candidate</sup>
+-   [Polymer](app/polymer)
 -   [Mithril](app/mithril) <sup>alpha</sup>
 -   [Marko](app/marko) <sup>alpha</sup>
+-   [HTML](app/html) <sup>alpha</sup>
 
 ### Sub Projects
 
@@ -85,7 +86,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 -   [a11y](addons/a11y/) - Test components for user accessibility in Storybook
 -   [actions](addons/actions/) - Log actions as users interact with components in the Storybook UI
--   [background](addons/background/) - Let users choose backgrounds in the Storybook UI
+-   [backgrounds](addons/backgrounds/) - Let users choose backgrounds in the Storybook UI
 -   [centered](addons/centered/) - Center the alignment of your components within the Storybook UI
 -   [events](addons/events/) - Interactively fire events to components that respond to EventEmitter
 -   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
@@ -112,6 +113,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 - [Polymer](https://storybooks-polymer.netlify.com/)
 - [Mithril](https://storybooks-mithril.netlify.com/)
 - [Marko](https://storybooks-marko.netlify.com/)
+- [HTML](https://storybooks-html.netlify.com/)
 
 ### 3.4
 - [React Official](https://release-3-4--storybooks-official.netlify.com)
@@ -226,3 +228,7 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/storybook/sponsor/27/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/27/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/28/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/28/avatar.svg"></a>
 <a href="https://opencollective.com/storybook/sponsor/29/website" target="_blank"><img src="https://opencollective.com/storybook/sponsor/29/avatar.svg"></a>
+
+## License
+
+[MIT](https://github.com/storybooks/storybook/blob/master/LICENSE)

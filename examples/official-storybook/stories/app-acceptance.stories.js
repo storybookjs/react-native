@@ -22,6 +22,7 @@ const style = {
   'angular-cli',
   'polymer-cli',
   'mithril-kitchen-sink',
+  'html-kitchen-sink',
 ].forEach(name => {
   chapter.add(
     name,
