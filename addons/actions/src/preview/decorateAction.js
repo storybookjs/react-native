@@ -1,5 +1,6 @@
 import action from './action';
 import actions from './actions';
+import { createDecorator } from './withActions';
 
 function applyDecorators(decorators, actionCallback) {
   return (..._args) => {
@@ -17,15 +18,17 @@ export function decorateAction(decorators) {
 
 export function decorate(decorators) {
   const decorated = decorateAction(decorators);
+  const decoratedActions = (...args) => {
+    const rawActions = actions(...args);
+    const actionsObject = {};
+    Object.keys(rawActions).forEach(name => {
+      actionsObject[name] = applyDecorators(decorators, rawActions[name]);
+    });
+    return actionsObject;
+  };
   return {
     action: decorated,
-    actions: (...args) => {
-      const rawActions = actions(...args);
-      const decoratedActions = {};
-      Object.keys(rawActions).forEach(name => {
-        decoratedActions[name] = applyDecorators(decorators, rawActions[name]);
-      });
-      return decoratedActions;
-    },
+    actions: decoratedActions,
+    withActions: createDecorator(decoratedActions),
   };
 }

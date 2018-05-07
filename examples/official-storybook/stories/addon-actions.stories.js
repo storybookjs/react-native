@@ -1,4 +1,3 @@
-/* global window */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
@@ -10,7 +9,7 @@ import {
 } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { Button } from '@storybook/react/demo';
-import { File } from 'global';
+import { window, File } from 'global';
 
 const pickNative = decorate([args => [args[0].nativeEvent]]);
 const pickNativeAction = decorateAction([args => [args[0].nativeEvent]]);

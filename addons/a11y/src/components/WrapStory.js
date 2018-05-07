@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import axe from 'axe-core';
 import { logger } from '@storybook/client-logger';
 
+import { CHECK_EVENT_ID, RERUN_EVENT_ID } from '../shared';
+
 class WrapStory extends Component {
   static propTypes = {
     context: PropTypes.shape({}),
@@ -25,13 +27,13 @@ class WrapStory extends Component {
 
   componentDidMount() {
     const { channel } = this.props;
-    channel.on('addon:a11y:rerun', this.runA11yCheck);
+    channel.on(RERUN_EVENT_ID, this.runA11yCheck);
     this.runA11yCheck();
   }
 
   componentWillUnmount() {
     const { channel } = this.props;
-    channel.removeListener('addon:a11y:rerun', this.runA11yCheck);
+    channel.removeListener(RERUN_EVENT_ID, this.runA11yCheck);
   }
 
   /* eslint-disable react/no-find-dom-node */
@@ -42,7 +44,7 @@ class WrapStory extends Component {
     if (wrapper !== null) {
       axe.reset();
       axe.configure(axeOptions);
-      axe.run(wrapper).then(results => channel.emit('addon:a11y:check', results), logger.error);
+      axe.run(wrapper).then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
     }
   }
 
