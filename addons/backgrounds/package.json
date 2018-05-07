@@ -29,7 +29,7 @@
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "prop-types": "^15.6.1",
-    "react-lifecycles-compat": "^3.0.2"
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "vue": "^2.5.16"
