@@ -40,7 +40,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^7.0.1",
     "ts-loader": "^4.2.0",
-    "webpack": "^4.6.0",
+    "webpack": "^4.8.0",
     "webpack-hot-middleware": "^2.22.1",
     "zone.js": "^0.8.26"
   },
