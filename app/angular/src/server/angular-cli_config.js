@@ -65,10 +65,8 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     cliCommonConfig = ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions);
     cliStyleConfig = ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions);
   } catch (e) {
-    logger.error(e);
-    throw e;
-    // logger.warn('=> Failed to get angular-cli webpack config.');
-    // return baseConfig;
+    logger.warn('=> Failed to get angular-cli webpack config.');
+    return baseConfig;
   }
   logger.info('=> Get angular-cli webpack config.');
 
