@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 
-function isAngularCliInstalled() {
+function isBuildAngularInstalled() {
   try {
     require.resolve('@angular-devkit/build-angular');
     return true;
@@ -11,41 +11,48 @@ function isAngularCliInstalled() {
   }
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch, appIndex = 0) {
-  const fname = path.join(dirToSearch, '.angular-cli.json');
+export function getAngularCliWebpackConfigOptions(dirToSearch) {
+  const fname = path.join(dirToSearch, 'angular.json');
+
   if (!fs.existsSync(fname)) {
     return null;
   }
-  const cliConfig = JSON.parse(fs.readFileSync(fname, 'utf8'));
-  if (!cliConfig.apps || !cliConfig.apps.length) {
-    throw new Error('.angular-cli.json must have apps entry.');
-  }
-  const appConfig = cliConfig.apps[appIndex];
-  const { root, styles, scripts } = appConfig;
 
-  const cliWebpackConfigOptions = {
-    root,
+  const angularJson = JSON.parse(fs.readFileSync(fname, 'utf8'));
+  const { projects, defaultProject } = angularJson;
+
+  if (!projects || !Object.keys(projects).length) {
+    throw new Error('angular.json must have projects entry.');
+  }
+
+  let project = projects[Object.keys(projects)[0]];
+
+  if (defaultProject) {
+    project = projects[defaultProject];
+  }
+
+  return {
+    root: project.root,
     projectRoot: dirToSearch,
-    appConfig,
-    buildOptions: {
-      outputPath: 'outputPath', // It's dummy value to avoid to Angular CLI's error
-      scripts,
-      styles,
-    },
+    supportES2015: false,
     tsConfig: {
       options: {},
+      fileNames: [],
+      errors: [],
     },
-    supportES2015: false,
+    tsConfigPath: path.resolve(dirToSearch, 'src/tsconfig.app.json'),
+    buildOptions: {
+      ...project.architect.build.options,
+      assets: [],
+    },
   };
-
-  return cliWebpackConfigOptions;
 }
 
 export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions) {
   if (!cliWebpackConfigOptions) return baseConfig;
 
-  if (!isAngularCliInstalled()) {
-    logger.info('=> Using base config because @angular/cli is not installed.');
+  if (!isBuildAngularInstalled()) {
+    logger.info('=> Using base config because @angular-devkit/build-angular is not installed.');
     return baseConfig;
   }
 
@@ -58,13 +65,15 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     cliCommonConfig = ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions);
     cliStyleConfig = ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions);
   } catch (e) {
-    logger.warn('=> Failed to get angular-cli webpack config.');
-    return baseConfig;
+    logger.error(e);
+    throw e;
+    // logger.warn('=> Failed to get angular-cli webpack config.');
+    // return baseConfig;
   }
   logger.info('=> Get angular-cli webpack config.');
 
-  // Don't use storybooks .css/.scss rules because we have to use rules created by @angualr/cli
-  // because @angular/cli created rules have include/exclude for global style files.
+  // Don't use storybooks .css/.scss rules because we have to use rules created by @angular-devkit/build-angular
+  // because @angular-devkit/build-angular created rules have include/exclude for global style files.
   const rulesExcludingStyles = baseConfig.module.rules.filter(
     rule =>
       !rule.test || (rule.test.toString() !== '/\\.css$/' && rule.test.toString() !== '/\\.scss$/')
