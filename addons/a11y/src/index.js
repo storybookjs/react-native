@@ -1,18 +1,35 @@
+import { document, setTimeout } from 'global';
+import axe from 'axe-core';
 import addons from '@storybook/addons';
+import Events from '@storybook/core-events';
+import { logger } from '@storybook/client-logger';
 
-import A11yManager from './A11yManager';
-import * as shared from './shared';
+import { CHECK_EVENT_ID, RERUN_EVENT_ID } from './shared';
 
-const manager = new A11yManager();
 let axeOptions = {};
 
-function checkA11y(storyFn, context) {
-  const channel = addons.getChannel();
-  return manager.wrapStory(channel, storyFn, context, axeOptions);
-}
-
-function configureA11y(options = {}) {
+export const configureA11y = (options = {}) => {
   axeOptions = options;
-}
+};
 
-export { checkA11y, shared, configureA11y };
+const runA11yCheck = () => {
+  const channel = addons.getChannel();
+  const wrapper = document.getElementById('root');
+
+  axe.reset();
+  axe.configure(axeOptions);
+  axe.run(wrapper).then(results => channel.emit(CHECK_EVENT_ID, results), logger.error);
+};
+
+const a11ySubscription = () => {
+  const channel = addons.getChannel();
+  channel.on(RERUN_EVENT_ID, runA11yCheck);
+  return () => channel.removeListener(RERUN_EVENT_ID, runA11yCheck);
+};
+
+export const checkA11y = story => {
+  addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, a11ySubscription);
+  // We need to wait for rendering
+  setTimeout(runA11yCheck, 0);
+  return story();
+};
