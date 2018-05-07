@@ -1,7 +1,7 @@
-import * as results from '../.jest-test-results.json';
+import * as results from '../addon-jest.testresults.json';
 import { withTests } from '@storybook/addon-jest';
 
 export const wTests = withTests({
   results,
-  filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$'
+  filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$',
 });
