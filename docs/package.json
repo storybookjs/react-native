@@ -29,7 +29,7 @@
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-remark-autolink-headers": "^1.4.18",
     "gatsby-remark-copy-linked-files": "^1.5.32",
-    "gatsby-remark-images": "^1.5.62",
+    "gatsby-remark-images": "^1.5.63",
     "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.34",
     "gatsby-transformer-remark": "^1.7.40",
