@@ -7,13 +7,9 @@ exports[`Storyshots Custom|Inheritance base button 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-base-button>
-    
-      
     <button>
       this is label
     </button>
-    
-    
   </storybook-base-button>
 </storybook-dynamic-app-root>
 `;
@@ -25,13 +21,9 @@ exports[`Storyshots Custom|Inheritance icon button 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-icon-button>
-    
-      
     <button>
       this is label - this is icon
     </button>
-    
-    
   </storybook-icon-button>
 </storybook-dynamic-app-root>
 `;

@@ -8,39 +8,25 @@ exports[`Storyshots Custom|Dependencies inputs and inject dependencies 1`] = `
 >
   <storybook-di-component>
     <div>
-      
-    
       <div>
         All dependencies are defined: true
       </div>
-      
-    
       <div>
         Title: Component dependencies
       </div>
-      
-    
       <div>
         Injector: function Injector_(view, elDef) {
           this.view = view;
           this.elDef = elDef;
       }
       </div>
-      
-    
       <div>
         ElementRef: {"nativeElement":{}}
       </div>
-      
-    
       <div>
         TestToken: 123
       </div>
-      
-  
     </div>
-    
-  
   </storybook-di-component>
 </storybook-dynamic-app-root>
 `;
@@ -53,39 +39,25 @@ exports[`Storyshots Custom|Dependencies inputs and inject dependencies with knob
 >
   <storybook-di-component>
     <div>
-      
-    
       <div>
         All dependencies are defined: true
       </div>
-      
-    
       <div>
         Title: Component dependencies
       </div>
-      
-    
       <div>
         Injector: function Injector_(view, elDef) {
           this.view = view;
           this.elDef = elDef;
       }
       </div>
-      
-    
       <div>
         ElementRef: {"nativeElement":{}}
       </div>
-      
-    
       <div>
         TestToken: 123
       </div>
-      
-  
     </div>
-    
-  
   </storybook-di-component>
 </storybook-dynamic-app-root>
 `;
