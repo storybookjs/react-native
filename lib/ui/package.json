@@ -31,7 +31,7 @@
     "lodash.sortby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.6.1",
-    "qs": "^6.5.1",
+    "qs": "^6.5.2",
     "react-fuzzy": "^0.5.2",
     "react-icons": "^2.2.7",
     "react-lifecycles-compat": "^3.0.2",

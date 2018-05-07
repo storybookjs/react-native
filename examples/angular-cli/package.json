@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@ngrx/store": "^6.0.0-beta.1",
-    "core-js": "^2.5.5",
+    "core-js": "^2.5.6",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
     "zone.js": "^0.8.26"
@@ -43,10 +43,10 @@
     "@storybook/addon-storysource": "4.0.0-alpha.4",
     "@storybook/addons": "4.0.0-alpha.4",
     "@storybook/angular": "4.0.0-alpha.4",
-    "@types/jasmine": "~2.8.6",
+    "@types/jasmine": "~2.8.7",
     "@types/jasminewd2": "^2.0.3",
     "@types/jest": "^22.2.3",
-    "@types/node": "~9.6.7",
+    "@types/node": "~9.6.12",
     "babel-core": "^6.26.3",
     "global": "^4.3.2",
     "jasmine-core": "~3.1.0",
@@ -54,7 +54,7 @@
     "jest": "^22.4.3",
     "jest-preset-angular": "^5.2.2",
     "protractor": "~5.3.1",
-    "ts-node": "~6.0.2",
+    "ts-node": "~6.0.3",
     "typescript": "^2.8.3"
   },
   "jest": {
