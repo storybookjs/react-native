@@ -85,6 +85,10 @@ export default function(configDir, quiet) {
             },
           ],
         },
+        {
+          test: /\.md$/,
+          loader: require.resolve('raw-loader'),
+        },
       ],
     },
     resolve: {

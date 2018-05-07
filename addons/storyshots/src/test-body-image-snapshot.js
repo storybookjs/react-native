@@ -11,6 +11,7 @@ const noop = () => {};
 
 const defaultConfig = {
   storybookUrl: 'http://localhost:6006',
+  chromeExecutablePath: undefined,
   getMatchOptions: noop,
   getScreenshotOptions: defaultScreenshotOptions,
   beforeScreenshot: noop,
@@ -20,6 +21,7 @@ const defaultConfig = {
 export const imageSnapshot = (customConfig = {}) => {
   const {
     storybookUrl,
+    chromeExecutablePath,
     getMatchOptions,
     getScreenshotOptions,
     beforeScreenshot,
@@ -70,7 +72,10 @@ export const imageSnapshot = (customConfig = {}) => {
   testFn.beforeAll = () =>
     puppeteer
       // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
-      .launch({ args: ['--no-sandbox ', '--disable-setuid-sandbox'] })
+      .launch({
+        args: ['--no-sandbox ', '--disable-setuid-sandbox'],
+        executablePath: chromeExecutablePath,
+      })
       .then(b => {
         browser = b;
       })

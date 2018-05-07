@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
+
+import { RERUN_EVENT_ID } from '../../shared';
+
 import RerunButton from './RerunButton';
 import Item from './Item';
 
@@ -20,7 +23,7 @@ const styles = {
 
 function onRerunClick() {
   const channel = addons.getChannel();
-  channel.emit('addon:a11y:rerun');
+  channel.emit(RERUN_EVENT_ID);
 }
 
 const Report = ({ items, empty, passes }) => (

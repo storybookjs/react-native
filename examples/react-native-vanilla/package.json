@@ -29,6 +29,7 @@
     "@storybook/channel-websocket": "file:../../packs/storybook-channel-websocket.tgz",
     "@storybook/components": "file:../../packs/storybook-components.tgz",
     "@storybook/core": "file:../../packs/storybook-core.tgz",
+    "@storybook/core-events": "file:../../packs/storybook-core-events.tgz",
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",

@@ -113,11 +113,43 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Decorated Action 1`] = `
+exports[`Storyshots Addons|Actions Decorated Action (deprecated) 1`] = `
 <button
   class="css-1yjiefr"
 >
-  First Argument
+  Native Event
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated action 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Native Event
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated actions 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Native Event
 </button>
 `;
 
@@ -150,6 +182,38 @@ exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
     True
   </button>
 </div>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Moving away from this story will persist the action logger
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+<button
+  class="css-1yjiefr"
+>
+  Hello World
+</button>
 `;
 
 exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `

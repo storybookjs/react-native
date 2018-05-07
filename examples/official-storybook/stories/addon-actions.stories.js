@@ -1,16 +1,58 @@
-/* global window */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, configureActions, decorateAction } from '@storybook/addon-actions';
+import {
+  action,
+  actions,
+  configureActions,
+  decorate,
+  decorateAction,
+} from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { Button } from '@storybook/react/demo';
-import { File } from 'global';
+import { window, File } from 'global';
 
-const pickFirst = decorateAction([args => args.slice(0, 1)]);
+const pickNative = decorate([args => [args[0].nativeEvent]]);
+const pickNativeAction = decorateAction([args => [args[0].nativeEvent]]);
 
 storiesOf('Addons|Actions', module)
   .add('Hello World', () => <Button onClick={action('hello-world')}>Hello World</Button>)
-  .add('Decorated Action', () => <Button onClick={pickFirst('decorated')}>First Argument</Button>)
+  .add('Multiple actions', () => (
+    <Button {...actions('onClick', 'onMouseOver')}>Hello World</Button>
+  ))
+  .add('Multiple actions + config', () => (
+    <Button {...actions('onClick', 'onMouseOver', { clearOnStoryChange: false })}>
+      Moving away from this story will persist the action logger
+    </Button>
+  ))
+  .add('Multiple actions, object', () => (
+    <Button {...actions({ onClick: 'clicked', onMouseOver: 'hovered' })}>Hello World</Button>
+  ))
+  .add('Multiple actions, object + config', () => (
+    <Button
+      {...actions({ onClick: 'clicked', onMouseOver: 'hovered' }, { clearOnStoryChange: false })}
+    >
+      Moving away from this story will persist the action logger
+    </Button>
+  ))
+  .add('Decorated action', () => (
+    <Button onClick={pickNative.action('decorated')}>Native Event</Button>
+  ))
+  .add('Decorated action + config', () => (
+    <Button onClick={pickNative.action('decorated', { clearOnStoryChange: false })}>
+      Moving away from this story will persist the action logger
+    </Button>
+  ))
+  .add('Decorated actions', () => (
+    <Button {...pickNative.actions('onClick', 'onMouseOver')}>Native Event</Button>
+  ))
+  .add('Decorated actions + config', () => (
+    <Button {...pickNative.actions('onClick', 'onMouseOver', { clearOnStoryChange: false })}>
+      Moving away from this story will persist the action logger
+    </Button>
+  ))
+  .add('Decorated Action (deprecated)', () => (
+    <Button onClick={pickNativeAction('decorated')}>Native Event</Button>
+  ))
   .add('Circular Payload', () => {
     const circular = { foo: {} };
     circular.foo.circular = circular;

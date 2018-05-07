@@ -11,6 +11,10 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
     id = "OpenSourceProjects_Storybook_Chromatic"
     name = "Chromatic"
 
+    params {
+        param("env.CI_BRANCH", "%teamcity.build.branch%")
+    }
+
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
 

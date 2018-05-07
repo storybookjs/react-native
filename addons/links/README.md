@@ -95,6 +95,22 @@ storiesOf('Href', module)
   });
 ```
 
+## withLinks decorator
+
+`withLinks` decorator enables a declarative way of defining story links, using data attributes.
+Here is an example in React, but it works with any framework:
+
+```js
+import { storiesOf } from '@storybook/react'
+import { withLinks } from '@storybook/addon-links'
+
+storiesOf('Button', module)
+  .addDecorator(withLinks)
+  .add('First', () => (
+    <button data-sb-kind="OtherKind" data-sb-story="OtherStory">Go to "OtherStory"</button>
+  ))
+```
+
 ## LinkTo component (React only)
 
 One possible way of using `hrefTo` is to create a component that uses native `a` element, but prevents page reloads on plain left click, so that one can still use default browser methods to open link in new tab.
