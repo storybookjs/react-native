@@ -2,7 +2,7 @@ import React from 'react';
 import EventEmitter from 'eventemitter3';
 import { storiesOf } from '@storybook/react';
 
-import WithEvents from '@storybook/addon-events';
+import withEvents from '@storybook/addon-events';
 import Logger from './Logger';
 
 const EVENTS = {
@@ -20,10 +20,10 @@ const eventHandler = name => payload => emit(Logger.LOG_EVENT, { name, payload }
 Object.keys(EVENTS).forEach(event => emitter.on(EVENTS[event], eventHandler(EVENTS[event])));
 
 storiesOf('Addons|Events', module)
-  .addDecorator(getStory => (
-    <WithEvents
-      emit={emit}
-      events={[
+  .addDecorator(
+    withEvents({
+      emit,
+      events: [
         {
           name: EVENTS.TEST_EVENT_1,
           title: 'Test event 1',
@@ -69,9 +69,7 @@ storiesOf('Addons|Events', module)
             },
           ],
         },
-      ]}
-    >
-      {getStory()}
-    </WithEvents>
-  ))
+      ],
+    })
+  )
   .add('Logger', () => <Logger emitter={emitter} />);
