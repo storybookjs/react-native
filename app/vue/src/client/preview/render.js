@@ -23,8 +23,8 @@ export default function render({
 
   if (!component) {
     showError({
-      message: `Expecting a Vue component from the story: "${selectedStory}" of "${selectedKind}".`,
-      stack: stripIndents`
+      title: `Expecting a Vue component from the story: "${selectedStory}" of "${selectedKind}".`,
+      description: stripIndents`
         Did you forget to return the Vue component from the story?
         Use "() => ({ template: '<my-comp></my-comp>' })" or "() => ({ components: MyComp, template: '<my-comp></my-comp>' })" when defining the story.
       `,
