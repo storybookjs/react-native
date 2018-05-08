@@ -1,4 +1,4 @@
-import { document, setTimeout } from 'global';
+import { document } from 'global';
 import axe from 'axe-core';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -23,13 +23,15 @@ const runA11yCheck = () => {
 
 const a11ySubscription = () => {
   const channel = addons.getChannel();
+  channel.on(Events.STORY_RENDERED, runA11yCheck);
   channel.on(RERUN_EVENT_ID, runA11yCheck);
-  return () => channel.removeListener(RERUN_EVENT_ID, runA11yCheck);
+  return () => {
+    channel.removeListener(Events.STORY_RENDERED, runA11yCheck);
+    channel.removeListener(RERUN_EVENT_ID, runA11yCheck);
+  };
 };
 
 export const checkA11y = story => {
   addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, a11ySubscription);
-  // We need to wait for rendering
-  setTimeout(runA11yCheck, 0);
   return story();
 };
