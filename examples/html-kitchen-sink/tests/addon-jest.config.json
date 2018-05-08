@@ -1,0 +1,10 @@
+{
+  "rootDir": "../../..",
+  "verbose": true,
+  "notify": true,
+  "transform": {
+    ".*": "babel-jest"
+  },
+  "setupTestFrameworkScriptFile": "<rootDir>/scripts/jest.init.js",
+  "testMatch": ["<rootDir>/examples/official-storybook/tests/addon-jest.test.js"]
+}

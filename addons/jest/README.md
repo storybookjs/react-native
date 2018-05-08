@@ -118,6 +118,48 @@ storiesOf('MyComponent', module)
 - **options.results**: OBJECT jest output results. *mandatory*
 - **filesExt**: STRING test file extention. *optionnal*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
+## Usage with Angular
+
+Assuming that you have created a test files `my.component.spec.ts` and `my-other.comonent.spec.ts`
+
+Configure Jest with [jest-preset-angular](https://www.npmjs.com/package/jest-preset-angular)
+
+In project`s `typings.d.ts` add
+
+```ts
+declare module '*.json' {
+  const value: any;
+  export default value;
+}
+```
+
+Create a simple file `withTests.ts`:
+
+```ts
+import * as results from '../.jest-test-results.json';
+import { withTests } from '@storybook/addon-jest';
+
+export const wTests = withTests({
+  results,
+  filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$'
+});
+```
+
+Then in your story:
+
+```js
+// import your file
+import wTests from '.withTests';
+
+storiesOf('MyComponent', module)
+  .addDecorator(wTests('my.component', 'my-other.component'))
+  .add('This story shows test results from my.component.spec.ts and my-other.component.spec.ts', () => (
+    <div>Jest results in storybook</div>
+  ));
+```
+
+##### Example [here](https://github.com/storybooks/storybook/tree/master/examples/angular-cli)
+
 ## TODO
 
 - [ ] Add coverage

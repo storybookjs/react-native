@@ -55,10 +55,10 @@ import { actions } from '@storybook/addon-actions';
 import Button from './button';
 
 // This will lead to { onClick: action('onClick'), ... }
-const eventsFromNames = actions('onClick', 'onDoubleClick');
+const eventsFromNames = actions('onClick', 'onMouseOver');
 
 // This will lead to { onClick: action('clicked'), ... }
-const eventsFromObject = actions({ onClick: 'clicked', onDoubleClick: 'double clicked' });
+const eventsFromObject = actions({ onClick: 'clicked', onMouseOver: 'hovered' });
 
 storiesOf('Button', module)
   .add('default view', () => <Button {...eventsFromNames}>Hello World!</Button>)
@@ -71,14 +71,14 @@ storiesOf('Button', module)
 
 If you wish to process action data before sending them over to the logger, you can do it with action decorators.
 
-`decorate` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorate` returns a object with two functions: `action` and `actions`, that act like the above, except they log the modified arguments instead of the original arguments.
+`decorateAction` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorateAction` returns a object with two functions: `action` and `actions`, that act like the above, except they log the modified arguments instead of the original arguments.
 
 ```js
-import { decorate } from '@storybook/addon-actions';
+import { decorateAction } from '@storybook/addon-actions';
 
 import Button from './button';
 
-const firstArg = decorate([args => args.slice(0, 1)]);
+const firstArg = decorateAction([args => args.slice(0, 1)]);
 
 storiesOf('Button', module).add('default view', () => (
   <Button onClick={firstArg.action('button-click')}>Hello World!</Button>
@@ -123,3 +123,22 @@ action('my-action', {
 |`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
 |`clearOnStoryChange`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`true`|
 |`limit`|Number|Limits the number of items logged in the action logger|`50`|
+
+## withActions decorator
+
+You can define action handles in a declarative way using `withActions` decorators. It accepts the same arguments as [`actions`](#multiple-actions)
+Keys have `'<eventName> <selector>'` format, e.g. `'click .btn'`. Selector is optional. This can be used with any framework but is especially useful for `@storybook/html`.
+
+```js
+import { storiesOf } from '@storybook/html';
+import { withActions } from '@storybook/addon-actions';
+
+storiesOf('button', module)
+  // Log mousovers on entire story and clicks on .btn
+  .addDecorator(withActions('mouseover', 'click .btn'))
+  .add('with actions', () => `
+    <div>
+      Clicks on this button will be logged: <button class="btn" type="button">Button</button>
+    </div>
+  `);
+```

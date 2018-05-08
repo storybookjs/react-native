@@ -16,6 +16,7 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
     '<rootDir>/examples/vue-kitchen-sink',
+    '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/official-storybook',
     '<rootDir>/examples/angular-cli',
   ],
