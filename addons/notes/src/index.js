@@ -1,4 +1,4 @@
-import addons from '@storybook/addons';
+import addons, { makeTransitionalDecorator } from '@storybook/addons';
 import marked from 'marked';
 
 function renderMarkdown(text, options) {
@@ -6,13 +6,13 @@ function renderMarkdown(text, options) {
   return marked(text);
 }
 
-const decorator = options => {
-  const channel = addons.getChannel();
-  return (getStory, context) => {
-    const {
-      parameters: { notes },
-    } = context;
-    const storyOptions = notes || options;
+export const withNotes = makeTransitionalDecorator({
+  name: 'withNotes',
+  parameterName: 'notes',
+  wrapper: (getStory, context, { options, parameters }) => {
+    const channel = addons.getChannel();
+
+    const storyOptions = parameters || options;
 
     if (storyOptions) {
       const { text, markdown, markdownOptions } =
@@ -26,23 +26,11 @@ const decorator = options => {
     }
 
     return getStory(context);
-  };
-};
-
-const hoc = options => story => context => decorator(options)(story, context);
+  },
+});
 
 export const withMarkdownNotes = (text, options) =>
-  hoc({
+  withNotes({
     markdown: text,
     markdownOptions: options,
   });
-
-export const withNotes = (...args) => {
-  // Used without options as .addDecorator(withNotes)
-  if (typeof args[0] === 'function') {
-    return decorator()(...args);
-  }
-
-  // Input are options, ala .add('name', withNotes('note')(() => <Story/>))
-  return hoc(args[0]);
-};
