@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
 
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
@@ -81,14 +80,8 @@ export default class Panel extends React.Component {
     this.setState({ groupId: name });
   }
 
-  setOptions(options = { debounce: false, timestamps: false }) {
+  setOptions(options = { timestamps: false }) {
     this.options = options;
-
-    if (options.debounce) {
-      this.emitChange = debounce(this.emitChange, options.debounce.wait, {
-        leading: options.debounce.leading,
-      });
-    }
   }
 
   setKnobs({ knobs, timestamp }) {

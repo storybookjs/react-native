@@ -29,11 +29,12 @@ Then you can access your storybook from the browser.
 * * *
 
 To learn more about what `getstorybook` command does, have a look at our slow start guides:
-  * [React](/basics/guide-react/)
-  * [Vue](/basics/guide-vue/)
-  * [Angular](/basics/guide-angular/)
-  * [Mithril](/basics/guide-mithril/)
-  * [HTML](/basics/guide-html/)
+* [React](/basics/guide-react/)
+* [Vue](/basics/guide-vue/)
+* [Angular](/basics/guide-angular/)
+* [Mithril](/basics/guide-mithril/)
+* [Marko](/basics/guide-marko/)
+* [HTML](/basics/guide-html/)
 
 
 If you prefer a guided tutorial to reading docs, head to [Learn Storybook](https://www.learnstorybook.com) for a step-by-step guide (currently React-only).

@@ -4,7 +4,14 @@ import { html, render, TemplateResult } from 'lit-html';
 
 const rootElement = document.getElementById('root');
 
-export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
+export default function renderMain({
+  story,
+  selectedKind,
+  selectedStory,
+  showMain,
+  showError,
+  forceRender,
+}) {
   const component = story();
 
   if (!component) {
@@ -24,7 +31,10 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
   } else if (component instanceof TemplateResult) {
     // `render` stores the TemplateInstance in the Node and tries to update based on that.
     // Since we reuse `rootElement` for all stories, remove the stored instance first.
-    render(html``, rootElement);
+    // But forceRender means that it's the same story, so we want too keep the state in that case.
+    if (!forceRender) {
+      render(html``, rootElement);
+    }
     render(component, rootElement);
   } else {
     rootElement.innerHTML = '';

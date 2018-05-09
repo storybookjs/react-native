@@ -1,7 +1,8 @@
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
-import { manager } from '../base';
+import KnobManager from './KnobManager';
 
+export const manager = new KnobManager();
 const { knobStore } = manager;
 
 function forceReRender() {
@@ -57,8 +58,6 @@ function connectCallbacks() {
   return disconnectCallbacks;
 }
 
-function registerKnobs() {
+export function registerKnobs() {
   addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, connectCallbacks);
 }
-
-export default registerKnobs;
