@@ -59,7 +59,6 @@ const Sub = glamorous(({ msg, className }) => (
             return item.replace(/^[\s\n]*/, '');
           }
           case typeof item === 'string' && index === list.length - 1: {
-            debugger; //eslint-disable-line
             return item.replace(/[\s\n]*$/, '');
           }
           default: {
@@ -89,7 +88,6 @@ const createSubgroup = (acc, item, i, list) => {
 
   // start or stop extraction
   if (acc.startTrigger(item)) {
-    // debugger; //eslint-disable-line
     acc.mode = 'inject';
     acc.injectionPoint = i;
   }

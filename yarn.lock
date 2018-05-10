@@ -1699,6 +1699,13 @@ babel-plugin-external-helpers@^6.18.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-glamorous-displayname@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-glamorous-displayname/-/babel-plugin-glamorous-displayname-2.2.0.tgz#0cdbfdaf3b39300209d357c7f0c0b91546f2d5a3"
+  dependencies:
+    babel-plugin-macros "^2.1.0"
+    babel-runtime "^6.26.0"
+
 babel-plugin-istanbul@^4.0.0, babel-plugin-istanbul@^4.1.4, babel-plugin-istanbul@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.5.tgz#6760cdd977f411d3e175bb064f2bc327d99b2b6e"
@@ -1734,6 +1741,12 @@ babel-plugin-jsx-v-model@^2.0.1:
 babel-plugin-macros@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.1.0.tgz#e978fd4c5ee9cca73a809c176524c2e9f4dcccbf"
+  dependencies:
+    cosmiconfig "^4.0.0"
+
+babel-plugin-macros@^2.1.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.2.1.tgz#7cc0f84735aa86f776b51860793a98928f43a7fa"
   dependencies:
     cosmiconfig "^4.0.0"
 

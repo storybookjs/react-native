@@ -2,6 +2,7 @@
   "presets": ["env", "stage-0", "react"],
   "plugins": [
     "babel-plugin-macros",
+    "babel-plugin-glamorous-displayname",
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": true
