@@ -701,6 +701,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -708,6 +709,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                               val={[Function]}
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -840,6 +842,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -852,6 +855,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                               }
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -1019,6 +1023,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                       </span>
                                                       : 
                                                       <PropVal
+                                                        braceWrapped={false}
                                                         key="v0/.0"
                                                         level={2}
                                                         maxPropArrayLength={3}
@@ -1084,6 +1089,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                       </span>
                                                       : 
                                                       <PropVal
+                                                        braceWrapped={false}
                                                         key="v1/.0"
                                                         level={2}
                                                         maxPropArrayLength={3}
@@ -1161,6 +1167,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -1174,6 +1181,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                               }
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -1332,6 +1340,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                         key="n0/.0"
                                                       >
                                                         <PropVal
+                                                          braceWrapped={false}
                                                           level={2}
                                                           maxPropArrayLength={3}
                                                           maxPropObjectKeys={3}
@@ -1369,18 +1378,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <span>
-                                                            {
-                                                            <span
-                                                              style={
-                                                                Object {
-                                                                  "color": "#a11",
-                                                                }
+                                                          <span
+                                                            style={
+                                                              Object {
+                                                                "color": "#a11",
                                                               }
-                                                            >
-                                                              1
-                                                            </span>
                                                             }
+                                                          >
+                                                            1
                                                           </span>
                                                         </PropVal>
                                                       </span>
@@ -1389,6 +1394,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                         key="n1/.0"
                                                       >
                                                         <PropVal
+                                                          braceWrapped={false}
                                                           level={2}
                                                           maxPropArrayLength={3}
                                                           maxPropObjectKeys={3}
@@ -1426,18 +1432,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <span>
-                                                            {
-                                                            <span
-                                                              style={
-                                                                Object {
-                                                                  "color": "#a11",
-                                                                }
+                                                          <span
+                                                            style={
+                                                              Object {
+                                                                "color": "#a11",
                                                               }
-                                                            >
-                                                              2
-                                                            </span>
                                                             }
+                                                          >
+                                                            2
                                                           </span>
                                                         </PropVal>
                                                       </span>
@@ -1446,6 +1448,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                         key="n2/.0"
                                                       >
                                                         <PropVal
+                                                          braceWrapped={false}
                                                           level={2}
                                                           maxPropArrayLength={3}
                                                           maxPropObjectKeys={3}
@@ -1483,18 +1486,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <span>
-                                                            {
-                                                            <span
-                                                              style={
-                                                                Object {
-                                                                  "color": "#a11",
-                                                                }
+                                                          <span
+                                                            style={
+                                                              Object {
+                                                                "color": "#a11",
                                                               }
-                                                            >
-                                                              3
-                                                            </span>
                                                             }
+                                                          >
+                                                            3
                                                           </span>
                                                         </PropVal>
                                                       </span>
@@ -1526,6 +1525,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -1533,6 +1533,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                               val={7}
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -1666,6 +1667,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                           >
                                             "
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -1673,6 +1675,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                               val="seven"
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -2820,6 +2823,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -2827,6 +2831,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                               val={[Function]}
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -2959,6 +2964,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -2971,6 +2977,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                               }
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -3138,6 +3145,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                       </span>
                                                       : 
                                                       <PropVal
+                                                        braceWrapped={false}
                                                         key="v0/.0"
                                                         level={2}
                                                         maxPropArrayLength={3}
@@ -3203,6 +3211,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                       </span>
                                                       : 
                                                       <PropVal
+                                                        braceWrapped={false}
                                                         key="v1/.0"
                                                         level={2}
                                                         maxPropArrayLength={3}
@@ -3280,6 +3289,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -3293,6 +3303,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                               }
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -3451,6 +3462,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                         key="n0/.0"
                                                       >
                                                         <PropVal
+                                                          braceWrapped={false}
                                                           level={2}
                                                           maxPropArrayLength={3}
                                                           maxPropObjectKeys={3}
@@ -3488,18 +3500,14 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                             }
                                                           }
                                                         >
-                                                          <span>
-                                                            {
-                                                            <span
-                                                              style={
-                                                                Object {
-                                                                  "color": "#a11",
-                                                                }
+                                                          <span
+                                                            style={
+                                                              Object {
+                                                                "color": "#a11",
                                                               }
-                                                            >
-                                                              1
-                                                            </span>
                                                             }
+                                                          >
+                                                            1
                                                           </span>
                                                         </PropVal>
                                                       </span>
@@ -3508,6 +3516,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                         key="n1/.0"
                                                       >
                                                         <PropVal
+                                                          braceWrapped={false}
                                                           level={2}
                                                           maxPropArrayLength={3}
                                                           maxPropObjectKeys={3}
@@ -3545,18 +3554,14 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                             }
                                                           }
                                                         >
-                                                          <span>
-                                                            {
-                                                            <span
-                                                              style={
-                                                                Object {
-                                                                  "color": "#a11",
-                                                                }
+                                                          <span
+                                                            style={
+                                                              Object {
+                                                                "color": "#a11",
                                                               }
-                                                            >
-                                                              2
-                                                            </span>
                                                             }
+                                                          >
+                                                            2
                                                           </span>
                                                         </PropVal>
                                                       </span>
@@ -3565,6 +3570,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                         key="n2/.0"
                                                       >
                                                         <PropVal
+                                                          braceWrapped={false}
                                                           level={2}
                                                           maxPropArrayLength={3}
                                                           maxPropObjectKeys={3}
@@ -3602,18 +3608,14 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                             }
                                                           }
                                                         >
-                                                          <span>
-                                                            {
-                                                            <span
-                                                              style={
-                                                                Object {
-                                                                  "color": "#a11",
-                                                                }
+                                                          <span
+                                                            style={
+                                                              Object {
+                                                                "color": "#a11",
                                                               }
-                                                            >
-                                                              3
-                                                            </span>
                                                             }
+                                                          >
+                                                            3
                                                           </span>
                                                         </PropVal>
                                                       </span>
@@ -3645,6 +3647,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                             style={Object {}}
                                           >
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -3652,6 +3655,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                               val={7}
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}
@@ -3785,6 +3789,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                           >
                                             "
                                             <ThemedComponent
+                                              braceWrapped={true}
                                               maxPropArrayLength={3}
                                               maxPropObjectKeys={3}
                                               maxPropStringLength={50}
@@ -3792,6 +3797,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                               val="seven"
                                             >
                                               <PropVal
+                                                braceWrapped={true}
                                                 level={1}
                                                 maxPropArrayLength={3}
                                                 maxPropObjectKeys={3}

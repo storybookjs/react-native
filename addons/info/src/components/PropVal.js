@@ -188,10 +188,11 @@ function PropVal(props) {
     maxPropStringLength,
     maxPropsIntoLine,
     theme,
+    braceWrapped,
   } = props;
   let { val } = props;
   const { codeColors } = theme || {};
-  let braceWrap = true;
+  let braceWrap = braceWrapped;
   let content = null;
   const valueStyles = props.valueStyles || getValueStyles(codeColors);
 
@@ -259,6 +260,7 @@ PropVal.defaultProps = {
   level: 1,
   theme: {},
   valueStyles: null,
+  braceWrapped: false,
 };
 
 PropVal.propTypes = {
@@ -281,6 +283,7 @@ PropVal.propTypes = {
     bool: PropTypes.object,
     empty: PropTypes.object,
   }),
+  braceWrapped: PropTypes.bool,
 };
 
 export default withTheme(PropVal);

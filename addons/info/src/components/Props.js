@@ -52,6 +52,7 @@ export default function Props(props) {
                 maxPropArrayLength={maxPropArrayLength}
                 maxPropStringLength={maxPropStringLength}
                 maxPropsIntoLine={maxPropsIntoLine}
+                braceWrapped
               />
               {typeof nodeProps[name] === 'string' && '"'}
             </span>
