@@ -17,7 +17,10 @@
   "dependencies": {
     "glamor": "^2.20.40",
     "glamorous": "^4.12.5",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "react-split-pane": "^0.1.77",
+    "lodash.throttle": "^4.1.1",
+    "global": "^4.3.2"
   },
   "peerDependencies": {
     "react": "*",
