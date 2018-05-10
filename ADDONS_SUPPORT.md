@@ -1,6 +1,6 @@
 ## Addon / Framework Support Table
 
-| |[React](app/react)|[React Native](app/react-native)|[Vue](app/vue)|[Angular](app/angular)| [Polymer](app/polymer)| [Mithril](app/mithril)| [HTML](app/html)| [Marko](app/marko)|
+|[React](app/react)|[React Native](app/react-native)|[Vue](app/vue)|[Angular](app/angular)| [Polymer](app/polymer)| [Mithril](app/mithril)| [HTML](app/html)| [Marko](app/marko)|
 | ----------- |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |[a11y](addons/a11y)              |+| | | | | |+| |
 |[actions](addons/actions)        |+|+|+|+|+|+|+|+|
