@@ -7,6 +7,20 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/pr
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './';
 
+const highlighterTheme = {
+  ...darcula,
+  'pre[class*="language-"]': {
+    ...darcula['pre[class*="language-"]'],
+    margin: 0,
+    fontFamily: `Fira Code, Fira Mono, Consolas, Monaco, 'Andale Mono', monospace`,
+  },
+  'code[class*="language-"]': {
+    ...darcula['code[class*="language-"]'],
+    margin: 0,
+    fontFamily: `Fira Code, Fira Mono, Consolas, Monaco, 'Andale Mono', monospace`,
+  },
+};
+
 registerLanguage('jsx', jsx);
 
 const styles = {
@@ -171,7 +185,7 @@ export default class StoryPanel extends Component {
       <SyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
-        style={darcula}
+        style={highlighterTheme}
         renderer={this.lineRenderer}
         customStyle={styles.panel}
       >
