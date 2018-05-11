@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import glamorous from 'glamorous';
 
-const Button = glamorous(({ children, ...rest }) => <button {...rest}>{children}</button>)({
+const Button = glamorous.button({
   border: '1px solid #eee',
   borderRadius: 3,
   backgroundColor: '#FFFFFF',
