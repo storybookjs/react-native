@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Header mobile-view 1`] = `
+<div
+  class="css-1s18db1"
+>
+  <button
+    class="css-bl2pg7"
+  >
+    ☰
+  </button>
+  <a
+    class="css-1n8et9"
+    href="http://google.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <h3
+      class="css-17rda8a"
+    >
+      name
+    </h3>
+  </a>
+  <button
+    class="css-tjfz53"
+  >
+    ⌘
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components|Header simple 1`] = `
+<div
+  class="css-eivvbb"
+>
+  <a
+    class="css-9hm7k1"
+    href="http://google.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <h3
+      class="css-17rda8a"
+    >
+      name
+    </h3>
+  </a>
+  <button
+    class="css-8kgocl"
+  >
+    ⌘
+  </button>
+</div>
+`;

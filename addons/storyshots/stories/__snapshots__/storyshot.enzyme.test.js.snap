@@ -86,29 +86,29 @@ exports[`Storyshots Welcome to Storybook 1`] = `
 <Welcome
   showApp={[Function]}
 >
-  <glamorous(article)>
+  <Welcome__Main>
     <article
       className="css-1fqbdip"
     >
-      <glamorous(h1)>
+      <Welcome__Title>
         <h1
           className="css-nil"
         >
           Welcome to storybook
         </h1>
-      </glamorous(h1)>
+      </Welcome__Title>
       <p>
         This is a UI component dev environment for your app.
       </p>
       <p>
         We've added some basic stories inside the 
-        <glamorous(code)>
+        <Welcome__InlineCode>
           <code
             className="css-mteq83"
           >
             src/stories
           </code>
-        </glamorous(code)>
+        </Welcome__InlineCode>
          directory.
         <br />
         A story is a single state of one or more UI components. You can have as many stories as you want.
@@ -117,7 +117,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       </p>
       <p>
         See these sample 
-        <glamorous(glamorous(glamorous(a)))
+        <Welcome__NavButton
           onClick={[Function]}
         >
           <button
@@ -126,16 +126,16 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           >
             stories
           </button>
-        </glamorous(glamorous(glamorous(a)))>
+        </Welcome__NavButton>
          for a component called
          
-        <glamorous(code)>
+        <Welcome__InlineCode>
           <code
             className="css-mteq83"
           >
             Button
           </code>
-        </glamorous(code)>
+        </Welcome__InlineCode>
         .
       </p>
       <p>
@@ -144,22 +144,22 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         You can also edit those components and see changes right away.
         <br />
         (Try editing the 
-        <glamorous(code)>
+        <Welcome__InlineCode>
           <code
             className="css-mteq83"
           >
             Button
           </code>
-        </glamorous(code)>
+        </Welcome__InlineCode>
          stories located at
          
-        <glamorous(code)>
+        <Welcome__InlineCode>
           <code
             className="css-mteq83"
           >
             src/stories/index.js
           </code>
-        </glamorous(code)>
+        </Welcome__InlineCode>
         .)
       </p>
       <p>
@@ -167,7 +167,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         <br />
         Have a look at the
          
-        <glamorous(a)
+        <Welcome__Link
           href="https://storybook.js.org/basics/writing-stories"
           rel="noopener noreferrer"
           target="_blank"
@@ -180,11 +180,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           >
             Writing Stories
           </a>
-        </glamorous(a)>
+        </Welcome__Link>
          
         section in our documentation.
       </p>
-      <glamorous(p)>
+      <Welcome__Note>
         <p
           className="css-bwdon3"
         >
@@ -193,17 +193,17 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           </b>
           <br />
           Have a look at the 
-          <glamorous(code)>
+          <Welcome__InlineCode>
             <code
               className="css-mteq83"
             >
               .storybook/webpack.config.js
             </code>
-          </glamorous(code)>
+          </Welcome__InlineCode>
            to add webpack loaders and plugins you are using in this project.
         </p>
-      </glamorous(p)>
+      </Welcome__Note>
     </article>
-  </glamorous(article)>
+  </Welcome__Main>
 </Welcome>
 `;

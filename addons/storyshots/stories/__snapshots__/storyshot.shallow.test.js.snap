@@ -47,18 +47,18 @@ exports[`Storyshots Button with text 1`] = `
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-<glamorous(article)>
-  <glamorous(h1)>
+<Welcome__Main>
+  <Welcome__Title>
     Welcome to storybook
-  </glamorous(h1)>
+  </Welcome__Title>
   <p>
     This is a UI component dev environment for your app.
   </p>
   <p>
     We've added some basic stories inside the 
-    <glamorous(code)>
+    <Welcome__InlineCode>
       src/stories
-    </glamorous(code)>
+    </Welcome__InlineCode>
      directory.
     <br />
     A story is a single state of one or more UI components. You can have as many stories as you want.
@@ -67,16 +67,16 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   </p>
   <p>
     See these sample 
-    <glamorous(glamorous(glamorous(a)))
+    <Welcome__NavButton
       onClick={[Function]}
     >
       stories
-    </glamorous(glamorous(glamorous(a)))>
+    </Welcome__NavButton>
      for a component called
      
-    <glamorous(code)>
+    <Welcome__InlineCode>
       Button
-    </glamorous(code)>
+    </Welcome__InlineCode>
     .
   </p>
   <p>
@@ -85,14 +85,14 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     You can also edit those components and see changes right away.
     <br />
     (Try editing the 
-    <glamorous(code)>
+    <Welcome__InlineCode>
       Button
-    </glamorous(code)>
+    </Welcome__InlineCode>
      stories located at
      
-    <glamorous(code)>
+    <Welcome__InlineCode>
       src/stories/index.js
-    </glamorous(code)>
+    </Welcome__InlineCode>
     .)
   </p>
   <p>
@@ -100,26 +100,26 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the
      
-    <glamorous(a)
+    <Welcome__Link
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
       target="_blank"
     >
       Writing Stories
-    </glamorous(a)>
+    </Welcome__Link>
      
     section in our documentation.
   </p>
-  <glamorous(p)>
+  <Welcome__Note>
     <b>
       NOTE:
     </b>
     <br />
     Have a look at the 
-    <glamorous(code)>
+    <Welcome__InlineCode>
       .storybook/webpack.config.js
-    </glamorous(code)>
+    </Welcome__InlineCode>
      to add webpack loaders and plugins you are using in this project.
-  </glamorous(p)>
-</glamorous(article)>
+  </Welcome__Note>
+</Welcome__Main>
 `;

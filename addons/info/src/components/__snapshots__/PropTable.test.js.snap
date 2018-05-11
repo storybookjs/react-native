@@ -71,13 +71,13 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
   }
   type={[Function]}
 >
-  <glamorous(table)>
+  <table>
     <table
       className="css-1ytzlk7"
     >
       <thead>
         <tr>
-          <glamorous(th)
+          <cell__th
             bordered={true}
           >
             <th
@@ -85,8 +85,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               property
             </th>
-          </glamorous(th)>
-          <glamorous(th)
+          </cell__th>
+          <cell__th
             bordered={true}
           >
             <th
@@ -94,8 +94,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               propType
             </th>
-          </glamorous(th)>
-          <glamorous(th)
+          </cell__th>
+          <cell__th
             bordered={true}
           >
             <th
@@ -103,8 +103,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               required
             </th>
-          </glamorous(th)>
-          <glamorous(th)
+          </cell__th>
+          <cell__th
             bordered={true}
           >
             <th
@@ -112,8 +112,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               default
             </th>
-          </glamorous(th)>
-          <glamorous(th)
+          </cell__th>
+          <cell__th
             bordered={true}
           >
             <th
@@ -121,14 +121,14 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               description
             </th>
-          </glamorous(th)>
+          </cell__th>
         </tr>
       </thead>
       <tbody>
         <tr
           key="foo"
         >
-          <glamorous(td)
+          <cell__td
             bordered={true}
             code={true}
           >
@@ -137,8 +137,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               foo
             </td>
-          </glamorous(td)>
-          <glamorous(td)
+          </cell__td>
+          <cell__td
             bordered={true}
             code={true}
           >
@@ -158,8 +158,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
                 </span>
               </PrettyPropType>
             </td>
-          </glamorous(td)>
-          <glamorous(td)
+          </cell__td>
+          <cell__td
             bordered={true}
           >
             <td
@@ -167,8 +167,8 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               -
             </td>
-          </glamorous(td)>
-          <glamorous(td)
+          </cell__td>
+          <cell__td
             bordered={true}
           >
             <td
@@ -176,17 +176,17 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             >
               -
             </td>
-          </glamorous(td)>
-          <glamorous(td)
+          </cell__td>
+          <cell__td
             bordered={true}
           >
             <td
               className="css-d52hbj"
             />
-          </glamorous(td)>
+          </cell__td>
         </tr>
       </tbody>
     </table>
-  </glamorous(table)>
+  </table>
 </PropTable>
 `;

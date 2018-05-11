@@ -152,7 +152,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   style="position:relative"
                 >
                   <a
-                    class="css-1enjukp"
+                    class="css-1ns2oul"
                     data-name="b2"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
@@ -412,7 +412,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               style="position:relative"
                             >
                               <a
-                                class="css-1enjukp"
+                                class="css-1ns2oul"
                                 data-name="b2"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
@@ -641,7 +641,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               style="position:relative"
                             >
                               <a
-                                class="css-1enjukp"
+                                class="css-1ns2oul"
                                 data-name="b2"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
@@ -809,7 +809,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   style="position:relative"
                 >
                   <a
-                    class="css-1enjukp"
+                    class="css-1ns2oul"
                     data-name="b2"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
