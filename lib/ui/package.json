@@ -24,6 +24,8 @@
     "deep-equal": "^1.0.1",
     "events": "^2.0.0",
     "fuse.js": "^3.2.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.13.0",
     "global": "^4.3.2",
     "keycode": "^2.2.0",
     "lodash.debounce": "^4.0.8",
