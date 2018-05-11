@@ -26,7 +26,8 @@ export const Button = glamorous(BaseButton)({
   textTransform: 'uppercase',
   letterSpacing: 1,
   paddingTop: 5,
-  paddingBootom: 5,
+  paddingBottom: 5,
+  border: '0 none',
 });
 
 export const Counter = glamorous.div({
