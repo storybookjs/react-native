@@ -1,15 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
+.css-0,
+[data-css-0] {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
   <Component
-    className="css-1yjiefr"
+    className="css-0"
     onClick={[Function]}
   >
     <button
-      className="css-1yjiefr"
+      className="css-0"
       onClick={[Function]}
     >
       <span
@@ -24,15 +35,26 @@ exports[`Storyshots Another Button with some emoji 1`] = `
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
+.css-0,
+[data-css-0] {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
   <Component
-    className="css-1yjiefr"
+    className="css-0"
     onClick={[Function]}
   >
     <button
-      className="css-1yjiefr"
+      className="css-0"
       onClick={[Function]}
     >
       Hello Button
@@ -42,15 +64,26 @@ exports[`Storyshots Another Button with text 1`] = `
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
+.css-0,
+[data-css-0] {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
   <Component
-    className="css-1yjiefr"
+    className="css-0"
     onClick={[Function]}
   >
     <button
-      className="css-1yjiefr"
+      className="css-0"
       onClick={[Function]}
     >
       <span
@@ -65,15 +98,26 @@ exports[`Storyshots Button with some emoji 1`] = `
 `;
 
 exports[`Storyshots Button with text 1`] = `
+.css-0,
+[data-css-0] {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
   <Component
-    className="css-1yjiefr"
+    className="css-0"
     onClick={[Function]}
   >
     <button
-      className="css-1yjiefr"
+      className="css-0"
       onClick={[Function]}
     >
       Hello Button
@@ -83,12 +127,59 @@ exports[`Storyshots Button with text 1`] = `
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
+.css-0,
+[data-css-0] {
+  margin: 15px;
+  max-width: 600px;
+  line-height: 1.4;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+}
+
+.css-1,
+[data-css-1] {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border: 1px solid #eae9e9;
+  border-radius: 4px;
+  background-color: #f3f2f2;
+  color: #3a3a3a;
+}
+
+.css-2,
+[data-css-2] {
+  color: #1474f3;
+  text-decoration: none;
+  border-bottom: 1px solid #1474f3;
+  padding-bottom: 2px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.css-3,
+[data-css-3] {
+  color: #1474f3;
+  text-decoration: none;
+  border-bottom: 1px solid #1474f3;
+  padding-bottom: 2px;
+}
+
+.css-4,
+[data-css-4] {
+  opacity: 0.5;
+}
+
 <Welcome
   showApp={[Function]}
 >
   <Welcome__Main>
     <article
-      className="css-1fqbdip"
+      className="css-0"
     >
       <Welcome__Title>
         <h1
@@ -104,7 +195,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         We've added some basic stories inside the 
         <Welcome__InlineCode>
           <code
-            className="css-mteq83"
+            className="css-1"
           >
             src/stories
           </code>
@@ -121,7 +212,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           onClick={[Function]}
         >
           <button
-            className="css-1opliz7"
+            className="css-2"
             onClick={[Function]}
           >
             stories
@@ -131,7 +222,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
          
         <Welcome__InlineCode>
           <code
-            className="css-mteq83"
+            className="css-1"
           >
             Button
           </code>
@@ -146,7 +237,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         (Try editing the 
         <Welcome__InlineCode>
           <code
-            className="css-mteq83"
+            className="css-1"
           >
             Button
           </code>
@@ -155,7 +246,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
          
         <Welcome__InlineCode>
           <code
-            className="css-mteq83"
+            className="css-1"
           >
             src/stories/index.js
           </code>
@@ -173,7 +264,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           target="_blank"
         >
           <a
-            className="css-ca0824"
+            className="css-3"
             href="https://storybook.js.org/basics/writing-stories"
             rel="noopener noreferrer"
             target="_blank"
@@ -186,7 +277,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       </p>
       <Welcome__Note>
         <p
-          className="css-bwdon3"
+          className="css-4"
         >
           <b>
             NOTE:
@@ -195,7 +286,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           Have a look at the 
           <Welcome__InlineCode>
             <code
-              className="css-mteq83"
+              className="css-1"
             >
               .storybook/webpack.config.js
             </code>

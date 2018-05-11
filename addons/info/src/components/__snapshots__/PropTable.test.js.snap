@@ -51,6 +51,25 @@ Array [
 `;
 
 exports[`PropTable multiLineText should include all propTypes by default 1`] = `
+.css-0,
+[data-css-0] {
+  border-collapse: collapse;
+}
+
+.css-1,
+[data-css-1] {
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+}
+
+.css-2,
+[data-css-2] {
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  font-family: Monaco, Consolas, "Courier New", monospace;
+}
+
 <PropTable
   excludedPropTypes={Array []}
   maxPropArrayLength={5}
@@ -73,7 +92,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
 >
   <table>
     <table
-      className="css-1ytzlk7"
+      className="css-0"
     >
       <thead>
         <tr>
@@ -81,7 +100,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <th
-              className="css-d52hbj"
+              className="css-1"
             >
               property
             </th>
@@ -90,7 +109,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <th
-              className="css-d52hbj"
+              className="css-1"
             >
               propType
             </th>
@@ -99,7 +118,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <th
-              className="css-d52hbj"
+              className="css-1"
             >
               required
             </th>
@@ -108,7 +127,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <th
-              className="css-d52hbj"
+              className="css-1"
             >
               default
             </th>
@@ -117,7 +136,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <th
-              className="css-d52hbj"
+              className="css-1"
             >
               description
             </th>
@@ -133,7 +152,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             code={true}
           >
             <td
-              className="css-1ygfcef"
+              className="css-2"
             >
               foo
             </td>
@@ -143,7 +162,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             code={true}
           >
             <td
-              className="css-1ygfcef"
+              className="css-2"
             >
               <PrettyPropType
                 depth={1}
@@ -163,7 +182,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <td
-              className="css-d52hbj"
+              className="css-1"
             >
               -
             </td>
@@ -172,7 +191,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <td
-              className="css-d52hbj"
+              className="css-1"
             >
               -
             </td>
@@ -181,7 +200,7 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             bordered={true}
           >
             <td
-              className="css-d52hbj"
+              className="css-1"
             />
           </cell__td>
         </tr>

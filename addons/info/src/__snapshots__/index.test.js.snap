@@ -1,6 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`addon Info should render <Info /> and external markdown 1`] = `
+.css-0,
+[data-css-0] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .88em;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  background-color: #fafafa;
+  padding: .5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-1,
+[data-css-1] {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  align-self: flex-start;
+  -webkit-align-self: flex-start;
+}
+
+.css-1:hover,
+[data-css-1]:hover {
+  background-color: #f4f7fa;
+  border-color: #ddd;
+}
+
+.css-1:active,
+[data-css-1]:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.css-4,
+[data-css-4] {
+  transition: -webkit-transform .2s ease,transform .2s ease;
+  height: 16px;
+  transform: translateY(-100%) translateY(-6px);
+  -webkit-transition: -webkit-transform .2s ease,transform .2s ease;
+  -moz-transition: transform .2s ease;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+}
+
 <Component>
   <Story
     PropTable={[Function]}
@@ -426,7 +482,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                   >
                     <glamorous(pre)>
                       <pre
-                        className="css-4akams"
+                        className="css-0"
                       >
                         <div>
                           <Node
@@ -1936,14 +1992,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                               styles={Object {}}
                             >
                               <button
-                                className="css-gydez8"
+                                className="css-1"
                                 onClick={[Function]}
                               >
                                 <glamorous(div)
                                   toggled={false}
                                 >
                                   <div
-                                    className="css-kv47nt"
+                                    className="css-4"
                                   >
                                     <div
                                       style={
@@ -2027,6 +2083,62 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
 `;
 
 exports[`addon Info should render <Info /> and markdown 1`] = `
+.css-0,
+[data-css-0] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .88em;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  background-color: #fafafa;
+  padding: .5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-1,
+[data-css-1] {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 10px;
+  align-self: flex-start;
+  -webkit-align-self: flex-start;
+}
+
+.css-1:hover,
+[data-css-1]:hover {
+  background-color: #f4f7fa;
+  border-color: #ddd;
+}
+
+.css-1:active,
+[data-css-1]:active {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.css-4,
+[data-css-4] {
+  transition: -webkit-transform .2s ease,transform .2s ease;
+  height: 16px;
+  transform: translateY(-100%) translateY(-6px);
+  -webkit-transition: -webkit-transform .2s ease,transform .2s ease;
+  -moz-transition: transform .2s ease;
+  -webkit-transform: translateY(-100%) translateY(-6px);
+}
+
 <Component>
   <Story
     PropTable={[Function]}
@@ -2545,7 +2657,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   >
                     <glamorous(pre)>
                       <pre
-                        className="css-4akams"
+                        className="css-0"
                       >
                         <div>
                           <Node
@@ -4055,14 +4167,14 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                               styles={Object {}}
                             >
                               <button
-                                className="css-gydez8"
+                                className="css-1"
                                 onClick={[Function]}
                               >
                                 <glamorous(div)
                                   toggled={false}
                                 >
                                   <div
-                                    className="css-kv47nt"
+                                    className="css-4"
                                   >
                                     <div
                                       style={
