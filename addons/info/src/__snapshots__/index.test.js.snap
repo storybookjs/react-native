@@ -1062,7 +1062,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                           }
                                                         }
                                                       >
-                                                        "a"
+                                                        'a'
                                                       </span>
                                                     </PropVal>
                                                     ,
@@ -1127,7 +1127,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                                           }
                                                         }
                                                       >
-                                                        "b"
+                                                        'b'
                                                       </span>
                                                     </PropVal>
                                                     }
@@ -3161,7 +3161,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                           }
                                                         }
                                                       >
-                                                        "a"
+                                                        'a'
                                                       </span>
                                                     </PropVal>
                                                     ,
@@ -3226,7 +3226,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                                           }
                                                         }
                                                       >
-                                                        "b"
+                                                        'b'
                                                       </span>
                                                     </PropVal>
                                                     }

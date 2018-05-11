@@ -201,7 +201,7 @@ function PropVal(props) {
       val = `${val.slice(0, maxPropStringLength)}…`;
     }
     if (level > 1) {
-      val = `"${val}"`;
+      val = `'${val}'`;
     }
     content = <span style={valueStyles.string}>{val}</span>;
   } else if (typeof val === 'boolean') {
