@@ -548,15 +548,13 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -881,15 +879,13 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -1183,15 +1179,13 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -1497,15 +1491,13 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -2794,73 +2786,71 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                   <span>
                     =
                     <span>
-                      <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
                         {
-                        <span
-                          style="color:#666"
-                        >
-                          {
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#666"
-                            >
-                              one
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style="color:#22a;word-break:break-word"
-                          >
-                            Object and array properties
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#666"
-                            >
-                              two
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style="color:#22a;word-break:break-word"
-                          >
-                            will be broken to different lines
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#666"
-                            >
-                              three
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style="color:#22a;word-break:break-word"
-                          >
-                            if greater than \`maxPropsIntoLine\` option threshol…
-                          </span>
+                        <span>
                           <span>
                             <br />
-                              
+                                
                           </span>
-                          }
+                          <span
+                            style="color:#666"
+                          >
+                            one
+                          </span>
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "Object and array properties"
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#666"
+                          >
+                            two
+                          </span>
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "will be broken to different lines"
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#666"
+                          >
+                            three
+                          </span>
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "if greater than \`maxPropsIntoLine\` option threshol…"
+                        </span>
+                        <span>
+                          <br />
+                            
                         </span>
                         }
                       </span>
+                      }
                     </span>
                   </span>
                 </span>
@@ -2875,63 +2865,61 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                   <span>
                     =
                     <span>
-                      <span>
-                        {
-                        <span
-                          style="color:#666"
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#22a;word-break:break-word"
-                            >
-                              one
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#22a;word-break:break-word"
-                            >
-                              two
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#22a;word-break:break-word"
-                            >
-                              three
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            …
-                          </span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        [
+                        <span>
                           <span>
                             <br />
-                              
+                                
                           </span>
-                          ]
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "one"
+                          </span>
                         </span>
-                        }
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "two"
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "three"
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          …
+                        </span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        ]
                       </span>
+                      }
                     </span>
                   </span>
                 </span>
@@ -2946,17 +2934,68 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                   <span>
                     =
                     <span>
-                      <span>
-                        {
-                        <span
-                          style="color:#666"
-                        >
-                          [
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        [
+                        <span>
                           <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#666"
+                          >
+                            {
                             <span>
-                              <br />
-                                  
+                              <span>
+                                <br />
+                                      
+                              </span>
+                              <span
+                                style="color:#666"
+                              >
+                                one
+                              </span>
                             </span>
+                            : 
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              "Object and array properties will be broken to diff…"
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                      
+                              </span>
+                              <span
+                                style="color:#666"
+                              >
+                                two
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              "if greater than \`maxPropsIntoLine\` option threshol…"
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                      
+                              </span>
+                              <span
+                                style="color:#666"
+                              >
+                                object
+                              </span>
+                            </span>
+                            : 
                             <span
                               style="color:#666"
                             >
@@ -2964,48 +3003,12 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                               <span>
                                 <span>
                                   <br />
-                                        
+                                          
                                 </span>
                                 <span
                                   style="color:#666"
                                 >
-                                  one
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style="color:#22a;word-break:break-word"
-                              >
-                                Object and array properties will be broken to diff…
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                        
-                                </span>
-                                <span
-                                  style="color:#666"
-                                >
-                                  two
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style="color:#22a;word-break:break-word"
-                              >
-                                if greater than \`maxPropsIntoLine\` option threshol…
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                        
-                                </span>
-                                <span
-                                  style="color:#666"
-                                >
-                                  object
+                                  object1
                                 </span>
                               </span>
                               : 
@@ -3016,12 +3019,146 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                 <span>
                                   <span>
                                     <br />
-                                            
+                                              
                                   </span>
                                   <span
                                     style="color:#666"
                                   >
-                                    object1
+                                    one
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  "one"
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                              
+                                  </span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    two
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  "two"
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                              
+                                  </span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    three
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  "three"
+                                </span>
+                                <span>
+                                  <br />
+                                          
+                                </span>
+                                }
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                          
+                                </span>
+                                <span
+                                  style="color:#666"
+                                >
+                                  array
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style="color:#666"
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                              
+                                  </span>
+                                  <span
+                                    style="color:#22a;word-break:break-word"
+                                  >
+                                    "one"
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                              
+                                  </span>
+                                  <span
+                                    style="color:#22a;word-break:break-word"
+                                  >
+                                    "two"
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                              
+                                  </span>
+                                  <span
+                                    style="color:#22a;word-break:break-word"
+                                  >
+                                    "three"
+                                  </span>
+                                </span>
+                                <span>
+                                  <br />
+                                          
+                                </span>
+                                ]
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                          
+                                </span>
+                                <span
+                                  style="color:#666"
+                                >
+                                  object2
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style="color:#666"
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                              
+                                  </span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    object
                                   </span>
                                 </span>
                                 : 
@@ -3032,7 +3169,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                   <span>
                                     <span>
                                       <br />
-                                                
+                                                  
                                     </span>
                                     <span
                                       style="color:#666"
@@ -3044,13 +3181,13 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                   <span
                                     style="color:#22a;word-break:break-word"
                                   >
-                                    one
+                                    "one"
                                   </span>
                                   ,
                                   <span>
                                     <span>
                                       <br />
-                                                
+                                                  
                                     </span>
                                     <span
                                       style="color:#666"
@@ -3062,13 +3199,13 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                   <span
                                     style="color:#22a;word-break:break-word"
                                   >
-                                    two
+                                    "two"
                                   </span>
                                   ,
                                   <span>
                                     <span>
                                       <br />
-                                                
+                                                  
                                     </span>
                                     <span
                                       style="color:#666"
@@ -3080,11 +3217,11 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                   <span
                                     style="color:#22a;word-break:break-word"
                                   >
-                                    three
+                                    "three"
                                   </span>
                                   <span>
                                     <br />
-                                            
+                                              
                                   </span>
                                   }
                                 </span>
@@ -3092,7 +3229,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                 <span>
                                   <span>
                                     <br />
-                                            
+                                              
                                   </span>
                                   <span
                                     style="color:#666"
@@ -3108,182 +3245,48 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                   <span>
                                     <span>
                                       <br />
-                                                
+                                                  
                                     </span>
                                     <span
                                       style="color:#22a;word-break:break-word"
                                     >
-                                      one
+                                      "one"
                                     </span>
                                   </span>
                                   ,
                                   <span>
                                     <span>
                                       <br />
-                                                
+                                                  
                                     </span>
                                     <span
                                       style="color:#22a;word-break:break-word"
                                     >
-                                      two
+                                      "two"
                                     </span>
                                   </span>
                                   ,
                                   <span>
                                     <span>
                                       <br />
-                                                
-                                    </span>
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      three
-                                    </span>
-                                  </span>
-                                  <span>
-                                    <br />
-                                            
-                                  </span>
-                                  ]
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                            
-                                  </span>
-                                  <span
-                                    style="color:#666"
-                                  >
-                                    object2
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style="color:#666"
-                                >
-                                  {
-                                  <span>
-                                    <span>
-                                      <br />
-                                                
+                                                  
                                     </span>
                                     <span
                                       style="color:#666"
                                     >
-                                      object
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style="color:#666"
-                                  >
-                                    {
-                                    <span>
+                                      {
                                       <span>
-                                        <br />
-                                                    
+                                        <span>
+                                          <br />
+                                                        
+                                        </span>
+                                        <span
+                                          style="color:#666"
+                                        >
+                                          object
+                                        </span>
                                       </span>
-                                      <span
-                                        style="color:#666"
-                                      >
-                                        one
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      one
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span>
-                                        <br />
-                                                    
-                                      </span>
-                                      <span
-                                        style="color:#666"
-                                      >
-                                        two
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      two
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span>
-                                        <br />
-                                                    
-                                      </span>
-                                      <span
-                                        style="color:#666"
-                                      >
-                                        three
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      three
-                                    </span>
-                                    <span>
-                                      <br />
-                                                
-                                    </span>
-                                    }
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span>
-                                      <br />
-                                                
-                                    </span>
-                                    <span
-                                      style="color:#666"
-                                    >
-                                      array
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style="color:#666"
-                                  >
-                                    [
-                                    <span>
-                                      <span>
-                                        <br />
-                                                    
-                                      </span>
-                                      <span
-                                        style="color:#22a;word-break:break-word"
-                                      >
-                                        one
-                                      </span>
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span>
-                                        <br />
-                                                    
-                                      </span>
-                                      <span
-                                        style="color:#22a;word-break:break-word"
-                                      >
-                                        two
-                                      </span>
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span>
-                                        <br />
-                                                    
-                                      </span>
+                                      : 
                                       <span
                                         style="color:#666"
                                       >
@@ -3291,7 +3294,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                         <span>
                                           <span>
                                             <br />
-                                                          
+                                                            
                                           </span>
                                           <span
                                             style="color:#666"
@@ -3307,182 +3310,165 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                                           <span>
                                             <span>
                                               <br />
-                                                              
+                                                                
                                             </span>
                                             <span
                                               style="color:#666"
                                             >
-                                              object
+                                              one
                                             </span>
                                           </span>
                                           : 
                                           <span
-                                            style="color:#666"
+                                            style="color:#22a;word-break:break-word"
                                           >
-                                            {
-                                            <span>
-                                              <span>
-                                                <br />
-                                                                  
-                                              </span>
-                                              <span
-                                                style="color:#666"
-                                              >
-                                                one
-                                              </span>
-                                            </span>
-                                            : 
-                                            <span
-                                              style="color:#22a;word-break:break-word"
-                                            >
-                                              one
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span>
-                                                <br />
-                                                                  
-                                              </span>
-                                              <span
-                                                style="color:#666"
-                                              >
-                                                two
-                                              </span>
-                                            </span>
-                                            : 
-                                            <span
-                                              style="color:#22a;word-break:break-word"
-                                            >
-                                              two
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span>
-                                                <br />
-                                                                  
-                                              </span>
-                                              <span
-                                                style="color:#666"
-                                              >
-                                                three
-                                              </span>
-                                            </span>
-                                            : 
-                                            <span
-                                              style="color:#22a;word-break:break-word"
-                                            >
-                                              three
-                                            </span>
-                                            <span>
-                                              <br />
-                                                              
-                                            </span>
-                                            }
+                                            "one"
                                           </span>
                                           ,
                                           <span>
                                             <span>
                                               <br />
-                                                              
+                                                                
                                             </span>
                                             <span
                                               style="color:#666"
                                             >
-                                              array
+                                              two
                                             </span>
                                           </span>
                                           : 
                                           <span
-                                            style="color:#666"
+                                            style="color:#22a;word-break:break-word"
                                           >
-                                            [
-                                            <span>
-                                              <span>
-                                                <br />
-                                                                  
-                                              </span>
-                                              <span
-                                                style="color:#22a;word-break:break-word"
-                                              >
-                                                one
-                                              </span>
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span>
-                                                <br />
-                                                                  
-                                              </span>
-                                              <span
-                                                style="color:#22a;word-break:break-word"
-                                              >
-                                                two
-                                              </span>
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span>
-                                                <br />
-                                                                  
-                                              </span>
-                                              <span
-                                                style="color:#22a;word-break:break-word"
-                                              >
-                                                three
-                                              </span>
-                                            </span>
+                                            "two"
+                                          </span>
+                                          ,
+                                          <span>
                                             <span>
                                               <br />
-                                                              
+                                                                
                                             </span>
-                                            ]
+                                            <span
+                                              style="color:#666"
+                                            >
+                                              three
+                                            </span>
+                                          </span>
+                                          : 
+                                          <span
+                                            style="color:#22a;word-break:break-word"
+                                          >
+                                            "three"
                                           </span>
                                           <span>
                                             <br />
-                                                          
+                                                            
                                           </span>
                                           }
                                         </span>
+                                        ,
+                                        <span>
+                                          <span>
+                                            <br />
+                                                            
+                                          </span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            array
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span
+                                          style="color:#666"
+                                        >
+                                          [
+                                          <span>
+                                            <span>
+                                              <br />
+                                                                
+                                            </span>
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              "one"
+                                            </span>
+                                          </span>
+                                          ,
+                                          <span>
+                                            <span>
+                                              <br />
+                                                                
+                                            </span>
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              "two"
+                                            </span>
+                                          </span>
+                                          ,
+                                          <span>
+                                            <span>
+                                              <br />
+                                                                
+                                            </span>
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              "three"
+                                            </span>
+                                          </span>
+                                          <span>
+                                            <br />
+                                                            
+                                          </span>
+                                          ]
+                                        </span>
                                         <span>
                                           <br />
-                                                      
+                                                        
                                         </span>
                                         }
                                       </span>
+                                      <span>
+                                        <br />
+                                                    
+                                      </span>
+                                      }
                                     </span>
-                                    <span>
-                                      <br />
-                                                
-                                    </span>
-                                    ]
                                   </span>
                                   <span>
                                     <br />
-                                            
+                                              
                                   </span>
-                                  }
+                                  ]
                                 </span>
                                 <span>
                                   <br />
-                                        
+                                          
                                 </span>
                                 }
                               </span>
                               <span>
                                 <br />
-                                    
+                                      
                               </span>
                               }
                             </span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            }
                           </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          ]
                         </span>
-                        }
+                        <span>
+                          <br />
+                            
+                        </span>
+                        ]
                       </span>
+                      }
                     </span>
                   </span>
                   <br />
@@ -3770,57 +3756,55 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                   <span>
                     =
                     <span>
-                      <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
                         {
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            one
+                          </span>
+                        </span>
+                        : 
                         <span
-                          style="color:#666"
+                          style="color:#22a;word-break:break-word"
                         >
-                          {
-                          <span>
-                            <span
-                              style="color:#666"
-                            >
-                              one
-                            </span>
-                          </span>
-                          : 
+                          "Object and array properties"
+                        </span>
+                        ,
+                        <span>
                           <span
-                            style="color:#22a;word-break:break-word"
+                            style="color:#666"
                           >
-                            Object and array properties
+                            two
                           </span>
-                          ,
-                          <span>
-                            <span
-                              style="color:#666"
-                            >
-                              two
-                            </span>
-                          </span>
-                          : 
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "will be broken to different lines"
+                        </span>
+                        ,
+                        <span>
                           <span
-                            style="color:#22a;word-break:break-word"
+                            style="color:#666"
                           >
-                            will be broken to different lines
+                            three
                           </span>
-                          ,
-                          <span>
-                            <span
-                              style="color:#666"
-                            >
-                              three
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style="color:#22a;word-break:break-word"
-                          >
-                            if greater than \`maxPropsIntoLine\` option threshol…
-                          </span>
-                          }
+                        </span>
+                        : 
+                        <span
+                          style="color:#22a;word-break:break-word"
+                        >
+                          "if greater than \`maxPropsIntoLine\` option threshol…"
                         </span>
                         }
                       </span>
+                      }
                     </span>
                   </span>
                 </span>
@@ -3835,63 +3819,61 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                   <span>
                     =
                     <span>
-                      <span>
-                        {
-                        <span
-                          style="color:#666"
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#22a;word-break:break-word"
-                            >
-                              one
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#22a;word-break:break-word"
-                            >
-                              two
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            <span
-                              style="color:#22a;word-break:break-word"
-                            >
-                              three
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                  
-                            </span>
-                            …
-                          </span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        [
+                        <span>
                           <span>
                             <br />
-                              
+                                
                           </span>
-                          ]
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "one"
+                          </span>
                         </span>
-                        }
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "two"
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          <span
+                            style="color:#22a;word-break:break-word"
+                          >
+                            "three"
+                          </span>
+                        </span>
+                        ,
+                        <span>
+                          <span>
+                            <br />
+                                
+                          </span>
+                          …
+                        </span>
+                        <span>
+                          <br />
+                            
+                        </span>
+                        ]
                       </span>
+                      }
                     </span>
                   </span>
                 </span>
@@ -3906,13 +3888,52 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                   <span>
                     =
                     <span>
-                      <span>
-                        {
-                        <span
-                          style="color:#666"
-                        >
-                          [
-                          <span>
+                      {
+                      <span
+                        style="color:#666"
+                      >
+                        [
+                        <span>
+                          <span
+                            style="color:#666"
+                          >
+                            {
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                one
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              "Object and array properties will be broken to diff…"
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                two
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style="color:#22a;word-break:break-word"
+                            >
+                              "if greater than \`maxPropsIntoLine\` option threshol…"
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                object
+                              </span>
+                            </span>
+                            : 
                             <span
                               style="color:#666"
                             >
@@ -3921,35 +3942,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                 <span
                                   style="color:#666"
                                 >
-                                  one
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style="color:#22a;word-break:break-word"
-                              >
-                                Object and array properties will be broken to diff…
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style="color:#666"
-                                >
-                                  two
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style="color:#22a;word-break:break-word"
-                              >
-                                if greater than \`maxPropsIntoLine\` option threshol…
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style="color:#666"
-                                >
-                                  object
+                                  object1
                                 </span>
                               </span>
                               : 
@@ -3961,7 +3954,101 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                   <span
                                     style="color:#666"
                                   >
-                                    object1
+                                    one
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  "one"
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    two
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  "two"
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    three
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style="color:#22a;word-break:break-word"
+                                >
+                                  "three"
+                                </span>
+                                }
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style="color:#666"
+                                >
+                                  array
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style="color:#666"
+                              >
+                                [
+                                <span>
+                                  <span
+                                    style="color:#22a;word-break:break-word"
+                                  >
+                                    "one"
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style="color:#22a;word-break:break-word"
+                                  >
+                                    "two"
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style="color:#22a;word-break:break-word"
+                                  >
+                                    "three"
+                                  </span>
+                                </span>
+                                ]
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style="color:#666"
+                                >
+                                  object2
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style="color:#666"
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style="color:#666"
+                                  >
+                                    object
                                   </span>
                                 </span>
                                 : 
@@ -3980,7 +4067,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                   <span
                                     style="color:#22a;word-break:break-word"
                                   >
-                                    one
+                                    "one"
                                   </span>
                                   ,
                                   <span>
@@ -3994,7 +4081,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                   <span
                                     style="color:#22a;word-break:break-word"
                                   >
-                                    two
+                                    "two"
                                   </span>
                                   ,
                                   <span>
@@ -4008,7 +4095,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                   <span
                                     style="color:#22a;word-break:break-word"
                                   >
-                                    three
+                                    "three"
                                   </span>
                                   }
                                 </span>
@@ -4029,7 +4116,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                     <span
                                       style="color:#22a;word-break:break-word"
                                     >
-                                      one
+                                      "one"
                                     </span>
                                   </span>
                                   ,
@@ -4037,117 +4124,23 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                     <span
                                       style="color:#22a;word-break:break-word"
                                     >
-                                      two
+                                      "two"
                                     </span>
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      three
-                                    </span>
-                                  </span>
-                                  ]
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style="color:#666"
-                                  >
-                                    object2
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style="color:#666"
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style="color:#666"
-                                    >
-                                      object
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style="color:#666"
-                                  >
-                                    {
-                                    <span>
-                                      <span
-                                        style="color:#666"
-                                      >
-                                        one
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      one
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style="color:#666"
-                                      >
-                                        two
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      two
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style="color:#666"
-                                      >
-                                        three
-                                      </span>
-                                    </span>
-                                    : 
-                                    <span
-                                      style="color:#22a;word-break:break-word"
-                                    >
-                                      three
-                                    </span>
-                                    }
                                   </span>
                                   ,
                                   <span>
                                     <span
                                       style="color:#666"
                                     >
-                                      array
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style="color:#666"
-                                  >
-                                    [
-                                    <span>
-                                      <span
-                                        style="color:#22a;word-break:break-word"
-                                      >
-                                        one
+                                      {
+                                      <span>
+                                        <span
+                                          style="color:#666"
+                                        >
+                                          object
+                                        </span>
                                       </span>
-                                    </span>
-                                    ,
-                                    <span>
-                                      <span
-                                        style="color:#22a;word-break:break-word"
-                                      >
-                                        two
-                                      </span>
-                                    </span>
-                                    ,
-                                    <span>
+                                      : 
                                       <span
                                         style="color:#666"
                                       >
@@ -4168,113 +4161,100 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                                             <span
                                               style="color:#666"
                                             >
-                                              object
+                                              one
                                             </span>
                                           </span>
                                           : 
                                           <span
-                                            style="color:#666"
+                                            style="color:#22a;word-break:break-word"
                                           >
-                                            {
-                                            <span>
-                                              <span
-                                                style="color:#666"
-                                              >
-                                                one
-                                              </span>
-                                            </span>
-                                            : 
-                                            <span
-                                              style="color:#22a;word-break:break-word"
-                                            >
-                                              one
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span
-                                                style="color:#666"
-                                              >
-                                                two
-                                              </span>
-                                            </span>
-                                            : 
-                                            <span
-                                              style="color:#22a;word-break:break-word"
-                                            >
-                                              two
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span
-                                                style="color:#666"
-                                              >
-                                                three
-                                              </span>
-                                            </span>
-                                            : 
-                                            <span
-                                              style="color:#22a;word-break:break-word"
-                                            >
-                                              three
-                                            </span>
-                                            }
+                                            "one"
                                           </span>
                                           ,
                                           <span>
                                             <span
                                               style="color:#666"
                                             >
-                                              array
+                                              two
                                             </span>
                                           </span>
                                           : 
                                           <span
-                                            style="color:#666"
+                                            style="color:#22a;word-break:break-word"
                                           >
-                                            [
-                                            <span>
-                                              <span
-                                                style="color:#22a;word-break:break-word"
-                                              >
-                                                one
-                                              </span>
+                                            "two"
+                                          </span>
+                                          ,
+                                          <span>
+                                            <span
+                                              style="color:#666"
+                                            >
+                                              three
                                             </span>
-                                            ,
-                                            <span>
-                                              <span
-                                                style="color:#22a;word-break:break-word"
-                                              >
-                                                two
-                                              </span>
-                                            </span>
-                                            ,
-                                            <span>
-                                              <span
-                                                style="color:#22a;word-break:break-word"
-                                              >
-                                                three
-                                              </span>
-                                            </span>
-                                            ]
+                                          </span>
+                                          : 
+                                          <span
+                                            style="color:#22a;word-break:break-word"
+                                          >
+                                            "three"
                                           </span>
                                           }
                                         </span>
+                                        ,
+                                        <span>
+                                          <span
+                                            style="color:#666"
+                                          >
+                                            array
+                                          </span>
+                                        </span>
+                                        : 
+                                        <span
+                                          style="color:#666"
+                                        >
+                                          [
+                                          <span>
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              "one"
+                                            </span>
+                                          </span>
+                                          ,
+                                          <span>
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              "two"
+                                            </span>
+                                          </span>
+                                          ,
+                                          <span>
+                                            <span
+                                              style="color:#22a;word-break:break-word"
+                                            >
+                                              "three"
+                                            </span>
+                                          </span>
+                                          ]
+                                        </span>
                                         }
                                       </span>
+                                      }
                                     </span>
-                                    ]
                                   </span>
-                                  }
+                                  ]
                                 </span>
                                 }
                               </span>
                               }
                             </span>
+                            }
                           </span>
-                          ]
                         </span>
-                        }
+                        ]
                       </span>
+                      }
                     </span>
                   </span>
                   <br />
@@ -6047,15 +6027,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -6292,27 +6270,31 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                 </span>
                 <span>
                   <span>
-                     
+                    <span>
+                      <br />
+                        
+                    </span>
                     <span>
                       onClick
                     </span>
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
                   <span>
-                     
+                    <span>
+                      <br />
+                        
+                    </span>
                     <span>
                       label
                     </span>
@@ -6328,7 +6310,202 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                         "
                       </span>
                     </span>
-                     
+                  </span>
+                  <span>
+                    <span>
+                      <br />
+                        
+                    </span>
+                    <span>
+                      one
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          {
+                          <span>
+                            <span
+                              style="color:#666"
+                            >
+                              key
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#a11"
+                          >
+                            1
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                    <span>
+                      <br />
+                        
+                    </span>
+                    <span>
+                      shape
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          {
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#666"
+                            >
+                              id
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#a11"
+                          >
+                            3
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#666"
+                            >
+                              arr
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#666"
+                          >
+                            []
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            <span
+                              style="color:#666"
+                            >
+                              shape
+                            </span>
+                          </span>
+                          : 
+                          <span
+                            style="color:#666"
+                          >
+                            {
+                            <span>
+                              <span
+                                style="color:#666"
+                              >
+                                shape
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style="color:#666"
+                            >
+                              {
+                              <span>
+                                <span
+                                  style="color:#666"
+                                >
+                                  foo
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style="color:#22a;word-break:break-word"
+                              >
+                                "bar"
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                          ,
+                          <span>
+                            <span>
+                              <br />
+                                  
+                            </span>
+                            …
+                          </span>
+                          <span>
+                            <br />
+                              
+                          </span>
+                          }
+                        </span>
+                        }
+                      </span>
+                    </span>
+                  </span>
+                  <span>
+                    <span>
+                      <br />
+                        
+                    </span>
+                    <span>
+                      arrayOf
+                    </span>
+                    <span>
+                      =
+                      <span>
+                        {
+                        <span
+                          style="color:#666"
+                        >
+                          [
+                          <span>
+                            <span
+                              style="color:#a11"
+                            >
+                              1
+                            </span>
+                          </span>
+                          ,
+                          <span>
+                            <span
+                              style="color:#a11"
+                            >
+                              2
+                            </span>
+                          </span>
+                          ,
+                          <span>
+                            <span
+                              style="color:#a11"
+                            >
+                              3
+                            </span>
+                          </span>
+                          ]
+                        </span>
+                        }
+                      </span>
+                    </span>
+                    <br />
                   </span>
                 </span>
                 <span
@@ -6646,7 +6823,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                       <span
                         style="color:#22a;word-break:break-word"
                       >
-                        value
+                        "value"
                       </span>
                       }
                     </span>
@@ -7036,15 +7213,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>
@@ -7340,15 +7515,13 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                     <span>
                       =
                       <span>
-                        <span>
-                          {
-                          <span
-                            style="color:#170"
-                          >
-                            clicked()
-                          </span>
-                          }
+                        {
+                        <span
+                          style="color:#170"
+                        >
+                          clicked()
                         </span>
+                        }
                       </span>
                     </span>
                   </span>

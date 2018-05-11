@@ -188,11 +188,9 @@ function PropVal(props) {
     maxPropStringLength,
     maxPropsIntoLine,
     theme,
-    braceWrapped,
   } = props;
   let { val } = props;
   const { codeColors } = theme || {};
-  let braceWrap = braceWrapped;
   let content = null;
   const valueStyles = props.valueStyles || getValueStyles(codeColors);
 
@@ -202,8 +200,10 @@ function PropVal(props) {
     if (val.length > maxPropStringLength) {
       val = `${val.slice(0, maxPropStringLength)}…`;
     }
+    if (level > 1) {
+      val = `"${val}"`;
+    }
     content = <span style={valueStyles.string}>{val}</span>;
-    braceWrap = false;
   } else if (typeof val === 'boolean') {
     content = <span style={valueStyles.bool}>{`${val}`}</span>;
   } else if (Array.isArray(val)) {
@@ -246,9 +246,7 @@ function PropVal(props) {
     );
   }
 
-  if (!braceWrap) return content;
-
-  return <span>&#123;{content}&#125;</span>;
+  return content;
 }
 
 PropVal.defaultProps = {
@@ -260,7 +258,6 @@ PropVal.defaultProps = {
   level: 1,
   theme: {},
   valueStyles: null,
-  braceWrapped: false,
 };
 
 PropVal.propTypes = {
@@ -283,7 +280,6 @@ PropVal.propTypes = {
     bool: PropTypes.object,
     empty: PropTypes.object,
   }),
-  braceWrapped: PropTypes.bool,
 };
 
 export default withTheme(PropVal);
