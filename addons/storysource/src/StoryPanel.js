@@ -11,7 +11,13 @@ const highlighterTheme = {
   ...darcula,
   'pre[class*="language-"]': {
     ...darcula['pre[class*="language-"]'],
-    margin: 0,
+    margin: 'auto',
+    width: 'auto',
+    height: 'auto',
+    minHeight: '100%',
+    overflow: 'hidden',
+    boxSizing: 'border-box',
+    display: 'flex',
     fontFamily: `Fira Code, Fira Mono, Consolas, Monaco, 'Andale Mono', monospace`,
   },
   'code[class*="language-"]': {
