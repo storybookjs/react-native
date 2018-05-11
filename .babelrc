@@ -1,7 +1,7 @@
 {
   "presets": ["env", "stage-0", "react"],
   "env": {
-    "dev": {
+    "development": {
       "plugins": [
         "babel-plugin-macros",
         "babel-plugin-glamorous-displayname",
