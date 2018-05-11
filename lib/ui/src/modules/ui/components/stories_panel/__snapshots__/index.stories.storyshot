@@ -27,7 +27,7 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
     class="css-gpw716"
   >
     <input
-      class="css-16z8x67"
+      class="css-x0nny6"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -64,7 +64,7 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
     class="css-gpw716"
   >
     <input
-      class="css-16z8x67"
+      class="css-x0nny6"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -101,7 +101,7 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
     class="css-gpw716"
   >
     <input
-      class="css-16z8x67"
+      class="css-x0nny6"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -138,7 +138,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
     class="css-gpw716"
   >
     <input
-      class="css-16z8x67"
+      class="css-x0nny6"
       name="filter-text"
       placeholder="Filter"
       type="text"

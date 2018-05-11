@@ -297,7 +297,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
 >
   <div>
     <div
-      style="position:fixed;bottom:0;left:0;width:100vw;z-index:9999"
+      class="css-1ebwt9d"
     >
       <div
         class="css-ogka8q"
@@ -336,7 +336,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
       </div>
     </div>
     <div
-      class="css-mtqaf5"
+      class="css-1m9zc0l"
     >
       <div
         class="css-a8tcv7"
