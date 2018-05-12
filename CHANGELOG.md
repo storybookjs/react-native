@@ -20,7 +20,6 @@
 -   Ignore any unstructured output from the package managers [#3563](https://github.com/storybooks/storybook/pull/3563)
 -   Use the --use-npm flag also for version checking [#3535](https://github.com/storybooks/storybook/pull/3535)
 -   Clean out the store if `configure` fails [#3558](https://github.com/storybooks/storybook/pull/3558)
--   Ignore home package.json no license field [#3531](https://github.com/storybooks/storybook/pull/3531)
 -   Fix render order in preview [#3520](https://github.com/storybooks/storybook/pull/3520)
 
 # 3.4.4
