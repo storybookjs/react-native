@@ -16,6 +16,7 @@ const subscription = () => {
   channel.on(EVENTS.EMIT, onEmit);
   return () => {
     prevEvents = null;
+    addons.getChannel().emit(EVENTS.ADD, []);
     channel.removeListener(EVENTS.EMIT, onEmit);
   };
 };

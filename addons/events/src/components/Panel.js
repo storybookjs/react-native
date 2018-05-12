@@ -23,9 +23,6 @@ const styles = {
 
 export default class Events extends Component {
   static propTypes = {
-    api: PropTypes.shape({
-      onStory: PropTypes.func,
-    }).isRequired,
     channel: PropTypes.shape({
       on: PropTypes.func,
       emit: PropTypes.func,
@@ -39,18 +36,9 @@ export default class Events extends Component {
 
   componentDidMount() {
     this.props.channel.on(EVENTS.ADD, this.onAdd);
-
-    this.stopListeningOnStory = this.props.api.onStory(() => {
-      this.onAdd([]);
-    });
   }
 
   componentWillUnmount() {
-    if (this.stopListeningOnStory) {
-      this.stopListeningOnStory();
-    }
-
-    this.unmounted = true;
     this.props.channel.removeListener(EVENTS.ADD, this.onAdd);
   }
 
