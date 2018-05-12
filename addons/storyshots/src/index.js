@@ -1,6 +1,6 @@
 import fs from 'fs';
 import glob from 'glob';
-import global, { describe, it } from 'global';
+import global, { document, describe, it } from 'global';
 import addons, { mockChannel } from '@storybook/addons';
 import loadFramework from './frameworkLoader';
 import getIntegrityOptions from './getIntegrityOptions';
@@ -35,6 +35,9 @@ export default function testStorySnapshots(options = {}) {
   }
 
   addons.setChannel(mockChannel());
+  const rootEl = document.createElement('div');
+  rootEl.setAttribute('id', 'root');
+  document.body.appendChild(rootEl);
 
   const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
   const stories = storybook.getStorybook();
