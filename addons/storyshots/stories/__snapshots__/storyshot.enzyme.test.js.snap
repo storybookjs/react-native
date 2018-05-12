@@ -15,22 +15,17 @@ exports[`Storyshots Another Button with some emoji 1`] = `
 <Button
   onClick={[Function]}
 >
-  <Component
+  <button
     className="css-0"
     onClick={[Function]}
   >
-    <button
-      className="css-0"
-      onClick={[Function]}
+    <span
+      aria-label="so cool"
+      role="img"
     >
-      <span
-        aria-label="so cool"
-        role="img"
-      >
-        😀 😎 👍 💯
-      </span>
-    </button>
-  </Component>
+      😀 😎 👍 💯
+    </span>
+  </button>
 </Button>
 `;
 
@@ -49,17 +44,12 @@ exports[`Storyshots Another Button with text 1`] = `
 <Button
   onClick={[Function]}
 >
-  <Component
+  <button
     className="css-0"
     onClick={[Function]}
   >
-    <button
-      className="css-0"
-      onClick={[Function]}
-    >
-      Hello Button
-    </button>
-  </Component>
+    Hello Button
+  </button>
 </Button>
 `;
 
@@ -78,22 +68,17 @@ exports[`Storyshots Button with some emoji 1`] = `
 <Button
   onClick={[Function]}
 >
-  <Component
+  <button
     className="css-0"
     onClick={[Function]}
   >
-    <button
-      className="css-0"
-      onClick={[Function]}
+    <span
+      aria-label="so cool"
+      role="img"
     >
-      <span
-        aria-label="so cool"
-        role="img"
-      >
-        😀 😎 👍 💯
-      </span>
-    </button>
-  </Component>
+      😀 😎 👍 💯
+    </span>
+  </button>
 </Button>
 `;
 
@@ -112,17 +97,12 @@ exports[`Storyshots Button with text 1`] = `
 <Button
   onClick={[Function]}
 >
-  <Component
+  <button
     className="css-0"
     onClick={[Function]}
   >
-    <button
-      className="css-0"
-      onClick={[Function]}
-    >
-      Hello Button
-    </button>
-  </Component>
+    Hello Button
+  </button>
 </Button>
 `;
 
