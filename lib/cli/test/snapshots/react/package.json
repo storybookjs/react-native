@@ -20,10 +20,10 @@
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^1.1.1",
-    "@storybook/react": "^4.0.0-alpha.4",
-    "@storybook/addon-actions": "^4.0.0-alpha.4",
-    "@storybook/addon-links": "^4.0.0-alpha.4",
-    "@storybook/addons": "^4.0.0-alpha.4",
+    "@storybook/react": "^4.0.0-alpha.6",
+    "@storybook/addon-actions": "^4.0.0-alpha.6",
+    "@storybook/addon-links": "^4.0.0-alpha.6",
+    "@storybook/addons": "^4.0.0-alpha.6",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0"
   }
