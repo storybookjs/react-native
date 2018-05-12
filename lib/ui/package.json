@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.5",
   "description": "Core Storybook UI",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,8 +15,8 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@storybook/components": "4.0.0-alpha.4",
-    "@storybook/core-events": "4.0.0-alpha.4",
+    "@storybook/components": "4.0.0-alpha.5",
+    "@storybook/core-events": "4.0.0-alpha.5",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
@@ -44,7 +44,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.4",
-    "@storybook/react": "4.0.0-alpha.4"
+    "@storybook/addon-actions": "4.0.0-alpha.5",
+    "@storybook/react": "4.0.0-alpha.5"
   }
 }
