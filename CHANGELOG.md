@@ -1,4 +1,4 @@
-# 4.0.0-alpha.5
+# 4.0.0-alpha.6
 
 2018-May-12
 
@@ -21,6 +21,10 @@
 -   Use the --use-npm flag also for version checking [#3535](https://github.com/storybooks/storybook/pull/3535)
 -   Clean out the store if `configure` fails [#3558](https://github.com/storybooks/storybook/pull/3558)
 -   Fix render order in preview [#3520](https://github.com/storybooks/storybook/pull/3520)
+
+# 4.0.0-alpha.5
+
+Broken release (@storybook/core-events had not been published publicly)
 
 # 3.4.4
 
