@@ -14,4 +14,10 @@ storiesOf('Addons|Backgrounds', module)
   .add('story 1', () => (
     <BaseButton label="You should be able to switch backgrounds for this story" />
   ))
-  .add('story 2', () => <BaseButton label="This one too!" />);
+  .add('story 2', () => <BaseButton label="This one too!" />)
+  .add('overriden', () =>
+    backgrounds([
+      { name: 'red', value: '#F44336' },
+      { name: 'blue', value: '#2196F3', default: true },
+    ])(() => <BaseButton label="This one should have different backgrounds" />)
+  );
