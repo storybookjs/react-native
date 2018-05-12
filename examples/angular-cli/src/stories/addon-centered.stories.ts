@@ -1,10 +1,10 @@
-import { centeredAng } from '@storybook/addon-centered';
+import { ngCentered } from '@storybook/addon-centered';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 import { AppComponent } from '../app/app.component';
 
 storiesOf('Addon|Centered', module)
-  .addDecorator(centeredAng)
+  .addDecorator(ngCentered)
   .add('centered component', () => ({
     component: AppComponent,
     props: {},
@@ -16,7 +16,7 @@ storiesOf('Addon|Centered', module)
       declarations: [Button],
     })
   )
-  .addDecorator(centeredAng)
+  .addDecorator(ngCentered)
   .add('centered template', () => ({
     template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
     props: {
