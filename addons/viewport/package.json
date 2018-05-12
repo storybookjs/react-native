@@ -13,10 +13,12 @@
   "dependencies": {
     "@storybook/addons": "4.0.0-alpha.4",
     "@storybook/components": "4.0.0-alpha.4",
+    "@storybook/core-events": "4.0.0-alpha.4",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "lodash.debounce": "^4.0.8",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
     "react": "*"
