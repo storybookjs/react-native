@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "storybook": "start-storybook -p 9006",
