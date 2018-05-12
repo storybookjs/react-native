@@ -1,5 +1,6 @@
 import addons from '@storybook/addons';
 import CoreEvents from '@storybook/core-events';
+import deprecate from 'util-deprecate';
 
 import { EVENTS } from './constants';
 
@@ -13,15 +14,32 @@ const onEmit = event => {
 const subscription = () => {
   const channel = addons.getChannel();
   channel.on(EVENTS.EMIT, onEmit);
-  return () => channel.removeListener(EVENTS.EMIT, onEmit);
+  return () => {
+    prevEvents = null;
+    channel.removeListener(EVENTS.EMIT, onEmit);
+  };
 };
 
-export default ({ emit, events }) => story => {
+const addEvents = ({ emit, events }) => {
   if (prevEvents !== events) {
     addons.getChannel().emit(EVENTS.ADD, events);
     prevEvents = events;
   }
   currentEmit = emit;
   addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
-  return story();
+};
+
+const WithEvents = deprecate(({ children, ...options }) => {
+  addEvents(options);
+  return children;
+}, `<WithEvents> usage is deprecated, use .addDecorator(withEvents({emit, events})) instead`);
+
+export default options => {
+  if (options.children) {
+    return WithEvents(options);
+  }
+  return story => {
+    addEvents(options);
+    return story();
+  };
 };

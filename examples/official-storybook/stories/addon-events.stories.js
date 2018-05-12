@@ -19,57 +19,63 @@ const eventHandler = name => payload => emit(Logger.LOG_EVENT, { name, payload }
 
 Object.keys(EVENTS).forEach(event => emitter.on(EVENTS[event], eventHandler(EVENTS[event])));
 
+const events = [
+  {
+    name: EVENTS.TEST_EVENT_1,
+    title: 'Test event 1',
+    payload: 0,
+  },
+  {
+    name: EVENTS.TEST_EVENT_2,
+    title: 'Test event 2',
+    payload: 'Test event 2',
+  },
+  {
+    name: EVENTS.TEST_EVENT_3,
+    title: 'Test event 3',
+    payload: {
+      string: 'value',
+      number: 123,
+      array: [1, 2, 3],
+      object: {
+        string: 'value',
+        number: 123,
+        array: [1, 2, 3],
+      },
+    },
+  },
+  {
+    name: EVENTS.TEST_EVENT_4,
+    title: 'Test event 4',
+    payload: [
+      {
+        string: 'value',
+        number: 123,
+        array: [1, 2, 3],
+      },
+      {
+        string: 'value',
+        number: 123,
+        array: [1, 2, 3],
+      },
+      {
+        string: 'value',
+        number: 123,
+        array: [1, 2, 3],
+      },
+    ],
+  },
+];
+
 storiesOf('Addons|Events', module)
-  .addDecorator(
-    withEvents({
-      emit,
-      events: [
-        {
-          name: EVENTS.TEST_EVENT_1,
-          title: 'Test event 1',
-          payload: 0,
-        },
-        {
-          name: EVENTS.TEST_EVENT_2,
-          title: 'Test event 2',
-          payload: 'Test event 2',
-        },
-        {
-          name: EVENTS.TEST_EVENT_3,
-          title: 'Test event 3',
-          payload: {
-            string: 'value',
-            number: 123,
-            array: [1, 2, 3],
-            object: {
-              string: 'value',
-              number: 123,
-              array: [1, 2, 3],
-            },
-          },
-        },
-        {
-          name: EVENTS.TEST_EVENT_4,
-          title: 'Test event 4',
-          payload: [
-            {
-              string: 'value',
-              number: 123,
-              array: [1, 2, 3],
-            },
-            {
-              string: 'value',
-              number: 123,
-              array: [1, 2, 3],
-            },
-            {
-              string: 'value',
-              number: 123,
-              array: [1, 2, 3],
-            },
-          ],
-        },
-      ],
-    })
-  )
+  .addDecorator(withEvents({ emit, events }))
+  .add('Logger', () => <Logger emitter={emitter} />);
+
+const WithEvents = withEvents;
+storiesOf('Addons|Events/WithEvents (deprecated)', module)
+  .addDecorator(story => (
+    <WithEvents emit={emit} events={events}>
+      {story()}
+    </WithEvents>
+  ))
   .add('Logger', () => <Logger emitter={emitter} />);
