@@ -69,6 +69,7 @@ export default class Preview {
       }
       channel.on(Events.GET_STORIES, () => this._sendSetStories());
       channel.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
+      channel.on(Events.FORCE_RE_RENDER, () => this._forceRender());
       this._events.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
       this._sendSetStories();
       this._sendGetCurrentStory();
@@ -97,5 +98,9 @@ export default class Preview {
     const { kind, story } = selection;
     const storyFn = this._stories.getStoryWithContext(kind, story);
     this._events.emit(Events.SELECT_STORY, storyFn, selection);
+  }
+
+  _forceRender() {
+    this._events.emit(Events.FORCE_RE_RENDER);
   }
 }
