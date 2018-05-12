@@ -70,7 +70,7 @@ export default class Preview {
       channel.on(Events.GET_STORIES, () => this._sendSetStories());
       channel.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
       channel.on(Events.FORCE_RE_RENDER, () => this._forceRender());
-      this._events.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
+      this._events.on(Events.SET_CURRENT_STORY, d => this._selectStory(d, true));
       this._sendSetStories();
       this._sendGetCurrentStory();
 
@@ -94,9 +94,13 @@ export default class Preview {
     channel.emit(Events.GET_CURRENT_STORY);
   }
 
-  _selectStory(selection) {
+  _selectStory(selection, fromPreview) {
     const { kind, story } = selection;
     const storyFn = this._stories.getStoryWithContext(kind, story);
+    if (fromPreview) {
+      const channel = addons.getChannel();
+      channel.emit(Events.SELECT_STORY, selection);
+    }
     this._events.emit(Events.SELECT_STORY, storyFn, selection);
   }
 

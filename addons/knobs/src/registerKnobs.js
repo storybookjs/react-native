@@ -36,8 +36,7 @@ function resetKnobs() {
 
   forceReRender();
 
-  const channel = addons.getChannel();
-  setPaneKnobs(channel, knobStore, false);
+  setPaneKnobs(false);
 }
 
 function disconnectCallbacks() {
