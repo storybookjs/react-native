@@ -77,12 +77,12 @@ storiesOf('MyComponent', module)
 example for Angular with component:
 
 ```ts
-import { ngCentered } from '@storybook/addon-centered';
+import { centered } from '@storybook/addon-centered/angular';
 import { storiesOf } from '@storybook/angular';
 import { AppComponent } from '../app/app.component';
 
 storiesOf('Addon|Centered', module)
-  .addDecorator(ngCentered)
+  .addDecorator(centered)
   .add('centered component', () => ({
     component: AppComponent,
     props: {},
@@ -93,7 +93,7 @@ storiesOf('Addon|Centered', module)
 example for Angular with template:
 
 ```ts
-import { ngCentered } from '@storybook/addon-centered';
+import { centered } from '@storybook/addon-centered/angular';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { AppComponent } from '../app/app.component';
 
@@ -103,7 +103,7 @@ storiesOf('Addon|Centered', module)
       declarations: [Button],
     })
   )
-  .addDecorator(ngCentered)
+  .addDecorator(centered)
   .add('centered template', () => ({
     template: `<storybook-button-component 
         [text]="text" (onClick)="onClick($event)">
