@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.6",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "storybook"

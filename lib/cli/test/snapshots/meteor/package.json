@@ -15,13 +15,13 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-root-slash-import": "^1.1.0",
-    "@storybook/react": "^4.0.0-alpha.4",
-    "@storybook/addon-actions": "^4.0.0-alpha.4",
-    "@storybook/addon-links": "^4.0.0-alpha.4",
-    "@storybook/addons": "^4.0.0-alpha.4"
+    "@storybook/react": "^4.0.0-alpha.6",
+    "@storybook/addon-actions": "^4.0.0-alpha.6",
+    "@storybook/addon-links": "^4.0.0-alpha.6",
+    "@storybook/addons": "^4.0.0-alpha.6"
   }
 }
