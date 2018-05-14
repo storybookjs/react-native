@@ -15,7 +15,25 @@ storiesOf('Addons|Info.React Docgen', module)
     'Comments from PropType declarations',
     withInfo(
       'Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table'
-    )(() => <DocgenButton onClick={action('clicked')} label="Docgen Button" />)
+    )(() => (
+      <DocgenButton
+        onClick={action('clicked')}
+        label="Docgen Button"
+        disabled={false}
+        one={{ key: 1 }}
+        shape={{
+          id: 3,
+          arr: [],
+          shape: {
+            shape: {
+              foo: 'bar',
+            },
+          },
+          func: () => {},
+        }}
+        arrayOf={[1, 2, 3]}
+      />
+    ))
   )
   .add(
     'Comments from Flow declarations',

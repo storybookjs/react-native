@@ -45,7 +45,7 @@ export default function Props(props) {
           <span>
             =
             <span style={propValueStyle}>
-              {typeof nodeProps[name] === 'string' && '"'}
+              {typeof nodeProps[name] === 'string' ? '"' : '{'}
               <PropVal
                 val={nodeProps[name]}
                 maxPropObjectKeys={maxPropObjectKeys}
@@ -53,7 +53,7 @@ export default function Props(props) {
                 maxPropStringLength={maxPropStringLength}
                 maxPropsIntoLine={maxPropsIntoLine}
               />
-              {typeof nodeProps[name] === 'string' && '"'}
+              {typeof nodeProps[name] === 'string' ? '"' : '}'}
             </span>
           </span>
         )}
