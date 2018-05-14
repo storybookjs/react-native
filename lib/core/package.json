@@ -41,7 +41,7 @@
     "qs": "^6.5.2",
     "redux": "^4.0.0",
     "serve-favicon": "^2.5.0",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.2",
     "style-loader": "^0.21.0",
     "svg-url-loader": "^2.3.2",
     "url-loader": "^1.0.1",
