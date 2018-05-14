@@ -100,7 +100,7 @@
     "remark-cli": "^5.0.0",
     "remark-lint": "^6.0.1",
     "remark-preset-lint-recommended": "^3.0.1",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.2",
     "tslint": "~5.10.0",
     "tslint-config-prettier": "^1.12.0",
     "tslint-plugin-prettier": "^1.3.0",
