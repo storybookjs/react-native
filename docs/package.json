@@ -32,7 +32,7 @@
     "gatsby-remark-images": "^1.5.63",
     "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.35",
-    "gatsby-transformer-remark": "^1.7.40",
+    "gatsby-transformer-remark": "^1.7.41",
     "gh-pages": "^1.1.0",
     "global": "^4.3.2",
     "highlight.js": "^9.12.0",
