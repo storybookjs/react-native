@@ -38,7 +38,7 @@
     "json5": "^1.0.1",
     "merge-dirs": "^0.2.1",
     "semver": "^5.5.0",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.2",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
