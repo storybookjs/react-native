@@ -4567,9 +4567,9 @@ gatsby-1-config-extract-plugin@^1.0.3:
     babel-runtime "^6.26.0"
     extract-text-webpack-plugin "^1.0.1"
 
-gatsby-cli@^1.1.51:
-  version "1.1.51"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.51.tgz#d081d989322ef1cecf145a379fa10fc87b670535"
+gatsby-cli@^1.1.52:
+  version "1.1.52"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.52.tgz#1bb09671b774a49202ea5bb90aa49bfeebaa2fc3"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4717,9 +4717,9 @@ gatsby-transformer-remark@^1.7.41:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.259:
-  version "1.9.259"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.259.tgz#4abd0e3fa84be9281e0981423ee355689879a7ab"
+gatsby@^1.9.260:
+  version "1.9.260"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.260.tgz#365d2c673846511def7250488a954a8a554dd161"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4761,7 +4761,7 @@ gatsby@^1.9.259:
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.11"
     gatsby-1-config-extract-plugin "^1.0.3"
-    gatsby-cli "^1.1.51"
+    gatsby-cli "^1.1.52"
     gatsby-link "^1.6.44"
     gatsby-module-loader "^1.0.11"
     gatsby-react-router-scroll "^1.0.17"
@@ -4818,7 +4818,7 @@ gatsby@^1.9.259:
     string-similarity "^1.2.0"
     style-loader "^0.13.0"
     type-of "^2.0.1"
-    url-loader "^0.5.7"
+    url-loader "^0.6.2"
     uuid "^3.1.0"
     v8-compile-cache "^1.1.0"
     webpack "^1.13.3"
@@ -7196,10 +7196,6 @@ mime-types@~2.1.18:
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.18.tgz#6f323f60a83d11146f831ff11fd66e2fe5503bb8"
   dependencies:
     mime-db "~1.33.0"
-
-mime@1.3.x:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-1.3.6.tgz#591d84d3653a6b0b4a3b9df8de5aa8108e72e5e0"
 
 mime@1.4.1, mime@^1.3.4, mime@^1.3.6, mime@^1.4.1:
   version "1.4.1"
@@ -11525,13 +11521,6 @@ urix@^0.1.0:
 url-join@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
-
-url-loader@^0.5.7:
-  version "0.5.9"
-  resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-0.5.9.tgz#cc8fea82c7b906e7777019250869e569e995c295"
-  dependencies:
-    loader-utils "^1.0.2"
-    mime "1.3.x"
 
 url-loader@^0.6.2:
   version "0.6.2"
