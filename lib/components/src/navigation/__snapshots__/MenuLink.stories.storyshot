@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|Navigation/MenuLink active 1`] = `
+<a
+  class="css-1xfwvjl"
+  href="http://google.com"
+>
+  Link
+</a>
+`;
+
 exports[`Storyshots Components|Navigation/MenuLink default 1`] = `
 <a
   class="css-1enusis"
@@ -7,4 +16,17 @@ exports[`Storyshots Components|Navigation/MenuLink default 1`] = `
 >
   Link
 </a>
+`;
+
+exports[`Storyshots Components|Navigation/MenuLink with knobs 1`] = `
+<div
+  style="width:90px"
+>
+  <a
+    class="css-1xfwvjl"
+    href="/"
+  >
+    Menu link item
+  </a>
+</div>
 `;
