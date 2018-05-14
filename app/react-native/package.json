@@ -59,7 +59,7 @@
     "raw-loader": "^0.5.1",
     "react-native-compat": "^1.0.0",
     "react-native-iphone-x-helper": "^1.0.3",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.2",
     "url-parse": "^1.4.0",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.2.1",
