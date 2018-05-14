@@ -1,7 +1,7 @@
 import addons from '@storybook/addons';
 import { withNotes } from '..';
 
-jest.mock('@storybook/addons');
+addons.getChannel = jest.fn();
 
 describe('Storybook Addon Notes', () => {
   it('should inject text from `notes` parameter', () => {
