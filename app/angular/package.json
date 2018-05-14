@@ -28,7 +28,7 @@
     "airbnb-js-shims": "^1.4.1",
     "angular2-template-loader": "^0.6.2",
     "babel-loader": "^7.1.4",
-    "babel-plugin-macros": "^2.2.0",
+    "babel-plugin-macros": "^2.2.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
