@@ -145,7 +145,9 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
       value=""
     />
   </div>
-  <div>
+  <div
+    class="css-7w6khc"
+  >
     <ul
       style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
     >
