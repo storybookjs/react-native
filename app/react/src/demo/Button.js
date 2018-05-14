@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
-const Button = glamorous.button({
+const Button = styled('button')({
   border: '1px solid #eee',
   borderRadius: 3,
   backgroundColor: '#FFFFFF',

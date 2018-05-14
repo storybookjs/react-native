@@ -1,33 +1,13 @@
 {
   "presets": ["env", "stage-0", "react"],
   "env": {
-    "development": {
-      "plugins": [
-        "babel-plugin-macros",
-        "babel-plugin-glamorous-displayname",
-        ["transform-runtime", {
-          "polyfill": false,
-          "regenerator": true
-        }]
-      ]
-    },
-    "test": {
-      "plugins": [
-        "babel-plugin-macros",
-        ["transform-runtime", {
-          "polyfill": false,
-          "regenerator": true
-        }]
-      ]
-    },
-    "production": {
-      "plugins": [
-        "babel-plugin-macros",
-        ["transform-runtime", {
-          "polyfill": false,
-          "regenerator": true
-        }]
-      ]
-    }
+    "plugins": [
+      "emotion",
+      "babel-plugin-macros",
+      ["transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      }]
+    ]
   }
 }

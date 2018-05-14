@@ -11,4 +11,4 @@
 
 Storybook Components is a React UI components collection used by the UI of Storybook and Addons.
 
-All components use [`glamorous`](https://glamorous.rocks) for styling.
+All components use [`glamorous`](https://styled.rocks) for styling.

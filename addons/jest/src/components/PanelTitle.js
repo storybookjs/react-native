@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import provideJestResult from '../hoc/provideJestResult';
 import Indicator from './Indicator';
 import colors from '../colors';
 
-const Wrapper = glamorous.div({
+const Wrapper = styled('div')({
   display: 'flex',
   alignItems: 'center',
 });
-const PanelName = glamorous.div({
+const PanelName = styled('div')({
   paddingLeft: 5,
 });
 

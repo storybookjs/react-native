@@ -2,17 +2,17 @@
 
 exports[`Storyshots ui/stories/TextFilter with filterText 1`] = `
 <div
-  class="css-gpw716"
+  class="css-oczsoj"
 >
   <input
-    class="css-x0nny6"
+    class="css-b9cqpx"
     name="filter-text"
     placeholder="Filter"
     type="text"
     value="Filter Text"
   />
   <button
-    class="css-1tb9faa clear"
+    class="clear css-thhrwj"
   >
     ×
   </button>
@@ -21,10 +21,10 @@ exports[`Storyshots ui/stories/TextFilter with filterText 1`] = `
 
 exports[`Storyshots ui/stories/TextFilter without filterText 1`] = `
 <div
-  class="css-gpw716"
+  class="css-oczsoj"
 >
   <input
-    class="css-x0nny6"
+    class="css-b9cqpx"
     name="filter-text"
     placeholder="Filter"
     type="text"

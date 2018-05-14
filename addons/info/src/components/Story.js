@@ -5,7 +5,6 @@ import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
 import { baseFonts } from '@storybook/components';
-import { ThemeProvider } from 'glamorous';
 
 import marksy from 'marksy';
 
@@ -364,11 +363,8 @@ class Story extends React.Component {
   }
 
   render() {
-    return (
-      <ThemeProvider theme={this.state.stylesheet}>
-        {this.props.showInline ? this._renderInline() : this._renderOverlay()}
-      </ThemeProvider>
-    );
+    // <ThemeProvider theme={this.state.stylesheet}></ThemeProvider>
+    return this.props.showInline ? this._renderInline() : this._renderOverlay();
   }
 }
 
