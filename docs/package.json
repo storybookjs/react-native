@@ -18,7 +18,7 @@
     "storybook": "start-storybook -p 9009 -s src/pages"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.4.3",
+    "@storybook/addon-actions": "^3.4.4",
     "@storybook/addon-links": "^3.4.3",
     "@storybook/addons": "^3.4.3",
     "@storybook/react": "^3.4.3",
