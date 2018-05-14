@@ -25,7 +25,7 @@
     "@storybook/react-dev-utils": "^5.0.0",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
-    "babel-plugin-macros": "^2.2.0",
+    "babel-plugin-macros": "^2.2.1",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
