@@ -1,3 +1,46 @@
+# 4.0.0-alpha.6
+
+2018-May-12
+
+#### Breaking Changes
+
+-   Fix the import of external md files [#3472](https://github.com/storybooks/storybook/pull/3472)
+
+#### Features
+
+-   Add marko support to storybooksJS [#3504](https://github.com/storybooks/storybook/pull/3504)
+-   Storybook addon Jest angular suport [#3532](https://github.com/storybooks/storybook/pull/3532)
+-   Storybook for HTML snippets [#3475](https://github.com/storybooks/storybook/pull/3475)
+-   Feature/config custom chrome executable path [#3518](https://github.com/storybooks/storybook/pull/3518)
+-   Channel-postmessage: handle events from the same window [#3519](https://github.com/storybooks/storybook/pull/3519)
+-   Force re-render event [#3515](https://github.com/storybooks/storybook/pull/3515)
+
+#### Bug Fixes
+
+-   Ignore any unstructured output from the package managers [#3563](https://github.com/storybooks/storybook/pull/3563)
+-   Use the --use-npm flag also for version checking [#3535](https://github.com/storybooks/storybook/pull/3535)
+-   Clean out the store if `configure` fails [#3558](https://github.com/storybooks/storybook/pull/3558)
+-   Fix render order in preview [#3520](https://github.com/storybooks/storybook/pull/3520)
+
+# 4.0.0-alpha.5
+
+Broken release (@storybook/core-events had not been published publicly)
+
+# 3.4.4
+
+2018-May-12
+
+#### Bug Fixes
+
+-   Ignore home package.json no license field [#3531](https://github.com/storybooks/storybook/pull/3531)
+-   fixed Duplicate declaration h [#3409](https://github.com/storybooks/storybook/pull/3409)
+-   Storyshots integrity tests options [#3418](https://github.com/storybooks/storybook/pull/3418)
+-   Fix dynamic knobs [d2a289e](https://github.com/storybooks/storybook/commit/d2a289e524c51e794f5f3a34164a69ba3d5409fa)
+
+#### Dependency Upgrades
+
+-   jest-image-snapshot version to ^2.4.1 [#3500](https://github.com/storybooks/storybook/pull/3500)
+
 # 4.0.0-alpha.4
 
 2018-April-27

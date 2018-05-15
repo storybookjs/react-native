@@ -491,14 +491,10 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="css-d52hbj"
                   >
-                    <span>
-                      {
-                      <span
-                        style="color:#a11"
-                      >
-                        false
-                      </span>
-                      }
+                    <span
+                      style="color:#a11"
+                    >
+                      false
                     </span>
                   </td>
                   <td
@@ -524,48 +520,36 @@ exports[`Storyshots Button with new info 1`] = `
                   <td
                     class="css-d52hbj"
                   >
-                    <span>
+                    <span
+                      style="color:#666"
+                    >
                       {
+                      <span>
+                        <span
+                          style="color:#666"
+                        >
+                          isOld
+                        </span>
+                      </span>
+                      : 
                       <span
-                        style="color:#666"
+                        style="color:#a11"
                       >
-                        {
-                        <span>
-                          <span
-                            style="color:#666"
-                          >
-                            isOld
-                          </span>
+                        false
+                      </span>
+                      ,
+                      <span>
+                        <span
+                          style="color:#666"
+                        >
+                          value
                         </span>
-                        : 
-                        <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            false
-                          </span>
-                          }
-                        </span>
-                        ,
-                        <span>
-                          <span
-                            style="color:#666"
-                          >
-                            value
-                          </span>
-                        </span>
-                        : 
-                        <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            0
-                          </span>
-                          }
-                        </span>
-                        }
+                      </span>
+                      : 
+                      <span
+                        style="color:#a11"
+                      >
+                        0
                       </span>
                       }
                     </span>
@@ -907,14 +891,10 @@ exports[`Storyshots Button with some info 1`] = `
                   <td
                     class="css-d52hbj"
                   >
-                    <span>
-                      {
-                      <span
-                        style="color:#a11"
-                      >
-                        false
-                      </span>
-                      }
+                    <span
+                      style="color:#a11"
+                    >
+                      false
                     </span>
                   </td>
                   <td
@@ -940,48 +920,36 @@ exports[`Storyshots Button with some info 1`] = `
                   <td
                     class="css-d52hbj"
                   >
-                    <span>
+                    <span
+                      style="color:#666"
+                    >
                       {
+                      <span>
+                        <span
+                          style="color:#666"
+                        >
+                          isOld
+                        </span>
+                      </span>
+                      : 
                       <span
-                        style="color:#666"
+                        style="color:#a11"
                       >
-                        {
-                        <span>
-                          <span
-                            style="color:#666"
-                          >
-                            isOld
-                          </span>
+                        false
+                      </span>
+                      ,
+                      <span>
+                        <span
+                          style="color:#666"
+                        >
+                          value
                         </span>
-                        : 
-                        <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            false
-                          </span>
-                          }
-                        </span>
-                        ,
-                        <span>
-                          <span
-                            style="color:#666"
-                          >
-                            value
-                          </span>
-                        </span>
-                        : 
-                        <span>
-                          {
-                          <span
-                            style="color:#a11"
-                          >
-                            0
-                          </span>
-                          }
-                        </span>
-                        }
+                      </span>
+                      : 
+                      <span
+                        style="color:#a11"
+                      >
+                        0
                       </span>
                       }
                     </span>
