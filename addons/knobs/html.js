@@ -1,1 +1,1 @@
-module.exports = require('./dist/html');
+module.exports = require('./dist/deprecated');

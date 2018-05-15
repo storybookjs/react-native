@@ -13,7 +13,7 @@ import {
   color,
   array,
   boolean,
-} from '@storybook/addon-knobs/polymer';
+} from '@storybook/addon-knobs';
 
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
@@ -31,8 +31,12 @@ storiesOf('Addon|Knobs', module)
   .add('complex', () => {
     const name = text('Name', 'Jane');
     const stock = number('Stock', 20, { range: true, min: 0, max: 30, step: 5 });
-    const fruits = { apples: 'Apple', bananas: 'Banana', cherries: 'Cherry' };
-    const fruit = select('Fruit', fruits, 'apple');
+    const fruits = {
+      Apple: 'apples',
+      Banana: 'bananas',
+      Cherry: 'cherries',
+    };
+    const fruit = select('Fruit', fruits, 'apples');
     const price = number('Price', 2.25);
     const colour = color('Border', 'deeppink');
     const today = date('Today', new Date('Jan 20 2017 GMT+0'));

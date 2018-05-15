@@ -1,1 +1,1 @@
-module.exports = require('./dist/mithril');
+module.exports = require('./dist/deprecated');

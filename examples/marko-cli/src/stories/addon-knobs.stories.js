@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/marko';
-import { withKnobs, text, number } from '@storybook/addon-knobs/marko';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
 import Hello from '../components/hello/index.marko';
 
 storiesOf('Addons|Knobs/Hello', module)

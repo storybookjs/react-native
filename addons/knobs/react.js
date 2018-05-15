@@ -1,1 +1,1 @@
-module.exports = require('./dist/react');
+module.exports = require('./dist/deprecated');

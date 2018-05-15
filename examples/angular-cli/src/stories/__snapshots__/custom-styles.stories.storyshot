@@ -31,18 +31,15 @@ exports[`Storyshots Custom|Style With Knobs 1`] = `
   data={[Function Object]}
   target={[Function ViewContainerRef_]}
 >
-  <ng-component
-    _nghost-c11=""
-  >
+  <ng-component>
     <storybook-button-component
-      _ngcontent-c11=""
-      _nghost-c12=""
+      _nghost-c11=""
       ng-reflect-text="Button with custom styles"
     >
       
         
       <button
-        _ngcontent-c12=""
+        _ngcontent-c11=""
       >
         Button with custom styles
       </button>
