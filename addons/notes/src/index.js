@@ -1,4 +1,4 @@
-import addons, { makeTransitionalDecorator } from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
 import marked from 'marked';
 
 function renderMarkdown(text, options) {
@@ -6,7 +6,7 @@ function renderMarkdown(text, options) {
   return marked(text);
 }
 
-export const withNotes = makeTransitionalDecorator({
+export const withNotes = makeDecorator({
   name: 'withNotes',
   parameterName: 'notes',
   wrapper: (getStory, context, { options, parameters }) => {
