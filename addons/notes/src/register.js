@@ -60,8 +60,10 @@ export class Notes extends React.Component {
 }
 
 Notes.propTypes = {
-  channel: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  api: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types
+  channel: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  api: PropTypes.object,
 };
 Notes.defaultProps = {
   channel: {},

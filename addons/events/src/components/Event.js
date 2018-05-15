@@ -71,7 +71,8 @@ class Item extends Component {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    payload: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
+    // eslint-disable-next-line react/forbid-prop-types, react/no-unused-prop-types
+    payload: PropTypes.any,
   };
 
   static defaultProps = {

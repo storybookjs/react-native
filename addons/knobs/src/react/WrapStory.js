@@ -86,7 +86,8 @@ WrapStory.defaultProps = {
 };
 
 WrapStory.propTypes = {
-  context: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types
+  context: PropTypes.object,
   storyFn: PropTypes.func,
   channel: PropTypes.shape({
     on: PropTypes.func,
@@ -101,7 +102,8 @@ WrapStory.propTypes = {
     subscribe: PropTypes.func,
     unsubscribe: PropTypes.func,
   }).isRequired,
-  initialContent: PropTypes.node, // eslint-disable-line react/no-unused-prop-types
+  // eslint-disable-next-line react/no-unused-prop-types
+  initialContent: PropTypes.node,
 };
 
 polyfill(WrapStory);

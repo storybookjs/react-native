@@ -1,6 +1,10 @@
-import { configure } from '@storybook/react';
+import React from 'react';
+import { ThemeProvider } from 'emotion-theming';
+import { configure, addDecorator } from '@storybook/react';
+import { themes } from '@storybook/components';
 import { setOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
 import 'react-chromatic/storybook-addon';
 import addHeadWarning from './head-warning';
 import extraViewports from './extra-viewports.json';
@@ -12,6 +16,12 @@ setOptions({
   hierarchySeparator: /\/|\./,
   hierarchyRootSeparator: /\|/,
 });
+
+addDecorator(Story => (
+  <ThemeProvider theme={themes.normal}>
+    <Story />
+  </ThemeProvider>
+));
 
 configureViewport({
   viewports: {

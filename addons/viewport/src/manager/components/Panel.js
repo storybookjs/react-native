@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { baseFonts } from '@storybook/components';
 import { document } from 'global';
 import debounce from 'lodash.debounce';
 
@@ -23,7 +22,6 @@ const containerStyles = {
   padding: 15,
   width: '100%',
   boxSizing: 'border-box',
-  ...baseFonts,
 };
 
 const getDefaultViewport = (viewports, candidateViewport) =>

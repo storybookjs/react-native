@@ -16,7 +16,7 @@ exports[`Storyshots Components|Header mobile-view 1`] = `
     target="_blank"
   >
     <h3
-      class="css-ht6bk4"
+      class="css-1852r2"
     >
       name
     </h3>
@@ -40,7 +40,7 @@ exports[`Storyshots Components|Header simple 1`] = `
     target="_blank"
   >
     <h3
-      class="css-ht6bk4"
+      class="css-1852r2"
     >
       name
     </h3>

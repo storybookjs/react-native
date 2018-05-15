@@ -14,7 +14,7 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
       target="_blank"
     >
       <h3
-        class="css-ht6bk4"
+        class="css-1852r2"
       />
     </a>
     <button
@@ -24,10 +24,10 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
     </button>
   </div>
   <div
-    class="css-oczsoj"
+    class="css-79elbk"
   >
     <input
-      class="css-b9cqpx"
+      class="css-11zcadk"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -51,7 +51,7 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
       target="_blank"
     >
       <h3
-        class="css-ht6bk4"
+        class="css-1852r2"
       />
     </a>
     <button
@@ -61,10 +61,10 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
     </button>
   </div>
   <div
-    class="css-oczsoj"
+    class="css-79elbk"
   >
     <input
-      class="css-b9cqpx"
+      class="css-11zcadk"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -88,7 +88,7 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
       target="_blank"
     >
       <h3
-        class="css-ht6bk4"
+        class="css-1852r2"
       />
     </a>
     <button
@@ -98,10 +98,10 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
     </button>
   </div>
   <div
-    class="css-oczsoj"
+    class="css-79elbk"
   >
     <input
-      class="css-b9cqpx"
+      class="css-11zcadk"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -125,7 +125,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
       target="_blank"
     >
       <h3
-        class="css-ht6bk4"
+        class="css-1852r2"
       />
     </a>
     <button
@@ -135,10 +135,10 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
     </button>
   </div>
   <div
-    class="css-oczsoj"
+    class="css-79elbk"
   >
     <input
-      class="css-b9cqpx"
+      class="css-11zcadk"
       name="filter-text"
       placeholder="Filter"
       type="text"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { RoutedLink } from '@storybook/components';
+import { RoutedLink, monoFonts } from '@storybook/components';
 import jsx from 'react-syntax-highlighter/languages/prism/jsx';
 import { darcula } from 'react-syntax-highlighter/styles/prism';
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
@@ -18,12 +18,13 @@ const highlighterTheme = {
     overflow: 'hidden',
     boxSizing: 'border-box',
     display: 'flex',
-    fontFamily: `Fira Code, Fira Mono, Consolas, Monaco, 'Andale Mono', monospace`,
+    fontFamily: monoFonts.fontFamily,
+    fontSize: 'inherit',
   },
   'code[class*="language-"]': {
     ...darcula['code[class*="language-"]'],
     margin: 0,
-    fontFamily: `Fira Code, Fira Mono, Consolas, Monaco, 'Andale Mono', monospace`,
+    fontFamily: 'inherit',
   },
 };
 
@@ -61,15 +62,7 @@ export default class StoryPanel extends Component {
       : [];
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = { source: '// Here will be dragons 🐉' };
-
-    this.setSelectedStoryRef = this.setSelectedStoryRef.bind(this);
-    this.lineRenderer = this.lineRenderer.bind(this);
-    this.clickOnStory = this.clickOnStory.bind(this);
-  }
+  state = { source: '// Here will be dragons 🐉' };
 
   componentDidMount() {
     const { channel } = this.props;
@@ -92,20 +85,20 @@ export default class StoryPanel extends Component {
     }
   }
 
-  setSelectedStoryRef(ref) {
+  setSelectedStoryRef = ref => {
     this.selectedStoryRef = ref;
-  }
+  };
 
-  clickOnStory(kind, story) {
+  clickOnStory = (kind, story) => {
     const { api } = this.props;
 
     if (kind && story) {
       api.selectStory(kind, story);
     }
-  }
+  };
 
-  createPart(rows, stylesheet, useInlineStyles) {
-    return rows.map((node, i) =>
+  createPart = (rows, stylesheet, useInlineStyles) =>
+    rows.map((node, i) =>
       createElement({
         node,
         stylesheet,
@@ -113,7 +106,6 @@ export default class StoryPanel extends Component {
         key: `code-segement${i}`,
       })
     );
-  }
 
   createStoryPart(rows, stylesheet, useInlineStyles, location, kindStory) {
     const { currentLocation } = this.state;
@@ -174,7 +166,7 @@ export default class StoryPanel extends Component {
     return parts;
   }
 
-  lineRenderer({ rows, stylesheet, useInlineStyles }) {
+  lineRenderer = ({ rows, stylesheet, useInlineStyles }) => {
     const { locationsMap, locationsKeys } = this.state;
 
     if (!locationsMap || !locationsKeys.length) {
@@ -183,8 +175,8 @@ export default class StoryPanel extends Component {
 
     const parts = this.createParts(rows, stylesheet, useInlineStyles);
 
-    return <span>{parts.map(part => part)}</span>;
-  }
+    return <span>{parts}</span>;
+  };
 
   render() {
     return (

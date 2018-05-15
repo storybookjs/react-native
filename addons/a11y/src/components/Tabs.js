@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { baseFonts } from '@storybook/components';
 
 const styles = {
   container: {
     width: '100%',
     position: 'relative',
-    ...baseFonts,
   },
   tabs: {
     borderBottom: '1px solid rgb(234, 234, 234)',
