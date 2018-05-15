@@ -74,6 +74,50 @@ storiesOf('MyComponent', module)
   }));
 ```
 
+example for Angular with component:
+
+```ts
+import { centered } from '@storybook/addon-centered/angular';
+import { storiesOf } from '@storybook/angular';
+import { AppComponent } from '../app/app.component';
+
+storiesOf('Addon|Centered', module)
+  .addDecorator(centered)
+  .add('centered component', () => ({
+    component: AppComponent,
+    props: {},
+  }));
+
+```
+
+example for Angular with template:
+
+```ts
+import { centered } from '@storybook/addon-centered/angular';
+import { moduleMetadata, storiesOf } from '@storybook/angular';
+import { AppComponent } from '../app/app.component';
+
+storiesOf('Addon|Centered', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [Button],
+    })
+  )
+  .addDecorator(centered)
+  .add('centered template', () => ({
+    template: `<storybook-button-component 
+        [text]="text" (onClick)="onClick($event)">
+      </storybook-button-component>`,
+    props: {
+      text: 'Hello Button',
+      onClick: event => {
+        console.log('some bindings work');
+        console.log(event);
+      },
+    },
+  }));
+```
+
 Also, you can also add this decorator globally
 
 example for React:

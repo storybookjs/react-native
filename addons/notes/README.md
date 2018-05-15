@@ -47,7 +47,7 @@ import { storiesOf } from '@storybook/react';
 import Component from './Component';
 
 storiesOf('Component', module)
-  .add('with some emoji', () => </Component>, { notes: 'A very simple component' });
+  .add('with some emoji', () => <Component />, { notes: 'A very simple component' });
 ```
 
 #### Using Markdown
