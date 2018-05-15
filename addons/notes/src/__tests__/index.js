@@ -16,6 +16,18 @@ describe('Storybook Addon Notes', () => {
     expect(getStory).toHaveBeenCalledWith(context);
   });
 
+  it('should NOT inject text if no `notes` parameter', () => {
+    const channel = { emit: jest.fn() };
+    addons.getChannel.mockReturnValue(channel);
+
+    const getStory = jest.fn();
+    const context = {};
+
+    withNotes(getStory, context);
+    expect(channel.emit).not.toHaveBeenCalled();
+    expect(getStory).toHaveBeenCalledWith(context);
+  });
+
   it('should inject markdown from `notes.markdown` parameter', () => {
     const channel = { emit: jest.fn() };
     addons.getChannel.mockReturnValue(channel);
