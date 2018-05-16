@@ -20,8 +20,10 @@
   "dependencies": {
     "@storybook/addons": "4.0.0-alpha.6",
     "babel-runtime": "^6.26.0",
+    "emotion": "^9.1.3",
     "marked": "^0.3.19",
     "prop-types": "^15.6.1",
+    "react-emotion": "^9.1.3",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
