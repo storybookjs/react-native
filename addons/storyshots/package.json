@@ -2,13 +2,13 @@
   "name": "@storybook/addon-storyshots",
   "version": "4.0.0-alpha.6",
   "description": "StoryShots is a Jest Snapshot Testing Addon for Storybook.",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
     "example": "jest storyshot.test",
