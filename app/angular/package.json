@@ -45,6 +45,7 @@
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {
+    "@angular-devkit/core": "^0.6.1",
     "@angular/common": ">=4.0.0",
     "@angular/compiler": ">=4.0.0",
     "@angular/core": ">=4.0.0",

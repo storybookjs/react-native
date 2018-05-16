@@ -1,15 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
-
-function isBuildAngularInstalled() {
-  try {
-    require.resolve('@angular-devkit/build-angular');
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
+import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_utils';
 
 export function getAngularCliWebpackConfigOptions(dirToSearch) {
   const fname = path.join(dirToSearch, 'angular.json');
@@ -31,6 +23,14 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     project = projects[defaultProject];
   }
 
+  const { options: projectOptions } = project.architect.build;
+
+  const normalizedAssets = normalizeAssetPatterns(
+    projectOptions.assets,
+    dirToSearch,
+    project.sourceRoot
+  );
+
   return {
     root: project.root,
     projectRoot: dirToSearch,
@@ -42,8 +42,8 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     },
     tsConfigPath: path.resolve(dirToSearch, 'src/tsconfig.app.json'),
     buildOptions: {
-      ...project.architect.build.options,
-      assets: [],
+      ...projectOptions,
+      assets: normalizedAssets,
     },
   };
 }
