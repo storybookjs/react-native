@@ -176,7 +176,11 @@ storiesOf('Addons|Knobs.withKnobs', module)
     </div>
   ))
   .add('XSS safety', () => (
-    <div>{text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >')}</div>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: text('Rendered string', '<img src="x" onerror="alert(\'XSS Attack\')" >'),
+      }}
+    />
   ));
 
 storiesOf('Addons|Knobs.withKnobsOptions', module)
