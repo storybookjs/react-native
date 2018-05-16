@@ -72,7 +72,7 @@ export class Panel extends Component {
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
-      // this.setStoryDefaultViewport(this.state.defaultViewport);
+      this.setStoryDefaultViewport(this.state.defaultViewport);
     });
   }
 
