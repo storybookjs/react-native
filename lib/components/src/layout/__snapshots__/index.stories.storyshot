@@ -58,7 +58,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
               class="css-1oma8ph"
             />
             <div
-              class="css-13lxo5b"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -159,7 +159,7 @@ exports[`Storyshots Components|Layout default 1`] = `
               class="css-1oma8ph"
             />
             <div
-              class="css-13lxo5b"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -260,7 +260,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
               class="css-1oma8ph"
             />
             <div
-              class="css-9p5ixs"
+              class="css-1k65ze8"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -436,7 +436,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
               class="css-1oma8ph"
             />
             <div
-              class="css-13lxo5b"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -537,7 +537,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
               class="css-1oma8ph"
             />
             <div
-              class="css-13lxo5b"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Addons|Knobs.withKnobs XSS safety 1`] = `
 <div>
-  &lt;img src=x onerror=&quot;alert(&#39;XSS Attack&#39;)&quot; &gt;
+  &lt;img src="x" onerror="alert('XSS Attack')" &gt;
 </div>
 `;
 

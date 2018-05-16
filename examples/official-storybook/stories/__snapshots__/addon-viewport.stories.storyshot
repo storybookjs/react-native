@@ -46,11 +46,10 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden vi
 
 exports[`Storyshots Addons|Viewport.withViewport onViewportChange 1`] = `
 <div
-  style="padding:20px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", \\"Roboto\\",
-      \\"Segoe UI\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif;color:rgb(51, 51, 51)"
+  class="css-1ruxp1v"
 >
   <h1
-    style="margin:0"
+    class="css-1uk1gs8"
   >
     Select device/viewport
   </h1>
