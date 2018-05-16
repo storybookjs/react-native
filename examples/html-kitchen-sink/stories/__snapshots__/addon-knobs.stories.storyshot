@@ -17,7 +17,7 @@ exports[`Storyshots Addons|Knobs All knobs 1`] = `
   
         
   <p>
-    I have a stock of 20 apple, costing $2.25 each.
+    I have a stock of 20 apples, costing $2.25 each.
   </p>
   
         
@@ -52,3 +52,5 @@ exports[`Storyshots Addons|Knobs Simple 1`] = `
   I am John Doe and I'm 44 years old.
 </div>
 `;
+
+exports[`Storyshots Addons|Knobs XSS safety 1`] = `&lt;img src=x onerror="alert('XSS Attack')" &gt;`;

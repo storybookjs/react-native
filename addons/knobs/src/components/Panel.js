@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import debounce from 'lodash.debounce';
 import styled from 'react-emotion';
 
 import { Placeholder } from '@storybook/components';
-
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 import Types from './types';
@@ -14,14 +12,16 @@ const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'ALL';
 
-const Wrapper = styled('div')({
+const PanelWrapper = styled('div')({
   width: '100%',
 });
+
 const PanelInner = styled('div')({
   padding: '5px',
   width: 'auto',
   position: 'relative',
 });
+
 const ResetButton = styled('button')({
   position: 'absolute',
   bottom: 11,
@@ -72,14 +72,8 @@ export default class Panel extends React.Component {
     this.setState({ groupId: name });
   }
 
-  setOptions(options = { debounce: false, timestamps: false }) {
+  setOptions(options = { timestamps: false }) {
     this.options = options;
-
-    if (options.debounce) {
-      this.emitChange = debounce(this.emitChange, options.debounce.wait, {
-        leading: options.debounce.leading,
-      });
-    }
   }
 
   setKnobs({ knobs, timestamp }) {
@@ -146,10 +140,10 @@ export default class Panel extends React.Component {
     const groups = {};
     const groupIds = [];
 
-    let knobsArray = Object.entries(knobs).filter(([, value]) => value.used);
+    let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
 
-    knobsArray.filter(([, value]) => value.groupId).forEach(([, value]) => {
-      const knobKeyGroupId = value.groupId;
+    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
+      const knobKeyGroupId = knobs[key].groupId;
       groupIds.push(knobKeyGroupId);
       groups[knobKeyGroupId] = {
         render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
@@ -163,30 +157,34 @@ export default class Panel extends React.Component {
         title: DEFAULT_GROUP_ID,
       };
       if (groupId !== DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter(([, value]) => value.groupId === groupId);
+        knobsArray = knobsArray.filter(key => knobs[key].groupId === groupId);
       }
     }
 
-    return knobsArray.length ? (
-      <Wrapper>
-        {groupIds.length > 0 ? (
+    knobsArray = knobsArray.map(key => knobs[key]);
+
+    if (knobsArray.length === 0) {
+      return <Placeholder>NO KNOBS</Placeholder>;
+    }
+
+    return (
+      <PanelWrapper>
+        {groupIds.length > 0 && (
           <GroupTabs
             groups={groups}
             onGroupSelect={this.onGroupSelect}
             selectedGroup={this.state.groupId}
           />
-        ) : null}
+        )}
         <PanelInner>
           <PropForm
-            knobs={knobsArray.map(([, value]) => value)}
+            knobs={knobsArray}
             onFieldChange={this.handleChange}
             onFieldClick={this.handleClick}
           />
         </PanelInner>
         <ResetButton onClick={this.reset}>RESET</ResetButton>
-      </Wrapper>
-    ) : (
-      <Placeholder>NO KNOBS</Placeholder>
+      </PanelWrapper>
     );
   }
 }

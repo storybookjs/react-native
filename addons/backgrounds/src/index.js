@@ -1,68 +1,20 @@
-import React from 'react';
-import { polyfill } from 'react-lifecycles-compat';
-import PropTypes from 'prop-types';
-
 import addons from '@storybook/addons';
+import CoreEvents from '@storybook/core-events';
 
 import Events from './events';
 
-export class BackgroundDecorator extends React.Component {
-  constructor(props) {
-    super(props);
+let prevBackgrounds;
 
-    const { channel } = props;
-
-    // A channel is explicitly passed in for testing
-    if (channel) {
-      this.channel = channel;
-    } else {
-      this.channel = addons.getChannel();
-    }
-
-    this.state = {};
-  }
-
-  componentDidMount() {
-    this.channel.emit(Events.SET, this.props.backgrounds);
-  }
-
-  componentWillUnmount() {
-    this.channel.emit(Events.UNSET);
-  }
-
-  render() {
-    return this.state.story;
-  }
-}
-
-BackgroundDecorator.getDerivedStateFromProps = ({ story }, { prevStory }) => {
-  if (story !== prevStory) {
-    return {
-      story: story(),
-      prevStory: story,
-    };
-  }
-  return null;
+const subscription = () => () => {
+  prevBackgrounds = null;
+  addons.getChannel().emit(Events.UNSET);
 };
 
-BackgroundDecorator.propTypes = {
-  backgrounds: PropTypes.arrayOf(PropTypes.object),
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }),
-  // eslint-disable-next-line react/no-unused-prop-types
-  story: PropTypes.func.isRequired,
+export default backgrounds => story => {
+  if (prevBackgrounds !== backgrounds) {
+    addons.getChannel().emit(Events.SET, backgrounds);
+    prevBackgrounds = backgrounds;
+  }
+  addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
+  return story();
 };
-
-BackgroundDecorator.defaultProps = {
-  backgrounds: [],
-  channel: undefined,
-};
-
-polyfill(BackgroundDecorator);
-
-export default backgrounds => story => (
-  <BackgroundDecorator story={story} backgrounds={backgrounds} />
-);

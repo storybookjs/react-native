@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/html';
 
-import backgrounds from '@storybook/addon-backgrounds/html';
+import backgrounds from '@storybook/addon-backgrounds';
 
 storiesOf('Addons|Backgrounds', module)
   .addDecorator(

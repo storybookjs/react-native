@@ -56,6 +56,9 @@ export default class ReactProvider extends Provider {
       this.selection = { kind, story };
       this.channel.emit(Events.SET_CURRENT_STORY, this.selection);
     });
+    this.channel.on(Events.SELECT_STORY, ({ kind, story }) => {
+      api.selectStory(kind, story);
+    });
     this.channel.on(Events.SET_STORIES, data => {
       api.setStories(data.stories);
     });
