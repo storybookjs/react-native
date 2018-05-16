@@ -4,7 +4,6 @@ import { document } from 'global';
 
 import { Panel } from '../Panel';
 import { resetViewport, viewportsTransformer } from '../viewportInfo';
-import * as styles from '../styles';
 import { DEFAULT_VIEWPORT, INITIAL_VIEWPORTS } from '../../../shared';
 
 const initialViewportAt = index => Object.keys(INITIAL_VIEWPORTS)[index];
@@ -320,109 +319,100 @@ describe('Viewport/Panel', () => {
     });
   });
 
-  describe('render', () => {
-    describe('reset button', () => {
-      let resetBtn;
+  describe('reset button', () => {
+    let resetBtn;
 
+    beforeEach(() => {
+      subject.instance().changeViewport = jest.fn();
+      resetBtn = subject.find('Styled(button)');
+    });
+
+    it('enables the reset button if not default', () => {
+      subject.setState({ viewport: 'responsive' });
+      resetBtn = subject.find('Styled(button)');
+      expect(resetBtn).toHaveProp('disabled', true);
+
+      subject.setState({ viewport: 'iphone6' });
+      resetBtn = subject.find('Styled(button)');
+      expect(resetBtn).toHaveProp('disabled', false);
+    });
+
+    it('toggles the landscape on click', () => {
+      resetBtn.simulate('click');
+      expect(subject.instance().changeViewport).toHaveBeenCalledWith(DEFAULT_VIEWPORT);
+    });
+  });
+
+  describe('SelectViewport', () => {
+    let select;
+
+    beforeEach(() => {
+      select = subject.find('SelectViewport');
+      subject.instance().changeViewport = jest.fn();
+    });
+
+    it('passes the activeViewport', () => {
+      expect(select.props()).toEqual(
+        expect.objectContaining({
+          activeViewport: DEFAULT_VIEWPORT,
+        })
+      );
+    });
+
+    it('passes the defaultViewport', () => {
+      expect(select.props()).toEqual(
+        expect.objectContaining({
+          defaultViewport: DEFAULT_VIEWPORT,
+        })
+      );
+    });
+
+    it('passes the INITIAL_VIEWPORTS', () => {
+      expect(select.props()).toEqual(
+        expect.objectContaining({
+          viewports: transformedInitialViewports,
+        })
+      );
+    });
+
+    it('onChange it updates the viewport', () => {
+      const e = { target: { value: 'iphone6' } };
+      select.simulate('change', e);
+      expect(subject.instance().changeViewport).toHaveBeenCalledWith(e.target.value);
+    });
+  });
+
+  describe('RotateView', () => {
+    let toggle;
+
+    beforeEach(() => {
+      toggle = subject.find('RotateViewport');
+      jest.spyOn(subject.instance(), 'toggleLandscape');
+      subject.instance().forceUpdate();
+    });
+
+    it('passes the active prop based on the state of the panel', () => {
+      expect(toggle.props().active).toEqual(subject.state('isLandscape'));
+    });
+
+    describe('is on the default viewport', () => {
       beforeEach(() => {
-        subject.instance().changeViewport = jest.fn();
-        resetBtn = subject.find('button');
+        subject.setState({ viewport: DEFAULT_VIEWPORT });
       });
 
-      it('styles the reset button as disabled if viewport is default', () => {
-        expect(resetBtn.props().style).toEqual(expect.objectContaining(styles.disabled));
+      it('sets the disabled property', () => {
+        expect(toggle.props().disabled).toEqual(true);
       });
+    });
 
-      it('enabels the reset button if not default', () => {
+    describe('is on a non-default viewport', () => {
+      beforeEach(() => {
         subject.setState({ viewport: 'iphone6' });
-
-        // Find updated button
-        resetBtn = subject.find('button');
-
-        expect(resetBtn.props().style).toEqual({
-          ...styles.button,
-          marginTop: 30,
-          padding: 20,
-        });
-      });
-
-      it('toggles the landscape on click', () => {
-        resetBtn.simulate('click');
-        expect(subject.instance().changeViewport).toHaveBeenCalledWith(DEFAULT_VIEWPORT);
-      });
-    });
-
-    describe('SelectViewport', () => {
-      let select;
-
-      beforeEach(() => {
-        select = subject.find('SelectViewport');
-        subject.instance().changeViewport = jest.fn();
-      });
-
-      it('passes the activeViewport', () => {
-        expect(select.props()).toEqual(
-          expect.objectContaining({
-            activeViewport: DEFAULT_VIEWPORT,
-          })
-        );
-      });
-
-      it('passes the defaultViewport', () => {
-        expect(select.props()).toEqual(
-          expect.objectContaining({
-            defaultViewport: DEFAULT_VIEWPORT,
-          })
-        );
-      });
-
-      it('passes the INITIAL_VIEWPORTS', () => {
-        expect(select.props()).toEqual(
-          expect.objectContaining({
-            viewports: transformedInitialViewports,
-          })
-        );
-      });
-
-      it('onChange it updates the viewport', () => {
-        const e = { target: { value: 'iphone6' } };
-        select.simulate('change', e);
-        expect(subject.instance().changeViewport).toHaveBeenCalledWith(e.target.value);
-      });
-    });
-
-    describe('RotateView', () => {
-      let toggle;
-
-      beforeEach(() => {
         toggle = subject.find('RotateViewport');
-        jest.spyOn(subject.instance(), 'toggleLandscape');
-        subject.instance().forceUpdate();
       });
 
-      it('passes the active prop based on the state of the panel', () => {
-        expect(toggle.props().active).toEqual(subject.state('isLandscape'));
-      });
-
-      describe('is on the default viewport', () => {
-        beforeEach(() => {
-          subject.setState({ viewport: DEFAULT_VIEWPORT });
-        });
-
-        it('sets the disabled property', () => {
-          expect(toggle.props().disabled).toEqual(true);
-        });
-      });
-
-      describe('is on a non-default viewport', () => {
-        beforeEach(() => {
-          subject.setState({ viewport: 'iphone6' });
-          toggle = subject.find('RotateViewport');
-        });
-
-        it('the disabled property is false', () => {
-          expect(toggle.props().disabled).toEqual(false);
-        });
+      it('the disabled property is false', () => {
+        expect(toggle.props().disabled).toEqual(false);
       });
     });
   });
