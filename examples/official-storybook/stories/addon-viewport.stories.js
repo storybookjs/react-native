@@ -1,13 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
+import styled from 'react-emotion';
+
 import { baseFonts } from '@storybook/components';
 import { Viewport, withViewport } from '@storybook/addon-viewport';
 import EventEmitter from 'eventemitter3';
 
 import Logger from './Logger';
 
-// eslint-disable-next-line react/prop-types
-const Panel = ({ children }) => <div style={baseFonts}>{children}</div>;
+const Panel = styled('div')({ baseFonts });
 
 storiesOf('Addons|Viewport', module).add('default', () => (
   <Panel>I don't have problems being rendered using the default viewport.</Panel>
