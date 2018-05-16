@@ -1,7 +1,5 @@
 export const configuredStyles = {
-  border: '1px solid #728099',
   display: 'flex',
-  margin: '0 auto',
   boxShadow: 'rgba(0,0,0,0.2) 0px 0px 60px 12px',
 };
 
@@ -12,7 +10,6 @@ export const resetViewport = {
     height: '100%',
     border: 'none',
     display: 'block',
-    margin: '0',
     boxShadow: 'none',
   },
 };

@@ -1,24 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as styles from './styles';
 
-export function RotateViewport({ active, ...props }) {
-  const disabledStyles = props.disabled ? styles.disabled : {};
-  const actionStyles = {
-    ...styles.action,
-    ...disabledStyles,
-  };
-  return (
-    <div style={styles.row}>
-      <label htmlFor="rotate" style={styles.label}>
-        Rotate
-      </label>
-      <button id="rotate" {...props} style={actionStyles}>
-        {active ? 'Vertical' : 'Landscape'}
-      </button>
-    </div>
-  );
-}
+import { Label, Row, Button } from './styles';
+
+export const RotateViewport = ({ active, ...props }) => (
+  <Row>
+    <Label htmlFor="rotate">Rotate</Label>
+    <Button id="rotate" {...props}>
+      {active ? 'Vertical' : 'Landscape'}
+    </Button>
+  </Row>
+);
 
 RotateViewport.propTypes = {
   disabled: PropTypes.bool,

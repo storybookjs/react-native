@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { document } from 'global';
 import debounce from 'lodash.debounce';
 
+import styled from 'react-emotion';
+
 import { resetViewport, viewportsTransformer } from './viewportInfo';
 import { SelectViewport } from './SelectViewport';
 import { RotateViewport } from './RotateViewport';
@@ -15,14 +17,14 @@ import {
   DEFAULT_VIEWPORT,
 } from '../../shared';
 
-import * as styles from './styles';
+import { Button } from './styles';
 
 const storybookIframe = 'storybook-preview-iframe';
-const containerStyles = {
+const Container = styled('div')({
   padding: 15,
   width: '100%',
   boxSizing: 'border-box',
-};
+});
 
 const getDefaultViewport = (viewports, candidateViewport) =>
   candidateViewport in viewports ? candidateViewport : Object.keys(viewports)[0];
@@ -70,7 +72,7 @@ export class Panel extends Component {
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
-      this.setStoryDefaultViewport(this.state.defaultViewport);
+      // this.setStoryDefaultViewport(this.state.defaultViewport);
     });
   }
 
@@ -168,11 +170,6 @@ export class Panel extends Component {
       this.iframe.style.height = viewport.styles.width;
       this.iframe.style.width = viewport.styles.height;
     }
-
-    // Always make parent's height equals iframe
-    if (this.iframe.parentElement) {
-      this.iframe.parentElement.style.height = this.iframe.style.height;
-    }
   };
 
   render() {
@@ -185,17 +182,9 @@ export class Panel extends Component {
     } = this.state;
 
     const disableDefault = viewport === storyDefaultViewport;
-    const disabledStyles = disableDefault ? styles.disabled : {};
-
-    const buttonStyles = {
-      ...styles.button,
-      ...disabledStyles,
-      marginTop: 30,
-      padding: 20,
-    };
 
     return (
-      <div style={containerStyles}>
+      <Container>
         <SelectViewport
           viewports={viewports}
           defaultViewport={storyDefaultViewport}
@@ -209,14 +198,10 @@ export class Panel extends Component {
           active={isLandscape}
         />
 
-        <button
-          style={buttonStyles}
-          onClick={() => this.changeViewport(storyDefaultViewport)}
-          disabled={disableDefault}
-        >
+        <Button onClick={() => this.changeViewport(storyDefaultViewport)} disabled={disableDefault}>
           Reset Viewport
-        </button>
-      </div>
+        </Button>
+      </Container>
     );
   }
 }
