@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import debounce from 'lodash.debounce';
+import styled from 'react-emotion';
+
+import { Placeholder } from '@storybook/components';
 
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
@@ -10,40 +14,27 @@ const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'ALL';
 
-const styles = {
-  panelWrapper: {
-    width: '100%',
-  },
-  panel: {
-    padding: '5px',
-    width: 'auto',
-    position: 'relative',
-  },
-  noKnobs: {
-    fontFamily: `
-      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
-      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
-    `,
-    display: 'inline',
-    width: '100%',
-    textAlign: 'center',
-    color: 'rgb(190, 190, 190)',
-    padding: '10px',
-  },
-  resetButton: {
-    position: 'absolute',
-    bottom: 11,
-    right: 10,
-    border: 'none',
-    borderTop: 'solid 1px rgba(0, 0, 0, 0.2)',
-    borderLeft: 'solid 1px rgba(0, 0, 0, 0.2)',
-    background: 'rgba(255, 255, 255, 0.5)',
-    padding: '5px 10px',
-    borderRadius: '4px 0 0 0',
-    color: 'rgba(0, 0, 0, 0.5)',
-    outline: 'none',
-  },
-};
+const Wrapper = styled('div')({
+  width: '100%',
+});
+const PanelInner = styled('div')({
+  padding: '5px',
+  width: 'auto',
+  position: 'relative',
+});
+const ResetButton = styled('button')({
+  position: 'absolute',
+  bottom: 11,
+  right: 10,
+  border: 'none',
+  borderTop: 'solid 1px rgba(0, 0, 0, 0.2)',
+  borderLeft: 'solid 1px rgba(0, 0, 0, 0.2)',
+  background: 'rgba(255, 255, 255, 0.5)',
+  padding: '5px 10px',
+  borderRadius: '4px 0 0 0',
+  color: 'rgba(0, 0, 0, 0.5)',
+  outline: 'none',
+});
 
 export default class Panel extends React.Component {
   constructor(props) {
@@ -155,10 +146,10 @@ export default class Panel extends React.Component {
     const groups = {};
     const groupIds = [];
 
-    let knobsArray = Object.keys(knobs).filter(key => knobs[key].used);
+    let knobsArray = Object.entries(knobs).filter(([, value]) => value.used);
 
-    knobsArray.filter(key => knobs[key].groupId).forEach(key => {
-      const knobKeyGroupId = knobs[key].groupId;
+    knobsArray.filter(([, value]) => value.groupId).forEach(([, value]) => {
+      const knobKeyGroupId = value.groupId;
       groupIds.push(knobKeyGroupId);
       groups[knobKeyGroupId] = {
         render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
@@ -172,36 +163,30 @@ export default class Panel extends React.Component {
         title: DEFAULT_GROUP_ID,
       };
       if (groupId !== DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter(key => knobs[key].groupId === groupId);
+        knobsArray = knobsArray.filter(([, value]) => value.groupId === groupId);
       }
     }
 
-    knobsArray = knobsArray.map(key => knobs[key]);
-
-    if (knobsArray.length === 0) {
-      return <div style={styles.noKnobs}>NO KNOBS</div>;
-    }
-
-    return (
-      <div style={styles.panelWrapper}>
-        {groupIds.length > 0 && (
+    return knobsArray.length ? (
+      <Wrapper>
+        {groupIds.length > 0 ? (
           <GroupTabs
             groups={groups}
             onGroupSelect={this.onGroupSelect}
             selectedGroup={this.state.groupId}
           />
-        )}
-        <div style={styles.panel}>
+        ) : null}
+        <PanelInner>
           <PropForm
-            knobs={knobsArray}
+            knobs={knobsArray.map(([, value]) => value)}
             onFieldChange={this.handleChange}
             onFieldClick={this.handleClick}
           />
-        </div>
-        <button style={styles.resetButton} onClick={this.reset}>
-          RESET
-        </button>
-      </div>
+        </PanelInner>
+        <ResetButton onClick={this.reset}>RESET</ResetButton>
+      </Wrapper>
+    ) : (
+      <Placeholder>NO KNOBS</Placeholder>
     );
   }
 }

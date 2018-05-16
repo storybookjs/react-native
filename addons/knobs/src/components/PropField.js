@@ -1,49 +1,32 @@
-/* eslint-disable no-underscore-dangle */
-
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'react-emotion';
+
 import TypeMap from './types';
 
 const InvalidType = () => <span>Invalid Type</span>;
 
-const stylesheet = {
-  field: {
-    display: 'table-row',
-    padding: '5px',
-  },
-  label: {
-    display: 'table-cell',
-    boxSizing: 'border-box',
-    verticalAlign: 'top',
-    paddingRight: 5,
-    paddingTop: 5,
-    textAlign: 'right',
-    width: 80,
-    fontSize: 12,
-    color: 'rgb(68, 68, 68)',
-    fontWeight: 600,
-  },
-};
-
-stylesheet.textarea = {
-  ...stylesheet.input,
-  height: '100px',
-};
-
-stylesheet.checkbox = {
-  ...stylesheet.input,
-  width: 'auto',
-};
+const Field = styled('div')({
+  display: 'table-row',
+  padding: '5px',
+});
+const Label = styled('label')({
+  display: 'table-cell',
+  boxSizing: 'border-box',
+  verticalAlign: 'top',
+  paddingRight: 5,
+  paddingTop: 5,
+  textAlign: 'right',
+  width: 80,
+  fontSize: 12,
+  color: 'rgb(68, 68, 68)',
+  fontWeight: 600,
+});
 
 export default class PropField extends React.Component {
-  constructor(props) {
-    super(props);
-    this._onChange = this.onChange.bind(this);
-  }
-
-  onChange(e) {
+  onChange = e => {
     this.props.onChange(e.target.value);
-  }
+  };
 
   render() {
     const { onChange, onClick, knob } = this.props;
@@ -51,12 +34,10 @@ export default class PropField extends React.Component {
     const InputType = TypeMap[knob.type] || InvalidType;
 
     return (
-      <div style={stylesheet.field}>
-        <label htmlFor={knob.name} style={stylesheet.label}>
-          {!knob.hideLabel && `${knob.name}`}
-        </label>
+      <Field>
+        <Label htmlFor={knob.name}>{!knob.hideLabel && `${knob.name}`}</Label>
         <InputType knob={knob} onChange={onChange} onClick={onClick} />
-      </div>
+      </Field>
     );
   }
 }
