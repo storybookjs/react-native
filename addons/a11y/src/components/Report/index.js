@@ -8,12 +8,6 @@ import { RERUN_EVENT_ID } from '../../shared';
 import RerunButton from './RerunButton';
 import Item from './Item';
 
-const styles = {
-  container: {
-    fontSize: '12px',
-  },
-};
-
 function onRerunClick() {
   const channel = addons.getChannel();
   channel.emit(RERUN_EVENT_ID);
@@ -22,9 +16,7 @@ function onRerunClick() {
 const Report = ({ items, empty, passes }) => (
   <div>
     {items.length ? (
-      <div style={styles.container}>
-        {items.map(item => <Item passes={passes} item={item} key={item.id} />)}
-      </div>
+      items.map(item => <Item passes={passes} item={item} key={item.id} />)
     ) : (
       <Placeholder>{empty}</Placeholder>
     )}
