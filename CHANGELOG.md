@@ -1,3 +1,20 @@
+# 4.0.0-alpha.7
+
+2018-May-17
+
+#### Breaking Changes
+
+-   Support webpack4 modules format [#3576](https://github.com/storybooks/storybook/pull/3576)
+
+#### Features
+
+-   Addon-centered for Angular [#3573](https://github.com/storybooks/storybook/pull/3573)
+
+#### Maintenance
+
+-   Generic addon decorators [#3555](https://github.com/storybooks/storybook/pull/3555)
+-   Refactor transitional decorator from addon-notes [#3559](https://github.com/storybooks/storybook/pull/3559)
+
 # 3.4.5
 
 2018-May-17
