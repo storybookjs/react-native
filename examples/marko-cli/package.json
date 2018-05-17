@@ -28,7 +28,7 @@
   "scripts": {
     "start": "marko-starter server",
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 9010",
+    "storybook": "start-storybook -p 9005",
     "build": "NODE_ENV=production marko-starter build",
     "serve-static": "NODE_ENV=production marko-starter serve-static",
     "lint": "eslint src/",

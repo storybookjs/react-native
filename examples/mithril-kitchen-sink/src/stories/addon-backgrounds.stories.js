@@ -4,7 +4,7 @@ import m from 'mithril';
 
 import { storiesOf } from '@storybook/mithril';
 
-import backgrounds from '@storybook/addon-backgrounds/mithril';
+import backgrounds from '@storybook/addon-backgrounds';
 import BaseButton from '../BaseButton';
 
 storiesOf('Addons|Backgrounds', module)

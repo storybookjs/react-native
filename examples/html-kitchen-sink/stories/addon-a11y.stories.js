@@ -2,7 +2,7 @@ import { document, setTimeout } from 'global';
 import { storiesOf } from '@storybook/html';
 import { setOptions } from '@storybook/addon-options';
 
-import { checkA11y } from '@storybook/addon-a11y/html';
+import { checkA11y } from '@storybook/addon-a11y';
 
 const text = 'Testing the a11y addon';
 

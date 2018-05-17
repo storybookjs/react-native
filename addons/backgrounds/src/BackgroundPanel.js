@@ -93,7 +93,7 @@ export default class BackgroundPanel extends Component {
       this.setState({ backgrounds });
       const currentBackground = api.getQueryParam('background');
 
-      if (currentBackground) {
+      if (currentBackground && backgrounds.some(bg => bg.value === currentBackground)) {
         this.updateIframe(currentBackground);
       } else if (backgrounds.filter(x => x.default).length) {
         const defaultBgs = backgrounds.filter(x => x.default);

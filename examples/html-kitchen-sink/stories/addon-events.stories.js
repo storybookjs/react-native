@@ -4,7 +4,7 @@ import addons from '@storybook/addons';
 import CoreEvents from '@storybook/core-events';
 import json from 'format-json';
 
-import withEvents from '@storybook/addon-events/html';
+import withEvents from '@storybook/addon-events';
 
 import './addon-events.css';
 
