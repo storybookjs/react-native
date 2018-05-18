@@ -24,6 +24,6 @@
     "@storybook/mithril": "4.0.0-alpha.7",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "webpack": "^4.8.0"
+    "webpack": "^4.8.3"
   }
 }

@@ -27,7 +27,7 @@
   "dependencies": {
     "@storybook/codemod": "4.0.0-alpha.7",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.4.1",
@@ -38,7 +38,7 @@
     "json5": "^1.0.1",
     "merge-dirs": "^0.2.1",
     "semver": "^5.5.0",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.2",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {

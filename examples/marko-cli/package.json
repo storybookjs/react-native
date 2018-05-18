@@ -19,7 +19,7 @@
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
     "prettier": "^1.5.2",
-    "webpack": "^4.6.0"
+    "webpack": "^4.8.3"
   },
   "dependencies": {
     "marko": "^4.2.4",
