@@ -60,6 +60,8 @@ npm run storybook
 
 Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
 
+
+
 ## Start App
 
 To see your Storybook stories on the device, you should start your mobile app for the `<platform>` of your choice (typically `ios` or `android`). (Note that due to an implementation detail, your stories will only show up in the left pane of your browser window after your device has connected to this storybook server.)
@@ -111,6 +113,43 @@ Now update your storybook `package.json` script to the following
     }
 
 The metro bundler requires an absolute path to the config. The above setup assumes the `rn-cli.config.js` is in the root of your project or next to your `package.json`
+
+## Start Command Parameters
+
+The following parameters can be passed to the start command:
+
+```
+-h, --host <host> 
+    host to listen on
+-p, --port <port>
+    port to listen on
+--haul <configFile>
+    use haul with config file
+--platform <ios|android|all>
+    build platform-specific build
+-s, --secured
+    whether server is running on https
+-c, --config-dir [dir-name]
+    storybook config directory
+--metro-config [relative-config-path]
+    Metro Bundler Custom config
+-e, --environment [environment]
+    DEVELOPMENT/PRODUCTION environment for webpack
+-r, --reset-cache
+    reset react native packager
+--skip-packager
+    run only storybook server
+-i, --manual-id
+    allow multiple users to work with same storybook
+--smoke-test
+    Exit after successful start
+--packager-port <packagerPort>
+    Custom packager port
+--root [root]
+    Add additional root(s) to be used by the packager in this project
+--projectRoots [projectRoots]
+    Override the root(s) to be used by the packager
+```
 
 ## Learn More
 
