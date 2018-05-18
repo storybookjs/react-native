@@ -1,3 +1,35 @@
+# 4.0.0-alpha.7
+
+2018-May-17
+
+#### Breaking Changes
+
+-   Support webpack4 modules format [#3576](https://github.com/storybooks/storybook/pull/3576)
+
+#### Features
+
+-   Addon-centered for Angular [#3573](https://github.com/storybooks/storybook/pull/3573)
+
+#### Maintenance
+
+-   Generic addon decorators [#3555](https://github.com/storybooks/storybook/pull/3555)
+-   Refactor transitional decorator from addon-notes [#3559](https://github.com/storybooks/storybook/pull/3559)
+
+# 3.4.5
+
+2018-May-17
+
+#### Features
+
+-   Addon-info: improve prop options [#3428](https://github.com/storybooks/storybook/pull/3428)
+
+#### Bug Fixes
+
+-   Addon-storysource: Remove nested braces in code block [#3568](https://github.com/storybooks/storybook/pull/3568)
+-   Addon-info: Fix double quotes in prop table, add additional examples [#3401](https://github.com/storybooks/storybook/pull/3401)
+-   Ignore any unstructured output from the package managers [#3563](https://github.com/storybooks/storybook/pull/3563)
+-   Use the --use-npm flag also for version checking [#3535](https://github.com/storybooks/storybook/pull/3535)
+
 # 4.0.0-alpha.6
 
 2018-May-12
