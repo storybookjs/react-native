@@ -60,8 +60,6 @@ npm run storybook
 
 Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
 
-
-
 ## Start App
 
 To see your Storybook stories on the device, you should start your mobile app for the `<platform>` of your choice (typically `ios` or `android`). (Note that due to an implementation detail, your stories will only show up in the left pane of your browser window after your device has connected to this storybook server.)
