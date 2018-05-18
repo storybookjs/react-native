@@ -28,6 +28,10 @@ class TextType extends React.Component {
     this.onChange = debounce(props.onChange, 200);
   }
 
+  componentWillUnmount() {
+    this.onChange.cancel();
+  }
+
   handleChange = event => {
     const { value } = event.target;
 

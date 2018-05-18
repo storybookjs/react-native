@@ -36,6 +36,10 @@ class ArrayType extends React.Component {
     this.onChange = debounce(this.props.onChange, 200);
   }
 
+  componentWillUnmount() {
+    this.onChange.cancel();
+  }
+
   handleChange = e => {
     const { knob } = this.props;
     const { value } = e.target;

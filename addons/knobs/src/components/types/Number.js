@@ -45,6 +45,10 @@ class NumberType extends React.Component {
     this.onChange = debounce(props.onChange, 400);
   }
 
+  componentWillUnmount() {
+    this.onChange.cancel();
+  }
+
   handleChange = event => {
     const { value } = event.target;
 
