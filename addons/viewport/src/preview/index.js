@@ -2,8 +2,7 @@ import addons from '@storybook/addons';
 import { CONFIGURE_VIEWPORT_EVENT_ID } from '../shared';
 
 export { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from '../shared';
-export { default as withViewport } from './withViewport';
-export { default as Viewport } from './components/Viewport';
+export { default as withViewport, Viewport } from './withViewport';
 
 export function configureViewport(configs = {}) {
   const channel = addons.getChannel();

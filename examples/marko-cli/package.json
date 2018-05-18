@@ -1,6 +1,6 @@
 {
   "name": "marko-cli",
-  "version": "1.0.0",
+  "version": "4.0.0-alpha.7",
   "description": "Demo of how to build an app using marko-starter",
   "repository": {
     "type": "git",
@@ -8,18 +8,18 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@storybook/marko": "4.0.0-alpha.4",
-    "@storybook/addon-actions": "4.0.0-alpha.4",
-    "@storybook/addon-knobs": "4.0.0-alpha.4",
-    "@storybook/addon-options": "4.0.0-alpha.4",
-    "@storybook/addon-storysource": "4.0.0-alpha.4",
-    "@storybook/addons": "4.0.0-alpha.4",
+    "@storybook/addon-actions": "4.0.0-alpha.7",
+    "@storybook/addon-knobs": "4.0.0-alpha.7",
+    "@storybook/addon-options": "4.0.0-alpha.7",
+    "@storybook/addon-storysource": "4.0.0-alpha.7",
+    "@storybook/addons": "4.0.0-alpha.7",
+    "@storybook/marko": "4.0.0-alpha.7",
     "babel-core": "^6.26.0",
-    "webpack": "^4.6.0",
     "eslint": "^4.2.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
-    "prettier": "^1.5.2"
+    "prettier": "^1.5.2",
+    "webpack": "^4.8.3"
   },
   "dependencies": {
     "marko": "^4.2.4",
@@ -28,7 +28,7 @@
   "scripts": {
     "start": "marko-starter server",
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 9010",
+    "storybook": "start-storybook -p 9005",
     "build": "NODE_ENV=production marko-starter build",
     "serve-static": "NODE_ENV=production marko-starter serve-static",
     "lint": "eslint src/",

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-backgrounds",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.7",
   "description": "A storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -24,12 +24,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.4",
-    "@storybook/core-events": "4.0.0-alpha.4",
+    "@storybook/addons": "4.0.0-alpha.7",
+    "@storybook/core-events": "4.0.0-alpha.7",
     "babel-runtime": "^6.26.0",
     "global": "^4.3.2",
     "prop-types": "^15.6.1",
-    "react-lifecycles-compat": "^3.0.2"
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "vue": "^2.5.16"

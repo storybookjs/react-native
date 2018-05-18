@@ -36,7 +36,7 @@ Then write your stories like this:
 
 ```js
 import { storiesOf } from '@storybook/react';
-import WithEvents from '@storybook/addon-events';
+import withEvents from '@storybook/addon-events';
 import EventEmiter from 'event-emiter';
 
 import Logger from './Logger';
@@ -47,10 +47,10 @@ const emit = emiter.emit.bind(emiter);
 
 
 storiesOf('WithEvents', module)
-  .addDecorator(getStory => (
-    <WithEvents
-      emit={emit}
-      events={[
+  .addDecorator(
+    withEvents({
+      emit,
+      events: [
         {
           name: EVENTS.TEST_EVENT_1,
           title: 'Test event 1',
@@ -96,10 +96,8 @@ storiesOf('WithEvents', module)
             },
           ],
         },
-      ]}
-    >
-      {getStory()}
-    </WithEvents>
-  ))
+      ]
+    })
+  )
   .add('Logger', () => <Logger emiter={emiter} />);
 ```

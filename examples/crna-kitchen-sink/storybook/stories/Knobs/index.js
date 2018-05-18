@@ -16,9 +16,9 @@ export default () => {
   const name = text('Name', 'Storyteller');
   const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
   const fruits = {
-    apple: 'Apple',
-    banana: 'Banana',
-    cherry: 'Cherry',
+    Apple: 'apple',
+    Banana: 'banana',
+    Cherry: 'cherry',
   };
   const fruit = select('Fruit', fruits, 'apple');
   const dollars = number('Dollars', 12.5);

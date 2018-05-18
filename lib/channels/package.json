@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channels",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.7",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",

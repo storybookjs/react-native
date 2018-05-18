@@ -28,7 +28,7 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
       </Panel>
     ))
   )
-  .add('Overridden via "Viewport" component', () => (
+  .add('Overridden via "Viewport" component (deprecated)', () => (
     <Viewport name="iphone6p">
       <Panel>
         I respect my parents but I should be looking good on <b>iPhone 6 Plus</b>.

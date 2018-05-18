@@ -1,1 +1,1 @@
-module.exports = require('./dist/polymer');
+module.exports = require('./dist/deprecated');

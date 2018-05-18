@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.7",
   "description": "Storybook Addon Prop Editor Component",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,9 +13,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.4",
-    "@storybook/components": "4.0.0-alpha.4",
-    "@storybook/core-events": "4.0.0-alpha.4",
+    "@storybook/addons": "4.0.0-alpha.7",
+    "@storybook/components": "4.0.0-alpha.7",
+    "@storybook/core-events": "4.0.0-alpha.7",
     "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "escape-html": "^1.0.3",
@@ -26,7 +26,7 @@
     "prop-types": "^15.6.1",
     "react-color": "^2.14.1",
     "react-datetime": "^2.14.0",
-    "react-lifecycles-compat": "^3.0.2",
+    "react-lifecycles-compat": "^3.0.4",
     "react-textarea-autosize": "^6.1.0",
     "util-deprecate": "^1.0.2"
   },

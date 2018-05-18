@@ -1,6 +1,6 @@
 {
   "name": "@storybook/vue",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.7",
   "description": "Storybook for Vue: Develop Vue Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/vue",
   "bugs": {
@@ -22,15 +22,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "4.0.0-alpha.4",
+    "@storybook/core": "4.0.0-alpha.7",
     "@storybook/react-dev-utils": "^5.0.0",
     "airbnb-js-shims": "^1.4.1",
     "babel-loader": "^7.1.4",
-    "babel-plugin-macros": "^2.2.0",
+    "babel-plugin-macros": "^2.2.1",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-minify": "^0.4.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.2",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
@@ -40,8 +40,8 @@
     "global": "^4.3.2",
     "html-webpack-plugin": "^3.2.0",
     "raw-loader": "^0.5.1",
-    "webpack": "^4.8.0",
-    "webpack-hot-middleware": "^2.22.1"
+    "webpack": "^4.8.3",
+    "webpack-hot-middleware": "^2.22.2"
   },
   "devDependencies": {
     "vue": "^2.5.16",

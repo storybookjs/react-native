@@ -57,7 +57,9 @@ const actionsSubscription = (...args) => {
 };
 
 export const createDecorator = actionsFn => (...args) => story => {
-  addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, actionsSubscription(actionsFn, ...args));
+  if (root != null) {
+    addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, actionsSubscription(actionsFn, ...args));
+  }
   return story();
 };
 

@@ -1,4 +1,4 @@
-import addons from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
 import marked from 'marked';
 
 function renderMarkdown(text, options) {
@@ -6,43 +6,30 @@ function renderMarkdown(text, options) {
   return marked(text);
 }
 
-const decorator = options => {
-  const channel = addons.getChannel();
-  return (getStory, context) => {
-    const {
-      parameters: { notes },
-    } = context;
-    const storyOptions = notes || options;
+export const withNotes = makeDecorator({
+  name: 'withNotes',
+  parameterName: 'notes',
+  skipIfNoParametersOrOptions: true,
+  wrapper: (getStory, context, { options, parameters }) => {
+    const channel = addons.getChannel();
 
-    if (storyOptions) {
-      const { text, markdown, markdownOptions } =
-        typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;
+    const storyOptions = parameters || options;
 
-      if (!text && !markdown) {
-        throw new Error('You must set of one of `text` or `markdown` on the `notes` parameter');
-      }
+    const { text, markdown, markdownOptions } =
+      typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;
 
-      channel.emit('storybook/notes/add_notes', text || renderMarkdown(markdown, markdownOptions));
+    if (!text && !markdown) {
+      throw new Error('You must set of one of `text` or `markdown` on the `notes` parameter');
     }
 
-    return getStory(context);
-  };
-};
+    channel.emit('storybook/notes/add_notes', text || renderMarkdown(markdown, markdownOptions));
 
-const hoc = options => story => context => decorator(options)(story, context);
+    return getStory(context);
+  },
+});
 
 export const withMarkdownNotes = (text, options) =>
-  hoc({
+  withNotes({
     markdown: text,
     markdownOptions: options,
   });
-
-export const withNotes = (...args) => {
-  // Used without options as .addDecorator(withNotes)
-  if (typeof args[0] === 'function') {
-    return decorator()(...args);
-  }
-
-  // Input are options, ala .add('name', withNotes('note')(() => <Story/>))
-  return hoc(args[0]);
-};
