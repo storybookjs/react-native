@@ -46,6 +46,7 @@ class ColorType extends React.Component {
   }
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleWindowMouseDown);
+    this.onChange.cancel();
   }
 
   handleWindowMouseDown = e => {
