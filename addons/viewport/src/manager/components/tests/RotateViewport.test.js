@@ -1,91 +1,51 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { RotateViewport } from '../RotateViewport';
-import * as styles from '../styles';
+
+const setup = addition => {
+  const props = {
+    onClick: jest.fn(),
+    disabled: false,
+    ...addition,
+  };
+
+  const result = shallow(<RotateViewport {...props} />);
+
+  return { result, props };
+};
 
 describe('Viewport/RotateViewport', () => {
-  let subject;
-  let props;
-
-  beforeEach(() => {
-    props = {
-      onClick: jest.fn(),
-    };
-
-    subject = shallow(<RotateViewport {...props} />);
+  it('renders correctly', () => {
+    const { result } = setup();
+    expect(result).toMatchSnapshot();
   });
 
-  it('has a label', () => {
-    expect(subject.find('label').text()).toEqual('Rotate');
+  it('has a click handler set via props', () => {
+    const { result, props } = setup();
+    const button = result.find('Styled(button)');
+    expect(button).toHaveProp('onClick');
+
+    button.simulate('click');
+    expect(props.onClick).toHaveBeenCalled();
   });
 
-  describe('button', () => {
-    let btn;
+  it('renders the correctly if not-disabled', () => {
+    const { result } = setup({ disabled: false });
+    expect(result.find('Styled(button)')).toHaveProp('disabled', false);
+  });
 
-    beforeEach(() => {
-      btn = subject.find('button');
-    });
+  it('renders the correctly if disabled', () => {
+    const { result } = setup({ disabled: true });
+    expect(result.find('Styled(button)')).toHaveProp('disabled', true);
+  });
 
-    it('has a click handler set via props', () => {
-      // note, this shouldn't trigger if disabled, but enzyme doesn't care
-      btn.simulate('click');
-      expect(props.onClick).toHaveBeenCalled();
-    });
+  it('renders the correctly if not-active', () => {
+    const { result } = setup({ active: false });
+    expect(result.html()).toContain('Landscape');
+  });
 
-    it('renders the the action styles on the button', () => {
-      expect(btn.props().style).toEqual(expect.objectContaining(styles.action));
-    });
-
-    describe('is active', () => {
-      beforeEach(() => {
-        subject.setProps({ active: true });
-        btn = subject.find('button');
-      });
-
-      it('renders the correct text', () => {
-        expect(btn.text()).toEqual('Vertical');
-      });
-    });
-
-    describe('is inactive', () => {
-      beforeEach(() => {
-        subject.setProps({ active: false });
-        btn = subject.find('button');
-      });
-
-      it('renders the correct text', () => {
-        expect(btn.text()).toEqual('Landscape');
-      });
-    });
-
-    describe('is disabled', () => {
-      beforeEach(() => {
-        subject.setProps({ disabled: true });
-        btn = subject.find('button');
-      });
-
-      it('renders the disabled styles', () => {
-        expect(btn.props().style).toEqual(expect.objectContaining(styles.disabled));
-      });
-
-      it('sets the disabled property on the button', () => {
-        expect(btn.props().disabled).toEqual(true);
-      });
-    });
-
-    describe('is enabled', () => {
-      beforeEach(() => {
-        subject.setProps({ disabled: false });
-        btn = subject.find('button');
-      });
-
-      it('renders the disabled styles', () => {
-        expect(btn.props().style).not.toEqual(expect.objectContaining(styles.disabled));
-      });
-
-      it('does not set the disabled property on the button', () => {
-        expect(btn.props().disabled).toEqual(false);
-      });
-    });
+  it('renders the correctly if active', () => {
+    const { result } = setup({ active: true });
+    expect(result.html()).toContain('Vertical');
   });
 });

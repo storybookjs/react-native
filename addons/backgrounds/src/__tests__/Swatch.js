@@ -21,12 +21,9 @@ describe('Swatch', () => {
   });
 
   it('should render the value of the swatch and set it to be the background', () => {
-    const markup = shallow(
-      <Swatch value="bar" name="foo" setBackground={mockedSetBackround} />
-    ).html();
+    const result = shallow(<Swatch value="bar" name="foo" setBackground={mockedSetBackround} />);
 
-    expect(markup.match(/background:bar/gim)).toHaveLength(1);
-    expect(markup.match(/bar/gim)).toHaveLength(2);
+    expect(result).toMatchSnapshot();
   });
 
   it('should emit message on click', () => {

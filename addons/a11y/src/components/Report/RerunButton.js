@@ -1,6 +1,6 @@
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
-const RerunButton = glamorous.button({
+const RerunButton = styled('button')({
   position: 'absolute',
   bottom: 0,
   right: 0,

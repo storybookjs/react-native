@@ -7,7 +7,9 @@ import PropVal from './PropVal';
 import PrettyPropType from './types/PrettyPropType';
 
 export const multiLineText = input => {
-  if (!input) return input;
+  if (!input) {
+    return input;
+  }
   const text = String(input);
   const arrayOfText = text.split(/\r?\n|\r/g);
   const isSingleLine = arrayOfText.length < 2;

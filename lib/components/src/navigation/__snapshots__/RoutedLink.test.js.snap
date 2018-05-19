@@ -11,8 +11,6 @@ exports[`manager.ui.components.routed_link render should not render onClick when
 exports[`manager.ui.components.routed_link render should render other properties 1`] = `
 <a
   href="href"
-  target="_blank"
-  title="title"
 >
   Other content
 </a>

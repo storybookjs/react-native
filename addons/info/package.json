@@ -2,13 +2,13 @@
   "name": "@storybook/addon-info",
   "version": "4.0.0-alpha.7",
   "description": "A Storybook addon to show additional information for your stories.",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
@@ -17,13 +17,13 @@
     "@storybook/components": "4.0.0-alpha.7",
     "babel-runtime": "^6.26.0",
     "core-js": "2.5.6",
-    "glamor": "^2.20.40",
-    "glamorous": "^4.13.0",
+    "emotion": "^9.1.3",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.1",
     "react-addons-create-fragment": "^15.5.3",
+    "react-emotion": "^9.1.3",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },

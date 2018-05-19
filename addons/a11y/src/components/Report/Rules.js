@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styled from 'react-emotion';
+
 const impactColors = {
   minor: '#f1c40f',
   moderate: '#e67e22',
@@ -9,52 +11,45 @@ const impactColors = {
   success: '#2ecc71',
 };
 
-const styles = {
-  rules: {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '4px',
-    fontWeight: '400',
-  },
-  rule: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginBottom: '6px',
-  },
-  status: {
-    height: '16px',
-    width: '16px',
-    borderRadius: '8px',
-    fontSize: '10px',
-    display: 'inline-flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: '#fff',
-    textAlign: 'center',
-    flex: '0 0 16px',
-  },
-  message: {
-    paddingLeft: '6px',
-  },
-};
+const List = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '4px',
+  fontWeight: '400',
+});
 
-function Rule({ rule, passes }) {
-  const color = passes ? impactColors.success : impactColors[rule.impact];
+const Item = styled('div')({
+  display: 'flex',
+  flexDirection: 'row',
+  marginBottom: '6px',
+});
 
-  return (
-    <div style={styles.rule}>
-      <div
-        style={{
-          ...styles.status,
-          backgroundColor: color,
-        }}
-      >
-        {passes ? '✔' : '✘'}
-      </div>
-      <span style={styles.message}>{rule.message}</span>
-    </div>
-  );
-}
+const Message = styled('div')({
+  paddingLeft: '6px',
+});
+
+const Status = styled('div')(({ passes, impact }) => ({
+  height: '16px',
+  width: '16px',
+  borderRadius: '8px',
+  fontSize: '10px',
+  display: 'inline-flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  color: '#fff',
+  textAlign: 'center',
+  flex: '0 0 16px',
+  backgroundColor: passes ? impactColors.success : impactColors[impact],
+}));
+
+const Rule = ({ rule, passes }) => (
+  <Item>
+    <Status passes={passes || undefined} impact={rule.impact}>
+      {passes ? '✔' : '✘'}
+    </Status>
+    <Message>{rule.message}</Message>
+  </Item>
+);
 
 Rule.propTypes = {
   rule: PropTypes.shape({
@@ -66,9 +61,7 @@ Rule.propTypes = {
 /* eslint-disable react/no-array-index-key */
 function Rules({ rules, passes }) {
   return (
-    <div style={styles.rules}>
-      {rules.map((rule, index) => <Rule passes={passes} rule={rule} key={index} />)}
-    </div>
+    <List>{rules.map((rule, index) => <Rule passes={passes} rule={rule} key={index} />)}</List>
   );
 }
 Rules.propTypes = {

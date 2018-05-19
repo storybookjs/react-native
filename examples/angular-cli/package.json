@@ -9,12 +9,33 @@
     "e2e": "ng e2e",
     "ng": "ng",
     "start": "ng serve",
-    "storybook:prebuild": "npm run test:generate-output",
     "storybook": "npm run storybook:prebuild && start-storybook -p 9008 -s src/assets",
+    "storybook:prebuild": "npm run test:generate-output",
     "test": "jest",
-    "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:generate-output": "jest --json --outputFile=addon-jest.testresults.json || true"
+    "test:generate-output": "jest --json --outputFile=addon-jest.testresults.json || true",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/jest-config/",
+      "/node_modules/"
+    ],
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "./jest-config/setup.ts",
+    "snapshotSerializers": [
+      "<rootDir>/../../node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
+      "<rootDir>/../../node_modules/jest-preset-angular/HTMLCommentSerializer.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/",
+      "/storybook-static/",
+      "angularshots.test.js"
+    ],
+    "transform": {
+      "^.+\\.(ts|js|html)$": "<rootDir>/../../node_modules/jest-preset-angular/preprocessor.js"
+    }
   },
   "dependencies": {
     "@angular/common": "^5.2.10",
@@ -55,26 +76,5 @@
     "protractor": "~5.3.2",
     "ts-node": "~6.0.3",
     "typescript": "^2.8.3"
-  },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "transform": {
-      "^.+\\.(ts|js|html)$": "<rootDir>/../../node_modules/jest-preset-angular/preprocessor.js"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/build/",
-      "/storybook-static/",
-      "angularshots.test.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/jest-config/",
-      "/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/../../node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
-      "<rootDir>/../../node_modules/jest-preset-angular/HTMLCommentSerializer.js"
-    ],
-    "setupTestFrameworkScriptFile": "./jest-config/setup.ts"
   }
 }

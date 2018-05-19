@@ -1,12 +1,43 @@
 {
   "name": "marko-cli",
   "version": "4.0.0-alpha.7",
+  "private": true,
   "description": "Demo of how to build an app using marko-starter",
   "repository": {
     "type": "git",
     "url": "https://github.com/marko-js-samples/marko-starter-demo"
   },
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production marko-starter build",
+    "build-storybook": "build-storybook",
+    "lint": "eslint src/",
+    "serve-static": "NODE_ENV=production marko-starter serve-static",
+    "start": "marko-starter server",
+    "storybook": "start-storybook -p 9005",
+    "test": "npm run lint",
+    "prettier": "prettier src/**/*.{js,css,less} *.js --write"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "rules": {
+      "no-console": "off"
+    }
+  },
+  "eslintIgnore": [
+    "*.marko.js"
+  ],
+  "dependencies": {
+    "marko": "^4.2.4",
+    "marko-starter": "^1.0.0"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.7",
     "@storybook/addon-knobs": "4.0.0-alpha.7",
@@ -20,36 +51,5 @@
     "eslint-plugin-prettier": "^2.1.2",
     "prettier": "^1.5.2",
     "webpack": "^4.8.3"
-  },
-  "dependencies": {
-    "marko": "^4.2.4",
-    "marko-starter": "^1.0.0"
-  },
-  "scripts": {
-    "start": "marko-starter server",
-    "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 9005",
-    "build": "NODE_ENV=production marko-starter build",
-    "serve-static": "NODE_ENV=production marko-starter serve-static",
-    "lint": "eslint src/",
-    "test": "npm run lint",
-    "prettier": "prettier src/**/*.{js,css,less} *.js --write"
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "prettier"
-    ],
-    "rules": {
-      "no-console": "off"
-    },
-    "env": {
-      "browser": true,
-      "node": true
-    }
-  },
-  "eslintIgnore": [
-    "*.marko.js"
-  ],
-  "private": true
+  }
 }

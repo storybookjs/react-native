@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|AddonPanel default 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-yslj3j"
+  >
+    <div
+      class="css-6km6mc"
+      role="tablist"
+    >
+      <div
+        class="css-4nm8j5"
+        role="tab"
+        type="button"
+      >
+        Test 1
+      </div>
+      <div
+        class="css-bf047d"
+        role="tab"
+        selected=""
+        type="button"
+      >
+        Test 2
+      </div>
+    </div>
+    <div
+      class="css-1k5wv3o"
+    >
+      <div
+        class="css-1hyfx7x"
+        hidden=""
+        role="tabpanel"
+      >
+        <div
+          id="test1"
+        >
+          TEST 1
+        </div>
+      </div>
+      <div
+        class="css-13pmxen"
+        role="tabpanel"
+      >
+        <div
+          id="test2"
+        >
+          TEST 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|AddonPanel no panels 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <p
+    class="css-hftiue"
+  >
+    no panels available
+  </p>
+</div>
+`;

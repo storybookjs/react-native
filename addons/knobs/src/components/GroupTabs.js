@@ -1,71 +1,50 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { baseFonts } from '@storybook/components';
+import styled from 'react-emotion';
 
-const styles = {
-  empty: {
-    flex: 1,
-    display: 'flex',
-    ...baseFonts,
-    fontSize: 11,
-    letterSpacing: '1px',
-    textTransform: 'uppercase',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+import { Placeholder } from '@storybook/components';
 
-  wrapper: {
-    flex: '1 1 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    background: 'white',
-    borderRadius: 4,
-    border: 'solid 1px rgb(236, 236, 236)',
-    width: '100%',
-  },
+const Wrapper = styled('div')({
+  flex: '1 1 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  background: 'white',
+  borderRadius: 4,
+  border: 'solid 1px rgb(236, 236, 236)',
+  width: '100%',
+});
 
-  tabbar: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    borderBottom: 'solid 1px #eaeaea',
-  },
+const Bar = styled('div')({
+  display: 'flex',
+  flexWrap: 'wrap',
+  flexDirection: 'row',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  borderBottom: 'solid 1px #eaeaea',
+});
 
-  content: {
-    flex: '1 1 0',
-    display: 'flex',
-    overflow: 'auto',
-  },
+const Content = styled('div')({
+  flex: '1 1 0',
+  display: 'flex',
+  overflow: 'auto',
+});
 
-  tablink: {
-    ...baseFonts,
-    fontSize: 11,
-    letterSpacing: '1px',
-    padding: '10px 15px',
-    textTransform: 'uppercase',
-    transition: 'opacity 0.3s',
-    opacity: 0.5,
-    maxHeight: 60,
-    overflow: 'hidden',
-    cursor: 'pointer',
-    background: 'transparent',
-    border: 'none',
-  },
-
-  activetab: {
-    opacity: 1,
-  },
-};
+const Tab = styled('button')(({ active }) => ({
+  fontSize: 11,
+  letterSpacing: '1px',
+  padding: '10px 15px',
+  textTransform: 'uppercase',
+  transition: 'opacity 0.3s',
+  opacity: active ? 1 : 0.5,
+  maxHeight: 60,
+  overflow: 'hidden',
+  cursor: 'pointer',
+  background: 'transparent',
+  border: 'none',
+}));
 
 class GroupTabs extends Component {
   renderTab(name, group) {
-    let tabStyle = styles.tablink;
-    if (this.props.selectedGroup === name) {
-      tabStyle = Object.assign({}, styles.tablink, styles.activetab);
-    }
-
     const onClick = e => {
       e.preventDefault();
       this.props.onGroupSelect(name);
@@ -77,51 +56,40 @@ class GroupTabs extends Component {
     }
 
     return (
-      <button type="button" key={name} style={tabStyle} onClick={onClick} role="tab">
+      <Tab
+        type="button"
+        key={name}
+        onClick={onClick}
+        role="tab"
+        active={this.props.selectedGroup === name}
+      >
         {title}
-      </button>
+      </Tab>
     );
   }
 
-  renderTabs() {
-    return Object.keys(this.props.groups).map(name => {
-      const group = this.props.groups[name];
-      return this.renderTab(name, group);
-    });
-  }
-
-  renderGroups() {
-    return Object.keys(this.props.groups)
-      .sort()
-      .map(name => {
-        const groupStyle = { display: 'none' };
-        const group = this.props.groups[name];
-        if (name === this.props.selectedGroup) {
-          Object.assign(groupStyle, { flex: 1, display: 'flex' });
-        }
-        return (
-          <div key={name} style={groupStyle}>
-            {group.render()}
-          </div>
-        );
-      });
-  }
-
-  renderEmpty() {
-    return <div style={styles.empty}>no groups available</div>;
-  }
-
   render() {
-    if (!this.props.groups || !Object.keys(this.props.groups).length) {
-      return this.renderEmpty();
-    }
-    return (
-      <div style={styles.wrapper}>
-        <div style={styles.tabbar} role="tablist">
-          {this.renderTabs()}
-        </div>
-        <div style={styles.content}>{this.renderGroups()}</div>
-      </div>
+    const entries = this.props.groups ? Object.entries(this.props.groups) : null;
+
+    return entries && entries.length ? (
+      <Wrapper>
+        <Bar role="tablist">{entries.map(([key, value]) => this.renderTab(key, value))}</Bar>
+        <Content>
+          {entries.map(([key, value]) => {
+            const groupStyle = { display: 'none' };
+            if (key === this.props.selectedGroup) {
+              Object.assign(groupStyle, { flex: 1, display: 'flex' });
+            }
+            return (
+              <div key={key} style={groupStyle}>
+                {value.render()}
+              </div>
+            );
+          })}
+        </Content>
+      </Wrapper>
+    ) : (
+      <Placeholder>no groups available</Placeholder>
     );
   }
 }
@@ -133,7 +101,8 @@ GroupTabs.defaultProps = {
 };
 
 GroupTabs.propTypes = {
-  groups: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types
+  groups: PropTypes.object,
   onGroupSelect: PropTypes.func,
   selectedGroup: PropTypes.string,
 };

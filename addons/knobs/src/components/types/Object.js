@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
+import styled from 'react-emotion';
+
 import Textarea from 'react-textarea-autosize';
 import debounce from 'lodash.debounce';
 
-const styles = {
+const StyledTextarea = styled(Textarea)({
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'middle',
@@ -15,9 +17,9 @@ const styles = {
   padding: '5px',
   color: '#555',
   fontFamily: 'monospace',
-};
+});
 
-class ObjectType extends React.Component {
+class ObjectType extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -70,9 +72,9 @@ class ObjectType extends React.Component {
     }
 
     return (
-      <Textarea
+      <StyledTextarea
         id={knob.name}
-        style={{ ...styles, ...extraStyle }}
+        style={extraStyle}
         value={value}
         onChange={this.handleChange}
       />

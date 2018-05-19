@@ -1,34 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import { monoFonts } from '@storybook/components';
 
 import Indicator from './Indicator';
 import colors from '../colors';
 
-const Pre = glamorous.pre({
+const Pre = styled('pre')({
   margin: 0,
   ...monoFonts,
 });
 
-const FlexContainer = glamorous.div`
-  display: flex;
-  align-items: center;
-`;
+const FlexContainer = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+});
 
 /* eslint no-control-regex:0 */
 const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
 
-const Positive = glamorous.strong({
+const Positive = styled('strong')({
   color: colors.success,
   fontWeight: 500,
 });
-const Negative = glamorous.strong({
+const Negative = styled('strong')({
   color: colors.error,
   fontWeight: 500,
 });
-const StackTrace = glamorous(({ trace, className }) => (
+const StackTrace = styled(({ trace, className }) => (
   <details className={className}>
     <summary>Callstack</summary>
     {trace
@@ -42,11 +42,11 @@ const StackTrace = glamorous(({ trace, className }) => (
   background: 'silver',
   padding: 10,
 });
-const Main = glamorous(({ msg, className }) => <section className={className}>{msg}</section>)({
+const Main = styled(({ msg, className }) => <section className={className}>{msg}</section>)({
   padding: 10,
   borderBottom: '1px solid silver',
 });
-const Sub = glamorous(({ msg, className }) => (
+const Sub = styled(({ msg, className }) => (
   <section className={className}>
     {msg
       .filter(item => typeof item !== 'string' || (typeof item === 'string' && item.trim() !== ''))
@@ -59,7 +59,6 @@ const Sub = glamorous(({ msg, className }) => (
             return item.replace(/^[\s\n]*/, '');
           }
           case typeof item === 'string' && index === list.length - 1: {
-            debugger; //eslint-disable-line
             return item.replace(/[\s\n]*$/, '');
           }
           default: {
@@ -89,7 +88,6 @@ const createSubgroup = (acc, item, i, list) => {
 
   // start or stop extraction
   if (acc.startTrigger(item)) {
-    // debugger; //eslint-disable-line
     acc.mode = 'inject';
     acc.injectionPoint = i;
   }
@@ -188,18 +186,18 @@ Message.propTypes = {
   msg: PropTypes.string.isRequired,
 };
 
-const Head = glamorous.header({
+const Head = styled('header')({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
 });
 
-const Title = glamorous.h3({
+const Title = styled('h3')({
   padding: '10px 10px 0 10px',
   margin: 0,
 });
 
-export const FailedResult = glamorous(({ fullName, title, status, failureMessages, className }) => (
+export const FailedResult = styled(({ fullName, title, status, failureMessages, className }) => (
   <div className={className}>
     <Head>
       <FlexContainer>
