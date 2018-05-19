@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "4.0.0-alpha.6",
+  "version": "4.0.0-alpha.7",
   "description": "Storybook framework-agnostic API",
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
   "bugs": {
@@ -16,13 +16,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.6",
-    "@storybook/channel-postmessage": "4.0.0-alpha.6",
-    "@storybook/client-logger": "4.0.0-alpha.6",
-    "@storybook/core-events": "4.0.0-alpha.6",
-    "@storybook/node-logger": "4.0.0-alpha.6",
-    "@storybook/ui": "4.0.0-alpha.6",
-    "autoprefixer": "^8.4.1",
+    "@storybook/addons": "4.0.0-alpha.7",
+    "@storybook/channel-postmessage": "4.0.0-alpha.7",
+    "@storybook/client-logger": "4.0.0-alpha.7",
+    "@storybook/core-events": "4.0.0-alpha.7",
+    "@storybook/node-logger": "4.0.0-alpha.7",
+    "@storybook/ui": "4.0.0-alpha.7",
+    "autoprefixer": "^8.5.0",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
@@ -43,16 +43,16 @@
     "react-emotion": "^9.1.3",
     "redux": "^4.0.0",
     "serve-favicon": "^2.5.0",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.2",
     "style-loader": "^0.21.0",
     "svg-url-loader": "^2.3.2",
     "url-loader": "^1.0.1",
-    "webpack": "^4.8.0",
+    "webpack": "^4.8.3",
     "webpack-dev-middleware": "^3.1.3",
-    "webpack-hot-middleware": "^2.22.1"
+    "webpack-hot-middleware": "^2.22.2"
   },
   "devDependencies": {
-    "mock-fs": "^4.3.0"
+    "mock-fs": "^4.5.0"
   },
   "peerDependencies": {
     "react": ">=15.0.0",
