@@ -22,7 +22,8 @@
     "webpack": "^4.8.3"
   },
   "dependencies": {
-    "marko": "^4.2.4",
+    "marko": "^4",
+    "marko-widgets": "^7",
     "marko-starter": "^1.0.0"
   },
   "scripts": {
