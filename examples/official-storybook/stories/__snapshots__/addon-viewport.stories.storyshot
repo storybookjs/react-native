@@ -32,13 +32,25 @@ exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden vi
 </div>
 `;
 
-exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" decorator 1`] = `
+exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" decorator (deprecated) 1`] = `
 <div
   class="css-9por5e"
 >
   I respect my parents but I should be looking good on 
   <b>
     iPhone 6
+  </b>
+  .
+</div>
+`;
+
+exports[`Storyshots Addons|Viewport.Custom Default (Kindle Fire 2) Overridden via "withViewport" parameterized decorator 1`] = `
+<div
+  class="css-9por5e"
+>
+  I respect my parents but I should be looking good on 
+  <b>
+    iPad
   </b>
   .
 </div>
