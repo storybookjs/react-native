@@ -4,7 +4,7 @@
   "private": true,
   "description": "",
   "keywords": [],
-  "license": "ISC",
+  "license": "MIT",
   "author": "",
   "main": "index.js",
   "scripts": {
