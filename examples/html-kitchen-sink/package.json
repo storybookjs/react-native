@@ -1,17 +1,17 @@
 {
   "name": "html-kitchen-sink",
   "version": "4.0.0-alpha.7",
-  "description": "",
-  "main": "index.js",
   "private": true,
-  "scripts": {
-    "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
-    "storybook": "start-storybook -p 9006",
-    "build-storybook": "build-storybook"
-  },
+  "description": "",
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
+    "storybook": "start-storybook -p 9006"
+  },
   "devDependencies": {
     "@storybook/addon-a11y": "4.0.0-alpha.7",
     "@storybook/addon-actions": "4.0.0-alpha.7",

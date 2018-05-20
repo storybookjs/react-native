@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Viewport/RotateViewport renders correctly 1`] = `
+<Styled(div)>
+  <Styled(label)
+    htmlFor="rotate"
+  >
+    Rotate
+  </Styled(label)>
+  <Styled(button)
+    disabled={false}
+    id="rotate"
+    onClick={[MockFunction]}
+  >
+    Landscape
+  </Styled(button)>
+</Styled(div)>
+`;

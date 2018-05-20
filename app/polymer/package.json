@@ -6,16 +6,16 @@
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
   "license": "MIT",
   "main": "dist/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
     "storybook-server": "./bin/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
   },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"

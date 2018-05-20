@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const styles = {
+import styled from 'react-emotion';
+
+const Input = styled('input')({
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'top',
@@ -10,19 +12,18 @@ const styles = {
   border: '1px solid #ececec',
   fontSize: '12px',
   color: '#555',
-};
+});
 
 class BooleanType extends React.Component {
   render() {
     const { knob, onChange } = this.props;
 
     return (
-      <input
+      <Input
         id={knob.name}
         ref={c => {
           this.input = c;
         }}
-        style={styles}
         type="checkbox"
         onChange={() => onChange(this.input.checked)}
         checked={knob.value}

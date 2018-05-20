@@ -1,18 +1,14 @@
-/* eslint-disable react/no-danger */
 import React from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 
-const styles = {
-  notesPanel: {
-    margin: 10,
-    fontFamily: 'Arial',
-    fontSize: 14,
-    color: '#444',
-    width: '100%',
-    overflow: 'auto',
-  },
-};
+import styled from 'react-emotion';
+
+const Panel = styled('div')({
+  padding: 10,
+  boxSizing: 'border-box',
+  width: '100%',
+});
 
 export class Notes extends React.Component {
   constructor(...args) {
@@ -51,17 +47,15 @@ export class Notes extends React.Component {
     const { text } = this.state;
     const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
 
-    return (
-      <div style={styles.notesPanel}>
-        <div dangerouslySetInnerHTML={{ __html: textAfterFormatted }} />
-      </div>
-    );
+    return <Panel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} />;
   }
 }
 
 Notes.propTypes = {
-  channel: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  api: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types
+  channel: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  api: PropTypes.object,
 };
 Notes.defaultProps = {
   channel: {},

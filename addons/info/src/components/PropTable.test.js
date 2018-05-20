@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import PropTable, { multiLineText } from './PropTable';
 
@@ -28,13 +28,13 @@ describe('PropTable', () => {
     };
 
     it('should include all propTypes by default', () => {
-      const wrapper = mount(<PropTable {...propTableProps} />);
+      const wrapper = shallow(<PropTable {...propTableProps} />);
       expect(wrapper).toMatchSnapshot();
     });
 
     it('should exclude excluded propTypes', () => {
       const props = { ...propTableProps, excludedPropTypes: ['foo'] };
-      const wrapper = mount(<PropTable {...props} />);
+      const wrapper = shallow(<PropTable {...props} />);
       expect(wrapper).toMatchSnapshot();
     });
 

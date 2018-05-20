@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import styled from 'react-emotion';
+
 import Info from './Info';
 import Tags from './Tags';
 import Elements from './Elements';
 
-const styles = {
-  item: {
-    padding: '0 14px',
-    cursor: 'pointer',
-    borderBottom: '1px solid rgb(234, 234, 234)',
-  },
-  headerBar: {
-    padding: '12px 0px',
-    display: 'block',
-    width: '100%',
-    border: 0,
-    background: 'none',
-  },
-};
+const Wrapper = styled('div')({
+  padding: '0 14px',
+  cursor: 'pointer',
+  borderBottom: '1px solid rgb(234, 234, 234)',
+});
+
+const HeaderBar = styled('button')({
+  padding: '12px 0px',
+  display: 'block',
+  width: '100%',
+  border: 0,
+  background: 'none',
+});
 
 class Item extends Component {
   static propTypes = {
@@ -30,13 +31,9 @@ class Item extends Component {
     passes: PropTypes.bool.isRequired,
   };
 
-  constructor() {
-    super();
-
-    this.state = {
-      open: false,
-    };
-  }
+  state = {
+    open: false,
+  };
 
   onToggle = () =>
     this.setState(prevState => ({
@@ -48,14 +45,12 @@ class Item extends Component {
     const { open } = this.state;
 
     return (
-      <div style={styles.item}>
-        <button style={styles.headerBar} onClick={() => this.onToggle()}>
-          {item.description}
-        </button>
+      <Wrapper>
+        <HeaderBar onClick={this.onToggle}>{item.description}</HeaderBar>
         {open && <Info item={item} />}
         {open && <Elements elements={item.nodes} passes={passes} />}
         {open && <Tags tags={item.tags} />}
-      </div>
+      </Wrapper>
     );
   }
 }

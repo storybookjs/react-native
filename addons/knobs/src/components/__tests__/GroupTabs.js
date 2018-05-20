@@ -30,6 +30,7 @@ describe('GroupTabs', () => {
   test('should set onGroupSelected as onClick handlers of tabs', () => {
     const groups = {
       test1: {
+        title: 'test 1',
         render() {
           return <div>TEST 1</div>;
         },
@@ -40,7 +41,10 @@ describe('GroupTabs', () => {
     const wrapper = shallow(
       <GroupTabs groups={groups} onGroupSelect={onGroupSelect} selectedGroup="test1" />
     );
-    wrapper.find('button').simulate('click', { preventDefault });
+    wrapper
+      .find('Styled(button)')
+      .dive()
+      .simulate('click', { preventDefault });
 
     expect(onGroupSelect).toHaveBeenCalled();
     expect(preventDefault).toHaveBeenCalled();

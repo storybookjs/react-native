@@ -20,7 +20,8 @@ const Examples = ({ items }) => (
   </div>
 );
 Examples.propTypes = {
-  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types
+  items: PropTypes.array,
 };
 Examples.defaultProps = {
   items: [],

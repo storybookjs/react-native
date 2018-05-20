@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import addons from '@storybook/addons';
 
+import styled from 'react-emotion';
+
 import { CHECK_EVENT_ID } from '../shared';
 
 import Tabs from './Tabs';
 import Report from './Report';
 
-const styles = {
-  passes: {
-    color: '#0D6731',
-  },
-  violations: {
-    color: '#AC2300',
-  },
-};
+const Passes = styled('span')({
+  color: '#0D6731',
+});
+
+const Violations = styled('span')({
+  color: '#AC2300',
+});
 
 class Panel extends Component {
   constructor(props, ...args) {
@@ -49,11 +50,11 @@ class Panel extends Component {
       <Tabs
         tabs={[
           {
-            label: <span style={styles.violations}>{violations.length} Violations</span>,
+            label: <Violations>{violations.length} Violations</Violations>,
             panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
           },
           {
-            label: <span style={styles.passes}>{passes.length} Passes</span>,
+            label: <Passes>{passes.length} Passes</Passes>,
             panel: <Report passes items={passes} empty="No a11y check passed" />,
           },
         ]}

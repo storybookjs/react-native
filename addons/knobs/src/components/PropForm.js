@@ -1,23 +1,17 @@
-/* eslint no-underscore-dangle: 0 */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styled from 'react-emotion';
+
 import PropField from './PropField';
 
-const stylesheet = {
-  propForm: {
-    fontFamily: `
-      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
-      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
-    `,
-    display: 'table',
-    boxSizing: 'border-box',
-    width: '100%',
-    borderCollapse: 'separate',
-    borderSpacing: '5px',
-  },
-};
+const Form = styled('form')({
+  display: 'table',
+  boxSizing: 'border-box',
+  width: '100%',
+  borderCollapse: 'separate',
+  borderSpacing: '5px',
+});
 
 export default class propForm extends React.Component {
   makeChangeHandler(name, type) {
@@ -31,7 +25,7 @@ export default class propForm extends React.Component {
     const { knobs } = this.props;
 
     return (
-      <form style={stylesheet.propForm}>
+      <Form>
         {knobs.map(knob => {
           const changeHandler = this.makeChangeHandler(knob.name, knob.type);
           return (
@@ -46,7 +40,7 @@ export default class propForm extends React.Component {
             />
           );
         })}
-      </form>
+      </Form>
     );
   }
 }
