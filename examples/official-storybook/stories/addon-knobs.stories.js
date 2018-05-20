@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -16,35 +17,20 @@ import {
   files,
 } from '@storybook/addon-knobs';
 
-class AsyncItemLoader extends React.Component {
-  constructor() {
-    super();
-    this.state = { items: [] };
+const ItemLoader = ({ isLoading, items }) => {
+  if (isLoading) {
+    return <p>Loading data</p>;
+  } else if (!items.length) {
+    return <p>No items loaded</p>;
   }
+  return <ul>{items.map(i => <li key={i}>{i}</li>)}</ul>;
+};
 
-  handleLoadItems() {
-    this.setState({
-      isLoading: true,
-      items: [],
-    });
-    setTimeout(() => this.setState({ items: ['pencil', 'pen', 'eraser'], isLoading: false }), 1500);
-  }
-
-  render() {
-    // this existing example seems like a react anti-pattern?
-    // perhaps for testing purposes only?
-    button('Load the items', () => this.handleLoadItems());
-
-    const { isLoading, items } = this.state;
-
-    if (isLoading) {
-      return <p>Loading data</p>;
-    } else if (!items.length) {
-      return <p>No items loaded</p>;
-    }
-    return <ul>{items.map(i => <li key={i}>{i}</li>)}</ul>;
-  }
-}
+ItemLoader.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+let injectedItems = [];
 
 storiesOf('Addons|Knobs.withKnobs', module)
   .addDecorator(withKnobs)
@@ -169,12 +155,18 @@ storiesOf('Addons|Knobs.withKnobs', module)
       </div>
     );
   })
-  .add('triggers actions via button', () => (
-    <div>
-      <p>Hit the knob load button and it should trigger an async load after a short delay</p>
-      <AsyncItemLoader />
-    </div>
-  ))
+  .add('triggers actions via button', () => {
+    button('Load the items', () => {
+      injectedItems = ['pencil', 'pen', 'eraser'];
+    });
+    const injectedIsLoading = boolean('Toggle loading status', false);
+    return (
+      <div>
+        <p>Hit the knob load button and it will change the items list</p>
+        <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
+      </div>
+    );
+  })
   .add('XSS safety', () => (
     <div
       dangerouslySetInnerHTML={{
