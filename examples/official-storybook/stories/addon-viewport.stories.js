@@ -23,7 +23,16 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
     </Panel>
   ))
   .add(
-    'Overridden via "withViewport" decorator',
+    'Overridden via "withViewport" parameterized decorator',
+    () => (
+      <Panel>
+        I respect my parents but I should be looking good on <b>iPad</b>.
+      </Panel>
+    ),
+    { viewport: 'ipad' }
+  )
+  .add(
+    'Overridden via "withViewport" decorator (deprecated)',
     withViewport('iphone6')(() => (
       <Panel>
         I respect my parents but I should be looking good on <b>iPhone 6</b>.

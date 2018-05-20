@@ -12,7 +12,7 @@ const Wrapper = styled('div')({
 const Title = styled('h1')({
   margin: 0,
 });
-const Item = () => ({
+const Item = styled('div')({
   listStyle: 'none',
   marginBottom: 10,
 });
