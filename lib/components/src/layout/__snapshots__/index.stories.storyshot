@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ui/Layout addon panel in right 1`] = `
+exports[`Storyshots Components|Layout addon panel in right 1`] = `
 <div
-  style="height:100vh;background-color:#F7F7F7"
+  class="css-183j64z"
 >
   <div
     class="SplitPane  vertical "
@@ -13,10 +13,10 @@ exports[`Storyshots ui/Layout addon panel in right 1`] = `
       style="flex:none;position:relative;outline:none;width:250px"
     >
       <div
-        style="width:100%;display:flex;flex-direction:row;align-items:stretch;padding-right:0"
+        class="css-1kbxkw2"
       >
         <div
-          style="flex-grow:1;height:100%;width:100%"
+          class="css-9in0fq"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -25,10 +25,12 @@ exports[`Storyshots ui/Layout addon panel in right 1`] = `
           </div>
         </div>
         <div
-          style="width:10px;margin-left:0;margin-right:-10px;position:relative"
+          class="css-owlojx"
+          direction="vertical"
         >
-          <span
-            style="width:1px;height:20px;left:3.5px;top:50%;position:absolute;border-left:solid 1px rgba(0,0,0,0.1);border-right:solid 1px rgba(0,0,0,0.1)"
+          <div
+            class="css-19oxd4p"
+            direction="vertical"
           />
         </div>
       </div>
@@ -47,16 +49,16 @@ exports[`Storyshots ui/Layout addon panel in right 1`] = `
       >
         <div
           class="Pane vertical Pane1  "
-          style="overflow:auto;flex:1;position:relative;outline:none"
+          style="flex:1;position:relative;outline:none"
         >
           <div
-            style="position:absolute;box-sizing:border-box;width:100%;height:100%;padding:10px 2px 10px 0;padding-top:10px"
+            class="css-1e1vreg"
           >
             <div
-              style="display:none;position:absolute;top:0px;right:0px;bottom:0px;left:0px"
+              class="css-1oma8ph"
             />
             <div
-              style="width:100%;height:100%;background-color:#FFF;border:1px solid #ECECEC;border-radius:4px"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -75,13 +77,15 @@ exports[`Storyshots ui/Layout addon panel in right 1`] = `
           style="flex:none;position:relative;outline:none;width:400px"
         >
           <div
-            style="display:flex;flex-direction:row;align-items:stretch;position:absolute;width:100%;height:100%;padding:5px 10px 10px 0;box-sizing:border-box"
+            class="css-1929wko"
           >
             <div
-              style="width:10px;margin-left:-10px;margin-right:0;position:relative"
+              class="css-nq4yle"
+              direction="vertical"
             >
-              <span
-                style="width:1px;height:20px;left:3.5px;top:50%;position:absolute;border-left:solid 1px rgba(0,0,0,0.1);border-right:solid 1px rgba(0,0,0,0.1)"
+              <div
+                class="css-19oxd4p"
+                direction="vertical"
               />
             </div>
             <div
@@ -97,9 +101,9 @@ exports[`Storyshots ui/Layout addon panel in right 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/Layout default 1`] = `
+exports[`Storyshots Components|Layout default 1`] = `
 <div
-  style="height:100vh;background-color:#F7F7F7"
+  class="css-183j64z"
 >
   <div
     class="SplitPane  vertical "
@@ -110,10 +114,10 @@ exports[`Storyshots ui/Layout default 1`] = `
       style="flex:none;position:relative;outline:none;width:250px"
     >
       <div
-        style="width:100%;display:flex;flex-direction:row;align-items:stretch;padding-right:0"
+        class="css-1kbxkw2"
       >
         <div
-          style="flex-grow:1;height:100%;width:100%"
+          class="css-9in0fq"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -122,10 +126,12 @@ exports[`Storyshots ui/Layout default 1`] = `
           </div>
         </div>
         <div
-          style="width:10px;margin-left:0;margin-right:-10px;position:relative"
+          class="css-owlojx"
+          direction="vertical"
         >
-          <span
-            style="width:1px;height:20px;left:3.5px;top:50%;position:absolute;border-left:solid 1px rgba(0,0,0,0.1);border-right:solid 1px rgba(0,0,0,0.1)"
+          <div
+            class="css-19oxd4p"
+            direction="vertical"
           />
         </div>
       </div>
@@ -144,16 +150,16 @@ exports[`Storyshots ui/Layout default 1`] = `
       >
         <div
           class="Pane horizontal Pane1  "
-          style="overflow:auto;flex:1;position:relative;outline:none"
+          style="flex:1;position:relative;outline:none"
         >
           <div
-            style="position:absolute;box-sizing:border-box;width:100%;height:100%;padding:10px 10px 2px 0;padding-top:10px"
+            class="css-xlbk67"
           >
             <div
-              style="display:none;position:absolute;top:0px;right:0px;bottom:0px;left:0px"
+              class="css-1oma8ph"
             />
             <div
-              style="width:100%;height:100%;background-color:#FFF;border:1px solid #ECECEC;border-radius:4px"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -172,13 +178,15 @@ exports[`Storyshots ui/Layout default 1`] = `
           style="flex:none;position:relative;outline:none;height:200px;display:flex"
         >
           <div
-            style="display:flex;flex-direction:column;align-items:stretch;position:absolute;width:100%;height:100%;padding:0px 10px 10px 0;box-sizing:border-box"
+            class="css-1fxkhug"
           >
             <div
-              style="height:10px;margin-top:-10px;margin-bottom:0;position:relative"
+              class="css-1fpokv0"
+              direction="horizontal"
             >
-              <span
-                style="height:1px;width:20px;top:3.5px;left:50%;position:absolute;border-top:solid 1px rgba(0,0,0,0.1);border-bottom:solid 1px rgba(0,0,0,0.1)"
+              <div
+                class="css-1nvj8jd"
+                direction="horizontal"
               />
             </div>
             <div
@@ -194,9 +202,9 @@ exports[`Storyshots ui/Layout default 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/Layout full screen 1`] = `
+exports[`Storyshots Components|Layout full screen 1`] = `
 <div
-  style="height:100vh;background-color:#F7F7F7"
+  class="css-183j64z"
 >
   <div
     class="SplitPane  vertical disabled"
@@ -207,10 +215,10 @@ exports[`Storyshots ui/Layout full screen 1`] = `
       style="flex:none;position:relative;outline:none;width:1px"
     >
       <div
-        style="width:100%;display:none;flex-direction:row;align-items:stretch;padding-right:0"
+        class="css-1aqo4nl"
       >
         <div
-          style="flex-grow:1;height:100%;width:100%"
+          class="css-9in0fq"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -219,10 +227,12 @@ exports[`Storyshots ui/Layout full screen 1`] = `
           </div>
         </div>
         <div
-          style="width:10px;margin-left:0;margin-right:-10px;position:relative"
+          class="css-owlojx"
+          direction="vertical"
         >
-          <span
-            style="width:1px;height:20px;left:3.5px;top:50%;position:absolute;border-left:solid 1px rgba(0,0,0,0.1);border-right:solid 1px rgba(0,0,0,0.1)"
+          <div
+            class="css-19oxd4p"
+            direction="vertical"
           />
         </div>
       </div>
@@ -241,16 +251,16 @@ exports[`Storyshots ui/Layout full screen 1`] = `
       >
         <div
           class="Pane horizontal Pane1  "
-          style="overflow:auto;flex:1;position:relative;outline:none"
+          style="flex:1;position:relative;outline:none"
         >
           <div
-            style="position:absolute;box-sizing:border-box;width:100%;height:100%;padding:10px 10px 2px 0;padding-top:10px"
+            class="css-xlbk67"
           >
             <div
-              style="display:none;position:absolute;top:0px;right:0px;bottom:0px;left:0px"
+              class="css-1oma8ph"
             />
             <div
-              style="position:fixed;left:0px;right:0px;top:0px;z-index:1;background-color:#FFF;height:100%;width:100%;border:0;margin:0;padding:0;-webkit-overflow-scrolling:touch"
+              class="css-1k65ze8"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -269,13 +279,15 @@ exports[`Storyshots ui/Layout full screen 1`] = `
           style="flex:none;position:relative;outline:none;height:1px;display:flex"
         >
           <div
-            style="display:none;flex-direction:column;align-items:stretch;position:absolute;width:100%;height:100%;padding:0px 10px 10px 0;box-sizing:border-box"
+            class="css-1vc1w07"
           >
             <div
-              style="height:10px;margin-top:-10px;margin-bottom:0;position:relative"
+              class="css-1fpokv0"
+              direction="horizontal"
             >
-              <span
-                style="height:1px;width:20px;top:3.5px;left:50%;position:absolute;border-top:solid 1px rgba(0,0,0,0.1);border-bottom:solid 1px rgba(0,0,0,0.1)"
+              <div
+                class="css-1nvj8jd"
+                direction="horizontal"
               />
             </div>
             <div
@@ -291,9 +303,84 @@ exports[`Storyshots ui/Layout full screen 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/Layout no addon panel 1`] = `
+exports[`Storyshots Components|Layout mobile 1`] = `
 <div
-  style="height:100vh;background-color:#F7F7F7"
+  class="css-f1rc4w"
+>
+  <div>
+    <div
+      class="css-1kes5pl"
+    >
+      <div
+        class="css-6km6mc"
+      >
+        <div
+          class="css-4nm8j5"
+          role="tab"
+          type="button"
+        >
+          Navigator
+        </div>
+        <div
+          class="css-bf047d"
+          role="tab"
+          selected=""
+          type="button"
+        >
+          Preview
+        </div>
+        <div
+          class="css-4nm8j5"
+          role="tab"
+          type="button"
+        >
+          Addons
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1hyfx7x"
+    >
+      <div
+        class="css-9in0fq"
+      >
+        <div
+          style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+        >
+          Stories
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1387n1o"
+      selected=""
+    >
+      <div
+        class="css-9in0fq"
+      >
+        <div
+          style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+        >
+          Preview
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1hyfx7x"
+    >
+      <div
+        style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+      >
+        Addon
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Layout no addon panel 1`] = `
+<div
+  class="css-183j64z"
 >
   <div
     class="SplitPane  vertical "
@@ -304,10 +391,10 @@ exports[`Storyshots ui/Layout no addon panel 1`] = `
       style="flex:none;position:relative;outline:none;width:250px"
     >
       <div
-        style="width:100%;display:flex;flex-direction:row;align-items:stretch;padding-right:0"
+        class="css-1kbxkw2"
       >
         <div
-          style="flex-grow:1;height:100%;width:100%"
+          class="css-9in0fq"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -316,10 +403,12 @@ exports[`Storyshots ui/Layout no addon panel 1`] = `
           </div>
         </div>
         <div
-          style="width:10px;margin-left:0;margin-right:-10px;position:relative"
+          class="css-owlojx"
+          direction="vertical"
         >
-          <span
-            style="width:1px;height:20px;left:3.5px;top:50%;position:absolute;border-left:solid 1px rgba(0,0,0,0.1);border-right:solid 1px rgba(0,0,0,0.1)"
+          <div
+            class="css-19oxd4p"
+            direction="vertical"
           />
         </div>
       </div>
@@ -338,16 +427,16 @@ exports[`Storyshots ui/Layout no addon panel 1`] = `
       >
         <div
           class="Pane horizontal Pane1  "
-          style="overflow:auto;flex:1;position:relative;outline:none"
+          style="flex:1;position:relative;outline:none"
         >
           <div
-            style="position:absolute;box-sizing:border-box;width:100%;height:100%;padding:10px 10px 2px 0;padding-top:10px"
+            class="css-xlbk67"
           >
             <div
-              style="display:none;position:absolute;top:0px;right:0px;bottom:0px;left:0px"
+              class="css-1oma8ph"
             />
             <div
-              style="width:100%;height:100%;background-color:#FFF;border:1px solid #ECECEC;border-radius:4px"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -366,13 +455,15 @@ exports[`Storyshots ui/Layout no addon panel 1`] = `
           style="flex:none;position:relative;outline:none;height:1px;display:flex"
         >
           <div
-            style="display:none;flex-direction:column;align-items:stretch;position:absolute;width:100%;height:100%;padding:0px 10px 10px 0;box-sizing:border-box"
+            class="css-1vc1w07"
           >
             <div
-              style="height:10px;margin-top:-10px;margin-bottom:0;position:relative"
+              class="css-1fpokv0"
+              direction="horizontal"
             >
-              <span
-                style="height:1px;width:20px;top:3.5px;left:50%;position:absolute;border-top:solid 1px rgba(0,0,0,0.1);border-bottom:solid 1px rgba(0,0,0,0.1)"
+              <div
+                class="css-1nvj8jd"
+                direction="horizontal"
               />
             </div>
             <div
@@ -388,9 +479,9 @@ exports[`Storyshots ui/Layout no addon panel 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/Layout no stories panel 1`] = `
+exports[`Storyshots Components|Layout no stories panel 1`] = `
 <div
-  style="height:100vh;background-color:#F7F7F7"
+  class="css-183j64z"
 >
   <div
     class="SplitPane  vertical disabled"
@@ -401,10 +492,10 @@ exports[`Storyshots ui/Layout no stories panel 1`] = `
       style="flex:none;position:relative;outline:none;width:1px"
     >
       <div
-        style="width:100%;display:none;flex-direction:row;align-items:stretch;padding-right:0"
+        class="css-1aqo4nl"
       >
         <div
-          style="flex-grow:1;height:100%;width:100%"
+          class="css-9in0fq"
         >
           <div
             style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
@@ -413,10 +504,12 @@ exports[`Storyshots ui/Layout no stories panel 1`] = `
           </div>
         </div>
         <div
-          style="width:10px;margin-left:0;margin-right:-10px;position:relative"
+          class="css-owlojx"
+          direction="vertical"
         >
-          <span
-            style="width:1px;height:20px;left:3.5px;top:50%;position:absolute;border-left:solid 1px rgba(0,0,0,0.1);border-right:solid 1px rgba(0,0,0,0.1)"
+          <div
+            class="css-19oxd4p"
+            direction="vertical"
           />
         </div>
       </div>
@@ -435,16 +528,16 @@ exports[`Storyshots ui/Layout no stories panel 1`] = `
       >
         <div
           class="Pane horizontal Pane1  "
-          style="overflow:auto;flex:1;position:relative;outline:none"
+          style="flex:1;position:relative;outline:none"
         >
           <div
-            style="position:absolute;box-sizing:border-box;width:100%;height:100%;padding:10px 10px 2px 0;padding-top:10px"
+            class="css-xlbk67"
           >
             <div
-              style="display:none;position:absolute;top:0px;right:0px;bottom:0px;left:0px"
+              class="css-1oma8ph"
             />
             <div
-              style="width:100%;height:100%;background-color:#FFF;border:1px solid #ECECEC;border-radius:4px"
+              class="css-vfn1gp"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -463,13 +556,15 @@ exports[`Storyshots ui/Layout no stories panel 1`] = `
           style="flex:none;position:relative;outline:none;height:200px;display:flex"
         >
           <div
-            style="display:flex;flex-direction:column;align-items:stretch;position:absolute;width:100%;height:100%;padding:0px 10px 10px 0;box-sizing:border-box"
+            class="css-1fxkhug"
           >
             <div
-              style="height:10px;margin-top:-10px;margin-bottom:0;position:relative"
+              class="css-1fpokv0"
+              direction="horizontal"
             >
-              <span
-                style="height:1px;width:20px;top:3.5px;left:50%;position:absolute;border-top:solid 1px rgba(0,0,0,0.1);border-bottom:solid 1px rgba(0,0,0,0.1)"
+              <div
+                class="css-1nvj8jd"
+                direction="horizontal"
               />
             </div>
             <div

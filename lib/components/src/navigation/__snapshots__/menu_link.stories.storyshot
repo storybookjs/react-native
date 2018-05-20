@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components|Navigation/MenuLink active 1`] = `
 <a
-  class="css-1enjukp"
+  class="css-1ns2oul"
   href="http://google.com"
 >
   Link
@@ -23,7 +23,7 @@ exports[`Storyshots Components|Navigation/MenuLink with knobs 1`] = `
   class="css-t9df35"
 >
   <a
-    class="css-1enjukp"
+    class="css-1ns2oul"
     href="/"
   >
     Menu link item

@@ -1,114 +1,178 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
-  <Component
-    className="css-1yjiefr"
+  <button
+    className="emotion-0"
     onClick={[Function]}
   >
-    <button
-      className="css-1yjiefr"
-      onClick={[Function]}
+    <span
+      aria-label="so cool"
+      role="img"
     >
-      <span
-        aria-label="so cool"
-        role="img"
-      >
-        😀 😎 👍 💯
-      </span>
-    </button>
-  </Component>
+      😀 😎 👍 💯
+    </span>
+  </button>
 </Button>
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
-  <Component
-    className="css-1yjiefr"
+  <button
+    className="emotion-0"
     onClick={[Function]}
   >
-    <button
-      className="css-1yjiefr"
-      onClick={[Function]}
-    >
-      Hello Button
-    </button>
-  </Component>
+    Hello Button
+  </button>
 </Button>
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
-  <Component
-    className="css-1yjiefr"
+  <button
+    className="emotion-0"
     onClick={[Function]}
   >
-    <button
-      className="css-1yjiefr"
-      onClick={[Function]}
+    <span
+      aria-label="so cool"
+      role="img"
     >
-      <span
-        aria-label="so cool"
-        role="img"
-      >
-        😀 😎 👍 💯
-      </span>
-    </button>
-  </Component>
+      😀 😎 👍 💯
+    </span>
+  </button>
 </Button>
 `;
 
 exports[`Storyshots Button with text 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <Button
   onClick={[Function]}
 >
-  <Component
-    className="css-1yjiefr"
+  <button
+    className="emotion-0"
     onClick={[Function]}
   >
-    <button
-      className="css-1yjiefr"
-      onClick={[Function]}
-    >
-      Hello Button
-    </button>
-  </Component>
+    Hello Button
+  </button>
 </Button>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
+.emotion-9 {
+  margin: 15px;
+  max-width: 600px;
+  line-height: 1.4;
+  font-family: "Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;
+}
+
+.emotion-1 {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border: 1px solid #eae9e9;
+  border-radius: 4px;
+  background-color: #f3f2f2;
+  color: #3a3a3a;
+}
+
+.emotion-2 {
+  color: #1474f3;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-bottom: 1px solid #1474f3;
+  padding-bottom: 2px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.emotion-6 {
+  color: #1474f3;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-bottom: 1px solid #1474f3;
+  padding-bottom: 2px;
+}
+
+.emotion-8 {
+  opacity: 0.5;
+}
+
 <Welcome
   showApp={[Function]}
 >
-  <glamorous(article)>
+  <Styled(article)>
     <article
-      className="css-1fqbdip"
+      className="emotion-9"
     >
-      <glamorous(h1)>
+      <Styled(h1)>
         <h1
-          className="css-nil"
+          className="emotion-0"
         >
           Welcome to storybook
         </h1>
-      </glamorous(h1)>
+      </Styled(h1)>
       <p>
         This is a UI component dev environment for your app.
       </p>
       <p>
         We've added some basic stories inside the 
-        <glamorous(code)>
+        <Styled(code)>
           <code
-            className="css-mteq83"
+            className="emotion-1"
           >
             src/stories
           </code>
-        </glamorous(code)>
+        </Styled(code)>
          directory.
         <br />
         A story is a single state of one or more UI components. You can have as many stories as you want.
@@ -117,25 +181,25 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       </p>
       <p>
         See these sample 
-        <glamorous(glamorous(glamorous(a)))
+        <Styled(button)
           onClick={[Function]}
         >
           <button
-            className="css-1opliz7"
+            className="emotion-2"
             onClick={[Function]}
           >
             stories
           </button>
-        </glamorous(glamorous(glamorous(a)))>
+        </Styled(button)>
          for a component called
          
-        <glamorous(code)>
+        <Styled(code)>
           <code
-            className="css-mteq83"
+            className="emotion-1"
           >
             Button
           </code>
-        </glamorous(code)>
+        </Styled(code)>
         .
       </p>
       <p>
@@ -144,22 +208,22 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         You can also edit those components and see changes right away.
         <br />
         (Try editing the 
-        <glamorous(code)>
+        <Styled(code)>
           <code
-            className="css-mteq83"
+            className="emotion-1"
           >
             Button
           </code>
-        </glamorous(code)>
+        </Styled(code)>
          stories located at
          
-        <glamorous(code)>
+        <Styled(code)>
           <code
-            className="css-mteq83"
+            className="emotion-1"
           >
             src/stories/index.js
           </code>
-        </glamorous(code)>
+        </Styled(code)>
         .)
       </p>
       <p>
@@ -167,43 +231,43 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         <br />
         Have a look at the
          
-        <glamorous(a)
+        <Styled(a)
           href="https://storybook.js.org/basics/writing-stories"
           rel="noopener noreferrer"
           target="_blank"
         >
           <a
-            className="css-ca0824"
+            className="emotion-6"
             href="https://storybook.js.org/basics/writing-stories"
             rel="noopener noreferrer"
             target="_blank"
           >
             Writing Stories
           </a>
-        </glamorous(a)>
+        </Styled(a)>
          
         section in our documentation.
       </p>
-      <glamorous(p)>
+      <Styled(p)>
         <p
-          className="css-bwdon3"
+          className="emotion-8"
         >
           <b>
             NOTE:
           </b>
           <br />
           Have a look at the 
-          <glamorous(code)>
+          <Styled(code)>
             <code
-              className="css-mteq83"
+              className="emotion-1"
             >
               .storybook/webpack.config.js
             </code>
-          </glamorous(code)>
+          </Styled(code)>
            to add webpack loaders and plugins you are using in this project.
         </p>
-      </glamorous(p)>
+      </Styled(p)>
     </article>
-  </glamorous(article)>
+  </Styled(article)>
 </Welcome>
 `;

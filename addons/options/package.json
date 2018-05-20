@@ -9,12 +9,12 @@
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
-  "license": "MIT",
-  "main": "preview.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "license": "MIT",
+  "main": "preview.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },

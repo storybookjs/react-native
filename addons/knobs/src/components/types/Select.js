@@ -1,9 +1,8 @@
-/* eslint no-underscore-dangle: 0 */
-
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'react-emotion';
 
-const styles = {
+const Select = styled('select')({
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'middle',
@@ -15,7 +14,7 @@ const styles = {
   fontSize: 11,
   padding: '5px',
   color: '#555',
-};
+});
 
 class SelectType extends React.Component {
   renderOptionList({ options }) {
@@ -35,14 +34,9 @@ class SelectType extends React.Component {
     const { knob, onChange } = this.props;
 
     return (
-      <select
-        id={knob.name}
-        style={styles}
-        value={knob.value}
-        onChange={e => onChange(e.target.value)}
-      >
+      <Select id={knob.name} value={knob.value} onChange={e => onChange(e.target.value)}>
         {this.renderOptionList(knob)}
-      </select>
+      </Select>
     );
   }
 }

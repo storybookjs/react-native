@@ -1,28 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const styles = {
-  height: '26px',
-};
+import styled from 'react-emotion';
 
-class ButtonType extends React.Component {
-  render() {
-    const { knob, onClick } = this.props;
-    return (
-      <button
-        type="button"
-        id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
-        style={styles}
-        onClick={() => onClick(knob)}
-      >
-        {knob.name}
-      </button>
-    );
-  }
-}
+const Button = styled('button')({
+  height: '26px',
+});
+
+const ButtonType = ({ knob, onClick }) => (
+  <Button type="button" id={knob.name} onClick={() => onClick(knob)}>
+    {knob.name}
+  </Button>
+);
 
 ButtonType.defaultProps = {
   knob: {},

@@ -1,31 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const styles = {
-  info: {
-    backgroundColor: 'rgb(234, 234, 234)',
-    padding: '12px',
-    marginBottom: '10px',
-  },
-  help: {
-    margin: '0 0 12px',
-  },
-  helpUrl: {
-    marginTop: '12px',
-    textDecoration: 'underline',
-    color: 'rgb(130, 130, 130)',
-    display: 'block',
-  },
-};
+import styled from 'react-emotion';
+
+const Wrapper = styled('div')({
+  backgroundColor: 'rgb(234, 234, 234)',
+  padding: '12px',
+  marginBottom: '10px',
+});
+const Help = styled('p')({
+  margin: '0 0 12px',
+});
+const Link = styled('a')({
+  marginTop: '12px',
+  textDecoration: 'underline',
+  color: 'rgb(130, 130, 130)',
+  display: 'block',
+});
 
 function Info({ item }) {
   return (
-    <div style={styles.info}>
-      <p style={styles.help}>{item.help}</p>
-      <a style={styles.helpUrl} href={item.helpUrl} target="_blank">
+    <Wrapper>
+      <Help>{item.help}</Help>
+      <Link href={item.helpUrl} target="_blank">
         More info...
-      </a>
-    </div>
+      </Link>
+    </Wrapper>
   );
 }
 

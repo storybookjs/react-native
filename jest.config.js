@@ -32,6 +32,7 @@ module.exports = {
     'lib/**/*.{js,jsx}',
     'addons/**/*.{js,jsx}',
     '!**/cli/test/**',
+    '!**/dist/**',
     '!**/generators/**',
   ],
   coverageDirectory: 'coverage',

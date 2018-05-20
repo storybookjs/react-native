@@ -37,7 +37,8 @@ class ActionLogger extends Component {
 
 ActionLogger.propTypes = {
   onClear: PropTypes.func,
-  actions: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types
+  actions: PropTypes.array,
 };
 ActionLogger.defaultProps = {
   onClear: () => {},

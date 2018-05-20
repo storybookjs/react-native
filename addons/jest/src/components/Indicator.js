@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
-const Indicator = glamorous.div(
+const Indicator = styled('div')(
   ({ color, size }) => ({
     boxSizing: 'border-box',
     padding: `0 ${size / 2}px`,
