@@ -55,7 +55,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
             class="css-1e1vreg"
           >
             <div
-              class="css-1oma8ph"
+              class="css-whpk08"
             />
             <div
               class="css-vfn1gp"
@@ -156,7 +156,7 @@ exports[`Storyshots Components|Layout default 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-whpk08"
             />
             <div
               class="css-vfn1gp"
@@ -257,7 +257,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-whpk08"
             />
             <div
               class="css-1k65ze8"
@@ -433,7 +433,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-whpk08"
             />
             <div
               class="css-vfn1gp"
@@ -534,7 +534,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-whpk08"
             />
             <div
               class="css-vfn1gp"
