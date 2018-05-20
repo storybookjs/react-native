@@ -54,6 +54,8 @@
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",
-    "babel-runtime": ">=6.0.0"
+    "babel-runtime": ">=6.0.0",
+    "marko": "^4",
+    "marko-widgets": "^7"
   }
 }
