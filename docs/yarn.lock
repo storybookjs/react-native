@@ -32,11 +32,20 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-links@3.4.4", "@storybook/addon-links@^3.4.4":
+"@storybook/addon-links@3.4.4":
   version "3.4.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.4.tgz#ff2a7c810c97fe465b25e417752eeebb5322ed9c"
   dependencies:
     "@storybook/components" "3.4.4"
+    babel-runtime "^6.26.0"
+    global "^4.3.2"
+    prop-types "^15.6.1"
+
+"@storybook/addon-links@^3.4.5":
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.5.tgz#c885dae976f5084faa0ae026755f2d6068da034f"
+  dependencies:
+    "@storybook/components" "3.4.5"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
