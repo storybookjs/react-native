@@ -91,7 +91,7 @@ export class WithNotes extends React.Component {
     const channel = addons.getChannel();
 
     // send the notes to the channel.
-    channel.emit('kadira/notes/add_notes', notes);
+    channel.emit('MYADDON/add_notes', notes);
     // return children elements.
     return children;
   }
@@ -107,33 +107,27 @@ Then add the following code to the register.js.
 ```js
 import React from 'react';
 import addons from '@storybook/addons';
+import styled from 'emotion';
 
-const styles = {
-  notesPanel: {
-    margin: 10,
-    fontFamily: 'Arial',
-    fontSize: 14,
-    color: '#444',
-    width: '100%',
-    overflow: 'auto',
-  }
-};
+const NotesPanel = styled('div')({
+  margin: 10,
+  width: '100%',
+  overflow: 'auto',
+});
 
 class Notes extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {text: ''};
-    this.onAddNotes = this.onAddNotes.bind(this);
-  }
+  state = {
+    text: '',
+  };
 
-  onAddNotes(text) {
-    this.setState({text});
+  onAddNotes = text => {
+    this.setState({ text });
   }
 
   componentDidMount() {
     const { channel, api } = this.props;
     // Listen to the notes and render it.
-    channel.on('kadira/notes/add_notes', this.onAddNotes);
+    channel.on('MYADDON/add_notes', this.onAddNotes);
 
     // Clear the current notes on every story change.
     this.stopListeningOnStory = api.onStory(() => {
@@ -143,34 +137,33 @@ class Notes extends React.Component {
 
   render() {
     const { text } = this.state;
+    const { active } = this.props;
     const textAfterFormatted = text? text.trim().replace(/\n/g, '<br />') : "";
 
-    return (
-      <div style={styles.notesPanel}>
-        <div dangerouslySetInnerHTML={{__html: textAfterFormatted}} />
-      </div>
-    );
+    return active ? 
+      <NotesPanel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} /> :
+      null;
   }
 
   // This is some cleanup tasks when the Notes panel is unmounting.
   componentWillUnmount() {
-    if(this.stopListeningOnStory) {
+    if (this.stopListeningOnStory) {
       this.stopListeningOnStory();
     }
 
     this.unmounted = true;
     const { channel, api } = this.props;
-    channel.removeListener('kadira/notes/add_notes', this.onAddNotes);
+    channel.removeListener('MYADDON/add_notes', this.onAddNotes);
   }
 }
 
 // Register the addon with a unique name.
-addons.register('kadira/notes', (api) => {
+addons.register('MYADDON', (api) => {
   // Also need to set a unique name to the panel.
-  addons.addPanel('kadira/notes/panel', {
+  addons.addPanel('MYADDON/panel', {
     title: 'Notes',
-    render: () => (
-      <Notes channel={addons.getChannel()} api={api}/>
+    render: ({ active }) => (
+      <Notes channel={addons.getChannel()} api={api} active={active} />
     ),
   })
 })
@@ -184,6 +177,8 @@ Then it will listen to the channel and render the notes text on the panel. Have 
 
 It also listens to another event, called onStory, in the storybook API, which fires when the user selects a story. We use that event to clear the previous notes when selecting a story.
 
+Multiple addons can be loaded, but only a single panel can be shown, the render function will receive an `active` prop, which is true if the addon is shown. It is up to you to decide if this mean your component must be unmounted, or just visually hidden. This allows you to keep state but unmount expensive renderings.
+
 ### Register the addon
 
 Now, finally, we need to register the addon by importing it to the `.storybook/addons.js` file.
@@ -193,7 +188,7 @@ Now, finally, we need to register the addon by importing it to the `.storybook/a
 import '@storybook/addon-actions/register';
 
 // Our addon
-import '../src/notes-addon/register';
+import '../src/MYADDON/register';
 ```
 
 > Above code runs in the Manager App but not in the preview area.
@@ -247,4 +242,4 @@ When you are developing your addon as a package, you can't use `npm link` to add
 ### Package Maintenance
 
 Your packaged Storybook addon needs to be written in ES5. If you are using ES6, then you need to transpile it.
-In that case, we recommend to use [React CDK](https://github.com/kadirahq/react-cdk) for that.
+In that case, we recommend to use [React CDK](https://github.com/myhq/react-cdk) for that.
