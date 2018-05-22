@@ -147,7 +147,7 @@ To customize your defaults:
 
 ```js
 // config.js
-import infoAddon, { setDefaults } from '@storybook/addon-info';
+import { setDefaults } from '@storybook/addon-info';
 
 // addon-info
 setDefaults({
@@ -157,7 +157,6 @@ setDefaults({
   maxPropArrayLength: 10,
   maxPropStringLength: 100,
 });
-setAddon(infoAddon);
 ```
 
 ### Rendering a Custom Table
