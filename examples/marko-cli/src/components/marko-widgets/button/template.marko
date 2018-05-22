@@ -1,0 +1,21 @@
+<style>
+.btn.btn--danger {
+    color: white;
+    background: red;
+}
+
+.btn.btn--primary {
+    color: white;
+    background: blue;
+}
+</style>
+
+<${data.tag}
+    w-bind
+    w-body
+    w-onclick="handleClick"
+    type="button"
+    class=data.classes
+    disabled=data.disabled
+    ${data.htmlAttributes}>
+</>

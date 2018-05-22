@@ -93,7 +93,6 @@
     "lerna": "2.11.0",
     "lint-staged": "^7.1.0",
     "lodash": "^4.17.10",
-    "marko-loader": "^1.3.3",
     "npmlog": "^4.1.2",
     "polymer-webpack-loader": "^2.0.2",
     "prettier": "^1.12.1",

@@ -39,6 +39,10 @@ class ObjectType extends Component {
     this.onChange = debounce(props.onChange, 200);
   }
 
+  componentWillUnmount() {
+    this.onChange.cancel();
+  }
+
   handleChange = e => {
     const { value } = e.target;
 
