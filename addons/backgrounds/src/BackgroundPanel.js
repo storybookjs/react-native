@@ -130,8 +130,11 @@ export default class BackgroundPanel extends Component {
   }
 
   render() {
+    const { active } = this.props;
     const backgrounds = [...this.state.backgrounds];
-
+    if (!active) {
+      return null;
+    }
     if (!backgrounds.length) return <Instructions />;
 
     const hasDefault = backgrounds.filter(x => x.default).length;
@@ -149,6 +152,7 @@ export default class BackgroundPanel extends Component {
   }
 }
 BackgroundPanel.propTypes = {
+  active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,

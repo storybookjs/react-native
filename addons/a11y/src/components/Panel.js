@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import addons from '@storybook/addons';
+import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
 
@@ -17,36 +17,40 @@ const Violations = styled('span')({
 });
 
 class Panel extends Component {
-  constructor(props, ...args) {
-    super(props, ...args);
-    this.state = {
-      passes: [],
-      violations: [],
-    };
-    this.channel = addons.getChannel();
+  static propTypes = {
+    active: PropTypes.bool.isRequired,
+    channel: PropTypes.shape({
+      on: PropTypes.func,
+      emit: PropTypes.func,
+      removeListener: PropTypes.func,
+    }).isRequired,
+  };
 
-    this.onUpdate = this.onUpdate.bind(this);
-  }
+  state = {
+    passes: [],
+    violations: [],
+  };
 
   componentDidMount() {
-    this.channel.on(CHECK_EVENT_ID, this.onUpdate);
+    this.props.channel.on(CHECK_EVENT_ID, this.onUpdate);
   }
 
   componentWillUnmount() {
-    this.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
+    this.props.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
   }
 
-  onUpdate({ passes, violations }) {
+  onUpdate = ({ passes, violations }) => {
     this.setState({
       passes,
       violations,
     });
-  }
+  };
 
   render() {
     const { passes, violations } = this.state;
+    const { active } = this.props;
 
-    return (
+    return active ? (
       <Tabs
         tabs={[
           {
@@ -59,7 +63,7 @@ class Panel extends Component {
           },
         ]}
       />
-    );
+    ) : null;
   }
 }
 

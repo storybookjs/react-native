@@ -136,6 +136,11 @@ export default class Panel extends React.Component {
 
   render() {
     const { knobs, groupId } = this.state;
+    const { active } = this.props;
+
+    if (!active) {
+      return null;
+    }
 
     const groups = {};
     const groupIds = [];
@@ -190,12 +195,13 @@ export default class Panel extends React.Component {
 }
 
 Panel.propTypes = {
+  active: PropTypes.bool.isRequired,
+  onReset: PropTypes.object, // eslint-disable-line
   channel: PropTypes.shape({
     emit: PropTypes.func,
     on: PropTypes.func,
     removeListener: PropTypes.func,
   }).isRequired,
-  onReset: PropTypes.object, // eslint-disable-line
   api: PropTypes.shape({
     onStory: PropTypes.func,
     getQueryParam: PropTypes.func,

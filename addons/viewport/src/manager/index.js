@@ -7,12 +7,10 @@ import { ADDON_ID, PANEL_ID } from '../shared';
 
 const addChannel = api => {
   const channel = addons.getChannel();
-
   addons.addPanel(PANEL_ID, {
     title: 'Viewport',
-    render() {
-      return <Panel channel={channel} api={api} />;
-    },
+    // eslint-disable-next-line react/prop-types
+    render: ({ active }) => (active ? <Panel channel={channel} api={api} /> : null),
   });
 };
 

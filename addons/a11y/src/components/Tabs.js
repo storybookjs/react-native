@@ -6,6 +6,7 @@ import styled from 'react-emotion';
 const Container = styled('div')({
   width: '100%',
   position: 'relative',
+  minHeight: '100%',
 });
 
 const List = styled('div')({

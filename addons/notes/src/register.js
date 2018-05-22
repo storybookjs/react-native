@@ -62,11 +62,11 @@ Notes.defaultProps = {
   api: {},
 };
 
-// Register the addon with a unique name.
 addons.register('storybook/notes', api => {
-  // Also need to set a unique name to the panel.
+  const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    render: () => <Notes channel={addons.getChannel()} api={api} />,
+    // eslint-disable-next-line react/prop-types
+    render: ({ active }) => (active ? <Notes channel={channel} api={api} /> : null),
   });
 });

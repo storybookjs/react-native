@@ -179,7 +179,8 @@ export default class StoryPanel extends Component {
   };
 
   render() {
-    return (
+    const { active } = this.props;
+    return active ? (
       <SyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
@@ -189,11 +190,12 @@ export default class StoryPanel extends Component {
       >
         {this.state.source}
       </SyntaxHighlighter>
-    );
+    ) : null;
   }
 }
 
 StoryPanel.propTypes = {
+  active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     selectStory: PropTypes.func.isRequired,
   }).isRequired,
