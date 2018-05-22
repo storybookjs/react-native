@@ -55,7 +55,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
             class="css-1e1vreg"
           >
             <div
-              class="css-1oma8ph"
+              class="css-1tvys8v"
             />
             <div
               class="css-vfn1gp"
@@ -156,7 +156,7 @@ exports[`Storyshots Components|Layout default 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-1tvys8v"
             />
             <div
               class="css-vfn1gp"
@@ -257,7 +257,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-1tvys8v"
             />
             <div
               class="css-1k65ze8"
@@ -312,17 +312,17 @@ exports[`Storyshots Components|Layout mobile 1`] = `
       class="css-1kes5pl"
     >
       <div
-        class="css-6km6mc"
+        class="css-1kukg5m"
       >
         <div
-          class="css-4nm8j5"
+          class="css-l23j5o"
           role="tab"
           type="button"
         >
           Navigator
         </div>
         <div
-          class="css-bf047d"
+          class="css-19n0dxh"
           role="tab"
           selected=""
           type="button"
@@ -330,7 +330,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
           Preview
         </div>
         <div
-          class="css-4nm8j5"
+          class="css-l23j5o"
           role="tab"
           type="button"
         >
@@ -352,7 +352,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
       </div>
     </div>
     <div
-      class="css-1387n1o"
+      class="css-1p46ag7"
       selected=""
     >
       <div
@@ -433,7 +433,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-1tvys8v"
             />
             <div
               class="css-vfn1gp"
@@ -534,7 +534,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
             class="css-xlbk67"
           >
             <div
-              class="css-1oma8ph"
+              class="css-1tvys8v"
             />
             <div
               class="css-vfn1gp"

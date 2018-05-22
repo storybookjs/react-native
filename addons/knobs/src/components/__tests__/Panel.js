@@ -6,14 +6,14 @@ describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
     const testChannel = { on: jest.fn() };
     const testApi = { onStory: jest.fn() };
-    shallow(<Panel channel={testChannel} api={testApi} />);
+    shallow(<Panel channel={testChannel} api={testApi} active />);
     expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
   });
 
   it('should subscribe to onStory event', () => {
     const testChannel = { on: jest.fn() };
     const testApi = { onStory: jest.fn() };
-    shallow(<Panel channel={testChannel} api={testApi} />);
+    shallow(<Panel channel={testChannel} api={testApi} active />);
 
     expect(testApi.onStory).toHaveBeenCalled();
     expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
@@ -41,7 +41,7 @@ describe('Panel', () => {
         onStory: jest.fn(),
       };
 
-      shallow(<Panel channel={testChannel} api={testApi} />);
+      shallow(<Panel channel={testChannel} api={testApi} active />);
       const setKnobsHandler = handlers['addon:knobs:setKnobs'];
 
       const knobs = {
@@ -88,7 +88,7 @@ describe('Panel', () => {
         onStory: jest.fn(),
       };
 
-      const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
+      const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
       const setKnobsHandler = handlers['addon:knobs:setKnobs'];
 
       const knobs = {
@@ -130,7 +130,7 @@ describe('Panel', () => {
         onStory: jest.fn(),
       };
 
-      const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
+      const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
 
       const testChangedKnob = {
         name: 'foo',

@@ -1,14 +1,240 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Tabs no panels 1`] = `
+exports[`Storyshots Components|Tabs statefull - absolute 1`] = `
 <div
   style="height:calc(100vh - 20px)"
 >
-  <p
-    class="css-hftiue"
+  <div
+    class="css-1umeq4r"
   >
-    no panels available
-  </p>
+    <div
+      class="css-1kukg5m"
+      role="tablist"
+    >
+      <div
+        class="css-19n0dxh"
+        role="tab"
+        selected=""
+        type="button"
+      >
+        Tab title #1
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </div>
+    </div>
+    <div
+      class="css-2bpp8s"
+    >
+      <div
+        id="test1"
+      >
+        CONTENT 1
+      </div>
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs statefull - no initial 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-12o81cp"
+  >
+    <div
+      class="css-1kukg5m"
+      role="tablist"
+    >
+      <div
+        class="css-19n0dxh"
+        role="tab"
+        selected=""
+        type="button"
+      >
+        Tab title #1
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </div>
+    </div>
+    <div
+      class="css-13o7eu2"
+    >
+      <div
+        id="test1"
+      >
+        CONTENT 1
+      </div>
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs statefull - with initial 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-12o81cp"
+  >
+    <div
+      class="css-1kukg5m"
+      role="tablist"
+    >
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #1
+      </div>
+      <div
+        class="css-19n0dxh"
+        role="tab"
+        selected=""
+        type="button"
+      >
+        Tab title #2
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </div>
+    </div>
+    <div
+      class="css-13o7eu2"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:block"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -17,50 +243,69 @@ exports[`Storyshots Components|Tabs stateless - default 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-nghpow"
+    class="css-12o81cp"
   >
     <div
-      class="css-6km6mc"
+      class="css-1kukg5m"
       role="tablist"
     >
       <div
-        class="css-4nm8j5"
+        class="css-l23j5o"
         role="tab"
         type="button"
       >
-        Test 1
+        Tab title #1
       </div>
       <div
-        class="css-bf047d"
+        class="css-l23j5o"
         role="tab"
-        selected=""
         type="button"
       >
-        Test 2
+        Tab title #2
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </div>
+      <div
+        class="css-l23j5o"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
       </div>
     </div>
     <div
-      class="css-1vwzg2y"
+      class="css-13o7eu2"
     >
       <div
-        class="css-1hyfx7x"
-        hidden=""
-        role="tabpanel"
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
       >
-        <div
-          id="test1"
-        >
-          TEST 1
-        </div>
+        CONTENT 2
       </div>
       <div
-        class="css-13pmxen"
-        role="tabpanel"
+        class="css-1hyfx7x"
       >
-        <div
-          id="test2"
-        >
-          TEST 2
+        <div>
+          CONTENT 6
         </div>
       </div>
     </div>
@@ -68,170 +313,14 @@ exports[`Storyshots Components|Tabs stateless - default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs stateless 1`] = `
+exports[`Storyshots Components|Tabs stateless - empty 1`] = `
 <div
   style="height:calc(100vh - 20px)"
 >
-  <div
-    class="css-nghpow"
+  <p
+    class="css-hftiue"
   >
-    <div
-      class="css-6km6mc"
-      role="tablist"
-    >
-      <div
-        class="css-4nm8j5"
-        role="tab"
-        type="button"
-      >
-        Test 1
-      </div>
-      <div
-        class="css-bf047d"
-        role="tab"
-        selected=""
-        type="button"
-      >
-        Test 2
-      </div>
-    </div>
-    <div
-      class="css-1vwzg2y"
-    >
-      <div
-        class="css-1hyfx7x"
-        hidden=""
-        role="tabpanel"
-      >
-        <div
-          id="test1"
-        >
-          TEST 1
-        </div>
-      </div>
-      <div
-        class="css-13pmxen"
-        role="tabpanel"
-      >
-        <div
-          id="test2"
-        >
-          TEST 2
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|Tabs with State - no initial 1`] = `
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="css-nghpow"
-  >
-    <div
-      class="css-6km6mc"
-      role="tablist"
-    >
-      <div
-        class="css-4nm8j5"
-        role="tab"
-        type="button"
-      >
-        Test 1
-      </div>
-      <div
-        class="css-bf047d"
-        role="tab"
-        selected=""
-        type="button"
-      >
-        Test 2
-      </div>
-    </div>
-    <div
-      class="css-1vwzg2y"
-    >
-      <div
-        class="css-1hyfx7x"
-        hidden=""
-        role="tabpanel"
-      >
-        <div
-          id="test1"
-        >
-          TEST 1
-        </div>
-      </div>
-      <div
-        class="css-13pmxen"
-        role="tabpanel"
-      >
-        <div
-          id="test2"
-        >
-          TEST 2
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|Tabs with State - with initial 1`] = `
-<div
-  style="height:calc(100vh - 20px)"
->
-  <div
-    class="css-nghpow"
-  >
-    <div
-      class="css-6km6mc"
-      role="tablist"
-    >
-      <div
-        class="css-4nm8j5"
-        role="tab"
-        type="button"
-      >
-        Test 1
-      </div>
-      <div
-        class="css-bf047d"
-        role="tab"
-        selected=""
-        type="button"
-      >
-        Test 2
-      </div>
-    </div>
-    <div
-      class="css-1vwzg2y"
-    >
-      <div
-        class="css-1hyfx7x"
-        hidden=""
-        role="tabpanel"
-      >
-        <div
-          id="test1"
-        >
-          TEST 1
-        </div>
-      </div>
-      <div
-        class="css-13pmxen"
-        role="tabpanel"
-      >
-        <div
-          id="test2"
-        >
-          TEST 2
-        </div>
-      </div>
-    </div>
-  </div>
+    no panels available
+  </p>
 </div>
 `;
