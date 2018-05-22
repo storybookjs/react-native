@@ -86,7 +86,7 @@
     "jest-enzyme": "^6.0.0",
     "jest-glamor-react": "^4.3.0",
     "jest-image-snapshot": "^2.4.1",
-    "jest-jasmine2": "^22.4.3",
+    "jest-jasmine2": "^22.4.4",
     "jest-preset-angular": "^5.2.2",
     "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.4.0",
