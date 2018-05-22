@@ -36,11 +36,11 @@ storiesOf('Component', module)
   .add('simple info',
     withInfo(`
       description or documentation about my component, supports markdown
-    
+
       ~~~js
       <Button>Click Here</Button>
       ~~~
-    
+
     `)(() =>
       <Component>Click the "?" mark at top-right to view the info.</Component>
     )
@@ -141,39 +141,7 @@ setDefaults({
 }
 ```
 
-## Deprecated usage
-
-There is also a deprecated API that is slated for removal in Storybook 4.0.
-
-```js
-import { configure, setAddon } from '@storybook/react';
-import infoAddon from '@storybook/addon-info';
-
-setAddon(infoAddon);
-
-configure(function () {
-  //...
-}, module);
-```
-
-Then create your stories with the `.addWithInfo` API.
-
-```js
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Component from './Component';
-
-storiesOf('Component')
-  .addWithInfo(
-    'simple usage',
-    `This is the basic usage with the button with providing a label to show the text.`,
-    () => (
-      <Component>Click the "?" mark at top-right to view the info.</Component>
-    ),
-  );
-```
-
-> Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
+## Customizing defaults
 
 To customize your defaults:
 

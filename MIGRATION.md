@@ -2,6 +2,9 @@
 
 ## Table of contents
 
+-   [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
+    -   [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
+    -   [Removed addWithInfo](#removed-add-with-info)
 -   [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
@@ -19,11 +22,16 @@
 
 ## From 3.4.x to 4.0
 
-* Keyboard shortcuts have been moved:
+### Keyboard shortcuts moved
+
   - Addon Panel to `Z`
   - Stories Panel to `X`
   - Show Search to `O`
   - Addon Panel right side to `G`
+
+### Removed addWithInfo
+
+`Addon-info`'s `addWithInfo` has been marked deprecated since 3.2. In 4.0 we've removed it completely. See the package [README](https://github.com/storybooks/storybook/blob/master/addons/info/README.md) for the proper usage.
 
 ## From version 3.3.x to 3.4.x
 
