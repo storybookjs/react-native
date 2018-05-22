@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@angular/cli": "1.7.4",
-    "@angular/compiler-cli": "^5.2.10",
+    "@angular/compiler-cli": "^5.2.11",
     "@storybook/addon-actions": "4.0.0-alpha.7",
     "@storybook/addon-centered": "4.0.0-alpha.7",
     "@storybook/addon-jest": "4.0.0-alpha.7",
