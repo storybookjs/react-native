@@ -42,7 +42,7 @@
     "@angular/compiler": "^5.2.11",
     "@angular/core": "^5.2.11",
     "@angular/forms": "^5.2.11",
-    "@angular/platform-browser": "^5.2.10",
+    "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "^5.2.10",
     "@ngrx/store": "^5.2.0",
     "core-js": "^2.5.6",
