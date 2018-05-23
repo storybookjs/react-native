@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { ListView, View, Text, TouchableOpacity } from 'react-native';
+import { SectionList, View, Text, TouchableOpacity } from 'react-native';
 import Events from '@storybook/core-events';
 import style from './style';
 
@@ -38,13 +38,8 @@ export default class StoryListView extends Component {
   constructor(props, ...args) {
     super(props, ...args);
 
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
-      sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
-    });
-
     this.state = {
-      dataSource: ds.cloneWithRowsAndSections({}),
+      data: [],
     };
 
     this.storyAddedHandler = this.handleStoryAdded.bind(this);
@@ -68,12 +63,10 @@ export default class StoryListView extends Component {
 
   handleStoryAdded() {
     if (this.props.stories) {
-      const data = this.props.stories.dumpStoryBook();
-
-      const sections = data.reduce(
-        (map, section) => ({
-          ...map,
-          [section.kind]: section.stories.map(story => ({
+      const data = this.props.stories.dumpStoryBook().map(
+        section => ({
+          title: section.kind,
+          data: section.stories.map(story => ({
             key: story,
             name: story,
             kind: section.kind,
@@ -82,7 +75,7 @@ export default class StoryListView extends Component {
         {}
       );
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRowsAndSections(sections),
+        data,
       });
     }
   }
@@ -93,10 +86,10 @@ export default class StoryListView extends Component {
 
   render() {
     return (
-      <ListView
+      <SectionList
         testID="Storybook.ListView"
         style={[style.list, { width: this.props.width }]}
-        renderRow={item => (
+        renderItem={({ item }) => (
           <ListItem
             title={item.name}
             kind={item.kind}
@@ -106,10 +99,11 @@ export default class StoryListView extends Component {
             onPress={() => this.changeStory(item.kind, item.name)}
           />
         )}
-        renderSectionHeader={(sectionData, sectionName) => (
-          <SectionHeader title={sectionName} selected={sectionName === this.props.selectedKind} />
+        renderSectionHeader={({ section: { title } }) => (
+          <SectionHeader title={title} selected={title === this.props.selectedKind} />
         )}
-        dataSource={this.state.dataSource}
+        keyExtractor={(item, index) => item + index}
+        sections={this.state.data}
         stickySectionHeadersEnabled={false}
       />
     );
