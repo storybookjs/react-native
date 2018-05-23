@@ -18,9 +18,7 @@ const BooleanType = ({ knob, onChange }) => (
   <Input
     id={knob.name}
     type="checkbox"
-    onChange={e => {
-      onChange(e.target.checked);
-    }}
+    onChange={e => onChange(e.target.checked)}
     checked={knob.value}
   />
 );
