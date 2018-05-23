@@ -14,23 +14,16 @@ const Input = styled('input')({
   color: '#555',
 });
 
-class BooleanType extends React.Component {
-  render() {
-    const { knob, onChange } = this.props;
-
-    return (
-      <Input
-        id={knob.name}
-        ref={c => {
-          this.input = c;
-        }}
-        type="checkbox"
-        onChange={() => onChange(this.input.checked)}
-        checked={knob.value}
-      />
-    );
-  }
-}
+const BooleanType = ({ knob, onChange }) => (
+  <Input
+    id={knob.name}
+    type="checkbox"
+    onChange={e => {
+      onChange(e.target.checked);
+    }}
+    checked={knob.value}
+  />
+);
 
 BooleanType.defaultProps = {
   knob: {},
