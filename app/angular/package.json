@@ -25,7 +25,7 @@
     "@storybook/core": "4.0.0-alpha.7",
     "@storybook/node-logger": "4.0.0-alpha.7",
     "@storybook/react-dev-utils": "^5.0.0",
-    "airbnb-js-shims": "^1.4.1",
+    "airbnb-js-shims": "^1.5.1",
     "angular2-template-loader": "^0.6.2",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.1",
