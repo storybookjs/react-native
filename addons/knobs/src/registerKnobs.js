@@ -15,16 +15,12 @@ function setPaneKnobs(timestamp = +new Date()) {
 }
 
 function knobChanged(change) {
-  const { name, type, value } = change;
+  const { name, value } = change;
 
   // Update the related knob and it's value.
   const knobOptions = knobStore.get(name);
 
-  if (type === 'boolean') {
-    knobOptions.value = !knobOptions.value;
-  } else {
-    knobOptions.value = value;
-  }
+  knobOptions.value = value;
   knobStore.markAllUnused();
 
   forceReRender();
