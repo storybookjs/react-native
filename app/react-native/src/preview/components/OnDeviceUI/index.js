@@ -50,7 +50,7 @@ export default class OnDeviceUI extends Component {
     });
   };
 
-  handleStoryChange = (storyFn, selection) => {
+  handleStoryChange = selection => {
     const { kind, story } = selection;
     this.setState({
       selectedKind: kind,
