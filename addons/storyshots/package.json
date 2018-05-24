@@ -32,7 +32,7 @@
     "@storybook/addon-links": "4.0.0-alpha.7",
     "@storybook/addons": "4.0.0-alpha.7",
     "@storybook/react": "4.0.0-alpha.7",
-    "enzyme-to-json": "^3.3.3",
+    "enzyme-to-json": "^3.3.4",
     "react": "^16.3.2"
   },
   "peerDependencies": {

@@ -71,14 +71,14 @@ storiesOf('Button', module)
 
 If you wish to process action data before sending them over to the logger, you can do it with action decorators.
 
-`decorateAction` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorateAction` returns a object with two functions: `action` and `actions`, that act like the above, except they log the modified arguments instead of the original arguments.
+`decorate` takes an array of decorator functions. Each decorator function is passed an array of arguments, and should return a new arguments array to use. `decorate` returns a object with two functions: `action` and `actions`, that act like the above, except they log the modified arguments instead of the original arguments.
 
 ```js
-import { decorateAction } from '@storybook/addon-actions';
+import { decorate } from '@storybook/addon-actions';
 
 import Button from './button';
 
-const firstArg = decorateAction([args => args.slice(0, 1)]);
+const firstArg = decorate([args => args.slice(0, 1)]);
 
 storiesOf('Button', module).add('default view', () => (
   <Button onClick={firstArg.action('button-click')}>Hello World!</Button>

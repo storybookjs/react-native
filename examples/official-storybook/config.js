@@ -17,11 +17,7 @@ setOptions({
   hierarchyRootSeparator: /\|/,
 });
 
-addDecorator(Story => (
-  <ThemeProvider theme={themes.normal}>
-    <Story />
-  </ThemeProvider>
-));
+addDecorator(story => <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>);
 
 configureViewport({
   viewports: {
