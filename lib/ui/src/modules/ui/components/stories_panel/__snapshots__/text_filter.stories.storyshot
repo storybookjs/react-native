@@ -5,7 +5,7 @@ exports[`Storyshots ui/stories/TextFilter with filterText 1`] = `
   class="css-79elbk"
 >
   <input
-    class="css-11zcadk"
+    class="css-1n8j8p8"
     name="filter-text"
     placeholder="Filter"
     type="text"
@@ -24,7 +24,7 @@ exports[`Storyshots ui/stories/TextFilter without filterText 1`] = `
   class="css-79elbk"
 >
   <input
-    class="css-11zcadk"
+    class="css-1n8j8p8"
     name="filter-text"
     placeholder="Filter"
     type="text"

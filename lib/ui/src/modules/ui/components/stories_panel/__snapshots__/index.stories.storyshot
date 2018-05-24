@@ -8,15 +8,11 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
     class="css-5xz1i6"
   >
     <a
-      class="css-108o064"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
-    >
-      <h3
-        class="css-1852r2"
-      />
-    </a>
+    />
     <button
       class="css-i6e0jg"
     >
@@ -27,7 +23,7 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
     class="css-79elbk"
   >
     <input
-      class="css-11zcadk"
+      class="css-1n8j8p8"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -45,15 +41,11 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
     class="css-5xz1i6"
   >
     <a
-      class="css-108o064"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
-    >
-      <h3
-        class="css-1852r2"
-      />
-    </a>
+    />
     <button
       class="css-i6e0jg"
     >
@@ -64,7 +56,7 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
     class="css-79elbk"
   >
     <input
-      class="css-11zcadk"
+      class="css-1n8j8p8"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -82,15 +74,11 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
     class="css-5xz1i6"
   >
     <a
-      class="css-108o064"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
-    >
-      <h3
-        class="css-1852r2"
-      />
-    </a>
+    />
     <button
       class="css-i6e0jg"
     >
@@ -101,7 +89,7 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
     class="css-79elbk"
   >
     <input
-      class="css-11zcadk"
+      class="css-1n8j8p8"
       name="filter-text"
       placeholder="Filter"
       type="text"
@@ -119,15 +107,11 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
     class="css-5xz1i6"
   >
     <a
-      class="css-108o064"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
-    >
-      <h3
-        class="css-1852r2"
-      />
-    </a>
+    />
     <button
       class="css-i6e0jg"
     >
@@ -138,7 +122,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
     class="css-79elbk"
   >
     <input
-      class="css-11zcadk"
+      class="css-1n8j8p8"
       name="filter-text"
       placeholder="Filter"
       type="text"

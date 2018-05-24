@@ -5,21 +5,21 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-1umeq4r"
+    class="css-1smyy1s"
   >
     <div
-      class="css-1kukg5m"
+      class="css-64377y"
       role="tablist"
     >
       <div
-        class="css-l23j5o"
+        class="css-ys14cd"
         role="tab"
         type="button"
       >
         Test 1
       </div>
       <div
-        class="css-19n0dxh"
+        class="css-1hpmr8i"
         role="tab"
         selected=""
         type="button"
