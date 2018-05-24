@@ -38,7 +38,7 @@
     "react-icons": "^2.2.7",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.4.4",
-    "react-treebeard": "^2.1.0"
+    "@ndelangen/react-treebeard": "^2.1.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.7",
