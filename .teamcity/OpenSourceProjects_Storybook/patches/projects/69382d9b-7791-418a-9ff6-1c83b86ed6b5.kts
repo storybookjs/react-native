@@ -10,6 +10,12 @@ To apply the patch, change the project with uuid = '69382d9b-7791-418a-9ff6-1c83
 accordingly and delete the patch script.
 */
 changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
+    params {
+        add {
+            param("docker.node.version", "10.1")
+        }
+    }
+
     features {
         add {
             feature {
