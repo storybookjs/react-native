@@ -38,13 +38,13 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
                     [
                       {
                         "type": "valueType",
-                        "title": "Total Number of Lines of Code",
+                        "title": "Covered Percentage of JS Lines",
                         "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
-                        "key": "CodeCoverageAbsLTotal"
+                        "key": "Covered Percentage of JS Lines"
                       }
                     ]
                 """.trimIndent())
-                param("format", "integer")
+                param("format", "percent")
                 param("hideFilters", "")
                 param("title", "New chart title")
                 param("defaultFilters", "")
