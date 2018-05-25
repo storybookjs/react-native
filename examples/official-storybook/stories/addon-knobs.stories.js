@@ -31,6 +31,7 @@ ItemLoader.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 let injectedItems = [];
+let injectedIsLoading = false;
 
 storiesOf('Addons|Knobs.withKnobs', module)
   .addDecorator(withKnobs)
@@ -156,13 +157,19 @@ storiesOf('Addons|Knobs.withKnobs', module)
     );
   })
   .add('triggers actions via button', () => {
-    button('Load the items', () => {
-      injectedItems = ['pencil', 'pen', 'eraser'];
+    button('Toggle item list state', () => {
+      if (!injectedIsLoading && injectedItems.length === 0) {
+        injectedIsLoading = true;
+      } else if (injectedIsLoading && injectedItems.length === 0) {
+        injectedIsLoading = false;
+        injectedItems = ['pencil', 'pen', 'eraser'];
+      } else if (injectedItems.length > 0) {
+        injectedItems = [];
+      }
     });
-    const injectedIsLoading = boolean('Toggle loading status', false);
     return (
       <div>
-        <p>Hit the knob load button and it will change the items list</p>
+        <p>Hit the knob button and it will toggle the items list into multiple states.</p>
         <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
       </div>
     );
