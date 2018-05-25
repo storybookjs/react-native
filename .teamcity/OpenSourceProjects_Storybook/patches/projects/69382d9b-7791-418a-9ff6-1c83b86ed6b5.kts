@@ -30,5 +30,24 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
                 param("seriesTitle", "Serie")
             }
         }
+        add {
+            feature {
+                type = "project-graphs"
+                id = "PROJECT_EXT_307"
+                param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Total Number of JS Branches",
+                        "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
+                        "key": "Total Number of JS Branches"
+                      }
+                    ]
+                """.trimIndent())
+                param("format", "integer")
+                param("title", "New chart title")
+                param("seriesTitle", "Serie")
+            }
+        }
     }
 }
