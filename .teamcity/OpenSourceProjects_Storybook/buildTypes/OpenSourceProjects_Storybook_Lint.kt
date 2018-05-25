@@ -22,12 +22,12 @@ object OpenSourceProjects_Storybook_Lint : BuildType({
                 yarn
                 yarn bootstrap --core --docs
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Lint"
             scriptContent = "yarn lint:ci"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
