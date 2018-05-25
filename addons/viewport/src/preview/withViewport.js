@@ -11,7 +11,7 @@ import {
 function noop() {}
 let handler = noop;
 
-const callHandler = (...args) => handler(...args)
+const callHandler = (...args) => handler(...args);
 
 const subscription = () => {
   const channel = addons.getChannel();
