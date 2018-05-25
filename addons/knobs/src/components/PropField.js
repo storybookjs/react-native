@@ -23,23 +23,14 @@ const Label = styled('label')({
   fontWeight: 600,
 });
 
-export default class PropField extends React.Component {
-  onChange = e => {
-    this.props.onChange(e.target.value);
-  };
-
-  render() {
-    const { onChange, onClick, knob } = this.props;
-
-    const InputType = TypeMap[knob.type] || InvalidType;
-
-    return (
-      <Field>
-        <Label htmlFor={knob.name}>{!knob.hideLabel && `${knob.name}`}</Label>
-        <InputType knob={knob} onChange={onChange} onClick={onClick} />
-      </Field>
-    );
-  }
+export default function PropField({ onChange, onClick, knob }) {
+  const InputType = TypeMap[knob.type] || InvalidType;
+  return (
+    <Field>
+      <Label htmlFor={knob.name}>{!knob.hideLabel && `${knob.name}`}</Label>
+      <InputType knob={knob} onChange={onChange} onClick={onClick} />
+    </Field>
+  );
 }
 
 PropField.propTypes = {

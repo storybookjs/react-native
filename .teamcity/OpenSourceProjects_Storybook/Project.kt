@@ -104,5 +104,62 @@ object Project : Project({
             param("title", "Demo")
             param("type", "BuildReportTab")
         }
+        feature {
+            type = "project-graphs"
+            id = "PROJECT_EXT_306"
+            param("series", """
+                [
+                  {
+                    "type": "valueType",
+                    "title": "Build Duration (all stages)",
+                    "sourceBuildTypeId": "OpenSourceProjects_Storybook_Build_2",
+                    "key": "BuildDuration"
+                  }
+                ]
+            """.trimIndent())
+            param("format", "duration")
+            param("title", "New chart title")
+            param("seriesTitle", "Serie")
+        }
+        feature {
+            type = "project-graphs"
+            id = "PROJECT_EXT_307"
+            param("series", """
+                [
+                  {
+                    "type": "valueType",
+                    "title": "Covered Percentage of JS Lines",
+                    "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
+                    "key": "Covered Percentage of JS Lines"
+                  }
+                ]
+            """.trimIndent())
+            param("format", "percent")
+            param("hideFilters", "")
+            param("title", "New chart title")
+            param("defaultFilters", "")
+            param("seriesTitle", "Serie")
+        }
+feature {
+            type = "project-graphs"
+            id = "PROJECT_EXT_308"
+            param("series", """
+                [
+                  {
+                    "type": "valueType",
+                    "title": "Total Number of JS Statements",
+                    "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
+                    "key": "Total Number of JS Statements"
+                  }
+                ]
+            """.trimIndent())
+            param("format", "integer")
+            param("title", "New chart title")
+            param("seriesTitle", "Serie")
+        }
+    }
+
+    params {
+        param("docker.node.version", "10.1")
     }
 })
