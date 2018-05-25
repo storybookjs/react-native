@@ -38,14 +38,16 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
                     [
                       {
                         "type": "valueType",
-                        "title": "Total Number of JS Branches",
+                        "title": "Total Number of Lines of Code",
                         "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
-                        "key": "Total Number of JS Branches"
+                        "key": "CodeCoverageAbsLTotal"
                       }
                     ]
                 """.trimIndent())
                 param("format", "integer")
+                param("hideFilters", "")
                 param("title", "New chart title")
+                param("defaultFilters", "")
                 param("seriesTitle", "Serie")
             }
         }
