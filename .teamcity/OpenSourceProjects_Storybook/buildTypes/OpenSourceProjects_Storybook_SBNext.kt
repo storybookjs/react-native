@@ -24,30 +24,30 @@ object OpenSourceProjects_Storybook_SBNext : BuildType({
         script {
             name = "Install"
             scriptContent = "yarn"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Lint"
             scriptContent = "yarn lint"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Test"
             enabled = false
             scriptContent = "yarn test"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Build"
             workingDir = "server"
             scriptContent = "yarn build"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Export"
             workingDir = "demo"
             scriptContent = "yarn export"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
