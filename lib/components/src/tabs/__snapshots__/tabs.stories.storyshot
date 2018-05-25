@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Tabs statefull - absolute 1`] = `
+exports[`Storyshots Components|Tabs stateful - absolute 1`] = `
 <div
   style="height:calc(100vh - 20px)"
 >
@@ -81,7 +81,7 @@ exports[`Storyshots Components|Tabs statefull - absolute 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs statefull - no initial 1`] = `
+exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 <div
   style="height:calc(100vh - 20px)"
 >
@@ -162,7 +162,7 @@ exports[`Storyshots Components|Tabs statefull - no initial 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Tabs statefull - with initial 1`] = `
+exports[`Storyshots Components|Tabs stateful - with initial 1`] = `
 <div
   style="height:calc(100vh - 20px)"
 >

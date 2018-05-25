@@ -133,17 +133,17 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
     class="css-7w6khc"
   >
     <ul
-      style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+      class="css-h3ek8a"
     >
       <li
-        style="position:relative"
+        class="css-79elbk"
       >
         <span>
           <ul
-            style="padding-left:19px;list-style:none"
+            class="css-vq3qyb"
           >
             <li
-              style="position:relative"
+              class="css-79elbk"
             >
               <div
                 data-name="kk"
@@ -151,9 +151,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
                 style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
                 tabindex="0"
               >
-                <div
-                  data-radium="true"
-                >
+                <div>
                   <div
                     style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                   >
@@ -164,7 +162,7 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
                         fill="currentColor"
                         height="10"
                         preserveAspectRatio="xMidYMid meet"
-                        style="vertical-align:top;fill:#9DA5AB"
+                        style="vertical-align:top;fill:currentColor"
                         viewBox="0 0 40 40"
                         width="10"
                       >
@@ -177,10 +175,10 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
                     </div>
                   </div>
                   <div
-                    style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                    class="css-1si3szf"
                   >
                     <div
-                      style="line-height:18px;padding:1px 0 5px"
+                      class="css-h8sbw5"
                     >
                       kk
                     </div>
@@ -189,22 +187,22 @@ exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
               </div>
               <span>
                 <ul
-                  style="padding-left:19px;list-style:none"
+                  class="css-vq3qyb"
                 >
                   <li
-                    style="position:relative"
+                    class="css-79elbk"
                   >
                     <a
-                      class="css-1xfwvjl"
+                      class="css-oato19"
                       href="?selectedKind=kk&selectedStory=bb&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                     >
-                      <div
-                        data-radium="true"
-                      >
+                      <div>
                         <div
-                          style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                          class="css-1si3szf"
                         >
-                          <div>
+                          <div
+                            class="css-0"
+                          >
                             bb
                           </div>
                         </div>

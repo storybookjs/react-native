@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components|Navigation/MenuLink active 1`] = `
 <a
-  class="css-1xfwvjl"
+  class="css-oato19"
   href="http://google.com"
 >
   Link
@@ -11,7 +11,7 @@ exports[`Storyshots Components|Navigation/MenuLink active 1`] = `
 
 exports[`Storyshots Components|Navigation/MenuLink default 1`] = `
 <a
-  class="css-1enusis"
+  class="css-1jhmhe9"
   href="http://google.com"
 >
   Link
@@ -23,7 +23,7 @@ exports[`Storyshots Components|Navigation/MenuLink with knobs 1`] = `
   style="width:90px"
 >
   <a
-    class="css-1xfwvjl"
+    class="css-oato19"
     href="/"
   >
     Menu link item
