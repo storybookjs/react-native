@@ -54,6 +54,7 @@
     "@angular/compiler-cli": "^5.2.11",
     "@storybook/addon-actions": "4.0.0-alpha.7",
     "@storybook/addon-centered": "4.0.0-alpha.7",
+    "@storybook/addon-backgrounds": "4.0.0-alpha.7",
     "@storybook/addon-jest": "4.0.0-alpha.7",
     "@storybook/addon-knobs": "4.0.0-alpha.7",
     "@storybook/addon-links": "4.0.0-alpha.7",
