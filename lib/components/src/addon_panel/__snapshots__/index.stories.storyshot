@@ -11,21 +11,21 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
       class="css-64377y"
       role="tablist"
     >
-      <div
-        class="css-ys14cd"
+      <button
+        class="css-1540u6r"
         role="tab"
         type="button"
       >
         Test 1
-      </div>
-      <div
-        class="css-1hpmr8i"
+      </button>
+      <button
+        class="css-133zstr"
         role="tab"
         selected=""
         type="button"
       >
         Test 2
-      </div>
+      </button>
     </div>
     <div
       class="css-2bpp8s"

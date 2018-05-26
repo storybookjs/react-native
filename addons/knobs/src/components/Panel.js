@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
 
-import { Placeholder } from '@storybook/components';
-import GroupTabs from './GroupTabs';
+import { Placeholder, TabWrapper, TabsState } from '@storybook/components';
 import PropForm from './PropForm';
-import Types from './types';
 
 const getTimestamp = () => +new Date();
 
@@ -14,12 +12,6 @@ const DEFAULT_GROUP_ID = 'ALL';
 
 const PanelWrapper = styled('div')({
   width: '100%',
-});
-
-const PanelInner = styled('div')({
-  padding: '5px',
-  width: 'auto',
-  position: 'relative',
 });
 
 const ResetButton = styled('button')({
@@ -36,7 +28,7 @@ const ResetButton = styled('button')({
   outline: 'none',
 });
 
-export default class Panel extends React.Component {
+export default class Panel extends React.PureComponent {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -52,7 +44,6 @@ export default class Panel extends React.Component {
     this.lastEdit = getTimestamp();
     this.loadedFromUrl = false;
   }
-
   componentDidMount() {
     this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
     this.props.channel.on('addon:knobs:setOptions', this.setOptions);
@@ -77,27 +68,26 @@ export default class Panel extends React.Component {
   }
 
   setKnobs({ knobs, timestamp }) {
-    const queryParams = {};
-    const { api, channel } = this.props;
+    // const queryParams = {};
+    // const { api, channel } = this.props;
 
     if (!this.options.timestamps || !timestamp || this.lastEdit <= timestamp) {
-      Object.keys(knobs).forEach(name => {
-        const knob = knobs[name];
-        // For the first time, get values from the URL and set them.
-        if (!this.loadedFromUrl) {
-          const urlValue = api.getQueryParam(`knob-${name}`);
+      // Object.keys(knobs).forEach(name => {
+      //   const knob = knobs[name];
+      // For the first time, get values from the URL and set them.
+      // if (!this.loadedFromUrl) {
+      // const urlValue = api.getQueryParam(`knob-${name}`);
+      // if (urlValue !== undefined) {
+      //   // If the knob value present in url
+      //   knob.value = Types[knob.type].deserialize(urlValue);
+      //   channel.emit('addon:knobs:knobChange', knob);
+      // }
+      // }
 
-          if (urlValue !== undefined) {
-            // If the knob value present in url
-            knob.value = Types[knob.type].deserialize(urlValue);
-            channel.emit('addon:knobs:knobChange', knob);
-          }
-        }
-
-        queryParams[`knob-${name}`] = Types[knob.type].serialize(knob.value);
-      });
-      this.loadedFromUrl = true;
-      api.setQueryParams(queryParams);
+      // queryParams[`knob-${name}`] = Types[knob.type].serialize(knob.value);
+      // });
+      // this.loadedFromUrl = true;
+      // api.setQueryParams(queryParams);
       this.setState({ knobs });
     }
   }
@@ -112,7 +102,7 @@ export default class Panel extends React.Component {
 
   handleChange(changedKnob) {
     this.lastEdit = getTimestamp();
-    const { api } = this.props;
+    // const { api } = this.props;
     const { knobs } = this.state;
     const { name, type, value } = changedKnob;
     const newKnobs = { ...knobs };
@@ -121,12 +111,12 @@ export default class Panel extends React.Component {
       ...changedKnob,
     };
 
-    this.setState({ knobs: newKnobs });
+    // this.setState({ knobs: newKnobs });
 
-    const queryParams = {};
-    queryParams[`knob-${name}`] = Types[type].serialize(value);
+    // const queryParams = {};
+    // queryParams[`knob-${name}`] = Types[type].serialize(value);
 
-    api.setQueryParams(queryParams);
+    // api.setQueryParams(queryParams);
     this.setState({ knobs: newKnobs }, this.emitChange(changedKnob));
   }
 
@@ -151,14 +141,22 @@ export default class Panel extends React.Component {
       const knobKeyGroupId = knobs[key].groupId;
       groupIds.push(knobKeyGroupId);
       groups[knobKeyGroupId] = {
-        render: () => <div id={knobKeyGroupId}>{knobKeyGroupId}</div>,
+        render: ({ active, selected }) => (
+          <TabWrapper active={active || selected === DEFAULT_GROUP_ID}>
+            <PropForm
+              knobs={knobsArray.filter(knob => knob.groupId === knobKeyGroupId)}
+              onFieldChange={this.handleChange}
+              onFieldClick={this.handleClick}
+            />
+          </TabWrapper>
+        ),
         title: knobKeyGroupId,
       };
     });
 
-    if (groupIds.length > 0) {
+    if (groupIds.length >= 0) {
       groups[DEFAULT_GROUP_ID] = {
-        render: () => <div id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</div>,
+        render: () => null,
         title: DEFAULT_GROUP_ID,
       };
       if (groupId !== DEFAULT_GROUP_ID) {
@@ -174,20 +172,15 @@ export default class Panel extends React.Component {
 
     return (
       <PanelWrapper>
-        {groupIds.length > 0 && (
-          <GroupTabs
-            groups={groups}
-            onGroupSelect={this.onGroupSelect}
-            selectedGroup={this.state.groupId}
-          />
-        )}
-        <PanelInner>
+        {groupIds.length > 0 ? (
+          <TabsState panels={groups} />
+        ) : (
           <PropForm
             knobs={knobsArray}
             onFieldChange={this.handleChange}
             onFieldClick={this.handleClick}
           />
-        </PanelInner>
+        )}
         <ResetButton onClick={this.reset}>RESET</ResetButton>
       </PanelWrapper>
     );

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'react-emotion';
 
-import { Placeholder } from '@storybook/components';
+import { Placeholder, TabsState } from '@storybook/components';
 
 const Wrapper = styled('div')({
   flex: '1 1 auto',
@@ -41,6 +41,10 @@ const Tab = styled('button')(({ active }) => ({
   cursor: 'pointer',
   background: 'transparent',
   border: 'none',
+
+  '&:empty': {
+    display: 'none',
+  },
 }));
 
 class GroupTabs extends Component {
@@ -70,6 +74,8 @@ class GroupTabs extends Component {
 
   render() {
     const entries = this.props.groups ? Object.entries(this.props.groups) : null;
+
+    return <TabsState panels={this.props.groups} />;
 
     return entries && entries.length ? (
       <Wrapper>

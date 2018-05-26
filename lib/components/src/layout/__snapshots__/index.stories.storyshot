@@ -314,28 +314,28 @@ exports[`Storyshots Components|Layout mobile 1`] = `
       <div
         class="css-64377y"
       >
-        <div
-          class="css-ys14cd"
+        <button
+          class="css-1540u6r"
           role="tab"
           type="button"
         >
           Navigator
-        </div>
-        <div
-          class="css-1hpmr8i"
+        </button>
+        <button
+          class="css-133zstr"
           role="tab"
           selected=""
           type="button"
         >
           Preview
-        </div>
-        <div
-          class="css-ys14cd"
+        </button>
+        <button
+          class="css-1540u6r"
           role="tab"
           type="button"
         >
           Addons
-        </div>
+        </button>
       </div>
     </div>
     <div
