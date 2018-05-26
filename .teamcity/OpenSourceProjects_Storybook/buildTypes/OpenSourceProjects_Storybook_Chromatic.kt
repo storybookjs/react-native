@@ -27,12 +27,12 @@ object OpenSourceProjects_Storybook_Chromatic : BuildType({
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Chromatic"
             scriptContent = "yarn chromatic"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 

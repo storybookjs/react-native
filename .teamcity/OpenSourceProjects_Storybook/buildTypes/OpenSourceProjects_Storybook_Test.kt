@@ -24,7 +24,7 @@ object OpenSourceProjects_Storybook_Test : BuildType({
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Test"
@@ -32,7 +32,7 @@ object OpenSourceProjects_Storybook_Test : BuildType({
                 yarn test --core --coverage --runInBand --teamcity
                 yarn coverage
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 

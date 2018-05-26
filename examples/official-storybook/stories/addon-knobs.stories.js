@@ -176,6 +176,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
   })
   .add('XSS safety', () => (
     <div
+      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
         __html: text('Rendered string', '<img src="x" onerror="alert(\'XSS Attack\')" >'),
       }}
