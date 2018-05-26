@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous, { withTheme } from 'glamorous';
+import styled from 'react-emotion';
 
 import CopyButton from './copyButton';
 import copy from './copy';
 
 const TOGGLE_TIMEOUT = 1800;
 
-const StyledPre = glamorous.pre(
+const StyledPre = styled('pre')(
   {
     display: 'flex',
     justifyContent: 'space-between',
@@ -72,4 +72,4 @@ Pre.defaultProps = {
   theme: {},
 };
 
-export default withTheme(Pre);
+export default Pre;

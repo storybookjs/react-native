@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
 
+import styled from 'react-emotion';
+
+import { Placeholder } from '@storybook/components';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 import Types from './types';
@@ -10,40 +12,29 @@ const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'ALL';
 
-const styles = {
-  panelWrapper: {
-    width: '100%',
-  },
-  panel: {
-    padding: '5px',
-    width: 'auto',
-    position: 'relative',
-  },
-  noKnobs: {
-    fontFamily: `
-      -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
-      "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
-    `,
-    display: 'inline',
-    width: '100%',
-    textAlign: 'center',
-    color: 'rgb(190, 190, 190)',
-    padding: '10px',
-  },
-  resetButton: {
-    position: 'absolute',
-    bottom: 11,
-    right: 10,
-    border: 'none',
-    borderTop: 'solid 1px rgba(0, 0, 0, 0.2)',
-    borderLeft: 'solid 1px rgba(0, 0, 0, 0.2)',
-    background: 'rgba(255, 255, 255, 0.5)',
-    padding: '5px 10px',
-    borderRadius: '4px 0 0 0',
-    color: 'rgba(0, 0, 0, 0.5)',
-    outline: 'none',
-  },
-};
+const PanelWrapper = styled('div')({
+  width: '100%',
+});
+
+const PanelInner = styled('div')({
+  padding: '5px',
+  width: 'auto',
+  position: 'relative',
+});
+
+const ResetButton = styled('button')({
+  position: 'absolute',
+  bottom: 11,
+  right: 10,
+  border: 'none',
+  borderTop: 'solid 1px rgba(0, 0, 0, 0.2)',
+  borderLeft: 'solid 1px rgba(0, 0, 0, 0.2)',
+  background: 'rgba(255, 255, 255, 0.5)',
+  padding: '5px 10px',
+  borderRadius: '4px 0 0 0',
+  color: 'rgba(0, 0, 0, 0.5)',
+  outline: 'none',
+});
 
 export default class Panel extends React.Component {
   constructor(props) {
@@ -81,14 +72,8 @@ export default class Panel extends React.Component {
     this.setState({ groupId: name });
   }
 
-  setOptions(options = { debounce: false, timestamps: false }) {
+  setOptions(options = { timestamps: false }) {
     this.options = options;
-
-    if (options.debounce) {
-      this.emitChange = debounce(this.emitChange, options.debounce.wait, {
-        leading: options.debounce.leading,
-      });
-    }
   }
 
   setKnobs({ knobs, timestamp }) {
@@ -179,11 +164,11 @@ export default class Panel extends React.Component {
     knobsArray = knobsArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <div style={styles.noKnobs}>NO KNOBS</div>;
+      return <Placeholder>NO KNOBS</Placeholder>;
     }
 
     return (
-      <div style={styles.panelWrapper}>
+      <PanelWrapper>
         {groupIds.length > 0 && (
           <GroupTabs
             groups={groups}
@@ -191,17 +176,15 @@ export default class Panel extends React.Component {
             selectedGroup={this.state.groupId}
           />
         )}
-        <div style={styles.panel}>
+        <PanelInner>
           <PropForm
             knobs={knobsArray}
             onFieldChange={this.handleChange}
             onFieldClick={this.handleClick}
           />
-        </div>
-        <button style={styles.resetButton} onClick={this.reset}>
-          RESET
-        </button>
-      </div>
+        </PanelInner>
+        <ResetButton onClick={this.reset}>RESET</ResetButton>
+      </PanelWrapper>
     );
   }
 }

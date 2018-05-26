@@ -1,60 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const style = {
-  swatches: {
-    backgroundColor: '#fff',
-    textAlign: 'center',
-    padding: '0',
-    border: '1px solid rgba(0,0,0,0.1)',
-    borderRadius: '4px',
-    cursor: 'pointer',
-    display: 'inline-block',
-    width: '175px',
-    verticalAlign: 'top',
-    wordWrap: 'break-word',
-  },
-  swatch: {
-    height: '80px',
-    borderRadius: '4px 4px 0 0',
-    transition: 'opacity 0.25s ease-in-out',
-    borderBottom: '1px solid rgba(0,0,0,0.1)',
-  },
-  listStyle: { listStyle: 'none' },
-  pushBottom: { marginBottom: '10px' },
-  pushLeft: { marginLeft: '10px' },
-  soft: { paddingLeft: '10px', paddingRight: '10px' },
-  hard: { padding: '0' },
-  flush: { margin: '0' },
-  font: {
-    fontFamily:
-      "-apple-system, '.SFNSText-Regular', 'San Francisco', Roboto, 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
-    fontSize: '14px',
-    wordBreak: 'break-word',
-  },
-};
+import styled from 'react-emotion';
+
+const Button = styled('button')({
+  listStyle: 'none',
+  backgroundColor: '#fff',
+  textAlign: 'center',
+  border: '1px solid rgba(0,0,0,0.1)',
+  borderRadius: 4,
+  cursor: 'pointer',
+  display: 'inline-block',
+  width: 175,
+  verticalAlign: 'top',
+  wordWrap: 'break-word',
+  padding: 0,
+});
+const Block = styled('div')(({ bg }) => ({
+  height: 80,
+  borderRadius: '4px 4px 0 0',
+  transition: 'opacity 0.25s ease-in-out',
+  borderBottom: '1px solid rgba(0,0,0,0.1)',
+  background: bg,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+}));
+
+const Box = styled('div')({
+  listStyle: 'none',
+  paddingLeft: 10,
+  paddingRight: 10,
+});
+
+const Name = styled('h4')({
+  float: 'left',
+  fontWeight: 'bold',
+});
+const Value = styled('h4')({
+  float: 'right',
+  fontWeight: 'normal',
+});
 
 const Swatch = ({ name, value, setBackground }) => (
-  <button
-    style={Object.assign({}, style.swatches, style.listStyle, style.hard)}
-    onClick={() => setBackground(value)}
-    // Prevent focusing on mousedown
-    onMouseDown={event => event.preventDefault()}
-  >
-    <div
-      style={Object.assign({}, style.swatch, {
-        background: value,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      })}
-    />
-    <div style={Object.assign({}, style.listStyle, style.soft)}>
-      <h4 style={Object.assign({ float: 'left', fontWeight: 'bold' }, style.font)}>{name}:</h4>
-      <h4 style={Object.assign({ float: 'right', fontWeight: 'normal' }, style.font)}>
+  <Button onClick={() => setBackground(value)} onMouseDown={event => event.preventDefault()}>
+    <Block bg={value} />
+    <Box>
+      <Name>{name}:</Name>
+      <Value>
         <em>{value}</em>
-      </h4>
-    </div>
-  </button>
+      </Value>
+    </Box>
+  </Button>
 );
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,

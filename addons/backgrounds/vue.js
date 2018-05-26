@@ -1,1 +1,1 @@
-module.exports = require('./dist/vue');
+module.exports = require('./dist/deprecated');

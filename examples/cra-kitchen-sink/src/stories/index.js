@@ -167,15 +167,6 @@
 //       </div>
 //     );
 //   })
-//   .addWithInfo(
-//     'with some info',
-//     'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
-//     context => (
-//       <Container>
-//         click the <InfoButton /> label in top right for info about "{context.story}"
-//       </Container>
-//     )
-//   )
 //   .add(
 //     'with new info',
 //     withInfo(
@@ -229,22 +220,6 @@
 
 //   return <span>See action logger</span>;
 // });
-
-// storiesOf('AddonInfo.DocgenButton', module).addWithInfo('DocgenButton', 'Some Description', () => (
-//   <DocgenButton onClick={action('clicked')} label="Docgen Button" />
-// ));
-
-// storiesOf('AddonInfo.ImportedPropsButton', module).addWithInfo(
-//   'ImportedPropsButton',
-//   'Button with PropTypes imported from another file. Should fallback to using PropTypes for data.',
-//   () => <ImportedPropsButton onClick={action('clicked')} label="Docgen Button" />
-// );
-
-// storiesOf('AddonInfo.FlowTypeButton', module).addWithInfo(
-//   'FlowTypeButton',
-//   'Some Description',
-//   () => <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
-// );
 
 // storiesOf('App', module).add('full app', () => <App />);
 

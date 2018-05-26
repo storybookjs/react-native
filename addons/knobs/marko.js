@@ -1,1 +1,1 @@
-module.exports = require('./dist/marko');
+module.exports = require('./dist/deprecated');

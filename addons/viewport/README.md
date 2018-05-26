@@ -188,6 +188,19 @@ storiesOf('Decorator with string', module)
     </h1>
   ));
 
+// Single
+storiesOf('Parameterized story', module)
+  .addDecorator(withViewport())
+  .add(
+    'iPad',
+    () => (
+      <h1>
+        Do I look good on <b>iPad</b>?
+      </h1>
+    ),
+    { viewport: 'ipad' }
+  );
+
 storiesOf('Decorator with object', module)
   .addDecorator(
     withViewport({

@@ -16,19 +16,7 @@ describe('Select', () => {
     };
   });
 
-  it('displays value', () => {
-    const wrapper = shallow(<SelectType knob={knob} />);
-
-    const green = wrapper.find('option').first();
-    expect(green.text()).toEqual('#00ff00');
-    expect(green.prop('value')).toEqual('Green');
-  });
-
-  describe('selectV2', () => {
-    beforeEach(() => {
-      knob.selectV2 = true;
-    });
-
+  describe('displays value', () => {
     it('correctly maps option keys and values', () => {
       const wrapper = shallow(<SelectType knob={knob} />);
 

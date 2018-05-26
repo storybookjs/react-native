@@ -1,8 +1,5 @@
-import { configure, setAddon } from '@storybook/react';
+import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
-
-// deprecated usage of infoAddon
-import infoAddon from '@storybook/addon-info';
 
 setOptions({
   name: 'CRA Kitchen Sink',
@@ -16,9 +13,6 @@ setOptions({
   hierarchyRootSeparator: /\|/,
   enableShortcuts: false,
 });
-
-// deprecated usage of infoAddon
-setAddon(infoAddon);
 
 function loadStories() {
   // put welcome screen at the top of the list so it's the first one displayed

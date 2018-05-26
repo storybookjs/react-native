@@ -1,41 +1,14 @@
 import React, { Component } from 'react';
-import { polyfill } from 'react-lifecycles-compat';
-import json from 'format-json';
-import Textarea from 'react-textarea-autosize';
 import PropTypes from 'prop-types';
+import { polyfill } from 'react-lifecycles-compat';
 
-const styles = {
-  label: {
-    display: 'table-cell',
-    boxSizing: 'border-box',
-    verticalAlign: 'top',
-    paddingRight: '5px',
-    paddingTop: '7px',
-    textAlign: 'right',
-    width: '100px',
-    fontSize: '12px',
-    color: 'rgb(68, 68, 68)',
-    fontWeight: '600',
-  },
-  button: {
-    display: 'table-cell',
-    textTransform: 'uppercase',
-    letterSpacing: '3.5px',
-    fontSize: 12,
-    fontWeight: 'bolder',
-    color: 'rgb(130, 130, 130)',
-    border: '1px solid rgb(193, 193, 193)',
-    textAlign: 'center',
-    borderRadius: 2,
-    padding: 5,
-    cursor: 'pointer',
-    paddingLeft: 8,
-    margin: '0 0 0 5px',
-    backgroundColor: 'inherit',
-    verticalAlign: 'top',
-    outline: 0,
-  },
-  textArea: {
+import styled from 'react-emotion';
+import json from 'format-json';
+
+import Textarea from 'react-textarea-autosize';
+
+const StyledTextarea = styled(Textarea)(
+  {
     flex: '1 0 0',
     boxSizing: 'border-box',
     margin: '0 0 0 5px',
@@ -50,28 +23,66 @@ const styles = {
     minHeight: '32px',
     resize: 'vertical',
   },
-  item: {
-    display: 'flex',
-    padding: '5px',
-    alignItems: 'flex-start',
-    boxSizing: 'border-box',
-    width: '100%',
-  },
-  hidden: {
-    display: 'none',
-  },
-  failed: {
-    border: '1px solid #fadddd',
-    backgroundColor: '#fff5f5',
-  },
-};
+  ({ shown }) =>
+    shown
+      ? {}
+      : {
+          display: 'none',
+        },
+  ({ failed }) =>
+    failed
+      ? {
+          border: '1px solid #fadddd',
+          backgroundColor: '#fff5f5',
+        }
+      : {}
+);
+
+const Button = styled('button')({
+  display: 'table-cell',
+  textTransform: 'uppercase',
+  letterSpacing: '3.5px',
+  fontSize: 12,
+  fontWeight: 'bolder',
+  color: 'rgb(130, 130, 130)',
+  border: '1px solid rgb(193, 193, 193)',
+  textAlign: 'center',
+  borderRadius: 2,
+  padding: 5,
+  cursor: 'pointer',
+  paddingLeft: 8,
+  margin: '0 0 0 5px',
+  backgroundColor: 'inherit',
+  verticalAlign: 'top',
+  outline: 0,
+});
+
+const Label = styled('label')({
+  display: 'table-cell',
+  boxSizing: 'border-box',
+  verticalAlign: 'top',
+  paddingRight: 5,
+  paddingTop: 7,
+  textAlign: 'right',
+  width: 100,
+  fontWeight: '600',
+});
+
+const Wrapper = styled('div')({
+  display: 'flex',
+  padding: 5,
+  alignItems: 'flex-start',
+  boxSizing: 'border-box',
+  width: '100%',
+});
 
 class Item extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    payload: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
+    // eslint-disable-next-line react/forbid-prop-types, react/no-unused-prop-types
+    payload: PropTypes.any,
   };
 
   static defaultProps = {
@@ -136,45 +147,34 @@ class Item extends Component {
     const { title, name } = this.props;
     const { failed, isTextAreaShowed } = this.state;
 
-    const extraStyle = {};
-    Object.assign(extraStyle, isTextAreaShowed ? {} : { ...styles.hidden });
-    Object.assign(extraStyle, failed ? { ...styles.failed } : {});
-
     return (
-      <div style={styles.item}>
-        <label htmlFor={`addon-event-${name}`} style={styles.label}>
-          {title}
-        </label>
-        <button
-          style={styles.button}
-          onClick={this.onEmitClick}
-          disabled={failed}
-          title="Submit event"
-        >
-          <span role="img" aria-label="loudspeaker">
+      <Wrapper>
+        <Label htmlFor={`addon-event-${name}`}>{title}</Label>
+        <Button onClick={this.onEmitClick} disabled={failed} title="Submit event">
+          <span role="img" aria-label="emit">
             📢
           </span>
-        </button>
-        <Textarea
-          id={`addon-event-${name}`}
-          style={{ ...styles.textArea, ...extraStyle }}
+        </Button>
+        <StyledTextarea
+          shown={isTextAreaShowed}
+          failed={failed}
           value={this.state.payloadString}
           onChange={this.onChange}
         />
         {isTextAreaShowed ? (
-          <button style={styles.button} onClick={this.onToggleEditClick} title="Close editing">
-            <span role="img" aria-label="cross">
+          <Button onClick={this.onToggleEditClick} title="Close editing">
+            <span role="img" aria-label="close">
               ❌
             </span>
-          </button>
+          </Button>
         ) : (
-          <button style={styles.button} onClick={this.onToggleEditClick} title="Edit event payload">
-            <span role="img" aria-label="pencil">
+          <Button onClick={this.onToggleEditClick} title="Edit event payload">
+            <span role="img" aria-label="edit">
               ✏️
             </span>
-          </button>
+          </Button>
         )}
-      </div>
+      </Wrapper>
     );
   }
 }

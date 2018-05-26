@@ -56,15 +56,6 @@ storiesOf('Button', module)
     ),
     { notes: 'A very simple button' }
   )
-  .addWithInfo(
-    'with some info',
-    'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its painful API.',
-    context => (
-      <Container>
-        click the <InfoButton /> label in top right for info about "{context.story}"
-      </Container>
-    )
-  )
   .add(
     'with new info',
     withInfo(

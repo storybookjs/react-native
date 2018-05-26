@@ -14,7 +14,7 @@ import {
   color,
   date,
   button,
-} from '@storybook/addon-knobs/mithril';
+} from '@storybook/addon-knobs';
 
 storiesOf('Addons|Knobs', module)
   .addDecorator(withKnobs)
@@ -36,11 +36,11 @@ storiesOf('Addons|Knobs', module)
       step: 5,
     });
     const fruits = {
-      apples: 'Apple',
-      bananas: 'Banana',
-      cherries: 'Cherry',
+      Apple: 'apples',
+      Banana: 'bananas',
+      Cherry: 'cherries',
     };
-    const fruit = select('Fruit', fruits, 'apple');
+    const fruit = select('Fruit', fruits, 'apples');
     const price = number('Price', 2.25);
 
     const colour = color('Border', 'deeppink');
@@ -63,7 +63,7 @@ storiesOf('Addons|Knobs', module)
           <h3>today is {new Date(today).toLocaleDateString('en-US', dateOptions)}</h3>
           <p>{stockMessage}</p>
           <p>Also, I have:</p>
-          <ul>{items.map(item => `<li key=${item}>${item}</li>`).join('')}</ul>
+          <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
           <p>{salutation}</p>
         </div>
       ),

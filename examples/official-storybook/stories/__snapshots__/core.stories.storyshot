@@ -2,8 +2,7 @@
 
 exports[`Storyshots Core|Events Force re-render 1`] = `
 <button
-  class="css-1ibnlbj"
-  type="button"
+  class="css-191qq9b"
 >
   Clicked: 0
 </button>

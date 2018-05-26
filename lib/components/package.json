@@ -1,31 +1,36 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.0-alpha.6",
+  "version": "4.0.0-alpha.7",
   "description": "Core Storybook Components",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
     "prepare": "node ../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "glamor": "^2.20.40",
-    "glamorous": "^4.12.5",
-    "prop-types": "^15.6.1"
+    "emotion": "^9.1.3",
+    "emotion-theming": "^9.1.2",
+    "global": "^4.3.2",
+    "lodash.pick": "^4.4.0",
+    "lodash.throttle": "^4.1.1",
+    "prop-types": "^15.6.1",
+    "react-emotion": "^9.1.3",
+    "react-split-pane": "^0.1.77"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "4.0.0-alpha.7",
+    "@storybook/addon-knobs": "4.0.0-alpha.7",
+    "@storybook/react": "4.0.0-alpha.7"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.6",
-    "@storybook/addon-knobs": "4.0.0-alpha.6",
-    "@storybook/react": "4.0.0-alpha.6"
   }
 }

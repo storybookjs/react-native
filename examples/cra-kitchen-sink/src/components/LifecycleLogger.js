@@ -17,18 +17,17 @@ class LifecycleLogger extends Component {
   componentDidMount() {
     log('componentDidMount');
   }
-  // eslint-disable-next-line react/sort-comp
   getSnapshotBeforeUpdate() {
     log('getSnapshotBeforeUpdate');
   }
   componentDidUpdate() {
     log('componentDidUpdate');
   }
-  componentWillUnmount() {
-    log('componentWillUnmount');
-  }
   componentDidCatch() {
     log('componentDidCatch');
+  }
+  componentWillUnmount() {
+    log('componentWillUnmount');
   }
   render() {
     log('render');

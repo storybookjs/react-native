@@ -13,7 +13,14 @@ function render(node, el) {
   );
 }
 
-export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
+export default function renderMain({
+  story,
+  selectedKind,
+  selectedStory,
+  showMain,
+  showError,
+  forceRender,
+}) {
   const element = story();
 
   if (!element) {
@@ -42,7 +49,10 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
   // Otherwise, React may not recrease instances for every story run.
   // This could leads to issues like below:
   //    https://github.com/storybooks/react-storybook/issues/81
-  ReactDOM.unmountComponentAtNode(rootEl);
+  // But forceRender means that it's the same story, so we want too keep the state in that case.
+  if (!forceRender) {
+    ReactDOM.unmountComponentAtNode(rootEl);
+  }
   showMain();
   render(element, rootEl);
 }
