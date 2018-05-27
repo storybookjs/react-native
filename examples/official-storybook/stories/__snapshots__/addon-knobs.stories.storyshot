@@ -20,7 +20,7 @@ exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
 <div>
   <p>
-    Hit the knob load button and it should trigger an async load after a short delay
+    Hit the knob button and it will toggle the items list into multiple states.
   </p>
   <p>
     No items loaded
