@@ -12,7 +12,9 @@ export default class KnobStore {
     this.store[key] = value;
     this.store[key].used = true;
     this.store[key].groupId = value.groupId;
-    this.callbacks.forEach(cb => cb());
+
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => this.callbacks.forEach(cb => cb()), 1);
   }
 
   get(key) {
