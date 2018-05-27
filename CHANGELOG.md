@@ -1,3 +1,81 @@
+# 4.0.0-alpha.8
+
+2018-May-26
+
+#### Breaking Changes
+
+-   Removed deprecated react-native built-in addons [#3631](https://github.com/storybooks/storybook/pull/3631)
+-   Remove deprecated addWithInfo [#3630](https://github.com/storybooks/storybook/pull/3630)
+
+#### Bug Fixes
+
+-   Fix the output of the boolean knob [#3612](https://github.com/storybooks/storybook/pull/3612)
+-   Don't scroll story on knob change [#3639](https://github.com/storybooks/storybook/pull/3639)
+-   Few fixed related to marko support [#3609](https://github.com/storybooks/storybook/pull/3609)
+
+#### Documentation
+
+-   Angular background addon example [#3653](https://github.com/storybooks/storybook/pull/3653)
+-   fix url as per issue #3565 [#3619](https://github.com/storybooks/storybook/pull/3619)
+-   Document parameters for start command for RN [#3606](https://github.com/storybooks/storybook/pull/3606)
+-   Update README.md [#3608](https://github.com/storybooks/storybook/pull/3608)
+
+#### Maintenance
+
+-   Build static storybooks utility script [#3648](https://github.com/storybooks/storybook/pull/3648)
+-   Revert "Replace decorate with decorateAction" [#3600](https://github.com/storybooks/storybook/pull/3600)
+-   addon-viewport: Use the new parameterized way of decorators [#3610](https://github.com/storybooks/storybook/pull/3610)
+-   Make all licenses consistent to MIT [#3611](https://github.com/storybooks/storybook/pull/3611)
+-   Theme-ability progress [#3572](https://github.com/storybooks/storybook/pull/3572)
+-   fix(knobs): cancel debounced onChange on unmounting [#3607](https://github.com/storybooks/storybook/pull/3607)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+36 Upgrades
+</summary>
+
+-   Update @angular/common from 5.2.10 to 5.2.11 in /
+-   Update @angular/compiler from 5.2.10 to 5.2.11 in /
+-   Update @angular/core from 5.2.10 to 5.2.11 in /
+-   Update @angular/forms from 5.2.10 to 5.2.11 in /
+-   Update @angular/platform-browser from 5.2.10 to 5.2.11 in /
+-   Update @angular/platform-browser-dynamic from 5.2.10 to 5.2.11 in /
+-   Update danger from 3.7.0 to 3.7.14 in /
+-   Update eslint-plugin-import from 2.11.0 to 2.12.0 in /
+-   Update jest from 22.4.3 to 22.4.4 in /
+-   Update jest-cli from 22.4.3 to 22.4.4 in /
+-   Update jest-config from 22.4.3 to 22.4.4 in /
+-   Update jest-jasmine2 from 22.4.3 to 22.4.4 in /
+-   Update lint-staged from 7.1.0 to 7.1.2 in /
+-   Update marked from 0.3.19 to 0.4.0 in addons/notes
+-   Update tslint-config-prettier from 1.12.0 to 1.13.0 in /
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/angular
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/html
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/mithril
+-   Update babel-preset-minify from 0.4.1 to 0.4.3 in app/polymer
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/polymer
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/react
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/vue
+-   Update enzyme-to-json from 3.3.3 to 3.3.4 in addons/storyshots
+-   Update airbnb-js-shims from 1.4.1 to 1.5.1 in app/marko
+-   Update ws from 5.1.1 to 5.2.0 in app/react-native
+-   Update @angular/common from 5.2.10 to 5.2.11 in examples/angular-cli
+-   Update @angular/compiler from 5.2.10 to 5.2.11 in examples/angular-cli
+-   Update @angular/core from 5.2.10 to 5.2.11 in examples/angular-cli
+-   Update @angular/forms from 5.2.10 to 5.2.11 in examples/angular-cli
+-   Update @angular/platform-browser from 5.2.10 to 5.2.11 in examples/an…  …
+-   Update @angular/platform-browser-dynamic from 5.2.10 to 5.2.11 in exa…  …
+-   Update @angular/compiler-cli from 5.2.10 to 5.2.11 in examples/angula…  …
+-   Update @types/node from 9.6.17 to 9.6.18 in examples/angular-cli
+-   Update jest from 22.4.3 to 22.4.4 in examples/angular-cli
+-   Update enzyme-to-json from 3.3.3 to 3.3.4 in examples/cra-kitchen-sink
+-   Update jest from 22.4.3 to 22.4.4 in examples/html-kitchen-sink
+-   Update enzyme-to-json from 3.3.3 to 3.3.4 in examples/official-storybook
+
+</details>
+
 # 3.4.6
 
 2018-May-26
@@ -541,7 +619,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 #### Bug Fixes
 
 -   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
--   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297     
+-   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
 -   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
 -   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
 -   Object proptype is shown in addon-info proptable [#3255](https://github.com/storybooks/storybook/pull/3255)
