@@ -1,3 +1,5 @@
+import appOptions from '@storybook/react/options';
+
 import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
 import loadConfig from '../config-loader';
@@ -9,7 +11,7 @@ function test(options) {
 function load(options) {
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
-    babelConfigPath: '@storybook/react/dist/server/config/babel',
+    appOptions,
   });
 
   runWithRequireContext(content, contextOpts);
