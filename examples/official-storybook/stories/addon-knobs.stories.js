@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -16,35 +17,21 @@ import {
   files,
 } from '@storybook/addon-knobs';
 
-class AsyncItemLoader extends React.Component {
-  constructor() {
-    super();
-    this.state = { items: [] };
+const ItemLoader = ({ isLoading, items }) => {
+  if (isLoading) {
+    return <p>Loading data</p>;
+  } else if (!items.length) {
+    return <p>No items loaded</p>;
   }
+  return <ul>{items.map(i => <li key={i}>{i}</li>)}</ul>;
+};
 
-  handleLoadItems() {
-    this.setState({
-      isLoading: true,
-      items: [],
-    });
-    setTimeout(() => this.setState({ items: ['pencil', 'pen', 'eraser'], isLoading: false }), 1500);
-  }
-
-  render() {
-    // this existing example seems like a react anti-pattern?
-    // perhaps for testing purposes only?
-    button('Load the items', () => this.handleLoadItems());
-
-    const { isLoading, items } = this.state;
-
-    if (isLoading) {
-      return <p>Loading data</p>;
-    } else if (!items.length) {
-      return <p>No items loaded</p>;
-    }
-    return <ul>{items.map(i => <li key={i}>{i}</li>)}</ul>;
-  }
-}
+ItemLoader.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+let injectedItems = [];
+let injectedIsLoading = false;
 
 storiesOf('Addons|Knobs.withKnobs', module)
   .addDecorator(withKnobs)
@@ -169,14 +156,27 @@ storiesOf('Addons|Knobs.withKnobs', module)
       </div>
     );
   })
-  .add('triggers actions via button', () => (
-    <div>
-      <p>Hit the knob load button and it should trigger an async load after a short delay</p>
-      <AsyncItemLoader />
-    </div>
-  ))
+  .add('triggers actions via button', () => {
+    button('Toggle item list state', () => {
+      if (!injectedIsLoading && injectedItems.length === 0) {
+        injectedIsLoading = true;
+      } else if (injectedIsLoading && injectedItems.length === 0) {
+        injectedIsLoading = false;
+        injectedItems = ['pencil', 'pen', 'eraser'];
+      } else if (injectedItems.length > 0) {
+        injectedItems = [];
+      }
+    });
+    return (
+      <div>
+        <p>Hit the knob button and it will toggle the items list into multiple states.</p>
+        <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
+      </div>
+    );
+  })
   .add('XSS safety', () => (
     <div
+      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
         __html: text('Rendered string', '<img src="x" onerror="alert(\'XSS Attack\')" >'),
       }}

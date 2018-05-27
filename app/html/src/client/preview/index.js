@@ -1,5 +1,6 @@
 import { start } from '@storybook/core/client';
 
+import './globals';
 import render from './render';
 
 const { clientApi, configApi, forceReRender } = start(render);

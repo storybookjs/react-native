@@ -47,7 +47,12 @@ export class Notes extends React.Component {
     const { text } = this.state;
     const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
 
-    return <Panel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} />;
+    return (
+      <Panel
+        className="addon-notes-container"
+        dangerouslySetInnerHTML={{ __html: textAfterFormatted }}
+      />
+    );
   }
 }
 

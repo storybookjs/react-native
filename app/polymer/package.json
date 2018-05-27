@@ -1,6 +1,6 @@
 {
   "name": "@storybook/polymer",
-  "version": "4.0.0-alpha.7",
+  "version": "4.0.0-alpha.8",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/polymer",
   "bugs": {
@@ -21,36 +21,19 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "4.0.0-alpha.7",
-    "@storybook/react-dev-utils": "^5.0.0",
+    "@storybook/core": "4.0.0-alpha.8",
     "@webcomponents/webcomponentsjs": "^1.2.0",
-    "airbnb-js-shims": "^1.5.1",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-macros": "^2.2.1",
-    "babel-plugin-transform-regenerator": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-minify": "^0.4.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-runtime": "^6.26.0",
-    "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "common-tags": "^1.4.0",
-    "core-js": "^2.5.6",
-    "dotenv-webpack": "^1.5.5",
     "global": "^4.3.2",
-    "html-webpack-plugin": "^3.2.0",
-    "raw-loader": "^0.5.1",
-    "webpack": "^4.8.3",
-    "webpack-hot-middleware": "^2.22.2"
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
   },
   "devDependencies": {
     "lit-html": "^0.10.0",
     "polymer-webpack-loader": "^2.0.2"
   },
   "peerDependencies": {
-    "babel-core": "^6.26.0 || ^7.0.0-0",
-    "babel-runtime": ">=6.0.0",
     "lit-html": "0.10.0",
     "polymer-webpack-loader": "2.0.2"
   }

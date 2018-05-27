@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 
-import { Dimensions, View, TouchableWithoutFeedback, Image, Text, StatusBar } from 'react-native';
+import { Dimensions, View, TouchableWithoutFeedback, Image, Text } from 'react-native';
 import Events from '@storybook/core-events';
 import style from './style';
 import StoryListView from '../StoryListView';
@@ -36,7 +36,6 @@ export default class OnDeviceUI extends Component {
   componentDidMount() {
     Dimensions.addEventListener('change', this.handleDeviceRotation);
     this.props.events.on(Events.SELECT_STORY, this.handleStoryChange);
-    StatusBar.setHidden(true);
   }
 
   componentWillUnmount() {
@@ -50,7 +49,7 @@ export default class OnDeviceUI extends Component {
     });
   };
 
-  handleStoryChange = (storyFn, selection) => {
+  handleStoryChange = selection => {
     const { kind, story } = selection;
     this.setState({
       selectedKind: kind,

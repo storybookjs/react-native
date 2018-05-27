@@ -21,7 +21,7 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         allApps {
             if (merged) {
@@ -35,7 +35,7 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                         cd examples/$exampleDir
                         yarn storybook --smoke-test
                     """.trimIndent()
-                    dockerImage = "node:latest"
+                    dockerImage = "node:%docker.node.version%"
                 }
             }
         }
@@ -49,7 +49,7 @@ object OpenSourceProjects_Storybook_SmokeTests : BuildType({
                 cd examples/official-storybook
                 yarn storybook --smoke-test
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 

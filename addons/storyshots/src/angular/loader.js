@@ -1,3 +1,5 @@
+import appOptions from '@storybook/angular/options';
+
 import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
 import loadConfig from '../config-loader';
@@ -22,7 +24,7 @@ function load(options) {
 
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
-    babelConfigPath: '@storybook/angular/dist/server/config/babel',
+    appOptions,
   });
 
   runWithRequireContext(content, contextOpts);
