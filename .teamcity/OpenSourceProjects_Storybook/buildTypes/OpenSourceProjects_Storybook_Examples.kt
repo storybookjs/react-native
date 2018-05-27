@@ -29,7 +29,7 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "official-storybook"
@@ -42,7 +42,7 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
                 rm -rf storybook-static
                 yarn build-storybook
             """.trimIndent()
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Image storyshots"

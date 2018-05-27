@@ -39,7 +39,7 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                     yarn
                     yarn bootstrap --core
                 """.trimIndent()
-                dockerImage = "node:latest"
+                dockerImage = "node:%docker.node.version%"
             }
             script {
                 name = "build"
@@ -51,7 +51,7 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
                     cd examples/$exampleDir
                     yarn build-storybook
                 """.trimIndent()
-                dockerImage = "node:latest"
+                dockerImage = "node:%docker.node.version%"
             }
         }
 

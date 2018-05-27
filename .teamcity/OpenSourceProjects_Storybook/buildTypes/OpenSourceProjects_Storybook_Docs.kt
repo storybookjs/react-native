@@ -26,13 +26,13 @@ object OpenSourceProjects_Storybook_Docs : BuildType({
             name = "Install"
             workingDir = "docs"
             scriptContent = "yarn install --frozen-lockfile"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Build"
             workingDir = "docs"
             scriptContent = "yarn build"
-            dockerImage = "node:latest"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
