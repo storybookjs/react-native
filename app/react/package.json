@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "4.0.0-alpha.7",
+  "version": "4.0.0-alpha.8",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -22,7 +22,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "4.0.0-alpha.7",
+    "@storybook/core": "4.0.0-alpha.8",
     "@storybook/react-dev-utils": "^5.0.0",
     "airbnb-js-shims": "^1.5.1",
     "babel-loader": "^7.1.4",
