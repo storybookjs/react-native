@@ -85,7 +85,7 @@
     "jest-diff": "^22.4.3",
     "jest-emotion": "^9.1.3",
     "jest-environment-jsdom": "^22.4.3",
-    "jest-enzyme": "^6.0.0",
+    "jest-enzyme": "^6.0.1",
     "jest-glamor-react": "^4.3.0",
     "jest-image-snapshot": "^2.4.1",
     "jest-jasmine2": "^22.4.4",
