@@ -42,10 +42,6 @@ export default class Panel extends React.PureComponent {
     this.stopListeningOnStory();
   }
 
-  onGroupSelect = name => {
-    this.setState({ groupId: name });
-  };
-
   setOptions = (options = { timestamps: false }) => {
     this.options = options;
   };
@@ -92,6 +88,8 @@ export default class Panel extends React.PureComponent {
     });
 
     copy(`${location.origin + location.pathname}?${qs.stringify(query)}`);
+
+    // TODO: show some notification of this
   };
 
   emitChange = changedKnob => {

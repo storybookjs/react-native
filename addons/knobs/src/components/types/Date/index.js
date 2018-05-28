@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Datetime from 'react-datetime';
 import insertCss from 'insert-css';
-import debounce from 'lodash.debounce';
 import style from './styles';
 
 const customStyle = `
@@ -23,21 +22,18 @@ insertCss(style);
 insertCss(customStyle);
 
 class DateType extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      value: props.knob.value,
-    };
-
-    this.onChange = debounce(props.onChange, 200);
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      return { value: props.knob.value };
+    }
+    return null;
   }
 
   handleChange = date => {
     const value = date.valueOf();
     this.setState({ value });
 
-    this.onChange(value);
+    this.props.onChange(value);
   };
 
   render() {

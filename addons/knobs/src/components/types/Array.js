@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import Textarea from 'react-textarea-autosize';
-import debounce from 'lodash.debounce';
 
 const StyledTextarea = styled(Textarea)({
   display: 'table-cell',
@@ -28,14 +27,11 @@ function formatArray(value, separator) {
 }
 
 class ArrayType extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      value: props.knob.value.join(props.knob.separator),
-    };
-
-    this.onChange = debounce(this.props.onChange, 200);
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      return { value: props.knob.value };
+    }
+    return null;
   }
 
   componentWillUnmount() {
@@ -48,7 +44,7 @@ class ArrayType extends React.Component {
     const newVal = formatArray(value, knob.separator);
 
     this.setState({ value });
-    this.onChange(newVal);
+    this.props.onChange(newVal);
   };
 
   render() {

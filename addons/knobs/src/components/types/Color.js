@@ -4,7 +4,6 @@ import React from 'react';
 import { SketchPicker } from 'react-color';
 
 import styled from 'react-emotion';
-import debounce from 'lodash.debounce';
 
 const SwatchButton = styled('button')({
   background: '#fff',
@@ -27,15 +26,18 @@ const Popover = styled('div')({
 });
 
 class ColorType extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      return { value: props.knob.value };
+    }
+    return null;
+  }
   constructor(props, context) {
     super(props, context);
 
     this.state = {
       displayColorPicker: false,
-      value: props.knob.value,
     };
-
-    this.onChange = debounce(props.onChange, 200);
   }
 
   componentDidMount() {
@@ -43,7 +45,6 @@ class ColorType extends React.Component {
   }
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleWindowMouseDown);
-    this.onChange.cancel();
   }
 
   handleWindowMouseDown = e => {
@@ -66,7 +67,7 @@ class ColorType extends React.Component {
       value: color,
     });
 
-    this.onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
+    this.props.onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
   };
 
   render() {

@@ -47,10 +47,11 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
     const years = number('Years in NY', 9);
 
-    const backgroundColor = color('background', '#ffff00');
+    const backgroundColor = color('background', '#dedede');
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
     const otherStyles = object('Styles', {
-      border: '3px solid #ff00ff',
+      border: '2px dashed silver',
+      borderRadius: 10,
       padding: '10px',
     });
     const nice = boolean('Nice', true);
@@ -79,8 +80,6 @@ storiesOf('Addons|Knobs.withKnobs', module)
         <p>
           When I am happy I look like this: <img src={images[0]} alt="happy" />
         </p>
-        <hr />
-        <p>PS. My shirt pocket contains: </p>
       </div>
     );
   })
@@ -118,10 +117,14 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const items = array('Items', ['Laptop', 'Book', 'Whiskey'], ',', GROUP_IDS.FAVORITES);
 
     // Display
-    const backgroundColor = color('Color', '#ffff00', GROUP_IDS.DISPLAY);
+    const backgroundColor = color('Color', 'rgba(126, 211, 33, 0.22)', GROUP_IDS.DISPLAY);
     const otherStyles = object(
       'Styles',
-      { border: '3px solid #ff00ff', padding: '10px' },
+      {
+        border: '2px dashed silver',
+        borderRadius: 10,
+        padding: '10px',
+      },
       GROUP_IDS.DISPLAY
     );
 

@@ -13,7 +13,13 @@ const Form = styled('form')({
   borderSpacing: '5px',
 });
 
-export default class propForm extends React.Component {
+export default class PropForm extends React.Component {
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnMount');
+  }
   makeChangeHandler(name, type) {
     return value => {
       const change = { name, type, value };
@@ -45,13 +51,13 @@ export default class propForm extends React.Component {
   }
 }
 
-propForm.displayName = 'propForm';
+PropForm.displayName = 'PropForm';
 
-propForm.defaultProps = {
+PropForm.defaultProps = {
   knobs: [],
 };
 
-propForm.propTypes = {
+PropForm.propTypes = {
   knobs: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,

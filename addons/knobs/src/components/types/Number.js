@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import styled from 'react-emotion';
-import debounce from 'lodash.debounce';
 
 const base = {
   boxSizing: 'border-box',
@@ -37,18 +36,11 @@ const RangeWrapper = styled('div')({
 });
 
 class NumberType extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: props.knob.value,
-    };
-
-    this.onChange = debounce(props.onChange, 400);
-  }
-
-  componentWillUnmount() {
-    this.onChange.cancel();
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      return { value: props.knob.value };
+    }
+    return null;
   }
 
   handleChange = event => {
@@ -62,7 +54,7 @@ class NumberType extends React.Component {
       parsedValue = null;
     }
 
-    this.onChange(parsedValue);
+    this.props.onChange(parsedValue);
   };
 
   render() {
