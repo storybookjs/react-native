@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -18,7 +18,7 @@ const PanelWrapper = styled('div')({
   width: '100%',
 });
 
-export default class Panel extends React.PureComponent {
+export default class Panel extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { knobs: {}, groupId: DEFAULT_GROUP_ID };

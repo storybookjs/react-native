@@ -1,5 +1,5 @@
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'react-emotion';
 
 const Select = styled('select')({
@@ -16,7 +16,7 @@ const Select = styled('select')({
   color: '#555',
 });
 
-class SelectType extends React.Component {
+class SelectType extends Component {
   renderOptionList({ options }) {
     if (Array.isArray(options)) {
       return options.map(val => this.renderOption(val, val));

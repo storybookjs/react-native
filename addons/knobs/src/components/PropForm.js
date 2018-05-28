@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
@@ -13,13 +13,7 @@ const Form = styled('form')({
   borderSpacing: '5px',
 });
 
-export default class PropForm extends React.Component {
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
-  componentWillUnmount() {
-    console.log('componentWillUnMount');
-  }
+export default class PropForm extends Component {
   makeChangeHandler(name, type) {
     return value => {
       const change = { name, type, value };
