@@ -99,7 +99,7 @@
     "polymer-webpack-loader": "^2.0.2",
     "prettier": "^1.13.0",
     "raf": "^3.4.0",
-    "react": "^16.3.2",
+    "react": "^16.4.0",
     "react-dom": "^16.3.2",
     "react-test-renderer": "^16.3.2",
     "remark-cli": "^5.0.0",
