@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import Textarea from 'react-textarea-autosize';
-import debounce from 'lodash.debounce';
 
 const StyledTextarea = styled(Textarea)({
   display: 'table-cell',
@@ -20,27 +19,15 @@ const StyledTextarea = styled(Textarea)({
 });
 
 class ObjectType extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    try {
-      this.state = {
-        value: JSON.stringify(props.knob.value, null, 2),
-        failed: false,
-      };
-    } catch (e) {
-      this.state = {
-        // if it can't be JSON stringified, it's probably some weird stuff
-        value: 'Default object cannot not be JSON stringified',
-        failed: true,
-      };
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      try {
+        return { value: JSON.stringify(props.knob.value, null, 2), failed: false };
+      } catch (e) {
+        return { value: 'Object cannot be stringified', failed: true };
+      }
     }
-
-    this.onChange = debounce(props.onChange, 200);
-  }
-
-  componentWillUnmount() {
-    this.onChange.cancel();
+    return null;
   }
 
   handleChange = e => {
@@ -48,11 +35,11 @@ class ObjectType extends Component {
 
     try {
       const json = JSON.parse(e.target.value.trim());
-      this.onChange(json);
       this.setState({
         value,
         failed: false,
       });
+      this.props.onChange(json);
     } catch (err) {
       this.setState({
         value,
