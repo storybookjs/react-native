@@ -67,7 +67,7 @@ describe('Panel', () => {
       expect(testChannel.emit).toHaveBeenCalledWith(e, knobFromUrl);
     });
 
-    it('should set query params when url params are already read', () => {
+    it('should remove query params when url params are already read', () => {
       const handlers = {};
 
       const testChannel = {
@@ -109,8 +109,8 @@ describe('Panel', () => {
 
       setKnobsHandler({ knobs, timestamp: +new Date() });
       const knobFromStory = {
-        'knob-foo': knobs.foo.value,
-        'knob-baz': knobs.baz.value,
+        'knob-foo': null,
+        'knob-baz': null,
       };
 
       expect(testApi.setQueryParams).toHaveBeenCalledWith(knobFromStory);
@@ -140,8 +140,8 @@ describe('Panel', () => {
       wrapper.instance().handleChange(testChangedKnob);
       expect(testChannel.emit).toHaveBeenCalledWith('addon:knobs:knobChange', testChangedKnob);
 
-      const paramsChange = { 'knob-foo': 'changed text' };
-      expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);
+      // const paramsChange = { 'knob-foo': 'changed text' };
+      // expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);
     });
   });
 });

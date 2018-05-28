@@ -56,7 +56,7 @@ exports[`Storyshots Components|Tabs stateful - absolute 1`] = `
       </button>
     </div>
     <div
-      class="css-2bpp8s"
+      class="css-18lpvrh"
     >
       <div
         id="test1"
@@ -137,7 +137,7 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
       </button>
     </div>
     <div
-      class="css-13o7eu2"
+      class="css-1bx5ylf"
     >
       <div
         id="test1"
@@ -218,7 +218,7 @@ exports[`Storyshots Components|Tabs stateful - with initial 1`] = `
       </button>
     </div>
     <div
-      class="css-13o7eu2"
+      class="css-1bx5ylf"
     >
       <div
         id="test2"
@@ -293,7 +293,7 @@ exports[`Storyshots Components|Tabs stateless - default 1`] = `
       </button>
     </div>
     <div
-      class="css-13o7eu2"
+      class="css-1bx5ylf"
     >
       <div
         id="test2"
