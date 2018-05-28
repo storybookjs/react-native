@@ -46,7 +46,7 @@
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@ngrx/store": "^5.2.0",
     "core-js": "^2.5.7",
-    "rxjs": "^5.5.10",
+    "rxjs": "^5.5.11",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
