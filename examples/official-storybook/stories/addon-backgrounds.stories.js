@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import backgrounds from '@storybook/addon-backgrounds';
+import backgrounds, { withBackgrounds } from '@storybook/addon-backgrounds';
 import BaseButton from '../components/BaseButton';
 
 storiesOf('Addons|Backgrounds', module)
@@ -24,7 +24,7 @@ storiesOf('Addons|Backgrounds', module)
   );
 
 storiesOf('Addons|Backgrounds, parameters', module)
-  .addDecorator(backgrounds)
+  .addDecorator(withBackgrounds)
   .addParameters({
     backgrounds: [
       { name: 'twitter', value: '#00aced' },

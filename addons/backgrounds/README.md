@@ -38,11 +38,11 @@ Then write your stories like this:
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 storiesOf('Button', module)
   .addDecorator(
-    backgrounds([
+    withBackgrounds([
       { name: 'twitter', value: '#00aced', default: true },
       { name: 'facebook', value: '#3b5998' },
     ])
@@ -50,36 +50,14 @@ storiesOf('Button', module)
   .add('with text', () => <button>Click me</button>);
 ```
 
-Of course it's easy to create a library module so you can re-use:
-
-```js
-import addonBackgrounds from '@storybook/addon-backgrounds';
-
-export const backgrounds = addonBackgrounds([
-  { name: 'twitter', value: '#00aced', default: true },
-  { name: 'facebook', value: '#3b5998' },
-]);
-```
-
-```js
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-
-import { backgrounds } from './my-lib';
-
-storiesOf('Button', module)
-  .addDecorator(backgrounds)
-  .add('with text', () => <button>Click me</button>);
-```
-
-Alternatively, you can add the backgrounds to all stories with `addDecorator` in `.storybook/config.js`:
+You can add the backgrounds to all stories with `addDecorator` in `.storybook/config.js`:
 
 ```js
 import { addDecorator } from '@storybook/react'; // <- or your storybook framework
-import backgrounds from '@storybook/addon-backgrounds';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 addDecorator(
-  backgrounds([
+  withBackgrounds([
     { name: 'twitter', value: '#00aced', default: true },
     { name: 'facebook', value: '#3b5998' },
   ])
@@ -92,15 +70,13 @@ If you want to override backgrounds for a single story or group of stories, pass
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { backgrounds } from './my-lib';
-
 storiesOf('Button', module)
-  .addParameters(
-    (backgrounds: [
+  .addParameters({
+    backgrounds: [
       { name: 'red', value: '#F44336' },
       { name: 'blue', value: '#2196F3', default: true },
-    ])
-  )
+    ],
+  })
   .add('with text', () => <button>Click me</button>);
 ```
 
@@ -109,8 +85,6 @@ If you don't want to use backgrounds for a story, you can set the `backgrounds` 
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { backgrounds } from './my-lib';
 
 storiesOf('Button', module).add('with text', () => <button>Click me</button>, {
   backgrounds: { skip: true },

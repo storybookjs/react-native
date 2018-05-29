@@ -48,10 +48,10 @@ const defaultBackground = {
 
 const instructionsHtml = `
 import { storiesOf } from "@storybook/react";
-import backgrounds from "@storybook/addon-backgrounds";
+import { withBackgrounds } from "@storybook/addon-backgrounds";
 
 storiesOf("First Component", module)
-  .addDecorator(backgrounds([
+  .addDecorator(withBackgrounds([
     { name: "twitter", value: "#00aced" },
     { name: "facebook", value: "#3b5998" },
   ]))

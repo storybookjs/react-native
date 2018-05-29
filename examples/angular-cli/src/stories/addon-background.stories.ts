@@ -1,11 +1,11 @@
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
-import backgrounds from '@storybook/addon-backgrounds';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { AppComponent } from '../app/app.component';
 
 storiesOf('Addon|Background', module)
   .addDecorator(
-    backgrounds([
+    withBackgrounds([
       { name: 'twitter', value: '#00aced', default: true },
       { name: 'facebook', value: '#3b5998' },
     ])
@@ -22,7 +22,7 @@ storiesOf('Addon|Background', module)
     })
   )
   .addDecorator(
-    backgrounds([
+    withBackgrounds([
       { name: 'twitter', value: '#00aced', default: true },
       { name: 'facebook', value: '#3b5998' },
     ])

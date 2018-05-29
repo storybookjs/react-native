@@ -1,5 +1,6 @@
 import addons, { makeDecorator } from '@storybook/addons';
 import CoreEvents from '@storybook/core-events';
+import deprecate from 'util-deprecate';
 
 import Events from './events';
 
@@ -10,7 +11,7 @@ const subscription = () => () => {
   addons.getChannel().emit(Events.UNSET);
 };
 
-export default makeDecorator({
+export const withBackgrounds = makeDecorator({
   name: 'backgrounds',
   parameterName: 'backgrounds',
   skipIfNoParametersOrOptions: true,
@@ -30,3 +31,8 @@ export default makeDecorator({
     return getStory(context);
   },
 });
+
+export default deprecate(
+  withBackgrounds,
+  'The default export of @storybook/addon-backgrounds is deprecated, please `import { withBackgrounds }` instead'
+);
