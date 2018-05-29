@@ -186,6 +186,14 @@ storiesOf('Addons|Knobs.withKnobs', module)
     knobs: { escapeHTML: false },
   });
 
+storiesOf('Addons|Knobs.withKnobs using options', module)
+  .addDecorator(
+    withKnobs({
+      escapeHTML: false,
+    })
+  )
+  .add('accepts options', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>);
+
 storiesOf('Addons|Knobs.withKnobsOptions', module)
   .addDecorator(
     withKnobsOptions({
