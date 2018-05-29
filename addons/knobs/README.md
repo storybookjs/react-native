@@ -319,23 +319,25 @@ const groupId = 'GROUP-ID1';
 button(label, handler, groupId);
 ```
 
-### withKnobs vs withKnobsOptions
+### withKnobs options
 
-If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.
+withKnobs also accepts two optional options as story parameters.
 Usage:
 
 ```js
 import { storiesOf } from '@storybook/react';
-import { withKnobsOptions } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 
 const stories = storiesOf('Storybook Knobs', module);
 
-stories.addDecorator(withKnobsOptions({
-  timestamps: true, // Doesn't emit events while user is typing.
-  escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
-                   // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
-
-}));
+stories.addDecorator(withKnobs)
+stories.add('story name', () => ..., {
+  knobs: {
+    timestamps: true, // Doesn't emit events while user is typing.
+    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
+                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.  
+  }
+});
 ```
 
 ## Typescript
