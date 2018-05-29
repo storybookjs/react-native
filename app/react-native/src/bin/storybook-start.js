@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-/* eslint-disable-next-line camelcase */
-import child_process from 'child_process';
+import { exec } from 'child_process';
 import path from 'path';
 import program from 'commander';
 import Server from '../server';
@@ -95,7 +94,7 @@ if (!program.skipPackager) {
     cliCommand = `haul start --config ${program.haul} --platform ${platform}`;
   }
   // RN packager
-  child_process.exec(
+  exec(
     [
       cliCommand,
       `--projectRoots ${projectRoots.join(',')}`,
