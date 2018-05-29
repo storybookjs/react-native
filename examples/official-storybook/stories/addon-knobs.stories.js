@@ -181,7 +181,10 @@ storiesOf('Addons|Knobs.withKnobs', module)
         __html: text('Rendered string', '<img src="x" onerror="alert(\'XSS Attack\')" >'),
       }}
     />
-  ));
+  ))
+  .add('accepts story parameters', () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>, {
+    knobs: { escapeHTML: false },
+  });
 
 storiesOf('Addons|Knobs.withKnobsOptions', module)
   .addDecorator(
