@@ -126,7 +126,7 @@ storiesOf('MyComponent', module)
 ### withTests(options)
 
 * **options.results**: OBJECT jest output results. _mandatory_
-* **filesExt**: STRING test file extention. _optionnal_. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
+* **filesExt**: STRING test file extention. _optional_. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## Usage with Angular
 
