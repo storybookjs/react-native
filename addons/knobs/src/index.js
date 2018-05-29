@@ -91,4 +91,7 @@ export const withKnobs = makeDecorator({
   },
 });
 
-export const withKnobsOptions = deprecate(withKnobs, 'Use withKnobs directly');
+export const withKnobsOptions = deprecate(
+  withKnobs,
+  'withKnobsOptions is deprecated. Instead, you can pass options into withKnobs(options) directly, or use the knobs parameter.'
+);
