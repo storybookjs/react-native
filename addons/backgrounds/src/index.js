@@ -1,4 +1,4 @@
-import addons from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
 import CoreEvents from '@storybook/core-events';
 
 import Events from './events';
@@ -10,11 +10,23 @@ const subscription = () => () => {
   addons.getChannel().emit(Events.UNSET);
 };
 
-export default backgrounds => story => {
-  if (prevBackgrounds !== backgrounds) {
-    addons.getChannel().emit(Events.SET, backgrounds);
-    prevBackgrounds = backgrounds;
-  }
-  addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
-  return story();
-};
+export default makeDecorator({
+  name: 'backgrounds',
+  parameterName: 'backgrounds',
+  skipIfNoParametersOrOptions: true,
+  wrapper: (getStory, context, { options, parameters }) => {
+    const backgrounds = parameters || options;
+
+    if (backgrounds.length === 0) {
+      return getStory(context);
+    }
+
+    if (prevBackgrounds !== backgrounds) {
+      addons.getChannel().emit(Events.SET, backgrounds);
+      prevBackgrounds = backgrounds;
+    }
+    addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
+
+    return getStory(context);
+  },
+});
