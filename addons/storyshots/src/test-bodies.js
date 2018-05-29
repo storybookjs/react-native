@@ -41,14 +41,16 @@ export function shallowSnapshot({ story, context, renderShallowTree, options = {
   expect(result).toMatchSnapshot();
 }
 
-export function renderOnly({ story, context, renderTree }) {
-  const result = renderTree(story, context, {});
+export const renderWithOptions = options => ({ story, context, renderTree }) => {
+  const result = renderTree(story, context, options);
 
   if (typeof result.then === 'function') {
     return result;
   }
 
   return undefined;
-}
+};
+
+export const renderOnly = renderWithOptions({});
 
 export const snapshot = snapshotWithOptions({});
