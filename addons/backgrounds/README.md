@@ -7,7 +7,7 @@
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
-* * *
+---
 
 Storybook Background Addon can be used to change background colors inside the preview in [Storybook](https://storybook.js.org).
 
@@ -37,35 +37,56 @@ Then write your stories like this:
 
 ```js
 import React from 'react';
-import { storiesOf } from "@storybook/react";
-import backgrounds from "@storybook/addon-backgrounds";
+import { storiesOf } from '@storybook/react';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
-storiesOf("Button", module)
-  .addDecorator(backgrounds([
-    { name: "twitter", value: "#00aced", default: true },
-    { name: "facebook", value: "#3b5998" },
-  ]))
-  .add("with text", () => <button>Click me</button>);
+storiesOf('Button', module)
+  .addDecorator(
+    withBackgrounds([
+      { name: 'twitter', value: '#00aced', default: true },
+      { name: 'facebook', value: '#3b5998' },
+    ])
+  )
+  .add('with text', () => <button>Click me</button>);
 ```
 
-Of course it's easy to create a library module so you can re-use:
+You can add the backgrounds to all stories with `addDecorator` in `.storybook/config.js`:
 
 ```js
-import addonBackgrounds from "@storybook/addon-backgrounds";
+import { addDecorator } from '@storybook/react'; // <- or your storybook framework
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
-export const backgrounds = addonBackgrounds([
-  { name: "twitter", value: "#00aced", default: true },
-  { name: "facebook", value: "#3b5998" },
-]);
+addDecorator(
+  withBackgrounds([
+    { name: 'twitter', value: '#00aced', default: true },
+    { name: 'facebook', value: '#3b5998' },
+  ])
+);
 ```
+
+If you want to override backgrounds for a single story or group of stories, pass the `backgrounds` parameter:
 
 ```js
 import React from 'react';
-import { storiesOf } from "@storybook/react";
+import { storiesOf } from '@storybook/react';
 
-import { backgrounds } from "./my-lib";
+storiesOf('Button', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'red', value: '#F44336' },
+      { name: 'blue', value: '#2196F3', default: true },
+    ],
+  })
+  .add('with text', () => <button>Click me</button>);
+```
 
-storiesOf("Button", module)
-  .addDecorator(backgrounds)
-  .add("with text", () => <button>Click me</button>);
+If you don't want to use backgrounds for a story, you can set the `backgrounds` parameter to `[]`, or use `{ disable: true }` to skip the addon:
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+storiesOf('Button', module).add('with text', () => <button>Click me</button>, {
+  backgrounds: { disable: true },
+});
 ```
