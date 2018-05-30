@@ -4,7 +4,7 @@ import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
 
-import { CHECK_EVENT_ID, RERUN_EVENT_ID } from './shared';
+import { CHECK_EVENT_ID, REQUEST_CHECK_EVENT_ID } from './shared';
 
 let axeOptions = {};
 
@@ -23,11 +23,10 @@ const runA11yCheck = () => {
 
 const a11ySubscription = () => {
   const channel = addons.getChannel();
-  channel.on(Events.STORY_RENDERED, runA11yCheck);
-  channel.on(RERUN_EVENT_ID, runA11yCheck);
+  channel.on(REQUEST_CHECK_EVENT_ID, runA11yCheck);
+
   return () => {
-    channel.removeListener(Events.STORY_RENDERED, runA11yCheck);
-    channel.removeListener(RERUN_EVENT_ID, runA11yCheck);
+    channel.removeListener(REQUEST_CHECK_EVENT_ID, runA11yCheck);
   };
 };
 
