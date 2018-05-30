@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
 
-import Events from '@storybook/core-events';
+import { STORY_RENDERED } from '@storybook/core-events';
 
 import { CHECK_EVENT_ID, RERUN_EVENT_ID, REQUEST_CHECK_EVENT_ID } from '../shared';
 
@@ -35,7 +35,7 @@ class Panel extends Component {
 
   componentDidMount() {
     this.props.channel.on(CHECK_EVENT_ID, this.onUpdate);
-    this.props.channel.on(Events.STORY_RENDERED, this.requestCheck);
+    this.props.channel.on(STORY_RENDERED, this.requestCheck);
     this.props.channel.on(RERUN_EVENT_ID, this.requestCheck);
   }
 
@@ -47,7 +47,7 @@ class Panel extends Component {
 
   componentWillUnmount() {
     this.props.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
-    this.props.channel.removeListener(Events.STORY_RENDERED, this.requestCheck);
+    this.props.channel.removeListener(STORY_RENDERED, this.requestCheck);
     this.props.channel.removeListener(RERUN_EVENT_ID, this.requestCheck);
   }
 
