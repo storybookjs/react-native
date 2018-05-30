@@ -7,11 +7,11 @@ import Info from './Info';
 import Tags from './Tags';
 import Elements from './Elements';
 
-const Wrapper = styled('div')({
+const Wrapper = styled('div')(({ theme }) => ({
   padding: '0 14px',
   cursor: 'pointer',
-  borderBottom: '1px solid rgb(234, 234, 234)',
-});
+  borderBottom: theme.mainBorder,
+}));
 
 const HeaderBar = styled('button')({
   padding: '12px 0px',
@@ -19,6 +19,7 @@ const HeaderBar = styled('button')({
   width: '100%',
   border: 0,
   background: 'none',
+  color: 'inherit',
 });
 
 class Item extends Component {

@@ -4,19 +4,20 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import { STORY_RENDERED } from '@storybook/core-events';
+import { ActionBar, ActionButton } from '@storybook/components';
 
 import { CHECK_EVENT_ID, RERUN_EVENT_ID, REQUEST_CHECK_EVENT_ID } from '../shared';
 
 import Tabs from './Tabs';
 import Report from './Report';
 
-const Passes = styled('span')({
-  color: '#0D6731',
-});
+const Passes = styled('span')(({ theme }) => ({
+  color: theme.successColor,
+}));
 
-const Violations = styled('span')({
-  color: '#AC2300',
-});
+const Violations = styled('span')(({ theme }) => ({
+  color: theme.failColor,
+}));
 
 class Panel extends Component {
   static propTypes = {
@@ -69,18 +70,23 @@ class Panel extends Component {
     const { active } = this.props;
 
     return active ? (
-      <Tabs
-        tabs={[
-          {
-            label: <Violations>{violations.length} Violations</Violations>,
-            panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
-          },
-          {
-            label: <Passes>{passes.length} Passes</Passes>,
-            panel: <Report passes items={passes} empty="No a11y check passed" />,
-          },
-        ]}
-      />
+      <div>
+        <Tabs
+          tabs={[
+            {
+              label: <Violations>{violations.length} Violations</Violations>,
+              panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
+            },
+            {
+              label: <Passes>{passes.length} Passes</Passes>,
+              panel: <Report passes items={passes} empty="No a11y check passed" />,
+            },
+          ]}
+        />
+        <ActionBar>
+          <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
+        </ActionBar>
+      </div>
     ) : null;
   }
 }

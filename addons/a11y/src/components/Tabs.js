@@ -9,11 +9,11 @@ const Container = styled('div')({
   minHeight: '100%',
 });
 
-const List = styled('div')({
-  borderBottom: '1px solid rgb(234, 234, 234)',
+const List = styled('div')(({ theme }) => ({
+  borderBottom: theme.mainBorder,
   flexWrap: 'wrap',
   display: 'flex',
-});
+}));
 
 const Item = styled('button')(
   ({ active }) =>
@@ -23,9 +23,7 @@ const Item = styled('button')(
           fontWeight: 600,
         }
       : {},
-  {
-    color: 'rgb(68, 68, 68)',
-    fontSize: '11px',
+  ({ theme }) => ({
     textDecoration: 'none',
     textTransform: 'uppercase',
     padding: '10px 15px',
@@ -34,9 +32,16 @@ const Item = styled('button')(
     fontWeight: 500,
     opacity: 0.7,
     border: 'none',
+    borderTop: '3px solid transparent',
+    borderBottom: '3px solid transparent',
     background: 'none',
     flex: 1,
-  }
+
+    '&:focus': {
+      outline: '0 none',
+      borderBottom: `3px solid ${theme.highlightColor}`,
+    },
+  })
 );
 
 class Tabs extends Component {

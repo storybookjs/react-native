@@ -36,7 +36,6 @@ const Status = styled('div')(({ passes, impact }) => ({
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
-  color: '#fff',
   textAlign: 'center',
   flex: '0 0 16px',
   backgroundColor: passes ? impactColors.success : impactColors[impact],
