@@ -44,27 +44,31 @@ export class Notes extends React.Component {
   }
 
   render() {
+    const { active } = this.props;
     const { text } = this.state;
     const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
 
-    return (
+    return active ? (
       <Panel
         className="addon-notes-container"
         dangerouslySetInnerHTML={{ __html: textAfterFormatted }}
       />
-    );
+    ) : null;
   }
 }
 
 Notes.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  channel: PropTypes.object,
-  // eslint-disable-next-line react/forbid-prop-types
-  api: PropTypes.object,
-};
-Notes.defaultProps = {
-  channel: {},
-  api: {},
+  active: PropTypes.bool.isRequired,
+  channel: PropTypes.shape({
+    on: PropTypes.func,
+    emit: PropTypes.func,
+    removeListener: PropTypes.func,
+  }).isRequired,
+  api: PropTypes.shape({
+    onStory: PropTypes.func,
+    getQueryParam: PropTypes.func,
+    setQueryParams: PropTypes.func,
+  }).isRequired,
 };
 
 addons.register('storybook/notes', api => {
@@ -72,6 +76,6 @@ addons.register('storybook/notes', api => {
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => (active ? <Notes channel={channel} api={api} /> : null),
+    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
   });
 });
