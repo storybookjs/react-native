@@ -5,7 +5,6 @@ const defaultOptions = {
     bracketSpacing: true,
     trailingComma: 'es5',
     singleQuote: true,
-    parser: 'babylon',
   },
   uglyCommentsRegex: [/^eslint-.*/, /^global.*/],
 };
