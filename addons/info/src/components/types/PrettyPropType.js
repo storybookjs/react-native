@@ -18,7 +18,7 @@ const propTypeComponentMap = new Map([
   ['union', OneOfType],
   ['arrayOf', ArrayOf],
   ['objectOf', ObjectOf],
-  // Might be overkill to have below proptypes  as separate components *shrug*
+  // Might be overkill to have below proptypes as separate components *shrug*
   ['literal', Literal],
   ['enum', OneOf],
   ['instanceOf', InstanceOf],

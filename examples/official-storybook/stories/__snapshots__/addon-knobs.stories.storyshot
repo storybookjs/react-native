@@ -6,6 +6,12 @@ exports[`Storyshots Addons|Knobs.withKnobs XSS safety 1`] = `
 </div>
 `;
 
+exports[`Storyshots Addons|Knobs.withKnobs accepts story parameters 1`] = `
+<div>
+  &lt;h1&gt;Hello&lt;/h1&gt;
+</div>
+`;
+
 exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 <div>
   <div>
@@ -117,6 +123,12 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
       Whiskey
     </li>
   </ul>
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs.withKnobs using options accepts options 1`] = `
+<div>
+  &lt;h1&gt;Hello&lt;/h1&gt;
 </div>
 `;
 

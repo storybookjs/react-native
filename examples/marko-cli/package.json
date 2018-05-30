@@ -35,7 +35,7 @@
     "*.marko.js"
   ],
   "dependencies": {
-    "marko": "^4",
+    "marko": "^4.10.0",
     "marko-starter": "^1.0.0",
     "marko-widgets": "^7"
   },
@@ -50,7 +50,7 @@
     "eslint": "^4.2.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
-    "prettier": "^1.5.2",
-    "webpack": "^4.8.3"
+    "prettier": "^1.13.0",
+    "webpack": "^4.9.2"
   }
 }

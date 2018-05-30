@@ -45,8 +45,8 @@
     "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@ngrx/store": "^5.2.0",
-    "core-js": "^2.5.6",
-    "rxjs": "^5.5.10",
+    "core-js": "^2.5.7",
+    "rxjs": "^5.5.11",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -75,7 +75,7 @@
     "jest": "^22.4.4",
     "jest-preset-angular": "^5.2.2",
     "protractor": "~5.3.2",
-    "ts-node": "~6.0.3",
+    "ts-node": "~6.0.5",
     "typescript": "^2.8.3"
   }
 }
