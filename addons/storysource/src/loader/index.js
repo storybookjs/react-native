@@ -5,7 +5,7 @@ const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__, __ADDS
 
 function transform(source) {
   const options = getOptions(this) || {};
-  const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, options);
+  const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, this.resourcePath, options);
 
   if (!result.changed) {
     return source;

@@ -1,12 +1,19 @@
 import fs from 'fs';
+import path from 'path';
 import injectDecorator from './inject-decorator';
 
 const ADD_DECORATOR_STATEMENT = '.addDecorator(withStorySource(__STORY__, __ADDS_MAP__))';
 
 describe('inject-decorator', () => {
   describe('positive', () => {
-    const source = fs.readFileSync('./__mocks__/inject-decorator.stories.txt', 'utf-8');
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
+    const mockFilePath = './__mocks__/inject-decorator.stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      { parser: 'javascript' }
+    );
 
     it('returns "changed" flag', () => {
       expect(result.changed).toBeTruthy();
@@ -22,8 +29,14 @@ describe('inject-decorator', () => {
   });
 
   describe('positive - angular', () => {
-    const source = fs.readFileSync('./__mocks__/inject-decorator.angular-stories.txt', 'utf-8');
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, { parser: 'typescript' });
+    const mockFilePath = './__mocks__/inject-decorator.angular-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      { parser: 'typescript' }
+    );
 
     it('returns "changed" flag', () => {
       expect(result.changed).toBeTruthy();
@@ -39,8 +52,14 @@ describe('inject-decorator', () => {
   });
 
   describe('positive - ts', () => {
-    const source = fs.readFileSync('./__mocks__/inject-decorator.ts.txt', 'utf-8');
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, { parser: 'typescript' });
+    const mockFilePath = './__mocks__/inject-decorator.ts.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      { parser: 'typescript' }
+    );
 
     it('returns "changed" flag', () => {
       expect(result.changed).toBeTruthy();
@@ -56,11 +75,14 @@ describe('inject-decorator', () => {
   });
 
   describe('stories with ugly comments', () => {
-    const source = fs.readFileSync(
-      './__mocks__/inject-decorator.ugly-comments-stories.txt',
-      'utf-8'
+    const mockFilePath = './__mocks__/inject-decorator.ugly-comments-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      { parser: 'javascript' }
     );
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
 
     it('should delete ugly comments from the generated story source', () => {
       expect(result.storySource).toMatchSnapshot();
@@ -68,11 +90,14 @@ describe('inject-decorator', () => {
   });
 
   describe('stories with ugly comments in ts', () => {
-    const source = fs.readFileSync(
-      './__mocks__/inject-decorator.ts.ugly-comments-stories.txt',
-      'utf-8'
+    const mockFilePath = './__mocks__/inject-decorator.ts.ugly-comments-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      { parser: 'typescript' }
     );
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT, { parser: 'typescript' });
 
     it('should delete ugly comments from the generated story source', () => {
       expect(result.storySource).toMatchSnapshot();
@@ -80,9 +105,14 @@ describe('inject-decorator', () => {
   });
 
   it('will not change the source when there are no "storiesOf" functions', () => {
-    const source = fs.readFileSync('./__mocks__/inject-decorator.no-stories.txt', 'utf-8');
+    const mockFilePath = './__mocks__/inject-decorator.no-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
 
-    const result = injectDecorator(source, ADD_DECORATOR_STATEMENT);
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath)
+    );
 
     expect(result.changed).toBeFalsy();
     expect(result.addsMap).toEqual({});
