@@ -80,13 +80,13 @@ storiesOf('Button', module)
   .add('with text', () => <button>Click me</button>);
 ```
 
-If you don't want to use backgrounds for a story, you can set the `backgrounds` parameter to `[]`, or use `{ skip: true }` to skip the addon:
+If you don't want to use backgrounds for a story, you can set the `backgrounds` parameter to `[]`, or use `{ disable: true }` to skip the addon:
 
 ```js
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 storiesOf('Button', module).add('with text', () => <button>Click me</button>, {
-  backgrounds: { skip: true },
+  backgrounds: { disable: true },
 });
 ```

@@ -45,9 +45,9 @@ storiesOf('Addons|Backgrounds, parameters', module)
     backgrounds: [],
   })
   .add(
-    'disabled via skip',
+    'skipped via disable:true',
     () => <BaseButton label="This one should not use backgrounds either" />,
     {
-      backgrounds: { skip: true },
+      backgrounds: { disable: true },
     }
   );
