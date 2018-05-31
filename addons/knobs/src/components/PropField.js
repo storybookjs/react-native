@@ -19,7 +19,6 @@ const Label = styled('label')({
   textAlign: 'right',
   width: 80,
   fontSize: 12,
-  color: 'rgb(68, 68, 68)',
   fontWeight: 600,
 });
 
