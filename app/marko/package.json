@@ -31,7 +31,7 @@
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {
-    "marko": "^4",
-    "marko-widgets": "^7"
+    "marko": "^4.10.0",
+    "marko-widgets": "^7.0.1"
   }
 }

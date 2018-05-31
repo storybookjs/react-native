@@ -11177,7 +11177,7 @@ marko-starter@^1.0.0:
     routes-table "^1.2.1"
     try-require "^1.2.1"
 
-marko-widgets@^7:
+marko-widgets@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/marko-widgets/-/marko-widgets-7.0.1.tgz#0e0df2b5609f462f6e93f52f8628535f2f4bc03f"
   dependencies:

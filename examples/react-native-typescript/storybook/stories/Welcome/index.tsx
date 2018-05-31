@@ -7,9 +7,9 @@ interface Props {
 }
 */
 
-type Props = {
-  showApp: () => void,
-};
+interface Props {
+  showApp: () => void;
+}
 
 export default class Welcome extends React.Component<Props> {
   styles = {
@@ -31,7 +31,9 @@ export default class Welcome extends React.Component<Props> {
 
   showApp(event) {
     event.preventDefault();
-    if (this.props.showApp) this.props.showApp();
+    if (this.props.showApp) {
+      this.props.showApp();
+    }
   }
 
   render() {
