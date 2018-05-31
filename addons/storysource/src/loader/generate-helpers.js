@@ -28,20 +28,25 @@ function generateSourceWithoutUglyComments(source, { comments, uglyCommentsRegex
 }
 
 function prettifyCode(source, { prettierConfig, parser, filepath }) {
-  let config = prettierConfig;
+  if (prettierConfig.parser) return prettier.format(source, prettierConfig);
 
-  if (!config.parser) {
-    if (parser) {
-      config = {
-        ...prettierConfig,
-        parser: parser === 'javascript' ? 'babylon' : parser,
-      };
-    } else if (filepath) {
-      config = {
-        ...prettierConfig,
-        filepath,
-      };
-    }
+  let config = {};
+
+  if (parser) {
+    config = {
+      ...prettierConfig,
+      parser: parser === 'javascript' ? 'babylon' : parser,
+    };
+  } else if (filepath) {
+    config = {
+      ...prettierConfig,
+      filepath,
+    };
+  } else {
+    config = {
+      ...prettierConfig,
+      parser: 'babylon',
+    };
   }
 
   return prettier.format(source, config);
