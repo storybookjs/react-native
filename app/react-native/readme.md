@@ -149,6 +149,28 @@ The following parameters can be passed to the start command:
     Override the root(s) to be used by the packager
 ```
 
+## getStorybookUI Options
+
+You can pass these parameters to getStorybookUI call in your storybook entry point:
+
+```
+{
+    onDeviceUI: Boolean (false) 
+        -- display stories list on the device
+    disableWebsockets: Boolean (false) 
+        -- allows to display stories without running storybook server. Should be used with onDeviceUI
+    secured: Boolean (false) 
+        -- use wss/https instead of ws/http
+    host: String (NativeModules.SourceCode.scriptURL) 
+        -- host to use
+    port: Number (7007)
+        -- port to use
+    query: String ("") 
+        -- additional query string to pass to websockets
+}
+```
+
+
 ## Learn More
 
 Check the `docs` directory in this repo for more advanced setup guides and other info.
