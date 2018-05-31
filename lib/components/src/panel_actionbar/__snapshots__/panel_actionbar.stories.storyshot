@@ -8,7 +8,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
     class="css-wo86af"
   >
     <button
-      class="css-cvp1oh"
+      class="css-hu94vo"
     >
       Nr1
     </button>
@@ -17,7 +17,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
     class="css-11rvrtb"
   >
     <button
-      class="css-cvp1oh"
+      class="css-hu94vo"
     >
       Nr2
     </button>
@@ -26,7 +26,7 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
     class="css-11rvrtb"
   >
     <button
-      class="css-cvp1oh"
+      class="css-hu94vo"
     >
       Nr3
     </button>
@@ -42,7 +42,7 @@ exports[`Storyshots Components|PanelActionBar single item 1`] = `
     class="css-wo86af"
   >
     <button
-      class="css-cvp1oh"
+      class="css-hu94vo"
     >
       CLEAR
     </button>

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components|Layout addon panel in right 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-1gc3bpj"
 >
   <div
     class="SplitPane  vertical "
@@ -29,7 +29,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
           direction="vertical"
         >
           <div
-            class="css-19oxd4p"
+            class="css-1440uyg"
             direction="vertical"
           />
         </div>
@@ -58,7 +58,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
               class="css-1nsb3py"
             />
             <div
-              class="css-1xkk3c8"
+              class="css-1xs6rp0"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -84,7 +84,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
               direction="vertical"
             >
               <div
-                class="css-19oxd4p"
+                class="css-1440uyg"
                 direction="vertical"
               />
             </div>
@@ -103,7 +103,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
 
 exports[`Storyshots Components|Layout default 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-1gc3bpj"
 >
   <div
     class="SplitPane  vertical "
@@ -130,7 +130,7 @@ exports[`Storyshots Components|Layout default 1`] = `
           direction="vertical"
         >
           <div
-            class="css-19oxd4p"
+            class="css-1440uyg"
             direction="vertical"
           />
         </div>
@@ -159,7 +159,7 @@ exports[`Storyshots Components|Layout default 1`] = `
               class="css-1nsb3py"
             />
             <div
-              class="css-1xkk3c8"
+              class="css-1xs6rp0"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -185,7 +185,7 @@ exports[`Storyshots Components|Layout default 1`] = `
               direction="horizontal"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1jcnnec"
                 direction="horizontal"
               />
             </div>
@@ -204,7 +204,7 @@ exports[`Storyshots Components|Layout default 1`] = `
 
 exports[`Storyshots Components|Layout full screen 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-1gc3bpj"
 >
   <div
     class="SplitPane  vertical disabled"
@@ -231,7 +231,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
           direction="vertical"
         >
           <div
-            class="css-19oxd4p"
+            class="css-1440uyg"
             direction="vertical"
           />
         </div>
@@ -260,7 +260,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
               class="css-1nsb3py"
             />
             <div
-              class="css-15swx87"
+              class="css-xivtyk"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -286,7 +286,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
               direction="horizontal"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1jcnnec"
                 direction="horizontal"
               />
             </div>
@@ -305,24 +305,24 @@ exports[`Storyshots Components|Layout full screen 1`] = `
 
 exports[`Storyshots Components|Layout mobile 1`] = `
 <div
-  class="css-1dlj6ug"
+  class="css-1m93is8"
 >
   <div>
     <div
       class="css-1kes5pl"
     >
       <div
-        class="css-64377y"
+        class="css-1quo5zq"
       >
         <button
-          class="css-1540u6r"
+          class="css-1j3izfd"
           role="tab"
           type="button"
         >
           Navigator
         </button>
         <button
-          class="css-133zstr"
+          class="css-wqil0u"
           role="tab"
           selected=""
           type="button"
@@ -330,7 +330,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
           Preview
         </button>
         <button
-          class="css-1540u6r"
+          class="css-1j3izfd"
           role="tab"
           type="button"
         >
@@ -380,7 +380,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
 
 exports[`Storyshots Components|Layout no addon panel 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-1gc3bpj"
 >
   <div
     class="SplitPane  vertical "
@@ -407,7 +407,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
           direction="vertical"
         >
           <div
-            class="css-19oxd4p"
+            class="css-1440uyg"
             direction="vertical"
           />
         </div>
@@ -436,7 +436,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
               class="css-1nsb3py"
             />
             <div
-              class="css-1xkk3c8"
+              class="css-1xs6rp0"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -462,7 +462,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
               direction="horizontal"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1jcnnec"
                 direction="horizontal"
               />
             </div>
@@ -481,7 +481,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
 
 exports[`Storyshots Components|Layout no stories panel 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-1gc3bpj"
 >
   <div
     class="SplitPane  vertical disabled"
@@ -508,7 +508,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
           direction="vertical"
         >
           <div
-            class="css-19oxd4p"
+            class="css-1440uyg"
             direction="vertical"
           />
         </div>
@@ -537,7 +537,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
               class="css-1nsb3py"
             />
             <div
-              class="css-1xkk3c8"
+              class="css-1xs6rp0"
             >
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
@@ -563,7 +563,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
               direction="horizontal"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1jcnnec"
                 direction="horizontal"
               />
             </div>
