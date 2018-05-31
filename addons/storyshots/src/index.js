@@ -13,6 +13,7 @@ import {
   snapshot,
   shallowSnapshot,
   renderOnly,
+  renderWithOptions,
 } from './test-bodies';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
@@ -24,6 +25,7 @@ export {
   snapshotWithOptions,
   shallowSnapshot,
   renderOnly,
+  renderWithOptions,
   imageSnapshot,
 };
 

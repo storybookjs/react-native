@@ -15,7 +15,6 @@ export default class Preview {
   constructor() {
     this._addons = {};
     this._decorators = [];
-    this._events = new EventEmitter();
     this._stories = new StoryStore();
     this._clientApi = new ClientApi({ storyStore: this._stories });
 
@@ -51,33 +50,38 @@ export default class Preview {
         // which is fine in this case (we will define it below)
       }
 
-      if (params.resetStorybook || !channel) {
-        const host = params.host || parse(NativeModules.SourceCode.scriptURL).hostname;
-        const port = params.port !== false ? `:${params.port || 7007}` : '';
+      if (!channel || params.resetStorybook) {
+        if (params.onDeviceUI && params.disableWebsockets) {
+          channel = new EventEmitter();
+        } else {
+          const host = params.host || parse(NativeModules.SourceCode.scriptURL).hostname;
+          const port = params.port !== false ? `:${params.port || 7007}` : '';
 
-        const query = params.query || '';
-        const { secured } = params;
-        const websocketType = secured ? 'wss' : 'ws';
-        const httpType = secured ? 'https' : 'http';
+          const query = params.query || '';
+          const { secured } = params;
+          const websocketType = secured ? 'wss' : 'ws';
+          const httpType = secured ? 'https' : 'http';
 
-        const url = `${websocketType}://${host}${port}/${query}`;
-        webUrl = `${httpType}://${host}${port}`;
-        channel = createChannel({ url });
+          const url = `${websocketType}://${host}${port}/${query}`;
+          webUrl = `${httpType}://${host}${port}`;
+          channel = createChannel({ url });
+        }
+
         addons.setChannel(channel);
 
         channel.emit(Events.CHANNEL_CREATED);
       }
+
       channel.on(Events.GET_STORIES, () => this._sendSetStories());
       channel.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
-      this._events.on(Events.SET_CURRENT_STORY, d => this._selectStory(d));
       this._sendSetStories();
       this._sendGetCurrentStory();
 
       // finally return the preview component
       return params.onDeviceUI ? (
-        <OnDeviceUI stories={this._stories} events={this._events} url={webUrl} />
+        <OnDeviceUI stories={this._stories} events={channel} url={webUrl} />
       ) : (
-        <StoryView url={webUrl} events={this._events} />
+        <StoryView url={webUrl} events={channel} />
       );
     };
   }
@@ -96,6 +100,7 @@ export default class Preview {
   _selectStory(selection) {
     const { kind, story } = selection;
     const storyFn = this._stories.getStoryWithContext(kind, story);
-    this._events.emit(Events.SELECT_STORY, storyFn, selection);
+    const channel = addons.getChannel();
+    channel.emit(Events.SELECT_STORY, selection, storyFn);
   }
 }

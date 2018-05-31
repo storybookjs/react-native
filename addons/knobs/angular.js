@@ -1,1 +1,1 @@
-module.exports = require('./dist/angular');
+module.exports = require('./dist/deprecated');

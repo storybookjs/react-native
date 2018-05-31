@@ -10,7 +10,7 @@ import {
   color,
   date,
   button,
-} from '@storybook/addon-knobs/vue';
+} from '@storybook/addon-knobs';
 
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
@@ -32,11 +32,11 @@ storiesOf('Addon|Knobs', module)
       step: 5,
     });
     const fruits = {
-      apples: 'Apple',
-      bananas: 'Banana',
-      cherries: 'Cherry',
+      Apple: 'apples',
+      Banana: 'bananas',
+      Cherry: 'cherries',
     };
-    const fruit = select('Fruit', fruits, 'apple');
+    const fruit = select('Fruit', fruits, 'apples');
     const price = number('Price', 2.25);
 
     const colour = color('Border', 'deeppink');

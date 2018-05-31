@@ -36,11 +36,11 @@ storiesOf('Component', module)
   .add('simple info',
     withInfo(`
       description or documentation about my component, supports markdown
-    
+
       ~~~js
       <Button>Click Here</Button>
       ~~~
-    
+
     `)(() =>
       <Component>Click the "?" mark at top-right to view the info.</Component>
     )
@@ -128,7 +128,7 @@ setDefaults({
   header: false, // Toggles display of header with component name and description
   inline: true, // Displays info inline vs click button to view
   source: true, // Displays the source of story Component
-  propTables: [/* Components used in story */], // displays Prop Tables with this components
+  propTables: [/* Components used in story */], // displays Prop Tables with these components
   propTablesExclude: [], // Exclude Components from being shown in Prop Tables section. Accepts an array of component classes or functions.
   styles: {}, // Overrides styles of addon. The object should follow this shape: https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19. This prop can also accept a function which has the default stylesheet passed as an argument.
   components: {}, // Overrides components used to display markdown
@@ -141,45 +141,13 @@ setDefaults({
 }
 ```
 
-## Deprecated usage
-
-There is also a deprecated API that is slated for removal in Storybook 4.0.
-
-```js
-import { configure, setAddon } from '@storybook/react';
-import infoAddon from '@storybook/addon-info';
-
-setAddon(infoAddon);
-
-configure(function () {
-  //...
-}, module);
-```
-
-Then create your stories with the `.addWithInfo` API.
-
-```js
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Component from './Component';
-
-storiesOf('Component')
-  .addWithInfo(
-    'simple usage',
-    `This is the basic usage with the button with providing a label to show the text.`,
-    () => (
-      <Component>Click the "?" mark at top-right to view the info.</Component>
-    ),
-  );
-```
-
-> Have a look at [this example](example/story.js) stories to learn more about the `addWithInfo` API.
+## Customizing defaults
 
 To customize your defaults:
 
 ```js
 // config.js
-import infoAddon, { setDefaults } from '@storybook/addon-info';
+import { setDefaults } from '@storybook/addon-info';
 
 // addon-info
 setDefaults({
@@ -189,7 +157,6 @@ setDefaults({
   maxPropArrayLength: 10,
   maxPropStringLength: 100,
 });
-setAddon(infoAddon);
 ```
 
 ### Rendering a Custom Table

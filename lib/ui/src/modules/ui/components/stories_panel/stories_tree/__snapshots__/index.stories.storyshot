@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ui/stories/Stories empty 1`] = `
-<div>
+<div
+  class="css-7w6khc"
+>
   <ul
     style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
   >
@@ -19,7 +21,9 @@ exports[`Storyshots ui/stories/Stories empty 1`] = `
 `;
 
 exports[`Storyshots ui/stories/Stories simple 1`] = `
-<div>
+<div
+  class="css-7w6khc"
+>
   <ul
     style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
   >
@@ -130,8 +134,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   style="position:relative"
                 >
                   <a
-                    class="css-1b2u8sb"
-                    data-name="b1"
+                    class="css-1enusis"
                     href="?selectedKind=b&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div
@@ -152,8 +155,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   style="position:relative"
                 >
                   <a
-                    class="css-1enjukp"
-                    data-name="b2"
+                    class="css-1xfwvjl"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div
@@ -181,7 +183,9 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
 `;
 
 exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is defined 1`] = `
-<div>
+<div
+  class="css-7w6khc"
+>
   <ul
     style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
   >
@@ -390,8 +394,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               style="position:relative"
                             >
                               <a
-                                class="css-1b2u8sb"
-                                data-name="b1"
+                                class="css-1enusis"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div
@@ -412,8 +415,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               style="position:relative"
                             >
                               <a
-                                class="css-1enjukp"
-                                data-name="b2"
+                                class="css-1xfwvjl"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div
@@ -447,7 +449,9 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
 `;
 
 exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is provided 1`] = `
-<div>
+<div
+  class="css-7w6khc"
+>
   <ul
     style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
   >
@@ -619,8 +623,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               style="position:relative"
                             >
                               <a
-                                class="css-1b2u8sb"
-                                data-name="b1"
+                                class="css-1enusis"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div
@@ -641,8 +644,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               style="position:relative"
                             >
                               <a
-                                class="css-1enjukp"
-                                data-name="b2"
+                                class="css-1xfwvjl"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div
@@ -676,7 +678,9 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
 `;
 
 exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is defined 1`] = `
-<div>
+<div
+  class="css-7w6khc"
+>
   <ul
     style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
   >
@@ -787,8 +791,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   style="position:relative"
                 >
                   <a
-                    class="css-1b2u8sb"
-                    data-name="b1"
+                    class="css-1enusis"
                     href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div
@@ -809,8 +812,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   style="position:relative"
                 >
                   <a
-                    class="css-1enjukp"
-                    data-name="b2"
+                    class="css-1xfwvjl"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div

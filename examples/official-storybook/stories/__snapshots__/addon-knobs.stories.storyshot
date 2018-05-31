@@ -2,7 +2,13 @@
 
 exports[`Storyshots Addons|Knobs.withKnobs XSS safety 1`] = `
 <div>
-  &lt;img src=x onerror="alert('XSS Attack')" &gt;
+  &lt;img src="x" onerror="alert('XSS Attack')" &gt;
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs.withKnobs accepts story parameters 1`] = `
+<div>
+  &lt;h1&gt;Hello&lt;/h1&gt;
 </div>
 `;
 
@@ -20,7 +26,7 @@ exports[`Storyshots Addons|Knobs.withKnobs dynamic knobs 1`] = `
 exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
 <div>
   <p>
-    Hit the knob load button and it should trigger an async load after a short delay
+    Hit the knob button and it will toggle the items list into multiple states.
   </p>
   <p>
     No items loaded
@@ -33,7 +39,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
   style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
 >
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
   </p>
   <p>
     My birthday is: January 20, 2017
@@ -108,9 +114,6 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
     Fruit: apple
   </p>
   <p>
-    Second Fruit: lime
-  </p>
-  <p>
     Items:
   </p>
   <ul>
@@ -127,60 +130,14 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
 </div>
 `;
 
-exports[`Storyshots Addons|Knobs.withKnobsOptions triggers actions via button with debounce delay 1`] = `
+exports[`Storyshots Addons|Knobs.withKnobs using options accepts options 1`] = `
 <div>
-  <p>
-    Hit the knob load button and it should trigger an async load after a short delay
-  </p>
-  <p>
-    No items loaded
-  </p>
+  &lt;h1&gt;Hello&lt;/h1&gt;
 </div>
 `;
 
-exports[`Storyshots Addons|Knobs.withKnobsOptions tweaks static values with debounce delay 1`] = `
-<div
-  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
->
-  <p>
-    If you are encountering performance issues with state updating too often, use withKnobsOptions to debounce changes.
-  </p>
-  <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy lime.
-  </p>
-  <p>
-    My birthday is: January 20, 2017
-  </p>
-  <p>
-    My wallet contains: $12.50
-  </p>
-  <p>
-    In my backpack, I have:
-  </p>
-  <ul>
-    <li>
-      Laptop
-    </li>
-    <li>
-      Book
-    </li>
-    <li>
-      Whiskey
-    </li>
-  </ul>
-  <p>
-    Nice to meet you!
-  </p>
-  <p>
-    When I am happy I look like this: 
-    <img
-      alt="happy"
-      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII="
-    />
-  </p>
-  <hr />
-  <p>
-    PS. My shirt pocket contains: 
-  </p>
+exports[`Storyshots Addons|Knobs.withKnobsOptions displays HTML code 1`] = `
+<div>
+  &lt;h1&gt;Hello&lt;/h1&gt;
 </div>
 `;

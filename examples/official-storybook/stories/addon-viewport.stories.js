@@ -1,13 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
+import styled from 'react-emotion';
+
 import { baseFonts } from '@storybook/components';
 import { Viewport, withViewport } from '@storybook/addon-viewport';
 import EventEmitter from 'eventemitter3';
 
 import Logger from './Logger';
 
-// eslint-disable-next-line react/prop-types
-const Panel = ({ children }) => <div style={baseFonts}>{children}</div>;
+const Panel = styled('div')({ baseFonts });
 
 storiesOf('Addons|Viewport', module).add('default', () => (
   <Panel>I don't have problems being rendered using the default viewport.</Panel>
@@ -21,14 +23,23 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
     </Panel>
   ))
   .add(
-    'Overridden via "withViewport" decorator',
+    'Overridden via "withViewport" parameterized decorator',
+    () => (
+      <Panel>
+        I respect my parents but I should be looking good on <b>iPad</b>.
+      </Panel>
+    ),
+    { viewport: 'ipad' }
+  )
+  .add(
+    'Overridden via "withViewport" decorator (deprecated)',
     withViewport('iphone6')(() => (
       <Panel>
         I respect my parents but I should be looking good on <b>iPhone 6</b>.
       </Panel>
     ))
   )
-  .add('Overridden via "Viewport" component', () => (
+  .add('Overridden via "Viewport" component (deprecated)', () => (
     <Viewport name="iphone6p">
       <Panel>
         I respect my parents but I should be looking good on <b>iPhone 6 Plus</b>.

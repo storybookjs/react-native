@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'glamorous';
 import createFragment from 'react-addons-create-fragment';
 
 const getValueStyles = (codeColors = {}) => ({
@@ -282,4 +281,4 @@ PropVal.propTypes = {
   }),
 };
 
-export default withTheme(PropVal);
+export default PropVal;

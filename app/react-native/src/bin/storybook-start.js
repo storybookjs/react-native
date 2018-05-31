@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-
+import { exec } from 'child_process';
 import path from 'path';
 import program from 'commander';
-import shelljs from 'shelljs';
 import Server from '../server';
 
 program
@@ -95,7 +94,7 @@ if (!program.skipPackager) {
     cliCommand = `haul start --config ${program.haul} --platform ${platform}`;
   }
   // RN packager
-  shelljs.exec(
+  exec(
     [
       cliCommand,
       `--projectRoots ${projectRoots.join(',')}`,

@@ -12,7 +12,6 @@ export const INITIAL_VIEWPORTS = {
       height: '100%',
       border: 'none',
       display: 'block',
-      margin: '0',
       boxShadow: 'none',
     },
     type: 'desktop',

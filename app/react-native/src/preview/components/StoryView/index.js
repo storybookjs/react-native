@@ -10,15 +10,18 @@ export default class StoryView extends Component {
     this.state = { storyFn: null, selection: {} };
 
     this.storyHandler = this.selectStory.bind(this);
+    this.forceRender = this.forceUpdate.bind(this);
 
     this.props.events.on(Events.SELECT_STORY, this.storyHandler);
+    this.props.events.on(Events.FORCE_RE_RENDER, this.forceRender);
   }
 
   componentWillUnmount() {
     this.props.events.removeListener(Events.SELECT_STORY, this.storyHandler);
+    this.props.events.removeListener(Events.FORCE_RE_RENDER, this.forceRender);
   }
 
-  selectStory(storyFn, selection) {
+  selectStory(selection, storyFn) {
     this.setState({ storyFn, selection });
   }
 

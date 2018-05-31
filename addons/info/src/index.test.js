@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import AddonInfo, { withInfo, setDefaults } from './';
+import { withInfo, setDefaults } from './';
 import externalMdDocs from '../README.md';
 
 /* eslint-disable */
@@ -23,7 +23,6 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
   </div>);
 /* eslint-enable */
 
-const testContext = { kind: 'addon_info', story: 'jest_test' };
 const testOptions = { propTables: false };
 
 const testMarkdown = `# Test story
@@ -44,10 +43,6 @@ describe('addon Info', () => {
       />
     </div>
   );
-  const api = {
-    add: (name, fn) => fn(testContext),
-  };
-
   it('should render <Info /> and markdown', () => {
     const Info = withInfo(testMarkdown)(story);
 
@@ -66,9 +61,5 @@ describe('addon Info', () => {
     setDefaults(testOptions);
     const Info = withInfo()(story);
     mount(<Info />);
-  });
-  it('should show deprecation warning', () => {
-    const addWithInfo = AddonInfo.addWithInfo.bind(api);
-    addWithInfo('jest', story);
   });
 });

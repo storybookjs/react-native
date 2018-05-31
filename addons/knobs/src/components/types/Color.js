@@ -2,32 +2,29 @@ import { document } from 'global';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { SketchPicker } from 'react-color';
+
+import styled from 'react-emotion';
 import debounce from 'lodash.debounce';
 
-const conditionalRender = (condition, positive, negative) => (condition ? positive() : negative());
-
-const styles = {
-  swatch: {
-    background: '#fff',
-    borderRadius: '1px',
-    border: '1px solid rgb(247, 244, 244)',
-    display: 'inline-block',
-    cursor: 'pointer',
-    width: '100%',
-    padding: 0,
-  },
-  popover: {
-    position: 'absolute',
-    zIndex: '2',
-  },
-  cover: {
-    position: 'fixed',
-    top: '0px',
-    right: '0px',
-    bottom: '0px',
-    left: '0px',
-  },
-};
+const SwatchButton = styled('button')({
+  background: '#fff',
+  borderRadius: '1px',
+  border: '1px solid rgb(247, 244, 244)',
+  display: 'inline-block',
+  cursor: 'pointer',
+  width: '100%',
+  padding: 0,
+});
+const Swatch = styled('div')({
+  width: 'auto',
+  height: '20px',
+  borderRadius: '2px',
+  margin: 5,
+});
+const Popover = styled('div')({
+  position: 'absolute',
+  zIndex: '2',
+});
 
 class ColorType extends React.Component {
   constructor(props, context) {
@@ -46,6 +43,7 @@ class ColorType extends React.Component {
   }
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleWindowMouseDown);
+    this.onChange.cancel();
   }
 
   handleWindowMouseDown = e => {
@@ -75,31 +73,23 @@ class ColorType extends React.Component {
     const { knob } = this.props;
     const { displayColorPicker, value } = this.state;
     const colorStyle = {
-      width: 'auto',
-      height: '20px',
-      borderRadius: '2px',
-      margin: 5,
       background: knob.value,
     };
+
     return (
       <div id={knob.name}>
-        <button type="button" style={styles.swatch} onClick={this.handleClick}>
-          <div style={colorStyle} />
-        </button>
-        {conditionalRender(
-          displayColorPicker,
-          () => (
-            <div
-              style={styles.popover}
-              ref={e => {
-                this.popover = e;
-              }}
-            >
-              <SketchPicker color={value} onChange={this.handleChange} />
-            </div>
-          ),
-          () => null
-        )}
+        <SwatchButton type="button" onClick={this.handleClick}>
+          <Swatch style={colorStyle} />
+        </SwatchButton>
+        {displayColorPicker ? (
+          <Popover
+            innerRef={e => {
+              this.popover = e;
+            }}
+          >
+            <SketchPicker color={value} onChange={this.handleChange} />
+          </Popover>
+        ) : null}
       </div>
     );
   }

@@ -3,17 +3,39 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 
+import styled from 'react-emotion';
+
 import Events from './events';
 import Swatch from './Swatch';
 
-const storybookIframe = 'storybook-preview-iframe';
+const Wrapper = styled('div')({
+  padding: 20,
+});
 
+const Title = styled('h5')({
+  fontSize: 16,
+});
+
+const Pre = styled('pre')({
+  padding: '30px',
+  display: 'block',
+  background: 'rgba(19,19,19,0.9)',
+  color: 'rgba(255,255,255,0.95)',
+  marginTop: '15px',
+  lineHeight: '1.75em',
+});
+
+const List = styled('div')({
+  display: 'inline-block',
+  padding: 15,
+});
+const Item = styled('div')({
+  display: 'inline-block',
+  padding: 5,
+});
+
+const storybookIframe = 'storybook-preview-iframe';
 const style = {
-  font: {
-    fontFamily:
-      "-apple-system,'.SFNSText-Regular', 'San Francisco', Roboto, 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
-    fontSize: '14px',
-  },
   iframe: {
     transition: 'background 0.25s ease-in-out',
   },
@@ -26,10 +48,10 @@ const defaultBackground = {
 
 const instructionsHtml = `
 import { storiesOf } from "@storybook/react";
-import backgrounds from "@storybook/addon-backgrounds";
+import { withBackgrounds } from "@storybook/addon-backgrounds";
 
 storiesOf("First Component", module)
-  .addDecorator(backgrounds([
+  .addDecorator(withBackgrounds([
     { name: "twitter", value: "#00aced" },
     { name: "facebook", value: "#3b5998" },
   ]))
@@ -37,27 +59,18 @@ storiesOf("First Component", module)
 `.trim();
 
 const Instructions = () => (
-  <div style={Object.assign({ padding: '20px' }, style.font)}>
-    <h5 style={{ fontSize: '16px' }}>Setup Instructions</h5>
+  <Wrapper>
+    <Title>Setup Instructions</Title>
     <p>
       Please add the background decorator definition to your story. The background decorate accepts
       an array of items, which should include a name for your color (preferably the css class name)
       and the corresponding color / image value.
     </p>
     <p>Below is an example of how to add the background decorator to your story definition.</p>
-    <pre
-      style={{
-        padding: '30px',
-        display: 'block',
-        background: 'rgba(19,19,19,0.9)',
-        color: 'rgba(255,255,255,0.95)',
-        marginTop: '15px',
-        lineHeight: '1.75em',
-      }}
-    >
+    <Pre>
       <code>{instructionsHtml}</code>
-    </pre>
-  </div>
+    </Pre>
+  </Wrapper>
 );
 
 export default class BackgroundPanel extends Component {
@@ -93,7 +106,7 @@ export default class BackgroundPanel extends Component {
       this.setState({ backgrounds });
       const currentBackground = api.getQueryParam('background');
 
-      if (currentBackground) {
+      if (currentBackground && backgrounds.some(bg => bg.value === currentBackground)) {
         this.updateIframe(currentBackground);
       } else if (backgrounds.filter(x => x.default).length) {
         const defaultBgs = backgrounds.filter(x => x.default);
@@ -125,13 +138,13 @@ export default class BackgroundPanel extends Component {
     if (!hasDefault) backgrounds.push(defaultBackground);
 
     return (
-      <div style={{ display: 'inline-block', padding: '15px' }}>
+      <List>
         {backgrounds.map(({ value, name }) => (
-          <div key={`${name} ${value}`} style={{ display: 'inline-block', padding: '5px' }}>
+          <Item key={`${name} ${value}`}>
             <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
-          </div>
+          </Item>
         ))}
-      </div>
+      </List>
     );
   }
 }

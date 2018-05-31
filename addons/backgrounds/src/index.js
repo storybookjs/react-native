@@ -1,68 +1,38 @@
-import React from 'react';
-import { polyfill } from 'react-lifecycles-compat';
-import PropTypes from 'prop-types';
-
-import addons from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
+import CoreEvents from '@storybook/core-events';
+import deprecate from 'util-deprecate';
 
 import Events from './events';
 
-export class BackgroundDecorator extends React.Component {
-  constructor(props) {
-    super(props);
+let prevBackgrounds;
 
-    const { channel } = props;
+const subscription = () => () => {
+  prevBackgrounds = null;
+  addons.getChannel().emit(Events.UNSET);
+};
 
-    // A channel is explicitly passed in for testing
-    if (channel) {
-      this.channel = channel;
-    } else {
-      this.channel = addons.getChannel();
+export const withBackgrounds = makeDecorator({
+  name: 'backgrounds',
+  parameterName: 'backgrounds',
+  skipIfNoParametersOrOptions: true,
+  wrapper: (getStory, context, { options, parameters }) => {
+    const backgrounds = parameters || options;
+
+    if (backgrounds.length === 0) {
+      return getStory(context);
     }
 
-    this.state = {};
-  }
+    if (prevBackgrounds !== backgrounds) {
+      addons.getChannel().emit(Events.SET, backgrounds);
+      prevBackgrounds = backgrounds;
+    }
+    addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
 
-  componentDidMount() {
-    this.channel.emit(Events.SET, this.props.backgrounds);
-  }
+    return getStory(context);
+  },
+});
 
-  componentWillUnmount() {
-    this.channel.emit(Events.UNSET);
-  }
-
-  render() {
-    return this.state.story;
-  }
-}
-
-BackgroundDecorator.getDerivedStateFromProps = ({ story }, { prevStory }) => {
-  if (story !== prevStory) {
-    return {
-      story: story(),
-      prevStory: story,
-    };
-  }
-  return null;
-};
-
-BackgroundDecorator.propTypes = {
-  backgrounds: PropTypes.arrayOf(PropTypes.object),
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }),
-  // eslint-disable-next-line react/no-unused-prop-types
-  story: PropTypes.func.isRequired,
-};
-
-BackgroundDecorator.defaultProps = {
-  backgrounds: [],
-  channel: undefined,
-};
-
-polyfill(BackgroundDecorator);
-
-export default backgrounds => story => (
-  <BackgroundDecorator story={story} backgrounds={backgrounds} />
+export default deprecate(
+  withBackgrounds,
+  'The default export of @storybook/addon-backgrounds is deprecated, please `import { withBackgrounds }` instead'
 );

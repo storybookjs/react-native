@@ -31,7 +31,7 @@ npm install @storybook/addon-knobs --save-dev
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
 
 ```js
-import '@storybook/addon-knobs/register'
+import '@storybook/addon-knobs/register';
 ```
 
 Now, write your stories with knobs.
@@ -39,7 +39,7 @@ Now, write your stories with knobs.
 ### With React
 ```js
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 const stories = storiesOf('Storybook Knobs', module);
 
@@ -67,7 +67,7 @@ stories.add('as dynamic variables', () => {
 ### With Angular
 ```js
 import { storiesOf } from '@storybook/angular';
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs/angular';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 
 import { Button } from '@storybook/angular/demo';
 
@@ -98,34 +98,6 @@ stories.add('as dynamic variables', () => {
 });
 ```
 
-> In the case of Vue, use these imports:
->
-> ```js
-> import { storiesOf } from '@storybook/vue';
-> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/vue';
-> ```
->
-> In the case of React-Native, use these imports:
->
-> ```js
-> import { storiesOf } from '@storybook/react-native';
-> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
-> ```
->
-> In the case of Angular, use these imports:
->
-> ```js
-> import { storiesOf } from '@storybook/angular';
-> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/angular';
-> ```
->
-> In the case of Mithril, use these imports:
->
-> ```js
-> import { storiesOf } from '@storybook/mithril';
-> import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/mithril';
-> ```
-
 You can see your Knobs in a Storybook panel as shown below.
 
 ![](docs/demo.png)
@@ -146,7 +118,7 @@ Just like that, you can import any other following Knobs:
 Allows you to get some text from the user.
 
 ```js
-import { text } from '@storybook/addon-knobs/react';
+import { text } from '@storybook/addon-knobs';
 
 const label = 'Your Name';
 const defaultValue = 'Arunoda Susiripala';
@@ -160,7 +132,7 @@ const value = text(label, defaultValue, groupId);
 Allows you to get a boolean value from the user.
 
 ```js
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean } from '@storybook/addon-knobs';
 
 const label = 'Agree?';
 const defaultValue = false;
@@ -173,7 +145,7 @@ const value = boolean(label, defaultValue, groupId);
 Allows you to get a number from the user.
 
 ```js
-import { number } from '@storybook/addon-knobs/react';
+import { number } from '@storybook/addon-knobs';
 
 const label = 'Age';
 const defaultValue = 78;
@@ -191,7 +163,7 @@ const value = number(label, defaultValue, {}, groupId);
 Allows you to get a number from the user using a range slider.
 
 ```js
-import { number } from '@storybook/addon-knobs/react';
+import { number } from '@storybook/addon-knobs';
 
 const label = 'Temperature';
 const defaultValue = 73;
@@ -211,7 +183,7 @@ const value = number(label, defaultValue, options, groupId);
 Allows you to get a colour from the user.
 
 ```js
-import { color } from '@storybook/addon-knobs/react';
+import { color } from '@storybook/addon-knobs';
 
 const label = 'Color';
 const defaultValue = '#ff00ff';
@@ -225,7 +197,7 @@ const value = color(label, defaultValue, groupId);
 Allows you to get a JSON object or array from the user.
 
 ```js
-import { object } from '@storybook/addon-knobs/react';
+import { object } from '@storybook/addon-knobs';
 
 const label = 'Styles';
 const defaultValue = {
@@ -243,7 +215,7 @@ const value = object(label, defaultValue, groupId);
 Allows you to get an array of strings from the user.
 
 ```js
-import { array } from '@storybook/addon-knobs/react';
+import { array } from '@storybook/addon-knobs';
 
 const label = 'Styles';
 const defaultValue = ['Red'];
@@ -256,7 +228,7 @@ const value = array(label, defaultValue);
 > By default it's a comma, but this can be override by passing a separator variable.
 >
 > ```js
-> import { array } from '@storybook/addon-knobs/react';
+> import { array } from '@storybook/addon-knobs';
 >
 > const label = 'Styles';
 > const defaultValue = ['Red'];
@@ -274,28 +246,7 @@ const value = array(label, defaultValue, ',', groupId);
 Allows you to get a value from a select box from the user.
 
 ```js
-import { select } from '@storybook/addon-knobs/react';
-
-const label = 'Colors';
-const options = {
-  red: 'Red',
-  blue: 'Blue',
-  yellow: 'Yellow',
-};
-const defaultValue = 'red';
-const groupId = 'GROUP-ID1';
-
-const value = select(label, options, defaultValue, groupId);
-```
-
-> You can also provide options as an array like this: `['red', 'blue', 'yellow']`
-
-### selectV2
-
-In v4 this will replace `select`. The value from the select now uses the values from the `options` object.
-
-```js
-import { selectV2 } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 const label = 'Colors';
 const options = {
@@ -308,15 +259,17 @@ const options = {
 const defaultValue = 'red';
 const groupId = 'GROUP-ID1';
 
-const value = selectV2(label, options, defaultValue, groupId);
+const value = select(label, options, defaultValue, groupId);
 ```
+
+> You can also provide options as an array like this: `['red', 'blue', 'yellow']`
 
 ### files
 
 Allows you to get a value from a file input from the user.
 
 ```js
-import { files } from '@storybook/addon-knobs/react';
+import { files } from '@storybook/addon-knobs';
 
 const label = 'Images';
 const defaultValue = [];
@@ -331,7 +284,7 @@ const value = files(label, accept, defaultValue);
 Allow you to get date (and time) from the user.
 
 ```js
-import { date } from '@storybook/addon-knobs/react';
+import { date } from '@storybook/addon-knobs';
 
 const label = 'Event Date';
 const defaultValue = new Date('Jan 20 2017');
@@ -366,23 +319,25 @@ const groupId = 'GROUP-ID1';
 button(label, handler, groupId);
 ```
 
-### withKnobs vs withKnobsOptions
+### withKnobs options
 
-If you feel like this addon is not performing well enough there is an option to use `withKnobsOptions` instead of `withKnobs`.
+withKnobs also accepts two optional options as story parameters.
 Usage:
 
 ```js
 import { storiesOf } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
 
 const stories = storiesOf('Storybook Knobs', module);
 
-stories.addDecorator(withKnobsOptions({
-  debounce: { wait: number, leading: boolean}, // Same as lodash debounce.
-  timestamps: true // Doesn't emit events while user is typing.
-  escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
-                   // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
-
-}));
+stories.addDecorator(withKnobs)
+stories.add('story name', () => ..., {
+  knobs: {
+    timestamps: true, // Doesn't emit events while user is typing.
+    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default in storybook for Vue, Angular, and Polymer, because those frameworks allow rendering plain HTML.
+                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.  
+  }
+});
 ```
 
 ## Typescript

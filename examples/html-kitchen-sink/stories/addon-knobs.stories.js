@@ -11,7 +11,7 @@ import {
   withKnobs,
   text,
   number,
-} from '@storybook/addon-knobs/html';
+} from '@storybook/addon-knobs';
 
 storiesOf('Addons|Knobs', module)
   .addDecorator(withKnobs)
@@ -31,11 +31,11 @@ storiesOf('Addons|Knobs', module)
       step: 5,
     });
     const fruits = {
-      apples: 'Apple',
-      bananas: 'Banana',
-      cherries: 'Cherry',
+      Apple: 'apples',
+      Banana: 'bananas',
+      Cherry: 'cherries',
     };
-    const fruit = select('Fruit', fruits, 'apple');
+    const fruit = select('Fruit', fruits, 'apples');
     const price = number('Price', 2.25);
 
     const colour = color('Border', 'deeppink');
@@ -63,4 +63,5 @@ storiesOf('Addons|Knobs', module)
         <p>${salutation}</p>
       </div>
     `;
-  });
+  })
+  .add('XSS safety', () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'));

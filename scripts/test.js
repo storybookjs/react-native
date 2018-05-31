@@ -100,7 +100,7 @@ const tasks = {
     name: `Update all snapshots ${chalk.gray('(update)')}`,
     defaultValue: false,
     option: '--update',
-    extraParam: '-u',
+    extraParam: '-u --updateSnapshot',
   }),
   teamcity: createOption({
     name: `Use TeamCity reporter`,

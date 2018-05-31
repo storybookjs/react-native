@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous, { withTheme } from 'glamorous';
+import styled from 'react-emotion';
 
-const Button = glamorous.button(
+const Button = styled('button')(
   {
     overflow: 'hidden',
     border: '1px solid #eee',
@@ -26,7 +26,7 @@ const Button = glamorous.button(
   props => props.styles
 );
 
-const ContentWrapper = glamorous.div(
+const ContentWrapper = styled('div')(
   {
     transition: 'transform .2s ease',
     height: 16,
@@ -65,4 +65,4 @@ CopyButton.defaultProps = {
   theme: {},
 };
 
-export default withTheme(CopyButton);
+export default CopyButton;

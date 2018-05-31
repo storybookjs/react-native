@@ -1,10 +1,13 @@
 {
   "presets": ["env", "stage-0", "react"],
-  "plugins": [
-    "babel-plugin-macros",
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": true
-    }]
-  ]
+  "env": {
+    "plugins": [
+      "emotion",
+      "babel-plugin-macros",
+      ["transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      }]
+    ]
+  }
 }

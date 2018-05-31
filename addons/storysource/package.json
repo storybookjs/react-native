@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "4.0.0-alpha.6",
+  "version": "4.0.0-alpha.8",
   "description": "Stories addon for storybook",
   "keywords": [
     "storybook"
@@ -9,23 +9,23 @@
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
-  "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.6",
-    "@storybook/components": "4.0.0-alpha.6",
+    "@storybook/addons": "4.0.0-alpha.8",
+    "@storybook/components": "4.0.0-alpha.8",
     "babel-runtime": "^6.26.0",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
-    "prettier": "^1.12.1",
+    "prettier": "~1.12.1",
     "prop-types": "^15.6.1",
     "react-syntax-highlighter": "^7.0.4"
   },

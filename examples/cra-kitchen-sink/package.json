@@ -1,6 +1,6 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "4.0.0-alpha.6",
+  "version": "4.0.0-alpha.8",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -13,32 +13,32 @@
   "dependencies": {
     "global": "^4.3.2",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-lifecycles-compat": "^3.0.2"
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "4.0.0-alpha.6",
-    "@storybook/addon-actions": "4.0.0-alpha.6",
-    "@storybook/addon-backgrounds": "4.0.0-alpha.6",
-    "@storybook/addon-centered": "4.0.0-alpha.6",
-    "@storybook/addon-events": "4.0.0-alpha.6",
-    "@storybook/addon-info": "4.0.0-alpha.6",
-    "@storybook/addon-jest": "4.0.0-alpha.6",
-    "@storybook/addon-knobs": "4.0.0-alpha.6",
-    "@storybook/addon-links": "4.0.0-alpha.6",
-    "@storybook/addon-notes": "4.0.0-alpha.6",
-    "@storybook/addon-options": "4.0.0-alpha.6",
-    "@storybook/addon-storyshots": "4.0.0-alpha.6",
-    "@storybook/addons": "4.0.0-alpha.6",
-    "@storybook/client-logger": "4.0.0-alpha.6",
-    "@storybook/react": "4.0.0-alpha.6",
+    "@storybook/addon-a11y": "4.0.0-alpha.8",
+    "@storybook/addon-actions": "4.0.0-alpha.8",
+    "@storybook/addon-backgrounds": "4.0.0-alpha.8",
+    "@storybook/addon-centered": "4.0.0-alpha.8",
+    "@storybook/addon-events": "4.0.0-alpha.8",
+    "@storybook/addon-info": "4.0.0-alpha.8",
+    "@storybook/addon-jest": "4.0.0-alpha.8",
+    "@storybook/addon-knobs": "4.0.0-alpha.8",
+    "@storybook/addon-links": "4.0.0-alpha.8",
+    "@storybook/addon-notes": "4.0.0-alpha.8",
+    "@storybook/addon-options": "4.0.0-alpha.8",
+    "@storybook/addon-storyshots": "4.0.0-alpha.8",
+    "@storybook/addons": "4.0.0-alpha.8",
+    "@storybook/client-logger": "4.0.0-alpha.8",
+    "@storybook/react": "4.0.0-alpha.8",
     "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
-    "enzyme-to-json": "^3.3.3",
+    "enzyme-to-json": "^3.3.4",
     "jest": "^20.0.4",
     "react-scripts": "^1.1.4",
-    "webpack": "^4.8.0"
+    "webpack": "^4.9.2"
   }
 }

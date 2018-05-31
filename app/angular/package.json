@@ -1,10 +1,14 @@
 {
   "name": "@storybook/angular",
-  "version": "4.0.0-alpha.6",
+  "version": "4.0.0-alpha.8",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/angular",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "main": "dist/client/index.js",
@@ -14,34 +18,20 @@
     "start-storybook": "./bin/index.js",
     "storybook-server": "./bin/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/storybooks/storybook.git"
-  },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "4.0.0-alpha.6",
-    "@storybook/node-logger": "4.0.0-alpha.6",
-    "@storybook/react-dev-utils": "^5.0.0",
-    "airbnb-js-shims": "^1.4.1",
+    "@storybook/core": "4.0.0-alpha.8",
+    "@storybook/node-logger": "4.0.0-alpha.8",
     "angular2-template-loader": "^0.6.2",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-macros": "^2.2.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
-    "case-sensitive-paths-webpack-plugin": "^2.1.2",
-    "core-js": "^2.5.6",
-    "dotenv-webpack": "^1.5.5",
+    "core-js": "^2.5.7",
     "global": "^4.3.2",
-    "html-webpack-plugin": "^3.2.0",
-    "raw-loader": "^0.5.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "sass-loader": "^7.0.1",
-    "ts-loader": "^4.2.0",
-    "webpack": "^4.8.0",
-    "webpack-hot-middleware": "^2.22.1",
+    "ts-loader": "^4.3.0",
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {

@@ -11,7 +11,7 @@ import {
   color,
   date,
   button,
-} from '@storybook/addon-knobs/angular';
+} from '@storybook/addon-knobs';
 
 import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
@@ -53,11 +53,11 @@ storiesOf('Addon|Knobs', module)
       step: 5,
     });
     const fruits = {
-      apples: 'Apple',
-      bananas: 'Banana',
-      cherries: 'Cherry',
+      Apple: 'apples',
+      Banana: 'bananas',
+      Cherry: 'cherries',
     };
-    const fruit = select('fruit', fruits, 'apple');
+    const fruit = select('fruit', fruits, 'apples');
     const price = number('price', 2.25);
 
     const border = color('border', 'deeppink');

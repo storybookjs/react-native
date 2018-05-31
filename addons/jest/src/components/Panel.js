@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import { baseFonts } from '@storybook/components';
 
@@ -9,32 +9,32 @@ import Result, { FailedResult } from './Result';
 import provideJestResult from '../hoc/provideJestResult';
 import colors from '../colors';
 
-const List = glamorous.ul({
+const List = styled('ul')({
   listStyle: 'none',
   fontSize: 14,
   padding: 0,
   margin: '10px 0',
 });
 
-const Item = glamorous.li({
+const Item = styled('li')({
   display: 'block',
   margin: '10px 0',
   padding: 0,
 });
 
-const NoTests = glamorous.div({
+const NoTests = styled('div')({
   padding: '10px 20px',
   flex: 1,
   ...baseFonts,
 });
 
-const FileTitle = glamorous.h2({
+const FileTitle = styled('h2')({
   margin: 0,
   fontWeight: 500,
   fontSize: 18,
 });
 
-const SuiteHead = glamorous.div({
+const SuiteHead = styled('div')({
   display: 'flex',
   alignItems: 'baseline',
   justifyContent: 'space-between',
@@ -42,7 +42,7 @@ const SuiteHead = glamorous.div({
   paddingTop: 10,
 });
 
-const SuiteTotals = glamorous(({ successNumber, failedNumber, result, className }) => (
+const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) => (
   <div className={className}>
     {successNumber > 0 && <div style={{ color: colors.success }}>{successNumber} passed</div>}
     {failedNumber > 0 && <div style={{ color: colors.error }}>{failedNumber} failed</div>}
@@ -62,10 +62,10 @@ const SuiteTotals = glamorous(({ successNumber, failedNumber, result, className 
   },
 });
 
-const SuiteProgress = glamorous(({ successNumber, result, className }) => (
+const SuiteProgress = styled(({ successNumber, result, className }) => (
   <div className={className} role="progressbar">
-    <span style={{ width: `${successNumber / result.assertionResults.length * 100}%` }}>
-      {`${successNumber / result.assertionResults.length * 100}%`}
+    <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }}>
+      {`${(successNumber / result.assertionResults.length) * 100}%`}
     </span>
   </div>
 ))(() => ({
@@ -89,12 +89,12 @@ const SuiteProgress = glamorous(({ successNumber, result, className }) => (
   },
 }));
 
-const SuiteTitle = glamorous.div({
+const SuiteTitle = styled('div')({
   display: 'flex',
   alignItems: 'center',
 });
 
-const Content = glamorous(({ tests, className }) => (
+const Content = styled(({ tests, className }) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
