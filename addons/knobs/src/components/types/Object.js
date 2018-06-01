@@ -1,22 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
 
-import Textarea from 'react-textarea-autosize';
-
-const StyledTextarea = styled(Textarea)({
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  width: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  padding: '5px',
-  color: '#555',
-  fontFamily: 'monospace',
-});
+import { Textarea } from '@storybook/components';
 
 class ObjectType extends Component {
   static getDerivedStateFromProps(props, state) {
@@ -49,37 +34,19 @@ class ObjectType extends Component {
   };
 
   render() {
-    const { knob } = this.props;
     const { value, failed } = this.state;
-    const extraStyle = {};
 
-    if (failed) {
-      extraStyle.border = '1px solid #fadddd';
-      extraStyle.backgroundColor = '#fff5f5';
-    }
-
-    return (
-      <StyledTextarea
-        id={knob.name}
-        style={extraStyle}
-        value={value}
-        onChange={this.handleChange}
-      />
-    );
+    return <Textarea error={failed} value={value} onChange={this.handleChange} size="flex" />;
   }
 }
 
-ObjectType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
 ObjectType.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  }),
-  onChange: PropTypes.func,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 ObjectType.serialize = object => JSON.stringify(object);
