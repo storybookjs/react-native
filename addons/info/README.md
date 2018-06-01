@@ -99,13 +99,93 @@ storiesOf('Component', module)
 
 ## Usage as decorator
 
-It is possible to add infos by default to all components by using a global or story decorator. The drawback is you won't be able to display a distinct info message per story.
+It is possible to add infos by default to all components by using a global or story decorator. 
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
 ```js
-addDecorator((story, context) => withInfo('common info')(story)(context));
+addDecorator(withInfo);
 ```
+
+Then, you can use the `info` parameter to pass certain options to your stories. 
+This can be done per book of stories:
+
+```js
+import { storiesOf } from '@storybook/react';
+
+import Component from './Component';
+
+storiesOf('Component', module)
+  .addParameters({ 
+    info: {
+      // Your settings
+    } 
+  })
+  .add('with some emoji', () => <Component/>);
+```
+
+...or for each story individually:
+```js
+import { storiesOf } from '@storybook/react';
+
+import Component from './Component';
+
+storiesOf('Component', module)
+  .add(
+    'with some emoji', 
+    () => <Component emoji/>, 
+    { info : { inline: false, header: false } } // Make your component render inline with the additional info 
+  ) 
+  .add(
+    'with no emoji', 
+    () => <Component/>, 
+    { info: '☹️ no emojis' } // Add additional info text
+  ); 
+```
+
+...or even together:
+
+```js
+import { storiesOf } from '@storybook/react';
+
+import Component from './Component';
+
+storiesOf('Component', module)
+  .addParameters({ 
+    info: {               // Make a default for all stories in this book,
+      inline: true,       // where the components are inlined
+      styles: {
+        header: {
+          h1: {
+            color: 'red'  // and the headers of the sections are red.
+          }
+        }
+      },
+    } 
+  })
+  .add(
+    'green version', 
+    () => <Component green/>,
+    { 
+      info: { 
+        styles: { 
+          headers: { 
+            h1: { 
+              color: 'green' // Still inlined but with green headers!
+            } 
+          } 
+        } 
+      } 
+    })
+  .add(
+    'something else',
+    () => <Component different/>,
+    {
+      info: "This story has additional text added to the info!" // Still inlined and with red headers!
+    }
+  );
+```
+
 
 ## Global options
 
