@@ -21,6 +21,7 @@ const Container = styled('div')({
   width: '100%',
   boxSizing: 'border-box',
 });
+Container.displayName = 'Container';
 
 const getDefaultViewport = (viewports, candidateViewport) =>
   candidateViewport in viewports ? candidateViewport : Object.keys(viewports)[0];
