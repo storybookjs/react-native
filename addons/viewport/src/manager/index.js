@@ -10,7 +10,7 @@ const addChannel = api => {
   addons.addPanel(PANEL_ID, {
     title: 'Viewport',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => (active ? <Panel channel={channel} api={api} /> : null),
+    render: ({ active }) => <Panel channel={channel} api={api} active={active} />,
   });
 };
 

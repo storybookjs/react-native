@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { document } from 'global';
-import debounce from 'lodash.debounce';
-
 import styled from 'react-emotion';
 
+import { ActionBar, ActionButton, Button, Select, Field } from '@storybook/components';
+
 import { resetViewport, viewportsTransformer } from './viewportInfo';
-import { SelectViewport } from './SelectViewport';
-import { RotateViewport } from './RotateViewport';
 import {
   SET_STORY_DEFAULT_VIEWPORT_EVENT_ID,
   CONFIGURE_VIEWPORT_EVENT_ID,
@@ -16,8 +14,6 @@ import {
   INITIAL_VIEWPORTS,
   DEFAULT_VIEWPORT,
 } from '../../shared';
-
-import { Button } from './styles';
 
 const storybookIframe = 'storybook-preview-iframe';
 const Container = styled('div')({
@@ -32,12 +28,17 @@ const getDefaultViewport = (viewports, candidateViewport) =>
 const getViewports = viewports =>
   Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
 
-const setStoryDefaultViewportWait = 100;
-
 export class Panel extends Component {
   static propTypes = {
-    channel: PropTypes.shape({}).isRequired,
-    api: PropTypes.shape({}).isRequired,
+    active: PropTypes.bool.isRequired,
+    api: PropTypes.shape({
+      selectStory: PropTypes.func.isRequired,
+    }).isRequired,
+    channel: PropTypes.shape({
+      on: PropTypes.func,
+      emit: PropTypes.func,
+      removeListener: PropTypes.func,
+    }).isRequired,
   };
 
   static defaultOptions = {
@@ -56,10 +57,7 @@ export class Panel extends Component {
 
     this.previousViewport = DEFAULT_VIEWPORT;
 
-    this.setStoryDefaultViewport = debounce(
-      this.setStoryDefaultViewport,
-      setStoryDefaultViewportWait
-    );
+    this.setStoryDefaultViewport = this.setStoryDefaultViewport;
   }
 
   componentDidMount() {
@@ -180,28 +178,39 @@ export class Panel extends Component {
       viewport,
       viewports,
     } = this.state;
+    const { active } = this.props;
 
-    const disableDefault = viewport === storyDefaultViewport;
+    const isResponsive = viewport === storyDefaultViewport;
 
-    return (
+    return active ? (
       <Container>
-        <SelectViewport
-          viewports={viewports}
-          defaultViewport={storyDefaultViewport}
-          activeViewport={viewport}
-          onChange={e => this.changeViewport(e.target.value)}
-        />
+        <Field label="Device">
+          <Select value={viewport} onChange={e => this.changeViewport(e.target.value)} size="flex">
+            {Object.entries(viewports).map(([key, { name }]) => (
+              <option value={key} key={key}>
+                {key === defaultViewport ? `${name} (Default)` : name}
+              </option>
+            ))}
+          </Select>
+        </Field>
 
-        <RotateViewport
-          onClick={this.toggleLandscape}
-          disabled={disableDefault}
-          active={isLandscape}
-        />
+        {!isResponsive ? (
+          <Field label="Rotate">
+            <Button onClick={this.toggleLandscape} active={isLandscape} size="flex">
+              {isLandscape ? 'rotate to portrait' : 'rotate to landscape'}
+            </Button>
+          </Field>
+        ) : null}
 
-        <Button onClick={() => this.changeViewport(storyDefaultViewport)} disabled={disableDefault}>
-          Reset Viewport
-        </Button>
+        <ActionBar>
+          <ActionButton
+            onClick={() => this.changeViewport(storyDefaultViewport)}
+            disabled={isResponsive}
+          >
+            RESET
+          </ActionButton>
+        </ActionBar>
       </Container>
-    );
+    ) : null;
   }
 }
