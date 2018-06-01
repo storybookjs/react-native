@@ -3,6 +3,8 @@ import React from 'react';
 
 import styled from 'react-emotion';
 
+import { Input } from '@storybook/components';
+
 const base = {
   boxSizing: 'border-box',
   height: '25px',
@@ -14,11 +16,6 @@ const base = {
   color: '#444',
 };
 
-const TextInput = styled('input')(base, {
-  display: 'table-cell',
-  width: '100%',
-  verticalAlign: 'middle',
-});
 const RangeInput = styled('input')(base, {
   display: 'table-cell',
   flexGrow: 1,
@@ -65,7 +62,6 @@ class NumberType extends React.Component {
       <RangeWrapper>
         <RangeLabel>{knob.min}</RangeLabel>
         <RangeInput
-          id={knob.name}
           value={value}
           type="range"
           min={knob.min}
@@ -76,30 +72,25 @@ class NumberType extends React.Component {
         <RangeLabel>{`${value} / ${knob.max}`}</RangeLabel>
       </RangeWrapper>
     ) : (
-      <TextInput
-        id={knob.name}
+      <Input
         value={value}
         type="number"
         min={knob.min}
         max={knob.max}
         step={knob.step}
         onChange={this.handleChange}
+        size="flex"
       />
     );
   }
 }
 
-NumberType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
 NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.number,
-  }),
-  onChange: PropTypes.func,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 NumberType.serialize = value => String(value);
