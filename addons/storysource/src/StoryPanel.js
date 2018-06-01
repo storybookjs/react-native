@@ -7,6 +7,7 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/pr
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './';
 
+// TODO: take from theme
 const highlighterTheme = {
   ...darcula,
   'pre[class*="language-"]': {
