@@ -5,20 +5,14 @@ import { SketchPicker } from 'react-color';
 
 import styled from 'react-emotion';
 
-const SwatchButton = styled('button')({
-  background: '#fff',
-  borderRadius: '1px',
-  border: '1px solid rgb(247, 244, 244)',
-  display: 'inline-block',
-  cursor: 'pointer',
-  width: '100%',
-  padding: 0,
-});
+import { Button } from '@storybook/components';
+
 const Swatch = styled('div')({
-  width: 'auto',
-  height: '20px',
-  borderRadius: '2px',
-  margin: 5,
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  right: 3,
+  width: 28,
 });
 const Popover = styled('div')({
   position: 'absolute',
@@ -78,10 +72,9 @@ class ColorType extends React.Component {
     };
 
     return (
-      <div id={knob.name}>
-        <SwatchButton type="button" onClick={this.handleClick}>
-          <Swatch style={colorStyle} />
-        </SwatchButton>
+      <Button type="button" onClick={this.handleClick} size="flex">
+        {knob.value}
+        <Swatch style={colorStyle} />
         {displayColorPicker ? (
           <Popover
             innerRef={e => {
@@ -91,7 +84,7 @@ class ColorType extends React.Component {
             <SketchPicker color={value} onChange={this.handleChange} />
           </Popover>
         ) : null}
-      </div>
+      </Button>
     );
   }
 }
