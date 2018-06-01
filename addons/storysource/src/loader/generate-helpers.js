@@ -41,6 +41,11 @@ function prettifyCode(source, { prettierConfig, parser, filepath }) {
         ...prettierConfig,
         filepath,
       };
+    } else {
+      config = {
+        ...prettierConfig,
+        parser: 'babylon',
+      };
     }
   }
 
