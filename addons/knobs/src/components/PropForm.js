@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
 
-import PropField from './PropField';
+import { Field } from '@storybook/components';
+import TypeMap from './types';
 
 const Form = styled('form')({
-  display: 'table',
   boxSizing: 'border-box',
   width: '100%',
-  borderCollapse: 'separate',
-  borderSpacing: '5px',
 });
+
+const InvalidType = () => <span>Invalid Type</span>;
 
 export default class PropForm extends Component {
   makeChangeHandler(name, type) {
@@ -28,16 +28,12 @@ export default class PropForm extends Component {
       <Form>
         {knobs.map(knob => {
           const changeHandler = this.makeChangeHandler(knob.name, knob.type);
+          const InputType = TypeMap[knob.type] || InvalidType;
+
           return (
-            <PropField
-              key={knob.name}
-              name={knob.name}
-              type={knob.type}
-              value={knob.value}
-              knob={knob}
-              onChange={changeHandler}
-              onClick={this.props.onFieldClick}
-            />
+            <Field key={knob.name} label={!knob.hideLabel && `${knob.name}`}>
+              <InputType knob={knob} onChange={changeHandler} onClick={this.props.onFieldClick} />
+            </Field>
           );
         })}
       </Form>
@@ -47,17 +43,13 @@ export default class PropForm extends Component {
 
 PropForm.displayName = 'PropForm';
 
-PropForm.defaultProps = {
-  knobs: [],
-};
-
 PropForm.propTypes = {
   knobs: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.any,
     })
-  ),
+  ).isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onFieldClick: PropTypes.func.isRequired,
 };
