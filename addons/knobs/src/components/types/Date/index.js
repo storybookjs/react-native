@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import Datetime from 'react-datetime';
-// import { Input } from '@storybook/components';
 
 import style from './styles';
 
