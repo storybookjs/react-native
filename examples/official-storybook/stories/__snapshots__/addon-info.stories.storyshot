@@ -4451,6 +4451,815 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
 </div>
 `;
 
+exports[`Storyshots Addons|Info.Options.parameters Overwrite the parameters with markdown 1`] = `
+<div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+      >
+        <h1
+          style="margin:0;padding:0;font-size:35px;color:green"
+        >
+          Addons|Info.Options.parameters
+        </h1>
+        <h2
+          style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+        >
+          Overwrite the parameters with markdown
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button>
+      Button
+    </button>
+  </div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="margin-bottom:0"
+      >
+        <h4
+          id="you-can-use-markdown-in-your-withinfo()-description."
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:600;margin:0;padding:0;font-size:20px"
+        >
+          You can use markdown in your withInfo() description.
+        </h4>
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+        >
+          Sometimes you might want to manually include some code examples:
+        </div>
+        <pre
+          class="language-js"
+          style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa;padding:.5rem;line-height:1.5;overflow-x:scroll"
+        >
+          <code
+            class="language-js"
+            style="font-family:Menlo, Monaco, \\"Courier New\\", monospace;background-color:#fafafa"
+          >
+            const Button = () =&gt; &lt;button /&gt;;
+          </code>
+        </pre>
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+        >
+          Maybe include a 
+          <a
+            href="http://storybook.js.org"
+            rel="noopener noreferrer"
+            style="color:#3498db"
+            target="_blank"
+          >
+            link
+          </a>
+           to your project as well.
+        </div>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Story Source
+        </h1>
+        <pre
+          class="css-r8d96o"
+        >
+          <div>
+            <div
+              style="padding-left:18px;padding-right:3px"
+            >
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
+              <span>
+                <span>
+                   
+                  <span>
+                    onClick
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      {
+                      <span
+                        style="color:#170"
+                      >
+                        clicked()
+                      </span>
+                      }
+                    </span>
+                  </span>
+                </span>
+                <span>
+                   
+                  <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      "
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        Button
+                      </span>
+                      "
+                    </span>
+                  </span>
+                   
+                </span>
+              </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
+          </div>
+          <button
+            class="css-zvhq5i"
+          >
+            <div
+              class="css-lvl6aa"
+            >
+              <div
+                style="margin-bottom:6px"
+              >
+                Copied!
+              </div>
+              <div>
+                Copy
+              </div>
+            </div>
+          </button>
+        </pre>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Prop Types
+        </h1>
+        <div>
+          <h2
+            style="margin:20px 0 0 0"
+          >
+            "BaseButton" Component
+          </h2>
+          <table
+            class="css-1uhv8nx"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="css-11b5gui"
+                >
+                  property
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  propType
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  required
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  default
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  disabled
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#a11"
+                  >
+                    false
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  onClick
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#170"
+                  >
+                    onClick()
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  style
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#666"
+                  >
+                    {}
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.Options.parameters Overwriting and extending the parameters and options set stories-wise 1`] = `
+<div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+      >
+        <h1
+          style="margin:0;padding:0;font-size:35px;color:green"
+        >
+          Addons|Info.Options.parameters
+        </h1>
+        <h2
+          style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+        >
+          Overwriting and extending the parameters and options set stories-wise
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button>
+      Button
+    </button>
+  </div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="margin-bottom:0"
+      >
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+        >
+          Label propType should be excluded
+        </div>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Story Source
+        </h1>
+        <pre
+          class="css-r8d96o"
+        >
+          <div>
+            <div
+              style="padding-left:18px;padding-right:3px"
+            >
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
+              <span>
+                <span>
+                   
+                  <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      "
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        Button
+                      </span>
+                      "
+                    </span>
+                  </span>
+                   
+                </span>
+              </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
+          </div>
+          <button
+            class="css-zvhq5i"
+          >
+            <div
+              class="css-lvl6aa"
+            >
+              <div
+                style="margin-bottom:6px"
+              >
+                Copied!
+              </div>
+              <div>
+                Copy
+              </div>
+            </div>
+          </button>
+        </pre>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Prop Types
+        </h1>
+        <div>
+          <h2
+            style="margin:20px 0 0 0"
+          >
+            "BaseButton" Component
+          </h2>
+          <table
+            class="css-1uhv8nx"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="css-11b5gui"
+                >
+                  property
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  propType
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  required
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  default
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  disabled
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#a11"
+                  >
+                    false
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  onClick
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#170"
+                  >
+                    onClick()
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  style
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#666"
+                  >
+                    {}
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Info.Options.parameters Using paramaters across all stories 1`] = `
+<div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="border-bottom:1px solid #eee;padding-top:10px;margin-bottom:10px"
+      >
+        <h1
+          style="margin:0;padding:0;font-size:35px;color:green"
+        >
+          Addons|Info.Options.parameters
+        </h1>
+        <h2
+          style="margin:0 0 10px 0;padding:0;font-weight:400;font-size:22px"
+        >
+          Using paramaters across all stories
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button>
+      Button
+    </button>
+  </div>
+  <div>
+    <div
+      style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;line-height:1.45;font-size:15px;border:1px solid #eee;padding:20px 40px 40px;border-radius:2px;background-color:#fff;margin-top:20px;margin-bottom:20px"
+    >
+      <div
+        style="margin-bottom:0"
+      >
+        <div
+          style="font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-size:15px"
+        >
+          This text should be displayed on every story and the component should be inlined between description and PropType table
+        </div>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Story Source
+        </h1>
+        <pre
+          class="css-r8d96o"
+        >
+          <div>
+            <div
+              style="padding-left:18px;padding-right:3px"
+            >
+              <span
+                style="color:#777"
+              >
+                &lt;BaseButton
+              </span>
+              <span>
+                <span>
+                   
+                  <span>
+                    label
+                  </span>
+                  <span>
+                    =
+                    <span>
+                      "
+                      <span
+                        style="color:#22a;word-break:break-word"
+                      >
+                        Button
+                      </span>
+                      "
+                    </span>
+                  </span>
+                   
+                </span>
+              </span>
+              <span
+                style="color:#777"
+              >
+                /&gt;
+              </span>
+            </div>
+          </div>
+          <button
+            class="css-zvhq5i"
+          >
+            <div
+              class="css-lvl6aa"
+            >
+              <div
+                style="margin-bottom:6px"
+              >
+                Copied!
+              </div>
+              <div>
+                Copy
+              </div>
+            </div>
+          </button>
+        </pre>
+      </div>
+      <div>
+        <h1
+          style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+        >
+          Prop Types
+        </h1>
+        <div>
+          <h2
+            style="margin:20px 0 0 0"
+          >
+            "BaseButton" Component
+          </h2>
+          <table
+            class="css-1uhv8nx"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="css-11b5gui"
+                >
+                  property
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  propType
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  required
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  default
+                </th>
+                <th
+                  class="css-11b5gui"
+                >
+                  description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  disabled
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#a11"
+                  >
+                    false
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  label
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  yes
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  onClick
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#170"
+                  >
+                    onClick()
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+              <tr>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  style
+                </td>
+                <td
+                  class="css-1qcb1f7"
+                >
+                  <span />
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  -
+                </td>
+                <td
+                  class="css-11b5gui"
+                >
+                  <span
+                    style="color:#666"
+                  >
+                    {}
+                  </span>
+                </td>
+                <td
+                  class="css-11b5gui"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Addons|Info.Options.propTables Shows additional component prop tables 1`] = `
 <div>
   <div
