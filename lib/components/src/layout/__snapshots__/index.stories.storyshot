@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components|Layout addon panel in right 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-16z7x6f"
 >
   <div
     class="SplitPane  vertical "
@@ -103,7 +103,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
 
 exports[`Storyshots Components|Layout default 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-16z7x6f"
 >
   <div
     class="SplitPane  vertical "
@@ -204,7 +204,7 @@ exports[`Storyshots Components|Layout default 1`] = `
 
 exports[`Storyshots Components|Layout full screen 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-16z7x6f"
 >
   <div
     class="SplitPane  vertical disabled"
@@ -305,7 +305,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
 
 exports[`Storyshots Components|Layout mobile 1`] = `
 <div
-  class="css-1dlj6ug"
+  class="css-1nhql0h"
 >
   <div>
     <div
@@ -380,7 +380,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
 
 exports[`Storyshots Components|Layout no addon panel 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-16z7x6f"
 >
   <div
     class="SplitPane  vertical "
@@ -481,7 +481,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
 
 exports[`Storyshots Components|Layout no stories panel 1`] = `
 <div
-  class="css-u5kmrx"
+  class="css-16z7x6f"
 >
   <div
     class="SplitPane  vertical disabled"
