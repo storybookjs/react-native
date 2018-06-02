@@ -312,17 +312,17 @@ exports[`Storyshots Components|Layout mobile 1`] = `
       class="css-1kes5pl"
     >
       <div
-        class="css-64377y"
+        class="css-1whcqvw"
       >
         <button
-          class="css-1540u6r"
+          class="css-xcko46"
           role="tab"
           type="button"
         >
           Navigator
         </button>
         <button
-          class="css-133zstr"
+          class="css-1hf831j"
           role="tab"
           selected=""
           type="button"
@@ -330,7 +330,7 @@ exports[`Storyshots Components|Layout mobile 1`] = `
           Preview
         </button>
         <button
-          class="css-1540u6r"
+          class="css-xcko46"
           role="tab"
           type="button"
         >

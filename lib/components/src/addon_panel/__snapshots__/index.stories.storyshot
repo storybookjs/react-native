@@ -8,18 +8,18 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
     class="css-d7g4da"
   >
     <div
-      class="css-64377y"
+      class="css-1whcqvw"
       role="tablist"
     >
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Test 1
       </button>
       <button
-        class="css-133zstr"
+        class="css-1hf831j"
         role="tab"
         selected=""
         type="button"

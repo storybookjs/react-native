@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Tabs stateful - absolute 1`] = `
+exports[`Storyshots Components|Tabs stateful - absolute & bordered 1`] = `
 <div
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-4e8exj"
+    class="css-d7g4da"
   >
     <div
-      class="css-64377y"
+      class="css-1whcqvw"
       role="tablist"
     >
       <button
-        class="css-133zstr"
+        class="css-1hf831j"
         role="tab"
         selected=""
         type="button"
@@ -20,35 +20,35 @@ exports[`Storyshots Components|Tabs stateful - absolute 1`] = `
         Tab title #1
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #2
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab with scroll
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #4
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #5
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
@@ -81,6 +81,168 @@ exports[`Storyshots Components|Tabs stateful - absolute 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|Tabs stateful - absolute 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-4e8exj"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-1hf831j"
+        role="tab"
+        selected=""
+        type="button"
+      >
+        Tab title #1
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </button>
+    </div>
+    <div
+      class="css-18lpvrh"
+    >
+      <div
+        id="test1"
+      >
+        CONTENT 1
+      </div>
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs stateful - bordered 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-8a9ncn"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-1hf831j"
+        role="tab"
+        selected=""
+        type="button"
+      >
+        Tab title #1
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </button>
+    </div>
+    <div
+      class="css-1bx5ylf"
+    >
+      <div
+        id="test1"
+      >
+        CONTENT 1
+      </div>
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
 <div
   style="height:calc(100vh - 20px)"
@@ -89,11 +251,11 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
     class="css-13o7eu2"
   >
     <div
-      class="css-64377y"
+      class="css-1whcqvw"
       role="tablist"
     >
       <button
-        class="css-133zstr"
+        class="css-1hf831j"
         role="tab"
         selected=""
         type="button"
@@ -101,35 +263,35 @@ exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
         Tab title #1
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #2
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab with scroll
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #4
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #5
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
@@ -170,18 +332,18 @@ exports[`Storyshots Components|Tabs stateful - with initial 1`] = `
     class="css-13o7eu2"
   >
     <div
-      class="css-64377y"
+      class="css-1whcqvw"
       role="tablist"
     >
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #1
       </button>
       <button
-        class="css-133zstr"
+        class="css-1hf831j"
         role="tab"
         selected=""
         type="button"
@@ -189,28 +351,28 @@ exports[`Storyshots Components|Tabs stateful - with initial 1`] = `
         Tab title #2
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab with scroll
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #4
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #5
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
@@ -246,46 +408,46 @@ exports[`Storyshots Components|Tabs stateless - default 1`] = `
     class="css-13o7eu2"
   >
     <div
-      class="css-64377y"
+      class="css-1whcqvw"
       role="tablist"
     >
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #1
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #2
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab with scroll
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #4
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
         Tab title #5
       </button>
       <button
-        class="css-1540u6r"
+        class="css-xcko46"
         role="tab"
         type="button"
       >
