@@ -21,7 +21,7 @@ const PanelWrapper = styled('div')({
 export default class Panel extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { knobs: {}, groupId: DEFAULT_GROUP_ID };
+    this.state = { knobs: {} };
     this.options = {};
 
     this.lastEdit = getTimestamp();
@@ -32,7 +32,7 @@ export default class Panel extends PureComponent {
     this.props.channel.on('addon:knobs:setOptions', this.setOptions);
 
     this.stopListeningOnStory = this.props.api.onStory(() => {
-      this.setState({ knobs: [], groupId: DEFAULT_GROUP_ID });
+      this.setState({ knobs: {} });
       this.props.channel.emit('addon:knobs:reset');
     });
   }
@@ -114,7 +114,7 @@ export default class Panel extends PureComponent {
   };
 
   render() {
-    const { knobs, groupId } = this.state;
+    const { knobs } = this.state;
     const { active } = this.props;
 
     if (!active) {
@@ -143,15 +143,10 @@ export default class Panel extends PureComponent {
       };
     });
 
-    if (groupIds.length >= 0) {
-      groups[DEFAULT_GROUP_ID] = {
-        render: () => null,
-        title: DEFAULT_GROUP_ID,
-      };
-      if (groupId !== DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter(key => knobs[key].groupId === groupId);
-      }
-    }
+    groups[DEFAULT_GROUP_ID] = {
+      render: () => null,
+      title: DEFAULT_GROUP_ID,
+    };
 
     knobsArray = knobsArray.map(key => knobs[key]);
 
