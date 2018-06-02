@@ -26,7 +26,7 @@
     "@storybook/react-dev-utils": "^5.0.0",
     "babel-plugin-react-docgen": "^2.0.0-rc.0",
     "babel-preset-react": "^6.24.1",
-    "common-tags": "^1.7.2",
+    "common-tags": "^1.8.0",
     "emotion": "^9.1.3",
     "global": "^4.3.2",
     "lodash.flattendeep": "^4.4.0",

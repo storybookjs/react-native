@@ -1,4 +1,6 @@
-import addons from '@storybook/addons';
+import deprecate from 'util-deprecate';
+
+import addons, { makeDecorator } from '@storybook/addons';
 
 import { manager, registerKnobs } from './registerKnobs';
 
@@ -71,16 +73,25 @@ const defaultOptions = {
   escapeHTML: true,
 };
 
-export const withKnobsOptions = (options = {}) => storyFn => {
-  const allOptions = { ...defaultOptions, ...options };
+export const withKnobs = makeDecorator({
+  name: 'withKnobs',
+  parameterName: 'knobs',
+  skipIfNoParametersOrOptions: false,
+  wrapper: (getStory, context, { options, parameters }) => {
+    const storyOptions = parameters || options;
+    const allOptions = { ...defaultOptions, ...storyOptions };
 
-  manager.setOptions(allOptions);
-  const channel = addons.getChannel();
-  manager.setChannel(channel);
-  channel.emit('addon:knobs:setOptions', allOptions);
+    manager.setOptions(allOptions);
+    const channel = addons.getChannel();
+    manager.setChannel(channel);
+    channel.emit('addon:knobs:setOptions', allOptions);
 
-  registerKnobs();
-  return storyFn();
-};
+    registerKnobs();
+    return getStory(context);
+  },
+});
 
-export const withKnobs = withKnobsOptions();
+export const withKnobsOptions = deprecate(
+  withKnobs,
+  'withKnobsOptions is deprecated. Instead, you can pass options into withKnobs(options) directly, or use the knobs parameter.'
+);
