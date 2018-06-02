@@ -90,7 +90,7 @@ export const withInfo = makeDecorator({
     const storyOptions = parameters || options;
     const infoOptions = typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;
     const mergedOptions =
-      typeof infoOptions === 'string' ? infoOptions : Object.assign(options, infoOptions);
+      typeof infoOptions === 'string' ? infoOptions : { ...options, ...infoOptions };
     return addInfo(getStory, context, mergedOptions);
   },
 });

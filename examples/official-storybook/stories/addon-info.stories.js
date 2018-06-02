@@ -365,4 +365,9 @@ storiesOf('Addons|Info.Options.parameters', module)
     'Overwrite the parameters with markdown',
     () => <BaseButton onClick={action('clicked')} label="Button" />,
     { info: markdownDescription }
+  )
+  .add(
+    'Disable the addon entirely',
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    { info: { disable: true } }
   );
