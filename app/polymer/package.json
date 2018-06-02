@@ -24,7 +24,7 @@
     "@storybook/core": "4.0.0-alpha.8",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "babel-polyfill": "^6.26.0",
-    "common-tags": "^1.4.0",
+    "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"

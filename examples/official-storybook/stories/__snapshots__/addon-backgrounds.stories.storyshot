@@ -17,3 +17,33 @@ exports[`Storyshots Addons|Backgrounds story 2 1`] = `
   This one too!
 </button>
 `;
+
+exports[`Storyshots Addons|Backgrounds, parameters disabled via [] 1`] = `
+<button>
+  This one should not use backgrounds
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds, parameters overriden 1`] = `
+<button>
+  This one should have different backgrounds
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds, parameters skipped via disable:true 1`] = `
+<button>
+  This one should not use backgrounds either
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds, parameters story 1 1`] = `
+<button>
+  You should be able to switch backgrounds for this story
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds, parameters story 2 1`] = `
+<button>
+  This one too!
+</button>
+`;

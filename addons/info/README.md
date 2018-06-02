@@ -208,7 +208,7 @@ setDefaults({
   header: false, // Toggles display of header with component name and description
   inline: true, // Displays info inline vs click button to view
   source: true, // Displays the source of story Component
-  propTables: [/* Components used in story */], // displays Prop Tables with this components
+  propTables: [/* Components used in story */], // displays Prop Tables with these components
   propTablesExclude: [], // Exclude Components from being shown in Prop Tables section. Accepts an array of component classes or functions.
   styles: {}, // Overrides styles of addon. The object should follow this shape: https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19. This prop can also accept a function which has the default stylesheet passed as an argument.
   components: {}, // Overrides components used to display markdown

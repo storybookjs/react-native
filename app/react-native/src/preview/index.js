@@ -51,7 +51,7 @@ export default class Preview {
       }
 
       if (!channel || params.resetStorybook) {
-        if (params.onDeviceUI && !params.useWebsockets) {
+        if (params.onDeviceUI && params.disableWebsockets) {
           channel = new EventEmitter();
         } else {
           const host = params.host || parse(NativeModules.SourceCode.scriptURL).hostname;
