@@ -107,7 +107,7 @@ First follow the instructions [here](https://github.com/ds300/react-native-types
 Now update your storybook `package.json` script to the following
 
     "scripts": {
-       "storybook": "storybook --metro-config $PWD/rn-cli.config.js"
+       "storybook": "storybook start -p 7007 --metro-config $PWD/rn-cli.config.js"
     }
 
 The metro bundler requires an absolute path to the config. The above setup assumes the `rn-cli.config.js` is in the root of your project or next to your `package.json`
@@ -148,6 +148,28 @@ The following parameters can be passed to the start command:
 --projectRoots [projectRoots]
     Override the root(s) to be used by the packager
 ```
+
+## getStorybookUI Options
+
+You can pass these parameters to getStorybookUI call in your storybook entry point:
+
+```
+{
+    onDeviceUI: Boolean (false) 
+        -- display stories list on the device
+    disableWebsockets: Boolean (false) 
+        -- allows to display stories without running storybook server. Should be used with onDeviceUI
+    secured: Boolean (false) 
+        -- use wss/https instead of ws/http
+    host: String (NativeModules.SourceCode.scriptURL) 
+        -- host to use
+    port: Number (7007)
+        -- port to use
+    query: String ("") 
+        -- additional query string to pass to websockets
+}
+```
+
 
 ## Learn More
 
