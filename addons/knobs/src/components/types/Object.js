@@ -43,7 +43,14 @@ class ObjectType extends Component {
   render() {
     const { value, failed } = this.state;
 
-    return <Textarea error={failed} value={value} onChange={this.handleChange} size="flex" />;
+    return (
+      <Textarea
+        valid={failed ? 'error' : null}
+        value={value}
+        onChange={this.handleChange}
+        size="flex"
+      />
+    );
   }
 }
 
