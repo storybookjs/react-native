@@ -14947,6 +14947,10 @@ remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
+render-fragment@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/render-fragment/-/render-fragment-0.1.1.tgz#b231f259b7eee333d34256aee0ef3169be7bef30"
+
 renderkid@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/renderkid/-/renderkid-2.0.1.tgz#898cabfc8bede4b7b91135a3ffd323e58c0db319"
