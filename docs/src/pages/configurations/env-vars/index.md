@@ -1,8 +1,7 @@
-* * *
-
+---
 id: 'env-vars'
-
-## title: 'Using Environment Variables'
+title: 'Using Environment Variables'
+---
 
 Sometimes, we may use configuration items inside Storybook. It might be a theme color, some client secret, or a JSON string. So, we usually tend to hard code them.
 
