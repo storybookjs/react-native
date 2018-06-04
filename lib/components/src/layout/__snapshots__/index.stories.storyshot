@@ -1,581 +1,605 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components|Layout addon panel in right 1`] = `
-<div
-  class="css-16z7x6f"
->
+<div>
   <div
-    class="SplitPane  vertical "
-    style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
+    class="css-16z7x6f"
   >
     <div
-      class="Pane vertical Pane1  "
-      style="flex:none;position:relative;outline:none;width:250px"
+      class="SplitPane  vertical "
+      style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
     >
       <div
-        class="css-1kbxkw2"
+        class="Pane vertical Pane1  "
+        style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-9in0fq"
+          class="css-1kbxkw2"
         >
           <div
-            style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            class="css-9in0fq"
           >
-            Stories
+            <div
+              style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            >
+              Stories
+            </div>
+          </div>
+          <div
+            class="css-owlojx"
+            direction="vertical"
+          >
+            <div
+              class="css-19oxd4p"
+              direction="vertical"
+            />
           </div>
         </div>
-        <div
-          class="css-owlojx"
-          direction="vertical"
-        >
-          <div
-            class="css-19oxd4p"
-            direction="vertical"
-          />
-        </div>
       </div>
-    </div>
-    <span
-      class="Resizer vertical "
-      style="cursor:col-resize;height:auto;width:10px;z-index:1"
-    />
-    <div
-      class="Pane vertical Pane2  "
-      style="flex:1;position:relative;outline:none"
-    >
+      <span
+        class="Resizer vertical "
+        style="cursor:col-resize;height:auto;width:10px;z-index:1"
+      />
       <div
-        class="SplitPane  vertical "
-        style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
+        class="Pane vertical Pane2  "
+        style="flex:1;position:relative;outline:none"
       >
         <div
-          class="Pane vertical Pane1  "
-          style="flex:1;position:relative;outline:none"
+          class="SplitPane  vertical "
+          style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
         >
           <div
-            class="css-1e1vreg"
+            class="Pane vertical Pane1  "
+            style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-1nsb3py"
-            />
-            <div
-              class="css-1xkk3c8"
+              class="css-1e1vreg"
             >
               <div
-                style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                class="css-1nsb3py"
+              />
+              <div
+                class="css-1xkk3c8"
               >
-                Preview
+                <div
+                  style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                >
+                  Preview
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <span
-          class="Resizer vertical "
-          style="cursor:col-resize;height:100%;width:10px;z-index:1"
-        />
-        <div
-          class="Pane vertical Pane2  "
-          style="flex:none;position:relative;outline:none;width:400px"
-        >
+          <span
+            class="Resizer vertical "
+            style="cursor:col-resize;height:100%;width:10px;z-index:1"
+          />
           <div
-            class="css-1929wko"
+            class="Pane vertical Pane2  "
+            style="flex:none;position:relative;outline:none;width:400px"
           >
             <div
-              class="css-nq4yle"
-              direction="vertical"
+              class="css-1929wko"
             >
               <div
-                class="css-19oxd4p"
+                class="css-nq4yle"
                 direction="vertical"
-              />
-            </div>
-            <div
-              style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
-            >
-              Addon
+              >
+                <div
+                  class="css-19oxd4p"
+                  direction="vertical"
+                />
+              </div>
+              <div
+                style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+              >
+                Addon
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div />
+  <div />
 </div>
 `;
 
 exports[`Storyshots Components|Layout default 1`] = `
-<div
-  class="css-16z7x6f"
->
+<div>
   <div
-    class="SplitPane  vertical "
-    style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
+    class="css-16z7x6f"
   >
     <div
-      class="Pane vertical Pane1  "
-      style="flex:none;position:relative;outline:none;width:250px"
+      class="SplitPane  vertical "
+      style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
     >
       <div
-        class="css-1kbxkw2"
+        class="Pane vertical Pane1  "
+        style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-9in0fq"
+          class="css-1kbxkw2"
         >
           <div
-            style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            class="css-9in0fq"
           >
-            Stories
+            <div
+              style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            >
+              Stories
+            </div>
+          </div>
+          <div
+            class="css-owlojx"
+            direction="vertical"
+          >
+            <div
+              class="css-19oxd4p"
+              direction="vertical"
+            />
           </div>
         </div>
-        <div
-          class="css-owlojx"
-          direction="vertical"
-        >
-          <div
-            class="css-19oxd4p"
-            direction="vertical"
-          />
-        </div>
       </div>
-    </div>
-    <span
-      class="Resizer vertical "
-      style="cursor:col-resize;height:auto;width:10px;z-index:1"
-    />
-    <div
-      class="Pane vertical Pane2  "
-      style="flex:1;position:relative;outline:none"
-    >
+      <span
+        class="Resizer vertical "
+        style="cursor:col-resize;height:auto;width:10px;z-index:1"
+      />
       <div
-        class="SplitPane  horizontal "
-        style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
+        class="Pane vertical Pane2  "
+        style="flex:1;position:relative;outline:none"
       >
         <div
-          class="Pane horizontal Pane1  "
-          style="flex:1;position:relative;outline:none"
+          class="SplitPane  horizontal "
+          style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
         >
           <div
-            class="css-xlbk67"
+            class="Pane horizontal Pane1  "
+            style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-1nsb3py"
-            />
-            <div
-              class="css-1xkk3c8"
+              class="css-xlbk67"
             >
               <div
-                style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                class="css-1nsb3py"
+              />
+              <div
+                class="css-1xkk3c8"
               >
-                Preview
+                <div
+                  style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                >
+                  Preview
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <span
-          class="Resizer horizontal "
-          style="cursor:row-resize;height:10px;width:100%;z-index:1"
-        />
-        <div
-          class="Pane horizontal Pane2  "
-          style="flex:none;position:relative;outline:none;height:200px;display:flex"
-        >
+          <span
+            class="Resizer horizontal "
+            style="cursor:row-resize;height:10px;width:100%;z-index:1"
+          />
           <div
-            class="css-1fxkhug"
+            class="Pane horizontal Pane2  "
+            style="flex:none;position:relative;outline:none;height:200px;display:flex"
           >
             <div
-              class="css-1fpokv0"
-              direction="horizontal"
+              class="css-1fxkhug"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1fpokv0"
                 direction="horizontal"
-              />
-            </div>
-            <div
-              style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
-            >
-              Addon
+              >
+                <div
+                  class="css-1nvj8jd"
+                  direction="horizontal"
+                />
+              </div>
+              <div
+                style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+              >
+                Addon
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div />
+  <div />
 </div>
 `;
 
 exports[`Storyshots Components|Layout full screen 1`] = `
-<div
-  class="css-16z7x6f"
->
+<div>
   <div
-    class="SplitPane  vertical disabled"
-    style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
+    class="css-16z7x6f"
   >
     <div
-      class="Pane vertical Pane1  "
-      style="flex:none;position:relative;outline:none;width:1px"
+      class="SplitPane  vertical disabled"
+      style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
     >
       <div
-        class="css-1aqo4nl"
+        class="Pane vertical Pane1  "
+        style="flex:none;position:relative;outline:none;width:1px"
       >
         <div
-          class="css-9in0fq"
+          class="css-1aqo4nl"
         >
           <div
-            style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            class="css-9in0fq"
           >
-            Stories
+            <div
+              style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            >
+              Stories
+            </div>
+          </div>
+          <div
+            class="css-owlojx"
+            direction="vertical"
+          >
+            <div
+              class="css-19oxd4p"
+              direction="vertical"
+            />
           </div>
         </div>
-        <div
-          class="css-owlojx"
-          direction="vertical"
-        >
-          <div
-            class="css-19oxd4p"
-            direction="vertical"
-          />
-        </div>
       </div>
-    </div>
-    <span
-      class="Resizer vertical disabled"
-      style="height:auto;width:10px;z-index:1"
-    />
-    <div
-      class="Pane vertical Pane2  "
-      style="flex:1;position:relative;outline:none"
-    >
+      <span
+        class="Resizer vertical disabled"
+        style="height:auto;width:10px;z-index:1"
+      />
       <div
-        class="SplitPane  horizontal disabled"
-        style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
+        class="Pane vertical Pane2  "
+        style="flex:1;position:relative;outline:none"
       >
         <div
-          class="Pane horizontal Pane1  "
-          style="flex:1;position:relative;outline:none"
+          class="SplitPane  horizontal disabled"
+          style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
         >
           <div
-            class="css-xlbk67"
+            class="Pane horizontal Pane1  "
+            style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-1nsb3py"
-            />
-            <div
-              class="css-15swx87"
+              class="css-xlbk67"
             >
               <div
-                style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                class="css-1nsb3py"
+              />
+              <div
+                class="css-15swx87"
               >
-                Preview
+                <div
+                  style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                >
+                  Preview
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <span
-          class="Resizer horizontal disabled"
-          style="height:10px;width:100%;z-index:1"
-        />
-        <div
-          class="Pane horizontal Pane2  "
-          style="flex:none;position:relative;outline:none;height:1px;display:flex"
-        >
+          <span
+            class="Resizer horizontal disabled"
+            style="height:10px;width:100%;z-index:1"
+          />
           <div
-            class="css-1vc1w07"
+            class="Pane horizontal Pane2  "
+            style="flex:none;position:relative;outline:none;height:1px;display:flex"
           >
             <div
-              class="css-1fpokv0"
-              direction="horizontal"
+              class="css-1vc1w07"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1fpokv0"
                 direction="horizontal"
-              />
-            </div>
-            <div
-              style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
-            >
-              Addon
+              >
+                <div
+                  class="css-1nvj8jd"
+                  direction="horizontal"
+                />
+              </div>
+              <div
+                style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+              >
+                Addon
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div />
+  <div />
 </div>
 `;
 
 exports[`Storyshots Components|Layout mobile 1`] = `
-<div
-  class="css-1nhql0h"
->
-  <div>
-    <div
-      class="css-1kes5pl"
-    >
+<div>
+  <div
+    class="css-1nhql0h"
+  >
+    <div>
       <div
-        class="css-1whcqvw"
-      >
-        <button
-          class="css-xcko46"
-          role="tab"
-          type="button"
-        >
-          Navigator
-        </button>
-        <button
-          class="css-1hf831j"
-          role="tab"
-          selected=""
-          type="button"
-        >
-          Preview
-        </button>
-        <button
-          class="css-xcko46"
-          role="tab"
-          type="button"
-        >
-          Addons
-        </button>
-      </div>
-    </div>
-    <div
-      class="css-1hyfx7x"
-    >
-      <div
-        class="css-9in0fq"
+        class="css-1kes5pl"
       >
         <div
-          style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+          class="css-1whcqvw"
         >
-          Stories
+          <button
+            class="css-xcko46"
+            role="tab"
+            type="button"
+          >
+            Navigator
+          </button>
+          <button
+            class="css-1hf831j"
+            role="tab"
+            selected=""
+            type="button"
+          >
+            Preview
+          </button>
+          <button
+            class="css-xcko46"
+            role="tab"
+            type="button"
+          >
+            Addons
+          </button>
         </div>
       </div>
-    </div>
-    <div
-      class="css-1p46ag7"
-      selected=""
-    >
       <div
-        class="css-9in0fq"
+        class="css-1hyfx7x"
       >
         <div
-          style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+          class="css-9in0fq"
         >
-          Preview
+          <div
+            style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+          >
+            Stories
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="css-1hyfx7x"
-    >
       <div
-        style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+        class="css-1p46ag7"
+        selected=""
       >
-        Addon
+        <div
+          class="css-9in0fq"
+        >
+          <div
+            style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+          >
+            Preview
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div
+          style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+        >
+          Addon
+        </div>
       </div>
     </div>
   </div>
+  <div />
+  <div />
 </div>
 `;
 
 exports[`Storyshots Components|Layout no addon panel 1`] = `
-<div
-  class="css-16z7x6f"
->
+<div>
   <div
-    class="SplitPane  vertical "
-    style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
+    class="css-16z7x6f"
   >
     <div
-      class="Pane vertical Pane1  "
-      style="flex:none;position:relative;outline:none;width:250px"
+      class="SplitPane  vertical "
+      style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
     >
       <div
-        class="css-1kbxkw2"
+        class="Pane vertical Pane1  "
+        style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-9in0fq"
+          class="css-1kbxkw2"
         >
           <div
-            style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            class="css-9in0fq"
           >
-            Stories
+            <div
+              style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            >
+              Stories
+            </div>
+          </div>
+          <div
+            class="css-owlojx"
+            direction="vertical"
+          >
+            <div
+              class="css-19oxd4p"
+              direction="vertical"
+            />
           </div>
         </div>
-        <div
-          class="css-owlojx"
-          direction="vertical"
-        >
-          <div
-            class="css-19oxd4p"
-            direction="vertical"
-          />
-        </div>
       </div>
-    </div>
-    <span
-      class="Resizer vertical "
-      style="cursor:col-resize;height:auto;width:10px;z-index:1"
-    />
-    <div
-      class="Pane vertical Pane2  "
-      style="flex:1;position:relative;outline:none"
-    >
+      <span
+        class="Resizer vertical "
+        style="cursor:col-resize;height:auto;width:10px;z-index:1"
+      />
       <div
-        class="SplitPane  horizontal disabled"
-        style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
+        class="Pane vertical Pane2  "
+        style="flex:1;position:relative;outline:none"
       >
         <div
-          class="Pane horizontal Pane1  "
-          style="flex:1;position:relative;outline:none"
+          class="SplitPane  horizontal disabled"
+          style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
         >
           <div
-            class="css-xlbk67"
+            class="Pane horizontal Pane1  "
+            style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-1nsb3py"
-            />
-            <div
-              class="css-1xkk3c8"
+              class="css-xlbk67"
             >
               <div
-                style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                class="css-1nsb3py"
+              />
+              <div
+                class="css-1xkk3c8"
               >
-                Preview
+                <div
+                  style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                >
+                  Preview
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <span
-          class="Resizer horizontal disabled"
-          style="height:10px;width:100%;z-index:1"
-        />
-        <div
-          class="Pane horizontal Pane2  "
-          style="flex:none;position:relative;outline:none;height:1px;display:flex"
-        >
+          <span
+            class="Resizer horizontal disabled"
+            style="height:10px;width:100%;z-index:1"
+          />
           <div
-            class="css-1vc1w07"
+            class="Pane horizontal Pane2  "
+            style="flex:none;position:relative;outline:none;height:1px;display:flex"
           >
             <div
-              class="css-1fpokv0"
-              direction="horizontal"
+              class="css-1vc1w07"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1fpokv0"
                 direction="horizontal"
-              />
-            </div>
-            <div
-              style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
-            >
-              Addon
+              >
+                <div
+                  class="css-1nvj8jd"
+                  direction="horizontal"
+                />
+              </div>
+              <div
+                style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+              >
+                Addon
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div />
+  <div />
 </div>
 `;
 
 exports[`Storyshots Components|Layout no stories panel 1`] = `
-<div
-  class="css-16z7x6f"
->
+<div>
   <div
-    class="SplitPane  vertical disabled"
-    style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
+    class="css-16z7x6f"
   >
     <div
-      class="Pane vertical Pane1  "
-      style="flex:none;position:relative;outline:none;width:1px"
+      class="SplitPane  vertical disabled"
+      style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;flex-direction:row;left:0;right:0"
     >
       <div
-        class="css-1aqo4nl"
+        class="Pane vertical Pane1  "
+        style="flex:none;position:relative;outline:none;width:1px"
       >
         <div
-          class="css-9in0fq"
+          class="css-1aqo4nl"
         >
           <div
-            style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            class="css-9in0fq"
           >
-            Stories
+            <div
+              style="position:absolute;height:100%;width:100%;color:white;background:#4abdac"
+            >
+              Stories
+            </div>
+          </div>
+          <div
+            class="css-owlojx"
+            direction="vertical"
+          >
+            <div
+              class="css-19oxd4p"
+              direction="vertical"
+            />
           </div>
         </div>
-        <div
-          class="css-owlojx"
-          direction="vertical"
-        >
-          <div
-            class="css-19oxd4p"
-            direction="vertical"
-          />
-        </div>
       </div>
-    </div>
-    <span
-      class="Resizer vertical disabled"
-      style="height:auto;width:10px;z-index:1"
-    />
-    <div
-      class="Pane vertical Pane2  "
-      style="flex:1;position:relative;outline:none"
-    >
+      <span
+        class="Resizer vertical disabled"
+        style="height:auto;width:10px;z-index:1"
+      />
       <div
-        class="SplitPane  horizontal "
-        style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
+        class="Pane vertical Pane2  "
+        style="flex:1;position:relative;outline:none"
       >
         <div
-          class="Pane horizontal Pane1  "
-          style="flex:1;position:relative;outline:none"
+          class="SplitPane  horizontal "
+          style="display:flex;flex:1;height:100%;position:absolute;outline:none;overflow:hidden;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;user-select:text;bottom:0;flex-direction:column;min-height:100%;top:0;width:100%"
         >
           <div
-            class="css-xlbk67"
+            class="Pane horizontal Pane1  "
+            style="flex:1;position:relative;outline:none"
           >
             <div
-              class="css-1nsb3py"
-            />
-            <div
-              class="css-1xkk3c8"
+              class="css-xlbk67"
             >
               <div
-                style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                class="css-1nsb3py"
+              />
+              <div
+                class="css-1xkk3c8"
               >
-                Preview
+                <div
+                  style="position:absolute;height:100%;width:100%;color:white;background:#f7b733"
+                >
+                  Preview
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <span
-          class="Resizer horizontal "
-          style="cursor:row-resize;height:10px;width:100%;z-index:1"
-        />
-        <div
-          class="Pane horizontal Pane2  "
-          style="flex:none;position:relative;outline:none;height:200px;display:flex"
-        >
+          <span
+            class="Resizer horizontal "
+            style="cursor:row-resize;height:10px;width:100%;z-index:1"
+          />
           <div
-            class="css-1fxkhug"
+            class="Pane horizontal Pane2  "
+            style="flex:none;position:relative;outline:none;height:200px;display:flex"
           >
             <div
-              class="css-1fpokv0"
-              direction="horizontal"
+              class="css-1fxkhug"
             >
               <div
-                class="css-1nvj8jd"
+                class="css-1fpokv0"
                 direction="horizontal"
-              />
-            </div>
-            <div
-              style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
-            >
-              Addon
+              >
+                <div
+                  class="css-1nvj8jd"
+                  direction="horizontal"
+                />
+              </div>
+              <div
+                style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
+              >
+                Addon
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div />
+  <div />
 </div>
 `;
