@@ -51,6 +51,6 @@
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
     "prettier": "^1.13.4",
-    "webpack": "^4.9.2"
+    "webpack": "^4.10.2"
   }
 }
