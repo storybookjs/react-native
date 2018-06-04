@@ -24,7 +24,7 @@
     "@storybook/react-dev-utils": "^5.0.0",
     "@storybook/ui": "4.0.0-alpha.8",
     "airbnb-js-shims": "^1.6.0",
-    "autoprefixer": "^8.5.1",
+    "autoprefixer": "^8.6.0",
     "babel-loader": "^7.1.4",
     "babel-runtime": "^6.26.0",
     "babel-plugin-macros": "^2.2.1",
