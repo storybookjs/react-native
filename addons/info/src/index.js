@@ -1,5 +1,6 @@
 import React from 'react';
 import nestedObjectAssign from 'nested-object-assign';
+import deprecate from 'util-deprecate';
 import { makeDecorator } from '@storybook/addons';
 import { logger } from '@storybook/client-logger';
 import Story from './components/Story';
@@ -98,5 +99,8 @@ export const withInfo = makeDecorator({
 export { Story };
 
 export function setDefaults(newDefaults) {
-  return Object.assign(defaultOptions, newDefaults);
+  return deprecate(
+    () => Object.assign(defaultOptions, newDefaults),
+    'setDefaults is deprecated. Instead, you can pass options into withInfo(options) directly, or use the info parameter.'
+  )();
 }
