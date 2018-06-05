@@ -331,7 +331,7 @@ storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module).add(
   ))
 );
 
-storiesOf('Addons|Info.Options.parameters', module)
+storiesOf('Addons|Info.Parameters', module)
   .addDecorator(
     withInfo({
       styles: {
@@ -362,9 +362,24 @@ storiesOf('Addons|Info.Options.parameters', module)
     }
   )
   .add(
-    'Overwrite the parameters with markdown',
+    'Overwrite the parameters with markdown variable',
     () => <BaseButton onClick={action('clicked')} label="Button" />,
     { info: markdownDescription }
+  )
+  .add(
+    'Overwrite the text parameter with markdown inline',
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    {
+      info: {
+        text: `
+        description or documentation about my component, supports markdown
+
+        ~~~js
+        <Button>Click Here</Button>
+        ~~~
+      `,
+      },
+    }
   )
   .add(
     'Disable the addon entirely',
