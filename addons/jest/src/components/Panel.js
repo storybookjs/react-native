@@ -64,8 +64,8 @@ const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) 
 
 const SuiteProgress = styled(({ successNumber, result, className }) => (
   <div className={className} role="progressbar">
-    <span style={{ width: `${successNumber / result.assertionResults.length * 100}%` }}>
-      {`${successNumber / result.assertionResults.length * 100}%`}
+    <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }}>
+      {`${(successNumber / result.assertionResults.length) * 100}%`}
     </span>
   </div>
 ))(() => ({

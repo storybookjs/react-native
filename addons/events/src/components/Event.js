@@ -76,6 +76,14 @@ const Wrapper = styled('div')({
   width: '100%',
 });
 
+function getJSONFromString(str) {
+  try {
+    return JSON.parse(str);
+  } catch (e) {
+    return str;
+  }
+}
+
 class Item extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -89,13 +97,9 @@ class Item extends Component {
     payload: {},
   };
 
-  static getJSONFromString(str) {
-    try {
-      return JSON.parse(str);
-    } catch (e) {
-      return str;
-    }
-  }
+  state = {
+    isTextAreaShowed: false,
+  };
 
   static getDerivedStateFromProps = ({ payload }, { prevPayload }) => {
     if (payload !== prevPayload) {
@@ -103,16 +107,12 @@ class Item extends Component {
 
       return {
         failed: false,
-        payload: Item.getJSONFromString(payloadString),
+        payload: getJSONFromString(payloadString),
         payloadString,
         prevPayload,
       };
     }
     return null;
-  };
-
-  state = {
-    isTextAreaShowed: false,
   };
 
   onChange = ({ target: { value } }) => {
