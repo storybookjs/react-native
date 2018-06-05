@@ -123,6 +123,17 @@ storiesOf('Component', module)
   );
 ```
 
+It is also possible to disable the `info` addon entirely.
+Depending on the scope at which you want to disable the addon, pass the following parameters object either to an individual story or to an `addParameters` call.
+
+```
+{ 
+  info: {
+    disable: true
+  }
+} 
+```
+
 ## Markdown
 The `info` addon also supports markdown.
 To use markdown as additional textual documentation for your stories, either pass it directly as a String to the `info` parameters, or use the `text` option.
