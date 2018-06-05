@@ -35,14 +35,14 @@ const getViewports = viewports =>
 const setStoryDefaultViewportWait = 100;
 
 export class Panel extends Component {
-  static propTypes = {
-    channel: PropTypes.shape({}).isRequired,
-    api: PropTypes.shape({}).isRequired,
-  };
-
   static defaultOptions = {
     viewports: INITIAL_VIEWPORTS,
     defaultViewport: DEFAULT_VIEWPORT,
+  };
+
+  static propTypes = {
+    channel: PropTypes.shape({}).isRequired,
+    api: PropTypes.shape({}).isRequired,
   };
 
   constructor(props, context) {
