@@ -183,7 +183,7 @@ exports[`Storyshots Components|Layout default 1`] = `
             style="flex:none;position:relative;outline:none;height:200px;display:flex"
           >
             <div
-              class="css-1fxkhug"
+              class="css-hys0kv"
             >
               <div
                 class="css-1fpokv0"
@@ -288,7 +288,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
             style="flex:none;position:relative;outline:none;height:1px;display:flex"
           >
             <div
-              class="css-1vc1w07"
+              class="css-1yfjvq7"
             >
               <div
                 class="css-1fpokv0"
@@ -472,7 +472,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
             style="flex:none;position:relative;outline:none;height:1px;display:flex"
           >
             <div
-              class="css-1vc1w07"
+              class="css-1yfjvq7"
             >
               <div
                 class="css-1fpokv0"
@@ -577,7 +577,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
             style="flex:none;position:relative;outline:none;height:200px;display:flex"
           >
             <div
-              class="css-1fxkhug"
+              class="css-hys0kv"
             >
               <div
                 class="css-1fpokv0"
