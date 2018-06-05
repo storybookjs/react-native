@@ -51,10 +51,9 @@ export default function testStorySnapshots(options = {}) {
     storyKindRegex,
     renderer,
     serializer,
-    test,
+    test: testMethod = snapshotWithOptions({ renderer, serializer }),
   } = options;
 
-  const testMethod = test || snapshotWithOptions({ renderer, serializer });
   const integrityOptions = getIntegrityOptions(options);
 
   methods.forEach(method => {
