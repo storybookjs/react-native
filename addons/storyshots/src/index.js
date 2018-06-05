@@ -45,17 +45,16 @@ export default function testStorySnapshots(options = {}) {
     throw new Error('storyshots found 0 stories');
   }
 
-  // NOTE: keep `suit` typo for backwards compatibility
-  const suite = options.suite || options.suit || 'Storyshots';
-  // NOTE: Added not to break existing storyshots configs (can be removed in a future major release)
-  const storyNameRegex = options.storyNameRegex || options.storyRegex;
+  const {
+    suite = 'Storyshots',
+    storyNameRegex,
+    storyKindRegex,
+    renderer,
+    serializer,
+    test,
+  } = options;
 
-  const snapshotOptions = {
-    renderer: options.renderer,
-    serializer: options.serializer,
-  };
-
-  const testMethod = options.test || snapshotWithOptions(snapshotOptions);
+  const testMethod = test || snapshotWithOptions({ renderer, serializer });
   const integrityOptions = getIntegrityOptions(options);
 
   methods.forEach(method => {
@@ -68,7 +67,7 @@ export default function testStorySnapshots(options = {}) {
   for (const group of stories) {
     const { fileName, kind } = group;
 
-    if (options.storyKindRegex && !kind.match(options.storyKindRegex)) {
+    if (storyKindRegex && !kind.match(storyKindRegex)) {
       // eslint-disable-next-line
       continue;
     }
