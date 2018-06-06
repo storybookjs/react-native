@@ -70,7 +70,7 @@ The styles provided here support everything [emotion](https://emotion.sh/) does.
 ## Adding more theme variables for addons
 
 If addons have a need for specific theme variables, the user has to add them. 
-We advice addons to reuse the variables listed above as much as possible.
+We advise addons to reuse the variables listed above as much as possible.
 
 Addon actions uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of it's own. If you want to theme it (our themes do) you can add needs the following additional theme variables:
 
