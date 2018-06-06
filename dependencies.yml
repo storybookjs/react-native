@@ -35,7 +35,7 @@ collectors:
     settings:
       batch_mode: true
       batch_bootstrap: true
-      bootstrap_command: yarn --ignore-scripts --ignore-engines --silent
+      bootstrap_command: yarn --ignore-scripts --ignore-engines --silent && yarn lint:ts . --fix && yarn lint:js . --fix
       github_labels:
       - dependencies:update
       github_assignees:
