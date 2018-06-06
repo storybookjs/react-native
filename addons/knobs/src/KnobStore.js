@@ -1,3 +1,6 @@
+const callArg = fn => fn();
+const callAll = fns => fns.forEach(callArg);
+
 export default class KnobStore {
   constructor() {
     this.store = {};
@@ -13,8 +16,11 @@ export default class KnobStore {
     this.store[key].used = true;
     this.store[key].groupId = value.groupId;
 
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => this.callbacks.forEach(cb => cb()), 1);
+    // debounce the execution of the callbacks for 50 milliseconds
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.timer = setTimeout(callAll, 50, this.callbacks);
   }
 
   get(key) {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import equal from 'fast-deep-equal';
+import deepEqual from 'fast-deep-equal';
 import { Textarea } from '@storybook/components';
 
 class ObjectType extends Component {
   static getDerivedStateFromProps(props, state) {
-    if (!state || !equal(props.knob.value, state.json)) {
+    if (!state || !deepEqual(props.knob.value, state.json)) {
       try {
         return {
           value: JSON.stringify(props.knob.value, null, 2),
@@ -29,7 +29,7 @@ class ObjectType extends Component {
         json,
         failed: false,
       });
-      if (equal(this.props.knob.value, this.state.json)) {
+      if (deepEqual(this.props.knob.value, this.state.json)) {
         this.props.onChange(json);
       }
     } catch (err) {

@@ -49,7 +49,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
       main {
         margin: 15px;
         max-width: 600;
-        lineheight: 1.4;
+        line-height: 1.4;
         fontfamily: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
       }
 
@@ -59,7 +59,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
       .inline-code {
         font-size: 15px;
-        fontweight: 600;
+        font-weight: 600;
         padding: 2px 5px;
         border: 1px solid #eae9e9;
         border-radius: 4px;
