@@ -1,7 +1,7 @@
 import parseJs from 'prettier/parser-babylon';
 
 function parse(source) {
-  return parseJs(source);
+  return parseJs.parsers.babylon.parse(source);
 }
 
 export default {

@@ -27,14 +27,26 @@ function generateSourceWithoutUglyComments(source, { comments, uglyCommentsRegex
   return parts.join('');
 }
 
-function prettifyCode(source, { prettierConfig, parser }) {
+function prettifyCode(source, { prettierConfig, parser, filepath }) {
   let config = prettierConfig;
 
-  if (!config.parser && parser && parser !== 'javascript') {
-    config = {
-      ...prettierConfig,
-      parser,
-    };
+  if (!config.parser) {
+    if (parser) {
+      config = {
+        ...prettierConfig,
+        parser: parser === 'javascript' ? 'babylon' : parser,
+      };
+    } else if (filepath) {
+      config = {
+        ...prettierConfig,
+        filepath,
+      };
+    } else {
+      config = {
+        ...prettierConfig,
+        parser: 'babylon',
+      };
+    }
   }
 
   return prettier.format(source, config);
