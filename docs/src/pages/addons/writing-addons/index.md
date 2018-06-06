@@ -216,6 +216,17 @@ storiesOf('Button', module)
   ));
 ```
 
+## Styling your addon
+
+We use [emotion](https://emotion.sh) for styling, AND we provide a theme which can be set by the user!
+
+We highly recommend you also use emotion to style your components for storybook, but it's not a requirement. You can use inline styles or another css-in-js lib. You can receive the theme as a prop by using the `withTheme` hoc from emotion. [Read more about theming](/configuration/theming).
+
+## Re-using existing components
+
+Wouldn't it be awesome if we provided you with some common used components you could use to build out your own addon quickly and fit in right away?
+Good news! WE DO! We publish most of storybook's UI components as a package: `@storybook/components`. You can check them out in [our storybook](https://storybooks.netlify.com) (pretty meta right?).
+
 ## Addon API
 
 Here we've only used a few functionalities of our [Addon API](/addons/api).
@@ -242,4 +253,3 @@ When you are developing your addon as a package, you can't use `npm link` to add
 ### Package Maintenance
 
 Your packaged Storybook addon needs to be written in ES5. If you are using ES6, then you need to transpile it.
-In that case, we recommend to use [React CDK](https://github.com/myhq/react-cdk) for that.
