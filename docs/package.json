@@ -43,7 +43,7 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.0.3",
-    "react-router": "^4.2.0",
+    "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "sitemap": "^1.12.0"
   },
