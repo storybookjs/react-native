@@ -39,12 +39,12 @@
     "chromatic": "npm --prefix examples/official-storybook run chromatic"
   },
   "devDependencies": {
-    "@angular/common": "^5.2.11",
-    "@angular/compiler": "^5.2.11",
-    "@angular/core": "^5.2.11",
-    "@angular/forms": "^5.2.11",
-    "@angular/platform-browser": "^5.2.11",
-    "@angular/platform-browser-dynamic": "^5.2.11",
+    "@angular/common": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
+    "@angular/core": "^6.0.3",
+    "@angular/forms": "^6.0.3",
+    "@angular/platform-browser": "^6.0.3",
+    "@angular/platform-browser-dynamic": "^6.0.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",

@@ -35,11 +35,12 @@
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {
-    "@angular/common": ">=4.0.0",
-    "@angular/compiler": ">=4.0.0",
-    "@angular/core": ">=4.0.0",
-    "@angular/forms": ">=4.0.0",
-    "@angular/platform-browser": ">=4.0.0",
-    "@angular/platform-browser-dynamic": ">=4.0.0"
+    "@angular-devkit/core": "^0.6.1",
+    "@angular/common": ">=6.0.0",
+    "@angular/compiler": ">=6.0.0",
+    "@angular/core": ">=6.0.0",
+    "@angular/forms": ">=6.0.0",
+    "@angular/platform-browser": ">=6.0.0",
+    "@angular/platform-browser-dynamic": ">=6.0.0"
   }
 }
