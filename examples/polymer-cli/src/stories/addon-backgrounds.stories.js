@@ -1,9 +1,9 @@
 import { storiesOf } from '@storybook/polymer';
-import backgrounds from '@storybook/addon-backgrounds';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 storiesOf('Addon|Backgrounds', module)
   .addDecorator(
-    backgrounds([
+    withBackgrounds([
       { name: 'twitter', value: '#00aced', default: true },
       { name: 'facebook', value: '#3b5998' },
     ])
