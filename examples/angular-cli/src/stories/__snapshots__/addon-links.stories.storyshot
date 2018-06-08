@@ -9,11 +9,15 @@ exports[`Storyshots Addon|Links button with link to another story 1`] = `
   <storybook-button-component
     _nghost-c7=""
   >
+    
+        
     <button
       _ngcontent-c7=""
     >
       Go to Welcome Story
     </button>
+    
+    
   </storybook-button-component>
 </storybook-dynamic-app-root>
 `;

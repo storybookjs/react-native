@@ -10,21 +10,37 @@ exports[`Storyshots Metadata|Combined Combined 1 1`] = `
     <storybook-simple-token-component
       ng-reflect-name="Prop Name"
     >
+      
+      
       <h3>
         Prop Name
       </h3>
+      
+      
       <p>
         Items:
       </p>
+      
+      
       <ul>
         
+        
+        
         <li>
-           Joe 
+          
+          Joe
+        
         </li>
         <li>
-           Jane 
+          
+          Jane
+        
         </li>
+        
+      
       </ul>
+      
+    
     </storybook-simple-token-component>
   </ng-component>
 </storybook-dynamic-app-root>
@@ -40,21 +56,37 @@ exports[`Storyshots Metadata|Combined Combined 2 1`] = `
     <storybook-simple-token-component
       ng-reflect-name="CustomPipe: Prop Name"
     >
+      
+      
       <h3>
         CustomPipe: Prop Name
       </h3>
+      
+      
       <p>
         Items:
       </p>
+      
+      
       <ul>
         
+        
+        
         <li>
-           Joe 
+          
+          Joe
+        
         </li>
         <li>
-           Jane 
+          
+          Jane
+        
         </li>
+        
+      
       </ul>
+      
+    
     </storybook-simple-token-component>
   </ng-component>
 </storybook-dynamic-app-root>

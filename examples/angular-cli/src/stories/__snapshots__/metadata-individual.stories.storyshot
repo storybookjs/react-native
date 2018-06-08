@@ -10,21 +10,37 @@ exports[`Storyshots Metadata|Individual Individual 1 1`] = `
     <storybook-simple-token-component
       ng-reflect-name="Prop Name"
     >
+      
+      
       <h3>
         Prop Name
       </h3>
+      
+      
       <p>
         Items:
       </p>
+      
+      
       <ul>
         
+        
+        
         <li>
-           Joe 
+          
+          Joe
+        
         </li>
         <li>
-           Jane 
+          
+          Jane
+        
         </li>
+        
+      
       </ul>
+      
+    
     </storybook-simple-token-component>
   </ng-component>
 </storybook-dynamic-app-root>
@@ -38,21 +54,37 @@ exports[`Storyshots Metadata|Individual Individual 2 1`] = `
 >
   <ng-component>
     <storybook-simple-token-component>
+      
+      
       <h3>
         Provider Name
       </h3>
+      
+      
       <p>
         Items:
       </p>
+      
+      
       <ul>
         
+        
+        
         <li>
-           Jim 
+          
+          Jim
+        
         </li>
         <li>
-           Jill 
+          
+          Jill
+        
         </li>
+        
+      
       </ul>
+      
+    
     </storybook-simple-token-component>
   </ng-component>
 </storybook-dynamic-app-root>

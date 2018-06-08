@@ -9,11 +9,15 @@ exports[`Storyshots Addon|Notes Note with HTML 1`] = `
   <storybook-button-component
     _nghost-c9=""
   >
+    
+        
     <button
       _ngcontent-c9=""
     >
       Notes with HTML
     </button>
+    
+    
   </storybook-button-component>
 </storybook-dynamic-app-root>
 `;
@@ -27,11 +31,15 @@ exports[`Storyshots Addon|Notes Simple note 1`] = `
   <storybook-button-component
     _nghost-c8=""
   >
+    
+        
     <button
       _ngcontent-c8=""
     >
       Notes on some Button
     </button>
+    
+    
   </storybook-button-component>
 </storybook-dynamic-app-root>
 `;

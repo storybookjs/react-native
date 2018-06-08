@@ -9,11 +9,15 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
   <storybook-button-component
     _nghost-c10=""
   >
+    
+        
     <button
       _ngcontent-c10=""
     >
       Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
     </button>
+    
+    
   </storybook-button-component>
 </storybook-dynamic-app-root>
 `;

@@ -7,14 +7,20 @@ exports[`Storyshots Custom|ngModel custom ControlValueAccessor 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-custom-cva-component>
+    
+      
     <div>
       Type anything
     </div>
+    
+      
     <input
       class="ng-untouched ng-pristine ng-valid"
       ng-reflect-model="Type anything"
       type="text"
     />
+    
+    
   </storybook-custom-cva-component>
 </storybook-dynamic-app-root>
 `;

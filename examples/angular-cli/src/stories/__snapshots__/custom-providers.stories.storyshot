@@ -7,12 +7,22 @@ exports[`Storyshots Custom|Providers Simple 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-simple-service-component>
+    
+      
     <p>
       Static name:
     </p>
+    
+      
     <ul>
       
+        
+      
+      
+      
     </ul>
+    
+    
   </storybook-simple-service-component>
 </storybook-dynamic-app-root>
 `;
@@ -24,12 +34,22 @@ exports[`Storyshots Custom|Providers With knobs 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-simple-service-component>
+    
+      
     <p>
       Dynamic knob:
     </p>
+    
+      
     <ul>
       
+        
+      
+      
+      
     </ul>
+    
+    
   </storybook-simple-service-component>
 </storybook-dynamic-app-root>
 `;
