@@ -29,7 +29,7 @@
     "@storybook/client-logger": "4.0.0-alpha.8",
     "@storybook/components": "4.0.0-alpha.8",
     "@storybook/core-events": "4.0.0-alpha.8",
-    "axe-core": "^3.0.2",
+    "axe-core": "^3.0.3",
     "babel-runtime": "^6.26.0",
     "emotion": "^9.1.3",
     "global": "^4.3.2",

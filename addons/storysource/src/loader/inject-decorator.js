@@ -6,16 +6,17 @@ import {
   generateAddsMap,
 } from './generate-helpers';
 
-function extendOptions(source, comments, options) {
+function extendOptions(source, comments, filepath, options) {
   return {
     ...defaultOptions,
     ...options,
     source,
     comments,
+    filepath,
   };
 }
 
-function inject(source, decorator, options = {}) {
+function inject(source, decorator, filepath, options = {}) {
   const { changed, source: newSource, comments } = generateSourceWithDecorators(
     source,
     decorator,
@@ -30,7 +31,7 @@ function inject(source, decorator, options = {}) {
     };
   }
 
-  const storySource = generateStorySource(extendOptions(source, comments, options));
+  const storySource = generateStorySource(extendOptions(source, comments, filepath, options));
   const addsMap = generateAddsMap(storySource, options.parser);
 
   return {

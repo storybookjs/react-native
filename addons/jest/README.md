@@ -40,7 +40,7 @@ but this can mean you'll experience merge conflicts on this file in the future. 
 
 ## Generating the test results
 
-You need to make sure the generated test-restuls file exists before you start storybook.
+You need to make sure the generated test-results file exists before you start storybook.
 During development you will likely start jest in watch-mode 
 and so the json file will be re-generated every time code or tests change.
 
@@ -116,7 +116,7 @@ storiesOf('MyComponent', module)
 ### withTests(options)
 
 - **options.results**: OBJECT jest output results. *mandatory*
-- **filesExt**: STRING test file extention. *optionnal*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
+- **filesExt**: STRING test file extention. *optional*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## Usage with Angular
 

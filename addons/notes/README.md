@@ -1,5 +1,4 @@
 # Storybook Addon Notes
-
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
@@ -16,6 +15,7 @@ Storybook Addon Notes allows you to write notes (text or HTML) for your stories 
 ![Storybook Addon Notes Demo](docs/demo.png)
 
 ### Getting Started
+**NOTE: Documentation on master branch is for alpha version, stable release is on [release/3.4](https://github.com/storybooks/storybook/tree/release/3.4/addons/)**
 
 ```sh
 yarn add -D @storybook/addon-notes
