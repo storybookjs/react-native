@@ -12,6 +12,12 @@ exports[`Storyshots Addons|Notes using decorator arguments, withNotes 1`] = `
 </button>
 `;
 
+exports[`Storyshots Addons|Notes with a markdown table 1`] = `
+<button>
+  Button with notes - check the notes panel for details
+</button>
+`;
+
 exports[`Storyshots Addons|Notes withNotes 1`] = `
 <button>
   Button with notes - check the notes panel for details
