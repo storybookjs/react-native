@@ -8,7 +8,6 @@ function getCommand(watch) {
 
   const args = [
     '--ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__',
-    '--plugins "transform-runtime"',
     './src --out-dir ./dist',
     '--copy-files',
   ];
