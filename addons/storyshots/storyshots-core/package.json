@@ -12,7 +12,7 @@
   "scripts": {
     "build-storybook": "build-storybook",
     "example": "jest storyshot.test",
-    "prepare": "node ../../scripts/prepare.js",
+    "prepare": "node ../../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {

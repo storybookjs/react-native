@@ -2,5 +2,5 @@
 
 TBD
 
-*addon-storyshots
-*addon-storyshots-puppeteer
+- addon-storyshots
+- addon-storyshots-puppeteer
