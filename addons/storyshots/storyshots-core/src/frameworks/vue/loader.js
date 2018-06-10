@@ -1,5 +1,3 @@
-import appOptions from '@storybook/angular/options';
-
 import global from 'global';
 import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
@@ -16,6 +14,8 @@ function test(options) {
 function load(options) {
   global.STORYBOOK_ENV = 'vue';
   mockVueToIncludeCompiler();
+
+  const appOptions = require.requireActual('@storybook/vue/options').default;
 
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,

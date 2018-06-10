@@ -1,5 +1,3 @@
-import appOptions from '@storybook/angular/options';
-
 import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
 import loadConfig from '../config-loader';
@@ -21,6 +19,8 @@ function test(options) {
 
 function load(options) {
   setupAngularJestPreset();
+
+  const appOptions = require.requireActual('@storybook/angular/options').default;
 
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
