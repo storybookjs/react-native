@@ -1,8 +1,10 @@
 import { describe, it } from 'global';
 
 function snapshotTest({ story, kind, fileName, framework, testMethod, testMethodParams }) {
-  it(story.name, () => {
-    const context = { fileName, kind, story: story.name, framework };
+  const { name } = story;
+
+  it(name, () => {
+    const context = { fileName, kind, story: name, framework };
 
     return testMethod({
       story,

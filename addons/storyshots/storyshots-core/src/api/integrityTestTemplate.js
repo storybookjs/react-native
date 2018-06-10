@@ -1,5 +1,6 @@
 import fs from 'fs';
 import glob from 'glob';
+import { describe, it } from 'global';
 
 function integrityTest(integrityOptions, stories2snapsConverter) {
   if (integrityOptions === false) {
@@ -7,7 +8,7 @@ function integrityTest(integrityOptions, stories2snapsConverter) {
   }
 
   describe('Storyshots Integrity', () => {
-    test('Abandoned Storyshots', () => {
+    it('Abandoned Storyshots', () => {
       const snapshotExtension = stories2snapsConverter.getSnapshotExtension();
       const storyshots = glob.sync(`**/*${snapshotExtension}`, integrityOptions);
 
