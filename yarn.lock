@@ -5659,7 +5659,7 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv-expand@4.2.0:
+dotenv-expand@4.2.0, dotenv-expand@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-4.2.0.tgz#def1f1ca5d6059d24a766e587942c21106ce1275"
 
@@ -17806,6 +17806,14 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.1:
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.3.0.tgz#41ca7c82981fd1ce6c762aac397fc24e35711444"
   dependencies:
     unist-util-is "^2.1.1"
+
+universal-dotenv@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/universal-dotenv/-/universal-dotenv-1.3.0.tgz#aa133fc58c507ea259d385cf647ee180a2a98d68"
+  dependencies:
+    app-root-dir "^1.0.2"
+    dotenv "^6.0.0"
+    dotenv-expand "^4.2.0"
 
 universalify@^0.1.0:
   version "0.1.1"
