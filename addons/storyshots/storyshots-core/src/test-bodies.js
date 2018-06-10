@@ -1,5 +1,4 @@
 import 'jest-specific-snapshot';
-import { getSnapshotFileName } from './utils';
 
 export const snapshotWithOptions = options => ({
   story,
@@ -28,12 +27,17 @@ export const snapshotWithOptions = options => ({
   return match(result);
 };
 
-export const multiSnapshotWithOptions = options => ({ story, context, renderTree }) =>
+export const multiSnapshotWithOptions = options => ({
+  story,
+  context,
+  renderTree,
+  stories2snapsConverter,
+}) =>
   snapshotWithOptions(options)({
     story,
     context,
     renderTree,
-    snapshotFileName: getSnapshotFileName(context),
+    snapshotFileName: stories2snapsConverter.getSnapshotFileName(context),
   });
 
 export function shallowSnapshot({ story, context, renderShallowTree, options = {} }) {
