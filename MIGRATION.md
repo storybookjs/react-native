@@ -6,6 +6,7 @@
     -   [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
     -   [Removed addWithInfo](#removed-add-with-info)
     -   [Removed RN addons](#removed-rn-addons)
+    -   [Storyshots imageSnapshot test function moved to a separate package](#storyshots-imagesnapshot-moved)
 -   [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
@@ -39,6 +40,11 @@ With 4.0 as our first major release in over a year, we've collected a lot of cle
 ### Removed RN addons
 
 The `@storybook/react-native` had built-in addons (`addon-actions` and `addon-links`) that have been marked as deprecated since 3.x. They have been fully removed in 4.x. If your project still uses the built-ins, you'll need to add explicit dependencies on `@storybook/addon-actions` and/or `@storybook/addon-links` and import directly from those packages.
+
+### Storyshots imageSnapshot moved
+
+`imageSnapshot` test function was extracted from `addon-storyshots`
+and moved to a new package - `addon-storyshots-puppeteer`
 
 ## From version 3.3.x to 3.4.x
 
