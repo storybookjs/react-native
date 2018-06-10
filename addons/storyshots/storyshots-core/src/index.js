@@ -5,7 +5,6 @@ import addons, { mockChannel } from '@storybook/addons';
 import loadFramework from './frameworkLoader';
 import getIntegrityOptions from './getIntegrityOptions';
 import { getPossibleStoriesFiles, getSnapshotFileName } from './utils';
-import { imageSnapshot } from './test-body-image-snapshot';
 
 import {
   multiSnapshotWithOptions,
@@ -26,7 +25,6 @@ export {
   shallowSnapshot,
   renderOnly,
   renderWithOptions,
-  imageSnapshot,
 };
 
 const methods = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];

@@ -156,6 +156,7 @@
   },
   "workspaces": [
     "addons/*",
+    "addons/storyshots/*",
     "app/*",
     "lib/*",
     "examples/marko-cli",

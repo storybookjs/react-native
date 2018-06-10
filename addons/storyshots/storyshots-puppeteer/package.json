@@ -1,0 +1,23 @@
+{
+  "name": "@storybook/addon-storyshots-puppeteer",
+  "version": "4.0.0-alpha.8",
+  "description": "Image snappshots addition to StoryShots base on puppeteer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "prepare": "node ../../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/node-logger": "4.0.0-alpha.8",
+    "jest-image-snapshot": "^2.4.2",
+    "puppeteer": "^1.4.0"
+  },
+  "peerDependencies": {
+    "@storybook/addon-storyshots": "4.0.0-alpha.8"
+  }
+}
