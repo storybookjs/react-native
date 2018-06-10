@@ -12,19 +12,16 @@
   "scripts": {
     "build-storybook": "build-storybook",
     "example": "jest storyshot.test",
-    "prepare": "node ../../scripts/prepare.js",
+    "prepare": "node ../../../scripts/prepare.js",
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@storybook/addons": "4.0.0-alpha.9",
     "@storybook/core": "4.0.0-alpha.9",
-    "@storybook/node-logger": "4.0.0-alpha.9",
     "babel-runtime": "^6.26.0",
     "glob": "^7.1.2",
     "global": "^4.3.2",
-    "jest-image-snapshot": "^2.4.2",
     "jest-specific-snapshot": "^0.5.0",
-    "puppeteer": "^1.4.0",
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
