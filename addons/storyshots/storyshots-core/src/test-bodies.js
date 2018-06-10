@@ -1,6 +1,6 @@
 import 'jest-specific-snapshot';
 
-export const snapshotWithOptions = options => ({
+export const snapshotWithOptions = (options = {}) => ({
   story,
   context,
   renderTree,
@@ -27,7 +27,7 @@ export const snapshotWithOptions = options => ({
   return match(result);
 };
 
-export const multiSnapshotWithOptions = options => ({
+export const multiSnapshotWithOptions = (options = {}) => ({
   story,
   context,
   renderTree,
@@ -45,7 +45,7 @@ export function shallowSnapshot({ story, context, renderShallowTree, options = {
   expect(result).toMatchSnapshot();
 }
 
-export const renderWithOptions = options => ({ story, context, renderTree }) => {
+export const renderWithOptions = (options = {}) => ({ story, context, renderTree }) => {
   const result = renderTree(story, context, options);
 
   if (typeof result.then === 'function') {
@@ -55,6 +55,6 @@ export const renderWithOptions = options => ({ story, context, renderTree }) => 
   return undefined;
 };
 
-export const renderOnly = renderWithOptions({});
+export const renderOnly = renderWithOptions();
 
-export const snapshot = snapshotWithOptions({});
+export const snapshot = snapshotWithOptions();

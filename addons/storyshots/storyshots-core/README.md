@@ -148,6 +148,22 @@ initStoryshots({
 
 ## Options
 
+### `config`
+
+The `config` parameter must be a function that helps to configure storybook like the `config.js` does.
+If it's not specified, storyshots will try to use [configPath](#configPath) parameter.
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({
+  config: ({ configure }) =>
+    configure(() => {
+      require('../stories/Button.story.js');
+    }, module),
+});
+```
+
 ### `configPath`
 
 By default, Storyshots assumes the config directory path for your project as below:
@@ -164,6 +180,21 @@ initStoryshots({
   configPath: '.my-storybook-config-dir'
 });
 ```
+
+`configPath` can also specify path to the `config.js` itself. In this case, config directory will be
+a base directory of the `configPath`. It may be useful when the `config.js` for test should differ from the
+original one. It also may be useful for separating tests to different test configs:
+
+```js
+initStoryshots({
+  configPath: '.my-storybook-config-dir/testConfig1.js'
+});
+
+initStoryshots({
+  configPath: '.my-storybook-config-dir/testConfig2.js'
+});
+```
+
 
 ### `suite`
 
@@ -299,7 +330,7 @@ The value is just a [settings](https://github.com/isaacs/node-glob#options) to a
 ```js
 initStoryshots({
   integrityOptions: { cwd: __dirname }, // it will start searching from the current directory
-  test: multiSnapshotWithOptions({}),
+  test: multiSnapshotWithOptions(),
 });
 ```
 

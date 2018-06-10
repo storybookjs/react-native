@@ -9,11 +9,22 @@ function test(options) {
   );
 }
 
+function configure(options, storybook) {
+  const { configPath = 'storybook', config } = options;
+
+  if (config && typeof config === 'function') {
+    config(storybook);
+    return;
+  }
+
+  const resolvedConfigPath = path.resolve(configPath);
+  require.requireActual(resolvedConfigPath);
+}
+
 function load(options) {
   const storybook = require.requireActual('@storybook/react-native');
 
-  const configPath = path.resolve(options.configPath || 'storybook');
-  require.requireActual(configPath);
+  configure(options, storybook);
 
   return {
     renderTree: require('../react/renderTree').default,

@@ -5,5 +5,5 @@ initStoryshots({
   framework: 'html',
   integrityOptions: { cwd: path.resolve(__dirname, '../stories') },
   configPath: path.resolve(__dirname, '../.storybook'),
-  test: multiSnapshotWithOptions({}),
+  test: multiSnapshotWithOptions(),
 });
