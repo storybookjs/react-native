@@ -2,10 +2,10 @@ import global, { describe } from 'global';
 import addons, { mockChannel } from '@storybook/addons';
 import snapshotsTests from './snapshotsTestsTemplate';
 import integrityTest from './integrityTestTemplate';
-import loadFramework from '../frameworkLoader';
-import getIntegrityOptions from '../getIntegrityOptions';
-import { snapshotWithOptions } from '../test-bodies';
+import getIntegrityOptions from './getIntegrityOptions';
+import loadFramework from '../frameworks/frameworkLoader';
 import Stories2SnapsConverter from '../Stories2SnapsConverter';
+import { snapshotWithOptions } from '../test-bodies';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
