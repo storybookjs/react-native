@@ -13,6 +13,8 @@
     "vuex": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
     "@storybook/addon-actions": "4.0.0-alpha.9",
     "@storybook/addon-backgrounds": "4.0.0-alpha.9",
     "@storybook/addon-centered": "4.0.0-alpha.9",
@@ -25,9 +27,7 @@
     "@storybook/addon-viewport": "4.0.0-alpha.9",
     "@storybook/addons": "4.0.0-alpha.9",
     "@storybook/vue": "4.0.0-alpha.9",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
+    "babel-loader": "^8.0.0-beta.0",
     "babel-preset-vue": "^2.0.2",
     "cross-env": "^5.1.6",
     "file-loader": "^1.1.11",

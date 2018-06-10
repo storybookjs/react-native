@@ -16,6 +16,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/plugin-transform-regenerator": "7.0.0-beta.49",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
+    "@babel/preset-stage-0": "7.0.0-beta.49",
+    "@babel/runtime": "7.0.0-beta.49",
     "@storybook/addons": "4.0.0-alpha.9",
     "@storybook/channel-postmessage": "4.0.0-alpha.9",
     "@storybook/client-logger": "4.0.0-alpha.9",
@@ -25,14 +30,9 @@
     "@storybook/ui": "4.0.0-alpha.9",
     "airbnb-js-shims": "^1.6.0",
     "autoprefixer": "^8.6.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.0-beta.0",
     "babel-plugin-macros": "^2.2.2",
-    "babel-plugin-transform-regenerator": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-minify": "0.4.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-runtime": "^6.26.0",
+    "babel-preset-minify": "0.4.3",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
@@ -67,8 +67,7 @@
     "mock-fs": "^4.5.0"
   },
   "peerDependencies": {
-    "babel-core": "^6.26.0 || ^7.0.0-0",
-    "babel-runtime": ">=6.0.0",
+    "@babel/core": ">=7.0.0-beta.41 <8.0.0",
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0"
   }
