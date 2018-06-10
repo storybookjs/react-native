@@ -307,9 +307,32 @@ initStoryshots({
 
 Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
 
-### `getSnapshotFileName`
+### `stories2snapsConverter`
+This parameter should be an instance of the [`Stories2SnapsConverter`](src/Stories2SnapsConverter) (or a derived from it) Class that is used to convert story-file name to snapshot-file name and vice versa.
 
-Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
+By default, the instance of this class is created with these default options:
+
+```js
+{
+  snapshotsDirName: '__snapshots__',
+  snapshotExtension: '.storyshot',
+  storiesExtensions: ['.js', '.jsx', '.ts', '.tsx'],
+}
+```
+
+This class might be overridden to extend the existing conversion functionality or instantiated to provide different options:
+
+```js
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
+
+initStoryshots({
+  stories2snapsConverter: new Stories2SnapsConverter({
+    snapshotExtension: '.storypuke',
+    storiesExtensions: ['.foo'],
+  }),
+});
+
+```
 
 ###### Example:
 
