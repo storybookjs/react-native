@@ -308,7 +308,7 @@ initStoryshots({
 Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
 
 ### `stories2snapsConverter`
-This parameter should be an instance of the [`Stories2SnapsConverter`](src/Stories2SnapsConverter) (or a derived from it) Class that is used to convert story-file name to snapshot-file name and vice versa.
+This parameter should be an instance of the [`Stories2SnapsConverter`](src/Stories2SnapsConverter.js) (or a derived from it) Class that is used to convert story-file name to snapshot-file name and vice versa.
 
 By default, the instance of this class is created with these default options:
 
