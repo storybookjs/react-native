@@ -11,7 +11,7 @@
     "bootstrap:docs": "yarn install --cwd docs",
     "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:react-native-typescript": "npm --prefix examples/react-native-typescript install",
-    "build-packs": "lerna exec --scope '@storybook/*' --parallel -- ../../scripts/build-pack.sh ../../packs",
+    "build-packs": "lerna exec --scope '@storybook/*' --parallel -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",
     "changelog": "pr-log --sloppy",
     "precommit": "lint-staged",
@@ -159,6 +159,7 @@
   "browserslist": "defaults",
   "workspaces": [
     "addons/*",
+    "addons/storyshots/*",
     "app/*",
     "lib/*",
     "examples/marko-cli",

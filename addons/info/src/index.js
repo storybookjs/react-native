@@ -1,5 +1,7 @@
 import React from 'react';
 import nestedObjectAssign from 'nested-object-assign';
+import deprecate from 'util-deprecate';
+import { makeDecorator } from '@storybook/addons';
 import { logger } from '@storybook/client-logger';
 import Story from './components/Story';
 import PropTable from './components/PropTable';
@@ -82,13 +84,23 @@ function addInfo(storyFn, context, infoOptions) {
   return <Story {...props}>{storyFn(context)}</Story>;
 }
 
-export const withInfo = textOrOptions => {
-  const options = typeof textOrOptions === 'string' ? { text: textOrOptions } : textOrOptions;
-  return storyFn => context => addInfo(storyFn, context, options);
-};
+export const withInfo = makeDecorator({
+  name: 'withInfo',
+  parameterName: 'info',
+  wrapper: (getStory, context, { options, parameters }) => {
+    const storyOptions = parameters || options;
+    const infoOptions = typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;
+    const mergedOptions =
+      typeof infoOptions === 'string' ? infoOptions : { ...options, ...infoOptions };
+    return addInfo(getStory, context, mergedOptions);
+  },
+});
 
 export { Story };
 
 export function setDefaults(newDefaults) {
-  return Object.assign(defaultOptions, newDefaults);
+  return deprecate(
+    () => Object.assign(defaultOptions, newDefaults),
+    'setDefaults is deprecated. Instead, you can pass options into withInfo(options) directly, or use the info parameter.'
+  )();
 }
