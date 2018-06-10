@@ -1,3 +1,11 @@
+# 3.4.7
+
+2018-June-10
+
+#### Bug Fixes
+
+-   Remove linebreaks in notes text when they are html elements [#3731](https://github.com/storybooks/storybook/pull/3731)
+
 # 4.0.0-alpha.8
 
 2018-May-26
