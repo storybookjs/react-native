@@ -51,7 +51,6 @@ module.exports = {
         ts: 'never',
       },
     ],
-    'import/no-unresolved': ignore,
     'import/no-extraneous-dependencies': [
       error,
       {
