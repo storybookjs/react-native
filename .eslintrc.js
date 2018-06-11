@@ -51,7 +51,7 @@ module.exports = {
         ts: 'never',
       },
     ],
-    'import/no-unresolved': [error, { commonjs: true }],
+    'import/no-unresolved': ignore,
     'import/no-extraneous-dependencies': [
       error,
       {
