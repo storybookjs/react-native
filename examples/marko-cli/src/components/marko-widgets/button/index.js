@@ -9,7 +9,7 @@ function getInitialState(input) {
 
 function getTemplateData(state, input) {
   const priority = input.priority || 'primary';
-  let classes = ['btn'];
+  const classes = ['btn'];
 
   if (priority === 'primary' || priority === 'danger') {
     classes.push(`btn--${priority}`);
@@ -25,6 +25,7 @@ function getTemplateData(state, input) {
 
 function handleClick() {
   if (!this.state.disabled) {
+    // eslint-disable-next-line no-undef,no-alert
     alert('button-click');
   }
 }
