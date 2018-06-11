@@ -37,7 +37,7 @@
   "dependencies": {
     "marko": "^4.10.0",
     "marko-starter": "^1.0.0",
-    "marko-widgets": "^7"
+    "marko-widgets": "^7.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.9",
