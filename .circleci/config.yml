@@ -39,6 +39,7 @@ jobs:
             - examples/official-storybook/node_modules
             - examples/polymer-cli/node_modules
             - examples/vue-kitchen-sink/node_modules
+            - examples/marko-cli/node_modules
       - save_cache:
           name: "Cache core dist"
           key: core-dist-v2-{{ .Revision }}
@@ -80,6 +81,11 @@ jobs:
           name: "Build polymer-cli"
           command: |
             cd examples/polymer-cli
+            yarn build-storybook
+      - run:
+          name: "Build marko-cli"
+          command: |
+            cd examples/marko-cli
             yarn build-storybook
       - run:
           name: "Build official-storybook"
