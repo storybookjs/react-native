@@ -41,7 +41,7 @@ jobs:
             - examples/vue-kitchen-sink/node_modules
       - save_cache:
           name: "Cache core dist"
-          key: core-dist-{{ .Revision }}
+          key: core-dist-v2-{{ .Revision }}
           paths:
             - addons
             - app
@@ -57,7 +57,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
@@ -108,7 +108,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
 
       - run:
           name: "Run react kitchen-sink (smoke test)"
@@ -151,7 +151,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Bootstrap"
           command: |
@@ -214,7 +214,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Lint"
           command: |
@@ -230,7 +230,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Run unit tests"
           command: |
@@ -251,7 +251,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Test CLI"
           command: |
@@ -271,7 +271,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Test CLI with latest CR(N)A"
           command: |
