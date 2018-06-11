@@ -25,8 +25,8 @@ npm i -D @storybook/addon-info
 ```
 
 ## Basic usage
-Then, add  `withInfo` as a decarator to your book of stories. 
-It is possible to add `info` by default to all or a subsection of stories by using a global or story decorator. 
+Then, add  `withInfo` as a decarator to your book of stories.
+It is possible to add `info` by default to all or a subsection of stories by using a global or story decorator.
 
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
@@ -40,7 +40,7 @@ storiesOf('Component', module)
   .add(...);
 ```
 
-Then, you can use the `info` parameter to either pass certain options or specific documentation text to your stories. 
+Then, you can use the `info` parameter to either pass certain options or specific documentation text to your stories.
 A complete list of possible configurations can be found at [in a later section](#setting-global-options).
 This can be done per book of stories:
 
@@ -50,10 +50,10 @@ import { storiesOf } from '@storybook/react';
 import Component from './Component';
 
 storiesOf('Component', module)
-  .addParameters({ 
+  .addParameters({
     info: {
       // Your settings
-    } 
+    }
   })
   .add('with some emoji', () => <Component/>);
 ```
@@ -66,15 +66,15 @@ import Component from './Component';
 
 storiesOf('Component', module)
   .add(
-    'with some emoji', 
-    () => <Component emoji/>, 
-    { info : { inline: false, header: false } } // Make your component render inline with the additional info 
-  ) 
+    'with some emoji',
+    () => <Component emoji/>,
+    { info : { inline: false, header: false } } // Make your component render inline with the additional info
+  )
   .add(
-    'with no emoji', 
-    () => <Component/>, 
+    'with no emoji',
+    () => <Component/>,
     { info: '☹️ no emojis' } // Add additional info text directly
-  ); 
+  );
 ```
 
 ...or even together:
@@ -85,7 +85,7 @@ import { storiesOf } from '@storybook/react';
 import Component from './Component';
 
 storiesOf('Component', module)
-  .addParameters({ 
+  .addParameters({
     info: {               // Make a default for all stories in this book,
       inline: true,       // where the components are inlined
       styles: {
@@ -95,10 +95,10 @@ storiesOf('Component', module)
           }
         }
       },
-    } 
+    }
   })
   .add(
-    'green version', 
+    'green version',
     () => <Component green/>,
     {
       info: {
@@ -127,11 +127,11 @@ It is also possible to disable the `info` addon entirely.
 Depending on the scope at which you want to disable the addon, pass the following parameters object either to an individual story or to an `addParameters` call.
 
 ```
-{ 
+{
   info: {
     disable: true
   }
-} 
+}
 ```
 
 ## Markdown
@@ -144,7 +144,7 @@ storiesOf('Button', module)
   .add(
     'Button Component',
     () => <Button />,
-    { 
+    {
       info: {
         text: `
           description or documentation about my component, supports markdown
@@ -178,19 +178,74 @@ In order, all of them will be combined together, with a later call overriding th
 
 ```js
 {
-  header: false, // Toggles display of header with component name and description
-  inline: true, // Displays info inline vs click button to view
-  source: true, // Displays the source of story Component
-  propTables: [/* Components used in story */], // displays Prop Tables with these components
-  propTablesExclude: [], // Exclude Components from being shown in Prop Tables section. Accepts an array of component classes or functions.
-  styles: {}, // Overrides styles of addon. The object should follow this shape: https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19. This prop can also accept a function which has the default stylesheet passed as an argument.
-  components: {}, // Overrides components used to display markdown
-  maxPropsIntoLine: 1, // Max props to display per line in source code
-  maxPropObjectKeys: 10, // Displays the first 10 characters of the prop name
-  maxPropArrayLength: 10, // Displays the first 10 items in the default prop array
-  maxPropStringLength: 100, // Displays the first 100 characters in the default prop string,
-  TableComponent: props => {}, // Override the component used to render the props table
-  excludedPropTypes: [], // Will exclude any respective properties whose name is included in array
+  /**
+   * Displays info inline vs click button to view
+   * @default false
+   */
+  inline: boolean,
+  /**
+   * Toggles display of header with component name and description
+   * @default true
+   */
+  header: boolean,
+  /**
+   * Displays the source of story Component
+   * @default true
+   */
+  source: boolean,
+  /**
+   * Components used in story
+   * Displays Prop Tables with these components
+   * @default []
+   */
+  propTables: Array<React.ComponentType>,
+  /**
+   * Exclude Components from being shown in Prop Tables section
+   * Accepts an array of component classes or functions
+   * @default []
+   */
+  propTablesExclude: Array<React.ComponentType>,
+  /**
+   * Overrides styles of addon. The object should follow this shape:
+   * https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19.
+   * This prop can also accept a function which has the default stylesheet passed as an argument
+   */
+  styles: Object | Function,
+  /**
+   * Overrides components used to display markdown
+   * @default {}
+   */
+  components: { [key: string]: React.ComponentType },
+  /**
+   * Max props to display per line in source code
+   * @default 3
+   */
+  maxPropsIntoLine: number,
+  /**
+   * Displays the first 10 characters of the prop name
+   * @default 3
+   */
+  maxPropObjectKeys: number,
+  /**
+   * Displays the first 10 items in the default prop array
+   * @default 3
+   */
+  maxPropArrayLength: number,
+  /**
+   * Displays the first 100 characters in the default prop string
+   * @default 50
+   */
+  maxPropStringLength: number,
+  /**
+   * Override the component used to render the props table
+   * @default PropTable
+   */
+  TableComponent: React.ComponentType,
+  /**
+   * Will exclude any respective properties whose name is included in array
+   * @default []
+   */
+  excludedPropTypes: Array<string>,
 }
 ```
 
