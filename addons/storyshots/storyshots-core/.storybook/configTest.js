@@ -4,6 +4,7 @@ const req = require.context('../stories/required_with_context', true, /.stories.
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
+  // eslint-disable-next-line global-require
   require('../stories/directly_required');
 }
 
