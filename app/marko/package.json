@@ -32,6 +32,6 @@
   },
   "peerDependencies": {
     "marko": "^4",
-    "marko-widgets": "^7"
+    "marko-widgets": "^7.0.1"
   }
 }
