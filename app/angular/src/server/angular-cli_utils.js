@@ -38,6 +38,10 @@ export function normalizeAssetPatterns(assetPatterns, dirToSearch, sourceRoot) {
   }
 
   return assetPatterns.map(assetPattern => {
+    if (typeof assetPattern === 'object') {
+      return assetPattern;
+    }
+
     const assetPath = normalize(assetPattern);
     const resolvedSourceRoot = resolve(dirToSearch, sourceRoot);
     const resolvedAssetPath = resolve(dirToSearch, assetPath);
