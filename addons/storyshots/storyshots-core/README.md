@@ -38,6 +38,53 @@ If you aren't familiar with Jest, here are some resources:
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
+### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
+
+Sometimes it's useful to configure Storybook with Webpack's require.context feature:
+
+```js
+import { configure } from '@storybook/react';
+
+const req = require.context('../stories', true, /.stories.js$/); // <- import all the stories at once
+
+function loadStories() {
+  req.keys().forEach(filename => req(filename));
+}
+
+configure(loadStories, module);
+```
+
+The problem here is that it will work only during the build with webpack, 
+other tools may lack this feature. Since Storyshot is running under Jest, 
+we need to polyfill this functionality to work with Jest. The easiest 
+way is to integrate it to babel. One of the possible babel plugins to 
+polyfill this functionality might be 
+[babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
+
+To register it, add the following to your jest setup:
+
+```js
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+registerRequireContextHook();
+```
+
+And after, add the plugin to `.babelrc`:
+
+```json
+{
+  "presets": ["..."],
+  "plugins": ["..."],
+  "env": {
+    "test": {
+      "plugins": ["require-context-hook"]
+    }
+  }
+}
+```
+
+Make sure that it is added under the needed environment, 
+otherwise it may replace a real `require.context` functionality.
+
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
