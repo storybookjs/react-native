@@ -1,6 +1,5 @@
 import global from 'global';
-import runWithRequireContext from '../require_context';
-import loadConfig from '../config-loader';
+import configure from '../configure';
 
 function test(options) {
   return options.framework === 'html';
@@ -9,14 +8,11 @@ function test(options) {
 function load(options) {
   global.STORYBOOK_ENV = 'html';
 
-  const appOptions = require.requireActual('@storybook/html/options').default;
+  const { configPath, config } = options;
+  const frameworkOptions = '@storybook/html/options';
+  const storybook = require.requireActual('@storybook/html');
 
-  const { content, contextOpts } = loadConfig({
-    configDirPath: options.configPath,
-    appOptions,
-  });
-
-  runWithRequireContext(content, contextOpts);
+  configure({ configPath, config, frameworkOptions, storybook });
 
   return {
     framework: 'html',
@@ -24,7 +20,7 @@ function load(options) {
     renderShallowTree: () => {
       throw new Error('Shallow renderer is not supported for HTML');
     },
-    storybook: require.requireActual('@storybook/html'),
+    storybook,
   };
 }
 

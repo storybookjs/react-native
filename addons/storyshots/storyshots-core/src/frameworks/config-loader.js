@@ -1,22 +1,38 @@
+import fs from 'fs';
 import path from 'path';
 import { getBabelConfig } from '@storybook/core/server';
 
 const babel = require('babel-core');
 
-function getConfigContent({ resolvedConfigDirPath, configPath, appOptions }) {
+function getConfigContent({ resolvedConfigDirPath, resolvedConfigPath, appOptions }) {
   const babelConfig = getBabelConfig({
     ...appOptions,
     configDir: resolvedConfigDirPath,
   });
-  return babel.transformFileSync(configPath, babelConfig).code;
+  return babel.transformFileSync(resolvedConfigPath, babelConfig).code;
 }
 
-function load({ configDirPath, appOptions }) {
-  const resolvedConfigDirPath = path.resolve(configDirPath || '.storybook');
-  const configPath = path.join(resolvedConfigDirPath, 'config.js');
+function getConfigPathParts(configPath) {
+  const resolvedConfigPath = path.resolve(configPath);
 
-  const content = getConfigContent({ resolvedConfigDirPath, configPath, appOptions });
-  const contextOpts = { filename: configPath, dirname: resolvedConfigDirPath };
+  if (fs.lstatSync(resolvedConfigPath).isDirectory()) {
+    return {
+      resolvedConfigDirPath: resolvedConfigPath,
+      resolvedConfigPath: path.join(resolvedConfigPath, 'config.js'),
+    };
+  }
+
+  return {
+    resolvedConfigDirPath: path.dirname(resolvedConfigPath),
+    resolvedConfigPath,
+  };
+}
+
+function load({ configPath, appOptions }) {
+  const { resolvedConfigPath, resolvedConfigDirPath } = getConfigPathParts(configPath);
+
+  const content = getConfigContent({ resolvedConfigDirPath, resolvedConfigPath, appOptions });
+  const contextOpts = { filename: resolvedConfigPath, dirname: resolvedConfigDirPath };
 
   return {
     content,

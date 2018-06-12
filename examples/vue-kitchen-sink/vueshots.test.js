@@ -5,5 +5,5 @@ initStoryshots({
   framework: 'vue',
   configPath: path.join(__dirname, '.storybook'),
   integrityOptions: { cwd: path.join(__dirname, 'src', 'stories') },
-  test: multiSnapshotWithOptions({}),
+  test: multiSnapshotWithOptions(),
 });

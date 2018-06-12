@@ -6,5 +6,5 @@ initStoryshots({
   framework: 'react',
   integrityOptions: { cwd: __dirname },
   configPath: path.join(__dirname, '..', '.storybook'),
-  test: multiSnapshotWithOptions({}),
+  test: multiSnapshotWithOptions(),
 });
