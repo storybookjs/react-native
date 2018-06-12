@@ -11,11 +11,11 @@ function getConfigContent({ resolvedConfigDirPath, configPath, appOptions }) {
   return babel.transformFileSync(configPath, babelConfig).code;
 }
 
-function load({ configDirPath, babelConfigPath }) {
+function load({ configDirPath, appOptions }) {
   const resolvedConfigDirPath = path.resolve(configDirPath || '.storybook');
   const configPath = path.join(resolvedConfigDirPath, 'config.js');
 
-  const content = getConfigContent({ resolvedConfigDirPath, configPath, babelConfigPath });
+  const content = getConfigContent({ resolvedConfigDirPath, configPath, appOptions });
   const contextOpts = { filename: configPath, dirname: resolvedConfigDirPath };
 
   return {

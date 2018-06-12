@@ -268,6 +268,33 @@ initStoryshots({
 
 This option only needs to be set if the default `snapshotSerializers` is not set in your jest config.
 
+### `stories2snapsConverter`
+This parameter should be an instance of the [`Stories2SnapsConverter`](src/Stories2SnapsConverter.js) (or a derived from it) Class that is used to convert story-file name to snapshot-file name and vice versa.
+
+By default, the instance of this class is created with these default options:
+
+```js
+{
+  snapshotsDirName: '__snapshots__',
+  snapshotExtension: '.storyshot',
+  storiesExtensions: ['.js', '.jsx', '.ts', '.tsx'],
+}
+```
+
+This class might be overridden to extend the existing conversion functionality or instantiated to provide different options:
+
+```js
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
+
+initStoryshots({
+  stories2snapsConverter: new Stories2SnapsConverter({
+    snapshotExtension: '.storypuke',
+    storiesExtensions: ['.foo'],
+  }),
+});
+
+```
+
 ## Exports
 
 Apart from the default export (`initStoryshots`), Storyshots also exports some named test functions (see the `test` option above):
@@ -307,9 +334,9 @@ initStoryshots({
 
 Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
 
-### `getSnapshotFileName`
+### `Stories2SnapsConverter`
 
-Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
+This is a class that generates snapshot's name based on the story (kind, story & filename) and vice versa.
 
 ###### Example:
 

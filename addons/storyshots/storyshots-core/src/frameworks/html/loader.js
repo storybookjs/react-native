@@ -1,5 +1,3 @@
-import appOptions from '@storybook/angular/options';
-
 import global from 'global';
 import runWithRequireContext from '../require_context';
 import loadConfig from '../config-loader';
@@ -10,6 +8,8 @@ function test(options) {
 
 function load(options) {
   global.STORYBOOK_ENV = 'html';
+
+  const appOptions = require.requireActual('@storybook/html/options').default;
 
   const { content, contextOpts } = loadConfig({
     configDirPath: options.configPath,
