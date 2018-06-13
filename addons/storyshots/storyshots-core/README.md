@@ -82,8 +82,9 @@ And after, add the plugin to `.babelrc`:
 }
 ```
 
-Make sure that it is added under the needed environment, 
-otherwise it may replace a real `require.context` functionality.
+Make sure **not** to include this babel plugin in the config 
+environment that applies to webpack, otherwise it may 
+replace a real `require.context` functionality.
 
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
