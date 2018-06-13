@@ -20,18 +20,15 @@ const Popover = styled('div')({
 });
 
 class ColorType extends React.Component {
+  state = {
+    displayColorPicker: false,
+  };
+
   static getDerivedStateFromProps(props, state) {
     if (!state || props.knob.value !== state.value) {
       return { value: props.knob.value };
     }
     return null;
-  }
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      displayColorPicker: false,
-    };
   }
 
   componentDidMount() {

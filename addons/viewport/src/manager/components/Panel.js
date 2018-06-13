@@ -30,6 +30,10 @@ const getViewports = viewports =>
   Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
 
 export class Panel extends Component {
+  static defaultOptions = {
+    viewports: INITIAL_VIEWPORTS,
+    defaultViewport: DEFAULT_VIEWPORT,
+  };
   static propTypes = {
     active: PropTypes.bool.isRequired,
     api: PropTypes.shape({
@@ -42,24 +46,12 @@ export class Panel extends Component {
     }).isRequired,
   };
 
-  static defaultOptions = {
-    viewports: INITIAL_VIEWPORTS,
+  state = {
+    viewport: DEFAULT_VIEWPORT,
     defaultViewport: DEFAULT_VIEWPORT,
+    viewports: viewportsTransformer(INITIAL_VIEWPORTS),
+    isLandscape: false,
   };
-
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      viewport: DEFAULT_VIEWPORT,
-      defaultViewport: DEFAULT_VIEWPORT,
-      viewports: viewportsTransformer(INITIAL_VIEWPORTS),
-      isLandscape: false,
-    };
-
-    this.previousViewport = DEFAULT_VIEWPORT;
-
-    this.setStoryDefaultViewport = this.setStoryDefaultViewport;
-  }
 
   componentDidMount() {
     const { channel, api } = this.props;
@@ -112,6 +104,7 @@ export class Panel extends Component {
   };
 
   iframe = undefined;
+  previousViewport = DEFAULT_VIEWPORT;
 
   changeViewport = viewport => {
     const { viewport: previousViewport } = this.state;
