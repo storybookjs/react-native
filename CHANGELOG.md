@@ -1,3 +1,140 @@
+# 4.0.0-alpha.9
+
+2018-June-10
+
+#### Breaking Changes
+
+-   storyshots: Remove deprecated props from storyshots [#3717](https://github.com/storybooks/storybook/pull/3717)
+-   angular: angular-cli 6 (with webpack 4) compatibility [#3491](https://github.com/storybooks/storybook/pull/3491)
+
+#### Features
+
+-   addon-info: Use parameters for info addon [#3697](https://github.com/storybooks/storybook/pull/3697)
+-   addon-backgounds: Use parameters for backgrounds addon [#3676](https://github.com/storybooks/storybook/pull/3676)
+-   storyshots: add renderWithOptions to @addons/storyshots [#3479](https://github.com/storybooks/storybook/pull/3479)
+-   addon-knobs: Make withKnobs accept story parameters [#3675](https://github.com/storybooks/storybook/pull/3675)
+
+#### Bug Fixes
+
+-   storysource: Add default parser option. Support prettier v1.13.0 [#3660](https://github.com/storybooks/storybook/pull/3660)
+-   react-native: using disableWebsockets instead of useWebsockets [#3686](https://github.com/storybooks/storybook/pull/3686)
+-   Updates storybook-start.js to use child_process instead of shelljs [#3527](https://github.com/storybooks/storybook/pull/3527)
+-   Force render on knob button click and update example [#3650](https://github.com/storybooks/storybook/pull/3650)
+
+#### Maintenance
+
+-   Refactor webpack and babel configs to core [#3655](https://github.com/storybooks/storybook/pull/3655)
+-   Remove status bar hiding [#3634](https://github.com/storybooks/storybook/pull/3634)
+-   React Native Refactored list view [#3635](https://github.com/storybooks/storybook/pull/3635)
+-   Using only single channel for react native [#3636](https://github.com/storybooks/storybook/pull/3636)
+
+#### Dependency Upgrades
+
+<details>
+<summary>
+88 Upgrades
+</summary>
+
+-   Update gatsby-plugin-sharp in /docs from "1.6.46" to "1.6.47"
+-   Update gatsby-remark-images in /docs from "1.5.65" to "1.5.66"
+-   Update gatsby-transformer-remark in /docs from "1.7.41" to "1.7.42"
+-   Update react-router in /docs from "4.2.0" to "4.3.1"
+-   Update danger in / from "3.7.14" to "3.7.15"
+-   Update eslint-plugin-react in / from "7.8.2" to "7.9.1"
+-   Update eslint-teamcity in / from "2.0.0" to "2.0.1"
+-   Update lint-staged in / from "7.1.2" to "7.1.3"
+-   Update prettier in / from "1.13.2" to "1.13.4"
+-   Update remark-lint in / from "6.0.1" to "6.0.2"
+-   Update remark-preset-lint-recommended in / from "3.0.1" to "3.0.2"
+-   Update typescript in / from "2.8.3" to "2.9.1"
+-   Update airbnb-js-shims in lib/core from "1.5.2" to "1.6.0"
+-   Update autoprefixer in lib/core from "8.5.1" to "8.6.0"
+-   Update babel-plugin-macros in lib/core from "2.2.1" to "2.2.2"
+-   Update dotenv-webpack in lib/core from "1.5.5" to "1.5.6"
+-   Update webpack in lib/core from "4.10.1" to "4.10.2"
+-   Update sass-loader in app/angular from "7.0.1" to "7.0.2"
+-   Update ts-loader in app/angular from "4.3.0" to "4.3.1"
+-   Update axe-core in addons/a11y from "3.0.2" to "3.0.3"
+-   Update moment in addons/knobs from "2.22.1" to "2.22.2"
+-   Update prettier in addons/storysource from "1.13.3" to "1.13.4"
+-   Update react-modal in lib/ui from "3.4.4" to "3.4.5"
+-   Update babel-plugin-macros in app/react-native from "2.2.1" to "2.2.2"
+-   Update dotenv-webpack in app/react-native from "1.5.5" to "1.5.6"
+-   Update webpack in app/react-native from "4.10.1" to "4.10.2"
+-   Update prettier in examples/marko-cli from "1.13.2" to "1.13.4"
+-   Update webpack in examples/marko-cli from "4.10.1" to "4.10.2"
+-   Update webpack in examples/polymer-cli from "4.10.1" to "4.10.2"
+-   Update @types/jasmine in examples/angular-cli from "2.8.7" to "2.8.8"
+-   Update @types/node in examples/angular-cli from "9.6.18" to "9.6.20"
+-   Update ts-node in examples/angular-cli from "6.0.5" to "6.1.0"
+-   Update typescript in examples/angular-cli from "2.8.3" to "2.9.1"
+-   Update webpack in examples/cra-kitchen-sink from "4.10.1" to "4.10.2"
+-   Update webpack in examples/mithril-kitchen-sink from "4.10.1" to "4.10.2"
+-   Update webpack in examples/vue-kitchen-sink from "4.10.1" to "4.10.2"
+-   Update webpack in examgatsby-plugin-sharp in /docs from "1.6.44" to "1.6.46"
+-   Update gatsby-remark-copy-linked-files in /docs from "1.5.32" to "1.5.35"
+-   Update gatsby-remark-images in /docs from "1.5.63" to "1.5.65"
+-   Update gatsby-source-filesystem in /docs from "1.5.36" to "1.5.38"
+-   Update gatsby in /docs from "1.9.261" to "1.9.269"
+-   Update gh-pages in /docs from "1.1.0" to "1.2.0"
+-   Update @storybook/addon-actions in /docs from "3.4.5" to "3.4.6"
+-   Update @storybook/addon-links in /docs from "3.4.5" to "3.4.6"
+-   Update @storybook/addons in /docs from "3.4.5" to "3.4.6"
+-   Update @storybook/react in /docs from "3.4.5" to "3.4.6"
+-   Update cross-env in / from "5.1.5" to "5.1.6"
+-   Update eslint-plugin-jest in / from "21.15.1" to "21.17.0"
+-   Update jest-enzyme in / from "6.0.0" to "6.0.1"
+-   Update jest-image-snapshot in / from "2.4.1" to "2.4.2"
+-   Update prettier in / from "1.12.1" to "1.13.0"
+-   Update react in / from "16.3.2" to "16.4.0"
+-   Update react-dom in / from "16.3.2" to "16.4.0"
+-   Update react-test-renderer in / from "16.3.2" to "16.4.0"
+-   Update airbnb-js-shims in lib/core from "1.5.1" to "1.5.2"
+-   Update autoprefixer in lib/core from "8.5.0" to "8.5.1"
+-   Update webpack in lib/core from "4.8.3" to "4.9.2"
+-   Update core-js in app/angular from "2.5.6" to "2.5.7"
+-   Update common-tags in app/html from "1.7.2" to "1.8.0"
+-   Update common-tags in app/marko from "1.7.2" to "1.8.0"
+-   Update common-tags in app/mithril from "1.7.2" to "1.8.0"
+-   Update common-tags in app/polymer from "1.7.2" to "1.8.0"
+-   Update common-tags in app/react from "1.7.2" to "1.8.0"
+-   Update common-tags in app/vue from "1.7.2" to "1.8.0"
+-   Update vue-loader in app/vue from "14.2.2" to "14.2.3"
+-   Update core-js in addons/info from "2.5.6" to "2.5.7"
+-   Update react-test-renderer in addons/info from "16.3.2" to "16.4.0"
+-   Update prettier in addons/storysource from "1.12.1" to "1.13.0"
+-   Update events in lib/ui from "2.0.0" to "2.1.0"
+-   Update jest-image-snapshot in addons/storyshots from "2.4.1" to "2.4.2"
+-   Update react in addons/storyshots from "16.3.2" to "16.4.0"
+-   Update webpack in app/react-native from "4.8.3" to "4.9.2"
+-   Update marko in examples/marko-cli from "4.9.7" to "4.10.0"
+-   Update prettier in examples/marko-cli from "1.12.1" to "1.13.0"
+-   Update webpack in examples/marko-cli from "4.8.3" to "4.9.2"
+-   Update webpack in examples/polymer-cli from "4.8.3" to "4.9.2"
+-   Update core-js in examples/angular-cli from "2.5.6" to "2.5.7"
+-   Update rxjs in examples/angular-cli from "5.5.10" to "5.5.11"
+-   Update ts-node in examples/angular-cli from "6.0.3" to "6.0.5"
+-   Update react in examples/cra-kitchen-sink from "16.3.2" to "16.4.0"
+-   Update react-dom in examples/cra-kitchen-sink from "16.3.2" to "16.4.0"
+-   Update webpack in examples/cra-kitchen-sink from "4.8.3" to "4.9.2"
+-   Update webpack in examples/mithril-kitchen-sink from "4.8.3" to "4.9.2"
+-   Update cross-env in examples/vue-kitchen-sink from "5.1.5" to "5.1.6"
+-   Update vue-loader in examples/vue-kitchen-sink from "14.2.2" to "14.2.3"
+-   Update webpack in examples/vue-kitchen-sink from "4.8.3" to "4.9.2"
+-   Update react in examples/official-storybook from "16.3.2" to "16.4.0"
+-   Update react-dom in examples/official-storybook from "16.3.2" to "16.4.0"
+-   Update webpack in examples/official-storybook from "4.8.3" to "4.9.2"
+
+</details>
+
+# 3.4.7
+
+2018-June-10
+
+#### Bug Fixes
+
+-   Remove linebreaks in notes text when they are html elements [#3731](https://github.com/storybooks/storybook/pull/3731)
+
 # 4.0.0-alpha.8
 
 2018-May-26

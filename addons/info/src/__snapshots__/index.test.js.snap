@@ -55,7 +55,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
   transform: translateY(-100%) translateY(-6px);
 }
 
-<Component>
+<deprecated>
   <Story
     PropTable={[Function]}
     components={
@@ -1299,7 +1299,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
       </div>
     </div>
   </Story>
-</Component>
+</deprecated>
 `;
 
 exports[`addon Info should render <Info /> and markdown 1`] = `
@@ -1357,7 +1357,7 @@ exports[`addon Info should render <Info /> and markdown 1`] = `
   transform: translateY(-100%) translateY(-6px);
 }
 
-<Component>
+<deprecated>
   <Story
     PropTable={[Function]}
     components={
@@ -2694,5 +2694,5 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
       </div>
     </div>
   </Story>
-</Component>
+</deprecated>
 `;

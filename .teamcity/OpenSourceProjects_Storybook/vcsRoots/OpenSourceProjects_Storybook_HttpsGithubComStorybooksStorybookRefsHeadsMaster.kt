@@ -10,9 +10,7 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     url = "git@github.com:storybooks/storybook.git"
     branchSpec = """
         +:refs/(pull/*)/head
-        +:refs/heads/(release/3.4)
-        +:refs/heads/(master)
-        +:refs/heads/(dependencies.io-*)
+        +:refs/heads/*
     """.trimIndent()
     authMethod = uploadedKey {
         userName = "git"

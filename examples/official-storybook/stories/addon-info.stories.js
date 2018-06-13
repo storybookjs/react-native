@@ -330,3 +330,59 @@ storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module).add(
     />
   ))
 );
+
+storiesOf('Addons|Info.Parameters', module)
+  .addDecorator(
+    withInfo({
+      styles: {
+        header: {
+          h1: {
+            color: 'green',
+          },
+        },
+      },
+    })
+  )
+  .addParameters({
+    info: {
+      text:
+        'This text should be displayed on every story and the component should be inlined between description and PropType table',
+      inline: true, // Displays info inline vs click button to view
+    },
+  })
+  .add('Using paramaters across all stories', () => <BaseButton label="Button" />)
+  .add(
+    'Overwriting and extending the parameters and options set stories-wise',
+    () => <BaseButton label="Button" />,
+    {
+      info: {
+        text: 'Label propType should be excluded',
+        excludedPropTypes: ['label'],
+      },
+    }
+  )
+  .add(
+    'Overwrite the parameters with markdown variable',
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    { info: markdownDescription }
+  )
+  .add(
+    'Overwrite the text parameter with markdown inline',
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    {
+      info: {
+        text: `
+        description or documentation about my component, supports markdown
+
+        ~~~js
+        <Button>Click Here</Button>
+        ~~~
+      `,
+      },
+    }
+  )
+  .add(
+    'Disable the addon entirely',
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    { info: { disable: true } }
+  );

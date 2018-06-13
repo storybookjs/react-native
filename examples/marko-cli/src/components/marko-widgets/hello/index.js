@@ -1,13 +1,14 @@
 module.exports = require('marko-widgets').defineComponent({
+  // eslint-disable-next-line global-require
   template: require('./template.marko'),
 
-  getTemplateData: function(state, input) {
+  getTemplateData(state, input) {
     return {
       name: input.name,
     };
   },
 
-  handleClick: function() {
+  handleClick() {
     this.el.style.backgroundColor = 'yellow';
   },
 });

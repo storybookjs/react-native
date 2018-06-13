@@ -27,6 +27,12 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
         vcs {
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
             triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+                +:dependencies.io-*
+            """.trimIndent()
         }
     }
 

@@ -30,7 +30,7 @@ jobs:
             yarn bootstrap --core
       - save_cache:
           name: "Cache core dependencies"
-          key: core-dependencies-{{ checksum "yarn.lock" }}
+          key: core-dependencies-v2-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
             - examples/angular-cli/node_modules
@@ -39,9 +39,10 @@ jobs:
             - examples/official-storybook/node_modules
             - examples/polymer-cli/node_modules
             - examples/vue-kitchen-sink/node_modules
+            - examples/marko-cli/node_modules
       - save_cache:
           name: "Cache core dist"
-          key: core-dist-{{ .Revision }}
+          key: core-dist-v2-{{ .Revision }}
           paths:
             - addons
             - app
@@ -53,11 +54,11 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
@@ -82,6 +83,11 @@ jobs:
             cd examples/polymer-cli
             yarn build-storybook
       - run:
+          name: "Build marko-cli"
+          command: |
+            cd examples/marko-cli
+            yarn build-storybook
+      - run:
           name: "Build official-storybook"
           command: |
             cd examples/official-storybook
@@ -104,11 +110,11 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
 
       - run:
           name: "Run react kitchen-sink (smoke test)"
@@ -147,11 +153,11 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Bootstrap"
           command: |
@@ -206,7 +212,7 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore docs dependencies cache"
           keys:
@@ -214,7 +220,7 @@ jobs:
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Lint"
           command: |
@@ -226,11 +232,11 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Run unit tests"
           command: |
@@ -247,11 +253,11 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Test CLI"
           command: |
@@ -267,11 +273,11 @@ jobs:
       - restore_cache:
           name: "Restore core dependencies cache"
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
           name: "Restore core dist cache"
           keys:
-            - core-dist-{{ .Revision }}
+            - core-dist-v2-{{ .Revision }}
       - run:
           name: "Test CLI with latest CR(N)A"
           command: |
