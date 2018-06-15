@@ -219,7 +219,7 @@ function PropVal(props) {
       />
     );
   } else if (typeof val === 'function') {
-    content = <span style={valueStyles.func}>{val.name ? `${val.name}()` : 'anonymous()'}</span>;
+    content = <span style={valueStyles.func}>{val.name || 'anonymous'}</span>;
   } else if (!val) {
     content = <span style={valueStyles.empty}>{`${val}`}</span>;
   } else if (typeof val !== 'object') {
