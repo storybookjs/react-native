@@ -179,6 +179,10 @@ In order, all of them will be combined together, with a later call overriding th
 ```js
 {
   /**
+   * Text to display with storybook component
+   */
+  text?: string;
+  /**
    * Displays info inline vs click button to view
    * @default false
    */

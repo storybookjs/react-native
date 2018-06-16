@@ -14,5 +14,10 @@
         "regenerator": true
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["babel-plugin-require-context-hook"]
+    }
+  }
 }

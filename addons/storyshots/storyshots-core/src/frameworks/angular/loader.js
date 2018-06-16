@@ -1,8 +1,5 @@
-import appOptions from '@storybook/angular/options';
-
-import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
-import loadConfig from '../config-loader';
+import configure from '../configure';
 
 function setupAngularJestPreset() {
   // Angular + Jest + Storyshots = Crazy Shit:
@@ -22,12 +19,10 @@ function test(options) {
 function load(options) {
   setupAngularJestPreset();
 
-  const { content, contextOpts } = loadConfig({
-    configDirPath: options.configPath,
-    appOptions,
-  });
+  const { configPath, config } = options;
+  const storybook = require.requireActual('@storybook/angular');
 
-  runWithRequireContext(content, contextOpts);
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'angular',
@@ -35,7 +30,7 @@ function load(options) {
     renderShallowTree: () => {
       throw new Error('Shallow renderer is not supported for angular');
     },
-    storybook: require.requireActual('@storybook/angular'),
+    storybook,
   };
 }
 

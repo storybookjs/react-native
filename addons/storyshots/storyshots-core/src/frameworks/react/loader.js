@@ -1,26 +1,21 @@
-import appOptions from '@storybook/react/options';
-
-import runWithRequireContext from '../require_context';
+import configure from '../configure';
 import hasDependency from '../hasDependency';
-import loadConfig from '../config-loader';
 
 function test(options) {
   return options.framework === 'react' || (!options.framework && hasDependency('@storybook/react'));
 }
 
 function load(options) {
-  const { content, contextOpts } = loadConfig({
-    configDirPath: options.configPath,
-    appOptions,
-  });
+  const { configPath, config } = options;
+  const storybook = require.requireActual('@storybook/react');
 
-  runWithRequireContext(content, contextOpts);
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'react',
     renderTree: require.requireActual('./renderTree').default,
     renderShallowTree: require.requireActual('./renderShallowTree').default,
-    storybook: require.requireActual('@storybook/react'),
+    storybook,
   };
 }
 

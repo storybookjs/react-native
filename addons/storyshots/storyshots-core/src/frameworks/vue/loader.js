@@ -1,9 +1,6 @@
-import appOptions from '@storybook/angular/options';
-
 import global from 'global';
-import runWithRequireContext from '../require_context';
 import hasDependency from '../hasDependency';
-import loadConfig from '../config-loader';
+import configure from '../configure';
 
 function mockVueToIncludeCompiler() {
   jest.mock('vue', () => require.requireActual('vue/dist/vue.common.js'));
@@ -17,12 +14,10 @@ function load(options) {
   global.STORYBOOK_ENV = 'vue';
   mockVueToIncludeCompiler();
 
-  const { content, contextOpts } = loadConfig({
-    configDirPath: options.configPath,
-    appOptions,
-  });
+  const { configPath, config } = options;
+  const storybook = require.requireActual('@storybook/vue');
 
-  runWithRequireContext(content, contextOpts);
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'vue',
@@ -30,7 +25,7 @@ function load(options) {
     renderShallowTree: () => {
       throw new Error('Shallow renderer is not supported for vue');
     },
-    storybook: require.requireActual('@storybook/vue'),
+    storybook,
   };
 }
 

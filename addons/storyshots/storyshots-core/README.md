@@ -38,6 +38,54 @@ If you aren't familiar with Jest, here are some resources:
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 
+### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
+
+Sometimes it's useful to configure Storybook with Webpack's require.context feature:
+
+```js
+import { configure } from '@storybook/react';
+
+const req = require.context('../stories', true, /.stories.js$/); // <- import all the stories at once
+
+function loadStories() {
+  req.keys().forEach(filename => req(filename));
+}
+
+configure(loadStories, module);
+```
+
+The problem here is that it will work only during the build with webpack, 
+other tools may lack this feature. Since Storyshot is running under Jest, 
+we need to polyfill this functionality to work with Jest. The easiest 
+way is to integrate it to babel. One of the possible babel plugins to 
+polyfill this functionality might be 
+[babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
+
+To register it, add the following to your jest setup:
+
+```js
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+registerRequireContextHook();
+```
+
+And after, add the plugin to `.babelrc`:
+
+```json
+{
+  "presets": ["..."],
+  "plugins": ["..."],
+  "env": {
+    "test": {
+      "plugins": ["require-context-hook"]
+    }
+  }
+}
+```
+
+Make sure **not** to include this babel plugin in the config 
+environment that applies to webpack, otherwise it may 
+replace a real `require.context` functionality.
+
 ### Configure Jest for React
 StoryShots addon for React is dependent on [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer), but
 [doesn't](#deps-issue) install it, so you need to install it separately.
@@ -148,6 +196,22 @@ initStoryshots({
 
 ## Options
 
+### `config`
+
+The `config` parameter must be a function that helps to configure storybook like the `config.js` does.
+If it's not specified, storyshots will try to use [configPath](#configPath) parameter.
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots({
+  config: ({ configure }) =>
+    configure(() => {
+      require('../stories/Button.story.js');
+    }, module),
+});
+```
+
 ### `configPath`
 
 By default, Storyshots assumes the config directory path for your project as below:
@@ -164,6 +228,21 @@ initStoryshots({
   configPath: '.my-storybook-config-dir'
 });
 ```
+
+`configPath` can also specify path to the `config.js` itself. In this case, config directory will be
+a base directory of the `configPath`. It may be useful when the `config.js` for test should differ from the
+original one. It also may be useful for separating tests to different test configs:
+
+```js
+initStoryshots({
+  configPath: '.my-storybook-config-dir/testConfig1.js'
+});
+
+initStoryshots({
+  configPath: '.my-storybook-config-dir/testConfig2.js'
+});
+```
+
 
 ### `suite`
 
@@ -268,6 +347,33 @@ initStoryshots({
 
 This option only needs to be set if the default `snapshotSerializers` is not set in your jest config.
 
+### `stories2snapsConverter`
+This parameter should be an instance of the [`Stories2SnapsConverter`](src/Stories2SnapsConverter.js) (or a derived from it) Class that is used to convert story-file name to snapshot-file name and vice versa.
+
+By default, the instance of this class is created with these default options:
+
+```js
+{
+  snapshotsDirName: '__snapshots__',
+  snapshotExtension: '.storyshot',
+  storiesExtensions: ['.js', '.jsx', '.ts', '.tsx'],
+}
+```
+
+This class might be overridden to extend the existing conversion functionality or instantiated to provide different options:
+
+```js
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
+
+initStoryshots({
+  stories2snapsConverter: new Stories2SnapsConverter({
+    snapshotExtension: '.storypuke',
+    storiesExtensions: ['.foo'],
+  }),
+});
+
+```
+
 ## Exports
 
 Apart from the default export (`initStoryshots`), Storyshots also exports some named test functions (see the `test` option above):
@@ -299,7 +405,7 @@ The value is just a [settings](https://github.com/isaacs/node-glob#options) to a
 ```js
 initStoryshots({
   integrityOptions: { cwd: __dirname }, // it will start searching from the current directory
-  test: multiSnapshotWithOptions({}),
+  test: multiSnapshotWithOptions(),
 });
 ```
 
@@ -307,9 +413,9 @@ initStoryshots({
 
 Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
 
-### `getSnapshotFileName`
+### `Stories2SnapsConverter`
 
-Utility function used in `multiSnapshotWithOptions`. This is made available for users who implement custom test functions that also want to take advantage of multi-file storyshots.
+This is a class that generates snapshot's name based on the story (kind, story & filename) and vice versa.
 
 ###### Example:
 
