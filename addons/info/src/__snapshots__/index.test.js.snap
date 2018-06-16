@@ -594,7 +594,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                                               }
                                             }
                                           >
-                                            func()
+                                            func
                                           </span>
                                         </PropVal>
                                         }
@@ -1989,7 +1989,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                                               }
                                             }
                                           >
-                                            func()
+                                            func
                                           </span>
                                         </PropVal>
                                         }
