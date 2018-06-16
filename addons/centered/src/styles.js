@@ -7,11 +7,11 @@ const styles = {
     right: 0,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
     overflow: 'auto',
   },
   innerStyle: {
     margin: 'auto',
+    maxHeight: '100%', // Hack for centering correctly in IE11
   },
 };
 

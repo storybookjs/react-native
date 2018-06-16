@@ -134,11 +134,11 @@ import { storiesOf } from '@storybook/html';
 import { withActions } from '@storybook/addon-actions';
 
 storiesOf('button', module)
-  // Log mousovers on entire story and clicks on .btn
+  // Log mouseovers on entire story and clicks on .btn
   .addDecorator(withActions('mouseover', 'click .btn'))
   .add('with actions', () => `
     <div>
-      Clicks on this button will be logged: <button class="btn" type="button">Button</button>
+      Clicks on this button will be logged: <button className="btn" type="button">Button</button>
     </div>
   `);
 ```
