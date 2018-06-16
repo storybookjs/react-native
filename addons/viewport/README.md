@@ -212,23 +212,3 @@ storiesOf('Decorator with object', module)
   .add('onViewportChange', () => <MobileFirstComponent />);
 
 ```
-
-## Viewport Component
-
-You can also change the default viewport for a single story using `Viewport` component
-
-```js
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Viewport } from '@storybook/addon-viewport';
-
-// Collection
-storiesOf('Custom Default', module)
-  .add('iphone6p', () => (
-    <Viewport name="iphone6p">
-      <h1>
-        Do I look good on <b>iPhone 6 Plus</b>?
-      </h1>
-    </Viewport>
-  ));
-```
