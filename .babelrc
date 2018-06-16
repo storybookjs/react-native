@@ -1,6 +1,9 @@
 {
   "presets": ["env", "stage-0", "react"],
   "env": {
+    "test": {
+      "plugins": ["require-context-hook"]
+    },
     "plugins": [
       "emotion",
       "babel-plugin-macros",
