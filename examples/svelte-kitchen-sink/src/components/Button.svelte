@@ -1,0 +1,43 @@
+<button
+  class="button {roundedClass}"
+  on:click="toggleRoundedClass(event)">
+  <slot></slot>
+</button>
+
+<style>
+  .rounded {
+    border-radius: 5px;
+  }
+
+  .button {
+    border: 3px solid;
+    padding: 10px 20px;
+    background-color: white;
+    outline: none;
+  }
+
+</style>
+
+<script>
+  export default {
+    data () {
+      return {
+        rounded: true
+      };
+    },
+
+    computed: {
+      roundedClass({ rounded }) {
+        return rounded ? 'rounded' : ''
+      }
+    },
+
+    methods: {
+      toggleRoundedClass() {
+        const {rounded} = this.get();
+
+        this.set({rounded: !rounded});
+      }
+    }
+  }
+</script>

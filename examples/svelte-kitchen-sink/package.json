@@ -1,0 +1,36 @@
+{
+  "name": "svelte-example",
+  "version": "4.0.0-alpha.9",
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build-storybook": "build-storybook -s public",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "storybook": "start-storybook -p 9009 -s public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@storybook/addon-actions": "4.0.0-alpha.9",
+    "@storybook/addon-backgrounds": "4.0.0-alpha.9",
+    "@storybook/addon-centered": "4.0.0-alpha.9",
+    "@storybook/addon-knobs": "4.0.0-alpha.9",
+    "@storybook/addon-links": "4.0.0-alpha.9",
+    "@storybook/addon-notes": "4.0.0-alpha.9",
+    "@storybook/addon-options": "4.0.0-alpha.9",
+    "@storybook/addon-storyshots": "4.0.0-alpha.9",
+    "@storybook/addon-storysource": "4.0.0-alpha.9",
+    "@storybook/addon-viewport": "4.0.0-alpha.9",
+    "@storybook/addons": "4.0.0-alpha.9",
+    "@storybook/svelte": "4.0.0-alpha.9",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.1.6",
+    "file-loader": "^1.1.11",
+    "svelte-loader": "^2.9.1",
+    "svg-url-loader": "^2.3.2",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

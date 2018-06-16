@@ -6,6 +6,7 @@ module.exports = {
       '@storybook/react',
       '@storybook/react-native',
       '@storybook/vue',
+      '@storybook/svelte',
       'enzyme',
     ],
   },
