@@ -1,6 +1,7 @@
 <button
   class="button {roundedClass}"
   on:click="onClick(event)">
+  {text}
   <slot></slot>
 </button>
 
@@ -15,7 +16,6 @@
     background-color: white;
     outline: none;
   }
-
 </style>
 
 <script>
@@ -23,6 +23,7 @@
     data () {
       return {
         count: 0,
+        text: '', // component supports both <slot> and text prop.
         rounded: true
       };
     },

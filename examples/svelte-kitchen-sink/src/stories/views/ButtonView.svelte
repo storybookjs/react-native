@@ -1,5 +1,5 @@
 <h1>Button view</h1>
-<Button {rounded} on:click="onButtonClicked(event)">{text} {count}</Button>
+<Button {rounded} on:click="handleClick(event)">{text} {count}</Button>
 <p>A little text to show this is a view.</p>
 <p>If we need to test components in a Svelte
 environment, for instance to test slot behaviour,</p>
@@ -18,7 +18,13 @@ environment, for instance to test slot behaviour,</p>
     },
 
     methods: {
-      onButtonClicked(event) {
+      handleClick(event) {
+        this.incrementCount();
+
+        this.fire('click', { event });
+      },
+
+      incrementCount() {
         let {count} = this.get();
 
         count += 1;

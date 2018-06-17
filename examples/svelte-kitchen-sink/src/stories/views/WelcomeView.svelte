@@ -13,12 +13,9 @@
     <br />
     (Basically a story is like a visual test case.)
   </p>
-  <p>
-    See the sample stories for the <code class="code">Button</code> component.
-  </p>
-  <p style="text-align:center">
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-    <h1 class="logo">Svelte</h1>
+
+  <h1 class="logo">Svelte</h1>
+
   <p>
     Just like that, you can add your own components as stories.
     <br />
@@ -50,6 +47,8 @@
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Rajdhani');
+
   .main {
     margin: 15px;
     max-width: 600;
@@ -89,5 +88,11 @@
 </style>
 
 <script>
-  export default {}
+  export default {
+    methods: {
+      onClick(event) {
+        this.fire('click', event);
+      },
+    }
+  };
 </script>

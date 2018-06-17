@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/svelte';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 
-import KnobView from './views/KnobView.svelte';
+import ActionKnobView from './views/ActionKnobView.svelte';
 
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
@@ -15,7 +15,7 @@ storiesOf('Addon|Knobs', module)
     });
 
     return {
-      Component: KnobView,
+      Component: ActionKnobView,
       data: {
         backgroundColor,
         width,

@@ -1,6 +1,7 @@
+import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
-const target = document.getElementById('root'); // eslint-disable-line
+const target = document.getElementById('root');
 
 export default function render({
   story,
@@ -10,7 +11,14 @@ export default function render({
   showError,
   // showException,
 }) {
-  const { Component, data, methods } = story();
+  const {
+    /** @type {SvelteComponent} */
+    Component,
+    /** @type {any} */
+    data,
+    /** @type {{[string]: () => {}}} Attach svelte event handlers */
+    on,
+  } = story();
 
   target.innerHTML = '';
 
@@ -29,9 +37,9 @@ export default function render({
 
   const component = new Component({target, data}); // eslint-disable-line
 
-  if (methods) {
-    Object.keys(methods).forEach(methodName => {
-      component[methodName] = methods[methodName];
+  if (on) {
+    Object.keys(on).forEach(eventName => {
+      component.on(eventName, on[eventName]);
     });
   }
 

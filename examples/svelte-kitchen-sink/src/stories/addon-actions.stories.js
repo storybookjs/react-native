@@ -7,13 +7,16 @@ import Button from '../components/Button.svelte';
 storiesOf('Addon|Actions', module)
   .add('Action on view method', () => ({
     Component: ButtonView,
-    methods: {
-      onButtonClicked: action('I am logging in the actions tab'),
+    on: {
+      click: action('I am logging in the actions tab'),
     },
   }))
   .add('Action on component method', () => ({
     Component: Button,
-    methods: {
-      onClick: action('I am logging in the actions tab too'),
+    data: {
+      text: 'Custom text',
+    },
+    on: {
+      click: action('I am logging in the actions tab too'),
     },
   }));
