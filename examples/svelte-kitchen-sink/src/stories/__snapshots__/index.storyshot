@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button rounded 1`] = `
+Object {
+  "Component": [Function],
+  "data": Object {
+    "message": "Rounded text",
+    "rounded": true,
+  },
+}
+`;
+
+exports[`Storyshots Button square 1`] = `
+Object {
+  "Component": [Function],
+  "data": Object {
+    "message": "Squared text",
+    "rounded": false,
+  },
+}
+`;
+
+exports[`Storyshots Welcome Welcome 1`] = `
+Object {
+  "Component": [Function],
+}
+`;

@@ -43,10 +43,24 @@ const createOption = ({ defaultValue, option, name, extraParam }) => ({
 
 const tasks = {
   core: createProject({
-    name: `Core & React & Vue & Polymer & Angular ${chalk.gray('(core)')}`,
+    name: `Core & React & Vue & Polymer & Angular & Svelte ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: path.join(__dirname, '..'),
+    isJest: true,
+  }),
+  vue: createProject({
+    name: `Vue ${chalk.gray('(vue)')}`,
+    defaultValue: true,
+    option: '--vue',
+    projectLocation: path.join(__dirname, '..', 'examples/vue-kitchen-sink'),
+    isJest: true,
+  }),
+  svelte: createProject({
+    name: `Svelte ${chalk.gray('(svelte)')}`,
+    defaultValue: true,
+    option: '--svelte',
+    projectLocation: path.join(__dirname, '..', 'examples/svelte-kitchen-sink'),
     isJest: true,
   }),
   'react-native-vanilla': createProject({

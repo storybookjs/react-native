@@ -17004,6 +17004,10 @@ svelte-dev-helper@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/svelte-dev-helper/-/svelte-dev-helper-1.1.7.tgz#b7d887c7be5abf7e2436f9467560061b1e2a935f"
 
+svelte-jest@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-jest/-/svelte-jest-0.2.0.tgz#a05ed16d092e8916de7a4526d1d5673499094756"
+
 svelte-loader@^2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-2.9.1.tgz#e493c51ac6c2fe53867b1512abf46eb991ca3205"
