@@ -49,20 +49,6 @@ const tasks = {
     projectLocation: path.join(__dirname, '..'),
     isJest: true,
   }),
-  vue: createProject({
-    name: `Vue ${chalk.gray('(vue)')}`,
-    defaultValue: true,
-    option: '--vue',
-    projectLocation: path.join(__dirname, '..', 'examples/vue-kitchen-sink'),
-    isJest: true,
-  }),
-  svelte: createProject({
-    name: `Svelte ${chalk.gray('(svelte)')}`,
-    defaultValue: true,
-    option: '--svelte',
-    projectLocation: path.join(__dirname, '..', 'examples/svelte-kitchen-sink'),
-    isJest: true,
-  }),
   'react-native-vanilla': createProject({
     name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
     defaultValue: true,
