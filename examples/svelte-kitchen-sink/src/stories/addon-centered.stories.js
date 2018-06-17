@@ -7,5 +7,8 @@ storiesOf('Addon|Centered', module)
   .addDecorator(Centered)
   .add('rounded', () => ({
     Component: ButtonView,
-    data: { rounded: true },
+    data: {
+      rounded: true,
+      text: 'You should see this',
+    },
   }));
