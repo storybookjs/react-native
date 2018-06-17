@@ -23,6 +23,7 @@ export default function render({
         when defining the story.
       `,
     });
+
     return;
   }
 
