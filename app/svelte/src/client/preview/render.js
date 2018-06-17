@@ -10,7 +10,7 @@ export default function render({
   showError,
   // showException,
 }) {
-  const { Component, data } = story();
+  const { Component, data, methods } = story();
 
   target.innerHTML = '';
 
@@ -27,7 +27,13 @@ export default function render({
     return;
   }
 
-  new Component({target, data}); // eslint-disable-line
+  const component = new Component({target, data}); // eslint-disable-line
+
+  if (methods) {
+    Object.keys(methods).forEach(methodName => {
+      component[methodName] = methods[methodName];
+    });
+  }
 
   showMain();
 }

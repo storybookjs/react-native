@@ -1,6 +1,6 @@
 <button
   class="button {roundedClass}"
-  on:click="toggleRoundedClass(event)">
+  on:click="onClick(event)">
   <slot></slot>
 </button>
 
@@ -22,6 +22,7 @@
   export default {
     data () {
       return {
+        count: 0,
         rounded: true
       };
     },
@@ -33,10 +34,12 @@
     },
 
     methods: {
-      toggleRoundedClass() {
+      onClick(event) {
         const {rounded} = this.get();
 
         this.set({rounded: !rounded});
+
+        this.fire('click', event)
       }
     }
   }
