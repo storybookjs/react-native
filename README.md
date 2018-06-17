@@ -72,6 +72,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [React](app/react)
 -   [React Native](app/react-native)
 -   [Vue](app/vue)
+-   [Svelte](app/svelte)
 -   [Angular](app/angular)
 -   [Polymer](app/polymer)
 -   [Mithril](app/mithril) <sup>alpha</sup>
@@ -110,6 +111,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
 - [React Official](https://storybooks-official.netlify.com)
 - [Vue](https://storybooks-vue.netlify.com/)
+- [Svelte](https://storybooks-svelte.netlify.com/)
 - [Angular](https://storybooks-angular.netlify.com/)
 - [Polymer](https://storybooks-polymer.netlify.com/)
 - [Mithril](https://storybooks-mithril.netlify.com/)
