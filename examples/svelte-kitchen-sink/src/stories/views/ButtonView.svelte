@@ -1,8 +1,10 @@
 <h1>Button view</h1>
-<Button rounded="{true}" on:click="onButtonClicked(event)">{message} {count}</Button>
-<p>A little text to show this is a view. If we need to test components in a Svelte
-environment, for instance to test slot behaviour, then wrapping the component up
-in a view made just for the story is the simplest way to achieve this.</p>
+<Button {rounded} on:click="onButtonClicked(event)">{message} {count}</Button>
+<p>A little text to show this is a view.</p>
+<p>If we need to test components in a Svelte
+environment, for instance to test slot behaviour,</p>
+<p>then wrapping the component up in a view made</p>
+<p>just for the story is the simplest way to achieve this.</p>
 
 <script>
   import Button from '../../components/Button.svelte';
