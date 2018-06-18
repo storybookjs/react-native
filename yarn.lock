@@ -17801,9 +17801,9 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.1:
   dependencies:
     unist-util-is "^2.1.1"
 
-universal-dotenv@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/universal-dotenv/-/universal-dotenv-1.4.0.tgz#a85fb8c2f61c0419dc63a95baf59206546a3b277"
+universal-dotenv@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/universal-dotenv/-/universal-dotenv-1.5.1.tgz#fe256777b5757908b24e01ad25007cc16994e78a"
   dependencies:
     app-root-dir "^1.0.2"
     dotenv "^6.0.0"
