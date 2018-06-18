@@ -1,7 +1,16 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
-const target = document.getElementById('root');
+function mountView({ Component, target, data, on }) {
+  const component = new Component({ target, data });
+
+  if (on) {
+    // Attach svelte event listeners.
+    Object.keys(on).forEach(eventName => {
+      component.on(eventName, on[eventName]);
+    });
+  }
+}
 
 export default function render({
   story,
@@ -20,6 +29,8 @@ export default function render({
     on,
   } = story();
 
+  const target = document.getElementById('root');
+
   target.innerHTML = '';
 
   if (!Component) {
@@ -35,13 +46,7 @@ export default function render({
     return;
   }
 
-  const component = new Component({target, data}); // eslint-disable-line
-
-  if (on) {
-    Object.keys(on).forEach(eventName => {
-      component.on(eventName, on[eventName]);
-    });
-  }
+  mountView({ Component, target, data, on });
 
   showMain();
 }
