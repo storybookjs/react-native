@@ -1,4 +1,4 @@
-<div style="width: {width}px; background-color: {backgroundColor}">
+<div style="width: {width}px; height: {height}px; background-color: {backgroundColor}">
     <p>I am interactive</p>
 </div>
 
@@ -7,6 +7,7 @@
         data() {
             return {
                 width: 200,
+                height: 100,
                 backgroundColor: 'yellow'
             };
         }

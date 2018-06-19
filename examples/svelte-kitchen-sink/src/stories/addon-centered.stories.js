@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/svelte';
 import Centered from '@storybook/addon-centered/svelte';
 
-import ButtonView from './views/ButtonView.svelte';
+import Button from '../components/Button.svelte';
 
 storiesOf('Addon|Centered', module)
   .addDecorator(Centered)
   .add('rounded', () => ({
-    Component: ButtonView,
+    Component: Button,
     data: {
       rounded: true,
-      text: 'You should see this',
+      text: "Look, I'm centered!",
     },
   }));

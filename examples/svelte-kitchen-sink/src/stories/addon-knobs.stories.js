@@ -9,7 +9,14 @@ storiesOf('Addon|Knobs', module)
     const backgroundColor = text('Background', 'green');
     const width = number('Width', 200, {
       range: true,
-      min: 0,
+      min: 100,
+      max: 1000,
+      step: 100,
+    });
+
+    const height = number('Height', 200, {
+      range: true,
+      min: 100,
       max: 1000,
       step: 100,
     });
@@ -19,6 +26,7 @@ storiesOf('Addon|Knobs', module)
       data: {
         backgroundColor,
         width,
+        height,
       },
     };
   });

@@ -81,13 +81,3 @@
     opacity: 0.5;
   }
 </style>
-
-<script>
-  export default {
-    methods: {
-      onClick(event) {
-        this.fire('click', event);
-      },
-    }
-  };
-</script>
