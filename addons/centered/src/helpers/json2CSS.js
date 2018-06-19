@@ -1,10 +1,10 @@
 import { document } from 'global';
 
 /**
- * Svelte doesn't support an object for the style attribute but we want to
- * share the styles. Since React uses the property names of HTMLElement's we
- * can just apply them to a frag and then get the string result of the `style`
- * attribute. This means that invalid styles are also filtered out.
+ * Not all frameworks support an object for the style attribute but we want all to
+ * consume `styles.json`. Since `styles.json` uses standard style properties for keys,
+ * we can just set them on an element and then get the string result of that element's
+ * `style` attribute. This also means that invalid styles are filtered out.
  *
  * @param {Object} jsonStyles
  * @returns {string}
