@@ -4,25 +4,20 @@
     This is a UI component dev environment for your svelte app.
   </p>
   <p>
-    We've added some basic stories inside the
-    <code class="code">src/stories</code>
-    directory.
-    <br />
-    A story is a single state of one or more UI components.
+    We've added some basic stories inside the <code class="code">src/stories</code> directory.
+    <strong>A story is like a visual test case</strong>
+    and represents a single state of one or more UI components.
     You can have as many stories as you want.
-    <br />
-    (Basically a story is like a visual test case.)
   </p>
 
   <h1 class="logo">Svelte</h1>
 
   <p>
     Just like that, you can add your own components as stories.
-    <br />
     You can also edit those components and see changes right away.
     <br />
     (Try editing the <code class="code">Button</code> component
-    located at <code class="code">src/stories/Button.js</code>.)
+    located at <code class="code">src/stories/views/Welcome.svelte</code>.)
   </p>
   <p>
     Usually we create stories with smaller UI components in the app.<br />
