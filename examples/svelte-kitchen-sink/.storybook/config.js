@@ -1,6 +1,7 @@
 import { configure } from '@storybook/svelte';
 import { setOptions } from '@storybook/addon-options';
 
+// Used with @storybook/addon-options/register
 setOptions({ hierarchyRootSeparator: /\|/ });
 
 function loadStories() {
