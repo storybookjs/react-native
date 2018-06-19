@@ -1,5 +1,5 @@
 <div style="{styles.style}">
-  <div style="{styles.inner}">
+  <div style="{styles.innerStyle}">
     <svelte:component this="{Story}" {...storyData} />
   </div>
 </div>
@@ -8,7 +8,7 @@
   export default {
     data() {
       return {
-        storyData: {}, // The story data
+        storyData: {},
         Story: null,
         styles: {}
       };

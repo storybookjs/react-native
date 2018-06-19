@@ -3,8 +3,10 @@ import styles from './styles';
 import json2CSS from './helpers/json2CSS';
 
 const stylesCss = {
+  /** @type {string} */
   style: json2CSS(styles.style),
-  inner: json2CSS(styles.innerStyle),
+  /** @type {string} */
+  innerStyle: json2CSS(styles.innerStyle),
 };
 
 export default function(storyFn) {
