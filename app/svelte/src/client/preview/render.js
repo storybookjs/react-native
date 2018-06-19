@@ -37,7 +37,7 @@ export default function render({
     showError({
       title: `Expecting a Svelte component from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
-        Did you forget to return the Svelte component from the story?
+        Did you forget to return the Svelte component configuration from the story?
         Use "() => ({ Component: YourComponent, data: {} })"
         when defining the story.
       `,
