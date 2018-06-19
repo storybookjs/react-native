@@ -15,5 +15,5 @@
 |[notes](addons/notes)            |+| |+|+|+|+|+| |+|
 |[options](addons/options)        |+|+|+|+|+|+|+| |+|
 |[storyshots](addons/storyshots)  |+|+|+|+| | |+| | |
-|[storysource](addons/storysource)|+| |+|+|+|+|+|+| |
+|[storysource](addons/storysource)|+| |+|+|+|+|+|+|+|
 |[viewport](addons/viewport)      |+| |+|+|+|+|+|+|+|
