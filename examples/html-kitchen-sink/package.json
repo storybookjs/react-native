@@ -30,8 +30,6 @@
     "@storybook/core": "4.0.0-alpha.9",
     "@storybook/core-events": "4.0.0-alpha.9",
     "@storybook/html": "4.0.0-alpha.9",
-    "babel-core": "^6.26.0",
-    "babel-runtime": "^6.26.0",
     "eventemitter3": "^3.1.0",
     "format-json": "^1.0.3",
     "global": "^4.3.2",

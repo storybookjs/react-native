@@ -1,5 +1,5 @@
 {
   "plugins": [
-    "transform-react-jsx"
+    "@babel/plugin-transform-react-jsx"
   ]
 }

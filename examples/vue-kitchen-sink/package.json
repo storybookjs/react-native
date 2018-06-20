@@ -13,8 +13,8 @@
     "vuex": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.49",
-    "@babel/preset-env": "7.0.0-beta.49",
+    "@babel/core": "7.0.0-beta.51",
+    "@babel/preset-env": "7.0.0-beta.51",
     "@storybook/addon-actions": "4.0.0-alpha.9",
     "@storybook/addon-backgrounds": "4.0.0-alpha.9",
     "@storybook/addon-centered": "4.0.0-alpha.9",

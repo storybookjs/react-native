@@ -18,7 +18,6 @@
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "babel-runtime": "^6.26.0",
     "jest-expo": "^24.0.0",
     "react-native-scripts": "^1.8.1",
     "react-test-renderer": "~16.2.0"

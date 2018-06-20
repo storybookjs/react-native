@@ -22,10 +22,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.51",
     "@storybook/core": "4.0.0-alpha.9",
     "@storybook/node-logger": "4.0.0-alpha.9",
     "angular2-template-loader": "^0.6.2",
-    "babel-runtime": "^6.23.0",
     "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.4.0",

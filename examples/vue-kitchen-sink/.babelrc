@@ -19,7 +19,7 @@
       "presets": [
         "@babel/preset-env"
       ],
-      "plugins": ["require-context-hook"]
+      "plugins": ["babel-plugin-require-context-hook"]
     }
   }
 }

@@ -33,7 +33,6 @@
     "@storybook/addons": "4.0.0-alpha.9",
     "@storybook/client-logger": "4.0.0-alpha.9",
     "@storybook/react": "4.0.0-alpha.9",
-    "babel-runtime": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.4",

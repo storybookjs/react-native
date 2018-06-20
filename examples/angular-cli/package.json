@@ -70,7 +70,6 @@
     "@types/jasminewd2": "^2.0.3",
     "@types/jest": "^22.2.3",
     "@types/node": "~9.6.20",
-    "babel-core": "^6.26.3",
     "global": "^4.3.2",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",

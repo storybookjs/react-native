@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["@babel/preset-env"],
+    "@babel/preset-env",
     ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
     "@babel/preset-react"
   ],
@@ -17,6 +17,11 @@
   ],
   "env": {
     "test": {
+      "presets": [
+        "@babel/preset-env",
+        ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
+        "@babel/preset-react"
+      ],
       "plugins": ["babel-plugin-require-context-hook"]
     }
   }

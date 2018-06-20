@@ -21,9 +21,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.51",
     "@storybook/core": "4.0.0-alpha.9",
     "@webcomponents/webcomponentsjs": "^1.2.0",
-    "babel-polyfill": "^6.26.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "react": "^16.4.0",
