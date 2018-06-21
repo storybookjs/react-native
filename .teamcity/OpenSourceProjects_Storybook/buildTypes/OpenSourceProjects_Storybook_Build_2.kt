@@ -6,6 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailu
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.merge
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
@@ -33,6 +34,9 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:master
                 +:dependencies.io-*
             """.trimIndent()
+        }
+        retryBuild {
+            delaySeconds = 60
         }
     }
 

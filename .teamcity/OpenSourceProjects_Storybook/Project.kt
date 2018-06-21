@@ -172,6 +172,6 @@ feature {
     }
 
     params {
-        param("docker.node.version", "10.1")
+        param("docker.node.version", "latest")
     }
 })
