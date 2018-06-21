@@ -26,17 +26,17 @@ npm install --save-dev @storybook/addon-storyshots
 ```
 
 ## Configure your app for Jest
+In many cases, for example Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
 
-Usually, you might already have completed this step. If not, here are some resources for you.
-
-If you are using Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
-
-If you aren't familiar with Jest, here are some resources:
+If you still need to configure jest you can use the resources mentioned below:
 
 -   [Getting Started - Jest Official Documentation](https://facebook.github.io/jest/docs/en/getting-started.html)
 -   [Javascript Testing with Jest - Egghead](https://egghead.io/lessons/javascript-test-javascript-with-jest). ***paid content***
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
+
+> Note: Make sure you have added the ```json``` extention to ```moduleFileExtensions``` in ```jest.config.json```. If this is missing it leads to the [following error](https://github.com/storybooks/storybook/issues/3728): ```Cannot find module 'spdx-license-ids' from 'scan.js'```.
+
 
 ### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
 
