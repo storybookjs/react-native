@@ -34,6 +34,9 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 +:dependencies.io-*
             """.trimIndent()
         }
+        retryBuild {
+            delaySeconds = 60
+        }
     }
 
     failureConditions {

@@ -44,6 +44,9 @@ object OpenSourceProjects_Storybook_Danger : BuildType({
                 -:master
             """.trimIndent()
         }
+        retryBuild {
+            delaySeconds = 3600
+        }
     }
 
     features {
