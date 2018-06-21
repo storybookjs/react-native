@@ -6,7 +6,6 @@
     -   [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
     -   [Removed addWithInfo](#removed-add-with-info)
     -   [Removed RN addons](#removed-rn-addons)
-    -   [Storyshots imageSnapshot test function moved to a separate package](#storyshots-imagesnapshot-moved)
     -   [Storyshots changes](#storyshots-changes)
 -   [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
@@ -44,8 +43,16 @@ The `@storybook/react-native` had built-in addons (`addon-actions` and `addon-li
 
 ### Storyshots Changes
 
-1. `imageSnapshot` test function was extracted from `addon-storyshots` and moved to a new package - `addon-storyshots-puppeteer` that now will be dependant on puppeteer
-2. `getSnapshotFileName` export was replaced with the `Stories2SnapsConverter` class that now can be overridden for a custom implementation of the snapshot-name generation
+1. `imageSnapshot` test function was extracted from `addon-storyshots` 
+and moved to a new package - `addon-storyshots-puppeteer` that now will 
+be dependant on puppeteer. [README](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-puppeteer)
+2. `getSnapshotFileName` export was replaced with the `Stories2SnapsConverter` 
+class that now can be overridden for a custom implementation of the 
+snapshot-name generation. [README](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core#stories2snapsconverter)
+3. Storybook that was configured with Webpack's `require.context()` feature 
+will need to add a babel plugin to polyfill this functionality. 
+A possible plugin might be [babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
+[README](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core#configure-jest-to-work-with-webpacks-requirecontext)
 
 ## From version 3.3.x to 3.4.x
 

@@ -15,10 +15,9 @@ function load(options) {
   mockVueToIncludeCompiler();
 
   const { configPath, config } = options;
-  const frameworkOptions = '@storybook/vue/options';
   const storybook = require.requireActual('@storybook/vue');
 
-  configure({ configPath, config, frameworkOptions, storybook });
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'vue',

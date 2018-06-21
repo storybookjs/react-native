@@ -1,22 +1,27 @@
-import loadConfig from './config-loader';
-import runWithRequireContext from './require_context';
+import fs from 'fs';
+import path from 'path';
+
+function getConfigPathParts(configPath) {
+  const resolvedConfigPath = path.resolve(configPath);
+
+  if (fs.lstatSync(resolvedConfigPath).isDirectory()) {
+    return path.join(resolvedConfigPath, 'config.js');
+  }
+
+  return resolvedConfigPath;
+}
 
 function configure(options) {
-  const { configPath = '.storybook', config, frameworkOptions, storybook } = options;
+  const { configPath = '.storybook', config, storybook } = options;
 
   if (config && typeof config === 'function') {
     config(storybook);
     return;
   }
 
-  const appOptions = require.requireActual(frameworkOptions).default;
+  const resolvedConfigPath = getConfigPathParts(configPath);
 
-  const { content, contextOpts } = loadConfig({
-    configPath,
-    appOptions,
-  });
-
-  runWithRequireContext(content, contextOpts);
+  require.requireActual(resolvedConfigPath);
 }
 
 export default configure;

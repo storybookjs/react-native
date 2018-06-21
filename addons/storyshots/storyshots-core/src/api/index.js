@@ -1,39 +1,13 @@
 import global, { describe } from 'global';
 import addons, { mockChannel } from '@storybook/addons';
+import ensureOptionsDefaults from './ensureOptionsDefaults';
 import snapshotsTests from './snapshotsTestsTemplate';
 import integrityTest from './integrityTestTemplate';
-import getIntegrityOptions from './getIntegrityOptions';
 import loadFramework from '../frameworks/frameworkLoader';
-import Stories2SnapsConverter from '../Stories2SnapsConverter';
-import { snapshotWithOptions } from '../test-bodies';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
-const defaultStories2SnapsConverter = new Stories2SnapsConverter();
 const methods = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];
-
-function ensureOptionsDefaults(options) {
-  const {
-    suite = 'Storyshots',
-    storyNameRegex,
-    storyKindRegex,
-    renderer,
-    serializer,
-    stories2snapsConverter = defaultStories2SnapsConverter,
-    test: testMethod = snapshotWithOptions({ renderer, serializer }),
-  } = options;
-
-  const integrityOptions = getIntegrityOptions(options);
-
-  return {
-    suite,
-    storyNameRegex,
-    storyKindRegex,
-    stories2snapsConverter,
-    testMethod,
-    integrityOptions,
-  };
-}
 
 function callTestMethodGlobals(testMethod) {
   methods.forEach(method => {

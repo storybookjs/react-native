@@ -136,3 +136,6 @@ reset state.
 ### [story2sketch](https://github.com/chrisvxd/story2sketch)
 
 Convert stories into Sketch 💎 symbols.
+
+### [styled components theme](https://github.com/echoulen/storybook-addon-styled-component-theme)
+styled components theme selection.

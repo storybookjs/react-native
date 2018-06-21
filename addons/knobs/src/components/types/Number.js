@@ -47,7 +47,7 @@ class NumberType extends React.Component {
 
     let parsedValue = Number(value);
 
-    if (Number.isNaN(parsedValue)) {
+    if (Number.isNaN(parsedValue) || value === '') {
       parsedValue = null;
     }
 
@@ -93,7 +93,7 @@ NumberType.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-NumberType.serialize = value => String(value);
-NumberType.deserialize = value => parseFloat(value);
+NumberType.serialize = value => (value === null || value === undefined ? '' : String(value));
+NumberType.deserialize = value => (value === '' ? null : parseFloat(value));
 
 export default NumberType;

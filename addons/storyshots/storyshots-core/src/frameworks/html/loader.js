@@ -9,10 +9,9 @@ function load(options) {
   global.STORYBOOK_ENV = 'html';
 
   const { configPath, config } = options;
-  const frameworkOptions = '@storybook/html/options';
   const storybook = require.requireActual('@storybook/html');
 
-  configure({ configPath, config, frameworkOptions, storybook });
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'html',

@@ -7,10 +7,9 @@ function test(options) {
 
 function load(options) {
   const { configPath, config } = options;
-  const frameworkOptions = '@storybook/react/options';
   const storybook = require.requireActual('@storybook/react');
 
-  configure({ configPath, config, frameworkOptions, storybook });
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'react',

@@ -20,10 +20,9 @@ function load(options) {
   setupAngularJestPreset();
 
   const { configPath, config } = options;
-  const frameworkOptions = '@storybook/angular/options';
   const storybook = require.requireActual('@storybook/angular');
 
-  configure({ configPath, config, frameworkOptions, storybook });
+  configure({ configPath, config, storybook });
 
   return {
     framework: 'angular',
