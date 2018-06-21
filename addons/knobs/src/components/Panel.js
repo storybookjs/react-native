@@ -157,7 +157,13 @@ export default class Panel extends PureComponent {
     return (
       <PanelWrapper>
         {groupIds.length > 0 ? (
-          <TabsState panels={groups} />
+          <TabsState>
+            {Object.entries(groups).map(([k, v]) => (
+              <div id={k} title={v.title}>
+                {v.render}
+              </div>
+            ))}
+          </TabsState>
         ) : (
           <PropForm
             knobs={knobsArray}
