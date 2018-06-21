@@ -1,6 +1,6 @@
 package OpenSourceProjects_Storybook
 
-import jetbrains.buildServer.configs.kotlin.v2017_2.*
+import jetbrains.buildServer.configs.kotlin.v2018_1.*
 
 /*
 The settings script is an entry point for defining a single
