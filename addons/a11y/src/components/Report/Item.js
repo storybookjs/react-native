@@ -21,6 +21,18 @@ const HeaderBar = styled('button')({
   background: 'none',
 });
 
+const Arrow = styled('span')(props => ({
+  display: 'inline-block',
+  width: 0,
+  height: 0,
+  borderStyle: 'solid',
+  borderWidth: '5px 0 5px 8.7px',
+  borderColor: 'transparent transparent transparent #828282',
+  paddingRight: 5,
+  transformOrigin: '25% 50%',
+  transform: `rotate(${props.open ? 90 : 0}deg)`,
+}));
+
 class Item extends Component {
   static propTypes = {
     item: PropTypes.shape({
@@ -46,7 +58,10 @@ class Item extends Component {
 
     return (
       <Wrapper>
-        <HeaderBar onClick={this.onToggle}>{item.description}</HeaderBar>
+        <HeaderBar onClick={this.onToggle}>
+          <Arrow open={open} />
+          {item.description}
+        </HeaderBar>
         {open && <Info item={item} />}
         {open && <Elements elements={item.nodes} passes={passes} />}
         {open && <Tags tags={item.tags} />}
