@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
+import IoChevronRight from 'react-icons/lib/io/chevron-right';
 
 import Info from './Info';
 import Tags from './Tags';
@@ -20,18 +21,6 @@ const HeaderBar = styled('button')({
   border: 0,
   background: 'none',
 });
-
-const Arrow = styled('span')(props => ({
-  display: 'inline-block',
-  width: 0,
-  height: 0,
-  borderStyle: 'solid',
-  borderWidth: '5px 0 5px 8.7px',
-  borderColor: 'transparent transparent transparent #828282',
-  paddingRight: 5,
-  transformOrigin: '25% 50%',
-  transform: `rotate(${props.open ? 90 : 0}deg)`,
-}));
 
 class Item extends Component {
   static propTypes = {
@@ -59,7 +48,14 @@ class Item extends Component {
     return (
       <Wrapper>
         <HeaderBar onClick={this.onToggle}>
-          <Arrow open={open} />
+          <IoChevronRight
+            size={10}
+            color="#9DA5AB"
+            style={{
+              marginRight: '5px',
+              transform: `rotate(${open ? 90 : 0}deg)`,
+            }}
+          />
           {item.description}
         </HeaderBar>
         {open && <Info item={item} />}
