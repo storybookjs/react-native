@@ -1,6 +1,6 @@
-<div style="{styles.style}">
-  <div style="{styles.innerStyle}">
-    <svelte:component this="{Story}" {...storyData} />
+<div class="svelte-centered-wrapper" style="{centeredStyles.style}">
+  <div class="svelte-centered-container" style="{centeredStyles.innerStyle}">
+    <svelte:component this="{OriginalComponent}" {...originalData} />
   </div>
 </div>
 
@@ -8,9 +8,9 @@
   export default {
     data() {
       return {
-        storyData: {},
-        Story: null,
-        styles: {}
+        OriginalComponent: null,
+        originalData: {},
+        centeredStyles: {}
       };
     }
   };
