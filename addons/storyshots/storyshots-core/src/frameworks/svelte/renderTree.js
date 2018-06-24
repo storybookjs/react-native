@@ -1,7 +1,29 @@
-function getRenderedTree(story, context) {
-  const storyElement = story.render(context);
+import { document } from 'global';
 
-  return storyElement;
+/**
+ * Provides functionality to convert your raw story to the resulting markup.
+ *
+ * Storybook snapshots need the rendered markup that svelte outputs,
+ * but since we only have the story config data ({ Component, data }) in
+ * the Svelte stories, we need to mount the component, and then return the
+ * resulting HTML.
+ *
+ * If we don't render to HTML, we will get a snapshot of the raw story
+ * i.e. ({ Component, data }).
+ */
+function getRenderedTree(story, context) {
+  const { Component, data } = story.render(context);
+
+  // We need to create a target to mount onto.
+  const target = document.createElement('section');
+
+  new Component({ target, data }); // eslint-disable-line
+
+  // Mark the target as test specific DOM to try to avoid any confusion
+  // when reviewing snapshot output.
+  target.className = 'storybook-snapshot-container';
+
+  return target;
 }
 
 export default getRenderedTree;
