@@ -15,9 +15,8 @@ The Webpack setup is very similar to [Svelte CLI's](https://github.com/sveltejs/
 
 In this guide, we are trying to set up Storybook for your Svelte project.
 
-> It is very important to remember that Svelte is precompiled from .svelte files
-to vanilla javascript, so there is no runtime and anything you wish to integrate
-with it is no different from plain old js.
+> It is very important to remember that Svelte components are precompiled from
+.svelte or .html files to vanilla javascript, so there is no 'runtime'.
 
 ## Table of contents
 
