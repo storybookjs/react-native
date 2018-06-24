@@ -19,8 +19,8 @@ function getRenderedTree(story, context) {
 
   new Component({ target, data }); // eslint-disable-line
 
-  // Mark the target as test specific DOM to try to avoid any confusion
-  // when reviewing snapshot output.
+  // Classify the target so that it is clear where the markup
+  // originates from, and that it is specific for snapshot tests.
   target.className = 'storybook-snapshot-container';
 
   return target;
