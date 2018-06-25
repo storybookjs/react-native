@@ -21,7 +21,6 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
       <button
         class="css-1hf831j"
         role="tab"
-        selected=""
         type="button"
       >
         Test 2
