@@ -39,10 +39,11 @@ const RangeWrapper = styled('div')({
 class NumberType extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      value: props.knob.value,
-    };
+    let { value } = props.knob;
+    if (value === null || value === undefined) {
+      value = '';
+    }
+    this.state = { value };
 
     this.onChange = debounce(props.onChange, 400);
   }
@@ -58,7 +59,7 @@ class NumberType extends React.Component {
 
     let parsedValue = Number(value);
 
-    if (Number.isNaN(parsedValue)) {
+    if (Number.isNaN(parsedValue) || value === '') {
       parsedValue = null;
     }
 
@@ -110,7 +111,7 @@ NumberType.propTypes = {
   onChange: PropTypes.func,
 };
 
-NumberType.serialize = value => String(value);
-NumberType.deserialize = value => parseFloat(value);
+NumberType.serialize = value => (value === null || value === undefined ? '' : String(value));
+NumberType.deserialize = value => (value === '' ? null : parseFloat(value));
 
 export default NumberType;
