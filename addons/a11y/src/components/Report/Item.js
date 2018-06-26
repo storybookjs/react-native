@@ -53,6 +53,7 @@ class Item extends Component {
             color="#9DA5AB"
             style={{
               marginRight: '5px',
+              marginBottom: '2px',
               transform: `rotate(${open ? 90 : 0}deg)`,
             }}
           />
