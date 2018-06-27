@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import { getEnvironment } from 'universal-dotenv';
+import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { indexHtmlPath } from '@storybook/core/server';
 import { version } from '../../../package.json';
@@ -38,6 +39,7 @@ const getConfig = options => {
       }),
       new webpack.optimize.DedupePlugin(),
       new webpack.DefinePlugin(getEnvironment().webpack),
+      new Dotenv({ silent: true }),
     ],
     module: {
       rules: [
