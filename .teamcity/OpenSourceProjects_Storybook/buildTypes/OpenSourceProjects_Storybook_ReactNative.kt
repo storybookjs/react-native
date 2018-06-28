@@ -28,7 +28,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
                 yarn
                 yarn bootstrap --core --reactnative --reactnativeapp
             """.trimIndent()
-            dockerImage = "node:9"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "react-native-vanilla"
@@ -36,7 +36,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
                 cd examples/react-native-vanilla
                 yarn storybook --smoke-test
             """.trimIndent()
-            dockerImage = "node:9"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "crna-kitchen-sink"
@@ -44,7 +44,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
                 cd examples/crna-kitchen-sink
                 yarn storybook --smoke-test
             """.trimIndent()
-            dockerImage = "node:9"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Test"
@@ -52,7 +52,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
                 yarn test --reactnative --coverage --runInBand --teamcity
                 yarn coverage
             """.trimIndent()
-            dockerImage = "node:9"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
