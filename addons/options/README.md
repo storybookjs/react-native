@@ -90,7 +90,7 @@ setOptions({
   /**
    * regex for finding the hierarchy root separator
    * @example:
-   *   null - turn off mulitple hierarchy roots
+   *   null - turn off multiple hierarchy roots
    *   /\|/ - split by `|`
    * @type {Regex}
    */
