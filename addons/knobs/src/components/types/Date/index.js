@@ -1,73 +1,49 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'react-emotion';
+
 import Datetime from 'react-datetime';
-import insertCss from 'insert-css';
-import debounce from 'lodash.debounce';
+
 import style from './styles';
 
-const customStyle = `
-  .rdt input {
-    outline: 0;
-    width: 100%;
-    border: 1px solid #f7f4f4;
-    border-radius: 2px;
-    font-size: 11px;
-    padding: 5px;
-    color: #555;
-    display: table-cell;
-    box-sizing: border-box;
-  }
-`;
-
-insertCss(style);
-insertCss(customStyle);
+const DateInput = styled(Datetime)(style);
 
 class DateType extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      value: props.knob.value,
-    };
-
-    this.onChange = debounce(props.onChange, 200);
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      return { value: props.knob.value };
+    }
+    return null;
   }
 
   handleChange = date => {
     const value = date.valueOf();
     this.setState({ value });
 
-    this.onChange(value);
+    this.props.onChange(value);
   };
 
   render() {
-    const { knob } = this.props;
     const { value } = this.state;
 
     return (
-      <div>
-        <Datetime
-          id={knob.name}
-          value={value ? new Date(value) : null}
-          type="date"
-          onChange={this.handleChange}
-        />
-      </div>
+      <DateInput
+        value={value ? new Date(value) : null}
+        type="date"
+        onChange={this.handleChange}
+        size="flex"
+      />
     );
   }
 }
 
-DateType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
 DateType.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.number,
-  }),
-  onChange: PropTypes.func,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 DateType.serialize = value => String(value);

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
+<ul
+  class="css-1bx3lfx"
+>
+  <li
+    class="css-wo86af"
+  >
+    <button
+      class="css-hu94vo"
+    >
+      Nr1
+    </button>
+  </li>
+  <li
+    class="css-11rvrtb"
+  >
+    <button
+      class="css-hu94vo"
+    >
+      Nr2
+    </button>
+  </li>
+  <li
+    class="css-11rvrtb"
+  >
+    <button
+      class="css-hu94vo"
+    >
+      Nr3
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`Storyshots Components|PanelActionBar single item 1`] = `
+<ul
+  class="css-1bx3lfx"
+>
+  <li
+    class="css-wo86af"
+  >
+    <button
+      class="css-hu94vo"
+    >
+      CLEAR
+    </button>
+  </li>
+</ul>
+`;

@@ -8,7 +8,8 @@ export function register() {
     const channel = addons.getChannel();
     addons.addPanel(PANEL_ID, {
       title: 'Story',
-      render: () => <StoryPanel channel={channel} api={api} />,
+      // eslint-disable-next-line react/prop-types
+      render: ({ active }) => <StoryPanel channel={channel} api={api} active={active} />,
     });
   });
 }

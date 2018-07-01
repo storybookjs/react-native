@@ -1,26 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styled from 'react-emotion';
-
-const Button = styled('button')({
-  height: '26px',
-});
+import { Button } from '@storybook/components';
 
 const ButtonType = ({ knob, onClick }) => (
-  <Button type="button" id={knob.name} onClick={() => onClick(knob)}>
+  <Button type="button" onClick={() => onClick(knob)}>
     {knob.name}
   </Button>
 );
 
-ButtonType.defaultProps = {
-  knob: {},
-};
-
 ButtonType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-  }),
+  }).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

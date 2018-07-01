@@ -1,17 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import addons from '@storybook/addons';
 import { Placeholder } from '@storybook/components';
 
-import { RERUN_EVENT_ID } from '../../shared';
-
-import RerunButton from './RerunButton';
 import Item from './Item';
-
-function onRerunClick() {
-  const channel = addons.getChannel();
-  channel.emit(RERUN_EVENT_ID);
-}
 
 const Report = ({ items, empty, passes }) => (
   <div>
@@ -20,7 +11,6 @@ const Report = ({ items, empty, passes }) => (
     ) : (
       <Placeholder>{empty}</Placeholder>
     )}
-    <RerunButton onClick={onRerunClick}>Re-run tests</RerunButton>
   </div>
 );
 
