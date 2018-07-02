@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import { getEnvironment } from 'universal-dotenv';
 import Dotenv from 'dotenv-webpack';
 import WatchMissingNodeModulesPlugin from '@storybook/react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
@@ -30,6 +31,7 @@ const getConfig = options => ({
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(nodeModulesPaths),
+    new webpack.DefinePlugin(getEnvironment().webpack),
     new Dotenv({ silent: true }),
     new webpack.DefinePlugin({
       storybookOptions: JSON.stringify(options),
