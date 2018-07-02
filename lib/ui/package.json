@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "4.0.0-alpha.10",
+  "version": "4.0.0-alpha.11",
   "description": "Core Storybook UI",
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@ndelangen/react-treebeard": "^2.1.0",
-    "@storybook/components": "4.0.0-alpha.10",
-    "@storybook/core-events": "4.0.0-alpha.10",
+    "@storybook/components": "4.0.0-alpha.11",
+    "@storybook/core-events": "4.0.0-alpha.11",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
@@ -42,8 +42,8 @@
     "react-modal": "^3.4.5"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.10",
-    "@storybook/react": "4.0.0-alpha.10"
+    "@storybook/addon-actions": "4.0.0-alpha.11",
+    "@storybook/react": "4.0.0-alpha.11"
   },
   "peerDependencies": {
     "react": "*",
