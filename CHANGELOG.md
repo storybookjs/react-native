@@ -1,3 +1,18 @@
+# 4.0.0-alpha.11
+
+2018-July-02
+
+#### Features
+
+-   Storybook UI theming [#3628](https://github.com/storybooks/storybook/pull/3628)
+-   Replaced 'dotenv-webpack' with 'universal-dotenv' to support multiple dot env files (like CRA) [#3744](https://github.com/storybooks/storybook/pull/3744)
+-   Support other type of webpack configs [#3785](https://github.com/storybooks/storybook/pull/3785)
+
+#### Bug Fixes
+
+-   Marko: fix welcome component [#3796](https://github.com/storybooks/storybook/pull/3796)
+-   Addon-a11y: Run analysis on demand [#3690](https://github.com/storybooks/storybook/pull/3690)
+
 # 4.0.0-alpha.10
 
 2018-June-21
