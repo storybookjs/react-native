@@ -56,21 +56,25 @@ export default class ActionLogger extends React.Component {
   }
 
   render() {
+    const { active } = this.props;
     const props = {
       actions: this.state.actions,
       onClear: () => this.clearActions(),
     };
-    return <ActionLoggerComponent {...props} />;
+    return active ? <ActionLoggerComponent {...props} /> : null;
   }
 }
 
 ActionLogger.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  channel: PropTypes.object,
-  api: PropTypes.shape({
-    onStory: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+  channel: PropTypes.shape({
+    emit: PropTypes.func,
+    on: PropTypes.func,
+    removeListener: PropTypes.func,
   }).isRequired,
-};
-ActionLogger.defaultProps = {
-  channel: {},
+  api: PropTypes.shape({
+    onStory: PropTypes.func,
+    getQueryParam: PropTypes.func,
+    setQueryParams: PropTypes.func,
+  }).isRequired,
 };

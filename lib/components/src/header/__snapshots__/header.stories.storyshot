@@ -1,49 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|Header mobile-view 1`] = `
-<div
-  class="css-1ct5egv"
->
-  <button
-    class="css-r41s90"
-  >
-    ☰
-  </button>
-  <a
-    class="css-5m3y99"
-    href="http://google.com"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    <h3
-      class="css-1852r2"
-    >
-      name
-    </h3>
-  </a>
-  <button
-    class="css-1sibdyl"
-  >
-    ⌘
-  </button>
-</div>
-`;
-
 exports[`Storyshots Components|Header simple 1`] = `
 <div
   class="css-5xz1i6"
 >
   <a
-    class="css-108o064"
-    href="http://google.com"
+    class="css-ypfoxr"
+    href="http://example.com"
     rel="noopener noreferrer"
     target="_blank"
   >
-    <h3
-      class="css-1852r2"
-    >
-      name
-    </h3>
+    name
   </a>
   <button
     class="css-i6e0jg"

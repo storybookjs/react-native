@@ -1,22 +1,9 @@
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'react-emotion';
 
-const Select = styled('select')({
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  height: '26px',
-  width: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  padding: '5px',
-  color: '#555',
-});
+import { Select } from '@storybook/components';
 
-class SelectType extends React.Component {
+class SelectType extends Component {
   renderOptionList({ options }) {
     if (Array.isArray(options)) {
       return options.map(val => this.renderOption(val, val));
@@ -34,7 +21,7 @@ class SelectType extends React.Component {
     const { knob, onChange } = this.props;
 
     return (
-      <Select id={knob.name} value={knob.value} onChange={e => onChange(e.target.value)}>
+      <Select value={knob.value} onChange={e => onChange(e.target.value)} size="flex">
         {this.renderOptionList(knob)}
       </Select>
     );

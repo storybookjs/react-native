@@ -36,7 +36,7 @@ exports[`Storyshots Addons|Knobs.withKnobs triggers actions via button 1`] = `
 
 exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
 <div
-  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
+  style="background-color:#dedede;border:2px dashed silver;border-radius:10px;padding:10px"
 >
   <p>
     My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
@@ -74,16 +74,12 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII="
     />
   </p>
-  <hr />
-  <p>
-    PS. My shirt pocket contains: 
-  </p>
 </div>
 `;
 
 exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in groups 1`] = `
 <div
-  style="background-color:#ffff00;border:3px solid #ff00ff;padding:10px"
+  style="background-color:rgba(126, 211, 33, 0.22);border:2px dashed silver;border-radius:10px;padding:10px"
 >
   <h1>
     General Information

@@ -15,6 +15,7 @@ addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 setOptions({
   hierarchySeparator: /\/|\./,
   hierarchyRootSeparator: /\|/,
+  theme: themes.dark,
 });
 
 addDecorator(story => <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>);

@@ -16,14 +16,13 @@ const Title = styled('h5')({
   fontSize: 16,
 });
 
-const Pre = styled('pre')({
+const Pre = styled('pre')(({ theme }) => ({
   padding: '30px',
   display: 'block',
-  background: 'rgba(19,19,19,0.9)',
-  color: 'rgba(255,255,255,0.95)',
+  background: theme.fillColor,
   marginTop: '15px',
   lineHeight: '1.75em',
-});
+}));
 
 const List = styled('div')({
   display: 'inline-block',
@@ -47,13 +46,13 @@ const defaultBackground = {
 };
 
 const instructionsHtml = `
-import { storiesOf } from "@storybook/react";
-import { withBackgrounds } from "@storybook/addon-backgrounds";
+import { storiesOf } from '@storybook/react';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
-storiesOf("First Component", module)
+storiesOf('First Component', module)
   .addDecorator(withBackgrounds([
-    { name: "twitter", value: "#00aced" },
-    { name: "facebook", value: "#3b5998" },
+    { name: 'twitter', value: '#00aced' },
+    { name: 'facebook', value: '#3b5998" },
   ]))
   .add("First Button", () => <button>Click me</button>);
 `.trim();
@@ -130,8 +129,11 @@ export default class BackgroundPanel extends Component {
   }
 
   render() {
+    const { active } = this.props;
     const backgrounds = [...this.state.backgrounds];
-
+    if (!active) {
+      return null;
+    }
     if (!backgrounds.length) return <Instructions />;
 
     const hasDefault = backgrounds.filter(x => x.default).length;
@@ -149,6 +151,7 @@ export default class BackgroundPanel extends Component {
   }
 }
 BackgroundPanel.propTypes = {
+  active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     getQueryParam: PropTypes.func,
     setQueryParams: PropTypes.func,

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import { baseFonts } from '@storybook/components';
-
 import Indicator from './Indicator';
 import Result, { FailedResult } from './Result';
 import provideJestResult from '../hoc/provideJestResult';
@@ -25,7 +23,6 @@ const Item = styled('li')({
 const NoTests = styled('div')({
   padding: '10px 20px',
   flex: 1,
-  ...baseFonts,
 });
 
 const FileTitle = styled('h2')({
@@ -139,7 +136,6 @@ const Content = styled(({ tests, className }) => (
 ))({
   padding: '10px 20px',
   flex: '1 1 0%',
-  ...baseFonts,
 });
 
 const Panel = ({ tests }) =>
