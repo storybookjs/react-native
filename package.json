@@ -115,7 +115,7 @@
     "typescript": "^2.9.1"
   },
   "resolutions": {
-    "graphql": "^0.13.2"
+    "graphql": "^0.12.3"
   },
   "engines": {
     "node": ">=8.0.0",
