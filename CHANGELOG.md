@@ -1,3 +1,11 @@
+# 4.0.0-alpha.12
+
+2018-July-03
+
+#### Bug Fixes
+
+-   Fix non-polyfilled themed UI components [#3829](https://github.com/storybooks/storybook/pull/3829)
+
 # 4.0.0-alpha.11
 
 2018-July-02
