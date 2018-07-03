@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "4.0.0-alpha.11",
+  "version": "4.0.0-alpha.12",
   "description": "Storybook framework-agnostic API",
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
   "bugs": {
@@ -16,13 +16,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.11",
-    "@storybook/channel-postmessage": "4.0.0-alpha.11",
-    "@storybook/client-logger": "4.0.0-alpha.11",
-    "@storybook/core-events": "4.0.0-alpha.11",
-    "@storybook/node-logger": "4.0.0-alpha.11",
+    "@storybook/addons": "4.0.0-alpha.12",
+    "@storybook/channel-postmessage": "4.0.0-alpha.12",
+    "@storybook/client-logger": "4.0.0-alpha.12",
+    "@storybook/core-events": "4.0.0-alpha.12",
+    "@storybook/node-logger": "4.0.0-alpha.12",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.11",
+    "@storybook/ui": "4.0.0-alpha.12",
     "airbnb-js-shims": "^1.6.0",
     "autoprefixer": "^8.6.0",
     "babel-loader": "^7.1.4",
