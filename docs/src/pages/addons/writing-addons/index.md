@@ -21,11 +21,11 @@ As shown in the above image, there's a communication channel that the Manager Ap
 
 With an addon, you can add more functionality to Storybook. Here are a few things you could do:
 
--   Add a panel to Storybook (like Action Logger).
--   Interact with the story and the panel.
--   Set and get URL query params.
--   Select a story.
--   Register keyboard shortcuts (coming soon).
+- Add a panel to Storybook (like Action Logger).
+- Interact with the story and the panel.
+- Set and get URL query params.
+- Select a story.
+- Register keyboard shortcuts (coming soon).
 
 With this, you can write some pretty cool addons. Look at our [Addon gallery](/addons/addon-gallery) to have a look at some sample addons.
 
@@ -43,21 +43,26 @@ We write a story for our addon like this:
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithNotes } from '../notes-addon';
+import withNotes from '../notes-addon';
 
 import Button from './Button';
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <WithNotes notes={'This is a very simple Button and you can click on it.'}>
-      <Button onClick={action('clicked')}>Hello Button</Button>
-    </WithNotes>
-  ))
-  .add('with some emoji', () => (
-    <WithNotes notes={'Here we use some emoji as the Button text. Doesn&apos;t it look nice?'}>
-      <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
-    </WithNotes>
-  ));
+  .addDecorator(withNotes)
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>, {
+    notes: 'This is a very simple Button and you can click on it.',
+  })
+  .add(
+    'with some emoji',
+    () => (
+      <Button onClick={action('clicked')}>
+        <span role="img" aria-label="so cool">
+          😀 😎 👍 💯
+        </span>
+      </Button>
+    ),
+    { notes: 'Here we use some emoji as the Button text. Doesn&apos;t it look nice?' }
+  );
 ```
 
 Then it will appear in the Notes panel like this:
@@ -79,23 +84,29 @@ Now we need to create two files, `register.js` and `index.js,` inside a director
 
 ## The Addon
 
-Let's add the following content to the `index.js`. It will expose a class called `WithNotes`, which wraps our story.
+Let's add the following content to the `index.js`. It will expose a decorator called `withNotes` which we use the `.addDecorator()` API to decorate all our stories.
+
+The `@storybook/addons` package contains a `makeDecorator` function which we can easily use to create such a decorator:
 
 ```js
 import React from 'react';
-import addons from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
 
-export class WithNotes extends React.Component {
-  render() {
-    const { children, notes } = this.props;
+export withNotes = makeDecorator({
+  name: 'withNotes',
+  parameterName: 'notes',
+  // This means don't run this decorator if the notes decorator is not set
+  skipIfNoParametersOrOptions: true,
+  wrapper: (getStory, context, {parameters}) => {
     const channel = addons.getChannel();
 
-    // send the notes to the channel.
-    channel.emit('MYADDON/add_notes', notes);
-    // return children elements.
-    return children;
+    // Our simple API above simply sets the notes parameter to a string,
+    // which we send to the channel
+    channel.emit('MYADDON/add_notes', parameters);
+
+    return story(context);
   }
-}
+})
 ```
 
 In this case, our component can access something called the channel. It lets us communicate with the panel (where we display notes). It has a NodeJS [EventEmitter](https://nodejs.org/api/events.html) compatible API.
@@ -122,7 +133,7 @@ class Notes extends React.Component {
 
   onAddNotes = text => {
     this.setState({ text });
-  }
+  };
 
   componentDidMount() {
     const { channel, api } = this.props;
@@ -138,11 +149,9 @@ class Notes extends React.Component {
   render() {
     const { text } = this.state;
     const { active } = this.props;
-    const textAfterFormatted = text? text.trim().replace(/\n/g, '<br />') : "";
+    const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
 
-    return active ? 
-      <NotesPanel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} /> :
-      null;
+    return active ? <NotesPanel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} /> : null;
   }
 
   // This is some cleanup tasks when the Notes panel is unmounting.
@@ -158,15 +167,13 @@ class Notes extends React.Component {
 }
 
 // Register the addon with a unique name.
-addons.register('MYADDON', (api) => {
+addons.register('MYADDON', api => {
   // Also need to set a unique name to the panel.
   addons.addPanel('MYADDON/panel', {
     title: 'Notes',
-    render: ({ active }) => (
-      <Notes channel={addons.getChannel()} api={api} active={active} />
-    ),
-  })
-})
+    render: ({ active }) => <Notes channel={addons.getChannel()} api={api} active={active} />,
+  });
+});
 ```
 
 It will register our addon and add a panel. In this case, the panel represents a React component called `Notes`. That component has access to the channel and storybook api.
@@ -199,21 +206,26 @@ That's it. Now you can create notes for any story as shown below:
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithNotes } from '../notes-addon';
+import withNotes from '../notes-addon';
 
 import Button from './Button';
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <WithNotes notes={'This is a very simple Button and you can click on it.'}>
-      <Button onClick={action('clicked')}>Hello Button</Button>
-    </WithNotes>
-  ))
-  .add('with some emojies', () => (
-    <WithNotes notes={'Here we use emojies as the Button text. Doesn&apos;t it look nice?'}>
-      <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
-    </WithNotes>
-  ));
+  .addDecorator(withNotes)
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>, {
+    notes: 'This is a very simple Button and you can click on it.',
+  })
+  .add(
+    'with some emoji',
+    () => (
+      <Button onClick={action('clicked')}>
+        <span role="img" aria-label="so cool">
+          😀 😎 👍 💯
+        </span>
+      </Button>
+    ),
+    { notes: 'Here we use some emoji as the Button text. Doesn&apos;t it look nice?' }
+  );
 ```
 
 ## Styling your addon
