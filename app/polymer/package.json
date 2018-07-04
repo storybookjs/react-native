@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.51",
+    "@babel/runtime": "^7.0.0-beta.51",
     "@storybook/core": "4.0.0-alpha.12",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",

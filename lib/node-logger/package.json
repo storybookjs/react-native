@@ -9,6 +9,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.51",
     "npmlog": "^4.1.2"
   }
 }
