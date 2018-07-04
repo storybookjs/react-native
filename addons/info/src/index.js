@@ -87,6 +87,7 @@ function addInfo(storyFn, context, infoOptions) {
 export const withInfo = makeDecorator({
   name: 'withInfo',
   parameterName: 'info',
+  allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
     const storyOptions = parameters || options;
     const infoOptions = typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;

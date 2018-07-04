@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import styled from 'react-emotion';
-import debounce from 'lodash.debounce';
+
+import { Input } from '@storybook/components';
 
 const base = {
   boxSizing: 'border-box',
@@ -15,11 +16,6 @@ const base = {
   color: '#444',
 };
 
-const TextInput = styled('input')(base, {
-  display: 'table-cell',
-  width: '100%',
-  verticalAlign: 'middle',
-});
 const RangeInput = styled('input')(base, {
   display: 'table-cell',
   flexGrow: 1,
@@ -37,18 +33,11 @@ const RangeWrapper = styled('div')({
 });
 
 class NumberType extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: props.knob.value,
-    };
-
-    this.onChange = debounce(props.onChange, 400);
-  }
-
-  componentWillUnmount() {
-    this.onChange.cancel();
+  static getDerivedStateFromProps(props, state) {
+    if (!state || props.knob.value !== state.value) {
+      return { value: props.knob.value };
+    }
+    return null;
   }
 
   handleChange = event => {
@@ -58,11 +47,11 @@ class NumberType extends React.Component {
 
     let parsedValue = Number(value);
 
-    if (Number.isNaN(parsedValue)) {
+    if (Number.isNaN(parsedValue) || value === '') {
       parsedValue = null;
     }
 
-    this.onChange(parsedValue);
+    this.props.onChange(parsedValue);
   };
 
   render() {
@@ -73,7 +62,6 @@ class NumberType extends React.Component {
       <RangeWrapper>
         <RangeLabel>{knob.min}</RangeLabel>
         <RangeInput
-          id={knob.name}
           value={value}
           type="range"
           min={knob.min}
@@ -84,33 +72,28 @@ class NumberType extends React.Component {
         <RangeLabel>{`${value} / ${knob.max}`}</RangeLabel>
       </RangeWrapper>
     ) : (
-      <TextInput
-        id={knob.name}
+      <Input
         value={value}
         type="number"
         min={knob.min}
         max={knob.max}
         step={knob.step}
         onChange={this.handleChange}
+        size="flex"
       />
     );
   }
 }
 
-NumberType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
 NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.number,
-  }),
-  onChange: PropTypes.func,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
-NumberType.serialize = value => String(value);
-NumberType.deserialize = value => parseFloat(value);
+NumberType.serialize = value => (value === null || value === undefined ? '' : String(value));
+NumberType.deserialize = value => (value === '' ? null : parseFloat(value));
 
 export default NumberType;

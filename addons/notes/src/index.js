@@ -10,6 +10,7 @@ export const withNotes = makeDecorator({
   name: 'withNotes',
   parameterName: 'notes',
   skipIfNoParametersOrOptions: true,
+  allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
     const channel = addons.getChannel();
 

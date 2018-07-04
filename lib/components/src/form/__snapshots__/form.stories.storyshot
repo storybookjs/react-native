@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Form/Button alignment 1`] = `
+Array [
+  <button
+    class="css-1vmbacw"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-vb63mh"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-k5xbe4"
+  >
+    click this button
+  </button>,
+]
+`;
+
+exports[`Storyshots Components|Form/Button sizes 1`] = `
+Array [
+  <button
+    class="css-1riodoz"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-17iy6hf"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-k5xbe4"
+  >
+    click this button
+  </button>,
+]
+`;
+
+exports[`Storyshots Components|Form/Button validations 1`] = `
+Array [
+  <button
+    class="css-1n7kxml"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-1dbq55u"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-1yfwphr"
+  >
+    click this button
+  </button>,
+  <button
+    class="css-k5xbe4"
+  >
+    click this button
+  </button>,
+]
+`;
+
+exports[`Storyshots Components|Form/Button with knobs 1`] = `
+<button
+  class="css-1riodoz"
+>
+  💌  love letter to storybook team
+</button>
+`;
+
+exports[`Storyshots Components|Form/Select sizes 1`] = `
+Array [
+  <select
+    class="css-1rk2lkr"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+  <select
+    class="css-p3s1kf"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+  <select
+    class="css-13k1zov"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+]
+`;
+
+exports[`Storyshots Components|Form/Select validations 1`] = `
+Array [
+  <select
+    class="css-1pvc7qr"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+  <select
+    class="css-kdddv2"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+  <select
+    class="css-1hyanqr"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+  <select
+    class="css-13k1zov"
+  >
+    <option
+      value="val1"
+    >
+      Value 1
+    </option>
+    <option
+      selected=""
+      value="val2"
+    >
+      Value 2
+    </option>
+    <option
+      value="val3"
+    >
+      Value 3
+    </option>
+  </select>,
+]
+`;
+
+exports[`Storyshots Components|Form/Textarea alignment 1`] = `
+Array [
+  <textarea
+    align="end"
+    class="css-ikfdgv"
+    style="height:0"
+  >
+    text
+  </textarea>,
+  <textarea
+    align="center"
+    class="css-7knv9k"
+    style="height:0"
+  >
+    text
+  </textarea>,
+  <textarea
+    align="start"
+    class="css-33eu3a"
+    style="height:0"
+  >
+    text
+  </textarea>,
+]
+`;
+
+exports[`Storyshots Components|Form/Textarea sizes 1`] = `
+Array [
+  <textarea
+    class="css-1qzrepe"
+    style="height:0"
+  >
+    text
+  </textarea>,
+  <textarea
+    class="css-1lgydmp"
+    style="height:0"
+  >
+    text
+  </textarea>,
+  <textarea
+    class="css-33eu3a"
+    style="height:0"
+  >
+    text
+  </textarea>,
+]
+`;
+
+exports[`Storyshots Components|Form/Textarea validations 1`] = `
+Array [
+  <textarea
+    class="css-sfd7lm"
+    style="height:0"
+    valid="error"
+  >
+    text
+  </textarea>,
+  <textarea
+    class="css-j4g7hp"
+    style="height:0"
+    valid="warn"
+  >
+    text
+  </textarea>,
+  <textarea
+    class="css-1rb826s"
+    style="height:0"
+    valid="valid"
+  >
+    text
+  </textarea>,
+  <textarea
+    class="css-33eu3a"
+    style="height:0"
+  >
+    text
+  </textarea>,
+]
+`;
+
+exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
+<textarea
+  class="css-33eu3a"
+  style="height:0"
+>
+  OMG, multiple lines!
+
+That is amazing
+</textarea>
+`;

@@ -1,5 +1,4 @@
 import styled from 'react-emotion';
-import { Button as BaseButton } from '@storybook/components';
 
 export const Actions = styled('pre')({
   flex: 1,
@@ -12,22 +11,10 @@ export const Actions = styled('pre')({
 export const Action = styled('div')({
   display: 'flex',
   padding: '3px 3px 3px 0',
-  borderLeft: '5px solid white',
-  borderBottom: '1px solid #fafafa',
+  borderLeft: '5px solid transparent',
+  borderBottom: '1px solid transparent',
   transition: 'all 0.1s',
   alignItems: 'start',
-});
-
-export const Button = styled(BaseButton)({
-  position: 'absolute',
-  bottom: 0,
-  right: 0,
-  borderRadius: '4px 0 0 0',
-  textTransform: 'uppercase',
-  letterSpacing: 1,
-  paddingTop: 5,
-  paddingBottom: 5,
-  border: '0 none',
 });
 
 export const Counter = styled('div')({
@@ -51,4 +38,5 @@ export const Wrapper = styled('div')({
   flex: 1,
   display: 'flex',
   position: 'relative',
+  minHeight: '100%',
 });

@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@storybook/addon-actions@3.4.6", "@storybook/addon-actions@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.6.tgz#70ca84a4754ea2969640428890d9a3c9369261f6"
+"@storybook/addon-actions@3.4.8", "@storybook/addon-actions@^3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.8.tgz#557bae7c7cc60be9d5199ff972b028de8b574f92"
   dependencies:
-    "@storybook/components" "3.4.6"
+    "@storybook/components" "3.4.8"
     babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     glamor "^2.20.40"
@@ -17,52 +17,52 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-links@3.4.6", "@storybook/addon-links@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.6.tgz#0e167c03932ddfcbeba02215af1a420c0d3f0843"
+"@storybook/addon-links@3.4.8", "@storybook/addon-links@^3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.8.tgz#303e2e37c8abf1861accc95dd9c5f9274bf528ad"
   dependencies:
-    "@storybook/components" "3.4.6"
+    "@storybook/components" "3.4.8"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.6", "@storybook/addons@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.6.tgz#8275e46b8dfe7c751f2f18a431bc3339c999a2ae"
+"@storybook/addons@3.4.8", "@storybook/addons@^3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.8.tgz#ff1142d8f0963dd28b7c6f88dc9d3be170ac6600"
 
-"@storybook/channel-postmessage@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.6.tgz#acb7d6096bd060a3d224d7e753e33c22f21fabdb"
+"@storybook/channel-postmessage@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.8.tgz#4df9b315f6ceff07f33334a633f24c7b81a3ac28"
   dependencies:
-    "@storybook/channels" "3.4.6"
+    "@storybook/channels" "3.4.8"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.6.tgz#4147b4e171763f168cd523a3f83e7e125c9523c2"
+"@storybook/channels@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.8.tgz#df0aff0d20a9597402e76caa7e5ddb088ede3591"
 
-"@storybook/client-logger@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.6.tgz#2f2b271d6825c7325f999f6b17d7ef69984faa18"
+"@storybook/client-logger@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.8.tgz#82d6e1c2cb3e37184cc597a933f64b38fb61b88b"
 
-"@storybook/components@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.6.tgz#34bddcfa21bddc59ef57a052d157285fab7ba003"
+"@storybook/components@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.8.tgz#45934d9a25374e68152826a162e61b9732871eaf"
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/core@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.6.tgz#3261dc89bff2c716579270da3f5cf83a374eca5c"
+"@storybook/core@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.8.tgz#a7f077175081b9e957cd3b04442c01606271fd2d"
   dependencies:
-    "@storybook/addons" "3.4.6"
-    "@storybook/channel-postmessage" "3.4.6"
-    "@storybook/client-logger" "3.4.6"
-    "@storybook/node-logger" "3.4.6"
-    "@storybook/ui" "3.4.6"
+    "@storybook/addons" "3.4.8"
+    "@storybook/channel-postmessage" "3.4.8"
+    "@storybook/client-logger" "3.4.8"
+    "@storybook/node-logger" "3.4.8"
+    "@storybook/ui" "3.4.8"
     autoprefixer "^7.2.6"
     babel-runtime "^6.26.0"
     chalk "^2.3.2"
@@ -94,9 +94,9 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.6.tgz#aed4f5bd102e033391584ef82bd3fec055659448"
+"@storybook/node-logger@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.8.tgz#8f8abcd51920545c7458385b0b30199ae48ad78a"
   dependencies:
     npmlog "^4.1.2"
 
@@ -130,18 +130,18 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.6.tgz#8bc0c1e10305d7539decb8f8c781b5970ff951ff"
+"@storybook/react@^3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.8.tgz#857b83778abb0547525637b084d2fe684a53fc81"
   dependencies:
-    "@storybook/addon-actions" "3.4.6"
-    "@storybook/addon-links" "3.4.6"
-    "@storybook/addons" "3.4.6"
-    "@storybook/channel-postmessage" "3.4.6"
-    "@storybook/client-logger" "3.4.6"
-    "@storybook/core" "3.4.6"
-    "@storybook/node-logger" "3.4.6"
-    "@storybook/ui" "3.4.6"
+    "@storybook/addon-actions" "3.4.8"
+    "@storybook/addon-links" "3.4.8"
+    "@storybook/addons" "3.4.8"
+    "@storybook/channel-postmessage" "3.4.8"
+    "@storybook/client-logger" "3.4.8"
+    "@storybook/core" "3.4.8"
+    "@storybook/node-logger" "3.4.8"
+    "@storybook/ui" "3.4.8"
     airbnb-js-shims "^1.4.1"
     babel-loader "^7.1.4"
     babel-plugin-macros "^2.2.0"
@@ -174,11 +174,11 @@
     webpack "^3.11.0"
     webpack-hot-middleware "^2.22.1"
 
-"@storybook/ui@3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.6.tgz#c25c93d0843c4250b77b2a3614533a7d5790893d"
+"@storybook/ui@3.4.8":
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.8.tgz#73245f02a714cc3de0bb1b62261ec64b6d0d65ae"
   dependencies:
-    "@storybook/components" "3.4.6"
+    "@storybook/components" "3.4.8"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.3"
@@ -4605,9 +4605,9 @@ gatsby-cli@^1.1.58:
     yargs "^11.1.0"
     yurnalist "^0.2.1"
 
-gatsby-link@^1.6.44:
-  version "1.6.44"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.44.tgz#31912e66d3b21632ce27e5b7310ec88d9a75eac3"
+gatsby-link@^1.6.45:
+  version "1.6.45"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.45.tgz#6a28d377cd9eee4bf5454be5a9292550b5d1d929"
   dependencies:
     "@types/history" "^4.6.2"
     "@types/react-router-dom" "^4.2.2"
@@ -4622,9 +4622,21 @@ gatsby-module-loader@^1.0.11:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-sharp@^1.6.47:
-  version "1.6.47"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.47.tgz#bcad9de7f5f269d2415266583c0c3cf48611e165"
+gatsby-plugin-page-creator@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-1.0.1.tgz#6bad33a7f46cb5b87dbdaacc3c1bbd81ac63bc20"
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    chokidar "^1.7.0"
+    glob "^7.1.1"
+    lodash "^4.17.4"
+    parse-filepath "^1.0.1"
+    slash "^1.0.0"
+
+gatsby-plugin-sharp@^1.6.48:
+  version "1.6.48"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.48.tgz#9bb7515da9c7753b3065c51b2d35a0de5b9aa1f5"
   dependencies:
     async "^2.1.2"
     babel-runtime "^6.26.0"
@@ -4640,26 +4652,26 @@ gatsby-plugin-sharp@^1.6.47:
     sharp "^0.20.0"
     svgo "^0.7.2"
 
-gatsby-react-router-scroll@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.17.tgz#16b9c67da7f4a997ebb8c784f4feba2b23af4f98"
+gatsby-react-router-scroll@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.18.tgz#616ffb801dbdbe4598611e2ff3861b91ac3eecbf"
   dependencies:
     babel-runtime "^6.26.0"
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-remark-autolink-headers@^1.4.18:
-  version "1.4.18"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-1.4.18.tgz#7f1536b3c67b32d902da5cd96cc2de863b8c1f6f"
+gatsby-remark-autolink-headers@^1.4.19:
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-1.4.19.tgz#84417de2fc6fbe9914219999ae0e2616fc9c79a2"
   dependencies:
     babel-runtime "^6.26.0"
     github-slugger "^1.1.1"
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@^1.5.35:
-  version "1.5.35"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.35.tgz#398cad86328309a57077e7a3e8c95d951756ab80"
+gatsby-remark-copy-linked-files@^1.5.37:
+  version "1.5.37"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.37.tgz#cfa2a055e6ba3dbb2fd9bbbd33a1211788bbd49e"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
@@ -4670,13 +4682,13 @@ gatsby-remark-copy-linked-files@^1.5.35:
     probe-image-size "^4.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@^1.5.66:
-  version "1.5.66"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.66.tgz#f852bca527676079cf679e0cd8b9299d9942acce"
+gatsby-remark-images@^1.5.67:
+  version "1.5.67"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.67.tgz#6b0db6873ea1a141d2b3ca211a05ab85c55922e2"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
-    gatsby-plugin-sharp "^1.6.47"
+    gatsby-plugin-sharp "^1.6.48"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     slash "^1.0.0"
@@ -4691,9 +4703,9 @@ gatsby-remark-smartypants@^1.4.12:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.38:
-  version "1.5.38"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.38.tgz#9bf74c7bab280f552b074c72aff99f7bca45f927"
+gatsby-source-filesystem@^1.5.39:
+  version "1.5.39"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.39.tgz#c7e49b7809632b53c827e66ff3ee0ba74ef62dd8"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4708,9 +4720,9 @@ gatsby-source-filesystem@^1.5.38:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-transformer-remark@^1.7.42:
-  version "1.7.42"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.42.tgz#c7446dd1d1d98a799e1019476ea05fa170c6afe7"
+gatsby-transformer-remark@^1.7.44:
+  version "1.7.44"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.44.tgz#69b45f377a68484d1eab13f1feb7924428378ce1"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
@@ -4733,9 +4745,9 @@ gatsby-transformer-remark@^1.7.42:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.270:
-  version "1.9.270"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.270.tgz#9a0635c588618dbc11a34bb530c4390c26ef840f"
+gatsby@^1.9.273:
+  version "1.9.273"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.273.tgz#bf3d685cbd5112a55514ca0450888d2da95d4444"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4778,9 +4790,10 @@ gatsby@^1.9.270:
     gatsby-1-config-css-modules "^1.0.11"
     gatsby-1-config-extract-plugin "^1.0.3"
     gatsby-cli "^1.1.58"
-    gatsby-link "^1.6.44"
+    gatsby-link "^1.6.45"
     gatsby-module-loader "^1.0.11"
-    gatsby-react-router-scroll "^1.0.17"
+    gatsby-plugin-page-creator "^1.0.1"
+    gatsby-react-router-scroll "^1.0.18"
     glob "^7.1.1"
     graphql "^0.11.7"
     graphql-relay "^0.5.1"
@@ -8881,6 +8894,13 @@ prop-types@^15.6.1:
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
     fbjs "^0.8.16"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
+prop-types@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+  dependencies:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 

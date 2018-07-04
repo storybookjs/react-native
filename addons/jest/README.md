@@ -31,17 +31,19 @@ When running **Jest**, be sure to save the results in a json file:
 ```
 
 You may want to add it the result file to `.gitignore`, since it's a generated file:
+
 ```
 jest-test-results.json
 ```
+
 But much like lockfiles and snapshots checking-in generated files can have certain advantages as well. It's up to you.
-We recommend to **do** check in the test results file so starting storybook from an clean git clone doesn't require running all tests first, 
-but this can mean you'll experience merge conflicts on this file in the future. (*re-generating this file is super easy though, just like lockfiles and snapshots*)
+We recommend to **do** check in the test results file so starting storybook from an clean git clone doesn't require running all tests first,
+but this can mean you'll experience merge conflicts on this file in the future. (_re-generating this file is super easy though, just like lockfiles and snapshots_)
 
 ## Generating the test results
 
-You need to make sure the generated test-results file exists before you start storybook.
-During development you will likely start jest in watch-mode 
+You need to make sure the generated test-restuls file exists before you start storybook.
+During development you will likely start jest in watch-mode
 and so the json file will be re-generated every time code or tests change.
 
 ```sh
@@ -50,9 +52,10 @@ npm run test:generate-output -- --watch
 
 This change will then be HMR (hot module reloaded) using webpack and displayed by this addon.
 
-If you want to pre-run jest automaticly during development or a static build, 
+If you want to pre-run jest automaticly during development or a static build,
 you may need to consider that if your tests fail, the script receives a non-0 exit code and will exit.
 You could create a `prebuild:storybook` npm script, which will never fail by appending `|| true`:
+
 ```json
 "scripts": {
   "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
@@ -83,40 +86,57 @@ import results from '../.jest-test-results.json';
 import { withTests } from '@storybook/addon-jest';
 
 storiesOf('MyComponent', module)
-  .addDecorator(withTests({ results })('MyComponent', 'MyOtherComponent'))
-  .add('This story shows test results from MyComponent.test.js and MyOtherComponent.test.js', () => (
-    <div>Jest results in storybook</div>
-  ));
+  .addDecorator(withTests({ results }))
+  .add(
+    'This story shows test results from MyComponent.test.js and MyOtherComponent.test.js',
+    () => <div>Jest results in storybook</div>,
+    {
+      jest: ['MyComponent.test.js', 'MyOtherComponent.test.js'],
+    }
+  );
 ```
 
-Or in order to avoid importing `.jest-test-results.json` in each story, you can create a simple file `withTests.js`:
+Or in order to avoid importing `.jest-test-results.json` in each story, simply add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
 
 ```js
-import results from '../.jest-test-results.json';
+import { addDecorator } from '@storybook/react'; // <- or your view layer
 import { withTests } from '@storybook/addon-jest';
 
-export default withTests({
-  results,
-});
+import results from '../.jest-test-results.json';
+
+addDecorator(
+  withTests({
+    results,
+  })
+);
 ```
 
 Then in your story:
 
 ```js
-// import your file
-import withTests from '.withTests';
-
 storiesOf('MyComponent', module)
-  .addDecorator(withTests('MyComponent', 'MyOtherComponent'))
-  .add('This story shows test results from MyComponent.test.js and MyOtherComponent.test.js', () => (
-    <div>Jest results in storybook</div>
-  ));
+  // Use .addParameters if you want the same tests displayed for all stories of the component
+  .addParameters({ jest: ['MyComponent', 'MyOtherComponent'] })
+  .add(
+    'This story shows test results from MyComponent.test.js and MyOtherComponent.test.js',
+    () => <div>Jest results in storybook</div>
+  );
+```
+
+### Disabling
+
+You can disable the addon for a single story by setting the `jest` parameter to `{disabled: true}`:
+
+```js
+storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled herek</div>, {
+  jest: disabled,
+});
 ```
 
 ### withTests(options)
 
-- **options.results**: OBJECT jest output results. *mandatory*
-- **filesExt**: STRING test file extention. *optional*. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
+- **options.results**: OBJECT jest output results. _mandatory_
+- **filesExt**: STRING test file extention. _optional_. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## Usage with Angular
 
@@ -124,7 +144,7 @@ Assuming that you have created a test files `my.component.spec.ts` and `my-other
 
 Configure Jest with [jest-preset-angular](https://www.npmjs.com/package/jest-preset-angular)
 
-In project`s `typings.d.ts` add
+In project`s`typings.d.ts` add
 
 ```ts
 declare module '*.json' {
@@ -133,29 +153,31 @@ declare module '*.json' {
 }
 ```
 
-Create a simple file `withTests.ts`:
+In your `.storybook/config.ts`:
 
 ```ts
-import * as results from '../.jest-test-results.json';
+import { addDecorator } from '@storybook/angular';
 import { withTests } from '@storybook/addon-jest';
 
-export const wTests = withTests({
-  results,
-  filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$'
-});
+import * as results from '../.jest-test-results.json';
+
+addDecorator(
+  withTests({
+    results,
+    filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$',
+  })
+);
 ```
 
 Then in your story:
 
 ```js
-// import your file
-import wTests from '.withTests';
-
 storiesOf('MyComponent', module)
-  .addDecorator(wTests('my.component', 'my-other.component'))
-  .add('This story shows test results from my.component.spec.ts and my-other.component.spec.ts', () => (
-    <div>Jest results in storybook</div>
-  ));
+  .addParameters({ jest: ['my.component', 'my-other.component'] })
+  .add(
+    'This story shows test results from my.component.spec.ts and my-other.component.spec.ts',
+    () => <div>Jest results in storybook</div>
+  );
 ```
 
 ##### Example [here](https://github.com/storybooks/storybook/tree/master/examples/angular-cli)

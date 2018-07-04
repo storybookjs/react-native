@@ -15,6 +15,7 @@ export const withBackgrounds = makeDecorator({
   name: 'backgrounds',
   parameterName: 'backgrounds',
   skipIfNoParametersOrOptions: true,
+  allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
     const backgrounds = parameters || options;
 

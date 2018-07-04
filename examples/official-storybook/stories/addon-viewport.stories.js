@@ -3,13 +3,12 @@ import { storiesOf } from '@storybook/react';
 
 import styled from 'react-emotion';
 
-import { baseFonts } from '@storybook/components';
 import { Viewport, withViewport } from '@storybook/addon-viewport';
 import EventEmitter from 'eventemitter3';
 
 import Logger from './Logger';
 
-const Panel = styled('div')({ baseFonts });
+const Panel = styled('div')();
 
 storiesOf('Addons|Viewport', module).add('default', () => (
   <Panel>I don't have problems being rendered using the default viewport.</Panel>

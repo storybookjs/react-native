@@ -14,7 +14,8 @@ enum class StorybookApp(val appName: String, val exampleDir: String, val merged:
     MITHRIL("Mithril", "mithril-kitchen-sink"),
     HTML("HTML", "html-kitchen-sink"),
     MARKO("Marko", "marko-cli"),
-    HYPERAPP("Hyperapp", "hyperapp-kitchen-sink", false);
+    HYPERAPP("Hyperapp", "hyperapp-kitchen-sink", false),
+    SVELTE("Svelte", "svelte-kitchen-sink", false);
 
     val lowerName = appName.toLowerCase()
 

@@ -6,9 +6,11 @@ import { ADDON_ID, PANEL_ID } from './constants';
 
 export function register() {
   addons.register(ADDON_ID, () => {
+    const channel = addons.getChannel();
     addons.addPanel(PANEL_ID, {
       title: 'Events',
-      render: () => <Panel channel={addons.getChannel()} />,
+      // eslint-disable-next-line react/prop-types
+      render: ({ active }) => <Panel channel={channel} active={active} />,
     });
   });
 }

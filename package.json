@@ -31,6 +31,8 @@
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
     "publish": "lerna publish --exact",
+    "publish:stable": "npm run publish -- --concurrency 1 --force-publish=*",
+    "publish:alpha": "npm run publish -- --concurrency 1 --force-publish=* --npm-tag=alpha",
     "postpublish": "yarn --cwd lib/cli test -o",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "npm --prefix examples/official-storybook run storybook",
@@ -117,6 +119,9 @@
     "tslint-config-prettier": "^1.13.0",
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.9.1"
+  },
+  "resolutions": {
+    "graphql": "^0.13.2"
   },
   "engines": {
     "node": ">=8.0.0",

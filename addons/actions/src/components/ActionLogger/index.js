@@ -1,48 +1,48 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import Inspector from 'react-inspector';
-import { Actions, Action, Button, Wrapper, InspectorContainer, Countwrap, Counter } from './style';
+import { withTheme } from 'emotion-theming';
 
-class ActionLogger extends Component {
-  getActionData() {
-    return this.props.actions.map(action => this.renderAction(action));
-  }
+import { ActionBar, ActionButton } from '@storybook/components';
 
-  renderAction(action) {
-    const counter = <Counter>{action.count}</Counter>;
-    return (
-      <Action key={action.id}>
-        <Countwrap>{action.count > 1 && counter}</Countwrap>
-        <InspectorContainer>
-          <Inspector
-            sortObjectKeys
-            showNonenumerable={false}
-            name={action.data.name}
-            data={action.data.args || action.data}
-          />
-        </InspectorContainer>
-      </Action>
-    );
-  }
+import { Actions, Action, Wrapper, InspectorContainer, Countwrap, Counter } from './style';
 
-  render() {
-    return (
-      <Wrapper>
-        <Actions>{this.getActionData()}</Actions>
-        <Button onClick={this.props.onClear}>Clear</Button>
-      </Wrapper>
-    );
-  }
-}
+const ActionLogger = withTheme(({ actions, onClear, theme }) => (
+  <Wrapper>
+    <Actions>
+      {actions.map(action => (
+        <Action key={action.id}>
+          <Countwrap>{action.count > 1 && <Counter>{action.count}</Counter>}</Countwrap>
+          <InspectorContainer>
+            <Inspector
+              theme={theme.addonActionsTheme || 'chromeLight'}
+              sortObjectKeys
+              showNonenumerable={false}
+              name={action.data.name}
+              data={action.data.args || action.data}
+            />
+          </InspectorContainer>
+        </Action>
+      ))}
+    </Actions>
+
+    <ActionBar>
+      <ActionButton onClick={onClear}>CLEAR</ActionButton>
+    </ActionBar>
+  </Wrapper>
+));
 
 ActionLogger.propTypes = {
-  onClear: PropTypes.func,
-  // eslint-disable-next-line react/forbid-prop-types
-  actions: PropTypes.array,
-};
-ActionLogger.defaultProps = {
-  onClear: () => {},
-  actions: [],
+  onClear: PropTypes.func.isRequired,
+  actions: PropTypes.arrayOf(
+    PropTypes.shape({
+      count: PropTypes.node,
+      data: PropTypes.shape({
+        name: PropTypes.node.isRequired,
+        args: PropTypes.any,
+      }),
+    })
+  ).isRequired,
 };
 
 export default ActionLogger;

@@ -1,46 +1,22 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import styled from 'react-emotion';
-
-import Textarea from 'react-textarea-autosize';
-import debounce from 'lodash.debounce';
-
-const StyledTextarea = styled(Textarea)({
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  width: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  padding: '5px',
-  color: '#555',
-  fontFamily: 'monospace',
-});
+import PropTypes from 'prop-types';
+import deepEqual from 'fast-deep-equal';
+import { Textarea } from '@storybook/components';
 
 class ObjectType extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    try {
-      this.state = {
-        value: JSON.stringify(props.knob.value, null, 2),
-        failed: false,
-      };
-    } catch (e) {
-      this.state = {
-        // if it can't be JSON stringified, it's probably some weird stuff
-        value: 'Default object cannot not be JSON stringified',
-        failed: true,
-      };
+  static getDerivedStateFromProps(props, state) {
+    if (!state || !deepEqual(props.knob.value, state.json)) {
+      try {
+        return {
+          value: JSON.stringify(props.knob.value, null, 2),
+          failed: false,
+          json: props.knob.value,
+        };
+      } catch (e) {
+        return { value: 'Object cannot be stringified', failed: true };
+      }
     }
-
-    this.onChange = debounce(props.onChange, 200);
-  }
-
-  componentWillUnmount() {
-    this.onChange.cancel();
+    return null;
   }
 
   handleChange = e => {
@@ -48,11 +24,14 @@ class ObjectType extends Component {
 
     try {
       const json = JSON.parse(e.target.value.trim());
-      this.onChange(json);
       this.setState({
         value,
+        json,
         failed: false,
       });
+      if (deepEqual(this.props.knob.value, this.state.json)) {
+        this.props.onChange(json);
+      }
     } catch (err) {
       this.setState({
         value,
@@ -62,37 +41,25 @@ class ObjectType extends Component {
   };
 
   render() {
-    const { knob } = this.props;
     const { value, failed } = this.state;
-    const extraStyle = {};
-
-    if (failed) {
-      extraStyle.border = '1px solid #fadddd';
-      extraStyle.backgroundColor = '#fff5f5';
-    }
 
     return (
-      <StyledTextarea
-        id={knob.name}
-        style={extraStyle}
+      <Textarea
+        valid={failed ? 'error' : null}
         value={value}
         onChange={this.handleChange}
+        size="flex"
       />
     );
   }
 }
 
-ObjectType.defaultProps = {
-  knob: {},
-  onChange: value => value,
-};
-
 ObjectType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  }),
-  onChange: PropTypes.func,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 ObjectType.serialize = object => JSON.stringify(object);

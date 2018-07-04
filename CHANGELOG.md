@@ -1,3 +1,56 @@
+# 4.0.0-alpha.12
+
+2018-July-03
+
+#### Bug Fixes
+
+-   Fix non-polyfilled themed UI components [#3829](https://github.com/storybooks/storybook/pull/3829)
+
+# 4.0.0-alpha.11
+
+2018-July-02
+
+#### Features
+
+-   Storybook UI theming [#3628](https://github.com/storybooks/storybook/pull/3628)
+-   Replaced 'dotenv-webpack' with 'universal-dotenv' to support multiple dot env files (like CRA) [#3744](https://github.com/storybooks/storybook/pull/3744)
+-   Support other type of webpack configs [#3785](https://github.com/storybooks/storybook/pull/3785)
+
+#### Bug Fixes
+
+-   Marko: fix welcome component [#3796](https://github.com/storybooks/storybook/pull/3796)
+-   Addon-a11y: Run analysis on demand [#3690](https://github.com/storybooks/storybook/pull/3690)
+
+# 4.0.0-alpha.10
+
+2018-June-21
+
+#### Breaking Changes
+
+-   Storyshots - Replace require_context.js with babel-plugin-require-context-hook [#3757](https://github.com/storybooks/storybook/pull/3757)
+-   Storyshots advanced config options [#3747](https://github.com/storybooks/storybook/pull/3747)
+-   Storyshots addon refactoring [#3745](https://github.com/storybooks/storybook/pull/3745)
+-   Extract imageSnapshots to a separate package [#3742](https://github.com/storybooks/storybook/pull/3742)
+
+#### Bug Fixes
+
+-   Addon-knobs: Allow number knob to be empty [#3775](https://github.com/storybooks/storybook/pull/3775)
+-   Improvements to Info Docgen parsing [#3772](https://github.com/storybooks/storybook/pull/3772)
+-   Angular-cli 6 assets as a glob-object compatibility fix [#3751](https://github.com/storybooks/storybook/pull/3751)
+
+#### Maintenance
+
+-   Try to fix linter issues [#3748](https://github.com/storybooks/storybook/pull/3748)
+
+# 3.4.8
+
+2018-June-21
+
+#### Bug Fixes
+
+-   Fix centered addon for IE11 [#3735](https://github.com/storybooks/storybook/pull/3735)
+-   Display functions as variables not invocations [#3761](https://github.com/storybooks/storybook/pull/3761)
+
 # 4.0.0-alpha.9
 
 2018-June-10
