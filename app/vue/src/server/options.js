@@ -1,10 +1,10 @@
 import packageJson from '../../package.json';
 
 import wrapInitialConfig from './wrapInitialConfig';
-import wrapBabelConfig from './wrapBabelConfig';
+import wrapDefaultBabelConfig from './wrapDefaultBabelConfig';
 
 export default {
   packageJson,
   wrapInitialConfig,
-  wrapBabelConfig,
+  wrapDefaultBabelConfig,
 };
