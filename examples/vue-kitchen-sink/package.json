@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.51",
-    "@babel/preset-env": "7.0.0-beta.51",
     "@storybook/addon-actions": "4.0.0-alpha.12",
     "@storybook/addon-backgrounds": "4.0.0-alpha.12",
     "@storybook/addon-centered": "4.0.0-alpha.12",
@@ -28,7 +27,6 @@
     "@storybook/addons": "4.0.0-alpha.12",
     "@storybook/vue": "4.0.0-alpha.12",
     "babel-loader": "^8.0.0-beta.4",
-    "babel-preset-vue": "^2.0.2",
     "cross-env": "^5.1.6",
     "file-loader": "^1.1.11",
     "svg-url-loader": "^2.3.2",

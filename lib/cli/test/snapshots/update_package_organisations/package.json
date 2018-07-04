@@ -10,8 +10,7 @@
   "devDependencies": {
     "@storybook/react": "^4.0.0-alpha.12",
     "@storybook/addons": "^4.0.0-alpha.12",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0"
+    "@babel/core": "^7.0.0-beta.51"
   },
   "scripts": {
     "start": "react-scripts start",

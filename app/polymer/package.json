@@ -35,6 +35,7 @@
     "polymer-webpack-loader": "^2.0.2"
   },
   "peerDependencies": {
+    "@babel/core": ">=7.0.0-beta.41 <8.0.0",
     "lit-html": "0.10.0",
     "polymer-webpack-loader": "2.0.2"
   }

@@ -30,11 +30,13 @@
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
+    "babel-preset-vue": "^2.0.2",
     "vue": "^2.5.16",
     "vue-loader": "^14.2.3",
     "vue-template-compiler": "^2.5.16"
   },
   "peerDependencies": {
+    "@babel/core": ">=7.0.0-beta.41 <8.0.0",
     "vue": "2.5.16",
     "vue-loader": "14.2.3",
     "vue-template-compiler": "2.5.16"

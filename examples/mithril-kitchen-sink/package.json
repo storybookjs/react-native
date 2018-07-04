@@ -10,7 +10,6 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.51",
     "@storybook/addon-actions": "4.0.0-alpha.12",
     "@storybook/addon-backgrounds": "4.0.0-alpha.12",
     "@storybook/addon-centered": "4.0.0-alpha.12",

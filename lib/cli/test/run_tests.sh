@@ -62,6 +62,7 @@ cd ..
 if [ $update -eq 1 ]
   then
     # copy `run` directory contents to `snapshots`, skipping irrelevant files
+    rm -rf snapshots
     rsync -r --exclude={node_modules**,.DS_Store,*.md,yarn-error.log} run/ snapshots
   else if [ $skip -eq 0 ]
     then

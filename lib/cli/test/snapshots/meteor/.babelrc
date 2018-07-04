@@ -1,10 +1,15 @@
 {
   "presets": [
-    "env",
-    "react",
-    "stage-1"
+    "@babel/preset-env",
+    "@babel/preset-react",
+    [
+      "@babel/preset-stage-0",
+      {
+        "decoratorsLegacy": true
+      }
+    ]
   ],
   "plugins": [
-    "babel-root-slash-import"
+    "module:babel-root-slash-import"
   ]
 }
