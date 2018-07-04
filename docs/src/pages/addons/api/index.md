@@ -28,9 +28,7 @@ See how we can use this:
 import addonAPI from '@storybook/addons';
 
 // Register the addon with a unique name.
-addonAPI.register('my-organisation/my-addon', storybookAPI => {
-
-});
+addonAPI.register('my-organisation/my-addon', storybookAPI => {});
 ```
 
 Now you'll get an instance to our StorybookAPI. See the [api docs](/addons/api#storybook-api) for Storybook API regarding using that.
@@ -43,18 +41,12 @@ See how you can use this method:
 ```js
 import addonAPI from '@storybook/addons';
 
-const MyPanel = () => (
-  <div>
-    This is a panel.
-  </div>
-);
+const MyPanel = () => <div>This is a panel.</div>;
 
 // give a unique name for the panel
 addonAPI.addPanel('my-organisation/my-addon/panel', {
   title: 'My Addon',
-  render: () => (
-    <MyPanel />
-  ),
+  render: () => <MyPanel />,
 });
 ```
 
@@ -71,11 +63,9 @@ addonAPI.register('my-organisation/my-addon', storybookAPI => {
   // Also need to set a unique name to the panel.
   addonAPI.addPanel('my-organisation/my-addon/panel', {
     title: 'Notes',
-    render: () => (
-      <Notes channel={addonAPI.getChannel()} api={storybookAPI}/>
-    ),
-  })
-})
+    render: () => <Notes channel={addonAPI.getChannel()} api={storybookAPI} />,
+  });
+});
 ```
 
 ## Storybook API
@@ -96,10 +86,7 @@ Let's say you've got a story like this:
 ```js
 import { storiesOf } from '@storybook/react';
 
-storiesOf('heading', module)
-  .add('with text', () => (
-    <h1>Hello world</h1>
-  ));
+storiesOf('heading', module).add('with text', () => <h1>Hello world</h1>);
 ```
 
 This is how you can select the above story:
@@ -107,7 +94,7 @@ This is how you can select the above story:
 ```js
 addonAPI.register('my-organisation/my-addon', storybookAPI => {
   storybookAPI.selectStory('heading', 'with text');
-})
+});
 ```
 
 ### storybookAPI.selectInCurrentKind()
@@ -161,7 +148,7 @@ This method allows you to get application url state with some changed params. Fo
 addonAPI.register('my-organisation/my-addon', storybookAPI => {
   const href = storybookAPI.getUrlState({
     selectedKind: 'kind',
-    selectedStory: 'story'
+    selectedStory: 'story',
   }).url;
 });
 ```
@@ -175,3 +162,33 @@ addonAPI.register('my-organisation/my-addon', storybookAPI => {
   storybookAPI.onStory((kind, story) => console.log(kind, story));
 });
 ```
+
+## `makeDecorator` API
+
+The `makeDecorator` API can be used to create decorators in the style of the official addons easily. Use it like so:
+
+```js
+import { makeDecorator } from '@storybook/addons';
+
+export makeDecorator({
+  name: 'withSomething',
+  parameterName: 'something',
+  wrapper: (storyFn, context, { parameters }) => {
+    // Do something with `parameters`, which are set via { something: ... }
+
+    // Note you may alter the story output if you like, although generally that's
+    // not advised
+    return storyFn(context);
+  }
+})
+```
+
+The options to `makeDecorator` are:
+
+- `name`: The name of the export (e.g. `withNotes`)
+- `parameterName`: The name of the parameter your addon uses. This should be unique.
+- `skipIfNoParametersOrOptions`: Don't run your decorator if the user hasn't set options (via `.addDecorator(withFoo(options)))`) or parameters (`.add('story', () => <Story/>, { foo: 'param' })`, or `.addParameters({foo: 'param'})`).
+- `allowDeprecatedUsage`: support the deprecated "wrapper" usage (`.add('story', () => withFoo(options)(() => <Story/>))`).
+- `wrapper`: your decorator function. Takes the `storyFn`, `context`, and both the `options` and `parameters` (as defined in `skipIfNoParametersOrOptions` above).
+
+Note if the parameters to a story include `{ foo: {disable: true } }` (where `foo` is the `parameterName` of your addon), your decorator will note be called.
