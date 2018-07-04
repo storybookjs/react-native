@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "4.0.0-alpha.8",
+  "version": "4.0.0-alpha.12",
   "description": "A Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
@@ -13,18 +13,19 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "4.0.0-alpha.8",
-    "@storybook/components": "4.0.0-alpha.8",
+    "@storybook/addons": "4.0.0-alpha.12",
+    "@storybook/client-logger": "4.0.0-alpha.12",
+    "@storybook/components": "4.0.0-alpha.12",
     "babel-runtime": "^6.26.0",
     "core-js": "2.5.7",
-    "emotion": "^9.1.3",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.1",
     "react-addons-create-fragment": "^15.5.3",
     "react-emotion": "^9.1.3",
-    "react-lifecycles-compat": "^3.0.4"
+    "react-lifecycles-compat": "^3.0.4",
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "react-test-renderer": "^16.4.0"

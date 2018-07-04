@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-import deepEqual from 'deep-equal';
+import deepEqual from 'fast-deep-equal';
 import escape from 'escape-html';
 
 import KnobStore from './KnobStore';

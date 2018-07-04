@@ -10,6 +10,7 @@ addons.register(ADDON_ID, api => {
   const channel = addons.getChannel();
   addons.addPanel(PANEL_ID, {
     title: 'Backgrounds',
-    render: () => <BackgroundPanel channel={channel} api={api} />,
+    // eslint-disable-next-line react/prop-types
+    render: ({ active }) => <BackgroundPanel channel={channel} api={api} active={active} />,
   });
 });

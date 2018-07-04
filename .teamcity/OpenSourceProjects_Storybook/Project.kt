@@ -157,9 +157,21 @@ feature {
             param("title", "New chart title")
             param("seriesTitle", "Serie")
         }
+        feature {
+            type = "Invitation"
+            id = "PROJECT_EXT_209"
+            param("createdByUserId", "1702")
+            param("invitationType", "joinProjectInvitation")
+            param("secure:token", "credentialsJSON:07400f1b-a51d-46ae-b056-2e24a653f4d1")
+            param("name", "Join Storybook project")
+            param("welcomeText", "Filipp Riabchun invites you to join the Storybook project")
+            param("disabled", "false")
+            param("groupKey", "STORYBOOK_DEVELO")
+            param("multi", "true")
+        }
     }
 
     params {
-        param("docker.node.version", "10.1")
+        param("docker.node.version", "latest")
     }
 })

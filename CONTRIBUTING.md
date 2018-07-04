@@ -331,7 +331,7 @@ yarn bootstrap --reset --core
 
 ```sh
 # publish and tag the release
-npm run publish -- --concurrency 1 --npm-tag=alpha --force-publish=*
+npm run publish:alpha
 
 # update the release page
 open https://github.com/storybooks/storybook/releases
@@ -355,7 +355,7 @@ git commit -m "Changelog for vX.Y"
 yarn bootstrap --reset --core
 
 # publish and tag the release
-npm run publish -- --concurrency 1 --force-publish=*
+npm run publish
 
 # update the release page
 open https://github.com/storybooks/storybook/releases

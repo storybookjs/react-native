@@ -6,14 +6,14 @@ describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
     const testChannel = { on: jest.fn() };
     const testApi = { onStory: jest.fn() };
-    shallow(<Panel channel={testChannel} api={testApi} />);
+    shallow(<Panel channel={testChannel} api={testApi} active />);
     expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
   });
 
   it('should subscribe to onStory event', () => {
     const testChannel = { on: jest.fn() };
     const testApi = { onStory: jest.fn() };
-    shallow(<Panel channel={testChannel} api={testApi} />);
+    shallow(<Panel channel={testChannel} api={testApi} active />);
 
     expect(testApi.onStory).toHaveBeenCalled();
     expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
@@ -41,7 +41,7 @@ describe('Panel', () => {
         onStory: jest.fn(),
       };
 
-      shallow(<Panel channel={testChannel} api={testApi} />);
+      shallow(<Panel channel={testChannel} api={testApi} active />);
       const setKnobsHandler = handlers['addon:knobs:setKnobs'];
 
       const knobs = {
@@ -67,7 +67,7 @@ describe('Panel', () => {
       expect(testChannel.emit).toHaveBeenCalledWith(e, knobFromUrl);
     });
 
-    it('should set query params when url params are already read', () => {
+    it('should remove query params when url params are already read', () => {
       const handlers = {};
 
       const testChannel = {
@@ -88,7 +88,7 @@ describe('Panel', () => {
         onStory: jest.fn(),
       };
 
-      const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
+      const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
       const setKnobsHandler = handlers['addon:knobs:setKnobs'];
 
       const knobs = {
@@ -109,8 +109,8 @@ describe('Panel', () => {
 
       setKnobsHandler({ knobs, timestamp: +new Date() });
       const knobFromStory = {
-        'knob-foo': knobs.foo.value,
-        'knob-baz': knobs.baz.value,
+        'knob-foo': null,
+        'knob-baz': null,
       };
 
       expect(testApi.setQueryParams).toHaveBeenCalledWith(knobFromStory);
@@ -130,7 +130,7 @@ describe('Panel', () => {
         onStory: jest.fn(),
       };
 
-      const wrapper = shallow(<Panel channel={testChannel} api={testApi} />);
+      const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
 
       const testChangedKnob = {
         name: 'foo',
@@ -140,8 +140,8 @@ describe('Panel', () => {
       wrapper.instance().handleChange(testChangedKnob);
       expect(testChannel.emit).toHaveBeenCalledWith('addon:knobs:knobChange', testChangedKnob);
 
-      const paramsChange = { 'knob-foo': 'changed text' };
-      expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);
+      // const paramsChange = { 'knob-foo': 'changed text' };
+      // expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);
     });
   });
 });

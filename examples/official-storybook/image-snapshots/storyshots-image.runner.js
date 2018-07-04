@@ -4,7 +4,8 @@
 * */
 import path from 'path';
 import fs from 'fs';
-import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots';
+import initStoryshots from '@storybook/addon-storyshots';
+import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 import { logger } from '@storybook/node-logger';
 
 // Image snapshots

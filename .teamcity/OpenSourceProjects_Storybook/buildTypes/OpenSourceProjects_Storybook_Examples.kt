@@ -61,14 +61,14 @@ examples/official-storybook/image-snapshots/__image_snapshots__ => image-snapsho
                   ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
                 yarn test --image --teamcity
             """.trimIndent()
-            dockerImage = "node:8"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
     failureConditions {
         failOnMetricChange {
             metric = BuildFailureOnMetric.MetricType.ARTIFACT_SIZE
-            threshold = 50
+            threshold = 60
             units = BuildFailureOnMetric.MetricUnit.PERCENTS
             comparison = BuildFailureOnMetric.MetricComparison.LESS
             compareTo = build {

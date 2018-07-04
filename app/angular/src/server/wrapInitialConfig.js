@@ -17,6 +17,10 @@ export default (config, configDir) => ({
         ],
       },
       {
+        test: /[/\\]@angular[/\\]core[/\\].+\.js$/,
+        parser: { system: true },
+      },
+      {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: /\.async\.html$/,

@@ -44,34 +44,43 @@ export class Notes extends React.Component {
   }
 
   render() {
+    const { active } = this.props;
     const { text } = this.state;
-    const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
+    const textAfterFormatted = text
+      ? text
+          .trim()
+          .replace(/(<\S+.*>)\n/g, '$1')
+          .replace(/\n/g, '<br />')
+      : '';
 
-    return (
+    return active ? (
       <Panel
         className="addon-notes-container"
         dangerouslySetInnerHTML={{ __html: textAfterFormatted }}
       />
-    );
+    ) : null;
   }
 }
 
 Notes.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  channel: PropTypes.object,
-  // eslint-disable-next-line react/forbid-prop-types
-  api: PropTypes.object,
-};
-Notes.defaultProps = {
-  channel: {},
-  api: {},
+  active: PropTypes.bool.isRequired,
+  channel: PropTypes.shape({
+    on: PropTypes.func,
+    emit: PropTypes.func,
+    removeListener: PropTypes.func,
+  }).isRequired,
+  api: PropTypes.shape({
+    onStory: PropTypes.func,
+    getQueryParam: PropTypes.func,
+    setQueryParams: PropTypes.func,
+  }).isRequired,
 };
 
-// Register the addon with a unique name.
 addons.register('storybook/notes', api => {
-  // Also need to set a unique name to the panel.
+  const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
-    render: () => <Notes channel={addons.getChannel()} api={api} />,
+    // eslint-disable-next-line react/prop-types
+    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
   });
 });

@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
 
-const Wrapper = styled('div')({
-  backgroundColor: 'rgb(234, 234, 234)',
+const Wrapper = styled('div')(({ theme }) => ({
+  backgroundColor: theme.barFill,
   padding: '12px',
   marginBottom: '10px',
-});
+}));
 const Help = styled('p')({
   margin: '0 0 12px',
 });
 const Link = styled('a')({
   marginTop: '12px',
   textDecoration: 'underline',
-  color: 'rgb(130, 130, 130)',
+  color: 'inherit',
   display: 'block',
 });
 

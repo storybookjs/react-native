@@ -1,65 +1,93 @@
 import React, { Component } from 'react';
-import addons from '@storybook/addons';
+import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
 
-import { CHECK_EVENT_ID } from '../shared';
+import { STORY_RENDERED } from '@storybook/core-events';
+import { ActionBar, ActionButton } from '@storybook/components';
+
+import { CHECK_EVENT_ID, RERUN_EVENT_ID, REQUEST_CHECK_EVENT_ID } from '../shared';
 
 import Tabs from './Tabs';
 import Report from './Report';
 
-const Passes = styled('span')({
-  color: '#0D6731',
-});
+const Passes = styled('span')(({ theme }) => ({
+  color: theme.successColor,
+}));
 
-const Violations = styled('span')({
-  color: '#AC2300',
-});
+const Violations = styled('span')(({ theme }) => ({
+  color: theme.failColor,
+}));
 
 class Panel extends Component {
-  constructor(props, ...args) {
-    super(props, ...args);
-    this.state = {
-      passes: [],
-      violations: [],
-    };
-    this.channel = addons.getChannel();
+  static propTypes = {
+    active: PropTypes.bool.isRequired,
+    channel: PropTypes.shape({
+      on: PropTypes.func,
+      emit: PropTypes.func,
+      removeListener: PropTypes.func,
+    }).isRequired,
+  };
 
-    this.onUpdate = this.onUpdate.bind(this);
-  }
+  state = {
+    passes: [],
+    violations: [],
+  };
 
   componentDidMount() {
-    this.channel.on(CHECK_EVENT_ID, this.onUpdate);
+    this.props.channel.on(CHECK_EVENT_ID, this.onUpdate);
+    this.props.channel.on(STORY_RENDERED, this.requestCheck);
+    this.props.channel.on(RERUN_EVENT_ID, this.requestCheck);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.active && this.props.active) {
+      this.requestCheck();
+    }
   }
 
   componentWillUnmount() {
-    this.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
+    this.props.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
+    this.props.channel.removeListener(STORY_RENDERED, this.requestCheck);
+    this.props.channel.removeListener(RERUN_EVENT_ID, this.requestCheck);
   }
 
-  onUpdate({ passes, violations }) {
+  onUpdate = ({ passes, violations }) => {
     this.setState({
       passes,
       violations,
     });
-  }
+  };
+
+  requestCheck = () => {
+    if (this.props.active) {
+      this.props.channel.emit(REQUEST_CHECK_EVENT_ID);
+    }
+  };
 
   render() {
     const { passes, violations } = this.state;
+    const { active } = this.props;
 
-    return (
-      <Tabs
-        tabs={[
-          {
-            label: <Violations>{violations.length} Violations</Violations>,
-            panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
-          },
-          {
-            label: <Passes>{passes.length} Passes</Passes>,
-            panel: <Report passes items={passes} empty="No a11y check passed" />,
-          },
-        ]}
-      />
-    );
+    return active ? (
+      <div>
+        <Tabs
+          tabs={[
+            {
+              label: <Violations>{violations.length} Violations</Violations>,
+              panel: <Report passes={false} items={violations} empty="No a11y violations found." />,
+            },
+            {
+              label: <Passes>{passes.length} Passes</Passes>,
+              panel: <Report passes items={passes} empty="No a11y check passed" />,
+            },
+          ]}
+        />
+        <ActionBar>
+          <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
+        </ActionBar>
+      </div>
+    ) : null;
   }
 }
 

@@ -36,7 +36,7 @@ export const docsData = {
     section: 'basics',
     title: 'Writing Stories',
     content: marked(`
-You need to write stories to show your components inside React Storybook.<br/>
+You need to write stories to show your components inside Storybook.<br/>
 We've a set of APIs allows you to write stories and do more with them.
 
 When you are writing stories, you can follow these guidelines<br/>

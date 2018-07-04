@@ -9,14 +9,12 @@ const Wrapper = styled('div')({
   margin: '12px 0',
 });
 
-const Item = styled('div')({
+const Item = styled('div')(({ theme }) => ({
   margin: '0 6px',
   padding: '5px',
-  border: '1px solid rgb(234, 234, 234)',
-  borderRadius: '2px',
-  color: 'rgb(130, 130, 130)',
-  fontSize: '12px',
-});
+  border: theme.mainBorder,
+  borderRadius: theme.mainBorderRadius,
+}));
 
 function Tags({ tags }) {
   return <Wrapper>{tags.map(tag => <Item key={tag}>{tag}</Item>)}</Wrapper>;

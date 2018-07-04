@@ -7,6 +7,7 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/pr
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './';
 
+// TODO: take from theme
 const highlighterTheme = {
   ...darcula,
   'pre[class*="language-"]': {
@@ -44,31 +45,27 @@ const styles = {
   },
 };
 
+const areLocationsEqual = (a, b) =>
+  a.startLoc.line === b.startLoc.line &&
+  a.startLoc.col === b.startLoc.col &&
+  a.endLoc.line === b.endLoc.line &&
+  a.endLoc.col === b.endLoc.col;
+
+const getLocationKeys = locationsMap =>
+  locationsMap
+    ? Array.from(Object.keys(locationsMap)).sort(
+        (key1, key2) => locationsMap[key1].startLoc.line - locationsMap[key2].startLoc.line
+      )
+    : [];
+
 export default class StoryPanel extends Component {
-  static areLocationsEqual(a, b) {
-    return (
-      a.startLoc.line === b.startLoc.line &&
-      a.startLoc.col === b.startLoc.col &&
-      a.endLoc.line === b.endLoc.line &&
-      a.endLoc.col === b.endLoc.col
-    );
-  }
-
-  static getLocationKeys(locationsMap) {
-    return locationsMap
-      ? Array.from(Object.keys(locationsMap)).sort(
-          (key1, key2) => locationsMap[key1].startLoc.line - locationsMap[key2].startLoc.line
-        )
-      : [];
-  }
-
   state = { source: '// Here will be dragons 🐉' };
 
   componentDidMount() {
     const { channel } = this.props;
 
     channel.on(EVENT_ID, ({ source, currentLocation, locationsMap }) => {
-      const locationsKeys = StoryPanel.getLocationKeys(locationsMap);
+      const locationsKeys = getLocationKeys(locationsMap);
 
       this.setState({
         source,
@@ -116,7 +113,7 @@ export default class StoryPanel extends Component {
     const story = this.createPart(storyRows, stylesheet, useInlineStyles);
     const storyKey = `${first}-${last}`;
 
-    if (StoryPanel.areLocationsEqual(location, currentLocation)) {
+    if (areLocationsEqual(location, currentLocation)) {
       return (
         <div key={storyKey} ref={this.setSelectedStoryRef} style={styles.selectedStory}>
           {story}
@@ -179,7 +176,8 @@ export default class StoryPanel extends Component {
   };
 
   render() {
-    return (
+    const { active } = this.props;
+    return active ? (
       <SyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
@@ -189,11 +187,12 @@ export default class StoryPanel extends Component {
       >
         {this.state.source}
       </SyntaxHighlighter>
-    );
+    ) : null;
   }
 }
 
 StoryPanel.propTypes = {
+  active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     selectStory: PropTypes.func.isRequired,
   }).isRequired,

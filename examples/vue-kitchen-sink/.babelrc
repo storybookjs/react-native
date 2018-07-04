@@ -6,7 +6,8 @@
   ],
   "env": {
     "test": {
-      "presets": ["env"]
+      "presets": ["env"],
+      "plugins": ["require-context-hook"]
     }
   }
 }

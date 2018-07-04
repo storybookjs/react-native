@@ -5,14 +5,14 @@ exports[`Storyshots ui/stories/Stories empty 1`] = `
   class="css-7w6khc"
 >
   <ul
-    style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+    class="css-h3ek8a"
   >
     <li
-      style="position:relative"
+      class="css-79elbk"
     >
       <span>
         <ul
-          style="padding-left:19px;list-style:none"
+          class="css-vq3qyb"
         />
       </span>
     </li>
@@ -25,17 +25,17 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
   class="css-7w6khc"
 >
   <ul
-    style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+    class="css-h3ek8a"
   >
     <li
-      style="position:relative"
+      class="css-79elbk"
     >
       <span>
         <ul
-          style="padding-left:19px;list-style:none"
+          class="css-vq3qyb"
         >
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="a"
@@ -43,9 +43,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -56,7 +54,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -69,10 +67,10 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     a
                   </div>
@@ -82,7 +80,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
             <span />
           </li>
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="b"
@@ -90,9 +88,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -103,7 +99,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -116,10 +112,10 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     b
                   </div>
@@ -128,22 +124,22 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
             </div>
             <span>
               <ul
-                style="padding-left:19px;list-style:none"
+                class="css-vq3qyb"
               >
                 <li
-                  style="position:relative"
+                  class="css-79elbk"
                 >
                   <a
-                    class="css-1enusis"
+                    class="css-1jhmhe9"
                     href="?selectedKind=b&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
-                    <div
-                      data-radium="true"
-                    >
+                    <div>
                       <div
-                        style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                        class="css-1si3szf"
                       >
-                        <div>
+                        <div
+                          class="css-0"
+                        >
                           b1
                         </div>
                       </div>
@@ -152,19 +148,19 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   <span />
                 </li>
                 <li
-                  style="position:relative"
+                  class="css-79elbk"
                 >
                   <a
-                    class="css-1xfwvjl"
+                    class="css-oato19"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
-                    <div
-                      data-radium="true"
-                    >
+                    <div>
                       <div
-                        style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                        class="css-1si3szf"
                       >
-                        <div>
+                        <div
+                          class="css-0"
+                        >
                           b2
                         </div>
                       </div>
@@ -187,17 +183,17 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
   class="css-7w6khc"
 >
   <ul
-    style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+    class="css-h3ek8a"
   >
     <li
-      style="position:relative"
+      class="css-79elbk"
     >
       <span>
         <ul
-          style="padding-left:19px;list-style:none"
+          class="css-vq3qyb"
         >
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="some"
@@ -205,9 +201,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -218,7 +212,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -231,10 +225,10 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     some
                   </div>
@@ -244,7 +238,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
             <span />
           </li>
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="another"
@@ -252,9 +246,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -265,7 +257,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -278,10 +270,10 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     another
                   </div>
@@ -290,10 +282,10 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
             </div>
             <span>
               <ul
-                style="padding-left:19px;list-style:none"
+                class="css-vq3qyb"
               >
                 <li
-                  style="position:relative"
+                  class="css-79elbk"
                 >
                   <div
                     data-name="space"
@@ -301,9 +293,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                     style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
                     tabindex="0"
                   >
-                    <div
-                      data-radium="true"
-                    >
+                    <div>
                       <div
                         style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                       >
@@ -314,7 +304,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                             fill="currentColor"
                             height="10"
                             preserveAspectRatio="xMidYMid meet"
-                            style="vertical-align:top;fill:#9DA5AB"
+                            style="vertical-align:top;fill:currentColor"
                             viewBox="0 0 40 40"
                             width="10"
                           >
@@ -327,10 +317,10 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                         </div>
                       </div>
                       <div
-                        style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                        class="css-1si3szf"
                       >
                         <div
-                          style="line-height:18px;padding:1px 0 5px"
+                          class="css-h8sbw5"
                         >
                           space
                         </div>
@@ -339,10 +329,10 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                   </div>
                   <span>
                     <ul
-                      style="padding-left:19px;list-style:none"
+                      class="css-vq3qyb"
                     >
                       <li
-                        style="position:relative"
+                        class="css-79elbk"
                       >
                         <div
                           data-name="20"
@@ -350,9 +340,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                           style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
                           tabindex="0"
                         >
-                          <div
-                            data-radium="true"
-                          >
+                          <div>
                             <div
                               style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                             >
@@ -363,7 +351,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                                   fill="currentColor"
                                   height="10"
                                   preserveAspectRatio="xMidYMid meet"
-                                  style="vertical-align:top;fill:#9DA5AB"
+                                  style="vertical-align:top;fill:currentColor"
                                   viewBox="0 0 40 40"
                                   width="10"
                                 >
@@ -376,10 +364,10 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               </div>
                             </div>
                             <div
-                              style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                              class="css-1si3szf"
                             >
                               <div
-                                style="line-height:18px;padding:1px 0 5px"
+                                class="css-h8sbw5"
                               >
                                 20
                               </div>
@@ -388,22 +376,22 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                         </div>
                         <span>
                           <ul
-                            style="padding-left:19px;list-style:none"
+                            class="css-vq3qyb"
                           >
                             <li
-                              style="position:relative"
+                              class="css-79elbk"
                             >
                               <a
-                                class="css-1enusis"
+                                class="css-1jhmhe9"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
-                                <div
-                                  data-radium="true"
-                                >
+                                <div>
                                   <div
-                                    style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                                    class="css-1si3szf"
                                   >
-                                    <div>
+                                    <div
+                                      class="css-0"
+                                    >
                                       b1
                                     </div>
                                   </div>
@@ -412,19 +400,19 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               <span />
                             </li>
                             <li
-                              style="position:relative"
+                              class="css-79elbk"
                             >
                               <a
-                                class="css-1xfwvjl"
+                                class="css-oato19"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
-                                <div
-                                  data-radium="true"
-                                >
+                                <div>
                                   <div
-                                    style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                                    class="css-1si3szf"
                                   >
-                                    <div>
+                                    <div
+                                      class="css-0"
+                                    >
                                       b2
                                     </div>
                                   </div>
@@ -453,17 +441,17 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
   class="css-7w6khc"
 >
   <ul
-    style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+    class="css-h3ek8a"
   >
     <li
-      style="position:relative"
+      class="css-79elbk"
     >
       <span>
         <ul
-          style="padding-left:19px;list-style:none"
+          class="css-vq3qyb"
         >
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="another"
@@ -471,9 +459,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -484,7 +470,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -497,10 +483,10 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     <span>
                       ano
@@ -519,10 +505,10 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
             </div>
             <span>
               <ul
-                style="padding-left:19px;list-style:none"
+                class="css-vq3qyb"
               >
                 <li
-                  style="position:relative"
+                  class="css-79elbk"
                 >
                   <div
                     data-name="space"
@@ -530,9 +516,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                     style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
                     tabindex="0"
                   >
-                    <div
-                      data-radium="true"
-                    >
+                    <div>
                       <div
                         style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                       >
@@ -543,7 +527,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                             fill="currentColor"
                             height="10"
                             preserveAspectRatio="xMidYMid meet"
-                            style="vertical-align:top;fill:#9DA5AB"
+                            style="vertical-align:top;fill:currentColor"
                             viewBox="0 0 40 40"
                             width="10"
                           >
@@ -556,10 +540,10 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                         </div>
                       </div>
                       <div
-                        style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                        class="css-1si3szf"
                       >
                         <div
-                          style="line-height:18px;padding:1px 0 5px"
+                          class="css-h8sbw5"
                         >
                           space
                         </div>
@@ -568,10 +552,10 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                   </div>
                   <span>
                     <ul
-                      style="padding-left:19px;list-style:none"
+                      class="css-vq3qyb"
                     >
                       <li
-                        style="position:relative"
+                        class="css-79elbk"
                       >
                         <div
                           data-name="20"
@@ -579,9 +563,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                           style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
                           tabindex="0"
                         >
-                          <div
-                            data-radium="true"
-                          >
+                          <div>
                             <div
                               style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                             >
@@ -592,7 +574,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                                   fill="currentColor"
                                   height="10"
                                   preserveAspectRatio="xMidYMid meet"
-                                  style="vertical-align:top;fill:#9DA5AB"
+                                  style="vertical-align:top;fill:currentColor"
                                   viewBox="0 0 40 40"
                                   width="10"
                                 >
@@ -605,10 +587,10 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               </div>
                             </div>
                             <div
-                              style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                              class="css-1si3szf"
                             >
                               <div
-                                style="line-height:18px;padding:1px 0 5px"
+                                class="css-h8sbw5"
                               >
                                 20
                               </div>
@@ -617,22 +599,22 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                         </div>
                         <span>
                           <ul
-                            style="padding-left:19px;list-style:none"
+                            class="css-vq3qyb"
                           >
                             <li
-                              style="position:relative"
+                              class="css-79elbk"
                             >
                               <a
-                                class="css-1enusis"
+                                class="css-1jhmhe9"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
-                                <div
-                                  data-radium="true"
-                                >
+                                <div>
                                   <div
-                                    style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                                    class="css-1si3szf"
                                   >
-                                    <div>
+                                    <div
+                                      class="css-0"
+                                    >
                                       b1
                                     </div>
                                   </div>
@@ -641,19 +623,19 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               <span />
                             </li>
                             <li
-                              style="position:relative"
+                              class="css-79elbk"
                             >
                               <a
-                                class="css-1xfwvjl"
+                                class="css-oato19"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
-                                <div
-                                  data-radium="true"
-                                >
+                                <div>
                                   <div
-                                    style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                                    class="css-1si3szf"
                                   >
-                                    <div>
+                                    <div
+                                      class="css-0"
+                                    >
                                       b2
                                     </div>
                                   </div>
@@ -682,17 +664,17 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
   class="css-7w6khc"
 >
   <ul
-    style="list-style:none;margin:0;padding:5px;font-family:-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif;font-size:15px;min-width:200px;margin-left:-19px"
+    class="css-h3ek8a"
   >
     <li
-      style="position:relative"
+      class="css-79elbk"
     >
       <span>
         <ul
-          style="padding-left:19px;list-style:none"
+          class="css-vq3qyb"
         >
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="some.name.item1"
@@ -700,9 +682,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -713,7 +693,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -726,10 +706,10 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     some.name.item1
                   </div>
@@ -739,7 +719,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
             <span />
           </li>
           <li
-            style="position:relative"
+            class="css-79elbk"
           >
             <div
               data-name="another.space.20"
@@ -747,9 +727,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
               style="cursor:pointer;position:relative;overflow:hidden;padding:0px 5px;display:block;z-index:1"
               tabindex="0"
             >
-              <div
-                data-radium="true"
-              >
+              <div>
                 <div
                   style="position:relative;display:inline-block;vertical-align:top;margin-left:-5px;height:24px;width:24px;transform-origin:50% 11px"
                 >
@@ -760,7 +738,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:#9DA5AB"
+                      style="vertical-align:top;fill:currentColor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -773,10 +751,10 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   </div>
                 </div>
                 <div
-                  style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                  class="css-1si3szf"
                 >
                   <div
-                    style="line-height:18px;padding:1px 0 5px"
+                    class="css-h8sbw5"
                   >
                     another.space.20
                   </div>
@@ -785,22 +763,22 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
             </div>
             <span>
               <ul
-                style="padding-left:19px;list-style:none"
+                class="css-vq3qyb"
               >
                 <li
-                  style="position:relative"
+                  class="css-79elbk"
                 >
                   <a
-                    class="css-1enusis"
+                    class="css-1jhmhe9"
                     href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
-                    <div
-                      data-radium="true"
-                    >
+                    <div>
                       <div
-                        style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                        class="css-1si3szf"
                       >
-                        <div>
+                        <div
+                          class="css-0"
+                        >
                           b1
                         </div>
                       </div>
@@ -809,19 +787,19 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   <span />
                 </li>
                 <li
-                  style="position:relative"
+                  class="css-79elbk"
                 >
                   <a
-                    class="css-1xfwvjl"
+                    class="css-oato19"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
-                    <div
-                      data-radium="true"
-                    >
+                    <div>
                       <div
-                        style="display:inline-block;vertical-align:top;max-width:calc(100% - 24px)"
+                        class="css-1si3szf"
                       >
-                        <div>
+                        <div
+                          class="css-0"
+                        >
                           b2
                         </div>
                       </div>

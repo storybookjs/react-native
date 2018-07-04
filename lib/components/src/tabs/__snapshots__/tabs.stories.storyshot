@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Tabs stateful - dynamic 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-8a9ncn"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #1
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </button>
+      <button
+        class="css-1hf831j"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </button>
+    </div>
+    <div
+      class="css-1bx5ylf"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs stateful - no initial 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-8a9ncn"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-1hf831j"
+        role="tab"
+        type="button"
+      >
+        Tab title #1
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </button>
+    </div>
+    <div
+      class="css-1bx5ylf"
+    >
+      <div
+        id="test1"
+      >
+        CONTENT 1
+      </div>
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs stateful - static 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-8a9ncn"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        With a function
+      </button>
+      <button
+        class="css-1hf831j"
+        role="tab"
+        type="button"
+      >
+        With markup
+      </button>
+    </div>
+    <div
+      class="css-1bx5ylf"
+    >
+      <div
+        class="css-13o7eu2"
+        role="tabpanel"
+      >
+        <div>
+          test2 is always active (but visually hidden)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs stateless - absolute 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-d7g4da"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #1
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </button>
+      <button
+        class="css-1hf831j"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </button>
+    </div>
+    <div
+      class="css-18lpvrh"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs stateless - bordered 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <div
+    class="css-8a9ncn"
+  >
+    <div
+      class="css-1whcqvw"
+      role="tablist"
+    >
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #1
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #2
+      </button>
+      <button
+        class="css-1hf831j"
+        role="tab"
+        type="button"
+      >
+        Tab with scroll
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #4
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #5
+      </button>
+      <button
+        class="css-xcko46"
+        role="tab"
+        type="button"
+      >
+        Tab title #6
+      </button>
+    </div>
+    <div
+      class="css-1bx5ylf"
+    >
+      <div
+        id="test2"
+        style="background:hotpink;min-height:100%;display:none"
+      >
+        CONTENT 2
+      </div>
+      <div
+        id="test3"
+      >
+        <div
+          style="background:#000000;height:30.8px"
+        />
+        <div
+          style="background:#111111;height:31.3px"
+        />
+        <div
+          style="background:#222222;height:32.1px"
+        />
+        <div
+          style="background:#333333;height:33.4px"
+        />
+        <div
+          style="background:#444444;height:35.5px"
+        />
+        <div
+          style="background:#555555;height:38.9px"
+        />
+        <div
+          style="background:#666666;height:44.4px"
+        />
+        <div
+          style="background:#777777;height:53.3px"
+        />
+        <div
+          style="background:#888888;height:67.7px"
+        />
+        <div
+          style="background:#999999;height:91px"
+        />
+        <div
+          style="background:#aaaaaa;height:128.7px"
+        />
+        <div
+          style="background:#bbbbbb;height:189.7px"
+        />
+        <div
+          style="background:#cccccc;height:288.4px"
+        />
+        <div
+          style="background:#dddddd;height:448.1px"
+        />
+        <div
+          style="background:#eeeeee;height:706.5px"
+        />
+      </div>
+      <div
+        class="css-1hyfx7x"
+      >
+        <div>
+          CONTENT 6
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Tabs stateless - empty 1`] = `
+<div
+  style="height:calc(100vh - 20px)"
+>
+  <p
+    class="css-hftiue"
+  >
+    no panels available
+  </p>
+</div>
+`;
