@@ -7,6 +7,8 @@
     -   [Removed addWithInfo](#removed-add-with-info)
     -   [Removed RN addons](#removed-rn-addons)
     -   [Storyshots changes](#storyshots-changes)
+    -   [Webpack 4](#webpack-4)
+    -   [Babel 7](#babel-7)
 -   [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 -   [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     -   [Refactored Knobs](#refactored-knobs)
@@ -53,6 +55,25 @@ snapshot-name generation. [README](https://github.com/storybooks/storybook/tree/
 will need to add a babel plugin to polyfill this functionality. 
 A possible plugin might be [babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
 [README](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core#configure-jest-to-work-with-webpacks-requirecontext)
+
+### Webpack 4
+
+Storybook now uses webpack 4. If you have a [custom webpack config](https://storybook.js.org/configurations/custom-webpack-config/), make sure that all the loaders and plugins you use support webpack 4.
+
+### Babel 7
+
+Storybook now uses Babel 7. There's some chance that it will still work with your Babel 6 based application. If it doesn't, you can override the loader for JS files using [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode):
+
+```js
+module.exports = (baseConfig, env, defaultConfig) => {
+  defaultConfig.module.rules[0].use = {
+    loader: 'babel-loader',
+  };
+  return defaultConfig;
+};
+```
+
+In that case, please make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
 
 ## From version 3.3.x to 3.4.x
 
