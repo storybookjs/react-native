@@ -45,7 +45,7 @@ export const withTests = userOptions => {
       },
     ] = args;
 
-    if (testFiles && !testFiles.skip) {
+    if (testFiles && !testFiles.disable) {
       emitAddTests({ kind, story, testFiles, options });
     }
 

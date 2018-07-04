@@ -123,10 +123,20 @@ storiesOf('MyComponent', module)
   );
 ```
 
+### Disabling
+
+You can disable the addon for a single story by setting the `jest` parameter to `{disabled: true}`:
+
+```js
+storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled herek</div>, {
+  jest: disabled,
+});
+```
+
 ### withTests(options)
 
-* **options.results**: OBJECT jest output results. _mandatory_
-* **filesExt**: STRING test file extention. _optional_. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
+- **options.results**: OBJECT jest output results. _mandatory_
+- **filesExt**: STRING test file extention. _optional_. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## Usage with Angular
 
@@ -174,12 +184,12 @@ storiesOf('MyComponent', module)
 
 ## TODO
 
-* [ ] Add coverage
-* [ ] Display nested test better (describe)
-* [ ] Display the date of the test
-* [ ] Add unit tests
-* [ ] Add linting
-* [ ] Split <TestPanel />
+- [ ] Add coverage
+- [ ] Display nested test better (describe)
+- [ ] Display the date of the test
+- [ ] Add unit tests
+- [ ] Add linting
+- [ ] Split <TestPanel />
 
 ## Contributing
 
