@@ -2,7 +2,8 @@
   "presets": [
     "@babel/preset-env",
     ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-flow"
   ],
   "plugins": [
     "babel-plugin-emotion",
@@ -17,12 +18,17 @@
   ],
   "env": {
     "test": {
+      "plugins": ["babel-plugin-require-context-hook"]
+    }
+  },
+  "overrides": [
+    {
+      "test": "./examples/vue-kitchen-sink",
       "presets": [
         "@babel/preset-env",
         ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
-        "@babel/preset-react"
-      ],
-      "plugins": ["babel-plugin-require-context-hook"]
+        "babel-preset-vue"
+      ]
     }
-  }
+  ]
 }

@@ -2,7 +2,7 @@
 
 exports[`Storyshots ui/stories/Stories empty 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -22,7 +22,7 @@ exports[`Storyshots ui/stories/Stories empty 1`] = `
 
 exports[`Storyshots ui/stories/Stories simple 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -130,7 +130,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   class="css-79elbk"
                 >
                   <a
-                    class="css-1jhmhe9"
+                    class="css-1jhmhe9 e1s7lmdh0"
                     href="?selectedKind=b&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -151,7 +151,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
                   class="css-79elbk"
                 >
                   <a
-                    class="css-oato19"
+                    class="css-oato19 e1s7lmdh0"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -180,7 +180,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
 
 exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is defined 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -382,7 +382,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               class="css-79elbk"
                             >
                               <a
-                                class="css-1jhmhe9"
+                                class="css-1jhmhe9 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -403,7 +403,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
                               class="css-79elbk"
                             >
                               <a
-                                class="css-oato19"
+                                class="css-oato19 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -438,7 +438,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
 
 exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is provided 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -605,7 +605,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               class="css-79elbk"
                             >
                               <a
-                                class="css-1jhmhe9"
+                                class="css-1jhmhe9 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -626,7 +626,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
                               class="css-79elbk"
                             >
                               <a
-                                class="css-oato19"
+                                class="css-oato19 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -661,7 +661,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
 
 exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is defined 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -769,7 +769,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   class="css-79elbk"
                 >
                   <a
-                    class="css-1jhmhe9"
+                    class="css-1jhmhe9 e1s7lmdh0"
                     href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -790,7 +790,7 @@ exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is
                   class="css-79elbk"
                 >
                   <a
-                    class="css-oato19"
+                    class="css-oato19 e1s7lmdh0"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>

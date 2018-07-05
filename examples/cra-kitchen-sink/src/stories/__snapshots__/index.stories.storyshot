@@ -92,7 +92,7 @@ exports[`Storyshots Button addons composition 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div>
@@ -181,10 +181,10 @@ exports[`Storyshots Button addons composition 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-zvhq5i eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -296,7 +296,7 @@ exports[`Storyshots Button with new info 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div>
@@ -385,10 +385,10 @@ exports[`Storyshots Button with new info 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-zvhq5i eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -415,32 +415,32 @@ exports[`Storyshots Button with new info 1`] = `
               "Container" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -449,47 +449,47 @@ exports[`Storyshots Button with new info 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     children
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     isAmazing
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -498,27 +498,27 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     age
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -555,27 +555,27 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     title
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#22a;word-break:break-word"
@@ -584,7 +584,7 @@ exports[`Storyshots Button with new info 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -609,7 +609,7 @@ exports[`Storyshots Button with new info 1`] = `
 
 exports[`Storyshots Button with notes 1`] = `
 <button
-  class="css-1qwzad5"
+  class="css-1qwzad5 eux70yo0"
 >
   Check my notes in the notes panel
 </button>
@@ -617,7 +617,7 @@ exports[`Storyshots Button with notes 1`] = `
 
 exports[`Storyshots Button with some emoji 1`] = `
 <button
-  class="css-1qwzad5"
+  class="css-1qwzad5 eux70yo0"
 >
   <span
     aria-label="so cool"
@@ -630,7 +630,7 @@ exports[`Storyshots Button with some emoji 1`] = `
 
 exports[`Storyshots Button with text 1`] = `
 <button
-  class="css-1qwzad5"
+  class="css-1qwzad5 eux70yo0"
 >
   Hello Button
 </button>
@@ -650,7 +650,7 @@ exports[`Storyshots Some really long story kind description with text 1`] = `
     style="margin:auto;max-height:100%"
   >
     <button
-      class="css-1qwzad5"
+      class="css-1qwzad5 eux70yo0"
     >
       Hello Button
     </button>

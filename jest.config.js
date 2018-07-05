@@ -21,7 +21,7 @@ module.exports = {
     '<rootDir>/examples/angular-cli',
   ],
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.jsx?$': './babel-jest',
     '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
   },

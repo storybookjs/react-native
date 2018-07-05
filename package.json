@@ -62,6 +62,7 @@
     "babel-plugin-emotion": "^9.2.4",
     "babel-plugin-macros": "^2.2.2",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.1",
     "codecov": "^3.0.2",
     "codelyzer": "^4.3.0",

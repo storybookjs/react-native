@@ -2,10 +2,10 @@
 
 exports[`Storyshots Addons|Events Logger 1`] = `
 <div
-  class="css-1ruxp1v"
+  class="css-1ruxp1v e1igy6c50"
 >
   <h1
-    class="css-1uk1gs8"
+    class="css-1uk1gs8 e1igy6c51"
   >
     Logger
   </h1>
@@ -15,10 +15,10 @@ exports[`Storyshots Addons|Events Logger 1`] = `
 
 exports[`Storyshots Addons|Events/WithEvents (deprecated) Logger 1`] = `
 <div
-  class="css-1ruxp1v"
+  class="css-1ruxp1v e1igy6c50"
 >
   <h1
-    class="css-1uk1gs8"
+    class="css-1uk1gs8 e1igy6c51"
   >
     Logger
   </h1>
