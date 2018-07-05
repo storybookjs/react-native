@@ -125,11 +125,11 @@ storiesOf('MyComponent', module)
 
 ### Disabling
 
-You can disable the addon for a single story by setting the `jest` parameter to `{disabled: true}`:
+You can disable the addon for a single story by setting the `jest` parameter to `{disable: true}`:
 
 ```js
-storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled herek</div>, {
-  jest: disabled,
+storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled here</div>, {
+  jest: { disable: true },
 });
 ```
 
