@@ -25,7 +25,7 @@ module.exports = {
     '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
   },
-  testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
