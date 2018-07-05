@@ -72,7 +72,7 @@ You could create a `prebuild:storybook` npm script, which will never fail by app
 Register addon at `.storybook/addons.js`
 
 ```js
-import '@storybook/addon-jest/register';
+import "@storybook/addon-jest/register";
 ```
 
 ## Usage
@@ -82,16 +82,16 @@ Assuming that you have created a test files `MyComponent.test.js` and `MyOtherCo
 In your `story.js`
 
 ```js
-import results from '../.jest-test-results.json';
-import { withTests } from '@storybook/addon-jest';
+import results from "../.jest-test-results.json";
+import { withTests } from "@storybook/addon-jest";
 
-storiesOf('MyComponent', module)
+storiesOf("MyComponent", module)
   .addDecorator(withTests({ results }))
   .add(
-    'This story shows test results from MyComponent.test.js and MyOtherComponent.test.js',
+    "This story shows test results from MyComponent.test.js and MyOtherComponent.test.js",
     () => <div>Jest results in storybook</div>,
     {
-      jest: ['MyComponent.test.js', 'MyOtherComponent.test.js'],
+      jest: ["MyComponent.test.js", "MyOtherComponent.test.js"]
     }
   );
 ```
@@ -99,14 +99,14 @@ storiesOf('MyComponent', module)
 Or in order to avoid importing `.jest-test-results.json` in each story, simply add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
 
 ```js
-import { addDecorator } from '@storybook/react'; // <- or your view layer
-import { withTests } from '@storybook/addon-jest';
+import { addDecorator } from "@storybook/react"; // <- or your view layer
+import { withTests } from "@storybook/addon-jest";
 
-import results from '../.jest-test-results.json';
+import results from "../.jest-test-results.json";
 
 addDecorator(
   withTests({
-    results,
+    results
   })
 );
 ```
@@ -114,23 +114,27 @@ addDecorator(
 Then in your story:
 
 ```js
-storiesOf('MyComponent', module)
+storiesOf("MyComponent", module)
   // Use .addParameters if you want the same tests displayed for all stories of the component
-  .addParameters({ jest: ['MyComponent', 'MyOtherComponent'] })
+  .addParameters({ jest: ["MyComponent", "MyOtherComponent"] })
   .add(
-    'This story shows test results from MyComponent.test.js and MyOtherComponent.test.js',
+    "This story shows test results from MyComponent.test.js and MyOtherComponent.test.js",
     () => <div>Jest results in storybook</div>
   );
 ```
 
 ### Disabling
 
-You can disable the addon for a single story by setting the `jest` parameter to `{disabled: true}`:
+You can disable the addon for a single story by setting the `jest` parameter to `{disable: true}`:
 
 ```js
-storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled herek</div>, {
-  jest: disabled,
-});
+storiesOf("MyComponent", module).add(
+  "Story",
+  () => <div>Jest results disabled herek</div>,
+  {
+    jest: { disable: true }
+  }
+);
 ```
 
 ### withTests(options)
@@ -147,7 +151,7 @@ Configure Jest with [jest-preset-angular](https://www.npmjs.com/package/jest-pre
 In project`s`typings.d.ts` add
 
 ```ts
-declare module '*.json' {
+declare module "*.json" {
   const value: any;
   export default value;
 }
@@ -156,15 +160,15 @@ declare module '*.json' {
 In your `.storybook/config.ts`:
 
 ```ts
-import { addDecorator } from '@storybook/angular';
-import { withTests } from '@storybook/addon-jest';
+import { addDecorator } from "@storybook/angular";
+import { withTests } from "@storybook/addon-jest";
 
-import * as results from '../.jest-test-results.json';
+import * as results from "../.jest-test-results.json";
 
 addDecorator(
   withTests({
     results,
-    filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$',
+    filesExt: "((\\.specs?)|(\\.tests?))?(\\.ts)?$"
   })
 );
 ```
@@ -172,10 +176,10 @@ addDecorator(
 Then in your story:
 
 ```js
-storiesOf('MyComponent', module)
-  .addParameters({ jest: ['my.component', 'my-other.component'] })
+storiesOf("MyComponent", module)
+  .addParameters({ jest: ["my.component", "my-other.component"] })
   .add(
-    'This story shows test results from my.component.spec.ts and my-other.component.spec.ts',
+    "This story shows test results from my.component.spec.ts and my-other.component.spec.ts",
     () => <div>Jest results in storybook</div>
   );
 ```
