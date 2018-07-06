@@ -30,7 +30,6 @@
     "@storybook/ui": "4.0.0-alpha.12",
     "airbnb-js-shims": "^1.6.0",
     "autoprefixer": "^8.6.0",
-    "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-macros": "^2.2.2",
     "babel-preset-minify": "canary",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
@@ -68,7 +67,8 @@
     "mock-fs": "^4.5.0"
   },
   "peerDependencies": {
-    "@babel/core": ">=7.0.0-beta.41 <8.0.0",
+    "babel-core": "^6.26.0 || ^7.0.0-0",
+    "babel-loader": "^7.0.0 || ^8.0.0",
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0"
   }

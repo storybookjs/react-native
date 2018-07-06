@@ -42,6 +42,7 @@
     "@angular/forms": ">=6.0.0",
     "@angular/platform-browser": ">=6.0.0",
     "@angular/platform-browser-dynamic": ">=6.0.0",
-    "@babel/core": ">=7.0.0-beta.41 <8.0.0"
+    "babel-core": "^6.26.0 || ^7.0.0-0",
+    "babel-loader": "^7.0.0 || ^8.0.0"
   }
 }

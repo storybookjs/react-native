@@ -12,8 +12,10 @@
     "@polymer/polymer": "^2.2.0"
   },
   "devDependencies": {
-    "@storybook/polymer": "^4.0.0-alpha.12",
-    "@babel/core": "^7.0.0-beta.51",
+    "@storybook/polymer": "^3.4.8",
+    "babel-core": "^7.0.0-bridge.0",
+    "@babel/core": "^7.0.0-beta.52",
+    "babel-loader": "^8.0.0-beta.4",
     "polymer-webpack-loader": "^2.0.2"
   }
 }

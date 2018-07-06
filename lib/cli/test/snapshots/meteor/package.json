@@ -14,14 +14,14 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.0.0-beta.51",
-    "@babel/preset-react": "^7.0.0-beta.51",
-    "@babel/preset-stage-0": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.52",
+    "@babel/preset-react": "^7.0.0-beta.52",
+    "@babel/preset-stage-0": "^7.0.0-beta.52",
     "babel-root-slash-import": "^1.1.0",
-    "@babel/core": "^7.0.0-beta.51",
-    "@storybook/react": "^4.0.0-alpha.12",
-    "@storybook/addon-actions": "^4.0.0-alpha.12",
-    "@storybook/addon-links": "^4.0.0-alpha.12",
-    "@storybook/addons": "^4.0.0-alpha.12"
+    "@babel/core": "^7.0.0-beta.52",
+    "@storybook/react": "^3.4.8",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8"
   }
 }

@@ -62,18 +62,13 @@ Storybook now uses webpack 4. If you have a [custom webpack config](https://stor
 
 ### Babel 7
 
-Storybook now uses Babel 7. There's some chance that it will still work with your Babel 6 based application. If it doesn't, you can override the loader for JS files using [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode):
+Storybook now uses Babel 7. There's a couple of cases when it can break with your app:
 
-```js
-module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules[0].use = {
-    loader: 'babel-loader',
-  };
-  return defaultConfig;
-};
-```
-
-In that case, please make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
+  * If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
+    ```
+    npm i -D babel-core@bridge @babel/core babel-loader@next
+    ```
+  * If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
 
 ## From version 3.3.x to 3.4.x
 
