@@ -35,11 +35,19 @@ import { action } from '@storybook/addon-actions';
 
 import Button from './Button';
 
-storiesOf('Button', module)
-  .add('with some emoji', () => (
-     () => <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>),
-     { notes: 'A very simple component' }
-  ));
+storiesOf('Button', module).add(
+  'with some emoji',
+  () => (
+    () => (
+      <Button onClick={action('clicked')}>
+        <span role="img" aria-label="so cool">
+          😀 😎 👍 💯
+        </span>
+      </Button>
+    ),
+    { notes: 'A very simple component' }
+  )
+);
 ```
 
 Then you'll be able to see those notes when you are viewing the story.
