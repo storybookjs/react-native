@@ -47,8 +47,13 @@ storiesOf('Addons|Notes', module)
   .add('withNotes rendering inline, github-flavored markdown', baseStory, {
     notes: { markdown: markdownString },
   })
-  .add('using decorator arguments, withNotes', withNotes('Notes into withNotes')(baseStory))
-  .add('using decorator arguments, withMarkdownNotes', withMarkdownNotes(markdownString)(baseStory))
   .add('with a markdown table', baseStory, {
     notes: { markdown: markdownTable },
   });
+
+storiesOf('Addons|Notes.deprecated', module)
+  .add('using decorator arguments, withNotes', withNotes('Notes into withNotes')(baseStory))
+  .add(
+    'using decorator arguments, withMarkdownNotes',
+    withMarkdownNotes(markdownString)(baseStory)
+  );
