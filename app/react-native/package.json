@@ -29,7 +29,7 @@
     "@storybook/channel-websocket": "4.0.0-alpha.12",
     "@storybook/core": "4.0.0-alpha.12",
     "@storybook/core-events": "4.0.0-alpha.12",
-    "@storybook/react-dev-utils": "^5.0.0",
+    "react-dev-utils": "next",
     "@storybook/ui": "4.0.0-alpha.12",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.2",

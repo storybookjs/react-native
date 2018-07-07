@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@storybook/core": "4.0.0-alpha.12",
-    "@storybook/react-dev-utils": "^5.0.0",
+    "react-dev-utils": "next",
     "babel-plugin-react-docgen": "^2.0.0-rc.1",
     "babel-preset-react": "^6.24.1",
     "common-tags": "^1.8.0",

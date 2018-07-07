@@ -21,7 +21,7 @@
     "@storybook/client-logger": "4.0.0-alpha.12",
     "@storybook/core-events": "4.0.0-alpha.12",
     "@storybook/node-logger": "4.0.0-alpha.12",
-    "@storybook/react-dev-utils": "^5.0.0",
+    "react-dev-utils": "next",
     "@storybook/ui": "4.0.0-alpha.12",
     "airbnb-js-shims": "^1.6.0",
     "autoprefixer": "^8.6.0",
