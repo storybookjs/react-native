@@ -72,7 +72,7 @@ storiesOf('Component', module)
   .add(
     'with some emoji',
     () => <Component emoji />,
-    { info: { inline: false, header: false } } // Make your component render inline with the additional info
+    { info: { inline: true, header: false } } // Make your component render inline with the additional info
   )
   .add(
     'with no emoji',
