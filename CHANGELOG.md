@@ -1,3 +1,19 @@
+# 4.0.0-alpha.13
+
+2018-July-09
+
+#### Features
+
+-   Refactor addon-jest to use a parameter-based pattern [#3678](https://github.com/storybooks/storybook/pull/3678)
+
+#### Bug Fixes
+
+-   Upgrade universal-dotenv to fix babel-runtime [#3863](https://github.com/storybooks/storybook/pull/3863)
+
+#### Maintenance
+
+-   Added a test for parameter combination [#3844](https://github.com/storybooks/storybook/pull/3844)
+
 # 4.0.0-alpha.12
 
 2018-July-03
