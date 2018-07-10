@@ -58,7 +58,7 @@
     "shelljs": "^0.8.2",
     "style-loader": "^0.21.0",
     "svg-url-loader": "^2.3.2",
-    "universal-dotenv": "^1.5.1",
+    "universal-dotenv": "^1.7.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.10.2",
     "webpack-dev-middleware": "^3.1.3",
