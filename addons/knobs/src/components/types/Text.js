@@ -3,27 +3,16 @@ import React from 'react';
 
 import { Textarea } from '@storybook/components';
 
-class TextType extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    if (!state || props.knob.value !== state.value) {
-      return { value: props.knob.value };
-    }
-    return null;
-  }
-
+class TextType extends React.PureComponent {
   handleChange = event => {
     const { value } = event.target;
-
-    this.setState({ value });
-
     this.props.onChange(value);
   };
 
   render() {
     const { knob } = this.props;
-    const { value } = this.state;
 
-    return <Textarea id={knob.name} value={value} onChange={this.handleChange} size="flex" />;
+    return <Textarea id={knob.name} value={knob.value} onChange={this.handleChange} size="flex" />;
   }
 }
 

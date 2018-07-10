@@ -32,18 +32,9 @@ const RangeWrapper = styled('div')({
   width: '100%',
 });
 
-class NumberType extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    if (!state || props.knob.value !== state.value) {
-      return { value: props.knob.value };
-    }
-    return null;
-  }
-
+class NumberType extends React.PureComponent {
   handleChange = event => {
     const { value } = event.target;
-
-    this.setState({ value });
 
     let parsedValue = Number(value);
 
@@ -56,24 +47,23 @@ class NumberType extends React.Component {
 
   render() {
     const { knob } = this.props;
-    const { value } = this.state;
 
     return knob.range ? (
       <RangeWrapper>
         <RangeLabel>{knob.min}</RangeLabel>
         <RangeInput
-          value={value}
+          value={knob.value}
           type="range"
           min={knob.min}
           max={knob.max}
           step={knob.step}
           onChange={this.handleChange}
         />
-        <RangeLabel>{`${value} / ${knob.max}`}</RangeLabel>
+        <RangeLabel>{`${knob.value} / ${knob.max}`}</RangeLabel>
       </RangeWrapper>
     ) : (
       <Input
-        value={value}
+        value={knob.value}
         type="number"
         min={knob.min}
         max={knob.max}

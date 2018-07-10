@@ -10,28 +10,18 @@ function formatArray(value, separator) {
   return value.split(separator);
 }
 
-class ArrayType extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    if (!state || props.knob.value !== state.value) {
-      return { value: props.knob.value };
-    }
-    return null;
-  }
-
+class ArrayType extends React.PureComponent {
   handleChange = e => {
     const { knob } = this.props;
     const { value } = e.target;
     const newVal = formatArray(value, knob.separator);
-
-    this.setState({ value });
     this.props.onChange(newVal);
   };
 
   render() {
     const { knob } = this.props;
-    const { value } = this.state;
 
-    return <Textarea id={knob.name} value={value} onChange={this.handleChange} size="flex" />;
+    return <Textarea id={knob.name} value={knob.value} onChange={this.handleChange} size="flex" />;
   }
 }
 
