@@ -32,7 +32,11 @@ const RangeWrapper = styled('div')({
   width: '100%',
 });
 
-class NumberType extends React.PureComponent {
+class NumberType extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
+  }
+
   handleChange = event => {
     const { value } = event.target;
 

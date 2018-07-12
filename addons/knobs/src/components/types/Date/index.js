@@ -8,7 +8,11 @@ import style from './styles';
 
 const DateInput = styled(Datetime)(style);
 
-class DateType extends React.PureComponent {
+class DateType extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
+  }
+
   handleChange = date => {
     const value = date.valueOf();
     this.props.onChange(value);

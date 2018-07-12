@@ -10,7 +10,11 @@ function formatArray(value, separator) {
   return value.split(separator);
 }
 
-class ArrayType extends React.PureComponent {
+class ArrayType extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
+  }
+
   handleChange = e => {
     const { knob } = this.props;
     const { value } = e.target;

@@ -3,7 +3,11 @@ import React from 'react';
 
 import { Textarea } from '@storybook/components';
 
-class TextType extends React.PureComponent {
+class TextType extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
+  }
+
   handleChange = event => {
     const { value } = event.target;
     this.props.onChange(value);

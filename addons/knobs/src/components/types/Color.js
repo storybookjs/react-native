@@ -19,13 +19,16 @@ const Popover = styled('div')({
   zIndex: '2',
 });
 
-class ColorType extends React.PureComponent {
+class ColorType extends React.Component {
   state = {
     displayColorPicker: false,
   };
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWindowMouseDown);
+  }
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
   }
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleWindowMouseDown);
