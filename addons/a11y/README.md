@@ -69,7 +69,7 @@ storiesOf('button', module)
 
 If you want to add a11y globally to your stories, you can use the global Storybook decorator in your *.storybook/config.js* file:
 
-```
+```js
 import { configure, addDecorator } from '@storybook/react';
 import { checkA11y } from '@storybook/addon-a11y';
 
