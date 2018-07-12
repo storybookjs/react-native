@@ -1,3 +1,11 @@
+# 4.0.0-alpha.14
+
+2018-July-11
+
+#### Bug Fixes
+
+-   Upgrade universal-dotenv to fix core-js dependency [#3874](https://github.com/storybooks/storybook/pull/3874)
+
 # 4.0.0-alpha.13
 
 2018-July-09
