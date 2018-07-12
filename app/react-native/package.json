@@ -58,7 +58,7 @@
     "react-native-compat": "^1.0.0",
     "react-native-iphone-x-helper": "^1.0.3",
     "shelljs": "^0.8.2",
-    "universal-dotenv": "^1.7.0",
+    "universal-dotenv": "^1.8.0",
     "url-parse": "^1.4.0",
     "uuid": "^3.2.1",
     "webpack": "^4.10.2",

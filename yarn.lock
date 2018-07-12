@@ -17797,12 +17797,13 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.1:
   dependencies:
     unist-util-is "^2.1.1"
 
-universal-dotenv@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/universal-dotenv/-/universal-dotenv-1.7.0.tgz#00137fa5ac99920924b93aa636d11977f1175677"
+universal-dotenv@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/universal-dotenv/-/universal-dotenv-1.8.0.tgz#200764f704d7a516bb564253b5c1b77eb7802e3d"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.52"
     app-root-dir "^1.0.2"
+    core-js "^2.5.7"
     dotenv "^6.0.0"
     dotenv-expand "^4.2.0"
 
