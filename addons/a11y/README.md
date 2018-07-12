@@ -67,6 +67,24 @@ storiesOf('button', module)
   ));
 ```
 
+If you want to add a11y globally to your stories, you can use the global Storybook decorator in your *.storybook/config.js* file:
+
+```
+import { configure, addDecorator } from '@storybook/react';
+import { checkA11y } from '@storybook/addon-a11y';
+
+// pick all stories.js files within the src/ folder
+const req = require.context('../src', true, /stories\.js$/);
+
+addDecorator(checkA11y);
+
+function loadStories() {
+  req.keys().forEach(filename => req(filename));
+}
+
+configure(loadStories, module);
+```
+
 ## Roadmap
 
 * Make UI accessibile
