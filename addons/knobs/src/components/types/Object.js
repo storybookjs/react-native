@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
+import { polyfill } from 'react-lifecycles-compat';
 import { Textarea } from '@storybook/components';
 
 class ObjectType extends Component {
@@ -23,7 +24,7 @@ class ObjectType extends Component {
     const { value } = e.target;
 
     try {
-      const json = JSON.parse(e.target.value.trim());
+      const json = JSON.parse(value.trim());
       this.setState({
         value,
         json,
@@ -64,5 +65,7 @@ ObjectType.propTypes = {
 
 ObjectType.serialize = object => JSON.stringify(object);
 ObjectType.deserialize = value => (value ? JSON.parse(value) : {});
+
+polyfill(ObjectType);
 
 export default ObjectType;
