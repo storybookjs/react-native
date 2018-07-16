@@ -130,7 +130,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                   class="css-79elbk"
                 >
                   <a
-                    class="css-1jhmhe9 e1s7lmdh0"
+                    class="css-1jhmhe9"
                     href="?selectedKind=b&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -151,7 +151,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                   class="css-79elbk"
                 >
                   <a
-                    class="css-oato19 e1s7lmdh0"
+                    class="css-oato19"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -382,7 +382,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                               class="css-79elbk"
                             >
                               <a
-                                class="css-1jhmhe9 e1s7lmdh0"
+                                class="css-1jhmhe9"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -403,7 +403,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                               class="css-79elbk"
                             >
                               <a
-                                class="css-oato19 e1s7lmdh0"
+                                class="css-oato19"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -605,7 +605,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                               class="css-79elbk"
                             >
                               <a
-                                class="css-1jhmhe9 e1s7lmdh0"
+                                class="css-1jhmhe9"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -626,7 +626,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                               class="css-79elbk"
                             >
                               <a
-                                class="css-oato19 e1s7lmdh0"
+                                class="css-oato19"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -769,7 +769,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                   class="css-79elbk"
                 >
                   <a
-                    class="css-1jhmhe9 e1s7lmdh0"
+                    class="css-1jhmhe9"
                     href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -790,7 +790,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                   class="css-79elbk"
                 >
                   <a
-                    class="css-oato19 e1s7lmdh0"
+                    class="css-oato19"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>

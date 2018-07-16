@@ -2,7 +2,7 @@
 
 exports[`Storyshots Another Button with some emoji 1`] = `
 <button
-  className="css-1qwzad5 eux70yo0"
+  className="css-1qwzad5"
   onClick={[Function]}
 >
   <span

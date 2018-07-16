@@ -15,7 +15,7 @@ exports[`Storyshots Another Button with some emoji 1`] = `
   onClick={[Function]}
 >
   <button
-    className="emotion-0 emotion-1"
+    className="emotion-0"
     onClick={[Function]}
   >
     <span
@@ -43,7 +43,7 @@ exports[`Storyshots Another Button with text 1`] = `
   onClick={[Function]}
 >
   <button
-    className="emotion-0 emotion-1"
+    className="emotion-0"
     onClick={[Function]}
   >
     Hello Button
@@ -66,7 +66,7 @@ exports[`Storyshots Button with some emoji 1`] = `
   onClick={[Function]}
 >
   <button
-    className="emotion-0 emotion-1"
+    className="emotion-0"
     onClick={[Function]}
   >
     <span
@@ -94,7 +94,7 @@ exports[`Storyshots Button with text 1`] = `
   onClick={[Function]}
 >
   <button
-    className="emotion-0 emotion-1"
+    className="emotion-0"
     onClick={[Function]}
   >
     Hello Button
@@ -103,14 +103,14 @@ exports[`Storyshots Button with text 1`] = `
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-.emotion-18 {
+.emotion-9 {
   margin: 15px;
   max-width: 600px;
   line-height: 1.4;
   font-family: "Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;
 }
 
-.emotion-2 {
+.emotion-1 {
   font-size: 15px;
   font-weight: 600;
   padding: 2px 5px;
@@ -120,7 +120,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   color: #3a3a3a;
 }
 
-.emotion-4 {
+.emotion-2 {
   color: #1474f3;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -135,7 +135,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   font: inherit;
 }
 
-.emotion-12 {
+.emotion-6 {
   color: #1474f3;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -143,7 +143,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   padding-bottom: 2px;
 }
 
-.emotion-16 {
+.emotion-8 {
   opacity: 0.5;
 }
 
@@ -152,11 +152,11 @@ exports[`Storyshots Welcome to Storybook 1`] = `
 >
   <Styled(article)>
     <article
-      className="emotion-18 emotion-19"
+      className="emotion-9"
     >
       <Styled(h1)>
         <h1
-          className="emotion-0 emotion-1"
+          className="emotion-0"
         >
           Welcome to storybook
         </h1>
@@ -168,7 +168,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         We've added some basic stories inside the 
         <Styled(code)>
           <code
-            className="emotion-2 emotion-3"
+            className="emotion-1"
           >
             src/stories
           </code>
@@ -185,7 +185,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           onClick={[Function]}
         >
           <button
-            className="emotion-4 emotion-5"
+            className="emotion-2"
             onClick={[Function]}
           >
             stories
@@ -195,7 +195,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
          
         <Styled(code)>
           <code
-            className="emotion-2 emotion-3"
+            className="emotion-1"
           >
             Button
           </code>
@@ -210,7 +210,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
         (Try editing the 
         <Styled(code)>
           <code
-            className="emotion-2 emotion-3"
+            className="emotion-1"
           >
             Button
           </code>
@@ -219,7 +219,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
          
         <Styled(code)>
           <code
-            className="emotion-2 emotion-3"
+            className="emotion-1"
           >
             src/stories/index.js
           </code>
@@ -237,7 +237,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           target="_blank"
         >
           <a
-            className="emotion-12 emotion-13"
+            className="emotion-6"
             href="https://storybook.js.org/basics/writing-stories"
             rel="noopener noreferrer"
             target="_blank"
@@ -250,7 +250,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       </p>
       <Styled(p)>
         <p
-          className="emotion-16 emotion-17"
+          className="emotion-8"
         >
           <b>
             NOTE:
@@ -259,7 +259,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           Have a look at the 
           <Styled(code)>
             <code
-              className="emotion-2 emotion-3"
+              className="emotion-1"
             >
               .storybook/webpack.config.js
             </code>

@@ -3,102 +3,102 @@
 exports[`Storyshots Addons|Actions All types 1`] = `
 <div>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Array
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Boolean
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Empty Object
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     File
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Function A
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Bound Function A
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Infinity
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     -Infinity
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     NaN
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     null
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Number
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Multiple
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Plain Object
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Object (depth: 2)
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     RegExp
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     String
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Symbol
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     SyntheticEvent
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     undefined
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Window
   </button>
@@ -107,7 +107,7 @@ exports[`Storyshots Addons|Actions All types 1`] = `
 
 exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Circular Payload
 </button>
@@ -115,7 +115,7 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated Action (deprecated) 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Native Event
 </button>
@@ -123,7 +123,7 @@ exports[`Storyshots Addons|Actions Decorated Action (deprecated) 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Moving away from this story will persist the action logger
 </button>
@@ -131,7 +131,7 @@ exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated action 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Native Event
 </button>
@@ -139,7 +139,7 @@ exports[`Storyshots Addons|Actions Decorated action 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Moving away from this story will persist the action logger
 </button>
@@ -147,7 +147,7 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 
 exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Native Event
 </button>
@@ -155,7 +155,7 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 
 exports[`Storyshots Addons|Actions Function Name 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Action.name: fnName
 </button>
@@ -163,7 +163,7 @@ exports[`Storyshots Addons|Actions Function Name 1`] = `
 
 exports[`Storyshots Addons|Actions Hello World 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Hello World
 </button>
@@ -172,12 +172,12 @@ exports[`Storyshots Addons|Actions Hello World 1`] = `
 exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
 <div>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     False
   </button>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     True
   </button>
@@ -186,7 +186,7 @@ exports[`Storyshots Addons|Actions Limit Action Output 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Moving away from this story will persist the action logger
 </button>
@@ -194,7 +194,7 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Hello World
 </button>
@@ -202,7 +202,7 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Moving away from this story will persist the action logger
 </button>
@@ -210,7 +210,7 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 
 exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Hello World
 </button>
@@ -222,7 +222,7 @@ exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
     Moving away from this story will persist the action logger
   </p>
   <button
-    class="css-1qwzad5 eux70yo0"
+    class="css-1qwzad5"
   >
     Object (configured clearOnStoryChange: false)
   </button>
@@ -231,7 +231,7 @@ exports[`Storyshots Addons|Actions Persisting the action logger 1`] = `
 
 exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Delete
 </button>
@@ -239,7 +239,7 @@ exports[`Storyshots Addons|Actions Reserved keyword as name 1`] = `
 
 exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
 <button
-  class="css-1qwzad5 eux70yo0"
+  class="css-1qwzad5"
 >
   Object (configured depth: 2)
 </button>

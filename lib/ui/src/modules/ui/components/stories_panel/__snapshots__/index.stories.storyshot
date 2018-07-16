@@ -5,16 +5,16 @@ exports[`Storyshots UI|stories/StoriesPanel default 1`] = `
   class="css-3dwd22 e1b9pp5i0"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="css-5xz1i6"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="css-i6e0jg"
     >
       ⌘
     </button>
@@ -38,16 +38,16 @@ exports[`Storyshots UI|stories/StoriesPanel storiesHierarchies exists but is emp
   class="css-3dwd22 e1b9pp5i0"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="css-5xz1i6"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="css-i6e0jg"
     >
       ⌘
     </button>
@@ -71,16 +71,16 @@ exports[`Storyshots UI|stories/StoriesPanel when open on mobile device 1`] = `
   class="css-nk32ej e1b9pp5i0"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="css-5xz1i6"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="css-i6e0jg"
     >
       ⌘
     </button>
@@ -104,16 +104,16 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
   class="css-3dwd22 e1b9pp5i0"
 >
   <div
-    class="css-5xz1i6 ez1mtsr0"
+    class="css-5xz1i6"
   >
     <a
-      class="css-ypfoxr ez1mtsr1"
+      class="css-ypfoxr"
       href=""
       rel="noopener noreferrer"
       target="_blank"
     />
     <button
-      class="css-i6e0jg ez1mtsr2"
+      class="css-i6e0jg"
     >
       ⌘
     </button>
@@ -193,7 +193,7 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                     class="css-79elbk"
                   >
                     <a
-                      class="css-oato19 e1s7lmdh0"
+                      class="css-oato19"
                       href="?selectedKind=kk&selectedStory=bb&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                     >
                       <div>
