@@ -1,6 +1,6 @@
 {
   "name": "@storybook/mithril",
-  "version": "4.0.0-alpha.12",
+  "version": "4.0.0-alpha.14",
   "description": "Storybook for Mithril: Develop Mithril Component in isolation.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/mithril",
   "bugs": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.0.0-beta.51",
     "@babel/runtime": "^7.0.0-beta.51",
-    "@storybook/core": "4.0.0-alpha.12",
+    "@storybook/core": "4.0.0-alpha.14",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "react": "^16.4.0",

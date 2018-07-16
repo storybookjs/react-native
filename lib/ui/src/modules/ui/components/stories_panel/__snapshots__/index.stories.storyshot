@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
+exports[`Storyshots UI|stories/StoriesPanel default 1`] = `
 <div
   class="css-3dwd22 e1b9pp5i0"
 >
@@ -33,7 +33,7 @@ exports[`Storyshots ui/stories/StoriesPanel default 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is empty 1`] = `
+exports[`Storyshots UI|stories/StoriesPanel storiesHierarchies exists but is empty 1`] = `
 <div
   class="css-3dwd22 e1b9pp5i0"
 >
@@ -66,7 +66,7 @@ exports[`Storyshots ui/stories/StoriesPanel storiesHierarchies exists but is emp
 </div>
 `;
 
-exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
+exports[`Storyshots UI|stories/StoriesPanel when open on mobile device 1`] = `
 <div
   class="css-nk32ej e1b9pp5i0"
 >
@@ -99,7 +99,7 @@ exports[`Storyshots ui/stories/StoriesPanel when open on mobile device 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/stories/StoriesPanel with storiesHierarchies prop 1`] = `
+exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
 <div
   class="css-3dwd22 e1b9pp5i0"
 >

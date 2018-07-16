@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ui/stories/Stories empty 1`] = `
+exports[`Storyshots UI|stories/Stories empty 1`] = `
 <div
   class="css-7w6khc emockhz0"
 >
@@ -20,7 +20,7 @@ exports[`Storyshots ui/stories/Stories empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/stories/Stories simple 1`] = `
+exports[`Storyshots UI|stories/Stories simple 1`] = `
 <div
   class="css-7w6khc emockhz0"
 >
@@ -178,7 +178,7 @@ exports[`Storyshots ui/stories/Stories simple 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is defined 1`] = `
+exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is defined 1`] = `
 <div
   class="css-7w6khc emockhz0"
 >
@@ -436,7 +436,7 @@ exports[`Storyshots ui/stories/Stories with hierarchy - hierarchySeparator is de
 </div>
 `;
 
-exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is provided 1`] = `
+exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is provided 1`] = `
 <div
   class="css-7w6khc emockhz0"
 >
@@ -659,7 +659,7 @@ exports[`Storyshots ui/stories/Stories with highlighting when storiesFilter is p
 </div>
 `;
 
-exports[`Storyshots ui/stories/Stories without hierarchy - hierarchySeparator is defined 1`] = `
+exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is defined 1`] = `
 <div
   class="css-7w6khc emockhz0"
 >

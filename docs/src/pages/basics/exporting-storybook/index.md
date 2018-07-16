@@ -25,11 +25,19 @@ Then run `npm run storybook`.
 This will build the storybook configured in the Storybook directory into a static webpack and place it inside the `.out` directory.
 Now you can deploy the content in the `.out` directory wherever you want.
 
-To test it locally, simply run the following commands:
+To test it locally, simply run the following commands with Python HTTP Server:
 
 ```sh
 cd .out
 python -m SimpleHTTPServer
+```
+
+or Node HTTP Server:
+
+```sh
+npm install http-server -g
+cd .out
+http-server
 ```
 
 ## Deploying to GitHub Pages
