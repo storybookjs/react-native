@@ -114,7 +114,7 @@ exports[`Storyshots Knobs with knobs 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
   >
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy watermelon.
   </Text>
   <Text
     accessible={true}

@@ -10,13 +10,27 @@ import {
   array,
   date,
   select,
+  radioButtons,
   files,
   button,
   withKnobs as commonWithKnobs,
   withKnobsOptions as commonWithKnobsOptions,
 } from '.';
 
-export { knob, text, boolean, number, color, object, array, date, select, files, button };
+export {
+  knob,
+  text,
+  boolean,
+  number,
+  color,
+  object,
+  array,
+  date,
+  select,
+  radioButtons,
+  files,
+  button,
+};
 
 export const selectV2 = deprecate(select, 'selectV2 has been renamed to select');
 

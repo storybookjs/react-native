@@ -39,7 +39,7 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values 1`] = `
   style="background-color:#dedede;border:2px dashed silver;border-radius:10px;padding:10px"
 >
   <p>
-    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple.
+    My name is Storyteller, I'm 70 years old, and my favorite fruit is apple. I also enjoy watermelon.
   </p>
   <p>
     My birthday is: January 20, 2017

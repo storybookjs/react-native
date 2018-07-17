@@ -52,6 +52,10 @@ export function select(name, options, value, groupId) {
   return manager.knob(name, { type: 'select', selectV2: true, options, value, groupId });
 }
 
+export function radioButtons(name, options, value, groupId) {
+  return manager.knob(name, { type: 'radioButtons', options, value, groupId });
+}
+
 export function array(name, value, separator = ',', groupId) {
   return manager.knob(name, { type: 'array', value, separator, groupId });
 }
