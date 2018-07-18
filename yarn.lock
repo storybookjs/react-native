@@ -14269,7 +14269,7 @@ react-dev-utils@^5.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dev-utils@next:
+react-dev-utils@^6.0.0-next.3e165448:
   version "6.0.0-next.3e165448"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-6.0.0-next.3e165448.tgz#d573ed0ba692f6cee23166f99204e5761df0897c"
   dependencies:
