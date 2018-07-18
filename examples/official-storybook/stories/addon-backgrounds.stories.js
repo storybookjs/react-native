@@ -23,7 +23,7 @@ storiesOf('Addons|Backgrounds', module)
     ])(() => <BaseButton label="This one should have different backgrounds" />)
   );
 
-storiesOf('Addons|Backgrounds, parameters', module)
+storiesOf('Addons|Backgrounds.parameters', module)
   .addDecorator(withBackgrounds)
   .addParameters({
     backgrounds: [

@@ -12,10 +12,10 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^4.0.0-alpha.12",
-    "@storybook/addon-links": "^4.0.0-alpha.12",
-    "@storybook/addons": "^4.0.0-alpha.12",
-    "@storybook/mithril": "^4.0.0-alpha.12",
+    "@storybook/addon-actions": "^4.0.0-alpha.14",
+    "@storybook/addon-links": "^4.0.0-alpha.14",
+    "@storybook/addons": "^4.0.0-alpha.14",
+    "@storybook/mithril": "^4.0.0-alpha.14",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-react-jsx": "^6.24.1"
   }

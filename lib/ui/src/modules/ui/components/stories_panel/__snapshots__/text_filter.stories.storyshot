@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ui/stories/TextFilter with filterText 1`] = `
+exports[`Storyshots UI|stories/TextFilter with filterText 1`] = `
 <div
   class="css-79elbk"
 >
@@ -19,7 +19,7 @@ exports[`Storyshots ui/stories/TextFilter with filterText 1`] = `
 </div>
 `;
 
-exports[`Storyshots ui/stories/TextFilter without filterText 1`] = `
+exports[`Storyshots UI|stories/TextFilter without filterText 1`] = `
 <div
   class="css-79elbk"
 >
