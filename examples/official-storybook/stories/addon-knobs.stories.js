@@ -45,12 +45,12 @@ storiesOf('Addons|Knobs.withKnobs', module)
       Cherry: 'cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
+
     const otherFruits = {
       Kiwi: 'kiwi',
       Guava: 'guava',
       Watermelon: 'watermelon',
     };
-
     const otherFruit = radioButtons('Other Fruit', otherFruits, 'watermelon');
     const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
     const years = number('Years in NY', 9);

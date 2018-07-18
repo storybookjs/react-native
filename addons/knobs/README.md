@@ -278,7 +278,7 @@ const options = {
       Watermelon: 'watermelon',
     };
 
-const  = radioButtons(label, options, defaultValue, groupId);
+const  = radioButtons(name, options, defaultValue);
 ```
 
 ### files
