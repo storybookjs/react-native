@@ -16,7 +16,7 @@ describe('RadioButtons', () => {
     };
   });
 
-  describe('displays value', () => {
+  describe('displays value of button input', () => {
     it('correctly renders labels', () => {
       const wrapper = shallow(<RadioButtonType knob={knob} />);
 
