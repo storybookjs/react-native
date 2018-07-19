@@ -8,6 +8,7 @@ import {
   boolean,
   array,
   select,
+  radioButtons,
   color,
   date,
   button,
@@ -58,6 +59,12 @@ storiesOf('Addon|Knobs', module)
       Cherry: 'cherries',
     };
     const fruit = select('fruit', fruits, 'apples');
+    const otherFruits = {
+      Kiwi: 'kiwi',
+      Guava: 'guava',
+      Watermelon: 'watermelon',
+    };
+    const otherFruit = radioButtons('Other Fruit', otherFruits, 'watermelon');
     const price = number('price', 2.25);
 
     const border = color('border', 'deeppink');
@@ -72,6 +79,7 @@ storiesOf('Addon|Knobs', module)
         name,
         stock,
         fruit,
+        otherFruit,
         price,
         border,
         today,
