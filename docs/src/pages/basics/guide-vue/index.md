@@ -33,7 +33,7 @@ npm i --save-dev @storybook/vue
 
 ## Add vue and babel-core
 
-Make sure that you have `vue` and `babel-core` in your dependencies as well because we list is as a peerDependency:
+Make sure that you have `vue` and `babel-core` in your dependencies as well because we list it as a peerDependency:
 
 ```sh
 npm i --save vue

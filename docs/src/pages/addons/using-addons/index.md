@@ -32,14 +32,22 @@ Now when you are writing a story it like this and add some notes:
 ```js
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withNotes } from '@storybook/addon-notes';
 
 import Button from './Button';
 
-storiesOf('Button', module)
-  .add('with some emoji', () => (
-     withNotes('A very simple component')(() => <Button onClick={action('clicked')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>));
-  ));
+storiesOf('Button', module).add(
+  'with some emoji',
+  () => (
+    () => (
+      <Button onClick={action('clicked')}>
+        <span role="img" aria-label="so cool">
+          😀 😎 👍 💯
+        </span>
+      </Button>
+    ),
+    { notes: 'A very simple component' }
+  )
+);
 ```
 
 Then you'll be able to see those notes when you are viewing the story.

@@ -33,17 +33,12 @@ const RangeWrapper = styled('div')({
 });
 
 class NumberType extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    if (!state || props.knob.value !== state.value) {
-      return { value: props.knob.value };
-    }
-    return null;
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
   }
 
   handleChange = event => {
     const { value } = event.target;
-
-    this.setState({ value });
 
     let parsedValue = Number(value);
 
@@ -56,24 +51,23 @@ class NumberType extends React.Component {
 
   render() {
     const { knob } = this.props;
-    const { value } = this.state;
 
     return knob.range ? (
       <RangeWrapper>
         <RangeLabel>{knob.min}</RangeLabel>
         <RangeInput
-          value={value}
+          value={knob.value}
           type="range"
           min={knob.min}
           max={knob.max}
           step={knob.step}
           onChange={this.handleChange}
         />
-        <RangeLabel>{`${value} / ${knob.max}`}</RangeLabel>
+        <RangeLabel>{`${knob.value} / ${knob.max}`}</RangeLabel>
       </RangeWrapper>
     ) : (
       <Input
-        value={value}
+        value={knob.value}
         type="number"
         min={knob.min}
         max={knob.max}
@@ -89,6 +83,10 @@ NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.number,
+    range: PropTypes.bool,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    step: PropTypes.number,
   }).isRequired,
   onChange: PropTypes.func.isRequired,
 };

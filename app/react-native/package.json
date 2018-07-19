@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "4.0.0-alpha.12",
+  "version": "4.0.0-alpha.14",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -25,12 +25,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.12",
-    "@storybook/channel-websocket": "4.0.0-alpha.12",
-    "@storybook/core": "4.0.0-alpha.12",
-    "@storybook/core-events": "4.0.0-alpha.12",
+    "@storybook/addons": "4.0.0-alpha.14",
+    "@storybook/channel-websocket": "4.0.0-alpha.14",
+    "@storybook/core": "4.0.0-alpha.14",
+    "@storybook/core-events": "4.0.0-alpha.14",
     "@storybook/react-dev-utils": "^5.0.0",
-    "@storybook/ui": "4.0.0-alpha.12",
+    "@storybook/ui": "4.0.0-alpha.14",
     "babel-loader": "^7.1.4",
     "babel-plugin-macros": "^2.2.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -58,7 +58,7 @@
     "react-native-compat": "^1.0.0",
     "react-native-iphone-x-helper": "^1.0.3",
     "shelljs": "^0.8.2",
-    "universal-dotenv": "^1.5.1",
+    "universal-dotenv": "^1.8.0",
     "url-parse": "^1.4.0",
     "uuid": "^3.2.1",
     "webpack": "^4.10.2",

@@ -12,6 +12,7 @@ const Button = styled('button')(
     fontSize: 13,
     padding: '3px 10px',
     alignSelf: 'flex-start',
+    flexShrink: 0,
 
     ':hover': {
       backgroundColor: '#f4f7fa',

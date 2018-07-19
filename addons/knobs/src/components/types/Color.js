@@ -24,15 +24,11 @@ class ColorType extends React.Component {
     displayColorPicker: false,
   };
 
-  static getDerivedStateFromProps(props, state) {
-    if (!state || props.knob.value !== state.value) {
-      return { value: props.knob.value };
-    }
-    return null;
-  }
-
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWindowMouseDown);
+  }
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
   }
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleWindowMouseDown);
@@ -54,16 +50,12 @@ class ColorType extends React.Component {
   };
 
   handleChange = color => {
-    this.setState({
-      value: color,
-    });
-
     this.props.onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
   };
 
   render() {
     const { knob } = this.props;
-    const { displayColorPicker, value } = this.state;
+    const { displayColorPicker } = this.state;
     const colorStyle = {
       background: knob.value,
     };
@@ -78,7 +70,7 @@ class ColorType extends React.Component {
               this.popover = e;
             }}
           >
-            <SketchPicker color={value} onChange={this.handleChange} />
+            <SketchPicker color={knob.value} onChange={this.handleChange} />
           </Popover>
         ) : null}
       </Button>

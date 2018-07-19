@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "4.0.0-alpha.12",
+  "version": "4.0.0-alpha.14",
   "description": "A Storybook addon to show additional information for your stories.",
   "repository": {
     "type": "git",
@@ -13,9 +13,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.12",
-    "@storybook/client-logger": "4.0.0-alpha.12",
-    "@storybook/components": "4.0.0-alpha.12",
+    "@storybook/addons": "4.0.0-alpha.14",
+    "@storybook/client-logger": "4.0.0-alpha.14",
+    "@storybook/components": "4.0.0-alpha.14",
     "babel-runtime": "^6.26.0",
     "core-js": "2.5.7",
     "global": "^4.3.2",
