@@ -50,9 +50,6 @@ storiesOf('Addons|Actions', module)
       Moving away from this story will persist the action logger
     </Button>
   ))
-  .add('Decorated Action (deprecated)', () => (
-    <Button onClick={pickNativeAction('decorated')}>Native Event</Button>
-  ))
   .add('Circular Payload', () => {
     const circular = { foo: {} };
     circular.foo.circular = circular;
@@ -160,3 +157,7 @@ storiesOf('Addons|Actions', module)
       </div>
     );
   });
+
+storiesOf('Addons|Actions.deprecated', module).add('Decorated Action', () => (
+  <Button onClick={pickNativeAction('decorated')}>Native Event</Button>
+));
