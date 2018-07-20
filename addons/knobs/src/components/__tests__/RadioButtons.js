@@ -8,9 +8,9 @@ describe('RadioButtons', () => {
   beforeEach(() => {
     knob = {
       name: 'Color',
-      value: '#319C17',
+      value: '#319C16',
       options: {
-        Green: '#319C17',
+        Green: '#319C16',
         Red: '#FF2B2B',
       },
     };
@@ -28,7 +28,7 @@ describe('RadioButtons', () => {
       const wrapper = shallow(<RadioButtonType knob={knob} />);
 
       const greenInput = wrapper.find('input').first();
-      expect(greenInput.prop('value')).toEqual('#319C17');
+      expect(greenInput.prop('value')).toEqual('#319C16');
     });
 
     it('marks the correct checkbox as checked', () => {
