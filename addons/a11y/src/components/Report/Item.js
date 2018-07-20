@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
+import IoChevronRight from 'react-icons/lib/io/chevron-right';
 
 import Info from './Info';
 import Tags from './Tags';
@@ -55,7 +56,19 @@ class Item extends Component {
 
     return (
       <Wrapper>
-        <HeaderBar onClick={this.onToggle}>{item.description}</HeaderBar>
+        <HeaderBar onClick={this.onToggle}>
+          <IoChevronRight
+            size={10}
+            color="#9DA5AB"
+            style={{
+              marginRight: '5px',
+              marginBottom: '2px',
+              transform: `rotate(${open ? 90 : 0}deg)`,
+              transition: 'transform 0.3s ease-in-out',
+            }}
+          />
+          {item.description}
+        </HeaderBar>
         {open && <Info item={item} />}
         {open && <Elements elements={item.nodes} passes={passes} />}
         {open && <Tags tags={item.tags} />}
