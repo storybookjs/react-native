@@ -7,11 +7,12 @@ import {
   boolean,
   color,
   select,
-  radioButtons,
   array,
   date,
   object,
 } from '@storybook/addon-knobs/react';
+
+import { radioButtons } from '@storybook/addon-knobs';
 
 export default () => {
   const name = text('Name', 'Storyteller');
