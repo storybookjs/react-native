@@ -10,10 +10,12 @@ const Wrapper = styled('div')({
   width: '100%',
   boxSizing: 'border-box',
   padding: '10px',
+  minHeight: '100%',
 });
 
 export default class Events extends Component {
   static propTypes = {
+    active: PropTypes.bool.isRequired,
     channel: PropTypes.shape({
       on: PropTypes.func,
       emit: PropTypes.func,
@@ -43,10 +45,11 @@ export default class Events extends Component {
 
   render() {
     const { events } = this.state;
-    return (
+    const { active } = this.props;
+    return active ? (
       <Wrapper>
         {events.map(event => <Event key={event.name} {...event} onEmit={this.onEmit} />)}
       </Wrapper>
-    );
+    ) : null;
   }
 }

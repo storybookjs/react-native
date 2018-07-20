@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { document } from 'global';
 
+import { ActionButton, Select } from '@storybook/components';
+
 import { Panel } from '../Panel';
 import { resetViewport, viewportsTransformer } from '../viewportInfo';
 import { DEFAULT_VIEWPORT, INITIAL_VIEWPORTS } from '../../../shared';
 
 const initialViewportAt = index => Object.keys(INITIAL_VIEWPORTS)[index];
 const transformedInitialViewports = viewportsTransformer(INITIAL_VIEWPORTS);
-
-jest.mock('lodash.debounce', () => jest.fn(fn => fn));
 
 describe('Viewport/Panel', () => {
   const props = {
@@ -20,7 +20,9 @@ describe('Viewport/Panel', () => {
     },
     api: {
       onStory: jest.fn(),
+      selectStory: jest.fn(),
     },
+    active: true,
   };
 
   let subject;
@@ -324,16 +326,18 @@ describe('Viewport/Panel', () => {
 
     beforeEach(() => {
       subject.instance().changeViewport = jest.fn();
-      resetBtn = subject.find('Styled(button)');
+      resetBtn = subject.find(ActionButton);
     });
 
     it('enables the reset button if not default', () => {
       subject.setState({ viewport: 'responsive' });
-      resetBtn = subject.find('Styled(button)');
+
+      resetBtn = subject.find(ActionButton);
       expect(resetBtn).toHaveProp('disabled', true);
 
       subject.setState({ viewport: 'iphone6' });
-      resetBtn = subject.find('Styled(button)');
+
+      resetBtn = subject.find(ActionButton);
       expect(resetBtn).toHaveProp('disabled', false);
     });
 
@@ -347,32 +351,16 @@ describe('Viewport/Panel', () => {
     let select;
 
     beforeEach(() => {
-      select = subject.find('SelectViewport');
+      select = subject.find(Select);
       subject.instance().changeViewport = jest.fn();
     });
 
-    it('passes the activeViewport', () => {
-      expect(select.props()).toEqual(
-        expect.objectContaining({
-          activeViewport: DEFAULT_VIEWPORT,
-        })
-      );
+    it('passes the value', () => {
+      expect(select.props().value).toEqual('responsive');
     });
 
-    it('passes the defaultViewport', () => {
-      expect(select.props()).toEqual(
-        expect.objectContaining({
-          defaultViewport: DEFAULT_VIEWPORT,
-        })
-      );
-    });
-
-    it('passes the INITIAL_VIEWPORTS', () => {
-      expect(select.props()).toEqual(
-        expect.objectContaining({
-          viewports: transformedInitialViewports,
-        })
-      );
+    it('passes the children', () => {
+      expect(select.props().children).toHaveLength(8);
     });
 
     it('onChange it updates the viewport', () => {
@@ -386,34 +374,21 @@ describe('Viewport/Panel', () => {
     let toggle;
 
     beforeEach(() => {
-      toggle = subject.find('RotateViewport');
+      toggle = subject.find('Field[label="Rotate"]');
       jest.spyOn(subject.instance(), 'toggleLandscape');
       subject.instance().forceUpdate();
     });
 
-    it('passes the active prop based on the state of the panel', () => {
-      expect(toggle.props().active).toEqual(subject.state('isLandscape'));
+    it('renders viewport is not default', () => {
+      subject.setState({ viewport: 'iphone6' });
+      toggle = subject.find({ label: 'Rotate' });
+      expect(toggle).toExist();
     });
 
-    describe('is on the default viewport', () => {
-      beforeEach(() => {
-        subject.setState({ viewport: DEFAULT_VIEWPORT });
-      });
-
-      it('sets the disabled property', () => {
-        expect(toggle.props().disabled).toEqual(true);
-      });
-    });
-
-    describe('is on a non-default viewport', () => {
-      beforeEach(() => {
-        subject.setState({ viewport: 'iphone6' });
-        toggle = subject.find('RotateViewport');
-      });
-
-      it('the disabled property is false', () => {
-        expect(toggle.props().disabled).toEqual(false);
-      });
+    it('hidden the viewport is default', () => {
+      subject.setState({ viewport: DEFAULT_VIEWPORT });
+      toggle = subject.find({ label: 'Rotate' });
+      expect(toggle).not.toExist();
     });
   });
 });

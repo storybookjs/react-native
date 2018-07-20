@@ -1,3 +1,50 @@
+# 4.0.0-alpha.14
+
+2018-July-11
+
+#### Bug Fixes
+
+-   Upgrade universal-dotenv to fix core-js dependency [#3874](https://github.com/storybooks/storybook/pull/3874)
+
+# 4.0.0-alpha.13
+
+2018-July-09
+
+#### Features
+
+-   Refactor addon-jest to use a parameter-based pattern [#3678](https://github.com/storybooks/storybook/pull/3678)
+
+#### Bug Fixes
+
+-   Upgrade universal-dotenv to fix babel-runtime [#3863](https://github.com/storybooks/storybook/pull/3863)
+
+#### Maintenance
+
+-   Added a test for parameter combination [#3844](https://github.com/storybooks/storybook/pull/3844)
+
+# 4.0.0-alpha.12
+
+2018-July-03
+
+#### Bug Fixes
+
+-   Fix non-polyfilled themed UI components [#3829](https://github.com/storybooks/storybook/pull/3829)
+
+# 4.0.0-alpha.11
+
+2018-July-02
+
+#### Features
+
+-   Storybook UI theming [#3628](https://github.com/storybooks/storybook/pull/3628)
+-   Replaced 'dotenv-webpack' with 'universal-dotenv' to support multiple dot env files (like CRA) [#3744](https://github.com/storybooks/storybook/pull/3744)
+-   Support other type of webpack configs [#3785](https://github.com/storybooks/storybook/pull/3785)
+
+#### Bug Fixes
+
+-   Marko: fix welcome component [#3796](https://github.com/storybooks/storybook/pull/3796)
+-   Addon-a11y: Run analysis on demand [#3690](https://github.com/storybooks/storybook/pull/3690)
+
 # 4.0.0-alpha.10
 
 2018-June-21

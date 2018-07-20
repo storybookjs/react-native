@@ -7,6 +7,7 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/pr
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './';
 
+// TODO: take from theme
 const highlighterTheme = {
   ...darcula,
   'pre[class*="language-"]': {
@@ -175,7 +176,8 @@ export default class StoryPanel extends Component {
   };
 
   render() {
-    return (
+    const { active } = this.props;
+    return active ? (
       <SyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
@@ -185,11 +187,12 @@ export default class StoryPanel extends Component {
       >
         {this.state.source}
       </SyntaxHighlighter>
-    );
+    ) : null;
   }
 }
 
 StoryPanel.propTypes = {
+  active: PropTypes.bool.isRequired,
   api: PropTypes.shape({
     selectStory: PropTypes.func.isRequired,
   }).isRequired,

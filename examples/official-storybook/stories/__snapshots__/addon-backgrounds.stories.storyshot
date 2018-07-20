@@ -1,8 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Addons|Backgrounds disabled via [] 1`] = `
+<button>
+  This one should not use backgrounds
+</button>
+`;
+
 exports[`Storyshots Addons|Backgrounds overriden 1`] = `
 <button>
   This one should have different backgrounds
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds skipped via disable:true 1`] = `
+<button>
+  This one should not use backgrounds either
 </button>
 `;
 
@@ -18,31 +30,19 @@ exports[`Storyshots Addons|Backgrounds story 2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds, parameters disabled via [] 1`] = `
-<button>
-  This one should not use backgrounds
-</button>
-`;
-
-exports[`Storyshots Addons|Backgrounds, parameters overriden 1`] = `
+exports[`Storyshots Addons|Backgrounds.deprecated overriden 1`] = `
 <button>
   This one should have different backgrounds
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds, parameters skipped via disable:true 1`] = `
-<button>
-  This one should not use backgrounds either
-</button>
-`;
-
-exports[`Storyshots Addons|Backgrounds, parameters story 1 1`] = `
+exports[`Storyshots Addons|Backgrounds.deprecated story 1 1`] = `
 <button>
   You should be able to switch backgrounds for this story
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds, parameters story 2 1`] = `
+exports[`Storyshots Addons|Backgrounds.deprecated story 2 1`] = `
 <button>
   This one too!
 </button>
