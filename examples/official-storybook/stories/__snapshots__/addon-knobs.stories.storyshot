@@ -110,6 +110,9 @@ exports[`Storyshots Addons|Knobs.withKnobs tweaks static values organized in gro
     Fruit: apple
   </p>
   <p>
+    Other Fruit: watermelon
+   </p>
+  <p>
     Items:
   </p>
   <ul>
