@@ -98,7 +98,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -404,7 +404,7 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -586,7 +586,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -917,7 +917,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -1217,7 +1217,7 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -1529,7 +1529,7 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -1802,7 +1802,7 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -1998,7 +1998,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -2241,7 +2241,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -2512,7 +2512,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
             </div>
           </div>
           <button
-            class="css-zvhq5i"
+            class="css-1naocv3"
           >
             <div
               class="css-lvl6aa"
@@ -3482,7 +3482,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
             </div>
           </div>
           <button
-            class="css-zvhq5i"
+            class="css-1naocv3"
           >
             <div
               class="css-lvl6aa"
@@ -4268,7 +4268,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
             </div>
           </div>
           <button
-            class="css-zvhq5i"
+            class="css-1naocv3"
           >
             <div
               class="css-lvl6aa"
@@ -4549,7 +4549,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -5001,7 +5001,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -5492,7 +5492,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -5765,7 +5765,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -6102,7 +6102,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -6402,7 +6402,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
             </div>
           </div>
           <button
-            class="css-zvhq5i"
+            class="css-1naocv3"
           >
             <div
               class="css-lvl6aa"
@@ -6672,7 +6672,7 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
             </div>
           </div>
           <button
-            class="css-zvhq5i"
+            class="css-1naocv3"
           >
             <div
               class="css-lvl6aa"
@@ -6917,7 +6917,7 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
             </div>
           </div>
           <button
-            class="css-zvhq5i"
+            class="css-1naocv3"
           >
             <div
               class="css-lvl6aa"
@@ -7216,7 +7216,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -7667,7 +7667,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -8402,7 +8402,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -8704,7 +8704,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
@@ -9035,7 +9035,7 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
               </div>
             </div>
             <button
-              class="css-zvhq5i"
+              class="css-1naocv3"
             >
               <div
                 class="css-lvl6aa"
