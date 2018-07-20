@@ -17,7 +17,7 @@
     "@storybook/addons": "^4.0.0-alpha.14",
     "@storybook/mithril": "^4.0.0-alpha.14",
     "babel-core": "^7.0.0-bridge.0",
-    "@babel/core": "^7.0.0-beta.53",
+    "@babel/core": "^7.0.0-beta.54",
     "babel-loader": "^8.0.0-beta.4"
   }
 }

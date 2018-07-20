@@ -45,7 +45,7 @@
     "tslint": "^4.3.0",
     "typescript": "~2.4.0",
     "babel-core": "^7.0.0-bridge.0",
-    "@babel/core": "^7.0.0-beta.53",
+    "@babel/core": "^7.0.0-beta.54",
     "babel-loader": "^8.0.0-beta.4",
     "@storybook/angular": "^4.0.0-alpha.14",
     "@storybook/addon-notes": "^4.0.0-alpha.14",
