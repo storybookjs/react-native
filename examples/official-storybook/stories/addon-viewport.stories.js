@@ -29,22 +29,7 @@ storiesOf('Addons|Viewport.Custom Default (Kindle Fire 2)', module)
       </Panel>
     ),
     { viewport: 'ipad' }
-  )
-  .add(
-    'Overridden via "withViewport" decorator (deprecated)',
-    withViewport('iphone6')(() => (
-      <Panel>
-        I respect my parents but I should be looking good on <b>iPhone 6</b>.
-      </Panel>
-    ))
-  )
-  .add('Overridden via "Viewport" component (deprecated)', () => (
-    <Viewport name="iphone6p">
-      <Panel>
-        I respect my parents but I should be looking good on <b>iPhone 6 Plus</b>.
-      </Panel>
-    </Viewport>
-  ));
+  );
 
 const emitter = new EventEmitter();
 
@@ -60,3 +45,21 @@ storiesOf('Addons|Viewport.withViewport', module)
     })
   )
   .add('onViewportChange', () => <Logger title="Select device/viewport" emitter={emitter} />);
+
+storiesOf('Addons|Viewport.deprecated', module)
+  .addDecorator(withViewport('kindleFire2'))
+  .add(
+    'Overridden via "withViewport" decorator',
+    withViewport('iphone6')(() => (
+      <Panel>
+        I respect my parents but I should be looking good on <b>iPhone 6</b>.
+      </Panel>
+    ))
+  )
+  .add('Overridden via "Viewport" component', () => (
+    <Viewport name="iphone6p">
+      <Panel>
+        I respect my parents but I should be looking good on <b>iPhone 6 Plus</b>.
+      </Panel>
+    </Viewport>
+  ));

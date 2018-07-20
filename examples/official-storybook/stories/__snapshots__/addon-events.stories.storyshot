@@ -13,7 +13,7 @@ exports[`Storyshots Addons|Events Logger 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addons|Events/WithEvents (deprecated) Logger 1`] = `
+exports[`Storyshots Addons|Events.deprecated Logger 1`] = `
 <div
   class="css-1ruxp1v e1igy6c50"
 >
