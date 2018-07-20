@@ -64,6 +64,7 @@ class Item extends Component {
               marginRight: '5px',
               marginBottom: '2px',
               transform: `rotate(${open ? 90 : 0}deg)`,
+              transition: 'transform 0.3s ease-in-out',
             }}
           />
           {item.description}
