@@ -71,8 +71,15 @@ Before these tests are ran, the project must be bootstrapped with the React Nati
 
 `yarn test --image`
 
-This option executes tests from `<rootdir>/examples/cra-kitchen-sink`
-In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date.
+This option executes tests from `<rootdir>/examples/official-storybook`
+In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date : 
+
+```javascript
+cd examples/official-storybook
+yarn build-storybook
+cd ../..
+yarn test --image
+```
 
 Puppeteer is used to launch and grab screenshots of example pages, while jest is used to assert matching images. (just like integration tests)
 
