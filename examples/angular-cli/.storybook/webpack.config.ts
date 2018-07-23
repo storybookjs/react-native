@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = baseConfig => {
+module.exports = (baseConfig: any) => {
   baseConfig.module.rules.push({
     test: [/\.stories\.tsx?$/, /index\.ts$/],
     loaders: [
