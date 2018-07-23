@@ -160,7 +160,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
         <h1>Favorites</h1>
         <p>Catchphrase: {salutation}</p>
         <p>Fruit: {fruit}</p>
-        <p>OtherFruit: {otherFruit}</p>
+        <p>Other Fruit: {otherFruit}</p>
         <p>Items:</p>
         <ul>{items.map(item => <li key={`${item}`}>{item}</li>)}</ul>
       </div>
