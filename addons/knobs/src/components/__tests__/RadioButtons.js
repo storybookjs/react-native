@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import RadioButtonType from '../types/RadioButtons';
+import RadioType from '../types/Radio';
 
-describe('RadioButtons', () => {
+describe('Radio', () => {
   let knob;
 
   beforeEach(() => {
@@ -18,21 +18,21 @@ describe('RadioButtons', () => {
 
   describe('displays value of button input', () => {
     it('correctly renders labels', () => {
-      const wrapper = shallow(<RadioButtonType knob={knob} />);
+      const wrapper = shallow(<RadioType knob={knob} />);
 
       const greenLabel = wrapper.find('label').first();
       expect(greenLabel.text()).toEqual('Green');
     });
 
     it('sets value on the radio buttons', () => {
-      const wrapper = shallow(<RadioButtonType knob={knob} />);
+      const wrapper = shallow(<RadioType knob={knob} />);
 
       const greenInput = wrapper.find('input').first();
       expect(greenInput.prop('value')).toEqual('#319C16');
     });
 
     it('marks the correct checkbox as checked', () => {
-      const wrapper = shallow(<RadioButtonType knob={knob} />);
+      const wrapper = shallow(<RadioType knob={knob} />);
 
       const greenInput = wrapper.find('input').first();
       const redInput = wrapper.find('input').last();

@@ -8,7 +8,7 @@ const styles = {
   },
 };
 
-class RadioButtonsType extends Component {
+class RadiosType extends Component {
   renderRadioButtonList({ options }) {
     if (Array.isArray(options)) {
       return options.map(val => this.renderRadioButton(val, val));
@@ -46,12 +46,12 @@ class RadioButtonsType extends Component {
   }
 }
 
-RadioButtonsType.defaultProps = {
+RadiosType.defaultProps = {
   knob: {},
   onChange: value => value,
 };
 
-RadioButtonsType.propTypes = {
+RadiosType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.string,
@@ -60,7 +60,7 @@ RadioButtonsType.propTypes = {
   onChange: PropTypes.func,
 };
 
-RadioButtonsType.serialize = value => value;
-RadioButtonsType.deserialize = value => value;
+RadiosType.serialize = value => value;
+RadiosType.deserialize = value => value;
 
-export default RadioButtonsType;
+export default RadiosType;

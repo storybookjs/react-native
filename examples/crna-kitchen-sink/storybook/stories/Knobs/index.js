@@ -7,7 +7,7 @@ import {
   boolean,
   color,
   select,
-  radioButtons,
+  radios,
   array,
   date,
   object,
@@ -28,7 +28,7 @@ export default () => {
     Guava: 'guava',
     Watermelon: 'watermelon',
   };
-  const otherFruit = radioButtons('Other Fruit', otherFruits, 'watermelon');
+  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
   const dollars = number('Dollars', 12.5);
 
   // NOTE: color picker is currently broken

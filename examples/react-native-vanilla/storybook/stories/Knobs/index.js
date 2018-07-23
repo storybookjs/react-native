@@ -12,7 +12,7 @@ import {
   object,
 } from '@storybook/addon-knobs/react';
 
-import { radioButtons } from '@storybook/addon-knobs';
+import { radios } from '@storybook/addon-knobs';
 
 export default () => {
   const name = text('Name', 'Storyteller');
@@ -29,7 +29,7 @@ export default () => {
     Guava: 'guava',
     Watermelon: 'watermelon',
   };
-  const otherFruit = radioButtons('Other Fruit', otherFruits, 'watermelon');
+  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
   const dollars = number('Dollars', 12.5);
 
   // NOTE: color picker is currently broken

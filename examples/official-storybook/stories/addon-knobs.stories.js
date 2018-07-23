@@ -10,7 +10,7 @@ import {
   boolean,
   color,
   select,
-  radioButtons,
+  radios,
   array,
   date,
   button,
@@ -51,7 +51,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
       Guava: 'guava',
       Watermelon: 'watermelon',
     };
-    const otherFruit = radioButtons('Other Fruit', otherFruits, 'watermelon');
+    const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
     const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
     const years = number('Years in NY', 9);
 
@@ -128,7 +128,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     // Favorites
     const nice = boolean('Nice', true, GROUP_IDS.FAVORITES);
     const fruit = select('Fruit', fruits, 'apple', GROUP_IDS.FAVORITES);
-    const otherFruit = radioButtons('Other Fruit', otherFruits, 'watermelon', GROUP_IDS.FAVORITES);
+    const otherFruit = radios('Other Fruit', otherFruits, 'watermelon', GROUP_IDS.FAVORITES);
     const items = array('Items', ['Laptop', 'Book', 'Whiskey'], ',', GROUP_IDS.FAVORITES);
 
     // Display

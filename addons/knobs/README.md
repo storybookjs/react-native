@@ -270,7 +270,7 @@ const value = select(label, options, defaultValue, groupId);
 Allows you to get a value from a list of radio buttons from the user.
 
 ```js
-import { radioButtons } from '@storybook/addon-knobs';
+import { radios } from '@storybook/addon-knobs';
 
 const options = {
       Kiwi: 'kiwi',
@@ -278,7 +278,7 @@ const options = {
       Watermelon: 'watermelon',
     };
 
-const  = radioButtons(name, options, defaultValue);
+const  = radios(name, options, defaultValue);
 ```
 
 ### files
