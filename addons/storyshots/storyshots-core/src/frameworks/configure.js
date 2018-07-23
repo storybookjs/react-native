@@ -5,7 +5,7 @@ function getConfigPathParts(configPath) {
   const resolvedConfigPath = path.resolve(configPath);
 
   if (fs.lstatSync(resolvedConfigPath).isDirectory()) {
-    return path.join(resolvedConfigPath, 'config.js');
+    return path.join(resolvedConfigPath, 'config');
   }
 
   return resolvedConfigPath;
