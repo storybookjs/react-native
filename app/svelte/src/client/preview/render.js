@@ -1,8 +1,21 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
-function mountView({ Component, target, data, on }) {
-  const component = new Component({ target, data });
+function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
+  let component;
+
+  if (Wrapper) {
+    const fragment = document.createDocumentFragment();
+    component = new Component({ target: fragment, data });
+    /* eslint-disable-next-line no-new */
+    new Wrapper({
+      target,
+      slots: { default: fragment },
+      data: WrapperData || {},
+    });
+  } else {
+    component = new Component({ target, data });
+  }
 
   if (on) {
     // Attach svelte event listeners.
@@ -27,6 +40,8 @@ export default function render({
     data,
     /** @type {{[string]: () => {}}} Attach svelte event handlers */
     on,
+    Wrapper,
+    WrapperData,
   } = story();
 
   const target = document.getElementById('root');
@@ -46,7 +61,7 @@ export default function render({
     return;
   }
 
-  mountView({ Component, target, data, on });
+  mountView({ Component, target, data, on, Wrapper, WrapperData });
 
   showMain();
 }
