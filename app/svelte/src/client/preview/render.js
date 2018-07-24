@@ -1,18 +1,15 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
-let listeners = [];
+let previousComponent = null;
 
-/**
- * Since we may have added events using `.on()` we need to ensure that these
- * events are cleaned up when changing between stories.
- *
- * @see mountView()
- */
-function cancelPreviousStoryListeners() {
-  listeners.forEach(listener => listener.cancel());
+function cleanUpPreviousStory() {
+  if (!previousComponent) {
+    return;
+  }
 
-  listeners = [];
+  previousComponent.destroy();
+  previousComponent = null;
 }
 
 function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
@@ -36,13 +33,12 @@ function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
 
   if (on) {
     // Attach svelte event listeners.
-    listeners = Object.keys(on).map(eventName => {
-      const listener = component.on(eventName, on[eventName]);
-
-      // We need this so we can call `cancel()` on it when the next story is rendered.
-      return listener;
+    Object.keys(on).forEach(eventName => {
+      component.on(eventName, on[eventName]);
     });
   }
+
+  previousComponent = component;
 }
 
 export default function render({
@@ -64,11 +60,7 @@ export default function render({
     WrapperData,
   } = story();
 
-  const target = document.getElementById('root');
-
-  target.innerHTML = '';
-
-  cancelPreviousStoryListeners();
+  cleanUpPreviousStory();
 
   if (!Component) {
     showError({
@@ -82,6 +74,10 @@ export default function render({
 
     return;
   }
+
+  const target = document.getElementById('root');
+
+  target.innerHTML = '';
 
   mountView({ Component, target, data, on, Wrapper, WrapperData });
 
