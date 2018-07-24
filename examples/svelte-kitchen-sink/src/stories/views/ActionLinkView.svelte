@@ -1,7 +1,7 @@
 <div class="main">
   <h1>Link Action</h1>
   <button on:click="onClick(event)" class="link">
-    See the sample stories for the <code class="code">Button</code> component.
+    Return to the <code class="code">Welcome</code> view story.
   </button>
 </div>
 
