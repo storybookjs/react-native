@@ -33,7 +33,7 @@
 /examples/polymer-cli/ @naipath @igor-dv
 /examples/react-native-vanilla/ @tmeasday @danielduan
 /examples/vue-kitchen-sink/ @igor-dv @alexandrebodin
-/examples/svelte-kitchen-sink/
+/examples/svelte-kitchen-sink/ @plumpNation
 
 /lib/addons/ @ndelangen @theinterned
 /lib/channel-postmessage/ @mnmtanish @ndelangen
