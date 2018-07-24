@@ -1,13 +1,14 @@
 <button
   class="button {roundedClass}"
   on:click="onClick(event)">
+  <strong>{rounded ? 'Round' : 'Square'} corners</strong><br>
   {text}
   <slot></slot>
 </button>
 
 <style>
   .rounded {
-    border-radius: 5px;
+    border-radius: 35px;
   }
 
   .button {
