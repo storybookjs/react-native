@@ -12,8 +12,24 @@ function cleanUpPreviousStory() {
   previousComponent = null;
 }
 
-function mountView({ Component, target, data, on }) {
-  const component = new Component({ target, data });
+function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
+  let component;
+
+  if (Wrapper) {
+    const fragment = document.createDocumentFragment();
+    component = new Component({ target: fragment, data });
+
+    const wrapper = new Wrapper({
+      target,
+      slots: { default: fragment },
+      data: WrapperData || {},
+    });
+    component.on('destroy', () => {
+      wrapper.destroy(true);
+    });
+  } else {
+    component = new Component({ target, data });
+  }
 
   if (on) {
     // Attach svelte event listeners.
@@ -40,6 +56,8 @@ export default function render({
     data,
     /** @type {{[string]: () => {}}} Attach svelte event handlers */
     on,
+    Wrapper,
+    WrapperData,
   } = story();
 
   cleanUpPreviousStory();
@@ -61,7 +79,7 @@ export default function render({
 
   target.innerHTML = '';
 
-  mountView({ Component, target, data, on });
+  mountView({ Component, target, data, on, Wrapper, WrapperData });
 
   showMain();
 }

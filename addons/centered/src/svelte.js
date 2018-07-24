@@ -19,13 +19,7 @@ const centeredStyles = {
  * @see https://svelte.technology/guide#svelte-component
  */
 export default function(storyFn) {
-  const { Component: OriginalComponent, data: originalData } = storyFn();
+  const { Component: OriginalComponent, data, on } = storyFn();
 
-  const centeredData = {
-    OriginalComponent,
-    centeredStyles,
-    originalData,
-  };
-
-  return { Component: Centered, data: centeredData };
+  return { Component: OriginalComponent, data, on, Wrapper: Centered, WrapperData: centeredStyles };
 }
