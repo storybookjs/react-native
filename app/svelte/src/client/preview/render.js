@@ -1,6 +1,20 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
+let listeners = [];
+
+/**
+ * Since we may have added events using `.on()` we need to ensure that these
+ * events are cleaned up when changing between stories.
+ *
+ * @see mountView()
+ */
+function cancelPreviousStoryListeners() {
+  listeners.forEach(listener => listener.cancel());
+
+  listeners = [];
+}
+
 function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
   let component;
 
@@ -22,8 +36,11 @@ function mountView({ Component, target, data, on, Wrapper, WrapperData }) {
 
   if (on) {
     // Attach svelte event listeners.
-    Object.keys(on).forEach(eventName => {
-      component.on(eventName, on[eventName]);
+    listeners = Object.keys(on).map(eventName => {
+      const listener = component.on(eventName, on[eventName]);
+
+      // We need this so we can call `cancel()` on it when the next story is rendered.
+      return listener;
     });
   }
 }
@@ -50,6 +67,8 @@ export default function render({
   const target = document.getElementById('root');
 
   target.innerHTML = '';
+
+  cancelPreviousStoryListeners();
 
   if (!Component) {
     showError({
