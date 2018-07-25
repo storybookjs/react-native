@@ -3,7 +3,7 @@ id: 'quick-start-guide'
 title: 'Quick Start Guide'
 ---
 
-Storybook is very easy to use. You can use it with any kind of React or Vue or Angular or Mithril project.
+Storybook is very easy to use. You can use it with any kind of React or Vue or Svelte or Angular or Mithril project.
 Follow these steps to get started with Storybook.
 
 ```sh
@@ -17,7 +17,7 @@ To install storybook for HTML, add `--html` argument:
 ```
 getstorybook --html
 ```
- 
+
 This will configure your app for Storybook. After that, you can run your Storybook with:
 
 ```sh
@@ -31,6 +31,7 @@ Then you can access your storybook from the browser.
 To learn more about what `getstorybook` command does, have a look at our slow start guides:
 * [React](/basics/guide-react/)
 * [Vue](/basics/guide-vue/)
+* [Svelte](/basics/guide-svelte/)
 * [Angular](/basics/guide-angular/)
 * [Mithril](/basics/guide-mithril/)
 * [Marko](/basics/guide-marko/)
