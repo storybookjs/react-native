@@ -5,12 +5,12 @@ import Panel from './components/Panel';
 import { ADDON_ID, PANEL_ID } from './shared';
 
 function init() {
-  addons.register(ADDON_ID, () => {
+  addons.register(ADDON_ID, api => {
+    const channel = addons.getChannel();
     addons.addPanel(PANEL_ID, {
       title: 'Accessibility',
-      render() {
-        return <Panel />;
-      },
+      // eslint-disable-next-line react/prop-types
+      render: ({ active }) => <Panel channel={channel} api={api} active={active} />,
     });
   });
 }

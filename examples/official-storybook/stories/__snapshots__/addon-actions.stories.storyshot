@@ -113,14 +113,6 @@ exports[`Storyshots Addons|Actions Circular Payload 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Decorated Action (deprecated) 1`] = `
-<button
-  class="css-1qwzad5"
->
-  Native Event
-</button>
-`;
-
 exports[`Storyshots Addons|Actions Decorated action + config 1`] = `
 <button
   class="css-1qwzad5"
@@ -242,5 +234,13 @@ exports[`Storyshots Addons|Actions configureActionsDepth 1`] = `
   class="css-1qwzad5"
 >
   Object (configured depth: 2)
+</button>
+`;
+
+exports[`Storyshots Addons|Actions.deprecated Decorated Action 1`] = `
+<button
+  class="css-1qwzad5"
+>
+  Native Event
 </button>
 `;

@@ -30,26 +30,26 @@ jest.mock('global', () => ({
 
 describe('Background Panel', () => {
   it('should exist', () => {
-    const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} />);
+    const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} active />);
 
     expect(backgroundPanel).toBeDefined();
   });
 
   it('should have a default background value of transparent', () => {
-    const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} />);
+    const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} active />);
 
     expect(backgroundPanel.state().backgrounds).toHaveLength(0);
   });
 
   it('should show setup instructions if no colors provided', () => {
-    const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} />);
+    const backgroundPanel = shallow(<BackgroundPanel channel={channel} api={mockedApi} active />);
 
     expect(backgroundPanel.html().match(/Setup Instructions/gim).length).toBeGreaterThan(0);
   });
 
   it('should set the query string', () => {
     const SpiedChannel = new EventEmitter();
-    mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} active />);
     SpiedChannel.emit(Events.SET, backgrounds);
 
     expect(mockedApi.getQueryParam).toBeCalledWith('background');
@@ -57,7 +57,7 @@ describe('Background Panel', () => {
 
   it('should not unset the query string', () => {
     const SpiedChannel = new EventEmitter();
-    mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} active />);
     SpiedChannel.emit(Events.UNSET, []);
 
     expect(mockedApi.setQueryParams).not.toHaveBeenCalled();
@@ -65,7 +65,9 @@ describe('Background Panel', () => {
 
   it('should accept colors through channel and render the correct swatches with a default swatch', () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    const backgroundPanel = mount(
+      <BackgroundPanel channel={SpiedChannel} api={mockedApi} active />
+    );
     SpiedChannel.emit(Events.SET, backgrounds);
 
     expect(backgroundPanel.state('backgrounds')).toEqual(backgrounds);
@@ -73,7 +75,9 @@ describe('Background Panel', () => {
 
   it('should allow setting a default swatch', () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    const backgroundPanel = mount(
+      <BackgroundPanel channel={SpiedChannel} api={mockedApi} active />
+    );
     const [head, ...tail] = backgrounds;
     const localBgs = [{ ...head, default: true }, ...tail];
     SpiedChannel.emit(Events.SET, localBgs);
@@ -88,7 +92,9 @@ describe('Background Panel', () => {
 
   it('should allow the default swatch become the background color', () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    const backgroundPanel = mount(
+      <BackgroundPanel channel={SpiedChannel} api={mockedApi} active />
+    );
     const [head, second, ...tail] = backgrounds;
     const localBgs = [head, { ...second, default: true }, ...tail];
     SpiedChannel.on('background', bg => {
@@ -106,7 +112,9 @@ describe('Background Panel', () => {
 
   it('should unset all swatches on receiving the background-unset message', () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    const backgroundPanel = mount(
+      <BackgroundPanel channel={SpiedChannel} api={mockedApi} active />
+    );
     SpiedChannel.emit(Events.SET, backgrounds);
 
     expect(backgroundPanel.state('backgrounds')).toEqual(backgrounds);
@@ -118,7 +126,9 @@ describe('Background Panel', () => {
 
   it('should set iframe background', () => {
     const SpiedChannel = new EventEmitter();
-    const backgroundPanel = mount(<BackgroundPanel channel={SpiedChannel} api={mockedApi} />);
+    const backgroundPanel = mount(
+      <BackgroundPanel channel={SpiedChannel} api={mockedApi} active />
+    );
     backgroundPanel.setState({ backgrounds }); // force re-render
 
     backgroundPanel

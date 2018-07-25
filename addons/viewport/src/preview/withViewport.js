@@ -33,6 +33,7 @@ const applyViewportOptions = (options = {}) => {
 const withViewport = makeDecorator({
   name: 'withViewport',
   parameterName: 'viewport',
+  allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
     const storyOptions = parameters || options;
     const viewportOptions =

@@ -21,15 +21,15 @@ We have had the best experience using `awesome-typescript-loader`, but other tut
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default):
 
 ```js
-const path = require("path");
-const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin");
+const path = require('path');
+const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin');
 module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve("awesome-typescript-loader")
+    loader: require.resolve('awesome-typescript-loader'),
   });
   config.plugins.push(new TSDocgenPlugin()); // optional
-  config.resolve.extensions.push(".ts", ".tsx");
+  config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
 ```
@@ -74,17 +74,17 @@ This is for the default configuration where `/stories` is a peer of `src`. If yo
 The very handy [Storybook Info addon](https://github.com/storybooks/storybook/tree/master/addons/info) autogenerates prop tables documentation for each component, however it doesn't work with Typescript types. The current solution is to use [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) to preprocess the Typescript files to give the Info addon what it needs. The webpack config above does this, and so for the rest of your stories you use it as per normal:
 
 ```js
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
-import { action } from "@storybook/addon-actions";
-import TicTacToeCell from "./TicTacToeCell";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import TicTacToeCell from './TicTacToeCell';
 
-const stories = storiesOf("Components", module);
+const stories = storiesOf('Components', module);
 
 stories.add(
-  "TicTacToeCell",
-  withInfo({ inline: true })(() => <TicTacToeCell value="X" position={{ x: 0, y: 0 }} onClick={action("onClick")} />)
+  'TicTacToeCell',
+  () => <TicTacToeCell value="X" position={{ x: 0, y: 0 }} onClick={action('onClick')} />,
+  { info: { inline: true } }
 );
 ```
 
@@ -92,48 +92,59 @@ stories.add(
 
 Please refer to the [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) docs for writing prop descriptions and other annotations to your Typescript interfaces.
 
-Additional annotation can be achieved by creating a `wInfo` higher order component:
+Additional annotation can be achieved by setting a default set of info parameters:
 
 ```js
-import { withInfo } from "@storybook/addon-info";
-const wInfoStyle = {
-  header: {
-    h1: {
-      marginRight: "20px",
-      fontSize: "25px",
-      display: "inline"
+// Globally in your .storybook/config.js, or alternatively, per-chapter
+addDecorator({
+  styles: {
+    header: {
+      h1: {
+        marginRight: '20px',
+        fontSize: '25px',
+        display: 'inline',
+      },
+      body: {
+        paddingTop: 0,
+        paddingBottom: 0,
+      },
+      h2: {
+        display: 'inline',
+        color: '#999',
+      },
     },
-    body: {
-      paddingTop: 0,
-      paddingBottom: 0
+    infoBody: {
+      backgroundColor: '#eee',
+      padding: '0px 5px',
+      lineHeight: '2',
     },
-    h2: {
-      display: "inline",
-      color: "#999"
-    }
   },
-  infoBody: {
-    backgroundColor: "#eee",
-    padding: "0px 5px",
-    lineHeight: "2"
-  }
-};
-export const wInfo = text => withInfo({ inline: true, source: false, styles: wInfoStyle, text: text });
+  inline: true,
+  source: false,
+});
 ```
 
 This can be used like so:
 
 ```js
-import React from "react";
+import React from 'react';
 
-import { storiesOf } from "@storybook/react";
-import { PrimaryButton } from "./Button";
-import { wInfo } from "../../utils";
-import { text, select, boolean } from "@storybook/addon-knobs/react";
+import { storiesOf } from '@storybook/react';
+import { PrimaryButton } from './Button';
+import { text, select, boolean } from '@storybook/addon-knobs/react';
 
-storiesOf("Components/Button", module).addWithJSX(
-  "basic PrimaryButton",
-  wInfo(`
+storiesOf('Components/Button', module).addWithJSX(
+  'basic PrimaryButton',
+  () => (
+    <PrimaryButton
+      label={text('label', 'Enroll')}
+      disabled={boolean('disabled', false)}
+      onClick={() => alert('hello there')}
+    />
+  ),
+  {
+    info: {
+      text: `
 
   ### Notes
 
@@ -148,13 +159,9 @@ storiesOf("Components/Button", module).addWithJSX(
   />
   ~~~
 
-`)(() => (
-    <PrimaryButton
-      label={text("label", "Enroll")}
-      disabled={boolean("disabled", false)}
-      onClick={() => alert("hello there")}
-    />
-  ))
+`,
+    },
+  }
 );
 ```
 
@@ -215,5 +222,5 @@ You will need to set up some scripts - these may help:
 
 ## Related Issues and Helpful Resources
 
-* [Storybook, React, TypeScript and Jest](https://medium.com/@mtiller/storybook-react-typescript-and-jest-c9059ea06fa7)
-* [React, Storybook & TypeScript](http://www.joshschreuder.me/react-storybooks-with-typescript/)
+- [Storybook, React, TypeScript and Jest](https://medium.com/@mtiller/storybook-react-typescript-and-jest-c9059ea06fa7)
+- [React, Storybook & TypeScript](http://www.joshschreuder.me/react-storybooks-with-typescript/)

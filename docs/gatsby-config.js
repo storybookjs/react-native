@@ -27,6 +27,7 @@ module.exports = {
         '/configurations/add-custom-head-tags/',
         '/configurations/serving-static-files/',
         '/configurations/env-vars/',
+        '/configurations/theming/',
         '/configurations/cli-options/',
       ],
       testing: [

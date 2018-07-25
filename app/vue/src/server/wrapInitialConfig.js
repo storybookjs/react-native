@@ -1,5 +1,8 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 export default config => ({
   ...config,
+  plugins: [...config.plugins, new VueLoaderPlugin()],
   module: {
     ...config.module,
     rules: [

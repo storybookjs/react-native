@@ -11,11 +11,10 @@ import TableComponent from '../components/TableComponent';
 import externalMdDocs from './addon-info-resources/EXAMPLE.md';
 
 storiesOf('Addons|Info.React Docgen', module)
+  .addDecorator(withInfo)
   .add(
     'Comments from PropType declarations',
-    withInfo(
-      'Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table'
-    )(() => (
+    () => (
       <DocgenButton
         onClick={action('clicked')}
         label="Docgen Button"
@@ -33,29 +32,39 @@ storiesOf('Addons|Info.React Docgen', module)
         }}
         arrayOf={[1, 2, 3]}
       />
-    ))
+    ),
+    {
+      info:
+        'Comments above the PropType declarations should be extracted from the React component file itself and rendered in the Info Addon prop table',
+    }
   )
   .add(
     'Comments from Flow declarations',
-    withInfo(
-      'Comments above the Flow declarations should be extracted from the React component file itself and rendered in the Info Addon prop table'
-    )(() => <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />)
+    () => <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />,
+    {
+      info:
+        'Comments above the Flow declarations should be extracted from the React component file itself and rendered in the Info Addon prop table',
+    }
   )
   .add(
     'Comments from component declaration',
-    withInfo(
-      'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
-    )(() => <BaseButton onClick={action('clicked')} label="Button" />)
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    {
+      info:
+        'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading',
+    }
   )
   .add(
     'Comments from named export component declaration',
-    withInfo(
-      'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading'
-    )(() => <NamedExportButton onClick={action('clicked')} label="Button" />)
+    () => <NamedExportButton onClick={action('clicked')} label="Button" />,
+    {
+      info:
+        'Comments above the component declaration should be extracted from the React component file itself and rendered below the Info Addon heading',
+    }
   );
 
 const markdownDescription = `
-#### You can use markdown in your withInfo() description.
+#### You can use markdown in your withInfo description.
 
 Sometimes you might want to manually include some code examples:
 ~~~js
@@ -66,21 +75,27 @@ Maybe include a [link](http://storybook.js.org) to your project as well.
 `;
 
 storiesOf('Addons|Info.Markdown', module)
+  .addDecorator(withInfo)
   .add(
     'Displays Markdown in description',
-    withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    { info: markdownDescription }
   )
   .add(
     'From internal Markdown file',
-    withInfo(`
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    {
+      info: `
       # internal
       ## markdown
       file
-    `)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+    `,
+    }
   )
   .add(
     'From external Markdown file',
-    withInfo(externalMdDocs)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    { info: externalMdDocs }
   );
 
 const JSXDescription = (
@@ -100,70 +115,87 @@ const JSXDescription = (
   </div>
 );
 
-storiesOf('Addons|Info.JSX', module).add(
-  'Displays JSX in description',
-  withInfo({ text: JSXDescription })(() => (
-    <BaseButton onClick={action('clicked')} label="Button" />
-  ))
-);
+storiesOf('Addons|Info.JSX', module)
+  .addDecorator(withInfo)
+  .add(
+    'Displays JSX in description',
+    () => <BaseButton onClick={action('clicked')} label="Button" />,
+    {
+      info: { text: JSXDescription },
+    }
+  );
 
-storiesOf('Addons|Info.Options.inline', module).add(
-  'Inlines component inside story',
-  withInfo({
-    text: 'Component should be inlined between description and PropType table',
-    inline: true, // Displays info inline vs click button to view
-  })(() => <BaseButton label="Button" />)
-);
+storiesOf('Addons|Info.Options.inline', module)
+  .addDecorator(withInfo)
+  .add('Inlines component inside story', () => <BaseButton label="Button" />, {
+    info: {
+      text: 'Component should be inlined between description and PropType table',
+      inline: true, // Displays info inline vs click button to view
+    },
+  });
 
-storiesOf('Addons|Info.Options.excludedPropTypes', module).add(
-  'Excludes propTypes that are in the excludedPropTypes array',
-  withInfo({
-    text: 'Label propType should be excluded',
-    excludedPropTypes: ['label'],
-  })(() => <BaseButton label="Button" />)
-);
+storiesOf('Addons|Info.Options.excludedPropTypes', module)
+  .addDecorator(withInfo)
+  .add(
+    'Excludes propTypes that are in the excludedPropTypes array',
+    () => <BaseButton label="Button" />,
+    {
+      info: {
+        text: 'Label propType should be excluded',
+        excludedPropTypes: ['label'],
+      },
+    }
+  );
 
-storiesOf('Addons|Info.Options.header', module).add(
-  'Shows or hides Info Addon header',
-  withInfo({
-    text: 'The Info Addon header should be hidden',
-    header: false, // Toggles display of header with component name and description
-  })(() => <BaseButton label="Button" />)
-);
+storiesOf('Addons|Info.Options.header', module)
+  .addDecorator(withInfo)
+  .add('Shows or hides Info Addon header', () => <BaseButton label="Button" />, {
+    info: {
+      text: 'The Info Addon header should be hidden',
+      header: false, // Toggles display of header with component name and description
+    },
+  });
 
-storiesOf('Addons|Info.Options.source', module).add(
-  'Shows or hides Info Addon source',
-  withInfo({
-    text: 'The Info Addon source section should be hidden',
-    source: false, // Displays the source of story Component
-  })(() => <BaseButton label="Button" />)
-);
+storiesOf('Addons|Info.Options.source', module)
+  .addDecorator(withInfo)
+  .add('Shows or hides Info Addon source', () => <BaseButton label="Button" />, {
+    info: {
+      text: 'The Info Addon source section should be hidden',
+      source: false, // Displays the source of story Component
+    },
+  });
 
-storiesOf('Addons|Info.Options.propTables', module).add(
-  'Shows additional component prop tables',
-  withInfo({
-    text: 'There should be a prop table added for a component not included in the story',
-    propTables: [FlowTypeButton],
-  })(() => <BaseButton label="Button" />)
-);
+storiesOf('Addons|Info.Options.propTables', module)
+  .addDecorator(withInfo)
+  .add('Shows additional component prop tables', () => <BaseButton label="Button" />, {
+    info: {
+      text: 'There should be a prop table added for a component not included in the story',
+      propTables: [FlowTypeButton],
+    },
+  });
 
-storiesOf('Addons|Info.Options.propTablesExclude', module).add(
-  'Exclude component from prop tables',
-  withInfo({
-    text: 'This can exclude extraneous components from being displayed in prop tables.',
-    propTablesExclude: [FlowTypeButton],
-  })(() => (
-    <div>
-      <BaseButton label="Button" />
-      <FlowTypeButton label="Flow Typed Button" />
-    </div>
-  ))
-);
+storiesOf('Addons|Info.Options.propTablesExclude', module)
+  .addDecorator(withInfo)
+  .add(
+    'Exclude component from prop tables',
+    () => (
+      <div>
+        <BaseButton label="Button" />
+        <FlowTypeButton label="Flow Typed Button" />
+      </div>
+    ),
+    {
+      info: {
+        text: 'This can exclude extraneous components from being displayed in prop tables.',
+        propTablesExclude: [FlowTypeButton],
+      },
+    }
+  );
 
 storiesOf('Addons|Info.Options.styles', module)
-  .add(
-    'Extend info styles with an object',
-    withInfo({
+  .addDecorator(withInfo)
+  .add('Extend info styles with an object', () => <BaseButton label="Button" />, {
+    info: {
       styles: {
         button: {
           base: {
@@ -176,11 +208,10 @@ storiesOf('Addons|Info.Options.styles', module)
           },
         },
       },
-    })(() => <BaseButton label="Button" />)
-  )
-  .add(
-    'Full control over styles using a function',
-    withInfo({
+    },
+  })
+  .add('Full control over styles using a function', () => <BaseButton label="Button" />, {
+    info: {
       styles: stylesheet => ({
         ...stylesheet,
         header: {
@@ -191,20 +222,19 @@ storiesOf('Addons|Info.Options.styles', module)
           },
         },
       }),
-    })(() => <BaseButton label="Button" />)
-  );
+    },
+  });
 
-storiesOf('Addons|Info.Options.TableComponent', module).add(
-  'Use a custom component for the table',
-  withInfo({
-    TableComponent,
-  })(() => <BaseButton label="Button" />)
-);
+storiesOf('Addons|Info.Options.TableComponent', module)
+  .addDecorator(withInfo)
+  .add('Use a custom component for the table', () => <BaseButton label="Button" />, {
+    info: {
+      TableComponent,
+    },
+  });
 
 storiesOf('Addons|Info.Decorator', module)
-  .addDecorator((story, context) =>
-    withInfo('Info could be used as a global or local decorator as well.')(story)(context)
-  )
+  .addDecorator(withInfo('Info can take options via the global or local decorator as well.'))
   .add('Use Info as story decorator', () => <BaseButton label="Button" />);
 
 const hoc = WrapComponent => ({ ...props }) => <WrapComponent {...props} />;
@@ -213,123 +243,138 @@ const Input = hoc(() => <input type="text" />);
 
 const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
 
-storiesOf('Addons|Info.GitHub issues', module).add(
-  '#1814',
-  withInfo('Allow Duplicate DisplayNames for HOC #1814')(() => (
-    <div>
-      <Input />
-      <TextArea />
-    </div>
-  ))
-);
+storiesOf('Addons|Info.GitHub issues', module)
+  .addDecorator(withInfo)
+  .add(
+    '#1814',
+    () => (
+      <div>
+        <Input />
+        <TextArea />
+      </div>
+    ),
+    {
+      info: 'Allow Duplicate DisplayNames for HOC #1814',
+    }
+  );
 
-storiesOf('Addons|Info.Options.maxPropsIntoLine === 0', module).add(
-  'Object and array props are broken to lines',
-  withInfo({
-    text: 'Component should be inlined between description and PropType table',
-    inline: true,
-    maxPropsIntoLine: 0,
-  })(() => (
-    <BaseButton
-      label="Button"
-      object={{
-        one: 'Object and array properties',
-        two: 'will be broken to different lines',
-        three: 'if greater than `maxPropsIntoLine` option threshold.',
-      }}
-      array={['one', 'two', 'three', 'four']}
-      arrayOfObjects={[
-        {
-          one: 'Object and array properties will be broken to different lines',
-          two: 'if greater than `maxPropsIntoLine` option threshold.',
-          object: {
-            object1: {
-              one: 'one',
-              two: 'two',
-              three: 'three',
-            },
-            array: ['one', 'two', 'three'],
-            object2: {
-              object: {
+storiesOf('Addons|Info.Options.maxPropsIntoLine === 0', module)
+  .addDecorator(withInfo)
+  .add(
+    'Object and array props are broken to lines',
+    () => (
+      <BaseButton
+        label="Button"
+        object={{
+          one: 'Object and array properties',
+          two: 'will be broken to different lines',
+          three: 'if greater than `maxPropsIntoLine` option threshold.',
+        }}
+        array={['one', 'two', 'three', 'four']}
+        arrayOfObjects={[
+          {
+            one: 'Object and array properties will be broken to different lines',
+            two: 'if greater than `maxPropsIntoLine` option threshold.',
+            object: {
+              object1: {
                 one: 'one',
                 two: 'two',
                 three: 'three',
               },
-              array: [
-                'one',
-                'two',
-                {
-                  object: {
-                    object: {
-                      one: 'one',
-                      two: 'two',
-                      three: 'three',
-                    },
-                    array: ['one', 'two', 'three'],
-                  },
+              array: ['one', 'two', 'three'],
+              object2: {
+                object: {
+                  one: 'one',
+                  two: 'two',
+                  three: 'three',
                 },
-              ],
+                array: [
+                  'one',
+                  'two',
+                  {
+                    object: {
+                      object: {
+                        one: 'one',
+                        two: 'two',
+                        three: 'three',
+                      },
+                      array: ['one', 'two', 'three'],
+                    },
+                  },
+                ],
+              },
             },
           },
-        },
-      ]}
-    />
-  ))
-);
+        ]}
+      />
+    ),
+    {
+      info: {
+        text: 'Component should be inlined between description and PropType table',
+        inline: true,
+        maxPropsIntoLine: 0,
+      },
+    }
+  );
 
-storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module).add(
-  'Object and array props are broken to lines',
-  withInfo({
-    text: 'Component should be inlined between description and PropType table',
-    inline: true,
-    maxPropsIntoLine: 3,
-  })(() => (
-    <BaseButton
-      label="Button"
-      object={{
-        one: 'Object and array properties',
-        two: 'will be broken to different lines',
-        three: 'if greater than `maxPropsIntoLine` option threshold.',
-      }}
-      array={['one', 'two', 'three', 'four']}
-      arrayOfObjects={[
-        {
-          one: 'Object and array properties will be broken to different lines',
-          two: 'if greater than `maxPropsIntoLine` option threshold.',
-          object: {
-            object1: {
-              one: 'one',
-              two: 'two',
-              three: 'three',
-            },
-            array: ['one', 'two', 'three'],
-            object2: {
-              object: {
+storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module)
+  .addDecorator(withInfo)
+  .add(
+    'Object and array props are broken to lines',
+    () => (
+      <BaseButton
+        label="Button"
+        object={{
+          one: 'Object and array properties',
+          two: 'will be broken to different lines',
+          three: 'if greater than `maxPropsIntoLine` option threshold.',
+        }}
+        array={['one', 'two', 'three', 'four']}
+        arrayOfObjects={[
+          {
+            one: 'Object and array properties will be broken to different lines',
+            two: 'if greater than `maxPropsIntoLine` option threshold.',
+            object: {
+              object1: {
                 one: 'one',
                 two: 'two',
                 three: 'three',
               },
-              array: [
-                'one',
-                'two',
-                {
-                  object: {
-                    object: {
-                      one: 'one',
-                      two: 'two',
-                      three: 'three',
-                    },
-                    array: ['one', 'two', 'three'],
-                  },
+              array: ['one', 'two', 'three'],
+              object2: {
+                object: {
+                  one: 'one',
+                  two: 'two',
+                  three: 'three',
                 },
-              ],
+                array: [
+                  'one',
+                  'two',
+                  {
+                    object: {
+                      object: {
+                        one: 'one',
+                        two: 'two',
+                        three: 'three',
+                      },
+                      array: ['one', 'two', 'three'],
+                    },
+                  },
+                ],
+              },
             },
           },
-        },
-      ]}
-    />
-  ))
-);
+        ]}
+      />
+    ),
+    {
+      info: {
+        text: 'Component should be inlined between description and PropType table',
+        inline: true,
+        maxPropsIntoLine: 3,
+      },
+    }
+  );
 
 storiesOf('Addons|Info.Parameters', module)
   .addDecorator(
@@ -386,3 +431,8 @@ storiesOf('Addons|Info.Parameters', module)
     () => <BaseButton onClick={action('clicked')} label="Button" />,
     { info: { disable: true } }
   );
+
+storiesOf('Addons|Info.deprecated', module).add(
+  'Displays Markdown in description',
+  withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
+);

@@ -1,24 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'react-emotion';
 
-import Textarea from 'react-textarea-autosize';
-import debounce from 'lodash.debounce';
-
-const StyledTextarea = styled(Textarea)({
-  display: 'table-cell',
-  boxSizing: 'border-box',
-  verticalAlign: 'middle',
-  height: '26px',
-  width: '100%',
-  maxWidth: '100%',
-  outline: 'none',
-  border: '1px solid #f7f4f4',
-  borderRadius: 2,
-  fontSize: 11,
-  padding: '5px',
-  color: '#555',
-});
+import { Textarea } from '@storybook/components';
 
 function formatArray(value, separator) {
   if (value === '') {
@@ -28,34 +11,21 @@ function formatArray(value, separator) {
 }
 
 class ArrayType extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      value: props.knob.value.join(props.knob.separator),
-    };
-
-    this.onChange = debounce(this.props.onChange, 200);
-  }
-
-  componentWillUnmount() {
-    this.onChange.cancel();
+  shouldComponentUpdate(nextProps) {
+    return nextProps.knob.value !== this.props.knob.value;
   }
 
   handleChange = e => {
     const { knob } = this.props;
     const { value } = e.target;
     const newVal = formatArray(value, knob.separator);
-
-    this.setState({ value });
-    this.onChange(newVal);
+    this.props.onChange(newVal);
   };
 
   render() {
     const { knob } = this.props;
-    const { value } = this.state;
 
-    return <StyledTextarea id={knob.name} value={value} onChange={this.handleChange} />;
+    return <Textarea id={knob.name} value={knob.value} onChange={this.handleChange} size="flex" />;
   }
 }
 

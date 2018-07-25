@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
+import IoChevronRight from 'react-icons/lib/io/chevron-right';
 
 import Info from './Info';
 import Tags from './Tags';
 import Elements from './Elements';
 
-const Wrapper = styled('div')({
+const Wrapper = styled('div')(({ theme }) => ({
   padding: '0 14px',
   cursor: 'pointer',
-  borderBottom: '1px solid rgb(234, 234, 234)',
-});
+  borderBottom: theme.mainBorder,
+}));
 
-const HeaderBar = styled('button')({
+const HeaderBar = styled('button')(({ theme }) => ({
   padding: '12px 0px',
   display: 'block',
   width: '100%',
   border: 0,
   background: 'none',
-});
+  color: 'inherit',
+
+  borderTop: '3px solid transparent',
+  borderBottom: '3px solid transparent',
+
+  '&:focus': {
+    outline: '0 none',
+    borderBottom: `3px solid ${theme.highlightColor}`,
+  },
+}));
 
 class Item extends Component {
   static propTypes = {
@@ -46,7 +56,19 @@ class Item extends Component {
 
     return (
       <Wrapper>
-        <HeaderBar onClick={this.onToggle}>{item.description}</HeaderBar>
+        <HeaderBar onClick={this.onToggle}>
+          <IoChevronRight
+            size={10}
+            color="#9DA5AB"
+            style={{
+              marginRight: '5px',
+              marginBottom: '2px',
+              transform: `rotate(${open ? 90 : 0}deg)`,
+              transition: 'transform 0.3s ease-in-out',
+            }}
+          />
+          {item.description}
+        </HeaderBar>
         {open && <Info item={item} />}
         {open && <Elements elements={item.nodes} passes={passes} />}
         {open && <Tags tags={item.tags} />}

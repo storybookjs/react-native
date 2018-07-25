@@ -31,6 +31,8 @@
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
     "publish": "lerna publish --exact",
+    "publish:stable": "npm run publish -- --concurrency 1 --force-publish=*",
+    "publish:alpha": "npm run publish -- --concurrency 1 --force-publish=* --npm-tag=alpha",
     "postpublish": "yarn --cwd lib/cli test -o",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "npm --prefix examples/official-storybook run storybook",
