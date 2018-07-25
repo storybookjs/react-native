@@ -46,6 +46,7 @@ export const INITIAL_VIEWPORTS = {
       height: '960px',
       width: '540px',
     },
+    type: 'mobile',
   },
   iphonex: {
     name: 'iPhone X',
@@ -53,6 +54,7 @@ export const INITIAL_VIEWPORTS = {
       height: '1218px',
       width: '563px',
     },
+    type: 'mobile',
   },
   ipad: {
     name: 'iPad',
@@ -92,6 +94,7 @@ export const INITIAL_VIEWPORTS = {
       height: '1480px',
       width: '720px',
     },
+    type: 'mobile',
   },
   nexus5x: {
     name: 'Nexus 5X',
@@ -115,6 +118,7 @@ export const INITIAL_VIEWPORTS = {
       height: '960px',
       width: '540px',
     },
+    type: 'mobile',
   },
   pixelxl: {
     name: 'Pixel XL',
@@ -122,6 +126,7 @@ export const INITIAL_VIEWPORTS = {
       height: '1280px',
       width: '720px',
     },
+    type: 'mobile',
   },
 };
 export const DEFAULT_VIEWPORT = 'responsive';
