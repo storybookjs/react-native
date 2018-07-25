@@ -5,7 +5,7 @@ export default config => ({
     rules: [
       ...config.module.rules,
       {
-        test: /\.svelte$/,
+        test: /\.(svelte|html)$/,
         loader: require.resolve('svelte-loader'),
         options: {},
       },
