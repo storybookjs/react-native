@@ -5,8 +5,15 @@ exports[`Storyshots Addon|Actions Action on component method 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button rounded svelte-1hvsa5s"
+    class="button rounded svelte-n2tx93"
   >
+    <strong>
+      Round
+       corners
+    </strong>
+    <br />
+    
+  
     Custom text
     
   
@@ -24,8 +31,15 @@ exports[`Storyshots Addon|Actions Action on view method 1`] = `
   
 
   <button
-    class="button  svelte-1hvsa5s"
+    class="button  svelte-n2tx93"
   >
+    <strong>
+      Square
+       corners
+    </strong>
+    <br />
+    
+  
     
     
   

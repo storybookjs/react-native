@@ -10,8 +10,15 @@ exports[`Storyshots Button rounded 1`] = `
   
 
   <button
-    class="button rounded svelte-1hvsa5s"
+    class="button rounded svelte-n2tx93"
   >
+    <strong>
+      Round
+       corners
+    </strong>
+    <br />
+    
+  
     
     
   
@@ -53,8 +60,15 @@ exports[`Storyshots Button square 1`] = `
   
 
   <button
-    class="button  svelte-1hvsa5s"
+    class="button  svelte-n2tx93"
   >
+    <strong>
+      Square
+       corners
+    </strong>
+    <br />
+    
+  
     
     
   

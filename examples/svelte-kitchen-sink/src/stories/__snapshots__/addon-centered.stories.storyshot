@@ -4,22 +4,40 @@ exports[`Storyshots Addon|Centered rounded 1`] = `
 <section
   class="storybook-snapshot-container"
 >
-  <div
-    class="svelte-centered-wrapper"
-    style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+  <button
+    class="button rounded svelte-n2tx93"
   >
-    <div
-      class="svelte-centered-container"
-      style="margin: auto; max-height: 100%;"
-    >
-      <button
-        class="button rounded svelte-1hvsa5s"
-      >
-        Look, I'm centered!
-        
+    <strong>
+      Round
+       corners
+    </strong>
+    <br />
+    
   
-      </button>
-    </div>
-  </div>
+    Look, I'm centered!
+    
+  
+  </button>
+</section>
+`;
+
+exports[`Storyshots Addon|Centered with action 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="button rounded svelte-n2tx93"
+  >
+    <strong>
+      Round
+       corners
+    </strong>
+    <br />
+    
+  
+    
+    
+  
+  </button>
 </section>
 `;

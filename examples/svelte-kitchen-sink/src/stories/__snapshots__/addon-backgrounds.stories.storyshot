@@ -10,8 +10,15 @@ exports[`Storyshots Addon|Backgrounds story 1 1`] = `
   
 
   <button
-    class="button  svelte-1hvsa5s"
+    class="button  svelte-n2tx93"
   >
+    <strong>
+      Square
+       corners
+    </strong>
+    <br />
+    
+  
     
     
   

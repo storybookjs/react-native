@@ -10,8 +10,15 @@ exports[`Storyshots Addon|Notes Note with HTML 1`] = `
   
 
   <button
-    class="button  svelte-1hvsa5s"
+    class="button  svelte-n2tx93"
   >
+    <strong>
+      Square
+       corners
+    </strong>
+    <br />
+    
+  
     
     
   
@@ -53,8 +60,15 @@ exports[`Storyshots Addon|Notes Simple note 1`] = `
   
 
   <button
-    class="button  svelte-1hvsa5s"
+    class="button  svelte-n2tx93"
   >
+    <strong>
+      Square
+       corners
+    </strong>
+    <br />
+    
+  
     
     
   
