@@ -3,7 +3,7 @@
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 
@@ -56,6 +56,25 @@ storiesOf('MyComponent', module)
   }));
 ```
 
+example for Svelte:
+
+```js
+import { storiesOf } from '@storybook/svelte';
+import Centered from '@storybook/addon-centered/svelte';
+
+import Component from '../Component.svelte';
+
+storiesOf('Addon|Centered', module)
+  .addDecorator(Centered)
+  .add('rounded', () => ({
+    Component,
+    data: {
+      rounded: true,
+      text: "Look, I'm centered!",
+    },
+  }))
+```
+
 example for Mithril:
 
 ```js
@@ -105,7 +124,7 @@ storiesOf('Addon|Centered', module)
   )
   .addDecorator(centered)
   .add('centered template', () => ({
-    template: `<storybook-button-component 
+    template: `<storybook-button-component
         [text]="text" (onClick)="onClick($event)">
       </storybook-button-component>`,
     props: {
@@ -140,6 +159,19 @@ import { configure, addDecorator } from '@storybook/vue';
 import centered from '@storybook/addon-centered';
 
 addDecorator(centered);
+
+configure(function () {
+  //...
+}, module);
+```
+
+example for Svelte:
+
+```js
+import { configure, addDecorator } from '@storybook/svelte';
+import Centered from '@storybook/addon-centered/svelte';
+
+addDecorator(Centered);
 
 configure(function () {
   //...
