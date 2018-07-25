@@ -14,7 +14,7 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
         style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-1kbxkw2"
+          class="css-7r9jvr"
         >
           <div
             class="css-9in0fq"
@@ -25,20 +25,10 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
               Stories
             </div>
           </div>
-          <div
-            class="css-owlojx"
-            direction="vertical"
-          >
-            <div
-              class="css-19oxd4p"
-              direction="vertical"
-            />
-          </div>
         </div>
       </div>
       <span
         class="Resizer vertical "
-        style="cursor:col-resize;height:auto;width:10px;z-index:1"
       />
       <div
         class="Pane vertical Pane2  "
@@ -71,7 +61,6 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
           </div>
           <span
             class="Resizer vertical "
-            style="cursor:col-resize;height:100%;width:10px;z-index:1"
           />
           <div
             class="Pane vertical Pane2  "
@@ -80,15 +69,6 @@ exports[`Storyshots Components|Layout addon panel in right 1`] = `
             <div
               class="css-1929wko"
             >
-              <div
-                class="css-nq4yle"
-                direction="vertical"
-              >
-                <div
-                  class="css-19oxd4p"
-                  direction="vertical"
-                />
-              </div>
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
               >
@@ -119,7 +99,7 @@ exports[`Storyshots Components|Layout default 1`] = `
         style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-1kbxkw2"
+          class="css-7r9jvr"
         >
           <div
             class="css-9in0fq"
@@ -130,20 +110,10 @@ exports[`Storyshots Components|Layout default 1`] = `
               Stories
             </div>
           </div>
-          <div
-            class="css-owlojx"
-            direction="vertical"
-          >
-            <div
-              class="css-19oxd4p"
-              direction="vertical"
-            />
-          </div>
         </div>
       </div>
       <span
         class="Resizer vertical "
-        style="cursor:col-resize;height:auto;width:10px;z-index:1"
       />
       <div
         class="Pane vertical Pane2  "
@@ -176,7 +146,6 @@ exports[`Storyshots Components|Layout default 1`] = `
           </div>
           <span
             class="Resizer horizontal "
-            style="cursor:row-resize;height:10px;width:100%;z-index:1"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -185,15 +154,6 @@ exports[`Storyshots Components|Layout default 1`] = `
             <div
               class="css-hys0kv"
             >
-              <div
-                class="css-1fpokv0"
-                direction="horizontal"
-              >
-                <div
-                  class="css-1nvj8jd"
-                  direction="horizontal"
-                />
-              </div>
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
               >
@@ -224,7 +184,7 @@ exports[`Storyshots Components|Layout full screen 1`] = `
         style="flex:none;position:relative;outline:none;width:1px"
       >
         <div
-          class="css-1aqo4nl"
+          class="css-1yb218t"
         >
           <div
             class="css-9in0fq"
@@ -235,20 +195,10 @@ exports[`Storyshots Components|Layout full screen 1`] = `
               Stories
             </div>
           </div>
-          <div
-            class="css-owlojx"
-            direction="vertical"
-          >
-            <div
-              class="css-19oxd4p"
-              direction="vertical"
-            />
-          </div>
         </div>
       </div>
       <span
         class="Resizer vertical disabled"
-        style="height:auto;width:10px;z-index:1"
       />
       <div
         class="Pane vertical Pane2  "
@@ -281,7 +231,6 @@ exports[`Storyshots Components|Layout full screen 1`] = `
           </div>
           <span
             class="Resizer horizontal disabled"
-            style="height:10px;width:100%;z-index:1"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -290,15 +239,6 @@ exports[`Storyshots Components|Layout full screen 1`] = `
             <div
               class="css-1yfjvq7"
             >
-              <div
-                class="css-1fpokv0"
-                direction="horizontal"
-              >
-                <div
-                  class="css-1nvj8jd"
-                  direction="horizontal"
-                />
-              </div>
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
               >
@@ -407,7 +347,7 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
         style="flex:none;position:relative;outline:none;width:250px"
       >
         <div
-          class="css-1kbxkw2"
+          class="css-7r9jvr"
         >
           <div
             class="css-9in0fq"
@@ -418,20 +358,10 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
               Stories
             </div>
           </div>
-          <div
-            class="css-owlojx"
-            direction="vertical"
-          >
-            <div
-              class="css-19oxd4p"
-              direction="vertical"
-            />
-          </div>
         </div>
       </div>
       <span
         class="Resizer vertical "
-        style="cursor:col-resize;height:auto;width:10px;z-index:1"
       />
       <div
         class="Pane vertical Pane2  "
@@ -464,7 +394,6 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
           </div>
           <span
             class="Resizer horizontal disabled"
-            style="height:10px;width:100%;z-index:1"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -473,15 +402,6 @@ exports[`Storyshots Components|Layout no addon panel 1`] = `
             <div
               class="css-1yfjvq7"
             >
-              <div
-                class="css-1fpokv0"
-                direction="horizontal"
-              >
-                <div
-                  class="css-1nvj8jd"
-                  direction="horizontal"
-                />
-              </div>
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
               >
@@ -512,7 +432,7 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
         style="flex:none;position:relative;outline:none;width:1px"
       >
         <div
-          class="css-1aqo4nl"
+          class="css-1yb218t"
         >
           <div
             class="css-9in0fq"
@@ -523,20 +443,10 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
               Stories
             </div>
           </div>
-          <div
-            class="css-owlojx"
-            direction="vertical"
-          >
-            <div
-              class="css-19oxd4p"
-              direction="vertical"
-            />
-          </div>
         </div>
       </div>
       <span
         class="Resizer vertical disabled"
-        style="height:auto;width:10px;z-index:1"
       />
       <div
         class="Pane vertical Pane2  "
@@ -569,7 +479,6 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
           </div>
           <span
             class="Resizer horizontal "
-            style="cursor:row-resize;height:10px;width:100%;z-index:1"
           />
           <div
             class="Pane horizontal Pane2  "
@@ -578,15 +487,6 @@ exports[`Storyshots Components|Layout no stories panel 1`] = `
             <div
               class="css-hys0kv"
             >
-              <div
-                class="css-1fpokv0"
-                direction="horizontal"
-              >
-                <div
-                  class="css-1nvj8jd"
-                  direction="horizontal"
-                />
-              </div>
               <div
                 style="position:absolute;height:100%;width:100%;color:white;background:#fc4a1a"
               >
