@@ -13,11 +13,12 @@ describe('Button Component', () => {
 
   it('should render `text` property', () => {
     const text = 'Hello world';
+    const expected = `Round corners\n  ${text}`;
 
     component.set({ text });
 
     const componentText = target.firstChild.textContent.trim();
 
-    expect(componentText).toEqual(text);
+    expect(componentText).toEqual(expected);
   });
 });
