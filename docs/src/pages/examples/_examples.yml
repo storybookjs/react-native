@@ -137,6 +137,7 @@ gumgum:
   title: GumGum
   description: GumGum (Computer Vision Company) Component library
   demo: https://storybook.gumgum.com
+  source: https://github.com/gumgum/gumdrops
   site: https://gumgum.com
 lucid-ui:
   thumbnail: lucid-ui.png
