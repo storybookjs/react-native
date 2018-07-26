@@ -34,8 +34,9 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 
 ## TODOs
 
-- Support Svelte markup directly in stories
-- Add Svelte storybook generator
-- Provide stories that show advanced Svelte use cases
- - Hydratable
- - Advanced mount options
+- [ ] Support `addon-info`
+- [ ] Support Svelte markup directly in stories
+- [ ] Add Svelte storybook generator
+- [ ] Provide stories that show advanced Svelte use cases
+ - [ ] Hydratable
+ - [ ] Advanced mount options
