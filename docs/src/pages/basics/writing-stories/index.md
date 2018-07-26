@@ -3,21 +3,21 @@ id: 'writing-stories'
 title: 'Writing Stories'
 ---
 
-Storybook is all about writing stories. Usually a story contains a single state of one of your components. That's like a visual test case.
+Storybook is all about writing stories. A story usually contains a single state of one component, almost like a visual test case.
 
 > Technically, a story is a function that returns a React element.
 
-You can write a set of stories for your components and you'll get a storybook.
+A Storybook can be comprised of many stories for many components.
 
-## Keeping your stories
+## Location for Stories
 
-There's no hard and fast rule for this. But, keeping stories close to your components is a good idea.
+There are no rules for this, but in general, it's easier to maintain stories that are located closer to components.
 
-For example, let's say your UI components live in a directory called: `src/components.` Then you can write stories inside the `src/stories` directory.
+For example, if the UI components live in a directory called: `src/components.`, then the stories can be written inside the `src/stories` directory.
 
-This is just one way to do that. You can always edit your storybook config file and ask it to load stories from anywhere you want.
+It's always possible to edit the storybook config file and ask it to load stories from other folders too.
 
-## Writing stories
+## Writing Stories
 
 This is how you write stories:
 (Let's assume there's a component called "Button" in `src/components/Button.js`.)
