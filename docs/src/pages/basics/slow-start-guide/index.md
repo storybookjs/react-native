@@ -1,9 +1,9 @@
 ---
 id: 'slow-start-guide'
-title: 'Slow start guide'
+title: 'Slow Start Guide'
 ---
 
-Storybook supports multiple UI libraries. The manual setup for each is different:
+Storybook supports multiple UI libraries. The manual setup for each framework is different:
 
 -   [Storybook for React](/basics/guide-react/)
 -   [Storybook for Vue](/basics/guide-vue/)
