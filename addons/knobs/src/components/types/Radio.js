@@ -6,6 +6,11 @@ const styles = {
     fontSize: 11,
     padding: '5px',
   },
+  group: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
 };
 
 class RadiosType extends Component {
@@ -42,7 +47,7 @@ class RadiosType extends Component {
   render() {
     const { knob, onChange } = this.props;
 
-    return <div>{this.renderRadioButtonList(knob, onChange)}</div>;
+    return <div style={styles.group}>{this.renderRadioButtonList(knob, onChange)}</div>;
   }
 }
 
