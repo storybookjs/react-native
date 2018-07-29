@@ -84,6 +84,7 @@ const getGotoOptions = ({context, url}) => {
 }
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getGotoOptions})});
 ```
+
 ### Specifying options to _screenshot()_ (puppeteer API)
 
 You might use `getScreenshotOptions` to specify options for screenshot. Will be passed to [Puppeteer .screenshot() fn](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions)
@@ -112,6 +113,32 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 const chromeExecutablePath = '/usr/local/bin/chrome';
 
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', chromeExecutablePath})});
+```
+
+### Customizing a `page` instance
+
+Sometimes, there is a need to customize a page before it  calls to the `goto` api. 
+
+Here is an example for a device emulation: 
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
+const devices = require('puppeteer/DeviceDescriptors');
+
+const iPhone = devices['iPhone 6'];
+
+function customizePage(page) {
+  return page.emulate(iPhone);
+}
+
+initStoryshots({
+  suite: 'Image storyshots', 
+  test: imageSnapshot({
+      storybookUrl: 'http://localhost:6006', 
+      customizePage,
+  })
+});
 ```
 
 ### Integrate image storyshots with regular app
