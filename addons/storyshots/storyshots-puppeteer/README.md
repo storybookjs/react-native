@@ -117,7 +117,7 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'h
 
 ### Customizing a `page` instance
 
-Sometimes, there is a need to customize a page before it  calls to the `goto` api. 
+Sometimes, there is a need to customize a page before it calls to the `goto` api. 
 
 Here is an example for a device emulation: 
 
