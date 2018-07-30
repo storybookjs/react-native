@@ -23,6 +23,7 @@ module.exports = {
   ],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
+    '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
     '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
     '.*\\.(svelte)$': '<rootDir>/node_modules/svelte-jest',

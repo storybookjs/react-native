@@ -264,6 +264,23 @@ const value = select(label, options, defaultValue, groupId);
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
 
+
+### radio buttons
+
+Allows you to get a value from a list of radio buttons from the user.
+
+```js
+import { radios } from '@storybook/addon-knobs';
+
+const options = {
+      Kiwi: 'kiwi',
+      Guava: 'guava',
+      Watermelon: 'watermelon',
+    };
+
+const  = radios(name, options, defaultValue);
+```
+
 ### files
 
 Allows you to get a value from a file input from the user.

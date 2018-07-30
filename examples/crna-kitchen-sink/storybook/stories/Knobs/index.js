@@ -7,6 +7,7 @@ import {
   boolean,
   color,
   select,
+  radios,
   array,
   date,
   object,
@@ -21,6 +22,13 @@ export default () => {
     Cherry: 'cherry',
   };
   const fruit = select('Fruit', fruits, 'apple');
+
+  const otherFruits = {
+    Kiwi: 'kiwi',
+    Guava: 'guava',
+    Watermelon: 'watermelon',
+  };
+  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
   const dollars = number('Dollars', 12.5);
 
   // NOTE: color picker is currently broken
@@ -36,7 +44,7 @@ export default () => {
   // NOTE: put this last because it currently breaks everything after it :D
   const birthday = date('Birthday', new Date('Jan 20 2017'));
 
-  const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+  const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
   const style = { backgroundColor, ...otherStyles };
   const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
   const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };

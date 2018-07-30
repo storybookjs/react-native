@@ -27,7 +27,7 @@ This will register all the addons and you'll be able to see the actions and note
 
 ![Stories without notes](../static/stories-without-notes.png)
 
-Now when you are writing a story it like this and add some notes:
+Now when you are writing a story, import it and add some notes:
 
 ```js
 import { storiesOf } from '@storybook/react';

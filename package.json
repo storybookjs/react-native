@@ -50,6 +50,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.4",
     "babel-plugin-emotion": "^9.1.2",
     "babel-plugin-macros": "^2.2.2",
     "babel-plugin-require-context-hook": "^1.0.0",
