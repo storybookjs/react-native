@@ -28,7 +28,7 @@ Just like that, you can access all of the stories in your Storybook and use the
 There are several frameworks that have out of the box Storybook integrations:
 - [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
 - [Loki](https://loki.js.org/)
-- [Perci](https://percy.io/docs/clients/javascript/react-storybook)
+- [Percy](https://percy.io/docs/clients/javascript/react-storybook)
 - [Screener](https://screener.io/v2/docs) 
 - [Chromatic](https://www.chromaticqa.com)
 
