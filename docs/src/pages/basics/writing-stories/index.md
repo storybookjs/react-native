@@ -19,7 +19,7 @@ The Storybook config file can also be edited to load stories from other folders 
 
 ## Writing Stories
 
-This is how you write stories:
+Here is an example of a basic story:
 (Let's assume there's a component called "Button" in `src/components/Button.js`.)
 
 ```js
@@ -45,11 +45,11 @@ This will add stories in the storybook like this:
 
 ![Basic stories](../static/basic-stories.png)
 
-This uses our basic API for writing stories. There are official and third party Storybook [addons](/addons/introduction) for more advanced functionality.
+This uses Storybook's basic API for writing stories. There are official and third party Storybook [addons](/addons/introduction) for more advanced functionality.
 
 ## Loading stories dynamically
 
-Sometimes, it is necessary to load stories dynamically rather than explicitly in the Storybook config file.
+Sometimes, stories need to be loaded dynamically rather than explicitly in the Storybook config file.
 
 For example, the stories for an app may all be inside the `src/components` directory with the `.stories.js` extension. It is easier to load all the stories automatically like this inside the `.storybook/config.js` file:
 
@@ -71,7 +71,7 @@ The **React Native** packager resolves all the imports at build-time, so it's no
 
 ## Using Decorators
 
-A decorator is a way to wrap a story with a common set of components. Here is an example on centering all components:
+A decorator is a way to wrap a story with a common set of components. Here is an example for centering all components:
 
 ```js
 import React from 'react';
@@ -101,7 +101,7 @@ configure(function() {
 
 ## Using Markdown
 
-As of storybook 3.3, [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can be used in storybook by default. All you need to do is import a markdown file, which extracts the raw markdown content into a string. You can then use that string in any addon that supports markdown (such as notes).
+As of storybook 3.3, [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can be used in Storybook by default. Users can import a markdown file which extracts the raw markdown content into a string. The string can then be used in any addon that supports markdown such as notes and info.
 
 ```js
 import React from 'react';
@@ -116,7 +116,7 @@ storiesOf('Component', module).add('With Markdown', () => <MyComponent />, {
 
 ## Nesting stories
 
-You can organize your stories in a nesting structures using "/" as a separator:
+Stories can be organized in a nested structure using "/" as a separator:
 
 ```js
 // file: src/stories/index.js
@@ -140,7 +140,7 @@ storiesOf('My App/Buttons/Emoji', module).add('with some emoji', () => (
 
 ## Generating nesting path based on \_\_dirname
 
-The name is just a javascript string, by using a template literal, you can easily interpolate data.
+Nesting paths can be programmatically generated with template literals because story names are strings.
 
 One example would be to use `base` from [`paths.macro`](https://github.com/storybooks/paths.macro):
 
@@ -161,7 +161,7 @@ _This uses [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macr
 
 ## Run multiple storybooks
 
-You can run multiple storybooks for different kinds of stories (or components). To do that, you can create different NPM scripts to start different stories. See:
+Multiple storybooks can be built for different kinds of stories or components in a single repository by specifying different port numbers in the start scripts:
 
 ```json
 {
