@@ -11,11 +11,11 @@ A Storybook can be comprised of many stories for many components.
 
 ## Location for Stories
 
-There are no rules for this, but in general, it's easier to maintain stories that are located closer to components.
+There are no rules for this, but in general, stories are easier to maintain when they are located closer to components.
 
-For example, if the UI components live in a directory called: `src/components.`, then the stories can be written inside the `src/stories` directory.
+For example, if the UI components live in a directory called: `src/components`, then the stories can be written inside the `src/stories` directory.
 
-It's always possible to edit the storybook config file and ask it to load stories from other folders too.
+The Storybook config file can also be edited to load stories from other folders too.
 
 ## Writing Stories
 
@@ -41,17 +41,17 @@ storiesOf('Button', module)
   ));
 ```
 
-This will show stories in your storybook like this:
+This will add stories in the storybook like this:
 
 ![Basic stories](../static/basic-stories.png)
 
-This is just our core API for writing stories. In addition to this, you can use the official and third party Storybook [addons](/addons/introduction) to get more functionality.
+This uses our basic API for writing stories. There are official and third party Storybook [addons](/addons/introduction) for more advanced functionality.
 
 ## Loading stories dynamically
 
-Sometimes, you will want to load your stories dynamically rather than explicitly requiring them in the Storybook config file.
+Sometimes, it is necessary to load stories dynamically rather than explicitly in the Storybook config file.
 
-For example, you may write stories for your app inside the `src/components` directory with the `.stories.js` extension. Then you will want to load them at once. Simply edit your config directory at `.storybook/config.js` as follows:
+For example, the stories for an app may all be inside the `src/components` directory with the `.stories.js` extension. It is easier to load all the stories automatically like this inside the `.storybook/config.js` file:
 
 ```js
 import { configure } from '@storybook/react';
@@ -65,13 +65,13 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-Here we use Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Have a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use require.context.
+Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-The **React Native** packager resolves all the imports at build-time, so it's not possible to load modules dynamically. If you don't want to import all your stories manually you can use [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically create the import statements for all of your stories.
+The **React Native** packager resolves all the imports at build-time, so it's not possible to load modules dynamically. There is a third party loader  [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
 
 ## Using Decorators
 
-A decorator is a way to wrap a story with a common set of component(s). Let's say you want to center all your stories. Here is how we can do this with a decorator:
+A decorator is a way to wrap a story with a common set of components. Here is an example on centering all components:
 
 ```js
 import React from 'react';
@@ -84,9 +84,9 @@ storiesOf('MyComponent', module)
   .add('with some props', () => <MyComponent text="The Comp" />);
 ```
 
-Here we only add the decorator for the current set of stories. (In this example, we add it just for the **MyComponent** story group.)
+This only applies the decorator to the current set of stories. (In this example, the decorator is added only to the **MyComponent** story group.)
 
-But, you can also add a decorator **globally** and it'll be applied to all the stories you create. This is how to add a decorator like that:
+It is possible to apply a decorator **globally** to all the stories. Here is an example of the Storybook config file:
 
 ```js
 import React from 'react';
