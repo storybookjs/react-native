@@ -117,9 +117,9 @@ initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'h
 
 ### Customizing a `page` instance
 
-Sometimes, there is a need to customize a page before it calls to the `goto` api. 
+Sometimes, there is a need to customize a page before it calls the `goto` api. 
 
-Here is an example for a device emulation: 
+An example of device emulation: 
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
@@ -178,4 +178,4 @@ If you run your test without either the static build or a running instance, this
 
 To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date.
 This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
-If you run the image snapshots against a running Storybook in dev mode, you don't have to care about being up-to-date because the dev-server is watching changes and rebuilds automatically.
+If you run the image snapshots against a running Storybook in dev mode, you don't have to worry about the snapshots being up-to-date because the dev-server is watching changes and rebuilds automatically.
