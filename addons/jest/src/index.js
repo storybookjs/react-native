@@ -2,7 +2,7 @@ import addons from '@storybook/addons';
 import deprecate from 'util-deprecate';
 
 const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
-  Array.from(testFiles).map(name => {
+  Object.values(testFiles).map(name => {
     if (jestTestResults && jestTestResults.testResults) {
       return {
         name,
