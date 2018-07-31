@@ -14,22 +14,27 @@ yarn storybook
 
 Documentation is written in Markdown and located inside the [`docs/src/pages`](https://github.com/storybooks/storybook/tree/master/docs/src/pages) directory.
 
-### Guidelines for Writing Good documentation
+### Guidelines for Writing Good Documentation
 
 1. Provide examples of code snippets whenever possible.
 2. Use concise language - The less time users spend on reading and understanding docs, the better.
   * Avoid using passive voice.
     - Passive (bad): `It is believed by Storybook that empowering component builders is important.`
     - Active (good): `Storybook believes in empowering component builders.`
+  * Place action in the verb.
+    - Indirect action (bad): `A refactor of this code is necessary`.
+    - Direct action (good): `This code needs to be refactored`.
 3. Avoid the use of pronouns - documentation should not address the reader because not everything applies to the person reading our docs.
-  * Don't use `you` to refer to the user or third party
+  * Don't use `you` to refer to the user or third party.
     - Pronoun (bad): `You can also...`
     - Without pronoun (good): `Users can also...`
   * Don't use `we` to refer to Storybook, contributors, or Storybook users.
     - Pronoun (bad): `We can create this component...`
     - Without pronoun (good): `The component can be created...`
   * Don't use `he`, `she`, `him`, `her`, etc. to refer to third party unless referring to a specific person.
-4. Avoid simplifying problems - this frustrates users even more when they don't understand something "simple":
+  * Refer to us contributors and the product as `Storybook`.
+  * Refer to users as `users`.
+4. Avoid simplifying problems - this frustrates users even more when they don't understand something "simple".
   * Bad examples:
     - `All you need to do is apply...`
     - `Simply add...`
