@@ -4,9 +4,9 @@ title: 'Introduction'
 ---
 
 Storybook is a UI development environment and playground for UI components.
-With it, users can create components independently and showcase components interactively in an isolated development environment.
+The tool enables users to create components independently and showcase components interactively in an isolated development environment.
 
-Storybook runs outside of your app so you can develop UI components in isolation without worrying about app specific dependencies and requirements.
+Storybook runs outside of the main app so users can develop UI components in isolation without worrying about app specific dependencies and requirements.
 
 ![Storybook](../static/screenshot.png)
 
