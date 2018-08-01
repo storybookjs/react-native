@@ -3,18 +3,17 @@ id: 'introduction'
 title: 'Introduction'
 ---
 
-Storybook is a UI development environment for your UI components.
-With it, you can visualize different states of your UI components and develop them interactively.
+Storybook is a UI development environment and playground for UI components.
+The tool enables users to create components independently and showcase components interactively in an isolated development environment.
 
-Storybook runs outside of your app.
-So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
+Storybook runs outside of the main app so users can develop UI components in isolation without worrying about app specific dependencies and requirements.
 
 ![Storybook](../static/screenshot.png)
 
-Storybook also comes with a lot of [addons](/addons/introduction) and a great API to customize as you wish.
-You can also build a [static version](/basics/exporting-storybook) of your storybook and deploy it anywhere you want.
+Storybook also supports a lot of [addons](/addons/introduction) and comes with a flexible API to customize Storybook as desired.
+A [Static version](/basics/exporting-storybook) of Storybook can also be built and deployed to an HTTP server.
 
-Here are some featured storybooks that you can reference to see how Storybook works:
+Here are some featured Storybooks to see how it works:
 
 -   [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
 -   [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
