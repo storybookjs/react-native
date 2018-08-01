@@ -5,7 +5,7 @@ With it, you can visualize different states of your UI components and develop th
 
 > Storybook for Polymer is at the **EXPERIMENTAL** stage!
 
-![Storybook Screenshot](https://github.com/storybooks/storybook/blob/master/app/polymer/docs/demo.gif)
+![Storybook Screenshot](https://github.com/storybooks/storybook/blob/master/media/demo.gif)
 
 Storybook runs outside of your app.
 So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
