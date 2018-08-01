@@ -13,3 +13,4 @@ languages:
     include:
       - .*\.test\.js
       - .*\/__test__\/.*\.js
+      - .*\.storyshot
