@@ -1,14 +1,5 @@
 # Storybook Addon Knobs
 
-[![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
-[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
-[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
-[![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
-[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
-
-* * *
-
 Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
@@ -263,6 +254,23 @@ const value = select(label, options, defaultValue, groupId);
 ```
 
 > You can also provide options as an array like this: `['red', 'blue', 'yellow']`
+
+
+### radio buttons
+
+Allows you to get a value from a list of radio buttons from the user.
+
+```js
+import { radios } from '@storybook/addon-knobs';
+
+const options = {
+      Kiwi: 'kiwi',
+      Guava: 'guava',
+      Watermelon: 'watermelon',
+    };
+
+const  = radios(name, options, defaultValue);
+```
 
 ### files
 

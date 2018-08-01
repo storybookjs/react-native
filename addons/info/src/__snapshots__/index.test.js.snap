@@ -123,7 +123,9 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           >
             <div>
               <h1>
-                function func(x) {return x + 1;}
+                function func(x) {
+          return x + 1;
+        }
               </h1>
               <h2>
                 [object Object]
@@ -1430,7 +1432,9 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           >
             <div>
               <h1>
-                function func(x) {return x + 1;}
+                function func(x) {
+          return x + 1;
+        }
               </h1>
               <h2>
                 [object Object]
