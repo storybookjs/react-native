@@ -32,11 +32,10 @@ Storybook should now be available in the browser with a link provided in the con
 To learn more about what `getstorybook` command does, have a look at the slow start guides:
 * [React](/basics/guide-react/)
 * [Vue](/basics/guide-vue/)
-* [Svelte](/basics/guide-svelte/)
 * [Angular](/basics/guide-angular/)
 * [Mithril](/basics/guide-mithril/)
 * [Marko](/basics/guide-marko/)
 * [HTML](/basics/guide-html/)
-
+* [Svelte](/basics/guide-svelte/)
 
 A tutorial is also available at [Learn Storybook](https://www.learnstorybook.com) for a step-by-step guide (only available for React).

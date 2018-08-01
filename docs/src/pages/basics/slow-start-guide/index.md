@@ -7,8 +7,8 @@ Storybook supports multiple UI libraries. The manual setup for each framework is
 
 -   [Storybook for React](/basics/guide-react/)
 -   [Storybook for Vue](/basics/guide-vue/)
--   [Storybook for Svelte](/basics/guide-svelte/)
 -   [Storybook for Angular](/basics/guide-angular/)
 -   [Storybook for Mithril](/basics/guide-mithril/)
 -   [Storybook for Marko](/basics/guide-marko/)
 -   [Storybook for HTML](/basics/guide-html/)
+-   [Storybook for Svelte](/basics/guide-svelte/)
