@@ -60,5 +60,29 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
         feature2.apply {
             param("title", "Covered Percentage of JS Lines")
         }
+        val feature3 = find<ProjectFeature> {
+            feature {
+                type = "project-graphs"
+                id = "PROJECT_EXT_308"
+                param("format", "integer")
+                param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Total Number of JS Statements",
+                        "sourceBuildTypeId": "OpenSourceProjects_Storybook_Test",
+                        "key": "Total Number of JS Statements"
+                      }
+                    ]
+                """.trimIndent())
+                param("seriesTitle", "Serie")
+                param("title", "New chart title")
+            }
+        }
+        feature3.apply {
+            param("hideFilters", "")
+            param("title", "Total Number of JS Statements")
+            param("defaultFilters", "")
+        }
     }
 }
