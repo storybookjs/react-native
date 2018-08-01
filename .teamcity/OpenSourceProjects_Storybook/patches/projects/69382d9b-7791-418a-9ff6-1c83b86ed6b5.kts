@@ -15,6 +15,30 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
         val feature1 = find<ProjectFeature> {
             feature {
                 type = "project-graphs"
+                id = "PROJECT_EXT_306"
+                param("format", "duration")
+                param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Build Duration (all stages)",
+                        "sourceBuildTypeId": "OpenSourceProjects_Storybook_Build_2",
+                        "key": "BuildDuration"
+                      }
+                    ]
+                """.trimIndent())
+                param("seriesTitle", "Serie")
+                param("title", "New chart title")
+            }
+        }
+        feature1.apply {
+            param("hideFilters", "")
+            param("title", "Build Duration (all stages)")
+            param("defaultFilters", "")
+        }
+        val feature2 = find<ProjectFeature> {
+            feature {
+                type = "project-graphs"
                 id = "PROJECT_EXT_307"
                 param("defaultFilters", "")
                 param("format", "percent")
@@ -33,7 +57,7 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
                 param("title", "New chart title")
             }
         }
-        feature1.apply {
+        feature2.apply {
             param("title", "Covered Percentage of JS Lines")
         }
     }
