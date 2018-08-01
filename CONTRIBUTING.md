@@ -8,11 +8,11 @@ This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as 
 
 ## Issues
 
-No software is bug free. So, if you got an issue, follow these steps:
+No software is bug-free. So, if you got an issue, follow these steps:
 
 -   Search the [issue list](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=) for current and old issues.
     -   If you find an existing issue, please UPVOTE the issue by adding a "thumbs-up reaction". We use this to help prioritize issues!
--   If none of that is helping, create an issue with with following information:
+-   If none of that is helping, create an issue with the following information:
     -   Clear title (shorter is better).
     -   Describe the issue in clear language.
     -   Share error logs, screenshots and etc.
@@ -95,7 +95,7 @@ After that, the `run` directory content will be compared with `snapshots`. You c
 
     yarn test --cli --update
 
-In that case, please check the git diff before commiting to make sure it only contains the intended changes.
+In that case, please check the git diff before committing to make sure it only contains the intended changes.
 
 #### 2c. Link `storybook` and any other required dependencies:
 
@@ -140,7 +140,7 @@ A good way to do that is using the example `cra-kitchen-sink` app embedded in th
 
 If you follow that process, you can then link to the github repository in the issue. See <https://github.com/storybooks/storybook/issues/708#issuecomment-290589886> for an example.
 
-**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
+**NOTE**: If your issue involves a webpack config, create-react-app will prevent you from modifying the _app's_ webpack config, however you can still modify storybook's to mirror your app's version of the storybook. Alternatively, use `yarn eject` in the CRA app to get a modifiable webpack config.
 
 ### Updating Tests
 
@@ -164,7 +164,7 @@ We welcome your contributions. There are many ways you can help us. This is few 
 -   Work on [API](https://github.com/storybooks/storybook/labels/enhancement%3A%20api), [Addons](https://github.com/storybooks/storybook/labels/enhancement%3A%20addons), [UI](https://github.com/storybooks/storybook/labels/enhancement%3A%20ui) or [Webpack](https://github.com/storybooks/storybook/labels/enhancement%3A%20webpack) use enhancements and new [features](https://github.com/storybooks/storybook/labels/feature%20request).
 -   Add more [tests](https://codecov.io/gh/storybooks/storybook/tree/master/packages) (specially for the [UI](https://codecov.io/gh/storybooks/storybook/tree/master/packages/storybook-ui/src)).
 
-Before you submit a new PR, make you to run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
+Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if tests are failing. If you need any help, create an issue and ask.
 
 ### Reviewing PRs
 
@@ -245,7 +245,7 @@ _This method is slow_
 
 Within the `examples` folder of the Storybook repo, you will find kitchen sink examples of storybook implementations for the various platforms that storybook supports.
 
-Not only do these show many of the options and addons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
+Not only do these show many of the options and add-ons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
 
 #### React and Vue
 
@@ -256,8 +256,8 @@ Not only do these show many of the options and addons available, they are also a
 
 #### Linking Storybook
 
-Storybook is broken up into sub-projects that you can install as you need them. For this example we will be working with `@storybook/react`.
-**Note:** You need to `yarn link` from inside the sub project you are working on **_NOT_** the storybook root directory
+Storybook is broken up into sub-projects that you can install as you need them. For this example, we will be working with `@storybook/react`.
+**Note:** You need to `yarn link` from inside the subproject you are working on **_NOT_** the storybook root directory
 
 1.  `cd app/react`
 2.  `yarn link`
@@ -271,7 +271,7 @@ _Make sure `yarn dev` is running_
 
 ##### 1. Setup storybook in your project
 
-First we are going to install storyboook, then we are going to link `@storybook/react` into our project. This will replace `node_modules/@storybook/react` with a symlink to our local version of storybook.
+First we are going to install storybook, then we are going to link `@storybook/react` into our project. This will replace `node_modules/@storybook/react` with a symlink to our local version of storybook.
 
 1.  `getstorybook`
 2.  `yarn storybook`
@@ -309,7 +309,7 @@ The current manual release sequence is as follows:
 
 -   Generate a changelog and verify the release by hand
 -   Push the changelog to master or the release branch
--   Clean, build, and publish the release
+-   Clean, build and publish the release
 -   Cut and paste the changelog to the github release page, and mark it as a (pre-) release
 
 This sequence applies to both releases and pre-releases, but differs slightly between the two.
