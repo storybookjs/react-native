@@ -84,5 +84,24 @@ changeProject("69382d9b-7791-418a-9ff6-1c83b86ed6b5") {
             param("title", "Total Number of JS Statements")
             param("defaultFilters", "")
         }
+        add {
+            feature {
+                type = "project-graphs"
+                id = "PROJECT_EXT_117"
+                param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Total Artifacts Size",
+                        "sourceBuildTypeId": "OpenSourceProjects_Storybook_CliTestLatestCra",
+                        "key": "ArtifactsSize"
+                      }
+                    ]
+                """.trimIndent())
+                param("format", "text")
+                param("title", "Total Artifacts Size")
+                param("seriesTitle", "Serie")
+            }
+        }
     }
 }
