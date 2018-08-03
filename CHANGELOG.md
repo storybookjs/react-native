@@ -1,3 +1,37 @@
+# 4.0.0-alpha.15
+
+2018-August-03
+
+#### Breaking Changes
+
+-   dependencies(vue): Update vue-loader to 15.x.x [#3911](https://github.com/storybooks/storybook/pull/3911)
+
+#### Features
+
+-   Horizontal display for addon-knobs radios UI [#3922](https://github.com/storybooks/storybook/pull/3922)
+-   Add customizePage method to imageSnapshot [#3930](https://github.com/storybooks/storybook/pull/3930)
+-   Add additional device options to addon-viewport [#3918](https://github.com/storybooks/storybook/pull/3918)
+-   Support different extensions for "config" and "addons" files [#3913](https://github.com/storybooks/storybook/pull/3913)
+-   Add radio buttons knob type #3872 [#3894](https://github.com/storybooks/storybook/pull/3894)
+-   Added arrow to a11y addon HeaderBar [#3788](https://github.com/storybooks/storybook/pull/3788)
+-   Fix addons panel when using preact [#3882](https://github.com/storybooks/storybook/pull/3882)
+
+#### Bug Fixes
+
+-   Fix typo in addon-viewport  [#3942](https://github.com/storybooks/storybook/pull/3942)
+-   Fix knobs for React < 16.3 [#3866](https://github.com/storybooks/storybook/pull/3866)
+
+#### Maintenance
+
+-   Improve BettercodeHub  [#3941](https://github.com/storybooks/storybook/pull/3941)
+-   REFACTOR layout and REMOVE usplit component [#3914](https://github.com/storybooks/storybook/pull/3914)
+-   Group deprecated stories [#3846](https://github.com/storybooks/storybook/pull/3846)
+-   MOVE ui into it's own group [#3884](https://github.com/storybooks/storybook/pull/3884)
+
+#### Dependency Upgrades
+
+-   Use react-dev-utils@next [#3852](https://github.com/storybooks/storybook/pull/3852)
+
 # 3.4.10
 
 2018-August-03
