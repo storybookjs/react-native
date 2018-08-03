@@ -25,8 +25,8 @@
     "@storybook/core": "4.0.0-alpha.15",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
     "mithril": "^1.1.6"

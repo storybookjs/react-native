@@ -28,10 +28,10 @@
     "babel-runtime": "^6.23.0",
     "core-js": "^2.5.7",
     "global": "^4.3.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "sass-loader": "^7.0.2",
-    "ts-loader": "^4.3.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^4.4.2",
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {

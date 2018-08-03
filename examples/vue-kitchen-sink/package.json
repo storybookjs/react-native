@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
-    "vue": "^2.5.16",
+    "vue": "^2.5.17",
     "vuex": "^3.0.0"
   },
   "devDependencies": {
@@ -26,14 +26,14 @@
     "@storybook/addons": "4.0.0-alpha.15",
     "@storybook/vue": "4.0.0-alpha.15",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-vue": "^2.0.2",
-    "cross-env": "^5.1.6",
+    "cross-env": "^5.2.0",
     "file-loader": "^1.1.11",
     "svg-url-loader": "^2.3.2",
     "vue-loader": "^15.2.4",
-    "webpack": "^4.10.2",
-    "webpack-dev-server": "^3.1.4"
+    "webpack": "^4.16.4",
+    "webpack-dev-server": "^3.1.5"
   }
 }
