@@ -347,9 +347,12 @@ NOTE: `3.4.9` publish failed
 
 2018-May-17
 
+NOTE: As part of the generic addon decorators, we've reversed the order of addon-knob's `select` knob keys/values, which had been called `selectV2` prior to this breaking change.
+
 #### Breaking Changes
 
 -   Support webpack4 modules format [#3576](https://github.com/storybooks/storybook/pull/3576)
+-   Generic addon decorators [#3555](https://github.com/storybooks/storybook/pull/3555)
 
 #### Features
 
@@ -357,7 +360,6 @@ NOTE: `3.4.9` publish failed
 
 #### Maintenance
 
--   Generic addon decorators [#3555](https://github.com/storybooks/storybook/pull/3555)
 -   Refactor transitional decorator from addon-notes [#3559](https://github.com/storybooks/storybook/pull/3559)
 
 # 3.4.5
