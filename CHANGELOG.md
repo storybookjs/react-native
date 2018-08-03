@@ -1,3 +1,12 @@
+# 3.4.9
+
+2018-August-03
+
+#### Bug Fixes
+
+-   addons-jest: bug with the jest parameter [#3923](https://github.com/storybooks/storybook/pull/3923)
+-   addon-info: fix copy button styling [#3896](https://github.com/storybooks/storybook/pull/3896)
+
 # 4.0.0-alpha.14
 
 2018-July-11
