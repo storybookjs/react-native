@@ -1,6 +1,8 @@
-# 3.4.9
+# 3.4.10
 
 2018-August-03
+
+NOTE: `3.4.9` publish failed
 
 #### Bug Fixes
 
