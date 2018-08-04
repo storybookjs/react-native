@@ -25,13 +25,13 @@
     "@storybook/core": "4.0.0-alpha.15",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "vue": "^2.5.16",
+    "vue": "^2.5.17",
     "vue-loader": "15.x.x",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.17"
   },
   "peerDependencies": {
     "vue": "2.5.16",
