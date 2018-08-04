@@ -37,7 +37,6 @@
     "qs": "^6.5.2",
     "react-emotion": "^9.2.6",
     "react-fuzzy": "^0.5.2",
-    "react-icons": "^3.0.4",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.5.1"
   },

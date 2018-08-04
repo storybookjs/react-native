@@ -15058,10 +15058,6 @@ react-fuzzy@^0.5.2:
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-react-icons@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.0.4.tgz#e1f09a51f837dd0218a4a7d30060e1be79a59a8f"
-
 react-inspector@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-2.3.0.tgz#fc9c1d38ab687fc0d190dcaf133ae40158968fc8"
