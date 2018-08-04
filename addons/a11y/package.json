@@ -34,7 +34,7 @@
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "react-emotion": "^9.2.6",
-    "react-icons": "^2.2.7"
+    "react-icons": "^3.0.4"
   },
   "peerDependencies": {
     "react": "*",

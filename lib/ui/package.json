@@ -25,7 +25,7 @@
     "deep-equal": "^1.0.1",
     "emotion": "^9.2.6",
     "emotion-theming": "^9.2.6",
-    "events": "^2.1.0",
+    "events": "^3.0.0",
     "fuse.js": "^3.2.1",
     "global": "^4.3.2",
     "keycode": "^2.2.0",
@@ -37,7 +37,7 @@
     "qs": "^6.5.2",
     "react-emotion": "^9.2.6",
     "react-fuzzy": "^0.5.2",
-    "react-icons": "^2.2.7",
+    "react-icons": "^3.0.4",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.5.1"
   },
