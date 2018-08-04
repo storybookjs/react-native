@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
-import IoChevronRight from 'react-icons/lib/io/chevron-right';
+import { IoChevronRight } from 'react-icons/io';
 
 import Info from './Info';
 import Tags from './Tags';
