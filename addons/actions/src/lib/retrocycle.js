@@ -1,6 +1,6 @@
 import reviver from './reviver';
 import { muteProperty } from './util';
-import { CYCLIC_KEY } from '.';
+import { CYCLIC_KEY } from '../constants';
 
 // eslint-disable-next-line no-control-regex
 const pathReg = /^\$(?:\[(?:\d+|"(?:[^\\"\u0000-\u001f]|\\([\\"/bfnrt]|u[0-9a-zA-Z]{4}))*")])*$/;
