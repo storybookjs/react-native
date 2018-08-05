@@ -159,18 +159,18 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                       style="position:absolute;top:50%;left:50%;margin:-6px 0 0 -5px"
                     >
                       <svg
-                        height="24"
-                        style="vertical-align:top;fill:currentColor"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        fill="currentColor"
+                        height="10"
+                        preserveAspectRatio="xMidYMid meet"
+                        style="vertical-align:top;fill:currentcolor"
+                        viewBox="0 0 40 40"
+                        width="10"
                       >
-                        <path
-                          d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
+                        <g>
+                          <path
+                            d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"
+                          />
+                        </g>
                       </svg>
                     </div>
                   </div>
