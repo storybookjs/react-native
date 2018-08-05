@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { HighlightButton } from '@storybook/components';
+// eslint-disable-next-line import/no-cycle
 import PrettyPropType from './PrettyPropType';
 import PropertyLabel from './PropertyLabel';
 
