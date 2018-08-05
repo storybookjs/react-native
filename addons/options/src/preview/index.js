@@ -21,9 +21,7 @@ function withRegexProp(object, propName) {
   return hasOwnProp(object, propName) ? { [propName]: regExpStringify(object[propName]) } : {};
 }
 
-// setOptions function will send Storybook UI options when the channel is
-// ready. If called before, options will be cached until it can be sent.
-export function setOptions(newOptions) {
+function emitOptions(options) {
   const channel = addons.getChannel();
   if (!channel) {
     throw new Error(
@@ -33,39 +31,33 @@ export function setOptions(newOptions) {
 
   // since 'undefined' and 'null' are the valid values we don't want to
   // override the hierarchySeparator or hierarchyRootSeparator if the prop is missing
-  const options = {
-    ...newOptions,
-    ...withRegexProp(newOptions, 'hierarchySeparator'),
-    ...withRegexProp(newOptions, 'hierarchyRootSeparator'),
-  };
+  channel.emit(EVENT_ID, {
+    options: {
+      ...options,
+      ...withRegexProp(options, 'hierarchySeparator'),
+      ...withRegexProp(options, 'hierarchyRootSeparator'),
+    },
+  });
+}
 
-  channel.emit(EVENT_ID, { options });
+// setOptions function will send Storybook UI options when the channel is
+// ready. If called before, options will be cached until it can be sent.
+let globalOptions = {};
+export function setOptions(options) {
+  globalOptions = options;
+  emitOptions(options);
 }
 
 export const withOptions = makeDecorator({
   name: 'withOptions',
   parameterName: 'options',
   skipIfNoParametersOrOptions: false,
-  allowDeprecatedUsage: true,
-  wrapper: (getStory, context, { newOptions, parameters }) => {
-    const optionsIn = parameters || newOptions || {};
-
-    const channel = addons.getChannel();
-    if (!channel) {
-      throw new Error(
-        'Failed to find addon channel. This may be due to https://github.com/storybooks/storybook/issues/1192.'
-      );
-    }
-
-    // since 'undefined' and 'null' are the valid values we don't want to
-    // override the hierarchySeparator or hierarchyRootSeparator if the prop is missing
-    const options = {
-      ...optionsIn,
-      ...withRegexProp(optionsIn, 'hierarchySeparator'),
-      ...withRegexProp(optionsIn, 'hierarchyRootSeparator'),
-    };
-
-    channel.emit(EVENT_ID, { options });
+  wrapper: (getStory, context, { options: inputOptions, parameters }) => {
+    emitOptions({
+      ...globalOptions,
+      ...inputOptions,
+      ...parameters,
+    });
 
     return getStory(context);
   },
