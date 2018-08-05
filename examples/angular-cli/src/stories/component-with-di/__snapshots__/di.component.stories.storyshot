@@ -16,9 +16,9 @@ exports[`Storyshots Custom|Dependencies inputs and inject dependencies 1`] = `
       </div>
       <div>
         Injector: function Injector_(view, elDef) {
-          this.view = view;
-          this.elDef = elDef;
-      }
+              this.view = view;
+              this.elDef = elDef;
+          }
       </div>
       <div>
         ElementRef: {"nativeElement":{}}
@@ -47,9 +47,9 @@ exports[`Storyshots Custom|Dependencies inputs and inject dependencies with knob
       </div>
       <div>
         Injector: function Injector_(view, elDef) {
-          this.view = view;
-          this.elDef = elDef;
-      }
+              this.view = view;
+              this.elDef = elDef;
+          }
       </div>
       <div>
         ElementRef: {"nativeElement":{}}

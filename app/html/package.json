@@ -1,6 +1,6 @@
 {
   "name": "@storybook/html",
-  "version": "4.0.0-alpha.14",
+  "version": "4.0.0-alpha.15",
   "description": "Storybook for HTML: View HTML snippets in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/apps/html",
   "bugs": {
@@ -21,11 +21,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "4.0.0-alpha.14",
+    "@storybook/core": "4.0.0-alpha.15",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   }
 }
