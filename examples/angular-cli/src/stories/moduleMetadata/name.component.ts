@@ -5,5 +5,6 @@ import { Component, Input } from '@angular/core';
   template: `<h1>{{ field | customPipe }}</h1>`,
 })
 export class NameComponent {
-  @Input() field;
+  @Input()
+  field;
 }
