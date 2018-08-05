@@ -1,9 +1,10 @@
-/* eslint no-underscore-dangle: 0 */
+/* eslint-disable react/no-this-in-sfc, no-underscore-dangle */
 
 import React from 'react';
 import { NativeModules } from 'react-native';
 import parse from 'url-parse';
 import addons from '@storybook/addons';
+
 import Events from '@storybook/core-events';
 import createChannel from '@storybook/channel-websocket';
 import { EventEmitter } from 'events';
