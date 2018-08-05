@@ -2,7 +2,7 @@ import { document } from 'global';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 
-import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from '.';
+import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from './events';
 
 export const openLink = params => addons.getChannel().emit(EVENT_ID, params);
 
