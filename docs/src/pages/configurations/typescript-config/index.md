@@ -69,6 +69,15 @@ The above example shows a working config with the TSDocgen plugin also integrate
 
 This is for the default configuration where `/stories` is a peer of `src`. If you have them all in just `src` you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
 
+## Import tsx stories
+
+Change `config.js` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with Typescript:
+
+```js
+// automatically import all files ending in *.stories.js
+const req = require.context('../stories', true, /.stories.tsx$/);
+```
+
 ## Using Typescript with the TSDocgen addon
 
 The very handy [Storybook Info addon](https://github.com/storybooks/storybook/tree/master/addons/info) autogenerates prop tables documentation for each component, however it doesn't work with Typescript types. The current solution is to use [react-docgen-typescript-loader](https://github.com/strothj/react-docgen-typescript-loader) to preprocess the Typescript files to give the Info addon what it needs. The webpack config above does this, and so for the rest of your stories you use it as per normal:
