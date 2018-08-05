@@ -26,7 +26,7 @@
     "prop-types": "^15.6.2",
     "react-emotion": "^9.2.6",
     "react-lifecycles-compat": "^3.0.4",
-    "react-textarea-autosize": "^6.1.0",
+    "react-textarea-autosize": "^7.0.4",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {

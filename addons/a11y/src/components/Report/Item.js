@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
-import IoChevronRight from 'react-icons/lib/io/chevron-right';
+import { Icons } from '@storybook/components';
 
 import Info from './Info';
 import Tags from './Tags';
@@ -57,7 +57,7 @@ class Item extends Component {
     return (
       <Wrapper>
         <HeaderBar onClick={this.onToggle}>
-          <IoChevronRight
+          <Icons.ChevronRight
             size={10}
             color="#9DA5AB"
             style={{

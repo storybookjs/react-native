@@ -24,7 +24,7 @@
     "react-emotion": "^9.2.6",
     "react-inspector": "^2.3.0",
     "react-split-pane": "^0.1.82",
-    "react-textarea-autosize": "^6.1.0",
+    "react-textarea-autosize": "^7.0.4",
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {

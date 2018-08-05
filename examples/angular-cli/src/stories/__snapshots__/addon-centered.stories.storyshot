@@ -9,7 +9,7 @@ exports[`Storyshots Addon|Centered centered component 1`] = `
   <ng-component>
     <div
       ng-reflect-ng-style="[object Object]"
-      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
     >
       <div
         ng-reflect-ng-style="[object Object]"
@@ -85,7 +85,7 @@ exports[`Storyshots Addon|Centered centered template 1`] = `
   <ng-component>
     <div
       ng-reflect-ng-style="[object Object]"
-      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
     >
       <div
         ng-reflect-ng-style="[object Object]"
