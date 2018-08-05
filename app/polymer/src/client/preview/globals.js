@@ -1,4 +1,4 @@
-import '@webcomponents/webcomponentsjs/webcomponents-loader';
+import '@webcomponents/webcomponentsjs/webcomponents-lite';
 import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 import 'babel-polyfill';
 

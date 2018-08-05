@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
-    "@polymer/polymer": "^3.0.5",
+    "@polymer/polymer": "^2.6.0",
     "@storybook/addon-actions": "4.0.0-alpha.15",
     "@storybook/addon-backgrounds": "4.0.0-alpha.15",
     "@storybook/addon-knobs": "4.0.0-alpha.15",
@@ -18,7 +18,7 @@
     "@storybook/addon-storysource": "4.0.0-alpha.15",
     "@storybook/addon-viewport": "4.0.0-alpha.15",
     "@storybook/polymer": "4.0.0-alpha.15",
-    "@webcomponents/webcomponentsjs": "^2.0.4",
+    "@webcomponents/webcomponentsjs": "^1.2.0",
     "global": "^4.3.2",
     "lit-html": "^0.10.2",
     "polymer-webpack-loader": "^2.0.3",

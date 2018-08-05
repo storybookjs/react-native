@@ -844,11 +844,9 @@
     node-fetch "^2.1.1"
     url-template "^2.0.8"
 
-"@polymer/polymer@^3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.5.tgz#eaa42e70df7de818b5e1839452c82a5f83e39929"
-  dependencies:
-    "@webcomponents/shadycss" "^1.2.0"
+"@polymer/polymer@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-2.6.0.tgz#98601124122a045e74f4b41f55975006ef327dbc"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -1255,13 +1253,9 @@
     "@webassemblyjs/wast-parser" "1.5.13"
     long "^3.2.0"
 
-"@webcomponents/shadycss@^1.2.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.4.0.tgz#2b2b66443252f81d02ebb2dd139e4a717655bfa9"
-
-"@webcomponents/webcomponentsjs@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.0.4.tgz#fe18c288f99b7103e9ae7a766020f9702cedcc08"
+"@webcomponents/webcomponentsjs@^1.2.0":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.2.4.tgz#4c945cff61acb7e37534fa6f1d45acc662ecf26e"
 
 Base64@~0.2.0:
   version "0.2.1"
