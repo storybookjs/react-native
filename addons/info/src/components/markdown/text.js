@@ -5,7 +5,7 @@ import { baseFonts } from '@storybook/components';
 const defaultProps = { children: null };
 const propTypes = { children: PropTypes.node };
 
-export function P(props) {
+export function P({ children }) {
   const style = {
     ...baseFonts,
     fontSize: '15px',
@@ -15,41 +15,41 @@ export function P(props) {
   // <a> and <pre> elements, which is why <div>
   // is used as the outputted element when parsing
   // marksy content rather than <p>.
-  return <div style={style}>{props.children}</div>;
+  return <div style={style}>{children}</div>;
 }
 
 P.defaultProps = defaultProps;
 P.propTypes = propTypes;
 
-export function LI(props) {
+export function LI({ children }) {
   const style = {
     ...baseFonts,
     fontSize: '15px',
   };
-  return <li style={style}>{props.children}</li>;
+  return <li style={style}>{children}</li>;
 }
 
 LI.defaultProps = defaultProps;
 LI.propTypes = propTypes;
 
-export function UL(props) {
+export function UL({ children }) {
   const style = {
     ...baseFonts,
     fontSize: '15px',
   };
-  return <ul style={style}>{props.children}</ul>;
+  return <ul style={style}>{children}</ul>;
 }
 
 UL.defaultProps = defaultProps;
 UL.propTypes = propTypes;
 
-export function A(props) {
+export function A({ href, children }) {
   const style = {
     color: '#3498db',
   };
   return (
-    <a href={props.href} target="_blank" rel="noopener noreferrer" style={style}>
-      {props.children}
+    <a href={href} target="_blank" rel="noopener noreferrer" style={style}>
+      {children}
     </a>
   );
 }

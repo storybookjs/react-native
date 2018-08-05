@@ -17,7 +17,13 @@ const Item = styled('div')(({ theme }) => ({
 }));
 
 function Tags({ tags }) {
-  return <Wrapper>{tags.map(tag => <Item key={tag}>{tag}</Item>)}</Wrapper>;
+  return (
+    <Wrapper>
+      {tags.map(tag => (
+        <Item key={tag}>{tag}</Item>
+      ))}
+    </Wrapper>
+  );
 }
 Tags.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.node).isRequired,

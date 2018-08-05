@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { withInfo, setDefaults } from './';
+import { withInfo, setDefaults } from '.';
 import externalMdDocs from '../README.md';
 
 /* eslint-disable */
@@ -30,9 +30,9 @@ const testMarkdown = `# Test story
 containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
-  const story = context => (
+  const story = ({ story }) => (
     <div>
-      It's a {context.story} story:
+      It's a {story} story:
       <TestComponent
         func={x => x + 1}
         obj={{ a: 'a', b: 'b' }}

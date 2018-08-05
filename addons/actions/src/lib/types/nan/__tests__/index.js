@@ -1,4 +1,4 @@
-import nanType from '../';
+import nanType from '..';
 
 describe('NaN', () => {
   it('Recognizes NaN', () => {

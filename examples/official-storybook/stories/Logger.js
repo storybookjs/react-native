@@ -34,11 +34,15 @@ export default class Logger extends Component {
   };
 
   componentDidMount() {
-    this.props.emitter.on(Logger.LOG_EVENT, this.onEventHandler);
+    const { emitter } = this.props;
+
+    emitter.on(Logger.LOG_EVENT, this.onEventHandler);
   }
 
   componentWillUnmount() {
-    this.props.emitter.removeListener(Logger.LOG_EVENT, this.onEventHandler);
+    const { emitter } = this.props;
+
+    emitter.removeListener(Logger.LOG_EVENT, this.onEventHandler);
   }
 
   onEventHandler = ({ name, payload }) => {

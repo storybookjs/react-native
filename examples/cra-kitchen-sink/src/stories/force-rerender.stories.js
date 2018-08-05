@@ -8,5 +8,7 @@ const increment = () => {
 };
 
 storiesOf('Force ReRender', module).add('button', () => (
-  <button onClick={increment}> Click me to increment: {count} </button>
+  <button type="button" onClick={increment}>
+    Click me to increment: {count}
+  </button>
 ));

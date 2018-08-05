@@ -120,8 +120,9 @@ export default class BackgroundPanel extends Component {
   }
 
   setBackgroundFromSwatch = background => {
+    const { api } = this.props;
     this.updateIframe(background);
-    this.props.api.setQueryParams({ background });
+    api.setQueryParams({ background });
   };
 
   updateIframe(background) {
@@ -130,7 +131,8 @@ export default class BackgroundPanel extends Component {
 
   render() {
     const { active } = this.props;
-    const backgrounds = [...this.state.backgrounds];
+    const { backgrounds = [] } = this.state;
+
     if (!active) {
       return null;
     }

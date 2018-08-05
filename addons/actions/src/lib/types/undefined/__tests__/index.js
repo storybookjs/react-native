@@ -1,4 +1,4 @@
-import undefinedType from '../';
+import undefinedType from '..';
 
 describe('undefined', () => {
   it('Recognizes undefined', () => {

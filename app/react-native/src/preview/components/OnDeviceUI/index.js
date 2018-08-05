@@ -34,13 +34,17 @@ export default class OnDeviceUI extends Component {
   }
 
   componentDidMount() {
+    const { events } = this.props;
+
     Dimensions.addEventListener('change', this.handleDeviceRotation);
-    this.props.events.on(Events.SELECT_STORY, this.handleStoryChange);
+    events.on(Events.SELECT_STORY, this.handleStoryChange);
   }
 
   componentWillUnmount() {
+    const { events } = this.props;
+
     Dimensions.removeEventListener('change', this.handleDeviceRotation);
-    this.props.events.removeListener(Events.SELECT_STORY, this.handleStoryChange);
+    events.removeListener(Events.SELECT_STORY, this.handleStoryChange);
   }
 
   handleDeviceRotation = () => {
@@ -58,8 +62,10 @@ export default class OnDeviceUI extends Component {
   };
 
   handleToggleMenu = () => {
+    const { isMenuOpen } = this.state;
+
     this.setState({
-      isMenuOpen: !this.state.isMenuOpen,
+      isMenuOpen: !isMenuOpen,
     });
   };
 

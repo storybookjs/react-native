@@ -2,7 +2,7 @@ import { DecycleError } from './errors';
 
 import { getPropertiesList, typeReplacer, omitProperty } from './util';
 
-import { CYCLIC_KEY } from './';
+import { CYCLIC_KEY } from '.';
 
 import { objectType } from './types';
 

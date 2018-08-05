@@ -3,7 +3,7 @@ import DocgenButton from './DocgenButton';
 
 /** Button component description */
 const ImportedPropsButton = ({ disabled, label, onClick }) => (
-  <button disabled={disabled} onClick={onClick}>
+  <button type="button" disabled={disabled} onClick={onClick}>
     {label}
   </button>
 );

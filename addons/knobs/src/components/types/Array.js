@@ -12,14 +12,17 @@ function formatArray(value, separator) {
 
 class ArrayType extends React.Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.knob.value !== this.props.knob.value;
+    const { knob } = this.props;
+
+    return nextProps.knob.value !== knob.value;
   }
 
   handleChange = e => {
-    const { knob } = this.props;
+    const { knob, onChange } = this.props;
     const { value } = e.target;
     const newVal = formatArray(value, knob.separator);
-    this.props.onChange(newVal);
+
+    onChange(newVal);
   };
 
   render() {

@@ -12,27 +12,28 @@ export default class StoryView extends Component {
     this.storyHandler = this.selectStory.bind(this);
     this.forceRender = this.forceUpdate.bind(this);
 
-    this.props.events.on(Events.SELECT_STORY, this.storyHandler);
-    this.props.events.on(Events.FORCE_RE_RENDER, this.forceRender);
+    props.events.on(Events.SELECT_STORY, this.storyHandler);
+    props.events.on(Events.FORCE_RE_RENDER, this.forceRender);
   }
 
   componentWillUnmount() {
-    this.props.events.removeListener(Events.SELECT_STORY, this.storyHandler);
-    this.props.events.removeListener(Events.FORCE_RE_RENDER, this.forceRender);
+    const { events } = this.props;
+
+    events.removeListener(Events.SELECT_STORY, this.storyHandler);
+    events.removeListener(Events.FORCE_RE_RENDER, this.forceRender);
   }
 
-  selectStory(selection, storyFn) {
+  selectStory = (selection, storyFn) => {
     this.setState({ storyFn, selection });
-  }
+  };
 
-  renderHelp() {
+  renderHelp = () => {
+    const { url } = this.props;
     return (
       <View style={style.help}>
-        {this.props.url && this.props.url.length ? (
+        {url && url.length ? (
           <Text>
-            Please open the Storybook UI (
-            {this.props.url}
-            ) with a web browser and select a story for preview.
+            Please open the Storybook UI ({url}) with a web browser and select a story for preview.
           </Text>
         ) : (
           <Text>
@@ -41,17 +42,18 @@ export default class StoryView extends Component {
         )}
       </View>
     );
-  }
+  };
 
   render() {
-    if (!this.state.storyFn) {
-      return this.renderHelp();
-    }
-    const { kind, story } = this.state.selection;
-    return (
+    const { storyFn, selection } = this.state;
+    const { kind, story } = selection;
+
+    return storyFn ? (
       <View key={`${kind}:::${story}`} style={style.main}>
-        {this.state.storyFn()}
+        {storyFn()}
       </View>
+    ) : (
+      this.renderHelp()
     );
   }
 }

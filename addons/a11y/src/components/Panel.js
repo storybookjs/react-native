@@ -35,21 +35,27 @@ class Panel extends Component {
   };
 
   componentDidMount() {
-    this.props.channel.on(CHECK_EVENT_ID, this.onUpdate);
-    this.props.channel.on(STORY_RENDERED, this.requestCheck);
-    this.props.channel.on(RERUN_EVENT_ID, this.requestCheck);
+    const { channel } = this.props;
+
+    channel.on(CHECK_EVENT_ID, this.onUpdate);
+    channel.on(STORY_RENDERED, this.requestCheck);
+    channel.on(RERUN_EVENT_ID, this.requestCheck);
   }
 
   componentDidUpdate(prevProps) {
-    if (!prevProps.active && this.props.active) {
+    const { active } = this.props;
+
+    if (!prevProps.active && active) {
       this.requestCheck();
     }
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
-    this.props.channel.removeListener(STORY_RENDERED, this.requestCheck);
-    this.props.channel.removeListener(RERUN_EVENT_ID, this.requestCheck);
+    const { channel } = this.props;
+
+    channel.removeListener(CHECK_EVENT_ID, this.onUpdate);
+    channel.removeListener(STORY_RENDERED, this.requestCheck);
+    channel.removeListener(RERUN_EVENT_ID, this.requestCheck);
   }
 
   onUpdate = ({ passes, violations }) => {
@@ -60,8 +66,10 @@ class Panel extends Component {
   };
 
   requestCheck = () => {
-    if (this.props.active) {
-      this.props.channel.emit(REQUEST_CHECK_EVENT_ID);
+    const { channel, active } = this.props;
+
+    if (active) {
+      channel.emit(REQUEST_CHECK_EVENT_ID);
     }
   };
 

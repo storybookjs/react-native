@@ -13,6 +13,7 @@ const provideTests = Component =>
       }).isRequired,
       active: PropTypes.bool,
     };
+
     static defaultProps = {
       active: true,
     };
@@ -30,10 +31,12 @@ const provideTests = Component =>
     }
 
     componentWillUnmount() {
+      const { channel } = this.props;
+
       if (this.stopListeningOnStory) {
         this.stopListeningOnStory();
       }
-      this.props.channel.removeListener('storybook/tests/add_tests', this.onAddTests);
+      channel.removeListener('storybook/tests/add_tests', this.onAddTests);
     }
 
     onAddTests = ({ kind, storyName, tests }) => {

@@ -75,7 +75,7 @@ DocsContainer.propTypes = {
   }).isRequired,
 };
 DocsContainer.contextTypes = {
-  router: PropTypes.object.isRequired,
+  router: PropTypes.shape({}).isRequired,
 };
 
 export default DocsContainer;

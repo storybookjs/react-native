@@ -35,8 +35,10 @@ const StackTrace = styled(({ trace, className }) => (
       .join('')
       .trim()
       .split(/\n/)
-      // eslint-disable-next-line react/no-array-index-key
-      .map((traceLine, traceLineIndex) => <div key={traceLineIndex}>{traceLine.trim()}</div>)}
+      .map((traceLine, traceLineIndex) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <div key={traceLineIndex}>{traceLine.trim()}</div>
+      ))}
   </details>
 ))({
   background: 'silver',
@@ -217,7 +219,9 @@ export const FailedResult = styled(({ fullName, title, status, failureMessages, 
       </Indicator>
     </Head>
     {/* eslint-disable react/no-array-index-key  */}
-    {failureMessages.map((msg, i) => <Message msg={msg} key={i} />)}
+    {failureMessages.map((msg, i) => (
+      <Message msg={msg} key={i} />
+    ))}
   </div>
 ))({
   display: 'block',

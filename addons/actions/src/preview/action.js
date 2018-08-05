@@ -1,6 +1,6 @@
 import uuid from 'uuid/v1';
 import addons from '@storybook/addons';
-import { EVENT_ID } from '../';
+import { EVENT_ID } from '..';
 import { canConfigureName, prepareArguments } from '../lib/util';
 import { config } from './configureActions';
 
