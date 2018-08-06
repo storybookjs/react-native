@@ -7,6 +7,10 @@ This is a list of available addons for Storybook.
 
 ## Addons maintained by storybook team.
 
+### [a11y](https://github.com/storybooks/storybook/tree/master/addons/a11y)
+
+With a11y you can test compliance of your stories with web accessibility standards.
+
 ### [Actions](https://github.com/storybooks/storybook/tree/release/3.4/addons/actions)
 
 With actions, you can inspect events related to your components. This is pretty neat when you are manually testing your components.
