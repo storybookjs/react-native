@@ -5,7 +5,9 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -421,33 +423,6 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
             </button>
           </pre>
         </div>
-        <div>
-          <h1
-            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style="margin:20px 0 0 0"
-            >
-              "" Component
-            </h2>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-          <div>
-            <h2
-              style="margin:20px 0 0 0"
-            >
-              "" Component
-            </h2>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -459,7 +434,9 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -775,7 +752,9 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -1106,7 +1085,9 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -1406,7 +1387,9 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -1718,7 +1701,9 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -1905,7 +1890,9 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -2162,7 +2149,9 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -2448,7 +2437,9 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
     </div>
   </div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -2718,7 +2709,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
     </div>
   </div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -3688,7 +3681,9 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
     </div>
   </div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -4456,7 +4451,9 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -4843,10 +4840,14 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
     style="position:relative;z-index:0"
   >
     <div>
-      <button>
+      <button
+        type="button"
+      >
         Button
       </button>
-      <button>
+      <button
+        type="button"
+      >
         Flow Typed Button
       </button>
     </div>
@@ -5018,167 +5019,6 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
             </button>
           </pre>
         </div>
-        <div>
-          <h1
-            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style="margin:20px 0 0 0"
-            >
-              "BaseButton" Component
-            </h2>
-            <table
-              class="css-1uhv8nx"
-            >
-              <thead>
-                <tr>
-                  <th
-                    class="css-11b5gui"
-                  >
-                    property
-                  </th>
-                  <th
-                    class="css-11b5gui"
-                  >
-                    propType
-                  </th>
-                  <th
-                    class="css-11b5gui"
-                  >
-                    required
-                  </th>
-                  <th
-                    class="css-11b5gui"
-                  >
-                    default
-                  </th>
-                  <th
-                    class="css-11b5gui"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    disabled
-                  </td>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    -
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    <span
-                      style="color:#a11"
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    label
-                  </td>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    yes
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    -
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    onClick
-                  </td>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    -
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    <span
-                      style="color:#170"
-                    >
-                      onClick
-                    </span>
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    style
-                  </td>
-                  <td
-                    class="css-1qcb1f7"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    -
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  >
-                    <span
-                      style="color:#666"
-                    >
-                      {}
-                    </span>
-                  </td>
-                  <td
-                    class="css-11b5gui"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -5190,7 +5030,9 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -5408,7 +5250,9 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -5681,7 +5525,9 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -5950,7 +5796,9 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
 `;
 
 exports[`Storyshots Addons|Info.Parameters Disable the addon entirely 1`] = `
-<button>
+<button
+  type="button"
+>
   Button
 </button>
 `;
@@ -5960,7 +5808,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -6309,7 +6159,9 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
     </div>
   </div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -6608,7 +6460,9 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
     </div>
   </div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -6853,7 +6707,9 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
     </div>
   </div>
   <div>
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -7105,7 +6961,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Flow Typed Button
     </button>
   </div>
@@ -7355,7 +7213,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Docgen Button
     </button>
   </div>
@@ -8291,7 +8151,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
@@ -8592,7 +8454,9 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
     style="position:relative;z-index:0"
   >
     <div>
-      <button>
+      <button
+        type="button"
+      >
         Button
       </button>
     </div>
@@ -8893,7 +8757,9 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
   <div
     style="position:relative;z-index:0"
   >
-    <button>
+    <button
+      type="button"
+    >
       Button
     </button>
   </div>
