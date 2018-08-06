@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.0-alpha.15",
+  "version": "4.0.0-alpha.16",
   "description": "Core Storybook Components",
   "repository": {
     "type": "git",
@@ -28,9 +28,9 @@
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.15",
-    "@storybook/addon-knobs": "4.0.0-alpha.15",
-    "@storybook/react": "4.0.0-alpha.15"
+    "@storybook/addon-actions": "4.0.0-alpha.16",
+    "@storybook/addon-knobs": "4.0.0-alpha.16",
+    "@storybook/react": "4.0.0-alpha.16"
   },
   "peerDependencies": {
     "react": "*",
