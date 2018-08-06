@@ -11,7 +11,7 @@ setOptions({
   sortStoriesByKind: false,
   hierarchySeparator: /\./,
   hierarchyRootSeparator: /\|/,
-  enableShortcuts: false,
+  enableShortcuts: true,
 });
 
 function loadStories() {

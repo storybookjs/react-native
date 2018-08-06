@@ -116,7 +116,7 @@ export default function(configType, baseConfig, projectDir, configDir) {
 
   if (typeof customConfig === 'function') {
     logger.info('=> Loading custom webpack config (full-control mode).');
-    return customConfig(config, configType, defaultConfig);
+    return customConfig(config, configType, defaultConfig, configDir);
   }
 
   logger.info('=> Loading custom webpack config.');
