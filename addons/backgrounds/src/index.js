@@ -2,7 +2,7 @@ import addons, { makeDecorator } from '@storybook/addons';
 import CoreEvents from '@storybook/core-events';
 import deprecate from 'util-deprecate';
 
-import Events from './events';
+import Events, { ADDON_ID } from './constants';
 
 let prevBackgrounds;
 
@@ -12,12 +12,13 @@ const subscription = () => () => {
 };
 
 export const withBackgrounds = makeDecorator({
-  name: 'backgrounds',
+  name: ADDON_ID,
   parameterName: 'backgrounds',
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
-    const backgrounds = parameters || options;
+    const data = parameters || options || [];
+    const backgrounds = Array.isArray(data) ? data : Object.values(data);
 
     if (backgrounds.length === 0) {
       return getStory(context);
