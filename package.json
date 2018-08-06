@@ -96,7 +96,7 @@
     "jest-preset-angular": "^6.0.0",
     "jest-teamcity-reporter": "^0.9.0",
     "jest-vue-preprocessor": "^1.4.0",
-    "lerna": "3.0.0-rc.0",
+    "lerna": "2.11.0",
     "lint-staged": "^7.2.0",
     "lodash": "^4.17.10",
     "marko": "^4.12.4",
