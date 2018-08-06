@@ -89,7 +89,7 @@ module.exports = ({ platform }) => ({
 
 ## Seamless Typescript Integration
 
-*Note: These instructions are for react-native >= 0.45 and the (default) [metro](https://github.com/facebook/metro) bundler*
+*Note: These instructions are for react-native >= 0.45, @storybook/react-native >= 4.0.0-alpha.2 and the (default) [metro](https://github.com/facebook/metro) bundler*
 
 For seamless type integration (no intermediate build step) we use the custom rn cli config feature and the [react-native-typescript-transformer](https://github.com/ds300/react-native-typescript-transformer) project 
 
