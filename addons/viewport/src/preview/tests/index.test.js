@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { configureViewport } from '../';
+import { configureViewport } from '..';
 
 jest.mock('@storybook/addons');
 

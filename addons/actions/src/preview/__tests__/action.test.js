@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { action, configureActions } from '../../';
+import { action, configureActions } from '../..';
 
 jest.mock('@storybook/addons');
 

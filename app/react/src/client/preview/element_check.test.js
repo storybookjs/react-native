@@ -15,7 +15,7 @@ describe('element_check.utils.isValidFiberElement', () => {
   });
 
   it('should accept to render a valid React element', () => {
-    const element = <button>Click me</button>;
+    const element = <button type="button">Click me</button>;
 
     expect(isValidFiberElement(element)).toBe(true);
   });

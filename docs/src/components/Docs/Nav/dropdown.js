@@ -43,7 +43,9 @@ class Nav extends React.Component {
       </option>
     );
   }
+
   render() {
+    const { redirect } = this.state;
     const { sections, selectedSection, selectedItem } = this.props;
     const selectedSectionId = selectedSection || sections[0].id;
     const selectedItemId = selectedItem || sections[0].items[0].id;
@@ -51,8 +53,8 @@ class Nav extends React.Component {
     const selectedSectionData = sections.find(section => section.id === selectedSectionId);
     const navs = selectedSectionData.items;
 
-    return this.state.redirect ? (
-      <Redirect to={this.state.redirect} />
+    return redirect ? (
+      <Redirect to={redirect} />
     ) : (
       <div>
         <div>

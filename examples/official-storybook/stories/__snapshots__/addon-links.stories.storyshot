@@ -1,13 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addons|Links.Button First 1`] = `
-<button>
+<button
+  type="button"
+>
   Go to "Second"
 </button>
 `;
 
 exports[`Storyshots Addons|Links.Button Second 1`] = `
-<button>
+<button
+  type="button"
+>
   Go to "First"
 </button>
 `;

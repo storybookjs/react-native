@@ -20,14 +20,22 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
   `,
 })
 export class AllKnobsComponent implements OnChanges, OnInit {
-  @Input() price;
-  @Input() border;
-  @Input() fruit;
-  @Input() name;
-  @Input() items;
-  @Input() today;
-  @Input() stock;
-  @Input() nice;
+  @Input()
+  price;
+  @Input()
+  border;
+  @Input()
+  fruit;
+  @Input()
+  name;
+  @Input()
+  items;
+  @Input()
+  today;
+  @Input()
+  stock;
+  @Input()
+  nice;
 
   constructor() {
     console.log('constructor');

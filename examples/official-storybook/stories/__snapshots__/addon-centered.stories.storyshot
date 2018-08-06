@@ -7,7 +7,9 @@ exports[`Storyshots Addons|Centered story 1 1`] = `
   <div
     style="margin:auto;max-height:100%"
   >
-    <button>
+    <button
+      type="button"
+    >
       This story should be centered
     </button>
   </div>

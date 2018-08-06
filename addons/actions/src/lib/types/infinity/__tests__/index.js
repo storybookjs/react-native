@@ -1,4 +1,4 @@
-import infinityType from '../';
+import infinityType from '..';
 
 describe('Infinity', () => {
   it('Recognizes Infinity', () => {

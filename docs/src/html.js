@@ -5,7 +5,7 @@ import DocumentTitle from 'react-document-title';
 
 import favicon from './design/homepage/storybook-icon.png';
 
-const HTML = props => {
+const HTML = ({ headComponents, body, postBodyComponents }) => {
   const title = DocumentTitle.rewind();
 
   let css;
@@ -36,11 +36,11 @@ const HTML = props => {
         <title>{title}</title>
         <link rel="icon" href={favicon} type="image/x-icon" />
         {css}
-        {props.headComponents}
+        {headComponents}
       </head>
       <body>
-        <div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
-        {props.postBodyComponents}
+        <div id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
+        {postBodyComponents}
         {searchScript}
       </body>
     </html>

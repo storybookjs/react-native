@@ -76,7 +76,10 @@ export default function Node(props) {
   if (!children) {
     return (
       <div style={containerStyleCopy}>
-        <span style={tagStyle}>&lt;{name}</span>
+        <span style={tagStyle}>
+          &lt;
+          {name}
+        </span>
         <Props
           node={node}
           singleLine
@@ -94,7 +97,10 @@ export default function Node(props) {
   return (
     <div>
       <div style={containerStyleCopy}>
-        <span style={tagStyle}>&lt;{name}</span>
+        <span style={tagStyle}>
+          &lt;
+          {name}
+        </span>
         <Props
           node={node}
           maxPropsIntoLine={maxPropsIntoLine}
@@ -115,7 +121,11 @@ export default function Node(props) {
         />
       ))}
       <div style={containerStyleCopy}>
-        <span style={tagStyle}>&lt;/{name}&gt;</span>
+        <span style={tagStyle}>
+          &lt;/
+          {name}
+          &gt;
+        </span>
       </div>
     </div>
   );

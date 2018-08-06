@@ -20,10 +20,14 @@ export default class Welcome extends React.Component {
     },
   };
 
-  showApp(event) {
+  showApp = event => {
+    const { showApp } = this.props;
+
     event.preventDefault();
-    if (this.props.showApp) this.props.showApp();
-  }
+    if (showApp) {
+      showApp();
+    }
+  };
 
   render() {
     return (

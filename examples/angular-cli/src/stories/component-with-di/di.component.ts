@@ -8,7 +8,8 @@ export const TEST_TOKEN = new InjectionToken<string>('test');
   providers: [{ provide: TEST_TOKEN, useValue: 123 }],
 })
 export class DiComponent {
-  @Input() title: string;
+  @Input()
+  title: string;
 
   constructor(
     protected injector: Injector,

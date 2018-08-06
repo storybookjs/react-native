@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { init, addChannel } from '../';
+import { init, addChannel } from '..';
 
 jest.mock('@storybook/addons');
 

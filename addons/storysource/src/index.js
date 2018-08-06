@@ -1,5 +1,4 @@
-export const ADDON_ID = 'storybook/stories';
-export const PANEL_ID = `${ADDON_ID}/stories-panel`;
-export const EVENT_ID = `${ADDON_ID}/story-event`;
+import { ADDON_ID, PANEL_ID, EVENT_ID } from './events';
+import { withStorySource } from './preview';
 
-export { withStorySource } from './preview';
+export { ADDON_ID, PANEL_ID, EVENT_ID, withStorySource };

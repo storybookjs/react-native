@@ -10,12 +10,16 @@ const DateInput = styled(Datetime)(style);
 
 class DateType extends React.Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.knob.value !== this.props.knob.value;
+    const { knob } = this.props;
+
+    return nextProps.knob.value !== knob.value;
   }
 
   handleChange = date => {
+    const { onChange } = this.props;
     const value = date.valueOf();
-    this.props.onChange(value);
+
+    onChange(value);
   };
 
   render() {

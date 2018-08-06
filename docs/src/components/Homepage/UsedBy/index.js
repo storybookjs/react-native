@@ -64,7 +64,11 @@ const UsedBy = ({ users }) => (
       <UsedByBg color="#E7F6D8" />
       <div className="used-by-contents">
         <h2 className="used-by-title">Used by these fine folks:</h2>
-        <div className="used-by-users">{users.map(user => <User key={user.site} {...user} />)}</div>
+        <div className="used-by-users">
+          {users.map(user => (
+            <User key={user.site} {...user} />
+          ))}
+        </div>
       </div>
     </div>
     <div className="used-by-more-examples">

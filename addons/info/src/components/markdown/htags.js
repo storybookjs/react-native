@@ -11,7 +11,7 @@ const propTypes = {
   id: PropTypes.string,
 };
 
-export function H1(props) {
+export function H1({ id, children }) {
   const styles = {
     ...baseFonts,
     borderBottom: '1px solid #eee',
@@ -21,8 +21,8 @@ export function H1(props) {
     fontSize: '40px',
   };
   return (
-    <h1 id={props.id} style={styles}>
-      {props.children}
+    <h1 id={id} style={styles}>
+      {children}
     </h1>
   );
 }
@@ -30,7 +30,7 @@ export function H1(props) {
 H1.defaultProps = defaultProps;
 H1.propTypes = propTypes;
 
-export function H2(props) {
+export function H2({ id, children }) {
   const styles = {
     ...baseFonts,
     fontWeight: 600,
@@ -39,8 +39,8 @@ export function H2(props) {
     fontSize: '30px',
   };
   return (
-    <h2 id={props.id} style={styles}>
-      {props.children}
+    <h2 id={id} style={styles}>
+      {children}
     </h2>
   );
 }
@@ -48,7 +48,7 @@ export function H2(props) {
 H2.defaultProps = defaultProps;
 H2.propTypes = propTypes;
 
-export function H3(props) {
+export function H3({ id, children }) {
   const styles = {
     ...baseFonts,
     fontWeight: 600,
@@ -58,8 +58,8 @@ export function H3(props) {
     textTransform: 'uppercase',
   };
   return (
-    <h3 id={props.id} style={styles}>
-      {props.children}
+    <h3 id={id} style={styles}>
+      {children}
     </h3>
   );
 }
@@ -67,7 +67,7 @@ export function H3(props) {
 H3.defaultProps = defaultProps;
 H3.propTypes = propTypes;
 
-export function H4(props) {
+export function H4({ id, children }) {
   const styles = {
     ...baseFonts,
     fontWeight: 600,
@@ -76,8 +76,8 @@ export function H4(props) {
     fontSize: '20px',
   };
   return (
-    <h4 id={props.id} style={styles}>
-      {props.children}
+    <h4 id={id} style={styles}>
+      {children}
     </h4>
   );
 }
@@ -85,7 +85,7 @@ export function H4(props) {
 H4.defaultProps = defaultProps;
 H4.propTypes = propTypes;
 
-export function H5(props) {
+export function H5({ id, children }) {
   const styles = {
     ...baseFonts,
     fontWeight: 600,
@@ -94,8 +94,8 @@ export function H5(props) {
     fontSize: '18px',
   };
   return (
-    <h5 id={props.id} style={styles}>
-      {props.children}
+    <h5 id={id} style={styles}>
+      {children}
     </h5>
   );
 }
@@ -103,7 +103,7 @@ export function H5(props) {
 H5.defaultProps = defaultProps;
 H5.propTypes = propTypes;
 
-export function H6(props) {
+export function H6({ id, children }) {
   const styles = {
     ...baseFonts,
     fontWeight: 400,
@@ -112,8 +112,8 @@ export function H6(props) {
     fontSize: '18px',
   };
   return (
-    <h6 id={props.id} style={styles}>
-      {props.children}
+    <h6 id={id} style={styles}>
+      {children}
     </h6>
   );
 }

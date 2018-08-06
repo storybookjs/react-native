@@ -14,7 +14,8 @@ import { DummyService } from './dummy.service';
 })
 export class ServiceComponent implements OnInit {
   items;
-  @Input() name;
+  @Input()
+  name;
 
   constructor(private dummy: DummyService) {}
 

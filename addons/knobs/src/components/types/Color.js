@@ -27,16 +27,22 @@ class ColorType extends React.Component {
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWindowMouseDown);
   }
+
   shouldComponentUpdate(nextProps) {
-    return nextProps.knob.value !== this.props.knob.value;
+    const { knob } = this.props;
+
+    return nextProps.knob.value !== knob.value;
   }
+
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleWindowMouseDown);
   }
 
   handleWindowMouseDown = e => {
-    if (!this.state.displayColorPicker) return;
-    if (this.popover.contains(e.target)) return;
+    const { displayColorPicker } = this.state;
+    if (!displayColorPicker || this.popover.contains(e.target)) {
+      return;
+    }
 
     this.setState({
       displayColorPicker: false,
@@ -44,13 +50,17 @@ class ColorType extends React.Component {
   };
 
   handleClick = () => {
+    const { displayColorPicker } = this.state;
+
     this.setState({
-      displayColorPicker: !this.state.displayColorPicker,
+      displayColorPicker: !displayColorPicker,
     });
   };
 
   handleChange = color => {
-    this.props.onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
+    const { onChange } = this.props;
+
+    onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
   };
 
   render() {

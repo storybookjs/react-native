@@ -28,11 +28,15 @@ export default class Events extends Component {
   };
 
   componentDidMount() {
-    this.props.channel.on(EVENTS.ADD, this.onAdd);
+    const { channel } = this.props;
+
+    channel.on(EVENTS.ADD, this.onAdd);
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener(EVENTS.ADD, this.onAdd);
+    const { channel } = this.props;
+
+    channel.removeListener(EVENTS.ADD, this.onAdd);
   }
 
   onAdd = events => {
@@ -40,7 +44,9 @@ export default class Events extends Component {
   };
 
   onEmit = event => {
-    this.props.channel.emit(EVENTS.EMIT, event);
+    const { channel } = this.props;
+
+    channel.emit(EVENTS.EMIT, event);
   };
 
   render() {
@@ -48,7 +54,9 @@ export default class Events extends Component {
     const { active } = this.props;
     return active ? (
       <Wrapper>
-        {events.map(event => <Event key={event.name} {...event} onEmit={this.onEmit} />)}
+        {events.map(event => (
+          <Event key={event.name} {...event} onEmit={this.onEmit} />
+        ))}
       </Wrapper>
     ) : null;
   }

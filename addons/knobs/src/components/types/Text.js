@@ -5,12 +5,16 @@ import { Textarea } from '@storybook/components';
 
 class TextType extends React.Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.knob.value !== this.props.knob.value;
+    const { knob } = this.props;
+
+    return nextProps.knob.value !== knob.value;
   }
 
   handleChange = event => {
+    const { onChange } = this.props;
     const { value } = event.target;
-    this.props.onChange(value);
+
+    onChange(value);
   };
 
   render() {

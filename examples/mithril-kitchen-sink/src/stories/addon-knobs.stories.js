@@ -63,7 +63,11 @@ storiesOf('Addons|Knobs', module)
           <h3>today is {new Date(today).toLocaleDateString('en-US', dateOptions)}</h3>
           <p>{stockMessage}</p>
           <p>Also, I have:</p>
-          <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
+          <ul>
+            {items.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
           <p>{salutation}</p>
         </div>
       ),

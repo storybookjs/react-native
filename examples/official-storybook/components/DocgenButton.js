@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 /** DocgenButton component description imported from comments inside the component file */
 const DocgenButton = ({ disabled, label, onClick }) => (
-  <button disabled={disabled} onClick={onClick}>
+  <button type="button" disabled={disabled} onClick={onClick}>
     {label}
   </button>
 );

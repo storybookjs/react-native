@@ -1,4 +1,4 @@
-import regExpType from '../';
+import regExpType from '..';
 
 const regExp = /aRegExp/g;
 

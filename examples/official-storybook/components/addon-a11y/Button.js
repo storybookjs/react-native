@@ -21,6 +21,7 @@ const styles = {
 function Button({ content, disabled, contrast }) {
   return (
     <button
+      type="button"
       style={{
         ...styles.button,
         ...styles[contrast],
