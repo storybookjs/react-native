@@ -71,7 +71,7 @@ This is for the default configuration where `/stories` is a peer of `src`. If yo
 
 ## Import tsx stories
 
-Change `config.js` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with Typescript:
+Change `config.ts` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with Typescript:
 
 ```js
 // automatically import all files ending in *.stories.js
