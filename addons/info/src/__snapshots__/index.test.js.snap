@@ -1250,55 +1250,6 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                 </Styled(pre)>
               </Pre>
             </div>
-            <div>
-              <h1
-                style={
-                  Object {
-                    "borderBottom": "1px solid #EEE",
-                    "fontSize": "25px",
-                    "margin": "20px 0 0 0",
-                    "padding": "0 0 5px 0",
-                  }
-                }
-              >
-                Prop Types
-              </h1>
-              <div
-                key="TestComponent_0"
-              >
-                <h2
-                  style={
-                    Object {
-                      "margin": "20px 0 0 0",
-                    }
-                  }
-                >
-                  "
-                  TestComponent
-                  " Component
-                </h2>
-                <Component
-                  excludedPropTypes={Array []}
-                  maxPropArrayLength={3}
-                  maxPropObjectKeys={3}
-                  maxPropStringLength={50}
-                  type={[Function]}
-                >
-                  <PropTable
-                    excludedPropTypes={Array []}
-                    maxPropArrayLength={3}
-                    maxPropObjectKeys={3}
-                    maxPropStringLength={50}
-                    propDefinitions={Array []}
-                    type={[Function]}
-                  >
-                    <small>
-                      No propTypes defined!
-                    </small>
-                  </PropTable>
-                </Component>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -2649,55 +2600,6 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                   </pre>
                 </Styled(pre)>
               </Pre>
-            </div>
-            <div>
-              <h1
-                style={
-                  Object {
-                    "borderBottom": "1px solid #EEE",
-                    "fontSize": "25px",
-                    "margin": "20px 0 0 0",
-                    "padding": "0 0 5px 0",
-                  }
-                }
-              >
-                Prop Types
-              </h1>
-              <div
-                key="TestComponent_0"
-              >
-                <h2
-                  style={
-                    Object {
-                      "margin": "20px 0 0 0",
-                    }
-                  }
-                >
-                  "
-                  TestComponent
-                  " Component
-                </h2>
-                <Component
-                  excludedPropTypes={Array []}
-                  maxPropArrayLength={3}
-                  maxPropObjectKeys={3}
-                  maxPropStringLength={50}
-                  type={[Function]}
-                >
-                  <PropTable
-                    excludedPropTypes={Array []}
-                    maxPropArrayLength={3}
-                    maxPropObjectKeys={3}
-                    maxPropStringLength={50}
-                    propDefinitions={Array []}
-                    type={[Function]}
-                  >
-                    <small>
-                      No propTypes defined!
-                    </small>
-                  </PropTable>
-                </Component>
-              </div>
             </div>
           </div>
         </div>
