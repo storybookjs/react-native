@@ -31,3 +31,10 @@ const increment = () => {
 storiesOf('Core|Events', module).add('Force re-render', () => (
   <Button onClick={increment}>Clicked: {timesClicked}</Button>
 ));
+
+storiesOf('Core|Errors', module)
+  .add('story throws exception', () => {
+    throw new Error('error');
+  })
+  // Story does not return something react can render
+  .add('story errors', () => null);
