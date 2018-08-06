@@ -3,10 +3,10 @@ import { shallow, mount } from 'enzyme';
 import EventEmitter from 'events';
 
 import BackgroundPanel from '../BackgroundPanel';
-import Events from '../events';
+import Events from '../constants';
 
 const backgrounds = [
-  { name: 'black', value: '#000000' },
+  { name: 'black', value: '#000000', default: true },
   { name: 'secondary', value: 'rgb(123,123,123)' },
   { name: 'tertiary', value: 'rgba(123,123,123,.5)' },
   { name: 'An image', value: 'url(http://placehold.it/350x150)' },

@@ -42,22 +42,20 @@ const NavButton = styled(Link.withComponent('button'))({
   font: 'inherit',
 });
 
-const Welcome = props => (
+const Welcome = ({ showApp }) => (
   <Main>
     <Title>Welcome to storybook</Title>
     <p>This is a UI component dev environment for your app.</p>
     <p>
       We've added some basic stories inside the <InlineCode>src/stories</InlineCode> directory.
-      <br />
-      A story is a single state of one or more UI components. You can have as many stories as you
-      want.
+      <br />A story is a single state of one or more UI components. You can have as many stories as
+      you want.
       <br />
       (Basically a story is like a visual test case.)
     </p>
     <p>
-      See these sample <NavButton onClick={props.showApp}>stories</NavButton> for a component called{' '}
-      <InlineCode>Button</InlineCode>
-      .
+      See these sample <NavButton onClick={showApp}>stories</NavButton> for a component called{' '}
+      <InlineCode>Button</InlineCode>.
     </p>
     <p>
       Just like that, you can add your own components as stories.
@@ -65,10 +63,12 @@ const Welcome = props => (
       You can also edit those components and see changes right away.
       <br />
       (Try editing the <InlineCode>Button</InlineCode> stories located at{' '}
-      <InlineCode>src/stories/index.js</InlineCode>.)
+      <InlineCode>src/stories/index.js</InlineCode>
+      .)
     </p>
     <p>
-      Usually we create stories with smaller UI components in the app.<br />
+      Usually we create stories with smaller UI components in the app.
+      <br />
       Have a look at the{' '}
       <Link
         href="https://storybook.js.org/basics/writing-stories"

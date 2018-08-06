@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json'],
   parser: 'babel-eslint',
   parserOptions: {
+    ecmaVersion: 8,
     sourceType: 'module',
   },
   env: {

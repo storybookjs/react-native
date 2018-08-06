@@ -20,7 +20,9 @@ export default class LinkTo extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.kind !== this.props.kind || prevProps.story !== this.props.story) {
+    const { kind, story } = this.props;
+
+    if (prevProps.kind !== kind || prevProps.story !== story) {
       this.updateHref();
     }
   }
@@ -37,8 +39,9 @@ export default class LinkTo extends PureComponent {
 
   render() {
     const { kind, story, ...rest } = this.props;
+    const { href } = this.state;
 
-    return <RoutedLink href={this.state.href} onClick={this.handleClick} {...rest} />;
+    return <RoutedLink href={href} onClick={this.handleClick} {...rest} />;
   }
 }
 

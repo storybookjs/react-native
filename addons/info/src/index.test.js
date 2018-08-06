@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { withInfo, setDefaults } from './';
+import { withInfo, setDefaults } from '.';
 import externalMdDocs from '../README.md';
 
 /* eslint-disable */
@@ -30,9 +30,10 @@ const testMarkdown = `# Test story
 containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
-  const story = context => (
+  // eslint-disable-next-line react/prop-types
+  const storyFn = ({ story }) => (
     <div>
-      It's a {context.story} story:
+      It's a {story} story:
       <TestComponent
         func={x => x + 1}
         obj={{ a: 'a', b: 'b' }}
@@ -44,22 +45,22 @@ describe('addon Info', () => {
     </div>
   );
   it('should render <Info /> and markdown', () => {
-    const Info = withInfo(testMarkdown)(story);
+    const Info = withInfo(testMarkdown)(storyFn);
 
     expect(mount(<Info />)).toMatchSnapshot();
   });
   it('should render <Info /> and external markdown', () => {
-    const Info = withInfo(externalMdDocs)(story);
+    const Info = withInfo(externalMdDocs)(storyFn);
 
     expect(mount(<Info />)).toMatchSnapshot();
   });
   it('should render with text options', () => {
-    const Info = withInfo({ text: 'some text here' })(story);
+    const Info = withInfo({ text: 'some text here' })(storyFn);
     mount(<Info />);
   });
   it('should render with missed info', () => {
     setDefaults(testOptions);
-    const Info = withInfo()(story);
+    const Info = withInfo()(storyFn);
     mount(<Info />);
   });
 });

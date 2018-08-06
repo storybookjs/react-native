@@ -61,7 +61,11 @@ Rule.propTypes = {
 /* eslint-disable react/no-array-index-key */
 function Rules({ rules, passes }) {
   return (
-    <List>{rules.map((rule, index) => <Rule passes={passes} rule={rule} key={index} />)}</List>
+    <List>
+      {rules.map((rule, index) => (
+        <Rule passes={passes} rule={rule} key={index} />
+      ))}
+    </List>
   );
 }
 Rules.propTypes = {

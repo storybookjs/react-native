@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|a11y Default 1`] = `<button />`;
+exports[`Storyshots Addons|a11y Default 1`] = `
+<button
+  type="button"
+/>
+`;
 
 exports[`Storyshots Addons|a11y Disabled 1`] = `
 <button
   disabled=""
+  type="button"
 >
   Testing the a11y addon
 </button>
@@ -13,13 +18,16 @@ exports[`Storyshots Addons|a11y Disabled 1`] = `
 exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
 <button
   style="color:black;background-color:black"
+  type="button"
 >
   Testing the a11y addon
 </button>
 `;
 
 exports[`Storyshots Addons|a11y Label 1`] = `
-<button>
+<button
+  type="button"
+>
   Testing the a11y addon
 </button>
 `;
@@ -29,6 +37,7 @@ exports[`Storyshots Addons|a11y delayed render 1`] = `<div />`;
 exports[`Storyshots Addons|a11y/Button Content 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
   Testing the a11y addon
 </button>
@@ -37,6 +46,7 @@ exports[`Storyshots Addons|a11y/Button Content 1`] = `
 exports[`Storyshots Addons|a11y/Button Default 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
   null
 </button>
@@ -46,6 +56,7 @@ exports[`Storyshots Addons|a11y/Button Disabled 1`] = `
 <button
   disabled=""
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
   Testing the a11y addon
 </button>
@@ -54,6 +65,7 @@ exports[`Storyshots Addons|a11y/Button Disabled 1`] = `
 exports[`Storyshots Addons|a11y/Button Invalid contrast 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;color:#ffffff;background-color:#4caf50"
+  type="button"
 >
   Testing the a11y addon
 </button>
@@ -62,6 +74,7 @@ exports[`Storyshots Addons|a11y/Button Invalid contrast 1`] = `
 exports[`Storyshots Addons|a11y/Button Label 1`] = `
 <button
   style="padding:12px 6px;font-size:12px;line-height:16px;border-radius:5px;background-color:#028402;color:#ffffff"
+  type="button"
 >
   null
 </button>

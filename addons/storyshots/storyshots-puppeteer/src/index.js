@@ -34,7 +34,8 @@ export const imageSnapshot = (customConfig = {}) => {
   let page; // Hold ref to the page to screenshot.
 
   const testFn = async ({ context }) => {
-    if (context.framework === 'rn') {
+    const { kind, framework, story } = context;
+    if (framework === 'rn') {
       // Skip tests since we de not support RN image snapshots.
       logger.error(
         "It seems you are running imageSnapshot on RN app and it's not supported. Skipping test."
@@ -43,16 +44,14 @@ export const imageSnapshot = (customConfig = {}) => {
       return;
     }
 
-    const encodedKind = encodeURIComponent(context.kind);
-    const encodedStoryName = encodeURIComponent(context.story);
+    const encodedKind = encodeURIComponent(kind);
+    const encodedStoryName = encodeURIComponent(story);
     const storyUrl = `/iframe.html?selectedKind=${encodedKind}&selectedStory=${encodedStoryName}`;
     const url = storybookUrl + storyUrl;
 
     if (!browser || !page) {
       logger.error(
-        `Error when generating image snapshot for test ${context.kind} - ${
-          context.story
-        } : It seems the headless browser is not running.`
+        `Error when generating image snapshot for test ${kind} - ${story} : It seems the headless browser is not running.`
       );
 
       throw new Error('no-headless-browser-running');

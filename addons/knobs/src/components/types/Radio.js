@@ -6,6 +6,11 @@ const styles = {
     fontSize: 11,
     padding: '5px',
   },
+  group: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
 };
 
 class RadiosType extends Component {
@@ -18,8 +23,8 @@ class RadiosType extends Component {
 
   renderRadioButton(label, value) {
     const opts = { label, value };
-    const { onChange } = this.props;
-    const { name } = this.props.knob;
+    const { onChange, knob } = this.props;
+    const { name } = knob;
     const id = `${name}-${opts.value}`;
 
     return (
@@ -30,7 +35,7 @@ class RadiosType extends Component {
           name={name}
           value={opts.value}
           onChange={e => onChange(e.target.value)}
-          checked={value === this.props.knob.value}
+          checked={value === knob.value}
         />
         <label style={styles.label} htmlFor={id}>
           {label}
@@ -40,9 +45,9 @@ class RadiosType extends Component {
   }
 
   render() {
-    const { knob, onChange } = this.props;
+    const { knob } = this.props;
 
-    return <div>{this.renderRadioButtonList(knob, onChange)}</div>;
+    return <div style={styles.group}>{this.renderRadioButtonList(knob)}</div>;
   }
 }
 

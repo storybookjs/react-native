@@ -9,9 +9,16 @@ const stylesheet = {
 };
 
 export default function Props(props) {
-  const { maxPropsIntoLine, maxPropArrayLength, maxPropObjectKeys, maxPropStringLength } = props;
-  const nodeProps = props.node.props;
-  const { defaultProps } = props.node.type;
+  const {
+    maxPropsIntoLine,
+    maxPropArrayLength,
+    maxPropObjectKeys,
+    maxPropStringLength,
+    node,
+    singleLine,
+  } = props;
+  const nodeProps = node.props;
+  const { defaultProps } = node.type;
   if (!nodeProps || typeof nodeProps !== 'object') {
     return <span />;
   }
@@ -26,7 +33,7 @@ export default function Props(props) {
   );
 
   const breakIntoNewLines = names.length > maxPropsIntoLine;
-  const endingSpace = props.singleLine ? ' ' : '';
+  const endingSpace = singleLine ? ' ' : '';
 
   const items = [];
   names.forEach((name, i) => {
@@ -34,7 +41,8 @@ export default function Props(props) {
       <span key={name}>
         {breakIntoNewLines ? (
           <span>
-            <br />&nbsp;&nbsp;
+            <br />
+            &nbsp;&nbsp;
           </span>
         ) : (
           ' '

@@ -10,10 +10,14 @@ storiesOf('Addons|Links.Link', module)
 
 storiesOf('Addons|Links.Button', module)
   .add('First', () => (
-    <button onClick={linkTo('Addons|Links.Button', 'Second')}>Go to "Second"</button>
+    <button type="button" onClick={linkTo('Addons|Links.Button', 'Second')}>
+      Go to "Second"
+    </button>
   ))
   .add('Second', () => (
-    <button onClick={linkTo('Addons|Links.Button', 'First')}>Go to "First"</button>
+    <button type="button" onClick={linkTo('Addons|Links.Button', 'First')}>
+      Go to "First"
+    </button>
   ));
 
 storiesOf('Addons|Links.Select', module)

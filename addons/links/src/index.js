@@ -1,9 +1,5 @@
-export const ADDON_ID = 'storybook/links';
-export const EVENT_ID = `${ADDON_ID}/link-event`;
-export const REQUEST_HREF_EVENT_ID = `${ADDON_ID}/request-href-event`;
-export const RECEIVE_HREF_EVENT_ID = `${ADDON_ID}/receive-href-event`;
-
-export { linkTo, hrefTo, withLinks } from './preview';
+import { ADDON_ID, EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from './events';
+import { linkTo, hrefTo, withLinks } from './preview';
 
 let hasWarned = false;
 
@@ -19,3 +15,13 @@ import LinkTo from '@storybook/addon-links/react';
   }
   return null;
 }
+
+export {
+  ADDON_ID,
+  EVENT_ID,
+  REQUEST_HREF_EVENT_ID,
+  RECEIVE_HREF_EVENT_ID,
+  linkTo,
+  hrefTo,
+  withLinks,
+};

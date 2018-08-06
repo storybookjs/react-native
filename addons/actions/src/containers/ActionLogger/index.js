@@ -6,8 +6,8 @@ import deepEqual from 'deep-equal';
 import { CYCLIC_KEY, retrocycle } from '../../lib';
 import { isObject } from '../../lib/util';
 
-import ActionLoggerComponent from '../../components/ActionLogger/';
-import { EVENT_ID } from '../../';
+import ActionLoggerComponent from '../../components/ActionLogger';
+import { EVENT_ID } from '../..';
 
 export default class ActionLogger extends React.Component {
   constructor(props, ...args) {
@@ -18,12 +18,16 @@ export default class ActionLogger extends React.Component {
   }
 
   componentDidMount() {
-    this.props.channel.on(EVENT_ID, this._actionListener);
-    this.stopListeningOnStory = this.props.api.onStory(this._storyChangeListener);
+    const { channel, api } = this.props;
+
+    channel.on(EVENT_ID, this._actionListener);
+    this.stopListeningOnStory = api.onStory(this._storyChangeListener);
   }
 
   componentWillUnmount() {
-    this.props.channel.removeListener(EVENT_ID, this._actionListener);
+    const { channel } = this.props;
+
+    channel.removeListener(EVENT_ID, this._actionListener);
     if (this.stopListeningOnStory) {
       this.stopListeningOnStory();
     }
@@ -37,9 +41,11 @@ export default class ActionLogger extends React.Component {
   }
 
   addAction(action) {
+    let { actions = [] } = this.state;
+    actions = [...actions];
+
     action.data.args = action.data.args.map(arg => retrocycle(arg)); // eslint-disable-line
     const isCyclic = !!action.data.args.find(arg => isObject(arg) && arg[CYCLIC_KEY]);
-    const actions = [...this.state.actions];
     const previous = actions.length && actions[0];
 
     if (previous && !isCyclic && deepEqual(previous.data, action.data, { strict: true })) {
@@ -56,9 +62,10 @@ export default class ActionLogger extends React.Component {
   }
 
   render() {
+    const { actions = [] } = this.state;
     const { active } = this.props;
     const props = {
-      actions: this.state.actions,
+      actions,
       onClear: () => this.clearActions(),
     };
     return active ? <ActionLoggerComponent {...props} /> : null;

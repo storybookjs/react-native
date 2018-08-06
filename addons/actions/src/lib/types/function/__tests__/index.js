@@ -1,4 +1,4 @@
-import functionType from '../';
+import functionType from '..';
 import reservedKeywords from '../reservedKeywords';
 import createFunction from '../createFunction';
 import createBoundFunction from '../createBoundFunction';

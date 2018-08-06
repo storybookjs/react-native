@@ -5,6 +5,7 @@ export default class DelayedRender extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
+
   state = {
     show: false,
   };
@@ -22,6 +23,8 @@ export default class DelayedRender extends Component {
   }
 
   render() {
-    return this.state.show ? this.props.children : <div />;
+    const { show } = this.state;
+    const { children } = this.props;
+    return show ? children : <div />;
   }
 }

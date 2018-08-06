@@ -1,3 +1,67 @@
+# 4.0.0-alpha.16
+
+2018-August-06
+
+#### Features
+
+-   Make addon-options work with story parameters [#3958](https://github.com/storybooks/storybook/pull/3958)
+
+#### Bug Fixes
+
+-   [BUG FIX] Use fixed version of react-dev-utils [#3959](https://github.com/storybooks/storybook/pull/3959)
+-   Inline emotion css calls that require theme to avoid using state [#3950](https://github.com/storybooks/storybook/pull/3950)
+
+#### Dependency Upgrades
+
+-   Upgrade even more dependencies [#3964](https://github.com/storybooks/storybook/pull/3964)
+-   More dependency upgrades (major version bumps) [#3957](https://github.com/storybooks/storybook/pull/3957)
+-   UPGRADE all minor dependencies [#3954](https://github.com/storybooks/storybook/pull/3954)
+
+# 4.0.0-alpha.15
+
+2018-August-03
+
+#### Breaking Changes
+
+-   dependencies(vue): Update vue-loader to 15.x.x [#3911](https://github.com/storybooks/storybook/pull/3911)
+
+#### Features
+
+-   Horizontal display for addon-knobs radios UI [#3922](https://github.com/storybooks/storybook/pull/3922)
+-   Add customizePage method to imageSnapshot [#3930](https://github.com/storybooks/storybook/pull/3930)
+-   Add additional device options to addon-viewport [#3918](https://github.com/storybooks/storybook/pull/3918)
+-   Support different extensions for "config" and "addons" files [#3913](https://github.com/storybooks/storybook/pull/3913)
+-   Add radio buttons knob type #3872 [#3894](https://github.com/storybooks/storybook/pull/3894)
+-   Added arrow to a11y addon HeaderBar [#3788](https://github.com/storybooks/storybook/pull/3788)
+-   Fix addons panel when using preact [#3882](https://github.com/storybooks/storybook/pull/3882)
+
+#### Bug Fixes
+
+-   Fix typo in addon-viewport  [#3942](https://github.com/storybooks/storybook/pull/3942)
+-   Fix knobs for React < 16.3 [#3866](https://github.com/storybooks/storybook/pull/3866)
+
+#### Maintenance
+
+-   Improve BettercodeHub  [#3941](https://github.com/storybooks/storybook/pull/3941)
+-   REFACTOR layout and REMOVE usplit component [#3914](https://github.com/storybooks/storybook/pull/3914)
+-   Group deprecated stories [#3846](https://github.com/storybooks/storybook/pull/3846)
+-   MOVE ui into it's own group [#3884](https://github.com/storybooks/storybook/pull/3884)
+
+#### Dependency Upgrades
+
+-   Use react-dev-utils@next [#3852](https://github.com/storybooks/storybook/pull/3852)
+
+# 3.4.10
+
+2018-August-03
+
+NOTE: `3.4.9` publish failed
+
+#### Bug Fixes
+
+-   addons-jest: bug with the jest parameter [#3923](https://github.com/storybooks/storybook/pull/3923)
+-   addon-info: fix copy button styling [#3896](https://github.com/storybooks/storybook/pull/3896)
+
 # 4.0.0-alpha.14
 
 2018-July-11
@@ -302,9 +366,12 @@
 
 2018-May-17
 
+NOTE: As part of the generic addon decorators, we've reversed the order of addon-knob's `select` knob keys/values, which had been called `selectV2` prior to this breaking change.
+
 #### Breaking Changes
 
 -   Support webpack4 modules format [#3576](https://github.com/storybooks/storybook/pull/3576)
+-   Generic addon decorators [#3555](https://github.com/storybooks/storybook/pull/3555)
 
 #### Features
 
@@ -312,7 +379,6 @@
 
 #### Maintenance
 
--   Generic addon decorators [#3555](https://github.com/storybooks/storybook/pull/3555)
 -   Refactor transitional decorator from addon-notes [#3559](https://github.com/storybooks/storybook/pull/3559)
 
 # 3.4.5

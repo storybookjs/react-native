@@ -1,4 +1,4 @@
-import objectType from '../';
+import objectType from '..';
 import { DEPTH_KEY } from '../configureDepth';
 
 describe('Object', () => {

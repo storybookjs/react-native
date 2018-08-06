@@ -9,7 +9,9 @@ exports[`Storyshots Other|function macroWrapper(args) {
     }
     return macro(args);
   }/Dirname Example story 1 1`] = `
-<button>
+<button
+  type="button"
+>
   Story 1
 </button>
 `;
@@ -23,7 +25,9 @@ exports[`Storyshots Other|function macroWrapper(args) {
     }
     return macro(args);
   }/Dirname Example story 2 1`] = `
-<button>
+<button
+  type="button"
+>
   Story 2
 </button>
 `;

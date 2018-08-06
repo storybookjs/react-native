@@ -40,7 +40,9 @@ Element.propTypes = {
 /* eslint-disable react/no-array-index-key */
 const Elements = ({ elements, passes }) => (
   <ol>
-    {elements.map((element, index) => <Element passes={passes} element={element} key={index} />)}
+    {elements.map((element, index) => (
+      <Element passes={passes} element={element} key={index} />
+    ))}
   </ol>
 );
 

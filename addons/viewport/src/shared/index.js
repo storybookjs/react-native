@@ -41,7 +41,7 @@ export const INITIAL_VIEWPORTS = {
     type: 'mobile',
   },
   iphone8p: {
-    name: 'iPhone 7 Plus',
+    name: 'iPhone 8 Plus',
     styles: {
       height: '960px',
       width: '540px',

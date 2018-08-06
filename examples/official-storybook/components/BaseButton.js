@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 /** BaseButton component description imported from comments inside the component file */
 const BaseButton = ({ disabled, label, onClick, style }) => (
-  <button disabled={disabled} onClick={onClick} style={style}>
+  <button type="button" disabled={disabled} onClick={onClick} style={style}>
     {label}
   </button>
 );

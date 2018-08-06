@@ -8,8 +8,16 @@ import {
 } from './preview';
 
 // addons, panels and events get unique names using a prefix
-export const ADDON_ID = 'storybook/actions';
-export const PANEL_ID = `${ADDON_ID}/actions-panel`;
-export const EVENT_ID = `${ADDON_ID}/action-event`;
+import { ADDON_ID, PANEL_ID, EVENT_ID } from './constants';
 
-export { action, actions, decorate, configureActions, decorateAction, withActions };
+export {
+  action,
+  actions,
+  decorate,
+  configureActions,
+  decorateAction,
+  withActions,
+  ADDON_ID,
+  PANEL_ID,
+  EVENT_ID,
+};
