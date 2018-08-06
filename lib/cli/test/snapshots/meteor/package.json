@@ -19,9 +19,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-root-slash-import": "^1.1.0",
-    "@storybook/react": "^4.0.0-alpha.15",
-    "@storybook/addon-actions": "^4.0.0-alpha.15",
-    "@storybook/addon-links": "^4.0.0-alpha.15",
-    "@storybook/addons": "^4.0.0-alpha.15"
+    "@storybook/react": "^4.0.0-alpha.16",
+    "@storybook/addon-actions": "^4.0.0-alpha.16",
+    "@storybook/addon-links": "^4.0.0-alpha.16",
+    "@storybook/addons": "^4.0.0-alpha.16"
   }
 }
