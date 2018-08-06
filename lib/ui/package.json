@@ -33,12 +33,14 @@
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
+    "mobx": "^5.0.3",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react-emotion": "^9.2.6",
     "react-fuzzy": "^0.5.2",
     "react-lifecycles-compat": "^3.0.4",
-    "react-modal": "^3.5.1"
+    "react-modal": "^3.5.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.16",
