@@ -108,7 +108,7 @@ storybook.configure(() => require('./stories'), module);
 
 ### using withOptions options or parameters
 
-The options-addon accepts story paramters to set options (as shown below).
+The options-addon accepts story parameters if you use the `withOptions` decorator (as shown below).
 
 ```js
 import { storiesOf } from '@storybook/marko';
@@ -117,17 +117,20 @@ import { withOptions } from '@storybook/addon-options';
 import Hello from '../components/hello/index.marko';
 
 storiesOf('Addons|Knobs/Hello', module)
-  .addDecorator(withOptions)
+  // If you want to set the option for all stories in of this kind
+  .addDecorator(withOptions({ addonPanelInRight: true }))
   .addDecorator(withKnobs)
-  .addParameters({ options: { addonPanelInRight: true } })
-  .add('Simple', () => {
-    const name = text('Name', 'John Doe');
-    const age = number('Age', 44);
-    return Hello.renderSync({
-      name,
-      age,
-    });
-  });
+  .add(
+    'Simple',
+    () => {
+      const name = text('Name', 'John Doe');
+      const age = number('Age', 44);
+      return Hello.renderSync({
+        name,
+        age,
+      });
+    },
+    // If you want to set the options for a specific story
+    { options: { addonPanelInRight: false } }
+  );
 ```
-
-It is also possible to call `setOptions()` inside individual stories. Note that this will bring impact story render performance significantly.
