@@ -31,6 +31,7 @@
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "react-emotion": "^9.2.6",
+    "upath": "^1.0.4",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
