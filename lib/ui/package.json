@@ -28,6 +28,7 @@
     "events": "^3.0.0",
     "fuse.js": "^3.2.1",
     "global": "^4.3.2",
+    "history": "^4.7.2",
     "keycode": "^2.2.0",
     "lodash.debounce": "^4.0.8",
     "lodash.pick": "^4.4.0",
@@ -41,6 +42,7 @@
     "react-fuzzy": "^0.5.2",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.5.1",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
