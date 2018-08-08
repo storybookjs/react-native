@@ -2,7 +2,7 @@
 
 exports[`Storyshots Addons|Options withOptions hiding addon panel 1`] = `
 <div>
-  This story should have changed the name of the storybook
+  This story should have changed hidden the addons panel
 </div>
 `;
 
