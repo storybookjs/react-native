@@ -5,6 +5,7 @@ import { ADDON_ID, EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from
 export function register() {
   addons.register(ADDON_ID, api => {
     const channel = addons.getChannel();
+
     channel.on(EVENT_ID, selection => {
       if (selection.kind != null) {
         api.selectStory(selection.kind, selection.story);
