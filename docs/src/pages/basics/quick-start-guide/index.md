@@ -4,7 +4,7 @@ title: 'Quick Start Guide'
 ---
 
 Storybook supports many different frontend frameworks with more coming!
-React, Vue, Angular, Mithril, Marko, and HTML are currently supported. Follow these steps to get started with Storybook.
+React, Vue, Angular, Mithril, Marko, HTML and Svelte are currently supported. Follow these steps to get started with Storybook.
 
 Get started using the automated command line tool. This command adds a set of boilerplate files for Storybook in your project:
 ```sh
@@ -18,6 +18,7 @@ To install storybook for HTML, add `--html` argument:
 ```
 getstorybook --html
 ```
+
 
 Start Storybook with:
 ```sh
@@ -35,6 +36,6 @@ To learn more about what `getstorybook` command does, have a look at the slow st
 * [Mithril](/basics/guide-mithril/)
 * [Marko](/basics/guide-marko/)
 * [HTML](/basics/guide-html/)
-
+* [Svelte](/basics/guide-svelte/)
 
 A tutorial is also available at [Learn Storybook](https://www.learnstorybook.com) for a step-by-step guide (only available for React).

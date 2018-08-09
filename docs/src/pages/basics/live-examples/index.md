@@ -13,6 +13,7 @@ title: 'Live Examples'
 - [Mithril](https://storybooks-mithril.netlify.com/)
 - [Marko](https://storybooks-marko.netlify.com/)
 - [HTML](https://storybooks-html.netlify.com/)
+- [Svelte](https://storybooks-svelte.netlify.com/)
 
 ### 3.4
 - [React Official](https://release-3-4--storybooks-official.netlify.com)

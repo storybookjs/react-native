@@ -13,7 +13,7 @@
 /addons/links/ @hypnosphi @ndelangen
 /addons/notes/ @alexandrebodin
 /addons/options/ @danielduan @UsulPro
-/addons/storyshots/ @igor-dv @thomasbertet @hypnosphi 
+/addons/storyshots/ @igor-dv @thomasbertet @hypnosphi
 /addons/storysource/ @igor-dv
 /addons/viewport/ @saponifi3d
 
@@ -22,16 +22,18 @@
 /app/react/ @xavcz @shilman @thomasbertet
 /app/react-native/ @rmevans9 @danielduan @Gongreg @tmeasday
 /app/vue/ @thomasbertet @kazupon
+/app/svelte/ @plumpNation
 
 /docs/ @ndelangen @shilman @hypnosphi
 
 /examples/angular-cli/ @igor-dv @alterx
-/examples/cra-kitchen-sink/ @ndelangen @UsulPro @hypnosphi 
+/examples/cra-kitchen-sink/ @ndelangen @UsulPro @hypnosphi
 /examples/crna-kitchen-sink/ @Gongreg @danielduan
 /examples/official-storybook/ @hypnosphi @danielduan @UsulPro
 /examples/polymer-cli/ @naipath @igor-dv
 /examples/react-native-vanilla/ @tmeasday @danielduan
 /examples/vue-kitchen-sink/ @igor-dv @alexandrebodin
+/examples/svelte-kitchen-sink/ @plumpNation
 
 /lib/addons/ @ndelangen @theinterned
 /lib/channel-postmessage/ @mnmtanish @ndelangen

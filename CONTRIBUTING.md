@@ -53,7 +53,7 @@ You can use the `--update` flag to update snapshots or screenshots as needed.
 
 You can also pick suites from CLI.  Suites available are listed below.
 
-##### Core & React & Vue Tests
+##### Core & React & Vue & Svelte Tests
 
 `yarn test --core`
 
@@ -72,7 +72,7 @@ Before these tests are ran, the project must be bootstrapped with the React Nati
 `yarn test --image`
 
 This option executes tests from `<rootdir>/examples/official-storybook`
-In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date : 
+In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date :
 
 ```javascript
 cd examples/official-storybook
