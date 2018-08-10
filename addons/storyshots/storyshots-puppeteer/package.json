@@ -19,6 +19,6 @@
     "puppeteer": "^1.6.2"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "4.0.0-alpha.9"
+    "@storybook/addon-storyshots": "4.0.0-alpha.16"
   }
 }

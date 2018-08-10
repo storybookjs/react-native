@@ -19,6 +19,7 @@ const style = {
 [
   'cra-kitchen-sink',
   'vue-kitchen-sink',
+  'svelte-kitchen-sink',
   'angular-cli',
   'polymer-cli',
   'mithril-kitchen-sink',
