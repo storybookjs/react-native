@@ -16,6 +16,7 @@ module.exports = {
     '<rootDir>/lib',
     '<rootDir>/examples/cra-kitchen-sink',
     '<rootDir>/examples/vue-kitchen-sink',
+    '<rootDir>/examples/svelte-kitchen-sink',
     '<rootDir>/examples/html-kitchen-sink',
     '<rootDir>/examples/official-storybook',
     '<rootDir>/examples/angular-cli',
@@ -25,6 +26,7 @@ module.exports = {
     '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
     '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
+    '.*\\.(svelte)$': '<rootDir>/node_modules/svelte-jest',
   },
   testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
@@ -41,5 +43,5 @@ module.exports = {
   setupTestFrameworkScriptFile: './scripts/jest.init.js',
   setupFiles: ['raf/polyfill'],
   testURL: 'http://localhost',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html', 'vue'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html', '.svelte', 'vue'],
 };

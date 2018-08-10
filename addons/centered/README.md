@@ -47,6 +47,25 @@ storiesOf('MyComponent', module)
   }));
 ```
 
+example for Svelte:
+
+```js
+import { storiesOf } from '@storybook/svelte';
+import Centered from '@storybook/addon-centered/svelte';
+
+import Component from '../Component.svelte';
+
+storiesOf('Addon|Centered', module)
+  .addDecorator(Centered)
+  .add('rounded', () => ({
+    Component,
+    data: {
+      rounded: true,
+      text: "Look, I'm centered!",
+    },
+  }))
+```
+
 example for Mithril:
 
 ```js
@@ -96,7 +115,7 @@ storiesOf('Addon|Centered', module)
   )
   .addDecorator(centered)
   .add('centered template', () => ({
-    template: `<storybook-button-component 
+    template: `<storybook-button-component
         [text]="text" (onClick)="onClick($event)">
       </storybook-button-component>`,
     props: {
@@ -131,6 +150,19 @@ import { configure, addDecorator } from '@storybook/vue';
 import centered from '@storybook/addon-centered';
 
 addDecorator(centered);
+
+configure(function () {
+  //...
+}, module);
+```
+
+example for Svelte:
+
+```js
+import { configure, addDecorator } from '@storybook/svelte';
+import Centered from '@storybook/addon-centered/svelte';
+
+addDecorator(Centered);
 
 configure(function () {
   //...

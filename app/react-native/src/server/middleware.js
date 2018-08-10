@@ -20,7 +20,8 @@ function getMiddleware(configDir) {
   return () => {};
 }
 
-export default function({ projectDir, configDir, ...options }) {
+export default function(options) {
+  const { projectDir, configDir } = options;
   // Build the webpack configuration using the `baseConfig`
   // custom `.babelrc` file and `webpack.config.js` files
   const environment = options.environment || 'DEVELOPMENT';
