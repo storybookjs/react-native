@@ -32,7 +32,7 @@ const Item = styled('div')({
   padding: 5,
 });
 
-const storybookIframe = 'storybook-preview-iframe';
+const storybookIframe = 'storybook-preview-background';
 const style = {
   iframe: {
     transition: 'background 0.25s ease-in-out',
@@ -83,7 +83,8 @@ export default class BackgroundPanel extends Component {
     this.iframe = document.getElementById(storybookIframe);
 
     if (!this.iframe) {
-      throw new Error('Cannot find Storybook iframe');
+      return;
+      // throw new Error('Cannot find Storybook iframe');
     }
 
     Object.keys(style.iframe).forEach(prop => {
@@ -96,8 +97,6 @@ export default class BackgroundPanel extends Component {
       this.setState({ backgrounds });
       const current = api.getQueryParam('background');
       const defaultOrFirst = backgrounds.find(x => x.default) || backgrounds[0];
-
-      // debugger;
 
       if (current && backgrounds.find(bg => bg.value === current)) {
         this.updateIframe(current);

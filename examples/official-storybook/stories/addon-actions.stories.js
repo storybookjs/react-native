@@ -76,7 +76,7 @@ storiesOf('Addons|Actions', module)
 
     return (
       <div>
-        {setOptions({ selectedAddonPanel: 'storybook/actions/actions-panel' })}
+        {setOptions({ selectedPanel: 'storybook/actions/actions-panel' })}
         <Button onClick={() => action('Array')(['foo', 'bar', { foo: 'bar' }])}>Array</Button>
         <Button onClick={() => action('Boolean')(false)}>Boolean</Button>
         <Button onClick={() => action('Empty Object')({})}>Empty Object</Button>

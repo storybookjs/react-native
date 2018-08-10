@@ -15,7 +15,7 @@ const text = 'Testing the a11y addon';
 storiesOf('Addons|a11y', module)
   .addDecorator(checkA11y)
   .addDecorator(fn => {
-    setOptions({ selectedAddonPanel: '@storybook/addon-a11y/panel' });
+    setOptions({ selectedPanel: '@storybook/addon-a11y/panel' });
     return fn();
   })
   .add('Default', () => <BaseButton label="" />)

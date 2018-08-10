@@ -15,27 +15,30 @@ const provideTests = Component =>
     };
 
     static defaultProps = {
-      active: true,
+      active: false,
     };
 
     state = {};
 
     componentDidMount() {
+      this.mounted = true;
       const { channel, api } = this.props;
 
       this.stopListeningOnStory = api.onStory(() => {
-        this.onAddTests({});
+        const { kind, storyName, tests } = this.state;
+        if (this.mounted && (kind || storyName || tests)) {
+          this.onAddTests({});
+        }
       });
 
       channel.on('storybook/tests/add_tests', this.onAddTests);
     }
 
     componentWillUnmount() {
+      this.mounted = false;
       const { channel } = this.props;
 
-      if (this.stopListeningOnStory) {
-        this.stopListeningOnStory();
-      }
+      this.stopListeningOnStory();
       channel.removeListener('storybook/tests/add_tests', this.onAddTests);
     }
 
@@ -45,7 +48,9 @@ const provideTests = Component =>
 
     render() {
       const { active } = this.props;
-      return active ? <Component {...this.state} /> : null;
+      const { tests } = this.state;
+
+      return active && tests ? <Component {...this.state} /> : null;
     }
   };
 

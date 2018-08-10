@@ -13,7 +13,7 @@ const Wrapper = styled('div')({
   minHeight: '100%',
 });
 
-export default class Events extends Component {
+export default class EventsPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
     channel: PropTypes.shape({

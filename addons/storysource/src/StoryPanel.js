@@ -62,18 +62,10 @@ export default class StoryPanel extends Component {
   state = { source: '// Here will be dragons 🐉' };
 
   componentDidMount() {
+    this.mounted = true;
     const { channel } = this.props;
 
-    channel.on(EVENT_ID, ({ source, currentLocation, locationsMap }) => {
-      const locationsKeys = getLocationKeys(locationsMap);
-
-      this.setState({
-        source,
-        currentLocation,
-        locationsMap,
-        locationsKeys,
-      });
-    });
+    channel.on(EVENT_ID, this.listener);
   }
 
   componentDidUpdate() {
@@ -82,8 +74,25 @@ export default class StoryPanel extends Component {
     }
   }
 
+  componentWillUnmount() {
+    const { channel } = this.props;
+
+    channel.removeListener(EVENT_ID, this.listener);
+  }
+
   setSelectedStoryRef = ref => {
     this.selectedStoryRef = ref;
+  };
+
+  listener = ({ source, currentLocation, locationsMap }) => {
+    const locationsKeys = getLocationKeys(locationsMap);
+
+    this.setState({
+      source,
+      currentLocation,
+      locationsMap,
+      locationsKeys,
+    });
   };
 
   clickOnStory = (kind, story) => {

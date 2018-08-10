@@ -3,6 +3,7 @@ import marked from 'marked';
 
 function renderMarkdown(text, options) {
   marked.setOptions({ ...marked.defaults, options });
+
   return marked(text);
 }
 
@@ -11,6 +12,7 @@ export const withNotes = makeDecorator({
   parameterName: 'notes',
   skipIfNoParametersOrOptions: true,
   allowDeprecatedUsage: true,
+
   wrapper: (getStory, context, { options, parameters }) => {
     const channel = addons.getChannel();
 

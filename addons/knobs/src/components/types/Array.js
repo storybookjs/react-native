@@ -27,8 +27,14 @@ class ArrayType extends React.Component {
 
   render() {
     const { knob } = this.props;
-
-    return <Textarea id={knob.name} value={knob.value} onChange={this.handleChange} size="flex" />;
+    return (
+      <Textarea
+        id={knob.name}
+        value={knob.value.join(',')}
+        onChange={this.handleChange}
+        size="flex"
+      />
+    );
   }
 }
 

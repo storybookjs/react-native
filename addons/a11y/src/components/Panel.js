@@ -19,7 +19,7 @@ const Violations = styled('span')(({ theme }) => ({
   color: theme.failColor,
 }));
 
-class Panel extends Component {
+class A11YPanel extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
     channel: PropTypes.shape({
@@ -99,4 +99,4 @@ class Panel extends Component {
   }
 }
 
-export default Panel;
+export default A11YPanel;

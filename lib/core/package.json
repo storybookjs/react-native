@@ -20,6 +20,7 @@
     "@storybook/channel-postmessage": "4.0.0-alpha.16",
     "@storybook/client-logger": "4.0.0-alpha.16",
     "@storybook/core-events": "4.0.0-alpha.16",
+    "@storybook/components": "4.0.0-alpha.16",
     "@storybook/node-logger": "4.0.0-alpha.16",
     "@storybook/ui": "4.0.0-alpha.16",
     "airbnb-js-shims": "^2.1.0",

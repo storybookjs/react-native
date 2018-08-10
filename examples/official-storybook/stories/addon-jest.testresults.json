@@ -1,1 +1,109 @@
-{"numFailedTestSuites":1,"numFailedTests":4,"numPassedTestSuites":0,"numPassedTests":3,"numPendingTestSuites":0,"numPendingTests":0,"numRuntimeErrorTestSuites":0,"numTotalTestSuites":1,"numTotalTests":7,"snapshot":{"added":0,"didUpdate":false,"failure":false,"filesAdded":0,"filesRemoved":0,"filesUnmatched":0,"filesUpdated":0,"matched":0,"total":0,"unchecked":0,"unmatched":0,"updated":0},"startTime":1515086750721,"success":false,"testResults":[{"assertionResults":[{"ancestorTitles":[],"failureMessages":[],"fullName":"true should be true","status":"passed","title":"true should be true"},{"ancestorTitles":["In a describe: "],"failureMessages":[],"fullName":"In a describe:  true should still be true","status":"passed","title":"true should still be true"},{"ancestorTitles":["In a describe: "],"failureMessages":[],"fullName":"In a describe:  a list should contain 3 items","status":"passed","title":"a list should contain 3 items"},{"ancestorTitles":["In a describe: "],"failureMessages":["Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toEqual(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected value to equal:\n  \u001b[32m\"everything is awesome\"\u001b[39m\nReceived:\n  \u001b[31m\"everything is all right\"\u001b[39m\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:16:39)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"],"fullName":"In a describe:  everything is awesome","status":"failed","title":"everything is awesome"},{"ancestorTitles":["A bunch of failing tests: "],"failureMessages":["Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toBe(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected value to be (using ===):\n  \u001b[32mfalse\u001b[39m\nReceived:\n  \u001b[31mtrue\u001b[39m\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:22:18)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"],"fullName":"A bunch of failing tests:  true should still be true","status":"failed","title":"true should still be true"},{"ancestorTitles":["A bunch of failing tests: "],"failureMessages":["Error: \u001b[2mexpect(\u001b[22m\u001b[31marray\u001b[39m\u001b[2m).toContain(\u001b[22m\u001b[32mvalue\u001b[39m\u001b[2m)\u001b[22m\n\nExpected array:\n  \u001b[31m[\"a\", \"b\", \"3\"]\u001b[39m\nTo contain value:\n  \u001b[32m301\u001b[39m\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:26:29)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"],"fullName":"A bunch of failing tests:  a list should contain 3 items","status":"failed","title":"a list should contain 3 items"},{"ancestorTitles":["A bunch of failing tests: "],"failureMessages":["Error: \u001b[2mexpect(\u001b[22m\u001b[31mfunction\u001b[39m\u001b[2m).toThrow(\u001b[22m\u001b[32mundefined\u001b[39m\u001b[2m)\u001b[22m\n\nExpected the function to throw an error.\nBut it didn't throw anything.\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:30:28)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"],"fullName":"A bunch of failing tests:  should work","status":"failed","title":"should work"}],"endTime":1515086751669,"message":"\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mIn a describe:  › everything is awesome\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toEqual(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected value to equal:\n      \u001b[32m\"everything is awesome\"\u001b[39m\n    Received:\n      \u001b[31m\"everything is all right\"\u001b[39m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:16:39)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mA bunch of failing tests:  › true should still be true\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toBe(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected value to be (using ===):\n      \u001b[32mfalse\u001b[39m\n    Received:\n      \u001b[31mtrue\u001b[39m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:22:18)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mA bunch of failing tests:  › a list should contain 3 items\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31marray\u001b[39m\u001b[2m).toContain(\u001b[22m\u001b[32mvalue\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected array:\n      \u001b[31m[\"a\", \"b\", \"3\"]\u001b[39m\n    To contain value:\n      \u001b[32m301\u001b[39m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:26:29)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mA bunch of failing tests:  › should work\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31mfunction\u001b[39m\u001b[2m).toThrow(\u001b[22m\u001b[32mundefined\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected the function to throw an error.\n    But it didn't throw anything.\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:30:28)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n","name":"/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js","startTime":1515086751196,"status":"failed","summary":""}],"wasInterrupted":false}
+{
+    "numFailedTestSuites": 1,
+    "numFailedTests": 4,
+    "numPassedTestSuites": 0,
+    "numPassedTests": 3,
+    "numPendingTestSuites": 0,
+    "numPendingTests": 0,
+    "numRuntimeErrorTestSuites": 0,
+    "numTotalTestSuites": 1,
+    "numTotalTests": 7,
+    "snapshot": {
+        "added": 0,
+        "didUpdate": false,
+        "failure": false,
+        "filesAdded": 0,
+        "filesRemoved": 0,
+        "filesUnmatched": 0,
+        "filesUpdated": 0,
+        "matched": 0,
+        "total": 0,
+        "unchecked": 0,
+        "unmatched": 0,
+        "updated": 0
+    },
+    "startTime": 1515086750721,
+    "success": false,
+    "testResults": [
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": [],
+                    "failureMessages": [],
+                    "fullName": "true should be true",
+                    "status": "passed",
+                    "title": "true should be true"
+                },
+                {
+                    "ancestorTitles": [
+                        "In a describe: "
+                    ],
+                    "failureMessages": [],
+                    "fullName": "In a describe:  true should still be true",
+                    "status": "passed",
+                    "title": "true should still be true"
+                },
+                {
+                    "ancestorTitles": [
+                        "In a describe: "
+                    ],
+                    "failureMessages": [],
+                    "fullName": "In a describe:  a list should contain 3 items",
+                    "status": "passed",
+                    "title": "a list should contain 3 items"
+                },
+                {
+                    "ancestorTitles": [
+                        "In a describe: "
+                    ],
+                    "failureMessages": [
+                        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toEqual(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected value to equal:\n  \u001b[32m\"everything is awesome\"\u001b[39m\nReceived:\n  \u001b[31m\"everything is all right\"\u001b[39m\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:16:39)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"
+                    ],
+                    "fullName": "In a describe:  everything is awesome",
+                    "status": "failed",
+                    "title": "everything is awesome"
+                },
+                {
+                    "ancestorTitles": [
+                        "A bunch of failing tests: "
+                    ],
+                    "failureMessages": [
+                        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toBe(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected value to be (using ===):\n  \u001b[32mfalse\u001b[39m\nReceived:\n  \u001b[31mtrue\u001b[39m\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:22:18)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"
+                    ],
+                    "fullName": "A bunch of failing tests:  true should still be true",
+                    "status": "failed",
+                    "title": "true should still be true"
+                },
+                {
+                    "ancestorTitles": [
+                        "A bunch of failing tests: "
+                    ],
+                    "failureMessages": [
+                        "Error: \u001b[2mexpect(\u001b[22m\u001b[31marray\u001b[39m\u001b[2m).toContain(\u001b[22m\u001b[32mvalue\u001b[39m\u001b[2m)\u001b[22m\n\nExpected array:\n  \u001b[31m[\"a\", \"b\", \"3\"]\u001b[39m\nTo contain value:\n  \u001b[32m301\u001b[39m\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:26:29)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"
+                    ],
+                    "fullName": "A bunch of failing tests:  a list should contain 3 items",
+                    "status": "failed",
+                    "title": "a list should contain 3 items"
+                },
+                {
+                    "ancestorTitles": [
+                        "A bunch of failing tests: "
+                    ],
+                    "failureMessages": [
+                        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mfunction\u001b[39m\u001b[2m).toThrow(\u001b[22m\u001b[32mundefined\u001b[39m\u001b[2m)\u001b[22m\n\nExpected the function to throw an error.\nBut it didn't throw anything.\n    at Object.<anonymous> (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js:30:28)\n    at Object.asyncFn (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/jasmine_async.js:124:345)\n    at resolve (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:46:12)\n    at Promise (<anonymous>)\n    at mapper (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:34:499)\n    at promise.then (/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/node_modules/jest-jasmine2/build/queue_runner.js:74:39)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:169:7)"
+                    ],
+                    "fullName": "A bunch of failing tests:  should work",
+                    "status": "failed",
+                    "title": "should work"
+                }
+            ],
+            "endTime": 1515086751669,
+            "message": "\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mIn a describe:  › everything is awesome\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toEqual(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected value to equal:\n      \u001b[32m\"everything is awesome\"\u001b[39m\n    Received:\n      \u001b[31m\"everything is all right\"\u001b[39m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:16:39)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mA bunch of failing tests:  › true should still be true\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).toBe(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected value to be (using ===):\n      \u001b[32mfalse\u001b[39m\n    Received:\n      \u001b[31mtrue\u001b[39m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:22:18)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mA bunch of failing tests:  › a list should contain 3 items\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31marray\u001b[39m\u001b[2m).toContain(\u001b[22m\u001b[32mvalue\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected array:\n      \u001b[31m[\"a\", \"b\", \"3\"]\u001b[39m\n    To contain value:\n      \u001b[32m301\u001b[39m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:26:29)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[1mA bunch of failing tests:  › should work\u001b[39m\u001b[22m\n\n    \u001b[2mexpect(\u001b[22m\u001b[31mfunction\u001b[39m\u001b[2m).toThrow(\u001b[22m\u001b[32mundefined\u001b[39m\u001b[2m)\u001b[22m\n    \n    Expected the function to throw an error.\n    But it didn't throw anything.\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/tests/addon-jest.test.js\u001b[39m\u001b[0m\u001b[2m:30:28)\u001b[2m\u001b[22m\n\u001b[2m          at Promise (<anonymous>)\u001b[22m\n\u001b[2m          at <anonymous>\u001b[22m\n\u001b[2m      \u001b[2mat process._tickCallback (\u001b[2m\u001b[0m\u001b[36mexamples/official-storybook/internal/process/next_tick.js\u001b[39m\u001b[0m\u001b[2m:169:7)\u001b[2m\u001b[22m\n",
+            "name": "/home/toto/IdeaProjects/storybook-toto/examples/official-storybook/tests/addon-jest.test.js",
+            "startTime": 1515086751196,
+            "status": "failed",
+            "summary": ""
+        }
+    ],
+    "wasInterrupted": false
+}

@@ -29,7 +29,7 @@ const getDefaultViewport = (viewports, candidateViewport) =>
 const getViewports = viewports =>
   Object.keys(viewports).length > 0 ? viewports : INITIAL_VIEWPORTS;
 
-export class Panel extends Component {
+export default class ViewportPanel extends Component {
   static defaultOptions = {
     viewports: INITIAL_VIEWPORTS,
     defaultViewport: DEFAULT_VIEWPORT,
@@ -59,6 +59,7 @@ export class Panel extends Component {
   };
 
   componentDidMount() {
+    this.mounted = true;
     const { channel, api } = this.props;
     const { defaultViewport } = this.state;
 
@@ -69,16 +70,18 @@ export class Panel extends Component {
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
-      this.setStoryDefaultViewport(defaultViewport);
+      const { storyDefaultViewport } = this.state;
+      if (this.mounted && !storyDefaultViewport === defaultViewport) {
+        this.setStoryDefaultViewport(defaultViewport);
+      }
     });
   }
 
   componentWillUnmount() {
+    this.mounted = false;
     const { channel } = this.props;
 
-    if (this.unsubscribeFromOnStory) {
-      this.unsubscribeFromOnStory();
-    }
+    this.unsubscribeFromOnStory();
 
     channel.removeListener(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.removeListener(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
@@ -95,7 +98,7 @@ export class Panel extends Component {
     this.changeViewport(defaultViewport);
   };
 
-  configure = (options = Panel.defaultOptions) => {
+  configure = (options = ViewportPanel.defaultOptions) => {
     const viewports = getViewports(options.viewports);
     const defaultViewport = getDefaultViewport(viewports, options.defaultViewport);
 

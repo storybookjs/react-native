@@ -18,7 +18,7 @@ const PanelWrapper = styled('div')({
   width: '100%',
 });
 
-export default class Panel extends PureComponent {
+export default class KnobPanel extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { knobs: {} };
@@ -29,17 +29,21 @@ export default class Panel extends PureComponent {
   }
 
   componentDidMount() {
+    this.mounted = true;
     const { channel, api } = this.props;
     channel.on('addon:knobs:setKnobs', this.setKnobs);
     channel.on('addon:knobs:setOptions', this.setOptions);
 
     this.stopListeningOnStory = api.onStory(() => {
-      this.setState({ knobs: {} });
+      if (this.mounted) {
+        this.setState({ knobs: {} });
+      }
       channel.emit('addon:knobs:reset');
     });
   }
 
   componentWillUnmount() {
+    this.mounted = false;
     const { channel } = this.props;
 
     channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
@@ -190,7 +194,7 @@ export default class Panel extends PureComponent {
   }
 }
 
-Panel.propTypes = {
+KnobPanel.propTypes = {
   active: PropTypes.bool.isRequired,
   onReset: PropTypes.object, // eslint-disable-line
   channel: PropTypes.shape({

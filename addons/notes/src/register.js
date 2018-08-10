@@ -10,38 +10,36 @@ const Panel = styled('div')({
   width: '100%',
 });
 
-export class Notes extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = { text: '' };
-    this.onAddNotes = this.onAddNotes.bind(this);
-  }
+export class NotesPanel extends React.Component {
+  state = {
+    text: '',
+  };
 
   componentDidMount() {
+    this.mounted = true;
     const { channel, api } = this.props;
-    // Listen to the notes and render it.
-    channel.on('storybook/notes/add_notes', this.onAddNotes);
 
     // Clear the current notes on every story change.
     this.stopListeningOnStory = api.onStory(() => {
-      this.onAddNotes('');
+      const { text } = this.state;
+      if (this.mounted && text !== '') {
+        this.onAddNotes('');
+      }
     });
+    channel.on('storybook/notes/add_notes', this.onAddNotes);
   }
 
-  // This is some cleanup tasks when the Notes panel is unmounting.
   componentWillUnmount() {
-    if (this.stopListeningOnStory) {
-      this.stopListeningOnStory();
-    }
-
-    this.unmounted = true;
+    this.mounted = false;
     const { channel } = this.props;
+
+    this.stopListeningOnStory();
     channel.removeListener('storybook/notes/add_notes', this.onAddNotes);
   }
 
-  onAddNotes(text) {
+  onAddNotes = text => {
     this.setState({ text });
-  }
+  };
 
   render() {
     const { active } = this.props;
@@ -62,7 +60,7 @@ export class Notes extends React.Component {
   }
 }
 
-Notes.propTypes = {
+NotesPanel.propTypes = {
   active: PropTypes.bool.isRequired,
   channel: PropTypes.shape({
     on: PropTypes.func,
@@ -81,6 +79,6 @@ addons.register('storybook/notes', api => {
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     // eslint-disable-next-line react/prop-types
-    render: ({ active }) => <Notes channel={channel} api={api} active={active} />,
+    render: ({ active }) => <NotesPanel channel={channel} api={api} active={active} />,
   });
 });

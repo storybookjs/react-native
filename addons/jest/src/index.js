@@ -46,7 +46,7 @@ export const withTests = userOptions => {
     ] = args;
 
     if (testFiles && !testFiles.disable) {
-      emitAddTests({ kind, story, testFiles, options });
+      emitAddTests({ kind, story, testFiles: [].concat(testFiles), options });
     }
 
     return story();
