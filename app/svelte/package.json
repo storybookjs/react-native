@@ -2,7 +2,7 @@
   "name": "@storybook/svelte",
   "version": "4.0.0-alpha.16",
   "description": "Storybook for Svelte: Develop Svelte Component in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/svelte",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/svelte",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

@@ -2,7 +2,7 @@
   "name": "@storybook/angular",
   "version": "4.0.0-alpha.16",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/angular",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/angular",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
