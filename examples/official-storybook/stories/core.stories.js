@@ -35,7 +35,12 @@ storiesOf('Core|Events', module).add('Force re-render', () => (
 
 // Skip these stories in storyshots, they will throw -- NOTE: would rather do this
 // via a params API, see https://github.com/storybooks/storybook/pull/3967#issuecomment-411616023
-if (navigator && navigator.userAgent && !(navigator.userAgent.indexOf('jsdom') > -1)) {
+if (
+  navigator &&
+  navigator.userAgent &&
+  !(navigator.userAgent.indexOf('jsdom') > -1) &&
+  !(navigator.userAgent.indexOf('Chromatic') > -1)
+) {
   storiesOf('Core|Errors', module)
     .add('story throws exception', () => {
       throw new Error('error');
