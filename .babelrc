@@ -5,7 +5,7 @@
       "plugins": ["require-context-hook"]
     },
     "plugins": [
-      "emotion",
+      ["emotion", { "sourceMap": true, "autoLabel": true }],
       "babel-plugin-macros",
       ["transform-runtime", {
         "polyfill": false,
