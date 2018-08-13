@@ -23,7 +23,7 @@ function inject(source, decorator, filepath, options = {}) {
     options.parser
   );
 
-  if (!changed) {
+  if (!options.noStoriesOf && !changed) {
     return {
       source: newSource,
       addsMap: {},
