@@ -31,6 +31,7 @@
     "history": "^4.7.2",
     "keycode": "^2.2.0",
     "lodash.debounce": "^4.0.8",
+    "lodash.mergewith": "^4.6.1",
     "lodash.pick": "^4.4.0",
     "lodash.sortby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
@@ -43,7 +44,8 @@
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.5.1",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "to-camel-case": "^1.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.16",
