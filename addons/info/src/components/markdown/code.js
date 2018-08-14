@@ -18,6 +18,7 @@ export class Code extends React.Component {
   }
 
   render() {
+    const { language, code } = this.props;
     const codeStyle = {
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
       backgroundColor: '#fafafa',
@@ -31,12 +32,12 @@ export class Code extends React.Component {
       overflowX: 'scroll',
     };
 
-    const className = this.props.language ? `language-${this.props.language}` : '';
+    const className = language ? `language-${language}` : '';
 
     return (
       <pre style={preStyle} className={className}>
         <code style={codeStyle} className={className}>
-          {this.props.code}
+          {code}
         </code>
       </pre>
     );
@@ -52,14 +53,14 @@ Code.defaultProps = {
   code: null,
 };
 
-export function Blockquote(props) {
+export function Blockquote({ children }) {
   const style = {
     fontSize: '1.88em',
     fontFamily: 'Menlo, Monaco, "Courier New", monospace',
     borderLeft: '8px solid #fafafa',
     padding: '1rem',
   };
-  return <blockquote style={style}>{props.children}</blockquote>;
+  return <blockquote style={style}>{children}</blockquote>;
 }
 
 Blockquote.propTypes = { children: PropTypes.node };

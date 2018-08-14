@@ -1,4 +1,4 @@
-import addons from '@storybook/addons';
+import addons, { makeDecorator } from '@storybook/addons';
 import { EVENT_ID } from '../shared';
 
 // init function will be executed once when the storybook loads for the
@@ -41,3 +41,32 @@ export function setOptions(newOptions) {
 
   channel.emit(EVENT_ID, { options });
 }
+
+export const withOptions = makeDecorator({
+  name: 'withOptions',
+  parameterName: 'options',
+  skipIfNoParametersOrOptions: false,
+  allowDeprecatedUsage: true,
+  wrapper: (getStory, context, { newOptions, parameters }) => {
+    const optionsIn = parameters || newOptions || {};
+
+    const channel = addons.getChannel();
+    if (!channel) {
+      throw new Error(
+        'Failed to find addon channel. This may be due to https://github.com/storybooks/storybook/issues/1192.'
+      );
+    }
+
+    // since 'undefined' and 'null' are the valid values we don't want to
+    // override the hierarchySeparator or hierarchyRootSeparator if the prop is missing
+    const options = {
+      ...optionsIn,
+      ...withRegexProp(optionsIn, 'hierarchySeparator'),
+      ...withRegexProp(optionsIn, 'hierarchyRootSeparator'),
+    };
+
+    channel.emit(EVENT_ID, { options });
+
+    return getStory(context);
+  },
+});

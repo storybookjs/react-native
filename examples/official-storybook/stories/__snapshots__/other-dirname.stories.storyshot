@@ -1,13 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Other|/stories//Dirname Example story 1 1`] = `
-<button>
+exports[`Storyshots Other|function macroWrapper(args) {
+    var source = args.source,
+        isBabelMacrosCall = args.isBabelMacrosCall;
+
+    if (!isBabelMacrosCall) {
+      throw new MacroError(\`The macro you imported from "\${source}" is being executed outside the context of compilation with babel-macros. \` + \`This indicates that you don't have the babel plugin "babel-macros" configured correctly. \` + \`Please see the documentation for how to configure babel-macros properly: \` + 'https://github.com/kentcdodds/babel-macros/blob/master/other/docs/user.md');
+    }
+    return macro(args);
+  }/Dirname Example story 1 1`] = `
+<button
+  type="button"
+>
   Story 1
 </button>
 `;
 
-exports[`Storyshots Other|/stories//Dirname Example story 2 1`] = `
-<button>
+exports[`Storyshots Other|function macroWrapper(args) {
+    var source = args.source,
+        isBabelMacrosCall = args.isBabelMacrosCall;
+
+    if (!isBabelMacrosCall) {
+      throw new MacroError(\`The macro you imported from "\${source}" is being executed outside the context of compilation with babel-macros. \` + \`This indicates that you don't have the babel plugin "babel-macros" configured correctly. \` + \`Please see the documentation for how to configure babel-macros properly: \` + 'https://github.com/kentcdodds/babel-macros/blob/master/other/docs/user.md');
+    }
+    return macro(args);
+  }/Dirname Example story 2 1`] = `
+<button
+  type="button"
+>
   Story 2
 </button>
 `;

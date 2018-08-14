@@ -10,6 +10,7 @@ import {
   boolean,
   color,
   select,
+  radios,
   array,
   date,
   button,
@@ -20,10 +21,17 @@ import {
 const ItemLoader = ({ isLoading, items }) => {
   if (isLoading) {
     return <p>Loading data</p>;
-  } else if (!items.length) {
+  }
+  if (!items.length) {
     return <p>No items loaded</p>;
   }
-  return <ul>{items.map(i => <li key={i}>{i}</li>)}</ul>;
+  return (
+    <ul>
+      {items.map(i => (
+        <li key={i}>{i}</li>
+      ))}
+    </ul>
+  );
 };
 
 ItemLoader.propTypes = {
@@ -44,6 +52,13 @@ storiesOf('Addons|Knobs.withKnobs', module)
       Cherry: 'cherry',
     };
     const fruit = select('Fruit', fruits, 'apple');
+
+    const otherFruits = {
+      Kiwi: 'kiwi',
+      Guava: 'guava',
+      Watermelon: 'watermelon',
+    };
+    const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
     const dollars = number('Dollars', 12.5, { min: 0, max: 100, step: 0.01 });
     const years = number('Years in NY', 9);
 
@@ -63,7 +78,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
     const birthday = date('Birthday', defaultBirthday);
 
-    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}.`;
+    const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
     const style = { backgroundColor, ...otherStyles };
     const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
     const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
@@ -75,7 +90,11 @@ storiesOf('Addons|Knobs.withKnobs', module)
         <p>I live in NY for {years} years.</p>
         <p>My wallet contains: ${dollars.toFixed(2)}</p>
         <p>In my backpack, I have:</p>
-        <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
+        <ul>
+          {items.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
         <p>{salutation}</p>
         <p>
           When I am happy I look like this: <img src={images[0]} alt="happy" />
@@ -96,6 +115,12 @@ storiesOf('Addons|Knobs.withKnobs', module)
       Cherry: 'cherry',
     };
 
+    const otherFruits = {
+      Kiwi: 'kiwi',
+      Guava: 'guava',
+      Watermelon: 'watermelon',
+    };
+
     // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
     const defaultBirthday = new Date('Jan 20 2017 GMT+0');
 
@@ -114,6 +139,7 @@ storiesOf('Addons|Knobs.withKnobs', module)
     // Favorites
     const nice = boolean('Nice', true, GROUP_IDS.FAVORITES);
     const fruit = select('Fruit', fruits, 'apple', GROUP_IDS.FAVORITES);
+    const otherFruit = radios('Other Fruit', otherFruits, 'watermelon', GROUP_IDS.FAVORITES);
     const items = array('Items', ['Laptop', 'Book', 'Whiskey'], ',', GROUP_IDS.FAVORITES);
 
     // Display
@@ -145,8 +171,13 @@ storiesOf('Addons|Knobs.withKnobs', module)
         <h1>Favorites</h1>
         <p>Catchphrase: {salutation}</p>
         <p>Fruit: {fruit}</p>
+        <p>Other Fruit: {otherFruit}</p>
         <p>Items:</p>
-        <ul>{items.map(item => <li key={`${item}`}>{item}</li>)}</ul>
+        <ul>
+          {items.map(item => (
+            <li key={`${item}`}>{item}</li>
+          ))}
+        </ul>
       </div>
     );
   })

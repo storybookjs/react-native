@@ -17,7 +17,8 @@ export const DEFAULT_NAME = new InjectionToken<string>('TokenComponent.DefaultNa
 })
 export class TokenComponent {
   items;
-  @Input() name;
+  @Input()
+  name;
 
   constructor(
     @Optional()

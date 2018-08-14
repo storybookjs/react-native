@@ -7,7 +7,9 @@ import GridItem from '../GridItem';
 
 const Grid = ({ items, columnWidth }) => (
   <StackGrid columnWidth={columnWidth}>
-    {items.map((item, idx) => <GridItem key={idx} {...item} />)}
+    {items.map((item, idx) => (
+      <GridItem key={idx} {...item} />
+    ))}
   </StackGrid>
 );
 Grid.propTypes = {

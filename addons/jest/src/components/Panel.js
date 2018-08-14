@@ -45,7 +45,10 @@ const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) 
     {failedNumber > 0 && <div style={{ color: colors.error }}>{failedNumber} failed</div>}
     <div>{result.assertionResults.length} total</div>
     <div>
-      <strong>{result.endTime - result.startTime}ms</strong>
+      <strong>
+        {result.endTime - result.startTime}
+        ms
+      </strong>
     </div>
   </div>
 ))({

@@ -10,18 +10,14 @@
   "dependencies": {
     "babel-runtime": "^6.20.0",
     "meteor-node-stubs": "~0.2.4",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.0.0-beta.54",
     "@babel/preset-react": "^7.0.0-beta.54",
     "@babel/preset-stage-0": "^7.0.0-beta.54",
     "babel-root-slash-import": "^1.1.0",
-    "@babel/core": "^7.0.0-beta.54",
-    "@storybook/react": "^4.0.0-alpha.14",
-    "@storybook/addon-actions": "^4.0.0-alpha.14",
-    "@storybook/addon-links": "^4.0.0-alpha.14",
-    "@storybook/addons": "^4.0.0-alpha.14"
+    "@babel/core": "^7.0.0-beta.54"
   }
 }

@@ -7,9 +7,9 @@
     "marko": "^4.9.7"
   },
   "devDependencies": {
-    "@storybook/marko": "^4.0.0-alpha.14",
-    "@storybook/addon-actions": "^4.0.0-alpha.14",
-    "@storybook/addon-knobs": "^4.0.0-alpha.14",
+    "@storybook/marko": "^4.0.0-alpha.16",
+    "@storybook/addon-actions": "^4.0.0-alpha.16",
+    "@storybook/addon-knobs": "^4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
     "@babel/core": "^7.0.0-beta.54",
     "babel-loader": "^8.0.0-beta.4"

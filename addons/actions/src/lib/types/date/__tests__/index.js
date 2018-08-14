@@ -1,4 +1,4 @@
-import dateType from '../';
+import dateType from '..';
 
 const date = new Date(1512137134873);
 const isoString = date.toISOString();

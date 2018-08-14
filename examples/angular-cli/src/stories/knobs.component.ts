@@ -8,7 +8,10 @@ import { Component, Input } from '@angular/core';
   `,
 })
 export class SimpleKnobsComponent {
-  @Input() name;
-  @Input() age;
-  @Input() phoneNumber;
+  @Input()
+  name;
+  @Input()
+  age;
+  @Input()
+  phoneNumber;
 }

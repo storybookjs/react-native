@@ -54,7 +54,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -99,7 +99,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -212,7 +212,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -257,7 +257,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -304,7 +304,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                             fill="currentColor"
                             height="10"
                             preserveAspectRatio="xMidYMid meet"
-                            style="vertical-align:top;fill:currentColor"
+                            style="vertical-align:top;fill:currentcolor"
                             viewBox="0 0 40 40"
                             width="10"
                           >
@@ -351,7 +351,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                                   fill="currentColor"
                                   height="10"
                                   preserveAspectRatio="xMidYMid meet"
-                                  style="vertical-align:top;fill:currentColor"
+                                  style="vertical-align:top;fill:currentcolor"
                                   viewBox="0 0 40 40"
                                   width="10"
                                 >
@@ -470,7 +470,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -527,7 +527,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                             fill="currentColor"
                             height="10"
                             preserveAspectRatio="xMidYMid meet"
-                            style="vertical-align:top;fill:currentColor"
+                            style="vertical-align:top;fill:currentcolor"
                             viewBox="0 0 40 40"
                             width="10"
                           >
@@ -574,7 +574,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                                   fill="currentColor"
                                   height="10"
                                   preserveAspectRatio="xMidYMid meet"
-                                  style="vertical-align:top;fill:currentColor"
+                                  style="vertical-align:top;fill:currentcolor"
                                   viewBox="0 0 40 40"
                                   width="10"
                                 >
@@ -693,7 +693,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >
@@ -738,7 +738,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                       fill="currentColor"
                       height="10"
                       preserveAspectRatio="xMidYMid meet"
-                      style="vertical-align:top;fill:currentColor"
+                      style="vertical-align:top;fill:currentcolor"
                       viewBox="0 0 40 40"
                       width="10"
                     >

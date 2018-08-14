@@ -1,8 +1,8 @@
 {
   "name": "@storybook/polymer",
-  "version": "4.0.0-alpha.14",
+  "version": "4.0.0-alpha.16",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/polymer",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/polymer",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -23,16 +23,16 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.51",
     "@babel/runtime": "^7.0.0-beta.51",
-    "@storybook/core": "4.0.0-alpha.14",
+    "@storybook/core": "4.0.0-alpha.16",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "lit-html": "^0.10.0",
-    "polymer-webpack-loader": "^2.0.2"
+    "lit-html": "^0.10.2",
+    "polymer-webpack-loader": "^2.0.3"
   },
   "peerDependencies": {
     "babel-core": "^6.26.0 || ^7.0.0-0",

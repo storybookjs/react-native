@@ -2,13 +2,13 @@
 
 exports[`Storyshots Addon|Centered rounded 1`] = `
 <div
-  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
 >
   <div
     style="margin: auto; max-height: 100%;"
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; overflow: auto;"
+      style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
     >
       <div
         style="margin: auto; max-height: 100%;"

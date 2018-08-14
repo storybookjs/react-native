@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
 [![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
-[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>)
+<!-- [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>) -->
 
 * * *
 
@@ -16,7 +16,7 @@ It allows you to browse a component library, view the different states of each c
 
 ## Intro
 
-![Storybook Screenshot](app/react/docs/demo.gif)
+![Storybook Screenshot](media/demo.gif)
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
@@ -77,6 +77,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [Mithril](app/mithril) <sup>alpha</sup>
 -   [Marko](app/marko) <sup>alpha</sup>
 -   [HTML](app/html) <sup>alpha</sup>
+-   [Svelte](app/svelte) <sup>alpha</sup>
 
 ### Sub Projects
 
@@ -115,6 +116,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 - [Mithril](https://storybooks-mithril.netlify.com/)
 - [Marko](https://storybooks-marko.netlify.com/)
 - [HTML](https://storybooks-html.netlify.com/)
+- [Svelte](https://storybooks-svelte.netlify.com/)
 
 ### 3.4
 - [React Official](https://release-3-4--storybooks-official.netlify.com)

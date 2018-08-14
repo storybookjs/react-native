@@ -8,7 +8,9 @@ languages:
       - .*\.test\.js
       - .*\/__test__\/.*\.js
       - .*\/__mock__\/.*\.js
+      - .*\.stories\.js
   test:
     include:
       - .*\.test\.js
       - .*\/__test__\/.*\.js
+      - .*\.storyshot

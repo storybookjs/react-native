@@ -84,6 +84,7 @@ const getGotoOptions = ({context, url}) => {
 }
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getGotoOptions})});
 ```
+
 ### Specifying options to _screenshot()_ (puppeteer API)
 
 You might use `getScreenshotOptions` to specify options for screenshot. Will be passed to [Puppeteer .screenshot() fn](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions)
@@ -112,6 +113,32 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 const chromeExecutablePath = '/usr/local/bin/chrome';
 
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', chromeExecutablePath})});
+```
+
+### Customizing a `page` instance
+
+Sometimes, there is a need to customize a page before it calls the `goto` api. 
+
+An example of device emulation: 
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
+const devices = require('puppeteer/DeviceDescriptors');
+
+const iPhone = devices['iPhone 6'];
+
+function customizePage(page) {
+  return page.emulate(iPhone);
+}
+
+initStoryshots({
+  suite: 'Image storyshots', 
+  test: imageSnapshot({
+      storybookUrl: 'http://localhost:6006', 
+      customizePage,
+  })
+});
 ```
 
 ### Integrate image storyshots with regular app
@@ -151,4 +178,4 @@ If you run your test without either the static build or a running instance, this
 
 To make sure your screenshots are taken from latest changes of your Storybook, you must keep your static build or running Storybook up-to-date.
 This can be achieved by adding a step before running the test ie: `yarn run build-storybook && yarn run image-snapshots`.
-If you run the image snapshots against a running Storybook in dev mode, you don't have to care about being up-to-date because the dev-server is watching changes and rebuilds automatically.
+If you run the image snapshots against a running Storybook in dev mode, you don't have to worry about the snapshots being up-to-date because the dev-server is watching changes and rebuilds automatically.

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { HighlightButton } from '@storybook/components';
+// eslint-disable-next-line import/no-cycle
 import PrettyPropType from './PrettyPropType';
 import PropertyLabel from './PropertyLabel';
 
@@ -18,8 +19,9 @@ class Shape extends React.Component {
   }
 
   handleToggle = () => {
+    const { minimized } = this.state;
     this.setState({
-      minimized: !this.state.minimized,
+      minimized: !minimized,
     });
   };
 
@@ -33,34 +35,35 @@ class Shape extends React.Component {
 
   render() {
     const { propType, depth } = this.props;
+    const { hover, minimized } = this.state;
+
     const propTypes = getPropTypes(propType);
     return (
       <span>
         <HighlightButton
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          highlight={this.state.hover}
+          highlight={hover}
           onClick={this.handleToggle}
         >
           {'{'}
         </HighlightButton>
         <HighlightButton onClick={this.handleToggle}>...</HighlightButton>
-        {!this.state.minimized &&
+        {!minimized &&
           Object.keys(propTypes).map(childProperty => (
             <div key={childProperty} style={{ marginLeft: depth * MARGIN_SIZE }}>
               <PropertyLabel
                 property={childProperty}
                 required={propTypes[childProperty].required}
               />
-              <PrettyPropType depth={depth + 1} propType={propTypes[childProperty]} />
-              ,
+              <PrettyPropType depth={depth + 1} propType={propTypes[childProperty]} />,
             </div>
           ))}
 
         <HighlightButton
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          highlight={this.state.hover}
+          highlight={hover}
           onClick={this.handleToggle}
         >
           {'}'}

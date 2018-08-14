@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 
-import React, { createElement } from 'react';
+import React, { Component, createElement } from 'react';
 import { polyfill } from 'react-lifecycles-compat';
 import PropTypes from 'prop-types';
 import global from 'global';
@@ -16,7 +16,7 @@ const { STORYBOOK_REACT_CLASSES } = global;
 
 const getName = type => type.displayName || type.name;
 
-const stylesheet = {
+const stylesheetBase = {
   button: {
     base: {
       fontFamily: 'sans-serif',
@@ -101,29 +101,34 @@ const stylesheet = {
   },
 };
 
-class Story extends React.Component {
-  constructor(...args) {
-    super(...args);
+class Story extends Component {
+  constructor(props, ...args) {
+    super(props, ...args);
     this.state = {
       open: false,
     };
     this.marksy = marksy({
       createElement,
-      elements: this.props.components,
+      elements: props.components,
     });
   }
 
   _renderStory() {
-    return <div style={this.state.stylesheet.infoStory}>{this.props.children}</div>;
+    const { stylesheet } = this.state;
+    const { children } = this.props;
+
+    return <div style={stylesheet.infoStory}>{children}</div>;
   }
 
   _renderInline() {
+    const { stylesheet } = this.state;
+
     return (
       <div>
         {this._renderInlineHeader()}
         {this._renderStory()}
-        <div style={this.state.stylesheet.infoPage}>
-          <div style={this.state.stylesheet.infoBody}>
+        <div style={stylesheet.infoPage}>
+          <div style={stylesheet.infoBody}>
             {this._getInfoContent()}
             {this._getComponentDescription()}
             {this._getSourceCode()}
@@ -135,25 +140,30 @@ class Story extends React.Component {
   }
 
   _renderInlineHeader() {
+    const { stylesheet } = this.state;
+
     const infoHeader = this._getInfoHeader();
 
     return (
       infoHeader && (
-        <div style={this.state.stylesheet.infoPage}>
-          <div style={this.state.stylesheet.infoBody}>{infoHeader}</div>
+        <div style={stylesheet.infoPage}>
+          <div style={stylesheet.infoBody}>{infoHeader}</div>
         </div>
       )
     );
   }
 
   _renderOverlay() {
+    const { stylesheet, open } = this.state;
+    const { children } = this.props;
+
     const buttonStyle = {
-      ...this.state.stylesheet.button.base,
-      ...this.state.stylesheet.button.topRight,
+      ...stylesheet.button.base,
+      ...stylesheet.button.topRight,
     };
 
-    const infoStyle = Object.assign({}, this.state.stylesheet.info);
-    if (!this.state.open) {
+    const infoStyle = Object.assign({}, stylesheet.info);
+    if (!open) {
       infoStyle.display = 'none';
     }
 
@@ -169,7 +179,7 @@ class Story extends React.Component {
 
     return (
       <div>
-        <div style={this.state.stylesheet.children}>{this.props.children}</div>
+        <div style={stylesheet.children}>{children}</div>
         <button type="button" style={buttonStyle} onClick={openOverlay}>
           Show Info
         </button>
@@ -177,8 +187,8 @@ class Story extends React.Component {
           <button type="button" style={buttonStyle} onClick={closeOverlay}>
             ×
           </button>
-          <div style={this.state.stylesheet.infoPage}>
-            <div style={this.state.stylesheet.infoBody}>
+          <div style={stylesheet.infoPage}>
+            <div style={stylesheet.infoBody}>
               {this._getInfoHeader()}
               {this._getInfoContent()}
               {this._getComponentDescription()}
@@ -192,38 +202,36 @@ class Story extends React.Component {
   }
 
   _getInfoHeader() {
-    if (!this.props.context || !this.props.showHeader) {
+    const { stylesheet } = this.state;
+    const { context, showHeader } = this.props;
+
+    if (!context || !showHeader) {
       return null;
     }
 
     return (
-      <div style={this.state.stylesheet.header.body}>
-        <h1 style={this.state.stylesheet.header.h1}>{this.props.context.kind}</h1>
-        <h2 style={this.state.stylesheet.header.h2}>{this.props.context.story}</h2>
+      <div style={stylesheet.header.body}>
+        <h1 style={stylesheet.header.h1}>{context.kind}</h1>
+        <h2 style={stylesheet.header.h2}>{context.story}</h2>
       </div>
     );
   }
 
   _getInfoContent() {
-    if (!this.props.info) {
+    const { info, showInline } = this.props;
+    const { stylesheet } = this.state;
+
+    if (!info) {
       return '';
     }
 
-    if (React.isValidElement(this.props.info)) {
+    if (React.isValidElement(info)) {
       return (
-        <div
-          style={
-            this.props.showInline
-              ? this.state.stylesheet.jsxInfoContent
-              : this.state.stylesheet.infoContent
-          }
-        >
-          {this.props.info}
-        </div>
+        <div style={showInline ? stylesheet.jsxInfoContent : stylesheet.infoContent}>{info}</div>
       );
     }
 
-    const lines = this.props.info.split('\n');
+    const lines = info.split('\n');
     while (lines[0].trim() === '') {
       lines.shift();
     }
@@ -233,15 +241,16 @@ class Story extends React.Component {
       padding = matches[0].length;
     }
     const source = lines.map(s => s.slice(padding)).join('\n');
-    return <div style={this.state.stylesheet.infoContent}>{this.marksy(source).tree}</div>;
+    return <div style={stylesheet.infoContent}>{this.marksy(source).tree}</div>;
   }
 
   _getComponentDescription() {
+    const { context } = this.props;
     let retDiv = null;
 
     if (Object.keys(STORYBOOK_REACT_CLASSES).length) {
       Object.keys(STORYBOOK_REACT_CLASSES).forEach(key => {
-        if (STORYBOOK_REACT_CLASSES[key].name === this.props.context.story) {
+        if (STORYBOOK_REACT_CLASSES[key].name === context.story) {
           retDiv = <div>{STORYBOOK_REACT_CLASSES[key].docgenInfo.description}</div>;
         }
       });
@@ -251,22 +260,25 @@ class Story extends React.Component {
   }
 
   _getSourceCode() {
-    if (!this.props.showSource) {
-      return null;
-    }
-
     const {
+      showSource,
       maxPropsIntoLine,
       maxPropObjectKeys,
       maxPropArrayLength,
       maxPropStringLength,
+      children,
     } = this.props;
+    const { stylesheet } = this.state;
+
+    if (!showSource) {
+      return null;
+    }
 
     return (
       <div>
-        <h1 style={this.state.stylesheet.source.h1}>Story Source</h1>
+        <h1 style={stylesheet.source.h1}>Story Source</h1>
         <Pre>
-          {React.Children.map(this.props.children, (root, idx) => (
+          {React.Children.map(children, (root, idx) => (
             <Node
               key={idx}
               node={root}
@@ -283,63 +295,67 @@ class Story extends React.Component {
   }
 
   _getPropTables() {
-    const types = new Map();
-
-    if (this.props.propTables === null) {
-      return null;
-    }
-
-    if (!this.props.children) {
-      return null;
-    }
-
-    if (this.props.propTables) {
-      this.props.propTables.forEach(type => {
-        types.set(type, true);
-      });
-    }
-
-    // depth-first traverse and collect types
-    const extract = children => {
-      if (!children) {
-        return;
-      }
-      if (Array.isArray(children)) {
-        children.forEach(extract);
-        return;
-      }
-      if (children.props && children.props.children) {
-        extract(children.props.children);
-      }
-      if (
-        typeof children === 'string' ||
-        typeof children.type === 'string' ||
-        (Array.isArray(this.props.propTablesExclude) && // also ignore excluded types
-          ~this.props.propTablesExclude.indexOf(children.type)) // eslint-disable-line no-bitwise
-      ) {
-        return;
-      }
-      if (children.type && !types.has(children.type)) {
-        types.set(children.type, true);
-      }
-    };
-
-    // extract components from children
-    extract(this.props.children);
-
-    const array = Array.from(types.keys());
-    array.sort((a, b) => getName(a) > getName(b));
-
     const {
+      children,
+      propTablesExclude,
       maxPropObjectKeys,
       maxPropArrayLength,
       maxPropStringLength,
       excludedPropTypes,
     } = this.props;
-    const propTables = array.map((type, i) => (
+    let { propTables } = this.props;
+    const { stylesheet } = this.state;
+    const types = new Map();
+
+    if (propTables === null) {
+      return null;
+    }
+
+    if (!children) {
+      return null;
+    }
+
+    if (propTables) {
+      propTables.forEach(type => {
+        types.set(type, true);
+      });
+    }
+
+    // depth-first traverse and collect types
+    const extract = innerChildren => {
+      if (!innerChildren) {
+        return;
+      }
+      if (Array.isArray(innerChildren)) {
+        innerChildren.forEach(extract);
+        return;
+      }
+      if (innerChildren.props && innerChildren.props.innerChildren) {
+        extract(innerChildren.props.innerChildren);
+      }
+      if (
+        typeof innerChildren === 'string' ||
+        typeof innerChildren.type === 'string' ||
+        (Array.isArray(propTablesExclude) && // also ignore excluded types
+          ~propTablesExclude.indexOf(innerChildren.type)) // eslint-disable-line no-bitwise
+      ) {
+        return;
+      }
+      if (innerChildren.type && !types.has(innerChildren.type)) {
+        types.set(innerChildren.type, true);
+      }
+    };
+
+    // extract components from children
+    extract(children);
+
+    const array = Array.from(types.keys());
+    array.sort((a, b) => getName(a) > getName(b));
+
+    propTables = array.map((type, i) => (
       // eslint-disable-next-line react/no-array-index-key
       <div key={`${getName(type)}_${i}`}>
-        <h2 style={this.state.stylesheet.propTableHead}>"{getName(type)}" Component</h2>
+        <h2 style={stylesheet.propTableHead}>"{getName(type)}" Component</h2>
         <this.props.PropTable
           type={type}
           maxPropObjectKeys={maxPropObjectKeys}
@@ -356,19 +372,20 @@ class Story extends React.Component {
 
     return (
       <div>
-        <h1 style={this.state.stylesheet.source.h1}>Prop Types</h1>
+        <h1 style={stylesheet.source.h1}>Prop Types</h1>
         {propTables}
       </div>
     );
   }
 
   render() {
-    // <ThemeProvider theme={this.state.stylesheet}></ThemeProvider>
-    return this.props.showInline ? this._renderInline() : this._renderOverlay();
+    const { showInline } = this.props;
+    // <ThemeProvider theme={stylesheet}></ThemeProvider>
+    return showInline ? this._renderInline() : this._renderOverlay();
   }
 }
 
-Story.getDerivedStateFromProps = ({ styles }) => ({ stylesheet: styles(stylesheet) });
+Story.getDerivedStateFromProps = ({ styles }) => ({ stylesheet: styles(stylesheetBase) });
 
 Story.displayName = 'Story';
 

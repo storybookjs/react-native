@@ -34,6 +34,11 @@ export class Panel extends Component {
     viewports: INITIAL_VIEWPORTS,
     defaultViewport: DEFAULT_VIEWPORT,
   };
+
+  iframe = undefined;
+
+  previousViewport = DEFAULT_VIEWPORT;
+
   static propTypes = {
     active: PropTypes.bool.isRequired,
     api: PropTypes.shape({
@@ -55,6 +60,7 @@ export class Panel extends Component {
 
   componentDidMount() {
     const { channel, api } = this.props;
+    const { defaultViewport } = this.state;
 
     this.iframe = document.getElementById(storybookIframe);
 
@@ -63,7 +69,7 @@ export class Panel extends Component {
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
 
     this.unsubscribeFromOnStory = api.onStory(() => {
-      this.setStoryDefaultViewport(this.state.defaultViewport);
+      this.setStoryDefaultViewport(defaultViewport);
     });
   }
 
@@ -103,9 +109,6 @@ export class Panel extends Component {
     );
   };
 
-  iframe = undefined;
-  previousViewport = DEFAULT_VIEWPORT;
-
   changeViewport = viewport => {
     const { viewport: previousViewport } = this.state;
 
@@ -138,7 +141,11 @@ export class Panel extends Component {
     });
   };
 
-  shouldNotify = () => this.previousViewport !== this.state.viewport;
+  shouldNotify = () => {
+    const { viewport } = this.state;
+
+    return this.previousViewport !== viewport;
+  };
 
   toggleLandscape = () => {
     const { isLandscape } = this.state;

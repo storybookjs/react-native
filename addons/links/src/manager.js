@@ -1,6 +1,6 @@
 import { location } from 'global';
 import addons from '@storybook/addons';
-import { ADDON_ID, EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from './';
+import { ADDON_ID, EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from '.';
 
 export function register() {
   addons.register(ADDON_ID, api => {

@@ -1,4 +1,4 @@
-import symbolType from '../';
+import symbolType from '..';
 
 const symbol = Symbol('S');
 

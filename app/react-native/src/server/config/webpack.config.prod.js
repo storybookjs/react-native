@@ -2,8 +2,9 @@ import path from 'path';
 import webpack from 'webpack';
 import { getEnvironment } from 'universal-dotenv';
 import Dotenv from 'dotenv-webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { indexHtmlPath } from '@storybook/core/server';
+import GeneratePagePlugin from 'generate-page-webpack-plugin';
+
+import { getManagerHeadHtml } from '@storybook/core/dist/server/utils';
 import { version } from '../../../package.json';
 import { includePaths, excludePaths } from './utils';
 
@@ -26,13 +27,18 @@ const getConfig = options => {
       publicPath: '/',
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        filename: 'index.html',
-        data: {
-          version,
+      new GeneratePagePlugin(
+        {
+          template: require.resolve('@storybook/core/dist/server/templates/index.html.ejs'),
+          // eslint-disable-next-line global-require
+          parser: require('ejs'),
+          filename: entry => (entry === 'manager' ? 'index' : entry),
         },
-        template: indexHtmlPath,
-      }),
+        {
+          data: { version },
+          headHtmlSnippet: getManagerHeadHtml(options.configDir, process.env),
+        }
+      ),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
         storybookOptions: JSON.stringify(options),

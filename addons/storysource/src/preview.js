@@ -1,5 +1,5 @@
 import addons from '@storybook/addons';
-import { EVENT_ID } from './';
+import { EVENT_ID } from './events';
 
 function getLocation(context, locationsMap) {
   return locationsMap[`${context.kind}@${context.story}`] || locationsMap[`@${context.story}`];

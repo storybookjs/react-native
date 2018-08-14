@@ -1,8 +1,8 @@
 {
   "name": "@storybook/html",
-  "version": "4.0.0-alpha.14",
+  "version": "4.0.0-alpha.16",
   "description": "Storybook for HTML: View HTML snippets in isolation with Hot Reloading.",
-  "homepage": "https://github.com/storybooks/storybook/tree/master/apps/html",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/html",
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

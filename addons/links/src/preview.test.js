@@ -1,6 +1,6 @@
 import addons from '@storybook/addons';
 import { linkTo, hrefTo } from './preview';
-import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from './';
+import { EVENT_ID, REQUEST_HREF_EVENT_ID, RECEIVE_HREF_EVENT_ID } from '.';
 
 jest.mock('@storybook/addons');
 

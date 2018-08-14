@@ -28,6 +28,13 @@ elif [ "$BUILD_CONTEXT" = "VUE" ]; then
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "SVELTE" ]; then
+  echo "netlify-build Svelte examples"
+  pushd examples/svelte-kitchen-sink
+  yarn
+  yarn build-storybook
+  mv storybook-static ../../netlify-build
+  popd
 elif [ "$BUILD_CONTEXT" = "ANGULAR" ]; then
   echo "netlify-build Angular examples"
   pushd examples/angular-cli

@@ -39,6 +39,7 @@ jobs:
             - examples/official-storybook/node_modules
             - examples/polymer-cli/node_modules
             - examples/vue-kitchen-sink/node_modules
+            - examples/svelte-kitchen-sink/node_modules
             - examples/marko-cli/node_modules
       - save_cache:
           name: "Cache core dist"
@@ -71,6 +72,11 @@ jobs:
           name: "Build vue kitchen-sink"
           command: |
             cd examples/vue-kitchen-sink
+            yarn build-storybook
+      - run:
+          name: "Build svelte kitchen-sink"
+          command: |
+            cd examples/svelte-kitchen-sink
             yarn build-storybook
       - run:
           name: "Build angular-cli"
@@ -125,6 +131,11 @@ jobs:
           name: "Run vue kitchen-sink (smoke test)"
           command: |
             cd examples/vue-kitchen-sink
+            yarn storybook --smoke-test
+      - run:
+          name: "Run svelte kitchen-sink (smoke test)"
+          command: |
+            cd examples/svelte-kitchen-sink
             yarn storybook --smoke-test
       - run:
           name: "Run angular-cli (smoke test)"

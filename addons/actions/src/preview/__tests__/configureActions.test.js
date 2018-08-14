@@ -1,5 +1,5 @@
 import { config } from '../configureActions';
-import { configureActions } from '../../';
+import { configureActions } from '../..';
 
 describe('Configure Actions', () => {
   it('can configure actions', () => {

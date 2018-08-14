@@ -162,7 +162,7 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                         fill="currentColor"
                         height="10"
                         preserveAspectRatio="xMidYMid meet"
-                        style="vertical-align:top;fill:currentColor"
+                        style="vertical-align:top;fill:currentcolor"
                         viewBox="0 0 40 40"
                         width="10"
                       >

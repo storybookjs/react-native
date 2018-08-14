@@ -1,14 +1,5 @@
 # Storybook Options Addon
 
-[![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
-[![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
-[![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847/badge.svg)](https://snyk.io/test/github/storybooks/storybook/8f36abfd6697e58cd76df3526b52e4b9dc894847)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)  
-[![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
-[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
-
-* * *
-
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
 [Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
@@ -114,4 +105,29 @@ setOptions({
 
 storybook.configure(() => require('./stories'), module);
 ```
+
+### using withOptions options or parameters
+
+The options-addon accepts story paramters to set options (as shown below).
+
+```js
+import { storiesOf } from '@storybook/marko';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { withOptions } from '@storybook/addon-options';
+import Hello from '../components/hello/index.marko';
+
+storiesOf('Addons|Knobs/Hello', module)
+  .addDecorator(withOptions)
+  .addDecorator(withKnobs)
+  .addParameters({ options: { addonPanelInRight: true } })
+  .add('Simple', () => {
+    const name = text('Name', 'John Doe');
+    const age = number('Age', 44);
+    return Hello.renderSync({
+      name,
+      age,
+    });
+  });
+```
+
 It is also possible to call `setOptions()` inside individual stories. Note that this will bring impact story render performance significantly.

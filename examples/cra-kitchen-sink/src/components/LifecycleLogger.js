@@ -14,21 +14,27 @@ class LifecycleLogger extends Component {
     log('constructor');
     this.state = {};
   }
+
   componentDidMount() {
     log('componentDidMount');
   }
-  getSnapshotBeforeUpdate() {
-    log('getSnapshotBeforeUpdate');
-  }
+
   componentDidUpdate() {
     log('componentDidUpdate');
   }
-  componentDidCatch() {
-    log('componentDidCatch');
-  }
+
   componentWillUnmount() {
     log('componentWillUnmount');
   }
+
+  getSnapshotBeforeUpdate() {
+    log('getSnapshotBeforeUpdate');
+  }
+
+  componentDidCatch() {
+    log('componentDidCatch');
+  }
+
   render() {
     log('render');
     return <div>Lifecycle methods are logged to the console</div>;

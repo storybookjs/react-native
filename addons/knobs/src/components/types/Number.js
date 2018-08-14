@@ -34,10 +34,13 @@ const RangeWrapper = styled('div')({
 
 class NumberType extends React.Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.knob.value !== this.props.knob.value;
+    const { knob } = this.props;
+
+    return nextProps.knob.value !== knob.value;
   }
 
   handleChange = event => {
+    const { onChange } = this.props;
     const { value } = event.target;
 
     let parsedValue = Number(value);
@@ -46,7 +49,7 @@ class NumberType extends React.Component {
       parsedValue = null;
     }
 
-    this.props.onChange(parsedValue);
+    onChange(parsedValue);
   };
 
   render() {

@@ -22,6 +22,8 @@ class ObjectType extends Component {
 
   handleChange = e => {
     const { value } = e.target;
+    const { json: stateJson } = this.state;
+    const { knob, onChange } = this.props;
 
     try {
       const json = JSON.parse(value.trim());
@@ -30,8 +32,8 @@ class ObjectType extends Component {
         json,
         failed: false,
       });
-      if (deepEqual(this.props.knob.value, this.state.json)) {
-        this.props.onChange(json);
+      if (deepEqual(knob.value, stateJson)) {
+        onChange(json);
       }
     } catch (err) {
       this.setState({

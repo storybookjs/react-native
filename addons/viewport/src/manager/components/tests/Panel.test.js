@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import { document } from 'global';
@@ -360,7 +362,7 @@ describe('Viewport/Panel', () => {
     });
 
     it('passes the children', () => {
-      expect(select.props().children).toHaveLength(8);
+      expect(select.props().children).toHaveLength(15);
     });
 
     it('onChange it updates the viewport', () => {
