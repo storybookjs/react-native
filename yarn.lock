@@ -110,6 +110,12 @@
     symbol-observable "^1.2.0"
     yargs-parser "^10.0.0"
 
+"@angular/common@^6.0.3":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-6.1.2.tgz#6e3bd4b16975dbb4ba67e2fc7589d0a036e5df12"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/common@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-6.1.1.tgz#78b2bb69604220720ee2f96d32469fae43dc6325"
@@ -125,9 +131,21 @@
     reflect-metadata "^0.1.2"
     tsickle "^0.32.1"
 
+"@angular/compiler@^6.0.3":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-6.1.2.tgz#56fada04cb7dc77a5d3f0b786be713130293d468"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/compiler@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-6.1.1.tgz#ad0d638559448499834ad3cf45bc2aa03a6b4f14"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/core@^6.0.3":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.1.2.tgz#412dd32a91ec1d5d6db508babbb36e9799235d8d"
   dependencies:
     tslib "^1.9.0"
 
@@ -137,15 +155,33 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/forms@^6.0.3":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.1.2.tgz#554459c415c010500640a08d7268bca304c5b491"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/forms@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.1.1.tgz#41aec34576d4e3fed5791b65dc6d638d180cd11e"
   dependencies:
     tslib "^1.9.0"
 
+"@angular/platform-browser-dynamic@^6.0.3":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.1.2.tgz#76d813e6ab577ce1ffdb31e88d37df9a5177f55c"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/platform-browser-dynamic@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.1.1.tgz#2505f463d29827256944c1d134cd8519e7f954cd"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/platform-browser@^6.0.3":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-6.1.2.tgz#9a2a498e27e2bcd0fc8d6c696340c258f8b3e322"
   dependencies:
     tslib "^1.9.0"
 
