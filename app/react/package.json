@@ -26,7 +26,7 @@
     "@babel/preset-react": "^7.0.0-beta.51",
     "@babel/runtime": "^7.0.0-beta.51",
     "@storybook/core": "4.0.0-alpha.16",
-    "babel-plugin-react-docgen": "^2.0.0-rc.1",
+    "babel-plugin-react-docgen": "^2.0.0-babel7.0",
     "common-tags": "^1.8.0",
     "emotion": "^9.2.6",
     "global": "^4.3.2",
