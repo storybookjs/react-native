@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "^15.6.1",
@@ -15,12 +15,12 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-react": "^7.0.0-rc.1",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "@storybook/react": "^4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.0-beta.4",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "@storybook/react": "^4.0.0-alpha.16",
+    "@storybook/addon-actions": "^4.0.0-alpha.16",
+    "@storybook/addon-links": "^4.0.0-alpha.16",
+    "@storybook/addons": "^4.0.0-alpha.16"
   }
 }

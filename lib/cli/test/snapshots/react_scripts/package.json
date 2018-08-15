@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
     "storybook": "start-storybook -p 9009 -s public",
-    "test": "react-scripts test --env=jsdom"
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "react": "^15.6.1",
@@ -16,12 +16,12 @@
     "react-scripts": "1.0.13"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-rc.1",
+    "@storybook/react": "^4.0.0-alpha.16",
     "@storybook/addon-actions": "^4.0.0-alpha.16",
     "@storybook/addon-links": "^4.0.0-alpha.16",
     "@storybook/addons": "^4.0.0-alpha.16",
-    "@storybook/react": "^4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
+    "@babel/core": "^7.0.0-rc.1",
     "babel-loader": "^8.0.0-beta.4"
   }
 }
