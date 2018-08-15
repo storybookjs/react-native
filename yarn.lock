@@ -12266,7 +12266,7 @@ node-dir@0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.8.tgz#55fb8deb699070707fb67f91a460f0448294c77d"
 
-node-dir@^0.1.10, node-dir@^0.1.17:
+node-dir@^0.1.10:
   version "0.1.17"
   resolved "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
   dependencies:
@@ -15551,12 +15551,6 @@ request@^2.74.0, request@^2.79.0, request@^2.81.0, request@^2.83.0, request@^2.8
     tough-cookie "~2.4.3"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
-
-require-context@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/require-context/-/require-context-1.1.0.tgz#f77e60dddb0a296946e6915bf580c73dbe75ab4d"
-  dependencies:
-    node-dir "^0.1.17"
 
 require-directory@^2.1.1:
   version "2.1.1"

@@ -79,7 +79,6 @@
     "jest": "^23.4.2",
     "jest-preset-angular": "^6.0.0",
     "protractor": "~5.4.0",
-    "require-context": "^1.1.0",
     "ts-node": "~7.0.0",
     "typescript": "^3.0.1"
   }
