@@ -1,6 +1,5 @@
 import React from 'react';
 
-// eslint-disable-next-line import/no-cycle
 import PrettyPropType from './PrettyPropType';
 import { TypeInfo, getPropTypes } from './proptypes';
 
