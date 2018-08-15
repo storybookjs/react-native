@@ -16,11 +16,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-transform-regenerator": "^7.0.0-beta.51",
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.51",
-    "@babel/preset-env": "^7.0.0-beta.51",
-    "@babel/preset-stage-0": "^7.0.0-beta.51",
-    "@babel/runtime": "^7.0.0-beta.51",
+    "@babel/plugin-transform-regenerator": "^7.0.0-rc.1",
+    "@babel/plugin-transform-runtime": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-stage-0": "^7.0.0-rc.1",
+    "@babel/runtime": "^7.0.0-rc.1",
     "@storybook/addons": "4.0.0-alpha.16",
     "@storybook/channel-postmessage": "4.0.0-alpha.16",
     "@storybook/client-logger": "4.0.0-alpha.16",

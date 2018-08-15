@@ -13,8 +13,8 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.51",
-    "@babel/preset-react": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
     "babel-loader": "^8.0.0-beta.4",
     "webpack": "^3.5.5",
     "@storybook/react": "^4.0.0-alpha.16",
