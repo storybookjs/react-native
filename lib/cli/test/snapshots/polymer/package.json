@@ -1,20 +1,20 @@
 {
   "name": "polymer-fixture",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "build": "webpack -p dist",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@polymer/polymer": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
     "@storybook/polymer": "^4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
-    "@babel/core": "^7.0.0-rc.1",
     "babel-loader": "^8.0.0-beta.4",
     "polymer-webpack-loader": "^2.0.3"
   }

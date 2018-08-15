@@ -1,21 +1,21 @@
 {
   "name": "marko-fixture",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006"
+  },
   "dependencies": {
     "marko": "^4.9.7"
   },
   "devDependencies": {
-    "@storybook/marko": "^4.0.0-alpha.16",
+    "@babel/core": "^7.0.0-rc.1",
     "@storybook/addon-actions": "^4.0.0-alpha.16",
     "@storybook/addon-knobs": "^4.0.0-alpha.16",
+    "@storybook/marko": "^4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
-    "@babel/core": "^7.0.0-rc.1",
     "babel-loader": "^8.0.0-beta.4"
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
   }
 }

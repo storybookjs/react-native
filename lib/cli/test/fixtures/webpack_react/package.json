@@ -1,8 +1,8 @@
 {
   "name": "webpack-react-fixture",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "build": "webpack"
   },
@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-react": "^7.0.0-rc.1",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.0-beta.4",
     "webpack": "^3.5.5"
   }

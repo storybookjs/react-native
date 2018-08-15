@@ -17,8 +17,13 @@
     "vue": "^2.3.3"
   },
   "devDependencies": {
+    "@storybook/vue": "^4.0.0-alpha.16",
+    "@storybook/addon-actions": "^4.0.0-alpha.16",
+    "@storybook/addon-links": "^4.0.0-alpha.16",
+    "@storybook/addons": "^4.0.0-alpha.16",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.24.1",
+    "babel-loader": "^8.0.0-beta.4",
     "cross-env": "^5.0.0",
     "cssnano-cli": "^1.0.4",
     "npm-run-all": "^4.0.1",
@@ -34,10 +39,5 @@
     "rollup-plugin-serve": "^0.4.0",
     "rollup-plugin-vue": "^2.4.0",
     "rollup-watch": "^4.0.0",
-    "@storybook/vue": "^4.0.0-alpha.16",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "babel-loader": "^7.1.5"
   }
 }
