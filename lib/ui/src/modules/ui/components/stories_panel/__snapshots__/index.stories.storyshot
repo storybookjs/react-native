@@ -138,7 +138,7 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
       <li
         class="css-79elbk"
       >
-        <span>
+        <div>
           <ul
             class="css-vq3qyb"
           >
@@ -185,7 +185,7 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                   </div>
                 </div>
               </div>
-              <span>
+              <div>
                 <ul
                   class="css-vq3qyb"
                 >
@@ -208,13 +208,13 @@ exports[`Storyshots UI|stories/StoriesPanel with storiesHierarchies prop 1`] = `
                         </div>
                       </div>
                     </a>
-                    <span />
+                    <div />
                   </li>
                 </ul>
-              </span>
+              </div>
             </li>
           </ul>
-        </span>
+        </div>
       </li>
     </ul>
   </div>

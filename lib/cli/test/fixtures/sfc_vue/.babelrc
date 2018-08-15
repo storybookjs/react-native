@@ -6,16 +6,13 @@
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }
     }],
-    ["@babel/preset-stage-2", {
-      "decoratorsLegacy": true
-    }]
   ],
   "plugins": ["@babel/plugin-transform-runtime"],
   "env": {
     "test": {
-      "presets": ["@babel/preset-env", ["@babel/preset-stage-2", {
-        "decoratorsLegacy": true
-      }]],
+      "presets": [
+        "@babel/preset-env"
+      ],
       "plugins": ["istanbul"]
     }
   }
