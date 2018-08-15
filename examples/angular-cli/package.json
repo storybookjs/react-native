@@ -16,27 +16,6 @@
     "test:generate-output": "jest --json --outputFile=addon-jest.testresults.json || true",
     "test:watch": "jest --watch"
   },
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "/jest-config/",
-      "/node_modules/"
-    ],
-    "preset": "jest-preset-angular",
-    "setupTestFrameworkScriptFile": "./jest-config/setup.ts",
-    "snapshotSerializers": [
-      "<rootDir>/../../node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
-      "<rootDir>/../../node_modules/jest-preset-angular/HTMLCommentSerializer.js"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/build/",
-      "/storybook-static/",
-      "angularshots.test.js"
-    ],
-    "transform": {
-      "^.+\\.(ts|js|html)$": "<rootDir>/../../node_modules/jest-preset-angular/preprocessor.js"
-    }
-  },
   "dependencies": {
     "@angular/common": "^6.1.1",
     "@angular/compiler": "^6.1.1",
@@ -78,6 +57,7 @@
     "jest": "^23.4.2",
     "jest-preset-angular": "^6.0.0",
     "protractor": "~5.4.0",
+    "require-context": "^1.1.0",
     "ts-node": "~7.0.0",
     "typescript": "^3.0.1"
   }

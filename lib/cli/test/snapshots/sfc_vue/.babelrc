@@ -10,9 +10,7 @@
   "plugins": ["@babel/plugin-transform-runtime"],
   "env": {
     "test": {
-      "presets": [
-        "@babel/preset-env"
-      ],
+      "presets": ["@babel/preset-env"],
       "plugins": ["istanbul"]
     }
   }
