@@ -1,11 +1,9 @@
 {
   "presets": [
     "@babel/preset-env",
-    "@babel/preset-react",
-
+    "@babel/preset-react"
   ],
   "plugins": [
     "module:babel-root-slash-import"
-    "@babel/plugin-proposal-class-properties",
   ]
 }
