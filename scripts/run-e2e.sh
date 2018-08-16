@@ -97,9 +97,16 @@ yarn config set registry "$custom_registry_url"
 # Login so we can publish packages
 (cd && npx npm-auth-to-token@1.0.0 -u user -p password -e user@example.com -r "$custom_registry_url")
 
+PACKAGE_VERSION=$(cat package.json \
+  | grep version \
+  | head -1 \
+  | awk -F: '{ print $2 }' \
+  | sed 's/[",]//g' \
+  | tr -d '[[:space:]]')
+
 # Publish the monorepo
 git clean -df
-./scripts/publish.sh --yes --force-publish=* --skip-git --cd-version=prerelease --exact --npm-tag=latest
+./scripts/publish.sh --yes --force-publish=* --skip-git --repo-version $PACKAGE_VERSION --exact --npm-tag=latest
 
 
 # ******************************************************************************
@@ -108,8 +115,8 @@ git clean -df
 
 echo "TESTS would run now"
 
-cd ../lib/cli/test
-run_tests.sh
+cd ./lib/cli/test
+./run_tests.sh
 
 # ******************************************************************************
 # Cleanup
