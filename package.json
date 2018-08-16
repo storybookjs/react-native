@@ -19,7 +19,7 @@
     "examples/polymer-cli",
     "examples/vue-kitchen-sink",
     "examples/svelte-kitchen-sink",
-    "examples/official-storybook",
+    "examples/official-storybook"
   ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
