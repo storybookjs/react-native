@@ -83,3 +83,22 @@ if [ $update_only -eq 1 ]
   then
     exit 0
   fi
+
+# install all the dependencies in a single run
+cd ../../..
+yarn --pure-lockfile
+cd ${test_root}/run
+
+for dir in *
+do
+  # check that storybook starts without errors
+  # smoke-test option may be unknown in earlier storybook versions,
+  # so skip `already_has_storybook` here
+  if [ $dir != "already_has_storybook" ]
+    then
+      cd $dir
+      echo "Running smoke test in $dir"
+      yarn storybook --smoke-test
+      cd ..
+    fi
+done
