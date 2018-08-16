@@ -272,7 +272,7 @@ jobs:
       - run:
           name: "Test CLI"
           command: |
-            yarn test --cli
+            ./scripts/run-e2e.sh
   cli-latest-cra:
     working_directory: /tmp/storybook
     docker:
