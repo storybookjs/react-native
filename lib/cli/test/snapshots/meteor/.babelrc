@@ -4,6 +4,6 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "module:babel-root-slash-import"
+    "babel-root-slash-import"
   ]
 }
