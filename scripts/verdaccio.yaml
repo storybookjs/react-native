@@ -12,12 +12,12 @@ packages:
   # storybook packages are NOT linked to globale registry
   # allowing us to republish any version during tests
   '@storybook/*':
-    access: all
-    publish: all
+    access: $all
+    publish: $all
 
   '@*/*':
     access: $all
-    publish: undefined
+    publish: $all
     proxy: npmjs
 
   '**':
