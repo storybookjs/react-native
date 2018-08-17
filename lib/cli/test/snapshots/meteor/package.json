@@ -16,7 +16,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.0.0-rc.1",
     "@babel/preset-react": "^7.0.0-rc.1",
-    "babel-root-slash-import": "^1.1.0",
     "@babel/core": "^7.0.0-rc.1",
     "@storybook/react": "^4.0.0-alpha.16",
     "@storybook/addon-actions": "^4.0.0-alpha.16",
