@@ -84,6 +84,8 @@ if [ $update_only -eq 1 ]
     exit 0
   fi
 
+cd ${test_root}/run
+
 for dir in *
 do
   # check that storybook starts without errors
