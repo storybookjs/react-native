@@ -1,9 +1,11 @@
-defaults: &defaults
-  working_directory: /tmp/storybook
-  docker:
-    - image: circleci/node:8
-
 version: 2
+
+aliases:
+  - &defaults
+    working_directory: /tmp/storybook
+    docker:
+      - image: circleci/node:8
+
 dependencies:
   pre:
     - yarn global add npm
@@ -13,23 +15,20 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
+          name: Install dependencies
+          command: yarn install
       - run:
-          name: "Dirty check"
-          command: |
-            yarn repo-dirty-check
+          name: Check that yarn.lock is not corrupted
+          command: yarn repo-dirty-check
       - run:
-          name: "Bootstrap"
-          command: |
-            yarn bootstrap --core
+          name: Bootstrap
+          command: yarn bootstrap --core
       - save_cache:
-          name: "Cache core dependencies"
+          name: Cache core dependencies
           key: core-dependencies-v2-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
@@ -41,9 +40,8 @@ jobs:
             - examples/vue-kitchen-sink/node_modules
             - examples/svelte-kitchen-sink/node_modules
             - examples/marko-cli/node_modules
-      - save_cache:
-          name: "Cache core dist"
-          key: core-dist-v2-{{ .Revision }}
+      - persist_to_workspace:
+          root: .
           paths:
             - addons
             - app
@@ -53,13 +51,11 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
@@ -114,14 +110,11 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
-
+      - attach_workspace:
+          at: .
       - run:
           name: "Run react kitchen-sink (smoke test)"
           command: |
@@ -162,17 +155,14 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Bootstrap"
-          command: |
-            yarn bootstrap --reactnative --reactnativeapp
+          name: Bootstrap
+          command: yarn bootstrap --reactnative --reactnativeapp
       - run:
           name: "Run React-Native example"
           command: |
@@ -193,27 +183,26 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore dependencies cache"
+          name: Restore docs dependencies cache
           keys:
             - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - run:
-          name: "Install dependencies"
+          name: Install dependencies
           command: |
             cd docs
-            yarn install --frozen-lockfile
+            yarn install
       - run:
-          name: "Build docs"
+          name: Build docs
           command: |
             cd docs
             yarn build
       - save_cache:
-          name: "Cache dependencies"
+          name: Cache docs dependencies
           key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
           paths:
             - docs/node_modules
-      - save_cache:
-          name: "Cache built docs"
-          key: built-docs-{{ .Revision }}
+      - persist_to_workspace:
+          root: .
           paths:
             - docs/public
   lint:
@@ -221,40 +210,61 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - restore_cache:
-          name: "Restore docs dependencies cache"
+          name: Restore docs dependencies cache
           keys:
             - docs-dependencies-{{ checksum "docs/yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Lint"
-          command: |
-            yarn lint
+          name: Lint
+          command: yarn lint
+  danger:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore core dependencies cache
+          keys:
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
+      - run:
+          name: Danger
+          command: yarn danger ci
   unit-test:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Run unit tests"
-          command: |
-            yarn test --coverage --runInBand --core
-            yarn coverage
+          name: Test
+          command: yarn test --coverage --runInBand --core
+      - persist_to_workspace:
+          root: .
+          paths:
+            - coverage
+  coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore core dependencies cache
+          keys:
+            - core-dependencies-v2-{{ checksum "yarn.lock" }}
+      - attach_workspace:
+          at: .
+      - run:
+          name: Upload coverage
+          command: yarn coverage
   cli:
-    working_directory: /tmp/storybook
+    <<: *defaults
     docker:
       - image: andthensome/docker-node-rsync
     environment:
@@ -262,20 +272,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Test CLI"
-          command: |
-            yarn test --cli
+          name: Test
+          command: yarn test --cli
           no_output_timeout: 1800
   cli-latest-cra:
-    working_directory: /tmp/storybook
+    <<: *defaults
     docker:
       - image: andthensome/docker-node-rsync
     environment:
@@ -283,34 +290,29 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
             - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Test CLI with latest CR(N)A"
-          command: |
-            yarn test-latest-cra
+          name: Test CLI with latest CR(N)A
+          command: yarn test-latest-cra
   deploy:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
-          name: "Restore docs dependencies cache"
+          name: Restore docs dependencies cache
           keys:
             - docs-dependencies-{{ checksum "docs/yarn.lock" }}
-      - restore_cache:
-          name: "Restore built docs"
-          keys:
-            - built-docs-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - add_ssh_keys:
           fingerprints:
             - "35:aa:b9:c3:b8:1c:27:1f:02:0a:73:1a:ac:58:77:df"
       - run:
-          name: "Deploy"
+          name: Deploy
           command: |
             cd docs
             git config --global user.email "gh-pages@localhost"
@@ -318,9 +320,17 @@ jobs:
             yarn deploy:ci
 workflows:
   version: 2
-  build_accept_deploy:
+  build_test_deploy:
     jobs:
       - build
+      - docs
+      - danger:
+          requires:
+            - build
+      - lint:
+          requires:
+            - docs
+            - build
       - example-kitchen-sinks:
           requires:
             - build
@@ -330,14 +340,12 @@ workflows:
       - react-native:
           requires:
             - build
-      - docs
-      - lint:
-          requires:
-            - docs
-            - build
       - unit-test:
           requires:
             - build
+      - coverage:
+          requires:
+            - unit-test
       - cli:
           requires:
             - build
@@ -348,6 +356,7 @@ workflows:
           requires:
             - docs
           filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+/
             branches:
-              only:
-                - release/3.4
+              ignore: /.*/
