@@ -17,7 +17,7 @@ jobs:
       - restore_cache:
           name: Restore core dependencies cache
           keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
+            - core-dependencies-v3-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn install
@@ -29,7 +29,11 @@ jobs:
           command: yarn bootstrap --core
       - save_cache:
           name: Cache core dependencies
-          key: core-dependencies-v2-{{ checksum "yarn.lock" }}
+          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
           paths:
             - node_modules
             - examples/angular-cli/node_modules
@@ -40,9 +44,6 @@ jobs:
             - examples/vue-kitchen-sink/node_modules
             - examples/svelte-kitchen-sink/node_modules
             - examples/marko-cli/node_modules
-      - persist_to_workspace:
-          root: .
-          paths:
             - addons
             - app
             - lib
@@ -50,10 +51,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -109,10 +106,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -154,10 +147,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -185,7 +174,7 @@ jobs:
       - restore_cache:
           name: Restore docs dependencies cache
           keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+            - docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
       - run:
           name: Install dependencies
           command: |
@@ -198,25 +187,18 @@ jobs:
             yarn build
       - save_cache:
           name: Cache docs dependencies
-          key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
+          key: docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
           paths:
-            - docs/node_modules
+            - ~/.cache/yarn
       - persist_to_workspace:
           root: .
           paths:
             - docs/public
+            - docs/node_modules
   lint:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: Restore docs dependencies cache
-          keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -226,10 +208,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
+      - attach_workspace:
+          at: .
       - run:
           name: Danger
           command: yarn danger ci
@@ -237,10 +217,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -254,10 +230,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -271,10 +243,6 @@ jobs:
         BASH_ENV: ~/.bashrc
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -289,10 +257,6 @@ jobs:
         BASH_ENV: ~/.bashrc
     steps:
       - checkout
-      - restore_cache:
-          name: Restore core dependencies cache
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -302,10 +266,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: Restore docs dependencies cache
-          keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
       - attach_workspace:
           at: .
       - add_ssh_keys:
