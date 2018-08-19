@@ -1,6 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-export default config => ({
+const extendWebpack = config => ({
   ...config,
   plugins: [...config.plugins, new VueLoaderPlugin()],
   module: {
@@ -23,3 +23,7 @@ export default config => ({
     },
   },
 });
+
+export default {
+  extendWebpack,
+};

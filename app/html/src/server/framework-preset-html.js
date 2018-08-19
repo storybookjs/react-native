@@ -1,4 +1,4 @@
-export default config => ({
+const extendWebpack = config => ({
   ...config,
   module: {
     ...config.module,
@@ -15,3 +15,7 @@ export default config => ({
     ],
   },
 });
+
+export default {
+  extendWebpack,
+};
