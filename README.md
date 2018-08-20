@@ -12,10 +12,6 @@
 [![License](https://img.shields.io/github/license/storybooks/storybook.svg)](https://github.com/storybooks/storybook/blob/master/LICENSE)
 <!-- [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>) -->
 
-README for:
-[![Alpha](https://img.shields.io/npm/v/@storybook/core/alpha.svg)](https://github.com/storybooks/storybook)
-[![Latest](https://img.shields.io/npm/v/@storybook/core/latest.svg)](https://github.com/storybooks/storybook/tree/release/3.4)
-
 * * *
 
 Storybook is a development environment for UI components.
@@ -24,6 +20,11 @@ It allows you to browse a component library, view the different states of each c
 ## Intro
 
 ![Storybook Screenshot](media/storybook-intro.gif)
+
+README for:
+-   [![Alpha](https://img.shields.io/npm/v/@storybook/core/alpha.svg)](https://github.com/storybooks/storybook)
+-   [![Latest](https://img.shields.io/npm/v/@storybook/core/latest.svg)](https://github.com/storybooks/storybook/tree/release/3.4)
+
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
