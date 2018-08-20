@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon|Centered rounded 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="button rounded svelte-n2tx93"
+  >
+    <strong>
+      Round
+       corners
+    </strong>
+    <br />
+    
+  
+    Look, I'm centered!
+    
+  
+  </button>
+</section>
+`;
+
+exports[`Storyshots Addon|Centered with action 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="button rounded svelte-n2tx93"
+  >
+    <strong>
+      Round
+       corners
+    </strong>
+    <br />
+    
+  
+    
+    
+  
+  </button>
+</section>
+`;

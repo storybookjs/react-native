@@ -5,9 +5,8 @@ title: 'Custom Webpack Config'
 
 ## Default mode
 
-The default Webpack config of Storybook is balanced for a medium-size project (specially created with [Create React App](https://github.com/facebookincubator/create-react-app)) or a library. But if you already have your own Webpack setup, that's not useable.
 
-That's why we allow you to customize our Webpack setup by providing a `webpack.config.js` file exporting a **webpack 2** compatible config exported as a **commonjs module**.
+That's why we allow you to customize our webpack setup by providing a `webpack.config.js` file exporting a **webpack 2** compatible config exported as a **commonjs module**.
 
 There are a few ways to do it:
 
@@ -38,11 +37,11 @@ Since this config file stays in the Storybook directory, you need to set the inc
 
 You also need to install the loaders (style, css, sass, as well as node-sass) used in above config manually.
 
-> Once you create this `webpack.config.js` file, Storybook won't load the [default Webpack config](/configurations/default-config/) other than loading JS files with the Babel loader. This will disable included functionality like svg loading. Read on to learn how to [retain defaults](#full-control-mode--default).
+> Once you create this `webpack.config.js` file, Storybook won't load the [default webpack config](/configurations/default-config/) other than loading JS files with the Babel loader. This will disable included functionality like svg loading. Read on to learn how to [retain defaults](#full-control-mode--default).
 
 ### Supported Webpack Options
 
-You can add any kind of Webpack configuration options with the above config, whether they are plugins, loaders, or aliases.
+You can add any kind of webpack configuration options with the above config, whether they are plugins, loaders, or aliases.
 But you won't be able to change the following config options:
 
 * entry
@@ -117,9 +116,9 @@ For full instructions on Typescript setup, check [our dedicated Typescript page]
 
 ## Using Your Existing Config
 
-You may have an existing Webpack config for your project. So, you may need to copy and paste some config items into Storybook's custom Webpack config file.
+You may have an existing webpack config for your project. So, you may need to copy and paste some config items into Storybook's custom webpack config file.
 
 But you don't need to. There are a few options:
 
-* Import your main Webpack config into Storybook's `webpack.config.js` and use the loaders and plugins used in that.
-* Create a new file with common Webpack options and use it in both inside the main Webpack config and inside Storybook's `webpack.config.js`.
+* Import your main webpack config into Storybook's `webpack.config.js` and use the loaders and plugins used in that.
+* Create a new file with common webpack options and use it in both inside the main webpack config and inside Storybook's `webpack.config.js`.

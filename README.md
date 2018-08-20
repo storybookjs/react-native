@@ -16,7 +16,7 @@ It allows you to browse a component library, view the different states of each c
 
 ## Intro
 
-![Storybook Screenshot](media/demo.gif)
+![Storybook Screenshot](media/storybook-intro.gif)
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
@@ -77,6 +77,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [Mithril](app/mithril) <sup>alpha</sup>
 -   [Marko](app/marko) <sup>alpha</sup>
 -   [HTML](app/html) <sup>alpha</sup>
+-   [Svelte](app/svelte) <sup>alpha</sup>
 
 ### Sub Projects
 
@@ -115,6 +116,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 - [Mithril](https://storybooks-mithril.netlify.com/)
 - [Marko](https://storybooks-marko.netlify.com/)
 - [HTML](https://storybooks-html.netlify.com/)
+- [Svelte](https://storybooks-svelte.netlify.com/)
 
 ### 3.4
 - [React Official](https://release-3-4--storybooks-official.netlify.com)

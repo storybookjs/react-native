@@ -6390,14 +6390,7 @@ eslint-plugin-jsx-a11y@^6.1.1:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-prettier@^2.2.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.4.0.tgz#85cab0775c6d5e3344ef01e78d960f166fb93aae"
-  dependencies:
-    fast-diff "^1.1.1"
-    jest-docblock "^21.0.0"
-
-eslint-plugin-prettier@^2.6.2:
+eslint-plugin-prettier@^2.2.0, eslint-plugin-prettier@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.2.tgz#71998c60aedfa2141f7bfcbf9d1c459bf98b4fad"
   dependencies:
@@ -14602,7 +14595,7 @@ react-docgen@^3.0.0-beta12:
     node-dir "^0.1.10"
     recast "^0.12.6"
 
-react-dom@^16.4.2:
+react-dom@^16.4.0, react-dom@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
@@ -14866,7 +14859,7 @@ react-transition-group@^1.1.2:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react@^16.4.2:
+react@^16.4.0, react@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
@@ -17212,6 +17205,25 @@ supports-hyperlinks@^1.0.1:
     has-flag "^2.0.0"
     supports-color "^5.0.0"
 
+svelte-dev-helper@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/svelte-dev-helper/-/svelte-dev-helper-1.1.7.tgz#b7d887c7be5abf7e2436f9467560061b1e2a935f"
+
+svelte-jest@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-jest/-/svelte-jest-0.2.0.tgz#a05ed16d092e8916de7a4526d1d5673499094756"
+
+svelte-loader@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-2.9.1.tgz#e493c51ac6c2fe53867b1512abf46eb991ca3205"
+  dependencies:
+    loader-utils "^1.1.0"
+    svelte-dev-helper "^1.1.7"
+
+svelte@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-2.7.2.tgz#17019df4997d10206378fb45136b8cbb6edf2611"
+
 svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
@@ -17705,13 +17717,13 @@ tsickle@^0.32.1:
     source-map "^0.6.0"
     source-map-support "^0.5.0"
 
-tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.1.tgz#6946af2d1d651a7b1863b531d6e5afa41aa44eac"
-
-tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
+
+tslib@^1.8.0, tslib@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.1.tgz#6946af2d1d651a7b1863b531d6e5afa41aa44eac"
 
 tslint-config-prettier@^1.14.0:
   version "1.14.0"
