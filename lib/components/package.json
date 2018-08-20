@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ndelangen/react-treebeard": "^2.1.0",
+    "@reach/router": "^1.1.1",
     "emotion": "^9.2.6",
     "emotion-theming": "^9.2.6",
     "fast-deep-equal": "^2.0.1",
@@ -27,6 +28,7 @@
     "lodash.throttle": "^4.1.1",
     "memoizee": "^0.4.13",
     "prop-types": "^15.6.2",
+    "qs": "^6.5.2",
     "react-emotion": "^9.2.6",
     "react-fuzzy": "^0.5.2",
     "react-inspector": "^2.3.0",
