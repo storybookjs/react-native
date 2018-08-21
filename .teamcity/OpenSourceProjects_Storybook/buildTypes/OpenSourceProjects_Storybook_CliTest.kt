@@ -27,7 +27,7 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
         }
         script {
             name = "Test"
-            scriptContent = "yarn test --cli"
+            scriptContent = "./scripts/run-e2e.sh"
             dockerImage = "andthensome/docker-node-rsync"
         }
     }
