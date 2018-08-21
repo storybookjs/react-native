@@ -10,7 +10,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build && cp static/**/* .travis.yml ./public",
+    "build": "gatsby build && cp static/**/* ./public",
     "build-storybook": "build-storybook",
     "deploy:ci": "gh-pages -t -r https://${GH_TOKEN}@github.com/storybooks/storybook.git -d public -o origin -b gh-pages",
     "deploy:manual": "gh-pages -t -r git@github.com:storybooks/storybook.git -d public -o origin -b gh-pages",
