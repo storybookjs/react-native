@@ -7,9 +7,9 @@
     "build": "babel index.js -d dist"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-rc.1",
-    "@babel/preset-env": "^7.0.0-rc.1",
-    "@babel/preset-react": "^7.0.0-rc.1",
+    "@babel/cli": "^7.0.0-rc.2",
+    "@babel/preset-env": "^7.0.0-rc.2",
+    "@babel/preset-react": "^7.0.0-rc.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },

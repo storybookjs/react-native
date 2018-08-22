@@ -76,7 +76,7 @@ const tasks = {
     name: `Command Line Interface ${chalk.gray('(cli)')}`,
     defaultValue: false,
     option: '--cli',
-    projectLocation: './lib/cli',
+    script: './scripts/run-e2e.sh',
   }),
   watchmode: createOption({
     name: `Run in watch-mode ${chalk.gray('(watchmode)')}`,
@@ -110,17 +110,9 @@ const tasks = {
   }),
 };
 
-const getProjects = list => {
-  const filtered = list.filter(key => key.projectLocation);
-  if (filtered.length > 0) {
-    return filtered;
-  }
+const getProjects = list => list.filter(key => key.projectLocation);
 
-  // if list would have been empty, we run with default projects
-  return Object.keys(tasks)
-    .map(key => tasks[key])
-    .filter(key => key.projectLocation && key.defaultValue);
-};
+const getScripts = list => list.filter(key => key.script);
 
 const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
 
@@ -146,10 +138,9 @@ if (
         type: 'checkbox',
         message: 'Select which tests to run',
         name: 'todo',
-        pageSize: 8,
-        choices: Object.keys(tasks)
-          .map(key => tasks[key])
-          .filter(key => key.projectLocation)
+        pageSize: 18,
+        choices: Object.values(tasks)
+          .filter(key => !key.extraParam)
           .map(key => ({
             name: key.name,
             checked: key.defaultValue,
@@ -192,6 +183,11 @@ selection
       nonJestProjects.forEach(key =>
         spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
       );
+      const scripts = getScripts(list);
+      console.log(list);
+      console.log(scripts);
+      scripts.forEach(key => spawn(`${key.script} -- ${extraParams}`));
+
       process.stdout.write('\x07');
     }
   })

@@ -21,9 +21,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-rc.1",
-    "@babel/polyfill": "^7.0.0-rc.1",
-    "@babel/runtime": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.2",
+    "@babel/polyfill": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0-rc.2",
     "@storybook/core": "4.0.0-alpha.16",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -37,7 +37,7 @@
     "polymer-webpack-loader": "^2.0.3"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.4",
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
     "lit-html": "0.10.0",
     "polymer-webpack-loader": "2.0.2"
   }

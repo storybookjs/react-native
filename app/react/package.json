@@ -22,10 +22,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.2",
     "@babel/preset-flow": "^7.0.0-beta.49",
-    "@babel/preset-react": "^7.0.0-rc.1",
-    "@babel/runtime": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0-rc.2",
     "@storybook/core": "4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-react-docgen": "^2.0.0-babel7.0",
@@ -38,7 +38,7 @@
     "react-emotion": "^9.2.6"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.4",
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0"
   }

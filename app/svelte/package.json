@@ -22,7 +22,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.2",
     "@storybook/core": "4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
     "common-tags": "^1.8.0",

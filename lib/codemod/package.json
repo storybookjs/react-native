@@ -13,7 +13,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-rc.1",
+    "@babel/runtime": "^7.0.0-rc.2",
     "jscodeshift": "^0.5.1"
   }
 }
