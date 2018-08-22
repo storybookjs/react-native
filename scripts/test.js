@@ -25,11 +25,12 @@ const spawn = command => {
 
 const main = program.version('3.0.0').option('--all', `Test everything ${chalk.gray('(all)')}`);
 
-const createProject = ({ defaultValue, option, name, projectLocation, isJest }) => ({
+const createProject = ({ defaultValue, option, name, projectLocation, isJest, script }) => ({
   value: false,
   defaultValue: defaultValue || false,
   option: option || undefined,
   name: name || 'unnamed task',
+  script,
   projectLocation,
   isJest,
 });
@@ -184,8 +185,6 @@ selection
         spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
       );
       const scripts = getScripts(list);
-      console.log(list);
-      console.log(scripts);
       scripts.forEach(key => spawn(`${key.script} -- ${extraParams}`));
 
       process.stdout.write('\x07');
