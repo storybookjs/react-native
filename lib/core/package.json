@@ -16,7 +16,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-rc.2",
     "@babel/plugin-transform-regenerator": "^7.0.0-rc.2",
     "@babel/plugin-transform-runtime": "^7.0.0-rc.2",
     "@babel/preset-env": "^7.0.0-rc.2",
@@ -29,7 +28,6 @@
     "@storybook/ui": "4.0.0-alpha.16",
     "airbnb-js-shims": "^2.1.0",
     "autoprefixer": "^9.1.0",
-    "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-macros": "^2.2.2",
     "babel-preset-minify": "canary",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",

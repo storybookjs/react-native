@@ -84,7 +84,7 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
 
   * If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
     ```
-    npm i -D babel-loader@next
+    npm i -D @babel/core babel-loader@next
     ```
   * If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
 
