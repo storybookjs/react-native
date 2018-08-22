@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "@storybook/polymer": "^4.0.0-alpha.16",
-    "babel-loader": "8.0.0-beta.6",
+    "@babel/core": "^7.0.0-rc.2",
+    "babel-loader": "^8.0.0-beta.6",
     "polymer-webpack-loader": "^2.0.3"
   }
 }

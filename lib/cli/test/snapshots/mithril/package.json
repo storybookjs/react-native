@@ -16,6 +16,7 @@
     "@storybook/addon-links": "^4.0.0-alpha.16",
     "@storybook/addons": "^4.0.0-alpha.16",
     "@storybook/mithril": "^4.0.0-alpha.16",
-    "babel-loader": "8.0.0-beta.6"
+    "@babel/core": "^7.0.0-rc.2",
+    "babel-loader": "^8.0.0-beta.6"
   }
 }
