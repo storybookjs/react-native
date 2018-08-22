@@ -5,12 +5,6 @@ set -e
 
 declare test_root=$PWD
 
-# remove run directory before exit to prevent yarn.lock spoiling
-function cleanup {
-  rm -rfd ${test_root}/run
-}
-trap cleanup EXIT
-
 update=0
 update_only=0
 skip=0
