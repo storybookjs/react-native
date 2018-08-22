@@ -95,7 +95,7 @@ do
     then
       cd $dir
       echo "install in $dir"
-      yarn install --pure-lockfile --non-interactive
+      yarn install --pure-lockfile --non-interactive --silent
       echo "Running smoke test in $dir"
       yarn storybook --smoke-test
       cd ..
