@@ -23,7 +23,7 @@ function inject(source, decorator, filepath, options = {}) {
     ? generateSourceWithDecorators(source, decorator, options.parser)
     : generateSourceWithoutDecorators(source, options.parser);
 
-  if (!changed) {
+  if (!options.noStoriesOf && !changed) {
     return {
       source: newSource,
       addsMap: {},
