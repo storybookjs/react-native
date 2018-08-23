@@ -4,9 +4,12 @@
 [![Build Status on CircleCI](https://circleci.com/gh/storybooks/storybook.svg?style=shield)](https://circleci.com/gh/storybooks/storybook)
 [![CodeFactor](https://www.codefactor.io/repository/github/storybooks/storybook/badge)](https://www.codefactor.io/repository/github/storybooks/storybook)
 [![Known Vulnerabilities](https://snyk.io/test/github/storybooks/storybook/badge.svg)](https://snyk.io/test/github/storybooks/storybook)
-[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook) [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
+[![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook)
+[![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
-[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
+[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) 
+[![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
+[![License](https://img.shields.io/github/license/storybooks/storybook.svg)](https://github.com/storybooks/storybook/blob/master/LICENSE)
 <!-- [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>) -->
 
 * * *
@@ -17,6 +20,11 @@ It allows you to browse a component library, view the different states of each c
 ## Intro
 
 ![Storybook Screenshot](media/storybook-intro.gif)
+
+README for:
+-   [![Alpha](https://img.shields.io/npm/v/@storybook/core/alpha.svg)](https://github.com/storybooks/storybook)
+-   [![Latest](https://img.shields.io/npm/v/@storybook/core/latest.svg)](https://github.com/storybooks/storybook/tree/release/3.4)
+
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
@@ -69,15 +77,15 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Supported Frameworks
 
--   [React](app/react)
--   [React Native](app/react-native)
--   [Vue](app/vue)
--   [Angular](app/angular)
--   [Polymer](app/polymer)
--   [Mithril](app/mithril) <sup>alpha</sup>
--   [Marko](app/marko) <sup>alpha</sup>
--   [HTML](app/html) <sup>alpha</sup>
--   [Svelte](app/svelte) <sup>alpha</sup>
+-   [React](app/react) [![React](https://img.shields.io/npm/dt/@storybook/react.svg)](app/react)
+-   [React Native](app/react-native) [![React Native](https://img.shields.io/npm/dt/@storybook/react-native.svg)](app/react-native)
+-   [Vue](app/vue) [![Vue](https://img.shields.io/npm/dt/@storybook/vue.svg)](app/vue)
+-   [Angular](app/angular) [![Angular](https://img.shields.io/npm/dt/@storybook/angular.svg)](app/angular)
+-   [Polymer](app/polymer) [![Polymer](https://img.shields.io/npm/dt/@storybook/polymer.svg)](app/polymer)
+-   [Mithril](app/mithril) <sup>alpha</sup> [![Mithril](https://img.shields.io/npm/dt/@storybook/mithril.svg)](app/mithril)
+-   [Marko](app/marko) <sup>alpha</sup> [![Marko](https://img.shields.io/npm/dt/@storybook/marko.svg)](app/marko)
+-   [HTML](app/html) <sup>alpha</sup> [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html)
+-   [Svelte](app/svelte) <sup>alpha</sup> [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte)
 
 ### Sub Projects
 
@@ -130,6 +138,8 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 - [Angular](https://release-3-3--storybooks-angular.netlify.com/)
 
 ## Contributing
+
+[![Good First Issue](https://img.shields.io/github/issues/storybooks/storybook/good%20first%20issue.svg)](https://github.com/storybooks/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
 We welcome contributions to Storybook!
 

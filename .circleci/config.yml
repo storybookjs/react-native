@@ -273,6 +273,7 @@ jobs:
           name: "Test CLI"
           command: |
             yarn test --cli
+          no_output_timeout: 1800
   cli-latest-cra:
     working_directory: /tmp/storybook
     docker:
