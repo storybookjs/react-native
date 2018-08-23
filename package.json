@@ -1,19 +1,37 @@
 {
   "name": "@storybook/root",
-  "version": "3.0.0",
+  "version": "4.0.0-alpha.16",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
   },
+  "workspaces": [
+    "addons/*",
+    "addons/storyshots/*",
+    "app/*",
+    "lib/*",
+    "examples/marko-cli",
+    "examples/angular-cli",
+    "examples/cra-kitchen-sink",
+    "examples/html-kitchen-sink",
+    "examples/mithril-kitchen-sink",
+    "examples/polymer-cli",
+    "examples/vue-kitchen-sink",
+    "examples/svelte-kitchen-sink",
+    "examples/official-storybook",
+    "lib/cli/test/run/*"
+  ],
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:crna-kitchen-sink": "npm --prefix examples/crna-kitchen-sink install",
     "bootstrap:docs": "yarn install --cwd docs",
-    "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "bootstrap:react-native-typescript": "npm --prefix examples/react-native-typescript install",
+    "bootstrap:react-native-vanilla": "npm --prefix examples/react-native-vanilla install",
     "build-packs": "lerna exec --scope '@storybook/*' --parallel -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "./scripts/build-storybooks.sh",
     "changelog": "pr-log --sloppy",
+    "chromatic": "npm --prefix examples/official-storybook run chromatic",
     "precommit": "lint-staged",
     "coverage": "codecov",
     "danger": "danger",
@@ -28,36 +46,42 @@
     "lint": "yarn lint:js . && yarn lint:ts **/*.ts && yarn lint:md .",
     "lint:ci": "yarn lint:js --format ./node_modules/eslint-teamcity/index.js . && yarn lint:ts **/*.ts && yarn lint:md .",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
-    "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
+    "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "publish": "lerna publish --exact",
-    "publish:stable": "npm run publish -- --concurrency 1 --force-publish=*",
-    "publish:alpha": "npm run publish -- --concurrency 1 --force-publish=* --npm-tag=alpha",
     "postpublish": "yarn --cwd lib/cli test -o",
+    "publish:alpha": "npm run publish -- --concurrency 1 --force-publish=* --npm-tag=alpha",
+    "publish:stable": "npm run publish -- --concurrency 1 --force-publish=*",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "npm --prefix examples/official-storybook run storybook",
     "test": "node ./scripts/test.js",
-    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra",
-    "chromatic": "npm --prefix examples/official-storybook run chromatic"
+    "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
   "devDependencies": {
-    "@angular/common": "^6.1.1",
-    "@angular/compiler": "^6.1.1",
-    "@angular/core": "^6.1.1",
-    "@angular/forms": "^6.1.1",
-    "@angular/platform-browser": "^6.1.1",
-    "@angular/platform-browser-dynamic": "^6.1.1",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.2",
-    "babel-plugin-emotion": "^9.2.6",
-    "babel-plugin-macros": "^2.3.0",
+    "@angular/common": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
+    "@angular/core": "^6.0.3",
+    "@angular/forms": "^6.0.3",
+    "@angular/platform-browser": "^6.0.3",
+    "@angular/platform-browser-dynamic": "^6.0.3",
+    "@babel/cli": "^7.0.0-rc.2",
+    "@babel/core": "^7.0.0-rc.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.2",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0-rc.2",
+    "@babel/plugin-transform-runtime": "^7.0.0-rc.2",
+    "@babel/preset-env": "^7.0.0-rc.2",
+    "@babel/preset-flow": "^7.0.0-rc.2",
+    "@babel/preset-react": "^7.0.0-rc.2",
+    "@babel/preset-stage-0": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0-rc.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^8.2.5",
+    "babel-jest": "^23.2.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "babel-plugin-emotion": "^9.2.4",
+    "babel-plugin-macros": "^2.2.2",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.1",
     "codecov": "^3.0.4",
     "codelyzer": "^4.4.2",
@@ -125,10 +149,13 @@
     "node": ">=8.0.0",
     "yarn": ">=1.3.2"
   },
-  "private": true,
+  "browserslist": "defaults",
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "eslint-teamcity": {
+    "reporter": "inspections"
   },
   "lint-staged": {
     "linters": {
@@ -160,24 +187,5 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
-  },
-  "eslint-teamcity": {
-    "reporter": "inspections"
-  },
-  "workspaces": [
-    "addons/*",
-    "addons/storyshots/*",
-    "app/*",
-    "lib/*",
-    "examples/marko-cli",
-    "examples/angular-cli",
-    "examples/cra-kitchen-sink",
-    "examples/html-kitchen-sink",
-    "examples/mithril-kitchen-sink",
-    "examples/polymer-cli",
-    "examples/vue-kitchen-sink",
-    "examples/svelte-kitchen-sink",
-    "examples/official-storybook",
-    "lib/cli/test/run/*"
-  ]
+  }
 }

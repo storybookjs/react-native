@@ -1,16 +1,33 @@
 {
-  "presets": ["env", "stage-0", "react"],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+     ["emotion", { "sourceMap": true, "autoLabel": true }],
+    "babel-plugin-macros",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ],
   "env": {
     "test": {
-      "plugins": ["require-context-hook"]
-    },
-    "plugins": [
-      ["emotion", { "sourceMap": true, "autoLabel": true }],
-      "babel-plugin-macros",
-      ["transform-runtime", {
-        "polyfill": false,
-        "regenerator": true
-      }]
-    ]
-  }
+      "plugins": ["babel-plugin-require-context-hook"]
+    }
+  },
+  "overrides": [
+    {
+      "test": "./examples/vue-kitchen-sink",
+      "presets": [
+        "@babel/preset-env",
+        "babel-preset-vue"
+      ]
+    }
+  ]
 }

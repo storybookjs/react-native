@@ -16,7 +16,6 @@
     "@storybook/addons": "4.0.0-alpha.16",
     "@storybook/components": "4.0.0-alpha.16",
     "@storybook/core-events": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
     "copy-to-clipboard": "^3.0.8",
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",

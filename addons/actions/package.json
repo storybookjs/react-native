@@ -23,7 +23,6 @@
     "@storybook/addons": "4.0.0-alpha.16",
     "@storybook/components": "4.0.0-alpha.16",
     "@storybook/core-events": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "emotion-theming": "^9.2.6",
     "global": "^4.3.2",
