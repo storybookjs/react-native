@@ -22,10 +22,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-rc.2",
     "@storybook/core": "4.0.0-alpha.16",
     "@storybook/node-logger": "4.0.0-alpha.16",
     "angular2-template-loader": "^0.6.2",
-    "babel-runtime": "^6.23.0",
     "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.4.2",
@@ -41,6 +41,7 @@
     "@angular/core": ">=6.0.0",
     "@angular/forms": ">=6.0.0",
     "@angular/platform-browser": ">=6.0.0",
-    "@angular/platform-browser-dynamic": ">=6.0.0"
+    "@angular/platform-browser-dynamic": ">=6.0.0",
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6"
   }
 }

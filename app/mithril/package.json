@@ -22,6 +22,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0-rc.2",
     "@storybook/core": "4.0.0-alpha.16",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
@@ -32,6 +34,7 @@
     "mithril": "^1.1.6"
   },
   "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
     "mithril": "^1.1.6"
   }
 }

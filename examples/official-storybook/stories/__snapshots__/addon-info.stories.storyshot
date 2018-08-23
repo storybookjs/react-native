@@ -60,7 +60,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -100,10 +100,10 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -130,32 +130,32 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -164,22 +164,22 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -188,52 +188,52 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -242,27 +242,27 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -271,7 +271,7 @@ exports[`Storyshots Addons|Info.Decorator Use Info as story decorator 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -345,7 +345,7 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div>
@@ -406,10 +406,10 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -505,7 +505,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -563,10 +563,10 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -593,32 +593,32 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -627,22 +627,22 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -651,52 +651,52 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -705,27 +705,27 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -734,7 +734,7 @@ exports[`Storyshots Addons|Info.JSX Displays JSX in description 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -838,7 +838,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -896,10 +896,10 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -926,32 +926,32 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -960,22 +960,22 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -984,52 +984,52 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -1038,27 +1038,27 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -1067,7 +1067,7 @@ exports[`Storyshots Addons|Info.Markdown Displays Markdown in description 1`] = 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -1140,7 +1140,7 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -1198,10 +1198,10 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -1228,32 +1228,32 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -1262,22 +1262,22 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -1286,52 +1286,52 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -1340,27 +1340,27 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -1369,7 +1369,7 @@ exports[`Storyshots Addons|Info.Markdown From external Markdown file 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -1454,7 +1454,7 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -1512,10 +1512,10 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -1542,32 +1542,32 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -1576,22 +1576,22 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -1600,52 +1600,52 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -1654,27 +1654,27 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -1683,7 +1683,7 @@ exports[`Storyshots Addons|Info.Markdown From internal Markdown file 1`] = `
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -1747,7 +1747,7 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -1787,10 +1787,10 @@ exports[`Storyshots Addons|Info.Options.TableComponent Use a custom component fo
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -1945,7 +1945,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -1985,10 +1985,10 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -2015,32 +2015,32 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -2049,22 +2049,22 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -2073,27 +2073,27 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -2102,27 +2102,27 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -2131,7 +2131,7 @@ exports[`Storyshots Addons|Info.Options.excludedPropTypes Excludes propTypes tha
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -2190,7 +2190,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -2230,10 +2230,10 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -2260,32 +2260,32 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -2294,22 +2294,22 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -2318,52 +2318,52 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -2372,27 +2372,27 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -2401,7 +2401,7 @@ exports[`Storyshots Addons|Info.Options.header Shows or hides Info Addon header 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -2463,7 +2463,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
           Story Source
         </h1>
         <pre
-          class="css-r8d96o"
+          class="css-r8d96o eyvlbql0"
         >
           <div>
             <div
@@ -2503,10 +2503,10 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
             </div>
           </div>
           <button
-            class="css-1naocv3"
+            class="css-1naocv3 eva467m0"
           >
             <div
-              class="css-lvl6aa"
+              class="css-lvl6aa eva467m1"
             >
               <div
                 style="margin-bottom:6px"
@@ -2533,32 +2533,32 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
             "BaseButton" Component
           </h2>
           <table
-            class="css-1uhv8nx"
+            class="css-1uhv8nx e1vdo5380"
           >
             <thead>
               <tr>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   property
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   propType
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   required
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   default
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   description
                 </th>
@@ -2567,22 +2567,22 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
             <tbody>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#a11"
@@ -2591,52 +2591,52 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   label
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   yes
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#170"
@@ -2645,27 +2645,27 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   style
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#666"
@@ -2674,7 +2674,7 @@ exports[`Storyshots Addons|Info.Options.inline Inlines component inside story 1`
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
             </tbody>
@@ -2735,7 +2735,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
           Story Source
         </h1>
         <pre
-          class="css-r8d96o"
+          class="css-r8d96o eyvlbql0"
         >
           <div>
             <div
@@ -3475,10 +3475,10 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
             </div>
           </div>
           <button
-            class="css-1naocv3"
+            class="css-1naocv3 eva467m0"
           >
             <div
-              class="css-lvl6aa"
+              class="css-lvl6aa eva467m1"
             >
               <div
                 style="margin-bottom:6px"
@@ -3505,32 +3505,32 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
             "BaseButton" Component
           </h2>
           <table
-            class="css-1uhv8nx"
+            class="css-1uhv8nx e1vdo5380"
           >
             <thead>
               <tr>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   property
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   propType
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   required
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   default
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   description
                 </th>
@@ -3539,22 +3539,22 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
             <tbody>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#a11"
@@ -3563,52 +3563,52 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   label
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   yes
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#170"
@@ -3617,27 +3617,27 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   style
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#666"
@@ -3646,7 +3646,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 0 Object and array 
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
             </tbody>
@@ -3707,7 +3707,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
           Story Source
         </h1>
         <pre
-          class="css-r8d96o"
+          class="css-r8d96o eyvlbql0"
         >
           <div>
             <div
@@ -4263,10 +4263,10 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
             </div>
           </div>
           <button
-            class="css-1naocv3"
+            class="css-1naocv3 eva467m0"
           >
             <div
-              class="css-lvl6aa"
+              class="css-lvl6aa eva467m1"
             >
               <div
                 style="margin-bottom:6px"
@@ -4293,32 +4293,32 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
             "BaseButton" Component
           </h2>
           <table
-            class="css-1uhv8nx"
+            class="css-1uhv8nx e1vdo5380"
           >
             <thead>
               <tr>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   property
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   propType
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   required
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   default
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   description
                 </th>
@@ -4327,22 +4327,22 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
             <tbody>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#a11"
@@ -4351,52 +4351,52 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   label
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   yes
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#170"
@@ -4405,27 +4405,27 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   style
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#666"
@@ -4434,7 +4434,7 @@ exports[`Storyshots Addons|Info.Options.maxPropsIntoLine === 3 Object and array 
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
             </tbody>
@@ -4506,7 +4506,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -4546,10 +4546,10 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -4576,32 +4576,32 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -4610,22 +4610,22 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -4634,52 +4634,52 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -4688,27 +4688,27 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -4717,7 +4717,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -4730,32 +4730,32 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
               "FlowTypeButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -4764,24 +4764,24 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -4790,29 +4790,29 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -4821,7 +4821,7 @@ exports[`Storyshots Addons|Info.Options.propTables Shows additional component pr
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -4901,7 +4901,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div>
@@ -5002,10 +5002,10 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -5091,32 +5091,32 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -5125,22 +5125,22 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -5149,52 +5149,52 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -5203,27 +5203,27 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -5232,7 +5232,7 @@ exports[`Storyshots Addons|Info.Options.source Shows or hides Info Addon source 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -5296,7 +5296,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -5336,10 +5336,10 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -5366,32 +5366,32 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -5400,22 +5400,22 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -5424,52 +5424,52 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -5478,27 +5478,27 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -5507,7 +5507,7 @@ exports[`Storyshots Addons|Info.Options.styles Extend info styles with an object
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -5571,7 +5571,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -5611,10 +5611,10 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -5641,32 +5641,32 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -5675,22 +5675,22 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -5699,52 +5699,52 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -5753,27 +5753,27 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -5782,7 +5782,7 @@ exports[`Storyshots Addons|Info.Options.styles Full control over styles using a 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -5894,7 +5894,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -5952,10 +5952,10 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -5982,32 +5982,32 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -6016,22 +6016,22 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -6040,52 +6040,52 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -6094,27 +6094,27 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -6123,7 +6123,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the parameters with markdow
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -6196,7 +6196,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
           Story Source
         </h1>
         <pre
-          class="css-r8d96o"
+          class="css-r8d96o eyvlbql0"
         >
           <div>
             <div
@@ -6254,10 +6254,10 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
             </div>
           </div>
           <button
-            class="css-1naocv3"
+            class="css-1naocv3 eva467m0"
           >
             <div
-              class="css-lvl6aa"
+              class="css-lvl6aa eva467m1"
             >
               <div
                 style="margin-bottom:6px"
@@ -6284,32 +6284,32 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
             "BaseButton" Component
           </h2>
           <table
-            class="css-1uhv8nx"
+            class="css-1uhv8nx e1vdo5380"
           >
             <thead>
               <tr>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   property
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   propType
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   required
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   default
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   description
                 </th>
@@ -6318,22 +6318,22 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
             <tbody>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#a11"
@@ -6342,52 +6342,52 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   label
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   yes
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#170"
@@ -6396,27 +6396,27 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   style
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#666"
@@ -6425,7 +6425,7 @@ exports[`Storyshots Addons|Info.Parameters Overwrite the text parameter with mar
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
             </tbody>
@@ -6486,7 +6486,7 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
           Story Source
         </h1>
         <pre
-          class="css-r8d96o"
+          class="css-r8d96o eyvlbql0"
         >
           <div>
             <div
@@ -6526,10 +6526,10 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
             </div>
           </div>
           <button
-            class="css-1naocv3"
+            class="css-1naocv3 eva467m0"
           >
             <div
-              class="css-lvl6aa"
+              class="css-lvl6aa eva467m1"
             >
               <div
                 style="margin-bottom:6px"
@@ -6556,32 +6556,32 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
             "BaseButton" Component
           </h2>
           <table
-            class="css-1uhv8nx"
+            class="css-1uhv8nx e1vdo5380"
           >
             <thead>
               <tr>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   property
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   propType
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   required
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   default
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   description
                 </th>
@@ -6590,22 +6590,22 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
             <tbody>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#a11"
@@ -6614,27 +6614,27 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#170"
@@ -6643,27 +6643,27 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   style
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#666"
@@ -6672,7 +6672,7 @@ exports[`Storyshots Addons|Info.Parameters Overwriting and extending the paramet
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
             </tbody>
@@ -6733,7 +6733,7 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
           Story Source
         </h1>
         <pre
-          class="css-r8d96o"
+          class="css-r8d96o eyvlbql0"
         >
           <div>
             <div
@@ -6773,10 +6773,10 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
             </div>
           </div>
           <button
-            class="css-1naocv3"
+            class="css-1naocv3 eva467m0"
           >
             <div
-              class="css-lvl6aa"
+              class="css-lvl6aa eva467m1"
             >
               <div
                 style="margin-bottom:6px"
@@ -6803,32 +6803,32 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
             "BaseButton" Component
           </h2>
           <table
-            class="css-1uhv8nx"
+            class="css-1uhv8nx e1vdo5380"
           >
             <thead>
               <tr>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   property
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   propType
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   required
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   default
                 </th>
                 <th
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir1"
                 >
                   description
                 </th>
@@ -6837,22 +6837,22 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
             <tbody>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   disabled
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#a11"
@@ -6861,52 +6861,52 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   label
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   yes
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   onClick
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#170"
@@ -6915,27 +6915,27 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
               <tr>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   style
                 </td>
                 <td
-                  class="css-1qcb1f7"
+                  class="css-1qcb1f7 e6fp4ir0"
                 >
                   <span />
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   -
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 >
                   <span
                     style="color:#666"
@@ -6944,7 +6944,7 @@ exports[`Storyshots Addons|Info.Parameters Using paramaters across all stories 1
                   </span>
                 </td>
                 <td
-                  class="css-11b5gui"
+                  class="css-11b5gui e6fp4ir0"
                 />
               </tr>
             </tbody>
@@ -7016,7 +7016,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -7074,10 +7074,10 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -7104,32 +7104,32 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
               "FlowTypeButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -7138,24 +7138,24 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -7164,29 +7164,29 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span>
                       unknown
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -7195,7 +7195,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from Flow declarations 1`]
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -7268,7 +7268,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -7527,10 +7527,10 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -7557,32 +7557,32 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
               "DocgenButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -7591,22 +7591,22 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -7615,52 +7615,52 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -7669,27 +7669,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     one
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -7712,27 +7712,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     two
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -7797,27 +7797,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     obj
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -7840,27 +7840,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     shape
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -7935,27 +7935,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     arrayOf
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -7988,27 +7988,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     msg
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -8017,27 +8017,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     enm
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#22a;word-break:break-word"
@@ -8046,27 +8046,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     enmEval
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#22a;word-break:break-word"
@@ -8075,27 +8075,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     union
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#22a;word-break:break-word"
@@ -8104,27 +8104,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     optionalString
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#22a;word-break:break-word"
@@ -8133,7 +8133,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from PropType declarations
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -8206,7 +8206,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -8264,10 +8264,10 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -8294,32 +8294,32 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -8328,22 +8328,22 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -8352,52 +8352,52 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -8406,27 +8406,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -8435,7 +8435,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from component declaration
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -8510,7 +8510,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -8568,10 +8568,10 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -8598,32 +8598,32 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
               "NamedExportButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -8632,22 +8632,22 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -8656,52 +8656,52 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -8710,27 +8710,27 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -8739,7 +8739,7 @@ exports[`Storyshots Addons|Info.React Docgen Comments from named export componen
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
@@ -8843,7 +8843,7 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
             Story Source
           </h1>
           <pre
-            class="css-r8d96o"
+            class="css-r8d96o eyvlbql0"
           >
             <div>
               <div
@@ -8901,10 +8901,10 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
               </div>
             </div>
             <button
-              class="css-1naocv3"
+              class="css-1naocv3 eva467m0"
             >
               <div
-                class="css-lvl6aa"
+                class="css-lvl6aa eva467m1"
               >
                 <div
                   style="margin-bottom:6px"
@@ -8931,32 +8931,32 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -8965,22 +8965,22 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -8989,52 +8989,52 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -9043,27 +9043,27 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -9072,7 +9072,7 @@ exports[`Storyshots Addons|Info.deprecated Displays Markdown in description 1`] 
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>

@@ -13,8 +13,8 @@
     "prepare": "node ../../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-rc.2",
     "@storybook/node-logger": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
     "jest-image-snapshot": "^2.4.3",
     "puppeteer": "^1.6.2"
   },

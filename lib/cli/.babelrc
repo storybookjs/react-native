@@ -1,14 +1,12 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
         "node": 4
       }
     }]
   ],
   "plugins": [
-    ["transform-runtime", {
-      "polyfill": false
-    }]
+    ["@babel/plugin-transform-runtime"]
   ]
 }
