@@ -1,14 +1,15 @@
 {
   "name": "react-project-fixture",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "build": "babel index.js -d dist"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/cli": "7.0.0-rc.2",
+    "@babel/preset-env": "7.0.0-rc.2",
+    "@babel/preset-react": "7.0.0-rc.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },

@@ -21,7 +21,6 @@
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
-    "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
     "emotion": "^9.2.6",
     "emotion-theming": "^9.2.6",

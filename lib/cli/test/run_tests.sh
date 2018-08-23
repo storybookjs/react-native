@@ -62,6 +62,7 @@ cd ..
 if [ $update -eq 1 ]
   then
     # copy `run` directory contents to `snapshots`, skipping irrelevant files
+    rm -rf snapshots
     rsync -r --exclude={node_modules**,.DS_Store,*.md,yarn-error.log} run/ snapshots
   else if [ $skip -eq 0 ]
     then
@@ -83,9 +84,6 @@ if [ $update_only -eq 1 ]
     exit 0
   fi
 
-# install all the dependencies in a single run
-cd ../../..
-yarn --pure-lockfile
 cd ${test_root}/run
 
 for dir in *
@@ -96,6 +94,8 @@ do
   if [ $dir != "already_has_storybook" ]
     then
       cd $dir
+      echo "install in $dir"
+      yarn install --pure-lockfile --non-interactive --silent
       echo "Running smoke test in $dir"
       yarn storybook --smoke-test
       cd ..

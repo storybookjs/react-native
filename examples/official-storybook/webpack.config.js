@@ -9,7 +9,7 @@ module.exports = (baseConfig, env, defaultConfig) => ({
       ...defaultConfig.module.rules,
       {
         test: /\.stories\.jsx?$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        use: require.resolve('@storybook/addon-storysource/loader'),
         include: [
           path.resolve(__dirname, './stories'),
           path.resolve(__dirname, '../../lib/ui/src'),
@@ -19,7 +19,7 @@ module.exports = (baseConfig, env, defaultConfig) => ({
       },
       {
         test: /\.js/,
-        loaders: ['babel-loader'],
+        use: defaultConfig.module.rules[0].use,
         include: [
           path.resolve(__dirname, '../../lib/ui/src'),
           path.resolve(__dirname, '../../lib/components/src'),

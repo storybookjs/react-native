@@ -20,9 +20,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-rc.2",
     "@storybook/addons": "4.0.0-alpha.16",
     "@storybook/components": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
     "prettier": "^1.14.0",
