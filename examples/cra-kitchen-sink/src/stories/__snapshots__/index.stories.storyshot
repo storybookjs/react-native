@@ -198,6 +198,23 @@ exports[`Storyshots Button addons composition 1`] = `
             </button>
           </pre>
         </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "InfoButton" Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -572,6 +589,16 @@ exports[`Storyshots Button with new info 1`] = `
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "InfoButton" Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
           </div>
         </div>
       </div>

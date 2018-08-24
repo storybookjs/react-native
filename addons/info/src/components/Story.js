@@ -330,8 +330,8 @@ class Story extends Component {
         innerChildren.forEach(extract);
         return;
       }
-      if (innerChildren.props && innerChildren.props.innerChildren) {
-        extract(innerChildren.props.innerChildren);
+      if (innerChildren.props && innerChildren.props.children) {
+        extract(innerChildren.props.children);
       }
       if (
         typeof innerChildren === 'string' ||
