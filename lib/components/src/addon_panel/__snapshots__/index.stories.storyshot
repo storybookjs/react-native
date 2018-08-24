@@ -5,21 +5,21 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <div
-    class="css-d7g4da"
+    class="css-d7g4da e1lzzkxx0"
   >
     <div
-      class="css-1whcqvw"
+      class="css-1whcqvw e1lzzkxx1"
       role="tablist"
     >
       <button
-        class="css-xcko46"
+        class="css-xcko46 e1lzzkxx2"
         role="tab"
         type="button"
       >
         Test 1
       </button>
       <button
-        class="css-1hf831j"
+        class="css-1hf831j e1lzzkxx2"
         role="tab"
         type="button"
       >
@@ -27,7 +27,7 @@ exports[`Storyshots Components|AddonPanel default 1`] = `
       </button>
     </div>
     <div
-      class="css-18lpvrh"
+      class="css-18lpvrh e1lzzkxx3"
     >
       <div
         id="test2"
@@ -44,7 +44,7 @@ exports[`Storyshots Components|AddonPanel no panels 1`] = `
   style="height:calc(100vh - 20px)"
 >
   <p
-    class="css-hftiue"
+    class="css-hftiue ejh6i270"
   >
     no panels available
   </p>

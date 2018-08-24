@@ -18,7 +18,14 @@ setOptions({
   theme: themes.dark,
 });
 
-addDecorator(story => <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>);
+addDecorator(
+  (story, { kind }) =>
+    kind === 'Core|Errors' ? (
+      story()
+    ) : (
+      <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
+    )
+);
 
 configureViewport({
   viewports: {

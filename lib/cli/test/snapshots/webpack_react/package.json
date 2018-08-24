@@ -1,8 +1,8 @@
 {
   "name": "webpack-react-fixture",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "build": "webpack",
     "storybook": "start-storybook -p 6006",
@@ -13,14 +13,15 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-react": "^6.24.1",
+    "@babel/plugin-external-helpers": "7.0.0-rc.2",
+    "@babel/core": "7.0.0-rc.2",
+    "@babel/preset-react": "7.0.0-rc.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "8.0.0-beta.6",
     "webpack": "^3.5.5",
-    "@storybook/react": "^4.0.0-alpha.16",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0"
+    "@storybook/react": "^4.0.0-alpha.17",
+    "@storybook/addon-actions": "^4.0.0-alpha.17",
+    "@storybook/addon-links": "^4.0.0-alpha.17",
+    "@storybook/addons": "^4.0.0-alpha.17"
   }
 }

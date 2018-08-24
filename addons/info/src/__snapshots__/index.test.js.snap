@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`addon Info should render <Info /> and external markdown 1`] = `
-.emotion-2 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22,7 +22,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
   overflow-x: scroll;
 }
 
-.emotion-1 {
+.emotion-2 {
   overflow: hidden;
   border: 1px solid #eee;
   border-radius: 3px;
@@ -38,12 +38,12 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-1:hover {
+.emotion-2:hover {
   background-color: #f4f7fa;
   border-color: #ddd;
 }
 
-.emotion-1:active {
+.emotion-2:active {
   background-color: #e9ecef;
   border-color: #ccc;
 }
@@ -124,8 +124,8 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
             <div>
               <h1>
                 function func(x) {
-          return x + 1;
-        }
+        return x + 1;
+      }
               </h1>
               <h2>
                 [object Object]
@@ -307,7 +307,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
               >
                 <Styled(pre)>
                   <pre
-                    className="emotion-2"
+                    className="emotion-4 emotion-5"
                   >
                     <div>
                       <Node
@@ -1220,14 +1220,14 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
                         styles={Object {}}
                       >
                         <button
-                          className="emotion-1"
+                          className="emotion-2 emotion-3"
                           onClick={[Function]}
                         >
                           <Styled(div)
                             toggled={false}
                           >
                             <div
-                              className="emotion-0"
+                              className="emotion-0 emotion-1"
                             >
                               <div
                                 style={
@@ -1308,7 +1308,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
 `;
 
 exports[`addon Info should render <Info /> and markdown 1`] = `
-.emotion-2 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1329,7 +1329,7 @@ exports[`addon Info should render <Info /> and markdown 1`] = `
   overflow-x: scroll;
 }
 
-.emotion-1 {
+.emotion-2 {
   overflow: hidden;
   border: 1px solid #eee;
   border-radius: 3px;
@@ -1345,12 +1345,12 @@ exports[`addon Info should render <Info /> and markdown 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-1:hover {
+.emotion-2:hover {
   background-color: #f4f7fa;
   border-color: #ddd;
 }
 
-.emotion-1:active {
+.emotion-2:active {
   background-color: #e9ecef;
   border-color: #ccc;
 }
@@ -1433,8 +1433,8 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
             <div>
               <h1>
                 function func(x) {
-          return x + 1;
-        }
+        return x + 1;
+      }
               </h1>
               <h2>
                 [object Object]
@@ -1707,7 +1707,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
               >
                 <Styled(pre)>
                   <pre
-                    className="emotion-2"
+                    className="emotion-4 emotion-5"
                   >
                     <div>
                       <Node
@@ -2620,14 +2620,14 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
                         styles={Object {}}
                       >
                         <button
-                          className="emotion-1"
+                          className="emotion-2 emotion-3"
                           onClick={[Function]}
                         >
                           <Styled(div)
                             toggled={false}
                           >
                             <div
-                              className="emotion-0"
+                              className="emotion-0 emotion-1"
                             >
                               <div
                                 style={

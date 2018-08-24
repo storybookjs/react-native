@@ -140,7 +140,7 @@ object Project : Project({
             param("defaultFilters", "")
             param("seriesTitle", "Serie")
         }
-feature {
+        feature {
             type = "project-graphs"
             id = "PROJECT_EXT_308"
             param("series", """

@@ -1,5 +1,5 @@
 import React from 'react';
-import demoImg from './images/demo.gif';
+import demoImg from './images/storybook-intro.gif';
 import './style.css';
 
 const Demo = () => (

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "4.0.0-alpha.16",
+  "version": "4.0.0-alpha.17",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -18,8 +18,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
+    "@storybook/addons": "4.0.0-alpha.17",
     "marked": "^0.4.0",
     "prop-types": "^15.6.2",
     "react-emotion": "^9.2.6"
