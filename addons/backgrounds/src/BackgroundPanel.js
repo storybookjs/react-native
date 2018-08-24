@@ -2,20 +2,20 @@ import { document } from 'global';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import Events from './constants';
 import Swatch from './Swatch';
 
-const Wrapper = styled('div')({
+const Wrapper = styled.div({
   padding: 20,
 });
 
-const Title = styled('h5')({
+const Title = styled.h5({
   fontSize: 16,
 });
 
-const Pre = styled('pre')(({ theme }) => ({
+const Pre = styled.pre(({ theme }) => ({
   padding: '30px',
   display: 'block',
   background: theme.fillColor,
@@ -23,11 +23,11 @@ const Pre = styled('pre')(({ theme }) => ({
   lineHeight: '1.75em',
 }));
 
-const List = styled('div')({
+const List = styled.div({
   display: 'inline-block',
   padding: 15,
 });
-const Item = styled('div')({
+const Item = styled.div({
   display: 'inline-block',
   padding: 5,
 });

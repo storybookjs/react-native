@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Container = styled('div')({
+const Container = styled.div({
   width: '100%',
   position: 'relative',
   minHeight: '100%',
 });
 
-const List = styled('div')(({ theme }) => ({
+const List = styled.div(({ theme }) => ({
   borderBottom: theme.mainBorder,
   flexWrap: 'wrap',
   display: 'flex',
 }));
 
-const Item = styled('button')(
+const Item = styled.button(
   ({ active }) =>
     active
       ? {

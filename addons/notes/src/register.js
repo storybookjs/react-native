@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Panel = styled('div')({
+const Panel = styled.div({
   padding: 10,
   boxSizing: 'border-box',
   width: '100%',

@@ -28,7 +28,7 @@
     "@storybook/core-events": "4.0.0-alpha.16",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react-emotion": "^9.2.6",
+    "@emotion/styled": "0.10.4",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {

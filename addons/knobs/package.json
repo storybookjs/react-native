@@ -24,7 +24,7 @@
     "qs": "^6.5.2",
     "react-color": "^2.14.1",
     "react-datetime": "^2.15.0",
-    "react-emotion": "^9.2.6",
+    "@emotion/styled": "0.10.4",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },

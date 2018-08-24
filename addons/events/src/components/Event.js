@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { polyfill } from 'react-lifecycles-compat';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import json from 'format-json';
 
 import Textarea from 'react-textarea-autosize';
@@ -38,7 +38,7 @@ const StyledTextarea = styled(Textarea)(
       : {}
 );
 
-const Button = styled('button')({
+const Button = styled.button({
   display: 'table-cell',
   textTransform: 'uppercase',
   letterSpacing: '3.5px',
@@ -57,7 +57,7 @@ const Button = styled('button')({
   outline: 0,
 });
 
-const Label = styled('label')({
+const Label = styled.h6({
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'top',
@@ -68,7 +68,7 @@ const Label = styled('label')({
   fontWeight: '600',
 });
 
-const Wrapper = styled('div')({
+const Wrapper = styled.div({
   display: 'flex',
   padding: 5,
   alignItems: 'flex-start',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { STORY_RENDERED } from '@storybook/core-events';
 import { ActionBar, ActionButton } from '@storybook/components';
@@ -11,11 +11,11 @@ import { CHECK_EVENT_ID, RERUN_EVENT_ID, REQUEST_CHECK_EVENT_ID } from '../share
 import Tabs from './Tabs';
 import Report from './Report';
 
-const Passes = styled('span')(({ theme }) => ({
+const Passes = styled.span(({ theme }) => ({
   color: theme.successColor,
 }));
 
-const Violations = styled('span')(({ theme }) => ({
+const Violations = styled.span(({ theme }) => ({
   color: theme.failColor,
 }));
 

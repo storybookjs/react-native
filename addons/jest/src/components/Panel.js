@@ -1,37 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import Indicator from './Indicator';
 import Result, { FailedResult } from './Result';
 import provideJestResult from '../hoc/provideJestResult';
 import colors from '../colors';
 
-const List = styled('ul')({
+const List = styled.ul({
   listStyle: 'none',
   fontSize: 14,
   padding: 0,
   margin: '10px 0',
 });
 
-const Item = styled('li')({
+const Item = styled.li({
   display: 'block',
   margin: '10px 0',
   padding: 0,
 });
 
-const NoTests = styled('div')({
+const NoTests = styled.div({
   padding: '10px 20px',
   flex: 1,
 });
 
-const FileTitle = styled('h2')({
+const FileTitle = styled.h2({
   margin: 0,
   fontWeight: 500,
   fontSize: 18,
 });
 
-const SuiteHead = styled('div')({
+const SuiteHead = styled.div({
   display: 'flex',
   alignItems: 'baseline',
   justifyContent: 'space-between',
@@ -89,7 +89,7 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
   },
 }));
 
-const SuiteTitle = styled('div')({
+const SuiteTitle = styled.div({
   display: 'flex',
   alignItems: 'center',
 });

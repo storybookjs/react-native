@@ -23,7 +23,7 @@
     "@storybook/core-events": "4.0.0-alpha.16",
     "format-json": "^1.0.3",
     "prop-types": "^15.6.2",
-    "react-emotion": "^9.2.6",
+    "@emotion/styled": "0.10.4",
     "react-lifecycles-compat": "^3.0.4",
     "react-textarea-autosize": "^7.0.4",
     "util-deprecate": "^1.0.2"

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import CopyButton from './copyButton';
 import copy from './copy';
 
 const TOGGLE_TIMEOUT = 1800;
 
-const StyledPre = styled('pre')(
+const StyledPre = styled.pre(
   {
     display: 'flex',
     justifyContent: 'space-between',

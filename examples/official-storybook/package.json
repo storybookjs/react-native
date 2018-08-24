@@ -34,8 +34,8 @@
     "@storybook/node-logger": "4.0.0-alpha.16",
     "@storybook/react": "4.0.0-alpha.16",
     "cors": "^2.8.4",
-    "emotion": "^9.2.6",
-    "emotion-theming": "^9.2.6",
+    "@emotion/core": "0.13.0",
+    "@emotion/provider": "0.11.1",
     "enzyme-to-json": "^3.3.4",
     "eventemitter3": "^3.1.0",
     "express": "^4.16.3",
@@ -48,7 +48,7 @@
     "react": "^16.4.2",
     "react-chromatic": "^0.8.4",
     "react-dom": "^16.4.2",
-    "react-emotion": "^9.2.6",
+    "@emotion/styled": "0.10.4",
     "uuid": "^3.3.2",
     "webpack": "^4.16.4"
   }

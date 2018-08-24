@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { EVENTS } from '../constants';
 import Event from './Event';
 
-const Wrapper = styled('div')({
+const Wrapper = styled.div({
   width: '100%',
   boxSizing: 'border-box',
   padding: '10px',
