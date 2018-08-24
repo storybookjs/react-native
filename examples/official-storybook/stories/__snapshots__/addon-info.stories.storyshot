@@ -5059,32 +5059,32 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
               "BaseButton" Component
             </h2>
             <table
-              class="css-1uhv8nx"
+              class="css-1uhv8nx e1vdo5380"
             >
               <thead>
                 <tr>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     property
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     propType
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     required
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     default
                   </th>
                   <th
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir1"
                   >
                     description
                   </th>
@@ -5093,22 +5093,22 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
               <tbody>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     disabled
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#a11"
@@ -5117,52 +5117,52 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     label
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     yes
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     onClick
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#170"
@@ -5171,27 +5171,27 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
                 <tr>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     style
                   </td>
                   <td
-                    class="css-1qcb1f7"
+                    class="css-1qcb1f7 e6fp4ir0"
                   >
                     <span />
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     -
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   >
                     <span
                       style="color:#666"
@@ -5200,7 +5200,7 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
                     </span>
                   </td>
                   <td
-                    class="css-11b5gui"
+                    class="css-11b5gui e6fp4ir0"
                   />
                 </tr>
               </tbody>
