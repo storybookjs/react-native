@@ -1,3 +1,33 @@
+# 4.0.0-alpha.17
+
+2018-August-24
+
+#### Breaking Changes
+
+-   Babel 7 [#3746](https://github.com/storybooks/storybook/pull/3746)
+
+#### Features
+
+-   Emit messages when stories fail to render [#3967](https://github.com/storybooks/storybook/pull/3967)
+-   Svelte support [#3770](https://github.com/storybooks/storybook/pull/3770)
+-   Allow extending extensions without a full control mode [#3976](https://github.com/storybooks/storybook/pull/3976)
+
+#### Bug Fixes
+
+-   Storyshots puppeteer images do not match [#4045](https://github.com/storybooks/storybook/pull/4045)
+-   Storyshots puppeteer images do not match [#4037](https://github.com/storybooks/storybook/pull/4037)
+-   Bring .jsx back [#4024](https://github.com/storybooks/storybook/pull/4024)
+-   Fix custom webpack config warnings [#4009](https://github.com/storybooks/storybook/pull/4009)
+-   sorting by kind and nested stories [#3963](https://github.com/storybooks/storybook/pull/3963)
+
+#### Maintenance
+
+-   Temp revert the 36a2676 [#4062](https://github.com/storybooks/storybook/pull/4062)
+-   Remove deprecation of --db-path and --enable-db [#4030](https://github.com/storybooks/storybook/pull/4030)
+-   Remove git info extraction [#4031](https://github.com/storybooks/storybook/pull/4031)
+-   Fixed homepage links [skip ci] [#4008](https://github.com/storybooks/storybook/pull/4008)
+-   CHANGE html-webpack-plugin for generate-page-plugin [#3919](https://github.com/storybooks/storybook/pull/3919)
+
 # 4.0.0-alpha.16
 
 2018-August-06
