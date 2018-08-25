@@ -59,5 +59,5 @@ class MyComponent extends Component {
 
 storiesOf('MyComponent', module)
   .add('default', () => <MyComponent />)
-  .add('other', () => <MyComponent initialState={{ someVar: 'otherVal' }});
+  .add('other', () => <MyComponent initialState={{ someVar: 'otherVal' }} />);
 ```
