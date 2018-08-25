@@ -1,3 +1,17 @@
+# 4.0.0-alpha.18
+
+2018-August-25
+
+#### Bug Fixes
+
+-   Add missing `@babel/plugin-proposal-class-properties` dependency [#4076](https://github.com/storybooks/storybook/pull/4076)
+-   Don't display wrong warning when loading ".js" or ".json" [#4060](https://github.com/storybooks/storybook/pull/4060)
+-   Fix autodetection of used components in info addon [#4004](https://github.com/storybooks/storybook/pull/4004)
+
+#### Maintenance
+
+-   Faster CircleCI [#4068](https://github.com/storybooks/storybook/pull/4068)
+
 # 4.0.0-alpha.17
 
 2018-August-24
