@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "4.0.0-alpha.17",
+  "version": "4.0.0-alpha.18",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react",
   "bugs": {
@@ -25,7 +25,7 @@
     "@babel/preset-flow": "^7.0.0-rc.3",
     "@babel/preset-react": "^7.0.0-rc.3",
     "@babel/runtime": "^7.0.0-rc.3",
-    "@storybook/core": "4.0.0-alpha.17",
+    "@storybook/core": "4.0.0-alpha.18",
     "babel-plugin-react-docgen": "^2.0.0-babel7.0",
     "common-tags": "^1.8.0",
     "emotion": "^9.2.6",
