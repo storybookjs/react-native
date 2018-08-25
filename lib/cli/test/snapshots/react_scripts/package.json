@@ -16,10 +16,10 @@
     "react-scripts": "1.0.13"
   },
   "devDependencies": {
-    "@storybook/react": "^4.0.0-alpha.17",
-    "@storybook/addon-actions": "^4.0.0-alpha.17",
-    "@storybook/addon-links": "^4.0.0-alpha.17",
-    "@storybook/addons": "^4.0.0-alpha.17",
+    "@storybook/react": "^4.0.0-alpha.18",
+    "@storybook/addon-actions": "^4.0.0-alpha.18",
+    "@storybook/addon-links": "^4.0.0-alpha.18",
+    "@storybook/addons": "^4.0.0-alpha.18",
     "@babel/core": "^7.0.0-rc.3",
     "babel-loader": "^8.0.0-beta.6"
   }
