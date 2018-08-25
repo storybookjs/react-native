@@ -16,7 +16,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0-rc.3",
     "@storybook/addons": "4.0.0-alpha.17",
     "glob": "^7.1.2",
     "global": "^4.3.2",
