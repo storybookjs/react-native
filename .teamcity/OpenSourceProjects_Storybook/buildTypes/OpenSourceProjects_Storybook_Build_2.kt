@@ -37,6 +37,7 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
         }
         retryBuild {
             delaySeconds = 60
+            enabled = false
         }
     }
 
