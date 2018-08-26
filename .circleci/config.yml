@@ -209,15 +209,6 @@ jobs:
       - run:
           name: Lint
           command: yarn lint
-  danger:
-    <<: *defaults
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Danger
-          command: yarn danger ci
   unit-test:
     <<: *defaults
     steps:
@@ -289,9 +280,6 @@ workflows:
     jobs:
       - build
       - docs
-      - danger:
-          requires:
-            - build
       - lint:
           requires:
             - docs
