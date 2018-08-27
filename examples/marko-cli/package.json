@@ -19,8 +19,7 @@
   },
   "dependencies": {
     "marko": "^4.12.4",
-    "marko-starter": "^2.0.4",
-    "marko-widgets": "^7.0.1"
+    "marko-starter": "^2.0.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.18",
