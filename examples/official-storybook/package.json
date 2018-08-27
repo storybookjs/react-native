@@ -50,6 +50,6 @@
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.6",
     "uuid": "^3.3.2",
-    "webpack": "^4.16.4"
+    "webpack": "^4.17.1"
   }
 }

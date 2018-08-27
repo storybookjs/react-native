@@ -15,7 +15,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-rc.3",
     "@storybook/node-logger": "4.0.0-alpha.18",
-    "jest-image-snapshot": "^2.4.3",
+    "jest-image-snapshot": "^2.5.0",
     "puppeteer": "^1.6.2"
   },
   "peerDependencies": {

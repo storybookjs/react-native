@@ -35,9 +35,9 @@
     "commander": "^2.17.0",
     "cross-spawn": "^6.0.5",
     "jscodeshift": "^0.5.1",
-    "json5": "^1.0.1",
+    "json5": "^2.0.1",
     "merge-dirs": "^0.2.1",
-    "semver": "^5.5.0",
+    "semver": "^5.5.1",
     "shelljs": "^0.8.2",
     "update-notifier": "^2.5.0"
   },

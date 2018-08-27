@@ -29,8 +29,8 @@
     "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "svelte": "^2.7.2",
-    "svelte-loader": "^2.9.1"
+    "svelte": "^2.13.1",
+    "svelte-loader": "^2.11.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",

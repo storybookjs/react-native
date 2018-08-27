@@ -22,10 +22,10 @@
     "babel-core": "^6.26.3",
     "eslint-config-react-tools": "1.x.x",
     "serve": "^6.1.0",
-    "@storybook/react": "^4.0.0-alpha.17",
-    "@storybook/addon-actions": "^4.0.0-alpha.17",
-    "@storybook/addon-links": "^4.0.0-alpha.17",
-    "@storybook/addons": "^4.0.0-alpha.17",
+    "@storybook/react": "^4.0.0-alpha.18",
+    "@storybook/addon-actions": "^4.0.0-alpha.18",
+    "@storybook/addon-links": "^4.0.0-alpha.18",
+    "@storybook/addons": "^4.0.0-alpha.18",
     "babel-loader": "^7.1.5"
   }
 }
