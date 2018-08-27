@@ -19,9 +19,10 @@ function extendOptions(source, comments, filepath, options) {
 
 function inject(source, decorator, filepath, options = {}) {
   const { injectDecorator = true } = options;
-  const { changed, source: newSource, comments } = injectDecorator
-    ? generateSourceWithDecorators(source, decorator, options.parser)
-    : generateSourceWithoutDecorators(source, options.parser);
+  const { changed, source: newSource, comments } =
+    injectDecorator === true
+      ? generateSourceWithDecorators(source, decorator, options.parser)
+      : generateSourceWithoutDecorators(source, options.parser);
 
   if (!changed) {
     return {

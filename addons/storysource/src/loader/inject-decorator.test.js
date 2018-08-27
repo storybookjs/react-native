@@ -132,7 +132,7 @@ describe('inject-decorator', () => {
       }
     );
 
-    it('don\'t injects stories decorator after the all "storiesOf" functions', () => {
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
       expect(result.source).toMatchSnapshot();
     });
   });
@@ -150,7 +150,7 @@ describe('inject-decorator', () => {
       }
     );
 
-    it('don\'t injects stories decorator after the all "storiesOf" functions', () => {
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
       expect(result.source).toMatchSnapshot();
     });
   });
@@ -168,7 +168,7 @@ describe('inject-decorator', () => {
       }
     );
 
-    it('don\'t injects stories decorator after the all "storiesOf" functions', () => {
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
       expect(result.source).toMatchSnapshot();
     });
   });
