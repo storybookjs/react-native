@@ -44,6 +44,7 @@ jobs:
             - examples/vue-kitchen-sink/node_modules
             - examples/svelte-kitchen-sink/node_modules
             - examples/marko-cli/node_modules
+            - examples/riot-kitchen-sink/node_modules
             - addons
             - app
             - lib
@@ -97,6 +98,11 @@ jobs:
             cd examples/mithril-kitchen-sink
             yarn build-storybook
       - run:
+          name: Build riot kitchen-sink
+          command: |
+            cd examples/riot-kitchen-sink
+            yarn build-storybook
+      - run:
           name: Run image snapshots
           command: yarn test --image
       - store_artifacts:
@@ -147,6 +153,11 @@ jobs:
           name: Run mithril kitchen-sink (smoke test)
           command: |
             cd examples/mithril-kitchen-sink
+            yarn storybook --smoke-test
+      - run:
+          name: Run riot kitchen-sink (smoke test)
+          command: |
+            cd examples/riot-kitchen-sink
             yarn storybook --smoke-test
   react-native:
     <<: *defaults

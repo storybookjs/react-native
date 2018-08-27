@@ -1,0 +1,1 @@
+<AnotherTest><div>yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)</div></AnotherTest>
