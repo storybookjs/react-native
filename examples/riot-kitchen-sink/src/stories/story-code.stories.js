@@ -1,9 +1,11 @@
 import { storiesOf } from '@storybook/riot';
 import { tag2, mount } from 'riot';
-// eslint-disable-next-line import/no-webpack-loader-syntax,import/no-unresolved
-import SimpleTestRaw from 'raw-loader!./SimpleTest.tag';
+import SimpleTestRaw from './SimpleTest.txt';
 // eslint-disable-next-line no-unused-vars
 import anothertest from './AnotherTest.tag';
+import { asCompiledCode } from './compileNow';
+
+const simpleTestCompiled = asCompiledCode(SimpleTestRaw);
 
 storiesOf('Story|How to create a story', module)
   .add(
@@ -15,7 +17,7 @@ storiesOf('Story|How to create a story', module)
 
   .add('built as string', () => ({ tags: ['<test><div>simple test</div></test>'] }))
 
-  .add('built from raw import', () => SimpleTestRaw)
+  .add('built from raw import', () => simpleTestCompiled)
 
   .add(
     'built from tags and template',

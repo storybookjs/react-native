@@ -16,10 +16,11 @@ export function guessRootName(stringified) {
 }
 
 function compileText(compiler, code, rootName) {
-  const sourceCodeEndOfHtml = (code.indexOf(/<(?:style|script)/) + 1 || code.length + 1) - 1;
+  const sourceCodeEndOfHtml =
+    (Math.min(code.indexOf('<style') + 1, code.indexOf('<script') + 1) || code.length + 1) - 1;
   const sourceCodeReformatted =
     code.substring(0, sourceCodeEndOfHtml).replace(/[\n\r\s]+/g, ' ') +
-    code.substring(sourceCodeEndOfHtml + 1);
+    code.substring(sourceCodeEndOfHtml);
   const sourceCode =
     rootName === 'root' ? `<root>${sourceCodeReformatted}</root>` : sourceCodeReformatted;
   return compiler

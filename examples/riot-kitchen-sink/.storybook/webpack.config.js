@@ -8,5 +8,10 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     enforce: 'pre',
   });
 
+  defaultConfig.module.rules.push({
+    test: /\.txt$/,
+    use: 'raw-loader',
+  });
+
   return defaultConfig;
 };

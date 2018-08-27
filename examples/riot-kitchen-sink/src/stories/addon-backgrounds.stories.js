@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/riot';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
-// eslint-disable-next-line import/no-unresolved,import/no-webpack-loader-syntax
-import ButtonRaw from 'raw-loader!./Button.tag';
+import ButtonRaw from './Button.txt';
 
 storiesOf('Addon|Backgrounds', module)
   .addDecorator(

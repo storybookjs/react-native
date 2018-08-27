@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/riot';
 import { linkTo } from '@storybook/addon-links';
-// eslint-disable-next-line import/no-unresolved,import/no-webpack-loader-syntax
-import ButtonRaw from 'raw-loader!./Button.tag';
 import { mount } from 'riot';
+import ButtonRaw from './Button.txt';
 // eslint-disable-next-line no-unused-vars
 import Welcome from './Welcome.tag';
 // eslint-disable-next-line no-unused-vars

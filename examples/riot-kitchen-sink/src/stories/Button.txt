@@ -1,5 +1,5 @@
 <my-button>
-    <button class={this.opts.rounded ? 'rounded button' : 'button'} style="color: {color}; borderColor: {color}" onClick= {handleClick } ondblclick={ handleDblclick }  class="rounded">{opts.content}<yield/>!</button>
+    <button class={this.opts.rounded ? 'rounded button' : 'button'} style="color: {this.color}; borderColor: {this.color}" onClick= {handleClick } ondblclick={ handleDblclick }  class="rounded">{opts.content}<yield/>!</button>
 
     <script>
         this.handleClick = this.opts.handleClick || function(){}
