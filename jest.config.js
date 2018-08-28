@@ -29,6 +29,7 @@ module.exports = {
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
     '.*\\.(svelte)$': '<rootDir>/node_modules/svelte-jest',
     '^.+\\.(tag)$': '<rootDir>/node_modules/riot-jest-transformer',
+    '^.+\\.(txt)$': '<rootDir>/node_modules/jest-raw-loader',
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
