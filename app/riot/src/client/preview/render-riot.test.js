@@ -83,8 +83,6 @@ describe('render a riot element', () => {
       )
     ).toBe(true);
 
-    expect(rootElement.innerHTML).toEqual(
-      '<simpletest test="with a parameter"><div>simple test (with a parameter). Oh, by the way (value is mapped to riotValue)</div></simpletest>'
-    );
+    expect(rootElement.innerHTML).toMatchSnapshot();
   });
 });
