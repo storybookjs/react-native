@@ -8,20 +8,19 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "babel-runtime": "^6.20.0",
+    "@babel/runtime": "7.0.0-rc.2",
     "meteor-node-stubs": "~0.2.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "babel-root-slash-import": "^1.1.0",
-    "@storybook/react": "^4.0.0-alpha.16",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16"
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^4.0.0-alpha.18",
+    "@storybook/addon-actions": "^4.0.0-alpha.18",
+    "@storybook/addon-links": "^4.0.0-alpha.18",
+    "@storybook/addons": "^4.0.0-alpha.18",
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.0"
   }
 }

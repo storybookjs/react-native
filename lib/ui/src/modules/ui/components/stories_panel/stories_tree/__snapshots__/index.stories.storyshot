@@ -2,7 +2,7 @@
 
 exports[`Storyshots UI|stories/Stories empty 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -10,11 +10,11 @@ exports[`Storyshots UI|stories/Stories empty 1`] = `
     <li
       class="css-79elbk"
     >
-      <span>
+      <div>
         <ul
           class="css-vq3qyb"
         />
-      </span>
+      </div>
     </li>
   </ul>
 </div>
@@ -22,7 +22,7 @@ exports[`Storyshots UI|stories/Stories empty 1`] = `
 
 exports[`Storyshots UI|stories/Stories simple 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -30,7 +30,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
     <li
       class="css-79elbk"
     >
-      <span>
+      <div>
         <ul
           class="css-vq3qyb"
         >
@@ -77,7 +77,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                 </div>
               </div>
             </div>
-            <span />
+            <div />
           </li>
           <li
             class="css-79elbk"
@@ -122,7 +122,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                 </div>
               </div>
             </div>
-            <span>
+            <div>
               <ul
                 class="css-vq3qyb"
               >
@@ -130,7 +130,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                   class="css-79elbk"
                 >
                   <a
-                    class="css-1jhmhe9"
+                    class="css-1jhmhe9 e1s7lmdh0"
                     href="?selectedKind=b&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -145,13 +145,13 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                       </div>
                     </div>
                   </a>
-                  <span />
+                  <div />
                 </li>
                 <li
                   class="css-79elbk"
                 >
                   <a
-                    class="css-oato19"
+                    class="css-oato19 e1s7lmdh0"
                     href="?selectedKind=b&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -166,13 +166,13 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
                       </div>
                     </div>
                   </a>
-                  <span />
+                  <div />
                 </li>
               </ul>
-            </span>
+            </div>
           </li>
         </ul>
-      </span>
+      </div>
     </li>
   </ul>
 </div>
@@ -180,7 +180,7 @@ exports[`Storyshots UI|stories/Stories simple 1`] = `
 
 exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is defined 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -188,7 +188,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
     <li
       class="css-79elbk"
     >
-      <span>
+      <div>
         <ul
           class="css-vq3qyb"
         >
@@ -235,7 +235,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                 </div>
               </div>
             </div>
-            <span />
+            <div />
           </li>
           <li
             class="css-79elbk"
@@ -280,7 +280,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                 </div>
               </div>
             </div>
-            <span>
+            <div>
               <ul
                 class="css-vq3qyb"
               >
@@ -327,7 +327,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <div>
                     <ul
                       class="css-vq3qyb"
                     >
@@ -374,7 +374,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                             </div>
                           </div>
                         </div>
-                        <span>
+                        <div>
                           <ul
                             class="css-vq3qyb"
                           >
@@ -382,7 +382,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                               class="css-79elbk"
                             >
                               <a
-                                class="css-1jhmhe9"
+                                class="css-1jhmhe9 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -397,13 +397,13 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                                   </div>
                                 </div>
                               </a>
-                              <span />
+                              <div />
                             </li>
                             <li
                               class="css-79elbk"
                             >
                               <a
-                                class="css-oato19"
+                                class="css-oato19 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -418,19 +418,19 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
                                   </div>
                                 </div>
                               </a>
-                              <span />
+                              <div />
                             </li>
                           </ul>
-                        </span>
+                        </div>
                       </li>
                     </ul>
-                  </span>
+                  </div>
                 </li>
               </ul>
-            </span>
+            </div>
           </li>
         </ul>
-      </span>
+      </div>
     </li>
   </ul>
 </div>
@@ -438,7 +438,7 @@ exports[`Storyshots UI|stories/Stories with hierarchy - hierarchySeparator is de
 
 exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is provided 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -446,7 +446,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
     <li
       class="css-79elbk"
     >
-      <span>
+      <div>
         <ul
           class="css-vq3qyb"
         >
@@ -503,7 +503,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                 </div>
               </div>
             </div>
-            <span>
+            <div>
               <ul
                 class="css-vq3qyb"
               >
@@ -550,7 +550,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <div>
                     <ul
                       class="css-vq3qyb"
                     >
@@ -597,7 +597,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                             </div>
                           </div>
                         </div>
-                        <span>
+                        <div>
                           <ul
                             class="css-vq3qyb"
                           >
@@ -605,7 +605,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                               class="css-79elbk"
                             >
                               <a
-                                class="css-1jhmhe9"
+                                class="css-1jhmhe9 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -620,13 +620,13 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                                   </div>
                                 </div>
                               </a>
-                              <span />
+                              <div />
                             </li>
                             <li
                               class="css-79elbk"
                             >
                               <a
-                                class="css-oato19"
+                                class="css-oato19 e1s7lmdh0"
                                 href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                               >
                                 <div>
@@ -641,19 +641,19 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
                                   </div>
                                 </div>
                               </a>
-                              <span />
+                              <div />
                             </li>
                           </ul>
-                        </span>
+                        </div>
                       </li>
                     </ul>
-                  </span>
+                  </div>
                 </li>
               </ul>
-            </span>
+            </div>
           </li>
         </ul>
-      </span>
+      </div>
     </li>
   </ul>
 </div>
@@ -661,7 +661,7 @@ exports[`Storyshots UI|stories/Stories with highlighting when storiesFilter is p
 
 exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is defined 1`] = `
 <div
-  class="css-7w6khc"
+  class="css-7w6khc emockhz0"
 >
   <ul
     class="css-h3ek8a"
@@ -669,7 +669,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
     <li
       class="css-79elbk"
     >
-      <span>
+      <div>
         <ul
           class="css-vq3qyb"
         >
@@ -716,7 +716,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                 </div>
               </div>
             </div>
-            <span />
+            <div />
           </li>
           <li
             class="css-79elbk"
@@ -761,7 +761,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                 </div>
               </div>
             </div>
-            <span>
+            <div>
               <ul
                 class="css-vq3qyb"
               >
@@ -769,7 +769,7 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                   class="css-79elbk"
                 >
                   <a
-                    class="css-1jhmhe9"
+                    class="css-1jhmhe9 e1s7lmdh0"
                     href="?selectedKind=another.space.20&selectedStory=b1&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -784,13 +784,13 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                       </div>
                     </div>
                   </a>
-                  <span />
+                  <div />
                 </li>
                 <li
                   class="css-79elbk"
                 >
                   <a
-                    class="css-oato19"
+                    class="css-oato19 e1s7lmdh0"
                     href="?selectedKind=another.space.20&selectedStory=b2&full=NaN&addons=NaN&stories=NaN&panelRight=NaN"
                   >
                     <div>
@@ -805,13 +805,13 @@ exports[`Storyshots UI|stories/Stories without hierarchy - hierarchySeparator is
                       </div>
                     </div>
                   </a>
-                  <span />
+                  <div />
                 </li>
               </ul>
-            </span>
+            </div>
           </li>
         </ul>
-      </span>
+      </div>
     </li>
   </ul>
 </div>

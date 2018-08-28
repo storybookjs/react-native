@@ -1,4 +1,4 @@
 {
-  "presets": ["react"],
-  "plugins": ["external-helpers"]
+  "presets": ["@babel/preset-react"],
+  "plugins": ["@babel/plugin-external-helpers"]
 }

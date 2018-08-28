@@ -1,10 +1,6 @@
 {
   "presets": [
-    "env",
-    "react",
-    "stage-1"
-  ],
-  "plugins": [
-    "babel-root-slash-import"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ]
 }
