@@ -1,13 +1,21 @@
 import { storiesOf } from '@storybook/riot';
+import { tag2, mount } from 'riot';
+import { action } from '@storybook/addon-actions';
 import ButtonRaw from './Button.txt';
+import { compileNow } from './compileNow';
+
+compileNow(tag2, ButtonRaw);
 
 storiesOf('Addon|Actions', module)
-  .add('Action only', () => ({
-    tags: [{ boundAs: 'my-button', content: ButtonRaw }],
-    template: '<my-button handleClick={console.log("log")}>Click me to log the action</my-button>',
-  }))
-  .add('Multiple actions', () => ({
-    tags: [{ boundAs: 'my-button', content: ButtonRaw }],
-    template:
-      '<my-button :handle-click="click" handleDblClick={console.log("dblclick")}>(Double) click me to log the action</my-button>',
-  }));
+  .add('Action only', () =>
+    mount('root', 'my-button', {
+      handleClick: action('button-click'),
+      content: 'Click me to log the action',
+    })
+  )
+  .add('Multiple actions', () =>
+    mount('root', 'my-button', {
+      handleDblClick: action('button-double-click'),
+      content: 'Double Click me to log the action',
+    })
+  );
