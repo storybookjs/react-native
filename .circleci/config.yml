@@ -88,11 +88,6 @@ jobs:
             cd examples/marko-cli
             yarn build-storybook
       - run:
-          name: Build official-storybook
-          command: |
-            cd examples/official-storybook
-            yarn build-storybook
-      - run:
           name: Build mithril kitchen-sink
           command: |
             cd examples/mithril-kitchen-sink
@@ -101,6 +96,11 @@ jobs:
           name: Build riot kitchen-sink
           command: |
             cd examples/riot-kitchen-sink
+            yarn build-storybook
+      - run:
+          name: Build official-storybook
+          command: |
+            cd examples/official-storybook
             yarn build-storybook
       - run:
           name: Run image snapshots
