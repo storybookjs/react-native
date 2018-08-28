@@ -10,8 +10,8 @@
     "@storybook/marko": "^4.0.0-alpha.18",
     "@storybook/addon-actions": "^4.0.0-alpha.18",
     "@storybook/addon-knobs": "^4.0.0-alpha.18",
-    "@babel/core": "^7.0.0-rc.3",
-    "babel-loader": "^8.0.0-beta.6"
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

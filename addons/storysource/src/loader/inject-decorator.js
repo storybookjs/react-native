@@ -2,6 +2,7 @@ import defaultOptions from './default-options';
 
 import {
   generateSourceWithDecorators,
+  generateSourceWithoutDecorators,
   generateStorySource,
   generateAddsMap,
 } from './generate-helpers';
@@ -17,11 +18,11 @@ function extendOptions(source, comments, filepath, options) {
 }
 
 function inject(source, decorator, filepath, options = {}) {
-  const { changed, source: newSource, comments } = generateSourceWithDecorators(
-    source,
-    decorator,
-    options.parser
-  );
+  const { injectDecorator = true } = options;
+  const { changed, source: newSource, comments } =
+    injectDecorator === true
+      ? generateSourceWithDecorators(source, decorator, options.parser)
+      : generateSourceWithoutDecorators(source, options.parser);
 
   if (!changed) {
     return {
