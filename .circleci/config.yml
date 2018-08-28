@@ -44,6 +44,7 @@ jobs:
             - examples/vue-kitchen-sink/node_modules
             - examples/svelte-kitchen-sink/node_modules
             - examples/marko-cli/node_modules
+            - examples/html-kitchen-sink/node_modules
             - examples/riot-kitchen-sink/node_modules
             - addons
             - app
