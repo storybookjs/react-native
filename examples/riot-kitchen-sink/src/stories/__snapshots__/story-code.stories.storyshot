@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Story|How to create a story built as string 1`] = `
+<root
+  data-is="test"
+>
+  <div>
+    simple test (with a parameter)
+  </div>
+</root>
+`;
+
+exports[`Storyshots Story|How to create a story built from raw import 1`] = `
+<root
+  data-is="test"
+>
+  <div>
+    simple test (with a parameter)
+  </div>
+</root>
+`;
+
+exports[`Storyshots Story|How to create a story built from tags and template 1`] = `
+<root
+  data-is="test"
+>
+  <div>
+    simple test (with a parameter)
+  </div>
+</root>
+`;
+
+exports[`Storyshots Story|How to create a story built from the precompilation 1`] = `
+<root
+  data-is="anothertest"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</root>
+`;
+
+exports[`Storyshots Story|How to create a story built with tag2 1`] = `
+<root
+  data-is="test"
+>
+  <div>
+    simple test (with a parameter)
+  </div>
+</root>
+`;
+
+exports[`Storyshots Story|Nest tags Matriochka 1`] = `
+<root
+  data-is="anothertest"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</root>
+`;
+
+exports[`Storyshots Story|Nest tags Three tags 1`] = `
+<root
+  data-is="anothertest"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</root>
+`;
