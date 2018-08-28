@@ -1,0 +1,51 @@
+storage: ./storage
+
+auth:
+  htpasswd:
+    file: ./htpasswd
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+
+packages:
+  # storybook's 'legacy' packages
+  '@storybook/mantra-core':
+    access: $all
+    publish: $all
+    proxy: npmjs
+  '@storybook/react-simple-di':
+    access: $all
+    publish: $all
+    proxy: npmjs
+  '@storybook/react-stubber':
+    access: $all
+    publish: $all
+    proxy: npmjs
+  '@storybook/podda':
+    access: $all
+    publish: $all
+    proxy: npmjs
+  '@storybook/react-komposer':
+    access: $all
+    publish: $all
+    proxy: npmjs
+
+  # storybook packages are NOT proxied to global registry
+  # allowing us to republish any version during tests
+  '@storybook/*':
+    access: $all
+    publish: $all
+
+  '@*/*':
+    access: $all
+    publish: $all
+    proxy: npmjs
+
+  '**':
+    access: $all
+    publish: $all
+    proxy: npmjs
+
+logs:
+  - {type: stdout, format: pretty, level: http}

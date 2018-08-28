@@ -2,31 +2,31 @@
 
 exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 <ul
-  class="css-1bx3lfx"
+  class="css-1bx3lfx egs2kzf0"
 >
   <li
-    class="css-wo86af"
+    class="css-wo86af egs2kzf2"
   >
     <button
-      class="css-hu94vo"
+      class="css-hu94vo egs2kzf1"
     >
       Nr1
     </button>
   </li>
   <li
-    class="css-11rvrtb"
+    class="css-11rvrtb egs2kzf2"
   >
     <button
-      class="css-hu94vo"
+      class="css-hu94vo egs2kzf1"
     >
       Nr2
     </button>
   </li>
   <li
-    class="css-11rvrtb"
+    class="css-11rvrtb egs2kzf2"
   >
     <button
-      class="css-hu94vo"
+      class="css-hu94vo egs2kzf1"
     >
       Nr3
     </button>
@@ -36,13 +36,13 @@ exports[`Storyshots Components|PanelActionBar 3 items 1`] = `
 
 exports[`Storyshots Components|PanelActionBar single item 1`] = `
 <ul
-  class="css-1bx3lfx"
+  class="css-1bx3lfx egs2kzf0"
 >
   <li
-    class="css-wo86af"
+    class="css-wo86af egs2kzf2"
   >
     <button
-      class="css-hu94vo"
+      class="css-hu94vo egs2kzf1"
     >
       CLEAR
     </button>

@@ -1,5 +1,5 @@
 const path = require('path');
-const { DefinePlugin } = require('webpack');
+const { DefinePlugin, ContextReplacementPlugin } = require('webpack');
 
 module.exports = (baseConfig, env, defaultConfig) => ({
   ...defaultConfig,
@@ -9,7 +9,7 @@ module.exports = (baseConfig, env, defaultConfig) => ({
       ...defaultConfig.module.rules,
       {
         test: /\.stories\.jsx?$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        use: require.resolve('@storybook/addon-storysource/loader'),
         include: [
           path.resolve(__dirname, './stories'),
           path.resolve(__dirname, '../../lib/ui/src'),
@@ -19,7 +19,7 @@ module.exports = (baseConfig, env, defaultConfig) => ({
       },
       {
         test: /\.js/,
-        loaders: ['babel-loader'],
+        use: defaultConfig.module.rules[0].use,
         include: [
           path.resolve(__dirname, '../../lib/ui/src'),
           path.resolve(__dirname, '../../lib/components/src'),
@@ -38,5 +38,7 @@ module.exports = (baseConfig, env, defaultConfig) => ({
     new DefinePlugin({
       process: JSON.stringify(true),
     }),
+    // See https://github.com/graphql/graphql-language-service/issues/111#issuecomment-306723400
+    new ContextReplacementPlugin(/graphql-language-service-interface[/\\]dist/, /\.js$/),
   ],
 });

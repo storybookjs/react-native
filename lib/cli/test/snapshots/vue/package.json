@@ -1,14 +1,14 @@
 {
   "name": "vue-fixture",
   "version": "1.0.0",
+  "private": true,
   "description": "A Vue.js project",
   "author": "hypnos <Filipp.Riabchun@jetbrains.com>",
-  "private": true,
   "scripts": {
     "build": "run-s build:**",
-    "build:js": "cross-env NODE_ENV=production rollup -c",
     "build:autoprefixer": "postcss --use autoprefixer -o public/assets/css/app.css public/assets/css/app.css",
     "build:cssnano": "cssnano public/assets/css/app.css public/assets/css/app.css",
+    "build:js": "cross-env NODE_ENV=production rollup -c",
     "dev": "cross-env NODE_ENV=development rollup -cw",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -17,8 +17,9 @@
     "vue": "^2.3.3"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0-rc.2",
     "autoprefixer": "^7.1.2",
-    "babel-core": "^6.24.1",
+    "babel-core": "^7.0.0-bridge.0",
     "cross-env": "^5.0.0",
     "cssnano-cli": "^1.0.4",
     "npm-run-all": "^4.0.1",
@@ -34,10 +35,10 @@
     "rollup-plugin-serve": "^0.4.0",
     "rollup-plugin-vue": "^2.4.0",
     "rollup-watch": "^4.0.0",
-    "@storybook/vue": "^4.0.0-alpha.16",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "babel-preset-vue": "^2.0.2"
+    "@storybook/vue": "^4.0.0-alpha.18",
+    "@storybook/addon-actions": "^4.0.0-alpha.18",
+    "@storybook/addon-links": "^4.0.0-alpha.18",
+    "@storybook/addons": "^4.0.0-alpha.18",
+    "babel-loader": "^8.0.0"
   }
 }

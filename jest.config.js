@@ -22,13 +22,13 @@ module.exports = {
     '<rootDir>/examples/angular-cli',
   ],
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
     '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
     '^.+\\.(ts|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
     '.*\\.(svelte)$': '<rootDir>/node_modules/svelte-jest',
   },
-  testPathIgnorePatterns: ['/node_modules/', 'addon-jest.test.js', '/cli/test/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',

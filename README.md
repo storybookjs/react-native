@@ -40,6 +40,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
     -   [Sub Projects](#sub-projects)
     -   [Addons](#addons)
 -   [Live Examples](#live-examples) 💪
+-   [Badges](#badges)
 -   [Contributing](#contributing)
     -   [Development scripts](#development-scripts)
     -   [Backers](#backers)
@@ -136,6 +137,16 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 - [React Official](https://release-3-3--storybooks-official.netlify.com)
 - [Vue](https://release-3-3--storybooks-vue.netlify.com/)
 - [Angular](https://release-3-3--storybooks-angular.netlify.com/)
+
+## Badges
+
+We have a badge ! Link it to your live Storybook example.
+
+![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)
+
+```md
+[![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](link to site)
+```
 
 ## Contributing
 
