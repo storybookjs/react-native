@@ -2209,6 +2209,10 @@ axe-core@^3.0.3:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.1.0.tgz#81337d203928b0fe7f066d16f028a759893b47f2"
 
+axe-core@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.1.1.tgz#c00515481b2abc47a87a3cbcd6ba2ae2d78d027f"
+
 axios@0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
