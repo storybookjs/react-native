@@ -93,6 +93,11 @@ jobs:
             cd examples/mithril-kitchen-sink
             yarn build-storybook
       - run:
+          name: Build html kitchen-sink
+          command: |
+            cd examples/html-kitchen-sink
+            yarn build-storybook
+      - run:
           name: Build riot kitchen-sink
           command: |
             cd examples/riot-kitchen-sink
