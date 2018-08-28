@@ -2,6 +2,24 @@
   "name": "crna-kitchen-sink",
   "version": "0.1.0",
   "private": true,
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "android": "react-native-scripts android",
+    "eject": "react-native-scripts eject",
+    "ios": "react-native-scripts ios",
+    "start": "react-native-scripts start",
+    "storybook": "storybook start -p 7007",
+    "test": "node node_modules/jest/bin/jest.js --watch"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^24.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-native": "^0.51.0"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "file:../../packs/storybook-addon-actions.tgz",
     "@storybook/addon-knobs": "file:../../packs/storybook-addon-knobs.tgz",
@@ -18,27 +36,9 @@
     "@storybook/node-logger": "file:../../packs/storybook-node-logger.tgz",
     "@storybook/react-native": "file:../../packs/storybook-react-native.tgz",
     "@storybook/ui": "file:../../packs/storybook-ui.tgz",
-    "babel-runtime": "^6.26.0",
     "jest-expo": "^24.0.0",
+    "react-dom": "^16.2.0",
     "react-native-scripts": "^1.8.1",
     "react-test-renderer": "~16.2.0"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
-  "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch",
-    "storybook": "storybook start -p 7007"
-  },
-  "jest": {
-    "preset": "jest-expo"
-  },
-  "dependencies": {
-    "expo": "^24.0.2",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-native": "^0.51.0"
   }
 }

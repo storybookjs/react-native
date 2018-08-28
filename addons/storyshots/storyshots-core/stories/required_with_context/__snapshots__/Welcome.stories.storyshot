@@ -2,10 +2,10 @@
 
 exports[`Storyshots Welcome to Storybook 1`] = `
 <article
-  className="css-3qkdq7"
+  className="css-3qkdq7 ensbfgf0"
 >
   <h1
-    className="css-0"
+    className="css-0 ensbfgf1"
   >
     Welcome to storybook
   </h1>
@@ -15,7 +15,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     We've added some basic stories inside the 
     <code
-      className="css-1rxzob2"
+      className="css-1rxzob2 ensbfgf3"
     >
       src/stories
     </code>
@@ -28,7 +28,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     See these sample 
     <button
-      className="css-1otf2jm"
+      className="css-1otf2jm ensbfgf5"
       onClick={[Function]}
     >
       stories
@@ -36,7 +36,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
      for a component called
      
     <code
-      className="css-1rxzob2"
+      className="css-1rxzob2 ensbfgf3"
     >
       Button
     </code>
@@ -49,14 +49,14 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     (Try editing the 
     <code
-      className="css-1rxzob2"
+      className="css-1rxzob2 ensbfgf3"
     >
       Button
     </code>
      stories located at
      
     <code
-      className="css-1rxzob2"
+      className="css-1rxzob2 ensbfgf3"
     >
       src/stories/index.js
     </code>
@@ -68,7 +68,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     Have a look at the
      
     <a
-      className="css-4d3lbr"
+      className="css-4d3lbr ensbfgf4"
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
       target="_blank"
@@ -79,7 +79,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     section in our documentation.
   </p>
   <p
-    className="css-1tzeee1"
+    className="css-1tzeee1 ensbfgf2"
   >
     <b>
       NOTE:
@@ -87,7 +87,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the 
     <code
-      className="css-1rxzob2"
+      className="css-1rxzob2 ensbfgf3"
     >
       .storybook/webpack.config.js
     </code>

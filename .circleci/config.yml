@@ -1,9 +1,11 @@
-defaults: &defaults
-  working_directory: /tmp/storybook
-  docker:
-    - image: circleci/node:8
-
 version: 2
+
+aliases:
+  - &defaults
+    working_directory: /tmp/storybook
+    docker:
+      - image: circleci/node:8
+
 dependencies:
   pre:
     - yarn global add npm
@@ -13,24 +15,25 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore core dependencies cache"
+          name: Restore core dependencies cache
           keys:
-            - core-dependencies-{{ checksum "yarn.lock" }}
+            - core-dependencies-v3-{{ checksum "yarn.lock" }}
       - run:
-          name: "Install dependencies"
-          command: |
-            yarn install
+          name: Install dependencies
+          command: yarn install
       - run:
-          name: "Dirty check"
-          command: |
-            yarn repo-dirty-check
+          name: Check that yarn.lock is not corrupted
+          command: yarn repo-dirty-check
       - run:
-          name: "Bootstrap"
-          command: |
-            yarn bootstrap --core
+          name: Bootstrap
+          command: yarn bootstrap --core
       - save_cache:
-          name: "Cache core dependencies"
-          key: core-dependencies-v2-{{ checksum "yarn.lock" }}
+          name: Cache core dependencies
+          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
           paths:
             - node_modules
             - examples/angular-cli/node_modules
@@ -41,10 +44,6 @@ jobs:
             - examples/vue-kitchen-sink/node_modules
             - examples/svelte-kitchen-sink/node_modules
             - examples/marko-cli/node_modules
-      - save_cache:
-          name: "Cache core dist"
-          key: core-dist-v2-{{ .Revision }}
-          paths:
             - addons
             - app
             - lib
@@ -52,59 +51,53 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
           name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
           command: sh ./scripts/workaround-puppeteer-issue-290.sh
       - run:
-          name: "Build react kitchen-sink"
+          name: Build react kitchen-sink
           command: |
             cd examples/cra-kitchen-sink
             yarn build-storybook
       - run:
-          name: "Build vue kitchen-sink"
+          name: Build vue kitchen-sink
           command: |
             cd examples/vue-kitchen-sink
             yarn build-storybook
       - run:
-          name: "Build svelte kitchen-sink"
+          name: Build svelte kitchen-sink
           command: |
             cd examples/svelte-kitchen-sink
             yarn build-storybook
       - run:
-          name: "Build angular-cli"
+          name: Build angular-cli
           command: |
             cd examples/angular-cli
             yarn build-storybook
       - run:
-          name: "Build polymer-cli"
+          name: Build polymer-cli
           command: |
             cd examples/polymer-cli
             yarn build-storybook
       - run:
-          name: "Build marko-cli"
+          name: Build marko-cli
           command: |
             cd examples/marko-cli
             yarn build-storybook
       - run:
-          name: "Build official-storybook"
+          name: Build official-storybook
           command: |
             cd examples/official-storybook
             yarn build-storybook
       - run:
-          name: "Build mithril kitchen-sink"
+          name: Build mithril kitchen-sink
           command: |
             cd examples/mithril-kitchen-sink
             yarn build-storybook
       - run:
-          name: "Run image snapshots"
+          name: Run image snapshots
           command: yarn test --image
       - store_artifacts:
           path: examples/official-storybook/image-snapshots/__image_snapshots__
@@ -113,47 +106,45 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
-
+      - attach_workspace:
+          at: .
       - run:
-          name: "Run react kitchen-sink (smoke test)"
+          name: Run react kitchen-sink (smoke test)
           command: |
             cd examples/cra-kitchen-sink
             yarn storybook --smoke-test
       - run:
-          name: "Run vue kitchen-sink (smoke test)"
+          name: Run vue kitchen-sink (smoke test)
           command: |
             cd examples/vue-kitchen-sink
             yarn storybook --smoke-test
       - run:
-          name: "Run svelte kitchen-sink (smoke test)"
+          name: Run svelte kitchen-sink (smoke test)
           command: |
             cd examples/svelte-kitchen-sink
             yarn storybook --smoke-test
       - run:
-          name: "Run angular-cli (smoke test)"
+          name: Run angular-cli (smoke test)
           command: |
             cd examples/angular-cli
             yarn storybook --smoke-test
       - run:
-          name: "Run polymer-cli (smoke test)"
+          name: Run polymer-cli (smoke test)
           command: |
             cd examples/polymer-cli
             yarn storybook --smoke-test
       - run:
-          name: "Run official-storybook (smoke test)"
+          name: Run marko-cli (smoke test)
+          command: |
+            cd examples/marko-cli
+            yarn storybook --smoke-test
+      - run:
+          name: Run official-storybook (smoke test)
           command: |
             cd examples/official-storybook
             yarn storybook --smoke-test
       - run:
-          name: "Run mithril kitchen-sink (smoke test)"
+          name: Run mithril kitchen-sink (smoke test)
           command: |
             cd examples/mithril-kitchen-sink
             yarn storybook --smoke-test
@@ -161,30 +152,23 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Bootstrap"
-          command: |
-            yarn bootstrap --reactnative --reactnativeapp
+          name: Bootstrap
+          command: yarn bootstrap --reactnative --reactnativeapp
       - run:
-          name: "Run React-Native example"
+          name: Run React-Native example
           command: |
             cd examples/react-native-vanilla
             yarn storybook --smoke-test
       - run:
-          name: "Run React-Native-App example"
+          name: Run React-Native-App example
           command: |
             cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
       - run:
-          name: "Run React-Native unit tests"
+          name: Run React-Native unit tests
           command: |
             yarn test --coverage --runInBand --reactnative
             yarn coverage
@@ -193,123 +177,98 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: "Restore dependencies cache"
+          name: Restore docs dependencies cache
           keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
+            - docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
       - run:
-          name: "Install dependencies"
+          name: Install dependencies
           command: |
             cd docs
-            yarn install --frozen-lockfile
+            yarn install
       - run:
-          name: "Build docs"
+          name: Build docs
           command: |
             cd docs
             yarn build
       - save_cache:
-          name: "Cache dependencies"
-          key: docs-dependencies-{{ checksum "docs/yarn.lock" }}
+          name: Cache docs dependencies
+          key: docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
           paths:
-            - docs/node_modules
-      - save_cache:
-          name: "Cache built docs"
-          key: built-docs-{{ .Revision }}
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
           paths:
             - docs/public
+            - docs/node_modules
   lint:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore docs dependencies cache"
-          keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Lint"
-          command: |
-            yarn lint
+          name: Lint
+          command: yarn lint
   unit-test:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Run unit tests"
-          command: |
-            yarn test --coverage --runInBand --core
-            yarn coverage
+          name: Test
+          command: yarn test --coverage --runInBand --core
+      - persist_to_workspace:
+          root: .
+          paths:
+            - coverage
+  coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Upload coverage
+          command: yarn coverage
   cli:
-    working_directory: /tmp/storybook
+    <<: *defaults
     docker:
       - image: andthensome/docker-node-rsync
     environment:
         BASH_ENV: ~/.bashrc
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Test CLI"
-          command: |
-            yarn test --cli
+          name: Test
+          command: yarn test --cli
+          no_output_timeout: 1800
   cli-latest-cra:
-    working_directory: /tmp/storybook
+    <<: *defaults
     docker:
       - image: andthensome/docker-node-rsync
     environment:
         BASH_ENV: ~/.bashrc
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore core dependencies cache"
-          keys:
-            - core-dependencies-v2-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          name: "Restore core dist cache"
-          keys:
-            - core-dist-v2-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
-          name: "Test CLI with latest CR(N)A"
-          command: |
-            yarn test-latest-cra
+          name: Test CLI with latest CR(N)A
+          command: yarn test-latest-cra
   deploy:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          name: "Restore docs dependencies cache"
-          keys:
-            - docs-dependencies-{{ checksum "docs/yarn.lock" }}
-      - restore_cache:
-          name: "Restore built docs"
-          keys:
-            - built-docs-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - add_ssh_keys:
           fingerprints:
             - "35:aa:b9:c3:b8:1c:27:1f:02:0a:73:1a:ac:58:77:df"
       - run:
-          name: "Deploy"
+          name: Deploy
           command: |
             cd docs
             git config --global user.email "gh-pages@localhost"
@@ -317,9 +276,14 @@ jobs:
             yarn deploy:ci
 workflows:
   version: 2
-  build_accept_deploy:
+  build_test_deploy:
     jobs:
       - build
+      - docs
+      - lint:
+          requires:
+            - docs
+            - build
       - example-kitchen-sinks:
           requires:
             - build
@@ -329,14 +293,12 @@ workflows:
       - react-native:
           requires:
             - build
-      - docs
-      - lint:
-          requires:
-            - docs
-            - build
       - unit-test:
           requires:
             - build
+      - coverage:
+          requires:
+            - unit-test
       - cli:
           requires:
             - build
@@ -347,6 +309,7 @@ workflows:
           requires:
             - docs
           filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+/
             branches:
-              only:
-                - release/3.4
+              ignore: /.*/

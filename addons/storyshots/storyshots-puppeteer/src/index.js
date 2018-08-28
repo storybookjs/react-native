@@ -59,20 +59,21 @@ export const imageSnapshot = (customConfig = {}) => {
 
     expect.assertions(1);
 
+    let image;
     try {
       await customizePage(page);
       await page.goto(url, getGotoOptions({ context, url }));
       await beforeScreenshot(page, { context, url });
-      const image = await page.screenshot(getScreenshotOptions({ context, url }));
-
-      expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
+      image = await page.screenshot(getScreenshotOptions({ context, url }));
     } catch (e) {
       logger.error(
-        `ERROR WHILE CONNECTING TO ${url}, did you start or build the storybook first ? A storybook instance should be running or a static version should be built when using image snapshot feature.`,
+        `Error when connecting to ${url}, did you start or build the storybook first? A storybook instance should be running or a static version should be built when using image snapshot feature.`,
         e
       );
       throw e;
     }
+
+    expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
   };
 
   testFn.afterAll = () => browser.close();
