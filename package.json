@@ -75,7 +75,7 @@
     "@babel/preset-react": "^7.0.0-rc.3",
     "@babel/preset-stage-0": "^7.0.0-rc.3",
     "@babel/runtime": "^7.0.0-rc.3",
-    "axe-core":"^3.1.1",
+    "axe-core": "^3.1.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
@@ -192,5 +192,8 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
+  },
+  "dependencies": {
+    "yarn": "^1.9.4"
   }
 }
