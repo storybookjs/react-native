@@ -2,8 +2,14 @@
 
 exports[`Storyshots Addon|Links Go to welcome 1`] = `
 <div
+  data-is="my-button"
   id="root"
 >
-  <root />
+  <button
+    class="rounded button"
+    style="color: #42b983; border-color: #42b983"
+  >
+    This button links to Welcome!
+  </button>
 </div>
 `;

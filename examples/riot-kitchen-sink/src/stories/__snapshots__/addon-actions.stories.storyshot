@@ -2,16 +2,28 @@
 
 exports[`Storyshots Addon|Actions Action only 1`] = `
 <div
+  data-is="my-button"
   id="root"
 >
-  <root />
+  <button
+    class="button"
+    style="color: #42b983; border-color: #42b983"
+  >
+    Click me to log the action!
+  </button>
 </div>
 `;
 
 exports[`Storyshots Addon|Actions Multiple actions 1`] = `
 <div
+  data-is="my-button"
   id="root"
 >
-  <root />
+  <button
+    class="button"
+    style="color: #42b983; border-color: #42b983"
+  >
+    Double Click me to log the action!
+  </button>
 </div>
 `;

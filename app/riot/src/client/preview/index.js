@@ -16,5 +16,5 @@ export const {
 } = clientApi;
 
 export const { configure } = configApi;
-const mount = vendorMount.bind(riot, 'root');
+const mount = vendorMount.bind(riot, '#root');
 export { forceReRender, render, tag2 as tag, mount };

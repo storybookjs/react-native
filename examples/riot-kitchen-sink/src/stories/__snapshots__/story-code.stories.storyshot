@@ -46,25 +46,23 @@ exports[`Storyshots Story|How to create a story built from tags and template 1`]
 
 exports[`Storyshots Story|How to create a story built from the precompilation 1`] = `
 <div
+  data-is="anothertest"
   id="root"
 >
-  <root />
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
 </div>
 `;
 
 exports[`Storyshots Story|How to create a story built with tag 1`] = `
 <div
+  data-is="test"
   id="root"
 >
-  <root />
-</div>
-`;
-
-exports[`Storyshots Story|How to create a story built with tag2 1`] = `
-<div
-  id="root"
->
-  <root />
+  <div>
+    simple test (with a parameter)
+  </div>
 </div>
 `;
 
