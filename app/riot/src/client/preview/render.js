@@ -4,10 +4,15 @@ import { mount, unregister, tag2 } from 'riot';
 import compiler from 'riot-compiler';
 import { render as renderRiot } from './render-riot';
 
-const rootElement = document.getElementById('root');
-
-export default function renderMain({ story, selectedKind, selectedStory, showMain, showError }) {
+export default function renderMain({
+  story,
+  selectedKind,
+  selectedStory,
+  showMain = () => {},
+  showError = () => {},
+}) {
   showMain();
+  const rootElement = document.querySelector('root');
   rootElement.innerHTML = '<root></root>';
   const context = { unregister, mount, tag2, compiler, rootElement };
   const component = story();
@@ -20,4 +25,5 @@ export default function renderMain({ story, selectedKind, selectedStory, showMai
         Use "() => <your snippet or node>" or when defining the story.
       `,
     });
+  return rendered;
 }

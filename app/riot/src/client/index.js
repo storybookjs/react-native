@@ -6,4 +6,5 @@ export {
   configure,
   getStorybook,
   forceReRender,
+  render,
 } from './preview';

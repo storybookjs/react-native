@@ -98,196 +98,30 @@ exports[`Storyshots App App 1`] = `
 `;
 
 exports[`Storyshots Button rounded 1`] = `
-<root
-  data-is="app"
->
-  <div
-    id="app"
+<root>
+  <my-button
+    rounded="true"
   >
-     
-    <img
-      src="./logo.png"
-    />
-     
-    <h1 />
-     
-    <h2>
-      Essential Links
-    </h2>
-     
-    <ul>
-       
-      <li>
-        <a
-          href="https://riot.js.org/"
-          target="_blank"
-        >
-          riot.js Docs
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://riot.js.org/made-with-riot/"
-          target="_blank"
-        >
-          Showcase
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://riot.js.org/download/"
-          target="_blank"
-        >
-          Download now
-        </a>
-      </li>
-       
-    </ul>
-     
-    <h2>
-      Ecosystem
-    </h2>
-     
-    <ul>
-       
-      <li>
-        <a
-          href="https://riotgear.js.org/"
-          target="_blank"
-        >
-          riot gear
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://riotgear2.github.io/"
-          target="_blank"
-        >
-          riot gear 2
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://kysonic.github.io/riot-mui/"
-          target="_blank"
-        >
-          riot material UI
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://devhints.io/riot"
-          target="_blank"
-        >
-          riot cheatsheet
-        </a>
-      </li>
-       
-    </ul>
-     
-  </div>
+    <button
+      class="rounded button"
+      style="color: #42b983; border-color: #42b983"
+    >
+      A Button with rounded edges!
+    </button>
+  </my-button>
 </root>
 `;
 
 exports[`Storyshots Button square 1`] = `
-<root
-  data-is="app"
->
-  <div
-    id="app"
-  >
-     
-    <img
-      src="./logo.png"
-    />
-     
-    <h1 />
-     
-    <h2>
-      Essential Links
-    </h2>
-     
-    <ul>
-       
-      <li>
-        <a
-          href="https://riot.js.org/"
-          target="_blank"
-        >
-          riot.js Docs
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://riot.js.org/made-with-riot/"
-          target="_blank"
-        >
-          Showcase
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://riot.js.org/download/"
-          target="_blank"
-        >
-          Download now
-        </a>
-      </li>
-       
-    </ul>
-     
-    <h2>
-      Ecosystem
-    </h2>
-     
-    <ul>
-       
-      <li>
-        <a
-          href="https://riotgear.js.org/"
-          target="_blank"
-        >
-          riot gear
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://riotgear2.github.io/"
-          target="_blank"
-        >
-          riot gear 2
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://kysonic.github.io/riot-mui/"
-          target="_blank"
-        >
-          riot material UI
-        </a>
-      </li>
-       
-      <li>
-        <a
-          href="https://devhints.io/riot"
-          target="_blank"
-        >
-          riot cheatsheet
-        </a>
-      </li>
-       
-    </ul>
-     
-  </div>
+<root>
+  <my-button>
+    <button
+      class="button"
+      style="color: #42b983; border-color: #42b983"
+    >
+      A Button with square edges!
+    </button>
+  </my-button>
 </root>
 `;
 

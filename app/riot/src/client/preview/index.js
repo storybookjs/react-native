@@ -15,4 +15,4 @@ export const {
 } = clientApi;
 
 export const { configure } = configApi;
-export { forceReRender };
+export { forceReRender, render };

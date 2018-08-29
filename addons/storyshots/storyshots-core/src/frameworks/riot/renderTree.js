@@ -1,13 +1,32 @@
 import { document } from 'global';
 
-document.body = document.createElement('body');
-// eslint-disable-next-line no-unused-vars
-const rootElement = document.body.appendChild(document.createElement('root'));
+const riotForStorybook = require.requireActual('@storybook/riot');
+
+function bootstrapADocumentAndReturnANode() {
+  const rootElement = document.createElement('root');
+  document.body = document.createElement('body');
+  document.body.appendChild(rootElement);
+  return rootElement;
+}
+
+function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
+  if (!rootElement.firstChild) {
+    riotForStorybook.render({
+      story: () => result,
+      selectedKind: context.kind,
+      selectedStory: context.story,
+    });
+  }
+}
 
 function getRenderedTree(story, context) {
-  story.render(context);
+  const rootElement = bootstrapADocumentAndReturnANode();
 
-  return document.body.firstChild;
+  const result = story.render(context);
+
+  makeSureThatResultIsRenderedSomehow({ context, result, rootElement });
+
+  return rootElement;
 }
 
 export default getRenderedTree;

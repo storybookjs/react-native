@@ -2,7 +2,7 @@ import global from 'global';
 import hasDependency from '../hasDependency';
 import configure from '../configure';
 
-function mockVueToIncludeCompiler() {
+function mockRiotToIncludeCompiler() {
   jest.mock('riot', () => require.requireActual('riot/riot.js'));
 }
 
@@ -12,7 +12,7 @@ function test(options) {
 
 function load(options) {
   global.STORYBOOK_ENV = 'riot';
-  mockVueToIncludeCompiler();
+  mockRiotToIncludeCompiler();
 
   const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/riot');
