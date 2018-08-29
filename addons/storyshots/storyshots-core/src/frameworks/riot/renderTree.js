@@ -3,7 +3,8 @@ import { document } from 'global';
 const riotForStorybook = require.requireActual('@storybook/riot');
 
 function bootstrapADocumentAndReturnANode() {
-  const rootElement = document.createElement('root');
+  const rootElement = document.createElement('div');
+  rootElement.id = 'root';
   document.body = document.createElement('body');
   document.body.appendChild(rootElement);
   return rootElement;

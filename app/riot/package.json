@@ -26,11 +26,7 @@
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "moment": "^2.22.2",
-    "riot": "^3.11.1",
-    "riot-hot-reload": "^1.0.0",
-    "riot-tag-loader": "^2.1.0",
     "raw-loader": "^0.5.1",
-    "riot-compiler": "^3.5.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },

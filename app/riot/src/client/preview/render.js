@@ -12,7 +12,7 @@ export default function renderMain({
   showError = () => {},
 }) {
   showMain();
-  const rootElement = document.querySelector('root');
+  const rootElement = document.getElementById('root');
   rootElement.innerHTML = '<root></root>';
   const context = { unregister, mount, tag2, compiler, rootElement };
   const component = story();

@@ -1,6 +1,5 @@
-import { storiesOf } from '@storybook/riot';
+import { mount, storiesOf } from '@storybook/riot';
 import { linkTo } from '@storybook/addon-links';
-import { mount } from 'riot';
 import ButtonRaw from './Button.txt';
 // eslint-disable-next-line no-unused-vars
 import Welcome from './Welcome.tag';
@@ -8,10 +7,10 @@ import Welcome from './Welcome.tag';
 import App from '../App.tag';
 
 storiesOf('Welcome', module).add('Welcome', () =>
-  mount('root', 'welcome', { goToButton: linkTo('Button') })
+  mount('welcome', { goToButton: linkTo('Button') })
 );
 
-storiesOf('App', module).add('App', () => mount('root', 'app', {}));
+storiesOf('App', module).add('App', () => mount('app', {}));
 
 storiesOf('Button', module)
   // Works if riot.component is called in the config.js in .storybook

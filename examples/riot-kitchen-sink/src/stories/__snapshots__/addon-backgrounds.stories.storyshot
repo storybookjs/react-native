@@ -1,27 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon|Backgrounds story 1 1`] = `
-<root>
-  <my-button>
-    <button
-      class="button"
-      style="color: #42b983; border-color: #42b983"
-    >
-      You should be able to switch backgrounds for this story!
-    </button>
-  </my-button>
-</root>
+<div
+  id="root"
+>
+  <root>
+    <my-button>
+      <button
+        class="button"
+        style="color: #42b983; border-color: #42b983"
+      >
+        You should be able to switch backgrounds for this story!
+      </button>
+    </my-button>
+  </root>
+</div>
 `;
 
 exports[`Storyshots Addon|Backgrounds story 2 1`] = `
-<root>
-  <my-button>
-    <button
-      class="button"
-      style="color: #42b983; border-color: #42b983"
-    >
-      This one too!!
-    </button>
-  </my-button>
-</root>
+<div
+  id="root"
+>
+  <root>
+    <my-button>
+      <button
+        class="button"
+        style="color: #42b983; border-color: #42b983"
+      >
+        This one too!!
+      </button>
+    </my-button>
+  </root>
+</div>
 `;

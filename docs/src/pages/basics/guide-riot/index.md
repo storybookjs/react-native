@@ -65,13 +65,8 @@ Here's an example `.storybook/config.js` to get you started:
 ```js
 import { configure } from '@storybook/riot';
 
-import riot from 'riot';
-
 // Import your custom components.
 import Mybutton from '../src/stories/Button.tag'; //eslint-disable-line no-unused-vars
-
-// Register custom components.
-riot.mount('my-button'); // registers Button.tag
 
 function loadStories() {
   // You can require as many stories as you need.
@@ -93,19 +88,17 @@ All custom components can be registered before or after calling `configure()`.
 There are several ways to implement a story using either a text import or a component import
 
 ```js
-import { storiesOf } from '@storybook/riot';
-import { tag2, mount } from 'riot';
-// eslint-disable-next-line import/no-webpack-loader-syntax,import/no-unresolved
-import SimpleTestRaw from 'raw-loader!./SimpleTest.tag';
+import { tag, mount, storiesOf } from '@storybook/riot';
+import SimpleTestRaw from './SimpleTest.txt'; //can be loaded as string if you prefer
 // eslint-disable-next-line no-unused-vars
 import anothertest from './AnotherTest.tag';
 
 storiesOf('Story|How to create a story', module)
   .add(
-    'built with tag2', // the template is compiled below
+    'built with tag', // the template is compiled below
     () =>
-      tag2('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
-      mount('root', 'test', { value: 'with a parameter' }))
+      tag('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
+      mount('test', { value: 'with a parameter' }))
 
   // tags[0] will be the parent tag, always
   // you can leave out the root tag, if we find out that the new root tag
@@ -135,7 +128,7 @@ storiesOf('Story|How to create a story', module)
   // the tag is already compiled before running the js
   // the tag name 'anothertest' must match exactly the root tag inside the tag file
   // mind the lower case
-  .add('built from the precompilation', () => mount('root', 'anothertest', {}), {
+  .add('built from the precompilation', () => mount('anothertest', {}), {
     notes: 'WARN, only works in lower case, never upper case with precompiled templates',
   });
 ```

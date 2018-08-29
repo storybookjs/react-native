@@ -1,27 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon|Actions Action only 1`] = `
-<root
-  data-is="my-button"
+<div
+  id="root"
 >
-  <button
-    class="button"
-    style="color: #42b983; border-color: #42b983"
-  >
-    Click me to log the action!
-  </button>
-</root>
+  <root />
+</div>
 `;
 
 exports[`Storyshots Addon|Actions Multiple actions 1`] = `
-<root
-  data-is="my-button"
+<div
+  id="root"
 >
-  <button
-    class="button"
-    style="color: #42b983; border-color: #42b983"
-  >
-    Double Click me to log the action!
-  </button>
-</root>
+  <root />
+</div>
 `;

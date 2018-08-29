@@ -2,7 +2,7 @@ import { document } from 'global';
 
 const alreadyCompiledMarker = "var riot = require('riot')";
 
-export function guessRootName(stringified) {
+function guessRootName(stringified) {
   const whiteSpaceLocation = stringified.indexOf(' ', stringified.indexOf('<') + 1);
   const firstWhitespace = whiteSpaceLocation === -1 ? stringified.length : whiteSpaceLocation;
   const supposedName = stringified.trim().match(/^<[^ >]+\/>$/)
@@ -32,7 +32,7 @@ function compileText(compiler, code, rootName) {
 const getRidOfRiotNoise = compiled =>
   compiled.replace(/riot\.tag2/g, 'tag2').replace(alreadyCompiledMarker, '');
 
-export function renderStringified(
+function renderStringified(
   { tags, template = `<${(tags[0] || []).boundAs || guessRootName(tags[0] || '')}/>` },
   { unregister, tag2, mount, compiler } // eslint-disable-line no-unused-vars
 ) {
@@ -52,7 +52,7 @@ export function renderStringified(
 }
 
 // eslint-disable-next-line no-unused-vars
-export function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
+function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
   unregister('root');
   // eslint-disable-next-line no-eval
   eval(
@@ -63,16 +63,16 @@ export function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
   mount('root', /tag2\s*\(\s*'([^']+)'/.exec(sourceCode)[1], {});
 }
 
-export function renderCompiledObject(component, { rootElement }) {
+function renderCompiledObject(component, { rootElement }) {
   if (component.length) rootElement.appendChild(component[0].__.root); // eslint-disable-line no-underscore-dangle
 }
 
 export function render(component, context) {
-  const { tags } = component || {};
   if (typeof component === 'string') {
     renderRaw(component, context);
     return true;
   }
+  const { tags } = component || {};
   if (Array.isArray(tags)) {
     renderStringified(component, context);
     return true;

@@ -7,4 +7,6 @@ export {
   getStorybook,
   forceReRender,
   render,
+  mount,
+  tag,
 } from './preview';

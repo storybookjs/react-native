@@ -1,13 +1,12 @@
-import { storiesOf } from '@storybook/riot';
-import { tag2, mount } from 'riot';
+import { tag, mount, storiesOf } from '@storybook/riot';
 import { linkTo } from '@storybook/addon-links';
 import ButtonRaw from './Button.txt';
 import { compileNow } from './compileNow';
 
-compileNow(tag2, ButtonRaw);
+compileNow(tag, ButtonRaw);
 
 storiesOf('Addon|Links', module).add('Go to welcome', () =>
-  mount('root', 'my-button', {
+  mount('my-button', {
     rounded: true,
     content: 'This button links to Welcome',
     value: 'with a parameter',

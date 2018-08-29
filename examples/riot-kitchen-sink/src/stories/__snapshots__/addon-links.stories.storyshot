@@ -1,14 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon|Links Go to welcome 1`] = `
-<root
-  data-is="my-button"
+<div
+  id="root"
 >
-  <button
-    class="rounded button"
-    style="color: #42b983; border-color: #42b983"
-  >
-    This button links to Welcome!
-  </button>
-</root>
+  <root />
+</div>
 `;

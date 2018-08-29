@@ -1,5 +1,4 @@
-import { storiesOf } from '@storybook/riot';
-import { tag2, mount } from 'riot';
+import { tag, mount, storiesOf } from '@storybook/riot';
 import SimpleTestRaw from './SimpleTest.txt';
 // eslint-disable-next-line no-unused-vars
 import anothertest from './AnotherTest.tag';
@@ -9,10 +8,10 @@ const simpleTestCompiled = asCompiledCode(SimpleTestRaw);
 
 storiesOf('Story|How to create a story', module)
   .add(
-    'built with tag2',
+    'built with tag',
     () =>
-      tag2('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
-      mount('root', 'test', { value: 'with a parameter' })
+      tag('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
+      mount('test', { value: 'with a parameter' })
   )
 
   .add('built as string', () => ({ tags: ['<test><div>simple test</div></test>'] }))
@@ -32,7 +31,7 @@ storiesOf('Story|How to create a story', module)
     }
   )
 
-  .add('built from the precompilation', () => mount('root', 'anothertest', {}), {
+  .add('built from the precompilation', () => mount('anothertest', {}), {
     notes: 'WARN, only works in lower case, never upper case with precompiled templates',
   });
 

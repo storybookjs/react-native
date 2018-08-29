@@ -1,69 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Addon|Knobs All knobs 1`] = `
-<root>
-  <whatigot>
-    <div
-      style="border:2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
-    >
-       
-      <h1>
-        My name is Jane,
-      </h1>
-       
-      <h3>
-        today is January 20, 2017
-      </h3>
-       
-      <p>
-        I have a stock of 20 apples, costing $2.25 each.
-      </p>
-       
-      <p>
-        Also, I have:
-      </p>
-       
-      <ul>
+<div
+  id="root"
+>
+  <root>
+    <whatigot>
+      <div
+        style="border:2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
+      >
          
-        <li
-          key="Laptop"
-        >
-          Laptop
-        </li>
-        <li
-          key="Book"
-        >
-          Book
-        </li>
-        <li
-          key="Whiskey"
-        >
-          Whiskey
-        </li>
+        <h1>
+          My name is Jane,
+        </h1>
          
-      </ul>
-       
-      <p>
-        Nice to meet you!
-      </p>
-       
-    </div>
-  </whatigot>
-</root>
+        <h3>
+          today is January 20, 2017
+        </h3>
+         
+        <p>
+          I have a stock of 20 apples, costing $2.25 each.
+        </p>
+         
+        <p>
+          Also, I have:
+        </p>
+         
+        <ul>
+           
+          <li
+            key="Laptop"
+          >
+            Laptop
+          </li>
+          <li
+            key="Book"
+          >
+            Book
+          </li>
+          <li
+            key="Whiskey"
+          >
+            Whiskey
+          </li>
+           
+        </ul>
+         
+        <p>
+          Nice to meet you!
+        </p>
+         
+      </div>
+    </whatigot>
+  </root>
+</div>
 `;
 
 exports[`Storyshots Addon|Knobs Simple 1`] = `
-<root>
-  <div>
-    I am John Doe and I'm 44 years old.
-  </div>
-</root>
+<div
+  id="root"
+>
+  <root>
+    <div>
+      I am John Doe and I'm 44 years old.
+    </div>
+  </root>
+</div>
 `;
 
 exports[`Storyshots Addon|Knobs XSS safety 1`] = `
-<root>
-  <div>
-     &lt;img src=x onerror="alert('XSS Attack')" &gt; 
-  </div>
-</root>
+<div
+  id="root"
+>
+  <root>
+    <div>
+       &lt;img src=x onerror="alert('XSS Attack')" &gt; 
+    </div>
+  </root>
+</div>
 `;
