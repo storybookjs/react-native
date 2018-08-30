@@ -36,7 +36,6 @@ function renderStringified(
   { tags, template = `<${(tags[0] || []).boundAs || guessRootName(tags[0] || '')}/>` },
   { unregister, tag2, mount, compiler } // eslint-disable-line no-unused-vars
 ) {
-  unregister('root');
   tags.forEach(oneTag => {
     const rootName = oneTag.boundAs || guessRootName(oneTag);
     const { content } = oneTag || {};
@@ -48,12 +47,12 @@ function renderStringified(
   });
   const sourceCode = `<root>${template}</root>`;
   if (template !== '<root/>') eval(getRidOfRiotNoise(`${compiler.compile(sourceCode, {})}`)); // eslint-disable-line no-eval
+
   mount('*');
 }
 
 // eslint-disable-next-line no-unused-vars
 function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
-  unregister('root');
   // eslint-disable-next-line no-eval
   eval(
     getRidOfRiotNoise(
@@ -63,22 +62,25 @@ function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
   mount('root', /tag2\s*\(\s*'([^']+)'/.exec(sourceCode)[1], {});
 }
 
-function renderCompiledObject(component, { rootElement }) {
-  if (component.length) rootElement.appendChild(component[0].__.root); // eslint-disable-line no-underscore-dangle
-}
-
 export function render(component, context) {
+  const rootElement = document.getElementById('root');
   if (typeof component === 'string') {
+    rootElement.dataset.is = undefined;
+    rootElement.innerHTML = '';
+    rootElement.dataset.is = 'root';
     renderRaw(component, context);
     return true;
   }
   const { tags } = component || {};
   if (Array.isArray(tags)) {
+    rootElement.dataset.is = undefined;
+    rootElement.innerHTML = '';
+    rootElement.dataset.is = 'root';
     renderStringified(component, context);
     return true;
   }
-  if (component && Array.isArray(component)) {
-    renderCompiledObject(component, context);
+  if (component && component.length) {
+    // already rendered, nothing to do
     return true;
   }
   return false;

@@ -1,4 +1,3 @@
-import { document } from 'global';
 import { stripIndents } from 'common-tags';
 import { mount, unregister, tag2 } from 'riot';
 import compiler from 'riot-compiler';
@@ -12,9 +11,7 @@ export default function renderMain({
   showError = () => {},
 }) {
   showMain();
-  const rootElement = document.getElementById('root');
-  rootElement.innerHTML = '<root></root>';
-  const context = { unregister, mount, tag2, compiler, rootElement };
+  const context = { unregister, mount, tag2, compiler };
   const component = story();
   const rendered = renderRiot(component, context);
   if (!rendered)

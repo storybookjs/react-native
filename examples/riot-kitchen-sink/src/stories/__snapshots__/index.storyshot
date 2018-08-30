@@ -100,37 +100,35 @@ exports[`Storyshots App App 1`] = `
 
 exports[`Storyshots Button rounded 1`] = `
 <div
+  data-is="root"
   id="root"
 >
-  <root>
-    <my-button
-      rounded="true"
+  <my-button
+    rounded="true"
+  >
+    <button
+      class="rounded button"
+      style="color: #42b983; border-color: #42b983"
     >
-      <button
-        class="rounded button"
-        style="color: #42b983; border-color: #42b983"
-      >
-        A Button with rounded edges!
-      </button>
-    </my-button>
-  </root>
+      A Button with rounded edges!
+    </button>
+  </my-button>
 </div>
 `;
 
 exports[`Storyshots Button square 1`] = `
 <div
+  data-is="root"
   id="root"
 >
-  <root>
-    <my-button>
-      <button
-        class="button"
-        style="color: #42b983; border-color: #42b983"
-      >
-        A Button with square edges!
-      </button>
-    </my-button>
-  </root>
+  <my-button>
+    <button
+      class="button"
+      style="color: #42b983; border-color: #42b983"
+    >
+      A Button with square edges!
+    </button>
+  </my-button>
 </div>
 `;
 

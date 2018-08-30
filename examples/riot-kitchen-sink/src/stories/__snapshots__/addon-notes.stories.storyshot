@@ -2,32 +2,30 @@
 
 exports[`Storyshots Addon|Notes Note with HTML 1`] = `
 <div
+  data-is="root"
   id="root"
 >
-  <root>
-    <div>
-      <p>
-        🤔😳😯😮
-        <br />
-        😄😩😓😱
-        <br />
-        🤓😑😶😊
-      </p>
-    </div>
-  </root>
+  <div>
+    <p>
+      🤔😳😯😮
+      <br />
+      😄😩😓😱
+      <br />
+      🤓😑😶😊
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Addon|Notes Simple note 1`] = `
 <div
+  data-is="root"
   id="root"
 >
-  <root>
-    <p>
-      <strong>
-        Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
-      </strong>
-    </p>
-  </root>
+  <p>
+    <strong>
+      Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
+    </strong>
+  </p>
 </div>
 `;
