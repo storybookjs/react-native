@@ -1,8 +1,8 @@
-import { tag, mount, storiesOf, compileNow } from '@storybook/riot';
+import { mount, storiesOf, compileNow } from '@storybook/riot';
 import { linkTo } from '@storybook/addon-links';
 import ButtonRaw from './Button.txt';
 
-compileNow(tag, ButtonRaw);
+compileNow(ButtonRaw);
 
 storiesOf('Addon|Links', module).add('Go to welcome', () =>
   mount('my-button', {

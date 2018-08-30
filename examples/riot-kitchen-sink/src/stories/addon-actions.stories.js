@@ -1,8 +1,8 @@
-import { tag, mount, storiesOf, compileNow } from '@storybook/riot';
+import { mount, storiesOf, compileNow } from '@storybook/riot';
 import { action } from '@storybook/addon-actions';
 import ButtonRaw from './Button.txt';
 
-compileNow(tag, ButtonRaw);
+compileNow(ButtonRaw);
 
 storiesOf('Addon|Actions', module)
   .add('Action only', () =>
