@@ -5,20 +5,19 @@ import { render } from './render-riot';
 
 const rootElement = document.createElement('div');
 rootElement.id = 'root';
+rootElement.dataset.is = 'root';
 document.body = document.createElement('body');
 document.body.appendChild(rootElement);
 
 const context = {
   unregister,
-  rootElement,
   compiler,
   tag2,
   mount,
 };
 
 beforeEach(() => {
-  rootElement.innerHTML = '';
-  unregister('root');
+  unregister('#root');
 });
 
 describe('render a riot element', () => {
