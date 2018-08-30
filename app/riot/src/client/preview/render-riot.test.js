@@ -3,8 +3,10 @@ import { unregister, tag2, mount } from 'riot/riot';
 import compiler from 'riot-compiler';
 import { render } from './render-riot';
 
+const rootElement = document.createElement('div');
+rootElement.id = 'root';
 document.body = document.createElement('body');
-const rootElement = document.body.appendChild(document.createElement('root'));
+document.body.appendChild(rootElement);
 
 const context = {
   unregister,
@@ -41,7 +43,7 @@ describe('render a riot element', () => {
   });
 
   it('can work with compiled code', () => {
-    expect(render([], context)).toBe(true);
+    expect(render([{}], context)).toBe(true);
     // does only work in true mode, and not in jest mode
   });
 
