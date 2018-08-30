@@ -65,7 +65,6 @@ function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
 export function render(component, context) {
   const rootElement = document.getElementById('root');
   if (typeof component === 'string') {
-    rootElement.dataset.is = undefined;
     rootElement.innerHTML = '';
     rootElement.dataset.is = 'root';
     renderRaw(component, context);
@@ -73,7 +72,6 @@ export function render(component, context) {
   }
   const { tags } = component || {};
   if (Array.isArray(tags)) {
-    rootElement.dataset.is = undefined;
     rootElement.innerHTML = '';
     rootElement.dataset.is = 'root';
     renderStringified(component, context);
