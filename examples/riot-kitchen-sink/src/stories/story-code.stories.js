@@ -1,8 +1,6 @@
-import { tag, mount, storiesOf } from '@storybook/riot';
+import { tag, mount, storiesOf, asCompiledCode } from '@storybook/riot';
 import SimpleTestRaw from './SimpleTest.txt';
-// eslint-disable-next-line no-unused-vars
-import anothertest from './AnotherTest.tag';
-import { asCompiledCode } from './compileNow';
+import './AnotherTest.tag';
 
 const simpleTestCompiled = asCompiledCode(SimpleTestRaw);
 

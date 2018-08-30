@@ -40,7 +40,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.0.0-rc.2"
   },
   "peerDependencies": {
-    "babel-core": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
     "riot": "^3.0.0 || ^4.0.0",
     "riot-compiler": "^3.5.1 || ^4.0.0",
     "riot-hot-reload": "^1.0.0",

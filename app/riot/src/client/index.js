@@ -9,4 +9,6 @@ export {
   render,
   mount,
   tag,
+  compileNow,
+  asCompiledCode,
 } from './preview';

@@ -1,10 +1,8 @@
 import { mount, storiesOf } from '@storybook/riot';
 import { linkTo } from '@storybook/addon-links';
 import ButtonRaw from './Button.txt';
-// eslint-disable-next-line no-unused-vars
-import Welcome from './Welcome.tag';
-// eslint-disable-next-line no-unused-vars
-import App from '../App.tag';
+import './Welcome.tag';
+import '../App.tag';
 
 storiesOf('Welcome', module).add('Welcome', () =>
   mount('welcome', { goToButton: linkTo('Button') })

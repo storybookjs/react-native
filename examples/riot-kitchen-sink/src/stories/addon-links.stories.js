@@ -1,7 +1,6 @@
-import { tag, mount, storiesOf } from '@storybook/riot';
+import { tag, mount, storiesOf, compileNow } from '@storybook/riot';
 import { linkTo } from '@storybook/addon-links';
 import ButtonRaw from './Button.txt';
-import { compileNow } from './compileNow';
 
 compileNow(tag, ButtonRaw);
 
