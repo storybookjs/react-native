@@ -1,4 +1,6 @@
 import { document } from 'global';
+import { mount, unregister, tag2 as tag } from 'riot';
+import compiler from 'riot-compiler';
 
 const alreadyCompiledMarker = "var riot = require('riot')";
 
@@ -15,7 +17,7 @@ function guessRootName(stringified) {
   return matchingBuiltInTag === 'HTMLUnknownElement' ? supposedName : 'root';
 }
 
-function compileText(compiler, code, rootName) {
+function compileText(code, rootName) {
   const sourceCodeEndOfHtml =
     (Math.min(code.indexOf('<style') + 1, code.indexOf('<script') + 1) || code.length + 1) - 1;
   const sourceCodeReformatted =
@@ -32,16 +34,17 @@ function compileText(compiler, code, rootName) {
 const getRidOfRiotNoise = compiled =>
   compiled.replace(/riot\.tag2/g, 'tag2').replace(alreadyCompiledMarker, '');
 
-function renderStringified(
-  { tags, template = `<${(tags[0] || []).boundAs || guessRootName(tags[0] || '')}/>` },
-  { unregister, tag2, mount, compiler } // eslint-disable-line no-unused-vars
-) {
+function renderStringified({
+  tags,
+  template = `<${(tags[0] || []).boundAs || guessRootName(tags[0] || '')}/>`,
+}) {
+  const tag2 = tag; // eslint-disable-line no-unused-vars
   tags.forEach(oneTag => {
     const rootName = oneTag.boundAs || guessRootName(oneTag);
     const { content } = oneTag || {};
     const code = content ? content.trim() : oneTag || '';
     const compiled =
-      code.indexOf(alreadyCompiledMarker) !== -1 ? code : compileText(compiler, code, rootName);
+      code.indexOf(alreadyCompiledMarker) !== -1 ? code : compileText(code, rootName);
     unregister(rootName);
     eval(getRidOfRiotNoise(`${compiled}`)); // eslint-disable-line no-eval
   });
@@ -51,8 +54,8 @@ function renderStringified(
   mount('*');
 }
 
-// eslint-disable-next-line no-unused-vars
-function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
+function renderRaw(sourceCode) {
+  const tag2 = tag; // eslint-disable-line no-unused-vars
   // eslint-disable-next-line no-eval
   eval(
     getRidOfRiotNoise(
@@ -62,22 +65,22 @@ function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
   mount('root', /tag2\s*\(\s*'([^']+)'/.exec(sourceCode)[1], {});
 }
 
-function renderCompiledButUnmounted(component, { mount }) {
+function renderCompiledButUnmounted(component) {
   mount('root', component.tagName, component.opts || {});
 }
 
-export function render(component, context) {
+export function render(component) {
   if (typeof component === 'string') {
-    renderRaw(component, context);
+    renderRaw(component);
     return true;
   }
   const { tags } = component || {};
   if (Array.isArray(tags)) {
-    renderStringified(component, context);
+    renderStringified(component);
     return true;
   }
   if (component && component.tagName) {
-    renderCompiledButUnmounted(component, context);
+    renderCompiledButUnmounted(component);
     return true;
   }
   if (component && component.length) {

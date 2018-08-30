@@ -1,7 +1,6 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
-import { mount, unregister, tag2 } from 'riot';
-import compiler from 'riot-compiler';
+import { unregister } from 'riot';
 import { render as renderRiot } from './render-riot';
 
 export default function renderMain({
@@ -16,9 +15,8 @@ export default function renderMain({
   const rootElement = document.getElementById('root');
   rootElement.innerHTML = '';
   rootElement.dataset.is = 'root';
-  const context = { unregister, mount, tag2, compiler };
   const component = story();
-  const rendered = renderRiot(component, context);
+  const rendered = renderRiot(component);
   if (!rendered)
     showError({
       title: `Expecting a riot snippet or a riot component from the story: "${selectedStory}" of "${selectedKind}".`,

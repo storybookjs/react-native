@@ -1,5 +1,5 @@
 import { document } from 'global';
-import { unregister, tag2, mount } from 'riot/riot';
+import { unregister, tag2, mount } from 'riot';
 import compiler from 'riot-compiler';
 import { render } from './render-riot';
 
