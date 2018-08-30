@@ -81,3 +81,5 @@ storiesOf('Button', module).add('with text', () => <button>Click me</button>, {
   backgrounds: { disable: true },
 });
 ```
+
+You can choose your background in a running storybook instance with the `background` query param and either set the background value or the name as the parameter value. E.g. `?background=twitter` or `?background=#00aced`.
