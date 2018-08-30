@@ -5,7 +5,6 @@ import { render } from './render-riot';
 
 const rootElement = document.createElement('div');
 rootElement.id = 'root';
-rootElement.dataset.is = 'root';
 document.body = document.createElement('body');
 document.body.appendChild(rootElement);
 
@@ -18,6 +17,7 @@ const context = {
 
 beforeEach(() => {
   unregister('#root');
+  rootElement.dataset.is = 'root';
 });
 
 describe('render a riot element', () => {
@@ -44,6 +44,14 @@ describe('render a riot element', () => {
   it('can work with compiled code', () => {
     expect(render([{}], context)).toBe(true);
     // does only work in true mode, and not in jest mode
+  });
+
+  it('works with a json consisting in a tagName and opts', () => {
+    tag2('hello', '<p>Hello { opts.suffix }</p>', '', '', () => {});
+
+    expect(render({ tagName: 'hello', opts: { suffix: 'World' } }, context)).toBe(true);
+
+    expect(rootElement.innerHTML).toEqual('<p>Hello World</p>');
   });
 
   it('can nest several tags', () => {

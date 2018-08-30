@@ -17,7 +17,7 @@ In this guide, we are trying to set up Storybook for your Riot project.
 ## Table of contents
 
 -   [Add @storybook/riot](#add-storybookriot)
--   [Add riot and babel-core](#add-riot-and-babel-core)
+-   [Add riot and babel-loader](#add-riot-and-babel-loader)
 -   [Create the NPM script](#create-the-npm-script)
 -   [Create the config file](#create-the-config-file)
 -   [Write your stories](#write-your-stories)
@@ -31,9 +31,9 @@ First of all, you need to add `@storybook/riot` to your project. To do that, sim
 npm i --save-dev @storybook/riot
 ```
 
-## Add riot and babel-core
+## Add riot and babel-loader
 
-Make sure that you have `riot`, the `riot-compiler`, the `riot-tag-loader` and `babel-core` in your dependencies as well because we list it as a peerDependency:
+Make sure that you have `riot`, the `riot-compiler`, the `riot-tag-loader` and `babel-loader` in your dependencies as well because we list it as a peerDependency:
 
 ```sh
 npm i --save riot

@@ -31,7 +31,11 @@ storiesOf('Story|How to create a story', module)
 
   .add('built from the precompilation', () => mount('anothertest', {}), {
     notes: 'WARN, only works in lower case, never upper case with precompiled templates',
-  });
+  })
+
+  .add('the mount instruction is not necessary', () => ({ tagName: 'anothertest', opts: {} }))
+
+  .add('the opts value is not necessary', () => ({ tagName: 'anothertest' }));
 
 storiesOf('Story|Nest tags', module)
   .add('Three tags', () => ({

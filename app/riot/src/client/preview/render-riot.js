@@ -62,6 +62,10 @@ function renderRaw(sourceCode, { unregister, mount, compiler, tag2 }) {
   mount('root', /tag2\s*\(\s*'([^']+)'/.exec(sourceCode)[1], {});
 }
 
+function renderCompiledButUnmounted(component, { mount }) {
+  mount('root', component.tagName, component.opts || {});
+}
+
 export function render(component, context) {
   if (typeof component === 'string') {
     renderRaw(component, context);
@@ -70,6 +74,10 @@ export function render(component, context) {
   const { tags } = component || {};
   if (Array.isArray(tags)) {
     renderStringified(component, context);
+    return true;
+  }
+  if (component && component.tagName) {
+    renderCompiledButUnmounted(component, context);
     return true;
   }
   if (component && component.length) {

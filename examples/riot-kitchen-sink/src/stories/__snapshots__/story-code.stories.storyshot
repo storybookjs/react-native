@@ -61,6 +61,28 @@ exports[`Storyshots Story|How to create a story built with tag 1`] = `
 </div>
 `;
 
+exports[`Storyshots Story|How to create a story the mount instruction is not necessary 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story the opts value is not necessary 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
 exports[`Storyshots Story|Nest tags Matriochka 1`] = `
 <div
   data-is="root"
