@@ -53,7 +53,7 @@ You can use the `--update` flag to update snapshots or screenshots as needed.
 
 You can also pick suites from CLI.  Suites available are listed below.
 
-##### Core & React & Vue & Svelte && Riot Tests
+##### Core & Examples Tests
 
 `yarn test --core`
 
