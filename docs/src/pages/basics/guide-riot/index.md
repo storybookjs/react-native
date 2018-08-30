@@ -55,7 +55,7 @@ Add the following NPM script to your `package.json` in order to start the storyb
 Storybook can be configured in several different ways.
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
-There are 3 things you need to tell Storybook to do:
+There are 2 things you need to tell Storybook to do:
 
 1.  Import and globally register with [`riot.mount()`](https://riot.js.org/api/#mounting) any global custom components just like you did with your project.
 2.  Require your stories.
@@ -65,8 +65,8 @@ Here's an example `.storybook/config.js` to get you started:
 ```js
 import { configure } from '@storybook/riot';
 
-// Import your custom components.
-import Mybutton from '../src/stories/Button.tag'; //eslint-disable-line no-unused-vars
+// Import your globally available components.
+import '../src/stories/Button.tag'; 
 
 function loadStories() {
   // You can require as many stories as you need.
@@ -90,8 +90,8 @@ There are several ways to implement a story using either a text import or a comp
 ```js
 import { tag, mount, storiesOf } from '@storybook/riot';
 import SimpleTestRaw from './SimpleTest.txt'; //can be loaded as string if you prefer
-// eslint-disable-next-line no-unused-vars
-import anothertest from './AnotherTest.tag';
+import './AnotherTest.tag';
+//if you need to import .tag files as text, just use the raw-loader instead of the riot-tag-loader
 
 storiesOf('Story|How to create a story', module)
   .add(
