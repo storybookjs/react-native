@@ -1,6 +1,6 @@
 {
   "name": "@storybook/angular",
-  "version": "4.0.0-alpha.18",
+  "version": "4.0.0-alpha.19",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/angular",
   "bugs": {
@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@storybook/core": "4.0.0-alpha.18",
-    "@storybook/node-logger": "4.0.0-alpha.18",
+    "@storybook/core": "4.0.0-alpha.19",
+    "@storybook/node-logger": "4.0.0-alpha.19",
     "angular2-template-loader": "^0.6.2",
     "core-js": "^2.5.7",
     "global": "^4.3.2",

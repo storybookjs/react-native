@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "4.0.0-alpha.18",
+  "version": "4.0.0-alpha.19",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -26,10 +26,10 @@
   },
   "dependencies": {
     "@emotion/styled": "0.10.5",
-    "@storybook/addons": "4.0.0-alpha.18",
-    "@storybook/client-logger": "4.0.0-alpha.18",
-    "@storybook/components": "4.0.0-alpha.18",
-    "@storybook/core-events": "4.0.0-alpha.18",
+    "@storybook/addons": "4.0.0-alpha.19",
+    "@storybook/client-logger": "4.0.0-alpha.19",
+    "@storybook/components": "4.0.0-alpha.19",
+    "@storybook/core-events": "4.0.0-alpha.19",
     "axe-core": "^3.0.3",
     "global": "^4.3.2",
     "prop-types": "^15.6.2"
