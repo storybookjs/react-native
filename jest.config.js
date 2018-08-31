@@ -21,6 +21,7 @@ module.exports = {
     '<rootDir>/examples/official-storybook',
     '<rootDir>/examples/angular-cli',
   ],
+  snapshotSerializers: ['jest-emotion/serializer'],
   transform: {
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
     '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
