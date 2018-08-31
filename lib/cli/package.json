@@ -62,6 +62,7 @@
     "@storybook/polymer": "4.0.0-alpha.18",
     "@storybook/react": "4.0.0-alpha.18",
     "@storybook/react-native": "4.0.0-alpha.18",
+    "@storybook/riot": "4.0.0-alpha.18",
     "@storybook/ui": "4.0.0-alpha.18",
     "@storybook/vue": "4.0.0-alpha.18",
     "check-node-version": "3.2.0",

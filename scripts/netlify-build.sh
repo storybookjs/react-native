@@ -85,6 +85,13 @@ elif [ "$BUILD_CONTEXT" = "HYPERAPP" ]; then
   yarn build-storybook
   mv storybook-static ../../netlify-build
   popd
+elif [ "$BUILD_CONTEXT" = "RIOT" ]; then
+  echo "netlify-build riot examples"
+  pushd examples/riot-kitchen-sink
+  yarn
+  yarn build-storybook
+  mv storybook-static ../../netlify-build
+  popd
 else
   RED='\033[0;31m'
   NOCOLOR='\033[0m'

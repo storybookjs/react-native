@@ -99,8 +99,11 @@ export default class BackgroundPanel extends Component {
 
       // debugger;
 
-      if (current && backgrounds.find(bg => bg.value === current)) {
-        this.updateIframe(current);
+      const foundBackground =
+        current && backgrounds.find(bg => bg.name === decodeURI(current) || bg.value === current);
+
+      if (foundBackground) {
+        this.updateIframe(foundBackground.value);
       } else if (defaultOrFirst) {
         this.updateIframe(defaultOrFirst.value);
         api.setQueryParams({ background: defaultOrFirst.value });
