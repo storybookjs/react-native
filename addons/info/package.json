@@ -13,6 +13,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@emotion/styled": "0.10.4",
     "@storybook/addons": "4.0.0-alpha.18",
     "@storybook/client-logger": "4.0.0-alpha.18",
     "@storybook/components": "4.0.0-alpha.18",
@@ -22,7 +23,6 @@
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.2",
     "react-addons-create-fragment": "^15.5.3",
-    "react-emotion": "^9.2.6",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },

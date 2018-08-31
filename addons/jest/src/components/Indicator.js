@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Indicator = styled('div')(
+const Indicator = styled.div(
   ({ color, size }) => ({
     boxSizing: 'border-box',
     padding: `0 ${size / 2}px`,

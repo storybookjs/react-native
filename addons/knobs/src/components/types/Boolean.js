@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Input = styled('input')({
+const Input = styled.input({
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'top',

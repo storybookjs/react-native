@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { Input } from '@storybook/components';
 
@@ -16,17 +16,17 @@ const base = {
   color: '#444',
 };
 
-const RangeInput = styled('input')(base, {
+const RangeInput = styled.input(base, {
   display: 'table-cell',
   flexGrow: 1,
 });
-const RangeLabel = styled('span')({
+const RangeLabel = styled.span({
   paddingLeft: 5,
   paddingRight: 5,
   fontSize: 12,
   whiteSpace: 'nowrap',
 });
-const RangeWrapper = styled('div')({
+const RangeWrapper = styled.div({
   display: 'flex',
   alignItems: 'center',
   width: '100%',

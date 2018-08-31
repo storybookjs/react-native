@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import json from 'format-json';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import EventEmitter from 'eventemitter3';
 import uuid from 'uuid/v4';
 
-const Wrapper = styled('div')({
+const Wrapper = styled.div({
   padding: 20,
 });
-const Title = styled('h1')({
+const Title = styled.h1({
   margin: 0,
 });
-const Item = styled('div')({
+const Item = styled.div({
   listStyle: 'none',
   marginBottom: 10,
 });
