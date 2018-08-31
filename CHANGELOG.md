@@ -1,3 +1,37 @@
+# 4.0.0-alpha.20
+
+2018-August-31
+
+#### Breaking Changes
+
+-   Use `babelrc: false` only for custom config in `.storybook` directory [#4077](https://github.com/storybooks/storybook/pull/4077)
+
+#### Features
+
+-   Riot support [#4070](https://github.com/storybooks/storybook/pull/4070)
+-   Backgrounds addon: Allow setting background via name [#4081](https://github.com/storybooks/storybook/pull/4081)
+-   Storysource addon: injectDecorator option custom stories [#4012](https://github.com/storybooks/storybook/pull/4012)
+
+#### Bug Fixes
+
+-   Disabled import for TabWrapper [#4100](https://github.com/storybooks/storybook/pull/4100)
+-   Angular cli with projects assets: root dir not correctly used [#4058](https://github.com/storybooks/storybook/pull/4058)
+
+#### Maintenance
+
+-   Do not stale "good first issue" [#4092](https://github.com/storybooks/storybook/pull/4092)
+-   Remove danger from circleci because it's not working for forked PRs [#4080](https://github.com/storybooks/storybook/pull/4080)
+
+#### Dependency Upgrades
+
+-   UPGRADE packages [#3996](https://github.com/storybooks/storybook/pull/3996)
+
+# 4.0.0-alpha.19
+
+2018-August-31
+
+Not published to NPM
+
 # 4.0.0-alpha.18
 
 2018-August-25
