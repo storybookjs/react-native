@@ -16,10 +16,10 @@
   "devDependencies": {
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/react": "^4.0.0-alpha.18",
-    "@storybook/addon-actions": "^4.0.0-alpha.18",
-    "@storybook/addon-links": "^4.0.0-alpha.18",
-    "@storybook/addons": "^4.0.0-alpha.18",
+    "@storybook/react": "^4.0.0-alpha.20",
+    "@storybook/addon-actions": "^4.0.0-alpha.20",
+    "@storybook/addon-links": "^4.0.0-alpha.20",
+    "@storybook/addons": "^4.0.0-alpha.20",
     "@babel/core": "^7.0.0",
     "babel-loader": "^8.0.0"
   }

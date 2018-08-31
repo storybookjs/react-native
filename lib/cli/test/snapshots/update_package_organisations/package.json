@@ -16,7 +16,7 @@
     "react-scripts": "0.9.x"
   },
   "devDependencies": {
-    "@storybook/react": "^4.0.0-alpha.18",
+    "@storybook/react": "^4.0.0-alpha.20",
     "@babel/core": "^7.0.0",
     "babel-loader": "^8.0.0"
   }
