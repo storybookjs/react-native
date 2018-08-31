@@ -84,6 +84,9 @@ if [ $update_only -eq 1 ]
     exit 0
   fi
 
+# install all the dependencies in a single run
+cd ../../..
+yarn install --non-interactive --silent
 cd ${test_root}/run
 
 for dir in *
@@ -94,8 +97,6 @@ do
   if [ $dir != "already_has_storybook" ]
     then
       cd $dir
-      echo "install in $dir"
-      yarn install --pure-lockfile --non-interactive --silent
       echo "Running smoke test in $dir"
       yarn storybook --smoke-test
       cd ..

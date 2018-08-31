@@ -143,3 +143,29 @@ module.exports = {
   },
 };
 ```
+
+### injectDecorator
+Tell storysource whether you need inject decorator.If false, you need to add the decorator by yourself;
+
+Defaults: true
+
+Usage:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [
+          {
+            loader: require.resolve('@storybook/addon-storysource/loader'),
+            options: { injectDecorator: false }
+          }
+        ],
+        enforce: 'pre',
+      },
+    ],
+  },
+};
+```

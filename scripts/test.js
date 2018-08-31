@@ -44,7 +44,7 @@ const createOption = ({ defaultValue, option, name, extraParam }) => ({
 
 const tasks = {
   core: createProject({
-    name: `Core & React & Vue & Polymer & Angular & Svelte ${chalk.gray('(core)')}`,
+    name: `Core & Examples 🎨 ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: path.join(__dirname, '..'),
@@ -127,7 +127,6 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
-
 if (
   !Object.keys(tasks)
     .map(key => tasks[key].value)

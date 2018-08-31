@@ -32,8 +32,8 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   );
 
   return {
-    root: project.root,
-    projectRoot: dirToSearch,
+    root: dirToSearch,
+    projectRoot: path.resolve(dirToSearch, project.root),
     supportES2015: false,
     tsConfig: {
       options: {},
