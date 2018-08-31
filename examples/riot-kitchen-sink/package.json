@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
-    "riot": "^3.11.1",
+    "riot": "^3.11.2",
     "riot-compiler": "^3.5.1",
     "riot-hot-reload": "^1.0.0"
   },
