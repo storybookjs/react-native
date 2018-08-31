@@ -14,7 +14,7 @@
     "riot-hot-reload": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-rc.2",
+    "@babel/core": "^7.0.0",
     "@storybook/addon-actions": "4.0.0-alpha.18",
     "@storybook/addon-backgrounds": "4.0.0-alpha.18",
     "@storybook/addon-centered": "4.0.0-alpha.18",
@@ -27,7 +27,7 @@
     "@storybook/addon-viewport": "4.0.0-alpha.18",
     "@storybook/addons": "4.0.0-alpha.18",
     "@storybook/riot": "4.0.0-alpha.18",
-    "babel-loader": "^8.0.0-beta.6",
+    "babel-loader": "^8.0.0",
     "cross-env": "^5.2.0",
     "file-loader": "^1.1.11",
     "raw-loader": "^0.5.1",

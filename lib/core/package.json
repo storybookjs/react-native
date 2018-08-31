@@ -16,11 +16,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.3",
-    "@babel/plugin-transform-regenerator": "^7.0.0-rc.3",
-    "@babel/plugin-transform-runtime": "^7.0.0-rc.3",
-    "@babel/preset-env": "^7.0.0-rc.3",
-    "@babel/runtime": "^7.0.0-rc.3",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-regenerator": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "@emotion/core": "0.13.0",
     "@emotion/provider": "0.11.1",
     "@emotion/styled": "0.10.5",

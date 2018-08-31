@@ -21,7 +21,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-rc.2",
+    "@babel/runtime": "^7.0.0",
     "@storybook/core": "4.0.0-alpha.18",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
@@ -32,12 +32,12 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "@babel/preset-flow": "^7.0.0-rc.2",
-    "@babel/preset-react": "^7.0.0-rc.2",
-    "@babel/runtime": "^7.0.0-rc.2",
-    "@babel/preset-env": "^7.0.0-rc.2",
-    "@babel/plugin-transform-runtime": "^7.0.0-rc.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.0.0-rc.2"
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",

@@ -22,9 +22,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/preset-flow": "^7.0.0-rc.3",
-    "@babel/preset-react": "^7.0.0-rc.3",
-    "@babel/runtime": "^7.0.0-rc.3",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "@emotion/styled": "0.10.5",
     "@storybook/core": "4.0.0-alpha.18",
     "babel-plugin-react-docgen": "^2.0.0-babel7.0",

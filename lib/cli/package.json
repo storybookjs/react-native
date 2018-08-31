@@ -25,10 +25,10 @@
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.0.0-rc.3",
-    "@babel/preset-env": "^7.0.0-rc.3",
-    "@babel/register": "^7.0.0-rc.3",
-    "@babel/runtime": "^7.0.0-rc.3",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "@storybook/codemod": "4.0.0-alpha.18",
     "chalk": "^2.4.1",
     "child-process-promise": "^2.2.1",
