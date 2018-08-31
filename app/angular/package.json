@@ -22,7 +22,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-rc.3",
+    "@babel/runtime": "^7.0.0",
     "@storybook/core": "4.0.0-alpha.18",
     "@storybook/node-logger": "4.0.0-alpha.18",
     "angular2-template-loader": "^0.6.2",
@@ -31,8 +31,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "sass-loader": "^7.1.0",
-    "ts-loader": "^4.4.2",
-    "webpack": "^4.16.4",
+    "ts-loader": "^4.5.0",
+    "webpack": "^4.17.1",
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {

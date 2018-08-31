@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
-<button
-  className="css-1qwzad5 eux70yo0"
+<Styled(button)
   onClick={[Function]}
 >
   <span
@@ -11,21 +10,19 @@ exports[`Storyshots Another Button with some emoji 1`] = `
   >
     😀 😎 👍 💯
   </span>
-</button>
+</Styled(button)>
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
-<button
-  className="css-1qwzad5 eux70yo0"
+<Styled(button)
   onClick={[Function]}
 >
   Hello Button
-</button>
+</Styled(button)>
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
-<button
-  className="css-1qwzad5 eux70yo0"
+<Styled(button)
   onClick={[Function]}
 >
   <span
@@ -34,31 +31,30 @@ exports[`Storyshots Button with some emoji 1`] = `
   >
     😀 😎 👍 💯
   </span>
-</button>
+</Styled(button)>
 `;
 
 exports[`Storyshots Button with text 1`] = `
-<button
-  className="css-1qwzad5 eux70yo0"
+<Styled(button)
   onClick={[Function]}
 >
   Hello Button
-</button>
+</Styled(button)>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-<Styled(article)>
-  <Styled(h1)>
+<ForwardRef>
+  <ForwardRef>
     Welcome to storybook
-  </Styled(h1)>
+  </ForwardRef>
   <p>
     This is a UI component dev environment for your app.
   </p>
   <p>
     We've added some basic stories inside the 
-    <Styled(code)>
+    <ForwardRef>
       src/stories
-    </Styled(code)>
+    </ForwardRef>
      directory.
     <br />
     A story is a single state of one or more UI components. You can have as many stories as you want.
@@ -67,16 +63,16 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   </p>
   <p>
     See these sample 
-    <Styled(button)
+    <ForwardRef
       onClick={[Function]}
     >
       stories
-    </Styled(button)>
+    </ForwardRef>
      for a component called
      
-    <Styled(code)>
+    <ForwardRef>
       Button
-    </Styled(code)>
+    </ForwardRef>
     .
   </p>
   <p>
@@ -85,14 +81,14 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     You can also edit those components and see changes right away.
     <br />
     (Try editing the 
-    <Styled(code)>
+    <ForwardRef>
       Button
-    </Styled(code)>
+    </ForwardRef>
      stories located at
      
-    <Styled(code)>
+    <ForwardRef>
       src/stories/index.js
-    </Styled(code)>
+    </ForwardRef>
     .)
   </p>
   <p>
@@ -100,26 +96,26 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <br />
     Have a look at the
      
-    <Styled(a)
+    <ForwardRef
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
       target="_blank"
     >
       Writing Stories
-    </Styled(a)>
+    </ForwardRef>
      
     section in our documentation.
   </p>
-  <Styled(p)>
+  <ForwardRef>
     <b>
       NOTE:
     </b>
     <br />
     Have a look at the 
-    <Styled(code)>
+    <ForwardRef>
       .storybook/webpack.config.js
-    </Styled(code)>
+    </ForwardRef>
      to add webpack loaders and plugins you are using in this project.
-  </Styled(p)>
-</Styled(article)>
+  </ForwardRef>
+</ForwardRef>
 `;

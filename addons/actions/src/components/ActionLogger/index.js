@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Inspector from 'react-inspector';
-import { withTheme } from 'emotion-theming';
+import { withCSSContext } from '@emotion/core';
 
 import { ActionBar, ActionButton } from '@storybook/components';
 
 import { Actions, Action, Wrapper, InspectorContainer, Countwrap, Counter } from './style';
 
-const ActionLogger = withTheme(({ actions, onClear, theme }) => (
+const ActionLogger = withCSSContext(({ actions, onClear }, { theme }) => (
   <Wrapper>
     <Actions>
       {actions.map(action => (

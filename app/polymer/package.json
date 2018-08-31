@@ -21,15 +21,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-rc.3",
-    "@babel/runtime": "^7.0.0-rc.3",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "@storybook/core": "4.0.0-alpha.18",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "webpack": "^4.16.4"
+    "webpack": "^4.17.1"
   },
   "devDependencies": {
     "lit-html": "^0.10.2",

@@ -25,14 +25,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@emotion/styled": "0.10.5",
     "@storybook/addons": "4.0.0-alpha.18",
     "@storybook/client-logger": "4.0.0-alpha.18",
     "@storybook/components": "4.0.0-alpha.18",
     "@storybook/core-events": "4.0.0-alpha.18",
     "axe-core": "^3.0.3",
     "global": "^4.3.2",
-    "prop-types": "^15.6.2",
-    "react-emotion": "^9.2.6"
+    "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "react": "*",

@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "riot": "^3.11.1"
+    "riot": "^3.11.2"
   },
   "devDependencies": {
     "common-tags": "^1.8.0",

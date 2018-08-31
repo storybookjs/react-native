@@ -1,273 +1,231 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
-<Button
+<ForwardRef
   onClick={[Function]}
 >
-  <button
-    className="emotion-0 emotion-1"
+  <Styled(button)
     onClick={[Function]}
   >
-    <span
-      aria-label="so cool"
-      role="img"
+    <button
+      className="emotion-0 emotion-1"
+      onClick={[Function]}
     >
-      😀 😎 👍 💯
-    </span>
-  </button>
-</Button>
+      <span
+        aria-label="so cool"
+        role="img"
+      >
+        😀 😎 👍 💯
+      </span>
+    </button>
+  </Styled(button)>
+</ForwardRef>
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
-<Button
+<ForwardRef
   onClick={[Function]}
 >
-  <button
-    className="emotion-0 emotion-1"
+  <Styled(button)
     onClick={[Function]}
   >
-    Hello Button
-  </button>
-</Button>
+    <button
+      className="emotion-0 emotion-1"
+      onClick={[Function]}
+    >
+      Hello Button
+    </button>
+  </Styled(button)>
+</ForwardRef>
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
-<Button
+<ForwardRef
   onClick={[Function]}
 >
-  <button
-    className="emotion-0 emotion-1"
+  <Styled(button)
     onClick={[Function]}
   >
-    <span
-      aria-label="so cool"
-      role="img"
+    <button
+      className="emotion-0 emotion-1"
+      onClick={[Function]}
     >
-      😀 😎 👍 💯
-    </span>
-  </button>
-</Button>
+      <span
+        aria-label="so cool"
+        role="img"
+      >
+        😀 😎 👍 💯
+      </span>
+    </button>
+  </Styled(button)>
+</ForwardRef>
 `;
 
 exports[`Storyshots Button with text 1`] = `
-.emotion-0 {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 3px 10px;
-  margin: 10px;
-}
-
-<Button
+<ForwardRef
   onClick={[Function]}
 >
-  <button
-    className="emotion-0 emotion-1"
+  <Styled(button)
     onClick={[Function]}
   >
-    Hello Button
-  </button>
-</Button>
+    <button
+      className="emotion-0 emotion-1"
+      onClick={[Function]}
+    >
+      Hello Button
+    </button>
+  </Styled(button)>
+</ForwardRef>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
-.emotion-18 {
-  margin: 15px;
-  max-width: 600px;
-  line-height: 1.4;
-  font-family: "Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;
-}
-
-.emotion-2 {
-  font-size: 15px;
-  font-weight: 600;
-  padding: 2px 5px;
-  border: 1px solid #eae9e9;
-  border-radius: 4px;
-  background-color: #f3f2f2;
-  color: #3a3a3a;
-}
-
-.emotion-4 {
-  color: #1474f3;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-bottom: 1px solid #1474f3;
-  padding-bottom: 2px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-  font: inherit;
-}
-
-.emotion-12 {
-  color: #1474f3;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-bottom: 1px solid #1474f3;
-  padding-bottom: 2px;
-}
-
-.emotion-16 {
-  opacity: 0.5;
-}
-
 <Welcome
   showApp={[Function]}
 >
-  <Styled(article)>
-    <article
-      className="emotion-18 emotion-19"
-    >
-      <Styled(h1)>
-        <h1
-          className="emotion-0 emotion-1"
-        >
-          Welcome to storybook
-        </h1>
-      </Styled(h1)>
-      <p>
-        This is a UI component dev environment for your app.
-      </p>
-      <p>
-        We've added some basic stories inside the 
-        <Styled(code)>
-          <code
-            className="emotion-2 emotion-3"
-          >
-            src/stories
-          </code>
-        </Styled(code)>
-         directory.
-        <br />
-        A story is a single state of one or more UI components. You can have as many stories as you want.
-        <br />
-        (Basically a story is like a visual test case.)
-      </p>
-      <p>
-        See these sample 
-        <Styled(button)
-          onClick={[Function]}
-        >
-          <button
-            className="emotion-4 emotion-5"
+  <ForwardRef>
+    <Styled(article)>
+      <article
+        className="emotion-18 emotion-19"
+      >
+        <ForwardRef>
+          <Styled(h1)>
+            <h1
+              className="emotion-0 emotion-1"
+            >
+              Welcome to storybook
+            </h1>
+          </Styled(h1)>
+        </ForwardRef>
+        <p>
+          This is a UI component dev environment for your app.
+        </p>
+        <p>
+          We've added some basic stories inside the 
+          <ForwardRef>
+            <Styled(code)>
+              <code
+                className="emotion-2 emotion-3"
+              >
+                src/stories
+              </code>
+            </Styled(code)>
+          </ForwardRef>
+           directory.
+          <br />
+          A story is a single state of one or more UI components. You can have as many stories as you want.
+          <br />
+          (Basically a story is like a visual test case.)
+        </p>
+        <p>
+          See these sample 
+          <ForwardRef
             onClick={[Function]}
           >
-            stories
-          </button>
-        </Styled(button)>
-         for a component called
-         
-        <Styled(code)>
-          <code
-            className="emotion-2 emotion-3"
-          >
-            Button
-          </code>
-        </Styled(code)>
-        .
-      </p>
-      <p>
-        Just like that, you can add your own components as stories.
-        <br />
-        You can also edit those components and see changes right away.
-        <br />
-        (Try editing the 
-        <Styled(code)>
-          <code
-            className="emotion-2 emotion-3"
-          >
-            Button
-          </code>
-        </Styled(code)>
-         stories located at
-         
-        <Styled(code)>
-          <code
-            className="emotion-2 emotion-3"
-          >
-            src/stories/index.js
-          </code>
-        </Styled(code)>
-        .)
-      </p>
-      <p>
-        Usually we create stories with smaller UI components in the app.
-        <br />
-        Have a look at the
-         
-        <Styled(a)
-          href="https://storybook.js.org/basics/writing-stories"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <a
-            className="emotion-12 emotion-13"
+            <Styled(button)
+              onClick={[Function]}
+            >
+              <button
+                className="emotion-4 emotion-5"
+                onClick={[Function]}
+              >
+                stories
+              </button>
+            </Styled(button)>
+          </ForwardRef>
+           for a component called
+           
+          <ForwardRef>
+            <Styled(code)>
+              <code
+                className="emotion-2 emotion-3"
+              >
+                Button
+              </code>
+            </Styled(code)>
+          </ForwardRef>
+          .
+        </p>
+        <p>
+          Just like that, you can add your own components as stories.
+          <br />
+          You can also edit those components and see changes right away.
+          <br />
+          (Try editing the 
+          <ForwardRef>
+            <Styled(code)>
+              <code
+                className="emotion-2 emotion-3"
+              >
+                Button
+              </code>
+            </Styled(code)>
+          </ForwardRef>
+           stories located at
+           
+          <ForwardRef>
+            <Styled(code)>
+              <code
+                className="emotion-2 emotion-3"
+              >
+                src/stories/index.js
+              </code>
+            </Styled(code)>
+          </ForwardRef>
+          .)
+        </p>
+        <p>
+          Usually we create stories with smaller UI components in the app.
+          <br />
+          Have a look at the
+           
+          <ForwardRef
             href="https://storybook.js.org/basics/writing-stories"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Writing Stories
-          </a>
-        </Styled(a)>
-         
-        section in our documentation.
-      </p>
-      <Styled(p)>
-        <p
-          className="emotion-16 emotion-17"
-        >
-          <b>
-            NOTE:
-          </b>
-          <br />
-          Have a look at the 
-          <Styled(code)>
-            <code
-              className="emotion-2 emotion-3"
+            <Styled(a)
+              href="https://storybook.js.org/basics/writing-stories"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              .storybook/webpack.config.js
-            </code>
-          </Styled(code)>
-           to add webpack loaders and plugins you are using in this project.
+              <a
+                className="emotion-12 emotion-13"
+                href="https://storybook.js.org/basics/writing-stories"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Writing Stories
+              </a>
+            </Styled(a)>
+          </ForwardRef>
+           
+          section in our documentation.
         </p>
-      </Styled(p)>
-    </article>
-  </Styled(article)>
+        <ForwardRef>
+          <Styled(p)>
+            <p
+              className="emotion-16 emotion-17"
+            >
+              <b>
+                NOTE:
+              </b>
+              <br />
+              Have a look at the 
+              <ForwardRef>
+                <Styled(code)>
+                  <code
+                    className="emotion-2 emotion-3"
+                  >
+                    .storybook/webpack.config.js
+                  </code>
+                </Styled(code)>
+              </ForwardRef>
+               to add webpack loaders and plugins you are using in this project.
+            </p>
+          </Styled(p)>
+        </ForwardRef>
+      </article>
+    </Styled(article)>
+  </ForwardRef>
 </Welcome>
 `;
