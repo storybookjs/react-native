@@ -2,23 +2,22 @@
   "name": "update-package-organisations-fixture",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 6006",
+    "test": "react-scripts test --env=jsdom"
+  },
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "0.9.x"
   },
   "devDependencies": {
-    "@storybook/react": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "@storybook/react": "^4.0.0-alpha.20",
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.0"
   }
 }

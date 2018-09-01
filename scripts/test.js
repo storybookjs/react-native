@@ -25,11 +25,12 @@ const spawn = command => {
 
 const main = program.version('3.0.0').option('--all', `Test everything ${chalk.gray('(all)')}`);
 
-const createProject = ({ defaultValue, option, name, projectLocation, isJest }) => ({
+const createProject = ({ defaultValue, option, name, projectLocation, isJest, script }) => ({
   value: false,
   defaultValue: defaultValue || false,
   option: option || undefined,
   name: name || 'unnamed task',
+  script,
   projectLocation,
   isJest,
 });
@@ -43,7 +44,7 @@ const createOption = ({ defaultValue, option, name, extraParam }) => ({
 
 const tasks = {
   core: createProject({
-    name: `Core & React & Vue & Polymer & Angular & Svelte ${chalk.gray('(core)')}`,
+    name: `Core & Examples 🎨 ${chalk.gray('(core)')}`,
     defaultValue: true,
     option: '--core',
     projectLocation: path.join(__dirname, '..'),
@@ -110,17 +111,9 @@ const tasks = {
   }),
 };
 
-const getProjects = list => {
-  const filtered = list.filter(key => key.projectLocation);
-  if (filtered.length > 0) {
-    return filtered;
-  }
+const getProjects = list => list.filter(key => key.projectLocation);
 
-  // if list would have been empty, we run with default projects
-  return Object.keys(tasks)
-    .map(key => tasks[key])
-    .filter(key => key.projectLocation && key.defaultValue);
-};
+const getScripts = list => list.filter(key => key.script);
 
 const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
 
@@ -134,7 +127,6 @@ Object.keys(tasks).forEach(key => {
 });
 
 let selection;
-
 if (
   !Object.keys(tasks)
     .map(key => tasks[key].value)
@@ -146,10 +138,9 @@ if (
         type: 'checkbox',
         message: 'Select which tests to run',
         name: 'todo',
-        pageSize: 8,
-        choices: Object.keys(tasks)
-          .map(key => tasks[key])
-          .filter(key => key.projectLocation)
+        pageSize: 18,
+        choices: Object.values(tasks)
+          .filter(key => !key.extraParam)
           .map(key => ({
             name: key.name,
             checked: key.defaultValue,
@@ -192,6 +183,9 @@ selection
       nonJestProjects.forEach(key =>
         spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
       );
+      const scripts = getScripts(list);
+      scripts.forEach(key => spawn(`${key.script} -- ${extraParams}`));
+
       process.stdout.write('\x07');
     }
   })

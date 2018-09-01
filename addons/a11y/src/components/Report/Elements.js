@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import Rules from './Rules';
 
-const Item = styled('li')({
+const Item = styled.li({
   fontWeight: 600,
 });
-const ItemTitle = styled('span')({
+const ItemTitle = styled.span({
   borderBottom: '1px solid rgb(130, 130, 130)',
   width: '100%',
   display: 'inline-block',

@@ -69,6 +69,19 @@ export function generateSourceWithDecorators(source, decorator, parserType) {
   };
 }
 
+export function generateSourceWithoutDecorators(source, parserType) {
+  const parser = getParser(parserType);
+  const ast = parser.parse(source);
+
+  const { comments = [] } = ast;
+
+  return {
+    changed: true,
+    source,
+    comments,
+  };
+}
+
 export function generateAddsMap(source, parserType) {
   const parser = getParser(parserType);
   const ast = parser.parse(source);

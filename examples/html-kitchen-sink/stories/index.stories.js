@@ -1,5 +1,3 @@
-/* eslint-disable react/button-has-type */
-
 import { document } from 'global';
 import { storiesOf } from '@storybook/html';
 import { action } from '@storybook/addon-actions';

@@ -1,3 +1,5 @@
+import path from 'path';
+import { ContextReplacementPlugin } from 'webpack';
 import loadTsConfig from './ts_config';
 
 export default (config, configDir) => ({
@@ -35,4 +37,9 @@ export default (config, configDir) => ({
     ...config.resolve,
     extensions: [...config.resolve.extensions, '.ts', '.tsx'],
   },
+  plugins: [
+    ...config.plugins,
+    // See https://github.com/angular/angular/issues/11580#issuecomment-401127742
+    new ContextReplacementPlugin(/@angular(\\|\/)core(\\|\/)fesm5/, path.resolve(__dirname, '..')),
+  ],
 });

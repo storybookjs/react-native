@@ -1,8 +1,8 @@
 {
   "name": "mithril-fixture",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "build": "webpack -p dist",
     "storybook": "start-storybook -p 6006",
@@ -12,11 +12,11 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "@storybook/mithril": "^4.0.0-alpha.16",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-react-jsx": "^6.24.1"
+    "@storybook/addon-actions": "^4.0.0-alpha.20",
+    "@storybook/addon-links": "^4.0.0-alpha.20",
+    "@storybook/addons": "^4.0.0-alpha.20",
+    "@storybook/mithril": "^4.0.0-alpha.20",
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.0"
   }
 }
