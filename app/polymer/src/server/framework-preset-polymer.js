@@ -1,3 +1,5 @@
+import { IgnorePlugin } from 'webpack';
+
 const extendWebpack = config => ({
   ...config,
   module: {
@@ -16,6 +18,11 @@ const extendWebpack = config => ({
       },
     ],
   },
+  plugins: [
+    ...config.plugins,
+    // See https://github.com/webcomponents/webcomponentsjs/issues/794#issuecomment-386554298
+    new IgnorePlugin(/^vertx$/),
+  ],
 });
 
 export default {

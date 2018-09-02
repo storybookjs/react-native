@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { monoFonts } from '@storybook/components';
 
 import Indicator from './Indicator';
 import colors from '../colors';
 
-const Pre = styled('pre')({
+const Pre = styled.pre({
   margin: 0,
   ...monoFonts,
 });
 
-const FlexContainer = styled('div')({
+const FlexContainer = styled.div({
   display: 'flex',
   alignItems: 'center',
 });
@@ -20,11 +20,11 @@ const FlexContainer = styled('div')({
 /* eslint no-control-regex:0 */
 const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
 
-const Positive = styled('strong')({
+const Positive = styled.strong({
   color: colors.success,
   fontWeight: 500,
 });
-const Negative = styled('strong')({
+const Negative = styled.strong({
   color: colors.error,
   fontWeight: 500,
 });
@@ -188,13 +188,13 @@ Message.propTypes = {
   msg: PropTypes.string.isRequired,
 };
 
-const Head = styled('header')({
+const Head = styled.header({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
 });
 
-const Title = styled('h3')({
+const Title = styled.h3({
   padding: '10px 10px 0 10px',
   margin: 0,
 });

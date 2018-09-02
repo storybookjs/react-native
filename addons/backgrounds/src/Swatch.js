@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Button = styled('button')(({ theme }) => ({
+const Button = styled.button(({ theme }) => ({
   listStyle: 'none',
   backgroundColor: theme.barFill,
   textAlign: 'center',
@@ -19,7 +19,7 @@ const Button = styled('button')(({ theme }) => ({
   overflow: 'hidden',
 }));
 
-const Block = styled('div')(({ bg, theme }) => ({
+const Block = styled.div(({ bg, theme }) => ({
   height: 80,
   transition: 'opacity 0.25s ease-in-out',
   borderBottom: theme.mainBorder,
@@ -28,17 +28,17 @@ const Block = styled('div')(({ bg, theme }) => ({
   backgroundPosition: 'center',
 }));
 
-const Box = styled('div')({
+const Box = styled.div({
   listStyle: 'none',
   paddingLeft: 10,
   paddingRight: 10,
 });
 
-const Name = styled('h4')({
+const Name = styled.h4({
   float: 'left',
   fontWeight: 'bold',
 });
-const Value = styled('h4')({
+const Value = styled.h4({
   float: 'right',
   fontWeight: 'normal',
 });

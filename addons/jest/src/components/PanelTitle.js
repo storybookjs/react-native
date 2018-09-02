@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import provideJestResult from '../hoc/provideJestResult';
 import Indicator from './Indicator';
 import colors from '../colors';
 
-const Wrapper = styled('div')({
+const Wrapper = styled.div({
   display: 'flex',
   alignItems: 'center',
 });
-const PanelName = styled('div')({
+const PanelName = styled.div({
   paddingLeft: 5,
 });
 

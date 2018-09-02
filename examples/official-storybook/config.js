@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
+import ThemeProvider from '@emotion/provider';
 import { configure, addDecorator } from '@storybook/react';
 import { themes } from '@storybook/components';
 import { setOptions } from '@storybook/addon-options';
