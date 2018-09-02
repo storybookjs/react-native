@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+
+// should work because of the stylePreprocessorOptions in angular.json
+@import '_colors';
+
+.green-color {
+  color: $color;
+}

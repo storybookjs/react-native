@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { Field } from '@storybook/components';
 import TypeMap from './types';
 
-const Form = styled('form')({
+const Form = styled.form({
   boxSizing: 'border-box',
   width: '100%',
 });

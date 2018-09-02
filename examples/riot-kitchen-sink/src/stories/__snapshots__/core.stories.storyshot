@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Core|Parameters passed to story 1`] = `
+<div
+  data-is="parameters"
+  id="root"
+>
+  <div>
+    Parameters are {"globalParameter":"globalParameter","chapterParameter":"chapterParameter","storyParameter":"storyParameter","id":"root","dataIs":"parameters"}
+  </div>
+</div>
+`;

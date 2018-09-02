@@ -423,6 +423,33 @@ exports[`Storyshots Addons|Info.GitHub issues #1814 1`] = `
             </button>
           </pre>
         </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "" Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "" Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -5018,6 +5045,167 @@ exports[`Storyshots Addons|Info.Options.propTablesExclude Exclude component from
               </div>
             </button>
           </pre>
+        </div>
+        <div>
+          <h1
+            style="margin:20px 0 0 0;padding:0 0 5px 0;font-size:25px;border-bottom:1px solid #EEE"
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style="margin:20px 0 0 0"
+            >
+              "BaseButton" Component
+            </h2>
+            <table
+              class="css-1uhv8nx e1vdo5380"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="css-11b5gui e6fp4ir1"
+                  >
+                    property
+                  </th>
+                  <th
+                    class="css-11b5gui e6fp4ir1"
+                  >
+                    propType
+                  </th>
+                  <th
+                    class="css-11b5gui e6fp4ir1"
+                  >
+                    required
+                  </th>
+                  <th
+                    class="css-11b5gui e6fp4ir1"
+                  >
+                    default
+                  </th>
+                  <th
+                    class="css-11b5gui e6fp4ir1"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style="color:#a11"
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    label
+                  </td>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style="color:#170"
+                    >
+                      onClick
+                    </span>
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    style
+                  </td>
+                  <td
+                    class="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style="color:#666"
+                    >
+                      {}
+                    </span>
+                  </td>
+                  <td
+                    class="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

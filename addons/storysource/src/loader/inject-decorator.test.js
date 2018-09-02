@@ -118,4 +118,58 @@ describe('inject-decorator', () => {
     expect(result.addsMap).toEqual({});
     expect(result.source).toMatchSnapshot();
   });
+
+  describe('injectDecorator option is false', () => {
+    const mockFilePath = './__mocks__/inject-decorator.stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      {
+        injectDecorator: false,
+        parser: 'javascript',
+      }
+    );
+
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
+      expect(result.source).toMatchSnapshot();
+    });
+  });
+
+  describe('injectDecorator option is false - angular', () => {
+    const mockFilePath = './__mocks__/inject-decorator.angular-stories.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      {
+        injectDecorator: false,
+        parser: 'typescript',
+      }
+    );
+
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
+      expect(result.source).toMatchSnapshot();
+    });
+  });
+
+  describe('injectDecorator option is false - ts', () => {
+    const mockFilePath = './__mocks__/inject-decorator.ts.txt';
+    const source = fs.readFileSync(mockFilePath, 'utf-8');
+    const result = injectDecorator(
+      source,
+      ADD_DECORATOR_STATEMENT,
+      path.resolve(__dirname, mockFilePath),
+      {
+        injectDecorator: false,
+        parser: 'typescript',
+      }
+    );
+
+    it('does not inject stories decorator after the all "storiesOf" functions', () => {
+      expect(result.source).toMatchSnapshot();
+    });
+  });
 });

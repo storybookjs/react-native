@@ -118,8 +118,10 @@ object Project : Project({
                 ]
             """.trimIndent())
             param("format", "duration")
-            param("title", "New chart title")
             param("seriesTitle", "Serie")
+            param("hideFilters", "")
+            param("title", "Build Duration (all stages)")
+            param("defaultFilters", "")
         }
         feature {
             type = "project-graphs"
@@ -136,11 +138,11 @@ object Project : Project({
             """.trimIndent())
             param("format", "percent")
             param("hideFilters", "")
-            param("title", "New chart title")
+            param("title", "Covered Percentage of JS Lines")
             param("defaultFilters", "")
             param("seriesTitle", "Serie")
         }
-feature {
+        feature {
             type = "project-graphs"
             id = "PROJECT_EXT_308"
             param("series", """
@@ -154,7 +156,26 @@ feature {
                 ]
             """.trimIndent())
             param("format", "integer")
-            param("title", "New chart title")
+            param("seriesTitle", "Serie")
+            param("hideFilters", "")
+            param("title", "Total Number of JS Statements")
+            param("defaultFilters", "")
+        }
+        feature {
+            type = "project-graphs"
+            id = "PROJECT_EXT_117"
+            param("series", """
+                    [
+                      {
+                        "type": "valueType",
+                        "title": "Total Artifacts Size",
+                        "sourceBuildTypeId": "OpenSourceProjects_Storybook_CliTestLatestCra",
+                        "key": "ArtifactsSize"
+                      }
+                    ]
+                """.trimIndent())
+            param("format", "text")
+            param("title", "Total Artifacts Size")
             param("seriesTitle", "Serie")
         }
         feature {
