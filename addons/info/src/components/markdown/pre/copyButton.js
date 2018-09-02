@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Button = styled('button')(
+const Button = styled.button(
   {
     overflow: 'hidden',
     border: '1px solid #eee',
@@ -27,7 +27,7 @@ const Button = styled('button')(
   ({ styles }) => styles
 );
 
-const ContentWrapper = styled('div')(
+const ContentWrapper = styled.div(
   {
     transition: 'transform .2s ease',
     height: 16,

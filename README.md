@@ -7,7 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/storybooks/storybook)](https://bettercodehub.com/results/storybooks/storybook)
 [![codecov](https://codecov.io/gh/storybooks/storybook/branch/master/graph/badge.svg)](https://codecov.io/gh/storybooks/storybook)
 [![Storybook Slack](https://now-examples-slackin-rrirkqohko.now.sh/badge.svg)](https://now-examples-slackin-rrirkqohko.now.sh/)
-[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers) 
+[![Backers on Open Collective](https://opencollective.com/storybook/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/storybook/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/github/license/storybooks/storybook.svg)](https://github.com/storybooks/storybook/blob/master/LICENSE)
 <!-- [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>) -->
@@ -87,6 +87,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 -   [Marko](app/marko) <sup>alpha</sup> [![Marko](https://img.shields.io/npm/dt/@storybook/marko.svg)](app/marko)
 -   [HTML](app/html) <sup>alpha</sup> [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html)
 -   [Svelte](app/svelte) <sup>alpha</sup> [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte)
+-   [Riot](app/riot) <sup>alpha</sup> [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot)
 
 ### Sub Projects
 
@@ -126,6 +127,7 @@ See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 - [Marko](https://storybooks-marko.netlify.com/)
 - [HTML](https://storybooks-html.netlify.com/)
 - [Svelte](https://storybooks-svelte.netlify.com/)
+- [Riot](https://storybooks-riot.netlify.com/)
 
 ### 3.4
 - [React Official](https://release-3-4--storybooks-official.netlify.com)
