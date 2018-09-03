@@ -15,6 +15,10 @@ Install the following npm module:
 or with yarn:
 
     yarn add -D @storybook/addon-viewport
+    
+Then, add following content to .storybook/addons.js
+
+    import '@storybook/addon-viewport/register';
 
 
 ## Configuration
