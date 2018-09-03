@@ -1,6 +1,6 @@
 import { IgnorePlugin } from 'webpack';
 
-export default config => ({
+const extendWebpack = config => ({
   ...config,
   module: {
     ...config.module,
@@ -24,3 +24,7 @@ export default config => ({
     new IgnorePlugin(/^vertx$/),
   ],
 });
+
+export default {
+  extendWebpack,
+};

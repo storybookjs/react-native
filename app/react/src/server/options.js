@@ -1,11 +1,10 @@
 import packageJson from '../../package.json';
 
-import wrapBabelConfig from './wrapBabelConfig';
-import wrapDefaultBabelConfig from './wrapDefaultBabelConfig';
-
 export default {
   packageJson,
   defaultConfigName: 'create-react-app',
-  wrapDefaultBabelConfig,
-  wrapBabelConfig,
+  frameworkPresets: [
+    require.resolve('./framework-preset-react.js'),
+    require.resolve('./framework-preset-react-docgen.js'),
+  ],
 };

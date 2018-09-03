@@ -1,4 +1,4 @@
-export default function(config) {
+function extendBabel(config) {
   // Ensure plugins are defined or fallback to an array to avoid empty values.
   const babelConfigPlugins = config.plugins || [];
 
@@ -18,3 +18,7 @@ export default function(config) {
     plugins: [].concat(babelConfigPlugins, extraPlugins),
   };
 }
+
+export default {
+  extendBabel,
+};
