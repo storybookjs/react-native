@@ -1,4 +1,4 @@
-import preset from './framework-preset-react-docgen';
+import * as preset from './framework-preset-react-docgen';
 
 describe('framework-preset-react-docgen', () => {
   const babelPluginReactDocgenPath = require.resolve('babel-plugin-react-docgen');
@@ -10,7 +10,7 @@ describe('framework-preset-react-docgen', () => {
       plugins: ['foo-plugin'],
     };
 
-    const config = preset.extendBabel(babelConfig);
+    const config = preset.babel(babelConfig);
 
     expect(config).toEqual({
       babelrc: false,
@@ -34,7 +34,7 @@ describe('framework-preset-react-docgen', () => {
       plugins: 'bar-plugin',
     };
 
-    const config = preset.extendBabel(babelConfig);
+    const config = preset.babel(babelConfig);
 
     expect(config).toEqual({
       babelrc: false,
@@ -57,7 +57,7 @@ describe('framework-preset-react-docgen', () => {
       presets: ['env', 'foo-preset'],
     };
 
-    const config = preset.extendBabel(babelConfig);
+    const config = preset.babel(babelConfig);
 
     expect(config).toEqual({
       babelrc: false,

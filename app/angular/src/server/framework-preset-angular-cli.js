@@ -5,7 +5,7 @@ import {
   applyAngularCliWebpackConfig,
 } from './angular-cli_config';
 
-function extendWebpack(config) {
+export function webpack(config) {
   const cwd = process.cwd();
   const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
 
@@ -15,7 +15,3 @@ function extendWebpack(config) {
 
   return applyAngularCliWebpackConfig(config, cliWebpackConfigOptions);
 }
-
-export default {
-  extendWebpack,
-};

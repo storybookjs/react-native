@@ -2,7 +2,7 @@ import path from 'path';
 import { ContextReplacementPlugin } from 'webpack';
 import loadTsConfig from './ts_config';
 
-function extendWebpack(config, { configDir }) {
+export function webpack(config, { configDir }) {
   return {
     ...config,
     module: {
@@ -48,7 +48,3 @@ function extendWebpack(config, { configDir }) {
     ],
   };
 }
-
-export default {
-  extendWebpack,
-};
