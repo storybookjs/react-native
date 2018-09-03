@@ -21,7 +21,10 @@ export default function renderMain({
   showError,
   forceRender,
 }) {
-  const element = story();
+  const element = story({
+    kind: selectedKind,
+    story: selectedStory,
+  });
 
   if (!element) {
     showError({
