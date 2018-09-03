@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.0-alpha.18",
+  "version": "4.0.0-alpha.20",
   "description": "Core Storybook Components",
   "repository": {
     "type": "git",
@@ -17,33 +17,20 @@
   "dependencies": {
     "@emotion/core": "0.13.0",
     "@emotion/provider": "0.11.1",
-    "@emotion/styled": "0.10.4",
-    "@ndelangen/react-treebeard": "^2.1.0",
-    "@reach/router": "^1.1.1",
-    "fast-deep-equal": "^2.0.1",
+    "@emotion/styled": "0.10.5",
     "global": "^4.3.2",
-    "immer": "^1.5.0",
-    "lodash.debounce": "^4.0.8",
-    "lodash.get": "^4.4.2",
     "lodash.pick": "^4.4.0",
     "lodash.throttle": "^4.1.1",
-    "memoizee": "^0.4.13",
     "prop-types": "^15.6.2",
-    "qs": "^6.5.2",
-    "react-fuzzy": "^0.5.2",
     "react-inspector": "^2.3.0",
-    "react-lifecycles-compat": "^3.0.4",
-    "react-modal": "^3.5.1",
-    "react-resize-detector": "^3.1.1",
     "react-split-pane": "^0.1.82",
-    "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.0.4",
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.18",
-    "@storybook/addon-knobs": "4.0.0-alpha.18",
-    "@storybook/react": "4.0.0-alpha.18"
+    "@storybook/addon-actions": "4.0.0-alpha.20",
+    "@storybook/addon-knobs": "4.0.0-alpha.20",
+    "@storybook/react": "4.0.0-alpha.20"
   },
   "peerDependencies": {
     "react": "*",

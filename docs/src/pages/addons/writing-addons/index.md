@@ -232,7 +232,7 @@ storiesOf('Button', module)
 
 We use [emotion](https://emotion.sh) for styling, AND we provide a theme which can be set by the user!
 
-We highly recommend you also use emotion to style your components for storybook, but it's not a requirement. You can use inline styles or another css-in-js lib. You can receive the theme as a prop by using the `withCSSContext` function from emotion. [Read more about theming](/configuration/theming).
+We highly recommend you also use emotion to style your components for storybook, but it's not a requirement. You can use inline styles or another css-in-js lib. You can receive the theme as a prop by using the `withCSSContext` hoc from emotion. [Read more about theming](/configuration/theming).
 
 ## Re-using existing components
 

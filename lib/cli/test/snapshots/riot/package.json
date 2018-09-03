@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "riot": "^3.11.1"
+    "riot": "^3.11.2"
   },
   "devDependencies": {
     "common-tags": "^1.8.0",
@@ -34,10 +34,10 @@
     "babel-loader": "latest",
     "babel-preset-env": "latest",
     "babel-register": "latest",
-    "@storybook/riot": "4.0.0-alpha.18",
-    "@storybook/addon-actions": "^4.0.0-alpha.18",
-    "@storybook/addon-links": "^4.0.0-alpha.18",
-    "@storybook/addons": "^4.0.0-alpha.18",
+    "@storybook/riot": "^4.0.0-alpha.20",
+    "@storybook/addon-actions": "^4.0.0-alpha.20",
+    "@storybook/addon-links": "^4.0.0-alpha.20",
+    "@storybook/addons": "^4.0.0-alpha.20",
     "@babel/core": "^7.0.0"
   },
   "peerDependencies": {

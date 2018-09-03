@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "4.0.0-alpha.18",
+  "version": "4.0.0-alpha.20",
   "description": "Storybook Addon Prop Editor Component",
   "repository": {
     "type": "git",
@@ -13,9 +13,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.18",
-    "@storybook/components": "4.0.0-alpha.18",
-    "@storybook/core-events": "4.0.0-alpha.18",
+    "@emotion/styled": "0.10.5",
+    "@storybook/addons": "4.0.0-alpha.20",
+    "@storybook/components": "4.0.0-alpha.20",
+    "@storybook/core-events": "4.0.0-alpha.20",
     "copy-to-clipboard": "^3.0.8",
     "escape-html": "^1.0.3",
     "fast-deep-equal": "^2.0.1",
@@ -24,7 +25,6 @@
     "qs": "^6.5.2",
     "react-color": "^2.14.1",
     "react-datetime": "^2.15.0",
-    "@emotion/styled": "0.10.4",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },

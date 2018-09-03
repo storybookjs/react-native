@@ -98,7 +98,7 @@ First follow the instructions [here](https://github.com/ds300/react-native-types
 Now update your storybook `package.json` script to the following
 
     "scripts": {
-       "storybook": "storybook --metro-config $PWD/rn-cli.config.js"
+       "storybook": "storybook start --metro-config $PWD/rn-cli.config.js -p 7007"
     }
 
 The metro bundler requires an absolute path to the config. The above setup assumes the `rn-cli.config.js` is in the root of your project or next to your `package.json`

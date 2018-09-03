@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import deepEqual from 'deep-equal';
+import deepEqual from 'fast-deep-equal';
 import { CYCLIC_KEY, retrocycle } from '../../lib';
 import { isObject } from '../../lib/util';
 

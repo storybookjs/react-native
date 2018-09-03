@@ -57,7 +57,7 @@ const Button = styled.button({
   outline: 0,
 });
 
-const Label = styled.h6({
+const Label = styled.label({
   display: 'table-cell',
   boxSizing: 'border-box',
   verticalAlign: 'top',

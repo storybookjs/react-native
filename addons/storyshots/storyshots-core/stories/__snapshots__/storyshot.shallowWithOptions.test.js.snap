@@ -1,11 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Another Button with some emoji 1`] = `"{\\"type\\":\\"button\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":{\\"type\\":\\"span\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"role\\":\\"img\\",\\"aria-label\\":\\"so cool\\",\\"children\\":\\"😀 😎 👍 💯\\"},\\"_owner\\":null,\\"_store\\":{}},\\"className\\":\\"css-1qwzad5 eux70yo0\\"},\\"_owner\\":null,\\"_store\\":{}}"`;
+exports[`Storyshots Another Button with some emoji 1`] = `
+<Styled(button)
+  onClick={[Function]}
+>
+  <span
+    aria-label="so cool"
+    role="img"
+  >
+    😀 😎 👍 💯
+  </span>
+</Styled(button)>
+`;
 
-exports[`Storyshots Another Button with text 1`] = `"{\\"type\\":\\"button\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"Hello Button\\",\\"className\\":\\"css-1qwzad5 eux70yo0\\"},\\"_owner\\":null,\\"_store\\":{}}"`;
+exports[`Storyshots Another Button with text 1`] = `
+<Styled(button)
+  onClick={[Function]}
+>
+  Hello Button
+</Styled(button)>
+`;
 
-exports[`Storyshots Button with some emoji 1`] = `"{\\"type\\":\\"button\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":{\\"type\\":\\"span\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"role\\":\\"img\\",\\"aria-label\\":\\"so cool\\",\\"children\\":\\"😀 😎 👍 💯\\"},\\"_owner\\":null,\\"_store\\":{}},\\"className\\":\\"css-1qwzad5 eux70yo0\\"},\\"_owner\\":null,\\"_store\\":{}}"`;
+exports[`Storyshots Button with some emoji 1`] = `
+<Styled(button)
+  onClick={[Function]}
+>
+  <span
+    aria-label="so cool"
+    role="img"
+  >
+    😀 😎 👍 💯
+  </span>
+</Styled(button)>
+`;
 
-exports[`Storyshots Button with text 1`] = `"{\\"type\\":\\"button\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"Hello Button\\",\\"className\\":\\"css-1qwzad5 eux70yo0\\"},\\"_owner\\":null,\\"_store\\":{}}"`;
+exports[`Storyshots Button with text 1`] = `
+<Styled(button)
+  onClick={[Function]}
+>
+  Hello Button
+</Styled(button)>
+`;
 
-exports[`Storyshots Welcome to Storybook 1`] = `"{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":[{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"Welcome to storybook\\"},\\"_owner\\":null,\\"_store\\":{}},{\\"type\\":\\"p\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"This is a UI component dev environment for your app.\\"},\\"_owner\\":null,\\"_store\\":{}},{\\"type\\":\\"p\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":[\\"We've added some basic stories inside the \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"src/stories\\"},\\"_owner\\":null,\\"_store\\":{}},\\" directory.\\",{\\"type\\":\\"br\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{},\\"_owner\\":null,\\"_store\\":{}},\\"A story is a single state of one or more UI components. You can have as many stories as you want.\\",{\\"type\\":\\"br\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{},\\"_owner\\":null,\\"_store\\":{}},\\"(Basically a story is like a visual test case.)\\"]},\\"_owner\\":null,\\"_store\\":{}},{\\"type\\":\\"p\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":[\\"See these sample \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"stories\\"},\\"_owner\\":null,\\"_store\\":{}},\\" for a component called\\",\\" \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"Button\\"},\\"_owner\\":null,\\"_store\\":{}},\\".\\"]},\\"_owner\\":null,\\"_store\\":{}},{\\"type\\":\\"p\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":[\\"Just like that, you can add your own components as stories.\\",{\\"type\\":\\"br\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{},\\"_owner\\":null,\\"_store\\":{}},\\"You can also edit those components and see changes right away.\\",{\\"type\\":\\"br\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{},\\"_owner\\":null,\\"_store\\":{}},\\"(Try editing the \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"Button\\"},\\"_owner\\":null,\\"_store\\":{}},\\" stories located at\\",\\" \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"src/stories/index.js\\"},\\"_owner\\":null,\\"_store\\":{}},\\".)\\"]},\\"_owner\\":null,\\"_store\\":{}},{\\"type\\":\\"p\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":[\\"Usually we create stories with smaller UI components in the app.\\",{\\"type\\":\\"br\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{},\\"_owner\\":null,\\"_store\\":{}},\\"Have a look at the\\",\\" \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"href\\":\\"https://storybook.js.org/basics/writing-stories\\",\\"target\\":\\"_blank\\",\\"rel\\":\\"noopener noreferrer\\",\\"children\\":\\"Writing Stories\\"},\\"_owner\\":null,\\"_store\\":{}},\\" \\",\\"section in our documentation.\\"]},\\"_owner\\":null,\\"_store\\":{}},{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":[{\\"type\\":\\"b\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\"NOTE:\\"},\\"_owner\\":null,\\"_store\\":{}},{\\"type\\":\\"br\\",\\"key\\":null,\\"ref\\":null,\\"props\\":{},\\"_owner\\":null,\\"_store\\":{}},\\"Have a look at the \\",{\\"key\\":null,\\"ref\\":null,\\"props\\":{\\"children\\":\\".storybook/webpack.config.js\\"},\\"_owner\\":null,\\"_store\\":{}},\\" to add webpack loaders and plugins you are using in this project.\\"]},\\"_owner\\":null,\\"_store\\":{}}]},\\"_owner\\":null,\\"_store\\":{}}"`;
+exports[`Storyshots Welcome to Storybook 1`] = `
+<ForwardRef>
+  <ForwardRef>
+    Welcome to storybook
+  </ForwardRef>
+  <p>
+    This is a UI component dev environment for your app.
+  </p>
+  <p>
+    We've added some basic stories inside the 
+    <ForwardRef>
+      src/stories
+    </ForwardRef>
+     directory.
+    <br />
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    <br />
+    (Basically a story is like a visual test case.)
+  </p>
+  <p>
+    See these sample 
+    <ForwardRef
+      onClick={[Function]}
+    >
+      stories
+    </ForwardRef>
+     for a component called
+     
+    <ForwardRef>
+      Button
+    </ForwardRef>
+    .
+  </p>
+  <p>
+    Just like that, you can add your own components as stories.
+    <br />
+    You can also edit those components and see changes right away.
+    <br />
+    (Try editing the 
+    <ForwardRef>
+      Button
+    </ForwardRef>
+     stories located at
+     
+    <ForwardRef>
+      src/stories/index.js
+    </ForwardRef>
+    .)
+  </p>
+  <p>
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    Have a look at the
+     
+    <ForwardRef
+      href="https://storybook.js.org/basics/writing-stories"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Writing Stories
+    </ForwardRef>
+     
+    section in our documentation.
+  </p>
+  <ForwardRef>
+    <b>
+      NOTE:
+    </b>
+    <br />
+    Have a look at the 
+    <ForwardRef>
+      .storybook/webpack.config.js
+    </ForwardRef>
+     to add webpack loaders and plugins you are using in this project.
+  </ForwardRef>
+</ForwardRef>
+`;
