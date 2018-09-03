@@ -6,9 +6,6 @@ import { Table, Td, Th } from '@storybook/components';
 import PropVal from './PropVal';
 import PrettyPropType from './types/PrettyPropType';
 
-const willItOccurAgain = (collection, item, itemIndex = 0) =>
-  collection.indexOf(item, itemIndex + 1) !== -1;
-
 export const multiLineText = input => {
   if (!input) {
     return input;
@@ -18,13 +15,9 @@ export const multiLineText = input => {
   const isSingleLine = arrayOfText.length < 2;
   return isSingleLine
     ? text
-    : arrayOfText.map((
-        lineOfText,
-        i // note: lineOfText is the closest we will get to a unique key
-      ) => (
-        <span
-          key={willItOccurAgain(arrayOfText, lineOfText, i) ? `${lineOfText}.${i}` : lineOfText}
-        >
+    : arrayOfText.map((lineOfText, i) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <span key={`${lineOfText}.${i}`}>
           {i > 0 && <br />} {lineOfText}
         </span>
       ));
