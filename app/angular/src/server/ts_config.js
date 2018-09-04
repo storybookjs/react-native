@@ -22,7 +22,5 @@ export default function(configDir) {
     tsLoaderOptions.configFile = configFilePath;
   }
 
-  console.log(tsLoaderOptions);
-
   return tsLoaderOptions;
 }

@@ -3,47 +3,53 @@ import { ContextReplacementPlugin } from 'webpack';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import loadTsLoaderOptions from './ts_config';
 
-export default (config, configDir) => ({
-  ...config,
-  module: {
-    ...config.module,
-    rules: [
-      ...config.module.rules,
-      {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: require.resolve('ts-loader'),
-            options: loadTsLoaderOptions(configDir),
-          },
-          require.resolve('angular2-template-loader'),
-        ],
-      },
-      {
-        test: /[/\\]@angular[/\\]core[/\\].+\.js$/,
-        parser: { system: true },
-      },
-      {
-        test: /\.html$/,
-        loader: 'raw-loader',
-        exclude: /\.async\.html$/,
-      },
-      {
-        test: /\.scss$/,
-        use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
-      },
+export default (config, configDir) => {
+  const tsLoaderOptions = loadTsLoaderOptions(configDir);
+  return {
+    ...config,
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        {
+          test: /\.tsx?$/,
+          use: [
+            {
+              loader: require.resolve('ts-loader'),
+              options: tsLoaderOptions,
+            },
+            require.resolve('angular2-template-loader'),
+          ],
+        },
+        {
+          test: /[/\\]@angular[/\\]core[/\\].+\.js$/,
+          parser: { system: true },
+        },
+        {
+          test: /\.html$/,
+          loader: 'raw-loader',
+          exclude: /\.async\.html$/,
+        },
+        {
+          test: /\.scss$/,
+          use: [require.resolve('raw-loader'), require.resolve('sass-loader')],
+        },
+      ],
+    },
+    resolve: {
+      ...config.resolve,
+      extensions: [...config.resolve.extensions, '.ts', '.tsx'],
+    },
+    plugins: [
+      ...config.plugins,
+      // See https://github.com/angular/angular/issues/11580#issuecomment-401127742
+      new ContextReplacementPlugin(
+        /@angular(\\|\/)core(\\|\/)fesm5/,
+        path.resolve(__dirname, '..')
+      ),
+      new ForkTsCheckerWebpackPlugin({
+        tsconfig: tsLoaderOptions.configFile,
+      }),
     ],
-  },
-  resolve: {
-    ...config.resolve,
-    extensions: [...config.resolve.extensions, '.ts', '.tsx'],
-  },
-  plugins: [
-    ...config.plugins,
-    // See https://github.com/angular/angular/issues/11580#issuecomment-401127742
-    new ContextReplacementPlugin(/@angular(\\|\/)core(\\|\/)fesm5/, path.resolve(__dirname, '..')),
-    new ForkTsCheckerWebpackPlugin({
-      tsconfig: loadTsLoaderOptions.configFile,
-    }),
-  ],
-});
+  };
+};
