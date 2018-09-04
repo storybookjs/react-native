@@ -13,13 +13,16 @@ function resolveTsConfig(tsConfigPath) {
 }
 
 export default function(configDir) {
-  const configFile = resolveTsConfig(path.resolve(configDir, 'tsconfig.json'));
+  const tsLoaderOptions = {
+    transpileOnly: true,
+  };
+  const configFilePath = resolveTsConfig(path.resolve(configDir, 'tsconfig.json'));
 
-  if (!configFile) {
-    return {};
+  if (configFilePath) {
+    tsLoaderOptions.configFile = configFilePath;
   }
 
-  return {
-    configFile,
-  };
+  console.log(tsLoaderOptions);
+
+  return tsLoaderOptions;
 }
