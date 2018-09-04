@@ -39,6 +39,12 @@ exports[`Storyshots Another Button with text 1`] = `
 </ForwardRef>
 `;
 
+exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
+<AsyncTestComponent>
+  <h1 />
+</AsyncTestComponent>
+`;
+
 exports[`Storyshots Button with some emoji 1`] = `
 <ForwardRef
   onClick={[Function]}

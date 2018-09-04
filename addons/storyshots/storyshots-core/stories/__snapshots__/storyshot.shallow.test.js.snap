@@ -21,6 +21,12 @@ exports[`Storyshots Another Button with text 1`] = `
 </Styled(button)>
 `;
 
+exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
+<h1>
+  
+</h1>
+`;
+
 exports[`Storyshots Button with some emoji 1`] = `
 <Styled(button)
   onClick={[Function]}
