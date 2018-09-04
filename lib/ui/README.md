@@ -14,7 +14,6 @@ You can configure it by providing a provider API.
 -   [Hacking Guide](#hacking-guide)
     -   [The App](#the-app)
     -   [Changing UI](#changing-ui)
-    -   [Redux](#redux)
     -   [Mounting](#mounting)
     -   [App Context](#app-context)
     -   [Actions](#actions)
@@ -144,10 +143,6 @@ If you like to change the appearance of the UI, you need to look at the `ui` mod
 
 You can also change containers(which are written with [react-komposer](https://github.com/kadirahq/react-komposer/)) to add more data from the redux state.
 
-### Redux
-
-Each module has a it's own set of reducers at `<module>/configs/reducers` directory. These reducers are loaded in the `src/index.js`(inside the main api).
-
 ### Mounting
 
 The UI is mounted in the `src/modules/ui/routes.js`. Inside that, we have injected dependencies as well. Refer [mantra-core](https://github.com/mantrajs/mantra-core) for that.
@@ -182,6 +177,4 @@ The above action(or the `handleShortcut` method) accepts events as a constant de
 
 ### URL Changes
 
-We are not using any routing library. That's because, we don't want to do routing, but wanted to add some query params and use them.
-
-Routing logic is implemented in the `src/modules/ui/configs/handle_routing.js` configuration.
+TODO: state we use reach/router customized to query params
