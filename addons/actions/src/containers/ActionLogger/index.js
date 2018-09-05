@@ -16,7 +16,7 @@ export default class ActionLogger extends React.Component {
     this.mounted = true;
     const { channel, api } = this.props;
 
-    channel.on(EVENT_ID, this._actionListener);
+    channel.on(EVENT_ID, this.addAction);
     this.stopListeningOnStory = api.onStory(this.handleStoryChange);
   }
 
