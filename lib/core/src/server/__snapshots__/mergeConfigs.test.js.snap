@@ -12,6 +12,12 @@ Object {
       "r2",
     ],
   },
+  "optimization": Object {
+    "runtimeChunk": true,
+    "splitChunks": Object {
+      "chunks": "all",
+    },
+  },
   "output": Object {
     "filename": "[name].js",
   },
@@ -48,6 +54,12 @@ Object {
       "r2",
     ],
   },
+  "optimization": Object {
+    "runtimeChunk": true,
+    "splitChunks": Object {
+      "chunks": "all",
+    },
+  },
   "output": Object {
     "filename": "[name].js",
   },
@@ -83,6 +95,15 @@ Object {
       "r3",
       "r4",
     ],
+  },
+  "optimization": Object {
+    "minimizer": Array [
+      "banana",
+    ],
+    "runtimeChunk": true,
+    "splitChunks": Object {
+      "chunks": "all",
+    },
   },
   "output": Object {
     "filename": "[name].js",
