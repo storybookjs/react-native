@@ -97,7 +97,7 @@ export default class KnobPanel extends PureComponent {
       query[`knob-${name}`] = Types[knob.type].serialize(knob.value);
     });
 
-    copy(`${location.origin + location.pathname}?${qs.stringify(query)}`);
+    copy(`${location.origin + location.pathname}?${qs.stringify(query, { encode: false })}`);
 
     // TODO: show some notification of this
   };
