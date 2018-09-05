@@ -3,6 +3,7 @@ export const configuredStyles = {
   boxShadow: 'rgba(0,0,0,0.2) 0px 0px 60px 12px',
   border: '20px solid black',
   borderRadius: '10px',
+  margin: '10px',
 };
 
 export const resetViewport = {
@@ -13,6 +14,8 @@ export const resetViewport = {
     border: 'none',
     display: 'block',
     boxShadow: 'none',
+    borderRadius: '0px',
+    margin: '0px',
   },
 };
 

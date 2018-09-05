@@ -13,6 +13,8 @@ export const INITIAL_VIEWPORTS = {
       border: 'none',
       display: 'block',
       boxShadow: 'none',
+      borderRadius: '0',
+      margin: '0',
     },
     type: 'desktop',
   },
