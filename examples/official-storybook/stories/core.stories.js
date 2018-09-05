@@ -26,8 +26,7 @@ storiesOf('Core|Parameters', module)
     }
   );
 
-// TODO: this is actually a feature request, can we make this work
-storiesOf('Core|decorator', module)
+storiesOf('Core|Decorator arguments', module)
   .addDecorator(fn => fn({ test: 'awesome' }))
   .add('adds data to storyFn', (...params) => <pre>{JSON.stringify(params, null, 2)}</pre>);
 
