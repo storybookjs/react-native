@@ -1,6 +1,6 @@
-import wrapBabelConfig from './wrapBabelConfig';
+import * as preset from './framework-preset-react-docgen';
 
-describe('babel_config', () => {
+describe('framework-preset-react-docgen', () => {
   const babelPluginReactDocgenPath = require.resolve('babel-plugin-react-docgen');
 
   it('should return the config with the extra plugins when `plugins` is an array.', () => {
@@ -10,7 +10,7 @@ describe('babel_config', () => {
       plugins: ['foo-plugin'],
     };
 
-    const config = wrapBabelConfig(babelConfig);
+    const config = preset.babel(babelConfig);
 
     expect(config).toEqual({
       babelrc: false,
@@ -34,7 +34,7 @@ describe('babel_config', () => {
       plugins: 'bar-plugin',
     };
 
-    const config = wrapBabelConfig(babelConfig);
+    const config = preset.babel(babelConfig);
 
     expect(config).toEqual({
       babelrc: false,
@@ -57,7 +57,7 @@ describe('babel_config', () => {
       presets: ['env', 'foo-preset'],
     };
 
-    const config = wrapBabelConfig(babelConfig);
+    const config = preset.babel(babelConfig);
 
     expect(config).toEqual({
       babelrc: false,
