@@ -168,6 +168,7 @@ export default class StoryPanel extends Component {
         showLineNumbers="true"
         renderer={this.lineRenderer}
         copyable={false}
+        padded
       >
         {source}
       </SyntaxHighlighter>
