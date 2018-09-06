@@ -253,7 +253,7 @@ jobs:
     docker:
       - image: andthensome/docker-node-rsync
     environment:
-        BASH_ENV: ~/.bashrc
+      BASH_ENV: ~/.bashrc
     steps:
       - checkout
       - attach_workspace:
@@ -267,7 +267,7 @@ jobs:
     docker:
       - image: andthensome/docker-node-rsync
     environment:
-        BASH_ENV: ~/.bashrc
+      BASH_ENV: ~/.bashrc
     steps:
       - checkout
       - attach_workspace:
@@ -287,10 +287,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            cd docs
-            git config --global user.email "gh-pages@localhost"
-            git config --global user.name "npm gh-pages"
-            yarn deploy:ci
+            echo "Nothing to deploy"
 workflows:
   version: 2
   build_test_deploy:
@@ -324,7 +321,7 @@ workflows:
             - build
       - deploy:
           requires:
-            - docs
+            - build
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+/
