@@ -146,14 +146,22 @@ export default class StoryPanel extends Component {
   };
 
   lineRenderer = ({ rows, stylesheet, useInlineStyles }) => {
-    // debugger;
     const { locationsMap, locationsKeys } = this.state;
 
+    // because of the usage of lineRenderer, all lines will be wrapped in a span
+    // these spans will recieve all classes on them for some reason
+    // which makes colours casecade incorrectly
+    // this removed that list of classnames
+    const myrows = rows.map(({ properties, ...rest }) => ({
+      ...rest,
+      properties: { className: [] },
+    }));
+
     if (!locationsMap || !locationsKeys.length) {
-      return this.createPart(rows, stylesheet, useInlineStyles);
+      return this.createPart(myrows, stylesheet, useInlineStyles);
     }
 
-    const parts = this.createParts(rows, stylesheet, useInlineStyles);
+    const parts = this.createParts(myrows, stylesheet, useInlineStyles);
 
     return <span>{parts}</span>;
   };

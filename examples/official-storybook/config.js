@@ -1,5 +1,6 @@
 import React from 'react';
 import ThemeProvider from '@emotion/provider';
+import styled from '@emotion/styled';
 import { configure, addDecorator } from '@storybook/react';
 import { themes } from '@storybook/components';
 import { setOptions } from '@storybook/addon-options';
@@ -18,12 +19,31 @@ setOptions({
   theme: themes.dark,
 });
 
+const Reset = styled.div(({ theme }) => ({
+  fontFamily: theme.mainTextFace,
+  color: theme.mainTextColor,
+  background: theme.mainBackground,
+  WebkitFontSmoothing: 'antialiased',
+  fontSize: theme.mainTextSize,
+
+  position: 'fixed',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  width: '100vw',
+  height: '100vh',
+  overflow: 'hidden',
+}));
+
 addDecorator(
   (story, { kind }) =>
     kind === 'Core|Errors' ? (
       story()
     ) : (
-      <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
+      <ThemeProvider theme={themes.dark}>
+        <Reset>{story()}</Reset>
+      </ThemeProvider>
     )
 );
 
