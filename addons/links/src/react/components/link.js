@@ -5,15 +5,9 @@ import { RoutedLink } from '@storybook/components';
 import { openLink, hrefTo } from '../../preview';
 
 export default class LinkTo extends PureComponent {
-  constructor(...args) {
-    super(...args);
-
-    this.state = {
-      href: '/',
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
+  state = {
+    href: '/',
+  };
 
   componentDidMount() {
     this.updateHref();
@@ -27,14 +21,15 @@ export default class LinkTo extends PureComponent {
     }
   }
 
+  handleClick = e => {
+    e.preventDefault();
+    openLink(this.props);
+  };
+
   async updateHref() {
     const { kind, story } = this.props;
     const href = await hrefTo(kind, story);
     this.setState({ href });
-  }
-
-  handleClick() {
-    openLink(this.props);
   }
 
   render() {
