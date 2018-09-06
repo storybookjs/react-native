@@ -1,41 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { RoutedLink, monoFonts } from '@storybook/components';
-import jsx from 'react-syntax-highlighter/languages/prism/jsx';
-import { darcula } from 'react-syntax-highlighter/styles/prism';
-import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import { RoutedLink, SyntaxHighlighter } from '@storybook/components';
+
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
-
-// TODO: take from theme
-const highlighterTheme = {
-  ...darcula,
-  'pre[class*="language-"]': {
-    ...darcula['pre[class*="language-"]'],
-    margin: 'auto',
-    width: 'auto',
-    height: 'auto',
-    minHeight: '100%',
-    overflow: 'hidden',
-    boxSizing: 'border-box',
-    display: 'flex',
-    fontFamily: monoFonts.fontFamily,
-    fontSize: 'inherit',
-  },
-  'code[class*="language-"]': {
-    ...darcula['code[class*="language-"]'],
-    margin: 0,
-    fontFamily: 'inherit',
-  },
-};
-
-registerLanguage('jsx', jsx);
 
 const styles = {
   story: {
     display: 'block',
     textDecoration: 'none',
-    color: darcula['code[class*="language-"]'].color,
   },
   selectedStory: {
     backgroundColor: 'rgba(255, 242, 60, 0.2)',
@@ -59,7 +32,7 @@ const getLocationKeys = locationsMap =>
     : [];
 
 export default class StoryPanel extends Component {
-  state = { source: '// Here will be dragons 🐉' };
+  state = { source: 'loading source...' };
 
   componentDidMount() {
     this.mounted = true;
@@ -173,6 +146,7 @@ export default class StoryPanel extends Component {
   };
 
   lineRenderer = ({ rows, stylesheet, useInlineStyles }) => {
+    // debugger;
     const { locationsMap, locationsKeys } = this.state;
 
     if (!locationsMap || !locationsKeys.length) {
@@ -192,9 +166,8 @@ export default class StoryPanel extends Component {
       <SyntaxHighlighter
         language="jsx"
         showLineNumbers="true"
-        style={highlighterTheme}
         renderer={this.lineRenderer}
-        customStyle={styles.panel}
+        copyable={false}
       >
         {source}
       </SyntaxHighlighter>
