@@ -2,25 +2,25 @@
   "name": "react-scripts-fixture",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
-  },
   "devDependencies": {
-    "@storybook/react": "^4.0.0-alpha.16",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0"
+    "@storybook/react": "^4.0.0-alpha.20",
+    "@storybook/addon-actions": "^4.0.0-alpha.20",
+    "@storybook/addon-links": "^4.0.0-alpha.20",
+    "@storybook/addons": "^4.0.0-alpha.20",
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.2"
   }
 }

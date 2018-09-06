@@ -10,4 +10,7 @@ module.exports = {
   globals: {
     __DEV__: true,
   },
+  transform: {
+    '^.+\\.jsx?$': './babel-jest',
+  },
 };

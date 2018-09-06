@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "4.0.0-alpha.16",
+  "version": "4.0.0-alpha.20",
   "description": "Core Storybook UI",
   "repository": {
     "type": "git",
@@ -15,16 +15,17 @@
     "storybook": "start-storybook -p 9010"
   },
   "dependencies": {
-    "@ndelangen/react-treebeard": "^2.1.0",
-    "@storybook/components": "4.0.0-alpha.16",
-    "@storybook/core-events": "4.0.0-alpha.16",
+    "@emotion/core": "0.13.0",
+    "@emotion/provider": "0.11.1",
+    "@emotion/styled": "0.10.5",
+    "@ndelangen/react-treebeard": "^3.0.0",
+    "@storybook/components": "4.0.0-alpha.20",
+    "@storybook/core-events": "4.0.0-alpha.20",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
-    "babel-runtime": "^6.26.0",
     "deep-equal": "^1.0.1",
-    "emotion": "^9.2.6",
-    "emotion-theming": "^9.2.6",
+    "emotion": "^9.2.8",
     "events": "^3.0.0",
     "fuse.js": "^3.2.1",
     "global": "^4.3.2",
@@ -35,14 +36,13 @@
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
-    "react-emotion": "^9.2.6",
     "react-fuzzy": "^0.5.2",
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.5.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.16",
-    "@storybook/react": "4.0.0-alpha.16"
+    "@storybook/addon-actions": "4.0.0-alpha.20",
+    "@storybook/react": "4.0.0-alpha.20"
   },
   "peerDependencies": {
     "react": "*",

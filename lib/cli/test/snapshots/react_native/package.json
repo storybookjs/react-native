@@ -7,6 +7,9 @@
     "test": "jest",
     "storybook": "storybook start -p 7007"
   },
+  "jest": {
+    "preset": "react-native"
+  },
   "dependencies": {
     "react": "16.0.0-alpha.12",
     "react-native": "0.47.2"
@@ -16,16 +19,13 @@
     "babel-preset-react-native": "3.0.1",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.12",
-    "@storybook/react-native": "^4.0.0-alpha.16",
-    "@storybook/addon-actions": "^4.0.0-alpha.16",
-    "@storybook/addon-links": "^4.0.0-alpha.16",
-    "@storybook/addons": "^4.0.0-alpha.16",
+    "@storybook/react-native": "^4.0.0-alpha.20",
+    "@storybook/addon-actions": "^4.0.0-alpha.20",
+    "@storybook/addon-links": "^4.0.0-alpha.20",
+    "@storybook/addons": "^4.0.0-alpha.20",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "react-dom": "16.0.0-alpha.12",
     "prop-types": "^15.6.2"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
