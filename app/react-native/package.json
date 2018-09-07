@@ -50,7 +50,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "find-cache-dir": "^2.0.0",
-    "generate-page-webpack-plugin": "^1.0.0",
+    "generate-page-webpack-plugin": "^1.1.0",
     "global": "^4.3.2",
     "json5": "^2.0.1",
     "prop-types": "^15.6.2",
