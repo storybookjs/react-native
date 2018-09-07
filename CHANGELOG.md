@@ -1,3 +1,33 @@
+# 4.0.0-alpha.21
+
+2018-September-07
+
+#### Features
+
+-   Presets support [#4027](https://github.com/storybooks/storybook/pull/4027)
+
+#### Bug Fixes
+
+-   CLI: Add missing @babel/core dependency [#4117](https://github.com/storybooks/storybook/pull/4117)
+-   Fix duplicated keys in PropTypes table  [#4095](https://github.com/storybooks/storybook/pull/4095)
+
+#### Documentation
+
+-   Add storybook-addon-angularjs to addon-gallery [#4123](https://github.com/storybooks/storybook/pull/4123)
+-   Update README to include registering in addons.js [#4113](https://github.com/storybooks/storybook/pull/4113)
+-   fixed wrong start script in docs [#4110](https://github.com/storybooks/storybook/pull/4110)
+-   typo fix [#4109](https://github.com/storybooks/storybook/pull/4109)
+-   I forgot the link to the guide (riot) [#4105](https://github.com/storybooks/storybook/pull/4105)
+
+#### Dependency Upgrades
+
+-   Moved to lerna 3 [#4067](https://github.com/storybooks/storybook/pull/4067)
+
+#### Other
+
+-   [WIP] Refactor core and frameworks to work with presets [#4043](https://github.com/storybooks/storybook/pull/4043)
+-   [WIP] presets - merge default babel configs [#4107](https://github.com/storybooks/storybook/pull/4107)
+
 # 4.0.0-alpha.20
 
 2018-August-31
