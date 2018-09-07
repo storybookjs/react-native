@@ -1,6 +1,6 @@
 {
   "name": "@storybook/marko",
-  "version": "4.0.0-alpha.20",
+  "version": "4.0.0-alpha.21",
   "description": "Storybook for Marko: Develop Marko Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/marko",
   "bugs": {
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@storybook/core": "4.0.0-alpha.20",
+    "@storybook/core": "4.0.0-alpha.21",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "marko-loader": "^1.3.3",
