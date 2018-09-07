@@ -1,17 +1,17 @@
-<MyButton>
+<my-button>
   <button class="buttonStyles" onClick="{ onClick }">
     <yield/>
   </button>
 
   <style>
     .buttonStyles {
-      border: '1px solid #eee';
-      border-radius: 3;
-      background-color: '#FFFFFF';
-      cursor: 'pointer';
-      font-size: 15;
-      padding: '3px 10px';
-      margin: 10;
+      border: solid 1px #eee;
+      border-radius: 3px;
+      background-color: #FFFFFF;
+      cursor: pointer;
+      font-size: 15px;
+      padding: 3px 10px;
+      margin: 10px;
     }
   </style>
 
@@ -21,4 +21,4 @@
         (() => { console.log('clicked') })).bind(this, e)
     }
   </script>
-</MyButton>
+</my-button>
