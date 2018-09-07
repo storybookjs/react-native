@@ -15,6 +15,7 @@ TODO:
 - [ ] FIX HMR - keep state of explorer
 
 - [ ] FIX http://localhost:9011/?path=/components/Core-Errors-storyErrors (should error)
+- [ ] FIX https://deploy-preview-4086--storybooks-official.netlify.com/?selectedKind=Addons%7Ca11y&selectedStory=Invalid%20contrast&full=0&addons=1&stories=1&panelRight=0&addonPanel=%40storybook%2Faddon-a11y%2Fpanel (should redirect correctly)
 
 - [x] OPTIMIZE double selectStory event
 - [ ] OPTIMIZE selectStory event at fullscreen switch
