@@ -27,7 +27,6 @@
     "riot": "latest",
     "webpack": "latest",
     "webpack-cli": "latest",
-    "riot-tag-loader": "latest",
     "uglifyjs-webpack-plugin": "latest",
     "webpack-bundle-analyzer": "latest",
     "packer-webpack-plugin": "latest",
@@ -38,6 +37,7 @@
     "@storybook/addon-actions": "^4.0.0-alpha.20",
     "@storybook/addon-links": "^4.0.0-alpha.20",
     "@storybook/addons": "^4.0.0-alpha.20",
+    "riot-tag-loader": "^2.1.0",
     "@babel/core": "^7.0.0"
   },
   "peerDependencies": {
