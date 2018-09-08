@@ -1,3 +1,4 @@
+import deprecate from 'util-deprecate';
 import addons, { makeDecorator } from '@storybook/addons';
 import { EVENT_ID } from '../shared';
 
@@ -43,10 +44,10 @@ function emitOptions(options) {
 // setOptions function will send Storybook UI options when the channel is
 // ready. If called before, options will be cached until it can be sent.
 let globalOptions = {};
-export function setOptions(options) {
+export const setOptions = deprecate(options => {
   globalOptions = options;
   emitOptions(options);
-}
+}, '`setOptions(options)` is deprecated. Please use the `withOptions(options)` decorator globally.');
 
 export const withOptions = makeDecorator({
   name: 'withOptions',
