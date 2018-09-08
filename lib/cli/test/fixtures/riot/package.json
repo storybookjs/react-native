@@ -25,7 +25,6 @@
     "riot": "latest",
     "webpack": "latest",
     "webpack-cli": "latest",
-    "riot-tag-loader": "latest",
     "uglifyjs-webpack-plugin": "latest",
     "webpack-bundle-analyzer": "latest",
     "packer-webpack-plugin": "latest",
