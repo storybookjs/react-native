@@ -19,7 +19,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.21"
+    "@storybook/addons": "4.0.0-alpha.21",
+    "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
     "react": "*"
