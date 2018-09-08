@@ -15,9 +15,9 @@ Here are all those options:
 
     Options:
 
-      -h, --help                    output usage information
+      --help                    output usage information
       -V, --version                 output the version number
-      -p, --port [number]           Port to run Storybook (Required)
+      -p, --port [number]           Port to run Storybook
       -h, --host [string]           Host to run Storybook
       -s, --static-dir <dir-names>  Directory where to load static files from, comma-separated list
       -c, --config-dir [dir-name]   Directory where to load Storybook configurations from
