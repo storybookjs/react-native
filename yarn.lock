@@ -8266,9 +8266,9 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
-generate-page-webpack-plugin@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/generate-page-webpack-plugin/-/generate-page-webpack-plugin-1.0.0.tgz#e6261efb7e6b9ef8a8136126b14fa26aedfb7f33"
+generate-page-webpack-plugin@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/generate-page-webpack-plugin/-/generate-page-webpack-plugin-1.1.0.tgz#5940c9c6bdbfa03b1a4ef8f909875d5ebafbd3af"
 
 genfun@^4.0.1:
   version "4.0.1"
