@@ -80,18 +80,18 @@ export default class BackgroundPanel extends Component {
 
   componentDidMount() {
     const { api, channel } = this.props;
-    this.iframe = document.getElementById(storybookIframe);
-
-    if (!this.iframe) {
-      return;
-      // throw new Error('Cannot find Storybook iframe');
-    }
-
-    Object.keys(style.iframe).forEach(prop => {
-      this.iframe.style[prop] = style.iframe[prop];
-    });
-
     channel.on(Events.SET, data => {
+      this.iframe = document.getElementById(storybookIframe);
+
+      if (!this.iframe) {
+        return;
+        // throw new Error('Cannot find Storybook iframe');
+      }
+
+      Object.keys(style.iframe).forEach(prop => {
+        this.iframe.style[prop] = style.iframe[prop];
+      });
+
       const backgrounds = [...data];
 
       this.setState({ backgrounds });

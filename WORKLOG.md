@@ -27,7 +27,9 @@ TODO:
 - [ ] REMOVE zoom level text & ADD reset button
 - [ ] ADD UI to go fullscreen and toggle panels
 - [ ] REMOVE grid-lines or move into addons / toggle
+- [>] FIX refresh when toggle panel or nav
 
+- [x] REMOVE toNested
 - [ ] ADD explorer hover over items
 - [ ] ADD support for rootSeparators in explorer
 - [ ] ADD auto-open of selection in explorer

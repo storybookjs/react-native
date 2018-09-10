@@ -63,8 +63,6 @@ export default class ViewportPanel extends Component {
     const { channel, api } = this.props;
     const { defaultViewport } = this.state;
 
-    this.iframe = document.getElementById(storybookIframe);
-
     channel.on(UPDATE_VIEWPORT_EVENT_ID, this.changeViewport);
     channel.on(CONFIGURE_VIEWPORT_EVENT_ID, this.configure);
     channel.on(SET_STORY_DEFAULT_VIEWPORT_EVENT_ID, this.setStoryDefaultViewport);
@@ -99,6 +97,7 @@ export default class ViewportPanel extends Component {
   };
 
   configure = (options = ViewportPanel.defaultOptions) => {
+    this.iframe = document.getElementById(storybookIframe);
     const viewports = getViewports(options.viewports);
     const defaultViewport = getDefaultViewport(viewports, options.defaultViewport);
 
