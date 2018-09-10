@@ -29,6 +29,6 @@ export function webpack(config) {
 export function babelDefault(config) {
   return {
     ...config,
-    plugins: [...config.plugins, require.resolve('babel-preset-vue')],
+    presets: [...config.presets, require.resolve('babel-preset-vue')],
   };
 }
