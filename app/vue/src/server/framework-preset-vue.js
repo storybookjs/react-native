@@ -27,7 +27,7 @@ export function webpack(config) {
   };
 }
 
-export function babel(config) {
+export function babelDefault(config) {
   const patch = {
     presets: [require.resolve('babel-preset-vue')],
   };

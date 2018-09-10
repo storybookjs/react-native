@@ -1,6 +1,6 @@
 import { mergeBabel } from '@storybook/core/server';
 
-export function babel(config) {
+export function babelDefault(config) {
   const patch = {
     plugins: [require.resolve('@babel/plugin-transform-react-jsx')],
   };
