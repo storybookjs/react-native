@@ -18,6 +18,7 @@
     "@storybook/addon-a11y": "4.0.0-alpha.21",
     "@storybook/addon-actions": "4.0.0-alpha.21",
     "@storybook/addon-backgrounds": "4.0.0-alpha.21",
+    "@storybook/addon-resources": "4.0.0-alpha.21",
     "@storybook/addon-centered": "4.0.0-alpha.21",
     "@storybook/addon-events": "4.0.0-alpha.21",
     "@storybook/addon-graphql": "4.0.0-alpha.21",

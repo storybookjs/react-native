@@ -1,0 +1,38 @@
+{
+  "name": "@storybook/addon-resources",
+  "version": "4.0.0-alpha.21",
+  "description": "A storybook addon to add/remove resources for your story",
+  "keywords": [
+    "addon",
+    "resources",
+    "react",
+    "storybook"
+  ],
+  "homepage": "https://storybook.js.org",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "author": "nm123github",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@emotion/styled": "0.10.5",
+    "@storybook/addons": "4.0.0-alpha.21",
+    "@storybook/components": "4.0.0-alpha.21",
+    "@storybook/core-events": "4.0.0-alpha.21",
+    "global": "^4.3.2",
+    "prop-types": "^15.6.2",
+    "util-deprecate": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
