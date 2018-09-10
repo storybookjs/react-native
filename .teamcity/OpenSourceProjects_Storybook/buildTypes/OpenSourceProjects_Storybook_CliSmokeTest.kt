@@ -7,7 +7,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
-object OpenSourceProjects_Storybook_CliTest : BuildType({
+object OpenSourceProjects_Storybook_CliSmokeTest : BuildType({
     uuid = "b1db1a3a-a4cf-46ea-8f55-98b86611f92f"
     id = "OpenSourceProjects_Storybook_CliTest"
     name = "CLI smoke tests"
