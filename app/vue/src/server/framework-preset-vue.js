@@ -1,5 +1,4 @@
 import VueLoaderPlugin from 'vue-loader/lib/plugin';
-import { mergeBabel } from '@storybook/core/server';
 
 export function webpack(config) {
   return {
@@ -28,9 +27,8 @@ export function webpack(config) {
 }
 
 export function babelDefault(config) {
-  const patch = {
-    presets: [require.resolve('babel-preset-vue')],
+  return {
+    ...config,
+    plugins: [...config.plugins, require.resolve('babel-preset-vue')],
   };
-
-  return mergeBabel(patch, config);
 }
