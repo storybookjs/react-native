@@ -53,7 +53,7 @@
     "postpublish": "yarn --cwd lib/cli test -o",
     "publish:alpha": "npm run publish -- --npm-tag=alpha",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
-    "start": "npm --prefix examples/official-storybook run storybook",
+    "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
     "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
