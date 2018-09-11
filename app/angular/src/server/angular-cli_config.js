@@ -3,6 +3,42 @@ import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_utils';
 
+function getTsConfigOptions(tsConfigPath) {
+  const basicOptions = {
+    options: {},
+    fileNames: [],
+    errors: [],
+  };
+
+  if (!fs.existsSync(tsConfigPath)) {
+    return basicOptions;
+  }
+
+  const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
+  const { baseUrl } = tsConfig.compilerOptions || {};
+
+  if (baseUrl) {
+    const tsConfigDirName = path.dirname(tsConfigPath);
+    basicOptions.options.baseUrl = path.resolve(tsConfigDirName, baseUrl);
+  }
+
+  return basicOptions;
+}
+
+function getAngularCliParts(cliWebpackConfigOptions) {
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  const ngcliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
+
+  try {
+    return {
+      cliCommonConfig: ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
+      cliStyleConfig: ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
 export function getAngularCliWebpackConfigOptions(dirToSearch) {
   const fname = path.join(dirToSearch, 'angular.json');
 
@@ -31,16 +67,16 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
     project.sourceRoot
   );
 
+  const projectRoot = path.resolve(dirToSearch, project.root);
+  const tsConfigPath = path.resolve(dirToSearch, 'src/tsconfig.app.json');
+  const tsConfig = getTsConfigOptions(tsConfigPath);
+
   return {
     root: dirToSearch,
-    projectRoot: path.resolve(dirToSearch, project.root),
+    projectRoot,
+    tsConfigPath,
+    tsConfig,
     supportES2015: false,
-    tsConfig: {
-      options: {},
-      fileNames: [],
-      errors: [],
-    },
-    tsConfigPath: path.resolve(dirToSearch, 'src/tsconfig.app.json'),
     buildOptions: {
       ...projectOptions,
       assets: normalizedAssets,
@@ -49,26 +85,25 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
 }
 
 export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions) {
-  if (!cliWebpackConfigOptions) return baseConfig;
+  if (!cliWebpackConfigOptions) {
+    return baseConfig;
+  }
 
   if (!isBuildAngularInstalled()) {
     logger.info('=> Using base config because @angular-devkit/build-angular is not installed.');
     return baseConfig;
   }
 
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const ngcliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
+  const cliParts = getAngularCliParts(cliWebpackConfigOptions);
 
-  let cliCommonConfig;
-  let cliStyleConfig;
-  try {
-    cliCommonConfig = ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions);
-    cliStyleConfig = ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions);
-  } catch (e) {
+  if (!cliParts) {
     logger.warn('=> Failed to get angular-cli webpack config.');
     return baseConfig;
   }
+
   logger.info('=> Get angular-cli webpack config.');
+
+  const { cliCommonConfig, cliStyleConfig } = cliParts;
 
   // Don't use storybooks .css/.scss rules because we have to use rules created by @angular-devkit/build-angular
   // because @angular-devkit/build-angular created rules have include/exclude for global style files.
@@ -85,7 +120,7 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
       .concat(Object.values(cliStyleConfig.entry).reduce((acc, item) => acc.concat(item), [])),
   };
 
-  const mod = {
+  const module = {
     ...baseConfig.module,
     rules: [...cliStyleConfig.module.rules, ...rulesExcludingStyles],
   };
@@ -93,11 +128,19 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   // We use cliCommonConfig plugins to serve static assets files.
   const plugins = [...cliStyleConfig.plugins, ...cliCommonConfig.plugins, ...baseConfig.plugins];
 
+  const resolve = {
+    ...baseConfig.resolve,
+    modules: Array.from(
+      new Set([...baseConfig.resolve.modules, ...cliCommonConfig.resolve.modules])
+    ),
+  };
+
   return {
     ...baseConfig,
     entry,
-    module: mod,
+    module,
     plugins,
+    resolve,
     resolveLoader: cliCommonConfig.resolveLoader,
   };
 }
