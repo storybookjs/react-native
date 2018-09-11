@@ -18,16 +18,17 @@ TODO:
 - [ ] FIX https://deploy-preview-4086--storybooks-official.netlify.com/?selectedKind=Addons%7Ca11y&selectedStory=Invalid%20contrast&full=0&addons=1&stories=1&panelRight=0&addonPanel=%40storybook%2Faddon-a11y%2Fpanel (should redirect correctly)
 
 - [x] OPTIMIZE double selectStory event
-- [ ] OPTIMIZE selectStory event at fullscreen switch
+- [x] OPTIMIZE selectStory event at fullscreen switch
 - [ ] unify SET_CURRENT_STORY & SELECT_STORY
 
 - [ ] FIX eslint
 - [ ] ADD unit tests
 
-- [ ] REMOVE zoom level text & ADD reset button
+- [x] REMOVE zoom level text & ADD reset button
 - [ ] ADD UI to go fullscreen and toggle panels
-- [ ] REMOVE grid-lines or move into addons / toggle
-- [>] FIX refresh when toggle panel or nav
+- [x] REMOVE grid-lines or move into addons / toggle
+- [x] FIX refresh when toggle panel or nav
+- [ ] FIX main is weird when entry page is settings after switching to components
 
 - [x] REMOVE toNested
 - [ ] ADD explorer hover over items
@@ -35,3 +36,5 @@ TODO:
 - [ ] ADD auto-open of selection in explorer
 - [ ] ADD explorer empty message
 - [ ] TRY - when you click on a group, maybe select first renderable child
+
+- [ ] shortcuts component

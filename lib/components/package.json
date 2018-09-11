@@ -18,6 +18,7 @@
     "@emotion/core": "0.13.0",
     "@emotion/provider": "0.11.1",
     "@emotion/styled": "0.10.5",
+    "@storybook/core-events": "4.0.0-alpha.20",
     "global": "^4.3.2",
     "immer": "^1.5.0",
     "lodash.pick": "^4.4.0",
