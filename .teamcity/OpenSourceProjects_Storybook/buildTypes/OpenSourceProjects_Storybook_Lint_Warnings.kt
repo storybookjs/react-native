@@ -8,7 +8,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
     uuid = "42cfbb9a-f35b-4f96-afae-0b508927a737"
     id = "OpenSourceProjects_Storybook_Lint_Warnings"
-    name = "Lint"
+    name = "Lint Warnings"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
