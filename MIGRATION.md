@@ -88,6 +88,10 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
     ```
   * If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
 
+### start-storybook opens browser automatically
+
+If you're using `start-storybook` on CI, you may need to opt out of this using the new `--ci` flag.
+
 ## From version 3.3.x to 3.4.x
 
 There are no expected breaking changes in the 3.4.x release, but 3.4 contains a major refactor to make it easier to support new frameworks, and we will document any breaking changes here if they arise.

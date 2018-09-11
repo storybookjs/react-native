@@ -15,16 +15,17 @@
     "axios": "^0.16.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-hot-loader": "^4.3.6",
     "react-router": "^4.2.0",
-    "react-static": "nozzle/react-static"
+    "react-static": "^6.0.0-beta.21"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
     "serve": "^6.1.0",
-    "@storybook/react": "^4.0.0-alpha.20",
-    "@storybook/addon-actions": "^4.0.0-alpha.20",
-    "@storybook/addon-links": "^4.0.0-alpha.20",
-    "@storybook/addons": "^4.0.0-alpha.20",
+    "@storybook/react": "^4.0.0-alpha.21",
+    "@storybook/addon-actions": "^4.0.0-alpha.21",
+    "@storybook/addon-links": "^4.0.0-alpha.21",
+    "@storybook/addons": "^4.0.0-alpha.21",
     "@babel/core": "^7.0.0",
     "babel-loader": "^8.0.2"
   }

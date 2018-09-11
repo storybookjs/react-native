@@ -6,11 +6,12 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
-object OpenSourceProjects_Storybook_Lint : BuildType({
-    uuid = "42cfbb9a-f35b-4f96-afae-0b508927a737"
-    id = "OpenSourceProjects_Storybook_Lint"
-    name = "Lint"
+object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
+    uuid = "42cfbb9a-f35b-4f96-afae-0b508927a738"
+    id = "OpenSourceProjects_Storybook_Lint_Warnings"
+    name = "Lint Warnings"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -35,7 +36,14 @@ object OpenSourceProjects_Storybook_Lint : BuildType({
 
     triggers {
         vcs {
-            enabled = false
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+                +:dependencies.io-*
+            """.trimIndent()
         }
     }
 
@@ -61,7 +69,7 @@ object OpenSourceProjects_Storybook_Lint : BuildType({
 
     failureConditions {
         failOnMetricChange {
-            metric = BuildFailureOnMetric.MetricType.INSPECTION_ERROR_COUNT
+            metric = BuildFailureOnMetric.MetricType.INSPECTION_WARN_COUNT
             threshold = 0
             units = BuildFailureOnMetric.MetricUnit.DEFAULT_UNIT
             comparison = BuildFailureOnMetric.MetricComparison.MORE

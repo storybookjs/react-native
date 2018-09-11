@@ -1,6 +1,6 @@
 {
   "name": "@storybook/riot",
-  "version": "4.0.0-alpha.20",
+  "version": "4.0.0-alpha.21",
   "description": "Storybook for riot.js: View riot snippets in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/riot",
   "bugs": {
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@storybook/core": "4.0.0-alpha.20",
+    "@storybook/core": "4.0.0-alpha.21",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "moment": "^2.22.2",

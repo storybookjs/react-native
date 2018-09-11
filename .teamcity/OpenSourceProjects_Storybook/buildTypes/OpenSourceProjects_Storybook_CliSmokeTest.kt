@@ -4,13 +4,13 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
-import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
-object OpenSourceProjects_Storybook_Lint : BuildType({
-    uuid = "42cfbb9a-f35b-4f96-afae-0b508927a737"
-    id = "OpenSourceProjects_Storybook_Lint"
-    name = "Lint"
+object OpenSourceProjects_Storybook_CliSmokeTest : BuildType({
+    uuid = "b1db1a3a-a4cf-46ea-8f55-98b86611f92f"
+    id = "OpenSourceProjects_Storybook_CliSmokeTest"
+    name = "CLI smoke tests"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -22,21 +22,29 @@ object OpenSourceProjects_Storybook_Lint : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core --docs
+                yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
+            dockerImage = "andthensome/docker-node-rsync"
         }
         script {
-            name = "Lint"
-            scriptContent = "yarn lint:ci"
-            dockerImage = "node:%docker.node.version%"
+            name = "Test"
+            scriptContent = "yarn --cwd lib/cli test -s"
+            dockerImage = "andthensome/docker-node-rsync"
         }
     }
 
     triggers {
         vcs {
-            enabled = false
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+                +:dependencies.io-*
+            """.trimIndent()
         }
+        retryBuild {}
     }
 
     features {
@@ -57,16 +65,5 @@ object OpenSourceProjects_Storybook_Lint : BuildType({
 
     cleanup {
         artifacts(days = 1)
-    }
-
-    failureConditions {
-        failOnMetricChange {
-            metric = BuildFailureOnMetric.MetricType.INSPECTION_ERROR_COUNT
-            threshold = 0
-            units = BuildFailureOnMetric.MetricUnit.DEFAULT_UNIT
-            comparison = BuildFailureOnMetric.MetricComparison.MORE
-            compareTo = value()
-            param("anchorBuild", "lastSuccessful")
-        }
     }
 })
