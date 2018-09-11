@@ -207,7 +207,7 @@ To update your app to use the new package names, you can use the cli:
 npm install --global @storybook/cli
 
 # if you run this inside a v2 app, it should perform the necessary codemods.
-getstorybook
+storybook init
 ```
 
 #### Details

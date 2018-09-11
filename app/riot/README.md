@@ -15,7 +15,7 @@ So you can develop UI components in isolation without worrying about app specifi
 ```sh
 npm i -g @storybook/cli
 cd my-app
-getstorybook
+storybook init --riot
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)

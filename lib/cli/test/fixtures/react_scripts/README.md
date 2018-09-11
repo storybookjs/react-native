@@ -1514,7 +1514,7 @@ npm install -g @storybook/cli
 Then, run the following command inside your app’s directory:
 
 ```sh
-getstorybook
+storybook init
 ```
 
 After that, follow the instructions on the screen.
