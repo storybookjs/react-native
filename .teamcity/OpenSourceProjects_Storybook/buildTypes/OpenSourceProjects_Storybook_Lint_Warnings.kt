@@ -4,6 +4,8 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
+import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
 
 object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
     uuid = "42cfbb9a-f35b-4f96-afae-0b508927a738"
@@ -33,7 +35,14 @@ object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
 
     triggers {
         vcs {
-            enabled = false
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            triggerRules = "-:comment=^TeamCity change:**"
+            branchFilter = """
+                +:pull/*
+                +:release/*
+                +:master
+                +:dependencies.io-*
+            """.trimIndent()
         }
     }
 
@@ -55,5 +64,16 @@ object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
 
     cleanup {
         artifacts(days = 1)
+    }
+
+    failureConditions {
+        failOnMetricChange {
+            metric = BuildFailureOnMetric.MetricType.INSPECTION_WARN_COUNT
+            threshold = 0
+            units = BuildFailureOnMetric.MetricUnit.DEFAULT_UNIT
+            comparison = BuildFailureOnMetric.MetricComparison.MORE
+            compareTo = value()
+            param("anchorBuild", "lastSuccessful")
+        }
     }
 })
