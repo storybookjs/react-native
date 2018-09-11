@@ -25,7 +25,6 @@
     "memoizee": "^0.4.14",
     "prop-types": "^15.6.2",
     "react-inspector": "^2.3.0",
-    "react-split-pane": "^2.0.2",
     "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.0.4",
     "render-fragment": "^0.1.1"

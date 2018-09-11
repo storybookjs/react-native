@@ -45,7 +45,7 @@
     "react-lifecycles-compat": "^3.0.4",
     "react-modal": "^3.5.1",
     "react-resize-detector": "^3.1.1",
-    "react-split-pane": "^0.1.82",
+    "react-split-pane": "^2.0.2",
     "to-camel-case": "^1.0.0"
   },
   "devDependencies": {
