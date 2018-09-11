@@ -6,6 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.BuildFailureOnMetric
 import jetbrains.buildServer.configs.kotlin.v2017_2.failureConditions.failOnMetricChange
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
 object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
     uuid = "42cfbb9a-f35b-4f96-afae-0b508927a738"
