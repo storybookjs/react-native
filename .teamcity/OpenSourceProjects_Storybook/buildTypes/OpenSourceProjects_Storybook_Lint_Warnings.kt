@@ -4,13 +4,11 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.retryBuild
-import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.VcsTrigger
 
-object OpenSourceProjects_Storybook_CliSmokeTest : BuildType({
-    uuid = "b1db1a3a-a4cf-46ea-8f55-98b86611f92f"
-    id = "OpenSourceProjects_Storybook_CliSmokeTest"
-    name = "CLI smoke tests"
+object OpenSourceProjects_Storybook_Lint_Warnings : BuildType({
+    uuid = "42cfbb9a-f35b-4f96-afae-0b508927a737"
+    id = "OpenSourceProjects_Storybook_Lint_Warnings"
+    name = "Lint"
 
     vcs {
         root(OpenSourceProjects_Storybook.vcsRoots.OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster)
@@ -22,29 +20,21 @@ object OpenSourceProjects_Storybook_CliSmokeTest : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core
+                yarn bootstrap --core --docs
             """.trimIndent()
-            dockerImage = "andthensome/docker-node-rsync"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
-            name = "Test"
-            scriptContent = "yarn --cwd lib/cli test -s"
-            dockerImage = "andthensome/docker-node-rsync"
+            name = "Lint"
+            scriptContent = "yarn lint:ci"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
     triggers {
         vcs {
-            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-            triggerRules = "-:comment=^TeamCity change:**"
-            branchFilter = """
-                +:pull/*
-                +:release/*
-                +:master
-                +:dependencies.io-*
-            """.trimIndent()
+            enabled = false
         }
-        retryBuild {}
     }
 
     features {

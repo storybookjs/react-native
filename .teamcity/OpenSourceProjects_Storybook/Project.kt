@@ -28,6 +28,7 @@ object Project : Project({
     buildType(OpenSourceProjects_Storybook_CliSmokeTest)
     buildType(OpenSourceProjects_Storybook_Test)
     buildType(OpenSourceProjects_Storybook_Lint)
+    buildType(OpenSourceProjects_Storybook_Lint_Warnings)
     buildType(OpenSourceProjects_Storybook_SmokeTests)
     buildType(OpenSourceProjects_Storybook_Chromatic)
 
