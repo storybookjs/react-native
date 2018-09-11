@@ -15,22 +15,17 @@
 
   <script>
     class SimpleButton extends Polymer.Element {
-      static get is() { return 'simple-button'; }
+      static get is() {
+        return 'simple-button';
+      }
 
       static get properties() {
         return {
-          title: {
-            type: String,
-            value: 'Button',
-          },
-          handleClick: {
-            type: Function,
-            value: () => {},
-          }
+          title: { type: String, value: 'Button' },
+          handleClick: { type: Function, value: () => {} },
         };
       }
     }
-
     customElements.define(SimpleButton.is, SimpleButton);
   </script>
 </dom-module>

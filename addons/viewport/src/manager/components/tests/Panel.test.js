@@ -4,7 +4,7 @@ import { document } from 'global';
 
 import { ActionButton, Select } from '@storybook/components';
 
-import { Panel } from '../Panel';
+import Panel from '../Panel';
 import { resetViewport, viewportsTransformer } from '../viewportInfo';
 import { DEFAULT_VIEWPORT, INITIAL_VIEWPORTS } from '../../../shared';
 

@@ -1,7 +1,6 @@
 const error = 2;
 const warn = 1;
 const ignore = 0;
-
 module.exports = {
   root: true,
   extends: [
@@ -11,47 +10,21 @@ module.exports = {
     'prettier',
     'prettier/react',
   ],
-  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json'],
+  plugins: ['prettier', 'jest', 'import', 'react', 'jsx-a11y', 'json', 'html'],
   parser: 'babel-eslint',
-  parserOptions: {
-    ecmaVersion: 8,
-    sourceType: 'module',
-  },
-  env: {
-    es6: true,
-    node: true,
-    'jest/globals': true,
-  },
+  parserOptions: { ecmaVersion: 8, sourceType: 'module' },
+  env: { es6: true, node: true, 'jest/globals': true },
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts'],
-      },
-    },
+    'import/resolver': { node: { extensions: ['.js', '.ts'] } },
+    'html/html-extensions': ['.html'],
   },
   rules: {
-    'prettier/prettier': [
-      warn,
-      {
-        printWidth: 100,
-        tabWidth: 2,
-        bracketSpacing: true,
-        trailingComma: 'es5',
-        singleQuote: true,
-      },
-    ],
+    'prettier/prettier': [warn],
     'no-debugger': process.env.NODE_ENV === 'production' ? error : ignore,
     'class-methods-use-this': ignore,
-    'import/extensions': [
-      error,
-      'always',
-      {
-        js: 'never',
-        ts: 'never',
-      },
-    ],
+    'import/extensions': [error, 'always', { js: 'never', ts: 'never' }],
     'import/no-extraneous-dependencies': [
       error,
       {
@@ -73,12 +46,7 @@ module.exports = {
     'import/default': error,
     'import/named': error,
     'import/namespace': error,
-    'react/jsx-filename-extension': [
-      warn,
-      {
-        extensions: ['.js', '.jsx'],
-      },
-    ],
+    'react/jsx-filename-extension': [warn, { extensions: ['.js', '.jsx'] }],
     'react/jsx-no-bind': [
       error,
       {
@@ -99,14 +67,7 @@ module.exports = {
       },
     ],
     'react/no-unescaped-entities': ignore,
-    'jsx-a11y/label-has-for': [
-      error,
-      {
-        required: {
-          some: ['nesting', 'id'],
-        },
-      },
-    ],
+    'jsx-a11y/label-has-for': [error, { required: { some: ['nesting', 'id'] } }],
     'jsx-a11y/anchor-is-valid': [
       error,
       {
@@ -116,23 +77,14 @@ module.exports = {
     ],
     'no-underscore-dangle': [
       error,
-      {
-        allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'],
-      },
+      { allow: ['__STORYBOOK_CLIENT_API__', '__STORYBOOK_ADDONS_CHANNEL__'] },
     ],
   },
   overrides: [
     {
       files: ['**/react-native*/**', '**/REACT_NATIVE*/**', '**/crna*/**'],
-      rules: {
-        'jsx-a11y/accessible-emoji': ignore,
-      },
+      rules: { 'jsx-a11y/accessible-emoji': ignore },
     },
-    {
-      files: '**/.storybook/config.js',
-      rules: {
-        'global-require': ignore,
-      },
-    },
+    { files: '**/.storybook/config.js', rules: { 'global-require': ignore } },
   ],
 };

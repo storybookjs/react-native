@@ -22,25 +22,16 @@
   </template>
   <script>
     class PlaygroundButton extends Polymer.Element {
-      static get is() { return 'playground-button'; }
+      static get is() {
+        return 'playground-button';
+      }
+
       static get properties() {
         return {
-          title: {
-            type: String,
-            value: 'Click me:',
-          },
-          counter: {
-            type: Number,
-            value: 0
-          },
-          isSquare: {
-            type: Boolean,
-            value: false
-          },
-          computedClass: {
-            type: String,
-            computed: '_computeClass(isSquare)'
-          }
+          title: { type: String, value: 'Click me:' },
+          counter: { type: Number, value: 0 },
+          isSquare: { type: Boolean, value: false },
+          computedClass: { type: String, computed: '_computeClass(isSquare)' },
         };
       }
 
@@ -52,7 +43,6 @@
         return isSquare ? 'square' : 'rounded';
       }
     }
-
     customElements.define(PlaygroundButton.is, PlaygroundButton);
   </script>
 </dom-module>

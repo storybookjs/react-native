@@ -70,15 +70,12 @@
   </template>
   <script>
     class StorybookWelcomeToPolymer extends Polymer.Element {
-      static get is() { return 'storybook-welcome-to-polymer'; }
+      static get is() {
+        return 'storybook-welcome-to-polymer';
+      }
 
       static get properties() {
-        return {
-          goToButton: {
-            type: Function,
-            value: () => {}
-          }
-        };
+        return { goToButton: { type: Function, value: () => {} } };
       }
 
       goToButtonWrapper(e) {
@@ -86,7 +83,6 @@
         this.goToButton();
       }
     }
-
     customElements.define(StorybookWelcomeToPolymer.is, StorybookWelcomeToPolymer);
   </script>
 </dom-module>
