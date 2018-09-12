@@ -112,7 +112,7 @@ const Content = styled(({ tests, className }) => (
               <Indicator
                 color={result.status === 'passed' ? colors.success : colors.error}
                 size={16}
-                styles={{ marginRight: 5 }}
+                overrides={{ marginRight: 5 }}
               >
                 {result.status}
               </Indicator>

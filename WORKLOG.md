@@ -4,6 +4,7 @@ TODO:
 - [x] FIX addon-storysource click navigate
 - [x] FIX addon-links
 - [x] FIX addon-actions
+- [ ] FIX when reloading page selected story should stay (this happens when there's a mismatch between hierarchySeparators)
 
 - [ ] INVESTIGATE if addon-storysource can use router directly over state method
 - [ ] DISCUSS moving router into a separate package
@@ -28,6 +29,8 @@ TODO:
 - [x] REMOVE grid-lines or move into addons / toggle
 - [x] FIX refresh when toggle panel or nav
 - [ ] FIX main is weird when entry page is settings after switching to components
+
+- [ ] ADD postMessage to ejected iframe
 
 - [x] REMOVE toNested
 - [ ] ADD explorer hover over items
