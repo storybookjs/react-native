@@ -1,6 +1,7 @@
 import deprecate from 'util-deprecate';
-
 import addons, { makeDecorator } from '@storybook/addons';
+
+import { SET_OPTIONS } from './shared';
 
 import { manager, registerKnobs } from './registerKnobs';
 
@@ -89,7 +90,7 @@ export const withKnobs = makeDecorator({
     manager.setOptions(allOptions);
     const channel = addons.getChannel();
     manager.setChannel(channel);
-    channel.emit('addon:knobs:setOptions', allOptions);
+    channel.emit(SET_OPTIONS, allOptions);
 
     registerKnobs();
     return getStory(context);

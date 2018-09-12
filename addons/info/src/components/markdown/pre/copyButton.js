@@ -24,7 +24,7 @@ const Button = styled.button(
       borderColor: '#ccc',
     },
   },
-  ({ styles }) => styles
+  ({ overrides }) => overrides
 );
 
 const ContentWrapper = styled.div(
@@ -32,8 +32,8 @@ const ContentWrapper = styled.div(
     transition: 'transform .2s ease',
     height: 16,
   },
-  ({ styles, toggled }) => ({
-    ...styles,
+  ({ overrides, toggled }) => ({
+    ...overrides,
     transform: toggled ? 'translateY(0px)' : 'translateY(-100%) translateY(-6px)',
   })
 );
@@ -43,8 +43,8 @@ function CopyButton({ theme, onClick, toggled }) {
   const { toggleText = 'Copied!', text = 'Copy', ...copyButtonStyles } = copyButton;
 
   return (
-    <Button onClick={onClick} styles={copyButtonStyles}>
-      <ContentWrapper styles={copyButtonContent} toggled={toggled}>
+    <Button onClick={onClick} overrides={copyButtonStyles}>
+      <ContentWrapper overrides={copyButtonContent} toggled={toggled}>
         <div style={{ marginBottom: 6 }}>{toggleText}</div>
         <div>{text}</div>
       </ContentWrapper>

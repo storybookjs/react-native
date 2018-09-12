@@ -14,18 +14,17 @@ TODO:
 - [x] FIX HMR - HMR in ejected iframe
 - [ ] FIX HMR - keep state of explorer
 
-- [ ] FIX http://localhost:9011/?path=/components/Core-Errors-storyErrors (should error)
+- [x] FIX http://localhost:9011/?path=/components/Core-Errors-storyErrors (should error)
 - [ ] FIX https://deploy-preview-4086--storybooks-official.netlify.com/?selectedKind=Addons%7Ca11y&selectedStory=Invalid%20contrast&full=0&addons=1&stories=1&panelRight=0&addonPanel=%40storybook%2Faddon-a11y%2Fpanel (should redirect correctly)
 
 - [x] OPTIMIZE double selectStory event
 - [x] OPTIMIZE selectStory event at fullscreen switch
 - [ ] unify SET_CURRENT_STORY & SELECT_STORY
 
-- [ ] FIX eslint
+- [x] FIX eslint
 - [ ] ADD unit tests
 
 - [x] REMOVE zoom level text & ADD reset button
-- [ ] ADD UI to go fullscreen and toggle panels
 - [x] REMOVE grid-lines or move into addons / toggle
 - [x] FIX refresh when toggle panel or nav
 - [ ] FIX main is weird when entry page is settings after switching to components
@@ -37,4 +36,8 @@ TODO:
 - [ ] ADD explorer empty message
 - [ ] TRY - when you click on a group, maybe select first renderable child
 
-- [ ] shortcuts component
+Dom's changes
+- [ ] ADD tools/hotkeys button
+// - [ ] ADD UI to go fullscreen and toggle panels
+- [ ] CHANGE styles of explorer
+- [ ] CHANGE styles of main (preview+panel)

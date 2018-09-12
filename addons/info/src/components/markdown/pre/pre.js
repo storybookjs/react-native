@@ -19,7 +19,7 @@ const StyledPre = styled.pre(
     lineHeight: 1.5,
     overflowX: 'scroll',
   },
-  ({ styles }) => styles
+  ({ overrides }) => overrides
 );
 
 class Pre extends React.Component {
@@ -54,7 +54,7 @@ class Pre extends React.Component {
     const { copied } = this.state;
 
     return (
-      <StyledPre styles={pre}>
+      <StyledPre overrides={pre}>
         <div ref={this.setRef}>{children}</div>
         <CopyButton onClick={this.handleClick} toggled={copied} />
       </StyledPre>

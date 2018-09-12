@@ -1,8 +1,9 @@
 import { document } from 'global';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import styled from '@emotion/styled';
+
+import { SyntaxHighlighter, Heading } from '@storybook/components';
 
 import Events from './constants';
 import Swatch from './Swatch';
@@ -10,18 +11,6 @@ import Swatch from './Swatch';
 const Wrapper = styled.div({
   padding: 20,
 });
-
-const Title = styled.h5({
-  fontSize: 16,
-});
-
-const Pre = styled.pre(({ theme }) => ({
-  padding: '30px',
-  display: 'block',
-  background: theme.fillColor,
-  marginTop: '15px',
-  lineHeight: '1.75em',
-}));
 
 const List = styled.div({
   display: 'inline-block',
@@ -58,16 +47,16 @@ storiesOf('First Component', module)
 
 const Instructions = () => (
   <Wrapper>
-    <Title>Setup Instructions</Title>
+    <Heading>Setup Instructions</Heading>
     <p>
       Please add the background decorator definition to your story. The background decorate accepts
       an array of items, which should include a name for your color (preferably the css class name)
       and the corresponding color / image value.
     </p>
     <p>Below is an example of how to add the background decorator to your story definition.</p>
-    <Pre>
-      <code>{instructionsHtml}</code>
-    </Pre>
+    <SyntaxHighlighter language="jsx" copyable bordered>
+      {instructionsHtml}
+    </SyntaxHighlighter>
   </Wrapper>
 );
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ADD_TESTS } from '../shared';
 
 const provideTests = Component =>
   class TestProvider extends React.Component {
@@ -31,7 +32,7 @@ const provideTests = Component =>
         }
       });
 
-      channel.on('storybook/tests/add_tests', this.onAddTests);
+      channel.on(ADD_TESTS, this.onAddTests);
     }
 
     componentWillUnmount() {
@@ -39,7 +40,7 @@ const provideTests = Component =>
       const { channel } = this.props;
 
       this.stopListeningOnStory();
-      channel.removeListener('storybook/tests/add_tests', this.onAddTests);
+      channel.removeListener(ADD_TESTS, this.onAddTests);
     }
 
     onAddTests = ({ kind, storyName, tests }) => {

@@ -1,13 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Panel from '../Panel';
+import { CHANGE, SET } from '../../shared';
 
 describe('Panel', () => {
   it('should subscribe to setKnobs event of channel', () => {
     const testChannel = { on: jest.fn() };
     const testApi = { onStory: jest.fn() };
     shallow(<Panel channel={testChannel} api={testApi} active />);
-    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
+    expect(testChannel.on).toHaveBeenCalledWith(SET, jasmine.any(Function));
   });
 
   it('should subscribe to onStory event', () => {
@@ -16,7 +17,7 @@ describe('Panel', () => {
     shallow(<Panel channel={testChannel} api={testApi} active />);
 
     expect(testApi.onStory).toHaveBeenCalled();
-    expect(testChannel.on).toHaveBeenCalledWith('addon:knobs:setKnobs', jasmine.any(Function));
+    expect(testChannel.on).toHaveBeenCalledWith(SET, jasmine.any(Function));
   });
 
   describe('setKnobs handler', () => {
@@ -42,7 +43,7 @@ describe('Panel', () => {
       };
 
       shallow(<Panel channel={testChannel} api={testApi} active />);
-      const setKnobsHandler = handlers['addon:knobs:setKnobs'];
+      const setKnobsHandler = handlers[SET];
 
       const knobs = {
         foo: {
@@ -63,7 +64,7 @@ describe('Panel', () => {
         value: testQueryParams['knob-foo'],
         type: 'text',
       };
-      const e = 'addon:knobs:knobChange';
+      const e = CHANGE;
       expect(testChannel.emit).toHaveBeenCalledWith(e, knobFromUrl);
     });
 
@@ -89,7 +90,7 @@ describe('Panel', () => {
       };
 
       const wrapper = shallow(<Panel channel={testChannel} api={testApi} active />);
-      const setKnobsHandler = handlers['addon:knobs:setKnobs'];
+      const setKnobsHandler = handlers[SET];
 
       const knobs = {
         foo: {
@@ -138,7 +139,7 @@ describe('Panel', () => {
         type: 'text',
       };
       wrapper.instance().handleChange(testChangedKnob);
-      expect(testChannel.emit).toHaveBeenCalledWith('addon:knobs:knobChange', testChangedKnob);
+      expect(testChannel.emit).toHaveBeenCalledWith(CHANGE, testChangedKnob);
 
       // const paramsChange = { 'knob-foo': 'changed text' };
       // expect(testApi.setQueryParams).toHaveBeenCalledWith(paramsChange);

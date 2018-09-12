@@ -1,5 +1,5 @@
 // addons, panels and events get unique names using a prefix
-const ADDON_ID = '@storybook/addon-a11y';
+const ADDON_ID = 'storybook/a11y';
 const PANEL_ID = `${ADDON_ID}/panel`;
 const CHECK_EVENT_ID = `${ADDON_ID}/check`;
 const RERUN_EVENT_ID = `${ADDON_ID}/rerun`;

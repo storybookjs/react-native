@@ -17,6 +17,7 @@ addDecorator(
   withOptions({
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
+    // theme: themes.dark,
   })
 );
 
@@ -31,7 +32,11 @@ addDecorator((story, { kind }) => (kind === 'Core|Errors' ? story() : <Reset>{st
 
 addDecorator(
   (story, { kind }) =>
-    kind === 'Core|Errors' ? story() : <ThemeProvider theme={themes.dark}>{story()}</ThemeProvider>
+    kind === 'Core|Errors' ? (
+      story()
+    ) : (
+      <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
+    )
 );
 
 configureViewport({

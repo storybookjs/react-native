@@ -19,7 +19,7 @@ describe('Viewport preview', () => {
       configureViewport(configs);
 
       expect(channel.emit).toHaveBeenCalledTimes(1);
-      expect(channel.emit).toHaveBeenCalledWith('addon:viewport:configure', {
+      expect(channel.emit).toHaveBeenCalledWith('storybook/viewport/configure', {
         foo: 'bar',
         john: 'Doe',
       });

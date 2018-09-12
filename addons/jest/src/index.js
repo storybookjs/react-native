@@ -1,5 +1,6 @@
 import addons from '@storybook/addons';
 import deprecate from 'util-deprecate';
+import { ADD_TESTS } from './shared';
 
 const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
   Object.values(testFiles).map(name => {
@@ -15,7 +16,7 @@ const findTestResults = (testFiles, jestTestResults, jestTestFilesExt) =>
   });
 
 const emitAddTests = ({ kind, story, testFiles, options }) => {
-  addons.getChannel().emit('storybook/tests/add_tests', {
+  addons.getChannel().emit(ADD_TESTS, {
     kind,
     storyName: story,
     tests: findTestResults(testFiles, options.results, options.filesExt),

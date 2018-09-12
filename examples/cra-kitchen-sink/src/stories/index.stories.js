@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
 import { action } from '@storybook/addon-actions';
 import { withNotes } from '@storybook/addon-notes';
 import centered from '@storybook/addon-centered';
@@ -32,37 +31,30 @@ const InfoButton = () => (
 
 storiesOf('Button', module)
   .addDecorator(withNotes)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>
-      {setOptions({ selectedPanel: 'storybook/actions/actions-panel' })}
-      Hello Button
-    </Button>
-  ))
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>, {
+    options: {
+      selectedPanel: 'storybook/actions/panel',
+    },
+  })
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>
-      {setOptions({ selectedPanel: 'storybook/actions/actions-panel' })}
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
     </Button>
   ))
-  .add(
-    'with notes',
-    () => (
-      <Button>
-        {setOptions({ selectedPanel: 'storybook/notes/panel' })}
-        Check my notes in the notes panel
-      </Button>
-    ),
-    { notes: 'A very simple button' }
-  )
+  .add('with notes', () => <Button>Check my notes in the notes panel</Button>, {
+    notes: 'A very simple button',
+    options: {
+      selectedPanel: 'storybook/notes/panel',
+    },
+  })
   .add(
     'with new info',
     withInfo(
       'Use the [info addon](https://github.com/storybooks/storybook/tree/master/addons/info) with its new painless API.'
     )(context => (
       <Container>
-        {setOptions({ selectedPanel: 'storybook/info/info-panel' })}
         click the <InfoButton /> label in top right for info about "{context.story}"
       </Container>
     ))
@@ -72,7 +64,6 @@ storiesOf('Button', module)
     withInfo('see Notes panel for composition info')(
       withNotes('Composition: Info(Notes())')(context => (
         <div>
-          {setOptions({ selectedPanel: 'storybook/notes/panel' })}
           click the <InfoButton /> label in top right for info about "{context.story}"
         </div>
       ))

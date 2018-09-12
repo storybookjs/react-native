@@ -15,8 +15,8 @@ const Indicator = styled.div(
     borderRadius: size / 2,
     backgroundColor: color,
   }),
-  ({ styles }) => ({
-    ...styles,
+  ({ overrides }) => ({
+    ...overrides,
   })
 );
 

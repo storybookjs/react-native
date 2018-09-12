@@ -62,21 +62,21 @@ describe('Viewport/Panel', () => {
 
     it('listens on `configure` channel', () => {
       expect(props.channel.on).toHaveBeenCalledWith(
-        'addon:viewport:configure',
+        'storybook/viewport/configure',
         subject.instance().configure
       );
     });
 
     it('listens on `update` channel', () => {
       expect(props.channel.on).toHaveBeenCalledWith(
-        'addon:viewport:update',
+        'storybook/viewport/update',
         subject.instance().changeViewport
       );
     });
 
     it('listens on `setStoryDefaultViewport` channel', () => {
       expect(props.channel.on).toHaveBeenCalledWith(
-        'addon:viewport:setStoryDefaultViewport',
+        'storybook/viewport/setStoryDefaultViewport',
         subject.instance().setStoryDefaultViewport
       );
     });
@@ -89,21 +89,21 @@ describe('Viewport/Panel', () => {
 
     it('removes `update` channel listener', () => {
       expect(props.channel.removeListener).toHaveBeenCalledWith(
-        'addon:viewport:update',
+        'storybook/viewport/update',
         subject.instance().changeViewport
       );
     });
 
     it('removes `configure` channel listener', () => {
       expect(props.channel.removeListener).toHaveBeenCalledWith(
-        'addon:viewport:configure',
+        'storybook/viewport/configure',
         subject.instance().configure
       );
     });
 
     it('removes `setStoryDefaultViewport` channel listener', () => {
       expect(props.channel.removeListener).toHaveBeenCalledWith(
-        'addon:viewport:setStoryDefaultViewport',
+        'storybook/viewport/setStoryDefaultViewport',
         subject.instance().setStoryDefaultViewport
       );
     });
@@ -249,7 +249,7 @@ describe('Viewport/Panel', () => {
       it('emits viewport changed event', () => {
         const viewport = transformedInitialViewports[initialViewportAt(1)];
 
-        expect(props.channel.emit).toHaveBeenCalledWith('addon:viewport:viewportChanged', {
+        expect(props.channel.emit).toHaveBeenCalledWith('storybook/viewport/viewportChanged', {
           viewport,
         });
       });

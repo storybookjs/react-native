@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import addons from '@storybook/addons';
-
 import styled from '@emotion/styled';
+import { ADDON_ID, PANEL_ID } from './shared';
 
 const Panel = styled.div({
   padding: 10,
@@ -74,9 +74,9 @@ NotesPanel.propTypes = {
   }).isRequired,
 };
 
-addons.register('storybook/notes', api => {
+addons.register(ADDON_ID, api => {
   const channel = addons.getChannel();
-  addons.addPanel('storybook/notes/panel', {
+  addons.addPanel(PANEL_ID, {
     title: 'Notes',
     // eslint-disable-next-line react/prop-types
     render: ({ active }) => <NotesPanel channel={channel} api={api} active={active} />,

@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import copy from 'copy-to-clipboard';
 
 import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
+import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import Types from './types';
 import PropForm from './PropForm';
@@ -31,14 +32,14 @@ export default class KnobPanel extends PureComponent {
   componentDidMount() {
     this.mounted = true;
     const { channel, api } = this.props;
-    channel.on('addon:knobs:setKnobs', this.setKnobs);
-    channel.on('addon:knobs:setOptions', this.setOptions);
+    channel.on(SET, this.setKnobs);
+    channel.on(SET_OPTIONS, this.setOptions);
 
     this.stopListeningOnStory = api.onStory(() => {
       if (this.mounted) {
         this.setState({ knobs: {} });
       }
-      channel.emit('addon:knobs:reset');
+      channel.emit(RESET);
     });
   }
 
@@ -46,7 +47,7 @@ export default class KnobPanel extends PureComponent {
     this.mounted = false;
     const { channel } = this.props;
 
-    channel.removeListener('addon:knobs:setKnobs', this.setKnobs);
+    channel.removeListener(SET, this.setKnobs);
     this.stopListeningOnStory();
   }
 
@@ -67,7 +68,7 @@ export default class KnobPanel extends PureComponent {
           if (urlValue !== undefined) {
             // If the knob value present in url
             knob.value = Types[knob.type].deserialize(urlValue);
-            channel.emit('addon:knobs:knobChange', knob);
+            channel.emit(CHANGE, knob);
           }
         }
 
@@ -85,7 +86,7 @@ export default class KnobPanel extends PureComponent {
   reset = () => {
     const { channel } = this.props;
 
-    channel.emit('addon:knobs:reset');
+    channel.emit(RESET);
   };
 
   copy = () => {
@@ -105,7 +106,7 @@ export default class KnobPanel extends PureComponent {
   emitChange = changedKnob => {
     const { channel } = this.props;
 
-    channel.emit('addon:knobs:knobChange', changedKnob);
+    channel.emit(CHANGE, changedKnob);
   };
 
   handleChange = changedKnob => {
@@ -124,7 +125,7 @@ export default class KnobPanel extends PureComponent {
   handleClick = knob => {
     const { channel } = this.props;
 
-    channel.emit('addon:knobs:knobClick', knob);
+    channel.emit(CLICK, knob);
   };
 
   render() {

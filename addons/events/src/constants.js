@@ -1,4 +1,4 @@
-export const ADDON_ID = 'storybook/addon-events';
+export const ADDON_ID = 'storybook/events';
 
 export const PANEL_ID = `${ADDON_ID}/panel`;
 
