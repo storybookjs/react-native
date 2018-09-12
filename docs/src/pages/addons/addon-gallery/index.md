@@ -146,3 +146,6 @@ styled components theme selection.
 
 ### [AngularJS](https://github.com/titonobre/storybook-addon-angularjs)
 Create stories with AngularJS(1.x) components.
+
+### [jss theme](https://github.com/vertexbz/storybook-addon-jss-theme)
+jss theme selection.
