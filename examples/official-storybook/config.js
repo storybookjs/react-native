@@ -16,8 +16,7 @@ addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 addDecorator(
   withOptions({
     hierarchySeparator: /\/|\./,
-    hierarchyRootSeparator: /\|/,
-    theme: themes.dark,
+    hierarchyRootSeparator: '|',
   })
 );
 
@@ -28,15 +27,11 @@ const Reset = styled.div(({ theme }) => ({
   fontSize: theme.mainTextSize,
 }));
 
+addDecorator((story, { kind }) => (kind === 'Core|Errors' ? story() : <Reset>{story()}</Reset>));
+
 addDecorator(
   (story, { kind }) =>
-    kind === 'Core|Errors' ? (
-      story()
-    ) : (
-      <ThemeProvider theme={themes.dark}>
-        <Reset>{story()}</Reset>
-      </ThemeProvider>
-    )
+    kind === 'Core|Errors' ? story() : <ThemeProvider theme={themes.dark}>{story()}</ThemeProvider>
 );
 
 configureViewport({

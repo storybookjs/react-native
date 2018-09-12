@@ -11,6 +11,6 @@
   "dependencies": {
     "@storybook/channels": "4.0.0-alpha.21",
     "global": "^4.3.2",
-    "json-stringify-safe": "^5.0.1"
+    "json-fn": "^1.1.1"
   }
 }

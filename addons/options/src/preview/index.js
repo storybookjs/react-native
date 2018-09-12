@@ -8,18 +8,12 @@ export function init() {
   // NOTE nothing to do here
 }
 
-function regExpStringify(exp) {
-  if (typeof exp === 'string') return exp;
-  if (Object.prototype.toString.call(exp) === '[object RegExp]') return exp.source;
-  return null;
-}
-
 function hasOwnProp(object, propName) {
   return Object.prototype.hasOwnProperty.call(object, propName);
 }
 
 function withRegexProp(object, propName) {
-  return hasOwnProp(object, propName) ? { [propName]: regExpStringify(object[propName]) } : {};
+  return hasOwnProp(object, propName) ? { [propName]: object[propName] } : {};
 }
 
 function emitOptions(options) {
