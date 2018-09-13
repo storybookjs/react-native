@@ -14,6 +14,9 @@ export const withResources = makeDecorator({
       throw new Error('The `resources` parameter needs to be an Array of strings');
     }
 
+    // resources = union(resources,
+    //   Array.isArray(storyOptions) ? storyOptions : storyOptions.resources);
+
     channel.emit(
       'storybook/resources/add_resources',
       Array.isArray(storyOptions) ? storyOptions : storyOptions.resources

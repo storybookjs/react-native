@@ -1,12 +1,18 @@
+import { window } from 'global';
 import React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
 import { withResources } from '@storybook/addon-resources';
 
-const bootstrapButton = (label, className) => () => (
-  <button type="button" className={className}>
-    {label}
-  </button>
-);
+const bootstrapButton = (label, className) => () => {
+  function handleClick() {
+    window.alert(window.jQuery ? 1 : 0);
+  }
+  return (
+    <button type="button" onClick={handleClick} className={className}>
+      {label}
+    </button>
+  );
+};
 const fontawesomeIcon = (label, className) => () => (
   <div>
     <i className={className} /> {label}
@@ -17,7 +23,8 @@ addDecorator(
   withResources({
     resources: [
       'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
-      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', // ,
+      // 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'
     ],
   })
 );
