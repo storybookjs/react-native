@@ -34,7 +34,7 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 
 initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://my-specific-domain.com:9010'})});
 ```
-The above config will use _<https://my-specific-domain.com:9010>_ for screenshots.
+The above config will use _<https://my-specific-domain.com:9010>_ for screenshots. You can also use query parameters in your URL (e.g. for setting a different background for your storyshots, if you use `@storybook/addon-backgrounds`).
 
 
 You may also use a local static build of storybook if you do not want to run the webpack dev-server:

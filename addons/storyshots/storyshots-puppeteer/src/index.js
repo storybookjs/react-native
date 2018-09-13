@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import { logger } from '@storybook/node-logger';
+import { constructUrl } from './url';
 
 expect.extend({ toMatchImageSnapshot });
 
@@ -43,11 +44,7 @@ export const imageSnapshot = (customConfig = {}) => {
 
       return;
     }
-
-    const encodedKind = encodeURIComponent(kind);
-    const encodedStoryName = encodeURIComponent(story);
-    const storyUrl = `/iframe.html?selectedKind=${encodedKind}&selectedStory=${encodedStoryName}`;
-    const url = storybookUrl + storyUrl;
+    const url = constructUrl(storybookUrl, kind, story);
 
     if (!browser || !page) {
       logger.error(
