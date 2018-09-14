@@ -36,6 +36,7 @@
     "child-process-promise": "^2.2.1",
     "commander": "^2.17.0",
     "cross-spawn": "^6.0.5",
+    "inquirer": "^6.2.0",
     "jscodeshift": "^0.5.1",
     "json5": "^2.0.1",
     "merge-dirs": "^0.2.1",
