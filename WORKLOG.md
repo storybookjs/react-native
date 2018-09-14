@@ -38,6 +38,7 @@ TODO:
 - [ ] ADD support for rootSeparators in explorer
 - [ ] ADD auto-open of selection in explorer
 - [ ] ADD explorer empty message
+- [ ] ADD highlighting of the search results
 - [ ] TRY - when you click on a group, maybe select first renderable child - in an option?
 
 - [ ] ADD fetching of data for version notification
