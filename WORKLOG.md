@@ -29,6 +29,7 @@ TODO:
 - [x] REMOVE grid-lines or move into addons / toggle
 - [x] FIX refresh when toggle panel or nav
 - [ ] FIX main is weird when entry page is settings after switching to components
+- [x] FIX delay in resizing panels because of transition
 
 - [ ] ADD postMessage to ejected iframe
 
@@ -37,10 +38,19 @@ TODO:
 - [ ] ADD support for rootSeparators in explorer
 - [ ] ADD auto-open of selection in explorer
 - [ ] ADD explorer empty message
-- [ ] TRY - when you click on a group, maybe select first renderable child
+- [ ] TRY - when you click on a group, maybe select first renderable child - in an option?
+
+- [ ] ADD fetching of data for version notification
+- [ ] ADD storage of version info in localStorage
 
 Dom's changes
-- [ ] ADD tools/hotkeys button
-// - [ ] ADD UI to go fullscreen and toggle panels
+- [x] ADD tools/hotkeys button
+- [x] ADD UI to go fullscreen and toggle panels
 - [ ] CHANGE styles of explorer
-- [ ] CHANGE styles of main (preview+panel)
+- [ ] CHANGE styles of notifications
+- [x] CHANGE styles of main (preview+panel)
+- [ ] CHANGE toolbar
+- [ ] ADD shortcut for toggle toolbar
+- [ ] ADD shortcut for zoom
+- [ ] ADD shortcut for toggle grid
+- [ ] ADD tools to TabsBar

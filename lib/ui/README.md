@@ -63,10 +63,6 @@ const roolEl = document.getElementById('root');
 renderStorybookUI(roolEl, new Provider());
 ```
 
-Then you'll get a UI like this:
-
-![Simplest Storybook UI](./docs/simple-ui.png)
-
 > **See the [example](./example) app for a complete example.**
 
 ## API

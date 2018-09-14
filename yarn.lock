@@ -15280,6 +15280,10 @@ react-onclickoutside@^6.5.0:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
 
+react-portal-tooltip@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-portal-tooltip/-/react-portal-tooltip-2.4.0.tgz#0f2d558d9eb20ef5ab344c87572e63e7c373b229"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
@@ -15424,6 +15428,10 @@ reactcss@^1.2.0:
   resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
   dependencies:
     lodash "^4.0.1"
+
+reactjs-popup@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/reactjs-popup/-/reactjs-popup-1.2.0.tgz#93acb988f8dacf3ba139085df457b03d23e8e926"
 
 read-cache@^1.0.0:
   version "1.0.0"
