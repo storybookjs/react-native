@@ -43,7 +43,7 @@
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
     "typescript": "~2.4.0",
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.0.1",
     "babel-loader": "^8.0.2",
     "@storybook/angular": "^4.0.0-alpha.21",
     "@storybook/addon-notes": "^4.0.0-alpha.21",
