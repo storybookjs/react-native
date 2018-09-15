@@ -1,3 +1,8 @@
+// TODO: I think all of this should be in a lib or in core:
+// It's likely this is only needed to transfer data over the channel
+// The channel should be responsible for making sure any data makes it across safely
+// stringify-ing and parsing should be done there
+
 import { DecycleError } from './errors';
 
 import { getPropertiesList, typeReplacer, omitProperty } from './util';

@@ -10,7 +10,7 @@ import { NamedExportButton } from '../components/NamedExportButton';
 import TableComponent from '../components/TableComponent';
 import externalMdDocs from './addon-info-resources/EXAMPLE.md';
 
-storiesOf('Addons|Info.React Docgen', module)
+storiesOf('Addons|Info/React Docgen', module)
   .addDecorator(withInfo)
   .add(
     'Comments from PropType declarations',
@@ -74,7 +74,7 @@ const Button = () => <button />;
 Maybe include a [link](http://storybook.js.org) to your project as well.
 `;
 
-storiesOf('Addons|Info.Markdown', module)
+storiesOf('Addons|Info/Markdown', module)
   .addDecorator(withInfo)
   .add(
     'Displays Markdown in description',
@@ -115,7 +115,7 @@ const JSXDescription = (
   </div>
 );
 
-storiesOf('Addons|Info.JSX', module)
+storiesOf('Addons|Info/JSX', module)
   .addDecorator(withInfo)
   .add(
     'Displays JSX in description',
@@ -125,7 +125,7 @@ storiesOf('Addons|Info.JSX', module)
     }
   );
 
-storiesOf('Addons|Info.Options.inline', module)
+storiesOf('Addons|Info/Options.inline', module)
   .addDecorator(withInfo)
   .add('Inlines component inside story', () => <BaseButton label="Button" />, {
     info: {
@@ -134,7 +134,7 @@ storiesOf('Addons|Info.Options.inline', module)
     },
   });
 
-storiesOf('Addons|Info.Options.excludedPropTypes', module)
+storiesOf('Addons|Info/Options.excludedPropTypes', module)
   .addDecorator(withInfo)
   .add(
     'Excludes propTypes that are in the excludedPropTypes array',
@@ -147,7 +147,7 @@ storiesOf('Addons|Info.Options.excludedPropTypes', module)
     }
   );
 
-storiesOf('Addons|Info.Options.header', module)
+storiesOf('Addons|Info/Options.header', module)
   .addDecorator(withInfo)
   .add('Shows or hides Info Addon header', () => <BaseButton label="Button" />, {
     info: {
@@ -156,7 +156,7 @@ storiesOf('Addons|Info.Options.header', module)
     },
   });
 
-storiesOf('Addons|Info.Options.source', module)
+storiesOf('Addons|Info/Options.source', module)
   .addDecorator(withInfo)
   .add('Shows or hides Info Addon source', () => <BaseButton label="Button" />, {
     info: {
@@ -165,7 +165,7 @@ storiesOf('Addons|Info.Options.source', module)
     },
   });
 
-storiesOf('Addons|Info.Options.propTables', module)
+storiesOf('Addons|Info/Options.propTables', module)
   .addDecorator(withInfo)
   .add('Shows additional component prop tables', () => <BaseButton label="Button" />, {
     info: {
@@ -174,7 +174,7 @@ storiesOf('Addons|Info.Options.propTables', module)
     },
   });
 
-storiesOf('Addons|Info.Options.propTablesExclude', module)
+storiesOf('Addons|Info/Options.propTablesExclude', module)
   .addDecorator(withInfo)
   .add(
     'Exclude component from prop tables',
@@ -192,7 +192,7 @@ storiesOf('Addons|Info.Options.propTablesExclude', module)
     }
   );
 
-storiesOf('Addons|Info.Options.styles', module)
+storiesOf('Addons|Info/Options.styles', module)
   .addDecorator(withInfo)
   .add('Extend info styles with an object', () => <BaseButton label="Button" />, {
     info: {
@@ -225,7 +225,7 @@ storiesOf('Addons|Info.Options.styles', module)
     },
   });
 
-storiesOf('Addons|Info.Options.TableComponent', module)
+storiesOf('Addons|Info/Options.TableComponent', module)
   .addDecorator(withInfo)
   .add('Use a custom component for the table', () => <BaseButton label="Button" />, {
     info: {
@@ -233,7 +233,7 @@ storiesOf('Addons|Info.Options.TableComponent', module)
     },
   });
 
-storiesOf('Addons|Info.Decorator', module)
+storiesOf('Addons|Info/Decorator', module)
   .addDecorator(withInfo('Info can take options via the global or local decorator as well.'))
   .add('Use Info as story decorator', () => <BaseButton label="Button" />);
 
@@ -243,7 +243,7 @@ const Input = hoc(() => <input type="text" />);
 
 const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
 
-storiesOf('Addons|Info.GitHub issues', module)
+storiesOf('Addons|Info/GitHub issues', module)
   .addDecorator(withInfo)
   .add(
     '#1814',
@@ -258,7 +258,7 @@ storiesOf('Addons|Info.GitHub issues', module)
     }
   );
 
-storiesOf('Addons|Info.Options.maxPropsIntoLine === 0', module)
+storiesOf('Addons|Info/Options.maxPropsIntoLine === 0', module)
   .addDecorator(withInfo)
   .add(
     'Object and array props are broken to lines',
@@ -317,7 +317,7 @@ storiesOf('Addons|Info.Options.maxPropsIntoLine === 0', module)
     }
   );
 
-storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module)
+storiesOf('Addons|Info/Options.maxPropsIntoLine === 3', module)
   .addDecorator(withInfo)
   .add(
     'Object and array props are broken to lines',
@@ -376,7 +376,7 @@ storiesOf('Addons|Info.Options.maxPropsIntoLine === 3', module)
     }
   );
 
-storiesOf('Addons|Info.Parameters', module)
+storiesOf('Addons|Info/Parameters', module)
   .addDecorator(
     withInfo({
       styles: {
@@ -432,7 +432,7 @@ storiesOf('Addons|Info.Parameters', module)
     { info: { disable: true } }
   );
 
-storiesOf('Addons|Info.deprecated', module).add(
+storiesOf('Addons|Info/deprecated', module).add(
   'Displays Markdown in description',
   withInfo(markdownDescription)(() => <BaseButton onClick={action('clicked')} label="Button" />)
 );

@@ -8,14 +8,6 @@ export function init() {
   // NOTE nothing to do here
 }
 
-function hasOwnProp(object, propName) {
-  return Object.prototype.hasOwnProperty.call(object, propName);
-}
-
-function withRegexProp(object, propName) {
-  return hasOwnProp(object, propName) ? { [propName]: object[propName] } : {};
-}
-
 function emitOptions(options) {
   const channel = addons.getChannel();
   if (!channel) {
@@ -27,11 +19,7 @@ function emitOptions(options) {
   // since 'undefined' and 'null' are the valid values we don't want to
   // override the hierarchySeparator or hierarchyRootSeparator if the prop is missing
   channel.emit(EVENT_ID, {
-    options: {
-      ...options,
-      ...withRegexProp(options, 'hierarchySeparator'),
-      ...withRegexProp(options, 'hierarchyRootSeparator'),
-    },
+    options,
   });
 }
 
@@ -48,12 +36,35 @@ export const withOptions = makeDecorator({
   parameterName: 'options',
   skipIfNoParametersOrOptions: false,
   wrapper: (getStory, context, { options: inputOptions, parameters }) => {
-    emitOptions({
+    // do not send hierachy related options over the channel
+    const { hierarchySeparator, hierarchyRootSeparator, ...change } = {
       ...globalOptions,
       ...inputOptions,
       ...parameters,
-    });
+    };
 
-    return getStory(context);
+    if (Object.keys(change).length) {
+      emitOptions({
+        ...globalOptions,
+        ...inputOptions,
+        ...parameters,
+      });
+    }
+
+    // MUTATION !
+    context.options = {
+      ...globalOptions,
+      ...inputOptions,
+      ...parameters,
+    };
+
+    return getStory({
+      ...context,
+      options: {
+        ...globalOptions,
+        ...inputOptions,
+        ...parameters,
+      },
+    });
   },
 });

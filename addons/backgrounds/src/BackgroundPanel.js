@@ -96,6 +96,10 @@ export default class BackgroundPanel extends Component {
     });
 
     channel.on(Events.UNSET, () => {
+      if (!this.iframe) {
+        return;
+        // throw new Error('Cannot find Storybook iframe');
+      }
       this.setState({ backgrounds: [] });
       this.updateIframe('none');
     });
