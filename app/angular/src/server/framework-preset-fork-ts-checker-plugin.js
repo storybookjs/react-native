@@ -8,6 +8,6 @@ export default function(tsLoaderOptions) {
     });
   }
 
-  logger.error('Cannot create ForkTsCheckerWebpackPlugin: configFile is missing');
-  return null;
+  logger.info('=> Using default options for ForkTsCheckerWebpackPlugin');
+  return new ForkTsCheckerWebpackPlugin();
 }

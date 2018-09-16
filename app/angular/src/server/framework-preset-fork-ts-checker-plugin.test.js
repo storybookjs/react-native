@@ -24,8 +24,8 @@ describe('framework-preset-ts-fork-checker-plugin', () => {
     expect(instance.tsconfig).toEqual(tsLoaderOptions.configFile);
   });
 
-  it('should return null when configFile is not defined.', () => {
+  it('should create a ForkTsCheckerWebpackPlugin instance without passing options', () => {
     const instance = createForkTsCheckerInstance({});
-    expect(instance).toEqual(null);
+    expect(instance).toBeInstanceOf(ForkTsCheckerWebpackPlugin);
   });
 });
