@@ -3,7 +3,7 @@ import { ContextReplacementPlugin } from 'webpack';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import getTsLoaderOptions from './ts_config';
 
-export default (config, configDir) => {
+export function webpack(config, { configDir }) {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
   return {
     ...config,
@@ -52,4 +52,4 @@ export default (config, configDir) => {
       }),
     ],
   };
-};
+}

@@ -7,10 +7,10 @@
     "marko": "^4.9.7"
   },
   "devDependencies": {
-    "@storybook/marko": "^4.0.0-alpha.20",
-    "@storybook/addon-actions": "^4.0.0-alpha.20",
-    "@storybook/addon-knobs": "^4.0.0-alpha.20",
-    "@babel/core": "^7.0.0",
+    "@storybook/marko": "^4.0.0-alpha.21",
+    "@storybook/addon-actions": "^4.0.0-alpha.21",
+    "@storybook/addon-knobs": "^4.0.0-alpha.21",
+    "@babel/core": "^7.0.1",
     "babel-loader": "^8.0.2"
   },
   "scripts": {

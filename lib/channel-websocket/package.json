@@ -1,6 +1,6 @@
 {
   "name": "@storybook/channel-websocket",
-  "version": "4.0.0-alpha.20",
+  "version": "4.0.0-alpha.21",
   "description": "",
   "license": "MIT",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "4.0.0-alpha.20",
+    "@storybook/channels": "4.0.0-alpha.21",
     "global": "^4.3.2"
   }
 }

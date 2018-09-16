@@ -253,7 +253,7 @@ jobs:
     docker:
       - image: andthensome/docker-node-rsync
     environment:
-        BASH_ENV: ~/.bashrc
+      BASH_ENV: ~/.bashrc
     steps:
       - checkout
       - attach_workspace:
@@ -267,7 +267,7 @@ jobs:
     docker:
       - image: andthensome/docker-node-rsync
     environment:
-        BASH_ENV: ~/.bashrc
+      BASH_ENV: ~/.bashrc
     steps:
       - checkout
       - attach_workspace:
@@ -275,22 +275,6 @@ jobs:
       - run:
           name: Test CLI with latest CR(N)A
           command: yarn test-latest-cra
-  deploy:
-    <<: *defaults
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - add_ssh_keys:
-          fingerprints:
-            - "35:aa:b9:c3:b8:1c:27:1f:02:0a:73:1a:ac:58:77:df"
-      - run:
-          name: Deploy
-          command: |
-            cd docs
-            git config --global user.email "gh-pages@localhost"
-            git config --global user.name "npm gh-pages"
-            yarn deploy:ci
 workflows:
   version: 2
   build_test_deploy:
@@ -322,11 +306,3 @@ workflows:
       - cli-latest-cra:
           requires:
             - build
-      - deploy:
-          requires:
-            - docs
-          filters:
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+/
-            branches:
-              ignore: /.*/

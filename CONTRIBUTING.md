@@ -332,11 +332,7 @@ git commit -m "Updated changelog for vX.Y"
 
 # clean build
 yarn bootstrap --reset --core
-```
 
-> **NOTE:** the very first time you publish a scoped package (`@storybook/x`) you need to publish it by hand because the default for scoped packages is private, and we need to make our packages public. If you try to publish a package for the first time using our `lerna` publish script, `lerna` will crash halfway through and you'll be in a world of pain.
-
-```sh
 # publish and tag the release
 npm run publish:alpha
 

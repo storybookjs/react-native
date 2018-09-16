@@ -86,7 +86,7 @@ if [ $update_only -eq 1 ]
 
 # install all the dependencies in a single run
 cd ../../..
-yarn install --non-interactive --silent
+yarn install --non-interactive --silent --pure-lockfile
 cd ${test_root}/run
 
 for dir in *
