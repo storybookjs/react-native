@@ -1,7 +1,7 @@
 import path from 'path';
 import { ContextReplacementPlugin } from 'webpack';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import getTsLoaderOptions from './ts_config';
+import createForkTsCheckerInstance from './framework-preset-fork-ts-checker-plugin';
 
 export function webpack(config, { configDir }) {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
@@ -47,9 +47,7 @@ export function webpack(config, { configDir }) {
         /@angular(\\|\/)core(\\|\/)fesm5/,
         path.resolve(__dirname, '..')
       ),
-      new ForkTsCheckerWebpackPlugin({
-        tsconfig: tsLoaderOptions.configFile,
-      }),
+      createForkTsCheckerInstance(tsLoaderOptions),
     ],
   };
 }
