@@ -1,3 +1,11 @@
+# 3.4.11
+
+2018-September-17
+
+#### Dependencies
+
+-   Allow v1 or v2 in airbnb-js-shims [#4190](https://github.com/storybooks/storybook/pull/4190)
+
 # 4.0.0-alpha.21
 
 2018-September-07
