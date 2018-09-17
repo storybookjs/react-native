@@ -30,7 +30,7 @@
     "@storybook/core-events": "4.0.0-alpha.21",
     "@storybook/node-logger": "4.0.0-alpha.21",
     "@storybook/ui": "4.0.0-alpha.21",
-    "airbnb-js-shims": "^2.1.0",
+    "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.1.3",
     "babel-plugin-macros": "^2.2.2",
     "babel-preset-minify": "canary",
