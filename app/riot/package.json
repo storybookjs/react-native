@@ -31,16 +31,16 @@
     "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "cross-env": "^5.2.0"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
+    "babel-loader": "^7.0.0 || ^8.0.0",
     "riot": "^3.0.0 || ^4.0.0",
     "riot-compiler": "^3.5.1 || ^4.0.0",
     "riot-hot-reload": "^1.0.0",

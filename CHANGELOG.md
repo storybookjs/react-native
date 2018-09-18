@@ -1,3 +1,11 @@
+# 3.4.11
+
+2018-September-17
+
+#### Dependencies
+
+-   Allow v1 or v2 in airbnb-js-shims [#4190](https://github.com/storybooks/storybook/pull/4190)
+
 # 4.0.0-alpha.21
 
 2018-September-07
@@ -17,8 +25,8 @@
 
 #### Other
 
--   [WIP] Refactor core and frameworks to work with presets [#4043](https://github.com/storybooks/storybook/pull/4043)
--   [WIP] presets - merge default babel configs [#4107](https://github.com/storybooks/storybook/pull/4107)
+-   \[WIP\] Refactor core and frameworks to work with presets [#4043](https://github.com/storybooks/storybook/pull/4043)
+-   \[WIP\] presets - merge default babel configs [#4107](https://github.com/storybooks/storybook/pull/4107)
 
 # 4.0.0-alpha.20
 
@@ -95,7 +103,7 @@ Not published to NPM
 -   Temp revert the 36a2676 [#4062](https://github.com/storybooks/storybook/pull/4062)
 -   Remove deprecation of --db-path and --enable-db [#4030](https://github.com/storybooks/storybook/pull/4030)
 -   Remove git info extraction [#4031](https://github.com/storybooks/storybook/pull/4031)
--   Fixed homepage links [skip ci] [#4008](https://github.com/storybooks/storybook/pull/4008)
+-   Fixed homepage links \[skip ci\] [#4008](https://github.com/storybooks/storybook/pull/4008)
 -   CHANGE html-webpack-plugin for generate-page-plugin [#3919](https://github.com/storybooks/storybook/pull/3919)
 
 # 4.0.0-alpha.16
@@ -108,7 +116,7 @@ Not published to NPM
 
 #### Bug Fixes
 
--   [BUG FIX] Use fixed version of react-dev-utils [#3959](https://github.com/storybooks/storybook/pull/3959)
+-   \[BUG FIX\] Use fixed version of react-dev-utils [#3959](https://github.com/storybooks/storybook/pull/3959)
 -   Inline emotion css calls that require theme to avoid using state [#3950](https://github.com/storybooks/storybook/pull/3950)
 
 #### Dependency Upgrades
@@ -998,7 +1006,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 
 #### Bug Fixes
 
--   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
+-   \[Addon-storyshots\] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
 -   CLI: add error handling for latest_version helper [#3297](https://github.com/storybooks/storybook/pull/3297)
 -   Refactor CLI to use `npm` and `yarn` instead of third party packages [#3275](https://github.com/storybooks/storybook/pull/3275)
 -   Fix issue when extending webpack config [#3279](https://github.com/storybooks/storybook/pull/3279)
@@ -1058,7 +1066,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 
 #### Bug Fixes
 
--   [Hotfix]  Use published webpack 4 compatible fork of react-dev-utils [#3312](https://github.com/storybooks/storybook/pull/3312)
+-  \[Hotfix\]  Use published webpack 4 compatible fork of react-dev-utils [#3312](https://github.com/storybooks/storybook/pull/3312)
 
 # 4.0.0-alpha.0
 
@@ -1085,7 +1093,7 @@ Read on for more improvements, fixes, 1In addition, there are hundreds of depend
 #### Bug Fixes
 
 -   Update react-native symlink resolving and add support for flow [#3306](https://github.com/storybooks/storybook/pull/3306)
--   [Addon-storyshots] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
+-   \[Addon-storyshots\] Remove default options on "goto" call [#3298](https://github.com/storybooks/storybook/pull/3298)
 -   Remove onDeviceUI animation to support Detox screenshots [#3272](https://github.com/storybooks/storybook/pull/3272)
 -   Angular: use resolveLoader from cliCommonConfig [#3251](https://github.com/storybooks/storybook/pull/3251)
 

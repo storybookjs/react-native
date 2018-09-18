@@ -18,16 +18,17 @@
   "license": "MIT",
   "author": "Storybook Team",
   "bin": {
-    "getstorybook": "./bin/index.js"
+    "getstorybook": "./bin/index.js",
+    "storybook": "./bin/index.js"
   },
   "scripts": {
     "test": "cd test && ./run_tests.sh",
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "@storybook/codemod": "4.0.0-alpha.21",

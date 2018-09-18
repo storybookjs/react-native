@@ -38,9 +38,9 @@
     "@storybook/addon-links": "^4.0.0-alpha.21",
     "@storybook/addons": "^4.0.0-alpha.21",
     "riot-tag-loader": "^2.1.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.1.0"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6"
+    "babel-loader": "^7.0.0 || ^8.0.0"
   }
 }

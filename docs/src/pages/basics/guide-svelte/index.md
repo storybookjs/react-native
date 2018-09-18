@@ -16,7 +16,7 @@ The Webpack setup is very similar to [Svelte CLI's](https://github.com/sveltejs/
 In this guide, we are trying to set up Storybook for your Svelte project.
 
 > It is very important to remember that Svelte components are precompiled from
-.svelte or .html files to vanilla javascript, so there is no 'runtime'.
+> .svelte or .html files to vanilla javascript, so there is no 'runtime'.
 
 ## Table of contents
 
@@ -116,8 +116,8 @@ shorthand. It's the equivalent to `on:click="fire('click', event)"`, but it's
 worth knowing about especially in this "component wrapper" scenario.
 
 > If your component doesn't use slots, you don't need to do this, but if it does
-or some other svelte functionality that requires the component to exist in a svelte
-view, then this is how to do that.
+> or some other svelte functionality that requires the component to exist in a svelte
+> view, then this is how to do that.
 
 You would then write a story for this "view" the exact same way you did with a component.
 

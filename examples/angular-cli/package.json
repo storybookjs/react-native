@@ -29,12 +29,11 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/build/",
       "/storybook-static/",
-      "angularshots.test.js"
+      "angularshots.test.js",
+      "dist"
     ],
     "transform": {
-      ".(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
       "^.+\\.(ts|js|html)$": "<rootDir>/../../node_modules/jest-preset-angular/preprocessor.js"
     }
   },

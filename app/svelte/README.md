@@ -13,7 +13,7 @@ So you can develop UI components in isolation without worrying about app specifi
 ```sh
 npm i -g @storybook/cli
 cd my-svelte-app
-getstorybook
+storybook init
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
@@ -29,5 +29,5 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 - [ ] Support Svelte markup directly in stories
 - [ ] Add Svelte storybook generator
 - [ ] Provide stories that show advanced Svelte use cases
- - [ ] Hydratable
- - [ ] Advanced mount options
+- [ ] Hydratable
+- [ ] Advanced mount options

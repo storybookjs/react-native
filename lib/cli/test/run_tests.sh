@@ -48,7 +48,7 @@ do
   cd $dir
 
   # run @storybook/cli
-  ../../../bin/index.js --skip-install
+  ../../../bin/index.js init --skip-install
 
   cd ..
 done

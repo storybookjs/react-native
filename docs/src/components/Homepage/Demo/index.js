@@ -4,7 +4,7 @@ import './style.css';
 
 const Demo = () => (
   <div id="demo" className="row">
-    <div className="col-xs-12">
+    <div className="col-xs-12 col-sm-12">
       <center>
         <img className="demo-img" src={demoImg} alt="" />
       </center>
