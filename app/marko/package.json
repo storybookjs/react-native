@@ -32,7 +32,7 @@
     "react-dom": "^16.4.2"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
+    "babel-loader": "^7.0.0 || ^8.0.0",
     "marko": "^4.10.0",
     "marko-widgets": "^7.0.1"
   }
