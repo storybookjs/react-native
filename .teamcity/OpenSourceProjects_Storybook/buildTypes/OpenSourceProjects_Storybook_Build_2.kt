@@ -37,7 +37,6 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
         }
         retryBuild {
             delaySeconds = 60
-            enabled = false
         }
     }
 
@@ -102,6 +101,11 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
             }
         }
         dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_Chromatic) {
+            snapshot {
+                onDependencyCancel = FailureAction.ADD_PROBLEM
+            }
+        }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CliTest) {
             snapshot {
                 onDependencyCancel = FailureAction.ADD_PROBLEM
             }
