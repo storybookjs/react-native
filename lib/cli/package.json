@@ -18,7 +18,8 @@
   "license": "MIT",
   "author": "Storybook Team",
   "bin": {
-    "getstorybook": "./bin/index.js"
+    "getstorybook": "./bin/index.js",
+    "storybook": "./bin/index.js"
   },
   "scripts": {
     "test": "cd test && ./run_tests.sh",
