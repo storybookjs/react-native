@@ -13,8 +13,8 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "@babel/plugin-external-helpers": "7.0.0-rc.2",
-    "@babel/preset-react": "7.0.0-rc.2",
+    "@babel/plugin-external-helpers": "7.0.0",
+    "@babel/preset-react": "7.0.0",
     "rollup": "^0.49.1",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.0",
@@ -24,7 +24,7 @@
     "@storybook/addon-actions": "^4.0.0-alpha.21",
     "@storybook/addon-links": "^4.0.0-alpha.21",
     "@storybook/addons": "^4.0.0-alpha.21",
-    "@babel/core": "^7.0.1",
+    "@babel/core": "^7.1.0",
     "babel-loader": "^8.0.2"
   }
 }

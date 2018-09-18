@@ -16,10 +16,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-regenerator": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/runtime": "^7.0.0",
     "@emotion/core": "0.13.0",
     "@emotion/provider": "0.11.1",
@@ -74,7 +74,7 @@
     "mock-fs": "^4.5.0"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
+    "babel-loader": "^7.0.0 || ^8.0.0",
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0"
   }
