@@ -32,7 +32,6 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/build/",
       "/storybook-static/",
       "angularshots.test.js",
       "dist"
