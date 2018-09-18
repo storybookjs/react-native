@@ -156,6 +156,7 @@ We have a badge ! Link it to your live Storybook example.
 -   Tweeting via [@storybookjs](https://twitter.com/storybookjs)
 -   Blogging at [Medium](https://medium.com/storybookjs)
 -   Chatting on [Slack](https://now-examples-slackin-rrirkqohko.now.sh/)
+-   Discussions on [Discord](https://discord.gg/sMFvFsG)
 -   Streaming saved at [Youtube](https://www.youtube.com/channel/UCr7Quur3eIyA_oe8FNYexfg)
 
 ## Contributing
