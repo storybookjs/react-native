@@ -25,13 +25,13 @@
     margin: 50px 0 20px;
   }
 
-  #header .pull-right {
+  #header .float-right {
     float: none !important;
     clear: both !important;
     text-align: center;
   }
 
-  #header .pull-left {
+  #header .float-left {
     float: none !important;
     clear: both !important;
   }
