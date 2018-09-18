@@ -41,6 +41,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
     -   [Addons](#addons)
 -   [Live Examples](#live-examples) 💪
 -   [Badges](#badges)
+-   [Community](#community)
 -   [Contributing](#contributing)
     -   [Development scripts](#development-scripts)
     -   [Backers](#backers)
@@ -149,6 +150,13 @@ We have a badge ! Link it to your live Storybook example.
 ```md
 [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](link to site)
 ```
+
+## Community
+
+-   Tweeting via [@storybookjs](https://twitter.com/storybookjs)
+-   Blogging at [Medium](https://medium.com/storybookjs)
+-   Chatting on [Slack](https://now-examples-slackin-rrirkqohko.now.sh/)
+-   Streaming saved at [Youtube](https://www.youtube.com/channel/UCr7Quur3eIyA_oe8FNYexfg)
 
 ## Contributing
 
