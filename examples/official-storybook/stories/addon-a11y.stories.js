@@ -11,7 +11,7 @@ import * as Typography from '../components/addon-a11y/Typography';
 
 const text = 'Testing the a11y addon';
 
-storiesOf('Addons|a11y', module)
+storiesOf('Addons|A11y', module)
   .addParameters({
     options: {
       selectedPanel: 'storybook/a11y/panel',
@@ -31,7 +31,7 @@ storiesOf('Addons|a11y', module)
     </DelayedRender>
   ));
 
-storiesOf('Addons|a11y/Button', module)
+storiesOf('Addons|A11y/Button', module)
   .addDecorator(checkA11y)
   .add('Default', () => <Button />)
   .add('Content', () => <Button content={text} />)
@@ -39,7 +39,7 @@ storiesOf('Addons|a11y/Button', module)
   .add('Disabled', () => <Button disabled content={text} />)
   .add('Invalid contrast', () => <Button contrast="wrong" content={text} />);
 
-storiesOf('Addons|a11y/Form', module)
+storiesOf('Addons|A11y/Form', module)
   .addDecorator(checkA11y)
   .add('Without Label', () => <Form.Row input={<Form.Input />} />)
   .add('With label', () => (
@@ -49,7 +49,7 @@ storiesOf('Addons|a11y/Form', module)
 
 const image = 'http://placehold.it/350x150';
 
-storiesOf('Addons|a11y/Image', module)
+storiesOf('Addons|A11y/Image', module)
   .addDecorator(checkA11y)
   .add('Without alt', () => <Image src={image} />)
   .add('With alt', () => <Image src={image} alt={text} />)
@@ -58,7 +58,7 @@ storiesOf('Addons|a11y/Image', module)
 // eslint-disable-next-line no-script-url
 const href = 'javascript:void 0';
 
-storiesOf('Addons|a11y/Typography', module)
+storiesOf('Addons|A11y/Typography', module)
   .addDecorator(checkA11y)
   .add('Correct', () => (
     <div>
