@@ -32,6 +32,28 @@
   margin: 40px auto;
 }
 
+.has-feedback {
+  position: relative;
+}
+
+.has-feedback .form-control {
+  padding-right: 42.5px;
+  font-size: inherit;
+  height: auto;
+}
+.form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 700px) {
   #main-links .col-xs-6 {
     margin: auto !important;
