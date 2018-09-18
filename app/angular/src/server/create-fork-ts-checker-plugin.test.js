@@ -1,6 +1,6 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import getTsLoaderOptions from './ts_config';
-import createForkTsCheckerInstance from './framework-preset-fork-ts-checker-plugin';
+import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../__mocks__/fs'));

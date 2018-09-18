@@ -1,7 +1,7 @@
 import path from 'path';
 import { ContextReplacementPlugin } from 'webpack';
 import getTsLoaderOptions from './ts_config';
-import createForkTsCheckerInstance from './framework-preset-fork-ts-checker-plugin';
+import createForkTsCheckerInstance from './create-fork-ts-checker-plugin';
 
 export function webpack(config, { configDir }) {
   const tsLoaderOptions = getTsLoaderOptions(configDir);
