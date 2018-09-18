@@ -21,6 +21,8 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
         script {
             name = "Bootstrap"
             scriptContent = """
+                set -e -x
+
                 yarn
                 yarn bootstrap --core
             """.trimIndent()

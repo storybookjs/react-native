@@ -50,7 +50,6 @@
     "lint:md": "remark -q",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "publish": "lerna publish --exact --concurrency 1 --force-publish",
-    "postpublish": "yarn --cwd lib/cli test -o",
     "publish:alpha": "npm run publish -- --npm-tag=alpha",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "start": "yarn --cwd examples/official-storybook storybook",
