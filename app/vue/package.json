@@ -36,7 +36,7 @@
     "vue-template-compiler": "^2.5.17"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6",
+    "babel-loader": "^7.0.0 || ^8.0.0",
     "vue": "2.5.16",
     "vue-loader": "15.x.x",
     "vue-template-compiler": "2.5.16"
