@@ -10,6 +10,11 @@ To apply the patch, change the buildType with uuid = 'd4320bd8-6094-4dd6-9bed-e1
 accordingly, and delete the patch script.
 */
 changeBuildType("d4320bd8-6094-4dd6-9bed-e13d6f0d12e2") {
+    check(paused == false) {
+        "Unexpected paused: '$paused'"
+    }
+    paused = true
+
     triggers {
         add {
             retryBuild {
