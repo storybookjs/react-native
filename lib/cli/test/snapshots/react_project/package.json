@@ -9,17 +9,17 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-rc.2",
-    "@babel/preset-env": "7.0.0-rc.2",
-    "@babel/preset-react": "7.0.0-rc.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "@babel/cli": "7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
     "@storybook/react": "^4.0.0-alpha.21",
     "@storybook/addon-actions": "^4.0.0-alpha.21",
     "@storybook/addon-links": "^4.0.0-alpha.21",
     "@storybook/addons": "^4.0.0-alpha.21",
-    "@babel/core": "^7.0.1",
-    "babel-loader": "^8.0.2"
+    "babel-loader": "^8.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "peerDependencies": {
     "react": "*",

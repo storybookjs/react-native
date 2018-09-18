@@ -11,9 +11,9 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "@babel/plugin-external-helpers": "7.0.0-rc.2",
-    "@babel/core": "7.0.0-rc.2",
-    "@babel/preset-react": "7.0.0-rc.2",
+    "@babel/plugin-external-helpers": "7.0.0",
+    "@babel/core": "7.1.0",
+    "@babel/preset-react": "7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "8.0.2",
     "webpack": "^3.5.5"

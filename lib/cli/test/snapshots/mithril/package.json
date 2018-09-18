@@ -12,11 +12,11 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.0",
     "@storybook/addon-actions": "^4.0.0-alpha.21",
     "@storybook/addon-links": "^4.0.0-alpha.21",
     "@storybook/addons": "^4.0.0-alpha.21",
     "@storybook/mithril": "^4.0.0-alpha.21",
-    "@babel/core": "^7.0.1",
     "babel-loader": "^8.0.2"
   }
 }
