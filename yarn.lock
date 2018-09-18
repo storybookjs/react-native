@@ -2724,12 +2724,12 @@ autoprefixer@^8.4.1:
     postcss "^6.0.23"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^9.1.0:
-  version "9.1.3"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.1.3.tgz#bd5940ccb9d1bfa3508308659915f0a14394c8d5"
+autoprefixer@^9.1.3:
+  version "9.1.5"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.1.5.tgz#8675fd8d1c0d43069f3b19a2c316f3524e4f6671"
   dependencies:
-    browserslist "^4.0.2"
-    caniuse-lite "^1.0.30000878"
+    browserslist "^4.1.0"
+    caniuse-lite "^1.0.30000884"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^7.0.2"
@@ -4629,7 +4629,7 @@ browserslist@^3.2.6, browserslist@^3.2.8:
     caniuse-lite "^1.0.30000844"
     electron-to-chromium "^1.3.47"
 
-browserslist@^4.0.2, browserslist@^4.1.0:
+browserslist@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.1.0.tgz#81cbb8e52dfa09918f93c6e051d779cb7360785d"
   dependencies:
@@ -4931,6 +4931,10 @@ caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.300008
 caniuse-lite@^1.0.30000878:
   version "1.0.30000883"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000883.tgz#597c1eabfb379bd9fbeaa778632762eb574706ac"
+
+caniuse-lite@^1.0.30000884:
+  version "1.0.30000885"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000885.tgz#e889e9f8e7e50e769f2a49634c932b8aee622984"
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -15323,10 +15327,6 @@ react-native@^0.52.2:
 react-onclickoutside@^6.5.0:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
-
-react-portal-tooltip@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-portal-tooltip/-/react-portal-tooltip-2.4.0.tgz#0f2d558d9eb20ef5ab344c87572e63e7c373b229"
 
 react-proxy@^1.1.7:
   version "1.1.8"
