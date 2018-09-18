@@ -37,8 +37,8 @@
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
-    "vue": "2.5.16",
-    "vue-loader": "15.x.x",
-    "vue-template-compiler": "2.5.16"
+    "vue": ">=2.5.16",
+    "vue-loader": ">=15.x.x",
+    "vue-template-compiler": ">=2.5.16"
   }
 }
