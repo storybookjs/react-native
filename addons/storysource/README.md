@@ -43,7 +43,7 @@ The loader can be customized with the following options:
 ### parser
 The parser that will be parsing your code to AST (based on [prettier](https://github.com/prettier/prettier/tree/master/src/language-js))
 
-Alowed values:
+Allowed values:
 * `javascript` - default
 * `typescript`
 
