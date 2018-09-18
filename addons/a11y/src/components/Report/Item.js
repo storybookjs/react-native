@@ -57,7 +57,8 @@ class Item extends Component {
     return (
       <Wrapper>
         <HeaderBar onClick={this.onToggle}>
-          <Icons.ChevronRight
+          <Icons
+            icon="chevrondown"
             size={10}
             color="#9DA5AB"
             style={{
