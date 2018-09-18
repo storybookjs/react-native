@@ -9,7 +9,7 @@
     "e2e": "ng e2e",
     "ng": "ng",
     "start": "ng serve",
-    "storybook": "start-storybook -p 9008 -s src/assets",
+    "storybook": "npm run storybook:prebuild && start-storybook -p 9008 -s src/assets",
     "storybook:prebuild": "npm run test:generate-output",
     "test": "jest",
     "test:coverage": "jest --coverage",
