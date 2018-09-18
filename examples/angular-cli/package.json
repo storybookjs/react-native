@@ -27,9 +27,6 @@
       "<rootDir>/../../node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
       "<rootDir>/../../node_modules/jest-preset-angular/HTMLCommentSerializer.js"
     ],
-    "testMatch": [
-      "**/*.spec.ts"
-    ],
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/storybook-static/",
