@@ -35,20 +35,6 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
         }
     }
 
-    triggers {
-        vcs {
-            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-            triggerRules = "-:comment=^TeamCity change:**"
-            branchFilter = """
-                +:pull/*
-                +:release/*
-                +:master
-                +:dependencies.io-*
-            """.trimIndent()
-        }
-        retryBuild {}
-    }
-
     features {
         commitStatusPublisher {
             publisher = github {
