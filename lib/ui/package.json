@@ -2,6 +2,16 @@
   "name": "@storybook/ui",
   "version": "4.0.0-alpha.21",
   "description": "Core Storybook UI",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -25,7 +35,6 @@
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
     "deep-equal": "^1.0.1",
-    "emotion": "^9.2.8",
     "events": "^3.0.0",
     "fuse.js": "^3.2.1",
     "global": "^4.3.2",

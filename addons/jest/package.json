@@ -11,11 +11,16 @@
     "storybook",
     "unit-testing"
   ],
-  "homepage": "https://storybook.js.org",
-  "bugs": "https://github.com/storybooks/storybook",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/jest",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",

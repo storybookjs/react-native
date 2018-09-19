@@ -2,7 +2,13 @@
   "name": "@storybook/marko",
   "version": "4.0.0-alpha.21",
   "description": "Storybook for Marko: Develop Marko Component in isolation with Hot Reloading.",
+  "keywords": [
+    "storybook"
+  ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/marko",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

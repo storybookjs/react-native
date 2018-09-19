@@ -3,8 +3,20 @@
   "version": "4.0.0-alpha.21",
   "description": "Storybook addon to change the viewport size to mobile",
   "keywords": [
+    "addon",
     "storybook"
   ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/viewport",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
   "license": "MIT",
   "main": "preview.js",
   "scripts": {

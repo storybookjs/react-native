@@ -2,6 +2,20 @@
   "name": "@storybook/channel-postmessage",
   "version": "4.0.0-alpha.21",
   "description": "",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/channel-postmessage",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",

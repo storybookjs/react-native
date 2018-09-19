@@ -2,6 +2,17 @@
   "name": "@storybook/addon-info",
   "version": "4.0.0-alpha.21",
   "description": "A Storybook addon to show additional information for your stories.",
+  "keywords": [
+    "addon",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/info",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"

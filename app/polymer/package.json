@@ -2,7 +2,13 @@
   "name": "@storybook/polymer",
   "version": "4.0.0-alpha.21",
   "description": "Storybook for Polymer: Develop Polymer components in isolation with Hot Reloading.",
+  "keywords": [
+    "storybook"
+  ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/polymer",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

@@ -3,9 +3,13 @@
   "version": "4.0.0-alpha.21",
   "description": "Story Links addon for storybook",
   "keywords": [
+    "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

@@ -4,9 +4,6 @@
       "allowBranch": "master"
     }
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "npmClient": "yarn",
   "useWorkspaces": true,
   "registry": "https://registry.npmjs.org",
