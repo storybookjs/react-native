@@ -2,6 +2,16 @@
   "name": "@storybook/ui",
   "version": "4.0.0-alpha.21",
   "description": "Core Storybook UI",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"

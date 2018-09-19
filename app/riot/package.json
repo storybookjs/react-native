@@ -2,7 +2,13 @@
   "name": "@storybook/riot",
   "version": "4.0.0-alpha.21",
   "description": "Storybook for riot.js: View riot snippets in isolation with Hot Reloading.",
+  "keywords": [
+    "storybook"
+  ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/riot",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

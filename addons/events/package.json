@@ -8,9 +8,16 @@
     "react",
     "storybook"
   ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/events",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:storybooks/storybook.git"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "main": "dist/index.js",

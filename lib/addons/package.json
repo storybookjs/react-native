@@ -5,7 +5,10 @@
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/packages/addons",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/addons",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

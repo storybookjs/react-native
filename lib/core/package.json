@@ -2,7 +2,13 @@
   "name": "@storybook/core",
   "version": "4.0.0-alpha.21",
   "description": "Storybook framework-agnostic API",
+  "keywords": [
+    "storybook"
+  ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/core",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },

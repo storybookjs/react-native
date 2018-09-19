@@ -8,6 +8,9 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/lib/cli",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
