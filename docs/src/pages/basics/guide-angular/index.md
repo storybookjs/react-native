@@ -75,6 +75,8 @@ Just like that, you can load stories from wherever you want to.
 
 ## Storybook TypeScript configuration
 
+**Note:** You need this only if you are using Storybook `>= 4.0.0-alpha.22`.
+
 In order to see semantic errors while developing in storybook, you need to create a `tsconfig.json` file at `.storybook/tsconfig.json` with the following content:
 
 ```json
