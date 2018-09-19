@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "Stories addon for storybook",
   "keywords": [
     "addon",
@@ -25,8 +25,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@storybook/addons": "4.0.0-alpha.21",
-    "@storybook/components": "4.0.0-alpha.21",
+    "@storybook/addons": "4.0.0-alpha.22",
+    "@storybook/components": "4.0.0-alpha.22",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.1.0",
     "prettier": "^1.14.0",

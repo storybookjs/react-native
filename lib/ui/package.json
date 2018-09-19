@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -29,8 +29,8 @@
     "@emotion/provider": "0.11.1",
     "@emotion/styled": "0.10.5",
     "@ndelangen/react-treebeard": "^3.0.0",
-    "@storybook/components": "4.0.0-alpha.21",
-    "@storybook/core-events": "4.0.0-alpha.21",
+    "@storybook/components": "4.0.0-alpha.22",
+    "@storybook/core-events": "4.0.0-alpha.22",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
@@ -50,8 +50,8 @@
     "react-modal": "^3.5.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.21",
-    "@storybook/react": "4.0.0-alpha.21"
+    "@storybook/addon-actions": "4.0.0-alpha.22",
+    "@storybook/react": "4.0.0-alpha.22"
   },
   "peerDependencies": {
     "react": "*",
