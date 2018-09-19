@@ -26,47 +26,47 @@ Array [
 `;
 
 exports[`PropTable multiLineText should include all propTypes by default 1`] = `
-<Table>
+<ForwardRef>
   <thead>
     <tr>
-      <Th
+      <ForwardRef
         bordered={true}
       >
         property
-      </Th>
-      <Th
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       >
         propType
-      </Th>
-      <Th
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       >
         required
-      </Th>
-      <Th
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       >
         default
-      </Th>
-      <Th
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       >
         description
-      </Th>
+      </ForwardRef>
     </tr>
   </thead>
   <tbody>
     <tr
       key="foo"
     >
-      <Td
+      <ForwardRef
         bordered={true}
         code={true}
       >
         foo
-      </Td>
-      <Td
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
         code={true}
       >
@@ -78,21 +78,21 @@ exports[`PropTable multiLineText should include all propTypes by default 1`] = `
             }
           }
         />
-      </Td>
-      <Td
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       >
         -
-      </Td>
-      <Td
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       >
         -
-      </Td>
-      <Td
+      </ForwardRef>
+      <ForwardRef
         bordered={true}
       />
     </tr>
   </tbody>
-</Table>
+</ForwardRef>
 `;

@@ -1,0 +1,20 @@
+{
+  "name": "react-babel-custom-preset-fixture",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "stories/index.stories.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "7.0.0",
+    "@babel/core": "7.1.0",
+    "babel-loader": "8.0.2",
+    "@storybook/react": "^4.0.0-alpha.17"
+  }
+}

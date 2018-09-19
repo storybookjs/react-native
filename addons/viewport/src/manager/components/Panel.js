@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { document } from 'global';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { ActionBar, ActionButton, Button, Select, Field } from '@storybook/components';
 
@@ -16,7 +16,7 @@ import {
 } from '../../shared';
 
 const storybookIframe = 'storybook-preview-iframe';
-const Container = styled('div')({
+const Container = styled.div({
   padding: 15,
   width: '100%',
   boxSizing: 'border-box',

@@ -10,6 +10,7 @@ exemptLabels:
   - 'do not merge'
   - 'needs review'
   - 'high priority'
+  - 'good first issue'
   - dependencies:update
 
 # Label to use when marking an issue as stale

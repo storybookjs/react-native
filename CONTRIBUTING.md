@@ -53,7 +53,7 @@ You can use the `--update` flag to update snapshots or screenshots as needed.
 
 You can also pick suites from CLI.  Suites available are listed below.
 
-##### Core & React & Vue Tests
+##### Core & Examples Tests
 
 `yarn test --core`
 
@@ -72,7 +72,7 @@ Before these tests are ran, the project must be bootstrapped with the React Nati
 `yarn test --image`
 
 This option executes tests from `<rootdir>/examples/official-storybook`
-In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date : 
+In order for the image snapshots to be correctly generated, you must have static build of the storybook up-to-date :
 
 ```javascript
 cd examples/official-storybook
@@ -332,11 +332,7 @@ git commit -m "Updated changelog for vX.Y"
 
 # clean build
 yarn bootstrap --reset --core
-```
 
-> **NOTE:** the very first time you publish a scoped package (`@storybook/x`) you need to publish it by hand because the default for scoped packages is private, and we need to make our packages public. If you try to publish a package for the first time using our `lerna` publish script, `lerna` will crash halfway through and you'll be in a world of pain.
-
-```sh
 # publish and tag the release
 npm run publish:alpha
 

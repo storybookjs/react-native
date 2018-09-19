@@ -7,8 +7,5 @@ initStoryshots({
   test: data =>
     shallowSnapshot({
       ...data,
-      options: {
-        serializer: JSON.stringify,
-      },
     }),
 });

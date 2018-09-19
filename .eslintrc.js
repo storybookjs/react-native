@@ -79,6 +79,25 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
+    'react/jsx-no-bind': [
+      error,
+      {
+        ignoreDOMComponents: true,
+        ignoreRefs: true,
+        allowArrowFunctions: true,
+        allowFunctions: true,
+        allowBind: true,
+      },
+    ],
+    'jsx-a11y/label-has-associated-control': [
+      warn,
+      {
+        labelComponents: ['CustomInputLabel'],
+        labelAttributes: ['label'],
+        controlComponents: ['CustomInput'],
+        depth: 3,
+      },
+    ],
     'react/no-unescaped-entities': ignore,
     'jsx-a11y/label-has-for': [
       error,

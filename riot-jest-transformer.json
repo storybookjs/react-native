@@ -1,0 +1,4 @@
+{
+  "transformer": "@babel/core",
+  "method": "transform"
+}

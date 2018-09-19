@@ -7,6 +7,8 @@
   - [Removed addWithInfo](#removed-add-with-info)
   - [Removed RN addons](#removed-rn-addons)
   - [Storyshots changes](#storyshots-changes)
+  - [Webpack 4](#webpack-4)
+  - [Babel 7](#babel-7)
 - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
   - [Refactored Knobs](#refactored-knobs)
@@ -71,6 +73,24 @@ The `@storybook/react-native` had built-in addons (`addon-actions` and `addon-li
     will need to add a babel plugin to polyfill this functionality.
     A possible plugin might be [babel-plugin-require-context-hook](https://github.com/smrq/babel-plugin-require-context-hook).
     [README](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core#configure-jest-to-work-with-webpacks-requirecontext)
+
+### Webpack 4
+
+Storybook now uses webpack 4. If you have a [custom webpack config](https://storybook.js.org/configurations/custom-webpack-config/), make sure that all the loaders and plugins you use support webpack 4.
+
+### Babel 7
+
+Storybook now uses Babel 7. There's a couple of cases when it can break with your app:
+
+* If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
+  ```
+  npm i -D @babel/core babel-loader@next
+  ```
+* If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
+
+### start-storybook opens browser automatically
+
+If you're using `start-storybook` on CI, you may need to opt out of this using the new `--ci` flag.
 
 ## From version 3.3.x to 3.4.x
 
@@ -187,7 +207,7 @@ To update your app to use the new package names, you can use the cli:
 npm install --global @storybook/cli
 
 # if you run this inside a v2 app, it should perform the necessary codemods.
-getstorybook
+storybook init
 ```
 
 #### Details

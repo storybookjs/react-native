@@ -19,10 +19,12 @@ const style = {
 [
   'cra-kitchen-sink',
   'vue-kitchen-sink',
+  'svelte-kitchen-sink',
   'angular-cli',
   'polymer-cli',
   'mithril-kitchen-sink',
   'html-kitchen-sink',
+  'riot-kitchen-sink',
 ].forEach(name => {
   chapter.add(
     name,

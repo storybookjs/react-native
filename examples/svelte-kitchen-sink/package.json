@@ -1,0 +1,26 @@
+{
+  "name": "svelte-example",
+  "version": "4.0.0-alpha.21",
+  "private": true,
+  "scripts": {
+    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 9009 -s public"
+  },
+  "dependencies": {
+    "global": "^4.3.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "4.0.0-alpha.21",
+    "@storybook/addon-backgrounds": "4.0.0-alpha.21",
+    "@storybook/addon-centered": "4.0.0-alpha.21",
+    "@storybook/addon-knobs": "4.0.0-alpha.21",
+    "@storybook/addon-links": "4.0.0-alpha.21",
+    "@storybook/addon-notes": "4.0.0-alpha.21",
+    "@storybook/addon-options": "4.0.0-alpha.21",
+    "@storybook/addon-storyshots": "4.0.0-alpha.21",
+    "@storybook/addon-storysource": "4.0.0-alpha.21",
+    "@storybook/addon-viewport": "4.0.0-alpha.21",
+    "@storybook/addons": "4.0.0-alpha.21",
+    "@storybook/svelte": "4.0.0-alpha.21"
+  }
+}

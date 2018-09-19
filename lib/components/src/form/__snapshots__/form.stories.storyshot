@@ -3,17 +3,17 @@
 exports[`Storyshots Components|Form/Button alignment 1`] = `
 Array [
   <button
-    class="css-1vmbacw"
+    class="css-1vmbacw e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-vb63mh"
+    class="css-vb63mh e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-k5xbe4"
+    class="css-k5xbe4 e1lk8yn73"
   >
     click this button
   </button>,
@@ -23,17 +23,17 @@ Array [
 exports[`Storyshots Components|Form/Button sizes 1`] = `
 Array [
   <button
-    class="css-1riodoz"
+    class="css-1riodoz e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-17iy6hf"
+    class="css-17iy6hf e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-k5xbe4"
+    class="css-k5xbe4 e1lk8yn73"
   >
     click this button
   </button>,
@@ -43,22 +43,22 @@ Array [
 exports[`Storyshots Components|Form/Button validations 1`] = `
 Array [
   <button
-    class="css-1n7kxml"
+    class="css-1n7kxml e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-1dbq55u"
+    class="css-1dbq55u e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-1yfwphr"
+    class="css-1yfwphr e1lk8yn73"
   >
     click this button
   </button>,
   <button
-    class="css-k5xbe4"
+    class="css-k5xbe4 e1lk8yn73"
   >
     click this button
   </button>,
@@ -67,7 +67,7 @@ Array [
 
 exports[`Storyshots Components|Form/Button with knobs 1`] = `
 <button
-  class="css-1riodoz"
+  class="css-1riodoz e1lk8yn73"
 >
   💌  love letter to storybook team
 </button>
@@ -76,7 +76,7 @@ exports[`Storyshots Components|Form/Button with knobs 1`] = `
 exports[`Storyshots Components|Form/Select sizes 1`] = `
 Array [
   <select
-    class="css-1rk2lkr"
+    class="css-1rk2lkr e1lk8yn71"
   >
     <option
       value="val1"
@@ -96,7 +96,7 @@ Array [
     </option>
   </select>,
   <select
-    class="css-p3s1kf"
+    class="css-p3s1kf e1lk8yn71"
   >
     <option
       value="val1"
@@ -116,7 +116,7 @@ Array [
     </option>
   </select>,
   <select
-    class="css-13k1zov"
+    class="css-13k1zov e1lk8yn71"
   >
     <option
       value="val1"
@@ -141,7 +141,7 @@ Array [
 exports[`Storyshots Components|Form/Select validations 1`] = `
 Array [
   <select
-    class="css-1pvc7qr"
+    class="css-1pvc7qr e1lk8yn71"
   >
     <option
       value="val1"
@@ -161,7 +161,7 @@ Array [
     </option>
   </select>,
   <select
-    class="css-kdddv2"
+    class="css-kdddv2 e1lk8yn71"
   >
     <option
       value="val1"
@@ -181,7 +181,7 @@ Array [
     </option>
   </select>,
   <select
-    class="css-1hyanqr"
+    class="css-1hyanqr e1lk8yn71"
   >
     <option
       value="val1"
@@ -201,7 +201,7 @@ Array [
     </option>
   </select>,
   <select
-    class="css-13k1zov"
+    class="css-13k1zov e1lk8yn71"
   >
     <option
       value="val1"
@@ -227,21 +227,21 @@ exports[`Storyshots Components|Form/Textarea alignment 1`] = `
 Array [
   <textarea
     align="end"
-    class="css-ikfdgv"
+    class="css-ikfdgv e1lk8yn72"
     style="height:0"
   >
     text
   </textarea>,
   <textarea
     align="center"
-    class="css-7knv9k"
+    class="css-7knv9k e1lk8yn72"
     style="height:0"
   >
     text
   </textarea>,
   <textarea
     align="start"
-    class="css-33eu3a"
+    class="css-33eu3a e1lk8yn72"
     style="height:0"
   >
     text
@@ -252,19 +252,19 @@ Array [
 exports[`Storyshots Components|Form/Textarea sizes 1`] = `
 Array [
   <textarea
-    class="css-1qzrepe"
+    class="css-1qzrepe e1lk8yn72"
     style="height:0"
   >
     text
   </textarea>,
   <textarea
-    class="css-1lgydmp"
+    class="css-1lgydmp e1lk8yn72"
     style="height:0"
   >
     text
   </textarea>,
   <textarea
-    class="css-33eu3a"
+    class="css-33eu3a e1lk8yn72"
     style="height:0"
   >
     text
@@ -275,28 +275,28 @@ Array [
 exports[`Storyshots Components|Form/Textarea validations 1`] = `
 Array [
   <textarea
-    class="css-sfd7lm"
+    class="css-sfd7lm e1lk8yn72"
     style="height:0"
     valid="error"
   >
     text
   </textarea>,
   <textarea
-    class="css-j4g7hp"
+    class="css-j4g7hp e1lk8yn72"
     style="height:0"
     valid="warn"
   >
     text
   </textarea>,
   <textarea
-    class="css-1rb826s"
+    class="css-1rb826s e1lk8yn72"
     style="height:0"
     valid="valid"
   >
     text
   </textarea>,
   <textarea
-    class="css-33eu3a"
+    class="css-33eu3a e1lk8yn72"
     style="height:0"
   >
     text
@@ -306,7 +306,7 @@ Array [
 
 exports[`Storyshots Components|Form/Textarea with knobs (controlled) 1`] = `
 <textarea
-  class="css-33eu3a"
+  class="css-33eu3a e1lk8yn72"
   style="height:0"
 >
   OMG, multiple lines!

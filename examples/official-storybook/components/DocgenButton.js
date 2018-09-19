@@ -139,7 +139,9 @@ DocgenButton.propTypes = {
    */
   union: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Set)]),
   /**
-   * test string
+   * test string with a comment that has
+   * two identical lines
+   * two identical lines
    */
   optionalString: PropTypes.string,
 };

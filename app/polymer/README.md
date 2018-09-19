@@ -5,7 +5,7 @@ With it, you can visualize different states of your UI components and develop th
 
 > Storybook for Polymer is at the **EXPERIMENTAL** stage!
 
-![Storybook Screenshot](https://github.com/storybooks/storybook/blob/master/media/demo.gif)
+![Storybook Screenshot](https://github.com/storybooks/storybook/blob/master/media/storybook-intro.gif)
 
 Storybook runs outside of your app.
 So you can develop UI components in isolation without worrying about app specific dependencies and requirements.
@@ -15,7 +15,7 @@ So you can develop UI components in isolation without worrying about app specifi
 ```sh
 npm i -g @storybook/cli
 cd my-polymer-app
-getstorybook
+storybook init
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)

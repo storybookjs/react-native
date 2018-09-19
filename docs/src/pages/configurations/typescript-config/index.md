@@ -60,7 +60,8 @@ The above example shows a working config with the TSDocgen plugin also integrate
     "noUnusedLocals": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build", "scripts"]
@@ -68,6 +69,15 @@ The above example shows a working config with the TSDocgen plugin also integrate
 ```
 
 This is for the default configuration where `/stories` is a peer of `src`. If you have them all in just `src` you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
+
+## Import tsx stories
+
+Change `config.ts` inside the Storybook config directory (by default, it’s `.storybook`) to import stories made with Typescript:
+
+```js
+// automatically import all files ending in *.stories.js
+const req = require.context('../stories', true, /.stories.tsx$/);
+```
 
 ## Using Typescript with the TSDocgen addon
 

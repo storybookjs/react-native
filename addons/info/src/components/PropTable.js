@@ -15,11 +15,9 @@ export const multiLineText = input => {
   const isSingleLine = arrayOfText.length < 2;
   return isSingleLine
     ? text
-    : arrayOfText.map((
-        lineOfText,
-        i // note: lineOfText is the closest we will get to a unique key
-      ) => (
-        <span key={lineOfText}>
+    : arrayOfText.map((lineOfText, i) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <span key={`${lineOfText}.${i}`}>
           {i > 0 && <br />} {lineOfText}
         </span>
       ));

@@ -45,7 +45,7 @@ linkTo('Toggle') // Links to the first story in the 'Toggle' kind
 
 With that, you can link an event in a component to any story in the Storybook.
 
--   First parameter is the the story kind name (what you named with `storiesOf`).
+-   First parameter is the story kind name (what you named with `storiesOf`).
 -   Second (optional) parameter is the story name (what you named with `.add`). 
     If the second parameter is omitted, the link will point to the first story in the given kind.
 

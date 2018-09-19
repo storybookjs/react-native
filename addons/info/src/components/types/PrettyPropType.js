@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// TODO: FIX this dependency cycle
-/* eslint-disable import/no-cycle */
 import Shape from './Shape';
 import OneOfType from './OneOfType';
 import ArrayOf from './ArrayOf';
@@ -11,7 +9,6 @@ import OneOf from './OneOf';
 import InstanceOf from './InstanceOf';
 import Signature from './Signature';
 import Literal from './Literal';
-/* eslint-enable import/no-cycle */
 
 import { TypeInfo } from './proptypes';
 

@@ -1,0 +1,38 @@
+{
+  "name": "riot-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A riot.js project",
+  "author": "hypnos <Filipp.Riabchun@jetbrains.com>",
+  "scripts": {
+    "build:js": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack"
+  },
+  "dependencies": {
+    "riot": "^3.11.2"
+  },
+  "devDependencies": {
+    "common-tags": "^1.8.0",
+    "global": "^4.3.2",
+    "style-loader": "^0.22.1",
+    "css-loader": "^1.0.0",
+    "raw-loader": "^0.5.1",
+    "moment": "^2.22.2",
+    "riot-hot-reload": "^1.0.0",
+    "riot-compiler": "^3.5.1",
+    "storybook-addon-jsx": "latest",
+    "storybook-readme": "latest",
+    "riot": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "uglifyjs-webpack-plugin": "latest",
+    "webpack-bundle-analyzer": "latest",
+    "packer-webpack-plugin": "latest",
+    "babel-loader": "latest",
+    "babel-preset-env": "latest",
+    "babel-register": "latest"
+  },
+  "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0"
+  }
+}

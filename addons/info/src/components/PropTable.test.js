@@ -9,6 +9,7 @@ describe('PropTable', () => {
     const singleLine = 'Foo bar baz';
     const unixMultiLineText = 'foo \n bar \n baz';
     const windowsMultiLineText = 'foo \r bar \r baz';
+    const duplicatedMultiLine = 'foo\nfoo\nfoo';
     const propDefinitions = [
       {
         defaultValue: undefined,
@@ -55,6 +56,12 @@ describe('PropTable', () => {
     });
     it('should return an array for windows multiline text', () => {
       expect(multiLineText(windowsMultiLineText)).toHaveLength(3);
+    });
+    it('should return an array with unique keys for duplicated multiline text', () => {
+      const wrappers = multiLineText(duplicatedMultiLine).map(tag => shallow(tag));
+      const keys = wrappers.map(wrapper => wrapper.key());
+      const deDup = new Set(keys);
+      expect(keys).toHaveLength(deDup.size);
     });
     it('should have 2 br tags for 3 lines of text', () => {
       const tree = renderer.create(multiLineText(unixMultiLineText)).toJSON();
