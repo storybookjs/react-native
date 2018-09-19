@@ -73,6 +73,25 @@ That'll load stories in `../src/stories/index.ts`.
 
 Just like that, you can load stories from wherever you want to.
 
+## Storybook TypeScript configuration
+
+In order to see semantic errors while developing in storybook, you need to create a `tsconfig.json` file at `.storybook/tsconfig.json` with the following content:
+
+```json
+{
+  "extends": "../tsconfig.json",
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../projects/**/*"
+  ]
+}
+```
+
 ## Write your stories
 
 Now you can write some stories inside the `../src/stories/index.ts` file, like this:
