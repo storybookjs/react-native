@@ -85,5 +85,5 @@ Let's look at how Storybook can help you do the above mentioned different asp
 
 -   [Structural Testing with StoryShots](/testing/structural-testing)
 -   [Interaction Testing with Specs Addon](/testing/interaction-testing)
--   [Storybook as the Base for CSS/Style Testing](/testing/css-style-testing)
+-   [Storybook as the Base for Automated Visual Testing](/testing/automated-visual-testing)
 -   [Storybook for Manual UI Testing](/testing/manual-testing)
