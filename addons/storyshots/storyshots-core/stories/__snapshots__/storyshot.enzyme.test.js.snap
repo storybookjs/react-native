@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Another Button with some emoji 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <ForwardRef
   onClick={[Function]}
 >
@@ -23,6 +33,16 @@ exports[`Storyshots Another Button with some emoji 1`] = `
 `;
 
 exports[`Storyshots Another Button with text 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <ForwardRef
   onClick={[Function]}
 >
@@ -46,6 +66,16 @@ exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
 `;
 
 exports[`Storyshots Button with some emoji 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <ForwardRef
   onClick={[Function]}
 >
@@ -68,6 +98,16 @@ exports[`Storyshots Button with some emoji 1`] = `
 `;
 
 exports[`Storyshots Button with text 1`] = `
+.emotion-0 {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 10px;
+  margin: 10px;
+}
+
 <ForwardRef
   onClick={[Function]}
 >
@@ -85,6 +125,50 @@ exports[`Storyshots Button with text 1`] = `
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
+.emotion-18 {
+  margin: 15px;
+  max-width: 600px;
+  line-height: 1.4;
+  font-family: "Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;
+}
+
+.emotion-2 {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border: 1px solid #eae9e9;
+  border-radius: 4px;
+  background-color: #f3f2f2;
+  color: #3a3a3a;
+}
+
+.emotion-4 {
+  color: #1474f3;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-bottom: 1px solid #1474f3;
+  padding-bottom: 2px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.emotion-12 {
+  color: #1474f3;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-bottom: 1px solid #1474f3;
+  padding-bottom: 2px;
+}
+
+.emotion-16 {
+  opacity: 0.5;
+}
+
 <Welcome
   showApp={[Function]}
 >
