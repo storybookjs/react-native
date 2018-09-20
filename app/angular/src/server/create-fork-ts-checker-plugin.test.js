@@ -13,7 +13,7 @@ const setupFiles = files => {
   require('fs').__setMockFiles(files);
 };
 
-describe('framework-preset-ts-fork-checker-plugin', () => {
+describe('create-fork-ts-checker-plugin.test', () => {
   it('should create a ForkTsCheckerWebpackPlugin instance', () => {
     setupFiles({ 'tsconfig.json': '{}' });
 
