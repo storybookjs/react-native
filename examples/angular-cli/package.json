@@ -66,8 +66,6 @@
     "@storybook/addon-storysource": "4.0.0-alpha.22",
     "@storybook/addons": "4.0.0-alpha.22",
     "@storybook/angular": "4.0.0-alpha.22",
-    "@types/jasmine": "~2.8.8",
-    "@types/jasminewd2": "^2.0.3",
     "@types/jest": "^23.3.1",
     "@types/node": "~10.9.2",
     "@types/storybook__addon-options": "^3.2.2",
