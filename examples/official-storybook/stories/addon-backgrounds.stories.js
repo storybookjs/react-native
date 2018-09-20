@@ -7,8 +7,11 @@ import BaseButton from '../components/BaseButton';
 storiesOf('Addons|Backgrounds', module)
   .addParameters({
     backgrounds: [
+      { name: 'black', value: '#000000' },
       { name: 'twitter', value: '#00aced' },
       { name: 'facebook', value: '#3b5998', default: true },
+      { name: 'white', value: '#ffffff' },
+      { name: 'gray', value: '#cccccc' },
     ],
     options: {
       selectedPanel: 'storybook/background/panel',
