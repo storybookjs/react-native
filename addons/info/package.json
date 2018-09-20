@@ -1,7 +1,18 @@
 {
   "name": "@storybook/addon-info",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "A Storybook addon to show additional information for your stories.",
+  "keywords": [
+    "addon",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/info",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -14,9 +25,9 @@
   },
   "dependencies": {
     "@emotion/styled": "0.10.5",
-    "@storybook/addons": "4.0.0-alpha.21",
-    "@storybook/client-logger": "4.0.0-alpha.21",
-    "@storybook/components": "4.0.0-alpha.21",
+    "@storybook/addons": "4.0.0-alpha.22",
+    "@storybook/client-logger": "4.0.0-alpha.22",
+    "@storybook/components": "4.0.0-alpha.22",
     "core-js": "2.5.7",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
