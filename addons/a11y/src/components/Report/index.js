@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Placeholder } from '@storybook/components';
 
 import Item from './Item';
 
 const Report = ({ items, empty, passes }) => (
-  <div>
+  <Fragment>
     {items.length ? (
       items.map(item => <Item passes={passes} item={item} key={item.id} />)
     ) : (
       <Placeholder>{empty}</Placeholder>
     )}
-  </div>
+  </Fragment>
 );
 
 Report.propTypes = {

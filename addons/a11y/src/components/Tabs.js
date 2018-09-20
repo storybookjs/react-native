@@ -73,7 +73,7 @@ class Tabs extends Component {
             </Item>
           ))}
         </List>
-        <div>{tabs[active].panel}</div>
+        {tabs[active].panel}
       </Container>
     );
   }

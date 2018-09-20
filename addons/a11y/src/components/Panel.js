@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from '@emotion/styled';
@@ -78,7 +78,7 @@ class A11YPanel extends Component {
     const { active } = this.props;
 
     return active ? (
-      <div>
+      <Fragment>
         <Tabs
           tabs={[
             {
@@ -94,7 +94,7 @@ class A11YPanel extends Component {
         <ActionBar>
           <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
         </ActionBar>
-      </div>
+      </Fragment>
     ) : null;
   }
 }
