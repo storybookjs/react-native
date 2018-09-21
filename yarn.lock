@@ -8120,6 +8120,10 @@ fn-name@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
 
+focus-lock@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.4.2.tgz#3e91141ac911352d4831215fba300d02b9faa6b4"
+
 follow-redirects@^1.0.0, follow-redirects@^1.2.5:
   version "1.5.7"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.7.tgz#a39e4804dacb90202bca76a9e2ac10433ca6a69a"
@@ -14153,6 +14157,10 @@ polymer-webpack-loader@^2.0.3:
     postcss "^6.0.9"
     source-map "^0.5.6"
 
+popper.js@^1.14.1:
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.4.tgz#8eec1d8ff02a5a3a152dd43414a15c7b79fd69b6"
+
 portfinder@^1.0.13, portfinder@^1.0.9:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.17.tgz#a8a1691143e46c4735edefcf4fbcccedad26456a"
@@ -15085,6 +15093,12 @@ react-chromatic@^0.8.4:
     node-ask "^1.0.1"
     tree-kill "^1.1.0"
 
+react-clientside-effect@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.0.0.tgz#81c4f91bd4ec0f8792ba76fe29c1d09e37fff062"
+  dependencies:
+    shallowequal "^1.1.0"
+
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-clone-referenced-element/-/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -15207,6 +15221,14 @@ react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
 
+react-focus-lock@^1.13.2:
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-1.13.2.tgz#7265220aab672830c93f0b9010bb6e12fb8bead4"
+  dependencies:
+    focus-lock "^0.4.2"
+    prop-types "^15.6.2"
+    react-clientside-effect "^1.0.0"
+
 react-fuzzy@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-fuzzy/-/react-fuzzy-0.5.2.tgz#fc13bf6f0b785e5fefe908724efebec4935eaefe"
@@ -15318,6 +15340,24 @@ react-native@^0.52.2:
 react-onclickoutside@^6.5.0:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
+
+react-popper-tooltip@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/react-popper-tooltip/-/react-popper-tooltip-2.3.4.tgz#4065185f58fa30ac54d46c1363462cb45f685ff2"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    react-popper "^1.0.2"
+
+react-popper@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.0.2.tgz#0e72f338b7f15ab9f9ec884e36ae0dad78a3e301"
+  dependencies:
+    babel-runtime "6.x.x"
+    create-react-context "^0.2.1"
+    popper.js "^1.14.1"
+    prop-types "^15.6.1"
+    typed-styles "^0.0.5"
+    warning "^3.0.0"
 
 react-proxy@^1.1.7:
   version "1.1.8"
@@ -18382,6 +18422,10 @@ type-is@~1.6.15, type-is@~1.6.16, type-is@~1.6.6:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.18"
+
+typed-styles@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/typed-styles/-/typed-styles-0.0.5.tgz#a60df245d482a9b1adf9c06c078d0f06085ed1cf"
 
 typedarray@^0.0.6:
   version "0.0.6"

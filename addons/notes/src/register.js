@@ -94,7 +94,7 @@ addons.register(ADDON_ID, api => {
     addons.addMain(PANEL_ID, {
       type,
       title,
-      route: '/info',
+      route: '/info/',
       render,
     });
   } else {
