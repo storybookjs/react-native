@@ -52,6 +52,7 @@ export const withOptions = makeDecorator({
     }
 
     // MUTATION !
+    // eslint-disable-next-line no-param-reassign
     context.options = {
       ...globalOptions,
       ...inputOptions,
