@@ -23,6 +23,7 @@ function getIntegrityOptions({ integrityOptions }) {
 function ensureOptionsDefaults(options) {
   const {
     suite = 'Storyshots',
+    asyncJest,
     storyNameRegex,
     storyKindRegex,
     renderer,
@@ -34,6 +35,7 @@ function ensureOptionsDefaults(options) {
   const integrityOptions = getIntegrityOptions(options);
 
   return {
+    asyncJest,
     suite,
     storyNameRegex,
     storyKindRegex,

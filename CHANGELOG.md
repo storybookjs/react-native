@@ -1,3 +1,35 @@
+# 4.0.0-alpha.22
+
+2018-September-19
+
+#### Features
+
+-   Storyshots: story params support [#4176](https://github.com/storybooks/storybook/pull/4176)
+-   Addon-options: story params support [#3965](https://github.com/storybooks/storybook/pull/3965)
+-   Presets - API generalization  [#4173](https://github.com/storybooks/storybook/pull/4173)
+-   start-storybook: open browser tab on first compilation [#4149](https://github.com/storybooks/storybook/pull/4149)
+-   start-storybook: suggest an alternative when the port is occupied [#4146](https://github.com/storybooks/storybook/pull/4146)
+-   Merge webpack optimisation configs [#4121](https://github.com/storybooks/storybook/pull/4121)
+
+#### Bug Fixes
+
+-   Angular cli - fix prebuild [#4187](https://github.com/storybooks/storybook/pull/4187)
+-   Presets - add babelDefault extension [#4155](https://github.com/storybooks/storybook/pull/4155)
+-   CHANGE index.html.ejs to use files over chunks && UPGRADE generate-page-webpack-plugin [#4134](https://github.com/storybooks/storybook/pull/4134)
+-   Allow replacing of stories (with warning rather than error) [#4061](https://github.com/storybooks/storybook/pull/4061)
+
+#### Maintenance
+
+-   CLI refactor [#4168](https://github.com/storybooks/storybook/pull/4168)
+-   Fix linter warnings [#4172](https://github.com/storybooks/storybook/pull/4172)
+-   Remove gh-pages deploy in favor of netlify [#4128](https://github.com/storybooks/storybook/pull/4128)
+
+#### Dependency Upgrades
+
+-   [core]: widen `airbnb-js-shims` dep range [#4189](https://github.com/storybooks/storybook/pull/4189)
+-   Updating react-split-pane to version 0.1.84 [#4153](https://github.com/storybooks/storybook/pull/4153)
+-   Riot tag loader missing in cli [#4122](https://github.com/storybooks/storybook/pull/4122)
+
 # 3.4.11
 
 2018-September-17

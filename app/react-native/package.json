@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -8,6 +8,9 @@
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/react-native",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -25,11 +28,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.21",
-    "@storybook/channel-websocket": "4.0.0-alpha.21",
-    "@storybook/core": "4.0.0-alpha.21",
-    "@storybook/core-events": "4.0.0-alpha.21",
-    "@storybook/ui": "4.0.0-alpha.21",
+    "@storybook/addons": "4.0.0-alpha.22",
+    "@storybook/channel-websocket": "4.0.0-alpha.22",
+    "@storybook/core": "4.0.0-alpha.22",
+    "@storybook/core-events": "4.0.0-alpha.22",
+    "@storybook/ui": "4.0.0-alpha.22",
     "babel-loader": "^7.1.5",
     "babel-plugin-macros": "^2.3.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",

@@ -24,4 +24,4 @@ create_fixture create-react-app react-scripts-latest-fixture
 create_fixture create-react-native-app react-native-scripts-latest-fixture
 
 cd ..
-./run_tests.sh -s -f cra-fixtures
+./run_tests.sh -f cra-fixtures

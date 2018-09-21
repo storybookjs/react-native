@@ -312,6 +312,14 @@ The current manual release sequence is as follows:
 -   Clean, build and publish the release
 -   Cut and paste the changelog to the github release page, and mark it as a (pre-) release
 
+**NOTE:** The very first time you publish a scoped package (`@storybook/x`) you need to make sure that it's package.json contains the following
+
+```js
+"publishConfig": {
+  "access": "public"
+}
+```
+
 This sequence applies to both releases and pre-releases, but differs slightly between the two.
 
 **NOTE: This is a work in progress. Don't try this unless you know what you're doing. We hope to automate this in CI, so this process is designed with that in mind.**

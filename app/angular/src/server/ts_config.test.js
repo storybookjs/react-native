@@ -1,4 +1,4 @@
-import loadTsConfig from './ts_config';
+import getTsLoaderOptions from './ts_config';
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../__mocks__/fs'));
@@ -15,18 +15,21 @@ describe('ts_config', () => {
   it('should return the config with the path to the tsconfig.json', () => {
     setupFiles({ 'tsconfig.json': '{}' });
 
-    const config = loadTsConfig('.foo');
+    const config = getTsLoaderOptions('.foo');
 
     expect(config).toEqual({
+      transpileOnly: true,
       configFile: 'tsconfig.json',
     });
   });
 
-  it('should return empty object when there is no tsconfig.json', () => {
+  it('should return object with transpileOnly: true when there is no tsconfig.json', () => {
     setupFiles({});
 
-    const config = loadTsConfig('.foo');
+    const config = getTsLoaderOptions('.foo');
 
-    expect(config).toEqual({});
+    expect(config).toEqual({
+      transpileOnly: true,
+    });
   });
 });

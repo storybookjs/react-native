@@ -1,7 +1,17 @@
 {
   "name": "@storybook/ui",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "Core Storybook UI",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -20,8 +30,8 @@
     "@emotion/styled": "0.10.5",
     "@ndelangen/react-treebeard": "^3.0.0",
     "@reach/router": "^1.1.1",
-    "@storybook/components": "4.0.0-alpha.21",
-    "@storybook/core-events": "4.0.0-alpha.21",
+    "@storybook/components": "4.0.0-alpha.22",
+    "@storybook/core-events": "4.0.0-alpha.22",
     "@storybook/mantra-core": "^1.7.2",
     "@storybook/podda": "^1.2.3",
     "@storybook/react-komposer": "^2.0.4",
@@ -49,8 +59,8 @@
     "to-camel-case": "^1.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.21",
-    "@storybook/react": "4.0.0-alpha.21"
+    "@storybook/addon-actions": "4.0.0-alpha.22",
+    "@storybook/react": "4.0.0-alpha.22"
   },
   "peerDependencies": {
     "react": "*",
