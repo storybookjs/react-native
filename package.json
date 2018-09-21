@@ -57,6 +57,10 @@
     "test": "node ./scripts/test.js",
     "test-latest-cra": "npm --prefix lib/cli run test-latest-cra"
   },
+  "dependencies": {
+    "babel-plugin-add-react-displayname": "^0.0.5",
+    "eslint-plugin-html": "^4.0.5"
+  },
   "devDependencies": {
     "@angular/common": "^6.1.4",
     "@angular/compiler": "^6.1.4",
@@ -192,9 +196,5 @@
       "dependencies": "Dependency Upgrades",
       "other": "Other"
     }
-  },
-  "dependencies": {
-    "babel-plugin-add-react-displayname": "^0.0.5",
-    "eslint-plugin-html": "^4.0.5"
   }
 }
