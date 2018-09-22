@@ -140,7 +140,7 @@ addonAPI.register('my-organisation/my-addon', storybookAPI => {
 });
 ```
 
-### storybookAPI.getURLState(overrideParams)
+### storybookAPI.getUrlState(overrideParams)
 
 This method allows you to get application url state with some changed params. For example, if you want to get a link to a particular story:
 
