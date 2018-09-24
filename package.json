@@ -79,7 +79,7 @@
     "@babel/runtime": "^7.0.0",
     "@emotion/core": "0.13.0",
     "@emotion/provider": "0.11.1",
-    "@emotion/snapshot-serializer": "0.8.1",
+    "@emotion/snapshot-serializer": "^0.8.2",
     "axe-core": "^3.1.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
