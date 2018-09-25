@@ -42,8 +42,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
-    "cross-env": "^5.2.0"
+    "@babel/runtime": "^7.0.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",

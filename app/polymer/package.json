@@ -44,6 +44,6 @@
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
     "lit-html": "0.10.0",
-    "polymer-webpack-loader": "2.0.2"
+    "polymer-webpack-loader": "^2.0.2"
   }
 }

@@ -12,6 +12,7 @@
     "riot": "^3.11.2"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "style-loader": "^0.22.1",

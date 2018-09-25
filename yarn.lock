@@ -861,10 +861,6 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/preset-stage-0@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@babel/preset-stage-0/-/preset-stage-0-7.0.0.tgz#999aaec79ee8f0a763042c68c06539c97c6e0646"
-
 "@babel/register@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.0.0.tgz#fa634bae1bfa429f60615b754fc1f1d745edd827"
@@ -2637,13 +2633,6 @@ async-writer@^1.1.0:
   dependencies:
     events "^1.0.2"
 
-async-writer@^2.0.0:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/async-writer/-/async-writer-2.1.3.tgz#5c2a3807cbb71b07d25d7e240213272af030a28f"
-  dependencies:
-    complain "^1.0.0"
-    events "^1.0.2"
-
 async@1.x, async@^1.4.0, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
@@ -2726,7 +2715,7 @@ aws4@^1.2.1, aws4@^1.6.0, aws4@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
 
-axe-core@^3.0.3, axe-core@^3.1.1:
+axe-core@^3.0.3:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.1.1.tgz#c00515481b2abc47a87a3cbcd6ba2ae2d78d027f"
 
@@ -11959,13 +11948,6 @@ marko-starter@^2.0.4:
     routes-table "^1.2.1"
     try-require "^1.2.1"
 
-marko-widgets@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/marko-widgets/-/marko-widgets-7.0.1.tgz#0e0df2b5609f462f6e93f52f8628535f2f4bc03f"
-  dependencies:
-    raptor-dom "^1.1.0"
-    raptor-renderer "^1.4.4"
-
 marko@^4.1.1, marko@^4.10.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/marko/-/marko-4.13.0.tgz#11c9c01b990358c5aa7a892a107f4928f3dbf0bd"
@@ -14758,12 +14740,6 @@ raptor-detect@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/raptor-detect/-/raptor-detect-1.0.1.tgz#0a54c639056ef66dfd52be3945fa22cc6d1466f3"
 
-raptor-dom@^1.0.0, raptor-dom@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/raptor-dom/-/raptor-dom-1.1.1.tgz#5ede30a72dc0f997a2c1731fc1f2c44b3fb5ac5a"
-  dependencies:
-    raptor-pubsub "^1.0.5"
-
 raptor-dust@^1:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/raptor-dust/-/raptor-dust-1.1.12.tgz#fd90caaa75f1c1e6799587acec64fa14bff7f439"
@@ -14801,25 +14777,9 @@ raptor-promises@^1.0.1, raptor-promises@^1.0.3:
     q "^1.0.1"
     raptor-util "^1.0.0"
 
-raptor-pubsub@^1.0.2, raptor-pubsub@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/raptor-pubsub/-/raptor-pubsub-1.0.5.tgz#15ee12a0e5059ec15b72ff9d61ecaf9f4212ef47"
-  dependencies:
-    events "^1.0.2"
-    raptor-util "^1.0.0"
-
 raptor-regexp@^1.0.0, raptor-regexp@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/raptor-regexp/-/raptor-regexp-1.0.1.tgz#ecf0f66c6671c0cd9f5e48c3705026c5509995c0"
-
-raptor-renderer@^1.4.4:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/raptor-renderer/-/raptor-renderer-1.5.0.tgz#958c20ce6ee2b2f7f22b0f34c11e8223fb2e4f79"
-  dependencies:
-    async-writer "^2.0.0"
-    raptor-dom "^1.0.0"
-    raptor-pubsub "^1.0.2"
-    raptor-util "^1.0.0"
 
 raptor-stacktraces@^1.0.0:
   version "1.0.1"
