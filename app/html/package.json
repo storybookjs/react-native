@@ -1,6 +1,6 @@
 {
   "name": "@storybook/html",
-  "version": "4.0.0-alpha.22",
+  "version": "4.0.0-alpha.23",
   "description": "Storybook for HTML: View HTML snippets in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@storybook/core": "4.0.0-alpha.22",
+    "@storybook/core": "4.0.0-alpha.23",
     "common-tags": "^1.8.0",
     "global": "^4.3.2",
     "html-loader": "^0.5.5",
