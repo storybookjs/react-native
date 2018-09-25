@@ -1,6 +1,8 @@
 import path from 'path';
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 
+jest.mock('./addon-jest.testresults.json', () => ({}), { virtual: true });
+
 initStoryshots({
   framework: 'angular',
   integrityOptions: { cwd: path.join(__dirname, 'src', 'stories') },

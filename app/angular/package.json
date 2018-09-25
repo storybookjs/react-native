@@ -1,8 +1,14 @@
 {
   "name": "@storybook/angular",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
+  "keywords": [
+    "storybook"
+  ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/app/angular",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -23,9 +29,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@storybook/core": "4.0.0-alpha.21",
-    "@storybook/node-logger": "4.0.0-alpha.21",
+    "@storybook/core": "4.0.0-alpha.22",
+    "@storybook/node-logger": "4.0.0-alpha.22",
     "angular2-template-loader": "^0.6.2",
+    "fork-ts-checker-webpack-plugin": "^0.4.9",
     "core-js": "^2.5.7",
     "global": "^4.3.2",
     "react": "^16.4.2",
@@ -43,6 +50,6 @@
     "@angular/forms": ">=6.0.0",
     "@angular/platform-browser": ">=6.0.0",
     "@angular/platform-browser-dynamic": ">=6.0.0",
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^8.0.0-beta.6"
+    "babel-loader": "^7.0.0 || ^8.0.0"
   }
 }

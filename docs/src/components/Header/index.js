@@ -27,20 +27,20 @@ class Header extends React.Component {
 
   render() {
     const { currentSection } = this.props;
-    let titleClassname = 'pull-left';
+    let titleClassname = 'float-left';
     if (currentSection === 'home') {
       titleClassname += ' hide';
     }
 
     return (
       <div id="header" className="row">
-        <div className="col-xs-12">
+        <div className="col-xs-12 col-md-12">
           <div id="header-title" className={titleClassname}>
             <Link to="/">
               <img className="sb-title" src={storybookLogo} alt="Storybook Logo" />
             </Link>
           </div>
-          <div id="header-links" className="pull-right">
+          <div id="header-links" className="float-right">
             {this.renderSections()}
           </div>
         </div>

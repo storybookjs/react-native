@@ -1178,13 +1178,13 @@ You can also deploy your Storybook as a static app. This way, everyone in your t
 First, install the following npm package globally:
 
 ```sh
-npm install -g getstorybook
+npm install -g storybook
 ```
 
 Then, run the following command inside your app’s directory:
 
 ```sh
-getstorybook
+storybook init
 ```
 
 After that, follow the instructions on the screen.

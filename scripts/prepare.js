@@ -29,11 +29,6 @@ function removeTsFromDist() {
   }
 }
 
-function copyLicence() {
-  const licence = path.join(__dirname, '..', 'LICENSE');
-  shell.cp(licence, './');
-}
-
 function logError(type, packageJson) {
   log.error(
     `FAILED to compile ${type}: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`
@@ -46,6 +41,5 @@ removeDist();
 babelify({ errorCallback: () => logError('js', packageJson) });
 removeTsFromDist();
 tscfy({ errorCallback: () => logError('ts', packageJson) });
-copyLicence();
 
 console.log(chalk.gray(`Built: ${chalk.bold(`${packageJson.name}@${packageJson.version}`)}`));

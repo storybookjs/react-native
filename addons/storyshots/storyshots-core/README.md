@@ -185,6 +185,122 @@ initStoryshots({
 })
 ```
 
+
+### StoryShots for async rendered components
+
+You can make use of [Jest done callback](https://jestjs.io/docs/en/asynchronous) to test components that render asynchronously. This callback is passed as param to test method passed to `initStoryshots(...)` when the `asyncJest` option is given as true.
+
+#### Example
+
+The following example shows how we can use the **done callback** to take StoryShots of a [Relay](http://facebook.github.io/relay/) component. Each kind of story is written into its own snapshot file with the use of `getSnapshotFileName`.
+
+Add _stories of UserForm_ in the file: UserForm.story.jsx
+
+```jsx
+/* global module */
+import React from "react";
+import { QueryRenderer } from "react-relay";
+import { storiesOf } from "@storybook/react";
+
+// Use the same queries used in YOUR app routes
+import { newUserFormQuery, editUserFormQuery } from "app/routes";
+import UserFormContainer from "app/users/UserForm";
+
+// YOUR function to generate a Relay Environment mock.
+// See https://github.com/1stdibs/relay-mock-network-layer for more info
+import getEnvironment from "test/support/relay-environment-mock";
+
+// User test data YOU generated for your tests
+import { user } from "test/support/data/index";
+
+// Use this function to return a new Environment for each story
+const Environment = () =>
+  getEnvironment({
+    mocks: {
+      Node: () => ({ __typename: "User" }),
+      User: () => user
+    }
+  });
+
+/**
+  
+  NOTICE that the QueryRenderer render its children via its render props.
+  
+  If we don't take the StoryShot async then we will only see the QueryRenderer in the StoryShot. 
+  
+  The following QueryRenderer returns null in the first render (it can be a loading indicator instead in real file) and then when it gets the data to respond to query, it renders again with props containing the data for the Component
+ */
+const renderStory = (query, environment, variables = {}) => (
+  <QueryRenderer
+    environment={environment}
+    query={query}
+    variables={variables}
+    render={({ props, error }) => {
+      if (error) {
+        console.error(error);
+      } else if (props) {
+        return <UserFormContainer {...props} />;
+      }
+      return null;
+    }}
+  />
+);
+
+storiesOf("users/UserForm", module)
+  .add("New User", () => {
+    const environment = new Environment();
+    return renderStory(newUserFormQuery, environment);
+  })
+  .add("Editing User", () => {
+    const environment = new Environment();
+    return renderStory(editUserFormQuery, environment, { id: user.id });
+  })
+```
+
+Then, init Storyshots for async component in the file: StoryShots.test.js
+
+```jsx
+import initStoryshots, { Stories2SnapsConverter } from "@storybook/addon-storyshots";
+import { mount } from "enzyme";
+import toJson from "enzyme-to-json";
+
+// Runner
+initStoryshots({
+  asyncJest: true, // this is the option that activates the async behaviour
+  test: ({
+    story,
+    context,
+    done // --> callback passed to test method when asyncJest option is true
+  }) => {
+    const converter = new Stories2SnapsConverter();
+    const snapshotFilename = converter.getSnapshotFileName(context);
+    const storyElement = story.render(context);
+
+    // mount the story
+    const tree = mount(storyElement);
+
+    // wait until the mount is updated, in our app mostly by Relay
+    // but maybe something else updating the state of the component
+    // somewhere
+    const waitTime = 1;
+    setTimeout(() => {
+      if (snapshotFilename) {
+        expect(toJson(tree.update())).toMatchSpecificSnapshot(snapshotFilename);
+      }
+
+      done();
+    }, waitTime)
+  },
+  // other options here
+});
+
+```
+NOTICE that When using the `asyncJest: true` option, you also must specify a `test` method that calls the `done()` callback.
+
+This is a really powerful technique to write stories of Relay components because it integrates data fetching with component rendering. So instead of passing data props manually, we can let Relay do the job for us as it does in our application. 
+
+Whenever you change you're data requirements by adding (and rendering) or (accidentally) deleting fields in your graphql query fragments, you'll get a different snapshot and thus an error in the StoryShot test. 
+
 ## Options
 
 ### `config`
@@ -429,3 +545,7 @@ initStoryshots({
   }
 });
 ```
+
+### `asyncJest`
+
+Enables Jest `done()` callback in the StoryShots tests for async testing. See [StoryShots for async rendered components](#storyshots-for-async-rendered-components) for more info.

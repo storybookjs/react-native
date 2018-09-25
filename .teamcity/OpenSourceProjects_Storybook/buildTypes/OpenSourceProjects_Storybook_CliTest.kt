@@ -21,6 +21,8 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
         script {
             name = "Bootstrap"
             scriptContent = """
+                set -e -x
+
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
@@ -31,20 +33,6 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
             scriptContent = "yarn test --cli"
             dockerImage = "andthensome/docker-node-rsync"
         }
-    }
-
-    triggers {
-        vcs {
-            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-            triggerRules = "-:comment=^TeamCity change:**"
-            branchFilter = """
-                +:pull/*
-                +:release/*
-                +:master
-                +:dependencies.io-*
-            """.trimIndent()
-        }
-        retryBuild {}
     }
 
     features {

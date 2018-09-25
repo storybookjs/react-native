@@ -8,11 +8,11 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 
 ## Getting Started
 
-The `getstorybook` tool can be used to add Storybook to your React Native app. Install the `getstorybook` tool if necessary and run it from your project directory with these commands:
+The `storybook` CLI tool can be used to add Storybook to your React Native app. Install the `storybook` tool if necessary and run it from your project directory with these commands:
 
 ```shell
 npm -g i @storybook/cli
-getstorybook
+storybook init
 ```
 
 After you have installed, there are additional steps for `create-react-native-app` apps. See the section for details, otherwise skip to [Start Storybook](#start-storybook)
@@ -20,7 +20,7 @@ to see the next step.
 
 ## Create React Native App (CRNA)
 
-If you run `getstorybook` inside a CRNA app, you'll be notified that there is an extra step required to use Storybook.
+If you run `storybook init` inside a CRNA app, you'll be notified that there is an extra step required to use Storybook.
 
 The easiest way to use Storybook inside CRNA is to simply replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
 
