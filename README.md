@@ -79,7 +79,6 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Supported Frameworks
 
-
 | Framework | Demo latest | Demo prerelease |  |
 |----|---|---|---|
 | [React](app/react) | [v3.4.x](https://release-3-4--storybooks-official.netlify.com), [v3.2.x](https://release-3-3--storybooks-official.netlify.com) | [v4.0.0-alpha](https://storybooks-official.netlify.com) | [![React](https://img.shields.io/npm/dt/@storybook/react.svg)](app/react) |
@@ -92,19 +91,6 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 | [HTML](app/html) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-html.netlify.com/) | [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html) |
 | [Svelte](app/svelte) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-svelte.netlify.com/) | [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte) |
 | [Riot](app/riot) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-riot.netlify.com/) | [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot) |
-
-| Frameworks |   |
-|----|---|
-| [React](app/react) | [![React](https://img.shields.io/npm/dt/@storybook/react.svg)](app/react) |
-| [React Native](app/react-native) | [![React Native](https://img.shields.io/npm/dt/@storybook/react-native.svg)](app/react-native) |
-| [Vue](app/vue) | [![Vue](https://img.shields.io/npm/dt/@storybook/vue.svg)](app/vue) |
-| [Angular](app/angular) | [![Angular](https://img.shields.io/npm/dt/@storybook/angular.svg)](app/angular) |
-| [Polymer](app/polymer) | [![Polymer](https://img.shields.io/npm/dt/@storybook/polymer.svg)](app/polymer) |
-| [Mithril](app/mithril) <sup>alpha</sup> | [![Mithril](https://img.shields.io/npm/dt/@storybook/mithril.svg)](app/mithril) |
-| [Marko](app/marko) <sup>alpha</sup> | [![Marko](https://img.shields.io/npm/dt/@storybook/marko.svg)](app/marko) |
-| [HTML](app/html) <sup>alpha</sup> | [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html) |
-| [Svelte](app/svelte) <sup>alpha</sup> | [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte) |
-| [Riot](app/riot) <sup>alpha</sup> | [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot) |
 
 ### Sub Projects
 
@@ -132,32 +118,6 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 | [viewport](addons/viewport/) | Change display sizes and layouts for responsive components using Storybook |
 
 See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
-
-## Live Examples
-
-### 4.0.alpha
-> Note, this is an Alpha version which may not be well tested. Features in this version are not final.
-
-- [React Official](https://storybooks-official.netlify.com)
-- [Vue](https://storybooks-vue.netlify.com/)
-- [Angular](https://storybooks-angular.netlify.com/)
-- [Polymer](https://storybooks-polymer.netlify.com/)
-- [Mithril](https://storybooks-mithril.netlify.com/)
-- [Marko](https://storybooks-marko.netlify.com/)
-- [HTML](https://storybooks-html.netlify.com/)
-- [Svelte](https://storybooks-svelte.netlify.com/)
-- [Riot](https://storybooks-riot.netlify.com/)
-
-### 3.4
-- [React Official](https://release-3-4--storybooks-official.netlify.com)
-- [Vue](https://release-3-4--storybooks-vue.netlify.com/)
-- [Angular](https://release-3-4--storybooks-angular.netlify.com/)
-- [Polymer](https://release-3-4--storybooks-polymer.netlify.com/)
-
-### 3.3
-- [React Official](https://release-3-3--storybooks-official.netlify.com)
-- [Vue](https://release-3-3--storybooks-vue.netlify.com/)
-- [Angular](https://release-3-3--storybooks-angular.netlify.com/)
 
 ## Badges
 
