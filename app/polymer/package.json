@@ -35,7 +35,7 @@
     "global": "^4.3.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "webpack": "^4.17.1"
+    "webpack": "^4.20.0"
   },
   "devDependencies": {
     "lit-html": "^0.10.2",

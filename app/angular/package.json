@@ -39,7 +39,7 @@
     "react-dom": "^16.4.2",
     "sass-loader": "^7.1.0",
     "ts-loader": "^4.5.0",
-    "webpack": "^4.17.1",
+    "webpack": "^4.20.0",
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {
