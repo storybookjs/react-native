@@ -55,6 +55,7 @@
     "global": "^4.3.2",
     "inquirer": "^6.2.0",
     "interpret": "^1.1.0",
+    "ip": "^1.1.5",
     "json5": "^2.0.1",
     "opn": "^5.3.0",
     "postcss-flexbugs-fixes": "^4.1.0",
