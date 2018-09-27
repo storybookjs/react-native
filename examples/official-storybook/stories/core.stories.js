@@ -28,7 +28,10 @@ storiesOf('Core|Parameters', module)
 
 storiesOf('Core|Parameters', module)
   .addDecorator(fn => fn({ test: 'awesome' }))
-  .add('adds data to storyFn', (...params) => <pre>{JSON.stringify(params, null, 2)}</pre>);
+  .addParameters({ chapterParameter })
+  .add('adds data to storyFn', (...params) => <pre>{JSON.stringify(params, null, 2)}</pre>, {
+    storyParameter,
+  });
 
 let timesClicked = 0;
 const increment = () => {
@@ -55,3 +58,8 @@ if (
     // Story does not return something react can render
     .add('story errors', () => null);
 }
+
+import('fast-deep-equal').then(m => {
+  console.log('Core|Async', m);
+  storiesOf('Core|Async', module).add('story is added async', () => <div>yes</div>);
+});

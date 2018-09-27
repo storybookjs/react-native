@@ -8,6 +8,7 @@
     ["emotion", { "sourceMap": true, "autoLabel": true }],
     "babel-plugin-add-react-displayname",
     "babel-plugin-macros",
+    "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-export-default-from",
     [
