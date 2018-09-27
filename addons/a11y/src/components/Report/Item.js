@@ -67,9 +67,9 @@ class Item extends Component {
         </HeaderBar>
         {open ? (
           <Fragment>
-            <Info item={item} />
-            <Elements elements={item.nodes} passes={passes} />
-            <Tags tags={item.tags} />
+            <Info item={item} key="info" />
+            <Elements elements={item.nodes} passes={passes} key="elements" />
+            <Tags tags={item.tags} key="tags" />
           </Fragment>
         ) : null}
       </Wrapper>

@@ -9,7 +9,7 @@ const Report = ({ items, empty, passes }) => (
     {items.length ? (
       items.map(item => <Item passes={passes} item={item} key={item.id} />)
     ) : (
-      <Placeholder>{empty}</Placeholder>
+      <Placeholder key="placeholder">{empty}</Placeholder>
     )}
   </Fragment>
 );

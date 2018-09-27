@@ -80,6 +80,7 @@ class A11YPanel extends Component {
     return active ? (
       <Fragment>
         <Tabs
+          key="tabs"
           tabs={[
             {
               label: <Violations>{violations.length} Violations</Violations>,
@@ -91,7 +92,7 @@ class A11YPanel extends Component {
             },
           ]}
         />
-        <ActionBar>
+        <ActionBar key="actionbar">
           <ActionButton onClick={this.requestCheck}>RERUN TEST</ActionButton>
         </ActionBar>
       </Fragment>
