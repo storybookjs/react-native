@@ -28,10 +28,13 @@ class ColorType extends React.Component {
     document.addEventListener('mousedown', this.handleWindowMouseDown);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     const { knob } = this.props;
+    const { displayColorPicker } = this.state;
 
-    return nextProps.knob.value !== knob.value;
+    return (
+      nextProps.knob.value !== knob.value || nextState.displayColorPicker !== displayColorPicker
+    );
   }
 
   componentWillUnmount() {

@@ -1,3 +1,22 @@
+# 4.0.0-alpha.23
+
+2018-September-25
+
+#### Features
+
+-   Angular build time optimization [#4118](https://github.com/storybooks/storybook/pull/4118)
+-   Pass Jest done callback to testMethod [#3853](https://github.com/storybooks/storybook/pull/3853)
+
+#### Bug Fixes
+
+-   Fix getstorybook CLI [#4213](https://github.com/storybooks/storybook/pull/4213)
+-   FIX regression devtool, in case of cross domain parent, window.parent might throw [#4199](https://github.com/storybooks/storybook/pull/4199)
+
+#### Dependency Upgrades
+
+-   Upgrade deps dealing with license issues [#4228](https://github.com/storybooks/storybook/pull/4228)
+-   Use @emotion/snapshot-serializer [#4206](https://github.com/storybooks/storybook/pull/4206)
+
 # 4.0.0-alpha.22
 
 2018-September-19

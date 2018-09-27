@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "4.0.0-alpha.22",
+  "version": "4.0.0-alpha.23",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -25,11 +25,11 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@emotion/core": "0.13.0",
-    "@emotion/provider": "0.11.1",
-    "@emotion/styled": "0.10.5",
+    "@emotion/core": "^0.13.1",
+    "@emotion/provider": "^0.11.2",
+    "@emotion/styled": "^0.10.6",
     "@reach/router": "^1.1.1",
-    "@storybook/core-events": "4.0.0-alpha.20",
+    "@storybook/core-events": "4.0.0-alpha.23",
     "global": "^4.3.2",
     "immer": "^1.5.0",
     "lodash.pick": "^4.4.0",
@@ -47,9 +47,9 @@
     "render-fragment": "^0.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.22",
-    "@storybook/addon-knobs": "4.0.0-alpha.22",
-    "@storybook/react": "4.0.0-alpha.22"
+    "@storybook/addon-actions": "4.0.0-alpha.23",
+    "@storybook/addon-knobs": "4.0.0-alpha.23",
+    "@storybook/react": "4.0.0-alpha.23"
   },
   "peerDependencies": {
     "react": "*",

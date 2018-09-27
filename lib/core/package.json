@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "4.0.0-alpha.22",
+  "version": "4.0.0-alpha.23",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
@@ -27,15 +27,15 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/runtime": "^7.0.0",
-    "@emotion/core": "0.13.0",
-    "@emotion/provider": "0.11.1",
-    "@emotion/styled": "0.10.5",
-    "@storybook/addons": "4.0.0-alpha.22",
-    "@storybook/channel-postmessage": "4.0.0-alpha.22",
-    "@storybook/client-logger": "4.0.0-alpha.22",
-    "@storybook/core-events": "4.0.0-alpha.22",
-    "@storybook/node-logger": "4.0.0-alpha.22",
-    "@storybook/ui": "4.0.0-alpha.22",
+    "@emotion/core": "^0.13.1",
+    "@emotion/provider": "^0.11.2",
+    "@emotion/styled": "^0.10.6",
+    "@storybook/addons": "4.0.0-alpha.23",
+    "@storybook/channel-postmessage": "4.0.0-alpha.23",
+    "@storybook/client-logger": "4.0.0-alpha.23",
+    "@storybook/core-events": "4.0.0-alpha.23",
+    "@storybook/node-logger": "4.0.0-alpha.23",
+    "@storybook/ui": "4.0.0-alpha.23",
     "airbnb-js-shims": "^1 || ^2",
     "autoprefixer": "^9.1.3",
     "babel-plugin-emotion": "^9.2.6",
@@ -56,6 +56,7 @@
     "global": "^4.3.2",
     "inquirer": "^6.2.0",
     "interpret": "^1.1.0",
+    "ip": "^1.1.5",
     "json5": "^2.0.1",
     "lodash.debounce": "^4.0.8",
     "lodash.mergewith": "^4.6.1",
@@ -67,7 +68,7 @@
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "raw-loader": "^0.5.1",
-    "react-dev-utils": "6.0.0-next.3e165448",
+    "react-dev-utils": "6.0.0-next.2150693d",
     "resolve": "^1.8.1",
     "semver": "^5.5.1",
     "serve-favicon": "^2.5.0",
@@ -76,9 +77,9 @@
     "svg-url-loader": "^2.3.2",
     "universal-dotenv": "^1.9.0",
     "url-loader": "^1.1.1",
-    "webpack": "^4.17.1",
-    "webpack-dev-middleware": "^3.2.0",
-    "webpack-hot-middleware": "^2.22.3"
+    "webpack": "^4.20.0",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.2"
   },
   "devDependencies": {
     "mock-fs": "^4.5.0"
