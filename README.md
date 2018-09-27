@@ -40,7 +40,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
     -   🛠[Supported Frameworks & Examples](#supported-frameworks)
     -   🚇[Sub Projects](#sub-projects)
     -   🔗[Addons](#addons)
--   🏅[Badges](#badges)
+-   🏅[Badges & Presentation materials](#badges)
 -   👥[Community](#community)
 -   👏[Contributing](#contributing)
     -   👨‍💻[Development scripts](#development-scripts)
@@ -119,7 +119,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
-## Badges
+## Badges & Presentation materials
 
 We have a badge ! Link it to your live Storybook example.
 
@@ -128,6 +128,8 @@ We have a badge ! Link it to your live Storybook example.
 ```md
 [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](link to site)
 ```
+
+If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybooks/press).
 
 ## Community
 
