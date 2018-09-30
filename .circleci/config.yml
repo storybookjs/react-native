@@ -250,8 +250,6 @@ jobs:
           command: yarn coverage
   cli:
     <<: *defaults
-    docker:
-      - image: andthensome/docker-node-rsync
     environment:
       BASH_ENV: ~/.bashrc
     steps:
@@ -264,8 +262,6 @@ jobs:
           no_output_timeout: 1800
   cli-latest-cra:
     <<: *defaults
-    docker:
-      - image: andthensome/docker-node-rsync
     environment:
       BASH_ENV: ~/.bashrc
     steps:

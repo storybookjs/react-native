@@ -26,12 +26,12 @@ object OpenSourceProjects_Storybook_CliTest : BuildType({
                 yarn
                 yarn bootstrap --core
             """.trimIndent()
-            dockerImage = "amfio/node-rsync"
+            dockerImage = "node:%docker.node.version%"
         }
         script {
             name = "Test"
             scriptContent = "yarn test --cli"
-            dockerImage = "amfio/node-rsync"
+            dockerImage = "node:%docker.node.version%"
         }
     }
 
