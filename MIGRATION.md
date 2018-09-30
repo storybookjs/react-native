@@ -24,7 +24,7 @@
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
 
-## From 3.4.x to 4.0
+## From 3.4.x to 4.0.x
 
 With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. All deprecations have been marked for months, so we hope that there will be no significant impact on your project.
 
