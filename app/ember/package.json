@@ -1,0 +1,37 @@
+{
+  "name": "@storybook/ember",
+  "version": "4.0.0-alpha.23",
+  "description": "Storybook for Ember: Develop Ember Component in isolation with Hot Reloading.",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/app/ember",
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybooks/storybook.git"
+  },
+  "license": "MIT",
+  "main": "dist/client/index.js",
+  "jsnext:main": "src/client/index.js",
+  "bin": {
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "@ember/test-helpers": "^0.7.25",
+    "@storybook/core": "4.0.0-alpha.23",
+    "global": "^4.3.2"
+  },
+  "peerDependencies": {
+    "babel-plugin-ember-modules-api-polyfill": "^2.4.0",
+    "babel-loader": "^7.0.0 || ^8.0.0",
+    "common-tags": "^1.8.0",
+    "ember-cli-htmlbars-inline-precompile": "^1.0.3",
+    "ember-source": "^3.4.0"
+  }
+}
