@@ -105,5 +105,10 @@ object OpenSourceProjects_Storybook_Build_2 : BuildType({
                 onDependencyCancel = FailureAction.ADD_PROBLEM
             }
         }
+        dependency(OpenSourceProjects_Storybook.buildTypes.OpenSourceProjects_Storybook_CliTest) {
+            snapshot {
+                onDependencyCancel = FailureAction.ADD_PROBLEM
+            }
+        }
     }
 })

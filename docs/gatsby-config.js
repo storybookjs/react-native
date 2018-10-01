@@ -34,7 +34,7 @@ module.exports = {
         '/testing/react-ui-testing/',
         '/testing/structural-testing/',
         '/testing/interaction-testing/',
-        '/testing/css-style-testing/',
+        '/testing/automated-visual-testing/',
         '/testing/manual-testing/',
       ],
       addons: [

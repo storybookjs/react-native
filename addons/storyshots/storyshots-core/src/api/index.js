@@ -32,6 +32,7 @@ function testStorySnapshots(options = {}) {
   }
 
   const {
+    asyncJest,
     suite,
     storyNameRegex,
     storyKindRegex,
@@ -50,6 +51,7 @@ function testStorySnapshots(options = {}) {
 
   snapshotsTests({
     groups: storiesGroups,
+    asyncJest,
     suite,
     framework,
     storyKindRegex,

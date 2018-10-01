@@ -48,7 +48,7 @@ class MainLinks extends React.Component {
                 transform: 'rotateY(180deg)',
               }}
             />
-            <div className="col-xs-12 read-docs">
+            <div className="col-xs-12 col-sm-12 read-docs">
               <h2 style={{ color: '#6DABF5' }}>Documentation</h2>
               <div
                 className="form-group has-feedback"

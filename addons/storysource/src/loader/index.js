@@ -18,9 +18,9 @@ function transform(source) {
   const addsMap = JSON.stringify(result.addsMap);
 
   return `
-  var withStorySource = require('@storybook/addon-storysource').withStorySource;
-  var __STORY__ = ${sourceJson};
-  var __ADDS_MAP__ = ${addsMap};
+  export var withStorySource = require('@storybook/addon-storysource').withStorySource;
+  export var __STORY__ = ${sourceJson};
+  export var __ADDS_MAP__ = ${addsMap};
   
   ${result.source}
   `;

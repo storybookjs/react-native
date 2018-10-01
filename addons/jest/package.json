@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-jest",
-  "version": "4.0.0-alpha.16",
+  "version": "4.0.0-alpha.23",
   "description": "React storybook addon that show component jest report",
   "keywords": [
     "addon",
@@ -11,11 +11,16 @@
     "storybook",
     "unit-testing"
   ],
-  "homepage": "https://storybook.js.org",
-  "bugs": "https://github.com/storybooks/storybook",
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/jest",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storybooks/storybook"
+    "url": "https://github.com/storybooks/storybook.git"
   },
   "license": "MIT",
   "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
@@ -25,13 +30,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.16",
-    "@storybook/components": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
+    "@emotion/styled": "^0.10.6",
+    "@storybook/addons": "4.0.0-alpha.23",
+    "@storybook/components": "4.0.0-alpha.23",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
-    "react-emotion": "^9.2.6",
-    "upath": "^1.0.4",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {

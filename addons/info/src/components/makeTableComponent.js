@@ -1,5 +1,4 @@
-/* eslint-disable no-underscore-dangle */
-
+/* eslint-disable no-underscore-dangle,react/forbid-foreign-prop-types */
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -67,12 +66,10 @@ const propsFromPropTypes = type => {
         return;
       }
 
-      // eslint-disable-next-line react/destructuring-assignment
       if (!props[property]) {
         props[property] = { property };
       }
 
-      // eslint-disable-next-line react/destructuring-assignment
       props[property].defaultValue = value;
     });
   }
@@ -86,12 +83,10 @@ export default function makeTableComponent(Component) {
       return null;
     }
 
-    /* eslint-disable react/destructuring-assignment */
-    const propDefinitionsMap = hasDocgen(props.type)
-      ? propsFromDocgen(props.type)
-      : propsFromPropTypes(props.type);
+    const { type } = props;
+
+    const propDefinitionsMap = hasDocgen(type) ? propsFromDocgen(type) : propsFromPropTypes(type);
     const propDefinitions = Object.values(propDefinitionsMap);
-    /* eslint-enable react/destructuring-assignment */
 
     return <Component propDefinitions={propDefinitions} {...props} />;
   };

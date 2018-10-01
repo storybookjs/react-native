@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-const Button = styled('button')({
+const Button = styled.button({
   border: '1px solid #eee',
   borderRadius: 3,
   backgroundColor: '#FFFFFF',

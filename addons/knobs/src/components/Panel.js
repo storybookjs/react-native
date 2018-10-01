@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import copy from 'copy-to-clipboard';
 
 import { Placeholder, TabWrapper, TabsState, ActionBar, ActionButton } from '@storybook/components';
@@ -14,7 +14,7 @@ const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'ALL';
 
-const PanelWrapper = styled('div')({
+const PanelWrapper = styled.div({
   width: '100%',
 });
 

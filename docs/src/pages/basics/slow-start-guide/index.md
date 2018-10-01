@@ -11,3 +11,5 @@ Storybook supports multiple UI libraries. The manual setup for each framework is
 -   [Storybook for Mithril](/basics/guide-mithril/)
 -   [Storybook for Marko](/basics/guide-marko/)
 -   [Storybook for HTML](/basics/guide-html/)
+-   [Storybook for Svelte](/basics/guide-svelte/)
+-   [Storybook for Riot](/basics/guide-riot/)

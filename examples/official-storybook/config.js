@@ -1,8 +1,8 @@
 import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
+import ThemeProvider from '@emotion/provider';
 import { configure, addDecorator } from '@storybook/react';
 import { themes } from '@storybook/components';
-import { setOptions } from '@storybook/addon-options';
+import { withOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import 'react-chromatic/storybook-addon';
@@ -12,13 +12,22 @@ import extraViewports from './extra-viewports.json';
 addHeadWarning('Preview head not loaded', 'preview-head-not-loaded');
 addHeadWarning('Dotenv file not loaded', 'dotenv-file-not-loaded');
 
-setOptions({
-  hierarchySeparator: /\/|\./,
-  hierarchyRootSeparator: /\|/,
-  theme: themes.dark,
-});
+addDecorator(
+  withOptions({
+    hierarchySeparator: /\/|\./,
+    hierarchyRootSeparator: /\|/,
+    theme: themes.dark,
+  })
+);
 
-addDecorator(story => <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>);
+addDecorator(
+  (story, { kind }) =>
+    kind === 'Core|Errors' ? (
+      story()
+    ) : (
+      <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
+    )
+);
 
 configureViewport({
   viewports: {

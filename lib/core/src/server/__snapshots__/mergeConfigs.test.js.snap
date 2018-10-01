@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mergeConfigs merges partial custom config 1`] = `
+Object {
+  "devtool": "source-maps",
+  "entry": Object {
+    "bundle": "index.js",
+  },
+  "module": Object {
+    "rules": Array [
+      "r1",
+      "r2",
+    ],
+  },
+  "optimization": Object {
+    "runtimeChunk": true,
+    "splitChunks": Object {
+      "chunks": "all",
+    },
+  },
+  "output": Object {
+    "filename": "[name].js",
+  },
+  "plugins": Array [
+    "p1",
+    "p2",
+    "p3",
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "A1": "src/B1",
+      "A2": "src/B2",
+    },
+    "enforceModuleExtension": true,
+    "extensions": Array [
+      ".js",
+      ".json",
+      ".ts",
+      ".tsx",
+    ],
+  },
+}
+`;
+
+exports[`mergeConfigs merges successfully if custom config is empty 1`] = `
+Object {
+  "devtool": "source-maps",
+  "entry": Object {
+    "bundle": "index.js",
+  },
+  "module": Object {
+    "rules": Array [
+      "r1",
+      "r2",
+    ],
+  },
+  "optimization": Object {
+    "runtimeChunk": true,
+    "splitChunks": Object {
+      "chunks": "all",
+    },
+  },
+  "output": Object {
+    "filename": "[name].js",
+  },
+  "plugins": Array [
+    "p1",
+    "p2",
+  ],
+  "resolve": Object {
+    "alias": Object {
+      "A1": "src/B1",
+      "A2": "src/B2",
+    },
+    "enforceModuleExtension": true,
+    "extensions": Array [
+      ".js",
+      ".json",
+    ],
+  },
+}
+`;
+
+exports[`mergeConfigs merges two full configs in one 1`] = `
+Object {
+  "devtool": "source-maps",
+  "entry": Object {
+    "bundle": "index.js",
+  },
+  "module": Object {
+    "noParse": /jquery\\|lodash/,
+    "rules": Array [
+      "r1",
+      "r2",
+      "r3",
+      "r4",
+    ],
+  },
+  "optimization": Object {
+    "minimizer": Array [
+      "banana",
+    ],
+    "runtimeChunk": true,
+    "splitChunks": Object {
+      "chunks": "all",
+    },
+  },
+  "output": Object {
+    "filename": "[name].js",
+  },
+  "plugins": Array [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+  ],
+  "profile": true,
+  "resolve": Object {
+    "alias": Object {
+      "A1": "src/B1",
+      "A2": "src/B2",
+      "A3": "src/B3",
+      "A4": "src/B4",
+    },
+    "enforceExtension": false,
+    "enforceModuleExtension": true,
+    "extensions": Array [
+      ".js",
+      ".json",
+      ".ts",
+      ".tsx",
+    ],
+  },
+}
+`;

@@ -31,9 +31,7 @@ const styles = StyleSheet.create({
   },
 });
 
-interface Props {}
-
-export default class App extends React.Component<Props> {
+export default class App extends React.Component<{}> {
   render() {
     return (
       <View style={styles.container}>

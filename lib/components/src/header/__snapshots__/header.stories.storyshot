@@ -2,10 +2,10 @@
 
 exports[`Storyshots Components|Header simple 1`] = `
 <div
-  class="css-5xz1i6"
+  class="css-5xz1i6 ez1mtsr0"
 >
   <a
-    class="css-ypfoxr"
+    class="css-ypfoxr ez1mtsr1"
     href="http://example.com"
     rel="noopener noreferrer"
     target="_blank"
@@ -13,7 +13,7 @@ exports[`Storyshots Components|Header simple 1`] = `
     name
   </a>
   <button
-    class="css-i6e0jg"
+    class="css-i6e0jg ez1mtsr2"
   >
     ⌘
   </button>

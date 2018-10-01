@@ -40,6 +40,22 @@ exports[`Storyshots App|acceptance polymer-cli 1`] = `
 />
 `;
 
+exports[`Storyshots App|acceptance riot-kitchen-sink 1`] = `
+<iframe
+  src="riot-kitchen-sink/index.html"
+  style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
+  title="riot-kitchen-sink"
+/>
+`;
+
+exports[`Storyshots App|acceptance svelte-kitchen-sink 1`] = `
+<iframe
+  src="svelte-kitchen-sink/index.html"
+  style="border:0;position:absolute;top:0;left:0;width:100vw;height:100vh"
+  title="svelte-kitchen-sink"
+/>
+`;
+
 exports[`Storyshots App|acceptance vue-kitchen-sink 1`] = `
 <iframe
   src="vue-kitchen-sink/index.html"

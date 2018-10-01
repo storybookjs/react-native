@@ -73,6 +73,31 @@ That'll load stories in `../src/stories/index.ts`.
 
 Just like that, you can load stories from wherever you want to.
 
+## Storybook TypeScript configuration
+
+**Note:** You only need this if you are using Storybook `>= 4.0.0-alpha.23`.
+
+`@storybook/angular` is using [ForkTsCheckerWebpackPlugin](https://github.com/Realytics/fork-ts-checker-webpack-plugin) to boost the build performance. 
+This makes it necessary to create a `tsconfig.json` file at `.storybook/tsconfig.json` with the following content:
+
+```json
+{
+  "extends": "../tsconfig.json",
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../projects/**/*"
+  ]
+}
+```
+
+> Only files that are included in the `include` or `files` section are checked for semantic TypeScript errors.
+> For more information visit the [ForkTsCheckerWebpackPlugin documentation](https://github.com/Realytics/fork-ts-checker-webpack-plugin#modules-resolution).
+
 ## Write your stories
 
 Now you can write some stories inside the `../src/stories/index.ts` file, like this:

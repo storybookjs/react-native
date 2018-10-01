@@ -1,7 +1,18 @@
 {
   "name": "@storybook/addon-info",
-  "version": "4.0.0-alpha.16",
+  "version": "4.0.0-alpha.23",
   "description": "A Storybook addon to show additional information for your stories.",
+  "keywords": [
+    "addon",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/info",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"
@@ -13,17 +24,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.16",
-    "@storybook/client-logger": "4.0.0-alpha.16",
-    "@storybook/components": "4.0.0-alpha.16",
-    "babel-runtime": "^6.26.0",
+    "@emotion/styled": "^0.10.6",
+    "@storybook/addons": "4.0.0-alpha.23",
+    "@storybook/client-logger": "4.0.0-alpha.23",
+    "@storybook/components": "4.0.0-alpha.23",
     "core-js": "2.5.7",
     "global": "^4.3.2",
     "marksy": "^6.0.3",
     "nested-object-assign": "^1.0.1",
     "prop-types": "^15.6.2",
     "react-addons-create-fragment": "^15.5.3",
-    "react-emotion": "^9.2.6",
     "react-lifecycles-compat": "^3.0.4",
     "util-deprecate": "^1.0.2"
   },

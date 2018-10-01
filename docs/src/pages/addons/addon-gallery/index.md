@@ -143,3 +143,12 @@ Convert stories into Sketch 💎 symbols.
 
 ### [styled components theme](https://github.com/echoulen/storybook-addon-styled-component-theme)
 styled components theme selection.
+
+### [AngularJS](https://github.com/titonobre/storybook-addon-angularjs)
+Create stories with AngularJS(1.x) components.
+
+### [JSS theme](https://github.com/vertexbz/storybook-addon-jss-theme)
+JSS theme selection.
+
+### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
+Provides live react story editing and preview.

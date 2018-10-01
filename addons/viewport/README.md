@@ -10,12 +10,21 @@ Storybook Viewport Addon allows your stories to be displayed in different sizes 
 
 Install the following npm module:
 
-    npm i --save-dev @storybook/addon-viewport
+```sh
+npm i --save-dev @storybook/addon-viewport
+```
 
 or with yarn:
 
-    yarn add -D @storybook/addon-viewport
+```sh
+yarn add -D @storybook/addon-viewport
+```
 
+Then, add following content to .storybook/addons.js
+
+```js
+import '@storybook/addon-viewport/register';
+```
 
 ## Configuration
 

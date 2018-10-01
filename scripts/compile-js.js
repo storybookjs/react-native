@@ -7,10 +7,10 @@ function getCommand(watch) {
   const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
   const args = [
-    '--ignore __mocks__/,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__',
-    '--plugins "transform-runtime"',
+    '--ignore **/__mocks__/,**/tests/*,**/__tests__/,**/**.test.js,**/stories/,**/**.story.js,**/**.stories.js,**/__snapshots__',
     './src --out-dir ./dist',
     '--copy-files',
+    `--config-file ${path.resolve(__dirname, '../.babelrc')}`,
   ];
 
   if (watch) {
