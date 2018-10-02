@@ -21,6 +21,11 @@ function generateSitemap(pages) {
   fs.writeFileSync(`${__dirname}/public/sitemap.xml`, sitemap.toString());
 }
 
+const generateVersionsFile = () => {
+  const data = { test: true };
+  fs.writeFileSync(`${__dirname}/public/versions.json`, JSON.stringify(data));
+};
+
 module.exports = {
   async onPostBuild({ graphql }) {
     const result = await graphql(`
@@ -34,6 +39,7 @@ module.exports = {
         }
       }
     `);
+    generateVersionsFile();
     generateSitemap(result.data.allSitePage.edges.map(({ node }) => node));
   },
   onCreateNode({ node, boundActionCreators, getNode }) {
