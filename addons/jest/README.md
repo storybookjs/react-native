@@ -42,7 +42,7 @@ but this can mean you'll experience merge conflicts on this file in the future. 
 
 ## Generating the test results
 
-You need to make sure the generated test-restuls file exists before you start storybook.
+You need to make sure the generated test-results file exists before you start storybook.
 During development you will likely start jest in watch-mode
 and so the json file will be re-generated every time code or tests change.
 
@@ -52,7 +52,7 @@ npm run test:generate-output -- --watch
 
 This change will then be HMR (hot module reloaded) using webpack and displayed by this addon.
 
-If you want to pre-run jest automaticly during development or a static build,
+If you want to pre-run jest automatically during development or a static build,
 you may need to consider that if your tests fail, the script receives a non-0 exit code and will exit.
 You could create a `prebuild:storybook` npm script, which will never fail by appending `|| true`:
 
@@ -77,7 +77,7 @@ import '@storybook/addon-jest/register';
 
 ## Usage
 
-Assuming that you have created a test files `MyComponent.test.js` and `MyOtherComponent.test.js`
+Assuming that you have created test files `MyComponent.test.js` and `MyOtherComponent.test.js`
 
 In your `story.js`
 
@@ -136,15 +136,15 @@ storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled h
 ### withTests(options)
 
 - **options.results**: OBJECT jest output results. _mandatory_
-- **filesExt**: STRING test file extention. _optional_. This allow you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That mean it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
+- **filesExt**: STRING test file extension. _optional_. This allows you to write "MyComponent" and not "MyComponent.test.js". It will be used as regex to find your file results. Default value is `((\\.specs?)|(\\.tests?))?(\\.js)?$`. That means it will match: MyComponent.js, MyComponent.test.js, MyComponent.tests.js, MyComponent.spec.js, MyComponent.specs.js...
 
 ## Usage with Angular
 
-Assuming that you have created a test files `my.component.spec.ts` and `my-other.comonent.spec.ts`
+Assuming that you have created test files `my.component.spec.ts` and `my-other.comonent.spec.ts`
 
 Configure Jest with [jest-preset-angular](https://www.npmjs.com/package/jest-preset-angular)
 
-In project`s`typings.d.ts` add
+In project's `typings.d.ts` add
 
 ```ts
 declare module '*.json' {
