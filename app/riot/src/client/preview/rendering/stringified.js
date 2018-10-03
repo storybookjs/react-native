@@ -1,8 +1,7 @@
-import { document } from 'global';
 import { mount, unregister, tag2 as tag } from 'riot';
 import compiler from 'riot-compiler';
-
-const alreadyCompiledMarker = "var riot = require('riot')";
+import { document } from 'global';
+import { alreadyCompiledMarker, getRidOfRiotNoise, setConstructor } from '../compileStageFunctions';
 
 function guessRootName(stringified) {
   const whiteSpaceLocation = stringified.indexOf(' ', stringified.indexOf('<') + 1);
@@ -31,12 +30,10 @@ function compileText(code, rootName) {
     .trim();
 }
 
-const getRidOfRiotNoise = compiled =>
-  compiled.replace(/riot\.tag2/g, 'tag2').replace(alreadyCompiledMarker, '');
-
-function renderStringified({
+export default function renderStringified({
   tags,
   template = `<${(tags[0] || []).boundAs || guessRootName(tags[0] || '')}/>`,
+  tagConstructor,
 }) {
   const tag2 = tag; // eslint-disable-line no-unused-vars
   tags.forEach(oneTag => {
@@ -49,43 +46,11 @@ function renderStringified({
     eval(getRidOfRiotNoise(`${compiled}`)); // eslint-disable-line no-eval
   });
   const sourceCode = `<root>${template}</root>`;
-  if (template !== '<root/>') eval(getRidOfRiotNoise(`${compiler.compile(sourceCode, {})}`)); // eslint-disable-line no-eval
+  const compiledRootSource = !tagConstructor
+    ? `${compiler.compile(sourceCode, {})}`
+    : setConstructor(`${compiler.compile(sourceCode, {})}`, tagConstructor);
+
+  if (template !== '<root/>') eval(getRidOfRiotNoise(compiledRootSource)); // eslint-disable-line no-eval
 
   mount('*');
-}
-
-function renderRaw(sourceCode) {
-  const tag2 = tag; // eslint-disable-line no-unused-vars
-  // eslint-disable-next-line no-eval
-  eval(
-    getRidOfRiotNoise(
-      `${compiler.compile(sourceCode.replace(alreadyCompiledMarker, '').trim(), {})}`
-    )
-  );
-  mount('root', /tag2\s*\(\s*'([^']+)'/.exec(sourceCode)[1], {});
-}
-
-function renderCompiledButUnmounted(component) {
-  mount('root', component.tagName, component.opts || {});
-}
-
-export function render(component) {
-  if (typeof component === 'string') {
-    renderRaw(component);
-    return true;
-  }
-  const { tags } = component || {};
-  if (Array.isArray(tags)) {
-    renderStringified(component);
-    return true;
-  }
-  if (component && component.tagName) {
-    renderCompiledButUnmounted(component);
-    return true;
-  }
-  if (component && component.length) {
-    // already rendered, nothing to do
-    return true;
-  }
-  return false;
 }
