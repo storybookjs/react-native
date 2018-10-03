@@ -1,6 +1,7 @@
 import hbs from 'htmlbars-inline-precompile';
 import { storiesOf } from '@storybook/ember';
 import { withKnobs, text, color } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
@@ -22,8 +23,6 @@ storiesOf('Addon|Knobs', module)
       subTitleColor: color('subTitleColor', '#B8854F'),
       title: text('title', 'Welcome to storybook'),
       subtitle: text('subtitle', 'This environment is completely editable'),
-      onClick: e => {
-        console.log(e);
-      },
+      onClick: action('clicked'),
     },
   }));

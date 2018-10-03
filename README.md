@@ -85,13 +85,13 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 | [React Native](app/react-native) | - | - | [![React Native](https://img.shields.io/npm/dt/@storybook/react-native.svg)](app/react-native) |
 | [Vue](app/vue) | [v3.4.x](https://release-3-4--storybooks-vue.netlify.com/), [v3.3.x](https://release-3-3--storybooks-vue.netlify.com/) | [v4.0.0-alpha](https://storybooks-vue.netlify.com/) | [![Vue](https://img.shields.io/npm/dt/@storybook/vue.svg)](app/vue) |
 | [Angular](app/angular) | [v3.4.x](https://release-3-4--storybooks-angular.netlify.com/), [v3.3.x](https://release-3-3--storybooks-angular.netlify.com/) | [v4.0.0-alpha](https://storybooks-angular.netlify.com/) | [![Angular](https://img.shields.io/npm/dt/@storybook/angular.svg)](app/angular) |
-| [Ember](app/ember) | - | [v4.0.0-alpha](https://storybooks-ember.netlify.com/) | [![Ember](https://img.shields.io/npm/dt/@storybook/ember.svg)](app/angular) |
 | [Polymer](app/polymer) | [v3.4.x](https://release-3-4--storybooks-polymer.netlify.com/) | [v4.0.0-alpha](https://storybooks-polymer.netlify.com/) | [![Polymer](https://img.shields.io/npm/dt/@storybook/polymer.svg)](app/polymer) |
 | [Mithril](app/mithril) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-mithril.netlify.com/) | [![Mithril](https://img.shields.io/npm/dt/@storybook/mithril.svg)](app/mithril) |
 | [Marko](app/marko) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-marko.netlify.com/) | [![Marko](https://img.shields.io/npm/dt/@storybook/marko.svg)](app/marko) |
 | [HTML](app/html) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-html.netlify.com/) | [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html) |
 | [Svelte](app/svelte) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-svelte.netlify.com/) | [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte) |
 | [Riot](app/riot) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-riot.netlify.com/) | [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot) |
+| [Ember](app/ember) | - | [v4.0.0-alpha](https://storybooks-ember.netlify.com/) | [![Ember](https://img.shields.io/npm/dt/@storybook/ember.svg)](app/ember) |
 
 ### Sub Projects
 

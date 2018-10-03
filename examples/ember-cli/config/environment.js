@@ -1,4 +1,4 @@
-module.exports = function(environment) {
+module.exports = function buildEnvironment(environment) {
   const ENV = {
     modulePrefix: 'ember-example',
     environment,
