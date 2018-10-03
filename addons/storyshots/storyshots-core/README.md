@@ -28,7 +28,7 @@ If you still need to configure jest you can use the resources mentioned below:
 >
 > Note: Make sure you have added the ```json``` extention to ```moduleFileExtensions``` in ```jest.config.json```. If this is missing it leads to the [following error](https://github.com/storybooks/storybook/issues/3728): ```Cannot find module 'spdx-license-ids' from 'scan.js'```.
 >
-> Note: Please make you are using ```jsdom``` as the testEnvironment on your jest config file.
+> Note: Please make sure you are using ```jsdom``` as the testEnvironment on your jest config file.
 
 
 ### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
