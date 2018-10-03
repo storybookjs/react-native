@@ -70,6 +70,7 @@
     "@storybook/riot": "4.0.0-alpha.23",
     "@storybook/ui": "4.0.0-alpha.23",
     "@storybook/vue": "4.0.0-alpha.23",
+    "@storybook/ember": "4.0.0-alpha.23",
     "check-node-version": "3.2.0",
     "npx": "10.2.0"
   }

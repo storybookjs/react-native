@@ -37,6 +37,7 @@ jobs:
           paths:
             - node_modules
             - examples/angular-cli/node_modules
+            - examples/ember-cli/node_modules
             - examples/cra-kitchen-sink/node_modules
             - examples/mithril-kitchen-sink/node_modules
             - examples/official-storybook/node_modules
@@ -77,6 +78,11 @@ jobs:
           name: Build angular-cli
           command: |
             cd examples/angular-cli
+            yarn build-storybook
+      - run:
+          name: Build ember-cli
+          command: |
+            cd examples/ember-cli
             yarn build-storybook
       - run:
           name: Build polymer-cli
@@ -139,6 +145,11 @@ jobs:
           name: Run angular-cli (smoke test)
           command: |
             cd examples/angular-cli
+            yarn storybook --smoke-test
+      - run:
+          name: Run ember-cli (smoke test)
+          command: |
+            cd examples/ember-cli
             yarn storybook --smoke-test
       - run:
           name: Run polymer-cli (smoke test)

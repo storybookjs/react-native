@@ -91,6 +91,7 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 | [HTML](app/html) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-html.netlify.com/) | [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html) |
 | [Svelte](app/svelte) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-svelte.netlify.com/) | [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte) |
 | [Riot](app/riot) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-riot.netlify.com/) | [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot) |
+| [Ember](app/ember) | - | [v4.0.0-alpha](https://storybooks-ember.netlify.com/) | [![Ember](https://img.shields.io/npm/dt/@storybook/ember.svg)](app/ember) |
 
 ### Sub Projects
 

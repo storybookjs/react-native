@@ -37,5 +37,6 @@ To learn more about what `getstorybook` command does, have a look at the slow st
 * [Marko](/basics/guide-marko/)
 * [HTML](/basics/guide-html/)
 * [Svelte](/basics/guide-svelte/)
+* [Ember](/basics/guide-ember/)
 
 A tutorial is also available at [Learn Storybook](https://www.learnstorybook.com) for a step-by-step guide (only available for React).
