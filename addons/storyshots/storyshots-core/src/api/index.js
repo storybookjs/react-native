@@ -1,5 +1,6 @@
 import global, { describe } from 'global';
 import addons, { mockChannel } from '@storybook/addons';
+import { addSerializer } from 'jest-specific-snapshot';
 import ensureOptionsDefaults from './ensureOptionsDefaults';
 import snapshotsTests from './snapshotsTestsTemplate';
 import integrityTest from './integrityTestTemplate';
@@ -23,6 +24,13 @@ function testStorySnapshots(options = {}) {
   }
 
   addons.setChannel(mockChannel());
+
+  if (options.snapshotSerializers) {
+    options.snapshotSerializers.forEach(serializer => {
+      addSerializer(serializer);
+      expect.addSnapshotSerializer(serializer);
+    });
+  }
 
   const { storybook, framework, renderTree, renderShallowTree } = loadFramework(options);
   const storiesGroups = storybook.getStorybook();
