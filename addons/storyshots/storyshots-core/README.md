@@ -185,6 +185,21 @@ initStoryshots({
 })
 ```
 
+Provide a function to have story-specific options:
+
+
+```js
+initStoryshots({
+  test: snapshotWithOptions(story =>({
+    createNodeMock: (element) => {
+      if(story.name == 'foobar') {
+        return null
+      }
+      return element
+    },
+  })),
+})
+```
 
 ### StoryShots for async rendered components
 
