@@ -9,6 +9,7 @@
   - [Storyshots changes](#storyshots-changes)
   - [Webpack 4](#webpack-4)
   - [Babel 7](#babel-7)
+  - [Create-react-app](#create-react-app)
 - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
 - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
   - [Refactored Knobs](#refactored-knobs)
@@ -82,11 +83,40 @@ Storybook now uses webpack 4. If you have a [custom webpack config](https://stor
 
 Storybook now uses Babel 7. There's a couple of cases when it can break with your app:
 
-* If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
+- If you aren't using Babel yourself, and don't have .babelrc, install following dependencies:
   ```
   npm i -D @babel/core babel-loader@next
   ```
-* If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7`.
+- If you're using Babel 6, make sure that you have direct dependencies on `babel-core@6` and `babel-loader@7` and that you have a `.babelrc` in your project directory.
+
+### Create-react-app
+
+If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
+
+For `create-react-app@2` should be compatible as is, since it uses babel 7.
+
+For `create-react-app@1`, it depends on your setup. If you're adding storybook for the first time, it should just work: `storybook init` should add the correct dependencies. If you've upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` that uses Babel 7. To make it compatible, you can either upgrade to Babel 7, or make Babel 6 work (if you're already dependent on some Babel 6-specific features)
+
+#### Upgrade to babel 7
+
+```
+yarn remove babel-core babel-runtime
+yarn add @babel/core babel-loader --dev
+```
+
+#### Migrate to babel 6
+
+```
+yarn add babel-loader@7
+```
+
+Also make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
+
+```json
+{
+  "presets": ["env", "react"]
+}
+```
 
 ### start-storybook opens browser automatically
 
