@@ -12,7 +12,7 @@
 
 -   Webpack: Fix broken SVGs [#4260](https://github.com/storybooks/storybook/pull/4260)
 -   Babel/minify: use `builtIns: false` [#4262](https://github.com/storybooks/storybook/pull/4262)
--   Addon-Nootes: Fix how markdownOptions are passed to marked [#4242](https://github.com/storybooks/storybook/pull/4242)
+-   Addon-Notes: Fix how markdownOptions are passed to marked [#4242](https://github.com/storybooks/storybook/pull/4242)
 -   Addon-Knobs: Fix broken colorpicker [#4222](https://github.com/storybooks/storybook/pull/4222)
 
 # 4.0.0-alpha.23
