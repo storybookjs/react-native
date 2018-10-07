@@ -91,6 +91,13 @@ export default function(configType, baseConfig, projectDir, configDir) {
     name: 'react-storybook',
   });
 
+  // Check whether addons.js file exists inside the storybook.
+  const storybookCustomAddonsPath = path.resolve(configDir, 'addons.js');
+  if (fs.existsSync(storybookCustomAddonsPath)) {
+    logger.info('=> Loading custom addons config.');
+    config.entry.manager.unshift(storybookCustomAddonsPath);
+  }
+  
   const defaultConfig = createDefaultWebpackConfig(config);
 
   // Check whether user has a custom webpack config file and
