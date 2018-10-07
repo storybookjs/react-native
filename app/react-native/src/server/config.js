@@ -97,7 +97,7 @@ export default function(configType, baseConfig, projectDir, configDir) {
     logger.info('=> Loading custom addons config.');
     config.entry.manager.unshift(storybookCustomAddonsPath);
   }
-  
+
   const defaultConfig = createDefaultWebpackConfig(config);
 
   // Check whether user has a custom webpack config file and
