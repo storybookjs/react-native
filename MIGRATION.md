@@ -5,6 +5,7 @@
 - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
   - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
   - [Removed addWithInfo](#removed-add-with-info)
+  - [Removed RN packager](#removed-rn-packager)
   - [Removed RN addons](#removed-rn-addons)
   - [Storyshots changes](#storyshots-changes)
   - [Webpack 4](#webpack-4)
@@ -26,7 +27,7 @@
 
 ## From version 3.4.x to 4.0.x
 
-With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. All deprecations have been marked for months, so we hope that there will be no significant impact on your project.
+With 4.0 as our first major release in over a year, we've collected a lot of cleanup tasks. Most of the deprecations have been marked for months, so we hope that there will be no significant impact on your project.
 
 ### Generic addons
 
@@ -56,6 +57,14 @@ import { number } from "@storybook/addon-knobs";
 ### Removed addWithInfo
 
 `Addon-info`'s `addWithInfo` has been marked deprecated since 3.2. In 4.0 we've removed it completely. See the package [README](https://github.com/storybooks/storybook/blob/master/addons/info/README.md) for the proper usage.
+
+### Removed RN packager
+
+Since storybook version v4.0 packager is removed from storybook. The suggested storybook usage is to include it inside your app.
+If you want to keep the old behaviour, you have to start the packager yourself with a different project root.
+`npm run storybook start -p 7007 | react-native start --projectRoot storybook`
+
+Removed cli options: `--packager-port --root --projectRoots -r, --reset-cache --skip-packager --haul  --platform --metro-config` 
 
 ### Removed RN addons
 
