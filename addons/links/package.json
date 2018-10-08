@@ -1,11 +1,15 @@
 {
   "name": "@storybook/addon-links",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "Story Links addon for storybook",
   "keywords": [
+    "addon",
     "storybook"
   ],
   "homepage": "https://github.com/storybooks/storybook/tree/master/addons/links",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/storybooks/storybook/issues"
   },
@@ -20,9 +24,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "4.0.0-alpha.21",
-    "@storybook/components": "4.0.0-alpha.21",
-    "@storybook/core-events": "4.0.0-alpha.21",
+    "@storybook/addons": "4.0.0-alpha.22",
+    "@storybook/components": "4.0.0-alpha.22",
+    "@storybook/core-events": "4.0.0-alpha.22",
     "global": "^4.3.2",
     "prop-types": "^15.6.2"
   },

@@ -1,17 +1,35 @@
 import { describe, it } from 'global';
 
-function snapshotTest({ story, kind, fileName, framework, testMethod, testMethodParams }) {
+function snapshotTest({
+  asyncJest,
+  story,
+  kind,
+  fileName,
+  framework,
+  testMethod,
+  testMethodParams,
+}) {
   const { name } = story;
+  const context = { fileName, kind, story: name, framework };
 
-  it(name, () => {
-    const context = { fileName, kind, story: name, framework };
-
-    return testMethod({
-      story,
-      context,
-      ...testMethodParams,
-    });
-  });
+  if (asyncJest === true) {
+    it(name, done =>
+      testMethod({
+        done,
+        story,
+        context,
+        ...testMethodParams,
+      })
+    );
+  } else {
+    it(name, () =>
+      testMethod({
+        story,
+        context,
+        ...testMethodParams,
+      })
+    );
+  }
 }
 
 function snapshotTestSuite({ kind, stories, suite, storyNameRegex, ...restParams }) {

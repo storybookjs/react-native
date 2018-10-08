@@ -13,9 +13,9 @@ So you can develop UI components in isolation without worrying about app specifi
 ## Getting Started
 
 ```sh
-npm i -g @storybook/cli
+npm i -g @storybook/cli@alpha
 cd my-app
-getstorybook --html
+storybook init --html
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)

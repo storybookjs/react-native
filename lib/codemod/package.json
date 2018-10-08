@@ -1,7 +1,17 @@
 {
   "name": "@storybook/codemod",
-  "version": "4.0.0-alpha.21",
+  "version": "4.0.0-alpha.22",
   "description": "A collection of codemod scripts written with JSCodeshift",
+  "keywords": [
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/codemod",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/storybooks/storybook/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybooks/storybook.git"

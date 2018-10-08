@@ -15,10 +15,10 @@
     "vue": "^2.3.3"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-rc.2",
+    "@babel/core": "7.1.0",
     "autoprefixer": "^7.1.2",
     "babel-core": "^7.0.0-bridge.0",
-    "cross-env": "^5.0.0",
+    "cross-env": "^5.2.0",
     "cssnano-cli": "^1.0.4",
     "npm-run-all": "^4.0.1",
     "postcss-cli": "^4.0.0",

@@ -28,12 +28,12 @@ function getTsConfigOptions(tsConfigPath) {
 
 function getAngularCliParts(cliWebpackConfigOptions) {
   // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const ngcliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
+  const ngCliConfigFactory = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs');
 
   try {
     return {
-      cliCommonConfig: ngcliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
-      cliStyleConfig: ngcliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
+      cliCommonConfig: ngCliConfigFactory.getCommonConfig(cliWebpackConfigOptions),
+      cliStyleConfig: ngCliConfigFactory.getStylesConfig(cliWebpackConfigOptions),
     };
   } catch (e) {
     return null;

@@ -118,7 +118,7 @@ Then add the following code to the register.js.
 ```js
 import React from 'react';
 import addons from '@storybook/addons';
-import styled from 'emotion';
+import styled from '@emotion/styled';
 
 const NotesPanel = styled.div({
   margin: 10,
