@@ -184,22 +184,12 @@ jobs:
           at: .
       - run:
           name: Bootstrap
-          command: yarn bootstrap --reactnative --reactnativeapp
-      - run:
-          name: Run React-Native example
-          command: |
-            cd examples/react-native-vanilla
-            yarn storybook --smoke-test
+          command: yarn bootstrap --reactnativeapp
       - run:
           name: Run React-Native-App example
           command: |
             cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
-      - run:
-          name: Run React-Native unit tests
-          command: |
-            yarn test --coverage --runInBand --reactnative
-            yarn coverage
   docs:
     <<: *defaults
     steps:
