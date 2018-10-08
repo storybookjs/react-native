@@ -1,7 +1,5 @@
 import path from 'path';
 import { ContextReplacementPlugin } from 'webpack';
-import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
-import { getAngularCliWebpackConfigOptions } from './angular-cli_config';
 import loadTsConfig from './ts_config';
 
 export function webpack(config, { configDir }) {
@@ -39,11 +37,6 @@ export function webpack(config, { configDir }) {
     resolve: {
       ...config.resolve,
       extensions: [...config.resolve.extensions, '.ts', '.tsx'],
-      plugins: [
-        new TsconfigPathsPlugin({
-          configFile: getAngularCliWebpackConfigOptions(process.cwd()).buildOptions.tsConfig,
-        }),
-      ],
     },
     plugins: [
       ...config.plugins,

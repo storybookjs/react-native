@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import { isBuildAngularInstalled, normalizeAssetPatterns } from './angular-cli_utils';
 
 function getTsConfigOptions(tsConfigPath) {
@@ -133,6 +134,11 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
     modules: Array.from(
       new Set([...baseConfig.resolve.modules, ...cliCommonConfig.resolve.modules])
     ),
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: cliWebpackConfigOptions.buildOptions.tsConfig,
+      }),
+    ],
   };
 
   return {
