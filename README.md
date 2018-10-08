@@ -40,7 +40,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
     -   🛠[Supported Frameworks & Examples](#supported-frameworks)
     -   🚇[Sub Projects](#sub-projects)
     -   🔗[Addons](#addons)
--   🏅[Badges & Presentation materials](#badges)
+-   🏅[Badges & Presentation materials](#badges--presentation-materials)
 -   👥[Community](#community)
 -   👏[Contributing](#contributing)
     -   👨‍💻[Development scripts](#development-scripts)
