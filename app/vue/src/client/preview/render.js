@@ -20,10 +20,6 @@ export default function render({
   Vue.config.errorHandler = showException;
 
   const component = story();
-  
-  if (typeof component === 'string') {
-    component = { template: component };
-  }
 
   if (!component) {
     showError({
