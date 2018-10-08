@@ -18,8 +18,9 @@ Storybook is a development environment for UI components.
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
 ## Intro
-
-![Storybook Screenshot](media/storybook-intro.gif)
+<center>
+    <img src="media/storybook-intro.gif" width="100%" />
+</center>
 
 README for:
 -   [![Alpha](https://img.shields.io/npm/v/@storybook/core/alpha.svg)](https://github.com/storybooks/storybook)
@@ -34,18 +35,17 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
 
 ## Table of contents
 
--   [Getting Started](#getting-started)
--   [Projects](#projects)
-    -   [Supported Frameworks](#supported-frameworks)
-    -   [Sub Projects](#sub-projects)
-    -   [Addons](#addons)
--   [Live Examples](#live-examples) 💪
--   [Badges](#badges)
--   [Community](#community)
--   [Contributing](#contributing)
-    -   [Development scripts](#development-scripts)
-    -   [Backers](#backers)
-    -   [Sponsors](#sponsors)
+-   🚀[Getting Started](#getting-started)
+-   📒[Projects](#projects)
+    -   🛠[Supported Frameworks & Examples](#supported-frameworks)
+    -   🚇[Sub Projects](#sub-projects)
+    -   🔗[Addons](#addons)
+-   🏅[Badges & Presentation materials](#badges--presentation-materials)
+-   👥[Community](#community)
+-   👏[Contributing](#contributing)
+    -   👨‍💻[Development scripts](#development-scripts)
+    -   💵[Backers](#backers)
+    -   💸[Sponsors](#sponsors)
 
 ## Getting Started
 
@@ -79,16 +79,19 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Supported Frameworks
 
--   [React](app/react) [![React](https://img.shields.io/npm/dt/@storybook/react.svg)](app/react)
--   [React Native](app/react-native) [![React Native](https://img.shields.io/npm/dt/@storybook/react-native.svg)](app/react-native)
--   [Vue](app/vue) [![Vue](https://img.shields.io/npm/dt/@storybook/vue.svg)](app/vue)
--   [Angular](app/angular) [![Angular](https://img.shields.io/npm/dt/@storybook/angular.svg)](app/angular)
--   [Polymer](app/polymer) [![Polymer](https://img.shields.io/npm/dt/@storybook/polymer.svg)](app/polymer)
--   [Mithril](app/mithril) <sup>alpha</sup> [![Mithril](https://img.shields.io/npm/dt/@storybook/mithril.svg)](app/mithril)
--   [Marko](app/marko) <sup>alpha</sup> [![Marko](https://img.shields.io/npm/dt/@storybook/marko.svg)](app/marko)
--   [HTML](app/html) <sup>alpha</sup> [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html)
--   [Svelte](app/svelte) <sup>alpha</sup> [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte)
--   [Riot](app/riot) <sup>alpha</sup> [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot)
+| Framework | Demo latest | Demo prerelease |  |
+|----|---|---|---|
+| [React](app/react) | [v3.4.x](https://release-3-4--storybooks-official.netlify.com), [v3.3.x](https://release-3-3--storybooks-official.netlify.com) | [v4.0.0-alpha](https://storybooks-official.netlify.com) | [![React](https://img.shields.io/npm/dt/@storybook/react.svg)](app/react) |
+| [React Native](app/react-native) | - | - | [![React Native](https://img.shields.io/npm/dt/@storybook/react-native.svg)](app/react-native) |
+| [Vue](app/vue) | [v3.4.x](https://release-3-4--storybooks-vue.netlify.com/), [v3.3.x](https://release-3-3--storybooks-vue.netlify.com/) | [v4.0.0-alpha](https://storybooks-vue.netlify.com/) | [![Vue](https://img.shields.io/npm/dt/@storybook/vue.svg)](app/vue) |
+| [Angular](app/angular) | [v3.4.x](https://release-3-4--storybooks-angular.netlify.com/), [v3.3.x](https://release-3-3--storybooks-angular.netlify.com/) | [v4.0.0-alpha](https://storybooks-angular.netlify.com/) | [![Angular](https://img.shields.io/npm/dt/@storybook/angular.svg)](app/angular) |
+| [Polymer](app/polymer) | [v3.4.x](https://release-3-4--storybooks-polymer.netlify.com/) | [v4.0.0-alpha](https://storybooks-polymer.netlify.com/) | [![Polymer](https://img.shields.io/npm/dt/@storybook/polymer.svg)](app/polymer) |
+| [Mithril](app/mithril) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-mithril.netlify.com/) | [![Mithril](https://img.shields.io/npm/dt/@storybook/mithril.svg)](app/mithril) |
+| [Marko](app/marko) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-marko.netlify.com/) | [![Marko](https://img.shields.io/npm/dt/@storybook/marko.svg)](app/marko) |
+| [HTML](app/html) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-html.netlify.com/) | [![HTML](https://img.shields.io/npm/dt/@storybook/html.svg)](app/html) |
+| [Svelte](app/svelte) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-svelte.netlify.com/) | [![Svelte](https://img.shields.io/npm/dt/@storybook/svelte.svg)](app/svelte) |
+| [Riot](app/riot) <sup>alpha</sup> | - | [v4.0.0-alpha](https://storybooks-riot.netlify.com/) | [![Riot](https://img.shields.io/npm/dt/@storybook/riot.svg)](app/riot) |
+| [Ember](app/ember) | - | [v4.0.0-alpha](https://storybooks-ember.netlify.com/) | [![Ember](https://img.shields.io/npm/dt/@storybook/ember.svg)](app/ember) |
 
 ### Sub Projects
 
@@ -97,51 +100,27 @@ For additional help, join us [in our Slack](https://now-examples-slackin-rrirkqo
 
 ### Addons
 
--   [a11y](addons/a11y/) - Test components for user accessibility in Storybook
--   [actions](addons/actions/) - Log actions as users interact with components in the Storybook UI
--   [backgrounds](addons/backgrounds/) - Let users choose backgrounds in the Storybook UI
--   [centered](addons/centered/) - Center the alignment of your components within the Storybook UI
--   [events](addons/events/) - Interactively fire events to components that respond to EventEmitter
--   [graphql](addons/graphql/) - Query a GraphQL server within Storybook stories
--   [info](addons/info/) - Annotate stories with extra component usage information
--   [jest](addons/jest/) - View the results of components' unit tests in Storybook
--   [knobs](addons/knobs/) - Interactively edit component prop data in the Storybook UI
--   [links](addons/links/) - Create links between stories
--   [notes](addons/notes/) - Annotate Storybook stories with notes
--   [options](addons/options/) - Customize the Storybook UI in code
--   [storyshots](addons/storyshots/) - Easy snapshot testing for components in Storybook
--   [storysource](addons/storysource/) - View the code of your stories within the Storybook UI
--   [viewport](addons/viewport/) - Change display sizes and layouts for responsive components using Storybook
+| Addons |   |
+|----|---|
+| [a11y](addons/a11y/) | Test components for user accessibility in Storybook |
+| [actions](addons/actions/) | Log actions as users interact with components in the Storybook UI |
+| [backgrounds](addons/backgrounds/) | Let users choose backgrounds in the Storybook UI |
+| [centered](addons/centered/) | Center the alignment of your components within the Storybook UI |
+| [events](addons/events/) | Interactively fire events to components that respond to EventEmitter |
+| [graphql](addons/graphql/) | Query a GraphQL server within Storybook stories |
+| [info](addons/info/) | Annotate stories with extra component usage information |
+| [jest](addons/jest/) | View the results of components' unit tests in Storybook |
+| [knobs](addons/knobs/) | Interactively edit component prop data in the Storybook UI |
+| [links](addons/links/) | Create links between stories |
+| [notes](addons/notes/) | Annotate Storybook stories with notes |
+| [options](addons/options/) | Customize the Storybook UI in code |
+| [storyshots](addons/storyshots/) | Easy snapshot testing for components in Storybook |
+| [storysource](addons/storysource/) | View the code of your stories within the Storybook UI |
+| [viewport](addons/viewport/) | Change display sizes and layouts for responsive components using Storybook |
 
 See [Addon / Framework Support Table](ADDONS_SUPPORT.md)
 
-## Live Examples
-
-### 4.0.alpha
-> Note, this is an Alpha version which may not be well tested. Features in this version are not final.
-
-- [React Official](https://storybooks-official.netlify.com)
-- [Vue](https://storybooks-vue.netlify.com/)
-- [Angular](https://storybooks-angular.netlify.com/)
-- [Polymer](https://storybooks-polymer.netlify.com/)
-- [Mithril](https://storybooks-mithril.netlify.com/)
-- [Marko](https://storybooks-marko.netlify.com/)
-- [HTML](https://storybooks-html.netlify.com/)
-- [Svelte](https://storybooks-svelte.netlify.com/)
-- [Riot](https://storybooks-riot.netlify.com/)
-
-### 3.4
-- [React Official](https://release-3-4--storybooks-official.netlify.com)
-- [Vue](https://release-3-4--storybooks-vue.netlify.com/)
-- [Angular](https://release-3-4--storybooks-angular.netlify.com/)
-- [Polymer](https://release-3-4--storybooks-polymer.netlify.com/)
-
-### 3.3
-- [React Official](https://release-3-3--storybooks-official.netlify.com)
-- [Vue](https://release-3-3--storybooks-vue.netlify.com/)
-- [Angular](https://release-3-3--storybooks-angular.netlify.com/)
-
-## Badges
+## Badges & Presentation materials
 
 We have a badge ! Link it to your live Storybook example.
 
@@ -150,6 +129,8 @@ We have a badge ! Link it to your live Storybook example.
 ```md
 [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](link to site)
 ```
+
+If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybooks/press).
 
 ## Community
 
