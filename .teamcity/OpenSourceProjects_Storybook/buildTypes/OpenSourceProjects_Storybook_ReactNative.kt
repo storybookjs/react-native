@@ -24,7 +24,7 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
             name = "Bootstrap"
             scriptContent = """
                 yarn
-                yarn bootstrap --core --reactnative --reactnativeapp
+                yarn bootstrap --core --reactnativeapp
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
@@ -33,14 +33,6 @@ object OpenSourceProjects_Storybook_ReactNative : BuildType({
             scriptContent = """
                 cd examples/crna-kitchen-sink
                 yarn storybook --smoke-test
-            """.trimIndent()
-            dockerImage = "node:%docker.node.version%"
-        }
-        script {
-            name = "Test"
-            scriptContent = """
-                yarn test --reactnative --coverage --runInBand --teamcity
-                yarn coverage
             """.trimIndent()
             dockerImage = "node:%docker.node.version%"
         }
