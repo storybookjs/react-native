@@ -100,24 +100,6 @@ const tasks = {
     },
     check: () => getDirectories(join(__dirname, '..', 'packs')).length > 0,
   }),
-  'react-native-vanilla': createTask({
-    name: `React-Native example ${chalk.gray('(react-native-vanilla)')}`,
-    defaultValue: false,
-    option: '--reactnative',
-    pre: ['packs'],
-    command: () => {
-      spawn('yarn bootstrap:react-native-vanilla');
-    },
-  }),
-  'react-native-typesript': createTask({
-    name: `React-Native Typesript example ${chalk.gray('(react-native-typescript)')}`,
-    defaultValue: false,
-    option: '--reactnativetypescript',
-    pre: ['packs'],
-    command: () => {
-      spawn('yarn bootstrap:react-native-typescript');
-    },
-  }),
   'crna-kitchen-sink': createTask({
     name: `React-Native-App example ${chalk.gray('(crna-kitchen-sink)')}`,
     defaultValue: false,

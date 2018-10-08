@@ -3,7 +3,7 @@ import { start } from '@storybook/core/client';
 import './globals';
 import riot, { tag2, mount as vendorMount } from 'riot';
 import render from './render';
-import { compileNow as unboundCompileNow, asCompiledCode } from './compileNow';
+import { compileNow as unboundCompileNow, asCompiledCode } from './compileStageFunctions';
 
 const { clientApi, configApi, forceReRender } = start(render);
 
