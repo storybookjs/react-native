@@ -69,7 +69,7 @@ export function getAngularCliWebpackConfigOptions(dirToSearch) {
   );
 
   const projectRoot = path.resolve(dirToSearch, project.root);
-  const tsConfigPath = path.resolve(dirToSearch, 'src/tsconfig.app.json');
+  const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig);
   const tsConfig = getTsConfigOptions(tsConfigPath);
 
   return {
